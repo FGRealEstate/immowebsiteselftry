@@ -26,7 +26,7 @@ collections:
       - { label: "Vermarktungsart", name: "vermarktungsart", widget: "select", options: [ "Kauf", "Miete" ], default: "Kauf", required: true }
       
       # NEU: Objektart (Wichtig für Filter!)
-      - { label: "Objektart", name: "objektart", widget: "select", options: [ "Wohnung", "Haus", "Grundstück", "Gewerbe" ], default: "Wohnung", required: true }
+      - { label: "Objektart", name: "objektart", widget: "select", options: [ "Wohnung", "Einfamilienhaus", "Mehrfamilienhaus", "Grundstück", "Gewerbe" ], default: "Wohnung", required: true }
 
       - { label: "Ort", name: "ort", widget: "string", required: true }
       - { label: "Preis (€) / Kaltmiete", name: "preis", widget: "number", value_type: "int", required: true }
