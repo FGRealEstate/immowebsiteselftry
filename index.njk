@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: Fischer-Geserich Immobilien – Startseite
+title: Fischer & Geserich Real Estate – Startseite
 permalink: index.html
 ---
 
@@ -221,24 +221,24 @@ permalink: index.html
                     <input type="hidden" name="_subject" value="Neue Rückrufanfrage von der Website" />
 
                     <div>
-                        <input type="text" id="name" name="Name" placeholder="Ihr Name" required
+                        <input type="text" id="name" name="Name" placeholder="Ihr Name *" required
                                class="w-full p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
                     </div>
 
                     <div>
-                        <input type="email" id="email" name="E-Mail" placeholder="Ihre E-Mail-Adresse" required
+                        <input type="email" id="email" name="E-Mail" placeholder="Ihre E-Mail-Adresse *" required
                                class="w-full p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
                     </div>
 
                     <div>
-                        <input type="tel" id="telefonnummer" name="Telefonnummer" placeholder="Ihre Telefonnummer" required
+                        <input type="tel" id="telefonnummer" name="Telefonnummer" placeholder="Ihre Telefonnummer" 
                                class="w-full p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
                     </div>
 
                     <div>
-                        <select id="anliegen-auswahl" name="Anliegen_Kategorie" required
+                        <select id="anliegen-auswahl" name="Anliegen_Kategorie" 
                                 class="w-full p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary text-gray-700">
-                            <option value="" disabled selected>Auswahl Anliegen *</option>
+                            <option value="" disabled selected>Auswahl Anliegen</option>
                             <option value="Finanzierung">Finanzierung</option>
                             <option value="Verkauf">Verkauf</option>
                             <option value="Ankaufsberatung">Ankaufsberatung</option>
@@ -249,14 +249,21 @@ permalink: index.html
                     </div>
 
                     <div>
-            <textarea id="anliegen_text" name="Detailliertes_Anliegen" rows="3" placeholder="Schildern Sie uns Ihr Anliegen" required
-                      class="w-full p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary"></textarea>
+                    <textarea id="anliegen_text" name="Detailliertes_Anliegen" rows="3" placeholder="Schildern Sie uns Ihr Anliegen *" required
+                              class="w-full p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary"></textarea>
+                            </div>
+                    
+                            <div class="flex items-start">
+                                <input type="checkbox" id="datenschutz-check" name="Datenschutz_Einwilligung" value="zugestimmt" required
+                                       class="mt-1 mr-3 h-4 w-4 text-accent border-gray-300 rounded focus:ring-accent">
+                                <label for="datenschutz-check" class="text-xs text-gray-700">
+                                    Ich habe die <a href="/datenschutz.html" target="_blank" class="text-primary font-semibold hover:underline">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Beantwortung meiner Anfrage zu. *
+                                </label>
+                            </div>
+                            <button type="submit" class="w-full bg-primary text-white font-bold py-2 rounded-lg hover:bg-accent hover:text-primary transition duration-300">
+                                Rückruf anfordern
+                            </button>
+                        </form>
                     </div>
-
-                    <button type="submit" class="w-full bg-primary text-white font-bold py-2 rounded-lg hover:bg-accent hover:text-primary transition duration-300">
-                        Rückruf anfordern
-                    </button>
-                </form>
-            </div>
         </div>
     </section>
