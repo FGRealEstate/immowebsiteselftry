@@ -6,23 +6,31 @@ permalink: index.html
 
     <section id="hero" class="relative bg-primary min-h-[60vh] md:min-h-screen flex items-center justify-center overflow-hidden">
         
-        <img src="images/hero_immobilie.jpg"
-             alt="Hochwertige Immobilie"
-             class="absolute inset-0 w-full h-full object-cover opacity-60 z-0">
+        <video 
+            autoplay 
+            muted 
+            loop 
+            playsinline 
+            poster="images/berlinskypng.png" 
+            class="absolute inset-0 w-full h-full object-cover opacity-50 z-0">
+            <source src="videos/berlinsky.mp4" type="video/mp4">
+            <img src="images/berlinskypng.png" alt="Berlin Panorama Drohnenaufnahme">
+        </video>
     
         <div class="relative z-10 container mx-auto px-4 py-20 text-center">
             <div class="text-white max-w-4xl mx-auto">
               
-               <h1 class="text-2xl sm:text-3xl md:text-3xl font-extrabold mb-6 leading-tight">
-                    Ihr Partner rund um Immobilien <br> Finanzieren, Kaufen, Verkaufen, Vermieten & Verwalten
-                </h1>
+               <h1 class="text-2xl sm:text-3xl md:text-3xl font-extrabold mb-6 leading-tight drop-shadow-2xl">
+                   Ihr Partner rund um Immobilien <br> 
+                   Finanzieren, Kaufen, Verkaufen, Vermieten & Verwalten
+               </h1>
                 
                 <p class="text-lg md:text-2xl font-light mb-10 text-secondary">
                     Kompetent, Transparent & Persönlich.
                 </p>
                 
                 <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 justify-center">
-                    <a href="angebote.html" class="btn-85 text-lg font-bold py-3 px-8 rounded-lg shadow-xl">
+                    <a href="angebote.html" class="border-2 border-accent text-white hover:bg-accent hover:text-primary text-lg font-bold py-3 px-8 rounded-lg transition duration-300">
                         Zu unseren Angeboten
                     </a>
                    
@@ -66,18 +74,25 @@ permalink: index.html
             </div>
 
             <div class="md:col-span-2">
-
-                <h2 class="text-3xl font-bold mb-4 text-gold-gradient">Unsere Philosophie</h2>
+                <h2 class="text-3xl font-bold mb-6 text-gold-gradient leading-tight">
+                    Immobilienentscheidungen aus Perspektive und Konsequenz
+                </h2>
+            
                 <p class="text-lg mb-4 text-page-bg">
-                    Was unterscheidet uns nun von anderen Maklergesellschaften? Warum glauben wir, besser und <b>erfolgreicher</b> zu sein, obwohl wir doch ganz neu eintreten in den Kreis der Vermittlungsunternehmen von Immobilieneigentum?  <br><br>
-
-                    Die Antwort ist: <b>"Gerade deswegen!"</b>  -  Ja, unser Unternehmung ist eine Neugründung, ein Start-up. Aber wir vier bei Fischer & Geserich Real Estate verantwortlichen Partner sind alle vier doch "alte Hasen": alle mit mehr-, teils mit langjährigen Erfahrungen in der Immobilienvermittlung, der Immobilienverwaltung, der Finanzierung, Versicherung und  im Vertrieb. Und wir sind hoch motiviert, wie es sich für eine Start-up-Mannschaft gehört.<br><br>
-
-                    Was uns <b>Partner</b> neben guter Freundschaft untereinander verbindet:  Wir sind alle Vier <b>leidenschaftliche Verkäufer</b>. Bei uns gibt's kein "Mach ich morgen" oder "das Wochenende gehört meiner Familie". Unsere Devise ist: <br>
-
+                    Wir unterstützen Eigentümer, Käufer und Investoren bei der Immobilienvermittlung, dem Immobilienverkauf und der passenden Immobilienfinanzierung.
+                    Für uns beginnt jede Zusammenarbeit nicht mit einem Exposé oder einer Kalkulation, sondern mit einem <b>persönlichen Gespräch</b>: Ihnen zuhören, Sie verstehen und Ihre Situation einordnen.
                 </p>
-                <p class="text-lg italic text-gold-gradient">
-                    <b>"Do it now!" -  mit Charme und Freude!</b>
+            
+                <p class="text-lg mb-4 text-page-bg">
+                    Als inhabergeführtes Immobilienunternehmen arbeiten wir nah am Markt und nah an unseren Kunden. Wir arbeiten nicht mit überzogenen Wertversprechen, die später relativiert werden müssen. Stattdessen erstellen wir Immobilienbewertungen auf Basis <b>realer Marktdaten</b>, führen fundierte Markt- und Standortanalysen durch und entwickeln – sofern sinnvoll – individuelle Finanzierungskonzepte. Dabei greifen wir auf unsere Erfahrung aus Immobilienverkauf, Finanzierungsvermittlung und Transaktionsmanagement zurück.
+                </p>
+            
+                <p class="text-lg mb-4 text-page-bg">
+                    Wir strukturieren den gesamten Prozess, erklären Zusammenhänge verständlich und begleiten Sie Schritt für Schritt. Unser Handeln ist <b>altrozentrisch</b>: Wir stellen nicht unsere eigenen Interessen in den Mittelpunkt, sondern Ihre. Wir versetzen uns in Ihre Situation und handeln verantwortungsvoll, verlässlich und fair – Ihnen gegenüber ebenso wie gegenüber unseren Kaufinteressenten.
+                </p>
+            
+                <p class="text-lg italic text-gold-gradient font-semibold">
+                    Vertrauen, Fleiß und Gründlichkeit sind die Grundlagen jeder erfolgreichen Empfehlung.
                 </p>
             </div>
 
@@ -242,7 +257,7 @@ permalink: index.html
                             <option value="Verkauf">Verkauf</option>
                             <option value="Ankaufsberatung">Ankaufsberatung</option>
                             <option value="Vermietung">Vermietung</option>
-                            <option value="Verwaltung">Verwaltung</option>
+                            <option value="Gesuch">Gesuch</option>
                             <option value="Sonstige">Sonstige</option>
                         </select>
                     </div>

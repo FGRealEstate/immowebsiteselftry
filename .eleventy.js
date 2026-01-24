@@ -4,6 +4,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("style.css");
     eleventyConfig.addPassthroughCopy("script.js");
     eleventyConfig.addPassthroughCopy("images");
+    eleventyConfig.addPassthroughCopy("videos");
     eleventyConfig.addPassthroughCopy("admin");
 
     // 2. Wichtig: Erzwingt die korrekte Verarbeitung von Markdown und HTML/Liquid
