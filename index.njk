@@ -6,20 +6,24 @@ permalink: index.html
 
     <section id="hero" class="relative bg-primary min-h-[60vh] md:min-h-screen flex items-center justify-center overflow-hidden">
         
+        <div class="absolute inset-0 z-0">
+            <img src="images/berlinskypng.png" 
+                 alt="Berlin Panorama" 
+                 class="w-full h-full object-cover opacity-50">
+        </div>
+    
         <video 
             autoplay 
             muted 
             loop 
             playsinline 
             webkit-playsinline
-            preload="auto"
-            disablepictureinpicture
             poster="images/berlinskypng.png" 
-            class="absolute inset-0 w-full h-full object-cover opacity-50 z-0">
+            class="hidden md:block absolute inset-0 w-full h-full object-cover opacity-50 z-10">
             <source src="videos/berlinsky.mp4" type="video/mp4">
-            </video>
+        </video>
     
-        <div class="relative z-10 container mx-auto px-4 py-20 text-center">
+        <div class="relative z-20 container mx-auto px-4 py-20 text-center">
             <div class="text-white max-w-4xl mx-auto">
               
                <h1 class="text-2xl sm:text-3xl md:text-3xl font-extrabold mb-6 leading-tight drop-shadow-2xl">
