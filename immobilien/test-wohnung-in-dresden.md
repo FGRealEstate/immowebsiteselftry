@@ -7,7 +7,7 @@ ort: Dresden
 preis: 365000
 provision: 3,57 % inkl. MwSt.
 status: RESERVIERT
-hauptbild: /images/uploads/_1195477.jpg
+hauptbild: /images/uploads/testimmo2.jpg
 eckdaten:
   flaeche: 196
   zimmer: 7

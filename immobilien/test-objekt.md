@@ -7,7 +7,7 @@ ort: Berlin
 preis: 450000
 provision: Privisionsfrei
 status: NEU
-hauptbild: /images/uploads/placeholder.jpg
+hauptbild: /images/uploads/testimmo1.jpg
 eckdaten:
   flaeche: 75
   zimmer: 3
