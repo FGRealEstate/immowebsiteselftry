@@ -227,3 +227,14 @@
     display: inline-block;
     color: #08082F; /* Navy Blue */
 }
+
+/* Versteckt den Play-Button auf iOS */
+video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none;
+}
+
+/* Verhindert zusätzliche UI-Elemente auf mobilen Browsern */
+video::-webkit-media-controls {
+    display: none !important;
+}
