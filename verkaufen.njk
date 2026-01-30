@@ -20,94 +20,79 @@ permalink: verkaufen.html
     </div>
 </section>
 
-<section class="py-16 bg-white">
+<section class="py-24 bg-page-bg">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12 text-primary">Was wir für Sie verkaufen</h2>
+        <div class="text-center mb-20">
+            <h2 class="text-3xl md:text-5xl font-bold text-primary italic leading-tight">Verkaufs-Portfolio</h2>
+            <p class="text-primary mt-4 font-medium tracking-widest uppercase text-sm">Fischer & Geserich Real Estate</p>
+        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-center">
+        <div class="grid grid-cols-1 xl:grid-cols-5 gap-6 xl:gap-4 max-w-7xl mx-auto">
+            {% set portfolio = [
+                "Ein- & Zweifamilien&shy;häuser",
+                "Eigentums&shy;wohnungen & Pakete",
+                "Aufteilungs&shy;projekte",
+                "Mehrfamilien- & Zins&shy;häuser",
+                "Grundstücke"
+            ] %}
 
-            <div class="p-8 border border-gray-100 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 flex flex-col items-center justify-center h-full">
-                <div class="text-accent text-5xl mb-6">
-                    <i class="fas fa-home"></i>
-                </div>
-                <h3 class="text-xl font-bold text-primary">Ein- & Zweifamilienhäuser</h3>
+            {% for item in portfolio %}
+            <div class="bg-white p-8 md:p-10 shadow-sm border-t-4 border-accent flex flex-col items-center text-center justify-center min-h-[200px] xl:min-h-[320px] transition-transform duration-500 hover:-translate-y-1">
+                <span class="text-gray-200 font-bold text-4xl mb-6 font-serif select-none">/0{{ loop.index }}</span>
+                <h3 class="text-xl font-extrabold text-primary leading-tight [hyphens:manual] lang-de uppercase tracking-tight">
+                    {{ item | safe }}
+                </h3>
             </div>
-
-            <div class="p-8 border border-gray-100 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 flex flex-col items-center justify-center h-full">
-                <div class="text-accent text-5xl mb-6">
-                    <i class="fas fa-building"></i>
-                </div>
-                <h3 class="text-xl font-bold text-primary">Eigentumswohnungen & Pakete</h3>
-            </div>
-
-            <div class="p-8 border border-gray-100 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 flex flex-col items-center justify-center h-full">
-                <div class="text-accent text-5xl mb-6">
-                    <i class="fas fa-project-diagram"></i>
-                </div>
-                <h3 class="text-xl font-bold text-primary">Aufteilungsprojekte</h3>
-            </div>
-
-            <div class="p-8 border border-gray-100 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 flex flex-col items-center justify-center h-full">
-                <div class="text-accent text-5xl mb-6">
-                    <i class="fas fa-city"></i>
-                </div>
-                <h3 class="text-xl font-bold text-primary">Mehrfamilien- & Zinshäuser</h3>
-            </div>
-
-            <div class="p-8 border border-gray-100 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 flex flex-col items-center justify-center h-full">
-                <div class="text-accent text-5xl mb-6">
-                    <i class="fas fa-map-marked-alt"></i>
-                </div>
-                <h3 class="text-xl font-bold text-primary">Grundstücke</h3>
-            </div>
-
+            {% endfor %}
         </div>
     </div>
 </section>
 
-<section class="py-16 bg-page-bg">
+<section class="py-24 bg-white">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12 text-primary">Warum Fischer & Geserich?</h2>
+        <div class="max-w-5xl mx-auto mb-20 border-l-4 border-accent pl-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary">Warum Fischer & Geserich?</h2>
+        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 max-w-5xl mx-auto">
 
-            <div class="flex items-start bg-white p-6 rounded-lg shadow">
-                <div class="flex-shrink-0 mr-4">
+            <div class="flex items-start">
+                <div class="flex-shrink-0 mr-5">
                     <i class="fas fa-network-wired text-3xl text-accent"></i>
                 </div>
                 <div>
                     <h3 class="text-xl font-bold text-primary mb-2">Starkes Netzwerk</h3>
-                    <p class="text-gray-700">Direkter Zugang zu geprüften Investoren und leistungsstarken Finanzierungspartnern.</p>
+                    <p class="text-gray-700 leading-relaxed">Direkter Zugang zu geprüften Investoren und leistungsstarken Finanzierungspartnern.</p>
                 </div>
             </div>
 
-            <div class="flex items-start bg-white p-6 rounded-lg shadow">
-                <div class="flex-shrink-0 mr-4">
+            <div class="flex items-start">
+                <div class="flex-shrink-0 mr-5">
                     <i class="fas fa-chart-line text-3xl text-accent"></i>
                 </div>
                 <div>
                     <h3 class="text-xl font-bold text-primary mb-2">Investoren-Verständnis</h3>
-                    <p class="text-gray-700">Wir verstehen Rendite, Cashflow & Struktur.</p>
+                    <p class="text-gray-700 leading-relaxed">Wir verstehen Rendite, Cashflow & Struktur.</p>
                 </div>
             </div>
 
-            <div class="flex items-start bg-white p-6 rounded-lg shadow">
-                <div class="flex-shrink-0 mr-4">
+            <div class="flex items-start">
+                <div class="flex-shrink-0 mr-5">
                     <i class="fas fa-comments text-3xl text-accent"></i>
                 </div>
                 <div>
                     <h3 class="text-xl font-bold text-primary mb-2">Transparenz</h3>
-                    <p class="text-gray-700">Klare Prozesse und offene Kommunikation. Sie sind zu jedem Zeitpunkt informiert.</p>
+                    <p class="text-gray-700 leading-relaxed">Klare Prozesse und offene Kommunikation. Sie sind zu jedem Zeitpunkt informiert.</p>
                 </div>
             </div>
 
-            <div class="flex items-start bg-white p-6 rounded-lg shadow">
-                <div class="flex-shrink-0 mr-4">
+            <div class="flex items-start">
+                <div class="flex-shrink-0 mr-5">
                     <i class="fas fa-user-shield text-3xl text-accent"></i>
                 </div>
                 <div>
                     <h3 class="text-xl font-bold text-primary mb-2">Diskretion & Sicherheit</h3>
-                    <p class="text-gray-700">Datenschutz und eine strukturierte, diskrete Abwicklung haben für uns oberste Priorität.</p>
+                    <p class="text-gray-700 leading-relaxed">Datenschutz und eine strukturierte, diskrete Abwicklung haben für uns oberste Priorität.</p>
                 </div>
             </div>
 
