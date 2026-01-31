@@ -34,6 +34,11 @@ collections:
       - { label: "Status", name: "status", widget: "select", options: [ "NEU", "VERKAUFT", "RESERVIERT", "VERMIETET" ], default: "NEU" }
 
       - { label: "Hauptbild", name: "hauptbild", widget: "image", required: true }
+      - label: "Bildergalerie"
+        name: "galerie"
+        widget: "list"
+        summary: "{{fields.bild}}"
+        field: { label: "Bild", name: "bild", widget: "image" }
       - { label: "Objektbeschreibung", name: "body", widget: "markdown" }
       
       # Eckdaten
