@@ -4,37 +4,119 @@ title: Impressum
 permalink: impressum.html
 ---
 
-<section class="container mx-auto px-4 py-24 max-w-4xl">
-    <h1 class="text-4xl font-bold text-primary mb-8 italic">Impressum</h1>
+<style>
+  @media print {
+    nav,
+    footer,
+    #printButton {
+      display: none !important;
+    }
 
-    <div class="prose prose-lg text-gray-700">
-        <h2 class="text-2xl font-bold text-primary mt-8 mb-4">Angaben gemäß § 5 TMG</h2>
-        <p>
-            Fischer & Geserich Real Estate GmbH<br>
-            [Straße Hausnummer]<br>
-            [PLZ Ort]
-        </p>
+    body {
+      background: white !important;
+    }
 
-        <h2 class="text-2xl font-bold text-primary mt-8 mb-4">Vertreten durch:</h2>
-        <p>Lennart Geserich, Timon Fischer</p>
+    .impressum-page {
+      max-width: 800px !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+    }
 
-        <h2 class="text-2xl font-bold text-primary mt-8 mb-4">Kontakt</h2>
-        <p>
-            Telefon: [Telefonnummer]<br>
-            E-Mail: [E-Mail-Adresse]
-        </p>
+    .impressum-page h1,
+    .impressum-page h2 {
+      page-break-after: avoid;
+    }
 
-        <h2 class="text-2xl font-bold text-primary mt-8 mb-4">Registereintrag</h2>
-        <p>
-            Eintragung im Handelsregister.<br>
-            Registergericht: [Amtsgericht Ort]<br>
-            Registernummer: [HRB Nummer]
-        </p>
+    .impressum-page p {
+      page-break-inside: avoid;
+    }
+  }
+</style>
 
-        <h2 class="text-2xl font-bold text-primary mt-8 mb-4">Umsatzsteuer-ID</h2>
-        <p>
-            Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
-            [USt-ID Nummer]
-        </p>
-    </div>
+<section class="impressum-page container mx-auto px-4 py-24 max-w-4xl">
+  <h1 class="text-4xl font-bold text-primary mb-8 italic">Impressum</h1>
+
+  <div class="mb-10">
+    <button
+      id="printButton"
+      onclick="window.print()"
+      class="px-4 py-2 bg-primary text-white rounded"
+    >
+      Impressum drucken / PDF speichern
+    </button>
+  </div>
+
+  <div class="prose prose-lg text-gray-700">
+    <h2>Angaben gemäß § 5 TMG</h2>
+
+    <p>
+      Fischer &amp; Geserich Real Estate GmbH<br>
+      Schützenstraße 30<br>
+      12165 Berlin<br>
+      Deutschland
+    </p>
+
+    <h2>Vertreten durch die Geschäftsführer</h2>
+
+    <p>
+      Timon Fischer<br>
+      Lennart Geserich
+    </p>
+
+    <h2>Kontakt</h2>
+
+    <p>
+      Telefon: 0152 03083048<br>
+      E-Mail: info@fg-realestate.de<br>
+      Website:
+      <a href="https://www.fg-realestate.de" target="_blank" rel="noopener noreferrer">
+        https://www.fg-realestate.de
+      </a>
+    </p>
+
+    <h2>Registereintrag</h2>
+
+    <p>
+      Eintragung im Handelsregister.<br>
+      Registergericht: Amtsgericht Charlottenburg<br>
+      Registernummer: HRB 283559 B
+    </p>
+
+    <h2>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG</h2>
+
+    <p>(wird nachgereicht)</p>
+
+    <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+
+    <p>
+      Lennart Geserich<br>
+      Schützenstraße 30<br>
+      12165 Berlin
+    </p>
+
+    <h2>EU-Streitschlichtung</h2>
+
+    <p>
+      Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+      <br>
+      <a
+        href="https://ec.europa.eu/consumers/odr/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        https://ec.europa.eu/consumers/odr/
+      </a>
+    </p>
+
+    <p>
+      Unsere E-Mail-Adresse finden Sie oben im Impressum.
+    </p>
+
+    <h2>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
+
+    <p>
+      Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor
+      einer Verbraucherschlichtungsstelle teilzunehmen.
+    </p>
+  </div>
 </section>
