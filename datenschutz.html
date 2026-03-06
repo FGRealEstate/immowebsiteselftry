@@ -1,21 +1,329 @@
 ---
 layout: base.njk
-title: Datenschutz
+title: Datenschutzerklärung
 permalink: datenschutz.html
 ---
 
-<section class="container mx-auto px-4 py-24 max-w-4xl">
-    <h1 class="text-4xl font-bold text-primary mb-8 italic">Datenschutzerklärung</h1>
+<style>
+  @media print {
+    nav,
+    footer,
+    #printButton,
+    #toc {
+      display: none !important;
+    }
 
-    <div class="prose prose-lg text-gray-700">
-        <h2 class="text-2xl font-bold text-primary mt-8 mb-4">1. Datenschutz auf einen Blick</h2>
-        <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen...</p>
+    body {
+      background: white !important;
+    }
 
-        <h2 class="text-2xl font-bold text-primary mt-8 mb-4">2. Hosting bei Netlify</h2>
-        <p>Wir hosten unsere Website bei Netlify. Anbieter ist die Netlify, Inc., 44 Montgomery Street, Suite 300, San Francisco, CA 94104, USA...</p>
+    .privacy-page {
+      max-width: 800px !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+    }
 
-        <p class="bg-gray-100 p-4 border-l-4 border-accent italic">
-            Hinweis: Dieser Text muss vom Kunden durch eine vollständige Datenschutzerklärung ersetzt werden.
-        </p>
-    </div>
+    .privacy-page h1,
+    .privacy-page h2,
+    .privacy-page h3 {
+      page-break-after: avoid;
+    }
+
+    .privacy-page p,
+    .privacy-page ul,
+    .privacy-page li {
+      page-break-inside: avoid;
+    }
+  }
+</style>
+
+<section class="privacy-page container mx-auto px-4 py-24 max-w-4xl">
+  <h1 class="text-4xl font-bold text-primary mb-8 italic">
+    Datenschutzerklärung
+  </h1>
+
+  <div class="mb-10">
+    <button
+      id="printButton"
+      onclick="window.print()"
+      class="px-4 py-2 bg-primary text-white rounded"
+    >
+      Datenschutzerklärung drucken / PDF speichern
+    </button>
+  </div>
+
+  <div id="toc" class="bg-gray-100 p-6 rounded-lg mb-12">
+    <h2 class="text-xl font-bold mb-4">Inhaltsverzeichnis</h2>
+    <ul id="tocList" class="space-y-2"></ul>
+  </div>
+
+  <div class="prose prose-lg text-gray-700 space-y-8" id="privacyContent">
+    <h2 id="verantwortlicher">Verantwortlicher</h2>
+
+    <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
+
+    <p>
+      Fischer &amp; Geserich Real Estate GmbH<br>
+      Schützenstraße 30<br>
+      12165 Berlin<br>
+      Deutschland
+    </p>
+
+    <p>
+      Telefon: 0152 03083048<br>
+      E-Mail: info@fg-realestate.de<br>
+      Website: https://www.fg-realestate.de
+    </p>
+
+    <p>
+      Vertreten durch die Geschäftsführer:<br>
+      Timon Fischer und Lennart Geserich
+    </p>
+
+    <h2 id="allgemeine-hinweise-zur-datenverarbeitung">
+      Allgemeine Hinweise zur Datenverarbeitung
+    </h2>
+
+    <p>
+      Der Schutz Ihrer personenbezogenen Daten ist uns ein besonderes Anliegen.
+      Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend
+      der gesetzlichen Datenschutzvorschriften, insbesondere der
+      Datenschutz-Grundverordnung (DSGVO), sowie dieser Datenschutzerklärung.
+    </p>
+
+    <p>
+      Personenbezogene Daten sind alle Daten, mit denen Sie persönlich
+      identifiziert werden können.
+    </p>
+
+    <h2 id="hosting">Hosting</h2>
+
+    <p>Unsere Website wird bei folgendem Anbieter gehostet:</p>
+
+    <p>
+      Netlify Inc.<br>
+      548 Market St<br>
+      San Francisco, CA 94104<br>
+      USA
+    </p>
+
+    <p>
+      Netlify stellt die Infrastruktur zum Betrieb unserer Website bereit. Beim
+      Aufruf unserer Website werden automatisch Informationen in sogenannten
+      Server-Logfiles gespeichert.
+    </p>
+
+    <p>Dabei können insbesondere folgende Daten erfasst werden:</p>
+
+    <ul>
+      <li>IP-Adresse</li>
+      <li>Datum und Uhrzeit der Anfrage</li>
+      <li>Browsertyp und Browserversion</li>
+      <li>verwendetes Betriebssystem</li>
+      <li>Referrer-URL</li>
+      <li>Hostname des zugreifenden Rechners</li>
+    </ul>
+
+    <p>
+      Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO
+      (berechtigtes Interesse an einer sicheren und effizienten Bereitstellung
+      unseres Onlineangebots).
+    </p>
+
+    <p>
+      Eine Datenübertragung in die USA kann nicht ausgeschlossen werden. Für
+      bestimmte US-Unternehmen besteht ein Angemessenheitsbeschluss der
+      EU-Kommission im Rahmen des EU-US Data Privacy Framework.
+    </p>
+
+    <h2 id="bereitstellung-von-website-inhalten-ueber-github">
+      Bereitstellung von Website-Inhalten über GitHub
+    </h2>
+
+    <p>
+      Unsere Website wird technisch über Dienste der GitHub Inc.,<br>
+      88 Colin P Kelly Jr St<br>
+      San Francisco, CA 94107<br>
+      USA bereitgestellt.
+    </p>
+
+    <p>
+      Beim Aufruf unserer Website kann es technisch erforderlich sein, dass
+      Daten wie die IP-Adresse an Server von GitHub übertragen werden.
+    </p>
+
+    <p>
+      Weitere Informationen zur Datenverarbeitung durch GitHub finden Sie unter:<br>
+      <a
+        href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement
+      </a>
+    </p>
+
+    <h2 id="kontaktformular-formspree">Kontaktformular (Formspree)</h2>
+
+    <p>
+      Wenn Sie uns über das Kontaktformular auf unserer Website kontaktieren,
+      werden die von Ihnen eingegebenen Daten an den Dienst Formspree
+      übermittelt.
+    </p>
+
+    <p>
+      Anbieter:<br>
+      Formspree Inc.<br>
+      548 Market St #88584<br>
+      San Francisco, CA 94104<br>
+      USA
+    </p>
+
+    <p>
+      Die Verarbeitung erfolgt zum Zweck der Bearbeitung Ihrer Anfrage und
+      basiert auf Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen).
+    </p>
+
+    <p>
+      Weitere Informationen finden Sie unter:<br>
+      <a
+        href="https://formspree.io/legal/privacy-policy"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        https://formspree.io/legal/privacy-policy
+      </a>
+    </p>
+
+    <h2 id="terminvereinbarung-ueber-calendly">
+      Terminvereinbarung über Calendly
+    </h2>
+
+    <p>
+      Zur Vereinbarung von Beratungsterminen nutzen wir den Dienst Calendly.
+    </p>
+
+    <p>
+      Anbieter:<br>
+      Calendly LLC<br>
+      115 E Main St., Ste A1B<br>
+      Buford, GA 30518<br>
+      USA
+    </p>
+
+    <p>
+      Wenn Sie einen Termin über Calendly buchen, werden die von Ihnen
+      eingegebenen Daten (z. B. Name, E-Mail-Adresse, Terminwunsch) an Calendly
+      übermittelt und dort verarbeitet.
+    </p>
+
+    <p>
+      Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO
+      (Vertrag bzw. vorvertragliche Maßnahmen).
+    </p>
+
+    <p>
+      Weitere Informationen finden Sie unter:<br>
+      <a
+        href="https://calendly.com/privacy"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        https://calendly.com/privacy
+      </a>
+    </p>
+
+    <h2 id="kontaktaufnahme-per-e-mail-oder-telefon">
+      Kontaktaufnahme per E-Mail oder Telefon
+    </h2>
+
+    <p>
+      Wenn Sie uns per E-Mail oder Telefon kontaktieren, werden Ihre Angaben
+      zwecks Bearbeitung der Anfrage sowie für den Fall von Anschlussfragen
+      gespeichert.
+    </p>
+
+    <p>
+      Rechtsgrundlage der Verarbeitung ist Art. 6 Abs. 1 lit. b DSGVO.
+    </p>
+
+    <h2 id="speicherdauer">Speicherdauer</h2>
+
+    <p>
+      Personenbezogene Daten werden nur so lange gespeichert, wie dies für die
+      jeweiligen Zwecke erforderlich ist oder gesetzliche Aufbewahrungspflichten
+      bestehen.
+    </p>
+
+    <h2 id="ihre-rechte">Ihre Rechte</h2>
+
+    <p>Sie haben jederzeit folgende Rechte:</p>
+
+    <ul>
+      <li>Recht auf Auskunft über Ihre gespeicherten Daten (Art. 15 DSGVO)</li>
+      <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+      <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+      <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+      <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+      <li>Recht auf Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+    </ul>
+
+    <p>
+      Zur Ausübung Ihrer Rechte können Sie sich jederzeit an uns wenden.
+    </p>
+
+    <h2 id="beschwerderecht-bei-der-aufsichtsbehoerde">
+      Beschwerderecht bei der Aufsichtsbehörde
+    </h2>
+
+    <p>
+      Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die
+      Verarbeitung Ihrer personenbezogenen Daten zu beschweren.
+    </p>
+
+    <p>Zuständige Aufsichtsbehörde in Berlin ist:</p>
+
+    <p>
+      Berliner Beauftragte für Datenschutz und Informationsfreiheit<br>
+      Alt-Moabit 59-61<br>
+      10555 Berlin<br>
+      Deutschland
+    </p>
+
+    <p>
+      <a
+        href="https://www.datenschutz-berlin.de"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        https://www.datenschutz-berlin.de
+      </a>
+    </p>
+  </div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const headings = document.querySelectorAll("#privacyContent h2");
+    const toc = document.getElementById("tocList");
+
+    headings.forEach((heading) => {
+      if (!heading.id) {
+        heading.id = heading.innerText
+          .toLowerCase()
+          .replace(/\s+/g, "-")
+          .replace(/[^\w-]/g, "");
+      }
+
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+
+      a.href = "#" + heading.id;
+      a.innerText = heading.innerText;
+      a.className = "text-primary hover:underline";
+
+      li.appendChild(a);
+      toc.appendChild(li);
+    });
+  });
+</script>
