@@ -46,9 +46,9 @@ collections:
         name: "eckdaten"
         widget: "object"
         fields:
-          - { label: "Wohnfläche (m²)", name: "flaeche", widget: "number", value_type: "int" }
-          - { label: "Anzahl Zimmer", name: "zimmer", widget: "number", value_type: "int" }
-          - { label: "Baujahr", name: "baujahr", widget: "number", value_type: "int", min: 1800, max: 2050 }
+- { label: "Wohnfläche (m²)", name: "flaeche", widget: "string", required: false, hint: "z.B. 120 m², ca. 85,5 m², 100-120 m²" }
+- { label: "Anzahl Zimmer", name: "zimmer", widget: "string", required: false, hint: "z.B. 3,5, 4 Zimmer, 2-3" }
+- { label: "Baujahr", name: "baujahr", widget: "string", required: false, hint: "z.B. 1998, ca. 1900, unbekannt" }
       
       # Versteckte Felder
       - { label: "Layout", name: "layout", widget: "hidden", default: "immobilien-detail.liquid" }
