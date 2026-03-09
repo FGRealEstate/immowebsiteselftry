@@ -29,7 +29,7 @@ collections:
       - { label: "Objektart", name: "objektart", widget: "select", options: [ "Wohnung", "Einfamilienhaus", "Mehrfamilienhaus", "Grundstück", "Gewerbe" ], default: "Wohnung", required: true }
 
       - { label: "Ort", name: "ort", widget: "string", required: true }
-      - { label: - { label: "Preis-Anzeige", name: "preis", widget: "string", required: true, hint: "z.B. ab 171.000 € oder 222.000 € - 255.000 €" }
+      - { label: "Preis-Anzeige", name: "preis", widget: "string", required: true, hint: "z.B. ab 171.000 € oder 222.000 € - 255.000 €" }
       - { label: "Preiswert für Filter", name: "preis_wert", widget: "number", value_type: "int", required: false, hint: "z.B. 171000" }
       - { label: "Maklercourtage", name: "provision", widget: "string", required: false, hint: "z.B. '3,57 % inkl. MwSt.' oder 'Provisionsfrei'" }
       - { label: "Status", name: "status", widget: "select", options: [ "NEU", "VERKAUFT", "RESERVIERT", "VERMIETET" ], default: "NEU" }
