@@ -29,7 +29,7 @@ collections:
       - { label: "Objektart", name: "objektart", widget: "select", options: [ "Wohnung", "Einfamilienhaus", "Mehrfamilienhaus", "Grundstück", "Gewerbe" ], default: "Wohnung", required: true }
 
       - { label: "Ort", name: "ort", widget: "string", required: true }
-      - { label: "Preis (€) / Kaltmiete", name: "preis", widget: "number", value_type: "int", required: true }
+      - { label: "Preis (€) / Kaltmiete", name: "preis", widget: "string", value_type: "int", required: true }
       - { label: "Maklercourtage", name: "provision", widget: "string", required: false, hint: "z.B. '3,57 % inkl. MwSt.' oder 'Provisionsfrei'" }
       - { label: "Status", name: "status", widget: "select", options: [ "NEU", "VERKAUFT", "RESERVIERT", "VERMIETET" ], default: "NEU" }
 
