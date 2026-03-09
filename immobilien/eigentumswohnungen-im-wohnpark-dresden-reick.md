@@ -7,9 +7,13 @@ ort: Dresden Reick
 preis: ab 171.000 €
 provision: Privisionsfrei
 status: VERMIETET
-hauptbild: /images/uploads/screenshot-2026-03-09-104414.jpg
+hauptbild: /images/uploads/screenshot-2026-03-09-104443.jpg
 galerie:
-  - /images/uploads/screenshot-2026-03-09-104414.jpg
+  - /images/uploads/screenshot-2026-03-09-104454.jpg
+  - /images/uploads/screenshot-2026-03-09-104435.jpg
+  - /images/uploads/screenshot-2026-03-09-104408.jpg
+  - /images/uploads/screenshot-2026-03-09-104420.jpg
+  - /images/uploads/screenshot-2026-03-09-104408.jpg
 eckdaten:
   flaeche: 53,89 m² - 62, 11 m²
   zimmer: "2"
