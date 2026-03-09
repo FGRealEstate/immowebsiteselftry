@@ -41,11 +41,13 @@ collections:
         field: { label: "Bild", name: "bild", widget: "image" }
       - { label: "Objektbeschreibung", name: "body", widget: "markdown" }
       
+       
+
       # Eckdaten
       - label: "Eckdaten"
         name: "eckdaten"
         widget: "object"
-                fields:
+        fields:
           - { label: "Wohnfläche (m²)", name: "flaeche", widget: "string", required: false, hint: "z.B. 120 m², ca. 85,5 m², 100-120 m²" }
           - { label: "Anzahl Zimmer", name: "zimmer", widget: "string", required: false, hint: "z.B. 3,5, 4 Zimmer, 2-3" }
           - { label: "Baujahr", name: "baujahr", widget: "string", required: false, hint: "z.B. 1998, ca. 1900, unbekannt" }
