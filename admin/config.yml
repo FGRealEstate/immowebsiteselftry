@@ -53,16 +53,16 @@ collections:
           - { label: "Anzahl Zimmer", name: "zimmer", widget: "string", required: false, hint: "z.B. 3,5, 4 Zimmer, 2-3" }
           - { label: "Baujahr", name: "baujahr", widget: "string", required: false, hint: "z.B. 1998, ca. 1900, unbekannt" }
 
-        #Energiedaten
-            - label: "Energieangaben"
-        name: "energie"
-        widget: "object"
-        required: false
-        fields:
-          - { label: "Energieausweis-Art", name: "ausweis_art", widget: "select", options: ["Bedarfsausweis", "Verbrauchsausweis"], required: false }
-          - { label: "Endenergiekennwert", name: "kennwert", widget: "string", required: false, hint: "z.B. 84,54 kWh/(m²·a)" }
-          - { label: "Wesentlicher Energieträger", name: "energietraeger", widget: "string", required: false }
-          - { label: "Energieeffizienzklasse", name: "effizienzklasse", widget: "string", required: false }
+       # Energiedaten
+- label: "Energieangaben"
+  name: "energie"
+  widget: "object"
+  required: false
+  fields:
+    - { label: "Energieausweis-Art", name: "ausweis_art", widget: "select", options: ["Bedarfsausweis", "Verbrauchsausweis"], required: false }
+    - { label: "Endenergiekennwert", name: "kennwert", widget: "string", required: false, hint: "z.B. 84,54 kWh/(m²·a)" }
+    - { label: "Wesentlicher Energieträger", name: "energietraeger", widget: "string", required: false }
+    - { label: "Energieeffizienzklasse", name: "effizienzklasse", widget: "string", required: false }
       # Versteckte Felder
       - { label: "Layout", name: "layout", widget: "hidden", default: "immobilien-detail.liquid" }
       - { label: "Permalink", name: "permalink", widget: "hidden", default: "angebote/{{title | slugify}}/index.html" }
