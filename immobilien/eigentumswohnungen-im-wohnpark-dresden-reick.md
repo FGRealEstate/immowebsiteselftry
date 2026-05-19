@@ -4,7 +4,7 @@ titel: Eigentumswohnungen im Wohnpark Dresden Reick
 vermarktungsart: Kauf
 objektart: Wohnung
 ort: Dresden Reick
-preis: ab 171.000 €
+preis: "ab 171.000 "
 provision: Privisionsfrei
 status: VERMIETET
 hauptbild: /images/uploads/screenshot-2026-03-09-104443.jpg
@@ -15,7 +15,7 @@ galerie:
   - /images/uploads/screenshot-2026-03-09-104420.jpg
   - /images/uploads/screenshot-2026-03-09-104408.jpg
 eckdaten:
-  flaeche: 53,89 m² - 62, 11 m²
+  flaeche: "53,89 - 62, 11 "
   zimmer: "2"
   baujahr: "1994"
 layout: immobilien-detail.liquid
