@@ -49,55 +49,43 @@ layout: base.njk
 
                     <!-- HAUPTBILD -->
                     <div class="relative mb-4">
-
                         <img
                             id="mainImage"
                             src="{{ hauptbild }}"
                             alt="Hauptbild von {{ titel }}"
                             class="w-full h-[400px] md:h-[500px] object-cover rounded-lg shadow-lg border border-gray-200 transition-opacity duration-300"
                         >
-
                     </div>
 
                     <!-- GALERIE -->
                     {% if galerie and galerie.length > 0 %}
-
                     <div class="grid grid-cols-4 md:grid-cols-6 gap-2 mb-8">
 
-                        <!-- Hauptbild -->
                         <div
                             class="cursor-pointer overflow-hidden rounded-md border-2 border-accent shadow-sm hover:opacity-80 transition"
                             onclick="changeImage('{{ hauptbild }}', this)"
                         >
-
                             <img
                                 src="{{ hauptbild }}"
                                 alt="Hauptbild Thumbnail"
                                 class="w-full h-16 md:h-20 object-cover"
                             >
-
                         </div>
 
-                        <!-- Galerie -->
                         {% for item in galerie %}
-
                         <div
                             class="cursor-pointer overflow-hidden rounded-md border-2 border-transparent shadow-sm hover:opacity-80 transition"
                             onclick="changeImage('{{ item }}', this)"
                         >
-
                             <img
                                 src="{{ item }}"
                                 alt="Galeriebild"
                                 class="w-full h-16 md:h-20 object-cover"
                             >
-
                         </div>
-
                         {% endfor %}
 
                     </div>
-
                     {% endif %}
 
                     <!-- BESCHREIBUNG -->
@@ -131,7 +119,7 @@ layout: base.njk
                             {% if eckdaten.flaeche %}
                             <li class="flex justify-between border-b border-gray-200 pb-2">
                                 <span class="font-semibold text-primary">Wohnfläche:</span>
-                                <span>{{ eckdaten.flaeche }} m²</span>
+                                <span>{{ eckdaten.flaeche }}</span>
                             </li>
                             {% endif %}
 
@@ -158,23 +146,59 @@ layout: base.njk
                             </li>
                             {% endif %}
 
+                            {% if energie %}
+
+                                {% if energie.ausweis_art %}
+                                <li class="flex justify-between border-b border-gray-200 pb-2">
+                                    <span class="font-semibold text-primary">Energieausweis:</span>
+                                    <span class="text-sm text-right max-w-[50%]">
+                                        {{ energie.ausweis_art }}
+                                    </span>
+                                </li>
+                                {% endif %}
+
+                                {% if energie.kennwert %}
+                                <li class="flex justify-between border-b border-gray-200 pb-2">
+                                    <span class="font-semibold text-primary">Endenergiekennwert:</span>
+                                    <span class="text-sm text-right max-w-[50%]">
+                                        {{ energie.kennwert }}
+                                    </span>
+                                </li>
+                                {% endif %}
+
+                                {% if energie.energietraeger %}
+                                <li class="flex justify-between border-b border-gray-200 pb-2">
+                                    <span class="font-semibold text-primary">Energieträger:</span>
+                                    <span class="text-sm text-right max-w-[50%]">
+                                        {{ energie.energietraeger }}
+                                    </span>
+                                </li>
+                                {% endif %}
+
+                                {% if energie.effizienzklasse %}
+                                <li class="flex justify-between border-b border-gray-200 pb-2">
+                                    <span class="font-semibold text-primary">Effizienzklasse:</span>
+                                    <span class="text-sm text-right max-w-[50%]">
+                                        {{ energie.effizienzklasse }}
+                                    </span>
+                                </li>
+                                {% endif %}
+
+                            {% endif %}
+
                             <!-- PREIS -->
                             <li class="flex justify-between pt-2 items-center">
-
                                 <span class="font-bold text-primary text-lg">
                                     Preis:
                                 </span>
 
                                 <span class="text-gold-gradient with-shadow font-extrabold text-xl">
-
                                     {% if vermarktungsart == "Miete" %}
                                         {{ preis }} € / Monat
                                     {% else %}
                                         {{ preis }} €
                                     {% endif %}
-
                                 </span>
-
                             </li>
 
                         </ul>
@@ -213,32 +237,24 @@ layout: base.njk
 
 <!-- SCRIPT -->
 <script>
-
     function changeImage(src, el) {
-
         const mainImg = document.getElementById('mainImage');
 
         mainImg.style.opacity = '0';
 
         setTimeout(() => {
-
             mainImg.src = src;
             mainImg.style.opacity = '1';
-
         }, 200);
 
         const thumbs = el.parentElement.children;
 
         for (let t of thumbs) {
-
             t.classList.remove('border-accent');
             t.classList.add('border-transparent');
-
         }
 
         el.classList.add('border-accent');
         el.classList.remove('border-transparent');
-
     }
-
 </script>
