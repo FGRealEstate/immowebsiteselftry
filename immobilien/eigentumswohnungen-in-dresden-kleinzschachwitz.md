@@ -4,7 +4,7 @@ titel: Eigentumswohnungen in Dresden Kleinzschachwitz
 vermarktungsart: Kauf
 objektart: Wohnung
 ort: Dresden Kleinzschachwitz
-preis: 222.000,00 € - 255.000,00 €
+preis: 222.000,00 - 255.000,00
 provision: provisionsfrei
 status: VERMIETET
 hauptbild: /images/uploads/screenshot-2026-03-09-140446.png
@@ -18,7 +18,7 @@ galerie:
   - /images/uploads/screenshot-2026-03-09-140345.png
   - /images/uploads/screenshot-2026-03-09-140337.png
 eckdaten:
-  flaeche: 69 m² - 80 m²
+  flaeche: 69 - 80
   zimmer: "3"
   baujahr: ca. 1900
 layout: immobilien-detail.liquid
