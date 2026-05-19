@@ -35,13 +35,13 @@ layout: base.njk
                     <div class="grid grid-cols-4 md:grid-cols-6 gap-2 mb-8">
                         <div class="cursor-pointer overflow-hidden rounded-md border-2 border-accent shadow-sm hover:opacity-80 transition"
                              onclick="changeImage('{{ hauptbild }}', this)">
-                            <img src="{{ hauptbild }}" class="w-full h-16 md:h-20 object-cover">
+                            <img src="{{ hauptbild }}" alt="Hauptbild" class="w-full h-16 md:h-20 object-cover">
                         </div>
 
                         {% for item in galerie %}
                         <div class="cursor-pointer overflow-hidden rounded-md border-2 border-transparent shadow-sm hover:opacity-80 transition"
-                             onclick="changeImage('{{ item.bild }}', this)">
-                            <img src="{{ item.bild }}" alt="Galeriebild" class="w-full h-16 md:h-20 object-cover">
+                             onclick="changeImage('{{ item }}', this)">
+                            <img src="{{ item }}" alt="Galeriebild" class="w-full h-16 md:h-20 object-cover">
                         </div>
                         {% endfor %}
                     </div>
@@ -67,7 +67,7 @@ layout: base.njk
        
                             <li class="flex justify-between border-b border-gray-200 pb-2">
                                 <span class="font-semibold text-primary">Wohnfläche:</span>
-                                <span>{{ eckdaten.flaeche }} m²</span>
+                                <span>{{ eckdaten.flaeche }}</span>
                             </li>
                             
                             <li class="flex justify-between border-b border-gray-200 pb-2">
@@ -89,7 +89,7 @@ layout: base.njk
 
                             <li class="flex justify-between pt-2 items-center">
                                 <span class="font-bold text-primary text-lg">Preis:</span>
-                                <span class="text-gold-gradient with-shadow font-extrabold text-xl">€ {{ preis }}</span>
+                                <span class="text-gold-gradient with-shadow font-extrabold text-xl">{{ preis }}</span>
                             </li>
                         </ul>
                     </div>
