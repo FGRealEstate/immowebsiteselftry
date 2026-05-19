@@ -8,7 +8,9 @@ preis: "400.000,00 "
 preis_wert: 400
 provision: 3,57 inkl. MwSt.
 status: NEU
-hauptbild: /images/uploads/screenshot-2026-03-09-140452.png
+hauptbild: /images/uploads/screenshot-2026-05-19-142330.png
+galerie:
+  - /images/uploads/screenshot-2026-05-19-142306.png
 eckdaten:
   zimmer: 2,5
   flaeche: ca. 81
