@@ -6,16 +6,20 @@ layout: base.njk
     
     <div class="container mx-auto px-4">
 
+        <!-- Zurück -->
         <a href="/angebote.html" class="inline-block mb-8 text-primary hover:text-secondary font-semibold transition duration-300">
-            <i class="fas fa-arrow-left mr-2"></i> Zurück zu den Angeboten
+            <i class="fas fa-arrow-left mr-2"></i>
+            Zurück zu den Angeboten
         </a>
 
+        <!-- Hauptbox -->
         <div class="bg-white rounded-xl shadow-2xl overflow-hidden p-6 md:p-10">
 
             <!-- HEADER -->
             <header class="mb-8 border-b pb-4 border-gray-100">
 
                 <div class="flex flex-wrap gap-2 mb-3">
+
                     <span class="inline-block bg-secondary text-primary text-sm font-bold px-4 py-1 rounded-full">
                         {{ status }}
                     </span>
@@ -23,6 +27,7 @@ layout: base.njk
                     <span class="inline-block border border-primary text-primary text-sm font-semibold px-4 py-1 rounded-full">
                         {{ vermarktungsart }}
                     </span>
+
                 </div>
                
                 <h1 class="text-4xl font-extrabold text-gold-gradient with-shadow mb-2">
@@ -36,10 +41,10 @@ layout: base.njk
 
             </header>
 
-            <!-- CONTENT -->
+            <!-- GRID -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
 
-                <!-- LINKE SPALTE -->
+                <!-- LINKE SEITE -->
                 <div class="lg:col-span-2">
 
                     <!-- HAUPTBILD -->
@@ -59,7 +64,7 @@ layout: base.njk
 
                     <div class="grid grid-cols-4 md:grid-cols-6 gap-2 mb-8">
 
-                        <!-- Hauptbild Thumbnail -->
+                        <!-- Hauptbild -->
                         <div
                             class="cursor-pointer overflow-hidden rounded-md border-2 border-accent shadow-sm hover:opacity-80 transition"
                             onclick="changeImage('{{ hauptbild }}', this)"
@@ -73,7 +78,7 @@ layout: base.njk
 
                         </div>
 
-                        <!-- Galerie Bilder -->
+                        <!-- Galerie -->
                         {% for item in galerie %}
 
                         <div
@@ -106,7 +111,7 @@ layout: base.njk
 
                 </div>
 
-                <!-- RECHTE SPALTE -->
+                <!-- RECHTE SEITE -->
                 <div class="lg:col-span-1 space-y-8">
 
                     <!-- ECKDATEN -->
@@ -126,7 +131,7 @@ layout: base.njk
                             {% if eckdaten.flaeche %}
                             <li class="flex justify-between border-b border-gray-200 pb-2">
                                 <span class="font-semibold text-primary">Wohnfläche:</span>
-                                <span>{{ eckdaten.flaeche }}</span>
+                                <span>{{ eckdaten.flaeche }} m²</span>
                             </li>
                             {% endif %}
 
@@ -155,13 +160,21 @@ layout: base.njk
 
                             <!-- PREIS -->
                             <li class="flex justify-between pt-2 items-center">
+
                                 <span class="font-bold text-primary text-lg">
                                     Preis:
                                 </span>
 
                                 <span class="text-gold-gradient with-shadow font-extrabold text-xl">
-                                    € {{ preis }}
+
+                                    {% if vermarktungsart == "Miete" %}
+                                        {{ preis }} € / Monat
+                                    {% else %}
+                                        {{ preis }} €
+                                    {% endif %}
+
                                 </span>
+
                             </li>
 
                         </ul>
@@ -198,7 +211,9 @@ layout: base.njk
 
 </div>
 
+<!-- SCRIPT -->
 <script>
+
     function changeImage(src, el) {
 
         const mainImg = document.getElementById('mainImage');
@@ -206,18 +221,24 @@ layout: base.njk
         mainImg.style.opacity = '0';
 
         setTimeout(() => {
+
             mainImg.src = src;
             mainImg.style.opacity = '1';
+
         }, 200);
 
         const thumbs = el.parentElement.children;
 
         for (let t of thumbs) {
+
             t.classList.remove('border-accent');
             t.classList.add('border-transparent');
+
         }
 
         el.classList.add('border-accent');
         el.classList.remove('border-transparent');
+
     }
+
 </script>
