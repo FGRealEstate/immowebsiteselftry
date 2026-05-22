@@ -5,7 +5,7 @@ vermarktungsart: Kauf
 objektart: Wohnung
 ort: Dresden Reick
 preis: "ab 171.000 "
-provision: Privisionsfrei
+provision: provisionsfrei
 status: VERMIETET
 hauptbild: /images/uploads/screenshot-2026-03-09-104443.jpg
 galerie:
