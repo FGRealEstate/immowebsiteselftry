@@ -36,27 +36,55 @@ permalink: "angebote/{{ property.slug }}/index.html"
 
         <div class="lg:col-span-2">
 
-            {% if property.image %}
+            {% if property.gallery and property.gallery.length %}
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden mb-8 relative">
+
+                <div id="property-slider" class="relative w-full h-[480px] bg-white">
+
+                    {% for image in property.gallery %}
+                    <img
+                        src="{{ image }}"
+                        alt="{{ property.title }}"
+                        class="property-slide absolute inset-0 w-full h-full object-cover {% if loop.first %}opacity-100{% else %}opacity-0{% endif %} transition-opacity duration-500"
+                        data-slide="{{ loop.index0 }}"
+                    >
+                    {% endfor %}
+
+                    {% if property.gallery.length > 1 %}
+                    <button
+                        type="button"
+                        id="slider-prev"
+                        class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 text-primary rounded-full w-12 h-12 shadow-lg flex items-center justify-center hover:bg-white transition"
+                        aria-label="Vorheriges Bild"
+                    >
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+
+                    <button
+                        type="button"
+                        id="slider-next"
+                        class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 text-primary rounded-full w-12 h-12 shadow-lg flex items-center justify-center hover:bg-white transition"
+                        aria-label="Nächstes Bild"
+                    >
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary/80 text-white px-4 py-2 rounded-full text-sm">
+                        <span id="slider-current">1</span> / {{ property.gallery.length }}
+                    </div>
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+            {% elif property.image %}
             <div class="bg-white rounded-lg shadow-xl overflow-hidden mb-8">
                 <img
                     src="{{ property.image }}"
                     alt="{{ property.title }}"
                     class="w-full h-[480px] object-cover"
                 >
-            </div>
-            {% endif %}
-
-            {% if property.gallery and property.gallery.length %}
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                {% for image in property.gallery %}
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img
-                        src="{{ image }}"
-                        alt="{{ property.title }}"
-                        class="w-full h-48 object-cover"
-                    >
-                </div>
-                {% endfor %}
             </div>
             {% endif %}
 
@@ -92,6 +120,7 @@ permalink: "angebote/{{ property.slug }}/index.html"
                     {% for feature in property.features %}
                     <div class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-accent mr-3"></i>
+
                         <span>
                             {{ feature.label }}{% if feature.value and feature.value != "Ja" %}: {{ feature.value }}{% endif %}
                         </span>
@@ -113,16 +142,15 @@ permalink: "angebote/{{ property.slug }}/index.html"
 
                 {% if property.details and property.details.length %}
                 <div class="space-y-4 text-gray-700">
-
                     {% for detail in property.details %}
                     <div class="flex justify-between gap-6 border-b pb-3">
                         <span>{{ detail.label }}</span>
+
                         <strong class="text-right">
                             {{ detail.value }}
                         </strong>
                     </div>
                     {% endfor %}
-
                 </div>
                 {% endif %}
 
@@ -141,3 +169,42 @@ permalink: "angebote/{{ property.slug }}/index.html"
     </div>
 
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll(".property-slide");
+    const prevButton = document.getElementById("slider-prev");
+    const nextButton = document.getElementById("slider-next");
+    const currentLabel = document.getElementById("slider-current");
+
+    if (!slides.length) return;
+
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        slides[currentIndex].classList.remove("opacity-100");
+        slides[currentIndex].classList.add("opacity-0");
+
+        currentIndex = (index + slides.length) % slides.length;
+
+        slides[currentIndex].classList.remove("opacity-0");
+        slides[currentIndex].classList.add("opacity-100");
+
+        if (currentLabel) {
+            currentLabel.textContent = currentIndex + 1;
+        }
+    }
+
+    if (prevButton) {
+        prevButton.addEventListener("click", function () {
+            showSlide(currentIndex - 1);
+        });
+    }
+
+    if (nextButton) {
+        nextButton.addEventListener("click", function () {
+            showSlide(currentIndex + 1);
+        });
+    }
+});
+</script>
