@@ -20,6 +20,7 @@ module.exports = async function () {
     }
 
     const data = await response.json();
+    console.log("PROPSTACK RESPONSE:", JSON.stringify(data).slice(0, 2000));
 
     return {
       properties: data.objects || data.data || data || []
