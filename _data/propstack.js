@@ -1,21 +1,19 @@
-function formatPrice(value) {
-    const number = toNumber(value);
-    if (number === null) return null;
+function cleanValue(value) {
+    if (value === null || value === undefined) return null;
 
-    return new Intl.NumberFormat("de-DE", {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    }).format(number) + " €";
-}
+    if (typeof value === "object") {
+        value = value.name || value.label || value.value || value.pretty_value || null;
+    }
 
-function formatNumber(value, suffix = "") {
-    const number = toNumber(value);
-    if (number === null) return null;
+    if (value === null || value === undefined) return null;
 
-    return new Intl.NumberFormat("de-DE", {
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 2
-    }).format(number) + suffix;
+    const text = String(value).trim();
+
+    if (!text || text === "0" || text === "-" || text.toLowerCase() === "null" || text.toLowerCase() === "undefined") {
+        return null;
+    }
+
+    return value;
 }
 
 function toNumber(value) {
@@ -26,38 +24,29 @@ function toNumber(value) {
     }
 
     const number = Number(value);
-
-    if (Number.isNaN(number)) return null;
-    if (number === 0) return null;
+    if (Number.isNaN(number) || number === 0) return null;
 
     return number;
 }
 
-function cleanValue(value) {
-    if (value === null || value === undefined) return null;
+function formatPrice(value) {
+    const number = toNumber(value);
+    if (!number) return null;
 
-    if (typeof value === "object") {
-        value =
-            value.name ||
-            value.label ||
-            value.value ||
-            value.pretty_value ||
-            value.formatted_value ||
-            null;
-    }
+    return new Intl.NumberFormat("de-DE", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    }).format(number) + " €";
+}
 
-    if (value === null || value === undefined) return null;
+function formatNumber(value, suffix = "") {
+    const number = toNumber(value);
+    if (!number) return null;
 
-    const text = String(value).trim();
-
-    if (!text) return null;
-    if (text === "0") return null;
-    if (text === "-") return null;
-    if (text.toLowerCase() === "null") return null;
-    if (text.toLowerCase() === "undefined") return null;
-    if (text.toLowerCase() === "keine angabe") return null;
-
-    return value;
+    return new Intl.NumberFormat("de-DE", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 2
+    }).format(number) + suffix;
 }
 
 function slugify(text) {
@@ -75,51 +64,34 @@ function getImageUrl(image) {
     if (!image) return null;
     if (typeof image === "string") return image;
 
-    return (
-        image.url ||
-        image.file_url ||
-        image.original_url ||
-        image.large_url ||
-        image.medium_url ||
-        image.small_url ||
-        image.thumb_url ||
-        image.download_url ||
-        null
-    );
+    return image.url || image.file_url || image.original_url || image.large_url || image.medium_url || image.preview_url || image.thumb_url || null;
 }
 
 function getImages(property) {
-    const possibleImages = [
+    const images = [
         ...(property.images || []),
         ...(property.pictures || []),
         ...(property.photos || []),
-        ...(property.media || []),
-        ...(property.documents || [])
+        ...(property.media || [])
     ];
 
-    return possibleImages
-        .filter(img => img && img.is_private !== true && img.private !== true)
+    return images
         .map(img => ({
             url: getImageUrl(img),
-            title: img.title || img.name || property.name || property.title || "Immobilie"
+            title: img.title || img.name || property.name || "Immobilie"
         }))
         .filter(img => img.url);
 }
 
 function addField(list, label, value) {
     const cleaned = cleanValue(value);
-
     if (!cleaned) return;
 
-    const cleanedText = String(cleaned).trim();
+    const text = String(cleaned).trim();
+    if (text.toLowerCase() === label.toLowerCase()) return;
+    if (text.toLowerCase() === `${label} ca.`.toLowerCase()) return;
 
-    if (cleanedText.toLowerCase() === label.toLowerCase()) return;
-    if (cleanedText.toLowerCase() === `${label} ca.`.toLowerCase()) return;
-
-    list.push({
-        label,
-        value: cleaned
-    });
+    list.push({ label, value: cleaned });
 }
 
 function addPrice(list, label, value) {
@@ -132,15 +104,27 @@ function addArea(list, label, value) {
     if (formatted) list.push({ label, value: formatted });
 }
 
-function addBoolean(list, label, value) {
-    if (value === true || value === "true" || value === 1 || value === "1") {
-        list.push({ label, value: "Ja" });
+async function fetchPropstack(url, apiKey) {
+    const response = await fetch(url, {
+        headers: {
+            "X-API-KEY": apiKey,
+            "Accept": "application/json"
+        }
+    });
+
+    const text = await response.text();
+
+    try {
+        return JSON.parse(text);
+    } catch {
+        console.warn("Propstack Antwort war kein JSON:", text.slice(0, 300));
+        return null;
     }
 }
 
 module.exports = async function () {
     const apiKey = process.env.PROPSTACK_API_KEY;
-    const baseUrl = process.env.PROPSTACK_API_BASE || "https://api.propstack.de/v1";
+    const baseUrl = process.env.PROPSTACK_API_BASE || "https://crm.propstack.de/api/v1";
 
     if (!apiKey) {
         console.warn("PROPSTACK_API_KEY fehlt.");
@@ -148,31 +132,29 @@ module.exports = async function () {
     }
 
     try {
-        const response = await fetch(`${baseUrl}/properties`, {
-            headers: {
-                "X-API-KEY": apiKey,
-                "Accept": "application/json"
-            }
-        });
+        let json = await fetchPropstack(`${baseUrl}/properties`, apiKey);
 
-        if (!response.ok) {
-            console.warn("Propstack API Fehler:", response.status, await response.text());
-            return { properties: [] };
-        }
-
-        const json = await response.json();
-
-        const rawProperties =
-            json.data ||
-            json.properties ||
-            json.objects ||
-            json.units ||
-            json ||
+        let rawProperties =
+            json?.data ||
+            json?.properties ||
+            json?.objects ||
             [];
 
-        const properties = Array.isArray(rawProperties) ? rawProperties : [];
+        if (!Array.isArray(rawProperties) || rawProperties.length === 0) {
+            json = await fetchPropstack(`${baseUrl}/objects`, apiKey);
 
-        const cleaned = properties.map(property => {
+            rawProperties =
+                json?.data ||
+                json?.properties ||
+                json?.objects ||
+                [];
+        }
+
+        if (!Array.isArray(rawProperties)) {
+            rawProperties = [];
+        }
+
+        const properties = rawProperties.map(property => {
             const title =
                 cleanValue(property.title) ||
                 cleanValue(property.name) ||
@@ -182,8 +164,7 @@ module.exports = async function () {
             const priceRaw =
                 cleanValue(property.purchase_price) ||
                 cleanValue(property.price) ||
-                cleanValue(property.marketing_price?.value) ||
-                cleanValue(property.marketing_price);
+                cleanValue(property.marketing_price?.value);
 
             const livingSpaceRaw =
                 cleanValue(property.living_space) ||
@@ -199,48 +180,26 @@ module.exports = async function () {
             addArea(details, "Wohnfläche", property.living_space || property.living_area);
             addArea(details, "Grundstücksfläche", property.plot_area || property.land_area);
             addArea(details, "Nutzfläche", property.usable_area);
-            addArea(details, "Balkon/Terrasse Fläche", property.balcony_area);
-            addArea(details, "Gartenfläche", property.garden_area);
 
             addField(details, "Zimmer", property.rooms || property.number_of_rooms);
             addField(details, "Schlafzimmer", property.bedrooms);
             addField(details, "Badezimmer", property.bathrooms);
             addField(details, "Etage", property.floor);
             addField(details, "Etagenzahl", property.floors || property.number_of_floors);
-            addField(details, "Etagenlage", property.floor_position);
-
             addField(details, "Objektart", property.property_type || property.object_type || property.category);
             addField(details, "Vermarktung", property.marketing_type || property.rs_type || property.offer_type);
             addField(details, "Objektzustand", property.condition);
             addField(details, "Verfügbar ab", property.available_from);
-            addField(details, "Letzte Modernisierung", property.last_modernization);
-            addField(details, "Qualität der Ausstattung", property.furnishing_quality);
-            addField(details, "Anzahl Parkplätze", property.parking_space_count || property.number_of_parking_spaces);
-            addField(details, "Stellplatztyp", property.parking_space_type);
             addField(details, "Baujahr", property.construction_year || property.building_year);
-
-            addField(details, "Energieausweistyp", property.energy_certificate_type);
             addField(details, "Energieeffizienzklasse", property.energy_efficiency_class || property.energy_class);
-            addField(details, "Energieverbrauchswert", property.energy_consumption);
             addField(details, "Heizungsart", property.heating_type);
-            addField(details, "Wesentlicher Energieträger", property.main_energy_source);
 
             const features = [];
-
-            addBoolean(features, "Aufzug", property.has_elevator);
-            addBoolean(features, "Keller", property.has_cellar);
-            addBoolean(features, "Einbauküche", property.has_built_in_kitchen);
-            addBoolean(features, "Balkon/Terrasse", property.has_balcony);
-            addBoolean(features, "Garten", property.has_garden);
-            addBoolean(features, "Kamin", property.has_fireplace);
-            addBoolean(features, "Sauna", property.has_sauna);
-            addBoolean(features, "Barrierefrei", property.is_barrier_free);
-
-            addField(features, "Bad", property.bathroom_type);
+            addField(features, "Ausstattung", property.furnishing_description || property.equipment_description);
             addField(features, "Bodenbelag", property.flooring_type);
+            addField(features, "Bad", property.bathroom_type);
 
             const descriptions = [];
-
             addField(descriptions, "Objektbeschreibung", property.description || property.public_description || property.long_description);
             addField(descriptions, "Lage", property.location_description);
             addField(descriptions, "Ausstattung", property.furnishing_description || property.equipment_description);
@@ -255,14 +214,13 @@ module.exports = async function () {
                 title,
 
                 city: cleanValue(property.city),
-                location: cleanValue(property.city) || "Deutschland",
+                location: cleanValue(property.city),
 
                 marketing_type: cleanValue(property.marketing_type || property.rs_type || property.offer_type),
                 property_type: cleanValue(property.property_type || property.object_type || property.category),
 
                 price_raw: toNumber(priceRaw),
                 price: formatPrice(priceRaw),
-                price_per_sqm: property.price_per_sqm ? formatPrice(property.price_per_sqm) : null,
 
                 living_space: formatNumber(livingSpaceRaw, " m²"),
                 rooms: cleanValue(property.rooms || property.number_of_rooms),
@@ -280,14 +238,12 @@ module.exports = async function () {
             };
         });
 
-        return {
-            properties: cleaned
-        };
+        console.log("PROPSTACK OBJEKTE:", properties.length);
+
+        return { properties };
 
     } catch (error) {
         console.warn("Propstack Verbindung fehlgeschlagen:", error.message);
-        return {
-            properties: []
-        };
+        return { properties: [] };
     }
 };
