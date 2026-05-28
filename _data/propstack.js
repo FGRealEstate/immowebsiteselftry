@@ -1,137 +1,96 @@
 module.exports = async function () {
+  const apiKey = process.env.PROPSTACK_API_KEY;
 
-    const apiKey = process.env.PROPSTACK_API_KEY;
-    const baseUrl = process.env.PROPSTACK_API_BASE || "https://crm.propstack.de/api/v1";
+  if (!apiKey) {
+    return { properties: [] };
+  }
 
-    if (!apiKey) {
-        console.warn("PROPSTACK_API_KEY fehlt.");
+  function clean(value) {
+    if (!value) return "";
+    if (typeof value === "object") {
+      return value.pretty_value || value.value || value.name || "";
+    }
+    return value;
+  }
 
-        return {
-            properties: []
-        };
+  function slugify(text) {
+    return String(text || "immobilie")
+      .toLowerCase()
+      .replace(/ä/g, "ae")
+      .replace(/ö/g, "oe")
+      .replace(/ü/g, "ue")
+      .replace(/ß/g, "ss")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
+  }
+
+  try {
+    const response = await fetch(
+      "https://api.propstack.de/v1/units?with_meta=1&expand=1&archived=-1",
+      {
+        headers: {
+          "X-API-KEY": apiKey,
+          "Accept": "application/json"
+        }
+      }
+    );
+
+    if (!response.ok) {
+      console.warn("Propstack API Fehler:", response.status, await response.text());
+      return { properties: [] };
     }
 
-    try {
+    const data = await response.json();
+    const rawProperties = data.data || [];
 
-        const response = await fetch(`${baseUrl}/properties`, {
-            headers: {
-                "X-API-KEY": apiKey,
-                "Content-Type": "application/json"
-            }
-        });
+    const properties = rawProperties.map((property) => {
+      const title = property.name || property.title || "Immobilie";
+      const slug = slugify(`${title}-${property.id}`);
 
-        const rawText = await response.text();
+      const image =
+        property.title_picture_url ||
+        property.cover_picture_url ||
+        property.image_url ||
+        property.images?.[0]?.url ||
+        property.pictures?.[0]?.url ||
+        "/images/placeholder.jpg";
 
-        console.log("PROPSTACK RAW RESPONSE:", rawText.slice(0, 500));
+      return {
+        id: property.id,
+        slug,
+        url: `/angebote/${slug}/`,
 
-        const data = JSON.parse(rawText);
+        title,
+        address: property.short_address || property.address || "Adresse auf Anfrage",
+        city: property.city || "",
+        zipcode: property.zipcode || "",
 
-        const rawProperties = data.properties || data.data || [];
+        marketing_type: clean(property.marketing_type) || clean(property.rs_type) || "Immobilie",
+        property_type: clean(property.property_type) || clean(property.object_type) || clean(property.category),
 
-        const properties = rawProperties.map(property => {
+        price: clean(property.purchase_price) || clean(property.price) || clean(property.cold_rent),
+        living_space: clean(property.living_space) || clean(property.surface) || clean(property.area),
+        rooms: clean(property.number_of_rooms) || clean(property.rooms),
+        construction_year: clean(property.construction_year) || clean(property.building_year),
 
-            const slug =
-                (property.name || "immobilie")
-                    .toLowerCase()
-                    .replace(/ä/g, "ae")
-                    .replace(/ö/g, "oe")
-                    .replace(/ü/g, "ue")
-                    .replace(/ß/g, "ss")
-                    .replace(/[^a-z0-9]+/g, "-")
-                    .replace(/^-|-$/g, "");
+        description:
+          property.description ||
+          property.public_description ||
+          property.long_description ||
+          "",
 
-            return {
+        image,
+        gallery: property.images || property.pictures || [],
+        raw: property
+      };
+    });
 
-                id: property.id,
+    console.log("PROPSTACK OBJEKTE:", properties.length);
 
-                slug: slug,
+    return { properties };
 
-                url: `/angebote/${slug}/`,
-
-                title:
-                    property.name ||
-                    property.title ||
-                    "Immobilie",
-
-                address:
-                    property.short_address ||
-                    property.address ||
-                    "",
-
-                city:
-                    property.city ||
-                    "",
-
-                zipcode:
-                    property.zipcode ||
-                    "",
-
-                marketing_type:
-                    property.marketing_type ||
-                    property.offer_type ||
-                    "",
-
-                property_type:
-                    property.property_type ||
-                    property.object_type ||
-                    "",
-
-                price:
-                    property.purchase_price?.value ||
-                    property.purchase_price ||
-                    property.price?.value ||
-                    property.price ||
-                    "",
-
-                living_space:
-                    property.living_space?.value ||
-                    property.living_space ||
-                    "",
-
-                rooms:
-                    property.number_of_rooms?.value ||
-                    property.number_of_rooms ||
-                    "",
-
-                construction_year:
-                    property.construction_year?.value ||
-                    property.construction_year ||
-                    "",
-
-                description:
-                    property.description ||
-                    property.public_description ||
-                    "",
-
-                image:
-                    property.title_picture_url ||
-                    property.cover_picture_url ||
-                    property.image_url ||
-                    "/images/placeholder.jpg",
-
-                gallery:
-                    property.pictures ||
-                    property.images ||
-                    [],
-
-                raw: property
-
-            };
-
-        });
-
-        console.log("PROPSTACK OBJEKTE:", properties.length);
-
-        return {
-            properties
-        };
-
-    } catch (error) {
-
-        console.warn("Propstack Verbindung fehlgeschlagen:", error.message);
-
-        return {
-            properties: []
-        };
-    }
+  } catch (error) {
+    console.warn("Propstack Verbindung fehlgeschlagen:", error.message);
+    return { properties: [] };
+  }
 };
