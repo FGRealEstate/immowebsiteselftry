@@ -1,29 +1,50 @@
 module.exports = async function () {
   const apiKey = process.env.PROPSTACK_API_KEY;
 
+  if (!apiKey) {
+    console.warn("PROPSTACK_API_KEY fehlt.");
+    return { properties: [] };
+  }
+
   try {
-    const response = await fetch("https://api.propstack.de/v1/objects", {
+    const response = await fetch("https://crm.propstack.de/api/v1/objects?limit=20", {
       headers: {
         "X-API-KEY": apiKey,
         "Accept": "application/json"
       }
     });
 
-    const text = await response.text();
+    if (!response.ok) {
+      console.warn(
+        "Propstack API Fehler:",
+        response.status,
+        await response.text()
+      );
 
-    console.log("PROPSTACK RAW RESPONSE:", text.slice(0, 500));
+      return { properties: [] };
+    }
 
-    const data = JSON.parse(text);
+    const data = await response.json();
+
+    console.log(
+      "PROPSTACK RAW RESPONSE:",
+      JSON.stringify(data).slice(0, 3000)
+    );
 
     return {
-      properties: data.objects || data.data || []
+      properties:
+        data.objects ||
+        data.data ||
+        data.results ||
+        []
     };
 
   } catch (error) {
-    console.log("PROPSTACK ERROR:", error.message);
+    console.warn(
+      "Propstack Verbindung fehlgeschlagen:",
+      error.message
+    );
 
-    return {
-      properties: []
-    };
+    return { properties: [] };
   }
 };
