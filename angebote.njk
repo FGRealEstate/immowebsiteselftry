@@ -4,167 +4,173 @@ title: Angebote – Das Team von Fischer & Geserich Real Estate
 permalink: angebote.html
 ---
 
-    <section class="bg-primary text-white py-16 md:py-24">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-5xl font-extrabold mb-3">
-                Aktuelle Immobilien-Angebote
-            </h1>
-            <p class="text-lg md:text-xl font-light text-secondary max-w-4xl mx-auto">
-                Ob Eigentumswohnung, Mehrfamilienhaus oder Grundstück – wir vermarkten Immobilien mit maximaler Reichweite und Effizienz.
-            </p>
-        </div>
-    </section>
+<section class="bg-primary text-white py-16 md:py-24">
+    <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-3">
+            Aktuelle Immobilien-Angebote
+        </h1>
+        <p class="text-lg md:text-xl font-light text-secondary max-w-4xl mx-auto">
+            Ob Eigentumswohnung, Mehrfamilienhaus oder Grundstück – wir vermarkten Immobilien mit maximaler Reichweite und Effizienz.
+        </p>
+    </div>
+</section>
 
-    <section id="angebote" class="container mx-auto px-4 py-16">
-        <div class="bg-white p-6 rounded-lg shadow-xl mb-10 border-t-4 border-accent">
-            <h2 class="text-2xl font-bold mb-4 text-primary">Ihre Immobiliensuche</h2>
-    
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                
-                <select id="filter-vermarktung" class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
-                    <option value="">Vermarktungsart (Alle)</option>
-                    <option value="Kauf">Kauf</option>
-                    <option value="Miete">Miete</option>
-                </select>
+<section id="angebote" class="container mx-auto px-4 py-16">
 
-                <select id="filter-objektart" class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
-                    <option value="">Objektart (Alle)</option>
-                    <option value="Wohnung">Wohnung</option>
-                    <option value="Einfamilienhaus">Einfamilienhaus</option>
-                    <option value="Mehrfamilienhaus">Mehrfamilienhaus</option>
-                    <option value="Grundstück">Grundstück</option>
-                    <option value="Gewerbe">Gewerbe</option>
-                </select>
-
-                <input type="number" id="filter-preis" placeholder="Max. Kaufpreis (€)" class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
-                
-                <button id="filter-button" class="btn-85 text-primary font-bold rounded py-3 hover:bg-primary hover:text-white transition duration-300 w-full">
-                    <i class="fas fa-search mr-2"></i> Suchen
-                </button>
-            </div>
-        </div>
-    
-        <h2 class="text-3xl font-bold mb-8 text-primary border-b-2 border-secondary pb-2">
-            Aktuelle Objekte ({{ propstack.properties | length }})
+    <div class="bg-white p-6 rounded-lg shadow-xl mb-10 border-t-4 border-accent">
+        <h2 class="text-2xl font-bold mb-4 text-primary">
+            Ihre Immobiliensuche
         </h2>
-        
-        {% if collections.immobilien %}
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    
-            {% for post in collections.immobilien %}
-                        <div class="immobilien-kachel bg-white rounded-lg shadow-xl overflow-hidden"
-                             data-vermarktung="{{ post.data.vermarktungsart }}" 
-                             data-objektart="{{ post.data.objektart }}"
-                             data-ort="{{ post.data.ort }}"
-                             data-preis="{{ post.data.preis }}">
-                             
-                            <a href="{{ post.url }}">
-                                <img src="{{ post.data.hauptbild }}" alt="Hauptbild von {{ post.data.titel }}" class="w-full h-48 object-cover transition duration-300 hover:scale-105">
-                            </a>
-             
-                            <div class="p-5">
-                                <div class="flex justify-between items-center mb-2">
-                                    <span class="inline-block bg-secondary text-primary text-xs font-semibold px-3 py-1 rounded-full">{{ post.data.status }}</span>
-                                    {% if post.data.provision %}
-                                    <span class="text-xs text-gray-500 font-semibold">Prov: {{ post.data.provision }}</span>
-                                    {% endif %}
-                                </div>
-                                
-                                <h3 class="text-xl font-bold text-primary mb-1 truncate">{{ post.data.titel }}</h3>
-                                <p class="text-sm text-gray-600 mb-3"><i class="fas fa-map-marker-alt mr-1 text-accent"></i> {{ post.data.ort }}</p>
-                
-                                <p class="text-2xl font-extrabold text-gold-gradient with-shadow mb-4">€ {{ post.data.preis }}</p>
-                                
-                                <div class="flex justify-between text-sm text-gray-600 mb-6 border-t border-gray-100 pt-3">
-                                    <span><i class="fas fa-ruler-combined mr-1 text-accent"></i> {{ post.data.eckdaten.flaeche }} m²</span>
-                                    <span><i class="fas fa-bed mr-1 text-accent"></i> {{ post.data.eckdaten.zimmer }} Zi.</span>
-                                    <span><i class="fas fa-calendar-alt mr-1 text-accent"></i> {{ post.data.eckdaten.baujahr }}</span>
-                                </div>
-                                
-                                <a href="{{ post.url }}" class="btn-85 block text-center text-primary font-bold py-2 rounded-lg transition duration-300">
-                                    Mehr erfahren
-                                </a>
-                            </div>
-                        </div>
-                        {% endfor %}
-        </div>
-        {% else %}
-            <div class="text-center py-12">
-                <p class="text-xl text-gray-600 mb-4">Aktuell sind keine Immobilienangebote online verfügbar.</p>
-                <p class="text-gray-500">Kontaktieren Sie uns direkt für Off-Market Angebote.</p>
-            </div>
-        {% endif %}
-        
-    </section>
 
-    <section id="maklerei" class="bg-gray-100 py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-10 text-primary">
-                Ihre Vorteile im Vertrieb mit Fischer & Geserich
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+
+            <select id="filter-vermarktung" class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
+                <option value="">Vermarktungsart (Alle)</option>
+                <option value="Kauf">Kauf</option>
+                <option value="Miete">Miete</option>
+            </select>
+
+            <select id="filter-objektart" class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
+                <option value="">Objektart (Alle)</option>
+                <option value="Wohnung">Wohnung</option>
+                <option value="Einfamilienhaus">Einfamilienhaus</option>
+                <option value="Mehrfamilienhaus">Mehrfamilienhaus</option>
+                <option value="Grundstück">Grundstück</option>
+                <option value="Gewerbe">Gewerbe</option>
+            </select>
+
+            <input type="number" id="filter-preis" placeholder="Max. Kaufpreis (€)" class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
+
+            <button id="filter-button" class="btn-85 text-primary font-bold rounded py-3 hover:bg-primary hover:text-white transition duration-300 w-full">
+                <i class="fas fa-search mr-2"></i> Suchen
+            </button>
+
+        </div>
+    </div>
+
+    <h2 class="text-3xl font-bold mb-8 text-primary border-b-2 border-secondary pb-2">
+        Aktuelle Objekte ({{ propstack.properties | length }})
+    </h2>
+
+    {% if propstack.properties and propstack.properties.length %}
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        {% for property in propstack.properties %}
+
+        <div class="immobilien-kachel bg-white rounded-lg shadow-xl overflow-hidden p-5">
+
+            <h3 class="text-xl font-bold text-primary mb-4">
+                {{ property.name or property.title or property.object_number or "Immobilie" }}
+            </h3>
+
+            <pre style="font-size:12px; white-space:pre-wrap; overflow:auto; max-height:400px;">
+{{ property | dump }}
+            </pre>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    {% else %}
+
+    <div class="text-center py-12">
+        <p class="text-xl text-gray-600 mb-4">
+            Aktuell sind keine Propstack-Immobilien online verfügbar.
+        </p>
+
+        <p class="text-gray-500">
+            Bitte prüfen Sie die Propstack API-Verbindung.
+        </p>
+    </div>
+
+    {% endif %}
+
+</section>
+
+<section id="maklerei" class="bg-gray-100 py-16">
+    <div class="container mx-auto px-4">
+
+        <h2 class="text-3xl font-bold text-center mb-10 text-primary">
+            Ihre Vorteile im Vertrieb mit Fischer & Geserich
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+
+            <div>
+                <p class="text-lg text-gray-700 mb-6">
+                    Wir decken die gesamte Palette ab: vom klassischen Einfamilienhaus bis hin zu komplexen Projektentwicklungen. Unser Ziel ist die maximale Wertschöpfung für Sie, kombiniert mit einem schnellen und sicheren Verkaufsprozess.
+                </p>
+
+                <p class="text-lg text-gray-700 mb-8 font-semibold text-primary">
+                    Verlassen Sie sich auf unsere Expertise – deutschlandweit.
+                </p>
+
+                <a href="#cta-wertermittlung" class="btn-85 inline-block text-primary font-bold py-3 px-8 rounded-lg shadow-md transition duration-300">
+                    Wertermittlung anfordern
+                </a>
+            </div>
+
+            <ul class="space-y-4 text-lg text-gray-700">
+
+                <li class="flex items-start">
+                    <i class="fas fa-check-circle text-gold-gradient with-shadow mt-1 mr-3 text-xl"></i>
+                    Professionelle Immobilienbewertung zur Festlegung des optimalen Marktpreises.
+                </li>
+
+                <li class="flex items-start">
+                    <i class="fas fa-check-circle text-gold-gradient with-shadow mt-1 mr-3 text-xl"></i>
+                    Interner Bonitätscheck: Jeder Interessent wird vor der Besichtigung auf Bonität geprüft.
+                </li>
+
+                <li class="flex items-start">
+                    <i class="fas fa-check-circle text-gold-gradient with-shadow mt-1 mr-3 text-xl"></i>
+                    High-End-Vermarktung inklusive professioneller Fotos, Drohnenaufnahmen und Präsenz auf allen relevanten Portalen.
+                </li>
+
+                <li class="flex items-start">
+                    <i class="fas fa-check-circle text-gold-gradient with-shadow mt-1 mr-3 text-xl"></i>
+                    Effiziente Besichtigungen mit geprüften Interessenten und diskreter Abwicklung.
+                </li>
+
+                <li class="flex items-start">
+                    <i class="fas fa-check-circle text-gold-gradient with-shadow mt-1 mr-3 text-xl"></i>
+                    Vollständige Vertragsabwicklung bis hin zur Begleitung des Notartermins.
+                </li>
+
+                <li class="flex items-start">
+                    <i class="fas fa-check-circle text-gold-gradient with-shadow mt-1 mr-3 text-xl"></i>
+                    Wir vermarkten Ihre Immobilie auf Wunsch diskret und off-market – dank unseres Netzwerks aus geprüften Investoren ganz ohne öffentliche Inserate.
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</section>
+
+<section id="cta-gesuch" class="bg-primary py-16 md:py-24 border-t border-accent/20">
+
+    <div class="container mx-auto px-4 text-center">
+
+        <div class="max-w-4xl mx-auto">
+
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gold-gradient with-shadow">
+                Das passende Objekt nicht gefunden?
             </h2>
-      
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
 
-                <div>
-                    <p class="text-lg text-gray-700 mb-6">
-                        Wir decken die gesamte Palette ab: vom klassischen Einfamilienhaus bis hin zu komplexen Projektentwicklungen. Unser Ziel ist die maximale Wertschöpfung für Sie, kombiniert mit einem schnellen und sicheren Verkaufsprozess.
-                    </p>
-                    <p class="text-lg text-gray-700 mb-8 font-semibold text-primary">
-                        Verlassen Sie sich auf unsere Expertise – deutschlandweit.
-                    </p>
-                    <a href="#cta-wertermittlung" class="btn-85 inline-block text-primary font-bold py-3 px-8 rounded-lg shadow-md transition duration-300">
-                        Wertermittlung anfordern
-                    </a>
-                </div>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
 
-                <ul class="space-y-4 text-lg text-gray-700">
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-gold-gradient with-shadow mt-1 mr-3 text-xl"></i>
-                        Professionelle Immobilienbewertung zur Festlegung des optimalen Marktpreises.
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-gold-gradient with-shadow mt-1 mr-3 text-xl"></i>
-                        Interner Bonitätscheck: Jeder Interessent wird vor der Besichtigung auf Bonität geprüft.
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-gold-gradient with-shadow mt-1 mr-3 text-xl"></i>
-                        High-End-Vermarktung inklusive professioneller Fotos, Drohnenaufnahmen und Präsenz auf allen relevanten Portalen.
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-gold-gradient with-shadow mt-1 mr-3 text-xl"></i>
-                        Effiziente Besichtigungen mit geprüften Interessenten und diskreter Abwicklung.
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-gold-gradient with-shadow mt-1 mr-3 text-xl"></i>
-                        Vollständige Vertragsabwicklung bis hin zur Begleitung des Notartermins.
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-gold-gradient with-shadow mt-1 mr-3 text-xl"></i>
-                        Wir vermarkten Ihre Immobilie auf Wunsch diskret und off-market – dank unseres Netzwerks aus geprüften Investoren ganz ohne öffentliche Inserate.
-                    </li>
-                </ul>
+                <a href="index.html#kontakt" class="btn-85 inline-block font-bold py-4 px-10 text-lg rounded-lg shadow-xl transition duration-300 transform hover:scale-105">
+                    Jetzt Gesuch anlegen
+                </a>
+
             </div>
-        </div>
-    </section>
 
-    <section id="cta-gesuch" class="bg-primary py-16 md:py-24 border-t border-accent/20">
-        <div class="container mx-auto px-4 text-center">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-accent text-5xl mb-6">
-                </div>
-                
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gold-gradient with-shadow">
-                    Das passende Objekt nicht gefunden?
-                </h2>
-    
-              
-    
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="index.html#kontakt" class="btn-85 inline-block font-bold py-4 px-10 text-lg rounded-lg shadow-xl transition duration-300 transform hover:scale-105">
-                        Jetzt Gesuch anlegen
-                    </a>
-                </div>
-            </div>
         </div>
-    </section>
-    
+
+    </div>
+
+</section>
