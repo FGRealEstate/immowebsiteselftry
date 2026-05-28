@@ -1,10 +1,7 @@
 module.exports = async function () {
   const apiKey = process.env.PROPSTACK_API_KEY;
 
-  if (!apiKey) {
-    console.warn("PROPSTACK_API_KEY fehlt.");
-    return { properties: [] };
-  }
+  if (!apiKey) return { properties: [] };
 
   function clean(value) {
     if (value === null || value === undefined || value === "") return "";
@@ -23,8 +20,17 @@ module.exports = async function () {
     return value;
   }
 
-  function hasValue(value) {
-    return value !== null && value !== undefined && value !== "";
+  function isRealValue(label, value) {
+    const cleaned = String(clean(value)).trim();
+
+    if (!cleaned) return false;
+    if (cleaned === "-") return false;
+    if (cleaned.toLowerCase() === "keine angabe") return false;
+    if (cleaned.toLowerCase() === String(label).toLowerCase()) return false;
+    if (cleaned.toLowerCase().includes("null")) return false;
+    if (cleaned.toLowerCase().includes("undefined")) return false;
+
+    return true;
   }
 
   function slugify(text) {
@@ -39,23 +45,14 @@ module.exports = async function () {
   }
 
   function formatNumber(value, decimals = 2) {
-    if (!hasValue(value)) return "";
-
-    let number = value;
-
-    if (typeof value === "object") {
-      number = value.value || value.pretty_value || value.formatted_value;
-    }
+    let number = clean(value);
+    if (!number) return "";
 
     if (typeof number === "string") {
-      number = number
-        .replace(/\./g, "")
-        .replace(",", ".")
-        .replace(/[^\d.-]/g, "");
+      number = number.replace(/\./g, "").replace(",", ".").replace(/[^\d.-]/g, "");
     }
 
     number = Number(number);
-
     if (Number.isNaN(number)) return "";
 
     return number.toLocaleString("de-DE", {
@@ -75,74 +72,56 @@ module.exports = async function () {
   }
 
   function formatInteger(value) {
-    const formatted = formatNumber(value, 0);
-    return formatted || "";
+    return formatNumber(value, 0);
   }
 
-  function pushIfValue(list, label, value, suffix = "") {
-    const cleaned = clean(value);
-
-    if (hasValue(cleaned)) {
-      list.push({
-        label,
-        value: suffix ? `${cleaned} ${suffix}` : cleaned
-      });
+  function pushDetail(list, label, value) {
+    if (isRealValue(label, value)) {
+      list.push({ label, value: clean(value) });
     }
   }
 
-  function pushMoneyIfValue(list, label, value) {
+  function pushMoney(list, label, value) {
     const formatted = formatMoney(value);
-
-    if (formatted) {
-      list.push({
-        label,
-        value: formatted
-      });
-    }
+    if (formatted) list.push({ label, value: formatted });
   }
 
-  function pushAreaIfValue(list, label, value) {
+  function pushArea(list, label, value) {
     const formatted = formatArea(value);
-
-    if (formatted) {
-      list.push({
-        label,
-        value: formatted
-      });
-    }
+    if (formatted) list.push({ label, value: formatted });
   }
 
-  function pushBoolIfTrue(list, label, value) {
+  function pushBool(list, label, value) {
     if (value === true || value === "true" || value === 1 || value === "1") {
-      list.push({
-        label,
-        value: "Ja"
-      });
+      list.push({ label, value: "Ja" });
     }
   }
 
-  function firstImage(property) {
+  function getImageUrl(image) {
+    if (!image) return "";
+    if (typeof image === "string") return image;
+
     return (
-      property.title_picture_url ||
-      property.cover_picture_url ||
-      property.image_url ||
-      property.title_picture?.url ||
-      property.cover_picture?.url ||
-      property.images?.[0]?.url ||
-      property.pictures?.[0]?.url ||
-      "/images/placeholder.jpg"
+      image.url ||
+      image.src ||
+      image.original_url ||
+      image.large_url ||
+      image.medium_url ||
+      image.file_url ||
+      image.download_url ||
+      ""
     );
   }
 
-  function galleryImages(property) {
-    const images = property.images || property.pictures || [];
+  function getGallery(property) {
+    const rawImages = [
+      ...(property.images || []),
+      ...(property.pictures || []),
+      ...(property.photos || []),
+      ...(property.media || [])
+    ];
 
-    return images
-      .map((image) => {
-        if (typeof image === "string") return image;
-        return image.url || image.src || image.original_url || "";
-      })
-      .filter(Boolean);
+    return rawImages.map(getImageUrl).filter(Boolean);
   }
 
   try {
@@ -156,10 +135,7 @@ module.exports = async function () {
       }
     );
 
-    if (!response.ok) {
-      console.warn("Propstack API Fehler:", response.status, await response.text());
-      return { properties: [] };
-    }
+    if (!response.ok) return { properties: [] };
 
     const data = await response.json();
     const rawProperties = data.data || [];
@@ -168,158 +144,97 @@ module.exports = async function () {
       const title = property.name || property.title || property.heading || "Immobilie";
       const slug = slugify(`${title}-${property.id}`);
 
-      const price =
-        formatMoney(property.purchase_price) ||
-        formatMoney(property.price) ||
-        formatMoney(property.cold_rent) ||
-        formatMoney(property.warm_rent) ||
-        "";
+      const gallery = getGallery(property);
 
-      const livingSpace =
-        formatArea(property.living_space) ||
-        formatArea(property.surface) ||
-        formatArea(property.area) ||
-        "";
-
-      const rooms =
-        formatInteger(property.number_of_rooms) ||
-        formatInteger(property.rooms) ||
-        "";
-
-      const constructionYear =
-        clean(property.construction_year) ||
-        clean(property.building_year) ||
-        "";
-
-      const marketingType =
-        clean(property.marketing_type) ||
-        clean(property.rs_type) ||
-        clean(property.offer_type) ||
-        "";
-
-      const propertyType =
-        clean(property.property_type) ||
-        clean(property.object_type) ||
-        clean(property.category) ||
-        "";
-
-      const shortLocation =
-        clean(property.city) ||
-        clean(property.region) ||
-        "Deutschland";
+      const image =
+        gallery[0] ||
+        getImageUrl(property.title_picture) ||
+        getImageUrl(property.cover_picture) ||
+        property.title_picture_url ||
+        property.cover_picture_url ||
+        property.image_url ||
+        "/images/placeholder.jpg";
 
       const details = [];
+      pushMoney(details, "Kaufpreis", property.purchase_price);
+      pushMoney(details, "Preis/qm", property.price_per_sqm);
+      pushMoney(details, "Kaltmiete", property.cold_rent);
+      pushMoney(details, "Warmmiete", property.warm_rent);
+      pushMoney(details, "Nebenkosten", property.service_charges);
+      pushMoney(details, "Hausgeld/Monat", property.house_fee);
+      pushMoney(details, "Stellplatz-Preis", property.parking_space_price);
 
-      pushMoneyIfValue(details, "Kaufpreis", property.purchase_price);
-      pushMoneyIfValue(details, "Preis/qm", property.price_per_sqm);
-      pushMoneyIfValue(details, "Kaltmiete", property.cold_rent);
-      pushMoneyIfValue(details, "Warmmiete", property.warm_rent);
-      pushMoneyIfValue(details, "Nebenkosten", property.service_charges);
-      pushMoneyIfValue(details, "Hausgeld/Monat", property.house_fee);
-      pushMoneyIfValue(details, "Stellplatz-Preis", property.parking_space_price);
+      pushArea(details, "Wohnfläche", property.living_space);
+      pushArea(details, "Grundstücksfläche", property.plot_area);
+      pushArea(details, "Nutzfläche", property.usable_area);
+      pushArea(details, "Balkon/Terrasse Fläche", property.balcony_area);
+      pushArea(details, "Gartenfläche", property.garden_area);
 
-      pushAreaIfValue(details, "Wohnfläche", property.living_space);
-      pushAreaIfValue(details, "Grundstücksfläche", property.plot_area);
-      pushAreaIfValue(details, "Nutzfläche", property.usable_area);
-      pushAreaIfValue(details, "Balkon/Terrasse Fläche", property.balcony_area);
-      pushAreaIfValue(details, "Gartenfläche", property.garden_area);
+      pushDetail(details, "Zimmer", formatInteger(property.number_of_rooms || property.rooms));
+      pushDetail(details, "Schlafzimmer", property.bedrooms);
+      pushDetail(details, "Badezimmer", property.bathrooms);
+      pushDetail(details, "Etage", property.floor);
+      pushDetail(details, "Etagenzahl", property.number_of_floors);
+      pushDetail(details, "Etagenlage", property.floor_position);
 
-      pushIfValue(details, "Zimmer", rooms);
-      pushIfValue(details, "Schlafzimmer", property.bedrooms);
-      pushIfValue(details, "Badezimmer", property.bathrooms);
-      pushIfValue(details, "Etage", property.floor);
-      pushIfValue(details, "Etagenzahl", property.number_of_floors);
-      pushIfValue(details, "Etagenlage", property.floor_position);
+      pushDetail(details, "Objektart", property.property_type || property.object_type || property.category);
+      pushDetail(details, "Vermarktung", property.marketing_type || property.rs_type || property.offer_type);
+      pushDetail(details, "Objektzustand", property.condition);
+      pushDetail(details, "Verfügbar ab", property.available_from);
+      pushDetail(details, "Letzte Modernisierung", property.last_modernization);
+      pushDetail(details, "Qualität der Ausstattung", property.furnishing_quality);
+      pushDetail(details, "Anzahl Parkplätze", property.number_of_parking_spaces);
+      pushDetail(details, "Stellplatztyp", property.parking_space_type);
+      pushDetail(details, "Baujahr", property.construction_year || property.building_year);
 
-      pushIfValue(details, "Objektart", propertyType);
-      pushIfValue(details, "Vermarktung", marketingType);
-      pushIfValue(details, "Objektzustand", property.condition);
-      pushIfValue(details, "Verfügbar ab", property.available_from);
-      pushIfValue(details, "Letzte Modernisierung", property.last_modernization);
-      pushIfValue(details, "Qualität der Ausstattung", property.furnishing_quality);
-      pushIfValue(details, "Anzahl Parkplätze", property.number_of_parking_spaces);
-      pushIfValue(details, "Stellplatztyp", property.parking_space_type);
-      pushIfValue(details, "Baujahr", constructionYear);
-
-      pushIfValue(details, "Energieausweistyp", property.energy_certificate_type);
-      pushIfValue(details, "Energieeffizienzklasse", property.energy_efficiency_class);
-      pushIfValue(details, "Energieverbrauchswert", property.energy_consumption);
-      pushIfValue(details, "Heizungsart", property.heating_type);
-      pushIfValue(details, "Wesentlicher Energieträger", property.main_energy_source);
-      pushIfValue(details, "Baujahr Anlagentechnik", property.energy_construction_year);
+      pushDetail(details, "Energieausweistyp", property.energy_certificate_type);
+      pushDetail(details, "Energieeffizienzklasse", property.energy_efficiency_class);
+      pushDetail(details, "Energieverbrauchswert", property.energy_consumption);
+      pushDetail(details, "Heizungsart", property.heating_type);
+      pushDetail(details, "Wesentlicher Energieträger", property.main_energy_source);
 
       const features = [];
-
-      pushBoolIfTrue(features, "Aufzug", property.has_elevator);
-      pushBoolIfTrue(features, "Keller", property.has_cellar);
-      pushBoolIfTrue(features, "Einbauküche", property.has_built_in_kitchen);
-      pushBoolIfTrue(features, "Loggia", property.has_loggia);
-      pushBoolIfTrue(features, "Denkmalschutz", property.is_monument);
-      pushBoolIfTrue(features, "Abstellraum", property.has_storage_room);
-      pushBoolIfTrue(features, "Pool", property.has_pool);
-      pushBoolIfTrue(features, "Alarmanlage", property.has_alarm_system);
-      pushBoolIfTrue(features, "Klimaanlage", property.has_air_conditioning);
-      pushBoolIfTrue(features, "Barrierefrei", property.is_barrier_free);
-      pushBoolIfTrue(features, "Gäste-WC", property.has_guest_wc);
-      pushBoolIfTrue(features, "Balkon/Terrasse", property.has_balcony);
-      pushBoolIfTrue(features, "Garten", property.has_garden);
-      pushBoolIfTrue(features, "Kamin", property.has_fireplace);
-      pushBoolIfTrue(features, "Sauna", property.has_sauna);
-      pushBoolIfTrue(features, "Wintergarten", property.has_winter_garden);
-
-      pushIfValue(features, "Bad", property.bathroom_type);
-      pushIfValue(features, "Bodenbelag", property.flooring_type);
+      pushBool(features, "Aufzug", property.has_elevator);
+      pushBool(features, "Keller", property.has_cellar);
+      pushBool(features, "Einbauküche", property.has_built_in_kitchen);
+      pushBool(features, "Balkon/Terrasse", property.has_balcony);
+      pushBool(features, "Garten", property.has_garden);
+      pushBool(features, "Kamin", property.has_fireplace);
+      pushBool(features, "Sauna", property.has_sauna);
+      pushBool(features, "Barrierefrei", property.is_barrier_free);
+      pushDetail(features, "Bad", property.bathroom_type);
+      pushDetail(features, "Bodenbelag", property.flooring_type);
 
       const descriptions = [];
-
-      pushIfValue(descriptions, "Objektbeschreibung", property.description);
-      pushIfValue(descriptions, "Objektbeschreibung", property.public_description);
-      pushIfValue(descriptions, "Objektbeschreibung", property.long_description);
-      pushIfValue(descriptions, "Lage", property.location_description);
-      pushIfValue(descriptions, "Ausstattung", property.furnishing_description);
-      pushIfValue(descriptions, "Sonstiges", property.other_description);
+      pushDetail(descriptions, "Objektbeschreibung", property.description || property.public_description || property.long_description);
+      pushDetail(descriptions, "Lage", property.location_description);
+      pushDetail(descriptions, "Ausstattung", property.furnishing_description);
+      pushDetail(descriptions, "Sonstiges", property.other_description);
 
       return {
         id: property.id,
         slug,
         url: `/angebote/${slug}/`,
-
         title,
-        image: firstImage(property),
-        gallery: galleryImages(property),
-
-        // Adresse wird absichtlich NICHT öffentlich ausgegeben
-        location: shortLocation,
-
-        marketing_type: marketingType,
-        property_type: propertyType,
-
-        price,
-        living_space: livingSpace,
-        rooms,
-        construction_year: constructionYear,
-
+        image,
+        gallery,
+        location: clean(property.city) || clean(property.region) || "Deutschland",
+        marketing_type: clean(property.marketing_type || property.rs_type || property.offer_type),
+        property_type: clean(property.property_type || property.object_type || property.category),
+        price: formatMoney(property.purchase_price || property.price || property.cold_rent),
+        living_space: formatArea(property.living_space),
+        rooms: formatInteger(property.number_of_rooms || property.rooms),
+        construction_year: clean(property.construction_year || property.building_year),
         details,
         features,
         descriptions,
-
-        request_url: `/objekt-anfragen.html?object_id=${property.id}&object=${encodeURIComponent(title)}`,
-
-        raw: property
+        request_url: `/objekt-anfragen.html?object_id=${property.id}&object=${encodeURIComponent(title)}`
       };
     });
 
-    console.log("PROPSTACK OBJEKTE:", properties.length);
-
-    return {
-      properties
-    };
-
+    return { properties };
   } catch (error) {
     console.warn("Propstack Verbindung fehlgeschlagen:", error.message);
-
-    return {
-      properties: []
-    };
+    return { properties: [] };
   }
 };
