@@ -1,6 +1,6 @@
 module.exports = async function () {
   const apiKey = process.env.PROPSTACK_API_KEY;
-  const baseUrl = process.env.PROPSTACK_API_BASE || "https://api.propstack.de/v1";
+  const baseUrl = "https://crm.propstack.de/api/v1";
 
   if (!apiKey) {
     console.warn("PROPSTACK_API_KEY fehlt.");
@@ -8,7 +8,7 @@ module.exports = async function () {
   }
 
   try {
-    const response = await fetch(`${baseUrl}/objects`, {
+    const response = await fetch(``${baseUrl}/properties``, {
       headers: {
         "X-API-KEY": apiKey
       }
