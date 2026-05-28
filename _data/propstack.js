@@ -8,7 +8,7 @@ module.exports = async function () {
   }
 
   try {
-    const response = await fetch(``${baseUrl}/properties``, {
+    const response = await fetch(`${baseUrl}/properties`, {
       headers: {
         "X-API-KEY": apiKey
       }
