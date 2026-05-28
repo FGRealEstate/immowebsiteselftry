@@ -9,18 +9,24 @@ permalink: "angebote/{{ property.slug }}/index.html"
 
 <section class="bg-primary text-white py-16 md:py-24">
     <div class="container mx-auto px-4 text-center">
-        <p class="text-secondary mb-3">
-            Immobilienangebot
+
+        {% if property.marketing_type or property.property_type %}
+        <p class="text-secondary mb-3 font-semibold">
+            {{ property.marketing_type }}{% if property.marketing_type and property.property_type %} · {% endif %}{{ property.property_type }}
         </p>
+        {% endif %}
 
         <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
             {{ property.title }}
         </h1>
 
+        {% if property.location %}
         <p class="text-lg text-secondary">
             <i class="fas fa-map-marker-alt mr-2"></i>
-            {{ property.address or "Adresse auf Anfrage" }}
+            {{ property.location }}
         </p>
+        {% endif %}
+
     </div>
 </section>
 
@@ -30,6 +36,7 @@ permalink: "angebote/{{ property.slug }}/index.html"
 
         <div class="lg:col-span-2">
 
+            {% if property.image %}
             <div class="bg-white rounded-lg shadow-xl overflow-hidden mb-8">
                 <img
                     src="{{ property.image }}"
@@ -37,16 +44,62 @@ permalink: "angebote/{{ property.slug }}/index.html"
                     class="w-full h-[480px] object-cover"
                 >
             </div>
+            {% endif %}
 
+            {% if property.gallery and property.gallery.length %}
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                {% for image in property.gallery %}
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img
+                        src="{{ image }}"
+                        alt="{{ property.title }}"
+                        class="w-full h-48 object-cover"
+                    >
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if property.descriptions and property.descriptions.length %}
             <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
                 <h2 class="text-3xl font-bold text-primary mb-6">
-                    Objektbeschreibung
+                    Beschreibung
                 </h2>
 
-                <p class="text-gray-700 leading-relaxed text-lg">
-                    {{ property.description or "Weitere Informationen zu dieser Immobilie erhalten Sie auf Anfrage." }}
-                </p>
+                <div class="space-y-8">
+                    {% for description in property.descriptions %}
+                    <div>
+                        <h3 class="text-xl font-bold text-primary mb-3">
+                            {{ description.label }}
+                        </h3>
+
+                        <div class="text-gray-700 leading-relaxed text-lg">
+                            {{ description.value | safe }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
+            {% endif %}
+
+            {% if property.features and property.features.length %}
+            <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
+                <h2 class="text-3xl font-bold text-primary mb-6">
+                    Ausstattung
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {% for feature in property.features %}
+                    <div class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-accent mr-3"></i>
+                        <span>
+                            {{ feature.label }}{% if feature.value and feature.value != "Ja" %}: {{ feature.value }}{% endif %}
+                        </span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
 
         </div>
 
@@ -58,48 +111,23 @@ permalink: "angebote/{{ property.slug }}/index.html"
                     Eckdaten
                 </h2>
 
+                {% if property.details and property.details.length %}
                 <div class="space-y-4 text-gray-700">
 
-                    <div class="flex justify-between border-b pb-3">
-                        <span>Kaufpreis</span>
-                        <strong>
-                            {% if property.price %}
-                                € {{ property.price }}
-                            {% else %}
-                                Auf Anfrage
-                            {% endif %}
+                    {% for detail in property.details %}
+                    <div class="flex justify-between gap-6 border-b pb-3">
+                        <span>{{ detail.label }}</span>
+                        <strong class="text-right">
+                            {{ detail.value }}
                         </strong>
                     </div>
-
-                    <div class="flex justify-between border-b pb-3">
-                        <span>Wohnfläche</span>
-                        <strong>{{ property.living_space or "-" }} m²</strong>
-                    </div>
-
-                    <div class="flex justify-between border-b pb-3">
-                        <span>Zimmer</span>
-                        <strong>{{ property.rooms or "-" }}</strong>
-                    </div>
-
-                    <div class="flex justify-between border-b pb-3">
-                        <span>Baujahr</span>
-                        <strong>{{ property.construction_year or "-" }}</strong>
-                    </div>
-
-                    <div class="flex justify-between border-b pb-3">
-                        <span>Objektart</span>
-                        <strong>{{ property.property_type or "-" }}</strong>
-                    </div>
-
-                    <div class="flex justify-between border-b pb-3">
-                        <span>Vermarktung</span>
-                        <strong>{{ property.marketing_type or "-" }}</strong>
-                    </div>
+                    {% endfor %}
 
                 </div>
+                {% endif %}
 
-                <a href="/index.html#kontakt" class="btn-85 block text-center text-primary font-bold py-4 mt-8 rounded-lg shadow-md">
-                    Besichtigung anfragen
+                <a href="{{ property.request_url }}" class="btn-85 block text-center text-primary font-bold py-4 mt-8 rounded-lg shadow-md">
+                    Objekt anfragen
                 </a>
 
                 <a href="/angebote.html" class="block text-center text-primary mt-4 font-semibold">
