@@ -9,7 +9,6 @@ permalink: "angebote/{{ property.slug }}/index.html"
 
 <section class="bg-primary text-white py-16 md:py-24">
     <div class="container mx-auto px-4 text-center">
-
         {% if property.marketing_type or property.property_type %}
         <p class="text-secondary mb-3 font-semibold">
             {{ property.marketing_type }}{% if property.marketing_type and property.property_type %} · {% endif %}{{ property.property_type }}
@@ -22,85 +21,55 @@ permalink: "angebote/{{ property.slug }}/index.html"
 
         {% if property.location %}
         <p class="text-lg text-secondary">
-            <i class="fas fa-map-marker-alt mr-2"></i>
-            {{ property.location }}
+            <i class="fas fa-map-marker-alt mr-2"></i>{{ property.location }}
         </p>
         {% endif %}
-
     </div>
 </section>
 
 <section class="container mx-auto px-4 py-16">
-
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
 
         <div class="lg:col-span-2">
 
             {% if property.gallery and property.gallery.length %}
-            <div class="bg-white rounded-lg shadow-xl overflow-hidden mb-8 relative">
-
-                <div id="property-slider" class="relative w-full h-[480px] bg-white">
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden mb-8">
+                <div id="property-slider" class="relative w-full h-[520px] bg-gray-100 flex items-center justify-center">
 
                     {% for image in property.gallery %}
                     <img
                         src="{{ image }}"
                         alt="{{ property.title }}"
-                        class="property-slide absolute inset-0 w-full h-full object-cover {% if loop.first %}opacity-100{% else %}opacity-0{% endif %} transition-opacity duration-500"
+                        class="property-slide absolute inset-0 w-full h-full object-contain bg-white {% if loop.first %}opacity-100{% else %}opacity-0{% endif %} transition-opacity duration-500"
                         data-slide="{{ loop.index0 }}"
                     >
                     {% endfor %}
 
                     {% if property.gallery.length > 1 %}
-                    <button
-                        type="button"
-                        id="slider-prev"
-                        class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 text-primary rounded-full w-12 h-12 shadow-lg flex items-center justify-center hover:bg-white transition"
-                        aria-label="Vorheriges Bild"
-                    >
+                    <button type="button" id="slider-prev" class="absolute left-5 top-1/2 -translate-y-1/2 bg-white/95 text-primary rounded-full w-12 h-12 shadow-lg flex items-center justify-center hover:bg-white transition">
                         <i class="fas fa-chevron-left"></i>
                     </button>
 
-                    <button
-                        type="button"
-                        id="slider-next"
-                        class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 text-primary rounded-full w-12 h-12 shadow-lg flex items-center justify-center hover:bg-white transition"
-                        aria-label="Nächstes Bild"
-                    >
+                    <button type="button" id="slider-next" class="absolute right-5 top-1/2 -translate-y-1/2 bg-white/95 text-primary rounded-full w-12 h-12 shadow-lg flex items-center justify-center hover:bg-white transition">
                         <i class="fas fa-chevron-right"></i>
                     </button>
 
-                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary/80 text-white px-4 py-2 rounded-full text-sm">
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary/85 text-white px-4 py-2 rounded-full text-sm">
                         <span id="slider-current">1</span> / {{ property.gallery.length }}
                     </div>
                     {% endif %}
-
                 </div>
-
-            </div>
-
-            {% elif property.image %}
-            <div class="bg-white rounded-lg shadow-xl overflow-hidden mb-8">
-                <img
-                    src="{{ property.image }}"
-                    alt="{{ property.title }}"
-                    class="w-full h-[480px] object-cover"
-                >
             </div>
             {% endif %}
 
             {% if property.descriptions and property.descriptions.length %}
             <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
-                <h2 class="text-3xl font-bold text-primary mb-6">
-                    Beschreibung
-                </h2>
+                <h2 class="text-3xl font-bold text-primary mb-6">Beschreibung</h2>
 
                 <div class="space-y-8">
                     {% for description in property.descriptions %}
                     <div>
-                        <h3 class="text-xl font-bold text-primary mb-3">
-                            {{ description.label }}
-                        </h3>
-
+                        <h3 class="text-xl font-bold text-primary mb-3">{{ description.label }}</h3>
                         <div class="text-gray-700 leading-relaxed text-lg">
                             {{ description.value | safe }}
                         </div>
@@ -112,18 +81,13 @@ permalink: "angebote/{{ property.slug }}/index.html"
 
             {% if property.features and property.features.length %}
             <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
-                <h2 class="text-3xl font-bold text-primary mb-6">
-                    Ausstattung
-                </h2>
+                <h2 class="text-3xl font-bold text-primary mb-6">Ausstattung</h2>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {% for feature in property.features %}
                     <div class="flex items-center text-gray-700">
                         <i class="fas fa-check-circle text-accent mr-3"></i>
-
-                        <span>
-                            {{ feature.label }}{% if feature.value and feature.value != "Ja" %}: {{ feature.value }}{% endif %}
-                        </span>
+                        <span>{{ feature.label }}{% if feature.value and feature.value != "Ja" %}: {{ feature.value }}{% endif %}</span>
                     </div>
                     {% endfor %}
                 </div>
@@ -133,22 +97,16 @@ permalink: "angebote/{{ property.slug }}/index.html"
         </div>
 
         <aside class="lg:col-span-1">
-
             <div class="bg-white rounded-lg shadow-xl p-8 sticky top-8 border-t-4 border-accent">
 
-                <h2 class="text-2xl font-bold text-primary mb-6">
-                    Eckdaten
-                </h2>
-
                 {% if property.details and property.details.length %}
+                <h2 class="text-2xl font-bold text-primary mb-6">Eckdaten</h2>
+
                 <div class="space-y-4 text-gray-700">
                     {% for detail in property.details %}
                     <div class="flex justify-between gap-6 border-b pb-3">
                         <span>{{ detail.label }}</span>
-
-                        <strong class="text-right">
-                            {{ detail.value }}
-                        </strong>
+                        <strong class="text-right">{{ detail.value }}</strong>
                     </div>
                     {% endfor %}
                 </div>
@@ -161,13 +119,10 @@ permalink: "angebote/{{ property.slug }}/index.html"
                 <a href="/angebote.html" class="block text-center text-primary mt-4 font-semibold">
                     Zurück zu den Angeboten
                 </a>
-
             </div>
-
         </aside>
 
     </div>
-
 </section>
 
 <script>
