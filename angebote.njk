@@ -9,7 +9,6 @@ permalink: angebote.html
         <h1 class="text-4xl md:text-5xl font-extrabold mb-3">
             Aktuelle Immobilien-Angebote
         </h1>
-
         <p class="text-lg md:text-xl font-light text-secondary max-w-4xl mx-auto">
             Ob Eigentumswohnung, Mehrfamilienhaus oder Grundstück – wir vermarkten Immobilien mit maximaler Reichweite und Effizienz.
         </p>
@@ -19,12 +18,9 @@ permalink: angebote.html
 <section id="angebote" class="container mx-auto px-4 py-16">
 
     <div class="bg-white p-6 rounded-lg shadow-xl mb-10 border-t-4 border-accent">
-        <h2 class="text-2xl font-bold mb-4 text-primary">
-            Ihre Immobiliensuche
-        </h2>
+        <h2 class="text-2xl font-bold mb-4 text-primary">Ihre Immobiliensuche</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-
             <select id="filter-vermarktung" class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
                 <option value="">Vermarktungsart (Alle)</option>
                 <option value="Kauf">Kauf</option>
@@ -45,7 +41,6 @@ permalink: angebote.html
             <button id="filter-button" class="btn-85 text-primary font-bold rounded py-3 hover:bg-primary hover:text-white transition duration-300 w-full">
                 <i class="fas fa-search mr-2"></i> Suchen
             </button>
-
         </div>
     </div>
 
@@ -59,86 +54,73 @@ permalink: angebote.html
 
         {% for property in propstack.properties %}
 
-        <div class="immobilien-kachel bg-white rounded-lg shadow-xl overflow-hidden transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+        <div class="immobilien-kachel bg-white rounded-lg shadow-xl overflow-hidden transition duration-300 hover:shadow-2xl hover:-translate-y-1"
+             data-vermarktung="{{ property.marketing_type }}"
+             data-objektart="{{ property.property_type }}"
+             data-ort="{{ property.address }}"
+             data-preis="{{ property.price }}">
 
-            {% set image =
-                property.title_picture.url
-                or property.title_image.url
-                or property.images[0].url
-                or property.image
-                or "/images/placeholder.jpg"
-            %}
+            <a href="{{ property.url }}">
+                <img
+                    src="{{ property.image }}"
+                    alt="{{ property.title }}"
+                    class="w-full h-56 object-cover transition duration-300 hover:scale-105"
+                >
+            </a>
 
-            <img
-                src="{{ image }}"
-                alt="{{ property.name }}"
-                class="w-full h-64 object-cover"
-            >
+            <div class="p-5">
 
-            <div class="p-6">
+                <div class="flex justify-between items-center mb-3">
+                    <span class="inline-block bg-secondary text-primary text-xs font-semibold px-3 py-1 rounded-full">
+                        {{ property.marketing_type or "Immobilie" }}
+                    </span>
 
-                <span class="inline-block bg-secondary text-primary text-xs font-semibold px-3 py-1 rounded-full mb-4">
-                    {{ property.marketing_type or "Immobilie" }}
-                </span>
-
-                <h3 class="text-2xl font-bold text-primary mb-2">
-                    {{ property.name or property.title or "Immobilie" }}
-                </h3>
-
-                <p class="text-gray-600 mb-5">
-                    <i class="fas fa-map-marker-alt mr-2 text-accent"></i>
-                    {{ property.short_address or property.address or "Deutschland" }}
-                </p>
-
-                <div class="flex justify-between text-sm text-gray-600 border-t border-b py-4 mb-5">
-
-                    <div class="text-center">
-                        <div class="font-bold text-primary text-lg">
-                            {{ property.living_space or "-" }}
-                        </div>
-
-                        <div>m²</div>
-                    </div>
-
-                    <div class="text-center">
-                        <div class="font-bold text-primary text-lg">
-                            {{ property.number_of_rooms or "-" }}
-                        </div>
-
-                        <div>Zimmer</div>
-                    </div>
-
-                    <div class="text-center">
-                        <div class="font-bold text-primary text-lg">
-                            {{ property.construction_year or "-" }}
-                        </div>
-
-                        <div>Baujahr</div>
-                    </div>
-
+                    {% if property.property_type %}
+                    <span class="text-xs text-gray-500 font-semibold">
+                        {{ property.property_type }}
+                    </span>
+                    {% endif %}
                 </div>
 
-                <div class="text-3xl font-extrabold mb-5 text-primary">
+                <h3 class="text-xl font-bold text-primary mb-2 truncate">
+                    {{ property.title }}
+                </h3>
 
-                    {% if property.purchase_price %}
-                        € {{ property.purchase_price }}
-                    {% elif property.price %}
+                <p class="text-sm text-gray-600 mb-4">
+                    <i class="fas fa-map-marker-alt mr-1 text-accent"></i>
+                    {{ property.address or "Adresse auf Anfrage" }}
+                </p>
+
+                <p class="text-2xl font-extrabold text-gold-gradient with-shadow mb-4">
+                    {% if property.price %}
                         € {{ property.price }}
                     {% else %}
                         Preis auf Anfrage
                     {% endif %}
+                </p>
 
+                <div class="flex justify-between text-sm text-gray-600 mb-6 border-t border-gray-100 pt-3">
+                    <span>
+                        <i class="fas fa-ruler-combined mr-1 text-accent"></i>
+                        {{ property.living_space or "-" }} m²
+                    </span>
+
+                    <span>
+                        <i class="fas fa-bed mr-1 text-accent"></i>
+                        {{ property.rooms or "-" }} Zi.
+                    </span>
+
+                    <span>
+                        <i class="fas fa-calendar-alt mr-1 text-accent"></i>
+                        {{ property.construction_year or "-" }}
+                    </span>
                 </div>
 
-                <a
-                    href="#"
-                    class="btn-85 block text-center text-primary font-bold py-3 rounded-lg transition duration-300"
-                >
+                <a href="{{ property.url }}" class="btn-85 block text-center text-primary font-bold py-2 rounded-lg transition duration-300">
                     Mehr erfahren
                 </a>
 
             </div>
-
         </div>
 
         {% endfor %}
@@ -148,15 +130,12 @@ permalink: angebote.html
     {% else %}
 
     <div class="text-center py-12">
-
         <p class="text-xl text-gray-600 mb-4">
-            Aktuell sind keine Propstack-Immobilien online verfügbar.
+            Aktuell sind keine Immobilienangebote online verfügbar.
         </p>
-
         <p class="text-gray-500">
-            Bitte prüfen Sie die Propstack API-Verbindung.
+            Kontaktieren Sie uns direkt für Off-Market Angebote.
         </p>
-
     </div>
 
     {% endif %}
@@ -164,9 +143,7 @@ permalink: angebote.html
 </section>
 
 <section id="maklerei" class="bg-gray-100 py-16">
-
     <div class="container mx-auto px-4">
-
         <h2 class="text-3xl font-bold text-center mb-10 text-primary">
             Ihre Vorteile im Vertrieb mit Fischer & Geserich
         </h2>
@@ -174,7 +151,6 @@ permalink: angebote.html
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
 
             <div>
-
                 <p class="text-lg text-gray-700 mb-6">
                     Wir decken die gesamte Palette ab: vom klassischen Einfamilienhaus bis hin zu komplexen Projektentwicklungen. Unser Ziel ist die maximale Wertschöpfung für Sie, kombiniert mit einem schnellen und sicheren Verkaufsprozess.
                 </p>
@@ -186,11 +162,9 @@ permalink: angebote.html
                 <a href="#cta-wertermittlung" class="btn-85 inline-block text-primary font-bold py-3 px-8 rounded-lg shadow-md transition duration-300">
                     Wertermittlung anfordern
                 </a>
-
             </div>
 
             <ul class="space-y-4 text-lg text-gray-700">
-
                 <li class="flex items-start">
                     <i class="fas fa-check-circle text-gold-gradient with-shadow mt-1 mr-3 text-xl"></i>
                     Professionelle Immobilienbewertung zur Festlegung des optimalen Marktpreises.
@@ -220,19 +194,14 @@ permalink: angebote.html
                     <i class="fas fa-check-circle text-gold-gradient with-shadow mt-1 mr-3 text-xl"></i>
                     Wir vermarkten Ihre Immobilie auf Wunsch diskret und off-market – dank unseres Netzwerks aus geprüften Investoren ganz ohne öffentliche Inserate.
                 </li>
-
             </ul>
 
         </div>
-
     </div>
-
 </section>
 
 <section id="cta-gesuch" class="bg-primary py-16 md:py-24 border-t border-accent/20">
-
     <div class="container mx-auto px-4 text-center">
-
         <div class="max-w-4xl mx-auto">
 
             <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gold-gradient with-shadow">
@@ -240,16 +209,11 @@ permalink: angebote.html
             </h2>
 
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-
                 <a href="index.html#kontakt" class="btn-85 inline-block font-bold py-4 px-10 text-lg rounded-lg shadow-xl transition duration-300 transform hover:scale-105">
                     Jetzt Gesuch anlegen
                 </a>
-
             </div>
 
         </div>
-
     </div>
-
 </section>
-```
