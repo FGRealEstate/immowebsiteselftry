@@ -9,6 +9,7 @@ permalink: angebote.html
         <h1 class="text-4xl md:text-5xl font-extrabold mb-3">
             Aktuelle Immobilien-Angebote
         </h1>
+
         <p class="text-lg md:text-xl font-light text-secondary max-w-4xl mx-auto">
             Ob Eigentumswohnung, Mehrfamilienhaus oder Grundstück – wir vermarkten Immobilien mit maximaler Reichweite und Effizienz.
         </p>
@@ -18,20 +19,24 @@ permalink: angebote.html
 <section id="angebote" class="container mx-auto px-4 py-16">
 
     <div class="bg-white p-6 rounded-lg shadow-xl mb-10 border-t-4 border-accent">
-        <h2 class="text-2xl font-bold mb-4 text-primary">Ihre Immobiliensuche</h2>
+        <h2 class="text-2xl font-bold mb-4 text-primary">
+            Ihre Immobiliensuche
+        </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
             <select id="filter-vermarktung" class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
                 <option value="">Vermarktungsart (Alle)</option>
+                <option value="BUY">Kauf</option>
+                <option value="RENT">Miete</option>
                 <option value="Kauf">Kauf</option>
                 <option value="Miete">Miete</option>
             </select>
 
             <select id="filter-objektart" class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
                 <option value="">Objektart (Alle)</option>
+                <option value="LIVING">Wohnen</option>
                 <option value="Wohnung">Wohnung</option>
-                <option value="Einfamilienhaus">Einfamilienhaus</option>
-                <option value="Mehrfamilienhaus">Mehrfamilienhaus</option>
+                <option value="Haus">Haus</option>
                 <option value="Grundstück">Grundstück</option>
                 <option value="Gewerbe">Gewerbe</option>
             </select>
@@ -57,8 +62,8 @@ permalink: angebote.html
         <div class="immobilien-kachel bg-white rounded-lg shadow-xl overflow-hidden transition duration-300 hover:shadow-2xl hover:-translate-y-1"
              data-vermarktung="{{ property.marketing_type }}"
              data-objektart="{{ property.property_type }}"
-             data-ort="{{ property.address }}"
-             data-preis="{{ property.price }}">
+             data-ort="{{ property.location }}"
+             data-preis="{{ property.price | replace('.', '') | replace(',', '.') | replace(' €', '') }}">
 
             <a href="{{ property.url }}">
                 <img
@@ -71,9 +76,11 @@ permalink: angebote.html
             <div class="p-5">
 
                 <div class="flex justify-between items-center mb-3">
+                    {% if property.marketing_type %}
                     <span class="inline-block bg-secondary text-primary text-xs font-semibold px-3 py-1 rounded-full">
-                        {{ property.marketing_type or "Immobilie" }}
+                        {{ property.marketing_type }}
                     </span>
+                    {% endif %}
 
                     {% if property.property_type %}
                     <span class="text-xs text-gray-500 font-semibold">
@@ -86,34 +93,38 @@ permalink: angebote.html
                     {{ property.title }}
                 </h3>
 
+                {% if property.location %}
                 <p class="text-sm text-gray-600 mb-4">
                     <i class="fas fa-map-marker-alt mr-1 text-accent"></i>
-                    {{ property.address or "Adresse auf Anfrage" }}
+                    {{ property.location }}
                 </p>
+                {% endif %}
 
                 <p class="text-2xl font-extrabold text-gold-gradient with-shadow mb-4">
-                    {% if property.price %}
-                        € {{ property.price }}
-                    {% else %}
-                        Preis auf Anfrage
-                    {% endif %}
+                    {{ property.price or "Preis auf Anfrage" }}
                 </p>
 
                 <div class="flex justify-between text-sm text-gray-600 mb-6 border-t border-gray-100 pt-3">
+                    {% if property.living_space %}
                     <span>
                         <i class="fas fa-ruler-combined mr-1 text-accent"></i>
-                        {{ property.living_space or "-" }} m²
+                        {{ property.living_space }}
                     </span>
+                    {% endif %}
 
+                    {% if property.rooms %}
                     <span>
                         <i class="fas fa-bed mr-1 text-accent"></i>
-                        {{ property.rooms or "-" }} Zi.
+                        {{ property.rooms }} Zi.
                     </span>
+                    {% endif %}
 
+                    {% if property.construction_year %}
                     <span>
                         <i class="fas fa-calendar-alt mr-1 text-accent"></i>
-                        {{ property.construction_year or "-" }}
+                        {{ property.construction_year }}
                     </span>
+                    {% endif %}
                 </div>
 
                 <a href="{{ property.url }}" class="btn-85 block text-center text-primary font-bold py-2 rounded-lg transition duration-300">
@@ -133,6 +144,7 @@ permalink: angebote.html
         <p class="text-xl text-gray-600 mb-4">
             Aktuell sind keine Immobilienangebote online verfügbar.
         </p>
+
         <p class="text-gray-500">
             Kontaktieren Sie uns direkt für Off-Market Angebote.
         </p>
