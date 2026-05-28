@@ -1,0 +1,115 @@
+---
+layout: base.njk
+pagination:
+  data: propstack.properties
+  size: 1
+  alias: property
+permalink: "angebote/{{ property.slug }}/index.html"
+---
+
+<section class="bg-primary text-white py-16 md:py-24">
+    <div class="container mx-auto px-4 text-center">
+        <p class="text-secondary mb-3">
+            Immobilienangebot
+        </p>
+
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
+            {{ property.title }}
+        </h1>
+
+        <p class="text-lg text-secondary">
+            <i class="fas fa-map-marker-alt mr-2"></i>
+            {{ property.address or "Adresse auf Anfrage" }}
+        </p>
+    </div>
+</section>
+
+<section class="container mx-auto px-4 py-16">
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+        <div class="lg:col-span-2">
+
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden mb-8">
+                <img
+                    src="{{ property.image }}"
+                    alt="{{ property.title }}"
+                    class="w-full h-[480px] object-cover"
+                >
+            </div>
+
+            <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
+                <h2 class="text-3xl font-bold text-primary mb-6">
+                    Objektbeschreibung
+                </h2>
+
+                <p class="text-gray-700 leading-relaxed text-lg">
+                    {{ property.description or "Weitere Informationen zu dieser Immobilie erhalten Sie auf Anfrage." }}
+                </p>
+            </div>
+
+        </div>
+
+        <aside class="lg:col-span-1">
+
+            <div class="bg-white rounded-lg shadow-xl p-8 sticky top-8 border-t-4 border-accent">
+
+                <h2 class="text-2xl font-bold text-primary mb-6">
+                    Eckdaten
+                </h2>
+
+                <div class="space-y-4 text-gray-700">
+
+                    <div class="flex justify-between border-b pb-3">
+                        <span>Kaufpreis</span>
+                        <strong>
+                            {% if property.price %}
+                                € {{ property.price }}
+                            {% else %}
+                                Auf Anfrage
+                            {% endif %}
+                        </strong>
+                    </div>
+
+                    <div class="flex justify-between border-b pb-3">
+                        <span>Wohnfläche</span>
+                        <strong>{{ property.living_space or "-" }} m²</strong>
+                    </div>
+
+                    <div class="flex justify-between border-b pb-3">
+                        <span>Zimmer</span>
+                        <strong>{{ property.rooms or "-" }}</strong>
+                    </div>
+
+                    <div class="flex justify-between border-b pb-3">
+                        <span>Baujahr</span>
+                        <strong>{{ property.construction_year or "-" }}</strong>
+                    </div>
+
+                    <div class="flex justify-between border-b pb-3">
+                        <span>Objektart</span>
+                        <strong>{{ property.property_type or "-" }}</strong>
+                    </div>
+
+                    <div class="flex justify-between border-b pb-3">
+                        <span>Vermarktung</span>
+                        <strong>{{ property.marketing_type or "-" }}</strong>
+                    </div>
+
+                </div>
+
+                <a href="/index.html#kontakt" class="btn-85 block text-center text-primary font-bold py-4 mt-8 rounded-lg shadow-md">
+                    Besichtigung anfragen
+                </a>
+
+                <a href="/angebote.html" class="block text-center text-primary mt-4 font-semibold">
+                    Zurück zu den Angeboten
+                </a>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</section>
