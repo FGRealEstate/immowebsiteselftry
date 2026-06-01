@@ -49,7 +49,7 @@ exports.handler = async function (event) {
             "Neue Objektanfrage über die Website",
             "",
             `Objekt: ${objectTitle || "-"}`,
-            `Objekt-ID: ${objectId}`,
+            `Objekt-ID / Unit-ID: ${objectId}`,
             `Name: ${fullName}`,
             `E-Mail: ${email}`,
             `Telefon: ${phone || "-"}`,
@@ -100,7 +100,7 @@ exports.handler = async function (event) {
         const dealResponse = await propstackPost(apiKey, "/client_properties", {
             client_property: {
                 client_id: contactId,
-                property_id: objectId,
+                unit_id: objectId,
                 deal_stage_id: 200,
                 note: note,
                 source: "Website Objektanfrage"
@@ -156,6 +156,7 @@ async function propstackPost(apiKey, endpoint, body) {
     const text = await response.text();
 
     let data;
+
     try {
         data = text ? JSON.parse(text) : {};
     } catch {
