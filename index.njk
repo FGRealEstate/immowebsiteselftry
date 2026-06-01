@@ -5,43 +5,35 @@ permalink: index.html
 ---
 
 <section id="hero" class="relative bg-primary min-h-[60vh] md:min-h-screen flex items-center justify-center overflow-hidden">
-    
     <div class="absolute inset-0 z-0">
-        <img src="images/berlinskypng.png" 
-             alt="Berlin Panorama" 
-             class="w-full h-full object-cover opacity-50">
+        <img src="images/berlinskypng.png" alt="Berlin Panorama" class="w-full h-full object-cover opacity-50">
     </div>
 
-    <video 
-        autoplay 
-        muted 
-        loop 
-        playsinline 
-        webkit-playsinline
-        poster="images/berlinskypng.png" 
-        class="hidden md:block absolute inset-0 w-full h-full object-cover opacity-50 z-10">
+    <video autoplay muted loop playsinline webkit-playsinline poster="images/berlinskypng.png" class="hidden md:block absolute inset-0 w-full h-full object-cover opacity-50 z-10">
         <source src="videos/berlinsky.mp4" type="video/mp4">
     </video>
 
     <div class="relative z-20 container mx-auto px-4 py-20 text-center">
         <div class="text-white max-w-4xl mx-auto">
             <h1 class="text-2xl sm:text-3xl md:text-3xl font-extrabold mb-6 leading-tight drop-shadow-2xl">
-                Ihr Partner rund um Immobilien <br> 
+                Ihr Partner rund um Immobilien <br>
                 Finanzieren, Kaufen, Verkaufen & Vermieten
             </h1>
-            
+
             <p class="text-lg md:text-2xl font-light mb-10 text-secondary">
                 Kompetent, Transparent & Persönlich.
             </p>
-            
-            <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 justify-center">
-                <a href="#kontakt" class="border-2 border-accent text-white hover:bg-accent hover:text-primary text-lg font-bold py-3 px-8 rounded-lg transition duration-300">
-                    Jetzt beraten lassen
-                </a>
-            </div>
+
+            <a href="#kontakt" class="border-2 border-accent text-white hover:bg-accent hover:text-primary text-lg font-bold py-3 px-8 rounded-lg transition duration-300">
+                Jetzt beraten lassen
+            </a>
         </div>
     </div>
 </section>
+
+<div class="block lg:hidden">
+    {% include "landingpage-lead.njk" %}
+</div>
 
 <section id="kurzvorstellung" class="container mx-auto px-4 py-16">
     <div class="bg-primary rounded-lg shadow-2xl p-8 md:p-12 text-left mt-4 sm:mt-8 md:-mt-32 relative z-10">
@@ -50,10 +42,7 @@ permalink: index.html
 
             <div class="md:col-span-1 order-first md:order-none flex items-center justify-center h-full">
                 <div class="h-full w-full max-h-64 flex items-center justify-center">
-                    <img src="images/logogold.png" 
-                         alt="Fischer & Geserich Logo" 
-                         class="w-auto h-full object-contain" 
-                         style="max-height: 200px;">
+                    <img src="images/logogold.png" alt="Fischer & Geserich Logo" class="w-auto h-full object-contain" style="max-height: 200px;">
                 </div>
             </div>
 
@@ -65,7 +54,7 @@ permalink: index.html
                 <h3 class="text-xl md:text-2xl font-semibold text-accent mb-4">
                     Persönliche Beratung statt standardisierter Vermittlung
                 </h3>
-        
+
                 <p class="text-lg mb-4 text-page-bg">
                     Wir unterstützen Eigentümer, Käufer und Investoren bei der Immobilienvermittlung, dem Immobilienverkauf und der passenden Immobilienfinanzierung.
                     Für uns beginnt jede Zusammenarbeit nicht mit einem Exposé oder einer Kalkulation, sondern mit einem <b>persönlichen Gespräch</b>: Ihnen zuhören, Sie verstehen und Ihre Situation einordnen.
@@ -86,25 +75,26 @@ permalink: index.html
                 <p class="text-lg mb-4 text-page-bg">
                     Wir strukturieren den gesamten Prozess, erklären Zusammenhänge verständlich und begleiten Sie Schritt für Schritt. Unser Handeln ist <b>altrozentrisch</b>: Wir stellen nicht unsere eigenen Interessen in den Mittelpunkt, sondern Ihre.
                 </p>
-        
+
                 <p class="text-lg italic text-gold-gradient font-semibold">
                     Vertrauen, Fleiß und Gründlichkeit sind die Grundlagen jeder erfolgreichen Empfehlung.
                 </p>
             </div>
-
         </div>
     </div>
 </section>
 
+<div class="hidden lg:block">
+    {% include "landingpage-lead.njk" %}
+</div>
+
 <section id="leistungen" class="container mx-auto px-4 py-16">
     <div class="bg-white rounded-xl shadow-xl p-8">
-
         <h2 class="text-3xl font-bold text-center mb-10 text-primary">
             Unsere Kernleistungen
         </h2>
 
-        <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-8">
-
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div class="bg-gray-100 rounded-lg shadow-lg p-6 text-center hover:shadow-primary transition duration-300">
                 <i class="fas fa-chart-line text-5xl text-gold-gradient with-shadow mb-4"></i>
                 <h3 class="text-xl font-semibold mb-2 text-primary">Vertrieb & Maklergeschäft</h3>
@@ -122,13 +112,11 @@ permalink: index.html
                 <h3 class="text-xl font-semibold mb-2 text-primary">Finanzierung</h3>
                 <p class="text-gray-600 text-sm">Unabhängige Vermittlung optimaler Finanzierungslösungen – deutschlandweit.</p>
             </div>
-
         </div>
     </div>
 </section>
 
 <section id="angebote" class="container mx-auto px-4 py-16 relative">
-
     <h2 class="text-3xl font-bold text-center mb-6 text-primary">
         Aktuelle Immobilien-Highlights
     </h2>
@@ -139,43 +127,25 @@ permalink: index.html
     </p>
 
     {% if propstack.properties and propstack.properties.length %}
-
     <div class="relative max-w-7xl mx-auto">
 
         {% if propstack.properties.length > 3 %}
-        <button
-            type="button"
-            id="home-slider-prev"
-            class="hidden md:flex absolute -left-16 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-white/90 shadow-xl items-center justify-center text-primary hover:bg-primary hover:text-white transition"
-            aria-label="Vorherige Immobilien anzeigen">
+        <button type="button" id="home-slider-prev" class="hidden md:flex absolute -left-16 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-white/90 shadow-xl items-center justify-center text-primary hover:bg-primary hover:text-white transition">
             <i class="fas fa-chevron-left text-xl"></i>
         </button>
 
-        <button
-            type="button"
-            id="home-slider-next"
-            class="hidden md:flex absolute -right-16 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-white/90 shadow-xl items-center justify-center text-primary hover:bg-primary hover:text-white transition"
-            aria-label="Weitere Immobilien anzeigen">
+        <button type="button" id="home-slider-next" class="hidden md:flex absolute -right-16 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-white/90 shadow-xl items-center justify-center text-primary hover:bg-primary hover:text-white transition">
             <i class="fas fa-chevron-right text-xl"></i>
         </button>
         {% endif %}
 
         <div id="home-property-slider" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
             {% for property in propstack.properties %}
             {% if loop.index <= 9 %}
-
-            <div
-                class="home-property-card bg-white rounded-lg shadow-xl overflow-hidden transition duration-300 hover:shadow-2xl hover:-translate-y-1 {% if loop.index > 3 %}hidden{% endif %}"
-                data-home-property-index="{{ loop.index0 }}">
-
+            <div class="home-property-card bg-white rounded-lg shadow-xl overflow-hidden transition duration-300 hover:shadow-2xl hover:-translate-y-1 {% if loop.index > 3 %}hidden{% endif %}" data-home-property-index="{{ loop.index0 }}">
                 <a href="{{ property.url }}" class="block bg-gray-100 overflow-hidden">
                     {% if property.main_image %}
-                    <img
-                        src="{{ property.main_image }}"
-                        alt="{{ property.title }}"
-                        class="w-full h-52 object-cover transition duration-300 hover:scale-105"
-                    >
+                    <img loading="lazy" src="{{ property.main_image }}" alt="{{ property.title }}" class="w-full h-52 object-cover transition duration-300 hover:scale-105">
                     {% else %}
                     <div class="w-full h-52 flex items-center justify-center bg-gray-100 text-gray-400">
                         <i class="fas fa-home text-5xl"></i>
@@ -184,7 +154,6 @@ permalink: index.html
                 </a>
 
                 <div class="p-5">
-
                     <div class="flex justify-between items-center mb-3 gap-3">
                         {% if property.marketing_type %}
                         <span class="inline-block bg-secondary text-primary text-xs font-semibold px-3 py-1 rounded-full">
@@ -217,17 +186,10 @@ permalink: index.html
                     {% if property.living_space or property.rooms %}
                     <div class="flex justify-between text-sm text-gray-600 mb-6 border-t border-gray-100 pt-3">
                         {% if property.living_space %}
-                        <span>
-                            <i class="fas fa-ruler-combined mr-1 text-accent"></i>
-                            {{ property.living_space }}
-                        </span>
+                        <span><i class="fas fa-ruler-combined mr-1 text-accent"></i>{{ property.living_space }}</span>
                         {% endif %}
-
                         {% if property.rooms %}
-                        <span>
-                            <i class="fas fa-bed mr-1 text-accent"></i>
-                            {{ property.rooms }} Zi.
-                        </span>
+                        <span><i class="fas fa-bed mr-1 text-accent"></i>{{ property.rooms }} Zi.</span>
                         {% endif %}
                     </div>
                     {% endif %}
@@ -235,39 +197,17 @@ permalink: index.html
                     <a href="{{ property.url }}" class="btn-85 block text-center text-primary font-bold py-2 rounded-lg hover:bg-primary hover:text-white transition duration-300">
                         Details ansehen
                     </a>
-
                 </div>
             </div>
-
             {% endif %}
             {% endfor %}
-
         </div>
-
-        {% if propstack.properties.length > 3 %}
-        <div class="flex md:hidden justify-center gap-4 mt-8">
-            <button type="button" id="home-slider-prev-mobile" class="w-12 h-12 rounded-full bg-white shadow-lg text-primary">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-
-            <button type="button" id="home-slider-next-mobile" class="w-12 h-12 rounded-full bg-white shadow-lg text-primary">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-        </div>
-        {% endif %}
-
     </div>
-
     {% else %}
-
     <div class="text-center py-8">
-        <p class="text-gray-500">
-            Aktuell sind keine Objekte online. Schauen Sie bald wieder vorbei.
-        </p>
+        <p class="text-gray-500">Aktuell sind keine Objekte online. Schauen Sie bald wieder vorbei.</p>
     </div>
-
     {% endif %}
-
 </section>
 
 <section id="partner" class="bg-primary text-white py-16">
@@ -276,559 +216,47 @@ permalink: index.html
             Unsere Partner
         </h2>
 
-        <div class="mb-12">
-            <h3 class="text-2xl font-semibold mb-6 text-center text-secondary">
-                Starke Kooperationen für Ihren Vorteil
-            </h3>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <a href="https://immovisory.de/" target="_blank" class="h-full flex flex-col items-center justify-between p-6 bg-white rounded-lg shadow-lg text-primary hover:shadow-accent transition duration-300">
+                <div class="h-16 flex items-center mb-4">
+                    <img src="images/Logos/immovisory.png" alt="Immovisory Logo" class="max-h-full w-auto object-contain">
+                </div>
+                <p class="font-bold">Immovisory</p>
+                <p class="text-sm text-gray-600 italic">Ankaufs- und Finanzierungsberatung</p>
+            </a>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <a href="https://vertretung.allianz.de/peter.csaszar/" target="_blank" class="h-full flex flex-col items-center justify-between p-6 bg-white rounded-lg shadow-lg text-primary hover:shadow-accent transition duration-300">
+                <div class="h-16 flex items-center mb-4">
+                    <img src="images/Logos/allianz.png" alt="Allianz Peter Csaszar Logo" class="max-h-full w-auto object-contain">
+                </div>
+                <p class="font-bold">Peter Csaszar</p>
+                <p class="text-sm text-gray-600 italic">Versicherungs- und Absicherungslösungen</p>
+            </a>
 
-                <a href="https://immovisory.de/" target="_blank" class="h-full flex flex-col items-center justify-between p-6 bg-white rounded-lg shadow-lg text-primary hover:shadow-accent transition duration-300 transform hover:scale-[1.02]">
-                    <div class="h-16 flex items-center mb-4">
-                        <img src="images/Logos/immovisory.png" alt="Immovisory Logo" class="max-h-full w-auto object-contain">
-                    </div>
-                    <div>
-                        <p class="font-bold">Immovisory</p>
-                        <p class="text-sm text-gray-600 italic">Ankaufs- und Finanzierungsberatung</p>
-                    </div>
-                </a>
+            <a href="https://geserich-immobilien.de/" target="_blank" class="h-full flex flex-col items-center justify-between p-6 bg-white rounded-lg shadow-lg text-primary hover:shadow-accent transition duration-300">
+                <div class="h-16 flex items-center mb-4">
+                    <img src="images/Logos/geserich1.png" alt="Geserich Immobilien Logo" class="max-h-full w-auto object-contain">
+                </div>
+                <p class="font-bold">Geserich Immobilien</p>
+                <p class="text-sm text-gray-600 italic">Traditionelle Immobilienexpertise</p>
+            </a>
 
-                <a href="https://vertretung.allianz.de/peter.csaszar/" target="_blank" class="h-full flex flex-col items-center justify-between p-6 bg-white rounded-lg shadow-lg text-primary hover:shadow-accent transition duration-300 transform hover:scale-[1.02]">
-                    <div class="h-16 flex items-center mb-4">
-                        <img src="images/Logos/allianz.png" alt="Allianz Peter Csaszar Logo" class="max-h-full w-auto object-contain">
-                    </div>
-                    <div>
-                        <p class="font-bold">Peter Csaszar</p>
-                        <p class="text-sm text-gray-600 italic">Versicherungs- und Absicherungslösungen</p>
-                    </div>
-                </a>
-
-                <a href="https://geserich-immobilien.de/" target="_blank" class="h-full flex flex-col items-center justify-between p-6 bg-white rounded-lg shadow-lg text-primary hover:shadow-accent transition duration-300 transform hover:scale-[1.02]">
-                    <div class="h-16 flex items-center mb-4">
-                        <img src="images/Logos/geserich1.png" alt="Geserich Immobilien Logo" class="max-h-full w-auto object-contain">
-                    </div>
-                    <div>
-                        <p class="font-bold">Geserich Immobilien</p>
-                        <p class="text-sm text-gray-600 italic">Traditionelle Immobilienexpertise</p>
-                    </div>
-                </a>
-
-                <a href="https://www.uwe-fenner-stil.de/" target="_blank" class="h-full flex flex-col items-center justify-between p-6 bg-white rounded-lg shadow-lg text-primary hover:shadow-accent transition duration-300 transform hover:scale-[1.02]">
-                    <div class="h-16 flex items-center mb-4">
-                        <img src="images/Logos/uwefenner.png" alt="Uwe Fenner Logo" class="max-h-full w-auto object-contain">
-                    </div>
-                    <div>
-                        <p class="font-bold">Uwe Fenner</p>
-                        <p class="text-sm text-gray-600 italic">Stil- und Eticketteseminare</p>
-                    </div>
-                </a>
-
-            </div>
+            <a href="https://www.uwe-fenner-stil.de/" target="_blank" class="h-full flex flex-col items-center justify-between p-6 bg-white rounded-lg shadow-lg text-primary hover:shadow-accent transition duration-300">
+                <div class="h-16 flex items-center mb-4">
+                    <img src="images/Logos/uwefenner.png" alt="Uwe Fenner Logo" class="max-h-full w-auto object-contain">
+                </div>
+                <p class="font-bold">Uwe Fenner</p>
+                <p class="text-sm text-gray-600 italic">Stil- und Eticketteseminare</p>
+            </a>
         </div>
     </div>
 </section>
-
-<section id="kontakt" class="container mx-auto px-4 py-16">
-    <div class="bg-white rounded-2xl shadow-2xl border-t-4 border-accent overflow-hidden">
-        <div class="grid grid-cols-1 lg:grid-cols-2">
-
-            <div class="p-8 md:p-12 bg-primary text-white relative overflow-hidden">
-                <div class="absolute inset-0 opacity-25">
-                    <img src="/images/berlinskypng.png" alt="Berlin Immobilienberatung" class="w-full h-full object-cover">
-                </div>
-
-                <div class="relative z-10">
-                    <p class="text-secondary font-semibold mb-3 uppercase tracking-wide text-sm">
-                        Persönliche Immobilienberatung
-                    </p>
-
-                    <h2 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
-                        Finden Sie die passende Immobilie oder den richtigen Verkaufsweg.
-                    </h2>
-
-                    <p class="text-lg md:text-xl text-page-bg mb-8 leading-relaxed">
-                        Beantworten Sie wenige Fragen. Ihre Anfrage wird direkt an unser CRM übergeben und persönlich geprüft.
-                    </p>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                        <div class="bg-white/10 rounded-xl p-5 border border-white/10">
-                            <i class="fas fa-user-check text-secondary text-2xl mb-3"></i>
-                            <h3 class="font-bold mb-1">Persönlich geprüft</h3>
-                            <p class="text-sm text-page-bg">Keine Standardantwort, sondern echte Einordnung.</p>
-                        </div>
-
-                        <div class="bg-white/10 rounded-xl p-5 border border-white/10">
-                            <i class="fas fa-building text-secondary text-2xl mb-3"></i>
-                            <h3 class="font-bold mb-1">CRM-gestützt</h3>
-                            <p class="text-sm text-page-bg">Ihre Anfrage wird direkt in Propstack verarbeitet.</p>
-                        </div>
-
-                        <div class="bg-white/10 rounded-xl p-5 border border-white/10">
-                            <i class="fas fa-shield-alt text-secondary text-2xl mb-3"></i>
-                            <h3 class="font-bold mb-1">Diskret</h3>
-                            <p class="text-sm text-page-bg">Vertraulicher Umgang mit Ihren Daten und Ihrem Anliegen.</p>
-                        </div>
-
-                        <div class="bg-white/10 rounded-xl p-5 border border-white/10">
-                            <i class="fas fa-phone-alt text-secondary text-2xl mb-3"></i>
-                            <h3 class="font-bold mb-1">Direkter Kontakt</h3>
-                            <p class="text-sm text-page-bg">Telefonisch oder per E-Mail, so wie Sie es wünschen.</p>
-                        </div>
-                    </div>
-
-                    <div class="space-y-3 text-page-bg">
-                        <p><i class="fas fa-phone-alt text-secondary mr-2"></i><a href="tel:015203083048" class="hover:underline">01520 3083048</a></p>
-                        <p><i class="fas fa-envelope text-secondary mr-2"></i><a href="mailto:info@fg-realestate.de" class="hover:underline">info@fg-realestate.de</a></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="p-8 md:p-12 bg-white">
-                <div class="mb-8">
-                    <p class="text-secondary font-semibold mb-2 uppercase tracking-wide text-sm">
-                        Anfrage starten
-                    </p>
-
-                    <h3 id="lead-step-title" class="text-3xl font-bold text-primary mb-3">
-                        Wobei dürfen wir Sie unterstützen?
-                    </h3>
-
-                    <p id="lead-step-subtitle" class="text-gray-600">
-                        Wählen Sie zuerst Ihr Anliegen aus. Danach passen sich die Fragen automatisch an.
-                    </p>
-
-                    <div class="mt-6 h-2 bg-gray-100 rounded-full overflow-hidden">
-                        <div id="lead-progress" class="h-full bg-secondary rounded-full transition-all duration-500" style="width: 20%;"></div>
-                    </div>
-                </div>
-
-                <div id="lead-success" class="hidden mb-6 rounded-xl border border-green-300 bg-green-50 p-5 text-green-800">
-                    <h4 class="font-bold text-lg mb-1">Ihre Anfrage wurde erfolgreich übermittelt.</h4>
-                    <p>Wir haben Ihre Angaben erhalten und melden uns zeitnah persönlich bei Ihnen.</p>
-                </div>
-
-                <div id="lead-error" class="hidden mb-6 rounded-xl border border-red-300 bg-red-50 p-5 text-red-800">
-                    <h4 class="font-bold text-lg mb-1">Anfrage konnte nicht gesendet werden.</h4>
-                    <p>Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per Telefon oder E-Mail.</p>
-                </div>
-
-                <form id="propstack-lead-form">
-                    <input type="hidden" name="source_url" id="lead-source-url">
-                    <input type="hidden" name="concern" id="lead-concern">
-                    <input type="hidden" name="object_type" id="lead-object-type">
-                    <input type="hidden" name="location" id="lead-location">
-                    <input type="hidden" name="budget" id="lead-budget">
-                    <input type="hidden" name="timeframe" id="lead-timeframe">
-                    <input type="hidden" name="contact_preference" id="lead-contact-preference">
-
-                    <div class="lead-step" data-step="1">
-                        <div class="grid grid-cols-1 gap-4">
-                            <button type="button" class="lead-choice" data-field="concern" data-value="Immobilie kaufen">
-                                <span><i class="fas fa-key text-secondary mr-3"></i>Ich möchte kaufen</span>
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
-
-                            <button type="button" class="lead-choice" data-field="concern" data-value="Immobilie verkaufen">
-                                <span><i class="fas fa-home text-secondary mr-3"></i>Ich möchte verkaufen</span>
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
-
-                            <button type="button" class="lead-choice" data-field="concern" data-value="Immobilie vermieten">
-                                <span><i class="fas fa-building text-secondary mr-3"></i>Ich möchte vermieten</span>
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
-
-                            <button type="button" class="lead-choice" data-field="concern" data-value="Finanzierung">
-                                <span><i class="fas fa-euro-sign text-secondary mr-3"></i>Ich brauche eine Finanzierung</span>
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="lead-step hidden" data-step="2">
-                        <div id="dynamic-question-area" class="grid grid-cols-1 gap-4"></div>
-                    </div>
-
-                    <div class="lead-step hidden" data-step="3">
-                        <label class="block text-sm font-bold text-primary mb-2">Ort / Suchgebiet *</label>
-                        <input type="text" id="visible-location" required placeholder="z. B. Berlin, Potsdam, Dresden" class="w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary">
-
-                        <label class="block text-sm font-bold text-primary mb-2 mt-5">Budget / Preisrahmen</label>
-                        <input type="text" id="visible-budget" placeholder="z. B. bis 500.000 €" class="w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary">
-
-                        <label class="block text-sm font-bold text-primary mb-2 mt-5">Zeitrahmen</label>
-                        <select id="visible-timeframe" class="w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary">
-                            <option value="">Keine Angabe</option>
-                            <option value="Sofort">Sofort</option>
-                            <option value="1-3 Monate">1-3 Monate</option>
-                            <option value="3-6 Monate">3-6 Monate</option>
-                            <option value="6-12 Monate">6-12 Monate</option>
-                            <option value="Langfristig">Langfristig</option>
-                        </select>
-                    </div>
-
-                    <div class="lead-step hidden" data-step="4">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm font-bold text-primary mb-2">Vorname *</label>
-                                <input type="text" name="first_name" required placeholder="Ihr Vorname" class="w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary">
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-bold text-primary mb-2">Nachname *</label>
-                                <input type="text" name="last_name" required placeholder="Ihr Nachname" class="w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary">
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
-                            <div>
-                                <label class="block text-sm font-bold text-primary mb-2">E-Mail-Adresse *</label>
-                                <input type="email" name="email" required placeholder="name@email.de" class="w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary">
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-bold text-primary mb-2">Telefonnummer</label>
-                                <input type="tel" name="phone" placeholder="Ihre Telefonnummer" class="w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary">
-                            </div>
-                        </div>
-
-                        <label class="block text-sm font-bold text-primary mb-2 mt-5">Bevorzugte Kontaktaufnahme</label>
-                        <select id="visible-contact-preference" class="w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary">
-                            <option value="E-Mail">Per E-Mail</option>
-                            <option value="Telefon">Telefonisch</option>
-                            <option value="WhatsApp">Per WhatsApp</option>
-                        </select>
-                    </div>
-
-                    <div class="lead-step hidden" data-step="5">
-                        <label class="block text-sm font-bold text-primary mb-2">Ihre Nachricht</label>
-                        <textarea name="message" rows="5" placeholder="Beschreiben Sie kurz Ihr Anliegen..." class="w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary"></textarea>
-
-                        <div class="bg-gray-50 rounded-xl p-4 border border-gray-200 mt-5">
-                            <label class="flex items-start gap-3 text-sm text-gray-700">
-                                <input type="checkbox" name="privacy_consent" value="true" required class="mt-1 h-4 w-4 text-accent border-gray-300 rounded focus:ring-accent">
-                                <span>
-                                    Ich habe die
-                                    <a href="/datenschutz.html" target="_blank" class="text-primary font-bold hover:underline">Datenschutzerklärung</a>
-                                    gelesen und stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet und an Fischer & Geserich Real Estate übermittelt werden. *
-                                </span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-between items-center gap-4 mt-8">
-                        <button type="button" id="lead-back" class="hidden px-6 py-3 rounded-lg border border-gray-300 text-primary font-bold hover:bg-gray-50">
-                            Zurück
-                        </button>
-
-                        <button type="button" id="lead-next" class="btn-85 ml-auto px-8 py-3 rounded-lg text-primary font-bold">
-                            Weiter
-                        </button>
-
-                        <button type="submit" id="lead-submit-button" class="hidden btn-85 ml-auto px-8 py-3 rounded-lg text-primary font-bold">
-                            Anfrage absenden
-                        </button>
-                    </div>
-                </form>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<style>
-.lead-choice {
-    width: 100%;
-    padding: 1rem 1.25rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 0.9rem;
-    background: #ffffff;
-    color: #080832;
-    font-weight: 700;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: 0.25s ease;
-    text-align: left;
-}
-
-.lead-choice:hover,
-.lead-choice.is-selected {
-    border-color: #d4af37;
-    box-shadow: 0 14px 30px rgba(0,0,0,0.10);
-    transform: translateY(-2px);
-}
-</style>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("propstack-lead-form");
-    const steps = Array.from(document.querySelectorAll(".lead-step"));
-    const nextButton = document.getElementById("lead-next");
-    const backButton = document.getElementById("lead-back");
-    const submitButton = document.getElementById("lead-submit-button");
-    const progress = document.getElementById("lead-progress");
-    const title = document.getElementById("lead-step-title");
-    const subtitle = document.getElementById("lead-step-subtitle");
-    const dynamicArea = document.getElementById("dynamic-question-area");
-    const successBox = document.getElementById("lead-success");
-    const errorBox = document.getElementById("lead-error");
-
-    if (!form) return;
-
-    let currentStep = 1;
-    const state = {
-        concern: "",
-        object_type: "",
-        location: "",
-        budget: "",
-        timeframe: "",
-        contact_preference: "E-Mail"
-    };
-
-    const stepText = {
-        1: ["Wobei dürfen wir Sie unterstützen?", "Wählen Sie zuerst Ihr Anliegen aus."],
-        2: ["Welche Immobilie betrifft Ihr Anliegen?", "Die nächsten Fragen passen sich an Ihre Auswahl an."],
-        3: ["Wo und in welchem Rahmen?", "Geben Sie Suchgebiet, Budget oder Zeitrahmen an."],
-        4: ["Wie erreichen wir Sie?", "Damit wir Ihre Anfrage persönlich zuordnen können."],
-        5: ["Fast geschafft.", "Prüfen Sie Ihre Angaben und senden Sie die Anfrage ab."]
-    };
-
-    const dynamicOptions = {
-        "Immobilie kaufen": [
-            ["Eigentumswohnung", "fas fa-city"],
-            ["Haus", "fas fa-home"],
-            ["Mehrfamilienhaus", "fas fa-building"],
-            ["Grundstück", "fas fa-map"],
-            ["Kapitalanlage", "fas fa-chart-line"]
-        ],
-        "Immobilie verkaufen": [
-            ["Eigentumswohnung verkaufen", "fas fa-city"],
-            ["Haus verkaufen", "fas fa-home"],
-            ["Mehrfamilienhaus verkaufen", "fas fa-building"],
-            ["Grundstück verkaufen", "fas fa-map"],
-            ["Diskret / Off-Market verkaufen", "fas fa-user-secret"]
-        ],
-        "Immobilie vermieten": [
-            ["Wohnung vermieten", "fas fa-key"],
-            ["Haus vermieten", "fas fa-home"],
-            ["Gewerbe vermieten", "fas fa-store"],
-            ["Verwaltung anfragen", "fas fa-clipboard-list"]
-        ],
-        "Finanzierung": [
-            ["Kauf finanzieren", "fas fa-euro-sign"],
-            ["Anschlussfinanzierung", "fas fa-file-invoice"],
-            ["Kapitalanlage finanzieren", "fas fa-chart-line"],
-            ["Beratung gewünscht", "fas fa-comments"]
-        ]
-    };
-
-    function showStep(step) {
-        currentStep = step;
-
-        steps.forEach(function (item) {
-            item.classList.toggle("hidden", Number(item.dataset.step) !== currentStep);
-        });
-
-        title.textContent = stepText[currentStep][0];
-        subtitle.textContent = stepText[currentStep][1];
-        progress.style.width = `${currentStep * 20}%`;
-
-        backButton.classList.toggle("hidden", currentStep === 1);
-        nextButton.classList.toggle("hidden", currentStep === 5);
-        submitButton.classList.toggle("hidden", currentStep !== 5);
-
-        if (currentStep === 2) renderDynamicOptions();
-    }
-
-    function renderDynamicOptions() {
-        dynamicArea.innerHTML = "";
-
-        const options = dynamicOptions[state.concern] || [];
-
-        options.forEach(function ([label, icon]) {
-            const button = document.createElement("button");
-            button.type = "button";
-            button.className = "lead-choice";
-            button.innerHTML = `<span><i class="${icon} text-secondary mr-3"></i>${label}</span><i class="fas fa-chevron-right"></i>`;
-
-            button.addEventListener("click", function () {
-                state.object_type = label;
-                document.getElementById("lead-object-type").value = label;
-                showStep(3);
-            });
-
-            dynamicArea.appendChild(button);
-        });
-    }
-
-    document.querySelectorAll(".lead-choice[data-field='concern']").forEach(function (button) {
-        button.addEventListener("click", function () {
-            state.concern = button.dataset.value;
-            document.getElementById("lead-concern").value = state.concern;
-            showStep(2);
-        });
-    });
-
-    nextButton.addEventListener("click", function () {
-        if (currentStep === 1 && !state.concern) return;
-
-        if (currentStep === 3) {
-            state.location = document.getElementById("visible-location").value;
-            state.budget = document.getElementById("visible-budget").value;
-            state.timeframe = document.getElementById("visible-timeframe").value;
-
-            document.getElementById("lead-location").value = state.location;
-            document.getElementById("lead-budget").value = state.budget;
-            document.getElementById("lead-timeframe").value = state.timeframe;
-        }
-
-        if (currentStep === 4) {
-            state.contact_preference = document.getElementById("visible-contact-preference").value;
-            document.getElementById("lead-contact-preference").value = state.contact_preference;
-        }
-
-        if (currentStep < 5) showStep(currentStep + 1);
-    });
-
-    backButton.addEventListener("click", function () {
-        if (currentStep > 1) showStep(currentStep - 1);
-    });
-
-    form.addEventListener("submit", async function (event) {
-        event.preventDefault();
-
-        successBox.classList.add("hidden");
-        errorBox.classList.add("hidden");
-
-        submitButton.disabled = true;
-        submitButton.textContent = "Wird übermittelt...";
-
-        const formData = new FormData(form);
-
-        const payload = {
-            first_name: formData.get("first_name"),
-            last_name: formData.get("last_name"),
-            email: formData.get("email"),
-            phone: formData.get("phone"),
-            concern: document.getElementById("lead-concern").value,
-            object_type: document.getElementById("lead-object-type").value,
-            location: document.getElementById("lead-location").value,
-            budget: document.getElementById("lead-budget").value,
-            timeframe: document.getElementById("lead-timeframe").value,
-            contact_preference: document.getElementById("lead-contact-preference").value,
-            message: formData.get("message"),
-            privacy_consent: formData.get("privacy_consent") === "true",
-            source_url: window.location.href
-        };
-
-        try {
-            const response = await fetch("/.netlify/functions/propstack-lead", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(payload)
-            });
-
-            const result = await response.json();
-
-            if (!response.ok || !result.success) throw new Error(result.error || "Fehler");
-
-            form.reset();
-            successBox.classList.remove("hidden");
-            showStep(1);
-
-        } catch (error) {
-            errorBox.classList.remove("hidden");
-        } finally {
-            submitButton.disabled = false;
-            submitButton.textContent = "Anfrage absenden";
-        }
-    });
-
-    showStep(1);
-});
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("propstack-lead-form");
-    const successBox = document.getElementById("lead-success");
-    const errorBox = document.getElementById("lead-error");
-    const submitButton = document.getElementById("lead-submit-button");
-    const sourceUrl = document.getElementById("lead-source-url");
-
-    if (!form) return;
-
-    if (sourceUrl) {
-        sourceUrl.value = window.location.href;
-    }
-
-    form.addEventListener("submit", async function (event) {
-        event.preventDefault();
-
-        successBox.classList.add("hidden");
-        errorBox.classList.add("hidden");
-
-        submitButton.disabled = true;
-        submitButton.textContent = "Anfrage wird übermittelt...";
-
-        const formData = new FormData(form);
-
-        const payload = {
-            first_name: formData.get("first_name"),
-            last_name: formData.get("last_name"),
-            email: formData.get("email"),
-            phone: formData.get("phone"),
-            concern: formData.get("concern"),
-            object_type: formData.get("object_type"),
-            location: formData.get("location"),
-            budget: formData.get("budget"),
-            timeframe: formData.get("timeframe"),
-            contact_preference: formData.get("contact_preference"),
-            message: formData.get("message"),
-            privacy_consent: formData.get("privacy_consent") === "true",
-            source_url: window.location.href
-        };
-
-        try {
-            const response = await fetch("/.netlify/functions/propstack-lead", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(payload)
-            });
-
-            const result = await response.json();
-
-            if (!response.ok || !result.success) {
-                throw new Error(result.error || "Unbekannter Fehler");
-            }
-
-            form.reset();
-            successBox.classList.remove("hidden");
-            successBox.scrollIntoView({ behavior: "smooth", block: "center" });
-
-        } catch (error) {
-            console.error("Lead Fehler:", error);
-            errorBox.classList.remove("hidden");
-            errorBox.scrollIntoView({ behavior: "smooth", block: "center" });
-
-        } finally {
-            submitButton.disabled = false;
-            submitButton.textContent = "Anfrage absenden";
-        }
-    });
-});
-</script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const cards = Array.from(document.querySelectorAll(".home-property-card"));
     const prevDesktop = document.getElementById("home-slider-prev");
     const nextDesktop = document.getElementById("home-slider-next");
-    const prevMobile = document.getElementById("home-slider-prev-mobile");
-    const nextMobile = document.getElementById("home-slider-next-mobile");
 
     if (!cards.length) return;
 
@@ -838,46 +266,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateCards() {
         cards.forEach(function (card, index) {
-            const isVisible =
-                index >= startIndex &&
-                index < startIndex + visibleCount;
-
-            if (isVisible) {
-                card.classList.remove("hidden");
-            } else {
-                card.classList.add("hidden");
-            }
+            const isVisible = index >= startIndex && index < startIndex + visibleCount;
+            card.classList.toggle("hidden", !isVisible);
         });
     }
 
     function next() {
         if (maxCards <= visibleCount) return;
-
-        startIndex = startIndex + visibleCount;
-
-        if (startIndex >= maxCards) {
-            startIndex = 0;
-        }
-
+        startIndex += visibleCount;
+        if (startIndex >= maxCards) startIndex = 0;
         updateCards();
     }
 
     function prev() {
         if (maxCards <= visibleCount) return;
-
-        startIndex = startIndex - visibleCount;
-
-        if (startIndex < 0) {
-            startIndex = Math.max(0, maxCards - visibleCount);
-        }
-
+        startIndex -= visibleCount;
+        if (startIndex < 0) startIndex = Math.max(0, maxCards - visibleCount);
         updateCards();
     }
 
     if (nextDesktop) nextDesktop.addEventListener("click", next);
     if (prevDesktop) prevDesktop.addEventListener("click", prev);
-    if (nextMobile) nextMobile.addEventListener("click", next);
-    if (prevMobile) prevMobile.addEventListener("click", prev);
 
     updateCards();
 });
