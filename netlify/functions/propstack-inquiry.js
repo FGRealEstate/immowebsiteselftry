@@ -81,24 +81,20 @@ exports.handler = async function (event) {
             });
         }
 
-        let dealResponse = null;
+     let dealResponse = null;
 
-        try {
-            dealResponse = await propstackPost(apiKey, "/deals", {
-                deal: {
-                    title: `Objektanfrage – ${objectTitle || objectId} – ${fullName}`,
-                    name: `Objektanfrage – ${objectTitle || objectId} – ${fullName}`,
-                    contact_id: contactId,
-                    client_id: contactId,
-                    property_id: objectId,
-                    unit_id: objectId,
-                    source: "Website Objektanfrage",
-                    note: note
-                }
-            });
-        } catch (dealError) {
-            console.warn("Deal konnte nicht erstellt werden:", dealError.message);
+try {
+    dealResponse = await propstackPost(apiKey, "/client_properties", {
+        client_property: {
+            client_id: contactId,
+            property_id: objectId,
+            deal_stage_id: 200,
+            note: note
         }
+    });
+} catch (dealError) {
+    console.warn("Deal konnte nicht erstellt werden:", dealError.message);
+}
 
         return json(200, {
             success: true,
