@@ -160,17 +160,12 @@ async function createDeal(apiKey, payload) {
 
 async function findBestDealStage(apiKey) {
     const pipelinesResponse = await propstackGet(apiKey, "/deal_pipelines");
-
     const pipelines = normalizeArray(pipelinesResponse);
 
     const allStages = [];
 
     for (const pipeline of pipelines) {
-        const pipelineName =
-            pipeline.name ||
-            pipeline.title ||
-            pipeline.label ||
-            "";
+        const pipelineName = pipeline.name || pipeline.title || pipeline.label || "";
 
         const stages =
             pipeline.deal_stages ||
@@ -196,40 +191,71 @@ async function findBestDealStage(apiKey) {
         pipeline_name: stage.pipeline_name
     })));
 
-    if (!allStages.length) {
-        return null;
-    }
+    const buyerStages = allStages.filter(stage => {
+        const combined = normalizeText(`${stage.pipeline_name} ${stage.name}`);
+
+        const isBuyer =
+            combined.includes("käufer") ||
+            combined.includes("kaeufer") ||
+            combined.includes("kauf") ||
+            combined.includes("interessent") ||
+            combined.includes("buyer");
+
+        const isOwnerOrSeller =
+            combined.includes("eigentümer") ||
+            combined.includes("eigentuemer") ||
+            combined.includes("verkäufer") ||
+            combined.includes("verkaeufer") ||
+            combined.includes("seller") ||
+            combined.includes("owner");
+
+        return isBuyer && !isOwnerOrSeller;
+    });
 
     const preferredNames = [
-        "200 Käufer",
-        "Käufer",
-        "Anfrage",
-        "Objektanfrage",
-        "Qualifiziert",
-        "Unqualifiziert"
+        "200 käufer",
+        "200 kaeufer",
+        "neuer käufer-lead",
+        "neuer kaeufer-lead",
+        "käufer lead",
+        "kaeufer lead",
+        "interessent",
+        "qualifiziert",
+        "unqualifiziert"
     ];
 
     for (const preferredName of preferredNames) {
-        const exactMatch = allStages.find(stage =>
-            normalizeText(stage.name) === normalizeText(preferredName)
+        const exact = buyerStages.find(stage =>
+            normalizeText(stage.name) === preferredName
         );
 
-        if (exactMatch) {
-            return exactMatch;
-        }
+        if (exact) return exact;
     }
 
     for (const preferredName of preferredNames) {
-        const partialMatch = allStages.find(stage =>
-            normalizeText(stage.name).includes(normalizeText(preferredName))
+        const partial = buyerStages.find(stage =>
+            normalizeText(`${stage.pipeline_name} ${stage.name}`).includes(preferredName)
         );
 
-        if (partialMatch) {
-            return partialMatch;
-        }
+        if (partial) return partial;
     }
 
-    return allStages[0];
+    if (buyerStages.length) {
+        return buyerStages[0];
+    }
+
+    const safeFallback = allStages.find(stage => {
+        const combined = normalizeText(`${stage.pipeline_name} ${stage.name}`);
+
+        return (
+            !combined.includes("eigentümer") &&
+            !combined.includes("eigentuemer") &&
+            !combined.includes("verkäufer") &&
+            !combined.includes("verkaeufer")
+        );
+    });
+
+    return safeFallback || allStages[0] || null;
 }
 
 async function propstackGet(apiKey, endpoint) {
