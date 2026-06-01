@@ -1,171 +1,161 @@
 const PROPSTACK_BASE_URL = "https://api.propstack.de/v1";
 
 exports.handler = async function (event) {
-    if (event.httpMethod !== "POST") {
-        return {
-            statusCode: 405,
-            body: JSON.stringify({
-                success: false,
-                error: "Method not allowed"
-            })
-        };
-    }
-
     try {
-        const payload = JSON.parse(event.body || "{}");
-
-        const {
-            firstName,
-            lastName,
-            email,
-            phone,
-            message,
-            propertyId,
-            propertyTitle,
-            marketingType,
-            propertyType,
-            location,
-            price,
-            url
-        } = payload;
-
-        if (!firstName || !lastName || !email || !propertyId) {
-            return {
-                statusCode: 400,
-                body: JSON.stringify({
-                    success: false,
-                    error: "Pflichtfelder fehlen"
-                })
-            };
+        if (event.httpMethod !== "POST") {
+            return json(405, { success: false, error: "Method not allowed" });
         }
 
         const apiKey = process.env.PROPSTACK_API_KEY;
 
         if (!apiKey) {
-            throw new Error("PROPSTACK_API_KEY fehlt");
+            return json(500, { success: false, error: "PROPSTACK_API_KEY fehlt" });
         }
 
-        const note = `
-Neue Objektanfrage über Website
+        const data = JSON.parse(event.body || "{}");
 
-Objekt:
-${propertyTitle}
+        const firstName = clean(data.first_name || data.firstName);
+        const lastName = clean(data.last_name || data.lastName);
+        const email = clean(data.email);
+        const phone = clean(data.phone);
+        const message = clean(data.message);
+        const contactPreference = clean(data.contact_preference);
+        const objectId = clean(data.object_id || data.propertyId);
+        const objectTitle = clean(data.object_title || data.propertyTitle);
+        const sourceUrl = clean(data.source_url || data.url);
 
-Objekt-ID:
-${propertyId}
-
-Vermarktung:
-${marketingType || "-"}
-
-Objektart:
-${propertyType || "-"}
-
-Standort:
-${location || "-"}
-
-Preis:
-${price || "-"}
-
-Objektlink:
-${url || "-"}
-
-Nachricht:
-${message || "-"}
-`;
-
-        async function propstackRequest(endpoint, body) {
-            const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "X-API-KEY": apiKey
-                },
-                body: JSON.stringify(body)
+        if (!firstName || !lastName || !email || !objectId) {
+            return json(400, {
+                success: false,
+                error: "Pflichtfelder fehlen",
+                received: {
+                    firstName,
+                    lastName,
+                    email,
+                    objectId
+                }
             });
+        }
 
-            const data = await response.json();
+        const fullName = `${firstName} ${lastName}`.trim();
 
-            if (!response.ok) {
-                console.warn(
-                    `Propstack Fehler bei ${endpoint}:`,
-                    JSON.stringify(data)
-                );
+        const note = [
+            "Neue Objektanfrage über die Website",
+            "",
+            `Objekt: ${objectTitle || "-"}`,
+            `Objekt-ID: ${objectId}`,
+            `Name: ${fullName}`,
+            `E-Mail: ${email}`,
+            `Telefon: ${phone || "-"}`,
+            `Kontaktwunsch: ${contactPreference || "-"}`,
+            "",
+            "Nachricht:",
+            message || "-",
+            "",
+            `Quelle: ${sourceUrl || "-"}`
+        ].join("\n");
 
-                throw new Error(
-                    `Propstack Fehler ${response.status} bei ${endpoint}: ${JSON.stringify(data)}`
-                );
+        const contactResponse = await propstackPost(apiKey, "/contacts", {
+            client: {
+                first_name: firstName,
+                last_name: lastName,
+                name: fullName,
+                email: email,
+                phone: phone || "",
+                note: note,
+                source: "Website Objektanfrage"
             }
+        });
 
-            return data;
+        const contactId =
+            contactResponse?.client?.id ||
+            contactResponse?.contact?.id ||
+            contactResponse?.id ||
+            null;
+
+        if (!contactId) {
+            return json(500, {
+                success: false,
+                error: "Kontakt wurde erstellt, aber keine Kontakt-ID erhalten.",
+                propstack_response: contactResponse
+            });
         }
 
-        async function createClient() {
-            const body = {
-                client: {
-                    first_name: firstName,
-                    last_name: lastName,
-                    name: `${firstName} ${lastName}`,
-                    email: email,
-                    phone: phone || "",
-                    note,
-                    source: "Website Objektanfrage"
-                }
-            };
+        let dealResponse = null;
 
-            const response = await propstackRequest("/contacts", body);
-
-            return (
-                response.contact?.id ||
-                response.client?.id ||
-                response.id
-            );
-        }
-
-        async function createDeal(clientId) {
-            const dealBody = {
+        try {
+            dealResponse = await propstackPost(apiKey, "/deals", {
                 deal: {
-                    title: `Objektanfrage – ${propertyTitle}`,
-                    property_id: propertyId,
-                    contact_id: clientId,
-                    phase: "qualifiziert",
-                    source: "Website",
-                    note
+                    title: `Objektanfrage – ${objectTitle || objectId} – ${fullName}`,
+                    name: `Objektanfrage – ${objectTitle || objectId} – ${fullName}`,
+                    contact_id: contactId,
+                    client_id: contactId,
+                    property_id: objectId,
+                    unit_id: objectId,
+                    source: "Website Objektanfrage",
+                    note: note
                 }
-            };
-
-            try {
-                return await propstackRequest("/deals", dealBody);
-            } catch (error) {
-                console.warn("Deal konnte nicht erstellt werden:", error.message);
-                return null;
-            }
+            });
+        } catch (dealError) {
+            console.warn("Deal konnte nicht erstellt werden:", dealError.message);
         }
 
-        const clientId = await createClient();
-
-        if (!clientId) {
-            throw new Error("Kontakt konnte nicht erstellt werden");
-        }
-
-        await createDeal(clientId);
-
-        return {
-            statusCode: 200,
-            body: JSON.stringify({
-                success: true,
-                message: "Objekt erfolgreich angefragt"
-            })
-        };
+        return json(200, {
+            success: true,
+            message: "Objektanfrage erfolgreich übermittelt.",
+            contact_id: contactId,
+            contact: contactResponse,
+            deal: dealResponse
+        });
 
     } catch (error) {
-        console.error("PROPSTACK INQUIRY ERROR:", error);
+        console.error("PROPSTACK INQUIRY ERROR:", error.message);
 
-        return {
-            statusCode: 500,
-            body: JSON.stringify({
-                success: false,
-                error: error.message || "Serverfehler"
-            })
-        };
+        return json(500, {
+            success: false,
+            error: error.message
+        });
     }
 };
+
+function clean(value) {
+    if (value === null || value === undefined) return "";
+    return String(value).trim();
+}
+
+function json(statusCode, body) {
+    return {
+        statusCode,
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(body)
+    };
+}
+
+async function propstackPost(apiKey, endpoint, body) {
+    const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
+        method: "POST",
+        headers: {
+            "X-API-KEY": apiKey,
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(body)
+    });
+
+    const text = await response.text();
+
+    let data;
+    try {
+        data = text ? JSON.parse(text) : {};
+    } catch {
+        data = { raw: text };
+    }
+
+    if (!response.ok) {
+        throw new Error(`Propstack Fehler ${response.status} bei ${endpoint}: ${JSON.stringify(data)}`);
+    }
+
+    return data;
+}
