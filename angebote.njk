@@ -23,7 +23,7 @@ permalink: angebote.html
             Ihre Immobiliensuche
         </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <form id="property-filter-form" class="grid grid-cols-1 md:grid-cols-4 gap-4">
             <select id="filter-vermarktung" class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
                 <option value="">Vermarktungsart (Alle)</option>
                 {% for type in propstack.filters.marketingTypes %}
@@ -46,10 +46,10 @@ permalink: angebote.html
                 class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary"
             >
 
-            <button type="button" id="filter-button" class="btn-85 text-primary font-bold rounded py-3 hover:bg-primary hover:text-white transition duration-300 w-full">
+            <button type="submit" id="filter-button" class="btn-85 text-primary font-bold rounded py-3 hover:bg-primary hover:text-white transition duration-300 w-full">
                 <i class="fas fa-search mr-2"></i> Suchen
             </button>
-        </div>
+        </form>
 
         <div class="mt-4 flex flex-wrap gap-3">
             <button id="filter-reset" type="button" class="text-sm text-primary font-semibold hover:underline">
@@ -248,167 +248,189 @@ permalink: angebote.html
 </section>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const cards = Array.from(document.querySelectorAll(".property-card"));
-    const marketingFilter = document.getElementById("filter-vermarktung");
-    const typeFilter = document.getElementById("filter-objektart");
-    const priceInput = document.getElementById("filter-preis");
-    const filterButton = document.getElementById("filter-button");
-    const resetButton = document.getElementById("filter-reset");
-    const countLabel = document.getElementById("object-count");
-    const pagination = document.getElementById("pagination");
-    const noResults = document.getElementById("no-results");
+(function () {
+    function initPropertyFilters() {
+        const form = document.getElementById("property-filter-form");
+        const cards = Array.from(document.querySelectorAll(".property-card"));
+        const marketingFilter = document.getElementById("filter-vermarktung");
+        const typeFilter = document.getElementById("filter-objektart");
+        const priceInput = document.getElementById("filter-preis");
+        const resetButton = document.getElementById("filter-reset");
+        const countLabel = document.getElementById("object-count");
+        const pagination = document.getElementById("pagination");
+        const noResults = document.getElementById("no-results");
 
-    const perPage = 9;
-    let currentPage = 1;
-    let filteredCards = cards.slice();
+        if (!cards.length) return;
 
-    function norm(value) {
-        return String(value || "").trim().toLowerCase();
-    }
+        const perPage = 9;
+        let currentPage = 1;
+        let filteredCards = cards.slice();
 
-    function parsePrice(value) {
-        if (!value) return null;
-
-        let clean = String(value)
-            .replace(/\s/g, "")
-            .replace(/€/g, "")
-            .trim();
-
-        if (!clean) return null;
-
-        if (clean.includes(".") && clean.includes(",")) {
-            clean = clean.replace(/\./g, "").replace(",", ".");
-        } else if (clean.includes(",")) {
-            clean = clean.replace(",", ".");
+        function normalizeText(value) {
+            return String(value || "")
+                .trim()
+                .toLowerCase()
+                .replace(/\s+/g, " ");
         }
 
-        clean = clean.replace(/[^\d.]/g, "");
+        function parsePrice(value) {
+            if (value === null || value === undefined) return null;
 
-        const number = Number(clean);
-        return Number.isNaN(number) ? null : number;
-    }
+            let clean = String(value)
+                .trim()
+                .replace(/\s/g, "")
+                .replace(/€/g, "");
 
-    function formatPrice(value) {
-        const number = parsePrice(value);
-        if (number === null) return "";
+            if (!clean) return null;
 
-        return new Intl.NumberFormat("de-DE", {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        }).format(number);
-    }
+            if (clean.includes(".") && clean.includes(",")) {
+                clean = clean.replace(/\./g, "").replace(",", ".");
+            } else if (clean.includes(",")) {
+                clean = clean.replace(",", ".");
+            }
 
-    function applyFilters() {
-        const selectedMarketing = norm(marketingFilter ? marketingFilter.value : "");
-        const selectedType = norm(typeFilter ? typeFilter.value : "");
-        const maxPrice = parsePrice(priceInput ? priceInput.value : "");
+            clean = clean.replace(/[^\d.]/g, "");
 
-        filteredCards = cards.filter(function (card) {
-            const cardMarketing = norm(card.getAttribute("data-vermarktung"));
-            const cardType = norm(card.getAttribute("data-objektart"));
-            const cardPrice = parsePrice(card.getAttribute("data-preis"));
+            if (!clean) return null;
 
-            const marketingOk = !selectedMarketing || cardMarketing === selectedMarketing;
-            const typeOk = !selectedType || cardType === selectedType;
-            const priceOk = maxPrice === null || (cardPrice !== null && cardPrice <= maxPrice);
+            const number = Number(clean);
 
-            return marketingOk && typeOk && priceOk;
-        });
+            if (Number.isNaN(number)) return null;
 
-        currentPage = 1;
-        renderCards();
-    }
-
-    function renderCards() {
-        cards.forEach(function (card) {
-            card.classList.add("hidden");
-            card.style.display = "none";
-        });
-
-        const start = (currentPage - 1) * perPage;
-        const end = start + perPage;
-
-        filteredCards.slice(start, end).forEach(function (card) {
-            card.classList.remove("hidden");
-            card.style.display = "";
-        });
-
-        if (countLabel) {
-            countLabel.textContent = filteredCards.length;
+            return number;
         }
 
-        if (noResults) {
-            noResults.classList.toggle("hidden", filteredCards.length > 0);
+        function formatPrice(value) {
+            const number = parsePrice(value);
+
+            if (number === null) return "";
+
+            return new Intl.NumberFormat("de-DE", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }).format(number);
         }
 
-        renderPagination();
-    }
+        function getCardPrice(card) {
+            return parsePrice(card.getAttribute("data-preis"));
+        }
 
-    function renderPagination() {
-        if (!pagination) return;
+        function applyFilters() {
+            const selectedMarketing = normalizeText(marketingFilter ? marketingFilter.value : "");
+            const selectedType = normalizeText(typeFilter ? typeFilter.value : "");
+            const maxPrice = parsePrice(priceInput ? priceInput.value : "");
 
-        pagination.innerHTML = "";
+            filteredCards = cards.filter(function (card) {
+                const cardMarketing = normalizeText(card.getAttribute("data-vermarktung"));
+                const cardType = normalizeText(card.getAttribute("data-objektart"));
+                const cardPrice = getCardPrice(card);
 
-        const pages = Math.ceil(filteredCards.length / perPage);
+                const marketingMatches = !selectedMarketing || cardMarketing === selectedMarketing;
+                const typeMatches = !selectedType || cardType === selectedType;
 
-        if (pages <= 1) return;
+                let priceMatches = true;
 
-        for (let i = 1; i <= pages; i++) {
-            const button = document.createElement("button");
-            button.type = "button";
-            button.textContent = i;
-            button.className = i === currentPage
-                ? "px-4 py-2 rounded bg-primary text-white font-bold"
-                : "px-4 py-2 rounded bg-white text-primary font-bold shadow hover:bg-gray-100";
+                if (maxPrice !== null) {
+                    priceMatches = cardPrice !== null && cardPrice <= maxPrice;
+                }
 
-            button.addEventListener("click", function (event) {
-                event.preventDefault();
-                currentPage = i;
-                renderCards();
+                return marketingMatches && typeMatches && priceMatches;
             });
 
-            pagination.appendChild(button);
+            currentPage = 1;
+            renderCards();
         }
-    }
 
-    if (filterButton) {
-        filterButton.addEventListener("click", function (event) {
-            event.preventDefault();
-            applyFilters();
+        function renderCards() {
+            cards.forEach(function (card) {
+                card.style.display = "none";
+            });
 
-            if (priceInput) {
-                priceInput.value = formatPrice(priceInput.value);
+            const start = (currentPage - 1) * perPage;
+            const end = start + perPage;
+
+            filteredCards.slice(start, end).forEach(function (card) {
+                card.style.display = "";
+            });
+
+            if (countLabel) {
+                countLabel.textContent = filteredCards.length;
             }
-        });
-    }
 
-    if (priceInput) {
-        priceInput.addEventListener("keydown", function (event) {
-            if (event.key === "Enter") {
-                event.preventDefault();
-                applyFilters();
-                priceInput.value = formatPrice(priceInput.value);
+            if (noResults) {
+                if (filteredCards.length === 0) {
+                    noResults.classList.remove("hidden");
+                } else {
+                    noResults.classList.add("hidden");
+                }
             }
-        });
 
-        priceInput.addEventListener("blur", function () {
-            priceInput.value = formatPrice(priceInput.value);
-        });
-    }
+            renderPagination();
+        }
 
-    if (marketingFilter) {
-        marketingFilter.addEventListener("change", applyFilters);
-    }
+        function renderPagination() {
+            if (!pagination) return;
 
-    if (typeFilter) {
-        typeFilter.addEventListener("change", applyFilters);
-    }
+            pagination.innerHTML = "";
 
-    if (resetButton) {
-        resetButton.addEventListener("click", function (event) {
-            event.preventDefault();
+            const pages = Math.ceil(filteredCards.length / perPage);
 
+            if (pages <= 1) return;
+
+            const previousButton = document.createElement("button");
+            previousButton.type = "button";
+            previousButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
+            previousButton.className = currentPage === 1
+                ? "px-4 py-2 rounded bg-gray-200 text-gray-400 font-bold cursor-not-allowed"
+                : "px-4 py-2 rounded bg-white text-primary font-bold shadow hover:bg-gray-100";
+
+            previousButton.disabled = currentPage === 1;
+
+            previousButton.addEventListener("click", function () {
+                if (currentPage > 1) {
+                    currentPage -= 1;
+                    renderCards();
+                }
+            });
+
+            pagination.appendChild(previousButton);
+
+            for (let i = 1; i <= pages; i++) {
+                const button = document.createElement("button");
+                button.type = "button";
+                button.textContent = i;
+                button.className = i === currentPage
+                    ? "px-4 py-2 rounded bg-primary text-white font-bold"
+                    : "px-4 py-2 rounded bg-white text-primary font-bold shadow hover:bg-gray-100";
+
+                button.addEventListener("click", function () {
+                    currentPage = i;
+                    renderCards();
+                });
+
+                pagination.appendChild(button);
+            }
+
+            const nextButton = document.createElement("button");
+            nextButton.type = "button";
+            nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+            nextButton.className = currentPage === pages
+                ? "px-4 py-2 rounded bg-gray-200 text-gray-400 font-bold cursor-not-allowed"
+                : "px-4 py-2 rounded bg-white text-primary font-bold shadow hover:bg-gray-100";
+
+            nextButton.disabled = currentPage === pages;
+
+            nextButton.addEventListener("click", function () {
+                if (currentPage < pages) {
+                    currentPage += 1;
+                    renderCards();
+                }
+            });
+
+            pagination.appendChild(nextButton);
+        }
+
+        function resetFilters() {
             if (marketingFilter) marketingFilter.value = "";
             if (typeFilter) typeFilter.value = "";
             if (priceInput) priceInput.value = "";
@@ -416,9 +438,57 @@ document.addEventListener("DOMContentLoaded", function () {
             filteredCards = cards.slice();
             currentPage = 1;
             renderCards();
-        });
+        }
+
+        window.applyPropertyFilters = applyFilters;
+
+        if (form) {
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                applyFilters();
+
+                if (priceInput) {
+                    priceInput.value = formatPrice(priceInput.value);
+                }
+            });
+        }
+
+        if (priceInput) {
+            priceInput.addEventListener("keydown", function (event) {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    applyFilters();
+                    priceInput.value = formatPrice(priceInput.value);
+                }
+            });
+
+            priceInput.addEventListener("blur", function () {
+                priceInput.value = formatPrice(priceInput.value);
+            });
+        }
+
+        if (marketingFilter) {
+            marketingFilter.addEventListener("change", applyFilters);
+        }
+
+        if (typeFilter) {
+            typeFilter.addEventListener("change", applyFilters);
+        }
+
+        if (resetButton) {
+            resetButton.addEventListener("click", function (event) {
+                event.preventDefault();
+                resetFilters();
+            });
+        }
+
+        renderCards();
     }
 
-    renderCards();
-});
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initPropertyFilters);
+    } else {
+        initPropertyFilters();
+    }
+})();
 </script>
