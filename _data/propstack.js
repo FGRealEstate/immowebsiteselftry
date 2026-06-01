@@ -14,6 +14,7 @@ function isEmpty(value) {
 
     if (typeof value === "string") {
         const text = value.trim().toLowerCase();
+
         return (
             text === "" ||
             text === "0" ||
@@ -174,22 +175,30 @@ function addDetail(list, label, value) {
 
 function addPriceDetail(list, label, value) {
     const formatted = formatPrice(value);
-    if (formatted) list.push({ label, value: formatted });
+    if (formatted) {
+        list.push({ label, value: formatted });
+    }
 }
 
 function addAreaDetail(list, label, value) {
     const formatted = formatNumber(value, " m²");
-    if (formatted) list.push({ label, value: formatted });
+    if (formatted) {
+        list.push({ label, value: formatted });
+    }
 }
 
 function addIntegerDetail(list, label, value, suffix = "") {
     const formatted = formatInteger(value, suffix);
-    if (formatted) list.push({ label, value: formatted });
+    if (formatted) {
+        list.push({ label, value: formatted });
+    }
 }
 
 function addDateDetail(list, label, value) {
     const formatted = formatDate(value);
-    if (formatted) list.push({ label, value: formatted });
+    if (formatted) {
+        list.push({ label, value: formatted });
+    }
 }
 
 function addBooleanFeature(list, label, value) {
@@ -262,8 +271,6 @@ function getImages(unit) {
 function getTitle(unit) {
     return (
         textValue(unit.name) ||
-        textValue(unit.address) ||
-        textValue(unit.short_address) ||
         textValue(unit.headline?.value) ||
         textValue(unit.headline) ||
         textValue(unit.custom_fields?.ueberschrift) ||
@@ -271,7 +278,7 @@ function getTitle(unit) {
     );
 }
 
-function getLocation(unit) {
+function getStreetFreeLocation(unit) {
     return (
         textValue(unit.city) ||
         textValue(unit.region) ||
@@ -279,15 +286,12 @@ function getLocation(unit) {
     );
 }
 
-function getStreetFreeLocation(unit) {
-    return textValue(unit.city) || textValue(unit.region) || null;
-}
-
 module.exports = async function () {
     const apiKey = process.env.PROPSTACK_API_KEY;
 
     if (!apiKey) {
         console.warn("PROPSTACK_API_KEY fehlt.");
+
         return {
             properties: [],
             filters: {
@@ -307,7 +311,12 @@ module.exports = async function () {
 
         if (!response.ok) {
             const errorText = await response.text();
-            console.warn("Propstack API Fehler:", response.status, errorText.slice(0, 500));
+
+            console.warn(
+                "Propstack API Fehler:",
+                response.status,
+                errorText.slice(0, 500)
+            );
 
             return {
                 properties: [],
@@ -322,6 +331,7 @@ module.exports = async function () {
 
         if (!Array.isArray(units)) {
             console.warn("Propstack Antwort ist kein Array.");
+
             return {
                 properties: [],
                 filters: {
@@ -338,10 +348,18 @@ module.exports = async function () {
                 const slug = slugify(`${title}-${unit.id}`);
 
                 const marketingType = translateMarketingType(unit.marketing_type);
-                const propertyType = translateObjectType(unit.object_type || unit.rs_type || unit.rs_category);
+                const propertyType = translateObjectType(
+                    unit.object_type ||
+                    unit.rs_type ||
+                    unit.rs_category
+                );
 
                 const priceRaw = numberValue(unit.price);
-                const livingSpaceRaw = numberValue(unit.living_space || unit.property_space_value);
+                const livingSpaceRaw = numberValue(
+                    unit.living_space ||
+                    unit.property_space_value
+                );
+
                 const images = getImages(unit);
 
                 const details = [];
@@ -377,7 +395,6 @@ module.exports = async function () {
                 addDetail(details, "Stellplatztyp", unit.parking_space_type);
 
                 addDetail(details, "Baujahr", unit.construction_year || unit.building_year);
-                addDetail(details, "Baujahr Anlagentechnik", unit.energy_certificate_creation_date);
 
                 addDetail(details, "Energieausweistyp", unit.energy_certificate_type);
                 addDateDetail(details, "Energieausweis gültig bis", unit.energy_certificate_valid_until);
@@ -396,6 +413,7 @@ module.exports = async function () {
                 addDetail(details, "Fahrzeit nächster Flughafen", unit.distance_to_airport);
 
                 const descriptions = [];
+
                 addDescription(descriptions, "Objektbeschreibung", unit.description);
                 addDescription(descriptions, "Lage", unit.location_description);
                 addDescription(descriptions, "Ausstattung", unit.equipment_description);
@@ -443,6 +461,7 @@ module.exports = async function () {
 
                     price_raw: priceRaw,
                     price: formatPrice(unit.price),
+
                     price_per_sqm: unit.price_per_sqm
                         ? formatPrice(unit.price_per_sqm)
                         : priceRaw && livingSpaceRaw
@@ -469,8 +488,13 @@ module.exports = async function () {
                 };
             });
 
-        const marketingTypes = [...new Set(properties.map((p) => p.marketing_type).filter(Boolean))];
-        const propertyTypes = [...new Set(properties.map((p) => p.property_type).filter(Boolean))];
+        const marketingTypes = [
+            ...new Set(properties.map((property) => property.marketing_type).filter(Boolean))
+        ];
+
+        const propertyTypes = [
+            ...new Set(properties.map((property) => property.property_type).filter(Boolean))
+        ];
 
         console.log("PROPSTACK OBJEKTE:", properties.length);
 
