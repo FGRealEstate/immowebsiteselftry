@@ -263,15 +263,28 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentPage = 1;
     let filteredCards = cards;
 
+    function normalizeText(value) {
+        return String(value || "")
+            .trim()
+            .toLowerCase()
+            .replace(/\s+/g, " ");
+    }
+
     function parseGermanNumber(value) {
         if (!value) return null;
 
-        const clean = String(value)
+        let clean = String(value)
+            .trim()
             .replace(/\s/g, "")
-            .replace(/€/g, "")
-            .replace(/\./g, "")
-            .replace(",", ".")
-            .replace(/[^\d.]/g, "");
+            .replace(/€/g, "");
+
+        if (clean.includes(",") && clean.includes(".")) {
+            clean = clean.replace(/\./g, "").replace(",", ".");
+        } else if (clean.includes(",")) {
+            clean = clean.replace(",", ".");
+        }
+
+        clean = clean.replace(/[^\d.]/g, "");
 
         if (!clean) return null;
 
@@ -294,25 +307,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function getCardPrice(card) {
-        const raw = card.dataset.preis;
-
-        if (!raw) return null;
-
-        const number = Number(raw);
-
-        if (Number.isNaN(number)) return null;
-
-        return number;
+        return parseGermanNumber(card.dataset.preis);
     }
 
     function applyFilters() {
-        const marketing = marketingFilter ? marketingFilter.value : "";
-        const type = typeFilter ? typeFilter.value : "";
+        const marketing = normalizeText(marketingFilter ? marketingFilter.value : "");
+        const type = normalizeText(typeFilter ? typeFilter.value : "");
         const maxPrice = priceInput ? parseGermanNumber(priceInput.value) : null;
 
         filteredCards = cards.filter(function (card) {
-            const cardMarketing = card.dataset.vermarktung || "";
-            const cardType = card.dataset.objektart || "";
+            const cardMarketing = normalizeText(card.dataset.vermarktung);
+            const cardType = normalizeText(card.dataset.objektart);
             const cardPrice = getCardPrice(card);
 
             const marketingMatch = !marketing || cardMarketing === marketing;
@@ -320,12 +325,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let priceMatch = true;
 
-            if (maxPrice && cardPrice) {
-                priceMatch = cardPrice <= maxPrice;
-            }
-
-            if (maxPrice && !cardPrice) {
-                priceMatch = false;
+            if (maxPrice !== null) {
+                priceMatch = cardPrice !== null && cardPrice <= maxPrice;
             }
 
             return marketingMatch && typeMatch && priceMatch;
@@ -367,25 +368,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (pages <= 1) return;
 
-        const previousButton = document.createElement("button");
-        previousButton.type = "button";
-        previousButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
-        previousButton.className = currentPage === 1
-            ? "px-4 py-2 rounded bg-gray-200 text-gray-400 font-bold cursor-not-allowed"
-            : "px-4 py-2 rounded bg-white text-primary font-bold shadow hover:bg-gray-100";
-
-        previousButton.disabled = currentPage === 1;
-
-        previousButton.addEventListener("click", function () {
-            if (currentPage > 1) {
-                currentPage -= 1;
-                render();
-                document.getElementById("angebote").scrollIntoView({ behavior: "smooth" });
-            }
-        });
-
-        pagination.appendChild(previousButton);
-
         for (let i = 1; i <= pages; i++) {
             const button = document.createElement("button");
             button.type = "button";
@@ -402,25 +384,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             pagination.appendChild(button);
         }
-
-        const nextButton = document.createElement("button");
-        nextButton.type = "button";
-        nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
-        nextButton.className = currentPage === pages
-            ? "px-4 py-2 rounded bg-gray-200 text-gray-400 font-bold cursor-not-allowed"
-            : "px-4 py-2 rounded bg-white text-primary font-bold shadow hover:bg-gray-100";
-
-        nextButton.disabled = currentPage === pages;
-
-        nextButton.addEventListener("click", function () {
-            if (currentPage < pages) {
-                currentPage += 1;
-                render();
-                document.getElementById("angebote").scrollIntoView({ behavior: "smooth" });
-            }
-        });
-
-        pagination.appendChild(nextButton);
     }
 
     if (priceInput) {
@@ -432,20 +395,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if (event.key === "Enter") {
                 priceInput.value = formatGermanNumber(priceInput.value);
                 applyFilters();
-            }
-        });
-
-        priceInput.addEventListener("input", function () {
-            const cursorPosition = priceInput.selectionStart;
-            const raw = priceInput.value;
-
-            if (!raw) return;
-
-            const allowed = raw.replace(/[^\d.,]/g, "");
-
-            if (raw !== allowed) {
-                priceInput.value = allowed;
-                priceInput.setSelectionRange(cursorPosition - 1, cursorPosition - 1);
             }
         });
     }
