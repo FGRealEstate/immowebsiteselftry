@@ -3,13 +3,19 @@ const PROPSTACK_BASE_URL = "https://api.propstack.de/v1";
 exports.handler = async function (event) {
     try {
         if (event.httpMethod !== "POST") {
-            return json(405, { success: false, error: "Method not allowed" });
+            return json(405, {
+                success: false,
+                error: "Method not allowed"
+            });
         }
 
         const apiKey = process.env.PROPSTACK_API_KEY;
 
         if (!apiKey) {
-            return json(500, { success: false, error: "PROPSTACK_API_KEY fehlt" });
+            return json(500, {
+                success: false,
+                error: "PROPSTACK_API_KEY fehlt"
+            });
         }
 
         const data = JSON.parse(event.body || "{}");
@@ -55,6 +61,13 @@ exports.handler = async function (event) {
             `Quelle: ${sourceUrl || "-"}`
         ].join("\n");
 
+        console.log("Neue Objektanfrage:", {
+            objectId,
+            objectTitle,
+            fullName,
+            email
+        });
+
         const contactResponse = await propstackPost(apiKey, "/contacts", {
             client: {
                 first_name: firstName,
@@ -71,6 +84,7 @@ exports.handler = async function (event) {
             contactResponse?.client?.id ||
             contactResponse?.contact?.id ||
             contactResponse?.id ||
+            contactResponse?.data?.id ||
             null;
 
         if (!contactId) {
@@ -81,20 +95,19 @@ exports.handler = async function (event) {
             });
         }
 
-     let dealResponse = null;
+        console.log("Kontakt erstellt:", contactId);
 
-try {
-    dealResponse = await propstackPost(apiKey, "/client_properties", {
-        client_property: {
-            client_id: contactId,
-            property_id: objectId,
-            deal_stage_id: 200,
-            note: note
-        }
-    });
-} catch (dealError) {
-    console.warn("Deal konnte nicht erstellt werden:", dealError.message);
-}
+        const dealResponse = await propstackPost(apiKey, "/client_properties", {
+            client_property: {
+                client_id: contactId,
+                property_id: objectId,
+                deal_stage_id: 200,
+                note: note,
+                source: "Website Objektanfrage"
+            }
+        });
+
+        console.log("Deal erstellt:", dealResponse);
 
         return json(200, {
             success: true,
@@ -150,7 +163,9 @@ async function propstackPost(apiKey, endpoint, body) {
     }
 
     if (!response.ok) {
-        throw new Error(`Propstack Fehler ${response.status} bei ${endpoint}: ${JSON.stringify(data)}`);
+        throw new Error(
+            `Propstack Fehler ${response.status} bei ${endpoint}: ${JSON.stringify(data)}`
+        );
     }
 
     return data;
