@@ -85,7 +85,6 @@ function htmlValue(input) {
         .trim();
 
     const withoutHtml = cleaned.replace(/<[^>]*>/g, "").trim();
-
     if (isEmpty(withoutHtml)) return null;
 
     return cleaned;
@@ -107,7 +106,6 @@ function numberValue(input) {
     }
 
     const number = Number(raw);
-
     if (Number.isNaN(number) || number === 0) return null;
 
     return number;
@@ -133,7 +131,6 @@ function booleanValue(input) {
         text === "1" ||
         text === "ja" ||
         text === "yes" ||
-        text === "y" ||
         text === "vorhanden"
     );
 }
@@ -146,16 +143,6 @@ function formatPrice(input) {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2
     }).format(number) + " €";
-}
-
-function formatPercent(input) {
-    const number = numberValue(input);
-    if (!number) return null;
-
-    return new Intl.NumberFormat("de-DE", {
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 2
-    }).format(number) + " %";
 }
 
 function formatNumber(input, suffix = "") {
@@ -247,12 +234,12 @@ function translateObjectType(input) {
     return map[key] || text;
 }
 
-function isPlaceholder(label, value) {
-    const cleanValue = textValue(value);
-    if (!cleanValue) return true;
+function isPlaceholder(label, input) {
+    const clean = textValue(input);
+    if (!clean) return true;
 
     const nLabel = normalizeText(label);
-    const nValue = normalizeText(cleanValue);
+    const nValue = normalizeText(clean);
 
     if (!nValue) return true;
     if (nLabel && nValue === nLabel) return true;
@@ -279,7 +266,9 @@ function isPlaceholder(label, value) {
         "etagenlage",
         "etagenzahl",
         "anzahlparkplatze",
-        "verfugbarab"
+        "verfugbarab",
+        "heizungsart",
+        "energietrager"
     ];
 
     return placeholders.includes(nValue);
@@ -318,17 +307,18 @@ function customField(unit, key) {
     );
 }
 
-function firstValue(unit, fields) {
+function firstText(unit, fields) {
     for (const field of fields) {
+        let candidate;
+
         if (field.startsWith("custom_fields.")) {
-            const key = field.replace("custom_fields.", "");
-            const custom = customField(unit, key);
-            const value = textValue(custom);
-            if (value) return value;
+            candidate = customField(unit, field.replace("custom_fields.", ""));
         } else {
-            const value = textValue(unit[field]);
-            if (value) return value;
+            candidate = unit[field];
         }
+
+        const clean = textValue(candidate);
+        if (clean) return clean;
     }
 
     return null;
@@ -336,15 +326,16 @@ function firstValue(unit, fields) {
 
 function firstNumber(unit, fields) {
     for (const field of fields) {
+        let candidate;
+
         if (field.startsWith("custom_fields.")) {
-            const key = field.replace("custom_fields.", "");
-            const custom = customField(unit, key);
-            const value = numberValue(custom);
-            if (value) return value;
+            candidate = customField(unit, field.replace("custom_fields.", ""));
         } else {
-            const value = numberValue(unit[field]);
-            if (value) return value;
+            candidate = unit[field];
         }
+
+        const clean = numberValue(candidate);
+        if (clean) return clean;
     }
 
     return null;
@@ -355,10 +346,7 @@ function addDetail(list, label, input) {
     if (!clean) return;
     if (isPlaceholder(label, clean)) return;
 
-    list.push({
-        label,
-        value: clean
-    });
+    list.push({ label, value: clean });
 }
 
 function addPriceDetail(list, label, input) {
@@ -366,21 +354,7 @@ function addPriceDetail(list, label, input) {
     if (!clean) return;
     if (isPlaceholder(label, clean)) return;
 
-    list.push({
-        label,
-        value: clean
-    });
-}
-
-function addPercentDetail(list, label, input) {
-    const clean = formatPercent(input);
-    if (!clean) return;
-    if (isPlaceholder(label, clean)) return;
-
-    list.push({
-        label,
-        value: clean
-    });
+    list.push({ label, value: clean });
 }
 
 function addAreaDetail(list, label, input) {
@@ -388,10 +362,7 @@ function addAreaDetail(list, label, input) {
     if (!clean) return;
     if (isPlaceholder(label, clean)) return;
 
-    list.push({
-        label,
-        value: clean
-    });
+    list.push({ label, value: clean });
 }
 
 function addIntegerDetail(list, label, input, suffix = "") {
@@ -399,10 +370,7 @@ function addIntegerDetail(list, label, input, suffix = "") {
     if (!clean) return;
     if (isPlaceholder(label, clean)) return;
 
-    list.push({
-        label,
-        value: clean
-    });
+    list.push({ label, value: clean });
 }
 
 function addDateDetail(list, label, input) {
@@ -410,10 +378,7 @@ function addDateDetail(list, label, input) {
     if (!clean) return;
     if (isPlaceholder(label, clean)) return;
 
-    list.push({
-        label,
-        value: clean
-    });
+    list.push({ label, value: clean });
 }
 
 function addDescription(list, label, input) {
@@ -424,10 +389,7 @@ function addDescription(list, label, input) {
     const duplicate = list.some((item) => normalizeText(item.value) === normalizeText(clean));
     if (duplicate) return;
 
-    list.push({
-        label,
-        value: clean
-    });
+    list.push({ label, value: clean });
 }
 
 function addBooleanFeature(list, label, input) {
@@ -444,10 +406,7 @@ function addFeature(list, label, input) {
     if (!clean) return;
     if (isPlaceholder(label, clean)) return;
 
-    list.push({
-        label,
-        value: clean
-    });
+    list.push({ label, value: clean });
 }
 
 function getImageUrl(image) {
@@ -474,8 +433,7 @@ function getImages(unit) {
         ...(Array.isArray(unit.images) ? unit.images : []),
         ...(Array.isArray(unit.photos) ? unit.photos : []),
         ...(Array.isArray(unit.pictures) ? unit.pictures : []),
-        ...(Array.isArray(unit.media) ? unit.media : []),
-        ...(Array.isArray(unit.documents) ? unit.documents : [])
+        ...(Array.isArray(unit.media) ? unit.media : [])
     ];
 
     const seen = new Set();
@@ -510,6 +468,15 @@ function getPublicLocation(unit) {
 
 function getPublicTitle(unit, marketingType, propertyType) {
     const candidates = [
+        unit.internal_note,
+        unit.note,
+        unit.private_note,
+        unit.memo,
+        customField(unit, "interne_notiz"),
+        customField(unit, "interne notiz"),
+        customField(unit, "internal_note"),
+        customField(unit, "website_titel"),
+        customField(unit, "objekt_titel_website"),
         customField(unit, "ueberschrift"),
         customField(unit, "überschrift"),
         customField(unit, "headline"),
@@ -534,12 +501,10 @@ function getPublicTitle(unit, marketingType, propertyType) {
     if (propertyType) {
         const normalized = normalizeText(propertyType);
 
-        if (normalized.includes("wohnung")) {
+        if (normalized.includes("wohnung") || normalized.includes("wohnen")) {
             base = marketingType === "Miete" ? "Mietwohnung" : "Eigentumswohnung";
         } else if (normalized.includes("haus")) {
             base = "Haus";
-        } else if (normalized.includes("mehrfamilienhaus")) {
-            base = "Mehrfamilienhaus";
         } else if (normalized.includes("grundstuck")) {
             base = "Grundstück";
         } else if (normalized.includes("gewerbe")) {
@@ -551,11 +516,7 @@ function getPublicTitle(unit, marketingType, propertyType) {
         }
     }
 
-    if (location) {
-        return `${base} in ${location}`;
-    }
-
-    return base;
+    return location ? `${base} in ${location}` : base;
 }
 
 module.exports = async function () {
@@ -647,11 +608,14 @@ module.exports = async function () {
                     "custom_fields.zimmer"
                 ]);
 
-                const constructionYear = firstValue(unit, [
-                    "construction_year",
-                    "building_year",
-                    "year_built",
-                    "custom_fields.baujahr"
+                const bedroomsRaw = firstNumber(unit, [
+                    "number_of_bed_rooms",
+                    "bedrooms"
+                ]);
+
+                const bathroomsRaw = firstNumber(unit, [
+                    "number_of_bath_rooms",
+                    "bathrooms"
                 ]);
 
                 const images = getImages(unit);
@@ -659,14 +623,6 @@ module.exports = async function () {
                 const details = [];
 
                 addPriceDetail(details, "Kaufpreis", priceRaw);
-                addPriceDetail(details, "Kaltmiete", unit.base_rent);
-                addPriceDetail(details, "Warmmiete", unit.total_rent);
-                addPriceDetail(details, "Nebenkosten", unit.service_charges);
-                addPriceDetail(details, "Heizkosten", unit.heating_costs);
-                addPriceDetail(details, "Hausgeld/Monat", unit.house_money);
-                addPriceDetail(details, "Stellplatzpreis", unit.parking_space_price);
-                addPriceDetail(details, "Mieteinnahmen monatlich", unit.monthly_rental_income);
-                addPriceDetail(details, "Mieteinnahmen jährlich", unit.annual_rental_income);
 
                 if (numberValue(unit.price_per_sqm)) {
                     addPriceDetail(details, "Preis/qm", unit.price_per_sqm);
@@ -674,65 +630,27 @@ module.exports = async function () {
                     addPriceDetail(details, "Preis/qm", priceRaw / livingSpaceRaw);
                 }
 
-                addPercentDetail(details, "Innenprovision", unit.internal_commission);
-                addPercentDetail(details, "Außenprovision", unit.external_commission);
-                addPriceDetail(details, "Gesamtprovision", unit.total_commission);
-                addDetail(details, "Provision Hinweis", unit.commission_note);
-                addDetail(details, "Außenprovision für Exposé", unit.courtage);
-
                 addAreaDetail(details, "Wohnfläche", livingSpaceRaw);
                 addAreaDetail(details, "Grundstücksfläche", unit.plot_area);
                 addAreaDetail(details, "Nutzfläche", unit.usable_area);
-                addAreaDetail(details, "Gewerbefläche", unit.commercial_area);
-                addAreaDetail(details, "Lagerfläche", unit.storage_area);
-                addAreaDetail(details, "Bürofläche", unit.office_area);
-                addAreaDetail(details, "Verkaufsfläche", unit.retail_area);
                 addAreaDetail(details, "Balkon-/Terrassenfläche", unit.balcony_area);
                 addAreaDetail(details, "Gartenfläche", unit.garden_area);
 
                 addIntegerDetail(details, "Zimmer", roomsRaw);
-                addIntegerDetail(details, "Schlafzimmer", unit.number_of_bed_rooms);
-                addIntegerDetail(details, "Badezimmer", unit.number_of_bath_rooms);
-                addIntegerDetail(details, "Separate WCs", unit.number_of_sep_wc);
-                addIntegerDetail(details, "Wohneinheiten", unit.number_of_units);
-                addIntegerDetail(details, "Gewerbeeinheiten", unit.number_of_commercial_units);
-
-                addDetail(details, "Etage", unit.floor);
-                addIntegerDetail(details, "Etagenzahl", unit.number_of_floors);
-                addDetail(details, "Etagenlage", unit.floor_position);
+                addIntegerDetail(details, "Schlafzimmer", bedroomsRaw);
+                addIntegerDetail(details, "Badezimmer", bathroomsRaw);
 
                 addDetail(details, "Objektart", propertyType);
                 addDetail(details, "Vermarktung", marketingType);
-                addDetail(details, "Kategorie", unit.category);
-                addDetail(details, "Unterkategorie", unit.subcategory);
                 addDetail(details, "Objektzustand", unit.condition);
-                addDetail(details, "Status", unit.status);
                 addDateDetail(details, "Verfügbar ab", unit.available_from);
-                addDetail(details, "Letzte Modernisierung", unit.last_modernization);
-                addDetail(details, "Qualität der Ausstattung", unit.furnishing_quality);
                 addIntegerDetail(details, "Anzahl Parkplätze", unit.number_of_parking_spaces);
                 addDetail(details, "Stellplatztyp", unit.parking_space_type);
-                addDetail(details, "Baujahr", constructionYear);
+                addDetail(details, "Etage", unit.floor);
 
-                addDetail(details, "Energieausweis", unit.energy_certificate);
-                addDateDetail(details, "Energieausweis erstellt am", unit.energy_certificate_creation_date);
-                addDateDetail(details, "Energieausweis ausgestellt am", unit.energy_certificate_date);
-                addDateDetail(details, "Energieausweis gültig bis", unit.energy_certificate_valid_until);
                 addDetail(details, "Energieausweistyp", unit.energy_certificate_type);
                 addDetail(details, "Energieeffizienzklasse", unit.energy_efficiency_class);
                 addDetail(details, "Energieverbrauchswert", unit.energy_consumption);
-                addDetail(details, "Energiekennwert Strom", unit.energy_electricity_value);
-                addDetail(details, "Energiekennwert Wärme", unit.energy_heating_value);
-                addDetail(details, "CO₂-Emissionen", unit.co2_emission);
-                addDetail(details, "CO₂-Emissionsklasse", unit.co2_emission_class);
-                addDetail(details, "Heizungsart", unit.heating_type);
-                addDetail(details, "Wesentlicher Energieträger", unit.main_energy_source);
-                addDetail(details, "Baujahr Anlagentechnik", unit.energy_building_year);
-
-                addDetail(details, "Fußweg zu ÖPNV", unit.distance_to_public_transport);
-                addDetail(details, "Fahrzeit nächste Autobahn", unit.distance_to_highway);
-                addDetail(details, "Fahrzeit nächster HBF", unit.distance_to_main_station);
-                addDetail(details, "Fahrzeit nächster Flughafen", unit.distance_to_airport);
 
                 const descriptions = [];
 
@@ -755,37 +673,23 @@ module.exports = async function () {
 
                 const features = [];
 
-                addBooleanFeature(features, "Aufzug", unit.elevator);
                 addBooleanFeature(features, "Keller", unit.cellar);
                 addBooleanFeature(features, "Einbauküche", unit.built_in_kitchen);
-                addBooleanFeature(features, "Loggia", unit.loggia);
-                addBooleanFeature(features, "Denkmalschutz", unit.monument);
-                addBooleanFeature(features, "Abstellraum", unit.storage_room);
-                addBooleanFeature(features, "Pool", unit.pool);
-                addBooleanFeature(features, "Alarmanlage", unit.alarm_system);
-                addBooleanFeature(features, "Klimaanlage", unit.air_conditioning);
-                addBooleanFeature(features, "Barrierefrei", unit.barrier_free);
-                addBooleanFeature(features, "Gäste-WC", unit.guest_toilet);
                 addBooleanFeature(features, "Balkon", unit.balcony);
                 addBooleanFeature(features, "Terrasse", unit.terrace);
-                addBooleanFeature(features, "Balkon/Terrasse", unit.balcony_or_terrace);
                 addBooleanFeature(features, "Garten", unit.garden);
-                addBooleanFeature(features, "Als Ferienwohnung geeignet", unit.suitable_as_holiday_home);
+                addBooleanFeature(features, "Aufzug", unit.elevator);
+                addBooleanFeature(features, "Gäste-WC", unit.guest_toilet);
+                addBooleanFeature(features, "Abstellraum", unit.storage_room);
                 addBooleanFeature(features, "Kamin", unit.fireplace);
                 addBooleanFeature(features, "Sauna", unit.sauna);
-                addBooleanFeature(features, "Wintergarten", unit.winter_garden);
-                addBooleanFeature(features, "Vermietet", unit.rented);
-                addBooleanFeature(features, "Denkmalgeschützt", unit.listed_building);
-                addBooleanFeature(features, "Seniorengerecht", unit.senior_friendly);
-                addBooleanFeature(features, "Rollstuhlgerecht", unit.wheelchair_accessible);
+                addBooleanFeature(features, "Barrierefrei", unit.barrier_free);
+                addBooleanFeature(features, "Klimaanlage", unit.air_conditioning);
 
                 addFeature(features, "Bad", unit.bathroom);
                 addFeature(features, "Bodenbelag", unit.flooring);
                 addFeature(features, "Ausstattung", unit.furnishing);
                 addFeature(features, "Qualität der Ausstattung", unit.furnishing_quality);
-                addFeature(features, "Küche", unit.kitchen);
-                addFeature(features, "Heizung", unit.heating_type);
-                addFeature(features, "Stellplatz", unit.parking_space_type);
 
                 return {
                     id: unit.id,
@@ -814,7 +718,11 @@ module.exports = async function () {
                     rooms_raw: roomsRaw,
                     rooms: formatInteger(roomsRaw),
 
-                    construction_year: isPlaceholder("Baujahr", constructionYear) ? null : constructionYear,
+                    bedrooms_raw: bedroomsRaw,
+                    bedrooms: formatInteger(bedroomsRaw),
+
+                    bathrooms_raw: bathroomsRaw,
+                    bathrooms: formatInteger(bathroomsRaw),
 
                     gallery: images.map((image) => image.url),
                     images,
