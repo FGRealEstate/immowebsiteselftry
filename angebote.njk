@@ -50,6 +50,12 @@ permalink: angebote.html
                 <i class="fas fa-search mr-2"></i> Suchen
             </button>
         </div>
+
+        <div class="mt-4 flex flex-wrap gap-3">
+            <button id="filter-reset" type="button" class="text-sm text-primary font-semibold hover:underline">
+                Filter zurücksetzen
+            </button>
+        </div>
     </div>
 
     <h2 class="text-3xl font-bold mb-8 text-primary border-b-2 border-secondary pb-2">
@@ -68,7 +74,7 @@ permalink: angebote.html
             data-preis="{{ property.price_raw or '' }}"
         >
 
-            <a href="{{ property.url }}" class="block bg-gray-100">
+            <a href="{{ property.url }}" class="block bg-gray-100 overflow-hidden">
                 {% if property.main_image %}
                 <img
                     src="{{ property.main_image }}"
@@ -98,7 +104,7 @@ permalink: angebote.html
                     {% endif %}
                 </div>
 
-                <h3 class="text-xl font-bold text-primary mb-2 line-clamp-2">
+                <h3 class="text-xl font-bold text-primary mb-2 line-clamp-2 min-h-[3.5rem]">
                     {{ property.title }}
                 </h3>
 
@@ -113,7 +119,7 @@ permalink: angebote.html
                     {{ property.price or "Preis auf Anfrage" }}
                 </p>
 
-                {% if property.living_space or property.rooms or property.construction_year %}
+                {% if property.living_space or property.rooms %}
                 <div class="flex justify-between text-sm text-gray-600 mb-6 border-t border-gray-100 pt-3 gap-3">
                     {% if property.living_space %}
                     <span>
@@ -126,13 +132,6 @@ permalink: angebote.html
                     <span>
                         <i class="fas fa-bed mr-1 text-accent"></i>
                         {{ property.rooms }} Zi.
-                    </span>
-                    {% endif %}
-
-                    {% if property.construction_year %}
-                    <span>
-                        <i class="fas fa-calendar-alt mr-1 text-accent"></i>
-                        {{ property.construction_year }}
                     </span>
                     {% endif %}
                 </div>
@@ -255,6 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const typeFilter = document.getElementById("filter-objektart");
     const priceInput = document.getElementById("filter-preis");
     const filterButton = document.getElementById("filter-button");
+    const resetButton = document.getElementById("filter-reset");
     const countLabel = document.getElementById("object-count");
     const pagination = document.getElementById("pagination");
     const noResults = document.getElementById("no-results");
@@ -265,6 +265,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function parseGermanNumber(value) {
         if (!value) return null;
+
         const clean = String(value)
             .replace(/\s/g, "")
             .replace(/€/g, "")
@@ -272,12 +273,18 @@ document.addEventListener("DOMContentLoaded", function () {
             .replace(",", ".")
             .replace(/[^\d.]/g, "");
 
+        if (!clean) return null;
+
         const number = Number(clean);
-        return Number.isNaN(number) ? null : number;
+
+        if (Number.isNaN(number)) return null;
+
+        return number;
     }
 
     function formatGermanNumber(value) {
         const number = parseGermanNumber(value);
+
         if (!number) return "";
 
         return new Intl.NumberFormat("de-DE", {
@@ -286,19 +293,40 @@ document.addEventListener("DOMContentLoaded", function () {
         }).format(number);
     }
 
-    function applyFilters() {
-        const marketing = marketingFilter.value;
-        const type = typeFilter.value;
-        const maxPrice = parseGermanNumber(priceInput.value);
+    function getCardPrice(card) {
+        const raw = card.dataset.preis;
 
-        filteredCards = cards.filter(card => {
+        if (!raw) return null;
+
+        const number = Number(raw);
+
+        if (Number.isNaN(number)) return null;
+
+        return number;
+    }
+
+    function applyFilters() {
+        const marketing = marketingFilter ? marketingFilter.value : "";
+        const type = typeFilter ? typeFilter.value : "";
+        const maxPrice = priceInput ? parseGermanNumber(priceInput.value) : null;
+
+        filteredCards = cards.filter(function (card) {
             const cardMarketing = card.dataset.vermarktung || "";
             const cardType = card.dataset.objektart || "";
-            const cardPrice = Number(card.dataset.preis || 0);
+            const cardPrice = getCardPrice(card);
 
             const marketingMatch = !marketing || cardMarketing === marketing;
             const typeMatch = !type || cardType === type;
-            const priceMatch = !maxPrice || !cardPrice || cardPrice <= maxPrice;
+
+            let priceMatch = true;
+
+            if (maxPrice && cardPrice) {
+                priceMatch = cardPrice <= maxPrice;
+            }
+
+            if (maxPrice && !cardPrice) {
+                priceMatch = false;
+            }
 
             return marketingMatch && typeMatch && priceMatch;
         });
@@ -308,14 +336,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function render() {
-        cards.forEach(card => {
+        cards.forEach(function (card) {
             card.style.display = "none";
         });
 
         const start = (currentPage - 1) * perPage;
         const end = start + perPage;
 
-        filteredCards.slice(start, end).forEach(card => {
+        filteredCards.slice(start, end).forEach(function (card) {
             card.style.display = "";
         });
 
@@ -339,6 +367,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (pages <= 1) return;
 
+        const previousButton = document.createElement("button");
+        previousButton.type = "button";
+        previousButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
+        previousButton.className = currentPage === 1
+            ? "px-4 py-2 rounded bg-gray-200 text-gray-400 font-bold cursor-not-allowed"
+            : "px-4 py-2 rounded bg-white text-primary font-bold shadow hover:bg-gray-100";
+
+        previousButton.disabled = currentPage === 1;
+
+        previousButton.addEventListener("click", function () {
+            if (currentPage > 1) {
+                currentPage -= 1;
+                render();
+                document.getElementById("angebote").scrollIntoView({ behavior: "smooth" });
+            }
+        });
+
+        pagination.appendChild(previousButton);
+
         for (let i = 1; i <= pages; i++) {
             const button = document.createElement("button");
             button.type = "button";
@@ -355,6 +402,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
             pagination.appendChild(button);
         }
+
+        const nextButton = document.createElement("button");
+        nextButton.type = "button";
+        nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+        nextButton.className = currentPage === pages
+            ? "px-4 py-2 rounded bg-gray-200 text-gray-400 font-bold cursor-not-allowed"
+            : "px-4 py-2 rounded bg-white text-primary font-bold shadow hover:bg-gray-100";
+
+        nextButton.disabled = currentPage === pages;
+
+        nextButton.addEventListener("click", function () {
+            if (currentPage < pages) {
+                currentPage += 1;
+                render();
+                document.getElementById("angebote").scrollIntoView({ behavior: "smooth" });
+            }
+        });
+
+        pagination.appendChild(nextButton);
     }
 
     if (priceInput) {
@@ -366,6 +432,20 @@ document.addEventListener("DOMContentLoaded", function () {
             if (event.key === "Enter") {
                 priceInput.value = formatGermanNumber(priceInput.value);
                 applyFilters();
+            }
+        });
+
+        priceInput.addEventListener("input", function () {
+            const cursorPosition = priceInput.selectionStart;
+            const raw = priceInput.value;
+
+            if (!raw) return;
+
+            const allowed = raw.replace(/[^\d.,]/g, "");
+
+            if (raw !== allowed) {
+                priceInput.value = allowed;
+                priceInput.setSelectionRange(cursorPosition - 1, cursorPosition - 1);
             }
         });
     }
@@ -380,8 +460,25 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    marketingFilter.addEventListener("change", applyFilters);
-    typeFilter.addEventListener("change", applyFilters);
+    if (marketingFilter) {
+        marketingFilter.addEventListener("change", applyFilters);
+    }
+
+    if (typeFilter) {
+        typeFilter.addEventListener("change", applyFilters);
+    }
+
+    if (resetButton) {
+        resetButton.addEventListener("click", function () {
+            if (marketingFilter) marketingFilter.value = "";
+            if (typeFilter) typeFilter.value = "";
+            if (priceInput) priceInput.value = "";
+
+            filteredCards = cards;
+            currentPage = 1;
+            render();
+        });
+    }
 
     render();
 });
