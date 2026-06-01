@@ -97,15 +97,17 @@ exports.handler = async function (event) {
 
         console.log("Kontakt erstellt:", contactId);
 
-        const dealResponse = await propstackPost(apiKey, "/client_properties", {
-            client_property: {
-                client_id: contactId,
-                unit_id: objectId,
-                deal_stage_id: 200,
-                note: note,
-                source: "Website Objektanfrage"
-            }
-        });
+     const dealResponse = await propstackPost(apiKey, "/client_properties", {
+    client_property: {
+        client_id: contactId,
+        property_id: objectId,
+        unit_id: objectId,
+        deal_stage_id: 200,
+        status: "active",
+        note: note,
+        source: "Website Objektanfrage"
+    }
+});
 
         console.log("Deal erstellt:", dealResponse);
 
