@@ -1,0 +1,531 @@
+<section class="lead-widget container mx-auto px-4 py-10 md:py-16">
+    <div class="bg-white rounded-2xl shadow-2xl border-t-4 border-accent overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+
+            <div class="p-8 md:p-12 bg-primary text-white relative overflow-hidden">
+                <div class="absolute inset-0 opacity-25">
+                    <img src="/images/berlinskypng.png" alt="Berlin Immobilienberatung" class="w-full h-full object-cover">
+                </div>
+
+                <div class="relative z-10">
+                    <p class="text-secondary font-semibold mb-3 uppercase tracking-wide text-sm">
+                        Persönliche Immobilienberatung
+                    </p>
+
+                    <h2 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
+                        Finden Sie die passende Immobilie oder den richtigen Verkaufsweg.
+                    </h2>
+
+                    <p class="text-lg md:text-xl text-page-bg mb-8 leading-relaxed">
+                        Beantworten Sie wenige Fragen. Ihre Anfrage wird direkt an unser CRM übergeben und persönlich geprüft.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="bg-white/10 rounded-xl p-5 border border-white/10">
+                            <i class="fas fa-user-check text-secondary text-2xl mb-3"></i>
+                            <h3 class="font-bold mb-1">Persönlich geprüft</h3>
+                            <p class="text-sm text-page-bg">Keine Standardantwort, sondern echte Einordnung.</p>
+                        </div>
+
+                        <div class="bg-white/10 rounded-xl p-5 border border-white/10">
+                            <i class="fas fa-building text-secondary text-2xl mb-3"></i>
+                            <h3 class="font-bold mb-1">CRM-gestützt</h3>
+                            <p class="text-sm text-page-bg">Ihre Anfrage wird direkt in Propstack verarbeitet.</p>
+                        </div>
+
+                        <div class="bg-white/10 rounded-xl p-5 border border-white/10">
+                            <i class="fas fa-shield-alt text-secondary text-2xl mb-3"></i>
+                            <h3 class="font-bold mb-1">Diskret</h3>
+                            <p class="text-sm text-page-bg">Vertraulicher Umgang mit Ihren Daten und Ihrem Anliegen.</p>
+                        </div>
+
+                        <div class="bg-white/10 rounded-xl p-5 border border-white/10">
+                            <i class="fas fa-phone-alt text-secondary text-2xl mb-3"></i>
+                            <h3 class="font-bold mb-1">Direkter Kontakt</h3>
+                            <p class="text-sm text-page-bg">Telefonisch oder per E-Mail, so wie Sie es wünschen.</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 text-page-bg">
+                        <p>
+                            <i class="fas fa-phone-alt text-secondary mr-2"></i>
+                            <a href="tel:015203083048" class="hover:underline">01520 3083048</a>
+                        </p>
+
+                        <p>
+                            <i class="fas fa-envelope text-secondary mr-2"></i>
+                            <a href="mailto:info@fg-realestate.de" class="hover:underline">info@fg-realestate.de</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-8 md:p-12 bg-white">
+                <div class="mb-8">
+                    <p class="text-secondary font-semibold mb-2 uppercase tracking-wide text-sm">
+                        Anfrage starten
+                    </p>
+
+                    <h3 class="lead-title text-3xl font-bold text-primary mb-3">
+                        Wobei dürfen wir Sie unterstützen?
+                    </h3>
+
+                    <p class="lead-subtitle text-gray-600">
+                        Wählen Sie zuerst Ihr Anliegen aus. Danach passen sich die Fragen automatisch an.
+                    </p>
+
+                    <div class="mt-6 h-2 bg-gray-100 rounded-full overflow-hidden">
+                        <div class="lead-progress h-full bg-secondary rounded-full transition-all duration-500" style="width: 20%;"></div>
+                    </div>
+                </div>
+
+                <div class="lead-success hidden mb-6 rounded-xl border border-green-300 bg-green-50 p-5 text-green-800">
+                    <h4 class="font-bold text-lg mb-1">Ihre Anfrage wurde erfolgreich übermittelt.</h4>
+                    <p>Wir haben Ihre Angaben erhalten und melden uns zeitnah persönlich bei Ihnen.</p>
+                </div>
+
+                <div class="lead-error hidden mb-6 rounded-xl border border-red-300 bg-red-50 p-5 text-red-800">
+                    <h4 class="font-bold text-lg mb-1">Anfrage konnte nicht gesendet werden.</h4>
+                    <p>Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per Telefon oder E-Mail.</p>
+                </div>
+
+                <form class="lead-form">
+                    <input type="hidden" name="concern" class="lead-concern">
+                    <input type="hidden" name="object_type" class="lead-object-type">
+                    <input type="hidden" name="location" class="lead-location">
+                    <input type="hidden" name="budget" class="lead-budget">
+                    <input type="hidden" name="timeframe" class="lead-timeframe">
+                    <input type="hidden" name="contact_preference" class="lead-contact-preference">
+                    <input type="hidden" name="source_url" class="lead-source-url">
+
+                    <div class="lead-step" data-step="1">
+                        <div class="grid grid-cols-1 gap-4">
+                            <button type="button" class="lead-choice" data-field="concern" data-value="Immobilie kaufen">
+                                <span><i class="fas fa-key text-secondary mr-3"></i>Ich möchte kaufen</span>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+
+                            <button type="button" class="lead-choice" data-field="concern" data-value="Immobilie verkaufen">
+                                <span><i class="fas fa-home text-secondary mr-3"></i>Ich möchte verkaufen</span>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+
+                            <button type="button" class="lead-choice" data-field="concern" data-value="Immobilie vermieten">
+                                <span><i class="fas fa-building text-secondary mr-3"></i>Ich möchte vermieten</span>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+
+                            <button type="button" class="lead-choice" data-field="concern" data-value="Finanzierung">
+                                <span><i class="fas fa-euro-sign text-secondary mr-3"></i>Ich brauche eine Finanzierung</span>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="lead-step hidden" data-step="2">
+                        <div class="lead-dynamic-options grid grid-cols-1 gap-4"></div>
+                    </div>
+
+                    <div class="lead-step hidden" data-step="3">
+                        <div class="lead-context-fields space-y-5"></div>
+                    </div>
+
+                    <div class="lead-step hidden" data-step="4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-bold text-primary mb-2">Vorname *</label>
+                                <input type="text" name="first_name" required placeholder="Ihr Vorname" class="w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-bold text-primary mb-2">Nachname *</label>
+                                <input type="text" name="last_name" required placeholder="Ihr Nachname" class="w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
+                            <div>
+                                <label class="block text-sm font-bold text-primary mb-2">E-Mail-Adresse *</label>
+                                <input type="email" name="email" required placeholder="name@email.de" class="w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-bold text-primary mb-2">Telefonnummer</label>
+                                <input type="tel" name="phone" placeholder="Ihre Telefonnummer" class="w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary">
+                            </div>
+                        </div>
+
+                        <label class="block text-sm font-bold text-primary mb-2 mt-5">Bevorzugte Kontaktaufnahme</label>
+                        <select class="visible-contact-preference w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary">
+                            <option value="E-Mail">Per E-Mail</option>
+                            <option value="Telefon">Telefonisch</option>
+                            <option value="WhatsApp">Per WhatsApp</option>
+                        </select>
+                    </div>
+
+                    <div class="lead-step hidden" data-step="5">
+                        <label class="block text-sm font-bold text-primary mb-2">Ihre Nachricht</label>
+                        <textarea name="message" rows="5" placeholder="Gibt es noch etwas, das wir wissen sollten?" class="w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary"></textarea>
+
+                        <div class="bg-gray-50 rounded-xl p-4 border border-gray-200 mt-5">
+                            <label class="flex items-start gap-3 text-sm text-gray-700">
+                                <input type="checkbox" name="privacy_consent" value="true" required class="mt-1 h-4 w-4 text-accent border-gray-300 rounded focus:ring-accent">
+                                <span>
+                                    Ich habe die
+                                    <a href="/datenschutz.html" target="_blank" class="text-primary font-bold hover:underline">Datenschutzerklärung</a>
+                                    gelesen und stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet und an Fischer & Geserich Real Estate übermittelt werden. *
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center gap-4 mt-8">
+                        <button type="button" class="lead-back hidden px-6 py-3 rounded-lg border border-gray-300 text-primary font-bold hover:bg-gray-50">
+                            Zurück
+                        </button>
+
+                        <button type="button" class="lead-next btn-85 ml-auto px-8 py-3 rounded-lg text-primary font-bold">
+                            Weiter
+                        </button>
+
+                        <button type="submit" class="lead-submit hidden btn-85 ml-auto px-8 py-3 rounded-lg text-primary font-bold">
+                            Anfrage absenden
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+.lead-choice {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.9rem;
+    background: #ffffff;
+    color: #080832;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.25s ease;
+    text-align: left;
+}
+
+.lead-choice:hover,
+.lead-choice.is-selected {
+    border-color: #d4af37;
+    box-shadow: 0 14px 30px rgba(0,0,0,0.10);
+    transform: translateY(-2px);
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".lead-widget").forEach(function (widget) {
+        initLeadWidget(widget);
+    });
+
+    function initLeadWidget(widget) {
+        const form = widget.querySelector(".lead-form");
+        const steps = Array.from(widget.querySelectorAll(".lead-step"));
+        const nextButton = widget.querySelector(".lead-next");
+        const backButton = widget.querySelector(".lead-back");
+        const submitButton = widget.querySelector(".lead-submit");
+        const progress = widget.querySelector(".lead-progress");
+        const title = widget.querySelector(".lead-title");
+        const subtitle = widget.querySelector(".lead-subtitle");
+        const dynamicArea = widget.querySelector(".lead-dynamic-options");
+        const contextFields = widget.querySelector(".lead-context-fields");
+        const successBox = widget.querySelector(".lead-success");
+        const errorBox = widget.querySelector(".lead-error");
+
+        let currentStep = 1;
+
+        const state = {
+            concern: "",
+            object_type: "",
+            location: "",
+            budget: "",
+            timeframe: "",
+            contact_preference: "E-Mail"
+        };
+
+        const stepText = {
+            "default": {
+                1: ["Wobei dürfen wir Sie unterstützen?", "Wählen Sie zuerst Ihr Anliegen aus."],
+                2: ["Welche Art von Immobilie betrifft Ihr Anliegen?", "Wählen Sie aus, damit wir Ihre Anfrage richtig einordnen können."],
+                3: ["Ein paar Details helfen uns weiter.", "Je genauer die Angaben, desto besser können wir Sie beraten."],
+                4: ["Wie erreichen wir Sie?", "Damit wir Ihre Anfrage persönlich zuordnen können."],
+                5: ["Fast geschafft.", "Bitte bestätigen Sie Ihre Einwilligung und senden Sie die Anfrage ab."]
+            },
+            "Immobilie kaufen": {
+                2: ["Welche Immobilie suchen Sie?", "Wählen Sie aus, wonach Sie suchen."],
+                3: ["Wo und in welchem Rahmen suchen Sie?", "Nennen Sie Suchgebiet, Budget und zeitlichen Rahmen."]
+            },
+            "Immobilie verkaufen": {
+                2: ["Welche Immobilie möchten Sie verkaufen?", "Wählen Sie aus, um welche Art von Objekt es geht."],
+                3: ["Wo befindet sich Ihr Objekt?", "Nennen Sie Objektstandort, gewünschte Vermarktungsart und Zeitraum."]
+            },
+            "Immobilie vermieten": {
+                2: ["Welche Immobilie möchten Sie vermieten?", "Wählen Sie aus, um welche Art von Objekt es geht."],
+                3: ["Wo befindet sich das Mietobjekt?", "Nennen Sie Objektstandort, gewünschte Miete und Verfügbarkeit."]
+            },
+            "Finanzierung": {
+                2: ["Wobei benötigen Sie Finanzierungshilfe?", "Wählen Sie den passenden Finanzierungsanlass."],
+                3: ["Welche Eckdaten gibt es zur Finanzierung?", "Nennen Sie Ort, Kaufpreis oder Finanzierungsrahmen und Zeitraum."]
+            }
+        };
+
+        const dynamicOptions = {
+            "Immobilie kaufen": [
+                ["Eigentumswohnung", "fas fa-city"],
+                ["Haus", "fas fa-home"],
+                ["Mehrfamilienhaus", "fas fa-building"],
+                ["Grundstück", "fas fa-map"],
+                ["Kapitalanlage", "fas fa-chart-line"]
+            ],
+            "Immobilie verkaufen": [
+                ["Eigentumswohnung", "fas fa-city"],
+                ["Haus", "fas fa-home"],
+                ["Mehrfamilienhaus", "fas fa-building"],
+                ["Grundstück", "fas fa-map"],
+                ["Diskrete Off-Market-Vermarktung", "fas fa-user-secret"]
+            ],
+            "Immobilie vermieten": [
+                ["Wohnung", "fas fa-key"],
+                ["Haus", "fas fa-home"],
+                ["Gewerbeeinheit", "fas fa-store"],
+                ["Mehrfamilienhaus / Anlageobjekt", "fas fa-building"],
+                ["Verwaltung zusätzlich interessant", "fas fa-clipboard-list"]
+            ],
+            "Finanzierung": [
+                ["Immobilienkauf finanzieren", "fas fa-euro-sign"],
+                ["Anschlussfinanzierung", "fas fa-file-invoice"],
+                ["Kapitalanlage finanzieren", "fas fa-chart-line"],
+                ["Finanzierungsberatung allgemein", "fas fa-comments"]
+            ]
+        };
+
+        function getText(step) {
+            const concernText = stepText[state.concern] || {};
+            const fallback = stepText.default || {};
+
+            return concernText[step] || fallback[step] || fallback[1];
+        }
+
+        function showStep(step) {
+            currentStep = step;
+
+            steps.forEach(function (item) {
+                item.classList.toggle("hidden", Number(item.dataset.step) !== currentStep);
+            });
+
+            const text = getText(currentStep);
+            title.textContent = text[0];
+            subtitle.textContent = text[1];
+
+            progress.style.width = `${currentStep * 20}%`;
+
+            backButton.classList.toggle("hidden", currentStep === 1);
+            nextButton.classList.toggle("hidden", currentStep === 5 || currentStep === 2);
+            submitButton.classList.toggle("hidden", currentStep !== 5);
+
+            if (currentStep === 2) renderDynamicOptions();
+            if (currentStep === 3) renderContextFields();
+        }
+
+        function renderDynamicOptions() {
+            dynamicArea.innerHTML = "";
+
+            const options = dynamicOptions[state.concern] || [];
+
+            options.forEach(function ([label, icon]) {
+                const button = document.createElement("button");
+                button.type = "button";
+                button.className = "lead-choice";
+                button.innerHTML = `<span><i class="${icon} text-secondary mr-3"></i>${label}</span><i class="fas fa-chevron-right"></i>`;
+
+                button.addEventListener("click", function () {
+                    state.object_type = label;
+                    widget.querySelector(".lead-object-type").value = label;
+                    showStep(3);
+                });
+
+                dynamicArea.appendChild(button);
+            });
+        }
+
+        function renderContextFields() {
+            let html = "";
+
+            if (state.concern === "Immobilie kaufen") {
+                html = `
+                    <label class="block text-sm font-bold text-primary mb-2">Wo suchen Sie? *</label>
+                    <input type="text" class="visible-location w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary" required placeholder="z. B. Berlin, Potsdam, Dresden">
+
+                    <label class="block text-sm font-bold text-primary mb-2 mt-5">Budget / maximaler Kaufpreis</label>
+                    <input type="text" class="visible-budget w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary" placeholder="z. B. bis 500.000 €">
+
+                    <label class="block text-sm font-bold text-primary mb-2 mt-5">Wann möchten Sie kaufen?</label>
+                    ${timeframeSelect("visible-timeframe")}
+                `;
+            }
+
+            if (state.concern === "Immobilie verkaufen") {
+                html = `
+                    <label class="block text-sm font-bold text-primary mb-2">Wo befindet sich Ihr Objekt? *</label>
+                    <input type="text" class="visible-location w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary" required placeholder="z. B. Berlin-Friedenau, Potsdam, Dresden">
+
+                    <label class="block text-sm font-bold text-primary mb-2 mt-5">Ihre Preisvorstellung / grober Immobilienwert</label>
+                    <input type="text" class="visible-budget w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary" placeholder="z. B. ca. 650.000 € oder noch offen">
+
+                    <label class="block text-sm font-bold text-primary mb-2 mt-5">Wann möchten Sie verkaufen?</label>
+                    ${timeframeSelect("visible-timeframe")}
+                `;
+            }
+
+            if (state.concern === "Immobilie vermieten") {
+                html = `
+                    <label class="block text-sm font-bold text-primary mb-2">Wo befindet sich das Mietobjekt? *</label>
+                    <input type="text" class="visible-location w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary" required placeholder="z. B. Berlin, Potsdam, Dresden">
+
+                    <label class="block text-sm font-bold text-primary mb-2 mt-5">Gewünschte Miete / Mietrahmen</label>
+                    <input type="text" class="visible-budget w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary" placeholder="z. B. 1.200 € kalt oder noch offen">
+
+                    <label class="block text-sm font-bold text-primary mb-2 mt-5">Ab wann soll vermietet werden?</label>
+                    ${timeframeSelect("visible-timeframe")}
+                `;
+            }
+
+            if (state.concern === "Finanzierung") {
+                html = `
+                    <label class="block text-sm font-bold text-primary mb-2">Für welchen Ort / welches Objekt?</label>
+                    <input type="text" class="visible-location w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary" placeholder="z. B. Berlin, konkretes Objekt oder noch offen">
+
+                    <label class="block text-sm font-bold text-primary mb-2 mt-5">Kaufpreis / Finanzierungsrahmen</label>
+                    <input type="text" class="visible-budget w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary" placeholder="z. B. 450.000 € Kaufpreis oder 350.000 € Darlehen">
+
+                    <label class="block text-sm font-bold text-primary mb-2 mt-5">Wann benötigen Sie die Finanzierung?</label>
+                    ${timeframeSelect("visible-timeframe")}
+                `;
+            }
+
+            contextFields.innerHTML = html;
+        }
+
+        function timeframeSelect(className) {
+            return `
+                <select class="${className} w-full p-4 border border-gray-300 rounded-lg focus:border-primary focus:ring-primary">
+                    <option value="">Keine Angabe</option>
+                    <option value="Sofort">Sofort</option>
+                    <option value="1-3 Monate">1-3 Monate</option>
+                    <option value="3-6 Monate">3-6 Monate</option>
+                    <option value="6-12 Monate">6-12 Monate</option>
+                    <option value="Langfristig">Langfristig</option>
+                </select>
+            `;
+        }
+
+        widget.querySelectorAll(".lead-choice[data-field='concern']").forEach(function (button) {
+            button.addEventListener("click", function () {
+                state.concern = button.dataset.value;
+                widget.querySelector(".lead-concern").value = state.concern;
+                showStep(2);
+            });
+        });
+
+        nextButton.addEventListener("click", function () {
+            if (currentStep === 1 && !state.concern) return;
+
+            if (currentStep === 3) {
+                const location = widget.querySelector(".visible-location");
+                const budget = widget.querySelector(".visible-budget");
+                const timeframe = widget.querySelector(".visible-timeframe");
+
+                if (location && location.hasAttribute("required") && !location.value.trim()) {
+                    location.focus();
+                    return;
+                }
+
+                state.location = location ? location.value : "";
+                state.budget = budget ? budget.value : "";
+                state.timeframe = timeframe ? timeframe.value : "";
+
+                widget.querySelector(".lead-location").value = state.location;
+                widget.querySelector(".lead-budget").value = state.budget;
+                widget.querySelector(".lead-timeframe").value = state.timeframe;
+            }
+
+            if (currentStep === 4) {
+                const contactPreference = widget.querySelector(".visible-contact-preference");
+                state.contact_preference = contactPreference ? contactPreference.value : "E-Mail";
+                widget.querySelector(".lead-contact-preference").value = state.contact_preference;
+            }
+
+            if (currentStep < 5) showStep(currentStep + 1);
+        });
+
+        backButton.addEventListener("click", function () {
+            if (currentStep > 1) showStep(currentStep - 1);
+        });
+
+        form.addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            successBox.classList.add("hidden");
+            errorBox.classList.add("hidden");
+
+            submitButton.disabled = true;
+            submitButton.textContent = "Wird übermittelt...";
+
+            const formData = new FormData(form);
+
+            const payload = {
+                first_name: formData.get("first_name"),
+                last_name: formData.get("last_name"),
+                email: formData.get("email"),
+                phone: formData.get("phone"),
+                concern: widget.querySelector(".lead-concern").value,
+                object_type: widget.querySelector(".lead-object-type").value,
+                location: widget.querySelector(".lead-location").value,
+                budget: widget.querySelector(".lead-budget").value,
+                timeframe: widget.querySelector(".lead-timeframe").value,
+                contact_preference: widget.querySelector(".lead-contact-preference").value || "E-Mail",
+                message: formData.get("message"),
+                privacy_consent: formData.get("privacy_consent") === "true",
+                source_url: window.location.href
+            };
+
+            try {
+                const response = await fetch("/.netlify/functions/propstack-lead", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (!response.ok || !result.success) {
+                    throw new Error(result.error || "Fehler");
+                }
+
+                form.reset();
+                successBox.classList.remove("hidden");
+                showStep(1);
+
+            } catch (error) {
+                errorBox.classList.remove("hidden");
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = "Anfrage absenden";
+            }
+        });
+
+        showStep(1);
+    }
+});
+</script>
