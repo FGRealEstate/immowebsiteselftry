@@ -1,3 +1,4 @@
+```njk
 ---
 layout: base.njk
 pagination:
@@ -9,13 +10,14 @@ permalink: "angebote/{{ property.slug }}/index.html"
 
 <section class="bg-primary text-white py-16 md:py-24">
     <div class="container mx-auto px-4 text-center">
+
         {% if property.marketing_type or property.property_type %}
-        <p class="text-secondary mb-3 font-semibold">
+        <p class="text-secondary mb-3 font-semibold tracking-wide uppercase text-sm">
             {{ property.marketing_type }}{% if property.marketing_type and property.property_type %} · {% endif %}{{ property.property_type }}
         </p>
         {% endif %}
 
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
             {{ property.title }}
         </h1>
 
@@ -24,6 +26,7 @@ permalink: "angebote/{{ property.slug }}/index.html"
             <i class="fas fa-map-marker-alt mr-2"></i>{{ property.location }}
         </p>
         {% endif %}
+
     </div>
 </section>
 
@@ -31,102 +34,194 @@ permalink: "angebote/{{ property.slug }}/index.html"
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
 
-        <div class="lg:col-span-2">
+        <main class="lg:col-span-2">
 
             {% if property.gallery and property.gallery.length %}
-            <div class="bg-white rounded-lg shadow-xl overflow-hidden mb-8">
-                <div id="property-slider" class="relative w-full h-[560px] bg-gray-100 flex items-center justify-center">
+            <div class="bg-white rounded-xl shadow-2xl overflow-hidden mb-8 border border-gray-100">
+
+                <div id="property-slider" class="relative w-full h-[360px] md:h-[560px] bg-gray-100 flex items-center justify-center">
 
                     {% for image in property.gallery %}
                     <img
                         src="{{ image }}"
                         alt="{{ property.title }}"
-                        class="property-slide absolute inset-0 w-full h-full object-contain bg-gray-100 {% if loop.first %}opacity-100{% else %}opacity-0{% endif %} transition-opacity duration-500"
+                        class="property-slide absolute inset-0 w-full h-full object-contain bg-gray-100 {% if loop.first %}opacity-100 z-10{% else %}opacity-0 z-0{% endif %} transition-opacity duration-500"
                     >
                     {% endfor %}
 
                     {% if property.gallery.length > 1 %}
-                    <button type="button" id="slider-prev" class="absolute left-5 top-1/2 -translate-y-1/2 bg-white text-primary rounded-full w-12 h-12 shadow-lg flex items-center justify-center hover:bg-gray-100 transition">
+                    <button
+                        type="button"
+                        id="slider-prev"
+                        class="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 z-30 bg-white/95 text-primary rounded-full w-12 h-12 shadow-xl flex items-center justify-center hover:bg-primary hover:text-white transition"
+                        aria-label="Vorheriges Bild"
+                    >
                         <i class="fas fa-chevron-left"></i>
                     </button>
 
-                    <button type="button" id="slider-next" class="absolute right-5 top-1/2 -translate-y-1/2 bg-white text-primary rounded-full w-12 h-12 shadow-lg flex items-center justify-center hover:bg-gray-100 transition">
+                    <button
+                        type="button"
+                        id="slider-next"
+                        class="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-30 bg-white/95 text-primary rounded-full w-12 h-12 shadow-xl flex items-center justify-center hover:bg-primary hover:text-white transition"
+                        aria-label="Nächstes Bild"
+                    >
                         <i class="fas fa-chevron-right"></i>
                     </button>
 
-                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary/85 text-white px-4 py-2 rounded-full text-sm">
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 bg-primary/85 text-white px-4 py-2 rounded-full text-sm shadow-lg">
                         <span id="slider-current">1</span> / {{ property.gallery.length }}
                     </div>
                     {% endif %}
 
                 </div>
+
+                {% if property.gallery.length > 1 %}
+                <div class="hidden md:flex gap-3 p-4 overflow-x-auto bg-white border-t border-gray-100">
+                    {% for image in property.gallery %}
+                    <button
+                        type="button"
+                        class="property-thumb flex-none w-24 h-16 rounded-lg overflow-hidden border-2 {% if loop.first %}border-accent{% else %}border-transparent{% endif %} hover:border-accent transition"
+                        data-thumb-index="{{ loop.index0 }}"
+                    >
+                        <img src="{{ image }}" alt="{{ property.title }}" class="w-full h-full object-cover">
+                    </button>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
             </div>
             {% endif %}
 
             {% if property.descriptions and property.descriptions.length %}
-            <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
+            <section class="bg-white rounded-xl shadow-xl p-6 md:p-8 mb-8 border border-gray-100">
                 <h2 class="text-3xl font-bold text-primary mb-6">
                     Beschreibung
                 </h2>
 
                 <div class="space-y-8">
                     {% for description in property.descriptions %}
-                        {% if description.value and description.value | lower != description.label | lower %}
-                        <div>
-                            <h3 class="text-xl font-bold text-primary mb-3">
-                                {{ description.label }}
-                            </h3>
+                    {% if description.value and description.value | lower != description.label | lower %}
+                    <article>
+                        <h3 class="text-xl font-bold text-primary mb-3">
+                            {{ description.label }}
+                        </h3>
 
-                            <div class="text-gray-700 leading-relaxed text-lg">
-                                {{ description.value | safe }}
-                            </div>
+                        <div class="text-gray-700 leading-relaxed text-lg whitespace-pre-line">
+                            {{ description.value | safe }}
                         </div>
-                        {% endif %}
+                    </article>
+                    {% endif %}
                     {% endfor %}
                 </div>
-            </div>
+            </section>
             {% endif %}
 
             {% if property.features and property.features.length %}
-            <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
+            <section class="bg-white rounded-xl shadow-xl p-6 md:p-8 mb-8 border border-gray-100">
                 <h2 class="text-3xl font-bold text-primary mb-6">
                     Ausstattung
                 </h2>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {% for feature in property.features %}
-                        {% if feature.value and feature.value | lower != feature.label | lower %}
-                        <div class="flex items-center text-gray-700">
-                            <i class="fas fa-check-circle text-accent mr-3"></i>
-                            <span>
-                                {{ feature.label }}{% if feature.value != "Ja" %}: {{ feature.value }}{% endif %}
-                            </span>
-                        </div>
-                        {% endif %}
+                    {% if feature.value and feature.value | lower != feature.label | lower %}
+                    <div class="flex items-start bg-gray-50 rounded-lg p-4">
+                        <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                        <span class="text-gray-700">
+                            <strong>{{ feature.label }}</strong>{% if feature.value and feature.value != "Ja" %}: {{ feature.value }}{% endif %}
+                        </span>
+                    </div>
+                    {% endif %}
                     {% endfor %}
                 </div>
-            </div>
+            </section>
             {% endif %}
 
-        </div>
-
-        <aside class="lg:col-span-1">
-            <div class="bg-white rounded-lg shadow-xl p-8 sticky top-8 border-t-4 border-accent">
-
-                {% if property.details and property.details.length %}
-                <h2 class="text-2xl font-bold text-primary mb-6">
+            {% if property.details and property.details.length %}
+            <section class="bg-white rounded-xl shadow-xl p-6 md:p-8 mb-8 border border-gray-100 lg:hidden">
+                <h2 class="text-3xl font-bold text-primary mb-6">
                     Eckdaten
                 </h2>
 
-                <div class="space-y-4 text-gray-700">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {% for detail in property.details %}
-                        {% if detail.value and detail.value | lower != detail.label | lower %}
-                        <div class="flex justify-between gap-6 border-b pb-3">
-                            <span>{{ detail.label }}</span>
-                            <strong class="text-right">{{ detail.value }}</strong>
+                    {% if detail.value and detail.value | lower != detail.label | lower %}
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <p class="text-xs uppercase tracking-wide text-gray-500 mb-1">
+                            {{ detail.label }}
+                        </p>
+                        <p class="text-primary font-bold">
+                            {{ detail.value }}
+                        </p>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
+        </main>
+
+        <aside class="lg:col-span-1">
+
+            <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 sticky top-8 border-t-4 border-accent">
+
+                {% if property.price or property.living_space or property.rooms %}
+                <div class="mb-8">
+
+                    {% if property.price %}
+                    <p class="text-sm text-gray-500 mb-1">Kaufpreis</p>
+                    <p class="text-3xl font-extrabold text-primary mb-5">
+                        {{ property.price }}
+                    </p>
+                    {% endif %}
+
+                    <div class="grid grid-cols-2 gap-4">
+
+                        {% if property.living_space %}
+                        <div class="bg-gray-50 rounded-lg p-4 text-center">
+                            <i class="fas fa-ruler-combined text-accent mb-2"></i>
+                            <p class="font-bold text-primary">{{ property.living_space }}</p>
+                            <p class="text-xs text-gray-500">Fläche</p>
                         </div>
                         {% endif %}
-                    {% endfor %}
+
+                        {% if property.rooms %}
+                        <div class="bg-gray-50 rounded-lg p-4 text-center">
+                            <i class="fas fa-bed text-accent mb-2"></i>
+                            <p class="font-bold text-primary">{{ property.rooms }}</p>
+                            <p class="text-xs text-gray-500">Zimmer</p>
+                        </div>
+                        {% endif %}
+
+                        {% if property.construction_year %}
+                        <div class="bg-gray-50 rounded-lg p-4 text-center col-span-2">
+                            <i class="fas fa-calendar-alt text-accent mb-2"></i>
+                            <p class="font-bold text-primary">{{ property.construction_year }}</p>
+                            <p class="text-xs text-gray-500">Baujahr</p>
+                        </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if property.details and property.details.length %}
+                <div class="hidden lg:block">
+                    <h2 class="text-2xl font-bold text-primary mb-6">
+                        Eckdaten
+                    </h2>
+
+                    <div class="space-y-4 text-gray-700">
+                        {% for detail in property.details %}
+                        {% if detail.value and detail.value | lower != detail.label | lower %}
+                        <div class="flex justify-between gap-6 border-b border-gray-100 pb-3">
+                            <span class="text-gray-600">{{ detail.label }}</span>
+                            <strong class="text-right text-primary">{{ detail.value }}</strong>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
                 {% endif %}
 
@@ -139,14 +234,17 @@ permalink: "angebote/{{ property.slug }}/index.html"
                 </a>
 
             </div>
+
         </aside>
 
     </div>
+
 </section>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    const slides = document.querySelectorAll(".property-slide");
+    const slides = Array.from(document.querySelectorAll(".property-slide"));
+    const thumbs = Array.from(document.querySelectorAll(".property-thumb"));
     const prevButton = document.getElementById("slider-prev");
     const nextButton = document.getElementById("slider-next");
     const currentLabel = document.getElementById("slider-current");
@@ -156,13 +254,23 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentIndex = 0;
 
     function showSlide(index) {
-        slides[currentIndex].classList.remove("opacity-100");
-        slides[currentIndex].classList.add("opacity-0");
+        slides[currentIndex].classList.remove("opacity-100", "z-10");
+        slides[currentIndex].classList.add("opacity-0", "z-0");
+
+        if (thumbs[currentIndex]) {
+            thumbs[currentIndex].classList.remove("border-accent");
+            thumbs[currentIndex].classList.add("border-transparent");
+        }
 
         currentIndex = (index + slides.length) % slides.length;
 
-        slides[currentIndex].classList.remove("opacity-0");
-        slides[currentIndex].classList.add("opacity-100");
+        slides[currentIndex].classList.remove("opacity-0", "z-0");
+        slides[currentIndex].classList.add("opacity-100", "z-10");
+
+        if (thumbs[currentIndex]) {
+            thumbs[currentIndex].classList.remove("border-transparent");
+            thumbs[currentIndex].classList.add("border-accent");
+        }
 
         if (currentLabel) {
             currentLabel.textContent = currentIndex + 1;
@@ -180,5 +288,25 @@ document.addEventListener("DOMContentLoaded", function () {
             showSlide(currentIndex + 1);
         });
     }
+
+    thumbs.forEach(function (thumb) {
+        thumb.addEventListener("click", function () {
+            const index = Number(thumb.dataset.thumbIndex);
+            if (!Number.isNaN(index)) {
+                showSlide(index);
+            }
+        });
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowLeft") {
+            showSlide(currentIndex - 1);
+        }
+
+        if (event.key === "ArrowRight") {
+            showSlide(currentIndex + 1);
+        }
+    });
 });
 </script>
+```
