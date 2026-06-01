@@ -261,24 +261,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const perPage = 9;
     let currentPage = 1;
-    let filteredCards = cards;
+    let filteredCards = cards.slice();
 
-    function normalizeText(value) {
-        return String(value || "")
-            .trim()
-            .toLowerCase()
-            .replace(/\s+/g, " ");
+    function norm(value) {
+        return String(value || "").trim().toLowerCase();
     }
 
-    function parseGermanNumber(value) {
+    function parsePrice(value) {
         if (!value) return null;
 
         let clean = String(value)
-            .trim()
             .replace(/\s/g, "")
-            .replace(/€/g, "");
+            .replace(/€/g, "")
+            .trim();
 
-        if (clean.includes(",") && clean.includes(".")) {
+        if (!clean) return null;
+
+        if (clean.includes(".") && clean.includes(",")) {
             clean = clean.replace(/\./g, "").replace(",", ".");
         } else if (clean.includes(",")) {
             clean = clean.replace(",", ".");
@@ -286,19 +285,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         clean = clean.replace(/[^\d.]/g, "");
 
-        if (!clean) return null;
-
         const number = Number(clean);
-
-        if (Number.isNaN(number)) return null;
-
-        return number;
+        return Number.isNaN(number) ? null : number;
     }
 
-    function formatGermanNumber(value) {
-        const number = parseGermanNumber(value);
-
-        if (!number) return "";
+    function formatPrice(value) {
+        const number = parsePrice(value);
+        if (number === null) return "";
 
         return new Intl.NumberFormat("de-DE", {
             minimumFractionDigits: 2,
@@ -306,38 +299,30 @@ document.addEventListener("DOMContentLoaded", function () {
         }).format(number);
     }
 
-    function getCardPrice(card) {
-        return parseGermanNumber(card.dataset.preis);
-    }
-
     function applyFilters() {
-        const marketing = normalizeText(marketingFilter ? marketingFilter.value : "");
-        const type = normalizeText(typeFilter ? typeFilter.value : "");
-        const maxPrice = priceInput ? parseGermanNumber(priceInput.value) : null;
+        const selectedMarketing = norm(marketingFilter ? marketingFilter.value : "");
+        const selectedType = norm(typeFilter ? typeFilter.value : "");
+        const maxPrice = parsePrice(priceInput ? priceInput.value : "");
 
         filteredCards = cards.filter(function (card) {
-            const cardMarketing = normalizeText(card.dataset.vermarktung);
-            const cardType = normalizeText(card.dataset.objektart);
-            const cardPrice = getCardPrice(card);
+            const cardMarketing = norm(card.getAttribute("data-vermarktung"));
+            const cardType = norm(card.getAttribute("data-objektart"));
+            const cardPrice = parsePrice(card.getAttribute("data-preis"));
 
-            const marketingMatch = !marketing || cardMarketing === marketing;
-            const typeMatch = !type || cardType === type;
+            const marketingOk = !selectedMarketing || cardMarketing === selectedMarketing;
+            const typeOk = !selectedType || cardType === selectedType;
+            const priceOk = maxPrice === null || (cardPrice !== null && cardPrice <= maxPrice);
 
-            let priceMatch = true;
-
-            if (maxPrice !== null) {
-                priceMatch = cardPrice !== null && cardPrice <= maxPrice;
-            }
-
-            return marketingMatch && typeMatch && priceMatch;
+            return marketingOk && typeOk && priceOk;
         });
 
         currentPage = 1;
-        render();
+        renderCards();
     }
 
-    function render() {
+    function renderCards() {
         cards.forEach(function (card) {
+            card.classList.add("hidden");
             card.style.display = "none";
         });
 
@@ -345,6 +330,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const end = start + perPage;
 
         filteredCards.slice(start, end).forEach(function (card) {
+            card.classList.remove("hidden");
             card.style.display = "";
         });
 
@@ -353,7 +339,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (noResults) {
-            noResults.classList.toggle("hidden", filteredCards.length !== 0);
+            noResults.classList.toggle("hidden", filteredCards.length > 0);
         }
 
         renderPagination();
@@ -376,36 +362,38 @@ document.addEventListener("DOMContentLoaded", function () {
                 ? "px-4 py-2 rounded bg-primary text-white font-bold"
                 : "px-4 py-2 rounded bg-white text-primary font-bold shadow hover:bg-gray-100";
 
-            button.addEventListener("click", function () {
+            button.addEventListener("click", function (event) {
+                event.preventDefault();
                 currentPage = i;
-                render();
-                document.getElementById("angebote").scrollIntoView({ behavior: "smooth" });
+                renderCards();
             });
 
             pagination.appendChild(button);
         }
     }
 
-    if (priceInput) {
-        priceInput.addEventListener("blur", function () {
-            priceInput.value = formatGermanNumber(priceInput.value);
-        });
+    if (filterButton) {
+        filterButton.addEventListener("click", function (event) {
+            event.preventDefault();
+            applyFilters();
 
-        priceInput.addEventListener("keydown", function (event) {
-            if (event.key === "Enter") {
-                priceInput.value = formatGermanNumber(priceInput.value);
-                applyFilters();
+            if (priceInput) {
+                priceInput.value = formatPrice(priceInput.value);
             }
         });
     }
 
-    if (filterButton) {
-        filterButton.addEventListener("click", function () {
-            if (priceInput) {
-                priceInput.value = formatGermanNumber(priceInput.value);
+    if (priceInput) {
+        priceInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                applyFilters();
+                priceInput.value = formatPrice(priceInput.value);
             }
+        });
 
-            applyFilters();
+        priceInput.addEventListener("blur", function () {
+            priceInput.value = formatPrice(priceInput.value);
         });
     }
 
@@ -418,17 +406,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (resetButton) {
-        resetButton.addEventListener("click", function () {
+        resetButton.addEventListener("click", function (event) {
+            event.preventDefault();
+
             if (marketingFilter) marketingFilter.value = "";
             if (typeFilter) typeFilter.value = "";
             if (priceInput) priceInput.value = "";
 
-            filteredCards = cards;
+            filteredCards = cards.slice();
             currentPage = 1;
-            render();
+            renderCards();
         });
     }
 
-    render();
+    renderCards();
 });
 </script>
