@@ -68,24 +68,16 @@ exports.handler = async function (event) {
             email
         });
 
-        const contactResponse = await propstackPost(apiKey, "/contacts", {
-            client: {
-                first_name: firstName,
-                last_name: lastName,
-                name: fullName,
-                email: email,
-                phone: phone || "",
-                note: note,
-                source: "Website Objektanfrage"
-            }
+        const contactResponse = await createContact(apiKey, {
+            firstName,
+            lastName,
+            fullName,
+            email,
+            phone,
+            note
         });
 
-        const contactId =
-            contactResponse?.client?.id ||
-            contactResponse?.contact?.id ||
-            contactResponse?.id ||
-            contactResponse?.data?.id ||
-            null;
+        const contactId = extractId(contactResponse);
 
         if (!contactId) {
             return json(500, {
@@ -97,17 +89,23 @@ exports.handler = async function (event) {
 
         console.log("Kontakt erstellt:", contactId);
 
-     const dealResponse = await propstackPost(apiKey, "/client_properties", {
-    client_property: {
-        client_id: contactId,
-        property_id: objectId,
-        unit_id: objectId,
-        deal_stage_id: 200,
-        status: "active",
-        note: note,
-        source: "Website Objektanfrage"
-    }
-});
+        const stage = await findBestDealStage(apiKey);
+
+        if (!stage || !stage.id) {
+            return json(500, {
+                success: false,
+                error: "Keine passende Deal-Stage gefunden."
+            });
+        }
+
+        console.log("Deal Stage gefunden:", stage);
+
+        const dealResponse = await createDeal(apiKey, {
+            contactId,
+            objectId,
+            stageId: stage.id,
+            note
+        });
 
         console.log("Deal erstellt:", dealResponse);
 
@@ -115,6 +113,7 @@ exports.handler = async function (event) {
             success: true,
             message: "Objektanfrage erfolgreich übermittelt.",
             contact_id: contactId,
+            deal_stage: stage,
             contact: contactResponse,
             deal: dealResponse
         });
@@ -129,19 +128,120 @@ exports.handler = async function (event) {
     }
 };
 
-function clean(value) {
-    if (value === null || value === undefined) return "";
-    return String(value).trim();
+async function createContact(apiKey, payload) {
+    return await propstackPost(apiKey, "/contacts", {
+        client: {
+            first_name: payload.firstName,
+            last_name: payload.lastName,
+            name: payload.fullName,
+            email: payload.email,
+            phone: payload.phone || "",
+            note: payload.note,
+            source: "Website Objektanfrage"
+        }
+    });
 }
 
-function json(statusCode, body) {
-    return {
-        statusCode,
+async function createDeal(apiKey, payload) {
+    return await propstackPost(apiKey, "/client_properties", {
+        client_property: {
+            client_id: payload.contactId,
+
+            property_id: payload.objectId,
+            unit_id: payload.objectId,
+
+            deal_stage_id: payload.stageId,
+
+            note: payload.note,
+            source: "Website Objektanfrage"
+        }
+    });
+}
+
+async function findBestDealStage(apiKey) {
+    const pipelinesResponse = await propstackGet(apiKey, "/deal_pipelines");
+
+    const pipelines = normalizeArray(pipelinesResponse);
+
+    const allStages = [];
+
+    for (const pipeline of pipelines) {
+        const pipelineName =
+            pipeline.name ||
+            pipeline.title ||
+            pipeline.label ||
+            "";
+
+        const stages =
+            pipeline.deal_stages ||
+            pipeline.stages ||
+            pipeline.client_property_stages ||
+            [];
+
+        for (const stage of stages) {
+            allStages.push({
+                id: stage.id,
+                name: stage.name || stage.title || stage.label || "",
+                pipeline_id: pipeline.id,
+                pipeline_name: pipelineName,
+                raw: stage
+            });
+        }
+    }
+
+    console.log("Gefundene Deal-Stages:", allStages.map(stage => ({
+        id: stage.id,
+        name: stage.name,
+        pipeline_id: stage.pipeline_id,
+        pipeline_name: stage.pipeline_name
+    })));
+
+    if (!allStages.length) {
+        return null;
+    }
+
+    const preferredNames = [
+        "200 Käufer",
+        "Käufer",
+        "Anfrage",
+        "Objektanfrage",
+        "Qualifiziert",
+        "Unqualifiziert"
+    ];
+
+    for (const preferredName of preferredNames) {
+        const exactMatch = allStages.find(stage =>
+            normalizeText(stage.name) === normalizeText(preferredName)
+        );
+
+        if (exactMatch) {
+            return exactMatch;
+        }
+    }
+
+    for (const preferredName of preferredNames) {
+        const partialMatch = allStages.find(stage =>
+            normalizeText(stage.name).includes(normalizeText(preferredName))
+        );
+
+        if (partialMatch) {
+            return partialMatch;
+        }
+    }
+
+    return allStages[0];
+}
+
+async function propstackGet(apiKey, endpoint) {
+    const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
+        method: "GET",
         headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(body)
-    };
+            "X-API-KEY": apiKey,
+            "Accept": "application/json"
+        }
+    });
+
+    return await parsePropstackResponse(response, endpoint);
 }
 
 async function propstackPost(apiKey, endpoint, body) {
@@ -155,6 +255,10 @@ async function propstackPost(apiKey, endpoint, body) {
         body: JSON.stringify(body)
     });
 
+    return await parsePropstackResponse(response, endpoint);
+}
+
+async function parsePropstackResponse(response, endpoint) {
     const text = await response.text();
 
     let data;
@@ -172,4 +276,47 @@ async function propstackPost(apiKey, endpoint, body) {
     }
 
     return data;
+}
+
+function normalizeArray(value) {
+    if (Array.isArray(value)) return value;
+
+    if (Array.isArray(value?.deal_pipelines)) return value.deal_pipelines;
+    if (Array.isArray(value?.pipelines)) return value.pipelines;
+    if (Array.isArray(value?.data)) return value.data;
+    if (Array.isArray(value?.items)) return value.items;
+
+    return [];
+}
+
+function extractId(response) {
+    return (
+        response?.client?.id ||
+        response?.contact?.id ||
+        response?.id ||
+        response?.data?.id ||
+        null
+    );
+}
+
+function clean(value) {
+    if (value === null || value === undefined) return "";
+    return String(value).trim();
+}
+
+function normalizeText(value) {
+    return String(value || "")
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, " ");
+}
+
+function json(statusCode, body) {
+    return {
+        statusCode,
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(body)
+    };
 }
