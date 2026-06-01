@@ -23,7 +23,7 @@ permalink: angebote.html
             Ihre Immobiliensuche
         </h2>
 
-        <form id="property-filter-form" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <form id="property-filter-form" class="grid grid-cols-1 md:grid-cols-5 gap-4">
             <select id="filter-vermarktung" class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
                 <option value="">Vermarktungsart (Alle)</option>
                 {% for type in propstack.filters.marketingTypes %}
@@ -45,6 +45,15 @@ permalink: angebote.html
                 placeholder="Max. Kaufpreis (€)"
                 class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary"
             >
+
+            <select id="filter-sortierung" class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
+                <option value="">Sortierung</option>
+                <option value="price-asc">Preis aufsteigend</option>
+                <option value="price-desc">Preis absteigend</option>
+                <option value="area-desc">Größte Fläche</option>
+                <option value="area-asc">Kleinste Fläche</option>
+                <option value="newest">Neueste zuerst</option>
+            </select>
 
             <button type="submit" id="filter-button" class="btn-85 text-primary font-bold rounded py-3 hover:bg-primary hover:text-white transition duration-300 w-full">
                 <i class="fas fa-search mr-2"></i> Suchen
@@ -72,11 +81,16 @@ permalink: angebote.html
             data-vermarktung="{{ property.marketing_type or '' }}"
             data-objektart="{{ property.property_type or '' }}"
             data-preis="{{ property.price_raw or '' }}"
+            data-flaeche="{{ property.living_space_raw or '' }}"
+            data-index="{{ loop.index0 }}"
+            data-title="{{ property.title }}"
+            data-url="{{ property.url }}"
         >
 
-            <a href="{{ property.url }}" class="block bg-gray-100 overflow-hidden">
+            <a href="{{ property.url }}" class="block bg-gray-100 overflow-hidden property-click-link">
                 {% if property.main_image %}
                 <img
+                    loading="lazy"
                     src="{{ property.main_image }}"
                     alt="{{ property.title }}"
                     class="w-full h-56 object-cover transition duration-300 hover:scale-105"
@@ -137,7 +151,7 @@ permalink: angebote.html
                 </div>
                 {% endif %}
 
-                <a href="{{ property.url }}" class="btn-85 block text-center text-primary font-bold py-2 rounded-lg transition duration-300">
+                <a href="{{ property.url }}" class="btn-85 block text-center text-primary font-bold py-2 rounded-lg transition duration-300 property-click-link">
                     Mehr erfahren
                 </a>
 
@@ -252,15 +266,17 @@ permalink: angebote.html
     function initPropertyFilters() {
         const form = document.getElementById("property-filter-form");
         const cards = Array.from(document.querySelectorAll(".property-card"));
+        const grid = document.getElementById("property-grid");
         const marketingFilter = document.getElementById("filter-vermarktung");
         const typeFilter = document.getElementById("filter-objektart");
         const priceInput = document.getElementById("filter-preis");
+        const sortFilter = document.getElementById("filter-sortierung");
         const resetButton = document.getElementById("filter-reset");
         const countLabel = document.getElementById("object-count");
         const pagination = document.getElementById("pagination");
         const noResults = document.getElementById("no-results");
 
-        if (!cards.length) return;
+        if (!cards.length || !grid) return;
 
         const perPage = 9;
         let currentPage = 1;
@@ -315,6 +331,108 @@ permalink: angebote.html
             return parsePrice(card.getAttribute("data-preis"));
         }
 
+        function getCardArea(card) {
+            return parsePrice(card.getAttribute("data-flaeche"));
+        }
+
+        function getCardIndex(card) {
+            const index = Number(card.getAttribute("data-index"));
+            return Number.isNaN(index) ? 0 : index;
+        }
+
+        function updateUrlParams() {
+            const params = new URLSearchParams();
+
+            if (marketingFilter && marketingFilter.value) {
+                params.set("vermarktung", marketingFilter.value);
+            }
+
+            if (typeFilter && typeFilter.value) {
+                params.set("objektart", typeFilter.value);
+            }
+
+            if (priceInput && priceInput.value) {
+                const price = parsePrice(priceInput.value);
+                if (price !== null) {
+                    params.set("maxpreis", String(Math.round(price)));
+                }
+            }
+
+            if (sortFilter && sortFilter.value) {
+                params.set("sortierung", sortFilter.value);
+            }
+
+            const query = params.toString();
+            const newUrl = query
+                ? `${window.location.pathname}?${query}`
+                : window.location.pathname;
+
+            window.history.replaceState({}, "", newUrl);
+        }
+
+        function readUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+
+            const marketing = params.get("vermarktung");
+            const type = params.get("objektart");
+            const maxPrice = params.get("maxpreis");
+            const sorting = params.get("sortierung");
+
+            if (marketingFilter && marketing) {
+                marketingFilter.value = marketing;
+            }
+
+            if (typeFilter && type) {
+                typeFilter.value = type;
+            }
+
+            if (priceInput && maxPrice) {
+                priceInput.value = formatPrice(maxPrice);
+            }
+
+            if (sortFilter && sorting) {
+                sortFilter.value = sorting;
+            }
+        }
+
+        function sortCards(cardsToSort) {
+            const sortValue = sortFilter ? sortFilter.value : "";
+
+            const sorted = cardsToSort.slice();
+
+            if (sortValue === "price-asc") {
+                sorted.sort(function (a, b) {
+                    return (getCardPrice(a) || Infinity) - (getCardPrice(b) || Infinity);
+                });
+            }
+
+            if (sortValue === "price-desc") {
+                sorted.sort(function (a, b) {
+                    return (getCardPrice(b) || 0) - (getCardPrice(a) || 0);
+                });
+            }
+
+            if (sortValue === "area-desc") {
+                sorted.sort(function (a, b) {
+                    return (getCardArea(b) || 0) - (getCardArea(a) || 0);
+                });
+            }
+
+            if (sortValue === "area-asc") {
+                sorted.sort(function (a, b) {
+                    return (getCardArea(a) || Infinity) - (getCardArea(b) || Infinity);
+                });
+            }
+
+            if (sortValue === "newest") {
+                sorted.sort(function (a, b) {
+                    return getCardIndex(b) - getCardIndex(a);
+                });
+            }
+
+            return sorted;
+        }
+
         function applyFilters() {
             const selectedMarketing = normalizeText(marketingFilter ? marketingFilter.value : "");
             const selectedType = normalizeText(typeFilter ? typeFilter.value : "");
@@ -337,7 +455,10 @@ permalink: angebote.html
                 return marketingMatches && typeMatches && priceMatches;
             });
 
+            filteredCards = sortCards(filteredCards);
+
             currentPage = 1;
+            updateUrlParams();
             renderCards();
         }
 
@@ -351,6 +472,7 @@ permalink: angebote.html
 
             filteredCards.slice(start, end).forEach(function (card) {
                 card.style.display = "";
+                grid.appendChild(card);
             });
 
             if (countLabel) {
@@ -434,36 +556,81 @@ permalink: angebote.html
             if (marketingFilter) marketingFilter.value = "";
             if (typeFilter) typeFilter.value = "";
             if (priceInput) priceInput.value = "";
+            if (sortFilter) sortFilter.value = "";
 
             filteredCards = cards.slice();
             currentPage = 1;
+
+            window.history.replaceState({}, "", window.location.pathname);
+
             renderCards();
+        }
+
+        function trackPropertyClick(card) {
+            const title = card.getAttribute("data-title") || "";
+            const url = card.getAttribute("data-url") || "";
+            const price = card.getAttribute("data-preis") || "";
+            const type = card.getAttribute("data-objektart") || "";
+            const marketing = card.getAttribute("data-vermarktung") || "";
+
+            window.dataLayer = window.dataLayer || [];
+
+            window.dataLayer.push({
+                event: "property_click",
+                property_title: title,
+                property_url: url,
+                property_price: price,
+                property_type: type,
+                property_marketing_type: marketing
+            });
+
+            console.log("Property Click Tracking:", {
+                title,
+                url,
+                price,
+                type,
+                marketing
+            });
         }
 
         window.applyPropertyFilters = applyFilters;
 
+        readUrlParams();
+
         if (form) {
             form.addEventListener("submit", function (event) {
                 event.preventDefault();
-                applyFilters();
 
-                if (priceInput) {
+                if (priceInput && priceInput.value) {
                     priceInput.value = formatPrice(priceInput.value);
                 }
+
+                applyFilters();
             });
         }
 
         if (priceInput) {
+            priceInput.addEventListener("input", function () {
+                applyFilters();
+            });
+
             priceInput.addEventListener("keydown", function (event) {
                 if (event.key === "Enter") {
                     event.preventDefault();
+
+                    if (priceInput.value) {
+                        priceInput.value = formatPrice(priceInput.value);
+                    }
+
                     applyFilters();
-                    priceInput.value = formatPrice(priceInput.value);
                 }
             });
 
             priceInput.addEventListener("blur", function () {
-                priceInput.value = formatPrice(priceInput.value);
+                if (priceInput.value) {
+                    priceInput.value = formatPrice(priceInput.value);
+                    applyFilters();
+                }
             });
         }
 
@@ -475,6 +642,10 @@ permalink: angebote.html
             typeFilter.addEventListener("change", applyFilters);
         }
 
+        if (sortFilter) {
+            sortFilter.addEventListener("change", applyFilters);
+        }
+
         if (resetButton) {
             resetButton.addEventListener("click", function (event) {
                 event.preventDefault();
@@ -482,7 +653,17 @@ permalink: angebote.html
             });
         }
 
-        renderCards();
+        cards.forEach(function (card) {
+            const links = card.querySelectorAll(".property-click-link");
+
+            links.forEach(function (link) {
+                link.addEventListener("click", function () {
+                    trackPropertyClick(card);
+                });
+            });
+        });
+
+        applyFilters();
     }
 
     if (document.readyState === "loading") {
