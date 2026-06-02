@@ -1,25 +1,15 @@
 const PROPSTACK_BASE_URL = process.env.PROPSTACK_API_BASE || "https://api.propstack.de/v1";
 
-/*
- * Objektanfrage Website → Propstack
- *
- * Ziel:
- * - Kontakt anlegen/aktualisieren
- * - Käufer-Deal am Objekt in Pipeline "200 Käufer" anlegen
- * - optional eine Anfrage-Notiz mit client_source_id erzeugen
- *
- * Wichtig für Propstack-Automatisierungen:
- * Lege in Netlify zusätzlich diese Environment Variable an, sobald du die ID der Quelle kennst:
- * PROPSTACK_WEBSITE_SOURCE_ID=<ID der Kontaktquelle "Website Objektanfrage">
- */
-
 exports.handler = async function (event) {
     try {
+        console.log("PROPSTACK INQUIRY START");
+
         if (event.httpMethod !== "POST") {
             return json(405, { success: false, error: "Method not allowed" });
         }
 
         const apiKey = process.env.PROPSTACK_API_KEY;
+
         if (!apiKey) {
             return json(500, { success: false, error: "PROPSTACK_API_KEY fehlt" });
         }
@@ -31,42 +21,97 @@ exports.handler = async function (event) {
         const email = clean(data.email);
         const phone = clean(data.phone);
         const message = clean(data.message);
-        const contactPreference = clean(data.contact_preference);
+        const contactPreference = clean(data.contact_preference || data.contactPreference);
         const objectId = clean(data.object_id || data.propertyId);
         const objectTitle = clean(data.object_title || data.propertyTitle);
         const sourceUrl = clean(data.source_url || data.url);
-        const privacyConsent = data.privacy_consent === true || data.privacy_consent === "true" || data.datenschutz === true;
+
+        const privacyConsent =
+            data.privacy_consent === true ||
+            data.privacy_consent === "true" ||
+            data.datenschutz === true ||
+            data.datenschutz === "true" ||
+            data.consent === true ||
+            data.consent === "true";
 
         if (!firstName || !lastName || !email || !objectId) {
             return json(400, {
                 success: false,
                 error: "Pflichtfelder fehlen",
-                received: { firstName, lastName, email, objectId }
+                received: {
+                    firstName,
+                    lastName,
+                    email,
+                    objectId
+                }
             });
         }
 
         const fullName = `${firstName} ${lastName}`.trim();
 
-        const note = [
-            "Neue Objektanfrage über die Website",
-            "",
-            `Objekt: ${objectTitle || "-"}`,
-            `Objekt-ID / Unit-ID: ${objectId}`,
-            `Name: ${fullName}`,
-            `E-Mail: ${email}`,
-            `Telefon: ${phone || "-"}`,
-            `Kontaktwunsch: ${contactPreference || "-"}`,
-            "",
-            "Nachricht:",
-            message || "-",
-            "",
-            "Einwilligung:",
-            privacyConsent ? "Datenschutz-Einwilligung wurde aktiv bestätigt." : "Keine gesonderte Datenschutz-Info im Payload erkannt.",
-            `Zeitpunkt: ${new Date().toISOString()}`,
-            `Quelle: ${sourceUrl || "-"}`
-        ].join("\n");
+        const note = buildNote({
+            firstName,
+            lastName,
+            fullName,
+            email,
+            phone,
+            message,
+            contactPreference,
+            objectId,
+            objectTitle,
+            sourceUrl,
+            privacyConsent
+        });
 
-        console.log("Neue Objektanfrage:", { objectId, objectTitle, fullName, email });
+        console.log("Neue Objektanfrage:", {
+            objectId,
+            objectTitle,
+            fullName,
+            email
+        });
+
+        /*
+         * PRIO 1:
+         * Wenn RESEND_API_KEY gesetzt ist, senden wir eine echte Propstack-lesbare Anfrage-Mail.
+         * Dadurch können eure Propstack-Automationen wie "Neue Portal-Anfrage" greifen.
+         *
+         * Wichtig:
+         * Netlify-ENV setzen:
+         * RESEND_API_KEY=...
+         * PROPSTACK_PORTAL_INQUIRY_EMAIL=info@fg-realestate.de
+         * PROPSTACK_EMAIL_FROM=info@fg-realestate.de
+         */
+        const portalMailResult = await sendPropstackPortalInquiryMail({
+            firstName,
+            lastName,
+            fullName,
+            email,
+            phone,
+            message,
+            contactPreference,
+            objectId,
+            objectTitle,
+            sourceUrl,
+            privacyConsent
+        });
+
+        if (portalMailResult.sent) {
+            console.log("Propstack Portal-Anfrage-Mail gesendet:", portalMailResult);
+
+            return json(200, {
+                success: true,
+                mode: "portal_mail",
+                message: "Objektanfrage erfolgreich an Propstack übergeben.",
+                portal_mail: portalMailResult
+            });
+        }
+
+        /*
+         * FALLBACK:
+         * Wenn kein Mailversand eingerichtet ist, erstellen wir Kontakt + Deal direkt per API.
+         * Das funktioniert für CRM-Eintrag, löst aber NICHT zwingend eure Portal-Anfrage-Automails aus.
+         */
+        console.log("Portal-Mail nicht gesendet, API-Fallback wird genutzt:", portalMailResult);
 
         const contactResponse = await createContact(apiKey, {
             firstName,
@@ -79,6 +124,7 @@ exports.handler = async function (event) {
         });
 
         const contactId = extractId(contactResponse);
+
         if (!contactId) {
             return json(500, {
                 success: false,
@@ -90,6 +136,7 @@ exports.handler = async function (event) {
         console.log("Kontakt erstellt:", contactId);
 
         const stage = await findBestBuyerDealStage(apiKey);
+
         if (!stage || !stage.id) {
             return json(500, {
                 success: false,
@@ -108,28 +155,155 @@ exports.handler = async function (event) {
 
         console.log("Deal erstellt:", dealResponse);
 
-        const portalSignal = await createPortalInquirySignal(apiKey, {
-            contactId,
-            objectId,
-            objectTitle,
-            note
-        });
-
         return json(200, {
             success: true,
-            message: "Objektanfrage erfolgreich übermittelt.",
+            mode: "api_fallback",
+            message: "Objektanfrage erfolgreich per API übermittelt. Hinweis: Portal-Automails benötigen RESEND_API_KEY.",
             contact_id: contactId,
             deal_stage: stage,
             contact: contactResponse,
             deal: dealResponse,
-            portal_signal: portalSignal
+            portal_mail: portalMailResult
         });
 
     } catch (error) {
         console.error("PROPSTACK INQUIRY ERROR:", error.message);
-        return json(500, { success: false, error: error.message });
+
+        return json(500, {
+            success: false,
+            error: error.message
+        });
     }
 };
+
+function buildNote(payload) {
+    return [
+        "Neue Objektanfrage über die Website",
+        "",
+        `Objekt: ${payload.objectTitle || "-"}`,
+        `Objekt-ID / Unit-ID: ${payload.objectId}`,
+        `Name: ${payload.fullName}`,
+        `E-Mail: ${payload.email}`,
+        `Telefon: ${payload.phone || "-"}`,
+        `Kontaktwunsch: ${payload.contactPreference || "-"}`,
+        "",
+        "Nachricht:",
+        payload.message || "-",
+        "",
+        "Einwilligung:",
+        payload.privacyConsent
+            ? "Datenschutz-Einwilligung wurde aktiv bestätigt."
+            : "Keine gesonderte Datenschutz-Info im Payload erkannt.",
+        `Zeitpunkt: ${new Date().toISOString()}`,
+        `Quelle: ${payload.sourceUrl || "-"}`
+    ].join("\n");
+}
+
+async function sendPropstackPortalInquiryMail(payload) {
+    const resendApiKey = clean(process.env.RESEND_API_KEY);
+    const to = clean(process.env.PROPSTACK_PORTAL_INQUIRY_EMAIL || "info@fg-realestate.de");
+    const from = clean(process.env.PROPSTACK_EMAIL_FROM || "info@fg-realestate.de");
+
+    if (!resendApiKey) {
+        return {
+            sent: false,
+            skipped: true,
+            reason: "RESEND_API_KEY nicht gesetzt"
+        };
+    }
+
+    const subject = `Website Objektanfrage: ${payload.objectTitle || payload.objectId}`;
+
+    const html = buildPropstackInquiryHtml(payload);
+
+    const response = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+            "Authorization": `Bearer ${resendApiKey}`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            from,
+            to,
+            subject,
+            html
+        })
+    });
+
+    const text = await response.text();
+
+    let result;
+    try {
+        result = text ? JSON.parse(text) : {};
+    } catch {
+        result = { raw: text };
+    }
+
+    if (!response.ok) {
+        return {
+            sent: false,
+            skipped: false,
+            reason: "Resend Mailversand fehlgeschlagen",
+            status: response.status,
+            response: result
+        };
+    }
+
+    return {
+        sent: true,
+        to,
+        from,
+        subject,
+        response: result
+    };
+}
+
+function buildPropstackInquiryHtml(payload) {
+    const safeMessage = escapeHtml(payload.message || "-");
+    const safeObjectTitle = escapeHtml(payload.objectTitle || "-");
+    const safeSourceUrl = escapeHtml(payload.sourceUrl || "-");
+
+    return `
+<div id="ps-kontaktanfrage">
+    <p><strong>Neue Objektanfrage über die Website</strong></p>
+
+    <p>
+        <strong>Objekt:</strong> ${safeObjectTitle}<br>
+        <strong>Objekt-ID:</strong> ${escapeHtml(payload.objectId)}<br>
+        <strong>Name:</strong> ${escapeHtml(payload.fullName)}<br>
+        <strong>E-Mail:</strong> ${escapeHtml(payload.email)}<br>
+        <strong>Telefon:</strong> ${escapeHtml(payload.phone || "-")}<br>
+        <strong>Kontaktwunsch:</strong> ${escapeHtml(payload.contactPreference || "-")}
+    </p>
+
+    <p>
+        <strong>Nachricht:</strong><br>
+        ${safeMessage.replace(/\n/g, "<br>")}
+    </p>
+
+    <p>
+        <strong>Einwilligung:</strong><br>
+        ${payload.privacyConsent ? "Datenschutz-Einwilligung wurde aktiv bestätigt." : "Keine gesonderte Datenschutz-Info im Payload erkannt."}
+    </p>
+
+    <p>
+        <strong>Quelle:</strong><br>
+        ${safeSourceUrl}
+    </p>
+
+    <span id="client_first_name">${escapeHtml(payload.firstName)}</span>
+    <span id="client_last_name">${escapeHtml(payload.lastName)}</span>
+    <span id="client_name">${escapeHtml(payload.fullName)}</span>
+    <span id="client_email">${escapeHtml(payload.email)}</span>
+    <span id="client_phone">${escapeHtml(payload.phone || "")}</span>
+    <span id="property_id">${escapeHtml(payload.objectId)}</span>
+    <span id="unit_id">${escapeHtml(payload.objectId)}</span>
+    <span id="body">${safeMessage}</span>
+    <span id="message">${safeMessage}</span>
+    <span id="source">Website Objektanfrage</span>
+</div>
+`;
+}
 
 async function createContact(apiKey, payload) {
     return await propstackPost(apiKey, "/contacts", {
@@ -170,67 +344,6 @@ async function createDeal(apiKey, payload) {
     });
 }
 
-/*
- * Optionaler Trigger für Propstack-Automatisierungen:
- * Wenn PROPSTACK_WEBSITE_SOURCE_ID gesetzt ist, versucht die Function zusätzlich,
- * eine echte Anfrage-/Notizspur mit client_source_id zu schreiben.
- * Falls der konkrete Endpoint bei eurem Account anders reagiert, blockiert das NICHT den Lead.
- */
-async function createPortalInquirySignal(apiKey, payload) {
-    const sourceId = clean(process.env.PROPSTACK_WEBSITE_SOURCE_ID);
-    if (!sourceId) {
-        return { skipped: true, reason: "PROPSTACK_WEBSITE_SOURCE_ID nicht gesetzt" };
-    }
-
-    const attempts = [
-        {
-            endpoint: "/notes",
-            body: {
-                note: removeEmpty({
-                    title: "Website Objektanfrage",
-                    body: payload.note,
-                    text: payload.note,
-                    client_id: payload.contactId,
-                    contact_id: payload.contactId,
-                    property_id: payload.objectId,
-                    unit_id: payload.objectId,
-                    client_source_id: sourceId,
-                    kind: "note"
-                })
-            }
-        },
-        {
-            endpoint: "/tasks",
-            body: {
-                task: removeEmpty({
-                    title: `Website Anfrage: ${payload.objectTitle || payload.objectId}`,
-                    body: payload.note,
-                    note: payload.note,
-                    client_id: payload.contactId,
-                    contact_id: payload.contactId,
-                    property_id: payload.objectId,
-                    unit_id: payload.objectId,
-                    client_source_id: sourceId
-                })
-            }
-        }
-    ];
-
-    const results = [];
-
-    for (const attempt of attempts) {
-        try {
-            const result = await propstackPost(apiKey, attempt.endpoint, attempt.body);
-            return { ok: true, endpoint: attempt.endpoint, result };
-        } catch (error) {
-            console.warn(`Portal-Signal fehlgeschlagen bei ${attempt.endpoint}:`, error.message);
-            results.push({ endpoint: attempt.endpoint, ok: false, error: error.message });
-        }
-    }
-
-    return { ok: false, attempts: results };
-}
-
 async function findBestBuyerDealStage(apiKey) {
     const pipelinesResponse = await propstackGet(apiKey, "/deal_pipelines");
     const pipelines = normalizeArray(pipelinesResponse);
@@ -238,7 +351,11 @@ async function findBestBuyerDealStage(apiKey) {
     const allStages = [];
 
     for (const pipeline of pipelines) {
-        const pipelineName = pipeline.name || pipeline.title || pipeline.label || "";
+        const pipelineName =
+            pipeline.name ||
+            pipeline.title ||
+            pipeline.label ||
+            "";
 
         const stages =
             pipeline.deal_stages ||
@@ -317,7 +434,10 @@ async function findBestBuyerDealStage(apiKey) {
 async function propstackGet(apiKey, endpoint) {
     const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
         method: "GET",
-        headers: { "X-API-KEY": apiKey, "Accept": "application/json" }
+        headers: {
+            "X-API-KEY": apiKey,
+            "Accept": "application/json"
+        }
     });
 
     return await parsePropstackResponse(response, endpoint);
@@ -339,8 +459,8 @@ async function propstackPost(apiKey, endpoint, body) {
 
 async function parsePropstackResponse(response, endpoint) {
     const text = await response.text();
-    let data;
 
+    let data;
     try {
         data = text ? JSON.parse(text) : {};
     } catch {
@@ -394,19 +514,36 @@ function normalizeText(value) {
 
 function removeEmpty(object) {
     const result = {};
+
     for (const [key, value] of Object.entries(object)) {
         if (value === null || value === undefined || value === "") continue;
         if (Array.isArray(value) && value.length === 0) continue;
-        if (Object.prototype.toString.call(value) === "[object Object]" && Object.keys(value).length === 0) continue;
+        if (
+            Object.prototype.toString.call(value) === "[object Object]" &&
+            Object.keys(value).length === 0
+        ) continue;
+
         result[key] = value;
     }
+
     return result;
+}
+
+function escapeHtml(value) {
+    return clean(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 }
 
 function json(statusCode, body) {
     return {
         statusCode,
-        headers: { "Content-Type": "application/json" },
+        headers: {
+            "Content-Type": "application/json"
+        },
         body: JSON.stringify(body)
     };
 }
