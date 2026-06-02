@@ -64,7 +64,7 @@ exports.handler = async function (event) {
         });
 
         const contactPayload = {
-            client: {
+            client: removeEmpty({
                 first_name: firstName,
                 last_name: lastName,
                 name: fullName,
@@ -73,8 +73,19 @@ exports.handler = async function (event) {
                 source: "Website Landingpage",
                 note,
                 buyer: isBuyingLead || isFinancingLead,
-                owner: isSellingLead || isRentingLead
-            }
+                owner: isSellingLead || isRentingLead,
+                partial_custom_fields: removeEmpty({
+                    landingpage_typ: mapLandingpageType(concern),
+                    finanzierungsberatung_gewunscht: financingInterest || undefined,
+                    suchgebiet: isBuyingLead ? location : undefined,
+                    objektadresse: isSellingLead || isRentingLead ? location : undefined,
+                    budget: budget || undefined,
+                    zeitrahmen: timeframe || undefined,
+                    verwaltung_interessant: concern === "Verwaltung",
+                    website_lead: true,
+                    offmarket_geeignet: concern === "Kapitalanlage"
+                })
+            })
         };
 
         const contactResponse = await propstackPost(apiKey, "/contacts", contactPayload);
@@ -204,11 +215,18 @@ async function createAcquisitionProperty(apiKey, input) {
             }
         ],
         partial_custom_fields: removeEmpty({
-            website_lead_source: "Website Landingpage Verkauf",
-            website_lead_note: input.note,
-            website_lead_timeframe: input.timeframe,
-            website_lead_price_expectation: input.budget,
-            website_lead_area_type: clean(input.propertyDetails["seller-area-type"])
+            objektzustand: clean(input.propertyDetails["seller-quality"]),
+            wohnflache: areaValue,
+            grundstucksflache: plotArea,
+            zimmeranzahl: rooms,
+            baujahr: year,
+            energieklasse: clean(input.propertyDetails["seller-energy"]),
+            balkon_oder_terrasse: clean(input.propertyDetails["seller-balcony"]) === "Ja",
+            balkon_terrassenflache: balconyArea,
+            letzte_modernisierung: clean(input.propertyDetails["seller-modernization"]),
+            objekt_aus_landingpage: true,
+            akquiseobjekt: true,
+            unterlagen_erhalten: false
         })
     });
 
@@ -281,6 +299,19 @@ async function uploadDocuments(apiKey, input) {
     }
 
     return results;
+}
+
+function mapLandingpageType(value) {
+    const text = normalize(value);
+
+    if (text.includes("kauf") && !text.includes("verkauf")) return "Kauf";
+    if (text.includes("verkauf")) return "Verkauf";
+    if (text.includes("vermiet")) return "Vermietung";
+    if (text.includes("verwaltung")) return "Verwaltung";
+    if (text.includes("finanz")) return "Finanzierung";
+    if (text.includes("kapital")) return "Kapitalanlage";
+
+    return clean(value) || "Website Lead";
 }
 
 function mapRsType(value) {
