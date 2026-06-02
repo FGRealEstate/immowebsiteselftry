@@ -467,22 +467,31 @@ function getPublicLocation(unit) {
 }
 
 function getPublicTitle(unit, marketingType, propertyType) {
+    /*
+     * Wichtig:
+     * Der öffentliche Website-Titel soll NICHT aus internen Notizen kommen.
+     * Propstack-Feldlogik:
+     * 1. Überschrift / Headline / Titel
+     * 2. Website-spezifische Titelfelder
+     * 3. technische Fallbacks
+     * Interne Notizen werden bewusst NICHT als Titel verwendet.
+     */
     const candidates = [
-        unit.internal_note,
-        unit.note,
-        unit.private_note,
-        unit.memo,
-        customField(unit, "interne_notiz"),
-        customField(unit, "interne notiz"),
-        customField(unit, "internal_note"),
-        customField(unit, "website_titel"),
-        customField(unit, "objekt_titel_website"),
+        unit.headline,
+        unit.title,
+        unit.name,
+        unit.label,
+
         customField(unit, "ueberschrift"),
         customField(unit, "überschrift"),
         customField(unit, "headline"),
-        unit.headline,
-        unit.title,
-        unit.label
+        customField(unit, "titel"),
+        customField(unit, "title"),
+        customField(unit, "website_titel"),
+        customField(unit, "objekt_titel_website"),
+        customField(unit, "objekt_ueberschrift"),
+        customField(unit, "objekt überschrift"),
+        customField(unit, "objektüberschrift")
     ];
 
     for (const candidate of candidates) {
@@ -527,6 +536,9 @@ function getStatusName(unit) {
         textValue(unit.status_name) ||
         textValue(unit.marketing_status) ||
         textValue(unit.custom_fields?.status) ||
+        textValue(unit.custom_fields?.objekt_status) ||
+        textValue(customField(unit, "objekt_status")) ||
+        textValue(customField(unit, "objekt status")) ||
         null
     );
 }
