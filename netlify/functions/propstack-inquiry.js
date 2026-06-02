@@ -1,21 +1,27 @@
-const PROPSTACK_BASE_URL = "https://api.propstack.de/v1";
+const PROPSTACK_BASE_URL = process.env.PROPSTACK_API_BASE || "https://api.propstack.de/v1";
+
+/*
+ * Objektanfrage Website → Propstack
+ *
+ * Ziel:
+ * - Kontakt anlegen/aktualisieren
+ * - Käufer-Deal am Objekt in Pipeline "200 Käufer" anlegen
+ * - optional eine Anfrage-Notiz mit client_source_id erzeugen
+ *
+ * Wichtig für Propstack-Automatisierungen:
+ * Lege in Netlify zusätzlich diese Environment Variable an, sobald du die ID der Quelle kennst:
+ * PROPSTACK_WEBSITE_SOURCE_ID=<ID der Kontaktquelle "Website Objektanfrage">
+ */
 
 exports.handler = async function (event) {
     try {
         if (event.httpMethod !== "POST") {
-            return json(405, {
-                success: false,
-                error: "Method not allowed"
-            });
+            return json(405, { success: false, error: "Method not allowed" });
         }
 
         const apiKey = process.env.PROPSTACK_API_KEY;
-
         if (!apiKey) {
-            return json(500, {
-                success: false,
-                error: "PROPSTACK_API_KEY fehlt"
-            });
+            return json(500, { success: false, error: "PROPSTACK_API_KEY fehlt" });
         }
 
         const data = JSON.parse(event.body || "{}");
@@ -29,17 +35,13 @@ exports.handler = async function (event) {
         const objectId = clean(data.object_id || data.propertyId);
         const objectTitle = clean(data.object_title || data.propertyTitle);
         const sourceUrl = clean(data.source_url || data.url);
+        const privacyConsent = data.privacy_consent === true || data.privacy_consent === "true" || data.datenschutz === true;
 
         if (!firstName || !lastName || !email || !objectId) {
             return json(400, {
                 success: false,
                 error: "Pflichtfelder fehlen",
-                received: {
-                    firstName,
-                    lastName,
-                    email,
-                    objectId
-                }
+                received: { firstName, lastName, email, objectId }
             });
         }
 
@@ -58,15 +60,13 @@ exports.handler = async function (event) {
             "Nachricht:",
             message || "-",
             "",
+            "Einwilligung:",
+            privacyConsent ? "Datenschutz-Einwilligung wurde aktiv bestätigt." : "Keine gesonderte Datenschutz-Info im Payload erkannt.",
+            `Zeitpunkt: ${new Date().toISOString()}`,
             `Quelle: ${sourceUrl || "-"}`
         ].join("\n");
 
-        console.log("Neue Objektanfrage:", {
-            objectId,
-            objectTitle,
-            fullName,
-            email
-        });
+        console.log("Neue Objektanfrage:", { objectId, objectTitle, fullName, email });
 
         const contactResponse = await createContact(apiKey, {
             firstName,
@@ -74,11 +74,11 @@ exports.handler = async function (event) {
             fullName,
             email,
             phone,
-            note
+            note,
+            contactPreference
         });
 
         const contactId = extractId(contactResponse);
-
         if (!contactId) {
             return json(500, {
                 success: false,
@@ -89,16 +89,15 @@ exports.handler = async function (event) {
 
         console.log("Kontakt erstellt:", contactId);
 
-        const stage = await findBestDealStage(apiKey);
-
+        const stage = await findBestBuyerDealStage(apiKey);
         if (!stage || !stage.id) {
             return json(500, {
                 success: false,
-                error: "Keine passende Deal-Stage gefunden."
+                error: "Keine passende Käufer-Deal-Stage gefunden."
             });
         }
 
-        console.log("Deal Stage gefunden:", stage);
+        console.log("Käufer-Deal-Stage gefunden:", stage);
 
         const dealResponse = await createDeal(apiKey, {
             contactId,
@@ -109,56 +108,130 @@ exports.handler = async function (event) {
 
         console.log("Deal erstellt:", dealResponse);
 
+        const portalSignal = await createPortalInquirySignal(apiKey, {
+            contactId,
+            objectId,
+            objectTitle,
+            note
+        });
+
         return json(200, {
             success: true,
             message: "Objektanfrage erfolgreich übermittelt.",
             contact_id: contactId,
             deal_stage: stage,
             contact: contactResponse,
-            deal: dealResponse
+            deal: dealResponse,
+            portal_signal: portalSignal
         });
 
     } catch (error) {
         console.error("PROPSTACK INQUIRY ERROR:", error.message);
-
-        return json(500, {
-            success: false,
-            error: error.message
-        });
+        return json(500, { success: false, error: error.message });
     }
 };
 
 async function createContact(apiKey, payload) {
     return await propstackPost(apiKey, "/contacts", {
-        client: {
+        client: removeEmpty({
             first_name: payload.firstName,
             last_name: payload.lastName,
             name: payload.fullName,
             email: payload.email,
             phone: payload.phone || "",
             note: payload.note,
-            source: "Website Objektanfrage"
-        }
+            source: "Website Objektanfrage",
+            buyer: true,
+            partial_custom_fields: removeEmpty({
+                website_lead: true,
+                landingpage_typ: "Kauf",
+                finanzierungsberatung_gewunscht: "",
+                suchgebiet: "",
+                objektadresse: "",
+                budget: "",
+                zeitrahmen: "",
+                offmarket_geeignet: false
+            })
+        })
     });
 }
 
 async function createDeal(apiKey, payload) {
     return await propstackPost(apiKey, "/client_properties", {
-        client_property: {
+        client_property: removeEmpty({
             client_id: payload.contactId,
-
+            contact_id: payload.contactId,
             property_id: payload.objectId,
             unit_id: payload.objectId,
-
             deal_stage_id: payload.stageId,
-
             note: payload.note,
             source: "Website Objektanfrage"
-        }
+        })
     });
 }
 
-async function findBestDealStage(apiKey) {
+/*
+ * Optionaler Trigger für Propstack-Automatisierungen:
+ * Wenn PROPSTACK_WEBSITE_SOURCE_ID gesetzt ist, versucht die Function zusätzlich,
+ * eine echte Anfrage-/Notizspur mit client_source_id zu schreiben.
+ * Falls der konkrete Endpoint bei eurem Account anders reagiert, blockiert das NICHT den Lead.
+ */
+async function createPortalInquirySignal(apiKey, payload) {
+    const sourceId = clean(process.env.PROPSTACK_WEBSITE_SOURCE_ID);
+    if (!sourceId) {
+        return { skipped: true, reason: "PROPSTACK_WEBSITE_SOURCE_ID nicht gesetzt" };
+    }
+
+    const attempts = [
+        {
+            endpoint: "/notes",
+            body: {
+                note: removeEmpty({
+                    title: "Website Objektanfrage",
+                    body: payload.note,
+                    text: payload.note,
+                    client_id: payload.contactId,
+                    contact_id: payload.contactId,
+                    property_id: payload.objectId,
+                    unit_id: payload.objectId,
+                    client_source_id: sourceId,
+                    kind: "note"
+                })
+            }
+        },
+        {
+            endpoint: "/tasks",
+            body: {
+                task: removeEmpty({
+                    title: `Website Anfrage: ${payload.objectTitle || payload.objectId}`,
+                    body: payload.note,
+                    note: payload.note,
+                    client_id: payload.contactId,
+                    contact_id: payload.contactId,
+                    property_id: payload.objectId,
+                    unit_id: payload.objectId,
+                    client_source_id: sourceId
+                })
+            }
+        }
+    ];
+
+    const results = [];
+
+    for (const attempt of attempts) {
+        try {
+            const result = await propstackPost(apiKey, attempt.endpoint, attempt.body);
+            return { ok: true, endpoint: attempt.endpoint, result };
+        } catch (error) {
+            console.warn(`Portal-Signal fehlgeschlagen bei ${attempt.endpoint}:`, error.message);
+            results.push({ endpoint: attempt.endpoint, ok: false, error: error.message });
+        }
+    }
+
+    return { ok: false, attempts: results };
+}
+
+async function findBestBuyerDealStage(apiKey) {
     const pipelinesResponse = await propstackGet(apiKey, "/deal_pipelines");
     const pipelines = normalizeArray(pipelinesResponse);
 
@@ -194,41 +267,38 @@ async function findBestDealStage(apiKey) {
     const buyerStages = allStages.filter(stage => {
         const combined = normalizeText(`${stage.pipeline_name} ${stage.name}`);
 
-        const isBuyer =
-            combined.includes("käufer") ||
+        const isBuyerPipeline =
+            combined.includes("200 kaufer") ||
+            combined.includes("200 kaeufer") ||
             combined.includes("kaeufer") ||
-            combined.includes("kauf") ||
-            combined.includes("interessent") ||
+            combined.includes("kaufer") ||
+            combined.includes("kaufinteressent") ||
             combined.includes("buyer");
 
-        const isOwnerOrSeller =
-            combined.includes("eigentümer") ||
+        const isWrongPipeline =
+            combined.includes("100 eigentumer") ||
+            combined.includes("100 eigentuemer") ||
+            combined.includes("eigentumer") ||
             combined.includes("eigentuemer") ||
-            combined.includes("verkäufer") ||
+            combined.includes("verkaufer") ||
             combined.includes("verkaeufer") ||
-            combined.includes("seller") ||
-            combined.includes("owner");
+            combined.includes("300 mieter") ||
+            combined.includes("400 finanzierung");
 
-        return isBuyer && !isOwnerOrSeller;
+        return isBuyerPipeline && !isWrongPipeline;
     });
 
     const preferredNames = [
-        "200 käufer",
-        "200 kaeufer",
-        "neuer käufer-lead",
-        "neuer kaeufer-lead",
-        "käufer lead",
-        "kaeufer lead",
-        "interessent",
-        "qualifiziert",
-        "unqualifiziert"
+        "neuer kaufer lead",
+        "neuer kaeufer lead",
+        "neuer kaufinteressent",
+        "kaufinteressent",
+        "unqualifiziert",
+        "qualifiziert"
     ];
 
     for (const preferredName of preferredNames) {
-        const exact = buyerStages.find(stage =>
-            normalizeText(stage.name) === preferredName
-        );
-
+        const exact = buyerStages.find(stage => normalizeText(stage.name) === preferredName);
         if (exact) return exact;
     }
 
@@ -236,35 +306,18 @@ async function findBestDealStage(apiKey) {
         const partial = buyerStages.find(stage =>
             normalizeText(`${stage.pipeline_name} ${stage.name}`).includes(preferredName)
         );
-
         if (partial) return partial;
     }
 
-    if (buyerStages.length) {
-        return buyerStages[0];
-    }
+    if (buyerStages.length) return buyerStages[0];
 
-    const safeFallback = allStages.find(stage => {
-        const combined = normalizeText(`${stage.pipeline_name} ${stage.name}`);
-
-        return (
-            !combined.includes("eigentümer") &&
-            !combined.includes("eigentuemer") &&
-            !combined.includes("verkäufer") &&
-            !combined.includes("verkaeufer")
-        );
-    });
-
-    return safeFallback || allStages[0] || null;
+    throw new Error("Keine Käufer-Stage gefunden. Bitte Pipeline 200 Käufer prüfen oder API-Rechte für Deal-Pipelines aktivieren.");
 }
 
 async function propstackGet(apiKey, endpoint) {
     const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
         method: "GET",
-        headers: {
-            "X-API-KEY": apiKey,
-            "Accept": "application/json"
-        }
+        headers: { "X-API-KEY": apiKey, "Accept": "application/json" }
     });
 
     return await parsePropstackResponse(response, endpoint);
@@ -286,7 +339,6 @@ async function propstackPost(apiKey, endpoint, body) {
 
 async function parsePropstackResponse(response, endpoint) {
     const text = await response.text();
-
     let data;
 
     try {
@@ -296,9 +348,7 @@ async function parsePropstackResponse(response, endpoint) {
     }
 
     if (!response.ok) {
-        throw new Error(
-            `Propstack Fehler ${response.status} bei ${endpoint}: ${JSON.stringify(data)}`
-        );
+        throw new Error(`Propstack Fehler ${response.status} bei ${endpoint}: ${JSON.stringify(data)}`);
     }
 
     return data;
@@ -306,12 +356,10 @@ async function parsePropstackResponse(response, endpoint) {
 
 function normalizeArray(value) {
     if (Array.isArray(value)) return value;
-
     if (Array.isArray(value?.deal_pipelines)) return value.deal_pipelines;
     if (Array.isArray(value?.pipelines)) return value.pipelines;
     if (Array.isArray(value?.data)) return value.data;
     if (Array.isArray(value?.items)) return value.items;
-
     return [];
 }
 
@@ -331,18 +379,34 @@ function clean(value) {
 }
 
 function normalizeText(value) {
-    return String(value || "")
-        .trim()
+    return clean(value)
         .toLowerCase()
-        .replace(/\s+/g, " ");
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/ä/g, "ae")
+        .replace(/ö/g, "oe")
+        .replace(/ü/g, "ue")
+        .replace(/ß/g, "ss")
+        .replace(/[^a-z0-9]+/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+}
+
+function removeEmpty(object) {
+    const result = {};
+    for (const [key, value] of Object.entries(object)) {
+        if (value === null || value === undefined || value === "") continue;
+        if (Array.isArray(value) && value.length === 0) continue;
+        if (Object.prototype.toString.call(value) === "[object Object]" && Object.keys(value).length === 0) continue;
+        result[key] = value;
+    }
+    return result;
 }
 
 function json(statusCode, body) {
     return {
         statusCode,
-        headers: {
-            "Content-Type": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
     };
 }
