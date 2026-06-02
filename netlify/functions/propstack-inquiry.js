@@ -1,278 +1,120 @@
-```js
-const axios = require("axios");
-
-const {
-  PROPSTACK_API_BASE,
-  PROPSTACK_API_KEY,
-  RESEND_API_KEY,
-  PROPSTACK_PORTAL_INQUIRY_EMAIL,
-  PROPSTACK_EMAIL_FROM,
-  MAIL_FROM
-} = process.env;
-
-exports.handler = async (event) => {
-  console.log("=================================================");
+exports.handler = async function (event) {
   console.log("PROPSTACK INQUIRY START");
-  console.log("=================================================");
-
-  console.log("REQUEST METHOD:", event.httpMethod);
+  console.log("METHOD:", event.httpMethod);
 
   if (event.httpMethod !== "POST") {
-    console.log("Method not allowed");
     return {
       statusCode: 405,
-      body: JSON.stringify({
-        success: false,
-        error: "Method not allowed"
-      })
+      body: JSON.stringify({ success: false, error: "Method not allowed" })
     };
   }
 
   try {
     const payload = JSON.parse(event.body || "{}");
 
-    console.log("PAYLOAD:");
-    console.log(JSON.stringify(payload, null, 2));
+    console.log("PAYLOAD:", JSON.stringify(payload, null, 2));
 
-    const {
-      objectId,
-      objectTitle,
-      fullName,
-      email,
-      phone,
-      message,
-      contactWish,
-      privacyAccepted
-    } = payload;
-
-    console.log("=================================================");
-    console.log("ENV DEBUG");
-    console.log("=================================================");
-
-    console.log("PROPSTACK_API_BASE:", !!PROPSTACK_API_BASE);
-    console.log("PROPSTACK_API_KEY:", !!PROPSTACK_API_KEY);
-    console.log("RESEND_API_KEY:", !!RESEND_API_KEY);
-    console.log(
-      "PROPSTACK_PORTAL_INQUIRY_EMAIL:",
-      PROPSTACK_PORTAL_INQUIRY_EMAIL
-    );
-    console.log(
-      "PROPSTACK_EMAIL_FROM:",
-      PROPSTACK_EMAIL_FROM
-    );
-    console.log(
-      "MAIL_FROM:",
-      MAIL_FROM
-    );
-
-    const finalMailFrom =
-      PROPSTACK_EMAIL_FROM ||
-      MAIL_FROM ||
+    const resendKey = process.env.RESEND_API_KEY;
+    const from =
+      process.env.PROPSTACK_EMAIL_FROM ||
+      process.env.MAIL_FROM ||
       "info@fg-realestate.de";
 
-    const finalPortalMail =
-      PROPSTACK_PORTAL_INQUIRY_EMAIL ||
+    const to =
+      process.env.PROPSTACK_PORTAL_INQUIRY_EMAIL ||
       "info@fg-realestate.de";
 
-    console.log("FINAL FROM:", finalMailFrom);
-    console.log("FINAL TO:", finalPortalMail);
+    console.log("ENV DEBUG:", {
+      hasPropstackBase: !!process.env.PROPSTACK_API_BASE,
+      hasPropstackKey: !!process.env.PROPSTACK_API_KEY,
+      hasResendKey: !!resendKey,
+      from,
+      to
+    });
 
-    console.log("=================================================");
-    console.log("RESEND TEST");
-    console.log("=================================================");
+    const firstName = payload.first_name || payload.firstName || payload.vorname || "";
+    const lastName = payload.last_name || payload.lastName || payload.nachname || "";
+    const fullName = payload.full_name || payload.fullName || `${firstName} ${lastName}`.trim() || payload.name || "";
+    const email = payload.email || "";
+    const phone = payload.phone || payload.telefon || "";
+    const message = payload.message || payload.nachricht || "";
+    const objectId = payload.object_id || payload.objectId || payload.propertyId || "";
+    const objectTitle = payload.object_title || payload.objectTitle || payload.propertyTitle || "Objektanfrage";
+    const contactWish = payload.contact_preference || payload.contactWish || payload.kontaktwunsch || "";
+    const sourceUrl = payload.source_url || payload.url || "";
 
-    let resendWorked = false;
-
-    if (RESEND_API_KEY) {
-      try {
-        const resendResponse = await axios.post(
-          "https://api.resend.com/emails",
-          {
-            from: finalMailFrom,
-            to: [finalPortalMail],
-            subject: `Neue Objektanfrage: ${objectTitle || "Objekt"}`,
-            html: `
-              <h2>Neue Objektanfrage</h2>
-
-              <p><strong>Objekt:</strong> ${objectTitle || "-"}</p>
-              <p><strong>Objekt-ID:</strong> ${objectId || "-"}</p>
-
-              <hr>
-
-              <p><strong>Name:</strong> ${fullName || "-"}</p>
-              <p><strong>E-Mail:</strong> ${email || "-"}</p>
-              <p><strong>Telefon:</strong> ${phone || "-"}</p>
-
-              <p><strong>Kontaktwunsch:</strong> ${contactWish || "-"}</p>
-
-              <hr>
-
-              <p><strong>Nachricht:</strong></p>
-              <p>${message || "-"}</p>
-
-              <hr>
-
-              <p><strong>Datenschutz akzeptiert:</strong> ${
-                privacyAccepted ? "Ja" : "Nein"
-              }</p>
-            `
-          },
-          {
-            headers: {
-              Authorization: `Bearer ${RESEND_API_KEY}`,
-              "Content-Type": "application/json"
-            }
-          }
-        );
-
-        console.log("=================================================");
-        console.log("RESEND SUCCESS");
-        console.log("=================================================");
-
-        console.log(
-          JSON.stringify(resendResponse.data, null, 2)
-        );
-
-        resendWorked = true;
-      } catch (resendError) {
-        console.log("=================================================");
-        console.log("RESEND ERROR");
-        console.log("=================================================");
-
-        if (resendError.response) {
-          console.log(
-            JSON.stringify(resendError.response.data, null, 2)
-          );
-        } else {
-          console.log(resendError.message);
-        }
-      }
-    } else {
-      console.log("NO RESEND API KEY FOUND");
+    if (!resendKey) {
+      console.log("RESEND ERROR: RESEND_API_KEY fehlt");
+      return {
+        statusCode: 500,
+        body: JSON.stringify({
+          success: false,
+          error: "RESEND_API_KEY fehlt"
+        })
+      };
     }
 
-    console.log("=================================================");
-    console.log("PROPSTACK CONTACT");
-    console.log("=================================================");
+    const html =
+      '<div id="ps-kontaktanfrage">' +
+      '<h2>Neue Objektanfrage über die Website</h2>' +
+      '<p><strong>Objekt:</strong> ' + escapeHtml(objectTitle) + '</p>' +
+      '<p><strong>Objekt-ID:</strong> ' + escapeHtml(objectId) + '</p>' +
+      '<p><strong>Name:</strong> ' + escapeHtml(fullName) + '</p>' +
+      '<p><strong>E-Mail:</strong> ' + escapeHtml(email) + '</p>' +
+      '<p><strong>Telefon:</strong> ' + escapeHtml(phone) + '</p>' +
+      '<p><strong>Kontaktwunsch:</strong> ' + escapeHtml(contactWish) + '</p>' +
+      '<p><strong>Nachricht:</strong><br>' + escapeHtml(message).replace(/\n/g, "<br>") + '</p>' +
+      '<p><strong>Quelle:</strong><br>' + escapeHtml(sourceUrl) + '</p>' +
+      '<span id="client_name">' + escapeHtml(fullName) + '</span>' +
+      '<span id="client_email">' + escapeHtml(email) + '</span>' +
+      '<span id="client_phone">' + escapeHtml(phone) + '</span>' +
+      '<span id="property_id">' + escapeHtml(objectId) + '</span>' +
+      '<span id="unit_id">' + escapeHtml(objectId) + '</span>' +
+      '<span id="body">' + escapeHtml(message) + '</span>' +
+      '<span id="source">Website Objektanfrage</span>' +
+      '</div>';
 
-    const contactResponse = await axios.post(
-      `${PROPSTACK_API_BASE}/contacts`,
-      {
-        first_name: fullName || "Unbekannt",
-        email: email || "",
-        phone: phone || ""
+    const resendResponse = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + resendKey,
+        "Content-Type": "application/json"
       },
-      {
-        headers: {
-          "X-API-KEY": PROPSTACK_API_KEY,
-          "Content-Type": "application/json"
-        }
-      }
-    );
+      body: JSON.stringify({
+        from,
+        to,
+        subject: "Neue Objektanfrage: " + objectTitle,
+        html
+      })
+    });
 
-    console.log("CONTACT CREATED:");
-    console.log(JSON.stringify(contactResponse.data, null, 2));
+    const resendText = await resendResponse.text();
 
-    const contactId = contactResponse.data.id;
+    console.log("RESEND STATUS:", resendResponse.status);
+    console.log("RESEND RESPONSE:", resendText);
 
-    console.log("=================================================");
-    console.log("LOAD DEAL STAGES");
-    console.log("=================================================");
-
-    const stagesResponse = await axios.get(
-      `${PROPSTACK_API_BASE}/deal_stages`,
-      {
-        headers: {
-          "X-API-KEY": PROPSTACK_API_KEY
-        }
-      }
-    );
-
-    const stages = stagesResponse.data || [];
-
-    console.log("ALL STAGES:");
-    console.log(JSON.stringify(stages, null, 2));
-
-    const buyerStage = stages.find(
-      (s) =>
-        s.pipeline_name &&
-        s.pipeline_name.includes("Käufer") &&
-        s.name &&
-        s.name.includes("Neuer Kaufinteressent")
-    );
-
-    console.log("BUYER STAGE:");
-    console.log(JSON.stringify(buyerStage, null, 2));
-
-    console.log("=================================================");
-    console.log("CREATE DEAL");
-    console.log("=================================================");
-
-    const dealResponse = await axios.post(
-      `${PROPSTACK_API_BASE}/deals`,
-      {
-        title: `${objectTitle || "Objekt"} - ${fullName || "Kontakt"}`,
-        contact_id: contactId,
-        deal_stage_id: buyerStage ? buyerStage.id : null,
-        note: `
-Neue Objektanfrage über die Website
-
-Objekt: ${objectTitle || "-"}
-Objekt-ID / Unit-ID: ${objectId || "-"}
-
-Name: ${fullName || "-"}
-E-Mail: ${email || "-"}
-Telefon: ${phone || "-"}
-
-Kontaktwunsch: ${contactWish || "-"}
-
-Nachricht:
-${message || "-"}
-
-Einwilligung:
-${privacyAccepted ? "Datenschutz akzeptiert" : "Keine Datenschutz-Info"}
-
-Zeitpunkt: ${new Date().toISOString()}
-        `
-      },
-      {
-        headers: {
-          "X-API-KEY": PROPSTACK_API_KEY,
-          "Content-Type": "application/json"
-        }
-      }
-    );
-
-    console.log("DEAL CREATED:");
-    console.log(JSON.stringify(dealResponse.data, null, 2));
-
-    console.log("=================================================");
-    console.log("FINAL RESULT");
-    console.log("=================================================");
-
-    console.log("RESEND WORKED:", resendWorked);
+    if (!resendResponse.ok) {
+      return {
+        statusCode: 500,
+        body: JSON.stringify({
+          success: false,
+          error: "Resend Fehler",
+          status: resendResponse.status,
+          response: resendText
+        })
+      };
+    }
 
     return {
       statusCode: 200,
       body: JSON.stringify({
         success: true,
-        resendWorked,
-        contactId,
-        dealId: dealResponse.data.id || null
+        message: "Portal-Anfrage-Mail wurde an Propstack gesendet"
       })
     };
-  } catch (error) {
-    console.log("=================================================");
-    console.log("FATAL ERROR");
-    console.log("=================================================");
 
-    if (error.response) {
-      console.log(
-        JSON.stringify(error.response.data, null, 2)
-      );
-    } else {
-      console.log(error.message);
-    }
+  } catch (error) {
+    console.log("FATAL ERROR:", error.message);
 
     return {
       statusCode: 500,
@@ -283,4 +125,12 @@ Zeitpunkt: ${new Date().toISOString()}
     };
   }
 };
-```
+
+function escapeHtml(value) {
+  return String(value || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
