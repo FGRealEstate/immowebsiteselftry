@@ -519,6 +519,28 @@ function getPublicTitle(unit, marketingType, propertyType) {
     return location ? `${base} in ${location}` : base;
 }
 
+function getStatusName(unit) {
+    return (
+        textValue(unit.status) ||
+        textValue(unit.property_status) ||
+        textValue(unit.property_status_name) ||
+        textValue(unit.status_name) ||
+        textValue(unit.marketing_status) ||
+        textValue(unit.custom_fields?.status) ||
+        null
+    );
+}
+
+function isPublicMarketingObject(unit) {
+    const statusName = getStatusName(unit);
+
+    if (!statusName) {
+        return false;
+    }
+
+    return normalizeText(statusName).includes("vermarktung");
+}
+
 module.exports = async function () {
     const apiKey = process.env.PROPSTACK_API_KEY;
 
@@ -573,7 +595,7 @@ module.exports = async function () {
                     : [];
 
         const properties = units
-            .filter((unit) => unit && unit.archived !== true)
+            .filter((unit) => unit && unit.archived !== true && isPublicMarketingObject(unit))
             .map((unit) => {
                 const marketingType = translateMarketingType(unit.marketing_type);
                 const propertyType = translateObjectType(
