@@ -297,54 +297,28 @@
         const ctx = widget.querySelector(".lead-context-fields");
         const extra = widget.querySelector(".lead-extra-fields");
 
-        const options = {
+        const optionGroups = {
             "Immobilie suchen": [
-                ["Wohnung", "fas fa-building"],
-                ["Dachgeschosswohnung", "fas fa-building"],
-                ["Loft", "fas fa-warehouse"],
-                ["Maisonette", "fas fa-layer-group"],
-                ["Penthouse", "fas fa-crown"],
-                ["Terrassenwohnung", "fas fa-umbrella-beach"],
-                ["Erdgeschosswohnung", "fas fa-door-open"],
-                ["Einfamilienhaus", "fas fa-house"],
-                ["Zweifamilienhaus", "fas fa-house-user"],
-                ["Doppelhaushälfte", "fas fa-house-chimney"],
-                ["Reihenhaus", "fas fa-house-chimney-window"],
-                ["Reihenendhaus", "fas fa-house-circle-check"],
-                ["Mehrfamilienhaus", "fas fa-city"],
-                ["Grundstück", "fas fa-map"],
-                ["Kapitalanlage", "fas fa-chart-line"]
+                { title: "Wohnung", items: [["Eigentumswohnung", "fas fa-building"], ["Dachgeschosswohnung", "fas fa-building"], ["Etagenwohnung", "fas fa-building"], ["Erdgeschosswohnung", "fas fa-door-open"], ["Maisonette", "fas fa-layer-group"], ["Penthouse", "fas fa-crown"], ["Loft", "fas fa-warehouse"], ["Terrassenwohnung", "fas fa-umbrella-beach"]] },
+                { title: "Haus", items: [["Einfamilienhaus", "fas fa-house"], ["Zweifamilienhaus", "fas fa-house-user"], ["Doppelhaushälfte", "fas fa-house-chimney"], ["Reihenhaus", "fas fa-house-chimney-window"], ["Reihenmittelhaus", "fas fa-house-chimney-window"], ["Reihenendhaus", "fas fa-house-circle-check"], ["Villa", "fas fa-landmark"], ["Bungalow", "fas fa-home"]] },
+                { title: "Investment & Grundstück", items: [["Mehrfamilienhaus", "fas fa-city"], ["Kapitalanlage", "fas fa-chart-line"], ["Grundstück", "fas fa-map"], ["Gewerbeimmobilie", "fas fa-briefcase"]] }
             ],
             "Immobilie verkaufen": [
-                ["Eigentumswohnung", "fas fa-building"],
-                ["Dachgeschosswohnung", "fas fa-building"],
-                ["Penthouse", "fas fa-crown"],
-                ["Einfamilienhaus", "fas fa-house"],
-                ["Zweifamilienhaus", "fas fa-house-user"],
-                ["Doppelhaushälfte", "fas fa-house-chimney"],
-                ["Reihenhaus", "fas fa-house-chimney-window"],
-                ["Reihenmittelhaus", "fas fa-house-chimney-window"],
-                ["Reihenendhaus", "fas fa-house-circle-check"],
-                ["Villa", "fas fa-landmark"],
-                ["Bungalow", "fas fa-home"],
-                ["Mehrfamilienhaus", "fas fa-city"],
-                ["Grundstück", "fas fa-map"],
-                ["Gewerbeimmobilie", "fas fa-briefcase"],
-                ["Diskrete Off-Market-Vermarktung", "fas fa-user-secret"]
+                { title: "Wohnung", items: [["Eigentumswohnung", "fas fa-building"], ["Dachgeschosswohnung", "fas fa-building"], ["Etagenwohnung", "fas fa-building"], ["Erdgeschosswohnung", "fas fa-door-open"], ["Penthouse", "fas fa-crown"], ["Maisonette", "fas fa-layer-group"], ["Loft", "fas fa-warehouse"], ["Terrassenwohnung", "fas fa-umbrella-beach"]] },
+                { title: "Haus", items: [["Einfamilienhaus", "fas fa-house"], ["Zweifamilienhaus", "fas fa-house-user"], ["Doppelhaushälfte", "fas fa-house-chimney"], ["Reihenhaus", "fas fa-house-chimney-window"], ["Reihenmittelhaus", "fas fa-house-chimney-window"], ["Reihenendhaus", "fas fa-house-circle-check"], ["Villa", "fas fa-landmark"], ["Bungalow", "fas fa-home"]] },
+                { title: "Investment / Grundstück / Gewerbe", items: [["Mehrfamilienhaus", "fas fa-city"], ["Grundstück", "fas fa-map"], ["Gewerbeimmobilie", "fas fa-briefcase"], ["Diskrete Off-Market-Vermarktung", "fas fa-user-secret"]] }
             ],
             "Immobilie vermieten": [
-                ["Wohnung", "fas fa-building"],
-                ["Haus", "fas fa-house"],
-                ["Gewerbeeinheit", "fas fa-briefcase"],
-                ["Mehrfamilienhaus / Anlageobjekt", "fas fa-city"]
+                { title: "Wohnung", items: [["Wohnung", "fas fa-building"], ["Dachgeschosswohnung", "fas fa-building"], ["Etagenwohnung", "fas fa-building"], ["Erdgeschosswohnung", "fas fa-door-open"], ["Penthouse", "fas fa-crown"], ["Maisonette", "fas fa-layer-group"], ["Loft", "fas fa-warehouse"], ["Terrassenwohnung", "fas fa-umbrella-beach"]] },
+                { title: "Haus", items: [["Einfamilienhaus", "fas fa-house"], ["Zweifamilienhaus", "fas fa-house-user"], ["Doppelhaushälfte", "fas fa-house-chimney"], ["Reihenhaus", "fas fa-house-chimney-window"], ["Reihenmittelhaus", "fas fa-house-chimney-window"], ["Reihenendhaus", "fas fa-house-circle-check"], ["Villa", "fas fa-landmark"], ["Bungalow", "fas fa-home"]] },
+                { title: "Gewerbe & Anlage", items: [["Gewerbeeinheit", "fas fa-briefcase"], ["Mehrfamilienhaus / Anlageobjekt", "fas fa-city"]] }
             ],
             "Finanzierung": [
-                ["Kauf einer Immobilie", "fas fa-home"],
-                ["Anschlussfinanzierung", "fas fa-sync"],
-                ["Kapitalanlage", "fas fa-chart-pie"],
-                ["Finanzierungsberatung allgemein", "fas fa-comments"]
+                { title: "Finanzierung", items: [["Kauf einer Immobilie", "fas fa-home"], ["Anschlussfinanzierung", "fas fa-sync"], ["Kapitalanlage", "fas fa-chart-pie"], ["Finanzierungsberatung allgemein", "fas fa-comments"]] }
             ]
         };
+
+        const options = Object.fromEntries(Object.entries(optionGroups).map(([key, groups]) => [key, groups.flatMap(group => group.items)]));
 
         const stepText = {
             default: {
@@ -403,17 +377,31 @@
         function renderOptions() {
             dyn.innerHTML = "";
 
-            (options[state.concern] || []).forEach(([label, icon]) => {
-                const b = document.createElement("button");
-                b.type = "button";
-                b.className = "lead-choice";
-                b.innerHTML = `<span><i class="${icon} text-secondary mr-3"></i>${label}</span><i class="fas fa-chevron-right"></i>`;
-                b.onclick = function () {
-                    state.object_type = label;
-                    set(".lead-object-type", label);
-                    show(3);
-                };
-                dyn.appendChild(b);
+            const groups = optionGroups[state.concern] || [{ title: "Auswahl", items: options[state.concern] || [] }];
+
+            groups.forEach(group => {
+                const wrap = document.createElement("div");
+                wrap.className = "lead-option-group mb-4";
+                wrap.innerHTML = `<div class="lead-option-group-title">${group.title}</div>`;
+
+                const grid = document.createElement("div");
+                grid.className = "grid grid-cols-1 sm:grid-cols-2 gap-3";
+
+                group.items.forEach(([label, icon]) => {
+                    const b = document.createElement("button");
+                    b.type = "button";
+                    b.className = "lead-choice lead-choice-compact";
+                    b.innerHTML = `<span><i class="${icon} text-secondary mr-3"></i>${label}</span><i class="fas fa-chevron-right"></i>`;
+                    b.onclick = function () {
+                        state.object_type = label;
+                        set(".lead-object-type", label);
+                        show(3);
+                    };
+                    grid.appendChild(b);
+                });
+
+                wrap.appendChild(grid);
+                dyn.appendChild(wrap);
             });
         }
 
@@ -671,10 +659,11 @@
         function sellerDetails() {
             const type = (state.object_type || "").toLowerCase();
             const isPlot = type.includes("grundstück") || type.includes("grundst");
-            const isMulti = type.includes("mehrfamilien");
+            const isMulti = type.includes("mehrfamilien") || type.includes("anlageobjekt");
             const isCommercial = type.includes("gewerbe");
-            const isHouse = type.includes("haus") || type.includes("villa") || type.includes("bungalow") || type.includes("doppel") || type.includes("reihen");
+            const isHouse = !isMulti && (type.includes("haus") || type.includes("villa") || type.includes("bungalow") || type.includes("doppel") || type.includes("reihen"));
             const isApartment = !isPlot && !isMulti && !isCommercial && !isHouse;
+            const isRent = state.concern === "Immobilie vermieten";
 
             let html = `<div class="lead-mini-grid">`;
 
@@ -699,21 +688,47 @@
                 ])}</div>`;
             }
 
+            if (isApartment) {
+                html += `<div>${selectSimple("Wohnungsart", "seller-apartment-subtype", [
+                    [state.object_type || "Wohnung", state.object_type || "Wohnung"],
+                    ["Eigentumswohnung", "Eigentumswohnung"],
+                    ["Etagenwohnung", "Etagenwohnung"],
+                    ["Dachgeschosswohnung", "Dachgeschosswohnung"],
+                    ["Erdgeschosswohnung", "Erdgeschosswohnung"],
+                    ["Penthouse", "Penthouse"],
+                    ["Maisonette", "Maisonette"],
+                    ["Loft", "Loft"],
+                    ["Terrassenwohnung", "Terrassenwohnung"]
+                ])}</div>`;
+                html += `<div>${selectSimple("Etage", "seller-floor", [["", "Keine Angabe"], ["Erdgeschoss", "Erdgeschoss"], ["1", "1. Etage"], ["2", "2. Etage"], ["3", "3. Etage"], ["4+", "4. Etage oder höher"], ["Dachgeschoss", "Dachgeschoss"]])}</div>`;
+            }
+
             if (isApartment || isHouse || isMulti || isCommercial) {
                 html += `<div>${numberField(isCommercial ? "Gewerbe-/Nutzfläche in m²" : "Wohn-/Nutzfläche in m²", "seller-area-value", "z. B. 82")}</div>`;
             }
 
-            if (isPlot || isHouse || isMulti) {
+            if (isPlot || isHouse || isMulti || isCommercial) {
                 html += `<div>${numberField("Grundstücksgröße in m²", "seller-plot-area", "z. B. 650")}</div>`;
             }
 
             if (isApartment || isHouse) {
                 html += `<div>${numberField("Zimmeranzahl", "seller-rooms", "z. B. 3")}</div>`;
+                html += `<div>${numberField("Schlafzimmer", "seller-bedrooms", "z. B. 2")}</div>`;
+                html += `<div>${numberField("Badezimmer", "seller-bathrooms", "z. B. 1")}</div>`;
             }
 
             if (isMulti) {
                 html += `<div>${numberField("Anzahl Wohneinheiten", "seller-units", "z. B. 6")}</div>`;
-                html += `<div>${moneyField("Mtl. Mieteinnahmen", "seller-monthly-rent", "z. B. 4.500 €")}</div>`;
+                html += `<div>${numberField("Anzahl Gewerbeeinheiten", "seller-commercial-units", "z. B. 1")}</div>`;
+                html += `<div>${moneyField("Nettokaltmiete IST p. a.", "seller-net-rent-current", "z. B. 72.000 €")}</div>`;
+                html += `<div>${moneyField("Nettokaltmiete SOLL p. a.", "seller-net-rent-target", "z. B. 84.000 €")}</div>`;
+                html += `<div>${inputField("Leerstand / Besonderheiten", "seller-vacancy-note", "z. B. 1 Einheit frei, Staffelmieten, Indexmieten")}</div>`;
+            }
+
+            if (isRent || isApartment || isHouse || isMulti) {
+                html += `<div>${moneyField(isRent ? "Nettokaltmiete / Wunschmiete" : "Nettokaltmiete IST", "seller-cold-rent", "z. B. 1.200 €")}</div>`;
+                html += `<div>${moneyField("Nettokaltmiete SOLL", "seller-cold-rent-target", "z. B. 1.350 €")}</div>`;
+                html += `<div>${moneyField("Hausgeld / Nebenkosten", "seller-service-charge", "z. B. 320 €")}</div>`;
             }
 
             if (!isPlot) {
@@ -727,6 +742,10 @@
             if (isApartment || isHouse) {
                 html += `<div>${selectSimple("Balkon/Terrasse", "seller-balcony", [["", "Keine Angabe"], ["Ja", "Ja"], ["Nein", "Nein"]])}</div>`;
                 html += `<div>${numberField("Balkon-/Terrassenfläche in m²", "seller-balcony-area", "z. B. 8")}</div>`;
+                html += `<div>${selectSimple("Garten", "seller-garden", [["", "Keine Angabe"], ["Ja", "Ja"], ["Nein", "Nein"]])}</div>`;
+                html += `<div>${selectSimple("Aufzug", "seller-elevator", [["", "Keine Angabe"], ["Ja", "Ja"], ["Nein", "Nein"]])}</div>`;
+                html += `<div>${selectSimple("Einbauküche", "seller-kitchen", [["", "Keine Angabe"], ["Ja", "Ja"], ["Nein", "Nein"]])}</div>`;
+                html += `<div>${selectSimple("Keller", "seller-basement", [["", "Keine Angabe"], ["Ja", "Ja"], ["Nein", "Nein"]])}</div>`;
             }
 
             if (!isPlot) {
@@ -750,6 +769,7 @@
                     ["Abrissgrundstück", "Abrissgrundstück"],
                     ["Gewerbegrundstück", "Gewerbegrundstück"]
                 ])}</div>`;
+                html += `<div>${selectSimple("Erschließung", "seller-development-status", [["", "Keine Angabe"], ["Erschlossen", "Erschlossen"], ["Teilerschlossen", "Teilerschlossen"], ["Unerschlossen", "Unerschlossen"]])}</div>`;
             }
 
             html += `</div>`;
@@ -866,6 +886,24 @@
                 });
             });
         }
+
+        function focusNextField(current) {
+            const fields = Array.from(widget.querySelectorAll("input:not([type='hidden']):not([disabled]), select:not([disabled]), textarea:not([disabled])"))
+                .filter(el => el.offsetParent !== null);
+            const idx = fields.indexOf(current);
+            if (idx >= 0 && fields[idx + 1]) fields[idx + 1].focus();
+        }
+
+        widget.addEventListener("keydown", function (event) {
+            if (event.key !== "Enter") return;
+            const tag = (event.target.tagName || "").toLowerCase();
+            if (tag === "textarea") return;
+            if (event.target.classList.contains("visible-budget") || event.target.classList.contains("js-money") || event.target.classList.contains("js-number")) {
+                event.preventDefault();
+                event.target.blur();
+                setTimeout(() => focusNextField(event.target), 30);
+            }
+        });
 
         next.onclick = function () {
             if (step === 1 && !state.concern) return;
@@ -1021,3 +1059,41 @@
     }
 })();
 </script>
+
+<script>
+/* Google Maps Places vorbereiten:
+   Später in Netlify/Template den Key setzen:
+   window.FG_GOOGLE_MAPS_API_KEY = "IHR_GOOGLE_MAPS_API_KEY";
+   Der Code lädt dann automatisch die Places-Bibliothek. */
+window.FG_GOOGLE_MAPS_API_KEY = window.FG_GOOGLE_MAPS_API_KEY || "";
+(function () {
+    if (!window.FG_GOOGLE_MAPS_API_KEY || window.google?.maps?.places) return;
+    window.fgInitLeadPlaces = function () {
+        document.querySelectorAll(".lead-widget").forEach(widget => {
+            widget.querySelectorAll(".google-address").forEach(input => {
+                if (input.dataset.googleReady || !(google.maps && google.maps.places)) return;
+                input.dataset.googleReady = "1";
+                const ac = new google.maps.places.Autocomplete(input, {
+                    types: ["address"],
+                    componentRestrictions: { country: "de" }
+                });
+                ac.addListener("place_changed", function () {
+                    const place = ac.getPlace();
+                    if (place && place.formatted_address) input.value = place.formatted_address;
+                });
+            });
+        });
+    };
+    const script = document.createElement("script");
+    script.src = "https://maps.googleapis.com/maps/api/js?key=" + encodeURIComponent(window.FG_GOOGLE_MAPS_API_KEY) + "&libraries=places&callback=fgInitLeadPlaces";
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+})();
+</script>
+
+
+<style>
+.lead-option-group-title{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#0b1744;margin:.3rem 0 .65rem;opacity:.75}.lead-choice-compact{min-height:54px}.pac-container{z-index:99999!important;border-radius:14px;box-shadow:0 18px 45px rgba(8,14,40,.18);border:1px solid rgba(11,23,68,.12);font-family:inherit}.pac-item{padding:10px 14px}.pac-item-query{font-weight:700;color:#0b1744}
+</style>
+
