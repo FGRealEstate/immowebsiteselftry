@@ -152,17 +152,28 @@ exports.handler = async function (event) {
 
     let dealResponse = null;
 
-    if (stage && stage.id) {
-      dealResponse = await createDeal(apiKey, {
-        contactId,
-        propertyId,
-        stageId: stage.id,
-        note,
-        concernType,
-      });
+  if (stage && stage.id) {
+  try {
+    dealResponse = await createDeal(apiKey, {
+      contactId,
+      propertyId,
+      stageId: stage.id,
+      note,
+      concernType,
+    });
 
-      console.log("DEAL CREATED:", JSON.stringify(dealResponse, null, 2));
-    }
+    console.log("DEAL CREATED:", JSON.stringify(dealResponse, null, 2));
+
+  } catch (dealError) {
+    console.warn("DEAL CREATE SKIPPED:", dealError.message);
+
+    dealResponse = {
+      ok: false,
+      skipped: true,
+      reason: dealError.message,
+    };
+  }
+}
 
     if (documents.length) {
       documentResults = await uploadDocuments(apiKey, {
