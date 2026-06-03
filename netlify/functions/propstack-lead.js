@@ -2,13 +2,7 @@ const PROPSTACK_BASE_URL = process.env.PROPSTACK_API_BASE || "https://api.propst
 
 /**
  * netlify/functions/propstack-lead.js
- *
- * Ziel:
- * - Jedes Formularfeld der Lead-Landingpage landet mindestens in Kontakt-Bemerkung + Aktivität.
- * - Alle bekannten Custom-Field-Keys werden zusätzlich gesetzt.
- * - Kaufen/Investment: Kontakt + Suchprofil + Aufgabe.
- * - Finanzierung: Kontakt + Finanzierungsfelder + Aufgabe, aber KEIN Kauf-Suchprofil.
- * - Verkaufen/Vermieten: Kontakt + optional Akquiseobjekt + Deal, wenn Objekt erfolgreich erstellt wurde.
+ * FINAL auf deine aktuellen Custom Fields angepasst.
  */
 
 exports.handler = async function (event) {
@@ -47,8 +41,8 @@ exports.handler = async function (event) {
     }
 
     const note = buildNote(lead);
-
     const contactPayload = buildContactPayload(lead, note);
+
     console.log("CONTACT PAYLOAD:", JSON.stringify(contactPayload, null, 2));
 
     const contactResponse = await propstackPost(apiKey, "/contacts", contactPayload);
@@ -64,13 +58,7 @@ exports.handler = async function (event) {
 
     console.log("CONTACT SAVED:", contactId);
 
-    /*
-      Extra Update:
-      Manche Propstack-Setups übernehmen Custom Fields beim Create/Update unterschiedlich.
-      Deshalb setzen wir nach dem Speichern nochmal gezielt description + partial_custom_fields per PUT.
-    */
     const contactUpdateResult = await safeUpdateContact(apiKey, contactId, contactPayload.client);
-
     const noteResult = await safeCreateNote(apiKey, contactId, note, `Website Lead: ${lead.fullName}`);
 
     let propertyResponse = null;
@@ -103,10 +91,6 @@ exports.handler = async function (event) {
     const stage = await findBestDealStage(apiKey, lead.concernType);
     let dealResponse = null;
 
-    /*
-      Propstack-Deals brauchen laut API client_id + property_id + deal_stage_id.
-      Ohne Objekt gibt es keinen echten Deal. Deshalb Deal nur mit propertyId.
-    */
     if (stage && stage.id && propertyId) {
       dealResponse = await safeCreateDeal(apiKey, {
         contactId,
@@ -166,7 +150,7 @@ function normalizeLeadPayload(data) {
   const phone = clean(data.phone);
   const rawConcern = clean(data.concern || data.anliegen || data.type);
   const concernType = mapConcernType(rawConcern);
-  const objectType = clean(data.object_type || data.objectType);
+  const objectType = normalizeObjectType(clean(data.object_type || data.objectType));
   const location = clean(data.location || data.address || data.ort);
   const budget = clean(data.budget);
   const budgetNumber = numberOrNull(budget);
@@ -234,7 +218,7 @@ function normalizeLeadPayload(data) {
 }
 
 function buildContactPayload(lead, note) {
-  const customFields = buildAllCustomFields(lead);
+  const customFields = buildContactCustomFields(lead);
 
   return {
     client: removeEmpty({
@@ -259,91 +243,48 @@ function buildContactPayload(lead, note) {
   };
 }
 
-function buildAllCustomFields(lead) {
+function buildContactCustomFields(lead) {
   const details = lead.propertyDetails || {};
 
   return removeEmpty({
-    /*
-      Allgemeine Lead-Felder
-    */
     website_lead: true,
     landingpage_typ: mapLandingpageType(lead.concernType),
-    anliegen: lead.rawConcern,
-    lead_typ: mapLandingpageType(lead.concernType),
-    immobilienart: lead.objectType,
-    objektart: lead.objectType,
-    suchgebiet: lead.concernType === "buy" || lead.concernType === "investment" ? lead.location : undefined,
-    objektadresse: lead.concernType === "sell" || lead.concernType === "rent" ? lead.location : undefined,
-    standort: lead.location,
-    budget: lead.budget,
-    budget_zahl: lead.budgetNumber,
-    zeitrahmen: lead.timeframe,
-    kontaktwunsch: lead.contactPreference,
-    nachricht: lead.message,
-    quelle_url: lead.sourceUrl,
-    datenschutz_zugestimmt: true,
-
-    /*
-      Newsletter / Immobilienmailing
-    */
-    newsletter_gewuenscht: lead.concernType === "buy" || lead.concernType === "investment",
-    immobilienmailing_gewuenscht: lead.concernType === "buy" || lead.concernType === "investment",
-
-    /*
-      Finanzierung
-    */
     finanzierungsberatung_gewunscht:
       lead.concernType === "finance" ? "Ja" : lead.financingInterest,
-    finanzierung_interesse:
-      lead.concernType === "finance" ? "Ja" : lead.financingInterest,
-    finanzierung_objekt_vorhanden: clean(details.financing_object_available),
-    finanzierung_eigenkapital_notiz: clean(details.financing_equity_note),
-    finanzierung_kaufpreis: lead.concernType === "finance" ? lead.budget : undefined,
-    finanzierung_kaufpreis_zahl: lead.concernType === "finance" ? lead.budgetNumber : undefined,
-
-    /*
-      Verwaltung / Vermietung
-    */
+    suchgebiet: lead.concernType === "buy" || lead.concernType === "investment" ? lead.location : undefined,
+    objektadresse: lead.concernType === "sell" || lead.concernType === "rent" ? lead.location : undefined,
+    budget: lead.budget,
+    zeitrahmen: lead.timeframe,
     verwaltung_interessant:
       lead.concernType === "management" ||
       lead.concernType === "rent" ||
       Boolean(lead.managementTakeover),
-    verwaltungsuebernahme_ab: lead.managementTakeover,
-    vermietungslead: lead.concernType === "rent",
-
-    /*
-      Objekt-Zusatzdaten Verkauf/Vermietung
-    */
-    property_details_wanted: lead.propertyDetailsWanted,
-    objektdaten_angegeben: lead.hasPropertyDetails,
-    objekt_aus_landingpage: lead.concernType === "sell" || lead.concernType === "rent",
-    akquiseobjekt: lead.concernType === "sell" || lead.concernType === "rent",
-    unterlagen_erhalten: lead.documents.length > 0,
-    flaechenart: clean(details["seller-area-type"]),
-    wohnflache: numberOrNull(details["seller-area-value"]),
-    grundstucksflache: numberOrNull(details["seller-plot-area"]),
-    zimmeranzahl: numberOrNull(details["seller-rooms"]),
-    baujahr: numberOrNull(details["seller-year"]),
-    energieklasse: clean(details["seller-energy"]),
-    balkon_oder_terrasse: clean(details["seller-balcony"]),
-    balkon_terrassenflache: numberOrNull(details["seller-balcony-area"]),
-    objektzustand: clean(details["seller-quality"]),
-    ausstattung: clean(details["seller-quality"]),
-    letzte_modernisierung: clean(details["seller-modernization"]),
-
-    /*
-      Marketing / Instagram
-    */
     offmarket_geeignet: lead.concernType === "investment" || normalize(lead.objectType).includes("offmarket"),
-    utm_source: lead.utmSource,
-    utm_medium: lead.utmMedium,
-    utm_campaign: lead.utmCampaign,
-    utm_content: lead.utmContent,
-    utm_term: lead.utmTerm,
 
-    /*
-      Safety: Rohdaten als Text, damit nichts verloren geht.
-    */
+    anliegen: lead.rawConcern,
+    lead_typ: mapLandingpageType(lead.concernType),
+    immobilienart: lead.objectType,
+    objektart: lead.objectType,
+    standort: lead.location,
+    budget_zahl: lead.budgetNumber,
+    kontaktwunsch: lead.contactPreference,
+    quelle_url: lead.sourceUrl,
+    nachricht: lead.message,
+    datenschutz_zugestimmt: true,
+
+    newsletter_gewuenscht: lead.concernType === "buy" || lead.concernType === "investment",
+    immobilienmailing_gewuenscht: lead.concernType === "buy" || lead.concernType === "investment",
+
+    finanzierung_interesse:
+      lead.concernType === "finance" ? "Ja" : lead.financingInterest,
+    finanzierung_objekt_vorhanden: boolOrText(clean(details.financing_object_available)),
+    finanzierung_eigenkapital_notiz: clean(details.financing_equity_note),
+    finanzierung_kaufpreis: lead.concernType === "finance" ? lead.budget : undefined,
+    finanzierung_kaufpreis_zahl: lead.concernType === "finance" ? lead.budgetNumber : undefined,
+
+    verwaltungsubernahme_gewuenscht_ab: lead.managementTakeover,
+    vermietungslead: lead.concernType === "rent",
+    property_details_wanted: boolOrText(lead.propertyDetailsWanted),
     website_rohdaten: compactJson({
       concern: lead.rawConcern,
       concernType: lead.concernType,
@@ -363,6 +304,37 @@ function buildAllCustomFields(lead) {
       utmContent: lead.utmContent,
       utmTerm: lead.utmTerm,
     }),
+
+    utm_source: lead.utmSource,
+    utm_medium: lead.utmMedium,
+    utm_campaign: lead.utmCampaign,
+    utm_content: lead.utmContent,
+    utm_term: lead.utmTerm,
+  });
+}
+
+function buildObjectCustomFields(lead) {
+  const details = lead.propertyDetails || {};
+
+  return removeEmpty({
+    verwaltungsubernahme_gewuenscht_ab: lead.managementTakeover,
+    objektzustand: clean(details["seller-quality"]),
+    wohnflache: numberOrNull(details["seller-area-value"]),
+    grundstucksflache: numberOrNull(details["seller-plot-area"]),
+    zimmeranzahl: numberOrNull(details["seller-rooms"]),
+    baujahr: numberOrNull(details["seller-year"]),
+    energieklasse: clean(details["seller-energy"]),
+    balkon_terrasse: boolOrText(clean(details["seller-balcony"])),
+    balkon_terrassenflache: numberOrNull(details["seller-balcony-area"]),
+    letzte_modernisierung: clean(details["seller-modernization"]),
+    objekt_aus_landing_page: true,
+    akquiseobjekt: true,
+    unterlagen_erhalten: lead.documents.length > 0,
+    pdf_unterlagen_vorhanden: lead.documents.length > 0,
+    offmarket_geeignet: lead.concernType === "investment" || normalize(lead.objectType).includes("offmarket"),
+    website_prioritat: getWebsitePriority(lead),
+    flachenart: clean(details["seller-area-type"]),
+    ausstattung: clean(details["seller-quality"]),
   });
 }
 
@@ -466,6 +438,7 @@ async function createAcquisitionProperty(apiKey, { contactId, lead, note }) {
   const statusId = await findPropertyStatusId(apiKey, "Akquise");
   const details = lead.propertyDetails || {};
   const title = buildAcquisitionTitle(lead.objectType, lead.location);
+  const objectCustomFields = buildObjectCustomFields(lead);
 
   const fullProperty = removeEmpty({
     title,
@@ -497,11 +470,7 @@ async function createAcquisitionProperty(apiKey, { contactId, lead, note }) {
         related_client_id: contactId,
       },
     ],
-    partial_custom_fields: removeEmpty({
-      ...buildAllCustomFields(lead),
-      objekt_aus_landingpage: true,
-      akquiseobjekt: true,
-    }),
+    partial_custom_fields: objectCustomFields,
   });
 
   const minimalProperty = removeEmpty({
@@ -514,16 +483,7 @@ async function createAcquisitionProperty(apiKey, { contactId, lead, note }) {
     rs_type: mapRsType(lead.objectType),
     note,
     internal_note: note,
-    partial_custom_fields: removeEmpty({
-      objekt_aus_landingpage: true,
-      akquiseobjekt: true,
-      anliegen: lead.rawConcern,
-      immobilienart: lead.objectType,
-      objektadresse: lead.location,
-      budget: lead.budget,
-      zeitrahmen: lead.timeframe,
-      ...mapObjectDetailCustomFieldsOnly(lead),
-    }),
+    partial_custom_fields: objectCustomFields,
   });
 
   const attempts = [
@@ -557,29 +517,7 @@ async function createAcquisitionProperty(apiKey, { contactId, lead, note }) {
   throw lastError;
 }
 
-function mapObjectDetailCustomFieldsOnly(lead) {
-  const details = lead.propertyDetails || {};
-
-  return removeEmpty({
-    flaechenart: clean(details["seller-area-type"]),
-    wohnflache: numberOrNull(details["seller-area-value"]),
-    grundstucksflache: numberOrNull(details["seller-plot-area"]),
-    zimmeranzahl: numberOrNull(details["seller-rooms"]),
-    baujahr: numberOrNull(details["seller-year"]),
-    energieklasse: clean(details["seller-energy"]),
-    balkon_oder_terrasse: clean(details["seller-balcony"]),
-    balkon_terrassenflache: numberOrNull(details["seller-balcony-area"]),
-    objektzustand: clean(details["seller-quality"]),
-    ausstattung: clean(details["seller-quality"]),
-    letzte_modernisierung: clean(details["seller-modernization"]),
-  });
-}
-
 async function safeCreatePropertyOwnerLink(apiKey, contactId, propertyId) {
-  /*
-    Nicht jedes Propstack-Setup akzeptiert Relationship-Endpunkte gleich.
-    Der Deal verknüpft Kontakt/Objekt ohnehin. Diese Versuche sind Zusatz.
-  */
   const payloads = [
     {
       endpoint: "/relationships",
@@ -615,11 +553,6 @@ async function safeCreatePropertyOwnerLink(apiKey, contactId, propertyId) {
 }
 
 async function maybeCreateSearchProfile(apiKey, contactId, lead, note) {
-  /*
-    Wichtig:
-    Finanzierung wird NICHT als Kauf-Suchprofil angelegt.
-    Suchprofil nur für echte Suche/Kapitalanlage.
-  */
   const shouldCreate =
     lead.concernType === "buy" ||
     lead.concernType === "investment";
@@ -642,25 +575,24 @@ async function maybeCreateSearchProfile(apiKey, contactId, lead, note) {
     rs_types: [mapRsType(lead.objectType)],
     note,
     partial_custom_fields: removeEmpty({
-      website_lead: true,
-      landingpage_typ: mapLandingpageType(lead.concernType),
       suchgebiet: lead.location,
       budget: lead.budget,
       budget_zahl: lead.budgetNumber,
       immobilienart: lead.objectType,
       zeitrahmen: lead.timeframe,
       quelle_url: lead.sourceUrl,
+      website_lead: true,
     }),
   });
 
   const attempts = [
-    { saved_query: savedQuery },
-    { search_profile: savedQuery },
+    { endpoint: "/saved_queries", payload: { saved_query: savedQuery } },
+    { endpoint: "/search_profiles", payload: { search_profile: savedQuery } },
   ];
 
-  for (const payload of attempts) {
+  for (const attempt of attempts) {
     try {
-      return await propstackPost(apiKey, payload.saved_query ? "/saved_queries" : "/search_profiles", payload);
+      return await propstackPost(apiKey, attempt.endpoint, attempt.payload);
     } catch (error) {
       console.warn("SEARCH PROFILE CREATE ATTEMPT FAILED:", error.message);
     }
@@ -968,10 +900,6 @@ async function parsePropstackResponse(response, endpoint) {
 function mapConcernType(value) {
   const text = normalize(value);
 
-  /*
-    Reihenfolge wichtig:
-    "verkaufen" enthält "kauf", deshalb Verkauf/Vermietung vor Kaufen prüfen.
-  */
   if (text.includes("verkaufen") || text.includes("verkauf")) return "sell";
   if (text.includes("vermieten") || text.includes("vermietung")) return "rent";
   if (text.includes("finanzierung") || text.includes("finanz")) return "finance";
@@ -980,6 +908,22 @@ function mapConcernType(value) {
   if (text.includes("kaufen") || text.includes("kauf")) return "buy";
 
   return "";
+}
+
+function normalizeObjectType(value) {
+  const text = clean(value);
+  const n = normalize(text);
+
+  if (!text) return "";
+  if (n.includes("eigentumswohnung") || n.includes("wohnung")) return "Wohnung";
+  if (n.includes("mehrfamilien")) return "Mehrfamilienhaus";
+  if (n.includes("einfamilien") || n.includes("haus")) return "Haus";
+  if (n.includes("grund")) return "Grundstück";
+  if (n.includes("gewerbe")) return "Gewerbe";
+  if (n.includes("kapital") || n.includes("anlage")) return "Kapitalanlage";
+  if (n.includes("offmarket")) return "Sonstiges";
+
+  return text;
 }
 
 function mapLandingpageType(type) {
@@ -1010,6 +954,13 @@ function buildAcquisitionTitle(objectType, location) {
   const place = clean(location);
 
   return place ? `Akquise: ${type} in ${place}` : `Akquise: ${type}`;
+}
+
+function getWebsitePriority(lead) {
+  if (lead.documents.length > 0) return "Hoch";
+  if (lead.hasPropertyDetails) return "Hoch";
+  if (lead.budgetNumber && lead.budgetNumber >= 500000) return "Mittel";
+  return "Mittel";
 }
 
 function getId(response, keys) {
@@ -1088,6 +1039,16 @@ function boolFromGerman(value) {
   return undefined;
 }
 
+function boolOrText(value) {
+  const text = normalize(value);
+
+  if (text === "ja" || text === "true") return true;
+  if (text === "nein" || text === "false") return false;
+  if (!text) return undefined;
+
+  return value;
+}
+
 function extractCity(value) {
   const text = clean(value);
   if (!text) return "";
@@ -1136,7 +1097,7 @@ function humanizeKey(key) {
     "seller-balcony": "Balkon/Terrasse",
     "seller-balcony-area": "Balkon-/Terrassenfläche",
     "seller-plot-area": "Grundstücksgröße",
-    "seller-quality": "Ausstattung",
+    "seller-quality": "Ausstattung / Objektzustand",
     "seller-modernization": "Letzte Modernisierung",
     financing_object_available: "Konkretes Objekt vorhanden",
     financing_equity_note: "Eigenkapital / Finanzierungsbemerkung",
@@ -1166,4 +1127,3 @@ function json(statusCode, body) {
     body: JSON.stringify(body),
   };
 }
-
