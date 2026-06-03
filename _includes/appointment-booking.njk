@@ -124,17 +124,40 @@
         </div>
 
         <div class="appointment-quiz-step hidden" data-step="2">
-          <div class="appointment-date-only">
-            <div class="appointment-calendar-card">
-              <div class="appointment-calendar-icon">
-                <i class="fas fa-calendar-alt"></i>
+          <div class="appointment-calendar-inline-card">
+            <div class="appointment-calendar-header">
+              <button type="button" class="appointment-calendar-nav appointment-prev-month" aria-label="Vorheriger Monat">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+
+              <div>
+                <p class="appointment-calendar-kicker">Wunschtag auswählen</p>
+                <h4 class="appointment-calendar-title">Juni 2026</h4>
               </div>
 
-              <div class="appointment-field">
-                <label>Wunschtag auswählen *</label>
-                <input type="date" class="appointment-date-input" required>
-                <small>Nach der Datumsauswahl wählen Sie im nächsten Schritt einen freien Termin-Slot.</small>
+              <button type="button" class="appointment-calendar-nav appointment-next-month" aria-label="Nächster Monat">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+
+            <div class="appointment-calendar-weekdays">
+              <span>Mo</span>
+              <span>Di</span>
+              <span>Mi</span>
+              <span>Do</span>
+              <span>Fr</span>
+              <span>Sa</span>
+              <span>So</span>
+            </div>
+
+            <div class="appointment-calendar-grid"></div>
+
+            <div class="appointment-calendar-footer">
+              <div>
+                <strong class="appointment-date-output">Noch kein Datum gewählt</strong>
+                <small>Nach Auswahl geht es mit freien Uhrzeiten weiter.</small>
               </div>
+              <button type="button" class="appointment-today-button">Heute</button>
             </div>
           </div>
         </div>
@@ -447,30 +470,144 @@
     font-size: 0.78rem;
   }
 
-  .appointment-date-only {
-    display: grid;
-    place-items: center;
-    min-height: 265px;
-  }
-
-  .appointment-calendar-card {
-    width: min(100%, 420px);
-    border-radius: 1.15rem;
+  .appointment-calendar-inline-card {
+    max-width: 470px;
+    margin: 0 auto;
+    border-radius: 1.2rem;
     border: 1px solid rgba(7,7,53,0.1);
     background: #fff;
-    padding: 1.35rem;
-    box-shadow: 0 16px 38px rgba(7,7,53,0.08);
+    padding: 1.2rem;
+    box-shadow: 0 16px 42px rgba(7,7,53,0.085);
   }
 
-  .appointment-calendar-icon {
-    width: 3.1rem;
-    height: 3.1rem;
+  .appointment-calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .appointment-calendar-kicker {
+    color: #87dfff;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    font-size: 0.66rem;
+    font-weight: 900;
+    margin-bottom: 0.15rem;
+    text-align: center;
+  }
+
+  .appointment-calendar-title {
+    color: #070735;
+    font-weight: 900;
+    font-size: 1.35rem;
+    text-align: center;
+  }
+
+  .appointment-calendar-nav {
     display: grid;
     place-items: center;
-    border-radius: 1rem;
-    background: rgba(184,134,11,0.14);
+    width: 2.45rem;
+    height: 2.45rem;
+    border-radius: 999px;
+    border: 1px solid rgba(7,7,53,0.12);
+    background: #fbfaf7;
     color: #070735;
-    margin-bottom: 1rem;
+    transition: 0.18s ease;
+  }
+
+  .appointment-calendar-nav:hover {
+    border-color: rgba(184,134,11,0.6);
+    background: rgba(184,134,11,0.1);
+  }
+
+  .appointment-calendar-weekdays,
+  .appointment-calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 0.42rem;
+  }
+
+  .appointment-calendar-weekdays {
+    margin-bottom: 0.45rem;
+  }
+
+  .appointment-calendar-weekdays span {
+    text-align: center;
+    color: #667085;
+    font-weight: 900;
+    font-size: 0.75rem;
+  }
+
+  .appointment-day {
+    aspect-ratio: 1 / 1;
+    border-radius: 0.78rem;
+    border: 1px solid rgba(7,7,53,0.08);
+    background: #fbfaf7;
+    color: #070735;
+    font-weight: 900;
+    font-size: 0.9rem;
+    transition: 0.16s ease;
+  }
+
+  .appointment-day:hover:not(:disabled),
+  .appointment-day.is-selected {
+    border-color: rgba(184,134,11,0.7);
+    background: linear-gradient(135deg, #f7dc7c, #b8860b);
+    box-shadow: 0 10px 20px rgba(184,134,11,0.2);
+    transform: translateY(-1px);
+  }
+
+  .appointment-day.is-today:not(.is-selected) {
+    border-color: rgba(135,223,255,0.85);
+    box-shadow: inset 0 0 0 2px rgba(135,223,255,0.28);
+  }
+
+  .appointment-day.is-other-month {
+    color: #a5adba;
+    background: #fff;
+  }
+
+  .appointment-day:disabled {
+    opacity: 0.32;
+    cursor: not-allowed;
+    background: #f2f4f7;
+  }
+
+  .appointment-calendar-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
+    border-radius: 0.95rem;
+    background: rgba(7,7,53,0.04);
+    padding: 0.9rem;
+  }
+
+  .appointment-calendar-footer strong {
+    display: block;
+    color: #070735;
+    font-weight: 900;
+  }
+
+  .appointment-calendar-footer small {
+    display: block;
+    color: #667085;
+    font-weight: 600;
+    font-size: 0.74rem;
+    margin-top: 0.1rem;
+  }
+
+  .appointment-today-button {
+    border-radius: 999px;
+    border: 1px solid rgba(184,134,11,0.5);
+    background: #fff;
+    color: #070735;
+    padding: 0.55rem 0.8rem;
+    font-weight: 900;
+    white-space: nowrap;
   }
 
   .appointment-field label {
@@ -479,14 +616,6 @@
     color: #070735;
     font-weight: 900;
     font-size: 0.86rem;
-  }
-
-  .appointment-field small {
-    display: block;
-    margin-top: 0.45rem;
-    color: #667085;
-    font-weight: 600;
-    font-size: 0.76rem;
   }
 
   .appointment-field input,
@@ -708,6 +837,25 @@
     .appointment-slot-list {
       grid-template-columns: 1fr;
     }
+
+    .appointment-calendar-weekdays,
+    .appointment-calendar-grid {
+      gap: 0.3rem;
+    }
+
+    .appointment-day {
+      border-radius: 0.62rem;
+      font-size: 0.82rem;
+    }
+
+    .appointment-calendar-footer {
+      display: block;
+    }
+
+    .appointment-today-button {
+      margin-top: 0.75rem;
+      width: 100%;
+    }
   }
 </style>
 
@@ -724,6 +872,8 @@
 
   function initAppointmentQuiz(section) {
     let step = 1;
+    let calendarDate = new Date();
+    let selectedDate = "";
 
     const form = section.querySelector(".appointment-quiz-form");
     const steps = Array.from(section.querySelectorAll(".appointment-quiz-step"));
@@ -740,9 +890,11 @@
     const topicInput = form.querySelector('input[name="topic"]');
     const dateHidden = form.querySelector('input[name="date"]');
     const timeHidden = form.querySelector('input[name="time"]');
-    const dateInput = section.querySelector(".appointment-date-input");
     const slotList = section.querySelector(".appointment-slot-list");
     const selectedDateText = section.querySelector(".appointment-selected-date-text");
+    const calendarTitle = section.querySelector(".appointment-calendar-title");
+    const calendarGrid = section.querySelector(".appointment-calendar-grid");
+    const dateOutput = section.querySelector(".appointment-date-output");
 
     const titles = {
       1: "Welche Beratung wünschen Sie?",
@@ -751,6 +903,11 @@
       4: "Wie erreichen wir Sie?",
       5: "Worum geht es konkret?"
     };
+
+    const monthNames = [
+      "Januar", "Februar", "März", "April", "Mai", "Juni",
+      "Juli", "August", "September", "Oktober", "November", "Dezember"
+    ];
 
     const fallbackSlots = [
       "09:00-10:00",
@@ -779,11 +936,75 @@
       submit.classList.toggle("hidden", step !== 5);
     }
 
+    function pad(number) {
+      return String(number).padStart(2, "0");
+    }
+
+    function toDateValue(date) {
+      return date.getFullYear() + "-" + pad(date.getMonth() + 1) + "-" + pad(date.getDate());
+    }
+
     function formatDateGerman(dateValue) {
       if (!dateValue) return "Datum ausgewählt";
       const parts = dateValue.split("-");
       if (parts.length !== 3) return dateValue;
       return parts[2] + "." + parts[1] + "." + parts[0];
+    }
+
+    function sameDay(a, b) {
+      return a.getFullYear() === b.getFullYear() &&
+        a.getMonth() === b.getMonth() &&
+        a.getDate() === b.getDate();
+    }
+
+    function renderCalendar() {
+      const year = calendarDate.getFullYear();
+      const month = calendarDate.getMonth();
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      calendarTitle.textContent = monthNames[month] + " " + year;
+      calendarGrid.innerHTML = "";
+
+      const first = new Date(year, month, 1);
+      const mondayIndex = (first.getDay() + 6) % 7;
+      const gridStart = new Date(year, month, 1 - mondayIndex);
+
+      for (let i = 0; i < 42; i++) {
+        const day = new Date(gridStart);
+        day.setDate(gridStart.getDate() + i);
+        day.setHours(0, 0, 0, 0);
+
+        const value = toDateValue(day);
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "appointment-day";
+        button.textContent = String(day.getDate());
+        button.dataset.date = value;
+
+        if (day.getMonth() !== month) button.classList.add("is-other-month");
+        if (sameDay(day, today)) button.classList.add("is-today");
+        if (selectedDate === value) button.classList.add("is-selected");
+
+        const isPast = day < today;
+        const isSunday = day.getDay() === 0;
+
+        if (isPast || isSunday) {
+          button.disabled = true;
+        }
+
+        button.addEventListener("click", function () {
+          selectedDate = value;
+          dateHidden.value = value;
+          timeHidden.value = "";
+          dateOutput.textContent = formatDateGerman(value);
+          selectedDateText.textContent = formatDateGerman(value);
+          renderCalendar();
+          loadAvailability(value);
+        });
+
+        calendarGrid.appendChild(button);
+      }
     }
 
     function renderSlots(slots) {
@@ -812,10 +1033,6 @@
     }
 
     async function loadAvailability(date) {
-      dateHidden.value = date || "";
-      timeHidden.value = "";
-      selectedDateText.textContent = formatDateGerman(date);
-
       if (!date) {
         slotList.innerHTML = '<button type="button" class="appointment-slot-placeholder" disabled>Bitte zuerst ein Datum wählen</button>';
         return;
@@ -838,6 +1055,28 @@
       }
     }
 
+    section.querySelector(".appointment-prev-month").addEventListener("click", function () {
+      calendarDate = new Date(calendarDate.getFullYear(), calendarDate.getMonth() - 1, 1);
+      renderCalendar();
+    });
+
+    section.querySelector(".appointment-next-month").addEventListener("click", function () {
+      calendarDate = new Date(calendarDate.getFullYear(), calendarDate.getMonth() + 1, 1);
+      renderCalendar();
+    });
+
+    section.querySelector(".appointment-today-button").addEventListener("click", function () {
+      const today = new Date();
+      calendarDate = new Date(today.getFullYear(), today.getMonth(), 1);
+      selectedDate = toDateValue(today);
+      dateHidden.value = selectedDate;
+      timeHidden.value = "";
+      dateOutput.textContent = formatDateGerman(selectedDate);
+      selectedDateText.textContent = formatDateGerman(selectedDate);
+      renderCalendar();
+      loadAvailability(selectedDate);
+    });
+
     section.querySelectorAll(".appointment-choice").forEach(btn => {
       btn.addEventListener("click", function () {
         section.querySelectorAll(".appointment-choice").forEach(b => b.classList.remove("is-selected"));
@@ -847,20 +1086,12 @@
       });
     });
 
-    dateInput.addEventListener("change", function () {
-      loadAvailability(dateInput.value);
-    });
-
     next.addEventListener("click", function () {
       if (step === 1 && !topicInput.value) return;
 
       if (step === 2) {
-        if (!dateInput.value) {
-          dateInput.focus();
-          return;
-        }
-
-        loadAvailability(dateInput.value);
+        if (!dateHidden.value) return;
+        loadAvailability(dateHidden.value);
       }
 
       if (step === 3) {
@@ -919,10 +1150,13 @@
         topicInput.value = "";
         dateHidden.value = "";
         timeHidden.value = "";
+        selectedDate = "";
+        dateOutput.textContent = "Noch kein Datum gewählt";
         selectedDateText.textContent = "Datum ausgewählt";
         slotList.innerHTML = '<button type="button" class="appointment-slot-placeholder" disabled>Bitte zuerst ein Datum wählen</button>';
         if (source) source.value = window.location.href;
         section.querySelectorAll(".appointment-choice,.appointment-slot").forEach(b => b.classList.remove("is-selected"));
+        renderCalendar();
         success.classList.remove("hidden");
         show(1);
         success.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -936,6 +1170,7 @@
       }
     });
 
+    renderCalendar();
     show(1);
   }
 })();
