@@ -1,0 +1,138 @@
+<section id="terminbuchung" class="container mx-auto px-4 py-16">
+  <div class="appointment-shell">
+    <div class="appointment-card grid grid-cols-1 lg:grid-cols-2">
+      <div class="bg-primary text-white p-8 md:p-12 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+          <img src="/images/berlinskypng.png" alt="Ankaufsberatung Termin" class="w-full h-full object-cover">
+        </div>
+        <div class="relative z-10">
+          <p class="text-secondary uppercase tracking-wide font-semibold text-sm mb-3">Ankaufsberatung</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-5">Terminwunsch direkt übermitteln.</h2>
+          <p class="text-page-bg leading-relaxed mb-6">
+            Teilen Sie uns Ihren bevorzugten Termin mit. Wir legen den Terminwunsch im CRM an und melden uns mit der Bestätigung.
+          </p>
+          <div class="space-y-3 text-page-bg">
+            <p><i class="fas fa-check text-secondary mr-2"></i>Persönliche Einschätzung</p>
+            <p><i class="fas fa-check text-secondary mr-2"></i>Objekt- und Finanzierungsfokus</p>
+            <p><i class="fas fa-check text-secondary mr-2"></i>CRM-gestützte Nachverfolgung</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="appointment-form p-8 md:p-12 bg-white space-y-4">
+        <div class="appointment-success hidden rounded-lg border border-green-300 bg-green-50 p-4 text-green-800">
+          Vielen Dank. Ihr Terminwunsch wurde übermittelt.
+        </div>
+        <div class="appointment-error hidden rounded-lg border border-red-300 bg-red-50 p-4 text-red-800">
+          Der Terminwunsch konnte nicht übermittelt werden.
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input name="first_name" class="appointment-input" required placeholder="Vorname *">
+          <input name="last_name" class="appointment-input" required placeholder="Nachname *">
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="email" name="email" class="appointment-input" required placeholder="E-Mail-Adresse *">
+          <input type="tel" name="phone" class="appointment-input" placeholder="Telefonnummer">
+        </div>
+
+        <input type="text" name="address" class="appointment-input google-address" placeholder="Objektadresse / Suchgebiet">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="date" name="preferred_date" class="appointment-input" required>
+          <select name="preferred_time" class="appointment-select" required>
+            <option value="">Uhrzeit wählen *</option>
+            <option value="09:00">09:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="12:00">12:00</option>
+            <option value="14:00">14:00</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+            <option value="17:00">17:00</option>
+          </select>
+        </div>
+
+        <textarea name="message" rows="4" class="appointment-textarea" placeholder="Kurzinfo zu Ihrem Anliegen"></textarea>
+
+        <label class="flex items-start gap-3 text-sm text-gray-700 bg-gray-50 border border-gray-200 rounded-lg p-4">
+          <input type="checkbox" name="privacy_consent" value="true" required class="mt-1">
+          <span>Ich habe die <a href="/datenschutz.html" target="_blank" class="font-bold text-primary hover:underline">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Terminbearbeitung zu. *</span>
+        </label>
+
+        <button type="submit" class="btn-85 w-full py-3 rounded-lg text-primary font-bold">Terminwunsch senden</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  function ready(fn){ if(document.readyState !== "loading") fn(); else document.addEventListener("DOMContentLoaded", fn); }
+
+  ready(function(){
+    document.querySelectorAll(".appointment-form").forEach(function(form){
+      const success = form.querySelector(".appointment-success");
+      const error = form.querySelector(".appointment-error");
+
+      form.addEventListener("submit", async function(e){
+        e.preventDefault();
+        success.classList.add("hidden");
+        error.classList.add("hidden");
+
+        const button = form.querySelector('button[type="submit"]');
+        button.disabled = true;
+        button.textContent = "Wird übermittelt...";
+
+        const fd = new FormData(form);
+
+        try {
+          const payload = {
+            first_name: fd.get("first_name"),
+            last_name: fd.get("last_name"),
+            email: fd.get("email"),
+            phone: fd.get("phone"),
+            address: fd.get("address"),
+            preferred_date: fd.get("preferred_date"),
+            preferred_time: fd.get("preferred_time"),
+            message: fd.get("message"),
+            privacy_consent: fd.get("privacy_consent") === "true",
+            source_url: location.href
+          };
+
+          const res = await fetch("/.netlify/functions/propstack-appointment", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+
+          const result = await res.json();
+          if (!res.ok || !result.success) throw new Error(result.error || "Fehler");
+
+          form.reset();
+          success.classList.remove("hidden");
+        } catch(err) {
+          console.error(err);
+          error.classList.remove("hidden");
+        } finally {
+          button.disabled = false;
+          button.textContent = "Terminwunsch senden";
+        }
+      });
+    });
+
+    if(window.google && google.maps && google.maps.places) {
+      document.querySelectorAll(".appointment-form .google-address").forEach(function(input){
+        if(input.dataset.googleReady) return;
+        input.dataset.googleReady = "1";
+        const ac = new google.maps.places.Autocomplete(input, { types: ["address"], componentRestrictions: { country: "de" } });
+        ac.addListener("place_changed", function(){
+          const place = ac.getPlace();
+          if(place && place.formatted_address) input.value = place.formatted_address;
+        });
+      });
+    }
+  });
+})();
+</script>
