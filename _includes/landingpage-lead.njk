@@ -108,6 +108,7 @@
                         <input type="hidden" name="financing_interest" class="lead-financing-interest">
                         <input type="hidden" name="property_details_wanted" class="lead-property-details-wanted">
                         <input type="hidden" name="management_takeover" class="lead-management-takeover">
+                        <input type="hidden" name="newsletter_consent" class="lead-newsletter-consent" value="false">
 
                         <div class="lead-step" data-step="1">
                             <div class="grid grid-cols-1 gap-4">
@@ -186,6 +187,15 @@
                                 <label class="lead-label">Unterlagen hochladen, optional PDF</label>
                                 <input type="file" name="documents" class="lead-documents lead-input" multiple accept="application/pdf,.pdf">
                                 <p class="text-xs text-gray-500 mt-2">Optional, maximal 3 PDF-Dateien. Keine Pflicht.</p>
+                            </div>
+
+                            <div class="lead-newsletter-box mt-6 bg-primary/5 rounded-lg p-5 border border-primary/10 hidden">
+                                <label class="flex items-start text-sm text-gray-700">
+                                    <input type="checkbox" name="newsletter_consent_visible" value="true" class="lead-newsletter-visible mt-1 mr-3 h-4 w-4 text-accent border-gray-300 rounded focus:ring-accent">
+                                    <span>
+                                        Ich möchte passende Immobilienangebote, Suchprofil-Updates und Immobilienmailings per E-Mail erhalten. Ich kann diese Einwilligung jederzeit widerrufen.
+                                    </span>
+                                </label>
                             </div>
 
                             <div class="mt-6 bg-gray-50 rounded-lg p-5 border border-gray-200">
@@ -269,6 +279,7 @@
             financing_interest: "",
             property_details_wanted: "",
             management_takeover: "",
+            newsletter_consent: false,
             property_details: {}
         };
 
@@ -288,7 +299,13 @@
 
         const options = {
             "Immobilie kaufen": [
-                ["Eigentumswohnung", "fas fa-building"],
+                ["Wohnung", "fas fa-building"],
+                ["Dachgeschosswohnung", "fas fa-building"],
+                ["Loft", "fas fa-warehouse"],
+                ["Maisonette", "fas fa-layer-group"],
+                ["Penthouse", "fas fa-crown"],
+                ["Terrassenwohnung", "fas fa-umbrella-beach"],
+                ["Erdgeschosswohnung", "fas fa-door-open"],
                 ["Einfamilienhaus", "fas fa-house"],
                 ["Mehrfamilienhaus", "fas fa-city"],
                 ["Grundstück", "fas fa-map"],
@@ -432,12 +449,35 @@
 
             if (state.concern === "Immobilie kaufen") {
                 html = `
-                    ${selectSimple("Sind Sie auch an unserer Finanzierungsberatung interessiert?", "visible-financing-interest", [
-                        ["", "Bitte auswählen"],
-                        ["Ja", "Ja"],
-                        ["Nein", "Nein"],
-                        ["Noch unsicher", "Noch unsicher"]
-                    ])}
+                    <div class="lead-mini-grid">
+                        <div>${numberField("Zimmer ab", "buyer-rooms-from", "z. B. 3")}</div>
+                        <div>${numberField("Wohnfläche ab m²", "buyer-living-space-from", "z. B. 80")}</div>
+                        <div>${numberField("Grundstück ab m²", "buyer-plot-area-from", "z. B. 500")}</div>
+                        <div>${selectSimple("Balkon/Terrasse", "buyer-balcony", [
+                            ["", "Egal"],
+                            ["Ja", "Ja"],
+                            ["Nein", "Nein"]
+                        ])}</div>
+                        <div>${selectSimple("Aufzug", "buyer-elevator", [
+                            ["", "Egal"],
+                            ["Ja", "Ja"],
+                            ["Nein", "Nein"]
+                        ])}</div>
+                        <div>${selectSimple("Objektzustand", "buyer-condition", [
+                            ["", "Egal"],
+                            ["Neuwertig", "Neuwertig"],
+                            ["Gepflegt", "Gepflegt"],
+                            ["Renovierungsbedürftig", "Renovierungsbedürftig"],
+                            ["Sanierungsbedürftig", "Sanierungsbedürftig"]
+                        ])}</div>
+                    </div>
+                    <div class="mt-5">
+                        ${selectSimple("Sind Sie auch an unserer Finanzierungsberatung interessiert?", "visible-financing-interest", [
+                            ["Nein", "Nein"],
+                            ["Ja", "Ja"],
+                            ["Noch unsicher", "Noch unsicher"]
+                        ])}
+                    </div>
                 `;
             }
 
@@ -632,6 +672,11 @@
 
             state.property_details = {};
 
+            extra.querySelectorAll(".lead-mini-grid input,.lead-mini-grid select").forEach(el => {
+                const buyerKey = Array.from(el.classList).find(cls => cls.startsWith("buyer-"));
+                if (buyerKey) state.property_details[buyerKey] = el.value;
+            });
+
             extra.querySelectorAll(".seller-details-area input,.seller-details-area select,.lead-mini-grid input,.lead-mini-grid select").forEach(el => {
                 const key = Array.from(el.classList).find(cls =>
                     cls.startsWith("seller-") ||
@@ -717,6 +762,12 @@
                     uploadArea.classList.toggle("hidden", state.concern !== "Immobilie verkaufen");
                 }
 
+                const newsletterBox = widget.querySelector(".lead-newsletter-box");
+                const newsletterCheck = widget.querySelector(".lead-newsletter-visible");
+                const buyerLike = state.concern === "Immobilie kaufen";
+                if (newsletterBox) newsletterBox.classList.toggle("hidden", !buyerLike);
+                if (newsletterCheck) newsletterCheck.checked = buyerLike;
+
                 show(2);
             };
         });
@@ -767,6 +818,7 @@
                     contact_preference: widget.querySelector(".visible-contact-preference")?.value || "E-Mail",
                     message: fd.get("message"),
                     privacy_consent: fd.get("privacy_consent") === "true",
+                    newsletter_consent: widget.querySelector(".lead-newsletter-visible")?.checked === true,
                     financing_interest: state.financing_interest,
                     property_details_wanted: state.property_details_wanted,
                     management_takeover: state.management_takeover,
@@ -831,6 +883,11 @@
             set(".lead-concern", state.concern);
             const uploadArea = widget.querySelector(".lead-upload-area");
             if (uploadArea) uploadArea.classList.toggle("hidden", state.concern !== "Immobilie verkaufen");
+            const newsletterBox = widget.querySelector(".lead-newsletter-box");
+            const newsletterCheck = widget.querySelector(".lead-newsletter-visible");
+            const buyerLike = state.concern === "Immobilie kaufen";
+            if (newsletterBox) newsletterBox.classList.toggle("hidden", !buyerLike);
+            if (newsletterCheck) newsletterCheck.checked = buyerLike;
             show(2);
         } else {
             show(1);
