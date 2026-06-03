@@ -2,7 +2,17 @@ const PROPSTACK_BASE_URL = process.env.PROPSTACK_API_BASE || "https://api.propst
 
 /**
  * netlify/functions/propstack-lead.js
- * FINAL auf deine aktuellen Custom Fields angepasst.
+ * Stabiler Lead-Prozess für Landingpage:
+ *
+ * Ziel:
+ * - Kontakt zuverlässig anlegen/aktualisieren
+ * - alle Formular-/Objektdaten verlustfrei im CRM speichern
+ * - Käufer/Kapitalanlage: Suchprofil anlegen, wenn möglich
+ * - Verkäufer/Vermieter/Finanzierung: als Kontakt + Bemerkung + Aufgabe speichern
+ * - KEINE automatische Objektanlage per /units, damit Propstack keine fehlerhaften Objekte blockiert
+ *
+ * Objektanlage wird später separat richtig gebaut:
+ * Kontakt -> Property/Objekt -> Eigentümerverknüpfung -> Deal
  */
 
 exports.handler = async function (event) {
@@ -45,7 +55,7 @@ exports.handler = async function (event) {
 
     console.log("CONTACT PAYLOAD:", JSON.stringify(contactPayload, null, 2));
 
-    const contactResponse = await propstackPost(apiKey, "/contacts", contactPayload);
+    const contactResponse = await createContactWithFallback(apiKey, contactPayload, lead, note);
     const contactId = getId(contactResponse, ["client", "contact", "data"]);
 
     if (!contactId) {
@@ -59,76 +69,46 @@ exports.handler = async function (event) {
     console.log("CONTACT SAVED:", contactId);
 
     const contactUpdateResult = await safeUpdateContact(apiKey, contactId, contactPayload.client);
-    const noteResult = await safeCreateNote(apiKey, contactId, note, `Website Lead: ${lead.fullName}`);
-
-    let propertyResponse = null;
-    let propertyId = null;
-
-    const shouldCreateProperty =
-      (lead.concernType === "sell" || lead.concernType === "rent") &&
-      lead.hasAnyObjectSignal;
-
-    if (shouldCreateProperty) {
-      propertyResponse = await safeCreateAcquisitionProperty(apiKey, {
-        contactId,
-        lead,
-        note,
-      });
-
-      propertyId = getId(propertyResponse, ["property", "unit", "data"]);
-      console.log("PROPERTY RESULT:", JSON.stringify(propertyResponse, null, 2));
-      console.log("PROPERTY ID:", propertyId);
-    } else {
-      propertyResponse = {
-        ok: true,
-        skipped: true,
-        reason: "Kein Akquiseobjekt nötig oder keine Objektdaten vorhanden.",
-      };
-    }
-
     const searchProfileResult = await maybeCreateSearchProfile(apiKey, contactId, lead, note);
-
-    const stage = await findBestDealStage(apiKey, lead.concernType);
-    let dealResponse = null;
-
-    if (stage && stage.id && propertyId) {
-      dealResponse = await safeCreateDeal(apiKey, {
-        contactId,
-        propertyId,
-        stageId: stage.id,
-        note,
-        lead,
-      });
-    } else {
-      dealResponse = {
-        ok: true,
-        skipped: true,
-        reason: propertyId
-          ? "Keine passende Deal-Phase gefunden."
-          : "Kein Objekt vorhanden. Anfrage wurde als Kontakt, Bemerkung, Aktivität und ggf. Suchprofil gespeichert.",
-      };
-
-      console.log("DEAL SKIPPED:", dealResponse.reason);
-    }
-
-    const taskResult = await safeCreateFollowUpTask(apiKey, contactId, propertyId, lead, note);
+    const taskResult = await safeCreateFollowUpTask(apiKey, contactId, lead, note);
     const documentResults = lead.documents.length
-      ? await uploadDocuments(apiKey, { contactId, propertyId, documents: lead.documents })
+      ? await uploadDocuments(apiKey, { contactId, documents: lead.documents })
       : [];
+
+    /**
+     * Bewusst deaktiviert:
+     * - keine automatische /units Objektanlage
+     * - keine /client_properties Deals ohne echtes Propstack-Objekt
+     *
+     * Grund:
+     * Propstack erwartet für Objekte eine saubere Property-/Unit-Struktur.
+     * Falsche /units Requests blockieren Verkauf/Vermietung aktuell.
+     */
+    const propertyResult = {
+      ok: true,
+      skipped: true,
+      reason:
+        lead.concernType === "sell" || lead.concernType === "rent"
+          ? "Objektdaten wurden im Kontakt und in der Aufgabe gespeichert. Automatische Objektanlage ist bewusst deaktiviert, bis die Propstack-Property-Struktur final gemappt ist."
+          : "Für diesen Lead-Typ keine Objektanlage erforderlich.",
+    };
+
+    const dealResult = {
+      ok: true,
+      skipped: true,
+      reason: "Deal wird erst erstellt, wenn ein echtes Propstack-Objekt vorhanden ist. Lead ist als Kontakt + Aktivität sauber gespeichert.",
+    };
 
     return json(200, {
       success: true,
       message: "Ihre Anfrage wurde erfolgreich übermittelt.",
       contact_id: contactId,
-      property_id: propertyId,
       contact: contactResponse,
       contact_update: contactUpdateResult,
-      note: noteResult,
-      property: propertyResponse,
       search_profile: searchProfileResult,
-      deal_stage: stage,
-      deal: dealResponse,
       task: taskResult,
+      property: propertyResult,
+      deal: dealResult,
       documents: documentResults,
     });
   } catch (error) {
@@ -148,8 +128,10 @@ function normalizeLeadPayload(data) {
   const lastName = clean(data.last_name || data.lastName);
   const email = clean(data.email);
   const phone = clean(data.phone);
+
   const rawConcern = clean(data.concern || data.anliegen || data.type);
   const concernType = mapConcernType(rawConcern);
+
   const objectType = normalizeObjectType(clean(data.object_type || data.objectType));
   const location = clean(data.location || data.address || data.ort);
   const budget = clean(data.budget);
@@ -157,15 +139,18 @@ function normalizeLeadPayload(data) {
   const timeframe = clean(data.timeframe || data.zeitrahmen);
   const contactPreference = clean(data.contact_preference || data.contactPreference) || "E-Mail";
   const message = clean(data.message || data.nachricht);
+
   const financingInterest = clean(data.financing_interest);
   const propertyDetailsWanted = clean(data.property_details_wanted);
   const managementTakeover = clean(data.management_takeover);
+
   const sourceUrl = clean(data.source_url || data.sourceUrl);
   const utmSource = clean(data.utm_source);
   const utmMedium = clean(data.utm_medium);
   const utmCampaign = clean(data.utm_campaign);
   const utmContent = clean(data.utm_content);
   const utmTerm = clean(data.utm_term);
+
   const propertyDetails = isPlainObject(data.property_details) ? data.property_details : {};
   const documents = Array.isArray(data.documents) ? data.documents : [];
 
@@ -177,13 +162,8 @@ function normalizeLeadPayload(data) {
     data.consent === "true";
 
   const fullName = `${firstName} ${lastName}`.trim();
-
   const hasPropertyDetails = Object.values(propertyDetails).some((value) => clean(value));
-  const hasAnyObjectSignal =
-    hasPropertyDetails ||
-    Boolean(location) ||
-    Boolean(objectType) ||
-    Boolean(budget);
+  const hasAnyObjectSignal = hasPropertyDetails || Boolean(location) || Boolean(objectType) || Boolean(budget);
 
   return {
     firstName,
@@ -218,7 +198,8 @@ function normalizeLeadPayload(data) {
 }
 
 function buildContactPayload(lead, note) {
-  const customFields = buildContactCustomFields(lead);
+  const isBuyerLike = lead.concernType === "buy" || lead.concernType === "investment";
+  const isOwnerLike = lead.concernType === "sell" || lead.concernType === "rent";
 
   return {
     client: removeEmpty({
@@ -232,13 +213,42 @@ function buildContactPayload(lead, note) {
       description: note,
       note,
       warning_notice: "Website Lead prüfen",
-      buyer: lead.concernType === "buy" || lead.concernType === "investment",
-      owner: lead.concernType === "sell" || lead.concernType === "rent",
-      newsletter: lead.concernType === "buy" || lead.concernType === "investment",
-      property_mailing_wanted: lead.concernType === "buy" || lead.concernType === "investment",
+
+      buyer: isBuyerLike,
+      owner: isOwnerLike,
+
+      newsletter: isBuyerLike,
+      property_mailing_wanted: isBuyerLike,
       accept_contact: true,
       gdpr_status: 2,
-      partial_custom_fields: customFields,
+
+      partial_custom_fields: buildContactCustomFields(lead),
+    }),
+  };
+}
+
+function buildContactPayloadWithoutCustomFields(lead, note) {
+  const isBuyerLike = lead.concernType === "buy" || lead.concernType === "investment";
+  const isOwnerLike = lead.concernType === "sell" || lead.concernType === "rent";
+
+  return {
+    client: removeEmpty({
+      first_name: lead.firstName,
+      last_name: lead.lastName,
+      name: lead.fullName,
+      email: lead.email,
+      phone: lead.phone || "",
+      home_cell: lead.phone || undefined,
+      source: "Website Landingpage",
+      description: note,
+      note,
+      warning_notice: "Website Lead prüfen",
+      buyer: isBuyerLike,
+      owner: isOwnerLike,
+      newsletter: isBuyerLike,
+      property_mailing_wanted: isBuyerLike,
+      accept_contact: true,
+      gdpr_status: 2,
     }),
   };
 }
@@ -249,24 +259,18 @@ function buildContactCustomFields(lead) {
   return removeEmpty({
     website_lead: true,
     landingpage_typ: mapLandingpageType(lead.concernType),
-    finanzierungsberatung_gewunscht:
-      lead.concernType === "finance" ? "Ja" : lead.financingInterest,
-    suchgebiet: lead.concernType === "buy" || lead.concernType === "investment" ? lead.location : undefined,
-    objektadresse: lead.concernType === "sell" || lead.concernType === "rent" ? lead.location : undefined,
-    budget: lead.budget,
-    zeitrahmen: lead.timeframe,
-    verwaltung_interessant:
-      lead.concernType === "management" ||
-      lead.concernType === "rent" ||
-      Boolean(lead.managementTakeover),
-    offmarket_geeignet: lead.concernType === "investment" || normalize(lead.objectType).includes("offmarket"),
-
     anliegen: lead.rawConcern,
     lead_typ: mapLandingpageType(lead.concernType),
+
     immobilienart: lead.objectType,
     objektart: lead.objectType,
     standort: lead.location,
+    suchgebiet: lead.concernType === "buy" || lead.concernType === "investment" ? lead.location : undefined,
+    objektadresse: lead.concernType === "sell" || lead.concernType === "rent" ? lead.location : undefined,
+
+    budget: lead.budget,
     budget_zahl: lead.budgetNumber,
+    zeitrahmen: lead.timeframe,
     kontaktwunsch: lead.contactPreference,
     quelle_url: lead.sourceUrl,
     nachricht: lead.message,
@@ -275,16 +279,26 @@ function buildContactCustomFields(lead) {
     newsletter_gewuenscht: lead.concernType === "buy" || lead.concernType === "investment",
     immobilienmailing_gewuenscht: lead.concernType === "buy" || lead.concernType === "investment",
 
+    finanzierungsberatung_gewunscht:
+      lead.concernType === "finance" ? "Ja" : lead.financingInterest,
     finanzierung_interesse:
       lead.concernType === "finance" ? "Ja" : lead.financingInterest,
-    finanzierung_objekt_vorhanden: boolOrText(clean(details.financing_object_available)),
-    finanzierung_eigenkapital_notiz: clean(details.financing_equity_note),
+    finanzierung_objekt_vorhanden: boolOrText(clean(details.financing_object_available || details["visible-financing-object"])),
+    finanzierung_eigenkapital_notiz: clean(details.financing_equity_note || details["visible-financing-equity"]),
     finanzierung_kaufpreis: lead.concernType === "finance" ? lead.budget : undefined,
     finanzierung_kaufpreis_zahl: lead.concernType === "finance" ? lead.budgetNumber : undefined,
 
+    verwaltung_interessant:
+      lead.concernType === "management" ||
+      lead.concernType === "rent" ||
+      Boolean(lead.managementTakeover),
     verwaltungsubernahme_gewuenscht_ab: lead.managementTakeover,
     vermietungslead: lead.concernType === "rent",
     property_details_wanted: boolOrText(lead.propertyDetailsWanted),
+
+    offmarket_geeignet: lead.concernType === "investment" || normalize(lead.objectType).includes("offmarket"),
+    bonitatsgepruft: false,
+
     website_rohdaten: compactJson({
       concern: lead.rawConcern,
       concernType: lead.concernType,
@@ -310,31 +324,6 @@ function buildContactCustomFields(lead) {
     utm_campaign: lead.utmCampaign,
     utm_content: lead.utmContent,
     utm_term: lead.utmTerm,
-  });
-}
-
-function buildObjectCustomFields(lead) {
-  const details = lead.propertyDetails || {};
-
-  return removeEmpty({
-    verwaltungsubernahme_gewuenscht_ab: lead.managementTakeover,
-    objektzustand: clean(details["seller-quality"]),
-    wohnflache: numberOrNull(details["seller-area-value"]),
-    grundstucksflache: numberOrNull(details["seller-plot-area"]),
-    zimmeranzahl: numberOrNull(details["seller-rooms"]),
-    baujahr: numberOrNull(details["seller-year"]),
-    energieklasse: clean(details["seller-energy"]),
-    balkon_terrasse: boolOrText(clean(details["seller-balcony"])),
-    balkon_terrassenflache: numberOrNull(details["seller-balcony-area"]),
-    letzte_modernisierung: clean(details["seller-modernization"]),
-    objekt_aus_landing_page: true,
-    akquiseobjekt: true,
-    unterlagen_erhalten: lead.documents.length > 0,
-    pdf_unterlagen_vorhanden: lead.documents.length > 0,
-    offmarket_geeignet: lead.concernType === "investment" || normalize(lead.objectType).includes("offmarket"),
-    website_prioritat: getWebsitePriority(lead),
-    flachenart: clean(details["seller-area-type"]),
-    ausstattung: clean(details["seller-quality"]),
   });
 }
 
@@ -382,6 +371,16 @@ function buildNote(lead) {
   ].join("\n");
 }
 
+async function createContactWithFallback(apiKey, contactPayload, lead, note) {
+  try {
+    return await propstackPost(apiKey, "/contacts", contactPayload);
+  } catch (error) {
+    console.warn("CONTACT CREATE WITH CUSTOM FIELDS FAILED:", error.message);
+    console.warn("TRY CONTACT CREATE WITHOUT CUSTOM FIELDS");
+    return await propstackPost(apiKey, "/contacts", buildContactPayloadWithoutCustomFields(lead, note));
+  }
+}
+
 async function safeUpdateContact(apiKey, contactId, clientPayload) {
   const updatePayload = {
     client: removeEmpty({
@@ -392,6 +391,8 @@ async function safeUpdateContact(apiKey, contactId, clientPayload) {
       property_mailing_wanted: clientPayload.property_mailing_wanted,
       accept_contact: clientPayload.accept_contact,
       gdpr_status: clientPayload.gdpr_status,
+      buyer: clientPayload.buyer,
+      owner: clientPayload.owner,
       partial_custom_fields: clientPayload.partial_custom_fields,
     }),
   };
@@ -399,163 +400,33 @@ async function safeUpdateContact(apiKey, contactId, clientPayload) {
   try {
     return await propstackPut(apiKey, `/contacts/${contactId}`, updatePayload);
   } catch (error) {
-    console.warn("CONTACT UPDATE SKIPPED:", error.message);
-    return { ok: false, skipped: true, reason: error.message };
-  }
-}
+    console.warn("CONTACT UPDATE WITH CUSTOM FIELDS SKIPPED:", error.message);
 
-async function safeCreateNote(apiKey, contactId, body, title) {
-  const payloads = [
-    { note: { client_id: contactId, body, title, note_type: "note" } },
-    { note: { client_id: contactId, text: body, title } },
-  ];
-
-  for (const payload of payloads) {
     try {
-      return await propstackPost(apiKey, "/notes", payload);
-    } catch (error) {
-      console.warn("NOTE CREATE ATTEMPT FAILED:", error.message);
+      const fallback = {
+        client: removeEmpty({
+          description: clientPayload.description,
+          note: clientPayload.note,
+          warning_notice: clientPayload.warning_notice,
+          newsletter: clientPayload.newsletter,
+          property_mailing_wanted: clientPayload.property_mailing_wanted,
+          accept_contact: clientPayload.accept_contact,
+          gdpr_status: clientPayload.gdpr_status,
+          buyer: clientPayload.buyer,
+          owner: clientPayload.owner,
+        }),
+      };
+
+      return await propstackPut(apiKey, `/contacts/${contactId}`, fallback);
+    } catch (fallbackError) {
+      console.warn("CONTACT UPDATE FALLBACK SKIPPED:", fallbackError.message);
+      return { ok: false, skipped: true, reason: fallbackError.message };
     }
   }
-
-  return {
-    ok: false,
-    skipped: true,
-    reason: "Notiz-Endpunkt nicht akzeptiert. Bemerkung wurde aber im Kontaktfeld gespeichert.",
-  };
-}
-
-async function safeCreateAcquisitionProperty(apiKey, input) {
-  try {
-    return await createAcquisitionProperty(apiKey, input);
-  } catch (error) {
-    console.warn("PROPERTY CREATE SKIPPED:", error.message);
-    return { ok: false, skipped: true, reason: error.message };
-  }
-}
-
-async function createAcquisitionProperty(apiKey, { contactId, lead, note }) {
-  const statusId = await findPropertyStatusId(apiKey, "Akquise");
-  const details = lead.propertyDetails || {};
-  const title = buildAcquisitionTitle(lead.objectType, lead.location);
-  const objectCustomFields = buildObjectCustomFields(lead);
-
-  const fullProperty = removeEmpty({
-    title,
-    name: title,
-    address: lead.location || undefined,
-    city: extractCity(lead.location) || undefined,
-    marketing_type: lead.concernType === "rent" ? "RENT" : "BUY",
-    object_type: "LIVING",
-    rs_type: mapRsType(lead.objectType),
-    living_space: numberOrNull(details["seller-area-value"]),
-    property_space_value: numberOrNull(details["seller-area-value"]),
-    number_of_rooms: numberOrNull(details["seller-rooms"]),
-    construction_year: numberOrNull(details["seller-year"]),
-    energy_efficiency_class: clean(details["seller-energy"]),
-    balcony: boolFromGerman(details["seller-balcony"]),
-    balcony_area: numberOrNull(details["seller-balcony-area"]),
-    plot_area: numberOrNull(details["seller-plot-area"]),
-    furnishing_quality: clean(details["seller-quality"]),
-    last_modernization: clean(details["seller-modernization"]),
-    purchase_price: lead.concernType === "sell" ? lead.budgetNumber : undefined,
-    cold_rent: lead.concernType === "rent" ? lead.budgetNumber : undefined,
-    note,
-    internal_note: note,
-    property_status_id: statusId || undefined,
-    status_id: statusId || undefined,
-    relationships_attributes: [
-      {
-        internal_name: "owner",
-        related_client_id: contactId,
-      },
-    ],
-    partial_custom_fields: objectCustomFields,
-  });
-
-  const minimalProperty = removeEmpty({
-    title,
-    name: title,
-    address: lead.location || undefined,
-    city: extractCity(lead.location) || undefined,
-    marketing_type: lead.concernType === "rent" ? "RENT" : "BUY",
-    object_type: "LIVING",
-    rs_type: mapRsType(lead.objectType),
-    note,
-    internal_note: note,
-    partial_custom_fields: objectCustomFields,
-  });
-
-  const attempts = [
-    { endpoint: "/units", payload: { property: fullProperty } },
-    { endpoint: "/units", payload: { unit: fullProperty } },
-    { endpoint: "/units", payload: { property: removeKeys(fullProperty, ["relationships_attributes"]) } },
-    { endpoint: "/units", payload: { property: removeKeys(fullProperty, ["status_id", "property_status_id", "relationships_attributes"]) } },
-    { endpoint: "/units", payload: { property: minimalProperty } },
-    { endpoint: "/units", payload: { unit: minimalProperty } },
-  ];
-
-  let lastError;
-
-  for (const attempt of attempts) {
-    try {
-      const created = await propstackPost(apiKey, attempt.endpoint, attempt.payload);
-      const propertyId = getId(created, ["property", "unit", "data"]);
-
-      if (propertyId) {
-        await safeCreatePropertyOwnerLink(apiKey, contactId, propertyId);
-        return created;
-      }
-
-      return created;
-    } catch (error) {
-      lastError = error;
-      console.warn("PROPERTY CREATE ATTEMPT FAILED:", error.message);
-    }
-  }
-
-  throw lastError;
-}
-
-async function safeCreatePropertyOwnerLink(apiKey, contactId, propertyId) {
-  const payloads = [
-    {
-      endpoint: "/relationships",
-      payload: {
-        relationship: {
-          internal_name: "owner",
-          related_client_id: contactId,
-          property_id: propertyId,
-        },
-      },
-    },
-    {
-      endpoint: "/relationships",
-      payload: {
-        relationship: {
-          client_id: contactId,
-          property_id: propertyId,
-          internal_name: "owner",
-        },
-      },
-    },
-  ];
-
-  for (const item of payloads) {
-    try {
-      return await propstackPost(apiKey, item.endpoint, item.payload);
-    } catch (error) {
-      console.warn("OWNER LINK ATTEMPT FAILED:", error.message);
-    }
-  }
-
-  return { ok: false, skipped: true, reason: "Eigentümer-Verknüpfung separat nicht akzeptiert." };
 }
 
 async function maybeCreateSearchProfile(apiKey, contactId, lead, note) {
-  const shouldCreate =
-    lead.concernType === "buy" ||
-    lead.concernType === "investment";
+  const shouldCreate = lead.concernType === "buy" || lead.concernType === "investment";
 
   if (!shouldCreate) {
     return {
@@ -565,24 +436,18 @@ async function maybeCreateSearchProfile(apiKey, contactId, lead, note) {
     };
   }
 
+  const city = extractCity(lead.location);
+
   const savedQuery = removeEmpty({
     client_id: contactId,
     active: true,
     marketing_type: "BUY",
-    cities: lead.location ? [extractCity(lead.location)] : [],
-    regions: lead.location ? [lead.location] : [],
+    cities: city ? [city] : undefined,
+    regions: lead.location ? [lead.location] : undefined,
     price_to: lead.budgetNumber,
-    rs_types: [mapRsType(lead.objectType)],
+    rs_types: lead.objectType ? [mapRsType(lead.objectType)] : undefined,
     note,
-    partial_custom_fields: removeEmpty({
-      suchgebiet: lead.location,
-      budget: lead.budget,
-      budget_zahl: lead.budgetNumber,
-      immobilienart: lead.objectType,
-      zeitrahmen: lead.timeframe,
-      quelle_url: lead.sourceUrl,
-      website_lead: true,
-    }),
+    internal_note: note,
   });
 
   const attempts = [
@@ -601,62 +466,35 @@ async function maybeCreateSearchProfile(apiKey, contactId, lead, note) {
   return {
     ok: false,
     skipped: true,
-    reason: "Suchprofil konnte per API nicht angelegt werden. Daten stehen im Kontakt und in der Aktivität.",
+    reason: "Suchprofil konnte per API nicht angelegt werden. Daten stehen im Kontakt und in der Aufgabe.",
     payload: savedQuery,
   };
 }
 
-async function safeCreateDeal(apiKey, input) {
-  try {
-    return await createDeal(apiKey, input);
-  } catch (error) {
-    console.warn("DEAL CREATE SKIPPED:", error.message);
-    return { ok: false, skipped: true, reason: error.message };
-  }
-}
-
-async function createDeal(apiKey, input) {
-  const dealPayload = {
-    client_property: removeEmpty({
-      client_id: input.contactId,
-      property_id: input.propertyId,
-      deal_stage_id: input.stageId,
-      note: input.note,
-      source: "Website Landingpage",
-      price: input.lead?.budgetNumber || undefined,
-      date: new Date().toISOString().slice(0, 10),
-    }),
-  };
-
-  return await propstackPost(apiKey, "/client_properties", dealPayload);
-}
-
-async function safeCreateFollowUpTask(apiKey, contactId, propertyId, lead, note) {
+async function safeCreateFollowUpTask(apiKey, contactId, lead, note) {
   const title = getTaskTitle(lead);
   const dueAt = new Date(Date.now() + 15 * 60 * 1000).toISOString();
   const dueDate = dueAt.slice(0, 10);
 
-  const task = removeEmpty({
-    title,
-    body: note,
-    is_reminder: true,
-    due_date: dueAt,
-    client_ids: [contactId],
-    property_ids: propertyId ? [propertyId] : undefined,
-  });
-
-  const fallbackTask = removeEmpty({
-    title,
-    body: note,
-    is_reminder: true,
-    due_date: dueDate,
-    client_ids: [contactId],
-    property_ids: propertyId ? [propertyId] : undefined,
-  });
-
   const attempts = [
-    { task },
-    { task: fallbackTask },
+    {
+      task: removeEmpty({
+        title,
+        body: note,
+        is_reminder: true,
+        due_date: dueAt,
+        client_ids: [contactId],
+      }),
+    },
+    {
+      task: removeEmpty({
+        title,
+        body: note,
+        is_reminder: true,
+        due_date: dueDate,
+        client_ids: [contactId],
+      }),
+    },
   ];
 
   for (const payload of attempts) {
@@ -679,132 +517,6 @@ function getTaskTitle(lead) {
   return `Website Lead prüfen: ${type} – ${lead.fullName}`;
 }
 
-async function findBestDealStage(apiKey, concernType) {
-  const envKey = {
-    sell: "PROPSTACK_DEAL_STAGE_SELL",
-    rent: "PROPSTACK_DEAL_STAGE_RENT",
-    buy: "PROPSTACK_DEAL_STAGE_BUY",
-    investment: "PROPSTACK_DEAL_STAGE_BUY",
-    finance: "PROPSTACK_DEAL_STAGE_FINANCE",
-  }[concernType];
-
-  if (envKey && process.env[envKey]) {
-    return {
-      id: Number(process.env[envKey]),
-      name: `ENV ${envKey}`,
-      source: "env",
-    };
-  }
-
-  try {
-    const pipelinesResponse = await propstackGet(apiKey, "/deal_pipelines");
-    const pipelines = normalizeArray(pipelinesResponse);
-    const allStages = [];
-
-    for (const pipeline of pipelines) {
-      const pipelineName = pipeline.name || pipeline.title || pipeline.label || "";
-      const stages = pipeline.deal_stages || pipeline.stages || pipeline.client_property_stages || [];
-
-      for (const stage of stages) {
-        allStages.push({
-          id: stage.id,
-          name: stage.name || stage.title || stage.label || "",
-          pipeline_id: pipeline.id,
-          pipeline_name: pipelineName,
-          raw: stage,
-        });
-      }
-    }
-
-    console.log(
-      "FOUND DEAL STAGES:",
-      allStages.map((stage) => ({
-        id: stage.id,
-        name: stage.name,
-        pipeline: stage.pipeline_name,
-      }))
-    );
-
-    const wanted = getStageSearchTerms(concernType);
-
-    for (const term of wanted) {
-      const found = allStages.find((stage) =>
-        normalize(`${stage.pipeline_name} ${stage.name}`).includes(term)
-      );
-
-      if (found) return found;
-    }
-
-    return null;
-  } catch (error) {
-    console.warn("DEAL STAGE LOOKUP SKIPPED:", error.message);
-    return null;
-  }
-}
-
-function getStageSearchTerms(concernType) {
-  if (concernType === "sell") {
-    return [
-      "100eigentumerneuereigentumerlead",
-      "100eigentuemerneuereigentuemerlead",
-      "neuereigentumerlead",
-      "neuereigentuemerlead",
-      "akquise",
-      "eigentumer",
-      "eigentuemer",
-    ];
-  }
-
-  if (concernType === "rent") {
-    return [
-      "300mieterneuermietinteressent",
-      "neuermietinteressent",
-      "vermietung",
-      "mieter",
-    ];
-  }
-
-  if (concernType === "buy" || concernType === "investment") {
-    return [
-      "200kauferneuerkaufinteressent",
-      "200kaeuferneuerkaufinteressent",
-      "neuerkaufinteressent",
-      "kaufer",
-      "kaeufer",
-    ];
-  }
-
-  if (concernType === "finance") {
-    return [
-      "400finanzierungneuerfinanzierungslead",
-      "neuerfinanzierungslead",
-      "finanzierung",
-    ];
-  }
-
-  return ["neuerlead", "neu", "lead"];
-}
-
-async function findPropertyStatusId(apiKey, wantedName) {
-  if (process.env.PROPSTACK_PROPERTY_STATUS_AKQUISE) {
-    return Number(process.env.PROPSTACK_PROPERTY_STATUS_AKQUISE);
-  }
-
-  try {
-    const response = await propstackGet(apiKey, "/property_statuses");
-    const statuses = normalizeArray(response);
-    const wanted = normalize(wantedName);
-    const found = statuses.find((status) =>
-      normalize(status.name || status.title || status.label).includes(wanted)
-    );
-
-    return found ? found.id : null;
-  } catch (error) {
-    console.warn("Property status konnte nicht gelesen werden:", error.message);
-    return null;
-  }
-}
-
 async function uploadDocuments(apiKey, input) {
   const results = [];
   const safeDocuments = input.documents
@@ -819,8 +531,7 @@ async function uploadDocuments(apiKey, input) {
           doc: file.base64,
           is_private: true,
           tags: ["Website Anfrage"],
-          property_id: input.propertyId || undefined,
-          client_id: input.propertyId ? undefined : input.contactId,
+          client_id: input.contactId,
         }),
       });
 
@@ -861,18 +572,6 @@ async function propstackPut(apiKey, endpoint, body) {
       Accept: "application/json",
     },
     body: JSON.stringify(body),
-  });
-
-  return parsePropstackResponse(response, endpoint);
-}
-
-async function propstackGet(apiKey, endpoint) {
-  const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
-    method: "GET",
-    headers: {
-      "X-API-KEY": apiKey,
-      Accept: "application/json",
-    },
   });
 
   return parsePropstackResponse(response, endpoint);
@@ -949,20 +648,6 @@ function mapRsType(value) {
   return "APARTMENT";
 }
 
-function buildAcquisitionTitle(objectType, location) {
-  const type = clean(objectType) || "Immobilie";
-  const place = clean(location);
-
-  return place ? `Akquise: ${type} in ${place}` : `Akquise: ${type}`;
-}
-
-function getWebsitePriority(lead) {
-  if (lead.documents.length > 0) return "Hoch";
-  if (lead.hasPropertyDetails) return "Hoch";
-  if (lead.budgetNumber && lead.budgetNumber >= 500000) return "Mittel";
-  return "Mittel";
-}
-
 function getId(response, keys) {
   if (!response) return null;
   if (response.id) return response.id;
@@ -972,28 +657,7 @@ function getId(response, keys) {
   }
 
   if (response.data && response.data.id) return response.data.id;
-  if (response.ok && response.property_id) return response.property_id;
-
   return null;
-}
-
-function normalizeArray(response) {
-  if (Array.isArray(response)) return response;
-
-  for (const key of [
-    "data",
-    "deal_pipelines",
-    "pipelines",
-    "property_statuses",
-    "statuses",
-    "events",
-    "tasks",
-    "saved_queries",
-  ]) {
-    if (Array.isArray(response?.[key])) return response[key];
-  }
-
-  return [];
 }
 
 function clean(value) {
@@ -1029,16 +693,6 @@ function numberOrNull(value) {
   return Number.isNaN(number) ? null : number;
 }
 
-function boolFromGerman(value) {
-  const text = normalize(value);
-
-  if (!text) return undefined;
-  if (text === "ja" || text === "true") return true;
-  if (text === "nein" || text === "false") return false;
-
-  return undefined;
-}
-
 function boolOrText(value) {
   const text = normalize(value);
 
@@ -1057,12 +711,6 @@ function extractCity(value) {
     .split(",")[0]
     .replace(/\d{5}/g, "")
     .trim();
-}
-
-function removeKeys(object, keys) {
-  const copy = { ...object };
-  keys.forEach((key) => delete copy[key]);
-  return copy;
 }
 
 function removeEmpty(object) {
@@ -1127,3 +775,4 @@ function json(statusCode, body) {
     body: JSON.stringify(body),
   };
 }
+
