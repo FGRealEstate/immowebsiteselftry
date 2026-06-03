@@ -150,9 +150,11 @@ exports.handler = async function (event) {
     const stage = await findBestDealStage(apiKey, concernType);
     console.log("DEAL STAGE:", stage);
 
-    let dealResponse = null;
+  let dealResponse = null;
 
-  if (stage && stage.id) {
+const canCreateDealWithProperty = Boolean(propertyId);
+
+if (stage && stage.id && canCreateDealWithProperty) {
   try {
     dealResponse = await createDeal(apiKey, {
       contactId,
@@ -163,7 +165,6 @@ exports.handler = async function (event) {
     });
 
     console.log("DEAL CREATED:", JSON.stringify(dealResponse, null, 2));
-
   } catch (dealError) {
     console.warn("DEAL CREATE SKIPPED:", dealError.message);
 
@@ -173,6 +174,14 @@ exports.handler = async function (event) {
       reason: dealError.message,
     };
   }
+} else {
+  dealResponse = {
+    ok: true,
+    skipped: true,
+    reason: "Kein Objekt vorhanden. Landingpage-Lead wurde nur als Kontakt mit Notiz gespeichert.",
+  };
+
+  console.log("DEAL SKIPPED:", dealResponse.reason);
 }
 
     if (documents.length) {
