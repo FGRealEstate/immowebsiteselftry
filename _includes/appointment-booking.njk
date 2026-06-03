@@ -1,73 +1,842 @@
-<section id="terminbuchung" class="appointment-booking-section container mx-auto px-4 py-14 md:py-20">
-  <div class="appointment-shell overflow-hidden rounded-3xl border border-accent/40 bg-white shadow-2xl">
-    <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[620px]">
-      <div class="relative lg:col-span-5 bg-primary text-white p-8 md:p-12 overflow-hidden">
-        <div class="absolute inset-0 opacity-30"><img src="/images/berlinskypng.png" alt="Berlin Immobilienberatung" class="w-full h-full object-cover"></div>
-        <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/80"></div>
-        <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-secondary/20 blur-3xl"></div>
-        <div class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-white/10 blur-3xl"></div>
+<section id="terminbuchung" class="appointment-quiz-section container mx-auto px-4 py-10 md:py-14">
+  <div class="appointment-quiz-shell">
+    <div class="appointment-quiz-left">
+      <div class="appointment-left-bg"></div>
 
-        <div class="relative z-10 h-full flex flex-col justify-between">
-          <div>
-            <p class="text-secondary uppercase tracking-[0.18em] text-xs font-bold mb-4">Direkte Terminbuchung</p>
-            <h2 class="text-3xl md:text-5xl font-extrabold leading-tight mb-6">Beratungstermin für Ihre Immobilie anfragen.</h2>
-            <p class="text-page-bg/90 text-base md:text-lg leading-relaxed mb-9">Wählen Sie Ihren Wunschtermin. Wir legen den Kontakt samt Terminwunsch im CRM an und bestätigen den Termin persönlich über info@fg-realestate.de.</p>
-            <div class="space-y-4">
-              <div class="appointment-benefit"><i class="fas fa-check text-secondary"></i><span>CRM-Kontakt mit vollständigem Terminwunsch</span></div>
-              <div class="appointment-benefit"><i class="fas fa-check text-secondary"></i><span>Aufgabe zur Terminprüfung im Propstack</span></div>
-              <div class="appointment-benefit"><i class="fas fa-check text-secondary"></i><span>E-Mail-Benachrichtigung an info@fg-realestate.de</span></div>
+      <div class="appointment-left-content">
+        <p class="appointment-kicker">Direkte Terminbuchung</p>
+        <h2>Termin für Ihre Ankaufsberatung auswählen.</h2>
+        <p>
+          Schritt für Schritt zum passenden Termin. Wir prüfen Ihren Wunsch im Propstack-Kalender
+          und bestätigen den Termin persönlich über info@fg-realestate.de.
+        </p>
+
+        <div class="appointment-steps-preview">
+          <div class="appointment-preview-item is-active" data-preview-step="1">
+            <span>1</span>
+            <div>
+              <strong>Terminart</strong>
+              <small>Kapitalanlage, Eigennutzung oder Beratung</small>
             </div>
           </div>
-          <div class="mt-10 rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur">
-            <p class="text-secondary font-bold mb-2">Hinweis</p>
-            <p class="text-sm text-page-bg/90 leading-relaxed">Der Termin ist zunächst eine Anfrage. Die finale Bestätigung erhalten Sie persönlich von unserem Team.</p>
+
+          <div class="appointment-preview-item" data-preview-step="2">
+            <span>2</span>
+            <div>
+              <strong>Wunschtermin</strong>
+              <small>Datum und verfügbare Uhrzeit auswählen</small>
+            </div>
           </div>
+
+          <div class="appointment-preview-item" data-preview-step="3">
+            <span>3</span>
+            <div>
+              <strong>Kontaktdaten</strong>
+              <small>Damit wir den Termin bestätigen können</small>
+            </div>
+          </div>
+
+          <div class="appointment-preview-item" data-preview-step="4">
+            <span>4</span>
+            <div>
+              <strong>Anliegen</strong>
+              <small>Kurze Einordnung für die Vorbereitung</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="appointment-note-card">
+          <i class="fas fa-shield-alt"></i>
+          <span>Ihre Anfrage wird im CRM gespeichert und persönlich geprüft.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="appointment-quiz-right">
+      <div class="appointment-progress-wrap">
+        <div>
+          <p class="appointment-step-label">Schritt <span class="appointment-current-step">1</span> von 4</p>
+          <h3 class="appointment-step-title">Welche Beratung wünschen Sie?</h3>
+        </div>
+        <div class="appointment-progress">
+          <span style="width:25%"></span>
         </div>
       </div>
 
-      <div class="relative lg:col-span-7 bg-[#fbfaf7] p-7 md:p-12 overflow-hidden">
-        <div class="absolute top-0 right-0 w-80 h-80 rounded-full bg-secondary/10 blur-3xl"></div>
-        <div class="absolute bottom-0 left-8 w-72 h-72 rounded-full bg-primary/5 blur-3xl"></div>
-        <div class="relative z-10 max-w-3xl mx-auto">
-          <div class="mb-8">
-            <div class="inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/10 px-4 py-2 mb-4"><span class="h-2 w-2 rounded-full bg-secondary"></span><span class="text-xs font-bold uppercase tracking-[0.16em] text-primary">Terminwunsch</span></div>
-            <h3 class="text-3xl md:text-4xl font-extrabold text-primary leading-tight">Wann passt es Ihnen am besten?</h3>
-            <p class="mt-3 text-gray-600">Füllen Sie die wichtigsten Angaben aus. Wir prüfen den Termin und melden uns persönlich zurück.</p>
+      <div class="appointment-success hidden">
+        <h4>Terminwunsch wurde übermittelt.</h4>
+        <p>Wir melden uns zeitnah persönlich mit einer Bestätigung.</p>
+      </div>
+
+      <div class="appointment-error hidden">
+        <h4>Terminwunsch konnte nicht gesendet werden.</h4>
+        <p>Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per E-Mail.</p>
+      </div>
+
+      <form class="appointment-quiz-form">
+        <input type="hidden" name="topic" value="">
+        <input type="hidden" name="date" value="">
+        <input type="hidden" name="time" value="">
+        <input type="hidden" name="source_url" value="">
+
+        <div class="appointment-quiz-step" data-step="1">
+          <div class="appointment-choice-grid">
+            <button type="button" class="appointment-choice" data-field="topic" data-value="Kapitalanlage">
+              <i class="fas fa-chart-line"></i>
+              <span>
+                <strong>Für Kapitalanleger</strong>
+                <small>Rendite, Objektprüfung und Investmentstrategie</small>
+              </span>
+            </button>
+
+            <button type="button" class="appointment-choice" data-field="topic" data-value="Eigennutzung">
+              <i class="fas fa-home"></i>
+              <span>
+                <strong>Für Eigennutzer</strong>
+                <small>Kaufberatung für die eigene Immobilie</small>
+              </span>
+            </button>
+
+            <button type="button" class="appointment-choice" data-field="topic" data-value="Finanzierung">
+              <i class="fas fa-euro-sign"></i>
+              <span>
+                <strong>Finanzierung</strong>
+                <small>Budget, Banktermin und Finanzierungsvorbereitung</small>
+              </span>
+            </button>
+
+            <button type="button" class="appointment-choice" data-field="topic" data-value="Allgemeine Ankaufsberatung">
+              <i class="fas fa-comments"></i>
+              <span>
+                <strong>Allgemeine Beratung</strong>
+                <small>Erstgespräch zur passenden Kaufstrategie</small>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <div class="appointment-quiz-step hidden" data-step="2">
+          <div class="appointment-date-layout">
+            <div class="appointment-field">
+              <label>Wunschtermin auswählen *</label>
+              <input type="date" class="appointment-date-input" required>
+              <small>Verfügbare Uhrzeiten werden danach geladen.</small>
+            </div>
+
+            <div class="appointment-slots">
+              <p class="appointment-slots-title">Freie Uhrzeiten</p>
+              <div class="appointment-slot-list">
+                <button type="button" class="appointment-slot-placeholder" disabled>Bitte zuerst ein Datum wählen</button>
+              </div>
+              <p class="appointment-slot-hint">
+                Die Live-Verfügbarkeiten werden im nächsten Schritt über Propstack angebunden.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="appointment-quiz-step hidden" data-step="3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="appointment-field">
+              <label>Vorname *</label>
+              <input type="text" name="first_name" required placeholder="Vorname">
+            </div>
+
+            <div class="appointment-field">
+              <label>Nachname *</label>
+              <input type="text" name="last_name" required placeholder="Nachname">
+            </div>
           </div>
 
-          <div class="appointment-success hidden mb-6 rounded-2xl border border-green-300 bg-green-50 p-5 text-green-800"><h4 class="font-bold text-lg mb-1">Terminwunsch wurde übermittelt.</h4><p>Wir melden uns zeitnah persönlich mit einer Bestätigung.</p></div>
-          <div class="appointment-error hidden mb-6 rounded-2xl border border-red-300 bg-red-50 p-5 text-red-800"><h4 class="font-bold text-lg mb-1">Terminwunsch konnte nicht gesendet werden.</h4><p>Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per E-Mail.</p></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            <div class="appointment-field">
+              <label>E-Mail-Adresse *</label>
+              <input type="email" name="email" required placeholder="name@email.de">
+            </div>
 
-          <form class="appointment-form space-y-5">
-            <input type="hidden" name="source_url" value="">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="appointment-field"><label>Vorname *</label><input type="text" name="first_name" required placeholder="Vorname"></div>
-              <div class="appointment-field"><label>Nachname *</label><input type="text" name="last_name" required placeholder="Nachname"></div>
+            <div class="appointment-field">
+              <label>Telefonnummer</label>
+              <input type="tel" name="phone" placeholder="Telefonnummer">
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="appointment-field"><label>E-Mail-Adresse *</label><input type="email" name="email" required placeholder="name@email.de"></div>
-              <div class="appointment-field"><label>Telefonnummer</label><input type="tel" name="phone" placeholder="Telefonnummer"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="appointment-field"><label>Wunschtermin *</label><input type="date" name="date" required></div>
-              <div class="appointment-field"><label>Uhrzeit *</label><select name="time" required><option value="">Bitte auswählen</option><option value="09:00">09:00 Uhr</option><option value="10:00">10:00 Uhr</option><option value="11:00">11:00 Uhr</option><option value="12:00">12:00 Uhr</option><option value="13:00">13:00 Uhr</option><option value="14:00">14:00 Uhr</option><option value="15:00">15:00 Uhr</option><option value="16:00">16:00 Uhr</option><option value="17:00">17:00 Uhr</option><option value="18:00">18:00 Uhr</option></select></div>
-            </div>
-            <div class="appointment-field"><label>Objektadresse oder Suchgebiet</label><input type="text" name="location" placeholder="z. B. Berlin, Potsdam oder konkrete Objektadresse"></div>
-            <div class="appointment-field"><label>Anliegen</label><select name="topic"><option value="Ankaufsberatung">Ankaufsberatung</option><option value="Kapitalanlage">Kapitalanlage</option><option value="Eigennutzung">Eigennutzung</option><option value="Finanzierung">Finanzierung</option><option value="Verkauf">Verkauf</option></select></div>
-            <div class="appointment-field"><label>Kurze Beschreibung Ihres Anliegens</label><textarea name="message" rows="5" placeholder="z. B. Ich suche eine Kapitalanlage in Berlin bis 500.000 € oder möchte eine konkrete Immobilie prüfen lassen."></textarea></div>
-            <label class="appointment-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Terminbearbeitung zu. *</span></label>
-            <button type="submit" class="appointment-submit btn-85 w-full rounded-xl px-8 py-4 font-extrabold text-primary shadow-lg">Terminwunsch senden</button>
-          </form>
+          </div>
         </div>
-      </div>
+
+        <div class="appointment-quiz-step hidden" data-step="4">
+          <div class="appointment-field">
+            <label>Objektadresse oder Suchgebiet</label>
+            <input type="text" name="location" placeholder="z. B. Berlin, Potsdam oder konkrete Objektadresse">
+          </div>
+
+          <div class="appointment-field mt-4">
+            <label>Worum geht es konkret?</label>
+            <textarea name="message" rows="5" placeholder="z. B. Ich möchte eine Eigentumswohnung als Kapitalanlage prüfen lassen oder suche eine Immobilie zur Eigennutzung."></textarea>
+          </div>
+
+          <label class="appointment-consent mt-4">
+            <input type="checkbox" name="privacy_consent" value="true" required>
+            <span>
+              Ich habe die <a href="/datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Terminbearbeitung zu. *
+            </span>
+          </label>
+        </div>
+
+        <div class="appointment-actions">
+          <button type="button" class="appointment-back hidden">Zurück</button>
+          <button type="button" class="appointment-next">Weiter</button>
+          <button type="submit" class="appointment-submit hidden">Terminwunsch senden</button>
+        </div>
+      </form>
     </div>
   </div>
 </section>
 
 <style>
-.appointment-benefit{display:flex;align-items:flex-start;gap:.85rem;color:rgba(247,247,247,.95);font-weight:700;line-height:1.45}.appointment-field label{display:block;margin-bottom:.45rem;color:#070735;font-weight:800;font-size:.86rem}.appointment-field input,.appointment-field select,.appointment-field textarea{width:100%;border:1px solid rgba(7,7,53,.16);background:#fff;border-radius:.95rem;padding:.95rem 1rem;color:#070735;font-weight:600;outline:none;box-shadow:0 8px 22px rgba(7,7,53,.04);transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}.appointment-field input:focus,.appointment-field select:focus,.appointment-field textarea:focus{border-color:rgba(184,134,11,.65);box-shadow:0 0 0 4px rgba(184,134,11,.13),0 12px 28px rgba(7,7,53,.08);transform:translateY(-1px)}.appointment-field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#070735 50%),linear-gradient(135deg,#070735 50%,transparent 50%);background-position:calc(100% - 22px) calc(50% + 1px),calc(100% - 16px) calc(50% + 1px);background-size:6px 6px,6px 6px;background-repeat:no-repeat}.appointment-consent{display:flex;align-items:flex-start;gap:.85rem;border:1px solid rgba(7,7,53,.12);background:#fff;border-radius:1rem;padding:1rem;color:#333;font-size:.9rem;line-height:1.45}.appointment-consent input{margin-top:.2rem;width:1rem;height:1rem}.appointment-consent a{color:#070735;font-weight:900;text-decoration:underline}
+  .appointment-quiz-section {
+    max-width: 1120px;
+  }
+
+  .appointment-quiz-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    overflow: hidden;
+    border-radius: 1.4rem;
+    border: 1px solid rgba(184, 134, 11, 0.35);
+    background: #fff;
+    box-shadow: 0 24px 70px rgba(7, 7, 53, 0.18);
+    min-height: 500px;
+  }
+
+  .appointment-quiz-left {
+    position: relative;
+    min-height: 500px;
+    background: #070735;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  .appointment-left-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(7, 7, 53, 0.98), rgba(7, 7, 53, 0.84)),
+      url('/images/berlinskypng.png') center/cover no-repeat;
+  }
+
+  .appointment-left-content {
+    position: relative;
+    z-index: 1;
+    padding: 2.3rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .appointment-kicker {
+    color: #87dfff;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 900;
+    font-size: 0.75rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .appointment-left-content h2 {
+    font-size: clamp(1.75rem, 3vw, 2.65rem);
+    line-height: 1.04;
+    font-weight: 900;
+    margin-bottom: 1.1rem;
+  }
+
+  .appointment-left-content > p {
+    color: rgba(247,247,247,0.9);
+    font-weight: 600;
+    line-height: 1.65;
+    margin-bottom: 1.6rem;
+  }
+
+  .appointment-steps-preview {
+    display: grid;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+  }
+
+  .appointment-preview-item {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.075);
+    opacity: 0.72;
+    transition: 0.2s ease;
+  }
+
+  .appointment-preview-item.is-active {
+    opacity: 1;
+    background: rgba(184, 134, 11, 0.22);
+    border-color: rgba(184, 134, 11, 0.55);
+  }
+
+  .appointment-preview-item span {
+    display: grid;
+    place-items: center;
+    width: 1.85rem;
+    height: 1.85rem;
+    border-radius: 999px;
+    background: #b8860b;
+    color: #070735;
+    font-weight: 900;
+    flex: 0 0 auto;
+  }
+
+  .appointment-preview-item strong {
+    display: block;
+    color: #fff;
+    font-weight: 900;
+    font-size: 0.92rem;
+  }
+
+  .appointment-preview-item small {
+    display: block;
+    color: rgba(247,247,247,0.76);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .appointment-note-card {
+    margin-top: auto;
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    border-radius: 1rem;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.08);
+    padding: 1rem;
+    color: rgba(247,247,247,0.92);
+    font-weight: 700;
+  }
+
+  .appointment-note-card i {
+    color: #87dfff;
+  }
+
+  .appointment-quiz-right {
+    position: relative;
+    background:
+      radial-gradient(circle at top right, rgba(184, 134, 11, 0.12), transparent 35%),
+      linear-gradient(180deg, #fff, #fbfaf7);
+    padding: 2.3rem;
+  }
+
+  .appointment-progress-wrap {
+    margin-bottom: 1.4rem;
+  }
+
+  .appointment-step-label {
+    color: #87dfff;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.72rem;
+    font-weight: 900;
+    margin-bottom: 0.4rem;
+  }
+
+  .appointment-step-title {
+    color: #070735;
+    font-size: clamp(1.35rem, 2.4vw, 2rem);
+    font-weight: 900;
+    line-height: 1.13;
+  }
+
+  .appointment-progress {
+    margin-top: 1rem;
+    height: 0.5rem;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(7,7,53,0.08);
+  }
+
+  .appointment-progress span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #87dfff, #b8860b);
+    transition: width 0.25s ease;
+  }
+
+  .appointment-choice-grid {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .appointment-choice {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+    border-radius: 1rem;
+    border: 1px solid rgba(7,7,53,0.12);
+    background: #fff;
+    padding: 1rem;
+    box-shadow: 0 8px 25px rgba(7,7,53,0.055);
+    transition: 0.18s ease;
+  }
+
+  .appointment-choice:hover,
+  .appointment-choice.is-selected {
+    border-color: rgba(184, 134, 11, 0.65);
+    box-shadow: 0 14px 34px rgba(7,7,53,0.11);
+    transform: translateY(-1px);
+  }
+
+  .appointment-choice i {
+    display: grid;
+    place-items: center;
+    width: 2.65rem;
+    height: 2.65rem;
+    border-radius: 0.85rem;
+    background: rgba(135, 223, 255, 0.18);
+    color: #070735;
+    flex: 0 0 auto;
+  }
+
+  .appointment-choice strong {
+    display: block;
+    color: #070735;
+    font-weight: 900;
+  }
+
+  .appointment-choice small {
+    display: block;
+    color: #667085;
+    font-weight: 600;
+    margin-top: 0.1rem;
+  }
+
+  .appointment-date-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 1rem;
+  }
+
+  .appointment-field label {
+    display: block;
+    margin-bottom: 0.45rem;
+    color: #070735;
+    font-weight: 900;
+    font-size: 0.86rem;
+  }
+
+  .appointment-field small {
+    display: block;
+    margin-top: 0.45rem;
+    color: #667085;
+    font-weight: 600;
+    font-size: 0.76rem;
+  }
+
+  .appointment-field input,
+  .appointment-field select,
+  .appointment-field textarea {
+    width: 100%;
+    border: 1px solid rgba(7, 7, 53, 0.14);
+    background: #fff;
+    border-radius: 0.85rem;
+    padding: 0.85rem 0.95rem;
+    color: #070735;
+    font-weight: 700;
+    outline: none;
+    box-shadow: 0 8px 20px rgba(7, 7, 53, 0.04);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .appointment-field input:focus,
+  .appointment-field select:focus,
+  .appointment-field textarea:focus {
+    border-color: rgba(184, 134, 11, 0.65);
+    box-shadow: 0 0 0 4px rgba(184, 134, 11, 0.12);
+  }
+
+  .appointment-field select {
+    appearance: none;
+    background-image:
+      linear-gradient(45deg, transparent 50%, #070735 50%),
+      linear-gradient(135deg, #070735 50%, transparent 50%);
+    background-position:
+      calc(100% - 22px) calc(50% + 1px),
+      calc(100% - 16px) calc(50% + 1px);
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+  }
+
+  .appointment-slots {
+    border-radius: 1rem;
+    border: 1px solid rgba(7,7,53,0.1);
+    background: #fff;
+    padding: 1rem;
+    box-shadow: 0 10px 28px rgba(7,7,53,0.055);
+  }
+
+  .appointment-slots-title {
+    color: #070735;
+    font-weight: 900;
+    margin-bottom: 0.8rem;
+  }
+
+  .appointment-slot-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
+
+  .appointment-slot,
+  .appointment-slot-placeholder {
+    border-radius: 0.8rem;
+    border: 1px solid rgba(7,7,53,0.12);
+    background: #fbfaf7;
+    color: #070735;
+    padding: 0.75rem;
+    font-weight: 900;
+    transition: 0.18s ease;
+  }
+
+  .appointment-slot:hover,
+  .appointment-slot.is-selected {
+    border-color: rgba(184,134,11,0.65);
+    background: linear-gradient(135deg, #f7dc7c, #b8860b);
+  }
+
+  .appointment-slot[disabled],
+  .appointment-slot-placeholder[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .appointment-slot-hint {
+    margin-top: 0.75rem;
+    color: #667085;
+    font-size: 0.74rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .appointment-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    border: 1px solid rgba(7, 7, 53, 0.12);
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1rem;
+    color: #333;
+    font-size: 0.86rem;
+    line-height: 1.45;
+  }
+
+  .appointment-consent input {
+    margin-top: 0.2rem;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .appointment-consent a {
+    color: #070735;
+    font-weight: 900;
+    text-decoration: underline;
+  }
+
+  .appointment-actions {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: space-between;
+    margin-top: 1.6rem;
+  }
+
+  .appointment-back,
+  .appointment-next,
+  .appointment-submit {
+    border-radius: 0.95rem;
+    padding: 0.95rem 1.4rem;
+    font-weight: 900;
+  }
+
+  .appointment-back {
+    border: 1px solid rgba(7,7,53,0.14);
+    color: #070735;
+    background: #fff;
+  }
+
+  .appointment-next,
+  .appointment-submit {
+    margin-left: auto;
+    color: #070735;
+    background: linear-gradient(135deg, #f7dc7c, #b8860b);
+    box-shadow: 0 12px 28px rgba(184,134,11,0.24);
+  }
+
+  .appointment-success,
+  .appointment-error {
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-weight: 700;
+  }
+
+  .appointment-success {
+    border: 1px solid #86efac;
+    background: #f0fdf4;
+    color: #166534;
+  }
+
+  .appointment-error {
+    border: 1px solid #fecaca;
+    background: #fef2f2;
+    color: #991b1b;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  @media (max-width: 1024px) {
+    .appointment-quiz-shell {
+      grid-template-columns: 1fr;
+    }
+
+    .appointment-quiz-left {
+      min-height: auto;
+    }
+
+    .appointment-note-card {
+      margin-top: 1.5rem;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .appointment-quiz-section {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .appointment-left-content,
+    .appointment-quiz-right {
+      padding: 1.4rem;
+    }
+
+    .appointment-date-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .appointment-slot-list {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
 
 <script>
-(function(){function ready(fn){if(document.readyState!=="loading")fn();else document.addEventListener("DOMContentLoaded",fn)}ready(function(){document.querySelectorAll(".appointment-form").forEach(function(form){const section=form.closest(".appointment-booking-section");const success=section.querySelector(".appointment-success");const error=section.querySelector(".appointment-error");const submit=form.querySelector(".appointment-submit");const source=form.querySelector('input[name="source_url"]');if(source)source.value=window.location.href;form.addEventListener("submit",async function(event){event.preventDefault();success.classList.add("hidden");error.classList.add("hidden");submit.disabled=true;submit.textContent="Wird übermittelt...";const fd=new FormData(form);const payload={first_name:fd.get("first_name"),last_name:fd.get("last_name"),email:fd.get("email"),phone:fd.get("phone"),date:fd.get("date"),time:fd.get("time"),location:fd.get("location"),topic:fd.get("topic"),message:fd.get("message"),source_url:window.location.href,privacy_consent:fd.get("privacy_consent")==="true"};try{const res=await fetch("/.netlify/functions/propstack-appointment",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});const result=await res.json();if(!res.ok||!result.success)throw new Error(result.error||"Termin konnte nicht gespeichert werden.");form.reset();if(source)source.value=window.location.href;success.classList.remove("hidden");success.scrollIntoView({behavior:"smooth",block:"center"})}catch(err){console.error(err);error.classList.remove("hidden");error.scrollIntoView({behavior:"smooth",block:"center"})}finally{submit.disabled=false;submit.textContent="Terminwunsch senden"}})})})})();
+(function () {
+  function ready(fn) {
+    if (document.readyState !== "loading") fn();
+    else document.addEventListener("DOMContentLoaded", fn);
+  }
+
+  ready(function () {
+    document.querySelectorAll(".appointment-quiz-section").forEach(initAppointmentQuiz);
+  });
+
+  function initAppointmentQuiz(section) {
+    let step = 1;
+
+    const form = section.querySelector(".appointment-quiz-form");
+    const steps = Array.from(section.querySelectorAll(".appointment-quiz-step"));
+    const preview = Array.from(section.querySelectorAll(".appointment-preview-item"));
+    const current = section.querySelector(".appointment-current-step");
+    const title = section.querySelector(".appointment-step-title");
+    const progress = section.querySelector(".appointment-progress span");
+    const back = section.querySelector(".appointment-back");
+    const next = section.querySelector(".appointment-next");
+    const submit = section.querySelector(".appointment-submit");
+    const success = section.querySelector(".appointment-success");
+    const error = section.querySelector(".appointment-error");
+    const source = form.querySelector('input[name="source_url"]');
+    const topicInput = form.querySelector('input[name="topic"]');
+    const dateHidden = form.querySelector('input[name="date"]');
+    const timeHidden = form.querySelector('input[name="time"]');
+    const dateInput = section.querySelector(".appointment-date-input");
+    const slotList = section.querySelector(".appointment-slot-list");
+
+    const titles = {
+      1: "Welche Beratung wünschen Sie?",
+      2: "Wann passt es Ihnen am besten?",
+      3: "Wie erreichen wir Sie?",
+      4: "Worum geht es konkret?"
+    };
+
+    const fallbackSlots = ["09:00", "10:00", "11:00", "14:00", "15:00", "16:00", "17:00"];
+
+    if (source) source.value = window.location.href;
+
+    function show(nextStep) {
+      step = nextStep;
+
+      steps.forEach(el => el.classList.toggle("hidden", Number(el.dataset.step) !== step));
+      preview.forEach(el => el.classList.toggle("is-active", Number(el.dataset.previewStep) === step));
+
+      current.textContent = String(step);
+      title.textContent = titles[step] || titles[1];
+      progress.style.width = (step / 4 * 100) + "%";
+
+      back.classList.toggle("hidden", step === 1);
+      next.classList.toggle("hidden", step === 4);
+      submit.classList.toggle("hidden", step !== 4);
+    }
+
+    function renderSlots(slots) {
+      slotList.innerHTML = "";
+
+      if (!slots || !slots.length) {
+        slotList.innerHTML = '<button type="button" class="appointment-slot-placeholder" disabled>Keine freien Zeiten gefunden</button>';
+        return;
+      }
+
+      slots.forEach(time => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "appointment-slot";
+        btn.textContent = time + " Uhr";
+        btn.dataset.time = time;
+
+        btn.addEventListener("click", function () {
+          section.querySelectorAll(".appointment-slot").forEach(b => b.classList.remove("is-selected"));
+          btn.classList.add("is-selected");
+          timeHidden.value = time;
+        });
+
+        slotList.appendChild(btn);
+      });
+    }
+
+    async function loadAvailability(date) {
+      dateHidden.value = date || "";
+      timeHidden.value = "";
+
+      if (!date) {
+        slotList.innerHTML = '<button type="button" class="appointment-slot-placeholder" disabled>Bitte zuerst ein Datum wählen</button>';
+        return;
+      }
+
+      slotList.innerHTML = '<button type="button" class="appointment-slot-placeholder" disabled>Freie Zeiten werden geladen...</button>';
+
+      try {
+        /*
+          Dieser Endpoint wird später mit Propstack-Verfügbarkeiten verbunden.
+          Bis dahin fällt das Formular auf feste Slots zurück.
+        */
+        const res = await fetch("/.netlify/functions/propstack-appointment-availability?date=" + encodeURIComponent(date));
+        if (!res.ok) throw new Error("Availability endpoint not ready");
+        const data = await res.json();
+
+        renderSlots(data.slots && data.slots.length ? data.slots : fallbackSlots);
+      } catch (err) {
+        renderSlots(fallbackSlots);
+      }
+    }
+
+    section.querySelectorAll(".appointment-choice").forEach(btn => {
+      btn.addEventListener("click", function () {
+        section.querySelectorAll(".appointment-choice").forEach(b => b.classList.remove("is-selected"));
+        btn.classList.add("is-selected");
+        topicInput.value = btn.dataset.value || "";
+        show(2);
+      });
+    });
+
+    dateInput.addEventListener("change", function () {
+      loadAvailability(dateInput.value);
+    });
+
+    next.addEventListener("click", function () {
+      if (step === 1 && !topicInput.value) return;
+
+      if (step === 2) {
+        if (!dateHidden.value) {
+          dateInput.focus();
+          return;
+        }
+
+        if (!timeHidden.value) {
+          const first = section.querySelector(".appointment-slot:not([disabled])");
+          if (first) first.focus();
+          return;
+        }
+      }
+
+      if (step < 4) show(step + 1);
+    });
+
+    back.addEventListener("click", function () {
+      if (step > 1) show(step - 1);
+    });
+
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      success.classList.add("hidden");
+      error.classList.add("hidden");
+      submit.disabled = true;
+      submit.textContent = "Wird übermittelt...";
+
+      const fd = new FormData(form);
+
+      const payload = {
+        first_name: fd.get("first_name"),
+        last_name: fd.get("last_name"),
+        email: fd.get("email"),
+        phone: fd.get("phone"),
+        date: fd.get("date"),
+        time: fd.get("time"),
+        location: fd.get("location"),
+        topic: fd.get("topic"),
+        message: fd.get("message"),
+        source_url: window.location.href,
+        privacy_consent: fd.get("privacy_consent") === "true"
+      };
+
+      try {
+        const res = await fetch("/.netlify/functions/propstack-appointment", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await res.json();
+
+        if (!res.ok || !result.success) {
+          throw new Error(result.error || "Termin konnte nicht gespeichert werden.");
+        }
+
+        form.reset();
+        topicInput.value = "";
+        dateHidden.value = "";
+        timeHidden.value = "";
+        if (source) source.value = window.location.href;
+        section.querySelectorAll(".appointment-choice,.appointment-slot").forEach(b => b.classList.remove("is-selected"));
+        success.classList.remove("hidden");
+        show(1);
+        success.scrollIntoView({ behavior: "smooth", block: "center" });
+      } catch (err) {
+        console.error(err);
+        error.classList.remove("hidden");
+        error.scrollIntoView({ behavior: "smooth", block: "center" });
+      } finally {
+        submit.disabled = false;
+        submit.textContent = "Terminwunsch senden";
+      }
+    });
+
+    show(1);
+  }
+})();
 </script>
