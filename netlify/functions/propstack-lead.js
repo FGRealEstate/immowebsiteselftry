@@ -7,7 +7,7 @@ const PROPSTACK_BASE_URL = process.env.PROPSTACK_API_BASE || "https://api.propst
  * Ziel:
  * - Kontakt zuverlässig anlegen/aktualisieren
  * - alle Formular-/Objektdaten verlustfrei im CRM speichern
- * - Käufer/Kapitalanlage: Suchprofil anlegen, wenn möglich
+ * - Käufer/Kapitalanlage: Suchprofil mit mehr Suchkriterien anlegen, wenn möglich
  * - Verkäufer/Vermieter/Finanzierung: als Kontakt + Bemerkung + Aufgabe speichern
  * - KEINE automatische Objektanlage per /units, damit Propstack keine fehlerhaften Objekte blockiert
  *
@@ -161,6 +161,12 @@ function normalizeLeadPayload(data) {
     data.consent === true ||
     data.consent === "true";
 
+  const newsletterConsent =
+    data.newsletter_consent === true ||
+    data.newsletter_consent === "true" ||
+    data.newsletter === true ||
+    data.newsletter === "true";
+
   const fullName = `${firstName} ${lastName}`.trim();
   const hasPropertyDetails = Object.values(propertyDetails).some((value) => clean(value));
   const hasAnyObjectSignal = hasPropertyDetails || Boolean(location) || Boolean(objectType) || Boolean(budget);
@@ -192,6 +198,7 @@ function normalizeLeadPayload(data) {
     propertyDetails,
     documents,
     consent,
+    newsletterConsent,
     hasPropertyDetails,
     hasAnyObjectSignal,
   };
@@ -217,8 +224,8 @@ function buildContactPayload(lead, note) {
       buyer: isBuyerLike,
       owner: isOwnerLike,
 
-      newsletter: isBuyerLike,
-      property_mailing_wanted: isBuyerLike,
+      newsletter: lead.newsletterConsent,
+      property_mailing_wanted: lead.newsletterConsent,
       accept_contact: true,
       gdpr_status: 2,
 
@@ -245,8 +252,8 @@ function buildContactPayloadWithoutCustomFields(lead, note) {
       warning_notice: "Website Lead prüfen",
       buyer: isBuyerLike,
       owner: isOwnerLike,
-      newsletter: isBuyerLike,
-      property_mailing_wanted: isBuyerLike,
+      newsletter: lead.newsletterConsent,
+      property_mailing_wanted: lead.newsletterConsent,
       accept_contact: true,
       gdpr_status: 2,
     }),
@@ -272,12 +279,20 @@ function buildContactCustomFields(lead) {
     budget_zahl: lead.budgetNumber,
     zeitrahmen: lead.timeframe,
     kontaktwunsch: lead.contactPreference,
+
+    zimmeranzahl: numberOrNull(details["buyer-rooms-from"]),
+    wohnflache: numberOrNull(details["buyer-living-space-from"]),
+    grundstucksflache: numberOrNull(details["buyer-plot-area-from"]),
+    balkon_terrasse: boolOrText(details["buyer-balcony"]),
+    objektzustand: clean(details["buyer-condition"]),
+    ausstattung: clean(details["buyer-condition"]),
+
     quelle_url: lead.sourceUrl,
     nachricht: lead.message,
     datenschutz_zugestimmt: true,
 
-    newsletter_gewuenscht: lead.concernType === "buy" || lead.concernType === "investment",
-    immobilienmailing_gewuenscht: lead.concernType === "buy" || lead.concernType === "investment",
+    newsletter_gewuenscht: lead.newsletterConsent,
+    immobilienmailing_gewuenscht: lead.newsletterConsent,
 
     finanzierungsberatung_gewunscht:
       lead.concernType === "finance" ? "Ja" : lead.financingInterest,
@@ -307,6 +322,7 @@ function buildContactCustomFields(lead) {
       budget: lead.budget,
       timeframe: lead.timeframe,
       contactPreference: lead.contactPreference,
+      newsletterConsent: lead.newsletterConsent,
       financingInterest: lead.financingInterest,
       propertyDetailsWanted: lead.propertyDetailsWanted,
       managementTakeover: lead.managementTakeover,
@@ -345,6 +361,7 @@ function buildNote(lead) {
     `Budget / Preisrahmen / Preisvorstellung: ${lead.budget || "-"}`,
     `Zeitrahmen: ${lead.timeframe || "-"}`,
     `Kontaktwunsch: ${lead.contactPreference || "-"}`,
+    `Newsletter / Immobilienmailing: ${lead.newsletterConsent ? "Ja" : "Nein"}`,
     `Interesse an Finanzierungsberatung: ${
       lead.concernType === "finance" ? "Ja" : lead.financingInterest || "-"
     }`,
@@ -437,29 +454,86 @@ async function maybeCreateSearchProfile(apiKey, contactId, lead, note) {
   }
 
   const city = extractCity(lead.location);
+  const details = lead.propertyDetails || {};
 
-  const savedQuery = removeEmpty({
+  const roomsFrom = numberOrNull(details["buyer-rooms-from"]);
+  const livingSpaceFrom = numberOrNull(details["buyer-living-space-from"]);
+  const plotAreaFrom = numberOrNull(details["buyer-plot-area-from"]);
+  const balcony = boolOrText(details["buyer-balcony"]);
+  const elevator = boolOrText(details["buyer-elevator"]);
+  const condition = clean(details["buyer-condition"]);
+  const rsType = mapRsType(lead.objectType);
+
+  const richSavedQuery = removeEmpty({
     client_id: contactId,
     active: true,
     marketing_type: "BUY",
     cities: city ? [city] : undefined,
     regions: lead.location ? [lead.location] : undefined,
     price_to: lead.budgetNumber,
-    rs_types: lead.objectType ? [mapRsType(lead.objectType)] : undefined,
+    rs_types: rsType ? [rsType] : undefined,
+
+    // Diese Felder versucht der Code zuerst. Falls Propstack einzelne Felder nicht akzeptiert,
+    // fällt der Code automatisch auf eine schlankere Suchprofil-Version zurück.
+    rooms_from: roomsFrom,
+    number_of_rooms_from: roomsFrom,
+    living_space_from: livingSpaceFrom,
+    plot_area_from: plotAreaFrom,
+    property_space_from: plotAreaFrom,
+    balcony,
+    elevator,
+    condition,
+
+    note,
+    internal_note: note,
+  });
+
+  const mediumSavedQuery = removeEmpty({
+    client_id: contactId,
+    active: true,
+    marketing_type: "BUY",
+    cities: city ? [city] : undefined,
+    regions: lead.location ? [lead.location] : undefined,
+    price_to: lead.budgetNumber,
+    rs_types: rsType ? [rsType] : undefined,
+    rooms_from: roomsFrom,
+    living_space_from: livingSpaceFrom,
+    note,
+    internal_note: note,
+  });
+
+  const basicSavedQuery = removeEmpty({
+    client_id: contactId,
+    active: true,
+    marketing_type: "BUY",
+    cities: city ? [city] : undefined,
+    regions: lead.location ? [lead.location] : undefined,
+    price_to: lead.budgetNumber,
+    rs_types: rsType ? [rsType] : undefined,
     note,
     internal_note: note,
   });
 
   const attempts = [
-    { endpoint: "/saved_queries", payload: { saved_query: savedQuery } },
-    { endpoint: "/search_profiles", payload: { search_profile: savedQuery } },
+    { endpoint: "/saved_queries", payload: { saved_query: richSavedQuery }, label: "rich saved_query" },
+    { endpoint: "/saved_queries", payload: { saved_query: mediumSavedQuery }, label: "medium saved_query" },
+    { endpoint: "/saved_queries", payload: { saved_query: basicSavedQuery }, label: "basic saved_query" },
+    { endpoint: "/search_profiles", payload: { search_profile: mediumSavedQuery }, label: "medium search_profile" },
+    { endpoint: "/search_profiles", payload: { search_profile: basicSavedQuery }, label: "basic search_profile" },
   ];
 
   for (const attempt of attempts) {
     try {
-      return await propstackPost(apiKey, attempt.endpoint, attempt.payload);
+      console.log("SEARCH PROFILE ATTEMPT:", attempt.label);
+      const result = await propstackPost(apiKey, attempt.endpoint, attempt.payload);
+      return {
+        ok: true,
+        attempt: attempt.label,
+        result,
+        used_payload: attempt.payload,
+      };
     } catch (error) {
-      console.warn("SEARCH PROFILE CREATE ATTEMPT FAILED:", error.message);
+      console.warn("SEARCH PROFILE CREATE ATTEMPT FAILED:", attempt.label, error.message);
     }
   }
 
@@ -467,7 +541,7 @@ async function maybeCreateSearchProfile(apiKey, contactId, lead, note) {
     ok: false,
     skipped: true,
     reason: "Suchprofil konnte per API nicht angelegt werden. Daten stehen im Kontakt und in der Aufgabe.",
-    payload: savedQuery,
+    payload: richSavedQuery,
   };
 }
 
@@ -639,11 +713,18 @@ function mapLandingpageType(type) {
 function mapRsType(value) {
   const text = normalize(value);
 
+  if (text.includes("dachgeschoss")) return "ROOF_STOREY";
+  if (text.includes("loft")) return "LOFT";
+  if (text.includes("maisonette")) return "MAISONETTE";
+  if (text.includes("penthouse")) return "PENTHOUSE";
+  if (text.includes("terrassenwohnung")) return "TERRACE_FLAT";
+  if (text.includes("erdgeschoss")) return "GROUND_FLOOR";
   if (text.includes("mehrfamilien")) return "MULTI_FAMILY_HOUSE";
-  if (text.includes("haus")) return "SINGLE_FAMILY_HOUSE";
+  if (text.includes("einfamilien") || text === "haus" || text.includes("haus")) return "SINGLE_FAMILY_HOUSE";
   if (text.includes("grund")) return "PLOT";
   if (text.includes("gewerbe")) return "COMMERCIAL_UNIT";
   if (text.includes("kapital") || text.includes("anlage")) return "INVEST_FREEHOLD_FLAT";
+  if (text.includes("wohnung")) return "APARTMENT";
 
   return "APARTMENT";
 }
@@ -746,6 +827,12 @@ function humanizeKey(key) {
     "seller-balcony-area": "Balkon-/Terrassenfläche",
     "seller-plot-area": "Grundstücksgröße",
     "seller-quality": "Ausstattung / Objektzustand",
+    "buyer-rooms-from": "Zimmer ab",
+    "buyer-living-space-from": "Wohnfläche ab m²",
+    "buyer-plot-area-from": "Grundstück ab m²",
+    "buyer-balcony": "Balkon/Terrasse gewünscht",
+    "buyer-elevator": "Aufzug gewünscht",
+    "buyer-condition": "Objektzustand gewünscht",
     "seller-modernization": "Letzte Modernisierung",
     financing_object_available: "Konkretes Objekt vorhanden",
     financing_equity_note: "Eigenkapital / Finanzierungsbemerkung",
