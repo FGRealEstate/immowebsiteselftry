@@ -71,34 +71,17 @@ exports.handler = async function (event) {
 
     const contactUpdateResult = await safeUpdateContact(apiKey, contactId, contactPayload.client);
     const searchProfileResult = await maybeCreateSearchProfile(apiKey, contactId, lead, note);
+
+    // Verkauf/Vermietung: wenn der Eigentümer Objektdaten angibt, legen wir ein echtes Propstack-Objekt an
+    // und verknüpfen den Kontakt direkt über relationships_attributes als owner.
+    const propertyResult = await maybeCreateOwnerProperty(apiKey, contactId, lead, note);
+    const propertyId = getId(propertyResult && propertyResult.result, ["property", "unit", "data"]);
+
+    const dealResult = await maybeCreateDealForOwnerObject(apiKey, contactId, propertyId, lead, note);
     const taskResult = await safeCreateFollowUpTask(apiKey, contactId, lead, note);
     const documentResults = lead.documents.length
-      ? await uploadDocuments(apiKey, { contactId, documents: lead.documents })
+      ? await uploadDocuments(apiKey, { contactId, propertyId, documents: lead.documents })
       : [];
-
-    /**
-     * Bewusst deaktiviert:
-     * - keine automatische /units Objektanlage
-     * - keine /client_properties Deals ohne echtes Propstack-Objekt
-     *
-     * Grund:
-     * Propstack erwartet für Objekte eine saubere Property-/Unit-Struktur.
-     * Falsche /units Requests blockieren Verkauf/Vermietung aktuell.
-     */
-    const propertyResult = {
-      ok: true,
-      skipped: true,
-      reason:
-        lead.concernType === "sell" || lead.concernType === "rent"
-          ? "Objektdaten wurden im Kontakt und in der Aufgabe gespeichert. Automatische Objektanlage ist bewusst deaktiviert, bis die Propstack-Property-Struktur final gemappt ist."
-          : "Für diesen Lead-Typ keine Objektanlage erforderlich.",
-    };
-
-    const dealResult = {
-      ok: true,
-      skipped: true,
-      reason: "Deal wird erst erstellt, wenn ein echtes Propstack-Objekt vorhanden ist. Lead ist als Kontakt + Aktivität sauber gespeichert.",
-    };
 
     return json(200, {
       success: true,
@@ -108,6 +91,7 @@ exports.handler = async function (event) {
       contact_update: contactUpdateResult,
       search_profile: searchProfileResult,
       task: taskResult,
+      property_id: propertyId,
       property: propertyResult,
       deal: dealResult,
       documents: documentResults,
@@ -528,6 +512,299 @@ async function safeUpdateContact(apiKey, contactId, clientPayload) {
   }
 }
 
+
+async function maybeCreateOwnerProperty(apiKey, contactId, lead, note) {
+  const shouldCreate = lead.concernType === "sell" || lead.concernType === "rent";
+
+  if (!shouldCreate) {
+    return { ok: true, skipped: true, reason: "Für diesen Lead-Typ keine Objektanlage erforderlich." };
+  }
+
+  if (!lead.hasAnyObjectSignal) {
+    return {
+      ok: true,
+      skipped: true,
+      reason: "Keine ausreichenden Objektdaten angegeben. Kontakt/Aufgabe wurden gespeichert.",
+    };
+  }
+
+  const property = await buildOwnerPropertyPayload(apiKey, contactId, lead, note);
+
+  // Propstack V1 erwartet laut Doku bei POST /units einen Wrapper { property: {...} }.
+  // Manche Accounts reagieren auf einzelne Attribute empfindlich. Deshalb robuste Fallbacks:
+  // 1. Vollständiger sauberer Payload
+  // 2. ohne Status
+  // 3. ohne Custom Fields
+  // 4. Minimalobjekt mit Eigentümer-Verknüpfung
+  const attempts = [
+    { label: "full property", payload: { property } },
+    { label: "without status", payload: { property: omitKeys(property, ["status_id", "property_status_id"]) } },
+    { label: "without custom fields", payload: { property: omitKeys(property, ["partial_custom_fields", "status_id", "property_status_id"]) } },
+    {
+      label: "minimal owner property",
+      payload: {
+        property: removeEmpty({
+          title: property.title,
+          unit_id: property.unit_id,
+          marketing_type: property.marketing_type,
+          object_type: property.object_type,
+          rs_type: property.rs_type,
+          rs_category: property.rs_category,
+          city: property.city,
+          address: property.address,
+          note,
+          internal_note: note,
+          relationships_attributes: property.relationships_attributes,
+        }),
+      },
+    },
+  ];
+
+  let lastError = null;
+
+  for (const attempt of attempts) {
+    try {
+      console.log("PROPERTY CREATE ATTEMPT:", attempt.label);
+      const result = await propstackPost(apiKey, "/units", attempt.payload);
+      return { ok: true, attempt: attempt.label, result, used_payload: attempt.payload };
+    } catch (error) {
+      lastError = error;
+      console.warn("PROPERTY CREATE ATTEMPT FAILED:", attempt.label, error.message);
+    }
+  }
+
+  return {
+    ok: false,
+    skipped: true,
+    reason: lastError ? lastError.message : "Objektanlage fehlgeschlagen.",
+    attempted_property: property,
+  };
+}
+
+async function buildOwnerPropertyPayload(apiKey, contactId, lead, note) {
+  const details = lead.propertyDetails || {};
+  const statusId = await findPropertyStatusId(apiKey, "Akquise");
+  const objectMapping = mapOwnerObjectMapping(lead.objectType, details);
+  const title = buildOwnerPropertyTitle(lead);
+  const address = lead.location || undefined;
+  const city = extractCity(lead.location) || undefined;
+  const priceNumber = lead.concernType === "sell" ? lead.budgetNumber : undefined;
+  const coldRent = lead.concernType === "rent" ? lead.budgetNumber : undefined;
+
+  const property = removeEmpty({
+    title,
+    unit_id: buildUnitId(lead),
+    marketing_type: lead.concernType === "rent" ? "RENT" : "BUY",
+    object_type: objectMapping.object_type,
+    rs_type: objectMapping.rs_type,
+    rs_category: objectMapping.rs_category,
+
+    address,
+    city,
+    country: "DEU",
+
+    price: priceNumber,
+    base_rent: coldRent,
+    cold_rent: coldRent,
+    living_space: numberOrNull(firstValue(details, ["seller-area-value", "seller_area_value", "living_space", "wohnflaeche"])),
+    property_space_value: numberOrNull(firstValue(details, ["seller-area-value", "seller_area_value", "living_space", "wohnflaeche"])),
+    plot_area: numberOrNull(firstValue(details, ["seller-plot-area", "seller_plot_area", "plot_area", "grundstuecksflaeche"])),
+    number_of_rooms: shouldUseRoomsForObject(lead.objectType) ? numberOrNull(firstValue(details, ["seller-rooms", "seller_rooms", "rooms", "zimmer"] )) : undefined,
+    construction_year: numberOrNull(firstValue(details, ["seller-year", "seller_year", "construction_year", "baujahr"])),
+    energy_efficiency_class: clean(firstValue(details, ["seller-energy", "seller_energy", "energy", "energieklasse"])),
+    furnishing_quality: clean(firstValue(details, ["seller-quality", "seller_quality", "quality", "ausstattung", "objektzustand"])),
+    last_modernization: clean(firstValue(details, ["seller-modernization", "seller_modernization", "modernization", "letzte_modernisierung"])),
+    balcony: isAffirmative(firstValue(details, ["seller-balcony", "seller_balcony", "balcony", "balkon"])),
+    balcony_area: numberOrNull(firstValue(details, ["seller-balcony-area", "seller_balcony_area", "balcony_area"])),
+
+    note,
+    internal_note: note,
+    description_note: note,
+    status_id: statusId || undefined,
+    property_status_id: statusId || undefined,
+
+    relationships_attributes: [
+      {
+        internal_name: "owner",
+        related_client_id: contactId,
+      },
+    ],
+
+    partial_custom_fields: buildOwnerPropertyCustomFields(lead),
+  });
+
+  return property;
+}
+
+function buildOwnerPropertyCustomFields(lead) {
+  const details = lead.propertyDetails || {};
+  const objectMapping = mapOwnerObjectMapping(lead.objectType, details);
+
+  return removeEmpty({
+    objekt_aus_landing_page: true,
+    objekt_aus_landingpage: true,
+    akquiseobjekt: true,
+    website_prioritat: "Hoch",
+    offmarket_geeignet: normalize(lead.objectType).includes("offmarket"),
+    unterlagen_erhalten: lead.documents.length > 0,
+    pdf_unterlagen_vorhanden: lead.documents.length > 0,
+
+    objektart: lead.objectType,
+    immobilienart: objectMapping.pretty,
+    flachenart: clean(firstValue(details, ["seller-area-type", "seller_area_type"])),
+    objektzustand: clean(firstValue(details, ["seller-quality", "seller_quality", "quality"])),
+    ausstattung: clean(firstValue(details, ["seller-quality", "seller_quality", "quality"])),
+    wohnflache: numberOrNull(firstValue(details, ["seller-area-value", "seller_area_value"])),
+    grundstucksflache: numberOrNull(firstValue(details, ["seller-plot-area", "seller_plot_area"])),
+    zimmeranzahl: shouldUseRoomsForObject(lead.objectType) ? numberOrNull(firstValue(details, ["seller-rooms", "seller_rooms"] )) : undefined,
+    baujahr: numberOrNull(firstValue(details, ["seller-year", "seller_year"])),
+    energieklasse: clean(firstValue(details, ["seller-energy", "seller_energy"])),
+    balkon_terrasse: boolOrText(firstValue(details, ["seller-balcony", "seller_balcony"])),
+    balkon_terrassenflache: numberOrNull(firstValue(details, ["seller-balcony-area", "seller_balcony_area"])),
+    letzte_modernisierung: clean(firstValue(details, ["seller-modernization", "seller_modernization"])),
+    verwaltungsubernahme_gewuenscht_ab: lead.managementTakeover,
+    website_rohdaten: compactJson({ concern: lead.rawConcern, objectType: lead.objectType, propertyDetails: lead.propertyDetails }),
+  });
+}
+
+async function findPropertyStatusId(apiKey, wantedName) {
+  try {
+    const response = await propstackGet(apiKey, "/property_statuses");
+    const statuses = normalizeArray(response);
+    const wanted = normalize(wantedName);
+    const found = statuses.find((status) => normalize(status.name || status.title || status.label).includes(wanted));
+    return found ? found.id : null;
+  } catch (error) {
+    console.warn("PROPERTY STATUS READ SKIPPED:", error.message);
+    return null;
+  }
+}
+
+async function maybeCreateDealForOwnerObject(apiKey, contactId, propertyId, lead, note) {
+  if (!(lead.concernType === "sell" || lead.concernType === "rent")) {
+    return { ok: true, skipped: true, reason: "Für diesen Lead-Typ kein Eigentümer-Deal erforderlich." };
+  }
+
+  if (!propertyId) {
+    return { ok: true, skipped: true, reason: "Kein Objekt angelegt, daher kein Objekt-Deal erstellt. Aufgabe/Kontakt sind vorhanden." };
+  }
+
+  const stage = await findBestDealStage(apiKey, lead.concernType);
+  if (!stage || !stage.id) {
+    return { ok: true, skipped: true, reason: "Keine passende Deal-Phase gefunden.", stage };
+  }
+
+  const attempts = [
+    {
+      client_property: removeEmpty({
+        client_id: contactId,
+        contact_id: contactId,
+        property_id: propertyId,
+        unit_id: propertyId,
+        deal_stage_id: stage.id,
+        note,
+        source: "Website Landingpage",
+      }),
+    },
+    {
+      client_property: removeEmpty({
+        client_id: contactId,
+        property_id: propertyId,
+        deal_stage_id: stage.id,
+        note,
+      }),
+    },
+  ];
+
+  for (const payload of attempts) {
+    try {
+      const result = await propstackPost(apiKey, "/client_properties", payload);
+      return { ok: true, stage, result };
+    } catch (error) {
+      console.warn("OWNER DEAL CREATE ATTEMPT FAILED:", error.message);
+    }
+  }
+
+  return { ok: false, skipped: true, reason: "Deal konnte nicht erstellt werden.", stage };
+}
+
+async function findBestDealStage(apiKey, concernType) {
+  try {
+    const pipelinesResponse = await propstackGet(apiKey, "/deal_pipelines");
+    const pipelines = normalizeArray(pipelinesResponse);
+    const allStages = [];
+
+    for (const pipeline of pipelines) {
+      const pipelineName = pipeline.name || pipeline.title || pipeline.label || "";
+      const stages = pipeline.deal_stages || pipeline.stages || pipeline.client_property_stages || [];
+      for (const stage of stages) {
+        allStages.push({ id: stage.id, name: stage.name || stage.title || stage.label || "", pipeline: pipelineName });
+      }
+    }
+
+    const wanted = concernType === "rent"
+      ? ["neuermietinteressent", "mieter", "vermietung"]
+      : ["neuereigentumerlead", "neuereigentuemerlead", "eigentumer", "eigentuemer"];
+
+    for (const term of wanted) {
+      const found = allStages.find((stage) => normalize(`${stage.pipeline} ${stage.name}`).includes(term));
+      if (found) return found;
+    }
+
+    return allStages[0] || null;
+  } catch (error) {
+    console.warn("DEAL STAGES READ SKIPPED:", error.message);
+    return null;
+  }
+}
+
+function buildOwnerPropertyTitle(lead) {
+  const type = lead.objectType || "Immobilie";
+  const place = lead.location ? ` in ${lead.location}` : "";
+  return `Akquise: ${type}${place}`;
+}
+
+function buildUnitId(lead) {
+  const stamp = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+  const type = normalize(lead.objectType).slice(0, 6).toUpperCase() || "OBJ";
+  return `WEB-${type}-${stamp}`;
+}
+
+function mapOwnerObjectMapping(objectType, details) {
+  const text = normalize(objectType);
+  const sub = normalize(firstValue(details || {}, ["seller-house-subtype", "seller_house_subtype", "seller-subtype", "seller_subtype"]));
+
+  if (text.includes("grund")) return { object_type: "LIVING", rs_type: "PLOT", rs_category: "OTHER", pretty: "Grundstück" };
+  if (text.includes("gewerbe")) return { object_type: "COMMERCIAL", rs_type: "COMMERCIAL_UNIT", rs_category: "COMMERCIAL_UNIT", pretty: "Gewerbe" };
+  if (text.includes("mehrfamilien")) return { object_type: "INVESTMENT", rs_type: "INVESTMENT", rs_category: "INVEST_HOUSING_ESTATE", pretty: "Mehrfamilienhaus" };
+  if (text.includes("doppel") || sub.includes("doppel")) return { object_type: "LIVING", rs_type: "HOUSE", rs_category: "SEMIDETACHED_HOUSE", pretty: "Doppelhaushälfte" };
+  if (text.includes("zweifamilien") || sub.includes("zweifamilien") || sub.includes("zfh")) return { object_type: "LIVING", rs_type: "HOUSE", rs_category: "TWO_FAMILY_HOUSE", pretty: "Zweifamilienhaus" };
+  if (text.includes("reihenend") || sub.includes("reihenend")) return { object_type: "LIVING", rs_type: "HOUSE", rs_category: "TERRACE_END_HOUSE", pretty: "Reihenendhaus" };
+  if (text.includes("reihenmittel") || sub.includes("reihenmittel")) return { object_type: "LIVING", rs_type: "HOUSE", rs_category: "MID_TERRACE_HOUSE", pretty: "Reihenmittelhaus" };
+  if (text.includes("reihen") || sub.includes("reihen")) return { object_type: "LIVING", rs_type: "HOUSE", rs_category: "TERRACE_HOUSE", pretty: "Reihenhaus" };
+  if (text.includes("villa") || sub.includes("villa")) return { object_type: "LIVING", rs_type: "HOUSE", rs_category: "VILLA", pretty: "Villa" };
+  if (text.includes("bungalow") || sub.includes("bungalow")) return { object_type: "LIVING", rs_type: "HOUSE", rs_category: "BUNGALOW", pretty: "Bungalow" };
+  if (text.includes("haus") || text.includes("einfamilien") || sub.includes("einfamilien") || sub.includes("efh")) return { object_type: "LIVING", rs_type: "HOUSE", rs_category: "SINGLE_FAMILY_HOUSE", pretty: "Einfamilienhaus" };
+  if (text.includes("dachgeschoss")) return { object_type: "LIVING", rs_type: "APARTMENT", rs_category: "ROOF_STOREY", pretty: "Dachgeschosswohnung" };
+  if (text.includes("loft")) return { object_type: "LIVING", rs_type: "APARTMENT", rs_category: "LOFT", pretty: "Loft" };
+  if (text.includes("maisonette")) return { object_type: "LIVING", rs_type: "APARTMENT", rs_category: "MAISONETTE", pretty: "Maisonette" };
+  if (text.includes("penthouse")) return { object_type: "LIVING", rs_type: "APARTMENT", rs_category: "PENTHOUSE", pretty: "Penthouse" };
+  if (text.includes("terrassen")) return { object_type: "LIVING", rs_type: "APARTMENT", rs_category: "TERRACED_FLAT", pretty: "Terrassenwohnung" };
+
+  return { object_type: "LIVING", rs_type: "APARTMENT", rs_category: "APARTMENT", pretty: "Wohnung" };
+}
+
+function shouldUseRoomsForObject(objectType) {
+  const text = normalize(objectType);
+  return !(text.includes("grund") || text.includes("mehrfamilien") || text.includes("gewerbe"));
+}
+
+function omitKeys(object, keys) {
+  const clone = { ...object };
+  keys.forEach((key) => delete clone[key]);
+  return clone;
+}
+
 async function maybeCreateSearchProfile(apiKey, contactId, lead, note) {
   const shouldCreate = lead.concernType === "buy" || lead.concernType === "investment";
 
@@ -702,7 +979,8 @@ async function uploadDocuments(apiKey, input) {
           doc: file.base64,
           is_private: true,
           tags: ["Website Anfrage"],
-          client_id: input.contactId,
+          property_id: input.propertyId || undefined,
+          client_id: input.propertyId ? undefined : input.contactId,
         }),
       });
 
@@ -775,6 +1053,7 @@ function mapConcernType(value) {
   if (text.includes("finanzierung") || text.includes("finanz")) return "finance";
   if (text.includes("verwaltung")) return "management";
   if (text.includes("kapitalanlage") || text.includes("anlage")) return "investment";
+  if (text.includes("suchen") || text.includes("mieten") || text.includes("miete")) return "buy";
   if (text.includes("kaufen") || text.includes("kauf")) return "buy";
 
   return "";
@@ -785,9 +1064,21 @@ function normalizeObjectType(value) {
   const n = normalize(text);
 
   if (!text) return "";
+  if (n.includes("dachgeschoss")) return "Dachgeschosswohnung";
+  if (n.includes("loft")) return "Loft";
+  if (n.includes("maisonette")) return "Maisonette";
+  if (n.includes("penthouse")) return "Penthouse";
+  if (n.includes("terrassenwohnung")) return "Terrassenwohnung";
   if (n.includes("eigentumswohnung") || n.includes("wohnung")) return "Wohnung";
   if (n.includes("mehrfamilien")) return "Mehrfamilienhaus";
-  if (n.includes("einfamilien") || n.includes("haus")) return "Haus";
+  if (n.includes("zweifamilien") || n.includes("zfh")) return "Zweifamilienhaus";
+  if (n.includes("doppel")) return "Doppelhaushälfte";
+  if (n.includes("reihenend")) return "Reihenendhaus";
+  if (n.includes("reihenmittel")) return "Reihenmittelhaus";
+  if (n.includes("reihen")) return "Reihenhaus";
+  if (n.includes("villa")) return "Villa";
+  if (n.includes("bungalow")) return "Bungalow";
+  if (n.includes("einfamilien") || n.includes("efh") || n.includes("haus")) return "Haus";
   if (n.includes("grund")) return "Grundstück";
   if (n.includes("gewerbe")) return "Gewerbe";
   if (n.includes("kapital") || n.includes("anlage")) return "Kapitalanlage";
@@ -855,6 +1146,16 @@ function getId(response, keys) {
 
   if (response.data && response.data.id) return response.data.id;
   return null;
+}
+
+function normalizeArray(response) {
+  if (Array.isArray(response)) return response;
+  if (response && Array.isArray(response.data)) return response.data;
+  if (response && Array.isArray(response.deal_pipelines)) return response.deal_pipelines;
+  if (response && Array.isArray(response.pipelines)) return response.pipelines;
+  if (response && Array.isArray(response.property_statuses)) return response.property_statuses;
+  if (response && Array.isArray(response.statuses)) return response.statuses;
+  return [];
 }
 
 function clean(value) {
