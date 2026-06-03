@@ -6,15 +6,15 @@
           <img src="/images/berlinskypng.png" alt="Ankaufsberatung Termin" class="w-full h-full object-cover">
         </div>
         <div class="relative z-10">
-          <p class="text-secondary uppercase tracking-wide font-semibold text-sm mb-3">Ankaufsberatung</p>
-          <h2 class="text-3xl md:text-4xl font-extrabold mb-5">Terminwunsch direkt übermitteln.</h2>
+          <p class="text-secondary uppercase tracking-wide font-semibold text-sm mb-3">Direkte Terminbuchung</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-5">Termin für Ihre Ankaufsberatung auswählen.</h2>
           <p class="text-page-bg leading-relaxed mb-6">
-            Teilen Sie uns Ihren bevorzugten Termin mit. Wir legen den Terminwunsch im CRM an und melden uns mit der Bestätigung.
+            Wählen Sie Ihren Wunschtermin aus. Wir legen den Kontakt und den Terminwunsch im CRM an und bestätigen den Termin persönlich über info@fg-realestate.de.
           </p>
           <div class="space-y-3 text-page-bg">
-            <p><i class="fas fa-check text-secondary mr-2"></i>Persönliche Einschätzung</p>
-            <p><i class="fas fa-check text-secondary mr-2"></i>Objekt- und Finanzierungsfokus</p>
-            <p><i class="fas fa-check text-secondary mr-2"></i>CRM-gestützte Nachverfolgung</p>
+            <p><i class="fas fa-check text-secondary mr-2"></i>CRM-Kontakt mit Terminwunsch</p>
+            <p><i class="fas fa-check text-secondary mr-2"></i>Aufgabe zur Terminprüfung</p>
+            <p><i class="fas fa-check text-secondary mr-2"></i>E-Mail-Benachrichtigung an info@fg-realestate.de</p>
           </div>
         </div>
       </div>
@@ -36,6 +36,14 @@
           <input type="email" name="email" class="appointment-input" required placeholder="E-Mail-Adresse *">
           <input type="tel" name="phone" class="appointment-input" placeholder="Telefonnummer">
         </div>
+
+        <select name="appointment_type" class="appointment-select" required>
+          <option value="">Terminart wählen *</option>
+          <option value="Ankaufsberatung Kapitalanleger">Ankaufsberatung Kapitalanleger</option>
+          <option value="Ankaufsberatung Eigennutzer">Ankaufsberatung Eigennutzer</option>
+          <option value="Finanzierungsberatung">Finanzierungsberatung</option>
+          <option value="Allgemeines Erstgespräch">Allgemeines Erstgespräch</option>
+        </select>
 
         <input type="text" name="address" class="appointment-input google-address" placeholder="Objektadresse / Suchgebiet">
 
@@ -69,47 +77,54 @@
 
 <script>
 (function(){
+  if (window.__fgAppointmentLoaded) return;
+  window.__fgAppointmentLoaded = true;
+
   function ready(fn){ if(document.readyState !== "loading") fn(); else document.addEventListener("DOMContentLoaded", fn); }
 
   ready(function(){
     document.querySelectorAll(".appointment-form").forEach(function(form){
       const success = form.querySelector(".appointment-success");
       const error = form.querySelector(".appointment-error");
+      const button = form.querySelector('button[type="submit"]');
 
       form.addEventListener("submit", async function(e){
         e.preventDefault();
         success.classList.add("hidden");
         error.classList.add("hidden");
-
-        const button = form.querySelector('button[type="submit"]');
         button.disabled = true;
         button.textContent = "Wird übermittelt...";
 
         const fd = new FormData(form);
+        const params = new URLSearchParams(location.search);
+
+        const payload = {
+          first_name: fd.get("first_name"),
+          last_name: fd.get("last_name"),
+          email: fd.get("email"),
+          phone: fd.get("phone"),
+          appointment_type: fd.get("appointment_type"),
+          address: fd.get("address"),
+          preferred_date: fd.get("preferred_date"),
+          preferred_time: fd.get("preferred_time"),
+          message: fd.get("message"),
+          privacy_consent: fd.get("privacy_consent") === "true",
+          source_url: location.href,
+          utm_source: params.get("utm_source") || "",
+          utm_medium: params.get("utm_medium") || "",
+          utm_campaign: params.get("utm_campaign") || "",
+          utm_content: params.get("utm_content") || "",
+          utm_term: params.get("utm_term") || ""
+        };
 
         try {
-          const payload = {
-            first_name: fd.get("first_name"),
-            last_name: fd.get("last_name"),
-            email: fd.get("email"),
-            phone: fd.get("phone"),
-            address: fd.get("address"),
-            preferred_date: fd.get("preferred_date"),
-            preferred_time: fd.get("preferred_time"),
-            message: fd.get("message"),
-            privacy_consent: fd.get("privacy_consent") === "true",
-            source_url: location.href
-          };
-
           const res = await fetch("/.netlify/functions/propstack-appointment", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)
           });
-
           const result = await res.json();
           if (!res.ok || !result.success) throw new Error(result.error || "Fehler");
-
           form.reset();
           success.classList.remove("hidden");
         } catch(err) {
