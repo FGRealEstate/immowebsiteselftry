@@ -449,20 +449,74 @@
 
             if (state.concern === "Immobilie kaufen") {
                 html = `
+                    <div class="rounded-2xl border border-primary/10 bg-gradient-to-br from-white via-white to-secondary/5 p-5 shadow-sm mb-5">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-secondary/15 text-secondary flex items-center justify-center shrink-0">
+                                <i class="fas fa-search-location"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary text-lg">Ihr Suchprofil</h4>
+                                <p class="text-sm text-gray-600 mt-1">
+                                    Diese Angaben helfen uns, passende Immobilien gezielter vorzuschlagen. Alles ist optional, wird aber im CRM mitgespeichert.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="lead-mini-grid">
                         <div>${numberField("Zimmer ab", "buyer-rooms-from", "z. B. 3")}</div>
                         <div>${numberField("Wohnfläche ab m²", "buyer-living-space-from", "z. B. 80")}</div>
                         <div>${numberField("Grundstück ab m²", "buyer-plot-area-from", "z. B. 500")}</div>
+                        <div>${moneyField("Kaufpreis bis", "buyer-price-to", "z. B. 500.000 €")}</div>
+
+                        <div>${selectSimple("Kaufart", "buyer-purchase-type", [
+                            ["Kaufen", "Kaufen"],
+                            ["Mieten", "Mieten"],
+                            ["Kaufen oder Mieten", "Kaufen oder Mieten"]
+                        ])}</div>
+
+                        <div>${selectSimple("Nutzung", "buyer-use-case", [
+                            ["Eigennutzung", "Eigennutzung"],
+                            ["Kapitalanlage", "Kapitalanlage"],
+                            ["Beides offen", "Beides offen"]
+                        ])}</div>
+
                         <div>${selectSimple("Balkon/Terrasse", "buyer-balcony", [
                             ["", "Egal"],
                             ["Ja", "Ja"],
                             ["Nein", "Nein"]
                         ])}</div>
+
+                        <div>${selectSimple("Garten", "buyer-garden", [
+                            ["", "Egal"],
+                            ["Ja", "Ja"],
+                            ["Nein", "Nein"]
+                        ])}</div>
+
                         <div>${selectSimple("Aufzug", "buyer-elevator", [
                             ["", "Egal"],
                             ["Ja", "Ja"],
                             ["Nein", "Nein"]
                         ])}</div>
+
+                        <div>${selectSimple("Stellplatz", "buyer-parking", [
+                            ["", "Egal"],
+                            ["Ja", "Ja"],
+                            ["Nein", "Nein"]
+                        ])}</div>
+
+                        <div>${selectSimple("Keller", "buyer-basement", [
+                            ["", "Egal"],
+                            ["Ja", "Ja"],
+                            ["Nein", "Nein"]
+                        ])}</div>
+
+                        <div>${selectSimple("Barrierefrei", "buyer-barrier-free", [
+                            ["", "Egal"],
+                            ["Ja", "Ja"],
+                            ["Nein", "Nein"]
+                        ])}</div>
+
                         <div>${selectSimple("Objektzustand", "buyer-condition", [
                             ["", "Egal"],
                             ["Neuwertig", "Neuwertig"],
@@ -470,7 +524,35 @@
                             ["Renovierungsbedürftig", "Renovierungsbedürftig"],
                             ["Sanierungsbedürftig", "Sanierungsbedürftig"]
                         ])}</div>
+
+                        <div>${selectSimple("Etage", "buyer-floor", [
+                            ["", "Egal"],
+                            ["Erdgeschoss", "Erdgeschoss"],
+                            ["1. bis 3. Etage", "1. bis 3. Etage"],
+                            ["ab 4. Etage", "ab 4. Etage"],
+                            ["Dachgeschoss", "Dachgeschoss"]
+                        ])}</div>
+
+                        <div>${selectSimple("Einbauküche", "buyer-kitchen", [
+                            ["", "Egal"],
+                            ["Ja", "Ja"],
+                            ["Nein", "Nein"]
+                        ])}</div>
+
+                        <div>${selectSimple("Vermietet", "buyer-rented", [
+                            ["", "Egal"],
+                            ["Ja", "Ja"],
+                            ["Nein", "Nein"]
+                        ])}</div>
+
+                        <div>${numberField("Baujahr ab", "buyer-year-from", "z. B. 1990")}</div>
+                        <div>${numberField("Baujahr bis", "buyer-year-to", "z. B. 2025")}</div>
                     </div>
+
+                    <div class="mt-5">
+                        ${inputField("Weitere Suchkriterien", "buyer-search-note", "z. B. ruhige Lage, Balkon, Altbau, Nähe ÖPNV, Kapitalanlage mit Rendite")}
+                    </div>
+
                     <div class="mt-5">
                         ${selectSimple("Sind Sie auch an unserer Finanzierungsberatung interessiert?", "visible-financing-interest", [
                             ["Nein", "Nein"],
