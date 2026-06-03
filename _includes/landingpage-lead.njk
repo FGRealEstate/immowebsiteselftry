@@ -112,8 +112,8 @@
 
                         <div class="lead-step" data-step="1">
                             <div class="grid grid-cols-1 gap-4">
-                                <button type="button" class="lead-choice" data-field="concern" data-value="Immobilie kaufen">
-                                    <span><i class="fas fa-key text-secondary mr-3"></i>Ich möchte kaufen</span>
+                                <button type="button" class="lead-choice" data-field="concern" data-value="Immobilie suchen">
+                                    <span><i class="fas fa-key text-secondary mr-3"></i>Ich möchte kaufen oder mieten</span>
                                     <i class="fas fa-chevron-right"></i>
                                 </button>
 
@@ -298,7 +298,7 @@
         const extra = widget.querySelector(".lead-extra-fields");
 
         const options = {
-            "Immobilie kaufen": [
+            "Immobilie suchen": [
                 ["Wohnung", "fas fa-building"],
                 ["Dachgeschosswohnung", "fas fa-building"],
                 ["Loft", "fas fa-warehouse"],
@@ -307,13 +307,26 @@
                 ["Terrassenwohnung", "fas fa-umbrella-beach"],
                 ["Erdgeschosswohnung", "fas fa-door-open"],
                 ["Einfamilienhaus", "fas fa-house"],
+                ["Zweifamilienhaus", "fas fa-house-user"],
+                ["Doppelhaushälfte", "fas fa-house-chimney"],
+                ["Reihenhaus", "fas fa-house-chimney-window"],
+                ["Reihenendhaus", "fas fa-house-circle-check"],
                 ["Mehrfamilienhaus", "fas fa-city"],
                 ["Grundstück", "fas fa-map"],
                 ["Kapitalanlage", "fas fa-chart-line"]
             ],
             "Immobilie verkaufen": [
                 ["Eigentumswohnung", "fas fa-building"],
-                ["Haus", "fas fa-house"],
+                ["Dachgeschosswohnung", "fas fa-building"],
+                ["Penthouse", "fas fa-crown"],
+                ["Einfamilienhaus", "fas fa-house"],
+                ["Zweifamilienhaus", "fas fa-house-user"],
+                ["Doppelhaushälfte", "fas fa-house-chimney"],
+                ["Reihenhaus", "fas fa-house-chimney-window"],
+                ["Reihenmittelhaus", "fas fa-house-chimney-window"],
+                ["Reihenendhaus", "fas fa-house-circle-check"],
+                ["Villa", "fas fa-landmark"],
+                ["Bungalow", "fas fa-home"],
                 ["Mehrfamilienhaus", "fas fa-city"],
                 ["Grundstück", "fas fa-map"],
                 ["Gewerbeimmobilie", "fas fa-briefcase"],
@@ -342,7 +355,7 @@
                 5: ["Ihre Kontaktdaten", "Damit wir persönlich Rückmeldung geben können."],
                 6: ["Fast geschafft", "Nachricht ergänzen und Anfrage absenden."]
             },
-            "Immobilie kaufen": {
+            "Immobilie suchen": {
                 2: ["Welche Immobilie suchen Sie?", "Wählen Sie aus, wonach Sie suchen."],
                 3: ["Wo und in welchem Rahmen suchen Sie?", "Nennen Sie Suchgebiet, Budget und zeitlichen Rahmen."],
                 4: ["Finanzierung gewünscht?", "Wir können auf Wunsch auch die passende Finanzierungsberatung vorbereiten."]
@@ -407,11 +420,11 @@
         function renderContext() {
             let html = "";
 
-            if (state.concern === "Immobilie kaufen") {
+            if (state.concern === "Immobilie suchen") {
                 html = `
                     ${addressField("Wo suchen Sie? *", "z. B. Berlin, Potsdam, Dresden", true)}
-                    ${moneyField("Budget / maximaler Kaufpreis", "visible-budget", "z. B. 500.000 €")}
-                    ${selectTime("Wann möchten Sie kaufen?")}
+                    ${moneyField("Budget / maximale Kauf- oder Mietvorstellung", "visible-budget", "z. B. 500.000 € oder 1.500 €")}
+                    ${selectTime("Wann möchten Sie kaufen oder mieten?")}
                 `;
             }
 
@@ -447,7 +460,7 @@
         function renderExtra() {
             let html = "";
 
-            if (state.concern === "Immobilie kaufen") {
+            if (state.concern === "Immobilie suchen") {
                 html = `
                     <div class="rounded-2xl border border-primary/10 bg-gradient-to-br from-white via-white to-secondary/5 p-5 shadow-sm mb-5">
                         <div class="flex items-start gap-3">
@@ -656,60 +669,91 @@
         }
 
         function sellerDetails() {
-            return `
-                <div class="lead-mini-grid">
-                    <div>
-                        ${selectSimple("Flächenart", "seller-area-type", [
-                            ["Wohnfläche", "Wohnfläche"],
-                            ["Gewerbefläche", "Gewerbefläche"],
-                            ["Nutzfläche", "Nutzfläche"]
-                        ])}
-                    </div>
+            const type = (state.object_type || "").toLowerCase();
+            const isPlot = type.includes("grundstück") || type.includes("grundst");
+            const isMulti = type.includes("mehrfamilien");
+            const isCommercial = type.includes("gewerbe");
+            const isHouse = type.includes("haus") || type.includes("villa") || type.includes("bungalow") || type.includes("doppel") || type.includes("reihen");
+            const isApartment = !isPlot && !isMulti && !isCommercial && !isHouse;
 
-                    <div>${numberField("Fläche in m²", "seller-area-value", "z. B. 82")}</div>
-                    <div>${numberField("Zimmeranzahl", "seller-rooms", "z. B. 3")}</div>
-                    <div>${numberField("Baujahr", "seller-year", "z. B. 1978")}</div>
+            let html = `<div class="lead-mini-grid">`;
 
-                    <div>
-                        ${selectSimple("Energielabel", "seller-energy", [
-                            ["", "Keine Angabe"],
-                            ["A+", "A+"],
-                            ["A", "A"],
-                            ["B", "B"],
-                            ["C", "C"],
-                            ["D", "D"],
-                            ["E", "E"],
-                            ["F", "F"],
-                            ["G", "G"],
-                            ["H", "H"]
-                        ])}
-                    </div>
+            html += `<div>${selectSimple("Flächenart", "seller-area-type", [
+                ["Wohnfläche", "Wohnfläche"],
+                ["Gewerbefläche", "Gewerbefläche"],
+                ["Nutzfläche", "Nutzfläche"],
+                ["Grundstücksfläche", "Grundstücksfläche"]
+            ])}</div>`;
 
-                    <div>
-                        ${selectSimple("Balkon/Terrasse", "seller-balcony", [
-                            ["", "Keine Angabe"],
-                            ["Ja", "Ja"],
-                            ["Nein", "Nein"]
-                        ])}
-                    </div>
+            if (isHouse) {
+                html += `<div>${selectSimple("Hausart", "seller-house-subtype", [
+                    [state.object_type || "Haus", state.object_type || "Haus"],
+                    ["Einfamilienhaus", "Einfamilienhaus"],
+                    ["Zweifamilienhaus", "Zweifamilienhaus"],
+                    ["Doppelhaushälfte", "Doppelhaushälfte"],
+                    ["Reihenhaus", "Reihenhaus"],
+                    ["Reihenmittelhaus", "Reihenmittelhaus"],
+                    ["Reihenendhaus", "Reihenendhaus"],
+                    ["Villa", "Villa"],
+                    ["Bungalow", "Bungalow"]
+                ])}</div>`;
+            }
 
-                    <div>${numberField("Balkon-/Terrassenfläche in m²", "seller-balcony-area", "z. B. 8")}</div>
-                    <div>${numberField("Grundstücksgröße in m²", "seller-plot-area", "z. B. 650")}</div>
+            if (isApartment || isHouse || isMulti || isCommercial) {
+                html += `<div>${numberField(isCommercial ? "Gewerbe-/Nutzfläche in m²" : "Wohn-/Nutzfläche in m²", "seller-area-value", "z. B. 82")}</div>`;
+            }
 
-                    <div>
-                        ${selectSimple("Ausstattung", "seller-quality", [
-                            ["", "Keine Angabe"],
-                            ["Luxus", "Luxus"],
-                            ["Gehoben", "Gehoben"],
-                            ["Normal", "Normal"],
-                            ["Einfach", "Einfach"],
-                            ["Renovierungsbedürftig", "Renovierungsbedürftig"]
-                        ])}
-                    </div>
+            if (isPlot || isHouse || isMulti) {
+                html += `<div>${numberField("Grundstücksgröße in m²", "seller-plot-area", "z. B. 650")}</div>`;
+            }
 
-                    <div>${inputField("Letzte Modernisierung", "seller-modernization", "z. B. 2018")}</div>
-                </div>
-            `;
+            if (isApartment || isHouse) {
+                html += `<div>${numberField("Zimmeranzahl", "seller-rooms", "z. B. 3")}</div>`;
+            }
+
+            if (isMulti) {
+                html += `<div>${numberField("Anzahl Wohneinheiten", "seller-units", "z. B. 6")}</div>`;
+                html += `<div>${moneyField("Mtl. Mieteinnahmen", "seller-monthly-rent", "z. B. 4.500 €")}</div>`;
+            }
+
+            if (!isPlot) {
+                html += `<div>${numberField("Baujahr", "seller-year", "z. B. 1978")}</div>`;
+                html += `<div>${selectSimple("Energielabel", "seller-energy", [
+                    ["", "Keine Angabe"],
+                    ["A+", "A+"], ["A", "A"], ["B", "B"], ["C", "C"], ["D", "D"], ["E", "E"], ["F", "F"], ["G", "G"], ["H", "H"]
+                ])}</div>`;
+            }
+
+            if (isApartment || isHouse) {
+                html += `<div>${selectSimple("Balkon/Terrasse", "seller-balcony", [["", "Keine Angabe"], ["Ja", "Ja"], ["Nein", "Nein"]])}</div>`;
+                html += `<div>${numberField("Balkon-/Terrassenfläche in m²", "seller-balcony-area", "z. B. 8")}</div>`;
+            }
+
+            if (!isPlot) {
+                html += `<div>${selectSimple("Ausstattung / Zustand", "seller-quality", [
+                    ["", "Keine Angabe"],
+                    ["Luxus", "Luxus"],
+                    ["Gehoben", "Gehoben"],
+                    ["Normal", "Normal"],
+                    ["Einfach", "Einfach"],
+                    ["Renovierungsbedürftig", "Renovierungsbedürftig"],
+                    ["Sanierungsbedürftig", "Sanierungsbedürftig"]
+                ])}</div>`;
+                html += `<div>${inputField("Letzte Modernisierung", "seller-modernization", "z. B. 2018")}</div>`;
+            }
+
+            if (isPlot) {
+                html += `<div>${selectSimple("Grundstücksart", "seller-plot-type", [
+                    ["", "Keine Angabe"],
+                    ["Bauland", "Bauland"],
+                    ["Bauerwartungsland", "Bauerwartungsland"],
+                    ["Abrissgrundstück", "Abrissgrundstück"],
+                    ["Gewerbegrundstück", "Gewerbegrundstück"]
+                ])}</div>`;
+            }
+
+            html += `</div>`;
+            return html;
         }
 
         function set(sel, val) {
@@ -846,7 +890,7 @@
 
                 const newsletterBox = widget.querySelector(".lead-newsletter-box");
                 const newsletterCheck = widget.querySelector(".lead-newsletter-visible");
-                const buyerLike = state.concern === "Immobilie kaufen";
+                const buyerLike = state.concern === "Immobilie suchen";
                 if (newsletterBox) newsletterBox.classList.toggle("hidden", !buyerLike);
                 if (newsletterCheck) newsletterCheck.checked = buyerLike;
 
@@ -967,7 +1011,7 @@
             if (uploadArea) uploadArea.classList.toggle("hidden", state.concern !== "Immobilie verkaufen");
             const newsletterBox = widget.querySelector(".lead-newsletter-box");
             const newsletterCheck = widget.querySelector(".lead-newsletter-visible");
-            const buyerLike = state.concern === "Immobilie kaufen";
+            const buyerLike = state.concern === "Immobilie suchen";
             if (newsletterBox) newsletterBox.classList.toggle("hidden", !buyerLike);
             if (newsletterCheck) newsletterCheck.checked = buyerLike;
             show(2);
