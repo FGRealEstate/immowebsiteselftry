@@ -132,20 +132,39 @@ exports.handler = async function (event) {
     let propertyId = null;
     let documentResults = [];
 
-    if (concernType === "sell" && propertyDetailsWanted === "Ja") {
-      propertyResponse = await createAcquisitionProperty(apiKey, {
-        contactId,
-        objectType,
-        location,
-        budget,
-        timeframe,
-        propertyDetails,
-        note,
-      });
+    const hasPropertyDetails =
+  Object.values(propertyDetails).some((value) => clean(value)) ||
+  Boolean(location) ||
+  Boolean(objectType) ||
+  Boolean(budget);
 
-      propertyId = getId(propertyResponse, ["property", "unit", "data"]);
-      console.log("PROPERTY CREATED:", propertyId);
-    }
+const shouldCreateAcquisitionProperty =
+  (concernType === "sell" || concernType === "rent") && hasPropertyDetails;
+
+if (shouldCreateAcquisitionProperty) {
+  try {
+    propertyResponse = await createAcquisitionProperty(apiKey, {
+      contactId,
+      objectType,
+      location,
+      budget,
+      timeframe,
+      propertyDetails,
+      note,
+    });
+
+    propertyId = getId(propertyResponse, ["property", "unit", "data"]);
+    console.log("PROPERTY CREATED:", propertyId);
+  } catch (propertyError) {
+    console.warn("PROPERTY CREATE SKIPPED:", propertyError.message);
+
+    propertyResponse = {
+      ok: false,
+      skipped: true,
+      reason: propertyError.message,
+    };
+  }
+}
 
     const stage = await findBestDealStage(apiKey, concernType);
     console.log("DEAL STAGE:", stage);
