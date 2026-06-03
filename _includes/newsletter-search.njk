@@ -1,28 +1,163 @@
 <section id="newsletter" class="container mx-auto px-4 py-16">
-  <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl border-t-4 border-accent overflow-hidden grid grid-cols-1 lg:grid-cols-2">
+  <div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-2xl border-t-4 border-accent overflow-hidden grid grid-cols-1 lg:grid-cols-2">
     <div class="bg-primary text-white p-8 md:p-10 relative overflow-hidden">
-      <div class="absolute inset-0 opacity-20"><img src="/images/berlinskypng.png" alt="Immobilienmailing" class="w-full h-full object-cover"></div>
+      <div class="absolute inset-0 opacity-20">
+        <img src="/images/berlinskypng.png" alt="Immobilienmailing" class="w-full h-full object-cover">
+      </div>
       <div class="relative z-10">
         <p class="text-secondary uppercase tracking-wide font-semibold text-sm mb-3">Newsletter & Suchprofil</p>
         <h2 class="text-3xl md:text-4xl font-extrabold mb-5">Passende Immobilien zuerst erhalten.</h2>
-        <p class="text-page-bg leading-relaxed">Melden Sie sich für unser Immobilienmailing an und hinterlegen Sie optional ein Suchprofil. So können wir Sie informieren, wenn ein passendes Objekt verfügbar ist.</p>
+        <p class="text-page-bg leading-relaxed mb-6">
+          Hinterlegen Sie Ihr Gesuch und melden Sie sich für unser Immobilienmailing an. So können wir Sie informieren, sobald ein passendes Objekt verfügbar ist.
+        </p>
+        <div class="space-y-3 text-page-bg text-sm">
+          <p><i class="fas fa-check text-secondary mr-2"></i>Suchprofil im CRM</p>
+          <p><i class="fas fa-check text-secondary mr-2"></i>Newsletter- und Immobilienmailing-Wunsch gespeichert</p>
+          <p><i class="fas fa-check text-secondary mr-2"></i>Persönliche Prüfung durch unser Team</p>
+        </div>
       </div>
     </div>
+
     <form class="newsletter-form p-8 md:p-10 bg-white space-y-4">
-      <div class="newsletter-success hidden rounded-lg border border-green-300 bg-green-50 p-4 text-green-800">Vielen Dank. Ihre Anmeldung wurde übermittelt.</div>
-      <div class="newsletter-error hidden rounded-lg border border-red-300 bg-red-50 p-4 text-red-800">Die Anmeldung konnte nicht übermittelt werden.</div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4"><input name="first_name" class="lead-input" placeholder="Vorname"><input name="last_name" class="lead-input" placeholder="Nachname"></div>
+      <div class="newsletter-success hidden rounded-lg border border-green-300 bg-green-50 p-4 text-green-800">
+        Vielen Dank. Ihre Anmeldung wurde übermittelt.
+      </div>
+      <div class="newsletter-error hidden rounded-lg border border-red-300 bg-red-50 p-4 text-red-800">
+        Die Anmeldung konnte nicht übermittelt werden.
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input name="first_name" class="lead-input" placeholder="Vorname">
+        <input name="last_name" class="lead-input" placeholder="Nachname">
+      </div>
+
       <input type="email" name="email" class="lead-input" required placeholder="E-Mail-Adresse *">
       <input type="tel" name="phone" class="lead-input" placeholder="Telefonnummer optional">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4"><select name="marketing_type" class="lead-select"><option value="BUY">Kauf</option><option value="RENT">Miete</option></select><select name="property_type" class="lead-select"><option value="Eigentumswohnung">Eigentumswohnung</option><option value="Haus">Haus</option><option value="Mehrfamilienhaus">Mehrfamilienhaus</option><option value="Grundstück">Grundstück</option></select></div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <select name="marketing_type" class="lead-select">
+          <option value="BUY">Kauf</option>
+          <option value="RENT">Miete</option>
+        </select>
+        <select name="property_type" class="lead-select">
+          <option value="Wohnung">Wohnung</option>
+          <option value="Haus">Haus</option>
+          <option value="Mehrfamilienhaus">Mehrfamilienhaus</option>
+          <option value="Grundstück">Grundstück</option>
+          <option value="Gewerbe">Gewerbe</option>
+          <option value="Kapitalanlage">Kapitalanlage</option>
+          <option value="Sonstiges">Sonstiges</option>
+        </select>
+      </div>
+
       <input name="location" class="lead-input google-address" placeholder="Suchgebiet, z. B. Berlin, Potsdam">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4"><input name="budget" class="lead-input js-money" inputmode="numeric" placeholder="Budget"><input name="rooms" class="lead-input" inputmode="decimal" placeholder="Zimmer ab"><input name="living_space" class="lead-input" inputmode="numeric" placeholder="Fläche ab m²"></div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <input name="budget" class="lead-input js-money" inputmode="numeric" placeholder="Budget / Preis bis">
+        <input name="rooms" class="lead-input js-number" inputmode="decimal" placeholder="Zimmer ab">
+        <input name="living_space" class="lead-input js-number" inputmode="numeric" placeholder="Fläche ab m²">
+      </div>
+
       <textarea name="message" rows="3" class="lead-input" placeholder="Weitere Wünsche optional"></textarea>
-      <label class="flex items-start text-sm text-gray-700"><input type="checkbox" name="privacy_consent" value="true" required class="mt-1 mr-3"> <span>Ich möchte den Newsletter und Immobilienmailings erhalten und habe die <a href="/datenschutz.html" target="_blank" class="font-semibold text-primary hover:underline">Datenschutzerklärung</a> gelesen. *</span></label>
+
+      <label class="flex items-start text-sm text-gray-700 bg-gray-50 border border-gray-200 rounded-lg p-4">
+        <input type="checkbox" name="privacy_consent" value="true" required class="mt-1 mr-3">
+        <span>Ich möchte den Newsletter und Immobilienmailings erhalten und habe die <a href="/datenschutz.html" target="_blank" class="font-semibold text-primary hover:underline">Datenschutzerklärung</a> gelesen. *</span>
+      </label>
+
       <button class="btn-85 w-full py-3 rounded-lg font-bold text-primary" type="submit">Newsletter & Suchprofil anmelden</button>
     </form>
   </div>
 </section>
+
 <script>
-document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".newsletter-form").forEach(form=>{const success=form.querySelector(".newsletter-success"),error=form.querySelector(".newsletter-error");form.addEventListener("submit",async e=>{e.preventDefault();success.classList.add("hidden");error.classList.add("hidden");const fd=new FormData(form);const payload=Object.fromEntries(fd.entries());payload.privacy_consent=fd.get("privacy_consent")==="true";payload.source_url=location.href;try{const res=await fetch("/.netlify/functions/propstack-newsletter",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});const data=await res.json();if(!res.ok||!data.success)throw new Error(data.error||"Fehler");form.reset();success.classList.remove("hidden");}catch(err){console.error(err);error.classList.remove("hidden");}});});});
+(function(){
+  if (window.__fgNewsletterLoaded) return;
+  window.__fgNewsletterLoaded = true;
+
+  function ready(fn){ if(document.readyState !== "loading") fn(); else document.addEventListener("DOMContentLoaded", fn); }
+
+  ready(function(){
+    document.querySelectorAll(".newsletter-form").forEach(function(form){
+      const success = form.querySelector(".newsletter-success");
+      const error = form.querySelector(".newsletter-error");
+      const button = form.querySelector('button[type="submit"]');
+
+      form.querySelectorAll(".js-money").forEach(function(input){
+        input.addEventListener("input", function(){ input.value = input.value.replace(/[^\d.,]/g, ""); });
+        input.addEventListener("blur", function(){
+          const raw = input.value.replace(/[^0-9,.]/g, "");
+          const n = Number(raw.replace(/\./g, "").replace(",", "."));
+          if(!Number.isNaN(n) && n > 0){ input.value = new Intl.NumberFormat("de-DE", { style:"currency", currency:"EUR", minimumFractionDigits:2, maximumFractionDigits:2 }).format(n); }
+        });
+      });
+
+      form.querySelectorAll(".js-number").forEach(function(input){
+        input.addEventListener("input", function(){ input.value = input.value.replace(/[^\d.,]/g, ""); });
+      });
+
+      form.addEventListener("submit", async function(e){
+        e.preventDefault();
+        success.classList.add("hidden");
+        error.classList.add("hidden");
+        button.disabled = true;
+        button.textContent = "Wird übermittelt...";
+
+        const fd = new FormData(form);
+        const params = new URLSearchParams(location.search);
+
+        const payload = {
+          first_name: fd.get("first_name"),
+          last_name: fd.get("last_name"),
+          email: fd.get("email"),
+          phone: fd.get("phone"),
+          marketing_type: fd.get("marketing_type"),
+          property_type: fd.get("property_type"),
+          location: fd.get("location"),
+          budget: fd.get("budget"),
+          rooms: fd.get("rooms"),
+          living_space: fd.get("living_space"),
+          message: fd.get("message"),
+          privacy_consent: fd.get("privacy_consent") === "true",
+          source_url: location.href,
+          utm_source: params.get("utm_source") || "",
+          utm_medium: params.get("utm_medium") || "",
+          utm_campaign: params.get("utm_campaign") || "",
+          utm_content: params.get("utm_content") || "",
+          utm_term: params.get("utm_term") || ""
+        };
+
+        try {
+          const res = await fetch("/.netlify/functions/propstack-newsletter", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+          const result = await res.json();
+          if(!res.ok || !result.success) throw new Error(result.error || "Fehler");
+          form.reset();
+          success.classList.remove("hidden");
+        } catch(err) {
+          console.error(err);
+          error.classList.remove("hidden");
+        } finally {
+          button.disabled = false;
+          button.textContent = "Newsletter & Suchprofil anmelden";
+        }
+      });
+    });
+
+    if(window.google && google.maps && google.maps.places) {
+      document.querySelectorAll(".newsletter-form .google-address").forEach(function(input){
+        if(input.dataset.googleReady) return;
+        input.dataset.googleReady = "1";
+        const ac = new google.maps.places.Autocomplete(input, { types: ["(regions)"], componentRestrictions: { country: "de" } });
+        ac.addListener("place_changed", function(){
+          const place = ac.getPlace();
+          if(place && place.formatted_address) input.value = place.formatted_address;
+        });
+      });
+    }
+  });
+})();
 </script>
