@@ -7,7 +7,7 @@ const PROPSTACK_BASE_URL = process.env.PROPSTACK_API_BASE || "https://api.propst
  * Ziel:
  * - Kontakt zuverlässig anlegen/aktualisieren
  * - alle Formular-/Objektdaten verlustfrei im CRM speichern
- * - Käufer/Kapitalanlage: Suchprofil mit mehr Suchkriterien anlegen, wenn möglich
+ * - Käufer/Kapitalanlage: Suchprofil mit erweiterten Suchkriterien anlegen, wenn möglich
  * - Verkäufer/Vermieter/Finanzierung: als Kontakt + Bemerkung + Aufgabe speichern
  * - KEINE automatische Objektanlage per /units, damit Propstack keine fehlerhaften Objekte blockiert
  *
@@ -262,6 +262,7 @@ function buildContactPayloadWithoutCustomFields(lead, note) {
 
 function buildContactCustomFields(lead) {
   const details = lead.propertyDetails || {};
+  const buyer = getBuyerSearchDetails(details);
 
   return removeEmpty({
     website_lead: true,
@@ -280,12 +281,25 @@ function buildContactCustomFields(lead) {
     zeitrahmen: lead.timeframe,
     kontaktwunsch: lead.contactPreference,
 
-    zimmeranzahl: numberOrNull(details["buyer-rooms-from"]),
-    wohnflache: numberOrNull(details["buyer-living-space-from"]),
-    grundstucksflache: numberOrNull(details["buyer-plot-area-from"]),
-    balkon_terrasse: boolOrText(details["buyer-balcony"]),
-    objektzustand: clean(details["buyer-condition"]),
-    ausstattung: clean(details["buyer-condition"]),
+    // Käufer-/Suchprofil-Daten aus der erweiterten Landingpage
+    zimmeranzahl: buyer.roomsFrom,
+    wohnflache: buyer.livingSpaceFrom,
+    grundstucksflache: buyer.plotAreaFrom,
+    balkon_terrasse: buyer.balcony,
+    objektzustand: buyer.condition,
+    ausstattung: buyer.condition,
+
+    // Falls diese Custom Fields in Propstack existieren, werden sie sauber befüllt.
+    // Falls nicht, greift der Fallback und alle Werte bleiben trotzdem in Beschreibung/Aufgabe/Suchprofil erhalten.
+    etage: buyer.floor,
+    aufzug: buyer.elevator,
+    stellplatz: buyer.parking,
+    keller: buyer.basement,
+    garten: buyer.garden,
+    einbaukuche: buyer.kitchen,
+    barrierefrei: buyer.barrierFree,
+    badezimmer: buyer.bathroomsFrom,
+    schlafzimmer: buyer.bedroomsFrom,
 
     quelle_url: lead.sourceUrl,
     nachricht: lead.message,
@@ -320,12 +334,14 @@ function buildContactCustomFields(lead) {
       objectType: lead.objectType,
       location: lead.location,
       budget: lead.budget,
+      budgetNumber: lead.budgetNumber,
       timeframe: lead.timeframe,
       contactPreference: lead.contactPreference,
       newsletterConsent: lead.newsletterConsent,
       financingInterest: lead.financingInterest,
       propertyDetailsWanted: lead.propertyDetailsWanted,
       managementTakeover: lead.managementTakeover,
+      buyerSearchDetails: buyer,
       propertyDetails: lead.propertyDetails,
       sourceUrl: lead.sourceUrl,
       utmSource: lead.utmSource,
@@ -341,6 +357,62 @@ function buildContactCustomFields(lead) {
     utm_content: lead.utmContent,
     utm_term: lead.utmTerm,
   });
+}
+
+function getBuyerSearchDetails(details) {
+  return {
+    roomsFrom: numberOrNull(firstValue(details, [
+      "buyer-rooms-from", "buyer_rooms_from", "rooms_from", "zimmer_ab", "rooms"
+    ])),
+    livingSpaceFrom: numberOrNull(firstValue(details, [
+      "buyer-living-space-from", "buyer_living_space_from", "living_space_from", "wohnflaeche_ab", "wohnflache_ab", "area_from"
+    ])),
+    plotAreaFrom: numberOrNull(firstValue(details, [
+      "buyer-plot-area-from", "buyer_plot_area_from", "plot_area_from", "grundstueck_ab", "grundstuck_ab"
+    ])),
+    bedroomsFrom: numberOrNull(firstValue(details, [
+      "buyer-bedrooms-from", "buyer_bedrooms_from", "bedrooms_from", "schlafzimmer_ab"
+    ])),
+    bathroomsFrom: numberOrNull(firstValue(details, [
+      "buyer-bathrooms-from", "buyer_bathrooms_from", "bathrooms_from", "badezimmer_ab"
+    ])),
+    floor: clean(firstValue(details, [
+      "buyer-floor", "buyer_floor", "floor", "etage"
+    ])),
+    balcony: boolOrText(firstValue(details, [
+      "buyer-balcony", "buyer_balcony", "balcony", "balkon_terrasse"
+    ])),
+    elevator: boolOrText(firstValue(details, [
+      "buyer-elevator", "buyer_elevator", "elevator", "aufzug"
+    ])),
+    parking: boolOrText(firstValue(details, [
+      "buyer-parking", "buyer_parking", "parking", "stellplatz"
+    ])),
+    basement: boolOrText(firstValue(details, [
+      "buyer-basement", "buyer_basement", "basement", "keller"
+    ])),
+    garden: boolOrText(firstValue(details, [
+      "buyer-garden", "buyer_garden", "garden", "garten"
+    ])),
+    kitchen: boolOrText(firstValue(details, [
+      "buyer-kitchen", "buyer_kitchen", "kitchen", "einbaukueche", "einbaukuche"
+    ])),
+    barrierFree: boolOrText(firstValue(details, [
+      "buyer-barrier-free", "buyer_barrier_free", "barrier_free", "barrierefrei"
+    ])),
+    condition: clean(firstValue(details, [
+      "buyer-condition", "buyer_condition", "condition", "objektzustand"
+    ])),
+  };
+}
+
+function firstValue(object, keys) {
+  for (const key of keys) {
+    if (object && object[key] !== undefined && object[key] !== null && clean(object[key]) !== "") {
+      return object[key];
+    }
+  }
+  return "";
 }
 
 function buildNote(lead) {
@@ -454,16 +526,13 @@ async function maybeCreateSearchProfile(apiKey, contactId, lead, note) {
   }
 
   const city = extractCity(lead.location);
-  const details = lead.propertyDetails || {};
-
-  const roomsFrom = numberOrNull(details["buyer-rooms-from"]);
-  const livingSpaceFrom = numberOrNull(details["buyer-living-space-from"]);
-  const plotAreaFrom = numberOrNull(details["buyer-plot-area-from"]);
-  const balcony = boolOrText(details["buyer-balcony"]);
-  const elevator = boolOrText(details["buyer-elevator"]);
-  const condition = clean(details["buyer-condition"]);
+  const buyer = getBuyerSearchDetails(lead.propertyDetails || {});
   const rsType = mapRsType(lead.objectType);
+  const objectTypes = mapObjectTypeList(lead.objectType);
 
+  // Wichtig: Propstack akzeptiert je nach Account/Version nicht jedes Suchprofil-Feld.
+  // Deshalb versucht der Code zuerst eine reichere Variante und fällt danach automatisch
+  // auf schlankere Varianten zurück. So bricht der Lead nicht ab.
   const richSavedQuery = removeEmpty({
     client_id: contactId,
     active: true,
@@ -472,17 +541,28 @@ async function maybeCreateSearchProfile(apiKey, contactId, lead, note) {
     regions: lead.location ? [lead.location] : undefined,
     price_to: lead.budgetNumber,
     rs_types: rsType ? [rsType] : undefined,
+    object_types: objectTypes.length ? objectTypes : undefined,
 
-    // Diese Felder versucht der Code zuerst. Falls Propstack einzelne Felder nicht akzeptiert,
-    // fällt der Code automatisch auf eine schlankere Suchprofil-Version zurück.
-    rooms_from: roomsFrom,
-    number_of_rooms_from: roomsFrom,
-    living_space_from: livingSpaceFrom,
-    plot_area_from: plotAreaFrom,
-    property_space_from: plotAreaFrom,
-    balcony,
-    elevator,
-    condition,
+    rooms_from: buyer.roomsFrom,
+    number_of_rooms_from: buyer.roomsFrom,
+    living_space_from: buyer.livingSpaceFrom,
+    property_space_from: buyer.plotAreaFrom,
+    plot_area_from: buyer.plotAreaFrom,
+    bedrooms_from: buyer.bedroomsFrom,
+    bathrooms_from: buyer.bathroomsFrom,
+
+    balcony: buyer.balcony,
+    terrace: buyer.balcony,
+    elevator: buyer.elevator,
+    lift: buyer.elevator,
+    parking: buyer.parking,
+    basement: buyer.basement,
+    cellar: buyer.basement,
+    garden: buyer.garden,
+    fitted_kitchen: buyer.kitchen,
+    barrier_free: buyer.barrierFree,
+    condition: buyer.condition,
+    property_condition: buyer.condition,
 
     note,
     internal_note: note,
@@ -496,8 +576,8 @@ async function maybeCreateSearchProfile(apiKey, contactId, lead, note) {
     regions: lead.location ? [lead.location] : undefined,
     price_to: lead.budgetNumber,
     rs_types: rsType ? [rsType] : undefined,
-    rooms_from: roomsFrom,
-    living_space_from: livingSpaceFrom,
+    rooms_from: buyer.roomsFrom,
+    living_space_from: buyer.livingSpaceFrom,
     note,
     internal_note: note,
   });
@@ -729,6 +809,25 @@ function mapRsType(value) {
   return "APARTMENT";
 }
 
+function mapObjectTypeList(value) {
+  const text = normalize(value);
+
+  if (text.includes("dachgeschoss")) return ["ROOF_STOREY"];
+  if (text.includes("loft")) return ["LOFT"];
+  if (text.includes("maisonette")) return ["MAISONETTE"];
+  if (text.includes("penthouse")) return ["PENTHOUSE"];
+  if (text.includes("terrassenwohnung")) return ["TERRACE_FLAT"];
+  if (text.includes("erdgeschoss")) return ["GROUND_FLOOR"];
+  if (text.includes("mehrfamilien")) return ["MULTI_FAMILY_HOUSE"];
+  if (text.includes("einfamilien") || text === "haus" || text.includes("haus")) return ["SINGLE_FAMILY_HOUSE"];
+  if (text.includes("grund")) return ["PLOT"];
+  if (text.includes("gewerbe")) return ["COMMERCIAL_UNIT"];
+  if (text.includes("kapital") || text.includes("anlage")) return ["INVEST_FREEHOLD_FLAT"];
+  if (text.includes("wohnung")) return ["APARTMENT"];
+
+  return [];
+}
+
 function getId(response, keys) {
   if (!response) return null;
   if (response.id) return response.id;
@@ -862,4 +961,3 @@ function json(statusCode, body) {
     body: JSON.stringify(body),
   };
 }
-
