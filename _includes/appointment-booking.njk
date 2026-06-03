@@ -1,153 +1,73 @@
-<section id="terminbuchung" class="container mx-auto px-4 py-16">
-  <div class="appointment-shell">
-    <div class="appointment-card grid grid-cols-1 lg:grid-cols-2">
-      <div class="bg-primary text-white p-8 md:p-12 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20">
-          <img src="/images/berlinskypng.png" alt="Ankaufsberatung Termin" class="w-full h-full object-cover">
-        </div>
-        <div class="relative z-10">
-          <p class="text-secondary uppercase tracking-wide font-semibold text-sm mb-3">Direkte Terminbuchung</p>
-          <h2 class="text-3xl md:text-4xl font-extrabold mb-5">Termin für Ihre Ankaufsberatung auswählen.</h2>
-          <p class="text-page-bg leading-relaxed mb-6">
-            Wählen Sie Ihren Wunschtermin aus. Wir legen den Kontakt und den Terminwunsch im CRM an und bestätigen den Termin persönlich über info@fg-realestate.de.
-          </p>
-          <div class="space-y-3 text-page-bg">
-            <p><i class="fas fa-check text-secondary mr-2"></i>CRM-Kontakt mit Terminwunsch</p>
-            <p><i class="fas fa-check text-secondary mr-2"></i>Aufgabe zur Terminprüfung</p>
-            <p><i class="fas fa-check text-secondary mr-2"></i>E-Mail-Benachrichtigung an info@fg-realestate.de</p>
+<section id="terminbuchung" class="appointment-booking-section container mx-auto px-4 py-14 md:py-20">
+  <div class="appointment-shell overflow-hidden rounded-3xl border border-accent/40 bg-white shadow-2xl">
+    <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[620px]">
+      <div class="relative lg:col-span-5 bg-primary text-white p-8 md:p-12 overflow-hidden">
+        <div class="absolute inset-0 opacity-30"><img src="/images/berlinskypng.png" alt="Berlin Immobilienberatung" class="w-full h-full object-cover"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/80"></div>
+        <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-secondary/20 blur-3xl"></div>
+        <div class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-white/10 blur-3xl"></div>
+
+        <div class="relative z-10 h-full flex flex-col justify-between">
+          <div>
+            <p class="text-secondary uppercase tracking-[0.18em] text-xs font-bold mb-4">Direkte Terminbuchung</p>
+            <h2 class="text-3xl md:text-5xl font-extrabold leading-tight mb-6">Beratungstermin für Ihre Immobilie anfragen.</h2>
+            <p class="text-page-bg/90 text-base md:text-lg leading-relaxed mb-9">Wählen Sie Ihren Wunschtermin. Wir legen den Kontakt samt Terminwunsch im CRM an und bestätigen den Termin persönlich über info@fg-realestate.de.</p>
+            <div class="space-y-4">
+              <div class="appointment-benefit"><i class="fas fa-check text-secondary"></i><span>CRM-Kontakt mit vollständigem Terminwunsch</span></div>
+              <div class="appointment-benefit"><i class="fas fa-check text-secondary"></i><span>Aufgabe zur Terminprüfung im Propstack</span></div>
+              <div class="appointment-benefit"><i class="fas fa-check text-secondary"></i><span>E-Mail-Benachrichtigung an info@fg-realestate.de</span></div>
+            </div>
+          </div>
+          <div class="mt-10 rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur">
+            <p class="text-secondary font-bold mb-2">Hinweis</p>
+            <p class="text-sm text-page-bg/90 leading-relaxed">Der Termin ist zunächst eine Anfrage. Die finale Bestätigung erhalten Sie persönlich von unserem Team.</p>
           </div>
         </div>
       </div>
 
-      <form class="appointment-form p-8 md:p-12 bg-white space-y-4">
-        <div class="appointment-success hidden rounded-lg border border-green-300 bg-green-50 p-4 text-green-800">
-          Vielen Dank. Ihr Terminwunsch wurde übermittelt.
+      <div class="relative lg:col-span-7 bg-[#fbfaf7] p-7 md:p-12 overflow-hidden">
+        <div class="absolute top-0 right-0 w-80 h-80 rounded-full bg-secondary/10 blur-3xl"></div>
+        <div class="absolute bottom-0 left-8 w-72 h-72 rounded-full bg-primary/5 blur-3xl"></div>
+        <div class="relative z-10 max-w-3xl mx-auto">
+          <div class="mb-8">
+            <div class="inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/10 px-4 py-2 mb-4"><span class="h-2 w-2 rounded-full bg-secondary"></span><span class="text-xs font-bold uppercase tracking-[0.16em] text-primary">Terminwunsch</span></div>
+            <h3 class="text-3xl md:text-4xl font-extrabold text-primary leading-tight">Wann passt es Ihnen am besten?</h3>
+            <p class="mt-3 text-gray-600">Füllen Sie die wichtigsten Angaben aus. Wir prüfen den Termin und melden uns persönlich zurück.</p>
+          </div>
+
+          <div class="appointment-success hidden mb-6 rounded-2xl border border-green-300 bg-green-50 p-5 text-green-800"><h4 class="font-bold text-lg mb-1">Terminwunsch wurde übermittelt.</h4><p>Wir melden uns zeitnah persönlich mit einer Bestätigung.</p></div>
+          <div class="appointment-error hidden mb-6 rounded-2xl border border-red-300 bg-red-50 p-5 text-red-800"><h4 class="font-bold text-lg mb-1">Terminwunsch konnte nicht gesendet werden.</h4><p>Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per E-Mail.</p></div>
+
+          <form class="appointment-form space-y-5">
+            <input type="hidden" name="source_url" value="">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="appointment-field"><label>Vorname *</label><input type="text" name="first_name" required placeholder="Vorname"></div>
+              <div class="appointment-field"><label>Nachname *</label><input type="text" name="last_name" required placeholder="Nachname"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="appointment-field"><label>E-Mail-Adresse *</label><input type="email" name="email" required placeholder="name@email.de"></div>
+              <div class="appointment-field"><label>Telefonnummer</label><input type="tel" name="phone" placeholder="Telefonnummer"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="appointment-field"><label>Wunschtermin *</label><input type="date" name="date" required></div>
+              <div class="appointment-field"><label>Uhrzeit *</label><select name="time" required><option value="">Bitte auswählen</option><option value="09:00">09:00 Uhr</option><option value="10:00">10:00 Uhr</option><option value="11:00">11:00 Uhr</option><option value="12:00">12:00 Uhr</option><option value="13:00">13:00 Uhr</option><option value="14:00">14:00 Uhr</option><option value="15:00">15:00 Uhr</option><option value="16:00">16:00 Uhr</option><option value="17:00">17:00 Uhr</option><option value="18:00">18:00 Uhr</option></select></div>
+            </div>
+            <div class="appointment-field"><label>Objektadresse oder Suchgebiet</label><input type="text" name="location" placeholder="z. B. Berlin, Potsdam oder konkrete Objektadresse"></div>
+            <div class="appointment-field"><label>Anliegen</label><select name="topic"><option value="Ankaufsberatung">Ankaufsberatung</option><option value="Kapitalanlage">Kapitalanlage</option><option value="Eigennutzung">Eigennutzung</option><option value="Finanzierung">Finanzierung</option><option value="Verkauf">Verkauf</option></select></div>
+            <div class="appointment-field"><label>Kurze Beschreibung Ihres Anliegens</label><textarea name="message" rows="5" placeholder="z. B. Ich suche eine Kapitalanlage in Berlin bis 500.000 € oder möchte eine konkrete Immobilie prüfen lassen."></textarea></div>
+            <label class="appointment-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Terminbearbeitung zu. *</span></label>
+            <button type="submit" class="appointment-submit btn-85 w-full rounded-xl px-8 py-4 font-extrabold text-primary shadow-lg">Terminwunsch senden</button>
+          </form>
         </div>
-        <div class="appointment-error hidden rounded-lg border border-red-300 bg-red-50 p-4 text-red-800">
-          Der Terminwunsch konnte nicht übermittelt werden.
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input name="first_name" class="appointment-input" required placeholder="Vorname *">
-          <input name="last_name" class="appointment-input" required placeholder="Nachname *">
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input type="email" name="email" class="appointment-input" required placeholder="E-Mail-Adresse *">
-          <input type="tel" name="phone" class="appointment-input" placeholder="Telefonnummer">
-        </div>
-
-        <select name="appointment_type" class="appointment-select" required>
-          <option value="">Terminart wählen *</option>
-          <option value="Ankaufsberatung Kapitalanleger">Ankaufsberatung Kapitalanleger</option>
-          <option value="Ankaufsberatung Eigennutzer">Ankaufsberatung Eigennutzer</option>
-          <option value="Finanzierungsberatung">Finanzierungsberatung</option>
-          <option value="Allgemeines Erstgespräch">Allgemeines Erstgespräch</option>
-        </select>
-
-        <input type="text" name="address" class="appointment-input google-address" placeholder="Objektadresse / Suchgebiet">
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input type="date" name="preferred_date" class="appointment-input" required>
-          <select name="preferred_time" class="appointment-select" required>
-            <option value="">Uhrzeit wählen *</option>
-            <option value="09:00">09:00</option>
-            <option value="10:00">10:00</option>
-            <option value="11:00">11:00</option>
-            <option value="12:00">12:00</option>
-            <option value="14:00">14:00</option>
-            <option value="15:00">15:00</option>
-            <option value="16:00">16:00</option>
-            <option value="17:00">17:00</option>
-          </select>
-        </div>
-
-        <textarea name="message" rows="4" class="appointment-textarea" placeholder="Kurzinfo zu Ihrem Anliegen"></textarea>
-
-        <label class="flex items-start gap-3 text-sm text-gray-700 bg-gray-50 border border-gray-200 rounded-lg p-4">
-          <input type="checkbox" name="privacy_consent" value="true" required class="mt-1">
-          <span>Ich habe die <a href="/datenschutz.html" target="_blank" class="font-bold text-primary hover:underline">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Terminbearbeitung zu. *</span>
-        </label>
-
-        <button type="submit" class="btn-85 w-full py-3 rounded-lg text-primary font-bold">Terminwunsch senden</button>
-      </form>
+      </div>
     </div>
   </div>
 </section>
 
+<style>
+.appointment-benefit{display:flex;align-items:flex-start;gap:.85rem;color:rgba(247,247,247,.95);font-weight:700;line-height:1.45}.appointment-field label{display:block;margin-bottom:.45rem;color:#070735;font-weight:800;font-size:.86rem}.appointment-field input,.appointment-field select,.appointment-field textarea{width:100%;border:1px solid rgba(7,7,53,.16);background:#fff;border-radius:.95rem;padding:.95rem 1rem;color:#070735;font-weight:600;outline:none;box-shadow:0 8px 22px rgba(7,7,53,.04);transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}.appointment-field input:focus,.appointment-field select:focus,.appointment-field textarea:focus{border-color:rgba(184,134,11,.65);box-shadow:0 0 0 4px rgba(184,134,11,.13),0 12px 28px rgba(7,7,53,.08);transform:translateY(-1px)}.appointment-field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#070735 50%),linear-gradient(135deg,#070735 50%,transparent 50%);background-position:calc(100% - 22px) calc(50% + 1px),calc(100% - 16px) calc(50% + 1px);background-size:6px 6px,6px 6px;background-repeat:no-repeat}.appointment-consent{display:flex;align-items:flex-start;gap:.85rem;border:1px solid rgba(7,7,53,.12);background:#fff;border-radius:1rem;padding:1rem;color:#333;font-size:.9rem;line-height:1.45}.appointment-consent input{margin-top:.2rem;width:1rem;height:1rem}.appointment-consent a{color:#070735;font-weight:900;text-decoration:underline}
+</style>
+
 <script>
-(function(){
-  if (window.__fgAppointmentLoaded) return;
-  window.__fgAppointmentLoaded = true;
-
-  function ready(fn){ if(document.readyState !== "loading") fn(); else document.addEventListener("DOMContentLoaded", fn); }
-
-  ready(function(){
-    document.querySelectorAll(".appointment-form").forEach(function(form){
-      const success = form.querySelector(".appointment-success");
-      const error = form.querySelector(".appointment-error");
-      const button = form.querySelector('button[type="submit"]');
-
-      form.addEventListener("submit", async function(e){
-        e.preventDefault();
-        success.classList.add("hidden");
-        error.classList.add("hidden");
-        button.disabled = true;
-        button.textContent = "Wird übermittelt...";
-
-        const fd = new FormData(form);
-        const params = new URLSearchParams(location.search);
-
-        const payload = {
-          first_name: fd.get("first_name"),
-          last_name: fd.get("last_name"),
-          email: fd.get("email"),
-          phone: fd.get("phone"),
-          appointment_type: fd.get("appointment_type"),
-          address: fd.get("address"),
-          preferred_date: fd.get("preferred_date"),
-          preferred_time: fd.get("preferred_time"),
-          message: fd.get("message"),
-          privacy_consent: fd.get("privacy_consent") === "true",
-          source_url: location.href,
-          utm_source: params.get("utm_source") || "",
-          utm_medium: params.get("utm_medium") || "",
-          utm_campaign: params.get("utm_campaign") || "",
-          utm_content: params.get("utm_content") || "",
-          utm_term: params.get("utm_term") || ""
-        };
-
-        try {
-          const res = await fetch("/.netlify/functions/propstack-appointment", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-          });
-          const result = await res.json();
-          if (!res.ok || !result.success) throw new Error(result.error || "Fehler");
-          form.reset();
-          success.classList.remove("hidden");
-        } catch(err) {
-          console.error(err);
-          error.classList.remove("hidden");
-        } finally {
-          button.disabled = false;
-          button.textContent = "Terminwunsch senden";
-        }
-      });
-    });
-
-    if(window.google && google.maps && google.maps.places) {
-      document.querySelectorAll(".appointment-form .google-address").forEach(function(input){
-        if(input.dataset.googleReady) return;
-        input.dataset.googleReady = "1";
-        const ac = new google.maps.places.Autocomplete(input, { types: ["address"], componentRestrictions: { country: "de" } });
-        ac.addListener("place_changed", function(){
-          const place = ac.getPlace();
-          if(place && place.formatted_address) input.value = place.formatted_address;
-        });
-      });
-    }
-  });
-})();
+(function(){function ready(fn){if(document.readyState!=="loading")fn();else document.addEventListener("DOMContentLoaded",fn)}ready(function(){document.querySelectorAll(".appointment-form").forEach(function(form){const section=form.closest(".appointment-booking-section");const success=section.querySelector(".appointment-success");const error=section.querySelector(".appointment-error");const submit=form.querySelector(".appointment-submit");const source=form.querySelector('input[name="source_url"]');if(source)source.value=window.location.href;form.addEventListener("submit",async function(event){event.preventDefault();success.classList.add("hidden");error.classList.add("hidden");submit.disabled=true;submit.textContent="Wird übermittelt...";const fd=new FormData(form);const payload={first_name:fd.get("first_name"),last_name:fd.get("last_name"),email:fd.get("email"),phone:fd.get("phone"),date:fd.get("date"),time:fd.get("time"),location:fd.get("location"),topic:fd.get("topic"),message:fd.get("message"),source_url:window.location.href,privacy_consent:fd.get("privacy_consent")==="true"};try{const res=await fetch("/.netlify/functions/propstack-appointment",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});const result=await res.json();if(!res.ok||!result.success)throw new Error(result.error||"Termin konnte nicht gespeichert werden.");form.reset();if(source)source.value=window.location.href;success.classList.remove("hidden");success.scrollIntoView({behavior:"smooth",block:"center"})}catch(err){console.error(err);error.classList.remove("hidden");error.scrollIntoView({behavior:"smooth",block:"center"})}finally{submit.disabled=false;submit.textContent="Terminwunsch senden"}})})})})();
 </script>
