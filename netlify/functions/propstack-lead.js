@@ -8,7 +8,8 @@ const PROPSTACK_BASE_URL = process.env.PROPSTACK_API_BASE || "https://api.propst
  * - Kontakt zuverlässig anlegen/aktualisieren
  * - alle Formular-/Objektdaten verlustfrei im CRM speichern
  * - Käufer/Kapitalanlage: Suchprofil mit erweiterten Suchkriterien anlegen, wenn möglich
- * - Verkäufer/Vermieter/Finanzierung: als Kontakt + Bemerkung + Aufgabe speichern
+ * - Verkäufer/Vermieter: Kontakt wird als Eigentümer markiert + Bemerkung + Aufgabe
+ * - Finanzierung: wird deutlich am Kontakt/Custom Field/Warnhinweis markiert
  * - KEINE automatische Objektanlage per /units, damit Propstack keine fehlerhaften Objekte blockiert
  *
  * Objektanlage wird später separat richtig gebaut:
@@ -167,6 +168,12 @@ function normalizeLeadPayload(data) {
     data.newsletter === true ||
     data.newsletter === "true";
 
+  const hasFinancingInterest =
+    concernType === "finance" ||
+    isAffirmative(financingInterest) ||
+    isAffirmative(data.financing_interest) ||
+    isAffirmative(data.financingInterest);
+
   const fullName = `${firstName} ${lastName}`.trim();
   const hasPropertyDetails = Object.values(propertyDetails).some((value) => clean(value));
   const hasAnyObjectSignal = hasPropertyDetails || Boolean(location) || Boolean(objectType) || Boolean(budget);
@@ -199,9 +206,17 @@ function normalizeLeadPayload(data) {
     documents,
     consent,
     newsletterConsent,
+    hasFinancingInterest,
     hasPropertyDetails,
     hasAnyObjectSignal,
   };
+}
+
+function getWarningNotice(lead) {
+  if (lead.concernType === "sell") return "Eigentümer-Lead prüfen";
+  if (lead.concernType === "rent") return "Vermietungs-/Eigentümer-Lead prüfen";
+  if (lead.hasFinancingInterest) return "Website Lead prüfen – Finanzierung gewünscht";
+  return "Website Lead prüfen";
 }
 
 function buildContactPayload(lead, note) {
@@ -219,7 +234,7 @@ function buildContactPayload(lead, note) {
       source: "Website Landingpage",
       description: note,
       note,
-      warning_notice: "Website Lead prüfen",
+      warning_notice: getWarningNotice(lead),
 
       buyer: isBuyerLike,
       owner: isOwnerLike,
@@ -249,7 +264,7 @@ function buildContactPayloadWithoutCustomFields(lead, note) {
       source: "Website Landingpage",
       description: note,
       note,
-      warning_notice: "Website Lead prüfen",
+      warning_notice: getWarningNotice(lead),
       buyer: isBuyerLike,
       owner: isOwnerLike,
       newsletter: lead.newsletterConsent,
@@ -308,10 +323,10 @@ function buildContactCustomFields(lead) {
     newsletter_gewuenscht: lead.newsletterConsent,
     immobilienmailing_gewuenscht: lead.newsletterConsent,
 
-    finanzierungsberatung_gewunscht:
-      lead.concernType === "finance" ? "Ja" : lead.financingInterest,
-    finanzierung_interesse:
-      lead.concernType === "finance" ? "Ja" : lead.financingInterest,
+    finanzierungsberatung_gewunscht: lead.hasFinancingInterest ? "Ja" : "Nein",
+    finanzierung_interesse: lead.hasFinancingInterest ? "Ja" : "Nein",
+    finanzierung_interessiert: lead.hasFinancingInterest,
+    finanzierung_lead: lead.concernType === "finance",
     finanzierung_objekt_vorhanden: boolOrText(clean(details.financing_object_available || details["visible-financing-object"])),
     finanzierung_eigenkapital_notiz: clean(details.financing_equity_note || details["visible-financing-equity"]),
     finanzierung_kaufpreis: lead.concernType === "finance" ? lead.budget : undefined,
@@ -339,6 +354,7 @@ function buildContactCustomFields(lead) {
       contactPreference: lead.contactPreference,
       newsletterConsent: lead.newsletterConsent,
       financingInterest: lead.financingInterest,
+      hasFinancingInterest: lead.hasFinancingInterest,
       propertyDetailsWanted: lead.propertyDetailsWanted,
       managementTakeover: lead.managementTakeover,
       buyerSearchDetails: buyer,
@@ -434,9 +450,7 @@ function buildNote(lead) {
     `Zeitrahmen: ${lead.timeframe || "-"}`,
     `Kontaktwunsch: ${lead.contactPreference || "-"}`,
     `Newsletter / Immobilienmailing: ${lead.newsletterConsent ? "Ja" : "Nein"}`,
-    `Interesse an Finanzierungsberatung: ${
-      lead.concernType === "finance" ? "Ja" : lead.financingInterest || "-"
-    }`,
+    `Interesse an Finanzierungsberatung: ${lead.hasFinancingInterest ? "Ja" : "Nein"}`,
     `Weitere Objektdaten angegeben: ${lead.propertyDetailsWanted || "-"}`,
     `Verwaltungsübernahme interessant ab: ${lead.managementTakeover || "-"}`,
     "",
@@ -668,6 +682,9 @@ async function safeCreateFollowUpTask(apiKey, contactId, lead, note) {
 
 function getTaskTitle(lead) {
   const type = mapLandingpageType(lead.concernType);
+  if (lead.concernType === "sell") return `Eigentümer-Lead prüfen: Verkauf – ${lead.fullName}`;
+  if (lead.concernType === "rent") return `Eigentümer-Lead prüfen: Vermietung – ${lead.fullName}`;
+  if (lead.hasFinancingInterest) return `Finanzierung prüfen: ${type} – ${lead.fullName}`;
   return `Website Lead prüfen: ${type} – ${lead.fullName}`;
 }
 
@@ -871,6 +888,11 @@ function numberOrNull(value) {
 
   const number = Number(text);
   return Number.isNaN(number) ? null : number;
+}
+
+function isAffirmative(value) {
+  const text = normalize(value);
+  return text === "ja" || text === "true" || text === "1" || text === "yes" || text.includes("finanzierung") || text.includes("gewunscht") || text.includes("interessiert");
 }
 
 function boolOrText(value) {
