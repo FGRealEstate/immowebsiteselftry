@@ -55,6 +55,16 @@ gtag('config', 'G-7GNF8PH36F', {
     </script>
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script>
+window.FG_GOOGLE_MAPS_API_KEY = ""; // optional: Google Maps Places API Key eintragen und per HTTP-Referrer auf fg-realestate.de beschränken
+(function(){
+  if(!window.FG_GOOGLE_MAPS_API_KEY) return;
+  var s=document.createElement("script");
+  s.src="https://maps.googleapis.com/maps/api/js?key="+encodeURIComponent(window.FG_GOOGLE_MAPS_API_KEY)+"&libraries=places";
+  s.async=true; s.defer=true; document.head.appendChild(s);
+})();
+</script>
 </head>
 <body class="site-background">
 
