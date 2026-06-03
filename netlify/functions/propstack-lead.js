@@ -10,6 +10,7 @@ const PROPSTACK_BASE_URL = process.env.PROPSTACK_API_BASE || "https://api.propst
  * - Käufer/Kapitalanlage: Suchprofil mit erweiterten Suchkriterien anlegen, wenn möglich
  * - Verkäufer/Vermieter: Kontakt wird als Eigentümer markiert + Bemerkung + Aufgabe
  * - Finanzierung: wird deutlich am Kontakt/Custom Field/Warnhinweis markiert
+ * - Objektanlage V2: keine invaliden Felder property_space_value/internal_note/name mehr
  * - KEINE automatische Objektanlage per /units, damit Propstack keine fehlerhaften Objekte blockiert
  *
  * Objektanlage wird später separat richtig gebaut:
@@ -540,6 +541,7 @@ async function maybeCreateOwnerProperty(apiKey, contactId, lead, note) {
     { label: "full property", payload: { property } },
     { label: "without status", payload: { property: omitKeys(property, ["status_id", "property_status_id"]) } },
     { label: "without custom fields", payload: { property: omitKeys(property, ["partial_custom_fields", "status_id", "property_status_id"]) } },
+    { label: "without category", payload: { property: omitKeys(property, ["partial_custom_fields", "status_id", "property_status_id", "rs_category", "country"]) } },
     {
       label: "minimal owner property",
       payload: {
@@ -549,11 +551,23 @@ async function maybeCreateOwnerProperty(apiKey, contactId, lead, note) {
           marketing_type: property.marketing_type,
           object_type: property.object_type,
           rs_type: property.rs_type,
-          rs_category: property.rs_category,
           city: property.city,
           address: property.address,
           note,
-          internal_note: note,
+          relationships_attributes: property.relationships_attributes,
+        }),
+      },
+    },
+    {
+      label: "ultra minimal owner property",
+      payload: {
+        property: removeEmpty({
+          title: property.title,
+          marketing_type: property.marketing_type,
+          object_type: property.object_type,
+          rs_type: property.rs_type,
+          city: property.city,
+          address: property.address,
           relationships_attributes: property.relationships_attributes,
         }),
       },
@@ -607,7 +621,6 @@ async function buildOwnerPropertyPayload(apiKey, contactId, lead, note) {
     base_rent: coldRent,
     cold_rent: coldRent,
     living_space: numberOrNull(firstValue(details, ["seller-area-value", "seller_area_value", "living_space", "wohnflaeche"])),
-    property_space_value: numberOrNull(firstValue(details, ["seller-area-value", "seller_area_value", "living_space", "wohnflaeche"])),
     plot_area: numberOrNull(firstValue(details, ["seller-plot-area", "seller_plot_area", "plot_area", "grundstuecksflaeche"])),
     number_of_rooms: shouldUseRoomsForObject(lead.objectType) ? numberOrNull(firstValue(details, ["seller-rooms", "seller_rooms", "rooms", "zimmer"] )) : undefined,
     construction_year: numberOrNull(firstValue(details, ["seller-year", "seller_year", "construction_year", "baujahr"])),
@@ -618,8 +631,6 @@ async function buildOwnerPropertyPayload(apiKey, contactId, lead, note) {
     balcony_area: numberOrNull(firstValue(details, ["seller-balcony-area", "seller_balcony_area", "balcony_area"])),
 
     note,
-    internal_note: note,
-    description_note: note,
     status_id: statusId || undefined,
     property_status_id: statusId || undefined,
 
