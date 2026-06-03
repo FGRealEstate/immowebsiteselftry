@@ -540,7 +540,8 @@ async function maybeCreateOwnerProperty(apiKey, contactId, lead, note) {
   const attempts = [
     { label: "full property", payload: { property } },
     { label: "without status", payload: { property: omitKeys(property, ["status_id", "property_status_id"]) } },
-    { label: "without custom fields", payload: { property: omitKeys(property, ["partial_custom_fields", "status_id", "property_status_id"]) } },
+    { label: "without optional standard fields", payload: { property: omitKeys(property, ["status_id", "property_status_id", "base_rent", "net_cold_rent", "rent", "target_cold_rent", "service_charge", "annual_net_rent", "target_annual_net_rent", "balcony_area", "furnishing_quality", "last_modernization", "rs_category", "country"]) } },
+    { label: "without custom fields", payload: { property: omitKeys(property, ["partial_custom_fields", "status_id", "property_status_id", "base_rent", "net_cold_rent", "rent", "target_cold_rent", "service_charge", "annual_net_rent", "target_annual_net_rent", "rs_category", "country"]) } },
     { label: "without category", payload: { property: omitKeys(property, ["partial_custom_fields", "status_id", "property_status_id", "rs_category", "country"]) } },
     {
       label: "minimal owner property",
@@ -603,7 +604,11 @@ async function buildOwnerPropertyPayload(apiKey, contactId, lead, note) {
   const address = lead.location || undefined;
   const city = extractCity(lead.location) || undefined;
   const priceNumber = lead.concernType === "sell" ? lead.budgetNumber : undefined;
-  const coldRent = lead.concernType === "rent" ? lead.budgetNumber : undefined;
+  const coldRent = numberOrNull(firstValue(details, ["seller-cold-rent", "seller_cold_rent", "cold_rent", "net_cold_rent"])) || (lead.concernType === "rent" ? lead.budgetNumber : undefined);
+  const coldRentTarget = numberOrNull(firstValue(details, ["seller-cold-rent-target", "seller_cold_rent_target", "target_cold_rent"]));
+  const netRentCurrent = numberOrNull(firstValue(details, ["seller-net-rent-current", "seller_net_rent_current", "net_rent_current"]));
+  const netRentTarget = numberOrNull(firstValue(details, ["seller-net-rent-target", "seller_net_rent_target", "net_rent_target"]));
+  const serviceCharge = numberOrNull(firstValue(details, ["seller-service-charge", "seller_service_charge", "service_charge"]));
 
   const property = removeEmpty({
     title,
@@ -618,8 +623,14 @@ async function buildOwnerPropertyPayload(apiKey, contactId, lead, note) {
     country: "DEU",
 
     price: priceNumber,
-    base_rent: coldRent,
     cold_rent: coldRent,
+    base_rent: coldRent,
+    net_cold_rent: coldRent,
+    rent: coldRent,
+    target_cold_rent: coldRentTarget,
+    service_charge: serviceCharge,
+    annual_net_rent: netRentCurrent,
+    target_annual_net_rent: netRentTarget,
     living_space: numberOrNull(firstValue(details, ["seller-area-value", "seller_area_value", "living_space", "wohnflaeche"])),
     plot_area: numberOrNull(firstValue(details, ["seller-plot-area", "seller_plot_area", "plot_area", "grundstuecksflaeche"])),
     number_of_rooms: shouldUseRoomsForObject(lead.objectType) ? numberOrNull(firstValue(details, ["seller-rooms", "seller_rooms", "rooms", "zimmer"] )) : undefined,
@@ -663,15 +674,32 @@ function buildOwnerPropertyCustomFields(lead) {
     objektart: lead.objectType,
     immobilienart: objectMapping.pretty,
     flachenart: clean(firstValue(details, ["seller-area-type", "seller_area_type"])),
+    hausart: clean(firstValue(details, ["seller-house-subtype", "seller_house_subtype"])),
+    wohnungsart: clean(firstValue(details, ["seller-apartment-subtype", "seller_apartment_subtype"])),
+    etage: clean(firstValue(details, ["seller-floor", "seller_floor"])),
     objektzustand: clean(firstValue(details, ["seller-quality", "seller_quality", "quality"])),
     ausstattung: clean(firstValue(details, ["seller-quality", "seller_quality", "quality"])),
     wohnflache: numberOrNull(firstValue(details, ["seller-area-value", "seller_area_value"])),
     grundstucksflache: numberOrNull(firstValue(details, ["seller-plot-area", "seller_plot_area"])),
     zimmeranzahl: shouldUseRoomsForObject(lead.objectType) ? numberOrNull(firstValue(details, ["seller-rooms", "seller_rooms"] )) : undefined,
+    schlafzimmer: numberOrNull(firstValue(details, ["seller-bedrooms", "seller_bedrooms"])),
+    badezimmer: numberOrNull(firstValue(details, ["seller-bathrooms", "seller_bathrooms"])),
+    wohneinheiten: numberOrNull(firstValue(details, ["seller-units", "seller_units"])),
+    gewerbeeinheiten: numberOrNull(firstValue(details, ["seller-commercial-units", "seller_commercial_units"])),
+    nettokaltmiete_ist: numberOrNull(firstValue(details, ["seller-cold-rent", "seller_cold_rent", "seller-net-rent-current", "seller_net_rent_current"])),
+    nettokaltmiete_soll: numberOrNull(firstValue(details, ["seller-cold-rent-target", "seller_cold_rent_target", "seller-net-rent-target", "seller_net_rent_target"])),
+    hausgeld_nebenkosten: numberOrNull(firstValue(details, ["seller-service-charge", "seller_service_charge"])),
+    leerstand_notiz: clean(firstValue(details, ["seller-vacancy-note", "seller_vacancy_note"])),
+    grundstuecksart: clean(firstValue(details, ["seller-plot-type", "seller_plot_type"])),
+    erschliessung: clean(firstValue(details, ["seller-development-status", "seller_development_status"])),
     baujahr: numberOrNull(firstValue(details, ["seller-year", "seller_year"])),
     energieklasse: clean(firstValue(details, ["seller-energy", "seller_energy"])),
     balkon_terrasse: boolOrText(firstValue(details, ["seller-balcony", "seller_balcony"])),
     balkon_terrassenflache: numberOrNull(firstValue(details, ["seller-balcony-area", "seller_balcony_area"])),
+    garten: boolOrText(firstValue(details, ["seller-garden", "seller_garden"])),
+    aufzug: boolOrText(firstValue(details, ["seller-elevator", "seller_elevator"])),
+    einbaukuche: boolOrText(firstValue(details, ["seller-kitchen", "seller_kitchen"])),
+    keller: boolOrText(firstValue(details, ["seller-basement", "seller_basement"])),
     letzte_modernisierung: clean(firstValue(details, ["seller-modernization", "seller_modernization"])),
     verwaltungsubernahme_gewuenscht_ab: lead.managementTakeover,
     website_rohdaten: compactJson({ concern: lead.rawConcern, objectType: lead.objectType, propertyDetails: lead.propertyDetails }),
@@ -801,6 +829,8 @@ function mapOwnerObjectMapping(objectType, details) {
   if (text.includes("maisonette")) return { object_type: "LIVING", rs_type: "APARTMENT", rs_category: "MAISONETTE", pretty: "Maisonette" };
   if (text.includes("penthouse")) return { object_type: "LIVING", rs_type: "APARTMENT", rs_category: "PENTHOUSE", pretty: "Penthouse" };
   if (text.includes("terrassen")) return { object_type: "LIVING", rs_type: "APARTMENT", rs_category: "TERRACED_FLAT", pretty: "Terrassenwohnung" };
+  if (text.includes("etagen")) return { object_type: "LIVING", rs_type: "APARTMENT", rs_category: "APARTMENT", pretty: "Etagenwohnung" };
+  if (text.includes("erdgeschoss")) return { object_type: "LIVING", rs_type: "APARTMENT", rs_category: "GROUND_FLOOR", pretty: "Erdgeschosswohnung" };
 
   return { object_type: "LIVING", rs_type: "APARTMENT", rs_category: "APARTMENT", pretty: "Wohnung" };
 }
