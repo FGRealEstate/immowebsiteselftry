@@ -127,7 +127,7 @@ permalink: index.html
     </p>
 
     {% if propstack.properties and propstack.properties.length %}
-    <div class="relative max-w-7xl mx-auto">
+    <div class="relative max-w-5xl mx-auto">
 
         {% if propstack.properties.length > 3 %}
         <button type="button" id="home-slider-prev" class="hidden md:flex absolute -left-16 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-white/90 shadow-xl items-center justify-center text-primary hover:bg-primary hover:text-white transition">
@@ -209,6 +209,8 @@ permalink: index.html
     </div>
     {% endif %}
 </section>
+
+{% include "newsletter-search.njk" %}
 
 <section id="partner" class="bg-primary text-white py-16">
     <div class="container mx-auto px-4">
