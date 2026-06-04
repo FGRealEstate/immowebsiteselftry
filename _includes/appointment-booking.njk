@@ -7,7 +7,7 @@
         <p class="appointment-kicker">Direkte Terminbuchung</p>
         <h2>Termin für Ihre Ankaufsberatung auswählen.</h2>
         <p>
-          Schritt für Schritt zum passenden Termin. Wir prüfen Ihren Wunsch im Propstack-Kalender
+          Schritt für Schritt zum passenden Termin. Wir prüfen Ihren Wunsch direkt im Kalender
           und bestätigen den Termin persönlich über info@fg-realestate.de.
         </p>
 
@@ -55,7 +55,7 @@
 
         <div class="appointment-note-card">
           <i class="fas fa-shield-alt"></i>
-          <span>Ihre Anfrage wird im CRM gespeichert und persönlich geprüft.</span>
+          <span>Ihre Anfrage wird sicher übermittelt und persönlich geprüft.</span>
         </div>
       </div>
     </div>
@@ -180,7 +180,7 @@
             </div>
 
             <p class="appointment-slot-hint">
-              Die Slots werden später live aus Propstack geladen. Bis zur Live-Anbindung nutzen wir vorbereitete Standard-Slots.
+              Die angezeigten Zeiten werden mit dem verbundenen Kalender abgeglichen. Bereits belegte Termine werden nicht angeboten.
             </p>
           </div>
         </div>
@@ -910,13 +910,12 @@
     ];
 
     const fallbackSlots = [
-      "09:00-10:00",
-      "10:00-11:00",
-      "11:00-12:00",
-      "14:00-15:00",
-      "15:00-16:00",
-      "16:00-17:00",
-      "17:00-18:00"
+      { time: "09:00", label: "09:00–10:00" },
+      { time: "10:00", label: "10:00–11:00" },
+      { time: "11:00", label: "11:00–12:00" },
+      { time: "14:00", label: "14:00–15:00" },
+      { time: "15:00", label: "15:00–16:00" },
+      { time: "16:00", label: "16:00–17:00" }
     ];
 
     if (source) source.value = window.location.href;
@@ -1007,25 +1006,39 @@
       }
     }
 
+    function normalizeSlot(slot) {
+      if (typeof slot === "string") {
+        const cleaned = slot.replace(" Uhr", "").trim();
+        const start = cleaned.split(/[–-]/)[0].trim();
+        return { time: start, label: cleaned.includes("-") || cleaned.includes("–") ? cleaned : start + " Uhr" };
+      }
+
+      const time = slot && slot.time ? String(slot.time).trim() : "";
+      const label = slot && slot.label ? String(slot.label).trim() : time + " Uhr";
+      return { time, label };
+    }
+
     function renderSlots(slots) {
       slotList.innerHTML = "";
 
-      if (!slots || !slots.length) {
+      const normalized = (slots || []).map(normalizeSlot).filter(slot => slot.time);
+
+      if (!normalized.length) {
         slotList.innerHTML = '<button type="button" class="appointment-slot-placeholder" disabled>Keine freien Zeiten gefunden</button>';
         return;
       }
 
-      slots.forEach(time => {
+      normalized.forEach(slot => {
         const btn = document.createElement("button");
         btn.type = "button";
         btn.className = "appointment-slot";
-        btn.textContent = time + " Uhr";
-        btn.dataset.time = time;
+        btn.textContent = slot.label;
+        btn.dataset.time = slot.time;
 
         btn.addEventListener("click", function () {
           section.querySelectorAll(".appointment-slot").forEach(b => b.classList.remove("is-selected"));
           btn.classList.add("is-selected");
-          timeHidden.value = time;
+          timeHidden.value = slot.time;
         });
 
         slotList.appendChild(btn);
@@ -1041,16 +1054,16 @@
       slotList.innerHTML = '<button type="button" class="appointment-slot-placeholder" disabled>Freie Zeiten werden geladen...</button>';
 
       try {
-        /*
-          Dieser Endpoint wird später mit Propstack-Verfügbarkeiten verbunden.
-          Bis dahin fällt das Formular auf feste Slots zurück.
-        */
         const res = await fetch("/.netlify/functions/propstack-appointment-availability?date=" + encodeURIComponent(date));
-        if (!res.ok) throw new Error("Availability endpoint not ready");
         const data = await res.json();
 
-        renderSlots(data.slots && data.slots.length ? data.slots : fallbackSlots);
+        if (!res.ok || data.success === false) {
+          throw new Error(data.error || "Verfügbarkeit konnte nicht geladen werden.");
+        }
+
+        renderSlots(data.slots || []);
       } catch (err) {
+        console.warn("Availability fallback:", err.message);
         renderSlots(fallbackSlots);
       }
     }
@@ -1124,9 +1137,13 @@
         last_name: fd.get("last_name"),
         email: fd.get("email"),
         phone: fd.get("phone"),
+        preferred_date: fd.get("date"),
+        preferred_time: fd.get("time"),
         date: fd.get("date"),
         time: fd.get("time"),
+        address: fd.get("location"),
         location: fd.get("location"),
+        appointment_type: fd.get("topic"),
         topic: fd.get("topic"),
         message: fd.get("message"),
         source_url: window.location.href,
