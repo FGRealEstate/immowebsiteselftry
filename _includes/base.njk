@@ -1,62 +1,50 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} | Fischer & Geserich Real Estate GmbH</title>
 
-    <!-- Google Tag Manager -->
-    <script>
+    <!-- Cookiebot MUSS zuerst laden -->
+    <script
+        id="Cookiebot"
+        src="https://consent.cookiebot.com/uc.js"
+        data-cbid="8ab62c4e-bdf7-458b-b374-cdb161bf67d3"
+        type="text/javascript">
+    </script>
+
+    <!-- Google Tag Manager nur nach Cookie-Zustimmung -->
+    <script type="text/plain" data-cookieconsent="statistics,marketing">
     (function(w,d,s,l,i){
         w[l]=w[l]||[];
         w[l].push({
             'gtm.start': new Date().getTime(),
             event:'gtm.js'
         });
-
         var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),
             dl=l!='dataLayer' ? '&l='+l : '';
-
         j.async=true;
         j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-
         f.parentNode.insertBefore(j,f);
-
     })(window,document,'script','dataLayer','GTM-5DVGRHB2');
     </script>
-    <!-- End Google Tag Manager -->
 
-    <meta charset="UTF-8">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} | Fischer & Geserich Real Estate GmbH</title>
+    <!-- Google Analytics direkt nur nach Statistik-Zustimmung -->
+    <script
+        type="text/plain"
+        data-cookieconsent="statistics"
+        src="https://www.googletagmanager.com/gtag/js?id=G-7GNF8PH36F">
+    </script>
 
-<!-- Cookiebot -->
-<script
-id="Cookiebot"
-src="https://consent.cookiebot.com/uc.js"
-data-cbid="8ab62c4e-bdf7-458b-b374-cdb161bf67d3"
-type="text/javascript">
-</script>
-
-<!-- Google Analytics nur nach Zustimmung -->
-<script
-type="text/plain"
-data-cookieconsent="statistics"
-src="https://www.googletagmanager.com/gtag/js?id=G-7GNF8PH36F">
-</script>
-
-<script type="text/plain" data-cookieconsent="statistics">
-window.dataLayer = window.dataLayer || [];
-
-function gtag(){
-    dataLayer.push(arguments);
-}
-
-gtag('js', new Date());
-
-gtag('config', 'G-7GNF8PH36F', {
-    anonymize_ip: true
-});
-</script>
+    <script type="text/plain" data-cookieconsent="statistics">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-7GNF8PH36F', {
+            anonymize_ip: true
+        });
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
