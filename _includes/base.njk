@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>{{ title }} | Fischer & Geserich Real Estate GmbH</title>
 
-    <!-- Cookiebot MUSS zuerst laden -->
+    <!-- COOKIEBOT -->
     <script
         id="Cookiebot"
         src="https://consent.cookiebot.com/uc.js"
         data-cbid="8ab62c4e-bdf7-458b-b374-cdb161bf67d3"
+        data-blockingmode="auto"
         type="text/javascript">
     </script>
 
-    <!-- Google Tag Manager nur nach Cookie-Zustimmung -->
+    <!-- GOOGLE TAG MANAGER -->
     <script type="text/plain" data-cookieconsent="statistics,marketing">
-    (function(w,d,s,l,i){
-        w[l]=w[l]||[];
-        w[l].push({
-            'gtm.start': new Date().getTime(),
-            event:'gtm.js'
-        });
-        var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),
-            dl=l!='dataLayer' ? '&l='+l : '';
-        j.async=true;
-        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-        f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5DVGRHB2');
+        (function(w,d,s,l,i){
+            w[l]=w[l]||[];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event:'gtm.js'
+            });
+
+            var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),
+                dl=l!='dataLayer' ? '&l='+l : '';
+
+            j.async=true;
+            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+
+            f.parentNode.insertBefore(j,f);
+
+        })(window,document,'script','dataLayer','GTM-5DVGRHB2');
     </script>
 
-    <!-- Google Analytics direkt nur nach Statistik-Zustimmung -->
+    <!-- GOOGLE ANALYTICS -->
     <script
         type="text/plain"
         data-cookieconsent="statistics"
@@ -38,66 +46,84 @@
     </script>
 
     <script type="text/plain" data-cookieconsent="statistics">
+
         window.dataLayer = window.dataLayer || [];
-        function gtag(){ dataLayer.push(arguments); }
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
+
         gtag('config', 'G-7GNF8PH36F', {
             anonymize_ip: true
         });
+
     </script>
+
+    <!-- TAILWIND -->
     <script src="https://cdn.tailwindcss.com"></script>
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'primary': '#08082F', // Navy Blue (Kontrastfarbe/Seriosität)
-                        'secondary': '#91DCFF', // Baby Blue (Akzentfarbe/Text)
-                        'accent': '#D1B464', // Gold (Buttons, Sterne, Akzente)
-                        'page-bg': '#CDD2D4' // Off-White Hintergrund
-                        
+                        'primary': '#08082F',
+                        'secondary': '#91DCFF',
+                        'accent': '#D1B464',
+                        'page-bg': '#CDD2D4'
                     },
                     fontFamily: {
-                                        'sans': ['"Times New Roman"', 'Times', 'serif'],
-                                    }
-                    
+                        'sans': ['"Times New Roman"', 'Times', 'serif']
+                    }
                 }
             }
         }
     </script>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<script>
-window.FG_GOOGLE_MAPS_API_KEY = ""; // optional: Google Maps Places API Key eintragen und per HTTP-Referrer auf fg-realestate.de beschränken
-(function(){
-  if(!window.FG_GOOGLE_MAPS_API_KEY) return;
-  var s=document.createElement("script");
-  s.src="https://maps.googleapis.com/maps/api/js?key="+encodeURIComponent(window.FG_GOOGLE_MAPS_API_KEY)+"&libraries=places";
-  s.async=true; s.defer=true; document.head.appendChild(s);
-})();
-</script>
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GOOGLE MAPS OPTIONAL -->
+    <script>
+
+        window.FG_GOOGLE_MAPS_API_KEY = "";
+
+        (function(){
+
+            if(!window.FG_GOOGLE_MAPS_API_KEY) return;
+
+            var s = document.createElement("script");
+
+            s.src =
+                "https://maps.googleapis.com/maps/api/js?key="
+                + encodeURIComponent(window.FG_GOOGLE_MAPS_API_KEY)
+                + "&libraries=places";
+
+            s.async = true;
+            s.defer = true;
+
+            document.head.appendChild(s);
+
+        })();
+
+    </script>
+
 </head>
-<body class="site-background">
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-5DVGRHB2"
-            height="0"
-            width="0"
-            style="display:none;visibility:hidden">
-        </iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
+<body class="site-background">A
 <nav class="bg-primary text-white shadow-lg">
     
     <div class="flex justify-between items-center py-4 px-4 sm:px-6 lg:px-8">
         
         <div class="text-2xl font-bold">
             <a href="/index.html" class="flex items-center text-gold-metallic hover:opacity-90 transition">
-                                <svg
                                     <svg
                                        version="1.0"
                                        width="1023.999pt"
