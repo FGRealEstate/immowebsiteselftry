@@ -8,7 +8,7 @@
 
     <title>{{ title }} | Fischer & Geserich Real Estate GmbH</title>
 
-    <!-- COOKIEBOT / USERCENTRICS CMP -->
+    <!-- COOKIEBOT -->
     <script
         id="Cookiebot"
         src="https://consent.cookiebot.com/uc.js"
@@ -19,7 +19,7 @@
 
     <!-- GOOGLE TAG MANAGER
          Wichtig: GTM wird NICHT durch Cookiebot blockiert.
-         Die Einwilligungslogik wird im GTM über Consent Mode / Cookiebot gesteuert. -->
+         Die Einwilligungen werden im GTM über Consent Mode / Cookiebot-Events gesteuert. -->
     <script data-cookieconsent="ignore">
         (function(w,d,s,l,i){
             w[l]=w[l]||[];
@@ -36,11 +36,17 @@
             j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
 
             f.parentNode.insertBefore(j,f);
+
         })(window,document,'script','dataLayer','GTM-5DVGRHB2');
     </script>
 
-    <!-- TAILWIND CONFIG
-         Muss vor dem Tailwind-CDN-Script stehen, damit Custom Colors verfügbar sind. -->
+    <!-- GOOGLE ANALYTICS
+         Direktes GA4 wurde entfernt, weil GA4 jetzt zentral über den GTM läuft.
+         So vermeiden wir doppelte PageViews. -->
+
+    <!-- TAILWIND -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -49,7 +55,7 @@
                         'primary': '#08082F',
                         'secondary': '#91DCFF',
                         'accent': '#D1B464',
-                        'page-bg': '#F4F1EA'
+                        'page-bg': '#CDD2D4'
                     },
                     fontFamily: {
                         'sans': ['"Times New Roman"', 'Times', 'serif']
@@ -59,50 +65,19 @@
         }
     </script>
 
-    <!-- TAILWIND
-         Hinweis: Für die finale Produktion wäre eine lokal kompilierte Tailwind-CSS-Datei besser.
-         Für den aktuellen Stand bleibt das CDN bewusst erhalten, damit bestehende Klassen nicht brechen. -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
     <!-- CSS -->
     <link rel="stylesheet" href="/style.css">
 
-    <!-- FG DESIGN OVERRIDE
-         Ersetzt den alten grauen Seitenhintergrund durch ein dunkles Navy-/Gold-Branding. -->
+    <!-- FEINJUSTIERUNG WEBSITE-HINTERGRUND
+         Nur der allgemeine Seitenhintergrund wird wärmer/markenkonformer eingefärbt.
+         Es werden KEINE globalen Textfarben, Karten, Formulare oder Inhaltsbereiche verändert. -->
     <style>
-        :root {
-            --fg-primary: #08082F;
-            --fg-primary-soft: #111345;
-            --fg-gold: #D1B464;
-            --fg-blue: #91DCFF;
-            --fg-ivory: #F4F1EA;
-        }
-
-        html {
-            background: var(--fg-primary);
-        }
-
         body.site-background {
-            background-color: var(--fg-primary);
+            background-color: #F3EFE3;
             background-image:
-                radial-gradient(circle at 18% 12%, rgba(209, 180, 100, 0.20) 0%, rgba(209, 180, 100, 0.08) 22%, transparent 42%),
-                radial-gradient(circle at 82% 18%, rgba(145, 220, 255, 0.13) 0%, rgba(145, 220, 255, 0.04) 26%, transparent 48%),
-                linear-gradient(135deg, #08082F 0%, #111345 44%, #060623 100%);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
-            background-attachment: fixed;
-            color: #ffffff;
-        }
-
-        /* Verhindert den alten grauen Standardhintergrund bei Tailwind bg-page-bg-Bereichen */
-        .bg-page-bg {
-            background-color: var(--fg-ivory) !important;
-        }
-
-        /* Sanfter Hintergrund für Bereiche, die vorher grau wirkten */
-        .fg-soft-section {
-            background: linear-gradient(180deg, #F8F5EE 0%, #EFE8DA 100%);
+                linear-gradient(135deg, rgba(8, 8, 47, 0.06), rgba(209, 180, 100, 0.16)),
+                url('/images/background.svg');
+            background-blend-mode: normal, luminosity;
         }
     </style>
 
@@ -139,17 +114,6 @@
 </head>
 
 <body class="site-background">
-
-<!-- GOOGLE TAG MANAGER NOSCRIPT -->
-<noscript data-cookieconsent="ignore">
-    <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-5DVGRHB2"
-        height="0"
-        width="0"
-        style="display:none;visibility:hidden">
-    </iframe>
-</noscript>
-
 <nav class="bg-primary text-white shadow-lg">
     
     <div class="flex justify-between items-center py-4 px-4 sm:px-6 lg:px-8">
@@ -327,8 +291,5 @@
 
 
 <script src="/script.js"></script>
-</body>
-</html>
-
 </body>
 </html>
