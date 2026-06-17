@@ -18,27 +18,7 @@
     </script>
 
     <!-- GOOGLE TAG MANAGER -->
-    <script type="text/plain" data-cookieconsent="statistics,marketing">
-        (function(w,d,s,l,i){
-            w[l]=w[l]||[];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event:'gtm.js'
-            });
-
-            var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),
-                dl=l!='dataLayer' ? '&l='+l : '';
-
-            j.async=true;
-            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-
-            f.parentNode.insertBefore(j,f);
-
-        })(window,document,'script','dataLayer','GTM-5DVGRHB2');
-    </script>
-
-    <!-- GOOGLE ANALYTICS -->
+<!-- GOOGLE ANALYTICS -->
     <script
         type="text/plain"
         data-cookieconsent="statistics"
@@ -72,7 +52,7 @@
                         'primary': '#08082F',
                         'secondary': '#91DCFF',
                         'accent': '#D1B464',
-                        'page-bg': '#0B1033'
+                        'page-bg': '#CDD2D4'
                     },
                     fontFamily: {
                         'sans': ['"Times New Roman"', 'Times', 'serif']
@@ -115,21 +95,57 @@
 
     </script>
 
+<!-- Google Tag Manager -->
+<script data-cookieconsent="ignore">
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5DVGRHB2');
+</script>
+<!-- End Google Tag Manager -->
 
     <style>
-        /* FG Premium Background */
-        body.site-background{
+        /*
+         * FG Real Estate – heller Luxury-Background
+         * Nur der globale Seitenhintergrund wird angepasst.
+         * Keine globalen Text-, Button-, Karten- oder Formularfarben.
+         */
+        body.site-background,
+        body {
             background:
-                radial-gradient(circle at 18% 12%, rgba(209,180,100,0.16), transparent 28%),
-                radial-gradient(circle at 85% 20%, rgba(145,220,255,0.08), transparent 22%),
-                linear-gradient(135deg,#070821 0%,#0B1033 45%,#121A3A 100%);
+                radial-gradient(circle at 18% 10%, rgba(212, 175, 55, 0.13), transparent 30%),
+                radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.35), transparent 26%),
+                linear-gradient(135deg, #eee9df 0%, #ddd5c4 38%, #cfc6b4 72%, #e9e3d7 100%);
             background-attachment: fixed;
+        }
+
+        body.site-background::before,
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.10;
+            background:
+                repeating-linear-gradient(
+                    -35deg,
+                    rgba(255, 255, 255, 0.55) 0px,
+                    rgba(255, 255, 255, 0.55) 1px,
+                    transparent 1px,
+                    transparent 24px
+                );
         }
     </style>
 
 </head>
 
-<body class="site-background">A
+<body class="site-background">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DVGRHB2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <nav class="bg-primary text-white shadow-lg">
     
     <div class="flex justify-between items-center py-4 px-4 sm:px-6 lg:px-8">
