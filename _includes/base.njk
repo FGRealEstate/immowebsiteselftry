@@ -17,10 +17,8 @@
         type="text/javascript">
     </script>
 
-    <!-- GOOGLE TAG MANAGER
-         Wichtig: GTM wird NICHT durch Cookiebot blockiert.
-         Die Einwilligungen werden im GTM über Consent Mode / Cookiebot-Events gesteuert. -->
-    <script data-cookieconsent="ignore">
+    <!-- GOOGLE TAG MANAGER -->
+    <script type="text/plain" data-cookieconsent="statistics,marketing">
         (function(w,d,s,l,i){
             w[l]=w[l]||[];
             w[l].push({
@@ -40,9 +38,28 @@
         })(window,document,'script','dataLayer','GTM-5DVGRHB2');
     </script>
 
-    <!-- GOOGLE ANALYTICS
-         Direktes GA4 wurde entfernt, weil GA4 jetzt zentral über den GTM läuft.
-         So vermeiden wir doppelte PageViews. -->
+    <!-- GOOGLE ANALYTICS -->
+    <script
+        type="text/plain"
+        data-cookieconsent="statistics"
+        src="https://www.googletagmanager.com/gtag/js?id=G-7GNF8PH36F">
+    </script>
+
+    <script type="text/plain" data-cookieconsent="statistics">
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-7GNF8PH36F', {
+            anonymize_ip: true
+        });
+
+    </script>
 
     <!-- TAILWIND -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -55,7 +72,7 @@
                         'primary': '#08082F',
                         'secondary': '#91DCFF',
                         'accent': '#D1B464',
-                        'page-bg': '#CDD2D4'
+                        'page-bg': '#0B1033'
                     },
                     fontFamily: {
                         'sans': ['"Times New Roman"', 'Times', 'serif']
@@ -67,19 +84,6 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/style.css">
-
-    <!-- FEINJUSTIERUNG WEBSITE-HINTERGRUND
-         Nur der allgemeine Seitenhintergrund wird wärmer/markenkonformer eingefärbt.
-         Es werden KEINE globalen Textfarben, Karten, Formulare oder Inhaltsbereiche verändert. -->
-    <style>
-        body.site-background {
-            background-color: #F3EFE3;
-            background-image:
-                linear-gradient(135deg, rgba(8, 8, 47, 0.06), rgba(209, 180, 100, 0.16)),
-                url('/images/background.svg');
-            background-blend-mode: normal, luminosity;
-        }
-    </style>
 
     <!-- FONT AWESOME -->
     <link
@@ -111,9 +115,21 @@
 
     </script>
 
+
+    <style>
+        /* FG Premium Background */
+        body.site-background{
+            background:
+                radial-gradient(circle at 18% 12%, rgba(209,180,100,0.16), transparent 28%),
+                radial-gradient(circle at 85% 20%, rgba(145,220,255,0.08), transparent 22%),
+                linear-gradient(135deg,#070821 0%,#0B1033 45%,#121A3A 100%);
+            background-attachment: fixed;
+        }
+    </style>
+
 </head>
 
-<body class="site-background">
+<body class="site-background">A
 <nav class="bg-primary text-white shadow-lg">
     
     <div class="flex justify-between items-center py-4 px-4 sm:px-6 lg:px-8">
