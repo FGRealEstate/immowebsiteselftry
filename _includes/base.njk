@@ -107,16 +107,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <style>
         /*
-         * FG Real Estate – heller Luxury-Background
+         * FG Real Estate – heller Luxury-Background mit subtilen Kratzerlinien
          * Nur der globale Seitenhintergrund wird angepasst.
          * Keine globalen Text-, Button-, Karten- oder Formularfarben.
          */
         body.site-background,
         body {
             background:
-                radial-gradient(circle at 18% 10%, rgba(212, 175, 55, 0.13), transparent 30%),
-                radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.35), transparent 26%),
-                linear-gradient(135deg, #eee9df 0%, #ddd5c4 38%, #cfc6b4 72%, #e9e3d7 100%);
+                radial-gradient(circle at 20% 10%, rgba(212, 175, 55, 0.12), transparent 32%),
+                radial-gradient(circle at 90% 22%, rgba(255, 255, 255, 0.42), transparent 28%),
+                linear-gradient(135deg, #eee9df 0%, #ded6c6 42%, #cbc2b0 100%);
             background-attachment: fixed;
         }
 
@@ -127,15 +127,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             inset: 0;
             pointer-events: none;
             z-index: -1;
-            opacity: 0.10;
+            opacity: 0.38;
             background:
+                linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.22) 42%, transparent 43%),
+                linear-gradient(112deg, transparent 0%, rgba(255,255,255,0.18) 58%, transparent 59%),
                 repeating-linear-gradient(
-                    -35deg,
-                    rgba(255, 255, 255, 0.55) 0px,
-                    rgba(255, 255, 255, 0.55) 1px,
-                    transparent 1px,
-                    transparent 24px
+                    -17deg,
+                    transparent 0px,
+                    transparent 34px,
+                    rgba(255,255,255,0.16) 35px,
+                    rgba(255,255,255,0.16) 36px,
+                    transparent 37px,
+                    transparent 74px
+                ),
+                repeating-linear-gradient(
+                    -22deg,
+                    transparent 0px,
+                    transparent 52px,
+                    rgba(255,255,255,0.13) 53px,
+                    rgba(255,255,255,0.13) 54px,
+                    transparent 55px,
+                    transparent 108px
                 );
+        }
+
+        body.site-background::after,
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.18;
+            background:
+                radial-gradient(ellipse at 5% 40%, rgba(255,255,255,0.22), transparent 45%),
+                radial-gradient(ellipse at 95% 70%, rgba(212,175,55,0.10), transparent 40%);
         }
     </style>
 
