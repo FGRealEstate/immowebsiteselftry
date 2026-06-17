@@ -16,8 +16,6 @@
         data-blockingmode="auto"
         type="text/javascript">
     </script>
-
-    <!-- GOOGLE TAG MANAGER -->
 <!-- GOOGLE ANALYTICS -->
     <script
         type="text/plain"
@@ -95,83 +93,69 @@
 
     </script>
 
-<!-- Google Tag Manager -->
-<script data-cookieconsent="ignore">
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5DVGRHB2');
-</script>
-<!-- End Google Tag Manager -->
+    <!-- GOOGLE TAG MANAGER -->
+    <script data-cookieconsent="ignore">
+        (function(w,d,s,l,i){
+            w[l]=w[l]||[];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event:'gtm.js'
+            });
+
+            var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),
+                dl=l!='dataLayer' ? '&l='+l : '';
+
+            j.async=true;
+            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+
+            f.parentNode.insertBefore(j,f);
+
+        })(window,document,'script','dataLayer','GTM-5DVGRHB2');
+    </script>
+    <!-- END GOOGLE TAG MANAGER -->
+
 
     <style>
         /*
-         * FG Real Estate – heller Luxury-Background mit subtilen Kratzerlinien
-         * Nur der globale Seitenhintergrund wird angepasst.
-         * Keine globalen Text-, Button-, Karten- oder Formularfarben.
+         * FG Real Estate – heller Premium-Hintergrund mit originalen Kratzerlinien
+         * Wichtig:
+         * - Nutzt wieder /images/background.svg
+         * - Kein dunkler Navy-Body
+         * - Keine globalen Textfarben
+         * - Keine Änderungen an Karten, Formularen oder Buttons
          */
-        body.site-background,
-        body {
-            background:
-                radial-gradient(circle at 20% 10%, rgba(212, 175, 55, 0.12), transparent 32%),
-                radial-gradient(circle at 90% 22%, rgba(255, 255, 255, 0.42), transparent 28%),
-                linear-gradient(135deg, #eee9df 0%, #ded6c6 42%, #cbc2b0 100%);
-            background-attachment: fixed;
-        }
-
-        body.site-background::before,
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.38;
-            background:
-                linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.22) 42%, transparent 43%),
-                linear-gradient(112deg, transparent 0%, rgba(255,255,255,0.18) 58%, transparent 59%),
-                repeating-linear-gradient(
-                    -17deg,
-                    transparent 0px,
-                    transparent 34px,
-                    rgba(255,255,255,0.16) 35px,
-                    rgba(255,255,255,0.16) 36px,
-                    transparent 37px,
-                    transparent 74px
+        .site-background {
+            background-image:
+                linear-gradient(
+                    135deg,
+                    rgba(245, 241, 231, 0.78) 0%,
+                    rgba(231, 224, 207, 0.70) 42%,
+                    rgba(214, 204, 181, 0.62) 100%
                 ),
-                repeating-linear-gradient(
-                    -22deg,
-                    transparent 0px,
-                    transparent 52px,
-                    rgba(255,255,255,0.13) 53px,
-                    rgba(255,255,255,0.13) 54px,
-                    transparent 55px,
-                    transparent 108px
-                );
-        }
-
-        body.site-background::after,
-        body::after {
-            content: "";
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.18;
-            background:
-                radial-gradient(ellipse at 5% 40%, rgba(255,255,255,0.22), transparent 45%),
-                radial-gradient(ellipse at 95% 70%, rgba(212,175,55,0.10), transparent 40%);
+                url('/images/background.svg') !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+            background-position: center center !important;
+            background-attachment: fixed !important;
+            background-color: #E8E1D4 !important;
         }
     </style>
 
 </head>
 
 <body class="site-background">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DVGRHB2"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <!-- GOOGLE TAG MANAGER NOSCRIPT -->
+    <noscript>
+        <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-5DVGRHB2"
+            height="0"
+            width="0"
+            style="display:none;visibility:hidden">
+        </iframe>
+    </noscript>
+    <!-- END GOOGLE TAG MANAGER NOSCRIPT -->
+
 <nav class="bg-primary text-white shadow-lg">
     
     <div class="flex justify-between items-center py-4 px-4 sm:px-6 lg:px-8">
