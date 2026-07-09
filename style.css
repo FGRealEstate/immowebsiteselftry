@@ -858,3 +858,84 @@ video::-webkit-media-controls {
 .invest-rec-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
 .invest-rec-row button { border:1px solid rgba(8,8,47,.12); background:#fff; color:#08082F; border-radius:999px; padding:7px 10px; font-size:12px; font-weight:800; cursor:pointer; }
 .invest-rec-row button:hover { border-color:#D1B464; background:#fff8df; }
+
+/* =========================================================
+   Investitionsrechner V3 – Ergänzungen/Fixes
+   ========================================================= */
+.invest-financing-summary {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 22px;
+  padding: 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(209,180,100,.34);
+  background: linear-gradient(135deg, rgba(209,180,100,.14), rgba(145,220,255,.10));
+}
+.invest-financing-summary div {
+  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(8,8,47,.08);
+  border-radius: 15px;
+  padding: 12px;
+}
+.invest-financing-summary span,
+.invest-summary-card span {
+  display: block;
+  color: #667085;
+  font-size: 12px;
+  font-weight: 800;
+}
+.invest-financing-summary strong,
+.invest-summary-card strong {
+  display: block;
+  margin-top: 4px;
+  color: #08082F;
+  font-weight: 950;
+}
+.invest-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 16px 0 26px;
+}
+.invest-summary-card {
+  border: 1px solid rgba(8,8,47,.10);
+  border-radius: 22px;
+  background: rgba(255,255,255,.94);
+  box-shadow: 0 16px 40px rgba(8,8,47,.06);
+  padding: 18px;
+}
+.invest-summary-card h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  color: #08082F;
+}
+.invest-summary-card div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-top: 1px solid rgba(8,8,47,.08);
+}
+.invest-summary-card div:first-of-type { border-top: 0; }
+.invest-summary-card strong { text-align: right; }
+.invest-subheadline {
+  margin: 32px 0 6px;
+  font-size: 24px;
+  color: #08082F;
+}
+.invest-input-wrap input::placeholder { color: rgba(102,112,133,.56); }
+.invest-table { min-width: 1280px; }
+@media (max-width: 1100px) {
+  .invest-financing-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .invest-summary-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .invest-financing-summary { grid-template-columns: 1fr; }
+}
+@media print {
+  .invest-summary-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+  .invest-summary-card { box-shadow:none !important; padding: 12px !important; break-inside: avoid; }
+  .invest-financing-summary { display:none !important; }
+}
