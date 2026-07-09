@@ -435,5 +435,3 @@ document.addEventListener('DOMContentLoaded', function() {
   showStep(0); updateFinancingSummary();
 })();
 
-  showStep(0);
-})();
