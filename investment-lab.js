@@ -1,13 +1,17 @@
 (function(){
 const root=document.querySelector('[data-investment-lab]');if(!root)return;
-const DATA=JSON.parse(window.FG_LAB_DATA||'{}');
+const rawData=window.FG_LAB_DATA||{};
+const DATA=typeof rawData==='string'?JSON.parse(rawData):rawData;
+DATA.articles=Array.isArray(DATA.articles)?DATA.articles:[];
+DATA.locations=Array.isArray(DATA.locations)?DATA.locations:[];
+DATA.lexicon=Array.isArray(DATA.lexicon)?DATA.lexicon:[];
 const eur=v=>new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(isFinite(v)?v:0);
 const pct=v=>new Intl.NumberFormat('de-DE',{style:'percent',maximumFractionDigits:2}).format(isFinite(v)?v:0);
 const de=v=>new Intl.NumberFormat('de-DE',{maximumFractionDigits:2}).format(isFinite(v)?v:0);
 const parse=v=>{let s=String(v??'').replace(/\s|€|%/g,'');if(s.includes(','))s=s.replace(/\./g,'').replace(',','.');return parseFloat(s)||0};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function switchTab(name){root.querySelectorAll('[data-lab-tab]').forEach(b=>b.classList.toggle('is-active',b.dataset.labTab===name));root.querySelectorAll('[data-lab-panel]').forEach(p=>p.classList.toggle('is-active',p.dataset.labPanel===name));root.scrollIntoView({behavior:'smooth',block:'start'});}
-root.addEventListener('click',e=>{let t=e.target.closest('[data-lab-tab],[data-lab-open]');if(t)switchTab(t.dataset.labTab||t.dataset.labOpen)});
+document.addEventListener('click',e=>{let t=e.target.closest('[data-lab-tab],[data-lab-open]');if(!t)return;let name=t.dataset.labTab||t.dataset.labOpen;if(name)switchTab(name)});
 
 const tools=[
 {id:'investment',icon:'chart-line',title:'Investitionsrechner',desc:'Vollständige Objekt-, Finanzierungs-, Steuer- und Verlaufsrechnung.',link:'/investitionsrechner.html'},
