@@ -192,9 +192,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if(calc){ if(validateStep(current)){ calculateAndRender(); showStep(4); } }
   });
 
-  recButtons.forEach(btn=>btn.addEventListener('click', ()=>setVal(btn.dataset.target, btn.dataset.setValue)));
-  root.querySelectorAll('[name="financeMode"],[name="financePct"]').forEach(el=>el.addEventListener('input', ()=>{ updateLoanFromMode(true); updateFinancingSummary(); }));
-  root.querySelectorAll('[name="purchasePrice"],[name="brokerFeePct"],[name="notaryPct"],[name="landRegisterPct"],[name="transferTaxPct"],[name="otherClosingCosts"],[name="initialInvestments"],[name="equity"]').forEach(el=>el.addEventListener('input', ()=>{ updateLoanFromMode(false); updateFinancingSummary(false); }));
+  recButtons.forEach(btn=>btn.addEventListener('click', ()=>{ setVal(btn.dataset.target, btn.dataset.setValue); if(btn.dataset.target==='financePct') syncFinancing('mode'); }));
+
+  let financeSyncLock = false;
+  const financeModeEl = root.querySelector('[name="financeMode"]');
+  const financePctEl = root.querySelector('[name="financePct"]');
+  const loanEl = root.querySelector('[name="loanAmount"]');
+  const equityEl = root.querySelector('[name="equity"]');
 
   if(printBtn){ printBtn.addEventListener('click', ()=>{ if(!lastResult) calculateAndRender(false); printResult(lastResult); }); }
 
@@ -228,26 +232,47 @@ document.addEventListener('DOMContentLoaded', function() {
       horizon: Math.max(1, Math.min(40, Math.round(num('horizon') || 20))) };
   }
 
+
+  function financeBase(x){ return x.financeMode === 'purchase' ? x.purchasePrice : x.totalInvestment; }
   function suggestedLoan(){
-    const x = collectInputs();
-    if(x.financeMode === 'purchase') return Math.max(0, x.purchasePrice * x.financePct/100);
-    if(x.financeMode === 'total') return Math.max(0, x.totalInvestment * x.financePct/100);
-    return Math.max(0, x.totalInvestment - x.equity);
+    const x=collectInputs();
+    if(x.financeMode==='custom') return Math.max(0,x.loanAmount || (x.totalInvestment-x.equity));
+    return Math.max(0,financeBase(x)*x.financePct/100);
   }
-  function updateLoanFromMode(force){
-    const loan = root.querySelector('[name="loanAmount"]'); if(!loan) return;
-    const mode = root.querySelector('[name="financeMode"]')?.value || 'custom';
-    if(mode !== 'custom' || force || !loan.dataset.userTouched){ loan.value = n(Math.round(suggestedLoan()), 2); if(mode !== 'custom') loan.dataset.userTouched=''; }
+  function syncFinancing(source='mode'){
+    if(financeSyncLock) return;
+    financeSyncLock=true;
+    const x=collectInputs();
+    let loan=x.loanAmount, equity=x.equity;
+    if(x.financeMode==='custom'){
+      if(source==='equity') loan=Math.max(0,x.totalInvestment-equity);
+      else if(source==='loan') equity=Math.max(0,x.totalInvestment-loan);
+      else if(!loan) loan=Math.max(0,x.totalInvestment-equity);
+    } else {
+      loan=Math.max(0,financeBase(x)*x.financePct/100);
+      equity=Math.max(0,x.totalInvestment-loan);
+    }
+    if(loanEl) loanEl.value=n(loan,2);
+    if(equityEl) equityEl.value=n(equity,2);
+    financeSyncLock=false;
+    updateFinancingSummary();
   }
+  [financeModeEl,financePctEl].filter(Boolean).forEach(el=>el.addEventListener('input',()=>syncFinancing('mode')));
+  if(loanEl) loanEl.addEventListener('input',()=>{ if((financeModeEl?.value||'custom')==='custom') syncFinancing('loan'); });
+  if(equityEl) equityEl.addEventListener('input',()=>syncFinancing('equity'));
+  root.querySelectorAll('[name="purchasePrice"],[name="brokerFeePct"],[name="notaryPct"],[name="landRegisterPct"],[name="transferTaxPct"],[name="otherClosingCosts"],[name="initialInvestments"]').forEach(el=>el.addEventListener('input',()=>syncFinancing('base')));
+
   function updateFinancingSummary(){
     if(!financingSummary) return;
-    const x = collectInputs();
-    financingSummary.innerHTML = `<div><span>Kaufpreis</span><strong>${eur(x.purchasePrice)}</strong></div><div><span>Kaufnebenkosten</span><strong>${eur(x.closingCosts)}</strong></div><div><span>Anfangsinvestitionen</span><strong>${eur(x.initialInvestments)}</strong></div><div><span>Gesamtinvestition</span><strong>${eur(x.totalInvestment)}</strong></div><div><span>Vorgeschlagenes Darlehen</span><strong>${eur(suggestedLoan())}</strong></div>`;
+    const x=collectInputs();
+    const actualLoan=x.financeMode==='custom'?x.loanAmount:suggestedLoan();
+    financingSummary.innerHTML=`<div><span>Kaufpreis</span><strong>${eur(x.purchasePrice)}</strong></div><div><span>Kaufnebenkosten</span><strong>${eur(x.closingCosts)}</strong></div><div><span>Anfangsinvestitionen</span><strong>${eur(x.initialInvestments)}</strong></div><div><span>Gesamtinvestition</span><strong>${eur(x.totalInvestment)}</strong></div><div><span>Darlehen</span><strong>${eur(actualLoan)}</strong></div><div><span>Erforderliches Eigenkapital</span><strong>${eur(Math.max(0,x.totalInvestment-actualLoan))}</strong></div>`;
   }
 
   function calculate(){
     const x = collectInputs();
     const totalInvestment = x.totalInvestment;
+    if(x.financeMode !== 'custom'){ x.loanAmount = Math.max(0, financeBase(x) * x.financePct/100); x.equity = Math.max(0, totalInvestment - x.loanAmount); } else if(!x.loanAmount && x.equity){ x.loanAmount=Math.max(0,totalInvestment-x.equity); }
 
     // AfA-Basis: nur der Gebäudeanteil wird abgeschrieben.
     // Nebenkosten/Anfangsinvestitionen werden im Rechner vorsichtig mit einbezogen,
@@ -432,6 +457,9 @@ document.addEventListener('DOMContentLoaded', function() {
     doc.document.close(); setTimeout(()=>{doc.focus(); doc.print();}, 500);
   }
 
-  showStep(0); updateFinancingSummary();
+  showStep(0); syncFinancing('mode');
 })();
+
+
+(function(){const r=document.querySelector('[data-affordability-calculator]');if(!r)return;const p=v=>{let s=String(v||'').replace(/\s|€|%/g,'');if(s.includes(','))s=s.replace(/\./g,'').replace(',','.');return parseFloat(s)||0},eur=v=>new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(v);r.querySelector('form').addEventListener('submit',e=>{e.preventDefault();let f=new FormData(e.target),rate=p(f.get('rate')),eq=p(f.get('equity')),i=p(f.get('interest'))/100,t=p(f.get('repay'))/100,c=p(f.get('costs'))/100,loan=rate*12/(i+t),price=(loan+eq)/(1+c);r.querySelector('[data-afford-result]').innerHTML=`<div class="lab-result-kpis"><article><span>Möglicher Kaufpreis</span><strong>${eur(price)}</strong><small>erste Orientierung</small></article><article><span>Darlehensrahmen</span><strong>${eur(loan)}</strong></article><article><span>Gesamtbudget inkl. Nebenkosten</span><strong>${eur(price*(1+c))}</strong></article><article><span>Monatliche Rate</span><strong>${eur(rate)}</strong></article></div>`})})();
 
