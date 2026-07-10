@@ -3,6 +3,7 @@ module.exports = function(eleventyConfig) {
     // 1. Passthrough Kopieren: Stellt sicher, dass Assets in den _site Ordner kopiert werden
     eleventyConfig.addPassthroughCopy("style.css");
     eleventyConfig.addPassthroughCopy("script.js");
+    eleventyConfig.addPassthroughCopy("investment-lab.js");
     eleventyConfig.addPassthroughCopy("images");
     eleventyConfig.addPassthroughCopy("videos");
     eleventyConfig.addPassthroughCopy("admin");
