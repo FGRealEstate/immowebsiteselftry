@@ -1,0 +1,11 @@
+{
+  "term": "Jahresnettokaltmiete",
+  "definition": "Summe der Nettokaltmieten eines Jahres.",
+  "id": "jahresnettokaltmiete",
+  "slug": "jahresnettokaltmiete",
+  "url": "/lexikon/jahresnettokaltmiete/",
+  "keywords": [
+    "jahresnettokaltmiete"
+  ],
+  "updated": "2026-07-16"
+}

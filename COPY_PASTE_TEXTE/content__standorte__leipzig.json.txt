@@ -1,0 +1,22 @@
+{
+  "name": "Leipzig",
+  "region": "Sachsen",
+  "price": "Bestand häufig ca. 2.200–3.800 €/m²",
+  "rent": "häufig ca. 8–14 €/m²",
+  "chance": "Wachsende Großstadt, Hochschulen, Logistik und Industrie.",
+  "risk": "Starke Unterschiede zwischen Quartieren; Sanierungs- und Angebotsrisiken.",
+  "infra": "S-Bahn, Fernverkehr, Flughafenregion, Universitäten.",
+  "future": "Weiteres Wachstum möglich, aber nicht jede Lage entwickelt sich gleich.",
+  "population": "Seit Jahren dynamische Großstadtentwicklung.",
+  "view": "Gutes Verhältnis aus Einstieg und Nachfrage, wenn Mikrolage und Gebäudesubstanz stimmen.",
+  "source": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Grundstucksmarktbericht-2025-Leipzig.pdf",
+  "yield": "häufig ca. 3,5–6,0 %",
+  "id": "leipzig",
+  "slug": "leipzig",
+  "url": "/standorte/leipzig/",
+  "keywords": [
+    "leipzig",
+    "sachsen"
+  ],
+  "updated": "2026-07-16"
+}

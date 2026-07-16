@@ -1,0 +1,22 @@
+{
+  "name": "Joachimsthal",
+  "region": "Berliner Speckgürtel · Nordost",
+  "price": "ca. 1.500–2.800 €/m²",
+  "rent": "ca. 6–10 €/m²",
+  "chance": "Berlin-Nähe bei meist niedrigerem Einstieg und regionaler Eigennutzernachfrage.",
+  "risk": "Pendlerabhängigkeit, geringere Marktliquidität und starke Mikrolagenunterschiede.",
+  "infra": "Regionalbahn oder S-Bahn je nach Ort; konkrete Fahrzeit und Takt prüfen.",
+  "future": "Entwicklung hängt von Verkehr, Neubau, Arbeitgebern und kommunaler Planung ab.",
+  "population": "Uneinheitliche Entwicklung; Gemeindeprognosen und Neubaupipeline prüfen.",
+  "view": "Nicht als einheitlichen Speckgürtel behandeln. Bahnhofsnähe, Zentrum und lokale Nachfrage sind entscheidend.",
+  "source": "https://gutachterausschuss.brandenburg.de/",
+  "yield": "häufig ca. 3,0–5,5 %, stark objektabhängig",
+  "id": "joachimsthal",
+  "slug": "joachimsthal",
+  "url": "/standorte/joachimsthal/",
+  "keywords": [
+    "berliner speckgürtel · nordost",
+    "joachimsthal"
+  ],
+  "updated": "2026-07-16"
+}

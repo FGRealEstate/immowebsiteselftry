@@ -1,0 +1,22 @@
+{
+  "name": "Potsdam",
+  "region": "Speckgürtel",
+  "price": "häufig ca. 4.500–7.000 €/m²",
+  "rent": "häufig ca. 13–19 €/m²",
+  "chance": "Hohe Lebensqualität, Nähe Berlin, Verwaltung, Wissenschaft und Medien.",
+  "risk": "Hohes Preisniveau und begrenztes Angebot.",
+  "infra": "S-Bahn/Regionalbahn, Universität, Film- und Wissenschaftsstandorte.",
+  "future": "Weiterhin strukturell nachgefragt, aber stark lage- und preisabhängig.",
+  "population": "Wachsende bzw. stark nachgefragte Landeshauptstadt.",
+  "view": "Qualitätsstandort mit eher niedriger Anfangsrendite; Wert- und Vermietungsstabilität stehen im Vordergrund.",
+  "source": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_P.pdf",
+  "yield": "häufig ca. 2,5–4,5 %",
+  "id": "potsdam",
+  "slug": "potsdam",
+  "url": "/standorte/potsdam/",
+  "keywords": [
+    "potsdam",
+    "speckgürtel"
+  ],
+  "updated": "2026-07-16"
+}

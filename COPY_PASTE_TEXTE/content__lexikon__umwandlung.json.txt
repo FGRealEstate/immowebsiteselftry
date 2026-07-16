@@ -1,0 +1,11 @@
+{
+  "term": "Umwandlung",
+  "definition": "Aufteilung eines Mietshauses in Wohnungseigentum.",
+  "id": "umwandlung",
+  "slug": "umwandlung",
+  "url": "/lexikon/umwandlung/",
+  "keywords": [
+    "umwandlung"
+  ],
+  "updated": "2026-07-16"
+}

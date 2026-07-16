@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/thaddl275/immowebsiteselftry#readme",
   "dependencies": {
-    "nodemailer": "^6.9.16"
+    "gray-matter": "^4.0.3",
+    "nodemailer": "^6.9.16",
+    "vanilla-cookieconsent": "^3.1.0"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",

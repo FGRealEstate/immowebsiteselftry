@@ -1,0 +1,13 @@
+{
+  "id": "investment",
+  "title": "Investitionsrechner",
+  "description": "Objekt, Finanzierung, Steuern, Cashflow und Vermögensverlauf zusammenführen.",
+  "url": "/investment-lab.html?tool=investment",
+  "keywords": [
+    "investitionsrechnung",
+    "eigenkapitalrendite",
+    "cashflow",
+    "tilgung",
+    "steuer"
+  ]
+}

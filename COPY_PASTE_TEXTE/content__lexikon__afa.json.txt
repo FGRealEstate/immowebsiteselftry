@@ -1,0 +1,11 @@
+{
+  "term": "AfA",
+  "definition": "Absetzung für Abnutzung: steuerliche Verteilung des abschreibungsfähigen Gebäudewerts über die Nutzungsdauer.",
+  "id": "afa",
+  "slug": "afa",
+  "url": "/lexikon/afa/",
+  "keywords": [
+    "afa"
+  ],
+  "updated": "2026-07-16"
+}

@@ -1,0 +1,11 @@
+{
+  "term": "Zinseszins",
+  "definition": "Verzinsung bereits gutgeschriebener Zinsen.",
+  "id": "zinseszins",
+  "slug": "zinseszins",
+  "url": "/lexikon/zinseszins/",
+  "keywords": [
+    "zinseszins"
+  ],
+  "updated": "2026-07-16"
+}

@@ -1,0 +1,11 @@
+{
+  "term": "Annuität",
+  "definition": "Regelmäßig gleichbleibende Rate aus Zins und Tilgung.",
+  "id": "annuitat",
+  "slug": "annuitat",
+  "url": "/lexikon/annuitat/",
+  "keywords": [
+    "annuität"
+  ],
+  "updated": "2026-07-16"
+}

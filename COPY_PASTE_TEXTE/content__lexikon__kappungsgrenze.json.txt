@@ -1,0 +1,11 @@
+{
+  "term": "Kappungsgrenze",
+  "definition": "Grenze für Mieterhöhungen innerhalb eines Zeitraums.",
+  "id": "kappungsgrenze",
+  "slug": "kappungsgrenze",
+  "url": "/lexikon/kappungsgrenze/",
+  "keywords": [
+    "kappungsgrenze"
+  ],
+  "updated": "2026-07-16"
+}

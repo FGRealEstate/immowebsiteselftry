@@ -1,0 +1,11 @@
+{
+  "term": "Stress-Test",
+  "definition": "Berechnung unter ungünstigeren Annahmen.",
+  "id": "stress-test",
+  "slug": "stress-test",
+  "url": "/lexikon/stress-test/",
+  "keywords": [
+    "stress-test"
+  ],
+  "updated": "2026-07-16"
+}

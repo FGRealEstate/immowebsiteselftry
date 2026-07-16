@@ -1,0 +1,11 @@
+{
+  "term": "Wirtschaftsplan",
+  "definition": "Plan der WEG zu Einnahmen, Ausgaben und Vorschüssen.",
+  "id": "wirtschaftsplan",
+  "slug": "wirtschaftsplan",
+  "url": "/lexikon/wirtschaftsplan/",
+  "keywords": [
+    "wirtschaftsplan"
+  ],
+  "updated": "2026-07-16"
+}

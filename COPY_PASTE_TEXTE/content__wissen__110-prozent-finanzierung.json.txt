@@ -1,0 +1,24 @@
+{
+  "title": "110-Prozent-Finanzierung",
+  "category": "Finanzierung",
+  "summary": "Werden Kaufpreis und Nebenkosten finanziert, liegt das Darlehen über dem Kaufpreis.",
+  "body": "Das erhöht Risiko, Zinsbelastung und mögliche Unterdeckung bei frühem Verkauf.",
+  "id": "110-prozent-finanzierung",
+  "slug": "110-prozent-finanzierung",
+  "url": "/wissen/110-prozent-finanzierung/",
+  "keywords": [
+    "darlehen",
+    "finanziert",
+    "finanzierung",
+    "kaufpreis",
+    "liegt",
+    "nebenkosten",
+    "prozent",
+    "werden",
+    "über"
+  ],
+  "synonyms": [],
+  "updated": "2026-07-16",
+  "author": "Fischer & Geserich Real Estate GmbH",
+  "related": []
+}

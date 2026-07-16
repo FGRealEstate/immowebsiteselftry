@@ -1,0 +1,11 @@
+{
+  "term": "Wohnrecht",
+  "definition": "Recht, Räume zu Wohnzwecken zu nutzen.",
+  "id": "wohnrecht",
+  "slug": "wohnrecht",
+  "url": "/lexikon/wohnrecht/",
+  "keywords": [
+    "wohnrecht"
+  ],
+  "updated": "2026-07-16"
+}

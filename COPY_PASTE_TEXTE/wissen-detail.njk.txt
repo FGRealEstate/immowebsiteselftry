@@ -1,0 +1,12 @@
+---
+layout: base.njk
+pagination:
+  data: labContent.articles
+  size: 1
+  alias: article
+permalink: "wissen/{{ article.slug }}/index.html"
+eleventyComputed:
+  title: "{{ article.title }}"
+  description: "{{ article.summary }}"
+---
+<main class="content-detail shell"><nav class="breadcrumbs"><a href="/investment-lab.html">Investment Lab</a><span>›</span><a href="/investment-lab.html#wissen">Immobilienwissen</a><span>›</span><span>{{ article.title }}</span></nav><article class="science-article"><header><span class="lab-kicker">{{ article.category }}</span><h1>{{ article.title }}</h1><p class="lead">{{ article.summary }}</p><p class="content-meta">Fischer & Geserich Real Estate GmbH · aktualisiert {{ article.updated }}</p></header><section><h2>Definition und wirtschaftliche Bedeutung</h2><p>{{ article.body }}</p></section><section><h2>Analytischer Rahmen</h2><p>Für eine belastbare Einordnung müssen Bezugsgröße, Zeitraum, Zahlungswirksamkeit und Annahmen offengelegt werden. Prozentwerte werden deshalb immer zusammen mit Eurobeträgen und einem Vergleichsszenario betrachtet.</p></section><section><h2>Schrittweise Anwendung</h2><ol><li>Eingangsgrößen und Zeitraum festlegen.</li><li>Liquidität, Finanzierung, Steuern und Wertentwicklung getrennt modellieren.</li><li>Basisszenario und konservatives Stressszenario vergleichen.</li><li>Ergebnis mit Objektunterlagen und Finanzierungsvorschlag abgleichen.</li></ol></section><aside class="article-note"><strong>Hinweis</strong><p>Der Beitrag dient der allgemeinen Information und ersetzt keine Rechts-, Steuer-, Finanzierungs- oder Anlageberatung.</p></aside><div class="article-actions"><a class="lab-btn lab-btn-gold" href="/investment-lab.html">Passenden Rechner im Investment Lab finden</a><a class="lab-btn lab-btn-ghost" href="/angebote.html">Aktuelle Angebote</a></div></article></main>

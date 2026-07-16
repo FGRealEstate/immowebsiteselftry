@@ -1,0 +1,11 @@
+{
+  "term": "Werbungskosten",
+  "definition": "Aufwendungen zur Erwerbung, Sicherung und Erhaltung steuerpflichtiger Einnahmen.",
+  "id": "werbungskosten",
+  "slug": "werbungskosten",
+  "url": "/lexikon/werbungskosten/",
+  "keywords": [
+    "werbungskosten"
+  ],
+  "updated": "2026-07-16"
+}

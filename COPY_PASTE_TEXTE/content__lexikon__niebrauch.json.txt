@@ -1,0 +1,11 @@
+{
+  "term": "Nießbrauch",
+  "definition": "Umfassendes Nutzungsrecht an einer Sache.",
+  "id": "niebrauch",
+  "slug": "niebrauch",
+  "url": "/lexikon/niebrauch/",
+  "keywords": [
+    "nießbrauch"
+  ],
+  "updated": "2026-07-16"
+}

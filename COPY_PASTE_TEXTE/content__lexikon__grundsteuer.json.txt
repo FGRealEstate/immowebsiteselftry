@@ -1,0 +1,11 @@
+{
+  "term": "Grundsteuer",
+  "definition": "Laufende Steuer auf Grundbesitz.",
+  "id": "grundsteuer",
+  "slug": "grundsteuer",
+  "url": "/lexikon/grundsteuer/",
+  "keywords": [
+    "grundsteuer"
+  ],
+  "updated": "2026-07-16"
+}

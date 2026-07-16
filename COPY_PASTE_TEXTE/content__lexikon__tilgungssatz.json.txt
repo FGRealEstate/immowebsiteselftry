@@ -1,0 +1,11 @@
+{
+  "term": "Tilgungssatz",
+  "definition": "Anfänglicher oder laufender Anteil der Darlehensrückzahlung.",
+  "id": "tilgungssatz",
+  "slug": "tilgungssatz",
+  "url": "/lexikon/tilgungssatz/",
+  "keywords": [
+    "tilgungssatz"
+  ],
+  "updated": "2026-07-16"
+}

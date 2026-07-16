@@ -1,0 +1,11 @@
+{
+  "term": "Modernisierung",
+  "definition": "Bauliche Verbesserung über reine Erhaltung hinaus.",
+  "id": "modernisierung",
+  "slug": "modernisierung",
+  "url": "/lexikon/modernisierung/",
+  "keywords": [
+    "modernisierung"
+  ],
+  "updated": "2026-07-16"
+}

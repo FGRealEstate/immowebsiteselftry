@@ -1,0 +1,11 @@
+{
+  "term": "Sonderumlage",
+  "definition": "Zusätzliche Zahlung der Wohnungseigentümer aufgrund eines WEG-Beschlusses.",
+  "id": "sonderumlage",
+  "slug": "sonderumlage",
+  "url": "/lexikon/sonderumlage/",
+  "keywords": [
+    "sonderumlage"
+  ],
+  "updated": "2026-07-16"
+}

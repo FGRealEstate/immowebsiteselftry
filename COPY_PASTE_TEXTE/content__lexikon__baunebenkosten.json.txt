@@ -1,0 +1,11 @@
+{
+  "term": "Baunebenkosten",
+  "definition": "Planungs-, Genehmigungs- und sonstige Kosten zusätzlich zu Bauleistungen.",
+  "id": "baunebenkosten",
+  "slug": "baunebenkosten",
+  "url": "/lexikon/baunebenkosten/",
+  "keywords": [
+    "baunebenkosten"
+  ],
+  "updated": "2026-07-16"
+}

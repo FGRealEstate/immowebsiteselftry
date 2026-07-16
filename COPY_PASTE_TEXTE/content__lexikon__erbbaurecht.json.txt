@@ -1,0 +1,11 @@
+{
+  "term": "Erbbaurecht",
+  "definition": "Zeitlich befristetes Recht, auf fremdem Grund ein Bauwerk zu haben.",
+  "id": "erbbaurecht",
+  "slug": "erbbaurecht",
+  "url": "/lexikon/erbbaurecht/",
+  "keywords": [
+    "erbbaurecht"
+  ],
+  "updated": "2026-07-16"
+}

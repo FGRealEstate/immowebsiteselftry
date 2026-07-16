@@ -1,0 +1,11 @@
+{
+  "term": "Beleihungswert",
+  "definition": "Vorsichtig ermittelter, langfristig erzielbarer Objektwert der Bank.",
+  "id": "beleihungswert",
+  "slug": "beleihungswert",
+  "url": "/lexikon/beleihungswert/",
+  "keywords": [
+    "beleihungswert"
+  ],
+  "updated": "2026-07-16"
+}

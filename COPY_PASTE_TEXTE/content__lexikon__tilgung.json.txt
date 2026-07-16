@@ -1,0 +1,11 @@
+{
+  "term": "Tilgung",
+  "definition": "Rückzahlung des Darlehenskapitals.",
+  "id": "tilgung",
+  "slug": "tilgung",
+  "url": "/lexikon/tilgung/",
+  "keywords": [
+    "tilgung"
+  ],
+  "updated": "2026-07-16"
+}

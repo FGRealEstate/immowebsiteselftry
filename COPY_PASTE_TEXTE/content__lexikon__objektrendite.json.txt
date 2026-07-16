@@ -1,0 +1,11 @@
+{
+  "term": "Objektrendite",
+  "definition": "Rendite des Objekts vor individueller Finanzierung.",
+  "id": "objektrendite",
+  "slug": "objektrendite",
+  "url": "/lexikon/objektrendite/",
+  "keywords": [
+    "objektrendite"
+  ],
+  "updated": "2026-07-16"
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Mikrolage vor Stadtname",
+  "category": "Marktanalysen",
+  "summary": "Straße, Block und fußläufige Umgebung sind oft wichtiger als die Stadt als Ganzes.",
+  "body": "ÖPNV, Lärm, Nahversorgung, Arbeitgeber, Schulen, Quartiersentwicklung und Neubaupipeline beeinflussen Vermietbarkeit und Exit.",
+  "id": "mikrolage-vor-stadtname",
+  "slug": "mikrolage-vor-stadtname",
+  "url": "/wissen/mikrolage-vor-stadtname/",
+  "keywords": [
+    "block",
+    "fußläufige",
+    "ganzes",
+    "mikrolage",
+    "sind",
+    "stadt",
+    "stadtname",
+    "straße",
+    "umgebung",
+    "wichtiger"
+  ],
+  "synonyms": [],
+  "updated": "2026-07-16",
+  "author": "Fischer & Geserich Real Estate GmbH",
+  "related": []
+}

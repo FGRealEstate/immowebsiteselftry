@@ -1,0 +1,11 @@
+{
+  "term": "Nachrangdarlehen",
+  "definition": "Darlehen, dessen Gläubiger im Rang hinter andere Gläubiger tritt.",
+  "id": "nachrangdarlehen",
+  "slug": "nachrangdarlehen",
+  "url": "/lexikon/nachrangdarlehen/",
+  "keywords": [
+    "nachrangdarlehen"
+  ],
+  "updated": "2026-07-16"
+}

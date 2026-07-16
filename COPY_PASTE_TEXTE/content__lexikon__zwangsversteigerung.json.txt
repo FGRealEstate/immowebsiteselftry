@@ -1,0 +1,11 @@
+{
+  "term": "Zwangsversteigerung",
+  "definition": "Gerichtliches Verfahren zur Verwertung einer Immobilie.",
+  "id": "zwangsversteigerung",
+  "slug": "zwangsversteigerung",
+  "url": "/lexikon/zwangsversteigerung/",
+  "keywords": [
+    "zwangsversteigerung"
+  ],
+  "updated": "2026-07-16"
+}

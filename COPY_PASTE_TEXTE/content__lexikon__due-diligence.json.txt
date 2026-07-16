@@ -1,0 +1,11 @@
+{
+  "term": "Due Diligence",
+  "definition": "Systematische Prüfung eines Investments.",
+  "id": "due-diligence",
+  "slug": "due-diligence",
+  "url": "/lexikon/due-diligence/",
+  "keywords": [
+    "due diligence"
+  ],
+  "updated": "2026-07-16"
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Forward-Darlehen",
+  "category": "Finanzierung",
+  "summary": "Ein Forward-Darlehen sichert Zinsen vor Ablauf der bestehenden Bindung.",
+  "body": "Dafür wird typischerweise ein Aufschlag bezahlt. Vorteil und Risiko hängen von Vorlaufzeit und Zinsentwicklung ab.",
+  "id": "forward-darlehen",
+  "slug": "forward-darlehen",
+  "url": "/wissen/forward-darlehen/",
+  "keywords": [
+    "ablauf",
+    "bestehenden",
+    "bindung",
+    "darlehen",
+    "forward",
+    "sichert",
+    "zinsen"
+  ],
+  "synonyms": [],
+  "updated": "2026-07-16",
+  "author": "Fischer & Geserich Real Estate GmbH",
+  "related": []
+}

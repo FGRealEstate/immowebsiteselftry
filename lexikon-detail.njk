@@ -1,0 +1,12 @@
+---
+layout: base.njk
+pagination:
+  data: labContent.lexicon
+  size: 1
+  alias: entry
+permalink: "lexikon/{{ entry.slug }}/index.html"
+eleventyComputed:
+  title: "{{ entry.term }} – Immobilienlexikon"
+  description: "{{ entry.definition }}"
+---
+<main class="content-detail shell"><nav class="breadcrumbs"><a href="/investment-lab.html">Investment Lab</a><span>›</span><a href="/investment-lab.html#lexikon">Lexikon</a><span>›</span><span>{{ entry.term }}</span></nav><article class="science-article"><header><span class="lab-kicker">IMMOBILIENLEXIKON</span><h1>{{ entry.term }}</h1><p class="lead">{{ entry.definition }}</p></header><section><h2>Ausführliche Einordnung</h2><p>{{ entry.definition }} Für die Praxis ist entscheidend, wie der Begriff im konkreten Vertrag, in einer Abrechnung oder in der Finanzierungsunterlage definiert wird.</p></section><section><h2>Prüffragen</h2><ul><li>Welche Unterlage enthält die maßgebliche Angabe?</li><li>Welche Bezugsgröße und welcher Zeitraum gelten?</li><li>Welche Kosten oder Risiken sind nicht enthalten?</li><li>Welcher Fachartikel oder Rechner vertieft das Thema?</li></ul></section><a class="lab-btn lab-btn-gold" href="/investment-lab.html">Im Investment Lab weiterarbeiten</a></article></main>

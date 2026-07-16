@@ -1,0 +1,11 @@
+{
+  "term": "Wertsteigerung",
+  "definition": "Zunahme des Marktwerts; keine garantierte Größe.",
+  "id": "wertsteigerung",
+  "slug": "wertsteigerung",
+  "url": "/lexikon/wertsteigerung/",
+  "keywords": [
+    "wertsteigerung"
+  ],
+  "updated": "2026-07-16"
+}

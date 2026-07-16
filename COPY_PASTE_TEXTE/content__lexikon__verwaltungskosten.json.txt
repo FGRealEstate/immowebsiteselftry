@@ -1,0 +1,11 @@
+{
+  "term": "Verwaltungskosten",
+  "definition": "Kosten der kaufmännischen und technischen Verwaltung.",
+  "id": "verwaltungskosten",
+  "slug": "verwaltungskosten",
+  "url": "/lexikon/verwaltungskosten/",
+  "keywords": [
+    "verwaltungskosten"
+  ],
+  "updated": "2026-07-16"
+}

@@ -1,0 +1,11 @@
+{
+  "term": "Spekulationsfrist",
+  "definition": "Umgangssprachliche Bezeichnung für steuerlich relevante Haltefristen.",
+  "id": "spekulationsfrist",
+  "slug": "spekulationsfrist",
+  "url": "/lexikon/spekulationsfrist/",
+  "keywords": [
+    "spekulationsfrist"
+  ],
+  "updated": "2026-07-16"
+}
