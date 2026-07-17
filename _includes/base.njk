@@ -18,8 +18,15 @@
     <meta property="og:description" content="{{ ogDescription or pageDescription }}">
     <meta property="og:url" content="https://fg-realestate.de{{ canonicalPath }}">
     <meta property="og:site_name" content="Fischer & Geserich Real Estate">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ ogTitle or pageTitle }}">
+    <meta name="twitter:description" content="{{ ogDescription or pageDescription }}">
+    <meta name="twitter:image" content="https://fg-realestate.de/images/fg-logo-gold-transparent.png">
+    <meta name="theme-color" content="#08082F">
     <meta property="og:image" content="https://fg-realestate.de/images/fg-logo-gold-transparent.png">
     <script type="application/ld+json">{{ {"@context":"https://schema.org","@type":["RealEstateAgent","Organization"],"name":"Fischer & Geserich Real Estate GmbH","url":"https://fg-realestate.de","logo":"https://fg-realestate.de/images/fg-logo-gold-transparent.png","email":"info@fg-realestate.de","address":{"@type":"PostalAddress","streetAddress":"Schützenstraße 30","postalCode":"12165","addressLocality":"Berlin","addressCountry":"DE"},"areaServed":["Berlin","Potsdam","Leipzig","Dresden","Berliner Speckgürtel"]} | json | safe }}</script>
+
+    {% raw %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Fischer & Geserich Real Estate","url":"https://fg-realestate.de","potentialAction":{"@type":"SearchAction","target":"https://fg-realestate.de/investment-lab.html?q={search_term_string}","query-input":"required name=search_term_string"}}</script>{% endraw %}
     <link rel="stylesheet" href="/vendor/cookieconsent/cookieconsent.css">
     <script src="/vendor/cookieconsent/cookieconsent.umd.js" defer></script>
     <script src="/consent-manager.js" defer></script>
@@ -39,7 +46,8 @@
                         'page-bg': '#CDD2D4'
                     },
                     fontFamily: {
-                        'sans': ['Avenir Next', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif']
+                        'sans': ['Avenir Next', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                        'display': ['Georgia', 'Times New Roman', 'serif']
                     }
                 }
             }
@@ -168,14 +176,8 @@
                                                         
                                             <a href="/angebote.html"
                                                class="{% if currentUrl == '/angebote.html' %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Angebote</a>
-                                                                        
-                                            <a href="/ankaufsberatung.html"
-                                               class="{% if currentUrl == '/ankaufsberatung.html' %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Ankaufsberatung</a>
-
                                             <a href="/investment-lab.html"
-                                               class="{% if currentUrl == '/investment-lab.html' %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Investment Lab</a>
-                                            <a href="/investitionsrechner.html"
-                                               class="{% if currentUrl == '/investitionsrechner.html' %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Investitionsrechner</a>
+                                               class="{% if currentUrl == '/investment-lab.html' or currentUrl == '/ankaufsberatung.html' or currentUrl == '/investitionsrechner.html' %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Investment Lab</a>
                                                         
                                             <a href="/finanzierungsberatung.html"
                                                class="{% if currentUrl == '/finanzierungsberatung.html' %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Finanzierung</a>
@@ -202,9 +204,7 @@
                                     
                                             <a href="/index.html" class="{% if currentUrl == '/' or currentUrl == '/index.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Start</a>
                                             <a href="/angebote.html" class="{% if currentUrl == '/angebote.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Angebote</a>
-                                            <a href="/ankaufsberatung.html" class="{% if currentUrl == '/ankaufsberatung.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Ankaufsberatung</a>
-                                            <a href="/investment-lab.html" class="{% if currentUrl == '/investment-lab.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Investment Lab</a>
-                                            <a href="/investitionsrechner.html" class="{% if currentUrl == '/investitionsrechner.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Investitionsrechner</a>
+                                            <a href="/investment-lab.html" class="{% if currentUrl == '/investment-lab.html' or currentUrl == '/ankaufsberatung.html' or currentUrl == '/investitionsrechner.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Investment Lab</a>
                                             <a href="/finanzierungsberatung.html" class="{% if currentUrl == '/finanzierungsberatung.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Finanzierung</a>
                                             {#
                                             <a href="/verwaltung.html" class="{% if currentUrl == '/verwaltung.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Verwaltung</a>

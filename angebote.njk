@@ -16,22 +16,22 @@ permalink: angebote.html
     </div>
 </section>
 
-<section id="angebote" class="container mx-auto px-4 py-16">
+<section id="angebote" class="container mx-auto px-4 py-10 md:py-16 offers-page">
 
-    <div class="bg-white p-6 rounded-lg shadow-xl mb-10 border-t-4 border-accent">
+    <div class="offers-filter-panel">
         <h2 class="text-2xl font-bold mb-4 text-primary">
             Ihre Immobiliensuche
         </h2>
 
-        <form id="property-filter-form" class="grid grid-cols-1 md:grid-cols-5 gap-4">
-            <select id="filter-vermarktung" class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
+        <form id="property-filter-form" class="offers-filter-grid">
+            <select id="filter-vermarktung" class="offers-control">
                 <option value="">Vermarktungsart (Alle)</option>
                 {% for type in propstack.filters.marketingTypes %}
                 <option value="{{ type }}">{{ type }}</option>
                 {% endfor %}
             </select>
 
-            <select id="filter-objektart" class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
+            <select id="filter-objektart" class="offers-control">
                 <option value="">Objektart (Alle)</option>
                 {% for type in propstack.filters.propertyTypes %}
                 <option value="{{ type }}">{{ type }}</option>
@@ -43,10 +43,10 @@ permalink: angebote.html
                 id="filter-preis"
                 inputmode="numeric"
                 placeholder="Max. Kaufpreis (€)"
-                class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary"
+                class="offers-control"
             >
 
-            <select id="filter-sortierung" class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
+            <select id="filter-sortierung" class="offers-control">
                 <option value="">Sortierung</option>
                 <option value="price-asc">Preis aufsteigend</option>
                 <option value="price-desc">Preis absteigend</option>
@@ -55,7 +55,7 @@ permalink: angebote.html
                 <option value="newest">Neueste zuerst</option>
             </select>
 
-            <button type="submit" id="filter-button" class="btn-85 text-primary font-bold rounded py-3 hover:bg-primary hover:text-white transition duration-300 w-full">
+            <button type="submit" id="filter-button" class="btn-85 offers-submit">
                 <i class="fas fa-search mr-2"></i> Suchen
             </button>
         </form>
@@ -77,7 +77,7 @@ permalink: angebote.html
 
         {% for property in propstack.properties %}
         <div
-            class="immobilien-kachel property-card bg-white rounded-lg shadow-xl overflow-hidden transition duration-300 hover:shadow-2xl hover:-translate-y-1"
+            class="immobilien-kachel property-card offers-card"
             data-vermarktung="{{ property.marketing_type or '' }}"
             data-objektart="{{ property.property_type or '' }}"
             data-preis="{{ property.price_raw or '' }}"

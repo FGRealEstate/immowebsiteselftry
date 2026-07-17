@@ -29,13 +29,10 @@ permalink: "angebote/{{ property.slug }}/index.html"
     </div>
 </section>
 
-<section class="container mx-auto px-4 py-16">
-
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
-
-        <main class="lg:col-span-2 space-y-8">
-
-            {% if property.gallery and property.gallery.length %}
+<section class="container mx-auto px-4 py-8 md:py-16 property-detail-shell">
+  <div class="property-detail-layout">
+    <div class="property-gallery-block">
+{% if property.gallery and property.gallery.length %}
             <section class="bg-white rounded-xl shadow-xl overflow-hidden">
                 <div id="property-slider" class="relative w-full bg-white">
 
@@ -76,58 +73,9 @@ permalink: "angebote/{{ property.slug }}/index.html"
             </section>
             {% endif %}
 
-            {% if property.descriptions and property.descriptions.length %}
-            <section class="bg-white rounded-xl shadow-xl p-8 md:p-10">
-                <h2 class="text-3xl font-bold text-primary mb-8">
-                    Beschreibung
-                </h2>
-
-                <div class="space-y-8">
-                    {% for description in property.descriptions %}
-                    {% if description.value %}
-                    <div>
-                        <h3 class="text-xl font-bold text-primary mb-3">
-                            {{ description.label }}
-                        </h3>
-
-                        <div class="text-gray-700 leading-relaxed text-lg prose max-w-none">
-                            {{ description.value | safe }}
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </section>
-            {% endif %}
-
-            {% if property.features and property.features.length %}
-            <section class="bg-white rounded-xl shadow-xl p-8 md:p-10">
-                <h2 class="text-3xl font-bold text-primary mb-8">
-                    Ausstattung
-                </h2>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {% for feature in property.features %}
-                    {% if feature.value %}
-                    <div class="bg-gray-50 rounded-lg p-4 flex items-start gap-3">
-                        <i class="fas fa-check-circle text-accent mt-1"></i>
-
-                        <div class="text-gray-700">
-                            <strong class="text-primary">{{ feature.label }}</strong>
-                            {% if feature.value and feature.value != "Ja" %}
-                            <span>: {{ feature.value }}</span>
-                            {% endif %}
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </section>
-            {% endif %}
-
-        </main>
-
-        <aside class="lg:col-span-1">
+    </div>
+    <div class="property-facts-block">
+<aside class="lg:col-span-1">
             <div class="bg-white rounded-xl shadow-xl p-8 sticky top-8 border-t-4 border-accent">
 
                 {% if property.price %}
@@ -210,8 +158,58 @@ permalink: "angebote/{{ property.slug }}/index.html"
 
             </div>
         </aside>
-
     </div>
+    <main class="property-content-block space-y-6 md:space-y-8">
+{% if property.descriptions and property.descriptions.length %}
+            <section class="bg-white rounded-xl shadow-xl p-8 md:p-10">
+                <h2 class="text-3xl font-bold text-primary mb-8">
+                    Beschreibung
+                </h2>
+
+                <div class="space-y-8">
+                    {% for description in property.descriptions %}
+                    {% if description.value %}
+                    <div>
+                        <h3 class="text-xl font-bold text-primary mb-3">
+                            {{ description.label }}
+                        </h3>
+
+                        <div class="text-gray-700 leading-relaxed text-lg prose max-w-none">
+                            {{ description.value | safe }}
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+{% if property.features and property.features.length %}
+            <section class="bg-white rounded-xl shadow-xl p-8 md:p-10">
+                <h2 class="text-3xl font-bold text-primary mb-8">
+                    Ausstattung
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {% for feature in property.features %}
+                    {% if feature.value %}
+                    <div class="bg-gray-50 rounded-lg p-4 flex items-start gap-3">
+                        <i class="fas fa-check-circle text-accent mt-1"></i>
+
+                        <div class="text-gray-700">
+                            <strong class="text-primary">{{ feature.label }}</strong>
+                            {% if feature.value and feature.value != "Ja" %}
+                            <span>: {{ feature.value }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
+    </main>
+  </div>
 </section>
 
 <script>
