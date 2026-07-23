@@ -1,0 +1,1099 @@
+<section class="lead-widget container mx-auto px-4 py-10 md:py-16" data-default-concern="{{ leadDefaultConcern or '' }}">
+    <div class="lead-shell bg-white rounded-2xl shadow-2xl border-t-4 border-accent overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+
+            <div class="p-8 md:p-12 bg-primary text-white relative overflow-hidden">
+                <div class="absolute inset-0 opacity-25">
+                    <img src="/images/berlinskypng.png" alt="Berlin Immobilienberatung" class="w-full h-full object-cover">
+                </div>
+
+                <div class="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-secondary/20 blur-3xl"></div>
+                <div class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-white/10 blur-3xl"></div>
+
+                <div class="relative z-10">
+                    <p class="text-secondary font-semibold mb-3 uppercase tracking-wide text-sm">
+                        Persönliche Immobilienberatung
+                    </p>
+
+                    <h2 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
+                        Der schnellste Weg zu Ihrer Wunschimmobilie oder zum erfolgreichen Verkauf.
+                    </h2>
+
+                    <p class="text-lg md:text-xl text-page-bg mb-8 leading-relaxed">
+                        Beantworten Sie nur ein paar kurze Fragen. Unsere Immobilienexperten prüfen Ihr Anliegen persönlich und melden sich mit einer passenden Einschätzung zurück.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="lead-benefit-card">
+                            <i class="fas fa-user-check text-secondary text-2xl mb-3"></i>
+                            <h3 class="font-bold mb-1">Persönlich geprüft</h3>
+                            <p class="text-sm text-page-bg">Keine Standardantwort, sondern echte Einordnung.</p>
+                        </div>
+
+                        <div class="lead-benefit-card">
+                            <i class="fas fa-route text-secondary text-2xl mb-3"></i>
+                            <h3 class="font-bold mb-1">Geführter Prozess</h3>
+                            <p class="text-sm text-page-bg">Die Fragen passen sich Ihrem Anliegen automatisch an.</p>
+                        </div>
+
+                        <div class="lead-benefit-card">
+                            <i class="fas fa-shield-alt text-secondary text-2xl mb-3"></i>
+                            <h3 class="font-bold mb-1">Diskret</h3>
+                            <p class="text-sm text-page-bg">Vertraulicher Umgang mit Ihren Daten und Ihrem Anliegen.</p>
+                        </div>
+
+                        <div class="lead-benefit-card">
+                            <i class="fas fa-bolt text-secondary text-2xl mb-3"></i>
+                            <h3 class="font-bold mb-1">Schnelle Rückmeldung</h3>
+                            <p class="text-sm text-page-bg">Wir prüfen Ihre Angaben zeitnah und melden uns persönlich.</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 text-page-bg">
+                        <p>
+                            <i class="fas fa-phone-alt text-secondary mr-2"></i>
+                            <a href="tel:015203083048" class="hover:underline">01520 3083048</a>
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope text-secondary mr-2"></i>
+                            <a href="mailto:info@fg-realestate.de" class="hover:underline">info@fg-realestate.de</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lead-panel p-8 md:p-12 bg-white relative overflow-hidden">
+                <div class="absolute inset-0 pointer-events-none lead-panel-bg"></div>
+                <div class="absolute top-0 right-0 w-48 h-48 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 w-56 h-56 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="relative z-10">
+                    <div class="mb-8">
+                        <div class="inline-flex items-center gap-2 rounded-full bg-primary/5 border border-primary/10 px-4 py-2 mb-4">
+                            <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                            <p class="text-secondary font-semibold uppercase tracking-wide text-xs">Anfrage starten</p>
+                        </div>
+
+                        <h3 class="lead-title text-3xl font-bold text-primary mb-3">
+                            Wobei dürfen wir Sie unterstützen?
+                        </h3>
+
+                        <p class="lead-subtitle text-gray-600">
+                            Wählen Sie zuerst Ihr Anliegen aus. Danach passen sich die Fragen automatisch an.
+                        </p>
+
+                        <div class="mt-6 h-2 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="lead-progress h-full bg-secondary rounded-full transition-all duration-500" style="width: 20%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="lead-success hidden mb-6 rounded-xl border border-green-300 bg-green-50 p-5 text-green-800">
+                        <h4 class="font-bold text-lg mb-1">Ihre Anfrage wurde erfolgreich übermittelt.</h4>
+                        <p>Wir haben Ihre Angaben erhalten und melden uns zeitnah persönlich bei Ihnen.</p>
+                    </div>
+
+                    <div class="lead-error hidden mb-6 rounded-xl border border-red-300 bg-red-50 p-5 text-red-800">
+                        <h4 class="font-bold text-lg mb-1">Anfrage konnte nicht gesendet werden.</h4>
+                        <p>Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per Telefon oder E-Mail.</p>
+                    </div>
+
+                    <form class="lead-form" enctype="multipart/form-data">
+                        <input type="hidden" name="concern" class="lead-concern">
+                        <input type="hidden" name="object_type" class="lead-object-type">
+                        <input type="hidden" name="location" class="lead-location">
+                        <input type="hidden" name="budget" class="lead-budget">
+                        <input type="hidden" name="timeframe" class="lead-timeframe">
+                        <input type="hidden" name="contact_preference" class="lead-contact-preference" value="E-Mail">
+                        <input type="hidden" name="source_url" class="lead-source-url">
+                        <input type="hidden" name="financing_interest" class="lead-financing-interest">
+                        <input type="hidden" name="property_details_wanted" class="lead-property-details-wanted">
+                        <input type="hidden" name="management_takeover" class="lead-management-takeover">
+                        <input type="hidden" name="newsletter_consent" class="lead-newsletter-consent" value="false">
+
+                        <div class="lead-step" data-step="1">
+                            <div class="grid grid-cols-1 gap-4">
+                                <button type="button" class="lead-choice" data-field="concern" data-value="Immobilie suchen">
+                                    <span><i class="fas fa-key text-secondary mr-3"></i>Ich möchte kaufen oder mieten</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+
+                                <button type="button" class="lead-choice" data-field="concern" data-value="Immobilie verkaufen">
+                                    <span><i class="fas fa-home text-secondary mr-3"></i>Ich möchte verkaufen</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+
+                                <button type="button" class="lead-choice" data-field="concern" data-value="Immobilie vermieten">
+                                    <span><i class="fas fa-building text-secondary mr-3"></i>Ich möchte vermieten</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+
+                                <button type="button" class="lead-choice" data-field="concern" data-value="Finanzierung">
+                                    <span><i class="fas fa-euro-sign text-secondary mr-3"></i>Ich brauche eine Finanzierung</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="lead-step hidden" data-step="2">
+                            <div class="lead-dynamic-options grid grid-cols-1 gap-4"></div>
+                        </div>
+
+                        <div class="lead-step hidden" data-step="3">
+                            <div class="lead-context-fields space-y-5"></div>
+                        </div>
+
+                        <div class="lead-step hidden" data-step="4">
+                            <div class="lead-extra-fields space-y-5"></div>
+                        </div>
+
+                        <div class="lead-step hidden" data-step="5">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="lead-label">Vorname *</label>
+                                    <input type="text" name="first_name" required placeholder="Ihr Vorname" class="lead-input">
+                                </div>
+
+                                <div>
+                                    <label class="lead-label">Nachname *</label>
+                                    <input type="text" name="last_name" required placeholder="Ihr Nachname" class="lead-input">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
+                                <div>
+                                    <label class="lead-label">E-Mail-Adresse *</label>
+                                    <input type="email" name="email" required placeholder="name@email.de" class="lead-input">
+                                </div>
+
+                                <div>
+                                    <label class="lead-label">Telefonnummer</label>
+                                    <input type="tel" name="phone" placeholder="Ihre Telefonnummer" class="lead-input">
+                                </div>
+                            </div>
+
+                            <label class="lead-label mt-5">Bevorzugte Kontaktaufnahme</label>
+                            <select class="visible-contact-preference lead-select">
+                                <option value="E-Mail">Per E-Mail</option>
+                                <option value="Telefon">Telefonisch</option>
+                                <option value="WhatsApp">Per WhatsApp</option>
+                            </select>
+                        </div>
+
+                        <div class="lead-step hidden" data-step="6">
+                            <label class="lead-label">Ihre Nachricht</label>
+                            <textarea name="message" rows="5" placeholder="Gibt es noch etwas, das wir wissen sollten?" class="lead-input"></textarea>
+
+                            <div class="lead-upload-area hidden mt-5">
+                                <label class="lead-label">Unterlagen hochladen, optional PDF</label>
+                                <input type="file" name="documents" class="lead-documents lead-input" multiple accept="application/pdf,.pdf">
+                                <p class="text-xs text-gray-500 mt-2">Optional, maximal 3 PDF-Dateien. Keine Pflicht.</p>
+                            </div>
+
+                            <div class="lead-newsletter-box mt-6 bg-primary/5 rounded-lg p-5 border border-primary/10 hidden">
+                                <label class="flex items-start text-sm text-gray-700">
+                                    <input type="checkbox" name="newsletter_consent_visible" value="true" class="lead-newsletter-visible mt-1 mr-3 h-4 w-4 text-accent border-gray-300 rounded focus:ring-accent">
+                                    <span>
+                                        Ich möchte passende Immobilienangebote, Suchprofil-Updates und Immobilienmailings per E-Mail erhalten. Ich kann diese Einwilligung jederzeit widerrufen.
+                                    </span>
+                                </label>
+                            </div>
+
+                            <div class="mt-6 bg-gray-50 rounded-lg p-5 border border-gray-200">
+                                <label class="flex items-start text-sm text-gray-700">
+                                    <input type="checkbox" name="privacy_consent" value="true" required class="mt-1 mr-3 h-4 w-4 text-accent border-gray-300 rounded focus:ring-accent">
+                                    <span>
+                                        Ich habe die <a href="/datenschutz.html" target="_blank" class="text-primary font-semibold hover:underline">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 flex justify-between gap-4">
+                            <button type="button" class="lead-back hidden px-5 py-3 rounded-lg border border-gray-300 text-primary font-bold hover:bg-gray-50">
+                                Zurück
+                            </button>
+
+                            <button type="button" class="lead-next ml-auto btn-85 px-8 py-3 text-primary font-bold rounded-lg shadow-md">
+                                Weiter
+                            </button>
+
+                            <button type="submit" class="lead-submit hidden ml-auto btn-85 px-8 py-3 text-primary font-bold rounded-lg shadow-md">
+                                Anfrage absenden
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+(function(){
+    if (window.__fgLeadWidgetLoaded) return;
+    window.__fgLeadWidgetLoaded = true;
+
+    function ready(fn) {
+        if (document.readyState !== "loading") fn();
+        else document.addEventListener("DOMContentLoaded", fn);
+    }
+
+    ready(function () {
+        document.querySelectorAll(".lead-widget").forEach(initLeadWidget);
+        setupAnchorScroll();
+    });
+
+    function setupAnchorScroll() {
+        function go() {
+            const widgets = Array.from(document.querySelectorAll(".lead-widget"));
+            const visible = widgets.find(w => w.offsetParent !== null) || widgets[0];
+            if (visible) visible.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+
+        document.querySelectorAll('a[href="#kontakt"],a[href="/index.html#kontakt"],a[href="index.html#kontakt"],a[href="#verkaufsprofil"],a[href="#landingpage"]').forEach(a => {
+            a.addEventListener("click", function (e) {
+                if (location.pathname.endsWith("/") || location.pathname.includes("index") || a.getAttribute("href").startsWith("#")) {
+                    e.preventDefault();
+                    go();
+                }
+            });
+        });
+
+        if (location.hash === "#kontakt" || location.hash === "#verkaufsprofil" || location.hash === "#landingpage") {
+            setTimeout(go, 300);
+        }
+    }
+
+    function initLeadWidget(widget) {
+        let step = 1;
+
+        const defaultConcern = widget.dataset.defaultConcern || "";
+
+        const state = {
+            concern: "",
+            object_type: "",
+            location: "",
+            budget: "",
+            timeframe: "",
+            financing_interest: "",
+            property_details_wanted: "",
+            management_takeover: "",
+            newsletter_consent: false,
+            property_details: {}
+        };
+
+        const form = widget.querySelector(".lead-form");
+        const steps = Array.from(widget.querySelectorAll(".lead-step"));
+        const success = widget.querySelector(".lead-success");
+        const errorBox = widget.querySelector(".lead-error");
+        const title = widget.querySelector(".lead-title");
+        const subtitle = widget.querySelector(".lead-subtitle");
+        const progress = widget.querySelector(".lead-progress");
+        const back = widget.querySelector(".lead-back");
+        const next = widget.querySelector(".lead-next");
+        const submit = widget.querySelector(".lead-submit");
+        const dyn = widget.querySelector(".lead-dynamic-options");
+        const ctx = widget.querySelector(".lead-context-fields");
+        const extra = widget.querySelector(".lead-extra-fields");
+
+        const optionGroups = {
+            "Immobilie suchen": [
+                { title: "Wohnung", items: [["Eigentumswohnung", "fas fa-building"], ["Dachgeschosswohnung", "fas fa-building"], ["Etagenwohnung", "fas fa-building"], ["Erdgeschosswohnung", "fas fa-door-open"], ["Maisonette", "fas fa-layer-group"], ["Penthouse", "fas fa-crown"], ["Loft", "fas fa-warehouse"], ["Terrassenwohnung", "fas fa-umbrella-beach"]] },
+                { title: "Haus", items: [["Einfamilienhaus", "fas fa-house"], ["Zweifamilienhaus", "fas fa-house-user"], ["Doppelhaushälfte", "fas fa-house-chimney"], ["Reihenhaus", "fas fa-house-chimney-window"], ["Reihenmittelhaus", "fas fa-house-chimney-window"], ["Reihenendhaus", "fas fa-house-circle-check"], ["Villa", "fas fa-landmark"], ["Bungalow", "fas fa-home"]] },
+                { title: "Investment & Grundstück", items: [["Mehrfamilienhaus", "fas fa-city"], ["Kapitalanlage", "fas fa-chart-line"], ["Grundstück", "fas fa-map"], ["Gewerbeimmobilie", "fas fa-briefcase"]] }
+            ],
+            "Immobilie verkaufen": [
+                { title: "Wohnung", items: [["Eigentumswohnung", "fas fa-building"], ["Dachgeschosswohnung", "fas fa-building"], ["Etagenwohnung", "fas fa-building"], ["Erdgeschosswohnung", "fas fa-door-open"], ["Penthouse", "fas fa-crown"], ["Maisonette", "fas fa-layer-group"], ["Loft", "fas fa-warehouse"], ["Terrassenwohnung", "fas fa-umbrella-beach"]] },
+                { title: "Haus", items: [["Einfamilienhaus", "fas fa-house"], ["Zweifamilienhaus", "fas fa-house-user"], ["Doppelhaushälfte", "fas fa-house-chimney"], ["Reihenhaus", "fas fa-house-chimney-window"], ["Reihenmittelhaus", "fas fa-house-chimney-window"], ["Reihenendhaus", "fas fa-house-circle-check"], ["Villa", "fas fa-landmark"], ["Bungalow", "fas fa-home"]] },
+                { title: "Investment / Grundstück / Gewerbe", items: [["Mehrfamilienhaus", "fas fa-city"], ["Grundstück", "fas fa-map"], ["Gewerbeimmobilie", "fas fa-briefcase"], ["Diskrete Off-Market-Vermarktung", "fas fa-user-secret"]] }
+            ],
+            "Immobilie vermieten": [
+                { title: "Wohnung", items: [["Wohnung", "fas fa-building"], ["Dachgeschosswohnung", "fas fa-building"], ["Etagenwohnung", "fas fa-building"], ["Erdgeschosswohnung", "fas fa-door-open"], ["Penthouse", "fas fa-crown"], ["Maisonette", "fas fa-layer-group"], ["Loft", "fas fa-warehouse"], ["Terrassenwohnung", "fas fa-umbrella-beach"]] },
+                { title: "Haus", items: [["Einfamilienhaus", "fas fa-house"], ["Zweifamilienhaus", "fas fa-house-user"], ["Doppelhaushälfte", "fas fa-house-chimney"], ["Reihenhaus", "fas fa-house-chimney-window"], ["Reihenmittelhaus", "fas fa-house-chimney-window"], ["Reihenendhaus", "fas fa-house-circle-check"], ["Villa", "fas fa-landmark"], ["Bungalow", "fas fa-home"]] },
+                { title: "Gewerbe & Anlage", items: [["Gewerbeeinheit", "fas fa-briefcase"], ["Mehrfamilienhaus / Anlageobjekt", "fas fa-city"]] }
+            ],
+            "Finanzierung": [
+                { title: "Finanzierung", items: [["Kauf einer Immobilie", "fas fa-home"], ["Anschlussfinanzierung", "fas fa-sync"], ["Kapitalanlage", "fas fa-chart-pie"], ["Finanzierungsberatung allgemein", "fas fa-comments"]] }
+            ]
+        };
+
+        const options = Object.fromEntries(Object.entries(optionGroups).map(([key, groups]) => [key, groups.flatMap(group => group.items)]));
+
+        const stepText = {
+            default: {
+                1: ["Wobei dürfen wir Sie unterstützen?", "Wählen Sie zuerst Ihr Anliegen aus."],
+                2: ["Um welche Immobilie geht es?", "Wählen Sie die passende Kategorie."],
+                3: ["Ein paar Eckdaten", "Adresse/Suchgebiet und Budget helfen uns bei der Einordnung."],
+                4: ["Optionale Zusatzdaten", "Sie können Details ergänzen oder überspringen."],
+                5: ["Ihre Kontaktdaten", "Damit wir persönlich Rückmeldung geben können."],
+                6: ["Fast geschafft", "Nachricht ergänzen und Anfrage absenden."]
+            },
+            "Immobilie suchen": {
+                2: ["Welche Immobilie suchen Sie?", "Wählen Sie aus, wonach Sie suchen."],
+                3: ["Wo und in welchem Rahmen suchen Sie?", "Nennen Sie Suchgebiet, Budget und zeitlichen Rahmen."],
+                4: ["Finanzierung gewünscht?", "Wir können auf Wunsch auch die passende Finanzierungsberatung vorbereiten."]
+            },
+            "Immobilie verkaufen": {
+                2: ["Welche Immobilie möchten Sie verkaufen?", "Wählen Sie aus, um welche Art von Objekt es geht."],
+                3: ["Wo befindet sich Ihr Objekt?", "Nennen Sie Objektstandort, Preisvorstellung und Zeitraum."],
+                4: ["Möchten Sie bereits Objektdaten ergänzen?", "Das ist optional. Sie können auch direkt zu Ihren Kontaktdaten springen."]
+            },
+            "Immobilie vermieten": {
+                2: ["Welche Immobilie möchten Sie vermieten?", "Wählen Sie aus, um welche Art von Objekt es geht."],
+                3: ["Wo befindet sich das Mietobjekt?", "Nennen Sie Standort, Mietvorstellung und Verfügbarkeit."],
+                4: ["Verwaltung & Objektdaten", "Optional: Verwaltungstermin und Objektangaben ergänzen."]
+            },
+            "Finanzierung": {
+                2: ["Wobei benötigen Sie Finanzierungshilfe?", "Wählen Sie den passenden Finanzierungsanlass."],
+                3: ["Welche Eckdaten gibt es zur Finanzierung?", "Nennen Sie Ort, Kaufpreis oder Finanzierungsrahmen und Zeitraum."],
+                4: ["Weitere Finanzierungsdetails", "Optional: Ergänzen Sie, was bereits bekannt ist."]
+            }
+        };
+
+        function getText(s) {
+            return (stepText[state.concern] && stepText[state.concern][s]) || stepText.default[s] || stepText.default[1];
+        }
+
+        function show(s) {
+            step = s;
+
+            steps.forEach(el => el.classList.toggle("hidden", Number(el.dataset.step) !== step));
+
+            const t = getText(step);
+            title.textContent = t[0];
+            subtitle.textContent = t[1];
+            progress.style.width = (step / 6 * 100) + "%";
+
+            back.classList.toggle("hidden", step === 1);
+            next.classList.toggle("hidden", step === 6 || step === 2);
+            submit.classList.toggle("hidden", step !== 6);
+
+            if (step === 2) renderOptions();
+            if (step === 3) renderContext();
+            if (step === 4) renderExtra();
+        }
+
+        function renderOptions() {
+            dyn.innerHTML = "";
+
+            const groups = optionGroups[state.concern] || [{ title: "Auswahl", items: options[state.concern] || [] }];
+
+            groups.forEach(group => {
+                const wrap = document.createElement("div");
+                wrap.className = "lead-option-group mb-4";
+                wrap.innerHTML = `<div class="lead-option-group-title">${group.title}</div>`;
+
+                const grid = document.createElement("div");
+                grid.className = "grid grid-cols-1 sm:grid-cols-2 gap-3";
+
+                group.items.forEach(([label, icon]) => {
+                    const b = document.createElement("button");
+                    b.type = "button";
+                    b.className = "lead-choice lead-choice-compact";
+                    b.innerHTML = `<span><i class="${icon} text-secondary mr-3"></i>${label}</span><i class="fas fa-chevron-right"></i>`;
+                    b.onclick = function () {
+                        state.object_type = label;
+                        set(".lead-object-type", label);
+                        show(3);
+                    };
+                    grid.appendChild(b);
+                });
+
+                wrap.appendChild(grid);
+                dyn.appendChild(wrap);
+            });
+        }
+
+        function renderContext() {
+            let html = "";
+
+            if (state.concern === "Immobilie suchen") {
+                html = `
+                    ${addressField("Wo suchen Sie? *", "z. B. Berlin, Potsdam, Dresden", true)}
+                    ${moneyField("Budget / maximale Kauf- oder Mietvorstellung", "visible-budget", "z. B. 500.000 € oder 1.500 €")}
+                    ${selectTime("Wann möchten Sie kaufen oder mieten?")}
+                `;
+            }
+
+            if (state.concern === "Immobilie verkaufen") {
+                html = `
+                    ${addressField("Wo befindet sich Ihr Objekt? *", "z. B. Berlin-Friedenau, Potsdam, Dresden", true)}
+                    ${moneyField("Ihre Preisvorstellung / grober Immobilienwert", "visible-budget", "z. B. 650.000 €")}
+                    ${selectTime("Wann möchten Sie verkaufen?")}
+                `;
+            }
+
+            if (state.concern === "Immobilie vermieten") {
+                html = `
+                    ${addressField("Wo befindet sich das Mietobjekt? *", "z. B. Berlin, Potsdam, Dresden", true)}
+                    ${moneyField("Gewünschte Miete / Mietrahmen", "visible-budget", "z. B. 1.200 € kalt")}
+                    ${selectTime("Ab wann soll vermietet werden?")}
+                `;
+            }
+
+            if (state.concern === "Finanzierung") {
+                html = `
+                    ${addressField("Für welchen Ort / welches Objekt?", "z. B. Berlin, konkretes Objekt oder noch offen", false)}
+                    ${moneyField("Kaufpreis / Finanzierungsrahmen", "visible-budget", "z. B. 450.000 €")}
+                    ${selectTime("Wann benötigen Sie die Finanzierung?")}
+                `;
+            }
+
+            ctx.innerHTML = html;
+            initPlaces(ctx);
+            initFormatters(ctx);
+        }
+
+        function renderExtra() {
+            let html = "";
+
+            if (state.concern === "Immobilie suchen") {
+                html = `
+                    <div class="rounded-2xl border border-primary/10 bg-gradient-to-br from-white via-white to-secondary/5 p-5 shadow-sm mb-5">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-secondary/15 text-secondary flex items-center justify-center shrink-0">
+                                <i class="fas fa-search-location"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary text-lg">Ihr Suchprofil</h4>
+                                <p class="text-sm text-gray-600 mt-1">
+                                    Diese Angaben helfen uns, passende Immobilien gezielter vorzuschlagen. Alles ist optional, wird aber im CRM mitgespeichert.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lead-mini-grid">
+                        <div>${numberField("Zimmer ab", "buyer-rooms-from", "z. B. 3")}</div>
+                        <div>${numberField("Wohnfläche ab m²", "buyer-living-space-from", "z. B. 80")}</div>
+                        <div>${numberField("Grundstück ab m²", "buyer-plot-area-from", "z. B. 500")}</div>
+                        <div>${moneyField("Kaufpreis bis", "buyer-price-to", "z. B. 500.000 €")}</div>
+
+                        <div>${selectSimple("Kaufart", "buyer-purchase-type", [
+                            ["Kaufen", "Kaufen"],
+                            ["Mieten", "Mieten"],
+                            ["Kaufen oder Mieten", "Kaufen oder Mieten"]
+                        ])}</div>
+
+                        <div>${selectSimple("Nutzung", "buyer-use-case", [
+                            ["Eigennutzung", "Eigennutzung"],
+                            ["Kapitalanlage", "Kapitalanlage"],
+                            ["Beides offen", "Beides offen"]
+                        ])}</div>
+
+                        <div>${selectSimple("Balkon/Terrasse", "buyer-balcony", [
+                            ["", "Egal"],
+                            ["Ja", "Ja"],
+                            ["Nein", "Nein"]
+                        ])}</div>
+
+                        <div>${selectSimple("Garten", "buyer-garden", [
+                            ["", "Egal"],
+                            ["Ja", "Ja"],
+                            ["Nein", "Nein"]
+                        ])}</div>
+
+                        <div>${selectSimple("Aufzug", "buyer-elevator", [
+                            ["", "Egal"],
+                            ["Ja", "Ja"],
+                            ["Nein", "Nein"]
+                        ])}</div>
+
+                        <div>${selectSimple("Stellplatz", "buyer-parking", [
+                            ["", "Egal"],
+                            ["Ja", "Ja"],
+                            ["Nein", "Nein"]
+                        ])}</div>
+
+                        <div>${selectSimple("Keller", "buyer-basement", [
+                            ["", "Egal"],
+                            ["Ja", "Ja"],
+                            ["Nein", "Nein"]
+                        ])}</div>
+
+                        <div>${selectSimple("Barrierefrei", "buyer-barrier-free", [
+                            ["", "Egal"],
+                            ["Ja", "Ja"],
+                            ["Nein", "Nein"]
+                        ])}</div>
+
+                        <div>${selectSimple("Objektzustand", "buyer-condition", [
+                            ["", "Egal"],
+                            ["Neuwertig", "Neuwertig"],
+                            ["Gepflegt", "Gepflegt"],
+                            ["Renovierungsbedürftig", "Renovierungsbedürftig"],
+                            ["Sanierungsbedürftig", "Sanierungsbedürftig"]
+                        ])}</div>
+
+                        <div>${selectSimple("Etage", "buyer-floor", [
+                            ["", "Egal"],
+                            ["Erdgeschoss", "Erdgeschoss"],
+                            ["1. bis 3. Etage", "1. bis 3. Etage"],
+                            ["ab 4. Etage", "ab 4. Etage"],
+                            ["Dachgeschoss", "Dachgeschoss"]
+                        ])}</div>
+
+                        <div>${selectSimple("Einbauküche", "buyer-kitchen", [
+                            ["", "Egal"],
+                            ["Ja", "Ja"],
+                            ["Nein", "Nein"]
+                        ])}</div>
+
+                        <div>${selectSimple("Vermietet", "buyer-rented", [
+                            ["", "Egal"],
+                            ["Ja", "Ja"],
+                            ["Nein", "Nein"]
+                        ])}</div>
+
+                        <div>${numberField("Baujahr ab", "buyer-year-from", "z. B. 1990")}</div>
+                        <div>${numberField("Baujahr bis", "buyer-year-to", "z. B. 2025")}</div>
+                    </div>
+
+                    <div class="mt-5">
+                        ${inputField("Weitere Suchkriterien", "buyer-search-note", "z. B. ruhige Lage, Balkon, Altbau, Nähe ÖPNV, Kapitalanlage mit Rendite")}
+                    </div>
+
+                    <div class="mt-5">
+                        ${selectSimple("Sind Sie auch an unserer Finanzierungsberatung interessiert?", "visible-financing-interest", [
+                            ["Nein", "Nein"],
+                            ["Ja", "Ja"],
+                            ["Noch unsicher", "Noch unsicher"]
+                        ])}
+                    </div>
+                `;
+            }
+
+            if (state.concern === "Immobilie verkaufen") {
+                html = `
+                    ${selectSimple("Möchten Sie bereits weitere Daten zum Objekt angeben?", "visible-property-details-wanted", [
+                        ["Nein", "Nein, später"],
+                        ["Ja", "Ja, jetzt ergänzen"]
+                    ])}
+                    <div class="seller-details-area mt-5 hidden">${sellerDetails()}</div>
+                `;
+            }
+
+            if (state.concern === "Immobilie vermieten") {
+                html = `
+                    ${inputField("Ab wann wäre eine Verwaltungsübernahme interessant?", "visible-management-takeover", "z. B. sofort, ab 01.09., nächstes Jahr oder aktuell nicht")}
+                    <div class="mt-5">${sellerDetails()}</div>
+                `;
+            }
+
+            if (state.concern === "Finanzierung") {
+                html = `
+                    ${selectSimple("Ist bereits ein konkretes Objekt vorhanden?", "visible-financing-object", [
+                        ["", "Bitte auswählen"],
+                        ["Ja", "Ja"],
+                        ["Nein", "Nein"],
+                        ["Noch in Suche", "Noch in Suche"]
+                    ])}
+                    ${moneyField("Eigenkapital / Bemerkung zur Finanzierung", "visible-financing-equity", "z. B. 80.000 € Eigenkapital")}
+                `;
+            }
+
+            extra.innerHTML = html;
+            initFormatters(extra);
+
+            const sel = extra.querySelector(".visible-property-details-wanted");
+            if (sel) {
+                sel.onchange = function () {
+                    const area = extra.querySelector(".seller-details-area");
+                    if (area) area.classList.toggle("hidden", sel.value !== "Ja");
+                };
+            }
+        }
+
+        function addressField(label, ph, req) {
+            return `
+                <label class="lead-label">${label}</label>
+                <input type="text" class="visible-location google-address lead-input" ${req ? "required" : ""} placeholder="${ph}">
+            `;
+        }
+
+        function inputField(label, cls, ph) {
+            return `
+                <label class="lead-label mt-5">${label}</label>
+                <input type="text" class="${cls} lead-input" placeholder="${ph}">
+            `;
+        }
+
+        function moneyField(label, cls, ph) {
+            return `
+                <label class="lead-label mt-5">${label}</label>
+                <input type="text" inputmode="decimal" class="${cls} js-money lead-input" placeholder="${ph}">
+            `;
+        }
+
+        function numberField(label, cls, ph) {
+            return `
+                <label class="lead-label mt-5">${label}</label>
+                <input type="text" inputmode="decimal" class="${cls} js-number lead-input" placeholder="${ph}">
+            `;
+        }
+
+        function selectTime(label) {
+            return `
+                <label class="lead-label mt-5">${label}</label>
+                <select class="visible-timeframe lead-select">
+                    <option value="">Keine Angabe</option>
+                    <option value="Sofort">Sofort</option>
+                    <option value="1-3 Monate">1-3 Monate</option>
+                    <option value="3-6 Monate">3-6 Monate</option>
+                    <option value="6-12 Monate">6-12 Monate</option>
+                    <option value="Langfristig">Langfristig</option>
+                </select>
+            `;
+        }
+
+        function selectSimple(label, cls, opts) {
+            return `
+                <label class="lead-label">${label}</label>
+                <select class="${cls} lead-select">
+                    ${opts.map(o => `<option value="${o[0]}">${o[1]}</option>`).join("")}
+                </select>
+            `;
+        }
+
+        function sellerDetails() {
+            const type = (state.object_type || "").toLowerCase();
+            const isPlot = type.includes("grundstück") || type.includes("grundst");
+            const isMulti = type.includes("mehrfamilien") || type.includes("anlageobjekt");
+            const isCommercial = type.includes("gewerbe");
+            const isHouse = !isMulti && (type.includes("haus") || type.includes("villa") || type.includes("bungalow") || type.includes("doppel") || type.includes("reihen"));
+            const isApartment = !isPlot && !isMulti && !isCommercial && !isHouse;
+            const isRent = state.concern === "Immobilie vermieten";
+
+            let html = `<div class="lead-mini-grid">`;
+
+            html += `<div>${selectSimple("Flächenart", "seller-area-type", [
+                ["Wohnfläche", "Wohnfläche"],
+                ["Gewerbefläche", "Gewerbefläche"],
+                ["Nutzfläche", "Nutzfläche"],
+                ["Grundstücksfläche", "Grundstücksfläche"]
+            ])}</div>`;
+
+            if (isHouse) {
+                html += `<div>${selectSimple("Hausart", "seller-house-subtype", [
+                    [state.object_type || "Haus", state.object_type || "Haus"],
+                    ["Einfamilienhaus", "Einfamilienhaus"],
+                    ["Zweifamilienhaus", "Zweifamilienhaus"],
+                    ["Doppelhaushälfte", "Doppelhaushälfte"],
+                    ["Reihenhaus", "Reihenhaus"],
+                    ["Reihenmittelhaus", "Reihenmittelhaus"],
+                    ["Reihenendhaus", "Reihenendhaus"],
+                    ["Villa", "Villa"],
+                    ["Bungalow", "Bungalow"]
+                ])}</div>`;
+            }
+
+            if (isApartment) {
+                html += `<div>${selectSimple("Wohnungsart", "seller-apartment-subtype", [
+                    [state.object_type || "Wohnung", state.object_type || "Wohnung"],
+                    ["Eigentumswohnung", "Eigentumswohnung"],
+                    ["Etagenwohnung", "Etagenwohnung"],
+                    ["Dachgeschosswohnung", "Dachgeschosswohnung"],
+                    ["Erdgeschosswohnung", "Erdgeschosswohnung"],
+                    ["Penthouse", "Penthouse"],
+                    ["Maisonette", "Maisonette"],
+                    ["Loft", "Loft"],
+                    ["Terrassenwohnung", "Terrassenwohnung"]
+                ])}</div>`;
+                html += `<div>${selectSimple("Etage", "seller-floor", [["", "Keine Angabe"], ["Erdgeschoss", "Erdgeschoss"], ["1", "1. Etage"], ["2", "2. Etage"], ["3", "3. Etage"], ["4+", "4. Etage oder höher"], ["Dachgeschoss", "Dachgeschoss"]])}</div>`;
+            }
+
+            if (isApartment || isHouse || isMulti || isCommercial) {
+                html += `<div>${numberField(isCommercial ? "Gewerbe-/Nutzfläche in m²" : "Wohn-/Nutzfläche in m²", "seller-area-value", "z. B. 82")}</div>`;
+            }
+
+            if (isPlot || isHouse || isMulti || isCommercial) {
+                html += `<div>${numberField("Grundstücksgröße in m²", "seller-plot-area", "z. B. 650")}</div>`;
+            }
+
+            if (isApartment || isHouse) {
+                html += `<div>${numberField("Zimmeranzahl", "seller-rooms", "z. B. 3")}</div>`;
+                html += `<div>${numberField("Schlafzimmer", "seller-bedrooms", "z. B. 2")}</div>`;
+                html += `<div>${numberField("Badezimmer", "seller-bathrooms", "z. B. 1")}</div>`;
+            }
+
+            if (isMulti) {
+                html += `<div>${numberField("Anzahl Wohneinheiten", "seller-units", "z. B. 6")}</div>`;
+                html += `<div>${numberField("Anzahl Gewerbeeinheiten", "seller-commercial-units", "z. B. 1")}</div>`;
+                html += `<div>${moneyField("Nettokaltmiete IST p. a.", "seller-net-rent-current", "z. B. 72.000 €")}</div>`;
+                html += `<div>${moneyField("Nettokaltmiete SOLL p. a.", "seller-net-rent-target", "z. B. 84.000 €")}</div>`;
+                html += `<div>${inputField("Leerstand / Besonderheiten", "seller-vacancy-note", "z. B. 1 Einheit frei, Staffelmieten, Indexmieten")}</div>`;
+            }
+
+            if (isRent || isApartment || isHouse || isMulti) {
+                html += `<div>${moneyField(isRent ? "Nettokaltmiete / Wunschmiete" : "Nettokaltmiete IST", "seller-cold-rent", "z. B. 1.200 €")}</div>`;
+                html += `<div>${moneyField("Nettokaltmiete SOLL", "seller-cold-rent-target", "z. B. 1.350 €")}</div>`;
+                html += `<div>${moneyField("Hausgeld / Nebenkosten", "seller-service-charge", "z. B. 320 €")}</div>`;
+            }
+
+            if (!isPlot) {
+                html += `<div>${numberField("Baujahr", "seller-year", "z. B. 1978")}</div>`;
+                html += `<div>${selectSimple("Energielabel", "seller-energy", [
+                    ["", "Keine Angabe"],
+                    ["A+", "A+"], ["A", "A"], ["B", "B"], ["C", "C"], ["D", "D"], ["E", "E"], ["F", "F"], ["G", "G"], ["H", "H"]
+                ])}</div>`;
+            }
+
+            if (isApartment || isHouse) {
+                html += `<div>${selectSimple("Balkon/Terrasse", "seller-balcony", [["", "Keine Angabe"], ["Ja", "Ja"], ["Nein", "Nein"]])}</div>`;
+                html += `<div>${numberField("Balkon-/Terrassenfläche in m²", "seller-balcony-area", "z. B. 8")}</div>`;
+                html += `<div>${selectSimple("Garten", "seller-garden", [["", "Keine Angabe"], ["Ja", "Ja"], ["Nein", "Nein"]])}</div>`;
+                html += `<div>${selectSimple("Aufzug", "seller-elevator", [["", "Keine Angabe"], ["Ja", "Ja"], ["Nein", "Nein"]])}</div>`;
+                html += `<div>${selectSimple("Einbauküche", "seller-kitchen", [["", "Keine Angabe"], ["Ja", "Ja"], ["Nein", "Nein"]])}</div>`;
+                html += `<div>${selectSimple("Keller", "seller-basement", [["", "Keine Angabe"], ["Ja", "Ja"], ["Nein", "Nein"]])}</div>`;
+            }
+
+            if (!isPlot) {
+                html += `<div>${selectSimple("Ausstattung / Zustand", "seller-quality", [
+                    ["", "Keine Angabe"],
+                    ["Luxus", "Luxus"],
+                    ["Gehoben", "Gehoben"],
+                    ["Normal", "Normal"],
+                    ["Einfach", "Einfach"],
+                    ["Renovierungsbedürftig", "Renovierungsbedürftig"],
+                    ["Sanierungsbedürftig", "Sanierungsbedürftig"]
+                ])}</div>`;
+                html += `<div>${inputField("Letzte Modernisierung", "seller-modernization", "z. B. 2018")}</div>`;
+            }
+
+            if (isPlot) {
+                html += `<div>${selectSimple("Grundstücksart", "seller-plot-type", [
+                    ["", "Keine Angabe"],
+                    ["Bauland", "Bauland"],
+                    ["Bauerwartungsland", "Bauerwartungsland"],
+                    ["Abrissgrundstück", "Abrissgrundstück"],
+                    ["Gewerbegrundstück", "Gewerbegrundstück"]
+                ])}</div>`;
+                html += `<div>${selectSimple("Erschließung", "seller-development-status", [["", "Keine Angabe"], ["Erschlossen", "Erschlossen"], ["Teilerschlossen", "Teilerschlossen"], ["Unerschlossen", "Unerschlossen"]])}</div>`;
+            }
+
+            html += `</div>`;
+            return html;
+        }
+
+        function set(sel, val) {
+            const el = widget.querySelector(sel);
+            if (el) el.value = val || "";
+        }
+
+        function readCtx() {
+            const loc = widget.querySelector(".visible-location");
+            const bud = widget.querySelector(".visible-budget");
+            const time = widget.querySelector(".visible-timeframe");
+
+            if (loc && loc.hasAttribute("required") && !loc.value.trim()) {
+                loc.focus();
+                return false;
+            }
+
+            state.location = loc ? loc.value : "";
+            state.budget = bud ? bud.value : "";
+            state.timeframe = time ? time.value : "";
+
+            set(".lead-location", state.location);
+            set(".lead-budget", state.budget);
+            set(".lead-timeframe", state.timeframe);
+
+            return true;
+        }
+
+        function readExtra() {
+            const f = extra.querySelector(".visible-financing-interest");
+            if (f) state.financing_interest = f.value;
+
+            const w = extra.querySelector(".visible-property-details-wanted");
+            if (w) state.property_details_wanted = w.value;
+
+            const m = extra.querySelector(".visible-management-takeover");
+            if (m) state.management_takeover = m.value;
+
+            set(".lead-financing-interest", state.financing_interest);
+            set(".lead-property-details-wanted", state.property_details_wanted);
+            set(".lead-management-takeover", state.management_takeover);
+
+            state.property_details = {};
+
+            extra.querySelectorAll(".lead-mini-grid input,.lead-mini-grid select").forEach(el => {
+                const buyerKey = Array.from(el.classList).find(cls => cls.startsWith("buyer-"));
+                if (buyerKey) state.property_details[buyerKey] = el.value;
+            });
+
+            extra.querySelectorAll(".seller-details-area input,.seller-details-area select,.lead-mini-grid input,.lead-mini-grid select").forEach(el => {
+                const key = Array.from(el.classList).find(cls =>
+                    cls.startsWith("seller-") ||
+                    cls.startsWith("financing_") ||
+                    cls === "visible-financing-equity" ||
+                    cls === "visible-financing-object"
+                );
+
+                if (key) state.property_details[key] = el.value;
+            });
+
+            const fo = extra.querySelector(".visible-financing-object");
+            const fe = extra.querySelector(".visible-financing-equity");
+
+            if (fo) state.property_details.financing_object_available = fo.value;
+            if (fe) state.property_details.financing_equity_note = fe.value;
+        }
+
+        function initFormatters(scope) {
+            scope.querySelectorAll(".js-money").forEach(input => {
+                if (input.dataset.moneyReady) return;
+                input.dataset.moneyReady = "1";
+
+                input.addEventListener("input", function () {
+                    input.value = input.value.replace(/[^\d.,]/g, "");
+                });
+
+                input.addEventListener("blur", function () {
+                    const raw = input.value.replace(/[^0-9,\.]/g, "");
+                    const num = Number(raw.replace(/\./g, "").replace(",", "."));
+
+                    if (!Number.isNaN(num) && num > 0) {
+                        input.value = new Intl.NumberFormat("de-DE", {
+                            style: "currency",
+                            currency: "EUR",
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                        }).format(num);
+                    }
+                });
+            });
+
+            scope.querySelectorAll(".js-number").forEach(input => {
+                if (input.dataset.numberReady) return;
+                input.dataset.numberReady = "1";
+
+                input.addEventListener("input", function () {
+                    input.value = input.value.replace(/[^\d.,]/g, "");
+                });
+
+                input.addEventListener("blur", function () {
+                    const raw = input.value.replace(/[^0-9,\.]/g, "");
+                    const num = Number(raw.replace(/\./g, "").replace(",", "."));
+
+                    if (!Number.isNaN(num) && num > 0) {
+                        input.value = new Intl.NumberFormat("de-DE", {
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 2
+                        }).format(num);
+                    }
+                });
+            });
+        }
+
+        function focusNextField(current) {
+            const fields = Array.from(widget.querySelectorAll("input:not([type='hidden']):not([disabled]), select:not([disabled]), textarea:not([disabled])"))
+                .filter(el => el.offsetParent !== null);
+            const idx = fields.indexOf(current);
+            if (idx >= 0 && fields[idx + 1]) fields[idx + 1].focus();
+        }
+
+        widget.addEventListener("keydown", function (event) {
+            if (event.key !== "Enter") return;
+            const tag = (event.target.tagName || "").toLowerCase();
+            if (tag === "textarea") return;
+            if (event.target.classList.contains("visible-budget") || event.target.classList.contains("js-money") || event.target.classList.contains("js-number")) {
+                event.preventDefault();
+                event.target.blur();
+                setTimeout(() => focusNextField(event.target), 30);
+            }
+        });
+
+        next.onclick = function () {
+            if (step === 1 && !state.concern) return;
+            if (step === 3 && !readCtx()) return;
+            if (step === 4) readExtra();
+            if (step < 6) show(step + 1);
+        };
+
+        back.onclick = function () {
+            if (step > 1) show(step - 1);
+        };
+
+        widget.querySelectorAll(".lead-choice[data-field='concern']").forEach(btn => {
+            btn.onclick = function () {
+                state.concern = btn.dataset.value;
+                set(".lead-concern", state.concern);
+
+                const uploadArea = widget.querySelector(".lead-upload-area");
+                if (uploadArea) {
+                    uploadArea.classList.toggle("hidden", state.concern !== "Immobilie verkaufen");
+                }
+
+                const newsletterBox = widget.querySelector(".lead-newsletter-box");
+                const newsletterCheck = widget.querySelector(".lead-newsletter-visible");
+                const buyerLike = state.concern === "Immobilie suchen";
+                if (newsletterBox) newsletterBox.classList.toggle("hidden", !buyerLike);
+                if (newsletterCheck) newsletterCheck.checked = buyerLike;
+
+                show(2);
+            };
+        });
+
+        async function filesToPayload(input) {
+            const files = Array.from(input?.files || [])
+                .filter(f => f.type === "application/pdf" || f.name.toLowerCase().endsWith(".pdf"))
+                .slice(0, 3);
+
+            return Promise.all(files.map(file => new Promise((resolve, reject) => {
+                const r = new FileReader();
+                r.onload = () => resolve({
+                    name: file.name,
+                    type: file.type || "application/pdf",
+                    base64: String(r.result).split(",")[1]
+                });
+                r.onerror = reject;
+                r.readAsDataURL(file);
+            })));
+        }
+
+        form.onsubmit = async function (e) {
+            e.preventDefault();
+
+            success.classList.add("hidden");
+            errorBox.classList.add("hidden");
+            submit.disabled = true;
+            submit.textContent = "Wird übermittelt...";
+
+            const fd = new FormData(form);
+
+            try {
+                readCtx();
+                readExtra();
+
+                const params = new URLSearchParams(location.search);
+
+                const payload = {
+                    first_name: fd.get("first_name"),
+                    last_name: fd.get("last_name"),
+                    email: fd.get("email"),
+                    phone: fd.get("phone"),
+                    concern: state.concern,
+                    object_type: state.object_type,
+                    location: state.location,
+                    budget: state.budget,
+                    timeframe: state.timeframe,
+                    contact_preference: widget.querySelector(".visible-contact-preference")?.value || "E-Mail",
+                    message: fd.get("message"),
+                    privacy_consent: fd.get("privacy_consent") === "true",
+                    newsletter_consent: widget.querySelector(".lead-newsletter-visible")?.checked === true,
+                    financing_interest: state.financing_interest,
+                    property_details_wanted: state.property_details_wanted,
+                    management_takeover: state.management_takeover,
+                    property_details: state.property_details,
+                    source_url: location.href,
+                    utm_source: params.get("utm_source") || "",
+                    utm_medium: params.get("utm_medium") || "",
+                    utm_campaign: params.get("utm_campaign") || "",
+                    utm_content: params.get("utm_content") || "",
+                    utm_term: params.get("utm_term") || "",
+                    documents: await filesToPayload(widget.querySelector(".lead-documents"))
+                };
+
+                const res = await fetch("/.netlify/functions/propstack-lead", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await res.json();
+
+                if (!res.ok || !result.success) {
+                    throw new Error(result.error || "Fehler");
+                }
+
+                form.reset();
+                success.classList.remove("hidden");
+                show(1);
+
+            } catch (err) {
+                console.error(err);
+                errorBox.classList.remove("hidden");
+            } finally {
+                submit.disabled = false;
+                submit.textContent = "Anfrage absenden";
+            }
+        };
+
+        function initPlaces(scope) {
+            if (!(window.google && google.maps && google.maps.places)) return;
+
+            scope.querySelectorAll(".google-address").forEach(input => {
+                if (input.dataset.googleReady) return;
+                input.dataset.googleReady = "1";
+
+                const ac = new google.maps.places.Autocomplete(input, {
+                    types: ["address"],
+                    componentRestrictions: { country: "de" }
+                });
+
+                ac.addListener("place_changed", function () {
+                    const place = ac.getPlace();
+                    if (place && place.formatted_address) {
+                        input.value = place.formatted_address;
+                    }
+                });
+            });
+        }
+
+        if (defaultConcern) {
+            state.concern = defaultConcern;
+            set(".lead-concern", state.concern);
+            const uploadArea = widget.querySelector(".lead-upload-area");
+            if (uploadArea) uploadArea.classList.toggle("hidden", state.concern !== "Immobilie verkaufen");
+            const newsletterBox = widget.querySelector(".lead-newsletter-box");
+            const newsletterCheck = widget.querySelector(".lead-newsletter-visible");
+            const buyerLike = state.concern === "Immobilie suchen";
+            if (newsletterBox) newsletterBox.classList.toggle("hidden", !buyerLike);
+            if (newsletterCheck) newsletterCheck.checked = buyerLike;
+            show(2);
+        } else {
+            show(1);
+        }
+    }
+})();
+</script>
+
+<script>
+/* Google Maps Places vorbereiten:
+   Später in Netlify/Template den Key setzen:
+   window.FG_GOOGLE_MAPS_API_KEY = "IHR_GOOGLE_MAPS_API_KEY";
+   Der Code lädt dann automatisch die Places-Bibliothek. */
+window.FG_GOOGLE_MAPS_API_KEY = window.FG_GOOGLE_MAPS_API_KEY || "";
+(function () {
+    if (!window.FG_GOOGLE_MAPS_API_KEY || window.google?.maps?.places) return;
+    window.fgInitLeadPlaces = function () {
+        document.querySelectorAll(".lead-widget").forEach(widget => {
+            widget.querySelectorAll(".google-address").forEach(input => {
+                if (input.dataset.googleReady || !(google.maps && google.maps.places)) return;
+                input.dataset.googleReady = "1";
+                const ac = new google.maps.places.Autocomplete(input, {
+                    types: ["address"],
+                    componentRestrictions: { country: "de" }
+                });
+                ac.addListener("place_changed", function () {
+                    const place = ac.getPlace();
+                    if (place && place.formatted_address) input.value = place.formatted_address;
+                });
+            });
+        });
+    };
+    const script = document.createElement("script");
+    script.src = "https://maps.googleapis.com/maps/api/js?key=" + encodeURIComponent(window.FG_GOOGLE_MAPS_API_KEY) + "&libraries=places&callback=fgInitLeadPlaces";
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+})();
+</script>
+
+
+<style>
+.lead-option-group-title{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#0b1744;margin:.3rem 0 .65rem;opacity:.75}.lead-choice-compact{min-height:54px}.pac-container{z-index:99999!important;border-radius:14px;box-shadow:0 18px 45px rgba(8,14,40,.18);border:1px solid rgba(11,23,68,.12);font-family:inherit}.pac-item{padding:10px 14px}.pac-item-query{font-weight:700;color:#0b1744}
+</style>
+

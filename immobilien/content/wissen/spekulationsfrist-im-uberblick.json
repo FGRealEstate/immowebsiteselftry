@@ -1,0 +1,66 @@
+{
+  "title": "Spekulationsfrist im Überblick",
+  "category": "Steuern",
+  "summary": "Private Veräußerungsgewinne können innerhalb gesetzlicher Fristen steuerpflichtig sein.",
+  "body": "Nutzung, Haltedauer und Struktur sind individuell zu prüfen. Gesellschaften folgen anderen Regeln.",
+  "id": "spekulationsfrist-im-uberblick",
+  "slug": "spekulationsfrist-im-uberblick",
+  "url": "/wissen/spekulationsfrist-im-uberblick/",
+  "keywords": [
+    "fristen",
+    "gesetzlicher",
+    "innerhalb",
+    "können",
+    "private",
+    "sein",
+    "spekulationsfrist",
+    "steuerpflichtig",
+    "veräußerungsgewinne",
+    "überblick"
+  ],
+  "synonyms": [],
+  "updated": "2026-07-23",
+  "author": "Fischer & Geserich Real Estate GmbH",
+  "related": [],
+  "definition": "Nutzung, Haltedauer und Struktur sind individuell zu prüfen. Gesellschaften folgen anderen Regeln.",
+  "classification": "Spekulationsfrist im Überblick ist im Immobilienkontext nicht isoliert zu beurteilen. Die Aussagekraft hängt von Objektart, Betrachtungszeitraum, Datenqualität, Finanzierung, steuerlicher Behandlung und Marktannahmen ab. Für eine fachlich belastbare Analyse werden nominale und reale Größen, zahlungswirksame und nicht zahlungswirksame Positionen sowie Bestands- und Prognosewerte getrennt.",
+  "formula": "Kennzahl = sachlich abgegrenzter Zähler / konsistent definierte Bezugsgröße",
+  "derivation": "Die Herleitung beginnt mit der eindeutigen Definition von Zähler, Nenner und Zeitpunkt. Anschließend werden sämtliche Zahlungsströme periodengerecht zugeordnet. Prognosegrößen werden als Szenarien modelliert und nicht als sichere Entwicklung behandelt. Bei mehrperiodigen Betrachtungen sind Abzinsung, Restschuld, Exit-Kosten und gegebenenfalls Steuerwirkungen einzubeziehen.",
+  "drivers": [
+    "Kaufpreis und vollständige Erwerbsnebenkosten",
+    "Mietniveau, Leerstand und mietrechtliche Grenzen",
+    "Laufende nicht umlagefähige Kosten, Rücklagen und Capex",
+    "Zins, Tilgung, Zinsbindung und Restschuld",
+    "Steuerliche Bemessungsgrundlagen und persönlicher Steuersatz",
+    "Standort-, Objekt- und Exit-Risiken"
+  ],
+  "advantages": [
+    "Erzwingt eine strukturierte und nachvollziehbare Trennung der Einflussgrößen.",
+    "Ermöglicht den Vergleich von Basis-, Negativ- und Positivszenarien.",
+    "Macht sichtbar, welche Annahmen das Ergebnis besonders stark beeinflussen."
+  ],
+  "limitations": [
+    "Ergebnisse sind nur so belastbar wie Eingabedaten und Begriffsdefinitionen.",
+    "Rechtliche, steuerliche und technische Besonderheiten lassen sich nicht pauschal modellieren.",
+    "Wertsteigerung, Anschlusszins und Exit-Preis sind unsichere Szenarien, keine Garantien."
+  ],
+  "case": {
+    "heading": "Praxisfall: vermietete Eigentumswohnung in Berlin",
+    "facts": [
+      "Kaufpreis: 420.000 €",
+      "Gebäudeanteil: 75 %",
+      "Anschaffungsnahe Nebenkosten Gebäude: 28.000 €",
+      "AfA-Bemessungsgrundlage: 343.000 €",
+      "Vergleich: 2 % Regel-AfA und 3,33 % bei nachgewiesener kürzerer Nutzungsdauer"
+    ],
+    "calculation": "Bei 2 % beträgt die jährliche AfA 6.860 €. Bei 3,33 % wären es rund 11.422 €. Die Differenz von 4.562 € mindert – vorbehaltlich der steuerlichen Anerkennung und des individuellen Steuersatzes – die steuerliche Bemessungsgrundlage.",
+    "interpretation": "Die höhere AfA verbessert nicht automatisch den operativen Cashflow vor Steuern, kann aber die Steuerzahlung zeitlich verschieben. Ein Restnutzungsgutachten muss objektbezogen, methodisch nachvollziehbar und steuerlich anerkennungsfähig sein."
+  },
+  "interpretation": "Das Ergebnis ist gemeinsam mit Objektunterlagen, Mietverträgen, WEG-Unterlagen, Finanzierungsangebot, steuerlicher Situation und technischem Zustand zu lesen. Besonders wichtig ist die Trennung zwischen laufender Liquidität, Vermögensaufbau durch Tilgung und nur prognostizierter Wertentwicklung.",
+  "conclusion": "Spekulationsfrist im Überblick liefert eine wichtige Teilperspektive, ersetzt aber keine vollständige Ankaufsprüfung. Eine professionelle Einordnung verbindet die Kennzahl mit Cashflow, Finanzierung, Risiken, Unterlagen und einem belastbaren Stressszenario.",
+  "sources": [
+    "Gesetze, Verordnungen und amtliche Hinweise in der jeweils geltenden Fassung",
+    "Objektbezogene Verträge, Abrechnungen, Gutachten und Finanzierungsunterlagen",
+    "Fachliteratur zu Immobilienökonomie, Investitionsrechnung und Finanzierung"
+  ]
+}

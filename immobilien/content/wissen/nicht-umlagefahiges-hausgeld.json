@@ -1,0 +1,66 @@
+{
+  "title": "Nicht umlagefähiges Hausgeld",
+  "category": "Vermietung",
+  "summary": "Nicht umlagefähige Bestandteile des Hausgelds trägt der Eigentümer selbst.",
+  "body": "Typisch sind Verwalterkosten, Instandhaltungsanteile und bestimmte Gemeinschaftskosten. Für eine belastbare Kalkulation sollten Wirtschaftsplan und letzte Jahresabrechnung geprüft werden.",
+  "id": "nicht-umlagefahiges-hausgeld",
+  "slug": "nicht-umlagefahiges-hausgeld",
+  "url": "/wissen/nicht-umlagefahiges-hausgeld/",
+  "keywords": [
+    "bestandteile",
+    "eigentümer",
+    "hausgeld",
+    "hausgelds",
+    "nicht",
+    "selbst",
+    "trägt",
+    "umlagefähige",
+    "umlagefähiges"
+  ],
+  "synonyms": [],
+  "updated": "2026-07-23",
+  "author": "Fischer & Geserich Real Estate GmbH",
+  "related": [],
+  "definition": "Typisch sind Verwalterkosten, Instandhaltungsanteile und bestimmte Gemeinschaftskosten. Für eine belastbare Kalkulation sollten Wirtschaftsplan und letzte Jahresabrechnung geprüft werden.",
+  "classification": "Nicht umlagefähiges Hausgeld ist im Immobilienkontext nicht isoliert zu beurteilen. Die Aussagekraft hängt von Objektart, Betrachtungszeitraum, Datenqualität, Finanzierung, steuerlicher Behandlung und Marktannahmen ab. Für eine fachlich belastbare Analyse werden nominale und reale Größen, zahlungswirksame und nicht zahlungswirksame Positionen sowie Bestands- und Prognosewerte getrennt.",
+  "formula": "Kennzahl = sachlich abgegrenzter Zähler / konsistent definierte Bezugsgröße",
+  "derivation": "Die Herleitung beginnt mit der eindeutigen Definition von Zähler, Nenner und Zeitpunkt. Anschließend werden sämtliche Zahlungsströme periodengerecht zugeordnet. Prognosegrößen werden als Szenarien modelliert und nicht als sichere Entwicklung behandelt. Bei mehrperiodigen Betrachtungen sind Abzinsung, Restschuld, Exit-Kosten und gegebenenfalls Steuerwirkungen einzubeziehen.",
+  "drivers": [
+    "Kaufpreis und vollständige Erwerbsnebenkosten",
+    "Mietniveau, Leerstand und mietrechtliche Grenzen",
+    "Laufende nicht umlagefähige Kosten, Rücklagen und Capex",
+    "Zins, Tilgung, Zinsbindung und Restschuld",
+    "Steuerliche Bemessungsgrundlagen und persönlicher Steuersatz",
+    "Standort-, Objekt- und Exit-Risiken"
+  ],
+  "advantages": [
+    "Erzwingt eine strukturierte und nachvollziehbare Trennung der Einflussgrößen.",
+    "Ermöglicht den Vergleich von Basis-, Negativ- und Positivszenarien.",
+    "Macht sichtbar, welche Annahmen das Ergebnis besonders stark beeinflussen."
+  ],
+  "limitations": [
+    "Ergebnisse sind nur so belastbar wie Eingabedaten und Begriffsdefinitionen.",
+    "Rechtliche, steuerliche und technische Besonderheiten lassen sich nicht pauschal modellieren.",
+    "Wertsteigerung, Anschlusszins und Exit-Preis sind unsichere Szenarien, keine Garantien."
+  ],
+  "case": {
+    "heading": "Praxisfall: Kapitalanlage im Berliner Speckgürtel",
+    "facts": [
+      "Kaufpreis: 310.000 €",
+      "Kaufnebenkosten: 31.000 €",
+      "Jahresnettokaltmiete: 15.600 €",
+      "Nicht umlagefähige Kosten und Rücklage: 2.400 € p.a.",
+      "Eigenkapital: 81.000 €",
+      "Darlehen: 260.000 € zu 4,0 % Zins und 2,0 % Tilgung"
+    ],
+    "calculation": "Die Bruttomietrendite beträgt 15.600 € / 310.000 € = 5,03 %. Der vereinfachte Nettoertrag vor Finanzierung beträgt 13.200 €. Nach Zins und Tilgung ist zu prüfen, welcher laufende Cashflow verbleibt und wie stark Tilgung, Steuerwirkung und Wertannahme das Eigenkapitalergebnis beeinflussen.",
+    "interpretation": "Ein einzelner Prozentwert reicht nicht aus. Das Objekt muss zugleich auf Liquidität, Risiko, Kapitalbindung, Restschuld und Exit-Sensitivität geprüft werden."
+  },
+  "interpretation": "Das Ergebnis ist gemeinsam mit Objektunterlagen, Mietverträgen, WEG-Unterlagen, Finanzierungsangebot, steuerlicher Situation und technischem Zustand zu lesen. Besonders wichtig ist die Trennung zwischen laufender Liquidität, Vermögensaufbau durch Tilgung und nur prognostizierter Wertentwicklung.",
+  "conclusion": "Nicht umlagefähiges Hausgeld liefert eine wichtige Teilperspektive, ersetzt aber keine vollständige Ankaufsprüfung. Eine professionelle Einordnung verbindet die Kennzahl mit Cashflow, Finanzierung, Risiken, Unterlagen und einem belastbaren Stressszenario.",
+  "sources": [
+    "Gesetze, Verordnungen und amtliche Hinweise in der jeweils geltenden Fassung",
+    "Objektbezogene Verträge, Abrechnungen, Gutachten und Finanzierungsunterlagen",
+    "Fachliteratur zu Immobilienökonomie, Investitionsrechnung und Finanzierung"
+  ]
+}

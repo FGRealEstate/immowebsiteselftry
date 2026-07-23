@@ -1,0 +1,27 @@
+---
+layout: base.njk
+pagination:
+  data: labContent.articles
+  size: 1
+  alias: article
+permalink: "wissen/{{ article.slug }}/index.html"
+eleventyComputed:
+  title: "{{ article.title }}"
+  description: "{{ article.summary }}"
+---
+<main class="content-detail shell">
+<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/investment-lab.html">Investment Lab</a><span>›</span><a href="/investment-lab.html#wissen">Immobilienwissen</a><span>›</span><span>{{ article.title }}</span></nav>
+<article class="science-article">
+<header><span class="lab-kicker">{{ article.category }}</span><h1>{{ article.title }}</h1><p class="lead">{{ article.summary }}</p><p class="content-meta">Fischer &amp; Geserich Real Estate GmbH · aktualisiert {{ article.updated }}</p></header>
+<section><h2>1. Definition und ökonomische Bedeutung</h2><p>{{ article.definition }}</p><p>{{ article.classification }}</p></section>
+<section><h2>2. Mathematische Grundlage</h2><div class="lab-formula-card"><code>{{ article.formula }}</code></div><p>{{ article.derivation }}</p></section>
+<section><h2>3. Zentrale Einflussgrößen</h2><ul>{% for item in article.drivers %}<li>{{ item }}</li>{% endfor %}</ul></section>
+<section><h2>4. Vorteile und Erkenntnisgewinn</h2><div class="science-grid"><div><h3>Vorteile</h3><ul>{% for item in article.advantages %}<li>{{ item }}</li>{% endfor %}</ul></div><div><h3>Grenzen und Risiken</h3><ul>{% for item in article.limitations %}<li>{{ item }}</li>{% endfor %}</ul></div></div></section>
+<section><h2>5. {{ article.case.heading }}</h2><div class="case-study"><div><h3>Ausgangsdaten</h3><ul>{% for item in article.case.facts %}<li>{{ item }}</li>{% endfor %}</ul></div><div><h3>Berechnung</h3><p>{{ article.case.calculation }}</p></div><div><h3>Interpretation</h3><p>{{ article.case.interpretation }}</p></div></div></section>
+<section><h2>6. Fachliche Interpretation</h2><p>{{ article.interpretation }}</p></section>
+<section><h2>7. Fazit</h2><p>{{ article.conclusion }}</p></section>
+<section><h2>Hinweise zu Quellen und Prüfung</h2><ol>{% for source in article.sources %}<li>{{ source }}</li>{% endfor %}</ol></section>
+<aside class="article-note"><strong>Hinweis</strong><p>Der Beitrag dient der allgemeinen Information und ersetzt keine Rechts-, Steuer-, Finanzierungs- oder Anlageberatung.</p></aside>
+<div class="article-actions"><a class="lab-btn lab-btn-gold" href="/investment-lab.html">Passenden Rechner öffnen</a><a class="lab-btn lab-btn-ghost" href="/ankaufsberatung.html">Ergebnis gemeinsam einordnen</a></div>
+</article></main>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":{{ article.title | json }},"description":{{ article.summary | json }},"author":{"@type":"Organization","name":"Fischer & Geserich Real Estate GmbH"},"dateModified":{{ article.updated | json }},"mainEntityOfPage":"https://www.fg-realestate.de{{ article.url }}"}</script>

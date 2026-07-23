@@ -1,0 +1,44 @@
+---
+layout: base.njk
+title: F&G Investment Lab – Immobilienrechner, Wissen und Standortanalysen
+permalink: investment-lab.html
+description: Stellen Sie Ihre Immobilienfrage und finden Sie passende Rechner, Fachartikel, Lexikonbegriffe und Standortanalysen von Fischer & Geserich Real Estate.
+canonical: /investment-lab.html
+ogTitle: F&G Investment Lab
+ogDescription: Immobilienfragen stellen, Szenarien rechnen und Fachwissen gezielt finden.
+---
+<section class="lab-hero">
+  <div class="lab-shell"><span class="lab-kicker">F&G INVESTMENT LAB</span><h1>Eine Frage. Der passende nächste Schritt.</h1><p>Der F&G Navigator verbindet Immobilienwissen, Rechner, Standortanalysen und aktuelle Angebote – ohne Anmeldung und zunächst ohne externes KI-Modell.</p></div>
+</section>
+<main class="lab-shell lab-main" data-investment-lab>
+  <section class="fg-navigator" aria-labelledby="navigator-title">
+    <div class="fg-navigator-copy"><span class="lab-kicker">INTELLIGENTER F&G NAVIGATOR</span><h2 id="navigator-title">Was möchten Sie über Immobilien wissen oder berechnen?</h2><p>Stellen Sie Ihre Frage in eigenen Worten. Der Navigator durchsucht die redaktionelle F&G-Wissensbasis und führt Sie zum passenden Artikel, Rechner, Standort oder Angebot.</p></div>
+    <form class="fg-navigator-form" data-navigator-form>
+      <label class="sr-only" for="fg-navigator-question">Ihre Immobilienfrage</label>
+      <div class="fg-navigator-input"><i class="fas fa-sparkles" aria-hidden="true"></i><textarea id="fg-navigator-question" data-navigator-question rows="2" maxlength="600" placeholder="Zum Beispiel: Wie wirkt sich eine höhere Tilgung auf meine Restschuld aus?"></textarea><button class="lab-btn lab-btn-gold" type="submit">Antwort finden</button></div>
+      <div class="fg-prompt-chips" aria-label="Beispielfragen">
+        <button type="button" data-navigator-example="Wie berechne ich die Eigenkapitalrendite?">Eigenkapitalrendite</button>
+        <button type="button" data-navigator-example="Wie viel Immobilie kann ich mir leisten?">Kaufpreisrahmen</button>
+        <button type="button" data-navigator-example="Was bedeutet nicht umlagefähiges Hausgeld?">Hausgeld verstehen</button>
+        <button type="button" data-navigator-example="Wie ist Leipzig für Kapitalanleger einzuordnen?">Standort Leipzig</button>
+      </div>
+    </form>
+    <div class="fg-navigator-answer" data-navigator-answer hidden aria-live="polite"></div>
+  </section>
+
+  <nav class="lab-tabs" aria-label="Investment Lab Bereiche"><button class="is-active" data-lab-tab="tools"><i class="fas fa-calculator"></i> Rechner</button><button data-lab-tab="knowledge"><i class="fas fa-book-open"></i> Immobilienwissen</button><button data-lab-tab="locations"><i class="fas fa-map-marker-alt"></i> Standorte</button><button data-lab-tab="lexicon"><i class="fas fa-spell-check"></i> Lexikon</button></nav>
+  <section class="lab-panel is-active" data-lab-panel="tools"><div class="lab-section-head"><div><span class="lab-kicker">INTERAKTIVE TOOLBOX</span><h2>Wählen Sie die Frage – nicht die Formel.</h2><p>Nutzen Sie die Suche oder lassen Sie sich vom Navigator direkt zum passenden Rechner führen.</p></div><div class="lab-search"><i class="fas fa-search"></i><input type="search" placeholder="Rechner suchen …" data-tool-search></div></div><div class="lab-tool-grid" data-tool-grid></div><div class="lab-workspace" data-lab-workspace hidden></div><div class="lab-saved" data-lab-saved></div></section>
+  <section class="lab-panel" data-lab-panel="knowledge"><div class="lab-section-head"><div><span class="lab-kicker">IMMOBILIENWISSEN</span><h2>Fachwissen für nachvollziehbare Entscheidungen.</h2><p>Fachbeiträge mit Definitionen, Formeln, Praxisbeispielen, Grenzen und internen Querverweisen.</p></div><div class="lab-search"><i class="fas fa-search"></i><input type="search" placeholder="Thema oder Frage suchen …" data-knowledge-search></div></div><div class="lab-filter-row" data-knowledge-filters></div><div class="lab-article-grid" data-article-grid></div><article class="lab-reader" data-article-reader hidden></article></section>
+  <section class="lab-panel" data-lab-panel="locations"><div class="lab-section-head"><div><span class="lab-kicker">STANDORTANALYSEN</span><h2>Standorte vergleichen und im Detail einordnen.</h2><p>Ausgewählte F&G-Märkte – getrennt nach Eigentumswohnungen, Häusern und Mehrfamilienhäusern.</p></div><div class="lab-search"><i class="fas fa-search"></i><input type="search" placeholder="Berlin, Potsdam, Bernau …" data-location-search></div></div><div class="location-dashboard-summary"><article><strong data-location-count></strong><span>analysierte Standorte</span></article><article><strong>3</strong><span>Objektarten je Standort</span></article><article><strong>F&G</strong><span>qualitative Einordnung</span></article></div><div class="lab-location-grid" data-location-grid></div><article class="lab-reader lab-location-reader" data-location-reader hidden></article></section>
+  <section class="lab-panel" data-lab-panel="lexicon"><div class="lab-section-head"><div><span class="lab-kicker">IMMOBILIENLEXIKON</span><h2>Fachbegriffe von A bis Z.</h2><p>Definitionen, Zusammenhänge und praktische Prüffragen mit Links zu vertiefenden Fachartikeln.</p></div><div class="lab-search"><i class="fas fa-search"></i><input type="search" placeholder="Begriff suchen …" data-lexicon-search></div></div><div class="lab-az" data-az></div><div class="lab-lexicon-list" data-lexicon-list></div><article class="lab-reader lab-lexicon-reader" data-lexicon-reader hidden></article></section>
+
+  <section id="investitionsrechner" class="lab-integrated-calculator" aria-labelledby="investitionsrechner-title">
+    <div class="lab-section-head lab-integrated-head"><div><span class="lab-kicker">VOLLSTÄNDIGE INVESTITIONSRECHNUNG</span><h2 id="investitionsrechner-title">Investitionsrechner direkt im Investment Lab.</h2><p>Prüfen Sie Objekt, Finanzierung, Steuerwirkung, Cashflow und Vermögensentwicklung in einem geführten Prozess – ohne die Seite zu wechseln.</p></div></div>
+    {% include "investitionsrechner-embedded.njk" %}
+  </section>
+
+  <section id="beratung" class="lab-cta"><div><span class="lab-kicker">ERGEBNISSE GEMEINSAM EINORDNEN</span><h2>Eine Berechnung zeigt Zusammenhänge. Die Entscheidung braucht Kontext.</h2><p>Bringen Sie Ihren PDF-Report mit. In der Ankaufsberatung prüfen wir Annahmen, Unterlagen, Finanzierung und Risiken gemeinsam.</p></div><a href="#terminbuchung" class="lab-btn lab-btn-gold">Ankaufsberatung auswählen</a></section>
+  {% include "appointment-booking.njk" %}
+</main>
+<script>window.FG_LAB_DATA={{ labContent | json | safe }};</script>
+<script src="/investment-lab.js" defer></script>

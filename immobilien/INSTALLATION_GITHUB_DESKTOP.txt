@@ -1,0 +1,16 @@
+F&G WEBSITE – INSTALLATION ÜBER GITHUB DESKTOP
+Stand: 23.07.2026
+
+1. In GitHub Desktop unbedingt den Test-Branch auswählen (nicht main).
+2. Repository über „Show in Explorer“ öffnen.
+3. Den INHALT dieses Ordners vollständig in den lokalen Repository-Ordner kopieren.
+4. „Dateien im Ziel ersetzen“ bestätigen.
+5. Die Ordner .git und node_modules im lokalen Repository NICHT löschen oder ersetzen.
+6. GitHub Desktop öffnen und Änderungen prüfen.
+7. Commit-Nachricht: Scientific Investment Lab and Propstack project upgrade
+8. Commit auf den Test-Branch und anschließend „Push origin“.
+9. Netlify Deploy Preview prüfen. Erst nach erfolgreichem Test mergen.
+
+WICHTIG:
+- Die enthaltene Datenschutzerklärung ist technisch auf den aktuellen Code zugeschnitten, sollte vor Livegang aber rechtlich geprüft und mit den real aktivierten Diensten/AV-Verträgen abgeglichen werden.
+- Der lokale Eleventy-Build konnte in der isolierten Arbeitsumgebung wegen fehlender npm-Abhängigkeiten nicht vollständig ausgeführt werden. JavaScript-Syntax und sämtliche 209 JSON-Inhalte wurden erfolgreich validiert.

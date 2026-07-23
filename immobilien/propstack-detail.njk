@@ -1,0 +1,262 @@
+---
+layout: base.njk
+pagination:
+  data: propstack.properties
+  size: 1
+  alias: property
+permalink: "angebote/{{ property.slug }}/index.html"
+---
+
+<section class="bg-primary text-white py-16 md:py-24">
+    <div class="container mx-auto px-4 text-center">
+
+        {% if property.marketing_type or property.property_type %}
+        <p class="text-secondary mb-3 font-semibold uppercase tracking-wide">
+            {{ property.marketing_type }}{% if property.marketing_type and property.property_type %} · {% endif %}{{ property.property_type }}
+        </p>
+        {% endif %}
+
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+            {{ property.title }}
+        </h1>
+
+        {% if property.location %}
+        <p class="text-lg text-secondary">
+            <i class="fas fa-map-marker-alt mr-2"></i>{{ property.location }}
+        </p>
+        {% endif %}
+
+    </div>
+</section>
+
+<section class="container mx-auto px-4 py-8 md:py-16 property-detail-shell">
+  <div class="property-detail-layout">
+    <div class="property-gallery-block">
+{% if property.gallery and property.gallery.length %}
+            <section class="bg-white rounded-xl shadow-xl overflow-hidden">
+                <div id="property-slider" class="relative w-full bg-white">
+
+                    <div class="relative w-full h-[360px] md:h-[520px] lg:h-[620px] bg-white flex items-center justify-center overflow-hidden">
+
+                        {% for image in property.gallery %}
+                        <img
+                            src="{{ image }}"
+                            alt="{{ property.title }}"
+                            class="property-slide absolute inset-0 w-full h-full object-contain bg-white {% if loop.first %}opacity-100 pointer-events-auto{% else %}opacity-0 pointer-events-none{% endif %} transition-opacity duration-500"
+                        >
+                        {% endfor %}
+
+                        {% if property.gallery.length > 1 %}
+                        <button
+                            type="button"
+                            id="slider-prev"
+                            class="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 bg-white/95 text-primary rounded-full w-11 h-11 md:w-12 md:h-12 shadow-lg flex items-center justify-center hover:bg-secondary transition"
+                            aria-label="Vorheriges Bild">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+
+                        <button
+                            type="button"
+                            id="slider-next"
+                            class="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 bg-white/95 text-primary rounded-full w-11 h-11 md:w-12 md:h-12 shadow-lg flex items-center justify-center hover:bg-secondary transition"
+                            aria-label="Nächstes Bild">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+
+                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary/85 text-white px-4 py-2 rounded-full text-sm shadow-lg">
+                            <span id="slider-current">1</span> / {{ property.gallery.length }}
+                        </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </section>
+            {% endif %}
+
+    </div>
+    <div class="property-facts-block">
+<aside class="lg:col-span-1">
+            <div class="bg-white rounded-xl shadow-xl p-8 sticky top-8 border-t-4 border-accent">
+
+                {% if property.price %}
+                <div class="mb-8">
+                    <p class="text-gray-500 mb-1">{{ property.price_label or "Kaufpreis" }}</p>
+                    <p class="text-3xl font-extrabold text-primary">
+                        {{ property.price }}
+                    </p>
+                </div>
+                {% endif %}
+
+                <div class="grid grid-cols-2 gap-4 mb-8">
+
+                    {% if property.living_space %}
+                    <div class="bg-gray-50 rounded-lg p-4 text-center">
+                        <i class="fas fa-ruler-combined text-accent mb-2"></i>
+                        <p class="font-bold text-primary">{{ property.living_space }}</p>
+                        <p class="text-sm text-gray-500">Wohnfläche</p>
+                    </div>
+                    {% endif %}
+
+                    {% if property.usable_space %}
+                    <div class="bg-gray-50 rounded-lg p-4 text-center">
+                        <i class="fas fa-warehouse text-accent mb-2"></i>
+                        <p class="font-bold text-primary">{{ property.usable_space }}</p>
+                        <p class="text-sm text-gray-500">Nutzfläche</p>
+                    </div>
+                    {% endif %}
+
+                    {% if property.rooms %}
+                    <div class="bg-gray-50 rounded-lg p-4 text-center">
+                        <i class="fas fa-bed text-accent mb-2"></i>
+                        <p class="font-bold text-primary">{{ property.rooms }}</p>
+                        <p class="text-sm text-gray-500">Zimmer</p>
+                    </div>
+                    {% endif %}
+
+                    {% if property.bedrooms %}
+                    <div class="bg-gray-50 rounded-lg p-4 text-center">
+                        <i class="fas fa-door-closed text-accent mb-2"></i>
+                        <p class="font-bold text-primary">{{ property.bedrooms }}</p>
+                        <p class="text-sm text-gray-500">Schlafzimmer</p>
+                    </div>
+                    {% endif %}
+
+                    {% if property.bathrooms %}
+                    <div class="bg-gray-50 rounded-lg p-4 text-center">
+                        <i class="fas fa-bath text-accent mb-2"></i>
+                        <p class="font-bold text-primary">{{ property.bathrooms }}</p>
+                        <p class="text-sm text-gray-500">Badezimmer</p>
+                    </div>
+                    {% endif %}
+
+                </div>
+
+                {% if property.details and property.details.length %}
+                <h2 class="text-2xl font-bold text-primary mb-6">
+                    Eckdaten
+                </h2>
+
+                <div class="space-y-4 text-gray-700">
+                    {% for detail in property.details %}
+                    {% if detail.value %}
+                    <div class="flex justify-between gap-6 border-b border-gray-100 pb-3">
+                        <span>{{ detail.label }}</span>
+                        <strong class="text-right text-primary">{{ detail.value }}</strong>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <a href="{{ property.request_url }}" class="btn-85 block text-center text-primary font-bold py-4 mt-8 rounded-lg shadow-md">
+                    Objekt anfragen
+                </a>
+
+                <a href="/angebote.html" class="block text-center text-primary mt-5 font-semibold hover:underline">
+                    Zurück zu den Angeboten
+                </a>
+
+            </div>
+        </aside>
+    </div>
+    <main class="property-content-block space-y-6 md:space-y-8">
+{% if property.descriptions and property.descriptions.length %}
+            <section class="bg-white rounded-xl shadow-xl p-8 md:p-10">
+                <h2 class="text-3xl font-bold text-primary mb-8">
+                    Beschreibung
+                </h2>
+
+                <div class="space-y-8">
+                    {% for description in property.descriptions %}
+                    {% if description.value %}
+                    <div>
+                        <h3 class="text-xl font-bold text-primary mb-3">
+                            {{ description.label }}
+                        </h3>
+
+                        <div class="text-gray-700 leading-relaxed text-lg prose max-w-none">
+                            {{ description.value | safe }}
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+{% if property.features and property.features.length %}
+            <section class="bg-white rounded-xl shadow-xl p-8 md:p-10">
+                <h2 class="text-3xl font-bold text-primary mb-8">
+                    Ausstattung
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {% for feature in property.features %}
+                    {% if feature.value %}
+                    <div class="bg-gray-50 rounded-lg p-4 flex items-start gap-3">
+                        <i class="fas fa-check-circle text-accent mt-1"></i>
+
+                        <div class="text-gray-700">
+                            <strong class="text-primary">{{ feature.label }}</strong>
+                            {% if feature.value and feature.value != "Ja" %}
+                            <span>: {{ feature.value }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
+    </main>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll(".property-slide");
+    const prevButton = document.getElementById("slider-prev");
+    const nextButton = document.getElementById("slider-next");
+    const currentLabel = document.getElementById("slider-current");
+
+    if (!slides.length) return;
+
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        slides[currentIndex].classList.remove("opacity-100", "pointer-events-auto");
+        slides[currentIndex].classList.add("opacity-0", "pointer-events-none");
+
+        currentIndex = (index + slides.length) % slides.length;
+
+        slides[currentIndex].classList.remove("opacity-0", "pointer-events-none");
+        slides[currentIndex].classList.add("opacity-100", "pointer-events-auto");
+
+        if (currentLabel) {
+            currentLabel.textContent = currentIndex + 1;
+        }
+    }
+
+    if (prevButton) {
+        prevButton.addEventListener("click", function () {
+            showSlide(currentIndex - 1);
+        });
+    }
+
+    if (nextButton) {
+        nextButton.addEventListener("click", function () {
+            showSlide(currentIndex + 1);
+        });
+    }
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowLeft") {
+            showSlide(currentIndex - 1);
+        }
+
+        if (event.key === "ArrowRight") {
+            showSlide(currentIndex + 1);
+        }
+    });
+});
+</script>

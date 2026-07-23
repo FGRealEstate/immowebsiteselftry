@@ -1,0 +1,12 @@
+---
+layout: base.njk
+pagination:
+  data: propstack.projects
+  size: 1
+  alias: project
+permalink: "projekte/{{ project.slug }}/index.html"
+eleventyComputed:
+  title: "{{ project.name }} – verfügbare Einheiten"
+  description: "{{ project.unit_count }} Einheiten im Projekt {{ project.name }}. Kaufpreisrange und Einheitenübersicht."
+---
+<main class="project-detail shell"><nav class="breadcrumbs"><a href="/angebote.html">Angebote</a><span>›</span><span>{{ project.name }}</span></nav><header class="project-hero">{% if project.main_image %}<img src="{{ project.main_image }}" alt="{{ project.name }}">{% endif %}<div><span class="lab-kicker">IMMOBILIENPROJEKT</span><h1>{{ project.name }}</h1><p>{{ project.location }}</p><div class="project-stats"><article><span>Verfügbare Einheiten</span><strong>{{ project.available_count }}</strong></article><article><span>Kaufpreisrange</span><strong>{{ project.price_range }}</strong></article></div></div></header><section><h2>Einheiten im Projekt</h2><div class="project-unit-grid">{% for unit in project.units %}<article class="project-unit-card">{% if unit.main_image %}<img src="{{ unit.main_image }}" alt="{{ unit.title }}">{% endif %}<div><span>{{ unit.unit_number or 'Einheit ' + loop.index }}</span><h3>{{ unit.title }}</h3><p>{{ unit.living_space }} · {{ unit.rooms }} Zimmer</p><strong>{{ unit.price or 'Kaufpreis noch nicht veröffentlicht' }}</strong><div class="article-actions"><a class="lab-btn lab-btn-gold" href="{{ unit.url }}">Details</a><a class="lab-btn lab-btn-ghost" href="{{ unit.request_url }}">Einheit anfragen</a></div></div></article>{% endfor %}</div></section></main>

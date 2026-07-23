@@ -1,0 +1,44 @@
+MATHEMATIK-AUDIT – F&G INVESTITIONSRECHNER
+Stand: 16.07.2026
+
+GRUNDLAGE
+- Die hochgeladene Excel-Datei enthält 9 Tabellenblätter und 492 Formeln.
+- Relevante Modellbereiche: Cockpit, Kennzahlen im Verlauf, Diagramme und Profi Funktionen.
+- Die Website-Logik wurde gegen die wesentlichen Excel-Grundsätze geprüft: Kaufpreis/Nebenkosten, Nettokaltmiete, Annuität, Zins/Tilgung, Restschuld, Mietsteigerung, Wertentwicklung, AfA und Grenzsteuersatz.
+
+ANNUITÄTENDARLEHEN
+- Anfangsrate pro Monat = Darlehen × (Sollzins + anfängliche Tilgung) / 12.
+- Monatszins = aktuelle Restschuld × Sollzins / 12.
+- Monatstilgung = Monatsrate − Monatszins.
+- Neue Restschuld = alte Restschuld − Monatstilgung.
+- Die Berechnung läuft monatlich und ist nicht auf einen festen Zinssatz oder eine feste Tilgung programmiert.
+
+MIETRENDITE
+- Bruttomietrendite = Jahresnettokaltmiete / Kaufpreis.
+- Nettomietrendite = (Jahresnettokaltmiete − Mietausfall − nicht umlagefähige Kosten − Rücklage) / Kaufpreis.
+- Umlagefähige Betriebskosten werden nicht als Eigentümerbelastung vom Cashflow abgezogen, wenn die Ausgangsgröße die Nettokaltmiete ist.
+
+CASHFLOW
+- Cashflow vor Steuer = Nettokaltmiete − Mietausfall − nicht umlagefähige Kosten − Rücklage − Kapitaldienst.
+- Tilgung ist zahlungswirksam und im Kapitaldienst enthalten, aber kein steuerlicher Aufwand.
+
+STEUERLICHE MODELLRECHNUNG
+- Steuerliches Ergebnis = Nettokaltmiete − Mietausfall − nicht umlagefähige Kosten − Zinsen − AfA.
+- Modellierte Steuerwirkung = steuerliches Ergebnis × Grenzsteuersatz.
+- Rücklagenzuführungen werden im Website-Modell nicht als sofort abzugsfähige Werbungskosten behandelt.
+- Die Berechnung ist eine vereinfachte Objektbetrachtung. Sie berücksichtigt unter anderem keine Kirchensteuer, keinen Solidaritätszuschlag, keine individuelle Verlustverrechnung, keine anschaffungsnahen Herstellungskosten und keine Sonder-AfA.
+
+AFA
+- AfA-Basis = Gebäudeanteil des Kaufpreises plus entsprechend zugeordneter Gebäudeanteil der Kaufnebenkosten.
+- CapEx/Renovierungskosten werden nicht pauschal vollständig der AfA-Basis zugeschlagen, da ihre steuerliche Behandlung vom Einzelfall abhängt.
+
+EIGENKAPITALRENDITE
+- Laufende Kennzahlen werden getrennt dargestellt:
+  1. Cashflow nach Steuer / Eigenkapital,
+  2. Cashflow nach Steuer + Tilgung / Eigenkapital,
+  3. separates Szenario inklusive angenommener Wertänderung.
+- Bei 0 € Eigenkapital ist eine Eigenkapitalrendite mathematisch nicht definiert. Alle übrigen Ergebnisse bleiben berechenbar.
+
+WICHTIGE GRENZEN
+- Die Website ist kein Steuerprogramm und keine Anlageberatung.
+- Restnutzungsgutachten, Sonder-AfA, Förderdarlehen, Sondertilgungen, Zinsbindungswechsel und individuelle steuerliche Besonderheiten müssen separat geprüft werden.

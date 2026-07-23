@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Straßenbahnhof Leipzig</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+
+<!-- Navigation -->
+<nav class="bg-yellow-600 text-white shadow-lg">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+            <div class="text-2xl font-bold">
+                <a href="index.html" class="flex items-center">
+                    <i class="fas fa-train-tram mr-2"></i>
+                    Straßenbahnhof Leipzig
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="hover:text-yellow-200">Home</a>
+
+                <div class="relative group">
+                    <a href="geschichte.html" class="hover:text-yellow-200 flex items-center">
+                        Geschichte <i class="fas fa-chevron-down ml-1 text-sm"></i>
+                    </a>
+                    <!-- Dropdown ohne Abstand -->
+                    <div class="absolute left-0 top-full mt-0 bg-white text-gray-800 rounded shadow-lg py-2 w-48 z-50 hidden group-hover:block">
+                        <a href="geschichte.html#geschichte-vergangenheit" class="block px-4 py-2 hover:bg-yellow-100">Vergangenheit</a>
+                        <a href="geschichte.html#geschichte-gegenwart" class="block px-4 py-2 hover:bg-yellow-100">Gegenwart</a>
+                        <a href="geschichte.html#geschichte-zukunft" class="block px-4 py-2 hover:bg-yellow-100">Zukunft</a>
+                    </div>
+                </div>
+
+                <a href="anschauen.html" class="hover:text-yellow-200">Zum Anschauen</a>
+                <a href="quiz.html" class="hover:text-yellow-200">Quiz</a>
+                <a href="impressum.html" class="hover:text-yellow-200">Impressum</a>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="index.html" class="block px-3 py-2 hover:bg-yellow-700 rounded">Home</a>
+
+                    <div class="relative">
+                        <div class="flex flex-col bg-yellow-700 rounded">
+                            <a href="geschichte.html" class="block px-3 py-2 text-white">Geschichte</a>
+                            <div class="pl-4 mt-1 space-y-1">
+                                <a href="geschichte.html#geschichte-vergangenheit" class="block px-3 py-2 hover:bg-yellow-600 rounded">Vergangenheit</a>
+                                <a href="geschichte.html#geschichte-gegenwart" class="block px-3 py-2 hover:bg-yellow-600 rounded">Gegenwart</a>
+                                <a href="geschichte.html#geschichte-zukunft" class="block px-3 py-2 hover:bg-yellow-600 rounded">Zukunft</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="anschauen.html" class="block px-3 py-2 hover:bg-yellow-700 rounded">Zum Anschauen</a>
+                    <a href="quiz.html" class="block px-3 py-2 hover:bg-yellow-700 rounded">Quiz</a>
+                    <a href="impressum.html" class="block px-3 py-2 hover:bg-yellow-700 rounded">Impressum</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<main>
+
+    <!-- Info Blocks -->
+    <section class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Das Leipziger Straßenbahnnetz</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- History Block -->
+                <a href="#geschichte-vergangenheit" class="block bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="h-48 bg-yellow-600 flex items-center justify-center">
+                        <i class="fas fa-history text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Vergangenheit</h3>
+                        <p class="text-gray-700">Die Leipziger Straßenbahn startete 1872 als Pferdebahn, wurde Ende des 19. Jahrhunderts elektrifiziert und stetig ausgebaut. Trotz Kriegszerstörungen und DDR-Mangel blieb sie eines der wichtigsten Verkehrsmittel der Stadt.
+                        </p>
+                        <div class="mt-4 text-yellow-600 font-semibold flex items-center">
+                            Mehr erfahren <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Present Block -->
+                <a href="#geschichte-gegenwart" class="block bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="h-48 bg-yellow-600 flex items-center justify-center">
+                        <i class="fas fa-tram text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Gegenwart</h3>
+                        <p class="text-gray-700">Das Leipziger Straßenbahnnetz gehört zu den größten Deutschlands und verbindet mit 13 Linien die Innenstadt fast aller Stadtteile – barrierefrei, umweltfreundlich und digital informiert.</p>
+                        <div class="mt-4 text-yellow-600 font-semibold flex items-center">
+                            Mehr erfahren <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Future Block -->
+                <a href="#geschichte-zukunft" class="block bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="h-48 bg-yellow-600 flex items-center justify-center">
+                        <i class="fas fa-rocket text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Zukunft</h3>
+                        <p class="text-gray-700">Ab 2025 modernisiert Leipzig seine Straßenbahn mit breiteren XXL-Bahnen, dichterem Takt und neuen Verbindungen. Bis 2028 folgen Gleis- und Haltestellenumbauten sowie Streckenerweiterungen wie die Südsehne.</p>
+                        <div class="mt-4 text-yellow-600 font-semibold flex items-center">
+                            Mehr erfahren <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Geschichte Section -->
+    <section id="geschichte" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Geschichte des Straßenbahnhofs Leipzig</h2>
+
+            <!-- Timeline -->
+            <div class="max-w-3xl mx-auto mb-12">
+                <h3 class="text-2xl font-semibold mb-6 text-center">Meilensteine der Entwicklung</h3>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg">1872</h4>
+                            <p>Start der Pferdebahn (18. Mai).</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg">1895–1897</h4>
+                            <p>Konzession, erste elektrische Bahnen (1896), letzte Pferdebahn (1897).</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg">1917</h4>
+                            <p>Vereinigung der Leipziger Straßenbahngesellschaften.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg">1925</h4>
+                            <p>Neuer Straßenbahnhof Angerbrücke.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg">1938</h4>
+                            <p>Umgründung zur Leipziger Verkehrsbetriebe (LVB).</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg">1951</h4>
+                            <p>LOWA-Neubau vorgestellt; Rekord: 30 Linien.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg">1969</h4>
+                            <p>Start des Tatra-Zugeinsatzes.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg">1982–1984</h4>
+                            <p>Netzerweiterung nach Grünau Nord und Miltitz.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg">1993–1996</h4>
+                            <p>LVB wird GmbH (1993); Linie 16 zur Neuen Messe (1996).</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg">1994–2006</h4>
+                            <p>Erste NGT8 (1994), Leoliner-Serie (ab 2004), Hof Angerbrücke neu (2006).</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg">2011–2017</h4>
+                            <p>Start Technisches Zentrum, erste XL-Trams (2016/17), Hof Dölitz neu (2017).</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg">2021–2022</h4>
+                            <p>Größter Fahrzeugauftrag bekanntgegeben; 150 Jahre Straßenbahn.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Vergangenheit -->
+            <div id="geschichte-vergangenheit" class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 border-b-2 border-yellow-600 pb-2">Vergangenheit</h3>
+
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-2/3">
+                        <p class="mb-4">Die Leipziger Straßenbahn hat ihre Wurzeln in der frühen Phase der modernen
+                            Urbanisierung: Am 18. Mai 1872 nahm die erste Pferdebahn in Leipzig den Linienbetrieb
+                            auf und verband schon damals zentrale Plätze und Bahnhöfe miteinander. In den 1890er-
+                            Jahren setzte ein rascher technologischer Wandel ein: Parallel zur Großen Leipziger
+                            Straßenbahn (GLSt) gründeten sich elektrische Gesellschaften; 1896 begannen die ersten
+                            elektrischen Linien den Betrieb — damit leitete Leipzig den Übergang von der Pferde- zur
+                            elektrischen Straßenbahn ein. Die Elektrifizierung und das dichte städtische Wachstum
+                            führten in der Folgezeit zu einem schnellen Ausbau des Netzes: bis in die ersten
+                            Jahrzehnte des 20. Jahrhunderts entstanden zahlreiche neue Linien und Verzweigungen,
+                            zugleich formten technische Entscheidungen (u. a. die schrittweise Festlegung der
+                            ungewöhnlichen Spurweite von 1.458 mm) die langfristige Infrastruktur und
+                            Betriebsbedingungen.</p>
+                        <p class="mb-4">Der Erste Weltkrieg, wirtschaftliche Krisen und der Zweite Weltkrieg hinterließen Spuren:
+                            Teile des Netzes wurden zerstört, viele Strecken mussten nachkriegsbedingt
+                            wiederaufgebaut werden. In der DDR-Zeit blieb die Straßenbahn trotz Materialmangel ein
+                            essentielles Nahverkehrsmittel; Modernisierungen erfolgten häufig in Etappen, technische
+                            Neuerungen wurden an die knappen Ressourcen angepasst. </p>
+                        <p class="mb-4">Nach der politischen Wende
+                            1990 folgte eine intensive Phase der Erneuerung: die LVB wurden modernisiert,
+                            Niederflurfahrzeuge eingeführt und das Netz in mehreren Schritten an die veränderten
+                            städtischen Strukturen und Mobilitätsbedürfnisse angepasst. Insgesamt spiegelt die
+                            Geschichte der Leipziger Straßenbahn einen steten Wechsel von krisenbedingten
+                            Rückschlägen und langfristigen Modernisierungsschüben wider, der das heutige dichte
+                            und historisch gewachsene Netz formte.</p>
+                    </div>
+                    <div class="md:w-1/3">
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <img src="images/geschichte/imageEmpty.jpg"
+                                 alt="Pferdebahn in Leipzig 1872"
+                                 class="w-full h-auto rounded cursor-pointer gallery-image">
+                            <p class="text-sm text-gray-600 mt-2">Die erste Pferdebahn in Leipzig (1872)</p>
+                            <p class="text-sm text-gray-600">Copyright: [Autor/in], [Lizenz], via [Quelle]. <a class="text-blue-600 text-sm" href="[URL]">Link</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="gallery-item cursor-pointer">
+                        <img src="images/geschichte/imageEmpty.jpg"
+                             alt="Straßenbahn um 1900"
+                             class="w-full h-48 object-cover rounded gallery-image">
+                    </div>
+                    <div class="gallery-item cursor-pointer">
+                        <img src="images/geschichte/imageEmpty.jpg"
+                             alt="Straßenbahn in den 1920ern"
+                             class="w-full h-48 object-cover rounded gallery-image">
+                    </div>
+                    <div class="gallery-item cursor-pointer">
+                        <img src="images/geschichte/imageEmpty.jpg"
+                             alt="Straßenbahn in den 1970ern"
+                             class="w-full h-48 object-cover rounded gallery-image">
+                    </div>
+                    <div class="gallery-item cursor-pointer">
+                        <img src="images/geschichte/imageEmpty.jpg"
+                             alt="Straßenbahn in der DDR-Zeit"
+                             class="w-full h-48 object-cover rounded gallery-image">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gegenwart -->
+            <div id="geschichte-gegenwart" class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 border-b-2 border-yellow-600 pb-2">Gegenwart</h3>
+
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-2/3">
+                        <p class="mb-4">Die Leipziger Straßenbahn ist heute das zentrale Rückgrat des städtischen Nahverkehrs
+                            und verbindet nahezu alle Stadtteile miteinander. Das Netz wird von den Leipziger
+                            Verkehrsbetrieben (LVB) betrieben und umfasst 13 Tageslinien, die gemeinsam ein dichtes
+                            Taktangebot sichern. Pro Jahr nutzen rund 167 Millionen Fahrgäste das System – ein
+                            Wert, der die Bedeutung der Straßenbahn für die Stadt unterstreicht.</p>
+                        <p class="mb-4">Mit einer Gesamtnetzlänge von 214,7 Kilometern zählt Leipzig zu den größten
+                            Straßenbahnsystemen Deutschlands. Rund 271 Fahrzeuge sind im täglichen Einsatz, die
+                            in ihrer Gestaltung auf Komfort, Kapazität und Barrierefreiheit ausgerichtet sind.
+                            Charakteristisch ist die einzigartige Spurweite von 1 458 Millimetern, die in Deutschland
+                            sonst nirgends vorkommt.</p>
+                        <p class="mb-4">Das Erscheinungsbild im Stadtbild ist geprägt von modernen Niederflurwagen, klar
+                            strukturierten Haltestellen und einer hohen Frequenz im Berufs- und Freizeitverkehr. Viele
+                            Linien verlaufen über zentrale Korridore in der Innenstadt, die von Fahrgästen intensiv
+                            genutzt werden, während äußere Streckenäste die Anbindung der Stadtteile sicherstellen.
+                            Die Straßenbahn erfüllt damit nicht nur eine Transportfunktion, sondern ist auch Teil der
+                            Leipziger Identität und des alltäglichen Lebens in der Stadt.</p>
+                    </div>
+                    <div class="md:w-1/3">
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <img src="images/geschichte/imageEmpty.jpg"
+                                 alt="Moderne Straßenbahn am Hauptbahnhof"
+                                 class="w-full h-auto rounded cursor-pointer gallery-image">
+                            <p class="text-sm text-gray-600 mt-2">Moderne Straßenbahnen am Hauptbahnhof</p>
+                            <p class="text-sm text-gray-600">Copyright: [Autor/in], [Lizenz], via [Quelle]. <a class="text-blue-600 text-sm" href="[URL]">Link</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="gallery-item cursor-pointer">
+                        <img src="images/geschichte/imageEmpty.jpg"
+                             alt="Moderne Straßenbahn"
+                             class="w-full h-48 object-cover rounded gallery-image">
+                    </div>
+                    <div class="gallery-item cursor-pointer">
+                        <img src="images/geschichte/imageEmpty.jpg"
+                             alt="City-Tunnel Markt"
+                             class="w-full h-48 object-cover rounded gallery-image">
+                    </div>
+                    <div class="gallery-item cursor-pointer">
+                        <img src="images/geschichte/imageEmpty.jpg"
+                             alt="Straßenbahndepot"
+                             class="w-full h-48 object-cover rounded gallery-image">
+                    </div>
+                    <div class="gallery-item cursor-pointer">
+                        <img src="images/geschichte/imageEmpty.jpg"
+                             alt="Straßenbahn bei Nacht"
+                             class="w-full h-48 object-cover rounded gallery-image">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zukunft -->
+            <div id="geschichte-zukunft" class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 border-b-2 border-yellow-600 pb-2">Zukunft</h3>
+
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-2/3">
+                        <p class="mb-4">Die nächsten Jahre bringen tiefgreifende Veränderungen für den Leipziger
+                            Straßenbahnverkehr. Herzstück der Modernisierung sind die neuen XXL-Straßenbahnen,
+                            die ab 2025 in den Fahrgastbetrieb gehen sollen. Mit einer Breite von 2,40 Metern,
+                            moderner Fahrzeugtechnik, Fahrerassistenzsystemen sowie großzügigen Bereichen für
+                            Rollstühle, Kinderwagen und Fahrräder setzen sie neue Maßstäbe in Komfort und
+                            Kapazität.</p>
+                        <p class="mb-4">Um das volle Potenzial der neuen Fahrzeuge zu nutzen, investiert die Stadt umfangreich
+                            in ihre Infrastruktur: Bis 2028 werden Gleisanlagen, Haltestellen und Wendeschleifen an
+                            die neuen Dimensionen angepasst. Parallel läuft die Umsetzung des „Liniennetzes der
+                            Zukunft“, einem mehrstufigen Ausbauplan bis 2026. Dieser umfasst dichtere Takte, neue
+                            Direktverbindungen, rund 45 zusätzliche Haltepunkte sowie die Ausweitung der Flexa-
+                            Gebiete, die Straßenbahn und On-Demand-Verkehr miteinander verknüpfen.</p>
+                        <p class="mb-4">Darüber hinaus sind gezielte Netzerweiterungen geplant: Die sogenannte Südsehne soll
+                            künftig Schleußig und angrenzende Stadtteile besser anbinden, während weitere Projekte
+                            – etwa eine Anbindung an das Herzzentrum – den Nahverkehr langfristig stärken.
+                            Unterstützt durch Fördermittel von Bund und Land, verfolgt Leipzig das Ziel, sein
+                            Straßenbahnnetz fit für die wachsende Bevölkerung und die Herausforderungen einer
+                            nachhaltigen, klimafreundlichen Mobilität zu machen.</p>
+                    </div>
+                    <div class="md:w-1/3">
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <img src="images/geschichte/imageEmpty.jpg"
+                                 alt="Vision der zukünftigen Straßenbahn"
+                                 class="w-full h-auto rounded cursor-pointer gallery-image">
+                            <p class="text-sm text-gray-600 mt-2">Vision der zukünftigen Straßenbahn in Leipzig</p>
+                            <p class="text-sm text-gray-600">Copyright: [Autor/in], [Lizenz], via [Quelle]. <a class="text-blue-600 text-sm" href="[URL]">Link</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <h3 class="text-xl font-bold flex items-center">
+                    <i class="fas fa-train-tram mr-2"></i>
+                    Straßenbahnhof Leipzig
+                </h3>
+                <p class="text-gray-400 mt-1">Geschichte und Zukunft des Leipziger Straßenbahnnetzes</p>
+            </div>
+
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white">
+                    <i class="fab fa-facebook-f text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white">
+                    <i class="fab fa-twitter text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white">
+                    <i class="fab fa-youtube text-xl"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+            <p>
+                &copy; 2023 Straßenbahnmuseum Leipzig e.V. Alle Rechte vorbehalten.
+                | <a href="datenschutz.html" class="hover:underline">Datenschutzerklärung</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Image Modal -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div id="caption" class="text-white text-center mt-2 text-lg"></div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

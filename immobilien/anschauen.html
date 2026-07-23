@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Straßenbahnhof Leipzig</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+
+<!-- Navigation -->
+<nav class="bg-yellow-600 text-white shadow-lg">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+            <div class="text-2xl font-bold">
+                <a href="index.html" class="flex items-center">
+                    <i class="fas fa-train-tram mr-2"></i>
+                    Straßenbahnhof Leipzig
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="hover:text-yellow-200">Home</a>
+
+                <div class="relative group">
+                    <a href="geschichte.html" class="hover:text-yellow-200 flex items-center">
+                        Geschichte <i class="fas fa-chevron-down ml-1 text-sm"></i>
+                    </a>
+                    <!-- Dropdown ohne Abstand -->
+                    <div class="absolute left-0 top-full mt-0 bg-white text-gray-800 rounded shadow-lg py-2 w-48 z-50 hidden group-hover:block">
+                        <a href="geschichte.html#geschichte-vergangenheit" class="block px-4 py-2 hover:bg-yellow-100">Vergangenheit</a>
+                        <a href="geschichte.html#geschichte-gegenwart" class="block px-4 py-2 hover:bg-yellow-100">Gegenwart</a>
+                        <a href="geschichte.html#geschichte-zukunft" class="block px-4 py-2 hover:bg-yellow-100">Zukunft</a>
+                    </div>
+                </div>
+
+                <a href="anschauen.html" class="hover:text-yellow-200">Zum Anschauen</a>
+                <a href="quiz.html" class="hover:text-yellow-200">Quiz</a>
+                <a href="impressum.html" class="hover:text-yellow-200">Impressum</a>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="index.html" class="block px-3 py-2 hover:bg-yellow-700 rounded">Home</a>
+
+                    <div class="relative">
+                        <div class="flex flex-col bg-yellow-700 rounded">
+                            <a href="geschichte.html" class="block px-3 py-2 text-white">Geschichte</a>
+                            <div class="pl-4 mt-1 space-y-1">
+                                <a href="geschichte.html#geschichte-vergangenheit" class="block px-3 py-2 hover:bg-yellow-600 rounded">Vergangenheit</a>
+                                <a href="geschichte.html#geschichte-gegenwart" class="block px-3 py-2 hover:bg-yellow-600 rounded">Gegenwart</a>
+                                <a href="geschichte.html#geschichte-zukunft" class="block px-3 py-2 hover:bg-yellow-600 rounded">Zukunft</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="anschauen.html" class="block px-3 py-2 hover:bg-yellow-700 rounded">Zum Anschauen</a>
+                    <a href="quiz.html" class="block px-3 py-2 hover:bg-yellow-700 rounded">Quiz</a>
+                    <a href="impressum.html" class="block px-3 py-2 hover:bg-yellow-700 rounded">Impressum</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<main>
+
+    <!-- Zum Anschauen - Gallery -->
+    <section id="anschauen" class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Zum Anschauen</h2>
+            <p class="text-center max-w-2xl mx-auto mb-8">Entdecken Sie die Geschichte der Leipziger Straßenbahn in unserer interaktiven Galerie. Klicken Sie sich durch die verschiedenen Epochen!</p>
+
+            <!-- Timeline Navigation -->
+            <div class="flex overflow-x-auto pb-4 mb-8 scrollbar-hide">
+                <button class="timeline-btn px-6 py-2 bg-yellow-600 text-white rounded-full mr-4 whitespace-nowrap" data-year="all">Alle</button>
+                <button class="timeline-btn px-6 py-2 bg-gray-300 rounded-full mr-4 whitespace-nowrap" data-year="Vergangenheit">Vergangenheit</button>
+                <button class="timeline-btn px-6 py-2 bg-gray-300 rounded-full mr-4 whitespace-nowrap" data-year="Gegenwart">Gegenwart</button>
+                <button class="timeline-btn px-6 py-2 bg-gray-300 rounded-full mr-4 whitespace-nowrap" data-year="Zukunft">Zukunft</button>
+                <button class="timeline-btn px-6 py-2 bg-gray-300 rounded-full mr-4 whitespace-nowrap" data-year="Sonstiges">Sonstiges</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Item 1 (unverändert) -->
+                <div class="gallery-item bg-white rounded-lg shadow-md overflow-hidden" data-year="Vergangenheit">
+                    <img src="images/Netzentwicklung.gif"
+                         alt="Pferdebahn 1872"
+                         class="w-full h-48 object-cover cursor-pointer gallery-image">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Entwicklung des Straßenbahnnetzes in Leipzig</h3>
+                        <p class="text-gray-600 text-sm">Copyright: Rh, Public domain, via Wikimedia Commons. <a class="text-blue-600 text-sm" href="https://commons.wikimedia.org/wiki/File:Strassenbahn_Leipzig_Netzentwicklung_thumb.gif">Link</a></p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="gallery-item bg-white rounded-lg shadow-md overflow-hidden" data-year="Gegenwart">
+                    <img src="images/geschichte/imageEmpty.jpg"
+                         alt="Straßenbahn um 1900"
+                         class="w-full h-48 object-cover cursor-pointer gallery-image">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Elektrische Straßenbahn (um 1900)</h3>
+                        <p class="text-gray-600 text-sm">Copyright: [Autor/in], [Lizenz], via [Quelle]. <a class="text-blue-600 text-sm" href="[URL]">Link</a></p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="gallery-item bg-white rounded-lg shadow-md overflow-hidden" data-year="Gegenwart">
+                    <img src="images/geschichte/imageEmpty.jpg"
+                         alt="Straßenbahn 1920er"
+                         class="w-full h-48 object-cover cursor-pointer gallery-image">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Blütezeit (1920er Jahre)</h3>
+                        <p class="text-gray-600 text-sm">Copyright: [Autor/in], [Lizenz], via [Quelle]. <a class="text-blue-600 text-sm" href="[URL]">Link</a></p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="gallery-item bg-white rounded-lg shadow-md overflow-hidden" data-year="Zukunft">
+                    <img src="images/geschichte/imageEmpty.jpg"
+                         alt="Straßenbahn DDR-Zeit"
+                         class="w-full h-48 object-cover cursor-pointer gallery-image">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">DDR-Zeit (1960er)</h3>
+                        <p class="text-gray-600 text-sm">Copyright: [Autor/in], [Lizenz], via [Quelle]. <a class="text-blue-600 text-sm" href="[URL]">Link</a></p>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="gallery-item bg-white rounded-lg shadow-md overflow-hidden" data-year="Zukunft">
+                    <img src="images/geschichte/imageEmpty.jpg"
+                         alt="Straßenbahn 1970er"
+                         class="w-full h-48 object-cover cursor-pointer gallery-image">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">1970er Jahre</h3>
+                        <p class="text-gray-600 text-sm">Copyright: [Autor/in], [Lizenz], via [Quelle]. <a class="text-blue-600 text-sm" href="[URL]">Link</a></p>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="gallery-item bg-white rounded-lg shadow-md overflow-hidden" data-year="Sonstiges">
+                    <img src="images/geschichte/imageEmpty.jpg"
+                         alt="Moderne Straßenbahn"
+                         class="w-full h-48 object-cover cursor-pointer gallery-image">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Moderne Niederflurbahnen (2009)</h3>
+                        <p class="text-gray-600 text-sm">Copyright: [Autor/in], [Lizenz], via [Quelle]. <a class="text-blue-600 text-sm" href="[URL]">Link</a></p>
+                    </div>
+                </div>
+
+                <!-- Item 7 -->
+                <div class="gallery-item bg-white rounded-lg shadow-md overflow-hidden" data-year="Sonstiges">
+                    <img src="images/geschichte/imageEmpty.jpg"
+                         alt="City-Tunnel Markt"
+                         class="w-full h-48 object-cover cursor-pointer gallery-image">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">City-Tunnel (2013)</h3>
+                        <p class="text-gray-600 text-sm">Copyright: [Autor/in], [Lizenz], via [Quelle]. <a class="text-blue-600 text-sm" href="[URL]">Link</a></p>
+                    </div>
+                </div>
+
+                <!-- Item 8 -->
+                <div class="gallery-item bg-white rounded-lg shadow-md overflow-hidden" data-year="zukunft">
+                    <img src="images/geschichte/imageEmpty.jpg"
+                         alt="Zukunftsprojekt"
+                         class="w-full h-48 object-cover cursor-pointer gallery-image">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Vision 2030</h3>
+                        <p class="text-gray-600 text-sm">Copyright: [Autor/in], [Lizenz], via [Quelle]. <a class="text-blue-600 text-sm" href="[URL]">Link</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Gallery (unverändert) -->
+            <h3 class="text-2xl font-semibold mt-16 mb-6 text-center">Videos zur Leipziger Straßenbahn</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold">Historische Aufnahmen</h4>
+                        <p class="text-sm text-gray-600 mt-1">Seltene Filmaufnahmen aus den 1950er Jahren</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold">Hinter den Kulissen</h4>
+                        <p class="text-sm text-gray-600 mt-1">Ein Blick ins Straßenbahndepot</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/VIDEO_ID_5" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold">Die Zukunft beginnt jetzt</h4>
+                        <p class="text-sm text-gray-600 mt-1">Pläne für das Straßenbahnnetz 2030</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <h3 class="text-xl font-bold flex items-center">
+                    <i class="fas fa-train-tram mr-2"></i>
+                    Straßenbahnhof Leipzig
+                </h3>
+                <p class="text-gray-400 mt-1">Geschichte und Zukunft des Leipziger Straßenbahnnetzes</p>
+            </div>
+
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white">
+                    <i class="fab fa-facebook-f text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white">
+                    <i class="fab fa-twitter text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white">
+                    <i class="fab fa-youtube text-xl"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+            <p>
+                &copy; 2023 Straßenbahnmuseum Leipzig e.V. Alle Rechte vorbehalten.
+                | <a href="datenschutz.html" class="hover:underline">Datenschutzerklärung</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Image Modal -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div id="caption" class="text-white text-center mt-2 text-lg"></div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+CHANGELOG – F&G REAL ESTATE 2.0
+
+DATENSCHUTZ
+- Cookiebot vollständig aus dem globalen Layout und der Instagram-Landingpage entfernt.
+- Orest-Bida CookieConsent v3 lokal im Repository eingebunden.
+- Website bleibt ohne optionale Einwilligung nutzbar.
+- GA4 lädt erst nach Statistik-Einwilligung.
+- GTM-Noscript und unkontrollierter GTM-Start entfernt.
+- Einwilligung kann über den Footer geändert werden.
+
+INVESTMENT LAB
+- Regelbasierten F&G Navigator ergänzt.
+- Freie Fragen, Synonyme, Intent-Erkennung und gewichtete Suche vorbereitet.
+- Verlinkung zu Rechnern, Artikeln, Lexikon und Standorten.
+- Datenstruktur für spätere Azure-/Netlify-Function-Anbindung vorbereitet.
+- Standort-Dashboard und geführte Einstiegsansicht ergänzt.
+
+CMS UND CONTENT
+- 62 Fachartikel, 125 Lexikonbegriffe und 16 Standorte in einzelne JSON-Dateien ausgelagert.
+- Decap-CMS-Collections ergänzt.
+- Eigene indexierbare Detailseiten für Wissen, Lexikon und Standorte erzeugt.
+
+RECHNER
+- 0 € Eigenkapital zugelassen.
+- Dynamische Annuitätenlogik beibehalten.
+- Steuerliche Modelllogik bereinigt.
+- CapEx-Bezeichnung vereinheitlicht.
+- Diagramme in der Ergebnisdarstellung vor Tabellen/KPIs priorisiert.
+
+PROPSTACK
+- Mietfelder für Nettokaltmiete, Warmmiete, Nebenkosten, Heizkosten, Kaution und Stellplatzmiete ergänzt.
+- Nutzfläche ergänzt.
+- Mietpreislabel in Angebotskarte und Detailseite angepasst.
+- Ausstattung bleibt als strukturierte Feature-Kacheln erhalten.
+
+SEO
+- Meta-Description, Canonical, Open Graph, robots und Organization/RealEstateAgent Schema ergänzt.
+- Stabile Detail-URLs, Breadcrumbs und Content-Seiten ergänzt.
+
+BEKANNTE EINSCHRÄNKUNGEN
+- Standortwerte wurden aus dem bestehenden Projekt übernommen und nicht neu marktseitig verifiziert.
+- Regelbasierter Navigator ist noch kein generatives KI-Modell.
+- Rechts- und Steuertexte müssen vor Veröffentlichung fachlich geprüft werden.

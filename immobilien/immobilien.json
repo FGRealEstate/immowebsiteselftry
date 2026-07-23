@@ -1,4 +1,12 @@
 {
-  "layout": "immobilien-detail.liquid",
-  "permalink": "angebote/{{ title | slugify }}/index.html"
+  "items": [
+    {
+      "titel": "Immo für Reiche",
+      "stadt": "Berlin",
+      "zimmer": 5,
+      "groesse_qm": 175,
+      "kaufpreis": 495000,
+      "bild_url": "/images/slide2.jpg"
+    }
+  ]
 }
