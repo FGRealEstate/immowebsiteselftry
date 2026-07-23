@@ -10,27 +10,12 @@ permalink: /insta-objekt-anfrage/index.html
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instagram Objektanfrage | Fischer & Geserich Real Estate</title>
 
-  <!-- Cookiebot -->
-  <script
-    id="Cookiebot"
-    src="https://consent.cookiebot.com/uc.js"
-    data-cbid="8ab62c4e-bdf7-458b-b374-cdb161bf67d3"
-    type="text/javascript">
-  </script>
-
-  <!-- Google Analytics nur nach Zustimmung -->
-  <script
-    type="text/plain"
-    data-cookieconsent="statistics"
-    src="https://www.googletagmanager.com/gtag/js?id=G-7GNF8PH36F">
-  </script>
-
-  <script type="text/plain" data-cookieconsent="statistics">
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-7GNF8PH36F', { anonymize_ip: true });
-  </script>
+  <!-- F&G Consent Manager; no analytics before consent -->
+  <link rel="stylesheet" href="/vendor/cookieconsent/cookieconsent.css">
+  <link rel="stylesheet" href="/consent-manager.css">
+  <script>window.FG_GTM_ID = "GTM-5DVGRHB2"; window.FG_GOOGLE_MAPS_API_KEY = "";</script>
+  <script defer src="/vendor/cookieconsent/cookieconsent.umd.js"></script>
+  <script defer src="/consent-manager.js"></script>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="/style.css">

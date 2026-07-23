@@ -1,0 +1,111 @@
+---
+layout: base.njk
+pagination:
+  data: propstack.projects
+  size: 1
+  alias: project
+permalink: "projekte/{{ project.slug }}/index.html"
+eleventyComputed:
+  title: "{{ project.name }} – Immobilienprojekt | Fischer & Geserich Real Estate"
+  description: "{{ project.name }} mit {{ project.available_unit_count }} verfügbaren Einheiten{% if project.location %} in {{ project.location }}{% endif %}. Preise, Flächen, Grundrisse und einzelne Einheiten ansehen."
+---
+
+<section class="bg-primary text-white py-16 md:py-24">
+  <div class="container mx-auto px-4">
+    <div class="max-w-5xl">
+      <p class="text-secondary uppercase tracking-[0.18em] text-sm font-bold mb-4">Immobilienprojekt · {{ project.marketing_type }}</p>
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-5">{{ project.name }}</h1>
+      {% if project.location %}<p class="text-lg md:text-xl text-secondary"><i class="fas fa-map-marker-alt mr-2"></i>{{ project.location }}</p>{% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="container mx-auto px-4 py-12 md:py-16">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+    <main class="lg:col-span-2 space-y-10">
+      {% if project.gallery and project.gallery.length %}
+      <section class="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-1 bg-gray-100">
+          {% for image in project.gallery %}
+          {% if loop.index <= 6 %}
+          <img src="{{ image }}" alt="{{ project.name }} – Projektbild {{ loop.index }}" class="w-full h-72 md:h-80 object-cover {% if loop.first %}md:col-span-2 md:h-[500px]{% endif %}">
+          {% endif %}
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
+      {% if project.description %}
+      <section class="bg-white rounded-2xl shadow-xl p-7 md:p-10">
+        <h2 class="text-3xl font-bold text-primary mb-5">Das Projekt</h2>
+        <div class="prose max-w-none text-gray-700 leading-relaxed text-lg">{{ project.description | safe }}</div>
+      </section>
+      {% endif %}
+
+      <section aria-labelledby="units-heading">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-7">
+          <div>
+            <p class="text-accent uppercase tracking-[0.16em] text-sm font-bold mb-2">Einzeln anfragbar</p>
+            <h2 id="units-heading" class="text-3xl md:text-4xl font-bold text-primary">Verfügbare Einheiten</h2>
+          </div>
+          <p class="text-gray-600">{{ project.available_unit_count }} Einheiten werden aktuell vermarktet.</p>
+        </div>
+
+        {% if project.units and project.units.length %}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {% for unit in project.units %}
+          <article class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 flex flex-col">
+            <a href="{{ unit.url }}" class="block">
+              {% if unit.main_image %}
+              <img src="{{ unit.main_image }}" alt="{{ unit.title }}" loading="lazy" class="w-full h-56 object-cover">
+              {% else %}
+              <div class="w-full h-56 flex items-center justify-center bg-gray-100 text-gray-400"><i class="fas fa-home text-5xl"></i></div>
+              {% endif %}
+            </a>
+            <div class="p-6 flex-1 flex flex-col">
+              <div class="flex flex-wrap items-center gap-2 mb-3">
+                {% if unit.unit_number %}<span class="bg-secondary text-primary text-xs font-bold px-3 py-1 rounded-full">{{ unit.unit_number }}</span>{% endif %}
+                {% if unit.property_type %}<span class="text-xs text-gray-500 font-semibold">{{ unit.property_type }}</span>{% endif %}
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-2">{{ unit.title }}</h3>
+              <p class="text-2xl font-extrabold text-gold-gradient mb-4">{{ unit.price or "Preis auf Anfrage" }}</p>
+              <div class="grid grid-cols-2 gap-3 text-sm text-gray-600 mb-6">
+                {% if unit.living_space %}<span><i class="fas fa-ruler-combined text-accent mr-1"></i>{{ unit.living_space }}</span>{% endif %}
+                {% if unit.rooms %}<span><i class="fas fa-bed text-accent mr-1"></i>{{ unit.rooms }} Zi.</span>{% endif %}
+                {% if unit.usable_area %}<span><i class="fas fa-vector-square text-accent mr-1"></i>{{ unit.usable_area }} Nutzfläche</span>{% endif %}
+              </div>
+              <div class="mt-auto grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <a href="{{ unit.url }}" class="border border-primary text-primary font-bold text-center py-3 rounded-lg hover:bg-primary hover:text-white transition">Details</a>
+                <a href="{{ unit.request_url }}" class="btn-85 text-primary font-bold text-center py-3 rounded-lg">Einheit anfragen</a>
+              </div>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+        {% else %}
+        <div class="bg-white rounded-2xl shadow p-8 text-center text-gray-600">Aktuell sind in diesem Projekt keine Einheiten zur Veröffentlichung freigegeben.</div>
+        {% endif %}
+      </section>
+    </main>
+
+    <aside class="lg:col-span-1">
+      <div class="bg-white rounded-2xl shadow-xl p-7 sticky top-28 border-t-4 border-accent">
+        <h2 class="text-2xl font-bold text-primary mb-6">Projekt auf einen Blick</h2>
+        <dl class="space-y-5">
+          <div><dt class="text-sm text-gray-500">{% if project.marketing_type == 'Miete' %}Mietrange{% else %}Kaufpreisrange{% endif %}</dt><dd class="text-2xl font-extrabold text-primary">{{ project.price_range or "Auf Anfrage" }}</dd></div>
+          <div class="grid grid-cols-2 gap-4">
+            <div><dt class="text-sm text-gray-500">Einheiten</dt><dd class="font-bold text-primary">{{ project.available_unit_count }}</dd></div>
+            <div><dt class="text-sm text-gray-500">Wohnflächen</dt><dd class="font-bold text-primary">{{ project.area_range or "variabel" }}</dd></div>
+            <div><dt class="text-sm text-gray-500">Zimmer</dt><dd class="font-bold text-primary">{{ project.room_range or "variabel" }}</dd></div>
+            {% if project.construction_year %}<div><dt class="text-sm text-gray-500">Baujahr</dt><dd class="font-bold text-primary">{{ project.construction_year }}</dd></div>{% endif %}
+          </div>
+          {% if project.completion_date %}<div><dt class="text-sm text-gray-500">Fertigstellung</dt><dd class="font-bold text-primary">{{ project.completion_date }}</dd></div>{% endif %}
+          <div><dt class="text-sm text-gray-500">Status</dt><dd class="font-bold text-primary">{{ project.status }}</dd></div>
+        </dl>
+        <a href="{{ project.request_url }}" class="btn-85 block text-center text-primary font-bold py-3 rounded-lg mt-7">Projekt anfragen</a>
+        <p class="text-xs text-gray-500 mt-5">Verfügbarkeit, Preise und Angaben werden aus den in Propstack freigegebenen Projektdaten und Einheiten erzeugt. Zwischenverkauf und Änderungen vorbehalten.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+

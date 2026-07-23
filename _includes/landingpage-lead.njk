@@ -1061,17 +1061,13 @@
 </script>
 
 <script>
-/* Google Maps Places vorbereiten:
-   Später in Netlify/Template den Key setzen:
-   window.FG_GOOGLE_MAPS_API_KEY = "IHR_GOOGLE_MAPS_API_KEY";
-   Der Code lädt dann automatisch die Places-Bibliothek. */
-window.FG_GOOGLE_MAPS_API_KEY = window.FG_GOOGLE_MAPS_API_KEY || "";
+/* Google Places wird ausschließlich durch den zentralen Consent-Manager geladen. */
 (function () {
-    if (!window.FG_GOOGLE_MAPS_API_KEY || window.google?.maps?.places) return;
     window.fgInitLeadPlaces = function () {
-        document.querySelectorAll(".lead-widget").forEach(widget => {
-            widget.querySelectorAll(".google-address").forEach(input => {
-                if (input.dataset.googleReady || !(google.maps && google.maps.places)) return;
+        if (!(window.google && google.maps && google.maps.places)) return;
+        document.querySelectorAll(".lead-widget").forEach(function (widget) {
+            widget.querySelectorAll(".google-address").forEach(function (input) {
+                if (input.dataset.googleReady) return;
                 input.dataset.googleReady = "1";
                 const ac = new google.maps.places.Autocomplete(input, {
                     types: ["address"],
@@ -1084,11 +1080,8 @@ window.FG_GOOGLE_MAPS_API_KEY = window.FG_GOOGLE_MAPS_API_KEY || "";
             });
         });
     };
-    const script = document.createElement("script");
-    script.src = "https://maps.googleapis.com/maps/api/js?key=" + encodeURIComponent(window.FG_GOOGLE_MAPS_API_KEY) + "&libraries=places&callback=fgInitLeadPlaces";
-    script.async = true;
-    script.defer = true;
-    document.head.appendChild(script);
+    document.addEventListener("fg:mapsready", window.fgInitLeadPlaces);
+    if (window.google && google.maps && google.maps.places) window.fgInitLeadPlaces();
 })();
 </script>
 

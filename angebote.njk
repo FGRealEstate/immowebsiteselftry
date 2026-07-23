@@ -67,15 +67,55 @@ permalink: angebote.html
         </div>
     </div>
 
+    {% if propstack.projects and propstack.projects.length %}
+    <section class="mb-16" aria-labelledby="project-heading">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-8 border-b-2 border-secondary pb-3">
+            <div>
+                <p class="text-sm uppercase tracking-[0.18em] text-accent font-bold mb-2">Zentral über Propstack gesteuert</p>
+                <h2 id="project-heading" class="text-3xl font-bold text-primary">Immobilienprojekte ({{ propstack.projects | length }})</h2>
+            </div>
+            <p class="text-gray-600 max-w-2xl">Hier erscheinen ausschließlich Projekte, die in Propstack selbst den Status „Vermarktung“ besitzen. Einheiten allein können ein Projekt nicht veröffentlichen.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {% for project in propstack.projects %}
+            <article class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition">
+                <a href="{{ project.url }}" class="block">
+                    {% if project.main_image %}
+                    <img loading="lazy" src="{{ project.main_image }}" alt="{{ project.name }}" class="w-full h-72 object-cover">
+                    {% else %}
+                    <div class="w-full h-72 flex items-center justify-center bg-primary text-secondary"><i class="fas fa-building text-6xl"></i></div>
+                    {% endif %}
+                </a>
+                <div class="p-6 md:p-8">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-secondary text-primary text-xs font-bold px-3 py-1 rounded-full">Projekt · {{ project.marketing_type }}</span>
+                        <span class="bg-gray-100 text-primary text-xs font-bold px-3 py-1 rounded-full">{{ project.available_unit_count }} Einheiten online</span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-primary mb-3">{{ project.name }}</h3>
+                    {% if project.location %}<p class="text-gray-600 mb-5"><i class="fas fa-map-marker-alt text-accent mr-2"></i>{{ project.location }}</p>{% endif %}
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-6">
+                        <div class="bg-gray-50 rounded-xl p-4"><span class="block text-xs text-gray-500">{% if project.marketing_type == 'Miete' %}Mietrange{% else %}Kaufpreisrange{% endif %}</span><strong class="text-primary">{{ project.price_range or 'Auf Anfrage' }}</strong></div>
+                        <div class="bg-gray-50 rounded-xl p-4"><span class="block text-xs text-gray-500">Wohnflächen</span><strong class="text-primary">{{ project.area_range or 'variabel' }}</strong></div>
+                        <div class="bg-gray-50 rounded-xl p-4 col-span-2 md:col-span-1"><span class="block text-xs text-gray-500">Zimmer</span><strong class="text-primary">{{ project.room_range or 'variabel' }}</strong></div>
+                    </div>
+                    <a href="{{ project.url }}" class="btn-85 block text-center text-primary font-bold py-3 rounded-lg">Projekt und Einheiten ansehen</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
     <h2 class="text-3xl font-bold mb-8 text-primary border-b-2 border-secondary pb-2">
-        Aktuelle Objekte (<span id="object-count">{{ propstack.properties | length }}</span>)
+        Einzelobjekte (<span id="object-count">{{ propstack.standaloneProperties | length }}</span>)
     </h2>
 
-    {% if propstack.properties and propstack.properties.length %}
+    {% if propstack.standaloneProperties and propstack.standaloneProperties.length %}
 
     <div id="property-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        {% for property in propstack.properties %}
+        {% for property in propstack.standaloneProperties %}
         <div
             class="immobilien-kachel property-card bg-white rounded-lg shadow-xl overflow-hidden transition duration-300 hover:shadow-2xl hover:-translate-y-1"
             data-vermarktung="{{ property.marketing_type or '' }}"

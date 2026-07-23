@@ -1,0 +1,1 @@
+window.FGAnalytics={track:function(name,params){document.dispatchEvent(new CustomEvent('fg:analytics',{detail:{name,params:params||{}}}));if(window.CookieConsent?.acceptedCategory('analytics')&&typeof window.gtag==='function'){gtag('event',name,params||{});}}};
