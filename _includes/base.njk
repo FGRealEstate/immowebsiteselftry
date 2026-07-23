@@ -8,36 +8,11 @@
 
     <title>{{ title }} | Fischer & Geserich Real Estate GmbH</title>
 
-    <!-- COOKIEBOT -->
-    <script
-        id="Cookiebot"
-        src="https://consent.cookiebot.com/uc.js"
-        data-cbid="8ab62c4e-bdf7-458b-b374-cdb161bf67d3"
-        data-blockingmode="auto"
-        type="text/javascript">
-    </script>
-<!-- GOOGLE ANALYTICS -->
-    <script
-        type="text/plain"
-        data-cookieconsent="statistics"
-        src="https://www.googletagmanager.com/gtag/js?id=G-7GNF8PH36F">
-    </script>
-
-    <script type="text/plain" data-cookieconsent="statistics">
-
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag(){
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-
-        gtag('config', 'G-7GNF8PH36F', {
-            anonymize_ip: true
-        });
-
-    </script>
+    <!-- F&G Consent Manager: Website bleibt sichtbar; Tracking startet erst nach Einwilligung -->
+    <link rel="stylesheet" href="/vendor/cookieconsent/cookieconsent.css">
+    <link rel="stylesheet" href="/consent-manager.css">
+    <script defer src="/vendor/cookieconsent/cookieconsent.umd.js"></script>
+    <script defer src="/consent-manager.js"></script>
 
     <!-- TAILWIND -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -68,52 +43,12 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- GOOGLE MAPS OPTIONAL -->
+    <!-- Externe Dienste werden durch consent-manager.js erst nach Einwilligung geladen. -->
     <script>
-
         window.FG_GOOGLE_MAPS_API_KEY = "";
-
-        (function(){
-
-            if(!window.FG_GOOGLE_MAPS_API_KEY) return;
-
-            var s = document.createElement("script");
-
-            s.src =
-                "https://maps.googleapis.com/maps/api/js?key="
-                + encodeURIComponent(window.FG_GOOGLE_MAPS_API_KEY)
-                + "&libraries=places";
-
-            s.async = true;
-            s.defer = true;
-
-            document.head.appendChild(s);
-
-        })();
-
+        window.FG_GTM_ID = "GTM-5DVGRHB2";
     </script>
 
-    <!-- GOOGLE TAG MANAGER -->
-    <script data-cookieconsent="ignore">
-        (function(w,d,s,l,i){
-            w[l]=w[l]||[];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event:'gtm.js'
-            });
-
-            var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),
-                dl=l!='dataLayer' ? '&l='+l : '';
-
-            j.async=true;
-            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-
-            f.parentNode.insertBefore(j,f);
-
-        })(window,document,'script','dataLayer','GTM-5DVGRHB2');
-    </script>
-    <!-- END GOOGLE TAG MANAGER -->
 
 
     <style>
@@ -145,16 +80,7 @@
 </head>
 
 <body class="site-background">
-    <!-- GOOGLE TAG MANAGER NOSCRIPT -->
-    <noscript>
-        <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-5DVGRHB2"
-            height="0"
-            width="0"
-            style="display:none;visibility:hidden">
-        </iframe>
-    </noscript>
-    <!-- END GOOGLE TAG MANAGER NOSCRIPT -->
+
 
 <nav class="fg-sticky-header bg-primary text-white shadow-lg">
     
@@ -319,6 +245,8 @@
                 <a href="/datenschutz.html" class="hover:text-accent hover:underline transition duration-300">Datenschutz</a>
                 <span class="mx-2 text-gray-600">|</span>
                 <a href="/agb.html" class="hover:text-accent hover:underline transition duration-300">AGB</a>
+                <span class="mx-2 text-gray-600">|</span>
+                <a href="#" data-open-consent class="hover:text-accent hover:underline transition duration-300">Cookie-Einstellungen</a>
             </p>
         </div>
     </div>

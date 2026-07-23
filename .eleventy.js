@@ -4,6 +4,10 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("style.css");
     eleventyConfig.addPassthroughCopy("script.js");
     eleventyConfig.addPassthroughCopy("investment-lab.js");
+    eleventyConfig.addPassthroughCopy("consent-manager.js");
+    eleventyConfig.addPassthroughCopy("consent-manager.css");
+    eleventyConfig.addPassthroughCopy("analytics.js");
+    eleventyConfig.addPassthroughCopy("vendor");
     eleventyConfig.addPassthroughCopy("images");
     eleventyConfig.addPassthroughCopy("videos");
     eleventyConfig.addPassthroughCopy("admin");
