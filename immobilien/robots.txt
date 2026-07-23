@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://fg-realestate.de/sitemap.xml

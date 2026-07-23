@@ -553,19 +553,240 @@ function isPublicMarketingObject(unit) {
     return normalizeText(statusName).includes("vermarktung");
 }
 
+
+function valueAtPath(source, path) {
+    if (!source || !path) return null;
+    return path.split(".").reduce((current, key) => {
+        if (current === null || current === undefined) return null;
+        return current[key];
+    }, source);
+}
+
+function firstNestedText(source, paths) {
+    for (const path of paths) {
+        const clean = textValue(valueAtPath(source, path));
+        if (clean) return clean;
+    }
+    return null;
+}
+
+function firstNestedNumber(source, paths) {
+    for (const path of paths) {
+        const clean = numberValue(valueAtPath(source, path));
+        if (clean) return clean;
+    }
+    return null;
+}
+
+function emptyPropstackResult() {
+    return {
+        properties: [],
+        units: [],
+        projects: [],
+        standaloneProperties: [],
+        projectProperties: [],
+        filters: {
+            marketingTypes: [],
+            propertyTypes: [],
+            locations: [],
+            projects: []
+        },
+        summary: {
+            propertyCount: 0,
+            projectCount: 0,
+            projectUnitCount: 0,
+            standaloneCount: 0
+        }
+    };
+}
+
+function extractProjectMetadata(unit) {
+    const explicitId = firstNestedText(unit, [
+        "project_id", "property_project_id", "development_id", "complex_id", "building_id",
+        "project.id", "property_project.id", "development.id", "complex.id", "building.id",
+        "custom_fields.projekt_id", "custom_fields.projektid", "custom_fields.project_id"
+    ]);
+
+    const explicitName = firstNestedText(unit, [
+        "project_name", "property_project_name", "development_name", "complex_name", "building_name",
+        "project.name", "project.title", "property_project.name", "property_project.title",
+        "development.name", "development.title", "complex.name", "complex.title", "building.name",
+        "custom_fields.projekt", "custom_fields.projektname", "custom_fields.project_name"
+    ]);
+
+    const projectObject = unit.project || unit.property_project || unit.development || unit.complex || null;
+    const hasExplicitProject = Boolean(explicitId || explicitName || projectObject);
+
+    if (!hasExplicitProject) {
+        return {
+            hasProject: false,
+            id: null,
+            name: null,
+            slug: null,
+            description: null,
+            location: null,
+            address: null,
+            completionDate: null,
+            constructionYear: null,
+            status: null,
+            totalUnits: null,
+            images: []
+        };
+    }
+
+    const name = explicitName || `Immobilienprojekt ${explicitId}`;
+    const id = explicitId || slugify(name);
+    const description = firstNestedText(unit, [
+        "project.description", "project.description_long", "property_project.description",
+        "development.description", "complex.description", "custom_fields.projektbeschreibung"
+    ]);
+    const location = firstNestedText(unit, [
+        "project.city", "project.location", "property_project.city", "development.city",
+        "complex.city", "custom_fields.projektort"
+    ]) || getPublicLocation(unit);
+    const address = firstNestedText(unit, [
+        "project.address", "project.short_address", "property_project.address",
+        "development.address", "complex.address", "custom_fields.projektadresse"
+    ]);
+    const completionDate = firstNestedText(unit, [
+        "project.completion_date", "project.expected_completion", "development.completion_date",
+        "custom_fields.fertigstellung", "custom_fields.geplante_fertigstellung"
+    ]);
+    const constructionYear = firstNestedNumber(unit, [
+        "project.construction_year", "project.year_built", "development.construction_year",
+        "custom_fields.projekt_baujahr"
+    ]);
+    const status = firstNestedText(unit, [
+        "project.status", "property_project.status", "development.status",
+        "custom_fields.projektstatus"
+    ]);
+    const totalUnits = firstNestedNumber(unit, [
+        "project.total_units", "project.unit_count", "property_project.total_units",
+        "development.total_units", "custom_fields.anzahl_einheiten"
+    ]);
+
+    let images = [];
+    if (projectObject) {
+        images = getImages(projectObject);
+    }
+
+    return {
+        hasProject: true,
+        id: String(id),
+        name,
+        slug: slugify(name || id),
+        description,
+        location,
+        address,
+        completionDate,
+        constructionYear,
+        status,
+        totalUnits,
+        images
+    };
+}
+
+function rangeLabel(values, formatter, fallback = null) {
+    const clean = values.filter((value) => typeof value === "number" && Number.isFinite(value) && value > 0);
+    if (!clean.length) return fallback;
+    const min = Math.min(...clean);
+    const max = Math.max(...clean);
+    if (min === max) return formatter(min);
+    return `${formatter(min)} – ${formatter(max)}`;
+}
+
+function buildProjects(properties) {
+    const groups = new Map();
+
+    for (const property of properties) {
+        if (!property.project || !property.project.hasProject) continue;
+
+        const projectKey = property.project.id || property.project.slug || property.project.name;
+        if (!projectKey) continue;
+
+        if (!groups.has(projectKey)) {
+            groups.set(projectKey, {
+                id: String(projectKey),
+                name: property.project.name || "Immobilienprojekt",
+                slug: property.project.slug || slugify(property.project.name || projectKey),
+                description: property.project.description,
+                location: property.project.location || property.location,
+                address: property.project.address,
+                completion_date: formatDate(property.project.completionDate),
+                construction_year: property.project.constructionYear,
+                status: property.project.status,
+                declared_total_units: property.project.totalUnits,
+                project_images: property.project.images || [],
+                units: []
+            });
+        }
+
+        const group = groups.get(projectKey);
+        group.units.push(property);
+
+        if (!group.description && property.project.description) group.description = property.project.description;
+        if (!group.location && property.location) group.location = property.location;
+        if (!group.main_image && property.main_image) group.main_image = property.main_image;
+    }
+
+    return [...groups.values()]
+        .map((project) => {
+            const units = project.units.sort((a, b) => {
+                const aNumber = String(a.unit_number || a.title || "");
+                const bNumber = String(b.unit_number || b.title || "");
+                return aNumber.localeCompare(bNumber, "de", { numeric: true });
+            });
+
+            const prices = units.map((unit) => unit.price_raw).filter(Boolean);
+            const spaces = units.map((unit) => unit.living_space_raw).filter(Boolean);
+            const rooms = units.map((unit) => unit.rooms_raw).filter(Boolean);
+            const propertyTypes = [...new Set(units.map((unit) => unit.property_type).filter(Boolean))];
+            const marketingTypes = [...new Set(units.map((unit) => unit.marketing_type).filter(Boolean))];
+            const images = [];
+            const seenImages = new Set();
+
+            for (const image of [...project.project_images, ...units.flatMap((unit) => unit.images || [])]) {
+                if (!image || !image.url || seenImages.has(image.url)) continue;
+                seenImages.add(image.url);
+                images.push(image);
+            }
+
+            const availableUnits = units.filter((unit) => unit.is_available !== false);
+            const minPrice = prices.length ? Math.min(...prices) : null;
+            const maxPrice = prices.length ? Math.max(...prices) : null;
+
+            return {
+                ...project,
+                url: `/projekte/${project.slug}/`,
+                units,
+                unit_count: units.length,
+                available_count: availableUnits.length,
+                total_units: project.declared_total_units || units.length,
+                min_price_raw: minPrice,
+                max_price_raw: maxPrice,
+                min_price: formatPrice(minPrice),
+                max_price: formatPrice(maxPrice),
+                price_range: rangeLabel(prices, formatPrice, "Kaufpreise auf Anfrage"),
+                living_space_range: rangeLabel(spaces, (value) => formatNumber(value, " m²")),
+                rooms_range: rangeLabel(rooms, (value) => formatNumber(value, " Zimmer")),
+                property_types: propertyTypes,
+                marketing_types: marketingTypes,
+                images,
+                gallery: images.map((image) => image.url),
+                main_image: project.main_image || (images[0] ? images[0].url : null),
+                request_url: `/objekt-anfragen.html?project=${encodeURIComponent(project.name)}`
+            };
+        })
+        .sort((a, b) => a.name.localeCompare(b.name, "de"));
+}
+
 module.exports = async function () {
     const apiKey = process.env.PROPSTACK_API_KEY;
 
     if (!apiKey) {
         console.warn("PROPSTACK_API_KEY fehlt.");
 
-        return {
-            properties: [],
-            filters: {
-                marketingTypes: [],
-                propertyTypes: []
-            }
-        };
+        return emptyPropstackResult();
     }
 
     try {
@@ -758,6 +979,19 @@ module.exports = async function () {
                 addFeature(features, "Ausstattung", unit.furnishing);
                 addFeature(features, "Qualität der Ausstattung", unit.furnishing_quality);
 
+                const project = extractProjectMetadata(unit);
+                const unitNumber = firstText(unit, [
+                    "unit_number", "unit_no", "number", "internal_number",
+                    "custom_fields.einheitennummer", "custom_fields.wohnungsnummer", "custom_fields.we_nummer"
+                ]);
+                const availabilityStatus = firstText(unit, [
+                    "availability_status", "sales_status", "marketing_status", "status",
+                    "custom_fields.verfuegbarkeit", "custom_fields.verfügbarkeit"
+                ]);
+                const normalizedAvailability = normalizeText(availabilityStatus);
+                const isAvailable = !["verkauft", "reserviert", "vermietet", "zuruckgezogen", "archiviert"]
+                    .some((status) => normalizedAvailability.includes(status));
+
                 return {
                     id: unit.id,
                     slug,
@@ -802,6 +1036,7 @@ module.exports = async function () {
 
                     bathrooms_raw: bathroomsRaw,
                     bathrooms: formatInteger(bathroomsRaw),
+                    floor: textValue(unit.floor),
 
                     gallery: images.map((image) => image.url),
                     images,
@@ -811,7 +1046,16 @@ module.exports = async function () {
                     descriptions,
                     features,
 
-                    request_url: `/objekt-anfragen.html?object_id=${unit.id}&object=${encodeURIComponent(title)}`
+                    unit_number: unitNumber,
+                    availability_status: availabilityStatus,
+                    is_available: isAvailable,
+                    project,
+                    project_id: project.id,
+                    project_name: project.name,
+                    project_slug: project.slug,
+                    project_url: project.hasProject ? `/projekte/${project.slug}/` : null,
+
+                    request_url: `/objekt-anfragen.html?object_id=${unit.id}&object=${encodeURIComponent(title)}${project.hasProject ? `&project=${encodeURIComponent(project.name)}` : ""}`
                 };
             });
 
@@ -823,25 +1067,44 @@ module.exports = async function () {
             ...new Set(properties.map((property) => property.property_type).filter(Boolean))
         ];
 
+        const projects = buildProjects(properties);
+        const projectPropertyIds = new Set(projects.flatMap((project) => project.units.map((unit) => String(unit.id))));
+        const projectProperties = properties.filter((property) => projectPropertyIds.has(String(property.id)));
+        const standaloneProperties = properties.filter((property) => !projectPropertyIds.has(String(property.id)));
+        const locations = [...new Set(properties.map((property) => property.location).filter(Boolean))].sort((a, b) => a.localeCompare(b, "de"));
+
         console.log("PROPSTACK OBJEKTE:", properties.length);
+        console.log("PROPSTACK PROJEKTE:", projects.length);
+        console.log("PROPSTACK EINZELOBJEKTE:", standaloneProperties.length);
 
         return {
             properties,
+            units: properties,
+            projects,
+            standaloneProperties,
+            projectProperties,
             filters: {
                 marketingTypes,
-                propertyTypes
+                propertyTypes,
+                locations,
+                projects: projects.map((project) => ({
+                    id: project.id,
+                    name: project.name,
+                    slug: project.slug,
+                    unit_count: project.unit_count
+                }))
+            },
+            summary: {
+                propertyCount: properties.length,
+                projectCount: projects.length,
+                projectUnitCount: projectProperties.length,
+                standaloneCount: standaloneProperties.length
             }
         };
 
     } catch (error) {
         console.warn("Propstack Fehler:", error.message);
 
-        return {
-            properties: [],
-            filters: {
-                marketingTypes: [],
-                propertyTypes: []
-            }
-        };
+        return emptyPropstackResult();
     }
 };

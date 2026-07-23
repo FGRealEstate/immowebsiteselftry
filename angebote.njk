@@ -68,8 +68,48 @@ permalink: angebote.html
     </div>
 
     <h2 class="text-3xl font-bold mb-8 text-primary border-b-2 border-secondary pb-2">
-        Aktuelle Objekte (<span id="object-count">{{ propstack.properties | length }}</span>)
+        Aktuelle Angebote (<span id="object-count">{{ propstack.properties | length }}</span> Einheiten{% if propstack.projects and propstack.projects.length %} in {{ propstack.projects | length }} Projekten{% endif %})
     </h2>
+
+    {% if propstack.projects and propstack.projects.length %}
+    <section class="offers-projects-section" aria-labelledby="project-offers-heading">
+        <div class="offers-projects-heading">
+            <div>
+                <span class="lab-kicker">PROJEKTVERMARKTUNG</span>
+                <h2 id="project-offers-heading">Immobilienprojekte mit mehreren Einheiten</h2>
+                <p>Entdecken Sie Neubauprojekte und aufgeteilte Mehrfamilienhäuser. Jede verfügbare Einheit kann einzeln geprüft und angefragt werden.</p>
+            </div>
+            <strong>{{ propstack.summary.projectUnitCount }} Einheiten</strong>
+        </div>
+
+        <div class="offers-project-grid">
+            {% for project in propstack.projects %}
+            <article class="offers-project-card">
+                <a href="{{ project.url }}" class="offers-project-image-link">
+                    {% if project.main_image %}
+                    <img src="{{ project.main_image }}" alt="{{ project.name }}" loading="lazy">
+                    {% else %}
+                    <div class="offers-project-placeholder"><i class="fas fa-building"></i></div>
+                    {% endif %}
+                    <span>{{ project.available_count }} Einheiten verfügbar</span>
+                </a>
+                <div class="offers-project-content">
+                    <div class="offers-project-meta">
+                        <span>{{ project.location or "Standort auf Anfrage" }}</span>
+                        {% if project.property_types and project.property_types.length %}<span>{{ project.property_types | join(", ") }}</span>{% endif %}
+                    </div>
+                    <h3><a href="{{ project.url }}">{{ project.name }}</a></h3>
+                    <div class="offers-project-facts">
+                        <article><span>Kaufpreisrange</span><strong>{{ project.price_range }}</strong></article>
+                        {% if project.living_space_range %}<article><span>Wohnflächen</span><strong>{{ project.living_space_range }}</strong></article>{% endif %}
+                    </div>
+                    <a href="{{ project.url }}" class="btn-85 offers-project-button">Projekt und Einheiten ansehen</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
 
     {% if propstack.properties and propstack.properties.length %}
 

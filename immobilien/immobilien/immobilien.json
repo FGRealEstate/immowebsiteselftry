@@ -1,4 +1,0 @@
-{
-  "layout": "immobilien-detail.liquid",
-  "permalink": "angebote/{{ title | slugify }}/index.html"
-}

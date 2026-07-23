@@ -4,9 +4,199 @@ pagination:
   data: propstack.projects
   size: 1
   alias: project
+  addAllPagesToCollections: true
 permalink: "projekte/{{ project.slug }}/index.html"
 eleventyComputed:
-  title: "{{ project.name }} – verfügbare Einheiten"
-  description: "{{ project.unit_count }} Einheiten im Projekt {{ project.name }}. Kaufpreisrange und Einheitenübersicht."
+  title: "{{ project.name }} – {{ project.available_count }} verfügbare Einheiten"
+  pageDescription: "{{ project.available_count }} verfügbare Einheiten im Immobilienprojekt {{ project.name }}{% if project.location %} in {{ project.location }}{% endif %}. Kaufpreisrange, Wohnflächen, Grundrisse und Einzelangebote im Überblick."
+  canonicalPath: "/projekte/{{ project.slug }}/"
 ---
-<main class="project-detail shell"><nav class="breadcrumbs"><a href="/angebote.html">Angebote</a><span>›</span><span>{{ project.name }}</span></nav><header class="project-hero">{% if project.main_image %}<img src="{{ project.main_image }}" alt="{{ project.name }}">{% endif %}<div><span class="lab-kicker">IMMOBILIENPROJEKT</span><h1>{{ project.name }}</h1><p>{{ project.location }}</p><div class="project-stats"><article><span>Verfügbare Einheiten</span><strong>{{ project.available_count }}</strong></article><article><span>Kaufpreisrange</span><strong>{{ project.price_range }}</strong></article></div></div></header><section><h2>Einheiten im Projekt</h2><div class="project-unit-grid">{% for unit in project.units %}<article class="project-unit-card">{% if unit.main_image %}<img src="{{ unit.main_image }}" alt="{{ unit.title }}">{% endif %}<div><span>{{ unit.unit_number or 'Einheit ' + loop.index }}</span><h3>{{ unit.title }}</h3><p>{{ unit.living_space }} · {{ unit.rooms }} Zimmer</p><strong>{{ unit.price or 'Kaufpreis noch nicht veröffentlicht' }}</strong><div class="article-actions"><a class="lab-btn lab-btn-gold" href="{{ unit.url }}">Details</a><a class="lab-btn lab-btn-ghost" href="{{ unit.request_url }}">Einheit anfragen</a></div></div></article>{% endfor %}</div></section></main>
+
+<main class="project-detail-page">
+    <section class="project-detail-hero">
+        <div class="container mx-auto px-4">
+            <nav class="project-breadcrumbs" aria-label="Brotkrümelnavigation">
+                <a href="/angebote.html">Angebote</a>
+                <span aria-hidden="true">›</span>
+                <span>{{ project.name }}</span>
+            </nav>
+
+            <div class="project-detail-hero-grid">
+                <div class="project-detail-copy">
+                    <span class="lab-kicker">IMMOBILIENPROJEKT</span>
+                    <h1>{{ project.name }}</h1>
+
+                    {% if project.location or project.address %}
+                    <p class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        {{ project.address or project.location }}
+                    </p>
+                    {% endif %}
+
+                    {% if project.description %}
+                    <div class="project-intro">{{ project.description | safe }}</div>
+                    {% endif %}
+
+                    <div class="project-summary-grid">
+                        <article>
+                            <span>Verfügbare Einheiten</span>
+                            <strong>{{ project.available_count }}</strong>
+                            <small>von {{ project.total_units }} Einheiten</small>
+                        </article>
+                        <article>
+                            <span>Kaufpreisrange</span>
+                            <strong>{{ project.price_range }}</strong>
+                            <small>abhängig von Einheit und Ausstattung</small>
+                        </article>
+                        {% if project.living_space_range %}
+                        <article>
+                            <span>Wohnflächen</span>
+                            <strong>{{ project.living_space_range }}</strong>
+                            <small>Spanne der veröffentlichten Einheiten</small>
+                        </article>
+                        {% endif %}
+                        {% if project.rooms_range %}
+                        <article>
+                            <span>Zimmer</span>
+                            <strong>{{ project.rooms_range }}</strong>
+                            <small>Einheitenübersicht</small>
+                        </article>
+                        {% endif %}
+                    </div>
+
+                    <div class="project-hero-actions">
+                        <a class="btn-85" href="#einheiten">Einheiten ansehen</a>
+                        <a class="project-secondary-button" href="{{ project.request_url }}">Projekt anfragen</a>
+                    </div>
+                </div>
+
+                {% if project.main_image %}
+                <figure class="project-main-image">
+                    <img src="{{ project.main_image }}" alt="{{ project.name }}{% if project.location %} in {{ project.location }}{% endif %}" loading="eager">
+                    {% if project.gallery and project.gallery.length > 1 %}
+                    <figcaption>{{ project.gallery.length }} Projekt- und Einheitenbilder verfügbar</figcaption>
+                    {% endif %}
+                </figure>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <section class="project-meta-section">
+        <div class="container mx-auto px-4">
+            <div class="project-meta-grid">
+                {% if project.status %}
+                <article><span>Projektstatus</span><strong>{{ project.status }}</strong></article>
+                {% endif %}
+                {% if project.completion_date %}
+                <article><span>Fertigstellung</span><strong>{{ project.completion_date }}</strong></article>
+                {% endif %}
+                {% if project.construction_year %}
+                <article><span>Baujahr</span><strong>{{ project.construction_year }}</strong></article>
+                {% endif %}
+                {% if project.property_types and project.property_types.length %}
+                <article><span>Objektarten</span><strong>{{ project.property_types | join(", ") }}</strong></article>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <section id="einheiten" class="project-units-section">
+        <div class="container mx-auto px-4">
+            <div class="project-section-heading">
+                <div>
+                    <span class="lab-kicker">EINHEITENÜBERSICHT</span>
+                    <h2>Verfügbare Einheiten im Projekt</h2>
+                    <p>Jede Einheit verfügt über eine eigene Detailseite und kann separat angefragt werden.</p>
+                </div>
+                <strong>{{ project.available_count }} verfügbar</strong>
+            </div>
+
+            <div class="project-unit-grid">
+                {% for unit in project.units %}
+                <article class="project-unit-card {% if unit.is_available == false %}is-unavailable{% endif %}">
+                    <a href="{{ unit.url }}" class="project-unit-image-link" aria-label="Details zu {{ unit.title }}">
+                        {% if unit.main_image %}
+                        <img src="{{ unit.main_image }}" alt="{{ unit.title }}" loading="lazy">
+                        {% else %}
+                        <div class="project-unit-image-placeholder"><i class="fas fa-building"></i></div>
+                        {% endif %}
+                        <span class="project-unit-status">{% if unit.availability_status %}{{ unit.availability_status }}{% elif unit.is_available %}Verfügbar{% else %}Nicht verfügbar{% endif %}</span>
+                    </a>
+
+                    <div class="project-unit-content">
+                        <div class="project-unit-eyebrow">
+                            <span>{{ unit.unit_number or ("Einheit " + loop.index) }}</span>
+                            {% if unit.property_type %}<span>{{ unit.property_type }}</span>{% endif %}
+                        </div>
+                        <h3><a href="{{ unit.url }}">{{ unit.title }}</a></h3>
+
+                        <div class="project-unit-facts">
+                            {% if unit.living_space %}<span><i class="fas fa-ruler-combined"></i>{{ unit.living_space }}</span>{% endif %}
+                            {% if unit.rooms %}<span><i class="fas fa-door-open"></i>{{ unit.rooms }} Zimmer</span>{% endif %}
+                            {% if unit.floor %}<span><i class="fas fa-layer-group"></i>{{ unit.floor }}</span>{% endif %}
+                        </div>
+
+                        <div class="project-unit-price">
+                            <span>{{ unit.price_label or "Kaufpreis" }}</span>
+                            <strong>{{ unit.price or "Preis wird individuell mitgeteilt" }}</strong>
+                        </div>
+
+                        <div class="project-unit-actions">
+                            <a class="lab-btn lab-btn-gold" href="{{ unit.url }}">Einheit ansehen</a>
+                            <a class="lab-btn lab-btn-ghost" href="{{ unit.request_url }}">Einheit anfragen</a>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    {% if project.gallery and project.gallery.length > 1 %}
+    <section class="project-gallery-section">
+        <div class="container mx-auto px-4">
+            <div class="project-section-heading">
+                <div>
+                    <span class="lab-kicker">GALERIE</span>
+                    <h2>Einblicke in das Projekt</h2>
+                </div>
+            </div>
+            <div class="project-gallery-grid">
+                {% for image in project.gallery %}
+                <img src="{{ image }}" alt="{{ project.name }} – Ansicht {{ loop.index }}" loading="lazy">
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <section class="project-disclaimer-section">
+        <div class="container mx-auto px-4">
+            <div class="project-disclaimer">
+                <h2>Hinweis zu Verfügbarkeit und Preisen</h2>
+                <p>Die Angaben werden aus dem angebundenen Immobilien-CRM übernommen. Verfügbarkeit, Kaufpreise, Flächen und Ausstattungsmerkmale können sich kurzfristig ändern. Verbindlich sind ausschließlich die Unterlagen und Vereinbarungen, die Ihnen im Rahmen der konkreten Anfrage zur jeweiligen Einheit zur Verfügung gestellt werden.</p>
+                <a href="{{ project.request_url }}" class="btn-85">Projektberatung anfragen</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": {{ project.name | json | safe }},
+  "numberOfItems": {{ project.unit_count }},
+  "itemListElement": [
+    {% for unit in project.units %}
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index }},
+      "url": "https://fg-realestate.de{{ unit.url }}",
+      "name": {{ unit.title | json | safe }}
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
