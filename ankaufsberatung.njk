@@ -1,8 +1,333 @@
 ---
 layout: base.njk
-title: Ankaufsberatung im F&G Investment Lab
+title: Ankaufsberatung für Kapitalanleger und Eigennutzer | Fischer & Geserich
+description: Individuelle Ankaufsberatung für Immobilien: Strategie, Objektsuche, wirtschaftliche Prüfung, Verhandlung, Finanzierung und Begleitung bis zum Notartermin.
 permalink: ankaufsberatung.html
-robots: noindex,follow
+canonicalPath: /ankaufsberatung.html
+ogTitle: Ankaufsberatung für Immobilienkäufer
+ogDescription: Von der Strategie über die Objektprüfung und Finanzierung bis zum Notartermin – persönliche Ankaufsberatung für Kapitalanleger und Eigennutzer.
 ---
-<section class="legacy-redirect"><h1>Ankaufsberatung und Investment Lab gehören jetzt zusammen.</h1><p>Rechner, Wissen und Terminbuchung finden Sie künftig an einem zentralen Ort.</p><a class="btn-85" href="/investment-lab.html#beratung">Zum Investment Lab</a></section>
-<script>location.replace('/investment-lab.html#beratung');</script>
+
+<section class="bg-primary text-white py-16 md:py-24">
+    <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-3">
+            Erfolgreiche Ankaufsberatung
+        </h1>
+        <p class="text-lg md:text-xl font-light text-secondary max-w-4xl mx-auto">
+            Ob Traumhaus oder Renditeobjekt – wir begleiten Sie sicher ans Ziel.
+        </p>
+    </div>
+</section>
+
+{% include "appointment-booking.njk" %}
+
+
+<section class="container mx-auto px-4 -mt-8 relative z-10">
+    <div class="bg-white rounded-full shadow-2xl p-2 max-w-md mx-auto flex relative">
+        <div id="tab-slider" class="absolute top-2 bottom-2 left-2 w-[calc(50%-10px)] btn-85 rounded-full transition-transform duration-300 z-0" style="transform: translateX(0px);"></div> 
+        <button id="btn-kapitalanleger" onclick="switchTab('kapitalanleger')" class="w-1/2 text-center py-3 font-bold rounded-full relative z-10 transition-colors duration-300 text-primary">
+            Für Kapitalanleger
+        </button>
+        <button id="btn-eigennutzer" onclick="switchTab('eigennutzer')" class="w-1/2 text-center py-3 font-bold rounded-full relative z-10 transition-colors duration-300 text-gray-500 hover:text-primary">
+            Für Eigennutzer
+        </button>
+    </div>
+</section>
+
+<div id="content-wrapper" class="transition-opacity duration-300">
+
+    <div id="content-kapitalanleger" class="block">
+        <section class="container mx-auto px-4 pt-16 pb-12 text-center">
+            <h2 class="text-3xl font-bold text-primary mb-6">Ihr Weg zum Immobilien-Portfolio</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
+                Wir begleiten Sie in 7 Schritten von der ersten Idee bis zum erfolgreichen Abschluss – transparent, sicher und kaufmännisch fundiert.
+            </p>
+
+            <div id="accordion-investor" class="max-w-3xl mx-auto space-y-6 relative text-left">
+                <div class="block absolute left-6 top-0 h-full w-1.5 bg-secondary"></div>
+
+                <div class="accordion-item relative py-4 pl-16 md:pl-24 pr-6 border border-gray-200 bg-white rounded-lg shadow-md transition duration-300 hover:shadow-lg" data-open="true">
+                    <div class="z-10 bg-primary w-10 h-10 min-w-10 rounded-full shadow-lg border-4 border-accent flex items-center justify-center absolute left-6 top-8 transform -translate-y-1/2 -translate-x-1/2 text-white font-bold">1</div>
+                    <h3 class="accordion-header text-xl font-semibold text-primary mb-1 cursor-pointer flex justify-between items-center pr-4">
+                        Erstgespräch vereinbaren <i class="fas fa-chevron-down text-gold-gradient text-lg transition-transform duration-300"></i>
+                    </h3>
+                    <div class="accordion-content pt-2">
+                        <p class="text-gray-600 mb-4">Lernen Sie uns kennen. Buchen Sie direkt Ihren Wunschtermin in unserem Online-Kalender.</p>
+                        <a href="#terminbuchung" class="btn-85 inline-block py-2 px-6 text-primary font-bold rounded text-sm"><i class="fas fa-calendar-check mr-2"></i> Termin auswählen</a>
+                    </div>
+                </div>
+
+                <div class="accordion-item relative py-4 pl-16 md:pl-24 pr-6 border border-gray-200 bg-white rounded-lg shadow-md transition duration-300 hover:shadow-lg">
+                    <div class="z-10 bg-primary w-10 h-10 min-w-10 rounded-full shadow-lg border-4 border-accent flex items-center justify-center absolute left-6 top-8 transform -translate-y-1/2 -translate-x-1/2 text-white font-bold">2</div>
+                    <h3 class="accordion-header text-xl font-semibold text-primary mb-1 cursor-pointer flex justify-between items-center pr-4">
+                        Persönliche Strategieentwicklung <i class="fas fa-chevron-down text-gold-gradient text-lg transition-transform duration-300"></i>
+                    </h3>
+                    <div class="accordion-content hidden pt-2">
+                        <p class="text-gray-600">Wir definieren gemeinsam Ihre Anlageziele und entwickeln einen maßgeschneiderten Fahrplan für Ihren Vermögensaufbau.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item relative py-4 pl-16 md:pl-24 pr-6 border border-gray-200 bg-white rounded-lg shadow-md transition duration-300 hover:shadow-lg">
+                    <div class="z-10 bg-primary w-10 h-10 min-w-10 rounded-full shadow-lg border-4 border-accent flex items-center justify-center absolute left-6 top-8 transform -translate-y-1/2 -translate-x-1/2 text-white font-bold">3</div>
+                    <h3 class="accordion-header text-xl font-semibold text-primary mb-1 cursor-pointer flex justify-between items-center pr-4">
+                        Objektprüfung (Due Diligence) <i class="fas fa-chevron-down text-gold-gradient text-lg transition-transform duration-300"></i>
+                    </h3>
+                    <div class="accordion-content hidden pt-2">
+                        <p class="text-gray-600">Wir prüfen das Objekt kaufmännisch und wirtschaftlich. Wir analysieren Zahlen, Mietpotenziale und Renditechancen.</p>
+                        <p class="text-xs text-gray-400 mt-2 italic">*Keine Rechts- oder Steuerberatung.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item relative py-4 pl-16 md:pl-24 pr-6 border border-gray-200 bg-white rounded-lg shadow-md transition duration-300 hover:shadow-lg">
+                    <div class="z-10 bg-primary w-10 h-10 min-w-10 rounded-full shadow-lg border-4 border-accent flex items-center justify-center absolute left-6 top-8 transform -translate-y-1/2 -translate-x-1/2 text-white font-bold">4</div>
+                    <h3 class="accordion-header text-xl font-semibold text-primary mb-1 cursor-pointer flex justify-between items-center pr-4">
+                        Objektvorstellung <i class="fas fa-chevron-down text-gold-gradient text-lg transition-transform duration-300"></i>
+                    </h3>
+                    <div class="accordion-content hidden pt-2">
+                        <p class="text-gray-600">Wir präsentieren Ihnen geprüfte Immobilienchancen (Off-Market & On-Market), die exakt zu Ihrem Suchprofil passen.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item relative py-4 pl-16 md:pl-24 pr-6 border border-gray-200 bg-white rounded-lg shadow-md transition duration-300 hover:shadow-lg">
+                    <div class="z-10 bg-primary w-10 h-10 min-w-10 rounded-full shadow-lg border-4 border-accent flex items-center justify-center absolute left-6 top-8 transform -translate-y-1/2 -translate-x-1/2 text-white font-bold">5</div>
+                    <h3 class="accordion-header text-xl font-semibold text-primary mb-1 cursor-pointer flex justify-between items-center pr-4">
+                        Ankauf & Verhandlung <i class="fas fa-chevron-down text-gold-gradient text-lg transition-transform duration-300"></i>
+                    </h3>
+                    <div class="accordion-content hidden pt-2">
+                        <p class="text-gray-600">Wir übernehmen die Kommunikation mit Maklern und Verkäufern und führen für Sie die Kaufpreisverhandlung.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item relative py-4 pl-16 md:pl-24 pr-6 border border-gray-200 bg-white rounded-lg shadow-md transition duration-300 hover:shadow-lg">
+                    <div class="z-10 bg-primary w-10 h-10 min-w-10 rounded-full shadow-lg border-4 border-accent flex items-center justify-center absolute left-6 top-8 transform -translate-y-1/2 -translate-x-1/2 text-white font-bold">6</div>
+                    <h3 class="accordion-header text-xl font-semibold text-primary mb-1 cursor-pointer flex justify-between items-center pr-4">
+                        Finanzierungssuche <i class="fas fa-chevron-down text-gold-gradient text-lg transition-transform duration-300"></i>
+                    </h3>
+                    <div class="accordion-content hidden pt-2">
+                        <p class="text-gray-600">Wir unterstützen Sie bei der Suche nach der optimalen Finanzierungsstruktur und vermitteln Bankkontakte.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item relative py-4 pl-16 md:pl-24 pr-6 border border-gray-200 bg-white rounded-lg shadow-md transition duration-300 hover:shadow-lg">
+                    <div class="z-10 bg-primary w-10 h-10 min-w-10 rounded-full shadow-lg border-4 border-accent flex items-center justify-center absolute left-6 top-8 transform -translate-y-1/2 -translate-x-1/2 text-white font-bold">7</div>
+                    <h3 class="accordion-header text-xl font-semibold text-primary mb-1 cursor-pointer flex justify-between items-center pr-4">
+                        Notar & After Sales <i class="fas fa-chevron-down text-gold-gradient text-lg transition-transform duration-300"></i>
+                    </h3>
+                    <div class="accordion-content hidden pt-2">
+                        <p class="text-gray-600">Wir begleiten Sie zum Notartermin und stehen Ihnen auch nach dem Kauf zur Seite.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white pt-12 pb-14" id="cta-investor">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-4 text-primary">Investment-Gespräch vereinbaren</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+                    Buchen Sie jetzt Ihr unverbindliches Erstgespräch, um Ihre Investmentstrategie und den weiteren Fahrplan zu definieren.
+                </p>
+                <a href="#terminbuchung" class="btn-85 inline-block py-3 px-8 text-lg font-bold rounded-lg shadow-xl hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-calendar-check mr-2"></i> Termin für Kapitalanleger auswählen
+                </a>
+                
+                <p class="text-xs text-gray-500 mb-2">
+                                    Ihr Terminwunsch wird direkt an unser Team übermittelt und persönlich bestätigt.
+                                </p>
+            </div>
+        </section>
+    </div>
+
+
+    <div id="content-eigennutzer" class="hidden">
+        <section class="container mx-auto px-4 pt-16 pb-12 text-center">
+            <h2 class="text-3xl font-bold text-primary mb-6">Der Weg in Ihr neues Zuhause</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
+                Wir helfen Ihnen, die emotionale Entscheidung für Ihr Eigenheim auf ein sicheres Fundament zu stellen.
+            </p>
+
+            <div id="accordion-owner" class="max-w-3xl mx-auto space-y-6 relative text-left">
+                <div class="block absolute left-6 top-0 h-full w-1.5 bg-secondary"></div>
+                
+                    <div class="accordion-item relative py-4 pl-16 md:pl-24 pr-6 border border-gray-200 bg-white rounded-lg shadow-md transition duration-300 hover:shadow-lg" data-open="true">
+                        <div class="z-10 bg-primary w-10 h-10 min-w-10 rounded-full shadow-lg border-4 border-accent flex items-center justify-center absolute left-6 top-8 transform -translate-y-1/2 -translate-x-1/2 text-white font-bold">1</div>
+                        <h3 class="accordion-header text-xl font-semibold text-primary mb-1 cursor-pointer flex justify-between items-center pr-4">
+                            Erstgespräch vereinbaren <i class="fas fa-chevron-down text-gold-gradient text-lg transition-transform duration-300"></i>
+                        </h3>
+                        <div class="accordion-content pt-2">
+                            <p class="text-gray-600 mb-4">Der erste Schritt ins eigene Zuhause. Buchen Sie direkt Ihren Wunschtermin in unserem Online-Kalender, damit wir Ihre Wünsche verstehen lernen.</p>
+                            <a href="#terminbuchung" class="btn-85 inline-block py-2 px-6 text-primary font-bold rounded text-sm"><i class="fas fa-calendar-check mr-2"></i> Termin auswählen</a>
+                        </div>
+                    </div>
+                
+                    <div class="accordion-item relative py-4 pl-16 md:pl-24 pr-6 border border-gray-200 bg-white rounded-lg shadow-md transition duration-300 hover:shadow-lg">
+                        <div class="z-10 bg-primary w-10 h-10 min-w-10 rounded-full shadow-lg border-4 border-accent flex items-center justify-center absolute left-6 top-8 transform -translate-y-1/2 -translate-x-1/2 text-white font-bold">2</div>
+                        <h3 class="accordion-header text-xl font-semibold text-primary mb-1 cursor-pointer flex justify-between items-center pr-4">
+                            Wunschprofil & Strategie <i class="fas fa-chevron-down text-gold-gradient text-lg transition-transform duration-300"></i>
+                        </h3>
+                        <div class="accordion-content hidden pt-2">
+                            <p class="text-gray-600">Wir erstellen Ihr persönliches Suchprofil. Dabei geht es nicht nur um Budget, sondern um Lebensqualität: Lage, Garten, Zimmeranzahl und das "Gefühl", das die Immobilie vermitteln muss.</p>
+                        </div>
+                    </div>
+                
+                    <div class="accordion-item relative py-4 pl-16 md:pl-24 pr-6 border border-gray-200 bg-white rounded-lg shadow-md transition duration-300 hover:shadow-lg">
+                        <div class="z-10 bg-primary w-10 h-10 min-w-10 rounded-full shadow-lg border-4 border-accent flex items-center justify-center absolute left-6 top-8 transform -translate-y-1/2 -translate-x-1/2 text-white font-bold">3</div>
+                        <h3 class="accordion-header text-xl font-semibold text-primary mb-1 cursor-pointer flex justify-between items-center pr-4">
+                            Objektprüfung (Due Diligence) <i class="fas fa-chevron-down text-gold-gradient text-lg transition-transform duration-300"></i>
+                        </h3>
+                        <div class="accordion-content hidden pt-2">
+                            <p class="text-gray-600">Bevor wir Ihnen ein Objekt vorschlagen, prüfen wir es auf Herz und Nieren. Wir analysieren Bausubstanz, Grundbuch und Unterlagen, um böse Überraschungen auszuschließen.</p>
+                        </div>
+                    </div>
+                
+                    <div class="accordion-item relative py-4 pl-16 md:pl-24 pr-6 border border-gray-200 bg-white rounded-lg shadow-md transition duration-300 hover:shadow-lg">
+                        <div class="z-10 bg-primary w-10 h-10 min-w-10 rounded-full shadow-lg border-4 border-accent flex items-center justify-center absolute left-6 top-8 transform -translate-y-1/2 -translate-x-1/2 text-white font-bold">4</div>
+                        <h3 class="accordion-header text-xl font-semibold text-primary mb-1 cursor-pointer flex justify-between items-center pr-4">
+                            Objektvorstellung <i class="fas fa-chevron-down text-gold-gradient text-lg transition-transform duration-300"></i>
+                        </h3>
+                        <div class="accordion-content hidden pt-2">
+                            <p class="text-gray-600">Wir präsentieren Ihnen exklusive Immobilien (auch Off-Market), die exakt zu Ihrem vorab definierten Wunschprofil passen.</p>
+                        </div>
+                    </div>
+                
+                    <div class="accordion-item relative py-4 pl-16 md:pl-24 pr-6 border border-gray-200 bg-white rounded-lg shadow-md transition duration-300 hover:shadow-lg">
+                        <div class="z-10 bg-primary w-10 h-10 min-w-10 rounded-full shadow-lg border-4 border-accent flex items-center justify-center absolute left-6 top-8 transform -translate-y-1/2 -translate-x-1/2 text-white font-bold">5</div>
+                        <h3 class="accordion-header text-xl font-semibold text-primary mb-1 cursor-pointer flex justify-between items-center pr-4">
+                            Gemeinsame Besichtigung <i class="fas fa-chevron-down text-gold-gradient text-lg transition-transform duration-300"></i>
+                        </h3>
+                        <div class="accordion-content hidden pt-2">
+                            <p class="text-gray-600">Wir begleiten Sie vor Ort, weisen auf Besonderheiten hin und helfen Ihnen, das Potenzial (oder die Risiken) der Immobilie realistisch einzuschätzen.</p>
+                        </div>
+                    </div>
+                
+                    <div class="accordion-item relative py-4 pl-16 md:pl-24 pr-6 border border-gray-200 bg-white rounded-lg shadow-md transition duration-300 hover:shadow-lg">
+                        <div class="z-10 bg-primary w-10 h-10 min-w-10 rounded-full shadow-lg border-4 border-accent flex items-center justify-center absolute left-6 top-8 transform -translate-y-1/2 -translate-x-1/2 text-white font-bold">6</div>
+                        <h3 class="accordion-header text-xl font-semibold text-primary mb-1 cursor-pointer flex justify-between items-center pr-4">
+                            Finanzierung & Verhandlung <i class="fas fa-chevron-down text-gold-gradient text-lg transition-transform duration-300"></i>
+                        </h3>
+                        <div class="accordion-content hidden pt-2">
+                            <p class="text-gray-600">Wir verhandeln den Kaufpreis professionell für Sie. Parallel unterstützen wir Sie bei der Suche nach der passenden Bankfinanzierung für Ihr Eigenheim.</p>
+                        </div>
+                    </div>
+                
+                    <div class="accordion-item relative py-4 pl-16 md:pl-24 pr-6 border border-gray-200 bg-white rounded-lg shadow-md transition duration-300 hover:shadow-lg">
+                        <div class="z-10 bg-primary w-10 h-10 min-w-10 rounded-full shadow-lg border-4 border-accent flex items-center justify-center absolute left-6 top-8 transform -translate-y-1/2 -translate-x-1/2 text-white font-bold">7</div>
+                        <h3 class="accordion-header text-xl font-semibold text-primary mb-1 cursor-pointer flex justify-between items-center pr-4">
+                            Notar & Einzug <i class="fas fa-chevron-down text-gold-gradient text-lg transition-transform duration-300"></i>
+                        </h3>
+                        <div class="accordion-content hidden pt-2">
+                            <p class="text-gray-600">Wir begleiten Sie zum Notartermin, sorgen für eine reibungslose Übergabe und stehen Ihnen auch nach dem Einzug als Ansprechpartner zur Verfügung.</p>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <section class="bg-white pt-12 pb-14" id="cta-eigennutzer">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-4 text-primary">Erstgespräch vereinbaren</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+                    Der erste Schritt in Ihr neues Zuhause: Buchen Sie jetzt Ihr unverbindliches Gespräch zur Profilerstellung.
+                </p>
+                
+                
+                <a href="#terminbuchung" class="btn-85 inline-block py-3 px-8 text-lg font-bold rounded-lg shadow-xl hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-calendar-check mr-2"></i> Termin für Eigennutzer auswählen
+                </a>
+                <p class="text-xs text-gray-500 mb-2">
+                                    Ihr Terminwunsch wird direkt an unser Team übermittelt und persönlich bestätigt.
+                                </p>
+            </div>
+        </section>
+    </div>
+
+</div>
+
+<script>
+    // --- AKKORDEON LOGIK (UNIVERSAL) ---
+    function initializeAccordion(containerId) {
+        const container = document.getElementById(containerId);
+        // Sicherheits-Check
+        if (!container || container.dataset.initialized === 'true') return;
+
+        const items = container.querySelectorAll('.accordion-item');
+
+        items.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            const content = item.querySelector('.accordion-content');
+            const icon = item.querySelector('.accordion-header i');
+
+            // 1. Initialzustand setzen
+            if (item.dataset.open === 'true') {
+                content.classList.remove('hidden');
+                if(icon) icon.classList.add('rotate-180'); // Icon dreht sich hoch
+            } else {
+                content.classList.add('hidden');
+                if(icon) icon.classList.remove('rotate-180');
+            }
+
+            // 2. Click Listener
+            header.addEventListener('click', () => {
+                const isOpen = !content.classList.contains('hidden');
+
+                // A) Alle anderen schließen
+                items.forEach(other => {
+                    if (other !== item) {
+                        other.querySelector('.accordion-content').classList.add('hidden');
+                        other.dataset.open = 'false';
+                        const otherIcon = other.querySelector('.accordion-header i');
+                        if(otherIcon) otherIcon.classList.remove('rotate-180');
+                    }
+                });
+
+                // B) Aktuelles toggeln
+                if (isOpen) {
+                    content.classList.add('hidden');
+                    item.dataset.open = 'false';
+                    if(icon) icon.classList.remove('rotate-180');
+                } else {
+                    content.classList.remove('hidden');
+                    item.dataset.open = 'true';
+                    if(icon) icon.classList.add('rotate-180');
+                }
+            });
+        });
+
+        container.dataset.initialized = 'true';
+    }
+
+    // --- TAB LOGIK ---
+    function switchTab(type) {
+        const slider = document.getElementById('tab-slider');
+        const btnKapital = document.getElementById('btn-kapitalanleger');
+        const btnEigen = document.getElementById('btn-eigennutzer');
+        const contentKapital = document.getElementById('content-kapitalanleger');
+        const contentEigen = document.getElementById('content-eigennutzer');
+
+        if (type === 'kapitalanleger') {
+            slider.style.transform = 'translateX(0)';
+            btnKapital.classList.replace('text-gray-500', 'text-primary');
+            btnEigen.classList.replace('text-primary', 'text-gray-500');
+            
+            contentKapital.classList.remove('hidden');
+            contentEigen.classList.add('hidden');
+
+            // Akkordeon aktivieren!
+            initializeAccordion('accordion-investor');
+
+        } else {
+            slider.style.transform = 'translateX(100%) translateX(4px)';
+            btnEigen.classList.replace('text-gray-500', 'text-primary');
+            btnKapital.classList.replace('text-primary', 'text-gray-500');
+
+            contentEigen.classList.remove('hidden');
+            contentKapital.classList.add('hidden');
+
+            // Akkordeon aktivieren!
+            initializeAccordion('accordion-owner');
+        }
+    }
+
+    // Start
+    document.addEventListener('DOMContentLoaded', () => {
+        switchTab('kapitalanleger');
+    });
+</script>

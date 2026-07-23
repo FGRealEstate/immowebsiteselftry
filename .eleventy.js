@@ -1,15 +1,28 @@
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("style.css");
-  eleventyConfig.addPassthroughCopy("script.js");
-  eleventyConfig.addPassthroughCopy("investment-lab.js");
-  eleventyConfig.addPassthroughCopy("consent-manager.js");
-  eleventyConfig.addPassthroughCopy("analytics.js");
-  eleventyConfig.addPassthroughCopy("images");
-  eleventyConfig.addPassthroughCopy("videos");
-  eleventyConfig.addPassthroughCopy("admin");
-  eleventyConfig.addPassthroughCopy("vendor");
-  eleventyConfig.addPassthroughCopy("_redirects");
-  eleventyConfig.addFilter("json", value => JSON.stringify(value).replace(/</g,"\u003c"));
-  eleventyConfig.addFilter("dateDe", value => { try { return new Intl.DateTimeFormat('de-DE').format(new Date(value)); } catch { return value; } });
-  return {dir:{input:".",output:"_site",includes:"_includes",layouts:"_includes"},markdownTemplateEngine:"liquid",htmlTemplateEngine:"liquid"};
+
+    // 1. Passthrough Kopieren: Stellt sicher, dass Assets in den _site Ordner kopiert werden
+    eleventyConfig.addPassthroughCopy("style.css");
+    eleventyConfig.addPassthroughCopy("script.js");
+    eleventyConfig.addPassthroughCopy("investment-lab.js");
+    eleventyConfig.addPassthroughCopy("images");
+    eleventyConfig.addPassthroughCopy("videos");
+    eleventyConfig.addPassthroughCopy("admin");
+
+    // 2. Wichtig: Erzwingt die korrekte Verarbeitung von Markdown und HTML/Liquid
+    // Wir nutzen hier die einfachen globalen Konfigurationsoptionen, um den Engine-Konflikt zu vermeiden.
+    // 'liquid' kann nun Variablen im Markdown und HTML verarbeiten.
+
+    // 3. Konfiguration der Ordnerstruktur (Standard Eleventy-Setup)
+    return {
+        dir: {
+            input: ".",
+            output: "_site",
+            includes: "_includes",
+            layouts: "_includes"
+        },
+        // FIX: Erzwingt, dass Markdown- und HTML-Dateien die Liquid-Engine verwenden.
+        // Dies ist die robusteste Methode für die Liquid-Schleife in angebote.liquid.
+        markdownTemplateEngine: "liquid",
+        htmlTemplateEngine: "liquid"
+    };
 };

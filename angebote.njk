@@ -16,22 +16,22 @@ permalink: angebote.html
     </div>
 </section>
 
-<section id="angebote" class="container mx-auto px-4 py-10 md:py-16 offers-page">
+<section id="angebote" class="container mx-auto px-4 py-16">
 
-    <div class="offers-filter-panel">
+    <div class="bg-white p-6 rounded-lg shadow-xl mb-10 border-t-4 border-accent">
         <h2 class="text-2xl font-bold mb-4 text-primary">
             Ihre Immobiliensuche
         </h2>
 
-        <form id="property-filter-form" class="offers-filter-grid">
-            <select id="filter-vermarktung" class="offers-control">
+        <form id="property-filter-form" class="grid grid-cols-1 md:grid-cols-5 gap-4">
+            <select id="filter-vermarktung" class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
                 <option value="">Vermarktungsart (Alle)</option>
                 {% for type in propstack.filters.marketingTypes %}
                 <option value="{{ type }}">{{ type }}</option>
                 {% endfor %}
             </select>
 
-            <select id="filter-objektart" class="offers-control">
+            <select id="filter-objektart" class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
                 <option value="">Objektart (Alle)</option>
                 {% for type in propstack.filters.propertyTypes %}
                 <option value="{{ type }}">{{ type }}</option>
@@ -43,10 +43,10 @@ permalink: angebote.html
                 id="filter-preis"
                 inputmode="numeric"
                 placeholder="Max. Kaufpreis (€)"
-                class="offers-control"
+                class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary"
             >
 
-            <select id="filter-sortierung" class="offers-control">
+            <select id="filter-sortierung" class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
                 <option value="">Sortierung</option>
                 <option value="price-asc">Preis aufsteigend</option>
                 <option value="price-desc">Preis absteigend</option>
@@ -55,7 +55,7 @@ permalink: angebote.html
                 <option value="newest">Neueste zuerst</option>
             </select>
 
-            <button type="submit" id="filter-button" class="btn-85 offers-submit">
+            <button type="submit" id="filter-button" class="btn-85 text-primary font-bold rounded py-3 hover:bg-primary hover:text-white transition duration-300 w-full">
                 <i class="fas fa-search mr-2"></i> Suchen
             </button>
         </form>
@@ -67,43 +67,39 @@ permalink: angebote.html
         </div>
     </div>
 
-    <h2 class="text-3xl font-bold mb-8 text-primary border-b-2 border-secondary pb-2">
-        Aktuelle Angebote (<span id="object-count">{{ propstack.properties | length }}</span> Einheiten{% if propstack.projects and propstack.projects.length %} in {{ propstack.projects | length }} Projekten{% endif %})
-    </h2>
-
     {% if propstack.projects and propstack.projects.length %}
-    <section class="offers-projects-section" aria-labelledby="project-offers-heading">
-        <div class="offers-projects-heading">
+    <section class="mb-16" aria-labelledby="project-heading">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-8 border-b-2 border-secondary pb-3">
             <div>
-                <span class="lab-kicker">PROJEKTVERMARKTUNG</span>
-                <h2 id="project-offers-heading">Immobilienprojekte mit mehreren Einheiten</h2>
-                <p>Entdecken Sie Neubauprojekte und aufgeteilte Mehrfamilienhäuser. Jede verfügbare Einheit kann einzeln geprüft und angefragt werden.</p>
+                <p class="text-sm uppercase tracking-[0.18em] text-accent font-bold mb-2">Zentral über Propstack gesteuert</p>
+                <h2 id="project-heading" class="text-3xl font-bold text-primary">Immobilienprojekte ({{ propstack.projects | length }})</h2>
             </div>
-            <strong>{{ propstack.summary.projectUnitCount }} Einheiten</strong>
+            <p class="text-gray-600 max-w-2xl">Hier erscheinen ausschließlich Projekte, die in Propstack selbst den Status „Vermarktung“ besitzen. Einheiten allein können ein Projekt nicht veröffentlichen.</p>
         </div>
 
-        <div class="offers-project-grid">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {% for project in propstack.projects %}
-            <article class="offers-project-card">
-                <a href="{{ project.url }}" class="offers-project-image-link">
+            <article class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition">
+                <a href="{{ project.url }}" class="block">
                     {% if project.main_image %}
-                    <img src="{{ project.main_image }}" alt="{{ project.name }}" loading="lazy">
+                    <img loading="lazy" src="{{ project.main_image }}" alt="{{ project.name }}" class="w-full h-72 object-cover">
                     {% else %}
-                    <div class="offers-project-placeholder"><i class="fas fa-building"></i></div>
+                    <div class="w-full h-72 flex items-center justify-center bg-primary text-secondary"><i class="fas fa-building text-6xl"></i></div>
                     {% endif %}
-                    <span>{{ project.available_count }} Einheiten verfügbar</span>
                 </a>
-                <div class="offers-project-content">
-                    <div class="offers-project-meta">
-                        <span>{{ project.location or "Standort auf Anfrage" }}</span>
-                        {% if project.property_types and project.property_types.length %}<span>{{ project.property_types | join(", ") }}</span>{% endif %}
+                <div class="p-6 md:p-8">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-secondary text-primary text-xs font-bold px-3 py-1 rounded-full">Projekt · {{ project.marketing_type }}</span>
+                        <span class="bg-gray-100 text-primary text-xs font-bold px-3 py-1 rounded-full">{{ project.available_unit_count }} Einheiten online</span>
                     </div>
-                    <h3><a href="{{ project.url }}">{{ project.name }}</a></h3>
-                    <div class="offers-project-facts">
-                        <article><span>Kaufpreisrange</span><strong>{{ project.price_range }}</strong></article>
-                        {% if project.living_space_range %}<article><span>Wohnflächen</span><strong>{{ project.living_space_range }}</strong></article>{% endif %}
+                    <h3 class="text-2xl md:text-3xl font-bold text-primary mb-3">{{ project.name }}</h3>
+                    {% if project.location %}<p class="text-gray-600 mb-5"><i class="fas fa-map-marker-alt text-accent mr-2"></i>{{ project.location }}</p>{% endif %}
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-6">
+                        <div class="bg-gray-50 rounded-xl p-4"><span class="block text-xs text-gray-500">{% if project.marketing_type == 'Miete' %}Mietrange{% else %}Kaufpreisrange{% endif %}</span><strong class="text-primary">{{ project.price_range or 'Auf Anfrage' }}</strong></div>
+                        <div class="bg-gray-50 rounded-xl p-4"><span class="block text-xs text-gray-500">Wohnflächen</span><strong class="text-primary">{{ project.area_range or 'variabel' }}</strong></div>
+                        <div class="bg-gray-50 rounded-xl p-4 col-span-2 md:col-span-1"><span class="block text-xs text-gray-500">Zimmer</span><strong class="text-primary">{{ project.room_range or 'variabel' }}</strong></div>
                     </div>
-                    <a href="{{ project.url }}" class="btn-85 offers-project-button">Projekt und Einheiten ansehen</a>
+                    <a href="{{ project.url }}" class="btn-85 block text-center text-primary font-bold py-3 rounded-lg">Projekt und Einheiten ansehen</a>
                 </div>
             </article>
             {% endfor %}
@@ -111,13 +107,17 @@ permalink: angebote.html
     </section>
     {% endif %}
 
-    {% if propstack.properties and propstack.properties.length %}
+    <h2 class="text-3xl font-bold mb-8 text-primary border-b-2 border-secondary pb-2">
+        Einzelobjekte (<span id="object-count">{{ propstack.standaloneProperties | length }}</span>)
+    </h2>
+
+    {% if propstack.standaloneProperties and propstack.standaloneProperties.length %}
 
     <div id="property-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        {% for property in propstack.properties %}
+        {% for property in propstack.standaloneProperties %}
         <div
-            class="immobilien-kachel property-card offers-card"
+            class="immobilien-kachel property-card bg-white rounded-lg shadow-xl overflow-hidden transition duration-300 hover:shadow-2xl hover:-translate-y-1"
             data-vermarktung="{{ property.marketing_type or '' }}"
             data-objektart="{{ property.property_type or '' }}"
             data-preis="{{ property.price_raw or '' }}"
@@ -169,11 +169,9 @@ permalink: angebote.html
                 </p>
                 {% endif %}
 
-                <div class="mb-4">
-                    <p class="text-xs uppercase tracking-wider text-gray-500">{{ property.price_label or "Kaufpreis" }}</p>
-                    <p class="text-2xl font-extrabold text-gold-gradient with-shadow">{{ property.price or "Preis auf Anfrage" }}</p>
-                    {% if property.is_rental and property.warm_rent %}<p class="text-sm text-gray-600 mt-1">Warmmiete: {{ property.warm_rent }}</p>{% endif %}
-                </div>
+                <p class="text-2xl font-extrabold text-gold-gradient with-shadow mb-4">
+                    {{ property.price or "Preis auf Anfrage" }}
+                </p>
 
                 {% if property.living_space or property.rooms %}
                 <div class="flex justify-between text-sm text-gray-600 mb-6 border-t border-gray-100 pt-3 gap-3">

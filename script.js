@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   const titles = ['Objekt und Kaufdaten','Miete und Bewirtschaftung','Finanzierung','Steuern und Prognose','Auswertung'];
-  const requiredByStep = [ ['purchasePrice','livingArea','monthlyRent'], [], ['interestRate','repaymentRate'], [], [] ];
+  const requiredByStep = [ ['purchasePrice','livingArea','monthlyRent'], [], ['equity','interestRate','repaymentRate'], [], [] ];
 
   const defaults = {
     brokerFeePct: 0, notaryPct: 1.5, landRegisterPct: 0.5, transferTaxPct: 6.0, otherClosingCosts: 0,
@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if(!financingSummary) return;
     const x=collectInputs();
     const actualLoan=x.financeMode==='custom'?x.loanAmount:suggestedLoan();
-    financingSummary.innerHTML=`<div><span>Kaufpreis</span><strong>${eur(x.purchasePrice)}</strong></div><div><span>Kaufnebenkosten</span><strong>${eur(x.closingCosts)}</strong></div><div><span>CapEx / Renovierungskosten</span><strong>${eur(x.initialInvestments)}</strong></div><div><span>Gesamtinvestition</span><strong>${eur(x.totalInvestment)}</strong></div><div><span>Darlehen</span><strong>${eur(actualLoan)}</strong></div><div><span>Erforderliches Eigenkapital</span><strong>${eur(Math.max(0,x.totalInvestment-actualLoan))}</strong></div>`;
+    financingSummary.innerHTML=`<div><span>Kaufpreis</span><strong>${eur(x.purchasePrice)}</strong></div><div><span>Kaufnebenkosten</span><strong>${eur(x.closingCosts)}</strong></div><div><span>Anfangsinvestitionen</span><strong>${eur(x.initialInvestments)}</strong></div><div><span>Gesamtinvestition</span><strong>${eur(x.totalInvestment)}</strong></div><div><span>Darlehen</span><strong>${eur(actualLoan)}</strong></div><div><span>Erforderliches Eigenkapital</span><strong>${eur(Math.max(0,x.totalInvestment-actualLoan))}</strong></div>`;
   }
 
   function calculate(){
@@ -275,10 +275,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if(x.financeMode !== 'custom'){ x.loanAmount = Math.max(0, financeBase(x) * x.financePct/100); x.equity = Math.max(0, totalInvestment - x.loanAmount); } else if(!x.loanAmount && x.equity){ x.loanAmount=Math.max(0,totalInvestment-x.equity); }
 
     // AfA-Basis: nur der Gebäudeanteil wird abgeschrieben.
-    // Nebenkosten/CapEx / Renovierungskosten werden im Rechner vorsichtig mit einbezogen,
+    // Nebenkosten/Anfangsinvestitionen werden im Rechner vorsichtig mit einbezogen,
     // damit die Steuerwirkung nicht künstlich zu niedrig ausfällt.
-    const allocatedClosingCosts = x.closingCosts * x.buildingShare;
-    const buildingBasis = (x.purchasePrice * x.buildingShare) + allocatedClosingCosts;
+    const buildingBasis = (x.purchasePrice + x.closingCosts + x.initialInvestments) * x.buildingShare;
     const afaAnnual = buildingBasis * x.afaRate;
 
     /*
@@ -301,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let cumulativeCashflowAfterTax=0;
     let cumulativeRepayment=0;
     let cumulativeTax=0;
-    const startPropertyValue = x.purchasePrice;
+    const startPropertyValue = x.purchasePrice + x.initialInvestments;
 
     for(let year=1; year<=x.horizon; year++){
       const growthPow = Math.pow(1+x.rentGrowth, year-1);
@@ -312,7 +311,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const otherNon = x.otherNonApportionableMonthly * 12 * costPow;
       const reserve = x.maintenanceReservePerSqm * x.livingArea * costPow;
       const vacancy = annualRent * x.vacancyRate;
-      const operatingCosts = nonApportionableCosts + otherNon + reserve + vacancy;
+      const operatingCosts = apportionableCosts + nonApportionableCosts + otherNon + reserve + vacancy;
 
       let interest = 0;
       let principal = 0;
@@ -332,7 +331,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       const cashflowBeforeTax = annualRent - operatingCosts - debtService;
-      const taxableCosts = nonApportionableCosts + otherNon + vacancy;
+      const taxableCosts = apportionableCosts + nonApportionableCosts + otherNon + reserve + vacancy;
       const taxableIncome = annualRent - taxableCosts - interest - afaAnnual;
       const tax = taxableIncome * x.taxRate;
       const cashflowAfterTax = cashflowBeforeTax - tax;
@@ -390,7 +389,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if(!inputsSummary) return;
     const x=r.inputs;
     const groups = [
-      ['Objekt', [['Kaufpreis',eur(x.purchasePrice)],['Wohnfläche',n(x.livingArea)+' m²'],['Monatsnettokaltmiete',eur(x.monthlyRent)],['Jahresnettokaltmiete',eur(x.annualRent)],['CapEx / Renovierungskosten',eur(x.initialInvestments)]]],
+      ['Objekt', [['Kaufpreis',eur(x.purchasePrice)],['Wohnfläche',n(x.livingArea)+' m²'],['Monatsnettokaltmiete',eur(x.monthlyRent)],['Jahresnettokaltmiete',eur(x.annualRent)],['Anfangsinvestitionen',eur(x.initialInvestments)]]],
       ['Kaufnebenkosten', [['Maklerprovision',pctNumber(x.brokerFeePct,2)],['Notar',pctNumber(x.notaryPct,2)],['Grundbuchamt',pctNumber(x.landRegisterPct,2)],['Grunderwerbsteuer',pctNumber(x.transferTaxPct,2)],['Kaufnebenkosten gesamt',eur(x.closingCosts)],['Gesamtinvestition',eur(x.totalInvestment)]]],
       ['Finanzierung', [['Eigenkapital',eur(x.equity)],['Darlehenssumme',eur(x.loanAmount)],['Zinssatz p.a.',pctNumber(x.interestRate*100,2)],['Anfängliche Tilgung p.a.',pctNumber(x.repaymentRate*100,2)],['Finanzierungsmodus', financeModeLabel(x.financeMode)],['Finanzierungsquote',pctNumber(x.financePct,2)]]],
       ['Bewirtschaftung & Prognose', [['Umlagefähige Kosten mtl.',eur(x.apportionableMonthly)],['Nicht umlagefähige Kosten mtl.',eur(x.nonApportionableMonthly)],['Rücklage pro m² p.a.',eur(x.maintenanceReservePerSqm,2)],['Mietausfall',pctNumber(x.vacancyRate*100,2)],['Mietsteigerung p.a.',pctNumber(x.rentGrowth*100,2)],['Wertsteigerung p.a.',pctNumber(x.valueGrowth*100,2)],['AfA-Satz',pctNumber(x.afaRate*100,2)],['Gebäudeanteil',pctNumber(x.buildingShare*100,2)],['Steuersatz',pctNumber(x.taxRate*100,2)],['Zeitraum',x.horizon+' Jahre']]]
@@ -404,7 +403,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const y1 = r.rows[0] || {}, yEnd = r.rows[r.rows.length-1] || {};
     if(kpiBox){
       const kpis = [
-        ['Gesamtinvestition', eur(r.totalInvestment), 'Kaufpreis + Nebenkosten + CapEx / Renovierungskosten'],
+        ['Gesamtinvestition', eur(r.totalInvestment), 'Kaufpreis + Nebenkosten + Anfangsinvestitionen'],
         ['Bruttomietrendite', pctDecimal(r.grossRentYield), 'Jahresnettokaltmiete / Kaufpreis'],
         ['Nettomietrendite', pctDecimal(r.netRentYield), 'Miete abzüglich Mietausfall, Rücklage und nicht umlagefähiger Kosten'],
         ['Cashflow nach Steuer / Monat', eur((y1.cashflowAfterTax||0)/12), 'Jahr 1 nach Zins, Tilgung, Kosten und Steuer'],
