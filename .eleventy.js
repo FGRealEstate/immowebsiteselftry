@@ -1,5 +1,15 @@
 module.exports = function(eleventyConfig) {
 
+    // Eigener JSON-Filter für Nunjucks-Templates, z. B. {{ value | json | safe }}
+    eleventyConfig.addFilter("json", (value) => {
+        try {
+            return JSON.stringify(value ?? null);
+        } catch (error) {
+            console.warn("JSON filter failed:", error);
+            return "null";
+        }
+    });
+
     // 1. Passthrough Kopieren: Stellt sicher, dass Assets in den _site Ordner kopiert werden
     eleventyConfig.addPassthroughCopy("style.css");
     eleventyConfig.addPassthroughCopy("script.js");
