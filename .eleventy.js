@@ -19,6 +19,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("analytics.js");
     eleventyConfig.addPassthroughCopy("vendor");
     eleventyConfig.addPassthroughCopy("images");
+    eleventyConfig.addPassthroughCopy("favicon.ico");
     eleventyConfig.addPassthroughCopy("videos");
     eleventyConfig.addPassthroughCopy("admin");
 
