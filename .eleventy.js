@@ -10,7 +10,8 @@ module.exports = function(eleventyConfig) {
         }
     });
 
-    // 1. Passthrough Kopieren: Stellt sicher, dass Assets in den _site Ordner kopiert werden
+    // 1. Passthrough Kopieren:
+    // Stellt sicher, dass Assets und Verifizierungsdateien in den _site-Ordner kopiert werden.
     eleventyConfig.addPassthroughCopy("style.css");
     eleventyConfig.addPassthroughCopy("script.js");
     eleventyConfig.addPassthroughCopy("investment-lab.js");
@@ -20,14 +21,17 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("vendor");
     eleventyConfig.addPassthroughCopy("images");
     eleventyConfig.addPassthroughCopy("favicon.ico");
+
+    // Bing-Webmaster-Verifizierung:
+    // Kopiert BingSiteAuth.xml direkt in das Root-Verzeichnis der veröffentlichten Website.
+    eleventyConfig.addPassthroughCopy({
+        "BingSiteAuth.xml": "BingSiteAuth.xml"
+    });
+
     eleventyConfig.addPassthroughCopy("videos");
     eleventyConfig.addPassthroughCopy("admin");
 
-    // 2. Wichtig: Erzwingt die korrekte Verarbeitung von Markdown und HTML/Liquid
-    // Wir nutzen hier die einfachen globalen Konfigurationsoptionen, um den Engine-Konflikt zu vermeiden.
-    // 'liquid' kann nun Variablen im Markdown und HTML verarbeiten.
-
-    // 3. Konfiguration der Ordnerstruktur (Standard Eleventy-Setup)
+    // 2. Konfiguration der Ordnerstruktur
     return {
         dir: {
             input: ".",
@@ -35,8 +39,8 @@ module.exports = function(eleventyConfig) {
             includes: "_includes",
             layouts: "_includes"
         },
-        // FIX: Erzwingt, dass Markdown- und HTML-Dateien die Liquid-Engine verwenden.
-        // Dies ist die robusteste Methode für die Liquid-Schleife in angebote.liquid.
+
+        // Liquid als Template-Engine für Markdown und HTML
         markdownTemplateEngine: "liquid",
         htmlTemplateEngine: "liquid"
     };
