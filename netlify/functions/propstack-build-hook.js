@@ -16,6 +16,7 @@
  * Optional:
  * - PROPSTACK_API_BASE=https://api.propstack.de/v1
  * - PROPSTACK_PUBLIC_STATUS_KEYWORDS=vermarktung
+ * - PROPSTACK_PUBLIC_PROJECT_STATUS_KEYWORDS=vermarktung,im angebot
  * - PROPSTACK_BUILD_DEBOUNCE_SECONDS=60
  */
 
@@ -50,16 +51,21 @@ function textValue(input) {
   return text || null;
 }
 
-function getAllowedKeywords() {
-  return String(process.env.PROPSTACK_PUBLIC_STATUS_KEYWORDS || "vermarktung")
+function getAllowedKeywords(entityType = "unit") {
+  const fallback = entityType === "project" ? "vermarktung,im angebot" : "vermarktung";
+  const environmentValue = entityType === "project"
+    ? process.env.PROPSTACK_PUBLIC_PROJECT_STATUS_KEYWORDS
+    : process.env.PROPSTACK_PUBLIC_STATUS_KEYWORDS;
+
+  return String(environmentValue || fallback)
     .split(",")
     .map(normalizeText)
     .filter(Boolean);
 }
 
-function isPublicStatus(status) {
+function isPublicStatus(status, entityType = "unit") {
   const normalized = normalizeText(status);
-  return Boolean(normalized) && getAllowedKeywords().some((key) => normalized.includes(key));
+  return Boolean(normalized) && getAllowedKeywords(entityType).some((key) => normalized.includes(key));
 }
 
 function findStatus(input) {
@@ -354,12 +360,12 @@ exports.handler = async function handler(event) {
   let reason = "";
 
   if (entity.type === "project") {
-    currentVisible = isPublicStatus(ownStatus);
+    currentVisible = isPublicStatus(ownStatus, "project");
     projectId = entity.id;
     projectStatus = ownStatus;
     reason = currentVisible
-      ? "Projekt ist auf Vermarktung. Projektänderung ist website-relevant."
-      : "Projekt ist nicht auf Vermarktung.";
+      ? "Projekt ist öffentlich (z. B. „Im Angebot“). Projektänderung ist website-relevant."
+      : "Projekt ist nicht öffentlich.";
   } else {
     const ownPublic = isPublicStatus(ownStatus);
     const ref = getProjectRef(entity.raw);
@@ -368,16 +374,16 @@ exports.handler = async function handler(event) {
       projectId = ref.id;
       const project = ref.raw || await fetchProject(ref.id);
       projectStatus = findStatus(project);
-      const projectPublic = isPublicStatus(projectStatus);
+      const projectPublic = isPublicStatus(projectStatus, "project");
 
       // Zentraler Schalter: Ohne öffentliches Projekt sind sämtliche Einheiten unsichtbar
       // und Änderungen an diesen Einheiten lösen keinen Build aus.
       currentVisible = projectPublic && ownPublic;
       reason = projectPublic
         ? (ownPublic
-            ? "Projekt und Einheit sind auf Vermarktung. Änderung ist website-relevant."
+            ? "Projekt ist öffentlich und Einheit ist auf Vermarktung. Änderung ist website-relevant."
             : "Projekt ist öffentlich, Einheit jedoch nicht.")
-        : "Übergeordnetes Projekt ist nicht auf Vermarktung; Einheit wird vollständig ignoriert.";
+        : "Übergeordnetes Projekt ist nicht öffentlich; Einheit wird vollständig ignoriert.";
     } else {
       // Einzelobjekt außerhalb eines Projekts.
       currentVisible = ownPublic;
@@ -390,7 +396,7 @@ exports.handler = async function handler(event) {
   const stateKey = `entity/${entity.type}/${entity.id}`;
   const previousState = await readState(store, stateKey);
   const previousVisibleFromPayload = previousPayloadStatus
-    ? isPublicStatus(previousPayloadStatus)
+    ? isPublicStatus(previousPayloadStatus, entity.type === "project" ? "project" : "unit")
     : null;
   const previousVisible = previousState?.visible ?? previousVisibleFromPayload;
 
@@ -405,7 +411,7 @@ exports.handler = async function handler(event) {
   let buildRequired = false;
   let buildReason = reason;
 
-  if (entity.type === "unit" && projectId && !isPublicStatus(projectStatus)) {
+  if (entity.type === "unit" && projectId && !isPublicStatus(projectStatus, "project")) {
     // Wichtigster Credit-Schutz: Einheiten eines nicht veröffentlichten Projekts
     // verursachen NIE einen Build, unabhängig vom Status der Einheit.
     buildRequired = false;

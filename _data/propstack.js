@@ -634,7 +634,9 @@ function getProjectStatusName(project) {
 function isPublicMarketingProject(project) {
     const status = getProjectStatusName(project);
     if (!status) return false;
-    return normalizeText(status).includes("vermarktung");
+
+    const normalizedStatus = normalizeText(status);
+    return normalizedStatus.includes("vermarktung") || normalizedStatus.includes("imangebot");
 }
 
 function getProjectReference(unit) {
