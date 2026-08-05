@@ -6,7 +6,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{{ title }} | Fischer & Geserich Real Estate GmbH</title>
+    {# SEO-Grundwerte; bestehende Seiten können description, canonicalPath, ogTitle und ogDescription im Frontmatter überschreiben. #}
+    {% set siteName = "Fischer & Geserich Real Estate" %}
+    {% set companyName = "Fischer & Geserich Real Estate" %}
+    {% set siteUrl = "https://fg-realestate.de" %}
+    {% set currentPath = canonicalPath or page.url or "/" %}
+    {% if currentPath == "/index.html" %}{% set currentPath = "/" %}{% endif %}
+    {% set canonicalUrl = siteUrl + currentPath %}
+    {% set pageTitle = title or siteName %}
+    {% set metaDescription = description or "Fischer & Geserich Real Estate begleitet Eigentümer, Käufer und Investoren beim Immobilienverkauf, Immobilienkauf und bei der Immobilienfinanzierung in Berlin und deutschlandweit." %}
+    {% set socialTitle = ogTitle or pageTitle %}
+    {% set socialDescription = ogDescription or metaDescription %}
+    {% set socialImage = ogImage or (siteUrl + "/images/fg-logo-gold-transparent.png") %}
+
+    <title>{% if pageTitle == siteName or pageTitle == companyName or "Fischer & Geserich" in pageTitle %}{{ pageTitle }}{% else %}{{ pageTitle }} | {{ siteName }}{% endif %}</title>
+    <meta name="description" content="{{ metaDescription }}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="{{ canonicalUrl }}">
+
+    <!-- Eindeutiger Markenname für Google, Bing und soziale Netzwerke -->
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ siteName }}">
+    <meta property="og:title" content="{{ socialTitle }}">
+    <meta property="og:description" content="{{ socialDescription }}">
+    <meta property="og:url" content="{{ canonicalUrl }}">
+    <meta property="og:image" content="{{ socialImage }}">
+    <meta property="og:image:alt" content="Logo von {{ siteName }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ socialTitle }}">
+    <meta name="twitter:description" content="{{ socialDescription }}">
+    <meta name="twitter:image" content="{{ socialImage }}">
+
+    {% if currentPath == "/" %}
+    <!-- Site-Name und Unternehmen: nur auf der kanonischen Startseite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://fg-realestate.de/#website",
+          "url": "https://fg-realestate.de/",
+          "name": "Fischer & Geserich Real Estate",
+          "alternateName": [
+            "Fischer & Geserich",
+            "F&G Real Estate"
+          ],
+          "inLanguage": "de-DE",
+          "publisher": {
+            "@id": "https://fg-realestate.de/#organization"
+          }
+        },
+        {
+          "@type": ["Organization", "RealEstateAgent"],
+          "@id": "https://fg-realestate.de/#organization",
+          "name": "Fischer & Geserich Real Estate",
+          "alternateName": "Fischer & Geserich Real Estate",
+          "url": "https://fg-realestate.de/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://fg-realestate.de/images/fg-logo-gold-transparent.png"
+          },
+          "image": "https://fg-realestate.de/images/fg-logo-gold-transparent.png",
+          "email": "info@fg-realestate.de",
+          "telephone": "+49 152 03083048",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schützenstraße 30",
+            "postalCode": "12165",
+            "addressLocality": "Berlin",
+            "addressCountry": "DE"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/fischer-geserich-real-estate-gmbh/",
+            "https://www.instagram.com/fg.immobilien/"
+          ]
+        }
+      ]
+    }
+    </script>
+    {% endif %}
 
     <!-- Favicon / App Icons -->
     <link rel="icon" href="/favicon.ico" sizes="any">
@@ -198,7 +279,7 @@
 
         <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
             <p>
-                &copy; 2026 Fischer & Geserich Real Estate GmbH. Alle Rechte vorbehalten.
+                &copy; 2026 Fischer & Geserich Real Estate. Alle Rechte vorbehalten.
             </p>
             <p class="mt-2">
                 <a href="/impressum.html" class="hover:text-accent hover:underline transition duration-300">Impressum</a>
