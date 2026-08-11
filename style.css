@@ -1006,3 +1006,75 @@ html{scroll-behavior:smooth;scroll-padding-top:88px}
 @media(max-width:760px){html{scroll-padding-top:74px}.fg-home-hero{min-height:72vh!important}.fg-home-hero .container{padding-top:88px;padding-bottom:78px}.fg-hero-glow{opacity:.16}.fg-route-section{padding-top:52px!important;padding-bottom:52px!important}.fg-route-grid{grid-template-columns:1fr;gap:12px}.fg-route-card{min-height:0;padding:18px 16px;grid-template-columns:auto 1fr auto;gap:13px;border-radius:18px}.fg-route-icon{width:48px;height:48px;border-radius:14px;font-size:1.08rem}.fg-route-card h3{font-size:1.05rem}.fg-route-card p{font-size:.86rem}.fg-trust-card{padding:20px}.fg-workflow-grid{grid-template-columns:1fr}.fg-workflow-card{min-height:0;padding:22px}.fg-content-card summary{padding:17px;gap:12px}.fg-content-icon{width:42px;height:42px}.fg-content-body{padding:0 17px 18px}.fg-content-card summary small{font-size:.75rem}.fg-service-card p{min-height:0}.fg-network-strip{padding:19px}.fg-network-links{width:100%}.fg-network-links a{flex:1 1 45%;text-align:center}.fg-booking-shell{padding:22px 17px;border-radius:20px;gap:24px}.fg-booking-benefits{display:grid}.fg-booking-button{padding:15px!important;grid-template-columns:auto 1fr}.fg-booking-button>i:last-child{display:none}.fg-journey-hero{padding-top:48px!important;padding-bottom:56px!important}.fg-journey-side{padding:17px}.fg-timeline:before{left:24px}.fg-timeline-step{grid-template-columns:50px 1fr;gap:13px;padding-bottom:22px}.fg-timeline-step>span{width:50px;height:50px;border-width:4px;font-size:.82rem}.fg-timeline-step>div{padding:15px 16px}.fg-feature-box{padding:18px}.fg-split-path{padding:24px}.lead-widget{padding-top:28px!important;padding-bottom:28px!important}.lead-widget .grid.lg\:grid-cols-2>div:first-child{padding:24px!important}.lead-widget .grid.lg\:grid-cols-2>div:first-child h2{font-size:1.7rem!important}.lead-widget .grid.lg\:grid-cols-2>div:first-child .grid{grid-template-columns:1fr 1fr!important;gap:9px!important}.lead-benefit-card{padding:12px!important}.lead-benefit-card h3{font-size:.9rem}.lead-benefit-card p{font-size:.74rem}.lead-panel{padding:24px 18px!important}.lead-panel .lead-title{font-size:1.75rem!important}.lead-next,.lead-submit{width:100%;margin-left:0!important}.lead-back{min-width:94px}.lead-form .mt-8.flex{flex-wrap:wrap}.lead-form-meta{display:grid;grid-template-columns:1fr 1fr}.lead-form-meta span{justify-content:center;text-align:center;padding:7px 6px;font-size:.7rem}}
 @media(max-width:430px){.fg-network-links a{flex-basis:100%}.lead-widget .grid.lg\:grid-cols-2>div:first-child .grid{grid-template-columns:1fr!important}.lead-form-meta{grid-template-columns:1fr}.fg-route-arrow{display:none}.fg-route-card{grid-template-columns:auto 1fr}.fg-section-kicker,.fg-eyebrow{letter-spacing:.11em;font-size:.7rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fg-hero-glow{animation:none}.fg-reveal{opacity:1;transform:none;transition:none}.fg-route-card,.fg-trust-card,.fg-service-card,.fg-split-path{transition:none}}
+
+
+/* ===== F&G UX POLISH AUGUST 2026 ===== */
+html{scroll-behavior:smooth}
+
+/* Kleine Kicker immer symmetrisch mit Linien */
+.fg-section-kicker,.fg-eyebrow{display:inline-flex!important;align-items:center;justify-content:center;gap:.65rem;width:auto;max-width:100%}
+.fg-section-kicker::before,.fg-section-kicker::after,.fg-eyebrow::before,.fg-eyebrow::after{content:"";display:block;width:28px;height:1px;background:currentColor;opacity:.65;flex:0 0 auto}
+.fg-section-kicker-light{color:#CDD2D4!important}
+
+/* Keine Gold-Verläufe in großen Überschriften der Journeys / Home */
+.fg-home-hero h1,.fg-home-hero h1 .text-gold-gradient,.fg-journey-hero h1,.fg-journey-hero h1 .text-gold-gradient{color:#fff!important;background:none!important;-webkit-background-clip:initial!important;background-clip:initial!important;-webkit-text-fill-color:currentColor!important;text-shadow:0 5px 22px rgba(0,0,0,.22)}
+
+/* Kontakt im Header als klarer CTA */
+.fg-header-contact{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:linear-gradient(135deg,#e6cf8a,#D1B464 55%,#b88f35);color:#08082F!important;box-shadow:0 8px 22px rgba(209,180,100,.22),inset 0 1px 0 rgba(255,255,255,.55);transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}
+.fg-header-contact:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(209,180,100,.32);filter:brightness(1.04)}
+.fg-mobile-contact{background:linear-gradient(135deg,#e6cf8a,#D1B464);color:#08082F!important;text-align:center;margin-top:.4rem;box-shadow:0 8px 20px rgba(209,180,100,.18)}
+
+/* Startseiten-Texte: alle geschlossen, hochwertigere aufgeklappte Darstellung */
+.fg-content-card{overflow:hidden;border:1px solid rgba(8,8,47,.09);box-shadow:0 10px 28px rgba(8,8,47,.06);background:linear-gradient(180deg,#fff,#fbfbfc)}
+.fg-content-card summary{min-height:92px;position:relative}
+.fg-content-card[open]{border-color:rgba(209,180,100,.5);box-shadow:0 18px 42px rgba(8,8,47,.09)}
+.fg-content-card[open] summary{background:linear-gradient(90deg,rgba(209,180,100,.08),transparent 65%)}
+.fg-content-body{margin:0 18px 18px;padding:22px 22px 24px!important;border-radius:16px;background:#f7f8fa;border-left:3px solid #D1B464}
+.fg-content-body p{font-size:1rem;line-height:1.85!important;color:#4a5361!important}
+.fg-content-body b,.fg-content-body strong{color:#08082F;font-weight:800}
+
+/* Immobilien-Slider: Karten immer optisch zentriert + elegantere Navigation */
+.home-property-slider.is-centered{display:flex!important;justify-content:center;flex-wrap:wrap}
+.home-property-slider.is-centered .home-property-card{width:min(100%,305px)}
+.fg-home-slider-controls{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:28px}
+.fg-slider-arrow{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.92);border:1px solid rgba(8,8,47,.12);color:#08082F;box-shadow:0 12px 30px rgba(8,8,47,.12);backdrop-filter:blur(8px);transition:.25s}
+.fg-slider-arrow:hover{transform:translateY(-3px) scale(1.04);background:#08082F;color:white;border-color:#08082F;box-shadow:0 16px 36px rgba(8,8,47,.22)}
+.fg-slider-status{min-width:110px;text-align:center;padding:9px 15px;border-radius:999px;background:#08082F;color:#fff;font-size:.78rem;font-weight:800;letter-spacing:.13em;box-shadow:0 8px 20px rgba(8,8,47,.18)}
+
+/* Netzwerk als echte Premium-Story statt Linkleiste */
+.fg-network-showcase{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:34px;align-items:stretch;max-width:1180px;margin:0 auto;padding-top:8px}
+.fg-network-visual{position:relative;min-height:430px;border-radius:26px;overflow:hidden;isolation:isolate;box-shadow:0 22px 55px rgba(0,0,0,.2)}
+.fg-network-visual>img{width:100%;height:100%;object-fit:cover;object-position:center 34%;position:absolute;inset:0;transition:transform .6s ease}
+.fg-network-visual:hover>img{transform:scale(1.035)}
+.fg-network-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,rgba(8,8,47,.92) 100%);z-index:1}
+.fg-network-frame{position:absolute;inset:16px;border:1px solid rgba(209,180,100,.55);border-radius:19px;z-index:2;pointer-events:none}
+.fg-network-visual-copy{position:absolute;left:34px;right:34px;bottom:30px;z-index:3}.fg-network-visual-copy span{display:block;color:#CDD2D4;text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;font-weight:800;margin-bottom:8px}.fg-network-visual-copy strong{display:block;color:#fff;font-size:clamp(1.45rem,3vw,2rem);line-height:1.1}
+.fg-network-panel{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:26px;padding:32px;backdrop-filter:blur(10px)}
+.fg-network-panel>h3{font-size:clamp(1.8rem,3vw,2.55rem);font-weight:800;line-height:1.08;margin:10px 0 14px;color:#fff}.fg-network-panel>p{color:#d9dee5;line-height:1.7;margin-bottom:24px}
+.fg-network-partners{display:grid;gap:11px}.fg-network-partner{display:grid;grid-template-columns:54px 1fr auto;gap:14px;align-items:center;padding:13px 14px;border-radius:16px;background:#fff;color:#08082F;border:1px solid rgba(255,255,255,.25);transition:.25s}.fg-network-partner:hover{transform:translateX(4px);box-shadow:0 12px 26px rgba(0,0,0,.15)}
+.fg-network-logo{width:54px;height:44px;border-radius:10px;background:#f5f6f7;display:grid;place-items:center;padding:7px}.fg-network-logo img{max-width:100%;max-height:100%;object-fit:contain}.fg-network-partner strong,.fg-network-partner small{display:block}.fg-network-partner strong{font-size:1rem}.fg-network-partner small{color:#6b7280;font-size:.78rem;margin-top:2px}.fg-network-partner>i{color:#9b7100;font-size:.8rem}
+
+/* Menschliche Bildmodule */
+.fg-human-story{display:grid;grid-template-columns:1.05fr .95fr;gap:38px;align-items:center;background:#fff;border-radius:26px;padding:28px;border:1px solid rgba(8,8,47,.08);box-shadow:0 18px 48px rgba(8,8,47,.08)}
+.fg-human-story-images{display:grid;grid-template-columns:1.1fr .9fr;gap:12px;height:360px}.fg-human-story-images img{width:100%;height:100%;object-fit:cover;border-radius:18px}.fg-human-story-images img:first-child{object-position:center 42%}.fg-human-story-images img:last-child{object-position:center 35%}
+.fg-human-story-copy h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.08;color:#08082F;font-weight:800;margin:10px 0 16px}.fg-human-story-copy>p:last-of-type{color:#5e6775;line-height:1.75;font-size:1.05rem}.fg-human-story-copy>a,.fg-timeline-link{display:inline-flex;align-items:center;gap:9px;color:#8f6800;font-weight:800;margin-top:18px}.fg-human-story-copy>a:hover,.fg-timeline-link:hover{gap:13px}
+.fg-human-hero-card{position:relative;min-height:390px;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 18px 40px rgba(0,0,0,.22)}.fg-human-hero-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%}.fg-human-hero-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(8,8,47,.94))}.fg-human-hero-card>div{position:absolute;z-index:2;left:22px;right:22px;bottom:20px}.fg-human-hero-card span,.fg-human-hero-card strong{display:block}.fg-human-hero-card span{color:#CDD2D4;text-transform:uppercase;letter-spacing:.12em;font-size:.68rem;font-weight:800}.fg-human-hero-card strong{color:#fff;font-size:1.35rem;margin-top:5px}
+
+/* Verkaufsprofil ohne /01-Markierungen */
+.fg-portfolio-card>span{display:none!important}
+
+/* Investment Lab: Hero konsequent zentriert */
+.lab-hero-centered{text-align:center}.lab-hero-centered>p{margin-left:auto!important;margin-right:auto!important}.lab-hero-centered .lab-navigator{margin-left:auto;margin-right:auto;text-align:left}
+
+/* Ankaufsberatung gleiche Journey-Logik wie Verkauf */
+.fg-segmented-tabs{display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:5px;background:#fff;border:1px solid rgba(8,8,47,.1);border-radius:999px;box-shadow:0 12px 30px rgba(8,8,47,.1)}.fg-segmented-tabs button{padding:12px 16px;border-radius:999px;color:#68707d;font-weight:800;transition:.2s}.fg-segmented-tabs button.is-active{background:linear-gradient(135deg,#e6cf8a,#D1B464);color:#08082F;box-shadow:0 7px 18px rgba(209,180,100,.28)}
+.fg-timeline-step>div{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}.fg-timeline-step:hover>div{transform:translateX(4px);border-color:rgba(209,180,100,.45);box-shadow:0 15px 34px rgba(8,8,47,.09)}
+
+/* Lead Funnel: zusätzliche Kategorie-Ebene */
+.lead-choice-category{min-height:70px}.lead-category-options{align-items:stretch}.lead-category-options .lead-choice{height:100%}
+
+/* Fluidität auf allen Unterseiten */
+main>section{scroll-margin-top:86px}.fg-reveal{will-change:transform,opacity}.fg-feature-box,.fg-mini-stat,.lab-tool-grid>*,.lab-article-grid>*,.lab-location-grid>*{transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}.fg-feature-box:hover,.fg-mini-stat:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(8,8,47,.09);border-color:rgba(209,180,100,.4)}
+
+@media(max-width:900px){.fg-network-showcase,.fg-human-story{grid-template-columns:1fr}.fg-network-visual{min-height:360px}.fg-human-story-images{height:320px}.fg-human-hero-card{min-height:340px}}
+@media(max-width:760px){.fg-section-kicker::before,.fg-section-kicker::after,.fg-eyebrow::before,.fg-eyebrow::after{width:18px}.fg-home-slider-controls{margin-top:20px}.fg-slider-arrow{width:46px;height:46px}.fg-network-showcase{gap:18px}.fg-network-visual{min-height:330px}.fg-network-panel{padding:22px 18px}.fg-network-partner{grid-template-columns:46px 1fr auto}.fg-network-logo{width:46px;height:40px}.fg-human-story{padding:16px;gap:24px}.fg-human-story-images{height:270px}.fg-human-story-copy{padding:0 6px 8px}.fg-human-hero-card{min-height:310px}.fg-segmented-tabs button{font-size:.85rem;padding:11px 8px}.lab-hero-centered{text-align:center!important}}

@@ -89,11 +89,11 @@
 
                         <div class="mt-5">
                             <div class="flex items-center justify-between gap-3 mb-2 text-xs font-semibold text-gray-500">
-                                <span class="lead-step-label">Schritt 1 von 6</span>
+                                <span class="lead-step-label">Schritt 1 von 7</span>
                                 <span>Persönlich geprüft</span>
                             </div>
-                            <div class="h-2 bg-gray-100 rounded-full overflow-hidden" role="progressbar" aria-valuemin="1" aria-valuemax="6" aria-valuenow="1">
-                                <div class="lead-progress h-full bg-secondary rounded-full transition-all duration-500" style="width: 16.67%;"></div>
+                            <div class="h-2 bg-gray-100 rounded-full overflow-hidden" role="progressbar" aria-valuemin="1" aria-valuemax="7" aria-valuenow="1">
+                                <div class="lead-progress h-full bg-secondary rounded-full transition-all duration-500" style="width: 14.29%;"></div>
                             </div>
                         </div>
                     </div>
@@ -110,6 +110,7 @@
 
                     <form class="lead-form" enctype="multipart/form-data">
                         <input type="hidden" name="concern" class="lead-concern">
+                        <input type="hidden" name="object_category" class="lead-object-category">
                         <input type="hidden" name="object_type" class="lead-object-type">
                         <input type="hidden" name="location" class="lead-location">
                         <input type="hidden" name="budget" class="lead-budget">
@@ -146,18 +147,22 @@
                         </div>
 
                         <div class="lead-step hidden" data-step="2">
-                            <div class="lead-dynamic-options grid grid-cols-1 gap-4"></div>
+                            <div class="lead-category-options grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
                         </div>
 
                         <div class="lead-step hidden" data-step="3">
-                            <div class="lead-context-fields space-y-5"></div>
+                            <div class="lead-dynamic-options grid grid-cols-1 gap-4"></div>
                         </div>
 
                         <div class="lead-step hidden" data-step="4">
-                            <div class="lead-extra-fields space-y-5"></div>
+                            <div class="lead-context-fields space-y-5"></div>
                         </div>
 
                         <div class="lead-step hidden" data-step="5">
+                            <div class="lead-extra-fields space-y-5"></div>
+                        </div>
+
+                        <div class="lead-step hidden" data-step="6">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
                                     <label class="lead-label">Vorname *</label>
@@ -190,7 +195,7 @@
                             </select>
                         </div>
 
-                        <div class="lead-step hidden" data-step="6">
+                        <div class="lead-step hidden" data-step="7">
                             <label class="lead-label">Ihre Nachricht</label>
                             <textarea name="message" rows="5" placeholder="Gibt es noch etwas, das wir wissen sollten?" class="lead-input"></textarea>
 
@@ -283,6 +288,7 @@
 
         const state = {
             concern: "",
+            object_category: "",
             object_type: "",
             location: "",
             budget: "",
@@ -306,61 +312,71 @@
         const back = widget.querySelector(".lead-back");
         const next = widget.querySelector(".lead-next");
         const submit = widget.querySelector(".lead-submit");
+        const categoryOptions = widget.querySelector(".lead-category-options");
         const dyn = widget.querySelector(".lead-dynamic-options");
         const ctx = widget.querySelector(".lead-context-fields");
         const extra = widget.querySelector(".lead-extra-fields");
 
         const optionGroups = {
             "Immobilie suchen": [
-                { title: "Wohnung", items: [["Eigentumswohnung", "fas fa-building"], ["Dachgeschosswohnung", "fas fa-building"], ["Etagenwohnung", "fas fa-building"], ["Erdgeschosswohnung", "fas fa-door-open"], ["Maisonette", "fas fa-layer-group"], ["Penthouse", "fas fa-crown"], ["Loft", "fas fa-warehouse"], ["Terrassenwohnung", "fas fa-umbrella-beach"]] },
-                { title: "Haus", items: [["Einfamilienhaus", "fas fa-house"], ["Zweifamilienhaus", "fas fa-house-user"], ["Doppelhaushälfte", "fas fa-house-chimney"], ["Reihenhaus", "fas fa-house-chimney-window"], ["Reihenmittelhaus", "fas fa-house-chimney-window"], ["Reihenendhaus", "fas fa-house-circle-check"], ["Villa", "fas fa-landmark"], ["Bungalow", "fas fa-home"]] },
-                { title: "Investment & Grundstück", items: [["Mehrfamilienhaus", "fas fa-city"], ["Kapitalanlage", "fas fa-chart-line"], ["Grundstück", "fas fa-map"], ["Gewerbeimmobilie", "fas fa-briefcase"]] }
+                { title: "Wohnung", icon: "fas fa-building", items: [["Eigentumswohnung", "fas fa-building"], ["Dachgeschosswohnung", "fas fa-building"], ["Etagenwohnung", "fas fa-building"], ["Erdgeschosswohnung", "fas fa-door-open"], ["Maisonette", "fas fa-layer-group"], ["Penthouse", "fas fa-crown"], ["Loft", "fas fa-warehouse"], ["Terrassenwohnung", "fas fa-umbrella-beach"]] },
+                { title: "Haus", icon: "fas fa-house", items: [["Einfamilienhaus", "fas fa-house"], ["Zweifamilienhaus", "fas fa-house-user"], ["Doppelhaushälfte", "fas fa-house-chimney"], ["Reihenhaus", "fas fa-house-chimney-window"], ["Reihenmittelhaus", "fas fa-house-chimney-window"], ["Reihenendhaus", "fas fa-house-circle-check"], ["Villa", "fas fa-landmark"], ["Bungalow", "fas fa-home"]] },
+                { title: "Grundstück", icon: "fas fa-map", items: [["Grundstück", "fas fa-map"]] },
+                { title: "Gewerbeimmobilie", icon: "fas fa-briefcase", items: [["Gewerbeimmobilie", "fas fa-briefcase"]] },
+                { title: "Mehrfamilienhaus", icon: "fas fa-city", items: [["Mehrfamilienhaus", "fas fa-city"], ["Kapitalanlage", "fas fa-chart-line"]] }
             ],
             "Immobilie verkaufen": [
-                { title: "Wohnung", items: [["Eigentumswohnung", "fas fa-building"], ["Dachgeschosswohnung", "fas fa-building"], ["Etagenwohnung", "fas fa-building"], ["Erdgeschosswohnung", "fas fa-door-open"], ["Penthouse", "fas fa-crown"], ["Maisonette", "fas fa-layer-group"], ["Loft", "fas fa-warehouse"], ["Terrassenwohnung", "fas fa-umbrella-beach"]] },
-                { title: "Haus", items: [["Einfamilienhaus", "fas fa-house"], ["Zweifamilienhaus", "fas fa-house-user"], ["Doppelhaushälfte", "fas fa-house-chimney"], ["Reihenhaus", "fas fa-house-chimney-window"], ["Reihenmittelhaus", "fas fa-house-chimney-window"], ["Reihenendhaus", "fas fa-house-circle-check"], ["Villa", "fas fa-landmark"], ["Bungalow", "fas fa-home"]] },
-                { title: "Investment / Grundstück / Gewerbe", items: [["Mehrfamilienhaus", "fas fa-city"], ["Grundstück", "fas fa-map"], ["Gewerbeimmobilie", "fas fa-briefcase"], ["Diskrete Off-Market-Vermarktung", "fas fa-user-secret"]] }
+                { title: "Wohnung", icon: "fas fa-building", items: [["Dachgeschosswohnung", "fas fa-building"], ["Etagenwohnung", "fas fa-building"], ["Erdgeschosswohnung", "fas fa-door-open"], ["Penthouse", "fas fa-crown"], ["Maisonette", "fas fa-layer-group"], ["Loft", "fas fa-warehouse"], ["Terrassenwohnung", "fas fa-umbrella-beach"]] },
+                { title: "Haus", icon: "fas fa-house", items: [["Einfamilienhaus", "fas fa-house"], ["Zweifamilienhaus", "fas fa-house-user"], ["Doppelhaushälfte", "fas fa-house-chimney"], ["Reihenhaus", "fas fa-house-chimney-window"], ["Reihenmittelhaus", "fas fa-house-chimney-window"], ["Reihenendhaus", "fas fa-house-circle-check"], ["Villa", "fas fa-landmark"], ["Bungalow", "fas fa-home"]] },
+                { title: "Grundstück", icon: "fas fa-map", items: [["Grundstück", "fas fa-map"]] },
+                { title: "Gewerbeimmobilie", icon: "fas fa-briefcase", items: [["Gewerbeimmobilie", "fas fa-briefcase"]] },
+                { title: "Mehrfamilienhaus", icon: "fas fa-city", items: [["Mehrfamilienhaus", "fas fa-city"]] }
             ],
             "Immobilie vermieten": [
-                { title: "Wohnung", items: [["Wohnung", "fas fa-building"], ["Dachgeschosswohnung", "fas fa-building"], ["Etagenwohnung", "fas fa-building"], ["Erdgeschosswohnung", "fas fa-door-open"], ["Penthouse", "fas fa-crown"], ["Maisonette", "fas fa-layer-group"], ["Loft", "fas fa-warehouse"], ["Terrassenwohnung", "fas fa-umbrella-beach"]] },
-                { title: "Haus", items: [["Einfamilienhaus", "fas fa-house"], ["Zweifamilienhaus", "fas fa-house-user"], ["Doppelhaushälfte", "fas fa-house-chimney"], ["Reihenhaus", "fas fa-house-chimney-window"], ["Reihenmittelhaus", "fas fa-house-chimney-window"], ["Reihenendhaus", "fas fa-house-circle-check"], ["Villa", "fas fa-landmark"], ["Bungalow", "fas fa-home"]] },
-                { title: "Gewerbe & Anlage", items: [["Gewerbeeinheit", "fas fa-briefcase"], ["Mehrfamilienhaus / Anlageobjekt", "fas fa-city"]] }
+                { title: "Wohnung", icon: "fas fa-building", items: [["Eigentumswohnung", "fas fa-building"], ["Dachgeschosswohnung", "fas fa-building"], ["Etagenwohnung", "fas fa-building"], ["Erdgeschosswohnung", "fas fa-door-open"], ["Penthouse", "fas fa-crown"], ["Maisonette", "fas fa-layer-group"], ["Loft", "fas fa-warehouse"], ["Terrassenwohnung", "fas fa-umbrella-beach"]] },
+                { title: "Haus", icon: "fas fa-house", items: [["Einfamilienhaus", "fas fa-house"], ["Doppelhaushälfte", "fas fa-house-chimney"], ["Reihenhaus", "fas fa-house-chimney-window"], ["Villa", "fas fa-landmark"], ["Bungalow", "fas fa-home"]] },
+                { title: "Grundstück", icon: "fas fa-map", items: [["Grundstück", "fas fa-map"]] },
+                { title: "Gewerbeimmobilie", icon: "fas fa-briefcase", items: [["Gewerbeimmobilie", "fas fa-briefcase"]] },
+                { title: "Mehrfamilienhaus", icon: "fas fa-city", items: [["Mehrfamilienhaus / Anlageobjekt", "fas fa-city"]] }
             ],
             "Finanzierung": [
-                { title: "Finanzierung", items: [["Kauf einer Immobilie", "fas fa-home"], ["Anschlussfinanzierung", "fas fa-sync"], ["Kapitalanlage", "fas fa-chart-pie"], ["Finanzierungsberatung allgemein", "fas fa-comments"]] }
+                { title: "Finanzierung", icon: "fas fa-euro-sign", items: [["Kauf einer Immobilie", "fas fa-home"], ["Anschlussfinanzierung", "fas fa-sync"], ["Kapitalanlage", "fas fa-chart-pie"], ["Finanzierungsberatung allgemein", "fas fa-comments"]] }
             ]
         };
-
-        const options = Object.fromEntries(Object.entries(optionGroups).map(([key, groups]) => [key, groups.flatMap(group => group.items)]));
 
         const stepText = {
             default: {
                 1: ["Wobei dürfen wir Sie unterstützen?", "Wählen Sie zuerst Ihr Anliegen aus."],
-                2: ["Um welche Immobilie geht es?", "Wählen Sie die passende Kategorie."],
-                3: ["Ein paar Eckdaten", "Adresse/Suchgebiet und Budget helfen uns bei der Einordnung."],
-                4: ["Optionale Zusatzdaten", "Sie können Details ergänzen oder überspringen."],
-                5: ["Ihre Kontaktdaten", "Damit wir persönlich Rückmeldung geben können."],
-                6: ["Fast geschafft", "Nachricht ergänzen und Anfrage absenden."]
+                2: ["Um welche Objektart geht es?", "Wählen Sie zunächst die übergeordnete Kategorie."],
+                3: ["Bitte präzisieren Sie die Immobilie", "Wählen Sie die passende Unterkategorie."],
+                4: ["Ein paar Eckdaten", "Adresse oder Suchgebiet und Budget helfen uns bei der Einordnung."],
+                5: ["Optionale Zusatzdaten", "Sie können Details ergänzen oder überspringen."],
+                6: ["Ihre Kontaktdaten", "Damit wir persönlich Rückmeldung geben können."],
+                7: ["Fast geschafft", "Nachricht ergänzen und Anfrage absenden."]
             },
             "Immobilie suchen": {
-                2: ["Welche Immobilie suchen Sie?", "Wählen Sie aus, wonach Sie suchen."],
-                3: ["Wo und in welchem Rahmen suchen Sie?", "Nennen Sie Suchgebiet, Budget und zeitlichen Rahmen."],
-                4: ["Finanzierung gewünscht?", "Wir können auf Wunsch auch die passende Finanzierungsberatung vorbereiten."]
+                2: ["Welche Art Immobilie suchen Sie?", "Wählen Sie Wohnung, Haus, Grundstück, Gewerbe oder Mehrfamilienhaus."],
+                3: ["Welche Immobilie passt zu Ihrer Suche?", "Wählen Sie die konkrete Objektart."],
+                4: ["Wo und in welchem Rahmen suchen Sie?", "Nennen Sie Suchgebiet, Budget und zeitlichen Rahmen."],
+                5: ["Finanzierung gewünscht?", "Wir können auf Wunsch auch die passende Finanzierungsberatung vorbereiten."]
             },
             "Immobilie verkaufen": {
-                2: ["Welche Immobilie möchten Sie verkaufen?", "Wählen Sie aus, um welche Art von Objekt es geht."],
-                3: ["Wo befindet sich Ihr Objekt?", "Nennen Sie Objektstandort, Preisvorstellung und Zeitraum."],
-                4: ["Möchten Sie bereits Objektdaten ergänzen?", "Das ist optional. Sie können auch direkt zu Ihren Kontaktdaten springen."]
+                2: ["Welche Art Immobilie möchten Sie verkaufen?", "Wählen Sie zuerst die übergeordnete Objektart."],
+                3: ["Welche Immobilie ist es genau?", "Wählen Sie die passende Unterkategorie für eine präzisere Einordnung."],
+                4: ["Wo befindet sich Ihr Objekt?", "Nennen Sie Objektstandort, Preisvorstellung und Zeitraum."],
+                5: ["Möchten Sie bereits Objektdaten ergänzen?", "Das ist optional. Sie können auch direkt zu Ihren Kontaktdaten springen."]
             },
             "Immobilie vermieten": {
-                2: ["Welche Immobilie möchten Sie vermieten?", "Wählen Sie aus, um welche Art von Objekt es geht."],
-                3: ["Wo befindet sich das Mietobjekt?", "Nennen Sie Standort, Mietvorstellung und Verfügbarkeit."],
-                4: ["Verwaltung & Objektdaten", "Optional: Verwaltungstermin und Objektangaben ergänzen."]
+                2: ["Welche Art Immobilie möchten Sie vermieten?", "Wählen Sie zuerst die übergeordnete Objektart."],
+                3: ["Welche Immobilie ist es genau?", "Wählen Sie die passende Unterkategorie."],
+                4: ["Wo befindet sich das Mietobjekt?", "Nennen Sie Standort, Mietvorstellung und Verfügbarkeit."],
+                5: ["Verwaltung & Objektdaten", "Optional: Verwaltungstermin und Objektangaben ergänzen."]
             },
             "Finanzierung": {
-                2: ["Wobei benötigen Sie Finanzierungshilfe?", "Wählen Sie den passenden Finanzierungsanlass."],
-                3: ["Welche Eckdaten gibt es zur Finanzierung?", "Nennen Sie Ort, Kaufpreis oder Finanzierungsrahmen und Zeitraum."],
-                4: ["Weitere Finanzierungsdetails", "Optional: Ergänzen Sie, was bereits bekannt ist."]
+                2: ["Welche Finanzierung geht es?", "Wählen Sie den Bereich Finanzierung."],
+                3: ["Wobei benötigen Sie Finanzierungshilfe?", "Wählen Sie den passenden Finanzierungsanlass."],
+                4: ["Welche Eckdaten gibt es zur Finanzierung?", "Nennen Sie Ort, Kaufpreis oder Finanzierungsrahmen und Zeitraum."],
+                5: ["Weitere Finanzierungsdetails", "Optional: Ergänzen Sie, was bereits bekannt ist."]
             }
         };
 
@@ -370,54 +386,62 @@
 
         function show(s) {
             step = s;
-
             steps.forEach(el => el.classList.toggle("hidden", Number(el.dataset.step) !== step));
-
             const t = getText(step);
-            title.textContent = t[0];
-            subtitle.textContent = t[1];
-            progress.style.width = (step / 6 * 100) + "%";
-            if (stepLabel) stepLabel.textContent = `Schritt ${step} von 6`;
+            title.textContent = t[0]; subtitle.textContent = t[1];
+            progress.style.width = (step / 7 * 100) + "%";
+            if (stepLabel) stepLabel.textContent = `Schritt ${step} von 7`;
             if (progressBar) progressBar.setAttribute("aria-valuenow", String(step));
-
             back.classList.toggle("hidden", step === 1);
-            next.classList.toggle("hidden", step === 6 || step === 2);
-            submit.classList.toggle("hidden", step !== 6);
+            next.classList.toggle("hidden", step === 7 || step === 2 || step === 3);
+            submit.classList.toggle("hidden", step !== 7);
+            if (step === 2) renderCategories();
+            if (step === 3) renderOptions();
+            if (step === 4) renderContext();
+            if (step === 5) renderExtra();
+        }
 
-            if (step === 2) renderOptions();
-            if (step === 3) renderContext();
-            if (step === 4) renderExtra();
+        function renderCategories() {
+            categoryOptions.innerHTML = "";
+            const groups = optionGroups[state.concern] || [];
+            groups.forEach(group => {
+                const b = document.createElement("button");
+                b.type = "button";
+                b.className = "lead-choice lead-choice-category";
+                b.innerHTML = `<span><i class="${group.icon || 'fas fa-building'} text-secondary mr-3"></i>${group.title}</span><i class="fas fa-chevron-right"></i>`;
+                b.onclick = function () {
+                    state.object_category = group.title;
+                    state.object_type = "";
+                    set(".lead-object-category", group.title);
+                    set(".lead-object-type", "");
+                    show(3);
+                };
+                categoryOptions.appendChild(b);
+            });
         }
 
         function renderOptions() {
             dyn.innerHTML = "";
-
-            const groups = optionGroups[state.concern] || [{ title: "Auswahl", items: options[state.concern] || [] }];
-
-            groups.forEach(group => {
-                const wrap = document.createElement("div");
-                wrap.className = "lead-option-group mb-4";
-                wrap.innerHTML = `<div class="lead-option-group-title">${group.title}</div>`;
-
-                const grid = document.createElement("div");
-                grid.className = "grid grid-cols-1 sm:grid-cols-2 gap-3";
-
-                group.items.forEach(([label, icon]) => {
-                    const b = document.createElement("button");
-                    b.type = "button";
-                    b.className = "lead-choice lead-choice-compact";
-                    b.innerHTML = `<span><i class="${icon} text-secondary mr-3"></i>${label}</span><i class="fas fa-chevron-right"></i>`;
-                    b.onclick = function () {
-                        state.object_type = label;
-                        set(".lead-object-type", label);
-                        show(3);
-                    };
-                    grid.appendChild(b);
-                });
-
-                wrap.appendChild(grid);
-                dyn.appendChild(wrap);
+            const groups = optionGroups[state.concern] || [];
+            const group = groups.find(g => g.title === state.object_category) || groups[0];
+            if (!group) return;
+            const wrap = document.createElement("div");
+            wrap.className = "lead-option-group";
+            const grid = document.createElement("div");
+            grid.className = "grid grid-cols-1 sm:grid-cols-2 gap-3";
+            group.items.forEach(([label, icon]) => {
+                const b = document.createElement("button");
+                b.type = "button";
+                b.className = "lead-choice lead-choice-compact";
+                b.innerHTML = `<span><i class="${icon} text-secondary mr-3"></i>${label}</span><i class="fas fa-chevron-right"></i>`;
+                b.onclick = function () {
+                    state.object_type = label;
+                    set(".lead-object-type", label);
+                    show(4);
+                };
+                grid.appendChild(b);
             });
+            wrap.appendChild(grid); dyn.appendChild(wrap);
         }
 
         function renderContext() {
@@ -704,9 +728,8 @@
             }
 
             if (isApartment) {
-                html += `<div>${selectSimple("Wohnungsart", "seller-apartment-subtype", [
+                const apartmentSubtypes = [
                     [state.object_type || "Wohnung", state.object_type || "Wohnung"],
-                    ["Eigentumswohnung", "Eigentumswohnung"],
                     ["Etagenwohnung", "Etagenwohnung"],
                     ["Dachgeschosswohnung", "Dachgeschosswohnung"],
                     ["Erdgeschosswohnung", "Erdgeschosswohnung"],
@@ -714,7 +737,11 @@
                     ["Maisonette", "Maisonette"],
                     ["Loft", "Loft"],
                     ["Terrassenwohnung", "Terrassenwohnung"]
-                ])}</div>`;
+                ];
+                if (state.concern !== "Immobilie verkaufen") {
+                    apartmentSubtypes.splice(1, 0, ["Eigentumswohnung", "Eigentumswohnung"]);
+                }
+                html += `<div>${selectSimple("Wohnungsart", "seller-apartment-subtype", apartmentSubtypes)}</div>`;
                 html += `<div>${selectSimple("Etage", "seller-floor", [["", "Keine Angabe"], ["Erdgeschoss", "Erdgeschoss"], ["1", "1. Etage"], ["2", "2. Etage"], ["3", "3. Etage"], ["4+", "4. Etage oder höher"], ["Dachgeschoss", "Dachgeschoss"]])}</div>`;
             }
 
@@ -922,9 +949,9 @@
 
         next.onclick = function () {
             if (step === 1 && !state.concern) return;
-            if (step === 3 && !readCtx()) return;
-            if (step === 4) readExtra();
-            if (step < 6) show(step + 1);
+            if (step === 4 && !readCtx()) return;
+            if (step === 5) readExtra();
+            if (step < 7) show(step + 1);
         };
 
         back.onclick = function () {
@@ -934,7 +961,9 @@
         widget.querySelectorAll(".lead-choice[data-field='concern']").forEach(btn => {
             btn.onclick = function () {
                 state.concern = btn.dataset.value;
+                state.object_category = ""; state.object_type = "";
                 set(".lead-concern", state.concern);
+                set(".lead-object-category", ""); set(".lead-object-type", "");
 
                 const uploadArea = widget.querySelector(".lead-upload-area");
                 if (uploadArea) {
@@ -990,6 +1019,7 @@
                     email: fd.get("email"),
                     phone: fd.get("phone"),
                     concern: state.concern,
+                    object_category: state.object_category,
                     object_type: state.object_type,
                     location: state.location,
                     budget: state.budget,

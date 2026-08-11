@@ -464,8 +464,13 @@ document.addEventListener('DOMContentLoaded', function() {
 (function(){const r=document.querySelector('[data-affordability-calculator]');if(!r)return;const p=v=>{let s=String(v||'').replace(/\s|€|%/g,'');if(s.includes(','))s=s.replace(/\./g,'').replace(',','.');return parseFloat(s)||0},eur=v=>new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(v);r.querySelector('form').addEventListener('submit',e=>{e.preventDefault();let f=new FormData(e.target),rate=p(f.get('rate')),eq=p(f.get('equity')),i=p(f.get('interest'))/100,t=p(f.get('repay'))/100,c=p(f.get('costs'))/100,loan=rate*12/(i+t),price=(loan+eq)/(1+c);r.querySelector('[data-afford-result]').innerHTML=`<div class="lab-result-kpis"><article><span>Möglicher Kaufpreis</span><strong>${eur(price)}</strong><small>erste Orientierung</small></article><article><span>Darlehensrahmen</span><strong>${eur(loan)}</strong></article><article><span>Gesamtbudget inkl. Nebenkosten</span><strong>${eur(price*(1+c))}</strong></article><article><span>Monatliche Rate</span><strong>${eur(rate)}</strong></article></div>`})})();
 
 
-/* F&G UX Refresh: dezente Scroll-Reveals, mit Reduced-Motion-Fallback */
+/* F&G UX Refresh: dezente Scroll-Reveals auf allen Seiten, mit Reduced-Motion-Fallback */
 (function(){
+  document.querySelectorAll('main > section:not(.fg-home-hero):not(.fg-journey-hero):not(.lab-hero)').forEach((section)=>{
+    const target = section.querySelector(':scope > .container, :scope > .lab-shell, :scope > .max-w-7xl, :scope > .max-w-6xl');
+    if(target && !target.classList.contains('fg-reveal')) target.classList.add('fg-reveal');
+  });
+  document.querySelectorAll('.fg-feature-box,.fg-mini-stat,.lab-tool-grid > *, .lab-article-grid > *, .lab-location-grid > *').forEach(el=>el.classList.add('fg-reveal'));
   const items = Array.from(document.querySelectorAll('.fg-reveal'));
   if(!items.length) return;
   if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
