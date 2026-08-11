@@ -1,121 +1,181 @@
 ---
 layout: base.njk
 title: "Fischer & Geserich Real Estate"
-description: "Immobilienmakler und Finanzierungsvermittler in Berlin: persönliche Beratung für Verkauf, Kauf, Kapitalanlage und Immobilienfinanzierung."
+description: "Immobilienmakler und Finanzierungsvermittler in Berlin: persönliche Beratung für Verkauf, Kauf, Kapitalanlage, Vermietung und Immobilienfinanzierung."
 permalink: index.html
 canonicalPath: /
 ogTitle: "Fischer & Geserich Real Estate | Immobilien in Berlin"
-ogDescription: "Persönliche Immobilienberatung für Eigentümer, Käufer und Investoren – von Verkauf und Ankauf bis zur passenden Finanzierung."
+ogDescription: "Persönliche Immobilienberatung für Eigentümer, Käufer, Mieter und Investoren – von Verkauf und Ankauf bis Vermietung und Finanzierung."
 ---
 
-<section id="hero" class="relative bg-primary min-h-[60vh] md:min-h-screen flex items-center justify-center overflow-hidden">
+<section id="hero" class="fg-home-hero relative bg-primary min-h-[66vh] md:min-h-screen flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 z-0">
         <img src="images/berlinskypng.png" alt="Berlin Panorama" class="w-full h-full object-cover opacity-50">
     </div>
-
     <video autoplay muted loop playsinline webkit-playsinline poster="images/berlinskypng.png" class="hidden md:block absolute inset-0 w-full h-full object-cover opacity-50 z-10">
         <source src="videos/berlinsky.mp4" type="video/mp4">
     </video>
+    <div class="fg-hero-glow fg-hero-glow-one" aria-hidden="true"></div>
+    <div class="fg-hero-glow fg-hero-glow-two" aria-hidden="true"></div>
 
-    <div class="relative z-20 container mx-auto px-4 py-20 text-center">
-        <div class="text-white max-w-4xl mx-auto">
-            <h1 class="text-2xl sm:text-3xl md:text-3xl font-extrabold mb-6 leading-tight drop-shadow-2xl">
-                Ihr Partner rund um Immobilien <br>
-                Finanzieren, Kaufen, Verkaufen & Vermieten
+    <div class="relative z-20 container mx-auto px-4 py-24 text-center">
+        <div class="text-white max-w-5xl mx-auto fg-reveal">
+            <p class="fg-eyebrow mb-4">Fischer &amp; Geserich Real Estate</p>
+            <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-2xl">
+                Immobilienentscheidungen klarer treffen.
             </h1>
-
-            <p class="text-lg md:text-2xl font-light mb-10 text-secondary">
-                Kompetent, Transparent & Persönlich.
+            <p class="text-lg md:text-2xl font-light mb-4 text-secondary">
+                <strong>Finanzieren, Kaufen, Verkaufen, Vermieten:</strong> persönlich, strukturiert und mit Blick auf die wirtschaftlichen Zusammenhänge.
             </p>
+            <p class="text-base md:text-lg text-white/80 max-w-3xl mx-auto mb-10">
+                Kompetent, transparent &amp; persönlich. Wir führen Sie gezielt zu dem Bereich, der zu Ihrem Vorhaben passt.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#ziele" class="btn-85 inline-flex items-center justify-center gap-2 py-3 px-8 text-primary text-lg font-bold rounded-lg shadow-xl">
+                    <i class="fas fa-compass"></i> Wie können wir helfen?
+                </a>
+                <a href="#kontakt" class="border-2 border-accent text-white hover:bg-accent hover:text-primary text-lg font-bold py-3 px-8 rounded-lg transition duration-300">
+                    Persönlich beraten lassen
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
-            <a href="#kontakt" class="border-2 border-accent text-white hover:bg-accent hover:text-primary text-lg font-bold py-3 px-8 rounded-lg transition duration-300">
-                Jetzt beraten lassen
+<section id="ziele" class="fg-route-section container mx-auto px-4 py-16 md:py-24">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-10 md:mb-14 fg-reveal">
+            <p class="fg-section-kicker">Ihr direkter Einstieg</p>
+            <h2 class="text-3xl md:text-5xl font-bold text-primary mb-4">Wie können wir Ihnen helfen?</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto">Wählen Sie den Bereich, der zu Ihrem Vorhaben passt. Wir führen Sie direkt zu den Informationen und nächsten Schritten, die für Sie relevant sind.</p>
+        </div>
+
+        <div class="fg-route-grid">
+            <a href="/verkaufen.html" class="fg-route-card fg-reveal">
+                <span class="fg-route-icon"><i class="fas fa-house-circle-check"></i></span>
+                <div><h3>Immobilie verkaufen</h3><p>Bewertung, Vermarktungsstrategie und Begleitung bis zur Übergabe.</p></div>
+                <i class="fas fa-arrow-right fg-route-arrow"></i>
+            </a>
+            <a href="/finanzierungsberatung.html" class="fg-route-card fg-reveal">
+                <span class="fg-route-icon"><i class="fas fa-euro-sign"></i></span>
+                <div><h3>Finanzierung</h3><p>Finanzierungsrahmen, Bankvergleich und strukturierte Begleitung.</p></div>
+                <i class="fas fa-arrow-right fg-route-arrow"></i>
+            </a>
+            <a href="/kapitalanlage.html" class="fg-route-card fg-reveal">
+                <span class="fg-route-icon"><i class="fas fa-chart-line"></i></span>
+                <div><h3>Kapitalanlage</h3><p>Objekte wirtschaftlich prüfen, Finanzierung strukturieren und gezielt ankaufen.</p></div>
+                <i class="fas fa-arrow-right fg-route-arrow"></i>
+            </a>
+            <a href="/mehrfamilienhaus.html" class="fg-route-card fg-reveal">
+                <span class="fg-route-icon"><i class="fas fa-city"></i></span>
+                <div><h3>Mehrfamilienhäuser</h3><p>Verkauf, Ankauf und Investorenansprache für Mehrfamilien- und Zinshäuser.</p></div>
+                <i class="fas fa-arrow-right fg-route-arrow"></i>
+            </a>
+            <a href="/vermieten.html" class="fg-route-card fg-reveal">
+                <span class="fg-route-icon"><i class="fas fa-key"></i></span>
+                <div><h3>Immobilie vermieten</h3><p>Mietpreis, Vermarktung, Auswahl und strukturierter Vermietungsprozess.</p></div>
+                <i class="fas fa-arrow-right fg-route-arrow"></i>
+            </a>
+            <a href="/anmieten.html" class="fg-route-card fg-reveal">
+                <span class="fg-route-icon"><i class="fas fa-door-open"></i></span>
+                <div><h3>Immobilie anmieten</h3><p>Aktuelle Mietangebote ansehen oder ein persönliches Suchprofil anlegen.</p></div>
+                <i class="fas fa-arrow-right fg-route-arrow"></i>
             </a>
         </div>
     </div>
 </section>
 
-<div class="block lg:hidden">
-    {% include "landingpage-lead.njk" %}
-</div>
+<section id="warum-fg" class="bg-primary text-white py-16 md:py-24 overflow-hidden">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12 fg-reveal">
+            <p class="fg-section-kicker fg-section-kicker-light">Warum F&amp;G?</p>
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">Warum entscheiden sich Eigentümer für uns?</h2>
+            <p class="text-page-bg max-w-3xl mx-auto text-lg">Nicht ein einzelnes Tool entscheidet über das Ergebnis, sondern die Verbindung aus Marktverständnis, persönlicher Betreuung und sauber strukturierten Prozessen.</p>
+        </div>
 
-<section id="kurzvorstellung" class="container mx-auto px-4 py-16">
-    <div class="bg-primary rounded-lg shadow-2xl p-8 md:p-12 text-left mt-4 sm:mt-8 md:-mt-32 relative z-10">
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start">
-
-            <div class="md:col-span-1 order-first md:order-none flex items-center justify-center h-full">
-                <div class="h-full w-full max-h-64 flex items-center justify-center">
-                    <img src="images/logogold.png" alt="Fischer & Geserich Logo" class="w-auto h-full object-contain" style="max-height: 200px;">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-7xl mx-auto mb-12">
+            <article class="fg-trust-card fg-reveal"><i class="fas fa-chart-area"></i><h3>Datenbasierte Marktanalysen</h3><p>Wir ordnen Markt, Lage und Objekt realistisch ein – ohne künstliche Wertversprechen.</p></article>
+            <article class="fg-trust-card fg-reveal"><i class="fas fa-user-check"></i><h3>Persönliche Betreuung</h3><p>Direkte Ansprechpartner und nachvollziehbare Entscheidungen statt standardisierter Abfertigung.</p></article>
+            <article class="fg-trust-card fg-reveal"><i class="fas fa-link"></i><h3>Finanzierung &amp; Verkauf</h3><p>Wir denken Käuferseite, Finanzierbarkeit und Vermarktung gemeinsam – wenn es für den Auftrag sinnvoll ist.</p></article>
+            <article class="fg-trust-card fg-reveal"><i class="fas fa-network-wired"></i><h3>Deutschlandweites Netzwerk</h3><p>Zugang zu Finanzierungspartnern, Investoren und spezialisierten Kooperationspartnern.</p></article>
+        </div>
+        <div class="fg-network-showcase fg-reveal">
+            <div class="fg-network-visual">
+                <div class="fg-network-frame" aria-hidden="true"></div>
+                <img src="/images/webp/openart-image_1786467722990_e8ffe876_1786467723103_6cb183a4.png" alt="Lennart Geserich und Timon Fischer von Fischer & Geserich Real Estate" loading="lazy">
+                <div class="fg-network-visual-copy">
+                    <span>Persönlich verbunden</span>
+                    <strong>Ein Netzwerk, das Expertise sinnvoll ergänzt.</strong>
                 </div>
             </div>
-
-            <div class="md:col-span-2">
-                <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gold-gradient leading-tight">
-                    Immobilien-Entscheidungen aus Perspektive und Konsequenz
-                </h2>
-
-                <h3 class="text-xl md:text-2xl font-semibold text-accent mb-4">
-                    Persönliche Beratung statt standardisierter Vermittlung
-                </h3>
-
-                <p class="text-lg mb-4 text-page-bg">
-                    Wir unterstützen Eigentümer, Käufer und Investoren bei der Immobilienvermittlung, dem Immobilienverkauf und der passenden Immobilienfinanzierung.
-                    Für uns beginnt jede Zusammenarbeit nicht mit einem Exposé oder einer Kalkulation, sondern mit einem <b>persönlichen Gespräch</b>: Ihnen zuhören, Sie verstehen und Ihre Situation einordnen.
-                </p>
-
-                <h3 class="text-xl md:text-2xl font-semibold text-accent mb-4">
-                    Marktanalysen mit Substanz und Realitätssinn
-                </h3>
-
-                <p class="text-lg mb-4 text-page-bg">
-                    Als inhabergeführtes Immobilienunternehmen arbeiten wir nah am Markt und nah an unseren Kunden. Wir arbeiten nicht mit überzogenen Wertversprechen, die später relativiert werden müssen. Stattdessen erstellen wir Immobilienbewertungen auf Basis <b>realer Marktdaten</b>, führen fundierte Markt- und Standortanalysen durch und entwickeln – sofern sinnvoll – individuelle Finanzierungskonzepte.
-                </p>
-
-                <h3 class="text-xl md:text-2xl font-semibold text-accent mb-4">
-                    Strukturierte Begleitung mit langfristigem Fokus
-                </h3>
-
-                <p class="text-lg mb-4 text-page-bg">
-                    Wir strukturieren den gesamten Prozess, erklären Zusammenhänge verständlich und begleiten Sie Schritt für Schritt. Unser Handeln ist <b>altrozentrisch</b>: Wir stellen nicht unsere eigenen Interessen in den Mittelpunkt, sondern Ihre.
-                </p>
-
-                <p class="text-lg italic text-gold-gradient font-semibold">
-                    Vertrauen, Fleiß und Gründlichkeit sind die Grundlagen jeder erfolgreichen Empfehlung.
-                </p>
+            <div class="fg-network-panel">
+                <p class="fg-section-kicker fg-section-kicker-light">Unser Netzwerk</p>
+                <h3>Die passenden Spezialisten, wenn sie gebraucht werden.</h3>
+                <p>Wir bündeln ergänzende Kompetenz aus Ankaufsberatung, Finanzierung, Versicherung und Immobilienexpertise – mit klaren Zuständigkeiten und kurzen Wegen.</p>
+                <div class="fg-network-partners">
+                    <a href="https://immovisory.de/" target="_blank" rel="noopener" class="fg-network-partner">
+                        <span class="fg-network-logo"><img src="/images/Logos/immovisory.png" alt="Immovisory"></span>
+                        <span><strong>Immovisory</strong><small>Ankaufs- &amp; Finanzierungsberatung</small></span><i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a href="https://vertretung.allianz.de/peter.csaszar/" target="_blank" rel="noopener" class="fg-network-partner">
+                        <span class="fg-network-logo"><img src="/images/Logos/allianz.png" alt="Allianz Peter Csaszar"></span>
+                        <span><strong>Peter Csaszar</strong><small>Versicherung &amp; Absicherung</small></span><i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a href="https://geserich-immobilien.de/" target="_blank" rel="noopener" class="fg-network-partner">
+                        <span class="fg-network-logo"><img src="/images/Logos/geserich1.png" alt="Geserich Immobilien"></span>
+                        <span><strong>Geserich Immobilien</strong><small>Immobilienexpertise &amp; Netzwerk</small></span><i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<div class="hidden lg:block">
-    {% include "landingpage-lead.njk" %}
-</div>
+<section id="arbeitsweise" class="container mx-auto px-4 py-16 md:py-24">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12 fg-reveal">
+            <p class="fg-section-kicker">Orientierung statt Umwege</p>
+            <h2 class="text-3xl md:text-5xl font-bold text-primary mb-4">So arbeiten wir</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto">Jeder Bereich hat seinen eigenen Prozess. Das Grundprinzip bleibt gleich: erst verstehen, dann strukturieren, anschließend konsequent umsetzen.</p>
+        </div>
+        <div class="fg-workflow-grid">
+            <article class="fg-workflow-card fg-reveal"><span>01</span><i class="fas fa-comments"></i><h3>Ziel verstehen</h3><p>Wir klären Ihre Ausgangslage, Prioritäten und den tatsächlichen Entscheidungsbedarf.</p></article>
+            <article class="fg-workflow-card fg-reveal"><span>02</span><i class="fas fa-compass-drafting"></i><h3>Strategie entwickeln</h3><p>Markt, Objekt, Finanzierung und nächste Schritte werden in eine klare Reihenfolge gebracht.</p></article>
+            <article class="fg-workflow-card fg-reveal"><span>03</span><i class="fas fa-route"></i><h3>Konsequent begleiten</h3><p>Sie wissen jederzeit, wo der Prozess steht, was als Nächstes passiert und wer verantwortlich ist.</p></article>
+        </div>
+    </div>
+</section>
 
-<section id="leistungen" class="container mx-auto px-4 py-16">
-    <div class="bg-white rounded-xl shadow-xl p-8">
-        <h2 class="text-3xl font-bold text-center mb-10 text-primary">
-            Unsere Kernleistungen
-        </h2>
+<section id="leistungen" class="container mx-auto px-4 py-16 md:py-24">
+    <div class="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl p-6 md:p-10 lg:p-12 fg-reveal">
+        <div class="text-center max-w-4xl mx-auto mb-12">
+            <p class="fg-section-kicker">Unsere Haltung &amp; Leistungen</p>
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 text-primary">Immobilien-Entscheidungen aus Perspektive und Konsequenz</h2>
+            <p class="text-gray-700 text-lg">Die wichtigsten Punkte auf einen Blick. Wer tiefer einsteigen möchte, kann die vollständigen Erläuterungen direkt aufklappen.</p>
+        </div>
 
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+            <details class="fg-content-card">
+                <summary><span class="fg-content-icon"><i class="fas fa-user-group"></i></span><span><strong>Persönliche Beratung</strong><small>Erst verstehen, dann empfehlen.</small></span><i class="fas fa-chevron-down"></i></summary>
+                <div class="fg-content-body"><p>Wir unterstützen Eigentümer, Käufer und Investoren bei der Immobilienvermittlung, dem Immobilienverkauf und der passenden Immobilienfinanzierung. Für uns beginnt jede Zusammenarbeit nicht mit einem Exposé oder einer Kalkulation, sondern mit einem <b>persönlichen Gespräch</b>: Ihnen zuhören, Sie verstehen und Ihre Situation einordnen.</p></div>
+            </details>
+            <details class="fg-content-card">
+                <summary><span class="fg-content-icon"><i class="fas fa-chart-simple"></i></span><span><strong>Marktanalyse</strong><small>Substanz und Realitätssinn.</small></span><i class="fas fa-chevron-down"></i></summary>
+                <div class="fg-content-body"><p>Als inhabergeführtes Immobilienunternehmen arbeiten wir nah am Markt und nah an unseren Kunden. Wir arbeiten nicht mit überzogenen Wertversprechen, die später relativiert werden müssen. Stattdessen erstellen wir Immobilienbewertungen auf Basis <b>realer Marktdaten</b>, führen fundierte Markt- und Standortanalysen durch und entwickeln – sofern sinnvoll – individuelle Finanzierungskonzepte.</p></div>
+            </details>
+            <details class="fg-content-card">
+                <summary><span class="fg-content-icon"><i class="fas fa-road"></i></span><span><strong>Strukturierte Begleitung</strong><small>Zusammenhänge verständlich machen.</small></span><i class="fas fa-chevron-down"></i></summary>
+                <div class="fg-content-body"><p>Wir strukturieren den gesamten Prozess, erklären Zusammenhänge verständlich und begleiten Sie Schritt für Schritt. Unser Handeln ist <b>altrozentrisch</b>: Wir stellen nicht unsere eigenen Interessen in den Mittelpunkt, sondern Ihre.</p></div>
+            </details>
+        </div>
+
+        <p class="text-center text-lg italic text-primary font-semibold mb-12">Vertrauen, Fleiß und Gründlichkeit sind die Grundlagen jeder erfolgreichen Empfehlung.</p>
+
+        <h3 class="text-2xl md:text-3xl font-bold text-center mb-8 text-primary">Unsere Kernleistungen</h3>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div class="bg-gray-100 rounded-lg shadow-lg p-6 text-center hover:shadow-primary transition duration-300">
-                <i class="fas fa-chart-line text-5xl text-gold-gradient with-shadow mb-4"></i>
-                <h3 class="text-xl font-semibold mb-2 text-primary">Vertrieb & Maklergeschäft</h3>
-                <p class="text-gray-600 text-sm">Professionelle Vermarktung Ihrer Immobilie zum Bestpreis. Wir finden den passenden Käufer.</p>
-            </div>
-
-            <div class="bg-gray-100 rounded-lg shadow-lg p-6 text-center hover:shadow-primary transition duration-300">
-                <i class="fas fa-handshake text-5xl text-gold-gradient with-shadow mb-4"></i>
-                <h3 class="text-xl font-semibold mb-2 text-primary">Ankaufsberatung</h3>
-                <p class="text-gray-600 text-sm">Ganzheitliche Beratung bei Ihrem Immobilienkauf in Partnerschaft mit Immovisory.</p>
-            </div>
-
-            <div class="bg-gray-100 rounded-lg shadow-lg p-6 text-center hover:shadow-primary transition duration-300">
-                <i class="fas fa-euro-sign text-5xl text-gold-gradient with-shadow mb-4"></i>
-                <h3 class="text-xl font-semibold mb-2 text-primary">Finanzierung</h3>
-                <p class="text-gray-600 text-sm">Unabhängige Vermittlung optimaler Finanzierungslösungen – deutschlandweit.</p>
-            </div>
+            <a href="/verkaufen.html" class="fg-service-card"><i class="fas fa-chart-line"></i><h4>Vertrieb &amp; Maklergeschäft</h4><p>Professionelle Vermarktung Ihrer Immobilie zum Bestpreis. Wir finden den passenden Käufer.</p><span>Zum Verkauf <i class="fas fa-arrow-right"></i></span></a>
+            <a href="/ankaufsberatung.html" class="fg-service-card"><i class="fas fa-handshake"></i><h4>Ankaufsberatung</h4><p>Ganzheitliche Beratung bei Ihrem Immobilienkauf in Partnerschaft mit Immovisory.</p><span>Zum Ankauf <i class="fas fa-arrow-right"></i></span></a>
+            <a href="/finanzierungsberatung.html" class="fg-service-card"><i class="fas fa-euro-sign"></i><h4>Finanzierung</h4><p>Unabhängige Vermittlung optimaler Finanzierungslösungen – deutschlandweit.</p><span>Zur Finanzierung <i class="fas fa-arrow-right"></i></span></a>
         </div>
     </div>
 </section>
@@ -133,17 +193,7 @@ ogDescription: "Persönliche Immobilienberatung für Eigentümer, Käufer und In
     {% if propstack.properties and propstack.properties.length %}
     <div class="relative max-w-5xl mx-auto">
 
-        {% if propstack.properties.length > 3 %}
-        <button type="button" id="home-slider-prev" class="hidden md:flex absolute -left-16 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-white/90 shadow-xl items-center justify-center text-primary hover:bg-primary hover:text-white transition">
-            <i class="fas fa-chevron-left text-xl"></i>
-        </button>
-
-        <button type="button" id="home-slider-next" class="hidden md:flex absolute -right-16 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-white/90 shadow-xl items-center justify-center text-primary hover:bg-primary hover:text-white transition">
-            <i class="fas fa-chevron-right text-xl"></i>
-        </button>
-        {% endif %}
-
-        <div id="home-property-slider" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div id="home-property-slider" class="home-property-slider grid grid-cols-1 md:grid-cols-3 gap-8">
             {% for property in propstack.properties %}
             {% if loop.index <= 9 %}
             <div class="home-property-card bg-white rounded-lg shadow-xl overflow-hidden transition duration-300 hover:shadow-2xl hover:-translate-y-1 {% if loop.index > 3 %}hidden{% endif %}" data-home-property-index="{{ loop.index0 }}">
@@ -206,6 +256,13 @@ ogDescription: "Persönliche Immobilienberatung für Eigentümer, Käufer und In
             {% endif %}
             {% endfor %}
         </div>
+        {% if propstack.properties.length > 3 %}
+        <div class="fg-home-slider-controls" aria-label="Immobilien-Highlights durchblättern">
+            <button type="button" id="home-slider-prev" class="fg-slider-arrow" aria-label="Vorherige Immobilien"><i class="fas fa-arrow-left"></i></button>
+            <span id="home-slider-status" class="fg-slider-status">01 / 09</span>
+            <button type="button" id="home-slider-next" class="fg-slider-arrow" aria-label="Nächste Immobilien"><i class="fas fa-arrow-right"></i></button>
+        </div>
+        {% endif %}
     </div>
     {% else %}
     <div class="text-center py-8">
@@ -214,54 +271,13 @@ ogDescription: "Persönliche Immobilienberatung für Eigentümer, Käufer und In
     {% endif %}
 </section>
 
-
-<section id="partner" class="bg-primary text-white py-16">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-10 text-gold-gradient">
-            Unsere Partner
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <a href="https://immovisory.de/" target="_blank" class="h-full flex flex-col items-center justify-between p-6 bg-white rounded-lg shadow-lg text-primary hover:shadow-accent transition duration-300">
-                <div class="h-16 flex items-center mb-4">
-                    <img src="images/Logos/immovisory.png" alt="Immovisory Logo" class="max-h-full w-auto object-contain">
-                </div>
-                <p class="font-bold">Immovisory</p>
-                <p class="text-sm text-gray-600 italic">Ankaufs- und Finanzierungsberatung</p>
-            </a>
-
-            <a href="https://vertretung.allianz.de/peter.csaszar/" target="_blank" class="h-full flex flex-col items-center justify-between p-6 bg-white rounded-lg shadow-lg text-primary hover:shadow-accent transition duration-300">
-                <div class="h-16 flex items-center mb-4">
-                    <img src="images/Logos/allianz.png" alt="Allianz Peter Csaszar Logo" class="max-h-full w-auto object-contain">
-                </div>
-                <p class="font-bold">Peter Csaszar</p>
-                <p class="text-sm text-gray-600 italic">Versicherungs- und Absicherungslösungen</p>
-            </a>
-
-            <a href="https://geserich-immobilien.de/" target="_blank" class="h-full flex flex-col items-center justify-between p-6 bg-white rounded-lg shadow-lg text-primary hover:shadow-accent transition duration-300">
-                <div class="h-16 flex items-center mb-4">
-                    <img src="images/Logos/geserich1.png" alt="Geserich Immobilien Logo" class="max-h-full w-auto object-contain">
-                </div>
-                <p class="font-bold">Geserich Immobilien</p>
-                <p class="text-sm text-gray-600 italic">Traditionelle Immobilienexpertise</p>
-            </a>
-
-            <a href="https://www.uwe-fenner-stil.de/" target="_blank" class="h-full flex flex-col items-center justify-between p-6 bg-white rounded-lg shadow-lg text-primary hover:shadow-accent transition duration-300">
-                <div class="h-16 flex items-center mb-4">
-                    <img src="images/Logos/uwefenner.png" alt="Uwe Fenner Logo" class="max-h-full w-auto object-contain">
-                </div>
-                <p class="font-bold">Uwe Fenner</p>
-                <p class="text-sm text-gray-600 italic">Stil- und Eticketteseminare</p>
-            </a>
-        </div>
-    </div>
-</section>
-
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const cards = Array.from(document.querySelectorAll(".home-property-card"));
     const prevDesktop = document.getElementById("home-slider-prev");
     const nextDesktop = document.getElementById("home-slider-next");
+    const slider = document.getElementById("home-property-slider");
+    const status = document.getElementById("home-slider-status");
 
     if (!cards.length) return;
 
@@ -274,6 +290,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const isVisible = index >= startIndex && index < startIndex + visibleCount;
             card.classList.toggle("hidden", !isVisible);
         });
+        const visibleNow = cards.filter((card, index) => index >= startIndex && index < Math.min(startIndex + visibleCount, maxCards));
+        slider?.classList.toggle("is-centered", visibleNow.length < 3);
+        if (status) {
+            const first = Math.min(startIndex + 1, maxCards);
+            const last = Math.min(startIndex + visibleCount, maxCards);
+            status.textContent = `${String(first).padStart(2,"0")}–${String(last).padStart(2,"0")} / ${String(maxCards).padStart(2,"0")}`;
+        }
     }
 
     function next() {
@@ -297,3 +320,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<section id="kontakt" class="fg-contact-section py-8 md:py-14">
+    <div class="text-center container mx-auto px-4 mb-2 fg-reveal">
+        <p class="fg-section-kicker">Nächster Schritt</p>
+        <h2 class="text-3xl md:text-5xl font-bold text-primary mb-3">Sprechen wir über Ihr Vorhaben.</h2>
+        <p class="text-gray-700 max-w-2xl mx-auto">Kostenlos, unverbindlich und in wenigen Minuten angefragt. Wir melden uns persönlich bei Ihnen.</p>
+    </div>
+    {% include "landingpage-lead.njk" %}
+</section>
