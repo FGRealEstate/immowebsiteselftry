@@ -1,20 +1,34 @@
----
-layout: base.njk
-title: F&G Investment Lab – Immobilienrechner, Wissen und Standortanalysen
-permalink: investment-lab.html
-description: Kostenlose interaktive Immobilienrechner, fundiertes Immobilienwissen, Standortanalysen und Lexikon von Fischer & Geserich Real Estate.
-canonicalPath: /investment-lab.html
----
-<section class="lab-hero lab-hero-final">
-  <div class="lab-shell lab-hero-centered">
-    <span class="lab-kicker">F&G INVESTMENT LAB</span>
-    <h1>Eine Frage. Der passende nächste Schritt.</h1>
-    <p>Der F&G Navigator verbindet Rechner, Immobilienwissen, Standortanalysen und Lexikon in einem übersichtlichen Arbeitsbereich.</p>
-    <form class="lab-navigator" data-lab-navigator>
-      <label for="lab-global-search">Was möchten Sie über Immobilien wissen oder berechnen?</label>
+<section class="lab-hero lab-hero-final lab-hero-v2">
+  <div class="lab-shell lab-hero-v2-grid">
+    <div class="lab-hero-v2-copy">
+      <span class="lab-kicker">F&amp;G INVESTMENT LAB</span>
+      <h1>Immobilien besser entscheiden.</h1>
+      <p class="lab-hero-lead">Rechnen, einordnen und vergleichen – mit einem Arbeitsbereich für Kapitalanlage, Finanzierung, Standorte und Immobilienwissen.</p>
+      <div class="lab-hero-points" aria-label="Investment Lab Funktionen">
+        <span><i class="fas fa-calculator"></i> Rechner</span>
+        <span><i class="fas fa-book-open"></i> Wissen</span>
+        <span><i class="fas fa-location-dot"></i> Standorte</span>
+        <span><i class="fas fa-spell-check"></i> Lexikon</span>
+      </div>
+    </div>
+
+    <aside class="lab-command-card" aria-label="Schnelleinstieg Investment Lab">
+      <span class="lab-command-label">Direkt einsteigen</span>
+      <h2>Womit möchten Sie starten?</h2>
+      <div class="lab-command-grid">
+        <button type="button" data-lab-jump="tools"><i class="fas fa-chart-line"></i><span><strong>Kapitalanlage prüfen</strong><small>Rendite, Cashflow &amp; Finanzierung</small></span><i class="fas fa-arrow-right"></i></button>
+        <button type="button" data-lab-jump="knowledge"><i class="fas fa-lightbulb"></i><span><strong>Frage verstehen</strong><small>Zusammenhänge kompakt erklärt</small></span><i class="fas fa-arrow-right"></i></button>
+        <button type="button" data-lab-jump="locations"><i class="fas fa-map-location-dot"></i><span><strong>Standort einordnen</strong><small>Mikrolage, Chancen &amp; Risiken</small></span><i class="fas fa-arrow-right"></i></button>
+        <button type="button" data-lab-jump="lexicon"><i class="fas fa-book"></i><span><strong>Begriff nachschlagen</strong><small>Immobilienwissen ohne Umwege</small></span><i class="fas fa-arrow-right"></i></button>
+      </div>
+    </aside>
+
+    <form class="lab-navigator lab-navigator-v2" data-lab-navigator>
+      <label for="lab-global-search">Eine Frage reicht.</label>
+      <p>Beschreiben Sie, was Sie wissen oder berechnen möchten. Wir führen Sie zum passenden Werkzeug.</p>
       <div class="lab-navigator-row">
-        <input id="lab-global-search" type="search" autocomplete="off" placeholder="Zum Beispiel: Wie wirkt sich eine höhere Tilgung auf meine Restschuld aus?" data-global-search>
-        <button type="submit" class="lab-btn lab-btn-gold">Antwort finden</button>
+        <input id="lab-global-search" type="search" autocomplete="off" placeholder="z. B. Wie viel Eigenkapital brauche ich für eine Kapitalanlage?" data-global-search>
+        <button type="submit" class="lab-btn lab-btn-gold"><span>Antwort finden</span><i class="fas fa-arrow-right"></i></button>
       </div>
       <div class="lab-quick-links">
         <button type="button" data-query="Eigenkapitalrendite">Eigenkapitalrendite</button>
@@ -78,5 +92,17 @@ canonicalPath: /investment-lab.html
 
   <section class="lab-cta"><div><span class="lab-kicker">ERGEBNISSE GEMEINSAM EINORDNEN</span><h2>Eine Berechnung zeigt Zusammenhänge. Die Entscheidung braucht Kontext.</h2><p>In der Ankaufsberatung prüfen wir Annahmen, Unterlagen, Finanzierung und Risiken gemeinsam.</p></div><a href="/ankaufsberatung.html" class="lab-btn lab-btn-gold">Ankaufsberatung anfragen</a></section>
 </main>
+<script>
+document.addEventListener('click', function (event) {
+  const trigger = event.target.closest('[data-lab-jump]');
+  if (!trigger) return;
+  const target = trigger.getAttribute('data-lab-jump');
+  const tab = document.querySelector('[data-lab-tab="' + target + '"]');
+  if (tab) {
+    tab.click();
+    document.querySelector('.lab-tabs')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+});
+</script>
 <script>window.FG_LAB_DATA={{ labContent | json | safe }};</script>
 <script src="/investment-lab.js" defer></script>
