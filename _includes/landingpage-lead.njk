@@ -82,8 +82,19 @@
                             Wählen Sie zuerst Ihr Anliegen aus. Danach passen sich die Fragen automatisch an.
                         </p>
 
-                        <div class="mt-6 h-2 bg-gray-100 rounded-full overflow-hidden">
-                            <div class="lead-progress h-full bg-secondary rounded-full transition-all duration-500" style="width: 20%;"></div>
+                        <div class="lead-form-meta mt-5">
+                            <span><i class="fas fa-clock"></i> ca. 2 Minuten</span>
+                            <span><i class="fas fa-shield-heart"></i> kostenlos &amp; unverbindlich</span>
+                        </div>
+
+                        <div class="mt-5">
+                            <div class="flex items-center justify-between gap-3 mb-2 text-xs font-semibold text-gray-500">
+                                <span class="lead-step-label">Schritt 1 von 6</span>
+                                <span>Persönlich geprüft</span>
+                            </div>
+                            <div class="h-2 bg-gray-100 rounded-full overflow-hidden" role="progressbar" aria-valuemin="1" aria-valuemax="6" aria-valuenow="1">
+                                <div class="lead-progress h-full bg-secondary rounded-full transition-all duration-500" style="width: 16.67%;"></div>
+                            </div>
                         </div>
                     </div>
 
@@ -290,6 +301,8 @@
         const title = widget.querySelector(".lead-title");
         const subtitle = widget.querySelector(".lead-subtitle");
         const progress = widget.querySelector(".lead-progress");
+        const progressBar = progress?.parentElement;
+        const stepLabel = widget.querySelector(".lead-step-label");
         const back = widget.querySelector(".lead-back");
         const next = widget.querySelector(".lead-next");
         const submit = widget.querySelector(".lead-submit");
@@ -364,6 +377,8 @@
             title.textContent = t[0];
             subtitle.textContent = t[1];
             progress.style.width = (step / 6 * 100) + "%";
+            if (stepLabel) stepLabel.textContent = `Schritt ${step} von 6`;
+            if (progressBar) progressBar.setAttribute("aria-valuenow", String(step));
 
             back.classList.toggle("hidden", step === 1);
             next.classList.toggle("hidden", step === 6 || step === 2);

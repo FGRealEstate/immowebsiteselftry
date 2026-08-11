@@ -203,8 +203,9 @@ async function fetchProject(id) {
   const apiKey = process.env.PROPSTACK_API_KEY;
   if (!apiKey || !id) return null;
   const custom = process.env.PROPSTACK_PROJECTS_API_URL;
-  const endpoints = custom
-    ? [`${custom.replace(/\/$/, "")}/${encodeURIComponent(id)}?expand=1`]
+  const customBase = custom ? custom.replace(/\?.*$/, "").replace(/\/$/, "") : null;
+  const endpoints = customBase
+    ? [`${customBase}/${encodeURIComponent(id)}?expand=1`]
     : [
         `${baseUrl()}/projects/${encodeURIComponent(id)}?expand=1`,
         `${baseUrl()}/property_projects/${encodeURIComponent(id)}?expand=1`,
