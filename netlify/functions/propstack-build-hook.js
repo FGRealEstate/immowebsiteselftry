@@ -10,7 +10,8 @@
  *    zu einem einzigen Netlify-Build zusammengefasst.
  *
  * Erforderliche Environment Variables:
- * - NETLIFY_BUILD_HOOK_URL
+ * - NETLIFY_BUILD_HOOK_URL (für Einheiten/Properties)
+ * - NETLIFY_PROJECT_BUILD_HOOK_URL (für Projekte)
  * - PROPSTACK_API_KEY
  *
  * Optional:
@@ -294,8 +295,17 @@ async function triggerBuildOnce(store, details) {
     };
   }
 
-  const url = process.env.NETLIFY_BUILD_HOOK_URL;
-  if (!url) throw new Error("NETLIFY_BUILD_HOOK_URL fehlt.");
+  const url = details?.entityType === "project"
+    ? process.env.NETLIFY_PROJECT_BUILD_HOOK_URL
+    : process.env.NETLIFY_BUILD_HOOK_URL;
+
+  if (!url) {
+    throw new Error(
+      details?.entityType === "project"
+        ? "NETLIFY_PROJECT_BUILD_HOOK_URL fehlt."
+        : "NETLIFY_BUILD_HOOK_URL fehlt."
+    );
+  }
 
   // Vor dem Request speichern, damit nahezu gleichzeitige Events abgefangen werden.
   await writeState(store, "global/last-build", { timestamp: now, details });
