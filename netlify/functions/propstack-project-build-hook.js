@@ -1,16 +1,18 @@
 /*
- * Dedizierter Propstack -> Netlify Webhook für PROJEKTE.
+ * Dedizierter Propstack -> Netlify Webhook fuer PROJEKTE.
  *
- * In Propstack diesen Endpoint für Projekt-Events hinterlegen:
+ * Propstack Ziel-URL:
  * https://fg-realestate.de/.netlify/functions/propstack-project-build-hook
  *
- * Die eigentliche Build-/Statuslogik bleibt zentral in propstack-build-hook.js.
- * Dieser Wrapper erzwingt lediglich entity_type="project", damit ein Projekt-
- * Event niemals versehentlich als Einheit interpretiert wird.
+ * Dieser Endpoint ist absichtlich schlank: Bei einem Project-Event wird direkt
+ * der separate Netlify Build Hook fuer Projekte ausgeloest. Dadurch ist die
+ * Projekt-Aktualisierung unabhaengig von @netlify/blobs und von der Property-Logik.
+ *
+ * Erforderliche Environment Variable:
+ * - NETLIFY_PROJECT_BUILD_HOOK_URL
  */
-const shared = require("./propstack-build-hook");
 
-function response(statusCode, body) {
+function jsonResponse(statusCode, body) {
   return {
     statusCode,
     headers: { "Content-Type": "application/json; charset=utf-8" },
@@ -18,22 +20,55 @@ function response(statusCode, body) {
   };
 }
 
-exports.handler = async function projectBuildHook(event, context) {
+exports.handler = async function projectBuildHook(event) {
   if (!["POST", "GET"].includes(event.httpMethod)) {
-    return response(405, { ok: false, error: "Method Not Allowed" });
+    return jsonResponse(405, { ok: false, error: "Method Not Allowed" });
+  }
+
+  // GET dient nur als Health-Check im Browser und loest KEINEN Build aus.
+  if (event.httpMethod === "GET") {
+    return jsonResponse(200, {
+      ok: true,
+      ready: true,
+      webhook: "propstack-project-build-hook",
+      buildHookConfigured: Boolean(process.env.NETLIFY_PROJECT_BUILD_HOOK_URL)
+    });
+  }
+
+  let payload = {};
+  try {
+    payload = event.body ? JSON.parse(event.body) : {};
+  } catch {
+    return jsonResponse(400, { ok: false, error: "Invalid JSON payload" });
+  }
+
+  const buildHookUrl = process.env.NETLIFY_PROJECT_BUILD_HOOK_URL;
+  if (!buildHookUrl) {
+    return jsonResponse(500, { ok: false, error: "NETLIFY_PROJECT_BUILD_HOOK_URL fehlt." });
   }
 
   try {
-    if (event.httpMethod === "POST") {
-      const payload = event.body ? JSON.parse(event.body) : {};
-      const forcedPayload = { ...payload, entity_type: "project", fg_webhook_source: "project" };
-      return shared.handler({ ...event, body: JSON.stringify(forcedPayload) }, context);
+    const response = await fetch(buildHookUrl, { method: "POST" });
+    if (!response.ok) {
+      return jsonResponse(502, {
+        ok: false,
+        error: `Netlify Project Build Hook antwortete mit Status ${response.status}.`
+      });
     }
 
-    const query = { ...(event.queryStringParameters || {}), entity_type: "project", fg_webhook_source: "project" };
-    return shared.handler({ ...event, queryStringParameters: query }, context);
+    console.log("Propstack Project Build ausgelöst", {
+      netlifyStatus: response.status,
+      eventType: payload.event || payload.event_type || payload.type || null,
+      projectId: payload.project_id || payload.projectId || payload.id || payload.data?.id || null
+    });
+
+    return jsonResponse(200, {
+      ok: true,
+      triggered: true,
+      netlifyStatus: response.status
+    });
   } catch (error) {
-    console.error("Project webhook wrapper error:", error);
-    return response(400, { ok: false, error: "Invalid project webhook payload" });
+    console.error("Project Build Hook Fehler:", error);
+    return jsonResponse(500, { ok: false, error: error.message });
   }
 };

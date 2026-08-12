@@ -18,11 +18,9 @@
  * - PROPSTACK_API_BASE=https://api.propstack.de/v1
  * - PROPSTACK_PUBLIC_STATUS_KEYWORDS=vermarktung
  * - PROPSTACK_PUBLIC_PROJECT_STATUS_KEYWORDS=vermarktung,im angebot
- * - PROPSTACK_BUILD_DEBOUNCE_SECONDS=60
  */
 
 const DEFAULT_PROPSTACK_BASE_URL = "https://api.propstack.de/v1";
-const STORE_NAME = "propstack-build-state";
 
 function normalizeText(input) {
   return String(input || "")
@@ -265,36 +263,7 @@ function debounceSeconds() {
   return Number.isFinite(value) && value >= 0 ? value : 60;
 }
 
-async function readState(store, key) {
-  try {
-    return await store.get(key, { type: "json", consistency: "strong" });
-  } catch (error) {
-    console.warn("Build-State konnte nicht gelesen werden:", key, error.message);
-    return null;
-  }
-}
-
-async function writeState(store, key, value) {
-  try {
-    await store.setJSON(key, value);
-  } catch (error) {
-    console.warn("Build-State konnte nicht gespeichert werden:", key, error.message);
-  }
-}
-
-async function triggerBuildOnce(store, details) {
-  const now = Date.now();
-  const last = await readState(store, "global/last-build");
-  const minDistance = debounceSeconds() * 1000;
-
-  if (last?.timestamp && now - Number(last.timestamp) < minDistance) {
-    return {
-      triggered: false,
-      debounced: true,
-      secondsSinceLastBuild: Math.round((now - Number(last.timestamp)) / 1000)
-    };
-  }
-
+async function triggerBuild(details) {
   const url = details?.entityType === "project"
     ? process.env.NETLIFY_PROJECT_BUILD_HOOK_URL
     : process.env.NETLIFY_BUILD_HOOK_URL;
@@ -307,17 +276,12 @@ async function triggerBuildOnce(store, details) {
     );
   }
 
-  // Vor dem Request speichern, damit nahezu gleichzeitige Events abgefangen werden.
-  await writeState(store, "global/last-build", { timestamp: now, details });
-
   const response = await fetch(url, { method: "POST" });
   if (!response.ok) {
-    // Bei Fehler Sperre entfernen, damit erneut versucht werden kann.
-    try { await store.delete("global/last-build"); } catch {}
     throw new Error(`Netlify Build Hook antwortete mit Status ${response.status}.`);
   }
 
-  return { triggered: true, debounced: false, netlifyStatus: response.status };
+  return { triggered: true, netlifyStatus: response.status };
 }
 
 function jsonResponse(statusCode, body) {
@@ -342,9 +306,6 @@ exports.handler = async function handler(event) {
     return jsonResponse(400, { ok: false, error: "Invalid JSON payload" });
   }
 
-  const { connectLambda, getStore } = await import("@netlify/blobs");
-  connectLambda(event);
-  const store = getStore({ name: STORE_NAME, consistency: "strong" });
   const entity = await resolveEntity(payload);
   const payloadStatus = findStatus(payload);
   const previousPayloadStatus = findPreviousStatus(payload);
@@ -404,20 +365,9 @@ exports.handler = async function handler(event) {
     }
   }
 
-  const stateKey = `entity/${entity.type}/${entity.id}`;
-  const previousState = await readState(store, stateKey);
-  const previousVisibleFromPayload = previousPayloadStatus
+  const previousVisible = previousPayloadStatus
     ? isPublicStatus(previousPayloadStatus, entity.type === "project" ? "project" : "unit")
     : null;
-  const previousVisible = previousState?.visible ?? previousVisibleFromPayload;
-
-  await writeState(store, stateKey, {
-    visible: currentVisible,
-    ownStatus: ownStatus || null,
-    projectId,
-    projectStatus: projectStatus || null,
-    updatedAt: new Date().toISOString()
-  });
 
   let buildRequired = false;
   let buildReason = reason;
@@ -461,7 +411,7 @@ exports.handler = async function handler(event) {
   }
 
   try {
-    const trigger = await triggerBuildOnce(store, {
+    const trigger = await triggerBuild({
       entityType: entity.type,
       entityId: entity.id,
       ownStatus,
@@ -474,10 +424,8 @@ exports.handler = async function handler(event) {
 
     return jsonResponse(200, {
       ok: true,
-      skipped: !trigger.triggered,
-      reason: trigger.debounced
-        ? `Build-relevante Änderung erkannt, aber mit einem bereits laufenden/gerade ausgelösten Build zusammengefasst.`
-        : buildReason,
+      skipped: false,
+      reason: buildReason,
       entityType: entity.type,
       entityId: entity.id,
       ownStatus: ownStatus || null,
