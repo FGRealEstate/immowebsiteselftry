@@ -26,7 +26,7 @@ ogDescription: "Verkauf, Ankaufsberatung und Immobilienfinanzierung aus einer Ha
                 Wir verbinden <strong>Vermarktung, Ankaufsberatung und Finanzierung</strong> zu einer Beratung, die Ihre Entscheidung wirtschaftlich einordnet und persönlich begleitet.
             </p>
             <div class="fg-home-v2-hero-actions">
-                <a href="#kontakt" class="btn-85 fg-home-v2-primary-cta">Vorhaben besprechen <i class="fas fa-arrow-right"></i></a>
+                <a href="/kontakt.html" class="btn-85 fg-home-v2-primary-cta">Vorhaben besprechen <i class="fas fa-arrow-right"></i></a>
                 <a href="/verkaufen.html" class="fg-home-v2-secondary-cta">Immobilie verkaufen <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
@@ -148,7 +148,7 @@ ogDescription: "Verkauf, Ankaufsberatung und Immobilienfinanzierung aus einer Ha
                 </div>
                 <div class="fg-home-v2-inline-actions">
                     <a href="/verkaufen.html" class="btn-85 fg-home-v2-primary-cta">Verkaufsberatung ansehen <i class="fas fa-arrow-right"></i></a>
-                    <a href="#kontakt" class="fg-home-v2-inline-link">Bewertung anfragen</a>
+                    <a href="/verkaufen.html#kontakt-verkauf" class="fg-home-v2-inline-link">Bewertung anfragen</a>
                 </div>
             </div>
             <div class="fg-home-v2-market-card fg-reveal">
@@ -281,7 +281,7 @@ ogDescription: "Verkauf, Ankaufsberatung und Immobilienfinanzierung aus einer Ha
             <article class="fg-reveal"><span>Dresden</span><h3>Wohn- und Anlageimmobilien mit Substanz.</h3><p>Eigentumswohnungen, aufgeteilte Bestände und Investmentobjekte mit Fokus auf nachhaltige Vermietbarkeit und Standortqualität.</p></article>
             <article class="fg-reveal"><span>Berliner Speckgürtel</span><h3>Umland mit direkter Verbindung zur Hauptstadt.</h3><p>Wohnimmobilien und Investmentobjekte in Standorten, deren Nachfrage und Entwicklung wirtschaftlich eng mit Berlin verbunden sind.</p></article>
         </div>
-        <div class="fg-home-v2-region-footer fg-reveal"><p><strong>Deutschlandweit:</strong> Je nach Immobilienart und Transaktionsvolumen prüfen wir auch Mandate außerhalb unserer Kernmärkte.</p><a href="#kontakt">Vorhaben einordnen <i class="fas fa-arrow-right"></i></a></div>
+        <div class="fg-home-v2-region-footer fg-reveal"><p><strong>Deutschlandweit:</strong> Je nach Immobilienart und Transaktionsvolumen prüfen wir auch Mandate außerhalb unserer Kernmärkte.</p><a href="/kontakt.html">Vorhaben einordnen <i class="fas fa-arrow-right"></i></a></div>
     </div>
 </section>
 
@@ -342,7 +342,31 @@ ogDescription: "Verkauf, Ankaufsberatung und Immobilienfinanzierung aus einer Ha
                 <p class="fg-home-v2-kicker">Kurz beantwortet</p>
                 <h2>Was Sie vor dem nächsten Schritt wissen sollten.</h2>
                 <p>Die wichtigsten Fragen zu Verkauf, Ankauf und Finanzierung. Für die konkrete Einordnung Ihres Vorhabens sprechen wir anschließend persönlich.</p>
-                <a href="#kontakt" class="fg-home-v2-outline-button">Eigene Frage stellen <i class="fas fa-arrow-right"></i></a>
+                <button type="button" class="fg-home-v2-outline-button fg-faq-question-toggle" data-faq-question-toggle aria-expanded="false" aria-controls="faq-question-panel">
+                    Eigene Frage stellen <i class="fas fa-arrow-right"></i>
+                </button>
+                <div class="fg-faq-question-panel" id="faq-question-panel" hidden>
+                    <div class="fg-faq-question-head">
+                        <span>Direkt an F&amp;G</span>
+                        <h3>Welche Frage ist noch offen?</h3>
+                        <p>Ihre Nachricht wird direkt an <strong>info@fg-realestate.de</strong> gesendet. Wir antworten persönlich.</p>
+                    </div>
+                    <form data-faq-question-form novalidate>
+                        <div class="fg-faq-question-grid">
+                            <label><span>Name *</span><input name="name" required autocomplete="name"></label>
+                            <label><span>E-Mail *</span><input name="email" type="email" required autocomplete="email"></label>
+                        </div>
+                        <label><span>Telefon</span><input name="phone" type="tel" autocomplete="tel" placeholder="optional"></label>
+                        <label><span>Ihre Frage *</span><textarea name="question" required rows="5" maxlength="5000" placeholder="Schildern Sie uns kurz Ihre Frage."></textarea></label>
+                        <label class="fg-faq-question-hp" aria-hidden="true"><span>Website</span><input name="company_website" tabindex="-1" autocomplete="off"></label>
+                        <label class="fg-faq-question-consent">
+                            <input type="checkbox" name="privacy_consent" value="true" required>
+                            <span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span>
+                        </label>
+                        <div class="fg-faq-question-status" data-faq-question-status hidden></div>
+                        <button type="submit" class="btn-85 fg-faq-question-submit">Frage senden <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
             </div>
             <div class="fg-home-v2-faq-list fg-reveal">
                 <details open><summary>Wie startet eine Zusammenarbeit mit Fischer &amp; Geserich?<i class="fas fa-plus"></i></summary><p>Mit einem unverbindlichen Gespräch. Wir klären zunächst Ihr Ziel, die Ausgangslage und welche Leistung tatsächlich sinnvoll ist. Erst danach schlagen wir die nächsten Schritte vor.</p></details>
@@ -355,7 +379,7 @@ ogDescription: "Verkauf, Ankaufsberatung und Immobilienfinanzierung aus einer Ha
     </div>
 </section>
 
-<section id="kontakt" class="fg-home-v2-section fg-home-v2-contact">
+<section id="vorhaben" class="fg-home-v2-section fg-home-v2-contact">
   <div class="container mx-auto px-4">
     <div class="fg-home-v2-head fg-reveal"><p class="fg-home-v2-kicker">Ihr nächster Schritt</p><h2>Welches Vorhaben möchten Sie starten?</h2><p>Jedes Anliegen hat eine eigene Strecke. So landen Sie direkt bei den Fragen und Informationen, die für Ihr Vorhaben relevant sind.</p></div>
     <div class="fg-journey-selector fg-reveal">
@@ -365,7 +389,6 @@ ogDescription: "Verkauf, Ankaufsberatung und Immobilienfinanzierung aus einer Ha
       <a href="/vermieten.html"><i class="fas fa-building-user"></i><span><strong>Immobilie vermieten</strong><small>Mietpreis &amp; Interessentenauswahl</small></span><i class="fas fa-arrow-right"></i></a>
       <a href="/finanzierungsberatung.html"><i class="fas fa-building-columns"></i><span><strong>Finanzierung</strong><small>Finanzierungsrahmen &amp; Bankvergleich</small></span><i class="fas fa-arrow-right"></i></a>
     </div>
-    <div class="text-center mt-8"><button type="button" class="fg-home-v2-outline-button" data-open-question>Allgemeine Frage stellen <i class="fas fa-message"></i></button></div>
   </div>
 </section>
 
@@ -420,6 +443,77 @@ document.addEventListener("DOMContentLoaded", function () {
                 icon.classList.toggle("fa-minus", detail.open);
             }
         });
+    });
+
+    const faqQuestionToggle = document.querySelector("[data-faq-question-toggle]");
+    const faqQuestionPanel = document.getElementById("faq-question-panel");
+    const faqQuestionForm = document.querySelector("[data-faq-question-form]");
+    const faqQuestionStatus = document.querySelector("[data-faq-question-status]");
+
+    faqQuestionToggle?.addEventListener("click", function () {
+        if (!faqQuestionPanel) return;
+        const willOpen = faqQuestionPanel.hidden;
+        faqQuestionPanel.hidden = !willOpen;
+        faqQuestionToggle.setAttribute("aria-expanded", String(willOpen));
+        faqQuestionToggle.classList.toggle("is-open", willOpen);
+        const icon = faqQuestionToggle.querySelector("i");
+        if (icon) {
+            icon.classList.toggle("fa-arrow-right", !willOpen);
+            icon.classList.toggle("fa-xmark", willOpen);
+        }
+        if (willOpen) {
+            requestAnimationFrame(function () {
+                faqQuestionPanel.querySelector('input[name="name"]')?.focus({ preventScroll: true });
+            });
+        }
+    });
+
+    faqQuestionForm?.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        if (!faqQuestionForm.reportValidity()) return;
+
+        const submit = faqQuestionForm.querySelector('button[type="submit"]');
+        const original = submit.innerHTML;
+        submit.disabled = true;
+        submit.textContent = "Wird gesendet …";
+        if (faqQuestionStatus) faqQuestionStatus.hidden = true;
+
+        const fd = new FormData(faqQuestionForm);
+        const payload = {
+            name: fd.get("name"),
+            email: fd.get("email"),
+            phone: fd.get("phone"),
+            question: fd.get("question"),
+            company_website: fd.get("company_website"),
+            privacy_consent: fd.get("privacy_consent") === "true",
+            source_url: location.href + "#faq"
+        };
+
+        try {
+            const response = await fetch("/.netlify/functions/website-question", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            });
+            const result = await response.json();
+            if (!response.ok || !result.success) throw new Error(result.error || "Versand fehlgeschlagen");
+
+            faqQuestionForm.reset();
+            if (faqQuestionStatus) {
+                faqQuestionStatus.className = "fg-faq-question-status is-success";
+                faqQuestionStatus.textContent = "Vielen Dank. Ihre Frage wurde direkt an uns gesendet.";
+                faqQuestionStatus.hidden = false;
+            }
+        } catch (error) {
+            if (faqQuestionStatus) {
+                faqQuestionStatus.className = "fg-faq-question-status is-error";
+                faqQuestionStatus.textContent = "Die Nachricht konnte gerade nicht versendet werden. Bitte schreiben Sie an info@fg-realestate.de.";
+                faqQuestionStatus.hidden = false;
+            }
+        } finally {
+            submit.disabled = false;
+            submit.innerHTML = original;
+        }
     });
 });
 </script>

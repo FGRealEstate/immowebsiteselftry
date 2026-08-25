@@ -1,9 +1,9 @@
-<section id="{{ searchFormId | default: 'gesuch' }}" class="fg-search-hero fg-search-hero-embedded">
+<section id="{{ searchFormId | default('gesuch') }}" class="fg-search-hero fg-search-hero-embedded">
   <div class="fg-search-shell">
     <div class="fg-search-left">
-      <p class="fg-eyebrow">{{ searchEyebrow | default: 'Immobiliengesuch' }}</p>
-      <h2>{{ searchHeadline | default: 'Suchprofil persönlich vormerken.' }}</h2>
-      <p class="fg-lead">{{ searchIntro | default: 'Hinterlegen Sie Ihre Suchkriterien. Wir prüfen Ihr Profil persönlich und informieren Sie, wenn ein passendes Angebot vorliegt.' }}</p>
+      <p class="fg-eyebrow">{{ searchEyebrow | default('Immobiliengesuch') }}</p>
+      <h2>{{ searchHeadline | default('Suchprofil persönlich vormerken.') }}</h2>
+      <p class="fg-lead">{{ searchIntro | default('Hinterlegen Sie Ihre Suchkriterien. Wir prüfen Ihr Profil persönlich und informieren Sie, wenn ein passendes Angebot vorliegt.') }}</p>
       <div class="fg-benefits">
         <div><i class="fas fa-check"></i><span>Persönliche Vorprüfung Ihrer Angaben</span></div>
         <div><i class="fas fa-check"></i><span>Vormerkung für passende Immobilienangebote</span></div>
@@ -17,13 +17,13 @@
         <div class="fg-progress"><div data-search-progress></div></div>
       </div>
 
-      <form class="fg-search-profile-form" data-marketing-type="{{ searchMarketingType | default: 'BUY' }}" novalidate>
-        <input type="hidden" name="marketing_type" value="{{ searchMarketingType | default: 'BUY' }}">
-        <div class="fg-status fg-success" hidden>{{ searchSuccessText | default: 'Vielen Dank. Ihr Gesuch wurde erfolgreich übermittelt.' }}</div>
+      <form class="fg-search-profile-form" data-marketing-type="{{ searchMarketingType | default('BUY') }}" novalidate>
+        <input type="hidden" name="marketing_type" value="{{ searchMarketingType | default('BUY') }}">
+        <div class="fg-status fg-success" hidden>{{ searchSuccessText | default('Vielen Dank. Ihr Gesuch wurde erfolgreich übermittelt.') }}</div>
         <div class="fg-status fg-error" hidden>Die Übermittlung war nicht erfolgreich. Bitte prüfen Sie Ihre Angaben oder versuchen Sie es später erneut.</div>
 
         <div class="fg-step is-active" data-step="1">
-          <p class="fg-mini">{{ searchTypeLabel | default: 'Ihre Suche' }}</p>
+          <p class="fg-mini">{{ searchTypeLabel | default('Ihre Suche') }}</p>
           <h3>Welche Immobilie suchen Sie?</h3>
           <div class="fg-choice-grid">
             <label class="fg-choice"><input type="radio" name="property_type" value="Wohnung" checked><span><i class="fas fa-building"></i>Wohnung</span></label>
@@ -44,7 +44,7 @@
           <h3>Wo und in welchem Rahmen?</h3>
           <div class="fg-field"><label>Suchgebiet *</label><input class="fg-input google-address" name="location" required placeholder="z. B. Berlin, Leipzig, Dresden, Potsdam"></div>
           <div class="fg-form-grid three">
-            <div class="fg-field"><label>{{ searchBudgetLabel | default: 'Kaufpreis bis' }}</label><input class="fg-input js-money" name="budget" inputmode="numeric" placeholder="z. B. 750.000 €"></div>
+            <div class="fg-field"><label>{{ searchBudgetLabel | default('Kaufpreis bis') }}</label><input class="fg-input js-money" name="budget" inputmode="numeric" placeholder="z. B. 750.000 €"></div>
             <div class="fg-field"><label>Zimmer ab</label><input class="fg-input js-number" name="rooms" inputmode="decimal" placeholder="z. B. 3"></div>
             <div class="fg-field"><label>Fläche ab m²</label><input class="fg-input js-number" name="living_space" inputmode="numeric" placeholder="z. B. 80"></div>
           </div>
@@ -79,7 +79,7 @@
           <label class="fg-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich möchte zu meinem Suchprofil kontaktiert und über passende Immobilienangebote informiert werden. Ich habe die <a href="/datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen. *</span></label>
         </div>
 
-        <div class="fg-actions"><button type="button" class="fg-back" data-search-back disabled>Zurück</button><button type="button" class="fg-next" data-search-next>Weiter</button><button type="submit" class="fg-next" data-search-submit hidden>{{ searchSubmitLabel | default: 'Gesuch übermitteln' }}</button></div>
+        <div class="fg-actions"><button type="button" class="fg-back" data-search-back disabled>Zurück</button><button type="button" class="fg-next" data-search-next>Weiter</button><button type="submit" class="fg-next" data-search-submit hidden>{{ searchSubmitLabel | default('Gesuch übermitteln') }}</button></div>
       </form>
     </div>
   </div>
