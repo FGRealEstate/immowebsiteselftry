@@ -1,0 +1,104 @@
+<section id="{{ searchFormId | default: 'gesuch' }}" class="fg-search-hero fg-search-hero-embedded">
+  <div class="fg-search-shell">
+    <div class="fg-search-left">
+      <p class="fg-eyebrow">{{ searchEyebrow | default: 'Immobiliengesuch' }}</p>
+      <h2>{{ searchHeadline | default: 'Suchprofil persönlich vormerken.' }}</h2>
+      <p class="fg-lead">{{ searchIntro | default: 'Hinterlegen Sie Ihre Suchkriterien. Wir prüfen Ihr Profil persönlich und informieren Sie, wenn ein passendes Angebot vorliegt.' }}</p>
+      <div class="fg-benefits">
+        <div><i class="fas fa-check"></i><span>Persönliche Vorprüfung Ihrer Angaben</span></div>
+        <div><i class="fas fa-check"></i><span>Vormerkung für passende Immobilienangebote</span></div>
+        <div><i class="fas fa-check"></i><span>Auf Wunsch Hinweise auf diskrete Angebote</span></div>
+      </div>
+    </div>
+
+    <div class="fg-search-card">
+      <div class="fg-progress-wrap">
+        <span data-search-step-label>Schritt 1 von 4</span>
+        <div class="fg-progress"><div data-search-progress></div></div>
+      </div>
+
+      <form class="fg-search-profile-form" data-marketing-type="{{ searchMarketingType | default: 'BUY' }}" novalidate>
+        <input type="hidden" name="marketing_type" value="{{ searchMarketingType | default: 'BUY' }}">
+        <div class="fg-status fg-success" hidden>{{ searchSuccessText | default: 'Vielen Dank. Ihr Gesuch wurde erfolgreich übermittelt.' }}</div>
+        <div class="fg-status fg-error" hidden>Die Übermittlung war nicht erfolgreich. Bitte prüfen Sie Ihre Angaben oder versuchen Sie es später erneut.</div>
+
+        <div class="fg-step is-active" data-step="1">
+          <p class="fg-mini">{{ searchTypeLabel | default: 'Ihre Suche' }}</p>
+          <h3>Welche Immobilie suchen Sie?</h3>
+          <div class="fg-choice-grid">
+            <label class="fg-choice"><input type="radio" name="property_type" value="Wohnung" checked><span><i class="fas fa-building"></i>Wohnung</span></label>
+            <label class="fg-choice"><input type="radio" name="property_type" value="Haus"><span><i class="fas fa-house"></i>Haus</span></label>
+            {% if searchMarketingType != 'RENT' %}
+            <label class="fg-choice"><input type="radio" name="property_type" value="Mehrfamilienhaus"><span><i class="fas fa-city"></i>Mehrfamilienhaus</span></label>
+            <label class="fg-choice"><input type="radio" name="property_type" value="Grundstück"><span><i class="fas fa-map"></i>Grundstück</span></label>
+            <label class="fg-choice"><input type="radio" name="property_type" value="Gewerbe"><span><i class="fas fa-briefcase"></i>Gewerbe</span></label>
+            <label class="fg-choice"><input type="radio" name="property_type" value="Kapitalanlage"><span><i class="fas fa-chart-line"></i>Kapitalanlage</span></label>
+            {% else %}
+            <label class="fg-choice"><input type="radio" name="property_type" value="Gewerbe"><span><i class="fas fa-briefcase"></i>Gewerbe</span></label>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="fg-step" data-step="2">
+          <p class="fg-mini">Suchgebiet &amp; Rahmen</p>
+          <h3>Wo und in welchem Rahmen?</h3>
+          <div class="fg-field"><label>Suchgebiet *</label><input class="fg-input google-address" name="location" required placeholder="z. B. Berlin, Leipzig, Dresden, Potsdam"></div>
+          <div class="fg-form-grid three">
+            <div class="fg-field"><label>{{ searchBudgetLabel | default: 'Kaufpreis bis' }}</label><input class="fg-input js-money" name="budget" inputmode="numeric" placeholder="z. B. 750.000 €"></div>
+            <div class="fg-field"><label>Zimmer ab</label><input class="fg-input js-number" name="rooms" inputmode="decimal" placeholder="z. B. 3"></div>
+            <div class="fg-field"><label>Fläche ab m²</label><input class="fg-input js-number" name="living_space" inputmode="numeric" placeholder="z. B. 80"></div>
+          </div>
+          <div class="fg-form-grid three">
+            <div class="fg-field"><label>Schlafzimmer ab</label><input class="fg-input js-number" name="bedrooms" inputmode="decimal" placeholder="optional"></div>
+            <div class="fg-field"><label>Badezimmer ab</label><input class="fg-input js-number" name="bathrooms" inputmode="decimal" placeholder="optional"></div>
+            <div class="fg-field"><label>Grundstück ab m²</label><input class="fg-input js-number" name="plot_area" inputmode="numeric" placeholder="optional"></div>
+          </div>
+        </div>
+
+        <div class="fg-step" data-step="3">
+          <p class="fg-mini">Ausstattung &amp; Wünsche</p>
+          <h3>Was ist Ihnen wichtig?</h3>
+          <div class="fg-toggle-grid">
+            <label><input type="checkbox" name="features" value="Balkon/Terrasse"><span>Balkon/Terrasse</span></label>
+            <label><input type="checkbox" name="features" value="Garten"><span>Garten</span></label>
+            <label><input type="checkbox" name="features" value="Aufzug"><span>Aufzug</span></label>
+            <label><input type="checkbox" name="features" value="Keller"><span>Keller</span></label>
+            <label><input type="checkbox" name="features" value="Stellplatz"><span>Stellplatz</span></label>
+            <label><input type="checkbox" name="features" value="Barrierefrei"><span>Barrierefrei</span></label>
+            <label><input type="checkbox" name="features" value="Einbauküche"><span>Einbauküche</span></label>
+            {% if searchMarketingType != 'RENT' %}<label><input type="checkbox" name="features" value="Off-Market interessant"><span>Off-Market interessant</span></label>{% endif %}
+          </div>
+          <div class="fg-field mt-4"><label>Weitere Wünsche</label><textarea class="fg-input" name="message" rows="4" placeholder="z. B. Lage, Zustand, zeitlicher Rahmen oder weitere Anforderungen"></textarea></div>
+        </div>
+
+        <div class="fg-step" data-step="4">
+          <p class="fg-mini">Kontakt</p>
+          <h3>Wie dürfen wir Sie erreichen?</h3>
+          <div class="fg-form-grid two"><div class="fg-field"><label>Vorname</label><input class="fg-input" name="first_name" placeholder="Vorname"></div><div class="fg-field"><label>Nachname</label><input class="fg-input" name="last_name" placeholder="Nachname"></div></div>
+          <div class="fg-form-grid two"><div class="fg-field"><label>E-Mail-Adresse *</label><input class="fg-input" name="email" type="email" required placeholder="name@beispiel.de"></div><div class="fg-field"><label>Telefonnummer</label><input class="fg-input" name="phone" type="tel" placeholder="optional"></div></div>
+          <label class="fg-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich möchte zu meinem Suchprofil kontaktiert und über passende Immobilienangebote informiert werden. Ich habe die <a href="/datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen. *</span></label>
+        </div>
+
+        <div class="fg-actions"><button type="button" class="fg-back" data-search-back disabled>Zurück</button><button type="button" class="fg-next" data-search-next>Weiter</button><button type="submit" class="fg-next" data-search-submit hidden>{{ searchSubmitLabel | default: 'Gesuch übermitteln' }}</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  document.querySelectorAll('.fg-search-profile-form').forEach(function(form){
+    if(form.dataset.fgBound === '1') return; form.dataset.fgBound='1';
+    const shell=form.closest('.fg-search-card');
+    const steps=Array.from(form.querySelectorAll('.fg-step')); const back=form.querySelector('[data-search-back]'); const next=form.querySelector('[data-search-next]'); const submit=form.querySelector('[data-search-submit]'); const label=shell.querySelector('[data-search-step-label]'); const bar=shell.querySelector('[data-search-progress]'); const success=form.querySelector('.fg-success'); const errorBox=form.querySelector('.fg-error'); let current=0;
+    function show(){steps.forEach((s,i)=>s.classList.toggle('is-active',i===current));back.disabled=current===0;next.hidden=current===steps.length-1;submit.hidden=current!==steps.length-1;label.textContent=`Schritt ${current+1} von ${steps.length}`;bar.style.width=`${((current+1)/steps.length)*100}%`;}
+    function valid(){for(const field of steps[current].querySelectorAll('[required]')){if((field.type==='checkbox'&&!field.checked)||!field.value){field.reportValidity();return false;}}return true;}
+    function moneyFormat(input){const raw=input.value.replace(/[^0-9,.]/g,'');const n=Number(raw.replace(/\./g,'').replace(',','.'));if(!Number.isNaN(n)&&n>0) input.value=new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',minimumFractionDigits:2,maximumFractionDigits:2}).format(n);}
+    form.querySelectorAll('.js-money').forEach(i=>{i.addEventListener('input',()=>i.value=i.value.replace(/[^\d.,]/g,''));i.addEventListener('blur',()=>moneyFormat(i));}); form.querySelectorAll('.js-number').forEach(i=>i.addEventListener('input',()=>i.value=i.value.replace(/[^\d.,]/g,'')));
+    next.addEventListener('click',()=>{if(!valid())return;current=Math.min(current+1,steps.length-1);show();});back.addEventListener('click',()=>{current=Math.max(current-1,0);show();});
+    form.addEventListener('submit',async e=>{e.preventDefault();if(!valid())return;success.hidden=true;errorBox.hidden=true;submit.disabled=true;const original=submit.textContent;submit.textContent='Wird übermittelt...';const fd=new FormData(form),params=new URLSearchParams(location.search);const payload={first_name:fd.get('first_name'),last_name:fd.get('last_name'),email:fd.get('email'),phone:fd.get('phone'),marketing_type:fd.get('marketing_type'),property_type:fd.get('property_type'),location:fd.get('location'),budget:fd.get('budget'),rooms:fd.get('rooms'),living_space:fd.get('living_space'),bedrooms:fd.get('bedrooms'),bathrooms:fd.get('bathrooms'),plot_area:fd.get('plot_area'),features:fd.getAll('features'),message:fd.get('message'),privacy_consent:fd.get('privacy_consent')==='true',newsletter_consent:fd.get('privacy_consent')==='true',source_url:location.href,utm_source:params.get('utm_source')||'',utm_medium:params.get('utm_medium')||'',utm_campaign:params.get('utm_campaign')||'',utm_content:params.get('utm_content')||'',utm_term:params.get('utm_term')||''};
+      try{const res=await fetch('/.netlify/functions/propstack-search-profile',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const result=await res.json();if(!res.ok||!result.success)throw new Error(result.error||'Fehler');form.reset();form.querySelector('[name="marketing_type"]').value=form.dataset.marketingType||'BUY';current=0;show();success.hidden=false;success.scrollIntoView({behavior:'smooth',block:'center'});}catch(err){console.error(err);errorBox.hidden=false;}finally{submit.disabled=false;submit.textContent=original;}
+    }); show();
+  });
+})();
+</script>

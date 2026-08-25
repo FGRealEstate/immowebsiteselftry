@@ -297,6 +297,29 @@
 </footer>
 
 
+<!-- Globale Schnellaktionen: Frage stellen + Desktop "nach oben" -->
+<button type="button" class="fg-question-fab" data-open-question aria-label="Frage an Fischer & Geserich stellen"><i class="fas fa-message"></i><span>Frage stellen</span></button>
+<button type="button" class="fg-back-to-top" data-back-to-top aria-label="Zum Seitenanfang"><i class="fas fa-arrow-up"></i></button>
+
+<div class="fg-question-modal" data-question-modal hidden>
+  <div class="fg-question-backdrop" data-close-question></div>
+  <section class="fg-question-dialog" role="dialog" aria-modal="true" aria-labelledby="fg-question-title">
+    <button type="button" class="fg-question-close" data-close-question aria-label="Fenster schließen"><i class="fas fa-xmark"></i></button>
+    <p class="fg-section-kicker">Direkte Frage</p>
+    <h2 id="fg-question-title">Was möchten Sie von uns wissen?</h2>
+    <p>Ihre Nachricht wird direkt an <strong>info@fg-realestate.de</strong> gesendet. Wir antworten persönlich.</p>
+    <form data-question-form novalidate>
+      <div class="fg-question-grid"><label><span>Name *</span><input name="name" required autocomplete="name"></label><label><span>E-Mail *</span><input name="email" type="email" required autocomplete="email"></label></div>
+      <label><span>Telefon</span><input name="phone" type="tel" autocomplete="tel" placeholder="optional"></label>
+      <label><span>Ihre Frage *</span><textarea name="question" required rows="6" maxlength="5000" placeholder="Schildern Sie uns kurz Ihre Frage oder Ihr Vorhaben."></textarea></label>
+      <label class="fg-question-hp" aria-hidden="true"><span>Website</span><input name="company_website" tabindex="-1" autocomplete="off"></label>
+      <label class="fg-question-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
+      <div class="fg-question-status" data-question-status hidden></div>
+      <button type="submit" class="btn-85 fg-question-submit">Frage senden <i class="fas fa-paper-plane"></i></button>
+    </form>
+  </section>
+</div>
+
 
 <script>
     const mobileMenuBtn = document.getElementById('mobile-menu-button');
@@ -305,8 +328,27 @@
     mobileMenuBtn?.addEventListener('click', () => {
         mobileMenu?.classList.toggle('hidden');
     });
-    
-    
+
+    const backToTop = document.querySelector('[data-back-to-top]');
+    const syncBackToTop = () => backToTop?.classList.toggle('is-visible', window.scrollY > 550);
+    window.addEventListener('scroll', syncBackToTop, { passive: true });
+    backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    syncBackToTop();
+
+    const questionModal = document.querySelector('[data-question-modal]');
+    const questionForm = document.querySelector('[data-question-form]');
+    const questionStatus = document.querySelector('[data-question-status]');
+    function openQuestion(){ if(!questionModal) return; questionModal.hidden=false; document.body.classList.add('fg-modal-open'); setTimeout(()=>questionModal.classList.add('is-open'),10); questionModal.querySelector('input[name="name"]')?.focus(); }
+    function closeQuestion(){ if(!questionModal) return; questionModal.classList.remove('is-open'); document.body.classList.remove('fg-modal-open'); setTimeout(()=>{questionModal.hidden=true;},180); }
+    document.querySelectorAll('[data-open-question]').forEach(btn=>btn.addEventListener('click', openQuestion));
+    questionModal?.querySelectorAll('[data-close-question]').forEach(btn=>btn.addEventListener('click', closeQuestion));
+    document.addEventListener('keydown', e=>{ if(e.key==='Escape' && questionModal && !questionModal.hidden) closeQuestion(); });
+    questionForm?.addEventListener('submit', async e=>{
+      e.preventDefault(); if(!questionForm.reportValidity()) return;
+      const submit=questionForm.querySelector('button[type="submit"]'); const original=submit.innerHTML; submit.disabled=true; submit.textContent='Wird gesendet …'; questionStatus.hidden=true;
+      const fd=new FormData(questionForm); const payload={name:fd.get('name'),email:fd.get('email'),phone:fd.get('phone'),question:fd.get('question'),company_website:fd.get('company_website'),privacy_consent:fd.get('privacy_consent')==='true',source_url:location.href};
+      try{const res=await fetch('/.netlify/functions/website-question',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const result=await res.json();if(!res.ok||!result.success) throw new Error(result.error||'Fehler');questionForm.reset();questionStatus.className='fg-question-status is-success';questionStatus.textContent='Vielen Dank. Ihre Frage wurde direkt an uns gesendet.';questionStatus.hidden=false;}catch(err){questionStatus.className='fg-question-status is-error';questionStatus.textContent='Die Nachricht konnte gerade nicht versendet werden. Bitte schreiben Sie an info@fg-realestate.de.';questionStatus.hidden=false;}finally{submit.disabled=false;submit.innerHTML=original;}
+    });
 </script>
 
 

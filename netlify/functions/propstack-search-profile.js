@@ -1,3 +1,4 @@
+const { sendInternalNotification } = require("./_shared/mailer");
 const PROPSTACK_BASE_URL = process.env.PROPSTACK_API_BASE || "https://api.propstack.de/v1";
 
 exports.handler = async function (event) {
@@ -156,6 +157,11 @@ exports.handler = async function (event) {
       : null;
 
     const task = contactId ? await safeCreateTask(apiKey, contactId, note, fullName, marketingType) : null;
+    const internalNotification = await sendInternalNotification({
+      subject: `Neues ${marketingType === "RENT" ? "Mietgesuch" : "Kaufgesuch"}: ${fullName}`,
+      replyTo: email,
+      text: note,
+    });
 
     return json(200, {
       success: true,
@@ -164,7 +170,8 @@ exports.handler = async function (event) {
       contact: contactResponse,
       contact_update: contactUpdate,
       search_profile: searchProfile,
-      task
+      task,
+      internal_notification: internalNotification
     });
   } catch (error) {
     console.error("PROPSTACK SEARCH PROFILE ERROR:", error);
