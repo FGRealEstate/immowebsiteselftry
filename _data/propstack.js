@@ -613,6 +613,65 @@ async function fetchJson(url, apiKey, label) {
     }
 }
 
+function withQueryParam(url, key, value) {
+    try {
+        const parsed = new URL(url);
+        if (!parsed.searchParams.has(key)) parsed.searchParams.set(key, String(value));
+        return parsed.toString();
+    } catch {
+        const separator = String(url).includes("?") ? "&" : "?";
+        return `${url}${separator}${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+    }
+}
+
+function uniqueById(items = []) {
+    const seen = new Set();
+    const result = [];
+    for (const item of items) {
+        if (!item || typeof item !== "object") continue;
+        const key = textValue(item.id) || textValue(item.uuid) || JSON.stringify(item);
+        if (seen.has(key)) continue;
+        seen.add(key);
+        result.push(item);
+    }
+    return result;
+}
+
+async function fetchAllUnits(unitUrl, apiKey) {
+    // Propstack paginiert Listen. Wir fordern bewusst bis zu 500 Einheiten pro Seite an,
+    // damit Projekt-Landingpages nicht nur einen Teil der zugeordneten Einheiten sehen.
+    const url = withQueryParam(withQueryParam(unitUrl, "per", 500), "page", 1);
+    const payload = await fetchJson(url, apiKey, "Propstack Einheiten");
+    return arrayFromApiPayload(payload, ["units", "properties"]);
+}
+
+async function fetchUnitsForProject(apiBase, project, apiKey) {
+    const projectId = textValue(project?.id) || textValue(project?.uuid);
+    if (!projectId) return [];
+
+    const base = `${apiBase.replace(/\/$/, "")}/units?expand=1&per=500`;
+    const candidates = [
+        withQueryParam(base, "project_id", projectId),
+        withQueryParam(base, "project", projectId)
+    ];
+
+    for (const url of candidates) {
+        const payload = await fetchJson(url, apiKey, `Propstack Projekteinheiten ${projectId}`);
+        const units = arrayFromApiPayload(payload, ["units", "properties"]);
+        if (!units.length) continue;
+
+        // Falls ein unbekannter Filter von der API ignoriert wird, filtern wir sicherheitshalber
+        // selbst auf die tatsächliche Projektverknüpfung.
+        const matching = units.filter((unit) => {
+            const ref = getProjectReference(unit);
+            return ref?.id && String(ref.id) === String(projectId);
+        });
+        if (matching.length) return matching;
+    }
+
+    return [];
+}
+
 function getProjectStatusName(project) {
     if (!project) return null;
 
@@ -939,7 +998,6 @@ function buildProject(project, units) {
         images,
         gallery: images.map((image) => image.url),
         main_image: images.length ? images[0].url : null,
-        request_url: `/objekt-anfragen.html?project_id=${encodeURIComponent(id)}&object=${encodeURIComponent(name)}`,
         raw: project
     };
 }
@@ -965,7 +1023,7 @@ module.exports = async function () {
         ];
 
     try {
-        const unitPayload = await fetchJson(unitUrl, apiKey, "Propstack Einheiten");
+        let rawUnits = await fetchAllUnits(unitUrl, apiKey);
         let projectPayload = null;
         let rawProjects = [];
 
@@ -974,8 +1032,6 @@ module.exports = async function () {
             rawProjects = arrayFromApiPayload(projectPayload, ["projects", "property_projects", "developments"]);
             if (rawProjects.length) break;
         }
-
-        const rawUnits = arrayFromApiPayload(unitPayload, ["units", "properties"]);
 
         const projectLookup = new Map();
         for (const project of rawProjects) {
@@ -992,6 +1048,19 @@ module.exports = async function () {
             if (key) publicProjectKeys.add(String(key));
             const nameKey = normalizeText(textValue(project.name) || textValue(project.title));
             if (nameKey) publicProjectKeys.add(nameKey);
+        }
+
+        // Projekte sind in Propstack Über-Objekte. Zusätzlich zur allgemeinen Einheitenliste
+        // laden wir die Einheiten jedes öffentlichen Projekts noch einmal gezielt nach.
+        // Das verhindert, dass eine unvollständige/anders gefilterte Listenantwort dazu führt,
+        // dass auf der Website z. B. nur 3 statt 7 vermarktete Einheiten erscheinen.
+        for (const project of publicProjects) {
+            const nestedUnits = [
+                ...(Array.isArray(project.units) ? project.units : []),
+                ...(Array.isArray(project.properties) ? project.properties : [])
+            ];
+            const fetchedProjectUnits = await fetchUnitsForProject(cleanBase, project, apiKey);
+            rawUnits = uniqueById([...rawUnits, ...nestedUnits, ...fetchedProjectUnits]);
         }
 
         const standaloneProperties = [];
