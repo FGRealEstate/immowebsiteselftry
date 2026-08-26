@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Finanzierung",
-  "explanation": "Darlehen, dessen Gläubiger im Rang hinter andere Gläubiger tritt. Nachrangdarlehen sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden.",
-  "practiceExample": "Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Darlehen, dessen Gläubiger im Rang hinter andere Gläubiger tritt. Nachrangdarlehen sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden. Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen."
+  "assistantAnswer": "Darlehen, dessen Gläubiger im Rang hinter andere Gläubiger tritt. Ein Nachrangdarlehen wird im Rang hinter vorrangigen Gläubigern bedient beziehungsweise besichert. Wegen des höheren Verlustrisikos ist es häufig teurer und wird von Banken bei der Gesamtfinanzierung gesondert bewertet.",
+  "explanation": "Ein Nachrangdarlehen wird im Rang hinter vorrangigen Gläubigern bedient beziehungsweise besichert. Wegen des höheren Verlustrisikos ist es häufig teurer und wird von Banken bei der Gesamtfinanzierung gesondert bewertet.",
+  "practiceExample": "400.000 € erstrangiges Bankdarlehen plus 40.000 € nachrangige Finanzierung können die Eigenkapitallücke schließen, erhöhen aber Kapitaldienst und Gesamtrisiko."
 }

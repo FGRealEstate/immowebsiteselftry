@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Kapitalanlage",
-  "explanation": "Kaufpreis geteilt durch Jahresnettokaltmiete. Er ist der Kehrwert der Bruttomietrendite, sofern beide identisch definiert sind.",
-  "practiceExample": "360.000 € / 18.000 € = Faktor 20 = 5 % Bruttorendite.",
-  "formula": "Faktor = Kaufpreis / JNKM",
+  "explanation": "Der Kaufpreisfaktor setzt Kaufpreis und Jahresnettokaltmiete ins Verhältnis. Er ist bei identischer Basis der Kehrwert der Bruttomietrendite und ignoriert Nebenkosten, Bewirtschaftung, Finanzierung und CapEx.",
+  "practiceExample": "360.000 € Kaufpreis / 18.000 € JNKM = Faktor 20. Das entspricht 5,0 % Bruttomietrendite.",
+  "formula": "Kaufpreisfaktor = Kaufpreis / Jahresnettokaltmiete",
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Kaufpreis geteilt durch Jahresnettokaltmiete. Er ist der Kehrwert der Bruttomietrendite, sofern beide identisch definiert sind. 360.000 € / 18.000 € = Faktor 20 = 5 % Bruttorendite."
+  "assistantAnswer": "Kaufpreis geteilt durch Jahresnettokaltmiete. Der Kaufpreisfaktor setzt Kaufpreis und Jahresnettokaltmiete ins Verhältnis. Er ist bei identischer Basis der Kehrwert der Bruttomietrendite und ignoriert Nebenkosten, Bewirtschaftung, Finanzierung und CapEx."
 }

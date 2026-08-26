@@ -9,19 +9,14 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Verbleibende wirtschaftliche Nutzungsdauer eines Gebäudes. Steuerlich kann eine nachgewiesene kürzere tatsächliche Nutzungsdauer unter Voraussetzungen eine abweichende AfA ermöglichen.",
-  "practiceExample": "300.000 € AfA-Basis / 30 Jahre = 10.000 € rechnerische Jahres-AfA.",
-  "formula": "AfA bei tatsächlicher Nutzungsdauer = AfA-Basis / Jahre",
+  "explanation": "Die Restnutzungsdauer beschreibt den Zeitraum, in dem ein Gebäude voraussichtlich noch wirtschaftlich nutzbar ist. Sie ist in Bewertung und gegebenenfalls beim steuerlichen Nachweis einer kürzeren tatsächlichen Nutzungsdauer relevant.",
+  "practiceExample": "AfA-Basis 300.000 € und steuerlich anerkannte tatsächliche Restnutzungsdauer 30 Jahre würden rechnerisch 10.000 € Jahres-AfA ergeben. Ob eine solche Nutzungsdauer anerkannt wird, ist eine separate Nachweisfrage.",
+  "formula": "AfA bei tatsächlicher Nutzungsdauer = AfA-Basis / anerkannte Restnutzungsdauer",
   "sources": [
     {
       "label": "§ 7 EStG – Gebäude-AfA",
       "url": "https://www.gesetze-im-internet.de/estg/__7.html"
     }
   ],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Verbleibende wirtschaftliche Nutzungsdauer eines Gebäudes. Steuerlich kann eine nachgewiesene kürzere tatsächliche Nutzungsdauer unter Voraussetzungen eine abweichende AfA ermöglichen. 300.000 € AfA-Basis / 30 Jahre = 10.000 € rechnerische Jahres-AfA."
+  "assistantAnswer": "Voraussichtliche verbleibende wirtschaftliche Nutzungsdauer. Die Restnutzungsdauer beschreibt den Zeitraum, in dem ein Gebäude voraussichtlich noch wirtschaftlich nutzbar ist. Sie ist in Bewertung und gegebenenfalls beim steuerlichen Nachweis einer kürzeren tatsächlichen Nutzungsdauer relevant."
 }

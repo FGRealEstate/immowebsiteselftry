@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Vermietung",
-  "explanation": "Nicht vermietete Fläche oder Einheit. Leerstand wirkt auf Ertrag, Kosten oder Rechte innerhalb eines Miet- bzw. WEG-Verhältnisses und sollte aus Vertrag, Abrechnung oder Beschluss konkret abgeleitet werden.",
-  "practiceExample": "Beispiel: Eine Position im Wirtschaftsplan kann wirtschaftlich beim Eigentümer verbleiben, obwohl andere Betriebskosten auf den Mieter umgelegt werden.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Nicht vermietete Fläche oder Einheit. Leerstand wirkt auf Ertrag, Kosten oder Rechte innerhalb eines Miet- bzw. WEG-Verhältnisses und sollte aus Vertrag, Abrechnung oder Beschluss konkret abgeleitet werden. Beispiel: Eine Position im Wirtschaftsplan kann wirtschaftlich beim Eigentümer verbleiben, obwohl andere Betriebskosten auf den Mieter umgelegt werden."
+  "assistantAnswer": "Nicht vermietete Fläche oder Einheit. Leerstand ist der Zeitraum oder Anteil ohne zahlenden Nutzer. Wirtschaftlich muss zwischen kurzfristigem Vermietungsleerstand, strategischem Leerstand und strukturellem Leerstand unterschieden werden.",
+  "explanation": "Leerstand ist der Zeitraum oder Anteil ohne zahlenden Nutzer. Wirtschaftlich muss zwischen kurzfristigem Vermietungsleerstand, strategischem Leerstand und strukturellem Leerstand unterschieden werden.",
+  "practiceExample": "Eine Wohnung mit 1.200 € Monatsmiete und zwei Monaten Leerstand verliert 2.400 € Jahresmiete vor zusätzlichen Renovierungs-/Vermarktungskosten."
 }

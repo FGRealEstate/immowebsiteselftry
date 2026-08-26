@@ -9,19 +9,14 @@
   ],
   "updated": "2026-08-26",
   "category": "Steuern",
-  "explanation": "Absetzung für Abnutzung: steuerliche Verteilung der abschreibungsfähigen Gebäudeanschaffungs- bzw. Herstellungskosten über die maßgebliche Nutzungsdauer. Grund und Boden ist nicht abschreibbar.",
-  "practiceExample": "AfA-Basis 330.000 € und 2 % lineare AfA ergeben 6.600 € pro Jahr.",
+  "explanation": "AfA verteilt die steuerlich abschreibungsfähigen Anschaffungs- oder Herstellungskosten eines Gebäudes über die Nutzungsdauer. Grund und Boden ist nicht abschreibbar. Bei Erwerb müssen Kaufpreis und zuordenbare Nebenkosten daher auf Gebäude und Boden aufgeteilt werden.",
+  "practiceExample": "Gesamtanschaffungskosten 440.000 €, davon 75 % Gebäudeanteil: AfA-Basis 330.000 €. Bei 2 % linearer AfA ergeben sich 6.600 € jährliche Abschreibung.",
   "formula": "AfA p.a. = AfA-Bemessungsgrundlage × AfA-Satz",
   "sources": [
     {
-      "label": "§ 7 EStG – Gebäude-AfA",
+      "label": "§ 7 EStG",
       "url": "https://www.gesetze-im-internet.de/estg/__7.html"
     }
   ],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Absetzung für Abnutzung: steuerliche Verteilung der abschreibungsfähigen Gebäudeanschaffungs- bzw. Herstellungskosten über die maßgebliche Nutzungsdauer. Grund und Boden ist nicht abschreibbar. AfA-Basis 330.000 € und 2 % lineare AfA ergeben 6.600 € pro Jahr."
+  "assistantAnswer": "Absetzung für Abnutzung: steuerliche Verteilung des abschreibungsfähigen Gebäudewerts über die Nutzungsdauer. AfA verteilt die steuerlich abschreibungsfähigen Anschaffungs- oder Herstellungskosten eines Gebäudes über die Nutzungsdauer. Grund und Boden ist nicht abschreibbar. Bei Erwerb müssen Kaufpreis und zuordenbare Nebenkosten daher auf Gebäude und Boden aufgeteilt werden."
 }

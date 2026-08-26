@@ -24,7 +24,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Bonität, Objektqualität, Beleihungswert und Rücklagen sind entscheidend. Die genaue Definition muss im Rechner ausgewählt werden.",
-  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
   "formulae": [
     "Finanzierungsquote = Darlehen / Kaufpreis",
     "Monatsrate ≈ Darlehen × (Sollzins + anfängliche Tilgung) / 12"
@@ -45,25 +44,12 @@
     ],
     "interpretation": "Eine 100-%-Finanzierung finanziert den Kaufpreis, nicht zwingend die Nebenkosten. Gegenüber einer 80- oder 90-%-Finanzierung kann der Zinssatz höher ausfallen, weil der Beleihungsauslauf steigt."
   },
-  "drivers": [
-    "Darlehenshöhe und Beleihungsauslauf",
-    "Sollzins, Tilgung und Zinsbindung",
-    "Restschuld zum Ende der Zinsbindung",
-    "Liquiditätsreserve und Sondertilgungsrechte",
-    "Objektqualität und bankseitiger Beleihungswert"
-  ],
-  "risks": [
-    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
-    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
-    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Bei einer 100-Prozent-Finanzierung wird regelmäßig der Kaufpreis finanziert, nicht automatisch jede Nebenkostenposition. Eine 100-%-Finanzierung finanziert den Kaufpreis, nicht zwingend die Nebenkosten. Gegenüber einer 80- oder 90-%-Finanzierung kann der Zinssatz höher ausfallen, weil der Beleihungsauslauf steigt."
+  "assistantAnswer": "Bei einer 100-Prozent-Finanzierung wird regelmäßig der Kaufpreis finanziert, nicht automatisch jede Nebenkostenposition. 100 % bezieht sich in der Praxis regelmäßig auf den Kaufpreis. Grunderwerbsteuer, Notar, Grundbuch und gegebenenfalls Courtage sind damit nicht automatisch finanziert.",
+  "focusPoints": [
+    "100 % bezieht sich in der Praxis regelmäßig auf den Kaufpreis. Grunderwerbsteuer, Notar, Grundbuch und gegebenenfalls Courtage sind damit nicht automatisch finanziert.",
+    "Banken unterscheiden zwischen Kaufpreis, Markt-/Beleihungswert und Darlehenssumme. Eine 100-%-Finanzierung kann deshalb bankintern einen deutlich höheren Beleihungsauslauf als 100 % erzeugen, wenn der Beleihungswert unter dem Kaufpreis liegt.",
+    "Die wirtschaftliche Frage ist nicht nur, ob die Bank 100 % finanziert, sondern welche Liquiditätsreserve nach Kauf noch vorhanden ist und wie hoch die Restschuld zum Ende der Zinsbindung bleibt."
+  ],
+  "decisionUse": "Sinnvoll ist der Vergleich mindestens einer 90/95-%-Variante mit der 100-%-Variante. Die Zinsdifferenz, gebundene Liquidität und Restschuld gehören in dieselbe Rechnung."
 }

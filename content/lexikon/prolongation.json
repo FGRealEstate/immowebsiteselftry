@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Finanzierung",
-  "explanation": "Verlängerung einer Finanzierung beim bisherigen Kreditgeber. Prolongation sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden.",
-  "practiceExample": "Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Verlängerung einer Finanzierung beim bisherigen Kreditgeber. Prolongation sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden. Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen."
+  "assistantAnswer": "Verlängerung einer Finanzierung beim bisherigen Kreditgeber. Prolongation ist die Verlängerung beziehungsweise Anschlussvereinbarung eines bestehenden Darlehens bei derselben Bank, meist für die Restschuld nach Zinsbindungsende.",
+  "explanation": "Prolongation ist die Verlängerung beziehungsweise Anschlussvereinbarung eines bestehenden Darlehens bei derselben Bank, meist für die Restschuld nach Zinsbindungsende.",
+  "practiceExample": "250.000 € Restschuld werden bei der bisherigen Bank für zehn Jahre neu zu 4,5 % plus 2 % Tilgung prolongiert: Anfangsrate ca. 1.354 € monatlich."
 }

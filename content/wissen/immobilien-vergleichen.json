@@ -24,7 +24,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Neben Rendite und Cashflow zählen Kapitalbindung, Restschuld, technisches Risiko, Mikrolage und Exit-Liquidität.",
-  "mechanics": "Vor dem Kauf müssen rechtliche, technische, wirtschaftliche und finanzielle Prüfung zusammengeführt werden. Einzelkennzahlen ersetzen weder Objektunterlagen noch eine belastbare Bewertung.",
   "formulae": [
     "Vergleich nur auf identischer Basis: Gesamtinvestition, Nettoertrag, Finanzierung und Risiko"
   ],
@@ -39,25 +38,12 @@
     ],
     "interpretation": "Vergleiche sollten gleiche Haltedauer, Finanzierung und Kostenannahmen verwenden."
   },
-  "drivers": [
-    "Eigentums- und Lastenverhältnisse",
-    "Flächen, Bauzustand und Energiezustand",
-    "Miet- und WEG-Unterlagen",
-    "Kaufpreis und Vergleichsdaten",
-    "Finanzierbarkeit und Liquiditätsbedarf"
-  ],
-  "risks": [
-    "Fehlende Unterlagen sind ein eigenes Risiko.",
-    "Technische Maßnahmen können den vermeintlichen Preisvorteil aufzehren.",
-    "Ein günstiger Quadratmeterpreis ist ohne Mikrolage und Zustand nicht aussagekräftig."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Zwei Objekte sollten mit denselben Annahmen und demselben Zeitraum verglichen werden. Vergleiche sollten gleiche Haltedauer, Finanzierung und Kostenannahmen verwenden."
+  "assistantAnswer": "Zwei Objekte sollten mit denselben Annahmen und demselben Zeitraum verglichen werden. Ein sinnvoller Vergleich normalisiert Kaufpreis, Nebenkosten, Miete, CapEx, Finanzierung und Haltedauer auf dieselbe Basis.",
+  "focusPoints": [
+    "Ein sinnvoller Vergleich normalisiert Kaufpreis, Nebenkosten, Miete, CapEx, Finanzierung und Haltedauer auf dieselbe Basis.",
+    "€/m², Bruttorendite oder Cashflow allein können widersprüchliche Signale liefern. Ein Objekt kann höhere Rendite, aber zugleich deutlich höheres technisches oder rechtliches Risiko haben.",
+    "Vergleichbar werden Objekte erst, wenn dieselben Annahmen für Leerstand, Mietsteigerung, Exit und Instandhaltung verwendet werden."
+  ],
+  "decisionUse": "Nicht nach der höchsten Einzelkennzahl entscheiden, sondern nach einem konsistenten Score aus Ertrag, Risiko, Kapitalbindung und Exit-Liquidität."
 }

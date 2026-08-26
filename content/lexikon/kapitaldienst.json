@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Finanzierung",
-  "explanation": "Zins und Tilgung eines Darlehens. Kapitaldienst sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden.",
-  "practiceExample": "Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Zins und Tilgung eines Darlehens. Kapitaldienst sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden. Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen."
+  "assistantAnswer": "Zins und Tilgung eines Darlehens. Kapitaldienst ist die Summe aus Zins- und Tilgungszahlungen eines Darlehens in einer Periode. Er bestimmt die laufende Liquiditätsbelastung und ist zentral für DSCR und Tragfähigkeitsrechnungen.",
+  "explanation": "Kapitaldienst ist die Summe aus Zins- und Tilgungszahlungen eines Darlehens in einer Periode. Er bestimmt die laufende Liquiditätsbelastung und ist zentral für DSCR und Tragfähigkeitsrechnungen.",
+  "practiceExample": "1.500 € monatliche Annuität ergeben 18.000 € Kapitaldienst pro Jahr."
 }

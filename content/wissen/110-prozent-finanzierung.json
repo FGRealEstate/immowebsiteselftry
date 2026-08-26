@@ -22,7 +22,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Das erhöht Risiko, Zinsbelastung und mögliche Unterdeckung bei frühem Verkauf.",
-  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
   "formulae": [
     "Finanzierungsquote = Darlehen / Kaufpreis",
     "Monatsrate ≈ Darlehen × (Sollzins + Tilgung) / 12"
@@ -43,25 +42,50 @@
     ],
     "interpretation": "Der Zinsaufschlag bei sehr hoher Finanzierung ist bank- und fallabhängig. In der Praxis können gegenüber niedrigeren Beleihungsausläufen Aufschläge von einigen Zehntelprozentpunkten auftreten; 0,3–0,7 Prozentpunkte sind eine mögliche Marktgröße, aber keine feste Regel."
   },
-  "drivers": [
-    "Darlehenshöhe und Beleihungsauslauf",
-    "Sollzins, Tilgung und Zinsbindung",
-    "Restschuld zum Ende der Zinsbindung",
-    "Liquiditätsreserve und Sondertilgungsrechte",
-    "Objektqualität und bankseitiger Beleihungswert"
-  ],
-  "risks": [
-    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
-    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
-    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Werden Kaufpreis und Nebenkosten finanziert, liegt das Darlehen über dem Kaufpreis. Der Zinsaufschlag bei sehr hoher Finanzierung ist bank- und fallabhängig. In der Praxis können gegenüber niedrigeren Beleihungsausläufen Aufschläge von einigen Zehntelprozentpunkten auftreten; 0,3–0,7 Prozentpunkte sind eine mögliche Marktgröße, aber keine feste Regel."
+  "assistantAnswer": "Werden Kaufpreis und Nebenkosten finanziert, liegt das Darlehen über dem Kaufpreis. Bei einer 110-%-Finanzierung werden neben dem Kaufpreis auch Erwerbsnebenkosten ganz oder teilweise fremdfinanziert. Dadurch liegt die Darlehenssumme oberhalb des Kaufpreises.",
+  "focusPoints": [
+    "Bei einer 110-%-Finanzierung werden neben dem Kaufpreis auch Erwerbsnebenkosten ganz oder teilweise fremdfinanziert. Dadurch liegt die Darlehenssumme oberhalb des Kaufpreises.",
+    "Banken bepreisen sehr hohe Beleihungsausläufe häufig spürbar teurer. Ein Aufschlag von einigen Zehntelprozentpunkten gegenüber einer niedrigeren Finanzierung kann auftreten; Höhe und Schwellen hängen von Bank, Objekt, Bonität und Beleihungswert ab.",
+    "Das zentrale Risiko ist die anfängliche Unterdeckung: Bei einem frühen Verkauf kann der Nettoverkaufserlös nach Transaktionskosten unter der noch offenen Darlehenssumme liegen."
+  ],
+  "decisionUse": "Die 110-%-Finanzierung ist kein reines Ratenproblem. Sie sollte nur nach Stressrechnung für Zins, Verkauf nach 3–5 Jahren und ungeplante Modernisierung beurteilt werden.",
+  "comparisonTable": {
+    "title": "Beispielhafter Strukturvergleich bei 400.000 € Kaufpreis und 40.000 € Nebenkosten",
+    "headers": [
+      "Variante",
+      "Eigenkapital",
+      "Darlehen",
+      "Beispielzins*",
+      "Tilgung",
+      "Monatsrate"
+    ],
+    "rows": [
+      [
+        "95 % Kaufpreisfinanzierung",
+        "60.000 €",
+        "380.000 €",
+        "3,80 %",
+        "2,00 %",
+        "ca. 1.837 €"
+      ],
+      [
+        "100 % Kaufpreisfinanzierung",
+        "40.000 €",
+        "400.000 €",
+        "4,00 %",
+        "2,00 %",
+        "2.000 €"
+      ],
+      [
+        "110 % inkl. Nebenkosten",
+        "0 €",
+        "440.000 €",
+        "4,50 %",
+        "2,00 %",
+        "ca. 2.383 €"
+      ]
+    ],
+    "note": "*Reine Rechenannahmen zur Veranschaulichung; keine aktuellen Bankkonditionen oder festen Zinsaufschläge."
+  }
 }

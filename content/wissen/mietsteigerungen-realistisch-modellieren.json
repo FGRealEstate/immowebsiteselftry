@@ -20,7 +20,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Bestandsmieten, Mietspiegel, Kappungsgrenzen, Modernisierung und Neuvermietung müssen getrennt betrachtet werden. Pauschale Wachstumsraten sind nur Szenarien.",
-  "mechanics": "Vermietungsmodelle müssen rechtlich zulässige Mietentwicklung und realistische Kosten abbilden. Bestandsmiete, Neuvertragsmiete, Betriebskosten, Leerstand und Instandhaltung dürfen nicht vermischt werden.",
   "formulae": [
     "Miete_t = Miete_0 × (1+g)^t nur als ökonomisches Szenario, nicht als Rechtsanspruch"
   ],
@@ -36,30 +35,17 @@
     ],
     "interpretation": "Die mathematische Wachstumsrate darf nicht mit rechtlich zulässigen Mieterhöhungen verwechselt werden. Vertrag, Mietrecht und Markt begrenzen die Umsetzung."
   },
-  "drivers": [
-    "Mietvertrag und Ausgangsmiete",
-    "örtliche Vergleichsmiete und Regulierungsrahmen",
-    "umlagefähige und nicht umlagefähige Kosten",
-    "Leerstands- und Ausfallrisiko",
-    "WEG-Beschlüsse und Instandhaltungsbedarf"
-  ],
-  "risks": [
-    "Nicht jede rechnerisch mögliche Mieterhöhung ist rechtlich zulässig.",
-    "Mietausfall und Renovierungszeiten zwischen Mietverhältnissen können den Jahresertrag mindern.",
-    "Hausgeldpositionen sind für Eigentümer und Mieter unterschiedlich zu behandeln."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [
     {
       "label": "§ 558 BGB – Mieterhöhung bis zur ortsüblichen Vergleichsmiete",
       "url": "https://www.gesetze-im-internet.de/bgb/__558.html"
     }
   ],
-  "assistantAnswer": "Mietsteigerungen sind rechtlich und marktseitig begrenzt. Die mathematische Wachstumsrate darf nicht mit rechtlich zulässigen Mieterhöhungen verwechselt werden. Vertrag, Mietrecht und Markt begrenzen die Umsetzung."
+  "assistantAnswer": "Mietsteigerungen sind rechtlich und marktseitig begrenzt. Mietsteigerungen hängen vom Vertragstyp, Mietrecht, Ausgangsniveau und Mieterwechsel ab. Eine pauschale jährliche Wachstumsrate kann rechtlich nicht durchsetzbare Erträge simulieren.",
+  "focusPoints": [
+    "Mietsteigerungen hängen vom Vertragstyp, Mietrecht, Ausgangsniveau und Mieterwechsel ab. Eine pauschale jährliche Wachstumsrate kann rechtlich nicht durchsetzbare Erträge simulieren.",
+    "Bestandsmiete, Staffelmiete, Indexmiete und Neuvermietung brauchen eigene Rechenlogiken.",
+    "Bei Investmentmodellen sollte die Mietsteigerung zeitlich konkret modelliert und mit Leerstands-/Renovierungsannahmen verknüpft werden."
+  ],
+  "decisionUse": "Nicht „2 % Mietwachstum“ in jede Periode schreiben, sondern je Mietvertrag begründen, wann und warum eine Anpassung möglich ist."
 }

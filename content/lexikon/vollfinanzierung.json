@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Finanzierung",
-  "explanation": "Finanzierung, bei der der Kaufpreis weitgehend oder vollständig fremdfinanziert wird. Nebenkosten können zusätzlich aus Eigenkapital oder bei 110-%-Strukturen ebenfalls aus Fremdkapital stammen.",
-  "practiceExample": "400.000 € Kaufpreis vollständig finanziert bei 4 % Zins + 2 % Tilgung: ca. 2.000 € Monatsrate.",
+  "explanation": "Vollfinanzierung bedeutet regelmäßig, dass der Kaufpreis vollständig fremdfinanziert wird. Eine Finanzierung zusätzlich der Erwerbsnebenkosten wird häufig als 110-%-Finanzierung bezeichnet. Die höhere Fremdfinanzierung kann Zins und Unterdeckungsrisiko erhöhen.",
+  "practiceExample": "400.000 € Kaufpreis zu 100 % finanziert, 4,0 % Zins und 2,0 % Anfangstilgung ergeben rund 2.000 € Anfangsrate pro Monat.",
   "formula": "Finanzierungsquote = Darlehen / Kaufpreis",
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Finanzierung, bei der der Kaufpreis weitgehend oder vollständig fremdfinanziert wird. Nebenkosten können zusätzlich aus Eigenkapital oder bei 110-%-Strukturen ebenfalls aus Fremdkapital stammen. 400.000 € Kaufpreis vollständig finanziert bei 4 % Zins + 2 % Tilgung: ca. 2.000 € Monatsrate."
+  "assistantAnswer": "Finanzierung des Kaufpreises ohne Eigenkapitalanteil am Kaufpreis. Vollfinanzierung bedeutet regelmäßig, dass der Kaufpreis vollständig fremdfinanziert wird. Eine Finanzierung zusätzlich der Erwerbsnebenkosten wird häufig als 110-%-Finanzierung bezeichnet. Die höhere Fremdfinanzierung kann Zins und Unterdeckungsrisiko erhöhen."
 }

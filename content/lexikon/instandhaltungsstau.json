@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Aufgeschobener Erhaltungsbedarf. Instandhaltungsstau ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Aufgeschobener Erhaltungsbedarf. Instandhaltungsstau ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Aufgeschobener Erhaltungsbedarf. Instandhaltungsstau bezeichnet aufgeschobene notwendige Erhaltungsmaßnahmen. Er ist ein wirtschaftliches Risiko, weil vermeintlich niedrige Kaufpreise durch kurzfristig erforderlichen CapEx neutralisiert werden können.",
+  "explanation": "Instandhaltungsstau bezeichnet aufgeschobene notwendige Erhaltungsmaßnahmen. Er ist ein wirtschaftliches Risiko, weil vermeintlich niedrige Kaufpreise durch kurzfristig erforderlichen CapEx neutralisiert werden können.",
+  "practiceExample": "30.000 € Preisabschlag wirken wenig attraktiv, wenn Dach, Heizung und Leitungen kurzfristig 70.000 € Investitionen erfordern."
 }

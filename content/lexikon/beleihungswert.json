@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Finanzierung",
-  "explanation": "Vorsichtig ermittelter, langfristig erzielbarer Objektwert der Bank. Beleihungswert sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden.",
-  "practiceExample": "Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Vorsichtig ermittelter, langfristig erzielbarer Objektwert der Bank. Beleihungswert sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden. Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen."
+  "assistantAnswer": "Vorsichtig ermittelter, langfristig erzielbarer Objektwert der Bank. Der Beleihungswert ist ein von der Bank vorsichtig und nachhaltig ermittelter Sicherheitenwert, der vom Kaufpreis oder aktuellen Marktwert abweichen kann. Er bildet die Basis für den Beleihungsauslauf.",
+  "explanation": "Der Beleihungswert ist ein von der Bank vorsichtig und nachhaltig ermittelter Sicherheitenwert, der vom Kaufpreis oder aktuellen Marktwert abweichen kann. Er bildet die Basis für den Beleihungsauslauf.",
+  "practiceExample": "500.000 € Kaufpreis, 450.000 € Beleihungswert und 360.000 € Darlehen ergeben 80 % Beleihungsauslauf trotz nur 72 % Darlehen/Kaufpreis."
 }

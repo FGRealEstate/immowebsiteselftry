@@ -22,7 +22,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Typische Treiber sind Zins, Miete, Leerstand, Capex und Exit-Faktor. So wird sichtbar, wo die Due Diligence besonders tief sein muss.",
-  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
   "formulae": [
     "Sensitivität = Veränderung Ergebnis / Veränderung Eingangsgröße"
   ],
@@ -39,25 +38,12 @@
     ],
     "interpretation": "Eine Sensitivitätsanalyse zeigt, welche Annahmen das Ergebnis dominieren. Sie ist oft informativer als ein einziges Basisszenario."
   },
-  "drivers": [
-    "Jahresnettokaltmiete und Mietvertragsqualität",
-    "Kaufpreis plus Erwerbsnebenkosten",
-    "Nicht umlagefähige Kosten, Verwaltung und Capex",
-    "Finanzierungsstruktur und Tilgung",
-    "Exit-Annahmen und Haltedauer"
-  ],
-  "risks": [
-    "Bruttorenditen blenden Kosten und Finanzierung aus.",
-    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
-    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Eine Sensitivitätsanalyse zeigt, welche Annahmen das Ergebnis am stärksten verändern. Eine Sensitivitätsanalyse zeigt, welche Annahmen das Ergebnis dominieren. Sie ist oft informativer als ein einziges Basisszenario."
+  "assistantAnswer": "Eine Sensitivitätsanalyse zeigt, welche Annahmen das Ergebnis am stärksten verändern. Eine Sensitivitätsanalyse verändert jeweils einzelne Annahmen und zeigt, welche Variablen das Ergebnis besonders treiben.",
+  "focusPoints": [
+    "Eine Sensitivitätsanalyse verändert jeweils einzelne Annahmen und zeigt, welche Variablen das Ergebnis besonders treiben.",
+    "Bei Immobilien sind typischerweise Zins, Miete, Leerstand, CapEx und Exitpreis besonders relevant.",
+    "Sie ist von einem kombinierten Stressszenario zu unterscheiden, bei dem mehrere negative Entwicklungen gleichzeitig eintreten."
+  ],
+  "decisionUse": "Nicht nur Best-/Base-/Worst-Case benennen, sondern zeigen, ab welchem Zins, welcher Miete oder welchem Kaufpreis die Zielrendite unterschritten wird."
 }

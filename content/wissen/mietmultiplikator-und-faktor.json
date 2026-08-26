@@ -20,7 +20,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Niedriger ist nicht automatisch besser, da Lage, Zustand, Entwicklung und Risiko nicht enthalten sind.",
-  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
   "formulae": [
     "Mietmultiplikator = Kaufpreis / Jahresnettokaltmiete"
   ],
@@ -36,25 +35,12 @@
     ],
     "interpretation": "Der Faktor ist ein schneller Preismultiplikator, aber ohne Kosten- oder Investitionssicht."
   },
-  "drivers": [
-    "Jahresnettokaltmiete und Mietvertragsqualität",
-    "Kaufpreis plus Erwerbsnebenkosten",
-    "Nicht umlagefähige Kosten, Verwaltung und Capex",
-    "Finanzierungsstruktur und Tilgung",
-    "Exit-Annahmen und Haltedauer"
-  ],
-  "risks": [
-    "Bruttorenditen blenden Kosten und Finanzierung aus.",
-    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
-    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Der Faktor beschreibt, wie viele Jahresnettokaltmieten dem Kaufpreis entsprechen. Der Faktor ist ein schneller Preismultiplikator, aber ohne Kosten- oder Investitionssicht."
+  "assistantAnswer": "Der Faktor beschreibt, wie viele Jahresnettokaltmieten dem Kaufpreis entsprechen. Mietmultiplikator, Vervielfältiger und Kaufpreisfaktor werden im Markt häufig synonym verwendet: Kaufpreis geteilt durch Jahresnettokaltmiete.",
+  "focusPoints": [
+    "Mietmultiplikator, Vervielfältiger und Kaufpreisfaktor werden im Markt häufig synonym verwendet: Kaufpreis geteilt durch Jahresnettokaltmiete.",
+    "Der Faktor enthält keine Aussage zu Nebenkosten, Bewirtschaftungskosten, Finanzierung oder Modernisierung.",
+    "Bei stark untervermieteten Objekten sollte klar zwischen Ist-Faktor und Faktor auf nachhaltig erzielbarer Miete unterschieden werden."
+  ],
+  "decisionUse": "Ist- und Soll-Miete getrennt ausweisen; ein Soll-Faktor ohne rechtlich und praktisch erreichbare Mietsteigerung ist keine belastbare Kennzahl."
 }

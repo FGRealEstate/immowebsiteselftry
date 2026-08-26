@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Miete abzüglich objektspezifischer laufender Kosten. Mietüberschuss ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Miete abzüglich objektspezifischer laufender Kosten. Mietüberschuss ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Miete abzüglich objektspezifischer laufender Kosten. Mietüberschuss ist der nach definierten laufenden Objektkosten verbleibende Mietertrag. Ob Finanzierung, Steuern oder Rücklagen enthalten sind, muss ausdrücklich definiert werden.",
+  "explanation": "Mietüberschuss ist der nach definierten laufenden Objektkosten verbleibende Mietertrag. Ob Finanzierung, Steuern oder Rücklagen enthalten sind, muss ausdrücklich definiert werden.",
+  "practiceExample": "18.000 € JNKM minus 3.000 € nicht umlagefähige laufende Kosten ergeben 15.000 € vereinfachten Mietüberschuss vor Finanzierung."
 }

@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Finanzierung",
-  "explanation": "Verhältnis von Ergebnisgröße zu Zinsaufwand. Zinsdeckungsgrad sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden.",
-  "practiceExample": "Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Verhältnis von Ergebnisgröße zu Zinsaufwand. Zinsdeckungsgrad sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden. Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen."
+  "assistantAnswer": "Verhältnis von Ergebnisgröße zu Zinsaufwand. Der Zinsdeckungsgrad misst, wie oft eine definierte Ergebnisgröße den reinen Zinsaufwand deckt. Anders als der DSCR berücksichtigt er typischerweise nicht die Tilgung.",
+  "explanation": "Der Zinsdeckungsgrad misst, wie oft eine definierte Ergebnisgröße den reinen Zinsaufwand deckt. Anders als der DSCR berücksichtigt er typischerweise nicht die Tilgung.",
+  "practiceExample": "NOI 45.000 € und Zinsaufwand 30.000 € ergeben Zinsdeckungsgrad 1,5. Fällt der NOI auf 25.000 €, liegt er nur noch bei 0,83."
 }

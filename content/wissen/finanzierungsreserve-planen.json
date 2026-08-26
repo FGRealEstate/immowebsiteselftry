@@ -22,7 +22,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Sie sollte nicht vollständig in den Kaufpreis fließen, sondern liquide verfügbar bleiben.",
-  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
   "formulae": [
     "Liquiditätsreserve = geplante Einmalmaßnahmen + Notfallpuffer + Erwerbs-/Umzugspuffer"
   ],
@@ -40,25 +39,12 @@
     ],
     "interpretation": "Eine Finanzierung, die das gesamte verfügbare Eigenkapital verbraucht, kann trotz niedrigerer Rate riskanter sein als eine geringfügig höhere Darlehenssumme mit ausreichender Reserve."
   },
-  "drivers": [
-    "Darlehenshöhe und Beleihungsauslauf",
-    "Sollzins, Tilgung und Zinsbindung",
-    "Restschuld zum Ende der Zinsbindung",
-    "Liquiditätsreserve und Sondertilgungsrechte",
-    "Objektqualität und bankseitiger Beleihungswert"
-  ],
-  "risks": [
-    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
-    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
-    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Eine Reserve schützt vor Kostenüberschreitungen, Leerstand und verzögerten Auszahlungen. Eine Finanzierung, die das gesamte verfügbare Eigenkapital verbraucht, kann trotz niedrigerer Rate riskanter sein als eine geringfügig höhere Darlehenssumme mit ausreichender Reserve."
+  "assistantAnswer": "Eine Reserve schützt vor Kostenüberschreitungen, Leerstand und verzögerten Auszahlungen. Eine Finanzierungsreserve ist liquide verfügbare Sicherheit für Kosten, die nicht oder später von der Bank finanziert werden: Renovierung, Nachträge, Leerstand oder Erwerbsnebenkosten.",
+  "focusPoints": [
+    "Eine Finanzierungsreserve ist liquide verfügbare Sicherheit für Kosten, die nicht oder später von der Bank finanziert werden: Renovierung, Nachträge, Leerstand oder Erwerbsnebenkosten.",
+    "Die Reserve ist von der Instandhaltungsreserve des Objekts und von langfristig investiertem Eigenkapital zu trennen.",
+    "Bei knapp kalkulierten Finanzierungen kann eine kleine Kostenüberschreitung sonst zu teurem Nachrang- oder Konsumentenkredit führen."
+  ],
+  "decisionUse": "Die Reserve sollte als eigener Betrag nach Kauf verbleiben und nicht rückwirkend als „Eigenkapital“ schön gerechnet werden."
 }

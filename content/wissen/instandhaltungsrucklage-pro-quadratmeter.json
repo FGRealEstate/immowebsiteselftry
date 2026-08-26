@@ -21,7 +21,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Gebäudealter, Zustand, Konstruktion und bereits vorhandene Rücklagen sind wichtiger als ein fixer Wert. Fünf bis fünfzehn Euro pro Quadratmeter und Jahr sind nur eine grobe Spannbreite.",
-  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
   "formulae": [
     "Objektreserve p.a. = Fläche × Reserveansatz €/m² p.a."
   ],
@@ -36,25 +35,12 @@
     ],
     "interpretation": "Ein pauschaler €/m²-Wert ist nur ein Planungsansatz. Baujahr, Gewerke, WEG-Rücklage und konkrete Sanierungsplanung sind wichtiger."
   },
-  "drivers": [
-    "Jahresnettokaltmiete und Mietvertragsqualität",
-    "Kaufpreis plus Erwerbsnebenkosten",
-    "Nicht umlagefähige Kosten, Verwaltung und Capex",
-    "Finanzierungsstruktur und Tilgung",
-    "Exit-Annahmen und Haltedauer"
-  ],
-  "risks": [
-    "Bruttorenditen blenden Kosten und Finanzierung aus.",
-    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
-    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Ein pauschaler Ansatz kann für die erste Kalkulation helfen. Ein pauschaler €/m²-Wert ist nur ein Planungsansatz. Baujahr, Gewerke, WEG-Rücklage und konkrete Sanierungsplanung sind wichtiger."
+  "assistantAnswer": "Ein pauschaler Ansatz kann für die erste Kalkulation helfen. Pauschale Rücklagen pro Quadratmeter sind nur grobe Planungswerte. Der tatsächliche Bedarf hängt von Alter, Bauart, technischen Gewerken und bereits vorhandenem Rücklagenstand ab.",
+  "focusPoints": [
+    "Pauschale Rücklagen pro Quadratmeter sind nur grobe Planungswerte. Der tatsächliche Bedarf hängt von Alter, Bauart, technischen Gewerken und bereits vorhandenem Rücklagenstand ab.",
+    "Für eine ETW betrifft die WEG-Rücklage Gemeinschaftseigentum; Maßnahmen im Sondereigentum benötigen zusätzlich eine private Reserve.",
+    "Bei MFH sollte eine bauteilbezogene CapEx-Planung die pauschale €/m²-Rücklage ergänzen oder ersetzen."
+  ],
+  "decisionUse": "Rücklagenwert immer gegen Dach, Fassade, Heizung, Leitungen, Fenster und Aufzüge plausibilisieren."
 }

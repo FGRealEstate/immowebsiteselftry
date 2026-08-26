@@ -9,14 +9,14 @@
   ],
   "updated": "2026-08-26",
   "category": "Vermietung",
-  "explanation": "Laufende Kosten des bestimmungsgemäßen Gebrauchs. Betriebskosten wirkt auf Ertrag, Kosten oder Rechte innerhalb eines Miet- bzw. WEG-Verhältnisses und sollte aus Vertrag, Abrechnung oder Beschluss konkret abgeleitet werden.",
-  "practiceExample": "Beispiel: Eine Position im Wirtschaftsplan kann wirtschaftlich beim Eigentümer verbleiben, obwohl andere Betriebskosten auf den Mieter umgelegt werden.",
   "formula": null,
-  "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
+  "sources": [
+    {
+      "label": "Betriebskostenverordnung",
+      "url": "https://www.gesetze-im-internet.de/betrkv/"
+    }
   ],
-  "assistantAnswer": "Laufende Kosten des bestimmungsgemäßen Gebrauchs. Betriebskosten wirkt auf Ertrag, Kosten oder Rechte innerhalb eines Miet- bzw. WEG-Verhältnisses und sollte aus Vertrag, Abrechnung oder Beschluss konkret abgeleitet werden. Beispiel: Eine Position im Wirtschaftsplan kann wirtschaftlich beim Eigentümer verbleiben, obwohl andere Betriebskosten auf den Mieter umgelegt werden."
+  "assistantAnswer": "Laufende Kosten des bestimmungsgemäßen Gebrauchs. Betriebskosten sind laufende Kosten des bestimmungsgemäßen Gebrauchs eines Gebäudes/Grundstücks. Welche Positionen auf Wohnraummieter umgelegt werden können, richtet sich nach Betriebskostenverordnung und wirksamer mietvertraglicher Vereinbarung.",
+  "explanation": "Betriebskosten sind laufende Kosten des bestimmungsgemäßen Gebrauchs eines Gebäudes/Grundstücks. Welche Positionen auf Wohnraummieter umgelegt werden können, richtet sich nach Betriebskostenverordnung und wirksamer mietvertraglicher Vereinbarung.",
+  "practiceExample": "Grundsteuer oder Gebäudereinigung können bei wirksamer Vereinbarung umlagefähig sein; Verwaltungskosten und Instandhaltung sind grundsätzlich keine Betriebskosten im Sinne der BetrKV."
 }

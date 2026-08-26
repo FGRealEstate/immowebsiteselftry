@@ -21,7 +21,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Er ist sinnvoll für Haltedauer- und Exit-Vergleiche, reagiert aber stark auf den angenommenen Verkaufspreis.",
-  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
   "formulae": [
     "IRR ist der Zinssatz r, bei dem der Kapitalwert aller Zahlungsströme 0 ist"
   ],
@@ -37,25 +36,12 @@
     ],
     "interpretation": "IRR ist gut für unterschiedliche Haltedauern, kann aber bei ungewöhnlichen Vorzeichenwechseln mehrdeutig sein und unterstellt implizit eine Wiederanlageannahme."
   },
-  "drivers": [
-    "Jahresnettokaltmiete und Mietvertragsqualität",
-    "Kaufpreis plus Erwerbsnebenkosten",
-    "Nicht umlagefähige Kosten, Verwaltung und Capex",
-    "Finanzierungsstruktur und Tilgung",
-    "Exit-Annahmen und Haltedauer"
-  ],
-  "risks": [
-    "Bruttorenditen blenden Kosten und Finanzierung aus.",
-    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
-    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Der interne Zinsfuß berücksichtigt Zeitpunkt und Höhe aller Zahlungsströme. IRR ist gut für unterschiedliche Haltedauern, kann aber bei ungewöhnlichen Vorzeichenwechseln mehrdeutig sein und unterstellt implizit eine Wiederanlageannahme."
+  "assistantAnswer": "Der interne Zinsfuß berücksichtigt Zeitpunkt und Höhe aller Zahlungsströme. Die IRR ist der Diskontsatz, bei dem der Kapitalwert einer Zahlungsreihe null wird. Sie berücksichtigt Zeitpunkt und Höhe sämtlicher Ein- und Auszahlungen.",
+  "focusPoints": [
+    "Die IRR ist der Diskontsatz, bei dem der Kapitalwert einer Zahlungsreihe null wird. Sie berücksichtigt Zeitpunkt und Höhe sämtlicher Ein- und Auszahlungen.",
+    "Bei Immobilien ist sie besonders sensibel für Exitpreis, Haltedauer und den angenommenen Nettoverkaufserlös. Eine hohe IRR kann daher aus einem aggressiven Exit statt aus starkem laufendem Cashflow stammen.",
+    "Mehrere Vorzeichenwechsel in der Zahlungsreihe können zu mathematischen Mehrdeutigkeiten führen; dann ist der Kapitalwertvergleich robuster."
+  ],
+  "decisionUse": "IRR nur zusammen mit absolutem Kapitalwert, Eigenkapitaleinsatz und offengelegtem Exit-Szenario verwenden."
 }

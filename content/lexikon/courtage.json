@@ -9,23 +9,18 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Erfolgsabhängige Maklervergütung für Nachweis oder Vermittlung. Bei Verbraucher-Käufen von Wohnung oder Einfamilienhaus gelten besondere Regeln zur Textform und Kostenverteilung; bei MFH, Gewerbe und Grundstücken gelten diese Teilungsregeln nicht automatisch.",
-  "practiceExample": "Bei 500.000 € Kaufpreis und 3,57 % Käufercourtage beträgt der Käuferanteil 17.850 €.",
-  "formula": "Courtage = Kaufpreis × Provisionssatz",
+  "explanation": "Courtage ist die erfolgsabhängige Maklervergütung. Bei Kaufverträgen über Wohnungen und Einfamilienhäuser mit Verbraucherbeteiligung greifen die besonderen §§ 656a–656d BGB: Bei Doppeltätigkeit müssen sich beide Parteien in gleicher Höhe verpflichten; bei einseitigem Maklerauftrag kann eine Kostenabwälzung auf die andere Partei nur unter den gesetzlichen Voraussetzungen erfolgen. Diese Sonderregeln gelten nicht automatisch für Mehrfamilienhäuser, Gewerbeimmobilien oder Grundstücke. Eine allgemeine gesetzliche Provisionsobergrenze je Bundesland für Immobilienverkäufe existiert nicht; regionale Marktüblichkeiten sind keine gesetzlichen Höchstsätze.",
+  "practiceExample": "ETW-Kaufpreis 500.000 € und wirksam vereinbarter Käuferanteil 3,57 %: 17.850 € Käufercourtage. Bei einem MFH-Kauf muss die Provisionsabrede separat nach dem konkreten Maklervertrag beurteilt werden; die Teilungsregeln für Wohnung/EFH werden nicht einfach übertragen.",
+  "formula": "Courtage = provisionspflichtige Bemessungsgrundlage × vereinbarter Provisionssatz",
   "sources": [
     {
-      "label": "§ 656c BGB – Maklerlohn bei Tätigkeit für beide Parteien",
+      "label": "§ 656c BGB",
       "url": "https://www.gesetze-im-internet.de/bgb/__656c.html"
     },
     {
-      "label": "§ 656d BGB – Vereinbarungen über Maklerkosten",
+      "label": "§ 656d BGB",
       "url": "https://www.gesetze-im-internet.de/bgb/__656d.html"
     }
   ],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Erfolgsabhängige Maklervergütung für Nachweis oder Vermittlung. Bei Verbraucher-Käufen von Wohnung oder Einfamilienhaus gelten besondere Regeln zur Textform und Kostenverteilung; bei MFH, Gewerbe und Grundstücken gelten diese Teilungsregeln nicht automatisch. Bei 500.000 € Kaufpreis und 3,57 % Käufercourtage beträgt der Käuferanteil 17.850 €."
+  "assistantAnswer": "Maklervergütung. Courtage ist die erfolgsabhängige Maklervergütung. Bei Kaufverträgen über Wohnungen und Einfamilienhäuser mit Verbraucherbeteiligung greifen die besonderen §§ 656a–656d BGB: Bei Doppeltätigkeit müssen sich beide Parteien in gleicher Höhe verpflichten; bei einseitigem Maklerauftrag kann eine Kostenabwälzung auf die andere Partei nur unter den gesetzlichen Voraussetzungen erfolgen. Diese Sonderregeln gelten nicht automatisch für Mehrfamilienhäuser, Gewerbeimmobilien oder Grundstücke. Eine allgemeine gesetzliche Provisionsobergrenze je Bundesland für Immobilienverkäufe existiert nicht; regionale Marktüblichkeiten sind keine gesetzlichen Höchstsätze."
 }

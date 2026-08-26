@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Ausbleibender Mietertrag durch Leerstand oder Nichtzahlung. Mietausfall ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Ausbleibender Mietertrag durch Leerstand oder Nichtzahlung. Mietausfall ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Ausbleibender Mietertrag durch Leerstand oder Nichtzahlung. Mietausfall ist tatsächlich nicht vereinnahmte Sollmiete durch Leerstand, Zahlungsstörung oder Forderungsausfall. Er sollte bei Einzelobjekten möglichst aus konkretem Mieterrisiko und Vermietbarkeit statt nur pauschal geschätzt werden.",
+  "explanation": "Mietausfall ist tatsächlich nicht vereinnahmte Sollmiete durch Leerstand, Zahlungsstörung oder Forderungsausfall. Er sollte bei Einzelobjekten möglichst aus konkretem Mieterrisiko und Vermietbarkeit statt nur pauschal geschätzt werden.",
+  "practiceExample": "1.200 € Monatsmiete und zwei Monate Leerstand bedeuten 2.400 € Mietausfall vor Renovierungs- und Vermarktungskosten."
 }

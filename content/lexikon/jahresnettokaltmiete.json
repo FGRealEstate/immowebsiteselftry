@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Vermietung",
-  "explanation": "Summe der Nettokaltmieten eines Jahres. Jahresnettokaltmiete wirkt auf Ertrag, Kosten oder Rechte innerhalb eines Miet- bzw. WEG-Verhältnisses und sollte aus Vertrag, Abrechnung oder Beschluss konkret abgeleitet werden.",
-  "practiceExample": "Beispiel: Eine Position im Wirtschaftsplan kann wirtschaftlich beim Eigentümer verbleiben, obwohl andere Betriebskosten auf den Mieter umgelegt werden.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Summe der Nettokaltmieten eines Jahres. Jahresnettokaltmiete wirkt auf Ertrag, Kosten oder Rechte innerhalb eines Miet- bzw. WEG-Verhältnisses und sollte aus Vertrag, Abrechnung oder Beschluss konkret abgeleitet werden. Beispiel: Eine Position im Wirtschaftsplan kann wirtschaftlich beim Eigentümer verbleiben, obwohl andere Betriebskosten auf den Mieter umgelegt werden."
+  "assistantAnswer": "Summe der Nettokaltmieten eines Jahres. Jahresnettokaltmiete (JNKM) ist die Summe der vertraglichen Nettokaltmieten eines Jahres ohne umlagefähige Betriebskosten. Sie ist zentrale Basis für Faktor- und Bruttorenditerechnungen.",
+  "explanation": "Jahresnettokaltmiete (JNKM) ist die Summe der vertraglichen Nettokaltmieten eines Jahres ohne umlagefähige Betriebskosten. Sie ist zentrale Basis für Faktor- und Bruttorenditerechnungen.",
+  "practiceExample": "1.400 € monatliche Nettokaltmiete ergeben 16.800 € JNKM bei vollständiger Zahlung über zwölf Monate."
 }

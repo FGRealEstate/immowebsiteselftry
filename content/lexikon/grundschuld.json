@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Finanzierung",
-  "explanation": "Grundpfandrecht zur Kreditsicherung. Grundschuld sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden.",
-  "practiceExample": "Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Grundpfandrecht zur Kreditsicherung. Grundschuld sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden. Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen."
+  "assistantAnswer": "Grundpfandrecht zur Kreditsicherung. Die Grundschuld ist ein dingliches Sicherungsrecht im Grundbuch, das Banken typischerweise zur Absicherung eines Immobiliendarlehens nutzen. Sie ist rechtlich vom Darlehen getrennt und bleibt ohne Löschung auch nach Tilgung im Grundbuch bestehen.",
+  "explanation": "Die Grundschuld ist ein dingliches Sicherungsrecht im Grundbuch, das Banken typischerweise zur Absicherung eines Immobiliendarlehens nutzen. Sie ist rechtlich vom Darlehen getrennt und bleibt ohne Löschung auch nach Tilgung im Grundbuch bestehen.",
+  "practiceExample": "Für 400.000 € Finanzierung kann eine Grundschuld in entsprechender Größenordnung bestellt werden; Zinsen/Nebenleistungen im Grundschuldbetrag sind nicht mit dem Darlehenszins gleichzusetzen."
 }

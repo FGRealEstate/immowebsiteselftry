@@ -20,7 +20,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Wohnwertmerkmale, Spanne und rechtlicher Anwendungsbereich müssen beachtet werden.",
-  "mechanics": "Vermietungsmodelle müssen rechtlich zulässige Mietentwicklung und realistische Kosten abbilden. Bestandsmiete, Neuvertragsmiete, Betriebskosten, Leerstand und Instandhaltung dürfen nicht vermischt werden.",
   "formulae": [
     "Vergleichsmiete aus Mietspiegelmerkmalen und Spanne ableiten – keine universelle Formel"
   ],
@@ -36,30 +35,17 @@
     ],
     "interpretation": "Mietspiegel sind lokal aufgebaut. Tabellenfeld, Wohnlage, Ausstattung, Spannenmerkmale und gesetzliche Voraussetzungen einer Erhöhung müssen gemeinsam geprüft werden."
   },
-  "drivers": [
-    "Mietvertrag und Ausgangsmiete",
-    "örtliche Vergleichsmiete und Regulierungsrahmen",
-    "umlagefähige und nicht umlagefähige Kosten",
-    "Leerstands- und Ausfallrisiko",
-    "WEG-Beschlüsse und Instandhaltungsbedarf"
-  ],
-  "risks": [
-    "Nicht jede rechnerisch mögliche Mieterhöhung ist rechtlich zulässig.",
-    "Mietausfall und Renovierungszeiten zwischen Mietverhältnissen können den Jahresertrag mindern.",
-    "Hausgeldpositionen sind für Eigentümer und Mieter unterschiedlich zu behandeln."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [
     {
       "label": "§ 558 BGB – Mieterhöhung bis zur ortsüblichen Vergleichsmiete",
       "url": "https://www.gesetze-im-internet.de/bgb/__558.html"
     }
   ],
-  "assistantAnswer": "Der Mietspiegel unterstützt die Einordnung ortsüblicher Vergleichsmieten. Mietspiegel sind lokal aufgebaut. Tabellenfeld, Wohnlage, Ausstattung, Spannenmerkmale und gesetzliche Voraussetzungen einer Erhöhung müssen gemeinsam geprüft werden."
+  "assistantAnswer": "Der Mietspiegel unterstützt die Einordnung ortsüblicher Vergleichsmieten. Mietspiegel bilden die ortsübliche Vergleichsmiete nach gesetzlichen Kriterien ab und sind kein allgemeiner Marktpreisrechner für jede Wohnung.",
+  "focusPoints": [
+    "Mietspiegel bilden die ortsübliche Vergleichsmiete nach gesetzlichen Kriterien ab und sind kein allgemeiner Marktpreisrechner für jede Wohnung.",
+    "Baujahr, Wohnfläche, Lage und Ausstattungsmerkmale bestimmen die Einordnung; qualifizierte Mietspiegel haben besondere rechtliche Bedeutung.",
+    "Angebotsmieten aus Portalen können deutlich über oder unter der mietrechtlich relevanten Vergleichsmiete liegen."
+  ],
+  "decisionUse": "Für Mietsteigerungs- und Neuvermietungsmodelle die rechtliche Mietgrenze getrennt von beobachteten Angebotsmieten modellieren."
 }

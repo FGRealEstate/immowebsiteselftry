@@ -9,14 +9,14 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Marktwert nach den gesetzlichen Bewertungsgrundsätzen. Verkehrswert ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
-  "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
+  "sources": [
+    {
+      "label": "§ 194 BauGB",
+      "url": "https://www.gesetze-im-internet.de/bbaug/__194.html"
+    }
   ],
-  "assistantAnswer": "Marktwert nach den gesetzlichen Bewertungsgrundsätzen. Verkehrswert ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Marktwert nach den gesetzlichen Bewertungsgrundsätzen. Verkehrswert beziehungsweise Marktwert ist nach § 194 BauGB der Preis, der im gewöhnlichen Geschäftsverkehr unter Berücksichtigung der rechtlichen Gegebenheiten, tatsächlichen Eigenschaften und Lage ohne ungewöhnliche oder persönliche Verhältnisse erzielbar wäre.",
+  "explanation": "Verkehrswert beziehungsweise Marktwert ist nach § 194 BauGB der Preis, der im gewöhnlichen Geschäftsverkehr unter Berücksichtigung der rechtlichen Gegebenheiten, tatsächlichen Eigenschaften und Lage ohne ungewöhnliche oder persönliche Verhältnisse erzielbar wäre.",
+  "practiceExample": "Ein Wunschpreis des Eigentümers oder ein Portal-Angebotspreis ist nicht automatisch Verkehrswert."
 }

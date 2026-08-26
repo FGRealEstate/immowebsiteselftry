@@ -23,7 +23,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Nutzung, Haltedauer und Struktur sind individuell zu prüfen. Gesellschaften folgen anderen Regeln.",
-  "mechanics": "Steuerliche Effekte sind eine zweite Rechnung neben dem tatsächlichen Cashflow. Entscheidend sind die steuerliche Bemessungsgrundlage, zeitliche Zuordnung, persönliche bzw. gesellschaftsrechtliche Situation und die Abgrenzung von abzugsfähigen Aufwendungen zu Anschaffungs- oder Herstellungskosten.",
   "formulae": [
     "Private Veräußerung: Zeitraum zwischen Anschaffung und Veräußerung nach § 23 EStG prüfen"
   ],
@@ -38,30 +37,17 @@
     ],
     "interpretation": "Eigennutzungs-Ausnahmen und gewerblicher Grundstückshandel können die Einordnung verändern. Vor Verkauf steuerlich prüfen."
   },
-  "drivers": [
-    "Gebäude- versus Bodenanteil",
-    "AfA-Methode und Fertigstellungsjahr",
-    "Finanzierungszinsen und sonstige Werbungskosten",
-    "Persönlicher Steuersatz bzw. Gesellschaftsstruktur",
-    "Haltedauer und Veräußerungsstrategie"
-  ],
-  "risks": [
-    "Steuerersparnis ersetzt keinen positiven Objekt-Cashflow.",
-    "Gesetze und Verwaltungsauffassung können sich ändern.",
-    "Einzelfälle sollten mit Steuerberatung und belastbaren Unterlagen geprüft werden."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [
     {
       "label": "§ 23 EStG – Private Veräußerungsgeschäfte",
       "url": "https://www.gesetze-im-internet.de/estg/__23.html"
     }
   ],
-  "assistantAnswer": "Private Veräußerungsgewinne können innerhalb gesetzlicher Fristen steuerpflichtig sein. Eigennutzungs-Ausnahmen und gewerblicher Grundstückshandel können die Einordnung verändern. Vor Verkauf steuerlich prüfen."
+  "assistantAnswer": "Private Veräußerungsgewinne können innerhalb gesetzlicher Fristen steuerpflichtig sein. Bei privaten Grundstücksveräußerungen kann § 23 EStG innerhalb der Zehnjahresfrist zu steuerpflichtigen privaten Veräußerungsgeschäften führen. Für bestimmte Eigennutzungsfälle existieren Ausnahmen.",
+  "focusPoints": [
+    "Bei privaten Grundstücksveräußerungen kann § 23 EStG innerhalb der Zehnjahresfrist zu steuerpflichtigen privaten Veräußerungsgeschäften führen. Für bestimmte Eigennutzungsfälle existieren Ausnahmen.",
+    "Entscheidend sind Anschaffungs-/Veräußerungszeitpunkt, Nutzung und konkrete Eigentumsstruktur. Eine pauschale Aussage „nach zehn Jahren immer steuerfrei“ kann bei Betriebsvermögen oder gewerblichem Grundstückshandel falsch sein.",
+    "Die steuerliche Betrachtung ist von Finanzierung und Cashflow getrennt zu modellieren."
+  ],
+  "decisionUse": "Vor geplantem Exit den Einzelfall steuerlich prüfen, insbesondere bei häufigerem Handel, Gesellschaften oder Nutzungswechsel."
 }

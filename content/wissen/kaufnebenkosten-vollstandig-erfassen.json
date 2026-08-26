@@ -23,7 +23,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Zusätzlich können Gutachten, Finanzierungskosten, Renovierung und Bereitstellungszinsen anfallen. Nicht jede Position ist in jedem Fall vorhanden.",
-  "mechanics": "Vor dem Kauf müssen rechtliche, technische, wirtschaftliche und finanzielle Prüfung zusammengeführt werden. Einzelkennzahlen ersetzen weder Objektunterlagen noch eine belastbare Bewertung.",
   "formulae": [
     "Gesamtinvestition = Kaufpreis + GrESt + Notar/Grundbuch + Makler + unmittelbare Erwerbs-/Investitionskosten"
   ],
@@ -40,25 +39,12 @@
     ],
     "interpretation": "Für Rendite und Eigenkapitalbedarf sollte nicht nur der Kaufpreis im Nenner stehen, wenn Erwerbsnebenkosten wirtschaftlich gebundenes Kapital sind."
   },
-  "drivers": [
-    "Eigentums- und Lastenverhältnisse",
-    "Flächen, Bauzustand und Energiezustand",
-    "Miet- und WEG-Unterlagen",
-    "Kaufpreis und Vergleichsdaten",
-    "Finanzierbarkeit und Liquiditätsbedarf"
-  ],
-  "risks": [
-    "Fehlende Unterlagen sind ein eigenes Risiko.",
-    "Technische Maßnahmen können den vermeintlichen Preisvorteil aufzehren.",
-    "Ein günstiger Quadratmeterpreis ist ohne Mikrolage und Zustand nicht aussagekräftig."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Grunderwerbsteuer, Notar, Grundbuch und gegebenenfalls Makler erhöhen den Kapitalbedarf. Für Rendite und Eigenkapitalbedarf sollte nicht nur der Kaufpreis im Nenner stehen, wenn Erwerbsnebenkosten wirtschaftlich gebundenes Kapital sind."
+  "assistantAnswer": "Grunderwerbsteuer, Notar, Grundbuch und gegebenenfalls Makler erhöhen den Kapitalbedarf. Zu den Erwerbsnebenkosten gehören insbesondere Grunderwerbsteuer, Notar und Grundbuch sowie gegebenenfalls Maklercourtage. Höhe und Struktur hängen vom Bundesland und konkreten Geschäft ab.",
+  "focusPoints": [
+    "Zu den Erwerbsnebenkosten gehören insbesondere Grunderwerbsteuer, Notar und Grundbuch sowie gegebenenfalls Maklercourtage. Höhe und Struktur hängen vom Bundesland und konkreten Geschäft ab.",
+    "Zusätzliche Kosten wie Finanzierungskosten, Gutachten, Renovierung oder Möblierung sind wirtschaftlich ebenfalls Teil des Kapitalbedarfs, auch wenn sie keine klassischen Kaufnebenkosten sind.",
+    "Für Rendite- und Eigenkapitalberechnungen sollte deshalb die Gesamtinvestition statt nur des notariellen Kaufpreises verwendet werden."
+  ],
+  "decisionUse": "Kaufpreis, gesetzliche Erwerbsnebenkosten und nachgelagerte Investitionen getrennt ausweisen; so bleibt sichtbar, welche Kosten fremdfinanziert sind."
 }

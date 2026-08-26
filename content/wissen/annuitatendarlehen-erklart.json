@@ -22,7 +22,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Der Zinsanteil sinkt mit der Restschuld, der Tilgungsanteil steigt. Die anfängliche Annuität ergibt sich aus Sollzins plus anfänglicher Tilgung bezogen auf die Darlehenssumme.",
-  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
   "formulae": [
     "Anfangsannuität = Darlehen × (Sollzins + Anfangstilgung)",
     "Monatsrate = Anfangsannuität / 12",
@@ -46,25 +45,41 @@
     ],
     "interpretation": "Zwei Darlehen mit gleicher Monatsrate können nach zehn Jahren unterschiedliche Restschulden haben, wenn Zins, Tilgungsbeginn oder Sondertilgungen abweichen."
   },
-  "drivers": [
-    "Darlehenshöhe und Beleihungsauslauf",
-    "Sollzins, Tilgung und Zinsbindung",
-    "Restschuld zum Ende der Zinsbindung",
-    "Liquiditätsreserve und Sondertilgungsrechte",
-    "Objektqualität und bankseitiger Beleihungswert"
-  ],
-  "risks": [
-    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
-    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
-    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Beim Annuitätendarlehen bleibt die Rate während der Zinsbindung regelmäßig konstant. Zwei Darlehen mit gleicher Monatsrate können nach zehn Jahren unterschiedliche Restschulden haben, wenn Zins, Tilgungsbeginn oder Sondertilgungen abweichen."
+  "assistantAnswer": "Beim Annuitätendarlehen bleibt die Rate während der Zinsbindung regelmäßig konstant. Die Annuität ist die während der Zinsbindung typischerweise konstante Rate aus Zins und Tilgung. Weil der Zins auf die jeweils verbleibende Restschuld berechnet wird, sinkt der Zinsanteil im Zeitverlauf und der Tilgungsanteil steigt.",
+  "focusPoints": [
+    "Die Annuität ist die während der Zinsbindung typischerweise konstante Rate aus Zins und Tilgung. Weil der Zins auf die jeweils verbleibende Restschuld berechnet wird, sinkt der Zinsanteil im Zeitverlauf und der Tilgungsanteil steigt.",
+    "Die oft verwendete Näherung „Sollzins + Anfangstilgung“ erklärt nur die Anfangsrate. Für Restschuld und exakte Zahlungsreihen muss periodisch gerechnet werden.",
+    "Für den Vergleich von Finanzierungen ist die Restschuld nach 10 oder 15 Jahren mindestens genauso wichtig wie die Anfangsrate."
+  ],
+  "decisionUse": "Eine scheinbar niedrige Rate kann durch geringe Tilgung teuer erkauft sein. Deshalb Rate, Tilgungsanteil, Restschuld und Anschlusszinsrisiko gemeinsam betrachten.",
+  "comparisonTable": {
+    "title": "Beispiel: 300.000 € Darlehen, 4,20 % Sollzins",
+    "headers": [
+      "Tilgung zu Beginn",
+      "Anfangsrate/Monat",
+      "Tilgung im 1. Monat",
+      "Charakteristik"
+    ],
+    "rows": [
+      [
+        "1,0 %",
+        "1.300 €",
+        "250 €",
+        "niedrige Rate, hohe Restschuld"
+      ],
+      [
+        "2,0 %",
+        "1.550 €",
+        "500 €",
+        "ausgewogener Start"
+      ],
+      [
+        "3,0 %",
+        "1.800 €",
+        "750 €",
+        "höhere Rate, schnellere Entschuldung"
+      ]
+    ]
+  }
 }

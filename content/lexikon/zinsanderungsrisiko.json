@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Finanzierung",
-  "explanation": "Risiko höherer Kosten bei künftiger Zinsanpassung. Zinsänderungsrisiko sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden.",
-  "practiceExample": "Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Risiko höherer Kosten bei künftiger Zinsanpassung. Zinsänderungsrisiko sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden. Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen."
+  "assistantAnswer": "Risiko höherer Kosten bei künftiger Zinsanpassung. Zinsänderungsrisiko ist das Risiko, dass die Anschlussfinanzierung nach Ende der Zinsbindung zu höheren Konditionen erfolgt. Maßgeblich ist die Restschuld zum Anschlusszeitpunkt.",
+  "explanation": "Zinsänderungsrisiko ist das Risiko, dass die Anschlussfinanzierung nach Ende der Zinsbindung zu höheren Konditionen erfolgt. Maßgeblich ist die Restschuld zum Anschlusszeitpunkt.",
+  "practiceExample": "250.000 € Restschuld, 2 % Tilgung: bei 3 % Zins ca. 1.042 € Rate, bei 5,5 % ca. 1.563 € – rund 521 € monatlicher Unterschied."
 }

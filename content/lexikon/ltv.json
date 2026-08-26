@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Finanzierung",
-  "explanation": "Loan-to-Value: Verhältnis von Darlehenssaldo zu einem definierten Objektwert. Je nach Kontext kann dieser Wert Marktwert oder eine andere Bewertungsbasis sein.",
-  "practiceExample": "350.000 € Darlehen / 500.000 € Objektwert = 70 %.",
+  "explanation": "Loan-to-Value bezeichnet das Verhältnis von Darlehen zu einem definierten Objektwert. Im deutschen Bankgeschäft ist davon der Beleihungsauslauf auf Basis des Beleihungswerts zu unterscheiden. Für internationale Vergleiche muss immer geklärt werden, welcher Wert im Nenner steht.",
+  "practiceExample": "350.000 € Darlehen und 500.000 € Marktwert ergeben 70 % LTV. Bei einem bankinternen Beleihungswert von 450.000 € läge der Beleihungsauslauf zugleich bei rund 77,8 %.",
   "formula": "LTV = Darlehen / Objektwert",
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Loan-to-Value: Verhältnis von Darlehenssaldo zu einem definierten Objektwert. Je nach Kontext kann dieser Wert Marktwert oder eine andere Bewertungsbasis sein. 350.000 € Darlehen / 500.000 € Objektwert = 70 %."
+  "assistantAnswer": "Loan-to-Value: Darlehen im Verhältnis zu einem Objektwert. Loan-to-Value bezeichnet das Verhältnis von Darlehen zu einem definierten Objektwert. Im deutschen Bankgeschäft ist davon der Beleihungsauslauf auf Basis des Beleihungswerts zu unterscheiden. Für internationale Vergleiche muss immer geklärt werden, welcher Wert im Nenner steht."
 }

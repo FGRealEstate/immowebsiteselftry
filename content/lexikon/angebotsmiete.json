@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Vermietung",
-  "explanation": "In Inseraten verlangte Miete; nicht identisch mit tatsächlich vereinbarter Bestandsmiete. Angebotsmiete wirkt auf Ertrag, Kosten oder Rechte innerhalb eines Miet- bzw. WEG-Verhältnisses und sollte aus Vertrag, Abrechnung oder Beschluss konkret abgeleitet werden.",
-  "practiceExample": "Beispiel: Eine Position im Wirtschaftsplan kann wirtschaftlich beim Eigentümer verbleiben, obwohl andere Betriebskosten auf den Mieter umgelegt werden.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "In Inseraten verlangte Miete; nicht identisch mit tatsächlich vereinbarter Bestandsmiete. Angebotsmiete wirkt auf Ertrag, Kosten oder Rechte innerhalb eines Miet- bzw. WEG-Verhältnisses und sollte aus Vertrag, Abrechnung oder Beschluss konkret abgeleitet werden. Beispiel: Eine Position im Wirtschaftsplan kann wirtschaftlich beim Eigentümer verbleiben, obwohl andere Betriebskosten auf den Mieter umgelegt werden."
+  "assistantAnswer": "In Inseraten verlangte Miete; nicht identisch mit tatsächlich vereinbarter Bestandsmiete. Angebotsmiete ist die in Inseraten verlangte Miete und nicht automatisch die tatsächlich vereinbarte Vertragsmiete oder rechtlich zulässige Miete. Sie ist ein Marktindikator mit Selektionsverzerrungen.",
+  "explanation": "Angebotsmiete ist die in Inseraten verlangte Miete und nicht automatisch die tatsächlich vereinbarte Vertragsmiete oder rechtlich zulässige Miete. Sie ist ein Marktindikator mit Selektionsverzerrungen.",
+  "practiceExample": "Inserate zeigen 18 €/m², abgeschlossene Verträge liegen aber bei 16 €/m²; eine Investmentrechnung mit 18 €/m² würde den Ertrag überschätzen."
 }

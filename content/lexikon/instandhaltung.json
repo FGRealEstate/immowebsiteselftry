@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Maßnahmen zum Erhalt des bestimmungsgemäßen Zustands. Instandhaltung ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Maßnahmen zum Erhalt des bestimmungsgemäßen Zustands. Instandhaltung ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Maßnahmen zum Erhalt des bestimmungsgemäßen Zustands. Instandhaltung umfasst Maßnahmen, die den ordnungsgemäßen Zustand erhalten und Verschleiß vorbeugen. Sie ist von Modernisierung und größerer Instandsetzung zu unterscheiden.",
+  "explanation": "Instandhaltung umfasst Maßnahmen, die den ordnungsgemäßen Zustand erhalten und Verschleiß vorbeugen. Sie ist von Modernisierung und größerer Instandsetzung zu unterscheiden.",
+  "practiceExample": "Regelmäßige Wartung der Heizung ist Instandhaltung; der vollständige Austausch gegen ein neues System kann je nach Anlass Instandsetzung und/oder Modernisierungselemente enthalten."
 }

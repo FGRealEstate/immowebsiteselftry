@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Wiederherstellung eines ordnungsgemäßen Zustands. Instandsetzung ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Wiederherstellung eines ordnungsgemäßen Zustands. Instandsetzung ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Wiederherstellung eines ordnungsgemäßen Zustands. Instandsetzung stellt einen bereits beeinträchtigten ordnungsgemäßen Zustand wieder her. Sie unterscheidet sich von vorbeugender Instandhaltung und von wert-/gebrauchserhöhender Modernisierung.",
+  "explanation": "Instandsetzung stellt einen bereits beeinträchtigten ordnungsgemäßen Zustand wieder her. Sie unterscheidet sich von vorbeugender Instandhaltung und von wert-/gebrauchserhöhender Modernisierung.",
+  "practiceExample": "Der Austausch eines defekten Fensters durch gleichwertigen Ersatz ist primär Instandsetzung; ein energetisch deutlich verbessertes System kann zusätzlich Modernisierungseffekte haben."
 }

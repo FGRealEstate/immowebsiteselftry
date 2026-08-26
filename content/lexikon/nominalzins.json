@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Finanzierung",
-  "explanation": "Vertraglicher Zinssatz ohne weitere Kosten. Nominalzins sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden.",
-  "practiceExample": "Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Vertraglicher Zinssatz ohne weitere Kosten. Nominalzins sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden. Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen."
+  "assistantAnswer": "Vertraglicher Zinssatz ohne weitere Kosten. Nominalzins bezeichnet den vereinbarten Zinssatz ohne vollständige Einbeziehung sämtlicher preisbestimmender Kosten. Bei Verbraucherdarlehen ist für Angebotsvergleiche deshalb zusätzlich der effektive Jahreszins relevant.",
+  "explanation": "Nominalzins bezeichnet den vereinbarten Zinssatz ohne vollständige Einbeziehung sämtlicher preisbestimmender Kosten. Bei Verbraucherdarlehen ist für Angebotsvergleiche deshalb zusätzlich der effektive Jahreszins relevant.",
+  "practiceExample": "Zwei Darlehen können denselben Soll-/Nominalzins haben, aber wegen Gebühren, Auszahlungskurs oder Zahlungszeitpunkten unterschiedliche Effektivkosten."
 }

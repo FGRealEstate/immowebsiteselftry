@@ -21,7 +21,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Szenarien mit plus ein, zwei oder drei Prozentpunkten zeigen die mögliche Anschlussrate und helfen bei der Wahl der Tilgung.",
-  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
   "formulae": [
     "Stressrate = Restschuld × (Stresszins + Tilgung) / 12"
   ],
@@ -40,25 +39,12 @@
     ],
     "interpretation": "Der Stress-Test beantwortet nicht, welcher Zins eintreten wird, sondern ob die Finanzierung einen ungünstigeren Zins verkraftet."
   },
-  "drivers": [
-    "Darlehenshöhe und Beleihungsauslauf",
-    "Sollzins, Tilgung und Zinsbindung",
-    "Restschuld zum Ende der Zinsbindung",
-    "Liquiditätsreserve und Sondertilgungsrechte",
-    "Objektqualität und bankseitiger Beleihungswert"
-  ],
-  "risks": [
-    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
-    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
-    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Ein guter Plan rechnet nicht nur mit dem heutigen Sollzins. Der Stress-Test beantwortet nicht, welcher Zins eintreten wird, sondern ob die Finanzierung einen ungünstigeren Zins verkraftet."
+  "assistantAnswer": "Ein guter Plan rechnet nicht nur mit dem heutigen Sollzins. Der Zinsstress zeigt, ob die Finanzierung nach Ende der Zinsbindung auch bei höheren Anschlusszinsen tragfähig bleibt.",
+  "focusPoints": [
+    "Der Zinsstress zeigt, ob die Finanzierung nach Ende der Zinsbindung auch bei höheren Anschlusszinsen tragfähig bleibt.",
+    "Die Belastung hängt von Restschuld, Anschlusszins und gewünschter Tilgung ab. Deshalb ist ein Stress auf der ursprünglichen Darlehenssumme weniger aussagekräftig als auf der erwarteten Restschuld.",
+    "Bei Kapitalanlagen sollte parallel geprüft werden, ob Mietertrag und DSCR unter dem Stress noch ausreichen."
+  ],
+  "decisionUse": "Mindestens +1, +2 und +3 Prozentpunkte auf den Anschlusszins rechnen und daraus neue Rate sowie Cashflow ableiten."
 }

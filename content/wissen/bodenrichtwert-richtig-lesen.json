@@ -20,7 +20,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Er ist kein automatischer Grundstückswert. Grundstückszuschnitt, Nutzung, Erschließung und wertrelevante Merkmale können abweichen.",
-  "mechanics": "Standortdaten sind Kontextdaten. Für den konkreten Kaufpreis zählt die Mikrolage, die Objektqualität und die tatsächliche Vergleichbarkeit der herangezogenen Transaktionen.",
   "formulae": [
     "Bodenwert grob = Grundstücksfläche × Bodenrichtwert × Anpassungsfaktoren"
   ],
@@ -35,30 +34,17 @@
     ],
     "interpretation": "Der Bodenrichtwert ist ein zonaler Orientierungswert, kein automatischer Verkehrswert des konkreten Grundstücks. Entwicklungszustand, Grundstücksmerkmale und Stichtag sind zu prüfen."
   },
-  "drivers": [
-    "Mikrolage und Erreichbarkeit",
-    "Angebot, Nachfrage und Neubaupipeline",
-    "Bevölkerung und Arbeitgeberstruktur",
-    "tatsächliche Vergleichstransaktionen",
-    "Mietniveau und regulatorische Rahmenbedingungen"
-  ],
-  "risks": [
-    "Durchschnittswerte können Straßen- und Objektunterschiede verdecken.",
-    "Angebotspreise sind nicht automatisch Transaktionspreise.",
-    "Vergangene Preisentwicklung ist keine Prognose."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [
     {
       "label": "§ 196 BauGB – Bodenrichtwerte",
       "url": "https://www.gesetze-im-internet.de/bbaug/__196.html"
     }
   ],
-  "assistantAnswer": "Der Bodenrichtwert ist ein durchschnittlicher Lagewert für ein definiertes Gebiet. Der Bodenrichtwert ist ein zonaler Orientierungswert, kein automatischer Verkehrswert des konkreten Grundstücks. Entwicklungszustand, Grundstücksmerkmale und Stichtag sind zu prüfen."
+  "assistantAnswer": "Der Bodenrichtwert ist ein durchschnittlicher Lagewert für ein definiertes Gebiet. Der Bodenrichtwert ist ein durchschnittlicher Lagewert für den Boden innerhalb einer Bodenrichtwertzone und kein verbindlicher Einzelgrundstückspreis.",
+  "focusPoints": [
+    "Der Bodenrichtwert ist ein durchschnittlicher Lagewert für den Boden innerhalb einer Bodenrichtwertzone und kein verbindlicher Einzelgrundstückspreis.",
+    "Abweichungen bei Art und Maß der baulichen Nutzung, Grundstücksgröße, Zuschnitt, Erschließung, Altlasten oder Entwicklungszustand können erhebliche Anpassungen erfordern.",
+    "Bei bebauten Grundstücken ist der Bodenrichtwert nur ein Bestandteil der Wertermittlung; Gebäudewert, Ertragssituation und objektspezifische Merkmale bleiben separat."
+  ],
+  "decisionUse": "Der Wert eignet sich als Plausibilitätsanker, nicht als Ersatz für Vergleichskaufpreise oder eine objektspezifische Wertermittlung."
 }

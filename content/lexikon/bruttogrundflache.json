@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Gesamtheit bestimmter Grundflächen eines Bauwerks nach Norm. Bruttogrundfläche ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Gesamtheit bestimmter Grundflächen eines Bauwerks nach Norm. Bruttogrundfläche ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Gesamtheit bestimmter Grundflächen eines Bauwerks nach Norm. Die Bruttogrundfläche ist eine Flächengröße aus dem Bau-/Bewertungsbereich und umfasst deutlich mehr als die Wohnfläche, unter anderem konstruktive Flächen. Sie ist für €/m²-Wohnungsvergleiche nicht austauschbar mit Wohnfläche.",
+  "explanation": "Die Bruttogrundfläche ist eine Flächengröße aus dem Bau-/Bewertungsbereich und umfasst deutlich mehr als die Wohnfläche, unter anderem konstruktive Flächen. Sie ist für €/m²-Wohnungsvergleiche nicht austauschbar mit Wohnfläche.",
+  "practiceExample": "Ein Haus mit 180 m² BGF kann deutlich weniger als 180 m² Wohnfläche haben; ein Kaufpreis je BGF-m² ist deshalb nicht mit Wohnungsangeboten je Wohn-m² vergleichbar."
 }

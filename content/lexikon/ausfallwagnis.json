@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Kalkulatorischer Abschlag für Leerstand und Zahlungsausfälle. Ausfallwagnis ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Kalkulatorischer Abschlag für Leerstand und Zahlungsausfälle. Ausfallwagnis ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Kalkulatorischer Abschlag für Leerstand und Zahlungsausfälle. Ausfallwagnis ist die erwartete Belastung aus nicht eingehenden Forderungen oder Erträgen. In Bewertungs- und Investmentmodellen wird es als Risikoabschlag beziehungsweise Kostenkomponente berücksichtigt.",
+  "explanation": "Ausfallwagnis ist die erwartete Belastung aus nicht eingehenden Forderungen oder Erträgen. In Bewertungs- und Investmentmodellen wird es als Risikoabschlag beziehungsweise Kostenkomponente berücksichtigt.",
+  "practiceExample": "Bei 100.000 € Sollmiete und 2 % pauschalem Ausfallwagnis werden 2.000 € Ertragsminderung angesetzt; bei konkreten Rückständen ist eine individuelle Betrachtung besser."
 }

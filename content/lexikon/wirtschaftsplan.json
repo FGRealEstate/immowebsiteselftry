@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Plan der WEG zu Einnahmen, Ausgaben und Vorschüssen. Wirtschaftsplan ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Plan der WEG zu Einnahmen, Ausgaben und Vorschüssen. Wirtschaftsplan ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Plan der WEG zu Einnahmen, Ausgaben und Vorschüssen. Der Wirtschaftsplan der WEG enthält die voraussichtlichen Einnahmen/Ausgaben und Vorschüsse der Eigentümer. Für Kapitalanleger ist die Aufteilung in umlagefähige Kosten, nicht umlagefähige Kosten und Rücklagenzuführung entscheidend.",
+  "explanation": "Der Wirtschaftsplan der WEG enthält die voraussichtlichen Einnahmen/Ausgaben und Vorschüsse der Eigentümer. Für Kapitalanleger ist die Aufteilung in umlagefähige Kosten, nicht umlagefähige Kosten und Rücklagenzuführung entscheidend.",
+  "practiceExample": "Hausgeld 350 € monatlich kann etwa 220 € umlagefähige Kosten, 60 € nicht umlagefähige Kosten und 70 € Rücklagenzuführung enthalten. Für den Cashflow sind die drei Teile unterschiedlich zu behandeln."
 }

@@ -23,7 +23,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Flächenabweichungen können Wert, Miete und Finanzierung beeinflussen.",
-  "mechanics": "Vor dem Kauf müssen rechtliche, technische, wirtschaftliche und finanzielle Prüfung zusammengeführt werden. Einzelkennzahlen ersetzen weder Objektunterlagen noch eine belastbare Bewertung.",
   "formulae": [
     "Wohnfläche nach anwendbarer Berechnungsmethode ermitteln; Flächenarten haben unterschiedliche Anrechnungsquoten"
   ],
@@ -39,30 +38,17 @@
     ],
     "interpretation": "Kaufpreis €/m², Mietrecht und Finanzierung können auf der Wohnfläche aufbauen. Plan, Berechnung und tatsächlichen Ausbau abgleichen."
   },
-  "drivers": [
-    "Eigentums- und Lastenverhältnisse",
-    "Flächen, Bauzustand und Energiezustand",
-    "Miet- und WEG-Unterlagen",
-    "Kaufpreis und Vergleichsdaten",
-    "Finanzierbarkeit und Liquiditätsbedarf"
-  ],
-  "risks": [
-    "Fehlende Unterlagen sind ein eigenes Risiko.",
-    "Technische Maßnahmen können den vermeintlichen Preisvorteil aufzehren.",
-    "Ein günstiger Quadratmeterpreis ist ohne Mikrolage und Zustand nicht aussagekräftig."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [
     {
       "label": "Wohnflächenverordnung",
       "url": "https://www.gesetze-im-internet.de/woflv/"
     }
   ],
-  "assistantAnswer": "Balkone, Dachschrägen und Nebenflächen werden je nach Regelwerk unterschiedlich berücksichtigt. Kaufpreis €/m², Mietrecht und Finanzierung können auf der Wohnfläche aufbauen. Plan, Berechnung und tatsächlichen Ausbau abgleichen."
+  "assistantAnswer": "Balkone, Dachschrägen und Nebenflächen werden je nach Regelwerk unterschiedlich berücksichtigt. Wohnfläche beeinflusst Kaufpreis pro m², Miete, Betriebskostenverteilung und teilweise Finanzierung. Fehler können daher mehrfach wirtschaftlich wirken.",
+  "focusPoints": [
+    "Wohnfläche beeinflusst Kaufpreis pro m², Miete, Betriebskostenverteilung und teilweise Finanzierung. Fehler können daher mehrfach wirtschaftlich wirken.",
+    "Nach WoFlV werden etwa Balkone/Terrassen typischerweise nur anteilig und Flächen unter Dachschrägen abhängig von der lichten Höhe angerechnet.",
+    "Bei älteren Verträgen oder abweichenden Regelwerken kann eine andere Berechnung maßgeblich sein; Unterlagen und tatsächliche Geometrie müssen zusammenpassen."
+  ],
+  "decisionUse": "Bei auffälligen Abweichungen Grundrisse, Flächenberechnung und gegebenenfalls Aufmaß gegeneinander prüfen."
 }

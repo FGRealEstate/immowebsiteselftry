@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Kapitalanlage",
-  "explanation": "Zahlungswirksamer Überschuss oder Fehlbetrag einer Periode. Bei Immobilien sollten Miete, Eigentümerkosten, Finanzierung, Leerstand und Reserven berücksichtigt werden.",
-  "practiceExample": "1.500 € Miete − 180 € Eigentümerkosten − 1.150 € Rate − 100 € Reserve = +70 € mtl.",
+  "explanation": "Cashflow bildet tatsächliche Ein- und Auszahlungen ab. Bei Immobilien sollte zwischen operativem Cashflow vor Finanzierung und Cashflow nach Kapitaldienst unterschieden werden. Tilgung belastet den Cashflow, ist aber gleichzeitig Vermögensumschichtung in das Objekt.",
+  "practiceExample": "1.500 € Kaltmiete − 180 € nicht umlagefähige Kosten − 1.150 € Rate − 100 € Reserve = +70 € monatlicher Cashflow. Davon ist ein Teil der Rate Tilgung und damit kein wirtschaftlicher „Verbrauch“ im gleichen Sinn wie Zins.",
   "formula": "Cashflow = Einzahlungen − Auszahlungen",
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Zahlungswirksamer Überschuss oder Fehlbetrag einer Periode. Bei Immobilien sollten Miete, Eigentümerkosten, Finanzierung, Leerstand und Reserven berücksichtigt werden. 1.500 € Miete − 180 € Eigentümerkosten − 1.150 € Rate − 100 € Reserve = +70 € mtl."
+  "assistantAnswer": "Liquiditätsüberschuss oder -bedarf einer Periode. Cashflow bildet tatsächliche Ein- und Auszahlungen ab. Bei Immobilien sollte zwischen operativem Cashflow vor Finanzierung und Cashflow nach Kapitaldienst unterschieden werden. Tilgung belastet den Cashflow, ist aber gleichzeitig Vermögensumschichtung in das Objekt."
 }

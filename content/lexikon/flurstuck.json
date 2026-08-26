@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Amtlich vermessener Teil der Erdoberfläche. Flurstück ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Amtlich vermessener Teil der Erdoberfläche. Flurstück ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Amtlich vermessener Teil der Erdoberfläche. Ein Flurstück ist die kleinste im Liegenschaftskataster geführte Buchungseinheit eines Grundstücks. Ein Grundstück im Grundbuch kann aus einem oder mehreren Flurstücken bestehen.",
+  "explanation": "Ein Flurstück ist die kleinste im Liegenschaftskataster geführte Buchungseinheit eines Grundstücks. Ein Grundstück im Grundbuch kann aus einem oder mehreren Flurstücken bestehen.",
+  "practiceExample": "Ein Kaufvertrag kann mehrere Flurstücke umfassen, etwa Wohnhaus, Zufahrt und separate Gartenfläche; alle müssen eindeutig bezeichnet sein."
 }

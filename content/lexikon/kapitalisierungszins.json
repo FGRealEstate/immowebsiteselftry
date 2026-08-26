@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Finanzierung",
-  "explanation": "Zinssatz zur Umrechnung künftiger Erträge in einen heutigen Wert. Kapitalisierungszins sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden.",
-  "practiceExample": "Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Zinssatz zur Umrechnung künftiger Erträge in einen heutigen Wert. Kapitalisierungszins sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden. Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen."
+  "assistantAnswer": "Zinssatz zur Umrechnung künftiger Erträge in einen heutigen Wert. Kapitalisierungszins ist der Zinssatz, mit dem zukünftige Erträge in einen Barwert überführt werden. Je höher der Zinssatz bei gleichen Erträgen, desto niedriger der Barwert.",
+  "explanation": "Kapitalisierungszins ist der Zinssatz, mit dem zukünftige Erträge in einen Barwert überführt werden. Je höher der Zinssatz bei gleichen Erträgen, desto niedriger der Barwert.",
+  "practiceExample": "10.000 € dauerhaft angenommener Jahresertrag entsprechen bei vereinfachter ewiger Rente 250.000 € bei 4 % beziehungsweise 200.000 € bei 5 % Kapitalisierungszins."
 }

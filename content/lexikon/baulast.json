@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Öffentlich-rechtliche Verpflichtung eines Grundstückseigentümers. Baulast ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Öffentlich-rechtliche Verpflichtung eines Grundstückseigentümers. Baulast ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Öffentlich-rechtliche Verpflichtung eines Grundstückseigentümers. Eine Baulast ist eine öffentlich-rechtliche Verpflichtung eines Grundstückseigentümers gegenüber der Bauaufsichtsbehörde. Sie steht je nach Bundesland im Baulastenverzeichnis und kann Nutzung, Bebaubarkeit oder Wert beeinflussen.",
+  "explanation": "Eine Baulast ist eine öffentlich-rechtliche Verpflichtung eines Grundstückseigentümers gegenüber der Bauaufsichtsbehörde. Sie steht je nach Bundesland im Baulastenverzeichnis und kann Nutzung, Bebaubarkeit oder Wert beeinflussen.",
+  "practiceExample": "Eine Abstandsflächen- oder Zufahrtsbaulast kann zugunsten eines Nachbargrundstücks bestehen und die eigene bauliche Nutzung einschränken."
 }

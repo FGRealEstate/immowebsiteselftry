@@ -24,7 +24,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Beide Kennzahlen sind vor Finanzierung. Für den Vergleich sollten Berechnungsbasis und Kostenabgrenzung identisch sein.",
-  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
   "formulae": [
     "Bruttorendite = Jahresnettokaltmiete / Kaufpreis",
     "Nettorendite ≈ (Jahresnettokaltmiete − nicht umlagefähige Kosten − Leerstand − laufende Instandhaltung) / Gesamtinvestition"
@@ -43,25 +42,37 @@
     ],
     "interpretation": "Die Differenz zeigt, warum Bruttorendite nur ein Screening-Instrument ist."
   },
-  "drivers": [
-    "Jahresnettokaltmiete und Mietvertragsqualität",
-    "Kaufpreis plus Erwerbsnebenkosten",
-    "Nicht umlagefähige Kosten, Verwaltung und Capex",
-    "Finanzierungsstruktur und Tilgung",
-    "Exit-Annahmen und Haltedauer"
-  ],
-  "risks": [
-    "Bruttorenditen blenden Kosten und Finanzierung aus.",
-    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
-    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Die Bruttorendite teilt Jahresnettokaltmiete durch Kaufpreis. Die Nettorendite berücksichtigt laufende Eigentümerkosten. Die Differenz zeigt, warum Bruttorendite nur ein Screening-Instrument ist."
+  "assistantAnswer": "Die Bruttorendite teilt Jahresnettokaltmiete durch Kaufpreis. Die Nettorendite berücksichtigt laufende Eigentümerkosten. Die Bruttomietrendite setzt Jahresnettokaltmiete ins Verhältnis zum Kaufpreis und ignoriert Erwerbsnebenkosten sowie laufende Eigentümerkosten.",
+  "focusPoints": [
+    "Die Bruttomietrendite setzt Jahresnettokaltmiete ins Verhältnis zum Kaufpreis und ignoriert Erwerbsnebenkosten sowie laufende Eigentümerkosten.",
+    "Eine Nettomietrendite muss definieren, welche Kosten abgezogen und welche Kapitalbasis verwendet wird. Ohne identische Definitionen sind Vergleichswerte zwischen Portalen wertlos.",
+    "Für Kapitalanleger ist zusätzlich der Cashflow nach Finanzierung und der Eigenkapitaleinsatz relevant; Rendite vor Finanzierung und Cash-on-Cash beantworten unterschiedliche Fragen."
+  ],
+  "decisionUse": "Bruttorendite eignet sich zum schnellen Screening; eine Kaufentscheidung sollte mindestens Nettorendite, Cashflow und CapEx berücksichtigen.",
+  "comparisonTable": {
+    "title": "Beispiel bei 300.000 € Kaufpreis, 30.000 € Nebenkosten und 16.800 € JNKM",
+    "headers": [
+      "Kennzahl",
+      "Berechnung",
+      "Ergebnis"
+    ],
+    "rows": [
+      [
+        "Bruttomietrendite",
+        "16.800 / 300.000",
+        "5,60 %"
+      ],
+      [
+        "vereinfachte Nettorendite",
+        "(16.800 − 3.000) / 330.000",
+        "4,18 %"
+      ],
+      [
+        "Kaufpreisfaktor",
+        "300.000 / 16.800",
+        "17,86"
+      ]
+    ]
+  }
 }

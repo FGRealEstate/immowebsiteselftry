@@ -1,4 +1,5 @@
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addFilter("pad2", (value) => String(value).padStart(2, "0"));
 
     // Eigener JSON-Filter für Nunjucks-Templates, z. B. {{ value | json | safe }}
     eleventyConfig.addFilter("json", (value) => {

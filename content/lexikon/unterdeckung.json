@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Situation, in der Erlös oder Wert die Verbindlichkeiten nicht deckt. Unterdeckung ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Situation, in der Erlös oder Wert die Verbindlichkeiten nicht deckt. Unterdeckung ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Situation, in der Erlös oder Wert die Verbindlichkeiten nicht deckt. Unterdeckung liegt vor, wenn vorhandene Mittel oder Erlöse eine Verpflichtung nicht vollständig decken. Bei Immobilien kann sie etwa entstehen, wenn Verkaufserlös nach Kosten unter der offenen Darlehensschuld liegt.",
+  "explanation": "Unterdeckung liegt vor, wenn vorhandene Mittel oder Erlöse eine Verpflichtung nicht vollständig decken. Bei Immobilien kann sie etwa entstehen, wenn Verkaufserlös nach Kosten unter der offenen Darlehensschuld liegt.",
+  "practiceExample": "Nettoverkaufserlös 410.000 € bei 425.000 € Restschuld ergibt 15.000 € Unterdeckung, die aus Eigenmitteln ausgeglichen werden muss."
 }

@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Finanzierung",
-  "explanation": "Marktüblicher Zinssatz im Ertragswertverfahren. Liegenschaftszins sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden.",
-  "practiceExample": "Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Marktüblicher Zinssatz im Ertragswertverfahren. Liegenschaftszins sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden. Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen."
+  "assistantAnswer": "Marktüblicher Zinssatz im Ertragswertverfahren. Der Liegenschaftszins ist ein marktbezogener Zinssatz in der Immobilienwertermittlung, der die marktübliche Verzinsung von Grundstücken bestimmter Art abbildet. Er ist keine Bankkondition und kein individueller Renditewunsch.",
+  "explanation": "Der Liegenschaftszins ist ein marktbezogener Zinssatz in der Immobilienwertermittlung, der die marktübliche Verzinsung von Grundstücken bestimmter Art abbildet. Er ist keine Bankkondition und kein individueller Renditewunsch.",
+  "practiceExample": "Im Ertragswertverfahren führt bei sonst gleichen Annahmen ein höherer Liegenschaftszins regelmäßig zu einem niedrigeren Barwert der künftigen Erträge."
 }

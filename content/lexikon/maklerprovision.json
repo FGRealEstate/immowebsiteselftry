@@ -9,9 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Synonym zur Courtage. Entscheidend sind Maklervertrag, Objektart und Parteienkonstellation. Eine allgemeine gesetzliche Höchstprovision je Bundesland für Immobilienkaufverträge besteht nicht; regionale Sätze sind Marktgewohnheiten, keine gesetzlichen Maxima.",
-  "practiceExample": "ETW/EFH-Verbraucherkauf und MFH-Ankauf müssen provisionsrechtlich getrennt betrachtet werden.",
-  "formula": "Provision = Kaufpreis × vereinbarter Provisionssatz",
+  "explanation": "Maklerprovision ist die vertraglich vereinbarte Vergütung für den erfolgreichen Nachweis oder die Vermittlung. Für Verbraucher beim Kauf einer Wohnung oder eines Einfamilienhauses gelten besondere Regeln zur Verteilung der Maklerkosten; für andere Immobilienarten ist die konkrete Provisionsvereinbarung maßgeblich.",
+  "practiceExample": "Bei 400.000 € Kaufpreis entsprechen 3,57 % einer Provision von 14.280 €. Ob dieser Betrag vom Käufer, Verkäufer oder beiden getragen wird, ergibt sich nicht aus der Prozentzahl, sondern aus Vertrag und anwendbarer gesetzlicher Regel.",
+  "formula": "Provision = Kaufpreis × Provisionssatz",
   "sources": [
     {
       "label": "§ 656c BGB – Maklerlohn bei Tätigkeit für beide Parteien",
@@ -22,10 +22,5 @@
       "url": "https://www.gesetze-im-internet.de/bgb/__656d.html"
     }
   ],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Synonym zur Courtage. Entscheidend sind Maklervertrag, Objektart und Parteienkonstellation. Eine allgemeine gesetzliche Höchstprovision je Bundesland für Immobilienkaufverträge besteht nicht; regionale Sätze sind Marktgewohnheiten, keine gesetzlichen Maxima. ETW/EFH-Verbraucherkauf und MFH-Ankauf müssen provisionsrechtlich getrennt betrachtet werden."
+  "assistantAnswer": "Vergütung für die Vermittlungs- oder Nachweistätigkeit. Maklerprovision ist die vertraglich vereinbarte Vergütung für den erfolgreichen Nachweis oder die Vermittlung. Für Verbraucher beim Kauf einer Wohnung oder eines Einfamilienhauses gelten besondere Regeln zur Verteilung der Maklerkosten; für andere Immobilienarten ist die konkrete Provisionsvereinbarung maßgeblich."
 }

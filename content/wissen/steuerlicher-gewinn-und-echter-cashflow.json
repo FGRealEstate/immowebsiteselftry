@@ -21,7 +21,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Tilgung ist Liquiditätsabfluss, aber keine Werbungskostenposition. AfA reduziert den steuerlichen Gewinn, ohne im Jahr der Abschreibung Liquidität zu kosten.",
-  "mechanics": "Steuerliche Effekte sind eine zweite Rechnung neben dem tatsächlichen Cashflow. Entscheidend sind die steuerliche Bemessungsgrundlage, zeitliche Zuordnung, persönliche bzw. gesellschaftsrechtliche Situation und die Abgrenzung von abzugsfähigen Aufwendungen zu Anschaffungs- oder Herstellungskosten.",
   "formulae": [
     "Steuerliches Ergebnis ≠ Cashflow",
     "Steuerliches Ergebnis ≈ Mieteinnahmen − Werbungskosten − Zinsen − AfA"
@@ -41,30 +40,17 @@
     ],
     "interpretation": "Tilgung mindert Liquidität, ist aber grundsätzlich keine Werbungskostenposition wie Zins. AfA mindert steuerliches Ergebnis, ohne im laufenden Jahr Auszahlung zu verursachen."
   },
-  "drivers": [
-    "Gebäude- versus Bodenanteil",
-    "AfA-Methode und Fertigstellungsjahr",
-    "Finanzierungszinsen und sonstige Werbungskosten",
-    "Persönlicher Steuersatz bzw. Gesellschaftsstruktur",
-    "Haltedauer und Veräußerungsstrategie"
-  ],
-  "risks": [
-    "Steuerersparnis ersetzt keinen positiven Objekt-Cashflow.",
-    "Gesetze und Verwaltungsauffassung können sich ändern.",
-    "Einzelfälle sollten mit Steuerberatung und belastbaren Unterlagen geprüft werden."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [
     {
       "label": "§ 7 EStG – Gebäude-AfA",
       "url": "https://www.gesetze-im-internet.de/estg/__7.html"
     }
   ],
-  "assistantAnswer": "Steuerlicher Gewinn und Liquiditätsüberschuss sind unterschiedliche Größen. Tilgung mindert Liquidität, ist aber grundsätzlich keine Werbungskostenposition wie Zins. AfA mindert steuerliches Ergebnis, ohne im laufenden Jahr Auszahlung zu verursachen."
+  "assistantAnswer": "Steuerlicher Gewinn und Liquiditätsüberschuss sind unterschiedliche Größen. Steuerlicher Gewinn und Cashflow messen unterschiedliche Dinge. AfA mindert den steuerlichen Gewinn ohne laufenden Zahlungsabfluss; Tilgung mindert Liquidität, ist aber grundsätzlich keine Werbungskostenposition.",
+  "focusPoints": [
+    "Steuerlicher Gewinn und Cashflow messen unterschiedliche Dinge. AfA mindert den steuerlichen Gewinn ohne laufenden Zahlungsabfluss; Tilgung mindert Liquidität, ist aber grundsätzlich keine Werbungskostenposition.",
+    "Zinsanteil, laufende Kosten und bestimmte Erhaltungsaufwendungen können steuerlich abzugsfähig sein, während ihre liquiditätsmäßige Wirkung bereits im Cashflow steckt.",
+    "Eine Immobilie kann steuerlich Verlust zeigen und trotzdem positiven Cashflow haben – oder umgekehrt."
+  ],
+  "decisionUse": "Investmentmodell deshalb immer zweispurig führen: Zahlungsrechnung und Steuerrechnung; erst danach Nachsteuer-Cashflow ableiten."
 }

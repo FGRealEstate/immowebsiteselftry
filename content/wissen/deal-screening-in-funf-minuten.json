@@ -27,7 +27,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Besteht der Deal den Schnelltest, folgt die vollständige Prüfung mit Dokumenten und Szenarien.",
-  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
   "formulae": [
     "Bruttorendite, Faktor, grober Cashflow und EK-Bedarf als erste Filter"
   ],
@@ -46,25 +45,12 @@
     ],
     "interpretation": "Das Screening beantwortet nur, ob eine tiefe Prüfung lohnt. Es ersetzt keine Due Diligence."
   },
-  "drivers": [
-    "Jahresnettokaltmiete und Mietvertragsqualität",
-    "Kaufpreis plus Erwerbsnebenkosten",
-    "Nicht umlagefähige Kosten, Verwaltung und Capex",
-    "Finanzierungsstruktur und Tilgung",
-    "Exit-Annahmen und Haltedauer"
-  ],
-  "risks": [
-    "Bruttorenditen blenden Kosten und Finanzierung aus.",
-    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
-    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Ein schneller Check nutzt Kaufpreis, Jahresmiete, nicht umlagefähige Kosten, Zins und Tilgung. Das Screening beantwortet nur, ob eine tiefe Prüfung lohnt. Es ersetzt keine Due Diligence."
+  "assistantAnswer": "Ein schneller Check nutzt Kaufpreis, Jahresmiete, nicht umlagefähige Kosten, Zins und Tilgung. Ein Schnell-Screening soll schlechte Deals früh aussortieren, nicht die Due Diligence ersetzen. Es arbeitet deshalb mit wenigen harten Größen: Gesamtinvestition, JNKM, nicht umlagefähige Kosten, CapEx, Finanzierung und realistische Marktmiete.",
+  "focusPoints": [
+    "Ein Schnell-Screening soll schlechte Deals früh aussortieren, nicht die Due Diligence ersetzen. Es arbeitet deshalb mit wenigen harten Größen: Gesamtinvestition, JNKM, nicht umlagefähige Kosten, CapEx, Finanzierung und realistische Marktmiete.",
+    "Die Kennzahlen müssen aus derselben Zeitbasis stammen. Monatsmiete, Jahreskosten und einmalige Erwerbsnebenkosten dürfen nicht ungeordnet vermischt werden.",
+    "Ein Deal, der nur mit optimistischer Mietsteigerung oder Wertsteigerung funktioniert, sollte als spekulativer und nicht als robustes Basisszenario gekennzeichnet werden."
+  ],
+  "decisionUse": "Ziel des Screenings ist eine klare Entscheidung: verwerfen, Unterlagen nachfordern oder vertieft prüfen."
 }

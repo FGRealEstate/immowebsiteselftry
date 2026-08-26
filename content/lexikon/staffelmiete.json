@@ -9,19 +9,14 @@
   ],
   "updated": "2026-08-26",
   "category": "Vermietung",
-  "explanation": "Mietvereinbarung mit im Voraus festgelegten Mietbeträgen für bestimmte Zeitabschnitte. Nach § 557a BGB muss die jeweilige Miete mindestens ein Jahr unverändert bleiben.",
-  "practiceExample": "1.000 € Startmiete, danach vereinbarte 1.030 € und später 1.061 €.",
+  "explanation": "Bei der Staffelmiete werden zukünftige Mietbeträge beziehungsweise Erhöhungen bereits im Vertrag als Geldbetrag festgelegt. Zwischen den Staffeln muss die Miete jeweils mindestens ein Jahr unverändert bleiben.",
+  "practiceExample": "Vertraglich: 1.000 € ab Mietbeginn, 1.030 € ab Jahr 2, 1.061 € ab Jahr 3. Diese Eurobeträge werden in der Investmentrechnung als konkrete Zahlungsreihe angesetzt, nicht als frei gewählte Wachstumsrate.",
   "formula": "Zahlungsreihe folgt den vertraglich festgelegten Eurobeträgen",
   "sources": [
     {
-      "label": "§ 557a BGB – Staffelmiete",
+      "label": "§ 557a BGB",
       "url": "https://www.gesetze-im-internet.de/bgb/__557a.html"
     }
   ],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Mietvereinbarung mit im Voraus festgelegten Mietbeträgen für bestimmte Zeitabschnitte. Nach § 557a BGB muss die jeweilige Miete mindestens ein Jahr unverändert bleiben. 1.000 € Startmiete, danach vereinbarte 1.030 € und später 1.061 €."
+  "assistantAnswer": "Miete mit im Voraus vereinbarten Erhöhungsbeträgen. Bei der Staffelmiete werden zukünftige Mietbeträge beziehungsweise Erhöhungen bereits im Vertrag als Geldbetrag festgelegt. Zwischen den Staffeln muss die Miete jeweils mindestens ein Jahr unverändert bleiben."
 }

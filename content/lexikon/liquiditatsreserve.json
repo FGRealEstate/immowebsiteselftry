@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Sofort verfügbare Mittel für Unvorhergesehenes. Liquiditätsreserve ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Sofort verfügbare Mittel für Unvorhergesehenes. Liquiditätsreserve ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Sofort verfügbare Mittel für Unvorhergesehenes. Liquiditätsreserve ist frei verfügbares Kapital für ungeplante Ausgaben, Leerstand, Reparaturen oder Finanzierungslücken. Sie sollte nicht mit langfristig gebundenem Eigenkapital oder WEG-Rücklagen verwechselt werden.",
+  "explanation": "Liquiditätsreserve ist frei verfügbares Kapital für ungeplante Ausgaben, Leerstand, Reparaturen oder Finanzierungslücken. Sie sollte nicht mit langfristig gebundenem Eigenkapital oder WEG-Rücklagen verwechselt werden.",
+  "practiceExample": "Nach Kauf verbleiben 30.000 € liquide Reserve. Eine unerwartete Heizungserneuerung von 18.000 € kann damit getragen werden, ohne Konsumentenkredit aufnehmen zu müssen."
 }

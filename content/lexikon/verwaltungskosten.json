@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Kosten der kaufmännischen und technischen Verwaltung. Verwaltungskosten ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Kosten der kaufmännischen und technischen Verwaltung. Verwaltungskosten ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Kosten der kaufmännischen und technischen Verwaltung. Verwaltungskosten entstehen für kaufmännische und technische Verwaltung. Bei Wohnraummiete sind sie grundsätzlich nicht als Betriebskosten auf den Mieter umlagefähig und verbleiben daher in der Eigentümerrechnung.",
+  "explanation": "Verwaltungskosten entstehen für kaufmännische und technische Verwaltung. Bei Wohnraummiete sind sie grundsätzlich nicht als Betriebskosten auf den Mieter umlagefähig und verbleiben daher in der Eigentümerrechnung.",
+  "practiceExample": "30 € Verwaltungskosten pro Wohnung und Monat entsprechen 360 € p.a.; bei zehn Einheiten sind das 3.600 € jährliche Eigentümerkosten."
 }

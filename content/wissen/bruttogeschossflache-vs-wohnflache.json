@@ -19,7 +19,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Miete und Kaufpreis pro Quadratmeter sollten auf der richtigen, dokumentierten Fläche basieren.",
-  "mechanics": "Vor dem Kauf müssen rechtliche, technische, wirtschaftliche und finanzielle Prüfung zusammengeführt werden. Einzelkennzahlen ersetzen weder Objektunterlagen noch eine belastbare Bewertung.",
   "formulae": [
     "BGF und Wohnfläche folgen unterschiedlichen Definitionen und dürfen nicht gleichgesetzt werden"
   ],
@@ -34,30 +33,17 @@
     ],
     "interpretation": "Für Kaufpreisvergleiche muss die Flächendefinition identisch sein. Keller, Dachschrägen, Balkone und Konstruktionsflächen werden unterschiedlich behandelt."
   },
-  "drivers": [
-    "Eigentums- und Lastenverhältnisse",
-    "Flächen, Bauzustand und Energiezustand",
-    "Miet- und WEG-Unterlagen",
-    "Kaufpreis und Vergleichsdaten",
-    "Finanzierbarkeit und Liquiditätsbedarf"
-  ],
-  "risks": [
-    "Fehlende Unterlagen sind ein eigenes Risiko.",
-    "Technische Maßnahmen können den vermeintlichen Preisvorteil aufzehren.",
-    "Ein günstiger Quadratmeterpreis ist ohne Mikrolage und Zustand nicht aussagekräftig."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [
     {
       "label": "Wohnflächenverordnung",
       "url": "https://www.gesetze-im-internet.de/woflv/"
     }
   ],
-  "assistantAnswer": "Flächenbegriffe sind nicht austauschbar. Für Kaufpreisvergleiche muss die Flächendefinition identisch sein. Keller, Dachschrägen, Balkone und Konstruktionsflächen werden unterschiedlich behandelt."
+  "assistantAnswer": "Flächenbegriffe sind nicht austauschbar. Bruttogrund-/Geschossflächen und Wohnfläche beruhen auf unterschiedlichen Definitionen und dürfen nicht für €/m²-Vergleiche vermischt werden.",
+  "focusPoints": [
+    "Bruttogrund-/Geschossflächen und Wohnfläche beruhen auf unterschiedlichen Definitionen und dürfen nicht für €/m²-Vergleiche vermischt werden.",
+    "Bei der Wohnfläche können Dachschrägen, Balkone und Terrassen nur anteilig zählen; Keller, Garagen und viele Nebenräume gehören regelmäßig nicht zur Wohnfläche.",
+    "Bei Mehrfamilienhäusern ist zusätzlich zwischen Wohnfläche, vermietbarer Fläche und Nutzfläche zu unterscheiden."
+  ],
+  "decisionUse": "Vor jedem €/m²-Vergleich muss klar sein, welche Flächendefinition im Zähler/Nenner verwendet wurde."
 }

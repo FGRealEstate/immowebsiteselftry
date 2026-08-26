@@ -23,7 +23,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Dach, Fassade, Heizung, Leitungen und energetische Maßnahmen können Renditen stark verändern. Ein technischer Plan über zehn bis zwanzig Jahre schafft Transparenz.",
-  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
   "formulae": [
     "Nachhaltiger Cashflow = operativer Cashflow − periodisierte Capex-Reserve"
   ],
@@ -39,25 +38,12 @@
     ],
     "interpretation": "Capex ist unregelmäßig, aber nicht optional. Eine gute Analyse periodisiert absehbare Großmaßnahmen."
   },
-  "drivers": [
-    "Jahresnettokaltmiete und Mietvertragsqualität",
-    "Kaufpreis plus Erwerbsnebenkosten",
-    "Nicht umlagefähige Kosten, Verwaltung und Capex",
-    "Finanzierungsstruktur und Tilgung",
-    "Exit-Annahmen und Haltedauer"
-  ],
-  "risks": [
-    "Bruttorenditen blenden Kosten und Finanzierung aus.",
-    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
-    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Größere Investitionen gehören getrennt von laufenden Kosten in die Planung. Capex ist unregelmäßig, aber nicht optional. Eine gute Analyse periodisiert absehbare Großmaßnahmen."
+  "assistantAnswer": "Größere Investitionen gehören getrennt von laufenden Kosten in die Planung. CapEx sind größere, unregelmäßige Investitionen in die Substanz, etwa Dach, Fassade, Heizung, Leitungen oder Fenster. Sie verschwinden nicht dadurch, dass sie nicht jährlich anfallen.",
+  "focusPoints": [
+    "CapEx sind größere, unregelmäßige Investitionen in die Substanz, etwa Dach, Fassade, Heizung, Leitungen oder Fenster. Sie verschwinden nicht dadurch, dass sie nicht jährlich anfallen.",
+    "Eine reine Jahres-Cashflow-Rechnung ohne CapEx-Reserve überschätzt bei älteren Beständen häufig den nachhaltigen Überschuss.",
+    "Sinnvoll ist eine bauteilbezogene Betrachtung mit Restlebensdauer, erwarteten Kosten und zeitlicher Verteilung anstelle eines pauschalen Schönrechnungswerts."
+  ],
+  "decisionUse": "Der Kaufpreisvorteil eines sanierungsbedürftigen Objekts muss gegen den Barwert künftiger CapEx und mögliche Miet-/Leerstandsfolgen gerechnet werden."
 }

@@ -25,7 +25,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Sinnvoll sind konservative, Basis- und dynamische Szenarien. Beim Exit fallen außerdem Verkaufs- und gegebenenfalls Steuerkosten an.",
-  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
   "formulae": [
     "Endwert = Startwert × (1+g)^n"
   ],
@@ -42,25 +41,12 @@
     ],
     "interpretation": "Wertsteigerung gehört als Szenario in die Rechnung, nicht als sichere Rendite."
   },
-  "drivers": [
-    "Jahresnettokaltmiete und Mietvertragsqualität",
-    "Kaufpreis plus Erwerbsnebenkosten",
-    "Nicht umlagefähige Kosten, Verwaltung und Capex",
-    "Finanzierungsstruktur und Tilgung",
-    "Exit-Annahmen und Haltedauer"
-  ],
-  "risks": [
-    "Bruttorenditen blenden Kosten und Finanzierung aus.",
-    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
-    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Wertzuwachs ist unsicher und sollte nicht zur Rettung eines schwachen laufenden Cashflows dienen. Wertsteigerung gehört als Szenario in die Rechnung, nicht als sichere Rendite."
+  "assistantAnswer": "Wertzuwachs ist unsicher und sollte nicht zur Rettung eines schwachen laufenden Cashflows dienen. Wertsteigerung ist kein laufender Zahlungsstrom und keine garantierte Rendite. Sie hängt von Markt, Mikrolage, Objektqualität, Zinsen und Angebots-/Nachfragedynamik ab.",
+  "focusPoints": [
+    "Wertsteigerung ist kein laufender Zahlungsstrom und keine garantierte Rendite. Sie hängt von Markt, Mikrolage, Objektqualität, Zinsen und Angebots-/Nachfragedynamik ab.",
+    "Ein Investment sollte idealerweise bereits im Basisszenario ohne aggressive Wertsteigerung tragfähig sein. Wertzuwachs gehört in separate Szenarien.",
+    "Beim Exit zählt der Nettoverkaufserlös nach Kosten und Restschuld, nicht nur der angenommene Verkaufspreis."
+  ],
+  "decisionUse": "Basisszenario mit 0 % realer Wertsteigerung und zusätzliche positive/negative Szenarien transparent nebeneinanderstellen."
 }

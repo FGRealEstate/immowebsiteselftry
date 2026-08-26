@@ -25,7 +25,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Der Rechner ist nur die wirtschaftliche Ebene. Dokumente und Annahmen müssen verifiziert werden.",
-  "mechanics": "Vor dem Kauf müssen rechtliche, technische, wirtschaftliche und finanzielle Prüfung zusammengeführt werden. Einzelkennzahlen ersetzen weder Objektunterlagen noch eine belastbare Bewertung.",
   "formulae": [
     "Prüfmatrix = Recht + Technik + Ertrag + Finanzierung + Exit"
   ],
@@ -40,25 +39,12 @@
     ],
     "interpretation": "Due Diligence ist kein Dokumentensammeln, sondern die Übersetzung von Befunden in Preis, Risiko und Vertragsgestaltung."
   },
-  "drivers": [
-    "Eigentums- und Lastenverhältnisse",
-    "Flächen, Bauzustand und Energiezustand",
-    "Miet- und WEG-Unterlagen",
-    "Kaufpreis und Vergleichsdaten",
-    "Finanzierbarkeit und Liquiditätsbedarf"
-  ],
-  "risks": [
-    "Fehlende Unterlagen sind ein eigenes Risiko.",
-    "Technische Maßnahmen können den vermeintlichen Preisvorteil aufzehren.",
-    "Ein günstiger Quadratmeterpreis ist ohne Mikrolage und Zustand nicht aussagekräftig."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Eine strukturierte Prüfung umfasst Recht, Technik, Miete, Markt, Finanzierung und Steuern. Due Diligence ist kein Dokumentensammeln, sondern die Übersetzung von Befunden in Preis, Risiko und Vertragsgestaltung."
+  "assistantAnswer": "Eine strukturierte Prüfung umfasst Recht, Technik, Miete, Markt, Finanzierung und Steuern. Due Diligence verbindet rechtliche, technische, wirtschaftliche und finanzielle Prüfung. Eine gute Renditekennzahl kann einen ungeklärten Grundbuchvermerk oder Sanierungsstau nicht kompensieren.",
+  "focusPoints": [
+    "Due Diligence verbindet rechtliche, technische, wirtschaftliche und finanzielle Prüfung. Eine gute Renditekennzahl kann einen ungeklärten Grundbuchvermerk oder Sanierungsstau nicht kompensieren.",
+    "Bei ETW gehören Teilungserklärung, Protokolle, Wirtschaftsplan, Rücklage und Sonderumlagen in die Prüfung; bei MFH zusätzlich Mieterliste, Mietverträge, Flächen, technische Gewerke und CapEx.",
+    "Offene Punkte sollten als konkrete Datenlücke mit möglichem Preiseffekt dokumentiert werden, nicht als allgemeine „Prüfaufgabe“."
+  ],
+  "decisionUse": "Am Ende steht keine Checkliste, sondern eine Entscheidungsmatrix: bestätigt, preisrelevant, vertraglich abzusichern oder Dealbreaker."
 }

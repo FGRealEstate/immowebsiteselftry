@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Systematische Prüfung eines Investments. Due Diligence ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Systematische Prüfung eines Investments. Due Diligence ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Systematische Prüfung eines Investments. Due Diligence ist die strukturierte Prüfung einer Transaktion vor Abschluss. Bei Immobilien umfasst sie je nach Objekt rechtliche, technische, wirtschaftliche, steuerliche und finanzielle Aspekte.",
+  "explanation": "Due Diligence ist die strukturierte Prüfung einer Transaktion vor Abschluss. Bei Immobilien umfasst sie je nach Objekt rechtliche, technische, wirtschaftliche, steuerliche und finanzielle Aspekte.",
+  "practiceExample": "Ein identifizierter Sanierungsbedarf von 100.000 € kann zu Kaufpreisanpassung, zusätzlichem Eigenkapitalbedarf oder Abbruch des Erwerbs führen."
 }

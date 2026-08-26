@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Vermietung",
-  "explanation": "Zusätzliche Zahlung der Wohnungseigentümer aufgrund eines WEG-Beschlusses. Sonderumlage wirkt auf Ertrag, Kosten oder Rechte innerhalb eines Miet- bzw. WEG-Verhältnisses und sollte aus Vertrag, Abrechnung oder Beschluss konkret abgeleitet werden.",
-  "practiceExample": "Beispiel: Eine Position im Wirtschaftsplan kann wirtschaftlich beim Eigentümer verbleiben, obwohl andere Betriebskosten auf den Mieter umgelegt werden.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Zusätzliche Zahlung der Wohnungseigentümer aufgrund eines WEG-Beschlusses. Sonderumlage wirkt auf Ertrag, Kosten oder Rechte innerhalb eines Miet- bzw. WEG-Verhältnisses und sollte aus Vertrag, Abrechnung oder Beschluss konkret abgeleitet werden. Beispiel: Eine Position im Wirtschaftsplan kann wirtschaftlich beim Eigentümer verbleiben, obwohl andere Betriebskosten auf den Mieter umgelegt werden."
+  "assistantAnswer": "Zusätzliche Zahlung der Wohnungseigentümer aufgrund eines WEG-Beschlusses. Eine Sonderumlage ist ein zusätzlicher Finanzierungsbeitrag der Wohnungseigentümer, wenn laufende Mittel und Rücklage nicht ausreichen. Für Käufer sind sowohl bereits beschlossene Umlagen als auch aus Protokollen erkennbare größere Maßnahmen wirtschaftlich relevant.",
+  "explanation": "Eine Sonderumlage ist ein zusätzlicher Finanzierungsbeitrag der Wohnungseigentümer, wenn laufende Mittel und Rücklage nicht ausreichen. Für Käufer sind sowohl bereits beschlossene Umlagen als auch aus Protokollen erkennbare größere Maßnahmen wirtschaftlich relevant.",
+  "practiceExample": "Kaufpreis 300.000 € und kurz nach Erwerb fällige Sonderumlage 20.000 €: wirtschaftliche Kapitalbindung 320.000 € vor weiteren Kaufnebenkosten. Die Bruttorendite auf den Kaufpreis allein würde das Risiko verschleiern."
 }

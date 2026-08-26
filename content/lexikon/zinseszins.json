@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Finanzierung",
-  "explanation": "Verzinsung bereits gutgeschriebener Zinsen. Zinseszins sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden.",
-  "practiceExample": "Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Verzinsung bereits gutgeschriebener Zinsen. Zinseszins sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden. Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen."
+  "assistantAnswer": "Verzinsung bereits gutgeschriebener Zinsen. Zinseszins entsteht, wenn nicht nur das Anfangskapital, sondern auch bereits gutgeschriebene Zinsen weiter verzinst werden. Er ist besonders bei langfristigem Vermögensaufbau und Opportunitätskosten relevant.",
+  "explanation": "Zinseszins entsteht, wenn nicht nur das Anfangskapital, sondern auch bereits gutgeschriebene Zinsen weiter verzinst werden. Er ist besonders bei langfristigem Vermögensaufbau und Opportunitätskosten relevant.",
+  "practiceExample": "100.000 € zu 5 % p.a. wachsen bei jährlicher Wiederanlage in zehn Jahren auf rund 162.900 €, nicht nur auf 150.000 €."
 }

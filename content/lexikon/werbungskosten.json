@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Steuern",
-  "explanation": "Aufwendungen zur Erwerbung, Sicherung und Erhaltung steuerpflichtiger Einnahmen. Werbungskosten beeinflusst die steuerliche Modellrechnung. Maßgeblich sind Rechtsgrundlage, Bemessungsgrundlage und der konkrete Sachverhalt.",
-  "practiceExample": "Beispiel: Eine steuerliche Größe von 5.000 € entspricht nicht automatisch 5.000 € Liquidität, weil Abschreibungen nicht zahlungswirksam sein können.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Aufwendungen zur Erwerbung, Sicherung und Erhaltung steuerpflichtiger Einnahmen. Werbungskosten beeinflusst die steuerliche Modellrechnung. Maßgeblich sind Rechtsgrundlage, Bemessungsgrundlage und der konkrete Sachverhalt. Beispiel: Eine steuerliche Größe von 5.000 € entspricht nicht automatisch 5.000 € Liquidität, weil Abschreibungen nicht zahlungswirksam sein können."
+  "assistantAnswer": "Aufwendungen zur Erwerbung, Sicherung und Erhaltung steuerpflichtiger Einnahmen. Werbungskosten sind Aufwendungen zur Erwerbung, Sicherung und Erhaltung steuerpflichtiger Einnahmen. Bei Vermietung können dazu je nach Sachverhalt etwa Schuldzinsen, Verwaltung oder bestimmte Erhaltungsaufwendungen gehören; Tilgung zählt nicht dazu.",
+  "explanation": "Werbungskosten sind Aufwendungen zur Erwerbung, Sicherung und Erhaltung steuerpflichtiger Einnahmen. Bei Vermietung können dazu je nach Sachverhalt etwa Schuldzinsen, Verwaltung oder bestimmte Erhaltungsaufwendungen gehören; Tilgung zählt nicht dazu.",
+  "practiceExample": "9.000 € Schuldzinsen können den steuerlichen Vermietungsüberschuss mindern, während 6.000 € Tilgung zwar Liquidität kostet, steuerlich aber nicht als Werbungskosten abziehbar ist."
 }

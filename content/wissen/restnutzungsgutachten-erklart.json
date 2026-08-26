@@ -23,7 +23,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Damit kann sich die jährliche AfA erhöhen. Das Gutachten muss fachlich belastbar sein; Anerkennung und individuelle Wirkung sind nicht garantiert.",
-  "mechanics": "Steuerliche Effekte sind eine zweite Rechnung neben dem tatsächlichen Cashflow. Entscheidend sind die steuerliche Bemessungsgrundlage, zeitliche Zuordnung, persönliche bzw. gesellschaftsrechtliche Situation und die Abgrenzung von abzugsfähigen Aufwendungen zu Anschaffungs- oder Herstellungskosten.",
   "formulae": [
     "AfA bei kürzerer tatsächlicher Nutzungsdauer = AfA-Basis / nachgewiesene Restnutzungsdauer"
   ],
@@ -39,30 +38,17 @@
     ],
     "interpretation": "Entscheidend ist ein steuerlich tragfähiger Nachweis der kürzeren tatsächlichen Nutzungsdauer; ein Gutachten ist kein Automatismus für Anerkennung."
   },
-  "drivers": [
-    "Gebäude- versus Bodenanteil",
-    "AfA-Methode und Fertigstellungsjahr",
-    "Finanzierungszinsen und sonstige Werbungskosten",
-    "Persönlicher Steuersatz bzw. Gesellschaftsstruktur",
-    "Haltedauer und Veräußerungsstrategie"
-  ],
-  "risks": [
-    "Steuerersparnis ersetzt keinen positiven Objekt-Cashflow.",
-    "Gesetze und Verwaltungsauffassung können sich ändern.",
-    "Einzelfälle sollten mit Steuerberatung und belastbaren Unterlagen geprüft werden."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [
     {
       "label": "§ 7 EStG – Gebäude-AfA",
       "url": "https://www.gesetze-im-internet.de/estg/__7.html"
     }
   ],
-  "assistantAnswer": "Ein Restnutzungsgutachten kann unter Voraussetzungen eine kürzere tatsächliche Nutzungsdauer begründen. Entscheidend ist ein steuerlich tragfähiger Nachweis der kürzeren tatsächlichen Nutzungsdauer; ein Gutachten ist kein Automatismus für Anerkennung."
+  "assistantAnswer": "Ein Restnutzungsgutachten kann unter Voraussetzungen eine kürzere tatsächliche Nutzungsdauer begründen. Eine tatsächlich kürzere Nutzungsdauer kann nach § 7 Abs. 4 Satz 2 EStG zu einer höheren jährlichen AfA führen, wenn sie belastbar nachgewiesen wird.",
+  "focusPoints": [
+    "Eine tatsächlich kürzere Nutzungsdauer kann nach § 7 Abs. 4 Satz 2 EStG zu einer höheren jährlichen AfA führen, wenn sie belastbar nachgewiesen wird.",
+    "Das Gutachten betrifft die Restnutzungsdauer des Gebäudes; es ändert nicht den nicht abschreibbaren Bodenanteil.",
+    "Der steuerliche Effekt hängt von AfA-Basis, anerkannter Restnutzungsdauer und persönlicher Steuersituation ab. Anerkennung ist kein Automatismus."
+  ],
+  "decisionUse": "Kosten des Gutachtens gegen zusätzlichen Steuerbarwert rechnen und vorab prüfen, ob Bauzustand und bisherige Nutzungsdauer eine deutlich kürzere RND plausibel machen."
 }

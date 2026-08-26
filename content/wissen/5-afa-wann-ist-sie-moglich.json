@@ -21,7 +21,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Entscheidend sind Fertigstellung, Anschaffung, Nutzungsart und das jeweils geltende Steuerrecht. Der Rechner kann Szenarien zeigen, ersetzt aber keine steuerliche Prüfung.",
-  "mechanics": "Steuerliche Effekte sind eine zweite Rechnung neben dem tatsächlichen Cashflow. Entscheidend sind die steuerliche Bemessungsgrundlage, zeitliche Zuordnung, persönliche bzw. gesellschaftsrechtliche Situation und die Abgrenzung von abzugsfähigen Aufwendungen zu Anschaffungs- oder Herstellungskosten.",
   "formulae": [
     "Degressive AfA bzw. § 7b-Sonder-AfA sind getrennte Regelungen",
     "§ 7b: bis zu 5 % der begrenzten Bemessungsgrundlage in Jahr der Anschaffung/Herstellung plus drei Folgejahre"
@@ -37,25 +36,6 @@
     ],
     "interpretation": "„5 % AfA“ ist kein universeller Satz. Es muss sauber zwischen linearer AfA, degressiver AfA und § 7b-Sonderabschreibung unterschieden werden."
   },
-  "drivers": [
-    "Gebäude- versus Bodenanteil",
-    "AfA-Methode und Fertigstellungsjahr",
-    "Finanzierungszinsen und sonstige Werbungskosten",
-    "Persönlicher Steuersatz bzw. Gesellschaftsstruktur",
-    "Haltedauer und Veräußerungsstrategie"
-  ],
-  "risks": [
-    "Steuerersparnis ersetzt keinen positiven Objekt-Cashflow.",
-    "Gesetze und Verwaltungsauffassung können sich ändern.",
-    "Einzelfälle sollten mit Steuerberatung und belastbaren Unterlagen geprüft werden."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [
     {
       "label": "§ 7 EStG – Gebäude-AfA",
@@ -66,5 +46,11 @@
       "url": "https://www.gesetze-im-internet.de/estg/__7b.html"
     }
   ],
-  "assistantAnswer": "Erhöhte Abschreibungssätze gelten nur bei bestimmten gesetzlichen Voraussetzungen. „5 % AfA“ ist kein universeller Satz. Es muss sauber zwischen linearer AfA, degressiver AfA und § 7b-Sonderabschreibung unterschieden werden."
+  "assistantAnswer": "Erhöhte Abschreibungssätze gelten nur bei bestimmten gesetzlichen Voraussetzungen. Die Aussage „5 % AfA“ kann drei verschiedene Dinge vermischen: degressive Gebäude-AfA, § 7b-Sonderabschreibung und individuelle AfA bei nachgewiesener kürzerer tatsächlicher Nutzungsdauer.",
+  "focusPoints": [
+    "Die Aussage „5 % AfA“ kann drei verschiedene Dinge vermischen: degressive Gebäude-AfA, § 7b-Sonderabschreibung und individuelle AfA bei nachgewiesener kürzerer tatsächlicher Nutzungsdauer.",
+    "Die degressive AfA nach § 7 Abs. 5a EStG und die Sonderabschreibung nach § 7b EStG haben unterschiedliche Voraussetzungen, Bemessungsgrundlagen und Wirkungen. Sie dürfen nicht als ein einheitlicher Fördertatbestand dargestellt werden.",
+    "Für die Investitionsrechnung sollte deshalb immer ausgewiesen werden, welcher Abschreibungstatbestand genutzt wird, auf welche Basis er angewendet wird und ob die Voraussetzungen im konkreten Objekt tatsächlich erfüllt sind."
+  ],
+  "decisionUse": "Steuerliche Mehr-AfA ist nur dann belastbar, wenn Bauantrag/Fertigstellung, Nutzung, Kostenobergrenzen und gegebenenfalls QNG-Nachweis dokumentiert sind."
 }

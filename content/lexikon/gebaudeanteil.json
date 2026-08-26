@@ -9,8 +9,8 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Anteil der Anschaffungskosten, der wirtschaftlich auf das abschreibungsfähige Gebäude entfällt; der Bodenanteil ist nicht abschreibbar.",
-  "practiceExample": "440.000 € Gesamtanschaffungskosten × 70 % Gebäudeanteil = 308.000 € AfA-Basis.",
+  "explanation": "Gebäudeanteil bezeichnet den Teil des Gesamtwerts beziehungsweise der Anschaffungskosten, der wirtschaftlich auf das Gebäude entfällt. Für die Gebäude-AfA ist die Abgrenzung zum nicht abschreibbaren Grund und Boden zentral.",
+  "practiceExample": "440.000 € Gesamtanschaffungskosten × 70 % Gebäudeanteil = 308.000 € AfA-Basis vor weiteren steuerlichen Besonderheiten.",
   "formula": "Gebäudeanteil = Gebäude-Wert / Gesamtwert",
   "sources": [
     {
@@ -18,10 +18,5 @@
       "url": "https://www.gesetze-im-internet.de/estg/__7.html"
     }
   ],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Anteil der Anschaffungskosten, der wirtschaftlich auf das abschreibungsfähige Gebäude entfällt; der Bodenanteil ist nicht abschreibbar. 440.000 € Gesamtanschaffungskosten × 70 % Gebäudeanteil = 308.000 € AfA-Basis."
+  "assistantAnswer": "Anteil des Kaufpreises, der dem Gebäude statt Grund und Boden zugeordnet wird. Gebäudeanteil bezeichnet den Teil des Gesamtwerts beziehungsweise der Anschaffungskosten, der wirtschaftlich auf das Gebäude entfällt. Für die Gebäude-AfA ist die Abgrenzung zum nicht abschreibbaren Grund und Boden zentral."
 }

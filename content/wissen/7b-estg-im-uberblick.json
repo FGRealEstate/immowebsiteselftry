@@ -20,7 +20,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Begünstigungszeitraum, Baukostenobergrenzen, Effizienzanforderungen und dauerhafte Vermietung müssen geprüft werden.",
-  "mechanics": "Steuerliche Effekte sind eine zweite Rechnung neben dem tatsächlichen Cashflow. Entscheidend sind die steuerliche Bemessungsgrundlage, zeitliche Zuordnung, persönliche bzw. gesellschaftsrechtliche Situation und die Abgrenzung von abzugsfähigen Aufwendungen zu Anschaffungs- oder Herstellungskosten.",
   "formulae": [
     "Sonder-AfA bis zu 5 % p.a. für vier Jahre auf begrenzte Bemessungsgrundlage"
   ],
@@ -37,25 +36,6 @@
     ],
     "interpretation": "Für aktuelle Bauanträge gelten u.a. Fristen, Kostenobergrenzen, zehnjährige entgeltliche Wohnnutzung und bei der Neuregelung EH40 mit QNG. Vor Umsetzung steuerlich prüfen."
   },
-  "drivers": [
-    "Gebäude- versus Bodenanteil",
-    "AfA-Methode und Fertigstellungsjahr",
-    "Finanzierungszinsen und sonstige Werbungskosten",
-    "Persönlicher Steuersatz bzw. Gesellschaftsstruktur",
-    "Haltedauer und Veräußerungsstrategie"
-  ],
-  "risks": [
-    "Steuerersparnis ersetzt keinen positiven Objekt-Cashflow.",
-    "Gesetze und Verwaltungsauffassung können sich ändern.",
-    "Einzelfälle sollten mit Steuerberatung und belastbaren Unterlagen geprüft werden."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [
     {
       "label": "§ 7 EStG – Gebäude-AfA",
@@ -66,5 +46,11 @@
       "url": "https://www.gesetze-im-internet.de/estg/__7b.html"
     }
   ],
-  "assistantAnswer": "Die Sonderabschreibung für Mietwohnungsneubau ist an Voraussetzungen und Grenzen gebunden. Für aktuelle Bauanträge gelten u.a. Fristen, Kostenobergrenzen, zehnjährige entgeltliche Wohnnutzung und bei der Neuregelung EH40 mit QNG. Vor Umsetzung steuerlich prüfen."
+  "assistantAnswer": "Die Sonderabschreibung für Mietwohnungsneubau ist an Voraussetzungen und Grenzen gebunden. § 7b EStG ermöglicht Sonderabschreibungen zusätzlich zur regulären Gebäude-AfA. Für aktuelle Fälle sind unter anderem Bauantrags-/Bauanzeigezeitraum, neue Wohnung, entgeltliche Wohnnutzung und die gesetzlichen Kostenobergrenzen relevant.",
+  "focusPoints": [
+    "§ 7b EStG ermöglicht Sonderabschreibungen zusätzlich zur regulären Gebäude-AfA. Für aktuelle Fälle sind unter anderem Bauantrags-/Bauanzeigezeitraum, neue Wohnung, entgeltliche Wohnnutzung und die gesetzlichen Kostenobergrenzen relevant.",
+    "Bei Bauanträgen nach dem 31.12.2022 und vor dem 01.10.2029 verlangt die Regelung für die begünstigte Wohnung ein Effizienzhaus-40-Gebäude mit Nachhaltigkeits-Klasse und QNG-Nachweis.",
+    "Die Sonderabschreibung beträgt bis zu 5 % der begrenzten Bemessungsgrundlage im Jahr der Anschaffung/Herstellung und in den drei Folgejahren; die reguläre AfA läuft daneben."
+  ],
+  "decisionUse": "In einer seriösen Modellrechnung werden reguläre AfA und § 7b getrennt ausgewiesen und Rückforderungsrisiken bei Nutzungs- oder Veräußerungsänderungen separat beschrieben."
 }

@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Kapitalanlage",
-  "explanation": "Jahresnettokaltmiete im Verhältnis zum Kaufpreis. Schnelle Screening-Kennzahl ohne Erwerbsnebenkosten, Finanzierung und laufende Eigentümerkosten.",
-  "practiceExample": "16.800 € Jahresnettokaltmiete / 300.000 € Kaufpreis = 5,6 %.",
-  "formula": "Bruttorendite = JNKM / Kaufpreis",
+  "explanation": "Die Bruttomietrendite ist eine schnelle Screeningkennzahl aus Jahresnettokaltmiete und Kaufpreis. Sie berücksichtigt weder Kaufnebenkosten noch laufende Eigentümerkosten oder Finanzierung.",
+  "practiceExample": "16.800 € Jahresnettokaltmiete / 300.000 € Kaufpreis = 5,6 % Bruttomietrendite.",
+  "formula": "Bruttomietrendite = Jahresnettokaltmiete / Kaufpreis",
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Jahresnettokaltmiete im Verhältnis zum Kaufpreis. Schnelle Screening-Kennzahl ohne Erwerbsnebenkosten, Finanzierung und laufende Eigentümerkosten. 16.800 € Jahresnettokaltmiete / 300.000 € Kaufpreis = 5,6 %."
+  "assistantAnswer": "Jahresnettokaltmiete geteilt durch Kaufpreis. Die Bruttomietrendite ist eine schnelle Screeningkennzahl aus Jahresnettokaltmiete und Kaufpreis. Sie berücksichtigt weder Kaufnebenkosten noch laufende Eigentümerkosten oder Finanzierung."
 }

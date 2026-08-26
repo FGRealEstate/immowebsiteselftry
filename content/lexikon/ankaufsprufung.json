@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Strukturierte wirtschaftliche, rechtliche, technische und steuerliche Prüfung vor Kauf. Ankaufsprüfung ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Strukturierte wirtschaftliche, rechtliche, technische und steuerliche Prüfung vor Kauf. Ankaufsprüfung ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Strukturierte wirtschaftliche, rechtliche, technische und steuerliche Prüfung vor Kauf. Ankaufsprüfung ist die strukturierte Prüfung eines Immobilienkaufs vor Bindung. Sie verbindet Unterlagen, technische Risiken, Erträge, Kaufpreis, Finanzierung und rechtliche Besonderheiten zu einer belastbaren Entscheidung.",
+  "explanation": "Ankaufsprüfung ist die strukturierte Prüfung eines Immobilienkaufs vor Bindung. Sie verbindet Unterlagen, technische Risiken, Erträge, Kaufpreis, Finanzierung und rechtliche Besonderheiten zu einer belastbaren Entscheidung.",
+  "practiceExample": "Bei einer ETW können drei WEG-Protokolle mit angekündigter Dachsanierung wichtiger für den Kaufpreis sein als eine um 0,2 Prozentpunkte höhere Bruttorendite."
 }

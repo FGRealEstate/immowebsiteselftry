@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Eigene Mittel des Erwerbers. Mehr Eigenkapital reduziert Darlehen und häufig den Beleihungsauslauf; dadurch können sich Konditionen verbessern. Gleichzeitig sollte eine angemessene Liquiditätsreserve erhalten bleiben.",
-  "practiceExample": "Bei 400.000 € Kaufpreis kann der Unterschied zwischen 40.000 € und 80.000 € Eigenkapital sowohl Darlehenshöhe als auch mögliche Zinsklasse verändern.",
-  "formula": "EK-Bedarf = Nebenkosten + nicht finanzierter Kaufpreisanteil + Reserve",
+  "explanation": "Eigenkapital umfasst die für den Erwerb eingesetzten eigenen Mittel. Mehr Eigenkapital reduziert Darlehen und kann den Beleihungsauslauf senken; dadurch kann sich die Bankkondition verbessern. Gleichzeitig sinkt die frei verfügbare Liquiditätsreserve.",
+  "practiceExample": "Bei 400.000 € Kaufpreis und 40.000 € Nebenkosten führen 40.000 € Eigenkapital zu 400.000 € Darlehen. Werden 80.000 € eingesetzt, sinkt das Darlehen auf 360.000 €; wenn dadurch zusätzlich eine bessere Zinsstufe erreicht wird, reduziert sich die Rate überproportional.",
+  "formula": "Eigenkapitalbedarf = Nebenkosten + nicht finanzierter Kaufpreisanteil + geplante Reserve",
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Eigene Mittel des Erwerbers. Mehr Eigenkapital reduziert Darlehen und häufig den Beleihungsauslauf; dadurch können sich Konditionen verbessern. Gleichzeitig sollte eine angemessene Liquiditätsreserve erhalten bleiben. Bei 400.000 € Kaufpreis kann der Unterschied zwischen 40.000 € und 80.000 € Eigenkapital sowohl Darlehenshöhe als auch mögliche Zinsklasse verändern."
+  "assistantAnswer": "Eigene Mittel, die in Kauf und Nebenkosten eingebracht werden. Eigenkapital umfasst die für den Erwerb eingesetzten eigenen Mittel. Mehr Eigenkapital reduziert Darlehen und kann den Beleihungsauslauf senken; dadurch kann sich die Bankkondition verbessern. Gleichzeitig sinkt die frei verfügbare Liquiditätsreserve."
 }

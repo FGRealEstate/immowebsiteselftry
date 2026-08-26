@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Finanzierung",
-  "explanation": "Einschätzung der Fähigkeit und Bereitschaft, Verpflichtungen zu erfüllen. Bonität sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden.",
-  "practiceExample": "Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Einschätzung der Fähigkeit und Bereitschaft, Verpflichtungen zu erfüllen. Bonität sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden. Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen."
+  "assistantAnswer": "Einschätzung der Fähigkeit und Bereitschaft, Verpflichtungen zu erfüllen. Bonität beschreibt die Fähigkeit und Bereitschaft eines Schuldners, finanzielle Verpflichtungen vertragsgemäß zu erfüllen. Banken beurteilen dafür Einkommen, Vermögen, Verpflichtungen, Zahlungsverhalten und weitere Risikomerkmale.",
+  "explanation": "Bonität beschreibt die Fähigkeit und Bereitschaft eines Schuldners, finanzielle Verpflichtungen vertragsgemäß zu erfüllen. Banken beurteilen dafür Einkommen, Vermögen, Verpflichtungen, Zahlungsverhalten und weitere Risikomerkmale.",
+  "practiceExample": "Zwei Käufer mit gleichem Einkommen können unterschiedliche Kreditkonditionen erhalten, wenn einer hohe Konsumentenkredite und der andere hohe liquide Reserven hat."
 }

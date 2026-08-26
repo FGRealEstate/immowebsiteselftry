@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Vermietung",
-  "explanation": "Von einer WEG angesparte Mittel für Gemeinschaftseigentum. Erhaltungsrücklage wirkt auf Ertrag, Kosten oder Rechte innerhalb eines Miet- bzw. WEG-Verhältnisses und sollte aus Vertrag, Abrechnung oder Beschluss konkret abgeleitet werden.",
-  "practiceExample": "Beispiel: Eine Position im Wirtschaftsplan kann wirtschaftlich beim Eigentümer verbleiben, obwohl andere Betriebskosten auf den Mieter umgelegt werden.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Von einer WEG angesparte Mittel für Gemeinschaftseigentum. Erhaltungsrücklage wirkt auf Ertrag, Kosten oder Rechte innerhalb eines Miet- bzw. WEG-Verhältnisses und sollte aus Vertrag, Abrechnung oder Beschluss konkret abgeleitet werden. Beispiel: Eine Position im Wirtschaftsplan kann wirtschaftlich beim Eigentümer verbleiben, obwohl andere Betriebskosten auf den Mieter umgelegt werden."
+  "assistantAnswer": "Von einer WEG angesparte Mittel für Gemeinschaftseigentum. Die Erhaltungsrücklage ist Gemeinschaftsvermögen der WEG für künftige Maßnahmen am Gemeinschaftseigentum. Der rechnerisch auf eine Wohnung entfallende Anteil ist kein frei auszahlbares Guthaben des einzelnen Eigentümers.",
+  "explanation": "Die Erhaltungsrücklage ist Gemeinschaftsvermögen der WEG für künftige Maßnahmen am Gemeinschaftseigentum. Der rechnerisch auf eine Wohnung entfallende Anteil ist kein frei auszahlbares Guthaben des einzelnen Eigentümers.",
+  "practiceExample": "120.000 € WEG-Rücklage können bei einem kleinen, gut sanierten Haus komfortabel sein; steht zugleich eine Dach- und Fassadensanierung von 400.000 € an, ist die Aussage völlig anders."
 }

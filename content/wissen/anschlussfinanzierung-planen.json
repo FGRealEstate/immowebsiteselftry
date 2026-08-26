@@ -22,7 +22,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Eine frühe Szenariorechnung zeigt, wie empfindlich die Rate auf Zinsänderungen reagiert. Forward-Darlehen sind eine Option, aber nicht immer wirtschaftlich.",
-  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
   "formulae": [
     "Neue Rate ≈ Restschuld × (neuer Sollzins + gewünschte Tilgung) / 12"
   ],
@@ -41,25 +40,12 @@
     ],
     "interpretation": "Die Anschlussfinanzierung ist primär ein Restschuld- und Zinsrisiko. Deshalb sollte mehrere Jahre vor Ende der Bindung geprüft werden, ob Sondertilgung, Prolongation, Umschuldung oder Forward sinnvoll sind."
   },
-  "drivers": [
-    "Darlehenshöhe und Beleihungsauslauf",
-    "Sollzins, Tilgung und Zinsbindung",
-    "Restschuld zum Ende der Zinsbindung",
-    "Liquiditätsreserve und Sondertilgungsrechte",
-    "Objektqualität und bankseitiger Beleihungswert"
-  ],
-  "risks": [
-    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
-    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
-    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Entscheidend sind Restschuld, künftiger Zins und verbleibende Laufzeit. Die Anschlussfinanzierung ist primär ein Restschuld- und Zinsrisiko. Deshalb sollte mehrere Jahre vor Ende der Bindung geprüft werden, ob Sondertilgung, Prolongation, Umschuldung oder Forward sinnvoll sind."
+  "assistantAnswer": "Entscheidend sind Restschuld, künftiger Zins und verbleibende Laufzeit. Die Anschlussfinanzierung betrifft die Restschuld nach Ende der Sollzinsbindung. Entscheidend ist daher nicht der ursprüngliche Kaufpreis, sondern die zu diesem Zeitpunkt verbleibende Darlehenssumme.",
+  "focusPoints": [
+    "Die Anschlussfinanzierung betrifft die Restschuld nach Ende der Sollzinsbindung. Entscheidend ist daher nicht der ursprüngliche Kaufpreis, sondern die zu diesem Zeitpunkt verbleibende Darlehenssumme.",
+    "Ein Zinsanstieg wirkt auf die Restschuld unmittelbar über die neue Rate. Bei 250.000 € Restschuld verändert ein Unterschied von 2 Prozentpunkten die jährliche Zinsbelastung um rund 5.000 € vor Tilgung.",
+    "Prolongation bei der bestehenden Bank, Umschuldung und Forward-Darlehen sollten nach Effektivkosten, Grundbuch-/Abwicklungskosten und Flexibilität verglichen werden."
+  ],
+  "decisionUse": "Spätestens mehrere Jahre vor Zinsende sollte eine Restschuld- und Stressrechnung erstellt werden; die konkrete Angebotsphase hängt von Markt und Bank ab."
 }

@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Kaufpreis plus Nebenkosten und Anfangsinvestitionen. Gesamtinvestition ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Kaufpreis plus Nebenkosten und Anfangsinvestitionen. Gesamtinvestition ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Kaufpreis plus Nebenkosten und Anfangsinvestitionen. Gesamtinvestition umfasst den gesamten wirtschaftlich eingesetzten Kapitalbetrag für Erwerb und Herstellung der Nutzbarkeit, nicht nur den notariellen Kaufpreis.",
+  "explanation": "Gesamtinvestition umfasst den gesamten wirtschaftlich eingesetzten Kapitalbetrag für Erwerb und Herstellung der Nutzbarkeit, nicht nur den notariellen Kaufpreis.",
+  "practiceExample": "300.000 € Kaufpreis + 30.000 € Nebenkosten + 20.000 € Renovierung = 350.000 € Gesamtinvestition."
 }

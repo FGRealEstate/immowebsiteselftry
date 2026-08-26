@@ -24,7 +24,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Sondertilgungsrechte schaffen Flexibilität. Die richtige Struktur hängt von Cashflow, Zinsbindung, Rücklagen und alternativen Verwendungsmöglichkeiten des Kapitals ab.",
-  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
   "formulae": [
     "Restschuld sinkt um reguläre Tilgung + Sondertilgung",
     "Zinsersparnis entsteht auf den künftig nicht mehr ausstehenden Darlehensbetrag"
@@ -42,25 +41,12 @@
     ],
     "interpretation": "Sondertilgung ist besonders wertvoll bei hohem Kreditzins und ausreichender Reserve. Alternativanlagen und Liquiditätsbedarf sind die Opportunitätskosten."
   },
-  "drivers": [
-    "Darlehenshöhe und Beleihungsauslauf",
-    "Sollzins, Tilgung und Zinsbindung",
-    "Restschuld zum Ende der Zinsbindung",
-    "Liquiditätsreserve und Sondertilgungsrechte",
-    "Objektqualität und bankseitiger Beleihungswert"
-  ],
-  "risks": [
-    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
-    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
-    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Höhere Tilgung reduziert die Restschuld schneller, bindet aber monatliche Liquidität. Sondertilgung ist besonders wertvoll bei hohem Kreditzins und ausreichender Reserve. Alternativanlagen und Liquiditätsbedarf sind die Opportunitätskosten."
+  "assistantAnswer": "Höhere Tilgung reduziert die Restschuld schneller, bindet aber monatliche Liquidität. Höhere laufende Tilgung erhöht die verpflichtende Rate und reduziert planmäßig die Restschuld. Sondertilgung bietet Flexibilität, wenn sie vertraglich vereinbart ist und Liquidität tatsächlich vorhanden ist.",
+  "focusPoints": [
+    "Höhere laufende Tilgung erhöht die verpflichtende Rate und reduziert planmäßig die Restschuld. Sondertilgung bietet Flexibilität, wenn sie vertraglich vereinbart ist und Liquidität tatsächlich vorhanden ist.",
+    "Die wirtschaftliche Attraktivität einer Sondertilgung entspricht vereinfacht dem sicheren eingesparten Darlehenszins auf den getilgten Betrag, bereinigt um Alternativrendite und Liquiditätswert.",
+    "Bei Kapitalanlagen kann das Halten von Liquidität für CapEx oder weitere Investments sinnvoller sein als maximale Entschuldung."
+  ],
+  "decisionUse": "Sondertilgung nur nach Vergleich von Zinsersparnis, Reservebedarf und alternativer Verwendung des Kapitals."
 }

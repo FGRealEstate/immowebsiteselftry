@@ -19,7 +19,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Der gewählte Diskontsatz ist eine zentrale Annahme und sollte Risiko sowie alternative Anlagechancen abbilden.",
-  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
   "formulae": [
     "NPV = Σ CF_t / (1+r)^t − Anfangsinvestition"
   ],
@@ -35,25 +34,12 @@
     ],
     "interpretation": "Ein positiver Kapitalwert bedeutet im Modell, dass die angenommene Mindestverzinsung von 5 % übertroffen wird. Ergebnis hängt vollständig von Cashflows und Diskontsatz ab."
   },
-  "drivers": [
-    "Jahresnettokaltmiete und Mietvertragsqualität",
-    "Kaufpreis plus Erwerbsnebenkosten",
-    "Nicht umlagefähige Kosten, Verwaltung und Capex",
-    "Finanzierungsstruktur und Tilgung",
-    "Exit-Annahmen und Haltedauer"
-  ],
-  "risks": [
-    "Bruttorenditen blenden Kosten und Finanzierung aus.",
-    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
-    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Der Kapitalwert diskontiert künftige Zahlungsströme auf heute. Ein positiver Kapitalwert bedeutet im Modell, dass die angenommene Mindestverzinsung von 5 % übertroffen wird. Ergebnis hängt vollständig von Cashflows und Diskontsatz ab."
+  "assistantAnswer": "Der Kapitalwert diskontiert künftige Zahlungsströme auf heute. Der Kapitalwert diskontiert zukünftige Nettozahlungen auf den heutigen Zeitpunkt und zieht die Anfangsinvestition ab.",
+  "focusPoints": [
+    "Der Kapitalwert diskontiert zukünftige Nettozahlungen auf den heutigen Zeitpunkt und zieht die Anfangsinvestition ab.",
+    "Ein positiver Kapitalwert bedeutet nur relativ zum gewählten Diskontsatz einen Mehrwert. Ist der Diskontsatz zu niedrig angesetzt, wirkt ein riskantes Investment künstlich attraktiv.",
+    "Im Gegensatz zur IRR zeigt der Kapitalwert einen Eurobetrag und ist bei sich ausschließenden Investitionen oft leichter wirtschaftlich zu interpretieren."
+  ],
+  "decisionUse": "Diskontsatz als Renditeanforderung explizit begründen und mindestens ein höheres Risikoszenario rechnen."
 }

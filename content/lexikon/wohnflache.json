@@ -9,8 +9,8 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Für viele Wohnimmobilien zentrale Bezugsgröße. Die anrechenbare Fläche hängt von der anzuwendenden Berechnungsmethode ab; Dachschrägen, Balkone und Nebenflächen können nur anteilig oder gar nicht zählen.",
-  "practiceExample": "80 m² Grundfläche sind nicht zwingend 80 m² Wohnfläche.",
+  "explanation": "Wohnfläche ist die nach dem anwendbaren Regelwerk anrechenbare Fläche einer Wohnung. Nach WoFlV zählen unter anderem Keller/Garagen grundsätzlich nicht; Balkone/Terrassen werden regelmäßig nur anteilig und Dachschrägen abhängig von der lichten Höhe berücksichtigt.",
+  "practiceExample": "Ein Raum mit 20 m² Grundfläche unter Dachschrägen kann deutlich weniger als 20 m² Wohnfläche beitragen. Deshalb sind Grundfläche, Nutzfläche und Wohnfläche nicht austauschbar.",
   "formula": "Berechnung nach anwendbarer Flächenregelung",
   "sources": [
     {
@@ -18,10 +18,5 @@
       "url": "https://www.gesetze-im-internet.de/woflv/"
     }
   ],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Für viele Wohnimmobilien zentrale Bezugsgröße. Die anrechenbare Fläche hängt von der anzuwendenden Berechnungsmethode ab; Dachschrägen, Balkone und Nebenflächen können nur anteilig oder gar nicht zählen. 80 m² Grundfläche sind nicht zwingend 80 m² Wohnfläche."
+  "assistantAnswer": "Nach einem Regelwerk ermittelte anrechenbare Fläche. Wohnfläche ist die nach dem anwendbaren Regelwerk anrechenbare Fläche einer Wohnung. Nach WoFlV zählen unter anderem Keller/Garagen grundsätzlich nicht; Balkone/Terrassen werden regelmäßig nur anteilig und Dachschrägen abhängig von der lichten Höhe berücksichtigt."
 }

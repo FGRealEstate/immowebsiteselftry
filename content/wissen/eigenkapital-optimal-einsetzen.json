@@ -25,7 +25,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Liquiditätsreserve und Opportunitätskosten sind ebenso wichtig wie die niedrigste Rate.",
-  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
   "formulae": [
     "Eigenkapitalbedarf = Kaufnebenkosten + nicht finanzierter Kaufpreisanteil + Reserve",
     "Rate ≈ Darlehen × (Sollzins + Tilgung) / 12"
@@ -46,25 +45,50 @@
     ],
     "interpretation": "Mehr Eigenkapital kann durch geringeren Beleihungsauslauf zu besseren Konditionen führen. Optimal ist nicht automatisch maximal: Liquiditätsreserve, geplante Sanierungen und Opportunitätskosten müssen mitgedacht werden."
   },
-  "drivers": [
-    "Darlehenshöhe und Beleihungsauslauf",
-    "Sollzins, Tilgung und Zinsbindung",
-    "Restschuld zum Ende der Zinsbindung",
-    "Liquiditätsreserve und Sondertilgungsrechte",
-    "Objektqualität und bankseitiger Beleihungswert"
-  ],
-  "risks": [
-    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
-    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
-    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Mehr Eigenkapital senkt Darlehen und Risiko, kann aber die prozentuale Eigenkapitalrendite reduzieren. Mehr Eigenkapital kann durch geringeren Beleihungsauslauf zu besseren Konditionen führen. Optimal ist nicht automatisch maximal: Liquiditätsreserve, geplante Sanierungen und Opportunitätskosten müssen mitgedacht werden."
+  "assistantAnswer": "Mehr Eigenkapital senkt Darlehen und Risiko, kann aber die prozentuale Eigenkapitalrendite reduzieren. Mehr Eigenkapital reduziert Darlehenssumme und häufig den Beleihungsauslauf. Dadurch können sich sowohl Rate als auch Bankkondition verbessern.",
+  "focusPoints": [
+    "Mehr Eigenkapital reduziert Darlehenssumme und häufig den Beleihungsauslauf. Dadurch können sich sowohl Rate als auch Bankkondition verbessern.",
+    "Der Zinsvorteil tritt oft stufenweise auf. Deshalb sollte Eigenkapital gezielt bis zur nächsten relevanten Konditionsschwelle eingesetzt werden, statt automatisch das Maximum in den Kauf zu stecken.",
+    "Zu viel Eigenkapital im Objekt kann Liquiditätsreserven für Modernisierung, Leerstand oder weitere Investments schwächen. Der optimale Einsatz ist daher eine Portfolio- und Liquiditätsfrage."
+  ],
+  "decisionUse": "Vergleichen Sie mindestens drei Finanzierungsstrukturen mit gleicher Immobilie und unterschiedlichem Eigenkapital; entscheidend sind Zins, Rate, Restschuld, Reserve und Opportunitätskosten.",
+  "comparisonTable": {
+    "title": "Beispielhafte Eigenkapitalvarianten bei 400.000 € Kaufpreis + 40.000 € Nebenkosten",
+    "headers": [
+      "Variante",
+      "Eigenkapital",
+      "Darlehen",
+      "Beispielzins*",
+      "Rate bei 2 % Tilgung",
+      "Liquidität nach Kauf"
+    ],
+    "rows": [
+      [
+        "A – nur Nebenkosten",
+        "40.000 €",
+        "400.000 €",
+        "4,20 %",
+        "ca. 2.067 €",
+        "hoch, falls weitere Reserve vorhanden"
+      ],
+      [
+        "B – zusätzliche 40.000 €",
+        "80.000 €",
+        "360.000 €",
+        "3,90 %",
+        "ca. 1.770 €",
+        "40.000 € stärker gebunden"
+      ],
+      [
+        "C – zusätzliche 80.000 €",
+        "120.000 €",
+        "320.000 €",
+        "3,70 %",
+        "ca. 1.520 €",
+        "80.000 € stärker gebunden"
+      ]
+    ],
+    "note": "*Rechenannahmen. Konditionsstufen unterscheiden sich je Bank, Objekt und Bonität."
+  }
 }

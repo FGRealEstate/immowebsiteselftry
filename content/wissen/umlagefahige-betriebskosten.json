@@ -22,7 +22,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Der Eigentümer trägt dennoch Vorfinanzierung, Ausfallrisiko und nicht umlagefähige Anteile. Betriebskostenabrechnungen müssen formell und inhaltlich stimmen.",
-  "mechanics": "Vermietungsmodelle müssen rechtlich zulässige Mietentwicklung und realistische Kosten abbilden. Bestandsmiete, Neuvertragsmiete, Betriebskosten, Leerstand und Instandhaltung dürfen nicht vermischt werden.",
   "formulae": [
     "Umlagefähige Kosten nur bei wirksamer mietvertraglicher Umlage und nach Betriebskostenrecht"
   ],
@@ -38,30 +37,17 @@
     ],
     "interpretation": "Betriebskosten sind nicht mit Instandhaltung, Verwaltung oder Rücklagen gleichzusetzen. Maßgeblich sind Vertrag und BetrKV."
   },
-  "drivers": [
-    "Mietvertrag und Ausgangsmiete",
-    "örtliche Vergleichsmiete und Regulierungsrahmen",
-    "umlagefähige und nicht umlagefähige Kosten",
-    "Leerstands- und Ausfallrisiko",
-    "WEG-Beschlüsse und Instandhaltungsbedarf"
-  ],
-  "risks": [
-    "Nicht jede rechnerisch mögliche Mieterhöhung ist rechtlich zulässig.",
-    "Mietausfall und Renovierungszeiten zwischen Mietverhältnissen können den Jahresertrag mindern.",
-    "Hausgeldpositionen sind für Eigentümer und Mieter unterschiedlich zu behandeln."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [
     {
       "label": "Betriebskostenverordnung",
       "url": "https://www.gesetze-im-internet.de/betrkv/"
     }
   ],
-  "assistantAnswer": "Umlagefähige Kosten können bei wirksamer Vereinbarung auf Mieter verteilt werden. Betriebskosten sind nicht mit Instandhaltung, Verwaltung oder Rücklagen gleichzusetzen. Maßgeblich sind Vertrag und BetrKV."
+  "assistantAnswer": "Umlagefähige Kosten können bei wirksamer Vereinbarung auf Mieter verteilt werden. Umlagefähige Betriebskosten richten sich nach Betriebskostenverordnung und Mietvertrag. Nicht jede Eigentümerkostenposition ist automatisch auf den Mieter übertragbar.",
+  "focusPoints": [
+    "Umlagefähige Betriebskosten richten sich nach Betriebskostenverordnung und Mietvertrag. Nicht jede Eigentümerkostenposition ist automatisch auf den Mieter übertragbar.",
+    "Verwaltungskosten und Instandhaltung gehören grundsätzlich nicht zu den umlagefähigen Betriebskosten; bei Leerstand trägt der Eigentümer auch umlagefähige Kosten selbst.",
+    "Für Renditerechnungen muss daher zwischen Bruttokosten des Objekts, umlagefähigem Anteil und wirtschaftlich beim Eigentümer verbleibendem Anteil unterschieden werden."
+  ],
+  "decisionUse": "Letzte Abrechnung und Mietvertrag positionenweise prüfen; Pauschalannahmen wie „Hausgeld komplett umlagefähig“ vermeiden."
 }

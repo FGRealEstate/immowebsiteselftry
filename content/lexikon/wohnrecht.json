@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Recht, Räume zu Wohnzwecken zu nutzen. Wohnrecht ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Recht, Räume zu Wohnzwecken zu nutzen. Wohnrecht ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Recht, Räume zu Wohnzwecken zu nutzen. Ein dingliches Wohnrecht sichert dem Berechtigten die Nutzung bestimmter Räume. Es kann den wirtschaftlichen Wert und die freie Verfügbarkeit einer Immobilie erheblich einschränken.",
+  "explanation": "Ein dingliches Wohnrecht sichert dem Berechtigten die Nutzung bestimmter Räume. Es kann den wirtschaftlichen Wert und die freie Verfügbarkeit einer Immobilie erheblich einschränken.",
+  "practiceExample": "Beim Kauf eines Hauses mit lebenslangem Wohnrecht kann die Immobilie nicht ohne Weiteres selbst genutzt oder vollständig vermietet werden."
 }

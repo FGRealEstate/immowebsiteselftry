@@ -19,7 +19,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Es wird häufig bei eigengenutzten oder schwer ertragsorientiert bewertbaren Objekten eingesetzt.",
-  "mechanics": "Vor dem Kauf müssen rechtliche, technische, wirtschaftliche und finanzielle Prüfung zusammengeführt werden. Einzelkennzahlen ersetzen weder Objektunterlagen noch eine belastbare Bewertung.",
   "formulae": [
     "Sachwert = Bodenwert + Gebäudesachwert, anschließend marktangepasst nach ImmoWertV"
   ],
@@ -35,30 +34,17 @@
     ],
     "interpretation": "Sachwert ist vor allem bei eigengenutzten bzw. ertragsferneren Objekten relevant; Marktanpassung ist zentral."
   },
-  "drivers": [
-    "Eigentums- und Lastenverhältnisse",
-    "Flächen, Bauzustand und Energiezustand",
-    "Miet- und WEG-Unterlagen",
-    "Kaufpreis und Vergleichsdaten",
-    "Finanzierbarkeit und Liquiditätsbedarf"
-  ],
-  "risks": [
-    "Fehlende Unterlagen sind ein eigenes Risiko.",
-    "Technische Maßnahmen können den vermeintlichen Preisvorteil aufzehren.",
-    "Ein günstiger Quadratmeterpreis ist ohne Mikrolage und Zustand nicht aussagekräftig."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [
     {
       "label": "Immobilienwertermittlungsverordnung (ImmoWertV)",
       "url": "https://www.gesetze-im-internet.de/immowertv_2022/"
     }
   ],
-  "assistantAnswer": "Das Sachwertverfahren betrachtet Herstellungskosten, Alterswertminderung und Marktanpassung. Sachwert ist vor allem bei eigengenutzten bzw. ertragsferneren Objekten relevant; Marktanpassung ist zentral."
+  "assistantAnswer": "Das Sachwertverfahren betrachtet Herstellungskosten, Alterswertminderung und Marktanpassung. Das Sachwertverfahren leitet den Wert aus Bodenwert und Herstellungskosten der baulichen Anlagen unter Berücksichtigung von Alter und Marktanpassung ab.",
+  "focusPoints": [
+    "Das Sachwertverfahren leitet den Wert aus Bodenwert und Herstellungskosten der baulichen Anlagen unter Berücksichtigung von Alter und Marktanpassung ab.",
+    "Es ist besonders relevant, wenn Erträge nicht die primäre Wertbasis sind, etwa bei eigengenutzten Ein-/Zweifamilienhäusern.",
+    "Herstellungskosten sind keine historischen Baukosten; die ImmoWertV arbeitet mit normierten Ansätzen und objektspezifischen Merkmalen."
+  ],
+  "decisionUse": "Sachwert nicht isoliert lesen: Marktanpassung und Vergleich mit realen Transaktionen sind entscheidend."
 }

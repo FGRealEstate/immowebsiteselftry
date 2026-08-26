@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Finanzierung",
-  "explanation": "Finanzierung der Restschuld nach Ablauf der Zinsbindung. Anschlussfinanzierung sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden.",
-  "practiceExample": "Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Finanzierung der Restschuld nach Ablauf der Zinsbindung. Anschlussfinanzierung sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden. Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen."
+  "assistantAnswer": "Finanzierung der Restschuld nach Ablauf der Zinsbindung. Anschlussfinanzierung ist die Finanzierung der verbleibenden Restschuld nach Ende einer Zinsbindung. Sie kann als Prolongation bei derselben Bank, Umschuldung oder vorab als Forward-Darlehen gestaltet werden.",
+  "explanation": "Anschlussfinanzierung ist die Finanzierung der verbleibenden Restschuld nach Ende einer Zinsbindung. Sie kann als Prolongation bei derselben Bank, Umschuldung oder vorab als Forward-Darlehen gestaltet werden.",
+  "practiceExample": "250.000 € Restschuld und 5 % Zins plus 2 % Tilgung ergeben ca. 1.458 € monatliche Anfangsrate der Anschlussfinanzierung."
 }

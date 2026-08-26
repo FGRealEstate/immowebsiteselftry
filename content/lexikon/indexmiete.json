@@ -9,19 +9,14 @@
   ],
   "updated": "2026-08-26",
   "category": "Vermietung",
-  "explanation": "Mietvereinbarung, bei der Änderungen an den vom Statistischen Bundesamt ermittelten Verbraucherpreisindex gekoppelt werden. Die gesetzlichen Voraussetzungen und Erklärungen sind zu beachten.",
-  "practiceExample": "1.000 € × 123,9 / 118,0 ≈ 1.050 € rechnerische Indexanpassung.",
+  "explanation": "Bei der Indexmiete wird die Mietentwicklung an den vom Statistischen Bundesamt ermittelten Verbraucherpreisindex gekoppelt. Die Miete ändert sich nicht automatisch; die gesetzlich vorgeschriebene Erklärung ist erforderlich. Während der Geltung muss die Miete grundsätzlich mindestens ein Jahr unverändert bleiben.",
+  "practiceExample": "Ausgangsmiete 1.000 €, Ausgangsindex 118,0, neuer Index 123,9: rechnerisch 1.000 × 123,9 / 118,0 ≈ 1.050 €. Die tatsächliche Erhöhung setzt eine wirksame Indexmietvereinbarung und formgerechte Geltendmachung voraus.",
   "formula": "Neue Miete = Ausgangsmiete × neuer Index / Ausgangsindex",
   "sources": [
     {
-      "label": "§ 557b BGB – Indexmiete",
+      "label": "§ 557b BGB",
       "url": "https://www.gesetze-im-internet.de/bgb/__557b.html"
     }
   ],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Mietvereinbarung, bei der Änderungen an den vom Statistischen Bundesamt ermittelten Verbraucherpreisindex gekoppelt werden. Die gesetzlichen Voraussetzungen und Erklärungen sind zu beachten. 1.000 € × 123,9 / 118,0 ≈ 1.050 € rechnerische Indexanpassung."
+  "assistantAnswer": "Miete mit vertraglicher Kopplung an den Verbraucherpreisindex. Bei der Indexmiete wird die Mietentwicklung an den vom Statistischen Bundesamt ermittelten Verbraucherpreisindex gekoppelt. Die Miete ändert sich nicht automatisch; die gesetzlich vorgeschriebene Erklärung ist erforderlich. Während der Geltung muss die Miete grundsätzlich mindestens ein Jahr unverändert bleiben."
 }

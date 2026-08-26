@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Grenze für Mieterhöhungen innerhalb eines Zeitraums. Kappungsgrenze ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Grenze für Mieterhöhungen innerhalb eines Zeitraums. Kappungsgrenze ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Grenze für Mieterhöhungen innerhalb eines Zeitraums. Die Kappungsgrenze begrenzt bei Mieterhöhungen nach § 558 BGB die Erhöhung innerhalb von drei Jahren zusätzlich zur ortsüblichen Vergleichsmiete. In bestimmten Gebieten kann die Grenze abgesenkt sein.",
+  "explanation": "Die Kappungsgrenze begrenzt bei Mieterhöhungen nach § 558 BGB die Erhöhung innerhalb von drei Jahren zusätzlich zur ortsüblichen Vergleichsmiete. In bestimmten Gebieten kann die Grenze abgesenkt sein.",
+  "practiceExample": "Selbst wenn die ortsübliche Vergleichsmiete deutlich höher liegt, kann die Kappungsgrenze eine sofortige vollständige Anhebung verhindern."
 }

@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Finanzierung",
-  "explanation": "Anfänglicher oder laufender Anteil der Darlehensrückzahlung. Tilgungssatz sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden.",
-  "practiceExample": "Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Anfänglicher oder laufender Anteil der Darlehensrückzahlung. Tilgungssatz sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden. Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen."
+  "assistantAnswer": "Anfänglicher oder laufender Anteil der Darlehensrückzahlung. Der Tilgungssatz beschreibt den anfänglichen jährlichen Kapitalrückzahlungsanteil bezogen auf die Darlehenssumme. Im Annuitätendarlehen steigt der tatsächliche Tilgungsanteil im Zeitverlauf.",
+  "explanation": "Der Tilgungssatz beschreibt den anfänglichen jährlichen Kapitalrückzahlungsanteil bezogen auf die Darlehenssumme. Im Annuitätendarlehen steigt der tatsächliche Tilgungsanteil im Zeitverlauf.",
+  "practiceExample": "300.000 € Darlehen und 2 % Anfangstilgung entsprechen anfänglich 6.000 € Tilgungsanteil p.a.; bei 3 % wären es 9.000 €."
 }

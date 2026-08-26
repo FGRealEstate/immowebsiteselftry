@@ -9,14 +9,14 @@
   ],
   "updated": "2026-08-26",
   "category": "Steuern",
-  "explanation": "Umgangssprachliche Bezeichnung für steuerlich relevante Haltefristen. Spekulationsfrist beeinflusst die steuerliche Modellrechnung. Maßgeblich sind Rechtsgrundlage, Bemessungsgrundlage und der konkrete Sachverhalt.",
-  "practiceExample": "Beispiel: Eine steuerliche Größe von 5.000 € entspricht nicht automatisch 5.000 € Liquidität, weil Abschreibungen nicht zahlungswirksam sein können.",
   "formula": null,
-  "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
+  "sources": [
+    {
+      "label": "§ 23 EStG",
+      "url": "https://www.gesetze-im-internet.de/estg/__23.html"
+    }
   ],
-  "assistantAnswer": "Umgangssprachliche Bezeichnung für steuerlich relevante Haltefristen. Spekulationsfrist beeinflusst die steuerliche Modellrechnung. Maßgeblich sind Rechtsgrundlage, Bemessungsgrundlage und der konkrete Sachverhalt. Beispiel: Eine steuerliche Größe von 5.000 € entspricht nicht automatisch 5.000 € Liquidität, weil Abschreibungen nicht zahlungswirksam sein können."
+  "assistantAnswer": "Umgangssprachliche Bezeichnung für steuerlich relevante Haltefristen. Die sogenannte Spekulationsfrist bezeichnet im Privatvermögen die Zehnjahresfrist des § 23 EStG für private Grundstücksveräußerungsgeschäfte; für bestimmte Eigennutzungsfälle gelten Ausnahmen. Bei Betriebsvermögen oder gewerblichem Grundstückshandel greifen andere Regeln.",
+  "explanation": "Die sogenannte Spekulationsfrist bezeichnet im Privatvermögen die Zehnjahresfrist des § 23 EStG für private Grundstücksveräußerungsgeschäfte; für bestimmte Eigennutzungsfälle gelten Ausnahmen. Bei Betriebsvermögen oder gewerblichem Grundstückshandel greifen andere Regeln.",
+  "practiceExample": "Kauf 2026 und Verkauf 2032 liegt grundsätzlich innerhalb von zehn Jahren. Ob der Gewinn steuerpflichtig ist, hängt zusätzlich von Nutzung und steuerlicher Einordnung ab."
 }

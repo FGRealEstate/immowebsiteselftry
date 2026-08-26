@@ -21,7 +21,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Beschlüsse, Protokolle, Rücklagenstand und bekannte Schäden sollten vor Kauf geprüft werden.",
-  "mechanics": "Vor dem Kauf müssen rechtliche, technische, wirtschaftliche und finanzielle Prüfung zusammengeführt werden. Einzelkennzahlen ersetzen weder Objektunterlagen noch eine belastbare Bewertung.",
   "formulae": [
     "Individuelle Sonderumlage = beschlossene Gesamtsumme × Verteilungsschlüssel"
   ],
@@ -36,25 +35,12 @@
     ],
     "interpretation": "Vor Kauf Protokolle, Beschlusssammlung, Wirtschaftsplan und Rücklage prüfen. Bereits erkennbare Maßnahmen gehören in den Eigenkapitalbedarf."
   },
-  "drivers": [
-    "Eigentums- und Lastenverhältnisse",
-    "Flächen, Bauzustand und Energiezustand",
-    "Miet- und WEG-Unterlagen",
-    "Kaufpreis und Vergleichsdaten",
-    "Finanzierbarkeit und Liquiditätsbedarf"
-  ],
-  "risks": [
-    "Fehlende Unterlagen sind ein eigenes Risiko.",
-    "Technische Maßnahmen können den vermeintlichen Preisvorteil aufzehren.",
-    "Ein günstiger Quadratmeterpreis ist ohne Mikrolage und Zustand nicht aussagekräftig."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Sonderumlagen können kurzfristig erhebliches Eigenkapital binden. Vor Kauf Protokolle, Beschlusssammlung, Wirtschaftsplan und Rücklage prüfen. Bereits erkennbare Maßnahmen gehören in den Eigenkapitalbedarf."
+  "assistantAnswer": "Sonderumlagen können kurzfristig erhebliches Eigenkapital binden. Eine Sonderumlage ist ein zusätzlicher Finanzierungsbeitrag der Wohnungseigentümer, wenn laufende Mittel und Rücklage für Maßnahmen oder Verpflichtungen nicht ausreichen.",
+  "focusPoints": [
+    "Eine Sonderumlage ist ein zusätzlicher Finanzierungsbeitrag der Wohnungseigentümer, wenn laufende Mittel und Rücklage für Maßnahmen oder Verpflichtungen nicht ausreichen.",
+    "Beschlossene, angekündigte oder in Protokollen absehbare Sonderumlagen können den effektiven Kaufpreis erheblich erhöhen.",
+    "Auch eine formal noch nicht beschlossene Maßnahme kann wirtschaftlich relevant sein, wenn Dach, Fassade oder Heizung objektiv sanierungsbedürftig sind."
+  ],
+  "decisionUse": "Protokolle, Beschlusssammlung, Wirtschaftsplan, Rücklagenstand und bekannte Angebote gemeinsam lesen; nicht nur nach „beschlossener Sonderumlage“ fragen."
 }

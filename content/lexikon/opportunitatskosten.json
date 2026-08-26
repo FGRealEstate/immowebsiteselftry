@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Entgangener Nutzen der besten nicht gewählten Alternative. Opportunitätskosten ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Entgangener Nutzen der besten nicht gewählten Alternative. Opportunitätskosten ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Entgangener Nutzen der besten nicht gewählten Alternative. Opportunitätskosten sind der entgangene Nutzen der besten nicht gewählten Alternative. Beim Eigenkapitaleinsatz zeigen sie, was gebundenes Kapital andernorts hätte erwirtschaften oder an Sicherheit bieten können.",
+  "explanation": "Opportunitätskosten sind der entgangene Nutzen der besten nicht gewählten Alternative. Beim Eigenkapitaleinsatz zeigen sie, was gebundenes Kapital andernorts hätte erwirtschaften oder an Sicherheit bieten können.",
+  "practiceExample": "40.000 € zusätzliches Eigenkapital sparen 1.200 € Zinsen p.a., könnten alternativ aber 2.000 € erwarteten Ertrag erzeugen; Risiko und Liquidität entscheiden über den Vergleich."
 }

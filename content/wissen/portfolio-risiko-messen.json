@@ -21,7 +21,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Standort, Mietertyp, Finanzierung, Zinsbindung und technische Themen sollten diversifiziert und auf Portfolioebene gestresst werden.",
-  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
   "formulae": [
     "Portfolio-LTV = Gesamtschulden / Gesamtwert",
     "Portfolio-DSCR = operativer Nettoertrag / Kapitaldienst"
@@ -40,25 +39,12 @@
     ],
     "interpretation": "Zusätzlich sollten Standort-, Mieter-, Zinsbindungs- und Fälligkeitskonzentrationen gemessen werden."
   },
-  "drivers": [
-    "Jahresnettokaltmiete und Mietvertragsqualität",
-    "Kaufpreis plus Erwerbsnebenkosten",
-    "Nicht umlagefähige Kosten, Verwaltung und Capex",
-    "Finanzierungsstruktur und Tilgung",
-    "Exit-Annahmen und Haltedauer"
-  ],
-  "risks": [
-    "Bruttorenditen blenden Kosten und Finanzierung aus.",
-    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
-    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Mehrere Objekte reduzieren nicht automatisch Risiko. Zusätzlich sollten Standort-, Mieter-, Zinsbindungs- und Fälligkeitskonzentrationen gemessen werden."
+  "assistantAnswer": "Mehrere Objekte reduzieren nicht automatisch Risiko. Portfolio-Risiko entsteht aus Konzentrationen nach Standort, Objektart, Mieter, Finanzierung, Zinsbindung und technischem Zustand.",
+  "focusPoints": [
+    "Portfolio-Risiko entsteht aus Konzentrationen nach Standort, Objektart, Mieter, Finanzierung, Zinsbindung und technischem Zustand.",
+    "Mehr Objekte reduzieren Risiko nur, wenn die Zahlungsströme und Risikotreiber tatsächlich diversifiziert sind.",
+    "Kennzahlen wie LTV, DSCR, Leerstandsquote und CapEx-Bedarf sollten nicht nur je Objekt, sondern gewichtet auf Portfolioebene betrachtet werden."
+  ],
+  "decisionUse": "Konzentrationsgrenzen definieren und Stressszenarien auf Portfolioebene rechnen, etwa gleichzeitiger Zinsanstieg und Leerstand."
 }

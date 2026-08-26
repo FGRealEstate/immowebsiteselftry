@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Finanzierung",
-  "explanation": "Rückzahlung des Darlehenskapitals. Tilgung sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden.",
-  "practiceExample": "Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Rückzahlung des Darlehenskapitals. Tilgung sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden. Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen."
+  "assistantAnswer": "Rückzahlung des Darlehenskapitals. Tilgung ist die Rückzahlung des Darlehenskapitals. Im Annuitätendarlehen steigt der Tilgungsanteil innerhalb der konstanten Rate, weil der Zinsanteil mit sinkender Restschuld abnimmt.",
+  "explanation": "Tilgung ist die Rückzahlung des Darlehenskapitals. Im Annuitätendarlehen steigt der Tilgungsanteil innerhalb der konstanten Rate, weil der Zinsanteil mit sinkender Restschuld abnimmt.",
+  "practiceExample": "Bei 300.000 € Darlehen und 2 % Anfangstilgung werden im ersten Jahr näherungsweise 6.000 € Kapital zurückgeführt; die exakte Summe steigt durch den fallenden Zinsanteil leicht."
 }

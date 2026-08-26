@@ -24,7 +24,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Bei Neubau und Sanierung sollte der Auszahlungsplan zur Finanzierung passen.",
-  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
   "formulae": [
     "Bereitstellungszins = noch nicht abgerufener Darlehensteil × Bereitstellungszinssatz × Zeitanteil"
   ],
@@ -40,25 +39,12 @@
     ],
     "interpretation": "Bei Neubau und Sanierung ist nicht nur der Sollzins wichtig. Die bereitstellungszinsfreie Zeit muss zum Zahlungsplan passen."
   },
-  "drivers": [
-    "Darlehenshöhe und Beleihungsauslauf",
-    "Sollzins, Tilgung und Zinsbindung",
-    "Restschuld zum Ende der Zinsbindung",
-    "Liquiditätsreserve und Sondertilgungsrechte",
-    "Objektqualität und bankseitiger Beleihungswert"
-  ],
-  "risks": [
-    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
-    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
-    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Nicht abgerufene Darlehensteile können nach einer bereitstellungsfreien Zeit Kosten verursachen. Bei Neubau und Sanierung ist nicht nur der Sollzins wichtig. Die bereitstellungszinsfreie Zeit muss zum Zahlungsplan passen."
+  "assistantAnswer": "Nicht abgerufene Darlehensteile können nach einer bereitstellungsfreien Zeit Kosten verursachen. Bereitstellungszinsen entstehen, wenn zugesagte Darlehensteile nach Ablauf einer bereitstellungszinsfreien Zeit noch nicht abgerufen wurden. Das ist besonders bei Neubau, Bauträgerzahlungen und Sanierungen relevant.",
+  "focusPoints": [
+    "Bereitstellungszinsen entstehen, wenn zugesagte Darlehensteile nach Ablauf einer bereitstellungszinsfreien Zeit noch nicht abgerufen wurden. Das ist besonders bei Neubau, Bauträgerzahlungen und Sanierungen relevant.",
+    "Sie werden auf den noch nicht ausgezahlten Darlehensteil berechnet und erhöhen die Finanzierungskosten, obwohl das Geld noch nicht genutzt wurde.",
+    "Die Zahlungspläne des Bauträgers beziehungsweise der Baufortschritt sollten deshalb mit der bereitstellungszinsfreien Zeit abgestimmt werden."
+  ],
+  "decisionUse": "Nicht nur Sollzins und Tilgung vergleichen, sondern auch bereitstellungszinsfreie Zeit, Bereitstellungszinssatz und erwarteten Abrufplan."
 }

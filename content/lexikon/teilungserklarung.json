@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Dokument zur Aufteilung eines Grundstücks in Wohnungs- oder Teileigentum. Teilungserklärung ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Dokument zur Aufteilung eines Grundstücks in Wohnungs- oder Teileigentum. Teilungserklärung ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Dokument zur Aufteilung eines Grundstücks in Wohnungs- oder Teileigentum. Die Teilungserklärung legt bei Wohnungseigentum die Aufteilung in Sonder- und Gemeinschaftseigentum sowie Miteigentumsanteile und häufig Nutzungs-/Kostenregelungen fest. Sie ist eine zentrale Rechtsgrundlage der ETW-Prüfung.",
+  "explanation": "Die Teilungserklärung legt bei Wohnungseigentum die Aufteilung in Sonder- und Gemeinschaftseigentum sowie Miteigentumsanteile und häufig Nutzungs-/Kostenregelungen fest. Sie ist eine zentrale Rechtsgrundlage der ETW-Prüfung.",
+  "practiceExample": "Ein als „Terrasse“ genutzter Bereich kann Gemeinschaftseigentum mit Sondernutzungsrecht statt Sondereigentum sein. Das beeinflusst Umbau- und Nutzungsrechte."
 }

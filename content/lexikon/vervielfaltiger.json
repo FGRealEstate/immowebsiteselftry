@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Synonym für Kaufpreisfaktor. Vervielfältiger ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Synonym für Kaufpreisfaktor. Vervielfältiger ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Synonym für Kaufpreisfaktor. Vervielfältiger wird im Immobilienmarkt häufig synonym für Kaufpreisfaktor verwendet; in Bewertungsverfahren kann „Vervielfältiger“ auch einen mathematischen Kapitalisierungsfaktor bezeichnen. Der Kontext muss deshalb klar sein.",
+  "explanation": "Vervielfältiger wird im Immobilienmarkt häufig synonym für Kaufpreisfaktor verwendet; in Bewertungsverfahren kann „Vervielfältiger“ auch einen mathematischen Kapitalisierungsfaktor bezeichnen. Der Kontext muss deshalb klar sein.",
+  "practiceExample": "Marktgespräch: Faktor 20 bedeutet Kaufpreis = 20 Jahresnettokaltmieten. Im Ertragswertverfahren kann dagegen ein Barwertfaktor gemeint sein."
 }

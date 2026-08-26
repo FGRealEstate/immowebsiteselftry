@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Kosten für Verwaltung, Betrieb, Instandhaltung und Mietausfall. Bewirtschaftungskosten ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Kosten für Verwaltung, Betrieb, Instandhaltung und Mietausfall. Bewirtschaftungskosten ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Kosten für Verwaltung, Betrieb, Instandhaltung und Mietausfall. Bewirtschaftungskosten sind laufende Kosten der Nutzung und Verwaltung eines Grundstücks, etwa Verwaltung, Instandhaltung und Mietausfallwagnis nach der jeweiligen Bewertungsdefinition. Sie reduzieren den nachhaltig verfügbaren Ertrag.",
+  "explanation": "Bewirtschaftungskosten sind laufende Kosten der Nutzung und Verwaltung eines Grundstücks, etwa Verwaltung, Instandhaltung und Mietausfallwagnis nach der jeweiligen Bewertungsdefinition. Sie reduzieren den nachhaltig verfügbaren Ertrag.",
+  "practiceExample": "50.000 € Rohertrag minus 12.000 € Bewirtschaftungskosten ergeben 38.000 € Reinertrag vor weiteren bewertungsspezifischen Schritten."
 }

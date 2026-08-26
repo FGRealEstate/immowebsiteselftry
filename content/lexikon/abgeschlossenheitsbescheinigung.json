@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Bestätigung, dass Einheiten baulich abgeschlossen sind. Abgeschlossenheitsbescheinigung ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Bestätigung, dass Einheiten baulich abgeschlossen sind. Abgeschlossenheitsbescheinigung ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Bestätigung, dass Einheiten baulich abgeschlossen sind. Die Abgeschlossenheitsbescheinigung bestätigt gegenüber dem Grundbuchamt, dass Einheiten baulich hinreichend abgeschlossen sind und ist regelmäßig Voraussetzung für die Begründung von Wohnungs-/Teileigentum.",
+  "explanation": "Die Abgeschlossenheitsbescheinigung bestätigt gegenüber dem Grundbuchamt, dass Einheiten baulich hinreichend abgeschlossen sind und ist regelmäßig Voraussetzung für die Begründung von Wohnungs-/Teileigentum.",
+  "practiceExample": "Soll ein Mehrfamilienhaus in einzelne Eigentumswohnungen aufgeteilt werden, werden Aufteilungspläne und Abgeschlossenheitsbescheinigung für die grundbuchliche Teilung benötigt."
 }

@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Übersicht ortsüblicher Vergleichsmieten. Mietspiegel ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Übersicht ortsüblicher Vergleichsmieten. Mietspiegel ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Übersicht ortsüblicher Vergleichsmieten. Mietspiegel geben die ortsübliche Vergleichsmiete nach gesetzlichen Kriterien wieder. Sie dienen insbesondere als Begründungsmittel für Mieterhöhungen und sind von Portal-Angebotsmieten zu unterscheiden.",
+  "explanation": "Mietspiegel geben die ortsübliche Vergleichsmiete nach gesetzlichen Kriterien wieder. Sie dienen insbesondere als Begründungsmittel für Mieterhöhungen und sind von Portal-Angebotsmieten zu unterscheiden.",
+  "practiceExample": "Eine Angebotsmiete von 18 €/m² beweist nicht, dass eine Bestandsmiete von 12 €/m² unmittelbar auf 18 €/m² erhöht werden darf."
 }

@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Prüfung von Einkommen, Vermögen, Verpflichtungen und Zahlungsverhalten. Kreditwürdigkeitsprüfung ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Prüfung von Einkommen, Vermögen, Verpflichtungen und Zahlungsverhalten. Kreditwürdigkeitsprüfung ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Prüfung von Einkommen, Vermögen, Verpflichtungen und Zahlungsverhalten. Die Kreditwürdigkeitsprüfung beurteilt, ob der Kreditnehmer die Verpflichtungen aus dem Darlehen voraussichtlich erfüllen kann. Bei Immobiliardarlehen werden persönliche Tragfähigkeit und Objekt-/Sicherheitenbewertung zusammengeführt.",
+  "explanation": "Die Kreditwürdigkeitsprüfung beurteilt, ob der Kreditnehmer die Verpflichtungen aus dem Darlehen voraussichtlich erfüllen kann. Bei Immobiliardarlehen werden persönliche Tragfähigkeit und Objekt-/Sicherheitenbewertung zusammengeführt.",
+  "practiceExample": "Ein rechnerisch tragbares Objekt kann dennoch abgelehnt werden, wenn Einkommen befristet, Bonität schwach oder der bankinterne Beleihungswert zu niedrig ist."
 }

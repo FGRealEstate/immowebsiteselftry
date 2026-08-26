@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Zeitlich befristetes Recht, auf fremdem Grund ein Bauwerk zu haben. Erbbaurecht ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Zeitlich befristetes Recht, auf fremdem Grund ein Bauwerk zu haben. Erbbaurecht ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Zeitlich befristetes Recht, auf fremdem Grund ein Bauwerk zu haben. Beim Erbbaurecht werden Gebäude und Grundstückseigentum rechtlich getrennt: Der Erbbauberechtigte nutzt das Grundstück für eine bestimmte Laufzeit und zahlt typischerweise Erbbauzins. Restlaufzeit, Anpassungsklauseln und Heimfallregelungen beeinflussen Wert und Finanzierung.",
+  "explanation": "Beim Erbbaurecht werden Gebäude und Grundstückseigentum rechtlich getrennt: Der Erbbauberechtigte nutzt das Grundstück für eine bestimmte Laufzeit und zahlt typischerweise Erbbauzins. Restlaufzeit, Anpassungsklauseln und Heimfallregelungen beeinflussen Wert und Finanzierung.",
+  "practiceExample": "Eine Wohnung auf Erbbaurechtsgrund kann trotz niedrigeren Kaufpreises durch laufenden Erbbauzins und begrenzte Restlaufzeit wirtschaftlich anders zu bewerten sein als Volleigentum."
 }

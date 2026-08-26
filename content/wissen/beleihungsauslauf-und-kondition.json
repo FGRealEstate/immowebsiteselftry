@@ -20,7 +20,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Er ist nicht identisch mit Kaufpreisfinanzierung. Höhere Ausläufe können die Kondition verteuern oder zusätzliche Sicherheiten erfordern.",
-  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
   "formulae": [
     "Beleihungsauslauf = Darlehen / bankseitiger Beleihungswert"
   ],
@@ -37,25 +36,12 @@
     ],
     "interpretation": "Banken staffeln Konditionen häufig nach Risikoklassen bzw. Beleihungsauslauf. Deshalb kann zusätzliches Eigenkapital nicht nur die Darlehenssumme, sondern auch den Zinssatz senken."
   },
-  "drivers": [
-    "Darlehenshöhe und Beleihungsauslauf",
-    "Sollzins, Tilgung und Zinsbindung",
-    "Restschuld zum Ende der Zinsbindung",
-    "Liquiditätsreserve und Sondertilgungsrechte",
-    "Objektqualität und bankseitiger Beleihungswert"
-  ],
-  "risks": [
-    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
-    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
-    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Der Beleihungsauslauf setzt das Darlehen ins Verhältnis zum bankseitigen Beleihungswert. Banken staffeln Konditionen häufig nach Risikoklassen bzw. Beleihungsauslauf. Deshalb kann zusätzliches Eigenkapital nicht nur die Darlehenssumme, sondern auch den Zinssatz senken."
+  "assistantAnswer": "Der Beleihungsauslauf setzt das Darlehen ins Verhältnis zum bankseitigen Beleihungswert. Der Beleihungsauslauf setzt die Darlehenssumme ins Verhältnis zum bankinternen Beleihungswert, nicht zwingend zum Kaufpreis. Deshalb kann er höher sein als die einfache Kaufpreisfinanzierungsquote.",
+  "focusPoints": [
+    "Der Beleihungsauslauf setzt die Darlehenssumme ins Verhältnis zum bankinternen Beleihungswert, nicht zwingend zum Kaufpreis. Deshalb kann er höher sein als die einfache Kaufpreisfinanzierungsquote.",
+    "Viele Banken arbeiten mit Konditionsstufen. Zusätzliche Eigenmittel können besonders dann wirksam sein, wenn dadurch eine günstigere Beleihungsauslauf-Schwelle erreicht wird.",
+    "Der Effekt von Eigenkapital ist deshalb nicht linear: 20.000 € zusätzliches Eigenkapital können wenig bringen oder eine ganze Konditionsstufe auslösen."
+  ],
+  "decisionUse": "Vor Einsatz zusätzlichen Eigenkapitals lohnt die Frage an die Bank, ab welcher Darlehenshöhe sich die Kondition tatsächlich verändert."
 }

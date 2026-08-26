@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Laufende Bewirtschaftungskosten. Operating Expenses ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Laufende Bewirtschaftungskosten. Operating Expenses ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Laufende Bewirtschaftungskosten. Operating Expenses (OpEx) sind laufende betriebliche Objektkosten. Welche Positionen enthalten sind, muss im jeweiligen Modell definiert werden; CapEx und Finanzierung werden regelmäßig getrennt betrachtet.",
+  "explanation": "Operating Expenses (OpEx) sind laufende betriebliche Objektkosten. Welche Positionen enthalten sind, muss im jeweiligen Modell definiert werden; CapEx und Finanzierung werden regelmäßig getrennt betrachtet.",
+  "practiceExample": "60.000 € Jahresmiete und 15.000 € operative Objektkosten ergeben vor Finanzierung 45.000 € operativen Überschuss, sofern die Definition so festgelegt ist."
 }

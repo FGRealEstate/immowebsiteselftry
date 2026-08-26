@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Wert des unbebauten Grundstücks. Bodenwert ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Wert des unbebauten Grundstücks. Bodenwert ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Wert des unbebauten Grundstücks. Bodenwert ist der Wert des Grundstücksbodens ohne Gebäude. Er kann aus geeigneten Vergleichsdaten oder Bodenrichtwerten unter objektspezifischen Anpassungen abgeleitet werden.",
+  "explanation": "Bodenwert ist der Wert des Grundstücksbodens ohne Gebäude. Er kann aus geeigneten Vergleichsdaten oder Bodenrichtwerten unter objektspezifischen Anpassungen abgeleitet werden.",
+  "practiceExample": "600 m² Grundstück bei 900 €/m² Bodenrichtwert ergeben 540.000 € Ausgangswert, bevor Abweichungen bei Nutzung, Zuschnitt oder Erschließung berücksichtigt werden."
 }

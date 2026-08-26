@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Zunahme des Marktwerts; keine garantierte Größe. Wertsteigerung ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Zunahme des Marktwerts; keine garantierte Größe. Wertsteigerung ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Zunahme des Marktwerts; keine garantierte Größe. Wertsteigerung ist die Zunahme des Marktwerts über die Zeit. Sie ist kein garantierter Cashflow und sollte in Investmentrechnungen als Szenario statt als sichere Renditekomponente behandelt werden.",
+  "explanation": "Wertsteigerung ist die Zunahme des Marktwerts über die Zeit. Sie ist kein garantierter Cashflow und sollte in Investmentrechnungen als Szenario statt als sichere Renditekomponente behandelt werden.",
+  "practiceExample": "300.000 € Kaufpreis bei angenommenen 2 % Wertzuwachs p.a. ergeben nach zehn Jahren rechnerisch rund 365.700 €; der tatsächliche Marktwert kann deutlich davon abweichen."
 }

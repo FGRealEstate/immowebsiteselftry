@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Finanzierung",
-  "explanation": "Zusätzliche Tilgung außerhalb der regulären Rate. Sondertilgung sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden.",
-  "practiceExample": "Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Zusätzliche Tilgung außerhalb der regulären Rate. Sondertilgung sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden. Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen."
+  "assistantAnswer": "Zusätzliche Tilgung außerhalb der regulären Rate. Sondertilgung ist eine zusätzliche außerplanmäßige Tilgung außerhalb der regulären Rate, soweit der Darlehensvertrag dies erlaubt. Sie reduziert Restschuld und zukünftige Zinsbelastung, bindet aber Liquidität.",
+  "explanation": "Sondertilgung ist eine zusätzliche außerplanmäßige Tilgung außerhalb der regulären Rate, soweit der Darlehensvertrag dies erlaubt. Sie reduziert Restschuld und zukünftige Zinsbelastung, bindet aber Liquidität.",
+  "practiceExample": "10.000 € Sondertilgung bei 4 % Darlehenszins spart im ersten Folgejahr grob bis zu 400 € Zins vor dem weiteren Tilgungsverlauf."
 }

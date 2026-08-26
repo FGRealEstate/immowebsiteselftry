@@ -22,7 +22,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Typisch sind Verwalterkosten, Instandhaltungsanteile und bestimmte Gemeinschaftskosten. Für eine belastbare Kalkulation sollten Wirtschaftsplan und letzte Jahresabrechnung geprüft werden.",
-  "mechanics": "Vermietungsmodelle müssen rechtlich zulässige Mietentwicklung und realistische Kosten abbilden. Bestandsmiete, Neuvertragsmiete, Betriebskosten, Leerstand und Instandhaltung dürfen nicht vermischt werden.",
   "formulae": [
     "Eigentümer-Cashflow = Miete − nicht umlagefähige Hausgeldanteile − Finanzierung − weitere Eigentümerkosten"
   ],
@@ -38,30 +37,17 @@
     ],
     "interpretation": "Verwaltung, Rücklagenzuführung und einzelne Kostenarten sind nicht automatisch auf Mieter umlagefähig. Abrechnung und Wirtschaftsplan prüfen."
   },
-  "drivers": [
-    "Mietvertrag und Ausgangsmiete",
-    "örtliche Vergleichsmiete und Regulierungsrahmen",
-    "umlagefähige und nicht umlagefähige Kosten",
-    "Leerstands- und Ausfallrisiko",
-    "WEG-Beschlüsse und Instandhaltungsbedarf"
-  ],
-  "risks": [
-    "Nicht jede rechnerisch mögliche Mieterhöhung ist rechtlich zulässig.",
-    "Mietausfall und Renovierungszeiten zwischen Mietverhältnissen können den Jahresertrag mindern.",
-    "Hausgeldpositionen sind für Eigentümer und Mieter unterschiedlich zu behandeln."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [
     {
       "label": "Betriebskostenverordnung",
       "url": "https://www.gesetze-im-internet.de/betrkv/"
     }
   ],
-  "assistantAnswer": "Nicht umlagefähige Bestandteile des Hausgelds trägt der Eigentümer selbst. Verwaltung, Rücklagenzuführung und einzelne Kostenarten sind nicht automatisch auf Mieter umlagefähig. Abrechnung und Wirtschaftsplan prüfen."
+  "assistantAnswer": "Nicht umlagefähige Bestandteile des Hausgelds trägt der Eigentümer selbst. Hausgeld umfasst umlagefähige Betriebskosten, nicht umlagefähige Verwaltung-/sonstige Kosten und Zuführungen zur Erhaltungsrücklage. Für die Eigentümerrechnung dürfen diese Bestandteile nicht vermischt werden.",
+  "focusPoints": [
+    "Hausgeld umfasst umlagefähige Betriebskosten, nicht umlagefähige Verwaltung-/sonstige Kosten und Zuführungen zur Erhaltungsrücklage. Für die Eigentümerrechnung dürfen diese Bestandteile nicht vermischt werden.",
+    "Umlagefähig bedeutet nur, dass eine Position bei wirksamer Vereinbarung grundsätzlich auf den Mieter umgelegt werden kann; Ausfall- und Leerstandsrisiko verbleiben beim Eigentümer.",
+    "Rücklagenzuführung ist Liquiditätsabfluss des Eigentümers und beeinflusst den laufenden Cashflow, auch wenn sie bilanziell/steuerlich anders behandelt wird."
+  ],
+  "decisionUse": "Wirtschaftsplan und letzte Jahresabrechnung in einzelne Kostenarten zerlegen, statt pauschal das gesamte Hausgeld von der Miete abzuziehen."
 }

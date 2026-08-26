@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Möglicher Ausgleich der Bank bei vorzeitiger Darlehensablösung. Vorfälligkeitsentschädigung ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Möglicher Ausgleich der Bank bei vorzeitiger Darlehensablösung. Vorfälligkeitsentschädigung ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Möglicher Ausgleich der Bank bei vorzeitiger Darlehensablösung. Eine Vorfälligkeitsentschädigung kann bei vorzeitiger Rückzahlung eines fest verzinsten Darlehens entstehen, wenn der Bank ein rechtlich ersatzfähiger Zinsschaden entsteht. Ob und in welcher Höhe sie anfällt, hängt vom Vertrag und gesetzlichen Kündigungs-/Berechnungsregeln ab.",
+  "explanation": "Eine Vorfälligkeitsentschädigung kann bei vorzeitiger Rückzahlung eines fest verzinsten Darlehens entstehen, wenn der Bank ein rechtlich ersatzfähiger Zinsschaden entsteht. Ob und in welcher Höhe sie anfällt, hängt vom Vertrag und gesetzlichen Kündigungs-/Berechnungsregeln ab.",
+  "practiceExample": "Beim Verkauf während laufender Zinsbindung darf der erwartete Verkaufserlös nicht ohne Prüfung der Darlehensablösung als frei verfügbares Eigenkapital eingeplant werden."
 }

@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Kapitalanlage",
-  "explanation": "Renditekennzahl nach Abzug definierter laufender Eigentümerkosten und meist bezogen auf die Gesamtinvestition. Die genaue Definition muss offengelegt werden.",
-  "practiceExample": "13.800 € Nettoertrag / 330.000 € Gesamtinvestition = 4,18 %.",
-  "formula": "Nettorendite = Nettoertrag / Gesamtinvestition",
+  "explanation": "Die Nettomietrendite berücksichtigt im Gegensatz zur Bruttomietrendite laufende Eigentümerkosten und sollte auf eine klar definierte Investitionsbasis bezogen werden. Unterschiedliche Marktquellen verwenden teils abweichende Definitionen.",
+  "practiceExample": "16.800 € JNKM − 3.000 € nicht umlagefähige Kosten = 13.800 € Nettoertrag. Bei 330.000 € Gesamtinvestition ergibt das 4,18 % vereinfachte Nettomietrendite.",
+  "formula": "Nettomietrendite = Nettoertrag / Gesamtinvestition",
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Renditekennzahl nach Abzug definierter laufender Eigentümerkosten und meist bezogen auf die Gesamtinvestition. Die genaue Definition muss offengelegt werden. 13.800 € Nettoertrag / 330.000 € Gesamtinvestition = 4,18 %."
+  "assistantAnswer": "Jahresmiete abzüglich definierter Eigentümerkosten im Verhältnis zum Kaufpreis. Die Nettomietrendite berücksichtigt im Gegensatz zur Bruttomietrendite laufende Eigentümerkosten und sollte auf eine klar definierte Investitionsbasis bezogen werden. Unterschiedliche Marktquellen verwenden teils abweichende Definitionen."
 }

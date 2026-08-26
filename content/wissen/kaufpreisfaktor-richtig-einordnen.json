@@ -21,7 +21,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Er ist der Kehrwert der Bruttomietrendite und ignoriert Kosten, Finanzierung, Steuern und Investitionsbedarf. Er eignet sich nur als schneller Filter.",
-  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
   "formulae": [
     "Faktor = Kaufpreis / Jahresnettokaltmiete",
     "Bruttorendite = 1 / Faktor"
@@ -38,25 +37,12 @@
     ],
     "interpretation": "Faktorvergleiche funktionieren nur bei vergleichbarer Mietqualität, Lage, Zustand und Capex."
   },
-  "drivers": [
-    "Jahresnettokaltmiete und Mietvertragsqualität",
-    "Kaufpreis plus Erwerbsnebenkosten",
-    "Nicht umlagefähige Kosten, Verwaltung und Capex",
-    "Finanzierungsstruktur und Tilgung",
-    "Exit-Annahmen und Haltedauer"
-  ],
-  "risks": [
-    "Bruttorenditen blenden Kosten und Finanzierung aus.",
-    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
-    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Der Faktor ist Kaufpreis geteilt durch Jahresnettokaltmiete. Faktorvergleiche funktionieren nur bei vergleichbarer Mietqualität, Lage, Zustand und Capex."
+  "assistantAnswer": "Der Faktor ist Kaufpreis geteilt durch Jahresnettokaltmiete. Der Kaufpreisfaktor ist Kaufpreis geteilt durch Jahresnettokaltmiete und damit der Kehrwert der Bruttomietrendite, sofern dieselben Bezugsgrößen verwendet werden.",
+  "focusPoints": [
+    "Der Kaufpreisfaktor ist Kaufpreis geteilt durch Jahresnettokaltmiete und damit der Kehrwert der Bruttomietrendite, sofern dieselben Bezugsgrößen verwendet werden.",
+    "Ein niedriger Faktor kann auf hohe Rendite, aber ebenso auf schwache Lage, kurze Restnutzungsdauer, Instandhaltungsstau oder nicht nachhaltige Mieten hinweisen.",
+    "Faktoren verschiedener Städte oder Objektarten sind ohne Risikokontext nicht direkt vergleichbar."
+  ],
+  "decisionUse": "Faktor als Screeninggröße nutzen, danach Miete, CapEx, Mikrolage und Finanzierung separat prüfen."
 }

@@ -20,7 +20,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Lage, Zustand, Größe, Rechte und Verkaufszeitpunkt müssen vergleichbar gemacht werden.",
-  "mechanics": "Vor dem Kauf müssen rechtliche, technische, wirtschaftliche und finanzielle Prüfung zusammengeführt werden. Einzelkennzahlen ersetzen weder Objektunterlagen noch eine belastbare Bewertung.",
   "formulae": [
     "Wert aus hinreichend vergleichbaren Kaufpreisen, angepasst an wertbeeinflussende Merkmale"
   ],
@@ -36,30 +35,17 @@
     ],
     "interpretation": "Vergleichbarkeit ist wichtiger als die Zahl der Vergleichsfälle. Angebotspreise sind kein Ersatz für geeignete Kaufpreise."
   },
-  "drivers": [
-    "Eigentums- und Lastenverhältnisse",
-    "Flächen, Bauzustand und Energiezustand",
-    "Miet- und WEG-Unterlagen",
-    "Kaufpreis und Vergleichsdaten",
-    "Finanzierbarkeit und Liquiditätsbedarf"
-  ],
-  "risks": [
-    "Fehlende Unterlagen sind ein eigenes Risiko.",
-    "Technische Maßnahmen können den vermeintlichen Preisvorteil aufzehren.",
-    "Ein günstiger Quadratmeterpreis ist ohne Mikrolage und Zustand nicht aussagekräftig."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [
     {
       "label": "Immobilienwertermittlungsverordnung (ImmoWertV)",
       "url": "https://www.gesetze-im-internet.de/immowertv_2022/"
     }
   ],
-  "assistantAnswer": "Vergleichspreise ähnlicher Objekte bilden die Grundlage. Vergleichbarkeit ist wichtiger als die Zahl der Vergleichsfälle. Angebotspreise sind kein Ersatz für geeignete Kaufpreise."
+  "assistantAnswer": "Vergleichspreise ähnlicher Objekte bilden die Grundlage. Das Vergleichswertverfahren leitet den Wert aus Kaufpreisen hinreichend vergleichbarer Grundstücke beziehungsweise Wohnungen ab.",
+  "focusPoints": [
+    "Das Vergleichswertverfahren leitet den Wert aus Kaufpreisen hinreichend vergleichbarer Grundstücke beziehungsweise Wohnungen ab.",
+    "Vergleichbarkeit betrifft Zeitpunkt, Lage, Größe, Zustand, Ausstattung, Rechte/Belastungen und weitere Merkmale. Portal-Angebotspreise sind keine gleichwertigen Kaufpreisdaten.",
+    "Bei ETW und standardisierten Eigenheimen ist das Verfahren oft besonders marktnah, sofern genügend belastbare Vergleichsfälle existieren."
+  ],
+  "decisionUse": "Vergleichspreise normalisieren und objektspezifische Abweichungen offen begründen statt einfach Durchschnitt €/m² anzuwenden."
 }

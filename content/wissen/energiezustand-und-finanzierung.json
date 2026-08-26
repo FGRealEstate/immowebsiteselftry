@@ -21,7 +21,6 @@
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
   "definition": "Heizung, Gebäudehülle und Sanierungsfahrplan gehören in die Finanzierungsreserve.",
-  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
   "formulae": [
     "Gesamtbelastung = Kapitaldienst + nicht umlagefähige Objektkosten + erwartete energetische Investitionen"
   ],
@@ -39,25 +38,12 @@
     ],
     "interpretation": "Energieeffizienz ist sowohl Kosten- als auch Finanzierungsfaktor. Förderprogramme und Bankanforderungen ändern sich; sie sind zum Antragszeitpunkt zu prüfen."
   },
-  "drivers": [
-    "Darlehenshöhe und Beleihungsauslauf",
-    "Sollzins, Tilgung und Zinsbindung",
-    "Restschuld zum Ende der Zinsbindung",
-    "Liquiditätsreserve und Sondertilgungsrechte",
-    "Objektqualität und bankseitiger Beleihungswert"
-  ],
-  "risks": [
-    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
-    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
-    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
-  ],
-  "checklist": [
-    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
-    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
-    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
-    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
-    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
-  ],
   "sources": [],
-  "assistantAnswer": "Energieeffizienz beeinflusst Betriebskosten, Investitionsbedarf, Förderfähigkeit und Bankbewertung. Energieeffizienz ist sowohl Kosten- als auch Finanzierungsfaktor. Förderprogramme und Bankanforderungen ändern sich; sie sind zum Antragszeitpunkt zu prüfen."
+  "assistantAnswer": "Energieeffizienz beeinflusst Betriebskosten, Investitionsbedarf, Förderfähigkeit und Bankbewertung. Der energetische Zustand beeinflusst nicht nur Betriebskosten, sondern zunehmend auch bankseitige Objektbewertung, Modernisierungsbedarf und Förderfähigkeit.",
+  "focusPoints": [
+    "Der energetische Zustand beeinflusst nicht nur Betriebskosten, sondern zunehmend auch bankseitige Objektbewertung, Modernisierungsbedarf und Förderfähigkeit.",
+    "Eine niedrige Energieeffizienzklasse ist nicht automatisch ein Finanzierungsausschluss, kann aber zusätzliche Investitionen oder geringere Beleihungswerte auslösen.",
+    "Bei Sanierungsobjekten müssen Kaufdarlehen und Modernisierungsbudget gemeinsam geplant werden; sonst kann die anfänglich günstige Finanzierung nach Kauf an fehlender Liquidität scheitern."
+  ],
+  "decisionUse": "Energieausweis, Heizung, Dach/Fassade/Fenster und geplante gesetzliche/technische Maßnahmen vor Bankanfrage mit einem realistischen Budget hinterlegen."
 }

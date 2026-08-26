@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Immobilienkauf",
-  "explanation": "Abrechnung umlagefähiger Betriebskosten gegenüber Mietern. Nebenkostenabrechnung ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen.",
-  "practiceExample": "Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Abrechnung umlagefähiger Betriebskosten gegenüber Mietern. Nebenkostenabrechnung ist bei der Objektprüfung aus den maßgeblichen Unterlagen bzw. Bewertungsdaten zu verifizieren und kann Kaufpreis, Risiko oder Vertragsgestaltung beeinflussen. Beispiel: Eine scheinbar kleine Abweichung bei Fläche, Lasten oder Zustand kann den wirtschaftlich angemessenen Kaufpreis deutlich verändern."
+  "assistantAnswer": "Abrechnung umlagefähiger Betriebskosten gegenüber Mietern. Die Nebenkostenabrechnung verteilt tatsächlich entstandene umlagefähige Betriebskosten auf den Mieter nach dem vereinbarten Schlüssel und rechnet Vorauszahlungen an. Formelle und materielle Fehler können Nachforderungen gefährden.",
+  "explanation": "Die Nebenkostenabrechnung verteilt tatsächlich entstandene umlagefähige Betriebskosten auf den Mieter nach dem vereinbarten Schlüssel und rechnet Vorauszahlungen an. Formelle und materielle Fehler können Nachforderungen gefährden.",
+  "practiceExample": "1.800 € umlagefähige Jahreskosten minus 1.560 € Vorauszahlungen ergeben 240 € rechnerische Nachzahlung, sofern Abrechnung und Umlageschlüssel wirksam sind."
 }

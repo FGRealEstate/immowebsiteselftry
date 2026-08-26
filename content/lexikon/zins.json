@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Finanzierung",
-  "explanation": "Preis für die zeitweise Überlassung von Kapital. Zins sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden.",
-  "practiceExample": "Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Preis für die zeitweise Überlassung von Kapital. Zins sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden. Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen."
+  "assistantAnswer": "Preis für die zeitweise Überlassung von Kapital. Zins ist der Preis für die zeitweise Überlassung von Kapital. Bei Immobilienfinanzierungen ist zwischen Sollzins, effektivem Jahreszins, Zinsbindung und tatsächlicher Zinsbelastung auf die fallende Restschuld zu unterscheiden.",
+  "explanation": "Zins ist der Preis für die zeitweise Überlassung von Kapital. Bei Immobilienfinanzierungen ist zwischen Sollzins, effektivem Jahreszins, Zinsbindung und tatsächlicher Zinsbelastung auf die fallende Restschuld zu unterscheiden.",
+  "practiceExample": "300.000 € Restschuld zu 4 % verursachen anfänglich rund 12.000 € Zins p.a.; mit jeder Tilgung sinkt die absolute Zinsbelastung."
 }

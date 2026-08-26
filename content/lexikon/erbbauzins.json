@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Finanzierung",
-  "explanation": "Regelmäßiges Entgelt für ein Erbbaurecht. Erbbauzins sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden.",
-  "practiceExample": "Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Regelmäßiges Entgelt für ein Erbbaurecht. Erbbauzins sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden. Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen."
+  "assistantAnswer": "Regelmäßiges Entgelt für ein Erbbaurecht. Erbbauzins ist das regelmäßig zu zahlende Entgelt des Erbbauberechtigten an den Grundstückseigentümer. Höhe und Anpassungsmechanismus ergeben sich aus dem Erbbaurechtsvertrag.",
+  "explanation": "Erbbauzins ist das regelmäßig zu zahlende Entgelt des Erbbauberechtigten an den Grundstückseigentümer. Höhe und Anpassungsmechanismus ergeben sich aus dem Erbbaurechtsvertrag.",
+  "practiceExample": "250 € monatlicher Erbbauzins reduzieren den freien Objektcashflow um 3.000 € pro Jahr und gehören in Rendite- sowie Tragfähigkeitsrechnung."
 }

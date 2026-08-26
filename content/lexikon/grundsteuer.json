@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Steuern",
-  "explanation": "Laufende Steuer auf Grundbesitz. Grundsteuer beeinflusst die steuerliche Modellrechnung. Maßgeblich sind Rechtsgrundlage, Bemessungsgrundlage und der konkrete Sachverhalt.",
-  "practiceExample": "Beispiel: Eine steuerliche Größe von 5.000 € entspricht nicht automatisch 5.000 € Liquidität, weil Abschreibungen nicht zahlungswirksam sein können.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Laufende Steuer auf Grundbesitz. Grundsteuer beeinflusst die steuerliche Modellrechnung. Maßgeblich sind Rechtsgrundlage, Bemessungsgrundlage und der konkrete Sachverhalt. Beispiel: Eine steuerliche Größe von 5.000 € entspricht nicht automatisch 5.000 € Liquidität, weil Abschreibungen nicht zahlungswirksam sein können."
+  "assistantAnswer": "Laufende Steuer auf Grundbesitz. Grundsteuer ist eine laufende Objektsteuer auf Grundbesitz. Bei vermietetem Wohnraum kann sie bei wirksamer Betriebskostenvereinbarung grundsätzlich umlagefähig sein.",
+  "explanation": "Grundsteuer ist eine laufende Objektsteuer auf Grundbesitz. Bei vermietetem Wohnraum kann sie bei wirksamer Betriebskostenvereinbarung grundsätzlich umlagefähig sein.",
+  "practiceExample": "600 € Grundsteuer p.a. entsprechen 50 € monatlich; bei Leerstand trägt der Eigentümer die Belastung selbst."
 }

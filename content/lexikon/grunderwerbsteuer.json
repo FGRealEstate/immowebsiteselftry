@@ -9,14 +9,9 @@
   ],
   "updated": "2026-08-26",
   "category": "Steuern",
-  "explanation": "Landessteuer beim Erwerb inländischer Grundstücke. Grunderwerbsteuer beeinflusst die steuerliche Modellrechnung. Maßgeblich sind Rechtsgrundlage, Bemessungsgrundlage und der konkrete Sachverhalt.",
-  "practiceExample": "Beispiel: Eine steuerliche Größe von 5.000 € entspricht nicht automatisch 5.000 € Liquidität, weil Abschreibungen nicht zahlungswirksam sein können.",
   "formula": null,
   "sources": [],
-  "checklist": [
-    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
-    "Bezugsgröße und Zeitraum klären.",
-    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
-  ],
-  "assistantAnswer": "Landessteuer beim Erwerb inländischer Grundstücke. Grunderwerbsteuer beeinflusst die steuerliche Modellrechnung. Maßgeblich sind Rechtsgrundlage, Bemessungsgrundlage und der konkrete Sachverhalt. Beispiel: Eine steuerliche Größe von 5.000 € entspricht nicht automatisch 5.000 € Liquidität, weil Abschreibungen nicht zahlungswirksam sein können."
+  "assistantAnswer": "Landessteuer beim Erwerb inländischer Grundstücke. Grunderwerbsteuer fällt bei steuerbaren Grundstückserwerben an und wird von den Ländern mit unterschiedlichen Steuersätzen erhoben. Sie ist regelmäßig nicht Teil der Gebäude-AfA, sondern wird anteilig den Anschaffungskosten von Grund/Boden und Gebäude zugerechnet.",
+  "explanation": "Grunderwerbsteuer fällt bei steuerbaren Grundstückserwerben an und wird von den Ländern mit unterschiedlichen Steuersätzen erhoben. Sie ist regelmäßig nicht Teil der Gebäude-AfA, sondern wird anteilig den Anschaffungskosten von Grund/Boden und Gebäude zugerechnet.",
+  "practiceExample": "Bei 400.000 € steuerlicher Bemessungsgrundlage und 6 % Steuersatz wären 24.000 € Grunderwerbsteuer zu zahlen. Der konkrete Steuersatz richtet sich nach dem Bundesland."
 }
