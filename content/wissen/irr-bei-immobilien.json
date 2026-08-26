@@ -17,7 +17,45 @@
     "zinsfuß"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Er ist sinnvoll für Haltedauer- und Exit-Vergleiche, reagiert aber stark auf den angenommenen Verkaufspreis.",
+  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
+  "formulae": [
+    "IRR ist der Zinssatz r, bei dem der Kapitalwert aller Zahlungsströme 0 ist"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "EK zu Beginn −100.000 €",
+      "jährliche Nettozuflüsse 4.000 € für 10 Jahre",
+      "Nettoverkaufserlös im Jahr 10 zusätzlich 150.000 €"
+    ],
+    "steps": [
+      "Die IRR muss numerisch gelöst werden und berücksichtigt Zeitpunkte der Zahlungsströme."
+    ],
+    "interpretation": "IRR ist gut für unterschiedliche Haltedauern, kann aber bei ungewöhnlichen Vorzeichenwechseln mehrdeutig sein und unterstellt implizit eine Wiederanlageannahme."
+  },
+  "drivers": [
+    "Jahresnettokaltmiete und Mietvertragsqualität",
+    "Kaufpreis plus Erwerbsnebenkosten",
+    "Nicht umlagefähige Kosten, Verwaltung und Capex",
+    "Finanzierungsstruktur und Tilgung",
+    "Exit-Annahmen und Haltedauer"
+  ],
+  "risks": [
+    "Bruttorenditen blenden Kosten und Finanzierung aus.",
+    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
+    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Der interne Zinsfuß berücksichtigt Zeitpunkt und Höhe aller Zahlungsströme. IRR ist gut für unterschiedliche Haltedauern, kann aber bei ungewöhnlichen Vorzeichenwechseln mehrdeutig sein und unterstellt implizit eine Wiederanlageannahme."
 }

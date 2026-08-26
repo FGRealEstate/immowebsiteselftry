@@ -17,7 +17,47 @@
     "investitionsbedarf"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Heizung, Gebäudehülle und Sanierungsfahrplan gehören in die Finanzierungsreserve.",
+  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
+  "formulae": [
+    "Gesamtbelastung = Kapitaldienst + nicht umlagefähige Objektkosten + erwartete energetische Investitionen"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Kaufpreis 350.000 €",
+      "Darlehen 315.000 €",
+      "energetische Maßnahmen in 3 Jahren 35.000 €",
+      "Liquiditätsreserve 20.000 €"
+    ],
+    "steps": [
+      "Ohne Sanierungsbudget wäre die Finanzierung formal günstiger, wirtschaftlich aber unvollständig.",
+      "Die Bank kann Energiezustand und Modernisierungsbedarf in Objektwert, Kapitalbedarf oder Förderfähigkeit einbeziehen."
+    ],
+    "interpretation": "Energieeffizienz ist sowohl Kosten- als auch Finanzierungsfaktor. Förderprogramme und Bankanforderungen ändern sich; sie sind zum Antragszeitpunkt zu prüfen."
+  },
+  "drivers": [
+    "Darlehenshöhe und Beleihungsauslauf",
+    "Sollzins, Tilgung und Zinsbindung",
+    "Restschuld zum Ende der Zinsbindung",
+    "Liquiditätsreserve und Sondertilgungsrechte",
+    "Objektqualität und bankseitiger Beleihungswert"
+  ],
+  "risks": [
+    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
+    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
+    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Energieeffizienz beeinflusst Betriebskosten, Investitionsbedarf, Förderfähigkeit und Bankbewertung. Energieeffizienz ist sowohl Kosten- als auch Finanzierungsfaktor. Förderprogramme und Bankanforderungen ändern sich; sie sind zum Antragszeitpunkt zu prüfen."
 }

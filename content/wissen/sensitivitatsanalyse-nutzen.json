@@ -18,7 +18,46 @@
     "zeigt"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Typische Treiber sind Zins, Miete, Leerstand, Capex und Exit-Faktor. So wird sichtbar, wo die Due Diligence besonders tief sein muss.",
+  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
+  "formulae": [
+    "Sensitivität = Veränderung Ergebnis / Veränderung Eingangsgröße"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Basis-Cashflow +150 € mtl.",
+      "Zins +1 %-Punkt",
+      "Darlehen 300.000 €"
+    ],
+    "steps": [
+      "zusätzlicher Zinsaufwand im ersten Jahr grob 3.000 € = 250 € mtl.",
+      "Cashflow würde unter sonst gleichen Annahmen auf ca. −100 € fallen."
+    ],
+    "interpretation": "Eine Sensitivitätsanalyse zeigt, welche Annahmen das Ergebnis dominieren. Sie ist oft informativer als ein einziges Basisszenario."
+  },
+  "drivers": [
+    "Jahresnettokaltmiete und Mietvertragsqualität",
+    "Kaufpreis plus Erwerbsnebenkosten",
+    "Nicht umlagefähige Kosten, Verwaltung und Capex",
+    "Finanzierungsstruktur und Tilgung",
+    "Exit-Annahmen und Haltedauer"
+  ],
+  "risks": [
+    "Bruttorenditen blenden Kosten und Finanzierung aus.",
+    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
+    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Eine Sensitivitätsanalyse zeigt, welche Annahmen das Ergebnis am stärksten verändern. Eine Sensitivitätsanalyse zeigt, welche Annahmen das Ergebnis dominieren. Sie ist oft informativer als ein einziges Basisszenario."
 }

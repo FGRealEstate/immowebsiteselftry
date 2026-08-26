@@ -7,5 +7,16 @@
   "keywords": [
     "rücklage"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Vermietung",
+  "explanation": "Für künftige Ausgaben reservierte Mittel. Rücklage wirkt auf Ertrag, Kosten oder Rechte innerhalb eines Miet- bzw. WEG-Verhältnisses und sollte aus Vertrag, Abrechnung oder Beschluss konkret abgeleitet werden.",
+  "practiceExample": "Beispiel: Eine Position im Wirtschaftsplan kann wirtschaftlich beim Eigentümer verbleiben, obwohl andere Betriebskosten auf den Mieter umgelegt werden.",
+  "formula": null,
+  "sources": [],
+  "checklist": [
+    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
+    "Bezugsgröße und Zeitraum klären.",
+    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
+  ],
+  "assistantAnswer": "Für künftige Ausgaben reservierte Mittel. Rücklage wirkt auf Ertrag, Kosten oder Rechte innerhalb eines Miet- bzw. WEG-Verhältnisses und sollte aus Vertrag, Abrechnung oder Beschluss konkret abgeleitet werden. Beispiel: Eine Position im Wirtschaftsplan kann wirtschaftlich beim Eigentümer verbleiben, obwohl andere Betriebskosten auf den Mieter umgelegt werden."
 }

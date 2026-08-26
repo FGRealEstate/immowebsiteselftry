@@ -7,5 +7,16 @@
   "keywords": [
     "eigenkapital"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "explanation": "Eigene Mittel des Erwerbers. Mehr Eigenkapital reduziert Darlehen und häufig den Beleihungsauslauf; dadurch können sich Konditionen verbessern. Gleichzeitig sollte eine angemessene Liquiditätsreserve erhalten bleiben.",
+  "practiceExample": "Bei 400.000 € Kaufpreis kann der Unterschied zwischen 40.000 € und 80.000 € Eigenkapital sowohl Darlehenshöhe als auch mögliche Zinsklasse verändern.",
+  "formula": "EK-Bedarf = Nebenkosten + nicht finanzierter Kaufpreisanteil + Reserve",
+  "sources": [],
+  "checklist": [
+    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
+    "Bezugsgröße und Zeitraum klären.",
+    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
+  ],
+  "assistantAnswer": "Eigene Mittel des Erwerbers. Mehr Eigenkapital reduziert Darlehen und häufig den Beleihungsauslauf; dadurch können sich Konditionen verbessern. Gleichzeitig sollte eine angemessene Liquiditätsreserve erhalten bleiben. Bei 400.000 € Kaufpreis kann der Unterschied zwischen 40.000 € und 80.000 € Eigenkapital sowohl Darlehenshöhe als auch mögliche Zinsklasse verändern."
 }

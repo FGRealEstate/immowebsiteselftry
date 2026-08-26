@@ -7,5 +7,16 @@
   "keywords": [
     "objektrendite"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Kapitalanlage",
+  "explanation": "Rendite des Objekts vor individueller Finanzierung. Objektrendite ist eine Investmentkennzahl bzw. Risikogröße. Für Vergleiche müssen Definition, Zeitraum und einbezogene Kosten identisch sein.",
+  "practiceExample": "Beispiel: Ein Prozentwert wird erst aussagekräftig, wenn zusätzlich der Eurobetrag und die zugrunde liegende Kapitalbasis genannt werden.",
+  "formula": null,
+  "sources": [],
+  "checklist": [
+    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
+    "Bezugsgröße und Zeitraum klären.",
+    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
+  ],
+  "assistantAnswer": "Rendite des Objekts vor individueller Finanzierung. Objektrendite ist eine Investmentkennzahl bzw. Risikogröße. Für Vergleiche müssen Definition, Zeitraum und einbezogene Kosten identisch sein. Beispiel: Ein Prozentwert wird erst aussagekräftig, wenn zusätzlich der Eurobetrag und die zugrunde liegende Kapitalbasis genannt werden."
 }

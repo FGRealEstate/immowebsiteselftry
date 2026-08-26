@@ -16,7 +16,45 @@
     "viele"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Niedriger ist nicht automatisch besser, da Lage, Zustand, Entwicklung und Risiko nicht enthalten sind.",
+  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
+  "formulae": [
+    "Mietmultiplikator = Kaufpreis / Jahresnettokaltmiete"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Kaufpreis 450.000 €",
+      "Jahresnettokaltmiete 20.000 €"
+    ],
+    "steps": [
+      "Faktor = 22,5",
+      "Bruttorendite = 4,44 %"
+    ],
+    "interpretation": "Der Faktor ist ein schneller Preismultiplikator, aber ohne Kosten- oder Investitionssicht."
+  },
+  "drivers": [
+    "Jahresnettokaltmiete und Mietvertragsqualität",
+    "Kaufpreis plus Erwerbsnebenkosten",
+    "Nicht umlagefähige Kosten, Verwaltung und Capex",
+    "Finanzierungsstruktur und Tilgung",
+    "Exit-Annahmen und Haltedauer"
+  ],
+  "risks": [
+    "Bruttorenditen blenden Kosten und Finanzierung aus.",
+    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
+    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Der Faktor beschreibt, wie viele Jahresnettokaltmieten dem Kaufpreis entsprechen. Der Faktor ist ein schneller Preismultiplikator, aber ohne Kosten- oder Investitionssicht."
 }

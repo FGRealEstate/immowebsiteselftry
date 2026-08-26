@@ -16,7 +16,50 @@
     "sind"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Bestandsmieten, Mietspiegel, Kappungsgrenzen, Modernisierung und Neuvermietung müssen getrennt betrachtet werden. Pauschale Wachstumsraten sind nur Szenarien.",
+  "mechanics": "Vermietungsmodelle müssen rechtlich zulässige Mietentwicklung und realistische Kosten abbilden. Bestandsmiete, Neuvertragsmiete, Betriebskosten, Leerstand und Instandhaltung dürfen nicht vermischt werden.",
+  "formulae": [
+    "Miete_t = Miete_0 × (1+g)^t nur als ökonomisches Szenario, nicht als Rechtsanspruch"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Miete heute 1.200 €",
+      "ökonomisches Szenario +2 % p.a.",
+      "10 Jahre"
+    ],
+    "steps": [
+      "rechnerisch ≈ 1.463 € im Jahr 10."
+    ],
+    "interpretation": "Die mathematische Wachstumsrate darf nicht mit rechtlich zulässigen Mieterhöhungen verwechselt werden. Vertrag, Mietrecht und Markt begrenzen die Umsetzung."
+  },
+  "drivers": [
+    "Mietvertrag und Ausgangsmiete",
+    "örtliche Vergleichsmiete und Regulierungsrahmen",
+    "umlagefähige und nicht umlagefähige Kosten",
+    "Leerstands- und Ausfallrisiko",
+    "WEG-Beschlüsse und Instandhaltungsbedarf"
+  ],
+  "risks": [
+    "Nicht jede rechnerisch mögliche Mieterhöhung ist rechtlich zulässig.",
+    "Mietausfall und Renovierungszeiten zwischen Mietverhältnissen können den Jahresertrag mindern.",
+    "Hausgeldpositionen sind für Eigentümer und Mieter unterschiedlich zu behandeln."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [
+    {
+      "label": "§ 558 BGB – Mieterhöhung bis zur ortsüblichen Vergleichsmiete",
+      "url": "https://www.gesetze-im-internet.de/bgb/__558.html"
+    }
+  ],
+  "assistantAnswer": "Mietsteigerungen sind rechtlich und marktseitig begrenzt. Die mathematische Wachstumsrate darf nicht mit rechtlich zulässigen Mieterhöhungen verwechselt werden. Vertrag, Mietrecht und Markt begrenzen die Umsetzung."
 }

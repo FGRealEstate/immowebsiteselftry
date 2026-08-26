@@ -19,7 +19,50 @@
     "voraussetzungen"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Damit kann sich die jährliche AfA erhöhen. Das Gutachten muss fachlich belastbar sein; Anerkennung und individuelle Wirkung sind nicht garantiert.",
+  "mechanics": "Steuerliche Effekte sind eine zweite Rechnung neben dem tatsächlichen Cashflow. Entscheidend sind die steuerliche Bemessungsgrundlage, zeitliche Zuordnung, persönliche bzw. gesellschaftsrechtliche Situation und die Abgrenzung von abzugsfähigen Aufwendungen zu Anschaffungs- oder Herstellungskosten.",
+  "formulae": [
+    "AfA bei kürzerer tatsächlicher Nutzungsdauer = AfA-Basis / nachgewiesene Restnutzungsdauer"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "AfA-Basis 300.000 €",
+      "gesetzlicher Satz 2 % → 6.000 € p.a.",
+      "nachgewiesene tatsächliche Restnutzungsdauer 30 Jahre → rechnerisch 10.000 € p.a."
+    ],
+    "steps": [
+      "Mehr-AfA im Modell = 4.000 € p.a."
+    ],
+    "interpretation": "Entscheidend ist ein steuerlich tragfähiger Nachweis der kürzeren tatsächlichen Nutzungsdauer; ein Gutachten ist kein Automatismus für Anerkennung."
+  },
+  "drivers": [
+    "Gebäude- versus Bodenanteil",
+    "AfA-Methode und Fertigstellungsjahr",
+    "Finanzierungszinsen und sonstige Werbungskosten",
+    "Persönlicher Steuersatz bzw. Gesellschaftsstruktur",
+    "Haltedauer und Veräußerungsstrategie"
+  ],
+  "risks": [
+    "Steuerersparnis ersetzt keinen positiven Objekt-Cashflow.",
+    "Gesetze und Verwaltungsauffassung können sich ändern.",
+    "Einzelfälle sollten mit Steuerberatung und belastbaren Unterlagen geprüft werden."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [
+    {
+      "label": "§ 7 EStG – Gebäude-AfA",
+      "url": "https://www.gesetze-im-internet.de/estg/__7.html"
+    }
+  ],
+  "assistantAnswer": "Ein Restnutzungsgutachten kann unter Voraussetzungen eine kürzere tatsächliche Nutzungsdauer begründen. Entscheidend ist ein steuerlich tragfähiger Nachweis der kürzeren tatsächlichen Nutzungsdauer; ein Gutachten ist kein Automatismus für Anerkennung."
 }

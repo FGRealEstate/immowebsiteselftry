@@ -19,7 +19,49 @@
     "werden"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Abzüge, Kappungen, Härtefälle und formelle Anforderungen sind zu prüfen.",
+  "mechanics": "Vermietungsmodelle müssen rechtlich zulässige Mietentwicklung und realistische Kosten abbilden. Bestandsmiete, Neuvertragsmiete, Betriebskosten, Leerstand und Instandhaltung dürfen nicht vermischt werden.",
+  "formulae": [
+    "Zulässige Mieterhöhung nach Modernisierung richtet sich nach § 559 BGB und weiteren Begrenzungen"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Modernisierungskosten nach Abzug anrechenbarer Positionen beispielhaft 30.000 €",
+      "gesetzliche Prüfung des umlagefähigen Anteils erforderlich"
+    ],
+    "steps": [
+      "Die konkrete monatliche Erhöhung darf nicht allein aus einer Investitionsrenditeformel abgeleitet werden."
+    ],
+    "interpretation": "Modernisierungskosten, Erhaltungskosten, Fördermittel und gesetzliche Kappungen müssen getrennt werden. Die rechtliche Berechnung sollte am konkreten Fall erfolgen."
+  },
+  "drivers": [
+    "Mietvertrag und Ausgangsmiete",
+    "örtliche Vergleichsmiete und Regulierungsrahmen",
+    "umlagefähige und nicht umlagefähige Kosten",
+    "Leerstands- und Ausfallrisiko",
+    "WEG-Beschlüsse und Instandhaltungsbedarf"
+  ],
+  "risks": [
+    "Nicht jede rechnerisch mögliche Mieterhöhung ist rechtlich zulässig.",
+    "Mietausfall und Renovierungszeiten zwischen Mietverhältnissen können den Jahresertrag mindern.",
+    "Hausgeldpositionen sind für Eigentümer und Mieter unterschiedlich zu behandeln."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [
+    {
+      "label": "§ 559 BGB – Mieterhöhung nach Modernisierungsmaßnahmen",
+      "url": "https://www.gesetze-im-internet.de/bgb/__559.html"
+    }
+  ],
+  "assistantAnswer": "Bestimmte Modernisierungskosten können unter gesetzlichen Voraussetzungen teilweise umgelegt werden. Modernisierungskosten, Erhaltungskosten, Fördermittel und gesetzliche Kappungen müssen getrennt werden. Die rechtliche Berechnung sollte am konkreten Fall erfolgen."
 }

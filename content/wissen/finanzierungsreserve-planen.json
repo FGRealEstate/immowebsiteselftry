@@ -18,7 +18,47 @@
     "verzögerten"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Sie sollte nicht vollständig in den Kaufpreis fließen, sondern liquide verfügbar bleiben.",
+  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
+  "formulae": [
+    "Liquiditätsreserve = geplante Einmalmaßnahmen + Notfallpuffer + Erwerbs-/Umzugspuffer"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Eigenkapital 100.000 €",
+      "Nebenkosten 40.000 €",
+      "Renovierung 15.000 €",
+      "gewünschter Puffer 20.000 €"
+    ],
+    "steps": [
+      "Maximal für Kaufpreisreduktion des Darlehens einsetzen: 25.000 €",
+      "75.000 € bleiben für Nebenkosten, Renovierung und Reserve gebunden."
+    ],
+    "interpretation": "Eine Finanzierung, die das gesamte verfügbare Eigenkapital verbraucht, kann trotz niedrigerer Rate riskanter sein als eine geringfügig höhere Darlehenssumme mit ausreichender Reserve."
+  },
+  "drivers": [
+    "Darlehenshöhe und Beleihungsauslauf",
+    "Sollzins, Tilgung und Zinsbindung",
+    "Restschuld zum Ende der Zinsbindung",
+    "Liquiditätsreserve und Sondertilgungsrechte",
+    "Objektqualität und bankseitiger Beleihungswert"
+  ],
+  "risks": [
+    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
+    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
+    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Eine Reserve schützt vor Kostenüberschreitungen, Leerstand und verzögerten Auszahlungen. Eine Finanzierung, die das gesamte verfügbare Eigenkapital verbraucht, kann trotz niedrigerer Rate riskanter sein als eine geringfügig höhere Darlehenssumme mit ausreichender Reserve."
 }

@@ -18,7 +18,50 @@
     "über"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Das erhöht Risiko, Zinsbelastung und mögliche Unterdeckung bei frühem Verkauf.",
+  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
+  "formulae": [
+    "Finanzierungsquote = Darlehen / Kaufpreis",
+    "Monatsrate ≈ Darlehen × (Sollzins + Tilgung) / 12"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Kaufpreis 400.000 €",
+      "Nebenkosten 40.000 €",
+      "110-%-Darlehen 440.000 €",
+      "Beispielzins 4,5 %",
+      "Tilgung 2,0 %"
+    ],
+    "steps": [
+      "110 %: Rate ≈ 440.000 × 6,5 % / 12 = 2.383 €",
+      "100 % zum Beispiel 4,0 % + 2,0 %: Rate = 2.000 €",
+      "95 % zum Beispiel 3,8 % + 2,0 % auf 380.000 €: Rate ≈ 1.837 €"
+    ],
+    "interpretation": "Der Zinsaufschlag bei sehr hoher Finanzierung ist bank- und fallabhängig. In der Praxis können gegenüber niedrigeren Beleihungsausläufen Aufschläge von einigen Zehntelprozentpunkten auftreten; 0,3–0,7 Prozentpunkte sind eine mögliche Marktgröße, aber keine feste Regel."
+  },
+  "drivers": [
+    "Darlehenshöhe und Beleihungsauslauf",
+    "Sollzins, Tilgung und Zinsbindung",
+    "Restschuld zum Ende der Zinsbindung",
+    "Liquiditätsreserve und Sondertilgungsrechte",
+    "Objektqualität und bankseitiger Beleihungswert"
+  ],
+  "risks": [
+    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
+    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
+    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Werden Kaufpreis und Nebenkosten finanziert, liegt das Darlehen über dem Kaufpreis. Der Zinsaufschlag bei sehr hoher Finanzierung ist bank- und fallabhängig. In der Praxis können gegenüber niedrigeren Beleihungsausläufen Aufschläge von einigen Zehntelprozentpunkten auftreten; 0,3–0,7 Prozentpunkte sind eine mögliche Marktgröße, aber keine feste Regel."
 }

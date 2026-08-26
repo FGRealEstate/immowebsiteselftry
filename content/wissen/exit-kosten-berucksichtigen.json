@@ -20,7 +20,45 @@
     "vorfälligkeits"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Der erwartete Verkaufspreis sollte daher nicht vollständig als Rückfluss angesetzt werden.",
+  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
+  "formulae": [
+    "Netto-Exit = Verkaufspreis − Restschuld − Verkaufskosten − ggf. Steuern"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Verkaufspreis 500.000 €",
+      "Restschuld 280.000 €",
+      "Verkaufskosten 3 % = 15.000 €"
+    ],
+    "steps": [
+      "Netto vor Steuern = 205.000 €"
+    ],
+    "interpretation": "Wer nur den erwarteten Verkaufspreis modelliert, überschätzt den Rückfluss. Steuerfolgen sind separat nach persönlicher Struktur zu prüfen."
+  },
+  "drivers": [
+    "Jahresnettokaltmiete und Mietvertragsqualität",
+    "Kaufpreis plus Erwerbsnebenkosten",
+    "Nicht umlagefähige Kosten, Verwaltung und Capex",
+    "Finanzierungsstruktur und Tilgung",
+    "Exit-Annahmen und Haltedauer"
+  ],
+  "risks": [
+    "Bruttorenditen blenden Kosten und Finanzierung aus.",
+    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
+    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Beim Verkauf entstehen häufig Makler-, Rechts-, Vorfälligkeits- und Abwicklungskosten. Wer nur den erwarteten Verkaufspreis modelliert, überschätzt den Rückfluss. Steuerfolgen sind separat nach persönlicher Struktur zu prüfen."
 }

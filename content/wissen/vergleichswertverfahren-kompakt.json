@@ -16,7 +16,50 @@
     "ähnlicher"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Lage, Zustand, Größe, Rechte und Verkaufszeitpunkt müssen vergleichbar gemacht werden.",
+  "mechanics": "Vor dem Kauf müssen rechtliche, technische, wirtschaftliche und finanzielle Prüfung zusammengeführt werden. Einzelkennzahlen ersetzen weder Objektunterlagen noch eine belastbare Bewertung.",
+  "formulae": [
+    "Wert aus hinreichend vergleichbaren Kaufpreisen, angepasst an wertbeeinflussende Merkmale"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "3 Vergleichsverkäufe 4.800 / 5.000 / 5.200 €/m²",
+      "Objekt 80 m²",
+      "Mittelwert 5.000 €/m² vor Anpassungen"
+    ],
+    "steps": [
+      "roher Orientierungswert 400.000 € vor Zu-/Abschlägen für Lage, Zustand, Etage, Vermietung etc."
+    ],
+    "interpretation": "Vergleichbarkeit ist wichtiger als die Zahl der Vergleichsfälle. Angebotspreise sind kein Ersatz für geeignete Kaufpreise."
+  },
+  "drivers": [
+    "Eigentums- und Lastenverhältnisse",
+    "Flächen, Bauzustand und Energiezustand",
+    "Miet- und WEG-Unterlagen",
+    "Kaufpreis und Vergleichsdaten",
+    "Finanzierbarkeit und Liquiditätsbedarf"
+  ],
+  "risks": [
+    "Fehlende Unterlagen sind ein eigenes Risiko.",
+    "Technische Maßnahmen können den vermeintlichen Preisvorteil aufzehren.",
+    "Ein günstiger Quadratmeterpreis ist ohne Mikrolage und Zustand nicht aussagekräftig."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [
+    {
+      "label": "Immobilienwertermittlungsverordnung (ImmoWertV)",
+      "url": "https://www.gesetze-im-internet.de/immowertv_2022/"
+    }
+  ],
+  "assistantAnswer": "Vergleichspreise ähnlicher Objekte bilden die Grundlage. Vergleichbarkeit ist wichtiger als die Zahl der Vergleichsfälle. Angebotspreise sind kein Ersatz für geeignete Kaufpreise."
 }

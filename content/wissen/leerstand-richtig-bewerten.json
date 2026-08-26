@@ -18,7 +18,45 @@
     "technisch"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Bei Bestandsobjekten sind Dauer, Ursache, Renovierungsbedarf und realistische Neuvermietungsmiete zu prüfen.",
+  "mechanics": "Vermietungsmodelle müssen rechtlich zulässige Mietentwicklung und realistische Kosten abbilden. Bestandsmiete, Neuvertragsmiete, Betriebskosten, Leerstand und Instandhaltung dürfen nicht vermischt werden.",
+  "formulae": [
+    "Effektive Miete = Sollmiete × Vermietungsquote"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Monatsmiete 1.200 €",
+      "1 Monat Leerstand zwischen Mietern"
+    ],
+    "steps": [
+      "Jahresmiete statt 14.400 € nur 13.200 €",
+      "effektive Ausfallquote 8,33 % in diesem Jahr."
+    ],
+    "interpretation": "Bei kleinen Einheiten kann ein einzelner Leerstandsmonat die Jahresrendite stark verändern. Struktureller und fluktuationsbedingter Leerstand sind zu unterscheiden."
+  },
+  "drivers": [
+    "Mietvertrag und Ausgangsmiete",
+    "örtliche Vergleichsmiete und Regulierungsrahmen",
+    "umlagefähige und nicht umlagefähige Kosten",
+    "Leerstands- und Ausfallrisiko",
+    "WEG-Beschlüsse und Instandhaltungsbedarf"
+  ],
+  "risks": [
+    "Nicht jede rechnerisch mögliche Mieterhöhung ist rechtlich zulässig.",
+    "Mietausfall und Renovierungszeiten zwischen Mietverhältnissen können den Jahresertrag mindern.",
+    "Hausgeldpositionen sind für Eigentümer und Mieter unterschiedlich zu behandeln."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Leerstand kann marktbedingt, technisch oder strategisch sein. Bei kleinen Einheiten kann ein einzelner Leerstandsmonat die Jahresrendite stark verändern. Struktureller und fluktuationsbedingter Leerstand sind zu unterscheiden."
 }

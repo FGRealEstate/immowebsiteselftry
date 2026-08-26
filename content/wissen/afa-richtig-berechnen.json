@@ -19,7 +19,53 @@
     "sich"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Kaufnebenkosten werden regelmäßig anteilig zugeordnet. Baujahr, Nutzung und steuerliche Einordnung bestimmen den Satz. Steuerliche Fragen gehören in die Prüfung mit dem Steuerberater.",
+  "mechanics": "Steuerliche Effekte sind eine zweite Rechnung neben dem tatsächlichen Cashflow. Entscheidend sind die steuerliche Bemessungsgrundlage, zeitliche Zuordnung, persönliche bzw. gesellschaftsrechtliche Situation und die Abgrenzung von abzugsfähigen Aufwendungen zu Anschaffungs- oder Herstellungskosten.",
+  "formulae": [
+    "AfA-Basis = Gebäudeanteil der Anschaffungskosten + anteilige Anschaffungsnebenkosten",
+    "Jahres-AfA = AfA-Basis × AfA-Satz"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Kaufpreis 400.000 €",
+      "Nebenkosten 40.000 €",
+      "Gebäudeanteil 75 %",
+      "Fertigstellung 1995 → lineare AfA grundsätzlich 2 %"
+    ],
+    "steps": [
+      "AfA-Basis = 440.000 × 75 % = 330.000 €",
+      "jährliche lineare AfA = 6.600 €"
+    ],
+    "interpretation": "Grund und Boden ist nicht abschreibbar. Für nach 2022 fertiggestellte Wohngebäude sieht § 7 Abs. 4 EStG grundsätzlich 3 %, für 1925–2022 2 % und vor 1925 2,5 % lineare AfA vor; tatsächliche kürzere Nutzungsdauer kann unter Voraussetzungen abweichend angesetzt werden."
+  },
+  "drivers": [
+    "Gebäude- versus Bodenanteil",
+    "AfA-Methode und Fertigstellungsjahr",
+    "Finanzierungszinsen und sonstige Werbungskosten",
+    "Persönlicher Steuersatz bzw. Gesellschaftsstruktur",
+    "Haltedauer und Veräußerungsstrategie"
+  ],
+  "risks": [
+    "Steuerersparnis ersetzt keinen positiven Objekt-Cashflow.",
+    "Gesetze und Verwaltungsauffassung können sich ändern.",
+    "Einzelfälle sollten mit Steuerberatung und belastbaren Unterlagen geprüft werden."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [
+    {
+      "label": "§ 7 EStG – Gebäude-AfA",
+      "url": "https://www.gesetze-im-internet.de/estg/__7.html"
+    }
+  ],
+  "assistantAnswer": "Die Abschreibung bezieht sich grundsätzlich auf den abschreibungsfähigen Gebäudeanteil, nicht auf den Bodenwert. Grund und Boden ist nicht abschreibbar. Für nach 2022 fertiggestellte Wohngebäude sieht § 7 Abs. 4 EStG grundsätzlich 3 %, für 1925–2022 2 % und vor 1925 2,5 % lineare AfA vor; tatsächliche kürzere Nutzungsdauer kann unter Voraussetzungen abweichend angesetzt werden."
 }

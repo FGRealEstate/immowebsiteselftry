@@ -19,7 +19,50 @@
     "verändert"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Es gibt keine pauschal beste Struktur. Laufende Erträge, Veräußerung, Entnahmen und Verwaltungskosten gehören in den Vergleich.",
+  "mechanics": "Steuerliche Effekte sind eine zweite Rechnung neben dem tatsächlichen Cashflow. Entscheidend sind die steuerliche Bemessungsgrundlage, zeitliche Zuordnung, persönliche bzw. gesellschaftsrechtliche Situation und die Abgrenzung von abzugsfähigen Aufwendungen zu Anschaffungs- oder Herstellungskosten.",
+  "formulae": [
+    "Vergleich nach Steuern und Liquidität, nicht nur nach nominalem Steuersatz"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Objektüberschuss vor Steuern 30.000 € p.a.",
+      "Privatvermögen: Besteuerung abhängig vom persönlichen Steuersatz",
+      "Kapitalgesellschaft: Körperschaft-/Gewerbesteuer, Ausschüttung und Exit separat betrachten"
+    ],
+    "steps": [
+      "Es gibt keinen universellen Gewinner ohne Haltedauer, Reinvestitionsplan, Finanzierung und Exit zu modellieren."
+    ],
+    "interpretation": "Eine GmbH kann Reinvestition strukturieren, verursacht aber Gründungs-, Verwaltungs- und Steuerkomplexität. Privates Halten kann bei langfristiger Strategie andere Exit-Eigenschaften haben. Steuerberatung ist zwingend."
+  },
+  "drivers": [
+    "Gebäude- versus Bodenanteil",
+    "AfA-Methode und Fertigstellungsjahr",
+    "Finanzierungszinsen und sonstige Werbungskosten",
+    "Persönlicher Steuersatz bzw. Gesellschaftsstruktur",
+    "Haltedauer und Veräußerungsstrategie"
+  ],
+  "risks": [
+    "Steuerersparnis ersetzt keinen positiven Objekt-Cashflow.",
+    "Gesetze und Verwaltungsauffassung können sich ändern.",
+    "Einzelfälle sollten mit Steuerberatung und belastbaren Unterlagen geprüft werden."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [
+    {
+      "label": "§ 7 EStG – Gebäude-AfA",
+      "url": "https://www.gesetze-im-internet.de/estg/__7.html"
+    }
+  ],
+  "assistantAnswer": "Die Rechtsform verändert Besteuerung, Finanzierung, Haftung und Exit. Eine GmbH kann Reinvestition strukturieren, verursacht aber Gründungs-, Verwaltungs- und Steuerkomplexität. Privates Halten kann bei langfristiger Strategie andere Exit-Eigenschaften haben. Steuerberatung ist zwingend."
 }

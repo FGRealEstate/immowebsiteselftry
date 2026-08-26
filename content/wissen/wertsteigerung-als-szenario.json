@@ -21,7 +21,46 @@
     "wertzuwachs"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Sinnvoll sind konservative, Basis- und dynamische Szenarien. Beim Exit fallen außerdem Verkaufs- und gegebenenfalls Steuerkosten an.",
+  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
+  "formulae": [
+    "Endwert = Startwert × (1+g)^n"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Startwert 400.000 €",
+      "Wertsteigerung 2 % p.a.",
+      "10 Jahre"
+    ],
+    "steps": [
+      "Endwert ≈ 487.600 €",
+      "bei 0 % wären es 400.000 €; bei −1 % ≈ 361.800 €."
+    ],
+    "interpretation": "Wertsteigerung gehört als Szenario in die Rechnung, nicht als sichere Rendite."
+  },
+  "drivers": [
+    "Jahresnettokaltmiete und Mietvertragsqualität",
+    "Kaufpreis plus Erwerbsnebenkosten",
+    "Nicht umlagefähige Kosten, Verwaltung und Capex",
+    "Finanzierungsstruktur und Tilgung",
+    "Exit-Annahmen und Haltedauer"
+  ],
+  "risks": [
+    "Bruttorenditen blenden Kosten und Finanzierung aus.",
+    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
+    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Wertzuwachs ist unsicher und sollte nicht zur Rettung eines schwachen laufenden Cashflows dienen. Wertsteigerung gehört als Szenario in die Rechnung, nicht als sichere Rendite."
 }

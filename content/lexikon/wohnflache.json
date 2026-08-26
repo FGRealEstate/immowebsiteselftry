@@ -7,5 +7,21 @@
   "keywords": [
     "wohnfläche"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "explanation": "Für viele Wohnimmobilien zentrale Bezugsgröße. Die anrechenbare Fläche hängt von der anzuwendenden Berechnungsmethode ab; Dachschrägen, Balkone und Nebenflächen können nur anteilig oder gar nicht zählen.",
+  "practiceExample": "80 m² Grundfläche sind nicht zwingend 80 m² Wohnfläche.",
+  "formula": "Berechnung nach anwendbarer Flächenregelung",
+  "sources": [
+    {
+      "label": "Wohnflächenverordnung",
+      "url": "https://www.gesetze-im-internet.de/woflv/"
+    }
+  ],
+  "checklist": [
+    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
+    "Bezugsgröße und Zeitraum klären.",
+    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
+  ],
+  "assistantAnswer": "Für viele Wohnimmobilien zentrale Bezugsgröße. Die anrechenbare Fläche hängt von der anzuwendenden Berechnungsmethode ab; Dachschrägen, Balkone und Nebenflächen können nur anteilig oder gar nicht zählen. 80 m² Grundfläche sind nicht zwingend 80 m² Wohnfläche."
 }

@@ -20,7 +20,49 @@
     "zwecke"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Pauschale Prozentsätze können unpassend sein. Lage, Bodenrichtwert, Gebäudestandard und Ertragswertkomponenten beeinflussen die Aufteilung.",
+  "mechanics": "Steuerliche Effekte sind eine zweite Rechnung neben dem tatsächlichen Cashflow. Entscheidend sind die steuerliche Bemessungsgrundlage, zeitliche Zuordnung, persönliche bzw. gesellschaftsrechtliche Situation und die Abgrenzung von abzugsfähigen Aufwendungen zu Anschaffungs- oder Herstellungskosten.",
+  "formulae": [
+    "AfA-Basis = Gesamte Anschaffungskosten × Gebäudeanteil"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Kaufpreis inkl. Nebenkosten 440.000 €",
+      "plausibilisierter Gebäudeanteil 70 %"
+    ],
+    "steps": [
+      "AfA-Basis = 308.000 €"
+    ],
+    "interpretation": "Die Kaufpreisaufteilung sollte wirtschaftlich begründbar sein. Vertragliche Aufteilungen können relevant sein, sind aber nicht automatisch steuerlich bindend, wenn sie die realen Wertverhältnisse verfehlen."
+  },
+  "drivers": [
+    "Gebäude- versus Bodenanteil",
+    "AfA-Methode und Fertigstellungsjahr",
+    "Finanzierungszinsen und sonstige Werbungskosten",
+    "Persönlicher Steuersatz bzw. Gesellschaftsstruktur",
+    "Haltedauer und Veräußerungsstrategie"
+  ],
+  "risks": [
+    "Steuerersparnis ersetzt keinen positiven Objekt-Cashflow.",
+    "Gesetze und Verwaltungsauffassung können sich ändern.",
+    "Einzelfälle sollten mit Steuerberatung und belastbaren Unterlagen geprüft werden."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [
+    {
+      "label": "§ 7 EStG – Gebäude-AfA",
+      "url": "https://www.gesetze-im-internet.de/estg/__7.html"
+    }
+  ],
+  "assistantAnswer": "Der Kaufpreis wird für steuerliche Zwecke auf Grund und Boden sowie Gebäude aufgeteilt. Die Kaufpreisaufteilung sollte wirtschaftlich begründbar sein. Vertragliche Aufteilungen können relevant sein, sind aber nicht automatisch steuerlich bindend, wenn sie die realen Wertverhältnisse verfehlen."
 }

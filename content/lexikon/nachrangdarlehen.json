@@ -7,5 +7,16 @@
   "keywords": [
     "nachrangdarlehen"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "explanation": "Darlehen, dessen Gläubiger im Rang hinter andere Gläubiger tritt. Nachrangdarlehen sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden.",
+  "practiceExample": "Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen.",
+  "formula": null,
+  "sources": [],
+  "checklist": [
+    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
+    "Bezugsgröße und Zeitraum klären.",
+    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
+  ],
+  "assistantAnswer": "Darlehen, dessen Gläubiger im Rang hinter andere Gläubiger tritt. Nachrangdarlehen sollte immer im Zusammenhang mit Darlehenssaldo, Zinsbindung, Kapitaldienst und bankseitiger Bewertung gelesen werden. Beispiel: Zwei Finanzierungen mit gleicher Monatsrate können wegen unterschiedlichem Zins- und Tilgungsverlauf eine deutlich andere Restschuld erzeugen."
 }

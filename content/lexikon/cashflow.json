@@ -7,5 +7,16 @@
   "keywords": [
     "cashflow"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Kapitalanlage",
+  "explanation": "Zahlungswirksamer Überschuss oder Fehlbetrag einer Periode. Bei Immobilien sollten Miete, Eigentümerkosten, Finanzierung, Leerstand und Reserven berücksichtigt werden.",
+  "practiceExample": "1.500 € Miete − 180 € Eigentümerkosten − 1.150 € Rate − 100 € Reserve = +70 € mtl.",
+  "formula": "Cashflow = Einzahlungen − Auszahlungen",
+  "sources": [],
+  "checklist": [
+    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
+    "Bezugsgröße und Zeitraum klären.",
+    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
+  ],
+  "assistantAnswer": "Zahlungswirksamer Überschuss oder Fehlbetrag einer Periode. Bei Immobilien sollten Miete, Eigentümerkosten, Finanzierung, Leerstand und Reserven berücksichtigt werden. 1.500 € Miete − 180 € Eigentümerkosten − 1.150 € Rate − 100 € Reserve = +70 € mtl."
 }

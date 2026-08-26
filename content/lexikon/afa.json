@@ -7,5 +7,21 @@
   "keywords": [
     "afa"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Steuern",
+  "explanation": "Absetzung für Abnutzung: steuerliche Verteilung der abschreibungsfähigen Gebäudeanschaffungs- bzw. Herstellungskosten über die maßgebliche Nutzungsdauer. Grund und Boden ist nicht abschreibbar.",
+  "practiceExample": "AfA-Basis 330.000 € und 2 % lineare AfA ergeben 6.600 € pro Jahr.",
+  "formula": "AfA p.a. = AfA-Bemessungsgrundlage × AfA-Satz",
+  "sources": [
+    {
+      "label": "§ 7 EStG – Gebäude-AfA",
+      "url": "https://www.gesetze-im-internet.de/estg/__7.html"
+    }
+  ],
+  "checklist": [
+    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
+    "Bezugsgröße und Zeitraum klären.",
+    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
+  ],
+  "assistantAnswer": "Absetzung für Abnutzung: steuerliche Verteilung der abschreibungsfähigen Gebäudeanschaffungs- bzw. Herstellungskosten über die maßgebliche Nutzungsdauer. Grund und Boden ist nicht abschreibbar. AfA-Basis 330.000 € und 2 % lineare AfA ergeben 6.600 € pro Jahr."
 }

@@ -7,5 +7,16 @@
   "keywords": [
     "ltv"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "explanation": "Loan-to-Value: Verhältnis von Darlehenssaldo zu einem definierten Objektwert. Je nach Kontext kann dieser Wert Marktwert oder eine andere Bewertungsbasis sein.",
+  "practiceExample": "350.000 € Darlehen / 500.000 € Objektwert = 70 %.",
+  "formula": "LTV = Darlehen / Objektwert",
+  "sources": [],
+  "checklist": [
+    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
+    "Bezugsgröße und Zeitraum klären.",
+    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
+  ],
+  "assistantAnswer": "Loan-to-Value: Verhältnis von Darlehenssaldo zu einem definierten Objektwert. Je nach Kontext kann dieser Wert Marktwert oder eine andere Bewertungsbasis sein. 350.000 € Darlehen / 500.000 € Objektwert = 70 %."
 }

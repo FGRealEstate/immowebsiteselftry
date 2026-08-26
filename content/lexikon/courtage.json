@@ -7,5 +7,25 @@
   "keywords": [
     "courtage"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "explanation": "Erfolgsabhängige Maklervergütung für Nachweis oder Vermittlung. Bei Verbraucher-Käufen von Wohnung oder Einfamilienhaus gelten besondere Regeln zur Textform und Kostenverteilung; bei MFH, Gewerbe und Grundstücken gelten diese Teilungsregeln nicht automatisch.",
+  "practiceExample": "Bei 500.000 € Kaufpreis und 3,57 % Käufercourtage beträgt der Käuferanteil 17.850 €.",
+  "formula": "Courtage = Kaufpreis × Provisionssatz",
+  "sources": [
+    {
+      "label": "§ 656c BGB – Maklerlohn bei Tätigkeit für beide Parteien",
+      "url": "https://www.gesetze-im-internet.de/bgb/__656c.html"
+    },
+    {
+      "label": "§ 656d BGB – Vereinbarungen über Maklerkosten",
+      "url": "https://www.gesetze-im-internet.de/bgb/__656d.html"
+    }
+  ],
+  "checklist": [
+    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
+    "Bezugsgröße und Zeitraum klären.",
+    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
+  ],
+  "assistantAnswer": "Erfolgsabhängige Maklervergütung für Nachweis oder Vermittlung. Bei Verbraucher-Käufen von Wohnung oder Einfamilienhaus gelten besondere Regeln zur Textform und Kostenverteilung; bei MFH, Gewerbe und Grundstücken gelten diese Teilungsregeln nicht automatisch. Bei 500.000 € Kaufpreis und 3,57 % Käufercourtage beträgt der Käuferanteil 17.850 €."
 }

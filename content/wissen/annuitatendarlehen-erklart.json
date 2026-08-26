@@ -18,7 +18,53 @@
     "zinsbindung"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Der Zinsanteil sinkt mit der Restschuld, der Tilgungsanteil steigt. Die anfängliche Annuität ergibt sich aus Sollzins plus anfänglicher Tilgung bezogen auf die Darlehenssumme.",
+  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
+  "formulae": [
+    "Anfangsannuität = Darlehen × (Sollzins + Anfangstilgung)",
+    "Monatsrate = Anfangsannuität / 12",
+    "Zins Monat t = Restschuld vor Rate × Sollzins / 12",
+    "Tilgung Monat t = Monatsrate − Zins Monat t"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Darlehen 300.000 €",
+      "Sollzins 4,2 % p.a.",
+      "anfängliche Tilgung 2,0 % p.a.",
+      "Sollzinsbindung 10 Jahre"
+    ],
+    "steps": [
+      "Jahresannuität = 18.600 €",
+      "Monatsrate = 1.550 €",
+      "Zins im ersten Monat = 1.050 €",
+      "Tilgung im ersten Monat = 500 €",
+      "Nach jeder Rate sinkt die Restschuld; dadurch sinkt der Zinsanteil und der Tilgungsanteil steigt."
+    ],
+    "interpretation": "Zwei Darlehen mit gleicher Monatsrate können nach zehn Jahren unterschiedliche Restschulden haben, wenn Zins, Tilgungsbeginn oder Sondertilgungen abweichen."
+  },
+  "drivers": [
+    "Darlehenshöhe und Beleihungsauslauf",
+    "Sollzins, Tilgung und Zinsbindung",
+    "Restschuld zum Ende der Zinsbindung",
+    "Liquiditätsreserve und Sondertilgungsrechte",
+    "Objektqualität und bankseitiger Beleihungswert"
+  ],
+  "risks": [
+    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
+    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
+    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Beim Annuitätendarlehen bleibt die Rate während der Zinsbindung regelmäßig konstant. Zwei Darlehen mit gleicher Monatsrate können nach zehn Jahren unterschiedliche Restschulden haben, wenn Zins, Tilgungsbeginn oder Sondertilgungen abweichen."
 }

@@ -7,5 +7,16 @@
   "keywords": [
     "annuität"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "explanation": "Konstante periodische Rate eines Annuitätendarlehens innerhalb der Zinsbindung. Sie setzt sich aus Zins und Tilgung zusammen; mit sinkender Restschuld fällt der Zinsanteil und der Tilgungsanteil steigt.",
+  "practiceExample": "300.000 € Darlehen, 4,2 % Zins und 2 % Anfangstilgung ergeben anfänglich 18.600 € p.a. bzw. 1.550 € monatlich.",
+  "formula": "Annuität = Darlehen × (Sollzins + Anfangstilgung)",
+  "sources": [],
+  "checklist": [
+    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
+    "Bezugsgröße und Zeitraum klären.",
+    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
+  ],
+  "assistantAnswer": "Konstante periodische Rate eines Annuitätendarlehens innerhalb der Zinsbindung. Sie setzt sich aus Zins und Tilgung zusammen; mit sinkender Restschuld fällt der Zinsanteil und der Tilgungsanteil steigt. 300.000 € Darlehen, 4,2 % Zins und 2 % Anfangstilgung ergeben anfänglich 18.600 € p.a. bzw. 1.550 € monatlich."
 }

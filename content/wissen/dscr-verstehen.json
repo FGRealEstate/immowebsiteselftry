@@ -19,7 +19,44 @@
     "verstehen"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Ein Wert über eins bedeutet rechnerische Deckung. Banken verwenden eigene Definitionen und Sicherheitsabschläge.",
+  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
+  "formulae": [
+    "DSCR = Net Operating Income / jährlicher Kapitaldienst"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "NOI 90.000 € p.a.",
+      "Zins + Tilgung 60.000 € p.a."
+    ],
+    "steps": [
+      "DSCR = 90.000 / 60.000 = 1,50"
+    ],
+    "interpretation": "Ein DSCR von 1,50 bedeutet, dass der betrachtete operative Überschuss den Kapitaldienst rechnerisch um 50 % übersteigt. Definitionen von NOI und Kapitaldienst können bankseitig variieren."
+  },
+  "drivers": [
+    "Darlehenshöhe und Beleihungsauslauf",
+    "Sollzins, Tilgung und Zinsbindung",
+    "Restschuld zum Ende der Zinsbindung",
+    "Liquiditätsreserve und Sondertilgungsrechte",
+    "Objektqualität und bankseitiger Beleihungswert"
+  ],
+  "risks": [
+    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
+    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
+    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Der Debt Service Coverage Ratio vergleicht verfügbaren Objektüberschuss mit dem Schuldendienst. Ein DSCR von 1,50 bedeutet, dass der betrachtete operative Überschuss den Kapitaldienst rechnerisch um 50 % übersteigt. Definitionen von NOI und Kapitaldienst können bankseitig variieren."
 }

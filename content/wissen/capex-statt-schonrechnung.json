@@ -19,7 +19,45 @@
     "statt"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Dach, Fassade, Heizung, Leitungen und energetische Maßnahmen können Renditen stark verändern. Ein technischer Plan über zehn bis zwanzig Jahre schafft Transparenz.",
+  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
+  "formulae": [
+    "Nachhaltiger Cashflow = operativer Cashflow − periodisierte Capex-Reserve"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Dach in 10 Jahren voraussichtlich 60.000 €",
+      "Anteil des Investors 15 %",
+      "wirtschaftliche Reserve 9.000 / 10 = 900 € p.a."
+    ],
+    "steps": [
+      "Ohne Capex-Reserve wirkt der jährliche Cashflow um 900 € besser als wirtschaftlich nachhaltig."
+    ],
+    "interpretation": "Capex ist unregelmäßig, aber nicht optional. Eine gute Analyse periodisiert absehbare Großmaßnahmen."
+  },
+  "drivers": [
+    "Jahresnettokaltmiete und Mietvertragsqualität",
+    "Kaufpreis plus Erwerbsnebenkosten",
+    "Nicht umlagefähige Kosten, Verwaltung und Capex",
+    "Finanzierungsstruktur und Tilgung",
+    "Exit-Annahmen und Haltedauer"
+  ],
+  "risks": [
+    "Bruttorenditen blenden Kosten und Finanzierung aus.",
+    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
+    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Größere Investitionen gehören getrennt von laufenden Kosten in die Planung. Capex ist unregelmäßig, aber nicht optional. Eine gute Analyse periodisiert absehbare Großmaßnahmen."
 }

@@ -18,7 +18,46 @@
     "vermögenseffekt"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Cashflow nach Steuer, Tilgung und – sofern bewusst berücksichtigt – Wertveränderung werden getrennt ausgewiesen. Entscheidend ist, keine Wertsteigerung als garantiert anzusehen und Nebenkosten sowie Anfangsinvestitionen vollständig zu erfassen.",
+  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
+  "formulae": [
+    "EK-Rendite = betrachteter Jahresertrag / eingesetztes Eigenkapital"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Eigenkapital inkl. Nebenkosten 90.000 €",
+      "Cashflow vor Steuer 1.800 € p.a.",
+      "Tilgung im ersten Jahr 6.000 €"
+    ],
+    "steps": [
+      "Cash-on-Cash = 2,0 %",
+      "Rendite inkl. Tilgung = 8,67 %"
+    ],
+    "interpretation": "Es muss klar angegeben werden, ob Tilgung, Steuerwirkung und Wertänderung enthalten sind. Sonst sind EK-Renditen nicht vergleichbar."
+  },
+  "drivers": [
+    "Jahresnettokaltmiete und Mietvertragsqualität",
+    "Kaufpreis plus Erwerbsnebenkosten",
+    "Nicht umlagefähige Kosten, Verwaltung und Capex",
+    "Finanzierungsstruktur und Tilgung",
+    "Exit-Annahmen und Haltedauer"
+  ],
+  "risks": [
+    "Bruttorenditen blenden Kosten und Finanzierung aus.",
+    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
+    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Die Eigenkapitalrendite setzt den jährlichen Vermögenseffekt ins Verhältnis zum tatsächlich eingesetzten Eigenkapital. Es muss klar angegeben werden, ob Tilgung, Steuerwirkung und Wertänderung enthalten sind. Sonst sind EK-Renditen nicht vergleichbar."
 }

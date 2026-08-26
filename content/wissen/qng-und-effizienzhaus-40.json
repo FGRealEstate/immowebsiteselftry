@@ -14,7 +14,51 @@
     "verbindet"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Bei Neubauten können Förderkredite und steuerliche Effekte relevant sein. Zertifizierungskosten, Bauqualität und Förderbedingungen gehören in die Gesamtkalkulation.",
+  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
+  "formulae": [
+    "Fördervolumen je Wohneinheit richtet sich nach aktuellem KfW-Programm und Förderstufe"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Neubau mit EH40-Standard",
+      "Variante ohne QNG und Variante mit QNG",
+      "KfW-Produkt 297/298 als aktuelles Beispiel"
+    ],
+    "steps": [
+      "Zum Zeitpunkt der Überarbeitung nennt die KfW bei Klimafreundlichem Neubau bis zu 100.000 € je Wohneinheit bzw. bis zu 150.000 € mit QNG.",
+      "Programmstand, Konditionen und Antragsvoraussetzungen sind vor Antrag erneut zu prüfen."
+    ],
+    "interpretation": "QNG ist kein reines Zinsmerkmal. Es umfasst Nachhaltigkeitsanforderungen und Zertifizierung; für bestimmte steuerliche Förderungen kann es ebenfalls relevant sein."
+  },
+  "drivers": [
+    "Darlehenshöhe und Beleihungsauslauf",
+    "Sollzins, Tilgung und Zinsbindung",
+    "Restschuld zum Ende der Zinsbindung",
+    "Liquiditätsreserve und Sondertilgungsrechte",
+    "Objektqualität und bankseitiger Beleihungswert"
+  ],
+  "risks": [
+    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
+    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
+    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [
+    {
+      "label": "KfW – Klimafreundlicher Neubau / Effizienzhaus 40",
+      "url": "https://www.kfw.de/inlandsfoerderung/Privatpersonen/Neubau/F%C3%B6rderprodukte/Klimafreundlicher-Neubau-Wohngeb%C3%A4ude-%28297-298%29/"
+    }
+  ],
+  "assistantAnswer": "QNG verbindet Nachhaltigkeitsanforderungen mit förderfähigen Gebäudestandards. QNG ist kein reines Zinsmerkmal. Es umfasst Nachhaltigkeitsanforderungen und Zertifizierung; für bestimmte steuerliche Förderungen kann es ebenfalls relevant sein."
 }

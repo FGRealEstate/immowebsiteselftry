@@ -17,7 +17,48 @@
     "zinsänderungsstress"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Szenarien mit plus ein, zwei oder drei Prozentpunkten zeigen die mögliche Anschlussrate und helfen bei der Wahl der Tilgung.",
+  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
+  "formulae": [
+    "Stressrate = Restschuld × (Stresszins + Tilgung) / 12"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Restschuld nach Zinsbindung 280.000 €",
+      "Tilgung 2 %",
+      "Basiszins 3,5 %",
+      "Stresszins 6,0 %"
+    ],
+    "steps": [
+      "Basisrate ≈ 1.283 €",
+      "Stressrate ≈ 1.867 €",
+      "Differenz ≈ 583 € monatlich"
+    ],
+    "interpretation": "Der Stress-Test beantwortet nicht, welcher Zins eintreten wird, sondern ob die Finanzierung einen ungünstigeren Zins verkraftet."
+  },
+  "drivers": [
+    "Darlehenshöhe und Beleihungsauslauf",
+    "Sollzins, Tilgung und Zinsbindung",
+    "Restschuld zum Ende der Zinsbindung",
+    "Liquiditätsreserve und Sondertilgungsrechte",
+    "Objektqualität und bankseitiger Beleihungswert"
+  ],
+  "risks": [
+    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
+    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
+    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Ein guter Plan rechnet nicht nur mit dem heutigen Sollzins. Der Stress-Test beantwortet nicht, welcher Zins eintreten wird, sondern ob die Finanzierung einen ungünstigeren Zins verkraftet."
 }

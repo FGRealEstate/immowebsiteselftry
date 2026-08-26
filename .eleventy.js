@@ -15,6 +15,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("style.css");
     eleventyConfig.addPassthroughCopy("script.js");
     eleventyConfig.addPassthroughCopy("fg-assistant.js");
+  eleventyConfig.addPassthroughCopy("fg-knowledge.js");
     eleventyConfig.addPassthroughCopy("fg-assistant.css");
     eleventyConfig.addPassthroughCopy("investment-lab.js");
     eleventyConfig.addPassthroughCopy("consent-manager.js");

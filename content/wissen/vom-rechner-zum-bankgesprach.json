@@ -16,7 +16,46 @@
     "vorbereitung"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Banken benötigen zusätzlich Einkommens-, Vermögens-, Objekt- und Mietunterlagen sowie eigene Bewertungsannahmen.",
+  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
+  "formulae": [
+    "Bankfähige Kapitaldienstrechnung = nachhaltiges Einkommen − Lebenshaltung − sonstige Verpflichtungen − Sicherheitsansätze"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Kaufpreis 450.000 €",
+      "Eigenkapital 90.000 €",
+      "gewünschte Rate 1.900 €",
+      "bestehender Autokredit 300 € mtl."
+    ],
+    "steps": [
+      "Der Rechner kann einen Kaufpreisrahmen zeigen; die Bank bewertet zusätzlich Einkommen, Verpflichtungen, Objekt und Beleihungswert."
+    ],
+    "interpretation": "Vor dem Bankgespräch sollten Selbstauskunft, Einkommensnachweise, Eigenkapitalnachweis und Objektunterlagen konsistent sein. Ein guter Rechner ersetzt keine Kreditentscheidung."
+  },
+  "drivers": [
+    "Darlehenshöhe und Beleihungsauslauf",
+    "Sollzins, Tilgung und Zinsbindung",
+    "Restschuld zum Ende der Zinsbindung",
+    "Liquiditätsreserve und Sondertilgungsrechte",
+    "Objektqualität und bankseitiger Beleihungswert"
+  ],
+  "risks": [
+    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
+    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
+    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Eine nachvollziehbare Kalkulation verbessert die Vorbereitung. Vor dem Bankgespräch sollten Selbstauskunft, Einkommensnachweise, Eigenkapitalnachweis und Objektunterlagen konsistent sein. Ein guter Rechner ersetzt keine Kreditentscheidung."
 }

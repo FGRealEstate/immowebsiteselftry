@@ -7,5 +7,25 @@
   "keywords": [
     "maklerprovision"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "explanation": "Synonym zur Courtage. Entscheidend sind Maklervertrag, Objektart und Parteienkonstellation. Eine allgemeine gesetzliche Höchstprovision je Bundesland für Immobilienkaufverträge besteht nicht; regionale Sätze sind Marktgewohnheiten, keine gesetzlichen Maxima.",
+  "practiceExample": "ETW/EFH-Verbraucherkauf und MFH-Ankauf müssen provisionsrechtlich getrennt betrachtet werden.",
+  "formula": "Provision = Kaufpreis × vereinbarter Provisionssatz",
+  "sources": [
+    {
+      "label": "§ 656c BGB – Maklerlohn bei Tätigkeit für beide Parteien",
+      "url": "https://www.gesetze-im-internet.de/bgb/__656c.html"
+    },
+    {
+      "label": "§ 656d BGB – Vereinbarungen über Maklerkosten",
+      "url": "https://www.gesetze-im-internet.de/bgb/__656d.html"
+    }
+  ],
+  "checklist": [
+    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
+    "Bezugsgröße und Zeitraum klären.",
+    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
+  ],
+  "assistantAnswer": "Synonym zur Courtage. Entscheidend sind Maklervertrag, Objektart und Parteienkonstellation. Eine allgemeine gesetzliche Höchstprovision je Bundesland für Immobilienkaufverträge besteht nicht; regionale Sätze sind Marktgewohnheiten, keine gesetzlichen Maxima. ETW/EFH-Verbraucherkauf und MFH-Ankauf müssen provisionsrechtlich getrennt betrachtet werden."
 }

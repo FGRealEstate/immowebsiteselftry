@@ -17,7 +17,54 @@
     "wann"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Entscheidend sind Fertigstellung, Anschaffung, Nutzungsart und das jeweils geltende Steuerrecht. Der Rechner kann Szenarien zeigen, ersetzt aber keine steuerliche Prüfung.",
+  "mechanics": "Steuerliche Effekte sind eine zweite Rechnung neben dem tatsächlichen Cashflow. Entscheidend sind die steuerliche Bemessungsgrundlage, zeitliche Zuordnung, persönliche bzw. gesellschaftsrechtliche Situation und die Abgrenzung von abzugsfähigen Aufwendungen zu Anschaffungs- oder Herstellungskosten.",
+  "formulae": [
+    "Degressive AfA bzw. § 7b-Sonder-AfA sind getrennte Regelungen",
+    "§ 7b: bis zu 5 % der begrenzten Bemessungsgrundlage in Jahr der Anschaffung/Herstellung plus drei Folgejahre"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Neue Mietwohnung mit begünstigter Bemessungsgrundlage 320.000 €",
+      "§ 7b-Sonder-AfA beispielhaft 5 %"
+    ],
+    "steps": [
+      "Sonder-AfA = bis zu 16.000 € p.a. in den begünstigten Jahren, zusätzlich zur regulären AfA, wenn sämtliche Voraussetzungen erfüllt sind."
+    ],
+    "interpretation": "„5 % AfA“ ist kein universeller Satz. Es muss sauber zwischen linearer AfA, degressiver AfA und § 7b-Sonderabschreibung unterschieden werden."
+  },
+  "drivers": [
+    "Gebäude- versus Bodenanteil",
+    "AfA-Methode und Fertigstellungsjahr",
+    "Finanzierungszinsen und sonstige Werbungskosten",
+    "Persönlicher Steuersatz bzw. Gesellschaftsstruktur",
+    "Haltedauer und Veräußerungsstrategie"
+  ],
+  "risks": [
+    "Steuerersparnis ersetzt keinen positiven Objekt-Cashflow.",
+    "Gesetze und Verwaltungsauffassung können sich ändern.",
+    "Einzelfälle sollten mit Steuerberatung und belastbaren Unterlagen geprüft werden."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [
+    {
+      "label": "§ 7 EStG – Gebäude-AfA",
+      "url": "https://www.gesetze-im-internet.de/estg/__7.html"
+    },
+    {
+      "label": "§ 7b EStG – Sonderabschreibung Mietwohnungsneubau",
+      "url": "https://www.gesetze-im-internet.de/estg/__7b.html"
+    }
+  ],
+  "assistantAnswer": "Erhöhte Abschreibungssätze gelten nur bei bestimmten gesetzlichen Voraussetzungen. „5 % AfA“ ist kein universeller Satz. Es muss sauber zwischen linearer AfA, degressiver AfA und § 7b-Sonderabschreibung unterschieden werden."
 }

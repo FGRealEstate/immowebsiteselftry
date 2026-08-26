@@ -17,7 +17,44 @@
     "sonderumlagen"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Beschlüsse, Protokolle, Rücklagenstand und bekannte Schäden sollten vor Kauf geprüft werden.",
+  "mechanics": "Vor dem Kauf müssen rechtliche, technische, wirtschaftliche und finanzielle Prüfung zusammengeführt werden. Einzelkennzahlen ersetzen weder Objektunterlagen noch eine belastbare Bewertung.",
+  "formulae": [
+    "Individuelle Sonderumlage = beschlossene Gesamtsumme × Verteilungsschlüssel"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "WEG beschließt 200.000 €",
+      "MEA der Wohnung 45/1.000"
+    ],
+    "steps": [
+      "Anteil bei Verteilung nach MEA = 9.000 €"
+    ],
+    "interpretation": "Vor Kauf Protokolle, Beschlusssammlung, Wirtschaftsplan und Rücklage prüfen. Bereits erkennbare Maßnahmen gehören in den Eigenkapitalbedarf."
+  },
+  "drivers": [
+    "Eigentums- und Lastenverhältnisse",
+    "Flächen, Bauzustand und Energiezustand",
+    "Miet- und WEG-Unterlagen",
+    "Kaufpreis und Vergleichsdaten",
+    "Finanzierbarkeit und Liquiditätsbedarf"
+  ],
+  "risks": [
+    "Fehlende Unterlagen sind ein eigenes Risiko.",
+    "Technische Maßnahmen können den vermeintlichen Preisvorteil aufzehren.",
+    "Ein günstiger Quadratmeterpreis ist ohne Mikrolage und Zustand nicht aussagekräftig."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Sonderumlagen können kurzfristig erhebliches Eigenkapital binden. Vor Kauf Protokolle, Beschlusssammlung, Wirtschaftsplan und Rücklage prüfen. Bereits erkennbare Maßnahmen gehören in den Eigenkapitalbedarf."
 }

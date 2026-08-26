@@ -16,7 +16,51 @@
     "wert"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Bewirtschaftungskosten, Bodenwert, Liegenschaftszins und Restnutzungsdauer sind zentrale Komponenten.",
+  "mechanics": "Vor dem Kauf müssen rechtliche, technische, wirtschaftliche und finanzielle Prüfung zusammengeführt werden. Einzelkennzahlen ersetzen weder Objektunterlagen noch eine belastbare Bewertung.",
+  "formulae": [
+    "Ertragswert basiert auf nachhaltig erzielbaren Erträgen, Bewirtschaftungskosten, Bodenwert und Kapitalisierung gemäß ImmoWertV"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Jahresrohertrag 100.000 €",
+      "Bewirtschaftungskosten 20.000 €",
+      "Reinertrag 80.000 €",
+      "weitere Parameter: Bodenwert, Liegenschaftszins, Restnutzungsdauer"
+    ],
+    "steps": [
+      "Erst aus dem vollständigen Modell entsteht ein vorläufiger Ertragswert; reine Multiplikation der Miete mit einem Faktor ist nicht das formale Verfahren."
+    ],
+    "interpretation": "Besonders relevant für renditeorientierte Objekte. Die konkrete Wertermittlung erfordert marktkonforme Modellparameter."
+  },
+  "drivers": [
+    "Eigentums- und Lastenverhältnisse",
+    "Flächen, Bauzustand und Energiezustand",
+    "Miet- und WEG-Unterlagen",
+    "Kaufpreis und Vergleichsdaten",
+    "Finanzierbarkeit und Liquiditätsbedarf"
+  ],
+  "risks": [
+    "Fehlende Unterlagen sind ein eigenes Risiko.",
+    "Technische Maßnahmen können den vermeintlichen Preisvorteil aufzehren.",
+    "Ein günstiger Quadratmeterpreis ist ohne Mikrolage und Zustand nicht aussagekräftig."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [
+    {
+      "label": "Immobilienwertermittlungsverordnung (ImmoWertV)",
+      "url": "https://www.gesetze-im-internet.de/immowertv_2022/"
+    }
+  ],
+  "assistantAnswer": "Das Ertragswertverfahren leitet den Wert aus nachhaltig erzielbaren Erträgen ab. Besonders relevant für renditeorientierte Objekte. Die konkrete Wertermittlung erfordert marktkonforme Modellparameter."
 }

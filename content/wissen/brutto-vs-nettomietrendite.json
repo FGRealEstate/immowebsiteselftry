@@ -20,7 +20,48 @@
     "teilt"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Beide Kennzahlen sind vor Finanzierung. Für den Vergleich sollten Berechnungsbasis und Kostenabgrenzung identisch sein.",
+  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
+  "formulae": [
+    "Bruttorendite = Jahresnettokaltmiete / Kaufpreis",
+    "Nettorendite ≈ (Jahresnettokaltmiete − nicht umlagefähige Kosten − Leerstand − laufende Instandhaltung) / Gesamtinvestition"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Kaufpreis 300.000 €",
+      "Nebenkosten 30.000 €",
+      "Miete 1.400 € mtl. = 16.800 € p.a.",
+      "nicht umlagefähige Kosten + Reserve 3.000 € p.a."
+    ],
+    "steps": [
+      "Bruttorendite = 5,6 %",
+      "vereinfachte Nettorendite = 13.800 / 330.000 = 4,18 %"
+    ],
+    "interpretation": "Die Differenz zeigt, warum Bruttorendite nur ein Screening-Instrument ist."
+  },
+  "drivers": [
+    "Jahresnettokaltmiete und Mietvertragsqualität",
+    "Kaufpreis plus Erwerbsnebenkosten",
+    "Nicht umlagefähige Kosten, Verwaltung und Capex",
+    "Finanzierungsstruktur und Tilgung",
+    "Exit-Annahmen und Haltedauer"
+  ],
+  "risks": [
+    "Bruttorenditen blenden Kosten und Finanzierung aus.",
+    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
+    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Die Bruttorendite teilt Jahresnettokaltmiete durch Kaufpreis. Die Nettorendite berücksichtigt laufende Eigentümerkosten. Die Differenz zeigt, warum Bruttorendite nur ein Screening-Instrument ist."
 }

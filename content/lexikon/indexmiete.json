@@ -7,5 +7,21 @@
   "keywords": [
     "indexmiete"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Vermietung",
+  "explanation": "Mietvereinbarung, bei der Änderungen an den vom Statistischen Bundesamt ermittelten Verbraucherpreisindex gekoppelt werden. Die gesetzlichen Voraussetzungen und Erklärungen sind zu beachten.",
+  "practiceExample": "1.000 € × 123,9 / 118,0 ≈ 1.050 € rechnerische Indexanpassung.",
+  "formula": "Neue Miete = Ausgangsmiete × neuer Index / Ausgangsindex",
+  "sources": [
+    {
+      "label": "§ 557b BGB – Indexmiete",
+      "url": "https://www.gesetze-im-internet.de/bgb/__557b.html"
+    }
+  ],
+  "checklist": [
+    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
+    "Bezugsgröße und Zeitraum klären.",
+    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
+  ],
+  "assistantAnswer": "Mietvereinbarung, bei der Änderungen an den vom Statistischen Bundesamt ermittelten Verbraucherpreisindex gekoppelt werden. Die gesetzlichen Voraussetzungen und Erklärungen sind zu beachten. 1.000 € × 123,9 / 118,0 ≈ 1.050 € rechnerische Indexanpassung."
 }

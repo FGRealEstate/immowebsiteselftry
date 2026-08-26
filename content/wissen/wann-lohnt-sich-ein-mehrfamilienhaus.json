@@ -21,7 +21,47 @@
     "werden"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Neben der Anfangsrendite sind Mietstruktur, Leerstand, Capex, Genehmigungslage, Energiezustand und Exit-Fähigkeit wichtig. Ein einzelner Multiplikator reicht nicht.",
+  "mechanics": "Vor dem Kauf müssen rechtliche, technische, wirtschaftliche und finanzielle Prüfung zusammengeführt werden. Einzelkennzahlen ersetzen weder Objektunterlagen noch eine belastbare Bewertung.",
+  "formulae": [
+    "NOI, DSCR, Faktor, Capex und Mietentwicklung zusammen betrachten"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Kaufpreis 2,0 Mio. €",
+      "JNKM 120.000 €",
+      "Bewirtschaftung + Reserve 25.000 €",
+      "NOI 95.000 €"
+    ],
+    "steps": [
+      "Bruttorendite 6,0 %",
+      "NOI-Rendite 4,75 % vor Finanzierung."
+    ],
+    "interpretation": "Ein MFH lohnt sich nicht wegen eines niedrigen Quadratmeterpreises allein. Mietstruktur, Capex, Leerstand, Teilbarkeit, Finanzierung und Exit-Liquidität entscheiden."
+  },
+  "drivers": [
+    "Eigentums- und Lastenverhältnisse",
+    "Flächen, Bauzustand und Energiezustand",
+    "Miet- und WEG-Unterlagen",
+    "Kaufpreis und Vergleichsdaten",
+    "Finanzierbarkeit und Liquiditätsbedarf"
+  ],
+  "risks": [
+    "Fehlende Unterlagen sind ein eigenes Risiko.",
+    "Technische Maßnahmen können den vermeintlichen Preisvorteil aufzehren.",
+    "Ein günstiger Quadratmeterpreis ist ohne Mikrolage und Zustand nicht aussagekräftig."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Ein Mehrfamilienhaus muss als Gesamtbetrieb aus Mieten, Kosten, Investitionen und Finanzierung betrachtet werden. Ein MFH lohnt sich nicht wegen eines niedrigen Quadratmeterpreises allein. Mietstruktur, Capex, Leerstand, Teilbarkeit, Finanzierung und Exit-Liquidität entscheiden."
 }

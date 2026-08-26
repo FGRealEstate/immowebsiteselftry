@@ -19,7 +19,49 @@
     "überblick"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Nutzung, Haltedauer und Struktur sind individuell zu prüfen. Gesellschaften folgen anderen Regeln.",
+  "mechanics": "Steuerliche Effekte sind eine zweite Rechnung neben dem tatsächlichen Cashflow. Entscheidend sind die steuerliche Bemessungsgrundlage, zeitliche Zuordnung, persönliche bzw. gesellschaftsrechtliche Situation und die Abgrenzung von abzugsfähigen Aufwendungen zu Anschaffungs- oder Herstellungskosten.",
+  "formulae": [
+    "Private Veräußerung: Zeitraum zwischen Anschaffung und Veräußerung nach § 23 EStG prüfen"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Vermietete Wohnung Kauf 2018",
+      "Verkauf 2026"
+    ],
+    "steps": [
+      "Haltedauer unter zehn Jahren → steuerliche Prüfung eines privaten Veräußerungsgeschäfts erforderlich."
+    ],
+    "interpretation": "Eigennutzungs-Ausnahmen und gewerblicher Grundstückshandel können die Einordnung verändern. Vor Verkauf steuerlich prüfen."
+  },
+  "drivers": [
+    "Gebäude- versus Bodenanteil",
+    "AfA-Methode und Fertigstellungsjahr",
+    "Finanzierungszinsen und sonstige Werbungskosten",
+    "Persönlicher Steuersatz bzw. Gesellschaftsstruktur",
+    "Haltedauer und Veräußerungsstrategie"
+  ],
+  "risks": [
+    "Steuerersparnis ersetzt keinen positiven Objekt-Cashflow.",
+    "Gesetze und Verwaltungsauffassung können sich ändern.",
+    "Einzelfälle sollten mit Steuerberatung und belastbaren Unterlagen geprüft werden."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [
+    {
+      "label": "§ 23 EStG – Private Veräußerungsgeschäfte",
+      "url": "https://www.gesetze-im-internet.de/estg/__23.html"
+    }
+  ],
+  "assistantAnswer": "Private Veräußerungsgewinne können innerhalb gesetzlicher Fristen steuerpflichtig sein. Eigennutzungs-Ausnahmen und gewerblicher Grundstückshandel können die Einordnung verändern. Vor Verkauf steuerlich prüfen."
 }

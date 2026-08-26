@@ -20,7 +20,45 @@
     "zahlungshistorie"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Staffel, Index, Befristung, Nebenabreden und Kaution beeinflussen den Ertrag.",
+  "mechanics": "Vermietungsmodelle müssen rechtlich zulässige Mietentwicklung und realistische Kosten abbilden. Bestandsmiete, Neuvertragsmiete, Betriebskosten, Leerstand und Instandhaltung dürfen nicht vermischt werden.",
+  "formulae": [
+    "Erwarteter Ertrag = vertragliche Miete × Zahlungswahrscheinlichkeit − Vermietungs-/Ausfallkosten"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Jahresnettokaltmiete 18.000 €",
+      "stabiler unbefristeter Mietvertrag",
+      "zusätzlich 2 % Risikoreserve"
+    ],
+    "steps": [
+      "modellierter Ertrag = 17.640 € vor sonstigen Kosten."
+    ],
+    "interpretation": "Mietvertrag, Bonität, Laufzeit, Staffeln/Index und Rechte/Pflichten beeinflussen Ertragssicherheit stärker als die bloße Monatsmiete."
+  },
+  "drivers": [
+    "Mietvertrag und Ausgangsmiete",
+    "örtliche Vergleichsmiete und Regulierungsrahmen",
+    "umlagefähige und nicht umlagefähige Kosten",
+    "Leerstands- und Ausfallrisiko",
+    "WEG-Beschlüsse und Instandhaltungsbedarf"
+  ],
+  "risks": [
+    "Nicht jede rechnerisch mögliche Mieterhöhung ist rechtlich zulässig.",
+    "Mietausfall und Renovierungszeiten zwischen Mietverhältnissen können den Jahresertrag mindern.",
+    "Hausgeldpositionen sind für Eigentümer und Mieter unterschiedlich zu behandeln."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Die vertragliche Miete ist nur dann belastbar, wenn Vertrag und Zahlungshistorie geprüft sind. Mietvertrag, Bonität, Laufzeit, Staffeln/Index und Rechte/Pflichten beeinflussen Ertragssicherheit stärker als die bloße Monatsmiete."
 }

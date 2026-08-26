@@ -20,7 +20,50 @@
     "wird"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Bonität, Objektqualität, Beleihungswert und Rücklagen sind entscheidend. Die genaue Definition muss im Rechner ausgewählt werden.",
+  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
+  "formulae": [
+    "Finanzierungsquote = Darlehen / Kaufpreis",
+    "Monatsrate ≈ Darlehen × (Sollzins + anfängliche Tilgung) / 12"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Kaufpreis 400.000 €",
+      "Nebenkosten 40.000 € aus Eigenkapital",
+      "Darlehen 400.000 €",
+      "Beispielzins 4,0 %",
+      "Tilgung 2,0 %"
+    ],
+    "steps": [
+      "Jahresannuität = 400.000 × 6,0 % = 24.000 €",
+      "Monatsrate = 2.000 €",
+      "Eigenkapitalbedarf in diesem Beispiel: 40.000 € Nebenkosten + Reserve"
+    ],
+    "interpretation": "Eine 100-%-Finanzierung finanziert den Kaufpreis, nicht zwingend die Nebenkosten. Gegenüber einer 80- oder 90-%-Finanzierung kann der Zinssatz höher ausfallen, weil der Beleihungsauslauf steigt."
+  },
+  "drivers": [
+    "Darlehenshöhe und Beleihungsauslauf",
+    "Sollzins, Tilgung und Zinsbindung",
+    "Restschuld zum Ende der Zinsbindung",
+    "Liquiditätsreserve und Sondertilgungsrechte",
+    "Objektqualität und bankseitiger Beleihungswert"
+  ],
+  "risks": [
+    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
+    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
+    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Bei einer 100-Prozent-Finanzierung wird regelmäßig der Kaufpreis finanziert, nicht automatisch jede Nebenkostenposition. Eine 100-%-Finanzierung finanziert den Kaufpreis, nicht zwingend die Nebenkosten. Gegenüber einer 80- oder 90-%-Finanzierung kann der Zinssatz höher ausfallen, weil der Beleihungsauslauf steigt."
 }

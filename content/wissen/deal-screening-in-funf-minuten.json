@@ -23,7 +23,48 @@
     "zins"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Besteht der Deal den Schnelltest, folgt die vollständige Prüfung mit Dokumenten und Szenarien.",
+  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
+  "formulae": [
+    "Bruttorendite, Faktor, grober Cashflow und EK-Bedarf als erste Filter"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Kaufpreis 250.000 €",
+      "Miete 1.100 €",
+      "Nebenkosten 10 %",
+      "Darlehen 225.000 € zu 4 % + 2 % Tilgung"
+    ],
+    "steps": [
+      "Bruttorendite = 5,28 %",
+      "Faktor = 18,94",
+      "Rate ≈ 1.125 €; vor Eigentümerkosten bereits nahe der Monatsmiete."
+    ],
+    "interpretation": "Das Screening beantwortet nur, ob eine tiefe Prüfung lohnt. Es ersetzt keine Due Diligence."
+  },
+  "drivers": [
+    "Jahresnettokaltmiete und Mietvertragsqualität",
+    "Kaufpreis plus Erwerbsnebenkosten",
+    "Nicht umlagefähige Kosten, Verwaltung und Capex",
+    "Finanzierungsstruktur und Tilgung",
+    "Exit-Annahmen und Haltedauer"
+  ],
+  "risks": [
+    "Bruttorenditen blenden Kosten und Finanzierung aus.",
+    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
+    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Ein schneller Check nutzt Kaufpreis, Jahresmiete, nicht umlagefähige Kosten, Zins und Tilgung. Das Screening beantwortet nur, ob eine tiefe Prüfung lohnt. Es ersetzt keine Due Diligence."
 }

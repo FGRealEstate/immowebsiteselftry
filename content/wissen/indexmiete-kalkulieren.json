@@ -15,7 +15,50 @@
     "verbraucherpreisindex"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Anpassungen erfolgen nicht automatisch und sind an formelle Vorgaben gebunden. Inflation und Zahlungsfähigkeit der Mieter sind getrennt zu betrachten.",
+  "mechanics": "Vermietungsmodelle müssen rechtlich zulässige Mietentwicklung und realistische Kosten abbilden. Bestandsmiete, Neuvertragsmiete, Betriebskosten, Leerstand und Instandhaltung dürfen nicht vermischt werden.",
+  "formulae": [
+    "Neue Indexmiete = Ausgangsmiete × neuer Verbraucherpreisindex / Ausgangsindex"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Ausgangsmiete 1.000 €",
+      "Ausgangsindex 118,0",
+      "neuer Index 123,9"
+    ],
+    "steps": [
+      "rechnerische Anpassung = 1.000 × 123,9 / 118,0 ≈ 1.050 €"
+    ],
+    "interpretation": "Die konkrete Mieterhöhung setzt die gesetzlichen und vertraglichen Voraussetzungen voraus. Nicht jede Indexbewegung wird automatisch zur neuen Miete."
+  },
+  "drivers": [
+    "Mietvertrag und Ausgangsmiete",
+    "örtliche Vergleichsmiete und Regulierungsrahmen",
+    "umlagefähige und nicht umlagefähige Kosten",
+    "Leerstands- und Ausfallrisiko",
+    "WEG-Beschlüsse und Instandhaltungsbedarf"
+  ],
+  "risks": [
+    "Nicht jede rechnerisch mögliche Mieterhöhung ist rechtlich zulässig.",
+    "Mietausfall und Renovierungszeiten zwischen Mietverhältnissen können den Jahresertrag mindern.",
+    "Hausgeldpositionen sind für Eigentümer und Mieter unterschiedlich zu behandeln."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [
+    {
+      "label": "§ 557b BGB – Indexmiete",
+      "url": "https://www.gesetze-im-internet.de/bgb/__557b.html"
+    }
+  ],
+  "assistantAnswer": "Indexmieten koppeln Anpassungen an den Verbraucherpreisindex. Die konkrete Mieterhöhung setzt die gesetzlichen und vertraglichen Voraussetzungen voraus. Nicht jede Indexbewegung wird automatisch zur neuen Miete."
 }

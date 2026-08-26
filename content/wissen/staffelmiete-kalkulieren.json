@@ -17,7 +17,50 @@
     "staffelmieten"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Die Staffeln müssen wirksam vereinbart sein. Betriebskosten und Modernisierungsmöglichkeiten sind gesondert zu prüfen.",
+  "mechanics": "Vermietungsmodelle müssen rechtlich zulässige Mietentwicklung und realistische Kosten abbilden. Bestandsmiete, Neuvertragsmiete, Betriebskosten, Leerstand und Instandhaltung dürfen nicht vermischt werden.",
+  "formulae": [
+    "Staffelmiete: im Vertrag vereinbarte Eurobeträge je Stufe; keine prozentuale Automatik erforderlich"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Startmiete 1.000 €",
+      "ab Jahr 2: 1.030 €",
+      "ab Jahr 4: 1.061 €"
+    ],
+    "steps": [
+      "Die Zahlungsreihe kann exakt aus den vereinbarten Staffeln modelliert werden."
+    ],
+    "interpretation": "Nach § 557a BGB muss die jeweilige Miethöhe mindestens ein Jahr unverändert bleiben; die Staffel ist in Geldbetrag auszuweisen. Vertrag konkret prüfen."
+  },
+  "drivers": [
+    "Mietvertrag und Ausgangsmiete",
+    "örtliche Vergleichsmiete und Regulierungsrahmen",
+    "umlagefähige und nicht umlagefähige Kosten",
+    "Leerstands- und Ausfallrisiko",
+    "WEG-Beschlüsse und Instandhaltungsbedarf"
+  ],
+  "risks": [
+    "Nicht jede rechnerisch mögliche Mieterhöhung ist rechtlich zulässig.",
+    "Mietausfall und Renovierungszeiten zwischen Mietverhältnissen können den Jahresertrag mindern.",
+    "Hausgeldpositionen sind für Eigentümer und Mieter unterschiedlich zu behandeln."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [
+    {
+      "label": "§ 557a BGB – Staffelmiete",
+      "url": "https://www.gesetze-im-internet.de/bgb/__557a.html"
+    }
+  ],
+  "assistantAnswer": "Staffelmieten machen künftige nominale Mieten planbarer. Nach § 557a BGB muss die jeweilige Miethöhe mindestens ein Jahr unverändert bleiben; die Staffel ist in Geldbetrag auszuweisen. Vertrag konkret prüfen."
 }

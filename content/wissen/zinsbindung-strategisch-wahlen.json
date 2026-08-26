@@ -15,7 +15,48 @@
     "zinsänderungsrisiko"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Kurze Bindungen können günstiger sein, erhöhen aber das Anschlussrisiko. Lange Bindungen schaffen Planbarkeit, können jedoch Aufschläge enthalten.",
+  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
+  "formulae": [
+    "Zinsbindungsentscheidung = Preis der Sicherheit vs. Flexibilitäts- und Anschlussrisiko"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Darlehen 350.000 €",
+      "10 Jahre: beispielhaft 3,8 %",
+      "15 Jahre: beispielhaft 4,0 %",
+      "Tilgung 2 %"
+    ],
+    "steps": [
+      "10 Jahre Rate ≈ 1.692 €",
+      "15 Jahre Rate ≈ 1.750 €",
+      "Mehrpreis der längeren Sicherheit ≈ 58 € monatlich im Startvergleich."
+    ],
+    "interpretation": "Längere Zinsbindung kann das Anschlussrisiko reduzieren, kostet aber häufig einen Zinsaufschlag. Die Entscheidung hängt von Restschuld, Risikotoleranz und Flexibilitätsbedarf ab."
+  },
+  "drivers": [
+    "Darlehenshöhe und Beleihungsauslauf",
+    "Sollzins, Tilgung und Zinsbindung",
+    "Restschuld zum Ende der Zinsbindung",
+    "Liquiditätsreserve und Sondertilgungsrechte",
+    "Objektqualität und bankseitiger Beleihungswert"
+  ],
+  "risks": [
+    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
+    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
+    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Die Zinsbindung verteilt Zinsänderungsrisiko und Flexibilität. Längere Zinsbindung kann das Anschlussrisiko reduzieren, kostet aber häufig einen Zinsaufschlag. Die Entscheidung hängt von Restschuld, Risikotoleranz und Flexibilitätsbedarf ab."
 }

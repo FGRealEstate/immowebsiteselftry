@@ -15,7 +15,45 @@
     "zahlungsströme"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Der gewählte Diskontsatz ist eine zentrale Annahme und sollte Risiko sowie alternative Anlagechancen abbilden.",
+  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
+  "formulae": [
+    "NPV = Σ CF_t / (1+r)^t − Anfangsinvestition"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Anfangs-EK 100.000 €",
+      "Diskontsatz 5 %",
+      "Barwert aller künftigen Nettozuflüsse 118.000 €"
+    ],
+    "steps": [
+      "Kapitalwert = +18.000 €"
+    ],
+    "interpretation": "Ein positiver Kapitalwert bedeutet im Modell, dass die angenommene Mindestverzinsung von 5 % übertroffen wird. Ergebnis hängt vollständig von Cashflows und Diskontsatz ab."
+  },
+  "drivers": [
+    "Jahresnettokaltmiete und Mietvertragsqualität",
+    "Kaufpreis plus Erwerbsnebenkosten",
+    "Nicht umlagefähige Kosten, Verwaltung und Capex",
+    "Finanzierungsstruktur und Tilgung",
+    "Exit-Annahmen und Haltedauer"
+  ],
+  "risks": [
+    "Bruttorenditen blenden Kosten und Finanzierung aus.",
+    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
+    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Der Kapitalwert diskontiert künftige Zahlungsströme auf heute. Ein positiver Kapitalwert bedeutet im Modell, dass die angenommene Mindestverzinsung von 5 % übertroffen wird. Ergebnis hängt vollständig von Cashflows und Diskontsatz ab."
 }

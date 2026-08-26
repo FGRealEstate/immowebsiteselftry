@@ -7,5 +7,16 @@
   "keywords": [
     "beleihungsauslauf"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "explanation": "Verhältnis des Darlehens zum bankseitigen Beleihungswert. Er ist für Risikoklasse und Kondition häufig wichtiger als die reine Kaufpreis-Finanzierungsquote.",
+  "practiceExample": "360.000 € Darlehen / 450.000 € Beleihungswert = 80 %.",
+  "formula": "Beleihungsauslauf = Darlehen / Beleihungswert",
+  "sources": [],
+  "checklist": [
+    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
+    "Bezugsgröße und Zeitraum klären.",
+    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
+  ],
+  "assistantAnswer": "Verhältnis des Darlehens zum bankseitigen Beleihungswert. Er ist für Risikoklasse und Kondition häufig wichtiger als die reine Kaufpreis-Finanzierungsquote. 360.000 € Darlehen / 450.000 € Beleihungswert = 80 %."
 }

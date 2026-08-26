@@ -937,6 +937,15 @@
   function searchKB(query, limit=5){
     return KB.map(e=>({entry:e,score:scoreEntry(e,query)})).filter(x=>x.score>5).sort((a,b)=>b.score-a.score).slice(0,limit);
   }
+  const SHARED_KB=Array.isArray(window.FG_SHARED_KNOWLEDGE)?window.FG_SHARED_KNOWLEDGE:[];
+  function scoreShared(entry,query){
+    const nq=normalize(query), title=normalize(entry.title||''), summary=normalize(entry.summary||''), keys=normalize((entry.keywords||[]).join(' '));
+    let score=0; if(title===nq)score+=130; if(nq.length>5&&(title.includes(nq)||nq.includes(title)))score+=52;
+    expandedTokens(query).forEach(t=>{if(title.split(' ').includes(t))score+=10;if(keys.split(' ').includes(t))score+=7;if(summary.split(' ').includes(t))score+=3;});
+    return score;
+  }
+  function searchShared(query,limit=4){return SHARED_KB.map(e=>({entry:e,score:scoreShared(e,query)})).filter(x=>x.score>=18).sort((a,b)=>b.score-a.score).slice(0,limit)}
+  function confidentShared(hits){if(!hits.length)return null;const f=hits[0],s=hits[1];if(f.score>=58)return f;if(f.score<24)return null;if(s&&f.score-s.score<5&&f.score<42)return null;return f;}
   function confidentHit(hits){
     if(!hits.length)return null;
     const first=hits[0],second=hits[1];
@@ -979,7 +988,7 @@
 
   function initialHtml(){
     return `<span class="fg-ai-kicker">F&G Immobiliennavigator</span>
-      <p><strong>Guten Tag.</strong> Ich helfe mit über 140 Wissensmodulen und geführten Prozessen bei Fragen zu Immobilienkauf, Verkauf, Finanzierung, Kapitalanlage, Vermietung, Kosten und Unterlagen.</p>
+      <p><strong>Guten Tag.</strong> Ich helfe mit über 180 strukturierten Wissenseinträgen und geführten Prozessen bei Fragen zu Immobilienkauf, Verkauf, Finanzierung, Kapitalanlage, Vermietung, Kosten und Unterlagen.</p>
       <p>Sie können frei schreiben oder direkt einen Bereich wählen.</p>
       ${categoryGridHtml()}
       ${suggestionsHtml(['Wie wird ein Makler vergütet?','Welche Kaufnebenkosten fallen an?','Wie viel Eigenkapital brauche ich?','Wie prüfe ich eine Kapitalanlage?'])}`;
@@ -1014,7 +1023,11 @@
       if(nq.includes('rechner')||/berechne|ausrechnen|kalkulier/.test(nq)){addMessage('assistant',`<p>Welchen Rechner möchten Sie öffnen?</p><div class="fg-ai-actions"><button class="fg-ai-action is-gold" data-fg-ai-tool="purchaseCosts">Kaufnebenkosten</button><button class="fg-ai-action is-light" data-fg-ai-tool="loanRate">Monatsrate</button><button class="fg-ai-action is-light" data-fg-ai-tool="yield">Rendite & Cashflow</button><button class="fg-ai-action is-light" data-fg-ai-tool="budget">Kaufbudget</button></div>`);return;}
 
       const hits=searchKB(q,5), best=confidentHit(hits);
-      if(!best){addMessage('assistant',contactHandoffHtml(q));return;}
+      if(!best){
+        const sharedHit=confidentShared(searchShared(q,4));
+        if(sharedHit){const item=sharedHit.entry;addMessage('assistant',`<span class="fg-ai-kicker">${escapeHtml(item.category||'Immobilienwissen')}</span><p><strong>${escapeHtml(item.title)}</strong></p><p>${escapeHtml(item.answer)}</p><div class="fg-ai-actions"><a class="fg-ai-action is-gold" href="${escapeHtml(item.url)}"><i class="fas fa-book-open"></i>Im Investment Lab vertiefen</a><a class="fg-ai-action is-light" href="mailto:info@fg-realestate.de?subject=${encodeURIComponent('Frage zu '+item.title)}"><i class="fas fa-envelope"></i>E-Mail schreiben</a></div>`);return;}
+        addMessage('assistant',contactHandoffHtml(q));return;
+      }
       const entry=best.entry;
       let html=`<span class="fg-ai-kicker">${CAT_META[entry.cat]?.[1]||'Immobilienwissen'}</span><p><strong>${escapeHtml(entry.q)}</strong></p><p>${entry.answer}</p>`;
       if(entry.note)html+=`<div class="fg-ai-note">${entry.note}</div>`;

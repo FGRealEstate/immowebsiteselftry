@@ -17,7 +17,45 @@
     "zahlungsstörungen"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Ein pauschaler Ansatz von ein bis drei Prozent kann eine erste Orientierung sein; bei Gewerbe, möblierten Konzepten oder schwacher Nachfrage muss er objektspezifisch höher angesetzt werden.",
+  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
+  "formulae": [
+    "Effektive Jahresmiete = Sollmiete × (1 − Mietausfallquote)"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Sollmiete 18.000 € p.a.",
+      "Mietausfall-/Leerstandsannahme 3 %"
+    ],
+    "steps": [
+      "effektive Miete = 17.460 €",
+      "Risikokosten = 540 € p.a."
+    ],
+    "interpretation": "Die Quote sollte aus Objektart, Mieterstruktur und lokaler Vermietbarkeit abgeleitet werden, nicht aus einem pauschalen Wunschwert."
+  },
+  "drivers": [
+    "Jahresnettokaltmiete und Mietvertragsqualität",
+    "Kaufpreis plus Erwerbsnebenkosten",
+    "Nicht umlagefähige Kosten, Verwaltung und Capex",
+    "Finanzierungsstruktur und Tilgung",
+    "Exit-Annahmen und Haltedauer"
+  ],
+  "risks": [
+    "Bruttorenditen blenden Kosten und Finanzierung aus.",
+    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
+    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Mietausfall umfasst Leerstand, Zahlungsstörungen und nicht nahtlose Neuvermietung. Die Quote sollte aus Objektart, Mieterstruktur und lokaler Vermietbarkeit abgeleitet werden, nicht aus einem pauschalen Wunschwert."
 }

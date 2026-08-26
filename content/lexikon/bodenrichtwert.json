@@ -7,5 +7,21 @@
   "keywords": [
     "bodenrichtwert"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "explanation": "Durchschnittlicher Lagewert des Bodens für eine Bodenrichtwertzone zu einem Stichtag. Er ist Orientierungsgröße und kein automatischer Verkehrswert eines konkreten Grundstücks.",
+  "practiceExample": "600 m² × 900 €/m² = 540.000 € Ausgangswert vor objektspezifischen Anpassungen.",
+  "formula": "Bodenwert grob = Fläche × Bodenrichtwert",
+  "sources": [
+    {
+      "label": "§ 196 BauGB – Bodenrichtwerte",
+      "url": "https://www.gesetze-im-internet.de/bbaug/__196.html"
+    }
+  ],
+  "checklist": [
+    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
+    "Bezugsgröße und Zeitraum klären.",
+    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
+  ],
+  "assistantAnswer": "Durchschnittlicher Lagewert des Bodens für eine Bodenrichtwertzone zu einem Stichtag. Er ist Orientierungsgröße und kein automatischer Verkehrswert eines konkreten Grundstücks. 600 m² × 900 €/m² = 540.000 € Ausgangswert vor objektspezifischen Anpassungen."
 }

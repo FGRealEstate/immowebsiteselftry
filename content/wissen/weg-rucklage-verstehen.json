@@ -16,7 +16,44 @@
     "verstehen"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Eine niedrige Rücklage kann bei anstehenden Arbeiten zu Sonderumlagen führen. Protokolle, Beschlusssammlung und Instandhaltungsplan sind daher zentral.",
+  "mechanics": "Vermietungsmodelle müssen rechtlich zulässige Mietentwicklung und realistische Kosten abbilden. Bestandsmiete, Neuvertragsmiete, Betriebskosten, Leerstand und Instandhaltung dürfen nicht vermischt werden.",
+  "formulae": [
+    "Individueller wirtschaftlicher Anteil = WEG-Rücklage × Miteigentumsanteil – nur grobe Zuordnung"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "WEG-Rücklage 120.000 €",
+      "Miteigentumsanteil 50/1.000"
+    ],
+    "steps": [
+      "rechnerischer Anteil 6.000 €"
+    ],
+    "interpretation": "Die Rücklage gehört dem Verwaltungsvermögen der Gemeinschaft; der rechnerische Anteil ist kein frei verfügbares Guthaben des einzelnen Eigentümers. Höhe muss zum Sanierungsbedarf passen."
+  },
+  "drivers": [
+    "Mietvertrag und Ausgangsmiete",
+    "örtliche Vergleichsmiete und Regulierungsrahmen",
+    "umlagefähige und nicht umlagefähige Kosten",
+    "Leerstands- und Ausfallrisiko",
+    "WEG-Beschlüsse und Instandhaltungsbedarf"
+  ],
+  "risks": [
+    "Nicht jede rechnerisch mögliche Mieterhöhung ist rechtlich zulässig.",
+    "Mietausfall und Renovierungszeiten zwischen Mietverhältnissen können den Jahresertrag mindern.",
+    "Hausgeldpositionen sind für Eigentümer und Mieter unterschiedlich zu behandeln."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Die Erhaltungsrücklage dient künftigen Maßnahmen am Gemeinschaftseigentum. Die Rücklage gehört dem Verwaltungsvermögen der Gemeinschaft; der rechnerische Anteil ist kein frei verfügbares Guthaben des einzelnen Eigentümers. Höhe muss zum Sanierungsbedarf passen."
 }

@@ -19,7 +19,46 @@
     "vollständig"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Zusätzlich können Gutachten, Finanzierungskosten, Renovierung und Bereitstellungszinsen anfallen. Nicht jede Position ist in jedem Fall vorhanden.",
+  "mechanics": "Vor dem Kauf müssen rechtliche, technische, wirtschaftliche und finanzielle Prüfung zusammengeführt werden. Einzelkennzahlen ersetzen weder Objektunterlagen noch eine belastbare Bewertung.",
+  "formulae": [
+    "Gesamtinvestition = Kaufpreis + GrESt + Notar/Grundbuch + Makler + unmittelbare Erwerbs-/Investitionskosten"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Kaufpreis 400.000 €",
+      "Berlin GrESt 6 % = 24.000 €",
+      "Notar/Grundbuch beispielhaft 2 % = 8.000 €",
+      "Käufercourtage beispielhaft 3,57 % = 14.280 €"
+    ],
+    "steps": [
+      "Gesamt vor Renovierung = 446.280 €"
+    ],
+    "interpretation": "Für Rendite und Eigenkapitalbedarf sollte nicht nur der Kaufpreis im Nenner stehen, wenn Erwerbsnebenkosten wirtschaftlich gebundenes Kapital sind."
+  },
+  "drivers": [
+    "Eigentums- und Lastenverhältnisse",
+    "Flächen, Bauzustand und Energiezustand",
+    "Miet- und WEG-Unterlagen",
+    "Kaufpreis und Vergleichsdaten",
+    "Finanzierbarkeit und Liquiditätsbedarf"
+  ],
+  "risks": [
+    "Fehlende Unterlagen sind ein eigenes Risiko.",
+    "Technische Maßnahmen können den vermeintlichen Preisvorteil aufzehren.",
+    "Ein günstiger Quadratmeterpreis ist ohne Mikrolage und Zustand nicht aussagekräftig."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Grunderwerbsteuer, Notar, Grundbuch und gegebenenfalls Makler erhöhen den Kapitalbedarf. Für Rendite und Eigenkapitalbedarf sollte nicht nur der Kaufpreis im Nenner stehen, wenn Erwerbsnebenkosten wirtschaftlich gebundenes Kapital sind."
 }

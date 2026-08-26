@@ -7,5 +7,21 @@
   "keywords": [
     "staffelmiete"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Vermietung",
+  "explanation": "Mietvereinbarung mit im Voraus festgelegten Mietbeträgen für bestimmte Zeitabschnitte. Nach § 557a BGB muss die jeweilige Miete mindestens ein Jahr unverändert bleiben.",
+  "practiceExample": "1.000 € Startmiete, danach vereinbarte 1.030 € und später 1.061 €.",
+  "formula": "Zahlungsreihe folgt den vertraglich festgelegten Eurobeträgen",
+  "sources": [
+    {
+      "label": "§ 557a BGB – Staffelmiete",
+      "url": "https://www.gesetze-im-internet.de/bgb/__557a.html"
+    }
+  ],
+  "checklist": [
+    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
+    "Bezugsgröße und Zeitraum klären.",
+    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
+  ],
+  "assistantAnswer": "Mietvereinbarung mit im Voraus festgelegten Mietbeträgen für bestimmte Zeitabschnitte. Nach § 557a BGB muss die jeweilige Miete mindestens ein Jahr unverändert bleiben. 1.000 € Startmiete, danach vereinbarte 1.030 € und später 1.061 €."
 }

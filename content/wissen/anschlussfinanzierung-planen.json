@@ -18,7 +18,48 @@
     "zins"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Eine frühe Szenariorechnung zeigt, wie empfindlich die Rate auf Zinsänderungen reagiert. Forward-Darlehen sind eine Option, aber nicht immer wirtschaftlich.",
+  "mechanics": "Finanzierungsentscheidungen sollten nicht nur über die Anfangsrate beurteilt werden. Entscheidend sind Kapitaldienst, Restschuld, Beleihungsauslauf, Liquiditätsreserve und die Robustheit der Struktur bei veränderten Zinsen oder Einkommen.",
+  "formulae": [
+    "Neue Rate ≈ Restschuld × (neuer Sollzins + gewünschte Tilgung) / 12"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Restschuld in 3 Jahren: 250.000 €",
+      "heutige Rate 1.400 €",
+      "Szenario A neuer Zins 3,0 %",
+      "Szenario B neuer Zins 5,5 %",
+      "Tilgung jeweils 2,0 %"
+    ],
+    "steps": [
+      "A: 250.000 × 5,0 % / 12 ≈ 1.042 €",
+      "B: 250.000 × 7,5 % / 12 ≈ 1.563 €"
+    ],
+    "interpretation": "Die Anschlussfinanzierung ist primär ein Restschuld- und Zinsrisiko. Deshalb sollte mehrere Jahre vor Ende der Bindung geprüft werden, ob Sondertilgung, Prolongation, Umschuldung oder Forward sinnvoll sind."
+  },
+  "drivers": [
+    "Darlehenshöhe und Beleihungsauslauf",
+    "Sollzins, Tilgung und Zinsbindung",
+    "Restschuld zum Ende der Zinsbindung",
+    "Liquiditätsreserve und Sondertilgungsrechte",
+    "Objektqualität und bankseitiger Beleihungswert"
+  ],
+  "risks": [
+    "Zu niedrige Anfangstilgung kann die Restschuld stark erhöhen.",
+    "Zinssätze und Bankmargen sind bonitäts-, objekt- und marktbezogen; Beispielzinsen sind keine Angebote.",
+    "Nebenkosten, Bereitstellungszinsen und Modernisierungskosten gehören separat in die Liquiditätsplanung."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Entscheidend sind Restschuld, künftiger Zins und verbleibende Laufzeit. Die Anschlussfinanzierung ist primär ein Restschuld- und Zinsrisiko. Deshalb sollte mehrere Jahre vor Ende der Bindung geprüft werden, ob Sondertilgung, Prolongation, Umschuldung oder Forward sinnvoll sind."
 }

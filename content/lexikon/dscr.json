@@ -7,5 +7,16 @@
   "keywords": [
     "dscr"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "explanation": "Debt Service Coverage Ratio: Verhältnis des für den Kapitaldienst verfügbaren operativen Ertrags zum Kapitaldienst.",
+  "practiceExample": "90.000 € NOI / 60.000 € Kapitaldienst = 1,50.",
+  "formula": "DSCR = NOI / Kapitaldienst",
+  "sources": [],
+  "checklist": [
+    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
+    "Bezugsgröße und Zeitraum klären.",
+    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
+  ],
+  "assistantAnswer": "Debt Service Coverage Ratio: Verhältnis des für den Kapitaldienst verfügbaren operativen Ertrags zum Kapitaldienst. 90.000 € NOI / 60.000 € Kapitaldienst = 1,50."
 }

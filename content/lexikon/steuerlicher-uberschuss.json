@@ -7,5 +7,16 @@
   "keywords": [
     "steuerlicher überschuss"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Steuern",
+  "explanation": "Steuerlich ermittelte Einkünfte nach abzugsfähigen Aufwendungen. Steuerlicher Überschuss beeinflusst die steuerliche Modellrechnung. Maßgeblich sind Rechtsgrundlage, Bemessungsgrundlage und der konkrete Sachverhalt.",
+  "practiceExample": "Beispiel: Eine steuerliche Größe von 5.000 € entspricht nicht automatisch 5.000 € Liquidität, weil Abschreibungen nicht zahlungswirksam sein können.",
+  "formula": null,
+  "sources": [],
+  "checklist": [
+    "Begriff in der konkreten Vertrags-/Objektunterlage lokalisieren.",
+    "Bezugsgröße und Zeitraum klären.",
+    "Abgrenzung zu ähnlich klingenden Kennzahlen prüfen."
+  ],
+  "assistantAnswer": "Steuerlich ermittelte Einkünfte nach abzugsfähigen Aufwendungen. Steuerlicher Überschuss beeinflusst die steuerliche Modellrechnung. Maßgeblich sind Rechtsgrundlage, Bemessungsgrundlage und der konkrete Sachverhalt. Beispiel: Eine steuerliche Größe von 5.000 € entspricht nicht automatisch 5.000 € Liquidität, weil Abschreibungen nicht zahlungswirksam sein können."
 }

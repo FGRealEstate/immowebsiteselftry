@@ -22,7 +22,46 @@
     "überschuss"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Ein positiver Cashflow ist nicht automatisch ein gutes Investment und ein negativer Cashflow nicht automatisch schlecht. Tilgung baut Vermögen auf, während Rücklagen, Mietausfall und Steuern die Liquidität beeinflussen.",
+  "mechanics": "Eine Kapitalanlage ist ein Bündel aus Zahlungsströmen und Risiken. Renditekennzahlen werden erst aussagekräftig, wenn Kaufnebenkosten, nicht umlagefähige Kosten, Finanzierung, Leerstand, Capex, Steuern und ein realistisches Exit-Szenario konsistent modelliert sind.",
+  "formulae": [
+    "Cashflow vor Steuer = Nettokaltmiete − Eigentümerkosten − Kapitaldienst − Leerstands-/Instandhaltungsansätze"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Miete 1.500 €",
+      "nicht umlagefähig 180 €",
+      "Darlehensrate 1.150 €",
+      "zusätzliche Reserve 100 €"
+    ],
+    "steps": [
+      "Cashflow vor Steuer = +70 € mtl."
+    ],
+    "interpretation": "Ein kleiner positiver Cashflow ist erst robust, wenn Sonderumlagen, Mietausfall und Capex in Stressszenarien berücksichtigt sind."
+  },
+  "drivers": [
+    "Jahresnettokaltmiete und Mietvertragsqualität",
+    "Kaufpreis plus Erwerbsnebenkosten",
+    "Nicht umlagefähige Kosten, Verwaltung und Capex",
+    "Finanzierungsstruktur und Tilgung",
+    "Exit-Annahmen und Haltedauer"
+  ],
+  "risks": [
+    "Bruttorenditen blenden Kosten und Finanzierung aus.",
+    "Wertsteigerung ist eine Szenarioannahme, kein sicherer Ertrag.",
+    "Kurzfristig positiver Cashflow kann langfristige Sanierungsrisiken verdecken."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Cashflow zeigt, welcher laufende Überschuss oder Zuschuss nach Miete, Kosten und Finanzierung verbleibt. Ein kleiner positiver Cashflow ist erst robust, wenn Sonderumlagen, Mietausfall und Capex in Stressszenarien berücksichtigt sind."
 }

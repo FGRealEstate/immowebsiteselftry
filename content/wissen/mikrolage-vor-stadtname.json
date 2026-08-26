@@ -19,7 +19,45 @@
     "wichtiger"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "ÖPNV, Lärm, Nahversorgung, Arbeitgeber, Schulen, Quartiersentwicklung und Neubaupipeline beeinflussen Vermietbarkeit und Exit.",
+  "mechanics": "Standortdaten sind Kontextdaten. Für den konkreten Kaufpreis zählt die Mikrolage, die Objektqualität und die tatsächliche Vergleichbarkeit der herangezogenen Transaktionen.",
+  "formulae": [
+    "Keine einzelne Formel: Mikrolage wird über Vergleichsdaten und qualitative Faktoren operationalisiert"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Zwei Wohnungen je 70 m² im selben Bezirk",
+      "Objekt A 300 m zur S-Bahn, ruhige Seitenstraße",
+      "Objekt B 1,5 km entfernt an stark befahrener Hauptstraße"
+    ],
+    "steps": [
+      "Ein identischer Bezirksdurchschnitt würde Unterschiede bei Miete, Vermarktungsdauer und Exit-Liquidität verdecken."
+    ],
+    "interpretation": "Bei Immobilien ist der Stadtname ein grober Filter. Straßenabschnitt, ÖPNV, Lärm, Nahversorgung, Milieu und Gebäudestruktur entscheiden über die konkrete Nachfrage."
+  },
+  "drivers": [
+    "Mikrolage und Erreichbarkeit",
+    "Angebot, Nachfrage und Neubaupipeline",
+    "Bevölkerung und Arbeitgeberstruktur",
+    "tatsächliche Vergleichstransaktionen",
+    "Mietniveau und regulatorische Rahmenbedingungen"
+  ],
+  "risks": [
+    "Durchschnittswerte können Straßen- und Objektunterschiede verdecken.",
+    "Angebotspreise sind nicht automatisch Transaktionspreise.",
+    "Vergangene Preisentwicklung ist keine Prognose."
+  ],
+  "checklist": [
+    "Eingangsgrößen aus Originalunterlagen statt aus Werbeaussagen übernehmen.",
+    "Bezugszeitraum und Bezugsgröße jeder Kennzahl dokumentieren.",
+    "Basisszenario und mindestens ein konservatives Stressszenario rechnen.",
+    "Eurobeträge und Prozentwerte gemeinsam beurteilen.",
+    "Rechtliche, steuerliche und bankseitige Annahmen vor Umsetzung fachlich prüfen."
+  ],
+  "sources": [],
+  "assistantAnswer": "Straße, Block und fußläufige Umgebung sind oft wichtiger als die Stadt als Ganzes. Bei Immobilien ist der Stadtname ein grober Filter. Straßenabschnitt, ÖPNV, Lärm, Nahversorgung, Milieu und Gebäudestruktur entscheiden über die konkrete Nachfrage."
 }
