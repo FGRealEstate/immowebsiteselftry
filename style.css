@@ -1761,3 +1761,95 @@ main>section{scroll-margin-top:86px}.fg-reveal{will-change:transform,opacity}.fg
   .fg-contact-market-strip figure{height:72px;border-radius:11px}
   .fg-contact-market-strip figcaption{font-size:.58rem;left:6px;bottom:6px}
 }
+
+/* ===== 2026-08-26 image quality + uncropped media fix ===== */
+/* City cards: every source image remains fully visible. */
+.fg-region-card-image{
+  height:auto!important;
+  aspect-ratio:3 / 2;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,#f3f1eb,#e9e6de);
+  overflow:hidden;
+}
+.fg-region-card-image::after{background:linear-gradient(180deg,transparent 72%,rgba(8,8,47,.08))!important}
+.fg-region-card-image img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  transform:none!important;
+  filter:none!important;
+  image-rendering:auto;
+}
+.fg-region-card:hover .fg-region-card-image img{
+  transform:none!important;
+  filter:none!important;
+}
+.fg-region-places{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:18px;
+}
+.fg-region-places span{
+  display:inline-flex;
+  align-items:center;
+  min-height:30px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:#f4f1e8;
+  border:1px solid rgba(177,134,27,.24);
+  color:#08082F;
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.01em;
+}
+
+/* Personal imagery: use full high-resolution frame rather than portrait crops. */
+.fg-human-hero-card{
+  min-height:0!important;
+  aspect-ratio:3 / 2;
+  background:#07072d;
+}
+.fg-human-hero-card img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  image-rendering:auto;
+}
+.fg-human-story-images{
+  height:auto!important;
+  grid-template-columns:1fr 1fr!important;
+  align-items:start;
+}
+.fg-human-story-images img{
+  width:100%!important;
+  height:auto!important;
+  aspect-ratio:3 / 2;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:#f1efe9;
+  image-rendering:auto;
+}
+
+/* Contact market thumbnails also show the complete image. */
+.fg-contact-market-strip{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+.fg-contact-market-strip figure{height:96px!important;background:#111137!important}
+.fg-contact-market-strip img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  opacity:1!important;
+  image-rendering:auto;
+}
+
+@media(max-width:760px){
+  .fg-region-card-image{aspect-ratio:3 / 2}
+  .fg-human-hero-card{aspect-ratio:3 / 2}
+  .fg-human-story-images{grid-template-columns:1fr!important;gap:10px!important}
+  .fg-contact-market-strip{grid-template-columns:1fr 1fr!important}
+  .fg-contact-market-strip figure{height:82px!important}
+}
