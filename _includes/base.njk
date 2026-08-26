@@ -129,6 +129,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/fg-assistant.css">
 
     <!-- FONT AWESOME -->
     <link
@@ -299,6 +300,51 @@
 </footer>
 
 
+
+<!-- F&G digitaler Immobilien-Assistent: komplett regelbasiert, ohne externes KI-Modell -->
+<div class="fg-ai-assistant" data-fg-ai-assistant>
+  <button type="button" class="fg-ai-launcher" data-fg-ai-launcher aria-expanded="false" aria-controls="fg-ai-panel">
+    <span class="fg-ai-launcher-icon"><i class="fas fa-wand-magic-sparkles"></i></span>
+    <span class="fg-ai-launcher-copy"><small>Digitaler Navigator</small><strong>F&G Assistent</strong></span>
+  </button>
+
+  <section id="fg-ai-panel" class="fg-ai-panel" data-fg-ai-panel hidden aria-label="F&G Immobilien-Assistent">
+    <header class="fg-ai-header">
+      <div class="fg-ai-mark"><i class="fas fa-building-columns"></i></div>
+      <div class="fg-ai-title">
+        <strong>F&G Immobilien-Assistent</strong>
+        <span><i class="fg-ai-live-dot"></i> 87 Wissensmodule · 4 Rechner · nächste Schritte</span>
+      </div>
+      <div class="fg-ai-header-actions">
+        <button type="button" class="fg-ai-icon-btn" data-fg-ai-info aria-label="Informationen zum Assistenten" title="So funktioniert der Assistent"><i class="fas fa-circle-info"></i></button>
+        <button type="button" class="fg-ai-icon-btn" data-fg-ai-reset aria-label="Unterhaltung zurücksetzen" title="Neu starten"><i class="fas fa-arrow-rotate-left"></i></button>
+        <button type="button" class="fg-ai-icon-btn" data-fg-ai-close aria-label="Assistent schließen"><i class="fas fa-xmark"></i></button>
+      </div>
+    </header>
+
+    <nav class="fg-ai-nav" data-fg-ai-nav aria-label="Assistent Schnellnavigation">
+      <button type="button" class="is-active" data-nav="start"><i class="fas fa-compass"></i>Themen</button>
+      <button type="button" data-nav="rechner"><i class="fas fa-calculator"></i>Rechner</button>
+      <button type="button" data-nav="wege"><i class="fas fa-route"></i>Vorhaben</button>
+      <button type="button" data-nav="team"><i class="fas fa-user-tie"></i>Persönlich</button>
+    </nav>
+
+    <div class="fg-ai-messages" data-fg-ai-messages role="log" aria-live="polite" aria-relevant="additions"></div>
+
+    <form class="fg-ai-compose" data-fg-ai-form>
+      <div class="fg-ai-input-wrap">
+        <textarea class="fg-ai-input" data-fg-ai-input rows="1" maxlength="600" placeholder="Frage zu Kauf, Verkauf, Finanzierung, Rendite …" aria-label="Frage an den F&G Assistenten"></textarea>
+        <button class="fg-ai-send" type="submit" aria-label="Frage absenden"><i class="fas fa-arrow-up"></i></button>
+      </div>
+      <div class="fg-ai-compose-tools">
+        <span>Enter senden · Shift+Enter neue Zeile</span>
+        <button type="button" data-fg-ai-info>Wie funktioniert das?</button>
+      </div>
+    </form>
+    <div class="fg-ai-privacy"><i class="fas fa-shield-halved"></i> Antworten laufen lokal im Browser. Keine Übertragung an einen externen KI-Anbieter.</div>
+  </section>
+</div>
+
 <!-- Desktop-Schnellaktion: zurück zum Seitenanfang -->
 <button type="button" class="fg-back-to-top" data-back-to-top aria-label="Zum Seitenanfang"><i class="fas fa-arrow-up"></i></button>
 
@@ -321,5 +367,6 @@
 
 
 <script src="/script.js"></script>
+<script src="/fg-assistant.js"></script>
 </body>
 </html>

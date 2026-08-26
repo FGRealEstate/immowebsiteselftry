@@ -14,6 +14,8 @@ module.exports = function(eleventyConfig) {
     // Stellt sicher, dass Assets und Verifizierungsdateien in den _site-Ordner kopiert werden.
     eleventyConfig.addPassthroughCopy("style.css");
     eleventyConfig.addPassthroughCopy("script.js");
+    eleventyConfig.addPassthroughCopy("fg-assistant.js");
+    eleventyConfig.addPassthroughCopy("fg-assistant.css");
     eleventyConfig.addPassthroughCopy("investment-lab.js");
     eleventyConfig.addPassthroughCopy("consent-manager.js");
     eleventyConfig.addPassthroughCopy("consent-manager.css");
