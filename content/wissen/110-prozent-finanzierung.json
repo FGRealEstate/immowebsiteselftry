@@ -87,5 +87,30 @@
       ]
     ],
     "note": "*Reine Rechenannahmen zur Veranschaulichung; keine aktuellen Bankkonditionen oder festen Zinsaufschläge."
+  },
+  "barChart": {
+    "title": "Ratenwirkung verschiedener Finanzierungsquoten",
+    "subtitle": "Beispiel: 400.000 € Kaufpreis und 40.000 € Erwerbsnebenkosten.",
+    "items": [
+      {
+        "label": "95 % Kaufpreisfinanzierung",
+        "value": 1837,
+        "display": "ca. 1.837 €/Monat",
+        "width": 77.1
+      },
+      {
+        "label": "100 % Kaufpreisfinanzierung",
+        "value": 2000,
+        "display": "2.000 €/Monat",
+        "width": 83.9
+      },
+      {
+        "label": "110 % inkl. Nebenkosten",
+        "value": 2383,
+        "display": "ca. 2.383 €/Monat",
+        "width": 100.0
+      }
+    ],
+    "note": "Der Mehrbelastungseffekt entsteht aus zwei Komponenten: einer höheren Darlehenssumme und – je nach Bank, Beleihungsauslauf und Bonität – einer ungünstigeren Kondition."
   }
 }

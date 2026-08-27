@@ -81,5 +81,69 @@
         "höhere Rate, schnellere Entschuldung"
       ]
     ]
+  },
+  "lineChart": {
+    "title": "Restschuldverlauf: Annuitätendarlehen vs. Tilgungsdarlehen",
+    "subtitle": "Gleiche Ausgangsschuld von 300.000 €. Annuitätendarlehen: 4,20 % Sollzins, 2,00 % Anfangstilgung, 1.550 € Monatsrate. Tilgungsdarlehen: konstante Tilgung über 25 Jahre; die Rate fällt im Zeitverlauf.",
+    "viewBox": "0 0 700 320",
+    "xLabels": [
+      {
+        "x": 60,
+        "label": "0 J."
+      },
+      {
+        "x": 180,
+        "label": "5 J."
+      },
+      {
+        "x": 300,
+        "label": "10 J."
+      },
+      {
+        "x": 420,
+        "label": "15 J."
+      },
+      {
+        "x": 540,
+        "label": "20 J."
+      },
+      {
+        "x": 660,
+        "label": "25 J."
+      }
+    ],
+    "yLabels": [
+      {
+        "y": 270,
+        "label": "0 €"
+      },
+      {
+        "y": 190,
+        "label": "100 T€"
+      },
+      {
+        "y": 110,
+        "label": "200 T€"
+      },
+      {
+        "y": 30,
+        "label": "300 T€"
+      }
+    ],
+    "series": [
+      {
+        "name": "Annuitätendarlehen",
+        "className": "series-a",
+        "points": "60.0,30.0 84.0,34.9 108.0,40.0 132.0,45.3 156.0,50.9 180.0,56.7 204.0,62.7 228.0,69.0 252.0,75.5 276.0,82.4 300.0,89.5 324.0,97.0 348.0,104.7 372.0,112.8 396.0,121.3 420.0,130.1 444.0,139.2 468.0,148.8 492.0,158.8 516.0,169.2 540.0,180.1 564.0,191.4 588.0,203.2 612.0,215.5 636.0,228.3 660.0,241.7",
+        "endLabel": "35 T€"
+      },
+      {
+        "name": "Tilgungsdarlehen",
+        "className": "series-b",
+        "points": "60.0,30.0 84.0,39.6 108.0,49.2 132.0,58.8 156.0,68.4 180.0,78.0 204.0,87.6 228.0,97.2 252.0,106.8 276.0,116.4 300.0,126.0 324.0,135.6 348.0,145.2 372.0,154.8 396.0,164.4 420.0,174.0 444.0,183.6 468.0,193.2 492.0,202.8 516.0,212.4 540.0,222.0 564.0,231.6 588.0,241.2 612.0,250.8 636.0,260.4 660.0,270.0",
+        "endLabel": "0 €"
+      }
+    ],
+    "note": "Die Grafik vergleicht nicht „besser“ gegen „schlechter“, sondern zwei unterschiedliche Tilgungsmechaniken. Beim Tilgungsdarlehen ist die anfängliche Rate höher, weil die Tilgung konstant bleibt und nur der Zinsanteil sinkt. Beim Annuitätendarlehen bleibt die Rate konstant; dadurch steigt der Tilgungsanteil erst schrittweise."
   }
 }

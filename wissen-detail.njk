@@ -49,6 +49,43 @@ eleventyComputed:
     <section class="science-section"><h2>{{ article.timeline.title }}</h2><div class="science-timeline">{% for item in article.timeline.items %}<div class="timeline-item"><div class="timeline-label">{{ item.label }}</div><div><h3>{{ item.title }}</h3><p>{{ item.text }}</p></div></div>{% endfor %}</div></section>
     {% endif %}
 
+
+    {% if article.lineChart %}
+    <section class="science-section science-chart-section">
+      <h2>{{ article.lineChart.title }}</h2>
+      {% if article.lineChart.subtitle %}<p class="chart-intro">{{ article.lineChart.subtitle }}</p>{% endif %}
+      <div class="science-line-chart-card">
+        <svg class="science-line-chart" viewBox="{{ article.lineChart.viewBox or '0 0 700 320' }}" role="img" aria-label="{{ article.lineChart.title }}">
+          <g class="chart-grid">
+            {% for y in article.lineChart.yLabels %}<line x1="60" x2="660" y1="{{ y.y }}" y2="{{ y.y }}"></line><text x="50" y="{{ y.y + 4 }}" text-anchor="end">{{ y.label }}</text>{% endfor %}
+            {% for x in article.lineChart.xLabels %}<line x1="{{ x.x }}" x2="{{ x.x }}" y1="30" y2="270"></line><text x="{{ x.x }}" y="296" text-anchor="middle">{{ x.label }}</text>{% endfor %}
+          </g>
+          {% for series in article.lineChart.series %}
+            <polyline class="chart-series {{ series.className }}" points="{{ series.points }}"></polyline>
+          {% endfor %}
+        </svg>
+        <div class="chart-legend">{% for series in article.lineChart.series %}<span><i class="{{ series.className }}"></i>{{ series.name }}</span>{% endfor %}</div>
+      </div>
+      {% if article.lineChart.note %}<p class="chart-note">{{ article.lineChart.note }}</p>{% endif %}
+    </section>
+    {% endif %}
+
+    {% if article.barChart %}
+    <section class="science-section science-chart-section">
+      <h2>{{ article.barChart.title }}</h2>
+      {% if article.barChart.subtitle %}<p class="chart-intro">{{ article.barChart.subtitle }}</p>{% endif %}
+      <div class="science-bar-chart">
+        {% for item in article.barChart.items %}
+          <div class="bar-row">
+            <div class="bar-row-head"><strong>{{ item.label }}</strong><span>{{ item.display }}</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width: {{ item.width }}%"></div></div>
+          </div>
+        {% endfor %}
+      </div>
+      {% if article.barChart.note %}<p class="chart-note">{{ article.barChart.note }}</p>{% endif %}
+    </section>
+    {% endif %}
+
     {% if article.decisionUse %}<section class="science-section decision-section"><span class="lab-kicker">— ENTSCHEIDUNGSRELEVANZ —</span><h2>Was daraus für eine Immobilienentscheidung folgt</h2><p>{{ article.decisionUse }}</p></section>{% endif %}
 
     {% if article.sources and article.sources.length %}<section class="lab-source-section science-section"><h2>Quellen &amp; Rechtsgrundlagen</h2><ul>{% for source in article.sources %}<li><a href="{{ source.url }}" target="_blank" rel="noopener noreferrer">{{ source.label }}</a></li>{% endfor %}</ul><p class="lab-source-note">Rechts-, Steuer- und Förderstände können sich ändern. Maßgeblich ist der Stand im konkreten Einzelfall.</p></section>{% endif %}

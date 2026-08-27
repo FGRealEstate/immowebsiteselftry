@@ -96,5 +96,30 @@
         "ca. 1.563 €"
       ]
     ]
+  },
+  "barChart": {
+    "title": "Szenario der Anschlussrate ab 2031",
+    "subtitle": "250.000 € Restschuld, 2,0 % anfängliche Tilgung; nur der Anschlusszins variiert.",
+    "items": [
+      {
+        "label": "Marktzins 3,0 %",
+        "value": 1042,
+        "display": "1.042 €/Monat",
+        "width": 66.7
+      },
+      {
+        "label": "Forward-Zins 4,3 %",
+        "value": 1313,
+        "display": "1.313 €/Monat",
+        "width": 84.0
+      },
+      {
+        "label": "Marktzins 5,5 %",
+        "value": 1563,
+        "display": "1.563 €/Monat",
+        "width": 100.0
+      }
+    ],
+    "note": "Die Zinsabsicherung hat einen ökonomischen Wert, wenn das spätere Marktniveau über dem gesicherten Forward-Zins liegt. Bei deutlich fallenden Zinsen wirkt dieselbe Bindung dagegen nachteilig."
   }
 }

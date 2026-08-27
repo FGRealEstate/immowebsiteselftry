@@ -46,5 +46,30 @@
     "Die Belastung hängt von Restschuld, Anschlusszins und gewünschter Tilgung ab. Deshalb ist ein Stress auf der ursprünglichen Darlehenssumme weniger aussagekräftig als auf der erwarteten Restschuld.",
     "Bei Kapitalanlagen sollte parallel geprüft werden, ob Mietertrag und DSCR unter dem Stress noch ausreichen."
   ],
-  "decisionUse": "Mindestens +1, +2 und +3 Prozentpunkte auf den Anschlusszins rechnen und daraus neue Rate sowie Cashflow ableiten."
+  "decisionUse": "Mindestens +1, +2 und +3 Prozentpunkte auf den Anschlusszins rechnen und daraus neue Rate sowie Cashflow ableiten.",
+  "barChart": {
+    "title": "Monatsrate unter verschiedenen Anschlusszinsen",
+    "subtitle": "Beispielhafte Restschuld 300.000 €, 2,0 % Tilgung.",
+    "items": [
+      {
+        "label": "3,0 % Zins",
+        "value": 1250,
+        "display": "1.250 €/Monat",
+        "width": 62.5
+      },
+      {
+        "label": "4,5 % Zins",
+        "value": 1625,
+        "display": "1.625 €/Monat",
+        "width": 81.2
+      },
+      {
+        "label": "6,0 % Zins",
+        "value": 2000,
+        "display": "2.000 €/Monat",
+        "width": 100.0
+      }
+    ],
+    "note": "Ein Stresstest beantwortet nicht, welcher Zins eintreten wird. Er zeigt, ob die Finanzierung auch unter ungünstigeren Anschlussbedingungen tragfähig bleibt."
+  }
 }

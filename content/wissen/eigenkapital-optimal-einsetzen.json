@@ -90,5 +90,30 @@
       ]
     ],
     "note": "*Rechenannahmen. Konditionsstufen unterscheiden sich je Bank, Objekt und Bonität."
+  },
+  "barChart": {
+    "title": "Beispielhafte Ratenwirkung des Eigenkapitaleinsatzes",
+    "subtitle": "Mehr Eigenkapital reduziert nicht nur das Darlehen. Je nach Beleihungsauslauf kann zusätzlich eine günstigere Konditionsstufe erreicht werden.",
+    "items": [
+      {
+        "label": "40.000 € Eigenkapital",
+        "value": 2100,
+        "display": "ca. 2.100 €/Monat",
+        "width": 100.0
+      },
+      {
+        "label": "80.000 € Eigenkapital",
+        "value": 1815,
+        "display": "ca. 1.815 €/Monat",
+        "width": 86.4
+      },
+      {
+        "label": "120.000 € Eigenkapital",
+        "value": 1560,
+        "display": "ca. 1.560 €/Monat",
+        "width": 74.3
+      }
+    ],
+    "note": "Die Zinssätze sind Rechenannahmen, keine aktuellen Bankangebote. Der optimale Eigenkapitaleinsatz entsteht aus dem Zusammenspiel von Zinsersparnis, Liquiditätsreserve, Risiko und Opportunitätskosten."
   }
 }
