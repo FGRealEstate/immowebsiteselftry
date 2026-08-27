@@ -1,8 +1,8 @@
 {
   "title": "Bereitstellungszinsen",
   "category": "Finanzierung",
-  "summary": "Nicht abgerufene Darlehensteile können nach einer bereitstellungsfreien Zeit Kosten verursachen.",
-  "body": "Bei Neubau und Sanierung sollte der Auszahlungsplan zur Finanzierung passen.",
+  "summary": "Bereitstellungszinsen verteuern Darlehen, die zugesagt, aber nach einer freien Frist noch nicht abgerufen sind. Besonders relevant bei Bauträger- und Sanierungsfinanzierungen.",
+  "body": "Bereitstellungszinsen bzw. -provisionen werden auf noch nicht ausgezahlte Darlehensteile erhoben, sobald die vertraglich vereinbarte bereitstellungszinsfreie Zeit abgelaufen ist. Höhe und Freiphase sind bankabhängig.",
   "id": "bereitstellungszinsen",
   "slug": "bereitstellungszinsen",
   "url": "/wissen/bereitstellungszinsen/",
@@ -20,10 +20,10 @@
     "zeit"
   ],
   "synonyms": [],
-  "updated": "2026-08-26",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
-  "definition": "Bei Neubau und Sanierung sollte der Auszahlungsplan zur Finanzierung passen.",
+  "definition": "Bereitstellungszinsen bzw. -provisionen werden auf noch nicht ausgezahlte Darlehensteile erhoben, sobald die vertraglich vereinbarte bereitstellungszinsfreie Zeit abgelaufen ist. Höhe und Freiphase sind bankabhängig.",
   "formulae": [
     "Bereitstellungszins = noch nicht abgerufener Darlehensteil × Bereitstellungszinssatz × Zeitanteil"
   ],
@@ -39,12 +39,87 @@
     ],
     "interpretation": "Bei Neubau und Sanierung ist nicht nur der Sollzins wichtig. Die bereitstellungszinsfreie Zeit muss zum Zahlungsplan passen."
   },
-  "sources": [],
-  "assistantAnswer": "Nicht abgerufene Darlehensteile können nach einer bereitstellungsfreien Zeit Kosten verursachen. Bereitstellungszinsen entstehen, wenn zugesagte Darlehensteile nach Ablauf einer bereitstellungszinsfreien Zeit noch nicht abgerufen wurden. Das ist besonders bei Neubau, Bauträgerzahlungen und Sanierungen relevant.",
+  "sources": [
+    {
+      "label": "KfW 297/298 – Klimafreundlicher Neubau Wohngebäude",
+      "url": "https://www.kfw.de/inlandsfoerderung/Privatpersonen/Neubau/F%C3%B6rderprodukte/Klimafreundlicher-Neubau-Wohngeb%C3%A4ude-%28297-298%29/"
+    }
+  ],
+  "assistantAnswer": "Bereitstellungszinsen entstehen auf noch nicht abgerufene Darlehensteile nach Ende der freien Bereitstellungszeit. Beispiel: 200.000 € noch nicht abgerufen und 0,25 % pro Monat ergeben 500 € Kosten pro Monat. Bei KfW 297/298 wird nach aktueller Produktinformation ab dem 13. Monat 0,15 % pro Monat auf den noch nicht abgerufenen Betrag berechnet.",
   "focusPoints": [
     "Bereitstellungszinsen entstehen, wenn zugesagte Darlehensteile nach Ablauf einer bereitstellungszinsfreien Zeit noch nicht abgerufen wurden. Das ist besonders bei Neubau, Bauträgerzahlungen und Sanierungen relevant.",
     "Sie werden auf den noch nicht ausgezahlten Darlehensteil berechnet und erhöhen die Finanzierungskosten, obwohl das Geld noch nicht genutzt wurde.",
     "Die Zahlungspläne des Bauträgers beziehungsweise der Baufortschritt sollten deshalb mit der bereitstellungszinsfreien Zeit abgestimmt werden."
   ],
-  "decisionUse": "Nicht nur Sollzins und Tilgung vergleichen, sondern auch bereitstellungszinsfreie Zeit, Bereitstellungszinssatz und erwarteten Abrufplan."
+  "decisionUse": "Bei Neubau und Sanierung nicht nur Sollzins vergleichen: bereitstellungsfreie Zeit, Zahlungsplan und mögliche Bauverzögerung monetarisieren.",
+  "contentBlocks": [
+    {
+      "type": "timeline",
+      "title": "Typischer Zahlungsablauf im Bauträgerfall",
+      "items": [
+        {
+          "label": "Monat 0",
+          "title": "Kreditzusage",
+          "text": "Darlehen steht bereit; die Freiphase beginnt."
+        },
+        {
+          "label": "Monat 3–9",
+          "title": "Teilabrufe",
+          "text": "Bauträgerraten werden nach Baufortschritt ausbezahlt."
+        },
+        {
+          "label": "Ende Freiphase",
+          "title": "Kostenrisiko startet",
+          "text": "Nicht abgerufene Beträge können Bereitstellungszinsen auslösen."
+        },
+        {
+          "label": "Fertigstellung",
+          "title": "Vollabruf",
+          "text": "Mit vollständiger Auszahlung endet die Bereitstellungsbelastung."
+        }
+      ],
+      "intro": null
+    },
+    {
+      "type": "formula",
+      "title": "Monatliche Bereitstellungskosten",
+      "formulas": [
+        "Kosten pro Monat = noch nicht abgerufener Darlehensteil × Bereitstellungszinssatz pro Monat"
+      ],
+      "explanation": null
+    },
+    {
+      "type": "table",
+      "title": "Beispiel: 200.000 € noch nicht abgerufen",
+      "headers": [
+        "monatlicher Satz",
+        "Kosten/Monat",
+        "Kosten in 6 Monaten"
+      ],
+      "rows": [
+        [
+          "0,15 %",
+          "300 €",
+          "1.800 €"
+        ],
+        [
+          "0,25 %",
+          "500 €",
+          "3.000 €"
+        ],
+        [
+          "0,30 %",
+          "600 €",
+          "3.600 €"
+        ]
+      ],
+      "note": null
+    },
+    {
+      "type": "callout",
+      "title": "KfW 297/298",
+      "text": "Die aktuelle KfW-Produktinformation nennt für 297/298 ab dem 13. Monat 0,15 % Bereitstellungsprovision pro Monat auf den noch nicht abgerufenen Kreditbetrag. Andere Banken und Programme können abweichen.",
+      "tone": "gold"
+    }
+  ]
 }

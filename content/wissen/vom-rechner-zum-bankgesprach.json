@@ -1,8 +1,8 @@
 {
   "title": "Vom Rechner zum Bankgespräch",
   "category": "Finanzierung",
-  "summary": "Eine nachvollziehbare Kalkulation verbessert die Vorbereitung.",
-  "body": "Banken benötigen zusätzlich Einkommens-, Vermögens-, Objekt- und Mietunterlagen sowie eigene Bewertungsannahmen.",
+  "summary": "Eine gute Immobilienrechnung ist noch keine bankfähige Finanzierung. Für das Bankgespräch müssen Objekt, Einkommen, Eigenkapital und Darlehensstruktur in prüffähige Unterlagen übersetzt werden.",
+  "body": "Bankfähigkeit entsteht durch die Verbindung von persönlicher Bonität, Haushaltsüberschuss, Objektwert, Sicherheiten und vollständigen Unterlagen. Ein Investmentrechner kann die Wirtschaftlichkeit beurteilen, ersetzt aber weder Kreditprüfung noch bankseitige Objektbewertung.",
   "id": "vom-rechner-zum-bankgesprach",
   "slug": "vom-rechner-zum-bankgesprach",
   "url": "/wissen/vom-rechner-zum-bankgesprach/",
@@ -16,10 +16,10 @@
     "vorbereitung"
   ],
   "synonyms": [],
-  "updated": "2026-08-26",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
-  "definition": "Banken benötigen zusätzlich Einkommens-, Vermögens-, Objekt- und Mietunterlagen sowie eigene Bewertungsannahmen.",
+  "definition": "Bankfähigkeit entsteht durch die Verbindung von persönlicher Bonität, Haushaltsüberschuss, Objektwert, Sicherheiten und vollständigen Unterlagen. Ein Investmentrechner kann die Wirtschaftlichkeit beurteilen, ersetzt aber weder Kreditprüfung noch bankseitige Objektbewertung.",
   "formulae": [
     "Bankfähige Kapitaldienstrechnung = nachhaltiges Einkommen − Lebenshaltung − sonstige Verpflichtungen − Sicherheitsansätze"
   ],
@@ -37,11 +37,82 @@
     "interpretation": "Vor dem Bankgespräch sollten Selbstauskunft, Einkommensnachweise, Eigenkapitalnachweis und Objektunterlagen konsistent sein. Ein guter Rechner ersetzt keine Kreditentscheidung."
   },
   "sources": [],
-  "assistantAnswer": "Eine nachvollziehbare Kalkulation verbessert die Vorbereitung. Ein Online-Rechner liefert eine mathematische Rate, aber keine Kreditentscheidung. Banken prüfen zusätzlich Einkommen, Verpflichtungen, Bonität, Objektunterlagen und eigenen Beleihungswert.",
+  "assistantAnswer": "Vom Rechner zur Bank bedeutet: Kaufpreis und Nebenkosten plausibilisieren, Eigenkapital nachweisen, Einkommen/Bonität dokumentieren, Objektunterlagen vollständig machen und mehrere Darlehensstrukturen vergleichen. Erst dann ist ein Zinsangebot wirklich vergleichbar.",
   "focusPoints": [
     "Ein Online-Rechner liefert eine mathematische Rate, aber keine Kreditentscheidung. Banken prüfen zusätzlich Einkommen, Verpflichtungen, Bonität, Objektunterlagen und eigenen Beleihungswert.",
     "Für Kapitalanlagen werden Mieten häufig nicht zu 100 % als Einkommen angesetzt; bankinterne Abschläge und Bewirtschaftungskosten unterscheiden sich.",
     "Je besser die Unterlagen strukturiert sind, desto schneller lässt sich erkennen, welche Banklogik zum Fall passt."
   ],
-  "decisionUse": "Vor Bankanfrage Finanzierungsziel, Eigenkapital, Maximalrate und vollständige Objekt-/Bonitätsunterlagen konsistent aufbereiten."
+  "decisionUse": "Bankangebote auf eine gemeinsame Zielstruktur bringen. Erst danach effektiv vergleichen und die Restschuld am Zinsbindungsende mit in die Entscheidung nehmen.",
+  "contentBlocks": [
+    {
+      "type": "steps",
+      "title": "Vom Investment-Check zur Kreditentscheidung",
+      "items": [
+        {
+          "title": "1. Mittelbedarf fixieren",
+          "text": "Kaufpreis, Nebenkosten, Modernisierung und Reserve in einer vollständigen Kapitalbedarfsrechnung zusammenführen."
+        },
+        {
+          "title": "2. Eigenkapital nachweisen",
+          "text": "Konten, Depots, Schenkungen oder Privatdarlehen mit Herkunft und Verfügbarkeit dokumentieren."
+        },
+        {
+          "title": "3. Bonität aufbereiten",
+          "text": "Einkommen, Arbeitsvertrag, Verpflichtungen und Haushaltsüberschuss vollständig abbilden."
+        },
+        {
+          "title": "4. Objekt bankfähig machen",
+          "text": "Exposé, Grundbuch, Teilungserklärung/WEG-Unterlagen, Flächen, Mietverträge und Energieausweis bereitstellen."
+        },
+        {
+          "title": "5. Angebote strukturidentisch vergleichen",
+          "text": "Gleiche Darlehenshöhe, Tilgung, Zinsbindung, Sondertilgung und Auszahlungsbedingungen vergleichen."
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Ein Zins allein ist kein Vergleich",
+      "headers": [
+        "Merkmal",
+        "Angebot A",
+        "Angebot B"
+      ],
+      "rows": [
+        [
+          "Sollzins",
+          "3,90 %",
+          "3,80 %"
+        ],
+        [
+          "Tilgung",
+          "2,0 %",
+          "1,5 %"
+        ],
+        [
+          "Zinsbindung",
+          "15 Jahre",
+          "10 Jahre"
+        ],
+        [
+          "Sondertilgung",
+          "5 % p.a.",
+          "0 %"
+        ],
+        [
+          "Aussage",
+          "höhere Planbarkeit",
+          "niedrigerer Startzins, höhere Restschuld"
+        ]
+      ],
+      "note": null
+    },
+    {
+      "type": "callout",
+      "title": "Vergleich nur bei identischer Struktur",
+      "text": "Ein niedrigerer Sollzins kann durch kürzere Zinsbindung, geringere Tilgung oder schlechtere Sondertilgungsrechte erkauft sein. Deshalb Angebote zuerst normieren, dann bewerten.",
+      "tone": "navy"
+    }
+  ]
 }

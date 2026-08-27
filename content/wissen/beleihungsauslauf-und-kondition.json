@@ -1,8 +1,8 @@
 {
   "title": "Beleihungsauslauf und Kondition",
   "category": "Finanzierung",
-  "summary": "Der Beleihungsauslauf setzt das Darlehen ins Verhältnis zum bankseitigen Beleihungswert.",
-  "body": "Er ist nicht identisch mit Kaufpreisfinanzierung. Höhere Ausläufe können die Kondition verteuern oder zusätzliche Sicherheiten erfordern.",
+  "summary": "Der Beleihungsauslauf bezieht das Darlehen auf den bankseitigen Beleihungswert – nicht auf den Kaufpreis. Genau deshalb kann eine scheinbare 100-%-Finanzierung bankintern deutlich über 100 % liegen.",
+  "body": "Der Beleihungsauslauf ist das Verhältnis der relevanten Darlehenssumme zum von der Bank angesetzten Beleihungswert. Der Beleihungswert ist vorsichtiger als ein aktueller Marktpreis und kann unter dem Kaufpreis liegen.",
   "id": "beleihungsauslauf-und-kondition",
   "slug": "beleihungsauslauf-und-kondition",
   "url": "/wissen/beleihungsauslauf-und-kondition/",
@@ -16,10 +16,10 @@
     "verhältnis"
   ],
   "synonyms": [],
-  "updated": "2026-08-26",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
-  "definition": "Er ist nicht identisch mit Kaufpreisfinanzierung. Höhere Ausläufe können die Kondition verteuern oder zusätzliche Sicherheiten erfordern.",
+  "definition": "Der Beleihungsauslauf ist das Verhältnis der relevanten Darlehenssumme zum von der Bank angesetzten Beleihungswert. Der Beleihungswert ist vorsichtiger als ein aktueller Marktpreis und kann unter dem Kaufpreis liegen.",
   "formulae": [
     "Beleihungsauslauf = Darlehen / bankseitiger Beleihungswert"
   ],
@@ -37,11 +37,83 @@
     "interpretation": "Banken staffeln Konditionen häufig nach Risikoklassen bzw. Beleihungsauslauf. Deshalb kann zusätzliches Eigenkapital nicht nur die Darlehenssumme, sondern auch den Zinssatz senken."
   },
   "sources": [],
-  "assistantAnswer": "Der Beleihungsauslauf setzt das Darlehen ins Verhältnis zum bankseitigen Beleihungswert. Der Beleihungsauslauf setzt die Darlehenssumme ins Verhältnis zum bankinternen Beleihungswert, nicht zwingend zum Kaufpreis. Deshalb kann er höher sein als die einfache Kaufpreisfinanzierungsquote.",
+  "assistantAnswer": "Der Beleihungsauslauf = Darlehen / Beleihungswert. Kauft jemand für 400.000 € und die Bank setzt nur 360.000 € Beleihungswert an, entsprechen 400.000 € Darlehen einem Beleihungsauslauf von rund 111 %, obwohl der Kaufpreis zu 100 % finanziert wird. Das kann Kondition und Darstellbarkeit deutlich beeinflussen.",
   "focusPoints": [
     "Der Beleihungsauslauf setzt die Darlehenssumme ins Verhältnis zum bankinternen Beleihungswert, nicht zwingend zum Kaufpreis. Deshalb kann er höher sein als die einfache Kaufpreisfinanzierungsquote.",
     "Viele Banken arbeiten mit Konditionsstufen. Zusätzliche Eigenmittel können besonders dann wirksam sein, wenn dadurch eine günstigere Beleihungsauslauf-Schwelle erreicht wird.",
     "Der Effekt von Eigenkapital ist deshalb nicht linear: 20.000 € zusätzliches Eigenkapital können wenig bringen oder eine ganze Konditionsstufe auslösen."
   ],
-  "decisionUse": "Vor Einsatz zusätzlichen Eigenkapitals lohnt die Frage an die Bank, ab welcher Darlehenshöhe sich die Kondition tatsächlich verändert."
+  "decisionUse": "Eigenkapitalentscheidungen sollten an konkreten Bank-Konditionsstufen ausgerichtet werden. Der Beleihungsauslauf ist dafür oft die wichtigere Größe als die bloße Kaufpreisfinanzierungsquote.",
+  "contentBlocks": [
+    {
+      "type": "metrics",
+      "title": "Beispielobjekt",
+      "items": [
+        {
+          "label": "Kaufpreis",
+          "value": "400.000 €"
+        },
+        {
+          "label": "Bank-Beleihungswert",
+          "value": "360.000 €"
+        },
+        {
+          "label": "Abschlag zum Kaufpreis",
+          "value": "10,0 %"
+        }
+      ]
+    },
+    {
+      "type": "formula",
+      "title": "Bankinterne Perspektive",
+      "formulas": [
+        "Beleihungsauslauf = Darlehen / Beleihungswert × 100"
+      ],
+      "explanation": null
+    },
+    {
+      "type": "table",
+      "title": "Kaufpreisquote und Beleihungsauslauf sind nicht dasselbe",
+      "headers": [
+        "Darlehen",
+        "Quote zum Kaufpreis",
+        "Quote zum Beleihungswert",
+        "Risikoperspektive"
+      ],
+      "rows": [
+        [
+          "300.000 €",
+          "75,0 %",
+          "83,3 %",
+          "niedriger"
+        ],
+        [
+          "340.000 €",
+          "85,0 %",
+          "94,4 %",
+          "mittel"
+        ],
+        [
+          "400.000 €",
+          "100,0 %",
+          "111,1 %",
+          "hoch"
+        ]
+      ],
+      "note": null
+    },
+    {
+      "type": "prose",
+      "title": "Warum das die Kondition verändert",
+      "paragraphs": [
+        "Viele Banken preisen Finanzierungen in Stufen. Der genaue Zuschnitt ist institutsspezifisch. Ein Darlehen kann deshalb trotz identischem Einkommen bei Bank A günstiger als bei Bank B sein, weil Beleihungswert und Preisstufen unterschiedlich ausfallen."
+      ]
+    },
+    {
+      "type": "callout",
+      "title": "Praxisfrage an die Bank",
+      "text": "Nicht nur „Wie hoch ist Ihr Zins?“ fragen, sondern „Welchen Beleihungswert setzen Sie an, welchen Beleihungsauslauf ergibt das und bei welcher Eigenkapitalhöhe erreiche ich die nächste Konditionsstufe?“",
+      "tone": "gold"
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "title": "Annuitätendarlehen erklärt",
   "category": "Finanzierung",
-  "summary": "Beim Annuitätendarlehen bleibt die Rate während der Zinsbindung regelmäßig konstant.",
-  "body": "Der Zinsanteil sinkt mit der Restschuld, der Tilgungsanteil steigt. Die anfängliche Annuität ergibt sich aus Sollzins plus anfänglicher Tilgung bezogen auf die Darlehenssumme.",
+  "summary": "Wie sich eine konstante Annuität in Zins, Tilgung und Restschuld zerlegt – und warum ein Tilgungsdarlehen trotz gleichem Start-Tilgungsbetrag anders verläuft.",
+  "body": "Ein Annuitätendarlehen kombiniert Zins und Tilgung in einer während der Sollzinsbindung grundsätzlich konstanten Rate. Konstant ist die Zahlung, nicht ihre Zusammensetzung: Mit sinkender Restschuld nimmt der Zinsanteil ab und der Tilgungsanteil zu.",
   "id": "annuitatendarlehen-erklart",
   "slug": "annuitatendarlehen-erklart",
   "url": "/wissen/annuitatendarlehen-erklart/",
@@ -18,10 +18,10 @@
     "zinsbindung"
   ],
   "synonyms": [],
-  "updated": "2026-08-26",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
-  "definition": "Der Zinsanteil sinkt mit der Restschuld, der Tilgungsanteil steigt. Die anfängliche Annuität ergibt sich aus Sollzins plus anfänglicher Tilgung bezogen auf die Darlehenssumme.",
+  "definition": "Ein Annuitätendarlehen kombiniert Zins und Tilgung in einer während der Sollzinsbindung grundsätzlich konstanten Rate. Konstant ist die Zahlung, nicht ihre Zusammensetzung: Mit sinkender Restschuld nimmt der Zinsanteil ab und der Tilgungsanteil zu.",
   "formulae": [
     "Anfangsannuität = Darlehen × (Sollzins + Anfangstilgung)",
     "Monatsrate = Anfangsannuität / 12",
@@ -46,13 +46,13 @@
     "interpretation": "Zwei Darlehen mit gleicher Monatsrate können nach zehn Jahren unterschiedliche Restschulden haben, wenn Zins, Tilgungsbeginn oder Sondertilgungen abweichen."
   },
   "sources": [],
-  "assistantAnswer": "Beim Annuitätendarlehen bleibt die Rate während der Zinsbindung regelmäßig konstant. Die Annuität ist die während der Zinsbindung typischerweise konstante Rate aus Zins und Tilgung. Weil der Zins auf die jeweils verbleibende Restschuld berechnet wird, sinkt der Zinsanteil im Zeitverlauf und der Tilgungsanteil steigt.",
+  "assistantAnswer": "Beim Annuitätendarlehen bleibt die Rate während der Zinsbindung grundsätzlich konstant, während sich ihre Zusammensetzung verschiebt. Bei 300.000 € Darlehen, 4,0 % Sollzins und 2,0 % Anfangstilgung beträgt die anfängliche Monatsrate 1.500 €. Im Zeitverlauf sinkt der Zinsanteil und die Tilgung beschleunigt sich. Im Vergleich zum Tilgungsdarlehen ist die Rate stabiler, die Restschuldentwicklung aber anders.",
   "focusPoints": [
     "Die Annuität ist die während der Zinsbindung typischerweise konstante Rate aus Zins und Tilgung. Weil der Zins auf die jeweils verbleibende Restschuld berechnet wird, sinkt der Zinsanteil im Zeitverlauf und der Tilgungsanteil steigt.",
     "Die oft verwendete Näherung „Sollzins + Anfangstilgung“ erklärt nur die Anfangsrate. Für Restschuld und exakte Zahlungsreihen muss periodisch gerechnet werden.",
     "Für den Vergleich von Finanzierungen ist die Restschuld nach 10 oder 15 Jahren mindestens genauso wichtig wie die Anfangsrate."
   ],
-  "decisionUse": "Eine scheinbar niedrige Rate kann durch geringe Tilgung teuer erkauft sein. Deshalb Rate, Tilgungsanteil, Restschuld und Anschlusszinsrisiko gemeinsam betrachten.",
+  "decisionUse": "Die tragfähige Finanzierung ist nicht die mit der niedrigsten Start-Rate, sondern diejenige, deren Restschuld und Anschlussrisiko zum geplanten Haltedauer-, Einkommens- und Liquiditätsszenario passen.",
   "comparisonTable": {
     "title": "Beispiel: 300.000 € Darlehen, 4,20 % Sollzins",
     "headers": [
@@ -82,68 +82,216 @@
       ]
     ]
   },
-  "lineChart": {
-    "title": "Restschuldverlauf: Annuitätendarlehen vs. Tilgungsdarlehen",
-    "subtitle": "Gleiche Ausgangsschuld von 300.000 €. Annuitätendarlehen: 4,20 % Sollzins, 2,00 % Anfangstilgung, 1.550 € Monatsrate. Tilgungsdarlehen: konstante Tilgung über 25 Jahre; die Rate fällt im Zeitverlauf.",
-    "viewBox": "0 0 700 320",
-    "xLabels": [
-      {
-        "x": 60,
-        "label": "0 J."
-      },
-      {
-        "x": 180,
-        "label": "5 J."
-      },
-      {
-        "x": 300,
-        "label": "10 J."
-      },
-      {
-        "x": 420,
-        "label": "15 J."
-      },
-      {
-        "x": 540,
-        "label": "20 J."
-      },
-      {
-        "x": 660,
-        "label": "25 J."
-      }
-    ],
-    "yLabels": [
-      {
-        "y": 270,
-        "label": "0 €"
-      },
-      {
-        "y": 190,
-        "label": "100 T€"
-      },
-      {
-        "y": 110,
-        "label": "200 T€"
-      },
-      {
-        "y": 30,
-        "label": "300 T€"
-      }
-    ],
-    "series": [
-      {
-        "name": "Annuitätendarlehen",
-        "className": "series-a",
-        "points": "60.0,30.0 84.0,34.9 108.0,40.0 132.0,45.3 156.0,50.9 180.0,56.7 204.0,62.7 228.0,69.0 252.0,75.5 276.0,82.4 300.0,89.5 324.0,97.0 348.0,104.7 372.0,112.8 396.0,121.3 420.0,130.1 444.0,139.2 468.0,148.8 492.0,158.8 516.0,169.2 540.0,180.1 564.0,191.4 588.0,203.2 612.0,215.5 636.0,228.3 660.0,241.7",
-        "endLabel": "35 T€"
-      },
-      {
-        "name": "Tilgungsdarlehen",
-        "className": "series-b",
-        "points": "60.0,30.0 84.0,39.6 108.0,49.2 132.0,58.8 156.0,68.4 180.0,78.0 204.0,87.6 228.0,97.2 252.0,106.8 276.0,116.4 300.0,126.0 324.0,135.6 348.0,145.2 372.0,154.8 396.0,164.4 420.0,174.0 444.0,183.6 468.0,193.2 492.0,202.8 516.0,212.4 540.0,222.0 564.0,231.6 588.0,241.2 612.0,250.8 636.0,260.4 660.0,270.0",
-        "endLabel": "0 €"
-      }
-    ],
-    "note": "Die Grafik vergleicht nicht „besser“ gegen „schlechter“, sondern zwei unterschiedliche Tilgungsmechaniken. Beim Tilgungsdarlehen ist die anfängliche Rate höher, weil die Tilgung konstant bleibt und nur der Zinsanteil sinkt. Beim Annuitätendarlehen bleibt die Rate konstant; dadurch steigt der Tilgungsanteil erst schrittweise."
-  }
+  "contentBlocks": [
+    {
+      "type": "prose",
+      "title": "Die Mechanik hinter der konstanten Rate",
+      "paragraphs": [
+        "Die anfängliche Jahresannuität wird häufig als Darlehensbetrag × (Sollzins + anfänglicher Tilgungssatz) beschrieben. Diese Formel erklärt die Startbelastung, aber noch nicht die spätere Restschuld. Für die Restschuld muss periodisch gerechnet werden, weil die Zinsen in jeder Periode nur auf die noch offene Schuld anfallen.",
+        "Das Annuitätendarlehen ist deshalb keine lineare Tilgung. Der Tilgungsbetrag wächst innerhalb einer konstanten Rate automatisch, solange der Sollzins unverändert bleibt."
+      ]
+    },
+    {
+      "type": "formula",
+      "title": "Startannuität und periodische Restschuld",
+      "formulas": [
+        "Jahresannuität = Darlehen × (Sollzins + Anfangstilgung)",
+        "Monatsrate = Jahresannuität / 12",
+        "Tilgung Monat t = Monatsrate − Restschuld(t−1) × Monatszins"
+      ],
+      "explanation": null
+    },
+    {
+      "type": "metrics",
+      "title": "Beispielkredit",
+      "items": [
+        {
+          "label": "Darlehen",
+          "value": "300.000 €"
+        },
+        {
+          "label": "Sollzins",
+          "value": "4,00 % p.a."
+        },
+        {
+          "label": "Anfangstilgung",
+          "value": "2,00 % p.a."
+        },
+        {
+          "label": "Monatsrate",
+          "value": "1.500 €"
+        }
+      ]
+    },
+    {
+      "type": "lineChart",
+      "title": "Restschuld: Annuitätendarlehen vs. Tilgungsdarlehen",
+      "width": 720,
+      "height": 300,
+      "xLabels": [
+        {
+          "x": 70.0,
+          "label": "0"
+        },
+        {
+          "x": 196.0,
+          "label": "5"
+        },
+        {
+          "x": 322.0,
+          "label": "10"
+        },
+        {
+          "x": 448.0,
+          "label": "15"
+        },
+        {
+          "x": 574.0,
+          "label": "20"
+        },
+        {
+          "x": 700.0,
+          "label": "25"
+        }
+      ],
+      "yLabels": [
+        {
+          "y": 30,
+          "label": "300.000 €"
+        },
+        {
+          "y": 83.8,
+          "label": "225.000 €"
+        },
+        {
+          "y": 137.5,
+          "label": "150.000 €"
+        },
+        {
+          "y": 191.2,
+          "label": "75.000 €"
+        },
+        {
+          "y": 245,
+          "label": "0"
+        }
+      ],
+      "series": [
+        {
+          "name": "Annuitätendarlehen",
+          "points": "70.0,30.0 196.0,53.8 322.0,82.8 448.0,118.2 574.0,161.4 700.0,214.2",
+          "dots": [
+            {
+              "x": 70.0,
+              "y": 30.0,
+              "value": "300.000 €"
+            },
+            {
+              "x": 196.0,
+              "y": 53.8,
+              "value": "266.851 €"
+            },
+            {
+              "x": 322.0,
+              "y": 82.8,
+              "value": "226.375 €"
+            },
+            {
+              "x": 448.0,
+              "y": 118.2,
+              "value": "176.955 €"
+            },
+            {
+              "x": 574.0,
+              "y": 161.4,
+              "value": "116.613 €"
+            },
+            {
+              "x": 700.0,
+              "y": 214.2,
+              "value": "42.935 €"
+            }
+          ],
+          "className": "series-0"
+        },
+        {
+          "name": "Tilgungsdarlehen (6.000 € Tilgung p.a.)",
+          "points": "70.0,30.0 196.0,51.5 322.0,73.0 448.0,94.5 574.0,116.0 700.0,137.5",
+          "dots": [
+            {
+              "x": 70.0,
+              "y": 30.0,
+              "value": "300.000 €"
+            },
+            {
+              "x": 196.0,
+              "y": 51.5,
+              "value": "270.000 €"
+            },
+            {
+              "x": 322.0,
+              "y": 73.0,
+              "value": "240.000 €"
+            },
+            {
+              "x": 448.0,
+              "y": 94.5,
+              "value": "210.000 €"
+            },
+            {
+              "x": 574.0,
+              "y": 116.0,
+              "value": "180.000 €"
+            },
+            {
+              "x": 700.0,
+              "y": 137.5,
+              "value": "150.000 €"
+            }
+          ],
+          "className": "series-1"
+        }
+      ],
+      "note": "Vergleich bei 300.000 € Startschuld und 4,0 % Sollzins. Beim Tilgungsdarlehen wird hier ein konstanter Tilgungsbetrag von 6.000 € pro Jahr unterstellt; dadurch sinkt die Gesamtzahlung im Zeitverlauf.",
+      "yLabel": "Restschuld"
+    },
+    {
+      "type": "table",
+      "title": "Was nach 10 Jahren tatsächlich übrig bleibt",
+      "headers": [
+        "Kennzahl",
+        "Annuitätendarlehen",
+        "Tilgungsdarlehen"
+      ],
+      "rows": [
+        [
+          "Startbelastung pro Monat",
+          "1.500 €",
+          "1.500 €"
+        ],
+        [
+          "Restschuld nach 10 Jahren",
+          "226.375 €",
+          "240.000 €"
+        ],
+        [
+          "Zahlungsprofil",
+          "Rate bleibt konstant",
+          "Rate sinkt mit fallendem Zinsanteil"
+        ],
+        [
+          "Planungswirkung",
+          "hohe Ratensicherheit",
+          "höhere Anfangs-, niedrigere Spätbelastung"
+        ]
+      ],
+      "note": "Der Vergleich dient der Mechanik. Vertragsdetails, Tilgungsverrechnung, Sondertilgungen und Zinsbindung können die reale Entwicklung verändern."
+    },
+    {
+      "type": "callout",
+      "title": "Entscheidungslogik",
+      "text": "Nicht allein auf die Monatsrate schauen. Zwei Darlehen mit ähnlicher Startbelastung können nach zehn oder fünfzehn Jahren sehr unterschiedliche Restschulden erzeugen. Für die Finanzierungsentscheidung gehören deshalb Rate, Restschuld, Zinsbindungsende und Stressrate der Anschlussfinanzierung zusammen.",
+      "tone": "navy"
+    }
+  ]
 }

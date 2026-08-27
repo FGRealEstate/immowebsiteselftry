@@ -1,8 +1,8 @@
 {
   "title": "100-Prozent-Finanzierung",
   "category": "Finanzierung",
-  "summary": "Bei einer 100-Prozent-Finanzierung wird regelmäßig der Kaufpreis finanziert, nicht automatisch jede Nebenkostenposition.",
-  "body": "Bonität, Objektqualität, Beleihungswert und Rücklagen sind entscheidend. Die genaue Definition muss im Rechner ausgewählt werden.",
+  "summary": "100 % Finanzierung bedeutet in der üblichen Marktlogik: der Kaufpreis wird vollständig finanziert; die Erwerbsnebenkosten werden regelmäßig aus Eigenmitteln getragen.",
+  "body": "Bei der 100-%-Finanzierung entspricht das Darlehen ungefähr dem Kaufpreis. Grunderwerbsteuer, Notar/Grundbuch und gegebenenfalls Courtage sind davon zu unterscheiden und werden häufig aus Eigenkapital bezahlt.",
   "id": "100-prozent-finanzierung",
   "slug": "100-prozent-finanzierung",
   "url": "/wissen/100-prozent-finanzierung/",
@@ -20,10 +20,10 @@
     "wird"
   ],
   "synonyms": [],
-  "updated": "2026-08-26",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
-  "definition": "Bonität, Objektqualität, Beleihungswert und Rücklagen sind entscheidend. Die genaue Definition muss im Rechner ausgewählt werden.",
+  "definition": "Bei der 100-%-Finanzierung entspricht das Darlehen ungefähr dem Kaufpreis. Grunderwerbsteuer, Notar/Grundbuch und gegebenenfalls Courtage sind davon zu unterscheiden und werden häufig aus Eigenkapital bezahlt.",
   "formulae": [
     "Finanzierungsquote = Darlehen / Kaufpreis",
     "Monatsrate ≈ Darlehen × (Sollzins + anfängliche Tilgung) / 12"
@@ -45,11 +45,70 @@
     "interpretation": "Eine 100-%-Finanzierung finanziert den Kaufpreis, nicht zwingend die Nebenkosten. Gegenüber einer 80- oder 90-%-Finanzierung kann der Zinssatz höher ausfallen, weil der Beleihungsauslauf steigt."
   },
   "sources": [],
-  "assistantAnswer": "Bei einer 100-Prozent-Finanzierung wird regelmäßig der Kaufpreis finanziert, nicht automatisch jede Nebenkostenposition. 100 % bezieht sich in der Praxis regelmäßig auf den Kaufpreis. Grunderwerbsteuer, Notar, Grundbuch und gegebenenfalls Courtage sind damit nicht automatisch finanziert.",
+  "assistantAnswer": "Eine 100-%-Finanzierung finanziert typischerweise den Kaufpreis, nicht automatisch die Nebenkosten. Gegenüber 80–90 % Finanzierung kann der Zinssatz höher liegen, weil der Beleihungsauslauf steigt. Bei 400.000 € Kaufpreis und 40.000 € Nebenkosten wären für eine klassische 100-%-Struktur etwa 40.000 € Eigenmittel für die Nebenkosten nötig.",
   "focusPoints": [
     "100 % bezieht sich in der Praxis regelmäßig auf den Kaufpreis. Grunderwerbsteuer, Notar, Grundbuch und gegebenenfalls Courtage sind damit nicht automatisch finanziert.",
     "Banken unterscheiden zwischen Kaufpreis, Markt-/Beleihungswert und Darlehenssumme. Eine 100-%-Finanzierung kann deshalb bankintern einen deutlich höheren Beleihungsauslauf als 100 % erzeugen, wenn der Beleihungswert unter dem Kaufpreis liegt.",
     "Die wirtschaftliche Frage ist nicht nur, ob die Bank 100 % finanziert, sondern welche Liquiditätsreserve nach Kauf noch vorhanden ist und wie hoch die Restschuld zum Ende der Zinsbindung bleibt."
   ],
-  "decisionUse": "Sinnvoll ist der Vergleich mindestens einer 90/95-%-Variante mit der 100-%-Variante. Die Zinsdifferenz, gebundene Liquidität und Restschuld gehören in dieselbe Rechnung."
+  "decisionUse": "100 % Kaufpreisfinanzierung kann sinnvoll sein, wenn Einkommen und Bonität stark sind und Eigenkapital bewusst als Reserve oder für andere Zwecke gehalten wird. Die Mehrzinsen müssen gegen den Nutzen der erhaltenen Liquidität gerechnet werden.",
+  "contentBlocks": [
+    {
+      "type": "prose",
+      "title": "100 % wovon?",
+      "paragraphs": [
+        "Die Prozentangabe sollte immer aufgelöst werden. 100 % des Kaufpreises ist etwas anderes als 100 % der Gesamtinvestition. Wer 400.000 € Kaufpreis plus 40.000 € Nebenkosten hat und 400.000 € Darlehen aufnimmt, finanziert 100 % des Kaufpreises, aber nur rund 90,9 % des gesamten Mittelbedarfs."
+      ]
+    },
+    {
+      "type": "formula",
+      "title": "Finanzierungsquoten sauber trennen",
+      "formulas": [
+        "Kaufpreisquote = Darlehen / Kaufpreis",
+        "Gesamtfinanzierungsquote = Darlehen / (Kaufpreis + Nebenkosten)"
+      ],
+      "explanation": null
+    },
+    {
+      "type": "table",
+      "title": "Eigenkapital und Kondition im Beispiel",
+      "headers": [
+        "Kaufpreisfinanzierung",
+        "Darlehen",
+        "Eigenmittel inkl. 40.000 € NK",
+        "Beispielzins",
+        "Monatsrate bei 2 % Tilgung"
+      ],
+      "rows": [
+        [
+          "80 %",
+          "320.000 €",
+          "120.000 €",
+          "3,6 %",
+          "1.493 €"
+        ],
+        [
+          "90 %",
+          "360.000 €",
+          "80.000 €",
+          "3,8 %",
+          "1.740 €"
+        ],
+        [
+          "100 %",
+          "400.000 €",
+          "40.000 €",
+          "4,1 %",
+          "2.033 €"
+        ]
+      ],
+      "note": null
+    },
+    {
+      "type": "callout",
+      "title": "Liquidität nicht auf null setzen",
+      "text": "Eine Bankzusage beantwortet nicht die Frage, ob die Struktur wirtschaftlich sinnvoll ist. Nach Kauf sollten Rücklagen für Umzug, Modernisierung, WEG-Sonderumlagen oder Leerstand verbleiben.",
+      "tone": "gold"
+    }
+  ]
 }

@@ -15,7 +15,7 @@
   const input = $('[data-fg-ai-input]');
   const nav = $('[data-fg-ai-nav]');
 
-  const VERSION = '26.08.2026';
+  const VERSION = '27.08.2026';
   const SESSION_KEY = 'fg_ai_assistant_session_v4';
   let dialogState = { flow: null, stage: null, data: {} };
 
@@ -1119,7 +1119,18 @@
     try{sessionStorage.setItem(SESSION_KEY,JSON.stringify({open:!panel.hidden,html:messages.innerHTML,dialogState}));}catch(e){}
   }
   function restoreSession(){
-    try{const state=JSON.parse(sessionStorage.getItem(SESSION_KEY)||'null');if(state?.html)messages.innerHTML=state.html;if(state?.dialogState)dialogState=state.dialogState;if(state?.open)openPanel();}catch(e){}
+    try{
+      const state=JSON.parse(sessionStorage.getItem(SESSION_KEY)||'null');
+      if(state?.html) messages.innerHTML=state.html;
+      if(state?.dialogState) dialogState=state.dialogState;
+      // Der Assistent darf nie automatisch öffnen – auch dann nicht, wenn er
+      // in der vorherigen Sitzung geöffnet war. Der Nutzer startet ihn bewusst.
+      panel.hidden=true;
+      launcher.setAttribute('aria-expanded','false');
+    }catch(e){
+      panel.hidden=true;
+      launcher.setAttribute('aria-expanded','false');
+    }
   }
   function autoResize(){input.style.height='auto';input.style.height=Math.min(88,input.scrollHeight)+'px';}
 

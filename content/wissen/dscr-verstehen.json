@@ -1,8 +1,8 @@
 {
   "title": "DSCR verstehen",
   "category": "Finanzierung",
-  "summary": "Der Debt Service Coverage Ratio vergleicht verfügbaren Objektüberschuss mit dem Schuldendienst.",
-  "body": "Ein Wert über eins bedeutet rechnerische Deckung. Banken verwenden eigene Definitionen und Sicherheitsabschläge.",
+  "summary": "Der Debt Service Coverage Ratio zeigt, wie oft der operative Nettoertrag den Kapitaldienst deckt. Er ist besonders bei Mehrfamilienhäusern und gewerblichen Finanzierungen relevant.",
+  "body": "DSCR = Net Operating Income bzw. definierter nachhaltiger Kapitaldienstdeckungsbetrag / jährlicher Kapitaldienst. Ein DSCR von 1,00 bedeutet exakt deckend; oberhalb 1 bleibt Puffer, unterhalb 1 reicht der definierte Ertrag nicht aus.",
   "id": "dscr-verstehen",
   "slug": "dscr-verstehen",
   "url": "/wissen/dscr-verstehen/",
@@ -19,10 +19,10 @@
     "verstehen"
   ],
   "synonyms": [],
-  "updated": "2026-08-26",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
-  "definition": "Ein Wert über eins bedeutet rechnerische Deckung. Banken verwenden eigene Definitionen und Sicherheitsabschläge.",
+  "definition": "DSCR = Net Operating Income bzw. definierter nachhaltiger Kapitaldienstdeckungsbetrag / jährlicher Kapitaldienst. Ein DSCR von 1,00 bedeutet exakt deckend; oberhalb 1 bleibt Puffer, unterhalb 1 reicht der definierte Ertrag nicht aus.",
   "formulae": [
     "DSCR = Net Operating Income / jährlicher Kapitaldienst"
   ],
@@ -38,11 +38,87 @@
     "interpretation": "Ein DSCR von 1,50 bedeutet, dass der betrachtete operative Überschuss den Kapitaldienst rechnerisch um 50 % übersteigt. Definitionen von NOI und Kapitaldienst können bankseitig variieren."
   },
   "sources": [],
-  "assistantAnswer": "Der Debt Service Coverage Ratio vergleicht verfügbaren Objektüberschuss mit dem Schuldendienst. Der Debt Service Coverage Ratio setzt einen definierten verfügbaren Ertrag ins Verhältnis zum Kapitaldienst. Bei 1,0 reicht der betrachtete Ertrag rechnerisch gerade für Zins und Tilgung.",
+  "assistantAnswer": "DSCR misst die Kapitaldienstdeckung. Bei 48.000 € nachhaltigem Nettoertrag und 36.000 € Jahreskapitaldienst beträgt der DSCR 1,33. Sinkt der Ertrag um 10 % auf 43.200 €, fällt der DSCR auf 1,20. Steigt gleichzeitig der Kapitaldienst auf 42.000 €, liegt er nur noch bei 1,03.",
   "focusPoints": [
     "Der Debt Service Coverage Ratio setzt einen definierten verfügbaren Ertrag ins Verhältnis zum Kapitaldienst. Bei 1,0 reicht der betrachtete Ertrag rechnerisch gerade für Zins und Tilgung.",
     "Welche Ergebnisgröße im Zähler steht, muss sauber definiert sein. NOI, Mietüberschuss oder EBITDA sind nicht austauschbar.",
     "Banken und Investoren nutzen unterschiedliche Mindestwerte und Definitionen; ein pauschaler „guter DSCR“ ohne Kontext ist daher unseriös."
   ],
-  "decisionUse": "Für Stressrechnungen Miete, Leerstand, Kosten und Anschlusszins variieren und beobachten, wann der DSCR unter die gewünschte Sicherheitsmarge fällt."
+  "decisionUse": "Ein Investment mit DSCR knapp über 1,00 hat kaum Puffer. Bei MFH sollte der DSCR zusätzlich mit Mietrückgang, Zinsanstieg und CapEx-Belastung gestresst werden.",
+  "contentBlocks": [
+    {
+      "type": "formula",
+      "title": "Kapitaldienstdeckung",
+      "formulas": [
+        "DSCR = nachhaltiger Nettoertrag / jährlicher Kapitaldienst"
+      ],
+      "explanation": null
+    },
+    {
+      "type": "table",
+      "title": "Basisszenario und Stress",
+      "headers": [
+        "Szenario",
+        "Nettoertrag",
+        "Kapitaldienst",
+        "DSCR"
+      ],
+      "rows": [
+        [
+          "Basis",
+          "48.000 €",
+          "36.000 €",
+          "1,33"
+        ],
+        [
+          "Miete/Ertrag −10 %",
+          "43.200 €",
+          "36.000 €",
+          "1,20"
+        ],
+        [
+          "höhere Rate",
+          "48.000 €",
+          "42.000 €",
+          "1,14"
+        ],
+        [
+          "Ertrag −10 % + höhere Rate",
+          "43.200 €",
+          "42.000 €",
+          "1,03"
+        ]
+      ],
+      "note": null
+    },
+    {
+      "type": "barChart",
+      "title": "Deckungspuffer",
+      "items": [
+        {
+          "label": "1,33",
+          "value": "Basis",
+          "pct": 100
+        },
+        {
+          "label": "1,20",
+          "value": "Ertrag −10 %",
+          "pct": 90
+        },
+        {
+          "label": "1,03",
+          "value": "Doppelstress",
+          "pct": 77
+        }
+      ],
+      "note": "Die Prozenthöhe ist nur eine Visualisierung relativ zum Basisszenario; relevant ist der DSCR selbst."
+    },
+    {
+      "type": "prose",
+      "title": "Warum Banken nicht mit jeder Mietposition rechnen",
+      "paragraphs": [
+        "Banken können Mieten, Bewirtschaftungskosten, Leerstandsrisiken und Nachhaltigkeitsabschläge anders ansetzen als der Eigentümer. Ein eigener DSCR ist deshalb zunächst ein Screening; für die Kreditentscheidung zählt die bankseitige Definition."
+      ]
+    }
+  ]
 }

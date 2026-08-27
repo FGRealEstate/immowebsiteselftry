@@ -1,8 +1,8 @@
 {
   "title": "110-Prozent-Finanzierung",
   "category": "Finanzierung",
-  "summary": "Werden Kaufpreis und Nebenkosten finanziert, liegt das Darlehen über dem Kaufpreis.",
-  "body": "Das erhöht Risiko, Zinsbelastung und mögliche Unterdeckung bei frühem Verkauf.",
+  "summary": "Eine 110-%-Finanzierung finanziert Kaufpreis und Erwerbsnebenkosten. Sie erhöht Darlehenssumme, Beleihungsrisiko und häufig auch den Zinssatz.",
+  "body": "Bei einer 110-%-Finanzierung liegt die Darlehenssumme über dem Kaufpreis, weil zusätzlich Grunderwerbsteuer, Notar/Grundbuch und gegebenenfalls Courtage fremdfinanziert werden. Die Bezeichnung 110 % ist eine Marktbezeichnung; die tatsächliche Quote hängt von der Höhe der Nebenkosten ab.",
   "id": "110-prozent-finanzierung",
   "slug": "110-prozent-finanzierung",
   "url": "/wissen/110-prozent-finanzierung/",
@@ -18,10 +18,10 @@
     "über"
   ],
   "synonyms": [],
-  "updated": "2026-08-26",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
-  "definition": "Das erhöht Risiko, Zinsbelastung und mögliche Unterdeckung bei frühem Verkauf.",
+  "definition": "Bei einer 110-%-Finanzierung liegt die Darlehenssumme über dem Kaufpreis, weil zusätzlich Grunderwerbsteuer, Notar/Grundbuch und gegebenenfalls Courtage fremdfinanziert werden. Die Bezeichnung 110 % ist eine Marktbezeichnung; die tatsächliche Quote hängt von der Höhe der Nebenkosten ab.",
   "formulae": [
     "Finanzierungsquote = Darlehen / Kaufpreis",
     "Monatsrate ≈ Darlehen × (Sollzins + Tilgung) / 12"
@@ -43,13 +43,13 @@
     "interpretation": "Der Zinsaufschlag bei sehr hoher Finanzierung ist bank- und fallabhängig. In der Praxis können gegenüber niedrigeren Beleihungsausläufen Aufschläge von einigen Zehntelprozentpunkten auftreten; 0,3–0,7 Prozentpunkte sind eine mögliche Marktgröße, aber keine feste Regel."
   },
   "sources": [],
-  "assistantAnswer": "Werden Kaufpreis und Nebenkosten finanziert, liegt das Darlehen über dem Kaufpreis. Bei einer 110-%-Finanzierung werden neben dem Kaufpreis auch Erwerbsnebenkosten ganz oder teilweise fremdfinanziert. Dadurch liegt die Darlehenssumme oberhalb des Kaufpreises.",
+  "assistantAnswer": "Bei einer 110-%-Finanzierung werden Kaufpreis und Erwerbsnebenkosten weitgehend fremdfinanziert. Das erhöht nicht nur das Darlehen, sondern meist auch den Beleihungsauslauf und damit die Kondition. Ein Zinsaufschlag von einigen Zehntelprozentpunkten gegenüber einer niedrigeren Finanzierung ist am Markt möglich, aber nicht garantiert oder gesetzlich festgelegt. Beispiel: 440.000 € Darlehen zu 4,5 % plus 2 % Tilgung ergeben rund 2.383 € Monatsrate; 380.000 € zu 3,8 % plus 2 % Tilgung rund 1.837 €.",
   "focusPoints": [
     "Bei einer 110-%-Finanzierung werden neben dem Kaufpreis auch Erwerbsnebenkosten ganz oder teilweise fremdfinanziert. Dadurch liegt die Darlehenssumme oberhalb des Kaufpreises.",
     "Banken bepreisen sehr hohe Beleihungsausläufe häufig spürbar teurer. Ein Aufschlag von einigen Zehntelprozentpunkten gegenüber einer niedrigeren Finanzierung kann auftreten; Höhe und Schwellen hängen von Bank, Objekt, Bonität und Beleihungswert ab.",
     "Das zentrale Risiko ist die anfängliche Unterdeckung: Bei einem frühen Verkauf kann der Nettoverkaufserlös nach Transaktionskosten unter der noch offenen Darlehenssumme liegen."
   ],
-  "decisionUse": "Die 110-%-Finanzierung ist kein reines Ratenproblem. Sie sollte nur nach Stressrechnung für Zins, Verkauf nach 3–5 Jahren und ungeplante Modernisierung beurteilt werden.",
+  "decisionUse": "110 % Finanzierung nur wählen, wenn der Haushaltsüberschuss auch bei höherem Anschlusszins trägt und zusätzlich eine Liquiditätsreserve für Instandhaltung, Leerstand oder Sonderumlagen vorhanden ist.",
   "comparisonTable": {
     "title": "Beispielhafter Strukturvergleich bei 400.000 € Kaufpreis und 40.000 € Nebenkosten",
     "headers": [
@@ -88,29 +88,99 @@
     ],
     "note": "*Reine Rechenannahmen zur Veranschaulichung; keine aktuellen Bankkonditionen oder festen Zinsaufschläge."
   },
-  "barChart": {
-    "title": "Ratenwirkung verschiedener Finanzierungsquoten",
-    "subtitle": "Beispiel: 400.000 € Kaufpreis und 40.000 € Erwerbsnebenkosten.",
-    "items": [
-      {
-        "label": "95 % Kaufpreisfinanzierung",
-        "value": 1837,
-        "display": "ca. 1.837 €/Monat",
-        "width": 77.1
-      },
-      {
-        "label": "100 % Kaufpreisfinanzierung",
-        "value": 2000,
-        "display": "2.000 €/Monat",
-        "width": 83.9
-      },
-      {
-        "label": "110 % inkl. Nebenkosten",
-        "value": 2383,
-        "display": "ca. 2.383 €/Monat",
-        "width": 100.0
-      }
-    ],
-    "note": "Der Mehrbelastungseffekt entsteht aus zwei Komponenten: einer höheren Darlehenssumme und – je nach Bank, Beleihungsauslauf und Bonität – einer ungünstigeren Kondition."
-  }
+  "contentBlocks": [
+    {
+      "type": "metrics",
+      "title": "Ausgangsfall",
+      "items": [
+        {
+          "label": "Kaufpreis",
+          "value": "400.000 €"
+        },
+        {
+          "label": "Nebenkosten",
+          "value": "40.000 €"
+        },
+        {
+          "label": "Gesamtaufwand",
+          "value": "440.000 €"
+        },
+        {
+          "label": "Anfangstilgung",
+          "value": "2,0 %"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Drei Finanzierungsquoten im direkten Vergleich",
+      "headers": [
+        "Struktur",
+        "Darlehen",
+        "eingesetztes EK",
+        "Beispiel-Sollzins",
+        "Monatsrate"
+      ],
+      "rows": [
+        [
+          "95 %",
+          "380.000 €",
+          "60.000 €",
+          "3,8 %",
+          "1.837 €"
+        ],
+        [
+          "100 %",
+          "400.000 €",
+          "40.000 €",
+          "4,0 %",
+          "2.000 €"
+        ],
+        [
+          "110 %",
+          "440.000 €",
+          "0 €",
+          "4,5 %",
+          "2.383 €"
+        ]
+      ],
+      "note": "Zinssätze sind bewusst illustrative Annahmen. Banken kalkulieren nach Beleihungswert, Bonität, Objekt, Einkommen, Laufzeit und eigenen Preisstufen."
+    },
+    {
+      "type": "barChart",
+      "title": "Wirkung auf die Monatsrate",
+      "items": [
+        {
+          "label": "95 %",
+          "value": "1.837 €",
+          "pct": 77
+        },
+        {
+          "label": "100 %",
+          "value": "2.000 €",
+          "pct": 83
+        },
+        {
+          "label": "110 %",
+          "value": "2.383 €",
+          "pct": 99
+        }
+      ],
+      "note": "Die Mehrbelastung entsteht aus zwei Effekten gleichzeitig: höherem Darlehen und potenziell höherer Kondition."
+    },
+    {
+      "type": "prose",
+      "title": "Warum der Zins bei sehr hoher Finanzierung häufig steigt",
+      "paragraphs": [
+        "Banken finanzieren nicht nur gegen den Kaufpreis, sondern bewerten das Objekt mit eigenen Beleihungswert- und Risikomodellen. Je weniger Eigenkapital als Puffer vorhanden ist, desto höher kann der Beleihungsauslauf ausfallen. Viele Institute staffeln ihre Konditionen nach solchen Risikostufen.",
+        "Ein pauschaler Aufschlag von exakt 0,3 bis 0,7 Prozentpunkten lässt sich nicht garantieren. Diese Größenordnung kann in konkreten Marktangeboten vorkommen; entscheidend ist der individuelle Bankvergleich."
+      ]
+    },
+    {
+      "type": "callout",
+      "title": "Früher Verkauf als Stresstest",
+      "text": "Bei 110 % Finanzierung kann die Restschuld in den ersten Jahren noch über einem vorsichtig erzielbaren Nettoverkaufserlös liegen. Vor Abschluss sollte daher mindestens ein Szenario „Verkauf nach 3–5 Jahren bei 10 % niedrigerem Marktwert“ gerechnet werden.",
+      "tone": "red"
+    }
+  ]
 }

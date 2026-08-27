@@ -1,8 +1,8 @@
 {
   "title": "Finanzierungsreserve planen",
   "category": "Finanzierung",
-  "summary": "Eine Reserve schützt vor Kostenüberschreitungen, Leerstand und verzögerten Auszahlungen.",
-  "body": "Sie sollte nicht vollständig in den Kaufpreis fließen, sondern liquide verfügbar bleiben.",
+  "summary": "Eine Finanzierung sollte nicht das letzte verfügbare liquide Euro binden. Reserve schützt vor Kostenüberschreitungen, Sonderumlagen, Leerstand und ungeplanten Reparaturen.",
+  "body": "Finanzierungsreserve ist die nach Kauf und Nebenkosten verbleibende kurzfristig verfügbare Liquidität. Sie ist keine Renditekennzahl, sondern ein Risikopuffer gegen Ereignisse, die nicht sinnvoll über einen langfristigen Immobilienkredit nachfinanziert werden können.",
   "id": "finanzierungsreserve-planen",
   "slug": "finanzierungsreserve-planen",
   "url": "/wissen/finanzierungsreserve-planen/",
@@ -18,10 +18,10 @@
     "verzögerten"
   ],
   "synonyms": [],
-  "updated": "2026-08-26",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
-  "definition": "Sie sollte nicht vollständig in den Kaufpreis fließen, sondern liquide verfügbar bleiben.",
+  "definition": "Finanzierungsreserve ist die nach Kauf und Nebenkosten verbleibende kurzfristig verfügbare Liquidität. Sie ist keine Renditekennzahl, sondern ein Risikopuffer gegen Ereignisse, die nicht sinnvoll über einen langfristigen Immobilienkredit nachfinanziert werden können.",
   "formulae": [
     "Liquiditätsreserve = geplante Einmalmaßnahmen + Notfallpuffer + Erwerbs-/Umzugspuffer"
   ],
@@ -40,11 +40,61 @@
     "interpretation": "Eine Finanzierung, die das gesamte verfügbare Eigenkapital verbraucht, kann trotz niedrigerer Rate riskanter sein als eine geringfügig höhere Darlehenssumme mit ausreichender Reserve."
   },
   "sources": [],
-  "assistantAnswer": "Eine Reserve schützt vor Kostenüberschreitungen, Leerstand und verzögerten Auszahlungen. Eine Finanzierungsreserve ist liquide verfügbare Sicherheit für Kosten, die nicht oder später von der Bank finanziert werden: Renovierung, Nachträge, Leerstand oder Erwerbsnebenkosten.",
+  "assistantAnswer": "Eine Finanzierung ohne Liquiditätsreserve kann trotz guter Bankkondition fragil sein. Beispiel: 80.000 € verfügbares Eigenkapital bei 40.000 € Nebenkosten. Wer die übrigen 40.000 € vollständig in den Kaufpreis steckt, reduziert zwar das Darlehen, hat aber keinen Puffer. Oft ist ein etwas höheres Darlehen mit 15–25 T€ Reserve wirtschaftlich robuster.",
   "focusPoints": [
     "Eine Finanzierungsreserve ist liquide verfügbare Sicherheit für Kosten, die nicht oder später von der Bank finanziert werden: Renovierung, Nachträge, Leerstand oder Erwerbsnebenkosten.",
     "Die Reserve ist von der Instandhaltungsreserve des Objekts und von langfristig investiertem Eigenkapital zu trennen.",
     "Bei knapp kalkulierten Finanzierungen kann eine kleine Kostenüberschreitung sonst zu teurem Nachrang- oder Konsumentenkredit führen."
   ],
-  "decisionUse": "Die Reserve sollte als eigener Betrag nach Kauf verbleiben und nicht rückwirkend als „Eigenkapital“ schön gerechnet werden."
+  "decisionUse": "Reservegröße anhand der wahrscheinlichsten Schaden-/CapEx-Ereignisse bestimmen und erst danach entscheiden, wie viel Rest-Eigenkapital die Bankkondition verbessert.",
+  "contentBlocks": [
+    {
+      "type": "table",
+      "title": "Liquidität gegen Zinsersparnis abwägen",
+      "headers": [
+        "Variante",
+        "EK in Transaktion",
+        "Reserve nach Kauf",
+        "Darlehen",
+        "Bewertung"
+      ],
+      "rows": [
+        [
+          "A – maximal EK",
+          "80.000 €",
+          "0 €",
+          "360.000 €",
+          "niedrige Rate, kein Puffer"
+        ],
+        [
+          "B – 20 T€ Reserve",
+          "60.000 €",
+          "20.000 €",
+          "380.000 €",
+          "mehr Zins, bessere Robustheit"
+        ],
+        [
+          "C – 30 T€ Reserve",
+          "50.000 €",
+          "30.000 €",
+          "390.000 €",
+          "höhere Rate, hoher Puffer"
+        ]
+      ],
+      "note": null
+    },
+    {
+      "type": "prose",
+      "title": "Was die Reserve abdecken soll",
+      "paragraphs": [
+        "Bei ETW: Sonderumlage, nicht versicherte Reparaturen, Leerstand und Neuvermietung. Beim Haus: Heizung, Dach, Leitungen, Selbstbehalte. Beim MFH: CapEx und Mietausfall. Die Höhe muss daher objektbezogen statt pauschal gewählt werden."
+      ]
+    },
+    {
+      "type": "callout",
+      "title": "Bankreserve ist nicht gleich Lebensreserve",
+      "text": "Zusätzlich zur Objektreserve sollte die private Haushaltsliquidität berücksichtigt werden. Ein Kapitalanleger kann rechnerisch 20.000 € Objektreserve haben und trotzdem privat illiquide sein.",
+      "tone": "gold"
+    }
+  ]
 }

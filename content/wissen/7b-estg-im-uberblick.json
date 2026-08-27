@@ -1,8 +1,8 @@
 {
   "title": "§ 7b EStG im Überblick",
   "category": "Steuern",
-  "summary": "Die Sonderabschreibung für Mietwohnungsneubau ist an Voraussetzungen und Grenzen gebunden.",
-  "body": "Begünstigungszeitraum, Baukostenobergrenzen, Effizienzanforderungen und dauerhafte Vermietung müssen geprüft werden.",
+  "summary": "§ 7b EStG kann für begünstigten Mietwohnungsneubau eine zusätzliche Sonderabschreibung von bis zu 5 % pro Jahr ermöglichen – mit strengen Kosten-, Zeit- und Nachhaltigkeitsanforderungen.",
+  "body": "Für die aktuelle Fördergeneration des § 7b gelten unter anderem ein Bauantrags-/Bauanzeigezeitraum, eine Kostenobergrenze je Quadratmeter und eine gedeckelte Bemessungsgrundlage. Für die neuere Förderphase sind 5.200 €/m² Kostenobergrenze und maximal 4.000 €/m² Sonder-AfA-Basis gesetzlich verankert.",
   "id": "7b-estg-im-uberblick",
   "slug": "7b-estg-im-uberblick",
   "url": "/wissen/7b-estg-im-uberblick/",
@@ -16,10 +16,10 @@
     "überblick"
   ],
   "synonyms": [],
-  "updated": "2026-08-26",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
-  "definition": "Begünstigungszeitraum, Baukostenobergrenzen, Effizienzanforderungen und dauerhafte Vermietung müssen geprüft werden.",
+  "definition": "Für die aktuelle Fördergeneration des § 7b gelten unter anderem ein Bauantrags-/Bauanzeigezeitraum, eine Kostenobergrenze je Quadratmeter und eine gedeckelte Bemessungsgrundlage. Für die neuere Förderphase sind 5.200 €/m² Kostenobergrenze und maximal 4.000 €/m² Sonder-AfA-Basis gesetzlich verankert.",
   "formulae": [
     "Sonder-AfA bis zu 5 % p.a. für vier Jahre auf begrenzte Bemessungsgrundlage"
   ],
@@ -38,19 +38,82 @@
   },
   "sources": [
     {
-      "label": "§ 7 EStG – Gebäude-AfA",
-      "url": "https://www.gesetze-im-internet.de/estg/__7.html"
-    },
-    {
       "label": "§ 7b EStG – Sonderabschreibung Mietwohnungsneubau",
       "url": "https://www.gesetze-im-internet.de/estg/__7b.html"
     }
   ],
-  "assistantAnswer": "Die Sonderabschreibung für Mietwohnungsneubau ist an Voraussetzungen und Grenzen gebunden. § 7b EStG ermöglicht Sonderabschreibungen zusätzlich zur regulären Gebäude-AfA. Für aktuelle Fälle sind unter anderem Bauantrags-/Bauanzeigezeitraum, neue Wohnung, entgeltliche Wohnnutzung und die gesetzlichen Kostenobergrenzen relevant.",
+  "assistantAnswer": "Beispiel § 7b: 70 m² neue Mietwohnung mit 350.000 € begünstigten Anschaffungs-/Herstellungskosten = 5.000 €/m² und damit unter der gesetzlichen 5.200-€/m²-Grenze. Die Sonder-AfA-Basis ist trotzdem auf 4.000 €/m² begrenzt, also 280.000 €. 5 % davon sind 14.000 € Sonderabschreibung pro Jahr für den begünstigten Zeitraum, sofern alle weiteren Voraussetzungen erfüllt sind.",
   "focusPoints": [
     "§ 7b EStG ermöglicht Sonderabschreibungen zusätzlich zur regulären Gebäude-AfA. Für aktuelle Fälle sind unter anderem Bauantrags-/Bauanzeigezeitraum, neue Wohnung, entgeltliche Wohnnutzung und die gesetzlichen Kostenobergrenzen relevant.",
     "Bei Bauanträgen nach dem 31.12.2022 und vor dem 01.10.2029 verlangt die Regelung für die begünstigte Wohnung ein Effizienzhaus-40-Gebäude mit Nachhaltigkeits-Klasse und QNG-Nachweis.",
     "Die Sonderabschreibung beträgt bis zu 5 % der begrenzten Bemessungsgrundlage im Jahr der Anschaffung/Herstellung und in den drei Folgejahren; die reguläre AfA läuft daneben."
   ],
-  "decisionUse": "In einer seriösen Modellrechnung werden reguläre AfA und § 7b getrennt ausgewiesen und Rückforderungsrisiken bei Nutzungs- oder Veräußerungsänderungen separat beschrieben."
+  "decisionUse": "§ 7b nur in die Investmentrechnung aufnehmen, wenn Bauantrag/Bauanzeige, Kosten je m², Nutzungszweck und Nachhaltigkeitsvoraussetzungen dokumentiert sind.",
+  "contentBlocks": [
+    {
+      "type": "metrics",
+      "title": "Beispielwohnung",
+      "items": [
+        {
+          "label": "Wohnfläche",
+          "value": "70 m²"
+        },
+        {
+          "label": "Kosten",
+          "value": "350.000 €"
+        },
+        {
+          "label": "Kosten/m²",
+          "value": "5.000 €"
+        },
+        {
+          "label": "max. §7b-Basis",
+          "value": "280.000 €"
+        }
+      ]
+    },
+    {
+      "type": "formula",
+      "title": "Deckelung",
+      "formulas": [
+        "Kostenobergrenze (neuere Förderphase) = 5.200 € / m² Wohnfläche",
+        "maximale Sonder-AfA-Basis = 4.000 € / m² Wohnfläche",
+        "jährliche Sonder-AfA = bis 5 % × begünstigte Bemessungsgrundlage"
+      ],
+      "explanation": null
+    },
+    {
+      "type": "table",
+      "title": "Vier Jahre Sonderabschreibung im Beispiel",
+      "headers": [
+        "Jahr",
+        "Sonder-AfA bei 5 %"
+      ],
+      "rows": [
+        [
+          "1",
+          "14.000 €"
+        ],
+        [
+          "2",
+          "14.000 €"
+        ],
+        [
+          "3",
+          "14.000 €"
+        ],
+        [
+          "4",
+          "14.000 €"
+        ]
+      ],
+      "note": "Nur vereinfachte Darstellung der Sonder-AfA. Reguläre Gebäude-AfA und steuerliche Wechselwirkungen sind separat zu berechnen."
+    },
+    {
+      "type": "callout",
+      "title": "QNG und weitere Voraussetzungen",
+      "text": "Für die aktuelle Förderphase sind zusätzliche gesetzliche Voraussetzungen zu prüfen, darunter Nachhaltigkeitsanforderungen. Eine reine Unterschreitung der Kostenobergrenze reicht nicht.",
+      "tone": "navy"
+    }
+  ]
 }

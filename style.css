@@ -2184,5 +2184,78 @@ main>section{scroll-margin-top:86px}.fg-reveal{will-change:transform,opacity}.fg
 /* Investment Lab – academic editorial system v2 */
 .science-article-v2{max-width:980px;margin:0 auto;padding-bottom:5rem}.science-hero{padding:1.5rem 0 2.2rem;border-bottom:1px solid rgba(12,16,63,.14);margin-bottom:2.2rem}.science-hero h1{max-width:850px}.science-section{margin:0 0 3.2rem}.science-section>h2{margin-bottom:1.15rem}.focus-grid{display:grid;grid-template-columns:1fr;gap:.85rem}.focus-point{display:grid;grid-template-columns:44px 1fr;gap:1rem;padding:1.15rem 0;border-bottom:1px solid rgba(12,16,63,.12)}.focus-point>span{font-family:var(--font-serif,Georgia,serif);color:#b68a1f;font-size:1.2rem;font-weight:700}.focus-point p{margin:0;line-height:1.7}.science-table-wrap{overflow-x:auto;border:1px solid rgba(12,16,63,.14);border-radius:18px;background:#fff}.science-table{width:100%;border-collapse:collapse;min-width:680px}.science-table th,.science-table td{padding:1rem 1.1rem;text-align:left;border-bottom:1px solid rgba(12,16,63,.1);vertical-align:top}.science-table th{background:#f7f4ec;color:#0d103f;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em}.science-table tbody tr:last-child td{border-bottom:0}.table-note{font-size:.85rem;color:#667085;margin-top:.8rem}.science-timeline{position:relative;margin-top:1.2rem}.science-timeline:before{content:"";position:absolute;left:57px;top:.8rem;bottom:.8rem;width:1px;background:rgba(182,138,31,.4)}.timeline-item{display:grid;grid-template-columns:82px 1fr;gap:1.15rem;position:relative;padding:0 0 1.7rem}.timeline-label{position:relative;z-index:1;background:#0b0d3d;color:#d6b45e;border-radius:999px;padding:.38rem .65rem;text-align:center;height:max-content;font-size:.8rem;font-weight:700}.timeline-item h3{margin:.1rem 0 .35rem}.timeline-item p{margin:0;line-height:1.65}.decision-section{background:#0b0d3d;color:#fff;border-radius:28px;padding:2rem 2.2rem}.decision-section h2,.decision-section p{color:#fff}.decision-section .lab-kicker{color:#d6b45e}.lexicon-v2 .lead{max-width:800px}@media(min-width:850px){.focus-grid{grid-template-columns:1fr 1fr}.focus-point:nth-child(odd):last-child{grid-column:1 / -1}}@media(max-width:640px){.science-article-v2{padding-bottom:3rem}.science-section{margin-bottom:2.3rem}.decision-section{padding:1.5rem;border-radius:22px}.science-timeline:before{left:48px}.timeline-item{grid-template-columns:68px 1fr}.science-table th,.science-table td{padding:.85rem}.focus-point{grid-template-columns:36px 1fr}}
 
-/* Investment Lab: echte Datenvisualisierungen für Fachartikel */
-.science-chart-section{margin-top:3.4rem}.chart-intro{max-width:820px;color:#626b78;line-height:1.7;margin:-.25rem 0 1.25rem}.science-line-chart-card,.science-bar-chart{background:#fff;border:1px solid rgba(12,16,63,.12);border-radius:24px;padding:1.35rem 1.4rem;box-shadow:0 14px 34px rgba(8,8,47,.055)}.science-line-chart{display:block;width:100%;height:auto;min-height:280px}.chart-grid line{stroke:rgba(12,16,63,.085);stroke-width:1}.chart-grid text{fill:#7a8190;font-size:12px;font-family:Arial,sans-serif}.chart-series{fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.chart-series.series-a{stroke:#0b0d3d}.chart-series.series-b{stroke:#c19a32;stroke-dasharray:9 7}.chart-legend{display:flex;gap:1.4rem;flex-wrap:wrap;justify-content:center;margin:.65rem 0 .1rem;color:#30374a;font-size:.9rem}.chart-legend span{display:inline-flex;gap:.5rem;align-items:center}.chart-legend i{display:inline-block;width:28px;height:4px;border-radius:99px;background:#0b0d3d}.chart-legend i.series-b{background:#c19a32}.science-bar-chart{display:grid;gap:1.2rem}.bar-row-head{display:flex;justify-content:space-between;gap:1rem;margin-bottom:.45rem;color:#0b0d3d}.bar-row-head strong{font-size:.95rem}.bar-row-head span{color:#6a7180;font-variant-numeric:tabular-nums}.bar-track{height:18px;border-radius:999px;background:#f0eee8;overflow:hidden;border:1px solid rgba(12,16,63,.06)}.bar-fill{height:100%;border-radius:inherit;background:linear-gradient(90deg,#0b0d3d,#c19a32);min-width:8px}.chart-note{margin:.9rem 0 0;color:#626b78;font-size:.91rem;line-height:1.65;padding-left:1rem;border-left:3px solid #c19a32}@media(max-width:640px){.science-line-chart-card,.science-bar-chart{padding:1rem;border-radius:19px}.science-line-chart{min-width:560px}.science-line-chart-card{overflow-x:auto}.bar-row-head{align-items:flex-start;flex-direction:column;gap:.1rem}.chart-grid text{font-size:11px}}
+/* =========================================================
+   INVESTMENT LAB — ACADEMIC ARTICLE SYSTEM V3
+   ========================================================= */
+.science-article-v3{max-width:1040px;margin:0 auto;padding-bottom:5.5rem}
+.science-hero-v3{padding-top:1.8rem;margin-bottom:2.8rem}
+.science-hero-v3 .lead{max-width:860px;font-size:clamp(1.15rem,2vw,1.45rem);line-height:1.62;color:#566176}
+.science-prose-block p{font-size:1.06rem;line-height:1.82;color:#3d485c;margin:.75rem 0}
+.science-visual-section{margin-top:3.6rem;margin-bottom:3.8rem}
+.science-visual-intro{max-width:850px;color:#5f6878;line-height:1.7;margin:-.35rem 0 1.5rem}
+
+.science-metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.science-metric-card{background:#fff;border:1px solid rgba(12,16,63,.13);border-radius:20px;padding:1.2rem 1.25rem;box-shadow:0 10px 28px rgba(8,8,47,.045)}
+.science-metric-card span,.science-metric-card strong,.science-metric-card small{display:block}
+.science-metric-card span{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#8e6b12;font-weight:800}
+.science-metric-card strong{font-family:Georgia,'Times New Roman',serif;color:#08082f;font-size:1.45rem;margin-top:.45rem;line-height:1.15}
+.science-metric-card small{color:#7a8190;margin-top:.35rem;line-height:1.45}
+
+.science-formula-card-v3{padding:1.35rem;background:linear-gradient(145deg,#fbfaf6,#fff)}
+.science-block-note{font-size:.86rem!important;line-height:1.55!important;color:#70798a!important;margin:.9rem 0 0!important}
+
+.science-horizontal-timeline{display:grid;grid-template-columns:repeat(var(--timeline-count),minmax(145px,1fr));gap:0;position:relative;margin:2rem 0 .4rem;padding-top:.2rem}
+.science-horizontal-timeline:before{content:"";position:absolute;left:7%;right:7%;top:32px;height:2px;background:linear-gradient(90deg,#d2b455,#08082f 48%,#d2b455)}
+.science-horizontal-timeline-item{position:relative;padding:0 .55rem;z-index:1}
+.science-horizontal-marker{height:64px;display:flex;justify-content:center;align-items:flex-start}
+.science-horizontal-marker span{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:.45rem .65rem;border-radius:999px;background:#08082f;color:#e3c568;border:4px solid #f5f2e9;box-shadow:0 8px 20px rgba(8,8,47,.17);font-size:.73rem;font-weight:900;white-space:nowrap}
+.science-horizontal-copy{padding:1rem .25rem 0;text-align:center}
+.science-horizontal-copy h3{font-size:1rem;color:#08082f;margin:0 0 .45rem;line-height:1.3}
+.science-horizontal-copy p{font-size:.87rem;color:#626c7c;line-height:1.55;margin:0}
+
+.science-chart-card{background:#fff;border:1px solid rgba(12,16,63,.13);border-radius:24px;padding:1.25rem 1.25rem 1rem;box-shadow:0 16px 40px rgba(8,8,47,.055)}
+.science-line-chart{width:100%;height:auto;display:block;overflow:visible}
+.science-chart-grid line{stroke:#e4e7ec;stroke-width:1}
+.science-chart-grid text,.science-chart-xlabels text{fill:#727b8a;font-size:11px;font-family:Arial,sans-serif}
+.science-chart-line{fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.science-chart-line.series-0{stroke:#08082f}.science-chart-line.series-1{stroke:#c69a20}.science-chart-line.series-2{stroke:#5aa8d8}
+.science-chart-dot{stroke:#fff;stroke-width:2}.science-chart-dot.series-0{fill:#08082f}.science-chart-dot.series-1{fill:#c69a20}.science-chart-dot.series-2{fill:#5aa8d8}
+.science-chart-legend{display:flex;flex-wrap:wrap;gap:1rem 1.4rem;margin:.4rem .5rem 0;color:#4b5565;font-size:.85rem;font-weight:700}
+.science-chart-legend span{display:inline-flex;align-items:center;gap:.45rem}.science-chart-legend i{width:22px;height:4px;border-radius:999px;display:inline-block}
+.science-chart-legend .series-0 i{background:#08082f}.science-chart-legend .series-1 i{background:#c69a20}.science-chart-legend .series-2 i{background:#5aa8d8}
+
+.science-bar-chart{background:#fff;border:1px solid rgba(12,16,63,.13);border-radius:24px;padding:1.4rem 1.5rem;box-shadow:0 15px 36px rgba(8,8,47,.05)}
+.science-bar-row+.science-bar-row{margin-top:1rem}
+.science-bar-label{display:flex;justify-content:space-between;gap:1rem;margin-bottom:.45rem;color:#08082f}
+.science-bar-label strong{font-size:.93rem}.science-bar-label span{font-size:.87rem;color:#697384;font-weight:700}
+.science-bar-track{height:16px;border-radius:999px;background:#f0f1f4;overflow:hidden}
+.science-bar-track span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#d7ba60,#9c7413 70%,#08082f);min-width:4px}
+
+.science-process-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
+.science-process-grid article{display:grid;grid-template-columns:48px 1fr;gap:.9rem;padding:1.15rem 1.2rem;border:1px solid rgba(12,16,63,.13);border-radius:20px;background:#fff}
+.science-process-grid article>span{width:42px;height:42px;border-radius:50%;background:#08082f;color:#d7ba60;display:grid;place-items:center;font-weight:900;font-size:.82rem}
+.science-process-grid h3{margin:.05rem 0 .35rem;color:#08082f;font-size:1rem}.science-process-grid p{margin:0;color:#626c7c;line-height:1.55;font-size:.9rem}
+
+.science-callout{border-radius:24px;padding:1.55rem 1.7rem;border:1px solid transparent}
+.science-callout h2{font-size:1.35rem!important;margin:0 0 .55rem!important}.science-callout p{margin:0;font-size:1rem;line-height:1.7}
+.science-callout-gold{background:#fff7df;border-color:#ead494}.science-callout-gold h2{color:#684b00}.science-callout-gold p{color:#5e553e}
+.science-callout-navy{background:#08082f;border-color:#27275d}.science-callout-navy h2,.science-callout-navy p{color:#fff}
+.science-callout-red{background:#fff1f1;border-color:#efc3c3}.science-callout-red h2{color:#7a2020}.science-callout-red p{color:#684343}
+.decision-section-v3{margin-top:4rem}
+
+@media(max-width:900px){
+  .science-metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .science-horizontal-timeline{grid-template-columns:1fr;gap:.4rem;padding-left:1.2rem}
+  .science-horizontal-timeline:before{left:31px;right:auto;top:20px;bottom:20px;width:2px;height:auto;background:linear-gradient(#d2b455,#08082f 48%,#d2b455)}
+  .science-horizontal-timeline-item{display:grid;grid-template-columns:54px 1fr;gap:.8rem;padding:0 0 1rem}
+  .science-horizontal-marker{height:auto;justify-content:flex-start;align-items:flex-start}
+  .science-horizontal-marker span{min-width:50px;white-space:normal;text-align:center;padding:.4rem .35rem;border-width:3px}
+  .science-horizontal-copy{text-align:left;padding:0}
+  .science-process-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .science-article-v3{padding-bottom:3rem}.science-hero-v3{margin-bottom:2.1rem}.science-visual-section{margin-top:2.6rem;margin-bottom:2.6rem}
+  .science-metric-grid{grid-template-columns:1fr 1fr;gap:8px}.science-metric-card{padding:1rem}.science-metric-card strong{font-size:1.2rem}
+  .science-chart-card{padding:.65rem}.science-chart-grid text,.science-chart-xlabels text{font-size:9px}.science-chart-legend{font-size:.75rem}
+  .science-bar-chart{padding:1.1rem}.science-callout{padding:1.25rem}
+}

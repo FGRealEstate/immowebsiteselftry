@@ -1,8 +1,8 @@
 {
   "title": "Anschlussfinanzierung planen",
   "category": "Finanzierung",
-  "summary": "Entscheidend sind Restschuld, künftiger Zins und verbleibende Laufzeit.",
-  "body": "Eine frühe Szenariorechnung zeigt, wie empfindlich die Rate auf Zinsänderungen reagiert. Forward-Darlehen sind eine Option, aber nicht immer wirtschaftlich.",
+  "summary": "Bei der Anschlussfinanzierung wird nicht der alte Kaufpreis neu finanziert, sondern die verbleibende Restschuld. Deshalb sollte die Planung Jahre vor dem Zinsbindungsende mit einer Restschuld- und Zinssensitivität beginnen.",
+  "body": "Eine Anschlussfinanzierung ersetzt die Restschuld nach Ablauf der Sollzinsbindung. Sie kann als Prolongation bei der bisherigen Bank, Umschuldung zu einer neuen Bank oder – bei frühzeitiger Sicherung – als Forward-Darlehen strukturiert werden.",
   "id": "anschlussfinanzierung-planen",
   "slug": "anschlussfinanzierung-planen",
   "url": "/wissen/anschlussfinanzierung-planen/",
@@ -18,10 +18,10 @@
     "zins"
   ],
   "synonyms": [],
-  "updated": "2026-08-26",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
-  "definition": "Eine frühe Szenariorechnung zeigt, wie empfindlich die Rate auf Zinsänderungen reagiert. Forward-Darlehen sind eine Option, aber nicht immer wirtschaftlich.",
+  "definition": "Eine Anschlussfinanzierung ersetzt die Restschuld nach Ablauf der Sollzinsbindung. Sie kann als Prolongation bei der bisherigen Bank, Umschuldung zu einer neuen Bank oder – bei frühzeitiger Sicherung – als Forward-Darlehen strukturiert werden.",
   "formulae": [
     "Neue Rate ≈ Restschuld × (neuer Sollzins + gewünschte Tilgung) / 12"
   ],
@@ -41,11 +41,73 @@
     "interpretation": "Die Anschlussfinanzierung ist primär ein Restschuld- und Zinsrisiko. Deshalb sollte mehrere Jahre vor Ende der Bindung geprüft werden, ob Sondertilgung, Prolongation, Umschuldung oder Forward sinnvoll sind."
   },
   "sources": [],
-  "assistantAnswer": "Entscheidend sind Restschuld, künftiger Zins und verbleibende Laufzeit. Die Anschlussfinanzierung betrifft die Restschuld nach Ende der Sollzinsbindung. Entscheidend ist daher nicht der ursprüngliche Kaufpreis, sondern die zu diesem Zeitpunkt verbleibende Darlehenssumme.",
+  "assistantAnswer": "Bei der Anschlussfinanzierung zählt die Restschuld zum Zinsbindungsende. Beispiel: 270.000 € Restschuld und 2 % neue Tilgung führen bei 3,0 % Sollzins zu ca. 1.125 € Monatsrate, bei 4,5 % zu 1.463 € und bei 6,0 % zu 1.800 €. Deshalb sollte nicht erst kurz vor Ablauf gerechnet werden.",
   "focusPoints": [
     "Die Anschlussfinanzierung betrifft die Restschuld nach Ende der Sollzinsbindung. Entscheidend ist daher nicht der ursprüngliche Kaufpreis, sondern die zu diesem Zeitpunkt verbleibende Darlehenssumme.",
     "Ein Zinsanstieg wirkt auf die Restschuld unmittelbar über die neue Rate. Bei 250.000 € Restschuld verändert ein Unterschied von 2 Prozentpunkten die jährliche Zinsbelastung um rund 5.000 € vor Tilgung.",
     "Prolongation bei der bestehenden Bank, Umschuldung und Forward-Darlehen sollten nach Effektivkosten, Grundbuch-/Abwicklungskosten und Flexibilität verglichen werden."
   ],
-  "decisionUse": "Spätestens mehrere Jahre vor Zinsende sollte eine Restschuld- und Stressrechnung erstellt werden; die konkrete Angebotsphase hängt von Markt und Bank ab."
+  "decisionUse": "Mindestens drei Anschlusszins-Szenarien rechnen und prüfen, ob die Rate auch im oberen Szenario aus Einkommen bzw. Objektüberschuss tragbar ist.",
+  "contentBlocks": [
+    {
+      "type": "timeline",
+      "title": "Planungsfenster bis zum Zinsende",
+      "items": [
+        {
+          "label": "36–60 M.",
+          "title": "Zinsrisiko sichtbar machen",
+          "text": "Restschuld prognostizieren und Forward-Angebote nur dann prüfen, wenn Planungssicherheit einen Wert hat."
+        },
+        {
+          "label": "18–24 M.",
+          "title": "Bonität und Objektunterlagen aktualisieren",
+          "text": "Einkommen, Mietdaten, Grundbuch und Objektzustand auf Bankfähigkeit prüfen."
+        },
+        {
+          "label": "6–12 M.",
+          "title": "Prolongation gegen Umschuldung vergleichen",
+          "text": "Effektivzins, Restschuld, Sondertilgungen und Nebenkosten gegenüberstellen."
+        },
+        {
+          "label": "Zinsende",
+          "title": "Ablösung / Prolongation",
+          "text": "Neue Finanzierung löst den alten Saldo ab."
+        }
+      ],
+      "intro": null
+    },
+    {
+      "type": "table",
+      "title": "Rate bei 270.000 € Restschuld",
+      "headers": [
+        "neuer Sollzins",
+        "Monatsrate bei 2 % Tilgung",
+        "Jahresrate"
+      ],
+      "rows": [
+        [
+          "3,0 %",
+          "1.125 €",
+          "13.500 €"
+        ],
+        [
+          "4,5 %",
+          "1.462 €",
+          "17.550 €"
+        ],
+        [
+          "6,0 %",
+          "1.800 €",
+          "21.600 €"
+        ]
+      ],
+      "note": null
+    },
+    {
+      "type": "callout",
+      "title": "Restschuld ist die zentrale Stellgröße",
+      "text": "Eine höhere Tilgung heute reduziert nicht nur Schulden, sondern auch die Zinssensitivität der späteren Anschlussrate. Deshalb gehört die Anschlussfinanzierung bereits in die Erstfinanzierung.",
+      "tone": "navy"
+    }
+  ]
 }

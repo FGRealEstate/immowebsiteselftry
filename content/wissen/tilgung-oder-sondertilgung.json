@@ -1,8 +1,8 @@
 {
   "title": "Tilgung oder Sondertilgung?",
   "category": "Finanzierung",
-  "summary": "Höhere Tilgung reduziert die Restschuld schneller, bindet aber monatliche Liquidität.",
-  "body": "Sondertilgungsrechte schaffen Flexibilität. Die richtige Struktur hängt von Cashflow, Zinsbindung, Rücklagen und alternativen Verwendungsmöglichkeiten des Kapitals ab.",
+  "summary": "Höhere laufende Tilgung und Sondertilgungen reduzieren beide die Restschuld, unterscheiden sich aber in Flexibilität und monatlicher Verpflichtung.",
+  "body": "Die Anfangstilgung erhöht die vertragliche Regelrate dauerhaft. Eine Sondertilgung ist – sofern vereinbart – eine zusätzliche freiwillige Rückzahlung. Wirtschaftlich ist die Sondertilgung attraktiv, wenn die sichere Zinsersparnis höher gewichtet wird als alternative Verwendung und Liquiditätsbedarf.",
   "id": "tilgung-oder-sondertilgung",
   "slug": "tilgung-oder-sondertilgung",
   "url": "/wissen/tilgung-oder-sondertilgung/",
@@ -20,10 +20,10 @@
     "tilgung"
   ],
   "synonyms": [],
-  "updated": "2026-08-26",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
-  "definition": "Sondertilgungsrechte schaffen Flexibilität. Die richtige Struktur hängt von Cashflow, Zinsbindung, Rücklagen und alternativen Verwendungsmöglichkeiten des Kapitals ab.",
+  "definition": "Die Anfangstilgung erhöht die vertragliche Regelrate dauerhaft. Eine Sondertilgung ist – sofern vereinbart – eine zusätzliche freiwillige Rückzahlung. Wirtschaftlich ist die Sondertilgung attraktiv, wenn die sichere Zinsersparnis höher gewichtet wird als alternative Verwendung und Liquiditätsbedarf.",
   "formulae": [
     "Restschuld sinkt um reguläre Tilgung + Sondertilgung",
     "Zinsersparnis entsteht auf den künftig nicht mehr ausstehenden Darlehensbetrag"
@@ -42,11 +42,259 @@
     "interpretation": "Sondertilgung ist besonders wertvoll bei hohem Kreditzins und ausreichender Reserve. Alternativanlagen und Liquiditätsbedarf sind die Opportunitätskosten."
   },
   "sources": [],
-  "assistantAnswer": "Höhere Tilgung reduziert die Restschuld schneller, bindet aber monatliche Liquidität. Höhere laufende Tilgung erhöht die verpflichtende Rate und reduziert planmäßig die Restschuld. Sondertilgung bietet Flexibilität, wenn sie vertraglich vereinbart ist und Liquidität tatsächlich vorhanden ist.",
+  "assistantAnswer": "Bei 300.000 € Darlehen und 4 % Sollzins führt 2 % Anfangstilgung zu 1.500 € Monatsrate; 3 % Tilgung zu 1.750 €. Eine 2-%-Struktur mit zusätzlicher jährlicher Sondertilgung kann die Restschuld stärker senken, erhält aber mehr Flexibilität, sofern die Sondertilgung wirklich geleistet wird.",
   "focusPoints": [
     "Höhere laufende Tilgung erhöht die verpflichtende Rate und reduziert planmäßig die Restschuld. Sondertilgung bietet Flexibilität, wenn sie vertraglich vereinbart ist und Liquidität tatsächlich vorhanden ist.",
     "Die wirtschaftliche Attraktivität einer Sondertilgung entspricht vereinfacht dem sicheren eingesparten Darlehenszins auf den getilgten Betrag, bereinigt um Alternativrendite und Liquiditätswert.",
     "Bei Kapitalanlagen kann das Halten von Liquidität für CapEx oder weitere Investments sinnvoller sein als maximale Entschuldung."
   ],
-  "decisionUse": "Sondertilgung nur nach Vergleich von Zinsersparnis, Reservebedarf und alternativer Verwendung des Kapitals."
+  "decisionUse": "Wer unsichere Einkommensbestandteile hat, kann eine moderate Pflichttilgung mit großzügigem Sondertilgungsrecht bevorzugen. Bei sehr stabilem Überschuss kann eine höhere feste Tilgung die Restschuld planbarer senken.",
+  "contentBlocks": [
+    {
+      "type": "table",
+      "title": "Restschuld nach 10 Jahren im Modell",
+      "headers": [
+        "Strategie",
+        "Regelrate/Monat",
+        "jährliche Sondertilgung",
+        "Restschuld nach 10 J."
+      ],
+      "rows": [
+        [
+          "2 % Tilgung",
+          "1.500 €",
+          "0 €",
+          "226.375 €"
+        ],
+        [
+          "3 % Tilgung",
+          "1.750 €",
+          "0 €",
+          "189.563 €"
+        ],
+        [
+          "2 % + 10.000 € p.a.",
+          "1.500 €",
+          "10.000 €",
+          "105.900 €"
+        ]
+      ],
+      "note": null
+    },
+    {
+      "type": "lineChart",
+      "title": "Restschuldpfade",
+      "width": 720,
+      "height": 300,
+      "xLabels": [
+        {
+          "x": 70.0,
+          "label": "0"
+        },
+        {
+          "x": 133.0,
+          "label": "1"
+        },
+        {
+          "x": 196.0,
+          "label": "2"
+        },
+        {
+          "x": 259.0,
+          "label": "3"
+        },
+        {
+          "x": 322.0,
+          "label": "4"
+        },
+        {
+          "x": 385.0,
+          "label": "5"
+        },
+        {
+          "x": 448.0,
+          "label": "6"
+        },
+        {
+          "x": 511.0,
+          "label": "7"
+        },
+        {
+          "x": 574.0,
+          "label": "8"
+        },
+        {
+          "x": 637.0,
+          "label": "9"
+        },
+        {
+          "x": 700.0,
+          "label": "10"
+        }
+      ],
+      "yLabels": [
+        {
+          "y": 30,
+          "label": "300.000 €"
+        },
+        {
+          "y": 83.8,
+          "label": "225.000 €"
+        },
+        {
+          "y": 137.5,
+          "label": "150.000 €"
+        },
+        {
+          "y": 191.2,
+          "label": "75.000 €"
+        },
+        {
+          "y": 245,
+          "label": "0"
+        }
+      ],
+      "series": [
+        {
+          "name": "2 % Tilgung",
+          "points": "70.0,30.0 133.0,34.4 196.0,38.9 259.0,43.7 322.0,48.6 385.0,53.8 448.0,59.1 511.0,64.7 574.0,70.5 637.0,76.5 700.0,82.8",
+          "dots": [
+            {
+              "x": 70.0,
+              "y": 30.0,
+              "value": "300.000 €"
+            },
+            {
+              "x": 133.0,
+              "y": 34.4,
+              "value": "293.889 €"
+            },
+            {
+              "x": 196.0,
+              "y": 38.9,
+              "value": "287.529 €"
+            },
+            {
+              "x": 259.0,
+              "y": 43.7,
+              "value": "280.909 €"
+            },
+            {
+              "x": 322.0,
+              "y": 48.6,
+              "value": "274.020 €"
+            },
+            {
+              "x": 385.0,
+              "y": 53.8,
+              "value": "266.851 €"
+            },
+            {
+              "x": 448.0,
+              "y": 59.1,
+              "value": "259.389 €"
+            },
+            {
+              "x": 511.0,
+              "y": 64.7,
+              "value": "251.623 €"
+            },
+            {
+              "x": 574.0,
+              "y": 70.5,
+              "value": "243.541 €"
+            },
+            {
+              "x": 637.0,
+              "y": 76.5,
+              "value": "235.129 €"
+            },
+            {
+              "x": 700.0,
+              "y": 82.8,
+              "value": "226.375 €"
+            }
+          ],
+          "className": "series-0"
+        },
+        {
+          "name": "3 % Tilgung",
+          "points": "70.0,30.0 133.0,36.6 196.0,43.4 259.0,50.5 322.0,57.9 385.0,65.6 448.0,73.7 511.0,82.0 574.0,90.7 637.0,99.7 700.0,109.1",
+          "dots": [
+            {
+              "x": 70.0,
+              "y": 30.0,
+              "value": "300.000 €"
+            },
+            {
+              "x": 133.0,
+              "y": 36.6,
+              "value": "290.833 €"
+            },
+            {
+              "x": 196.0,
+              "y": 43.4,
+              "value": "281.293 €"
+            },
+            {
+              "x": 259.0,
+              "y": 50.5,
+              "value": "271.364 €"
+            },
+            {
+              "x": 322.0,
+              "y": 57.9,
+              "value": "261.030 €"
+            },
+            {
+              "x": 385.0,
+              "y": 65.6,
+              "value": "250.276 €"
+            },
+            {
+              "x": 448.0,
+              "y": 73.7,
+              "value": "239.083 €"
+            },
+            {
+              "x": 511.0,
+              "y": 82.0,
+              "value": "227.434 €"
+            },
+            {
+              "x": 574.0,
+              "y": 90.7,
+              "value": "215.311 €"
+            },
+            {
+              "x": 637.0,
+              "y": 99.7,
+              "value": "202.694 €"
+            },
+            {
+              "x": 700.0,
+              "y": 109.1,
+              "value": "189.563 €"
+            }
+          ],
+          "className": "series-1"
+        }
+      ],
+      "note": "Die Sondertilgungsvariante ist in der Tabelle dargestellt; im Chart werden die beiden festen Regeltilgungen gegenübergestellt.",
+      "yLabel": "Restschuld"
+    },
+    {
+      "type": "prose",
+      "title": "Flexibilität hat einen Wert",
+      "paragraphs": [
+        "Eine höhere feste Tilgung erzwingt Disziplin und senkt die Restschuld planbar. Sondertilgung erhält optional mehr Liquidität, setzt aber voraus, dass der Kreditnehmer den Überschuss tatsächlich zurückführt statt dauerhaft zu konsumieren."
+      ]
+    },
+    {
+      "type": "callout",
+      "title": "Sondertilgungsrecht prüfen",
+      "text": "Höhe, Bezugsgröße, Fristen und mögliche Kosten stehen im Darlehensvertrag. Nicht jedes Produkt erlaubt identische Sondertilgungen.",
+      "tone": "gold"
+    }
+  ]
 }

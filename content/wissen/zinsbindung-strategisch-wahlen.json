@@ -1,8 +1,8 @@
 {
   "title": "Zinsbindung strategisch wählen",
   "category": "Finanzierung",
-  "summary": "Die Zinsbindung verteilt Zinsänderungsrisiko und Flexibilität.",
-  "body": "Kurze Bindungen können günstiger sein, erhöhen aber das Anschlussrisiko. Lange Bindungen schaffen Planbarkeit, können jedoch Aufschläge enthalten.",
+  "summary": "Zinsbindung ist ein Tausch zwischen aktuellem Preis und künftiger Planungssicherheit. Längere Bindung kann teurer starten, reduziert aber das Terminrisiko der Anschlussfinanzierung.",
+  "body": "Die Sollzinsbindung bestimmt, wie lange der vereinbarte Sollzins festgeschrieben ist. Sie ist nicht identisch mit der Gesamtlaufzeit des Darlehens. Nach Ende der Bindung verbleibt häufig eine Restschuld.",
   "id": "zinsbindung-strategisch-wahlen",
   "slug": "zinsbindung-strategisch-wahlen",
   "url": "/wissen/zinsbindung-strategisch-wahlen/",
@@ -15,10 +15,10 @@
     "zinsänderungsrisiko"
   ],
   "synonyms": [],
-  "updated": "2026-08-26",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
-  "definition": "Kurze Bindungen können günstiger sein, erhöhen aber das Anschlussrisiko. Lange Bindungen schaffen Planbarkeit, können jedoch Aufschläge enthalten.",
+  "definition": "Die Sollzinsbindung bestimmt, wie lange der vereinbarte Sollzins festgeschrieben ist. Sie ist nicht identisch mit der Gesamtlaufzeit des Darlehens. Nach Ende der Bindung verbleibt häufig eine Restschuld.",
   "formulae": [
     "Zinsbindungsentscheidung = Preis der Sicherheit vs. Flexibilitäts- und Anschlussrisiko"
   ],
@@ -38,11 +38,61 @@
     "interpretation": "Längere Zinsbindung kann das Anschlussrisiko reduzieren, kostet aber häufig einen Zinsaufschlag. Die Entscheidung hängt von Restschuld, Risikotoleranz und Flexibilitätsbedarf ab."
   },
   "sources": [],
-  "assistantAnswer": "Die Zinsbindung verteilt Zinsänderungsrisiko und Flexibilität. Eine längere Zinsbindung kauft Planungssicherheit und kann einen Zinsaufschlag enthalten; eine kürzere Bindung kann günstiger starten, erhöht aber das frühere Anschlussrisiko.",
+  "assistantAnswer": "10, 15 oder 20 Jahre Zinsbindung sollten nicht nur nach dem heutigen Sollzins gewählt werden. Entscheidend ist, wann welche Restschuld dem Zinsmarkt wieder ausgesetzt wird. Längere Bindungen können einen höheren Startzins haben, kaufen dafür mehr Planungssicherheit.",
   "focusPoints": [
     "Eine längere Zinsbindung kauft Planungssicherheit und kann einen Zinsaufschlag enthalten; eine kürzere Bindung kann günstiger starten, erhöht aber das frühere Anschlussrisiko.",
     "Entscheidend sind erwartete Restschuld, persönliche Planung, Sondertilgungen und die Fähigkeit, einen Zinsanstieg zu tragen.",
     "Der Vergleich sollte nicht nur den Anfangszins, sondern Zinskosten und Restschuld bis zum jeweiligen Bindungsende enthalten."
   ],
-  "decisionUse": "Zinsbindung nach Risikotragfähigkeit auswählen, nicht nach Prognose, welcher Zins „wahrscheinlich“ kommt."
+  "decisionUse": "Zinsbindung danach wählen, wie viel Restschuld zu welchem Zeitpunkt vertretbar dem Markt ausgesetzt werden kann – nicht allein nach dem niedrigsten heutigen Sollzins.",
+  "contentBlocks": [
+    {
+      "type": "table",
+      "title": "Illustrativer Strukturvergleich",
+      "headers": [
+        "Zinsbindung",
+        "Beispielzins",
+        "Start-Rate bei 2 % Tilgung",
+        "Restschuld am Bindungsende",
+        "Zinsrisiko kommt"
+      ],
+      "rows": [
+        [
+          "10 Jahre",
+          "3,8 %",
+          "1.692 €",
+          "265.004 €",
+          "früher"
+        ],
+        [
+          "15 Jahre",
+          "4,0 %",
+          "1.750 €",
+          "206.447 €",
+          "mittel"
+        ],
+        [
+          "20 Jahre",
+          "4,2 %",
+          "1.808 €",
+          "131.171 €",
+          "später"
+        ]
+      ],
+      "note": "Beispiel 350.000 € Darlehen. Zinssätze sind illustrative Annahmen, keine aktuellen Angebote."
+    },
+    {
+      "type": "prose",
+      "title": "Der ökonomische Kern",
+      "paragraphs": [
+        "Die Zinsbindung bestimmt den Zeitpunkt, an dem ein Teil des Finanzierungsrisikos wieder an den Markt zurückgegeben wird. Bei hoher Restschuld ist dieser Zeitpunkt wichtiger als ein marginal niedrigerer Startzins."
+      ]
+    },
+    {
+      "type": "callout",
+      "title": "§ 489 BGB separat prüfen",
+      "text": "Bei langfristig gebundenen Verbraucherdarlehen können gesetzliche Kündigungsrechte relevant sein. Die konkrete Vertrags- und Rechtslage sollte im Einzelfall geprüft werden.",
+      "tone": "gold"
+    }
+  ]
 }

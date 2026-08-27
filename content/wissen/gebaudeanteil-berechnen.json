@@ -1,8 +1,8 @@
 {
   "title": "Gebäudeanteil berechnen",
   "category": "Steuern",
-  "summary": "Der Kaufpreis wird für steuerliche Zwecke auf Grund und Boden sowie Gebäude aufgeteilt.",
-  "body": "Pauschale Prozentsätze können unpassend sein. Lage, Bodenrichtwert, Gebäudestandard und Ertragswertkomponenten beeinflussen die Aufteilung.",
+  "summary": "Für die AfA muss ein Gesamtkaufpreis auf Grund und Boden sowie Gebäude aufgeteilt werden. Maßgeblich ist eine wirtschaftlich haltbare Wertrelation – nicht eine frei gewählte Restwertmethode.",
+  "body": "Der Gebäudeanteil ist der Anteil des Gesamtkaufpreises, der wirtschaftlich auf das abschreibbare Gebäude entfällt. Nach BMF/BFH-Systematik wird das Verhältnis geeigneter Verkehrswerte bzw. Teilwerte auf den tatsächlichen Kaufpreis übertragen.",
   "id": "gebaudeanteil-berechnen",
   "slug": "gebaudeanteil-berechnen",
   "url": "/wissen/gebaudeanteil-berechnen/",
@@ -20,10 +20,10 @@
     "zwecke"
   ],
   "synonyms": [],
-  "updated": "2026-08-26",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
-  "definition": "Pauschale Prozentsätze können unpassend sein. Lage, Bodenrichtwert, Gebäudestandard und Ertragswertkomponenten beeinflussen die Aufteilung.",
+  "definition": "Der Gebäudeanteil ist der Anteil des Gesamtkaufpreises, der wirtschaftlich auf das abschreibbare Gebäude entfällt. Nach BMF/BFH-Systematik wird das Verhältnis geeigneter Verkehrswerte bzw. Teilwerte auf den tatsächlichen Kaufpreis übertragen.",
   "formulae": [
     "AfA-Basis = Gesamte Anschaffungskosten × Gebäudeanteil"
   ],
@@ -40,15 +40,70 @@
   },
   "sources": [
     {
-      "label": "§ 7 EStG – Gebäude-AfA",
-      "url": "https://www.gesetze-im-internet.de/estg/__7.html"
+      "label": "BMF – Arbeitshilfe Kaufpreisaufteilung (Stand März 2026)",
+      "url": "https://www.bundesfinanzministerium.de/Content/DE/Downloads/Steuern/Berechnung-Aufteilung-Grundstueckskaufpreis.html"
     }
   ],
-  "assistantAnswer": "Der Kaufpreis wird für steuerliche Zwecke auf Grund und Boden sowie Gebäude aufgeteilt. Für steuerliche Abschreibungen muss der Gesamtkaufpreis einschließlich zuordenbarer Nebenkosten auf Grund und Boden sowie Gebäude verteilt werden.",
+  "assistantAnswer": "Beispiel Kaufpreisaufteilung: Bodenwert 250.000 €, Gebäudewert 450.000 € → Gebäudeanteil 64,29 %. Bei 600.000 € Gesamtkaufpreis entfallen damit rund 385.714 € auf das Gebäude und rund 214.286 € auf Grund und Boden. Die Quote muss sachgerecht hergeleitet werden.",
   "focusPoints": [
     "Für steuerliche Abschreibungen muss der Gesamtkaufpreis einschließlich zuordenbarer Nebenkosten auf Grund und Boden sowie Gebäude verteilt werden.",
     "Eine vertragliche Aufteilung kann steuerlich relevant sein, wird aber nicht automatisch akzeptiert, wenn sie wirtschaftlich unplausibel ist.",
     "Bodenrichtwert, Grundstücksgröße, Gebäudestandard, Restnutzungsdauer und Marktverhältnisse beeinflussen die sachgerechte Aufteilung."
   ],
-  "decisionUse": "AfA-Simulationen sollten niemals mit einem frei gewählten Gebäudeanteil rechnen, ohne die Herleitung offenzulegen."
+  "decisionUse": "Gebäudequote vor dem Kauf steuerlich plausibilisieren; sie beeinflusst die AfA über viele Jahre und kann Renditevergleiche erheblich verändern.",
+  "contentBlocks": [
+    {
+      "type": "formula",
+      "title": "Wertrelation auf Kaufpreis übertragen",
+      "formulas": [
+        "Gebäudequote = Gebäudewert / (Gebäudewert + Bodenwert)",
+        "Gebäudeanteil Kaufpreis = Gesamtkaufpreis × Gebäudequote"
+      ],
+      "explanation": null
+    },
+    {
+      "type": "table",
+      "title": "Beispiel",
+      "headers": [
+        "Position",
+        "ermittelter Wert",
+        "Quote",
+        "Anteil am Kaufpreis"
+      ],
+      "rows": [
+        [
+          "Grund und Boden",
+          "250.000 €",
+          "35,71 %",
+          "214.286 €"
+        ],
+        [
+          "Gebäude",
+          "450.000 €",
+          "64,29 %",
+          "385.714 €"
+        ],
+        [
+          "Summe",
+          "700.000 €",
+          "100 %",
+          "600.000 €"
+        ]
+      ],
+      "note": null
+    },
+    {
+      "type": "prose",
+      "title": "Warum die Werte nicht mit dem Kaufpreis identisch sein müssen",
+      "paragraphs": [
+        "Die Einzelwerte dienen zur Bestimmung des Verhältnisses. Dieses Verhältnis wird anschließend auf den tatsächlich gezahlten Gesamtkaufpreis übertragen. Genau deshalb ist die „Kaufpreis minus Bodenrichtwert = Gebäude“-Methode fachlich nicht automatisch zulässig."
+      ]
+    },
+    {
+      "type": "callout",
+      "title": "BMF-Arbeitshilfe ist Plausibilisierung, kein Wunschwertgenerator",
+      "text": "Eine vertragliche Aufteilung kann steuerlich beachtlich sein, wenn sie wirtschaftlich haltbar ist. Bei deutlicher Abweichung von realen Wertverhältnissen kann sie verworfen werden.",
+      "tone": "gold"
+    }
+  ]
 }

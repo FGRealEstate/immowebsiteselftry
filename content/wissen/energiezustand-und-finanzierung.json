@@ -1,8 +1,8 @@
 {
   "title": "Energiezustand und Finanzierung",
   "category": "Finanzierung",
-  "summary": "Energieeffizienz beeinflusst Betriebskosten, Investitionsbedarf, Förderfähigkeit und Bankbewertung.",
-  "body": "Heizung, Gebäudehülle und Sanierungsfahrplan gehören in die Finanzierungsreserve.",
+  "summary": "Der energetische Zustand beeinflusst nicht nur Betriebskosten, sondern zunehmend auch Objektbewertung, Sanierungsbedarf, Förderfähigkeit und damit die Finanzierungsstruktur.",
+  "body": "Für die Finanzierung ist der Energiezustand relevant, weil notwendige Modernisierungen zusätzlichen Kapitalbedarf erzeugen und Banken Objektqualität bzw. Zukunftsfähigkeit in ihre Bewertung einbeziehen können. Energieausweis, Heizungsart und Sanierungsfahrplan sollten deshalb vor der Kreditstruktur geprüft werden.",
   "id": "energiezustand-und-finanzierung",
   "slug": "energiezustand-und-finanzierung",
   "url": "/wissen/energiezustand-und-finanzierung/",
@@ -17,10 +17,10 @@
     "investitionsbedarf"
   ],
   "synonyms": [],
-  "updated": "2026-08-26",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
   "related": [],
-  "definition": "Heizung, Gebäudehülle und Sanierungsfahrplan gehören in die Finanzierungsreserve.",
+  "definition": "Für die Finanzierung ist der Energiezustand relevant, weil notwendige Modernisierungen zusätzlichen Kapitalbedarf erzeugen und Banken Objektqualität bzw. Zukunftsfähigkeit in ihre Bewertung einbeziehen können. Energieausweis, Heizungsart und Sanierungsfahrplan sollten deshalb vor der Kreditstruktur geprüft werden.",
   "formulae": [
     "Gesamtbelastung = Kapitaldienst + nicht umlagefähige Objektkosten + erwartete energetische Investitionen"
   ],
@@ -39,11 +39,73 @@
     "interpretation": "Energieeffizienz ist sowohl Kosten- als auch Finanzierungsfaktor. Förderprogramme und Bankanforderungen ändern sich; sie sind zum Antragszeitpunkt zu prüfen."
   },
   "sources": [],
-  "assistantAnswer": "Energieeffizienz beeinflusst Betriebskosten, Investitionsbedarf, Förderfähigkeit und Bankbewertung. Der energetische Zustand beeinflusst nicht nur Betriebskosten, sondern zunehmend auch bankseitige Objektbewertung, Modernisierungsbedarf und Förderfähigkeit.",
+  "assistantAnswer": "Ein schlechter Energiezustand kann die Finanzierung indirekt verteuern: zusätzlicher Sanierungsbedarf erhöht den Mittelbedarf und kann den bankseitigen Objektwert beeinflussen. Deshalb sollte ein Kaufpreis nie ohne Modernisierungsbudget finanziert werden. Bei förderfähigen Maßnahmen können KfW-/BEG-Bausteine die Struktur verändern.",
   "focusPoints": [
     "Der energetische Zustand beeinflusst nicht nur Betriebskosten, sondern zunehmend auch bankseitige Objektbewertung, Modernisierungsbedarf und Förderfähigkeit.",
     "Eine niedrige Energieeffizienzklasse ist nicht automatisch ein Finanzierungsausschluss, kann aber zusätzliche Investitionen oder geringere Beleihungswerte auslösen.",
     "Bei Sanierungsobjekten müssen Kaufdarlehen und Modernisierungsbudget gemeinsam geplant werden; sonst kann die anfänglich günstige Finanzierung nach Kauf an fehlender Liquidität scheitern."
   ],
-  "decisionUse": "Energieausweis, Heizung, Dach/Fassade/Fenster und geplante gesetzliche/technische Maßnahmen vor Bankanfrage mit einem realistischen Budget hinterlegen."
+  "decisionUse": "Sanierungsbedarf als Teil der Gesamtinvestition finanzieren und nicht nach Kauf aus einer bereits aufgebrauchten Liquiditätsreserve improvisieren.",
+  "contentBlocks": [
+    {
+      "type": "table",
+      "title": "Zwei Finanzierungsbilder desselben Kaufpreises",
+      "headers": [
+        "Position",
+        "ohne Sanierungsbedarf",
+        "mit energetischem Paket"
+      ],
+      "rows": [
+        [
+          "Kaufpreis",
+          "350.000 €",
+          "350.000 €"
+        ],
+        [
+          "Modernisierung",
+          "0 €",
+          "60.000 €"
+        ],
+        [
+          "Gesamtbedarf vor NK",
+          "350.000 €",
+          "410.000 €"
+        ],
+        [
+          "Risiko",
+          "laufende Kosten",
+          "Zusatzkredit + Baukostenrisiko"
+        ]
+      ],
+      "note": null
+    },
+    {
+      "type": "steps",
+      "title": "Vor der Bankanfrage prüfen",
+      "items": [
+        {
+          "title": "Energieausweis lesen",
+          "text": "Kennwert, Energieträger, Baujahr und Modernisierungsempfehlungen einordnen."
+        },
+        {
+          "title": "Maßnahmenbudget bilden",
+          "text": "Heizung, Fenster, Dach/Fassade und Verteilungssystem nicht pauschal schätzen."
+        },
+        {
+          "title": "Förderfähigkeit prüfen",
+          "text": "Förderprogramme und technische Anforderungen vor Beauftragung klären."
+        },
+        {
+          "title": "Bankstruktur abstimmen",
+          "text": "Kaufpreis- und Modernisierungsbaustein gemeinsam dimensionieren."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "title": "Keine Energielabel-Automatik",
+      "text": "Eine einzelne Effizienzklasse entscheidet nicht isoliert über den Bankzins. Entscheidend ist die konkrete Bankpolitik, der Objektwert, der Maßnahmenplan und die Tragfähigkeit des Gesamtkredits.",
+      "tone": "navy"
+    }
+  ]
 }
