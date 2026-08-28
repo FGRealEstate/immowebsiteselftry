@@ -1,0 +1,65 @@
+---
+layout: base.njk
+permalink: "lexikon/index.html"
+title: "Immobilienlexikon - 125 Begriffe erklaert"
+description: "Alle Begriffe aus Kaufvertrag, Finanzierung, Bewertung und Verwaltung, jeweils in einem Satz definiert und ausfuehrlich eingeordnet."
+---
+<div class="content-detail shell">
+  <nav class="breadcrumbs"><a href="/index.html">Start</a><span>&rsaquo;</span><span>Lexikon</span></nav>
+  <article class="science-article">
+    <header>
+      <h1>Immobilienlexikon</h1>
+      <p class="lead">125 Begriffe aus Kaufvertrag, Finanzierung, Bewertung und Bewirtschaftung &mdash; jeder Eintrag mit einer Kurzdefinition, einer ausf&uuml;hrlichen Einordnung und den Pr&uuml;ffragen, die in der Praxis &uuml;ber den Begriff entscheiden.</p>
+    </header>
+    <ul class="lex-index">
+    {%- for entry in labContent.lexicon %}
+      <li><a href="/lexikon/{{ entry.slug }}/"><strong>{{ entry.term }}</strong></a> {{ entry.definition }}</li>
+    {%- endfor %}
+    </ul>
+  </article>
+</div>
+{#
+  O-112 — bis hierher trug die Lexikon-Übersicht keine strukturierten Daten.
+  Der Begriffsbestand ist als DefinedTermSet ausgezeichnet, die einzelnen
+  Begriffe verweisen auf ihre Detailseite.
+#}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://fg-realestate.de/lexikon/",
+      "url": "https://fg-realestate.de/lexikon/",
+      "name": "Immobilienlexikon",
+      "description": "{{ labContent.lexicon | length }} Begriffe aus Kaufvertrag, Finanzierung, Bewertung und Bewirtschaftung, jeweils mit Kurzdefinition und Einordnung.",
+      "inLanguage": "de-DE",
+      "isPartOf": { "@id": "https://fg-realestate.de/#website" },
+      "about": { "@id": "https://fg-realestate.de/#organization" },
+      "provider": { "@id": "https://fg-realestate.de/#organization" },
+      "breadcrumb": { "@id": "https://fg-realestate.de/lexikon/#breadcrumb" },
+      "mainEntity": { "@id": "https://fg-realestate.de/lexikon/#begriffe" }
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://fg-realestate.de/lexikon/#begriffe",
+      "name": "Immobilienlexikon Fischer & Geserich",
+      "url": "https://fg-realestate.de/lexikon/",
+      "inLanguage": "de-DE",
+      "hasDefinedTerm": [
+{%- for entry in labContent.lexicon %}
+        { "@id": "https://fg-realestate.de/lexikon/{{ entry.slug }}/#begriff" }{% if not loop.last %},{% endif %}
+{%- endfor %}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fg-realestate.de/lexikon/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
+        { "@type": "ListItem", "position": 2, "name": "Lexikon" }
+      ]
+    }
+  ]
+}
+</script>

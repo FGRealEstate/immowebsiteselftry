@@ -7,5 +7,11 @@
   "keywords": [
     "kaufpreisfaktor"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Kapitalanlage",
+  "explanation": "Der Kaufpreisfaktor setzt Kaufpreis und Jahresnettokaltmiete ins Verhältnis. Er ist bei identischer Basis der Kehrwert der Bruttomietrendite und ignoriert Nebenkosten, Bewirtschaftung, Finanzierung und CapEx.",
+  "practiceExample": "360.000 € Kaufpreis / 18.000 € JNKM = Faktor 20. Das entspricht 5,0 % Bruttomietrendite.",
+  "formula": "Kaufpreisfaktor = Kaufpreis / Jahresnettokaltmiete",
+  "sources": [],
+  "assistantAnswer": "Kaufpreis geteilt durch Jahresnettokaltmiete. Der Kaufpreisfaktor setzt Kaufpreis und Jahresnettokaltmiete ins Verhältnis. Er ist bei identischer Basis der Kehrwert der Bruttomietrendite und ignoriert Nebenkosten, Bewirtschaftung, Finanzierung und CapEx."
 }

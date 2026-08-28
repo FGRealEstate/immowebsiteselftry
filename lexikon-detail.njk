@@ -4,9 +4,62 @@ pagination:
   data: labContent.lexicon
   size: 1
   alias: entry
+  addAllPagesToCollections: true
 permalink: "lexikon/{{ entry.slug }}/index.html"
 eleventyComputed:
   title: "{{ entry.term }} – Immobilienlexikon"
   description: "{{ entry.definition }}"
 ---
-<main class="content-detail shell"><nav class="breadcrumbs"><a href="/investment-lab.html">Investment Lab</a><span>›</span><a href="/investment-lab.html#lexikon">Lexikon</a><span>›</span><span>{{ entry.term }}</span></nav><article class="science-article"><header><span class="lab-kicker">IMMOBILIENLEXIKON</span><h1>{{ entry.term }}</h1><p class="lead">{{ entry.definition }}</p></header><section><h2>Ausführliche Einordnung</h2><p>{{ entry.definition }} Für die Praxis ist entscheidend, wie der Begriff im konkreten Vertrag, in einer Abrechnung oder in der Finanzierungsunterlage definiert wird.</p></section><section><h2>Prüffragen</h2><ul><li>Welche Unterlage enthält die maßgebliche Angabe?</li><li>Welche Bezugsgröße und welcher Zeitraum gelten?</li><li>Welche Kosten oder Risiken sind nicht enthalten?</li><li>Welcher Fachartikel oder Rechner vertieft das Thema?</li></ul></section><a class="lab-btn lab-btn-gold" href="/investment-lab.html">Im Investment Lab weiterarbeiten</a></article></main>
+<div class="content-detail shell">
+  <nav class="breadcrumbs"><a href="/index.html">Start</a><span>&rsaquo;</span><a href="/lexikon/">Lexikon</a><span>›</span><span>{{ entry.term }}</span></nav>
+  <article class="science-article science-article-v2 lexicon-v2">
+    <header class="science-hero">
+      <span class="lab-kicker">— {{ entry.category or "IMMOBILIENLEXIKON" }} —</span>
+      <h1>{{ entry.term }}</h1>
+      <p class="lead">{{ entry.definition }}</p>
+    </header>
+    {% if entry.explanation %}<section class="science-section"><h2>Fachliche Einordnung</h2><p>{{ entry.explanation }}</p></section>{% endif %}
+    {% if entry.formula %}<section class="science-section"><h2>Formel / Rechenlogik</h2><div class="lab-formula-card"><div class="lab-formula">{{ entry.formula }}</div></div></section>{% endif %}
+    {% if entry.practiceExample %}<section class="lab-example-section science-section"><h2>Konkretes Beispiel</h2><div class="lab-interpretation"><p>{{ entry.practiceExample }}</p></div></section>{% endif %}
+    {% if entry.sources and entry.sources.length %}<section class="lab-source-section science-section"><h2>Quellen &amp; Rechtsgrundlagen</h2><ul>{% for source in entry.sources %}<li><a href="{{ source.url }}" target="_blank" rel="noopener noreferrer">{{ source.label }}</a></li>{% endfor %}</ul></section>{% endif %}
+    <aside class="article-note"><strong>Hinweis</strong><p>Bei rechtlichen, steuerlichen oder bankseitigen Begriffen entscheidet der konkrete Vertrag beziehungsweise Einzelfall.</p></aside>
+    <a class="lab-btn lab-btn-gold" href="/investment-lab.html">Im Investment Lab weiterarbeiten</a>
+  </article>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://fg-realestate.de/lexikon/{{ entry.slug }}/#begriff",
+      "name": {{ entry.term | json | safe }},
+      "description": {{ entry.definition | json | safe }},
+      "url": "https://fg-realestate.de/lexikon/{{ entry.slug }}/",
+      "inDefinedTermSet": { "@id": "https://fg-realestate.de/lexikon/#begriffe" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://fg-realestate.de/lexikon/{{ entry.slug }}/",
+      "url": "https://fg-realestate.de/lexikon/{{ entry.slug }}/",
+      "name": {{ (entry.term + " – Immobilienlexikon") | json | safe }},
+      "description": {{ entry.definition | json | safe }},
+      "inLanguage": "de-DE",
+      "isPartOf": { "@id": "https://fg-realestate.de/#website" },
+      "about": { "@id": "https://fg-realestate.de/lexikon/{{ entry.slug }}/#begriff" },
+      "dateModified": {{ entry.updated | json | safe }},
+      "provider": { "@id": "https://fg-realestate.de/#organization" },
+      "breadcrumb": { "@id": "https://fg-realestate.de/lexikon/{{ entry.slug }}/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fg-realestate.de/lexikon/{{ entry.slug }}/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
+        { "@type": "ListItem", "position": 2, "name": "Lexikon", "item": "https://fg-realestate.de/lexikon/" },
+        { "@type": "ListItem", "position": 3, "name": {{ entry.term | json | safe }} }
+      ]
+    }
+  ]
+}
+</script>

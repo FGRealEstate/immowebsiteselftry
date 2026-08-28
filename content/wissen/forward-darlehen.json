@@ -1,8 +1,8 @@
 {
   "title": "Forward-Darlehen",
   "category": "Finanzierung",
-  "summary": "Ein Forward-Darlehen sichert Zinsen vor Ablauf der bestehenden Bindung.",
-  "body": "Dafür wird typischerweise ein Aufschlag bezahlt. Vorteil und Risiko hängen von Vorlaufzeit und Zinsentwicklung ab.",
+  "summary": "Ein Forward-Darlehen sichert heute den Sollzins einer künftigen Anschlussfinanzierung. Entscheidend sind Vorlaufzeit, Forward-Aufschlag, erwartete Restschuld und das Risiko fallender Zinsen.",
+  "body": "Ein Forward-Darlehen wird heute verbindlich abgeschlossen, aber erst zu einem späteren Termin zur Ablösung einer bestehenden Finanzierung ausgezahlt. Es ist damit eine Zinsabsicherung für eine künftige Restschuld – keine unverbindliche Option.",
   "id": "forward-darlehen",
   "slug": "forward-darlehen",
   "url": "/wissen/forward-darlehen/",
@@ -16,7 +16,194 @@
     "zinsen"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Ein Forward-Darlehen wird heute verbindlich abgeschlossen, aber erst zu einem späteren Termin zur Ablösung einer bestehenden Finanzierung ausgezahlt. Es ist damit eine Zinsabsicherung für eine künftige Restschuld – keine unverbindliche Option.",
+  "formulae": [
+    "Forward-Rate nach Vertragsangebot; Auszahlung erst zum vereinbarten zukünftigen Termin",
+    "Neue Rate ≈ Restschuld × (Forward-Sollzins + Tilgung) / 12"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "2026: Restlaufzeit der Sollzinsbindung noch 5 Jahre",
+      "2031: erwartete Restschuld 250.000 €",
+      "Forward-Zins heute beispielhaft 4,3 %",
+      "Tilgung ab 2031: 2,0 %"
+    ],
+    "steps": [
+      "Forward-Rate ab 2031 ≈ 250.000 × 6,3 % / 12 = 1.313 €",
+      "Steigt das Marktniveau 2031 auf 5,5 %, wäre eine neue Finanzierung bei gleicher Tilgung ≈ 1.563 €",
+      "Fällt es auf 3,0 %, wäre die Marktalternative ≈ 1.042 €"
+    ],
+    "interpretation": "Forward-Darlehen sichern einen zukünftigen Zins, nicht den heute laufenden Kredit. Produkte werden am Markt häufig mehrere Jahre im Voraus angeboten; etwa fünf Jahre Vorlauf sind möglich, aber bankabhängig. Der Preis der Zinssicherheit kann ein Forward-Aufschlag sein."
+  },
+  "sources": [],
+  "assistantAnswer": "Ein Forward-Darlehen fixiert heute den Zinssatz für eine Anschlussfinanzierung, die erst später startet. Beispiel: 250.000 € erwartete Restschuld im Jahr 2031, heute gesicherter Forward-Sollzins 4,3 % und 2 % Tilgung ergeben rund 1.313 € Monatsrate. Liegt der Markt 2031 bei 5,5 %, läge eine gleich strukturierte neue Finanzierung bei rund 1.563 €; fällt der Markt auf 3,0 %, wäre sie nur rund 1.042 € teuer. Der Schutz gegen steigende Zinsen wird also mit dem Risiko erkauft, bei fallenden Zinsen an den höheren Forward-Zins gebunden zu sein.",
+  "focusPoints": [
+    "Ein Forward-Darlehen sichert heute Konditionen für eine Anschlussfinanzierung, deren Auszahlung erst in der Zukunft beginnt. Es ist damit eine Zinsabsicherung und keine kostenlose Option.",
+    "Viele Anbieter ermöglichen Vorlaufzeiten von mehreren Jahren, häufig bis etwa 60 Monate; konkrete Grenzen und Forward-Aufschläge unterscheiden sich je Bank.",
+    "Steigen die Marktzinsen bis zum Anschluss, kann der früh gesicherte Zins wertvoll sein. Fallen sie deutlich, bleibt der Darlehensnehmer grundsätzlich an den vereinbarten Forward-Zins gebunden."
+  ],
+  "decisionUse": "Forward nicht nach Bauchgefühl abschließen: erwartete Restschuld, Forward-Aufschlag, Stressrate ohne Absicherung und finanzielle Tragfähigkeit in mindestens drei Zinsszenarien vergleichen.",
+  "timeline": {
+    "title": "Beispielhafte Zeitachse",
+    "items": [
+      {
+        "label": "2026",
+        "title": "Heute",
+        "text": "Bestehendes Darlehen läuft; erwartete Restschuld zum Zinsende wird ermittelt."
+      },
+      {
+        "label": "2026/27",
+        "title": "Forward-Abschluss",
+        "text": "Zins für die Anschlussfinanzierung wird vorab festgeschrieben; Vorlauf und Aufschlag werden vereinbart."
+      },
+      {
+        "label": "2031",
+        "title": "Ende der bisherigen Zinsbindung",
+        "text": "Forward-Darlehen löst die Restschuld des bisherigen Darlehens ab."
+      },
+      {
+        "label": "ab 2031",
+        "title": "Neue Annuität",
+        "text": "Rate richtet sich nach gesichertem Forward-Zins, Tilgung und tatsächlicher Restschuld."
+      }
+    ]
+  },
+  "comparisonTable": {
+    "title": "Restschuld 250.000 € – nur zur Szenarioanalyse",
+    "headers": [
+      "Anschlusszins",
+      "Tilgung",
+      "Monatsrate"
+    ],
+    "rows": [
+      [
+        "3,0 %",
+        "2,0 %",
+        "ca. 1.042 €"
+      ],
+      [
+        "4,3 % Forward",
+        "2,0 %",
+        "ca. 1.313 €"
+      ],
+      [
+        "5,5 %",
+        "2,0 %",
+        "ca. 1.563 €"
+      ]
+    ]
+  },
+  "contentBlocks": [
+    {
+      "type": "prose",
+      "title": "Warum Forward-Darlehen wirtschaftlich eine Versicherungsentscheidung sind",
+      "paragraphs": [
+        "Der Kreditnehmer tauscht Zinsunsicherheit gegen Planungssicherheit. Der heute vereinbarte Forward-Zins enthält typischerweise einen Aufschlag gegenüber einer sofort auszahlbaren Finanzierung; dessen Höhe hängt von Bank, Vorlaufzeit und Marktphase ab.",
+        "Die zentrale Größe ist nicht der ursprüngliche Kaufpreis, sondern die erwartete Restschuld zum Ablösetermin. Wird diese zu hoch oder zu niedrig geschätzt, ist auch die Forward-Struktur falsch dimensioniert."
+      ]
+    },
+    {
+      "type": "timeline",
+      "title": "Zeitstrahl einer fünfjährigen Vorlaufzeit",
+      "items": [
+        {
+          "label": "08/2026",
+          "title": "Forward-Angebote vergleichen",
+          "text": "Restschuld zum 08/2031 prognostizieren, Vorlaufzeit und Aufschlag verschiedener Banken vergleichen."
+        },
+        {
+          "label": "08/2026",
+          "title": "Forward-Darlehen abschließen",
+          "text": "Der künftige Sollzins wird verbindlich vereinbart. Das Altdarlehen läuft unverändert weiter."
+        },
+        {
+          "label": "2027–2030",
+          "title": "Bestehende Zinsbindung läuft",
+          "text": "Keine Doppelrate: Die neue Finanzierung wird noch nicht ausgezahlt."
+        },
+        {
+          "label": "08/2031",
+          "title": "Zinsbindung endet",
+          "text": "Die erwartete Restschuld wird durch das Forward-Darlehen abgelöst."
+        },
+        {
+          "label": "ab 08/2031",
+          "title": "Neue Annuität",
+          "text": "Zins und Tilgung laufen zu dem bereits 2026 vereinbarten Sollzins."
+        }
+      ],
+      "intro": "Viele Banken ermöglichen mehrjährige Forward-Zeiträume; rund fünf Jahre Vorlauf sind am Markt häufig darstellbar, konkrete Grenzen sind bankabhängig."
+    },
+    {
+      "type": "formula",
+      "title": "Rate der Anschlussfinanzierung",
+      "formulas": [
+        "Monatsrate ≈ Restschuld × (Forward-Sollzins + Anfangstilgung) / 12"
+      ],
+      "explanation": null
+    },
+    {
+      "type": "table",
+      "title": "Zinssicherung gegen Marktrisiko",
+      "headers": [
+        "Szenario",
+        "Sollzins",
+        "Monatsrate bei 2 % Tilgung",
+        "Jahresrate"
+      ],
+      "rows": [
+        [
+          "Heute gesichert",
+          "4,3 %",
+          "1.312 €",
+          "15.750 €"
+        ],
+        [
+          "Markt 2031: 3,0 %",
+          "3,0 %",
+          "1.042 €",
+          "12.500 €"
+        ],
+        [
+          "Markt 2031: 5,5 %",
+          "5,5 %",
+          "1.562 €",
+          "18.750 €"
+        ]
+      ],
+      "note": "Beispiel mit 250.000 € Restschuld. Zinsen sind Rechenannahmen und keine aktuellen F&G-Bankkonditionen."
+    },
+    {
+      "type": "barChart",
+      "title": "Monatsrate im Jahr 2031",
+      "items": [
+        {
+          "label": "Markt 3,0 %",
+          "value": "1.042 €",
+          "pct": 67
+        },
+        {
+          "label": "Forward 4,3 %",
+          "value": "1.313 €",
+          "pct": 84
+        },
+        {
+          "label": "Markt 5,5 %",
+          "value": "1.563 €",
+          "pct": 100
+        }
+      ],
+      "note": "Die Balken zeigen den Zielkonflikt: Forward schützt vor dem oberen Szenario, verhindert aber die Teilnahme am unteren Szenario."
+    },
+    {
+      "type": "callout",
+      "title": "Wann die Absicherung besonders relevant wird",
+      "text": "Je höher die erwartete Restschuld und je enger der Haushaltsüberschuss, desto größer ist der wirtschaftliche Wert planbarer Anschlussraten. Bei hoher Liquiditätsreserve oder sehr niedriger Restschuld kann die Flexibilität eines späteren Neuabschlusses dagegen wichtiger sein.",
+      "tone": "gold"
+    }
+  ]
 }

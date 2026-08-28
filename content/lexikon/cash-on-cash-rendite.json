@@ -7,5 +7,10 @@
   "keywords": [
     "cash-on-cash-rendite"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Kapitalanlage",
+  "explanation": "Laufender Cashflow im Verhältnis zum eingesetzten Eigenkapital. Cash-on-Cash-Rendite ist eine Investmentkennzahl bzw. Risikogröße. Für Vergleiche müssen Definition, Zeitraum und einbezogene Kosten identisch sein.",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Laufender Cashflow im Verhältnis zum eingesetzten Eigenkapital. Laufender Cashflow im Verhältnis zum eingesetzten Eigenkapital. Cash-on-Cash-Rendite ist eine Investmentkennzahl bzw. Risikogröße. Für Vergleiche müssen Definition, Zeitraum und einbezogene Kosten identisch sein."
 }

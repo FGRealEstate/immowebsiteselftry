@@ -7,5 +7,11 @@
   "keywords": [
     "miteigentumsanteil"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Rechnerischer Anteil am Gemeinschaftseigentum. Der Miteigentumsanteil beschreibt den Bruchteil, mit dem ein Wohnungseigentümer am Gemeinschaftseigentum beteiligt ist. Er kann für Kosten- und Stimmrechtsfragen relevant sein, soweit Gemeinschaftsordnung oder Gesetz nichts anderes regeln.",
+  "explanation": "Der Miteigentumsanteil beschreibt den Bruchteil, mit dem ein Wohnungseigentümer am Gemeinschaftseigentum beteiligt ist. Er kann für Kosten- und Stimmrechtsfragen relevant sein, soweit Gemeinschaftsordnung oder Gesetz nichts anderes regeln.",
+  "practiceExample": "87/1.000 Miteigentumsanteile bedeuten nicht automatisch 8,7 % jeder Kostenposition; die Teilungserklärung kann abweichende Verteilungsschlüssel vorsehen."
 }

@@ -21,7 +21,30 @@
     "umfasst"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Der Rechner ist nur die wirtschaftliche Ebene. Dokumente und Annahmen müssen verifiziert werden.",
+  "formulae": [
+    "Prüfmatrix = Recht + Technik + Ertrag + Finanzierung + Exit"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "ETW-Kauf 300.000 €",
+      "Prüfung: Grundbuch, Teilungserklärung, WEG-Protokolle, Wirtschaftsplan, Energieausweis, Mietvertrag, Finanzierung"
+    ],
+    "steps": [
+      "Ein einzelner Fund – z. B. geplante Dachsanierung – kann Kaufpreis, Cashflow und Finanzierungsreserve gleichzeitig verändern."
+    ],
+    "interpretation": "Due Diligence ist kein Dokumentensammeln, sondern die Übersetzung von Befunden in Preis, Risiko und Vertragsgestaltung."
+  },
+  "sources": [],
+  "assistantAnswer": "Eine strukturierte Prüfung umfasst Recht, Technik, Miete, Markt, Finanzierung und Steuern. Due Diligence verbindet rechtliche, technische, wirtschaftliche und finanzielle Prüfung. Eine gute Renditekennzahl kann einen ungeklärten Grundbuchvermerk oder Sanierungsstau nicht kompensieren.",
+  "focusPoints": [
+    "Due Diligence verbindet rechtliche, technische, wirtschaftliche und finanzielle Prüfung. Eine gute Renditekennzahl kann einen ungeklärten Grundbuchvermerk oder Sanierungsstau nicht kompensieren.",
+    "Bei ETW gehören Teilungserklärung, Protokolle, Wirtschaftsplan, Rücklage und Sonderumlagen in die Prüfung; bei MFH zusätzlich Mieterliste, Mietverträge, Flächen, technische Gewerke und CapEx.",
+    "Offene Punkte sollten als konkrete Datenlücke mit möglichem Preiseffekt dokumentiert werden, nicht als allgemeine „Prüfaufgabe“."
+  ],
+  "decisionUse": "Am Ende steht keine Checkliste, sondern eine Entscheidungsmatrix: bestätigt, preisrelevant, vertraglich abzusichern oder Dealbreaker."
 }

@@ -7,5 +7,11 @@
   "keywords": [
     "bruttomietrendite"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Kapitalanlage",
+  "explanation": "Die Bruttomietrendite ist eine schnelle Screeningkennzahl aus Jahresnettokaltmiete und Kaufpreis. Sie berücksichtigt weder Kaufnebenkosten noch laufende Eigentümerkosten oder Finanzierung.",
+  "practiceExample": "16.800 € Jahresnettokaltmiete / 300.000 € Kaufpreis = 5,6 % Bruttomietrendite.",
+  "formula": "Bruttomietrendite = Jahresnettokaltmiete / Kaufpreis",
+  "sources": [],
+  "assistantAnswer": "Jahresnettokaltmiete geteilt durch Kaufpreis. Die Bruttomietrendite ist eine schnelle Screeningkennzahl aus Jahresnettokaltmiete und Kaufpreis. Sie berücksichtigt weder Kaufnebenkosten noch laufende Eigentümerkosten oder Finanzierung."
 }

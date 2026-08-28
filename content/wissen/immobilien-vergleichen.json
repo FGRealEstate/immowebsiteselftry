@@ -20,7 +20,30 @@
     "zwei"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Neben Rendite und Cashflow zählen Kapitalbindung, Restschuld, technisches Risiko, Mikrolage und Exit-Liquidität.",
+  "formulae": [
+    "Vergleich nur auf identischer Basis: Gesamtinvestition, Nettoertrag, Finanzierung und Risiko"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Objekt A: 300.000 €, 1.300 € Miete, 25.000 € Capex",
+      "Objekt B: 320.000 €, 1.400 € Miete, kein unmittelbarer Capex"
+    ],
+    "steps": [
+      "A hat höheren scheinbaren Renditevorteil nur, wenn Capex ignoriert wird; nach Gesamtinvestition kann B wirtschaftlich besser sein."
+    ],
+    "interpretation": "Vergleiche sollten gleiche Haltedauer, Finanzierung und Kostenannahmen verwenden."
+  },
+  "sources": [],
+  "assistantAnswer": "Zwei Objekte sollten mit denselben Annahmen und demselben Zeitraum verglichen werden. Ein sinnvoller Vergleich normalisiert Kaufpreis, Nebenkosten, Miete, CapEx, Finanzierung und Haltedauer auf dieselbe Basis.",
+  "focusPoints": [
+    "Ein sinnvoller Vergleich normalisiert Kaufpreis, Nebenkosten, Miete, CapEx, Finanzierung und Haltedauer auf dieselbe Basis.",
+    "€/m², Bruttorendite oder Cashflow allein können widersprüchliche Signale liefern. Ein Objekt kann höhere Rendite, aber zugleich deutlich höheres technisches oder rechtliches Risiko haben.",
+    "Vergleichbar werden Objekte erst, wenn dieselben Annahmen für Leerstand, Mietsteigerung, Exit und Instandhaltung verwendet werden."
+  ],
+  "decisionUse": "Nicht nach der höchsten Einzelkennzahl entscheiden, sondern nach einem konsistenten Score aus Ertrag, Risiko, Kapitalbindung und Exit-Liquidität."
 }

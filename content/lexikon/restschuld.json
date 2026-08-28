@@ -7,5 +7,11 @@
   "keywords": [
     "restschuld"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Noch nicht zurückgezahlter Darlehensbetrag. Restschuld ist der nach geleisteten Tilgungen noch offene Darlehensbetrag. Sie bestimmt am Ende der Zinsbindung den Finanzierungsbedarf für die Anschlussfinanzierung.",
+  "explanation": "Restschuld ist der nach geleisteten Tilgungen noch offene Darlehensbetrag. Sie bestimmt am Ende der Zinsbindung den Finanzierungsbedarf für die Anschlussfinanzierung.",
+  "practiceExample": "Zwei Darlehen mit identischer Anfangsrate können wegen unterschiedlichem Zins- oder Tilgungsverlauf nach zehn Jahren eine andere Restschuld haben."
 }

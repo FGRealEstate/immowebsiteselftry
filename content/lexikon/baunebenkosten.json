@@ -7,5 +7,11 @@
   "keywords": [
     "baunebenkosten"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Planungs-, Genehmigungs- und sonstige Kosten zusätzlich zu Bauleistungen. Baunebenkosten sind Kosten rund um Planung, Genehmigung, Finanzierung und Bauabwicklung, die zusätzlich zu den reinen Bauwerkskosten entstehen. Sie werden bei Neubau- und Sanierungsbudgets separat kalkuliert und können einen erheblichen Anteil der Gesamtinvestition ausmachen.",
+  "explanation": "Baunebenkosten sind Kosten rund um Planung, Genehmigung, Finanzierung und Bauabwicklung, die zusätzlich zu den reinen Bauwerkskosten entstehen. Sie werden bei Neubau- und Sanierungsbudgets separat kalkuliert und können einen erheblichen Anteil der Gesamtinvestition ausmachen.",
+  "practiceExample": "Bei 500.000 € reinen Baukosten und 15 % Baunebenkosten entstehen zusätzlich 75.000 €; das Projektbudget liegt bereits bei 575.000 € vor Grundstück und Finanzierung."
 }

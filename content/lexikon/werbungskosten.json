@@ -7,5 +7,11 @@
   "keywords": [
     "werbungskosten"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Steuern",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Aufwendungen zur Erwerbung, Sicherung und Erhaltung steuerpflichtiger Einnahmen. Werbungskosten sind Aufwendungen zur Erwerbung, Sicherung und Erhaltung steuerpflichtiger Einnahmen. Bei Vermietung können dazu je nach Sachverhalt etwa Schuldzinsen, Verwaltung oder bestimmte Erhaltungsaufwendungen gehören; Tilgung zählt nicht dazu.",
+  "explanation": "Werbungskosten sind Aufwendungen zur Erwerbung, Sicherung und Erhaltung steuerpflichtiger Einnahmen. Bei Vermietung können dazu je nach Sachverhalt etwa Schuldzinsen, Verwaltung oder bestimmte Erhaltungsaufwendungen gehören; Tilgung zählt nicht dazu.",
+  "practiceExample": "9.000 € Schuldzinsen können den steuerlichen Vermietungsüberschuss mindern, während 6.000 € Tilgung zwar Liquidität kostet, steuerlich aber nicht als Werbungskosten abziehbar ist."
 }

@@ -1,8 +1,8 @@
 {
   "title": "Eigenkapital optimal einsetzen",
   "category": "Finanzierung",
-  "summary": "Mehr Eigenkapital senkt Darlehen und Risiko, kann aber die prozentuale Eigenkapitalrendite reduzieren.",
-  "body": "Liquiditätsreserve und Opportunitätskosten sind ebenso wichtig wie die niedrigste Rate.",
+  "summary": "Mehr Eigenkapital reduziert Darlehen und kann den Beleihungsauslauf verbessern. Optimal ist aber nicht automatisch maximal: Liquiditätsreserve und Opportunitätskosten gehören in dieselbe Rechnung.",
+  "body": "Eigenkapital wirkt in einer Immobilienfinanzierung auf drei Ebenen: Es reduziert den Kreditbetrag, kann günstigere Beleihungsstufen ermöglichen und senkt die absolute Zinsbelastung. Gleichzeitig bindet es Liquidität, die nach dem Kauf für Rücklagen oder andere Anlagen fehlen kann.",
   "id": "eigenkapital-optimal-einsetzen",
   "slug": "eigenkapital-optimal-einsetzen",
   "url": "/wissen/eigenkapital-optimal-einsetzen/",
@@ -21,7 +21,133 @@
     "senkt"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Eigenkapital wirkt in einer Immobilienfinanzierung auf drei Ebenen: Es reduziert den Kreditbetrag, kann günstigere Beleihungsstufen ermöglichen und senkt die absolute Zinsbelastung. Gleichzeitig bindet es Liquidität, die nach dem Kauf für Rücklagen oder andere Anlagen fehlen kann.",
+  "formulae": [
+    "Eigenkapitalbedarf = Kaufnebenkosten + nicht finanzierter Kaufpreisanteil + Reserve",
+    "Rate ≈ Darlehen × (Sollzins + Tilgung) / 12"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Kaufpreis 400.000 €",
+      "Nebenkosten 40.000 €",
+      "Variante A EK 40.000 €, Darlehen 400.000 €, Beispielzins 4,2 %",
+      "Variante B EK 80.000 €, Darlehen 360.000 €, Beispielzins 3,9 %",
+      "Tilgung jeweils 2 %"
+    ],
+    "steps": [
+      "A: Rate ≈ 2.067 €",
+      "B: Rate ≈ 1.770 €",
+      "Zusätzliche 40.000 € EK reduzieren in diesem Szenario Rate und Zinsrisiko, binden aber Liquidität."
+    ],
+    "interpretation": "Mehr Eigenkapital kann durch geringeren Beleihungsauslauf zu besseren Konditionen führen. Optimal ist nicht automatisch maximal: Liquiditätsreserve, geplante Sanierungen und Opportunitätskosten müssen mitgedacht werden."
+  },
+  "sources": [],
+  "assistantAnswer": "Mehr Eigenkapital führt häufig zu niedrigeren Darlehensbeträgen und kann günstigere Bankkonditionen ermöglichen. Der Zusammenhang ist jedoch stufenweise statt linear. Beispiel: Bei 400.000 € Kaufpreis + 40.000 € Nebenkosten führen 40.000 €, 80.000 € oder 120.000 € Eigenkapital zu sehr unterschiedlichen Darlehen, Raten und Liquiditätsreserven. Optimal ist die Struktur, bei der Kondition und Rate tragfähig sind, ohne die Reserve auf null zu setzen.",
+  "focusPoints": [
+    "Mehr Eigenkapital reduziert Darlehenssumme und häufig den Beleihungsauslauf. Dadurch können sich sowohl Rate als auch Bankkondition verbessern.",
+    "Der Zinsvorteil tritt oft stufenweise auf. Deshalb sollte Eigenkapital gezielt bis zur nächsten relevanten Konditionsschwelle eingesetzt werden, statt automatisch das Maximum in den Kauf zu stecken.",
+    "Zu viel Eigenkapital im Objekt kann Liquiditätsreserven für Modernisierung, Leerstand oder weitere Investments schwächen. Der optimale Einsatz ist daher eine Portfolio- und Liquiditätsfrage."
+  ],
+  "decisionUse": "Eigenkapital so einsetzen, dass eine wirtschaftlich attraktive Bankstufe erreicht wird und danach noch ein belastbarer Liquiditätspuffer verbleibt. Nicht „maximal viel EK“, sondern „marginal sinnvoll eingesetztes EK“ ist die richtige Fragestellung.",
+  "comparisonTable": {
+    "title": "Beispielhafte Eigenkapitalvarianten bei 400.000 € Kaufpreis + 40.000 € Nebenkosten",
+    "headers": [
+      "Variante",
+      "Eigenkapital",
+      "Darlehen",
+      "Beispielzins*",
+      "Rate bei 2 % Tilgung",
+      "Liquidität nach Kauf"
+    ],
+    "rows": [
+      [
+        "A – nur Nebenkosten",
+        "40.000 €",
+        "400.000 €",
+        "4,20 %",
+        "ca. 2.067 €",
+        "hoch, falls weitere Reserve vorhanden"
+      ],
+      [
+        "B – zusätzliche 40.000 €",
+        "80.000 €",
+        "360.000 €",
+        "3,90 %",
+        "ca. 1.770 €",
+        "40.000 € stärker gebunden"
+      ],
+      [
+        "C – zusätzliche 80.000 €",
+        "120.000 €",
+        "320.000 €",
+        "3,70 %",
+        "ca. 1.520 €",
+        "80.000 € stärker gebunden"
+      ]
+    ],
+    "note": "*Rechenannahmen. Konditionsstufen unterscheiden sich je Bank, Objekt und Bonität."
+  },
+  "contentBlocks": [
+    {
+      "type": "table",
+      "title": "Drei Darlehenskonstrukte",
+      "headers": [
+        "Eigenkapital gesamt",
+        "Darlehen",
+        "Beispielzins",
+        "Monatsrate bei 2 % Tilgung",
+        "EK oberhalb NK"
+      ],
+      "rows": [
+        [
+          "40.000 €",
+          "400.000 €",
+          "4,1 %",
+          "2.033 €",
+          "0 €"
+        ],
+        [
+          "80.000 €",
+          "360.000 €",
+          "3,9 %",
+          "1.770 €",
+          "40.000 €"
+        ],
+        [
+          "120.000 €",
+          "320.000 €",
+          "3,7 %",
+          "1.520 €",
+          "80.000 €"
+        ]
+      ],
+      "note": "Beispiel: 400.000 € Kaufpreis + 40.000 € Erwerbsnebenkosten. Zinssätze sind illustrative Konditionsstufen."
+    },
+    {
+      "type": "prose",
+      "title": "Warum der Zins nicht proportional zum Eigenkapital fällt",
+      "paragraphs": [
+        "Banken arbeiten häufig mit Beleihungsauslauf- und Risikostufen. Ein zusätzlicher Euro Eigenkapital verbessert die Kondition nicht zwangsläufig. Relevant wird er vor allem, wenn dadurch eine günstigere Preisstufe erreicht wird.",
+        "Deshalb lohnt es sich, konkrete Schwellen bei mehreren Banken abzufragen: etwa welche Kondition bei 90 %, 80 % oder 70 % Beleihungsauslauf gilt."
+      ]
+    },
+    {
+      "type": "formula",
+      "title": "Opportunitätskosten des Eigenkapitals",
+      "formulas": [
+        "Zusatznutzen EK ≈ gesparte Kreditzinsen + ggf. Konditionsverbesserung − entgangene Rendite alternativer Verwendung"
+      ],
+      "explanation": null
+    },
+    {
+      "type": "callout",
+      "title": "Reserve vor Renditeoptimierung",
+      "text": "Wer nach dem Kauf keine Liquidität mehr besitzt, hat zwar rechnerisch weniger Fremdkapital, aber ein höheres Liquiditätsrisiko. Bei Kapitalanlagen sollten Instandhaltung, Leerstand und mögliche Sonderumlagen separat gepuffert werden.",
+      "tone": "navy"
+    }
+  ]
 }

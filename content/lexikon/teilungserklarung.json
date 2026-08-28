@@ -7,5 +7,11 @@
   "keywords": [
     "teilungserklärung"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Dokument zur Aufteilung eines Grundstücks in Wohnungs- oder Teileigentum. Die Teilungserklärung legt bei Wohnungseigentum die Aufteilung in Sonder- und Gemeinschaftseigentum sowie Miteigentumsanteile und häufig Nutzungs-/Kostenregelungen fest. Sie ist eine zentrale Rechtsgrundlage der ETW-Prüfung.",
+  "explanation": "Die Teilungserklärung legt bei Wohnungseigentum die Aufteilung in Sonder- und Gemeinschaftseigentum sowie Miteigentumsanteile und häufig Nutzungs-/Kostenregelungen fest. Sie ist eine zentrale Rechtsgrundlage der ETW-Prüfung.",
+  "practiceExample": "Ein als „Terrasse“ genutzter Bereich kann Gemeinschaftseigentum mit Sondernutzungsrecht statt Sondereigentum sein. Das beeinflusst Umbau- und Nutzungsrechte."
 }

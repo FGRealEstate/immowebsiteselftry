@@ -7,5 +7,11 @@
   "keywords": [
     "mietausfall"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Ausbleibender Mietertrag durch Leerstand oder Nichtzahlung. Mietausfall ist tatsächlich nicht vereinnahmte Sollmiete durch Leerstand, Zahlungsstörung oder Forderungsausfall. Er sollte bei Einzelobjekten möglichst aus konkretem Mieterrisiko und Vermietbarkeit statt nur pauschal geschätzt werden.",
+  "explanation": "Mietausfall ist tatsächlich nicht vereinnahmte Sollmiete durch Leerstand, Zahlungsstörung oder Forderungsausfall. Er sollte bei Einzelobjekten möglichst aus konkretem Mieterrisiko und Vermietbarkeit statt nur pauschal geschätzt werden.",
+  "practiceExample": "1.200 € Monatsmiete und zwei Monate Leerstand bedeuten 2.400 € Mietausfall vor Renovierungs- und Vermarktungskosten."
 }

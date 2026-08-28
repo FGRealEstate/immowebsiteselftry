@@ -7,5 +7,11 @@
   "keywords": [
     "jahresnettokaltmiete"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Vermietung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Summe der Nettokaltmieten eines Jahres. Jahresnettokaltmiete (JNKM) ist die Summe der vertraglichen Nettokaltmieten eines Jahres ohne umlagefähige Betriebskosten. Sie ist zentrale Basis für Faktor- und Bruttorenditerechnungen.",
+  "explanation": "Jahresnettokaltmiete (JNKM) ist die Summe der vertraglichen Nettokaltmieten eines Jahres ohne umlagefähige Betriebskosten. Sie ist zentrale Basis für Faktor- und Bruttorenditerechnungen.",
+  "practiceExample": "1.400 € monatliche Nettokaltmiete ergeben 16.800 € JNKM bei vollständiger Zahlung über zwölf Monate."
 }

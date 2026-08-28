@@ -7,5 +7,16 @@
   "keywords": [
     "restnutzungsdauer"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "explanation": "Die Restnutzungsdauer beschreibt den Zeitraum, in dem ein Gebäude voraussichtlich noch wirtschaftlich nutzbar ist. Sie ist in Bewertung und gegebenenfalls beim steuerlichen Nachweis einer kürzeren tatsächlichen Nutzungsdauer relevant.",
+  "practiceExample": "AfA-Basis 300.000 € und steuerlich anerkannte tatsächliche Restnutzungsdauer 30 Jahre würden rechnerisch 10.000 € Jahres-AfA ergeben. Ob eine solche Nutzungsdauer anerkannt wird, ist eine separate Nachweisfrage.",
+  "formula": "AfA bei tatsächlicher Nutzungsdauer = AfA-Basis / anerkannte Restnutzungsdauer",
+  "sources": [
+    {
+      "label": "§ 7 EStG – Gebäude-AfA",
+      "url": "https://www.gesetze-im-internet.de/estg/__7.html"
+    }
+  ],
+  "assistantAnswer": "Voraussichtliche verbleibende wirtschaftliche Nutzungsdauer. Die Restnutzungsdauer beschreibt den Zeitraum, in dem ein Gebäude voraussichtlich noch wirtschaftlich nutzbar ist. Sie ist in Bewertung und gegebenenfalls beim steuerlichen Nachweis einer kürzeren tatsächlichen Nutzungsdauer relevant."
 }

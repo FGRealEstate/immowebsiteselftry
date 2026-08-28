@@ -7,5 +7,11 @@
   "keywords": [
     "eigenkapitalrendite"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Kapitalanlage",
+  "explanation": "Eigenkapitalrendite setzt einen definierten Ertrag ins Verhältnis zum eingesetzten Eigenkapital. Cashflow, Tilgung und Wertänderung sollten getrennt ausgewiesen werden, weil sie wirtschaftlich unterschiedliche Komponenten sind.",
+  "practiceExample": "1.800 € Jahrescashflow + 6.000 € Tilgung auf 90.000 € eingesetztes Eigenkapital ergeben 8,67 % „Rendite inkl. Tilgung“. Die reine Cash-on-Cash-Rendite beträgt dagegen nur 2,0 %.",
+  "formula": "EK-Rendite = definierter Ertrag / eingesetztes Eigenkapital",
+  "sources": [],
+  "assistantAnswer": "Vermögenseffekt oder Ertrag im Verhältnis zum eingesetzten Eigenkapital. Eigenkapitalrendite setzt einen definierten Ertrag ins Verhältnis zum eingesetzten Eigenkapital. Cashflow, Tilgung und Wertänderung sollten getrennt ausgewiesen werden, weil sie wirtschaftlich unterschiedliche Komponenten sind."
 }

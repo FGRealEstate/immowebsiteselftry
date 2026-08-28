@@ -7,5 +7,11 @@
   "keywords": [
     "kappungsgrenze"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Grenze für Mieterhöhungen innerhalb eines Zeitraums. Die Kappungsgrenze begrenzt bei Mieterhöhungen nach § 558 BGB die Erhöhung innerhalb von drei Jahren zusätzlich zur ortsüblichen Vergleichsmiete. In bestimmten Gebieten kann die Grenze abgesenkt sein.",
+  "explanation": "Die Kappungsgrenze begrenzt bei Mieterhöhungen nach § 558 BGB die Erhöhung innerhalb von drei Jahren zusätzlich zur ortsüblichen Vergleichsmiete. In bestimmten Gebieten kann die Grenze abgesenkt sein.",
+  "practiceExample": "Selbst wenn die ortsübliche Vergleichsmiete deutlich höher liegt, kann die Kappungsgrenze eine sofortige vollständige Anhebung verhindern."
 }

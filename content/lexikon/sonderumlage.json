@@ -7,5 +7,11 @@
   "keywords": [
     "sonderumlage"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Vermietung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Zusätzliche Zahlung der Wohnungseigentümer aufgrund eines WEG-Beschlusses. Eine Sonderumlage ist ein zusätzlicher Finanzierungsbeitrag der Wohnungseigentümer, wenn laufende Mittel und Rücklage nicht ausreichen. Für Käufer sind sowohl bereits beschlossene Umlagen als auch aus Protokollen erkennbare größere Maßnahmen wirtschaftlich relevant.",
+  "explanation": "Eine Sonderumlage ist ein zusätzlicher Finanzierungsbeitrag der Wohnungseigentümer, wenn laufende Mittel und Rücklage nicht ausreichen. Für Käufer sind sowohl bereits beschlossene Umlagen als auch aus Protokollen erkennbare größere Maßnahmen wirtschaftlich relevant.",
+  "practiceExample": "Kaufpreis 300.000 € und kurz nach Erwerb fällige Sonderumlage 20.000 €: wirtschaftliche Kapitalbindung 320.000 € vor weiteren Kaufnebenkosten. Die Bruttorendite auf den Kaufpreis allein würde das Risiko verschleiern."
 }

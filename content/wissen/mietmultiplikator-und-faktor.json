@@ -16,7 +16,31 @@
     "viele"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Niedriger ist nicht automatisch besser, da Lage, Zustand, Entwicklung und Risiko nicht enthalten sind.",
+  "formulae": [
+    "Mietmultiplikator = Kaufpreis / Jahresnettokaltmiete"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Kaufpreis 450.000 €",
+      "Jahresnettokaltmiete 20.000 €"
+    ],
+    "steps": [
+      "Faktor = 22,5",
+      "Bruttorendite = 4,44 %"
+    ],
+    "interpretation": "Der Faktor ist ein schneller Preismultiplikator, aber ohne Kosten- oder Investitionssicht."
+  },
+  "sources": [],
+  "assistantAnswer": "Der Faktor beschreibt, wie viele Jahresnettokaltmieten dem Kaufpreis entsprechen. Mietmultiplikator, Vervielfältiger und Kaufpreisfaktor werden im Markt häufig synonym verwendet: Kaufpreis geteilt durch Jahresnettokaltmiete.",
+  "focusPoints": [
+    "Mietmultiplikator, Vervielfältiger und Kaufpreisfaktor werden im Markt häufig synonym verwendet: Kaufpreis geteilt durch Jahresnettokaltmiete.",
+    "Der Faktor enthält keine Aussage zu Nebenkosten, Bewirtschaftungskosten, Finanzierung oder Modernisierung.",
+    "Bei stark untervermieteten Objekten sollte klar zwischen Ist-Faktor und Faktor auf nachhaltig erzielbarer Miete unterschieden werden."
+  ],
+  "decisionUse": "Ist- und Soll-Miete getrennt ausweisen; ein Soll-Faktor ohne rechtlich und praktisch erreichbare Mietsteigerung ist keine belastbare Kennzahl."
 }

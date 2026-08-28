@@ -1,8 +1,8 @@
 {
   "title": "LTV verstehen",
   "category": "Finanzierung",
-  "summary": "Loan-to-Value setzt Darlehen zum Immobilienwert oder Beleihungswert ins Verhältnis.",
-  "body": "Je nach Kontext unterscheiden sich Nenner und Aussage. Für Vergleiche muss die Definition identisch sein.",
+  "summary": "Loan-to-Value (LTV) misst Fremdkapital im Verhältnis zum aktuellen oder definierten Objektwert. Der LTV kann sich sowohl durch Tilgung als auch durch Wertänderungen bewegen.",
+  "body": "LTV = Darlehenssaldo / Objektwert. Anders als der deutsche bankinterne Beleihungsauslauf wird im Investmentkontext häufig ein Markt- oder Bewertungswert verwendet. Deshalb müssen Definition und Bewertungsstichtag immer genannt werden.",
   "id": "ltv-verstehen",
   "slug": "ltv-verstehen",
   "url": "/wissen/ltv-verstehen/",
@@ -18,7 +18,105 @@
     "verstehen"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "LTV = Darlehenssaldo / Objektwert. Anders als der deutsche bankinterne Beleihungsauslauf wird im Investmentkontext häufig ein Markt- oder Bewertungswert verwendet. Deshalb müssen Definition und Bewertungsstichtag immer genannt werden.",
+  "formulae": [
+    "LTV = Darlehenssaldo / Marktwert bzw. definierter Objektwert"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Objektwert 500.000 €",
+      "Darlehen 350.000 €"
+    ],
+    "steps": [
+      "LTV = 70 %"
+    ],
+    "interpretation": "LTV ist international eine zentrale Verschuldungskennzahl. Für deutsche Bankkonditionen ist zusätzlich der bankinterne Beleihungswert wichtig; LTV und Beleihungsauslauf sind daher nicht zwingend identisch."
+  },
+  "sources": [],
+  "assistantAnswer": "Ein LTV von 70 % bedeutet bei 500.000 € Objektwert und 350.000 € Restschuld, dass 70 % des Werts fremdfinanziert sind. Fällt der Wert auf 425.000 €, steigt der LTV ohne neue Kreditaufnahme auf rund 82,4 %. Tilgung wirkt umgekehrt und senkt den LTV.",
+  "focusPoints": [
+    "Loan-to-Value beschreibt das Verhältnis von Darlehen zu einem definierten Objektwert. Im deutschen Bankkontext ist davon der Beleihungsauslauf auf Basis des Beleihungswerts zu unterscheiden.",
+    "Ein niedriger LTV reduziert das Verlustrisiko des Fremdkapitalgebers und kann bessere Konditionen unterstützen.",
+    "Bei Wertänderungen kann sich der LTV auch ohne neue Kreditaufnahme verändern."
+  ],
+  "decisionUse": "Für Portfolio- und Exit-Risiken ist der LTV als dynamische Größe nützlich: Wertverlust und Tilgung gleichzeitig stressen, statt den LTV nur am Ankaufstag zu betrachten.",
+  "contentBlocks": [
+    {
+      "type": "formula",
+      "title": "Definition",
+      "formulas": [
+        "LTV = Darlehenssaldo / Objektwert × 100"
+      ],
+      "explanation": null
+    },
+    {
+      "type": "table",
+      "title": "LTV reagiert auf Wert und Tilgung",
+      "headers": [
+        "Szenario",
+        "Objektwert",
+        "Restschuld",
+        "LTV"
+      ],
+      "rows": [
+        [
+          "Ausgangslage",
+          "500.000 €",
+          "350.000 €",
+          "70,0 %"
+        ],
+        [
+          "Wert −15 %",
+          "425.000 €",
+          "350.000 €",
+          "82,4 %"
+        ],
+        [
+          "50.000 € getilgt",
+          "500.000 €",
+          "300.000 €",
+          "60,0 %"
+        ],
+        [
+          "Wert −15 % und 50.000 € getilgt",
+          "425.000 €",
+          "300.000 €",
+          "70,6 %"
+        ]
+      ],
+      "note": null
+    },
+    {
+      "type": "barChart",
+      "title": "LTV-Sensitivität",
+      "items": [
+        {
+          "label": "60,0 %",
+          "value": "nach Tilgung",
+          "pct": 60
+        },
+        {
+          "label": "70,0 %",
+          "value": "Ausgang",
+          "pct": 70
+        },
+        {
+          "label": "82,4 %",
+          "value": "Wert −15 %",
+          "pct": 82
+        }
+      ],
+      "note": null
+    },
+    {
+      "type": "callout",
+      "title": "Nicht mit Beleihungsauslauf verwechseln",
+      "text": "LTV ist eine ökonomische Kennzahl. Der deutsche Beleihungsauslauf verwendet dagegen typischerweise den konservativer bestimmten Beleihungswert der Bank. Beide Quoten können deshalb für dasselbe Objekt deutlich auseinanderliegen.",
+      "tone": "navy"
+    }
+  ]
 }

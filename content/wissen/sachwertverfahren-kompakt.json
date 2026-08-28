@@ -15,7 +15,36 @@
     "sachwertverfahren"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Es wird häufig bei eigengenutzten oder schwer ertragsorientiert bewertbaren Objekten eingesetzt.",
+  "formulae": [
+    "Sachwert = Bodenwert + Gebäudesachwert, anschließend marktangepasst nach ImmoWertV"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Bodenwert 250.000 €",
+      "modellhafter Gebäudesachwert 300.000 €",
+      "vorläufiger Sachwert 550.000 € vor Marktanpassung"
+    ],
+    "steps": [
+      "Erst Sachwertfaktor und besondere objektspezifische Grundstücksmerkmale führen zum marktkonformen Ergebnis."
+    ],
+    "interpretation": "Sachwert ist vor allem bei eigengenutzten bzw. ertragsferneren Objekten relevant; Marktanpassung ist zentral."
+  },
+  "sources": [
+    {
+      "label": "Immobilienwertermittlungsverordnung (ImmoWertV)",
+      "url": "https://www.gesetze-im-internet.de/immowertv_2022/"
+    }
+  ],
+  "assistantAnswer": "Das Sachwertverfahren betrachtet Herstellungskosten, Alterswertminderung und Marktanpassung. Das Sachwertverfahren leitet den Wert aus Bodenwert und Herstellungskosten der baulichen Anlagen unter Berücksichtigung von Alter und Marktanpassung ab.",
+  "focusPoints": [
+    "Das Sachwertverfahren leitet den Wert aus Bodenwert und Herstellungskosten der baulichen Anlagen unter Berücksichtigung von Alter und Marktanpassung ab.",
+    "Es ist besonders relevant, wenn Erträge nicht die primäre Wertbasis sind, etwa bei eigengenutzten Ein-/Zweifamilienhäusern.",
+    "Herstellungskosten sind keine historischen Baukosten; die ImmoWertV arbeitet mit normierten Ansätzen und objektspezifischen Merkmalen."
+  ],
+  "decisionUse": "Sachwert nicht isoliert lesen: Marktanpassung und Vergleich mit realen Transaktionen sind entscheidend."
 }

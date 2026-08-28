@@ -7,5 +7,11 @@
   "keywords": [
     "wirtschaftsplan"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Plan der WEG zu Einnahmen, Ausgaben und Vorschüssen. Der Wirtschaftsplan der WEG enthält die voraussichtlichen Einnahmen/Ausgaben und Vorschüsse der Eigentümer. Für Kapitalanleger ist die Aufteilung in umlagefähige Kosten, nicht umlagefähige Kosten und Rücklagenzuführung entscheidend.",
+  "explanation": "Der Wirtschaftsplan der WEG enthält die voraussichtlichen Einnahmen/Ausgaben und Vorschüsse der Eigentümer. Für Kapitalanleger ist die Aufteilung in umlagefähige Kosten, nicht umlagefähige Kosten und Rücklagenzuführung entscheidend.",
+  "practiceExample": "Hausgeld 350 € monatlich kann etwa 220 € umlagefähige Kosten, 60 € nicht umlagefähige Kosten und 70 € Rücklagenzuführung enthalten. Für den Cashflow sind die drei Teile unterschiedlich zu behandeln."
 }

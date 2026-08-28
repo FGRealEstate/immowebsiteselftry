@@ -7,5 +7,11 @@
   "keywords": [
     "zinsbindung"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Zeitraum, für den der Sollzins fest vereinbart ist. Die Zinsbindung ist der Zeitraum, in dem der vereinbarte Sollzins unverändert gilt. Eine längere Bindung erhöht Planungssicherheit, kann aber einen höheren Anfangszins bedeuten.",
+  "explanation": "Die Zinsbindung ist der Zeitraum, in dem der vereinbarte Sollzins unverändert gilt. Eine längere Bindung erhöht Planungssicherheit, kann aber einen höheren Anfangszins bedeuten.",
+  "practiceExample": "Bei 300.000 € Darlehen kann eine um 0,2 Prozentpunkte höhere Kondition rund 50 € mehr Zins pro Monat zu Beginn bedeuten, dafür aber ein späteres Anschlussrisiko verschieben."
 }

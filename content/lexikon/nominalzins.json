@@ -7,5 +7,11 @@
   "keywords": [
     "nominalzins"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Vertraglicher Zinssatz ohne weitere Kosten. Nominalzins bezeichnet den vereinbarten Zinssatz ohne vollständige Einbeziehung sämtlicher preisbestimmender Kosten. Bei Verbraucherdarlehen ist für Angebotsvergleiche deshalb zusätzlich der effektive Jahreszins relevant.",
+  "explanation": "Nominalzins bezeichnet den vereinbarten Zinssatz ohne vollständige Einbeziehung sämtlicher preisbestimmender Kosten. Bei Verbraucherdarlehen ist für Angebotsvergleiche deshalb zusätzlich der effektive Jahreszins relevant.",
+  "practiceExample": "Zwei Darlehen können denselben Soll-/Nominalzins haben, aber wegen Gebühren, Auszahlungskurs oder Zahlungszeitpunkten unterschiedliche Effektivkosten."
 }

@@ -7,5 +7,11 @@
   "keywords": [
     "grundschuld"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Grundpfandrecht zur Kreditsicherung. Die Grundschuld ist ein dingliches Sicherungsrecht im Grundbuch, das Banken typischerweise zur Absicherung eines Immobiliendarlehens nutzen. Sie ist rechtlich vom Darlehen getrennt und bleibt ohne Löschung auch nach Tilgung im Grundbuch bestehen.",
+  "explanation": "Die Grundschuld ist ein dingliches Sicherungsrecht im Grundbuch, das Banken typischerweise zur Absicherung eines Immobiliendarlehens nutzen. Sie ist rechtlich vom Darlehen getrennt und bleibt ohne Löschung auch nach Tilgung im Grundbuch bestehen.",
+  "practiceExample": "Für 400.000 € Finanzierung kann eine Grundschuld in entsprechender Größenordnung bestellt werden; Zinsen/Nebenleistungen im Grundschuldbetrag sind nicht mit dem Darlehenszins gleichzusetzen."
 }

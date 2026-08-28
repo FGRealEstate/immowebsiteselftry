@@ -1,0 +1,57 @@
+/* F&G consent UI. The page remains visible and usable behind the non-blocking banner. */
+#cc-main {
+  --cc-font-family: 'Avenir Next', 'Segoe UI', Helvetica, Arial, sans-serif;
+  --cc-bg: #ffffff;
+  --cc-primary-color: #08082f;
+  --cc-secondary-color: #4b5563;
+  --cc-btn-primary-bg: #08082f;
+  --cc-btn-primary-color: #ffffff;
+  --cc-btn-primary-hover-bg: #17174f;
+  --cc-btn-secondary-bg: #f4f1e8;
+  --cc-btn-secondary-color: #08082f;
+  --cc-btn-secondary-hover-bg: #ebe3d0;
+  --cc-separator-border-color: #e5e7eb;
+  --cc-toggle-on-bg: #d1b464;
+  z-index: 2147483000;
+}
+
+#cc-main .cm {
+  max-width: min(720px, calc(100vw - 24px));
+  max-height: calc(100vh - 24px);
+  overflow: auto;
+  border: 1px solid rgba(209, 180, 100, .55);
+  box-shadow: 0 24px 70px rgba(8, 8, 47, .28);
+}
+
+#cc-main .cm__title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+#cc-main .fg-consent-logo {
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 150px !important;
+  max-height: 72px !important;
+  object-fit: contain !important;
+  margin: 0 0 4px !important;
+}
+
+#cc-main .cm__desc,
+#cc-main .pm__section-desc {
+  line-height: 1.55;
+}
+
+@media (max-width: 640px) {
+  #cc-main .cm {
+    max-width: calc(100vw - 16px);
+    max-height: calc(100vh - 16px);
+  }
+  #cc-main .fg-consent-logo {
+    max-width: 108px !important;
+    max-height: 52px !important;
+  }
+}

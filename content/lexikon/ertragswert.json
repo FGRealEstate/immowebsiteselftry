@@ -7,5 +7,11 @@
   "keywords": [
     "ertragswert"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Aus nachhaltig erzielbaren Erträgen abgeleiteter Wert. Der Ertragswert ist ein im Ertragswertverfahren abgeleiteter Grundstückswert, der wesentlich auf nachhaltig erzielbaren Erträgen, Bewirtschaftungskosten, Liegenschaftszins und Restnutzungsdauer beruht.",
+  "explanation": "Der Ertragswert ist ein im Ertragswertverfahren abgeleiteter Grundstückswert, der wesentlich auf nachhaltig erzielbaren Erträgen, Bewirtschaftungskosten, Liegenschaftszins und Restnutzungsdauer beruht.",
+  "practiceExample": "Eine Veränderung des nachhaltig angesetzten Reinertrags oder Liegenschaftszinses kann den Ertragswert stark verschieben; deshalb ist die Wahl der Eingangsgrößen wichtiger als die reine Formel."
 }

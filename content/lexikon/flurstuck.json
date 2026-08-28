@@ -7,5 +7,11 @@
   "keywords": [
     "flurstück"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Amtlich vermessener Teil der Erdoberfläche. Ein Flurstück ist die kleinste im Liegenschaftskataster geführte Buchungseinheit eines Grundstücks. Ein Grundstück im Grundbuch kann aus einem oder mehreren Flurstücken bestehen.",
+  "explanation": "Ein Flurstück ist die kleinste im Liegenschaftskataster geführte Buchungseinheit eines Grundstücks. Ein Grundstück im Grundbuch kann aus einem oder mehreren Flurstücken bestehen.",
+  "practiceExample": "Ein Kaufvertrag kann mehrere Flurstücke umfassen, etwa Wohnhaus, Zufahrt und separate Gartenfläche; alle müssen eindeutig bezeichnet sein."
 }

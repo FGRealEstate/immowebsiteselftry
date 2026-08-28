@@ -7,5 +7,11 @@
   "keywords": [
     "kapitalisierungszins"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Zinssatz zur Umrechnung künftiger Erträge in einen heutigen Wert. Kapitalisierungszins ist der Zinssatz, mit dem zukünftige Erträge in einen Barwert überführt werden. Je höher der Zinssatz bei gleichen Erträgen, desto niedriger der Barwert.",
+  "explanation": "Kapitalisierungszins ist der Zinssatz, mit dem zukünftige Erträge in einen Barwert überführt werden. Je höher der Zinssatz bei gleichen Erträgen, desto niedriger der Barwert.",
+  "practiceExample": "10.000 € dauerhaft angenommener Jahresertrag entsprechen bei vereinfachter ewiger Rente 250.000 € bei 4 % beziehungsweise 200.000 € bei 5 % Kapitalisierungszins."
 }

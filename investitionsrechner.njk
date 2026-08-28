@@ -200,3 +200,11 @@ if (window.self !== window.top || new URLSearchParams(location.search).get('embe
   document.documentElement.classList.add('fg-embedded-calculator');
 }
 </script>
+
+{% set schemaType = "WebApplication" %}
+{% set schemaName = "Investitionsrechner für Immobilien-Kapitalanlagen" %}
+{% set schemaDesc = "Rechner für Kaufpreis, Nebenkosten, Finanzierung, Mieteinnahmen, Cashflow und Rendite einer Immobilien-Kapitalanlage." %}
+{% set schemaPath = "/investitionsrechner.html" %}
+{% set schemaCrumb = "Investitionsrechner" %}
+{% set schemaArea = "Deutschland" %}
+{% include "page-schema.njk" %}

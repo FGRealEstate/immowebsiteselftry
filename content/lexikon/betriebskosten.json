@@ -7,5 +7,16 @@
   "keywords": [
     "betriebskosten"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Vermietung",
+  "formula": null,
+  "sources": [
+    {
+      "label": "Betriebskostenverordnung",
+      "url": "https://www.gesetze-im-internet.de/betrkv/"
+    }
+  ],
+  "assistantAnswer": "Laufende Kosten des bestimmungsgemäßen Gebrauchs. Betriebskosten sind laufende Kosten des bestimmungsgemäßen Gebrauchs eines Gebäudes/Grundstücks. Welche Positionen auf Wohnraummieter umgelegt werden können, richtet sich nach Betriebskostenverordnung und wirksamer mietvertraglicher Vereinbarung.",
+  "explanation": "Betriebskosten sind laufende Kosten des bestimmungsgemäßen Gebrauchs eines Gebäudes/Grundstücks. Welche Positionen auf Wohnraummieter umgelegt werden können, richtet sich nach Betriebskostenverordnung und wirksamer mietvertraglicher Vereinbarung.",
+  "practiceExample": "Grundsteuer oder Gebäudereinigung können bei wirksamer Vereinbarung umlagefähig sein; Verwaltungskosten und Instandhaltung sind grundsätzlich keine Betriebskosten im Sinne der BetrKV."
 }

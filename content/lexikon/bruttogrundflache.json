@@ -7,5 +7,11 @@
   "keywords": [
     "bruttogrundfläche"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Gesamtheit bestimmter Grundflächen eines Bauwerks nach Norm. Die Bruttogrundfläche ist eine Flächengröße aus dem Bau-/Bewertungsbereich und umfasst deutlich mehr als die Wohnfläche, unter anderem konstruktive Flächen. Sie ist für €/m²-Wohnungsvergleiche nicht austauschbar mit Wohnfläche.",
+  "explanation": "Die Bruttogrundfläche ist eine Flächengröße aus dem Bau-/Bewertungsbereich und umfasst deutlich mehr als die Wohnfläche, unter anderem konstruktive Flächen. Sie ist für €/m²-Wohnungsvergleiche nicht austauschbar mit Wohnfläche.",
+  "practiceExample": "Ein Haus mit 180 m² BGF kann deutlich weniger als 180 m² Wohnfläche haben; ein Kaufpreis je BGF-m² ist deshalb nicht mit Wohnungsangeboten je Wohn-m² vergleichbar."
 }

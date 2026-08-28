@@ -7,5 +7,11 @@
   "keywords": [
     "sondereigentum"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Alleineigentum an bestimmten Räumen einer WEG. Sondereigentum ist das dem einzelnen Wohnungseigentümer allein zugeordnete Eigentum an bestimmten Räumen und Bestandteilen. Tragende Teile und viele gemeinschaftlich dienende Bauteile bleiben Gemeinschaftseigentum.",
+  "explanation": "Sondereigentum ist das dem einzelnen Wohnungseigentümer allein zugeordnete Eigentum an bestimmten Räumen und Bestandteilen. Tragende Teile und viele gemeinschaftlich dienende Bauteile bleiben Gemeinschaftseigentum.",
+  "practiceExample": "Der Innenausbau einer Wohnung kann Sondereigentum sein; die tragende Außenwand oder Fassade ist typischerweise Gemeinschaftseigentum."
 }

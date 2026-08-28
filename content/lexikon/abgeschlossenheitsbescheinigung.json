@@ -7,5 +7,11 @@
   "keywords": [
     "abgeschlossenheitsbescheinigung"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Bestätigung, dass Einheiten baulich abgeschlossen sind. Die Abgeschlossenheitsbescheinigung bestätigt gegenüber dem Grundbuchamt, dass Einheiten baulich hinreichend abgeschlossen sind und ist regelmäßig Voraussetzung für die Begründung von Wohnungs-/Teileigentum.",
+  "explanation": "Die Abgeschlossenheitsbescheinigung bestätigt gegenüber dem Grundbuchamt, dass Einheiten baulich hinreichend abgeschlossen sind und ist regelmäßig Voraussetzung für die Begründung von Wohnungs-/Teileigentum.",
+  "practiceExample": "Soll ein Mehrfamilienhaus in einzelne Eigentumswohnungen aufgeteilt werden, werden Aufteilungspläne und Abgeschlossenheitsbescheinigung für die grundbuchliche Teilung benötigt."
 }

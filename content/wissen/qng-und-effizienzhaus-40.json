@@ -1,8 +1,8 @@
 {
   "title": "QNG und Effizienzhaus 40",
   "category": "Finanzierung",
-  "summary": "QNG verbindet Nachhaltigkeitsanforderungen mit förderfähigen Gebäudestandards.",
-  "body": "Bei Neubauten können Förderkredite und steuerliche Effekte relevant sein. Zertifizierungskosten, Bauqualität und Förderbedingungen gehören in die Gesamtkalkulation.",
+  "summary": "KfW 297/298 fördert klimafreundliche Neubauten. Der Kreditrahmen liegt aktuell bei bis zu 100.000 € je Wohneinheit und steigt bei QNG auf bis zu 150.000 € je Wohneinheit.",
+  "body": "QNG steht für Qualitätssiegel Nachhaltiges Gebäude. Beim KfW-Programm Klimafreundlicher Neubau (297/298) erhöht eine QNG-konforme Förderstufe den maximalen Kreditbetrag je Wohneinheit. Technische und Nachhaltigkeitsanforderungen müssen durch qualifizierte Experten bzw. Zertifizierung nachgewiesen werden.",
   "id": "qng-und-effizienzhaus-40",
   "slug": "qng-und-effizienzhaus-40",
   "url": "/wissen/qng-und-effizienzhaus-40/",
@@ -14,7 +14,107 @@
     "verbindet"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "QNG steht für Qualitätssiegel Nachhaltiges Gebäude. Beim KfW-Programm Klimafreundlicher Neubau (297/298) erhöht eine QNG-konforme Förderstufe den maximalen Kreditbetrag je Wohneinheit. Technische und Nachhaltigkeitsanforderungen müssen durch qualifizierte Experten bzw. Zertifizierung nachgewiesen werden.",
+  "formulae": [
+    "Fördervolumen je Wohneinheit richtet sich nach aktuellem KfW-Programm und Förderstufe"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Neubau mit EH40-Standard",
+      "Variante ohne QNG und Variante mit QNG",
+      "KfW-Produkt 297/298 als aktuelles Beispiel"
+    ],
+    "steps": [
+      "Zum Zeitpunkt der Überarbeitung nennt die KfW bei Klimafreundlichem Neubau bis zu 100.000 € je Wohneinheit bzw. bis zu 150.000 € mit QNG.",
+      "Programmstand, Konditionen und Antragsvoraussetzungen sind vor Antrag erneut zu prüfen."
+    ],
+    "interpretation": "QNG ist kein reines Zinsmerkmal. Es umfasst Nachhaltigkeitsanforderungen und Zertifizierung; für bestimmte steuerliche Förderungen kann es ebenfalls relevant sein."
+  },
+  "sources": [
+    {
+      "label": "KfW 297/298 – Klimafreundlicher Neubau Wohngebäude",
+      "url": "https://www.kfw.de/inlandsfoerderung/Privatpersonen/Neubau/F%C3%B6rderprodukte/Klimafreundlicher-Neubau-Wohngeb%C3%A4ude-%28297-298%29/"
+    }
+  ],
+  "assistantAnswer": "Bei KfW 297/298 sind aktuell bis zu 100.000 € Kredit je Wohneinheit für die reguläre klimafreundliche Förderstufe möglich; mit QNG steigt der maximale Kreditbetrag auf bis zu 150.000 € je Wohneinheit. Förderzinsen ändern sich laufend. Die Förderung muss in die Gesamtfinanzierung mit Bankdarlehen und Eigenkapital integriert werden.",
+  "focusPoints": [
+    "QNG ist ein Nachhaltigkeitsnachweis und nicht identisch mit dem energetischen Effizienzhausstandard. Bei bestimmten Förder-/Steuertatbeständen müssen beide Anforderungen gemeinsam erfüllt sein.",
+    "Förderprogramme und Konditionen ändern sich. Die Förderfähigkeit eines konkreten Projekts hängt von Antragstellung, technischer Planung und bestätigender Fachbegleitung ab.",
+    "Wirtschaftlich relevant sind nicht nur Förderzinsen, sondern Mehrkosten der Bauqualität, Zertifizierung und langfristige Energie-/Marktvorteile."
+  ],
+  "decisionUse": "QNG nicht nur als „150.000-€-Baustein“ betrachten: Förderfähigkeit, Zertifizierungskosten, Zeitplan und Kombination mit dem Restdarlehen müssen wirtschaftlich zusammenpassen.",
+  "contentBlocks": [
+    {
+      "type": "table",
+      "title": "Kreditrahmen je Wohneinheit",
+      "headers": [
+        "Förderstufe",
+        "max. KfW-Kredit je WE",
+        "Kernanforderung"
+      ],
+      "rows": [
+        [
+          "Klimafreundliches Wohngebäude",
+          "bis 100.000 €",
+          "u. a. Effizienzhaus 40 + Lebenszyklusanforderungen"
+        ],
+        [
+          "Klimafreundliches Wohngebäude mit QNG",
+          "bis 150.000 €",
+          "zusätzlich QNG-PLUS oder QNG-PREMIUM"
+        ]
+      ],
+      "note": null
+    },
+    {
+      "type": "metrics",
+      "title": "Beispiel Neubauwohnung",
+      "items": [
+        {
+          "label": "Kaufpreis",
+          "value": "400.000 €"
+        },
+        {
+          "label": "KfW mit QNG",
+          "value": "150.000 €"
+        },
+        {
+          "label": "Eigenkapital",
+          "value": "50.000 €"
+        },
+        {
+          "label": "weiterer Finanzierungsbedarf*",
+          "value": "zzgl. NK separat"
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "title": "Förderung richtig in den Kaufprozess integrieren",
+      "items": [
+        {
+          "title": "Förderstufe vor Vertrag prüfen",
+          "text": "Objektunterlagen und QNG-Nachweis müssen zur Produktanforderung passen."
+        },
+        {
+          "title": "Hausbank einbinden",
+          "text": "KfW-Kredite werden regelmäßig über einen Finanzierungspartner beantragt."
+        },
+        {
+          "title": "Gesamtstruktur rechnen",
+          "text": "KfW-Zinsbindung, Bankdarlehen, Tilgung und Eigenkapital gemeinsam beurteilen."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "title": "KfW-Zins ist tagesabhängig",
+      "text": "Förderkonditionen sind nicht statisch. Maßgeblich ist die konkrete Zusage bzw. der jeweils veröffentlichte Produktstand.",
+      "tone": "navy"
+    }
+  ]
 }

@@ -16,7 +16,35 @@
     "richtig"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Er ist kein automatischer Grundstückswert. Grundstückszuschnitt, Nutzung, Erschließung und wertrelevante Merkmale können abweichen.",
+  "formulae": [
+    "Bodenwert grob = Grundstücksfläche × Bodenrichtwert × Anpassungsfaktoren"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Grundstück 600 m²",
+      "Bodenrichtwert 900 €/m²"
+    ],
+    "steps": [
+      "reiner Ausgangswert = 540.000 € vor objektspezifischen Anpassungen."
+    ],
+    "interpretation": "Der Bodenrichtwert ist ein zonaler Orientierungswert, kein automatischer Verkehrswert des konkreten Grundstücks. Entwicklungszustand, Grundstücksmerkmale und Stichtag sind zu prüfen."
+  },
+  "sources": [
+    {
+      "label": "§ 196 BauGB – Bodenrichtwerte",
+      "url": "https://www.gesetze-im-internet.de/bbaug/__196.html"
+    }
+  ],
+  "assistantAnswer": "Der Bodenrichtwert ist ein durchschnittlicher Lagewert für ein definiertes Gebiet. Der Bodenrichtwert ist ein durchschnittlicher Lagewert für den Boden innerhalb einer Bodenrichtwertzone und kein verbindlicher Einzelgrundstückspreis.",
+  "focusPoints": [
+    "Der Bodenrichtwert ist ein durchschnittlicher Lagewert für den Boden innerhalb einer Bodenrichtwertzone und kein verbindlicher Einzelgrundstückspreis.",
+    "Abweichungen bei Art und Maß der baulichen Nutzung, Grundstücksgröße, Zuschnitt, Erschließung, Altlasten oder Entwicklungszustand können erhebliche Anpassungen erfordern.",
+    "Bei bebauten Grundstücken ist der Bodenrichtwert nur ein Bestandteil der Wertermittlung; Gebäudewert, Ertragssituation und objektspezifische Merkmale bleiben separat."
+  ],
+  "decisionUse": "Der Wert eignet sich als Plausibilitätsanker, nicht als Ersatz für Vergleichskaufpreise oder eine objektspezifische Wertermittlung."
 }

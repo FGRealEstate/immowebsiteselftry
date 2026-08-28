@@ -131,7 +131,7 @@
                 { title: 'Statistik', description: 'Google Tag Manager und darüber eingebundene Statistikdienste wie Google Analytics werden erst nach Ihrer Einwilligung geladen.', linkedCategory: 'analytics' },
                 { title: 'Marketing', description: 'Dienste zur Messung und Optimierung von Werbekampagnen werden erst nach Ihrer Einwilligung geladen.', linkedCategory: 'marketing' },
                 { title: 'Externe Medien', description: 'Externe Karten, Videos oder vergleichbare Inhalte werden erst nach Ihrer Einwilligung geladen.', linkedCategory: 'external' },
-                { title: 'Weitere Informationen', description: 'Details finden Sie in unserer <a href="/datenschutz.html">Datenschutzerklärung</a>.' }
+                { title: 'Weitere Informationen', description: 'Details finden Sie in unserer <a href="/datenschutz/">Datenschutzerklärung</a>.' }
               ]
             }
           }

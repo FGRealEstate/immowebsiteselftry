@@ -18,3 +18,10 @@ canonicalPath: /kapitalanlage.html
 {% set appointmentMode = "ankauf" %}
 {% include "appointment-booking.njk" %}
 <section class="container mx-auto px-4 pb-16 md:pb-24"><div class="fg-related-journeys"><span>Auch relevant:</span><a href="/angebote.html">Aktuelle Angebote</a><a href="/finanzierungsberatung.html">Finanzierung</a><a href="/ankaufsberatung.html">Ankaufsberatung</a></div></section>
+
+{% set faqItems = mangoTexte.faq.B %}
+{% set faqAnchor = "faq-kapitalanlage" %}
+{% set faqTitle = "Häufige Fragen von Käufern und Kapitalanlegern" %}
+{% include "faq-block.njk" %}
+
+{% include "after-sales-teaser.njk" %}

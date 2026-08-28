@@ -7,5 +7,10 @@
   "keywords": [
     "portfolio"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Kapitalanlage",
+  "explanation": "Gesamtheit mehrerer Investments. Portfolio ist eine Investmentkennzahl bzw. Risikogröße. Für Vergleiche müssen Definition, Zeitraum und einbezogene Kosten identisch sein.",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Gesamtheit mehrerer Investments. Gesamtheit mehrerer Investments. Portfolio ist eine Investmentkennzahl bzw. Risikogröße. Für Vergleiche müssen Definition, Zeitraum und einbezogene Kosten identisch sein."
 }

@@ -7,5 +7,11 @@
   "keywords": [
     "finanzierungsquote"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Anteil einer gewählten Bezugsgröße, der durch Darlehen finanziert wird. Die Finanzierungsquote setzt die Darlehenssumme ins Verhältnis zu einer definierten Investitionsbasis, meist Kaufpreis oder Gesamtinvestition. Sie ist von LTV und Beleihungsauslauf zu unterscheiden, weil dort andere Wertansätze im Nenner stehen können.",
+  "explanation": "Die Finanzierungsquote setzt die Darlehenssumme ins Verhältnis zu einer definierten Investitionsbasis, meist Kaufpreis oder Gesamtinvestition. Sie ist von LTV und Beleihungsauslauf zu unterscheiden, weil dort andere Wertansätze im Nenner stehen können.",
+  "practiceExample": "400.000 € Kaufpreis und 360.000 € Darlehen ergeben 90 % Kaufpreisfinanzierungsquote. Bei zusätzlich 40.000 € Nebenkosten beträgt die Darlehensquote zur Gesamtinvestition nur 81,8 %."
 }

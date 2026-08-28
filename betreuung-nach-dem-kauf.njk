@@ -1,0 +1,53 @@
+---
+layout: base.njk
+permalink: betreuung-nach-dem-kauf/index.html
+canonicalPath: /betreuung-nach-dem-kauf/
+eleventyComputed:
+  title: "{{ mangoTexte.betreuung.title }}"
+  description: "{{ mangoTexte.betreuung.description }}"
+  ogTitle: "{{ mangoTexte.betreuung.h1 }}"
+  ogDescription: "{{ mangoTexte.betreuung.description }}"
+---
+<section class="fg-journey-hero bg-primary text-white py-16 md:py-24">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <a href="/index.html#ziele" class="fg-back-link"><i class="fas fa-arrow-left"></i> Zurück zur Auswahl</a>
+    <div class="max-w-4xl mt-8 fg-reveal">
+      <p class="fg-eyebrow">Nach dem Notartermin</p>
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-6">{{ mangoTexte.betreuung.h1 }}</h1>
+      <p class="text-lg md:text-xl text-page-bg">{{ mangoTexte.home.intro[0] }}</p>
+    </div>
+  </div>
+</section>
+
+<div class="content-detail shell">
+  <nav class="breadcrumbs"><a href="/index.html">Start</a><span>&rsaquo;</span><span>{{ mangoTexte.betreuung.h1 }}</span></nav>
+  <article class="science-article">
+    {%- for block in mangoTexte.betreuung.html %}
+    {%- if block == "<p><strong>Erstgespräch vereinbaren</strong></p>" %}
+    <div class="article-actions"><a class="lab-btn lab-btn-gold" href="/index.html#kontakt">Erstgespräch vereinbaren</a></div>
+    {%- else %}
+    {{ block | safe }}
+    {%- endif %}
+    {%- endfor %}
+    <aside class="article-note">
+      <strong>Wie das Erstgespräch abläuft</strong>
+      <p>{{ mangoTexte.prozess[0] }}</p>
+    </aside>
+  </article>
+</div>
+
+<section id="kontakt" class="fg-contact-section py-8 md:py-14">
+  <div class="text-center container mx-auto px-4 mb-2 fg-reveal">
+    <p class="fg-section-kicker">Nächster Schritt</p>
+    <h2 class="text-3xl md:text-5xl font-bold text-primary mb-3">Sprechen wir über Ihr Vorhaben.</h2>
+  </div>
+  {% include "landingpage-lead.njk" %}
+</section>
+
+{% set schemaType = "Service" %}
+{% set schemaName = "Betreuung nach dem Immobilienkauf" %}
+{% set schemaDesc = mangoTexte.betreuung.description %}
+{% set schemaPath = "/betreuung-nach-dem-kauf/" %}
+{% set schemaCrumb = "Betreuung nach dem Kauf" %}
+{% set schemaArea = "Berlin" %}
+{% include "page-schema.njk" %}

@@ -7,5 +7,11 @@
   "keywords": [
     "zins"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Preis für die zeitweise Überlassung von Kapital. Zins ist der Preis für die zeitweise Überlassung von Kapital. Bei Immobilienfinanzierungen ist zwischen Sollzins, effektivem Jahreszins, Zinsbindung und tatsächlicher Zinsbelastung auf die fallende Restschuld zu unterscheiden.",
+  "explanation": "Zins ist der Preis für die zeitweise Überlassung von Kapital. Bei Immobilienfinanzierungen ist zwischen Sollzins, effektivem Jahreszins, Zinsbindung und tatsächlicher Zinsbelastung auf die fallende Restschuld zu unterscheiden.",
+  "practiceExample": "300.000 € Restschuld zu 4 % verursachen anfänglich rund 12.000 € Zins p.a.; mit jeder Tilgung sinkt die absolute Zinsbelastung."
 }

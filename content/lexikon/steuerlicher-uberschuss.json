@@ -7,5 +7,11 @@
   "keywords": [
     "steuerlicher überschuss"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Steuern",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Steuerlich ermittelte Einkünfte nach abzugsfähigen Aufwendungen. Der steuerliche Überschuss aus Vermietung ergibt sich vereinfacht aus steuerpflichtigen Einnahmen minus abzugsfähigen Werbungskosten. Er unterscheidet sich vom Cashflow, weil AfA und Tilgung unterschiedlich behandelt werden.",
+  "explanation": "Der steuerliche Überschuss aus Vermietung ergibt sich vereinfacht aus steuerpflichtigen Einnahmen minus abzugsfähigen Werbungskosten. Er unterscheidet sich vom Cashflow, weil AfA und Tilgung unterschiedlich behandelt werden.",
+  "practiceExample": "18.000 € Miete − 9.000 € Zinsen − 3.000 € laufende Kosten − 6.000 € AfA = 0 € steuerlicher Überschuss, obwohl zusätzlich Tilgung Liquidität kosten kann."
 }

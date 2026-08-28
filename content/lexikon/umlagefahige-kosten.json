@@ -7,5 +7,11 @@
   "keywords": [
     "umlagefähige kosten"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Vermietung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Betriebskosten, die bei wirksamer Vereinbarung auf Mieter umgelegt werden können. Umlagefähige Kosten sind Betriebskosten, die nach Gesetz und Mietvertrag auf den Mieter verteilt werden dürfen. Umlagefähigkeit bedeutet nicht, dass der Eigentümer kein Leerstands- oder Ausfallrisiko trägt.",
+  "explanation": "Umlagefähige Kosten sind Betriebskosten, die nach Gesetz und Mietvertrag auf den Mieter verteilt werden dürfen. Umlagefähigkeit bedeutet nicht, dass der Eigentümer kein Leerstands- oder Ausfallrisiko trägt.",
+  "practiceExample": "Bei leerer Wohnung trägt der Eigentümer die betreffenden laufenden Kosten selbst, obwohl dieselbe Position bei Vermietung grundsätzlich umlagefähig wäre."
 }

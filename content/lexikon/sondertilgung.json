@@ -7,5 +7,11 @@
   "keywords": [
     "sondertilgung"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Zusätzliche Tilgung außerhalb der regulären Rate. Sondertilgung ist eine zusätzliche außerplanmäßige Tilgung außerhalb der regulären Rate, soweit der Darlehensvertrag dies erlaubt. Sie reduziert Restschuld und zukünftige Zinsbelastung, bindet aber Liquidität.",
+  "explanation": "Sondertilgung ist eine zusätzliche außerplanmäßige Tilgung außerhalb der regulären Rate, soweit der Darlehensvertrag dies erlaubt. Sie reduziert Restschuld und zukünftige Zinsbelastung, bindet aber Liquidität.",
+  "practiceExample": "10.000 € Sondertilgung bei 4 % Darlehenszins spart im ersten Folgejahr grob bis zu 400 € Zins vor dem weiteren Tilgungsverlauf."
 }

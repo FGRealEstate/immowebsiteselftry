@@ -7,5 +7,11 @@
   "keywords": [
     "hausgeld"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Vermietung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Monatliche Vorauszahlung des Wohnungseigentümers an die WEG. Hausgeld ist der monatliche Vorschuss eines Wohnungseigentümers an die WEG. Es umfasst typischerweise Betriebskosten, Verwaltung und Zuführung zur Erhaltungsrücklage; deshalb ist es nicht mit „Nebenkosten des Mieters“ gleichzusetzen.",
+  "explanation": "Hausgeld ist der monatliche Vorschuss eines Wohnungseigentümers an die WEG. Es umfasst typischerweise Betriebskosten, Verwaltung und Zuführung zur Erhaltungsrücklage; deshalb ist es nicht mit „Nebenkosten des Mieters“ gleichzusetzen.",
+  "practiceExample": "350 € Hausgeld sind nicht automatisch 350 € Eigentümerkosten und auch nicht automatisch 350 € umlagefähig. Die Jahresabrechnung/Wirtschaftsplan-Aufteilung entscheidet."
 }

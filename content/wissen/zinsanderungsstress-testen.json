@@ -1,8 +1,8 @@
 {
   "title": "Zinsänderungsstress testen",
   "category": "Finanzierung",
-  "summary": "Ein guter Plan rechnet nicht nur mit dem heutigen Sollzins.",
-  "body": "Szenarien mit plus ein, zwei oder drei Prozentpunkten zeigen die mögliche Anschlussrate und helfen bei der Wahl der Tilgung.",
+  "summary": "Ein Zinsstresstest zeigt, ob die Finanzierung auch dann tragfähig bleibt, wenn die Anschlussfinanzierung deutlich teurer wird.",
+  "body": "Beim Zinsstresstest wird die erwartete Restschuld mit mehreren künftigen Sollzinsen neu annuitätisch gerechnet. Der Test ist besonders aussagekräftig, wenn zusätzlich Einkommen, Mieten und Kosten gestresst werden.",
   "id": "zinsanderungsstress-testen",
   "slug": "zinsanderungsstress-testen",
   "url": "/wissen/zinsanderungsstress-testen/",
@@ -17,7 +17,99 @@
     "zinsänderungsstress"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Beim Zinsstresstest wird die erwartete Restschuld mit mehreren künftigen Sollzinsen neu annuitätisch gerechnet. Der Test ist besonders aussagekräftig, wenn zusätzlich Einkommen, Mieten und Kosten gestresst werden.",
+  "formulae": [
+    "Stressrate = Restschuld × (Stresszins + Tilgung) / 12"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Restschuld nach Zinsbindung 280.000 €",
+      "Tilgung 2 %",
+      "Basiszins 3,5 %",
+      "Stresszins 6,0 %"
+    ],
+    "steps": [
+      "Basisrate ≈ 1.283 €",
+      "Stressrate ≈ 1.867 €",
+      "Differenz ≈ 583 € monatlich"
+    ],
+    "interpretation": "Der Stress-Test beantwortet nicht, welcher Zins eintreten wird, sondern ob die Finanzierung einen ungünstigeren Zins verkraftet."
+  },
+  "sources": [],
+  "assistantAnswer": "Bei 250.000 € Restschuld und 2 % Tilgung ergeben 3,0 % Anschlusszins ca. 1.042 € Monatsrate, 4,5 % ca. 1.354 € und 6,0 % ca. 1.667 €. Die Differenz von rund 625 € pro Monat zwischen 3 % und 6 % sollte bereits heute im Haushalts- oder Objektcashflow berücksichtigt werden.",
+  "focusPoints": [
+    "Der Zinsstress zeigt, ob die Finanzierung nach Ende der Zinsbindung auch bei höheren Anschlusszinsen tragfähig bleibt.",
+    "Die Belastung hängt von Restschuld, Anschlusszins und gewünschter Tilgung ab. Deshalb ist ein Stress auf der ursprünglichen Darlehenssumme weniger aussagekräftig als auf der erwarteten Restschuld.",
+    "Bei Kapitalanlagen sollte parallel geprüft werden, ob Mietertrag und DSCR unter dem Stress noch ausreichen."
+  ],
+  "decisionUse": "Finanzierung nur dann als robust einstufen, wenn das obere Zinsszenario aus Haushaltsüberschuss oder nachhaltigem Objektüberschuss getragen werden kann.",
+  "contentBlocks": [
+    {
+      "type": "table",
+      "title": "Rate bei 250.000 € Restschuld",
+      "headers": [
+        "Anschlusszins",
+        "Monatsrate bei 2 % Tilgung",
+        "Jahresrate"
+      ],
+      "rows": [
+        [
+          "3,0 %",
+          "1.042 €",
+          "12.500 €"
+        ],
+        [
+          "4,5 %",
+          "1.354 €",
+          "16.250 €"
+        ],
+        [
+          "6,0 %",
+          "1.667 €",
+          "20.000 €"
+        ]
+      ],
+      "note": null
+    },
+    {
+      "type": "barChart",
+      "title": "Anschlussrate im Stress",
+      "items": [
+        {
+          "label": "3,0 %",
+          "value": "1.042 €/Monat",
+          "pct": 61
+        },
+        {
+          "label": "4,5 %",
+          "value": "1.354 €/Monat",
+          "pct": 80
+        },
+        {
+          "label": "6,0 %",
+          "value": "1.667 €/Monat",
+          "pct": 98
+        }
+      ],
+      "note": null
+    },
+    {
+      "type": "formula",
+      "title": "Stressreserve",
+      "formulas": [
+        "monatliche Zinsstressreserve = Rate im Stressszenario − Rate im Basisszenario"
+      ],
+      "explanation": null
+    },
+    {
+      "type": "callout",
+      "title": "Doppelstress statt nur Zinsstress",
+      "text": "Bei Kapitalanlagen zusätzlich einen Mietausfall oder höhere nicht umlagefähige Kosten kombinieren. Der gefährlichste Fall ist oft nicht nur der höhere Zins, sondern höherer Zins plus schwächerer Objektcashflow.",
+      "tone": "red"
+    }
+  ]
 }

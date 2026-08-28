@@ -18,7 +18,36 @@
     "wirksamer"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Der Eigentümer trägt dennoch Vorfinanzierung, Ausfallrisiko und nicht umlagefähige Anteile. Betriebskostenabrechnungen müssen formell und inhaltlich stimmen.",
+  "formulae": [
+    "Umlagefähige Kosten nur bei wirksamer mietvertraglicher Umlage und nach Betriebskostenrecht"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Betriebskosten 3.000 € p.a.",
+      "davon laut Abrechnung umlagefähig 2.400 €",
+      "nicht umlagefähig 600 €"
+    ],
+    "steps": [
+      "Für Eigentümer verbleiben mindestens 600 € p.a. plus weitere nicht umlagefähige Positionen."
+    ],
+    "interpretation": "Betriebskosten sind nicht mit Instandhaltung, Verwaltung oder Rücklagen gleichzusetzen. Maßgeblich sind Vertrag und BetrKV."
+  },
+  "sources": [
+    {
+      "label": "Betriebskostenverordnung",
+      "url": "https://www.gesetze-im-internet.de/betrkv/"
+    }
+  ],
+  "assistantAnswer": "Umlagefähige Kosten können bei wirksamer Vereinbarung auf Mieter verteilt werden. Umlagefähige Betriebskosten richten sich nach Betriebskostenverordnung und Mietvertrag. Nicht jede Eigentümerkostenposition ist automatisch auf den Mieter übertragbar.",
+  "focusPoints": [
+    "Umlagefähige Betriebskosten richten sich nach Betriebskostenverordnung und Mietvertrag. Nicht jede Eigentümerkostenposition ist automatisch auf den Mieter übertragbar.",
+    "Verwaltungskosten und Instandhaltung gehören grundsätzlich nicht zu den umlagefähigen Betriebskosten; bei Leerstand trägt der Eigentümer auch umlagefähige Kosten selbst.",
+    "Für Renditerechnungen muss daher zwischen Bruttokosten des Objekts, umlagefähigem Anteil und wirtschaftlich beim Eigentümer verbleibendem Anteil unterschieden werden."
+  ],
+  "decisionUse": "Letzte Abrechnung und Mietvertrag positionenweise prüfen; Pauschalannahmen wie „Hausgeld komplett umlagefähig“ vermeiden."
 }

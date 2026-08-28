@@ -18,7 +18,31 @@
     "technisch"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Bei Bestandsobjekten sind Dauer, Ursache, Renovierungsbedarf und realistische Neuvermietungsmiete zu prüfen.",
+  "formulae": [
+    "Effektive Miete = Sollmiete × Vermietungsquote"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Monatsmiete 1.200 €",
+      "1 Monat Leerstand zwischen Mietern"
+    ],
+    "steps": [
+      "Jahresmiete statt 14.400 € nur 13.200 €",
+      "effektive Ausfallquote 8,33 % in diesem Jahr."
+    ],
+    "interpretation": "Bei kleinen Einheiten kann ein einzelner Leerstandsmonat die Jahresrendite stark verändern. Struktureller und fluktuationsbedingter Leerstand sind zu unterscheiden."
+  },
+  "sources": [],
+  "assistantAnswer": "Leerstand kann marktbedingt, technisch oder strategisch sein. Leerstand kann temporär, strukturell oder strategisch sein. Die wirtschaftliche Bewertung hängt davon ab, ob die Einheit kurzfristig vermietbar ist oder ein technisches/rechtliches Problem vorliegt.",
+  "focusPoints": [
+    "Leerstand kann temporär, strukturell oder strategisch sein. Die wirtschaftliche Bewertung hängt davon ab, ob die Einheit kurzfristig vermietbar ist oder ein technisches/rechtliches Problem vorliegt.",
+    "Bei kurzfristigem Leerstand sind Mietausfall, Renovierung und Vermarktungsdauer zu modellieren; bei strukturellem Leerstand zusätzlich dauerhaft niedrigere Marktmiete oder CapEx.",
+    "Ein leerstehendes Objekt kann bei Eigennutzern einen Wertvorteil haben, während es bei Kapitalanlegern zunächst Ertragsausfall erzeugt."
+  ],
+  "decisionUse": "Leerstand nicht pauschal als Prozentsatz abziehen, sondern Ursache und erwartete Dauer je Einheit modellieren."
 }

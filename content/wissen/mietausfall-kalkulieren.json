@@ -17,7 +17,31 @@
     "zahlungsstörungen"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Ein pauschaler Ansatz von ein bis drei Prozent kann eine erste Orientierung sein; bei Gewerbe, möblierten Konzepten oder schwacher Nachfrage muss er objektspezifisch höher angesetzt werden.",
+  "formulae": [
+    "Effektive Jahresmiete = Sollmiete × (1 − Mietausfallquote)"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Sollmiete 18.000 € p.a.",
+      "Mietausfall-/Leerstandsannahme 3 %"
+    ],
+    "steps": [
+      "effektive Miete = 17.460 €",
+      "Risikokosten = 540 € p.a."
+    ],
+    "interpretation": "Die Quote sollte aus Objektart, Mieterstruktur und lokaler Vermietbarkeit abgeleitet werden, nicht aus einem pauschalen Wunschwert."
+  },
+  "sources": [],
+  "assistantAnswer": "Mietausfall umfasst Leerstand, Zahlungsstörungen und nicht nahtlose Neuvermietung. Mietausfall umfasst nicht nur dauerhaft unbezahlte Miete, sondern auch Leerstand zwischen Mietverhältnissen, Verzögerungen und uneinbringliche Forderungen.",
+  "focusPoints": [
+    "Mietausfall umfasst nicht nur dauerhaft unbezahlte Miete, sondern auch Leerstand zwischen Mietverhältnissen, Verzögerungen und uneinbringliche Forderungen.",
+    "Ein pauschaler Prozentsatz kann für Portfolio-Screenings sinnvoll sein, ersetzt bei Einzelobjekten aber nicht die Prüfung von Mietverträgen, Bonität und Vermietbarkeit.",
+    "Bei hoher Einzelmieterabhängigkeit ist das Ausfallrisiko konzentrierter als bei vielen kleinen Einheiten."
+  ],
+  "decisionUse": "Mindestens Basisszenario und Stressszenario mit zusätzlichem Leerstandsmonat beziehungsweise prozentualem Mietausfall rechnen."
 }

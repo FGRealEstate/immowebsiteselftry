@@ -16,7 +16,37 @@
     "wert"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Bewirtschaftungskosten, Bodenwert, Liegenschaftszins und Restnutzungsdauer sind zentrale Komponenten.",
+  "formulae": [
+    "Ertragswert basiert auf nachhaltig erzielbaren Erträgen, Bewirtschaftungskosten, Bodenwert und Kapitalisierung gemäß ImmoWertV"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Jahresrohertrag 100.000 €",
+      "Bewirtschaftungskosten 20.000 €",
+      "Reinertrag 80.000 €",
+      "weitere Parameter: Bodenwert, Liegenschaftszins, Restnutzungsdauer"
+    ],
+    "steps": [
+      "Erst aus dem vollständigen Modell entsteht ein vorläufiger Ertragswert; reine Multiplikation der Miete mit einem Faktor ist nicht das formale Verfahren."
+    ],
+    "interpretation": "Besonders relevant für renditeorientierte Objekte. Die konkrete Wertermittlung erfordert marktkonforme Modellparameter."
+  },
+  "sources": [
+    {
+      "label": "Immobilienwertermittlungsverordnung (ImmoWertV)",
+      "url": "https://www.gesetze-im-internet.de/immowertv_2022/"
+    }
+  ],
+  "assistantAnswer": "Das Ertragswertverfahren leitet den Wert aus nachhaltig erzielbaren Erträgen ab. Das Ertragswertverfahren leitet den Wert wesentlich aus nachhaltig erzielbaren Erträgen ab. Es trennt Bodenwert und Ertragswert der baulichen Anlagen.",
+  "focusPoints": [
+    "Das Ertragswertverfahren leitet den Wert wesentlich aus nachhaltig erzielbaren Erträgen ab. Es trennt Bodenwert und Ertragswert der baulichen Anlagen.",
+    "Rohertrag, Bewirtschaftungskosten, Liegenschaftszins und Restnutzungsdauer sind zentrale Stellgrößen; kleine Änderungen können einen erheblichen Werteffekt erzeugen.",
+    "Marktmiete und tatsächliche Vertragsmiete sind nicht beliebig austauschbar. Die anzusetzende Ertragslage hängt vom Bewertungszweck und den objektspezifischen Umständen ab."
+  ],
+  "decisionUse": "Das Verfahren ist besonders relevant bei Renditeobjekten; für die Kaufentscheidung sollte die Bewertung mit tatsächlichem Cashflow und CapEx gespiegelt werden."
 }

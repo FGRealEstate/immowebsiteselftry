@@ -15,7 +15,35 @@
     "wohnfläche"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Miete und Kaufpreis pro Quadratmeter sollten auf der richtigen, dokumentierten Fläche basieren.",
+  "formulae": [
+    "BGF und Wohnfläche folgen unterschiedlichen Definitionen und dürfen nicht gleichgesetzt werden"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Gebäude BGF 220 m²",
+      "Wohnfläche nach WoFlV 145 m²"
+    ],
+    "steps": [
+      "Ein Preis je BGF und ein Preis je Wohnfläche sind nicht direkt vergleichbar."
+    ],
+    "interpretation": "Für Kaufpreisvergleiche muss die Flächendefinition identisch sein. Keller, Dachschrägen, Balkone und Konstruktionsflächen werden unterschiedlich behandelt."
+  },
+  "sources": [
+    {
+      "label": "Wohnflächenverordnung",
+      "url": "https://www.gesetze-im-internet.de/woflv/"
+    }
+  ],
+  "assistantAnswer": "Flächenbegriffe sind nicht austauschbar. Bruttogrund-/Geschossflächen und Wohnfläche beruhen auf unterschiedlichen Definitionen und dürfen nicht für €/m²-Vergleiche vermischt werden.",
+  "focusPoints": [
+    "Bruttogrund-/Geschossflächen und Wohnfläche beruhen auf unterschiedlichen Definitionen und dürfen nicht für €/m²-Vergleiche vermischt werden.",
+    "Bei der Wohnfläche können Dachschrägen, Balkone und Terrassen nur anteilig zählen; Keller, Garagen und viele Nebenräume gehören regelmäßig nicht zur Wohnfläche.",
+    "Bei Mehrfamilienhäusern ist zusätzlich zwischen Wohnfläche, vermietbarer Fläche und Nutzfläche zu unterscheiden."
+  ],
+  "decisionUse": "Vor jedem €/m²-Vergleich muss klar sein, welche Flächendefinition im Zähler/Nenner verwendet wurde."
 }

@@ -17,7 +17,36 @@
     "staffelmieten"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Die Staffeln müssen wirksam vereinbart sein. Betriebskosten und Modernisierungsmöglichkeiten sind gesondert zu prüfen.",
+  "formulae": [
+    "Staffelmiete: im Vertrag vereinbarte Eurobeträge je Stufe; keine prozentuale Automatik erforderlich"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Startmiete 1.000 €",
+      "ab Jahr 2: 1.030 €",
+      "ab Jahr 4: 1.061 €"
+    ],
+    "steps": [
+      "Die Zahlungsreihe kann exakt aus den vereinbarten Staffeln modelliert werden."
+    ],
+    "interpretation": "Nach § 557a BGB muss die jeweilige Miethöhe mindestens ein Jahr unverändert bleiben; die Staffel ist in Geldbetrag auszuweisen. Vertrag konkret prüfen."
+  },
+  "sources": [
+    {
+      "label": "§ 557a BGB – Staffelmiete",
+      "url": "https://www.gesetze-im-internet.de/bgb/__557a.html"
+    }
+  ],
+  "assistantAnswer": "Staffelmieten machen künftige nominale Mieten planbarer. Bei der Staffelmiete werden zukünftige Miethöhen beziehungsweise Erhöhungen in Euro vertraglich festgelegt. Zwischen den Staffeln muss die Miete mindestens ein Jahr unverändert bleiben.",
+  "focusPoints": [
+    "Bei der Staffelmiete werden zukünftige Miethöhen beziehungsweise Erhöhungen in Euro vertraglich festgelegt. Zwischen den Staffeln muss die Miete mindestens ein Jahr unverändert bleiben.",
+    "Während der Staffelmiete sind Mieterhöhungen nach §§ 558 bis 559b BGB ausgeschlossen; die Mietpreisbremse kann auf die einzelnen Staffeln wirken.",
+    "Für die Investitionsrechnung ist der Vorteil die planbare nominale Zahlungsreihe; Inflationsschutz entsteht jedoch nur, wenn die vereinbarten Staffeln tatsächlich zur Preisentwicklung passen."
+  ],
+  "decisionUse": "Jede Staffel als konkreten Zeitpunkt und Eurobetrag modellieren, nicht als pauschale Wachstumsrate."
 }

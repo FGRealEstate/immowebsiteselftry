@@ -7,5 +7,11 @@
   "keywords": [
     "zinsänderungsrisiko"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Risiko höherer Kosten bei künftiger Zinsanpassung. Zinsänderungsrisiko ist das Risiko, dass die Anschlussfinanzierung nach Ende der Zinsbindung zu höheren Konditionen erfolgt. Maßgeblich ist die Restschuld zum Anschlusszeitpunkt.",
+  "explanation": "Zinsänderungsrisiko ist das Risiko, dass die Anschlussfinanzierung nach Ende der Zinsbindung zu höheren Konditionen erfolgt. Maßgeblich ist die Restschuld zum Anschlusszeitpunkt.",
+  "practiceExample": "250.000 € Restschuld, 2 % Tilgung: bei 3 % Zins ca. 1.042 € Rate, bei 5,5 % ca. 1.563 € – rund 521 € monatlicher Unterschied."
 }

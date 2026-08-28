@@ -1,0 +1,64 @@
+{#
+  O-110 — one FAQ set, rendered twice from one source.
+  O-112 — that same set, now as a real accordion.
+
+  The copy document requires the marked-up text to match the visible text to the
+  character. Two hand-written copies of the same answer cannot hold that promise,
+  so both come from one data object here. The answer sits in the HTML in full and
+  is never loaded on demand: a <details> that fetches its own body is, for a
+  crawler or an assistant, an empty element. Closing the answer visually costs
+  nothing on that front — the text is in the document either way.
+
+  The <h3> stays inside the <summary>. HTML allows heading content there, and it
+  keeps the question a heading rather than demoting it to a button label.
+
+  Parameters set by the including page:
+    faqItems   — array of {q, a}
+    faqAnchor  — fragment for the FAQPage @id, e.g. "faq-set-b"
+    faqTitle   — visible heading
+    faqIntro   — optional paragraph under the heading
+    faqKicker  — optional eyebrow line, defaults to "Fragen & Antworten"
+#}
+<section id="{{ faqAnchor }}" class="fg-faq-section">
+  <div class="fg-faq-shell">
+    <header class="fg-faq-head">
+      <p class="fg-section-kicker">{% if faqKicker %}{{ faqKicker }}{% else %}Fragen &amp; Antworten{% endif %}</p>
+      <h2>{{ faqTitle }}</h2>
+      {% if faqIntro %}<p class="fg-faq-intro">{{ faqIntro }}</p>{% endif %}
+      <p class="fg-faq-hint"><i class="fas fa-hand-pointer"></i> Frage anklicken, um die Antwort zu lesen</p>
+    </header>
+    <div class="fg-faq-list">
+      {%- for item in faqItems %}
+      <details class="fg-faq-item">
+        <summary>
+          <span class="fg-faq-num" aria-hidden="true">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+          <h3>{{ item.q }}</h3>
+          <span class="fg-faq-toggle"><i class="fas fa-chevron-down"></i></span>
+        </summary>
+        <div class="fg-faq-answer"><p>{{ item.a }}</p></div>
+      </details>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://fg-realestate.de{{ canonicalPath or page.url }}#{{ faqAnchor }}",
+  "isPartOf": { "@id": "https://fg-realestate.de/#website" },
+  "about": { "@id": "https://fg-realestate.de/#organization" },
+  "mainEntity": [
+    {%- for item in faqItems %}
+    {
+      "@type": "Question",
+      "name": {{ item.q | dump | safe }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ item.a | dump | safe }}
+      }
+    }{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}
+</script>

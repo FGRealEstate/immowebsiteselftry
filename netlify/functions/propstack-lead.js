@@ -1,3 +1,4 @@
+const { sendInternalNotification } = require("./_shared/mailer");
 const PROPSTACK_BASE_URL = process.env.PROPSTACK_API_BASE || "https://api.propstack.de/v1";
 
 /**
@@ -84,6 +85,14 @@ exports.handler = async function (event) {
       ? await uploadDocuments(apiKey, { contactId, propertyId, documents: lead.documents })
       : [];
 
+    // Interne Benachrichtigung zusätzlich zum Propstack-Kontakt / der Aufgabe.
+    // Ein Mailfehler blockiert die CRM-Übermittlung nicht.
+    const internalNotification = await sendInternalNotification({
+      subject: `Neue Website-Anfrage: ${mapLandingpageType(lead.concernType)} – ${lead.fullName}`,
+      replyTo: lead.email,
+      text: note,
+    });
+
     return json(200, {
       success: true,
       message: "Ihre Anfrage wurde erfolgreich übermittelt.",
@@ -96,6 +105,7 @@ exports.handler = async function (event) {
       property: propertyResult,
       deal: dealResult,
       documents: documentResults,
+      internal_notification: internalNotification,
     });
   } catch (error) {
     console.error("PROPSTACK LEAD ERROR:", error);

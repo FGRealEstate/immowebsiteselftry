@@ -1,8 +1,8 @@
 {
   "title": "Steuerlicher Gewinn und echter Cashflow",
   "category": "Steuern",
-  "summary": "Steuerlicher Gewinn und Liquiditätsüberschuss sind unterschiedliche Größen.",
-  "body": "Tilgung ist Liquiditätsabfluss, aber keine Werbungskostenposition. AfA reduziert den steuerlichen Gewinn, ohne im Jahr der Abschreibung Liquidität zu kosten.",
+  "summary": "Steuerlicher Überschuss und Bankkontocashflow sind unterschiedliche Größen. AfA mindert den steuerlichen Gewinn ohne Auszahlung; Tilgung belastet die Liquidität, ist aber regelmäßig keine Werbungskostenposition.",
+  "body": "Der steuerliche Vermietungsüberschuss folgt steuerlichen Einnahmen- und Werbungskostenregeln. Der Cashflow misst dagegen tatsächliche Ein- und Auszahlungen. Deshalb können beide Größen in dasselbe Objektjahr in unterschiedliche Richtungen zeigen.",
   "id": "steuerlicher-gewinn-und-echter-cashflow",
   "slug": "steuerlicher-gewinn-und-echter-cashflow",
   "url": "/wissen/steuerlicher-gewinn-und-echter-cashflow/",
@@ -17,7 +17,97 @@
     "unterschiedliche"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Der steuerliche Vermietungsüberschuss folgt steuerlichen Einnahmen- und Werbungskostenregeln. Der Cashflow misst dagegen tatsächliche Ein- und Auszahlungen. Deshalb können beide Größen in dasselbe Objektjahr in unterschiedliche Richtungen zeigen.",
+  "formulae": [
+    "Steuerliches Ergebnis ≠ Cashflow",
+    "Steuerliches Ergebnis ≈ Mieteinnahmen − Werbungskosten − Zinsen − AfA"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Miete 18.000 €",
+      "laufende Kosten 3.000 €",
+      "Zinsen 9.000 €",
+      "AfA 6.000 €",
+      "Tilgung 5.000 €"
+    ],
+    "steps": [
+      "steuerliches Ergebnis = 0 €",
+      "Cashflow vor Steuer = 18.000 − 3.000 − 9.000 − 5.000 = 1.000 €"
+    ],
+    "interpretation": "Tilgung mindert Liquidität, ist aber grundsätzlich keine Werbungskostenposition wie Zins. AfA mindert steuerliches Ergebnis, ohne im laufenden Jahr Auszahlung zu verursachen."
+  },
+  "sources": [
+    {
+      "label": "§ 7 EStG – Gebäude-AfA",
+      "url": "https://www.gesetze-im-internet.de/estg/__7.html"
+    }
+  ],
+  "assistantAnswer": "Beispiel: 24.000 € Jahresmiete, 6.000 € laufende Kosten, 10.000 € Schuldzinsen, 8.000 € AfA und 7.000 € Tilgung. Steuerlich ergibt sich vereinfacht 0 € Überschuss (24−6−10−8). Liquiditätsseitig verbleiben vor Steuer aber 1.000 € (24−6−10−7). AfA ist nicht zahlungswirksam, Tilgung schon.",
+  "focusPoints": [
+    "Steuerlicher Gewinn und Cashflow messen unterschiedliche Dinge. AfA mindert den steuerlichen Gewinn ohne laufenden Zahlungsabfluss; Tilgung mindert Liquidität, ist aber grundsätzlich keine Werbungskostenposition.",
+    "Zinsanteil, laufende Kosten und bestimmte Erhaltungsaufwendungen können steuerlich abzugsfähig sein, während ihre liquiditätsmäßige Wirkung bereits im Cashflow steckt.",
+    "Eine Immobilie kann steuerlich Verlust zeigen und trotzdem positiven Cashflow haben – oder umgekehrt."
+  ],
+  "decisionUse": "Investmententscheidungen auf Cashflow und Gesamtrendite stützen; Steuerwirkung als eigene Ebene modellieren, nicht mit dem operativen Ergebnis vermischen.",
+  "contentBlocks": [
+    {
+      "type": "table",
+      "title": "Dasselbe Objekt – zwei Rechnungen",
+      "headers": [
+        "Position",
+        "steuerliche Rechnung",
+        "Cashflow-Rechnung"
+      ],
+      "rows": [
+        [
+          "Miete",
+          "+24.000 €",
+          "+24.000 €"
+        ],
+        [
+          "laufende abzugs-/zahlungswirksame Kosten",
+          "−6.000 €",
+          "−6.000 €"
+        ],
+        [
+          "Schuldzinsen",
+          "−10.000 €",
+          "−10.000 €"
+        ],
+        [
+          "AfA",
+          "−8.000 €",
+          "0 €"
+        ],
+        [
+          "Tilgung",
+          "0 €",
+          "−7.000 €"
+        ],
+        [
+          "Ergebnis",
+          "0 €",
+          "+1.000 € vor Steuer"
+        ]
+      ],
+      "note": null
+    },
+    {
+      "type": "prose",
+      "title": "Warum die Trennung für Investments zentral ist",
+      "paragraphs": [
+        "Ein steuerlicher Verlust kann mit positivem Cashflow zusammentreffen; umgekehrt kann ein steuerlicher Gewinn entstehen, obwohl Tilgung und CapEx die Liquidität stark belasten. Deshalb sollte jedes Investment mindestens eine Ergebnisrechnung und eine Liquiditätsrechnung besitzen."
+      ]
+    },
+    {
+      "type": "callout",
+      "title": "AfA ist kein „Cashback“",
+      "text": "AfA reduziert unter den gesetzlichen Voraussetzungen die steuerliche Bemessungsgrundlage. Der reale Steuereffekt hängt vom individuellen steuerlichen Kontext ab und darf nicht als sichere Auszahlung in Höhe der AfA interpretiert werden.",
+      "tone": "gold"
+    }
+  ]
 }

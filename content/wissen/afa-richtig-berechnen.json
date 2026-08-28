@@ -1,8 +1,8 @@
 {
   "title": "AfA richtig berechnen",
   "category": "Steuern",
-  "summary": "Die Abschreibung bezieht sich grundsätzlich auf den abschreibungsfähigen Gebäudeanteil, nicht auf den Bodenwert.",
-  "body": "Kaufnebenkosten werden regelmäßig anteilig zugeordnet. Baujahr, Nutzung und steuerliche Einordnung bestimmen den Satz. Steuerliche Fragen gehören in die Prüfung mit dem Steuerberater.",
+  "summary": "Die Gebäude-AfA beginnt mit der korrekten Bemessungsgrundlage: Kaufpreis plus zurechenbare Erwerbsnebenkosten werden auf Gebäude und nicht abschreibbaren Grund und Boden aufgeteilt.",
+  "body": "AfA ist die steuerliche Verteilung der abschreibungsfähigen Gebäudeanschaffungs- oder Herstellungskosten über die gesetzliche bzw. nachgewiesene Nutzungsdauer. Grund und Boden wird nicht planmäßig abgeschrieben.",
   "id": "afa-richtig-berechnen",
   "slug": "afa-richtig-berechnen",
   "url": "/wissen/afa-richtig-berechnen/",
@@ -19,7 +19,109 @@
     "sich"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "AfA ist die steuerliche Verteilung der abschreibungsfähigen Gebäudeanschaffungs- oder Herstellungskosten über die gesetzliche bzw. nachgewiesene Nutzungsdauer. Grund und Boden wird nicht planmäßig abgeschrieben.",
+  "formulae": [
+    "AfA-Basis = Gebäudeanteil der Anschaffungskosten + anteilige Anschaffungsnebenkosten",
+    "Jahres-AfA = AfA-Basis × AfA-Satz"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Kaufpreis 400.000 €",
+      "Nebenkosten 40.000 €",
+      "Gebäudeanteil 75 %",
+      "Fertigstellung 1995 → lineare AfA grundsätzlich 2 %"
+    ],
+    "steps": [
+      "AfA-Basis = 440.000 × 75 % = 330.000 €",
+      "jährliche lineare AfA = 6.600 €"
+    ],
+    "interpretation": "Grund und Boden ist nicht abschreibbar. Für nach 2022 fertiggestellte Wohngebäude sieht § 7 Abs. 4 EStG grundsätzlich 3 %, für 1925–2022 2 % und vor 1925 2,5 % lineare AfA vor; tatsächliche kürzere Nutzungsdauer kann unter Voraussetzungen abweichend angesetzt werden."
+  },
+  "sources": [
+    {
+      "label": "§ 7 EStG – Absetzung für Abnutzung",
+      "url": "https://www.gesetze-im-internet.de/estg/__7.html"
+    },
+    {
+      "label": "BMF – Arbeitshilfe Kaufpreisaufteilung (Stand März 2026)",
+      "url": "https://www.bundesfinanzministerium.de/Content/DE/Downloads/Steuern/Berechnung-Aufteilung-Grundstueckskaufpreis.html"
+    }
+  ],
+  "assistantAnswer": "Beispiel: 500.000 € Kaufpreis + 50.000 € zurechenbare Erwerbsnebenkosten, davon 75 % Gebäudeanteil = 412.500 € AfA-Bemessungsgrundlage. Bei 2 % linearer AfA wären das 8.250 € pro Jahr, bei 3 % 12.375 €. Der richtige Satz hängt u. a. vom Fertigstellungszeitpunkt und den gesetzlichen Voraussetzungen ab.",
+  "focusPoints": [
+    "Abschreibbar ist bei Grundstückskäufen nur der Gebäudeanteil der Anschaffungskosten. Grund und Boden unterliegt keinem planmäßigen Werteverzehr und gehört daher nicht in die AfA-Bemessungsgrundlage.",
+    "Auch Anschaffungsnebenkosten sind sachgerecht zwischen Gebäude und Boden aufzuteilen. Eine pauschale Anwendung des AfA-Satzes auf den gesamten Kaufpreis überschätzt den steuerlichen Aufwand.",
+    "Der lineare Satz hängt vom Fertigstellungszeitpunkt ab; zusätzlich können Sonderregeln oder eine nachgewiesene kürzere tatsächliche Nutzungsdauer relevant sein."
+  ],
+  "decisionUse": "Vor Renditerechnung Gebäudeanteil, Nebenkostenallokation und anwendbaren AfA-Satz getrennt bestimmen. Eine pauschale „2 % vom Kaufpreis“-Rechnung ist fachlich falsch.",
+  "contentBlocks": [
+    {
+      "type": "formula",
+      "title": "Bemessungsgrundlage zuerst, Prozentsatz danach",
+      "formulas": [
+        "AfA-Basis Gebäude = (Kaufpreis + zurechenbare Anschaffungsnebenkosten) × Gebäudeanteil",
+        "Jahres-AfA = AfA-Basis × AfA-Satz"
+      ],
+      "explanation": null
+    },
+    {
+      "type": "metrics",
+      "title": "Rechenbeispiel",
+      "items": [
+        {
+          "label": "Kaufpreis",
+          "value": "500.000 €"
+        },
+        {
+          "label": "Nebenkosten",
+          "value": "50.000 €"
+        },
+        {
+          "label": "Gebäudeanteil",
+          "value": "75 %"
+        },
+        {
+          "label": "AfA-Basis",
+          "value": "412.500 €"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Lineare Gebäude-AfA nach § 7 Abs. 4 EStG",
+      "headers": [
+        "Fertigstellung",
+        "regulärer Satz",
+        "AfA im Beispiel"
+      ],
+      "rows": [
+        [
+          "nach 31.12.2022",
+          "3,0 %",
+          "12.375 €"
+        ],
+        [
+          "1925–2022",
+          "2,0 %",
+          "8.250 €"
+        ],
+        [
+          "vor 1925",
+          "2,5 %",
+          "10.312 €"
+        ]
+      ],
+      "note": null
+    },
+    {
+      "type": "callout",
+      "title": "Bodenanteil ist nicht abschreibbar",
+      "text": "Ein hoher Gebäudeanteil erhöht die AfA-Basis. Die Aufteilung muss aber wirtschaftlich haltbar sein; reine Wunschquoten ohne Marktbezug sind steuerlich angreifbar.",
+      "tone": "navy"
+    }
+  ]
 }

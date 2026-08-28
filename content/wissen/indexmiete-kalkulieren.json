@@ -15,7 +15,36 @@
     "verbraucherpreisindex"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Anpassungen erfolgen nicht automatisch und sind an formelle Vorgaben gebunden. Inflation und Zahlungsfähigkeit der Mieter sind getrennt zu betrachten.",
+  "formulae": [
+    "Neue Indexmiete = Ausgangsmiete × neuer Verbraucherpreisindex / Ausgangsindex"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Ausgangsmiete 1.000 €",
+      "Ausgangsindex 118,0",
+      "neuer Index 123,9"
+    ],
+    "steps": [
+      "rechnerische Anpassung = 1.000 × 123,9 / 118,0 ≈ 1.050 €"
+    ],
+    "interpretation": "Die konkrete Mieterhöhung setzt die gesetzlichen und vertraglichen Voraussetzungen voraus. Nicht jede Indexbewegung wird automatisch zur neuen Miete."
+  },
+  "sources": [
+    {
+      "label": "§ 557b BGB – Indexmiete",
+      "url": "https://www.gesetze-im-internet.de/bgb/__557b.html"
+    }
+  ],
+  "assistantAnswer": "Indexmieten koppeln Anpassungen an den Verbraucherpreisindex. Bei einer Indexmiete ist die Mietentwicklung an den Verbraucherpreisindex gekoppelt. Die Miete ändert sich nicht automatisch; die Anpassung muss nach den gesetzlichen Anforderungen geltend gemacht werden.",
+  "focusPoints": [
+    "Bei einer Indexmiete ist die Mietentwicklung an den Verbraucherpreisindex gekoppelt. Die Miete ändert sich nicht automatisch; die Anpassung muss nach den gesetzlichen Anforderungen geltend gemacht werden.",
+    "Während der Indexmiete muss die Miete grundsätzlich mindestens ein Jahr unverändert bleiben. Mieterhöhungen nach § 558 BGB sind ausgeschlossen.",
+    "Für die Investitionsrechnung sollte nicht pauschal eine feste jährliche Steigerung angesetzt werden, sondern ein transparentes Inflationsszenario mit zeitlicher Verzögerung."
+  ],
+  "decisionUse": "Indexmiete ist kein garantierter Inflationsschutz: Vertragswirksamkeit, Ausgangsmiete, Indexentwicklung und tatsächliche Durchsetzung sind zu berücksichtigen."
 }

@@ -7,5 +7,11 @@
   "keywords": [
     "nachrangdarlehen"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Darlehen, dessen Gläubiger im Rang hinter andere Gläubiger tritt. Ein Nachrangdarlehen wird im Rang hinter vorrangigen Gläubigern bedient beziehungsweise besichert. Wegen des höheren Verlustrisikos ist es häufig teurer und wird von Banken bei der Gesamtfinanzierung gesondert bewertet.",
+  "explanation": "Ein Nachrangdarlehen wird im Rang hinter vorrangigen Gläubigern bedient beziehungsweise besichert. Wegen des höheren Verlustrisikos ist es häufig teurer und wird von Banken bei der Gesamtfinanzierung gesondert bewertet.",
+  "practiceExample": "400.000 € erstrangiges Bankdarlehen plus 40.000 € nachrangige Finanzierung können die Eigenkapitallücke schließen, erhöhen aber Kapitaldienst und Gesamtrisiko."
 }

@@ -7,5 +7,11 @@
   "keywords": [
     "grundbuch"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Öffentliches Register der Grundstücksrechte. Das Grundbuch dokumentiert Eigentum und dingliche Rechte an Grundstücken. Abteilung I enthält Eigentümer, Abteilung II unter anderem Lasten/Beschränkungen und Abteilung III Grundpfandrechte.",
+  "explanation": "Das Grundbuch dokumentiert Eigentum und dingliche Rechte an Grundstücken. Abteilung I enthält Eigentümer, Abteilung II unter anderem Lasten/Beschränkungen und Abteilung III Grundpfandrechte.",
+  "practiceExample": "Ein Wohnrecht in Abteilung II oder eine Grundschuld in Abteilung III kann Kaufabwicklung, Wert und Finanzierung beeinflussen."
 }

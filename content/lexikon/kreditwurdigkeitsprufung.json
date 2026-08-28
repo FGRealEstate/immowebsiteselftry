@@ -7,5 +7,11 @@
   "keywords": [
     "kreditwürdigkeitsprüfung"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Prüfung von Einkommen, Vermögen, Verpflichtungen und Zahlungsverhalten. Die Kreditwürdigkeitsprüfung beurteilt, ob der Kreditnehmer die Verpflichtungen aus dem Darlehen voraussichtlich erfüllen kann. Bei Immobiliardarlehen werden persönliche Tragfähigkeit und Objekt-/Sicherheitenbewertung zusammengeführt.",
+  "explanation": "Die Kreditwürdigkeitsprüfung beurteilt, ob der Kreditnehmer die Verpflichtungen aus dem Darlehen voraussichtlich erfüllen kann. Bei Immobiliardarlehen werden persönliche Tragfähigkeit und Objekt-/Sicherheitenbewertung zusammengeführt.",
+  "practiceExample": "Ein rechnerisch tragbares Objekt kann dennoch abgelehnt werden, wenn Einkommen befristet, Bonität schwach oder der bankinterne Beleihungswert zu niedrig ist."
 }

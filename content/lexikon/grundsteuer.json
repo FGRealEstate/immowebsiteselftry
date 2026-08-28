@@ -7,5 +7,11 @@
   "keywords": [
     "grundsteuer"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Steuern",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Laufende Steuer auf Grundbesitz. Grundsteuer ist eine laufende Objektsteuer auf Grundbesitz. Bei vermietetem Wohnraum kann sie bei wirksamer Betriebskostenvereinbarung grundsätzlich umlagefähig sein.",
+  "explanation": "Grundsteuer ist eine laufende Objektsteuer auf Grundbesitz. Bei vermietetem Wohnraum kann sie bei wirksamer Betriebskostenvereinbarung grundsätzlich umlagefähig sein.",
+  "practiceExample": "600 € Grundsteuer p.a. entsprechen 50 € monatlich; bei Leerstand trägt der Eigentümer die Belastung selbst."
 }

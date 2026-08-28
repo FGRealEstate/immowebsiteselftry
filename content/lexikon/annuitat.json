@@ -7,5 +7,11 @@
   "keywords": [
     "annuität"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "explanation": "Die Annuität ist die regelmäßig gleichbleibende Rate eines klassischen Annuitätendarlehens während der Sollzinsbindung. Sie besteht aus Zins und Tilgung; mit sinkender Restschuld sinkt der Zinsanteil und der Tilgungsanteil steigt.",
+  "practiceExample": "300.000 € Darlehen, 4,2 % Sollzins und 2,0 % Anfangstilgung ergeben eine Anfangsannuität von 18.600 € p.a. beziehungsweise 1.550 € monatlich. Im ersten Monat entfallen rund 1.050 € auf Zinsen und 500 € auf Tilgung.",
+  "formula": "Anfangsannuität = Darlehen × (Sollzins + Anfangstilgung)",
+  "sources": [],
+  "assistantAnswer": "Regelmäßig gleichbleibende Rate aus Zins und Tilgung. Die Annuität ist die regelmäßig gleichbleibende Rate eines klassischen Annuitätendarlehens während der Sollzinsbindung. Sie besteht aus Zins und Tilgung; mit sinkender Restschuld sinkt der Zinsanteil und der Tilgungsanteil steigt."
 }

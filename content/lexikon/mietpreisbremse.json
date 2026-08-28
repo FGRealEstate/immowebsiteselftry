@@ -7,5 +7,11 @@
   "keywords": [
     "mietpreisbremse"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Gesetzliche Begrenzung der Wiedervermietungsmiete in bestimmten Gebieten. Die Mietpreisbremse begrenzt in ausgewiesenen Gebieten die zulässige Neuvertragsmiete grundsätzlich nach §§ 556d ff. BGB, vorbehaltlich gesetzlicher Ausnahmen und Vormietenregeln. Sie ist von der Kappungsgrenze im laufenden Mietverhältnis zu unterscheiden.",
+  "explanation": "Die Mietpreisbremse begrenzt in ausgewiesenen Gebieten die zulässige Neuvertragsmiete grundsätzlich nach §§ 556d ff. BGB, vorbehaltlich gesetzlicher Ausnahmen und Vormietenregeln. Sie ist von der Kappungsgrenze im laufenden Mietverhältnis zu unterscheiden.",
+  "practiceExample": "Eine am Markt beobachtete Neuvertragsmiete ist nicht automatisch rechtlich zulässig. Für die Investitionsrechnung muss deshalb eine rechtlich tragfähige Miete angesetzt werden."
 }

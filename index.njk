@@ -76,9 +76,9 @@ ogDescription: "Persönliche Immobilienberatung für Eigentümer, Käufer, Miete
                 <div><h3>Immobilie vermieten</h3><p>Mietpreis, Vermarktung, Auswahl und strukturierter Vermietungsprozess.</p></div>
                 <i class="fas fa-arrow-right fg-route-arrow"></i>
             </a>
-            <a href="/anmieten.html" class="fg-route-card fg-reveal">
+            <a href="/mieten.html" class="fg-route-card fg-reveal">
                 <span class="fg-route-icon"><i class="fas fa-door-open"></i></span>
-                <div><h3>Immobilie anmieten</h3><p>Aktuelle Mietangebote ansehen oder ein persönliches Suchprofil anlegen.</p></div>
+                <div><h3>Immobilie mieten</h3><p>Aktuelle Mietangebote ansehen oder ein persönliches Mietgesuch anlegen.</p></div>
                 <i class="fas fa-arrow-right fg-route-arrow"></i>
             </a>
         </div>
@@ -94,10 +94,10 @@ ogDescription: "Persönliche Immobilienberatung für Eigentümer, Käufer, Miete
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-7xl mx-auto mb-12">
-            <article class="fg-trust-card fg-reveal"><i class="fas fa-chart-area"></i><h3>Datenbasierte Marktanalysen</h3><p>Wir ordnen Markt, Lage und Objekt realistisch ein – ohne künstliche Wertversprechen.</p></article>
-            <article class="fg-trust-card fg-reveal"><i class="fas fa-user-check"></i><h3>Persönliche Betreuung</h3><p>Direkte Ansprechpartner und nachvollziehbare Entscheidungen statt standardisierter Abfertigung.</p></article>
-            <article class="fg-trust-card fg-reveal"><i class="fas fa-link"></i><h3>Finanzierung &amp; Verkauf</h3><p>Wir denken Käuferseite, Finanzierbarkeit und Vermarktung gemeinsam – wenn es für den Auftrag sinnvoll ist.</p></article>
-            <article class="fg-trust-card fg-reveal"><i class="fas fa-network-wired"></i><h3>Deutschlandweites Netzwerk</h3><p>Zugang zu Finanzierungspartnern, Investoren und spezialisierten Kooperationspartnern.</p></article>
+            <article class="fg-trust-card fg-reveal"><i class="fas fa-file-invoice-dollar"></i><h3>Kostenlose Wertermittlung, meist am selben Tag</h3><p>Die Wertermittlung Ihres Objektes erstellen wir kostenlos, meistens innerhalb weniger Stunden und häufig noch am selben Tag.</p></article>
+            <article class="fg-trust-card fg-reveal"><i class="fas fa-folder-open"></i><h3>Keine Vermarktung ohne vollständige Unterlagen</h3><p>Fehlt zum Beispiel die Wohnflächenberechnung, bekommt Ihr Käufer keine Finanzierung und der Verkauf platzt. Deshalb klären wir die Unterlagen, bevor Ihr Objekt in den Verkauf geht.</p></article>
+            <article class="fg-trust-card fg-reveal"><i class="fas fa-percent"></i><h3>Provision vor der ersten Besichtigung</h3><p>Teilungspflicht, 3,57&nbsp;Prozent pro Seite, Bestellerprinzip bei der Vermietung: Wir nennen Ihnen die Zahlen vorher, nicht erst danach. <a href="/maklerprovision/">Alle Fälle im Detail</a>.</p></article>
+            <article class="fg-trust-card fg-reveal"><i class="fas fa-handshake-angle"></i><h3>Betreuung nach dem Notartermin</h3><p>Restnutzungsdauergutachten, Mietanpassung, Handwerker und steuerliche Struktur — die Vermittlung in unser Netzwerk kostet Sie nichts. <a href="/betreuung-nach-dem-kauf/">Betreuung nach dem Kauf</a>.</p></article>
         </div>
         <div class="fg-network-showcase fg-reveal">
             <div class="fg-network-visual">
@@ -165,7 +165,7 @@ ogDescription: "Persönliche Immobilienberatung für Eigentümer, Käufer, Miete
             </details>
             <details class="fg-content-card">
                 <summary><span class="fg-content-icon"><i class="fas fa-road"></i></span><span><strong>Strukturierte Begleitung</strong><small>Zusammenhänge verständlich machen.</small></span><i class="fas fa-chevron-down"></i></summary>
-                <div class="fg-content-body"><p>Wir strukturieren den gesamten Prozess, erklären Zusammenhänge verständlich und begleiten Sie Schritt für Schritt. Unser Handeln ist <b>altrozentrisch</b>: Wir stellen nicht unsere eigenen Interessen in den Mittelpunkt, sondern Ihre.</p></div>
+                <div class="fg-content-body"><p>Wir strukturieren den gesamten Prozess, erklären Zusammenhänge verständlich und begleiten Sie Schritt für Schritt. Unser Handeln ist <b>allozentrisch</b>: Wir stellen nicht unsere eigenen Interessen in den Mittelpunkt, sondern Ihre.</p></div>
             </details>
         </div>
 
@@ -179,6 +179,34 @@ ogDescription: "Persönliche Immobilienberatung für Eigentümer, Käufer, Miete
         </div>
     </div>
 </section>
+
+<section id="nach-dem-kauf" class="bg-white py-16 md:py-24">
+    <div class="container mx-auto px-4 max-w-5xl">
+        <div class="fg-reveal">
+            <p class="fg-section-kicker">Betreuung nach dem Kauf</p>
+            <h2 class="text-3xl md:text-5xl font-bold text-primary mb-5">{{ mangoTexte.home.heading[0] }}</h2>
+            <p class="text-lg text-gray-800 mb-6">{{ mangoTexte.home.intro[0] }}</p>
+            {%- for para in mangoTexte.home.body %}
+            <p class="text-gray-700 mb-4">{{ para }}</p>
+            {%- endfor %}
+            <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                <a href="#kontakt" class="btn-85 inline-flex items-center justify-center gap-2 py-3 px-8 text-primary font-bold rounded-lg">{{ mangoTexte.home.cta[0] }}</a>
+                <a href="/betreuung-nach-dem-kauf/" class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3 px-8 rounded-lg text-center transition duration-300">Was nach dem Notartermin passiert</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% set faqItems = mangoTexte.faq.A %}
+{% set faqAnchor = "faq-set-a" %}
+{% set faqTitle = "Häufige Fragen" %}
+{% include "faq-block.njk" %}
+
+{% set faqItems = siteFaq.entity %}
+{% set faqAnchor = "faq" %}
+{% set faqTitle = "Fragen zum Unternehmen" %}
+{% set faqKicker = "Über Fischer &amp; Geserich" %}
+{% include "faq-block.njk" %}
 
 <section id="angebote" class="container mx-auto px-4 py-16 relative">
     <h2 class="text-3xl font-bold text-center mb-6 text-primary">

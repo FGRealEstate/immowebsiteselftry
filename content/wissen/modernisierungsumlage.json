@@ -19,7 +19,35 @@
     "werden"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Abzüge, Kappungen, Härtefälle und formelle Anforderungen sind zu prüfen.",
+  "formulae": [
+    "Zulässige Mieterhöhung nach Modernisierung richtet sich nach § 559 BGB und weiteren Begrenzungen"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Modernisierungskosten nach Abzug anrechenbarer Positionen beispielhaft 30.000 €",
+      "gesetzliche Prüfung des umlagefähigen Anteils erforderlich"
+    ],
+    "steps": [
+      "Die konkrete monatliche Erhöhung darf nicht allein aus einer Investitionsrenditeformel abgeleitet werden."
+    ],
+    "interpretation": "Modernisierungskosten, Erhaltungskosten, Fördermittel und gesetzliche Kappungen müssen getrennt werden. Die rechtliche Berechnung sollte am konkreten Fall erfolgen."
+  },
+  "sources": [
+    {
+      "label": "§ 559 BGB – Mieterhöhung nach Modernisierungsmaßnahmen",
+      "url": "https://www.gesetze-im-internet.de/bgb/__559.html"
+    }
+  ],
+  "assistantAnswer": "Bestimmte Modernisierungskosten können unter gesetzlichen Voraussetzungen teilweise umgelegt werden. Nach § 559 BGB können unter Voraussetzungen 8 % bestimmter Modernisierungskosten auf die Jahresmiete umgelegt werden. Erhaltungsanteile sind herauszurechnen.",
+  "focusPoints": [
+    "Nach § 559 BGB können unter Voraussetzungen 8 % bestimmter Modernisierungskosten auf die Jahresmiete umgelegt werden. Erhaltungsanteile sind herauszurechnen.",
+    "Zusätzlich gelten gesetzliche Kappungen je Quadratmeter und Härtefallregelungen. Die reine Rechnung „Kosten × 8 %“ ist deshalb nicht automatisch die tatsächlich durchsetzbare Mieterhöhung.",
+    "Bei energetischen Maßnahmen können spezielle Regelungen und Fördermittel die Umlage beeinflussen."
+  ],
+  "decisionUse": "Investitionsrechnung trennt technische Maßnahme, Erhaltungsanteil, Fördermittel, gesetzlich zulässige Umlage und tatsächlich marktverträgliche Miete."
 }

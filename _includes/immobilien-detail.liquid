@@ -258,3 +258,65 @@ layout: base.njk
         el.classList.remove('border-transparent');
     }
 </script>
+
+{% comment %}
+  O-114 / F-334 — strukturierte Daten fuer die drei statisch gepflegten
+  Objektseiten. Bewusst OHNE Offer/price: `preis` ist auf diesen Seiten
+  ein Freitext ("ab 171.000", "222.000,00 - 255.000,00") und `preis_wert`
+  existiert nur auf einer der drei und ist mehrdeutig (400 vs. 400.000).
+  Der Preis wird als PropertyValue im Wortlaut gefuehrt, nicht geraten.
+  `status: VERMIETET` heisst hier "vermietet verkauft", nicht "nicht
+  verfuegbar", und wird deshalb nicht auf schema.org/SoldOut abgebildet.
+{% endcomment %}
+{%- assign objUrl = "https://fg-realestate.de/angebote/" | append: title | slugify | append: "/" -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "RealEstateListing",
+      "@id": "https://fg-realestate.de/angebote/{{ title | slugify }}/#angebot",
+      "url": "https://fg-realestate.de/angebote/{{ title | slugify }}/",
+      "name": {{ title | json }},
+      "description": {{ content | strip_html | strip | truncate: 400 | json }},
+      "inLanguage": "de-DE",
+      "isPartOf": { "@id": "https://fg-realestate.de/#website" },
+      "provider": { "@id": "https://fg-realestate.de/#organization" },
+      "about": { "@id": "https://fg-realestate.de/angebote/{{ title | slugify }}/#objekt" },
+      "breadcrumb": { "@id": "https://fg-realestate.de/angebote/{{ title | slugify }}/#breadcrumb" }{% if hauptbild %},
+      "image": {{ hauptbild | prepend: "https://fg-realestate.de" | json }}{% endif %}
+    },
+    {
+      "@type": "Apartment",
+      "@id": "https://fg-realestate.de/angebote/{{ title | slugify }}/#objekt",
+      "name": {{ title | json }},
+      "url": "https://fg-realestate.de/angebote/{{ title | slugify }}/",
+      "address": { "@type": "PostalAddress", "addressCountry": "DE", "addressLocality": {{ ort | json }} }{% if eckdaten.flaeche %},
+      "floorSize": { "@type": "QuantitativeValue", "value": {{ eckdaten.flaeche | json }}, "unitText": "m²" }{% endif %}{% if eckdaten.zimmer %},
+      "numberOfRooms": {{ eckdaten.zimmer | json }}{% endif %}{% if eckdaten.baujahr %},
+      "yearBuilt": {{ eckdaten.baujahr | json }}{% endif %}{% if hauptbild %},
+      "photo": {{ hauptbild | prepend: "https://fg-realestate.de" | json }}{% endif %},
+      "additionalProperty": [
+        { "@type": "PropertyValue", "name": "Vermarktungsart", "value": {{ vermarktungsart | json }} },
+        { "@type": "PropertyValue", "name": "Objektart", "value": {{ objektart | json }} }{% if preis %},
+        { "@type": "PropertyValue", "name": "Kaufpreisangabe", "value": {{ preis | strip | json }} }{% endif %}{% if provision %},
+        { "@type": "PropertyValue", "name": "Käuferprovision", "value": {{ provision | json }} }{% endif %}{% if status %},
+        { "@type": "PropertyValue", "name": "Status", "value": {{ status | json }} }{% endif %}{% if energie.effizienzklasse %},
+        { "@type": "PropertyValue", "name": "Energieeffizienzklasse", "value": {{ energie.effizienzklasse | json }} }{% endif %}{% if energie.kennwert %},
+        { "@type": "PropertyValue", "name": "Energieverbrauchskennwert", "value": {{ energie.kennwert | json }} }{% endif %}{% if energie.ausweis_art %},
+        { "@type": "PropertyValue", "name": "Energieausweis", "value": {{ energie.ausweis_art | json }} }{% endif %}{% if energie.energietraeger %},
+        { "@type": "PropertyValue", "name": "Energieträger", "value": {{ energie.energietraeger | json }} }{% endif %}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fg-realestate.de/angebote/{{ title | slugify }}/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
+        { "@type": "ListItem", "position": 2, "name": "Angebote", "item": "https://fg-realestate.de/angebote.html" },
+        { "@type": "ListItem", "position": 3, "name": {{ title | json }} }
+      ]
+    }
+  ]
+}
+</script>

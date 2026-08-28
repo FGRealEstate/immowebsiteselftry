@@ -7,5 +7,11 @@
   "keywords": [
     "forward-darlehen"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "explanation": "Ein Forward-Darlehen ist eine heute vereinbarte Anschlussfinanzierung mit zukünftiger Auszahlung. Der Darlehensnehmer sichert den Zins vor Ende der bestehenden Bindung; dafür kann ein Forward-Aufschlag anfallen. Vorlaufzeiten von mehreren Jahren, häufig bis etwa fünf Jahre, sind marktüblich, aber bankabhängig.",
+  "practiceExample": "Erwartete Restschuld 250.000 €, Zinsbindung endet 2031. Wird 2026 ein Forward-Zins von 4,3 % plus 2 % Tilgung vereinbart, läge die anfängliche Anschlussrate bei rund 1.313 € monatlich. Bei 5,5 % Anschlusszins wären es bei gleicher Tilgung rund 1.563 €.",
+  "formula": "Anschlussrate ≈ Restschuld × (Forward-Zins + Tilgung) / 12",
+  "sources": [],
+  "assistantAnswer": "Heute vereinbarte Anschlussfinanzierung mit späterer Auszahlung. Ein Forward-Darlehen ist eine heute vereinbarte Anschlussfinanzierung mit zukünftiger Auszahlung. Der Darlehensnehmer sichert den Zins vor Ende der bestehenden Bindung; dafür kann ein Forward-Aufschlag anfallen. Vorlaufzeiten von mehreren Jahren, häufig bis etwa fünf Jahre, sind marktüblich, aber bankabhängig."
 }

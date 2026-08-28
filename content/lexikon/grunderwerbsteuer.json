@@ -7,5 +7,11 @@
   "keywords": [
     "grunderwerbsteuer"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Steuern",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Landessteuer beim Erwerb inländischer Grundstücke. Grunderwerbsteuer fällt bei steuerbaren Grundstückserwerben an und wird von den Ländern mit unterschiedlichen Steuersätzen erhoben. Sie ist regelmäßig nicht Teil der Gebäude-AfA, sondern wird anteilig den Anschaffungskosten von Grund/Boden und Gebäude zugerechnet.",
+  "explanation": "Grunderwerbsteuer fällt bei steuerbaren Grundstückserwerben an und wird von den Ländern mit unterschiedlichen Steuersätzen erhoben. Sie ist regelmäßig nicht Teil der Gebäude-AfA, sondern wird anteilig den Anschaffungskosten von Grund/Boden und Gebäude zugerechnet.",
+  "practiceExample": "Bei 400.000 € steuerlicher Bemessungsgrundlage und 6 % Steuersatz wären 24.000 € Grunderwerbsteuer zu zahlen. Der konkrete Steuersatz richtet sich nach dem Bundesland."
 }

@@ -7,5 +7,11 @@
   "keywords": [
     "liquiditätsreserve"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Sofort verfügbare Mittel für Unvorhergesehenes. Liquiditätsreserve ist frei verfügbares Kapital für ungeplante Ausgaben, Leerstand, Reparaturen oder Finanzierungslücken. Sie sollte nicht mit langfristig gebundenem Eigenkapital oder WEG-Rücklagen verwechselt werden.",
+  "explanation": "Liquiditätsreserve ist frei verfügbares Kapital für ungeplante Ausgaben, Leerstand, Reparaturen oder Finanzierungslücken. Sie sollte nicht mit langfristig gebundenem Eigenkapital oder WEG-Rücklagen verwechselt werden.",
+  "practiceExample": "Nach Kauf verbleiben 30.000 € liquide Reserve. Eine unerwartete Heizungserneuerung von 18.000 € kann damit getragen werden, ohne Konsumentenkredit aufnehmen zu müssen."
 }

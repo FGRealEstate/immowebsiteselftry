@@ -18,7 +18,36 @@
     "umlagefähiges"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Typisch sind Verwalterkosten, Instandhaltungsanteile und bestimmte Gemeinschaftskosten. Für eine belastbare Kalkulation sollten Wirtschaftsplan und letzte Jahresabrechnung geprüft werden.",
+  "formulae": [
+    "Eigentümer-Cashflow = Miete − nicht umlagefähige Hausgeldanteile − Finanzierung − weitere Eigentümerkosten"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Hausgeld 350 € mtl.",
+      "davon umlagefähig 230 €",
+      "nicht umlagefähig 120 €"
+    ],
+    "steps": [
+      "Für den Eigentümer-Cashflow sind mindestens 120 € mtl. als eigener Kostenblock zu berücksichtigen, zusätzlich ggf. weitere Kosten."
+    ],
+    "interpretation": "Verwaltung, Rücklagenzuführung und einzelne Kostenarten sind nicht automatisch auf Mieter umlagefähig. Abrechnung und Wirtschaftsplan prüfen."
+  },
+  "sources": [
+    {
+      "label": "Betriebskostenverordnung",
+      "url": "https://www.gesetze-im-internet.de/betrkv/"
+    }
+  ],
+  "assistantAnswer": "Nicht umlagefähige Bestandteile des Hausgelds trägt der Eigentümer selbst. Hausgeld umfasst umlagefähige Betriebskosten, nicht umlagefähige Verwaltung-/sonstige Kosten und Zuführungen zur Erhaltungsrücklage. Für die Eigentümerrechnung dürfen diese Bestandteile nicht vermischt werden.",
+  "focusPoints": [
+    "Hausgeld umfasst umlagefähige Betriebskosten, nicht umlagefähige Verwaltung-/sonstige Kosten und Zuführungen zur Erhaltungsrücklage. Für die Eigentümerrechnung dürfen diese Bestandteile nicht vermischt werden.",
+    "Umlagefähig bedeutet nur, dass eine Position bei wirksamer Vereinbarung grundsätzlich auf den Mieter umgelegt werden kann; Ausfall- und Leerstandsrisiko verbleiben beim Eigentümer.",
+    "Rücklagenzuführung ist Liquiditätsabfluss des Eigentümers und beeinflusst den laufenden Cashflow, auch wenn sie bilanziell/steuerlich anders behandelt wird."
+  ],
+  "decisionUse": "Wirtschaftsplan und letzte Jahresabrechnung in einzelne Kostenarten zerlegen, statt pauschal das gesamte Hausgeld von der Miete abzuziehen."
 }

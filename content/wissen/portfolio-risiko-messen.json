@@ -17,7 +17,34 @@
     "risiko"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Standort, Mietertyp, Finanzierung, Zinsbindung und technische Themen sollten diversifiziert und auf Portfolioebene gestresst werden.",
+  "formulae": [
+    "Portfolio-LTV = Gesamtschulden / Gesamtwert",
+    "Portfolio-DSCR = operativer Nettoertrag / Kapitaldienst"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "3 Objekte Gesamtwert 1,5 Mio. €",
+      "Schulden 900.000 €",
+      "NOI 90.000 €",
+      "Kapitaldienst 60.000 €"
+    ],
+    "steps": [
+      "LTV = 60 %",
+      "DSCR = 1,50"
+    ],
+    "interpretation": "Zusätzlich sollten Standort-, Mieter-, Zinsbindungs- und Fälligkeitskonzentrationen gemessen werden."
+  },
+  "sources": [],
+  "assistantAnswer": "Mehrere Objekte reduzieren nicht automatisch Risiko. Portfolio-Risiko entsteht aus Konzentrationen nach Standort, Objektart, Mieter, Finanzierung, Zinsbindung und technischem Zustand.",
+  "focusPoints": [
+    "Portfolio-Risiko entsteht aus Konzentrationen nach Standort, Objektart, Mieter, Finanzierung, Zinsbindung und technischem Zustand.",
+    "Mehr Objekte reduzieren Risiko nur, wenn die Zahlungsströme und Risikotreiber tatsächlich diversifiziert sind.",
+    "Kennzahlen wie LTV, DSCR, Leerstandsquote und CapEx-Bedarf sollten nicht nur je Objekt, sondern gewichtet auf Portfolioebene betrachtet werden."
+  ],
+  "decisionUse": "Konzentrationsgrenzen definieren und Stressszenarien auf Portfolioebene rechnen, etwa gleichzeitiger Zinsanstieg und Leerstand."
 }

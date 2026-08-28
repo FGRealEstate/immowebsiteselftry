@@ -7,5 +7,16 @@
   "keywords": [
     "wohnfläche"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "explanation": "Wohnfläche ist die nach dem anwendbaren Regelwerk anrechenbare Fläche einer Wohnung. Nach WoFlV zählen unter anderem Keller/Garagen grundsätzlich nicht; Balkone/Terrassen werden regelmäßig nur anteilig und Dachschrägen abhängig von der lichten Höhe berücksichtigt.",
+  "practiceExample": "Ein Raum mit 20 m² Grundfläche unter Dachschrägen kann deutlich weniger als 20 m² Wohnfläche beitragen. Deshalb sind Grundfläche, Nutzfläche und Wohnfläche nicht austauschbar.",
+  "formula": "Berechnung nach anwendbarer Flächenregelung",
+  "sources": [
+    {
+      "label": "Wohnflächenverordnung",
+      "url": "https://www.gesetze-im-internet.de/woflv/"
+    }
+  ],
+  "assistantAnswer": "Nach einem Regelwerk ermittelte anrechenbare Fläche. Wohnfläche ist die nach dem anwendbaren Regelwerk anrechenbare Fläche einer Wohnung. Nach WoFlV zählen unter anderem Keller/Garagen grundsätzlich nicht; Balkone/Terrassen werden regelmäßig nur anteilig und Dachschrägen abhängig von der lichten Höhe berücksichtigt."
 }

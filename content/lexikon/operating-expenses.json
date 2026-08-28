@@ -7,5 +7,11 @@
   "keywords": [
     "operating expenses"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Laufende Bewirtschaftungskosten. Operating Expenses (OpEx) sind laufende betriebliche Objektkosten. Welche Positionen enthalten sind, muss im jeweiligen Modell definiert werden; CapEx und Finanzierung werden regelmäßig getrennt betrachtet.",
+  "explanation": "Operating Expenses (OpEx) sind laufende betriebliche Objektkosten. Welche Positionen enthalten sind, muss im jeweiligen Modell definiert werden; CapEx und Finanzierung werden regelmäßig getrennt betrachtet.",
+  "practiceExample": "60.000 € Jahresmiete und 15.000 € operative Objektkosten ergeben vor Finanzierung 45.000 € operativen Überschuss, sofern die Definition so festgelegt ist."
 }

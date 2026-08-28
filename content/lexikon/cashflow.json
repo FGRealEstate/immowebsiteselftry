@@ -7,5 +7,11 @@
   "keywords": [
     "cashflow"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Kapitalanlage",
+  "explanation": "Cashflow bildet tatsächliche Ein- und Auszahlungen ab. Bei Immobilien sollte zwischen operativem Cashflow vor Finanzierung und Cashflow nach Kapitaldienst unterschieden werden. Tilgung belastet den Cashflow, ist aber gleichzeitig Vermögensumschichtung in das Objekt.",
+  "practiceExample": "1.500 € Kaltmiete − 180 € nicht umlagefähige Kosten − 1.150 € Rate − 100 € Reserve = +70 € monatlicher Cashflow. Davon ist ein Teil der Rate Tilgung und damit kein wirtschaftlicher „Verbrauch“ im gleichen Sinn wie Zins.",
+  "formula": "Cashflow = Einzahlungen − Auszahlungen",
+  "sources": [],
+  "assistantAnswer": "Liquiditätsüberschuss oder -bedarf einer Periode. Cashflow bildet tatsächliche Ein- und Auszahlungen ab. Bei Immobilien sollte zwischen operativem Cashflow vor Finanzierung und Cashflow nach Kapitaldienst unterschieden werden. Tilgung belastet den Cashflow, ist aber gleichzeitig Vermögensumschichtung in das Objekt."
 }

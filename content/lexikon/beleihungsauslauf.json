@@ -7,5 +7,11 @@
   "keywords": [
     "beleihungsauslauf"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "explanation": "Der Beleihungsauslauf ist das Verhältnis der relevanten Darlehenssumme zum bankinternen Beleihungswert. Er unterscheidet sich von der einfachen Kaufpreisfinanzierungsquote, weil der Beleihungswert unter dem Kaufpreis liegen kann. Banken nutzen Beleihungsausläufe häufig zur Risikoklassifizierung und Konditionsstaffelung.",
+  "practiceExample": "360.000 € Darlehen bei 450.000 € Beleihungswert ergeben 80 % Beleihungsauslauf. Liegt der Kaufpreis bei 500.000 €, beträgt die Kaufpreisfinanzierungsquote dagegen nur 72 %.",
+  "formula": "Beleihungsauslauf = Darlehen / Beleihungswert",
+  "sources": [],
+  "assistantAnswer": "Verhältnis von Darlehen zu bankseitigem Beleihungswert. Der Beleihungsauslauf ist das Verhältnis der relevanten Darlehenssumme zum bankinternen Beleihungswert. Er unterscheidet sich von der einfachen Kaufpreisfinanzierungsquote, weil der Beleihungswert unter dem Kaufpreis liegen kann. Banken nutzen Beleihungsausläufe häufig zur Risikoklassifizierung und Konditionsstaffelung."
 }

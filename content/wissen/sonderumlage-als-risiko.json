@@ -17,7 +17,30 @@
     "sonderumlagen"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Beschlüsse, Protokolle, Rücklagenstand und bekannte Schäden sollten vor Kauf geprüft werden.",
+  "formulae": [
+    "Individuelle Sonderumlage = beschlossene Gesamtsumme × Verteilungsschlüssel"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "WEG beschließt 200.000 €",
+      "MEA der Wohnung 45/1.000"
+    ],
+    "steps": [
+      "Anteil bei Verteilung nach MEA = 9.000 €"
+    ],
+    "interpretation": "Vor Kauf Protokolle, Beschlusssammlung, Wirtschaftsplan und Rücklage prüfen. Bereits erkennbare Maßnahmen gehören in den Eigenkapitalbedarf."
+  },
+  "sources": [],
+  "assistantAnswer": "Sonderumlagen können kurzfristig erhebliches Eigenkapital binden. Eine Sonderumlage ist ein zusätzlicher Finanzierungsbeitrag der Wohnungseigentümer, wenn laufende Mittel und Rücklage für Maßnahmen oder Verpflichtungen nicht ausreichen.",
+  "focusPoints": [
+    "Eine Sonderumlage ist ein zusätzlicher Finanzierungsbeitrag der Wohnungseigentümer, wenn laufende Mittel und Rücklage für Maßnahmen oder Verpflichtungen nicht ausreichen.",
+    "Beschlossene, angekündigte oder in Protokollen absehbare Sonderumlagen können den effektiven Kaufpreis erheblich erhöhen.",
+    "Auch eine formal noch nicht beschlossene Maßnahme kann wirtschaftlich relevant sein, wenn Dach, Fassade oder Heizung objektiv sanierungsbedürftig sind."
+  ],
+  "decisionUse": "Protokolle, Beschlusssammlung, Wirtschaftsplan, Rücklagenstand und bekannte Angebote gemeinsam lesen; nicht nur nach „beschlossener Sonderumlage“ fragen."
 }

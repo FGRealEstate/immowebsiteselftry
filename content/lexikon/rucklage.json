@@ -7,5 +7,11 @@
   "keywords": [
     "rücklage"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Vermietung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Für künftige Ausgaben reservierte Mittel. Rücklage ist ein zurückgehaltener Kapitalbetrag für zukünftige Ausgaben oder Risiken. Bei Immobilien muss zwischen privater Liquiditätsreserve und WEG-Erhaltungsrücklage unterschieden werden.",
+  "explanation": "Rücklage ist ein zurückgehaltener Kapitalbetrag für zukünftige Ausgaben oder Risiken. Bei Immobilien muss zwischen privater Liquiditätsreserve und WEG-Erhaltungsrücklage unterschieden werden.",
+  "practiceExample": "10.000 € persönliche Reparaturreserve sind frei verfügbar; der rechnerische Anteil an 100.000 € WEG-Rücklage dagegen nicht."
 }

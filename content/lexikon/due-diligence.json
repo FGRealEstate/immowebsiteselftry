@@ -7,5 +7,11 @@
   "keywords": [
     "due diligence"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Systematische Prüfung eines Investments. Due Diligence ist die strukturierte Prüfung einer Transaktion vor Abschluss. Bei Immobilien umfasst sie je nach Objekt rechtliche, technische, wirtschaftliche, steuerliche und finanzielle Aspekte.",
+  "explanation": "Due Diligence ist die strukturierte Prüfung einer Transaktion vor Abschluss. Bei Immobilien umfasst sie je nach Objekt rechtliche, technische, wirtschaftliche, steuerliche und finanzielle Aspekte.",
+  "practiceExample": "Ein identifizierter Sanierungsbedarf von 100.000 € kann zu Kaufpreisanpassung, zusätzlichem Eigenkapitalbedarf oder Abbruch des Erwerbs führen."
 }

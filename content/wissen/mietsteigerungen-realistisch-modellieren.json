@@ -16,7 +16,36 @@
     "sind"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Bestandsmieten, Mietspiegel, Kappungsgrenzen, Modernisierung und Neuvermietung müssen getrennt betrachtet werden. Pauschale Wachstumsraten sind nur Szenarien.",
+  "formulae": [
+    "Miete_t = Miete_0 × (1+g)^t nur als ökonomisches Szenario, nicht als Rechtsanspruch"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Miete heute 1.200 €",
+      "ökonomisches Szenario +2 % p.a.",
+      "10 Jahre"
+    ],
+    "steps": [
+      "rechnerisch ≈ 1.463 € im Jahr 10."
+    ],
+    "interpretation": "Die mathematische Wachstumsrate darf nicht mit rechtlich zulässigen Mieterhöhungen verwechselt werden. Vertrag, Mietrecht und Markt begrenzen die Umsetzung."
+  },
+  "sources": [
+    {
+      "label": "§ 558 BGB – Mieterhöhung bis zur ortsüblichen Vergleichsmiete",
+      "url": "https://www.gesetze-im-internet.de/bgb/__558.html"
+    }
+  ],
+  "assistantAnswer": "Mietsteigerungen sind rechtlich und marktseitig begrenzt. Mietsteigerungen hängen vom Vertragstyp, Mietrecht, Ausgangsniveau und Mieterwechsel ab. Eine pauschale jährliche Wachstumsrate kann rechtlich nicht durchsetzbare Erträge simulieren.",
+  "focusPoints": [
+    "Mietsteigerungen hängen vom Vertragstyp, Mietrecht, Ausgangsniveau und Mieterwechsel ab. Eine pauschale jährliche Wachstumsrate kann rechtlich nicht durchsetzbare Erträge simulieren.",
+    "Bestandsmiete, Staffelmiete, Indexmiete und Neuvermietung brauchen eigene Rechenlogiken.",
+    "Bei Investmentmodellen sollte die Mietsteigerung zeitlich konkret modelliert und mit Leerstands-/Renovierungsannahmen verknüpft werden."
+  ],
+  "decisionUse": "Nicht „2 % Mietwachstum“ in jede Periode schreiben, sondern je Mietvertrag begründen, wann und warum eine Anpassung möglich ist."
 }

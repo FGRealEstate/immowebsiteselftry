@@ -1,8 +1,8 @@
 {
   "title": "5 % AfA – wann ist sie möglich?",
   "category": "Steuern",
-  "summary": "Erhöhte Abschreibungssätze gelten nur bei bestimmten gesetzlichen Voraussetzungen.",
-  "body": "Entscheidend sind Fertigstellung, Anschaffung, Nutzungsart und das jeweils geltende Steuerrecht. Der Rechner kann Szenarien zeigen, ersetzt aber keine steuerliche Prüfung.",
+  "summary": "„5 % AfA“ kann verschiedene Instrumente meinen. Besonders wichtig ist die Trennung zwischen degressiver AfA nach § 7 Abs. 5a EStG und der zusätzlichen Sonderabschreibung nach § 7b EStG.",
+  "body": "Die degressive Gebäude-AfA nach § 7 Abs. 5a EStG berechnet sich mit 5 % vom jeweiligen Restwert und sinkt dadurch jährlich. § 7b EStG ist dagegen eine Sonderabschreibung für qualifizierten Mietwohnungsneubau mit eigenen Voraussetzungen und Bemessungsgrenzen.",
   "id": "5-afa-wann-ist-sie-moglich",
   "slug": "5-afa-wann-ist-sie-moglich",
   "url": "/wissen/5-afa-wann-ist-sie-moglich/",
@@ -17,7 +17,120 @@
     "wann"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Die degressive Gebäude-AfA nach § 7 Abs. 5a EStG berechnet sich mit 5 % vom jeweiligen Restwert und sinkt dadurch jährlich. § 7b EStG ist dagegen eine Sonderabschreibung für qualifizierten Mietwohnungsneubau mit eigenen Voraussetzungen und Bemessungsgrenzen.",
+  "formulae": [
+    "Degressive AfA bzw. § 7b-Sonder-AfA sind getrennte Regelungen",
+    "§ 7b: bis zu 5 % der begrenzten Bemessungsgrundlage in Jahr der Anschaffung/Herstellung plus drei Folgejahre"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Neue Mietwohnung mit begünstigter Bemessungsgrundlage 320.000 €",
+      "§ 7b-Sonder-AfA beispielhaft 5 %"
+    ],
+    "steps": [
+      "Sonder-AfA = bis zu 16.000 € p.a. in den begünstigten Jahren, zusätzlich zur regulären AfA, wenn sämtliche Voraussetzungen erfüllt sind."
+    ],
+    "interpretation": "„5 % AfA“ ist kein universeller Satz. Es muss sauber zwischen linearer AfA, degressiver AfA und § 7b-Sonderabschreibung unterschieden werden."
+  },
+  "sources": [
+    {
+      "label": "§ 7 EStG – Absetzung für Abnutzung",
+      "url": "https://www.gesetze-im-internet.de/estg/__7.html"
+    },
+    {
+      "label": "§ 7b EStG – Sonderabschreibung Mietwohnungsneubau",
+      "url": "https://www.gesetze-im-internet.de/estg/__7b.html"
+    }
+  ],
+  "assistantAnswer": "5 % AfA ist nicht immer dieselbe Regel. Bei der degressiven AfA nach § 7 Abs. 5a EStG werden 5 % vom jeweiligen Restwert abgeschrieben – der Eurobetrag sinkt also jährlich. § 7b erlaubt bei erfüllten Voraussetzungen zusätzlich bis zu 5 % Sonderabschreibung im Jahr der Anschaffung/Herstellung und den drei folgenden Jahren auf eine begrenzte Bemessungsgrundlage.",
+  "focusPoints": [
+    "Die Aussage „5 % AfA“ kann drei verschiedene Dinge vermischen: degressive Gebäude-AfA, § 7b-Sonderabschreibung und individuelle AfA bei nachgewiesener kürzerer tatsächlicher Nutzungsdauer.",
+    "Die degressive AfA nach § 7 Abs. 5a EStG und die Sonderabschreibung nach § 7b EStG haben unterschiedliche Voraussetzungen, Bemessungsgrundlagen und Wirkungen. Sie dürfen nicht als ein einheitlicher Fördertatbestand dargestellt werden.",
+    "Für die Investitionsrechnung sollte deshalb immer ausgewiesen werden, welcher Abschreibungstatbestand genutzt wird, auf welche Basis er angewendet wird und ob die Voraussetzungen im konkreten Objekt tatsächlich erfüllt sind."
+  ],
+  "decisionUse": "In Investmentmodellen AfA-Regime explizit benennen und Jahr für Jahr rechnen. Ein pauschaler konstanter 5-%-Ansatz überschätzt bei degressiver AfA die späteren Abschreibungsbeträge.",
+  "contentBlocks": [
+    {
+      "type": "table",
+      "title": "Degressive 5-%-AfA auf 400.000 € Gebäudebasis",
+      "headers": [
+        "Jahr",
+        "Restwert zu Jahresbeginn",
+        "5 % AfA",
+        "Restwert danach"
+      ],
+      "rows": [
+        [
+          "Jahr 1",
+          "400.000 €",
+          "20.000 €",
+          "380.000 €"
+        ],
+        [
+          "Jahr 2",
+          "380.000 €",
+          "19.000 €",
+          "361.000 €"
+        ],
+        [
+          "Jahr 3",
+          "361.000 €",
+          "18.050 €",
+          "342.950 €"
+        ],
+        [
+          "Jahr 4",
+          "342.950 €",
+          "17.148 €",
+          "325.802 €"
+        ],
+        [
+          "Jahr 5",
+          "325.802 €",
+          "16.290 €",
+          "309.512 €"
+        ]
+      ],
+      "note": null
+    },
+    {
+      "type": "prose",
+      "title": "Warum degressiv nicht „fünf Jahre lang 20.000 €“ bedeutet",
+      "paragraphs": [
+        "Die 5 % werden jährlich auf den verbleibenden Buchwert angewendet. Nach 20.000 € im ersten Jahr beträgt die Basis im zweiten Jahr nur noch 380.000 €, sodass die AfA auf 19.000 € sinkt."
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Degressiv vs. § 7b",
+      "headers": [
+        "Instrument",
+        "Mechanik",
+        "Kernpunkt"
+      ],
+      "rows": [
+        [
+          "§ 7 Abs. 5a",
+          "5 % vom Restwert",
+          "sinkender AfA-Betrag; zeitliche/objektbezogene Voraussetzungen"
+        ],
+        [
+          "§ 7b",
+          "bis 5 % zusätzlich auf begrenzte Basis",
+          "qualifizierter Mietwohnungsneubau; zusätzliche Fördervoraussetzungen"
+        ]
+      ],
+      "note": null
+    },
+    {
+      "type": "callout",
+      "title": "Nicht addieren ohne Prüfung",
+      "text": "Ob und wie lineare/degressive AfA und § 7b im konkreten Fall zusammenwirken, muss anhand Anschaffungszeitpunkt, Bauantrag, Nutzung und Übergangsregeln geprüft werden.",
+      "tone": "gold"
+    }
+  ]
 }

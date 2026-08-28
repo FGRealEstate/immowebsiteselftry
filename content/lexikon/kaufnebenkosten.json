@@ -7,5 +7,11 @@
   "keywords": [
     "kaufnebenkosten"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Zusätzliche Erwerbskosten neben dem Kaufpreis. Kaufnebenkosten umfassen insbesondere Grunderwerbsteuer, Notar/Grundbuch und gegebenenfalls Maklercourtage. Zusätzlich können Finanzierung, Gutachten, Renovierung oder Möblierung den tatsächlichen Kapitalbedarf erhöhen.",
+  "explanation": "Kaufnebenkosten umfassen insbesondere Grunderwerbsteuer, Notar/Grundbuch und gegebenenfalls Maklercourtage. Zusätzlich können Finanzierung, Gutachten, Renovierung oder Möblierung den tatsächlichen Kapitalbedarf erhöhen.",
+  "practiceExample": "400.000 € Kaufpreis und 10 % klassische Erwerbsnebenkosten ergeben 40.000 € zusätzlichen Kapitalbedarf; die Gesamtinvestition liegt vor Renovierung bereits bei 440.000 €."
 }

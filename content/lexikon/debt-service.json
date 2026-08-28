@@ -7,5 +7,11 @@
   "keywords": [
     "debt service"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Summe aus Zins und Tilgung. Debt Service beziehungsweise Kapitaldienst umfasst die periodischen Zahlungen an Fremdkapitalgeber, typischerweise Zins und Tilgung. Bei endfälligen oder variabel strukturierten Darlehen kann der Zahlungsstrom abweichen.",
+  "explanation": "Debt Service beziehungsweise Kapitaldienst umfasst die periodischen Zahlungen an Fremdkapitalgeber, typischerweise Zins und Tilgung. Bei endfälligen oder variabel strukturierten Darlehen kann der Zahlungsstrom abweichen.",
+  "practiceExample": "1.200 € Monatsrate entsprechen 14.400 € jährlichem Debt Service. Für DSCR-Rechnungen wird dieser Betrag dem definierten verfügbaren Ertrag gegenübergestellt."
 }

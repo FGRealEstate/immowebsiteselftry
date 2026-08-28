@@ -7,5 +7,11 @@
   "keywords": [
     "bodenwert"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Wert des unbebauten Grundstücks. Bodenwert ist der Wert des Grundstücksbodens ohne Gebäude. Er kann aus geeigneten Vergleichsdaten oder Bodenrichtwerten unter objektspezifischen Anpassungen abgeleitet werden.",
+  "explanation": "Bodenwert ist der Wert des Grundstücksbodens ohne Gebäude. Er kann aus geeigneten Vergleichsdaten oder Bodenrichtwerten unter objektspezifischen Anpassungen abgeleitet werden.",
+  "practiceExample": "600 m² Grundstück bei 900 €/m² Bodenrichtwert ergeben 540.000 € Ausgangswert, bevor Abweichungen bei Nutzung, Zuschnitt oder Erschließung berücksichtigt werden."
 }

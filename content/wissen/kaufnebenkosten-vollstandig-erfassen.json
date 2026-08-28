@@ -19,7 +19,32 @@
     "vollständig"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Zusätzlich können Gutachten, Finanzierungskosten, Renovierung und Bereitstellungszinsen anfallen. Nicht jede Position ist in jedem Fall vorhanden.",
+  "formulae": [
+    "Gesamtinvestition = Kaufpreis + GrESt + Notar/Grundbuch + Makler + unmittelbare Erwerbs-/Investitionskosten"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Kaufpreis 400.000 €",
+      "Berlin GrESt 6 % = 24.000 €",
+      "Notar/Grundbuch beispielhaft 2 % = 8.000 €",
+      "Käufercourtage beispielhaft 3,57 % = 14.280 €"
+    ],
+    "steps": [
+      "Gesamt vor Renovierung = 446.280 €"
+    ],
+    "interpretation": "Für Rendite und Eigenkapitalbedarf sollte nicht nur der Kaufpreis im Nenner stehen, wenn Erwerbsnebenkosten wirtschaftlich gebundenes Kapital sind."
+  },
+  "sources": [],
+  "assistantAnswer": "Grunderwerbsteuer, Notar, Grundbuch und gegebenenfalls Makler erhöhen den Kapitalbedarf. Zu den Erwerbsnebenkosten gehören insbesondere Grunderwerbsteuer, Notar und Grundbuch sowie gegebenenfalls Maklercourtage. Höhe und Struktur hängen vom Bundesland und konkreten Geschäft ab.",
+  "focusPoints": [
+    "Zu den Erwerbsnebenkosten gehören insbesondere Grunderwerbsteuer, Notar und Grundbuch sowie gegebenenfalls Maklercourtage. Höhe und Struktur hängen vom Bundesland und konkreten Geschäft ab.",
+    "Zusätzliche Kosten wie Finanzierungskosten, Gutachten, Renovierung oder Möblierung sind wirtschaftlich ebenfalls Teil des Kapitalbedarfs, auch wenn sie keine klassischen Kaufnebenkosten sind.",
+    "Für Rendite- und Eigenkapitalberechnungen sollte deshalb die Gesamtinvestition statt nur des notariellen Kaufpreises verwendet werden."
+  ],
+  "decisionUse": "Kaufpreis, gesetzliche Erwerbsnebenkosten und nachgelagerte Investitionen getrennt ausweisen; so bleibt sichtbar, welche Kosten fremdfinanziert sind."
 }

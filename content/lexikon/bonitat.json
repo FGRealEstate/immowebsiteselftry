@@ -7,5 +7,11 @@
   "keywords": [
     "bonität"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Einschätzung der Fähigkeit und Bereitschaft, Verpflichtungen zu erfüllen. Bonität beschreibt die Fähigkeit und Bereitschaft eines Schuldners, finanzielle Verpflichtungen vertragsgemäß zu erfüllen. Banken beurteilen dafür Einkommen, Vermögen, Verpflichtungen, Zahlungsverhalten und weitere Risikomerkmale.",
+  "explanation": "Bonität beschreibt die Fähigkeit und Bereitschaft eines Schuldners, finanzielle Verpflichtungen vertragsgemäß zu erfüllen. Banken beurteilen dafür Einkommen, Vermögen, Verpflichtungen, Zahlungsverhalten und weitere Risikomerkmale.",
+  "practiceExample": "Zwei Käufer mit gleichem Einkommen können unterschiedliche Kreditkonditionen erhalten, wenn einer hohe Konsumentenkredite und der andere hohe liquide Reserven hat."
 }

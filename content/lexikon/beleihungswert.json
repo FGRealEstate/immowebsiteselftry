@@ -7,5 +7,11 @@
   "keywords": [
     "beleihungswert"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Vorsichtig ermittelter, langfristig erzielbarer Objektwert der Bank. Der Beleihungswert ist ein von der Bank vorsichtig und nachhaltig ermittelter Sicherheitenwert, der vom Kaufpreis oder aktuellen Marktwert abweichen kann. Er bildet die Basis für den Beleihungsauslauf.",
+  "explanation": "Der Beleihungswert ist ein von der Bank vorsichtig und nachhaltig ermittelter Sicherheitenwert, der vom Kaufpreis oder aktuellen Marktwert abweichen kann. Er bildet die Basis für den Beleihungsauslauf.",
+  "practiceExample": "500.000 € Kaufpreis, 450.000 € Beleihungswert und 360.000 € Darlehen ergeben 80 % Beleihungsauslauf trotz nur 72 % Darlehen/Kaufpreis."
 }

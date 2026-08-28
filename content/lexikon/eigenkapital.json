@@ -7,5 +7,11 @@
   "keywords": [
     "eigenkapital"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "explanation": "Eigenkapital umfasst die für den Erwerb eingesetzten eigenen Mittel. Mehr Eigenkapital reduziert Darlehen und kann den Beleihungsauslauf senken; dadurch kann sich die Bankkondition verbessern. Gleichzeitig sinkt die frei verfügbare Liquiditätsreserve.",
+  "practiceExample": "Bei 400.000 € Kaufpreis und 40.000 € Nebenkosten führen 40.000 € Eigenkapital zu 400.000 € Darlehen. Werden 80.000 € eingesetzt, sinkt das Darlehen auf 360.000 €; wenn dadurch zusätzlich eine bessere Zinsstufe erreicht wird, reduziert sich die Rate überproportional.",
+  "formula": "Eigenkapitalbedarf = Nebenkosten + nicht finanzierter Kaufpreisanteil + geplante Reserve",
+  "sources": [],
+  "assistantAnswer": "Eigene Mittel, die in Kauf und Nebenkosten eingebracht werden. Eigenkapital umfasst die für den Erwerb eingesetzten eigenen Mittel. Mehr Eigenkapital reduziert Darlehen und kann den Beleihungsauslauf senken; dadurch kann sich die Bankkondition verbessern. Gleichzeitig sinkt die frei verfügbare Liquiditätsreserve."
 }

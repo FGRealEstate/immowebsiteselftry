@@ -1,0 +1,44 @@
+---
+layout: base.njk
+permalink: maklerprovision/index.html
+canonicalPath: /maklerprovision/
+eleventyComputed:
+  title: "{{ mangoTexte.provision.title }}"
+  description: "{{ mangoTexte.provision.description }}"
+  ogTitle: "{{ mangoTexte.provision.h1 }}"
+  ogDescription: "{{ mangoTexte.provision.description }}"
+---
+<section class="fg-journey-hero bg-primary text-white py-16 md:py-24">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <a href="/index.html#ziele" class="fg-back-link"><i class="fas fa-arrow-left"></i> Zurück zur Auswahl</a>
+    <div class="max-w-4xl mt-8 fg-reveal">
+      <p class="fg-eyebrow">Provision, konkret</p>
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-6">{{ mangoTexte.provision.h1 }}</h1>
+      <p class="text-lg md:text-xl text-page-bg">{{ mangoTexte.provision.description }}</p>
+    </div>
+  </div>
+</section>
+
+<div class="content-detail shell">
+  <nav class="breadcrumbs"><a href="/index.html">Start</a><span>&rsaquo;</span><span>Maklerprovision</span></nav>
+  <article class="science-article">
+    {%- for block in mangoTexte.provision.html %}
+    {{ block | safe }}
+    {%- endfor %}
+    <aside class="article-note">
+      <strong>Hinweis</strong>
+      <p>Die Angaben auf dieser Seite geben die übliche Marktpraxis und die gesetzlichen Grundlagen wieder und ersetzen keine Rechtsberatung im Einzelfall. Maßgeblich ist immer die konkrete Vereinbarung im jeweiligen Maklervertrag.</p>
+    </aside>
+    <div class="article-actions">
+      <a class="lab-btn lab-btn-gold" href="/index.html#kontakt">Erstgespräch vereinbaren</a>
+      <a class="lab-btn lab-btn-ghost" href="/betreuung-nach-dem-kauf/">Betreuung nach dem Kauf</a>
+    </div>
+  </article>
+</div>
+
+{% set provisionQA = [{ "q": mangoTexte.provision.h1, "a": mangoTexte.provision.html[0] | striptags },
+                       mangoTexte.faq.B[8]] %}
+{% set faqItems = provisionQA %}
+{% set faqAnchor = "faq-provision" %}
+{% set faqTitle = "Häufige Fragen zur Maklerprovision" %}
+{% include "faq-block.njk" %}

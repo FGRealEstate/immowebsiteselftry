@@ -7,5 +7,11 @@
   "keywords": [
     "tilgungssatz"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Anfänglicher oder laufender Anteil der Darlehensrückzahlung. Der Tilgungssatz beschreibt den anfänglichen jährlichen Kapitalrückzahlungsanteil bezogen auf die Darlehenssumme. Im Annuitätendarlehen steigt der tatsächliche Tilgungsanteil im Zeitverlauf.",
+  "explanation": "Der Tilgungssatz beschreibt den anfänglichen jährlichen Kapitalrückzahlungsanteil bezogen auf die Darlehenssumme. Im Annuitätendarlehen steigt der tatsächliche Tilgungsanteil im Zeitverlauf.",
+  "practiceExample": "300.000 € Darlehen und 2 % Anfangstilgung entsprechen anfänglich 6.000 € Tilgungsanteil p.a.; bei 3 % wären es 9.000 €."
 }

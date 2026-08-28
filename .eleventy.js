@@ -1,47 +1,20 @@
-module.exports = function(eleventyConfig) {
+---
+layout: base.njk
+title: Immobilie vermieten – Fischer & Geserich Real Estate
+permalink: vermieten.html
+description: "Wohnung oder Haus vermieten: Mietpreis einordnen, Interessenten strukturiert auswählen und Vermietung persönlich begleiten lassen."
+canonicalPath: /vermieten.html
+---
+<section class="fg-journey-hero bg-primary text-white py-16 md:py-24"><div class="container mx-auto px-4 max-w-6xl"><a href="/index.html#ziele" class="fg-back-link"><i class="fas fa-arrow-left"></i> Zurück zur Auswahl</a><div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center mt-8"><div class="lg:col-span-3 fg-reveal"><p class="fg-eyebrow">Für Vermieter</p><h1 class="text-4xl md:text-6xl font-extrabold mb-6">Vermieten – <span class="text-gold-gradient">strukturiert statt nebenbei.</span></h1><p class="text-lg md:text-xl text-page-bg mb-8">Von der Einordnung des Mietpreises über die Vermarktung bis zur Auswahl geeigneter Interessenten begleiten wir den Vermietungsprozess nachvollziehbar.</p><a href="#kontakt-vermietung" class="btn-85 inline-flex items-center gap-2 py-3 px-7 text-primary font-bold rounded-lg">Vermietung anfragen</a></div><div class="lg:col-span-2 fg-journey-side fg-reveal"><span><i class="fas fa-tag"></i> Mietpreis einordnen</span><span><i class="fas fa-camera"></i> Vermarktung vorbereiten</span><span><i class="fas fa-user-check"></i> Interessenten qualifizieren</span><span><i class="fas fa-file-contract"></i> Abschluss strukturieren</span></div></div></div></section>
+<section class="container mx-auto px-4 py-16 md:py-24"><div class="max-w-6xl mx-auto"><div class="text-center mb-12 fg-reveal"><p class="fg-section-kicker">Vermietungsprozess</p><h2 class="text-3xl md:text-5xl font-bold text-primary">Die nächsten Schritte bleiben klar</h2></div><div class="fg-workflow-grid"><article class="fg-workflow-card fg-reveal"><span>01</span><i class="fas fa-house"></i><h3>Objekt &amp; Ziel</h3><p>Objekt, Mietbeginn, Zielgruppe und Rahmenbedingungen erfassen.</p></article><article class="fg-workflow-card fg-reveal"><span>02</span><i class="fas fa-people-group"></i><h3>Vermarktung &amp; Auswahl</h3><p>Anfragen strukturieren, Besichtigungen koordinieren und Interessenten einordnen.</p></article><article class="fg-workflow-card fg-reveal"><span>03</span><i class="fas fa-key"></i><h3>Abschluss</h3><p>Unterlagen, Mietvertrag und Übergabe sauber vorbereiten und begleiten.</p></article></div></div></section>
+<section id="kontakt-vermietung" class="fg-contact-section py-8 md:py-14"><div class="container mx-auto px-4 text-center mb-2 fg-reveal"><p class="fg-section-kicker">Vermietung starten</p><h2 class="text-3xl md:text-5xl font-bold text-primary mb-3">Erzählen Sie uns kurz von Ihrer Immobilie.</h2></div>{% set leadDefaultConcern = "Immobilie vermieten" %}{% include "landingpage-lead.njk" %}</section>
 
-    // Eigener JSON-Filter für Nunjucks-Templates, z. B. {{ value | json | safe }}
-    eleventyConfig.addFilter("json", (value) => {
-        try {
-            return JSON.stringify(value ?? null);
-        } catch (error) {
-            console.warn("JSON filter failed:", error);
-            return "null";
-        }
-    });
+{% include "after-sales-teaser.njk" %}
 
-    // 1. Passthrough Kopieren:
-    // Stellt sicher, dass Assets und Verifizierungsdateien in den _site-Ordner kopiert werden.
-    eleventyConfig.addPassthroughCopy("style.css");
-    eleventyConfig.addPassthroughCopy("script.js");
-    eleventyConfig.addPassthroughCopy("investment-lab.js");
-    eleventyConfig.addPassthroughCopy("consent-manager.js");
-    eleventyConfig.addPassthroughCopy("consent-manager.css");
-    eleventyConfig.addPassthroughCopy("analytics.js");
-    eleventyConfig.addPassthroughCopy("vendor");
-    eleventyConfig.addPassthroughCopy("images");
-    eleventyConfig.addPassthroughCopy("favicon.ico");
-
-    // Bing-Webmaster-Verifizierung:
-    // Kopiert BingSiteAuth.xml direkt in das Root-Verzeichnis der veröffentlichten Website.
-    eleventyConfig.addPassthroughCopy({
-        "BingSiteAuth.xml": "BingSiteAuth.xml"
-    });
-
-    eleventyConfig.addPassthroughCopy("videos");
-    eleventyConfig.addPassthroughCopy("admin");
-
-    // 2. Konfiguration der Ordnerstruktur
-    return {
-        dir: {
-            input: ".",
-            output: "_site",
-            includes: "_includes",
-            layouts: "_includes"
-        },
-
-        // Liquid als Template-Engine für Markdown und HTML
-        markdownTemplateEngine: "liquid",
-        htmlTemplateEngine: "liquid"
-    };
-};
+{% set schemaType = "Service" %}
+{% set schemaName = "Immobilie vermieten" %}
+{% set schemaDesc = "Wohnung oder Haus vermieten: Mietpreis einordnen, Interessenten strukturiert auswählen und Vermietung persönlich begleiten lassen." %}
+{% set schemaPath = "/vermieten.html" %}
+{% set schemaCrumb = "Vermieten" %}
+{% set schemaArea = "Berlin" %}
+{% include "page-schema.njk" %}

@@ -7,5 +7,11 @@
   "keywords": [
     "nebenkostenabrechnung"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Abrechnung umlagefähiger Betriebskosten gegenüber Mietern. Die Nebenkostenabrechnung verteilt tatsächlich entstandene umlagefähige Betriebskosten auf den Mieter nach dem vereinbarten Schlüssel und rechnet Vorauszahlungen an. Formelle und materielle Fehler können Nachforderungen gefährden.",
+  "explanation": "Die Nebenkostenabrechnung verteilt tatsächlich entstandene umlagefähige Betriebskosten auf den Mieter nach dem vereinbarten Schlüssel und rechnet Vorauszahlungen an. Formelle und materielle Fehler können Nachforderungen gefährden.",
+  "practiceExample": "1.800 € umlagefähige Jahreskosten minus 1.560 € Vorauszahlungen ergeben 240 € rechnerische Nachzahlung, sofern Abrechnung und Umlageschlüssel wirksam sind."
 }

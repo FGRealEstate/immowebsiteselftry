@@ -17,7 +17,30 @@
     "quadratmeter"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Gebäudealter, Zustand, Konstruktion und bereits vorhandene Rücklagen sind wichtiger als ein fixer Wert. Fünf bis fünfzehn Euro pro Quadratmeter und Jahr sind nur eine grobe Spannbreite.",
+  "formulae": [
+    "Objektreserve p.a. = Fläche × Reserveansatz €/m² p.a."
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Wohnfläche 80 m²",
+      "eigener Modellansatz 15 €/m² p.a."
+    ],
+    "steps": [
+      "Reserve = 1.200 € p.a. = 100 € mtl."
+    ],
+    "interpretation": "Ein pauschaler €/m²-Wert ist nur ein Planungsansatz. Baujahr, Gewerke, WEG-Rücklage und konkrete Sanierungsplanung sind wichtiger."
+  },
+  "sources": [],
+  "assistantAnswer": "Ein pauschaler Ansatz kann für die erste Kalkulation helfen. Pauschale Rücklagen pro Quadratmeter sind nur grobe Planungswerte. Der tatsächliche Bedarf hängt von Alter, Bauart, technischen Gewerken und bereits vorhandenem Rücklagenstand ab.",
+  "focusPoints": [
+    "Pauschale Rücklagen pro Quadratmeter sind nur grobe Planungswerte. Der tatsächliche Bedarf hängt von Alter, Bauart, technischen Gewerken und bereits vorhandenem Rücklagenstand ab.",
+    "Für eine ETW betrifft die WEG-Rücklage Gemeinschaftseigentum; Maßnahmen im Sondereigentum benötigen zusätzlich eine private Reserve.",
+    "Bei MFH sollte eine bauteilbezogene CapEx-Planung die pauschale €/m²-Rücklage ergänzen oder ersetzen."
+  ],
+  "decisionUse": "Rücklagenwert immer gegen Dach, Fassade, Heizung, Leitungen, Fenster und Aufzüge plausibilisieren."
 }

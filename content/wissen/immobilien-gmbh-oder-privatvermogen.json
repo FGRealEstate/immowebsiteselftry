@@ -1,8 +1,8 @@
 {
   "title": "Immobilien-GmbH oder Privatvermögen?",
   "category": "Steuern",
-  "summary": "Die Rechtsform verändert Besteuerung, Finanzierung, Haftung und Exit.",
-  "body": "Es gibt keine pauschal beste Struktur. Laufende Erträge, Veräußerung, Entnahmen und Verwaltungskosten gehören in den Vergleich.",
+  "summary": "Privatvermögen und Immobilien-GmbH unterscheiden sich bei laufender Besteuerung, Finanzierung, Ausschüttung, Veräußerung und Administrationsaufwand. Ein pauschales „GmbH spart Steuern“ ist fachlich unzureichend.",
+  "body": "Die Rechtsform beeinflusst nicht nur Steuersätze, sondern auch Finanzierungskonditionen, Haftungsstruktur, Liquiditätsentnahme und Exitbesteuerung. Eine sinnvolle Entscheidung hängt deshalb von Haltedauer, Reinvestitionsstrategie, persönlichem Steuersatz und Transaktionsplan ab.",
   "id": "immobilien-gmbh-oder-privatvermogen",
   "slug": "immobilien-gmbh-oder-privatvermogen",
   "url": "/wissen/immobilien-gmbh-oder-privatvermogen/",
@@ -19,7 +19,88 @@
     "verändert"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Die Rechtsform beeinflusst nicht nur Steuersätze, sondern auch Finanzierungskonditionen, Haftungsstruktur, Liquiditätsentnahme und Exitbesteuerung. Eine sinnvolle Entscheidung hängt deshalb von Haltedauer, Reinvestitionsstrategie, persönlichem Steuersatz und Transaktionsplan ab.",
+  "formulae": [
+    "Vergleich nach Steuern und Liquidität, nicht nur nach nominalem Steuersatz"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Objektüberschuss vor Steuern 30.000 € p.a.",
+      "Privatvermögen: Besteuerung abhängig vom persönlichen Steuersatz",
+      "Kapitalgesellschaft: Körperschaft-/Gewerbesteuer, Ausschüttung und Exit separat betrachten"
+    ],
+    "steps": [
+      "Es gibt keinen universellen Gewinner ohne Haltedauer, Reinvestitionsplan, Finanzierung und Exit zu modellieren."
+    ],
+    "interpretation": "Eine GmbH kann Reinvestition strukturieren, verursacht aber Gründungs-, Verwaltungs- und Steuerkomplexität. Privates Halten kann bei langfristiger Strategie andere Exit-Eigenschaften haben. Steuerberatung ist zwingend."
+  },
+  "sources": [
+    {
+      "label": "§ 23 EStG – Private Veräußerungsgeschäfte",
+      "url": "https://www.gesetze-im-internet.de/estg/__23.html"
+    }
+  ],
+  "assistantAnswer": "Eine Immobilien-GmbH ist nicht automatisch steuerlich besser als Privatvermögen. In der GmbH können laufende Gewinne bei passender Struktur anders belastet werden, aber Ausschüttungen und Veräußerungen folgen anderen Regeln. Im Privatvermögen kann bei Grundstücken nach mehr als zehn Jahren unter § 23 EStG ein steuerlich anderer Exit möglich sein. Rechtsformwahl gehört zum Steuerberater.",
+  "focusPoints": [
+    "Privatvermögen und Immobilien-GmbH unterscheiden sich bei laufender Besteuerung, Finanzierung, Entnahmen, Veräußerung und administrativem Aufwand.",
+    "Eine GmbH ist nicht automatisch steuerlich günstiger. Vorteile bei thesaurierten Gewinnen können durch Körperschaft-/Gewerbesteuer, Ausschüttungsbesteuerung und fehlende private Veräußerungslogik relativiert werden.",
+    "Finanzierungsbedingungen und persönliche Liquiditätsziele gehören in die Strukturentscheidung genauso wie der Steuersatz."
+  ],
+  "decisionUse": "Vor Gründung bzw. Ankauf eine Mehrjahresrechnung mit Steuerberater erstellen. Die Rechtsform ist Teil der Investmentstrategie und lässt sich nachträglich nicht ohne Transaktionsfolgen beliebig wechseln.",
+  "contentBlocks": [
+    {
+      "type": "table",
+      "title": "Strategischer Vergleich",
+      "headers": [
+        "Dimension",
+        "Privatvermögen",
+        "Immobilien-GmbH"
+      ],
+      "rows": [
+        [
+          "laufende Besteuerung",
+          "persönliche Einkommensbesteuerung",
+          "Körperschaftsteuer; Gewerbesteuerfragen strukturabhängig"
+        ],
+        [
+          "Entnahme",
+          "Gewinne stehen privat zur Verfügung",
+          "Ausschüttung/Entnahme separat zu beurteilen"
+        ],
+        [
+          "Verkauf Immobilie",
+          "§ 23 EStG kann bei Privatvermögen relevant sein",
+          "Veräußerungsgewinn auf Gesellschaftsebene"
+        ],
+        [
+          "Finanzierung",
+          "private Bonität/Haushalt",
+          "Gesellschaftsbonität, Sicherheiten, Covenants"
+        ],
+        [
+          "Administration",
+          "vergleichsweise geringer",
+          "Bilanzierung, Jahresabschluss, Gesellschaftsrecht"
+        ]
+      ],
+      "note": null
+    },
+    {
+      "type": "prose",
+      "title": "Wann die GmbH-Logik eher passt",
+      "paragraphs": [
+        "Häufig dann, wenn Gewinne langfristig im Unternehmen verbleiben und reinvestiert werden sollen. Wer dagegen regelmäßige private Entnahmen plant oder einen privaten steuerlichen Exitvorteil erwartet, muss die zweite Steuerstufe bzw. die Exitlogik besonders beachten."
+      ]
+    },
+    {
+      "type": "callout",
+      "title": "Keine Rechtsformwahl aus einem einzelnen Steuersatz",
+      "text": "Die richtige Struktur entsteht aus einer Mehrperiodenrechnung: laufende Steuer, Finanzierung, Ausschüttung, Verkauf und Administrationskosten über den geplanten Anlagehorizont vergleichen.",
+      "tone": "navy"
+    }
+  ]
 }

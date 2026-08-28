@@ -20,7 +20,31 @@
     "zahlungshistorie"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Staffel, Index, Befristung, Nebenabreden und Kaution beeinflussen den Ertrag.",
+  "formulae": [
+    "Erwarteter Ertrag = vertragliche Miete × Zahlungswahrscheinlichkeit − Vermietungs-/Ausfallkosten"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Jahresnettokaltmiete 18.000 €",
+      "stabiler unbefristeter Mietvertrag",
+      "zusätzlich 2 % Risikoreserve"
+    ],
+    "steps": [
+      "modellierter Ertrag = 17.640 € vor sonstigen Kosten."
+    ],
+    "interpretation": "Mietvertrag, Bonität, Laufzeit, Staffeln/Index und Rechte/Pflichten beeinflussen Ertragssicherheit stärker als die bloße Monatsmiete."
+  },
+  "sources": [],
+  "assistantAnswer": "Die vertragliche Miete ist nur dann belastbar, wenn Vertrag und Zahlungshistorie geprüft sind. Der Mietvertrag bestimmt Höhe, Anpassungsmechanismus, Laufzeit, Nebenkostenregelung und weitere Rechte. Diese Punkte beeinflussen die Nachhaltigkeit des Ertrags.",
+  "focusPoints": [
+    "Der Mietvertrag bestimmt Höhe, Anpassungsmechanismus, Laufzeit, Nebenkostenregelung und weitere Rechte. Diese Punkte beeinflussen die Nachhaltigkeit des Ertrags.",
+    "Bei Gewerbe- und Wohnraummietverträgen gelten unterschiedliche rechtliche Rahmenbedingungen; Laufzeit und Kündigungsmöglichkeiten können den Wert stark beeinflussen.",
+    "Eine hohe Vertragsmiete ist wirtschaftlich nur so gut wie Bonität, Durchsetzbarkeit und Wiedervermietbarkeit."
+  ],
+  "decisionUse": "Mieterliste und Mietvertrag nicht nur auf Miethöhe prüfen, sondern auf Laufzeit, Index/Staffel, Sicherheiten, Rückstände und Sondervereinbarungen."
 }

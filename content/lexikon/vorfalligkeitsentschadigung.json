@@ -7,5 +7,11 @@
   "keywords": [
     "vorfälligkeitsentschädigung"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Möglicher Ausgleich der Bank bei vorzeitiger Darlehensablösung. Eine Vorfälligkeitsentschädigung kann bei vorzeitiger Rückzahlung eines fest verzinsten Darlehens entstehen, wenn der Bank ein rechtlich ersatzfähiger Zinsschaden entsteht. Ob und in welcher Höhe sie anfällt, hängt vom Vertrag und gesetzlichen Kündigungs-/Berechnungsregeln ab.",
+  "explanation": "Eine Vorfälligkeitsentschädigung kann bei vorzeitiger Rückzahlung eines fest verzinsten Darlehens entstehen, wenn der Bank ein rechtlich ersatzfähiger Zinsschaden entsteht. Ob und in welcher Höhe sie anfällt, hängt vom Vertrag und gesetzlichen Kündigungs-/Berechnungsregeln ab.",
+  "practiceExample": "Beim Verkauf während laufender Zinsbindung darf der erwartete Verkaufserlös nicht ohne Prüfung der Darlehensablösung als frei verfügbares Eigenkapital eingeplant werden."
 }

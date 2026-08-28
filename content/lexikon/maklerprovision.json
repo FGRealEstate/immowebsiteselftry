@@ -7,5 +7,20 @@
   "keywords": [
     "maklerprovision"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "explanation": "Maklerprovision ist die vertraglich vereinbarte Vergütung für den erfolgreichen Nachweis oder die Vermittlung. Für Verbraucher beim Kauf einer Wohnung oder eines Einfamilienhauses gelten besondere Regeln zur Verteilung der Maklerkosten; für andere Immobilienarten ist die konkrete Provisionsvereinbarung maßgeblich.",
+  "practiceExample": "Bei 400.000 € Kaufpreis entsprechen 3,57 % einer Provision von 14.280 €. Ob dieser Betrag vom Käufer, Verkäufer oder beiden getragen wird, ergibt sich nicht aus der Prozentzahl, sondern aus Vertrag und anwendbarer gesetzlicher Regel.",
+  "formula": "Provision = Kaufpreis × Provisionssatz",
+  "sources": [
+    {
+      "label": "§ 656c BGB – Maklerlohn bei Tätigkeit für beide Parteien",
+      "url": "https://www.gesetze-im-internet.de/bgb/__656c.html"
+    },
+    {
+      "label": "§ 656d BGB – Vereinbarungen über Maklerkosten",
+      "url": "https://www.gesetze-im-internet.de/bgb/__656d.html"
+    }
+  ],
+  "assistantAnswer": "Vergütung für die Vermittlungs- oder Nachweistätigkeit. Maklerprovision ist die vertraglich vereinbarte Vergütung für den erfolgreichen Nachweis oder die Vermittlung. Für Verbraucher beim Kauf einer Wohnung oder eines Einfamilienhauses gelten besondere Regeln zur Verteilung der Maklerkosten; für andere Immobilienarten ist die konkrete Provisionsvereinbarung maßgeblich."
 }

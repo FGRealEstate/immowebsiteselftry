@@ -7,5 +7,11 @@
   "keywords": [
     "gesamtinvestition"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Kaufpreis plus Nebenkosten und Anfangsinvestitionen. Gesamtinvestition umfasst den gesamten wirtschaftlich eingesetzten Kapitalbetrag für Erwerb und Herstellung der Nutzbarkeit, nicht nur den notariellen Kaufpreis.",
+  "explanation": "Gesamtinvestition umfasst den gesamten wirtschaftlich eingesetzten Kapitalbetrag für Erwerb und Herstellung der Nutzbarkeit, nicht nur den notariellen Kaufpreis.",
+  "practiceExample": "300.000 € Kaufpreis + 30.000 € Nebenkosten + 20.000 € Renovierung = 350.000 € Gesamtinvestition."
 }

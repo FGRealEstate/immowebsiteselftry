@@ -7,5 +7,11 @@
   "keywords": [
     "zinseszins"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Verzinsung bereits gutgeschriebener Zinsen. Zinseszins entsteht, wenn nicht nur das Anfangskapital, sondern auch bereits gutgeschriebene Zinsen weiter verzinst werden. Er ist besonders bei langfristigem Vermögensaufbau und Opportunitätskosten relevant.",
+  "explanation": "Zinseszins entsteht, wenn nicht nur das Anfangskapital, sondern auch bereits gutgeschriebene Zinsen weiter verzinst werden. Er ist besonders bei langfristigem Vermögensaufbau und Opportunitätskosten relevant.",
+  "practiceExample": "100.000 € zu 5 % p.a. wachsen bei jährlicher Wiederanlage in zehn Jahren auf rund 162.900 €, nicht nur auf 150.000 €."
 }

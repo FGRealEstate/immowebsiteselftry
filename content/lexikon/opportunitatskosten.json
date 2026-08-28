@@ -7,5 +7,11 @@
   "keywords": [
     "opportunitätskosten"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Entgangener Nutzen der besten nicht gewählten Alternative. Opportunitätskosten sind der entgangene Nutzen der besten nicht gewählten Alternative. Beim Eigenkapitaleinsatz zeigen sie, was gebundenes Kapital andernorts hätte erwirtschaften oder an Sicherheit bieten können.",
+  "explanation": "Opportunitätskosten sind der entgangene Nutzen der besten nicht gewählten Alternative. Beim Eigenkapitaleinsatz zeigen sie, was gebundenes Kapital andernorts hätte erwirtschaften oder an Sicherheit bieten können.",
+  "practiceExample": "40.000 € zusätzliches Eigenkapital sparen 1.200 € Zinsen p.a., könnten alternativ aber 2.000 € erwarteten Ertrag erzeugen; Risiko und Liquidität entscheiden über den Vergleich."
 }

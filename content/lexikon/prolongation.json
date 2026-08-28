@@ -7,5 +7,11 @@
   "keywords": [
     "prolongation"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Verlängerung einer Finanzierung beim bisherigen Kreditgeber. Prolongation ist die Verlängerung beziehungsweise Anschlussvereinbarung eines bestehenden Darlehens bei derselben Bank, meist für die Restschuld nach Zinsbindungsende.",
+  "explanation": "Prolongation ist die Verlängerung beziehungsweise Anschlussvereinbarung eines bestehenden Darlehens bei derselben Bank, meist für die Restschuld nach Zinsbindungsende.",
+  "practiceExample": "250.000 € Restschuld werden bei der bisherigen Bank für zehn Jahre neu zu 4,5 % plus 2 % Tilgung prolongiert: Anfangsrate ca. 1.354 € monatlich."
 }

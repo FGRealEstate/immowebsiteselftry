@@ -7,5 +7,11 @@
   "keywords": [
     "instandhaltung"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Maßnahmen zum Erhalt des bestimmungsgemäßen Zustands. Instandhaltung umfasst Maßnahmen, die den ordnungsgemäßen Zustand erhalten und Verschleiß vorbeugen. Sie ist von Modernisierung und größerer Instandsetzung zu unterscheiden.",
+  "explanation": "Instandhaltung umfasst Maßnahmen, die den ordnungsgemäßen Zustand erhalten und Verschleiß vorbeugen. Sie ist von Modernisierung und größerer Instandsetzung zu unterscheiden.",
+  "practiceExample": "Regelmäßige Wartung der Heizung ist Instandhaltung; der vollständige Austausch gegen ein neues System kann je nach Anlass Instandsetzung und/oder Modernisierungselemente enthalten."
 }

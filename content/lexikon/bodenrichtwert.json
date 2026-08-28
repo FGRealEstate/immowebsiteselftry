@@ -7,5 +7,16 @@
   "keywords": [
     "bodenrichtwert"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "explanation": "Bodenrichtwert ist ein durchschnittlicher Lagewert des Bodens für eine Bodenrichtwertzone. Er ist kein verbindlicher Einzelgrundstückswert; Nutzung, Größe, Zuschnitt, Erschließung und weitere Merkmale können Anpassungen erforderlich machen.",
+  "practiceExample": "600 m² × 900 €/m² = 540.000 € rechnerischer Ausgangswert. Ein abweichendes Baurecht oder ungewöhnlicher Grundstückszuschnitt kann den Einzelwert deutlich verändern.",
+  "formula": "Bodenwert grob = Grundstücksfläche × Bodenrichtwert",
+  "sources": [
+    {
+      "label": "§ 196 BauGB",
+      "url": "https://www.gesetze-im-internet.de/bbaug/__196.html"
+    }
+  ],
+  "assistantAnswer": "Durchschnittlicher Bodenwert eines räumlich abgegrenzten Richtwertgebiets. Bodenrichtwert ist ein durchschnittlicher Lagewert des Bodens für eine Bodenrichtwertzone. Er ist kein verbindlicher Einzelgrundstückswert; Nutzung, Größe, Zuschnitt, Erschließung und weitere Merkmale können Anpassungen erforderlich machen."
 }

@@ -18,7 +18,32 @@
     "vermögenseffekt"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Cashflow nach Steuer, Tilgung und – sofern bewusst berücksichtigt – Wertveränderung werden getrennt ausgewiesen. Entscheidend ist, keine Wertsteigerung als garantiert anzusehen und Nebenkosten sowie Anfangsinvestitionen vollständig zu erfassen.",
+  "formulae": [
+    "EK-Rendite = betrachteter Jahresertrag / eingesetztes Eigenkapital"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Eigenkapital inkl. Nebenkosten 90.000 €",
+      "Cashflow vor Steuer 1.800 € p.a.",
+      "Tilgung im ersten Jahr 6.000 €"
+    ],
+    "steps": [
+      "Cash-on-Cash = 2,0 %",
+      "Rendite inkl. Tilgung = 8,67 %"
+    ],
+    "interpretation": "Es muss klar angegeben werden, ob Tilgung, Steuerwirkung und Wertänderung enthalten sind. Sonst sind EK-Renditen nicht vergleichbar."
+  },
+  "sources": [],
+  "assistantAnswer": "Die Eigenkapitalrendite setzt den jährlichen Vermögenseffekt ins Verhältnis zum tatsächlich eingesetzten Eigenkapital. Eigenkapitalrendite ist nur sinnvoll, wenn klar definiert wird, welcher Ertrag im Zähler steht: laufender Cashflow, Cashflow plus Tilgung oder Total Return inklusive Wertänderung.",
+  "focusPoints": [
+    "Eigenkapitalrendite ist nur sinnvoll, wenn klar definiert wird, welcher Ertrag im Zähler steht: laufender Cashflow, Cashflow plus Tilgung oder Total Return inklusive Wertänderung.",
+    "Tilgung ist kein laufender Cash-Ertrag, erhöht aber das rechnerische Eigenkapital im Objekt. Deshalb sollte sie separat ausgewiesen werden.",
+    "Die Kapitalbasis muss sämtliche tatsächlich eingesetzten Eigenmittel inklusive Nebenkosten und anfänglicher Investitionen enthalten."
+  ],
+  "decisionUse": "Cash-on-Cash, Rendite inkl. Tilgung und Total Return getrennt ausweisen – nicht zu einer scheinbar präzisen Zahl vermischen."
 }

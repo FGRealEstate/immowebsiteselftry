@@ -16,7 +16,36 @@
     "ähnlicher"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Lage, Zustand, Größe, Rechte und Verkaufszeitpunkt müssen vergleichbar gemacht werden.",
+  "formulae": [
+    "Wert aus hinreichend vergleichbaren Kaufpreisen, angepasst an wertbeeinflussende Merkmale"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "3 Vergleichsverkäufe 4.800 / 5.000 / 5.200 €/m²",
+      "Objekt 80 m²",
+      "Mittelwert 5.000 €/m² vor Anpassungen"
+    ],
+    "steps": [
+      "roher Orientierungswert 400.000 € vor Zu-/Abschlägen für Lage, Zustand, Etage, Vermietung etc."
+    ],
+    "interpretation": "Vergleichbarkeit ist wichtiger als die Zahl der Vergleichsfälle. Angebotspreise sind kein Ersatz für geeignete Kaufpreise."
+  },
+  "sources": [
+    {
+      "label": "Immobilienwertermittlungsverordnung (ImmoWertV)",
+      "url": "https://www.gesetze-im-internet.de/immowertv_2022/"
+    }
+  ],
+  "assistantAnswer": "Vergleichspreise ähnlicher Objekte bilden die Grundlage. Das Vergleichswertverfahren leitet den Wert aus Kaufpreisen hinreichend vergleichbarer Grundstücke beziehungsweise Wohnungen ab.",
+  "focusPoints": [
+    "Das Vergleichswertverfahren leitet den Wert aus Kaufpreisen hinreichend vergleichbarer Grundstücke beziehungsweise Wohnungen ab.",
+    "Vergleichbarkeit betrifft Zeitpunkt, Lage, Größe, Zustand, Ausstattung, Rechte/Belastungen und weitere Merkmale. Portal-Angebotspreise sind keine gleichwertigen Kaufpreisdaten.",
+    "Bei ETW und standardisierten Eigenheimen ist das Verfahren oft besonders marktnah, sofern genügend belastbare Vergleichsfälle existieren."
+  ],
+  "decisionUse": "Vergleichspreise normalisieren und objektspezifische Abweichungen offen begründen statt einfach Durchschnitt €/m² anzuwenden."
 }

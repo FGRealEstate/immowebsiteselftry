@@ -7,5 +7,11 @@
   "keywords": [
     "transaktionskosten"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Kosten, die durch Erwerb oder Verkauf entstehen. Transaktionskosten sind Kosten für Erwerb, Finanzierung, Halten oder Verkauf, die zusätzlich zum reinen Vermögenswert entstehen. Sie beeinflussen besonders die Rendite kurzer Haltedauern.",
+  "explanation": "Transaktionskosten sind Kosten für Erwerb, Finanzierung, Halten oder Verkauf, die zusätzlich zum reinen Vermögenswert entstehen. Sie beeinflussen besonders die Rendite kurzer Haltedauern.",
+  "practiceExample": "Kaufnebenkosten 10 % und Verkaufskosten 4 % bedeuten bei unverändertem Marktwert einen erheblichen negativen Total Return trotz stabiler Immobilie."
 }

@@ -20,7 +20,59 @@
     "teilt"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Beide Kennzahlen sind vor Finanzierung. Für den Vergleich sollten Berechnungsbasis und Kostenabgrenzung identisch sein.",
+  "formulae": [
+    "Bruttorendite = Jahresnettokaltmiete / Kaufpreis",
+    "Nettorendite ≈ (Jahresnettokaltmiete − nicht umlagefähige Kosten − Leerstand − laufende Instandhaltung) / Gesamtinvestition"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Kaufpreis 300.000 €",
+      "Nebenkosten 30.000 €",
+      "Miete 1.400 € mtl. = 16.800 € p.a.",
+      "nicht umlagefähige Kosten + Reserve 3.000 € p.a."
+    ],
+    "steps": [
+      "Bruttorendite = 5,6 %",
+      "vereinfachte Nettorendite = 13.800 / 330.000 = 4,18 %"
+    ],
+    "interpretation": "Die Differenz zeigt, warum Bruttorendite nur ein Screening-Instrument ist."
+  },
+  "sources": [],
+  "assistantAnswer": "Die Bruttorendite teilt Jahresnettokaltmiete durch Kaufpreis. Die Nettorendite berücksichtigt laufende Eigentümerkosten. Die Bruttomietrendite setzt Jahresnettokaltmiete ins Verhältnis zum Kaufpreis und ignoriert Erwerbsnebenkosten sowie laufende Eigentümerkosten.",
+  "focusPoints": [
+    "Die Bruttomietrendite setzt Jahresnettokaltmiete ins Verhältnis zum Kaufpreis und ignoriert Erwerbsnebenkosten sowie laufende Eigentümerkosten.",
+    "Eine Nettomietrendite muss definieren, welche Kosten abgezogen und welche Kapitalbasis verwendet wird. Ohne identische Definitionen sind Vergleichswerte zwischen Portalen wertlos.",
+    "Für Kapitalanleger ist zusätzlich der Cashflow nach Finanzierung und der Eigenkapitaleinsatz relevant; Rendite vor Finanzierung und Cash-on-Cash beantworten unterschiedliche Fragen."
+  ],
+  "decisionUse": "Bruttorendite eignet sich zum schnellen Screening; eine Kaufentscheidung sollte mindestens Nettorendite, Cashflow und CapEx berücksichtigen.",
+  "comparisonTable": {
+    "title": "Beispiel bei 300.000 € Kaufpreis, 30.000 € Nebenkosten und 16.800 € JNKM",
+    "headers": [
+      "Kennzahl",
+      "Berechnung",
+      "Ergebnis"
+    ],
+    "rows": [
+      [
+        "Bruttomietrendite",
+        "16.800 / 300.000",
+        "5,60 %"
+      ],
+      [
+        "vereinfachte Nettorendite",
+        "(16.800 − 3.000) / 330.000",
+        "4,18 %"
+      ],
+      [
+        "Kaufpreisfaktor",
+        "300.000 / 16.800",
+        "17,86"
+      ]
+    ]
+  }
 }

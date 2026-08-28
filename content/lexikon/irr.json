@@ -7,5 +7,11 @@
   "keywords": [
     "irr"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Kapitalanlage",
+  "explanation": "Die Internal Rate of Return ist der Diskontsatz, bei dem der Kapitalwert aller Ein- und Auszahlungen null wird. Sie berücksichtigt das Timing der Zahlungsströme und ist stark von Haltedauer und Exitannahme abhängig.",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Interner Zinsfuß eines Zahlungsstroms. Die Internal Rate of Return ist der Diskontsatz, bei dem der Kapitalwert aller Ein- und Auszahlungen null wird. Sie berücksichtigt das Timing der Zahlungsströme und ist stark von Haltedauer und Exitannahme abhängig.",
+  "practiceExample": "Hoher Verkaufserlös im Jahr 10 kann die IRR stark erhöhen, obwohl der laufende Cashflow schwach ist. Deshalb sollte die IRR zusammen mit Kapitalwert und Nettoverkaufserlös gelesen werden."
 }

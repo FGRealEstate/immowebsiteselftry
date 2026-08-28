@@ -7,5 +7,11 @@
   "keywords": [
     "vervielfältiger"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Synonym für Kaufpreisfaktor. Vervielfältiger wird im Immobilienmarkt häufig synonym für Kaufpreisfaktor verwendet; in Bewertungsverfahren kann „Vervielfältiger“ auch einen mathematischen Kapitalisierungsfaktor bezeichnen. Der Kontext muss deshalb klar sein.",
+  "explanation": "Vervielfältiger wird im Immobilienmarkt häufig synonym für Kaufpreisfaktor verwendet; in Bewertungsverfahren kann „Vervielfältiger“ auch einen mathematischen Kapitalisierungsfaktor bezeichnen. Der Kontext muss deshalb klar sein.",
+  "practiceExample": "Marktgespräch: Faktor 20 bedeutet Kaufpreis = 20 Jahresnettokaltmieten. Im Ertragswertverfahren kann dagegen ein Barwertfaktor gemeint sein."
 }

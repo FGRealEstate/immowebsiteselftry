@@ -7,5 +7,11 @@
   "keywords": [
     "instandsetzung"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Wiederherstellung eines ordnungsgemäßen Zustands. Instandsetzung stellt einen bereits beeinträchtigten ordnungsgemäßen Zustand wieder her. Sie unterscheidet sich von vorbeugender Instandhaltung und von wert-/gebrauchserhöhender Modernisierung.",
+  "explanation": "Instandsetzung stellt einen bereits beeinträchtigten ordnungsgemäßen Zustand wieder her. Sie unterscheidet sich von vorbeugender Instandhaltung und von wert-/gebrauchserhöhender Modernisierung.",
+  "practiceExample": "Der Austausch eines defekten Fensters durch gleichwertigen Ersatz ist primär Instandsetzung; ein energetisch deutlich verbessertes System kann zusätzlich Modernisierungseffekte haben."
 }

@@ -1,8 +1,8 @@
 {
   "title": "Spekulationsfrist im Überblick",
   "category": "Steuern",
-  "summary": "Private Veräußerungsgewinne können innerhalb gesetzlicher Fristen steuerpflichtig sein.",
-  "body": "Nutzung, Haltedauer und Struktur sind individuell zu prüfen. Gesellschaften folgen anderen Regeln.",
+  "summary": "Bei Immobilien im Privatvermögen kann ein Verkauf innerhalb von zehn Jahren nach Anschaffung als privates Veräußerungsgeschäft steuerpflichtig sein. Für Eigennutzung gelten gesetzliche Ausnahmen.",
+  "body": "§ 23 EStG erfasst bei Grundstücken grundsätzlich Veräußerungen, bei denen zwischen Anschaffung und Verkauf nicht mehr als zehn Jahre liegen. Ausgenommen sind unter anderem bestimmte Fälle ausschließlicher Eigennutzung oder Eigennutzung im Verkaufsjahr und den beiden vorangegangenen Jahren.",
   "id": "spekulationsfrist-im-uberblick",
   "slug": "spekulationsfrist-im-uberblick",
   "url": "/wissen/spekulationsfrist-im-uberblick/",
@@ -19,7 +19,92 @@
     "überblick"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "§ 23 EStG erfasst bei Grundstücken grundsätzlich Veräußerungen, bei denen zwischen Anschaffung und Verkauf nicht mehr als zehn Jahre liegen. Ausgenommen sind unter anderem bestimmte Fälle ausschließlicher Eigennutzung oder Eigennutzung im Verkaufsjahr und den beiden vorangegangenen Jahren.",
+  "formulae": [
+    "Private Veräußerung: Zeitraum zwischen Anschaffung und Veräußerung nach § 23 EStG prüfen"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Vermietete Wohnung Kauf 2018",
+      "Verkauf 2026"
+    ],
+    "steps": [
+      "Haltedauer unter zehn Jahren → steuerliche Prüfung eines privaten Veräußerungsgeschäfts erforderlich."
+    ],
+    "interpretation": "Eigennutzungs-Ausnahmen und gewerblicher Grundstückshandel können die Einordnung verändern. Vor Verkauf steuerlich prüfen."
+  },
+  "sources": [
+    {
+      "label": "§ 23 EStG – Private Veräußerungsgeschäfte",
+      "url": "https://www.gesetze-im-internet.de/estg/__23.html"
+    }
+  ],
+  "assistantAnswer": "Bei vermieteten Immobilien im Privatvermögen ist die 10-Jahres-Frist des § 23 EStG zentral. Beispiel: Kaufvertrag 15.09.2026; ein Verkauf nach Ablauf von mehr als zehn Jahren fällt grundsätzlich nicht mehr unter dieses private Veräußerungsgeschäft. Für selbst genutzte Immobilien gibt es gesetzliche Ausnahmen. Das genaue Datum und die Nutzungshistorie sollten steuerlich geprüft werden.",
+  "focusPoints": [
+    "Bei privaten Grundstücksveräußerungen kann § 23 EStG innerhalb der Zehnjahresfrist zu steuerpflichtigen privaten Veräußerungsgeschäften führen. Für bestimmte Eigennutzungsfälle existieren Ausnahmen.",
+    "Entscheidend sind Anschaffungs-/Veräußerungszeitpunkt, Nutzung und konkrete Eigentumsstruktur. Eine pauschale Aussage „nach zehn Jahren immer steuerfrei“ kann bei Betriebsvermögen oder gewerblichem Grundstückshandel falsch sein.",
+    "Die steuerliche Betrachtung ist von Finanzierung und Cashflow getrennt zu modellieren."
+  ],
+  "decisionUse": "Vor einem geplanten Exit innerhalb oder nahe der Zehnjahresgrenze das exakte Anschaffungs- und Verkaufsdatum sowie die Nutzungshistorie steuerlich prüfen.",
+  "contentBlocks": [
+    {
+      "type": "timeline",
+      "title": "Zehn-Jahres-Logik im Beispiel",
+      "items": [
+        {
+          "label": "15.09.2026",
+          "title": "Anschaffung",
+          "text": "Notarieller Erwerb als Ausgangspunkt des Beispiels."
+        },
+        {
+          "label": "2027–2035",
+          "title": "Vermietungsphase",
+          "text": "Verkauf innerhalb der Zehnjahresfrist kann § 23 EStG auslösen."
+        },
+        {
+          "label": "ab >10 J.",
+          "title": "Frist überschritten",
+          "text": "Bei Privatvermögen fällt der Verkauf grundsätzlich nicht mehr unter § 23 Abs. 1 Nr. 1 EStG, sofern keine Sonderkonstellation vorliegt."
+        }
+      ],
+      "intro": null
+    },
+    {
+      "type": "table",
+      "title": "Nutzung verändert die Prüfung",
+      "headers": [
+        "Fall",
+        "Kernaussage"
+      ],
+      "rows": [
+        [
+          "durchgehend vermietet",
+          "10-Jahres-Frist regelmäßig zentral"
+        ],
+        [
+          "durchgehend selbst genutzt",
+          "gesetzliche Eigennutzungs-Ausnahme kann greifen"
+        ],
+        [
+          "im Verkaufsjahr + 2 Vorjahre selbst genutzt",
+          "gesetzliche Ausnahme kann ebenfalls greifen"
+        ],
+        [
+          "unentgeltlicher Erwerb",
+          "Anschaffungszeitpunkt des Rechtsvorgängers kann zugerechnet werden"
+        ]
+      ],
+      "note": null
+    },
+    {
+      "type": "callout",
+      "title": "Nicht mit „10 Jahre halten = immer steuerfrei“ vereinfachen",
+      "text": "Betriebsvermögen, gewerblicher Grundstückshandel, Erbschaft/Schenkung und gemischte Nutzungen können andere Folgen haben. § 23 ist nur ein Baustein der steuerlichen Prüfung.",
+      "tone": "red"
+    }
+  ]
 }

@@ -7,5 +7,11 @@
   "keywords": [
     "bewirtschaftungskosten"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Kosten für Verwaltung, Betrieb, Instandhaltung und Mietausfall. Bewirtschaftungskosten sind laufende Kosten der Nutzung und Verwaltung eines Grundstücks, etwa Verwaltung, Instandhaltung und Mietausfallwagnis nach der jeweiligen Bewertungsdefinition. Sie reduzieren den nachhaltig verfügbaren Ertrag.",
+  "explanation": "Bewirtschaftungskosten sind laufende Kosten der Nutzung und Verwaltung eines Grundstücks, etwa Verwaltung, Instandhaltung und Mietausfallwagnis nach der jeweiligen Bewertungsdefinition. Sie reduzieren den nachhaltig verfügbaren Ertrag.",
+  "practiceExample": "50.000 € Rohertrag minus 12.000 € Bewirtschaftungskosten ergeben 38.000 € Reinertrag vor weiteren bewertungsspezifischen Schritten."
 }

@@ -7,5 +7,11 @@
   "keywords": [
     "tilgung"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Rückzahlung des Darlehenskapitals. Tilgung ist die Rückzahlung des Darlehenskapitals. Im Annuitätendarlehen steigt der Tilgungsanteil innerhalb der konstanten Rate, weil der Zinsanteil mit sinkender Restschuld abnimmt.",
+  "explanation": "Tilgung ist die Rückzahlung des Darlehenskapitals. Im Annuitätendarlehen steigt der Tilgungsanteil innerhalb der konstanten Rate, weil der Zinsanteil mit sinkender Restschuld abnimmt.",
+  "practiceExample": "Bei 300.000 € Darlehen und 2 % Anfangstilgung werden im ersten Jahr näherungsweise 6.000 € Kapital zurückgeführt; die exakte Summe steigt durch den fallenden Zinsanteil leicht."
 }

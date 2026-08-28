@@ -7,5 +7,11 @@
   "keywords": [
     "mietspiegel"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Übersicht ortsüblicher Vergleichsmieten. Mietspiegel geben die ortsübliche Vergleichsmiete nach gesetzlichen Kriterien wieder. Sie dienen insbesondere als Begründungsmittel für Mieterhöhungen und sind von Portal-Angebotsmieten zu unterscheiden.",
+  "explanation": "Mietspiegel geben die ortsübliche Vergleichsmiete nach gesetzlichen Kriterien wieder. Sie dienen insbesondere als Begründungsmittel für Mieterhöhungen und sind von Portal-Angebotsmieten zu unterscheiden.",
+  "practiceExample": "Eine Angebotsmiete von 18 €/m² beweist nicht, dass eine Bestandsmiete von 12 €/m² unmittelbar auf 18 €/m² erhöht werden darf."
 }

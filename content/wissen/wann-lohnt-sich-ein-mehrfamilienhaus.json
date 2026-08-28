@@ -21,7 +21,33 @@
     "werden"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Neben der Anfangsrendite sind Mietstruktur, Leerstand, Capex, Genehmigungslage, Energiezustand und Exit-Fähigkeit wichtig. Ein einzelner Multiplikator reicht nicht.",
+  "formulae": [
+    "NOI, DSCR, Faktor, Capex und Mietentwicklung zusammen betrachten"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Kaufpreis 2,0 Mio. €",
+      "JNKM 120.000 €",
+      "Bewirtschaftung + Reserve 25.000 €",
+      "NOI 95.000 €"
+    ],
+    "steps": [
+      "Bruttorendite 6,0 %",
+      "NOI-Rendite 4,75 % vor Finanzierung."
+    ],
+    "interpretation": "Ein MFH lohnt sich nicht wegen eines niedrigen Quadratmeterpreises allein. Mietstruktur, Capex, Leerstand, Teilbarkeit, Finanzierung und Exit-Liquidität entscheiden."
+  },
+  "sources": [],
+  "assistantAnswer": "Ein Mehrfamilienhaus muss als Gesamtbetrieb aus Mieten, Kosten, Investitionen und Finanzierung betrachtet werden. Ein Mehrfamilienhaus ist wirtschaftlich attraktiv, wenn Ertrag, CapEx, Finanzierung und Bewirtschaftung auf Portfolioebene tragfähig sind – nicht allein wegen eines niedrigen Kaufpreisfaktors.",
+  "focusPoints": [
+    "Ein Mehrfamilienhaus ist wirtschaftlich attraktiv, wenn Ertrag, CapEx, Finanzierung und Bewirtschaftung auf Portfolioebene tragfähig sind – nicht allein wegen eines niedrigen Kaufpreisfaktors.",
+    "Mieterstruktur, Leerstand, Mietrückstände, Instandhaltungsstau, Aufteilungspotenzial und technische Großgewerke haben einen wesentlich größeren Einfluss als bei einer einzelnen ETW.",
+    "Finanzierung und Bewertung folgen bei größeren Investmentobjekten teilweise anderen Banklogiken als beim privaten Wohnungskauf."
+  ],
+  "decisionUse": "JNKM, NOI, CapEx-Plan, DSCR/LTV und Mieter-/Einheitenrisiko gemeinsam analysieren; Sollmieten nur bei realistischer rechtlicher Umsetzung einpreisen."
 }

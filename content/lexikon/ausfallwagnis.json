@@ -7,5 +7,11 @@
   "keywords": [
     "ausfallwagnis"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Kalkulatorischer Abschlag für Leerstand und Zahlungsausfälle. Ausfallwagnis ist die erwartete Belastung aus nicht eingehenden Forderungen oder Erträgen. In Bewertungs- und Investmentmodellen wird es als Risikoabschlag beziehungsweise Kostenkomponente berücksichtigt.",
+  "explanation": "Ausfallwagnis ist die erwartete Belastung aus nicht eingehenden Forderungen oder Erträgen. In Bewertungs- und Investmentmodellen wird es als Risikoabschlag beziehungsweise Kostenkomponente berücksichtigt.",
+  "practiceExample": "Bei 100.000 € Sollmiete und 2 % pauschalem Ausfallwagnis werden 2.000 € Ertragsminderung angesetzt; bei konkreten Rückständen ist eine individuelle Betrachtung besser."
 }

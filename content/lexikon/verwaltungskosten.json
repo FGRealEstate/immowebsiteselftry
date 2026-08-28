@@ -7,5 +7,11 @@
   "keywords": [
     "verwaltungskosten"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Kosten der kaufmännischen und technischen Verwaltung. Verwaltungskosten entstehen für kaufmännische und technische Verwaltung. Bei Wohnraummiete sind sie grundsätzlich nicht als Betriebskosten auf den Mieter umlagefähig und verbleiben daher in der Eigentümerrechnung.",
+  "explanation": "Verwaltungskosten entstehen für kaufmännische und technische Verwaltung. Bei Wohnraummiete sind sie grundsätzlich nicht als Betriebskosten auf den Mieter umlagefähig und verbleiben daher in der Eigentümerrechnung.",
+  "practiceExample": "30 € Verwaltungskosten pro Wohnung und Monat entsprechen 360 € p.a.; bei zehn Einheiten sind das 3.600 € jährliche Eigentümerkosten."
 }

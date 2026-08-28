@@ -17,7 +17,32 @@
     "richtig"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Er ist der Kehrwert der Bruttomietrendite und ignoriert Kosten, Finanzierung, Steuern und Investitionsbedarf. Er eignet sich nur als schneller Filter.",
+  "formulae": [
+    "Faktor = Kaufpreis / Jahresnettokaltmiete",
+    "Bruttorendite = 1 / Faktor"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Kaufpreis 360.000 €",
+      "Jahresnettokaltmiete 18.000 €"
+    ],
+    "steps": [
+      "Faktor = 20",
+      "Bruttorendite = 5 %"
+    ],
+    "interpretation": "Faktorvergleiche funktionieren nur bei vergleichbarer Mietqualität, Lage, Zustand und Capex."
+  },
+  "sources": [],
+  "assistantAnswer": "Der Faktor ist Kaufpreis geteilt durch Jahresnettokaltmiete. Der Kaufpreisfaktor ist Kaufpreis geteilt durch Jahresnettokaltmiete und damit der Kehrwert der Bruttomietrendite, sofern dieselben Bezugsgrößen verwendet werden.",
+  "focusPoints": [
+    "Der Kaufpreisfaktor ist Kaufpreis geteilt durch Jahresnettokaltmiete und damit der Kehrwert der Bruttomietrendite, sofern dieselben Bezugsgrößen verwendet werden.",
+    "Ein niedriger Faktor kann auf hohe Rendite, aber ebenso auf schwache Lage, kurze Restnutzungsdauer, Instandhaltungsstau oder nicht nachhaltige Mieten hinweisen.",
+    "Faktoren verschiedener Städte oder Objektarten sind ohne Risikokontext nicht direkt vergleichbar."
+  ],
+  "decisionUse": "Faktor als Screeninggröße nutzen, danach Miete, CapEx, Mikrolage und Finanzierung separat prüfen."
 }

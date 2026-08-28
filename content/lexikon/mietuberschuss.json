@@ -7,5 +7,11 @@
   "keywords": [
     "mietüberschuss"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Miete abzüglich objektspezifischer laufender Kosten. Mietüberschuss ist der nach definierten laufenden Objektkosten verbleibende Mietertrag. Ob Finanzierung, Steuern oder Rücklagen enthalten sind, muss ausdrücklich definiert werden.",
+  "explanation": "Mietüberschuss ist der nach definierten laufenden Objektkosten verbleibende Mietertrag. Ob Finanzierung, Steuern oder Rücklagen enthalten sind, muss ausdrücklich definiert werden.",
+  "practiceExample": "18.000 € JNKM minus 3.000 € nicht umlagefähige laufende Kosten ergeben 15.000 € vereinfachten Mietüberschuss vor Finanzierung."
 }

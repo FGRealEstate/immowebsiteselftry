@@ -7,5 +7,16 @@
   "keywords": [
     "gebäudeanteil"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "explanation": "Gebäudeanteil bezeichnet den Teil des Gesamtwerts beziehungsweise der Anschaffungskosten, der wirtschaftlich auf das Gebäude entfällt. Für die Gebäude-AfA ist die Abgrenzung zum nicht abschreibbaren Grund und Boden zentral.",
+  "practiceExample": "440.000 € Gesamtanschaffungskosten × 70 % Gebäudeanteil = 308.000 € AfA-Basis vor weiteren steuerlichen Besonderheiten.",
+  "formula": "Gebäudeanteil = Gebäude-Wert / Gesamtwert",
+  "sources": [
+    {
+      "label": "§ 7 EStG – Gebäude-AfA",
+      "url": "https://www.gesetze-im-internet.de/estg/__7.html"
+    }
+  ],
+  "assistantAnswer": "Anteil des Kaufpreises, der dem Gebäude statt Grund und Boden zugeordnet wird. Gebäudeanteil bezeichnet den Teil des Gesamtwerts beziehungsweise der Anschaffungskosten, der wirtschaftlich auf das Gebäude entfällt. Für die Gebäude-AfA ist die Abgrenzung zum nicht abschreibbaren Grund und Boden zentral."
 }

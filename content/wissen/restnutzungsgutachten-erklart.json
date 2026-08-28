@@ -1,8 +1,8 @@
 {
   "title": "Restnutzungsgutachten erklärt",
   "category": "Steuern",
-  "summary": "Ein Restnutzungsgutachten kann unter Voraussetzungen eine kürzere tatsächliche Nutzungsdauer begründen.",
-  "body": "Damit kann sich die jährliche AfA erhöhen. Das Gutachten muss fachlich belastbar sein; Anerkennung und individuelle Wirkung sind nicht garantiert.",
+  "summary": "Eine nachgewiesene kürzere tatsächliche Nutzungsdauer kann nach § 7 Abs. 4 EStG zu einem höheren linearen AfA-Satz führen. Dafür braucht es einen belastbaren Nachweis – nicht nur eine pauschale Behauptung.",
+  "body": "Das Gesetz erlaubt bei Gebäuden unter bestimmten Voraussetzungen die AfA nach der tatsächlichen kürzeren Nutzungsdauer. Ein Gutachten kann als Nachweis dienen, muss aber methodisch und sachlich tragfähig sein.",
   "id": "restnutzungsgutachten-erklart",
   "slug": "restnutzungsgutachten-erklart",
   "url": "/wissen/restnutzungsgutachten-erklart/",
@@ -19,7 +19,82 @@
     "voraussetzungen"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-27",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Das Gesetz erlaubt bei Gebäuden unter bestimmten Voraussetzungen die AfA nach der tatsächlichen kürzeren Nutzungsdauer. Ein Gutachten kann als Nachweis dienen, muss aber methodisch und sachlich tragfähig sein.",
+  "formulae": [
+    "AfA bei kürzerer tatsächlicher Nutzungsdauer = AfA-Basis / nachgewiesene Restnutzungsdauer"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "AfA-Basis 300.000 €",
+      "gesetzlicher Satz 2 % → 6.000 € p.a.",
+      "nachgewiesene tatsächliche Restnutzungsdauer 30 Jahre → rechnerisch 10.000 € p.a."
+    ],
+    "steps": [
+      "Mehr-AfA im Modell = 4.000 € p.a."
+    ],
+    "interpretation": "Entscheidend ist ein steuerlich tragfähiger Nachweis der kürzeren tatsächlichen Nutzungsdauer; ein Gutachten ist kein Automatismus für Anerkennung."
+  },
+  "sources": [
+    {
+      "label": "§ 7 EStG – Absetzung für Abnutzung",
+      "url": "https://www.gesetze-im-internet.de/estg/__7.html"
+    }
+  ],
+  "assistantAnswer": "Beispiel: 400.000 € AfA-Basis, regulär 2 % = 8.000 € AfA pro Jahr. Wird eine tatsächliche Restnutzungsdauer von 25 Jahren steuerlich anerkannt, entspräche das rechnerisch 4 % bzw. 16.000 € pro Jahr. Ob ein Gutachten anerkannt wird, ist eine steuerliche Einzelfallfrage.",
+  "focusPoints": [
+    "Eine tatsächlich kürzere Nutzungsdauer kann nach § 7 Abs. 4 Satz 2 EStG zu einer höheren jährlichen AfA führen, wenn sie belastbar nachgewiesen wird.",
+    "Das Gutachten betrifft die Restnutzungsdauer des Gebäudes; es ändert nicht den nicht abschreibbaren Bodenanteil.",
+    "Der steuerliche Effekt hängt von AfA-Basis, anerkannter Restnutzungsdauer und persönlicher Steuersituation ab. Anerkennung ist kein Automatismus."
+  ],
+  "decisionUse": "Restnutzungsdauer nur als belastbare Steuerannahme modellieren, wenn ein fachlich tragfähiger Nachweis realistisch ist und die steuerliche Anerkennung geprüft wurde.",
+  "contentBlocks": [
+    {
+      "type": "table",
+      "title": "Wirkung einer kürzeren Nutzungsdauer",
+      "headers": [
+        "Ansatz",
+        "Nutzungsdauer",
+        "AfA-Satz",
+        "AfA p.a. auf 400.000 €"
+      ],
+      "rows": [
+        [
+          "Regel-AfA Altbestand",
+          "50 Jahre",
+          "2,0 %",
+          "8.000 €"
+        ],
+        [
+          "nachgewiesene tatsächliche ND",
+          "25 Jahre",
+          "4,0 %",
+          "16.000 €"
+        ],
+        [
+          "Differenz",
+          "",
+          "",
+          "8.000 €"
+        ]
+      ],
+      "note": null
+    },
+    {
+      "type": "prose",
+      "title": "Was das Gutachten leisten muss",
+      "paragraphs": [
+        "Nicht der Wunsch nach einer höheren Abschreibung, sondern der technische/ökonomische Zustand und die tatsächlich erwartbare Nutzungsdauer müssen nachvollziehbar begründet werden. Baujahr allein reicht nicht; Modernisierungen können die Restnutzungsdauer wiederum verlängern."
+      ]
+    },
+    {
+      "type": "callout",
+      "title": "Steuerersparnis ist kein Zusatz-Cashflow des Objekts",
+      "text": "Die höhere AfA verändert den steuerlichen Gewinn, nicht die operative Miete oder den Kapitaldienst. Investmententscheidungen sollten deshalb Cashflow vor Steuer und steuerliche Wirkung getrennt ausweisen.",
+      "tone": "navy"
+    }
+  ]
 }

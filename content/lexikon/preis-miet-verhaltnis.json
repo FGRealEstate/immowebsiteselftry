@@ -7,5 +7,11 @@
   "keywords": [
     "preis-miet-verhältnis"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Kaufpreis relativ zum laufenden Mietniveau. Das Preis-Miet-Verhältnis beschreibt, wie hoch der Kaufpreis im Verhältnis zur Jahresmiete ist und entspricht bei gleicher Basis dem Kaufpreisfaktor. Es sagt nichts über Kosten, Finanzierung oder Zustand aus.",
+  "explanation": "Das Preis-Miet-Verhältnis beschreibt, wie hoch der Kaufpreis im Verhältnis zur Jahresmiete ist und entspricht bei gleicher Basis dem Kaufpreisfaktor. Es sagt nichts über Kosten, Finanzierung oder Zustand aus.",
+  "practiceExample": "300.000 € Kaufpreis bei 15.000 € JNKM ergeben Preis-Miet-Verhältnis 20. Das entspricht 5 % Bruttomietrendite."
 }

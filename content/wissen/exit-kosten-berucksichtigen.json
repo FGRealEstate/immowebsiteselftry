@@ -20,7 +20,31 @@
     "vorfälligkeits"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Der erwartete Verkaufspreis sollte daher nicht vollständig als Rückfluss angesetzt werden.",
+  "formulae": [
+    "Netto-Exit = Verkaufspreis − Restschuld − Verkaufskosten − ggf. Steuern"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Verkaufspreis 500.000 €",
+      "Restschuld 280.000 €",
+      "Verkaufskosten 3 % = 15.000 €"
+    ],
+    "steps": [
+      "Netto vor Steuern = 205.000 €"
+    ],
+    "interpretation": "Wer nur den erwarteten Verkaufspreis modelliert, überschätzt den Rückfluss. Steuerfolgen sind separat nach persönlicher Struktur zu prüfen."
+  },
+  "sources": [],
+  "assistantAnswer": "Beim Verkauf entstehen häufig Makler-, Rechts-, Vorfälligkeits- und Abwicklungskosten. Beim Exit fallen je nach Objekt Makler-, Notar-/Löschungs-, Vorfälligkeits- und gegebenenfalls Steuerkosten an. Ein Verkaufspreis ist daher nicht gleich Nettoerlös.",
+  "focusPoints": [
+    "Beim Exit fallen je nach Objekt Makler-, Notar-/Löschungs-, Vorfälligkeits- und gegebenenfalls Steuerkosten an. Ein Verkaufspreis ist daher nicht gleich Nettoerlös.",
+    "In IRR- und Total-Return-Modellen müssen Exitkosten im letzten Zahlungsstrom abgezogen werden, sonst wird die Rendite systematisch überschätzt.",
+    "Auch ein konservativer Verkaufspreis sollte nicht isoliert modelliert werden: Restschuld und Transaktionskosten bestimmen, wie viel Eigenkapital tatsächlich zurückfließt."
+  ],
+  "decisionUse": "Exitrechnung immer als Nettoverkaufserlös nach Kosten minus Restschuld darstellen."
 }

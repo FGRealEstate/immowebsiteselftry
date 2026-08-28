@@ -7,5 +7,11 @@
   "keywords": [
     "kapitalwert"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Kapitalanlage",
+  "explanation": "Der Kapitalwert ist die Summe der auf heute diskontierten zukünftigen Nettozahlungen abzüglich Anfangsinvestition. Positiv bedeutet: Die modellierten Zahlungsströme übertreffen die verwendete Renditeanforderung.",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Barwert aller Ein- und Auszahlungen abzüglich Anfangsinvestition. Der Kapitalwert ist die Summe der auf heute diskontierten zukünftigen Nettozahlungen abzüglich Anfangsinvestition. Positiv bedeutet: Die modellierten Zahlungsströme übertreffen die verwendete Renditeanforderung.",
+  "practiceExample": "Bei 5 % Diskontsatz und +18.000 € Kapitalwert schafft das Investment im Modell 18.000 € Mehrwert gegenüber der 5-%-Renditeanforderung. Bei höherem Diskontsatz kann derselbe Deal einen negativen Kapitalwert haben."
 }

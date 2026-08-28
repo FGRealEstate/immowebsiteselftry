@@ -7,5 +7,11 @@
   "keywords": [
     "zinsdeckungsgrad"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Verhältnis von Ergebnisgröße zu Zinsaufwand. Der Zinsdeckungsgrad misst, wie oft eine definierte Ergebnisgröße den reinen Zinsaufwand deckt. Anders als der DSCR berücksichtigt er typischerweise nicht die Tilgung.",
+  "explanation": "Der Zinsdeckungsgrad misst, wie oft eine definierte Ergebnisgröße den reinen Zinsaufwand deckt. Anders als der DSCR berücksichtigt er typischerweise nicht die Tilgung.",
+  "practiceExample": "NOI 45.000 € und Zinsaufwand 30.000 € ergeben Zinsdeckungsgrad 1,5. Fällt der NOI auf 25.000 €, liegt er nur noch bei 0,83."
 }

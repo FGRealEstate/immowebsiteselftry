@@ -7,5 +7,11 @@
   "keywords": [
     "nettomietrendite"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Kapitalanlage",
+  "explanation": "Die Nettomietrendite berücksichtigt im Gegensatz zur Bruttomietrendite laufende Eigentümerkosten und sollte auf eine klar definierte Investitionsbasis bezogen werden. Unterschiedliche Marktquellen verwenden teils abweichende Definitionen.",
+  "practiceExample": "16.800 € JNKM − 3.000 € nicht umlagefähige Kosten = 13.800 € Nettoertrag. Bei 330.000 € Gesamtinvestition ergibt das 4,18 % vereinfachte Nettomietrendite.",
+  "formula": "Nettomietrendite = Nettoertrag / Gesamtinvestition",
+  "sources": [],
+  "assistantAnswer": "Jahresmiete abzüglich definierter Eigentümerkosten im Verhältnis zum Kaufpreis. Die Nettomietrendite berücksichtigt im Gegensatz zur Bruttomietrendite laufende Eigentümerkosten und sollte auf eine klar definierte Investitionsbasis bezogen werden. Unterschiedliche Marktquellen verwenden teils abweichende Definitionen."
 }

@@ -7,5 +7,11 @@
   "keywords": [
     "stress-test"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Berechnung unter ungünstigeren Annahmen. Ein Stress-Test prüft die Tragfähigkeit unter bewusst verschlechterten Annahmen, etwa höherem Zins, Leerstand oder CapEx. Er unterscheidet sich von einer einfachen Sensitivität, weil mehrere Belastungen gleichzeitig kombiniert werden können.",
+  "explanation": "Ein Stress-Test prüft die Tragfähigkeit unter bewusst verschlechterten Annahmen, etwa höherem Zins, Leerstand oder CapEx. Er unterscheidet sich von einer einfachen Sensitivität, weil mehrere Belastungen gleichzeitig kombiniert werden können.",
+  "practiceExample": "Basisszenario +150 € Cashflow; bei +2 Prozentpunkten Anschlusszins und einem Monat Leerstand kann der Jahrescashflow negativ werden."
 }

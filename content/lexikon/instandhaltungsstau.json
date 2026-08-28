@@ -7,5 +7,11 @@
   "keywords": [
     "instandhaltungsstau"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Aufgeschobener Erhaltungsbedarf. Instandhaltungsstau bezeichnet aufgeschobene notwendige Erhaltungsmaßnahmen. Er ist ein wirtschaftliches Risiko, weil vermeintlich niedrige Kaufpreise durch kurzfristig erforderlichen CapEx neutralisiert werden können.",
+  "explanation": "Instandhaltungsstau bezeichnet aufgeschobene notwendige Erhaltungsmaßnahmen. Er ist ein wirtschaftliches Risiko, weil vermeintlich niedrige Kaufpreise durch kurzfristig erforderlichen CapEx neutralisiert werden können.",
+  "practiceExample": "30.000 € Preisabschlag wirken wenig attraktiv, wenn Dach, Heizung und Leitungen kurzfristig 70.000 € Investitionen erfordern."
 }

@@ -9,6 +9,9 @@ permalink: /insta-objekt-anfrage/index.html
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instagram Objektanfrage | Fischer & Geserich Real Estate</title>
+  <meta name="description" content="Ausgewählte Immobilien von Fischer & Geserich Real Estate direkt anfragen und Objektinformationen erhalten.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://fg-realestate.de/insta-objekt-anfrage/">
 
   <!-- F&G Consent Manager; no analytics before consent -->
   <link rel="stylesheet" href="/vendor/cookieconsent/cookieconsent.css">
@@ -19,6 +22,7 @@ permalink: /insta-objekt-anfrage/index.html
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/fg-design.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <script>
@@ -1032,5 +1036,13 @@ permalink: /insta-objekt-anfrage/index.html
       }
     })();
   </script>
+
+{% set schemaType = "ContactPage" %}
+{% set schemaName = "Objektinformationen anfordern" %}
+{% set schemaDesc = "Ausgewählte Objektinformationen von Fischer & Geserich Real Estate direkt anfordern." %}
+{% set schemaPath = "/insta-objekt-anfrage/" %}
+{% set schemaCrumb = "Objektinformationen anfordern" %}
+{% set schemaArea = "Berlin" %}
+{% include "page-schema.njk" %}
 </body>
 </html>

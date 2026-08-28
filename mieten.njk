@@ -1,0 +1,18 @@
+---
+layout: base.njk
+title: Wohnung oder Haus mieten – Mietgesuch anlegen | Fischer & Geserich
+permalink: mieten.html
+description: "Mietwohnung oder Haus suchen: Mietgesuch für Berlin, Leipzig, Dresden und den Berliner Speckgürtel anlegen und für passende Angebote vormerken lassen."
+canonicalPath: /mieten.html
+---
+<section class="fg-journey-hero fg-page-hero bg-primary text-white py-16 md:py-24"><div class="container mx-auto px-4 max-w-6xl"><a href="/index.html#ziele" class="fg-back-link"><i class="fas fa-arrow-left"></i> Zurück zur Auswahl</a><div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center mt-8"><div class="lg:col-span-3 fg-reveal"><p class="fg-eyebrow">Immobilie mieten</p><h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">Ein Mietgesuch, das wirklich zu <span class="text-gold-gradient">Ihren Kriterien passt.</span></h1><p class="text-lg md:text-xl text-page-bg mb-8">Mietwohnung und Immobilienkauf sind zwei unterschiedliche Vorhaben. Deshalb erhält Ihre Mietsuche bei uns eine eigene Strecke mit eigenem Suchprofil.</p><div class="flex flex-col sm:flex-row gap-3"><a href="#mietgesuch" class="btn-85 py-3 px-7 text-primary font-bold text-center">Mietgesuch anlegen</a><a href="/angebote.html" class="fg-pill-outline">Aktuelle Angebote</a></div></div><div class="lg:col-span-2 fg-journey-side fg-reveal"><span><i class="fas fa-location-dot"></i> Suchgebiet</span><span><i class="fas fa-building"></i> Wohnung, Haus oder Gewerbe</span><span><i class="fas fa-wallet"></i> monatlicher Mietrahmen</span><span><i class="fas fa-user-check"></i> persönliche Vormerkung</span></div></div></div></section>
+<section class="fg-home-v2-section bg-white"><div class="container mx-auto px-4"><div class="fg-home-v2-head fg-reveal"><p class="fg-section-kicker">Gezielter suchen</p><h2>Ihre Mietsuche wird separat erfasst.</h2><p>So vermeiden wir unpassende Kaufangebote und können Suchgebiet, Mietbudget, Größe und Ausstattungswünsche eindeutig als Mietgesuch in unserer Angebotsstruktur hinterlegen.</p></div></div></section>
+{% set searchMarketingType = "RENT" %}{% set searchFormId = "mietgesuch" %}{% set searchEyebrow = "Mietgesuch" %}{% set searchHeadline = "Welche Mietimmobilie suchen Sie?" %}{% set searchIntro = "Hinterlegen Sie Ihre Kriterien. Wir erfassen Ihr Profil ausschließlich als Mietgesuch und informieren Sie, wenn ein passendes Mietangebot vorliegt." %}{% set searchTypeLabel = "Ihr Mietvorhaben" %}{% set searchBudgetLabel = "Monatsmiete bis" %}{% set searchSubmitLabel = "Mietgesuch übermitteln" %}{% set searchSuccessText = "Vielen Dank. Ihr Mietgesuch wurde erfolgreich übermittelt und wird persönlich geprüft." %}{% include "search-profile-form.njk" %}
+
+{% set schemaType = "Service" %}
+{% set schemaName = "Mietimmobilie finden und Mietgesuch anlegen" %}
+{% set schemaDesc = "Mietwohnung oder Haus suchen, ein persönliches Mietgesuch anlegen und für passende Angebote vorgemerkt werden." %}
+{% set schemaPath = "/mieten.html" %}
+{% set schemaCrumb = "Immobilie mieten" %}
+{% set schemaArea = "Berlin, Brandenburg und Sachsen" %}
+{% include "page-schema.njk" %}

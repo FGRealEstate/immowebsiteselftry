@@ -16,7 +16,30 @@
     "verstehen"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Eine niedrige Rücklage kann bei anstehenden Arbeiten zu Sonderumlagen führen. Protokolle, Beschlusssammlung und Instandhaltungsplan sind daher zentral.",
+  "formulae": [
+    "Individueller wirtschaftlicher Anteil = WEG-Rücklage × Miteigentumsanteil – nur grobe Zuordnung"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "WEG-Rücklage 120.000 €",
+      "Miteigentumsanteil 50/1.000"
+    ],
+    "steps": [
+      "rechnerischer Anteil 6.000 €"
+    ],
+    "interpretation": "Die Rücklage gehört dem Verwaltungsvermögen der Gemeinschaft; der rechnerische Anteil ist kein frei verfügbares Guthaben des einzelnen Eigentümers. Höhe muss zum Sanierungsbedarf passen."
+  },
+  "sources": [],
+  "assistantAnswer": "Die Erhaltungsrücklage dient künftigen Maßnahmen am Gemeinschaftseigentum. Die Erhaltungsrücklage gehört der Gemeinschaft und dient zukünftigen Maßnahmen am Gemeinschaftseigentum. Der auf eine Wohnung entfallende rechnerische Anteil ist nicht frei verfügbares Guthaben des einzelnen Eigentümers.",
+  "focusPoints": [
+    "Die Erhaltungsrücklage gehört der Gemeinschaft und dient zukünftigen Maßnahmen am Gemeinschaftseigentum. Der auf eine Wohnung entfallende rechnerische Anteil ist nicht frei verfügbares Guthaben des einzelnen Eigentümers.",
+    "Ein hoher Rücklagenstand ist nur im Verhältnis zu Gebäudestatus und geplanten Maßnahmen aussagekräftig. 100.000 € Rücklage können bei einem kleinen Haus komfortabel und bei großem Sanierungsbedarf unzureichend sein.",
+    "Beim Kauf sollte der Stand mit Protokollen, Wirtschaftsplan und technischer Situation verknüpft werden."
+  ],
+  "decisionUse": "Rücklage pro Einheit oder m² nur als Plausibilitätsgröße verwenden; entscheidend ist der konkrete CapEx-Bedarf des Gemeinschaftseigentums."
 }

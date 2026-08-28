@@ -7,5 +7,11 @@
   "keywords": [
     "sachwert"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Aus Herstellungskosten und Bodenwert abgeleiteter Wert. Sachwert ist ein im Sachwertverfahren abgeleiteter Immobilienwert aus Bodenwert und wertmäßigem Gebäude-/Anlagenbestand unter Marktanpassung. Er ist besonders bei eigennutzungsgeprägten Objekten relevant.",
+  "explanation": "Sachwert ist ein im Sachwertverfahren abgeleiteter Immobilienwert aus Bodenwert und wertmäßigem Gebäude-/Anlagenbestand unter Marktanpassung. Er ist besonders bei eigennutzungsgeprägten Objekten relevant.",
+  "practiceExample": "Hohe Herstellungskosten führen nicht automatisch zu identischem Marktwert; Marktanpassung und objektspezifische Merkmale können den Sachwert verändern."
 }

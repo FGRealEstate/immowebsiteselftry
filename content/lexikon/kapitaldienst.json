@@ -7,5 +7,11 @@
   "keywords": [
     "kapitaldienst"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Finanzierung",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Zins und Tilgung eines Darlehens. Kapitaldienst ist die Summe aus Zins- und Tilgungszahlungen eines Darlehens in einer Periode. Er bestimmt die laufende Liquiditätsbelastung und ist zentral für DSCR und Tragfähigkeitsrechnungen.",
+  "explanation": "Kapitaldienst ist die Summe aus Zins- und Tilgungszahlungen eines Darlehens in einer Periode. Er bestimmt die laufende Liquiditätsbelastung und ist zentral für DSCR und Tragfähigkeitsrechnungen.",
+  "practiceExample": "1.500 € monatliche Annuität ergeben 18.000 € Kapitaldienst pro Jahr."
 }

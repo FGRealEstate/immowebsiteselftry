@@ -7,5 +7,16 @@
   "keywords": [
     "verkehrswert"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [
+    {
+      "label": "§ 194 BauGB",
+      "url": "https://www.gesetze-im-internet.de/bbaug/__194.html"
+    }
+  ],
+  "assistantAnswer": "Marktwert nach den gesetzlichen Bewertungsgrundsätzen. Verkehrswert beziehungsweise Marktwert ist nach § 194 BauGB der Preis, der im gewöhnlichen Geschäftsverkehr unter Berücksichtigung der rechtlichen Gegebenheiten, tatsächlichen Eigenschaften und Lage ohne ungewöhnliche oder persönliche Verhältnisse erzielbar wäre.",
+  "explanation": "Verkehrswert beziehungsweise Marktwert ist nach § 194 BauGB der Preis, der im gewöhnlichen Geschäftsverkehr unter Berücksichtigung der rechtlichen Gegebenheiten, tatsächlichen Eigenschaften und Lage ohne ungewöhnliche oder persönliche Verhältnisse erzielbar wäre.",
+  "practiceExample": "Ein Wunschpreis des Eigentümers oder ein Portal-Angebotspreis ist nicht automatisch Verkehrswert."
 }

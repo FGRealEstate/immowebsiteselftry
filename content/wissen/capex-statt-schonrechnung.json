@@ -19,7 +19,31 @@
     "statt"
   ],
   "synonyms": [],
-  "updated": "2026-07-16",
+  "updated": "2026-08-26",
   "author": "Fischer & Geserich Real Estate GmbH",
-  "related": []
+  "related": [],
+  "definition": "Dach, Fassade, Heizung, Leitungen und energetische Maßnahmen können Renditen stark verändern. Ein technischer Plan über zehn bis zwanzig Jahre schafft Transparenz.",
+  "formulae": [
+    "Nachhaltiger Cashflow = operativer Cashflow − periodisierte Capex-Reserve"
+  ],
+  "example": {
+    "title": "Durchgerechnetes Praxisbeispiel",
+    "assumptions": [
+      "Dach in 10 Jahren voraussichtlich 60.000 €",
+      "Anteil des Investors 15 %",
+      "wirtschaftliche Reserve 9.000 / 10 = 900 € p.a."
+    ],
+    "steps": [
+      "Ohne Capex-Reserve wirkt der jährliche Cashflow um 900 € besser als wirtschaftlich nachhaltig."
+    ],
+    "interpretation": "Capex ist unregelmäßig, aber nicht optional. Eine gute Analyse periodisiert absehbare Großmaßnahmen."
+  },
+  "sources": [],
+  "assistantAnswer": "Größere Investitionen gehören getrennt von laufenden Kosten in die Planung. CapEx sind größere, unregelmäßige Investitionen in die Substanz, etwa Dach, Fassade, Heizung, Leitungen oder Fenster. Sie verschwinden nicht dadurch, dass sie nicht jährlich anfallen.",
+  "focusPoints": [
+    "CapEx sind größere, unregelmäßige Investitionen in die Substanz, etwa Dach, Fassade, Heizung, Leitungen oder Fenster. Sie verschwinden nicht dadurch, dass sie nicht jährlich anfallen.",
+    "Eine reine Jahres-Cashflow-Rechnung ohne CapEx-Reserve überschätzt bei älteren Beständen häufig den nachhaltigen Überschuss.",
+    "Sinnvoll ist eine bauteilbezogene Betrachtung mit Restlebensdauer, erwarteten Kosten und zeitlicher Verteilung anstelle eines pauschalen Schönrechnungswerts."
+  ],
+  "decisionUse": "Der Kaufpreisvorteil eines sanierungsbedürftigen Objekts muss gegen den Barwert künftiger CapEx und mögliche Miet-/Leerstandsfolgen gerechnet werden."
 }

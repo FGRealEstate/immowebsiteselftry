@@ -1,24 +1,15 @@
 {
-  "name": "immowebsiteselftry",
+  "name": "fg-real-estate-website",
   "version": "1.0.0",
-  "description": "",
-  "main": "script.js",
+  "description": "Produktionswebsite von Fischer & Geserich Real Estate",
+  "private": true,
   "scripts": {
-    "start": "npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy"
+    "build:knowledge": "node scripts/generate-assistant-knowledge.js",
+    "build": "npm run build:knowledge && eleventy",
+    "start": "npm run build:knowledge && eleventy --serve"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thaddl275/immowebsiteselftry.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/thaddl275/immowebsiteselftry/issues"
-  },
-  "homepage": "https://github.com/thaddl275/immowebsiteselftry#readme",
   "dependencies": {
     "nodemailer": "^6.9.16"
   },

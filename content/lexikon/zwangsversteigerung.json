@@ -7,5 +7,11 @@
   "keywords": [
     "zwangsversteigerung"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Gerichtliches Verfahren zur Verwertung einer Immobilie. Zwangsversteigerung ist ein gerichtliches Verwertungsverfahren. Erwerber müssen Gutachten, Grundbuch, bestehenbleibende Rechte, Sicherheitsleistung und eingeschränkte Gewährleistung besonders sorgfältig prüfen.",
+  "explanation": "Zwangsversteigerung ist ein gerichtliches Verwertungsverfahren. Erwerber müssen Gutachten, Grundbuch, bestehenbleibende Rechte, Sicherheitsleistung und eingeschränkte Gewährleistung besonders sorgfältig prüfen.",
+  "practiceExample": "Ein Zuschlag unter vermeintlichem Marktwert kann wirtschaftlich unattraktiv werden, wenn erheblicher Sanierungsbedarf oder bestehenbleibende Rechte nicht eingepreist wurden."
 }

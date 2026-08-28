@@ -7,5 +7,11 @@
   "keywords": [
     "unterdeckung"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Situation, in der Erlös oder Wert die Verbindlichkeiten nicht deckt. Unterdeckung liegt vor, wenn vorhandene Mittel oder Erlöse eine Verpflichtung nicht vollständig decken. Bei Immobilien kann sie etwa entstehen, wenn Verkaufserlös nach Kosten unter der offenen Darlehensschuld liegt.",
+  "explanation": "Unterdeckung liegt vor, wenn vorhandene Mittel oder Erlöse eine Verpflichtung nicht vollständig decken. Bei Immobilien kann sie etwa entstehen, wenn Verkaufserlös nach Kosten unter der offenen Darlehensschuld liegt.",
+  "practiceExample": "Nettoverkaufserlös 410.000 € bei 425.000 € Restschuld ergibt 15.000 € Unterdeckung, die aus Eigenmitteln ausgeglichen werden muss."
 }

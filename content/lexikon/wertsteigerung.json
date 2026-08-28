@@ -7,5 +7,11 @@
   "keywords": [
     "wertsteigerung"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-08-26",
+  "category": "Immobilienkauf",
+  "formula": null,
+  "sources": [],
+  "assistantAnswer": "Zunahme des Marktwerts; keine garantierte Größe. Wertsteigerung ist die Zunahme des Marktwerts über die Zeit. Sie ist kein garantierter Cashflow und sollte in Investmentrechnungen als Szenario statt als sichere Renditekomponente behandelt werden.",
+  "explanation": "Wertsteigerung ist die Zunahme des Marktwerts über die Zeit. Sie ist kein garantierter Cashflow und sollte in Investmentrechnungen als Szenario statt als sichere Renditekomponente behandelt werden.",
+  "practiceExample": "300.000 € Kaufpreis bei angenommenen 2 % Wertzuwachs p.a. ergeben nach zehn Jahren rechnerisch rund 365.700 €; der tatsächliche Marktwert kann deutlich davon abweichen."
 }
