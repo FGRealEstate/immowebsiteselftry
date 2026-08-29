@@ -15,6 +15,13 @@ canonicalPath: /kapitalanlage.html
   </div>
 </section>
 <section class="container mx-auto px-4 py-16 md:py-24"><div class="max-w-6xl mx-auto"><div class="text-center mb-12 fg-reveal"><p class="fg-section-kicker">Ihr Investmentpfad</p><h2 class="text-3xl md:text-5xl font-bold text-primary mb-4">Von der Idee zur belastbaren Entscheidung</h2></div><div class="fg-workflow-grid"><article class="fg-workflow-card fg-reveal"><span>01</span><i class="fas fa-bullseye"></i><h3>Strategie</h3><p>Budget, Renditeziel, Risikoprofil und Haltedauer definieren.</p></article><article class="fg-workflow-card fg-reveal"><span>02</span><i class="fas fa-chart-column"></i><h3>Analyse</h3><p>Miete, Kosten, Finanzierung, Cashflow und Entwicklung transparent rechnen.</p></article><article class="fg-workflow-card fg-reveal"><span>03</span><i class="fas fa-handshake"></i><h3>Ankauf</h3><p>Objekt und Finanzierung zusammenführen und die nächsten Schritte koordinieren.</p></article></div></div></section>
+{% set faqItems = mangoTexte.faq.B %}
+{% set faqAnchor = "faq-kapitalanlage" %}
+{% set faqTitle = "Fragen zur Kapitalanlage" %}
+{% set faqIntro = "Wirtschaftlichkeit, Eigenkapital und die nächsten Schritte nach dem Kauf – kompakt eingeordnet." %}
+{% set faqKicker = "Kapitalanlage verstehen" %}
+{% include "faq-block.njk" %}
+
 {% set appointmentMode = "ankauf" %}
 {% include "appointment-booking.njk" %}
 <section class="container mx-auto px-4 pb-16 md:pb-24"><div class="fg-related-journeys"><span>Auch relevant:</span><a href="/angebote.html">Aktuelle Angebote</a><a href="/finanzierungsberatung.html">Finanzierung</a><a href="/ankaufsberatung.html">Ankaufsberatung</a></div></section>

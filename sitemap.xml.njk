@@ -3,14 +3,18 @@ permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{% for page in collections.all %}
-{% if page.url and page.url != "/admin/" and page.url != "/sitemap.xml" %}
-  <url>
-    <loc>https://fg-realestate.de{{ page.url }}</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-{% endif %}
-{% endfor %}
-</urlset>
+<!--
+  Sitemap-Index fuer fg-realestate.de.
+  Fuenf thematische Teil-Sitemaps statt einer Liste: der Abschnitt, in dem eine
+  URL steht, sagt einer Maschine, worum es auf der Seite geht, bevor sie die
+  Seite abruft. Erzeugt aus der Collection `sitemapSections` in .eleventy.js.
+-->
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for section in collections.sitemapSections %}
+  <!-- {{ section.title }}: {{ section.count }} URLs -->
+  <sitemap>
+    <loc>https://fg-realestate.de/sitemap-{{ section.key }}.xml</loc>
+    <lastmod>{{ section.lastmod }}</lastmod>
+  </sitemap>
+{%- endfor %}
+</sitemapindex>
