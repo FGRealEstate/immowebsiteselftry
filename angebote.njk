@@ -14,20 +14,20 @@ permalink: angebote.html
 
 <section id="angebote" class="container mx-auto px-4 py-16">
 
-    <div class="bg-white p-6 rounded-lg shadow-xl mb-10 border-t-4 border-accent">
+    <div class="fg-property-filter-card bg-white p-6 rounded-lg shadow-xl mb-10 border-t-4 border-accent">
         <h2 class="text-2xl font-bold mb-4 text-primary">
             Ihre Immobiliensuche
         </h2>
 
-        <form id="property-filter-form" class="grid grid-cols-1 md:grid-cols-5 gap-4">
-            <select id="filter-vermarktung" class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
+        <form id="property-filter-form" class="fg-property-filter-grid">
+            <select id="filter-vermarktung" class="fg-property-filter-control p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
                 <option value="">Vermarktungsart (Alle)</option>
                 {% for type in propstack.filters.marketingTypes %}
                 <option value="{{ type }}">{{ type }}</option>
                 {% endfor %}
             </select>
 
-            <select id="filter-objektart" class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
+            <select id="filter-objektart" class="fg-property-filter-control p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
                 <option value="">Objektart (Alle)</option>
                 {% for type in propstack.filters.propertyTypes %}
                 <option value="{{ type }}">{{ type }}</option>
@@ -39,10 +39,10 @@ permalink: angebote.html
                 id="filter-preis"
                 inputmode="numeric"
                 placeholder="Max. Kaufpreis (€)"
-                class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary"
+                class="fg-property-filter-control p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary"
             >
 
-            <select id="filter-sortierung" class="p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
+            <select id="filter-sortierung" class="fg-property-filter-control p-3 border border-gray-300 rounded focus:border-primary focus:ring-primary">
                 <option value="">Sortierung</option>
                 <option value="price-asc">Preis aufsteigend</option>
                 <option value="price-desc">Preis absteigend</option>
@@ -51,7 +51,7 @@ permalink: angebote.html
                 <option value="newest">Neueste zuerst</option>
             </select>
 
-            <button type="submit" id="filter-button" class="btn-85 text-primary font-bold rounded py-3 hover:bg-primary hover:text-white transition duration-300 w-full">
+            <button type="submit" id="filter-button" class="fg-property-filter-submit btn-85 text-primary font-bold rounded py-3 hover:bg-primary hover:text-white transition duration-300 w-full">
                 <i class="fas fa-search mr-2"></i> Suchen
             </button>
         </form>

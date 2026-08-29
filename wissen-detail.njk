@@ -1,136 +1,122 @@
----
-layout: base.njk
-pagination:
-  data: labContent.articles
-  size: 1
-  alias: article
-permalink: "wissen/{{ article.slug }}/index.html"
-eleventyComputed:
-  title: "{{ article.title }}"
-  description: "{{ article.summary }}"
----
-<main class="content-detail shell">
-  <nav class="breadcrumbs"><a href="/investment-lab.html">Investment Lab</a><span>›</span><a href="/investment-lab.html#wissen">Immobilienwissen</a><span>›</span><span>{{ article.title }}</span></nav>
-  <article class="science-article science-article-v3">
-    <header class="science-hero science-hero-v3">
-      <span class="lab-kicker">— {{ article.category }} —</span>
-      <h1>{{ article.title }}</h1>
-      <p class="lead">{{ article.summary }}</p>
-      <p class="content-meta">Fischer &amp; Geserich Real Estate GmbH · aktualisiert {{ article.updated }}</p>
-    </header>
+module.exports = function(eleventyConfig) {
+  // Existing helper used by the current website.
+  eleventyConfig.addFilter("pad2", (value) => String(value).padStart(2, "0"));
 
-    {% if article.contentBlocks and article.contentBlocks.length %}
-      {% for block in article.contentBlocks %}
-        {% if block.type == "prose" %}
-          <section class="science-section science-prose-block">
-            {% if block.title %}<h2>{{ block.title }}</h2>{% endif %}
-            {% for paragraph in block.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
-          </section>
+  eleventyConfig.addFilter("json", (value) => {
+    try {
+      return JSON.stringify(value ?? null);
+    } catch (error) {
+      console.warn("JSON filter failed:", error);
+      return "null";
+    }
+  });
 
-        {% elif block.type == "formula" %}
-          <section class="science-section">
-            {% if block.title %}<h2>{{ block.title }}</h2>{% endif %}
-            <div class="lab-formula-card science-formula-card-v3">
-              {% for f in block.formulas %}<div class="lab-formula">{{ f }}</div>{% endfor %}
-              {% if block.explanation %}<p class="science-block-note">{{ block.explanation }}</p>{% endif %}
-            </div>
-          </section>
+  // Related glossary terms for machine-readable internal linking.
+  eleventyConfig.addFilter("relatedTerms", (body, lexicon, limit) => {
+    const text = Array.isArray(body) ? body.join(" ") : String(body || "");
+    const stems = new Set(
+      (text.toLowerCase().match(/[a-zäöüß]{4,}/g) || []).map((word) => word.slice(0, 6))
+    );
+    return (lexicon || [])
+      .filter((entry) => stems.has(entry.term.toLowerCase().slice(0, 6)))
+      .slice(0, limit || 5);
+  });
 
-        {% elif block.type == "metrics" %}
-          <section class="science-section">
-            {% if block.title %}<h2>{{ block.title }}</h2>{% endif %}
-            <div class="science-metric-grid">
-              {% for item in block.items %}
-                <div class="science-metric-card"><span>{{ item.label }}</span><strong>{{ item.value }}</strong>{% if item.note %}<small>{{ item.note }}</small>{% endif %}</div>
-              {% endfor %}
-            </div>
-          </section>
+  const labContent = require("./_data/labContent.js")();
 
-        {% elif block.type == "table" %}
-          <section class="science-section">
-            {% if block.title %}<h2>{{ block.title }}</h2>{% endif %}
-            <div class="science-table-wrap"><table class="science-table"><thead><tr>{% for h in block.headers %}<th>{{ h }}</th>{% endfor %}</tr></thead><tbody>{% for row in block.rows %}<tr>{% for cell in row %}<td>{{ cell }}</td>{% endfor %}</tr>{% endfor %}</tbody></table></div>
-            {% if block.note %}<p class="table-note">{{ block.note }}</p>{% endif %}
-          </section>
+  // Thematic sitemap index. Exact exclusions prevent valid URLs such as
+  // /lexikon/verwaltungskosten/ from disappearing by an overly broad match.
+  const SITEMAP_EXCLUDE_EXACT = new Set(["/404.html"]);
+  const SITEMAP_EXCLUDE_PREFIX = ["/admin/"];
+  const SITEMAP_SECTIONS = [
+    { key: "seiten", title: "Kern- und Serviceseiten" },
+    { key: "angebote", title: "Objektangebote", prefix: "/angebote/" },
+    { key: "lexikon", title: "Immobilienlexikon", prefix: "/lexikon/" },
+    { key: "wissen", title: "Wissensartikel", prefix: "/wissen/" },
+    { key: "standorte", title: "Standortanalysen", prefix: "/standorte/" }
+  ];
 
-        {% elif block.type == "timeline" %}
-          <section class="science-section science-visual-section">
-            {% if block.title %}<h2>{{ block.title }}</h2>{% endif %}
-            {% if block.intro %}<p class="science-visual-intro">{{ block.intro }}</p>{% endif %}
-            <div class="science-horizontal-timeline" style="--timeline-count: {{ block.items.length }}">
-              {% for item in block.items %}
-                <div class="science-horizontal-timeline-item">
-                  <div class="science-horizontal-marker"><span>{{ item.label }}</span></div>
-                  <div class="science-horizontal-copy"><h3>{{ item.title }}</h3><p>{{ item.text }}</p></div>
-                </div>
-              {% endfor %}
-            </div>
-          </section>
+  const sitemapLastmod = (item) => {
+    const data = item.data || {};
+    const stated = (data.entry && data.entry.updated)
+      || (data.article && data.article.updated)
+      || (data.location && data.location.updated);
+    if (stated && /^\d{4}-\d{2}-\d{2}$/.test(stated)) return stated;
+    return (item.date instanceof Date ? item.date : new Date()).toISOString().slice(0, 10);
+  };
 
-        {% elif block.type == "lineChart" %}
-          <section class="science-section science-visual-section">
-            {% if block.title %}<h2>{{ block.title }}</h2>{% endif %}
-            <div class="science-chart-card">
-              <svg class="science-line-chart" viewBox="0 0 {{ block.width }} {{ block.height }}" role="img" aria-label="{{ block.title }}">
-                <g class="science-chart-grid">
-                  {% for y in block.yLabels %}<line x1="70" x2="700" y1="{{ y.y }}" y2="{{ y.y }}"></line><text x="62" y="{{ y.y + 4 }}" text-anchor="end">{{ y.label }}</text>{% endfor %}
-                </g>
-                <g class="science-chart-xlabels">
-                  {% for x in block.xLabels %}<text x="{{ x.x }}" y="278" text-anchor="middle">{{ x.label }}</text>{% endfor %}
-                </g>
-                {% for s in block.series %}
-                  <polyline class="science-chart-line {{ s.className }}" points="{{ s.points }}"></polyline>
-                  {% for dot in s.dots %}<circle class="science-chart-dot {{ s.className }}" cx="{{ dot.x }}" cy="{{ dot.y }}" r="4"><title>{{ s.name }}: {{ dot.value }}</title></circle>{% endfor %}
-                {% endfor %}
-              </svg>
-              <div class="science-chart-legend">{% for s in block.series %}<span class="{{ s.className }}"><i></i>{{ s.name }}</span>{% endfor %}</div>
-              {% if block.note %}<p class="science-block-note">{{ block.note }}</p>{% endif %}
-            </div>
-          </section>
+  eleventyConfig.addCollection("sitemapSections", (api) => {
+    const pages = api.getAll().filter((item) => {
+      const url = item.url;
+      if (!url) return false;
+      if (!(url.endsWith("/") || url.endsWith(".html"))) return false;
+      if (SITEMAP_EXCLUDE_EXACT.has(url)) return false;
+      if (SITEMAP_EXCLUDE_PREFIX.some((prefix) => url.startsWith(prefix))) return false;
+      return true;
+    });
 
-        {% elif block.type == "barChart" %}
-          <section class="science-section science-visual-section">
-            {% if block.title %}<h2>{{ block.title }}</h2>{% endif %}
-            <div class="science-bar-chart">
-              {% for item in block.items %}
-                <div class="science-bar-row">
-                  <div class="science-bar-label"><strong>{{ item.label }}</strong><span>{{ item.value }}</span></div>
-                  <div class="science-bar-track"><span style="width: {{ item.pct }}%"></span></div>
-                </div>
-              {% endfor %}
-            </div>
-            {% if block.note %}<p class="science-block-note">{{ block.note }}</p>{% endif %}
-          </section>
+    const dynamicBySection = {
+      lexikon: (labContent.lexicon || []).map((entry) => ({
+        loc: `/lexikon/${entry.slug}/`,
+        lastmod: entry.updated || new Date().toISOString().slice(0, 10)
+      })),
+      wissen: (labContent.articles || []).map((article) => ({
+        loc: `/wissen/${article.slug}/`,
+        lastmod: article.updated || new Date().toISOString().slice(0, 10)
+      })),
+      standorte: (labContent.locations || []).map((location) => ({
+        loc: `/standorte/${location.slug}/`,
+        lastmod: location.updated || new Date().toISOString().slice(0, 10)
+      }))
+    };
 
-        {% elif block.type == "steps" %}
-          <section class="science-section">
-            {% if block.title %}<h2>{{ block.title }}</h2>{% endif %}
-            <div class="science-process-grid">
-              {% for item in block.items %}<article><span>{{ loop.index | pad2 }}</span><div><h3>{{ item.title }}</h3><p>{{ item.text }}</p></div></article>{% endfor %}
-            </div>
-          </section>
+    const seen = new Set();
+    return SITEMAP_SECTIONS.map((section) => {
+      let sourceUrls;
 
-        {% elif block.type == "callout" %}
-          <section class="science-section science-callout science-callout-{{ block.tone or 'gold' }}">
-            {% if block.title %}<h2>{{ block.title }}</h2>{% endif %}<p>{{ block.text }}</p>
-          </section>
-        {% endif %}
-      {% endfor %}
+      if (dynamicBySection[section.key]) {
+        // Eleventy exposes only the first paginated instance of a template to
+        // collections at collection-creation time. Keep the section index from
+        // the collection, then expand every data-driven detail URL explicitly.
+        const sectionIndex = pages
+          .filter((item) => item.url === section.prefix)
+          .map((item) => ({ loc: item.url, lastmod: sitemapLastmod(item) }));
+        sourceUrls = sectionIndex.concat(dynamicBySection[section.key]);
+      } else {
+        sourceUrls = pages
+          .filter((item) => section.prefix
+            ? item.url.startsWith(section.prefix)
+            : !SITEMAP_SECTIONS.some((candidate) => candidate.prefix && item.url.startsWith(candidate.prefix)))
+          .map((item) => ({ loc: item.url, lastmod: sitemapLastmod(item) }));
+      }
 
-    {% else %}
-      <section class="science-section"><h2>Was der Begriff konkret bedeutet</h2><p>{{ article.definition or article.body }}</p></section>
-      {% if article.focusPoints and article.focusPoints.length %}<section class="science-section"><h2>Was in der Praxis wirklich entscheidend ist</h2><div class="focus-grid">{% for point in article.focusPoints %}<div class="focus-point"><span>{{ loop.index | pad2 }}</span><p>{{ point }}</p></div>{% endfor %}</div></section>{% endif %}
-      {% if article.formulae and article.formulae.length %}<section class="science-section"><h2>Rechenlogik</h2><div class="lab-formula-card">{% for formula in article.formulae %}<div class="lab-formula">{{ formula }}</div>{% endfor %}</div></section>{% endif %}
-      {% if article.example %}<section class="lab-example-section science-section"><h2>{{ article.example.title or "Durchgerechnetes Beispiel" }}</h2><div class="lab-example-grid"><div><h3>Annahmen</h3><ul>{% for item in article.example.assumptions %}<li>{{ item }}</li>{% endfor %}</ul></div><div><h3>Rechnung</h3><ul>{% for item in article.example.steps %}<li>{{ item }}</li>{% endfor %}</ul></div></div>{% if article.example.interpretation %}<div class="lab-interpretation"><strong>Einordnung des Ergebnisses</strong><p>{{ article.example.interpretation }}</p></div>{% endif %}</section>{% endif %}
-      {% if article.comparisonTable %}<section class="science-section"><h2>{{ article.comparisonTable.title }}</h2><div class="science-table-wrap"><table class="science-table"><thead><tr>{% for h in article.comparisonTable.headers %}<th>{{ h }}</th>{% endfor %}</tr></thead><tbody>{% for row in article.comparisonTable.rows %}<tr>{% for cell in row %}<td>{{ cell }}</td>{% endfor %}</tr>{% endfor %}</tbody></table></div>{% if article.comparisonTable.note %}<p class="table-note">{{ article.comparisonTable.note }}</p>{% endif %}</section>{% endif %}
-      {% if article.timeline %}<section class="science-section"><h2>{{ article.timeline.title }}</h2><div class="science-timeline">{% for item in article.timeline.items %}<div class="timeline-item"><div class="timeline-label">{{ item.label }}</div><div><h3>{{ item.title }}</h3><p>{{ item.text }}</p></div></div>{% endfor %}</div></section>{% endif %}
-    {% endif %}
+      const urls = sourceUrls
+        .filter((entry) => (seen.has(entry.loc) ? false : seen.add(entry.loc)))
+        .sort((a, b) => a.loc.localeCompare(b.loc));
 
-    {% if article.decisionUse %}<section class="science-section decision-section decision-section-v3"><span class="lab-kicker">— ENTSCHEIDUNGSRELEVANZ —</span><h2>Was daraus für eine Immobilienentscheidung folgt</h2><p>{{ article.decisionUse }}</p></section>{% endif %}
+      return {
+        key: section.key,
+        title: section.title,
+        count: urls.length,
+        lastmod: urls.reduce((latest, entry) => entry.lastmod > latest ? entry.lastmod : latest, "0000-00-00"),
+        urls
+      };
+    }).filter((section) => section.count > 0);
+  });
 
-    {% if article.sources and article.sources.length %}<section class="lab-source-section science-section"><h2>Quellen &amp; Rechtsgrundlagen</h2><ul>{% for source in article.sources %}<li><a href="{{ source.url }}" target="_blank" rel="noopener noreferrer">{{ source.label }}</a></li>{% endfor %}</ul><p class="lab-source-note">Rechts-, Steuer-, Förder- und Bankbedingungen können sich ändern. Maßgeblich ist der konkrete Einzelfall und der jeweils aktuelle Produkt- bzw. Gesetzesstand.</p></section>{% endif %}
+  // Current site assets and integrations. Propstack/Netlify functions are not
+  // touched here; this only controls build-time passthrough files.
+  [
+    "style.css", "script.js", "fg-assistant.js", "fg-knowledge.js", "fg-assistant.css",
+    "investment-lab.js", "consent-manager.js", "consent-manager.css", "analytics.js",
+    "vendor", "images", "favicon.ico", "videos", "admin", "_redirects"
+  ].forEach((asset) => eleventyConfig.addPassthroughCopy(asset));
 
-    <aside class="article-note"><strong>Hinweis</strong><p>Die Beispiele erläutern die wirtschaftliche Systematik. Sie ersetzen keine individuelle Rechts-, Steuer-, Finanzierungs- oder Anlageberatung.</p></aside>
-    <div class="article-actions"><a class="lab-btn lab-btn-gold" href="/investment-lab.html">Im Investment Lab weiterarbeiten</a><a class="lab-btn lab-btn-ghost" href="/ankaufsberatung.html">Ankaufsberatung</a></div>
-  </article>
-</main>
+  eleventyConfig.addPassthroughCopy({ "BingSiteAuth.xml": "BingSiteAuth.xml" });
+
+  return {
+    dir: { input: ".", output: "_site", includes: "_includes", layouts: "_includes" },
+    markdownTemplateEngine: "liquid",
+    htmlTemplateEngine: "liquid"
+  };
+};

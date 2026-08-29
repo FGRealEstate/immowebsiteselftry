@@ -97,6 +97,13 @@ canonicalPath: /verkaufen.html
   </div>
 </section>
 
+{% set faqItems = mangoTexte.faq.C %}
+{% set faqAnchor = "faq-verkauf" %}
+{% set faqTitle = "Häufige Fragen zum Immobilienverkauf" %}
+{% set faqIntro = "Ablauf, Wertermittlung, Unterlagen und Vermarktung – die Fragen, die Eigentümer vor einem Verkauf besonders häufig stellen." %}
+{% set faqKicker = "Verkauf verständlich" %}
+{% include "faq-block.njk" %}
+
 <section id="kontakt-verkauf" class="fg-contact-section py-8 md:py-14">
   <div class="container mx-auto px-4 text-center mb-2 fg-reveal">
     <p class="fg-section-kicker">Kostenlos &amp; unverbindlich</p>

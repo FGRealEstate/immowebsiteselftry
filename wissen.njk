@@ -1,71 +1,12 @@
 ---
 layout: base.njk
-permalink: "wissen/index.html"
-title: "Wissen - Fachartikel zu Kauf, Verkauf und Finanzierung"
-description: "Fachartikel zu Ankauf, Verkauf, Vermietung, Bewertung und Finanzierung von Wohn- und Anlageimmobilien."
+pagination:
+  data: labContent.locations
+  size: 1
+  alias: location
+permalink: "standorte/{{ location.slug }}/index.html"
+eleventyComputed:
+  title: "Immobilienstandort {{ location.name }}"
+  description: "Kaufpreise, Mieten, Renditeorientierung, Chancen und Risiken für {{ location.name }}."
 ---
-<div class="content-detail shell">
-  <nav class="breadcrumbs"><a href="/index.html">Start</a><span>&rsaquo;</span><span>Wissen</span></nav>
-  <article class="science-article">
-    <header>
-      <h1>Wissen</h1>
-      <p class="lead">{{ labContent.articles | length }} Fachartikel zu Ankauf, Verkauf, Vermietung, Bewertung und Finanzierung von Wohn- und Anlageimmobilien &mdash; jeder Artikel beantwortet eine konkrete Frage, die in einem Kauf- oder Verkaufsprozess tats&auml;chlich gestellt wird.</p>
-    </header>
-    <ul class="lex-index">
-    {%- for entry in labContent.articles %}
-      <li><a href="/wissen/{{ entry.slug }}/"><strong>{{ entry.title }}</strong></a> {{ entry.summary }}</li>
-    {%- endfor %}
-    </ul>
-  </article>
-</div>
-{#
-  O-112 — Übersichtsseite ohne strukturierte Daten. Die Artikel sind jetzt als
-  ItemList ausgezeichnet; die Anzahl kommt aus der Datei, damit sie nicht wie
-  bisher ("62 Fachartikel" bei 65 Artikeln) veralten kann.
-#}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "CollectionPage",
-      "@id": "https://fg-realestate.de/wissen/",
-      "url": "https://fg-realestate.de/wissen/",
-      "name": "Wissen",
-      "description": "{{ labContent.articles | length }} Fachartikel zu Ankauf, Verkauf, Vermietung, Bewertung und Finanzierung von Wohn- und Anlageimmobilien.",
-      "inLanguage": "de-DE",
-      "isPartOf": { "@id": "https://fg-realestate.de/#website" },
-      "about": { "@id": "https://fg-realestate.de/#organization" },
-      "provider": { "@id": "https://fg-realestate.de/#organization" },
-      "breadcrumb": { "@id": "https://fg-realestate.de/wissen/#breadcrumb" },
-      "mainEntity": { "@id": "https://fg-realestate.de/wissen/#artikel" }
-    },
-    {
-      "@type": "ItemList",
-      "@id": "https://fg-realestate.de/wissen/#artikel",
-      "name": "Fachartikel",
-      "numberOfItems": {{ labContent.articles | length }},
-      "itemListOrder": "https://schema.org/ItemListUnordered",
-      "itemListElement": [
-{%- for entry in labContent.articles %}
-        {
-          "@type": "ListItem",
-          "position": {{ loop.index }},
-          "url": "https://fg-realestate.de/wissen/{{ entry.slug }}/",
-          "name": {{ entry.title | json | safe }},
-          "item": { "@id": "https://fg-realestate.de/wissen/{{ entry.slug }}/#artikel" }
-        }{% if not loop.last %},{% endif %}
-{%- endfor %}
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://fg-realestate.de/wissen/#breadcrumb",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
-        { "@type": "ListItem", "position": 2, "name": "Wissen" }
-      ]
-    }
-  ]
-}
-</script>
+<main class="content-detail shell"><nav class="breadcrumbs"><a href="/investment-lab.html">Investment Lab</a><span>›</span><a href="/investment-lab.html#standorte">Standorte</a><span>›</span><span>{{ location.name }}</span></nav><article class="science-article location-page"><header><span class="lab-kicker">{{ location.region }}</span><h1>Standortanalyse {{ location.name }}</h1><p class="lead">Orientierungswerte und qualitative F&amp;G-Einordnung. Angezeigt werden ausschließlich hinterlegte Marktwerte – keine automatisch hochgerechneten Objektpreis-Bandbreiten.</p></header><div class="lab-location-keyfacts-v2"><article><span>Kaufpreisorientierung</span><strong>{{ location.price }}</strong></article><article><span>Mietniveau</span><strong>{{ location.rent }}</strong></article><article><span>Renditeorientierung</span><strong>{{ location.yield }}</strong></article></div><div class="lab-location-analysis-grid"><section><h2>Chancen</h2><p>{{ location.chance }}</p></section><section><h2>Risiken</h2><p>{{ location.risk }}</p></section><section><h2>Infrastruktur</h2><p>{{ location.infra }}</p></section><section><h2>Perspektive</h2><p>{{ location.future }} {{ location.population }}</p></section></div><section><h2>F&amp;G-Einordnung</h2><p>{{ location.view }}</p></section>{% if location.source %}<p class="lab-location-source">Quelle/Orientierung: <a href="{{ location.source }}" target="_blank" rel="noopener noreferrer">externe Marktquelle</a>. Datenstand und Methodik vor Verwendung prüfen.</p>{% endif %}<a class="lab-btn lab-btn-gold" href="/investment-lab.html">Standort im Investment Lab vergleichen</a></article></main>

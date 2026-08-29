@@ -1,18 +1,94 @@
 ---
-pagination:
-  data: collections.sitemapSections
-  size: 1
-  alias: section
-permalink: "sitemap-{{ section.key }}.xml"
-eleventyExcludeFromCollections: true
+layout: base.njk
+permalink: "standorte/index.html"
+title: "Standorte - Berlin, Brandenburg und Sachsen"
+description: "Kaufpreise, Mieten, Chancen und Risiken fuer 16 Standorte in Berlin, Brandenburg und Sachsen."
 ---
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- {{ section.title }} — {{ section.count }} URLs, erzeugt beim Build. -->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{%- for url in section.urls %}
-  <url>
-    <loc>https://fg-realestate.de{{ url.loc }}</loc>
-    <lastmod>{{ url.lastmod }}</lastmod>
-  </url>
+<div class="content-detail shell">
+  <nav class="breadcrumbs"><a href="/index.html">Start</a><span>&rsaquo;</span><span>Standorte</span></nav>
+  <article class="science-article">
+    <header>
+      <h1>Standorte</h1>
+      <p class="lead">Sechzehn Standorte in Berlin, Brandenburg und Sachsen, jeweils mit Kaufpreisorientierung, Mietniveau, Renditeorientierung sowie einer Einordnung von Chancen und Risiken &mdash; als Ausgangspunkt f&uuml;r eine Ankaufspr&uuml;fung, nicht als Ersatz daf&uuml;r.</p>
+    </header>
+
+    <div class="fg-loc-grid">
+    {%- for entry in labContent.locations %}
+      <a class="fg-loc-card" href="/standorte/{{ entry.slug }}/">
+        <span class="fg-loc-region">{{ entry.region }}</span>
+        <h2>{{ entry.name }}</h2>
+        <dl class="fg-loc-facts">
+          <div><dt>Kaufpreis</dt><dd>{{ entry.price }}</dd></div>
+          <div><dt>Miete</dt><dd>{{ entry.rent }}</dd></div>
+          <div><dt>Rendite</dt><dd>{{ entry.yield }}</dd></div>
+        </dl>
+        <span class="fg-loc-more">Standortanalyse <i class="fas fa-arrow-right"></i></span>
+      </a>
+    {%- endfor %}
+    </div>
+
+    {#
+      O-112 — die vier Orte aus dem Maklergebiet, die keine eigene
+      Standortanalyse haben, werden hier benannt statt weggelassen. Vorher
+      standen sie nur in der C6-Antwort auf /verkaufen.html, wodurch die
+      Seite und die FAQ zwei verschiedene Servicegebiete behaupteten. Sie
+      bekommen bewusst keine erfundenen Marktzahlen.
+    #}
+    <section class="fg-loc-extra">
+      <h2>Weitere Orte im Maklergebiet</h2>
+      <p>Diese Orte betreuen wir im Maklergesch&auml;ft, ohne dass daf&uuml;r bislang eine eigene Standortanalyse vorliegt:</p>
+      <ul class="fg-loc-chips">
+      {%- for place in serviceArea.additional %}
+        <li>{{ place.name }}</li>
+      {%- endfor %}
+      </ul>
+      <p class="fg-loc-note">Ab einem Volumen von einer Million Euro sind wir auch &uuml;berregional t&auml;tig. Immobilienfinanzierungen vermitteln wir unabh&auml;ngig vom Standort der Immobilie deutschlandweit.</p>
+    </section>
+  </article>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://fg-realestate.de/standorte/",
+      "url": "https://fg-realestate.de/standorte/",
+      "name": "Standorte",
+      "description": "Kaufpreisorientierung, Mietniveau, Renditeorientierung sowie Chancen und Risiken für 16 Standorte in Berlin, Brandenburg und Sachsen.",
+      "inLanguage": "de-DE",
+      "isPartOf": { "@id": "https://fg-realestate.de/#website" },
+      "about": { "@id": "https://fg-realestate.de/#organization" },
+      "provider": { "@id": "https://fg-realestate.de/#organization" },
+      "breadcrumb": { "@id": "https://fg-realestate.de/standorte/#breadcrumb" },
+      "mainEntity": { "@id": "https://fg-realestate.de/standorte/#liste" }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://fg-realestate.de/standorte/#liste",
+      "name": "Standortanalysen",
+      "numberOfItems": {{ labContent.locations | length }},
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": [
+{%- for entry in labContent.locations %}
+        {
+          "@type": "ListItem",
+          "position": {{ loop.index }},
+          "url": "https://fg-realestate.de/standorte/{{ entry.slug }}/",
+          "name": {{ ("Standortanalyse " + entry.name) | dump | safe }},
+          "item": { "@id": "https://fg-realestate.de/standorte/{{ entry.slug }}/#place" }
+        }{% if not loop.last %},{% endif %}
 {%- endfor %}
-</urlset>
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fg-realestate.de/standorte/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
+        { "@type": "ListItem", "position": 2, "name": "Standorte" }
+      ]
+    }
+  ]
+}
+</script>

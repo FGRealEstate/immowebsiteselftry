@@ -1,12 +1,27 @@
-{
-  "items": [
-    {
-      "titel": "Immo für Reiche",
-      "stadt": "Berlin",
-      "zimmer": 5,
-      "groesse_qm": 175,
-      "kaufpreis": 495000,
-      "bild_url": "/images/slide2.jpg"
-    }
-  ]
-}
+---
+layout: base.njk
+title: Kapitalanlage Immobilien – Fischer & Geserich Real Estate
+permalink: kapitalanlage.html
+description: "Kapitalanlage-Immobilien strukturiert prüfen: Ankauf, Wirtschaftlichkeit, Finanzierung und Investment Lab bei Fischer & Geserich Real Estate."
+canonicalPath: /kapitalanlage.html
+---
+<section class="fg-journey-hero fg-page-hero bg-primary text-white py-16 md:py-24">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <a href="/index.html#ziele" class="fg-back-link"><i class="fas fa-arrow-left"></i> Zurück zur Auswahl</a>
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center mt-8">
+      <div class="lg:col-span-3 fg-reveal"><p class="fg-eyebrow">Für Kapitalanleger</p><h1 class="text-4xl md:text-6xl font-extrabold mb-6">Nicht nur kaufen. <span class="text-gold-gradient">Vorher rechnen.</span></h1><p class="text-lg md:text-xl text-page-bg mb-8">Wir verbinden Ankaufsberatung, Investmentanalyse und Finanzierung zu einem nachvollziehbaren Entscheidungsprozess.</p><div class="flex flex-col sm:flex-row gap-3"><a href="/investment-lab.html" class="btn-85 py-3 px-7 text-primary font-bold rounded-lg text-center"><i class="fas fa-calculator mr-2"></i> Investment Lab öffnen</a><a href="#terminbuchung" class="border border-accent py-3 px-7 rounded-lg font-bold text-center hover:bg-accent hover:text-primary transition">Erstgespräch buchen</a></div></div>
+      <div class="lg:col-span-2 fg-journey-side fg-reveal"><span><i class="fas fa-magnifying-glass-chart"></i> Wirtschaftlichkeit prüfen</span><span><i class="fas fa-coins"></i> Cashflow &amp; Eigenkapital einordnen</span><span><i class="fas fa-building-columns"></i> Finanzierung mitdenken</span><span><i class="fas fa-file-circle-check"></i> Ankauf strukturiert vorbereiten</span></div>
+    </div>
+  </div>
+</section>
+<section class="container mx-auto px-4 py-16 md:py-24"><div class="max-w-6xl mx-auto"><div class="text-center mb-12 fg-reveal"><p class="fg-section-kicker">Ihr Investmentpfad</p><h2 class="text-3xl md:text-5xl font-bold text-primary mb-4">Von der Idee zur belastbaren Entscheidung</h2></div><div class="fg-workflow-grid"><article class="fg-workflow-card fg-reveal"><span>01</span><i class="fas fa-bullseye"></i><h3>Strategie</h3><p>Budget, Renditeziel, Risikoprofil und Haltedauer definieren.</p></article><article class="fg-workflow-card fg-reveal"><span>02</span><i class="fas fa-chart-column"></i><h3>Analyse</h3><p>Miete, Kosten, Finanzierung, Cashflow und Entwicklung transparent rechnen.</p></article><article class="fg-workflow-card fg-reveal"><span>03</span><i class="fas fa-handshake"></i><h3>Ankauf</h3><p>Objekt und Finanzierung zusammenführen und die nächsten Schritte koordinieren.</p></article></div></div></section>
+{% set faqItems = mangoTexte.faq.B %}
+{% set faqAnchor = "faq-kapitalanlage" %}
+{% set faqTitle = "Fragen zur Kapitalanlage" %}
+{% set faqIntro = "Wirtschaftlichkeit, Eigenkapital und die nächsten Schritte nach dem Kauf – kompakt eingeordnet." %}
+{% set faqKicker = "Kapitalanlage verstehen" %}
+{% include "faq-block.njk" %}
+
+{% set appointmentMode = "ankauf" %}
+{% include "appointment-booking.njk" %}
+<section class="container mx-auto px-4 pb-16 md:pb-24"><div class="fg-related-journeys"><span>Auch relevant:</span><a href="/angebote.html">Aktuelle Angebote</a><a href="/finanzierungsberatung.html">Finanzierung</a><a href="/ankaufsberatung.html">Ankaufsberatung</a></div></section>
