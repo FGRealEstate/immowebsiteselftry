@@ -211,7 +211,7 @@ permalink: agb.html
   }
 </style>
 
-<div class="agb-page-shell">
+<main class="agb-page-shell">
   <section class="agb-page">
     <header class="agb-hero">
       <p class="agb-eyebrow">Vertragsgrundlagen</p>
@@ -532,7 +532,7 @@ permalink: agb.html
       </div>
     </article>
   </section>
-</div>
+</main>
 
 <script>
   const headings = document.querySelectorAll("#agbContent h2, #agbContent h3");
@@ -554,48 +554,4 @@ permalink: agb.html
     li.appendChild(a);
     toc.appendChild(li);
   });
-</script>
-
-
-{% comment %}O-114 / F-334 — strukturierte Daten. Liquid-Seite, daher inline statt Include.{% endcomment %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://fg-realestate.de/agb.html",
-      "url": "https://fg-realestate.de/agb.html",
-      "name": "Allgemeine Geschäftsbedingungen",
-      "description": "Allgemeine Geschäftsbedingungen der Fischer & Geserich Real Estate GmbH.",
-      "inLanguage": "de-DE",
-      "isPartOf": {
-        "@id": "https://fg-realestate.de/#website"
-      },
-      "publisher": {
-        "@id": "https://fg-realestate.de/#organization"
-      },
-      "breadcrumb": {
-        "@id": "https://fg-realestate.de/agb.html#breadcrumb"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://fg-realestate.de/agb.html#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Start",
-          "item": "https://fg-realestate.de/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "AGB"
-        }
-      ]
-    }
-  ]
-}
 </script>

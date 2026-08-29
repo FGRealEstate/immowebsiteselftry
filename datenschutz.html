@@ -1,10 +1,10 @@
 ---
 layout: base.njk
 title: Datenschutz
-permalink: /datenschutz/
+permalink: datenschutz.html
 ---
 
-<div class="privacy-page-shell">
+<main class="privacy-page-shell">
   <section class="privacy-hero">
     <p class="privacy-eyebrow">Datenschutz &amp; DSGVO</p>
     <h1>Datenschutzerklärung</h1>
@@ -480,7 +480,7 @@ permalink: /datenschutz/
       </p>
     </article>
   </section>
-</div>
+</main>
 
 
 <script>
@@ -771,47 +771,3 @@ permalink: /datenschutz/
     }
   }
 </style>
-
-
-{% comment %}O-114 / F-334 — strukturierte Daten. Liquid-Seite, daher inline statt Include.{% endcomment %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://fg-realestate.de/datenschutz/",
-      "url": "https://fg-realestate.de/datenschutz/",
-      "name": "Datenschutzerklärung",
-      "description": "Informationen zur Verarbeitung personenbezogener Daten auf fg-realestate.de nach Art. 13 DSGVO.",
-      "inLanguage": "de-DE",
-      "isPartOf": {
-        "@id": "https://fg-realestate.de/#website"
-      },
-      "publisher": {
-        "@id": "https://fg-realestate.de/#organization"
-      },
-      "breadcrumb": {
-        "@id": "https://fg-realestate.de/datenschutz/#breadcrumb"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://fg-realestate.de/datenschutz/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Start",
-          "item": "https://fg-realestate.de/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Datenschutz"
-        }
-      ]
-    }
-  ]
-}
-</script>

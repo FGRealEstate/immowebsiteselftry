@@ -4,11 +4,10 @@ pagination:
   data: propstack.properties
   size: 1
   alias: property
-  addAllPagesToCollections: true
 permalink: "angebote/{{ property.slug }}/index.html"
 ---
 
-<section class="bg-primary text-white py-16 md:py-24">
+<section class="fg-page-hero bg-primary text-white py-16 md:py-24">
     <div class="container mx-auto px-4 text-center">
 
         {% if property.marketing_type or property.property_type %}
@@ -34,7 +33,7 @@ permalink: "angebote/{{ property.slug }}/index.html"
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
 
-        <div class="lg:col-span-2 space-y-8">
+        <main class="lg:col-span-2 space-y-8">
 
             {% if property.gallery and property.gallery.length %}
             <section class="bg-white rounded-xl shadow-xl overflow-hidden">
@@ -126,7 +125,7 @@ permalink: "angebote/{{ property.slug }}/index.html"
             </section>
             {% endif %}
 
-        </div>
+        </main>
 
         <aside class="lg:col-span-1">
             <div class="bg-white rounded-xl shadow-xl p-8 sticky top-8 border-t-4 border-accent">
@@ -254,92 +253,4 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-</script>
-
-{# ------------------------------------------------------------------
-   O-114 / F-334 — strukturierte Daten fuer Objektdetailseiten.
-   Adressfelder und Geokoordinaten nur, wenn Propstack `hide_address`
-   nicht gesetzt hat; sonst bleibt es bei der oeffentlichen Lageangabe.
-   ------------------------------------------------------------------ #}
-{%- set r = property.raw -%}
-{%- set base = "https://fg-realestate.de/angebote/" + property.slug + "/" -%}
-{%- set avail = "https://schema.org/InStock" -%}
-{%- if property.status == "Reserviert" %}{% set avail = "https://schema.org/LimitedAvailability" %}{% endif -%}
-{%- if property.status == "Verkauft" or property.status == "Vermietet" %}{% set avail = "https://schema.org/SoldOut" %}{% endif -%}
-{%- set accType = "Accommodation" -%}
-{%- if property.property_type == "Wohnen" %}{% set accType = "Apartment" %}{% endif -%}
-{%- if property.property_type == "Haus" %}{% set accType = "House" %}{% endif -%}
-{%- set descText = property.descriptions[0].value if property.descriptions and property.descriptions.length else property.title -%}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "RealEstateListing",
-      "@id": "{{ base }}#angebot",
-      "url": "{{ base }}",
-      "name": {{ property.title | json | safe }},
-      "description": {{ descText | json | safe }},
-      "inLanguage": "de-DE",
-      "isPartOf": { "@id": "https://fg-realestate.de/#website" },
-      "provider": { "@id": "https://fg-realestate.de/#organization" },
-      "breadcrumb": { "@id": "{{ base }}#breadcrumb" },
-      "about": { "@id": "{{ base }}#objekt" }{% if property.main_image %},
-      "image": {{ property.gallery | json | safe }}{% endif %}{% if property.price_raw %},
-      "offers": { "@id": "{{ base }}#offer" }{% endif %}
-    },
-    {
-      "@type": "{{ accType }}",
-      "@id": "{{ base }}#objekt",
-      "name": {{ property.title | json | safe }},
-      "url": "{{ base }}",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "DE",
-        "addressLocality": {{ (r.city or property.location) | json | safe }}{% if r.region %},
-        "addressRegion": {{ r.region | json | safe }}{% endif %}{% if not r.hide_address %}{% if r.zip_code %},
-        "postalCode": {{ r.zip_code | json | safe }}{% endif %}{% if r.street %},
-        "streetAddress": {{ (r.street + (" " + r.house_number if r.house_number else "")) | json | safe }}{% endif %}{% endif %}
-      }{% if not r.hide_address and r.lat and r.lng %},
-      "geo": { "@type": "GeoCoordinates", "latitude": {{ r.lat }}, "longitude": {{ r.lng }} }{% endif %}{% if property.living_space_raw %},
-      "floorSize": { "@type": "QuantitativeValue", "value": {{ property.living_space_raw }}, "unitCode": "MTK" }{% endif %}{% if property.rooms_raw %},
-      "numberOfRooms": {{ property.rooms_raw }}{% endif %}{% if property.bedrooms_raw %},
-      "numberOfBedrooms": {{ property.bedrooms_raw }}{% endif %}{% if property.bathrooms_raw %},
-      "numberOfBathroomsTotal": {{ property.bathrooms_raw }}{% endif %}{% if r.floor and r.floor.value %},
-      "floorLevel": {{ r.floor.value | string | json | safe }}{% endif %}{% if r.build_year and r.build_year.value %},
-      "yearBuilt": {{ r.build_year.value }}{% endif %}{% if property.main_image %},
-      "photo": {{ property.main_image | json | safe }}{% endif %},
-      "additionalProperty": [
-        { "@type": "PropertyValue", "name": "Vermarktungsart", "value": {{ property.marketing_type | json | safe }} },
-        { "@type": "PropertyValue", "name": "Objektart", "value": {{ property.property_type | json | safe }} }{% if r.number_of_floors and r.number_of_floors.value %},
-        { "@type": "PropertyValue", "name": "Etagenzahl", "value": {{ r.number_of_floors.value }} }{% endif %}{% if property.status %},
-        { "@type": "PropertyValue", "name": "Status", "value": {{ property.status | json | safe }} }{% endif %}{% if property.price_per_sqm %},
-        { "@type": "PropertyValue", "name": "Preis pro Quadratmeter", "value": {{ property.price_per_sqm | json | safe }} }{% endif %}{% if r.energy_efficiency_class and r.energy_efficiency_class.value %},
-        { "@type": "PropertyValue", "name": "Energieeffizienzklasse", "value": {{ r.energy_efficiency_class.value | json | safe }} }{% endif %}{% if r.thermal_characteristic and r.thermal_characteristic.value %},
-        { "@type": "PropertyValue", "name": "Energieverbrauchskennwert", "value": {{ r.thermal_characteristic.value }}, "unitText": "kWh/(m²·a)" }{% endif %}{% if property.project_name %},
-        { "@type": "PropertyValue", "name": "Projekt", "value": {{ property.project_name | json | safe }} }{% endif %}
-      ]
-    }{% if property.price_raw %},
-    {
-      "@type": "Offer",
-      "@id": "{{ base }}#offer",
-      "url": "{{ base }}",
-      "price": {{ property.price_raw }},
-      "priceCurrency": "EUR",
-      "availability": "{{ avail }}",
-      "businessFunction": "{% if property.marketing_type == "Miete" %}http://purl.org/goodrelations/v1#LeaseOut{% else %}http://purl.org/goodrelations/v1#Sell{% endif %}",
-      "itemOffered": { "@id": "{{ base }}#objekt" },
-      "seller": { "@id": "https://fg-realestate.de/#organization" }
-    }{% endif %},
-    {
-      "@type": "BreadcrumbList",
-      "@id": "{{ base }}#breadcrumb",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
-        { "@type": "ListItem", "position": 2, "name": "Angebote", "item": "https://fg-realestate.de/angebote.html" },
-        { "@type": "ListItem", "position": 3, "name": {{ property.title | json | safe }} }
-      ]
-    }
-  ]
-}
 </script>

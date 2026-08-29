@@ -84,7 +84,7 @@ canonicalPath: /investment-lab.html
   </div>
 </section>
 
-<div class="lab-shell lab-main lab-v3-main" data-investment-lab>
+<main class="lab-shell lab-main lab-v3-main" data-investment-lab>
   <nav class="lab-tabs lab-v3-tabs" aria-label="Investment Lab Bereiche">
     <button class="is-active" data-lab-tab="tools"><i class="fas fa-calculator"></i> Rechner</button>
     <button data-lab-tab="knowledge"><i class="fas fa-book-open"></i> Wissen</button>
@@ -123,7 +123,7 @@ canonicalPath: /investment-lab.html
   </section>
 
   <section class="lab-panel" data-lab-panel="knowledge">
-    <div class="lab-section-head"><div><span class="lab-kicker">IMMOBILIENWISSEN</span><h2>Fundierte Antworten statt isolierter Kennzahlen.</h2><p>Definition, Einordnung, Rechenlogik, Einflussgrößen, Grenzen, Praxisbeispiel und Interpretation.</p></div><div class="lab-search"><input type="search" placeholder="Thema oder Frage suchen …" data-knowledge-search></div></div>
+    <div class="lab-section-head"><div><span class="lab-kicker">IMMOBILIENWISSEN</span><h2>Fundierte Antworten statt isolierter Kennzahlen.</h2><p>62 Fachartikel mit Rechenlogik, durchgerechneten Beispielen, Einflussgrößen, Risiken und – wo relevant – Rechts- bzw. Quellenhinweisen.</p></div><div class="lab-search"><input type="search" placeholder="Thema oder Frage suchen …" data-knowledge-search></div></div>
     <div class="lab-filter-row" data-knowledge-filters></div><div class="lab-article-grid" data-article-grid></div><article class="lab-reader" data-article-reader hidden></article>
   </section>
 
@@ -133,12 +133,12 @@ canonicalPath: /investment-lab.html
   </section>
 
   <section class="lab-panel" data-lab-panel="lexicon">
-    <div class="lab-section-head"><div><span class="lab-kicker">IMMOBILIENLEXIKON</span><h2>Fachbegriffe verständlich und belastbar eingeordnet.</h2><p>Definitionen, Zusammenhänge, Rechenlogiken und praktische Prüffragen.</p></div><div class="lab-search"><input type="search" placeholder="Begriff suchen …" data-lexicon-search></div></div>
+    <div class="lab-section-head"><div><span class="lab-kicker">IMMOBILIENLEXIKON</span><h2>Fachbegriffe verständlich und belastbar eingeordnet.</h2><p>125 Begriffe mit fachlicher Einordnung, Praxisbeispielen, Rechenlogik und Prüffragen – ohne generische Fülltexte.</p></div><div class="lab-search"><input type="search" placeholder="Begriff suchen …" data-lexicon-search></div></div>
     <div class="lab-az" data-az></div><div class="lab-lexicon-list" data-lexicon-list></div><article class="lab-reader lab-lexicon-reader" data-lexicon-reader hidden></article>
   </section>
 
   <section class="lab-cta"><div><span class="lab-kicker">ERGEBNISSE GEMEINSAM EINORDNEN</span><h2>Eine Berechnung zeigt Zusammenhänge. Die Entscheidung braucht Kontext.</h2><p>In der Ankaufsberatung prüfen wir Annahmen, Unterlagen, Finanzierung und Risiken gemeinsam.</p></div><a href="/ankaufsberatung.html" class="lab-btn lab-btn-gold">Ankaufsberatung anfragen</a></section>
-</div>
+</main>
 
 <script>
 document.addEventListener('click', function (event) {
@@ -154,51 +154,3 @@ document.addEventListener('click', function (event) {
 </script>
 <script>window.FG_LAB_DATA={{ labContent | json | safe }};</script>
 <script src="/investment-lab.js" defer></script>
-
-{#
-  O-112 — das Investment Lab ist der Container über Rechnern, Lexikon, Wissen
-  und Standorten, trug aber selbst keine strukturierten Daten. Die vier
-  Sammlungen sind hier als ItemList verlinkt, damit die Beziehung zwischen
-  Container und Inhalt maschinenlesbar ist — dieselbe Beziehung, die die
-  Navigation jetzt auch für Menschen abbildet.
-#}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "CollectionPage",
-      "@id": "https://fg-realestate.de/investment-lab.html",
-      "url": "https://fg-realestate.de/investment-lab.html",
-      "name": "F&G Investment Lab",
-      "description": "Interaktive Immobilienrechner, Fachartikel, Standortanalysen und Lexikon von Fischer & Geserich Real Estate.",
-      "inLanguage": "de-DE",
-      "isPartOf": { "@id": "https://fg-realestate.de/#website" },
-      "about": { "@id": "https://fg-realestate.de/#organization" },
-      "provider": { "@id": "https://fg-realestate.de/#organization" },
-      "breadcrumb": { "@id": "https://fg-realestate.de/investment-lab.html#breadcrumb" },
-      "mainEntity": { "@id": "https://fg-realestate.de/investment-lab.html#bereiche" }
-    },
-    {
-      "@type": "ItemList",
-      "@id": "https://fg-realestate.de/investment-lab.html#bereiche",
-      "name": "Bereiche des Investment Lab",
-      "numberOfItems": 4,
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Immobilienrechner", "url": "https://fg-realestate.de/investitionsrechner.html" },
-        { "@type": "ListItem", "position": 2, "name": "Standorte", "url": "https://fg-realestate.de/standorte/", "item": { "@id": "https://fg-realestate.de/standorte/#liste" } },
-        { "@type": "ListItem", "position": 3, "name": "Wissen", "url": "https://fg-realestate.de/wissen/", "item": { "@id": "https://fg-realestate.de/wissen/#artikel" } },
-        { "@type": "ListItem", "position": 4, "name": "Lexikon", "url": "https://fg-realestate.de/lexikon/", "item": { "@id": "https://fg-realestate.de/lexikon/#begriffe" } }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://fg-realestate.de/investment-lab.html#breadcrumb",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
-        { "@type": "ListItem", "position": 2, "name": "Investment Lab" }
-      ]
-    }
-  ]
-}
-</script>

@@ -6,7 +6,7 @@ description: "Immobilie professionell verkaufen: realistische Marktanalyse, klar
 canonicalPath: /verkaufen.html
 ---
 
-<section class="fg-journey-hero bg-primary text-white py-16 md:py-24">
+<section class="fg-journey-hero fg-page-hero bg-primary text-white py-16 md:py-24">
   <div class="container mx-auto px-4 max-w-6xl">
     <a href="/index.html#ziele" class="fg-back-link"><i class="fas fa-arrow-left"></i> Zurück zur Auswahl</a>
     <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center mt-8">
@@ -74,8 +74,8 @@ canonicalPath: /verkaufen.html
 <section class="container mx-auto px-4 pb-6 md:pb-12">
   <div class="fg-human-story max-w-6xl mx-auto fg-reveal">
     <div class="fg-human-story-images">
-      <img src="/images/webp/A7_01355.jpg" alt="Persönliche Immobilienberatung bei Fischer & Geserich" loading="lazy">
-      <img src="/images/webp/A7_00129.jpg" alt="Fischer & Geserich Real Estate im persönlichen Austausch" loading="lazy">
+      <img src="/images/webp/beratung-timon.webp" alt="Persönliche Immobilienberatung bei Fischer & Geserich" loading="lazy">
+      <img src="/images/webp/beratung-lennart.webp" alt="Fischer & Geserich Real Estate im persönlichen Austausch" loading="lazy">
     </div>
     <div class="fg-human-story-copy">
       <p class="fg-section-kicker">Persönlich an Ihrer Seite</p>
@@ -106,17 +106,3 @@ canonicalPath: /verkaufen.html
   {% set leadDefaultConcern = "Immobilie verkaufen" %}
   {% include "landingpage-lead.njk" %}
 </section>
-
-{% set faqItems = siteFaq.verkauf %}
-{% set faqAnchor = "faq" %}
-{% set faqTitle = "Häufige Fragen zum Immobilienverkauf" %}
-{% set faqKicker = "Verkauf" %}
-{% include "faq-block.njk" %}
-
-
-{% set faqItems = mangoTexte.faq.C %}
-{% set faqAnchor = "faq-verkauf" %}
-{% set faqTitle = "Häufige Fragen von Eigentümern und Verkäufern" %}
-{% include "faq-block.njk" %}
-
-{% include "after-sales-teaser.njk" %}

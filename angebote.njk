@@ -4,15 +4,11 @@ title: Angebote – Das Team von Fischer & Geserich Real Estate
 permalink: angebote.html
 ---
 
-<section class="bg-primary text-white py-16 md:py-24">
+<section class="fg-page-hero bg-primary text-white py-16 md:py-24">
     <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-3">
-            Aktuelle Immobilien-Angebote
-        </h1>
-
-        <p class="text-lg md:text-xl font-light text-secondary max-w-4xl mx-auto">
-            Ob Eigentumswohnung, Mehrfamilienhaus oder Grundstück – wir vermarkten Immobilien mit maximaler Reichweite und Effizienz.
-        </p>
+        <p class="fg-eyebrow">Aktuelle Immobilien</p>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Angebote für Eigennutzer und Investoren.</h1>
+        <p class="text-lg md:text-xl font-light text-page-bg max-w-4xl mx-auto">Wohnungen, Häuser, Mehrfamilienhäuser und ausgewählte Investmentobjekte – transparent strukturiert und direkt anfragbar.</p>
     </div>
 </section>
 
@@ -71,10 +67,10 @@ permalink: angebote.html
     <section class="mb-16" aria-labelledby="project-heading">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-8 border-b-2 border-secondary pb-3">
             <div>
-                <p class="text-sm uppercase tracking-[0.18em] text-accent font-bold mb-2">Zentral über Propstack gesteuert</p>
+                <p class="fg-section-kicker">Projektangebote</p>
                 <h2 id="project-heading" class="text-3xl font-bold text-primary">Immobilienprojekte ({{ propstack.projects | length }})</h2>
             </div>
-            <p class="text-gray-600 max-w-2xl">Hier erscheinen ausschließlich Projekte, die in Propstack selbst den Status „Vermarktung“ besitzen. Einheiten allein können ein Projekt nicht veröffentlichen.</p>
+            <p class="text-gray-600 max-w-2xl">Mehrere verfügbare Einheiten übersichtlich in einem Projekt gebündelt.</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -708,83 +704,4 @@ permalink: angebote.html
         initPropertyFilters();
     }
 })();
-</script>
-
-{#
-  O-112 — die Angebotsübersicht trug bisher keine strukturierten Daten.
-  Ausgezeichnet wird, was die Seite tatsächlich zeigt: die Projekte und die
-  Einzelobjekte. Die Projekteinheiten, die die Startseite zusätzlich einzeln
-  auflistet, stehen hier bewusst nicht drin, weil sie auf dieser Seite nicht
-  gerendert werden (F-327 bleibt davon unberührt und ist weiter offen).
-#}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "CollectionPage",
-      "@id": "https://fg-realestate.de/angebote.html",
-      "url": "https://fg-realestate.de/angebote.html",
-      "name": "Aktuelle Immobilien-Angebote",
-      "description": "Eigentumswohnungen, Mehrfamilienhäuser, Grundstücke und Projekte aus der Vermarktung von Fischer & Geserich Real Estate.",
-      "inLanguage": "de-DE",
-      "isPartOf": { "@id": "https://fg-realestate.de/#website" },
-      "about": { "@id": "https://fg-realestate.de/#organization" },
-      "provider": { "@id": "https://fg-realestate.de/#organization" },
-      "breadcrumb": { "@id": "https://fg-realestate.de/angebote.html#breadcrumb" },
-      "mainEntity": { "@id": "https://fg-realestate.de/angebote.html#liste" }
-    },
-    {
-      "@type": "ItemList",
-      "@id": "https://fg-realestate.de/angebote.html#liste",
-      "name": "Angebote",
-      "numberOfItems": {{ (propstack.projects | length) + (propstack.standaloneProperties | length) }},
-      "itemListOrder": "https://schema.org/ItemListUnordered",
-      "itemListElement": [
-{#- Nunjucks kennt kein `namespace`; die Position wird deshalb aus der Länge
-    der Projektliste plus dem Schleifenindex berechnet, und das Komma steht
-    vorne, damit eine leere zweite Liste kein Komma am Ende hinterlässt. -#}
-{%- for project in propstack.projects %}
-        {% if not loop.first %},{% endif %}{
-          "@type": "ListItem",
-          "position": {{ loop.index }},
-          "url": "https://fg-realestate.de{{ project.url }}",
-          "name": {{ project.name | json | safe }},
-          "item": {
-            "@type": "ApartmentComplex",
-            "name": {{ project.name | json | safe }},
-            "url": "https://fg-realestate.de{{ project.url }}"{% if project.location %},
-            "address": { "@type": "PostalAddress", "addressLocality": {{ project.location | json | safe }}, "addressCountry": "DE" }{% endif %}{% if project.available_unit_count %},
-            "numberOfAvailableAccommodationUnits": {{ project.available_unit_count }}{% endif %}
-          }
-        }
-{%- endfor %}
-{%- for property in propstack.standaloneProperties %}
-        {% if not loop.first or propstack.projects.length %},{% endif %}{
-          "@type": "ListItem",
-          "position": {{ (propstack.projects | length) + loop.index }},
-          "url": "https://fg-realestate.de{{ property.url }}",
-          "name": {{ property.title | json | safe }},
-          "item": {
-            "@type": "Accommodation",
-            "name": {{ property.title | json | safe }},
-            "url": "https://fg-realestate.de{{ property.url }}"{% if property.living_space_raw %},
-            "floorSize": { "@type": "QuantitativeValue", "value": {{ property.living_space_raw }}, "unitCode": "MTK" }{% endif %}{% if property.rooms %},
-            "numberOfRooms": {{ property.rooms | json | safe }}{% endif %}{% if property.location %},
-            "address": { "@type": "PostalAddress", "addressLocality": {{ property.location | json | safe }}, "addressCountry": "DE" }{% endif %}
-          }
-        }
-{%- endfor %}
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://fg-realestate.de/angebote.html#breadcrumb",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
-        { "@type": "ListItem", "position": 2, "name": "Angebote" }
-      ]
-    }
-  ]
-}
 </script>

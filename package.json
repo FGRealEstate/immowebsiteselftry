@@ -1,20 +1,16 @@
 {
   "name": "fg-real-estate-website",
   "version": "1.0.0",
-  "description": "Produktionswebsite von Fischer & Geserich Real Estate",
   "private": true,
-  "scripts": {
-    "build:knowledge": "node scripts/generate-assistant-knowledge.js",
-    "build": "npm run build:knowledge && eleventy",
-    "start": "npm run build:knowledge && eleventy --serve"
-  },
-  "license": "UNLICENSED",
   "type": "commonjs",
+  "scripts": {
+    "build": "npx @11ty/eleventy"
+  },
   "dependencies": {
-    "nodemailer": "^6.9.16"
+    "nodemailer": "6.9.16"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2",
-    "markdown-it": "^14.1.0"
+    "@11ty/eleventy": "3.1.2",
+    "markdown-it": "14.1.0"
   }
 }

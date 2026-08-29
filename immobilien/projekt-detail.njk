@@ -22,7 +22,7 @@ eleventyComputed:
 
 <section class="container mx-auto px-4 py-12 md:py-16">
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
-    <div class="lg:col-span-2 space-y-10">
+    <main class="lg:col-span-2 space-y-10">
       {% if project.gallery and project.gallery.length %}
       <section class="bg-white rounded-2xl shadow-xl overflow-hidden">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-1 bg-gray-100">
@@ -86,7 +86,7 @@ eleventyComputed:
         <div class="bg-white rounded-2xl shadow p-8 text-center text-gray-600">Aktuell sind in diesem Projekt keine Einheiten zur Veröffentlichung freigegeben.</div>
         {% endif %}
       </section>
-    </div>
+    </main>
 
     <aside class="lg:col-span-1">
       <div class="bg-white rounded-2xl shadow-xl p-7 sticky top-28 border-t-4 border-accent">
@@ -108,89 +108,3 @@ eleventyComputed:
   </div>
 </section>
 
-
-{# ------------------------------------------------------------------
-   O-114 / F-334 — strukturierte Daten fuer die Projektseite.
-   ApartmentComplex + ItemList der Einheiten + AggregateOffer.
-   ------------------------------------------------------------------ #}
-{%- set pbase = "https://fg-realestate.de/projekte/" + project.slug + "/" -%}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "{{ pbase }}",
-      "url": "{{ pbase }}",
-      "name": {{ project.name | json | safe }},
-      "description": {{ (project.description or (project.name + " – Immobilienprojekt in " + (project.location or "Berlin"))) | json | safe }},
-      "inLanguage": "de-DE",
-      "isPartOf": { "@id": "https://fg-realestate.de/#website" },
-      "provider": { "@id": "https://fg-realestate.de/#organization" },
-      "about": { "@id": "{{ pbase }}#projekt" },
-      "breadcrumb": { "@id": "{{ pbase }}#breadcrumb" }
-    },
-    {
-      "@type": "ApartmentComplex",
-      "@id": "{{ pbase }}#projekt",
-      "name": {{ project.name | json | safe }},
-      "url": "{{ pbase }}",
-      "numberOfAvailableAccommodationUnits": {{ project.available_unit_count }},
-      "numberOfAccommodationUnits": {{ project.total_units_declared or project.unit_count }},
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "DE",
-        "addressLocality": {{ (project.location or "Berlin") | json | safe }}{% if project.address %},
-        "streetAddress": {{ project.address | json | safe }}{% endif %}
-      }{% if project.main_image %},
-      "photo": {{ project.main_image | json | safe }},
-      "image": {{ project.gallery | json | safe }}{% endif %}{% if project.construction_year %},
-      "yearBuilt": {{ project.construction_year | json | safe }}{% endif %},
-      "containsPlace": [
-        {%- for unit in project.units %}
-        { "@id": "https://fg-realestate.de/angebote/{{ unit.slug }}/#objekt" }{% if not loop.last %},{% endif %}
-        {%- endfor %}
-      ],
-      "additionalProperty": [
-        { "@type": "PropertyValue", "name": "Vermarktungsart", "value": {{ project.marketing_type | json | safe }} },
-        { "@type": "PropertyValue", "name": "Status", "value": {{ project.status | json | safe }} }{% if project.area_range %},
-        { "@type": "PropertyValue", "name": "Wohnflächen", "value": {{ project.area_range | json | safe }} }{% endif %}{% if project.room_range %},
-        { "@type": "PropertyValue", "name": "Zimmer", "value": {{ project.room_range | json | safe }} }{% endif %}{% if project.completion_date %},
-        { "@type": "PropertyValue", "name": "Fertigstellung", "value": {{ project.completion_date | json | safe }} }{% endif %}
-      ]
-    }{% if project.min_price_raw %},
-    {
-      "@type": "AggregateOffer",
-      "@id": "{{ pbase }}#offers",
-      "url": "{{ pbase }}",
-      "priceCurrency": "EUR",
-      "lowPrice": {{ project.min_price_raw }},
-      "highPrice": {{ project.max_price_raw }},
-      "offerCount": {{ project.available_unit_count }},
-      "availability": "https://schema.org/InStock",
-      "itemOffered": { "@id": "{{ pbase }}#projekt" },
-      "seller": { "@id": "https://fg-realestate.de/#organization" }
-    }{% endif %},
-    {
-      "@type": "ItemList",
-      "@id": "{{ pbase }}#einheiten",
-      "name": {{ ("Einheiten im Projekt " + project.name) | json | safe }},
-      "numberOfItems": {{ project.units | length }},
-      "itemListElement": [
-        {%- for unit in project.units %}
-        { "@type": "ListItem", "position": {{ loop.index }}, "url": "https://fg-realestate.de/angebote/{{ unit.slug }}/", "name": {{ unit.title | json | safe }} }{% if not loop.last %},{% endif %}
-        {%- endfor %}
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "{{ pbase }}#breadcrumb",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
-        { "@type": "ListItem", "position": 2, "name": "Angebote", "item": "https://fg-realestate.de/angebote.html" },
-        { "@type": "ListItem", "position": 3, "name": {{ project.name | json | safe }} }
-      ]
-    }
-  ]
-}
-</script>

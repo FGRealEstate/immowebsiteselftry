@@ -232,7 +232,7 @@ permalink: impressum.html
   }
 </style>
 
-<div class="legal-page-shell">
+<main class="legal-page-shell">
   <section class="legal-page">
     <header class="legal-hero">
       <p class="legal-eyebrow">Rechtliche Angaben</p>
@@ -429,48 +429,4 @@ permalink: impressum.html
       </div>
     </article>
   </section>
-</div>
-
-
-{% comment %}O-114 / F-334 — strukturierte Daten. Liquid-Seite, daher inline statt Include.{% endcomment %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://fg-realestate.de/impressum.html",
-      "url": "https://fg-realestate.de/impressum.html",
-      "name": "Impressum",
-      "description": "Anbieterkennzeichnung der Fischer & Geserich Real Estate GmbH nach § 5 TMG, einschließlich Erlaubnis nach § 34c und § 34i GewO.",
-      "inLanguage": "de-DE",
-      "isPartOf": {
-        "@id": "https://fg-realestate.de/#website"
-      },
-      "publisher": {
-        "@id": "https://fg-realestate.de/#organization"
-      },
-      "breadcrumb": {
-        "@id": "https://fg-realestate.de/impressum.html#breadcrumb"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://fg-realestate.de/impressum.html#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Start",
-          "item": "https://fg-realestate.de/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Impressum"
-        }
-      ]
-    }
-  ]
-}
-</script>
+</main>

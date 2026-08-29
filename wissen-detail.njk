@@ -4,28 +4,22 @@ pagination:
   data: labContent.articles
   size: 1
   alias: article
-  addAllPagesToCollections: true
 permalink: "wissen/{{ article.slug }}/index.html"
 eleventyComputed:
   title: "{{ article.title }}"
   description: "{{ article.summary }}"
 ---
-<div class="content-detail shell">
-  <nav class="breadcrumbs"><a href="/index.html">Start</a><span>&rsaquo;</span><a href="/wissen/">Wissen</a><span>›</span><span>{{ article.title }}</span></nav>
+<main class="content-detail shell">
+  <nav class="breadcrumbs"><a href="/investment-lab.html">Investment Lab</a><span>›</span><a href="/investment-lab.html#wissen">Immobilienwissen</a><span>›</span><span>{{ article.title }}</span></nav>
   <article class="science-article science-article-v3">
     <header class="science-hero science-hero-v3">
       <span class="lab-kicker">— {{ article.category }} —</span>
       <h1>{{ article.title }}</h1>
-      <p class="lead">{% if article.lead %}{{ article.lead }}{% else %}{{ article.summary }}{% endif %}</p>
+      <p class="lead">{{ article.summary }}</p>
       <p class="content-meta">Fischer &amp; Geserich Real Estate GmbH · aktualisiert {{ article.updated }}</p>
     </header>
 
-    {% if article.htmlBlocks and article.htmlBlocks.length %}
-      <section class="science-section science-prose-block">
-        {% for block in article.htmlBlocks %}{{ block | safe }}{% endfor %}
-      </section>
-
-    {% elif article.contentBlocks and article.contentBlocks.length %}
+    {% if article.contentBlocks and article.contentBlocks.length %}
       {% for block in article.contentBlocks %}
         {% if block.type == "prose" %}
           <section class="science-section science-prose-block">
@@ -134,66 +128,9 @@ eleventyComputed:
 
     {% if article.decisionUse %}<section class="science-section decision-section decision-section-v3"><span class="lab-kicker">— ENTSCHEIDUNGSRELEVANZ —</span><h2>Was daraus für eine Immobilienentscheidung folgt</h2><p>{{ article.decisionUse }}</p></section>{% endif %}
 
-    {% set related = article.body | relatedTerms(labContent.lexicon, 5) %}
-    {% if related.length %}
-      <section class="science-section">
-        <h2>Begriffe in diesem Artikel</h2>
-        <ul>{% for entry in related %}<li><a href="/lexikon/{{ entry.slug }}/">{{ entry.term }}</a> &mdash; {{ entry.definition }}</li>{% endfor %}</ul>
-      </section>
-    {% endif %}
-
     {% if article.sources and article.sources.length %}<section class="lab-source-section science-section"><h2>Quellen &amp; Rechtsgrundlagen</h2><ul>{% for source in article.sources %}<li><a href="{{ source.url }}" target="_blank" rel="noopener noreferrer">{{ source.label }}</a></li>{% endfor %}</ul><p class="lab-source-note">Rechts-, Steuer-, Förder- und Bankbedingungen können sich ändern. Maßgeblich ist der konkrete Einzelfall und der jeweils aktuelle Produkt- bzw. Gesetzesstand.</p></section>{% endif %}
 
     <aside class="article-note"><strong>Hinweis</strong><p>Die Beispiele erläutern die wirtschaftliche Systematik. Sie ersetzen keine individuelle Rechts-, Steuer-, Finanzierungs- oder Anlageberatung.</p></aside>
     <div class="article-actions"><a class="lab-btn lab-btn-gold" href="/investment-lab.html">Im Investment Lab weiterarbeiten</a><a class="lab-btn lab-btn-ghost" href="/ankaufsberatung.html">Ankaufsberatung</a></div>
   </article>
-
-  {% if article.faq %}
-    {% set faqItems = article.faq %}
-    {% set faqAnchor = "faq-artikel" %}
-    {% set faqTitle = "Häufige Fragen zu diesem Thema" %}
-    {% include "faq-block.njk" %}
-  {% endif %}
-</div>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Article",
-      "@id": "https://fg-realestate.de/wissen/{{ article.slug }}/#artikel",
-      "headline": {{ article.title | json | safe }},
-      "description": {{ article.summary | json | safe }},
-      "articleSection": {{ article.category | json | safe }},
-      "url": "https://fg-realestate.de/wissen/{{ article.slug }}/",
-      "inLanguage": "de-DE",
-      "dateModified": {{ article.updated | json | safe }},
-      "author": { "@id": "https://fg-realestate.de/#organization" },
-      "publisher": { "@id": "https://fg-realestate.de/#organization" },
-      "isPartOf": { "@id": "https://fg-realestate.de/#website" },
-      "mainEntityOfPage": { "@id": "https://fg-realestate.de/wissen/{{ article.slug }}/" }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://fg-realestate.de/wissen/{{ article.slug }}/",
-      "url": "https://fg-realestate.de/wissen/{{ article.slug }}/",
-      "name": {{ article.title | json | safe }},
-      "description": {{ article.summary | json | safe }},
-      "inLanguage": "de-DE",
-      "isPartOf": { "@id": "https://fg-realestate.de/#website" },
-      "provider": { "@id": "https://fg-realestate.de/#organization" },
-      "breadcrumb": { "@id": "https://fg-realestate.de/wissen/{{ article.slug }}/#breadcrumb" }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://fg-realestate.de/wissen/{{ article.slug }}/#breadcrumb",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
-        { "@type": "ListItem", "position": 2, "name": "Wissen", "item": "https://fg-realestate.de/wissen/" },
-        { "@type": "ListItem", "position": 3, "name": {{ article.title | json | safe }} }
-      ]
-    }
-  ]
-}
-</script>
+</main>

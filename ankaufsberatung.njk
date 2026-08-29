@@ -7,7 +7,7 @@ canonicalPath: /ankaufsberatung.html
 ogTitle: "Ankaufsberatung für Immobilienkäufer"
 ogDescription: "Von der Strategie über die Objektprüfung und Finanzierung bis zum Notartermin – persönliche Ankaufsberatung für Kapitalanleger und Eigennutzer."
 ---
-<section class="fg-journey-hero bg-primary text-white py-16 md:py-24">
+<section class="fg-journey-hero fg-page-hero bg-primary text-white py-16 md:py-24">
   <div class="container mx-auto px-4 max-w-6xl">
     <a href="/index.html#ziele" class="fg-back-link"><i class="fas fa-arrow-left"></i> Zurück zur Auswahl</a>
     <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center mt-8">
@@ -18,7 +18,7 @@ ogDescription: "Von der Strategie über die Objektprüfung und Finanzierung bis 
         <a href="#terminbuchung" class="btn-85 inline-flex items-center gap-2 py-3 px-7 text-primary font-bold rounded-lg"><i class="fas fa-calendar-check"></i> Erstgespräch vereinbaren</a>
       </div>
       <div class="lg:col-span-2 fg-human-hero-card fg-reveal">
-        <img src="/images/webp/A7_01355.jpg" alt="Persönliche Ankaufsberatung Fischer & Geserich" loading="lazy">
+        <img src="/images/webp/beratung-timon.webp" alt="Persönliche Ankaufsberatung Fischer & Geserich" loading="lazy">
         <div><span>Persönlich statt standardisiert</span><strong>Vom Suchprofil bis zum Notartermin.</strong></div>
       </div>
     </div>
@@ -90,17 +90,3 @@ function switchTab(type) {
   btnOwner.classList.toggle('is-active', !isInvestor);
 }
 </script>
-
-{% set faqItems = siteFaq.ankauf %}
-{% set faqAnchor = "faq" %}
-{% set faqTitle = "Häufige Fragen zur Ankaufsberatung" %}
-{% set faqKicker = "Ankauf" %}
-{% include "faq-block.njk" %}
-
-
-{% set faqItems = mangoTexte.faq.B %}
-{% set faqAnchor = "faq-ankauf" %}
-{% set faqTitle = "Häufige Fragen von Käufern und Kapitalanlegern" %}
-{% include "faq-block.njk" %}
-
-{% include "after-sales-teaser.njk" %}

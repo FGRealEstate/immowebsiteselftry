@@ -23,7 +23,7 @@
     <meta name="description" content="{{ metaDescription }}">
     <meta name="application-name" content="{{ siteName }}">
     <meta name="apple-mobile-web-app-title" content="{{ siteName }}">
-    <meta name="robots" content="{{ robots or 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' }}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="{{ canonicalUrl }}">
 
     <!-- Eindeutiger Markenname für Google, Bing und soziale Netzwerke -->
@@ -43,248 +43,52 @@
 
     {% if currentPath == "/" %}
     <!-- Site-Name und Unternehmen: nur auf der kanonischen Startseite -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
+    <script type="application/ld+json">
     {
-      "@type": "WebSite",
-      "@id": "https://fg-realestate.de/#website",
-      "url": "https://fg-realestate.de/",
-      "name": "Fischer & Geserich Real Estate",
-      "alternateName": ["Fischer & Geserich", "F&G Real Estate"],
-      "inLanguage": "de-DE",
-      "publisher": { "@id": "https://fg-realestate.de/#organization" }
-    },
-    {
-      "@type": ["Organization", "RealEstateAgent"],
-      "@id": "https://fg-realestate.de/#organization",
-      "name": "Fischer & Geserich Real Estate GmbH",
-      "legalName": "Fischer & Geserich Real Estate GmbH",
-      "alternateName": ["Fischer & Geserich", "F&G Real Estate", "FG Immobilien"],
-      "url": "https://fg-realestate.de/",
-      "description": "Fischer & Geserich Real Estate GmbH ist ein Berliner Immobilienunternehmen mit Erlaubnis nach § 34c Abs. 1 GewO (Immobilienmakler) und § 34i Abs. 1 GewO (Immobiliardarlehensvermittler). Das Unternehmen vermittelt Wohn- und Anlageimmobilien in Berlin und im Berliner Umland, berät Käufer beim Ankauf von Kapitalanlagen und vermittelt Immobilienfinanzierungen deutschlandweit. Geschäftsführer sind Timon Fischer (Finanzierung) und Lennart Geserich (Vertrieb).",
-      "logo": {
-        "@type": "ImageObject",
-        "@id": "https://fg-realestate.de/#logo",
-        "url": "https://fg-realestate.de/images/fg-logo-gold-transparent.png",
-        "caption": "Fischer & Geserich Real Estate GmbH"
-      },
-      "image": { "@id": "https://fg-realestate.de/#logo" },
-      "email": "info@fg-realestate.de",
-      "telephone": "+4915203083048",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Schützenstraße 30",
-        "postalCode": "12165",
-        "addressLocality": "Berlin",
-        "addressRegion": "Berlin",
-        "addressCountry": "DE"
-      },
-      "contactPoint": [
+      "@context": "https://schema.org",
+      "@graph": [
         {
-          "@type": "ContactPoint",
-          "contactType": "sales",
-          "telephone": "+4915203083048",
-          "email": "info@fg-realestate.de",
-          "availableLanguage": ["de", "en"],
-          "areaServed": "DE"
-        }
-      ],
-      "vatID": "DE460407977",
-      "identifier": [
-        {
-          "@type": "PropertyValue",
-          "name": "Handelsregisternummer",
-          "value": "HRB 283559 B",
-          "description": "Amtsgericht Charlottenburg"
-        },
-        {
-          "@type": "PropertyValue",
-          "propertyID": "EUID",
-          "name": "European Unique Identifier",
-          "value": "DEF1103R.HRB283559B"
-        }
-      ],
-      "hasCredential": [
-        {
-          "@type": "EducationalOccupationalCredential",
-          "@id": "https://fg-realestate.de/#erlaubnis-34c",
-          "name": "Erlaubnis nach § 34c Abs. 1 GewO",
-          "credentialCategory": "Gewerbeerlaubnis",
-          "description": "Erlaubnis für die Tätigkeit als Immobilienmakler nach § 34c Abs. 1 GewO.",
-          "recognizedBy": {
-            "@type": "GovernmentOrganization",
-            "@id": "https://fg-realestate.de/#aufsicht-ordnungsamt",
-            "name": "Bezirksamt Steglitz-Zehlendorf von Berlin, Ordnungsamt",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Unter den Eichen 1",
-              "postalCode": "12203",
-              "addressLocality": "Berlin",
-              "addressCountry": "DE"
-            }
+          "@type": "WebSite",
+          "@id": "https://fg-realestate.de/#website",
+          "url": "https://fg-realestate.de/",
+          "name": "Fischer & Geserich Real Estate",
+          "alternateName": [
+            "Fischer & Geserich",
+            "F&G Real Estate"
+          ],
+          "inLanguage": "de-DE",
+          "publisher": {
+            "@id": "https://fg-realestate.de/#organization"
           }
         },
         {
-          "@type": "EducationalOccupationalCredential",
-          "@id": "https://fg-realestate.de/#erlaubnis-34i",
-          "name": "Erlaubnis nach § 34i Abs. 1 GewO",
-          "credentialCategory": "Gewerbeerlaubnis",
-          "description": "Erlaubnis als unabhängiger Immobiliardarlehensvermittler nach § 34i Abs. 1 GewO. Eintragung im Vermittlerregister gemäß § 11a GewO unter der Registrierungsnummer D-W-107-K3SJ-23, Registerstelle Deutscher Industrie- und Handelskammertag (DIHK) e. V.",
-          "identifier": {
-            "@type": "PropertyValue",
-            "name": "Registrierungsnummer Vermittlerregister",
-            "value": "D-W-107-K3SJ-23"
+          "@type": ["Organization", "RealEstateAgent"],
+          "@id": "https://fg-realestate.de/#organization",
+          "name": "Fischer & Geserich Real Estate",
+          "alternateName": "Fischer & Geserich Real Estate",
+          "url": "https://fg-realestate.de/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://fg-realestate.de/images/fg-logo-gold-transparent.png"
           },
-          "recognizedBy": { "@id": "https://fg-realestate.de/#aufsicht-ordnungsamt" }
+          "image": "https://fg-realestate.de/images/fg-logo-gold-transparent.png",
+          "email": "info@fg-realestate.de",
+          "telephone": "+49 152 03083048",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schützenstraße 30",
+            "postalCode": "12165",
+            "addressLocality": "Berlin",
+            "addressCountry": "DE"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/fischer-geserich-real-estate-gmbh/",
+            "https://www.instagram.com/fg.immobilien/"
+          ]
         }
-      ],
-      "founder": [
-        { "@id": "https://fg-realestate.de/ueber-uns.html#timon-fischer" },
-        { "@id": "https://fg-realestate.de/ueber-uns.html#lennart-geserich" }
-      ],
-      "employee": [
-        { "@id": "https://fg-realestate.de/ueber-uns.html#timon-fischer" },
-        { "@id": "https://fg-realestate.de/ueber-uns.html#lennart-geserich" }
-      ],
-      "knowsAbout": [
-        "Immobilienverkauf",
-        "Kapitalanlageimmobilien",
-        "Mehrfamilienhäuser",
-        "Immobilienfinanzierung",
-        "Ankaufsberatung",
-        "Immobilienbewertung",
-        "Berliner Immobilienmarkt"
-      ],
-      {#- O-112: eine Quelle für das Servicegebiet (_data/serviceArea.js). Die
-          sechzehn Standortseiten, dieser Graph und die Standorte-Seite lesen
-          dieselbe Liste; die vier Orte ohne eigene Analyseseite sind darin
-          enthalten, weil sie zum Maklergebiet gehören. -#}
-      "areaServed": [
-{%- for place in serviceArea.all %}
-        { "@type": "City", "name": {{ place.name | dump | safe }}{% if place.hasPage %}, "@id": "https://fg-realestate.de/standorte/{{ place.slug }}/#place"{% endif %} }{% if not loop.last %},{% endif %}
-{%- endfor %}
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "@id": "https://fg-realestate.de/#leistungen",
-        "name": "Leistungen der Fischer & Geserich Real Estate GmbH",
-        "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/verkaufen.html#service" } },
-          { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/ankaufsberatung.html#service" } },
-          { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/finanzierungsberatung.html#service" } },
-          { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/kapitalanlage.html#service" } },
-          { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/mehrfamilienhaus.html#service" } },
-          { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/vermieten.html#service" } },
-          { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/mieten.html#service" } }
-        ]
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/fischer-geserich-real-estate-gmbh/",
-        "https://www.instagram.com/fg.immobilien/",
-        "https://openregister.de/company/DE-HRB-F1103-283559"
       ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://fg-realestate.de/ueber-uns.html#timon-fischer",
-      "name": "Timon Fischer",
-      "givenName": "Timon",
-      "familyName": "Fischer",
-      "jobTitle": "Geschäftsführer",
-      "description": "Geschäftsführer der Fischer & Geserich Real Estate GmbH mit Schwerpunkt Immobilienfinanzierung. Verantwortet die Vermittlung von Immobiliardarlehen nach § 34i Abs. 1 GewO.",
-      "knowsAbout": ["Immobilienfinanzierung", "Annuitätendarlehen", "Beleihungswert", "Kapitalanlagefinanzierung"],
-      "worksFor": { "@id": "https://fg-realestate.de/#organization" },
-      "affiliation": { "@id": "https://fg-realestate.de/#organization" },
-      "url": "https://fg-realestate.de/ueber-uns.html",
-      "sameAs": ["https://www.linkedin.com/in/timon-fischer/"]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://fg-realestate.de/ueber-uns.html#lennart-geserich",
-      "name": "Lennart Geserich",
-      "givenName": "Lennart",
-      "familyName": "Geserich",
-      "jobTitle": "Geschäftsführer",
-      "description": "Geschäftsführer der Fischer & Geserich Real Estate GmbH mit Schwerpunkt Vertrieb und Maklergeschäft. Verantwortet die Vermarktung von Wohn- und Anlageimmobilien nach § 34c Abs. 1 GewO.",
-      "knowsAbout": ["Immobilienvertrieb", "Maklergeschäft", "Immobilienbewertung", "Berliner Wohnungsmarkt"],
-      "worksFor": { "@id": "https://fg-realestate.de/#organization" },
-      "affiliation": { "@id": "https://fg-realestate.de/#organization" },
-      "url": "https://fg-realestate.de/ueber-uns.html",
-      "sameAs": ["https://www.linkedin.com/in/lennart-geserich-b413bb38a/"]
-    },
-    {
-      "@type": "Service",
-      "@id": "https://fg-realestate.de/verkaufen.html#service",
-      "name": "Vertrieb & Maklergeschäft",
-      "serviceType": "Immobilienverkauf",
-      "description": "Vermarktung von Wohn- und Anlageimmobilien in Berlin und im Berliner Umland: Bewertung, Vermarktungsstrategie, Käuferansprache und Begleitung bis zum Notartermin.",
-      "url": "https://fg-realestate.de/verkaufen.html",
-      "provider": { "@id": "https://fg-realestate.de/#organization" },
-      "areaServed": [
-        { "@type": "City", "name": "Berlin" },
-        { "@type": "AdministrativeArea", "name": "Berliner Umland" }
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": "https://fg-realestate.de/ankaufsberatung.html#service",
-      "name": "Ankaufsberatung",
-      "serviceType": "Ankaufsberatung Kapitalanlage",
-      "description": "Ganzheitliche Beratung beim Ankauf von Kapitalanlageimmobilien: Objektauswahl, Ankaufsprüfung, Renditerechnung und Begleitung der Kaufentscheidung.",
-      "url": "https://fg-realestate.de/ankaufsberatung.html",
-      "provider": { "@id": "https://fg-realestate.de/#organization" }
-    },
-    {
-      "@type": "Service",
-      "@id": "https://fg-realestate.de/finanzierungsberatung.html#service",
-      "name": "Finanzierungsvermittlung",
-      "serviceType": "Immobilienfinanzierung",
-      "description": "Unabhängige Vermittlung von Immobiliardarlehen nach § 34i Abs. 1 GewO, deutschlandweit: Konditionsvergleich, Strukturierung und Begleitung bis zur Auszahlung.",
-      "url": "https://fg-realestate.de/finanzierungsberatung.html",
-      "provider": { "@id": "https://fg-realestate.de/#organization" },
-      "areaServed": { "@type": "Country", "name": "Deutschland" }
-    },
-    {
-      "@type": "Service",
-      "@id": "https://fg-realestate.de/kapitalanlage.html#service",
-      "name": "Kapitalanlageimmobilien",
-      "serviceType": "Vermittlung von Kapitalanlageimmobilien",
-      "description": "Vermittlung vermieteter Eigentumswohnungen und Anlageobjekte an private und institutionelle Käufer.",
-      "url": "https://fg-realestate.de/kapitalanlage.html",
-      "provider": { "@id": "https://fg-realestate.de/#organization" }
-    },
-    {
-      "@type": "Service",
-      "@id": "https://fg-realestate.de/mehrfamilienhaus.html#service",
-      "name": "Mehrfamilienhäuser & Zinshäuser",
-      "serviceType": "Vermittlung von Mehrfamilienhäusern",
-      "description": "An- und Verkauf von Mehrfamilienhäusern und Zinshäusern in Berlin und im Berliner Umland.",
-      "url": "https://fg-realestate.de/mehrfamilienhaus.html",
-      "provider": { "@id": "https://fg-realestate.de/#organization" }
-    },
-    {
-      "@type": "Service",
-      "@id": "https://fg-realestate.de/vermieten.html#service",
-      "name": "Vermietung",
-      "serviceType": "Immobilienvermietung",
-      "description": "Vermietung von Wohnimmobilien: Mietpreiseinschätzung, Mieterauswahl und Übergabe.",
-      "url": "https://fg-realestate.de/vermieten.html",
-      "provider": { "@id": "https://fg-realestate.de/#organization" }
-    },
-    {
-      "@type": "Service",
-      "@id": "https://fg-realestate.de/mieten.html#service",
-      "name": "Mietersuche & Anmietung",
-      "serviceType": "Vermittlung von Mietwohnungen",
-      "description": "Begleitung von Mietinteressenten bei der Suche und Anmietung von Wohnraum in Berlin und im Berliner Umland.",
-      "url": "https://fg-realestate.de/mieten.html",
-      "provider": { "@id": "https://fg-realestate.de/#organization" }
     }
-  ]
-}
-</script>
+    </script>
     {% endif %}
 
     <!-- Favicon / App Icons -->
@@ -325,7 +129,6 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/fg-design.css">
     <link rel="stylesheet" href="/fg-assistant.css">
 
     <!-- FONT AWESOME -->
@@ -401,61 +204,34 @@
                                             {% set currentUrl = page.url | url %}
                                             {% set activeClass = "text-gold-gradient with-shadow font-bold border-b-2 border-accent pb-1 whitespace-nowrap" %}
                                             {% set defaultClass = "hover:text-accent whitespace-nowrap" %}
-
-                                            {% set buyUrls = ['/kaufen.html', '/angebote.html', '/ankaufsberatung.html', '/mieten.html'] %}
-                                            {% set sellUrls = ['/verkaufen.html', '/vermieten.html', '/mehrfamilienhaus.html'] %}
-                                            {% set labUrls = ['/investment-lab.html', '/kapitalanlage.html', '/lexikon/', '/wissen/', '/standorte/'] %}
-
+                                                        
                                             <a href="/index.html"
                                                class="{% if currentUrl == '/' or currentUrl == '/index.html' %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Start</a>
+                                                        
+                                            <a href="/angebote.html"
+                                               class="{% if currentUrl == '/angebote.html' %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Angebote</a>
+                                                                        
+                                            <a href="/ankaufsberatung.html"
+                                               class="{% if currentUrl == '/ankaufsberatung.html' %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Ankaufsberatung</a>
 
-                                            {#
-                                              O-112 — Kaufen und Investment Lab tragen ein Untermenü.
-                                              Es ist reines CSS (:hover / :focus-within): die Links stehen
-                                              unverändert im ausgelieferten HTML und sind auch dann
-                                              crawlbar, wenn kein JavaScript läuft. Das ist die Bedingung,
-                                              unter der /standorte/ seinen Textlink behalten darf.
-                                            #}
-                                            <div class="fg-nav-group">
-                                                <a href="/kaufen.html" aria-haspopup="true"
-                                                   class="{% if currentUrl in buyUrls %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Kaufen <i class="fas fa-chevron-down fg-nav-caret"></i></a>
-                                                <div class="fg-nav-sub">
-                                                    <a href="/kaufen.html"><i class="fas fa-key"></i><span><strong>Kaufberatung</strong><small>Vom Wunsch bis zum Notar</small></span></a>
-                                                    <a href="/angebote.html"><i class="fas fa-building"></i><span><strong>Angebote</strong><small>Aktuelle Objekte</small></span></a>
-                                                    <a href="/ankaufsberatung.html"><i class="fas fa-handshake"></i><span><strong>Ankaufsberatung</strong><small>Begleitung beim Kauf</small></span></a>
-                                                    <a href="/mieten.html"><i class="fas fa-house-user"></i><span><strong>Mieten</strong><small>Wohnung oder Haus finden</small></span></a>
-                                                </div>
-                                            </div>
-
-                                            <div class="fg-nav-group">
-                                                <a href="/verkaufen.html" aria-haspopup="true"
-                                                   class="{% if currentUrl in sellUrls %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Verkaufen <i class="fas fa-chevron-down fg-nav-caret"></i></a>
-                                                <div class="fg-nav-sub">
-                                                    <a href="/verkaufen.html"><i class="fas fa-sign-hanging"></i><span><strong>Verkaufen</strong><small>Strategie und Vermarktung</small></span></a>
-                                                    <a href="/vermieten.html"><i class="fas fa-file-signature"></i><span><strong>Vermieten</strong><small>Mieter finden und auswählen</small></span></a>
-                                                    <a href="/mehrfamilienhaus.html"><i class="fas fa-city"></i><span><strong>Mehrfamilienhaus</strong><small>An- und Verkauf</small></span></a>
-                                                </div>
-                                            </div>
-
+                                            <a href="/investment-lab.html"
+                                               class="{% if currentUrl == '/investment-lab.html' %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Investment Lab</a>
+                                                        
                                             <a href="/finanzierungsberatung.html"
                                                class="{% if currentUrl == '/finanzierungsberatung.html' %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Finanzierung</a>
-
-                                            <div class="fg-nav-group">
-                                                <a href="/investment-lab.html" aria-haspopup="true"
-                                                   class="{% if currentUrl in labUrls %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Investment Lab <i class="fas fa-chevron-down fg-nav-caret"></i></a>
-                                                <div class="fg-nav-sub fg-nav-sub-wide">
-                                                    <a href="/investment-lab.html"><i class="fas fa-flask"></i><span><strong>Investment Lab</strong><small>Rechner und Werkzeuge</small></span></a>
-                                                    <a href="/kapitalanlage.html"><i class="fas fa-chart-line"></i><span><strong>Kapitalanlage</strong><small>Strategie und Objektwahl</small></span></a>
-                                                    <a href="/standorte/"><i class="fas fa-map-location-dot"></i><span><strong>Standorte</strong><small>16 Standortanalysen</small></span></a>
-                                                    <a href="/wissen/"><i class="fas fa-newspaper"></i><span><strong>Wissen</strong><small>Fachartikel</small></span></a>
-                                                    <a href="/lexikon/"><i class="fas fa-book"></i><span><strong>Lexikon</strong><small>Begriffe erklärt</small></span></a>
-                                                </div>
-                                            </div>
-
+                                                                             
+                                            <a href="/verkaufen.html"
+                                               class="{% if currentUrl == '/verkaufen.html' %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Verkaufen</a>
+                                                                        
+                                            {#
+                                            <a href="/verwaltung.html"
+                                               class="{% if currentUrl == '/verwaltung.html' %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Verwaltung</a>
+                                            #}
+                                                                  
                                             <a href="/ueber-uns.html"
                                                class="{% if currentUrl == '/ueber-uns.html' %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Über uns</a>
-
-                                            <a href="/kontakt.html" class="fg-header-contact text-base font-bold py-2 px-6 whitespace-nowrap">Kontakt</a>
+                                            
+                                            <a href="/kontakt.html" class="fg-header-contact text-base font-bold py-2 px-6 whitespace-nowrap{% if currentUrl == '/kontakt.html' %} fg-header-contact-active{% endif %}">Kontakt</a>
                                         </div>
                                     </div>
                                     
@@ -463,38 +239,23 @@
                                         <div class="flex flex-col space-y-2">
                                             {% set mobileActiveClass = "block px-3 py-2 bg-accent text-primary rounded font-semibold" %}
                                             {% set mobileDefaultClass = "block px-3 py-2 hover:bg-primary/90 rounded" %}
-
+                                    
                                             <a href="/index.html" class="{% if currentUrl == '/' or currentUrl == '/index.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Start</a>
-
-                                            <p class="fg-mobile-label">Kaufen</p>
-                                            <a href="/kaufen.html" class="{% if currentUrl == '/kaufen.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Kaufberatung</a>
                                             <a href="/angebote.html" class="{% if currentUrl == '/angebote.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Angebote</a>
                                             <a href="/ankaufsberatung.html" class="{% if currentUrl == '/ankaufsberatung.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Ankaufsberatung</a>
-                                            <a href="/mieten.html" class="{% if currentUrl == '/mieten.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Mieten</a>
-
-                                            <p class="fg-mobile-label">Verkaufen</p>
-                                            <a href="/verkaufen.html" class="{% if currentUrl == '/verkaufen.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Verkaufen</a>
-                                            <a href="/vermieten.html" class="{% if currentUrl == '/vermieten.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Vermieten</a>
-                                            <a href="/mehrfamilienhaus.html" class="{% if currentUrl == '/mehrfamilienhaus.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Mehrfamilienhaus</a>
-
-                                            <p class="fg-mobile-label">Finanzierung</p>
-                                            <a href="/finanzierungsberatung.html" class="{% if currentUrl == '/finanzierungsberatung.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Finanzierung</a>
-
-                                            <p class="fg-mobile-label">Investment Lab</p>
                                             <a href="/investment-lab.html" class="{% if currentUrl == '/investment-lab.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Investment Lab</a>
-                                            <a href="/kapitalanlage.html" class="{% if currentUrl == '/kapitalanlage.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Kapitalanlage</a>
-                                            <a href="/standorte/" class="{{ mobileDefaultClass }}">Standorte</a>
-                                            <a href="/wissen/" class="{{ mobileDefaultClass }}">Wissen</a>
-                                            <a href="/lexikon/" class="{{ mobileDefaultClass }}">Lexikon</a>
-
-                                            <p class="fg-mobile-label">Unternehmen</p>
+                                            <a href="/finanzierungsberatung.html" class="{% if currentUrl == '/finanzierungsberatung.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Finanzierung</a>
+                                            {#
+                                            <a href="/verwaltung.html" class="{% if currentUrl == '/verwaltung.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Verwaltung</a>
+                                            #}
+                                            <a href="/verkaufen.html" class="{% if currentUrl == '/verkaufen.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Verkaufen</a>
                                             <a href="/ueber-uns.html" class="{% if currentUrl == '/ueber-uns.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Über uns</a>
                                             <a href="/kontakt.html" class="fg-mobile-contact block px-3 py-3 rounded font-bold{% if currentUrl == '/kontakt.html' %} fg-mobile-contact-active{% endif %}">Kontakt</a>
                                         </div>
                                     </div>
                                 </nav>
 
-<main id="main-content">{{ content | safe }}</main>
+<main>{{ content | safe }}</main>
 
 
 <footer class="bg-gray-900 text-white py-8">
@@ -526,13 +287,9 @@
             <p class="mt-2">
                 <a href="/kontakt.html" class="hover:text-accent hover:underline transition duration-300">Kontakt</a>
                 <span class="mx-2 text-gray-600">|</span>
-                <a href="/wissen/" class="hover:text-accent hover:underline transition duration-300">Wissen</a>
-                <span class="mx-2 text-gray-600">|</span>
-                <a href="/standorte/" class="hover:text-accent hover:underline transition duration-300">Standorte</a>
-                <span class="mx-2 text-gray-600">|</span>
                 <a href="/impressum.html" class="hover:text-accent hover:underline transition duration-300">Impressum</a>
                 <span class="mx-2 text-gray-600">|</span>
-                <a href="/datenschutz/" class="hover:text-accent hover:underline transition duration-300">Datenschutz</a>
+                <a href="/datenschutz.html" class="hover:text-accent hover:underline transition duration-300">Datenschutz</a>
                 <span class="mx-2 text-gray-600">|</span>
                 <a href="/agb.html" class="hover:text-accent hover:underline transition duration-300">AGB</a>
                 <span class="mx-2 text-gray-600">|</span>
@@ -541,6 +298,8 @@
         </div>
     </div>
 </footer>
+
+
 
 <!-- F&G digitaler Immobilien-Assistent: komplett regelbasiert, ohne externes KI-Modell -->
 <div class="fg-ai-assistant" data-fg-ai-assistant>
@@ -554,7 +313,7 @@
       <div class="fg-ai-mark"><i class="fas fa-building-columns"></i></div>
       <div class="fg-ai-title">
         <strong>F&G Immobilien-Assistent</strong>
-        <span><i class="fg-ai-live-dot"></i> 190+ Wissenseinträge · 6 Prozesse · 4 Rechner</span>
+        <span><i class="fg-ai-live-dot"></i> 140+ Wissensmodule · 6 Prozesse · 4 Rechner</span>
       </div>
       <div class="fg-ai-header-actions">
         <button type="button" class="fg-ai-icon-btn" data-fg-ai-info aria-label="Informationen zum Assistenten" title="So funktioniert der Assistent"><i class="fas fa-circle-info"></i></button>
@@ -586,6 +345,7 @@
   </section>
 </div>
 
+<!-- Desktop-Schnellaktion: zurück zum Seitenanfang -->
 <button type="button" class="fg-back-to-top" data-back-to-top aria-label="Zum Seitenanfang"><i class="fas fa-arrow-up"></i></button>
 
 <script>
@@ -601,6 +361,7 @@
     window.addEventListener('scroll', syncBackToTop, { passive: true });
     backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     syncBackToTop();
+
 </script>
 
 
