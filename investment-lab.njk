@@ -1,20 +1,156 @@
 ---
-permalink: /sitemap.xml
-eleventyExcludeFromCollections: true
+layout: base.njk
+title: F&G Investment Lab – Immobilienrechner, Wissen und Standortanalysen
+permalink: investment-lab.html
+description: Kostenlose interaktive Immobilienrechner, fundiertes Immobilienwissen, Standortanalysen und Lexikon von Fischer & Geserich Real Estate.
+canonicalPath: /investment-lab.html
 ---
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Sitemap-Index fuer fg-realestate.de.
-  Fuenf thematische Teil-Sitemaps statt einer Liste: der Abschnitt, in dem eine
-  URL steht, sagt einer Maschine, worum es auf der Seite geht, bevor sie die
-  Seite abruft. Erzeugt aus der Collection `sitemapSections` in .eleventy.js.
--->
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{%- for section in collections.sitemapSections %}
-  <!-- {{ section.title }}: {{ section.count }} URLs -->
-  <sitemap>
-    <loc>https://fg-realestate.de/sitemap-{{ section.key }}.xml</loc>
-    <lastmod>{{ section.lastmod }}</lastmod>
-  </sitemap>
-{%- endfor %}
-</sitemapindex>
+<section class="lab-hero lab-hero-final lab-v3-hero">
+  <div class="lab-shell lab-v3-hero-grid">
+    <div class="lab-v3-copy">
+      <span class="lab-kicker">F&amp;G INVESTMENT LAB</span>
+      <h1>Immobilien besser entscheiden.</h1>
+      <p>Ein zentraler Arbeitsbereich für Kapitalanlage, Finanzierung, Standortanalyse und Immobilienwissen. Starten Sie mit dem Investitionsrechner oder springen Sie direkt zum passenden Werkzeug.</p>
+      <div class="lab-v3-hero-actions">
+        <button type="button" class="lab-btn lab-btn-gold" data-toggle-investment>
+          <i class="fas fa-chart-line"></i> Investitionsrechner starten
+        </button>
+        <button type="button" class="lab-btn lab-btn-ghost-dark" data-lab-jump="knowledge">
+          Wissen durchsuchen
+        </button>
+      </div>
+      <div class="lab-v3-trust-row" aria-label="Investment Lab Funktionen">
+        <span><i class="fas fa-calculator"></i> Rechner</span>
+        <span><i class="fas fa-book-open"></i> Wissen</span>
+        <span><i class="fas fa-location-dot"></i> Standorte</span>
+        <span><i class="fas fa-spell-check"></i> Lexikon</span>
+      </div>
+    </div>
+
+    <aside class="lab-v3-primary-card" aria-label="Hervorgehobener Investitionsrechner">
+      <div class="lab-v3-primary-icon"><i class="fas fa-chart-line"></i></div>
+      <span class="lab-v3-eyebrow">EMPFOHLENER START</span>
+      <h2>Investitionsrechner</h2>
+      <p>Prüfen Sie eine Kapitalanlage vollständig: Kaufpreis, Finanzierung, Cashflow, Steuerwirkung, Tilgung, Restschuld und Vermögensentwicklung.</p>
+      <div class="lab-v3-metrics">
+        <span>Cashflow</span><span>EK-Rendite</span><span>Steuerwirkung</span><span>Restschuld</span>
+      </div>
+      <button type="button" class="lab-v3-primary-button" data-toggle-investment>
+        Rechner öffnen <i class="fas fa-arrow-right"></i>
+      </button>
+    </aside>
+  </div>
+</section>
+
+<section class="lab-v3-start">
+  <div class="lab-shell">
+    <div class="lab-v3-section-title">
+      <span class="lab-kicker">SCHNELLSTART</span>
+      <h2>Was möchten Sie prüfen?</h2>
+      <p>Wählen Sie einen Bereich. Das Investment Lab führt Sie ohne Umwege zum passenden Werkzeug.</p>
+    </div>
+    <div class="lab-v3-start-grid">
+      <button type="button" class="lab-v3-start-card is-primary" data-lab-jump="tools">
+        <i class="fas fa-calculator"></i><span><strong>Rechnen</strong><small>Rendite, Finanzierung, Cashflow &amp; mehr</small></span><i class="fas fa-arrow-right"></i>
+      </button>
+      <button type="button" class="lab-v3-start-card" data-lab-jump="knowledge">
+        <i class="fas fa-lightbulb"></i><span><strong>Verstehen</strong><small>Zusammenhänge und Fachwissen</small></span><i class="fas fa-arrow-right"></i>
+      </button>
+      <button type="button" class="lab-v3-start-card" data-lab-jump="locations">
+        <i class="fas fa-map-location-dot"></i><span><strong>Standort prüfen</strong><small>Mikrolage, Chancen und Risiken</small></span><i class="fas fa-arrow-right"></i>
+      </button>
+      <button type="button" class="lab-v3-start-card" data-lab-jump="lexicon">
+        <i class="fas fa-book"></i><span><strong>Begriff klären</strong><small>Immobilienwissen kompakt</small></span><i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+
+    <form class="lab-navigator lab-v3-search" data-lab-navigator>
+      <div>
+        <span class="lab-v3-search-label">ODER DIREKT FRAGEN</span>
+        <label for="lab-global-search">Was möchten Sie wissen oder berechnen?</label>
+      </div>
+      <div class="lab-navigator-row">
+        <input id="lab-global-search" type="search" autocomplete="off" placeholder="z. B. Wie viel Eigenkapital brauche ich für eine Kapitalanlage?" data-global-search>
+        <button type="submit" class="lab-btn lab-btn-gold">Antwort finden</button>
+      </div>
+      <div class="lab-quick-links">
+        <button type="button" data-query="Eigenkapitalrendite">Eigenkapitalrendite</button>
+        <button type="button" data-query="Kaufpreisrahmen">Kaufpreisrahmen</button>
+        <button type="button" data-query="Hausgeld">Hausgeld verstehen</button>
+        <button type="button" data-query="Standort Leipzig">Standort Leipzig</button>
+      </div>
+      <div class="lab-navigator-result" data-global-result hidden></div>
+    </form>
+  </div>
+</section>
+
+<main class="lab-shell lab-main lab-v3-main" data-investment-lab>
+  <nav class="lab-tabs lab-v3-tabs" aria-label="Investment Lab Bereiche">
+    <button class="is-active" data-lab-tab="tools"><i class="fas fa-calculator"></i> Rechner</button>
+    <button data-lab-tab="knowledge"><i class="fas fa-book-open"></i> Wissen</button>
+    <button data-lab-tab="locations"><i class="fas fa-location-dot"></i> Standorte</button>
+    <button data-lab-tab="lexicon"><i class="fas fa-book"></i> Lexikon</button>
+  </nav>
+
+  <section class="lab-panel is-active" data-lab-panel="tools">
+    <section class="lab-featured-calculator lab-v3-featured">
+      <div>
+        <span class="lab-kicker">HAUPTRECHNER</span>
+        <h2>Investitionsrechner für Ihre Immobilien-Kapitalanlage</h2>
+        <p>Der umfassendste Rechner im Investment Lab. Prüfen Sie Kaufpreis, Miete, Finanzierung, Steuern, Cashflow, Tilgung, Restschuld und Vermögensentwicklung in einer geführten Gesamtrechnung.</p>
+        <div class="lab-featured-actions">
+          <button type="button" class="lab-btn lab-btn-gold" data-toggle-investment>Investitionsrechner öffnen</button>
+          <a class="lab-btn lab-btn-ghost-dark" href="/ankaufsberatung.html">Ergebnis besprechen</a>
+        </div>
+      </div>
+      <div class="lab-featured-metrics">
+        <span>Cashflow</span><span>Steuerwirkung</span><span>Restschuld</span><span>EK-Rendite</span>
+      </div>
+    </section>
+
+    <div class="lab-investment-embed" data-investment-embed hidden>
+      <div class="lab-embed-head"><strong>Investitionsrechner</strong><button type="button" data-toggle-investment>Schließen</button></div>
+      <iframe title="F&G Investitionsrechner" loading="lazy" data-src="/investitionsrechner.html?embedded=1"></iframe>
+    </div>
+
+    <div class="lab-section-head lab-v3-subhead">
+      <div><span class="lab-kicker">WEITERE RECHNER</span><h2>Die passende Frage statt der Formel.</h2><p>Wählen Sie ein Thema. Die kompakten Rechner öffnen sich direkt im Investment Lab.</p></div>
+      <div class="lab-search"><input type="search" placeholder="Rechner suchen …" data-tool-search></div>
+    </div>
+    <div class="lab-tool-grid" data-tool-grid></div>
+    <div class="lab-workspace" data-lab-workspace hidden></div>
+    <div class="lab-saved" data-lab-saved></div>
+  </section>
+
+  <section class="lab-panel" data-lab-panel="knowledge">
+    <div class="lab-section-head"><div><span class="lab-kicker">IMMOBILIENWISSEN</span><h2>Fundierte Antworten statt isolierter Kennzahlen.</h2><p>62 Fachartikel mit Rechenlogik, durchgerechneten Beispielen, Einflussgrößen, Risiken und – wo relevant – Rechts- bzw. Quellenhinweisen.</p></div><div class="lab-search"><input type="search" placeholder="Thema oder Frage suchen …" data-knowledge-search></div></div>
+    <div class="lab-filter-row" data-knowledge-filters></div><div class="lab-article-grid" data-article-grid></div><article class="lab-reader" data-article-reader hidden></article>
+  </section>
+
+  <section class="lab-panel" data-lab-panel="locations">
+    <div class="lab-section-head"><div><span class="lab-kicker">STANDORTANALYSEN</span><h2>Ein Markt beginnt bei der Mikrolage.</h2><p>Orientierungswerte, Chancen, Risiken, Infrastruktur und regionale Einordnung.</p></div><div class="lab-search"><input type="search" placeholder="Berlin, Potsdam, Bernau …" data-location-search></div></div>
+    <div class="lab-location-grid" data-location-grid></div><article class="lab-reader lab-location-reader" data-location-reader hidden></article>
+  </section>
+
+  <section class="lab-panel" data-lab-panel="lexicon">
+    <div class="lab-section-head"><div><span class="lab-kicker">IMMOBILIENLEXIKON</span><h2>Fachbegriffe verständlich und belastbar eingeordnet.</h2><p>125 Begriffe mit fachlicher Einordnung, Praxisbeispielen, Rechenlogik und Prüffragen – ohne generische Fülltexte.</p></div><div class="lab-search"><input type="search" placeholder="Begriff suchen …" data-lexicon-search></div></div>
+    <div class="lab-az" data-az></div><div class="lab-lexicon-list" data-lexicon-list></div><article class="lab-reader lab-lexicon-reader" data-lexicon-reader hidden></article>
+  </section>
+
+  <section class="lab-cta"><div><span class="lab-kicker">ERGEBNISSE GEMEINSAM EINORDNEN</span><h2>Eine Berechnung zeigt Zusammenhänge. Die Entscheidung braucht Kontext.</h2><p>In der Ankaufsberatung prüfen wir Annahmen, Unterlagen, Finanzierung und Risiken gemeinsam.</p></div><a href="/ankaufsberatung.html" class="lab-btn lab-btn-gold">Ankaufsberatung anfragen</a></section>
+</main>
+
+<script>
+document.addEventListener('click', function (event) {
+  const trigger = event.target.closest('[data-lab-jump]');
+  if (!trigger) return;
+  const target = trigger.getAttribute('data-lab-jump');
+  const tab = document.querySelector('[data-lab-tab="' + target + '"]');
+  if (tab) {
+    tab.click();
+    document.querySelector('.lab-tabs')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+});
+</script>
+<script>window.FG_LAB_DATA={{ labContent | json | safe }};</script>
+<script src="/investment-lab.js" defer></script>

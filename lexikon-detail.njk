@@ -1,3 +1,18 @@
-node_modules
-_site
-README.md
+---
+layout: base.njk
+pagination:
+  data: labContent.lexicon
+  size: 1
+  alias: entry
+permalink: "lexikon/{{ entry.slug }}/index.html"
+eleventyComputed:
+  title: "{{ entry.term }} – Immobilienlexikon"
+  description: "{{ entry.definition }}"
+---
+<main class="content-detail shell"><nav class="breadcrumbs"><a href="/investment-lab.html">Investment Lab</a><span>›</span><a href="/investment-lab.html#lexikon">Lexikon</a><span>›</span><span>{{ entry.term }}</span></nav>
+<article class="science-article science-article-v2 lexicon-v2"><header class="science-hero"><span class="lab-kicker">— {{ entry.category or "IMMOBILIENLEXIKON" }} —</span><h1>{{ entry.term }}</h1><p class="lead">{{ entry.definition }}</p></header>
+{% if entry.explanation %}<section class="science-section"><h2>Fachliche Einordnung</h2><p>{{ entry.explanation }}</p></section>{% endif %}
+{% if entry.formula %}<section class="science-section"><h2>Formel / Rechenlogik</h2><div class="lab-formula-card"><div class="lab-formula">{{ entry.formula }}</div></div></section>{% endif %}
+{% if entry.practiceExample %}<section class="lab-example-section science-section"><h2>Konkretes Beispiel</h2><div class="lab-interpretation"><p>{{ entry.practiceExample }}</p></div></section>{% endif %}
+{% if entry.sources and entry.sources.length %}<section class="lab-source-section science-section"><h2>Quellen &amp; Rechtsgrundlagen</h2><ul>{% for source in entry.sources %}<li><a href="{{ source.url }}" target="_blank" rel="noopener noreferrer">{{ source.label }}</a></li>{% endfor %}</ul></section>{% endif %}
+<aside class="article-note"><strong>Hinweis</strong><p>Bei rechtlichen, steuerlichen oder bankseitigen Begriffen entscheidet der konkrete Vertrag beziehungsweise Einzelfall.</p></aside><a class="lab-btn lab-btn-gold" href="/investment-lab.html">Im Investment Lab weiterarbeiten</a></article></main>

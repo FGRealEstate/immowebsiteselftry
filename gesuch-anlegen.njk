@@ -1,18 +1,9 @@
 ---
-pagination:
-  data: collections.sitemapSections
-  size: 1
-  alias: section
-permalink: "sitemap-{{ section.key }}.xml"
-eleventyExcludeFromCollections: true
+layout: base.njk
+title: Immobiliengesuch anlegen | Fischer & Geserich
+permalink: gesuch-anlegen/index.html
+description: "Kaufgesuch oder Mietgesuch getrennt anlegen und passende Immobilienangebote von Fischer & Geserich erhalten."
+canonicalPath: /gesuch-anlegen/
 ---
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- {{ section.title }} — {{ section.count }} URLs, erzeugt beim Build. -->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{%- for url in section.urls %}
-  <url>
-    <loc>https://fg-realestate.de{{ url.loc }}</loc>
-    <lastmod>{{ url.lastmod }}</lastmod>
-  </url>
-{%- endfor %}
-</urlset>
+<section class="fg-journey-hero fg-page-hero bg-primary text-white py-16 md:py-24"><div class="container mx-auto px-4 max-w-6xl text-center"><p class="fg-eyebrow">Immobiliengesuch</p><h1 class="text-4xl md:text-6xl font-extrabold mb-6">Kauf und Miete sind <span class="text-gold-gradient">zwei verschiedene Suchen.</span></h1><p class="text-lg md:text-xl text-page-bg max-w-3xl mx-auto">Wählen Sie Ihr Vorhaben. Sie gelangen anschließend in die passende, getrennte Suchstrecke.</p></div></section>
+<section class="fg-home-v2-section"><div class="container mx-auto px-4"><div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto"><a href="/kaufen.html" class="fg-split-path fg-reveal"><i class="fas fa-key"></i><h2>Ich möchte kaufen</h2><p>Kaufgesuch für Eigennutzung, Kapitalanlage, Haus, Wohnung, Grundstück oder Investmentobjekt.</p><span>Zum Kaufgesuch <i class="fas fa-arrow-right"></i></span></a><a href="/mieten.html" class="fg-split-path fg-reveal"><i class="fas fa-door-open"></i><h2>Ich möchte mieten</h2><p>Eigenständiges Mietgesuch mit Mietbudget, Suchgebiet, Größe und Ausstattungswünschen.</p><span>Zum Mietgesuch <i class="fas fa-arrow-right"></i></span></a></div></div></section>

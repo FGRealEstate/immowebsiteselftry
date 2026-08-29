@@ -1,71 +1,167 @@
 ---
 layout: base.njk
-permalink: "wissen/index.html"
-title: "Wissen - Fachartikel zu Kauf, Verkauf und Finanzierung"
-description: "Fachartikel zu Ankauf, Verkauf, Vermietung, Bewertung und Finanzierung von Wohn- und Anlageimmobilien."
+title: "Kontakt | Fischer & Geserich Real Estate"
+description: "Direkter Kontakt zu Fischer & Geserich Real Estate für Immobilienverkauf, Ankauf, Vermietung und Immobilienfinanzierung in Berlin, Leipzig, Dresden und dem Berliner Speckgürtel."
+permalink: kontakt.html
+canonicalPath: /kontakt.html
+ogTitle: "Kontakt zu Fischer & Geserich Real Estate"
+ogDescription: "Sprechen Sie direkt mit Fischer & Geserich Real Estate über Verkauf, Ankauf, Vermietung oder Finanzierung Ihres Immobilienvorhabens."
 ---
-<div class="content-detail shell">
-  <nav class="breadcrumbs"><a href="/index.html">Start</a><span>&rsaquo;</span><span>Wissen</span></nav>
-  <article class="science-article">
-    <header>
-      <h1>Wissen</h1>
-      <p class="lead">{{ labContent.articles | length }} Fachartikel zu Ankauf, Verkauf, Vermietung, Bewertung und Finanzierung von Wohn- und Anlageimmobilien &mdash; jeder Artikel beantwortet eine konkrete Frage, die in einem Kauf- oder Verkaufsprozess tats&auml;chlich gestellt wird.</p>
-    </header>
-    <ul class="lex-index">
-    {%- for entry in labContent.articles %}
-      <li><a href="/wissen/{{ entry.slug }}/"><strong>{{ entry.title }}</strong></a> {{ entry.summary }}</li>
-    {%- endfor %}
-    </ul>
-  </article>
-</div>
-{#
-  O-112 — Übersichtsseite ohne strukturierte Daten. Die Artikel sind jetzt als
-  ItemList ausgezeichnet; die Anzahl kommt aus der Datei, damit sie nicht wie
-  bisher ("62 Fachartikel" bei 65 Artikeln) veralten kann.
-#}
+
+<section class="fg-page-hero fg-contact-page-hero">
+  <div class="container mx-auto px-4">
+    <div class="fg-contact-page-hero-grid">
+      <div class="fg-reveal">
+        <p class="fg-eyebrow">Direkter Kontakt</p>
+        <h1>Ein Anliegen. Der passende direkte Weg.</h1>
+        <p class="fg-contact-lead">
+          Ob Verkauf, Ankauf, Vermietung oder Finanzierung: Wählen Sie den Bereich, der zu Ihrem Vorhaben passt.
+          Wenn Sie zunächst persönlich sprechen möchten, erreichen Sie uns direkt per Telefon oder E-Mail.
+        </p>
+        <div class="fg-contact-page-actions">
+          <a class="fg-contact-page-primary" href="tel:+4915203083048"><i class="fas fa-phone"></i> 0152 03083048</a>
+          <a class="fg-contact-page-secondary" href="mailto:info@fg-realestate.de"><i class="fas fa-envelope"></i> info@fg-realestate.de</a>
+        </div>
+      </div>
+
+      <aside class="fg-contact-page-direct fg-reveal" aria-label="Kontaktdaten">
+        <span>Fischer &amp; Geserich Real Estate</span>
+        <h2>Persönlich erreichbar.</h2>
+        <div class="fg-contact-page-direct-list">
+          <a href="tel:+4915203083048">
+            <i class="fas fa-phone"></i>
+            <span><strong>Telefon</strong><small>0152 03083048</small></span>
+          </a>
+          <a href="mailto:info@fg-realestate.de">
+            <i class="fas fa-envelope"></i>
+            <span><strong>E-Mail</strong><small>info@fg-realestate.de</small></span>
+          </a>
+          <div>
+            <i class="fas fa-location-dot"></i>
+            <span><strong>Geschäftsanschrift</strong><small>Schützenstraße 30 · 12165 Berlin</small></span>
+          </div>
+          <div>
+            <i class="fas fa-calendar-check"></i>
+            <span><strong>Persönliche Termine</strong><small>Nach vorheriger Vereinbarung</small></span>
+          </div>
+        </div>
+        <div class="fg-contact-market-strip" aria-label="Unsere Kernmärkte">
+          <figure><img src="/images/webp/region-berlin.webp" alt="Berlin" loading="lazy"><figcaption>Berlin</figcaption></figure>
+          <figure><img src="/images/webp/region-leipzig.webp" alt="Leipzig" loading="lazy"><figcaption>Leipzig</figcaption></figure>
+          <figure><img src="/images/webp/pexels-vip-foto-9137849.jpg" alt="Dresden" loading="lazy"><figcaption>Dresden</figcaption></figure>
+          <figure><img src="/images/webp/region-potsdam.webp" alt="Potsdam und Berliner Umland" loading="lazy" decoding="async"><figcaption>Speckgürtel</figcaption></figure>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="fg-contact-page-section">
+  <div class="container mx-auto px-4">
+    <div class="fg-contact-page-heading fg-reveal">
+      <p class="fg-section-kicker">Ihr Vorhaben</p>
+      <h2>Direkt in die richtige Beratungsstrecke.</h2>
+      <p>So fragen wir nur die Informationen ab, die für Ihr konkretes Anliegen relevant sind.</p>
+    </div>
+
+    <div class="fg-contact-route-grid">
+      <a class="fg-contact-route fg-reveal" href="/verkaufen.html">
+        <i class="fas fa-house-circle-check"></i>
+        <h3>Immobilie verkaufen</h3>
+        <p>Bewertung, Positionierung, Vermarktung und Begleitung bis zum Abschluss.</p>
+        <span>Zur Verkaufsberatung <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a class="fg-contact-route fg-reveal" href="/kaufen.html">
+        <i class="fas fa-key"></i>
+        <h3>Immobilie kaufen</h3>
+        <p>Kaufgesuch anlegen oder ein konkretes Objekt wirtschaftlich und strategisch prüfen.</p>
+        <span>Zur Käuferstrecke <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a class="fg-contact-route fg-reveal" href="/mieten.html">
+        <i class="fas fa-door-open"></i>
+        <h3>Immobilie mieten</h3>
+        <p>Eigenständiges Mietgesuch anlegen und passende Suchkriterien hinterlegen.</p>
+        <span>Zum Mietgesuch <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a class="fg-contact-route fg-reveal" href="/vermieten.html">
+        <i class="fas fa-building-user"></i>
+        <h3>Immobilie vermieten</h3>
+        <p>Mietpreis, Vermarktung und Auswahl geeigneter Interessenten strukturiert angehen.</p>
+        <span>Zur Vermietungsberatung <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a class="fg-contact-route fg-reveal" href="/finanzierungsberatung.html">
+        <i class="fas fa-building-columns"></i>
+        <h3>Finanzierung prüfen</h3>
+        <p>Finanzierungsrahmen, Eigenkapital, Monatsrate und geeignete Bankpartner einordnen.</p>
+        <span>Zur Finanzierung <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <a class="fg-contact-route fg-reveal" href="/ankaufsberatung.html">
+        <i class="fas fa-magnifying-glass-chart"></i>
+        <h3>Ankaufsberatung</h3>
+        <p>Objekt, Lage, Rendite, Risiken und Finanzierung vor einer Kaufentscheidung zusammen betrachten.</p>
+        <span>Zur Ankaufsberatung <i class="fas fa-arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="fg-contact-page-section fg-contact-page-section-white">
+  <div class="container mx-auto px-4">
+    <div class="fg-contact-page-heading fg-reveal">
+      <p class="fg-section-kicker">So geht es weiter</p>
+      <h2>Vom ersten Kontakt zur klaren nächsten Entscheidung.</h2>
+    </div>
+
+    <div class="fg-contact-page-process">
+      <article class="fg-contact-process-card fg-reveal">
+        <span>01</span>
+        <h3>Anliegen einordnen</h3>
+        <p>Wir klären, worum es konkret geht und welche Informationen für den nächsten Schritt tatsächlich gebraucht werden.</p>
+      </article>
+      <article class="fg-contact-process-card fg-reveal">
+        <span>02</span>
+        <h3>Unterlagen &amp; Fakten</h3>
+        <p>Je nach Vorhaben prüfen wir Objektunterlagen, Finanzierungsdaten, Suchkriterien oder Vermarktungsparameter.</p>
+      </article>
+      <article class="fg-contact-process-card fg-reveal">
+        <span>03</span>
+        <h3>Persönlich abstimmen</h3>
+        <p>Im nächsten Gespräch besprechen wir Optionen, offene Punkte und einen konkreten weiteren Ablauf.</p>
+      </article>
+    </div>
+
+    <div class="fg-contact-page-note fg-reveal">
+      <strong>Unsere Kernmärkte:</strong> Berlin, Leipzig, Dresden und der Berliner Speckgürtel.
+      Abhängig von Immobilienart, Mandat und Transaktionsvolumen begleiten wir ausgewählte Vorhaben auch deutschlandweit.
+      <br>
+      <a class="fg-contact-page-faq-link" href="/index.html#faq">Häufige Fragen ansehen <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "CollectionPage",
-      "@id": "https://fg-realestate.de/wissen/",
-      "url": "https://fg-realestate.de/wissen/",
-      "name": "Wissen",
-      "description": "{{ labContent.articles | length }} Fachartikel zu Ankauf, Verkauf, Vermietung, Bewertung und Finanzierung von Wohn- und Anlageimmobilien.",
-      "inLanguage": "de-DE",
-      "isPartOf": { "@id": "https://fg-realestate.de/#website" },
-      "about": { "@id": "https://fg-realestate.de/#organization" },
-      "provider": { "@id": "https://fg-realestate.de/#organization" },
-      "breadcrumb": { "@id": "https://fg-realestate.de/wissen/#breadcrumb" },
-      "mainEntity": { "@id": "https://fg-realestate.de/wissen/#artikel" }
-    },
-    {
-      "@type": "ItemList",
-      "@id": "https://fg-realestate.de/wissen/#artikel",
-      "name": "Fachartikel",
-      "numberOfItems": {{ labContent.articles | length }},
-      "itemListOrder": "https://schema.org/ItemListUnordered",
-      "itemListElement": [
-{%- for entry in labContent.articles %}
-        {
-          "@type": "ListItem",
-          "position": {{ loop.index }},
-          "url": "https://fg-realestate.de/wissen/{{ entry.slug }}/",
-          "name": {{ entry.title | json | safe }},
-          "item": { "@id": "https://fg-realestate.de/wissen/{{ entry.slug }}/#artikel" }
-        }{% if not loop.last %},{% endif %}
-{%- endfor %}
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://fg-realestate.de/wissen/#breadcrumb",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
-        { "@type": "ListItem", "position": 2, "name": "Wissen" }
-      ]
+  "@type": "ContactPage",
+  "name": "Kontakt | Fischer & Geserich Real Estate",
+  "url": "https://fg-realestate.de/kontakt.html",
+  "mainEntity": {
+    "@type": "RealEstateAgent",
+    "name": "Fischer & Geserich Real Estate GmbH",
+    "telephone": "+49 152 03083048",
+    "email": "info@fg-realestate.de",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Schützenstraße 30",
+      "postalCode": "12165",
+      "addressLocality": "Berlin",
+      "addressCountry": "DE"
     }
-  ]
+  }
 }
 </script>
