@@ -1,71 +1,20 @@
 ---
 layout: base.njk
 permalink: "wissen/index.html"
-title: "Wissen - Fachartikel zu Kauf, Verkauf und Finanzierung"
-description: "Fachartikel zu Ankauf, Verkauf, Vermietung, Bewertung und Finanzierung von Wohn- und Anlageimmobilien."
+title: "Immobilienwissen - Fachartikel zu Kauf, Verkauf und Finanzierung"
+description: "Fachartikel zu Immobilienkauf, Verkauf, Vermietung, Bewertung, Kapitalanlage und Finanzierung – kompakt und praxisnah eingeordnet."
+canonicalPath: /wissen/
 ---
-<div class="content-detail shell">
-  <nav class="breadcrumbs"><a href="/index.html">Start</a><span>&rsaquo;</span><span>Wissen</span></nav>
-  <article class="science-article">
-    <header>
-      <h1>Wissen</h1>
-      <p class="lead">{{ labContent.articles | length }} Fachartikel zu Ankauf, Verkauf, Vermietung, Bewertung und Finanzierung von Wohn- und Anlageimmobilien &mdash; jeder Artikel beantwortet eine konkrete Frage, die in einem Kauf- oder Verkaufsprozess tats&auml;chlich gestellt wird.</p>
-    </header>
-    <ul class="lex-index">
-    {%- for entry in labContent.articles %}
-      <li><a href="/wissen/{{ entry.slug }}/"><strong>{{ entry.title }}</strong></a> {{ entry.summary }}</li>
-    {%- endfor %}
-    </ul>
-  </article>
-</div>
-{#
-  O-112 — Übersichtsseite ohne strukturierte Daten. Die Artikel sind jetzt als
-  ItemList ausgezeichnet; die Anzahl kommt aus der Datei, damit sie nicht wie
-  bisher ("62 Fachartikel" bei 65 Artikeln) veralten kann.
-#}
+<div class="fg-library-page"><section class="fg-library-hero"><div class="fg-premium-shell"><p class="fg-premium-kicker fg-premium-kicker-light">Investment Lab · Wissen</p><h1>Immobilienwissen für konkrete Entscheidungen.</h1><p>{{ labContent.articles | length }} Fachartikel zu Ankauf, Verkauf, Vermietung, Bewertung und Finanzierung. Nicht als Textarchiv, sondern als Antwort auf Fragen, die in echten Kauf- und Verkaufsprozessen entstehen.</p></div></section><section class="fg-premium-section"><div class="fg-premium-shell"><div class="fg-library-toolbar"><label class="fg-library-search"><i class="fas fa-search"></i><input type="search" placeholder="Thema, Begriff oder Frage suchen …" data-library-search></label><span class="fg-library-count"><b data-library-count>{{ labContent.articles | length }}</b> Fachartikel</span></div><div class="fg-library-grid" data-library-grid>{% for entry in labContent.articles %}<a class="fg-library-card" href="/wissen/{{ entry.slug }}/" data-library-card data-search="{{ entry.title }} {{ entry.category }} {{ entry.summary }} {{ entry.keywords | join(' ') }}"><span>{{ entry.category }}</span><h2>{{ entry.title }}</h2><p>{{ entry.summary }}</p><span class="fg-library-more">Artikel lesen <i class="fas fa-arrow-right"></i></span></a>{% endfor %}</div><div class="fg-library-empty" data-library-empty>Kein Artikel passt zu dieser Suche.</div></div></section></div>{% include "library-filter-script.njk" %}
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "CollectionPage",
-      "@id": "https://fg-realestate.de/wissen/",
-      "url": "https://fg-realestate.de/wissen/",
-      "name": "Wissen",
-      "description": "{{ labContent.articles | length }} Fachartikel zu Ankauf, Verkauf, Vermietung, Bewertung und Finanzierung von Wohn- und Anlageimmobilien.",
-      "inLanguage": "de-DE",
-      "isPartOf": { "@id": "https://fg-realestate.de/#website" },
-      "about": { "@id": "https://fg-realestate.de/#organization" },
-      "provider": { "@id": "https://fg-realestate.de/#organization" },
-      "breadcrumb": { "@id": "https://fg-realestate.de/wissen/#breadcrumb" },
-      "mainEntity": { "@id": "https://fg-realestate.de/wissen/#artikel" }
-    },
-    {
-      "@type": "ItemList",
-      "@id": "https://fg-realestate.de/wissen/#artikel",
-      "name": "Fachartikel",
-      "numberOfItems": {{ labContent.articles | length }},
-      "itemListOrder": "https://schema.org/ItemListUnordered",
-      "itemListElement": [
-{%- for entry in labContent.articles %}
-        {
-          "@type": "ListItem",
-          "position": {{ loop.index }},
-          "url": "https://fg-realestate.de/wissen/{{ entry.slug }}/",
-          "name": {{ entry.title | json | safe }},
-          "item": { "@id": "https://fg-realestate.de/wissen/{{ entry.slug }}/#artikel" }
-        }{% if not loop.last %},{% endif %}
-{%- endfor %}
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://fg-realestate.de/wissen/#breadcrumb",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
-        { "@type": "ListItem", "position": 2, "name": "Wissen" }
-      ]
-    }
-  ]
+  "@context":"https://schema.org",
+  "@type":"CollectionPage",
+  "@id":"https://fg-realestate.de/wissen/",
+  "url":"https://fg-realestate.de/wissen/",
+  "name":"Immobilienwissen",
+  "isPartOf":{"@id":"https://fg-realestate.de/#website"},
+  "about":{"@id":"https://fg-realestate.de/#organization"},
+  "mainEntity":{"@type":"ItemList","numberOfItems":{{ labContent.articles | length }},"itemListElement":[{% for entry in labContent.articles %}{"@type":"ListItem","position":{{ loop.index }},"name":{{ entry.title | dump | safe }},"url":"https://fg-realestate.de/wissen/{{ entry.slug }}/"}{% if not loop.last %},{% endif %}{% endfor %}]}
 }
 </script>

@@ -160,33 +160,33 @@ module.exports = {
     "A": [
       {
         "id": "A1",
-        "q": "Was unterscheidet Fischer & Geserich von anderen Immobilienmaklern?",
-        "a": "Wir verkaufen Ihnen nur dann ein eigenes Objekt, wenn es wirklich zu Ihrer Strategie passt, und passt keines, vermitteln wir Ihnen lieber eine Finanzierung, eine Vermietung oder eine Ankaufberatung, als Ihnen irgendetwas aufzuschwatzen. Auch nach Ihrem Kauf bleiben wir Ihr Ansprechpartner, für Gutachten, Mietanpassung, Handwerker und steuerliche Struktur, und diese Vermittlung in unser Netzwerk ist kostenfrei, weil wir auf Ihren nächsten Kauf setzen und nicht auf den schnellen einmaligen Abschluss."
+        "q": "Welche Leistungen verbindet Fischer & Geserich?",
+        "a": "Wir verbinden Immobilienvermittlung, Ankaufsberatung und Immobilienfinanzierung. Dadurch können wir Verkauf, Kaufentscheidung, Finanzierung und die wirtschaftliche Perspektive eines Objekts zusammen betrachten, statt jeden Baustein isoliert zu behandeln."
       },
       {
         "id": "A2",
-        "q": "Was passiert nach dem Notartermin?",
-        "a": "Ein bis zwei Wochen nach Ihrer Beurkundung melden wir uns bei Ihnen, um gemeinsam den nächsten Schritt zu klären. Zuerst geht es meistens um drei Dinge, Ihr Restnutzungsdauergutachten für eine höhere Abschreibung, die Anpassung Ihrer Miete und die Frage, ob sich eine Sanierung vor der Neuvermietung für Sie lohnt. Was danach folgt, hängt ganz von Ihrem Objekt und von Ihrer eigenen Erfahrung ab."
+        "q": "Begleitet F&G sowohl Eigennutzer als auch Kapitalanleger?",
+        "a": "Ja. Eigennutzer benötigen vor allem eine belastbare Einordnung von Objekt, Finanzierung und persönlichem Budget. Bei Kapitalanlagen kommen zusätzlich Miete, Rendite, laufende Kosten und langfristige Finanzierung hinzu. Unsere Angebotsseiten kennzeichnen beide Strategien deshalb getrennt."
       },
       {
         "id": "A3",
-        "q": "Kostet die Betreuung nach dem Kauf extra?",
-        "a": "Nein, und das ist uns wichtig. Die Vermittlung an Gutachter, Handwerker und Hausverwaltungen ist bei uns kostenfrei, genauso wie die Beratung zu Abschreibung, Mietstrategie und Modernisierungsreihenfolge. Berechnet wird nur, was tatsächlich Arbeit bedeutet, eine Vermietung etwa, und selbst die zu einem reduzierten Satz, wenn Sie Ihr Objekt über uns gekauft haben."
+        "q": "Wie läuft eine Immobilienfinanzierung bei F&G ab?",
+        "a": "Zuerst strukturieren wir Einkommen, Eigenkapital, Objekt und Zielsetzung. Je nach Fall nutzen wir Plattformen wie Europace oder Baufinex sowie direkte Bankkontakte. Begleitete Fälle reichen von der ersten Eigentumswohnung bis zur Mehrfamilienhausfinanzierung; eine Finanzierungszusage bleibt immer eine Einzelfallentscheidung der Bank."
       },
       {
         "id": "A4",
-        "q": "Was passiert, wenn kein Objekt zu mir passt?",
-        "a": "Dann verkaufen wir Ihnen ehrlicherweise auch keines. Passt keines unserer eigenen Objekte zu Ihrer Strategie, unterstützen wir Sie stattdessen bei der Finanzierung eines fremden Objekts, bei der Ankaufberatung oder beim Transaktionsmanagement, und das aus gutem Grund, ein Käufer, der das falsche Objekt gekauft hat, kommt einfach nicht wieder."
+        "q": "Was passiert nach dem Notartermin?",
+        "a": "Nach der Beurkundung bleiben Themen wie Übergabe, Mietstrategie, Modernisierung, Abschreibung oder Organisation offen. Wir bleiben dafür ansprechbar und können bei Bedarf geeignete Spezialisten aus unserem Netzwerk koordinieren. Welche Leistungen sinnvoll sind, hängt vom konkreten Objekt ab."
       },
       {
         "id": "A5",
-        "q": "Prüft ihr die Finanzierung vor dem Notartermin?",
-        "a": "Ja, immer. Wir klären Ihre Finanzierungsmöglichkeiten, bevor überhaupt ein Kaufvertrag beim Notar beauftragt wird, denn der Vertragsentwurf kostet je nach Volumen schon einige hundert Euro, der Kaufvertrag selbst deutlich mehr, und stellt sich erst danach heraus, dass Ihre Finanzierung nicht trägt, ist dieses Geld einfach verloren. Zeigt unsere Prüfung, dass ein kleineres Volumen besser zu Ihnen passt, sagen wir Ihnen das lieber vorher."
+        "q": "In welchen Regionen arbeitet Fischer & Geserich?",
+        "a": "Unsere Kernmärkte sind Berlin, Leipzig, Dresden und der Berliner Speckgürtel. Bei passenden Immobilienarten, Finanzierungen und Investmentmandaten begleiten wir ausgewählte Vorhaben auch deutschlandweit."
       },
       {
         "id": "A6",
-        "q": "Für wen arbeitet Fischer & Geserich?",
-        "a": "Wir arbeiten mit Kapitalanlegern in Berlin, von der allerersten Eigentumswohnung bis zum Mehrfamilienhaus. Ein großer Teil unserer Kunden ist zwischen Ende zwanzig und Mitte dreißig und baut zum ersten Mal im Leben Vermögen außerhalb der gesetzlichen Rente auf, das ist eine besondere Situation, und wir nehmen uns dafür Zeit. Daneben begleiten wir auch erfahrene Investoren, dort sieht unsere Beratung dann ganz anders aus, weniger Erklärung, mehr Strategie auf Augenhöhe."
+        "q": "Wie funktionieren die Investmentkennzahlen bei Angeboten?",
+        "a": "Bei als Kapitalanlage gekennzeichneten Kaufobjekten können verfügbare Propstack-Daten wie Kaufpreis und Miete in eine interaktive Szenariorechnung einfließen. Zins, Tilgung, Eigenkapital und Kosten lassen sich verändern; Cashflow und Restschuld reagieren direkt. Für eine ausführlichere Modellrechnung steht zusätzlich das Investment Lab zur Verfügung."
       }
     ],
     "B": [

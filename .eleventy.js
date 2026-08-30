@@ -31,6 +31,7 @@ module.exports = function(eleventyConfig) {
   const SITEMAP_SECTIONS = [
     { key: "seiten", title: "Kern- und Serviceseiten" },
     { key: "angebote", title: "Objektangebote", prefix: "/angebote/" },
+    { key: "projekte", title: "Immobilienprojekte", prefix: "/projekte/" },
     { key: "lexikon", title: "Immobilienlexikon", prefix: "/lexikon/" },
     { key: "wissen", title: "Wissensartikel", prefix: "/wissen/" },
     { key: "standorte", title: "Standortanalysen", prefix: "/standorte/" }
@@ -55,7 +56,20 @@ module.exports = function(eleventyConfig) {
       return true;
     });
 
+    // Propstack is global data on the generated pages. Reading it here lets
+    // the sitemap enumerate every paginated object/project URL instead of
+    // depending on Eleventy's collection view of only the first pagination item.
+    const propstackData = pages.find((item) => item.data && item.data.propstack)?.data?.propstack || {};
+
     const dynamicBySection = {
+      angebote: (propstackData.properties || []).map((property) => ({
+        loc: property.url,
+        lastmod: new Date().toISOString().slice(0, 10)
+      })),
+      projekte: (propstackData.projects || []).map((project) => ({
+        loc: project.url,
+        lastmod: new Date().toISOString().slice(0, 10)
+      })),
       lexikon: (labContent.lexicon || []).map((entry) => ({
         loc: `/lexikon/${entry.slug}/`,
         lastmod: entry.updated || new Date().toISOString().slice(0, 10)
@@ -75,13 +89,13 @@ module.exports = function(eleventyConfig) {
       let sourceUrls;
 
       if (dynamicBySection[section.key]) {
-        // Eleventy exposes only the first paginated instance of a template to
-        // collections at collection-creation time. Keep the section index from
-        // the collection, then expand every data-driven detail URL explicitly.
-        const sectionIndex = pages
-          .filter((item) => item.url === section.prefix)
+        // Eleventy can expose only part of a paginated template during collection creation.
+        // Keep every rendered page we can see (including optional CMS pages), then
+        // expand every data-driven detail URL explicitly and deduplicate below.
+        const renderedSectionPages = pages
+          .filter((item) => item.url === section.prefix || item.url.startsWith(section.prefix))
           .map((item) => ({ loc: item.url, lastmod: sitemapLastmod(item) }));
-        sourceUrls = sectionIndex.concat(dynamicBySection[section.key]);
+        sourceUrls = renderedSectionPages.concat(dynamicBySection[section.key]);
       } else {
         sourceUrls = pages
           .filter((item) => section.prefix
@@ -107,7 +121,7 @@ module.exports = function(eleventyConfig) {
   // Current site assets and integrations. Propstack/Netlify functions are not
   // touched here; this only controls build-time passthrough files.
   [
-    "style.css", "script.js", "fg-assistant.js", "fg-knowledge.js", "fg-assistant.css",
+    "style.css", "fg-polish.css", "script.js", "fg-assistant.js", "fg-knowledge.js", "fg-assistant.css",
     "investment-lab.js", "consent-manager.js", "consent-manager.css", "analytics.js",
     "vendor", "images", "favicon.ico", "videos", "admin", "_redirects"
   ].forEach((asset) => eleventyConfig.addPassthroughCopy(asset));

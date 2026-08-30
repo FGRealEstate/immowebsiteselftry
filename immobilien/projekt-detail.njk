@@ -7,104 +7,141 @@ pagination:
 permalink: "projekte/{{ project.slug }}/index.html"
 eleventyComputed:
   title: "{{ project.name }} – Immobilienprojekt | Fischer & Geserich Real Estate"
-  description: "{{ project.name }} mit {{ project.available_unit_count }} verfügbaren Einheiten{% if project.location %} in {{ project.location }}{% endif %}. Preise, Flächen, Grundrisse und einzelne Einheiten ansehen."
+  description: "{{ project.name }} mit {{ project.available_unit_count }} verfügbaren Einheiten{% if project.location %} in {{ project.location }}{% endif %}. Preise, Flächen und einzelne Einheiten ansehen."
+  canonicalPath: "{{ project.url }}"
 ---
 
-<section class="bg-primary text-white py-16 md:py-24">
-  <div class="container mx-auto px-4">
-    <div class="max-w-5xl">
-      <p class="text-secondary uppercase tracking-[0.18em] text-sm font-bold mb-4">Immobilienprojekt · {{ project.marketing_type }}</p>
-      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-5">{{ project.name }}</h1>
-      {% if project.location %}<p class="text-lg md:text-xl text-secondary"><i class="fas fa-map-marker-alt mr-2"></i>{{ project.location }}</p>{% endif %}
-    </div>
-  </div>
-</section>
-
-<section class="container mx-auto px-4 py-12 md:py-16">
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
-    <main class="lg:col-span-2 space-y-10">
-      {% if project.gallery and project.gallery.length %}
-      <section class="bg-white rounded-2xl shadow-xl overflow-hidden">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-1 bg-gray-100">
-          {% for image in project.gallery %}
-          {% if loop.index <= 6 %}
-          <img src="{{ image }}" alt="{{ project.name }} – Projektbild {{ loop.index }}" class="w-full h-72 md:h-80 object-cover {% if loop.first %}md:col-span-2 md:h-[500px]{% endif %}">
-          {% endif %}
-          {% endfor %}
-        </div>
-      </section>
-      {% endif %}
-
-      {% if project.description %}
-      <section class="bg-white rounded-2xl shadow-xl p-7 md:p-10">
-        <h2 class="text-3xl font-bold text-primary mb-5">Das Projekt</h2>
-        <div class="prose max-w-none text-gray-700 leading-relaxed text-lg">{{ project.description | safe }}</div>
-      </section>
-      {% endif %}
-
-      <section aria-labelledby="units-heading">
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-7">
-          <div>
-            <p class="text-accent uppercase tracking-[0.16em] text-sm font-bold mb-2">Einzeln anfragbar</p>
-            <h2 id="units-heading" class="text-3xl md:text-4xl font-bold text-primary">Verfügbare Einheiten</h2>
+<div class="fg-project-detail fg-premium-page">
+  <section class="fg-project-detail-hero">
+    <div class="fg-premium-shell">
+      <div class="fg-project-detail-hero-grid">
+        <div>
+          <div class="fg-project-detail-badges">
+            <span>{{ project.marketing_type }}</span>
+            {% if project.strategy %}<span class="gold">{{ project.strategy }}</span>{% endif %}
           </div>
-          <p class="text-gray-600">{{ project.available_unit_count }} Einheiten werden aktuell vermarktet.</p>
+          <h1>{{ project.name }}</h1>
+          {% if project.location %}<p><i class="fas fa-location-dot"></i>{{ project.location }}</p>{% endif %}
         </div>
-
-        {% if project.units and project.units.length %}
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {% for unit in project.units %}
-          <article class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 flex flex-col">
-            <a href="{{ unit.url }}" class="block">
-              {% if unit.main_image %}
-              <img src="{{ unit.main_image }}" alt="{{ unit.title }}" loading="lazy" class="w-full h-56 object-cover">
-              {% else %}
-              <div class="w-full h-56 flex items-center justify-center bg-gray-100 text-gray-400"><i class="fas fa-home text-5xl"></i></div>
-              {% endif %}
-            </a>
-            <div class="p-6 flex-1 flex flex-col">
-              <div class="flex flex-wrap items-center gap-2 mb-3">
-                {% if unit.unit_number %}<span class="bg-secondary text-primary text-xs font-bold px-3 py-1 rounded-full">{{ unit.unit_number }}</span>{% endif %}
-                {% if unit.property_type %}<span class="text-xs text-gray-500 font-semibold">{{ unit.property_type }}</span>{% endif %}
-              </div>
-              <h3 class="text-xl font-bold text-primary mb-2">{{ unit.title }}</h3>
-              <p class="text-2xl font-extrabold text-gold-gradient mb-4">{{ unit.price or "Preis auf Anfrage" }}</p>
-              <div class="grid grid-cols-2 gap-3 text-sm text-gray-600 mb-6">
-                {% if unit.living_space %}<span><i class="fas fa-ruler-combined text-accent mr-1"></i>{{ unit.living_space }}</span>{% endif %}
-                {% if unit.rooms %}<span><i class="fas fa-bed text-accent mr-1"></i>{{ unit.rooms }} Zi.</span>{% endif %}
-                {% if unit.usable_area %}<span><i class="fas fa-vector-square text-accent mr-1"></i>{{ unit.usable_area }} Nutzfläche</span>{% endif %}
-              </div>
-              <div class="mt-auto grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <a href="{{ unit.url }}" class="border border-primary text-primary font-bold text-center py-3 rounded-lg hover:bg-primary hover:text-white transition">Details</a>
-                <a href="{{ unit.request_url }}" class="btn-85 text-primary font-bold text-center py-3 rounded-lg">Einheit anfragen</a>
-              </div>
-            </div>
-          </article>
-          {% endfor %}
+        <div class="fg-project-detail-summary">
+          <div><small>Verfügbare Einheiten</small><strong>{{ project.available_unit_count }}</strong></div>
+          <div><small>{% if project.marketing_type == 'Miete' %}Mietrange{% else %}Kaufpreisrange{% endif %}</small><strong>{{ project.price_range or "Auf Anfrage" }}</strong></div>
+          <div><small>Wohnflächen</small><strong>{{ project.area_range or "variabel" }}</strong></div>
         </div>
-        {% else %}
-        <div class="bg-white rounded-2xl shadow p-8 text-center text-gray-600">Aktuell sind in diesem Projekt keine Einheiten zur Veröffentlichung freigegeben.</div>
-        {% endif %}
-      </section>
-    </main>
-
-    <aside class="lg:col-span-1">
-      <div class="bg-white rounded-2xl shadow-xl p-7 sticky top-28 border-t-4 border-accent">
-        <h2 class="text-2xl font-bold text-primary mb-6">Projekt auf einen Blick</h2>
-        <dl class="space-y-5">
-          <div><dt class="text-sm text-gray-500">{% if project.marketing_type == 'Miete' %}Mietrange{% else %}Kaufpreisrange{% endif %}</dt><dd class="text-2xl font-extrabold text-primary">{{ project.price_range or "Auf Anfrage" }}</dd></div>
-          <div class="grid grid-cols-2 gap-4">
-            <div><dt class="text-sm text-gray-500">Einheiten</dt><dd class="font-bold text-primary">{{ project.available_unit_count }}</dd></div>
-            <div><dt class="text-sm text-gray-500">Wohnflächen</dt><dd class="font-bold text-primary">{{ project.area_range or "variabel" }}</dd></div>
-            <div><dt class="text-sm text-gray-500">Zimmer</dt><dd class="font-bold text-primary">{{ project.room_range or "variabel" }}</dd></div>
-            {% if project.construction_year %}<div><dt class="text-sm text-gray-500">Baujahr</dt><dd class="font-bold text-primary">{{ project.construction_year }}</dd></div>{% endif %}
-          </div>
-          {% if project.completion_date %}<div><dt class="text-sm text-gray-500">Fertigstellung</dt><dd class="font-bold text-primary">{{ project.completion_date }}</dd></div>{% endif %}
-          <div><dt class="text-sm text-gray-500">Status</dt><dd class="font-bold text-primary">{{ project.status }}</dd></div>
-        </dl>
-        <p class="text-xs text-gray-500 mt-5">Verfügbarkeit, Preise und Angaben werden aus den in Propstack freigegebenen Projektdaten und Einheiten erzeugt. Zwischenverkauf und Änderungen vorbehalten.</p>
       </div>
-    </aside>
-  </div>
-</section>
+    </div>
+  </section>
 
+  <section class="fg-premium-section">
+    <div class="fg-premium-shell">
+      {% if project.gallery and project.gallery.length %}
+      <div class="fg-project-gallery" data-project-gallery>
+        <div class="fg-project-gallery-main">
+          {% for image in project.gallery %}
+            {% if loop.index <= 6 %}<img src="{{ image }}" alt="{{ project.name }} – Projektbild {{ loop.index }}" class="{% if loop.first %}is-active{% endif %}" {% if not loop.first %}loading="lazy"{% endif %}>{% endif %}
+          {% endfor %}
+          {% if project.gallery.length > 1 %}
+          <button type="button" class="prev" aria-label="Vorheriges Projektbild"><i class="fas fa-arrow-left"></i></button>
+          <button type="button" class="next" aria-label="Nächstes Projektbild"><i class="fas fa-arrow-right"></i></button>
+          <span class="fg-project-gallery-count"><b>1</b> / {{ project.gallery.length if project.gallery.length < 7 else 6 }}</span>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="fg-project-detail-layout">
+        <main>
+          {% if project.description %}
+          <section class="fg-property-box">
+            <p class="fg-premium-kicker">Projektüberblick</p>
+            <h2>Das Projekt</h2>
+            <div class="fg-property-prose">{{ project.description | safe }}</div>
+          </section>
+          {% endif %}
+
+          <section class="fg-project-units" aria-labelledby="units-heading">
+            <div class="fg-offer-section-head">
+              <div><p class="fg-premium-kicker">Einzeln anfragbar</p><h2 id="units-heading">Verfügbare Einheiten</h2></div>
+              <p>{{ project.available_unit_count }} Einheiten werden aktuell über Propstack veröffentlicht.</p>
+            </div>
+
+            {% if project.units and project.units.length %}
+            <div class="fg-offer-grid fg-project-unit-grid">
+              {% for unit in project.units %}
+              <article class="fg-offer-card" data-strategy="{{ unit.strategy_key or 'eigennutz' }}">
+                <a href="{{ unit.url }}" class="fg-offer-card-media">
+                  {% if unit.main_image %}<img src="{{ unit.main_image }}" alt="{{ unit.title }}" loading="lazy">{% else %}<span class="fg-offer-image-placeholder"><i class="fas fa-house"></i></span>{% endif %}
+                  <div class="fg-offer-badges">
+                    {% if unit.strategy %}<span class="fg-offer-badge gold">{{ unit.strategy }}</span>{% endif %}
+                    {% if unit.unit_number %}<span class="fg-offer-badge">{{ unit.unit_number }}</span>{% endif %}
+                  </div>
+                </a>
+                <div class="fg-offer-card-body">
+                  <div class="fg-offer-card-eyebrow"><span>{{ unit.property_type or 'Immobilie' }}</span><span>{{ unit.marketing_type }}</span></div>
+                  <h3>{{ unit.title }}</h3>
+                  {% if unit.location %}<p class="fg-offer-location"><i class="fas fa-location-dot"></i> {{ unit.location }}</p>{% endif %}
+                  <p class="fg-offer-price">{{ unit.price or "Preis auf Anfrage" }}</p>
+                  <div class="fg-offer-facts">
+                    {% if unit.living_space %}<div class="fg-offer-fact"><small>Wohnfläche</small><strong>{{ unit.living_space }}</strong></div>{% endif %}
+                    {% if unit.rooms %}<div class="fg-offer-fact"><small>Zimmer</small><strong>{{ unit.rooms }}</strong></div>{% endif %}
+                    {% if unit.is_investment and unit.gross_yield %}<div class="fg-offer-fact"><small>Bruttorendite</small><strong>{{ unit.gross_yield }}</strong></div>{% endif %}
+                    {% if unit.is_investment and unit.cold_rent %}<div class="fg-offer-fact"><small>Kaltmiete</small><strong>{{ unit.cold_rent }}</strong></div>{% endif %}
+                  </div>
+                  <a href="{{ unit.url }}" class="fg-offer-card-link"><span>Einheit ansehen</span><i class="fas fa-arrow-right"></i></a>
+                </div>
+              </article>
+              {% endfor %}
+            </div>
+            {% else %}
+            <div class="fg-project-empty">Aktuell sind in diesem Projekt keine Einheiten zur Veröffentlichung freigegeben.</div>
+            {% endif %}
+          </section>
+        </main>
+
+        <aside class="fg-project-detail-aside">
+          <div class="fg-project-detail-aside-card">
+            <p class="fg-premium-kicker">Auf einen Blick</p>
+            <h2>Projektdaten</h2>
+            <dl>
+              <div><dt>Status</dt><dd>{{ project.status or "In Vermarktung" }}</dd></div>
+              <div><dt>Einheiten</dt><dd>{{ project.available_unit_count }}</dd></div>
+              {% if project.room_range %}<div><dt>Zimmer</dt><dd>{{ project.room_range }}</dd></div>{% endif %}
+              {% if project.area_range %}<div><dt>Wohnflächen</dt><dd>{{ project.area_range }}</dd></div>{% endif %}
+              {% if project.construction_year %}<div><dt>Baujahr</dt><dd>{{ project.construction_year }}</dd></div>{% endif %}
+              {% if project.completion_date %}<div><dt>Fertigstellung</dt><dd>{{ project.completion_date }}</dd></div>{% endif %}
+            </dl>
+            <p class="fg-project-detail-note">Verfügbarkeit und Angaben werden aus den in Propstack freigegebenen Projekt- und Einheitsdaten erzeugt. Zwischenverkauf und Änderungen vorbehalten.</p>
+            <a href="#units-heading" class="btn-85 fg-project-detail-button">Einheiten vergleichen <i class="fas fa-arrow-down"></i></a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  const root = document.querySelector('[data-project-gallery]');
+  if (!root) return;
+  const images = Array.from(root.querySelectorAll('.fg-project-gallery-main img'));
+  if (images.length < 2) return;
+  let index = 0;
+  const count = root.querySelector('.fg-project-gallery-count b');
+  function show(next){ index=(next+images.length)%images.length; images.forEach((img,i)=>img.classList.toggle('is-active',i===index)); if(count) count.textContent=index+1; }
+  root.querySelector('.next')?.addEventListener('click',()=>show(index+1));
+  root.querySelector('.prev')?.addEventListener('click',()=>show(index-1));
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ItemList",
+  "name":{{ project.name | dump | safe }},
+  "url":"https://fg-realestate.de{{ project.url }}",
+  "numberOfItems":{{ project.available_unit_count }},
+  "itemListElement":[
+    {% for unit in project.units %}{"@type":"ListItem","position":{{ loop.index }},"url":"https://fg-realestate.de{{ unit.url }}","name":{{ unit.title | dump | safe }}}{% if not loop.last %},{% endif %}{% endfor %}
+  ]
+}
+</script>
