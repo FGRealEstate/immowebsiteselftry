@@ -5,252 +5,38 @@ pagination:
   size: 1
   alias: property
 permalink: "angebote/{{ property.slug }}/index.html"
+eleventyComputed:
+  title: "{{ property.title }} | Fischer & Geserich Real Estate"
+  description: "{{ property.title }}{% if property.location %} in {{ property.location }}{% endif %}: Eckdaten, Bilder{% if property.is_investment %}, Investmentkennzahlen und interaktive Szenariorechnung{% endif %}."
+  canonicalPath: "{{ property.url }}"
 ---
-
-<section class="fg-page-hero bg-primary text-white py-16 md:py-24">
-    <div class="container mx-auto px-4 text-center">
-
-        {% if property.marketing_type or property.property_type %}
-        <p class="text-secondary mb-3 font-semibold uppercase tracking-wide">
-            {{ property.marketing_type }}{% if property.marketing_type and property.property_type %} · {% endif %}{{ property.property_type }}
-        </p>
-        {% endif %}
-
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
-            {{ property.title }}
-        </h1>
-
-        {% if property.location %}
-        <p class="text-lg text-secondary">
-            <i class="fas fa-map-marker-alt mr-2"></i>{{ property.location }}
-        </p>
-        {% endif %}
-
-    </div>
-</section>
-
-<section class="container mx-auto px-4 py-16">
-
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
-
-        <main class="lg:col-span-2 space-y-8">
-
-            {% if property.gallery and property.gallery.length %}
-            <section class="bg-white rounded-xl shadow-xl overflow-hidden">
-                <div id="property-slider" class="relative w-full bg-white">
-
-                    <div class="relative w-full h-[360px] md:h-[520px] lg:h-[620px] bg-white flex items-center justify-center overflow-hidden">
-
-                        {% for image in property.gallery %}
-                        <img
-                            src="{{ image }}"
-                            alt="{{ property.title }}"
-                            class="property-slide absolute inset-0 w-full h-full object-contain bg-white {% if loop.first %}opacity-100 pointer-events-auto{% else %}opacity-0 pointer-events-none{% endif %} transition-opacity duration-500"
-                        >
-                        {% endfor %}
-
-                        {% if property.gallery.length > 1 %}
-                        <button
-                            type="button"
-                            id="slider-prev"
-                            class="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 bg-white/95 text-primary rounded-full w-11 h-11 md:w-12 md:h-12 shadow-lg flex items-center justify-center hover:bg-secondary transition"
-                            aria-label="Vorheriges Bild">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-
-                        <button
-                            type="button"
-                            id="slider-next"
-                            class="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 bg-white/95 text-primary rounded-full w-11 h-11 md:w-12 md:h-12 shadow-lg flex items-center justify-center hover:bg-secondary transition"
-                            aria-label="Nächstes Bild">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-
-                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary/85 text-white px-4 py-2 rounded-full text-sm shadow-lg">
-                            <span id="slider-current">1</span> / {{ property.gallery.length }}
-                        </div>
-                        {% endif %}
-
-                    </div>
-                </div>
-            </section>
-            {% endif %}
-
-            {% if property.descriptions and property.descriptions.length %}
-            <section class="bg-white rounded-xl shadow-xl p-8 md:p-10">
-                <h2 class="text-3xl font-bold text-primary mb-8">
-                    Beschreibung
-                </h2>
-
-                <div class="space-y-8">
-                    {% for description in property.descriptions %}
-                    {% if description.value %}
-                    <div>
-                        <h3 class="text-xl font-bold text-primary mb-3">
-                            {{ description.label }}
-                        </h3>
-
-                        <div class="text-gray-700 leading-relaxed text-lg prose max-w-none">
-                            {{ description.value | safe }}
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </section>
-            {% endif %}
-
-            {% if property.features and property.features.length %}
-            <section class="bg-white rounded-xl shadow-xl p-8 md:p-10">
-                <h2 class="text-3xl font-bold text-primary mb-8">
-                    Ausstattung
-                </h2>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {% for feature in property.features %}
-                    {% if feature.value %}
-                    <div class="bg-gray-50 rounded-lg p-4 flex items-start gap-3">
-                        <i class="fas fa-check-circle text-accent mt-1"></i>
-
-                        <div class="text-gray-700">
-                            <strong class="text-primary">{{ feature.label }}</strong>
-                            {% if feature.value and feature.value != "Ja" %}
-                            <span>: {{ feature.value }}</span>
-                            {% endif %}
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </section>
-            {% endif %}
-
-        </main>
-
-        <aside class="lg:col-span-1">
-            <div class="bg-white rounded-xl shadow-xl p-8 sticky top-8 border-t-4 border-accent">
-
-                {% if property.price %}
-                <div class="mb-8">
-                    <p class="text-gray-500 mb-1">Kaufpreis</p>
-                    <p class="text-3xl font-extrabold text-primary">
-                        {{ property.price }}
-                    </p>
-                </div>
-                {% endif %}
-
-                <div class="grid grid-cols-2 gap-4 mb-8">
-
-                    {% if property.living_space %}
-                    <div class="bg-gray-50 rounded-lg p-4 text-center">
-                        <i class="fas fa-ruler-combined text-accent mb-2"></i>
-                        <p class="font-bold text-primary">{{ property.living_space }}</p>
-                        <p class="text-sm text-gray-500">Wohnfläche</p>
-                    </div>
-                    {% endif %}
-
-                    {% if property.rooms %}
-                    <div class="bg-gray-50 rounded-lg p-4 text-center">
-                        <i class="fas fa-bed text-accent mb-2"></i>
-                        <p class="font-bold text-primary">{{ property.rooms }}</p>
-                        <p class="text-sm text-gray-500">Zimmer</p>
-                    </div>
-                    {% endif %}
-
-                    {% if property.bedrooms %}
-                    <div class="bg-gray-50 rounded-lg p-4 text-center">
-                        <i class="fas fa-door-closed text-accent mb-2"></i>
-                        <p class="font-bold text-primary">{{ property.bedrooms }}</p>
-                        <p class="text-sm text-gray-500">Schlafzimmer</p>
-                    </div>
-                    {% endif %}
-
-                    {% if property.bathrooms %}
-                    <div class="bg-gray-50 rounded-lg p-4 text-center">
-                        <i class="fas fa-bath text-accent mb-2"></i>
-                        <p class="font-bold text-primary">{{ property.bathrooms }}</p>
-                        <p class="text-sm text-gray-500">Badezimmer</p>
-                    </div>
-                    {% endif %}
-
-                </div>
-
-                {% if property.details and property.details.length %}
-                <h2 class="text-2xl font-bold text-primary mb-6">
-                    Eckdaten
-                </h2>
-
-                <div class="space-y-4 text-gray-700">
-                    {% for detail in property.details %}
-                    {% if detail.value %}
-                    <div class="flex justify-between gap-6 border-b border-gray-100 pb-3">
-                        <span>{{ detail.label }}</span>
-                        <strong class="text-right text-primary">{{ detail.value }}</strong>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-                {% endif %}
-
-                <a href="{{ property.request_url }}" class="btn-85 block text-center text-primary font-bold py-4 mt-8 rounded-lg shadow-md">
-                    Objekt anfragen
-                </a>
-
-                <a href="/angebote.html" class="block text-center text-primary mt-5 font-semibold hover:underline">
-                    Zurück zu den Angeboten
-                </a>
-
-            </div>
-        </aside>
-
-    </div>
-</section>
-
+<div class="fg-property-v3">
+<section class="fg-property-hero"><div class="fg-premium-shell"><div class="fg-property-hero-grid"><div><span class="fg-property-strategy"><i class="fas {% if property.is_investment %}fa-chart-line{% else %}fa-house{% endif %}"></i>{{ property.strategy }}{% if property.marketing_type %} · {{ property.marketing_type }}{% endif %}</span><h1>{{ property.title }}</h1>{% if property.location %}<p><i class="fas fa-location-dot"></i> {{ property.location }}</p>{% endif %}</div><a href="{{ property.request_url }}" class="btn-85 px-7 py-4">Objekt anfragen <i class="fas fa-arrow-right"></i></a></div></div></section>
+<section class="fg-premium-shell"><div class="fg-property-layout"><main>
+{% if property.gallery and property.gallery.length %}<section class="fg-property-gallery"><div class="fg-property-gallery-main" data-property-gallery>{% for image in property.gallery %}<img src="{{ image }}" alt="{{ property.title }} – Bild {{ loop.index }}" class="{% if loop.first %}is-active{% endif %}">{% endfor %}{% if property.gallery.length > 1 %}<button class="prev" type="button" data-gallery-prev aria-label="Vorheriges Bild"><i class="fas fa-chevron-left"></i></button><button class="next" type="button" data-gallery-next aria-label="Nächstes Bild"><i class="fas fa-chevron-right"></i></button><span class="fg-property-gallery-count"><b data-gallery-current>1</b> / {{ property.gallery.length }}</span>{% endif %}</div></section>{% endif %}
+{% if property.is_investment and property.marketing_type == 'Kauf' %}<section class="fg-invest-mini" data-investment-cockpit data-price="{{ property.purchase_price_raw or 0 }}" data-rent="{{ property.cold_rent_raw or 0 }}" data-costs="{{ property.investment_defaults.monthly_non_recoverable or 0 }}" data-equity="{{ property.investment_defaults.equity_percent or 20 }}" data-interest="{{ property.investment_defaults.interest_percent or 3.5 }}" data-repayment="{{ property.investment_defaults.repayment_percent or 2 }}" data-acquisition="{{ property.investment_defaults.acquisition_cost_percent or 10 }}"><div class="fg-invest-mini-head"><div><p class="fg-premium-kicker fg-premium-kicker-light">Investment Check · interaktiv</p><h2>Was passiert, wenn Sie die Finanzierung verändern?</h2><p>Die Rechnung ist eine Orientierung auf Basis der aktuell verfügbaren Objektdaten. Regler und Felder verändern Cashflow, Eigenkapitalbedarf und Restschuld sofort.</p></div><span class="fg-property-strategy"><i class="fas fa-flask"></i> Live-Szenario</span></div><div class="fg-invest-controls"><div class="fg-invest-control"><label>Kaufpreis €</label><input type="number" min="0" step="1000" data-invest-price></div><div class="fg-invest-control"><label>Kaltmiete / Monat €</label><input type="number" min="0" step="10" data-invest-rent></div><div class="fg-invest-control"><label>Nicht umlagefähig / Monat €</label><input type="number" min="0" step="10" data-invest-costs></div><div class="fg-invest-control"><label>Sollzins %</label><input type="number" min="0" step="0.1" data-invest-interest></div><div class="fg-invest-control"><label>Tilgung %</label><input type="number" min="0" step="0.1" data-invest-repayment></div><div class="fg-invest-control"><label>Kaufnebenkosten %</label><input type="number" min="0" step="0.1" data-invest-acquisition></div><div class="fg-invest-control fg-invest-slider"><label>Eigenkapitalquote Kaufpreis: <b data-invest-equity-label></b></label><input type="range" min="0" max="60" step="1" data-invest-equity></div></div><div class="fg-invest-results"><div class="fg-invest-result"><span>Bruttorendite</span><strong data-invest-yield>–</strong></div><div class="fg-invest-result"><span>Cashflow / Monat</span><strong data-invest-cashflow>–</strong></div><div class="fg-invest-result"><span>Eigenkapitalbedarf</span><strong data-invest-equity-amount>–</strong></div><div class="fg-invest-result"><span>Restschuld nach 10 J.</span><strong data-invest-debt10>–</strong></div></div><div class="fg-invest-charts"><div class="fg-invest-chart"><h3>Restschuldverlauf</h3><div class="fg-debt-bars" data-debt-bars></div><div class="fg-debt-labels"><span>Start</span><span>5 J.</span><span>10 J.</span><span>15 J.</span><span>20 J.</span></div></div><div class="fg-invest-chart"><h3>Monatlicher Cashflow</h3><div class="fg-cashflow-gauge"><i data-cashflow-gauge></i></div><strong data-cashflow-copy>–</strong><p style="color:#aeb3c3;font-size:.78rem;margin-top:8px">Vor Steuern; vereinfachte Annuitätenrechnung ohne individuelle Steuerwirkung.</p></div></div><a class="fg-invest-link" href="/investment-lab.html">Mehr Szenarien im Investment Lab <i class="fas fa-arrow-right"></i></a></section>{% endif %}
+{% if property.descriptions and property.descriptions.length %}<section class="fg-property-box"><h2>Objekt &amp; Lage</h2>{% for description in property.descriptions %}{% if description.value %}<div class="fg-property-prose"><h3>{{ description.label }}</h3>{{ description.value | safe }}</div>{% endif %}{% endfor %}</section>{% endif %}
+{% if property.features and property.features.length %}<section class="fg-property-box"><h2>Ausstattung</h2><div class="fg-premium-grid-3">{% for feature in property.features %}{% if feature.value %}<article class="fg-premium-card"><h3>{{ feature.label }}</h3><p>{{ feature.value }}</p></article>{% endif %}{% endfor %}</div></section>{% endif %}
+</main><aside class="fg-property-sidebar"><span class="fg-premium-kicker">{{ property.strategy }}</span><p class="fg-property-price">{{ property.price or 'Preis auf Anfrage' }}</p><div class="fg-property-kpis">{% if property.living_space %}<div class="fg-property-kpi"><span>Wohnfläche</span><strong>{{ property.living_space }}</strong></div>{% endif %}{% if property.rooms %}<div class="fg-property-kpi"><span>Zimmer</span><strong>{{ property.rooms }}</strong></div>{% endif %}{% if property.price_per_sqm %}<div class="fg-property-kpi"><span>Preis / m²</span><strong>{{ property.price_per_sqm }}</strong></div>{% endif %}{% if property.is_investment and property.cold_rent %}<div class="fg-property-kpi"><span>Kaltmiete</span><strong>{{ property.cold_rent }}</strong></div>{% endif %}{% if property.is_investment and property.gross_yield %}<div class="fg-property-kpi"><span>Bruttorendite</span><strong>{{ property.gross_yield }}</strong></div>{% endif %}{% if property.is_investment and property.rent_per_sqm %}<div class="fg-property-kpi"><span>Miete / m²</span><strong>{{ property.rent_per_sqm }}</strong></div>{% endif %}</div>{% if property.details and property.details.length %}<h2 style="font-size:1.5rem;margin:24px 0 14px">Eckdaten</h2><dl>{% for detail in property.details %}{% if detail.value %}<div style="display:flex;justify-content:space-between;gap:18px;padding:10px 0;border-bottom:1px solid #edf0f3"><dt style="color:#737b88">{{ detail.label }}</dt><dd style="margin:0;text-align:right;font-weight:800;color:#08082f">{{ detail.value }}</dd></div>{% endif %}{% endfor %}</dl>{% endif %}<a href="{{ property.request_url }}" class="btn-85 w-full py-4 mt-6">Objekt anfragen</a><a href="/angebote.html" style="display:block;text-align:center;margin-top:16px;color:#08082f;font-weight:800">Zurück zu den Angeboten</a></aside></div></section></div>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const slides = document.querySelectorAll(".property-slide");
-    const prevButton = document.getElementById("slider-prev");
-    const nextButton = document.getElementById("slider-next");
-    const currentLabel = document.getElementById("slider-current");
-
-    if (!slides.length) return;
-
-    let currentIndex = 0;
-
-    function showSlide(index) {
-        slides[currentIndex].classList.remove("opacity-100", "pointer-events-auto");
-        slides[currentIndex].classList.add("opacity-0", "pointer-events-none");
-
-        currentIndex = (index + slides.length) % slides.length;
-
-        slides[currentIndex].classList.remove("opacity-0", "pointer-events-none");
-        slides[currentIndex].classList.add("opacity-100", "pointer-events-auto");
-
-        if (currentLabel) {
-            currentLabel.textContent = currentIndex + 1;
-        }
-    }
-
-    if (prevButton) {
-        prevButton.addEventListener("click", function () {
-            showSlide(currentIndex - 1);
-        });
-    }
-
-    if (nextButton) {
-        nextButton.addEventListener("click", function () {
-            showSlide(currentIndex + 1);
-        });
-    }
-
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "ArrowLeft") {
-            showSlide(currentIndex - 1);
-        }
-
-        if (event.key === "ArrowRight") {
-            showSlide(currentIndex + 1);
-        }
-    });
-});
+(function(){const gallery=document.querySelector('[data-property-gallery]');if(gallery){const slides=[...gallery.querySelectorAll('img')],cur=gallery.querySelector('[data-gallery-current]');let i=0;const show=n=>{slides[i]?.classList.remove('is-active');i=(n+slides.length)%slides.length;slides[i]?.classList.add('is-active');if(cur)cur.textContent=i+1};gallery.querySelector('[data-gallery-prev]')?.addEventListener('click',()=>show(i-1));gallery.querySelector('[data-gallery-next]')?.addEventListener('click',()=>show(i+1));}
+const root=document.querySelector('[data-investment-cockpit]');if(!root)return;const q=s=>root.querySelector(s),num=x=>Math.max(0,Number(x)||0),eur=n=>new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n),pct=n=>new Intl.NumberFormat('de-DE',{minimumFractionDigits:1,maximumFractionDigits:1}).format(n)+' %';const f={price:q('[data-invest-price]'),rent:q('[data-invest-rent]'),costs:q('[data-invest-costs]'),interest:q('[data-invest-interest]'),repayment:q('[data-invest-repayment]'),acq:q('[data-invest-acquisition]'),equity:q('[data-invest-equity]')};f.price.value=root.dataset.price||0;f.rent.value=root.dataset.rent||0;f.costs.value=root.dataset.costs||0;f.interest.value=root.dataset.interest||3.5;f.repayment.value=root.dataset.repayment||2;f.acq.value=root.dataset.acquisition||10;f.equity.value=root.dataset.equity||20;function debtAfter(principal,annualRate,annualPayment,years){const m=annualRate/100/12,p=annualPayment/12;let d=principal;for(let k=0;k<years*12;k++)d=Math.max(0,d*(1+m)-p);return d}function calc(){const price=num(f.price.value),rent=num(f.rent.value),costs=num(f.costs.value),interest=num(f.interest.value),rep=num(f.repayment.value),acq=num(f.acq.value),eq=num(f.equity.value);const loan=price*(1-eq/100),equityAmount=price*eq/100+price*acq/100,annualPayment=loan*(interest+rep)/100,monthlyDebt=annualPayment/12,cash=rent-costs-monthlyDebt,yieldV=price?rent*12/price*100:0,debt10=debtAfter(loan,interest,annualPayment,10);q('[data-invest-equity-label]').textContent=pct(eq);q('[data-invest-yield]').textContent=pct(yieldV);q('[data-invest-cashflow]').textContent=(cash>=0?'+ ':'− ')+eur(Math.abs(cash));q('[data-invest-equity-amount]').textContent=eur(equityAmount);q('[data-invest-debt10]').textContent=eur(debt10);q('[data-cashflow-copy]').textContent=(cash>=0?'Positiver':'Negativer')+' Cashflow: '+(cash>=0?'+ ':'− ')+eur(Math.abs(cash))+' / Monat';const gauge=q('[data-cashflow-gauge]');gauge.style.width=Math.max(5,Math.min(100,50+cash/10))+'%';const bars=q('[data-debt-bars]');bars.innerHTML='';[0,5,10,15,20].forEach(y=>{const d=y?debtAfter(loan,interest,annualPayment,y):loan,b=document.createElement('i');b.style.height=(loan?Math.max(4,d/loan*100):4)+'%';b.title=y+' Jahre: '+eur(d);bars.appendChild(b)})}Object.values(f).forEach(el=>el?.addEventListener('input',calc));calc();})();
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"RealEstateListing",
+  "name":{{ property.title | dump | safe }},
+  "url":"https://fg-realestate.de{{ property.url }}",
+  "description":{{ property.title | dump | safe }},
+  "offers":{
+    "@type":"Offer",
+    "url":"https://fg-realestate.de{{ property.url }}",
+    "availability":"https://schema.org/InStock"{% if property.purchase_price_raw %},
+    "price":{{ property.purchase_price_raw }},
+    "priceCurrency":"EUR"{% endif %}
+  },
+  "seller":{"@id":"https://fg-realestate.de/#organization"}{% if property.main_image %},
+  "image":{{ property.gallery | dump | safe }}{% endif %}
+}
 </script>

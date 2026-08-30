@@ -1,0 +1,11 @@
+{#
+  O-110 — the two-sentence after-sales block for the six service pages (§ 1.3 of
+  the copy document). Text comes from `mangoTexte.teaser`; the arrow the document
+  writes as "→ Betreuung nach dem Kauf" becomes the actual link.
+#}
+<section class="container mx-auto px-4 pb-12">
+  <aside class="fg-aftersales-teaser max-w-4xl mx-auto">
+    <p>{{ mangoTexte.teaser.html | safe }}</p>
+    <a href="/betreuung-nach-dem-kauf/">{{ mangoTexte.teaser.link }} <i class="fas fa-arrow-right"></i></a>
+  </aside>
+</section>

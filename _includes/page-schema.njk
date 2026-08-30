@@ -1,0 +1,72 @@
+{# ------------------------------------------------------------------
+   O-114 / F-334 — wiederverwendbarer JSON-LD-Block fuer die Seiten,
+   die bisher keinerlei strukturierte Daten getragen haben.
+
+   Variablen (vor dem Include setzen):
+     schemaType  — WebPage | AboutPage | ContactPage | Service | WebApplication
+     schemaName  — Name der Seite
+     schemaDesc  — Beschreibung
+     schemaPath  — Pfad inkl. fuehrendem Slash, z. B. "/vermieten.html"
+     schemaCrumb — Beschriftung der letzten Breadcrumb-Stufe
+     schemaArea  — optional: Gebiet fuer den Service-Knoten (Default: Berlin)
+
+   Bei Service und WebApplication traegt die Seite zwei Knoten: den
+   Sachknoten (#entitaet) und einen WebPage-Knoten, der per `about`
+   darauf zeigt. Grund: `breadcrumb`, `areaServed` und `availableChannel`
+   haben Domains, die weder WebApplication noch Service erfuellen —
+   `vocabcheck.py` hat genau das an der ersten Fassung gemeldet.
+   ------------------------------------------------------------------ #}
+{%- set sUrl = "https://fg-realestate.de" + schemaPath -%}
+{%- set isEntity = (schemaType == "Service" or schemaType == "WebApplication") -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {%- if isEntity %}
+    {
+      "@type": "{{ schemaType }}",
+      "@id": "{{ sUrl }}#entitaet",
+      "name": {{ schemaName | json | safe }},
+      "description": {{ schemaDesc | json | safe }},
+      "url": "{{ sUrl }}",
+      {%- if schemaType == "Service" %}
+      "serviceType": {{ schemaName | json | safe }},
+      "provider": { "@id": "https://fg-realestate.de/#organization" },
+      "areaServed": {{ (schemaArea or "Berlin") | json | safe }},
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "{{ sUrl }}",
+        "servicePhone": { "@type": "ContactPoint", "telephone": "+4915203083048", "contactType": "sales", "availableLanguage": ["de","en"] }
+      }
+      {%- else %}
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": 0, "priceCurrency": "EUR" },
+      "creator": { "@id": "https://fg-realestate.de/#organization" }
+      {%- endif %}
+    },
+    {%- endif %}
+    {
+      "@type": "{% if isEntity %}WebPage{% else %}{{ schemaType }}{% endif %}",
+      "@id": "{{ sUrl }}",
+      "url": "{{ sUrl }}",
+      "name": {{ schemaName | json | safe }},
+      "description": {{ schemaDesc | json | safe }},
+      "inLanguage": "de-DE",
+      "isPartOf": { "@id": "https://fg-realestate.de/#website" },
+      "publisher": { "@id": "https://fg-realestate.de/#organization" },
+      "breadcrumb": { "@id": "{{ sUrl }}#breadcrumb" }{% if isEntity %},
+      "about": { "@id": "{{ sUrl }}#entitaet" }{% endif %}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ sUrl }}#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
+        { "@type": "ListItem", "position": 2, "name": {{ schemaCrumb | json | safe }} }
+      ]
+    }
+  ]
+}
+</script>

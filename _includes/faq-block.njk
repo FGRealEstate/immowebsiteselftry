@@ -1,0 +1,163 @@
+{#
+  Shared F&G FAQ block.
+  Uses the same visual language as the homepage FAQ and keeps the full answer
+  in the HTML for accessibility/crawlers. Every page also offers the direct
+  "Eigene Frage stellen" route to the website-question Netlify function.
+#}
+<section id="{{ faqAnchor }}" class="fg-home-v2-section fg-home-v2-faq-section fg-service-faq-section">
+  <div class="container mx-auto px-4">
+    <div class="fg-home-v2-faq-layout">
+      <div class="fg-home-v2-faq-intro fg-reveal">
+        <p class="fg-home-v2-kicker">{% if faqKicker %}{{ faqKicker }}{% else %}Fragen &amp; Antworten{% endif %}</p>
+        <h2>{{ faqTitle }}</h2>
+        {% if faqIntro %}<p>{{ faqIntro }}</p>{% endif %}
+        <button
+          type="button"
+          class="fg-home-v2-outline-button fg-faq-question-toggle"
+          data-fg-faq-toggle
+          aria-expanded="false"
+          aria-controls="{{ faqAnchor }}-question-panel">
+          Eigene Frage stellen <i class="fas fa-arrow-right"></i>
+        </button>
+
+        <div class="fg-faq-question-panel" id="{{ faqAnchor }}-question-panel" data-fg-faq-panel hidden>
+          <div class="fg-faq-question-head">
+            <span>Direkt an F&amp;G</span>
+            <h3>Welche Frage ist noch offen?</h3>
+            <p>Ihre Nachricht wird direkt an <strong>info@fg-realestate.de</strong> gesendet. Wir antworten persönlich.</p>
+          </div>
+          <form data-fg-faq-form novalidate>
+            <div class="fg-faq-question-grid">
+              <label><span>Name *</span><input name="name" required autocomplete="name"></label>
+              <label><span>E-Mail *</span><input name="email" type="email" required autocomplete="email"></label>
+            </div>
+            <label><span>Telefon</span><input name="phone" type="tel" autocomplete="tel" placeholder="optional"></label>
+            <label><span>Ihre Frage *</span><textarea name="question" required rows="5" maxlength="5000" placeholder="Schildern Sie uns kurz Ihre Frage."></textarea></label>
+            <label class="fg-faq-question-hp" aria-hidden="true"><span>Website</span><input name="company_website" tabindex="-1" autocomplete="off"></label>
+            <label class="fg-faq-question-consent">
+              <input type="checkbox" name="privacy_consent" value="true" required>
+              <span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span>
+            </label>
+            <div class="fg-faq-question-status" data-fg-faq-status hidden></div>
+            <button type="submit" class="btn-85 fg-faq-question-submit">Frage senden <i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="fg-home-v2-faq-list fg-reveal">
+        {%- for item in faqItems %}
+        <details{% if loop.first %} open{% endif %}>
+          <summary>{{ item.q }}<i class="fas {% if loop.first %}fa-minus{% else %}fa-plus{% endif %}"></i></summary>
+          <p>{{ item.a }}</p>
+        </details>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  const root = document.getElementById({{ faqAnchor | dump | safe }});
+  if (!root) return;
+
+  root.querySelectorAll(".fg-home-v2-faq-list details").forEach(function (detail) {
+    detail.addEventListener("toggle", function () {
+      const icon = detail.querySelector("summary i");
+      if (!icon) return;
+      icon.classList.toggle("fa-plus", !detail.open);
+      icon.classList.toggle("fa-minus", detail.open);
+    });
+  });
+
+  const toggle = root.querySelector("[data-fg-faq-toggle]");
+  const panel = root.querySelector("[data-fg-faq-panel]");
+  const form = root.querySelector("[data-fg-faq-form]");
+  const status = root.querySelector("[data-fg-faq-status]");
+
+  toggle?.addEventListener("click", function () {
+    if (!panel) return;
+    const willOpen = panel.hidden;
+    panel.hidden = !willOpen;
+    toggle.setAttribute("aria-expanded", String(willOpen));
+    toggle.classList.toggle("is-open", willOpen);
+    const icon = toggle.querySelector("i");
+    if (icon) {
+      icon.classList.toggle("fa-arrow-right", !willOpen);
+      icon.classList.toggle("fa-xmark", willOpen);
+    }
+    if (willOpen) requestAnimationFrame(function () {
+      panel.querySelector('input[name="name"]')?.focus({ preventScroll: true });
+    });
+  });
+
+  form?.addEventListener("submit", async function (event) {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+
+    const submit = form.querySelector('button[type="submit"]');
+    const original = submit.innerHTML;
+    submit.disabled = true;
+    submit.textContent = "Wird gesendet …";
+    if (status) status.hidden = true;
+
+    const fd = new FormData(form);
+    const payload = {
+      name: fd.get("name"),
+      email: fd.get("email"),
+      phone: fd.get("phone"),
+      question: fd.get("question"),
+      company_website: fd.get("company_website"),
+      privacy_consent: fd.get("privacy_consent") === "true",
+      source_url: location.href.split("#")[0] + "#" + {{ faqAnchor | dump | safe }}
+    };
+
+    try {
+      const response = await fetch("/.netlify/functions/website-question", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      const result = await response.json();
+      if (!response.ok || !result.success) throw new Error(result.error || "Versand fehlgeschlagen");
+      form.reset();
+      if (status) {
+        status.className = "fg-faq-question-status is-success";
+        status.textContent = "Vielen Dank. Ihre Frage wurde direkt an uns gesendet.";
+        status.hidden = false;
+      }
+    } catch (error) {
+      if (status) {
+        status.className = "fg-faq-question-status is-error";
+        status.textContent = "Die Nachricht konnte gerade nicht versendet werden. Bitte schreiben Sie an info@fg-realestate.de.";
+        status.hidden = false;
+      }
+    } finally {
+      submit.disabled = false;
+      submit.innerHTML = original;
+    }
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://fg-realestate.de{{ canonicalPath or page.url }}#{{ faqAnchor }}",
+  "isPartOf": { "@id": "https://fg-realestate.de/#website" },
+  "about": { "@id": "https://fg-realestate.de/#organization" },
+  "mainEntity": [
+    {%- for item in faqItems %}
+    {
+      "@type": "Question",
+      "name": {{ item.q | dump | safe }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ item.a | dump | safe }}
+      }
+    }{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}
+</script>

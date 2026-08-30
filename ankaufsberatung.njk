@@ -1,92 +1,13 @@
 ---
 layout: base.njk
-title: "Ankaufsberatung für Kapitalanleger und Eigennutzer | Fischer & Geserich"
-description: "Individuelle Ankaufsberatung für Immobilien: Strategie, Objektsuche, wirtschaftliche Prüfung, Verhandlung, Finanzierung und Begleitung bis zum Notartermin."
+title: Ankaufsberatung für Kapitalanleger und Eigennutzer | Fischer & Geserich
 permalink: ankaufsberatung.html
+description: "Ankaufsberatung für Immobilien: Objekt, Lage, Unterlagen, Wirtschaftlichkeit und Finanzierung gemeinsam prüfen – für Kapitalanleger und Eigennutzer."
 canonicalPath: /ankaufsberatung.html
-ogTitle: "Ankaufsberatung für Immobilienkäufer"
-ogDescription: "Von der Strategie über die Objektprüfung und Finanzierung bis zum Notartermin – persönliche Ankaufsberatung für Kapitalanleger und Eigennutzer."
 ---
-<section class="fg-journey-hero fg-page-hero bg-primary text-white py-16 md:py-24">
-  <div class="container mx-auto px-4 max-w-6xl">
-    <a href="/index.html#ziele" class="fg-back-link"><i class="fas fa-arrow-left"></i> Zurück zur Auswahl</a>
-    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center mt-8">
-      <div class="lg:col-span-3 fg-reveal">
-        <p class="fg-eyebrow">Für Käufer &amp; Investoren</p>
-        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">Erfolgreiche Ankaufsberatung mit klarem Prozess.</h1>
-        <p class="text-lg md:text-xl text-page-bg max-w-3xl mb-8">Ob Traumhaus oder Renditeobjekt: Wir strukturieren Suche, Prüfung, Verhandlung und Finanzierung so, dass Sie fundiert entscheiden können.</p>
-        <a href="#terminbuchung" class="btn-85 inline-flex items-center gap-2 py-3 px-7 text-primary font-bold rounded-lg"><i class="fas fa-calendar-check"></i> Erstgespräch vereinbaren</a>
-      </div>
-      <div class="lg:col-span-2 fg-human-hero-card fg-reveal">
-        <img src="/images/webp/beratung-timon.webp" alt="Persönliche Ankaufsberatung Fischer & Geserich" loading="lazy">
-        <div><span>Persönlich statt standardisiert</span><strong>Vom Suchprofil bis zum Notartermin.</strong></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-{% include "appointment-booking.njk" %}
-
-<section class="container mx-auto px-4 -mt-2 relative z-10 pb-4">
-  <div class="fg-segmented-tabs max-w-md mx-auto" role="tablist" aria-label="Ankaufsberatung Zielgruppe">
-    <button id="btn-kapitalanleger" onclick="switchTab('kapitalanleger')" class="is-active" role="tab">Für Kapitalanleger</button>
-    <button id="btn-eigennutzer" onclick="switchTab('eigennutzer')" role="tab">Für Eigennutzer</button>
-  </div>
-</section>
-
-<div id="content-wrapper" class="transition-opacity duration-300">
-  <div id="content-kapitalanleger" class="block">
-    <section class="container mx-auto px-4 py-16 md:py-24">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-12 fg-reveal"><p class="fg-section-kicker">Von der Strategie bis zum Abschluss</p><h2 class="text-3xl md:text-5xl font-bold text-primary mb-4">Ihr Weg zum Immobilien-Portfolio</h2><p class="text-lg text-gray-600 max-w-3xl mx-auto">Sieben klare Schritte von der ersten Idee bis zum erfolgreichen Abschluss – transparent, strukturiert und kaufmännisch fundiert.</p></div>
-        <div class="fg-timeline">
-          {% set investorSteps = [
-            ["01","Erstgespräch vereinbaren","Lernen Sie uns kennen. Wir klären Ihre Ausgangslage, Ziele und den passenden Rahmen für die Zusammenarbeit."],
-            ["02","Persönliche Strategieentwicklung","Wir definieren gemeinsam Ihre Anlageziele und entwickeln einen maßgeschneiderten Fahrplan für Ihren Vermögensaufbau."],
-            ["03","Objektprüfung (Due Diligence)","Wir prüfen das Objekt kaufmännisch und wirtschaftlich und analysieren Zahlen, Mietpotenziale und Renditechancen. Keine Rechts- oder Steuerberatung."],
-            ["04","Objektvorstellung","Wir präsentieren Ihnen geprüfte Immobilienchancen – On-Market und, sofern verfügbar, Off-Market – passend zu Ihrem Suchprofil."],
-            ["05","Ankauf & Verhandlung","Wir übernehmen die Kommunikation mit Maklern und Verkäufern und führen für Sie die Kaufpreisverhandlung."],
-            ["06","Finanzierungssuche","Wir unterstützen Sie bei der Suche nach einer passenden Finanzierungsstruktur und vermitteln Bankkontakte."],
-            ["07","Notar & After Sales","Wir begleiten Sie zum Notartermin und stehen Ihnen auch nach dem Kauf als Ansprechpartner zur Seite."]
-          ] %}
-          {% for step in investorSteps %}<article class="fg-timeline-step fg-reveal"><span>{{ step[0] }}</span><div><h3>{{ step[1] }}</h3><p>{{ step[2] }}</p>{% if loop.first %}<a href="#terminbuchung" class="fg-timeline-link">Termin auswählen <i class="fas fa-arrow-right"></i></a>{% endif %}</div></article>{% endfor %}
-        </div>
-      </div>
-    </section>
-    <section class="bg-white py-12 md:py-16" id="cta-investor"><div class="container mx-auto px-4 text-center fg-reveal"><p class="fg-section-kicker">Nächster Schritt</p><h2 class="text-3xl font-bold mb-4 text-primary">Investment-Gespräch vereinbaren</h2><p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">Definieren Sie im Erstgespräch Ihre Investmentstrategie und den weiteren Fahrplan.</p><a href="#terminbuchung" class="btn-85 inline-block py-3 px-8 text-lg font-bold rounded-lg shadow-xl"><i class="fas fa-calendar-check mr-2"></i> Termin für Kapitalanleger auswählen</a></div></section>
-  </div>
-
-  <div id="content-eigennutzer" class="hidden">
-    <section class="container mx-auto px-4 py-16 md:py-24">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-12 fg-reveal"><p class="fg-section-kicker">Von der Suche bis zum Einzug</p><h2 class="text-3xl md:text-5xl font-bold text-primary mb-4">Der Weg in Ihr neues Zuhause</h2><p class="text-lg text-gray-600 max-w-3xl mx-auto">Wir helfen Ihnen, die emotionale Entscheidung für Ihr Eigenheim auf ein solides Fundament zu stellen.</p></div>
-        <div class="fg-timeline">
-          {% set ownerSteps = [
-            ["01","Erstgespräch vereinbaren","Der erste Schritt ins eigene Zuhause: Wir lernen Ihre Wünsche, Rahmenbedingungen und Prioritäten kennen."],
-            ["02","Wunschprofil & Strategie","Wir erstellen Ihr persönliches Suchprofil – von Budget und Lage bis zu Zimmeranzahl, Garten und Lebensqualität."],
-            ["03","Objektprüfung (Due Diligence)","Wir analysieren die relevanten Unterlagen und wirtschaftlichen Eckdaten, damit Risiken frühzeitig sichtbar werden."],
-            ["04","Objektvorstellung","Wir präsentieren Immobilien, die zu Ihrem vorab definierten Wunschprofil passen."],
-            ["05","Gemeinsame Besichtigung","Wir begleiten Sie vor Ort, weisen auf Besonderheiten hin und helfen bei einer realistischen Einschätzung von Potenzial und Risiken."],
-            ["06","Finanzierung & Verhandlung","Wir verhandeln den Kaufpreis und unterstützen parallel bei der Suche nach einer passenden Bankfinanzierung."],
-            ["07","Notar & Einzug","Wir begleiten die Abschlussphase, die Übergabe und bleiben auch nach dem Einzug Ansprechpartner."]
-          ] %}
-          {% for step in ownerSteps %}<article class="fg-timeline-step fg-reveal"><span>{{ step[0] }}</span><div><h3>{{ step[1] }}</h3><p>{{ step[2] }}</p>{% if loop.first %}<a href="#terminbuchung" class="fg-timeline-link">Termin auswählen <i class="fas fa-arrow-right"></i></a>{% endif %}</div></article>{% endfor %}
-        </div>
-      </div>
-    </section>
-    <section class="bg-white py-12 md:py-16" id="cta-eigennutzer"><div class="container mx-auto px-4 text-center fg-reveal"><p class="fg-section-kicker">Nächster Schritt</p><h2 class="text-3xl font-bold mb-4 text-primary">Erstgespräch vereinbaren</h2><p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">Buchen Sie Ihr unverbindliches Gespräch zur Profilerstellung und zum weiteren Vorgehen.</p><a href="#terminbuchung" class="btn-85 inline-block py-3 px-8 text-lg font-bold rounded-lg shadow-xl"><i class="fas fa-calendar-check mr-2"></i> Termin für Eigennutzer auswählen</a></div></section>
-  </div>
-</div>
-<script>
-function switchTab(type) {
-  const investor = document.getElementById('content-kapitalanleger');
-  const owner = document.getElementById('content-eigennutzer');
-  const btnInvestor = document.getElementById('btn-kapitalanleger');
-  const btnOwner = document.getElementById('btn-eigennutzer');
-  const isInvestor = type === 'kapitalanleger';
-  investor.classList.toggle('hidden', !isInvestor);
-  owner.classList.toggle('hidden', isInvestor);
-  btnInvestor.classList.toggle('is-active', isInvestor);
-  btnOwner.classList.toggle('is-active', !isInvestor);
-}
-</script>
+<div class="fg-premium-page"><section class="fg-premium-hero"><div class="fg-premium-shell"><div class="fg-premium-hero-grid"><div><p class="fg-premium-kicker fg-premium-kicker-light">Ankauf &amp; Investment</p><h1>Erst prüfen. Dann kaufen.</h1><p class="fg-premium-hero-lead">Wir betrachten Objekt, Lage, Wirtschaftlichkeit, Unterlagen und Finanzierung im Zusammenhang. Für Kapitalanleger anders als für Eigennutzer – aber immer mit derselben Frage: Passt das Objekt wirklich zu Ihrem Ziel?</p><div class="fg-premium-actions"><a href="#termin" class="btn-85 px-7 py-4">Objekt besprechen <i class="fas fa-arrow-right"></i></a><a href="/investment-lab.html" class="fg-premium-outline">Investment Lab öffnen</a></div></div><aside class="fg-premium-sidecard"><span>Prüffelder</span><h2>Keine Kaufentscheidung aus einem einzigen Kennwert.</h2><ul><li><i class="fas fa-location-dot"></i><span>Standort, Mikrolage und Vermietbarkeit</span></li><li><i class="fas fa-file-lines"></i><span>Unterlagen, Zustand und mögliche Capex-Themen</span></li><li><i class="fas fa-calculator"></i><span>Rendite, Cashflow, Finanzierung und Restschuld</span></li></ul></aside></div></div></section>
+<section class="fg-premium-statbar"><div class="fg-premium-shell"><div class="fg-premium-statgrid"><div><small>Eigennutz</small><strong>Lebenssituation zuerst</strong><span>Rate, Eigenkapital, Reserve und Zukunftsplanung</span></div><div><small>Kapitalanlage</small><strong>Cashflow &amp; Exit</strong><span>Miete, Kosten, Finanzierung und langfristige Tragfähigkeit</span></div><div><small>Finanzierung</small><strong>Vor dem Notar</strong><span>Finanzierungsrahmen frühzeitig einordnen</span></div><div><small>Entscheidung</small><strong>Auch Nein ist ein Ergebnis</strong><span>ein unpassendes Objekt wird nicht passend gerechnet</span></div></div></div></section>
+<section class="fg-premium-section"><div class="fg-premium-shell"><div class="fg-premium-head"><p class="fg-premium-kicker">Unsere Prüfung</p><h2>Vier Ebenen, eine Kaufentscheidung.</h2><p>Jede Ebene kann die anderen verändern. Genau deshalb betrachten wir sie nicht getrennt.</p></div><div class="fg-premium-grid-4"><article class="fg-premium-card"><div class="fg-premium-card-icon"><i class="fas fa-map-location-dot"></i></div><h3>Lage</h3><p>Mikrolage, Nachfrage, Zielgruppe, Infrastruktur und die Frage, für wen das Objekt langfristig funktioniert.</p></article><article class="fg-premium-card"><div class="fg-premium-card-icon"><i class="fas fa-building"></i></div><h3>Objekt</h3><p>Zustand, WEG, Unterlagen, Grundriss, Mietstatus und absehbarer Investitionsbedarf.</p></article><article class="fg-premium-card"><div class="fg-premium-card-icon"><i class="fas fa-chart-column"></i></div><h3>Wirtschaftlichkeit</h3><p>Kaufpreis, Miete, laufende Kosten, Rendite, Cashflow und Sensitivität gegenüber veränderten Annahmen.</p></article><article class="fg-premium-card"><div class="fg-premium-card-icon"><i class="fas fa-building-columns"></i></div><h3>Finanzierung</h3><p>Eigenkapital, Beleihung, Rate, Zinsbindung, Tilgung und Restschuld passend zum persönlichen Finanzierungsprofil.</p></article></div></div></section>
+<section class="fg-premium-section fg-premium-section-white"><div class="fg-premium-shell"><div class="fg-premium-split"><div class="fg-premium-feature-copy"><p class="fg-premium-kicker">Für Kapitalanleger</p><h2>Rendite ist nur der Anfang.</h2><p>Eine hohe Bruttorendite kann durch nicht umlagefähige Kosten, Capex, ungünstige Finanzierung oder schwache Vermietbarkeit schnell relativiert werden. Deshalb rechnen wir mit mehreren Ebenen und zeigen Auswirkungen auf Cashflow und Restschuld.</p><div class="fg-premium-checklist"><div><i class="fas fa-check"></i><span>Ist- und Soll-Miete getrennt betrachten.</span></div><div><i class="fas fa-check"></i><span>Nicht umlagefähige Kosten und Rücklagen berücksichtigen.</span></div><div><i class="fas fa-check"></i><span>Finanzierung und Eigenkapitalrendite zusammenführen.</span></div><div><i class="fas fa-check"></i><span>Restschuld und Exit-Perspektive sichtbar machen.</span></div></div></div><aside class="fg-premium-panel"><p class="fg-premium-kicker fg-premium-kicker-light">Selbst rechnen</p><h3>Im Investment Lab können Sie Szenarien direkt verändern.</h3><p>Zins, Tilgung, Eigenkapital, Miete und Kosten lassen sich in den Rechnern variieren.</p><a href="/investment-lab.html" class="fg-invest-link">Zum Investment Lab <i class="fas fa-arrow-right"></i></a></aside></div></div></section></div>
+{% set faqItems=[{q:"Prüft ihr auch fremde Objekte?",a:"Ja. Die Ankaufsberatung ist ausdrücklich nicht auf eigene F&G-Angebote beschränkt. Wir können auch Objekte prüfen, die Sie selbst gefunden haben."},{q:"Was ist bei Eigennutz anders als bei einer Kapitalanlage?",a:"Beim Eigennutz stehen Lebenssituation, Rate, Eigenkapitalreserve und langfristige Flexibilität stärker im Vordergrund. Bei Kapitalanlagen ergänzen wir die Betrachtung um Miete, Kosten, Rendite, Cashflow und Exit."},{q:"Wann sollte die Finanzierung geprüft werden?",a:"So früh wie möglich und vor kostenpflichtigen oder bindenden Schritten. Ein belastbarer Finanzierungsrahmen verändert häufig schon die Auswahl geeigneter Objekte."}] %}{% set faqAnchor="faq-ankauf" %}{% set faqTitle="Häufige Fragen zur Ankaufsberatung" %}{% include "faq-block.njk" %}
+<section id="termin" class="fg-premium-section"><div class="fg-premium-shell">{% include "appointment-booking.njk" %}</div></section>

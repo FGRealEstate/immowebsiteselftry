@@ -299,12 +299,17 @@ function isStreetLike(input, unit = {}) {
 function customField(unit, key) {
     if (!unit || !unit.custom_fields) return null;
 
-    return (
-        unit.custom_fields[key] ||
-        unit.custom_fields[key.toLowerCase()] ||
-        unit.custom_fields[key.toUpperCase()] ||
-        null
-    );
+    const fields = unit.custom_fields;
+    const direct = fields[key] || fields[key.toLowerCase()] || fields[key.toUpperCase()];
+    if (direct !== undefined && direct !== null) return direct;
+
+    // Propstack custom field keys can differ by spaces, umlauts or separators.
+    // Normalized lookup keeps the website stable when labels are adjusted in the CRM.
+    const wanted = normalizeText(key);
+    for (const [fieldKey, value] of Object.entries(fields)) {
+        if (normalizeText(fieldKey) === wanted) return value;
+    }
+    return null;
 }
 
 function firstText(unit, fields) {
@@ -339,6 +344,52 @@ function firstNumber(unit, fields) {
     }
 
     return null;
+}
+
+
+function firstBoolean(unit, fields) {
+    for (const field of fields) {
+        const candidate = field.startsWith("custom_fields.")
+            ? customField(unit, field.replace("custom_fields.", ""))
+            : unit[field];
+        if (candidate === null || candidate === undefined || candidate === "") continue;
+        return booleanValue(candidate);
+    }
+    return false;
+}
+
+function getInvestmentStrategy(unit, marketingType, coldRentRaw) {
+    if (marketingType === "Miete") return { key: "miete", label: "Miete", isInvestment: false };
+
+    const explicit = firstText(unit, [
+        "custom_fields.website_nutzung", "custom_fields.nutzungsart", "custom_fields.zielgruppe",
+        "custom_fields.investment_typ", "custom_fields.investmenttyp", "custom_fields.verwendungszweck",
+        "custom_fields.vermietungsstatus"
+    ]);
+    const ownerSignals = ["eigennutz", "selbstnutz", "bezugsfrei", "eigenbedarf", "neueszuhause", "selbstbezug"];
+    const investmentSignals = ["kapitalanlage", "investment", "anleger", "vermietet", "rendite", "cashflow", "mietvertrag"];
+    const explicitText = normalizeText(explicit || "");
+
+    // A dedicated Propstack website/custom field is authoritative. This lets
+    // the team override older rent/title data for vacant or newly positioned units.
+    if (ownerSignals.some((signal) => explicitText.includes(signal))) {
+        return { key: "eigennutz", label: "Eigennutz", isInvestment: false };
+    }
+    if (investmentSignals.some((signal) => explicitText.includes(signal))) {
+        return { key: "kapitalanlage", label: "Kapitalanlage", isInvestment: true };
+    }
+
+    const text = normalizeText([
+        unit.title, unit.name, unit.description, unit.description_long, unit.description_note,
+        customField(unit, "website_titel"), customField(unit, "headline")
+    ].filter(Boolean).join(" "));
+    const explicitInvestment = firstBoolean(unit, ["custom_fields.kapitalanlage", "custom_fields.investment", "custom_fields.anlageobjekt"]);
+    const owner = ownerSignals.some((signal) => text.includes(signal));
+    const investment = explicitInvestment || investmentSignals.some((signal) => text.includes(signal)) || Boolean(coldRentRaw);
+
+    if (owner && !investment) return { key: "eigennutz", label: "Eigennutz", isInvestment: false };
+    if (investment) return { key: "kapitalanlage", label: "Kapitalanlage", isInvestment: true };
+    return { key: "eigennutz", label: "Eigennutz", isInvestment: false };
 }
 
 function addDetail(list, label, input) {
@@ -824,6 +875,24 @@ function buildUnit(unit) {
     const bedroomsRaw = firstNumber(unit, ["number_of_bed_rooms", "bedrooms"]);
     const bathroomsRaw = firstNumber(unit, ["number_of_bath_rooms", "bathrooms"]);
     const images = getImages(unit);
+    const strategy = getInvestmentStrategy(unit, marketingType, coldRentRaw);
+    const annualRentRaw = firstNumber(unit, [
+        "annual_net_cold_rent", "annual_cold_rent", "yearly_rent", "custom_fields.jahresnettokaltmiete",
+        "custom_fields.jahreskaltmiete", "custom_fields.jnkm", "custom_fields.ist_jahresmiete"
+    ]) || (coldRentRaw ? coldRentRaw * 12 : null);
+    const targetMonthlyRentRaw = firstNumber(unit, [
+        "custom_fields.soll_miete", "custom_fields.sollmiete", "custom_fields.zielmiete", "custom_fields.target_rent"
+    ]);
+    const houseMoneyRaw = firstNumber(unit, ["house_money", "custom_fields.hausgeld", "custom_fields.wohngeld"]);
+    const nonRecoverableCostsRaw = firstNumber(unit, [
+        "custom_fields.nicht_umlagefaehige_kosten", "custom_fields.nichtumlagefaehig",
+        "custom_fields.nicht_umlagefaehig", "custom_fields.nicht_umlagefähige_kosten"
+    ]);
+    const reserveRaw = firstNumber(unit, ["custom_fields.instandhaltungsruecklage", "custom_fields.ruecklage", "custom_fields.rücklage"]);
+    const grossYieldRaw = priceRaw && annualRentRaw ? (annualRentRaw / priceRaw) * 100 : null;
+    const targetAnnualRentRaw = targetMonthlyRentRaw ? targetMonthlyRentRaw * 12 : null;
+    const targetGrossYieldRaw = priceRaw && targetAnnualRentRaw ? (targetAnnualRentRaw / priceRaw) * 100 : null;
+    const rentPerSqmRaw = coldRentRaw && livingSpaceRaw ? coldRentRaw / livingSpaceRaw : null;
 
     const details = [];
     if (marketingType === "Miete") {
@@ -904,6 +973,33 @@ function buildUnit(unit) {
         marketing_type: marketingType,
         property_type: propertyType,
         status: getStatusName(unit),
+        strategy: strategy.label,
+        strategy_key: strategy.key,
+        is_investment: strategy.isInvestment,
+        annual_rent_raw: annualRentRaw,
+        annual_rent: formatPrice(annualRentRaw),
+        target_monthly_rent_raw: targetMonthlyRentRaw,
+        target_monthly_rent: formatPrice(targetMonthlyRentRaw),
+        target_annual_rent_raw: targetAnnualRentRaw,
+        house_money_raw: houseMoneyRaw,
+        house_money: formatPrice(houseMoneyRaw),
+        non_recoverable_costs_raw: nonRecoverableCostsRaw,
+        non_recoverable_costs: formatPrice(nonRecoverableCostsRaw),
+        reserve_raw: reserveRaw,
+        reserve: formatPrice(reserveRaw),
+        gross_yield_raw: grossYieldRaw,
+        gross_yield: grossYieldRaw ? formatNumber(grossYieldRaw, " %") : null,
+        target_gross_yield_raw: targetGrossYieldRaw,
+        target_gross_yield: targetGrossYieldRaw ? formatNumber(targetGrossYieldRaw, " %") : null,
+        rent_per_sqm_raw: rentPerSqmRaw,
+        rent_per_sqm: rentPerSqmRaw ? formatPrice(rentPerSqmRaw) : null,
+        investment_defaults: {
+            equity_percent: firstNumber(unit, ["custom_fields.eigenkapitalquote", "custom_fields.ek_quote"]) || 20,
+            interest_percent: firstNumber(unit, ["custom_fields.zins", "custom_fields.sollzins"]) || 3.5,
+            repayment_percent: firstNumber(unit, ["custom_fields.tilgung", "custom_fields.anfangstilgung"]) || 2.0,
+            acquisition_cost_percent: firstNumber(unit, ["custom_fields.kaufnebenkosten", "custom_fields.nebenkosten_prozent"]) || 10,
+            monthly_non_recoverable: nonRecoverableCostsRaw || (houseMoneyRaw ? Math.max(houseMoneyRaw * 0.3, 0) : 0)
+        },
         price_raw: displayPriceRaw,
         purchase_price_raw: priceRaw,
         price: marketingType === "Miete" ? formatPrice(coldRentRaw || warmRentRaw) : formatPrice(priceRaw),
@@ -955,6 +1051,9 @@ function buildProject(project, units) {
     const minPriceRaw = prices.length ? Math.min(...prices) : null;
     const maxPriceRaw = prices.length ? Math.max(...prices) : null;
     const description = htmlValue(project?.description_long) || htmlValue(project?.description) || htmlValue(project?.description_note) || htmlValue(customField(project || {}, "projektbeschreibung"));
+    const strategies = [...new Set(units.map((unit) => unit.strategy).filter(Boolean))];
+    const strategyKeys = [...new Set(units.map((unit) => unit.strategy_key).filter((key) => key && key !== "miete"))];
+    const projectStrategy = strategies.length > 1 ? strategies.join(" & ") : (strategies[0] || (isRental ? "Miete" : "Eigennutz"));
 
     return {
         id,
@@ -995,6 +1094,10 @@ function buildProject(project, units) {
                 : `${formatNumber(Math.min(...rooms))} – ${formatNumber(Math.max(...rooms))}`)
             : null,
         property_types: [...new Set(units.map((unit) => unit.property_type).filter(Boolean))],
+        strategies,
+        strategy_keys: strategyKeys,
+        strategy: projectStrategy,
+        strategy_key: strategyKeys.length === 1 ? strategyKeys[0] : (strategyKeys.length > 1 ? "gemischt" : (isRental ? "miete" : "eigennutz")),
         images,
         gallery: images.map((image) => image.url),
         main_image: images.length ? images[0].url : null,
