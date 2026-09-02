@@ -9,4 +9,89 @@ eleventyComputed:
   title: "Immobilienstandort {{ location.name }}"
   description: "Kaufpreise, Mieten, Renditeorientierung, Chancen und Risiken für {{ location.name }}."
 ---
-<main class="content-detail shell"><nav class="breadcrumbs"><a href="/investment-lab.html">Investment Lab</a><span>›</span><a href="/investment-lab.html#standorte">Standorte</a><span>›</span><span>{{ location.name }}</span></nav><article class="science-article location-page"><header><span class="lab-kicker">{{ location.region }}</span><h1>Standortanalyse {{ location.name }}</h1><p class="lead">Orientierungswerte und qualitative F&amp;G-Einordnung. Angezeigt werden ausschließlich hinterlegte Marktwerte – keine automatisch hochgerechneten Objektpreis-Bandbreiten.</p></header><div class="lab-location-keyfacts-v2"><article><span>Kaufpreisorientierung</span><strong>{{ location.price }}</strong></article><article><span>Mietniveau</span><strong>{{ location.rent }}</strong></article><article><span>Renditeorientierung</span><strong>{{ location.yield }}</strong></article></div><div class="lab-location-analysis-grid"><section><h2>Chancen</h2><p>{{ location.chance }}</p></section><section><h2>Risiken</h2><p>{{ location.risk }}</p></section><section><h2>Infrastruktur</h2><p>{{ location.infra }}</p></section><section><h2>Perspektive</h2><p>{{ location.future }} {{ location.population }}</p></section></div><section><h2>F&amp;G-Einordnung</h2><p>{{ location.view }}</p></section>{% if location.source %}<p class="lab-location-source">Quelle/Orientierung: <a href="{{ location.source }}" target="_blank" rel="noopener noreferrer">externe Marktquelle</a>. Datenstand und Methodik vor Verwendung prüfen.</p>{% endif %}<a class="lab-btn lab-btn-gold" href="/investment-lab.html">Standort im Investment Lab vergleichen</a></article></main>
+<div class="fg-location-detail">
+  <section class="fg-location-detail-hero">
+    <div class="fg-location-shell">
+      <nav class="fg-location-breadcrumbs" aria-label="Brotkrümelnavigation">
+        <a href="/investment-lab.html">Investment Lab</a>
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        <a href="/standorte/">Standorte</a>
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        <span aria-current="page">{{ location.name }}</span>
+      </nav>
+
+      <div class="fg-location-detail-heading">
+        <div>
+          <p class="fg-location-kicker">{{ location.region }}</p>
+          <h1>Standortanalyse <span>{{ location.name }}</span></h1>
+        </div>
+        <a class="fg-location-all-link" href="/standorte/">Alle Standorte <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="fg-location-detail-content">
+    <div class="fg-location-shell">
+      <div class="fg-location-keyfacts">
+        <article>
+          <span>Kaufpreis</span>
+          <strong>{{ location.priceValue or location.price }}</strong>
+          {% if location.priceNote %}<small>{{ location.priceNote }}</small>{% endif %}
+        </article>
+        <article>
+          <span>Mietniveau</span>
+          <strong>{{ location.rentValue or location.rent }}</strong>
+          {% if location.rentNote %}<small>{{ location.rentNote }}</small>{% endif %}
+        </article>
+        <article>
+          <span>Rendite</span>
+          <strong>{{ location.yieldValue or location.yield }}</strong>
+          {% if location.yieldNote %}<small>{{ location.yieldNote }}</small>{% endif %}
+        </article>
+      </div>
+
+      <div class="fg-location-analysis-grid">
+        <article>
+          <span class="fg-location-analysis-icon"><i class="fas fa-arrow-trend-up" aria-hidden="true"></i></span>
+          <h2>Chancen</h2>
+          <p>{{ location.chance }}</p>
+        </article>
+        <article>
+          <span class="fg-location-analysis-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></span>
+          <h2>Risiken</h2>
+          <p>{{ location.risk }}</p>
+        </article>
+        <article>
+          <span class="fg-location-analysis-icon"><i class="fas fa-train-subway" aria-hidden="true"></i></span>
+          <h2>Infrastruktur</h2>
+          <p>{{ location.infra }}</p>
+        </article>
+        <article>
+          <span class="fg-location-analysis-icon"><i class="fas fa-compass" aria-hidden="true"></i></span>
+          <h2>Perspektive</h2>
+          <p>{{ location.future }}</p>
+          {% if location.population %}<p>{{ location.population }}</p>{% endif %}
+        </article>
+      </div>
+
+      <section class="fg-location-verdict">
+        <p class="fg-location-kicker">F&amp;G-Einordnung</p>
+        <h2>Was für diesen Standort entscheidend ist.</h2>
+        <p>{{ location.view }}</p>
+      </section>
+
+      <section class="fg-location-service-area">
+        <div>
+          <p class="fg-location-kicker">Unser Tätigkeitsgebiet</p>
+          <h2>Regional vor Ort. Deutschlandweit finanzieren.</h2>
+        </div>
+        <p>{{ serviceArea.text }}</p>
+      </section>
+
+      <div class="fg-location-actions">
+        <a class="btn-85 px-7 py-4" href="/investment-lab.html">Standort im Investment Lab vergleichen <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        <a class="fg-location-secondary-action" href="/kontakt.html">Standort besprechen</a>
+      </div>
+    </div>
+  </section>
+</div>

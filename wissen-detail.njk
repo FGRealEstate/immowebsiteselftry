@@ -128,9 +128,8 @@ eleventyComputed:
 
     {% if article.decisionUse %}<section class="science-section decision-section decision-section-v3"><span class="lab-kicker">— ENTSCHEIDUNGSRELEVANZ —</span><h2>Was daraus für eine Immobilienentscheidung folgt</h2><p>{{ article.decisionUse }}</p></section>{% endif %}
 
-    {% if article.sources and article.sources.length %}<section class="lab-source-section science-section"><h2>Quellen &amp; Rechtsgrundlagen</h2><ul>{% for source in article.sources %}<li><a href="{{ source.url }}" target="_blank" rel="noopener noreferrer">{{ source.label }}</a></li>{% endfor %}</ul><p class="lab-source-note">Rechts-, Steuer-, Förder- und Bankbedingungen können sich ändern. Maßgeblich ist der konkrete Einzelfall und der jeweils aktuelle Produkt- bzw. Gesetzesstand.</p></section>{% endif %}
+    {% if article.sources and article.sources.length %}<section class="lab-source-section science-section"><h2>Quellen &amp; Rechtsgrundlagen</h2><ul>{% for source in article.sources %}<li><a href="{{ source.url }}" target="_blank" rel="noopener noreferrer">{{ source.label }}</a></li>{% endfor %}</ul></section>{% endif %}
 
-    <aside class="article-note"><strong>Hinweis</strong><p>Die Beispiele erläutern die wirtschaftliche Systematik. Sie ersetzen keine individuelle Rechts-, Steuer-, Finanzierungs- oder Anlageberatung.</p></aside>
     <div class="article-actions"><a class="lab-btn lab-btn-gold" href="/investment-lab.html">Im Investment Lab weiterarbeiten</a><a class="lab-btn lab-btn-ghost" href="/ankaufsberatung.html">Ankaufsberatung</a></div>
   </article>
 </main>

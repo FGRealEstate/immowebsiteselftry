@@ -15,7 +15,8 @@
   const input = $('[data-fg-ai-input]');
   const nav = $('[data-fg-ai-nav]');
 
-  const VERSION = '27.08.2026';
+  const VERSION = '02.09.2026';
+  const SERVICE_AREA_TEXT = 'Das Maklergeschäft von Fischer & Geserich umfasst ganz Berlin sowie den Berliner Speckgürtel mit Bernau, Eberswalde, Erkner, Falkensee, Fürstenwalde, Joachimsthal, Königs Wusterhausen, Luckenwalde, Oranienburg, Potsdam, Strausberg, Teltow und Velten. In Sachsen sind wir in Leipzig und Dresden tätig. Finanzierungen begleiten wir deutschlandweit.';
   const SESSION_KEY = 'fg_ai_assistant_session_v4';
   let dialogState = { flow: null, stage: null, data: {} };
 
@@ -392,7 +393,7 @@
     {
       id:'standorte',cat:'fg',q:'In welchen Regionen ist Fischer & Geserich tätig?',
       keys:['standorte','wo tätig','regionen','berlin leipzig dresden potsdam','speckgürtel','deutschlandweit'],
-      answer:`Unsere Kernmärkte sind <strong>Berlin, Leipzig, Dresden und der Berliner Speckgürtel</strong>. Zum Berliner Umland zählen für uns unter anderem Potsdam, Oranienburg, Birkenwerder, Teltow, Königs Wusterhausen, Erkner und Eberswalde. Abhängig von Immobilienart, Mandat und Transaktionsvolumen begleiten wir ausgewählte Vorhaben auch deutschlandweit.`,
+      answer:SERVICE_AREA_TEXT,
       actions:['kontakt']
     },
     {
@@ -602,8 +603,8 @@
     {"id":"wissen-sanierungsgebiet","cat":"wissen","q":"Was bedeutet es, wenn eine Immobilie im Sanierungsgebiet liegt?","keys":["sanierungsgebiet immobilie","städtebauliches sanierungsgebiet","sanierungsvermerk grundbuch"],"answer":"In förmlich festgelegten Sanierungsgebieten können besondere Genehmigungs-, Ausgleichs- oder Verfahrensregeln gelten. Vor Kauf oder Verkauf sollte geprüft werden, welche konkreten Folgen sich aus Satzung, Grundbuch und zuständiger Behörde ergeben.","note":"Keine Rechtsberatung."},
     {"id":"wissen-milieuschutz","cat":"wissen","q":"Was bedeutet Milieuschutz bei einer Berliner Immobilie?","keys":["milieuschutz berlin","erhaltungsgebiet wohnung","soziale erhaltungsverordnung"],"answer":"In sozialen Erhaltungsgebieten können bestimmte bauliche Veränderungen, Nutzungsänderungen oder Aufteilungen zusätzlichen Genehmigungen unterliegen. Die genaue Rechtslage unterscheidet sich nach Gebiet und Vorhaben und sollte vor einer Investitionsentscheidung aktuell geprüft werden.","note":"Keine Rechtsberatung.","actions":["ankauf"]},
     {"id":"fg-beratungskosten","cat":"fg","q":"Kostet ein erstes Gespräch mit Fischer & Geserich etwas?","keys":["erstgespräch kosten","beratung kosten f&g","termin kostenlos"],"answer":"Für die konkrete Zusammenarbeit unterscheiden sich Vergütung und Leistungsumfang nach Auftrag – etwa Verkauf, Vermietung, Ankaufsberatung oder Finanzierung. Vor einer Beauftragung sollten Umfang und mögliche Kosten transparent geklärt werden. Für die verbindliche Einordnung Ihres Falls sprechen Sie am besten direkt mit uns.","actions":["kontakt"]},
-    {"id":"fg-deutschlandweit","cat":"fg","q":"Wann ist F&G deutschlandweit tätig?","keys":["deutschlandweit tätig","außerhalb kernmarkt","bundesweit immobilien"],"answer":"Unsere Kernmärkte sind Berlin, Leipzig, Dresden und der Berliner Speckgürtel. Abhängig von Immobilienart, Mandatsumfang und Transaktionsvolumen prüfen wir ausgewählte Verkaufs-, Ankaufs- und Finanzierungsvorhaben auch deutschlandweit.","actions":["kontakt"]},
-    {"id":"fg-speckguertel","cat":"fg","q":"Welche Standorte zählen bei F&G zum Berliner Speckgürtel?","keys":["speckgürtel standorte","berliner umland f&g","potsdam oranienburg teltow erkner"],"answer":"Zu unserem erweiterten Marktgebiet im Berliner Speckgürtel zählen unter anderem Potsdam, Oranienburg, Birkenwerder, Teltow, Königs Wusterhausen, Erkner und Eberswalde. Weitere Standorte im Umland prüfen wir objektspezifisch.","actions":["kontakt"]}
+    {"id":"fg-deutschlandweit","cat":"fg","q":"Wann ist F&G deutschlandweit tätig?","keys":["deutschlandweit tätig","außerhalb kernmarkt","bundesweit immobilien"],"answer":SERVICE_AREA_TEXT,"actions":["kontakt"]},
+    {"id":"fg-speckguertel","cat":"fg","q":"Welche Standorte zählen bei F&G zum Berliner Speckgürtel?","keys":["speckgürtel standorte","berliner umland f&g","bernau eberswalde erkner falkensee"],"answer":SERVICE_AREA_TEXT,"actions":["kontakt"]}
   ];
 
   // Synonyme helfen bei freier Sprache und typischen Schreibfehlern.
@@ -620,9 +621,10 @@
   };
 
   const CORE_MARKETS = new Set(['berlin','leipzig','dresden']);
-  const SPECKGUERTEL = new Set(['potsdam','oranienburg','birkenwerder','teltow','konigs wusterhausen','königs wusterhausen','kw','erkner','eberswalde']);
+  const MARKET_REGIONS = new Set(['brandenburg','sachsen']);
+  const SPECKGUERTEL = new Set(['bernau','eberswalde','erkner','falkensee','furstenwalde','joachimsthal','konigs wusterhausen','kw','luckenwalde','oranienburg','potsdam','strausberg','teltow','velten']);
   const LOCATION_ALIASES = [
-    ['Berlin','berlin'],['Leipzig','leipzig'],['Dresden','dresden'],['Brandenburg','brandenburg'],['Sachsen','sachsen'],['Potsdam','potsdam'],['Oranienburg','oranienburg'],['Birkenwerder','birkenwerder'],['Teltow','teltow'],['Königs Wusterhausen','königs wusterhausen'],['Königs Wusterhausen','konigs wusterhausen'],['Königs Wusterhausen','kw'],['Erkner','erkner'],['Eberswalde','eberswalde'],
+    ['Berlin','berlin'],['Leipzig','leipzig'],['Dresden','dresden'],['Brandenburg','brandenburg'],['Sachsen','sachsen'],['Bernau','bernau'],['Eberswalde','eberswalde'],['Erkner','erkner'],['Falkensee','falkensee'],['Fürstenwalde','fürstenwalde'],['Fürstenwalde','furstenwalde'],['Joachimsthal','joachimsthal'],['Königs Wusterhausen','königs wusterhausen'],['Königs Wusterhausen','konigs wusterhausen'],['Königs Wusterhausen','kw'],['Luckenwalde','luckenwalde'],['Oranienburg','oranienburg'],['Potsdam','potsdam'],['Strausberg','strausberg'],['Teltow','teltow'],['Velten','velten'],
     ['Hamburg','hamburg'],['München','münchen'],['München','munchen'],['Köln','köln'],['Köln','koln'],['Frankfurt am Main','frankfurt am main'],['Frankfurt am Main','frankfurt'],['Düsseldorf','düsseldorf'],['Düsseldorf','dusseldorf'],['Stuttgart','stuttgart'],['Hannover','hannover'],['Bremen','bremen'],['Dortmund','dortmund'],['Essen','essen'],['Nürnberg','nürnberg'],['Nürnberg','nurnberg'],['Augsburg','augsburg'],['Freiburg','freiburg'],['Kiel','kiel'],['Rostock','rostock'],['Magdeburg','magdeburg'],['Erfurt','erfurt'],['Jena','jena'],['Chemnitz','chemnitz'],['Halle','halle'],['Mainz','mainz'],['Wiesbaden','wiesbaden'],['Mannheim','mannheim'],['Karlsruhe','karlsruhe'],['Bonn','bonn'],['Münster','münster'],['Münster','munster']
   ];
   const RELATED_BY_CAT = {
@@ -660,16 +662,18 @@
   function locationClass(location){
     const n=normalize(location);
     if(CORE_MARKETS.has(n)) return 'core';
+    if(MARKET_REGIONS.has(n)) return 'region';
     if(SPECKGUERTEL.has(n)) return 'speckguertel';
     return location ? 'national' : 'unknown';
   }
 
   function locationCoverageHtml(location, purpose='Vorhaben'){
     const cls=locationClass(location);
-    if(cls==='core') return `<p><strong>${escapeHtml(location)} gehört zu unseren Kernmärkten.</strong> Dort begleiten wir Immobilienvorhaben direkt – je nach Objekt vom Verkauf über Ankaufsberatung bis zur Finanzierung.</p>`;
-    if(cls==='speckguertel') return `<p><strong>${escapeHtml(location)} zählt zu unserem Marktgebiet im Berliner Speckgürtel.</strong> Vorhaben dort können wir grundsätzlich direkt einordnen und begleiten.</p>`;
-    if(cls==='national') return `<p><strong>${escapeHtml(location)} liegt außerhalb unserer vier Kernmärkte Berlin, Leipzig, Dresden und Berliner Speckgürtel.</strong> Das schließt ein Mandat nicht aus: Abhängig von Immobilienart, Transaktionsvolumen und Aufgabenstellung sind wir bei ausgewählten ${escapeHtml(purpose)} auch deutschlandweit tätig. Wir prüfen deshalb zuerst, ob Objekt und Mandat zu unserem Leistungsprofil passen.</p>`;
-    return `<p>Unsere Kernmärkte sind <strong>Berlin, Leipzig, Dresden und der Berliner Speckgürtel</strong>. Abhängig von Immobilienart, Mandat und Transaktionsvolumen begleiten wir ausgewählte Vorhaben auch deutschlandweit.</p>`;
+    if(cls==='core') return `<p><strong>${escapeHtml(location)} gehört zu unserem ausgewiesenen Maklergebiet.</strong> Dort begleiten wir Immobilienvorhaben direkt – je nach Objekt vom Verkauf über Ankaufsberatung bis zur Finanzierung.</p>`;
+    if(cls==='speckguertel') return `<p><strong>${escapeHtml(location)} zählt zu unserem ausgewiesenen Maklergebiet.</strong> Vorhaben dort können wir grundsätzlich direkt einordnen und begleiten.</p>`;
+    if(cls==='region') return `<p>${SERVICE_AREA_TEXT}</p>`;
+    if(cls==='national') return `<p><strong>${escapeHtml(location)} liegt außerhalb unseres ausgewiesenen Maklergebiets.</strong> Immobilienfinanzierungen begleiten wir deutschlandweit. Ob wir darüber hinaus ein ${escapeHtml(purpose)} übernehmen können, klären wir im Einzelfall offen mit Ihnen.</p>`;
+    return `<p>${SERVICE_AREA_TEXT}</p>`;
   }
 
   function propertyTypeFrom(text){

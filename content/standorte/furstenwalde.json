@@ -3,14 +3,14 @@
   "region": "Berliner Speckgürtel · Ost",
   "price": "ca. 2.000–3.400 €/m²",
   "rent": "ca. 7–11 €/m²",
-  "chance": "Berlin-Nähe bei meist niedrigerem Einstieg und regionaler Eigennutzernachfrage.",
-  "risk": "Pendlerabhängigkeit, geringere Marktliquidität und starke Mikrolagenunterschiede.",
-  "infra": "Regionalbahn oder S-Bahn je nach Ort; konkrete Fahrzeit und Takt prüfen.",
-  "future": "Entwicklung hängt von Verkehr, Neubau, Arbeitgebern und kommunaler Planung ab.",
-  "population": "Uneinheitliche Entwicklung; Gemeindeprognosen und Neubaupipeline prüfen.",
-  "view": "Nicht als einheitlichen Speckgürtel behandeln. Bahnhofsnähe, Zentrum und lokale Nachfrage sind entscheidend.",
+  "chance": "Als eigenständiges regionales Zentrum bietet Fürstenwalde niedrigere Einstiegspreise und Nachfrage aus lokaler Beschäftigung sowie dem Berliner Pendlerkorridor.",
+  "risk": "In Randlagen können Vermietung und Wiederverkauf länger dauern; unsanierte Bestände benötigen eine saubere Capex-Prüfung.",
+  "infra": "Regionalverkehr, Innenstadt, Schulen und regionale Arbeitgeber sorgen für eine breitere Basis als in reinen Pendlergemeinden.",
+  "future": "Zentrale und bahnhofsnahe Lagen profitieren eher von der Anbindung, während äußere Lagen stärker von lokaler Kaufkraft abhängen.",
+  "population": "Die Entwicklung ist weniger homogen als im direkten Berliner Umland und sollte quartiersweise bewertet werden.",
+  "view": "Fürstenwalde kann für renditeorientierte Käufer interessant sein, wenn Vermietbarkeit und Instandhaltung belastbar kalkuliert sind. Der niedrigere Kaufpreis darf nicht über Leerstands- oder Sanierungsrisiken hinwegtäuschen.",
   "source": "https://gutachterausschuss.brandenburg.de/",
-  "yield": "häufig ca. 3,0–5,5 %, stark objektabhängig",
+  "yield": "häufig ca. 3,0–5,5 %; Zustand und Leerstandsrisiko bestimmen die Einordnung",
   "id": "furstenwalde",
   "slug": "furstenwalde",
   "url": "/standorte/furstenwalde/",
@@ -18,5 +18,5 @@
     "berliner speckgürtel · ost",
     "fürstenwalde"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-09-02"
 }

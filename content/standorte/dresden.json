@@ -3,12 +3,12 @@
   "region": "Sachsen",
   "price": "Bestand häufig ca. 2.300–4.000 €/m²",
   "rent": "häufig ca. 8–14 €/m²",
-  "chance": "Technologie, Forschung, Verwaltung und hohe Wohnqualität.",
-  "risk": "Stadtteilunterschiede, Hochwasserlagen und Sanierungsqualität prüfen.",
-  "infra": "Straßenbahn, Fernverkehr, Hochschulen, Halbleitercluster.",
-  "future": "Industrieinvestitionen und Forschung stärken Nachfrage.",
-  "population": "Stabile bis wachsende Nachfrage in guten Lagen.",
-  "view": "Für langfristige Kapitalanlagen interessant, wenn Mietniveau und Kaufpreis realistisch abgeglichen werden.",
+  "chance": "Technologie, Forschung, Verwaltung und eine hohe Wohnqualität sorgen für eine breit aufgestellte Nachfrage. Besonders Lagen mit guter Straßenbahnanbindung und Nähe zu großen Arbeitgebern sind für unterschiedliche Mietergruppen interessant.",
+  "risk": "Zwischen den Stadtteilen unterscheiden sich Mietniveau, Vermietbarkeit und Entwicklung deutlich. Hochwasserlagen, Sanierungsqualität und der technische Zustand älterer Gebäude müssen objektbezogen geprüft werden.",
+  "infra": "Ein dichtes Straßenbahnnetz, Fernverkehr, Hochschulen und das Halbleitercluster verbinden Wohnen, Forschung und Beschäftigung. Die tatsächliche Erreichbarkeit hängt dennoch stark von der konkreten Mikrolage ab.",
+  "future": "Weitere Industrieinvestitionen und der Forschungsstandort können die Nachfrage in gut angebundenen Lagen stützen.",
+  "population": "Das Wachstum wirkt nicht in jedem Quartier gleich und sollte nicht pauschal auf die Gesamtstadt übertragen werden.",
+  "view": "Dresden ist für langfristige Kapitalanlagen interessant, wenn Kaufpreis, Mietniveau und Gebäudesubstanz realistisch zusammenpassen. Entscheidend ist nicht nur der Stadtteilname, sondern die konkrete Anbindung an Arbeitgeber und Alltagseinrichtungen.",
   "source": "https://www.dresden.de/media/pdf/vermessung/Halbjahresbericht_2025.pdf",
   "yield": "häufig ca. 3,5–6,0 %",
   "id": "dresden",
@@ -18,5 +18,5 @@
     "dresden",
     "sachsen"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-09-02"
 }

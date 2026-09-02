@@ -157,13 +157,10 @@
         "Immobilienbewertung",
         "Berliner Immobilienmarkt"
       ],
-      {#- O-112: eine Quelle für das Servicegebiet (_data/serviceArea.js). Die
-          sechzehn Standortseiten, dieser Graph und die Standorte-Seite lesen
-          dieselbe Liste; die vier Orte ohne eigene Analyseseite sind darin
-          enthalten, weil sie zum Maklergebiet gehören. -#}
+      {#- Eine Quelle für das Servicegebiet: _data/serviceArea.js. -#}
       "areaServed": [
 {%- for place in serviceArea.all %}
-        { "@type": "City", "name": {{ place.name | dump | safe }}{% if place.hasPage %}, "@id": "https://fg-realestate.de/standorte/{{ place.slug }}/#place"{% endif %} }{% if not loop.last %},{% endif %}
+        { "@type": "City", "name": {{ (place.schemaName or place.name) | dump | safe }}, "@id": "https://fg-realestate.de/standorte/{{ place.slug }}/#place" }{% if not loop.last %},{% endif %}
 {%- endfor %}
       ],
       "hasOfferCatalog": {

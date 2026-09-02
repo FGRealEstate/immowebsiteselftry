@@ -1,22 +1,22 @@
 {
   "name": "Luckenwalde",
-  "region": "Berliner Speckgürtel · Südwest",
+  "region": "Brandenburg · Teltow-Fläming",
   "price": "ca. 1.800–3.000 €/m²",
   "rent": "ca. 7–11 €/m²",
-  "chance": "Berlin-Nähe bei meist niedrigerem Einstieg und regionaler Eigennutzernachfrage.",
-  "risk": "Pendlerabhängigkeit, geringere Marktliquidität und starke Mikrolagenunterschiede.",
-  "infra": "Regionalbahn oder S-Bahn je nach Ort; konkrete Fahrzeit und Takt prüfen.",
-  "future": "Entwicklung hängt von Verkehr, Neubau, Arbeitgebern und kommunaler Planung ab.",
-  "population": "Uneinheitliche Entwicklung; Gemeindeprognosen und Neubaupipeline prüfen.",
-  "view": "Nicht als einheitlichen Speckgürtel behandeln. Bahnhofsnähe, Zentrum und lokale Nachfrage sind entscheidend.",
+  "chance": "Als Kreisstadt mit Regionalverkehr und vergleichsweise niedrigen Einstiegspreisen bietet Luckenwalde Potenzial für renditeorientierte Bestandsinvestments.",
+  "risk": "Die Nachfrage ist stärker lokal geprägt als im direkten Berliner Speckgürtel; Leerstand und Exit-Dauer müssen konservativ kalkuliert werden.",
+  "infra": "Regionalbahn, Verwaltung, Schulen und medizinische Versorgung geben der Stadt eine eigenständige Funktion im Landkreis Teltow-Fläming.",
+  "future": "Zentrale und bahnhofsnahe Lagen können von der Erreichbarkeit Berlins profitieren, ohne dass Luckenwalde zum unmittelbaren Speckgürtel zählt.",
+  "population": "Randlagen bleiben stärker von lokaler Beschäftigung, Kaufkraft und Versorgung abhängig.",
+  "view": "Luckenwalde ist ein Investment im Berliner Umland mit eigenem lokalen Markt, kein verlängerter Berliner Stadtteil. Der Deal sollte aus Miete und Kaufpreis vor Ort funktionieren und nicht nur auf künftige Pendlernachfrage setzen.",
   "source": "https://gutachterausschuss.brandenburg.de/",
-  "yield": "häufig ca. 3,0–5,5 %, stark objektabhängig",
+  "yield": "häufig ca. 3,0–5,5 %; lokale Vermietbarkeit und Exit-Dauer mitprüfen",
   "id": "luckenwalde",
   "slug": "luckenwalde",
   "url": "/standorte/luckenwalde/",
   "keywords": [
-    "berliner speckgürtel · südwest",
+    "brandenburg · teltow-fläming",
     "luckenwalde"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-09-02"
 }

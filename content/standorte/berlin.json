@@ -1,14 +1,14 @@
 {
   "name": "Berlin",
-  "region": "Metropole",
+  "region": "Berlin · Metropole",
   "price": "Bestand häufig ca. 4.000–7.000 €/m²; starke Mikrolagenunterschiede",
   "rent": "Angebotsmieten häufig ca. 13–21 €/m²",
-  "chance": "Tiefe Nachfrage, breite Arbeitgeberbasis, hohe Marktliquidität.",
-  "risk": "Regulierung, hohe Einstiegspreise, heterogene Bezirke und hoher Prüfungsbedarf.",
-  "infra": "Sehr dichtes ÖPNV-Netz, Universitäten, internationale Arbeitgeber.",
-  "future": "Knappes Angebot stützt Nachfrage; Neubau und Regulierung bleiben Engpässe.",
-  "population": "Langfristig hohe Nachfrage in Stadt und Metropolraum.",
-  "view": "Berlin funktioniert nicht als ein Markt. Mikrolage, Mietstatus und technischer Zustand entscheiden.",
+  "chance": "Die breite Arbeitgeberbasis, internationale Nachfrage und hohe Marktliquidität stützen viele Berliner Teilmärkte. Unterschiedliche Bezirke und Wohnlagen ermöglichen sowohl wertorientierte als auch renditeorientierte Strategien.",
+  "risk": "Hohe Einstiegspreise, Regulierung und große Unterschiede zwischen den Quartieren erhöhen den Prüfungsbedarf. Besonders Mietstatus, energetischer Zustand und mögliche Investitionen müssen zum Kaufpreis passen.",
+  "infra": "Berlin verfügt über ein sehr dichtes Netz aus S-Bahn, U-Bahn, Straßenbahn und Bus sowie zahlreiche Hochschulen und internationale Arbeitgeber. Für die Vermietbarkeit bleibt trotzdem die konkrete Entfernung zu den täglichen Angeboten entscheidend.",
+  "future": "Das knappe Wohnungsangebot spricht langfristig für eine robuste Nachfrage, während Neubaukosten und Regulierung die Entwicklung begrenzen.",
+  "population": "Die Dynamik verteilt sich nicht gleichmäßig auf alle Bezirke und muss auf Quartiersebene betrachtet werden.",
+  "view": "Berlin funktioniert nicht als ein einheitlicher Immobilienmarkt. Mikrolage, Mietstatus und technischer Zustand entscheiden darüber, ob ein hoher Einstiegspreis wirtschaftlich tragfähig ist.",
   "source": "https://www.ibb.de/de/ueber-uns/publikationen/wohnungsmarktbericht/2025.html",
   "yield": "Bruttorenditen häufig ca. 2,5–5,0 %",
   "id": "berlin",
@@ -18,5 +18,5 @@
     "berlin",
     "metropole"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-09-02"
 }

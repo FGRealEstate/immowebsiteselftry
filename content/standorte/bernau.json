@@ -3,14 +3,14 @@
   "region": "Berliner Speckgürtel · Nordost",
   "price": "ca. 2.800–4.500 €/m²",
   "rent": "ca. 9–14 €/m²",
-  "chance": "Berlin-Nähe bei meist niedrigerem Einstieg und regionaler Eigennutzernachfrage.",
-  "risk": "Pendlerabhängigkeit, geringere Marktliquidität und starke Mikrolagenunterschiede.",
-  "infra": "Regionalbahn oder S-Bahn je nach Ort; konkrete Fahrzeit und Takt prüfen.",
-  "future": "Entwicklung hängt von Verkehr, Neubau, Arbeitgebern und kommunaler Planung ab.",
-  "population": "Uneinheitliche Entwicklung; Gemeindeprognosen und Neubaupipeline prüfen.",
-  "view": "Nicht als einheitlichen Speckgürtel behandeln. Bahnhofsnähe, Zentrum und lokale Nachfrage sind entscheidend.",
+  "chance": "Die S-Bahn- und Regionalbahnanbindung sowie die Nähe zum Berliner Nordosten stützen die Nachfrage von Pendlern und Familien.",
+  "risk": "Zwischen Bahnhofsumfeld, historischem Zentrum und weiter außen liegenden Ortsteilen unterscheiden sich Vermietbarkeit und Wiederverkauf deutlich.",
+  "infra": "Bernau ist über S-Bahn und Regionalverkehr angebunden und verfügt zugleich über eine eigenständige städtische Infrastruktur.",
+  "future": "Wachstum und Neubau erhöhen die Auswahl, können in einzelnen Teilmärkten aber auch den Angebotsdruck verstärken.",
+  "population": "Für die Prüfung sind die konkrete Distanz zum Bahnhof und die Versorgung im jeweiligen Ortsteil wichtiger als der Stadtname allein.",
+  "view": "Für Pendler und Familien ist Bernau vor allem in gut angebundenen Lagen interessant. Bei Kapitalanlagen sollte der Kaufpreis zum tatsächlich erzielbaren Mietniveau des jeweiligen Quartiers passen.",
   "source": "https://gutachterausschuss.brandenburg.de/",
-  "yield": "häufig ca. 3,0–5,5 %, stark objektabhängig",
+  "yield": "häufig ca. 3,0–5,5 %; Bahnhofsnähe und Mietstatus sind wesentlich",
   "id": "bernau",
   "slug": "bernau",
   "url": "/standorte/bernau/",
@@ -18,5 +18,5 @@
     "berliner speckgürtel · nordost",
     "bernau"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-09-02"
 }

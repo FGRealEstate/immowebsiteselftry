@@ -5,9 +5,62 @@ title: "Standorte - Immobilienmärkte Berlin, Brandenburg und Sachsen"
 description: "Standortanalysen mit Kaufpreisorientierung, Mietniveau, Rendite, Chancen und Risiken für Berlin, Brandenburg und Sachsen."
 canonicalPath: /standorte/
 ---
-<div class="fg-library-page"><section class="fg-library-hero"><div class="fg-premium-shell"><p class="fg-premium-kicker fg-premium-kicker-light">Investment Lab · Standorte</p><h1>Standorte nicht pauschal bewerten. Mikrolagen verstehen.</h1><p>{{ labContent.locations | length }} Standortanalysen mit Kaufpreisorientierung, Mietniveau, Rendite sowie einer Einordnung von Chancen und Risiken. Die Zahlen sind Ausgangspunkt für eine Prüfung – nicht deren Ersatz.</p></div></section>
-<section class="fg-premium-section"><div class="fg-premium-shell"><div class="fg-library-toolbar"><label class="fg-library-search"><i class="fas fa-search"></i><input type="search" placeholder="Standort oder Region suchen …" data-library-search></label><span class="fg-library-count"><b data-library-count>{{ labContent.locations | length }}</b> Analysen</span></div><div class="fg-library-grid" data-library-grid>{% for entry in labContent.locations %}<a class="fg-library-card" href="/standorte/{{ entry.slug }}/" data-library-card data-search="{{ entry.name }} {{ entry.region }} {{ entry.chance }} {{ entry.risk }}"><span>{{ entry.region }}</span><h2>{{ entry.name }}</h2><dl class="fg-library-location-facts"><div><dt>Kaufpreis</dt><dd>{{ entry.price }}</dd></div><div><dt>Miete</dt><dd>{{ entry.rent }}</dd></div><div><dt>Rendite</dt><dd>{{ entry.yield }}</dd></div></dl><span class="fg-library-more">Standortanalyse <i class="fas fa-arrow-right"></i></span></a>{% endfor %}</div><div class="fg-library-empty" data-library-empty>Kein Standort passt zu dieser Suche.</div>
-<div class="fg-premium-cta" style="margin-top:48px"><div><p class="fg-premium-kicker fg-premium-kicker-light">Weitere Regionen</p><h2>Berliner Speckgürtel und passende Mandate deutschlandweit.</h2><p>Zusätzlich zu den Analyse-Seiten betreuen wir unter anderem Potsdam, Oranienburg, Birkenwerder, Teltow, Königs Wusterhausen, Erkner und Eberswalde. Bei passenden Immobilienarten und Transaktionsgrößen arbeiten wir auch überregional.</p></div><a href="/kontakt.html" class="btn-85 px-7 py-4">Standort besprechen <i class="fas fa-arrow-right"></i></a></div></div></section></div>
+<div class="fg-location-index">
+  <section class="fg-library-hero fg-location-index-hero">
+    <div class="fg-premium-shell">
+      <p class="fg-premium-kicker fg-premium-kicker-light">Investment Lab · Standorte</p>
+      <h1>Standorte nicht pauschal bewerten. Mikrolagen verstehen.</h1>
+      <p>{{ labContent.locations | length }} Standortanalysen mit Kaufpreisorientierung, Mietniveau sowie einer klaren Einordnung von Chancen und Risiken.</p>
+    </div>
+  </section>
+
+  <section class="fg-location-index-section">
+    <div class="fg-premium-shell">
+      <div class="fg-library-toolbar fg-location-toolbar">
+        <label class="fg-library-search">
+          <i class="fas fa-search" aria-hidden="true"></i>
+          <input type="search" placeholder="Standort oder Region suchen …" aria-label="Standort oder Region suchen" data-library-search>
+        </label>
+        <span class="fg-library-count"><b data-library-count>{{ labContent.locations | length }}</b> Standortanalysen</span>
+      </div>
+
+      <div class="fg-library-grid fg-location-card-grid" data-library-grid>
+        {% for entry in labContent.locations %}
+        <a class="fg-location-card" href="/standorte/{{ entry.slug }}/" data-library-card data-search="{{ entry.name }} {{ entry.region }} {{ entry.chance }} {{ entry.risk }} {{ entry.view }}">
+          <header class="fg-location-card-header">
+            <div>
+              <span class="fg-location-card-region">{{ entry.region }}</span>
+              <h2>{{ entry.name }}</h2>
+            </div>
+            <span class="fg-location-card-icon" aria-hidden="true"><i class="fas fa-arrow-up-right-from-square"></i></span>
+          </header>
+
+          <dl class="fg-location-card-facts">
+            <div><dt>Kaufpreis</dt><dd>{{ entry.priceValue or entry.price }}</dd></div>
+            <div><dt>Mietniveau</dt><dd>{{ entry.rentValue or entry.rent }}</dd></div>
+            <div><dt>Rendite</dt><dd>{{ entry.yieldValue or entry.yield }}</dd></div>
+          </dl>
+
+          <p class="fg-location-card-summary">{{ entry.view }}</p>
+          <span class="fg-location-card-link">Standortanalyse öffnen <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        </a>
+        {% endfor %}
+      </div>
+
+      <div class="fg-library-empty" data-library-empty>Kein Standort passt zu dieser Suche.</div>
+
+      <div class="fg-location-area-cta">
+        <div>
+          <p class="fg-premium-kicker fg-premium-kicker-light">Unser Tätigkeitsgebiet</p>
+          <h2>Maklergeschäft regional. Finanzierungen deutschlandweit.</h2>
+          <p>{{ serviceArea.text }}</p>
+        </div>
+        <a href="/kontakt.html" class="btn-85 px-7 py-4">Standort besprechen <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+</div>
+
 {% include "library-filter-script.njk" %}
 <script type="application/ld+json">
 {
