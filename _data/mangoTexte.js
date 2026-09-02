@@ -176,7 +176,7 @@ module.exports = {
       {
         "id": "A4",
         "q": "Was passiert nach dem Notartermin?",
-        "a": "Nach der Beurkundung bleiben Themen wie Übergabe, Mietstrategie, Modernisierung, Abschreibung oder Organisation offen. Wir bleiben dafür ansprechbar und können bei Bedarf geeignete Spezialisten aus unserem Netzwerk koordinieren. Welche Leistungen sinnvoll sind, hängt vom konkreten Objekt ab."
+        "a": "Nach der Beurkundung bleiben Themen wie Übergabe, Mietstrategie, Modernisierung, Abschreibung oder Organisation offen. Wir bleiben dafür ansprechbar. Die Vermittlung an Gutachter, Handwerker und Hausverwaltungen ist kostenfrei. Welche Leistungen sinnvoll sind, hängt vom konkreten Objekt ab."
       },
       {
         "id": "A5",

@@ -3,12 +3,12 @@
   "region": "Sachsen",
   "price": "Bestand häufig ca. 2.200–3.800 €/m²",
   "rent": "häufig ca. 8–14 €/m²",
-  "chance": "Wachsende Großstadt, Hochschulen, Logistik und Industrie.",
-  "risk": "Starke Unterschiede zwischen Quartieren; Sanierungs- und Angebotsrisiken.",
-  "infra": "S-Bahn, Fernverkehr, Flughafenregion, Universitäten.",
-  "future": "Weiteres Wachstum möglich, aber nicht jede Lage entwickelt sich gleich.",
-  "population": "Seit Jahren dynamische Großstadtentwicklung.",
-  "view": "Gutes Verhältnis aus Einstieg und Nachfrage, wenn Mikrolage und Gebäudesubstanz stimmen.",
+  "chance": "Die wachsende Großstadt verbindet Hochschulen, Logistik, Industrie und einen vielfältigen Dienstleistungssektor. Gut angebundene Quartiere profitieren von einer breiten Nachfrage durch Studierende, Berufseinsteiger und Familien.",
+  "risk": "Zwischen etablierten Wohnlagen, Entwicklungsgebieten und Randlagen bestehen deutliche Preis- und Vermietungsunterschiede. Sanierungsbedarf und zusätzliches Angebot können die Wirtschaftlichkeit einzelner Objekte spürbar verändern.",
+  "infra": "S-Bahn, Straßenbahn, Fernverkehr, Flughafenregion und Universitäten schaffen eine leistungsfähige regionale Anbindung. Für den Wohnungsmarkt ist vor allem die konkrete Verbindung zu Zentrum, Hochschule oder Arbeitsplatz relevant.",
+  "future": "Weiteres Wachstum ist möglich, wird sich aber nicht gleichmäßig über alle Quartiere und Objektarten verteilen.",
+  "population": "Die dynamische Entwicklung erhöht die Nachfrage, ersetzt jedoch keine Prüfung der jeweiligen Mikrolage.",
+  "view": "Leipzig bietet ein gutes Verhältnis aus Einstiegspreis und Nachfrage, wenn Mikrolage und Gebäudesubstanz stimmen. Bei Kapitalanlagen sollten Mietpotenzial und künftiges Angebot im direkten Umfeld konservativ bewertet werden.",
   "source": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Grundstucksmarktbericht-2025-Leipzig.pdf",
   "yield": "häufig ca. 3,5–6,0 %",
   "id": "leipzig",
@@ -18,5 +18,5 @@
     "leipzig",
     "sachsen"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-09-02"
 }

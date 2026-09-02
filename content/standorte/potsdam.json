@@ -1,14 +1,14 @@
 {
   "name": "Potsdam",
-  "region": "Speckgürtel",
+  "region": "Berliner Speckgürtel · Südwest",
   "price": "häufig ca. 4.500–7.000 €/m²",
   "rent": "häufig ca. 13–19 €/m²",
-  "chance": "Hohe Lebensqualität, Nähe Berlin, Verwaltung, Wissenschaft und Medien.",
-  "risk": "Hohes Preisniveau und begrenztes Angebot.",
-  "infra": "S-Bahn/Regionalbahn, Universität, Film- und Wissenschaftsstandorte.",
-  "future": "Weiterhin strukturell nachgefragt, aber stark lage- und preisabhängig.",
-  "population": "Wachsende bzw. stark nachgefragte Landeshauptstadt.",
-  "view": "Qualitätsstandort mit eher niedriger Anfangsrendite; Wert- und Vermietungsstabilität stehen im Vordergrund.",
+  "chance": "Hohe Lebensqualität, die Nähe zu Berlin sowie Verwaltung, Wissenschaft und Medien sorgen für eine stabile Nachfrage. Besonders gut angebundene und gewachsene Wohnlagen sprechen Eigennutzer und langfristig orientierte Kapitalanleger an.",
+  "risk": "Das hohe Preisniveau begrenzt die Anfangsrendite und lässt wenig Spielraum für zu optimistische Mietannahmen. Das knappe Angebot erschwert zudem belastbare Vergleiche zwischen unterschiedlichen Lagen und Objektqualitäten.",
+  "infra": "S-Bahn und Regionalverkehr verbinden Potsdam mit Berlin; Universität, Film- und Wissenschaftsstandorte schaffen zusätzlich lokale Nachfrage. Innerhalb der Stadt unterscheiden sich Erreichbarkeit und Versorgung dennoch deutlich.",
+  "future": "Potsdam dürfte strukturell nachgefragt bleiben, wobei die weitere Entwicklung stark von Lage, Einstiegspreis und Angebotsknappheit abhängt.",
+  "population": "Als Landeshauptstadt besitzt Potsdam eine eigene Nachfragebasis und ist nicht nur ein Berliner Pendlerstandort.",
+  "view": "Potsdam ist ein Qualitätsstandort mit meist niedrigerer Anfangsrendite. Wert- und Vermietungsstabilität stehen im Vordergrund, weshalb der Einstiegspreis besonders diszipliniert kalkuliert werden sollte.",
   "source": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_P.pdf",
   "yield": "häufig ca. 2,5–4,5 %",
   "id": "potsdam",
@@ -16,7 +16,7 @@
   "url": "/standorte/potsdam/",
   "keywords": [
     "potsdam",
-    "speckgürtel"
+    "berliner speckgürtel · südwest"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-09-02"
 }
