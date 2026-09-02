@@ -21,3 +21,38 @@
 @media(max-width:960px){.fg-home-deepdive-head,.fg-project-detail-hero-grid,.fg-project-detail-layout{grid-template-columns:1fr}.fg-project-detail-summary{grid-template-columns:repeat(3,minmax(0,1fr))}.fg-project-detail-aside{position:relative;top:auto}.fg-project-unit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.fg-home-deepdive-head{display:block}.fg-home-deepdive-head>p{margin-top:18px}.fg-home-deepdive-list summary{grid-template-columns:38px 1fr 36px;gap:10px;padding:20px 0}.fg-home-deepdive-list details>div{padding:0 0 22px 48px}.fg-project-detail-summary{grid-template-columns:1fr}.fg-project-gallery-main{height:390px}.fg-project-unit-grid{grid-template-columns:1fr}.fg-project-units .fg-offer-section-head{align-items:flex-start}.fg-project-units .fg-offer-section-head>p{text-align:left}}
 @media(max-width:520px){.fg-project-gallery-main{height:310px}.fg-project-gallery-main button{width:42px;height:42px}}
+
+/* Mobile media sizing: complete images stay visible without dominating the viewport. */
+@media(max-width:760px){
+  .fg-home-v2-philosophy-image,
+  .fg-region-card-image,
+  .fg-home-v2-market-image{
+    width:100%;
+    max-height:300px;
+  }
+  .fg-home-v2-team-image,
+  .fg-about-bio-media,
+  .fg-about-v2-team-photo{
+    height:min(82vw,300px)!important;
+    min-height:0!important;
+  }
+  .fg-network-visual{min-height:280px!important;max-height:320px!important}
+  .fg-offer-card-media,.fg-project-card .fg-offer-card-media{
+    height:clamp(190px,58vw,240px)!important;
+  }
+  .fg-property-gallery-main,
+  .fg-project-gallery-main{
+    height:clamp(250px,72vw,360px)!important;
+  }
+  .fg-home-v2-philosophy-image img,
+  .fg-region-card-image img,
+  .fg-home-v2-market-image img,
+  .fg-home-v2-team-image img,
+  .fg-about-bio-media img,
+  .fg-offer-card-media img,
+  .fg-property-gallery-main img,
+  .fg-project-gallery-main img{
+    max-width:100%!important;
+    max-height:100%!important;
+  }
+}

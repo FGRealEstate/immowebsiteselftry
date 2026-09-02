@@ -3,14 +3,14 @@
   "region": "Berliner Speckgürtel · Nord",
   "price": "ca. 2.800–4.300 €/m²",
   "rent": "ca. 9–14 €/m²",
-  "chance": "Berlin-Nähe bei meist niedrigerem Einstieg und regionaler Eigennutzernachfrage.",
-  "risk": "Pendlerabhängigkeit, geringere Marktliquidität und starke Mikrolagenunterschiede.",
-  "infra": "Regionalbahn oder S-Bahn je nach Ort; konkrete Fahrzeit und Takt prüfen.",
-  "future": "Entwicklung hängt von Verkehr, Neubau, Arbeitgebern und kommunaler Planung ab.",
-  "population": "Uneinheitliche Entwicklung; Gemeindeprognosen und Neubaupipeline prüfen.",
-  "view": "Nicht als einheitlichen Speckgürtel behandeln. Bahnhofsnähe, Zentrum und lokale Nachfrage sind entscheidend.",
+  "chance": "S-Bahn, Regionalverkehr und die Funktion als Kreisstadt schaffen Nachfrage aus Pendlern, Familien und lokal Beschäftigten.",
+  "risk": "Zwischen Innenstadt, Bahnhofsumfeld und äußeren Ortsteilen unterscheiden sich Preisniveau und Vermietbarkeit erheblich.",
+  "infra": "Oranienburg verfügt über Bahnanschlüsse, Verwaltung, Schulen, Gesundheitsversorgung und ein breites Einzelhandelsangebot.",
+  "future": "Gut angebundene, innerstädtische Lagen dürften von der Entwicklung des nördlichen Berliner Umlands am stärksten profitieren.",
+  "population": "Neubau und Flächenentwicklung sollten in der jeweiligen Mikrolage in die Miet- und Exitplanung einbezogen werden.",
+  "view": "Oranienburg ist mehr als eine reine Pendlergemeinde und bietet einen vergleichsweise breiten lokalen Markt. Bahnhofsnähe bleibt dennoch ein wichtiger Werttreiber für kleine Wohnungen und Kapitalanlagen.",
   "source": "https://gutachterausschuss.brandenburg.de/",
-  "yield": "häufig ca. 3,0–5,5 %, stark objektabhängig",
+  "yield": "häufig ca. 3,0–5,5 %; innerstädtische Lagen liegen meist am unteren Rand",
   "id": "oranienburg",
   "slug": "oranienburg",
   "url": "/standorte/oranienburg/",
@@ -18,5 +18,5 @@
     "berliner speckgürtel · nord",
     "oranienburg"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-09-02"
 }

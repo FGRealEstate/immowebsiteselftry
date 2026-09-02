@@ -2704,3 +2704,48 @@ body.fg-menu-open{overflow:hidden!important}
   .fg-about-v2-proofgrid>div{border-right:0!important;border-bottom:1px solid rgba(255,255,255,.1)!important;padding:20px 16px}.fg-about-v2-proofgrid>div:last-child{border-bottom:0!important}
   .fg-about-v2-hero-image{min-height:330px}.fg-about-v2-team-photo{height:330px}
 }
+
+/* Editorial additions from the 02.09.2026 content review. */
+.fg-trust-card-featured{
+  grid-column:1/-1;
+  display:grid;
+  grid-template-columns:64px minmax(0,1fr);
+  align-items:start;
+  gap:24px;
+  background:linear-gradient(135deg,rgba(209,180,100,.18),rgba(255,255,255,.08));
+  border-color:rgba(209,180,100,.55);
+}
+.fg-trust-card-featured>i{
+  width:64px;
+  height:64px;
+  display:grid;
+  place-items:center;
+  border-radius:18px;
+  background:#d1b464;
+  color:#08082f;
+  margin:0;
+}
+.fg-trust-card-featured h3{font-size:clamp(1.45rem,2.3vw,2.15rem)}
+.fg-trust-card-featured p{max-width:1120px;font-size:1rem}
+
+.lab-service-area-note{
+  margin:30px 0 22px;
+  padding:22px 24px;
+  border-left:4px solid #d1b464;
+  border-radius:0 18px 18px 0;
+  background:#f7f4ec;
+}
+.lab-service-area-note strong{
+  display:block;
+  color:#08082f;
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:1.15rem;
+  margin-bottom:8px;
+}
+.lab-service-area-note p{margin:0;color:#566176;line-height:1.7}
+
+@media(max-width:760px){
+  .fg-trust-card-featured{grid-template-columns:1fr;gap:16px}
+  .fg-trust-card-featured>i{width:52px;height:52px;border-radius:15px}
+  .lab-service-area-note{padding:19px 18px}
+}

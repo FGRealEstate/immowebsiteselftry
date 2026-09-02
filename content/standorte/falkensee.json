@@ -3,14 +3,14 @@
   "region": "Berliner Speckgürtel · West",
   "price": "ca. 3.500–5.500 €/m²",
   "rent": "ca. 11–16 €/m²",
-  "chance": "Berlin-Nähe bei meist niedrigerem Einstieg und regionaler Eigennutzernachfrage.",
-  "risk": "Pendlerabhängigkeit, geringere Marktliquidität und starke Mikrolagenunterschiede.",
-  "infra": "Regionalbahn oder S-Bahn je nach Ort; konkrete Fahrzeit und Takt prüfen.",
-  "future": "Entwicklung hängt von Verkehr, Neubau, Arbeitgebern und kommunaler Planung ab.",
-  "population": "Uneinheitliche Entwicklung; Gemeindeprognosen und Neubaupipeline prüfen.",
-  "view": "Nicht als einheitlichen Speckgürtel behandeln. Bahnhofsnähe, Zentrum und lokale Nachfrage sind entscheidend.",
+  "chance": "Die direkte Lage westlich von Berlin und die starke Familiennachfrage stützen besonders gut angebundene Wohnlagen.",
+  "risk": "Das vergleichsweise hohe Preisniveau drückt die Anfangsrendite; große Grundstücks- und Haussegmente sind zudem stärker eigennutzergetrieben.",
+  "infra": "Regionalbahn, Straßenverbindungen nach Spandau sowie eine gewachsene Schul- und Versorgungsstruktur prägen den Wohnstandort.",
+  "future": "Gut erreichbare Bestandslagen dürften gefragt bleiben, während die Preisakzeptanz stark von Zustand und genauer Entfernung zum Bahnhof abhängt.",
+  "population": "Bei Wohnungen ist der lokale Mietmarkt enger als der Markt für Einfamilienhäuser und deshalb separat zu prüfen.",
+  "view": "Falkensee ist ein stabiler Eigennutzer- und Familienmarkt, aber nicht automatisch ein Cashflow-Standort. Für Kapitalanlagen sollten Einstiegspreis und realistische Miete besonders konservativ angesetzt werden.",
   "source": "https://gutachterausschuss.brandenburg.de/",
-  "yield": "häufig ca. 3,0–5,5 %, stark objektabhängig",
+  "yield": "häufig ca. 3,0–5,5 %; gute Wohnlagen sind eher wertstabil als renditestark",
   "id": "falkensee",
   "slug": "falkensee",
   "url": "/standorte/falkensee/",
@@ -18,5 +18,5 @@
     "berliner speckgürtel · west",
     "falkensee"
   ],
-  "updated": "2026-07-16"
+  "updated": "2026-09-02"
 }

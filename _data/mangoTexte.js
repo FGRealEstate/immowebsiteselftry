@@ -181,12 +181,32 @@ module.exports = {
       {
         "id": "A5",
         "q": "In welchen Regionen arbeitet Fischer & Geserich?",
-        "a": "Unsere Kernmärkte sind Berlin, Leipzig, Dresden und der Berliner Speckgürtel. Bei passenden Immobilienarten, Finanzierungen und Investmentmandaten begleiten wir ausgewählte Vorhaben auch deutschlandweit."
+        "a": "Das Maklergeschäft von Fischer & Geserich umfasst ganz Berlin sowie den Berliner Speckgürtel mit Bernau, Eberswalde, Erkner, Falkensee, Fürstenwalde, Joachimsthal, Königs Wusterhausen, Luckenwalde, Oranienburg, Potsdam, Strausberg, Teltow und Velten. In Sachsen sind wir in Leipzig und Dresden tätig. Finanzierungen begleiten wir deutschlandweit."
       },
       {
         "id": "A6",
         "q": "Wie funktionieren die Investmentkennzahlen bei Angeboten?",
         "a": "Bei als Kapitalanlage gekennzeichneten Kaufobjekten können verfügbare Propstack-Daten wie Kaufpreis und Miete in eine interaktive Szenariorechnung einfließen. Zins, Tilgung, Eigenkapital und Kosten lassen sich verändern; Cashflow und Restschuld reagieren direkt. Für eine ausführlichere Modellrechnung steht zusätzlich das Investment Lab zur Verfügung."
+      },
+      {
+        "id": "A7",
+        "q": "Was unterscheidet Fischer & Geserich von anderen Immobilienmaklern?",
+        "a": "Wir verkaufen Ihnen nur dann eines unserer Objekte, wenn es wirklich zu Ihrer Strategie passt. Ist das nicht der Fall, unterstützen wir Sie stattdessen bei der Finanzierung, der Vermietung oder mit einer Ankaufberatung. Auch nach dem Kauf bleiben wir Ihr Ansprechpartner, zum Beispiel bei Gutachten, Mietanpassungen, Handwerkern oder der steuerlichen Struktur. Die Vermittlung an unser Netzwerk ist kostenfrei, denn uns geht es um eine langfristige Zusammenarbeit und nicht um einen einmaligen Abschluss."
+      },
+      {
+        "id": "A8",
+        "q": "Was passiert, wenn kein Objekt zu mir passt?",
+        "a": "Dann verkaufen wir Ihnen auch keines. Wenn keines unserer Objekte zu Ihrer Strategie passt, unterstützen wir Sie lieber bei der Finanzierung eines anderen Objekts, mit einer Ankaufberatung oder beim Transaktionsmanagement. Denn wer das falsche Objekt kauft, wird am Ende nicht zufrieden sein und genau das möchten wir vermeiden."
+      },
+      {
+        "id": "A9",
+        "q": "Prüft ihr die Finanzierung vor dem Notartermin?",
+        "a": "Ja. Bevor der Kaufvertrag beim Notar beauftragt wird, klären wir gemeinsam, ob die Finanzierung realistisch ist. Ein Vertragsentwurf kostet je nach Kaufvolumen bereits einige hundert Euro, der spätere Kaufvertrag noch deutlich mehr. Wenn sich erst danach herausstellt, dass die Finanzierung nicht funktioniert, bleiben Sie auf diesen Kosten sitzen. Sollte ein kleineres Kaufvolumen sinnvoller sein, sagen wir Ihnen das offen und rechtzeitig."
+      },
+      {
+        "id": "A10",
+        "q": "Kostet die Betreuung nach dem Kauf extra?",
+        "a": "Nein. Die Vermittlung an Gutachter, Handwerker und Hausverwaltungen ist für Sie kostenfrei. Das gilt auch für unsere Beratung zu Abschreibung, Mietstrategie und der sinnvollen Reihenfolge von Modernisierungen. Kosten entstehen nur dann, wenn tatsächlich eine konkrete Leistung erbracht wird, zum Beispiel bei einer Vermietung. Haben Sie das Objekt über uns gekauft, bieten wir diese zu einem reduzierten Satz an."
       }
     ],
     "B": [
@@ -270,7 +290,7 @@ module.exports = {
       {
         "id": "C6",
         "q": "In welchen Gebieten seid ihr tätig?",
-        "a": "Unser Maklergeschäft umfasst ganz Berlin, von Marzahn und Biesdorf über Reinickendorf bis Tegel, dazu den Speckgürtel mit Oranienburg, Fehrbellin, Neuruppin, Eberswalde, Stahnsdorf, Strausberg, Königs Wusterhausen, Fürstenwalde und Birkenwerder. Ab einem Volumen von einer Million Euro sind wir auch überregional unterwegs, unter anderem in Dresden und Leipzig, und Finanzierungen begleiten wir sogar deutschlandweit."
+        "a": "Das Maklergeschäft von Fischer & Geserich umfasst ganz Berlin sowie den Berliner Speckgürtel mit Bernau, Eberswalde, Erkner, Falkensee, Fürstenwalde, Joachimsthal, Königs Wusterhausen, Luckenwalde, Oranienburg, Potsdam, Strausberg, Teltow und Velten. In Sachsen sind wir in Leipzig und Dresden tätig. Finanzierungen begleiten wir deutschlandweit."
       },
       {
         "id": "C7",

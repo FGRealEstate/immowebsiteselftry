@@ -9,4 +9,49 @@ eleventyComputed:
   title: "Immobilienstandort {{ location.name }}"
   description: "Kaufpreise, Mieten, Renditeorientierung, Chancen und Risiken für {{ location.name }}."
 ---
-<main class="content-detail shell"><nav class="breadcrumbs"><a href="/investment-lab.html">Investment Lab</a><span>›</span><a href="/investment-lab.html#standorte">Standorte</a><span>›</span><span>{{ location.name }}</span></nav><article class="science-article location-page"><header><span class="lab-kicker">{{ location.region }}</span><h1>Standortanalyse {{ location.name }}</h1><p class="lead">Orientierungswerte und qualitative F&amp;G-Einordnung. Angezeigt werden ausschließlich hinterlegte Marktwerte – keine automatisch hochgerechneten Objektpreis-Bandbreiten.</p></header><div class="lab-location-keyfacts-v2"><article><span>Kaufpreisorientierung</span><strong>{{ location.price }}</strong></article><article><span>Mietniveau</span><strong>{{ location.rent }}</strong></article><article><span>Renditeorientierung</span><strong>{{ location.yield }}</strong></article></div><div class="lab-location-analysis-grid"><section><h2>Chancen</h2><p>{{ location.chance }}</p></section><section><h2>Risiken</h2><p>{{ location.risk }}</p></section><section><h2>Infrastruktur</h2><p>{{ location.infra }}</p></section><section><h2>Perspektive</h2><p>{{ location.future }} {{ location.population }}</p></section></div><section><h2>F&amp;G-Einordnung</h2><p>{{ location.view }}</p></section>{% if location.source %}<p class="lab-location-source">Quelle/Orientierung: <a href="{{ location.source }}" target="_blank" rel="noopener noreferrer">externe Marktquelle</a>. Datenstand und Methodik vor Verwendung prüfen.</p>{% endif %}<a class="lab-btn lab-btn-gold" href="/investment-lab.html">Standort im Investment Lab vergleichen</a></article></main>
+<main class="content-detail shell">
+  <nav class="breadcrumbs" aria-label="Brotkrümelnavigation">
+    <a href="/investment-lab.html">Investment Lab</a>
+    <span>›</span>
+    <a href="/investment-lab.html#standorte">Standorte</a>
+    <span>›</span>
+    <span>{{ location.name }}</span>
+  </nav>
+
+  <article class="science-article location-page">
+    <header>
+      <span class="lab-kicker">{{ location.region }}</span>
+      <h1>Standortanalyse {{ location.name }}</h1>
+      <p class="lead">Orientierungswerte und qualitative F&amp;G-Einordnung. Angezeigt werden ausschließlich hinterlegte Marktwerte – keine automatisch hochgerechneten Objektpreis-Bandbreiten.</p>
+    </header>
+
+    <div class="lab-location-keyfacts-v2">
+      <article><span>Kaufpreisorientierung</span><strong>{{ location.price }}</strong></article>
+      <article><span>Mietniveau</span><strong>{{ location.rent }}</strong></article>
+      <article><span>Renditeorientierung</span><strong>{{ location.yield }}</strong></article>
+    </div>
+
+    <div class="lab-location-analysis-grid">
+      <section><h2>Chancen</h2><p>{{ location.chance }}</p></section>
+      <section><h2>Risiken</h2><p>{{ location.risk }}</p></section>
+      <section><h2>Infrastruktur</h2><p>{{ location.infra }}</p></section>
+      <section><h2>Perspektive</h2><p>{{ location.future }} {{ location.population }}</p></section>
+    </div>
+
+    <section class="lab-location-view">
+      <h2>F&amp;G-Einordnung</h2>
+      <p>{{ location.view }}</p>
+    </section>
+
+    <aside class="lab-service-area-note" aria-label="Tätigkeitsgebiet von Fischer und Geserich">
+      <strong>Unser Tätigkeitsgebiet</strong>
+      <p>{{ serviceArea.text }}</p>
+    </aside>
+
+    {% if location.source %}
+    <p class="lab-location-source">Quelle/Orientierung: <a href="{{ location.source }}" target="_blank" rel="noopener noreferrer">externe Marktquelle</a>. Datenstand und Methodik vor Verwendung prüfen.</p>
+    {% endif %}
+
+    <a class="lab-btn lab-btn-gold" href="/investment-lab.html">Standort im Investment Lab vergleichen</a>
+  </article>
+</main>
