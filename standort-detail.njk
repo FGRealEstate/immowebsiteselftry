@@ -95,3 +95,24 @@ eleventyComputed:
     </div>
   </section>
 </div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "City",
+  "@id": "https://fg-realestate.de/standorte/{{ location.slug }}/#place",
+  "name": {{ location.name | json | safe }},
+  "description": {{ location.view | json | safe }},
+  "url": "https://fg-realestate.de/standorte/{{ location.slug }}/",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": {{ location.name | json | safe }},
+    "addressCountry": "DE"
+  },
+  "mainEntityOfPage": { "@id": "https://fg-realestate.de/standorte/{{ location.slug }}/" },
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "Kaufpreisorientierung", "value": {{ (location.priceValue or location.price) | json | safe }} },
+    { "@type": "PropertyValue", "name": "Mietniveau", "value": {{ (location.rentValue or location.rent) | json | safe }} },
+    { "@type": "PropertyValue", "name": "Renditeorientierung", "value": {{ (location.yieldValue or location.yield) | json | safe }} }
+  ]
+}
+</script>

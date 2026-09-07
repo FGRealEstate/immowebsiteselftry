@@ -18,12 +18,13 @@
     {% set socialTitle = ogTitle or pageTitle %}
     {% set socialDescription = ogDescription or metaDescription %}
     {% set socialImage = ogImage or (siteUrl + "/images/fg-logo-gold-transparent.png") %}
+    {% set robotsContent = robots or "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" %}
 
     <title>{% if pageTitle == siteName or pageTitle == companyName or "Fischer & Geserich" in pageTitle %}{{ pageTitle }}{% else %}{{ pageTitle }} | {{ siteName }}{% endif %}</title>
     <meta name="description" content="{{ metaDescription }}">
     <meta name="application-name" content="{{ siteName }}">
     <meta name="apple-mobile-web-app-title" content="{{ siteName }}">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="robots" content="{{ robotsContent }}">
     <link rel="canonical" href="{{ canonicalUrl }}">
 
     <!-- Eindeutiger Markenname für Google, Bing und soziale Netzwerke -->
@@ -282,6 +283,14 @@
   ]
 }
 </script>
+    {% elseif currentPath != "/404.html" %}
+    {% set schemaType = structuredDataType or "WebPage" %}
+    {% set schemaName = structuredDataName or pageTitle %}
+    {% set schemaDesc = structuredDataDescription or metaDescription %}
+    {% set schemaPath = currentPath %}
+    {% set schemaCrumb = structuredDataCrumb or pageTitle %}
+    {% set schemaArea = structuredDataArea or "Berlin und Deutschland" %}
+    {% include "page-schema.njk" %}
     {% endif %}
 
     <!-- Favicon / App Icons -->
@@ -366,7 +375,7 @@
 
 </head>
 
-<body class="site-background">
+<body class="site-background{% if bodyClass %} {{ bodyClass }}{% endif %}">
 
 
 <nav class="fg-sticky-header bg-primary text-white shadow-lg" data-fg-site-header>

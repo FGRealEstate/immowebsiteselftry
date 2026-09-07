@@ -16,3 +16,15 @@ eleventyComputed:
 {% if entry.practiceExample %}<section class="lab-example-section science-section"><h2>Konkretes Beispiel</h2><div class="lab-interpretation"><p>{{ entry.practiceExample }}</p></div></section>{% endif %}
 {% if entry.sources and entry.sources.length %}<section class="lab-source-section science-section"><h2>Quellen &amp; Rechtsgrundlagen</h2><ul>{% for source in entry.sources %}<li><a href="{{ source.url }}" target="_blank" rel="noopener noreferrer">{{ source.label }}</a></li>{% endfor %}</ul></section>{% endif %}
 <a class="lab-btn lab-btn-gold" href="/investment-lab.html">Im Investment Lab weiterarbeiten</a></article></main>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "@id": "https://fg-realestate.de/lexikon/{{ entry.slug }}/#term",
+  "name": {{ entry.term | json | safe }},
+  "description": {{ entry.definition | json | safe }},
+  "url": "https://fg-realestate.de/lexikon/{{ entry.slug }}/",
+  "inDefinedTermSet": { "@id": "https://fg-realestate.de/lexikon/#begriffe" },
+  "mainEntityOfPage": { "@id": "https://fg-realestate.de/lexikon/{{ entry.slug }}/" }
+}
+</script>

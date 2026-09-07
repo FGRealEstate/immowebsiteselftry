@@ -123,7 +123,7 @@ module.exports = function(eleventyConfig) {
   [
     "style.css", "fg-polish.css", "script.js", "fg-assistant.js", "fg-knowledge.js", "fg-assistant.css",
     "investment-lab.js", "consent-manager.js", "consent-manager.css", "analytics.js",
-    "vendor", "images", "favicon.ico", "videos", "admin", "_redirects"
+    "vendor", "images", "favicon.ico", "videos", "admin", "robots.txt", "_redirects"
   ].forEach((asset) => eleventyConfig.addPassthroughCopy(asset));
 
   eleventyConfig.addPassthroughCopy({ "BingSiteAuth.xml": "BingSiteAuth.xml" });

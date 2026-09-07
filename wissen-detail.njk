@@ -133,3 +133,20 @@ eleventyComputed:
     <div class="article-actions"><a class="lab-btn lab-btn-gold" href="/investment-lab.html">Im Investment Lab weiterarbeiten</a><a class="lab-btn lab-btn-ghost" href="/ankaufsberatung.html">Ankaufsberatung</a></div>
   </article>
 </main>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://fg-realestate.de/wissen/{{ article.slug }}/#article",
+  "url": "https://fg-realestate.de/wissen/{{ article.slug }}/",
+  "headline": {{ article.title | json | safe }},
+  "description": {{ article.summary | json | safe }},
+  "articleSection": {{ article.category | json | safe }},
+  "inLanguage": "de-DE",
+  "dateModified": "{{ article.updated }}",
+  "author": { "@id": "https://fg-realestate.de/#organization", "name": {{ article.author | json | safe }} },
+  "publisher": { "@id": "https://fg-realestate.de/#organization" },
+  "mainEntityOfPage": { "@id": "https://fg-realestate.de/wissen/{{ article.slug }}/" },
+  "keywords": {{ article.keywords | json | safe }}
+}
+</script>
