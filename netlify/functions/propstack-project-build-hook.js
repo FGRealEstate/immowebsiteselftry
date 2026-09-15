@@ -42,9 +42,9 @@ exports.handler = async function projectBuildHook(event) {
     return jsonResponse(400, { ok: false, error: "Invalid JSON payload" });
   }
 
-  const buildHookUrl = process.env.NETLIFY_PROJECT_BUILD_HOOK_URL;
+  const buildHookUrl = process.env.NETLIFY_PROJECT_BUILD_HOOK_URL || process.env.NETLIFY_BUILD_HOOK_URL;
   if (!buildHookUrl) {
-    return jsonResponse(500, { ok: false, error: "NETLIFY_PROJECT_BUILD_HOOK_URL fehlt." });
+    return jsonResponse(500, { ok: false, error: "NETLIFY_PROJECT_BUILD_HOOK_URL bzw. NETLIFY_BUILD_HOOK_URL fehlt." });
   }
 
   try {

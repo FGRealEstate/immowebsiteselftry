@@ -51,7 +51,7 @@ function textValue(input) {
 }
 
 function getAllowedKeywords(entityType = "unit") {
-  const fallback = entityType === "project" ? "vermarktung,im angebot" : "vermarktung";
+  const fallback = entityType === "project" ? "vermarkten,vermarktung,im angebot" : "vermarkten,vermarktung";
   const environmentValue = entityType === "project"
     ? process.env.PROPSTACK_PUBLIC_PROJECT_STATUS_KEYWORDS
     : process.env.PROPSTACK_PUBLIC_STATUS_KEYWORDS;
@@ -154,6 +154,11 @@ function detectEntityHint(payload) {
   return null;
 }
 
+function isDeleteEvent(payload) {
+  const event = normalizeText(payload?.event || payload?.event_type || payload?.eventType || payload?.action || payload?.type);
+  return /delete|deleted|destroy|removed|archiv/.test(event);
+}
+
 function unwrapOne(data, keys) {
   if (!data) return null;
   for (const key of keys) {
@@ -240,6 +245,16 @@ async function resolveEntity(payload) {
   const hint = detectEntityHint(payload);
   if (!id) return { type: hint || "unknown", id: null, raw: null };
 
+  // Viele Propstack-Webhooks liefern den geänderten Datensatz bereits mit.
+  // Diesen verwenden wir bevorzugt, damit Feldänderungen auch dann einen Build
+  // auslösen, wenn der Detail-Endpunkt kurzzeitig noch den alten Stand liefert.
+  const embeddedProject = payload.project || payload.development ||
+    (hint === "project" && isPlainObject(payload.data) ? payload.data : null);
+  const embeddedUnit = payload.unit || payload.property || payload.object ||
+    (hint === "unit" && isPlainObject(payload.data) ? payload.data : null);
+  if (hint === "project" && isPlainObject(embeddedProject)) return { type: "project", id, raw: embeddedProject };
+  if (hint === "unit" && isPlainObject(embeddedUnit)) return { type: "unit", id, raw: embeddedUnit };
+
   if (hint === "project") {
     const project = await fetchProject(id);
     if (project) return { type: "project", id, raw: project };
@@ -265,7 +280,7 @@ function debounceSeconds() {
 
 async function triggerBuild(details) {
   const url = details?.entityType === "project"
-    ? process.env.NETLIFY_PROJECT_BUILD_HOOK_URL
+    ? (process.env.NETLIFY_PROJECT_BUILD_HOOK_URL || process.env.NETLIFY_BUILD_HOOK_URL)
     : process.env.NETLIFY_BUILD_HOOK_URL;
 
   if (!url) {
@@ -297,6 +312,16 @@ exports.handler = async function handler(event) {
     return jsonResponse(405, { ok: false, error: "Method Not Allowed" });
   }
 
+  if (event.httpMethod === "GET" && !event.queryStringParameters?.id) {
+    return jsonResponse(200, {
+      ok: true,
+      ready: true,
+      webhook: "propstack-build-hook",
+      unitBuildHookConfigured: Boolean(process.env.NETLIFY_BUILD_HOOK_URL),
+      projectBuildHookConfigured: Boolean(process.env.NETLIFY_PROJECT_BUILD_HOOK_URL || process.env.NETLIFY_BUILD_HOOK_URL)
+    });
+  }
+
   let payload = {};
   try {
     payload = event.httpMethod === "POST"
@@ -310,7 +335,7 @@ exports.handler = async function handler(event) {
   const payloadStatus = findStatus(payload);
   const previousPayloadStatus = findPreviousStatus(payload);
 
-  if (!entity.id || !entity.raw) {
+  if (!entity.id) {
     console.log("Propstack Event übersprungen: Entität konnte nicht sicher nachgeladen werden.", {
       hint: entity.type,
       id: entity.id,
@@ -330,8 +355,16 @@ exports.handler = async function handler(event) {
   let projectStatus = null;
   let ownStatus = findStatus(entity.raw) || payloadStatus;
   let reason = "";
+  let buildRequired = false;
+  let buildReason = "";
+  let forceRemovalBuild = false;
 
-  if (entity.type === "project") {
+  if (!entity.raw && isDeleteEvent(payload)) {
+    forceRemovalBuild = true;
+    reason = "Gelöschter Datensatz muss von der Website entfernt werden.";
+  } else if (!entity.raw) {
+    return jsonResponse(200, { ok: true, skipped: true, reason: "Entität konnte nicht aus der Propstack API nachgeladen werden.", entityType: entity.type, entityId: entity.id });
+  } else if (entity.type === "project") {
     currentVisible = isPublicStatus(ownStatus, "project");
     projectId = entity.id;
     projectStatus = ownStatus;
@@ -369,10 +402,11 @@ exports.handler = async function handler(event) {
     ? isPublicStatus(previousPayloadStatus, entity.type === "project" ? "project" : "unit")
     : null;
 
-  let buildRequired = false;
-  let buildReason = reason;
+  buildReason = reason;
 
-  if (entity.type === "unit" && projectId && !isPublicStatus(projectStatus, "project")) {
+  if (forceRemovalBuild) {
+    buildRequired = true;
+  } else if (entity.type === "unit" && projectId && !isPublicStatus(projectStatus, "project")) {
     // Wichtigster Credit-Schutz: Einheiten eines nicht veröffentlichten Projekts
     // verursachen NIE einen Build, unabhängig vom Status der Einheit.
     buildRequired = false;

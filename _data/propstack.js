@@ -362,6 +362,8 @@ function getInvestmentStrategy(unit, marketingType, coldRentRaw) {
     if (marketingType === "Miete") return { key: "miete", label: "Miete", isInvestment: false };
 
     const explicit = firstText(unit, [
+        "custom_fields.investment_oder_eigennutz", "custom_fields.investment oder eigennutz",
+        "custom_fields.investment-oder-eigennutz", "custom_fields.investmentodereigennutz",
         "custom_fields.website_nutzung", "custom_fields.nutzungsart", "custom_fields.zielgruppe",
         "custom_fields.investment_typ", "custom_fields.investmenttyp", "custom_fields.verwendungszweck",
         "custom_fields.vermietungsstatus"
@@ -601,7 +603,8 @@ function isPublicMarketingObject(unit) {
         return false;
     }
 
-    return normalizeText(statusName).includes("vermarktung");
+    const status = normalizeText(statusName);
+    return status.includes("vermarktung") || status.includes("vermarkten");
 }
 
 
@@ -746,7 +749,7 @@ function isPublicMarketingProject(project) {
     if (!status) return false;
 
     const normalizedStatus = normalizeText(status);
-    return normalizedStatus.includes("vermarktung") || normalizedStatus.includes("imangebot");
+    return normalizedStatus.includes("vermarktung") || normalizedStatus.includes("vermarkten") || normalizedStatus.includes("imangebot");
 }
 
 function getProjectReference(unit) {

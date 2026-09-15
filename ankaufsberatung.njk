@@ -1,13 +1,118 @@
 ---
 layout: base.njk
-title: Ankaufsberatung für Kapitalanleger und Eigennutzer | Fischer & Geserich
-permalink: ankaufsberatung.html
-description: "Ankaufsberatung für Immobilien: Objekt, Lage, Unterlagen, Wirtschaftlichkeit und Finanzierung gemeinsam prüfen – für Kapitalanleger und Eigennutzer."
-canonicalPath: /ankaufsberatung.html
+pagination:
+  data: labContent.locations
+  size: 1
+  alias: location
+permalink: "standorte/{{ location.slug }}/index.html"
+eleventyComputed:
+  title: "Immobilienstandort {{ location.name }}"
+  description: "Kaufpreise, Mieten, Renditeorientierung, Chancen und Risiken für {{ location.name }}."
 ---
-<div class="fg-premium-page"><section class="fg-premium-hero"><div class="fg-premium-shell"><div class="fg-premium-hero-grid"><div><p class="fg-premium-kicker fg-premium-kicker-light">Ankauf &amp; Investment</p><h1>Erst prüfen. Dann kaufen.</h1><p class="fg-premium-hero-lead">Wir betrachten Objekt, Lage, Wirtschaftlichkeit, Unterlagen und Finanzierung im Zusammenhang. Für Kapitalanleger anders als für Eigennutzer – aber immer mit derselben Frage: Passt das Objekt wirklich zu Ihrem Ziel?</p><div class="fg-premium-actions"><a href="#termin" class="btn-85 px-7 py-4">Objekt besprechen <i class="fas fa-arrow-right"></i></a><a href="/investment-lab.html" class="fg-premium-outline">Investment Lab öffnen</a></div></div><aside class="fg-premium-sidecard"><span>Prüffelder</span><h2>Keine Kaufentscheidung aus einem einzigen Kennwert.</h2><ul><li><i class="fas fa-location-dot"></i><span>Standort, Mikrolage und Vermietbarkeit</span></li><li><i class="fas fa-file-lines"></i><span>Unterlagen, Zustand und mögliche Capex-Themen</span></li><li><i class="fas fa-calculator"></i><span>Rendite, Cashflow, Finanzierung und Restschuld</span></li></ul></aside></div></div></section>
-<section class="fg-premium-statbar"><div class="fg-premium-shell"><div class="fg-premium-statgrid"><div><small>Eigennutz</small><strong>Lebenssituation zuerst</strong><span>Rate, Eigenkapital, Reserve und Zukunftsplanung</span></div><div><small>Kapitalanlage</small><strong>Cashflow &amp; Exit</strong><span>Miete, Kosten, Finanzierung und langfristige Tragfähigkeit</span></div><div><small>Finanzierung</small><strong>Vor dem Notar</strong><span>Finanzierungsrahmen frühzeitig einordnen</span></div><div><small>Entscheidung</small><strong>Auch Nein ist ein Ergebnis</strong><span>ein unpassendes Objekt wird nicht passend gerechnet</span></div></div></div></section>
-<section class="fg-premium-section"><div class="fg-premium-shell"><div class="fg-premium-head"><p class="fg-premium-kicker">Unsere Prüfung</p><h2>Vier Ebenen, eine Kaufentscheidung.</h2><p>Jede Ebene kann die anderen verändern. Genau deshalb betrachten wir sie nicht getrennt.</p></div><div class="fg-premium-grid-4"><article class="fg-premium-card"><div class="fg-premium-card-icon"><i class="fas fa-map-location-dot"></i></div><h3>Lage</h3><p>Mikrolage, Nachfrage, Zielgruppe, Infrastruktur und die Frage, für wen das Objekt langfristig funktioniert.</p></article><article class="fg-premium-card"><div class="fg-premium-card-icon"><i class="fas fa-building"></i></div><h3>Objekt</h3><p>Zustand, WEG, Unterlagen, Grundriss, Mietstatus und absehbarer Investitionsbedarf.</p></article><article class="fg-premium-card"><div class="fg-premium-card-icon"><i class="fas fa-chart-column"></i></div><h3>Wirtschaftlichkeit</h3><p>Kaufpreis, Miete, laufende Kosten, Rendite, Cashflow und Sensitivität gegenüber veränderten Annahmen.</p></article><article class="fg-premium-card"><div class="fg-premium-card-icon"><i class="fas fa-building-columns"></i></div><h3>Finanzierung</h3><p>Eigenkapital, Beleihung, Rate, Zinsbindung, Tilgung und Restschuld passend zum persönlichen Finanzierungsprofil.</p></article></div></div></section>
-<section class="fg-premium-section fg-premium-section-white"><div class="fg-premium-shell"><div class="fg-premium-split"><div class="fg-premium-feature-copy"><p class="fg-premium-kicker">Für Kapitalanleger</p><h2>Rendite ist nur der Anfang.</h2><p>Eine hohe Bruttorendite kann durch nicht umlagefähige Kosten, Capex, ungünstige Finanzierung oder schwache Vermietbarkeit schnell relativiert werden. Deshalb rechnen wir mit mehreren Ebenen und zeigen Auswirkungen auf Cashflow und Restschuld.</p><div class="fg-premium-checklist"><div><i class="fas fa-check"></i><span>Ist- und Soll-Miete getrennt betrachten.</span></div><div><i class="fas fa-check"></i><span>Nicht umlagefähige Kosten und Rücklagen berücksichtigen.</span></div><div><i class="fas fa-check"></i><span>Finanzierung und Eigenkapitalrendite zusammenführen.</span></div><div><i class="fas fa-check"></i><span>Restschuld und Exit-Perspektive sichtbar machen.</span></div></div></div><aside class="fg-premium-panel"><p class="fg-premium-kicker fg-premium-kicker-light">Selbst rechnen</p><h3>Im Investment Lab können Sie Szenarien direkt verändern.</h3><p>Zins, Tilgung, Eigenkapital, Miete und Kosten lassen sich in den Rechnern variieren.</p><a href="/investment-lab.html" class="fg-invest-link">Zum Investment Lab <i class="fas fa-arrow-right"></i></a></aside></div></div></section></div>
-{% set faqItems=[{q:"Prüft ihr auch fremde Objekte?",a:"Ja. Die Ankaufsberatung ist ausdrücklich nicht auf eigene F&G-Angebote beschränkt. Wir können auch Objekte prüfen, die Sie selbst gefunden haben."},{q:"Was ist bei Eigennutz anders als bei einer Kapitalanlage?",a:"Beim Eigennutz stehen Lebenssituation, Rate, Eigenkapitalreserve und langfristige Flexibilität stärker im Vordergrund. Bei Kapitalanlagen ergänzen wir die Betrachtung um Miete, Kosten, Rendite, Cashflow und Exit."},{q:"Wann sollte die Finanzierung geprüft werden?",a:"So früh wie möglich und vor kostenpflichtigen oder bindenden Schritten. Ein belastbarer Finanzierungsrahmen verändert häufig schon die Auswahl geeigneter Objekte."}] %}{% set faqAnchor="faq-ankauf" %}{% set faqTitle="Häufige Fragen zur Ankaufsberatung" %}{% include "faq-block.njk" %}
-<section id="termin" class="fg-premium-section"><div class="fg-premium-shell">{% include "appointment-booking.njk" %}</div></section>
+<div class="fg-location-detail">
+  <section class="fg-location-detail-hero">
+    <div class="fg-location-shell">
+      <nav class="fg-location-breadcrumbs" aria-label="Brotkrümelnavigation">
+        <a href="/investment-lab.html">Investment Lab</a>
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        <a href="/standorte/">Standorte</a>
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        <span aria-current="page">{{ location.name }}</span>
+      </nav>
+
+      <div class="fg-location-detail-heading">
+        <div>
+          <p class="fg-location-kicker">{{ location.region }}</p>
+          <h1>Standortanalyse <span>{{ location.name }}</span></h1>
+        </div>
+        <a class="fg-location-all-link" href="/standorte/">Alle Standorte <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="fg-location-detail-content">
+    <div class="fg-location-shell">
+      <div class="fg-location-keyfacts">
+        <article>
+          <span>Kaufpreis</span>
+          <strong>{{ location.priceValue or location.price }}</strong>
+          {% if location.priceNote %}<small>{{ location.priceNote }}</small>{% endif %}
+        </article>
+        <article>
+          <span>Mietniveau</span>
+          <strong>{{ location.rentValue or location.rent }}</strong>
+          {% if location.rentNote %}<small>{{ location.rentNote }}</small>{% endif %}
+        </article>
+        <article>
+          <span>Rendite</span>
+          <strong>{{ location.yieldValue or location.yield }}</strong>
+          {% if location.yieldNote %}<small>{{ location.yieldNote }}</small>{% endif %}
+        </article>
+      </div>
+
+      <div class="fg-location-analysis-grid">
+        <article>
+          <span class="fg-location-analysis-icon"><i class="fas fa-arrow-trend-up" aria-hidden="true"></i></span>
+          <h2>Chancen</h2>
+          <p>{{ location.chance }}</p>
+        </article>
+        <article>
+          <span class="fg-location-analysis-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></span>
+          <h2>Risiken</h2>
+          <p>{{ location.risk }}</p>
+        </article>
+        <article>
+          <span class="fg-location-analysis-icon"><i class="fas fa-train-subway" aria-hidden="true"></i></span>
+          <h2>Infrastruktur</h2>
+          <p>{{ location.infra }}</p>
+        </article>
+        <article>
+          <span class="fg-location-analysis-icon"><i class="fas fa-compass" aria-hidden="true"></i></span>
+          <h2>Perspektive</h2>
+          <p>{{ location.future }}</p>
+          {% if location.population %}<p>{{ location.population }}</p>{% endif %}
+        </article>
+      </div>
+
+      <section class="fg-location-verdict">
+        <p class="fg-location-kicker">F&amp;G-Einordnung</p>
+        <h2>Was für diesen Standort entscheidend ist.</h2>
+        <p>{{ location.view }}</p>
+      </section>
+
+      <section class="fg-location-service-area">
+        <div>
+          <p class="fg-location-kicker">Unser Tätigkeitsgebiet</p>
+          <h2>Regional vor Ort. Deutschlandweit finanzieren.</h2>
+        </div>
+        <p>{{ serviceArea.text }}</p>
+      </section>
+
+      <div class="fg-location-actions">
+        <a class="btn-85 px-7 py-4" href="/investment-lab.html">Standort im Investment Lab vergleichen <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        <a class="fg-location-secondary-action" href="/kontakt.html">Standort besprechen</a>
+      </div>
+    </div>
+  </section>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "City",
+  "@id": "https://fg-realestate.de/standorte/{{ location.slug }}/#place",
+  "name": {{ location.name | json | safe }},
+  "description": {{ location.view | json | safe }},
+  "url": "https://fg-realestate.de/standorte/{{ location.slug }}/",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": {{ location.name | json | safe }},
+    "addressCountry": "DE"
+  },
+  "mainEntityOfPage": { "@id": "https://fg-realestate.de/standorte/{{ location.slug }}/" },
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "Kaufpreisorientierung", "value": {{ (location.priceValue or location.price) | json | safe }} },
+    { "@type": "PropertyValue", "name": "Mietniveau", "value": {{ (location.rentValue or location.rent) | json | safe }} },
+    { "@type": "PropertyValue", "name": "Renditeorientierung", "value": {{ (location.yieldValue or location.yield) | json | safe }} }
+  ]
+}
+</script>

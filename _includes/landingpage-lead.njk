@@ -402,10 +402,13 @@
                 b.innerHTML = `<span><i class="${group.icon || 'fas fa-building'} text-secondary mr-3"></i>${group.title}</span><i class="fas fa-chevron-right"></i>`;
                 b.onclick = function () {
                     state.object_category = group.title;
-                    state.object_type = "";
+                    // Gibt es nur eine Unterkategorie, ist ein zweiter Bildschirm
+                    // mit derselben Auswahl redundant (z. B. Mehrfamilienhaus).
+                    const onlyItem = group.items.length === 1 ? group.items[0][0] : "";
+                    state.object_type = onlyItem;
                     set(".lead-object-category", group.title);
-                    set(".lead-object-type", "");
-                    show(3);
+                    set(".lead-object-type", onlyItem);
+                    show(onlyItem ? 4 : 3);
                 };
                 categoryOptions.appendChild(b);
             });
@@ -999,4 +1002,3 @@
 <style>
 .lead-option-group-title{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#0b1744;margin:.3rem 0 .65rem;opacity:.75}.lead-choice-compact{min-height:54px}.pac-container{z-index:99999!important;border-radius:14px;box-shadow:0 18px 45px rgba(8,14,40,.18);border:1px solid rgba(11,23,68,.12);font-family:inherit}.pac-item{padding:10px 14px}.pac-item-query{font-weight:700;color:#0b1744}
 </style>
-
