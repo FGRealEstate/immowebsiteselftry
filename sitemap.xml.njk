@@ -1,13 +1,20 @@
 ---
-layout: base.njk
-title: Immobilie vermieten – Fischer & Geserich Real Estate
-permalink: vermieten.html
-description: "Wohnung oder Haus professionell vermieten: Mietpreis, Positionierung, Interessentenauswahl, Bonitätsprüfung und Übergabe mit persönlicher Begleitung."
-canonicalPath: /vermieten.html
-bodyClass: fg-mobile-safe
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
 ---
-<div class="fg-premium-page"><section class="fg-premium-hero"><div class="fg-premium-shell"><div class="fg-premium-hero-grid"><div><p class="fg-premium-kicker fg-premium-kicker-light">Für Vermieter</p><h1>Vermieten heißt nicht nur: Anzeige online.</h1><p class="fg-premium-hero-lead">Die richtige Miethöhe, eine klare Zielgruppe, vollständige Unterlagen und eine saubere Interessentenauswahl entscheiden darüber, ob die Vermietung langfristig funktioniert.</p><div class="fg-premium-actions"><a href="#kontakt-vermietung" class="btn-85 px-7 py-4">Vermietung besprechen <i class="fas fa-arrow-right"></i></a><a href="#ablauf" class="fg-premium-outline">Ablauf ansehen</a></div></div><aside class="fg-premium-sidecard"><span>Vermietung im Fokus</span><h2>Weniger Leerstand. Bessere Auswahl.</h2><ul><li><i class="fas fa-coins"></i><span>Mietpreis und Positionierung realistisch einordnen</span></li><li><i class="fas fa-user-check"></i><span>Interessenten strukturiert vorqualifizieren</span></li><li><i class="fas fa-file-signature"></i><span>Übergabe und Dokumentation sauber abschließen</span></li></ul></aside></div></div></section>
-<section id="ablauf" class="fg-premium-section"><div class="fg-premium-shell"><div class="fg-premium-head"><p class="fg-premium-kicker">Von der Miethöhe bis zur Übergabe</p><h2>Vier Schritte statt ungeordneter Anfragen.</h2></div><div class="fg-premium-process"><article class="fg-premium-step"><span>01 · Einordnung</span><h3>Mietpreis &amp; Zielgruppe</h3><p>Wir prüfen Lage, Zustand, Ausstattung, Mietstatus und das passende Zielgruppenprofil.</p></article><article class="fg-premium-step"><span>02 · Vorbereitung</span><h3>Unterlagen &amp; Darstellung</h3><p>Objektdaten, Bilder und wesentliche Angaben werden konsistent vorbereitet.</p></article><article class="fg-premium-step"><span>03 · Auswahl</span><h3>Anfragen qualifizieren</h3><p>Besichtigungen werden gebündelt und Interessenten nach nachvollziehbaren Kriterien eingeordnet.</p></article><article class="fg-premium-step"><span>04 · Abschluss</span><h3>Mietvertrag &amp; Übergabe</h3><p>Wir koordinieren die Abschlussphase und sorgen für eine dokumentierte Übergabe.</p></article></div></div></section>
-<section class="fg-premium-section fg-premium-section-white"><div class="fg-premium-shell"><div class="fg-premium-split"><div class="fg-premium-feature-copy"><p class="fg-premium-kicker">Für Kapitalanleger</p><h2>Eine Vermietung ist Teil der Investmentrechnung.</h2><p>Miethöhe, nicht umlagefähige Kosten, Leerstand und Modernisierung beeinflussen Cashflow und Rendite. Deshalb verknüpfen wir Vermietung mit der wirtschaftlichen Betrachtung des Objekts.</p><div class="fg-premium-checklist"><div><i class="fas fa-check"></i><span>Mietstrategie statt isolierter Wunschmiete.</span></div><div><i class="fas fa-check"></i><span>Modernisierung vor Neuvermietung wirtschaftlich prüfen.</span></div><div><i class="fas fa-check"></i><span>Kapitalanlage und Finanzierung zusammendenken.</span></div></div></div><aside class="fg-premium-panel"><p class="fg-premium-kicker fg-premium-kicker-light">Nach dem Kauf</p><h3>Wir bleiben auch nach der Beurkundung ansprechbar.</h3><p>Gerade bei neu erworbenen Kapitalanlagen entsteht die Vermietungsstrategie häufig erst nach Übergabe.</p><a href="/betreuung-nach-dem-kauf/" class="fg-invest-link">Betreuung nach dem Kauf <i class="fas fa-arrow-right"></i></a></aside></div></div></section></div>
-{% set faqItems=[{q:"Wie wird die richtige Miethöhe bestimmt?",a:"Wir betrachten Mikrolage, Zustand, Ausstattung, aktuellen Mietstatus und das konkrete Vermietungsszenario. Eine belastbare Miethöhe entsteht aus dem Markt und den rechtlichen Rahmenbedingungen, nicht aus einem pauschalen Wunschwert."},{q:"Wie werden Interessenten ausgewählt?",a:"Anfragen werden strukturiert erfasst, Unterlagen geprüft und Besichtigungen gebündelt. Die Auswahl erfolgt anhand objektiver und nachvollziehbarer Kriterien."},{q:"Übernimmt F&G auch die Vermietung nach einem Kauf?",a:"Ja. Gerade bei Kapitalanlagen kann die Vermietung Teil der Betreuung nach dem Kauf sein. Umfang und Vergütung werden vorher transparent vereinbart."}] %}{% set faqAnchor="faq-vermieten" %}{% set faqTitle="Häufige Fragen zur Vermietung" %}{% include "faq-block.njk" %}
-<section id="kontakt-vermietung" class="fg-contact-section py-8 md:py-14"><div class="container mx-auto px-4 text-center mb-2"><p class="fg-section-kicker">Vermietung starten</p><h2 class="text-3xl md:text-5xl font-bold text-primary mb-3">Erzählen Sie uns kurz von Ihrer Immobilie.</h2></div>{% set leadDefaultConcern="Immobilie vermieten" %}{% include "landingpage-lead.njk" %}</section>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Sitemap-Index fuer fg-realestate.de.
+  Thematische Teil-Sitemaps statt einer ungegliederten Liste: der Abschnitt, in dem eine
+  URL steht, sagt einer Maschine, worum es auf der Seite geht, bevor sie die
+  Seite abruft. Erzeugt aus der Collection `sitemapSections` in .eleventy.js.
+-->
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for section in collections.sitemapSections %}
+  <!-- {{ section.title }}: {{ section.count }} URLs -->
+  <sitemap>
+    <loc>https://fg-realestate.de/sitemap-{{ section.key }}.xml</loc>
+    <lastmod>{{ section.lastmod }}</lastmod>
+  </sitemap>
+{%- endfor %}
+</sitemapindex>
