@@ -399,7 +399,7 @@
     {% set defaultClass = "hover:text-accent whitespace-nowrap" %}
     {% set buyUrls = ['/kaufen.html', '/angebote.html', '/ankaufsberatung.html', '/mieten.html'] %}
     {% set sellUrls = ['/verkaufen.html', '/vermieten.html', '/mehrfamilienhaus.html'] %}
-    {% set labUrls = ['/investment-lab.html', '/kapitalanlage.html', '/lexikon/', '/wissen/', '/standorte/'] %}
+    {% set labUrls = ['/investment-lab.html', '/kapitalanlage.html', '/lexikon/', '/standorte/'] %}
 
     <div class="hidden xl:flex fg-desktop-nav items-center">
       <a href="/index.html" class="{% if currentUrl == '/' or currentUrl == '/index.html' %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Start</a>
@@ -431,12 +431,12 @@
           <a href="/investment-lab.html"><i class="fas fa-flask"></i><span><strong>Investment Lab</strong><small>Rechner &amp; Werkzeuge</small></span></a>
           <a href="/kapitalanlage.html"><i class="fas fa-chart-line"></i><span><strong>Kapitalanlage</strong><small>Investmentpfad</small></span></a>
           <a href="/standorte/"><i class="fas fa-map-location-dot"></i><span><strong>Standorte</strong><small>Standortanalysen</small></span></a>
-          <a href="/wissen/"><i class="fas fa-newspaper"></i><span><strong>Wissen</strong><small>Fachartikel</small></span></a>
           <a href="/lexikon/"><i class="fas fa-book"></i><span><strong>Lexikon</strong><small>Begriffe erklärt</small></span></a>
         </div>
       </div>
 
       <a href="/ueber-uns.html" class="{% if currentUrl == '/ueber-uns.html' %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Über uns</a>
+      <a href="/blog/" class="{{ defaultClass }}">Blog</a>
       <a href="/kontakt.html" class="fg-header-contact text-base font-bold py-2 px-6 whitespace-nowrap{% if currentUrl == '/kontakt.html' %} fg-header-contact-active{% endif %}">Kontakt</a>
     </div>
   </div>
@@ -463,11 +463,11 @@
       <a href="/investment-lab.html" class="fg-mobile-nav-row {% if currentUrl == '/investment-lab.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Investment Lab</a>
       <a href="/kapitalanlage.html" class="fg-mobile-nav-row {% if currentUrl == '/kapitalanlage.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Kapitalanlage</a>
       <a href="/standorte/" class="fg-mobile-nav-row {{ mobileDefaultClass }}">Standorte</a>
-      <a href="/wissen/" class="fg-mobile-nav-row {{ mobileDefaultClass }}">Wissen</a>
       <a href="/lexikon/" class="fg-mobile-nav-row {{ mobileDefaultClass }}">Lexikon</a>
 
       <p class="fg-mobile-label">Unternehmen</p>
       <a href="/ueber-uns.html" class="fg-mobile-nav-row {% if currentUrl == '/ueber-uns.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Über uns</a>
+      <a href="/blog/" class="fg-mobile-nav-row {{ mobileDefaultClass }}">Blog</a>
       <a href="/kontakt.html" class="fg-mobile-contact fg-mobile-nav-row text-center font-bold{% if currentUrl == '/kontakt.html' %} fg-mobile-contact-active{% endif %}">Kontakt</a>
     </div>
   </div>

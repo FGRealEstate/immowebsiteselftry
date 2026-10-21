@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beleihungsauslauf: 100 % und 110 % Finanzierung erklärt</title>
+<meta name="description" content="Beleihungsauslauf: Formel, Einfluss auf den Zins und was eine 100- oder 110-Prozent-Finanzierung kostet. Mit Rechenbeispiel für eine 200.000-Euro-Wohnung.">
+<link rel="canonical" href="https://fg-realestate.de/blog/beleihungsauslauf-und-kondition/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Fischer &amp; Geserich Real Estate">
+<meta property="og:title" content="Beleihungsauslauf: 100 % und 110 % Finanzierung erklärt">
+<meta property="og:description" content="Beleihungsauslauf: Formel, Einfluss auf den Zins und was eine 100- oder 110-Prozent-Finanzierung kostet. Mit Rechenbeispiel für eine 200.000-Euro-Wohnung.">
+<meta property="og:url" content="https://fg-realestate.de/blog/beleihungsauslauf-und-kondition/">
+<meta property="og:image" content="https://fg-realestate.de/blog/beleihungsauslauf-und-kondition/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Blogartikel, Live-Fassung aus _build/live.py -->
+<script>
+/* Lesemodus vor dem ersten Zeichnen setzen, sonst blitzt die helle Seite auf */
+try{var t=localStorage.getItem("fg-theme");if(t)document.documentElement.dataset.theme=t;else if(matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.dataset.theme="dark"}catch(e){}
+</script>
+<link rel="stylesheet" href="../muster.css">
+<style>
+/* A1: Beleihungsauslauf-Skala über drei Finanzierungen */
+.bla-k{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--muted);margin:0 0 4px}
+.bla{position:relative;height:118px;margin:0 0 34px}
+.bla .zone{position:absolute;top:58px;bottom:0;background:var(--soft)}
+.bla .zone.over{background:repeating-linear-gradient(-45deg,transparent 0 5px,color-mix(in srgb,var(--warn) 22%,transparent) 5px 7px)}
+.bla .base{position:absolute;left:0;right:0;bottom:0;border-top:1.5px solid var(--ink)}
+.bla .th{position:absolute;top:58px;bottom:-6px;border-left:1px dashed var(--muted)}
+.bla .th span{position:absolute;top:66px;left:0;transform:translateX(-50%);font-size:.74rem;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.bla .mk{position:absolute;bottom:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;font-variant-numeric:tabular-nums}
+.bla .mk b{font-size:.95rem;line-height:1.1;white-space:nowrap}
+.bla .mk small{font-size:.7rem;color:var(--muted);white-space:nowrap;line-height:1.2}
+.bla .mk i{display:block;width:2px;background:var(--ink);margin-top:3px}
+.bla .mk i::after{content:"";display:block;width:12px;height:12px;border-radius:50%;background:var(--c-ki);margin:0 0 -6px -5px;position:relative;top:100%}
+.bla .mk.l1 i{height:20px}.bla .mk.l2 i{height:56px}
+.bla .mk.warn b{color:var(--warn)}
+.bla .mk.warn i,.bla .mk.warn i::after{background:var(--warn)}
+.bla-note{margin:-6px 0 18px!important;font-size:.74rem;color:var(--warn);font-weight:700;text-align:right;line-height:1.25}
+.vkey{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.8rem;margin:0 0 12px}
+.vkey i{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px}
+.vrow{display:grid;grid-template-columns:150px 1fr 150px;gap:6px 16px;align-items:center;padding:14px 0;border-top:1px solid var(--rule)}
+.vname b{display:block;font-size:.98rem;line-height:1.2}
+.vname span{font-size:.78rem;color:var(--muted)}
+.vbar{display:flex;height:34px;font-size:.76rem;font-weight:700;font-variant-numeric:tabular-nums}
+.vbar span{display:flex;align-items:center;padding:0 8px;white-space:nowrap;overflow:hidden}
+.vbar .ek{background:var(--c-hum);color:var(--on-hum)}
+.vbar .dl{background:var(--c-ki);color:var(--on-ki)}
+.vbar .bl{background:repeating-linear-gradient(-45deg,var(--c-ki) 0 4px,var(--c-mid) 4px 8px);color:var(--on-ki)}
+.vfig{font-size:.8rem;color:var(--muted);line-height:1.3;font-variant-numeric:tabular-nums}
+.vfig b{display:block;font-size:1.05rem;color:var(--ink)}
+.vfig .rb{display:block;height:5px;background:var(--c-mid);margin-top:4px}
+.vfig em{font-style:normal;font-weight:700;color:var(--warn);font-size:.78rem}
+@media (max-width:620px){
+  .vrow{grid-template-columns:1fr auto;gap:8px 12px}
+  .vbar{grid-column:1/-1;grid-row:2}
+  .vfig{grid-row:1;grid-column:2;text-align:right}
+  .vfig .rb{margin-left:auto}
+  .bla .mk small{display:none}
+  .bla .th span{font-size:.66rem}
+}
+</style>
+<script type="application/ld+json">
+[
+ {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Was ist der Beleihungsauslauf, und was kostet eine 100- oder 110-Prozent-Finanzierung?",
+  "description": "Beleihungsauslauf: Formel, Einfluss auf den Zins und was eine 100- oder 110-Prozent-Finanzierung kostet. Mit Rechenbeispiel für eine 200.000-Euro-Wohnung.",
+  "inLanguage": "de-DE",
+  "url": "https://fg-realestate.de/blog/beleihungsauslauf-und-kondition/",
+  "image": "https://fg-realestate.de/blog/beleihungsauslauf-und-kondition/og.jpg",
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-22",
+  "author": {
+   "@type": "Organization",
+   "name": "Fischer & Geserich Real Estate GmbH"
+  },
+  "publisher": {
+   "@type": "Organization",
+   "name": "Fischer & Geserich Real Estate GmbH"
+  }
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Was ist der Beleihungsauslauf?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Der Beleihungsauslauf ist das Verhältnis zwischen Darlehensbetrag und Beleihungswert einer Immobilie, ausgedrückt in Prozent. Der Beleihungswert ist der Betrag, den die Bank im Fall einer Zwangsversteigerung sicher erzielen würde, und liegt in der Regel 10 bis 20 Prozent unter dem Kaufpreis. Je höher der Beleihungsauslauf, desto höher der Zinssatz."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Wie hoch darf der Beleihungsauslauf maximal sein?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Die meisten Banken finanzieren bis zu einem Beleihungsauslauf von rund 100 bis 110 Prozent. Mehr als 120 Prozent gehen nur sehr wenige Banken mit, und auch dann nur im Sonderfall bei starker Bonität. Ab 100 Prozent steigen die Zinsaufschläge deutlich."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Was ist der Unterschied zwischen einer 100- und einer 110-Prozent-Finanzierung?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Bei einer 100-Prozent-Finanzierung finanziert die Bank den vollen Kaufpreis, die Kaufnebenkosten zahlen Sie aus Eigenkapital. Bei einer 110-Prozent-Finanzierung finanziert die Bank zusätzlich die Kaufnebenkosten. Weil der Beleihungswert unter dem Kaufpreis liegt, ergibt schon eine 100-Prozent-Finanzierung einen Beleihungsauslauf über 100 Prozent."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Ist eine 110-Prozent-Finanzierung bei der ersten Immobilie sinnvoll?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "In der Regel nicht. Die hohe Zinsbelastung und die fehlende Reserve führen dazu, dass viele Käufer danach für eine zweite Immobilie nicht mehr finanzierbar sind. Fischer & Geserich empfiehlt den hohen Hebel erst, wenn bereits mehrere Objekte im Bestand sind und die Bonität stark ist, in der Regel ab etwa 4.000 Euro netto im Monat."
+    }
+   }
+  ]
+ }
+]
+</script>
+</head>
+<body>
+
+<header class="top">
+  <nav class="site-nav" aria-label="Hauptnavigation">
+    <div class="nav-row">
+      <a class="brand" href="https://fg-realestate.de/index.html"><img src="/images/fg-logo-gold-transparent.png" alt="Fischer &amp; Geserich Real Estate" width="54" height="54"><span class="gold-text long">Fischer &amp; Geserich Real Estate</span><span class="gold-text short">Fischer &amp; Geserich<br>Real Estate</span></a>
+      <div class="nav-links">
+        <a href="https://fg-realestate.de/index.html">Start</a>
+        <div class="nav-group"><a href="https://fg-realestate.de/angebote.html" aria-haspopup="true">Kaufen<span class="caret"></span></a>
+          <div class="nav-sub">
+            <a href="https://fg-realestate.de/angebote.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M10 21v-3h4v3"/></svg></i><span><strong>Angebote</strong><small>Aktuelle Objekte</small></span></a>
+            <a href="https://fg-realestate.de/ankaufsberatung.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l4-4 4 2 3-3 7 6-3 3"/><path d="M7 8l-4 4 6 6 2-2M11 16l2 2 2-2M13 14l2 2 2-2"/></svg></i><span><strong>Ankaufsberatung</strong><small>Begleitung beim Kauf</small></span></a>
+          </div></div>
+        <a href="https://fg-realestate.de/verkaufen.html">Verkaufen</a>
+        <a href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierung</a>
+        <div class="nav-group"><a href="https://fg-realestate.de/investment-lab.html" aria-haspopup="true">Investment Lab<span class="caret"></span></a>
+          <div class="nav-sub">
+            <a href="https://fg-realestate.de/investment-lab.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M7 15h10"/></svg></i><span><strong>Investment Lab</strong><small>Rechner und Werkzeuge</small></span></a>
+            <a href="https://fg-realestate.de/standorte/"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg></i><span><strong>Standorte</strong><small>16 Standortanalysen</small></span></a>
+            <a href="https://fg-realestate.de/lexikon/"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4zM20 4h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6z"/></svg></i><span><strong>Lexikon</strong><small>Begriffe erklärt</small></span></a>
+          </div></div>
+        <a href="https://fg-realestate.de/ueber-uns.html">Über uns</a>
+        <a href="../" class="on" aria-current="page">Blog</a>
+        <a href="https://fg-realestate.de/kontakt.html" class="nav-contact">Kontakt</a>
+      </div>
+      <button class="burger" type="button" aria-label="Menü" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+    <div class="mobile-menu">
+      <a href="https://fg-realestate.de/index.html">Start</a>
+      <p>Kaufen</p><a href="https://fg-realestate.de/angebote.html">Angebote</a><a href="https://fg-realestate.de/ankaufsberatung.html">Ankaufsberatung</a>
+      <p>Leistungen</p><a href="https://fg-realestate.de/verkaufen.html">Verkaufen</a><a href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierung</a>
+      <p>Investment Lab</p><a href="https://fg-realestate.de/investment-lab.html">Investment Lab</a><a href="https://fg-realestate.de/standorte/">Standorte</a><a href="https://fg-realestate.de/lexikon/">Lexikon</a>
+      <p>Unternehmen</p><a href="https://fg-realestate.de/ueber-uns.html">Über uns</a><a href="../" class="here">Blog</a><a href="https://fg-realestate.de/kontakt.html" class="m-contact">Kontakt</a>
+    </div>
+  </nav>
+  <div class="subbar">
+    <div class="subbar-row">
+      <a class="sb-home" href="../">Blog</a>
+      <div class="where">Beleihungsauslauf, 100&nbsp;% und 110&nbsp;% Finanzierung</div>
+      <div class="sb-right">
+        <details class="cat-menu"><summary>Kategorien<span class="caret"></span></summary><nav>
+          <a href="../">Alle Artikel</a><a href="../#finanzierung" class="on">Finanzierung</a>
+        </nav></details>
+        <button class="icon-btn theme-btn" type="button" aria-label="Dunkler Lesemodus" aria-pressed="false" title="Lesemodus"><svg class="moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      </div>
+    </div>
+    <div class="progress"><span></span></div>
+  </div>
+</header>
+
+<nav class="crumbs" aria-label="Brotkrumen"><a href="../">Blog</a><i>•</i><a href="../#finanzierung">Finanzierung</a><i>•</i><span>Beleihungsauslauf, 100&nbsp;% und 110&nbsp;% Finanzierung</span></nav>
+<div class="lead">
+  <figure class="lead-img" data-wait="Bild folgt">
+    <img src="lead.jpg" alt="Ein Hausschlüssel, drei Münzstapel in steigender Höhe und ein Zollstock auf grünen Fliesen" width="1536" height="1024" onerror="this.parentNode.classList.add('missing')">
+  </figure>
+</div>
+<div class="head">
+  <a class="tag" href="../#finanzierung">Finanzierung</a>
+  <h1>Was ist der Beleihungs&shy;auslauf, und was kostet eine 100- oder 110-Prozent-Finanzierung?</h1>
+  <p class="dateline"><span>Stand: Oktober 2026</span><span class="by">Von Fischer &amp; Geserich Real Estate</span></p>
+  <span class="pill">8 Min. Lesezeit</span>
+</div>
+
+<div class="cols">
+
+  <nav class="toc" aria-label="Inhalt">
+    <p class="toc-h">Inhalt</p>
+    <a href="#beleihungswert-kaufpreis-und-marktwert-sind-drei">Beleihungswert, Kaufpreis und Marktwert sind drei verschiedene Zahlen</a>
+    <a href="#wie-wird-der-beleihungsauslauf-berechnet">Wie wird der Beleihungsauslauf berechnet?</a>
+    <a href="#warum-der-beleihungsauslauf-ihren-zins-bestimmt">Warum der Beleihungsauslauf Ihren Zins bestimmt</a>
+    <a href="#was-100-prozent-und-110-prozent-bedeuten">Was „100&nbsp;Prozent“ und „110&nbsp;Prozent“ bedeuten</a>
+    <a href="#rechenbeispiel-dieselbe-wohnung-drei-finanzierun">Rechenbeispiel: dieselbe Wohnung, drei Finanzierungen</a>
+    <a href="#warum-eine-110-prozent-finanzierung-den-naechste">Warum eine 110-Prozent-Finanzierung den nächsten Kauf blockiert</a>
+    <a href="#wann-ergibt-eine-hohe-finanzierung-trotzdem-sinn">Wann ergibt eine hohe Finanzierung trotzdem Sinn?</a>
+    <a href="#die-einschaetzung-von-fischer-geserich">Die Einschätzung von Fischer &amp; Geserich</a>
+    <a href="#fragen">Häufige Fragen</a>
+  </nav>
+
+  <article class="body">
+    <p class="answer">Der Beleihungsauslauf ist das Verhältnis zwischen der Höhe Ihres Darlehens und dem Beleihungswert der Immobilie. Er ist die wichtigste einzelne Größe für Ihren Zinssatz: Je höher der Beleihungsauslauf, desto höher das Risiko der Bank und desto teurer das Darlehen. Bei einer 100- oder 110-Prozent-Finanzierung liegt er fast immer über 100&nbsp;Prozent, weil der Beleihungswert unter dem Kaufpreis liegt.</p>
+    <div class="kurz"><p class="kurz-h">Das Wichtigste in Kürze</p><ul><li>Beleihungsauslauf = Darlehen ÷ Beleihungswert. Der Beleihungswert liegt meist 10 bis 20&nbsp;Prozent unter dem Kaufpreis.</li><li>Schon eine 100-Prozent-Finanzierung führt deshalb zu einem Beleihungsauslauf über 100&nbsp;Prozent. Mehr als 120&nbsp;Prozent finanziert kaum eine Bank.</li><li>Im Beispiel kostet die 110-Prozent-Variante 658&nbsp;Euro mehr im Monat als eine Finanzierung mit 80&nbsp;Prozent.</li></ul></div>
+    <figure class="chart" id="g-bla">
+      <h3>Eine Wohnung für 200.000 €, drei Finanzierungen</h3>
+      <p class="sub">Beleihungsauslauf, Eigenkapital und Monatsrate. Beleihungswert 180.000 €, Kaufnebenkosten 23.140 €, jeweils 2 % anfängliche Tilgung.</p>
+      <p class="bla-k">Beleihungsauslauf</p>
+      <div class="bla" role="img" aria-label="Beleihungsauslauf: 88,9 Prozent bei 80 Prozent Finanzierung, 111,1 Prozent bei 100 Prozent, 124,0 Prozent bei 110 Prozent">
+        <span class="zone" style="left:62.5%;right:12.5%"></span>
+        <span class="zone over" style="left:87.5%;right:0"></span>
+        <span class="th" style="left:12.5%"><span>60 %</span></span>
+        <span class="th" style="left:37.5%"><span>80 %</span></span>
+        <span class="th" style="left:62.5%"><span>100 %</span></span>
+        <span class="th" style="left:87.5%"><span>120 %</span></span>
+        <span class="base"></span>
+        <span class="mk l1" style="left:48.6%"><b>88,9 %</b><small>80 % Finanzierung</small><i></i></span>
+        <span class="mk l1" style="left:76.4%"><b>111,1 %</b><small>100 % Finanzierung</small><i></i></span>
+        <span class="mk l2 warn" style="left:92.5%"><b>124,0 %</b><small>110 % Finanzierung</small><i></i></span>
+      </div>
+      <p class="bla-note">mehr als 120 % finanziert kaum eine Bank</p>
+      <div class="vkey"><span><i style="background:var(--c-hum)"></i>Eigenkapital</span><span><i style="background:var(--c-ki)"></i>Immobiliendarlehen</span><span><i style="background:repeating-linear-gradient(-45deg,var(--c-ki) 0 3px,var(--c-mid) 3px 6px)"></i>Blankodarlehen</span><span><i style="background:var(--c-mid);height:5px;vertical-align:2px"></i>Monatsrate</span></div>
+      <div class="vrow">
+        <div class="vname"><b>80 % Finanzierung</b><span>Beispielzins 4,0 %</span></div>
+        <div class="vbar"><span class="ek" style="width:28.3%">63.140 €</span><span class="dl" style="width:71.7%">160.000 €</span></div>
+        <div class="vfig">Monatsrate<b>800,00 €</b><i class="rb" style="width:54.9%"></i></div>
+      </div>
+      <div class="vrow">
+        <div class="vname"><b>100 % Finanzierung</b><span>Beispielzins 4,4 %</span></div>
+        <div class="vbar"><span class="ek" style="width:10.4%" title="Eigenkapital 23.140 €"></span><span class="dl" style="width:89.6%">200.000 €</span></div>
+        <div class="vfig">Monatsrate<b>1.066,67 €</b><i class="rb" style="width:73.2%"></i></div>
+      </div>
+      <div class="vrow">
+        <div class="vname"><b>110 % Finanzierung</b><span>5,1 % und 7,5 % (Blanko)</span></div>
+        <div class="vbar"><span class="dl" style="width:89.6%">200.000 €</span><span class="bl" style="width:10.4%" title="Blankodarlehen 23.140 €"></span></div>
+        <div class="vfig">Monatsrate<b>1.458,01 €</b><i class="rb" style="width:100%"></i><em>658 € mehr als bei 80 %</em></div>
+      </div>
+      <p class="credit">Beispielrechnung mit Beispielzinsen, keine aktuellen Konditionen. · Eigenkapital bei 100 %: 23.140 €, bei 110 %: 0 € · Grafik: Fischer &amp; Geserich</p>
+    </figure>
+    <h2 id="beleihungswert-kaufpreis-und-marktwert-sind-drei">Beleihungswert, Kaufpreis und Marktwert sind drei verschiedene Zahlen</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild1.jpg" alt="Dasselbe Wohnhaus dreimal aus Papier geschnitten, das dritte kleiner und oben abgeschnitten" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Wer eine Wohnung für 200.000&nbsp;Euro kauft, geht meistens davon aus, dass die Bank mit diesen 200.000&nbsp;Euro rechnet. Die Bank setzt aber einen eigenen, vorsichtigeren Wert an.</p>
+    <p>Dieser Wert heißt <strong>Beleihungswert</strong>. Er gibt an, welchen Betrag die Bank sicher erzielen würde, wenn der Kreditnehmer ausfällt und die Immobilie zwangsversteigert werden muss. Die Bank zieht vom Kaufpreis oder Marktwert einen Sicherheitsabschlag ab, der je nach Objekt, Lage und Bank in der Regel bei 10 bis 20&nbsp;Prozent liegt. Ausgangspunkt ist der Betrag, der auf Dauer und unabhängig von kurzfristigen Preisschwankungen erzielbar ist.</p>
+    <p>Der <strong>Kaufpreis</strong> ist das, was Sie mit dem Verkäufer vereinbart haben. Der <strong>Marktwert</strong> ist das, was am Stichtag am Markt erzielbar wäre. Beide können über dem Beleihungswert liegen, und in angespannten Märkten tun sie das regelmäßig.</p>
+    <h2 id="wie-wird-der-beleihungsauslauf-berechnet">Wie wird der Beleihungsauslauf berechnet?</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild2.jpg" alt="Ein Geldsack auf einem Bruchstrich, darunter ein Haus, eine Hand zieht den Strich mit dem Bleistift" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Die Formel lautet:</p>
+    <p class="formula"><strong>Beleihungsauslauf = Darlehensbetrag ÷ Beleihungswert × 100</strong></p>
+    <p>Ein Darlehen von 160.000&nbsp;Euro bei einem Beleihungswert von 180.000&nbsp;Euro ergibt einen Beleihungsauslauf von 88,9&nbsp;Prozent.</p>
+    <p>Im internationalen Sprachgebrauch begegnet Ihnen häufig der verwandte Begriff Loan-to-Value (LTV). Der LTV bezieht sich meist auf den Marktwert oder Kaufpreis, der Beleihungsauslauf auf den vorsichtigeren Beleihungswert. Bei derselben Finanzierung fällt der Beleihungsauslauf deshalb höher aus.</p>
+    <h2 id="warum-der-beleihungsauslauf-ihren-zins-bestimmt">Warum der Beleihungsauslauf Ihren Zins bestimmt</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild3.jpg" alt="Eine Treppe mit fünf Stufen, auf jeder ein Haus mit einem höheren Münzstapel, die oberste ragt ins Leere" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Zins ist der Preis, den eine Bank für ihr Risiko verlangt. Banken ordnen Finanzierungen deshalb in Stufen ein, etwa bis 60&nbsp;Prozent, bis 80&nbsp;Prozent, bis 90&nbsp;Prozent, bis 100&nbsp;Prozent und darüber. Mit jeder Stufe steigt der Zinsaufschlag, weil im Ernstfall ein größerer Teil des Darlehens nicht durch den sicheren Wert der Immobilie gedeckt ist.</p>
+    <p>Die genauen Grenzen und Aufschläge unterscheiden sich von Bank zu Bank. Die Logik dahinter ist überall dieselbe. Oberhalb von 100&nbsp;Prozent wird es deutlich teurer. Mehr als 120&nbsp;Prozent finanziert kaum eine Bank, und wenn, dann nur in Sonderfällen und bei sehr starker Bonität.</p>
+    <h2 id="was-100-prozent-und-110-prozent-bedeuten">Was „100&nbsp;Prozent“ und „110&nbsp;Prozent“ bedeuten</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild4.jpg" alt="Ein Haus, dahinter in einer Reihe Notarstempel, Steuerbrief, Grundbuch und Handschlag des Maklers" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Beide Begriffe beziehen sich auf den Kaufpreis, der Beleihungsauslauf dagegen auf den Beleihungswert. Deshalb sind sie ungenau.</p>
+    <ul class="plain"><li><strong>100-Prozent-Finanzierung:</strong> Die Bank finanziert den vollen Kaufpreis. Die Kaufnebenkosten, also Grunderwerbsteuer, Notar, Grundbuch und gegebenenfalls Maklerprovision, zahlen Sie aus Eigenkapital.</li><li><strong>110-Prozent-Finanzierung:</strong> Die Bank finanziert zusätzlich die Kaufnebenkosten. Sie bringen kein Eigenkapital ein.</li></ul>
+    <p>Weil der Beleihungswert unter dem Kaufpreis liegt, ergibt schon eine 100-Prozent-Finanzierung einen Beleihungsauslauf über 100&nbsp;Prozent. Die Bezeichnung „110&nbsp;Prozent“ unterschätzt das tatsächliche Risiko aus Sicht der Bank also systematisch.</p>
+    <h2 id="rechenbeispiel-dieselbe-wohnung-drei-finanzierun">Rechenbeispiel: dieselbe Wohnung, drei Finanzierungen</h2>
+    <p>Eine Eigentumswohnung in Berlin mit 38 Quadratmetern Wohnfläche kostet 200.000&nbsp;Euro, rund 5.260&nbsp;Euro pro Quadratmeter. Das entspricht etwa dem Berliner Durchschnitt für Bestandswohnungen. Die Kaufnebenkosten setzen sich so zusammen:</p>
+    <div class="ftab bill"><table>
+<thead><tr><th>Position</th><th class="n">Satz</th><th class="n">Betrag</th></tr></thead>
+<tbody>
+<tr><td>Grunderwerbsteuer Berlin</td><td class="n">6,0&nbsp;%</td><td class="n">12.000&nbsp;€</td></tr>
+<tr><td>Notar und Grundbuch</td><td class="n">ca. 2,0&nbsp;%</td><td class="n">4.000&nbsp;€</td></tr>
+<tr><td>Maklerprovision (Käuferanteil)</td><td class="n">3,57&nbsp;%</td><td class="n">7.140&nbsp;€</td></tr>
+<tr class="total"><td><strong>Kaufnebenkosten gesamt</strong></td><td class="n"><strong>11,57&nbsp;%</strong></td><td class="n"><strong>23.140&nbsp;€</strong></td></tr>
+</tbody></table></div>
+    <p>Die Bank setzt den Beleihungswert mit 90&nbsp;Prozent des Kaufpreises an, also mit 180.000&nbsp;Euro. Die Zinssätze in der folgenden Tabelle sind <strong>Beispielzinsen zur Veranschaulichung</strong>, keine aktuellen Konditionen. Gerechnet wird jeweils mit 2&nbsp;Prozent anfänglicher Tilgung.</p>
+    <div class="ftab"><table>
+<thead><tr><th></th><th class="n">80&nbsp;% Finanzierung</th><th class="n">100&nbsp;% Finanzierung</th><th class="n">110&nbsp;% Finanzierung</th></tr></thead>
+<tbody>
+<tr><td>Eigenkapital</td><td class="n" data-l="80 % Finanzierung">63.140&nbsp;€</td><td class="n" data-l="100 % Finanzierung">23.140&nbsp;€</td><td class="n" data-l="110 % Finanzierung">0&nbsp;€</td></tr>
+<tr><td>Darlehen</td><td class="n" data-l="80 % Finanzierung">160.000&nbsp;€</td><td class="n" data-l="100 % Finanzierung">200.000&nbsp;€</td><td class="n" data-l="110 % Finanzierung">223.140&nbsp;€</td></tr>
+<tr><td>Beleihungsauslauf</td><td class="n" data-l="80 % Finanzierung">88,9&nbsp;%</td><td class="n" data-l="100 % Finanzierung">111,1&nbsp;%</td><td class="n" data-l="110 % Finanzierung">124,0&nbsp;%</td></tr>
+<tr><td>Beispielzins</td><td class="n" data-l="80 % Finanzierung">4,0&nbsp;%</td><td class="n" data-l="100 % Finanzierung">4,4&nbsp;%</td><td class="n" data-l="110 % Finanzierung">nicht in einem Darlehen darstellbar</td></tr>
+<tr><td>Monatsrate</td><td class="n" data-l="80 % Finanzierung">800,00&nbsp;€</td><td class="n" data-l="100 % Finanzierung">1.066,67&nbsp;€</td><td class="n" data-l="110 % Finanzierung">1.458,01&nbsp;€ (siehe unten)</td></tr>
+<tr><td>Zinsanteil der ersten Rate</td><td class="n" data-l="80 % Finanzierung">533,33&nbsp;€</td><td class="n" data-l="100 % Finanzierung">733,33&nbsp;€</td><td class="n" data-l="110 % Finanzierung">994,63&nbsp;€</td></tr>
+</tbody></table></div>
+    <p>Die dritte Spalte zeigt das eigentliche Problem. Mit 124&nbsp;Prozent liegt der Beleihungsauslauf über der Grenze, bis zu der Banken in der Regel mitgehen. Praktisch bleibt dann nur, den Kaufpreis über die Bank zu finanzieren und die Kaufnebenkosten über ein separates Blankodarlehen. Im Beispiel sind das 200.000&nbsp;Euro Immobiliendarlehen zu 5,1&nbsp;Prozent mit einer Rate von 1.183,33&nbsp;Euro. Dazu kommen 23.140&nbsp;Euro Blankodarlehen zu 7,5&nbsp;Prozent über zehn Jahre mit einer Rate von 274,68&nbsp;Euro.</p>
+    <p>Für dieselbe Wohnung zahlen Sie damit <strong>658&nbsp;Euro mehr im Monat</strong> als bei der 80-Prozent-Variante. Ein Teil davon ist Tilgung, also Vermögensaufbau. Der Zinsanteil allein liegt aber schon in der ersten Rate um 461&nbsp;Euro höher, und das ist reiner Aufwand.</p>
+    <h2 id="warum-eine-110-prozent-finanzierung-den-naechste">Warum eine 110-Prozent-Finanzierung den nächsten Kauf blockiert</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild5.jpg" alt="Riesige Hände hängen ein Vorhängeschloss an das Gartentor des zweiten Hauses, der Weg dorthin ist versperrt" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Die höhere Rate sieht man sofort. Weniger sichtbar ist, was diese Finanzierung für Ihren nächsten Kauf bedeutet.</p>
+    <p>Jede Bank prüft vor einer Zusage Ihre gesamte Verschuldung und Ihren monatlichen Spielraum. Wer die erste Wohnung mit 110&nbsp;Prozent finanziert, hat danach eine hohe Zinslast, eine Schuldenstruktur ohne Puffer und häufig zusätzlich einen Verbraucherkredit in der Schufa. Für eine zweite Immobilie sind Sie damit bei den meisten Banken nicht mehr finanzierbar. Aus dieser Lage kommen Sie nur über deutlich steigende Mieten oder ein deutlich höheres Nettoeinkommen heraus. Beides gelingt selten schnell. Damit fehlt der Effekt, für den die meisten überhaupt in Immobilien investieren: dass jedes Objekt das nächste möglich macht.</p>
+    <p><strong>Aus unserer Praxis.</strong> Ein Kunde wollte eine Wohnung kaufen, die bereits sehr knapp bewertet war, und kein Eigenkapital einsetzen. Allein für den Kaufpreis, ohne Nebenkosten, lag der Beleihungsauslauf bei 110&nbsp;Prozent. Zehn Banken haben abgelehnt. Wir haben dem Kunden dann gesagt, dass diese Konstruktion keinen Sinn ergibt, statt die eine Bank zu suchen, die sie vielleicht doch finanziert hätte.</p>
+    <h2 id="wann-ergibt-eine-hohe-finanzierung-trotzdem-sinn">Wann ergibt eine hohe Finanzierung trotzdem Sinn?</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild6.jpg" alt="Eine Modellstraße mit vier beleuchteten Häusern, eine kleine Figur trägt ein fünftes Haus herbei" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Ob ein hoher Beleihungsauslauf sinnvoll ist, hängt davon ab, wer ihn wann nutzt.</p>
+    <p>Sinnvoll wird er, wenn bereits ein Bestand da ist. Manche Käufer besitzen drei oder vier Wohnungen, von denen ein Teil positiven Cashflow liefert, und haben Erfahrung mit Vermietung und Finanzierung. Eine Bank schätzt sie ganz anders ein als jemanden, der seine erste Wohnung kauft. Dieselbe Anfrage bekommt dann eine andere Antwort. Voraussetzung ist außerdem eine starke Bonität, in der Regel ab etwa 4.000&nbsp;Euro netto im Monat aus einem Angestelltenverhältnis oder einem Geschäftsführergehalt.</p>
+    <p>Bei Mehrfamilienhäusern gelten eigene Regeln. Dort ist das Volumen größer, der Verhandlungsspielraum beim Kaufpreis ebenfalls, und Banken bewerten diese Objektklasse anders als eine einzelne Eigentumswohnung.</p>
+    <figure class="tq"><blockquote><p>„Ich würde niemals jemandem empfehlen, bei der ersten Immobilie eine 110-Prozent-Finanzierung zu machen. Man braucht ein ausgeglichenes Portfolio, auch ein ausgeglichenes Schuldenportfolio.“</p></blockquote><figcaption><strong>Timon Fischer</strong>, Mitgründer von Fischer &amp; Geserich Real Estate</figcaption></figure>
+    <section class="pos">
+    <h2 id="die-einschaetzung-von-fischer-geserich">Die Einschätzung von Fischer &amp; Geserich</h2>
+    <p>Bei der ersten Immobilie raten wir von einer 110-Prozent-Finanzierung ab. Wer gleich am Anfang den höchsten Hebel zieht, nimmt sich den Spielraum für die nächsten Käufe. Realistisch ist der Einstieg ab etwa 10.000&nbsp;Euro Eigenkapital, womit sich eine Wohnung um 100.000&nbsp;Euro darstellen lässt. Bei größeren Wohnungen sollten mindestens die Kaufnebenkosten aus Eigenkapital kommen.</p>
+    <p>Den Hebel ziehen wir mit unseren Kunden dann, wenn er trägt. Finanzierungen ohne Eigenkapital setzen wir im Einzelfall um, wenn Bonität und Objekt es hergeben. Wir bewerben sie nicht, weil sie für die meisten Käufer die falsche Entscheidung sind.</p>
+    </section>
+
+    <div class="qa" id="fragen"><p class="qa-h">Häufige Fragen</p><details open><summary>Was ist der Beleihungsauslauf?</summary><div><p>Der Beleihungsauslauf ist das Verhältnis zwischen Darlehensbetrag und Beleihungswert einer Immobilie, ausgedrückt in Prozent. Der Beleihungswert ist der Betrag, den die Bank im Fall einer Zwangsversteigerung sicher erzielen würde, und liegt in der Regel 10 bis 20&nbsp;Prozent unter dem Kaufpreis. Je höher der Beleihungsauslauf, desto höher der Zinssatz.</p></div></details><details><summary>Wie hoch darf der Beleihungsauslauf maximal sein?</summary><div><p>Die meisten Banken finanzieren bis zu einem Beleihungsauslauf von rund 100 bis 110&nbsp;Prozent. Mehr als 120&nbsp;Prozent gehen nur sehr wenige Banken mit, und auch dann nur im Sonderfall bei starker Bonität. Ab 100&nbsp;Prozent steigen die Zinsaufschläge deutlich.</p></div></details><details><summary>Was ist der Unterschied zwischen einer 100- und einer 110-Prozent-Finanzierung?</summary><div><p>Bei einer 100-Prozent-Finanzierung finanziert die Bank den vollen Kaufpreis, die Kaufnebenkosten zahlen Sie aus Eigenkapital. Bei einer 110-Prozent-Finanzierung finanziert die Bank zusätzlich die Kaufnebenkosten. Weil der Beleihungswert unter dem Kaufpreis liegt, ergibt schon eine 100-Prozent-Finanzierung einen Beleihungsauslauf über 100&nbsp;Prozent.</p></div></details><details><summary>Ist eine 110-Prozent-Finanzierung bei der ersten Immobilie sinnvoll?</summary><div><p>In der Regel nicht. Die hohe Zinsbelastung und die fehlende Reserve führen dazu, dass viele Käufer danach für eine zweite Immobilie nicht mehr finanzierbar sind. Fischer &amp; Geserich empfiehlt den hohen Hebel erst, wenn bereits mehrere Objekte im Bestand sind und die Bonität stark ist, in der Regel ab etwa 4.000&nbsp;Euro netto im Monat.</p></div></details></div>
+
+    <aside class="cta" aria-label="Finanzierungserstgespräch buchen"><h3>Wie hoch Ihr Beleihungsauslauf tatsächlich wäre</h3><p>Ob Ihr Vorhaben mit 80, 100 oder 110&nbsp;Prozent sinnvoll ist, hängt von Ihrem Einkommen, Ihrem Bestand und dem Objekt ab. Im Finanzierungserstgespräch rechnen wir das mit Ihnen durch, bevor beim Notar Kosten entstehen. Fischer &amp; Geserich vermittelt Finanzierungen deutschlandweit.</p><a class="btn" href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierungserstgespräch buchen</a></aside>
+
+    <div class="end">
+      <div class="quellen"><h3>Quellen</h3><ul><li><a href="https://www.gesetze-im-internet.de/belwertv/" target="_blank" rel="noopener">Beleihungswertermittlungsverordnung (BelWertV)</a></li></ul></div>
+      <p class="note">Die Bilder in diesem Beitrag wurden mit KI erstellt.</p>
+      <p class="note">Der Beitrag dient der allgemeinen Information und ersetzt keine Rechts-, Steuer-, Finanzierungs- oder Anlageberatung. Zinssätze in Beispielrechnungen sind Beispielwerte, keine aktuellen Konditionen.</p>
+    </div>
+  </article>
+
+  <aside class="related" aria-label="Mehr zu Finanzierung">
+    <h2>Mehr zu Finanzierung</h2>
+    <a href="../zinsbindung-strategisch-waehlen/"><span class="rthumb"><img src="../zinsbindung-strategisch-waehlen/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Zins&shy;bindung und Forward-Darlehen</strong></a>
+  </aside>
+</div>
+
+<section class="more" aria-label="Weiterlesen">
+  <div class="more-in">
+    <a class="back" href="../">‹ Zurück zum Blog</a>
+  </div>
+</section>
+
+<footer><span>© 2026 Fischer &amp; Geserich Real Estate</span><span><a href="https://fg-realestate.de/impressum.html">Impressum</a> · <a href="https://fg-realestate.de/datenschutz.html">Datenschutz</a></span></footer>
+
+<script>
+/* Mobilmenü wie auf der Website */
+(function(){
+  var b=document.querySelector(".burger"),m=document.querySelector(".mobile-menu");
+  b.addEventListener("click",function(){var o=m.classList.toggle("open");b.setAttribute("aria-expanded",o)});
+})();
+/* Offene Menüs schließen bei Klick daneben oder mit Esc */
+(function(){
+  var cat=document.querySelector(".cat-menu"),b=document.querySelector(".burger"),m=document.querySelector(".mobile-menu");
+  function closeAll(e){
+    if(cat.open&&(!e||!cat.contains(e.target)))cat.open=false;
+    if(m.classList.contains("open")&&(!e||!(m.contains(e.target)||b.contains(e.target)))){m.classList.remove("open");b.setAttribute("aria-expanded",false)}
+  }
+  document.addEventListener("click",closeAll);
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeAll()});
+})();
+/* Umschalter heller / dunkler Lesemodus */
+(function(){
+  var root=document.documentElement,b=document.querySelector(".theme-btn");
+  function sync(){var d=root.dataset.theme==="dark";b.setAttribute("aria-pressed",d);b.setAttribute("aria-label",d?"Heller Lesemodus":"Dunkler Lesemodus")}
+  b.addEventListener("click",function(){
+    root.dataset.theme=root.dataset.theme==="dark"?"light":"dark";sync();
+    try{localStorage.setItem("fg-theme",root.dataset.theme)}catch(e){}
+  });
+  sync();
+})();
+/* Kopfzeile: Fortschritt, Titel nach dem Scrollen, aktiver Abschnitt links */
+(function(){
+  var top=document.querySelector(".top"),bar=document.querySelector(".progress span"),h1=document.querySelector(".head h1");
+  var links=[].slice.call(document.querySelectorAll(".toc a")),secs=links.map(function(a){return document.querySelector(a.getAttribute("href"))});
+  function tick(){
+    var d=document.documentElement,max=d.scrollHeight-d.clientHeight;
+    bar.style.width=(max>0?d.scrollTop/max*100:0)+"%";
+    top.classList.toggle("scrolled",h1.getBoundingClientRect().bottom<140);
+    var cur=0;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<170)cur=i});
+    links.forEach(function(a,i){a.classList.toggle("on",i===cur)});
+  }
+  var lead=document.querySelector(".lead-img");
+  function shrink(){
+    /* Bild wird beim Scrollen gleichmäßig kleiner, Seitenverhältnis bleibt (n26-Verhalten) */
+    var r=lead.getBoundingClientRect(),p=Math.min(Math.max((140-r.top)/r.height,0),1);
+    lead.style.setProperty("--s",(1-p*.45).toFixed(3));
+  }
+  addEventListener("scroll",function(){tick();shrink()},{passive:true});tick();shrink();
+})();
+
+
+</script>
+</body>
+</html>

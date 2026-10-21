@@ -23,6 +23,8 @@ module.exports = function(eleventyConfig) {
   });
 
   const labContent = require("./_data/labContent.js")();
+  // Blogartikel sind fertige Seiten aus Blogs/design-muster/_build/live.py; die Liste dazu steht in _data/blog.json.
+  const blog = require("./_data/blog.json");
 
   // Thematic sitemap index. Exact exclusions prevent valid URLs such as
   // /lexikon/verwaltungskosten/ from disappearing by an overly broad match.
@@ -33,7 +35,7 @@ module.exports = function(eleventyConfig) {
     { key: "angebote", title: "Objektangebote", prefix: "/angebote/" },
     { key: "projekte", title: "Immobilienprojekte", prefix: "/projekte/" },
     { key: "lexikon", title: "Immobilienlexikon", prefix: "/lexikon/" },
-    { key: "wissen", title: "Wissensartikel", prefix: "/wissen/" },
+    { key: "blog", title: "Blog", prefix: "/blog/" },
     { key: "standorte", title: "Standortanalysen", prefix: "/standorte/" }
   ];
 
@@ -74,10 +76,10 @@ module.exports = function(eleventyConfig) {
         loc: `/lexikon/${entry.slug}/`,
         lastmod: entry.updated || new Date().toISOString().slice(0, 10)
       })),
-      wissen: (labContent.articles || []).map((article) => ({
-        loc: `/wissen/${article.slug}/`,
-        lastmod: article.updated || new Date().toISOString().slice(0, 10)
-      })),
+      blog: [{
+        loc: "/blog/",
+        lastmod: blog.reduce((latest, post) => post.dateModified > latest ? post.dateModified : latest, "0000-00-00")
+      }].concat(blog.map((post) => ({ loc: post.url, lastmod: post.dateModified }))),
       standorte: (labContent.locations || []).map((location) => ({
         loc: `/standorte/${location.slug}/`,
         lastmod: location.updated || new Date().toISOString().slice(0, 10)
@@ -123,7 +125,7 @@ module.exports = function(eleventyConfig) {
   [
     "style.css", "fg-polish.css", "script.js", "fg-assistant.js", "fg-knowledge.js", "fg-assistant.css",
     "investment-lab.js", "consent-manager.js", "consent-manager.css", "analytics.js",
-    "vendor", "images", "favicon.ico", "videos", "admin", "robots.txt", "_redirects"
+    "vendor", "images", "favicon.ico", "videos", "admin", "robots.txt", "_redirects", "blog"
   ].forEach((asset) => eleventyConfig.addPassthroughCopy(asset));
 
   eleventyConfig.addPassthroughCopy({ "BingSiteAuth.xml": "BingSiteAuth.xml" });

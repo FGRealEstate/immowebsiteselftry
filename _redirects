@@ -6,4 +6,14 @@
 /gesuch-anlegen.html /gesuch-anlegen/ 301
 /anmieten /mieten.html 301!
 /anmieten.html /mieten.html 301!
+# Wissen ist seit 22.10.2026 der Blog. Alte Artikel mit neuem Gegenstück leiten dauerhaft weiter,
+# alle anderen vorerst (302) auf die Blog-Übersicht, bis ihr neuer Artikel live ist.
+/wissen /blog/ 301
+/wissen/beleihungsauslauf-und-kondition /blog/beleihungsauslauf-und-kondition/ 301
+/wissen/100-prozent-finanzierung /blog/beleihungsauslauf-und-kondition/ 301
+/wissen/110-prozent-finanzierung /blog/beleihungsauslauf-und-kondition/ 301
+/wissen/zinsbindung-strategisch-wahlen /blog/zinsbindung-strategisch-waehlen/ 301
+/wissen/forward-darlehen /blog/zinsbindung-strategisch-waehlen/ 301
+/wissen/ /blog/ 301
+/wissen/* /blog/ 302
 https://www.fg-realestate.de/* https://fg-realestate.de/:splat 301!

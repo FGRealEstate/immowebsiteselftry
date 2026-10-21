@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zinsbindung und Forward-Darlehen strategisch kombinieren</title>
+<meta name="description" content="Zinsbindung von 5, 10 oder 15 Jahren: wie Bauzinsen je Laufzeit entstehen und wann kurze Zinsbindung plus Forward-Darlehen günstiger ist. Mit Rechnung.">
+<link rel="canonical" href="https://fg-realestate.de/blog/zinsbindung-strategisch-waehlen/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Fischer &amp; Geserich Real Estate">
+<meta property="og:title" content="Zinsbindung und Forward-Darlehen strategisch kombinieren">
+<meta property="og:description" content="Zinsbindung von 5, 10 oder 15 Jahren: wie Bauzinsen je Laufzeit entstehen und wann kurze Zinsbindung plus Forward-Darlehen günstiger ist. Mit Rechnung.">
+<meta property="og:url" content="https://fg-realestate.de/blog/zinsbindung-strategisch-waehlen/">
+<meta property="og:image" content="https://fg-realestate.de/blog/zinsbindung-strategisch-waehlen/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Blogartikel, Live-Fassung aus _build/live.py -->
+<script>
+/* Lesemodus vor dem ersten Zeichnen setzen, sonst blitzt die helle Seite auf */
+try{var t=localStorage.getItem("fg-theme");if(t)document.documentElement.dataset.theme=t;else if(matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.dataset.theme="dark"}catch(e){}
+</script>
+<link rel="stylesheet" href="../muster.css">
+<style>
+/* A2: zwei Zeitachsen über 15 Jahre, Anschlusszins zum Verschieben, Bundesrenditen */
+.zb-yr{position:relative;height:20px;margin:0 0 6px 0;font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.zb-yr span{position:absolute;transform:translateX(-50%)}
+.zb-yr span:first-child{transform:none}.zb-yr span:last-child{transform:translateX(-100%)}
+.zb-row{margin:0 0 18px}
+.zb-l{display:block;font-size:.9rem;font-weight:700;margin-bottom:6px}
+.zb-t{position:relative;display:flex;height:40px;font-size:.8rem;font-weight:700;font-variant-numeric:tabular-nums;background-image:linear-gradient(to right,var(--rule) 1px,transparent 1px);background-size:calc(100%/15) 100%}
+.zb-t b{display:flex;align-items:center;padding:0 10px;white-space:nowrap;overflow:hidden}
+.zb-t .z1{width:100%;background:var(--c-ki);color:var(--on-ki)}
+.zb-t .z2{width:33.333%;background:var(--c-mid);color:var(--on-ki);border-right:2px solid var(--bg)}
+.zb-t .z3{width:66.667%;background:var(--c-hum);color:var(--on-hum)}
+.zb-fw{width:33.333%;height:12px;margin-top:4px;background:linear-gradient(to right,transparent,color-mix(in srgb,var(--c-mid) 85%,transparent));border-right:2px solid var(--c-ki)}
+.zb-fwl{font-size:.74rem;margin-top:5px;line-height:1.35}
+.zb-fwl small{color:var(--muted);font-size:.72rem}
+.zb-ctl{display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:end;margin:22px 0 10px;padding-top:14px;border-top:1px dashed var(--rule);font-size:.9rem}
+.zb-ctl label{font-weight:700}
+.zb-ctl output{font-size:1.3rem;font-weight:700;font-variant-numeric:tabular-nums;color:var(--accent-ink)}
+.zb-rng{grid-column:1/-1;position:relative}
+.zb-rng input{width:100%;accent-color:var(--c-ki);margin:6px 0 0}
+.zb-rng .be{position:absolute;top:30px;transform:translateX(-50%);font-size:.7rem;color:var(--muted);white-space:nowrap}
+.zb-rng .be::before{content:"";position:absolute;left:50%;top:-12px;height:9px;border-left:1.5px solid var(--ink)}
+.zb-rng .ends{display:flex;justify-content:space-between;font-size:.7rem;color:var(--muted);margin-top:2px}
+.zb-cmp{display:grid;grid-template-columns:170px 1fr;gap:8px 14px;align-items:center;margin-top:24px;font-size:.84rem}
+.zb-cmp .bar{height:24px;position:relative}
+.zb-cmp .bar span{position:absolute;inset:0 auto 0 0;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-weight:700;font-size:.8rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+.zb-cmp .b1 span{background:var(--c-ki);color:var(--on-ki)}
+.zb-cmp .b2 span{background:var(--c-mid);color:var(--on-ki);transition:width .2s}
+.zb-res{grid-column:1/-1;font-size:.95rem;font-weight:700;margin-top:4px}
+.zb-res.good{color:var(--accent-ink)}.zb-res.bad{color:var(--warn)}
+.bund{margin-top:28px;padding-top:14px;border-top:1px solid var(--rule)}
+.bund h4{margin:0 0 10px;font-size:1rem}
+.bund-r{display:grid;grid-template-columns:70px 1fr 56px;gap:6px 12px;align-items:center;font-size:.84rem;font-variant-numeric:tabular-nums}
+.bund-r i{display:block;height:14px;background:var(--c-ki)}
+.bund-r b{text-align:right}
+.bund-ax{display:grid;grid-template-columns:70px 1fr 56px;gap:12px;font-size:.68rem;color:var(--muted);margin-top:4px}
+.bund-ax div{display:flex;justify-content:space-between}
+.zb-cap{margin:22px 0 0!important;padding:12px 14px;background:var(--soft);font-weight:700;font-size:.95rem;line-height:1.4}
+@media (max-width:620px){
+  .zb-cmp{grid-template-columns:1fr}
+  .zb-cmp .bar{margin-bottom:6px}
+  .zb-t b{font-size:.72rem;padding:0 6px}
+  .zb-yr span:nth-child(even){display:none}
+}
+</style>
+<script type="application/ld+json">
+[
+ {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Wann sich eine kurze Zinsbindung mit Forward-Darlehen lohnt",
+  "description": "Zinsbindung von 5, 10 oder 15 Jahren: wie Bauzinsen je Laufzeit entstehen und wann kurze Zinsbindung plus Forward-Darlehen günstiger ist. Mit Rechnung.",
+  "inLanguage": "de-DE",
+  "url": "https://fg-realestate.de/blog/zinsbindung-strategisch-waehlen/",
+  "image": "https://fg-realestate.de/blog/zinsbindung-strategisch-waehlen/og.jpg",
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-22",
+  "author": {
+   "@type": "Organization",
+   "name": "Fischer & Geserich Real Estate GmbH"
+  },
+  "publisher": {
+   "@type": "Organization",
+   "name": "Fischer & Geserich Real Estate GmbH"
+  }
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Welche Zinsbindung ist bei einer Baufinanzierung am besten?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Das hängt vom Zinsniveau der einzelnen Laufzeiten und von Ihrer Risikobereitschaft ab. Liegen langfristige Zinsen deutlich über kurzfristigen, kann eine Zinsbindung von 5 Jahren in Kombination mit einem Forward-Darlehen günstiger sein. Wer Planungssicherheit braucht, wählt 10 oder 15 Jahre und hat nach § 489 BGB nach 10 Jahren trotzdem ein Kündigungsrecht."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Was ist ein Forward-Darlehen?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Ein Forward-Darlehen ist eine Anschlussfinanzierung, die Sie heute zu einem festen Zins abschließen und die erst zu einem späteren Termin ausgezahlt wird. Der Termin ist meist das Ende Ihrer laufenden Zinsbindung. Je nach Bank ist das bis zu 60 Monate im Voraus möglich. Für die Vorlaufzeit berechnet die Bank einen Aufschlag."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Wie hoch ist der Forward-Aufschlag?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Der Aufschlag liegt häufig bei etwa 0,01 bis 0,03 Prozentpunkten pro Monat Vorlaufzeit. Bei 24 Monaten Vorlauf ergibt das ungefähr 0,24 bis 0,72 Prozentpunkte auf den Zins. Die genaue Höhe legt jede Bank selbst fest."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Woran orientiert sich der Zins für eine Zinsbindung von 10 Jahren?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Der Zins für eine Zinsbindung von 10 Jahren orientiert sich an der Rendite der 10-jährigen deutschen Bundesanleihe. Der Leitzins der Europäischen Zentralbank ist dafür nicht der Maßstab. Steigt diese Rendite, steigen die Bauzinsen für 10-jährige Zinsbindungen mit, bei manchen Banken taggleich, bei anderen mit zwei bis drei Wochen Verzögerung."
+    }
+   }
+  ]
+ }
+]
+</script>
+</head>
+<body>
+
+<header class="top">
+  <nav class="site-nav" aria-label="Hauptnavigation">
+    <div class="nav-row">
+      <a class="brand" href="https://fg-realestate.de/index.html"><img src="/images/fg-logo-gold-transparent.png" alt="Fischer &amp; Geserich Real Estate" width="54" height="54"><span class="gold-text long">Fischer &amp; Geserich Real Estate</span><span class="gold-text short">Fischer &amp; Geserich<br>Real Estate</span></a>
+      <div class="nav-links">
+        <a href="https://fg-realestate.de/index.html">Start</a>
+        <div class="nav-group"><a href="https://fg-realestate.de/angebote.html" aria-haspopup="true">Kaufen<span class="caret"></span></a>
+          <div class="nav-sub">
+            <a href="https://fg-realestate.de/angebote.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M10 21v-3h4v3"/></svg></i><span><strong>Angebote</strong><small>Aktuelle Objekte</small></span></a>
+            <a href="https://fg-realestate.de/ankaufsberatung.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l4-4 4 2 3-3 7 6-3 3"/><path d="M7 8l-4 4 6 6 2-2M11 16l2 2 2-2M13 14l2 2 2-2"/></svg></i><span><strong>Ankaufsberatung</strong><small>Begleitung beim Kauf</small></span></a>
+          </div></div>
+        <a href="https://fg-realestate.de/verkaufen.html">Verkaufen</a>
+        <a href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierung</a>
+        <div class="nav-group"><a href="https://fg-realestate.de/investment-lab.html" aria-haspopup="true">Investment Lab<span class="caret"></span></a>
+          <div class="nav-sub">
+            <a href="https://fg-realestate.de/investment-lab.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M7 15h10"/></svg></i><span><strong>Investment Lab</strong><small>Rechner und Werkzeuge</small></span></a>
+            <a href="https://fg-realestate.de/standorte/"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg></i><span><strong>Standorte</strong><small>16 Standortanalysen</small></span></a>
+            <a href="https://fg-realestate.de/lexikon/"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4zM20 4h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6z"/></svg></i><span><strong>Lexikon</strong><small>Begriffe erklärt</small></span></a>
+          </div></div>
+        <a href="https://fg-realestate.de/ueber-uns.html">Über uns</a>
+        <a href="../" class="on" aria-current="page">Blog</a>
+        <a href="https://fg-realestate.de/kontakt.html" class="nav-contact">Kontakt</a>
+      </div>
+      <button class="burger" type="button" aria-label="Menü" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+    <div class="mobile-menu">
+      <a href="https://fg-realestate.de/index.html">Start</a>
+      <p>Kaufen</p><a href="https://fg-realestate.de/angebote.html">Angebote</a><a href="https://fg-realestate.de/ankaufsberatung.html">Ankaufsberatung</a>
+      <p>Leistungen</p><a href="https://fg-realestate.de/verkaufen.html">Verkaufen</a><a href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierung</a>
+      <p>Investment Lab</p><a href="https://fg-realestate.de/investment-lab.html">Investment Lab</a><a href="https://fg-realestate.de/standorte/">Standorte</a><a href="https://fg-realestate.de/lexikon/">Lexikon</a>
+      <p>Unternehmen</p><a href="https://fg-realestate.de/ueber-uns.html">Über uns</a><a href="../" class="here">Blog</a><a href="https://fg-realestate.de/kontakt.html" class="m-contact">Kontakt</a>
+    </div>
+  </nav>
+  <div class="subbar">
+    <div class="subbar-row">
+      <a class="sb-home" href="../">Blog</a>
+      <div class="where">Zinsbindung und Forward-Darlehen</div>
+      <div class="sb-right">
+        <details class="cat-menu"><summary>Kategorien<span class="caret"></span></summary><nav>
+          <a href="../">Alle Artikel</a><a href="../#finanzierung" class="on">Finanzierung</a>
+        </nav></details>
+        <button class="icon-btn theme-btn" type="button" aria-label="Dunkler Lesemodus" aria-pressed="false" title="Lesemodus"><svg class="moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      </div>
+    </div>
+    <div class="progress"><span></span></div>
+  </div>
+</header>
+
+<nav class="crumbs" aria-label="Brotkrumen"><a href="../">Blog</a><i>•</i><a href="../#finanzierung">Finanzierung</a><i>•</i><span>Zinsbindung und Forward-Darlehen</span></nav>
+<div class="lead">
+  <figure class="lead-img" data-wait="Bild folgt">
+    <img src="lead.jpg" alt="Ein goldenes Vorhängeschloss mit Prozentzeichen, der Bügel aus Kalenderblättern, vor einem Muster aus Kalendern" width="1536" height="1024" onerror="this.parentNode.classList.add('missing')">
+  </figure>
+</div>
+<div class="head">
+  <a class="tag" href="../#finanzierung">Finanzierung</a>
+  <h1>Wann sich eine kurze Zins&shy;bindung mit Forward-Darlehen lohnt</h1>
+  <p class="dateline"><span>Stand: Oktober 2026</span><span class="by">Von Fischer &amp; Geserich Real Estate</span></p>
+  <span class="pill">8 Min. Lesezeit</span>
+</div>
+
+<div class="cols">
+
+  <nav class="toc" aria-label="Inhalt">
+    <p class="toc-h">Inhalt</p>
+    <a href="#was-die-zinsbindung-regelt">Was die Zinsbindung regelt</a>
+    <a href="#wie-der-zins-fuer-jede-laufzeit-entsteht">Wie der Zins für jede Laufzeit entsteht</a>
+    <a href="#kurz-binden-spaeter-absichern-die-strategie-mit">Kurz binden, später absichern: die Strategie mit dem Forward-Darlehen</a>
+    <a href="#rechenbeispiel-15-jahre-fest-gegen-5-jahre-plus">Rechenbeispiel: 15 Jahre fest gegen 5 Jahre plus Anschluss</a>
+    <a href="#was-gegen-die-strategie-spricht">Was gegen die Strategie spricht</a>
+    <a href="#die-einschaetzung-von-fischer-geserich">Die Einschätzung von Fischer &amp; Geserich</a>
+    <a href="#fragen">Häufige Fragen</a>
+  </nav>
+
+  <article class="body">
+    <p class="answer">Die Zinsbindung legt fest, wie lange Ihr Sollzins unverändert bleibt, üblich sind 5, 10 oder 15 Jahre. Längere Zinsbindungen sind meist teurer, weil die Bank das Zinsrisiko länger trägt. Wenn Banken kurze Zinsbindungen deutlich günstiger anbieten als lange, kann es sich lohnen, kurz zu binden und sich den Anschlusszins später über ein Forward-Darlehen zu sichern.</p>
+    <div class="kurz"><p class="kurz-h">Das Wichtigste in Kürze</p><ul><li>Ein Forward-Darlehen sichert den Anschlusszins bis zu 60 Monate im Voraus, gegen einen Aufschlag pro Monat Vorlauf.</li><li>Im Beispiel lohnt sich die kurze Bindung, solange der Anschlusszins unter rund 4,6&nbsp;Prozent bleibt. Ob kurze Bindungen gerade günstiger sind, zeigt nur der Blick in die aktuellen Angebote.</li></ul></div>
+    <figure class="chart" id="g-zb">
+      <h3>15 Jahre fest oder 5 Jahre plus Forward-Darlehen</h3>
+      <p class="sub">Darlehen 300.000 €, 2 % anfängliche Tilgung, Beispielzinsen. Den Anschlusszins ab Jahr 6 können Sie verschieben.</p>
+      <div class="zb-yr" aria-hidden="true"></div>
+      <div class="zb-row"><span class="zb-l">15 Jahre Zinsbindung</span>
+        <div class="zb-t"><b class="z1">4,4 % (Beispielzins)</b></div></div>
+      <div class="zb-row"><span class="zb-l">5 Jahre Zinsbindung + Forward-Darlehen</span>
+        <div class="zb-t"><b class="z2">Jahr 1 bis 5: 3,9 %</b><b class="z3">Jahr 6 bis 15: Anschlusszins <span class="az" style="margin-left:.3em">4,00 %</span></b></div>
+        <div class="zb-fw" aria-hidden="true"></div><p class="zb-fwl" style="margin:5px 0 0"><b>Forward-Fenster: bis zu 60 Monate vor Ablauf</b> <small>· dunkler: kürzerer Vorlauf, kleinerer Aufschlag</small></p></div>
+      <div class="zb-ctl">
+        <label for="zb-in">Anschlusszins ab Jahr 6</label><output class="az" for="zb-in">4,00 %</output>
+        <div class="zb-rng"><input id="zb-in" type="range" min="3" max="6" step="0.05" value="4">
+          <span class="be" style="left:54.6%">Gleichstand ≈ 4,64 %</span>
+          <div class="ends"><span>3 %</span><span>6 %</span></div></div>
+      </div>
+      <div class="zb-cmp" aria-live="polite">
+        <span>Zinsen über 15 Jahre<br><b>15 Jahre fest</b></span><div class="bar b1"><span style="width:80.4%">160.847 €</span></div>
+        <span>Zinsen über 15 Jahre<br><b>5 Jahre + Anschluss</b></span><div class="bar b2"><span></span></div>
+        <p class="zb-res"></p>
+      </div>
+      <div class="bund">
+        <h4>Rendite deutscher Bundeswertpapiere, 29.09.2026</h4>
+        <div class="bund-r"><span>5 Jahre</span><i style="width:84.5%"></i><b>3,38 %</b><span>10 Jahre</span><i style="width:90.75%"></i><b>3,63 %</b><span>30 Jahre</span><i style="width:98.75%"></i><b>3,95 %</b></div>
+        <div class="bund-ax"><span></span><div><span>0 %</span><span>2 %</span><span>4 %</span></div><span></span></div>
+      </div>
+      <p class="zb-cap">Bis zu einem Anschlusszins von rund 4,6 % ist die kurze Zinsbindung im Beispiel günstiger. Achtung: Anfang Oktober 2026 lagen die Bankzinsen für 5 Jahre Zinsbindung teilweise über denen für 10 Jahre.</p>
+      <p class="credit">Quelle Renditen: Deutsche Bundesbank · Beispielzinsen, keine aktuellen Konditionen · Rechnung mit monatlicher Tilgung, Rate ab Jahr 6: 1.600 € · Grafik: Fischer &amp; Geserich</p>
+    </figure>
+    <h2 id="was-die-zinsbindung-regelt">Was die Zinsbindung regelt</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild1.jpg" alt="Ein Knethaus unter einer Glasglocke, die am Tischrand endet, dahinter offenes Wetter" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Bei der Zinsbindung vereinbaren Sie mit der Bank einen festen Sollzins für einen bestimmten Zeitraum. Während dieser Zeit kann die Bank den Zins nicht anheben, und Sie können das Darlehen in der Regel nicht kostenfrei zurückzahlen. Endet die Zinsbindung, ist das Darlehen meistens noch nicht getilgt. Für die Restschuld brauchen Sie dann eine Anschlussfinanzierung zu dem Zins, der zu diesem Zeitpunkt am Markt gilt.</p>
+    <p>Mit der Wahl der Zinsbindung entscheiden Sie deshalb, wie lange Sie Planungssicherheit kaufen und was Sie dafür bezahlen.</p>
+    <h2 id="wie-der-zins-fuer-jede-laufzeit-entsteht">Wie der Zins für jede Laufzeit entsteht</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild2.jpg" alt="Drei Brücken unterschiedlicher Länge über einen Fluss, über den längeren ein unruhigerer Himmel" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Bauzinsen orientieren sich an der Rendite deutscher Bundesanleihen mit vergleichbarer Laufzeit. Der Leitzins der Europäischen Zentralbank ist dafür nicht der Maßstab. Der Grund ist eine einfache Abwägung, die jede Bank trifft. Sie kann ihr Geld in eine deutsche Staatsanleihe investieren, die als äußerst sicher gilt, oder es als Immobilienkredit vergeben. Der Kredit trägt das höhere Ausfallrisiko, also muss er mehr einbringen.</p>
+    <p>Für eine Zinsbindung von 5 Jahren ist deshalb die 5-jährige Rendite maßgeblich, für 10 Jahre die 10-jährige, für 15 Jahre die entsprechend längere. Ende September 2026 lag die Rendite 5-jähriger Bundesobligationen bei 3,38&nbsp;Prozent, die 10-jähriger Bundesanleihen bei 3,63&nbsp;Prozent und die 30-jähriger bei 3,95&nbsp;Prozent. Je länger die Laufzeit, desto höher die Rendite.</p>
+    <p>Die Logik dahinter ist dieselbe wie bei Ihrem Darlehen. Wer sich über einen langen Zeitraum festlegt, trägt mehr Unsicherheit, und diese Unsicherheit wird bezahlt. Steigen die Renditen am Kapitalmarkt, verteuert sich die lange Absicherung stärker als die kurze. Für die Bank ist eine kurze Zinsbindung in diesem Umfeld das geringere Risiko, also bietet sie diese günstiger an.</p>
+    <p>Ob sich diese Logik in den Angeboten der Banken zeigt, ist allerdings eine andere Frage. Banken kalkulieren jede Laufzeit mit eigenen Aufschlägen. Anfang Oktober 2026 lagen in den Bestzins-Übersichten großer Vermittler die Zinsen für 5 Jahre Zinsbindung teilweise sogar über denen für 10 Jahre. Die Strategie mit dem Forward-Darlehen funktioniert deshalb nur, wenn der Abstand in den tatsächlichen Angeboten besteht und nicht nur am Anleihemarkt.</p>
+    <h2 id="kurz-binden-spaeter-absichern-die-strategie-mit">Kurz binden, später absichern: die Strategie mit dem Forward-Darlehen</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild3.jpg" alt="Eine App-Karte mit Kalender, ein Datum fünf Jahre voraus markiert, dazu Schloss und Haus als Symbole" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Aus dem Abstand zwischen kurzen und langen Laufzeiten ergibt sich eine Strategie.</p>
+    <p>Sie schließen die Finanzierung mit einer kurzen Zinsbindung von 5 Jahren ab und zahlen in dieser Zeit den niedrigeren Zins. Gleichzeitig beobachten Sie den Markt. Sobald das Zinsniveau günstig ist, sichern Sie sich über ein <strong>Forward-Darlehen</strong> den Zins für die Zeit nach Ablauf der 5 Jahre. Auf Wunsch binden Sie dann lang, für 10 oder 15 Jahre.</p>
+    <p>Ein Forward-Darlehen ist eine Anschlussfinanzierung, die Sie heute abschließen und die erst zu einem festgelegten späteren Termin ausgezahlt wird. Sie löst dann Ihr bisheriges Darlehen ab. Je nach Bank ist das bis zu 60 Monate im Voraus möglich, theoretisch also schon kurz nach dem Abschluss der ursprünglichen Finanzierung.</p>
+    <p>Für die Vorlaufzeit verlangt die Bank einen Aufschlag, den <strong>Forward-Aufschlag</strong>. Er liegt häufig bei etwa 0,01 bis 0,03&nbsp;Prozentpunkten pro Monat Vorlauf. Bei 60 Monaten Vorlauf kann der Aufschlag spürbar werden, bei 12 bis 24 Monaten ist er meist gut tragbar. Sinnvoll ist das Forward-Darlehen deshalb vor allem, um sich den Zins in einem günstigen Moment zu sichern.</p>
+    <h2 id="rechenbeispiel-15-jahre-fest-gegen-5-jahre-plus">Rechenbeispiel: 15 Jahre fest gegen 5 Jahre plus Anschluss</h2>
+    <p>Das Beispiel rechnet mit einem Darlehen von 300.000&nbsp;Euro und 2&nbsp;Prozent anfänglicher Tilgung. Die Zinssätze sind <strong>Beispielzinsen</strong> für ein Marktumfeld, in dem kurze Zinsbindungen günstiger angeboten werden als lange. Sie sind keine aktuellen Konditionen.</p>
+    <p><strong>Variante 1: 15 Jahre Zinsbindung zu 4,4&nbsp;Prozent.</strong> Die Monatsrate beträgt 1.600&nbsp;Euro. Über 15 Jahre zahlen Sie insgesamt 160.847&nbsp;Euro Zinsen.</p>
+<p><strong>Variante 2: 5 Jahre Zinsbindung zu 3,9&nbsp;Prozent.</strong> Die Monatsrate beträgt 1.475&nbsp;Euro, also 125&nbsp;Euro weniger. In den ersten 5 Jahren zahlen Sie 55.434&nbsp;Euro Zinsen statt 62.512&nbsp;Euro in Variante 1. Nach 5 Jahren beträgt die Restschuld 266.934&nbsp;Euro. Ab Jahr 6 zahlen Sie dieselbe Rate wie in Variante 1, also 1.600&nbsp;Euro, zum dann gültigen Anschlusszins.</p>
+    <div class="ftab"><table>
+<thead><tr><th>Anschlusszins ab Jahr 6</th><th class="n">Zinsen über 15 Jahre gesamt</th><th class="n">Unterschied zu Variante 1</th></tr></thead>
+<tbody>
+<tr><td data-l="Anschlusszins ab Jahr 6">4,0&nbsp;%</td><td class="n" data-l="Zinsen über 15 Jahre gesamt">142.855&nbsp;€</td><td class="n" data-l="Unterschied zu Variante 1">17.992&nbsp;€ günstiger</td></tr>
+<tr><td data-l="Anschlusszins ab Jahr 6">4,5&nbsp;%</td><td class="n" data-l="Zinsen über 15 Jahre gesamt">156.867&nbsp;€</td><td class="n" data-l="Unterschied zu Variante 1">3.979&nbsp;€ günstiger</td></tr>
+<tr><td data-l="Anschlusszins ab Jahr 6">rund 4,64&nbsp;%</td><td class="n" data-l="Zinsen über 15 Jahre gesamt">160.847&nbsp;€</td><td class="n" data-l="Unterschied zu Variante 1">Gleichstand</td></tr>
+<tr><td data-l="Anschlusszins ab Jahr 6">5,5&nbsp;%</td><td class="n" data-l="Zinsen über 15 Jahre gesamt">187.372&nbsp;€</td><td class="n" data-l="Unterschied zu Variante 1">26.525&nbsp;€ teurer</td></tr>
+</tbody></table></div>
+    <p>Im Beispiel lohnt sich die kurze Zinsbindung, solange der Anschlusszins unter rund 4,6&nbsp;Prozent liegt. Mit dem Forward-Darlehen können Sie diesen Anschlusszins innerhalb der 5 Jahre zu einem Zeitpunkt sichern, an dem er passt. Sie überlassen ihn dann nicht dem Zufall des Stichtags. Rechnen Sie dabei den Forward-Aufschlag mit ein. Ein langfristiger Zins von 4,0&nbsp;Prozent mit 24 Monaten Vorlauf und 0,02&nbsp;Prozentpunkten Aufschlag pro Monat ergibt 4,48&nbsp;Prozent und liegt damit im Beispiel noch unter dem Gleichstand.</p>
+    <h2 id="was-gegen-die-strategie-spricht">Was gegen die Strategie spricht</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild4.jpg" alt="Ein Seiltänzer mit Balancierstange über einer Schlucht zwischen zwei Felswänden" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Gegen die Strategie sprechen zwei Punkte.</p>
+    <p><strong>Der Zins kann dauerhaft steigen.</strong> Wer kurz bindet und den richtigen Moment für das Forward-Darlehen verpasst, finanziert nach 5 Jahren zum dann gültigen Zins. Liegt dieser Zins über dem Gleichstand, war die lange Bindung günstiger. Die Strategie setzt voraus, dass Sie oder Ihr Berater den Markt in diesen Jahren tatsächlich beobachten.</p>
+<p><strong>Die lange Bindung hat einen eingebauten Vorteil.</strong> Nach §&nbsp;489 BGB können Sie ein Darlehen mit fester Zinsbindung nach Ablauf von 10 Jahren ab vollständiger Auszahlung mit einer Frist von 6 Monaten kündigen, ohne Vorfälligkeitsentschädigung. Eine 15-jährige Zinsbindung sichert Sie also gegen steigende Zinsen ab und lässt Ihnen nach 10 Jahren trotzdem den Ausstieg, falls die Zinsen gefallen sind. Diese Asymmetrie wirkt nur zu Ihren Gunsten.</p>
+    <figure class="tq"><blockquote><p>„Wenn man sich langfristig absichern will, wird es teurer, weil die Banken dieses Risiko bepreisen. Das Forward-Darlehen schließt man ab, um sich für die Zeit nach dem Ende der Zinsbindung günstigere Zinsen zu sichern.“</p></blockquote><figcaption><strong>Timon Fischer</strong>, Mitgründer von Fischer &amp; Geserich Real Estate</figcaption></figure>
+    <section class="pos">
+    <h2 id="die-einschaetzung-von-fischer-geserich">Die Einschätzung von Fischer &amp; Geserich</h2>
+    <p>Welche Zinsbindung richtig ist, hängt von der Zinsstruktur ab, von Ihrer Restschuld nach Ablauf und davon, wie viel Schwankung Ihr Haushalt verträgt. Wenn kurze Zinsbindungen in den tatsächlichen Angeboten deutlich günstiger sind als lange, rechnen wir mit unseren Kunden die Kombination aus kurzer Zinsbindung und Forward-Darlehen durch. Ist der Abstand klein oder sogar umgekehrt, spricht wenig dafür. Wer keine Zinsänderung riskieren kann oder will, ist mit der langen Bindung besser bedient, auch wenn sie in der Rate teurer ist.</p>
+    </section>
+
+    <div class="qa" id="fragen"><p class="qa-h">Häufige Fragen</p><details open><summary>Welche Zinsbindung ist bei einer Baufinanzierung am besten?</summary><div><p>Das hängt vom Zinsniveau der einzelnen Laufzeiten und von Ihrer Risikobereitschaft ab. Liegen langfristige Zinsen deutlich über kurzfristigen, kann eine Zinsbindung von 5 Jahren in Kombination mit einem Forward-Darlehen günstiger sein. Wer Planungssicherheit braucht, wählt 10 oder 15 Jahre und hat nach §&nbsp;489 BGB nach 10 Jahren trotzdem ein Kündigungsrecht.</p></div></details><details><summary>Was ist ein Forward-Darlehen?</summary><div><p>Ein Forward-Darlehen ist eine Anschlussfinanzierung, die Sie heute zu einem festen Zins abschließen und die erst zu einem späteren Termin ausgezahlt wird. Der Termin ist meist das Ende Ihrer laufenden Zinsbindung. Je nach Bank ist das bis zu 60 Monate im Voraus möglich. Für die Vorlaufzeit berechnet die Bank einen Aufschlag.</p></div></details><details><summary>Wie hoch ist der Forward-Aufschlag?</summary><div><p>Der Aufschlag liegt häufig bei etwa 0,01 bis 0,03&nbsp;Prozentpunkten pro Monat Vorlaufzeit. Bei 24 Monaten Vorlauf ergibt das ungefähr 0,24 bis 0,72&nbsp;Prozentpunkte auf den Zins. Die genaue Höhe legt jede Bank selbst fest.</p></div></details><details><summary>Woran orientiert sich der Zins für eine Zinsbindung von 10 Jahren?</summary><div><p>Der Zins für eine Zinsbindung von 10 Jahren orientiert sich an der Rendite der 10-jährigen deutschen Bundesanleihe. Der Leitzins der Europäischen Zentralbank ist dafür nicht der Maßstab. Steigt diese Rendite, steigen die Bauzinsen für 10-jährige Zinsbindungen mit, bei manchen Banken taggleich, bei anderen mit zwei bis drei Wochen Verzögerung.</p></div></details></div>
+
+    <aside class="cta" aria-label="Finanzierungserstgespräch buchen"><h3>Die richtige Zinsbindung für Ihre Finanzierung</h3><p>Ob sich die kurze Zinsbindung mit Forward-Darlehen für Sie rechnet, hängt von Ihren Zahlen und vom aktuellen Zinsabstand zwischen den Laufzeiten ab. Im Finanzierungserstgespräch rechnen wir beide Varianten mit Ihnen durch.</p><a class="btn" href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierungserstgespräch buchen</a></aside>
+
+    <div class="end">
+      <div class="quellen"><h3>Quellen</h3><ul><li><a href="https://www.bundesbank.de/resource/blob/964892/478b4dce129836c569a63356d2eb244f/472B63F073F071307366337C94F8C870/2026-09-29-rendite-download.pdf" target="_blank" rel="noopener">Deutsche Bundesbank, Renditen von Bundeswertpapieren, Stand 29.09.2026</a></li><li><a href="https://www.gesetze-im-internet.de/bgb/__489.html" target="_blank" rel="noopener">§&nbsp;489 BGB, Ordentliches Kündigungsrecht des Darlehensnehmers</a></li></ul></div>
+      <p class="note">Die Bilder in diesem Beitrag wurden mit KI erstellt.</p>
+      <p class="note">Der Beitrag dient der allgemeinen Information und ersetzt keine Rechts-, Steuer-, Finanzierungs- oder Anlageberatung. Zinssätze in Beispielrechnungen sind Beispielwerte, keine aktuellen Konditionen.</p>
+    </div>
+  </article>
+
+  <aside class="related" aria-label="Mehr zu Finanzierung">
+    <h2>Mehr zu Finanzierung</h2>
+    <a href="../beleihungsauslauf-und-kondition/"><span class="rthumb"><img src="../beleihungsauslauf-und-kondition/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Beleihungs&shy;auslauf, 100&nbsp;% und 110&nbsp;% Finanzierung</strong></a>
+  </aside>
+</div>
+
+<section class="more" aria-label="Weiterlesen">
+  <div class="more-in">
+    <a class="back" href="../">‹ Zurück zum Blog</a>
+  </div>
+</section>
+
+<footer><span>© 2026 Fischer &amp; Geserich Real Estate</span><span><a href="https://fg-realestate.de/impressum.html">Impressum</a> · <a href="https://fg-realestate.de/datenschutz.html">Datenschutz</a></span></footer>
+
+<script>
+/* Mobilmenü wie auf der Website */
+(function(){
+  var b=document.querySelector(".burger"),m=document.querySelector(".mobile-menu");
+  b.addEventListener("click",function(){var o=m.classList.toggle("open");b.setAttribute("aria-expanded",o)});
+})();
+/* Offene Menüs schließen bei Klick daneben oder mit Esc */
+(function(){
+  var cat=document.querySelector(".cat-menu"),b=document.querySelector(".burger"),m=document.querySelector(".mobile-menu");
+  function closeAll(e){
+    if(cat.open&&(!e||!cat.contains(e.target)))cat.open=false;
+    if(m.classList.contains("open")&&(!e||!(m.contains(e.target)||b.contains(e.target)))){m.classList.remove("open");b.setAttribute("aria-expanded",false)}
+  }
+  document.addEventListener("click",closeAll);
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeAll()});
+})();
+/* Umschalter heller / dunkler Lesemodus */
+(function(){
+  var root=document.documentElement,b=document.querySelector(".theme-btn");
+  function sync(){var d=root.dataset.theme==="dark";b.setAttribute("aria-pressed",d);b.setAttribute("aria-label",d?"Heller Lesemodus":"Dunkler Lesemodus")}
+  b.addEventListener("click",function(){
+    root.dataset.theme=root.dataset.theme==="dark"?"light":"dark";sync();
+    try{localStorage.setItem("fg-theme",root.dataset.theme)}catch(e){}
+  });
+  sync();
+})();
+/* Kopfzeile: Fortschritt, Titel nach dem Scrollen, aktiver Abschnitt links */
+(function(){
+  var top=document.querySelector(".top"),bar=document.querySelector(".progress span"),h1=document.querySelector(".head h1");
+  var links=[].slice.call(document.querySelectorAll(".toc a")),secs=links.map(function(a){return document.querySelector(a.getAttribute("href"))});
+  function tick(){
+    var d=document.documentElement,max=d.scrollHeight-d.clientHeight;
+    bar.style.width=(max>0?d.scrollTop/max*100:0)+"%";
+    top.classList.toggle("scrolled",h1.getBoundingClientRect().bottom<140);
+    var cur=0;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<170)cur=i});
+    links.forEach(function(a,i){a.classList.toggle("on",i===cur)});
+  }
+  var lead=document.querySelector(".lead-img");
+  function shrink(){
+    /* Bild wird beim Scrollen gleichmäßig kleiner, Seitenverhältnis bleibt (n26-Verhalten) */
+    var r=lead.getBoundingClientRect(),p=Math.min(Math.max((140-r.top)/r.height,0),1);
+    lead.style.setProperty("--s",(1-p*.45).toFixed(3));
+  }
+  addEventListener("scroll",function(){tick();shrink()},{passive:true});tick();shrink();
+})();
+
+/* A2: Anschlusszins verschieben, Zinsen über 15 Jahre neu rechnen */
+(function(){
+  var root=document.getElementById("g-zb");if(!root)return;
+  var h="";for(var y=0;y<=15;y++)h+='<span style="left:'+(y/15*100)+'%">'+y+"</span>";
+  root.querySelector(".zb-yr").innerHTML=h;
+  function run(B,r,pay,n){var I=0;for(var i=0;i<n;i++){var z=B*r/12;I+=z;B-=pay-z}return [I,B]}
+  var V1=run(300000,.044,1600,180)[0],p1=run(300000,.039,1475,60),MAX=200000;
+  var inp=root.querySelector("input"),az=root.querySelectorAll(".az"),b2=root.querySelector(".b2 span"),res=root.querySelector(".zb-res");
+  function eur(v){return Math.round(v).toLocaleString("de-DE")+" €"}
+  function upd(){
+    var r=+inp.value,I=p1[0]+run(p1[1],r/100,1600,120)[0],d=I-V1,t=r.toFixed(2).replace(".",",")+" %";
+    az.forEach(function(o){o.textContent=t});
+    b2.style.width=(I/MAX*100)+"%";b2.textContent=eur(I);
+    res.className="zb-res "+(d<0?"good":"bad");
+    res.textContent=Math.abs(d)<500?"Etwa Gleichstand mit 15 Jahren fest":(d<0?eur(-d)+" günstiger als 15 Jahre fest":eur(d)+" teurer als 15 Jahre fest");
+  }
+  inp.addEventListener("input",upd);upd();
+})();
+</script>
+</body>
+</html>
