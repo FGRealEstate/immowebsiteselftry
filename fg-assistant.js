@@ -942,6 +942,8 @@
     return KB.map(e=>({entry:e,score:scoreEntry(e,query)})).filter(x=>x.score>5).sort((a,b)=>b.score-a.score).slice(0,limit);
   }
   const SHARED_KB=Array.isArray(window.FG_SHARED_KNOWLEDGE)?window.FG_SHARED_KNOWLEDGE:[];
+  // Beschriftung passend zum Ziel: Lexikon, Blog oder Leistungsseite (seit /wissen/ offline ist).
+  function sharedLinkLabel(url){url=String(url||'');if(url.startsWith('/lexikon/'))return 'Im Lexikon nachlesen';if(url.startsWith('/blog/'))return 'Im Blog weiterlesen';return 'Mehr dazu';}
   function scoreShared(entry,query){
     const nq=normalize(query), title=normalize(entry.title||''), summary=normalize(entry.summary||''), keys=normalize((entry.keywords||[]).join(' '));
     let score=0; if(title===nq)score+=130; if(nq.length>5&&(title.includes(nq)||nq.includes(title)))score+=52;
@@ -1029,7 +1031,7 @@
       const hits=searchKB(q,5), best=confidentHit(hits);
       if(!best){
         const sharedHit=confidentShared(searchShared(q,4));
-        if(sharedHit){const item=sharedHit.entry;addMessage('assistant',`<span class="fg-ai-kicker">${escapeHtml(item.category||'Immobilienwissen')}</span><p><strong>${escapeHtml(item.title)}</strong></p><p>${escapeHtml(item.answer)}</p><div class="fg-ai-actions"><a class="fg-ai-action is-gold" href="${escapeHtml(item.url)}"><i class="fas fa-book-open"></i>Im Investment Lab vertiefen</a><a class="fg-ai-action is-light" href="mailto:info@fg-realestate.de?subject=${encodeURIComponent('Frage zu '+item.title)}"><i class="fas fa-envelope"></i>E-Mail schreiben</a></div>`);return;}
+        if(sharedHit){const item=sharedHit.entry;addMessage('assistant',`<span class="fg-ai-kicker">${escapeHtml(item.category||'Immobilienwissen')}</span><p><strong>${escapeHtml(item.title)}</strong></p><p>${escapeHtml(item.answer)}</p><div class="fg-ai-actions"><a class="fg-ai-action is-gold" href="${escapeHtml(item.url)}"><i class="fas fa-book-open"></i>${sharedLinkLabel(item.url)}</a><a class="fg-ai-action is-light" href="mailto:info@fg-realestate.de?subject=${encodeURIComponent('Frage zu '+item.title)}"><i class="fas fa-envelope"></i>E-Mail schreiben</a></div>`);return;}
         addMessage('assistant',contactHandoffHtml(q));return;
       }
       const entry=best.entry;
