@@ -1,0 +1,97 @@
+---
+layout: base.njk
+fgDesign: true
+fgSystem: true
+fgsHero: false
+customSchema: true
+permalink: "immobilienbewertung/nachfrage/index.html"
+eleventyExcludeFromCollections: true
+title: "Fragen zu Ihrer Immobilie | Fischer & Geserich"
+description: "Ein paar gezielte Fragen zu Ihrer Immobilie für eine genaue Wertermittlung."
+robots: "noindex, nofollow"
+# Update 19 §5 (30.10.2026): Nachfrage zur Bewertung. Erreichbar nur über den Link in der Bestätigungsmail nach einer
+# Bewertungsanfrage (netlify/functions/_shared/nachfrage.js): ?k=<Kontakt-ID.Signatur>&typ=wohnung|haus|mfh|grundstueck|gewerbe
+# und gf=1, wenn die Grundstücksgröße schon angegeben war. Fragen wörtlich von Timon. Mit Skript (fg-design.js,
+# [data-fgd-nachfrage-form]) zeigt die Seite nur die Fragen zur Objektart; ohne Skript stehen alle da und k/typ
+# kommen über den Referer (formpost.js). Antworten gehen an bewertung-nachfrage.
+---
+{% from "fgd-icons.njk" import icon %}
+<section class="fgs-pagehead" aria-labelledby="seitentitel">
+  <div class="fgs-wrap">
+    <h1 id="seitentitel">Ein paar Fragen zu Ihrer Immobilie</h1>
+    <p class="fgs-lead">Für eine genaue Wertermittlung. Beantworten Sie, was Sie wissen. Jede Angabe ist freiwillig.</p>
+  </div>
+</section>
+
+<section class="fgs-section fgs-nachfrage" aria-label="Fragen zur Immobilie">
+  <div class="fgs-wrap">
+    <div class="fgd-form-card fgs-wizard" id="nachfrage">
+      <form method="post" action="/.netlify/functions/bewertung-nachfrage" class="fgd-form" data-fgd-nachfrage-form novalidate>
+        <input type="hidden" name="k" value="">
+        <input type="hidden" name="typ" value="">
+        <fieldset>
+          <legend>Wann wurde zuletzt modernisiert und was?</legend>
+          <div class="fgd-field-row">
+            <label>Jahr<input name="modernisierung_jahr" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" placeholder="z.&nbsp;B. 2015"></label>
+            <label>Was wurde modernisiert?<input name="modernisierung_was" maxlength="500" placeholder="z.&nbsp;B. Bad, Fenster, Heizung"></label>
+          </div>
+        </fieldset>
+        <fieldset data-fgd-nachfrage-typ="wohnung">
+          <legend>Zur Wohnung</legend>
+          <label>Etage
+            <select name="etage">
+              <option value="">Bitte wählen</option>
+              <option>Souterrain</option>
+              <option>Erdgeschoss</option>
+              <option>Obergeschoss</option>
+              <option>Dachgeschoss</option>
+              <option>Penthouse</option>
+              <option>Maisonette</option>
+            </select>
+          </label>
+          <div class="fgd-group" role="group" aria-labelledby="nf-wohnung-aussen">
+            <p class="fgd-group-label" id="nf-wohnung-aussen">Gibt es Balkon, Loggia oder Terrasse und wie groß ist sie?</p>
+            <div class="fgd-choices fgd-choices--3">
+              <label class="fgd-choice"><input type="checkbox" name="wohnung_aussen" value="Balkon">Balkon</label>
+              <label class="fgd-choice"><input type="checkbox" name="wohnung_aussen" value="Loggia">Loggia</label>
+              <label class="fgd-choice"><input type="checkbox" name="wohnung_aussen" value="Terrasse">Terrasse</label>
+            </div>
+          </div>
+          <label>Größe in m²<input name="wohnung_aussen_m2" inputmode="decimal" maxlength="20" placeholder="z.&nbsp;B. 8"></label>
+        </fieldset>
+        <fieldset data-fgd-nachfrage-typ="haus">
+          <legend>Zum Haus</legend>
+          <label data-fgd-nachfrage-ohne-gf>Grundstücksgröße in m²<input name="haus_grundstueck_m2" inputmode="decimal" maxlength="20" placeholder="z.&nbsp;B. 600"></label>
+          <div class="fgd-group" role="group" aria-labelledby="nf-haus-aussen">
+            <p class="fgd-group-label" id="nf-haus-aussen">Balkon oder Terrasse</p>
+            <div class="fgd-choices fgd-choices--2">
+              <label class="fgd-choice"><input type="checkbox" name="haus_aussen" value="Balkon">Balkon</label>
+              <label class="fgd-choice"><input type="checkbox" name="haus_aussen" value="Terrasse">Terrasse</label>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset data-fgd-nachfrage-typ="mfh">
+          <legend>Zum Mehrfamilienhaus</legend>
+          <div class="fgd-field-row">
+            <label>Ist-Jahresnettokaltmiete in €<input name="mfh_ist_miete" inputmode="decimal" maxlength="20" placeholder="z.&nbsp;B. 96.000"></label>
+            <label>Erwartete Soll-Miete in sechs bis zwölf Monaten in € pro Jahr (optional)<input name="mfh_soll_miete" inputmode="decimal" maxlength="20"></label>
+          </div>
+        </fieldset>
+        <label class="fgd-hp" aria-hidden="true">Website<input name="company_website" tabindex="-1" autocomplete="off"></label>
+        <div class="fgd-status" data-fgd-nachfrage-status hidden></div>
+        <div class="fgd-wizard-nav">
+          <button type="submit" class="fgd-btn fgd-btn-navy">Antworten senden{{ icon("arrow") | safe }}</button>
+        </div>
+      </form>
+      <div class="fgd-form-done" data-fgd-nachfrage-done tabindex="-1" hidden>
+        <h2>Vielen Dank, Ihre Antworten sind da</h2>
+        <p>Ihr Ansprechpartner nimmt sie in die Wertermittlung auf. Wenn es eilt, erreichen Sie uns unter <a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a>.</p>
+      </div>
+      <div class="fgd-form-done" data-fgd-nachfrage-ohne-link tabindex="-1" hidden>
+        <h2>Dieser Link ist unvollständig</h2>
+        <p>Bitte öffnen Sie den Link aus unserer E-Mail noch einmal oder rufen Sie uns an: <a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a>.</p>
+      </div>
+    </div>
+    <p class="fgs-note fgs-wizard-note">Ihre Antworten ergänzen Ihre Bewertungsanfrage und gehen an Ihren Ansprechpartner. Wie wir mit Ihren Daten umgehen, steht in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</p>
+  </div>
+</section>

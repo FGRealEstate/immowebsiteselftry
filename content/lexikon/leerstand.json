@@ -7,11 +7,112 @@
   "keywords": [
     "leerstand"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Vermietung",
-  "formula": null,
+  "formula": "Mietverlust durch Leerstand = Kaltmiete je Monat × leere Monate (dazu laufende Kosten)",
   "sources": [],
   "assistantAnswer": "Nicht vermietete Fläche oder Einheit. Leerstand ist der Zeitraum oder Anteil ohne zahlenden Nutzer. Wirtschaftlich muss zwischen kurzfristigem Vermietungsleerstand, strategischem Leerstand und strukturellem Leerstand unterschieden werden.",
-  "explanation": "Leerstand ist der Zeitraum oder Anteil ohne zahlenden Nutzer. Wirtschaftlich muss zwischen kurzfristigem Vermietungsleerstand, strategischem Leerstand und strukturellem Leerstand unterschieden werden.",
-  "practiceExample": "Eine Wohnung mit 1.200 € Monatsmiete und zwei Monaten Leerstand verliert 2.400 € Jahresmiete vor zusätzlichen Renovierungs-/Vermarktungskosten."
+  "explanation": "Leerstand heißt, dass eine Wohnung oder Fläche nicht vermietet ist und keine Miete bringt. Beim Zensus standen am 15. Mai 2022 bundesweit rund 1,9 Millionen Wohnungen leer, eine Quote von 4,3 %. Etwa 38 % davon waren innerhalb von drei Monaten beziehbar; bei fast jeder vierten leeren Wohnung waren Baumaßnahmen oder Sanierungen geplant oder im Gang.",
+  "practiceExample": "Angenommen, Sie besitzen eine vermietete Wohnung in Bernau bei Berlin: 65 m², Baujahr 1995, 9 € Kaltmiete je m², also 585 € im Monat und 7.020 € im Jahr. Beim Mieterwechsel steht sie zwei Monate leer. Dann fehlen 1.170 € Kaltmiete, 16,7 % der Jahresmiete. Die Betriebskosten von 161,85 € im Monat zahlen Sie in dieser Zeit über das Hausgeld selbst, zusammen 323,70 €. Der Leerstand kostet also 1.493,70 €. Die Pauschale von 2 % ergibt 140,40 € im Jahr; allein die fehlende Kaltmiete entspricht gut acht Jahren dieser Pauschale. Sie ist ein Durchschnitt über viele Jahre, kein Puffer für das einzelne Jahr.",
+  "ausbau": {
+    "einordnung": [
+      "Leerstand heißt, dass eine Wohnung oder Fläche nicht vermietet ist und keine Miete bringt. Beim Zensus standen am 15. Mai 2022 bundesweit rund 1,9 Millionen Wohnungen leer, eine Quote von 4,3 %. Etwa 38 % davon waren innerhalb von drei Monaten beziehbar; bei fast jeder vierten leeren Wohnung waren Baumaßnahmen oder Sanierungen geplant oder im Gang.[[1]]",
+      "Kurzer Leerstand gehört zum Mieterwechsel: In Berlin standen 41 % der leeren Wohnungen weniger als drei Monate leer, 29 % zwölf Monate oder länger.[[1]] Während die Miete fehlt, laufen die Kosten weiter.[[2]] In der Wertermittlung zählt vorübergehender Leerstand samt den Kosten, die der Eigentümer dann zusätzlich trägt, zum Mietausfallwagnis.[[3]] Angesetzt werden dafür 2 % der Jahresmiete.[[4,5]]"
+    ],
+    "beispiel": [
+      "Angenommen, Sie besitzen eine vermietete Wohnung in Bernau bei Berlin: 65 m², Baujahr 1995, 9 € Kaltmiete je m², also 585 € im Monat und 7.020 € im Jahr. Beim Mieterwechsel steht sie zwei Monate leer. Dann fehlen 1.170 € Kaltmiete, 16,7 % der Jahresmiete. Die Betriebskosten von 161,85 € im Monat zahlen Sie in dieser Zeit über das Hausgeld selbst, zusammen 323,70 €.",
+      "Der Leerstand kostet also 1.493,70 €. Die Pauschale von 2 % ergibt 140,40 € im Jahr; allein die fehlende Kaltmiete entspricht gut acht Jahren dieser Pauschale. Sie ist ein Durchschnitt über viele Jahre, kein Puffer für das einzelne Jahr."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Leerstand und Steuer",
+        "absaetze": [
+          "Ein Mieterwechsel oder eine Renovierung ist steuerlich unproblematisch. Dauert der Leerstand länger, prüft das Finanzamt genauer, ob Sie wirklich vermieten wollen; Ihre Bemühungen belegen Sie etwa mit Rechnungen für Anzeigen oder Maklerverträgen.[[2]] Ist der Rohertrag um mehr als 50 % gemindert und haben Sie das nicht zu vertreten, wird die Grundsteuer zu 25 % erlassen, bei 100 % zu 50 %.[[6]] Den Antrag stellen Sie bis zum 31. März des Folgejahres.[[7]]"
+        ]
+      },
+      {
+        "h2": "Leerstand vermeiden",
+        "absaetze": [
+          "Laut Finanztip ist das Leerstandsrisiko in Großstädten meist geringer, die Renditen sind dort niedriger.[[5]] F&G setzt bei der Vermietung auf die richtige Miethöhe, eine klare Zielgruppe, vollständige Unterlagen und eine Auswahl nach objektiven Kriterien.[[8]] Beim Mehrfamilienhaus prüft F&G Ist- und Soll-Miete, Leerstand und Entwicklungspotenzial.[[9]] Ein geplanter Leerstand für eine Sanierung gehört mit der fehlenden Miete in die Rechnung der Maßnahme."
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "Statistisches Bundesamt: Pressemitteilung Nr. 46 vom 4. Juli 2024 (Zensus 2022, Leerstand)",
+        "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/Zensus2022-Pressemitteilungen/PM_zenus2022_46.html",
+        "stand": "Stichtag 15.05.2022, veröffentlicht 04.07.2024"
+      },
+      {
+        "name": "Finanztip: Steuertipps für Vermieter",
+        "url": "https://www.finanztip.de/steuertipps-vermieter/",
+        "stand": "Stand 08.07.2026"
+      },
+      {
+        "name": "§ 32 Immobilienwertermittlungsverordnung (ImmoWertV)",
+        "url": "https://www.gesetze-im-internet.de/immowertv_2022/__32.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Anlage 3 ImmoWertV (Modellwerte für Bewirtschaftungskosten)",
+        "url": "https://www.gesetze-im-internet.de/immowertv_2022/anlage_3.html",
+        "stand": "Stand 01.01.2021, abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Mietrendite berechnen",
+        "url": "https://www.finanztip.de/baufinanzierung/mietrendite-berechnen/",
+        "stand": "Stand 01.04.2026"
+      },
+      {
+        "name": "§ 34 Grundsteuergesetz (GrStG)",
+        "url": "https://www.gesetze-im-internet.de/grstg_1973/__34.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 35 Grundsteuergesetz (GrStG)",
+        "url": "https://www.gesetze-im-internet.de/grstg_1973/__35.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Vermieten",
+        "url": "https://fg-realestate.de/vermieten.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Mehrfamilienhaus",
+        "url": "https://fg-realestate.de/mehrfamilienhaus.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Zensus 15.05.2022: 1,9 Mio. leer, 4,3 %, 38 % in drei Monaten beziehbar, fast jede vierte mit Baumaßnahmen (24 %); Berlin 41 % unter drei Monaten, 29 % zwölf Monate oder länger",
+        "fundstelle": "runde-4.md, Y05"
+      },
+      {
+        "zahl": "Kosten laufen weiter; Mieterwechsel/Renovierung unproblematisch; Finanzamt prüft; Bemühungen belegen (Annoncen, Makleraufträge)",
+        "fundstelle": "runde-4.md, Y06"
+      },
+      {
+        "zahl": "Mietausfallwagnis umfasst vorübergehenden Leerstand und zusätzliche Bewirtschaftungskosten",
+        "fundstelle": "runde-4.md, Y01"
+      },
+      {
+        "zahl": "2 % der Jahresmiete (amtlich und Finanztip); Leerstandsrisiko in Großstädten meist geringer",
+        "fundstelle": "runde-3.md, N03, C03, C02"
+      },
+      {
+        "zahl": "Grundsteuererlass 25 % bei > 50 %, 50 % bei 100 %; Antrag bis 31. März",
+        "fundstelle": "runde-4.md, Y07, Y08"
+      },
+      {
+        "zahl": "F&G Vermietung: Miethöhe, Zielgruppe, Unterlagen, objektive Kriterien; MFH: Ist-/Soll-Miete, Leerstand, Entwicklungspotenzial",
+        "fundstelle": "runde-4.md, Y09, Y10"
+      },
+      {
+        "zahl": "2 × 585 = 1.170 € = 16,7 % von 7.020 €; 2 × 161,85 = 323,70 €; zusammen 1.493,70 €; 2 % × 7.020 = 140,40 €; 1.170 / 140,40 = 8,3 Jahre",
+        "fundstelle": "Rechnung, Marktprüfung runde-4.md"
+      }
+    ]
+  }
 }

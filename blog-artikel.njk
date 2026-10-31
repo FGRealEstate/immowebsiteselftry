@@ -1,0 +1,172 @@
+---
+layout: base.njk
+fgDesign: true
+fgSystem: true
+fgsHero: false
+fgsBlog: true
+# Design-Pass 3 Nachtrag Punkt 1: Artikel behalten ihre Überschriften, keine Bewegung (fgs-motion.js)
+fgsMotion: false
+customSchema: true
+bodyClass: fgd-blog-page
+pagination:
+  data: blogArtikel
+  size: 1
+  alias: a
+permalink: "blog/{{ a.slug }}/index.html"
+eleventyComputed:
+  title: "{{ a.title | safe }}"
+  description: "{{ a.description | safe }}"
+  canonicalPath: "{{ a.url }}"
+  ogType: article
+  ogImage: "https://fg-realestate.de{{ a.url }}og.jpg"
+  ogImageAlt: "{{ a.lead.alt | safe }}"
+  preloadImage: "{{ a.url }}{{ a.lead.src }}"
+---
+{#- Blogartikel im neuen Design (Brief Design-Pass §4.8): neuer Kopf und Fuß, Textspalte 680 px,
+    Inhaltsverzeichnis ab 1.200 Wörtern, Autorenkasten, passende Leistungen und Artikel, Abschlussblock.
+    Der Artikel selbst (Text, Grafiken, Fragen, Quellen, JSON-LD) kommt unverändert aus
+    blog/<slug>/index.html, siehe _data/blogArtikel.js.
+    CP4 (28.10.2026, Design-Sprint-Brief 5.6): Kopf, Fuß und Hülle im Design-System, Layout des Artikels unverändert
+    (Regeln in css/fgs-blog.css, nur Schrift, Farben und Abstände angeglichen). Weiterlesen ohne Kicker (Update 6 §3.0),
+    Leistungen als Textlinks, Abschluss als S8.
+    Design-Pass 2, Entscheidungen 29.10.2026, Blatt 5: „Stand: …“ aus der Datumszeile im Kopf entfernt (ein Datum nur bei einer Zahl
+    oder Quelle, nicht in der Einleitung). a.stand bleibt in den Daten. -#}
+{% from "fgs-macros.njk" import textlink, closing with context %}
+{% set pageUrl = "https://fg-realestate.de" + a.url %}
+{% set andere = [] %}
+{% for p in blogArtikel %}{% if p.slug != a.slug %}{% set _ = andere.push(p) %}{% endif %}{% endfor %}
+
+<header class="fgd-blog-hero">
+  <div class="fgs-wrap">
+    <nav aria-label="Brotkrümelnavigation">
+      <ol class="fgs-crumbs">
+        <li><a href="/">Start</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/blog/#{{ a.katId }}">{{ a.katLabel | safe }}</a></li>
+        <li aria-current="page">{{ a.crumb | safe }}</li>
+      </ol>
+    </nav>
+    <div class="fgd-blog-hero-text">
+      <p class="fgs-label"><a href="/blog/#{{ a.katId }}">{{ a.katLabel | safe }}</a></p>
+      <h1>{{ a.h1 | safe }}</h1>
+      <p class="fgd-blog-dateline"><span class="fgd-blog-by">{{ a.by | safe }}</span><span>{{ a.minuten }} Min. Lesezeit</span></p>
+    </div>
+    <figure class="fgd-blog-lead">
+      <img src="{{ a.url }}{{ a.lead.src }}" alt="{{ a.lead.alt }}" width="{{ a.lead.width }}" height="{{ a.lead.height }}" fetchpriority="high" decoding="async">
+      {%- if a.lead.caption %}<figcaption>{{ a.lead.caption | safe }}</figcaption>{% endif %}
+    </figure>
+  </div>
+</header>
+
+{% if a.css %}<style>{{ a.css | safe }}</style>{% endif %}
+
+<div class="fgd-blog-cols fgs-wrap{% if not a.zeigeToc %} fgd-blog-cols--solo{% endif %}">
+  {% if a.zeigeToc %}
+  <nav class="fgd-blog-toc" aria-label="Inhalt">
+    <details open>
+      <summary>Inhalt</summary>
+      <ol>{% for t in a.toc %}<li><a href="{{ t.href }}">{{ t.label | safe }}</a></li>{% endfor %}</ol>
+    </details>
+  </nav>
+  {% endif %}
+
+  <article class="fgd-blog-body">
+    {{ a.body | safe }}
+
+    {#- Update 11 §2 (29.10.2026): Der Hinweis auf das Widget „Was kann ich mir leisten?“ ist mit dessen Platzhalter gelöscht. -#}
+
+    {#- Mit Autor (Update 4, 3.3, erst nach Zustimmung, siehe _data/blogArtikel.js): Kurztext und Profil der Person -#}
+    {% if a.autor %}{% set ak = kontakte[a.autor.key] %}
+    <aside class="fgd-blog-author" aria-labelledby="autoren-titel">
+      <p class="fgd-blog-author-k">Über den Autor</p>
+      <h2 id="autoren-titel">{{ ak.name }}</h2>
+      <p>{{ ak.bio }}</p>
+      <ul>
+        <li><a href="{{ ak.profile | navHref }}"><img src="{{ ak.photo }}" alt="Porträt von {{ ak.name }}" width="56" height="70" loading="lazy" decoding="async"><span><strong>Profil von {{ ak.name }}</strong><small>{{ ak.role }}</small></span></a></li>
+      </ul>
+    </aside>
+    {% else %}
+    <aside class="fgd-blog-author" aria-labelledby="autoren-titel">
+      <p class="fgd-blog-author-k">Über die Autoren</p>
+      <h2 id="autoren-titel">Fischer &amp; Geserich Real Estate</h2>
+      <p>Dieser Beitrag kommt von Fischer &amp; Geserich Real Estate aus der Schützenstraße 30 in Berlin-Steglitz. Wir begleiten Verkauf, Ankauf und Finanzierung von Immobilien und haben die Erlaubnisse nach § 34c und § 34i GewO. Finanzierungen vermitteln wir deutschlandweit, über Europace, Baufinex und direkte Bankkontakte.</p>
+      <ul>
+        {% for key in ["timon", "lennart"] %}{% set k = kontakte[key] %}
+        {#- Kurzbio wie auf Gebietsseiten, Über uns und Profil (Design-Pass 2, Jesus Fix 5 vom 29.10.2026) -#}
+        <li><a href="{{ k.profile | navHref }}"><img src="{{ k.photo }}" alt="Porträt von {{ k.name }}" width="56" height="70" loading="lazy" decoding="async"><span><strong>{{ k.name }}</strong><small>{{ k.role }}</small></span></a><p>{{ k.bio }}</p></li>
+        {% endfor %}
+      </ul>
+    </aside>
+    {% endif %}
+  </article>
+</div>
+
+<section class="fgs-section" aria-labelledby="weiter-titel">
+  <div class="fgs-wrap">
+    <h2 id="weiter-titel">Passend zu diesem Artikel</h2>
+    <div class="fgd-blog-more{% if not andere.length %} fgd-blog-more--solo{% endif %}">
+      <div class="fgd-related-col">
+        <h3>Leistungen</h3>
+        <div class="fgs-links">
+          {%- for r in a.leistungen %}
+          {{ textlink(r.href, r.label) }}{% endfor %}
+        </div>
+      </div>
+      {% if andere.length %}
+      <div class="fgd-related-col">
+        <h3>Weitere Artikel</h3>
+        <div class="fgd-blog-cards fgd-blog-cards--compact">
+          {% for p in andere | sort(false, false, "katId") %}{% if loop.index <= 3 %}
+          <a class="fgd-blog-card" href="{{ p.url }}">
+            <img src="{{ p.slug | blogThumb }}" alt="{{ p.lead.alt }}" width="720" height="480" loading="lazy" decoding="async">
+            <span class="fgd-blog-card-body">
+              <span class="fgd-blog-card-meta"><b>{{ p.katLabel | safe }}</b>{{ p.minuten }} Min. Lesezeit</span>
+              <strong>{{ p.titel }}</strong>
+            </span>
+          </a>
+          {% endif %}{% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% call closing({ kontakt: a.kat.kontakt, satz: "Ihre Zahlen statt Beispielwerte?", button: a.kat.button }) %}
+  <p>Wie die Rechnung aus diesem Artikel für Ihr Vorhaben aussieht, gehen wir gern mit Ihnen durch. Das erste Gespräch kostet Sie nichts.</p>
+{% endcall %}
+
+<script>
+/* Inhaltsverzeichnis: aktuellen Abschnitt markieren */
+(function () {
+  var links = [].slice.call(document.querySelectorAll('.fgd-blog-toc a'));
+  if (!links.length) return;
+  /* Am Handy und Tablet steht das Verzeichnis über dem Text: zugeklappt, damit der Artikel gleich beginnt */
+  var box = document.querySelector('.fgd-blog-toc details');
+  if (box && matchMedia('(max-width: 1099px)').matches) box.removeAttribute('open');
+  var secs = links.map(function (l) { return document.querySelector(l.getAttribute('href')); });
+  var tick = function () {
+    var cur = 0;
+    secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top < 200) cur = i; });
+    links.forEach(function (l, i) { if (i === cur) l.setAttribute('aria-current', 'true'); else l.removeAttribute('aria-current'); });
+  };
+  addEventListener('scroll', tick, { passive: true });
+  tick();
+})();
+{{ a.js | safe }}
+</script>
+
+<script type="application/ld+json">
+{{ a.jsonld | json | safe }}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://fg-realestate.de/blog/" },
+    { "@type": "ListItem", "position": 3, "name": {{ a.title | json | safe }}, "item": "{{ pageUrl }}" }
+  ]
+}
+</script>

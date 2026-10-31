@@ -7,11 +7,138 @@
   "keywords": [
     "mietpreisbremse"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Immobilienkauf",
-  "formula": null,
+  "formula": "Höchstmiete bei Mietbeginn = ortsübliche Vergleichsmiete × 1,10 (Ausnahmen siehe unten)",
   "sources": [],
   "assistantAnswer": "Gesetzliche Begrenzung der Wiedervermietungsmiete in bestimmten Gebieten. Die Mietpreisbremse begrenzt in ausgewiesenen Gebieten die zulässige Neuvertragsmiete grundsätzlich nach §§ 556d ff. BGB, vorbehaltlich gesetzlicher Ausnahmen und Vormietenregeln. Sie ist von der Kappungsgrenze im laufenden Mietverhältnis zu unterscheiden.",
-  "explanation": "Die Mietpreisbremse begrenzt in ausgewiesenen Gebieten die zulässige Neuvertragsmiete grundsätzlich nach §§ 556d ff. BGB, vorbehaltlich gesetzlicher Ausnahmen und Vormietenregeln. Sie ist von der Kappungsgrenze im laufenden Mietverhältnis zu unterscheiden.",
-  "practiceExample": "Eine am Markt beobachtete Neuvertragsmiete ist nicht automatisch rechtlich zulässig. Für die Investitionsrechnung muss deshalb eine rechtlich tragfähige Miete angesetzt werden."
+  "explanation": "Die Mietpreisbremse begrenzt die Miete zu Beginn eines neuen Mietvertrags: In Gebieten mit angespanntem Wohnungsmarkt darf sie die ortsübliche Vergleichsmiete um höchstens 10 % übersteigen. Welche Gebiete das sind, bestimmen die Landesregierungen per Verordnung; jede Verordnung muss spätestens mit Ablauf des 31.12.2029 außer Kraft treten.",
+  "practiceExample": "Angenommen, Sie besitzen eine vermietete Wohnung in Bernau bei Berlin: 65 m², Baujahr 1995, 9 € Kaltmiete je m², also 585 € im Monat und 7.020 € im Jahr, und sie wird frei. Bernau hat keinen Mietspiegel; angenommen ist eine Vergleichsmiete von 10 €/m². Neu dürfen Sie dann höchstens 11 €/m² verlangen, also 715 € im Monat, 130 € mehr als bisher. Das liegt im Bereich der Bernauer Mietdaten von 5,8 bis 16,2 €/m². Im laufenden Vertrag gilt stattdessen die Kappungsgrenze: in Bernau höchstens 15 % in drei Jahren, festgelegt bis Ende 2030, und höchstens bis zur Vergleichsmiete.",
+  "ausbau": {
+    "einordnung": [
+      "Die Mietpreisbremse begrenzt die Miete zu Beginn eines neuen Mietvertrags: In Gebieten mit angespanntem Wohnungsmarkt darf sie die ortsübliche Vergleichsmiete um höchstens 10 % übersteigen. Welche Gebiete das sind, bestimmen die Landesregierungen per Verordnung; jede Verordnung muss spätestens mit Ablauf des 31.12.2029 außer Kraft treten.[[1]]",
+      "In Berlin gilt sie seit 1. Januar 2026 erneut für die ganze Stadt, bis Ende 2029.[[2]] In Brandenburg gilt sie seit 1. Januar 2026 in 36 Städten und Gemeinden, für Gebäude, die vor dem 1. Oktober 2014 fertiggestellt und bezogen wurden.[[3]] Bernau gehört dazu.[[4]]"
+    ],
+    "beispiel": [
+      "Angenommen, Sie besitzen eine vermietete Wohnung in Bernau bei Berlin: 65 m², Baujahr 1995, 9 € Kaltmiete je m², also 585 € im Monat und 7.020 € im Jahr, und sie wird frei. Bernau hat keinen Mietspiegel; angenommen ist eine Vergleichsmiete von 10 €/m². Neu dürfen Sie dann höchstens 11 €/m² verlangen, also 715 € im Monat, 130 € mehr als bisher. Das liegt im Bereich der Bernauer Mietdaten von 5,8 bis 16,2 €/m².[[5]]",
+      "Im laufenden Vertrag gilt stattdessen die Kappungsgrenze: in Bernau höchstens 15 % in drei Jahren, festgelegt bis Ende 2030, und höchstens bis zur Vergleichsmiete.[[6,7]]"
+    ],
+    "abschnitte": [
+      {
+        "h2": "Ausnahmen",
+        "absaetze": [
+          "War die Vormiete höher, darf sie wieder vereinbart werden. Nach einer Modernisierung in den drei Jahren vor Mietbeginn darf die Grenze um den Betrag einer Modernisierungsumlage überschritten werden.[[8]] Ausgenommen sind Wohnungen, die nach dem 1. Oktober 2014 erstmals genutzt und vermietet wurden, und die erste Vermietung nach einer umfassenden Modernisierung.[[9]] Wer sich auf eine Ausnahme stützt, informiert den Mieter vor Vertragsschluss unaufgefordert, etwa über die Höhe der Vormiete; sonst kann er sich nicht darauf berufen.[[10]]"
+        ]
+      },
+      {
+        "h2": "Zu viel gezahlte Miete",
+        "absaetze": [
+          "Zu viel gezahlte Miete kann der Mieter zurückverlangen, wenn er den Verstoß gerügt hat. Rügt er mehr als 30 Monate nach Mietbeginn oder nach Vertragsende, bekommt er die Miete ab der Rüge zurück. Auskunft und Rüge brauchen Textform.[[10]] F&G leitet die Miethöhe aus Markt und rechtlichem Rahmen ab, nicht aus einem pauschalen Wunschwert.[[11]]"
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "§ 556d BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__556d.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Senatskanzlei Berlin: Pressemitteilung vom 11.11.2025 (Mietenbegrenzungsverordnung)",
+        "url": "https://www.berlin.de/rbmskzl/aktuelles/pressemitteilungen/2025/pressemitteilung.1615170.php",
+        "stand": "11.11.2025, abgerufen 27.10.2026"
+      },
+      {
+        "name": "Ministerium für Infrastruktur und Landesplanung Brandenburg: Pressemitteilung vom 25.11.2025",
+        "url": "https://mil.brandenburg.de/mil/de/presse/detail/~25-11-2025-kabinett-mietpreisbremse-und-kappungsgrenzenverordnung",
+        "stand": "25.11.2025, abgerufen 27.10.2026"
+      },
+      {
+        "name": "Brandenburg: Mietpreisbegrenzungsverordnung",
+        "url": "https://mil.brandenburg.de/sixcms/media.php/9/Mietpreisbegrenzungsverordnung.pdf",
+        "stand": "Kabinettbeschluss 25.11.2025, abgerufen 27.10.2026"
+      },
+      {
+        "name": "Gutachterausschuss Barnim: Grundstücksmarktbericht 2025",
+        "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+        "stand": "Berichtsjahr 2025, abgerufen 27.10.2026"
+      },
+      {
+        "name": "Brandenburg: Kappungsgrenzenverordnung",
+        "url": "https://mil.brandenburg.de/sixcms/media.php/9/KappGrenzV.pdf",
+        "stand": "Kabinettbeschluss 25.11.2025, abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 558 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__558.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 556e BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__556e.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 556f BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__556f.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 556g BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__556g.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Vermieten",
+        "url": "https://fg-realestate.de/vermieten.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "höchstens 10 % über der Vergleichsmiete; Landesverordnung; außer Kraft spätestens 31.12.2029",
+        "fundstelle": "runde-4.md, J01, J02"
+      },
+      {
+        "zahl": "Berlin: ganze Stadt, 01.01.2026 bis 31.12.2029",
+        "fundstelle": "runde-4.md, J06"
+      },
+      {
+        "zahl": "Brandenburg: 36 Städte und Gemeinden ab 01.01.2026, Gebäude vor 01.10.2014",
+        "fundstelle": "runde-4.md, J07"
+      },
+      {
+        "zahl": "Bernau in der Gebietskulisse",
+        "fundstelle": "runde-4.md, J08"
+      },
+      {
+        "zahl": "Bernauer Mietdaten 5,8 bis 16,2 €/m², kein Mietspiegel",
+        "fundstelle": "runde-4.md, J16"
+      },
+      {
+        "zahl": "Kappungsgrenze Bernau 15 %, bis 31.12.2030; höchstens bis zur Vergleichsmiete",
+        "fundstelle": "runde-4.md, J09, J11"
+      },
+      {
+        "zahl": "Vormiete; Modernisierung in den letzten drei Jahren",
+        "fundstelle": "runde-4.md, J03"
+      },
+      {
+        "zahl": "Ausnahmen: nach 01.10.2014 erstmals genutzt und vermietet; erste Vermietung nach umfassender Modernisierung",
+        "fundstelle": "runde-4.md, J04"
+      },
+      {
+        "zahl": "Auskunft unaufgefordert, Vormiete; Rüge; 30 Monate; Textform",
+        "fundstelle": "runde-4.md, J05"
+      },
+      {
+        "zahl": "F&G: Markt und rechtlicher Rahmen, kein pauschaler Wunschwert",
+        "fundstelle": "runde-4.md, J18"
+      },
+      {
+        "zahl": "10 × 1,10 = 11 €/m² × 65 = 715 € (+130 €); Baujahr 1995 vor 01.10.2014",
+        "fundstelle": "Rechnung, Marktprüfung runde-4.md"
+      }
+    ]
+  }
 }

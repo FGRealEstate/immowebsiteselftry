@@ -1,4 +1,5 @@
 const { sendInternalNotification } = require("./_shared/mailer");
+const nachfrage = require("./_shared/nachfrage");
 const PROPSTACK_BASE_URL = process.env.PROPSTACK_API_BASE || "https://api.propstack.de/v1";
 
 /**
@@ -93,6 +94,11 @@ exports.handler = async function (event) {
       text: note,
     });
 
+    // Update 19 §5: Bewertungsanfrage → Bestätigungsmail an den Absender mit Link auf die Nachfrage
+    const confirmation = nachfrage.istBewertung(lead.rawConcern)
+      ? await sendValuationConfirmation(lead, contactId, data)
+      : { sent: false, skipped: true, reason: "keine Bewertungsanfrage" };
+
     return json(200, {
       success: true,
       message: "Ihre Anfrage wurde erfolgreich übermittelt.",
@@ -106,6 +112,7 @@ exports.handler = async function (event) {
       deal: dealResult,
       documents: documentResults,
       internal_notification: internalNotification,
+      confirmation,
     });
   } catch (error) {
     console.error("PROPSTACK LEAD ERROR:", error);
@@ -118,6 +125,36 @@ exports.handler = async function (event) {
     });
   }
 };
+
+// Update 19 §5: Link mit Kontakt-ID und Signatur (_shared/nachfrage.js); ohne Geheimnis keine Mail
+// (NACHFRAGE_SECRET oder ersatzweise der Propstack-Schlüssel, siehe nachfrage.geheimnis).
+// Ein Mailfehler blockiert die Anfrage nicht.
+async function sendValuationConfirmation(lead, contactId, data) {
+  try {
+    const secret = nachfrage.geheimnis(process.env);
+    if (!secret) return { sent: false, skipped: true, reason: "kein Geheimnis für den Nachfrage-Link" };
+    const objectType = data.object_type || data.objectType;
+    // Design-Pass 3 §0.4: Grundstück → Bestätigungsmail ohne Link auf die Fragen
+    const url = await nachfrage.link({
+      secret,
+      base: process.env.URL || "https://fg-realestate.de",
+      contactId,
+      objectType,
+      plotGiven: Boolean(clean((lead.propertyDetails || {})["seller-plot-area"])),
+    });
+    if (!url && !nachfrage.ohneFragen(objectType)) return { sent: false, skipped: true, reason: "kein Nachfrage-Link" };
+    const mail = nachfrage.bestaetigung({ firstName: lead.firstName, lastName: lead.lastName, link: url });
+    const result = await sendInternalNotification({
+      to: lead.email,
+      replyTo: process.env.WEBSITE_LEAD_EMAIL || "info@fg-realestate.de",
+      ...mail,
+    });
+    return { sent: Boolean(result.sent), skipped: Boolean(result.skipped), reason: result.reason || result.error || "" };
+  } catch (error) {
+    console.error("BEWERTUNG BESTAETIGUNG ERROR:", error);
+    return { sent: false, skipped: false, reason: error.message };
+  }
+}
 
 function normalizeLeadPayload(data) {
   const firstName = clean(data.first_name || data.firstName);
@@ -1335,3 +1372,6 @@ function json(statusCode, body) {
     body: JSON.stringify(body),
   };
 }
+
+// Formulare ohne JavaScript (Update 6, §1): POST als Formular → gleiche Nutzlast, dann Weiterleitung. Siehe _shared/formpost.js.
+exports.handler = require("./_shared/formpost").wrap("propstack-lead", exports.handler, { "website-question": require("./website-question").handler });

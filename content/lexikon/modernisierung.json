@@ -7,11 +7,139 @@
   "keywords": [
     "modernisierung"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Immobilienkauf",
-  "formula": null,
+  "formula": "Modernisierungsumlage pro Jahr = 8 % der Kosten (ohne Erhaltungsanteil)",
   "sources": [],
   "assistantAnswer": "Bauliche Verbesserung über reine Erhaltung hinaus. Modernisierung verbessert den Gebrauchswert, spart nachhaltig Energie/Wasser oder schafft neuen Wohnraum beziehungsweise erfüllt weitere gesetzliche Tatbestände. Sie ist von bloßer Erhaltung/Instandsetzung abzugrenzen, weil dies mietrechtlich und wirtschaftlich unterschiedliche Folgen hat.",
-  "explanation": "Modernisierung verbessert den Gebrauchswert, spart nachhaltig Energie/Wasser oder schafft neuen Wohnraum beziehungsweise erfüllt weitere gesetzliche Tatbestände. Sie ist von bloßer Erhaltung/Instandsetzung abzugrenzen, weil dies mietrechtlich und wirtschaftlich unterschiedliche Folgen hat.",
-  "practiceExample": "Werden 30.000 € für eine Maßnahme ausgegeben, davon 8.000 € als ohnehin erforderliche Erhaltung, ist für eine mögliche Modernisierungsumlage nicht einfach der volle Betrag maßgeblich."
+  "explanation": "Eine Modernisierung verbessert eine Immobilie über die reine Erhaltung hinaus. Das Gesetz nennt unter anderem Maßnahmen, die Endenergie oder Wasser nachhaltig sparen, den Gebrauchswert erhöhen, die Wohnverhältnisse dauerhaft verbessern, die Wohnung erstmals an Glasfaser anschließen oder neuen Wohnraum schaffen; auch bestimmte neue Heizungsanlagen zählen dazu.",
+  "practiceExample": "Angenommen, Sie besitzen eine vermietete Wohnung in Bernau bei Berlin: 65 m², Baujahr 1995, 9 € Kaltmiete je m², also 585 € im Monat und 7.020 € im Jahr. Sie modernisieren für 10.000 €. Im vereinfachten Verfahren ziehen Sie pauschal 30 % für Erhaltung ab, es bleiben 7.000 €. 8 % davon sind 560 € im Jahr, 46,67 € im Monat oder 0,72 €/m². Das liegt unter der Grenze von 3 €/m², die hier gilt, weil die Miete über 7 €/m² liegt. Die Umlage bringt 5,6 % der Kosten im Jahr zurück, vor Steuern und ohne Finanzierungskosten.",
+  "ausbau": {
+    "einordnung": [
+      "Eine Modernisierung verbessert eine Immobilie über die reine Erhaltung hinaus. Das Gesetz nennt unter anderem Maßnahmen, die Endenergie oder Wasser nachhaltig sparen, den Gebrauchswert erhöhen, die Wohnverhältnisse dauerhaft verbessern, die Wohnung erstmals an Glasfaser anschließen oder neuen Wohnraum schaffen; auch bestimmte neue Heizungsanlagen zählen dazu.[[1]]",
+      "Der Vermieter kündigt eine Modernisierung spätestens drei Monate vorher in Textform an, mit der zu erwartenden Mieterhöhung.[[2]] Danach kann er die Jahresmiete um 8 % der Kosten erhöhen, abzüglich der Kosten, die ohnehin für die Erhaltung angefallen wären. In sechs Jahren darf die Miete so um höchstens 3 €/m² steigen, bei Mieten unter 7 €/m² um 2 €/m², für eine neue Heizungsanlage um 0,50 €/m². Bei einer nicht zu rechtfertigenden Härte für den Mieter ist die Erhöhung ausgeschlossen.[[3]]"
+    ],
+    "beispiel": [
+      "Angenommen, Sie besitzen eine vermietete Wohnung in Bernau bei Berlin: 65 m², Baujahr 1995, 9 € Kaltmiete je m², also 585 € im Monat und 7.020 € im Jahr. Sie modernisieren für 10.000 €. Im vereinfachten Verfahren ziehen Sie pauschal 30 % für Erhaltung ab, es bleiben 7.000 €.[[4]] 8 % davon sind 560 € im Jahr, 46,67 € im Monat oder 0,72 €/m².[[3]]",
+      "Das liegt unter der Grenze von 3 €/m², die hier gilt, weil die Miete über 7 €/m² liegt. Die Umlage bringt 5,6 % der Kosten im Jahr zurück, vor Steuern und ohne Finanzierungskosten."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was Sie beachten",
+        "absaetze": [
+          "Nach dem vereinfachten Verfahren sind fünf Jahre lang keine weiteren Umlagen möglich, außer bei gesetzlich vorgeschriebenen Maßnahmen.[[4]] Nach einer Modernisierung in den drei Jahren vor einer Neuvermietung darf die Miete die Mietpreisbremse um den Umlagebetrag übersteigen; die erste Vermietung nach umfassender Modernisierung ist ganz ausgenommen.[[5,6]] Steuerlich ist Erhaltungsaufwand sofort abziehbar; eine Standardhebung oder Arbeiten über der 15-%-Grenze in den ersten drei Jahren werden abgeschrieben.[[7,8]]"
+        ]
+      },
+      {
+        "h2": "Rechnet es sich?",
+        "absaetze": [
+          "Für F&G kommt eine Modernisierung infrage, wenn die Rechnung trägt; Nutzen und Kosten werden vorher gegeneinander gerechnet, vor einer Neuvermietung wirtschaftlich geprüft.[[9,10]] F&G merkt an, dass sich eine Modernisierung seltener rechnet, als viele glauben.[[11]] Weitere Wege zu mehr Miete sind eine Vereinbarung mit dem Mieter, die Erhöhung bis zur Vergleichsmiete, eine Staffel- oder Indexmiete und eine neue Miete beim Mieterwechsel.[[11,12]]"
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "§ 555b BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__555b.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 555c BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__555c.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 559 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__559.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 559c BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__559c.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 556e BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__556e.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 556f BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__556f.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Anschaffungsnahe Herstellungskosten und Erhaltungsaufwendungen",
+        "url": "https://www.finanztip.de/erhaltungsaufwand/",
+        "stand": "Stand 08.07.2026"
+      },
+      {
+        "name": "§ 6 EStG",
+        "url": "https://www.gesetze-im-internet.de/estg/__6.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Betreuung nach dem Kauf",
+        "url": "https://fg-realestate.de/betreuung-nach-dem-kauf/",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Vermieten",
+        "url": "https://fg-realestate.de/vermieten.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Kapitalanlage",
+        "url": "https://fg-realestate.de/kapitalanlage.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 557 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__557.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Modernisierungsmaßnahmen: Endenergie, Heizungsanlage, Wasser, Gebrauchswert, Glasfaser, Wohnverhältnisse, neuer Wohnraum",
+        "fundstelle": "runde-4.md, J20"
+      },
+      {
+        "zahl": "Ankündigung drei Monate, Textform, erwartete Mieterhöhung",
+        "fundstelle": "runde-4.md, J21"
+      },
+      {
+        "zahl": "8 %; Erhaltungsanteil abziehen; 3 €/m², 2 €/m² unter 7 €/m², 0,50 €/m² Heizung, sechs Jahre; Härte",
+        "fundstelle": "runde-4.md, J22"
+      },
+      {
+        "zahl": "vereinfachtes Verfahren bis 10.000 €, 30 %, fünf Jahre, Ausnahme gesetzliche Pflicht",
+        "fundstelle": "runde-4.md, J23"
+      },
+      {
+        "zahl": "Modernisierung in drei Jahren vor Mietbeginn; umfassende Modernisierung ausgenommen",
+        "fundstelle": "runde-4.md, J03, J04"
+      },
+      {
+        "zahl": "Erhaltungsaufwand abziehbar; Standardhebung; 15-%-Grenze",
+        "fundstelle": "runde-3.md, H05, H04"
+      },
+      {
+        "zahl": "F&G: nur, wenn die Rechnung trägt; Nutzen und Kosten; vor Neuvermietung prüfen",
+        "fundstelle": "runde-4.md, J28, J29"
+      },
+      {
+        "zahl": "F&G: drei Wege, Mieterwechsel; rechnet sich seltener als gedacht",
+        "fundstelle": "runde-3.md, C09"
+      },
+      {
+        "zahl": "Vereinbarung, Staffel/Index, §§ 558 bis 560",
+        "fundstelle": "runde-4.md, J17"
+      },
+      {
+        "zahl": "10.000 × 70 % = 7.000 × 8 % = 560 €/Jahr = 46,67 €/Monat / 65 = 0,72 €/m²; 560 / 10.000 = 5,6 %",
+        "fundstelle": "Rechnung, Marktprüfung runde-4.md"
+      }
+    ]
+  }
 }

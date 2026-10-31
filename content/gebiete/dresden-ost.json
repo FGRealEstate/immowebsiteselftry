@@ -1,0 +1,426 @@
+{
+  "slug": "dresden/ost",
+  "name": "Dresden-Ost",
+  "nameLang": "Dresden-Ost",
+  "inOrt": "in Dresden-Ost",
+  "fuerOrt": "Dresden-Ost",
+  "typ": "marktgebiet",
+  "kreis": {
+    "name": "Dresden",
+    "url": "/standorte/dresden/"
+  },
+  "orte": [
+    "Laubegast",
+    "Tolkewitz/Seidnitz-Nord",
+    "Kleinzschachwitz",
+    "Meußlitz",
+    "Zschieren"
+  ],
+  "kontakt": "timon",
+  "title": "Immobilienmakler Dresden-Ost – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler in Dresden-Ost: Wohnung oder Haus verkaufen, kaufen und finanzieren in Laubegast, Tolkewitz, Kleinzschachwitz, Meußlitz und Zschieren.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Dresden-Ost",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Dresden-Ost beim Verkauf, beim Kauf und bei der Finanzierung, von den Siedlungen und Wohnparks in Laubegast über Tolkewitz bis zu den Villen und Eigenheimen in Kleinzschachwitz, Meußlitz und Zschieren. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Dresden ist Timon Fischer Ihr Ansprechpartner, Geschäftsführer und verantwortlich für die Immobilienfinanzierung.",
+  "hero": {
+    "name": "dresden-ost-laubegast-elbe",
+    "alt": "Elbe bei Dresden-Laubegast mit Fähre und Blick auf das Ufer von Niederpoyritz",
+    "credit": "Christoph Freitag, CC BY 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Dresden_an_der_Elbe_in_Laubegast_(25680223844).jpg",
+    "position": "50% 50%"
+  },
+  "stand": "Oktober 2026",
+  "updated": "2026-10-27",
+  "zahlen": [
+    {
+      "wert": "2.370 €/m²",
+      "label": "Median für Eigentumswohnungen der Baujahre 1990 bis 2023, Gemarkung Laubegast",
+      "detail": "50 Weiterverkäufe, Spanne 1.170 bis 3.690 €/m², Mittelwert 2.420 €/m². Die Gemarkung liegt ganz im Stadtteil Laubegast. Wohnungen mit Baujahr bis 1989 oder saniert bis 2023 kosteten dort 2.430 €/m² (18 Verkäufe), in der Gemarkung Tolkewitz 2.710 €/m² (23 Verkäufe). Alle weiterverkauften Wohnungen in Dresden: im Mittel rund 2.705 €/m².",
+      "quelle": "Grundstücksmarktbericht Dresden 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/2026-Grundstuecksmarktbericht.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "190 bis 880 €/m²",
+      "label": "Bodenrichtwerte in den Wohngebieten",
+      "detail": "Laubegast 190 bis 620 €/m², Tolkewitz/Seidnitz-Nord 310 bis 880, Kleinzschachwitz 200 bis 570 €/m². In rund zwei Dritteln von Laubegast gelten 520 €/m² für Grundstücke von Mehrfamilienhäusern. In Kleinzschachwitz gelten 11 der 15 Zonen für Grundstücke von Einfamilienhäusern, mit 230 bis 570 €/m². Die Werte gelten für unterschiedliche Bebauungen und sind zwischen den Zonen nicht direkt vergleichbar.",
+      "quelle": "Bodenrichtwerte BORIS Sachsen, eigene Auswertung",
+      "url": "https://www.boris.sachsen.de/",
+      "stichtag": "01.01.2026"
+    },
+    {
+      "wert": "31.397",
+      "label": "Einwohner in den drei Stadtteilen des Marktgebiets",
+      "detail": "Laubegast 11.857, Tolkewitz/Seidnitz-Nord 11.224, Kleinzschachwitz 8.316. In Kleinzschachwitz lebten 2024 47 % mehr Menschen als 1990, in Tolkewitz/Seidnitz-Nord 8 % weniger. Das Durchschnittsalter 2024 reicht von 45,9 bis 49,5 Jahren, in ganz Dresden 43,5 Jahre.",
+      "quelle": "Landeshauptstadt Dresden, Opendata und Stadtteilkatalog 2024",
+      "url": "https://opendata.dresden.de/",
+      "stichtag": "31.12.2025"
+    },
+    {
+      "wert": "77 %",
+      "label": "Anteil der Wohngebäude mit einer oder zwei Wohnungen in Kleinzschachwitz",
+      "detail": "In Laubegast sind es 43 %, in Tolkewitz/Seidnitz-Nord 19 %, in ganz Dresden 54 %. Die Wohnungen in Kleinzschachwitz sind im Mittel 88,7 m² groß, in ganz Dresden 70,5 m²; 44 % entstanden ab 1991.",
+      "quelle": "Stadtteilkatalog Dresden 2024",
+      "url": "https://www.dresden.de/media/pdf/onlineshop/statistikstelle/120_080_010_Stadtteilkatalog_2024.pdf",
+      "stichtag": "2024"
+    },
+    {
+      "wert": "8,57 bis 9,71 €/m²",
+      "label": "Durchschnittliche Angebotsmieten nach Stadtteil",
+      "detail": "Kleinzschachwitz 9,71 €/m², Laubegast 8,87, Tolkewitz/Seidnitz-Nord 8,57 €/m²; in ganz Dresden 9,37 €/m². Angebotsmieten aus Anzeigen sind keine ortsübliche Vergleichsmiete.",
+      "quelle": "Stadtteilkatalog Dresden 2024",
+      "url": "https://www.dresden.de/media/pdf/onlineshop/statistikstelle/120_080_010_Stadtteilkatalog_2024.pdf",
+      "stichtag": "2024"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Laubegast: Zeilendorf an der Elbe, Siedlungen und Wohnparks",
+      "absaetze": [
+        "Laubegast wurde 1408 erstmals erwähnt und entstand als Zeilendorf entlang der Elbe; nach der Mitte des 17. Jahrhunderts wurde es als „Zwirnerdorf“ bekannt.[[7]] Der alte Dorfkern zwischen Laubegaster Ufer und Österreicher Straße steht seit 1993 unter einer Erhaltungssatzung.[[12]] Nach der Eingemeindung 1921 wurde Laubegast zum Wohnvorort: Es entstanden das Villacher Viertel, die Reihenhäuser an der Troppauer Straße und die Bebauung um den Kirchplatz; nach 1992 kamen die Wohnparks „Solitude“ und „Lindenpark“ hinzu.[[7]] Für die Wohnanlage Kirchplatz/Burgenlandstraße gilt seit 2003 eine eigene Erhaltungssatzung.[[13]] Im Stadtteil, zu dem statistisch auch Alt-Tolkewitz gehört, leben 11.857 Menschen.[[4,6]] 36 % der Wohnungen entstanden ab 1991, 31 % zwischen 1919 und 1945; 43 % der Wohngebäude haben eine oder zwei Wohnungen.[[5]] Vom Kronstädter Platz sind Sie mit dem Bus 86 und ab Dobritz mit der S1 in 27 Minuten am Hauptbahnhof.[[24]]",
+        "In der Gemarkung Laubegast, die ganz im Stadtteil liegt, wurden 2025 50 Eigentumswohnungen der Baujahre 1990 bis 2023 weiterverkauft, im Median für 2.370 €/m²; ältere Wohnungen erzielten 2.430 €/m².[[1,6]] Die Bodenrichtwerte reichen von 190 bis 620 €/m²; in rund zwei Dritteln des Stadtteils gelten 520 €/m² für Mehrfamilienhausgrundstücke, so viel wie 2024.[[3]] Den Leerstand schätzt die Stadt auf 6,2 %.[[5]]"
+      ],
+      "bild": {
+        "name": "dresden-ost-bibliothek-laubegast",
+        "alt": "Zweigeschossiges Gebäude der Bibliothek Laubegast, die Giebelseite mit aufgemalten Buchrücken, blauer Himmel mit einer Wolke",
+        "caption": "Die Stadtteilbibliothek in Laubegast.",
+        "credit": "Erfurth, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Städtische_Bibliotheken_Dresden_-_Bibliothek_Laubegast.jpg"
+      }
+    },
+    {
+      "h2": "Hochwasser: Laubegast, Zschieren und der Schutz an der Elbe",
+      "absaetze": [
+        "Im August 2002 war Laubegast zwischen der Elbe und dem überfluteten Alten Elbarm eine Insel; daran erinnert seit 2003 das Inselfest.[[7]] Im Juni 2013 überfluteten Elbe und Grundwasser den Stadtteil erneut.[[15]] In Altzschieren, nur einen Meter über dem Elbspiegel, standen 2002 alle Häuser im alten Dorfkern meterhoch unter Wasser.[[11]] Für Laubegast plant die Stadt eine Schutzanlage gegen ein hundertjährliches Hochwasser im Altelbarm, also 924 cm am Pegel Dresden: eine Wand östlich der Leubener Straße, westlich davon einen etwa 1,20 m hohen Deich und mobile Verschlüsse. Baurecht besteht seit Januar 2023; den Baubeginn kann die Stadt laut eigener Angabe (Stand März 2025) erst planen, wenn der Fördermittelbescheid vorliegt.[[14]] Für den Schutz an der Stromelbe stellte die Landestalsperrenverwaltung im Januar 2026 Zwischenergebnisse einer Machbarkeitsstudie vor.[[15]] In Meußlitz und Kleinzschachwitz verzichtete der Stadtrat 2012 auf Schutzanlagen, wegen eines unwirtschaftlichen Kosten-Nutzen-Verhältnisses.[[16]]",
+        "Im festgesetzten Überschwemmungsgebiet der Elbe sind nach dem Wasserhaushaltsgesetz unter anderem neue bauliche Anlagen und Erweiterungen untersagt; eine Ausnahme muss vorher genehmigt werden. Flächen hinter öffentlichen Schutzanlagen, die für ein hundertjährliches Hochwasser gebaut sind, gehören nicht dazu.[[17]] Ob ein Grundstück betroffen ist, zeigt der Themenstadtplan der Stadt; das prüfen wir mit Ihnen vor dem Verkauf oder Kauf.[[18]]"
+      ],
+      "bild": {
+        "name": "dresden-ost-elbtal-laubegast",
+        "alt": "Die Elbwiesen bei Laubegast, auf der Elbe ein Raddampfer, gegenüber die bewaldeten Elbhänge mit Häusern",
+        "caption": "Die Elbe bei Laubegast.",
+        "credit": "Bybbisch94, CC BY 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:20240509.Elbtal.Laubegast-Blasewitz.-028.2.jpg"
+      }
+    },
+    {
+      "h2": "Tolkewitz: Genossenschafts­siedlungen und Neubaugebiete",
+      "absaetze": [
+        "Als Dresden nach 1871 ins Umland wuchs, entstanden in Tolkewitz der Johannisfriedhof, das zweite Dresdner Wasserwerk und ein Straßenbahnhof; 1912 wurde der Ort eingemeindet. Bis Mitte der 1920er Jahre stieg die Einwohnerzahl gegenüber 1871 auf fast das Zehnfache, zwei Wohnungsbaugenossenschaften bauten Siedlungen. Nach 1960 entstand ein Neubaugebiet an der Knappestraße, Anfang der 1980er Jahre eines an der Löwenhainer Straße, nach 1990 setzte reger Haus- und Wohnungsbau ein. Der Teil im Stadtbezirk Leuben heißt Alttolkewitz; dort ist der dörfliche Charakter noch erkennbar.[[8]] Statistisch gehört er zu Laubegast, der übrige Teil bildet mit Seidnitz-Nord einen Stadtteil im Stadtbezirk Blasewitz, mit 11.224 Einwohnern.[[6,4]] Dort haben 64 % der Wohngebäude sieben oder mehr Wohnungen und 43 % der Wohnungen entstanden zwischen 1946 und 1990. Den Leerstand schätzt die Stadt auf 4,1 %, 2010 waren es 19,1 %.[[5]] Von der Hepkestraße sind Sie mit dem Bus 65 und ab Reick mit der S2 in 16 Minuten am Hauptbahnhof, vom Wasserwerk Tolkewitz mit den Linien 9 und 8 in 24 Minuten.[[24]]",
+        "In der Gemarkung Tolkewitz, die zu 84 % im Stadtteil liegt, kosteten ältere Eigentumswohnungen 2025 im Median 2.710 €/m², bei 23 Verkäufen; Wohnungen der Baujahre 1990 bis 2023 erzielten 2.405 €/m².[[1,6]] Die Bodenrichtwerte reichen von 310 bis 880 €/m²; 7 der 9 Zonen lagen höher als 2024. In den drei größten Zonen gelten für Mehrfamilienhausgrundstücke 360, 600 und 480 €/m².[[3]] Die angebotenen Mieten lagen 2024 bei 8,57 €/m².[[5]]"
+      ],
+      "bild": {
+        "name": "dresden-ost-lewickistrasse",
+        "alt": "Gelbes viergeschossiges Mietshaus mit Balkonen und Zwerchgiebel an einer Straßenecke in Tolkewitz, davor ein großer Baum und parkende Autos",
+        "caption": "Mietshaus von 1912 an der Lewickistraße in Tolkewitz.",
+        "credit": "Jörg Blobelt, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:20130712180DR_Dresden-Tolkewitz_Lewickistraße_1.jpg"
+      }
+    },
+    {
+      "h2": "Kleinzschachwitz, Meußlitz und Zschieren: Villen und Eigenheime",
+      "absaetze": [
+        "Kleinzschachwitz wurde 1310 erstmals erwähnt. 1797 kaufte Fürst Putjatin hier ein Bauerngut und baute seinen Sommersitz, das „Storchennest“, das heute bewohnt ist. In der zweiten Hälfte des 19. Jahrhunderts bauten wohlhabende Dresdner Sommerhäuser am Elbufer und im Wald; nach dem Bau des Kurhauses 1892 wollte die Gemeinde den Ort zum Villen- und Luftkurort ausbauen. Etwa 70 Gebäude stehen heute auf der Liste der Kulturdenkmale. Nach der Eingemeindung 1921 wurde lange wenig gebaut, erst nach der deutschen Einheit wieder mehr.[[9]] In Meußlitz entstanden Ende des 19. Jahrhunderts Siedlungen in offener Bauweise und erste Eigenheime,[[10]] Neuzschieren wurde zur gleichen Zeit Villenstandort.[[11]] Im Stadtteil leben 8.316 Menschen.[[4]] 77 % der Wohngebäude haben eine oder zwei Wohnungen, die Wohnungen sind im Mittel 88,7 m² groß und 44 % entstanden ab 1991; 2024 wurden 34 Wohnungen fertig.[[5]] Von der Freystraße fährt die Linie 2 zum Straßburger Platz; mit Umstieg in die 10 sind Sie in 32 Minuten am Hauptbahnhof.[[24]]",
+        "In der Gemarkung Kleinzschachwitz, die zu 92 % im Stadtteil liegt, wurden 2025 14 Wohnungen der Baujahre 1990 bis 2023 verkauft, im Median für 2.550 €/m²; in Meußlitz waren es zehn zu 2.345 €/m², in Zschieren fünf zu 2.295 €/m².[[1,6]] Die Bodenrichtwerte reichen von 200 bis 570 €/m²; in der größten Zone gelten 320 €/m² für ein 1.000 m² großes Einfamilienhausgrundstück.[[3]] Die angebotenen Mieten lagen 2024 bei 9,71 €/m², den Leerstand schätzt die Stadt auf 9,5 %.[[5]]"
+      ],
+      "bild": {
+        "name": "dresden-ost-putjatin-storchennest",
+        "alt": "Landhaus Storchennest mit Garten an der Putjatinstraße in Dresden-Kleinzschachwitz",
+        "caption": "Landhaus „Storchennest“ an der Putjatinstraße in Kleinzschachwitz.",
+        "credit": "Jörg Blobelt, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:20140506040DR_Dresden-Kleinzschachwitz_Putjatin-Villa_Storchennest.jpg",
+        "position": "50% 50%"
+      }
+    }
+  ],
+  "band": {
+    "name": "dresden-ost-pillnitz-wasseransicht",
+    "alt": "Schloss Pillnitz mit Wasserpalais und Freitreppe am Elbufer, dahinter bewaldete Hänge, im Vordergrund die Elbe",
+    "caption": "Blick von Kleinzschachwitz über die Elbe auf Schloss Pillnitz.",
+    "credit": "Kolossos, CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Pillnitz-Wasseransicht.jpg"
+  },
+  "verkaufen": {
+    "h2": "Immobilie in Dresden-Ost verkaufen",
+    "absaetze": [
+      "In der Gemarkung Laubegast wurden 2025 50 Eigentumswohnungen der Baujahre 1990 bis 2023 weiterverkauft, im Median für 2.370 €/m², bei einer Spanne von 1.170 bis 3.690 €/m²; ältere Wohnungen erzielten in der Gemarkung Tolkewitz 2.710 €/m², bei 23 Verkäufen.[[1]] In ganz Dresden lag der Median weiterverkaufter Wohnungen im 1. Halbjahr 2026 bei 2.660 €/m², nach 2.550 €/m² ein Jahr zuvor.[[2]] Wir bewerten Ihre Wohnung deshalb nach Gemarkung, Bodenrichtwertzone, Baujahr, Vermietungsstand und Vergleichsverkäufen.",
+      "Für Häuser veröffentlicht der Gutachterausschuss keine Preise je Stadtteil. In ganz Dresden kosteten freistehende Einfamilienhäuser ab Baujahr 1992 im Jahr 2025 im Mittel 4.470 €/m² Wohnfläche, Doppelhaushälften 4.095 €/m².[[1]] Den Wert Ihres Hauses ermitteln wir aus Grundstück, Bodenrichtwert, Baujahr und Zustand. In den Dorfkernen von Laubegast, Tolkewitz und Zschieren und in der Wohnanlage Kirchplatz/Burgenlandstraße brauchen Abbruch oder Rückbau, Änderung, Nutzungsänderung und Neubau eine Genehmigung der Stadt.[[12,13]] Ob Ihr Grundstück im festgesetzten Überschwemmungsgebiet der Elbe liegt, prüfen wir vor dem Verkauf.[[18]]"
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Dresden-Ost",
+    "absaetze": [
+      "Als Eigennutzer finden Sie in Dresden-Ost viele Häuser: In Kleinzschachwitz haben 77 % der Wohngebäude eine oder zwei Wohnungen, in Laubegast 43 %.[[5]] Bauland für Einfamilienhäuser kostete 2025 in Dresden im Mittel 360 €/m², nach 320 €/m² im Jahr davor.[[1]] Die Bodenrichtwerte für Einfamilienhausgrundstücke reichen in Kleinzschachwitz von 230 bis 570 €/m².[[3]] In den fünf Gemarkungen wurden 2025 nur fünf neue Eigentumswohnungen verkauft, drei davon in Zschieren zu 4.645 bis 4.940 €/m².[[1]] Prüfen Sie vor dem Kauf an der Elbe, ob das Grundstück im festgesetzten Überschwemmungsgebiet liegt; dort sind Neubau und Erweiterung grundsätzlich untersagt.[[17,18]]",
+      "Als Kapitalanleger rechnen Sie mit dem Dresdner Mietspiegel 2025, der für die ganze Stadt gilt: Die Basismiete für 60 m² beträgt 7,07 €/m², die Wohnlage wird adressgenau mit 0,98 bis 1,03 gewichtet.[[19,20]] Die Mietpreisbremse gilt bis zum 30.06.2027: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[21]] Bestandsmieten dürfen in drei Jahren um höchstens 15 % steigen.[[22]] Den Leerstand schätzt die Stadt in den drei Stadtteilen auf 4,1 bis 9,5 %.[[5]] Aus Kaufpreis, Miete, Bewirtschaftungskosten und den Auflagen vor Ort rechnen wir mit Ihnen die Rendite, bevor Sie kaufen."
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Dresden-Ost",
+    "absaetze": [
+      "Weiterverkaufte Eigentumswohnungen kosteten 2025 in den Gemarkungen von Dresden-Ost im Median 2.295 bis 2.710 €/m² Wohnfläche; freistehende Einfamilienhäuser ab Baujahr 1992 in ganz Dresden im Mittel rund 585.000 €.[[1]] Dazu kommen die Kaufnebenkosten, in Sachsen unter anderem 5,5 % Grunderwerbsteuer.[[23]] Wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen: Timon Fischer rechnet das mit Ihnen durch, vergleicht Ihre Finanzierung über Europace und Baufinex und fragt parallel Banken direkt an."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Was kostet eine Wohnung in Laubegast?",
+      "antwort": "Der Gutachterausschuss weist Eigentumswohnungen nach Gemarkungen aus; die Gemarkung Laubegast liegt ganz im gleichnamigen Stadtteil.[[6]] 2025 wurden dort 50 Wohnungen der Baujahre 1990 bis 2023 weiterverkauft, im Median für 2.370 €/m², bei einer Spanne von 1.170 bis 3.690 €/m²; 18 ältere Wohnungen kosteten im Median 2.430 €/m².[[1]] Für Ihre Wohnung zählen Baujahr, Zustand, Lage und ob sie vermietet ist.",
+      "herkunft": "Google-Autocomplete „dresden laubegast wohnung kaufen“ und „immobilienpreise dresden laubegast“ (research/serp/autocomplete-2026-10-27-dresden-ost.json) sowie „wohnung kaufen dresden laubegast“ (research/serp/autocomplete-2026-10-27-dresden.json)"
+    },
+    {
+      "frage": "Was kostet eine Wohnung in Tolkewitz?",
+      "antwort": "Die Gemarkung Tolkewitz liegt zu 84 % im Stadtteil Tolkewitz/Seidnitz-Nord und zu 14 % in Laubegast.[[6]] 2025 kosteten dort ältere Wohnungen im Median 2.710 €/m², bei 23 Verkäufen; 15 Wohnungen der Baujahre 1990 bis 2023 erzielten 2.405 €/m², bei einer Spanne von 1.890 bis 5.090 €/m². Neue Wohnungen wurden in der Gemarkung 2025 nicht verkauft.[[1]]",
+      "herkunft": "Google-Autocomplete „wohnung kaufen dresden tolkewitz“ (research/serp/autocomplete-2026-10-27-dresden.json)"
+    },
+    {
+      "frage": "Was kostet ein Haus in Kleinzschachwitz oder Laubegast?",
+      "antwort": "Hauspreise je Stadtteil veröffentlicht der Gutachterausschuss nicht. In ganz Dresden kosteten freistehende Einfamilienhäuser ab Baujahr 1992 im Jahr 2025 im Mittel 4.470 €/m² Wohnfläche, rund 585.000 €; Doppelhaushälften 4.095 €/m², Reihenmittelhäuser 3.660 €/m².[[1]] Für Einfamilienhausgrundstücke gelten in Kleinzschachwitz Bodenrichtwerte von 230 bis 570 €/m², in Laubegast von 280 bis 500 €/m² und in Tolkewitz/Seidnitz-Nord 390 und 420 €/m².[[3]]",
+      "herkunft": "Google-Autocomplete „dresden kleinzschachwitz haus kaufen“, „haus kaufen in dresden kleinzschachwitz meußlitz“, „haus kaufen dresden laubegast“ und „dresden tolkewitz einfamilienhaus kaufen“ (research/serp/autocomplete-2026-10-27-dresden-ost.json) sowie „immobilien kleinzschachwitz“ (research/serp/autocomplete-2026-10-27-dresden.json)"
+    },
+    {
+      "frage": "Wie hoch ist der Bodenrichtwert in Laubegast?",
+      "antwort": "Zum 01.01.2026 reichen die Bodenrichtwerte in Laubegast von 190 bis 620 €/m². In rund zwei Dritteln des Stadtteils gelten 520 €/m² für Mehrfamilienhausgrundstücke mit einer Geschossflächenzahl von 1, für Einfamilienhausgrundstücke 280 bis 500 €/m². 4 der 12 Zonen lagen höher als 2024, die übrigen gleich hoch. Die Werte beziehen sich auf eine bestimmte Bebauung und sind zwischen Zonen nicht direkt vergleichbar.[[3]]",
+      "herkunft": "Google-Autocomplete „bodenrichtwert dresden laubegast“ (research/serp/autocomplete-2026-10-27-dresden-ost.json)"
+    },
+    {
+      "frage": "Wie ist Laubegast vor Hochwasser geschützt?",
+      "antwort": "Für den Altelbarm hat die Stadt seit 2021 eine Genehmigung und seit Januar 2023 Baurecht für eine Schutzwand östlich der Leubener Straße und einen etwa 1,20 m hohen Deich westlich davon, ausgelegt auf ein hundertjährliches Hochwasser mit 924 cm am Pegel Dresden. Laut Stadt (Stand März 2025) liegt der Fördermittelbescheid noch nicht vor; erst dann kann der Baubeginn geplant werden. Bis dahin wird die Leubener Straße bei Hochwasser mit Sandsäcken gesichert.[[14]] Für die Stromelbe stellte die Landestalsperrenverwaltung im Januar 2026 Zwischenergebnisse einer Machbarkeitsstudie vor.[[15]] Überflutet wurde Laubegast im August 2002 und im Juni 2013.[[7,15]]",
+      "herkunft": "Google-Autocomplete „laubegast hochwasser“, „dresden laubegast hochwasser“ und „hochwasser laubegast 2002“ (research/serp/autocomplete-2026-10-27-dresden-ost.json)"
+    },
+    {
+      "frage": "Was gilt im Überschwemmungsgebiet der Elbe in Dresden?",
+      "antwort": "Das Überschwemmungsgebiet der Elbe wurde am 1. Oktober 2018 für ein hundertjährliches Hochwasser festgesetzt und im Januar 2019 geändert. Dort sind nach dem Wasserhaushaltsgesetz unter anderem die Errichtung und Erweiterung baulicher Anlagen untersagt; eine Ausnahme müssen Sie rechtzeitig vorher beantragen. Flächen hinter öffentlichen Schutzanlagen, die für ein solches Hochwasser gebaut sind, gehören nicht dazu.[[17]] Ob Ihr Grundstück betroffen ist, zeigt die Karte im Themenstadtplan der Stadt.[[18]]",
+      "herkunft": "Google-Autocomplete „überschwemmungsgebiet dresden“ und „überschwemmungsgebiete dresden karte“ (research/serp/autocomplete-2026-10-27-dresden-ost.json)"
+    },
+    {
+      "frage": "Welcher Mietspiegel gilt in Laubegast?",
+      "antwort": "Dresden hat einen Mietspiegel für die ganze Stadt, ohne Zu- oder Abschläge je Stadtteil. Er gilt vom 01.01.2025 bis zum 31.12.2026; ab 2027 gibt es einen neuen. Die Wohnlage wird adressgenau als einfach, mittel oder gut eingestuft und mit 0,98, 1,00 oder 1,03 gewichtet.[[19]] Ihre Adresse prüfen Sie im Online-Mietspiegel der Stadt.[[20]]",
+      "herkunft": "Google-Autocomplete „mietspiegel dresden laubegast“ (research/serp/autocomplete-2026-10-27-dresden-themen.json)"
+    },
+    {
+      "frage": "Wie hoch ist die Maklerprovision in Dresden?",
+      "antwort": "Kauft ein Verbraucher eine Wohnung oder ein Einfamilienhaus, teilen sich Käufer und Verkäufer die Provision zu gleichen Teilen (§§ 656a bis 656d BGB); das gilt bundesweit, also auch in Sachsen. Bei Fischer & Geserich sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision. Bei Mehrfamilienhäusern und Grundstücken gilt die Teilung nicht. Die Provision fällt nur an, wenn der Kaufvertrag zustande kommt.",
+      "herkunft": "Google-Autocomplete „maklerprovision dresden“ (research/serp/autocomplete-2026-10-27-dresden-themen.json). Antwort nach /maklerprovision/ und /kaufen/ (Stand 26.10.2026)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Dresden-Zentrum",
+      "url": "/standorte/dresden/zentrum/"
+    },
+    {
+      "name": "Dresden-Süd",
+      "url": "/standorte/dresden/sued/"
+    },
+    {
+      "name": "Dresden-Nord",
+      "url": "/standorte/dresden/nord/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Landeshauptstadt Dresden, Grundstücksmarktbericht 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/2026-Grundstuecksmarktbericht.pdf",
+      "stand": "Kaufverträge 2025, Vorwort vom 16.04.2026"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Landeshauptstadt Dresden, Halbjahresbericht 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/Halbjahresbericht_2026.pdf",
+      "stand": "1. Halbjahr 2026, veröffentlicht 31.08.2026"
+    },
+    {
+      "name": "Bodenrichtwerte, BORIS Sachsen (Stichtag 01.01.2026) und Themenstadtplan Dresden (Stichtag 01.01.2024), eigene Zuordnung zu den Stadtteilen",
+      "url": "https://www.boris.sachsen.de/",
+      "stand": "Stichtag 01.01.2026, Vergleich mit 01.01.2024"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Opendata: Einwohner mit Hauptwohnung nach Stadtteilen",
+      "url": "https://opendata.dresden.de/",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Kommunale Statistikstelle, Stadtteilkatalog 2024",
+      "url": "https://www.dresden.de/media/pdf/onlineshop/statistikstelle/120_080_010_Stadtteilkatalog_2024.pdf",
+      "stand": "Werte 2024"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Geodaten der Gemarkungen und statistischen Stadtteile (WFS), eigene Verschneidung der Flächen",
+      "url": "https://opendata.dresden.de/",
+      "stand": "abgerufen 27.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Stadtbezirksamt Leuben, Geschichte: Laubegast",
+      "url": "https://www.dresden.de/de/rathaus/stadtbezirksaemter/leuben/geschichte/c_02.php",
+      "stand": "letzte Änderung 06.05.2015, abgerufen 27.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Stadtbezirksamt Leuben, Geschichte: Tolkewitz",
+      "url": "https://www.dresden.de/de/rathaus/stadtbezirksaemter/leuben/geschichte/132010100000168853.php",
+      "stand": "letzte Änderung 06.05.2015, abgerufen 27.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Stadtbezirksamt Leuben, Geschichte: Kleinzschachwitz",
+      "url": "https://www.dresden.de/de/rathaus/stadtbezirksaemter/leuben/geschichte/c_03.php",
+      "stand": "letzte Änderung 06.05.2015, abgerufen 27.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Stadtbezirksamt Leuben, Geschichte: Meußlitz",
+      "url": "https://www.dresden.de/de/rathaus/stadtbezirksaemter/leuben/geschichte/132010100000168855.php",
+      "stand": "letzte Änderung 06.05.2015, abgerufen 27.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Stadtbezirksamt Leuben, Geschichte: Zschieren",
+      "url": "https://www.dresden.de/de/rathaus/stadtbezirksaemter/leuben/geschichte/132010100000168857.php",
+      "stand": "letzte Änderung 06.05.2015, abgerufen 27.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Erhaltungssatzung für historische Dorfkerne im Stadtgebiet von Dresden (H-01), Satzung vom 4. Juni 1992",
+      "url": "https://www.dresden.de/media/pdf/satzungen/satzung_erhalt_hist_dorfkerne.pdf",
+      "stand": "veröffentlicht im Dresdner Amtsblatt Nr. 14/93 vom 08.04.1993"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Erhaltungssatzung H-34 für Dresden-Laubegast, Wohnanlage Kirchplatz/Burgenlandstraße, Satzung vom 5. Juni 2003",
+      "url": "https://www.dresden.de/media/pdf/satzungen/satzung_erhalt_kirchplatz_burgenlandstrasse.pdf",
+      "stand": "veröffentlicht im Dresdner Amtsblatt Nr. 39/03 vom 25.09.2003"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Umweltamt, Hochwasserschutz in Laubegast Altelbarm – Maßnahme M30",
+      "url": "https://www.dresden.de/de/stadtraum/umwelt/umwelt/hochwasser/oeffentlich/hochwasserschutz-zwischen-zschieren-und-tolkewitz/hochwasserschutz-laubegast-altelbarm-m30.php",
+      "stand": "Stand März 2025, abgerufen 27.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Umweltamt, Hochwasserschutz in Laubegast Stromelbe – Maßnahme Z1",
+      "url": "https://www.dresden.de/de/stadtraum/umwelt/umwelt/hochwasser/oeffentlich/hochwasserschutz-zwischen-zschieren-und-tolkewitz/hochwasserschutz-laubegast-stromelbe-z1.php",
+      "stand": "letzte Änderung 04.02.2026, abgerufen 27.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Umweltamt, Hochwasserschutz in Meußlitz/Kleinzschachwitz – Maßnahmen M18 und M24",
+      "url": "https://www.dresden.de/de/stadtraum/umwelt/umwelt/hochwasser/oeffentlich/hochwasserschutz-zwischen-zschieren-und-tolkewitz/hochwasserschutz-meusslitz-kleinzschachwitz-m18-m24.php",
+      "stand": "letzte Änderung 09.07.2021, abgerufen 27.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Umweltatlas Karte 4.16.1: Überschwemmungsgebiet der Elbe in Dresden für ein 100-jährliches Hochwasserereignis",
+      "url": "https://www.dresden.de/media/pdf/umwelt/ua_4_16_1_text.pdf",
+      "stand": "6. überarbeitete Ausgabe 2019, Überschwemmungsgebiet festgesetzt 01.10.2018, geändert 21.01.2019"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Umweltamt, Festgesetzte Überschwemmungsgebiete und überschwemmungsgefährdete Gebiete (Themenstadtplan)",
+      "url": "https://www.dresden.de/de/stadtraum/umwelt/umwelt/hochwasser/oeffentlich/Ueberschwemmungsgebiete.php",
+      "stand": "letzte Änderung 18.08.2023, abgerufen 27.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Dresdner Mietspiegel 2025",
+      "url": "https://www.dresden.de/media/pdf/sozialamt/Mietspiegel_Dresden_2025.pdf",
+      "stand": "gültig 01.01.2025 bis 31.12.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Mietspiegel (Online-Mietspiegel und Wohnlagekarte)",
+      "url": "https://www.dresden.de/de/leben/wohnen/wohnungsmarkt/mietspiegel.php",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Freistaat Sachsen, Mietpreisbremse gemäß § 556d BGB",
+      "url": "https://www.bauen-wohnen.sachsen.de/mietpreisbremse-gemaess-556d-bgb-4391.html",
+      "stand": "verlängert bis 30.06.2027, abgerufen 26.10.2026"
+    },
+    {
+      "name": "Medienservice Sachsen, Kappungsgrenze für Dresden und Leipzig verlängert",
+      "url": "https://www.medienservice.sachsen.de/medien/news/1087981",
+      "stand": "10.06.2025, gültig bis 30.06.2027"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Stadt Leipzig, Grundstücksmarktbericht 2026, S. 32 (Grunderwerbsteuer in Sachsen)",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stand": "2026"
+    },
+    {
+      "name": "Elektronische Fahrplanauskunft (Sollfahrplan Straßenbahn, Bus, S-Bahn und Regionalverkehr), Verbindungen bis Dresden Hauptbahnhof",
+      "url": "https://www.efa-bw.de/bvb3/XSLT_TRIP_REQUEST2?language=de",
+      "stand": "Fahrplan Dienstag 10.11.2026 ab 9 Uhr, abgefragt 26. und 27.10.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "Einwohner 31.12.2025: Laubegast 11.857, Tolkewitz/Seidnitz-Nord 11.224 (Stadtbezirk Blasewitz), Kleinzschachwitz 8.316, Summe 31.397; Stadtteilnamen „Laubegast mit Alt-Tolkewitz“, „Kleinzschachwitz mit Meußlitz und Zschieren“",
+      "fundstelle": "dresden-ost.md Nr. 1–2; D4; ew2025.csv; st188.json"
+    },
+    {
+      "zahl": "STK 2024: EW 1990→2024 Kleinzschachwitz 5.617→8.280 (+47,4 %), Tolkewitz/Seidnitz-Nord 12.301→11.352 (−7,7 %); Ø Alter 45,9–49,5, Stadt 43,5",
+      "fundstelle": "dresden-ost.md Nr. 3–4; stk.json"
+    },
+    {
+      "zahl": "Bestand: Eigenheime (1–2 Wohnungen) Kleinzschachwitz 77,4 %, Laubegast 42,8 %, Tolkewitz/Seidnitz-Nord 18,8 %, Stadt 54,2 %; große Wohngebäude Tolkewitz/Seidnitz-Nord 63,7 %; Ø Wohnfläche Kleinzschachwitz 88,7, Stadt 70,5 m²; ab 1991 Kleinzschachwitz 44,3, Laubegast 36,2 %; 1919–45 Laubegast 31,3 %; 1946–90 Tolkewitz/Seidnitz-Nord 42,5 %; Fertigstellungen 2024 Kleinzschachwitz 34",
+      "fundstelle": "dresden-ost.md Nr. 7–9, 12; D24–D26"
+    },
+    {
+      "zahl": "Angebotsmiete 2024: Kleinzschachwitz 9,71, Laubegast 8,87, Tolkewitz/Seidnitz-Nord 8,57, Stadt 9,37; Leerstand 2024 Laubegast 6,2, Tolkewitz/Seidnitz-Nord 4,1 (2010: 19,1), Kleinzschachwitz 9,5",
+      "fundstelle": "dresden-ost.md Nr. 10–11; D24–D26"
+    },
+    {
+      "zahl": "GMB Gemarkung Laubegast: WV 1990–2023 50 / 1.170–3.690 / Median 2.370 / Ø 2.420; WV bis 1989 18 / 2.430; Tolkewitz: WV 1990–2023 15 / 1.890–5.090 / 2.405; WV bis 1989 23 / 2.710; Kleinzschachwitz: WV 1990–2023 14 / 2.550; Meußlitz 10 / 2.345; Zschieren 5 / 2.295, Neubau 3 / 4.645–4.940; Neubau gesamt 1 + 0 + 1 + 0 + 3 = 5",
+      "fundstelle": "dresden-ost.md Nr. 14–18; gmb_gem.txt Z. 105–107, 127–129, 157–159, 268–270, 315–317; GMB S. 51, 52, 54, 55"
+    },
+    {
+      "zahl": "Gemarkung ↔ Stadtteil: Laubegast = Laubegast 100; Tolkewitz = Tolkewitz/Seidnitz-Nord 84, Laubegast 14; Kleinzschachwitz = Kleinzschachwitz 92; Meußlitz, Zschieren = Kleinzschachwitz 100",
+      "fundstelle": "D48a; dd/gemst_all.txt"
+    },
+    {
+      "zahl": "Stadt: WV Ø rund 2.705; EFH ab 1992 Ø 4.470 €/m², rund 585.000 €; DHH 4.095; RMH 3.660; EFH-Bauland Ø 360 (2024: 320)",
+      "fundstelle": "D31, D34, D35; GMB S. 15"
+    },
+    {
+      "zahl": "HJB 1. HJ 2026: WV Median 2.660 (1. HJ 2025: 2.550)",
+      "fundstelle": "D37; HJB S. 5"
+    },
+    {
+      "zahl": "BRW 2026: Laubegast 190–620, 12 Zonen, 4 höher / 8 gleich, 61240400 520 MFH WGFZ 1 auf 642 von 939 Zonenpunkten (68 %), EFH-Zonen 280–500; Tolkewitz/Seidnitz-Nord 310–880, 9 Zonen, 7 höher / 2 gleich, größte Zonen 360/600/480 MFH, EFH 390/420; Kleinzschachwitz 200–570, 15 Zonen, 11 EFH (230–570), größte 61240180 320 EFH f1.000; gesamt 190–880",
+      "fundstelle": "dresden-ost.md Nr. 21–24; D47; brwunion.json"
+    },
+    {
+      "zahl": "Mietspiegel 2025 gültig bis 31.12.2026; Basismiete 60 m² 7,07; Wohnlage 0,98 / 1,00 / 1,03; Mietpreisbremse 10 % und Kappung 15 % bis 30.06.2027",
+      "fundstelle": "D49–D54"
+    },
+    {
+      "zahl": "H-01 Dorfkerne Laubegast (Nr. 16), Tolkewitz (Nr. 40), Zschieren (Nr. 44): Satzung vom 4. Juni 1992, Amtsblatt 14/93 vom 08.04.1993, in Kraft am Tag nach Bekanntmachung; Genehmigung für Abbruch, Änderung, Nutzungsänderung, Errichtung. H-34 Kirchplatz/Burgenlandstraße: Satzung vom 5. Juni 2003; Rückbau, Änderung, Nutzungsänderung, Errichtung",
+      "fundstelle": "dresden-ost.md Nr. 28–29; dorfkerne.txt Z. 1–4, 129–134, 305–309, 344–358, 368; h34.txt Z. 1–5, 36–44"
+    },
+    {
+      "zahl": "Überschwemmungsgebiet Elbe festgesetzt 01.10.2018, geändert 21.01.2019; HQ100 924 cm; §§ 78, 78a WHG: Errichtung oder Erweiterung baulicher Anlagen untersagt, Ausnahme mit Genehmigung; Flächen hinter HQ100-Schutzanlagen ausgenommen",
+      "fundstelle": "dresden-ost.md Nr. 30; uesg_elbe.txt Z. 31–40, 49–64, 80–88"
+    },
+    {
+      "zahl": "Hochwasser: 2002 Insel, Inselfest seit 2003; Juni 2013 Elbe und Grundwasser; Altzschieren 1 m über Elbspiegel, 2002 meterhoch; M30: HQ100 Altelbarm 924 cm, Wand östlich, Deich ca. 1,20 m westlich der Leubener Straße, Planfeststellung 24.06.2021, Baurecht Januar 2023, Fördermittelbescheid fehlt (Stand März 2025), Sandsäcke; Z1 Forum 8. Januar 2026; M18/M24 Verzicht September 2012",
+      "fundstelle": "dresden-ost.md Nr. 31–35; laubegast.txt Z. 24; hws_z1.txt Z. 12, 22; zschieren.txt Z. 12; hws_m30.txt Z. 15–26; hws_m18.txt Z. 13–15"
+    },
+    {
+      "zahl": "Laubegast: 1408, Zeilendorf, Zwirnerdorf nach Mitte 17. Jh., Eingemeindung 1921, Villacher Viertel, Troppauer Straße, Kirchplatz, nach 1992 Wohnparks Solitude und Lindenpark",
+      "fundstelle": "dresden-ost.md Nr. 37; laubegast.txt Z. 11, 12, 18, 22–23"
+    },
+    {
+      "zahl": "Tolkewitz: Johannisfriedhof 1881, Wasserwerk 1898, Straßenbahnhof 1899, Eingemeindung 1. Juli 1912, fast das Zehnfache, zwei Genossenschaften, Knappestraße nach 1960, Löwenhainer Straße Anfang 1980er, nach 1990 Haus- und Wohnungsbau, Alttolkewitz Leubener Teil",
+      "fundstelle": "dresden-ost.md Nr. 38; tolkewitz.txt Z. 19–21, 24–26"
+    },
+    {
+      "zahl": "Kleinzschachwitz: 1310, Putjatin 1797, Storchennest heute Wohnzwecke, Sommerhäuser 2. Hälfte 19. Jh., Kurhaus 1892, Villen- und Luftkurort, etwa 70 Kulturdenkmale, Eingemeindung 1921, Bautätigkeit erst nach deutscher Einheit; Meußlitz offene Bauweise und erste Eigenheime Ende 19. Jh.; Neuzschieren Villenstandort Ende 19. Jh.",
+      "fundstelle": "dresden-ost.md Nr. 39–41; kleinzschachwitz.txt Z. 11–14; meusslitz.txt Z. 12; zschieren.txt Z. 16"
+    },
+    {
+      "zahl": "Fahrzeiten: Kronstädter Platz Bus 86 + S1 27 min; Hepkestraße Bus 65 + S2 16 min; Wasserwerk Tolkewitz Tram 9 + 8 24 min; Kleinzschachwitz Freystraße Tram 2 + 10 32 min",
+      "fundstelle": "dresden-ost.md Nr. 42–47; D65; EFA-O"
+    },
+    {
+      "zahl": "GrESt Sachsen 5,5 %",
+      "fundstelle": "Leipziger GMB 2026 S. 32"
+    },
+    {
+      "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, §§ 656a–656d BGB; § 34c und § 34i GewO; Timon Fischer Geschäftsführer, Immobilienfinanzierung; Europace und Baufinex",
+      "fundstelle": "wie dresden-nord.json"
+    }
+  ],
+  "karte": {
+    "alt": "Karte von Dresden-Ost: Laubegast mit Alttolkewitz, Tolkewitz und Seidnitz-Nord, Kleinzschachwitz mit Meußlitz und Zschieren an der Elbe, dazu Dobritz und Reick als Ortspunkte, die Bahnstrecken, die Autobahn und der Dresdner Hauptbahnhof im Westen"
+  },
+  "anbindung": [
+    "Vom Kronstädter Platz sind Sie mit dem Bus 86 und ab Dobritz mit der S1 in 27 Minuten am Hauptbahnhof.[[24]]",
+    "Von der Hepkestraße sind Sie mit dem Bus 65 und ab Reick mit der S2 in 16 Minuten am Hauptbahnhof, vom Wasserwerk Tolkewitz mit den Linien 9 und 8 in 24 Minuten.[[24]]",
+    "Von der Freystraße fährt die Linie 2 zum Straßburger Platz; mit Umstieg in die 10 sind Sie in 32 Minuten am Hauptbahnhof.[[24]]"
+  ]
+}

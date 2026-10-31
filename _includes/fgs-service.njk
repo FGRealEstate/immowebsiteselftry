@@ -1,0 +1,158 @@
+---
+layout: base.njk
+fgDesign: true
+fgSystem: true
+fgsHero: true
+fgsIndex: true
+customSchema: true
+---
+{#- Leistungsseite im Design-System (Design-Sprint-Brief 5.2, CP2 am 27.10.2026). Gleiches `service`-Frontmatter wie
+    fgd-service.njk (Felder dort im Kopfkommentar), damit jede Leistungsseite nur die Vorlage wechselt.
+    Reihenfolge: S1, „Das Wichtigste in Kürze“ als Einleitung über 8 Spalten, Seiteninhalt (S3, S5, S6 aus der Seite),
+    S7, S4 „Verwandte Leistungen“ (3 Bildkarten), S8. Kicker nur über der H1 (Update 6 §3.0).
+    Neu gegenüber fgd-service.njk:
+      service.related.services[].bild und .alt   Bild der Karte (Schlüssel aus seitenbilder.json) und Alt-Text wie auf der Zielseite;
+                                                 es erscheinen die ersten drei Leistungen
+      Lexikon- und Blog-Links stehen als eine Zeile im Kopf der Kartenreihe (Brief 3.7: keine Linklisten im Inhalt).
+    Die Gebietsliste der alten Vorlage entfällt hier (Brief 3.7, sie steht im Fuß und im Menü „Gebiete“).
+    Design-Pass 2 §4 (29.10.2026) gilt für die acht Leistungsseiten des Briefs; sie tragen `bodyClass: fgs-service`, die übrigen Seiten mit
+    dieser Vorlage (Bewertung, Maklerprovision, Gewerbe, Mieten) bleiben wie sie sind. -#}
+{% from "fgs-macros.njk" import hero, rail, card, faq, closing with context %}
+{% set s = service %}
+{% set pageUrl = "https://fg-realestate.de" + page.url %}
+{% set faqItems = s.faq | serviceFaq(mangoTexte.faq, serviceArea.text) %}
+{% set heroBild = s.hero.name | bild %}
+{% set heroWidths = s.hero.widths or [960, 1600, 2000] %}{# Schema-Bild wie bisher in fgd-service.njk #}
+{% set heroSchemaSrc = "/images/seiten/" + s.hero.name + "-" + (1600 if 1600 in heroWidths else heroWidths | last) + ".webp" %}
+
+{# 1. S1 Titelbild #}
+{{ hero({
+  bild: heroBild,
+  alt: s.hero.alt,
+  kicker: s.kicker,
+  titel: s.h1,
+  satz: s.intro,
+  buttons: [s.button],
+  position: s.hero.position,
+  kenburns: true
+}) }}
+
+{# 1a. Design-Pass 2 §4.2: Eckdaten direkt unter dem Titelbild, eine Reihe mit 3 bis 4 Angaben, die schon auf der Seite stehen
+    (service.keyfacts: [{ label, wert }]); Bezeichnung 15 px, Wert Marcellus 26 px #}
+{%- if s.keyfacts %}
+<div class="fgs-keystrip">
+  <div class="fgs-wrap">
+    <dl class="fgs-keystrip-list" style="--n: {{ s.keyfacts | length }}">
+      {%- for f in s.keyfacts %}
+      <div><dt>{{ f.label }}</dt><dd>{{ f.wert | safe }}</dd></div>
+      {%- endfor %}
+    </dl>
+    {%- if s.keyfactsNote %}
+    {# Update 19 §3: kleiner Text direkt unter den Eckdaten (service.keyfactsNote) #}
+    <p class="fgs-keystrip-note">{{ s.keyfactsNote | safe }}</p>
+    {%- endif %}
+  </div>
+</div>
+{%- endif %}
+
+{# 2. Das Wichtigste in Kürze: Brotkrumen, Hauptfrage als H2, Antwort als Einleitung (Design-Pass 2 §4.3: höchstens 760 px breit) #}
+<section class="fgs-section fgs-summary-section" aria-labelledby="kurz-titel">
+  <div class="fgs-wrap">
+    <nav aria-label="Brotkrümelnavigation">
+      <ol class="fgs-crumbs">
+        <li><a href="/">Start</a></li>
+        {%- if s.parent %}<li><a href="{{ s.parent.href }}">{{ s.parent.label }}</a></li>{% endif %}
+        <li aria-current="page">{{ s.crumb }}</li>
+      </ol>
+    </nav>
+    <div class="fgs-summary">
+      <h2 id="kurz-titel">{{ s.summaryQ }}</h2>
+      <div class="fgs-summary-text">{% for p in s.summary %}<p class="fgs-lead">{{ p | safe }}</p>{% endfor %}</div>
+    </div>
+  </div>
+</section>
+
+{# 3. Inhalt der Seite #}
+{{ content | safe }}
+
+{# 4. S7 Häufige Fragen #}
+{{ faq(faqItems, s.faqTitle or "Häufige Fragen") }}
+
+{# 5. S4 Verwandte Leistungen: drei Bildkarten, Lexikon und Blog als eine Zeile im Kopf #}
+{%- set lexLinks = [] %}{% for slug in s.related.lexikon %}{% set e = labContent.lexicon | lexEntry(slug) %}{% if e %}{% set _ = lexLinks.push('<a href="/lexikon/' + e.slug + '/">' + e.term + '</a>') %}{% endif %}{% endfor %}
+{%- set blogLinks = [] %}{% for slug in s.related.blog %}{% for post in blog %}{% if post.slug == slug %}{% set _ = blogLinks.push('<a href="' + post.url + '">' + post.titel + '</a>') %}{% endif %}{% endfor %}{% endfor %}
+{%- set weiterZeile %}{% if lexLinks.length %}Im Lexikon erklärt: {{ lexLinks | join(", ") | safe }}{% endif %}{% if lexLinks.length and blogLinks.length %} · {% endif %}{% if blogLinks.length %}Im Blog: {{ blogLinks | join(", ") | safe }}{% endif %}{% endset %}
+{%- set karten = s.related.services.slice(0, 3) %}
+{% call rail({ id: "verwandt", titel: "Verwandte Leistungen", zusatz: weiterZeile | trim, grid3: true }) %}
+  {%- for r in karten %}
+  {#- Update 22 §8.6 (Bildregel 2.6.2): Die Karte ist 3:4. Das Titelbild der Zielseite ist quer; wo es den Handy-Zuschnitt (4:5) gibt, nimmt die Karte den. #}
+  {%- set rb = r.bild | bild %}
+  {{ card({ href: r.href, bild: rb.hoch or rb, alt: r.alt, titel: r.label, zeile: r.note }) }}
+  {%- endfor %}
+{% endcall %}
+
+{# 6. S8 Abschlussband #}
+{% call closing({ kontakt: s.contact, satz: s.closing.title, button: s.closing.button, gebiet: s.closing.gebiet, foto: s.closing.foto }) %}
+  <p>{{ s.closing.text | safe }}</p>
+{% endcall %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://fg-realestate.de{{ page.url }}#service",
+      "name": {{ s.schema.name | json | safe }},
+      "serviceType": {{ s.schema.serviceType | json | safe }},
+      "description": {{ s.schema.description | json | safe }},
+      "url": "{{ pageUrl }}",
+      "provider": { "@id": "https://fg-realestate.de/#organization" },
+      {% if s.schema.area == "deutschland" %}"areaServed": { "@type": "Country", "name": "Deutschland" }{% elif s.schema.places %}"areaServed": [
+        {% for p in s.schema.places %}{ "@type": "{{ p.type }}", "name": {{ p.name | json | safe }}{% if p.url %}, "url": "https://fg-realestate.de{{ p.url }}"{% endif %} }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]{% else %}"areaServed": [
+        {% for p in serviceArea.schemaPlaces %}{ "@type": "{{ p.type }}", "name": {{ p.name | json | safe }}{% if p.url %}, "url": "https://fg-realestate.de{{ p.url }}"{% endif %} }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]{% endif %}
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{ pageUrl }}",
+      "url": "{{ pageUrl }}",
+      "name": {{ title | json | safe }},
+      "description": {{ description | json | safe }},
+      "inLanguage": "de-DE",
+      "isPartOf": { "@id": "https://fg-realestate.de/#website" },
+      "publisher": { "@id": "https://fg-realestate.de/#organization" },
+      "about": { "@id": "https://fg-realestate.de{{ page.url }}#service" },
+      "breadcrumb": { "@id": "{{ pageUrl }}#breadcrumb" },
+      {#- Update 9 §1.5: Urheber, Nennung, Lizenz und Lizenzseite aus derselben Zeile wie /bildnachweise/ (Filter bildnachweis); CC0 ohne Angaben #}
+      {%- set heroNachweis = s.hero.name | bildnachweis %}
+      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://fg-realestate.de{{ heroSchemaSrc }}"{% if heroNachweis and heroNachweis.license != "CC0" %}, "creator": { "@type": "Person", "name": {{ heroNachweis.author | json | safe }} }, "creditText": {{ heroNachweis.author | json | safe }}, "license": {{ heroNachweis.licenseUrl | json | safe }}, "acquireLicensePage": {{ heroNachweis.url | json | safe }}{% endif %} }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ pageUrl }}#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
+        {% if s.parent %}{ "@type": "ListItem", "position": 2, "name": {{ s.parent.label | json | safe }}, "item": "https://fg-realestate.de{{ s.parent.href }}" },
+        {% endif %}{ "@type": "ListItem", "position": {% if s.parent %}3{% else %}2{% endif %}, "name": {{ s.crumb | json | safe }}, "item": "{{ pageUrl }}" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{ pageUrl }}#faq",
+      "isPartOf": { "@id": "{{ pageUrl }}" },
+      "mainEntity": [
+        {% for item in faqItems %}{
+          "@type": "Question",
+          "name": {{ item.q | json | safe }},
+          "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | striptags | json | safe }} }
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+  ]
+}
+</script>

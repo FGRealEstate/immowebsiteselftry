@@ -1,16 +1,151 @@
 ---
-layout: base.njk
+layout: fgs-service.njk
 permalink: maklerprovision/index.html
 canonicalPath: /maklerprovision/
 title: "Maklerprovision in Berlin: Kosten & Teilung | Fischer & Geserich"
-description: "Maklerprovision verständlich erklärt: Teilung bei Wohnung und Einfamilienhaus, Mehrfamilienhaus, Grundstück und Vermietung – mit transparenter Einordnung vor der Besichtigung."
-bodyClass: fg-mobile-safe
+description: "Maklerprovision verständlich erklärt: Halbteilung beim Kauf einer Wohnung oder eines Einfamilienhauses (§§ 656a–656d BGB), Mehrfamilienhaus und Grundstück, Bestellerprinzip bei Vermietung. Mit Rechenbeispiel und dem, was die Provision umfasst."
+# Brief Design-Pass §4.2: H1 bleibt. Neu: gesetzliche Teilung allgemein, Rechenbeispiel (als Beispiel gekennzeichnet),
+# was die Provision umfasst. Jede Rechtsaussage geprüft am 26.10.2026 gegen §§ 656a–656d BGB und §§ 2, 3 WoVermittG
+# (gesetze-im-internet.de), BT-Drucksache 19/15827 und BGH, Urteil vom 6. März 2025, I ZR 32/24.
+# Korrigiert gegenüber dem bisherigen Seitentext: „Ein- und Zweifamilienhäuser“ → „Wohnung oder Einfamilienhaus“
+# (Wortlaut § 656c BGB). Nicht übernommen aus mangoTexte.provision: „Obergrenze 6 % netto“ und „Zweifamilienhaus“
+# (QUESTIONS-FOR-TIMON.md 6.1, 6.2), Zwei-Monatsmieten-Grenze für Eigentümer (6.3).
+service:
+  id: maklerprovision
+  crumb: "Maklerprovision"
+  kicker: "Kosten vor der ersten Besichtigung"
+  h1: "Was kostet ein Immobilienmakler?"
+  intro: "Kaufen oder verkaufen Sie eine Wohnung oder ein Einfamilienhaus, sind es bei uns 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Für Mehrfamilienhäuser, Grundstücke und Vermietungen gelten andere Regeln. Ihre Provision nennen wir Ihnen vor der ersten Besichtigung."
+  button: { label: "Vorhaben besprechen", href: "#kontakt" }
+  hero: { name: "provision-hero", alt: "Dächer und Fassade der Kunstakademie an der Brühlschen Terrasse in Dresden von oben", widths: [960, 1600, 1840], position: "center 40%" }
+  summaryQ: "Was kostet ein Immobilienmakler beim Kauf und Verkauf?"
+  summary:
+    - "Kauft ein Verbraucher eine Wohnung oder ein Einfamilienhaus, teilen sich Käufer und Verkäufer die Provision zu gleichen Teilen (§§ 656a bis 656d BGB). Bei Fischer & Geserich sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Grundstücken und Gewerbe entscheidet der Maklervertrag, bei Vermietung zahlt, wer den Makler beauftragt."
+  faqTitle: "Häufige Fragen zur Maklerprovision"
+  faq:
+    - q: "Wann teilen sich Käufer und Verkäufer die Maklerprovision?"
+      a: "Bei Verbraucherkäufen einer Wohnung oder eines Einfamilienhauses gelten die gesetzlichen Regeln zur Verteilung der Maklerkosten. Wie die konkrete Vergütung aussieht, ergibt sich aus dem Maklervertrag."
+    - q: "Gilt die Teilung auch bei Mehrfamilienhäusern?"
+      a: "Nicht automatisch. Mehrfamilienhäuser fallen nicht unter dieselbe spezielle Teilungsregel wie der typische Verbraucherkauf einer Wohnung oder eines Einfamilienhauses. Entscheidend ist die vertragliche Vereinbarung."
+    - q: "Wann erfahre ich bei F&G die Provision?"
+      a: "Vor der ersten Besichtigung. Die Courtage soll Teil Ihrer Kaufkalkulation sein und nicht erst am Ende des Prozesses auftauchen."
+    - q: "Gilt die Halbteilung auch, wenn eine GmbH kauft?"
+      a: "Nein. Die Regeln zur Teilung gelten nur, wenn der Käufer ein Verbraucher ist (§ 656b BGB). Kauft eine GmbH oder ein anderes Unternehmen, richtet sich die Provision allein nach dem Maklervertrag. Die Textform für den Maklervertrag über eine Wohnung oder ein Einfamilienhaus gilt dagegen immer (§ 656a BGB)."
+    - q: "Was passiert, wenn ein Maklervertrag gegen die Halbteilung verstößt?"
+      a: "Lässt sich ein Makler von beiden Seiten unterschiedlich hohe Provisionen versprechen, ist der Maklervertrag unwirksam (§ 656c Abs. 2 BGB) und der Makler hat keinen Anspruch auf Provision. Das hat der Bundesgerichtshof am 6. März 2025 bestätigt (I ZR 32/24)."
+    - q: "Wer zahlt den Makler bei einer Vermietung?"
+      a: "Wer den Makler beauftragt hat. Beauftragt der Eigentümer uns mit der Vermietung, zahlt der Eigentümer. Ein Mieter zahlt nur, wenn er den Makler selbst mit der Suche beauftragt hat, und dann höchstens zwei Monatsmieten zuzüglich Umsatzsteuer."
+  related:
+    services:
+      - { label: "Immobilie verkaufen", note: "Ablauf, Unterlagen und alle Kosten beim Verkauf", href: "/verkaufen.html", bild: "verkaufen-hero", alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser" }
+      - { label: "Immobilie kaufen", note: "Kaufnebenkosten und Ablauf bis zum Notartermin", href: "/kaufen.html", bild: "kaufen-hero", alt: "Canaletto-Blick in Dresden: die Augustusbrücke über die Elbe, dahinter Frauenkirche und Hofkirche im warmen Licht, vorn die Elbwiesen" }
+      - { label: "Immobilie vermieten", note: "Bestellerprinzip, Mietspiegel und Mieterauswahl", href: "/vermieten.html", bild: "vermieten-hero", alt: "Altbau-Wohnhäuser von Riehmers Hofgarten an der Hagelberger Straße in Berlin-Kreuzberg, rechts ein Baum" }
+    lexikon: [maklerprovision, courtage, kaufnebenkosten]
+  contact: lennart
+  closing:
+    title: "Wir rechnen die Gesamtkosten mit Ihnen sauber durch"
+    text: "Bei einem konkreten Objekt ordnen wir Courtage, Nebenkosten und Finanzierung gemeinsam ein."
+    button: gespraech
+  schema:
+    name: "Immobilienvermittlung mit transparenter Maklerprovision"
+    serviceType: "Immobilienvermittlung"
+    description: "Vermittlung von Wohnungen, Häusern, Mehrfamilienhäusern und Grundstücken; Provision beim Kauf einer Wohnung oder eines Einfamilienhauses 3,57 Prozent inklusive Mehrwertsteuer pro Seite, Nennung der konkreten Provision vor der ersten Besichtigung."
+    area: regional
 ---
-<div class="fg-premium-page">
-<section class="fg-premium-hero"><div class="fg-premium-shell"><div class="fg-premium-hero-grid"><div><p class="fg-premium-kicker fg-premium-kicker-light">Provision · transparent vor dem Termin</p><h1>Was kostet ein Immobilienmakler?</h1><p class="fg-premium-hero-lead">Wir nennen die konkrete Courtage vor der ersten Besichtigung. Keine Überraschung am Ende, keine pauschale Prozentzahl für Fälle, die rechtlich und wirtschaftlich unterschiedlich funktionieren.</p><div class="fg-premium-actions"><a class="btn-85 px-7 py-4" href="/kontakt.html">Vorhaben besprechen <i class="fas fa-arrow-right"></i></a><a class="fg-premium-outline" href="#faelle">Die Fälle ansehen</a></div></div><aside class="fg-premium-sidecard"><span>Auf einen Blick</span><h2>Welche Regel greift, hängt vom Objekt ab.</h2><ul><li><i class="fas fa-building"></i><span>Wohnung, Ein- oder Zweifamilienhaus: bei Verbraucherkäufen gelten die gesetzlichen Regeln zur Provisionsteilung.</span></li><li><i class="fas fa-city"></i><span>Mehrfamilienhäuser und Grundstücke werden vertraglich anders behandelt.</span></li><li><i class="fas fa-key"></i><span>Bei Vermietung gilt das Bestellerprinzip.</span></li></ul></aside></div></div></section>
-<section class="fg-premium-statbar"><div class="fg-premium-shell"><div class="fg-premium-statgrid"><div><small>Wohnkauf</small><strong>Teilung gesetzlich geregelt</strong><span>bei den einschlägigen Verbraucherkonstellationen</span></div><div><small>Berlin</small><strong>3,57 % pro Seite häufig</strong><span>Marktpraxis, keine pauschale gesetzliche Festgebühr</span></div><div><small>Vermietung</small><strong>Bestellerprinzip</strong><span>wer beauftragt, trägt grundsätzlich die Courtage</span></div><div><small>F&amp;G</small><strong>Vorher transparent</strong><span>die konkrete Provision steht vor der Besichtigung fest</span></div></div></div></section>
-<section id="faelle" class="fg-premium-section"><div class="fg-premium-shell"><div class="fg-premium-head"><p class="fg-premium-kicker">Die wichtigsten Fälle</p><h2>Eine Provision. Mehrere rechtliche Logiken.</h2><p>Entscheidend sind Objektart, Auftraggeber und die konkrete Vertragsgestaltung. Deshalb trennen wir die Fälle sauber.</p></div><div class="fg-premium-grid-3"><article class="fg-premium-card"><div class="fg-premium-card-icon"><i class="fas fa-house"></i></div><h3>Wohnung &amp; Einfamilienhaus</h3><p>Bei typischen Verbraucherkäufen von Wohnungen sowie Ein- und Zweifamilienhäusern greifen die gesetzlichen Regeln zur Verteilung der Maklerkosten. In Berlin sind Modelle mit 3,57&nbsp;% brutto je Seite häufig.</p></article><article class="fg-premium-card"><div class="fg-premium-card-icon"><i class="fas fa-city"></i></div><h3>Mehrfamilienhaus &amp; Grundstück</h3><p>Hier gilt die spezielle Teilungslogik für Verbraucher-Wohnkäufe nicht automatisch. Wer die Courtage trägt und in welcher Höhe, ergibt sich aus dem jeweiligen Maklervertrag.</p></article><article class="fg-premium-card"><div class="fg-premium-card-icon"><i class="fas fa-key"></i></div><h3>Vermietung</h3><p>Bei Wohnraummietverträgen gilt das Bestellerprinzip. Beauftragt der Eigentümer uns mit der Vermietung, trägt er die vereinbarte Vergütung; für Wohnungssuchende gelten eigene gesetzliche Grenzen.</p></article></div></div></section>
-<section class="fg-premium-section fg-premium-section-white"><div class="fg-premium-shell"><div class="fg-premium-split"><div class="fg-premium-feature-copy"><p class="fg-premium-kicker">Unser Standard</p><h2>Geldfragen gehören vor die Besichtigung.</h2><p>Die Courtage ist Teil Ihrer Gesamtkalkulation. Deshalb gehört sie in dieselbe Betrachtung wie Kaufpreis, Nebenkosten, Eigenkapital und Finanzierung – nicht in einen Kleingedruckt-Hinweis nach dem Termin.</p><div class="fg-premium-checklist"><div><i class="fas fa-check"></i><span>Konkrete Provision vor dem ersten Besichtigungstermin.</span></div><div><i class="fas fa-check"></i><span>Einordnung in Erwerbsnebenkosten und Finanzierungsstruktur.</span></div><div><i class="fas fa-check"></i><span>Keine Vermischung von üblichen Marktwerten und gesetzlichen Vorgaben.</span></div></div></div><aside class="fg-premium-panel"><p class="fg-premium-kicker fg-premium-kicker-light">Hinweis</p><h3>Der konkrete Vertrag ist entscheidend.</h3><p>Diese Seite erklärt typische Konstellationen und ersetzt keine Rechtsberatung. Maßgeblich sind die tatsächliche Vertragskonstellation und die im Maklervertrag vereinbarte Vergütung.</p></aside></div></div></section>
-<section class="fg-premium-section"><div class="fg-premium-shell"><div class="fg-premium-cta"><div><p class="fg-premium-kicker fg-premium-kicker-light">Noch eine Frage offen?</p><h2>Wir rechnen die Gesamtkosten mit Ihnen sauber durch.</h2><p>Bei einem konkreten Objekt ordnen wir Courtage, Nebenkosten und Finanzierung gemeinsam ein.</p></div><a class="btn-85 px-7 py-4" href="/kontakt.html">Erstgespräch vereinbaren <i class="fas fa-arrow-right"></i></a></div></div></section>
-</div>
-{% set faqItems = [{q:"Wann teilen sich Käufer und Verkäufer die Maklerprovision?",a:"Bei bestimmten Verbraucherkäufen von Wohnungen sowie Ein- und Zweifamilienhäusern gelten die gesetzlichen Regeln zur Verteilung der Maklerkosten. Wie die konkrete Vergütung aussieht, ergibt sich aus dem Maklervertrag."},{q:"Gilt die Teilung auch bei Mehrfamilienhäusern?",a:"Nicht automatisch. Mehrfamilienhäuser fallen nicht unter dieselbe spezielle Teilungsregel wie der typische Verbraucherkauf einer Wohnung oder eines Einfamilienhauses. Entscheidend ist die vertragliche Vereinbarung."},{q:"Wann erfahre ich bei F&G die Provision?",a:"Vor der ersten Besichtigung. Die Courtage soll Teil Ihrer Kaufkalkulation sein und nicht erst am Ende des Prozesses auftauchen."}] %}{% set faqAnchor="faq-provision" %}{% set faqTitle="Häufige Fragen zur Maklerprovision" %}{% include "faq-block.njk" %}
+{#- Maklerprovision im Design-System (Brief 5.2, CP4): die drei Fälle als H2 mit drei Punkten in einer Reihe, S5 Kapitel
+    (Halbteilung, Rechenbeispiel mit Tabelle, was die Provision umfasst), S3 „Provision bei Vermietung“. Kein Formular auf der Seite.
+    Texte unverändert von der bisherigen Seite (Update 6 §4: nur §1, §2 und §3.0). Weggefallen: Kicker über den H2
+    („Die wichtigsten Fälle“, „Gesetzliche Teilung“, „Beispiel mit runden Zahlen“, „Unser Standard“, „Vermietung“), die Rubriken
+    der drei Fälle („Wohnkauf“, „Vertrag entscheidet“, „Bestellerprinzip“), Häkchen-Icons, „Auf dieser Seite“, Gebietsliste.
+    „Für Verkäufer“ und „Für Käufer“ stehen jetzt als H3. Vermietung war ein Halbbild, jetzt S3. -#}
+{% from "fgs-macros.njk" import split, chapters, textlink with context %}
+
+{# Die drei Fälle: H2, darunter drei Punkte in einer Reihe #}
+<section class="fgs-section" id="faelle" aria-labelledby="faelle-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head">
+      <h2 id="faelle-titel">Welche Regel für Ihren Fall gilt</h2>
+      <p class="fgs-lead">Es kommt auf drei Dinge an: was verkauft wird, wer den Makler beauftragt und was im Maklervertrag steht.</p>
+    </div>
+    <ul class="fgs-points fgs-points--row fgs-points--3" role="list">
+      <li><h3>Wohnung &amp; Einfamilienhaus</h3><p>Kauft ein Verbraucher eine Wohnung oder ein Einfamilienhaus, teilen sich Käufer und Verkäufer die Provision. Bei uns sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite.</p></li>
+      <li><h3>Mehrfamilienhaus &amp; Grundstück</h3><p>Hier gilt die gesetzliche Teilung nicht. In der Regel zahlt hier der Käufer die Provision. Wer die Provision zahlt und wie hoch sie ist, steht im Maklervertrag.</p></li>
+      <li><h3>Vermietung</h3><p>Bei Wohnraummietverträgen gilt das Bestellerprinzip. Beauftragt der Eigentümer uns mit der Vermietung, trägt er die vereinbarte Vergütung; für Wohnungssuchende gelten eigene gesetzliche Grenzen.</p></li>
+    </ul>
+  </div>
+</section>
+
+{# S5 Kapitel #}
+{% call chapters({ id: "kapitel", label: "Provision im Einzelnen", toc: [
+  { id: "halbteilung", titel: "Halbteilung nach §§ 656a–656d BGB" },
+  { id: "beispiel", titel: "Rechenbeispiel" },
+  { id: "leistung", titel: "Was die Provision umfasst" }
+] }) %}
+  <article class="fgs-chapter" id="halbteilung" aria-labelledby="halbteilung-titel">
+    <h2 id="halbteilung-titel">Halbteilung beim Kauf einer Wohnung oder eines Einfamilienhauses</h2>
+    <p class="fgs-lead">Seit Dezember 2020 regeln §§ 656a bis 656d BGB, wie die Provision verteilt wird, wenn ein Verbraucher eine Wohnung oder ein Einfamilienhaus kauft.</p>
+    <ul class="fgs-checklist fgs-checklist--one" role="list">
+      <li><strong>Makler für beide Seiten</strong><span>Arbeitet der Makler für Käufer und Verkäufer, müssen sich beide in gleicher Höhe verpflichten. Arbeitet er für eine Seite kostenlos, kann er auch von der anderen nichts verlangen (§ 656c BGB).</span></li>
+      <li><strong>Makler nur für eine Seite</strong><span>Hat nur der Verkäufer einen Maklervertrag, darf er dem Käufer höchstens die Hälfte weitergeben und zahlen muss der Käufer erst, wenn der Verkäufer seinen Teil nachweislich bezahlt hat (§ 656d BGB).</span></li>
+      <li><strong>Nur für Verbraucher</strong><span>Kauft ein Unternehmen, gelten diese Regeln nicht (§ 656b BGB).</span></li>
+      <li><strong>Textform</strong><span>Der Maklervertrag über eine Wohnung oder ein Einfamilienhaus braucht mindestens Textform, etwa eine E-Mail (§ 656a BGB).</span></li>
+    </ul>
+    <h3>Was als Einfamilienhaus gilt</h3>
+    <p>Nach dem Bundesgerichtshof zählt, ob das Haus für den Makler erkennbar dem Wohnen eines einzelnen Haushalts dient; eine Einliegerwohnung ändert daran nichts (Urteil vom 6. März 2025, I ZR 32/24). Ein Haus mit zwei gleichwertigen Wohnungen für zwei Haushalte ist danach eher kein Einfamilienhaus, im Zweifel entscheidet der Einzelfall. Mehrfamilienhäuser, unbebaute Grundstücke und Gewerbe fallen nicht unter die Teilung.</p>
+    <p class="fgs-note">Quellen: §§ 656a–656d BGB auf <a href="https://www.gesetze-im-internet.de/bgb/__656c.html" target="_blank" rel="noopener">gesetze-im-internet.de</a>, Gesetzesbegründung <a href="https://dserver.bundestag.de/btd/19/158/1915827.pdf" target="_blank" rel="noopener">BT-Drucksache 19/15827</a>, BGH, Urteil vom 6. März 2025, I ZR 32/24. Stand: Oktober 2026.</p>
+  </article>
+
+  <article class="fgs-chapter" id="beispiel" aria-labelledby="beispiel-titel">
+    <h2 id="beispiel-titel">Was die Provision bei einer Wohnung für 400.000 Euro bedeutet</h2>
+    <p class="fgs-lead">Ein Rechenbeispiel, kein Angebot für ein bestimmtes Objekt: Eine Eigentumswohnung in Berlin mit 80 Quadratmetern, Kaufpreis 400.000 Euro, eine Privatperson kauft, beide Seiten haben uns beauftragt.</p>
+    <div class="fgs-table-wrap">
+      <table class="fgs-table fgs-table--zahlen">
+        <thead><tr><th scope="col">Posten</th><th scope="col">Käufer</th><th scope="col">Verkäufer</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Provision 3&nbsp;% netto</th><td>12.000&nbsp;€</td><td>12.000&nbsp;€</td></tr>
+          <tr><th scope="row">zuzüglich 19&nbsp;% Mehrwertsteuer</th><td>2.280&nbsp;€</td><td>2.280&nbsp;€</td></tr>
+          <tr><th scope="row"><strong>Provision brutto, 3,57&nbsp;%</strong></th><td><strong>14.280&nbsp;€</strong></td><td><strong>14.280&nbsp;€</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Für den Käufer kommen weitere <a href="/lexikon/kaufnebenkosten/">Kaufnebenkosten</a> hinzu: In Berlin 6&nbsp;Prozent <a href="/lexikon/grunderwerbsteuer/">Grunderwerbsteuer</a>, hier 24.000&nbsp;Euro, und für Notar und Grundbuch als Faustwert rund 1,5 bis 2&nbsp;Prozent, hier etwa 6.000 bis 8.000&nbsp;Euro. Zusammen mit der Provision sind das rund 44.000 bis 46.000&nbsp;Euro, gut 11&nbsp;Prozent des Kaufpreises.</p>
+    <p>Hätte nur der Verkäufer uns beauftragt, dürfte der Käufer höchstens 14.280&nbsp;Euro übernehmen, und erst, nachdem der Verkäufer seinen Teil nachweislich gezahlt hat. Bei einem Mehrfamilienhaus zum selben Preis gilt keine Teilung; maßgeblich ist der Maklervertrag.</p>
+  </article>
+
+  <article class="fgs-chapter" id="leistung" aria-labelledby="leistung-titel">
+    <h2 id="leistung-titel">Was die Provision umfasst</h2>
+    <p class="fgs-lead">Die Provision fällt nur an, wenn der Kaufvertrag zustande kommt. Was wir bis dahin übernehmen, hängt davon ab, auf welcher Seite Sie stehen.</p>
+    <h3>Für Verkäufer</h3>
+    <p><strong>Vom Wert bis zur Übergabe</strong></p>
+    <ul class="fgs-checklist fgs-checklist--one" role="list">
+      <li>Wertermittlung, kostenlos und meist am selben Tag</li>
+      <li>Unterlagen beschaffen und prüfen, Angebotspreis festlegen</li>
+      <li>Exposé, Portal, Netzwerk und Direktansprache</li>
+      <li>Besichtigungen, Finanzierung der Interessenten früh abfragen</li>
+      <li>Verhandlung, Notarvorbereitung und Übergabe mit Protokoll</li>
+    </ul>
+    <h3>Für Käufer</h3>
+    <p><strong>Vom Exposé bis nach dem Notartermin</strong></p>
+    <ul class="fgs-checklist fgs-checklist--one" role="list">
+      <li>Exposé, Unterlagen und Besichtigung</li>
+      <li>Antworten auf Fragen zu Objekt, Lage und Kosten</li>
+      <li>Klären, ob die Finanzierung realistisch ist, bevor der Notar beauftragt wird</li>
+      <li>Notarvorbereitung und Übergabe</li>
+      <li>Nach dem Kauf kostenlose Vermittlung an Gutachter, Handwerker und Hausverwaltungen</li>
+    </ul>
+    <h3>Geldfragen gehören vor die Besichtigung</h3>
+    <p>Die Courtage ist Teil Ihrer Gesamtkalkulation. Deshalb gehört sie in dieselbe Betrachtung wie Kaufpreis, Nebenkosten, Eigenkapital und Finanzierung, nicht in einen Kleingedruckt-Hinweis nach dem Termin.</p>
+    <ul class="fgs-checklist fgs-checklist--one" role="list">
+      <li>Konkrete Provision vor dem ersten Besichtigungstermin.</li>
+      <li>Wie die Provision in die Kaufnebenkosten und die Finanzierung eingeht.</li>
+      <li>Keine Vermischung von üblichen Marktwerten und gesetzlichen Vorgaben.</li>
+    </ul>
+    <p>Nicht in der Provision enthalten sind Grunderwerbsteuer, Notar- und Grundbuchkosten sowie die Leistungen von Gutachtern, Handwerkern oder Hausverwaltungen selbst.</p>
+  </article>
+{% endcall %}
+
+{# S3 Provision bei Vermietung (bisher Halbbild) #}
+{% call split({ id: "vermietung", titel: "Provision bei Vermietung: das Bestellerprinzip", bild: "skyline-band" | bild, alt: "Fernsehturm und Hochhäuser an der Spree in Berlin-Friedrichshain nach Sonnenuntergang", rechts: true }) %}
+  <p>Bei Wohnraum zahlt, wer den Makler beauftragt hat, auch wenn sich Interessenten danach von selbst melden. Ein Mieter zahlt nur, wenn der Makler die Wohnung ausschließlich wegen seines Suchauftrags beim Vermieter angefragt hat (§ 2 Abs. 1a WoVermittG), und dann höchstens zwei Monatsmieten zuzüglich Umsatzsteuer (§ 3 Abs. 2 WoVermittG). Der Anspruch entsteht nur, wenn ein Mietvertrag zustande kommt. Mehr dazu auf der Seite <a href="/vermieten.html#kosten">Immobilie vermieten</a>.</p>
+  <p class="fgs-small">Der konkrete Vertrag ist entscheidend. Diese Seite erklärt typische Konstellationen und ersetzt keine Rechtsberatung. Maßgeblich sind die tatsächliche Vertragskonstellation und die im Maklervertrag vereinbarte Vergütung. Quellen: <a href="https://www.gesetze-im-internet.de/wovermrg/" target="_blank" rel="noopener">§§ 2, 3 WoVermittG</a>.</p>
+{% endcall %}

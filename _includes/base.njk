@@ -29,13 +29,13 @@
 
     <!-- Eindeutiger Markenname für Google, Bing und soziale Netzwerke -->
     <meta property="og:locale" content="de_DE">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="{{ ogType or 'website' }}">
     <meta property="og:site_name" content="{{ siteName }}">
     <meta property="og:title" content="{{ socialTitle }}">
     <meta property="og:description" content="{{ socialDescription }}">
     <meta property="og:url" content="{{ canonicalUrl }}">
     <meta property="og:image" content="{{ socialImage }}">
-    <meta property="og:image:alt" content="Logo von {{ siteName }}">
+    <meta property="og:image:alt" content="{{ ogImageAlt or ('Logo von ' + siteName) }}">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ socialTitle }}">
@@ -142,12 +142,12 @@
         }
       ],
       "founder": [
-        { "@id": "https://fg-realestate.de/ueber-uns.html#timon-fischer" },
-        { "@id": "https://fg-realestate.de/ueber-uns.html#lennart-geserich" }
+        { "@id": "https://fg-realestate.de/team/timon-fischer/#person" },
+        { "@id": "https://fg-realestate.de/team/lennart-geserich/#person" }
       ],
       "employee": [
-        { "@id": "https://fg-realestate.de/ueber-uns.html#timon-fischer" },
-        { "@id": "https://fg-realestate.de/ueber-uns.html#lennart-geserich" }
+        { "@id": "https://fg-realestate.de/team/timon-fischer/#person" },
+        { "@id": "https://fg-realestate.de/team/lennart-geserich/#person" }
       ],
       "knowsAbout": [
         "Immobilienverkauf",
@@ -160,9 +160,10 @@
       ],
       {#- Eine Quelle für das Servicegebiet: _data/serviceArea.js. -#}
       "areaServed": [
-{%- for place in serviceArea.all %}
-        { "@type": "City", "name": {{ (place.schemaName or place.name) | dump | safe }}, "@id": "https://fg-realestate.de/standorte/{{ place.slug }}/#place" }{% if not loop.last %},{% endif %}
+{%- for place in serviceArea.schemaPlaces %}
+        { "@type": {{ place.type | dump | safe }}, "name": {{ place.name | dump | safe }}{% if place.url %}, "url": "https://fg-realestate.de{{ place.url }}"{% endif %} },
 {%- endfor %}
+        { "@type": "Country", "name": "Deutschland", "description": "Finanzierungsberatung deutschlandweit" }
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -181,35 +182,37 @@
       "sameAs": [
         "https://www.linkedin.com/company/fischer-geserich-real-estate-gmbh/",
         "https://www.instagram.com/fg.immobilien/",
-        "https://openregister.de/company/DE-HRB-F1103-283559"
+        "https://openregister.de/company/DE-HRB-F1103-283559",
+        {{ google.mapsUrl | dump | safe }}
       ]
     },
     {
       "@type": "Person",
-      "@id": "https://fg-realestate.de/ueber-uns.html#timon-fischer",
+      "@id": "https://fg-realestate.de/team/timon-fischer/#person",
       "name": "Timon Fischer",
       "givenName": "Timon",
       "familyName": "Fischer",
       "jobTitle": "Geschäftsführer",
-      "description": "Geschäftsführer der Fischer & Geserich Real Estate GmbH mit Schwerpunkt Immobilienfinanzierung. Verantwortet die Vermittlung von Immobiliardarlehen nach § 34i Abs. 1 GewO.",
+      "description": {{ kontakte.timon.bio | json | safe }},
       "knowsAbout": ["Immobilienfinanzierung", "Annuitätendarlehen", "Beleihungswert", "Kapitalanlagefinanzierung"],
       "worksFor": { "@id": "https://fg-realestate.de/#organization" },
       "affiliation": { "@id": "https://fg-realestate.de/#organization" },
-      "url": "https://fg-realestate.de/ueber-uns.html",
+      "url": "https://fg-realestate.de/team/timon-fischer/",
       "sameAs": ["https://www.linkedin.com/in/timon-fischer/"]
     },
     {
       "@type": "Person",
-      "@id": "https://fg-realestate.de/ueber-uns.html#lennart-geserich",
+      "@id": "https://fg-realestate.de/team/lennart-geserich/#person",
       "name": "Lennart Geserich",
       "givenName": "Lennart",
       "familyName": "Geserich",
       "jobTitle": "Geschäftsführer",
-      "description": "Geschäftsführer der Fischer & Geserich Real Estate GmbH mit Schwerpunkt Vertrieb und Maklergeschäft. Verantwortet die Vermarktung von Wohn- und Anlageimmobilien nach § 34c Abs. 1 GewO.",
+      "description": {{ kontakte.lennart.bio | json | safe }},
       "knowsAbout": ["Immobilienvertrieb", "Maklergeschäft", "Immobilienbewertung", "Berliner Wohnungsmarkt"],
+      "hasCredential": { "@type": "EducationalOccupationalCredential", "name": {{ kontakte.lennart.ausbildung | json | safe }} },
       "worksFor": { "@id": "https://fg-realestate.de/#organization" },
       "affiliation": { "@id": "https://fg-realestate.de/#organization" },
-      "url": "https://fg-realestate.de/ueber-uns.html",
+      "url": "https://fg-realestate.de/team/lennart-geserich/",
       "sameAs": ["https://www.linkedin.com/in/lennart-geserich-b413bb38a/"]
     },
     {
@@ -283,7 +286,7 @@
   ]
 }
 </script>
-    {% elseif currentPath != "/404.html" %}
+    {% elseif currentPath != "/404.html" and not customSchema %}{# Seiten mit customSchema bringen ihr eigenes JSON-LD mit (Gebietsseiten). #}
     {% set schemaType = structuredDataType or "WebPage" %}
     {% set schemaName = structuredDataName or pageTitle %}
     {% set schemaDesc = structuredDataDescription or metaDescription %}
@@ -308,36 +311,26 @@
     <script defer src="/vendor/cookieconsent/cookieconsent.umd.js"></script>
     <script defer src="/consent-manager.js"></script>
 
-    <!-- TAILWIND -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Neues Design: Schriften lokal (keine Font-CDNs), Kopf/Fuß-Styles auf allen Seiten -->
+    {#- Design-Pass 3 §2.1: Bewegung (fgs-motion.js mit GSAP und Lenis) auf allen Seiten mit fgSystem außer Blogartikeln und
+        Lexikoneinträgen (fgsMotion: false, Nachtrag Punkt 1). fgs-mo steht vor dem ersten Bild, damit nichts erst steht und dann
+        springt; ist fgs-motion.js nach 3 s nicht gelaufen, fällt die Seite auf den ruhigen Stand zurück. -#}
+    {%- set fgsBewegung = fgSystem and fgsMotion != false %}
+    <script>document.documentElement.classList.add('fgd-js'{% if fgSystem %}, 'fgs-js'{% endif %});{% if fgsBewegung %}if(!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('fgs-mo');setTimeout(function(){if(!window.fgsBewegung)document.documentElement.classList.remove('fgs-mo')},3000)}{% endif %}</script>
+    <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/marcellus-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    {#- Design-Sprint (28.10.2026): Seiten mit fgSystem nutzen nur noch das neue System (css/fg-system.css, fg-system.js). -#}
+    {% if fgSystem %}<link rel="stylesheet" href="/css/fg-system.css">{% if fgsBlog %}<link rel="stylesheet" href="/css/fgs-blog.css">{% endif %}{% if fgsTools %}<link rel="stylesheet" href="/css/fgs-tools.css">{% endif %}{% else %}<link rel="stylesheet" href="/css/fg-design.css">{% endif %}
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': '#08082F',
-                        'secondary': '#91DCFF',
-                        'accent': '#D1B464',
-                        'page-bg': '#CDD2D4'
-                    },
-                    fontFamily: {
-                        'sans': ['"Times New Roman"', 'Times', 'serif']
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- CSS -->
+    {% if not fgDesign %}
+    <!-- Ältere Seiten: Tailwind lokal kompiliert (npm run css) statt cdn.tailwindcss.com -->
+    <link rel="stylesheet" href="/css/tailwind.css">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/fg-polish.css">
     <link rel="stylesheet" href="/fg-assistant.css">
-
-    <!-- FONT AWESOME -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome 6.4.0 lokal statt cdnjs -->
+    <link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css">
+    {% endif %}
 
     <!-- Externe Dienste werden durch consent-manager.js erst nach Einwilligung geladen. -->
     <script>
@@ -345,8 +338,7 @@
         window.FG_GTM_ID = "GTM-5DVGRHB2";
     </script>
 
-
-
+    {% if not fgDesign %}
     <style>
         /*
          * FG Real Estate – heller Premium-Hintergrund mit originalen Kratzerlinien
@@ -372,162 +364,240 @@
             background-color: #E8E1D4 !important;
         }
     </style>
+    {% endif %}
+    {# Design-Pass 3 §4.1/§4.2: Leistungs- und Gebietsseiten im Design-System laden das Titelbild mit allen Breiten bis 2880 px vor
+       (Filter bild). Mit Handy-Zuschnitt zwei Zeilen mit derselben Grenze 11:10 und denselben sizes wie das Makro hero. #}
+    {% if not preloadImage and fgSystem and fgsHero %}
+      {#- heroPreload: Schlüssel aus seitenbilder.json, z. B. die erste Folie der Diaschau auf der Startseite (§3.1) #}
+      {%- set heroKey = heroPreload if heroPreload else (service.hero.name if (service and service.hero) else (("/images/gebiete/" + gebiet.heroPhoto.name) if (gebiet and gebiet.heroPhoto) else "")) %}
+      {%- if heroKey %}{% set hb = heroKey | bild %}{% set heroVorgeladen = true %}
+    {#- §2.6 Punkt 6: mit vollständiger AVIF-Reihe wird das AVIF vorgeladen (dieselbe Datei, die das <picture> wählt) #}
+    <link rel="preload" as="image"{% if hb.avif %} type="image/avif" href="{{ hb.src | replace('.webp', '.avif') }}" imagesrcset="{{ hb.avif }}"{% else %} href="{{ hb.src }}" imagesrcset="{{ hb.srcset }}"{% endif %} imagesizes="{{ 'max(100vw, 164vh)' if (not heroPreload and service and service.hero) else '100vw' }}"{% if hb.hoch %} media="not all and (max-aspect-ratio: 11/10)"{% endif %} fetchpriority="high">
+      {%- if hb.hoch %}
+    <link rel="preload" as="image"{% if hb.hoch.avif %} type="image/avif" href="{{ hb.hoch.src | replace('.webp', '.avif') }}" imagesrcset="{{ hb.hoch.avif }}"{% else %} href="{{ hb.hoch.src }}" imagesrcset="{{ hb.hoch.srcset }}"{% endif %} imagesizes="{{ '(max-aspect-ratio: 4/5) 80vh, 100vw' if (gebiet or heroPreload) else '(max-aspect-ratio: 14/25) 56vh, 100vw' }}" media="(max-aspect-ratio: 11/10)" fetchpriority="high">
+      {%- endif %}{% endif %}
+    {% endif %}
+    {# Leistungsseiten (fgd-service.njk): Titelbild aus service.hero vorladen. #}
+    {% if not preloadImage and not heroVorgeladen and service and service.hero %}{# gleiche Breiten wie das Titelbild in fgd-service.njk (service.hero.widths, wenn die Quelle kleiner ist) #}{% set pW = service.hero.widths or [960, 1600, 2000] %}{% set preloadImage = "/images/seiten/" + service.hero.name + "-" + (1600 if 1600 in pW else pW | last) + ".webp" %}{% set preloadImageSrcset %}{% for w in pW %}/images/seiten/{{ service.hero.name }}-{{ w }}.webp {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}{% endset %}{% endif %}
+    {# Seiten mit fgs-page.njk: Titelbild aus pg.hero vorladen (Filter bild, dieselben Breiten wie im Titelbild). #}
+    {% if not preloadImage and not heroVorgeladen and pg and pg.hero %}{% set phB = pg.hero.name | bild %}{% set preloadImage = phB.src %}{% set preloadImageSrcset = phB.srcset %}{% endif %}
+    {% if preloadImage %}{% set preloadAvif = preloadImageSrcset | avifSet if preloadImageSrcset else "" %}<link rel="preload" as="image"{% if preloadAvif %} type="image/avif" href="{{ preloadImage | replace('.webp', '.avif') }}" imagesrcset="{{ preloadAvif }}"{% else %} href="{{ preloadImage }}"{% if preloadImageSrcset %} imagesrcset="{{ preloadImageSrcset }}"{% endif %}{% endif %}{% if preloadImageSrcset %} imagesizes="100vw"{% endif %} fetchpriority="high">{% endif %}
 
 </head>
 
-<body class="site-background{% if bodyClass %} {{ bodyClass }}{% endif %}">
+<body class="{% if fgSystem %}fgs{% if fgsHero %} fgs-has-hero{% endif %}{% elif fgDesign %}fgd{% else %}site-background{% endif %}{% if fgSystem and fgsIndex %} fgs-indexed{% endif %}{% if bodyClass %} {{ bodyClass }}{% endif %}">
+{% from "fgd-icons.njk" import icon %}
+{% set currentUrl = page.url | url %}
+{% if currentUrl == "/index.html" %}{% set currentUrl = "/" %}{% endif %}
 
+{% if fgSystem %}{% include "fgs-header.njk" %}{% else %}
+<a class="fgd-skip" href="#inhalt">Zum Inhalt springen</a>
 
-<nav class="fg-sticky-header bg-primary text-white shadow-lg" data-fg-site-header>
-  <div class="fg-header-inner flex justify-between items-center py-4 px-4 sm:px-6 lg:px-8">
-    <div class="text-2xl font-bold">
-      <a href="/index.html" class="flex items-center text-gold-metallic hover:opacity-90 transition">
-        <img src="/images/fg-logo-gold-transparent.png" alt="Fischer &amp; Geserich Real Estate" class="fg-header-logo" width="54" height="54">
-        <span class="inline-block xl:hidden text-base">Fischer &amp; Geserich<br>Real Estate</span>
-        <span class="hidden xl:inline text-xl">Fischer &amp; Geserich Real Estate</span>
-      </a>
-    </div>
+{# Desktop: Telefon und E-Mail in einer schmalen Leiste über dem Menü, damit Wortmarke, 6 Menüpunkte und Bewertungs-Button in eine Zeile passen. #}
+<div class="fgd-topbar">
+  <div class="fgd-topbar-inner">
+    <span>Schützenstraße 30, 12165 Berlin</span>
+    <span class="fgd-topbar-links">
+      <a href="{{ nav.phone.href }}">{{ icon("phone") | safe }}{{ nav.phone.display }}</a>
+      <a href="mailto:{{ nav.email }}">{{ icon("mail") | safe }}{{ nav.email }}</a>
+    </span>
+  </div>
+</div>
 
-    <div class="xl:hidden">
-      <button id="mobile-menu-button" class="fg-menu-button text-white focus:outline-none" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Navigation öffnen">
-        <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
-      </button>
-    </div>
+<header class="fgd-header" data-fg-site-header>
+  <div class="fgd-header-bar">
+    <a class="fgd-brand" href="/" aria-label="Fischer &amp; Geserich Real Estate, zur Startseite">
+      <img src="/images/logo/fg-zeichen-gold.svg" alt="" width="47" height="56">
+      <span class="fgd-brand-name">Fischer &amp; Geserich<small>Real Estate</small></span>
+    </a>
 
-    {% set currentUrl = page.url | url %}
-    {% set activeClass = "text-gold-gradient with-shadow font-bold border-b-2 border-accent pb-1 whitespace-nowrap" %}
-    {% set defaultClass = "hover:text-accent whitespace-nowrap" %}
-    {% set buyUrls = ['/kaufen.html', '/angebote.html', '/ankaufsberatung.html', '/mieten.html'] %}
-    {% set sellUrls = ['/verkaufen.html', '/vermieten.html', '/mehrfamilienhaus.html'] %}
-    {% set labUrls = ['/investment-lab.html', '/kapitalanlage.html', '/lexikon/', '/standorte/'] %}
+    <nav class="fgd-nav" aria-label="Hauptnavigation">
+      <ul class="fgd-nav-list">
+        {% for group in nav.menu %}
+        <li class="fgd-nav-item{% if group.areas %} fgd-nav-item--areas{% endif %}{% if group | navGroupCurrent(currentUrl) %} is-current{% endif %}" data-fgd-nav-item>
+          <button type="button" class="fgd-nav-trigger" data-fgd-nav-trigger aria-expanded="false" aria-controls="fgd-panel-{{ loop.index }}">{{ group.label }}{{ icon("chevron") | safe }}</button>
+          {% if group.areas %}
+          {#- Gebiete: jede Seite aus _data/serviceArea.js, je Region eine Spalte (Brief Gebietsseiten §7). -#}
+          <div class="fgd-nav-panel fgd-nav-panel--areas" id="fgd-panel-{{ loop.index }}">
+            {% for item in group.items %}
+            <div class="fgd-nav-area fgd-nav-area--{{ item.key }}">
+              <a class="fgd-nav-area-head" href="{{ item | navHref }}"{% if item | navHref == currentUrl %} aria-current="page"{% endif %}><strong>{{ item.label }}</strong><span>{{ item.note }}</span></a>
+              {% if item.key == "berlin" %}
+              <ul>{% for p in serviceArea.berlin.bezirke %}<li>{{ p | areaLink(null, currentUrl) | safe }}</li>{% endfor %}</ul>
+              {% elif item.key == "brandenburg" %}
+              <div class="fgd-nav-area-split">
+                <div><p>Landkreise</p><ul>{% for p in serviceArea.landkreise %}<li>{{ p | areaLink(null, currentUrl) | safe }}</li>{% endfor %}</ul></div>
+                <div><p>Städte</p><ul>{% for p in serviceArea.towns %}<li>{{ p | areaLink(null, currentUrl) | safe }}</li>{% endfor %}</ul></div>
+              </div>
+              {% else %}
+              <ul>{% for p in serviceArea[item.key].teile %}<li>{{ p | areaLink(null, currentUrl) | safe }}</li>{% endfor %}</ul>
+              {% endif %}
+            </div>
+            {% endfor %}
+            <p class="fgd-nav-area-all"><a href="{{ group.href }}"{% if group.href == currentUrl %} aria-current="page"{% endif %}>Alle Gebiete auf einen Blick{{ icon("arrow") | safe }}</a><span>Finanzierungen begleiten wir deutschlandweit.</span></p>
+          </div>
+          {% else %}
+          <div class="fgd-nav-panel{% if group.towns or group.items.length > 5 %} fgd-nav-panel--wide{% endif %}" id="fgd-panel-{{ loop.index }}">
+            {% for item in group.items %}
+            <a href="{{ item | navHref }}"{% if item | navHref == currentUrl %} aria-current="page"{% endif %}><strong>{{ item.label }}</strong><span>{{ item.note }}</span></a>
+            {% endfor %}
+            {% if group.towns %}
+            <div class="fgd-nav-towns">
+              <p>Orte in Brandenburg</p>
+              <ul>{% for town in group.towns %}<li><a href="{{ town.href }}"{% if town.href == currentUrl %} aria-current="page"{% endif %}>{{ town.label }}</a></li>{% endfor %}</ul>
+            </div>
+            {% endif %}
+          </div>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
 
-    <div class="hidden xl:flex fg-desktop-nav items-center">
-      <a href="/index.html" class="{% if currentUrl == '/' or currentUrl == '/index.html' %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Start</a>
-
-      <div class="fg-nav-group">
-        <a href="/kaufen.html" aria-haspopup="true" class="{% if currentUrl in buyUrls %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Kaufen <i class="fas fa-chevron-down fg-nav-caret"></i></a>
-        <div class="fg-nav-sub">
-          <a href="/kaufen.html"><i class="fas fa-key"></i><span><strong>Kaufen</strong><small>Der passende Einstieg</small></span></a>
-          <a href="/angebote.html"><i class="fas fa-building"></i><span><strong>Angebote</strong><small>Aktuelle Immobilien</small></span></a>
-          <a href="/ankaufsberatung.html"><i class="fas fa-handshake"></i><span><strong>Ankaufsberatung</strong><small>Objekt &amp; Strategie prüfen</small></span></a>
-          <a href="/mieten.html"><i class="fas fa-door-open"></i><span><strong>Mieten</strong><small>Mietgesuch anlegen</small></span></a>
-        </div>
-      </div>
-
-      <div class="fg-nav-group">
-        <a href="/verkaufen.html" aria-haspopup="true" class="{% if currentUrl in sellUrls %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Verkaufen <i class="fas fa-chevron-down fg-nav-caret"></i></a>
-        <div class="fg-nav-sub">
-          <a href="/verkaufen.html"><i class="fas fa-house-circle-check"></i><span><strong>Verkaufen</strong><small>Bewertung &amp; Vermarktung</small></span></a>
-          <a href="/vermieten.html"><i class="fas fa-building-user"></i><span><strong>Vermieten</strong><small>Mietpreis &amp; Auswahl</small></span></a>
-          <a href="/mehrfamilienhaus.html"><i class="fas fa-city"></i><span><strong>Mehrfamilienhaus</strong><small>Ankauf &amp; Verkauf</small></span></a>
-        </div>
-      </div>
-
-      <a href="/finanzierungsberatung.html" class="{% if currentUrl == '/finanzierungsberatung.html' %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Finanzierung</a>
-
-      <div class="fg-nav-group">
-        <a href="/investment-lab.html" aria-haspopup="true" class="{% if currentUrl in labUrls %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Investment Lab <i class="fas fa-chevron-down fg-nav-caret"></i></a>
-        <div class="fg-nav-sub fg-nav-sub-wide">
-          <a href="/investment-lab.html"><i class="fas fa-flask"></i><span><strong>Investment Lab</strong><small>Rechner &amp; Werkzeuge</small></span></a>
-          <a href="/kapitalanlage.html"><i class="fas fa-chart-line"></i><span><strong>Kapitalanlage</strong><small>Investmentpfad</small></span></a>
-          <a href="/standorte/"><i class="fas fa-map-location-dot"></i><span><strong>Standorte</strong><small>Standortanalysen</small></span></a>
-          <a href="/lexikon/"><i class="fas fa-book"></i><span><strong>Lexikon</strong><small>Begriffe erklärt</small></span></a>
-        </div>
-      </div>
-
-      <a href="/ueber-uns.html" class="{% if currentUrl == '/ueber-uns.html' %}{{ activeClass }}{% else %}{{ defaultClass }}{% endif %}">Über uns</a>
-      <a href="/blog/" class="{{ defaultClass }}">Blog</a>
-      <a href="/kontakt.html" class="fg-header-contact text-base font-bold py-2 px-6 whitespace-nowrap{% if currentUrl == '/kontakt.html' %} fg-header-contact-active{% endif %}">Kontakt</a>
+    <div class="fgd-header-actions">
+      <a class="fgd-phone" href="{{ nav.phone.href }}" aria-label="Anrufen: {{ nav.phone.display }}">{{ icon("phone") | safe }}<span class="fgd-phone-number">{{ nav.phone.display }}</span></a>
+      <a class="fgd-btn fgd-btn-gold" href="{{ nav.valuation | navHref }}"><span class="fgd-cta-long">{{ nav.valuation.label }}</span><span class="fgd-cta-short">{{ nav.valuation.short }}</span></a>
+      <button type="button" class="fgd-burger" data-fgd-burger aria-expanded="false" aria-controls="fgd-mobile" aria-label="Menü öffnen">{{ icon("menu", "fgd-icon-open") | safe }}{{ icon("close", "fgd-icon-close") | safe }}</button>
     </div>
   </div>
 
-  <div id="mobile-menu" class="hidden xl:hidden fg-mobile-menu bg-primary shadow-xl" aria-hidden="true">
-    <div class="fg-mobile-menu-inner px-4 sm:px-6 lg:px-8">
-      {% set mobileActiveClass = "block bg-accent text-primary font-semibold" %}
-      {% set mobileDefaultClass = "block text-white" %}
-      <a href="/index.html" class="fg-mobile-nav-row {% if currentUrl == '/' or currentUrl == '/index.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Start</a>
-
-      <p class="fg-mobile-label">Kaufen</p>
-      <a href="/kaufen.html" class="fg-mobile-nav-row {% if currentUrl == '/kaufen.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Kaufen</a>
-      <a href="/angebote.html" class="fg-mobile-nav-row {% if currentUrl == '/angebote.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Angebote</a>
-      <a href="/ankaufsberatung.html" class="fg-mobile-nav-row {% if currentUrl == '/ankaufsberatung.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Ankaufsberatung</a>
-      <a href="/mieten.html" class="fg-mobile-nav-row {% if currentUrl == '/mieten.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Mieten</a>
-
-      <p class="fg-mobile-label">Eigentümer</p>
-      <a href="/verkaufen.html" class="fg-mobile-nav-row {% if currentUrl == '/verkaufen.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Verkaufen</a>
-      <a href="/vermieten.html" class="fg-mobile-nav-row {% if currentUrl == '/vermieten.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Vermieten</a>
-      <a href="/mehrfamilienhaus.html" class="fg-mobile-nav-row {% if currentUrl == '/mehrfamilienhaus.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Mehrfamilienhaus</a>
-
-      <p class="fg-mobile-label">Finanzierung &amp; Investment</p>
-      <a href="/finanzierungsberatung.html" class="fg-mobile-nav-row {% if currentUrl == '/finanzierungsberatung.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Finanzierung</a>
-      <a href="/investment-lab.html" class="fg-mobile-nav-row {% if currentUrl == '/investment-lab.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Investment Lab</a>
-      <a href="/kapitalanlage.html" class="fg-mobile-nav-row {% if currentUrl == '/kapitalanlage.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Kapitalanlage</a>
-      <a href="/standorte/" class="fg-mobile-nav-row {{ mobileDefaultClass }}">Standorte</a>
-      <a href="/lexikon/" class="fg-mobile-nav-row {{ mobileDefaultClass }}">Lexikon</a>
-
-      <p class="fg-mobile-label">Unternehmen</p>
-      <a href="/ueber-uns.html" class="fg-mobile-nav-row {% if currentUrl == '/ueber-uns.html' %}{{ mobileActiveClass }}{% else %}{{ mobileDefaultClass }}{% endif %}">Über uns</a>
-      <a href="/blog/" class="fg-mobile-nav-row {{ mobileDefaultClass }}">Blog</a>
-      <a href="/kontakt.html" class="fg-mobile-contact fg-mobile-nav-row text-center font-bold{% if currentUrl == '/kontakt.html' %} fg-mobile-contact-active{% endif %}">Kontakt</a>
+  <div class="fgd-mobile" id="fgd-mobile" hidden>
+    <nav aria-label="Hauptnavigation mobil">
+      {% for group in nav.menu %}
+      <details>
+        <summary>{{ group.label }}{{ icon("plus") | safe }}</summary>
+        {% if group.areas %}
+        <ul><li><a href="{{ group.href }}"{% if group.href == currentUrl %} aria-current="page"{% endif %}>Alle Gebiete</a></li></ul>
+        <div class="fgd-mobile-towns">
+          <p>Berlin</p>
+          <ul><li>{{ serviceArea.berlin | areaLink("Übersicht Berlin", currentUrl) | safe }}</li>{% for p in serviceArea.berlin.bezirke %}<li>{{ p | areaLink(null, currentUrl) | safe }}</li>{% endfor %}</ul>
+        </div>
+        <div class="fgd-mobile-towns">
+          <p>Brandenburg · Landkreise</p>
+          <ul>{% for p in serviceArea.landkreise %}<li>{{ p | areaLink(null, currentUrl) | safe }}</li>{% endfor %}</ul>
+        </div>
+        <div class="fgd-mobile-towns">
+          <p>Brandenburg · Städte</p>
+          <ul>{% for p in serviceArea.towns %}<li>{{ p | areaLink(null, currentUrl) | safe }}</li>{% endfor %}</ul>
+        </div>
+        {% for key in ["leipzig", "dresden"] %}
+        <div class="fgd-mobile-towns">
+          <p>{{ serviceArea[key].name }}</p>
+          <ul><li>{{ serviceArea[key] | areaLink("Übersicht " + serviceArea[key].name, currentUrl) | safe }}</li>{% for p in serviceArea[key].teile %}<li>{{ p | areaLink(null, currentUrl) | safe }}</li>{% endfor %}</ul>
+        </div>
+        {% endfor %}
+        {% else %}
+        <ul>
+          {% for item in group.items %}<li><a href="{{ item | navHref }}"{% if item | navHref == currentUrl %} aria-current="page"{% endif %}>{{ item.label }}</a></li>{% endfor %}
+        </ul>
+        {% endif %}
+        {% if group.towns %}
+        <div class="fgd-mobile-towns">
+          <p>Orte in Brandenburg</p>
+          <ul>{% for town in group.towns %}<li><a href="{{ town.href }}">{{ town.label }}</a></li>{% endfor %}</ul>
+        </div>
+        {% endif %}
+      </details>
+      {% endfor %}
+    </nav>
+    <div class="fgd-mobile-contact">
+      <a class="fgd-btn fgd-btn-gold" href="{{ nav.valuation | navHref }}">{{ nav.valuation.label }}{{ icon("arrow") | safe }}</a>
+      <a class="fgd-mobile-line" href="{{ nav.phone.href }}">{{ icon("phone") | safe }}{{ nav.phone.display }}</a>
+      <a class="fgd-mobile-line" href="mailto:{{ nav.email }}">{{ icon("mail") | safe }}{{ nav.email }}</a>
     </div>
   </div>
-</nav>
+</header>
+{% endif %}
 
-<main>{{ content | safe }}</main>
+{#- Update 9 (29.10.2026): Platzhalter für den Aufklapper „Bildnachweise dieser Seite“ direkt über der Fußzeile; den Inhalt setzt der
+    Transform bildnachweise-seite in .eleventy.js aus den Bildern der fertigen Seite. -#}
+<main id="inhalt">{{ content | safe }}{% if fgSystem %}<!-- bildnachweise-seite -->{% endif %}</main>
 
-
-<footer class="bg-gray-900 text-white py-10 fg-site-footer">
-  <div class="container mx-auto px-4">
-    <div class="fg-footer-grid">
-      <div class="fg-footer-brand">
-        <a href="/index.html" class="flex items-center">
-          <img src="/images/fg-logo-gold-transparent.png" alt="Fischer &amp; Geserich Real Estate" class="fg-header-logo" width="54" height="54">
-          <span>Fischer &amp; Geserich<br>Real Estate</span>
+{% if fgSystem %}{% include "fgs-footer.njk" %}{% else %}
+<footer class="fgd-footer">
+  <div class="fgd-footer-inner">
+    <div class="fgd-footer-grid">
+      <div class="fgd-footer-brand">
+        <a class="fgd-brand" href="/" aria-label="Fischer &amp; Geserich Real Estate, zur Startseite">
+          <img src="/images/logo/fg-zeichen-gold.svg" alt="" width="47" height="56" loading="lazy">
+          <span class="fgd-brand-name">Fischer &amp; Geserich<small>Real Estate</small></span>
         </a>
-        <p>Immobilienvermittlung, Ankaufsberatung und Immobilienfinanzierung aus Berlin.</p>
-      </div>
-
-      <div class="fg-footer-contact">
-        <span class="fg-footer-label">Kontakt</span>
-        <a href="tel:+4915203083048"><i class="fas fa-phone"></i> 0152 03083048</a>
-        <a href="mailto:info@fg-realestate.de"><i class="fas fa-envelope"></i> info@fg-realestate.de</a>
-        <span><i class="fas fa-location-dot"></i> Schützenstraße 30 · 12165 Berlin</span>
-        <small>Persönliche Termine nach vorheriger Vereinbarung.</small>
-      </div>
-
-      <div class="fg-footer-links">
-        <span class="fg-footer-label">Direkt</span>
-        <a href="/kontakt.html">Kontakt</a>
-        <a href="/angebote.html">Angebote</a>
-        <a href="/finanzierungsberatung.html">Finanzierung</a>
-        <a href="/investment-lab.html">Investment Lab</a>
-      </div>
-
-      <div class="fg-footer-social">
-        <span class="fg-footer-label">F&amp;G online</span>
-        <div class="flex gap-4">
-          <a href="https://www.linkedin.com/company/fischer-geserich-real-estate-gmbh/" aria-label="Fischer &amp; Geserich auf LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://www.instagram.com/fg.immobilien/" aria-label="Fischer &amp; Geserich auf Instagram"><i class="fab fa-instagram"></i></a>
+        <address>
+          <span>Fischer &amp; Geserich Real Estate GmbH</span>
+          <span>Schützenstraße 30</span>
+          <span>12165 Berlin</span>
+        </address>
+        <div class="fgd-footer-contact">
+          <a href="{{ nav.phone.href }}">{{ icon("phone") | safe }}{{ nav.phone.display }}</a>
+          <a href="mailto:{{ nav.email }}">{{ icon("mail") | safe }}{{ nav.email }}</a>
         </div>
+        <p class="fgd-footer-note">Persönliche Termine nach vorheriger Vereinbarung. Erlaubnisse nach § 34c und § 34i GewO.</p>
+        <div class="fgd-footer-social">
+          <a href="https://www.linkedin.com/company/fischer-geserich-real-estate-gmbh/" aria-label="Fischer &amp; Geserich auf LinkedIn">{{ icon("linkedin") | safe }}</a>
+          <a href="https://www.instagram.com/fg.immobilien/" aria-label="Fischer &amp; Geserich auf Instagram">{{ icon("instagram") | safe }}</a>
+        </div>
+      </div>
+
+      <div class="fgd-footer-col">
+        <h2>Leistungen</h2>
+        <ul>{% for item in nav.services %}<li><a href="{{ item | navHref }}">{{ item.label }}</a></li>{% endfor %}</ul>
+      </div>
+
+      <div class="fgd-footer-col fgd-footer-areas">
+        <h2>Gebiete</h2>
+        {#- Eine Quelle: _data/serviceArea.js. Noch nicht gebaute Seiten stehen als Text da. -#}
+        <div class="fgd-footer-group">
+          <h3><a href="/standorte/berlin/">Berlin</a></h3>
+          <ul>{% for bezirk in serviceArea.berlin.bezirke %}<li>{{ bezirk | areaLink | safe }}</li>{% endfor %}</ul>
+        </div>
+        <div class="fgd-footer-group">
+          <h3><a href="/standorte/#region-brandenburg">Brandenburg</a></h3>
+          <ul class="fgd-footer-cols">{% for kreis in serviceArea.landkreise %}<li>{{ kreis | areaLink | safe }}</li>{% endfor %}</ul>
+          <ul class="fgd-footer-cols fgd-footer-towns">{% for town in serviceArea.towns %}<li>{{ town | areaLink(town.short) | safe }}</li>{% endfor %}</ul>
+        </div>
+        <div class="fgd-footer-pair">
+          {% for key in ["leipzig", "dresden"] %}
+          <div class="fgd-footer-group">
+            <h3>{{ serviceArea[key] | areaLink | safe }}</h3>
+            <ul>{% for teil in serviceArea[key].teile %}<li>{{ teil | areaLink | safe }}</li>{% endfor %}</ul>
+          </div>
+          {% endfor %}
+        </div>
+        <p class="fgd-footer-all"><a href="/standorte/">Alle Gebiete</a></p>
+      </div>
+
+      <div class="fgd-footer-col">
+        <h2>Wissen &amp; Unternehmen</h2>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/lexikon/">Lexikon</a></li>
+          <li><a href="/investment-lab.html">Investment Lab</a></li>
+          <li><a href="/investitionsrechner.html">Investitionsrechner</a></li>
+          <li><a href="/ueber-uns.html">Über uns</a></li>
+          <li><a href="/angebote.html">Aktuelle Angebote</a></li>
+          <li><a href="/kontakt.html">Kontakt</a></li>
+        </ul>
       </div>
     </div>
 
-    <div class="fg-footer-legal">
-      <p>&copy; 2026 Fischer &amp; Geserich Real Estate GmbH. Alle Rechte vorbehalten.</p>
-      <p>
-        <a href="/impressum.html">Impressum</a><span>|</span>
-        <a href="/datenschutz.html">Datenschutz</a><span>|</span>
-        <a href="/agb.html">AGB</a><span>|</span>
-        <a href="#" data-open-consent>Cookie-Einstellungen</a>
-      </p>
+    <div class="fgd-footer-legal">
+      <p>&copy; 2026 Fischer &amp; Geserich Real Estate GmbH</p>
+      <ul>
+        <li><a href="/impressum.html">Impressum</a></li>
+        <li><a href="/datenschutz.html">Datenschutz</a></li>
+        <li><a href="/agb.html">AGB</a></li>
+        <li><a href="/bildnachweise/">Bildnachweise</a></li>
+        <li><a href="#" data-open-consent>Cookie-Einstellungen</a></li>
+      </ul>
     </div>
   </div>
 </footer>
+{% endif %}
 
-
+<button type="button" class="fgd-assistant-launcher" data-fgd-assistant aria-controls="fg-ai-panel" aria-label="F&amp;G Assistent">{{ icon("chat") | safe }}<span>F&amp;G Assistent</span></button>
 
 <!-- F&G digitaler Immobilien-Assistent: komplett regelbasiert, ohne externes KI-Modell -->
-<div class="fg-ai-assistant" data-fg-ai-assistant>
+<div class="fg-ai-assistant" data-fg-ai-assistant hidden>
   <button type="button" class="fg-ai-launcher" data-fg-ai-launcher aria-expanded="false" aria-controls="fg-ai-panel">
     <span class="fg-ai-launcher-icon"><i class="fas fa-wand-magic-sparkles"></i></span>
     <span class="fg-ai-launcher-copy"><small>Digitaler Navigator</small><strong>F&G Assistent</strong></span>
@@ -556,7 +626,7 @@
 
     <div class="fg-ai-messages" data-fg-ai-messages role="log" aria-live="polite" aria-relevant="additions"></div>
 
-    <form class="fg-ai-compose" data-fg-ai-form>
+    <form method="post" class="fg-ai-compose" data-fg-ai-form>
       <div class="fg-ai-input-wrap">
         <textarea class="fg-ai-input" data-fg-ai-input rows="1" maxlength="600" placeholder="Frage zu Kauf, Verkauf, Finanzierung, Rendite …" aria-label="Frage an den F&G Assistenten"></textarea>
         <button class="fg-ai-send" type="submit" aria-label="Frage absenden"><i class="fas fa-arrow-up"></i></button>
@@ -570,53 +640,26 @@
   </section>
 </div>
 
+{% if not fgDesign %}
 <!-- Desktop-Schnellaktion: zurück zum Seitenanfang -->
 <button type="button" class="fg-back-to-top" data-back-to-top aria-label="Zum Seitenanfang"><i class="fas fa-arrow-up"></i></button>
-
 <script>
-    const mobileMenuBtn = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const siteHeader = document.querySelector('[data-fg-site-header]');
-
-    const syncHeaderHeight = () => {
-        if (siteHeader) document.documentElement.style.setProperty('--fg-header-height', `${siteHeader.querySelector('.fg-header-inner')?.offsetHeight || siteHeader.offsetHeight}px`);
-    };
-
-    const setMobileMenu = (open) => {
-        if (!mobileMenu || !mobileMenuBtn) return;
-        mobileMenu.classList.toggle('hidden', !open);
-        mobileMenu.setAttribute('aria-hidden', String(!open));
-        mobileMenuBtn.setAttribute('aria-expanded', String(open));
-        mobileMenuBtn.setAttribute('aria-label', open ? 'Navigation schließen' : 'Navigation öffnen');
-        const icon = mobileMenuBtn.querySelector('i');
-        icon?.classList.toggle('fa-bars', !open);
-        icon?.classList.toggle('fa-xmark', open);
-        document.body.classList.toggle('fg-menu-open', open);
-        syncHeaderHeight();
-        if (open) mobileMenu.scrollTop = 0;
-    };
-
-    mobileMenuBtn?.addEventListener('click', () => setMobileMenu(mobileMenu?.classList.contains('hidden')));
-    mobileMenu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMobileMenu(false)));
-    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setMobileMenu(false); });
-    window.addEventListener('resize', () => {
-        syncHeaderHeight();
-        if (window.innerWidth >= 1280) setMobileMenu(false);
-    }, { passive: true });
-    syncHeaderHeight();
-
     const backToTop = document.querySelector('[data-back-to-top]');
     const syncBackToTop = () => backToTop?.classList.toggle('is-visible', window.scrollY > 550);
     window.addEventListener('scroll', syncBackToTop, { passive: true });
     backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     syncBackToTop();
-
 </script>
-
-
-
 <script src="/script.js"></script>
-<script src="/fg-knowledge.js"></script>
-<script src="/fg-assistant.js"></script>
+{% endif %}
+<script src="/fg-design.js" defer></script>
+{% if fgSystem %}<script src="/fg-system.js" defer></script>{% endif %}
+{%- if fgsBewegung %}
+<script src="/vendor/gsap/gsap.min.js" defer></script>
+<script src="/vendor/gsap/ScrollTrigger.min.js" defer></script>
+<script src="/vendor/gsap/SplitText.min.js" defer></script>
+<script src="/vendor/lenis/lenis.min.js" defer></script>
+<script src="/fgs-motion.js" defer></script>
+{%- endif %}
 </body>
 </html>

@@ -14,6 +14,21 @@
 /wissen/110-prozent-finanzierung /blog/beleihungsauslauf-und-kondition/ 301
 /wissen/zinsbindung-strategisch-wahlen /blog/zinsbindung-strategisch-waehlen/ 301
 /wissen/forward-darlehen /blog/zinsbindung-strategisch-waehlen/ 301
+/wissen/immobilie-ohne-eigenkapital /blog/immobilie-ohne-eigenkapital/ 301
+/wissen/eigenkapital-optimal-einsetzen /blog/eigenkapital-optimal-einsetzen/ 301
+/wissen/finanzierungsreserve-planen /blog/eigenkapital-optimal-einsetzen/ 301
 /wissen/ /blog/ 301
 /wissen/* /blog/ 302
+# Alte Standortseiten, die in einer Landkreisseite aufgegangen sind (Brief Gebietsseiten §5).
+# Die Gebietsseite nennt sie unter "ersetzt"; dann baut Eleventy die alte Seite nicht mehr.
+/standorte/velten /standorte/oberhavel/ 301
+/standorte/velten/ /standorte/oberhavel/ 301
+/standorte/joachimsthal /standorte/barnim/ 301
+/standorte/joachimsthal/ /standorte/barnim/ 301
+/standorte/furstenwalde /standorte/oder-spree/ 301
+/standorte/furstenwalde/ /standorte/oder-spree/ 301
+/standorte/luckenwalde /standorte/teltow-flaeming/ 301
+/standorte/luckenwalde/ /standorte/teltow-flaeming/ 301
+/standorte/strausberg /standorte/maerkisch-oderland/ 301
+/standorte/strausberg/ /standorte/maerkisch-oderland/ 301
 https://www.fg-realestate.de/* https://fg-realestate.de/:splat 301!

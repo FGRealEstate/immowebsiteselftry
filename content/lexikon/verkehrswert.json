@@ -7,7 +7,7 @@
   "keywords": [
     "verkehrswert"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Immobilienkauf",
   "formula": null,
   "sources": [
@@ -17,6 +17,111 @@
     }
   ],
   "assistantAnswer": "Marktwert nach den gesetzlichen Bewertungsgrundsätzen. Verkehrswert beziehungsweise Marktwert ist nach § 194 BauGB der Preis, der im gewöhnlichen Geschäftsverkehr unter Berücksichtigung der rechtlichen Gegebenheiten, tatsächlichen Eigenschaften und Lage ohne ungewöhnliche oder persönliche Verhältnisse erzielbar wäre.",
-  "explanation": "Verkehrswert beziehungsweise Marktwert ist nach § 194 BauGB der Preis, der im gewöhnlichen Geschäftsverkehr unter Berücksichtigung der rechtlichen Gegebenheiten, tatsächlichen Eigenschaften und Lage ohne ungewöhnliche oder persönliche Verhältnisse erzielbar wäre.",
-  "practiceExample": "Ein Wunschpreis des Eigentümers oder ein Portal-Angebotspreis ist nicht automatisch Verkehrswert."
+  "explanation": "Der Verkehrswert, auch Marktwert genannt, ist nach § 194 BauGB der Preis, der zum Stichtag im gewöhnlichen Geschäftsverkehr zu erzielen wäre: nach den rechtlichen Gegebenheiten, den tatsächlichen Eigenschaften und der Lage, ohne ungewöhnliche oder persönliche Verhältnisse. Ein Wunschpreis oder ein Angebotspreis auf einem Portal ist deshalb kein Verkehrswert.",
+  "practiceExample": "Eine Eigentumswohnung mit 70 m² soll bewertet werden. Vergleichbare Wohnungen in der Lage wurden zuletzt für rund 5.000 € je m² verkauft. Der Vergleichswert liegt damit bei etwa 350.000 €. Weicht die Wohnung im Zustand von den Vergleichsobjekten ab, wird der Wert angepasst. Ein Portalangebot für 400.000 € ändert daran nichts, solange niemand diesen Preis zahlt.",
+  "ausbau": {
+    "einordnung": [
+      "Der Verkehrswert, auch Marktwert genannt, ist nach § 194 BauGB der Preis, der zum Stichtag im gewöhnlichen Geschäftsverkehr zu erzielen wäre: nach den rechtlichen Gegebenheiten, den tatsächlichen Eigenschaften und der Lage, ohne ungewöhnliche oder persönliche Verhältnisse.[[1]] Ein Wunschpreis oder ein Angebotspreis auf einem Portal ist deshalb kein Verkehrswert.",
+      "Ermittelt wird er mit dem Vergleichswert-, dem Ertragswert- oder dem Sachwertverfahren, auch mit mehreren davon; die Wahl richtet sich nach der Art der Immobilie und ist zu begründen.[[2]] Beim Vergleichswertverfahren sind Kaufpreise ähnlicher Objekte oder Vergleichsfaktoren die Grundlage, angepasst an die Eigenschaften der bewerteten Immobilie.[[3]]",
+      "Gutachten erstellen Sachverständige und die Gutachterausschüsse, diese etwa auf Antrag von Eigentümern oder Gerichten. Bindend sind die Gutachten der Ausschüsse nicht, soweit nichts anderes bestimmt oder vereinbart ist.[[4]]"
+    ],
+    "beispiel": [
+      "Eine Eigentumswohnung mit 70 m² soll bewertet werden. Vergleichbare Wohnungen in der Lage wurden zuletzt für rund 5.000 € je m² verkauft. Der Vergleichswert liegt damit bei etwa 350.000 €.",
+      "Weicht die Wohnung im Zustand von den Vergleichsobjekten ab, wird der Wert angepasst. Ein Portalangebot für 400.000 € ändert daran nichts, solange niemand diesen Preis zahlt."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Verkäufer heißt",
+        "absaetze": [
+          "Fischer & Geserich erstellt die Wertermittlung Ihres Objekts kostenlos, meistens innerhalb weniger Stunden und häufig noch am selben Tag.[[5]] Wollen Sie gegenüber dem Finanzamt einen niedrigeren Wert nachweisen, dient dafür regelmäßig ein Gutachten des Gutachterausschusses oder eines bestellten oder zertifizierten Sachverständigen.[[6]] Eine Wertermittlung zur Vermarktung ersetzt ein solches Gutachten nicht."
+        ]
+      },
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Für Ihre Finanzierung setzt die Bank den Beleihungswert an: den Wert, der während der gesamten Laufzeit voraussichtlich erzielbar ist, ohne vorübergehende Schwankungen und spekulative Elemente.[[7]] Finanzieren Sie einen großen Teil des Kaufpreises, kann der Zins deutlich höher liegen.[[8]]"
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "§ 194 BauGB",
+        "url": "https://www.gesetze-im-internet.de/bbaug/__194.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 6 ImmoWertV",
+        "url": "https://www.gesetze-im-internet.de/immowertv_2022/__6.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 24 ImmoWertV",
+        "url": "https://www.gesetze-im-internet.de/immowertv_2022/__24.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 193 BauGB",
+        "url": "https://www.gesetze-im-internet.de/bbaug/__193.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Startseite",
+        "url": "https://fg-realestate.de/",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 198 Bewertungsgesetz",
+        "url": "https://www.gesetze-im-internet.de/bewg/__198.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 3 Beleihungswertermittlungsverordnung",
+        "url": "https://www.gesetze-im-internet.de/belwertv/__3.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Aktuelle Bauzinsen",
+        "url": "https://www.finanztip.de/baufinanzierung/hypothekenzinsen/",
+        "stand": "Stand 25.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Definition § 194",
+        "fundstelle": "runde-1.md, V01"
+      },
+      {
+        "zahl": "drei Verfahren, Begründung",
+        "fundstelle": "runde-1.md, V02"
+      },
+      {
+        "zahl": "Vergleichswert, angepasster Vergleichsfaktor",
+        "fundstelle": "runde-1.md, V03"
+      },
+      {
+        "zahl": "Antrag, nicht bindend",
+        "fundstelle": "runde-1.md, V04"
+      },
+      {
+        "zahl": "Wertermittlung kostenlos, Stunden, selber Tag (F&G)",
+        "fundstelle": "runde-1.md, V07"
+      },
+      {
+        "zahl": "Nachweis niedrigerer Wert",
+        "fundstelle": "runde-1.md, V05"
+      },
+      {
+        "zahl": "Beleihungswert",
+        "fundstelle": "runde-1.md, V06"
+      },
+      {
+        "zahl": "höherer Zins bei höherer Beleihung",
+        "fundstelle": "runde-1.md, E01"
+      },
+      {
+        "zahl": "Beispiel 70 m² × 5.000 €/m² = 350.000 €; Portal 400.000 € (Annahme)",
+        "fundstelle": "Rechnung; 5.000 €/m² gegen S04 (5.511 €/m²), Marktprüfung runde-1.md"
+      }
+    ]
+  }
 }

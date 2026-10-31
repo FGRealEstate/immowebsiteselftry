@@ -1,0 +1,466 @@
+{
+  "slug": "potsdam",
+  "name": "Potsdam",
+  "nameLang": "Potsdam",
+  "kontakt": "lennart",
+  "title": "Immobilienmakler Potsdam – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler Potsdam: Verkauf, Kauf und Finanzierung aus einer Hand, mit amtlichen Preisen 2025 und dem Mietspiegel 2026. Kostenlose Bewertung.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Potsdam",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Potsdam beim Verkauf, beim Kauf und bei der Finanzierung, in der Innenstadt und den Vorstädten ebenso wie in Babelsberg und den Ortsteilen im Norden. Wir bewerten mit den Zahlen des Potsdamer Gutachterausschusses und des qualifizierten Mietspiegels.",
+  "kurzantwortMehr": "Das Berliner Maklerunternehmen mit Sitz in der Schützenstraße 30 arbeitet mit Erlaubnissen nach § 34c und § 34i GewO für Immobilienvermittlung und Immobilienfinanzierung. Ihr Ansprechpartner für Potsdam ist Lennart Geserich, Head of Sales & Vermietung.",
+  "hero": {
+    "name": "potsdam-alter-markt-luftbild",
+    "alt": "Luftbild der Potsdamer Mitte mit Stadtschloss, St. Nikolaikirche, Obelisk und Museum Barberini am Alten Markt, rechts die Havel",
+    "credit": "Raimond Spekking, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Stadtschloss,_St._Nikolaikirche,_Obelisk,_Museum_Barberini,_Potsdam,_Luftaufnahme-0783.jpg",
+    "position": "35% 50%"
+  },
+  "stand": "Oktober 2026",
+  "updated": "2026-10-29",
+  "zahlen": [
+    {
+      "wert": "750–1.250 €/m²",
+      "label": "Bodenrichtwerte im individuellen Wohnungsbau, gute bis sehr gute Wohnlage",
+      "detail": "Mittlere Wohnlage 450–900 €/m², Wohngebiete in städtischer Randlage 100–500 €/m². In den Mischgebieten der Potsdamer Innenstadt 1.000–1.800 €/m².",
+      "quelle": "Gutachterausschuss Potsdam, Grundstücksmarktbericht 2025, Abb. 139",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_P.pdf",
+      "stichtag": "Stichtag 01.01.2026"
+    },
+    {
+      "wert": "5.350 €/m²",
+      "label": "Ein- und Zweifamilienhäuser, Baujahr 2002–2020, gezahlter Preis je m² Wohnfläche (Median)",
+      "detail": "Spanne 3.035–7.515 €/m², 29 Kauffälle. Baujahr vor 1960: 4.540 €/m² bei 33 Kauffällen.",
+      "quelle": "Gutachterausschuss Potsdam, Grundstücksmarktbericht 2025, Abb. 56",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_P.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "4.650 €/m²",
+      "label": "Eigentumswohnungen im sanierten Altbau (vor 1960), Weiterverkauf (Median)",
+      "detail": "Spanne 2.535–6.970 €/m², 170 Kauffälle in mittlerer bis sehr guter Wohnlage. Neubau ab 2023 im Erstverkauf, mittlere Wohnlage: 7.580 €/m².",
+      "quelle": "Gutachterausschuss Potsdam, Grundstücksmarktbericht 2025, Abb. 118",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_P.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "5,55–16,73 €/m²",
+      "label": "Mittelwerte im Mietspiegel 2026, Netto-Kaltmiete",
+      "detail": "Qualifizierter Mietspiegel auf Basis von 35.882 Wohnungsmieten. Wohnungen über 60 bis 75 m²: ab Baujahr 2021 15,72 €/m², Baujahr 1991 bis 2008 mit Energieklasse A+, A, B oder C 9,28 €/m².",
+      "quelle": "Landeshauptstadt Potsdam, Pressemitteilung 289 und Mietspiegel 2026",
+      "url": "https://www.potsdam.de/de/289-neuer-qualifizierter-mietspiegel-fuer-potsdam-vorgestellt",
+      "stichtag": "Stichtag 30.09.2025, in Kraft seit 25.06.2026"
+    },
+    {
+      "wert": "1.249",
+      "label": "Kauffälle in Potsdam 2025",
+      "detail": "29 % mehr als im Vorjahr. Darunter 746 Kaufverträge über Wohnungseigentum: 194 Erstverkäufe, 484 Weiterverkäufe, 68 Umwandlungen.",
+      "quelle": "Gutachterausschuss Potsdam, Grundstücksmarktbericht 2025, S. 7 und Abb. 111",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_P.pdf",
+      "stichtag": "Kalenderjahr 2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Innenstadt und Vorstädte",
+      "mehrZuOrt": "Innenstadt und Vorstädten",
+      "absaetze": [
+        "Potsdam ist Landeshauptstadt und kreisfreie Stadt und grenzt an Berlin sowie an die Landkreise Potsdam-Mittelmark und Havelland. Seit Mitte des 19. Jahrhunderts hat sich Potsdam zur Behördenstadt und zu einem Wissenschafts- und Medienzentrum entwickelt.[[1]] Am 31.12.2025 hatte die Stadt 185.137 Einwohner; 2025 zogen 827 Menschen mehr zu als fort.[[3]] Nach Angaben der Stadt arbeiten in Potsdam rund 118.000 Menschen, mehr als 50.000 kommen jeden Tag aus dem Umland zur Arbeit.[[15]]",
+        "Am Hauptbahnhof halten die S7 und unter anderem die Regionalzüge RE1, RB20, RB21, RB22 und RB33. Die S7 fährt morgens alle zehn Minuten und braucht ohne Umstieg 37 Minuten bis Berlin Hauptbahnhof und 39 Minuten bis Friedrichstraße. Der RE1 endet derzeit in Charlottenburg; mit Umstieg in die S-Bahn sind es morgens 31 Minuten bis Berlin Hauptbahnhof.[[8]] Über die A 115 und die A 10 ist Potsdam an die Autobahn angebunden, der Flughafen BER liegt rund 35 km entfernt.[[1]]",
+        "Die Nauener Vorstadt prägen freistehende Villen und repräsentative Mietshäuser.[[11]] 48 % der 2025 weiterverkauften Eigentumswohnungen lagen im Stadtteil Potsdam. Sanierte Altbauwohnungen aus der Zeit vor 1960 kosteten im Weiterverkauf im Median 4.650 €/m² Wohnfläche, denkmalgeschützte Wohnungen im Erstverkauf 8.690 €/m².[[1]] Der Bodenrichtwert liegt zum 01.01.2026 an der Brandenburger Straße bei 1.800 €/m², in der Berliner Vorstadt bei 1.750 €/m², in der zweiten barocken Stadterweiterung bei 1.100 €/m², im Holländischen Viertel bei 1.000 €/m² und in der Nauener Vorstadt, der Jägervorstadt und der Brandenburger Vorstadt bei je 900 €/m².[[2]]"
+      ],
+      "bild": {
+        "name": "potsdam-hollaendisches-viertel",
+        "alt": "Rote Backsteinhäuser mit geschwungenen Giebeln an der Mittelstraße im Holländischen Viertel, davor parkende Autos",
+        "caption": "Die Mittelstraße im Holländischen Viertel.",
+        "credit": "Angel Miklashevsky, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Holl%C3%A4ndisches_Viertel,_Mittelstra%C3%9Fe,_Potsdam_1.jpg"
+      }
+    },
+    {
+      "h2": "Babelsberg und der Südosten",
+      "absaetze": [
+        "In Babelsberg gibt es sanierte Weberhäuser aus dem 18. Jahrhundert, gründerzeitliche Mietshäuser, Siedlungsbauten aus den 20er und 30er Jahren und Villen am Ufer des Griebnitzsees.[[11]] Die Bodenrichtwerte liegen zum 01.01.2026 Am Griebnitzsee 1.250 €/m², im Stadtzentrum Babelsberg 900 €/m², im Musikerviertel 750 €/m² nach 800 €/m² im Vorjahr und in Alt Nowawes 700 €/m².[[2]]",
+        "Am S-Bahnhof Babelsberg halten die S7 und die Straßenbahnen 94 und 99, am Bahnhof Griebnitzsee die S7 und die Regionalbahnen RB20, RB21 und RB22.[[8]] 23 % der 2025 weiterverkauften Eigentumswohnungen lagen in Babelsberg.[[1]]",
+        "Im Südosten liegen mit Am Stern und Drewitz die Großsiedlungen der Stadt.[[11]] In den Wohngebieten Am Stern, Drewitz und Kirchsteigfeld liegen die Bodenrichtwerte zum 01.01.2026 bei 750, 650 und 800 €/m².[[2]] Stadtweit kosteten sanierte Wohnungen der Baujahre 1960 bis 1990 im Weiterverkauf 2025 im Median 3.395 €/m², zwischen 1991 und 2022 gebaute Wohnungen in einfacher Wohnlage 2.875 €/m².[[1]] Zu Potsdam Süd gehören die Teltower und die Templiner Vorstadt, die Halbinsel Hermannswerder und die Wohngebiete Schlaatz und Waldstadt I und II.[[11]]"
+      ],
+      "bild": {
+        "name": "potsdam-babelsberg-karl-marx-strasse",
+        "alt": "Eine helle Villa mit Balkon und rundem Giebelfenster hinter einem Tor mit Pfeilern in der Karl-Marx-Straße in Babelsberg",
+        "caption": "Eine Villa in der Karl-Marx-Straße in Babelsberg.",
+        "credit": "JoachimKohler-HB, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Karl-Marx-Stra%C3%9Fe_62_in_Potsdam-Babelsberg_(2025).jpg"
+      }
+    },
+    {
+      "h2": "Bornstedt, Krampnitz und die Ortsteile im Norden",
+      "absaetze": [
+        "Das Bornstedter Feld ist seit 1993 Entwicklungsbereich, Krampnitz seit 2013.[[1]] Beim Erstverkauf von Eigentumswohnungen lagen die Schwerpunkte 2025 bei Neubauprojekten im Bornstedter Feld und in der Brandenburger Vorstadt sowie bei sanierten Häusern in Krampnitz. Neubauwohnungen ab Baujahr 2023 kosteten in mittlerer Wohnlage im Median 7.580 €/m².[[1]] In Bornstedt liegt der Bodenrichtwert zum 01.01.2026 an der Kirschallee bei 850 €/m² und in Bornstedt Ort bei 600 €/m².[[2]]",
+        "Krampnitz wurde am 4. August 2025 als Stadtteil eröffnet; seitdem fahren dort die Buslinien 609, 662 und N15. Die Straßenbahnlinie 96 wird verlängert und soll nach dem Bauzeitplan der Stadt Mitte 2032 Krampnitz-West erreichen.[[9]] Nach den Plänen der Stadt entsteht dort Wohnraum für bis zu 10.000 Menschen.[[10]] Der Bodenrichtwert für den Entwicklungsbereich liegt bei 900 €/m² für ein Urbanes Gebiet mit einer GFZ von 1,3.[[1]]",
+        "Seit Ende Oktober 2003 gehören unter anderem Fahrland, Golm, Groß Glienicke, Marquardt und Neu Fahrland zur Stadt.[[1]] In Golm liegt der Potsdam Science Park mit drei Max-Planck- und zwei Fraunhofer-Instituten und drei Fakultäten der Universität Potsdam; dort forschen, arbeiten und studieren rund 13.000 Menschen.[[12]] Der Bodenrichtwert liegt zum 01.01.2026 im Ortskern von Groß Glienicke bei 550 €/m² nach 600 €/m² im Vorjahr, in Golm bei 500 €/m², in Marquardt bei 400 €/m² und im Ortskern von Fahrland bei 350 €/m².[[2]]"
+      ],
+      "bild": {
+        "name": "potsdam-bornstedt-ribbeckstrasse",
+        "alt": "Eine gelbe Villa im italienischen Stil mit Turm und Loggia in der Ribbeckstraße in Bornstedt, davor blühende Sträucher",
+        "caption": "Eine Villa in der Ribbeckstraße in Bornstedt.",
+        "credit": "Bärwinkel,Klaus, CC BY 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Bornstedt_Villa_Ribbeckstra%C3%9Fe.JPG"
+      }
+    }
+  ],
+  "anbindung": [
+    "Am Hauptbahnhof halten die S7 und unter anderem die Regionalzüge RE1, RB20, RB21, RB22 und RB33. Die S7 fährt morgens alle zehn Minuten und braucht ohne Umstieg 37 Minuten bis Berlin Hauptbahnhof und 39 Minuten bis Friedrichstraße. Der RE1 endet derzeit in Charlottenburg; mit Umstieg in die S-Bahn sind es morgens 31 Minuten bis Berlin Hauptbahnhof.[[8]]",
+    "Über die A 115 und die A 10 ist Potsdam an die Autobahn angebunden, der Flughafen BER liegt rund 35 km entfernt.[[1]]"
+  ],
+  "karte": {
+    "alt": "Karte der Stadt Potsdam: das Zentrum mit Berliner, Nauener, Jäger- und Brandenburger Vorstadt, Bornstedt und dem Bornstedter Feld; im Süden Babelsberg, Templiner Vorstadt, Hermannswerder, Schlaatz, Waldstadt I, Stern, Drewitz und Kirchsteigfeld; im Norden und Westen Golm, Marquardt, Fahrland, Neu Fahrland, Krampnitz und Groß Glienicke; dazu Bahnstrecken, Havel und Seen, Autobahnen und die Grenze zu Berlin"
+  },
+  "verkaufen": {
+    "h2": "Immobilie in Potsdam verkaufen",
+    "absaetze": [
+      "2025 wurden in Potsdam 1.249 Kaufverträge geschlossen, 29 % mehr als im Vorjahr. Was eine Wohnung bringt, hängt in Potsdam stark von der Wohnlage ab: Zwischen 1991 und 2022 gebaute Wohnungen kosteten im Weiterverkauf in einfacher Wohnlage im Median 2.875 €/m², in guter bis sehr guter Wohnlage 5.340 €/m².[[1]] Wir gehen deshalb vom Bodenrichtwert Ihrer Zone und der Wohnlagen-Einstufung des Gutachterausschusses aus und vergleichen mit den gezahlten Preisen nach Baujahr.",
+      "Wer eine gebrauchte Wohnung verkauft, konkurriert mit Neubauprojekten: 194 der 746 Kaufverträge über Wohnungseigentum waren 2025 Erstverkäufe.[[1]] Für Villen und Landhäuser weist der Gutachterausschuss eigene Preise aus; kleine Wohnvillen bis 300 m² Wohnfläche kosteten 2023 bis 2025 im Median 6.940 €/m².[[1]]"
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Potsdam",
+    "absaetze": [
+      "Wenn Sie selbst einziehen wollen, vergleichen Sie Baujahr und Lage: Ein- und Zweifamilienhäuser mit Baujahr vor 1960 kosteten 2025 im Median 4.540 €/m² Wohnfläche, Reihenhäuser und Doppelhaushälften der Baujahre 2002 bis 2020 5.160 €/m².[[1]] Wer in Krampnitz kauft, sollte den Zeitplan der Straßenbahn einrechnen: Die Linie 96 soll Krampnitz-West nach dem Bauzeitplan der Stadt Mitte 2032 erreichen.[[9]] Im Musikerviertel und in Groß Glienicke sind die Bodenrichtwerte zum 01.01.2026 leicht gesunken.[[2]]",
+      "Für Kapitalanleger gilt in Potsdam seit dem 1. Januar 2026 die Mietpreisbremse, befristet bis 31.12.2029: Bei einer neuen Vermietung darf die Miete höchstens 10 % über der ortsüblichen Vergleichsmiete liegen. Ausgenommen sind Neubauten, die nach dem 01.10.2014 erstmals genutzt und vermietet wurden.[[6,4]] Für Mieterhöhungen im Bestand gilt bis 31.12.2030 eine Kappungsgrenze von 15 statt 20 %.[[7]]",
+      "Die Vergleichsmiete steht im qualifizierten Mietspiegel 2026; seine Mittelwerte reichen von 5,55 bis 16,73 €/m².[[5]] Für Ein- und Zweifamilienhäuser und Reihenhäuser gilt er nur eingeschränkt, weil dafür keine Daten erhoben wurden.[[4]]"
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Potsdam",
+    "absaetze": [
+      "Für Käufer in Potsdam vergleichen wir Finanzierungen über die Plattformen Europace und Baufinex sowie über direkte Bankkontakte. Vermietete Eigentumswohnungen wurden 2024 und 2025 im Durchschnitt zum 30,9-Fachen des jährlichen Rohertrags verkauft;[[1]] wie viel Eigenkapital eine Bank bei diesem Verhältnis von Kaufpreis und Miete erwartet, klären wir früh. Die Miete, mit der die Bank rechnet, lässt sich für Wohnungen am qualifizierten Mietspiegel belegen.[[4]]"
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Wie hoch sind die Immobilienpreise in Potsdam?",
+      "antwort": "Der Vorsitzende des Gutachterausschusses beschreibt den Potsdamer Markt 2025 als stabil, mit gehaltenem Preisniveau in allen Teilmärkten.[[13]] Ein- und Zweifamilienhäuser der Baujahre 2002 bis 2020 kosteten im Median 5.350 €/m² Wohnfläche, sanierte Altbauwohnungen im Weiterverkauf 4.650 €/m² und Neubauwohnungen ab Baujahr 2023 in mittlerer Wohnlage 7.580 €/m².[[1]] Für Bauland im individuellen Wohnungsbau liegen die Bodenrichtwerte zum 01.01.2026 in guter bis sehr guter Wohnlage zwischen 750 und 1.250 €/m², in Wohngebieten in städtischer Randlage zwischen 100 und 500 €/m².[[1]]",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilie verkaufen Potsdam“: „Wie hoch sind die aktuellen Immobilienpreise in Potsdam?“ (Google_Areas, Dashboard/src/data/research/google_areas.json, Eintrag 16, Oktober 2026); Frage vorgegeben in FG-Timon-Answers-Update §4.5 (29.10.2026)"
+    },
+    {
+      "frage": "Wie hoch ist der Quadratmeterpreis in Potsdam?",
+      "antwort": "Das hängt vor allem von Objektart, Baujahr und Wohnlage ab. Zwischen 1991 und 2022 gebaute Eigentumswohnungen kosteten 2025 im Weiterverkauf in mittlerer Wohnlage im Median 3.865 €/m², in guter bis sehr guter Wohnlage 5.340 €/m²; neue Wohnungen in guter bis sehr guter Lage kosteten im Erstverkauf 10.905 €/m², bei 5 Kauffällen. Ein- und Zweifamilienhäuser mit Baujahr vor 1960 kosteten im Median 4.540 €/m² Wohnfläche.[[1]]",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienbewertung Potsdam“ (Google_Areas, Dashboard/src/data/research/google_areas.json, Eintrag 17, Oktober 2026); Frage vorgegeben in FG-Timon-Answers-Update §4.5 (29.10.2026)"
+    },
+    {
+      "frage": "Wo ist die beste Wohngegend in Potsdam?",
+      "antwort": "Eine Rangfolge geben die amtlichen Zahlen nicht her, aber Anhaltspunkte. Hohe Bodenrichtwerte haben zum 01.01.2026 die Berliner Vorstadt mit 1.750 €/m², Babelsberg Am Griebnitzsee mit 1.250 €/m² und Am Neuen Garten mit 1.000 €/m²; im Ortskern von Groß Glienicke sind es 550 €/m², im Ortskern von Fahrland 350 €/m².[[2]] Von den 2025 weiterverkauften Eigentumswohnungen lagen 48 % im Stadtteil Potsdam und 23 % in Babelsberg.[[1]] Welche Lage zu Ihnen passt, hängt davon ab, ob Ihnen Innenstadt, Wasser, Bahn oder Grundstücksgröße wichtiger sind.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienbewertung Potsdam“ (Google_Areas, Dashboard/src/data/research/google_areas.json, Eintrag 17, Oktober 2026); Frage und Vorgabe „nur amtliche Zahlen“ aus FG-Timon-Answers-Update §4.5 (29.10.2026)"
+    },
+    {
+      "frage": "Lohnt sich eine Kapitalanlage in Potsdam?",
+      "antwort": "Pauschal lässt sich das nicht sagen, es kommt auf Lage, Baujahr und Kaufpreis an. Für Potsdam sprechen die Rolle als Landeshauptstadt mit Verwaltung, Hochschulen und Forschung und die Bevölkerungsprognose der Stadt, die für 2040 etwas über 200.000 Einwohner erwartet.[[1,14]] Dagegen stehen hohe Kaufpreise im Verhältnis zur Miete, bei vermieteten Eigentumswohnungen im Durchschnitt das 30,9-Fache des jährlichen Rohertrags, und die Mietpreisbremse bis 31.12.2029.[[1,6]] Eine Mietrendite nennt keine amtliche Quelle; wir rechnen sie in der Ankaufsberatung für jedes Objekt einzeln.",
+      "herkunft": "Prompt der KI-Recherche q10 „Lohnt sich eine Kapitalanlage in Potsdam bei den aktuellen Preisen?“ (ChatGPT, Gemini, Google AI Overview, Perplexity; Dashboard/src/data/research/ai_answers.json, Oktober 2026); Frage vorgegeben in FG-Timon-Answers-Update §4.5 (29.10.2026)"
+    },
+    {
+      "frage": "Welcher Makler kennt den Markt in Potsdam?",
+      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke in Potsdam, von der Innenstadt über Babelsberg bis zu den Ortsteilen im Norden; Ihr Ansprechpartner ist Lennart Geserich. Grundlage unserer Bewertung sind der Bodenrichtwert Ihrer Zone und die Preise, die der Gutachterausschuss der Landeshauptstadt Potsdam ausweist. Er trennt bei Eigentumswohnungen nach Erstverkauf, Weiterverkauf und Umwandlung sowie nach Baujahr und Wohnlage und wertet Villen und Landhäuser gesondert aus.[[1]]",
+      "herkunft": "Prompt der KI-Recherche q36 „Ich will mein Haus in Potsdam verkaufen. Welcher Makler kennt den Markt dort am besten?“ (ChatGPT, Gemini, Google AI Overview; Dashboard/src/data/research/ai_answers.json, Oktober 2026); Frage vorgegeben in FG-Timon-Answers-Update §4.5 (29.10.2026)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Potsdam-Mittelmark",
+      "url": "/standorte/potsdam-mittelmark/"
+    },
+    {
+      "name": "Teltow & Kleinmachnow",
+      "url": "/standorte/teltow/"
+    },
+    {
+      "name": "Steglitz-Zehlendorf",
+      "url": "/standorte/berlin/steglitz-zehlendorf/"
+    },
+    {
+      "name": "Falkensee",
+      "url": "/standorte/falkensee/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Grundstücksmarktbericht 2025, Gutachterausschuss für Grundstückswerte in der Landeshauptstadt Potsdam (veröffentlicht Mai 2026)",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_P.pdf",
+      "stand": "Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+    },
+    {
+      "name": "Bodenrichtwerte Potsdam, BORIS Brandenburg (GeoBasis-DE/LGB, dl-de/by-2-0)",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?f=json&limit=500&skipGeometry=true&gemeinde_bezeichnung=Potsdam&stichtag=2026-01-01",
+      "stand": "Stichtag 01.01.2026, Vergleich 01.01.2025"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 4 – j / 25 (Bevölkerung)",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Landeshauptstadt Potsdam, Mietspiegel 2026 (qualifiziert)",
+      "url": "https://www.potsdam.de/system/files/document/Mietspiegel_2026_A5_webdatei_neu.pdf",
+      "stand": "Stichtag 30.09.2025, in Kraft seit 25.06.2026"
+    },
+    {
+      "name": "Landeshauptstadt Potsdam, Pressemitteilung 289: Neuer qualifizierter Mietspiegel für Potsdam vorgestellt",
+      "url": "https://www.potsdam.de/de/289-neuer-qualifizierter-mietspiegel-fuer-potsdam-vorgestellt",
+      "stand": "24.06.2026"
+    },
+    {
+      "name": "Mietpreisbegrenzungsverordnung Brandenburg, MIL",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/Mietpreisbegrenzungsverordnung.pdf",
+      "stand": "Kabinettbeschluss 25.11.2025, in Kraft 01.01.2026 bis 31.12.2029"
+    },
+    {
+      "name": "Kappungsgrenzenverordnung Brandenburg, MIL",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/KappGrenzV.pdf",
+      "stand": "Kabinettbeschluss 25.11.2025, in Kraft 01.01.2026 bis 31.12.2030"
+    },
+    {
+      "name": "VBB-Fahrplandaten (Linien an S Potsdam Hauptbahnhof, S Babelsberg und S Griebnitzsee, Fahrzeiten ab Potsdam Hauptbahnhof)",
+      "url": "https://v6.vbb.transport.rest/stops/900230999?linesOfStops=true",
+      "stand": "Fahrplan Dienstag 03.11.2026, abgefragt 29.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Potsdam, ÖPNV-Anbindung für den neuen Stadtteil Krampnitz",
+      "url": "https://www.potsdam.de/de/oepnv-anbindung-fuer-den-neuen-stadtteil-krampnitz-aktueller-stand-naechste-schritte-und-neuer",
+      "stand": "abgerufen 29.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Potsdam, Ehemalige Militärbasis Krampnitz wird Wohnstandort",
+      "url": "https://www.potsdam.de/de/ehemalige-militaerbasis-krampnitz-wird-wohnstandort",
+      "stand": "abgerufen 29.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Potsdam, Stadtteile",
+      "url": "https://www.potsdam.de/de/kategorie/stadtteile",
+      "stand": "abgerufen 29.10.2026"
+    },
+    {
+      "name": "Potsdam Science Park, Startseite",
+      "url": "https://potsdam-sciencepark.de/de/",
+      "stand": "abgerufen 29.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Potsdam, Pressemitteilung 212: Stabiler Immobilienmarkt in Potsdam",
+      "url": "https://www.potsdam.de/de/212-stabiler-immobilienmarkt-potsdam",
+      "stand": "18.05.2026"
+    },
+    {
+      "name": "Landeshauptstadt Potsdam, Statistischer Informationsdienst 1/2026: Kleinräumige Bevölkerungsprognose 2025 bis 2040",
+      "url": "https://www.potsdam.de/system/files/document/Stat_Info_1_2026_Bev_Prognose_2025_2040_LHP.pdf",
+      "stand": "Redaktionsschluss 17.02.2026"
+    },
+    {
+      "name": "Landeshauptstadt Potsdam, Potsdam im Überblick",
+      "url": "https://www.potsdam.de/de/content/potsdam-im-ueberblick-0",
+      "stand": "undatiert, abgerufen 29.10.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "750–1.250 €/m², 450–900 €/m², 100–500 €/m² (BRW-Niveau individueller Wohnungsbau und Randlage, Abb. 139)",
+      "fundstelle": "potsdam.md, Zeilen 104–106"
+    },
+    {
+      "zahl": "1.000–1.800 €/m² (BRW-Niveau Mischgebiete Innenstadt Potsdam)",
+      "fundstelle": "potsdam.md, Zeile 110"
+    },
+    {
+      "zahl": "x̃ 5.350 €/m², Spanne 3.035–7.515, 29 Kauffälle (EZFH Baujahr 2002–2020)",
+      "fundstelle": "potsdam.md, Zeile 48"
+    },
+    {
+      "zahl": "x̃ 4.540 €/m², 33 Kauffälle (EZFH Baujahr vor 1960)",
+      "fundstelle": "potsdam.md, Zeile 45"
+    },
+    {
+      "zahl": "x̃ 5.160 €/m² (RH/DHH Baujahr 2002–2020)",
+      "fundstelle": "potsdam.md, Zeile 52"
+    },
+    {
+      "zahl": "x̃ 6.940 €/m², Wohnfläche bis 300 m², 2023 bis 2025 (kleine Wohnvillen/Landhäuser)",
+      "fundstelle": "potsdam.md, Zeile 58"
+    },
+    {
+      "zahl": "1.249 Kauffälle, + 29 % (2025)",
+      "fundstelle": "potsdam.md, Zeile 28"
+    },
+    {
+      "zahl": "746 Wohnungseigentum: 194 Erstverkauf, 484 Weiterverkauf, 68 Umwandlung",
+      "fundstelle": "potsdam.md, Zeile 60"
+    },
+    {
+      "zahl": "x̃ 8.690 €/m² (ETW Erstverkauf vor 1960, Denkmalschutz)",
+      "fundstelle": "potsdam.md, Zeile 64"
+    },
+    {
+      "zahl": "x̃ 7.580 €/m² (ETW Erstverkauf Neubau ab 2023, mittlere Wohnlage)",
+      "fundstelle": "potsdam.md, Zeile 65"
+    },
+    {
+      "zahl": "x̃ 10.905 €/m², 5 Kauffälle (ETW Erstverkauf Neubau ab 2023, gute bis sehr gute Wohnlage)",
+      "fundstelle": "potsdam.md, Zeile 66"
+    },
+    {
+      "zahl": "x̃ 4.650 €/m², Spanne 2.535–6.970, 170 Kauffälle (ETW Weiterverkauf vor 1960, saniert)",
+      "fundstelle": "potsdam.md, Zeile 69"
+    },
+    {
+      "zahl": "x̃ 3.395 €/m² (ETW Weiterverkauf 1960 bis 1990, saniert)",
+      "fundstelle": "potsdam.md, Zeile 70"
+    },
+    {
+      "zahl": "x̃ 2.875 / 3.865 / 5.340 €/m² (ETW Weiterverkauf 1991 bis 2022, einfache / mittlere / gute bis sehr gute Wohnlage)",
+      "fundstelle": "potsdam.md, Zeilen 71–73"
+    },
+    {
+      "zahl": "48 % Stadtteil Potsdam, 23 % Babelsberg; Erstverkauf Bornstedter Feld, Brandenburger Vorstadt, Krampnitz",
+      "fundstelle": "potsdam.md, Zeile 75"
+    },
+    {
+      "zahl": "Rohertragsfaktor Wohnungseigentum Ø 30,9 (Januar 2024 bis Dezember 2025)",
+      "fundstelle": "potsdam.md, Zeilen 82–83"
+    },
+    {
+      "zahl": "Markt stabil, Preisniveau in allen Teilmärkten gehalten (PM 212)",
+      "fundstelle": "potsdam.md, Zeile 91"
+    },
+    {
+      "zahl": "BRW Entwicklungsbereich Krampnitz 900 €/m², MU, GFZ 1,3",
+      "fundstelle": "potsdam.md, Zeile 103"
+    },
+    {
+      "zahl": "BRW Brandenburger Straße 1.800, Berliner Vorstadt 1.750, Am Griebnitzsee 1.250 €/m²",
+      "fundstelle": "potsdam.md, Zeilen 123, 124, 126"
+    },
+    {
+      "zahl": "BRW 2. barocke Stadterweiterung 1.100, Holländisches Viertel 1.000, Am Neuen Garten 1.000 €/m²",
+      "fundstelle": "potsdam.md, Zeilen 128, 131, 132"
+    },
+    {
+      "zahl": "BRW Nauener Vorstadt, Jägervorstadt, Brandenburger Vorstadt je 900 €/m²",
+      "fundstelle": "potsdam.md, Zeilen 135, 136, 142"
+    },
+    {
+      "zahl": "BRW Babelsberg Stadtzentrum 900, Bornstedt Kirschallee 850, Kirchsteigfeld 800 €/m²",
+      "fundstelle": "potsdam.md, Zeilen 138, 150, 152"
+    },
+    {
+      "zahl": "BRW Musikerviertel 750 (Vorjahr 800), Am Stern 750, Alt Nowawes 700 €/m²",
+      "fundstelle": "potsdam.md, Zeilen 154, 155, 156"
+    },
+    {
+      "zahl": "BRW Drewitz 650, Bornstedt Ort 600, Groß Glienicke Ortskern 550 (Vorjahr 600) €/m²",
+      "fundstelle": "potsdam.md, Zeilen 163, 165, 173"
+    },
+    {
+      "zahl": "BRW Golm Ort 500, Marquardt Ort 400, Fahrland Ortskern 350 €/m²",
+      "fundstelle": "potsdam.md, Zeilen 179, 192, 193"
+    },
+    {
+      "zahl": "185.137 Einwohner am 31.12.2025; Wanderungssaldo 827",
+      "fundstelle": "potsdam.md, Zeilen 262–263"
+    },
+    {
+      "zahl": "etwas über 200.000 Einwohner 2040 (Prognose)",
+      "fundstelle": "potsdam.md, Zeile 269"
+    },
+    {
+      "zahl": "Mietpreisbremse: höchstens 10 %, 01.01.2026 bis 31.12.2029",
+      "fundstelle": "potsdam.md, Zeilen 282–283"
+    },
+    {
+      "zahl": "Kappungsgrenze 15 statt 20 %, bis 31.12.2030",
+      "fundstelle": "potsdam.md, Zeilen 285–286"
+    },
+    {
+      "zahl": "Mietpreisbremse nicht für Neubauten mit erstmaliger Nutzung und Vermietung nach dem 01.10.2014",
+      "fundstelle": "potsdam.md, Zeile 287"
+    },
+    {
+      "zahl": "Mietspiegel 2026 qualifiziert, in Kraft 25.06.2026, Stichtag 30.09.2025, 35.882 Wohnungsmieten",
+      "fundstelle": "potsdam.md, Zeilen 288–290"
+    },
+    {
+      "zahl": "Mietspiegel für EZFH und Reihenhäuser nur eingeschränkt",
+      "fundstelle": "potsdam.md, Zeile 292"
+    },
+    {
+      "zahl": "Mittelwerte 5,55 bis 16,73 €/m²",
+      "fundstelle": "potsdam.md, Zeile 294"
+    },
+    {
+      "zahl": "9,28 €/m² (Zeile 10: Baujahr 1991 bis 2008, Energieklasse A+, A, B, C; Spalte C über 60 bis 75 m²) und 15,72 €/m² (Zeile 14: Baujahr ab 2021, Spalte C)",
+      "fundstelle": "potsdam.md, Zeilen 300, 304"
+    },
+    {
+      "zahl": "Linien Potsdam Hbf (S7, RE1, RB20, RB21, RB22, RB33), S Babelsberg (S7, Tram 94, 99), Griebnitzsee (S7, RB20, RB21, RB22)",
+      "fundstelle": "potsdam.md, Zeilen 315–317"
+    },
+    {
+      "zahl": "S7 morgens alle zehn Minuten (Abfahrten 07:31 bis 08:21)",
+      "fundstelle": "potsdam.md, Zeile 318"
+    },
+    {
+      "zahl": "RE1 Richtung Berlin endet in Charlottenburg",
+      "fundstelle": "potsdam.md, Zeile 319"
+    },
+    {
+      "zahl": "BER ca. 35 km; A 115 und A 10",
+      "fundstelle": "potsdam.md, Zeilen 321–322"
+    },
+    {
+      "zahl": "Tram 96 wird verlängert; BA1 bis Krampnitz-West Mitte 2032",
+      "fundstelle": "potsdam.md, Zeilen 324–325"
+    },
+    {
+      "zahl": "Busse 609, 662, N15 seit 4. August 2025",
+      "fundstelle": "potsdam.md, Zeile 326"
+    },
+    {
+      "zahl": "37 Minuten (S7 bis Berlin Hbf), 31 Minuten (RE1 + S5), 39 Minuten (S7 bis Friedrichstraße)",
+      "fundstelle": "potsdam.md, Zeilen 334, 337, 340"
+    },
+    {
+      "zahl": "grenzt an Berlin, Potsdam-Mittelmark und Havelland; Behördenstadt, Wissenschafts- und Medienzentrum seit Mitte des 19. Jahrhunderts",
+      "fundstelle": "potsdam.md, Zeilen 366–367"
+    },
+    {
+      "zahl": "seit Ende Oktober 2003 Golm, Marquardt, Fahrland, Neu Fahrland, Groß Glienicke u. a.",
+      "fundstelle": "potsdam.md, Zeile 368"
+    },
+    {
+      "zahl": "Großsiedlungen Am Stern und Drewitz",
+      "fundstelle": "potsdam.md, Zeile 369"
+    },
+    {
+      "zahl": "Babelsberg: Weberhäuser aus dem 18. Jahrhundert, Gründerzeit, Siedlungsbauten der 20er und 30er Jahre, Villen am Griebnitzsee",
+      "fundstelle": "potsdam.md, Zeile 376"
+    },
+    {
+      "zahl": "Nauener Vorstadt: freistehende Villen und Mietshäuser",
+      "fundstelle": "potsdam.md, Zeile 377"
+    },
+    {
+      "zahl": "Potsdam Süd: Teltower und Templiner Vorstadt, Hermannswerder, Schlaatz, Waldstadt I und II",
+      "fundstelle": "potsdam.md, Zeile 380"
+    },
+    {
+      "zahl": "Entwicklungsbereiche Bornstedter Feld seit 1993, Krampnitz seit 2013",
+      "fundstelle": "potsdam.md, Zeilen 384, 386"
+    },
+    {
+      "zahl": "rund 118.000 Beschäftigte, mehr als 50.000 Einpendler",
+      "fundstelle": "potsdam.md, Zeile 432"
+    },
+    {
+      "zahl": "Potsdam Science Park: rund 13.000 Menschen, drei Max-Planck-, zwei Fraunhofer-Institute, drei Fakultäten",
+      "fundstelle": "potsdam.md, Zeile 438"
+    },
+    {
+      "zahl": "Krampnitz: Wohnraum für bis zu 10000 Menschen",
+      "fundstelle": "potsdam.md, Zeile 461"
+    }
+  ]
+}

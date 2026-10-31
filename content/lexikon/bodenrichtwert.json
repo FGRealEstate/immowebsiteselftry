@@ -7,10 +7,10 @@
   "keywords": [
     "bodenrichtwert"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Immobilienkauf",
-  "explanation": "Bodenrichtwert ist ein durchschnittlicher Lagewert des Bodens für eine Bodenrichtwertzone. Er ist kein verbindlicher Einzelgrundstückswert; Nutzung, Größe, Zuschnitt, Erschließung und weitere Merkmale können Anpassungen erforderlich machen.",
-  "practiceExample": "600 m² × 900 €/m² = 540.000 € rechnerischer Ausgangswert. Ein abweichendes Baurecht oder ungewöhnlicher Grundstückszuschnitt kann den Einzelwert deutlich verändern.",
+  "explanation": "Der Bodenrichtwert ist ein durchschnittlicher Lagewert für den Boden in einer Richtwertzone. Der Gutachterausschuss ermittelt ihn aus der Kaufpreissammlung, an die die Notare eine Abschrift jedes Grundstückskaufvertrags schicken. In bebauten Gebieten wird der Wert so ermittelt, als wäre der Boden unbebaut.",
+  "practiceExample": "In der Richtwertzone „Oranienburg Süd“ lag der Bodenrichtwert zum 1. Januar 2026 bei 350 €/m², ein Jahr zuvor bei 370 €/m². Er gilt für ein baureifes, beitragsfreies Wohngrundstück mit 750 m². Für ein Grundstück dieser Art ergibt sich ein rechnerischer Bodenwert von 750 m² × 350 €/m² = 262.500 €. Das Haus darauf ist darin nicht enthalten. Weicht das Grundstück etwa in Größe, Nutzung oder Erschließung ab, wird angepasst.",
   "formula": "Bodenwert grob = Grundstücksfläche × Bodenrichtwert",
   "sources": [
     {
@@ -18,5 +18,92 @@
       "url": "https://www.gesetze-im-internet.de/bbaug/__196.html"
     }
   ],
-  "assistantAnswer": "Durchschnittlicher Bodenwert eines räumlich abgegrenzten Richtwertgebiets. Bodenrichtwert ist ein durchschnittlicher Lagewert des Bodens für eine Bodenrichtwertzone. Er ist kein verbindlicher Einzelgrundstückswert; Nutzung, Größe, Zuschnitt, Erschließung und weitere Merkmale können Anpassungen erforderlich machen."
+  "assistantAnswer": "Durchschnittlicher Bodenwert eines räumlich abgegrenzten Richtwertgebiets. Bodenrichtwert ist ein durchschnittlicher Lagewert des Bodens für eine Bodenrichtwertzone. Er ist kein verbindlicher Einzelgrundstückswert; Nutzung, Größe, Zuschnitt, Erschließung und weitere Merkmale können Anpassungen erforderlich machen.",
+  "ausbau": {
+    "einordnung": [
+      "Der Bodenrichtwert ist ein durchschnittlicher Lagewert für den Boden in einer Richtwertzone. Der Gutachterausschuss ermittelt ihn aus der Kaufpreissammlung,[[1]] an die die Notare eine Abschrift jedes Grundstückskaufvertrags schicken.[[2]] In bebauten Gebieten wird der Wert so ermittelt, als wäre der Boden unbebaut.[[1]]",
+      "Das Gesetz verlangt eine Ermittlung zu Beginn jedes zweiten Kalenderjahres, wenn keine häufigere bestimmt ist. Die Werte sind öffentlich; jeder kann bei der Geschäftsstelle Auskunft verlangen.[[1]] In Berlin stehen sie kostenlos in BORIS Berlin, mit Stichtagen bis zum 1. Januar 2026,[[3]] in Brandenburg in BORIS Brandenburg.[[4]]",
+      "Für ein einzelnes Grundstück ist der Bodenrichtwert ein Ausgangswert. In der Wertermittlung wird der Bodenwert vorrangig aus Vergleichspreisen bestimmt; ein Bodenrichtwert kann verwendet werden, wenn er an das Grundstück angepasst wird.[[5]]"
+    ],
+    "beispiel": [
+      "In der Richtwertzone „Oranienburg Süd“ lag der Bodenrichtwert zum 1. Januar 2026 bei 350 €/m², ein Jahr zuvor bei 370 €/m². Er gilt für ein baureifes, beitragsfreies Wohngrundstück mit 750 m².[[4]]",
+      "Für ein Grundstück dieser Art ergibt sich ein rechnerischer Bodenwert von 750 m² × 350 €/m² = 262.500 €. Das Haus darauf ist darin nicht enthalten. Weicht das Grundstück etwa in Größe, Nutzung oder Erschließung ab, wird angepasst."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Verkäufer heißt",
+        "absaetze": [
+          "Mit dem Bodenrichtwert schätzen Sie den Anteil des Grundstücks am Wert Ihrer Immobilie. Den Wert des Hauses ersetzt er nicht. Fischer & Geserich erstellt die Wertermittlung kostenlos, meistens innerhalb weniger Stunden.[[6]]"
+        ]
+      },
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Liegt der Preis eines Grundstücks deutlich über dem Bodenrichtwert, fragen Sie nach dem Grund, etwa einer höheren Bebaubarkeit oder einer besseren Lage innerhalb der Zone. Bedenken Sie dabei, dass der Bodenrichtwert auf Verkäufen der Vergangenheit beruht."
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "§ 196 BauGB",
+        "url": "https://www.gesetze-im-internet.de/bbaug/__196.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 195 BauGB",
+        "url": "https://www.gesetze-im-internet.de/bbaug/__195.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Gutachterausschuss für Grundstückswerte in Berlin: Bodenrichtwerte",
+        "url": "https://www.berlin.de/gutachterausschuss/marktinformationen/bodenrichtwerte/",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "BORIS Brandenburg: Bodenrichtwerte Oranienburg (Gutachterausschuss Oberhavel)",
+        "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?f=json&limit=500&skipGeometry=true&gemeinde_bezeichnung=Oranienburg&stichtag=2026-01-01",
+        "stand": "Stichtag 01.01.2026, Vergleich 01.01.2025"
+      },
+      {
+        "name": "§ 40 ImmoWertV",
+        "url": "https://www.gesetze-im-internet.de/immowertv_2022/__40.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Startseite",
+        "url": "https://fg-realestate.de/",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Definition, unbebaut, Turnus, öffentlich, Auskunft",
+        "fundstelle": "runde-1.md, B01, B02, B03"
+      },
+      {
+        "zahl": "Kaufverträge an den Gutachterausschuss",
+        "fundstelle": "runde-1.md, B04"
+      },
+      {
+        "zahl": "BORIS Berlin, kostenlos, Stichtage bis 01.01.2026",
+        "fundstelle": "runde-1.md, B07"
+      },
+      {
+        "zahl": "Oranienburg Süd 350 €/m² (2025: 370 €/m²), 750 m², WA, baureif, beitragsfrei",
+        "fundstelle": "runde-1.md, B06; research/towns/oranienburg.md, Zeile 63"
+      },
+      {
+        "zahl": "Bodenwert vorrangig Vergleich, angepasster Bodenrichtwert",
+        "fundstelle": "runde-1.md, B05"
+      },
+      {
+        "zahl": "Wertermittlung kostenlos, wenige Stunden (F&G)",
+        "fundstelle": "runde-1.md, V07"
+      },
+      {
+        "zahl": "750 × 350 = 262.500 €",
+        "fundstelle": "Rechnung"
+      }
+    ]
+  }
 }

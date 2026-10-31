@@ -1,0 +1,385 @@
+{
+  "slug": "dresden/nord",
+  "name": "Dresden-Nord",
+  "nameLang": "Dresden-Nord",
+  "inOrt": "in Dresden-Nord",
+  "fuerOrt": "Dresden-Nord",
+  "typ": "marktgebiet",
+  "kreis": {
+    "name": "Dresden",
+    "url": "/standorte/dresden/"
+  },
+  "orte": [
+    "Äußere Neustadt",
+    "Innere Neustadt",
+    "Leipziger Vorstadt",
+    "Pieschen-Süd",
+    "Pieschen-Nord/Trachenberge",
+    "Loschwitz/Wachwitz",
+    "Bühlau/Weißer Hirsch",
+    "Klotzsche"
+  ],
+  "kontakt": "timon",
+  "title": "Immobilienmakler Dresden-Nord – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler in Dresden-Nord: verkaufen, kaufen und finanzieren in der Neustadt, in Pieschen, Loschwitz, am Weißen Hirsch und in Klotzsche.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Dresden-Nord",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Dresden-Nord beim Verkauf, beim Kauf und bei der Finanzierung, von den Gründerzeitvierteln der Neustadt und Pieschens über Loschwitz und den Weißen Hirsch am Elbhang bis nach Klotzsche. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Dresden ist Timon Fischer Ihr Ansprechpartner, Geschäftsführer und verantwortlich für die Immobilienfinanzierung.",
+  "hero": {
+    "name": "dresden-nord-rothenburger-strasse",
+    "alt": "Die Rothenburger Straße in der Äußeren Neustadt, Blick von der Bautzner Straße nach Norden",
+    "credit": "Maksym Kozlenko, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:2017-06-02_Rothenburger_Stra%C3%9Fe,_Dresden.jpg",
+    "position": "50% 50%"
+  },
+  "stand": "Oktober 2026",
+  "updated": "2026-10-27",
+  "zahlen": [
+    {
+      "wert": "2.770 €/m²",
+      "label": "Median für ältere Eigentumswohnungen im Weiterverkauf, Gemarkung Neustadt",
+      "detail": "175 Verkäufe von Wohnungen mit Baujahr bis 1989 oder saniert bis 2023, Spanne 1.540 bis 5.215 €/m², Mittelwert 2.905 €/m². Zur Gemarkung gehören die Äußere und Innere Neustadt, die Leipziger Vorstadt, die Radeberger Vorstadt, die Albertstadt und Teile Pieschens. Alle weiterverkauften Wohnungen in Dresden: im Mittel rund 2.705 €/m².",
+      "quelle": "Grundstücksmarktbericht Dresden 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/2026-Grundstuecksmarktbericht.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "5.635 €/m²",
+      "label": "Median für neue Eigentumswohnungen, Gemarkung Neustadt",
+      "detail": "72 Erstverkäufe von Wohnungen ab Baujahr 2024, Spanne 4.325 bis 8.260 €/m², Mittelwert 5.855 €/m². In ganz Dresden kosteten neue Wohnungen im Mittel rund 6.460 €/m².",
+      "quelle": "Grundstücksmarktbericht Dresden 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/2026-Grundstuecksmarktbericht.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "120 bis 2.500 €/m²",
+      "label": "Bodenrichtwerte in den Wohn- und Mischgebieten",
+      "detail": "Innere Neustadt 600 bis 2.500 €/m², Äußere Neustadt 450 bis 1.500, Leipziger Vorstadt 280 bis 1.550, Loschwitz/Wachwitz 260 bis 960, Bühlau/Weißer Hirsch 250 bis 700, Klotzsche 120 bis 620 €/m². In Klotzsche lagen 16 von 25 Zonen höher als 2024, keine niedriger.",
+      "quelle": "Bodenrichtwerte BORIS Sachsen, eigene Auswertung",
+      "url": "https://www.boris.sachsen.de/",
+      "stichtag": "01.01.2026"
+    },
+    {
+      "wert": "96.575",
+      "label": "Einwohner in den acht Stadtteilen des Marktgebiets",
+      "detail": "In der Äußeren Neustadt leben 18.092 Menschen. Von 1990 bis 2024 wuchs sie um 58 %, Pieschen-Süd um 45 %. Das Durchschnittsalter 2024 reicht von 34,8 Jahren in der Äußeren Neustadt bis 47,9 Jahre in Klotzsche, in ganz Dresden 43,5 Jahre.",
+      "quelle": "Landeshauptstadt Dresden, Opendata und Stadtteilkatalog 2024",
+      "url": "https://opendata.dresden.de/",
+      "stichtag": "31.12.2025"
+    },
+    {
+      "wert": "8,92 bis 12,15 €/m²",
+      "label": "Durchschnittliche Angebotsmieten nach Stadtteil",
+      "detail": "Leipziger Vorstadt 12,15 €/m², Innere Neustadt 10,68, Loschwitz/Wachwitz 10,58, Äußere Neustadt 10,11, Klotzsche 8,92 €/m²; in ganz Dresden 9,37 €/m². Angebotsmieten aus Anzeigen sind keine ortsübliche Vergleichsmiete.",
+      "quelle": "Stadtteilkatalog Dresden 2024",
+      "url": "https://www.dresden.de/media/pdf/onlineshop/statistikstelle/120_080_010_Stadtteilkatalog_2024.pdf",
+      "stichtag": "2024"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Äußere und Innere Neustadt: Gründerzeit und Albertplatz",
+      "absaetze": [
+        "Die Stadt zählt die Äußere Neustadt zu den größten erhaltenen Wohnquartieren der Gründer- und Kaiserzeit in Deutschland. Den Zweiten Weltkrieg überstand sie weitgehend unbeschadet, bis 1989 war dennoch der Abbruch der meisten Gebäude geplant. Ende 1990 wurde sie auf Initiative der Bewohner das erste Sanierungsgebiet Dresdens, mit 87,5 Hektar auch das größte; die Satzung ist seit dem 03.01.2024 aufgehoben.[[12]] In der Äußeren Neustadt leben 18.092 Menschen.[[4]] 71 % der Wohnungen stehen in Häusern, die bis 1918 gebaut wurden, im Mittel 64,4 m² groß; knapp zwei Drittel der Haushalte bestehen aus einer Person.[[5]] Vom Alaunplatz sind Sie mit den Linien 13 und 10 in 18 Minuten am Hauptbahnhof.[[19]]",
+        "Die Innere Neustadt ist jünger bebaut: 45 % der Wohnungen entstanden zwischen 1946 und 1990, 33 % bis 1918.[[5]] Vom Albertplatz fährt die Linie 7 in 13 Minuten zum Hauptbahnhof.[[19]] Hier liegt mit 2.500 €/m² der höchste Bodenrichtwert im Marktgebiet, für Wohn- und Geschäftshäuser und unverändert seit 2024. In der größten Zone der Äußeren Neustadt gelten 1.150 €/m² bei einer Geschossflächenzahl von 2,4.[[3]] Für beide Stadtteile gelten städtebauliche Erhaltungssatzungen: Abbruch, Umbau, Nutzungsänderung und Neubau brauchen eine Genehmigung nach § 173 BauGB.[[10]]"
+      ],
+      "bild": {
+        "name": "dresden-nord-albertplatz-stille-wasser",
+        "alt": "Springbrunnen „Stille Wasser“ auf dem Albertplatz mit Bronzefiguren, dahinter das Hochhaus am Albertplatz und Bäume unter blauem Himmel",
+        "caption": "Der Brunnen „Stille Wasser“ auf dem Albertplatz.",
+        "credit": "X-Weinzar, CC BY-SA 2.5",
+        "url": "https://commons.wikimedia.org/wiki/File:Dresden_Albertplatz_Brunnen_Stille_Wasser.jpg"
+      }
+    },
+    {
+      "h2": "Leipziger Vorstadt, Hechtviertel und Pieschen",
+      "absaetze": [
+        "Das Hechtviertel in der Leipziger Vorstadt entstand laut Stadt ab Mitte des 19. Jahrhunderts als Arbeiterwohnviertel. Von 1993 bis 2020 war es Sanierungsgebiet; rund 97 % der Wohnungen wurden in dieser Zeit umfassend saniert oder modernisiert. Die Stadt beschreibt es heute als beliebten Wohnort für junge Familien und will im dicht bebauten Viertel möglichst keine weiteren Gebäude errichten.[[13]] 2024 wurden in der Leipziger Vorstadt 290 Wohnungen fertiggestellt, mehr als in den übrigen sieben Stadtteilen zusammen; die angebotenen Mieten lagen mit 12,15 €/m² am höchsten im Marktgebiet.[[5]] Vom S-Bahnhof Bischofsplatz fahren Sie 10 Minuten zum Hauptbahnhof.[[19]]",
+        "Pieschen wurde ab etwa 1878 Industriegebiet, mit gründerzeitlicher Blockrandbebauung. Anfang der 1990er Jahre war etwa jede fünfte Wohnung unbewohnbar, heute sind laut Stadt 95 % der Gebäude saniert; das Sanierungsgebiet ist seit dem 21.04.2023 aufgehoben.[[14]] Dort leben heute rund 7.000 Menschen, mehr als doppelt so viele wie 1991.[[16]] Pieschen-Süd und Pieschen-Nord/Trachenberge zählen zusammen 24.694 Einwohner.[[4]] In der Gemarkung Pieschen wurden 2025 51 ältere Wohnungen weiterverkauft, im Median für 2.560 €/m².[[1]] Die Bodenrichtwerte reichen in Pieschen-Süd von 220 bis 1.050 €/m²; in Pieschen-Nord/Trachenberge lagen 12 von 21 Zonen höher als 2024.[[3]] Vom Rathaus Pieschen sind Sie in 24 bis 26 Minuten am Hauptbahnhof.[[19]]"
+      ],
+      "bild": {
+        "name": "dresden-nord-hechtstrasse",
+        "alt": "Hechtstraße im Hechtviertel mit Kopfsteinpflaster, parkenden Autos und vierstöckigen Gründerzeithäusern auf beiden Seiten",
+        "caption": "Die Hechtstraße im Hechtviertel im August.",
+        "credit": "Stefan Kühn, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Dresden_Hechtviertel_Hechtstraße_a.jpg"
+      }
+    },
+    {
+      "h2": "Loschwitz, Wachwitz und Weißer Hirsch: Elbhang und Einfamilienhäuser",
+      "absaetze": [
+        "Die Stadt nennt Loschwitz eines der größten erhaltenen „Dörfer in der Stadt“, einen ehemaligen Winzer- und Fischerort zwischen Hang und Fluss; den Körnerplatz bezeichnet sie als Gründerzeitensemble von europäischer Bedeutung. Von 1993 bis 2013 wurde der Ortskern saniert.[[15]] In Loschwitz/Wachwitz haben 74 % der Wohngebäude eine oder zwei Wohnungen, in Bühlau/Weißer Hirsch 71 %. Die Wohnungen sind im Mittel 102 und 95 m² groß, im übrigen Marktgebiet höchstens 76 m²; die Bewohner sind im Mittel 47,7 und 47,1 Jahre alt.[[5]] Vom Körnerplatz sind Sie mit Bus 63 und Linie 10 in 28 Minuten am Hauptbahnhof, von der Plattleite in 27 bis 32 Minuten.[[19]]",
+        "Ältere Eigentumswohnungen kosteten 2025 in der Gemarkung Loschwitz im Median 4.000 €/m², bei 11 Verkäufen, am Weißen Hirsch 3.280 €/m² bei 8 Verkäufen.[[1]] In zwei der größten Bodenrichtwertzonen in Bühlau/Weißer Hirsch gelten für Einfamilienhausgrundstücke von 1.000 m² 600 und 650 €/m². In der größten Zone von Loschwitz/Wachwitz sank der Wert für 1.200 m² große Einfamilienhausgrundstücke von 680 auf 650 €/m².[[3]] Häuser weist der Gutachterausschuss nicht nach Stadtteilen aus: Freistehende Einfamilienhäuser ab Baujahr 1992 kosteten 2025 in Dresden im Mittel 4.470 €/m² Wohnfläche, rund 585.000 €.[[1]]"
+      ],
+      "bild": {
+        "name": "dresden-nord-villa-eschebach",
+        "alt": "Die Villa Eschebach am Weißen Hirsch",
+        "caption": "Villa Eschebach, Weißer Hirsch.",
+        "credit": "Ricardalovesmonuments, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Villa_Eschebach_(Dresden-Wei%C3%9Fer_Hirsch)_4.jpg",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "h2": "Klotzsche: Einfamilienhäuser und Bahnanschluss",
+      "absaetze": [
+        "In Klotzsche leben 14.701 Menschen.[[4]] 66 % der Wohngebäude haben eine oder zwei Wohnungen. 35 % der Wohnungen entstanden zwischen 1946 und 1990, 32 % ab 1991; sie sind im Mittel 76,3 m² groß. Die angebotenen Mieten lagen 2024 bei 8,92 €/m², dem niedrigsten Wert im Marktgebiet.[[5]] Vom Bahnhof Klotzsche fahren der RE1 und die S2 in 15 Minuten zum Hauptbahnhof, vom Rathaus Klotzsche sind es mit Bus 72 und Linie 7 39 Minuten.[[19]]",
+        "In der Gemarkung Klotzsche wurden 2025 zehn neue Eigentumswohnungen verkauft, im Median für 5.510 €/m²; 30 Wohnungen der Baujahre 1990 bis 2023 erzielten im Weiterverkauf 2.580 €/m².[[1]] Die Bodenrichtwerte reichen von 120 bis 620 €/m². 16 von 25 Zonen lagen zum 01.01.2026 höher als 2024, keine niedriger; in einer der größten Zonen stieg der Wert für Einfamilienhausgrundstücke von 1.100 m² von 260 auf 280 €/m².[[3]] Im Stadtbezirk Klotzsche stehen die Gartenstadt Hellerau und Königswald unter städtebaulichen Erhaltungssatzungen.[[10]]"
+      ],
+      "bild": {
+        "name": "dresden-nord-flughafen-luftbild",
+        "alt": "Luftbild des Flughafens Dresden mit Start- und Landebahn, rechts daneben die Wohngebiete von Klotzsche, dahinter Wald und Felder",
+        "caption": "Der Flughafen Dresden aus der Luft, rechts Klotzsche.",
+        "credit": "Carsten Steger, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Aerial_image_of_the_Dresden_Airport.jpg"
+      }
+    }
+  ],
+  "band": {
+    "name": "dresden-nord-elbe-loschwitz",
+    "alt": "Fahrgastschiff auf der Elbe, dahinter der grüne Elbhang mit Villen auf der Loschwitzer Seite unter tiefblauem Himmel",
+    "caption": "Die Elbe am Blauen Wunder mit dem Elbhang auf der Loschwitzer Seite.",
+    "credit": "Bybbisch94, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:20260402.Gräfin_Cosel_(ship,_1994).-025.jpg"
+  },
+  "verkaufen": {
+    "h2": "Immobilie in Dresden-Nord verkaufen",
+    "absaetze": [
+      "In der Gemarkung Neustadt wurden 2025 175 ältere Eigentumswohnungen weiterverkauft, im Median für 2.770 €/m², bei einer Spanne von 1.540 bis 5.215 €/m²; 77 Wohnungen der Baujahre 1990 bis 2023 erzielten 2.630 €/m².[[1]] In ganz Dresden lag der Median weiterverkaufter Wohnungen im 1. Halbjahr 2026 bei 2.660 €/m², nach 2.550 €/m² ein Jahr zuvor.[[2]] Wir bewerten Ihre Wohnung deshalb nach Gemarkung, Bodenrichtwertzone, Baujahr, Vermietungsstand und Vergleichsverkäufen.",
+      "Sanierte Mehrfamilienhäuser der Vorkriegszeit kosteten 2025 in Dresden im Mittel 2.055 €/m² Wohnfläche. Für Mehrfamilien- sowie Wohn- und Geschäftshäuser ermittelte der Gutachterausschuss als Median das 21,2-Fache der jährlichen Mieteinnahmen in offener Bauweise, das 21,8-Fache in geschlossener.[[1]] Im 1. Halbjahr 2026 stiegen die Quadratmeterpreise verkaufter Mehrfamilienhäuser im Bestand gegenüber dem 2. Halbjahr 2025 um rund 3 %.[[2]] Bei Häusern in den früheren Sanierungsgebieten Äußere Neustadt, Hechtviertel, Pieschen und Loschwitz klären wir vorab, ob der Ausgleichsbetrag festgesetzt und bezahlt ist; er richtet sich nach der sanierungsbedingten Erhöhung des Bodenwerts, bei Wohnungseigentum anteilig.[[17]]"
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Dresden-Nord",
+    "absaetze": [
+      "Als Eigennutzer finden Sie neue Wohnungen vor allem in der Gemarkung Neustadt: 72 Erstverkäufe 2025, im Median 5.635 €/m². In Klotzsche waren es zehn zu 5.510 €/m², in Trachenberge vier zu 6.180 €/m².[[1]] Laut Gutachterausschuss blieben die Preise neuer Wohnungen im 1. Halbjahr 2026 „unverändert auf hohem Niveau“, Median 6.255 €/m².[[2]] In der Äußeren und Inneren Neustadt brauchen Umbau und Neubau eine Genehmigung nach der Erhaltungssatzung.[[10]] Eine soziale Erhaltungssatzung hat Dresden nicht; der Stadtrat lehnte sie am 13.12.2024 ab.[[11]]",
+      "Als Kapitalanleger rechnen Sie mit dem Dresdner Mietspiegel 2025, der für die ganze Stadt gilt: Die Basismiete für 60 m² beträgt 7,07 €/m², die Wohnlage wird adressgenau mit 0,98 bis 1,03 gewichtet.[[6,7]] Die Mietpreisbremse gilt bis zum 30.06.2027: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[8]] Bestandsmieten dürfen in drei Jahren um höchstens 15 % steigen.[[9]] Aus Kaufpreis, Miete, Bewirtschaftungskosten und den Auflagen vor Ort rechnen wir mit Ihnen die Rendite, bevor Sie kaufen."
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Dresden-Nord",
+    "absaetze": [
+      "Ältere Eigentumswohnungen kosteten 2025 in der Gemarkung Neustadt im Median 2.770 €/m² Wohnfläche, neue 5.635 €/m².[[1]] Dazu kommen die Kaufnebenkosten, in Sachsen unter anderem 5,5 % Grunderwerbsteuer.[[18]] Wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen: Timon Fischer rechnet das mit Ihnen durch, vergleicht Ihre Finanzierung über Europace und Baufinex und fragt parallel Banken direkt an."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Was kostet eine Wohnung in der Dresdner Neustadt?",
+      "antwort": "Der Gutachterausschuss weist Eigentumswohnungen nach Gemarkungen aus; zur Gemarkung Neustadt gehören die Äußere und Innere Neustadt, die Leipziger Vorstadt, die Radeberger Vorstadt, die Albertstadt und Teile Pieschens. 2025 kosteten dort ältere Wohnungen im Weiterverkauf im Median 2.770 €/m², bei 175 Verkäufen, Wohnungen der Baujahre 1990 bis 2023 2.630 €/m² und neue Wohnungen 5.635 €/m².[[1]] Für Ihre Wohnung zählen Baujahr, Zustand, Lage und ob sie vermietet ist.",
+      "herkunft": "Google-Autocomplete „immobilienpreise dresden neustadt“ und „quadratmeterpreis dresden neustadt“ (research/serp/autocomplete-2026-10-27-dresden-themen.json) sowie „wohnung kaufen dresden äußere neustadt“ und „wohnung kaufen dresden innere neustadt“ (research/serp/autocomplete-2026-10-27-dresden.json)"
+    },
+    {
+      "frage": "Was kostet eine Wohnung in Pieschen oder im Hechtviertel?",
+      "antwort": "Das Hechtviertel liegt in der Leipziger Vorstadt und gehört damit zur Gemarkung Neustadt: Ältere Wohnungen kosteten dort 2025 im Median 2.770 €/m². In der Gemarkung Pieschen waren es 2.560 €/m² bei 51 Verkäufen; 13 frisch sanierte Wohnungen aus umgewandelten Altbauten kosteten im Median 6.955 €/m².[[1]] Die Bodenrichtwerte reichen in der Leipziger Vorstadt von 280 bis 1.550 €/m², in Pieschen-Süd von 220 bis 1.050 €/m².[[3]]",
+      "herkunft": "Google-Autocomplete „quadratmeterpreis dresden pieschen“ und „dresden hechtviertel wohnung kaufen“ (research/serp/autocomplete-2026-10-27-dresden-themen.json) sowie „immobilien dresden pieschen kaufen“ (research/serp/autocomplete-2026-10-27-dresden.json)"
+    },
+    {
+      "frage": "Was kosten Immobilien in Loschwitz und am Weißen Hirsch?",
+      "antwort": "Ältere Eigentumswohnungen kosteten 2025 in der Gemarkung Loschwitz im Median 4.000 €/m², in Wachwitz 4.230 €/m² und am Weißen Hirsch 3.280 €/m², jeweils bei wenigen Verkäufen.[[1]] Für Einfamilienhausgrundstücke gelten in Bühlau/Weißer Hirsch in zwei der größten Zonen 600 und 650 €/m², in Loschwitz/Wachwitz 650 €/m².[[3]] Häuser bewerten wir nach Grundstück, Wohnfläche, Baujahr und Zustand, weil der Gutachterausschuss keine Hauspreise je Stadtteil nennt.",
+      "herkunft": "Google-Autocomplete „dresden loschwitz eigentumswohnung kaufen“, „dresden loschwitz haus kaufen“ und „dresden weißer hirsch haus kaufen“ (research/serp/autocomplete-2026-10-27-dresden-themen.json) sowie „dresden weisser hirsch immobilien kaufen“ (research/serp/autocomplete-2026-10-27-dresden.json)"
+    },
+    {
+      "frage": "Was kostet ein Haus in Klotzsche?",
+      "antwort": "Hauspreise je Stadtteil veröffentlicht der Gutachterausschuss nicht. In ganz Dresden kosteten freistehende Einfamilienhäuser ab Baujahr 1992 im Jahr 2025 im Mittel 4.470 €/m² Wohnfläche, rund 585.000 €; Doppelhaushälften gleichen Baujahrs 4.095 €/m².[[1]] Die Bodenrichtwerte in Klotzsche reichen von 120 bis 620 €/m²; für ein 1.100 m² großes Einfamilienhausgrundstück in einer der größten Zonen gelten 280 €/m².[[3]]",
+      "herkunft": "Google-Autocomplete „haus kaufen dresden klotzsche“ (research/serp/autocomplete-2026-10-27-dresden.json) sowie „immobilienpreise dresden klotzsche“ und „bodenrichtwert dresden klotzsche“ (research/serp/autocomplete-2026-10-27-dresden-themen.json)"
+    },
+    {
+      "frage": "Sinken die Immobilienpreise in Dresden?",
+      "antwort": "Laut Gutachterausschuss haben die schwierigen Rahmenbedingungen im 1. Halbjahr 2026 „nicht zu einem Nachgeben der Preise geführt“. Weiterverkaufte Wohnungen kosteten im Median 2.660 €/m², ein Jahr zuvor 2.550 €/m². Bei Häusern ist das Bild gemischt: Doppelhaushälften und Reihenendhäuser wurden teurer, freistehende Einfamilienhäuser, Reihenmittel- und Zweifamilienhäuser günstiger.[[2]]",
+      "herkunft": "Google-Autocomplete „immobilienpreise dresden sinken“ und „immobilienpreise dresden entwicklung“ (research/serp/autocomplete-2026-10-27-dresden-themen.json)"
+    },
+    {
+      "frage": "Gilt in der Neustadt eine Erhaltungssatzung?",
+      "antwort": "Ja, eine städtebauliche: Für die Äußere und die Innere Neustadt brauchen Abbruch, Umbau, Nutzungsänderung und Neubau eine Genehmigung nach § 173 BauGB.[[10]] Eine soziale Erhaltungssatzung gibt es in Dresden nicht; der Stadtrat lehnte sie am 13.12.2024 ab.[[11]] Das Sanierungsgebiet Äußere Neustadt ist seit dem 03.01.2024 aufgehoben.[[12]] Danach erhebt die Stadt einen Ausgleichsbetrag für die sanierungsbedingte Erhöhung des Bodenwerts, bei Wohnungseigentum anteilig.[[17]]",
+      "herkunft": "Google-Autocomplete „erhaltungssatzung dresden neustadt“, „soziale erhaltungssatzung dresden“ und „sanierungsgebiet dresden neustadt“ (research/serp/autocomplete-2026-10-27-dresden-themen.json)"
+    },
+    {
+      "frage": "Welcher Mietspiegel gilt in der Neustadt?",
+      "antwort": "Dresden hat einen Mietspiegel für die ganze Stadt, ohne Zu- oder Abschläge je Stadtteil. Er gilt vom 01.01.2025 bis zum 31.12.2026; ab 2027 gibt es einen neuen. Die Wohnlage wird adressgenau als einfach, mittel oder gut eingestuft und mit 0,98, 1,00 oder 1,03 gewichtet.[[6]] Ihre Adresse prüfen Sie im Online-Mietspiegel der Stadt.[[7]]",
+      "herkunft": "Google-Autocomplete „mietspiegel dresden neustadt“, „mietspiegel dresden stadtteile“ und „mietspiegel dresden 2027“ (research/serp/autocomplete-2026-10-27-dresden-themen.json)"
+    },
+    {
+      "frage": "Wie hoch ist die Maklerprovision in Dresden?",
+      "antwort": "Kauft ein Verbraucher eine Wohnung oder ein Einfamilienhaus, teilen sich Käufer und Verkäufer die Provision zu gleichen Teilen (§§ 656a bis 656d BGB); das gilt bundesweit, also auch in Sachsen. Bei Fischer & Geserich sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision. Bei Mehrfamilienhäusern und Grundstücken gilt die Teilung nicht. Die Provision fällt nur an, wenn der Kaufvertrag zustande kommt.",
+      "herkunft": "Google-Autocomplete „maklerprovision dresden“ (research/serp/autocomplete-2026-10-27-dresden-themen.json). Antwort nach /maklerprovision/ und /kaufen/ (Stand 26.10.2026)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Dresden-Zentrum",
+      "url": "/standorte/dresden/zentrum/"
+    },
+    {
+      "name": "Dresden-Ost",
+      "url": "/standorte/dresden/ost/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Landeshauptstadt Dresden, Grundstücksmarktbericht 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/2026-Grundstuecksmarktbericht.pdf",
+      "stand": "Kaufverträge 2025, Vorwort vom 16.04.2026"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Landeshauptstadt Dresden, Halbjahresbericht 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/Halbjahresbericht_2026.pdf",
+      "stand": "1. Halbjahr 2026, veröffentlicht 31.08.2026"
+    },
+    {
+      "name": "Bodenrichtwerte, BORIS Sachsen (Stichtag 01.01.2026) und Themenstadtplan Dresden (Stichtag 01.01.2024), eigene Zuordnung zu den Stadtteilen",
+      "url": "https://www.boris.sachsen.de/",
+      "stand": "Stichtag 01.01.2026, Vergleich mit 01.01.2024"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Opendata: Einwohner mit Hauptwohnung nach Stadtteilen",
+      "url": "https://opendata.dresden.de/",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Kommunale Statistikstelle, Stadtteilkatalog 2024",
+      "url": "https://www.dresden.de/media/pdf/onlineshop/statistikstelle/120_080_010_Stadtteilkatalog_2024.pdf",
+      "stand": "Werte 2024"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Dresdner Mietspiegel 2025",
+      "url": "https://www.dresden.de/media/pdf/sozialamt/Mietspiegel_Dresden_2025.pdf",
+      "stand": "gültig 01.01.2025 bis 31.12.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Mietspiegel (Online-Mietspiegel und Wohnlagekarte)",
+      "url": "https://www.dresden.de/de/leben/wohnen/wohnungsmarkt/mietspiegel.php",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Freistaat Sachsen, Mietpreisbremse gemäß § 556d BGB",
+      "url": "https://www.bauen-wohnen.sachsen.de/mietpreisbremse-gemaess-556d-bgb-4391.html",
+      "stand": "verlängert bis 30.06.2027, abgerufen 26.10.2026"
+    },
+    {
+      "name": "Medienservice Sachsen, Kappungsgrenze für Dresden und Leipzig verlängert",
+      "url": "https://www.medienservice.sachsen.de/medien/news/1087981",
+      "stand": "10.06.2025, gültig bis 30.06.2027"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Erhaltungssatzung",
+      "url": "https://www.dresden.de/de/rathaus/dienstleistungen/erhaltungssatzung.php",
+      "stand": "letzte Änderung 10.12.2025"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Soziale Erhaltungssatzung",
+      "url": "https://www.dresden.de/de/stadtraum/planen/stadtentwicklung/aktuelle-buergerbeteiligungen/soziale-erhaltungssatzung.php",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Stadterneuerung: Äußere Neustadt",
+      "url": "https://www.dresden.de/de/stadtraum/planen/stadtentwicklung/stadterneuerung/stadtteile/Aeussere-Neustadt.php",
+      "stand": "letzte Änderung 04.12.2024"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Stadterneuerung: Leipziger Vorstadt/Hechtviertel",
+      "url": "https://www.dresden.de/de/stadtraum/planen/stadtentwicklung/stadterneuerung/stadtteile/Leipziger-Vorstadt-Hechtviertel.php",
+      "stand": "letzte Änderung 15.11.2024"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Stadterneuerung: Pieschen",
+      "url": "https://www.dresden.de/de/stadtraum/planen/stadtentwicklung/stadterneuerung/stadtteile/sanierungsgebiet-pieschen.php",
+      "stand": "letzte Änderung 15.11.2024"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Stadterneuerung: Loschwitz",
+      "url": "https://www.dresden.de/de/stadtraum/planen/stadtentwicklung/stadterneuerung/stadtteile/loschwitz.php",
+      "stand": "letzte Änderung 18.11.2024"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Pressemitteilung „Dresdner Sanierungsgebiete nach über 30 Jahren erfolgreich abgeschlossen“",
+      "url": "https://www.dresden.de/de/rathaus/aktuelles/pressemitteilungen/2024/12/pm_061.php",
+      "stand": "27.12.2024"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Ausgleichsbeträge in Sanierungsgebieten",
+      "url": "https://www.dresden.de/de/stadtraum/planen/stadtentwicklung/stadterneuerung/foerderprogramme-staedtebau/foerderprogramme-bund-und-land/sanierungsgebiete/ausgleichsbetraege-sanierungsgebiete.php",
+      "stand": "letzte Änderung 11.12.2023"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Stadt Leipzig, Grundstücksmarktbericht 2026, S. 32 (Grunderwerbsteuer in Sachsen)",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stand": "2026"
+    },
+    {
+      "name": "Elektronische Fahrplanauskunft (Sollfahrplan Straßenbahn, Bus, S-Bahn und Regionalverkehr), Verbindungen bis Dresden Hauptbahnhof",
+      "url": "https://www.efa-bw.de/bvb3/XSLT_TRIP_REQUEST2?language=de",
+      "stand": "Fahrplan Dienstag 10.11.2026 ab 9 Uhr, abgefragt 26. und 27.10.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "Einwohner 31.12.2025: Äußere Neustadt 18.092, Pieschen-Süd + Pieschen-Nord/Trachenberge 24.694, Klotzsche 14.701, Summe acht Stadtteile 96.575",
+      "fundstelle": "dresden-nord.md Nr. 1–2; D1"
+    },
+    {
+      "zahl": "STK 2024: EW 1990→2024 Äußere Neustadt 11.560→18.282 (+58 %), Pieschen-Süd 8.319→12.045 (+45 %); Ø Alter 34,8 (ÄN), 47,7 (L/W), 47,1 (B/WH), 47,9 (Klotzsche), Stadt 43,5; 1-Pers.-HH ÄN 65,6 %",
+      "fundstelle": "dresden-nord.md Nr. 3–5; stk.json"
+    },
+    {
+      "zahl": "Baualter ÄN bis 1918 71,1 %; Innere Neustadt 1946–90 45,1 %, bis 1918 33,2 %; Klotzsche 1946–90 35,2 %, ab 1991 32,2 %; Ø Wohnfläche ÄN 64,4, L/W 102,3, B/WH 94,5, Klotzsche 76,3 m²; Eigenheime L/W 74,4 %, B/WH 70,6 %, Klotzsche 66,3 %",
+      "fundstelle": "dresden-nord.md Nr. 7–9; D6–D13"
+    },
+    {
+      "zahl": "Angebotsmiete 2024: LV 12,15, IN 10,68, L/W 10,58, ÄN 10,11, Klotzsche 8,92, Stadt 9,37 (Spanne im Marktgebiet 8,92–12,15)",
+      "fundstelle": "dresden-nord.md Nr. 10; D6–D13, D27"
+    },
+    {
+      "zahl": "Fertigstellungen 2024: LV 290; übrige sieben zusammen 49+72+0+39+4+11+6 = 181",
+      "fundstelle": "dresden-nord.md Nr. 12; STK Bautätigkeit"
+    },
+    {
+      "zahl": "GMB Gemarkung Neustadt: Neubau 72 / 4.325–8.260 / Median 5.635 / Ø 5.855; WV 1990–2023 77 / Median 2.630; WV bis 1989/saniert 175 / 1.540–5.215 / Median 2.770 / Ø 2.905; Pieschen WV bis 1989 51 / 2.560, Umwandlung 13 / 6.955; Trachenberge Neubau 4 / 6.180; Loschwitz WV bis 1989 11 / 4.000; Wachwitz 4 / 4.230; Weißer Hirsch 8 / 3.280; Klotzsche Neubau 10 / 5.510, WV 1990–2023 30 / 2.580; Gemarkung Neustadt = drei Neustadt-Stadtteile, Radeberger Vorstadt, Albertstadt, Teile Pieschens und der Dresdner Heide",
+      "fundstelle": "dresden-nord.md Nr. 14–21; D40, D48a; GMB S. 50–54"
+    },
+    {
+      "zahl": "Stadt: WV Ø rund 2.705; Neubau Ø rund 6.460; MFH Vorkriegszeit saniert Ø 2.055; Rohertragsfaktor offen Median 21,21, geschlossen 21,75; EFH ab 1992 Ø 4.470 €/m², rund 585.000 €; DHH 4.095 €/m²",
+      "fundstelle": "D31–D34, D36; GMB S. 15, 81"
+    },
+    {
+      "zahl": "HJB 1. HJ 2026: WV Median 2.660 (1. HJ 2025: 2.550); Neubau Median 6.255, „unverändert auf hohem Niveau“; „nicht zu einem Nachgeben der Preise geführt“; DHH/REH höher, freistehende EFH/RMH/ZFH niedriger; MFH +3 % ggü. 2. HJ 2025",
+      "fundstelle": "D37, D38; HJB S. 4, 5, 10"
+    },
+    {
+      "zahl": "BRW 2026: IN 600–2.500 (61270050 2.500 M WGH, 2024 2.500); ÄN 450–1.500, größte Zone 61213190 1.150 WGFZ 2,4; LV 280–1.550; PS 220–1.050; PN/T 12 von 21 höher; L/W 260–960, 61220630 EFH f1.200 680→650; B/WH 250–700, 61220760 600 EFH f1.000, 61220820 650 EFH f1.000; Klotzsche 120–620, 16 von 25 höher, 0 niedriger, 61210710 EFH f1.100 260→280; gesamt 120–2.500",
+      "fundstelle": "dresden-nord.md Nr. 23–30; D44"
+    },
+    {
+      "zahl": "Mietspiegel 2025 gültig bis 31.12.2026; Basismiete 60 m² 7,07; Wohnlage 0,98 / 1,00 / 1,03 adressgenau; keine Stadtteilzuschläge; Mietpreisbremse 10 % und Kappung 15 % bis 30.06.2027",
+      "fundstelle": "D49–D54"
+    },
+    {
+      "zahl": "Erhaltungssatzungen H-04.1 Äußere Neustadt, H-30 Innere Neustadt; Stadtbezirk Klotzsche H-02 Gartenstadt Hellerau, H-08 Königswald; § 173 BauGB; keine soziale Erhaltungssatzung, Ablehnung 13.12.2024",
+      "fundstelle": "dresden-nord.md Nr. 33–34; D56, D57"
+    },
+    {
+      "zahl": "Sanierung ÄN: größtes erhaltenes Gründerzeit-Wohnquartier (laut Stadt „eines der größten“), Krieg weitgehend unbeschadet, Abbruch bis 1989 geplant, Ende 1990 auf Initiative der Bewohner erstes und größtes Gebiet, 87,5 ha, Aufhebung 03.01.2024; Hechtviertel ab Mitte 19. Jh. Arbeiterwohnviertel, 1993–2020, 97 % der Wohnungen, junge Familien, keine weiteren Gebäude; Pieschen ab etwa 1878 Industriegebiet, Blockrand, 20 % unbewohnbar, 95 % der Gebäude saniert, Aufhebung 21.04.2023, rund 7.000 Bewohner, mehr als doppelt so viele wie 1991 (PM061); Loschwitz „Dörfer in der Stadt“, Winzer- und Fischerort, Körnerplatz, 1993–2013; Ausgleichsbetrag anteilig",
+      "fundstelle": "dresden-nord.md Nr. 36–40; SAN-AN, SAN-H, SAN-P, SAN-L, AUSG"
+    },
+    {
+      "zahl": "Fahrzeiten: Alaunplatz 13+10 18 min; Albertplatz 7 13 min; S-Bf Bischofsplatz 10 min; Rathaus Pieschen 24–26 min; Körnerplatz Bus 63 + 10 28 min; Plattleite 27–32 min; Bahnhof Klotzsche RE1/S2 15 min; Rathaus Klotzsche Bus 72 + 7 39 min",
+      "fundstelle": "dresden-nord.md Nr. 41–48; D62"
+    },
+    {
+      "zahl": "GrESt Sachsen 5,5 %",
+      "fundstelle": "Leipziger GMB 2026 S. 32"
+    },
+    {
+      "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, §§ 656a–656d BGB; § 34c und § 34i GewO; Timon Fischer Geschäftsführer, Immobilienfinanzierung; Europace und Baufinex",
+      "fundstelle": "wie leipzig-zentrum.json"
+    }
+  ],
+  "karte": {
+    "alt": "Karte von Dresden-Nord: Innere und Äußere Neustadt, Leipziger Vorstadt, Pieschen und Trachenberge, Klotzsche mit Hellerau und Königswald, Loschwitz, Wachwitz, Weißer Hirsch und Bühlau, die Orte Hechtviertel, Albertstadt und Radeberger Vorstadt, dazu die Elbe, die Bahnstrecken, die Autobahn und der Dresdner Hauptbahnhof im Süden"
+  },
+  "anbindung": [
+    "Vom Alaunplatz sind Sie mit den Linien 13 und 10 in 18 Minuten am Hauptbahnhof.[[19]]",
+    "Vom S-Bahnhof Bischofsplatz fahren Sie 10 Minuten zum Hauptbahnhof.[[19]]",
+    "Vom Körnerplatz sind Sie mit Bus 63 und Linie 10 in 28 Minuten am Hauptbahnhof, von der Plattleite in 27 bis 32 Minuten.[[19]]",
+    "Vom Bahnhof Klotzsche fahren der RE1 und die S2 in 15 Minuten zum Hauptbahnhof, vom Rathaus Klotzsche sind es mit Bus 72 und Linie 7 39 Minuten.[[19]]"
+  ]
+}

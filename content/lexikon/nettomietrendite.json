@@ -7,11 +7,93 @@
   "keywords": [
     "nettomietrendite"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Kapitalanlage",
-  "explanation": "Die Nettomietrendite berücksichtigt im Gegensatz zur Bruttomietrendite laufende Eigentümerkosten und sollte auf eine klar definierte Investitionsbasis bezogen werden. Unterschiedliche Marktquellen verwenden teils abweichende Definitionen.",
-  "practiceExample": "16.800 € JNKM − 3.000 € nicht umlagefähige Kosten = 13.800 € Nettoertrag. Bei 330.000 € Gesamtinvestition ergibt das 4,18 % vereinfachte Nettomietrendite.",
-  "formula": "Nettomietrendite = Nettoertrag / Gesamtinvestition",
+  "explanation": "Die Nettomietrendite zieht von der Jahreskaltmiete die Kosten ab, die Sie als Eigentümer tragen, und setzt den Rest ins Verhältnis zur Investition. Finanztip rechnet mit der Gesamtinvestition, also Kaufpreis plus Nebenkosten. Manche Rechnungen nehmen den Kaufpreis allein; vergleichen Sie deshalb Werte mit gleicher Grundlage.",
+  "practiceExample": "Angenommen, Sie kaufen eine vermietete Wohnung im Berliner Umland, etwa in Bernau: 65 m², Baujahr 1995, 9 € Kaltmiete je m², also 585 € im Monat und 7.020 € im Jahr, für 160.000 €, mit Nebenkosten 178.512 €. Nach Verwaltung (420 €), Instandhaltung mit 10 € je m² (650 €) und Mietausfall (140 €) bleiben 5.810 €. Die Nettomietrendite liegt bei 3,25 %, brutto sind es 4,39 %. Mit den amtlichen Werten für 2026 sind es 3,08 %. Mit der Finanztip-Faustregel, 1,5 % auf einen Gebäudewert von 128.000 €, also 1.920 € Instandhaltung, sind es 2,54 %.",
+  "formula": "Nettomietrendite = (Jahresnettokaltmiete − nicht umlagefähige Kosten) / (Kaufpreis + Kaufnebenkosten) × 100",
   "sources": [],
-  "assistantAnswer": "Jahresmiete abzüglich definierter Eigentümerkosten im Verhältnis zum Kaufpreis. Die Nettomietrendite berücksichtigt im Gegensatz zur Bruttomietrendite laufende Eigentümerkosten und sollte auf eine klar definierte Investitionsbasis bezogen werden. Unterschiedliche Marktquellen verwenden teils abweichende Definitionen."
+  "assistantAnswer": "Jahresmiete abzüglich definierter Eigentümerkosten im Verhältnis zum Kaufpreis. Die Nettomietrendite berücksichtigt im Gegensatz zur Bruttomietrendite laufende Eigentümerkosten und sollte auf eine klar definierte Investitionsbasis bezogen werden. Unterschiedliche Marktquellen verwenden teils abweichende Definitionen.",
+  "ausbau": {
+    "einordnung": [
+      "Die Nettomietrendite zieht von der Jahreskaltmiete die Kosten ab, die Sie als Eigentümer tragen, und setzt den Rest ins Verhältnis zur Investition. Finanztip rechnet mit der Gesamtinvestition, also Kaufpreis plus Nebenkosten.[[1]] Manche Rechnungen nehmen den Kaufpreis allein; vergleichen Sie deshalb Werte mit gleicher Grundlage.",
+      "Welche Kosten Sie abziehen, ist eine Frage des Ansatzes. Finanztip nennt für die Instandhaltung als Faustregel 1,5 % des Zeitwerts des Gebäudeteils, für die Verwaltung einer Eigentumswohnung mindestens etwa 30 bis 40 € im Monat und für Mietausfall 2 % der Jahresmiete.[[1]]",
+      "Die Wertermittlung arbeitet mit amtlichen Modellwerten für Verwaltung, Instandhaltung und Mietausfallwagnis, soweit diese Kosten nicht umgelegt werden.[[2]] Das Mietausfallwagnis liegt bei 2 %.[[3]] Fortgeschrieben auf 2026 nennt der Gutachterausschuss Barnim 439 € Verwaltung je Eigentumswohnung und 14,40 € Instandhaltung je m².[[4]]"
+    ],
+    "beispiel": [
+      "Angenommen, Sie kaufen eine vermietete Wohnung im Berliner Umland, etwa in Bernau: 65 m², Baujahr 1995, 9 € Kaltmiete je m², also 585 € im Monat und 7.020 € im Jahr, für 160.000 €, mit Nebenkosten 178.512 €. Nach Verwaltung (420 €), Instandhaltung mit 10 € je m² (650 €) und Mietausfall (140 €) bleiben 5.810 €. Die Nettomietrendite liegt bei 3,25 %, brutto sind es 4,39 %.",
+      "Mit den amtlichen Werten für 2026 sind es 3,08 %. Mit der Finanztip-Faustregel, 1,5 % auf einen Gebäudewert von 128.000 €, also 1.920 € Instandhaltung, sind es 2,54 %."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Lassen Sie sich bei einer Eigentumswohnung Wirtschaftsplan und Hausgeldabrechnung geben. Dort sehen Sie, welche Kosten anfallen und welche davon Sie auf den Mieter umlegen können. Der Rest gehört in Ihre Rechnung."
+        ]
+      },
+      {
+        "h2": "Was es für Anleger heißt",
+        "absaetze": [
+          "Die Nettomietrendite zeigt, was die Immobilie vor Finanzierung und Steuern erwirtschaftet. Ob sich der Kauf mit Darlehen rechnet, zeigen Cashflow und Eigenkapitalrendite. F&G führt in der Ankaufsberatung deshalb Finanzierung und Eigenkapitalrendite zusammen.[[5]]"
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "Finanztip: Mietrendite berechnen",
+        "url": "https://www.finanztip.de/baufinanzierung/mietrendite-berechnen/",
+        "stand": "Stand 01.04.2026"
+      },
+      {
+        "name": "§ 32 Immobilienwertermittlungsverordnung (ImmoWertV)",
+        "url": "https://www.gesetze-im-internet.de/immowertv_2022/__32.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Anlage 3 ImmoWertV",
+        "url": "https://www.gesetze-im-internet.de/immowertv_2022/anlage_3.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Gutachterausschuss Barnim: Grundstücksmarktbericht 2025",
+        "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+        "stand": "Berichtsjahr 2025, abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Ankaufsberatung",
+        "url": "https://fg-realestate.de/ankaufsberatung.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Nettomieteinnahmen / Gesamtinvestition × 100; 1,5 % Zeitwert Gebäudeteil; 30 bis 40 € Verwaltung; 2 % Mietausfall",
+        "fundstelle": "runde-3.md, C03"
+      },
+      {
+        "zahl": "Bewirtschaftungskosten, soweit nicht umgelegt: Verwaltung, Instandhaltung, Mietausfallwagnis",
+        "fundstelle": "runde-3.md, N02"
+      },
+      {
+        "zahl": "Mietausfallwagnis 2 %",
+        "fundstelle": "runde-3.md, N03"
+      },
+      {
+        "zahl": "2026: 439 € je ETW, 14,40 €/m²",
+        "fundstelle": "runde-3.md, N04"
+      },
+      {
+        "zahl": "Finanzierung und Eigenkapitalrendite zusammenführen (F&G)",
+        "fundstelle": "runde-3.md, C10"
+      },
+      {
+        "zahl": "Instandhaltung 10 €/m² als Beispielwert",
+        "fundstelle": "runde-3.md, C16"
+      },
+      {
+        "zahl": "5.809,60 / 178.512 = 3,25 %; amtlich 5.504,60 / 178.512 = 3,08 %; Finanztip 4.539,60 / 178.512 = 2,54 %",
+        "fundstelle": "Rechnung, Marktprüfung runde-3.md"
+      }
+    ]
+  }
 }

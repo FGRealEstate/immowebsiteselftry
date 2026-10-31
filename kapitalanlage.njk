@@ -1,27 +1,261 @@
 ---
-layout: base.njk
-title: Kapitalanlage Immobilien – Fischer & Geserich Real Estate
+layout: fgs-service.njk
+bodyClass: fgs-service
+title: Immobilien als Kapitalanlage in Berlin, Leipzig und Dresden | Fischer & Geserich
 permalink: kapitalanlage.html
-description: "Kapitalanlage-Immobilien strukturiert prüfen: Ankauf, Wirtschaftlichkeit, Finanzierung und Investment Lab bei Fischer & Geserich Real Estate."
+description: "Immobilien als Kapitalanlage: Strategie, Eigenkapital, Finanzierung und eine Rechnung über die gesamte Haltedauer, für die erste Wohnung und den weiteren Bestand in Berlin, Leipzig und Dresden."
 canonicalPath: /kapitalanlage.html
+# Brief Design-Pass §4.2: bisherige Texte bleiben (Investmentpfad, Hero-Stichpunkte, Lead), die stärksten Antworten
+# der bisherigen FAQ sind jetzt Abschnitte (B10 und B3 → Drei Wege, B7 → Nach dem Kauf, D3/D4 → Erste Kapitalanlage).
+# B5 (Provision) fehlt bewusst, siehe QUESTIONS-FOR-TIMON.md 6.2.
+service:
+  id: kapitalanlage
+  crumb: "Kapitalanlage"
+  kicker: "Vor dem Kauf durchgerechnet"
+  h1: "Immobilien als Kapitalanlage in Berlin, Leipzig und Dresden"
+  intro: "Bevor Sie kaufen, rechnen wir mit Ihnen Miete, Kosten, Steuern und Finanzierung über die gesamte Haltedauer durch. Das gilt für die erste vermietete Wohnung genauso wie für den weiteren Ausbau Ihres Bestands."
+  button: { label: "Erstgespräch vereinbaren", href: "#anfrage" }
+  hero: { name: "kapitalanlage-hero", alt: "Gründerzeithaus von 1871 an der Humboldtstraße im Leipziger Waldstraßenviertel" }
+  # Design-Pass 2 §4.2: Eckdaten aus dem Seitentext (Auswahl für Jesu gelistet, PLAN.md Schritt 3); „Erlaubnisse“ entfällt (Update 18 §1)
+  keyfacts:
+    - { label: "Einstieg", wert: "ab etwa 10.000 Euro Eigenkapital" }
+    - { label: "Rechnung", wert: "über die gesamte Haltedauer" }
+  summaryQ: "Wie begleitet Fischer & Geserich eine Immobilie als Kapitalanlage?"
+  summary:
+    - "Wir klären zuerst Budget, Renditeziel, Risikoprofil und Haltedauer. Dann rechnen wir Miete, Kosten, Finanzierung, Cashflow und Restschuld für das konkrete Objekt. Ein Einstieg ist ab etwa 10.000 Euro Eigenkapital realistisch. Die Kaufnebenkosten liegen meist bei 7,5 bis 15 Prozent des Kaufpreises, je nach Bundesland und je nachdem, ob eine Maklerprovision anfällt. In Bayern können es ohne Makler auch nur rund 5,5 Prozent sein."
+    - "Wir rechnen Cashflow, Steuervorteile, Mieterhöhungen und den späteren Verkaufserlös über die gesamte Haltedauer zusammen und raten von steueroptimierten Neubauten ab. Die Finanzierung prüfen wir vor dem Notartermin und nach dem Kauf bleiben wir Ihr Ansprechpartner."
+  faqTitle: "Häufige Fragen zur Kapitalanlage"
+  faq:
+    - ref: B4
+    - ref: B6
+    - ref: B8
+    - ref: B1
+    - ref: B2
+    # B9 ohne den letzten Satz („gesetzlich auf maximal zwei Nettokaltmieten gedeckelt“): Die Grenze gilt nur für
+    # Wohnungssuchende (§ 3 Abs. 2 WoVermittG), nicht für den Eigentümer. Entscheidung Update 6, §1 (27.10.2026): Satz löschen.
+    - q: "Wer zahlt den Makler bei einer Vermietung?"
+      a: "Bei der Vermietung gilt das Bestellerprinzip, zahlen muss, wer den Makler beauftragt hat. Beauftragen Sie uns als Eigentümer mit Ihrer Vermietung, tragen Sie die Provision, auch dann, wenn sich Mietinteressenten anschließend von selbst bei Ihnen melden."
+    # FG-Gap-Answers 6.1: Entwurf entfernt, der neue Text (FG-Timon-Answers-Update §2.3, 29.10.2026) steht auf Finanzierung und Über uns
+    # FG-Gap-Answers 6.2 (Strukturvertrieb): gelöscht nach FG-Update-11 §3 (29.10.2026), Timon wird nicht gefragt
+  related:
+    services:
+      - { label: "Ankaufsberatung", note: "Objekt, Lage, Wirtschaftlichkeit und Finanzierung prüfen", href: "/ankaufsberatung.html", bild: "ankauf-hero", alt: "Das Eckhaus Kurfürstendamm 190 in Berlin-Charlottenburg mit grüner Kuppel an einem sonnigen Junitag" }
+      - { label: "Finanzierungsberatung", note: "Banken vergleichen, vor dem Notartermin klären", href: "/finanzierungsberatung.html", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
+      - { label: "Betreuung nach dem Kauf", note: "Gutachten, Mietanpassung, Handwerker", href: "/betreuung-nach-dem-kauf/", bild: "betreuung-hero", alt: "Blick nach oben in ein gewendeltes Altbau-Treppenhaus mit verziertem Geländer in Berlin-Mitte" }
+    lexikon: [bruttomietrendite, cashflow, restnutzungsdauer]
+  contact: lennart
+  closing:
+    title: "Welcher Weg passt zu Ihrer Situation?"
+    text: "Das klären wir im Erstgespräch, bevor wir über ein konkretes Objekt sprechen. Das erste Gespräch kostet Sie nichts und verpflichtet Sie zu nichts."
+    button: gespraech
+  schema:
+    name: "Immobilien als Kapitalanlage"
+    serviceType: "Immobilienvermittlung und Beratung für Kapitalanleger"
+    description: "Begleitung beim Kauf vermieteter Immobilien als Kapitalanlage: Strategie, Wirtschaftlichkeitsrechnung über die Haltedauer, Finanzierung und Betreuung nach dem Kauf, in Berlin, Brandenburg, Leipzig und Dresden."
+    area: regional
 ---
-<section class="fg-journey-hero fg-page-hero bg-primary text-white py-16 md:py-24">
-  <div class="container mx-auto px-4 max-w-6xl">
-    <a href="/index.html#ziele" class="fg-back-link"><i class="fas fa-arrow-left"></i> Zurück zur Auswahl</a>
-    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center mt-8">
-      <div class="lg:col-span-3 fg-reveal"><p class="fg-eyebrow">Für Kapitalanleger</p><h1 class="text-4xl md:text-6xl font-extrabold mb-6">Nicht nur kaufen. <span class="text-gold-gradient">Vorher rechnen.</span></h1><p class="text-lg md:text-xl text-page-bg mb-8">Wir verbinden Ankaufsberatung, Investmentanalyse und Finanzierung zu einem nachvollziehbaren Entscheidungsprozess.</p><div class="flex flex-col sm:flex-row gap-3"><a href="/investment-lab.html" class="btn-85 py-3 px-7 text-primary font-bold rounded-lg text-center"><i class="fas fa-calculator mr-2"></i> Investment Lab öffnen</a><a href="#terminbuchung" class="border border-accent py-3 px-7 rounded-lg font-bold text-center hover:bg-accent hover:text-primary transition">Erstgespräch buchen</a></div></div>
-      <div class="lg:col-span-2 fg-journey-side fg-reveal"><span><i class="fas fa-magnifying-glass-chart"></i> Wirtschaftlichkeit prüfen</span><span><i class="fas fa-coins"></i> Cashflow &amp; Eigenkapital einordnen</span><span><i class="fas fa-building-columns"></i> Finanzierung mitdenken</span><span><i class="fas fa-file-circle-check"></i> Ankauf strukturiert vorbereiten</span></div>
+{#- Kapitalanlage nach Design-Pass 2 §4 (29.10.2026): Fotokapitel „Von der Idee zur belastbaren Entscheidung“ mit den drei Schritten
+    als Reihe darunter (Bild aus dem alten Kapitel Altersvorsorge), die übrigen Kapitel als Zeilen (Überschrift links, Leitsatz rechts,
+    der Rest unter „Mehr erfahren“), F&G in Zahlen, „Nach dem Kauf“, Terminbuchung und Formular. Texte unverändert; das
+    Inhaltsverzeichnis entfällt wie auf Verkaufen. Davor (CP4): Kicker über den H2, Häkchen-Icons, „Auf dieser Seite“ und die
+    Gebietsliste entfielen; navy nur in S1, S8 und Fuß. -#}
+{% from "fgs-macros.njk" import split, fotokapitel, mehr, facts, textlink with context %}
+{% from "fgd-icons.njk" import icon %}
+{% set ankaufBookingUrl = "https://outlook.office.com/bookwithme/user/72d1d477b1c94313b937eaf0288a9454@fg-realestate.de/meetingtype/CHqdXdox7UqN08gNHOu7dw2?anonymous&ismsaljsauthenabled&ep=mlink" %}
+
+{# §4.4 Fotokapitel: H2 und Leitsatz auf dem Foto; §4.5 die drei Schritte darunter als Reihe (je ein Satz, daher ohne Feld) #}
+{% call fotokapitel({ id: "investmentpfad", hoehe: 80, titel: "Von der Idee bis zum Kauf", bild: "dresden-band" | bild, alt: "Kuppel der Kunstakademie an der Brühlschen Terrasse in Dresden, dahinter die Elbe",
+  satz: "Drei Schritte in dieser Reihenfolge. Über ein konkretes Objekt sprechen wir, wenn die Strategie steht." }) %}
+  <ol class="fgs-steps fgs-steps--reihe" role="list" data-fgs-steps style="--n: 3">
+    <li style="--i: 1">
+      <span class="fgs-step-num" aria-hidden="true">01</span>
+      <h3>Strategie</h3>
+      <p class="fgs-step-lead">Wir klären Budget, Renditeziel, Risiko und Haltedauer.</p>
+    </li>
+    <li style="--i: 2">
+      <span class="fgs-step-num" aria-hidden="true">02</span>
+      <h3>Analyse</h3>
+      <p class="fgs-step-lead">Wir rechnen Miete, Kosten, Finanzierung und Cashflow für das konkrete Objekt.</p>
+    </li>
+    <li style="--i: 3">
+      <span class="fgs-step-num" aria-hidden="true">03</span>
+      <h3>Ankauf</h3>
+      <p class="fgs-step-lead">Wir klären die Finanzierung vor dem Notartermin und begleiten den Kauf.</p>
+    </li>
+  </ol>
+{% endcall %}
+
+{# Kapitel als Zeilen (§2 Regel 1): Überschrift links, Leitsatz rechts, der Rest unter „Mehr erfahren“ #}
+<section class="fgs-section fgs-rows" aria-label="Kapitalanlage im Einzelnen">
+  <div class="fgs-wrap">
+  <article class="fgs-row fgs-cols fgs-cols--57" id="erste-kapitalanlage" aria-labelledby="erste-titel">
+    <div class="fgs-cols-head"><h2 id="erste-titel">Die erste Kapitalanlage als Angestellter</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Für den Einstieg brauchen Sie kein großes Vermögen. Wichtig ist, dass die erste Wohnung den zweiten Kauf nicht verbaut.</p>
+      {% call mehr() %}
+      <p>Ab etwa 10.000 Euro Eigenkapital ist ein Einstieg realistisch. Damit lässt sich eine Wohnung im Bereich um 100.000 Euro darstellen. Die <a href="/lexikon/kaufnebenkosten/">Kaufnebenkosten</a> liegen meist bei 7,5 bis 15 Prozent des Kaufpreises, je nach Bundesland und je nachdem, ob eine Maklerprovision anfällt. In Bayern können es ohne Makler auch nur rund 5,5 Prozent sein. Bringen Sie deutlich weniger mit, raten wir eher dazu, erst einmal anzusparen, statt die Lücke über teure Ersatzkonstruktionen zu schließen.</p>
+      <h3>Warum wir bei der ersten Wohnung von der Vollfinanzierung abraten</h3>
+      <p>Wer die erste Wohnung zu 110 Prozent finanziert, trägt eine hohe Zinsbelastung und ein unausgeglichenes Schuldenportfolio. Für eine zweite Immobilie sind Sie dann bei den meisten Banken nicht mehr finanzierbar. Haben Sie dagegen schon drei oder vier Objekte, von denen einige einen positiven Cashflow erzielen, bewertet die Bank dieselbe Anfrage anders. Den Hebel ziehen Sie deshalb besser erst, wenn er trägt. <a href="/blog/beleihungsauslauf-und-kondition/">Was eine 100- oder 110-Prozent-Finanzierung kostet</a>, steht in unserem Blog.</p>
+      <h3>Schritt für Schritt</h3>
+      <p>Bei der allerersten Immobilie nehmen wir Sie Schritt für Schritt mit und erklären, was dazugehört, denn am Anfang ist vieles neu. Vor dem Notartermin prüfen wir mit Ihnen, welches Volumen zu Ihrem Einkommen passt. Passt es nicht, sagen wir Ihnen das, bevor Kosten entstehen.</p>
+      {% endcall %}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="altersvorsorge" aria-labelledby="vorsorge-titel">
+    <div class="fgs-cols-head"><h2 id="vorsorge-titel">Immobilien als Altersvorsorge</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Eine vermietete Immobilie baut Vermögen langsam auf. Die Miete trägt einen Teil von Zins und Tilgung, die <a href="/lexikon/restschuld/">Restschuld</a> sinkt mit jedem Jahr und die Miete lässt sich über die Jahre anpassen.</p>
+      {% call mehr() %}
+      <p>Ist das Darlehen getilgt, bleibt die Miete nach Abzug der laufenden Kosten.</p>
+      <p>Über zehn, zwanzig oder dreißig Jahre ist das nach unserer Erfahrung ein gesunder Weg, Vermögen aufzubauen. Er ist unspektakulär und genau darum geht es.</p>
+      <p>Ein Selbstläufer ist eine Immobilie nicht. Leerstand, Instandhaltung und eine teurere <a href="/lexikon/anschlussfinanzierung/">Anschlussfinanzierung</a> gehören in die Rechnung und das Kapital in einer Wohnung lässt sich nicht kurzfristig in Teilen verkaufen. Deshalb gehören Rücklagen und vorsichtige Annahmen von Anfang an dazu.</p>
+      {% endcall %}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="strategien" aria-labelledby="strategien-titel">
+    <div class="fgs-cols-head"><h2 id="strategien-titel">Drei Wege in die Kapitalanlage, und welchen wir empfehlen</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Alle drei gibt es am Markt und alle drei werden verkauft. Wir empfehlen den dritten und raten vom zweiten ausdrücklich ab.</p>
+      {% call mehr() %}
+      <h3>1. Direkter Cashflow außerhalb der Ballungszentren</h3>
+      <p>Hier trägt sich die Wohnung vom ersten Monat an selbst. In Berlin, Leipzig und Dresden gehen die Zahlen dafür in der Regel nicht auf, deshalb führt dieser Weg in Orte rund eine Stunde vom Zentrum entfernt, bezogen auf Berlin etwa Eberswalde, Luckenwalde oder Joachimsthal. Dort stimmt das Verhältnis von Kaufpreis und Miete, eine Wertsteigerung lässt sich aber deutlich schwerer vorhersagen als in der Stadt.</p>
+      <h3>2. Steueroptimierte Neubauten</h3>
+      <p>Steueroptimierte Neubauten in Berlin liegen 2026 bei Kaufpreisen von 11.000 bis 13.000 Euro pro Quadratmeter. Selbst bei Mieten von 35 bis 45 Euro pro Quadratmeter liegt die <a href="/lexikon/bruttomietrendite/">Bruttorendite</a> bei 3,5 bis höchstens 4 Prozent. Getragen wird die Rechnung fast ausschließlich von der Abschreibung, und das zehn, vielleicht fünfzehn Jahre. Danach ist der steuerliche Vorteil aufgebraucht und den ursprünglichen Einstandspreis erzielen Sie beim Wiederverkauf meistens nicht mehr. Sinnvoll ist das aus unserer Sicht nur, wenn Steuerersparnis Ihr einziges Ziel ist.</p>
+      <h3>3. Die Rechnung über die gesamte Haltedauer</h3>
+      <p>Hier zählt die Summe über die gesamte Haltedauer: der operative Cashflow, die steuerlichen Vorteile, die Mieterhöhungen über die Jahre und der Verkaufserlös am Ende. Wer in Berlin kauft, hat am Anfang meistens einen negativen operativen Cashflow. Das ist kein Fehler in der Rechnung, sondern Teil davon. Über die Jahre kommen Anpassungen im Rahmen der <a href="/lexikon/kappungsgrenze/">Kappungsgrenze</a> dazu, einvernehmliche Erhöhungen im Gespräch mit dem Mieter oder eine Neuvermietung nach einem Auszug.</p>
+      <blockquote class="fgs-pull">
+        <p>Entscheidend ist die Summe über die gesamte Haltedauer.</p>
+        <p class="fgs-pull-text">Dieser Weg trägt aus unserer Sicht weniger Risiko als die beiden anderen.</p>
+      </blockquote>
+      {% endcall %}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="maerkte" aria-labelledby="maerkte-titel">
+    <div class="fgs-cols-head"><h2 id="maerkte-titel">Berlin, Leipzig oder Dresden: worin sich die Märkte unterscheiden</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">In allen drei Städten entscheidet die Mikrolage mehr als der Name des Stadtteils. Unterschiede gibt es beim Einstiegspreis, bei der Nachfrage und bei den Risiken.</p>
+      {% call mehr() %}
+      <h3>Berlin</h3>
+      <p><strong>Hohe Einstiegspreise, breite Nachfrage</strong></p>
+      <p>Arbeitgeberbasis, internationale Nachfrage und Marktliquidität stützen viele Teilmärkte. Regulierung und große Unterschiede zwischen den Quartieren erhöhen den Prüfungsbedarf.</p>
+      {{ textlink("/standorte/berlin/", "Standort Berlin") }}
+      <h3>Leipzig</h3>
+      <p><strong>Einstiegspreis und Nachfrage im Verhältnis</strong></p>
+      <p>Hochschulen, Logistik, Industrie und Dienstleistung tragen die Nachfrage. Mietpotenzial und künftiges Angebot im direkten Umfeld sollten konservativ bewertet werden.</p>
+      {{ textlink("/standorte/leipzig/", "Standort Leipzig") }}
+      <h3>Dresden</h3>
+      <p><strong>Technologie und Forschung als Basis</strong></p>
+      <p>Halbleitercluster, Forschung und Verwaltung stützen gut angebundene Lagen. Hochwasserlagen und die Sanierungsqualität älterer Gebäude prüfen wir objektbezogen.</p>
+      {{ textlink("/standorte/dresden/", "Standort Dresden") }}
+      <p>Berlin funktioniert nicht als ein einheitlicher Immobilienmarkt. Mikrolage, Mietstatus und technischer Zustand entscheiden darüber, ob ein hoher Einstiegspreis wirtschaftlich tragfähig ist. In Leipzig und Dresden liegt der Einstieg pro Quadratmeter in der Regel niedriger, die Unterschiede zwischen etablierten Wohnlagen, Entwicklungsgebieten und Randlagen sind aber ebenso deutlich. Spannen für Kaufpreise, Mieten und Renditen stehen auf den Standortseiten.</p>
+      <p>Für Berlin und Brandenburg ist Lennart Geserich Ihr Ansprechpartner, für Leipzig und Dresden Timon Fischer.</p>
+      {% endcall %}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="rechnen" aria-labelledby="rechnen-titel">
+    <div class="fgs-cols-head"><h2 id="rechnen-titel">Wie wir rechnen: über die gesamte Haltedauer</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Wir rechnen jedes Objekt auf mehreren Ebenen und zeigen, was passiert, wenn sich eine Annahme ändert.</p>
+      {% call mehr() %}
+      <p>Am Anfang steht die <a href="/lexikon/bruttomietrendite/">Bruttomietrendite</a>, also die Jahresmiete im Verhältnis zum Kaufpreis. Was am Monatsende übrig bleibt, sagt sie noch nicht. Dafür ziehen wir nicht umlagefähige Kosten, Rücklagen und die Finanzierung ab und kommen zum <a href="/lexikon/cashflow/">Cashflow</a>.</p>
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li>heutige Miete und die bei Neuvermietung erzielbare Miete getrennt</li>
+        <li>Hausgeld, nicht umlagefähige Kosten, Rücklagen und Mietausfall</li>
+        <li>absehbarer Investitionsbedarf als <a href="/lexikon/capex/">Capex</a></li>
+        <li>Zins, Tilgung, Eigenkapital und Restschuld am Ende der Zinsbindung</li>
+        <li>Steuerwirkung, Mieterhöhungen und Verkaufserlös über die Haltedauer</li>
+      </ul>
+      <p>Bei unseren <a href="/angebote.html">Angeboten</a>, die als Kapitalanlage gekennzeichnet sind, fließen Kaufpreis und Miete direkt in eine Szenariorechnung. Zins, Tilgung und Eigenkapital lassen sich dort direkt verändern.</p>
+      <div class="fgs-aside">
+        <p><strong>Selbst rechnen.</strong> Der Investitionsrechner führt Sie Schritt für Schritt durch Objekt, Kosten und Finanzierung und zeigt Cashflow, Eigenkapitalrendite, Tilgung, Steuerwirkung und Vermögensentwicklung. Ihre Eingaben werden nicht an uns übertragen.</p>
+        <p><a href="/investitionsrechner.html">Zum Investitionsrechner</a> · <a href="/investment-lab.html">Alle Rechner im Investment Lab</a></p>
+      </div>
+      <p>Ob ein Investment gut oder schlecht ist, entscheidet kein Rechner. Dafür braucht es Objektzustand, Lage, Mietrecht und Ihre persönlichen Ziele und genau diesen Teil übernehmen wir in der <a href="/ankaufsberatung.html">Ankaufsberatung</a>.</p>
+      {% endcall %}
+    </div>
+  </article>
+  </div>
+</section>
+
+{# §4.7 F&G in Zahlen: Streifen wie auf der Startseite (bisheriger Titel und Werte), ohne „Angabe von F&G“ (Design-Pass 2 §7) #}
+{{ facts({ id: "zahlen", titel: "F&G in Zahlen", hochzaehlen: true, mitte: true, items: [
+  { wert: "50+", text: "neue Interessenten für Kapitalanlagen im Monat" },
+  { wert: "über 4 Mio. €", text: "begleitetes Finanzierungsvolumen 2026" },
+  { wert: google.rating, text: "von 5 Sternen aus " + google.count + " Google-Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>, Stand ' + google.checkedLabel }
+] }) }}
+
+{# S3 Nach dem Kauf (bisher navy Halbbild; navy nur in S1, S8 und Fuß); Bild im Container, 4:5 und höchstens 640 px hoch wie auf der Startseite #}
+{% call split({ id: "nach-dem-kauf", titel: "Nach dem Kauf", bild: "skyline-band" | bild, alt: "Fernsehturm und Hochhäuser an der Spree in Berlin-Friedrichshain nach Sonnenuntergang", rechts: true, kompakt: true }) %}
+  <p>Drei Dinge stehen fast immer zuerst an: das Restnutzungsdauergutachten, das die jährliche <a href="/lexikon/afa/">AfA</a> erhöhen kann, die Frage nach der Miethöhe und die Entscheidung, ob sich eine Investition in die Wohnung lohnt. Ein Beispiel aus Berlin: Eine Wohnung bei 8 bis 9 Euro netto kalt pro Quadratmeter erreicht nach einem Mieterwechsel und einer Investition zwischen 5.000 und 15.000 Euro häufig 13 bis 16 Euro, soweit Mietspiegel und Mietpreisbremse das zulassen. Ob das bei Ihnen aufgeht, rechnen wir vorher gemeinsam durch.</p>
+  <p>Gutachter, Handwerker und Hausverwaltungen vermitteln wir aus unserem Netzwerk, die Vermittlung kostet Sie nichts. Uns geht es darum, dass Sie in fünf Jahren Ihre zweite Immobilie über uns kaufen und in zehn Jahren die dritte.</p>
+  {{ textlink("/betreuung-nach-dem-kauf/", "Betreuung nach dem Kauf") }}
+{% endcall %}
+
+{# F Terminbuchung und Formular (Feldnamen und Versand unverändert) #}
+<section class="fgs-section" id="anfrage-bereich" aria-labelledby="termin-titel">
+  <div class="fgs-wrap fgs-formblock">
+    <div class="fgs-formblock-text" id="terminbuchung">
+      <h2 id="termin-titel">Erstgespräch buchen</h2>
+      <p class="fgs-lead">Wählen Sie einen freien Termin in unserem Kalender. Das Erstgespräch führen wir per Teams oder persönlich.</p>
+      <div class="fgs-btns"><a class="fgs-btn fgs-btn--secondary" href="{{ ankaufBookingUrl }}" target="_blank" rel="noopener noreferrer">Erstgespräch buchen</a></div>
+    </div>
+    <div class="fgs-formblock-form">
+    <div class="fgd-form-card" id="anfrage">
+      <h2>Kapitalanlage besprechen</h2>
+      <p>Lieber schriftlich? Schicken Sie uns Ihre Eckdaten. Pflichtfelder sind mit * markiert.</p>
+      <form method="post" action="/.netlify/functions/propstack-lead?concern=Kapitalanlage" class="fgd-form" data-fgd-lead-form data-concern="Kapitalanlage" novalidate>
+        <fieldset>
+          <legend>Ihr Vorhaben</legend>
+          <div class="fgd-field-row">
+            <label>Ihre Ausgangslage *
+              <select name="extra:Ausgangslage" required>
+                <option value="">Bitte wählen</option>
+                <option>Meine erste Kapitalanlage</option>
+                <option>Ich habe bereits Immobilien</option>
+                <option>Ich habe ein Objekt im Blick</option>
+              </select>
+            </label>
+            <label>Objektart
+              <select name="object_type">
+                <option value="">Bitte wählen</option>
+                <option>Eigentumswohnung</option>
+                <option>Mehrfamilienhaus</option>
+                <option>Noch offen</option>
+              </select>
+            </label>
+          </div>
+          <div class="fgd-field-row">
+            <label>Wunschregion<input name="location" placeholder="z.&nbsp;B. Berlin oder Leipzig"></label>
+            <label>Kaufpreisrahmen<input name="budget" inputmode="decimal" placeholder="in Euro"></label>
+          </div>
+          <label>Eigenkapital<input name="property_details[visible-financing-equity]" placeholder="optional, ungefähr"></label>
+        </fieldset>
+        <fieldset>
+          <legend>Ihre Kontaktdaten</legend>
+          <div class="fgd-field-row">
+            <label>Vorname *<input name="first_name" required autocomplete="given-name"></label>
+            <label>Nachname *<input name="last_name" required autocomplete="family-name"></label>
+          </div>
+          <div class="fgd-field-row">
+            <label>E-Mail *<input name="email" type="email" required autocomplete="email"></label>
+            <label>Telefon<input name="phone" type="tel" autocomplete="tel" placeholder="für Rückfragen"></label>
+          </div>
+          <label>Nachricht<textarea name="message" rows="3" maxlength="3000" placeholder="optional, zum Beispiel Ihr Ziel oder Ihre Haltedauer"></textarea></label>
+        </fieldset>
+        <label class="fgd-hp" aria-hidden="true">Website<input name="company_website" tabindex="-1" autocomplete="off"></label>
+        <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
+        <div class="fgd-status" data-fgd-lead-status hidden></div>
+        <button type="submit" class="fgd-btn fgd-btn-navy">Anfrage senden{{ icon("arrow") | safe }}</button>
+      </form>
+      <div class="fgd-form-done" data-fgd-lead-done tabindex="-1" hidden>
+        <h3>Vielen Dank, Ihre Anfrage ist da</h3>
+        <p>Wir melden uns bei Ihnen, um einen Termin für das Erstgespräch zu finden. Wenn es eilt, erreichen Sie uns unter <a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a>.</p>
+      </div>
+    </div>
     </div>
   </div>
 </section>
-<section class="container mx-auto px-4 py-16 md:py-24"><div class="max-w-6xl mx-auto"><div class="text-center mb-12 fg-reveal"><p class="fg-section-kicker">Ihr Investmentpfad</p><h2 class="text-3xl md:text-5xl font-bold text-primary mb-4">Von der Idee zur belastbaren Entscheidung</h2></div><div class="fg-workflow-grid"><article class="fg-workflow-card fg-reveal"><span>01</span><i class="fas fa-bullseye"></i><h3>Strategie</h3><p>Budget, Renditeziel, Risikoprofil und Haltedauer definieren.</p></article><article class="fg-workflow-card fg-reveal"><span>02</span><i class="fas fa-chart-column"></i><h3>Analyse</h3><p>Miete, Kosten, Finanzierung, Cashflow und Entwicklung transparent rechnen.</p></article><article class="fg-workflow-card fg-reveal"><span>03</span><i class="fas fa-handshake"></i><h3>Ankauf</h3><p>Objekt und Finanzierung zusammenführen und die nächsten Schritte koordinieren.</p></article></div></div></section>
-{% set faqItems = mangoTexte.faq.B %}
-{% set faqAnchor = "faq-kapitalanlage" %}
-{% set faqTitle = "Fragen zur Kapitalanlage" %}
-{% set faqIntro = "Wirtschaftlichkeit, Eigenkapital und die nächsten Schritte nach dem Kauf – kompakt eingeordnet." %}
-{% set faqKicker = "Kapitalanlage verstehen" %}
-{% include "faq-block.njk" %}
-
-{% set appointmentMode = "ankauf" %}
-{% include "appointment-booking.njk" %}
-<section class="container mx-auto px-4 pb-16 md:pb-24"><div class="fg-related-journeys"><span>Auch relevant:</span><a href="/angebote.html">Aktuelle Angebote</a><a href="/finanzierungsberatung.html">Finanzierung</a><a href="/ankaufsberatung.html">Ankaufsberatung</a></div></section>

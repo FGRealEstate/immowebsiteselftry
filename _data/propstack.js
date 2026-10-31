@@ -1,3 +1,6 @@
+const fs = require("fs");
+const path = require("path");
+
 function isPlainObject(input) {
     return Object.prototype.toString.call(input) === "[object Object]";
 }
@@ -504,10 +507,133 @@ function getImages(unit) {
                 title:
                     textValue(image.title) ||
                     textValue(image.name) ||
-                    "Immobilie"
+                    "Immobilie",
+                // Design-Pass 3 §3.8: Bild-ID für data/listing-covers.json, Dateiname für die Titelbild-Regel
+                id: typeof image === "object" && image.id != null ? String(image.id) : null,
+                file: (() => { try { return decodeURIComponent(url.split("?")[0].split("/").pop() || ""); } catch (e) { return url.split("/").pop() || ""; } })()
             };
         })
         .filter(Boolean);
+}
+
+/*
+ * Design-Pass 3 §3.8: Titelbild je Angebot (für jede Angebotskarte der Website)
+ *   1. data/listing-covers.json (Angebots-ID → Bild-ID) geht vor. "gestaltet" = gestalteter Titel (Navy, F&G-Zeichen, Ort).
+ *   2. Sonst das erste Bild, das mindestens 1600 px breit und quer ist und dessen Titel und Dateiname nicht auf
+ *      TITELBILD_NICHT passen.
+ *   3. Sonst das erste Bild. Ohne Bilder: gestalteter Titel.
+ * Für Schritt 2 liest bildMasse() nur den Anfang der Datei (bis 256 KB) und daraus Breite und Höhe; ohne Netz oder bei
+ * unbekanntem Format zählt das Bild als nicht passend.
+ */
+const TITELBILD_NICHT = /flur|grundriss|keller|bad|wc|treppenhaus|bild\d|whatsapp|screenshot/i;
+const COVER_DATEI = path.join(__dirname, "..", "data", "listing-covers.json");
+let coverWahl = null;
+function coverOverrides() {
+    if (coverWahl) return coverWahl;
+    try { coverWahl = JSON.parse(fs.readFileSync(COVER_DATEI, "utf8")); } catch (error) { coverWahl = {}; }
+    return coverWahl;
+}
+
+function jpegMasse(buf) {
+    let drehen = false;
+    let i = 2;
+    while (i + 9 < buf.length) {
+        if (buf[i] !== 0xff) { i += 1; continue; }
+        const marker = buf[i + 1];
+        if (marker === 0xd8 || marker === 0x01 || (marker >= 0xd0 && marker <= 0xd7)) { i += 2; continue; }
+        const len = buf.readUInt16BE(i + 2);
+        // EXIF-Ausrichtung 5 bis 8: Bild steht hochkant gedreht, Breite und Höhe tauschen
+        if (marker === 0xe1 && buf.toString("latin1", i + 4, i + 10) === "Exif\0\0") {
+            const t = i + 10;
+            const le = buf.toString("latin1", t, t + 2) === "II";
+            const u16 = (o) => (le ? buf.readUInt16LE(o) : buf.readUInt16BE(o));
+            const u32 = (o) => (le ? buf.readUInt32LE(o) : buf.readUInt32BE(o));
+            try {
+                const ifd = t + u32(t + 4);
+                const n = u16(ifd);
+                for (let k = 0; k < n; k += 1) {
+                    const e = ifd + 2 + k * 12;
+                    if (u16(e) === 0x0112) { drehen = u16(e + 8) >= 5 && u16(e + 8) <= 8; break; }
+                }
+            } catch (error) { /* EXIF unlesbar: Ausrichtung wie gespeichert */ }
+        }
+        if (marker >= 0xc0 && marker <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(marker)) {
+            const h = buf.readUInt16BE(i + 5);
+            const w = buf.readUInt16BE(i + 7);
+            return drehen ? { w: h, h: w } : { w, h };
+        }
+        i += 2 + len;
+    }
+    return null;
+}
+
+function leseMasse(buf) {
+    if (buf.length < 30) return null;
+    if (buf[0] === 0xff && buf[1] === 0xd8) return jpegMasse(buf);
+    if (buf.toString("latin1", 1, 4) === "PNG") return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) };
+    if (buf.toString("latin1", 0, 4) === "RIFF" && buf.toString("latin1", 8, 12) === "WEBP") {
+        const art = buf.toString("latin1", 12, 16);
+        if (art === "VP8X") return { w: 1 + buf.readUIntLE(24, 3), h: 1 + buf.readUIntLE(27, 3) };
+        if (art === "VP8 ") return { w: buf.readUInt16LE(26) & 0x3fff, h: buf.readUInt16LE(28) & 0x3fff };
+        if (art === "VP8L") { const b = buf.readUInt32LE(21); return { w: (b & 0x3fff) + 1, h: ((b >> 14) & 0x3fff) + 1 }; }
+    }
+    return null;
+}
+
+const masseCache = new Map();
+function bildMasse(url) {
+    if (!masseCache.has(url)) {
+        masseCache.set(url, (async () => {
+            try {
+                const res = await fetch(url, { headers: { Range: "bytes=0-262143" }, signal: AbortSignal.timeout(10000) });
+                if (!res.ok || !res.body) return null;
+                const reader = res.body.getReader();
+                const teile = [];
+                let n = 0;
+                while (n < 262144) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+                    teile.push(Buffer.from(value));
+                    n += value.length;
+                }
+                reader.cancel().catch(() => {});
+                return leseMasse(Buffer.concat(teile));
+            } catch (error) {
+                return null;
+            }
+        })());
+    }
+    return masseCache.get(url);
+}
+
+async function waehleTitelbild(id, images) {
+    const wahl = coverOverrides()[String(id)];
+    if (wahl && wahl.bild === "gestaltet") return { design: true, quelle: "Datei" };
+    if (wahl) {
+        const bild = images.find((image) => (image.id && String(image.id) === String(wahl.bild)) || (wahl.url && image.url === wahl.url));
+        if (bild) return { url: bild.url, fokus: wahl.fokus || null, zoom: Number(wahl.zoom) > 1 ? Number(wahl.zoom) : null, quelle: "Datei" };
+    }
+    if (!images.length) return { design: true, quelle: "ohne Bilder" };
+    for (const image of images) {
+        if (TITELBILD_NICHT.test(image.title || "") || TITELBILD_NICHT.test(image.file || "")) continue;
+        const m = await bildMasse(image.url);
+        if (m && m.w >= 1600 && m.w > m.h) return { url: image.url, quelle: "Regel" };
+    }
+    return { url: images[0].url, quelle: "erstes Bild" };
+}
+
+// Setzt cover, cover_design und main_image (= Titelbild) an Angeboten, Projekten und Projekteinheiten.
+async function titelbilder(objekte) {
+    const cache = new Map();
+    await Promise.all(objekte.map(async (objekt) => {
+        const schluessel = `${objekt.units ? "p" : "u"}:${objekt.id}`;
+        if (!cache.has(schluessel)) cache.set(schluessel, waehleTitelbild(objekt.id, objekt.images || []));
+        const cover = await cache.get(schluessel);
+        objekt.cover = cover.url ? { url: cover.url, fokus: cover.fokus || null, zoom: cover.zoom || null } : null;
+        objekt.cover_design = Boolean(cover.design);
+        objekt.cover_source = cover.quelle;
+        if (cover.url) objekt.main_image = cover.url;
+    }));
 }
 
 function getPublicLocation(unit) {
@@ -517,6 +643,12 @@ function getPublicLocation(unit) {
         textValue(unit.location_name) ||
         null
     );
+}
+
+// Ortsteil aus dem Propstack-Feld „district“ (API-Doku, Beispiel „Objekt lesen“: "district", "region", "zip_code", "city").
+// Nur für die Zuordnung zur Gebietsseite und für Referenzen; Straße und Hausnummer bleiben weiter unveröffentlicht.
+function getDistrictName(unit) {
+    return textValue(unit.district) || textValue(unit.sublocality) || null;
 }
 
 function getPublicTitle(unit, marketingType, propertyType) {
@@ -608,6 +740,112 @@ function isPublicMarketingObject(unit) {
 }
 
 
+/* Gebietsblock (Update 4, 3.2): Objekt-, Projekt- und Referenzseiten verlinken die passende Gebietsseite.
+   Reihenfolge: Ortsteil (Berliner Bezirk oder Leipziger/Dresdner Marktgebiet), dann Ort (Ortsseite,
+   Landkreis über seine Orte, zuletzt die Stadtseite). Ohne Treffer area = null; die Vorlage verlinkt dann /standorte/.
+   Die Bezirksseiten nennen in „orte“ nur ausgewählte Kieze. Alle Ortsteile der vier Bezirke mit eigener Seite nach
+   „Liste der Bezirke und Ortsteile Berlins“ (de.wikipedia.org, abgerufen 27.10.2026). */
+const BERLIN_ORTSTEILE = {
+    "berlin/charlottenburg-wilmersdorf": ["Charlottenburg", "Wilmersdorf", "Schmargendorf", "Grunewald", "Westend", "Charlottenburg-Nord", "Halensee"],
+    "berlin/pankow": ["Prenzlauer Berg", "Weißensee", "Blankenburg", "Heinersdorf", "Karow", "Stadtrandsiedlung Malchow", "Pankow", "Blankenfelde", "Buch", "Französisch Buchholz", "Niederschönhausen", "Rosenthal", "Wilhelmsruh"],
+    "berlin/steglitz-zehlendorf": ["Steglitz", "Lichterfelde", "Lankwitz", "Zehlendorf", "Dahlem", "Nikolassee", "Wannsee", "Schlachtensee"],
+    "berlin/tempelhof-schoeneberg": ["Schöneberg", "Friedenau", "Tempelhof", "Mariendorf", "Marienfelde", "Lichtenrade"]
+};
+
+let areaIndex = null;
+
+function placeKey(input) {
+    return normalizeText(String(input || "").replace(/\s+bei\s+berlin/i, "").replace(/\(.*?\)/g, ""));
+}
+
+function buildAreaIndex() {
+    let pages = [];
+    try {
+        pages = require("./gebiete.js")() || [];
+    } catch (error) {
+        console.warn("Gebietsblock: Gebietsseiten nicht geladen:", error.message);
+    }
+    const link = (page) => ({ name: page.name, nameLang: page.nameLang || page.name, inOrt: page.inOrt || `in ${page.name}`, url: page.url });
+    const index = { district: new Map(), town: new Map(), county: new Map(), city: new Map() };
+    const setOnce = (map, key, page) => { if (key && !map.has(key)) map.set(key, link(page)); };
+    const bySlug = new Map(pages.map((page) => [page.slug, page]));
+
+    for (const [slug, names] of Object.entries(BERLIN_ORTSTEILE)) {
+        const page = bySlug.get(slug);
+        if (page) for (const name of names) setOnce(index.district, `berlin|${placeKey(name)}`, page);
+    }
+    for (const page of pages) {
+        const typ = page.typ || "ort";
+        const orte = (page.orte || []).flatMap((ort) => String(ort).split("/"));
+        if (typ === "bezirk" || typ === "marktgebiet") {
+            const cityKey = placeKey(page.kreis && page.kreis.name);
+            for (const ort of [page.name, ...orte]) setOnce(index.district, `${cityKey}|${placeKey(ort)}`, page);
+        } else if (typ === "landkreis") {
+            for (const ort of orte) setOnce(index.county, placeKey(ort), page);
+        } else if (typ === "stadt") {
+            setOnce(index.city, placeKey(page.name), page);
+        } else {
+            for (const ort of [page.name, ...orte]) setOnce(index.town, placeKey(ort), page);
+        }
+    }
+    return index;
+}
+
+function findArea(cityName, districtName) {
+    if (!areaIndex) areaIndex = buildAreaIndex();
+    const cityKey = placeKey(cityName);
+    const districtKey = placeKey(districtName);
+    if (cityKey && districtKey) {
+        const hit = areaIndex.district.get(`${cityKey}|${districtKey}`);
+        if (hit) return hit;
+    }
+    if (!cityKey) return null;
+    return areaIndex.town.get(cityKey) || areaIndex.county.get(cityKey) || areaIndex.city.get(cityKey) || null;
+}
+
+/* Referenzen (Update 4, 3.2): verkaufte Objekte für /referenzen/. Propstack-Doku („Objekt-Stati lesen“): „Ein Objekt
+   hat in der Regel immer einen Status, z.B. "Verfügbar" oder "Verkauft".“ Der Name kommt wie bei „Vermarktung“ aus
+   getStatusName(). Heißt der Status im Konto anders, PROPSTACK_REFERENZ_STATUS setzen (Namen kommagetrennt).
+   Archivierte Objekte liefert der Abruf nicht (API-Standard ohne archived=-1). Bewusst ohne Preis, Miete, Rendite,
+   Beschreibung, Straße und Werbetitel: Der Titel wird aus Objektart und Ort gebildet. */
+function referenceStatusNames() {
+    return String(process.env.PROPSTACK_REFERENZ_STATUS || "Verkauft").split(",").map(normalizeText).filter(Boolean);
+}
+
+function isSoldObject(unit) {
+    const status = normalizeText(getStatusName(unit));
+    return Boolean(status) && referenceStatusNames().some((name) => status.includes(name));
+}
+
+function buildReference(rawUnit) {
+    const unit = buildUnit(rawUnit);
+    const place = unit.district && unit.location && placeKey(unit.district) !== placeKey(unit.location)
+        ? `${unit.district}, ${unit.location}`
+        : (unit.district || unit.location);
+    const title = `${unit.property_type || "Immobilie"}${place ? ` in ${place}` : ""}`;
+    const slug = slugify(`${title}-${unit.id}`);
+    const soldDate = textValue(rawUnit.sold_date);
+    return {
+        id: unit.id,
+        slug,
+        url: `/referenzen/${slug}/`,
+        title,
+        place,
+        location: unit.location,
+        district: unit.district,
+        property_type: unit.property_type,
+        marketing_type: unit.marketing_type,
+        living_space: unit.living_space,
+        rooms: unit.rooms,
+        plot_area: formatNumber(firstNumber(rawUnit, ["plot_area"]), " m²"),
+        construction_year: textValue(rawUnit.construction_year) || textValue(rawUnit.year_built),
+        sold_date: soldDate,
+        sold_year: soldDate && /^\d{4}/.test(soldDate) ? soldDate.slice(0, 4) : null,
+        main_image: unit.main_image,
+        area: unit.area
+    };
+}
+
 function emptyPropstackData() {
     return {
         properties: [],
@@ -615,6 +853,7 @@ function emptyPropstackData() {
         projects: [],
         standaloneProperties: [],
         projectProperties: [],
+        references: [],
         filters: {
             marketingTypes: [],
             propertyTypes: [],
@@ -625,7 +864,8 @@ function emptyPropstackData() {
             propertyCount: 0,
             projectCount: 0,
             projectUnitCount: 0,
-            standaloneCount: 0
+            standaloneCount: 0,
+            referenceCount: 0
         }
     };
 }
@@ -973,6 +1213,8 @@ function buildUnit(unit) {
         title,
         unit_number: firstText(unit, ["unit_number", "external_id", "property_number", "custom_fields.einheitennummer"]),
         location: getPublicLocation(unit),
+        district: getDistrictName(unit),
+        area: findArea(getPublicLocation(unit), getDistrictName(unit)),
         marketing_type: marketingType,
         property_type: propertyType,
         status: getStatusName(unit),
@@ -1066,6 +1308,7 @@ function buildProject(project, units) {
         url: `/projekte/${slug}/`,
         status: getProjectStatusName(project),
         location: getProjectLocation(project, units),
+        area: findArea(getProjectLocation(project, units), getDistrictName(project || {}) || units.map((unit) => unit.district).find(Boolean)),
         address: firstText(project || {}, ["address", "full_address", "street", "custom_fields.projektadresse"]),
         description,
         completion_date: formatDate(firstText(project || {}, ["completion_date", "planned_completion", "custom_fields.fertigstellung", "custom_fields.geplante_fertigstellung"])),
@@ -1171,8 +1414,10 @@ module.exports = async function () {
 
         const standaloneProperties = [];
         const projectUnitsByKey = new Map();
+        const references = [];
 
         for (const rawUnit of rawUnits) {
+            if (rawUnit && rawUnit.archived !== true && isSoldObject(rawUnit)) references.push(buildReference(rawUnit));
             if (!rawUnit || rawUnit.archived === true || !isPublicMarketingObject(rawUnit)) continue;
 
             const unit = buildUnit(rawUnit);
@@ -1208,6 +1453,7 @@ module.exports = async function () {
 
         projects.sort((a, b) => a.name.localeCompare(b.name, "de"));
         standaloneProperties.sort((a, b) => String(a.title).localeCompare(String(b.title), "de"));
+        await titelbilder([...standaloneProperties, ...projects, ...projects.flatMap((project) => project.units)]);
 
         const projectProperties = projects.flatMap((project) => project.units.map((unit) => ({
             ...unit,
@@ -1224,6 +1470,9 @@ module.exports = async function () {
         console.log("PROPSTACK EINZELOBJEKTE:", standaloneProperties.length);
         console.log("PROPSTACK PROJEKTE (Status Vermarktung):", projects.length);
         console.log("PROPSTACK PROJEKTEINHEITEN:", projectProperties.length);
+        // Neueste Verkäufe zuerst (sold_date ist ein Sortierfeld der API), ohne Datum nach Titel
+        references.sort((a, b) => String(b.sold_date || "").localeCompare(String(a.sold_date || "")) || a.title.localeCompare(b.title, "de"));
+        console.log("PROPSTACK REFERENZEN (Status Verkauft):", references.length);
 
         return {
             properties,
@@ -1231,6 +1480,7 @@ module.exports = async function () {
             projects,
             standaloneProperties,
             projectProperties,
+            references,
             filters: {
                 marketingTypes,
                 propertyTypes,
@@ -1241,7 +1491,8 @@ module.exports = async function () {
                 propertyCount: properties.length,
                 projectCount: projects.length,
                 projectUnitCount: projectProperties.length,
-                standaloneCount: standaloneProperties.length
+                standaloneCount: standaloneProperties.length,
+                referenceCount: references.length
             }
         };
     } catch (error) {

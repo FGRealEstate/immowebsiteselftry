@@ -1,13 +1,274 @@
 ---
-layout: base.njk
+layout: fgs-service.njk
+bodyClass: fgs-service
 title: Ankaufsberatung für Kapitalanleger und Eigennutzer | Fischer & Geserich
 permalink: ankaufsberatung.html
 description: "Ankaufsberatung für Immobilien: Objekt, Lage, Unterlagen, Wirtschaftlichkeit und Finanzierung gemeinsam prüfen – für Kapitalanleger und Eigennutzer."
 canonicalPath: /ankaufsberatung.html
+# ChatGPT zitiert diese Seite (Brief Design-Pass §4.2): jeder bisherige Absatz steht unverändert weiter auf der Seite,
+# neu sind die vier Prüfebenen als eigene Abschnitte, Ergebnis, Zielgruppen und „Kauf, Finanzierung und Steuern aus einer Hand“.
+# Bisherige Fragen in der ihr-Form sind in die Sie-Form gesetzt, die Antworten unverändert.
+service:
+  id: ankaufsberatung
+  crumb: "Ankaufsberatung"
+  kicker: "Für Kapitalanleger und Eigennutzer"
+  h1: "Ankaufsberatung für Kapitalanleger und Eigennutzer in Berlin"
+  intro: "Bevor Sie kaufen, prüfen wir mit Ihnen Objekt, Lage, Unterlagen, Zahlen und Finanzierung, auch bei Objekten, die Sie selbst gefunden haben. Am Ende wissen Sie, ob das Objekt zu Ihrem Ziel passt."
+  button: { label: "Objekt besprechen", href: "#anfrage" }
+  hero: { name: "ankauf-hero", alt: "Das Eckhaus Kurfürstendamm 190 in Berlin-Charlottenburg mit grüner Kuppel an einem sonnigen Junitag" }
+  keyfacts:
+    - { label: "Prüfung", wert: "Objekt, Lage, Wirtschaftlichkeit und Finanzierung" }
+    - { label: "Objekte", wert: "nicht auf eigene F&amp;G-Angebote beschränkt" }
+    - { label: "Finanzierung", wert: "bevor beim Notar Kosten entstehen" }
+  summaryQ: "Was prüft eine Ankaufsberatung bei Fischer & Geserich?"
+  summary:
+    - "Wir prüfen ein Objekt auf vier Ebenen, die sich gegenseitig beeinflussen: Objekt, Lage, Wirtschaftlichkeit und Finanzierung. Für Eigennutzer stehen Lebenssituation, Rate und Reserve im Vordergrund, für Kapitalanleger zusätzlich Miete, Kosten, Cashflow und Exit."
+    - "Die Ankaufsberatung ist nicht auf unsere eigenen Angebote beschränkt. Die Finanzierung klären wir, bevor beim Notar Kosten entstehen. Und wenn ein Objekt nicht zu Ihrem Ziel passt, sagen wir Ihnen das."
+  faqTitle: "Häufige Fragen zur Ankaufsberatung"
+  faq:
+    - q: "Prüfen Sie auch Objekte, die ich selbst gefunden habe?"
+      a: "Ja. Die Ankaufsberatung ist ausdrücklich nicht auf eigene F&G-Angebote beschränkt. Wir können auch Objekte prüfen, die Sie selbst gefunden haben."
+    - q: "Was ist bei Eigennutz anders als bei einer Kapitalanlage?"
+      a: "Beim Eigennutz stehen Lebenssituation, Rate, Eigenkapitalreserve und langfristige Flexibilität stärker im Vordergrund. Bei Kapitalanlagen ergänzen wir die Betrachtung um Miete, Kosten, Rendite, Cashflow und Exit."
+    - q: "Wann sollte die Finanzierung geprüft werden?"
+      a: "So früh wie möglich und vor kostenpflichtigen oder bindenden Schritten. Wer seinen Rahmen kennt, sucht von Anfang an in der richtigen Preisklasse."
+    - ref: B8
+    - ref: A4
+  related:
+    services:
+      - { label: "Immobilie kaufen", note: "Suchprofil oder Begleitung beim gefundenen Objekt", href: "/kaufen.html", bild: "kaufen-hero", alt: "Canaletto-Blick in Dresden: die Augustusbrücke über die Elbe, dahinter Frauenkirche und Hofkirche im warmen Licht, vorn die Elbwiesen" }
+      - { label: "Immobilien als Kapitalanlage", note: "Die erste Wohnung bis zum Portfolio", href: "/kapitalanlage.html", bild: "kapitalanlage-hero", alt: "Gründerzeithaus von 1871 an der Humboldtstraße im Leipziger Waldstraßenviertel" }
+      - { label: "Finanzierungsberatung", note: "Banken vergleichen, vor dem Notartermin klären", href: "/finanzierungsberatung.html", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
+      - { label: "Betreuung nach dem Kauf", note: "Gutachten, Mietanpassung, Handwerker", href: "/betreuung-nach-dem-kauf/" }
+    lexikon: [ankaufsprufung, due-diligence, cashflow]
+  contact: lennart
+  closing:
+    title: "Sie haben ein Objekt im Blick?"
+    text: "Schicken Sie uns das Exposé oder rufen Sie an. Das erste Gespräch kostet Sie nichts und verpflichtet Sie zu nichts."
+    button: gespraech
+  schema:
+    name: "Ankaufsberatung für Immobilien"
+    serviceType: "Ankaufsberatung"
+    description: "Prüfung von Wohnungen, Häusern und Mehrfamilienhäusern vor dem Kauf auf vier Ebenen: Objekt, Lage, Wirtschaftlichkeit und Finanzierung, für Eigennutzer und Kapitalanleger, auch für Objekte außerhalb des eigenen Bestands."
+    area: regional
 ---
-<div class="fg-premium-page"><section class="fg-premium-hero"><div class="fg-premium-shell"><div class="fg-premium-hero-grid"><div><p class="fg-premium-kicker fg-premium-kicker-light">Ankauf &amp; Investment</p><h1>Erst prüfen. Dann kaufen.</h1><p class="fg-premium-hero-lead">Wir betrachten Objekt, Lage, Wirtschaftlichkeit, Unterlagen und Finanzierung im Zusammenhang. Für Kapitalanleger anders als für Eigennutzer – aber immer mit derselben Frage: Passt das Objekt wirklich zu Ihrem Ziel?</p><div class="fg-premium-actions"><a href="#termin" class="btn-85 px-7 py-4">Objekt besprechen <i class="fas fa-arrow-right"></i></a><a href="/investment-lab.html" class="fg-premium-outline">Investment Lab öffnen</a></div></div><aside class="fg-premium-sidecard"><span>Prüffelder</span><h2>Keine Kaufentscheidung aus einem einzigen Kennwert.</h2><ul><li><i class="fas fa-location-dot"></i><span>Standort, Mikrolage und Vermietbarkeit</span></li><li><i class="fas fa-file-lines"></i><span>Unterlagen, Zustand und mögliche Capex-Themen</span></li><li><i class="fas fa-calculator"></i><span>Rendite, Cashflow, Finanzierung und Restschuld</span></li></ul></aside></div></div></section>
-<section class="fg-premium-statbar"><div class="fg-premium-shell"><div class="fg-premium-statgrid"><div><small>Eigennutz</small><strong>Lebenssituation zuerst</strong><span>Rate, Eigenkapital, Reserve und Zukunftsplanung</span></div><div><small>Kapitalanlage</small><strong>Cashflow &amp; Exit</strong><span>Miete, Kosten, Finanzierung und langfristige Tragfähigkeit</span></div><div><small>Finanzierung</small><strong>Vor dem Notar</strong><span>Finanzierungsrahmen frühzeitig einordnen</span></div><div><small>Entscheidung</small><strong>Auch Nein ist ein Ergebnis</strong><span>ein unpassendes Objekt wird nicht passend gerechnet</span></div></div></div></section>
-<section class="fg-premium-section"><div class="fg-premium-shell"><div class="fg-premium-head"><p class="fg-premium-kicker">Unsere Prüfung</p><h2>Vier Ebenen, eine Kaufentscheidung.</h2><p>Jede Ebene kann die anderen verändern. Genau deshalb betrachten wir sie nicht getrennt.</p></div><div class="fg-premium-grid-4"><article class="fg-premium-card"><div class="fg-premium-card-icon"><i class="fas fa-map-location-dot"></i></div><h3>Lage</h3><p>Mikrolage, Nachfrage, Zielgruppe, Infrastruktur und die Frage, für wen das Objekt langfristig funktioniert.</p></article><article class="fg-premium-card"><div class="fg-premium-card-icon"><i class="fas fa-building"></i></div><h3>Objekt</h3><p>Zustand, WEG, Unterlagen, Grundriss, Mietstatus und absehbarer Investitionsbedarf.</p></article><article class="fg-premium-card"><div class="fg-premium-card-icon"><i class="fas fa-chart-column"></i></div><h3>Wirtschaftlichkeit</h3><p>Kaufpreis, Miete, laufende Kosten, Rendite, Cashflow und Sensitivität gegenüber veränderten Annahmen.</p></article><article class="fg-premium-card"><div class="fg-premium-card-icon"><i class="fas fa-building-columns"></i></div><h3>Finanzierung</h3><p>Eigenkapital, Beleihung, Rate, Zinsbindung, Tilgung und Restschuld passend zum persönlichen Finanzierungsprofil.</p></article></div></div></section>
-<section class="fg-premium-section fg-premium-section-white"><div class="fg-premium-shell"><div class="fg-premium-split"><div class="fg-premium-feature-copy"><p class="fg-premium-kicker">Für Kapitalanleger</p><h2>Rendite ist nur der Anfang.</h2><p>Eine hohe Bruttorendite kann durch nicht umlagefähige Kosten, Capex, ungünstige Finanzierung oder schwache Vermietbarkeit schnell relativiert werden. Deshalb rechnen wir mit mehreren Ebenen und zeigen Auswirkungen auf Cashflow und Restschuld.</p><div class="fg-premium-checklist"><div><i class="fas fa-check"></i><span>Ist- und Soll-Miete getrennt betrachten.</span></div><div><i class="fas fa-check"></i><span>Nicht umlagefähige Kosten und Rücklagen berücksichtigen.</span></div><div><i class="fas fa-check"></i><span>Finanzierung und Eigenkapitalrendite zusammenführen.</span></div><div><i class="fas fa-check"></i><span>Restschuld und Exit-Perspektive sichtbar machen.</span></div></div></div><aside class="fg-premium-panel"><p class="fg-premium-kicker fg-premium-kicker-light">Selbst rechnen</p><h3>Im Investment Lab können Sie Szenarien direkt verändern.</h3><p>Zins, Tilgung, Eigenkapital, Miete und Kosten lassen sich in den Rechnern variieren.</p><a href="/investment-lab.html" class="fg-invest-link">Zum Investment Lab <i class="fas fa-arrow-right"></i></a></aside></div></div></section></div>
-{% set faqItems=[{q:"Prüft ihr auch fremde Objekte?",a:"Ja. Die Ankaufsberatung ist ausdrücklich nicht auf eigene F&G-Angebote beschränkt. Wir können auch Objekte prüfen, die Sie selbst gefunden haben."},{q:"Was ist bei Eigennutz anders als bei einer Kapitalanlage?",a:"Beim Eigennutz stehen Lebenssituation, Rate, Eigenkapitalreserve und langfristige Flexibilität stärker im Vordergrund. Bei Kapitalanlagen ergänzen wir die Betrachtung um Miete, Kosten, Rendite, Cashflow und Exit."},{q:"Wann sollte die Finanzierung geprüft werden?",a:"So früh wie möglich und vor kostenpflichtigen oder bindenden Schritten. Ein belastbarer Finanzierungsrahmen verändert häufig schon die Auswahl geeigneter Objekte."}] %}{% set faqAnchor="faq-ankauf" %}{% set faqTitle="Häufige Fragen zur Ankaufsberatung" %}{% include "faq-block.njk" %}
-<section id="termin" class="fg-premium-section"><div class="fg-premium-shell">{% include "appointment-booking.njk" %}</div></section>
+{#- Ankaufsberatung nach Design-Pass 2 §4 (29.10.2026): Fotokapitel „Keine Kaufentscheidung aus einem einzigen Kennwert.“ (Bild aus dem
+    alten Kapitel Lage, Bildunterschrift in der Fotozeile; der Abschnitt hat keinen Fließtext, auf dem Foto steht nur die H2) mit den vier
+    Punkten darunter, die sieben Kapitel als Zeilen (Überschrift links, Leitsatz rechts, der Rest unter „Mehr erfahren“),
+    „Kauf, Finanzierung und Steuern aus einer Hand“ kompakt, Terminbuchung und Formular. Texte unverändert; das Inhaltsverzeichnis
+    entfällt wie auf den übrigen Leistungsseiten. Keine Schrittreihe (die Seite hat keinen Ablauf) und kein „F&G in Zahlen“ (die Seite
+    hat keine eigenen Zahlen). Davor (CP4): Kicker über den H2, Rubriken der vier Prüffelder und Häkchen-Icons entfielen. -#}
+{% from "fgs-macros.njk" import split, fotokapitel, mehr, textlink with context %}
+{% from "fgd-icons.njk" import icon %}
+{% set ankaufBookingUrl = "https://outlook.office.com/bookwithme/user/72d1d477b1c94313b937eaf0288a9454@fg-realestate.de/meetingtype/CHqdXdox7UqN08gNHOu7dw2?anonymous&ismsaljsauthenabled&ep=mlink" %}
+
+{# §4.4 Fotokapitel: die erste H2 der Seite auf dem Foto, darunter die vier Blickwinkel (bisherige Kennzahlenleiste) #}
+{% call fotokapitel({ id: "pruef-felder", hoehe: 80, position: "25% 50%", titel: "Was wir vor dem Kauf prüfen", bild: "potsdam-band" | bild, alt: "Alter Markt in Potsdam mit Nikolaikirche, Obelisk und Altem Rathaus" }) %}
+  <ul class="fgs-points fgs-points--row" role="list">
+    <li><h3>Lebenssituation zuerst</h3><p>Rate, Eigenkapital, Reserve und Zukunftsplanung</p></li>
+    <li><h3>Cashflow &amp; Exit</h3><p>Miete, Kosten, Finanzierung und langfristige Tragfähigkeit</p></li>
+    <li><h3>Vor dem Notar</h3><p>Finanzierung geklärt, bevor Kosten entstehen</p></li>
+    <li><h3>Auch Nein ist ein Ergebnis</h3><p>Wir rechnen kein Objekt schön.</p></li>
+  </ul>
+{% endcall %}
+
+{# Kapitel als Zeilen (§2 Regel 1): Überschrift links, Leitsatz rechts, der Rest unter „Mehr erfahren“ #}
+<section class="fgs-section fgs-rows" aria-label="Die Prüfung im Einzelnen">
+  <div class="fgs-wrap">
+  <article class="fgs-row fgs-cols fgs-cols--57" id="pruefung" aria-labelledby="pruefung-titel">
+    <div class="fgs-cols-head"><h2 id="pruefung-titel">Die vier Punkte unserer Prüfung</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Die vier Punkte hängen zusammen: Ein Mangel am Objekt verändert die Rechnung und die Rechnung entscheidet über die Finanzierung.</p>
+      {% call mehr() %}
+      <p>Ein guter Preis hilft nicht, wenn die Lage keine Mieter findet. Eine gute Lage hilft nicht, wenn die Gemeinschaft eine teure Sanierung vor sich herschiebt. Und eine Rechnung trägt nur, wenn auch die Bank sie so sieht. Diese Felder prüfen wir deshalb immer gemeinsam:</p>
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li>Standort, Mikrolage und Vermietbarkeit</li>
+        <li>Unterlagen, Zustand und mögliche Capex-Themen</li>
+        <li>Rendite, Cashflow, Finanzierung und Restschuld</li>
+      </ul>
+      {% endcall %}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="objekt" aria-labelledby="objekt-titel">
+    <div class="fgs-cols-head"><h2 id="objekt-titel">Objekt</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Zustand, WEG, Unterlagen, Grundriss, Mietstatus und absehbarer Investitionsbedarf.</p>
+      {% call mehr() %}
+      <p>Bei einer Eigentumswohnung kaufen Sie immer einen Anteil an der Gemeinschaft mit. Deshalb lesen wir neben dem Exposé die Unterlagen, die zeigen, wie es um das ganze Haus steht. Stehen größere Maßnahmen an, etwa an Dach, Fassade oder Heizung, und reicht die <a href="/lexikon/erhaltungsrucklage/">Erhaltungsrücklage</a> dafür nicht, gehört dieser Bedarf als <a href="/lexikon/capex/">Capex</a> in die Rechnung. Bei einem Haus ohne Gemeinschaft treten Grundbuch, <a href="/lexikon/baulast/">Baulasten</a> und der bauliche Zustand stärker in den Vordergrund.</p>
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li>Teilungserklärung und Aufteilungsplan</li>
+        <li>Protokolle der Eigentümerversammlungen, Wirtschaftsplan, Hausgeld und Erhaltungsrücklage</li>
+        <li>Mietvertrag, Miethöhe und Mietentwicklung bei vermieteten Objekten</li>
+        <li>Grundbuchauszug, Energieausweis, Grundrisse und Wohnflächenberechnung</li>
+      </ul>
+      {% endcall %}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="lage" aria-labelledby="lage-titel">
+    <div class="fgs-cols-head"><h2 id="lage-titel">Lage</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Mikrolage, Nachfrage, Zielgruppe, Infrastruktur und die Frage, für wen das Objekt langfristig funktioniert.</p>
+      {% call mehr() %}
+      <p>Eine gute Adresse allein reicht dafür nicht. Entscheidend ist, wer in dieser Straße wohnen möchte und ob diese Nachfrage auch in zehn oder zwanzig Jahren noch da ist. Dazu gehören die Anbindung an S-Bahn, U-Bahn oder Regionalverkehr, die Versorgung im Alltag und die Mieten, die in der Umgebung tatsächlich erzielt werden. Für Kapitalanleger ist die Vermietbarkeit die eigentliche Lagefrage.</p>
+      {% endcall %}
+      {{ textlink("/standorte/", "Unsere Gebiete in Berlin, Brandenburg und Sachsen") }}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="wirtschaftlichkeit" aria-labelledby="wirtschaft-titel">
+    <div class="fgs-cols-head"><h2 id="wirtschaft-titel">Wirtschaft&shy;lichkeit für Kapital&shy;anleger</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Kaufpreis, Miete, laufende Kosten, Rendite, Cashflow und was passiert, wenn sich Zins oder Miete ändern.</p>
+      {% call mehr() %}
+      <p>Eine hohe <a href="/lexikon/bruttomietrendite/">Bruttorendite</a> kann durch nicht umlagefähige Kosten, Capex, ungünstige Finanzierung oder schwache Vermietbarkeit schnell relativiert werden. Deshalb rechnen wir mit mehreren Ebenen und zeigen Auswirkungen auf Cashflow und Restschuld.</p>
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li>Ist- und Soll-Miete getrennt betrachten.</li>
+        <li>Nicht umlagefähige Kosten und Rücklagen berücksichtigen.</li>
+        <li>Finanzierung und Eigenkapitalrendite zusammenführen.</li>
+        <li>Restschuld und Exit-Perspektive sichtbar machen.</li>
+      </ul>
+      <p>Dabei betrachten wir Cashflow, Steuervorteile, Mieterhöhungen und den späteren Verkaufserlös über die gesamte Haltedauer zusammen, statt eine Immobilie nur an ihrer Anfangsrendite zu messen.</p>
+      <div class="fgs-aside">
+        <p><strong>Selbst rechnen.</strong> Im Investment Lab können Sie Szenarien direkt verändern. Zins, Tilgung, Eigenkapital, Miete und Kosten lassen sich in den Rechnern variieren.</p>
+        <p><a href="/investment-lab.html">Zum Investment Lab</a></p>
+      </div>
+      {% endcall %}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="finanzierung" aria-labelledby="finanzierung-titel">
+    <div class="fgs-cols-head"><h2 id="finanzierung-titel">Finanzierung</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Eigenkapital, Beleihung, Rate, Zinsbindung, Tilgung und Restschuld, passend zu Ihrem Einkommen und Ihren Plänen.</p>
+      {% call mehr() %}
+      <p>Bevor der Kaufvertrag beim Notar beauftragt wird, klären wir gemeinsam, ob die Finanzierung realistisch ist. Ein Vertragsentwurf beim Notar kostet je nach Kaufpreis und Notar etwa 600 bis 5.000 Euro. Scheitert die Finanzierung erst danach, sind diese Kosten schon entstanden.</p>
+      <p>Ist ein kleineres Kaufvolumen sinnvoller, sagen wir Ihnen das offen und rechtzeitig. Wer 200.000 Euro finanzieren möchte, aber nur 10.000 Euro mitbringt und 3.000 Euro netto verdient, bekommt das unter Umständen zwar durchgestellt, sinnvoll ist es aber nicht.</p>
+      <p>Weil wir Immobiliardarlehen selbst vermitteln, mit Erlaubnis nach § 34i GewO, kann die Prüfung direkt in einen Bankvergleich übergehen.</p>
+      {% endcall %}
+      {{ textlink("/finanzierungsberatung.html", "Zur Finanzierungsberatung") }}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="ergebnis" aria-labelledby="ergebnis-titel">
+    <div class="fgs-cols-head"><h2 id="ergebnis-titel">Was Sie am Ende wissen</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Am Ende steht eine Empfehlung, die Sie nachvollziehen können. Auch Nein ist ein Ergebnis.</p>
+      {% call mehr() %}
+      <p>Nach der Prüfung wissen Sie:</p>
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li>ob Objekt und Lage zu Ihrem Ziel passen, als Eigennutzer oder als Kapitalanleger</li>
+        <li>welche Unterlagen noch fehlen und welcher Investitionsbedarf absehbar ist</li>
+        <li>wie sich Miete, Kosten, Cashflow und Restschuld entwickeln, auch wenn sich Annahmen ändern</li>
+        <li>welcher Finanzierungsrahmen realistisch ist, bevor beim Notar Kosten entstehen</li>
+      </ul>
+      <blockquote class="fgs-pull">
+        <p>Wer das falsche Objekt kauft, wird am Ende nicht zufrieden sein.</p>
+        <p class="fgs-pull-text">Passt keines unserer eigenen Objekte zu Ihrer Strategie, verkaufen wir Ihnen auch keines. Dann unterstützen wir Sie lieber bei der Finanzierung eines anderen Objekts, mit einer Ankaufsberatung oder beim Transaktionsmanagement.</p>
+      </blockquote>
+      {% endcall %}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="fuer-wen" aria-labelledby="fuer-wen-titel">
+    <div class="fgs-cols-head"><h2 id="fuer-wen-titel">Für wen sich eine Ankaufs&shy;beratung lohnt</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Für alle, die vor einer Kaufentscheidung eine zweite Einschätzung möchten, auch bei Objekten, die sie selbst gefunden haben.</p>
+      {% call mehr() %}
+      <h3>Eigennutzer vor dem Kauf</h3>
+      <p>Hier geht es weniger um Rendite als um die Frage, ob Rate, Eigenkapitalreserve und Objekt auch dann noch passen, wenn sich das Leben verändert.</p>
+      <h3>Kapitalanleger mit der ersten Wohnung</h3>
+      <p>Bei der allerersten Immobilie nehmen wir Sie Schritt für Schritt mit und erklären, was dazugehört, von den Unterlagen der Gemeinschaft bis zur Rechnung über die Haltedauer.</p>
+      <h3>Anleger mit mehreren Objekten</h3>
+      <p>Hier lautet die Frage, ob das neue Objekt in den Bestand passt und wie die Bank es im Zusammenspiel mit Ihren übrigen Immobilien bewertet.</p>
+      <h3>Käufer von Mehrfamilienhäusern</h3>
+      <p>Mehr Einheiten bedeuten mehr Mietverträge, mehr Kosten und oft Fragen zu Energie und Sanierung. Wie wir dabei vorgehen, steht auf der Seite <a href="/mehrfamilienhaus.html">Mehrfamilienhaus</a>.</p>
+      {% endcall %}
+    </div>
+  </article>
+  </div>
+</section>
+
+{# S3 Kauf, Finanzierung und Steuern aus einer Hand, kompakt wie auf Kapitalanlage #}
+{% call split({ id: "aus-einer-hand", titel: "Kauf, Finanzierung und Steuern aus einer Hand", bild: "skyline-band" | bild, alt: "Fernsehturm und Hochhäuser an der Spree in Berlin-Friedrichshain nach Sonnenuntergang", rechts: true, kompakt: true }) %}
+  <p>Weil wir Immobilien und Finanzierungen selbst vermitteln, besprechen wir Kaufpreis, Rechnung und Finanzierung im selben Gespräch.</p>
+  <p>Nach dem Kauf geht es mit der steuerlichen Seite weiter. Ein Restnutzungsdauergutachten kann den Abschreibungszeitraum verkürzen und die jährliche <a href="/lexikon/afa/">AfA</a> erhöhen; den Kontakt zu einem Gutachter stellen wir her. Wir beraten Sie zu Abschreibung, Mietstrategie und der sinnvollen Reihenfolge von Modernisierungen. Die Vermittlung an Gutachter, Handwerker und Hausverwaltungen ist für Sie kostenfrei.</p>
+  <p class="fgs-small">Verbindlich beantwortet steuerliche Fragen Ihre Steuerberatung.</p>
+  {{ textlink("/betreuung-nach-dem-kauf/", "Betreuung nach dem Kauf") }}
+{% endcall %}
+
+{# F Terminbuchung und Formular (Feldnamen und Versand unverändert) #}
+<section class="fgs-section" id="anfrage-bereich" aria-labelledby="termin-titel">
+  <div class="fgs-wrap fgs-formblock">
+    <div class="fgs-formblock-text" id="terminbuchung">
+      <h2 id="termin-titel">Erstgespräch buchen</h2>
+      <p class="fgs-lead">Wählen Sie einen freien Termin in unserem Kalender. Das Erstgespräch führen wir per Teams oder persönlich.</p>
+      <div class="fgs-btns"><a class="fgs-btn fgs-btn--secondary" href="{{ ankaufBookingUrl }}" target="_blank" rel="noopener noreferrer">Erstgespräch Ankauf buchen</a></div>
+    </div>
+    <div class="fgs-formblock-form">
+    <div class="fgd-form-card" id="anfrage">
+      <h2>Objekt besprechen</h2>
+      <p>Lieber schriftlich? Schicken Sie uns die Eckdaten. Pflichtfelder sind mit * markiert.</p>
+      <form method="post" action="/.netlify/functions/propstack-lead?concern=Ankaufsberatung" class="fgd-form" data-fgd-lead-form data-concern="Ankaufsberatung" novalidate>
+        <fieldset>
+          <legend>Das Objekt</legend>
+          <div class="fgd-field-row">
+            <label>Ihr Ziel *
+              <select name="extra:Ziel" required>
+                <option value="">Bitte wählen</option>
+                <option>Selbst nutzen</option>
+                <option>Kapitalanlage</option>
+                <option>Noch offen</option>
+              </select>
+            </label>
+            <label>Objektart
+              <select name="object_type">
+                <option value="">Bitte wählen</option>
+                <option>Eigentumswohnung</option>
+                <option>Haus</option>
+                <option>Mehrfamilienhaus</option>
+                <option>Grundstück</option>
+                <option>Etwas anderes</option>
+              </select>
+            </label>
+          </div>
+          <div class="fgd-field-row">
+            <label>Ort oder Adresse<input name="location" placeholder="z.&nbsp;B. Berlin-Pankow"></label>
+            <label>Kaufpreis laut Angebot<input name="budget" inputmode="decimal" placeholder="in Euro"></label>
+          </div>
+          <label>Link zum Exposé<input name="extra:Exposé" inputmode="url" placeholder="optional"></label>
+          <label>Finanzierung
+            <select name="extra:Finanzierung">
+              <option value="">Bitte wählen</option>
+              <option>Bitte mitprüfen</option>
+              <option>Finanzierung steht schon</option>
+              <option>Ich kaufe ohne Finanzierung</option>
+            </select>
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>Ihre Kontaktdaten</legend>
+          <div class="fgd-field-row">
+            <label>Vorname *<input name="first_name" required autocomplete="given-name"></label>
+            <label>Nachname *<input name="last_name" required autocomplete="family-name"></label>
+          </div>
+          <div class="fgd-field-row">
+            <label>E-Mail *<input name="email" type="email" required autocomplete="email"></label>
+            <label>Telefon<input name="phone" type="tel" autocomplete="tel" placeholder="für Rückfragen"></label>
+          </div>
+          <label>Nachricht<textarea name="message" rows="3" maxlength="3000" placeholder="optional, zum Beispiel was Sie an dem Objekt unsicher macht"></textarea></label>
+        </fieldset>
+        <label class="fgd-hp" aria-hidden="true">Website<input name="company_website" tabindex="-1" autocomplete="off"></label>
+        <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
+        <div class="fgd-status" data-fgd-lead-status hidden></div>
+        <button type="submit" class="fgd-btn fgd-btn-navy">Objekt senden{{ icon("arrow") | safe }}</button>
+      </form>
+      <div class="fgd-form-done" data-fgd-lead-done tabindex="-1" hidden>
+        <h3>Vielen Dank, Ihre Anfrage ist da</h3>
+        <p>Wir sehen uns das Objekt an und melden uns bei Ihnen. Wenn es eilt, erreichen Sie uns unter <a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a>.</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>

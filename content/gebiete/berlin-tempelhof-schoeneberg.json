@@ -1,0 +1,349 @@
+{
+  "slug": "berlin/tempelhof-schoeneberg",
+  "name": "Tempelhof-Schöneberg",
+  "nameLang": "Tempelhof-Schöneberg",
+  "inOrt": "in Tempelhof-Schöneberg",
+  "fuerOrt": "Tempelhof-Schöneberg",
+  "typ": "bezirk",
+  "kreis": {
+    "name": "Berlin",
+    "url": "/standorte/berlin/"
+  },
+  "orte": [
+    "Friedenau",
+    "Bayerisches Viertel",
+    "Nollendorfkiez"
+  ],
+  "kontakt": "lennart",
+  "title": "Immobilienmakler Tempelhof-Schöneberg – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler in Tempelhof-Schöneberg: verkaufen, kaufen und finanzieren in Friedenau, im Bayerischen Viertel und am Nollendorfplatz, mit Daten 2026.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Tempelhof-Schöneberg",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Tempelhof-Schöneberg beim Verkauf, beim Kauf und bei der Finanzierung, von den Mietshäusern und Villen in Friedenau über das Bayerische Viertel und den Nollendorfkiez bis zu den Ein- und Zweifamilienhäusern in Tempelhof, Mariendorf, Marienfelde und Lichtenrade. Unser Büro liegt in der Schützenstraße 30 in Steglitz. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für den ganzen Bezirk ist Lennart Geserich Ihr Ansprechpartner, Head of Sales & Vermietung.",
+  "hero": {
+    "name": "schoeneberg-viktoria-luise-platz",
+    "alt": "Viktoria-Luise-Platz in Berlin-Schöneberg mit Springbrunnen und Grünanlage",
+    "credit": "Jörg Zägel, CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Berlin,_Schoeneberg,_Viktoria-Luise-Platz.jpg",
+    "position": "50% 60%"
+  },
+  "stand": "Oktober 2026",
+  "updated": "2026-10-26",
+  "zahlen": [
+    {
+      "wert": "1.861",
+      "label": "Verkäufe von Wohnungseigentum 2025 im Bezirk",
+      "detail": "Das sind 10,7 % aller Berliner Verkäufe von Wohnungseigentum. Insgesamt zählte der Gutachterausschuss im Bezirk 2.248 Kauffälle, davon 360 Verkäufe bebauter Grundstücke.",
+      "quelle": "Immobilienmarktbericht Berlin 2025/2026",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 5.421 €/m²",
+      "label": "Eigentumswohnungen im früheren Bezirk Schöneberg, mit Friedenau",
+      "detail": "677 Verkäufe, Spanne 3.253 bis 7.566 €/m², 2024 waren es 5.238 €/m². Im früheren Bezirk Tempelhof lag der Mittelwert bei 4.011 €/m² (495 Verkäufe), in ganz Berlin bei 5.017 €/m².",
+      "quelle": "Immobilienmarktbericht Berlin 2025/2026",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 4.224 €/m²",
+      "label": "Ein- und Zweifamilienhäuser im früheren Bezirk Tempelhof, je Quadratmeter Wohnfläche",
+      "detail": "104 Verkäufe, Spanne 2.841 bis 5.543 €/m², 2024 waren es 4.188 €/m² bei 166 Verkäufen. Im früheren Bezirk Schöneberg weist der Gutachterausschuss 2025 keinen Verkauf aus, in ganz Berlin lag der Mittelwert bei 4.366 €/m².",
+      "quelle": "Immobilienmarktbericht Berlin 2025/2026",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "3.000 bis 4.000 €/m²",
+      "label": "Bodenrichtwerte in Friedenau, im Bayerischen Viertel und im Nollendorfkiez",
+      "detail": "Bei Geschossflächenzahlen von 2,0 und 2,5, zum 01.01.2026 unverändert. Die Bodenrichtwerte für Einfamilienhausgebiete im Bezirk sanken um rund 5 % und liegen bei 340 bis 1.600 €/m².",
+      "quelle": "Immobilienmarktbericht Berlin 2025/2026; Geoportal Berlin",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stichtag": "01.01.2026"
+    },
+    {
+      "wert": "8,37 bis 27,18 €/m²",
+      "label": "Spanne der überwiegenden Mietangebote im Bezirk",
+      "detail": "80 % der Angebote 2025, ohne die oberen und unteren 10 %; in ganz Berlin 7,88 bis 25,06 €/m². 86,0 % der Wohnungen im Bezirk sind Mietwohnungen (Berlin 85,1 %), im Mittel sind sie 73,4 m² groß (Berlin 72,5 m²).",
+      "quelle": "IBB Wohnungsmarktbericht 2025",
+      "url": "https://www.ibb.de/media/dokumente/publikationen/berliner-wohnungsmarkt/wohnungsmarktbericht/2025/tempelhof-scho%CC%88neberg.pdf",
+      "stichtag": "2024 und 2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Friedenau: Landhauskolonie um den Friedrich-Wilhelm-Platz",
+      "absaetze": [
+        "Friedenau geht auf Johann Anton Wilhelm von Carstenn zurück, der 1865 das Rittergut Deutsch-Wilmersdorf kaufte, um eine Landhauskolonie anzulegen; 1871 gründete sich dafür der Landerwerb- und Bauverein auf Aktien. Wegen des hohen Wohnungsbedarfs wurde das Konzept später aufgeweicht; heute haben vier- und fünfgeschossige Mietshäuser die Villen fast überall abgelöst. Erhalten sind denkmalgeschützte Villen mit kleinen Vorgärten, etwa in Nied-, Albe- und Handjerystraße, und die hufeisenförmige Anlage um Handjerystraße und Friedrich-Wilhelm-Platz. Für den Kern um Friedrich-Wilhelm-Platz, Perelsplatz, Nied-, Albe- und Lauterstraße gilt seit 1986 eine städtebauliche Erhaltungsverordnung: Bauliche Veränderungen an Gebäuden, die vor dem 31.12.1939 errichtet wurden, können versagt werden.[[11]] Sie erfasst rund 420 der 1.500 Adressen im Ortsteil.[[12]] Im Ortsteil leben 30.238 Menschen.[[8]] Vom U-Bahnhof Friedrich-Wilhelm-Platz sind Sie mit U9 und S-Bahn in 21 bis 23 Minuten an der Friedrichstraße, vom S-Bahnhof Friedenau mit der S1 in 15 bis 17 Minuten.[[10]]",
+        "Alle 1.500 Adressen im Ortsteil liegen in guter Wohnlage.[[3]] Fast alle gehören zur Bodenrichtwertzone um Handjerystraße, Stubenrauchstraße, Rheinstraße und Niedstraße: 3.400 €/m² bei einer Geschossflächenzahl von 2,0, zum 01.01.2026 unverändert.[[2]] Östlich schließen die Ceciliengärten an, die schon zum Ortsteil Schöneberg gehören: viergeschossige Mietshäuser aus den 1920er-Jahren nach Entwürfen von Heinrich Lassen, ohne Hinterhöfe, um gärtnerisch gestaltete Innenhöfe.[[15]] Auch sie liegen in guter Wohnlage und in derselben Bodenrichtwertzone.[[3,2]] Eigentumswohnungen kosteten 2025 im früheren Bezirk Schöneberg, zu dem Friedenau gehört, im Mittel 5.421 €/m² Wohnfläche, bei 677 Verkäufen.[[1,8]]"
+      ],
+      "bild": {
+        "name": "tempelhof-schoeneberg-friedenau-goerresstrasse",
+        "alt": "Das Landhaus Pählchen in der Görresstraße mit Backsteinsockel und Balkon, hinter Bäumen und einem Eisenzaun",
+        "caption": "Das Landhaus Pählchen in der Görresstraße in Friedenau.",
+        "credit": "Dodowp, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Landhaus_P%C3%A4hlchen,_G%C3%B6rresstra%C3%9Fe_21_(Berlin-Friedenau).jpg"
+      }
+    },
+    {
+      "h2": "Bayerisches Viertel: Wohnen am Bayerischen Platz",
+      "absaetze": [
+        "Die Berlinische Boden-Gesellschaft unter Salomon Haberland baute das Viertel zwischen 1900 und 1914 für ein bürgerliches Publikum der damaligen Stadt Schöneberg, mit Wohnungen bis 250 m², verzierten Türmchen und gestuften Giebeln. Um es anzubinden, baute Schöneberg ab 1908 eine eigene U-Bahn, die heutige U4, eröffnet am 1. Dezember 1910. In der Weimarer Zeit lebten hier viele Menschen jüdischen Glaubens, unter ihnen Ärzte, Künstler und Intellektuelle; an ihre Entrechtung erinnert seit 1993 ein Denkmal von Renata Stih und Frieder Schnock mit Tafeln in den Straßen. Im Zweiten Weltkrieg wurden 75 % der Häuser zerstört, vor allem nördlich der Grunewaldstraße; die Lücken wurden von 1955 bis 1959 mit vierstöckigen Neubauten geschlossen.[[15]] Vom U-Bahnhof Bayerischer Platz sind Sie mit U7 und S1 oder U6 in 16 bis 18 Minuten an der Friedrichstraße.[[10]]",
+        "Im Planungsraum Bayerischer Platz liegen 95 % der Adressen in guter Wohnlage.[[3]] 511 der 546 Adressen gehören zu den sozialen Erhaltungsgebieten Barbarossaplatz/Bayerischer Platz, seit 2014, und Schöneberger Süden, seit 2018.[[12]] Alle gehören zur Bodenrichtwertzone um Münchener, Landshuter, Berchtesgadener und Heilbronner Straße mit 4.000 €/m² bei einer Geschossflächenzahl von 2,5, zum 01.01.2026 unverändert.[[2]] Für eine Altbauwohnung bis Baujahr 1918 mit 60 bis unter 70 m² nennt der Mietspiegel 2026 in guter Wohnlage 7,09 bis 13,54 €/m², im Mittel 9,46 €/m² nettokalt.[[5]] Westlich, jenseits der Bezirksgrenze, liegt der Güntzelkiez. Er gehört zum Ortsteil Wilmersdorf; Sie finden ihn auf unserer <a href=\"/standorte/berlin/charlottenburg-wilmersdorf/\">Seite zu Charlottenburg-Wilmersdorf</a>.[[3]]"
+      ],
+      "bild": {
+        "name": "tempelhof-schoeneberg-bayerisches-viertel-barbarossastrasse",
+        "alt": "Wohnhaus an der Ecke Barbarossastraße und Münchener Straße im Bayerischen Viertel",
+        "caption": "Wohnhaus an der Barbarossastraße, Ecke Münchener Straße.",
+        "credit": "Gunnar Klack, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:2019-05-29-Wohnhaus-Barbarossastr.jpg",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "h2": "Nollendorfkiez: zwischen Nollendorfplatz und Winterfeldtmarkt",
+      "absaetze": [
+        "Am Nollendorfplatz endet die Schöneberger U-Bahn von 1910, die heutige U4; eine Station weiter liegt der Viktoria-Luise-Platz, 1898 von Fritz Encke gestaltet, 0,7 Hektar groß, mit Brunnen und seit 1979 denkmalgerecht wiederhergestellt. Zum Nollendorfkiez gehören der Winterfeldtmarkt und die Straßen um Motz-, Eisenacher, Fugger- und Kalckreuthstraße. Schon in den 1920er-Jahren gab es hier viele Treffpunkte für homosexuelle Frauen und Männer; zum zweitägigen Stadtfest im Juli kommen jedes Jahr rund 350.000 Gäste.[[15]] Vom U-Bahnhof Nollendorfplatz fahren U2, U3 und U4; mit einem Umstieg sind Sie in 15 bis 18 Minuten an der Friedrichstraße.[[10]]",
+        "Im Planungsraum Kalckreuthstraße, westlich des Nollendorfplatzes, liegen 91 % der Adressen in mittlerer Wohnlage, im Planungsraum Frobenstraße zur Potsdamer Straße hin 97 % in einfacher.[[3]] 609 der 669 Adressen in beiden Planungsräumen liegen in den sozialen Erhaltungsgebieten Schöneberger Norden, seit 2018, und Wittenbergplatz, seit 2023.[[12]] In den Wohnstraßen um Eisenacher, Motz-, Winterfeldt- und Nollendorfstraße liegt der Bodenrichtwert bei 3.800 €/m², um Kurmärkische Straße, Frobenstraße und Zietenstraße bei 3.000 €/m², jeweils bei einer Geschossflächenzahl von 2,5 und unverändert. In der Mischgebietszone an Kurfürstenstraße, Kleiststraße und Nollendorfplatz sank er zum 01.01.2026 von 4.000 auf 3.500 €/m².[[2]] Für eine Altbauwohnung bis Baujahr 1918 mit 65 bis unter 70 m² nennt der Mietspiegel 2026 in mittlerer Wohnlage im Mittel 9,00 €/m², in einfacher 8,14 €/m² nettokalt.[[5]]"
+      ],
+      "bild": {
+        "name": "tempelhof-schoeneberg-viktoria-luise-platz-sommer",
+        "alt": "Der Viktoria-Luise-Platz im Sommer mit Springbrunnen, Rasenflächen und geschnittenen Hecken, ringsum Altbauten und Bäume",
+        "caption": "Der Viktoria-Luise-Platz in Schöneberg.",
+        "credit": "Jörg Zägel, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Berlin,_Schoeneberg,_Viktoria-Luise-Platz.jpg"
+      }
+    }
+  ],
+  "band": {
+    "name": "tempelhof-schoeneberg-tempelhofer-feld",
+    "alt": "Weite Wiese und Rollbahn auf dem Tempelhofer Feld unter blauem Himmel, am Himmel Drachen, am Horizont die Stadt",
+    "caption": "Das Tempelhofer Feld im Oktober.",
+    "credit": "Leonhard Lenz, CC0",
+    "url": "https://commons.wikimedia.org/wiki/File:Tempelhofer_Feld_2021-10-09_01.jpg"
+  },
+  "verkaufen": {
+    "h2": "Immobilie in Tempelhof-Schöneberg verkaufen",
+    "absaetze": [
+      "Im Bezirk wurden 2025 1.861 Eigentumswohnungen verkauft, 10,7 % aller Berliner Verkäufe von Wohnungseigentum; insgesamt zählte der Gutachterausschuss 2.248 Kauffälle. Im früheren Bezirk Schöneberg, mit Schöneberg und Friedenau, kosteten Eigentumswohnungen im Mittel 5.421 €/m² Wohnfläche, im früheren Bezirk Tempelhof 4.011 €/m²; in ganz Berlin waren es 5.017 €/m².[[1,8]] Wo Ihre Wohnung in der Spanne von 3.253 bis 7.566 €/m² liegt, hängt an Lage, Baujahr und Zustand. Wir bewerten deshalb nach Ihrer Bodenrichtwertzone, der Wohnlage und Vergleichsverkäufen.",
+      "Ein- und Zweifamilienhäuser wurden 2025 nur im früheren Bezirk Tempelhof verkauft, mit Tempelhof, Mariendorf, Marienfelde und Lichtenrade: 104 Verkäufe mit einem Mittelwert von 4.224 €/m² Wohnfläche, nach 166 Verkäufen im Vorjahr.[[1,8]] Die Bodenrichtwerte für Einfamilienhausgebiete im Bezirk sanken zum 01.01.2026 um rund 5 %, in guter Wohnlage von 1.700 auf 1.600 €/m².[[1]] Liegt Ihr Haus in einem sozialen Erhaltungsgebiet, klären wir vor dem Verkauf, welche Genehmigungen ein Käufer für Umbau oder Aufteilung bräuchte.[[13]]"
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Tempelhof-Schöneberg",
+    "absaetze": [
+      "Als Eigennutzer wählen Sie zwischen dicht bebauten Kiezen mit Geschossflächenzahlen von 2,0 bis 2,5, etwa Friedenau, dem Bayerischen Viertel und dem Nollendorfkiez, und den Einfamilienhausgebieten in Tempelhof, Mariendorf, Marienfelde und Lichtenrade.[[2,8]] Für 593 Neubauwohnungen in drei Wohnanlagen wurde 2025 im früheren Bezirk Schöneberg Wohnungseigentum begründet, mehr als in jedem anderen früheren Bezirk; dazu kamen 102 umgewandelte Wohnungen.[[1]] Seit dem 01.01.2026 ist in ganz Berlin die Umwandlung von Miet- in Eigentumswohnungen in Häusern mit mehr als fünf Wohnungen genehmigungspflichtig und damit grundsätzlich verboten, bis zum 31.12.2030; für neu geschaffenen Wohnraum gilt das nicht.[[14]] In sozialen Erhaltungsgebieten wie dem Bayerischen Viertel und dem Nollendorfkiez braucht auch die Umwandlung in kleineren Häusern eine Genehmigung.[[13]]",
+      "Als Kapitalanleger rechnen Sie mit dem Mietspiegel 2026 und der Mietpreisbremse, die in ganz Berlin bis 31.12.2029 gilt: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[4,6]] Bestandsmieten dürfen bis zur Vergleichsmiete in drei Jahren um höchstens 15 % steigen.[[7]] 80 % der Mietangebote im Bezirk lagen 2025 zwischen 8,37 und 27,18 €/m²; 86,0 % der Wohnungen sind Mietwohnungen.[[9]] Aus Kaufpreis, Miete und Bewirtschaftungskosten rechnen wir mit Ihnen die Rendite, bevor Sie kaufen."
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Tempelhof-Schöneberg",
+    "absaetze": [
+      "Eigentumswohnungen kosteten 2025 im früheren Bezirk Schöneberg im Mittel 5.421 €/m² Wohnfläche, im früheren Bezirk Tempelhof 4.011 €/m².[[1]] Dazu kommen die Kaufnebenkosten und wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen: Wir rechnen das mit Ihnen durch, vergleichen Ihre Finanzierung über Europace und Baufinex und fragen parallel Banken direkt an."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Wie hoch ist der Quadratmeterpreis in Schöneberg und Friedenau?",
+      "antwort": "Der Gutachterausschuss weist die Preise nach den früheren Bezirken aus. Eigentumswohnungen kosteten 2025 im früheren Bezirk Schöneberg, mit Schöneberg und Friedenau, im Mittel 5.421 €/m² Wohnfläche, bei 677 Verkäufen und einer Spanne von 3.253 bis 7.566 €/m²; 2024 waren es 5.238 €/m². Im früheren Bezirk Tempelhof waren es 4.011 €/m², in ganz Berlin 5.017 €/m².[[1,8]] Zur Miete lagen 80 % der Angebote im Bezirk 2025 zwischen 8,37 und 27,18 €/m².[[9]] Für Ihre Immobilie zählen Wohnlage, Baujahr und Zustand.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienbewertung Berlin-Tempelhof-Schöneberg“, dort als „Wie hoch ist der Quadratmeterpreis in Berlin Schöneberg?“ (Google_Areas, Oktober 2026); Google-Autocomplete „quadratmeterpreis schöneberg“, „quadratmeterpreis berlin friedenau“ und „quadratmeterpreis berlin schöneberg miete“ (research/serp/autocomplete-2026-10-26-tempelhof-schoeneberg.json)"
+    },
+    {
+      "frage": "Wie hoch ist der Bodenrichtwert in Schöneberg, Friedenau und Tempelhof 2026?",
+      "antwort": "Zum 01.01.2026 liegt er in Friedenau bei 3.400 €/m² und einer Geschossflächenzahl von 2,0, im Bayerischen Viertel bei 4.000 €/m² und im Nollendorfkiez bei 3.000 bis 3.800 €/m², jeweils bei 2,5 und unverändert.[[2]] Für Einfamilienhausgebiete nennt der Gutachterausschuss im Bezirk 340 bis 1.600 €/m², rund 5 % weniger als im Vorjahr.[[1]] Den Wert für Ihr Grundstück finden Sie im Geoportal Berlin; wir lesen ihn bei der Bewertung für Sie aus.",
+      "herkunft": "Google-Autocomplete „bodenrichtwert schöneberg“, „bodenrichtwert berlin schöneberg“, „bodenrichtwert friedenau“ und „bodenrichtwert tempelhof“ (research/serp/autocomplete-2026-10-26-tempelhof-schoeneberg.json)"
+    },
+    {
+      "frage": "Gibt es einen Mietspiegel für Schöneberg und Friedenau?",
+      "antwort": "Es gilt der Berliner Mietspiegel 2026 für die ganze Stadt, mit einfacher, mittlerer und guter Wohnlage je Adresse; für Wohnungen in Ein- und Zweifamilienhäusern gilt er nicht.[[4]] In Friedenau liegen alle Adressen in guter Wohnlage, im Bayerischen Viertel 95 %; im Nollendorfkiez überwiegt westlich des Nollendorfplatzes die mittlere, zur Potsdamer Straße hin die einfache Wohnlage.[[3]] Für eine Altbauwohnung bis Baujahr 1918 mit 60 bis unter 70 m² in guter Wohnlage nennt die Tabelle 7,09 bis 13,54 €/m², im Mittel 9,46 €/m² nettokalt.[[5]]",
+      "herkunft": "Google-Autocomplete „mietspiegel schöneberg 2026“, „mietspiegel berlin schöneberg 2026“, „mietspiegel friedenau“ und „mietspiegel tempelhof schöneberg“ (research/serp/autocomplete-2026-10-26-tempelhof-schoeneberg.json)"
+    },
+    {
+      "frage": "Gehört Friedenau zu Schöneberg?",
+      "antwort": "Friedenau ist ein eigener Ortsteil im Bezirk Tempelhof-Schöneberg, mit 30.238 Einwohnern.[[8]] 1920 bildete es mit Schöneberg den Bezirk Schöneberg von Groß-Berlin, seit 2001 gehören beide zusammen mit Tempelhof zum Bezirk Tempelhof-Schöneberg.[[11,15]] Im Marktbericht des Gutachterausschusses zählt Friedenau deshalb zum früheren Bezirk Schöneberg.[[1,8]] Die Ceciliengärten östlich von Friedenau liegen im Ortsteil Schöneberg.[[3]]",
+      "herkunft": "Google-Autocomplete „ist friedenau teil von schöneberg“, „ist friedenau schöneberg“ und „ist friedenau ein bezirk“ (research/serp/autocomplete-2026-10-26-tempelhof-schoeneberg.json)"
+    },
+    {
+      "frage": "Ist Friedenau eine teure Wohngegend?",
+      "antwort": "Die amtlichen Zahlen erlauben einen Vergleich mit Berlin. Alle Adressen im Ortsteil liegen in guter Wohnlage.[[3]] Der Bodenrichtwert liegt bei 3.400 €/m², im Bayerischen Viertel bei 4.000 €/m².[[2]] Eigentumswohnungen im früheren Bezirk Schöneberg kosteten 2025 im Mittel 5.421 €/m², in ganz Berlin 5.017 €/m².[[1]] Das mittlere Haushaltsnettoeinkommen im Bezirk lag bei 2.775 € im Monat, in Berlin bei 2.675 €.[[9]]",
+      "herkunft": "Google-Autocomplete „ist friedenau teuer“, „ist friedenau ein guter bezirk“ und „ist schöneberg eine gute gegend“ (research/serp/autocomplete-2026-10-26-tempelhof-schoeneberg.json)"
+    },
+    {
+      "frage": "Gilt in Schöneberg und Friedenau Milieuschutz?",
+      "antwort": "Im Bezirk gibt es zehn soziale Erhaltungsgebiete. Im Bayerischen Viertel liegen 511 von 546 Adressen in den Gebieten Barbarossaplatz/Bayerischer Platz und Schöneberger Süden, im Nollendorfkiez 609 von 669 in den Gebieten Schöneberger Norden und Wittenbergplatz; die Grenzen zeigt das Geoportal Berlin. Friedenau liegt in keinem sozialen Erhaltungsgebiet.[[12]] In diesen Gebieten können Luxusmodernisierungen, Wohnungszusammenlegungen sowie Abriss und Umnutzung von Wohnraum versagt werden und die Umwandlung in Eigentumswohnungen ist genehmigungspflichtig. Ein Vorkaufsrecht des Bezirks ist seit einem Urteil des Bundesverwaltungsgerichts von 2021 nur noch in wenigen Fällen möglich.[[13]] Für den Kern Friedenaus gilt stattdessen seit 1986 eine städtebauliche Erhaltungsverordnung.[[11,12]]",
+      "herkunft": "Google-Autocomplete „milieuschutz schöneberg“, „milieuschutz tempelhof schöneberg“, „milieuschutz berlin schöneberg karte“, „bezirksamt schöneberg milieuschutz“ und „milieuschutz friedenau“ (research/serp/autocomplete-2026-10-26-tempelhof-schoeneberg.json)"
+    },
+    {
+      "frage": "Wie ermittle ich den Wert meiner Immobilie in Tempelhof-Schöneberg?",
+      "antwort": "Einen ersten Anhaltspunkt geben der Bodenrichtwert im Geoportal Berlin und die Kaufpreise im Immobilienmarktbericht des Gutachterausschusses.[[2,1]] Wie Zustand, Grundriss und Lage im Haus den Wert verändern, zeigt erst eine Wertermittlung: Bei uns erstellt sie Lennart Geserich kostenlos, meist noch am selben Tag. Brauchen Sie einen Wert für das Finanzamt, ein Gericht oder eine Erbauseinandersetzung, ist ein Verkehrswertgutachten eines Sachverständigen das Richtige.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienbewertung Berlin-Tempelhof-Schöneberg“, dort als „Wie kann ich den Wert meiner Immobilie in Berlin ermitteln?“ und „Wie kann ich selbst den Wert einer Immobilie ermitteln?“ (Google_Areas, Oktober 2026). Antwort nach /immobilienbewertung/ (Stand 26.10.2026)"
+    },
+    {
+      "frage": "Wie hoch ist die Maklerprovision in Berlin?",
+      "antwort": "Kauft ein Verbraucher eine Wohnung oder ein Einfamilienhaus, teilen sich Käufer und Verkäufer die Provision zu gleichen Teilen (§§ 656a bis 656d BGB). Bei Fischer & Geserich sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision. Bei Mehrfamilienhäusern und Grundstücken gilt die Teilung nicht. Die Provision fällt nur an, wenn der Kaufvertrag zustande kommt.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienmakler Berlin-Charlottenburg“, „Immobilienmakler Berlin“ und „Immobilienmakler Berlin-Pankow“ (Google_Areas, Oktober 2026). Antwort nach /maklerprovision/ und /kaufen/ (Stand 26.10.2026)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Steglitz-Zehlendorf",
+      "url": "/standorte/berlin/steglitz-zehlendorf/"
+    },
+    {
+      "name": "Charlottenburg-Wilmersdorf",
+      "url": "/standorte/berlin/charlottenburg-wilmersdorf/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Immobilienmarktbericht Berlin 2025/2026, Geschäftsstelle des Gutachterausschusses für Grundstückswerte in Berlin",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stand": "Stand 31.07.2026; Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+    },
+    {
+      "name": "Bodenrichtwerte des Gutachterausschusses für Grundstückswerte in Berlin, Geoportal Berlin (WFS brw2026 und brw2025), eigene Zuordnung zu den Adressen",
+      "url": "https://gdi.berlin.de/services/wfs/brw2026?REQUEST=GetCapabilities&SERVICE=wfs",
+      "stand": "Stichtag 01.01.2026, Vergleich mit 01.01.2025"
+    },
+    {
+      "name": "Wohnlagenzuordnung der Adressen zum Berliner Mietspiegel 2026, Geoportal Berlin (WFS wohnlagenadr2026), eigene Auswertung nach LOR-Planungsräumen",
+      "url": "https://gdi.berlin.de/services/wfs/wohnlagenadr2026?REQUEST=GetCapabilities&SERVICE=wfs",
+      "stand": "Mietspiegel 2026, Planungsräume Stand 2021"
+    },
+    {
+      "name": "Berliner Mietspiegel 2026, Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen",
+      "url": "https://mietspiegel.berlin.de/wp-content/uploads/2026/05/mietspiegel2026.pdf",
+      "stand": "Stichtag 01.09.2025, Straßenverzeichnis im Amtsblatt vom 28.05.2026"
+    },
+    {
+      "name": "Berliner Mietspiegeltabelle 2026",
+      "url": "https://mietspiegel.berlin.de/wp-content/uploads/2026/05/mietspiegeltabelle2026.pdf",
+      "stand": "Stichtag 01.09.2025"
+    },
+    {
+      "name": "Senatskanzlei Berlin, Pressemitteilung zur Mietenbegrenzungsverordnung",
+      "url": "https://www.berlin.de/rbmskzl/aktuelles/pressemitteilungen/2025/pressemitteilung.1615170.php",
+      "stand": "11.11.2025, gültig 01.01.2026 bis 31.12.2029"
+    },
+    {
+      "name": "Berliner Mietratgeber: Miete, Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen (Kappungsgrenzenverordnung vom 14.03.2023)",
+      "url": "https://www.berlin.de/sen/wohnen/wissen-fuer-mieter/berliner-mietratgeber/miete/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 5 – hj 1/26, Einwohnerinnen und Einwohner im Land Berlin",
+      "url": "https://download.statistik-berlin-brandenburg.de/7cb89e083c1ea02d/4e03c8e1693a/SB_A01-05-00_2026h01_BE.xlsx",
+      "stand": "30.06.2026"
+    },
+    {
+      "name": "IBB Wohnungsmarktbericht 2025, Bezirksprofil Tempelhof-Schöneberg",
+      "url": "https://www.ibb.de/media/dokumente/publikationen/berliner-wohnungsmarkt/wohnungsmarktbericht/2025/tempelhof-scho%CC%88neberg.pdf",
+      "stand": "Werte 2024, Angebotsmieten 2025"
+    },
+    {
+      "name": "VBB-Fahrplandaten, Verbindungen bis S+U Friedrichstraße",
+      "url": "https://v6.vbb.transport.rest/journeys?from=900060101&to=900100001&departure=2026-11-10T09:00%2B01:00",
+      "stand": "Fahrplan Dienstag 10.11.2026, abgefragt 26.10.2026"
+    },
+    {
+      "name": "Bezirksamt Tempelhof-Schöneberg, Ortsteil Friedenau",
+      "url": "https://www.berlin.de/ba-tempelhof-schoeneberg/ueber-den-bezirk/ortsteile/friedenau/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Erhaltungsverordnungsgebiete Berlin, Geoportal Berlin (WFS erhaltungsverordnungsgebiete, soziale und städtebauliche Erhaltungsgebiete), eigener Abgleich mit den Adressen",
+      "url": "https://gdi.berlin.de/services/wfs/erhaltungsverordnungsgebiete?REQUEST=GetCapabilities&SERVICE=wfs",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen, Soziales Erhaltungsrecht",
+      "url": "https://www.berlin.de/sen/stadtentwicklung/quartiersentwicklung/stadterneuerung/soziales-erhaltungsrecht/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen, Umwandlungsverordnung nach § 250 BauGB",
+      "url": "https://www.berlin.de/sen/wohnen/rechtliches/umwandlungsverordnung/",
+      "stand": "Verordnung vom 11.11.2025, gültig 01.01.2026 bis 31.12.2030"
+    },
+    {
+      "name": "Bezirksamt Tempelhof-Schöneberg, Ortsteil Schöneberg (Bayerisches Viertel, Viktoria-Luise-Platz, Nollendorfkiez, Ceciliengärten)",
+      "url": "https://www.berlin.de/ba-tempelhof-schoeneberg/ueber-den-bezirk/ortsteile/schoeneberg/",
+      "stand": "abgerufen 26.10.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "Einwohner 30.06.2026: Bezirk 358.125; Friedenau 30.238; Schöneberg 125.700; Altbezirk Tempelhof = Tempelhof, Mariendorf, Marienfelde, Lichtenrade",
+      "fundstelle": "tempelhof-schoeneberg.md Nr. 1, 3; AfS T11"
+    },
+    {
+      "zahl": "Kauffälle 2025: 1.861 WE (10,7 %), 2.248 gesamt (10,3 %), 360 bebaut",
+      "fundstelle": "tempelhof-schoeneberg.md Nr. 7; berlin-grundlagen.md Nr. 27 (IMB S. 77, Z. 4583)"
+    },
+    {
+      "zahl": "ETW: Schöneberg 677 / 3.253–7.566 / 5.421 (2024: 5.238); Tempelhof 495 / 4.011; Berlin 5.017",
+      "fundstelle": "tempelhof-schoeneberg.md Nr. 8; IMB S. 61, imb.txt Z. 3531–3533"
+    },
+    {
+      "zahl": "EFH/ZFH: Tempelhof 104 / 2.841–5.543 / 4.224 (2024: 166 / 4.188); Schöneberg 0; Berlin 4.366",
+      "fundstelle": "tempelhof-schoeneberg.md Nr. 9; IMB S. 50, imb.txt Z. 2861–2863"
+    },
+    {
+      "zahl": "BRW offene Bauweise T-S 340–1.600, rd. −5 %; gute Wohnlage 1.700 → 1.600",
+      "fundstelle": "tempelhof-schoeneberg.md Nr. 5; IMB S. 32–34"
+    },
+    {
+      "zahl": "WE-Begründung 2025 Altbezirk Schöneberg: 593 WE neu in 3 Anlagen (Spitzenreiter), 102 umgewandelt",
+      "fundstelle": "tempelhof-schoeneberg.md Nr. 10; IMB S. 98, imb.txt Z. 6202, Z. 406–409"
+    },
+    {
+      "zahl": "IBB: Angebote 8,37–27,18 (80 %), Berlin 7,88–25,06; Mietwohnungen 86,0 / 85,1 %; Ø 73,4 / 72,5 m²; Einkommen 2.775 / 2.675 €",
+      "fundstelle": "tempelhof-schoeneberg.md Nr. 4; ibb_tempel.txt Z. 27–56"
+    },
+    {
+      "zahl": "Friedenau: Carstenn 1865, Rittergut Deutsch-Wilmersdorf, Bauverein 1871, 4–5-geschossige Mietshäuser, Villen Nied-/Albe-/Handjerystraße, Carstennform um Handjerystraße und Friedrich-Wilhelm-Platz, Erhaltungsverordnung 24.06.1986 (vor 31.12.1939) laut BA, WFS: ES Friedenau GVBl 24.07.1986, in Kraft 25.07.1986, geändert 07.10.1988; 422 von 1.500 Adressen im Ortsteil, ganz Lauter-, Nied-, Albe-, Schmargendorfer Straße, Friedrich-Wilhelm-Platz, Perelsplatz, Handjerystraße 57 von 88; Ceciliengärten selbst nicht; WL 1.500 Adressen gut; BRW 1825 3.400 (GFZ 2,0, unverändert), 1.491 Adressen; U9 FW-Platz 21–23, S1 Friedenau 15–17 min",
+      "fundstelle": "tempelhof-schoeneberg.md Nr. 20, 31, 40, 41"
+    },
+    {
+      "zahl": "Ceciliengärten: Ortsteil Schöneberg, östlich, 1920er, Heinrich Lassen, viergeschossig, ohne Hinterhöfe; 354 Adressen gut, BRW 1825",
+      "fundstelle": "tempelhof-schoeneberg.md Nr. 21, 27, 36"
+    },
+    {
+      "zahl": "Bayerisches Viertel: Haberland 1900–1914, bis 250 m², Türmchen/Giebel, U4 ab 1908, eröffnet 01.12.1910, Denkmal Stih/Schnock 1993, 75 % zerstört, 1955–1959; WL 95 % gut (520/546); BRW 2506 4.000 (GFZ 2,5, unverändert); U7 16–18 min; Mietspiegel Zeile 135: 7,09 / 9,46 / 13,54",
+      "fundstelle": "tempelhof-schoeneberg.md Nr. 23, 32, 33, 42; berlin-grundlagen.md Nr. 13"
+    },
+    {
+      "zahl": "Güntzelkiez westlich, Ortsteil Wilmersdorf",
+      "fundstelle": "tempelhof-schoeneberg.md Nr. 27; charlottenburg-wilmersdorf.md Nr. 27"
+    },
+    {
+      "zahl": "Nollendorfkiez: U4 endet am Nollendorfplatz, Viktoria-Luise-Platz 1898 Encke 0,7 ha 1979, Winterfeldtmarkt, Motz-/Eisenacher/Fugger-/Kalckreuthstraße, 1920er, Stadtfest Juli ca. 350.000; WL Kalckreuthstraße 91 % mittel, Frobenstraße 97 % einfach; BRW 2508 3.800, 2510 3.000 (GFZ 2,5, unverändert), M2 1130 4.000 → 3.500; U2/U3/U4, 15–18 min; Mietspiegel Zeile 71: Ø 9,00, Zeile 8: Ø 8,14",
+      "fundstelle": "tempelhof-schoeneberg.md Nr. 24, 25, 33–35, 43; mietspiegeltabelle2026.txt"
+    },
+    {
+      "zahl": "Soziale Erhaltungsgebiete T-S: 10 (WFS). Bayerischer Platz 511/546: Barbarossaplatz / Bayerischer Platz in Kraft 11.09.2014 (343), Schöneberger Süden 11.03.2018 (168). Kalckreuthstraße 341/358: Schöneberger Norden 11.03.2018, geändert 12.10.2018 (272), Wittenbergplatz 19.03.2023 (69); Frobenstraße 268/311 Schöneberger Norden; zusammen 609/669. Friedenau 0/1.500",
+      "fundstelle": "tempelhof-schoeneberg.md Nr. 13–15; erhalt_check.py gegen WFS erhaltungsverordnungsgebiete"
+    },
+    {
+      "zahl": "Soziale Erhaltungsgebiete: Luxusmodernisierungen, Wohnungszusammenlegungen, Abbruch, Umnutzung können versagt werden; Umwandlung genehmigungspflichtig (Umwandlungsverordnung 2025, seit 01.01.2026 dort nur noch für Häuser bis fünf Wohnungen, darüber § 250); Vorkaufsrecht BVerwG 4 C 1.20 vom 09.11.2021 nur noch in wenigen Fällen. § 250 BauGB: Verordnung 11.11.2025, 01.01.2026–31.12.2030, mehr als fünf Wohnungen, grundsätzlich verboten, Neubau ausgenommen",
+      "fundstelle": "sen_erhalt.txt; sen_umwandlung.txt; pankow.md Nr. 15, 16"
+    },
+    {
+      "zahl": "Mietspiegel 2026 gilt nicht für EFH/ZFH; Mietpreisbremse bis 31.12.2029, 10 %; Kappung 15 % in drei Jahren",
+      "fundstelle": "berlin-grundlagen.md Nr. 1, 2, 11"
+    },
+    {
+      "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, Halbteilung §§ 656a–656d BGB, nicht bei MFH und Grundstücken; § 34c und § 34i GewO; Lennart Geserich; Europace und Baufinex; Wertermittlung kostenlos, meist am selben Tag",
+      "fundstelle": "maklerprovision.njk, kaufen.njk, immobilienbewertung.njk; wie berlin-charlottenburg-wilmersdorf.json"
+    }
+  ],
+  "karte": {
+    "alt": "Karte des Bezirks Tempelhof-Schöneberg: im Norden Nollendorfkiez, Bayerisches Viertel, Schöneberg, Ceciliengärten und Friedenau, im Süden Mariendorf, Marienfelde und Lichtenrade, dazu die Bahnstrecken, die Autobahn und der Bahnhof Friedrichstraße im Norden"
+  },
+  "anbindung": [
+    "Vom U-Bahnhof Friedrich-Wilhelm-Platz sind Sie mit U9 und S-Bahn in 21 bis 23 Minuten an der Friedrichstraße, vom S-Bahnhof Friedenau mit der S1 in 15 bis 17 Minuten.[[10]]",
+    "Vom U-Bahnhof Bayerischer Platz sind Sie mit U7 und S1 oder U6 in 16 bis 18 Minuten an der Friedrichstraße.[[10]]",
+    "Vom U-Bahnhof Nollendorfplatz fahren U2, U3 und U4; mit einem Umstieg sind Sie in 15 bis 18 Minuten an der Friedrichstraße.[[10]]"
+  ]
+}

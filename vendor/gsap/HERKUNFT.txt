@@ -1,0 +1,4 @@
+gsap 3.15.0 aus der npm-Registry (npm pack, Integrität sha512 von npm geprüft), 30.10.2026.
+Nur gsap.min.js, ScrollTrigger.min.js und SplitText.min.js aus dist/.
+Lizenz: GSAP Standard "no charge" License, https://gsap.com/standard-license
+Freigabe des Downloads: Peer, 30.10.2026 (Design-Pass 3 §6.1).

@@ -1,23 +1,70 @@
 ---
 layout: base.njk
+fgDesign: true
+fgSystem: true
+fgsHero: false
+customSchema: true
 permalink: "404.html"
 eleventyExcludeFromCollections: true
 title: "Seite nicht gefunden"
 description: "Die aufgerufene Seite existiert nicht."
 robots: "noindex, nofollow"
+# Brief Design-Pass §4.12: gestaltete 404-Seite mit Links auf Startseite, die drei Leistungen, die Gebiete und Kontakt.
+# CP4 (28.10.2026, Design-Sprint-Brief 5.4): Titelzeile ohne Foto wie Kontakt, Leistungen und „Häufig gesucht“ als zweispaltige
+# Abschnitte, S8. Entfallen: Kicker über den H2 (Update 6 §3.0) und die Liste aller Gebiete (Brief 3.7, die Gebiete stehen im Fuß).
 ---
-<div class="content-detail shell">
-  <article class="science-article">
-    <header>
-      <h1>Seite nicht gefunden</h1>
-      <p class="lead">Die aufgerufene Adresse gibt es auf dieser Website nicht. M&ouml;glicherweise wurde sie umbenannt oder entfernt.</p>
-    </header>
-    <ul class="lex-index">
-      <li><a href="/index.html">Startseite</a></li>
-      <li><a href="/lexikon/">Immobilienlexikon</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="/standorte/">Standorte</a></li>
-      <li><a href="/angebote.html">Aktuelle Angebote</a></li>
-    </ul>
-  </article>
-</div>
+{% from "fgs-macros.njk" import textlink, closing with context %}
+
+<section class="fgs-pagehead" aria-labelledby="seitentitel">
+  <div class="fgs-wrap">
+    <p class="fgs-label">Fehler 404</p>
+    <h1 id="seitentitel">Seite nicht gefunden</h1>
+    <p class="fgs-lead">Die aufgerufene Adresse gibt es auf dieser Website nicht. Möglicherweise wurde sie umbenannt oder entfernt.</p>
+    <div class="fgs-btns">
+      <a class="fgs-btn fgs-btn--primary" href="/">Zur Startseite</a>
+      <a class="fgs-btn fgs-btn--secondary" href="/kontakt.html">Kontakt</a>
+    </div>
+  </div>
+</section>
+
+<section class="fgs-section" id="leistungen" aria-labelledby="leistungen-titel">
+  <div class="fgs-wrap fgs-cols">
+    <div class="fgs-cols-head"><h2 id="leistungen-titel">Wobei wir Sie begleiten</h2></div>
+    <div class="fgs-cols-body">
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        {%- for g in nav.menu.slice(0, 3) %}
+        {%- set it = g.items[0] if g.href == g.items[0].href else g.items[1] %}
+        <li><a href="{{ g.href }}">{{ it.label }}</a><span>{{ it.note }}</span></li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="fgs-section" id="gesucht" aria-labelledby="gesucht-titel">
+  <div class="fgs-wrap fgs-cols">
+    <div class="fgs-cols-head"><h2 id="gesucht-titel">Häufig gesucht</h2></div>
+    <div class="fgs-cols-body">
+      <div class="fgs-links">
+        {{ textlink("/angebote.html", "Aktuelle Angebote") }}
+        {{ textlink("/immobilienbewertung/", "Kostenlose Bewertung") }}
+        {{ textlink("/lexikon/", "Immobilienlexikon") }}
+        {{ textlink("/blog/", "Blog") }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fgs-section" id="gebiete" aria-labelledby="gebiete-titel">
+  <div class="fgs-wrap fgs-cols">
+    <div class="fgs-cols-head"><h2 id="gebiete-titel">Unsere Gebiete</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">{{ serviceArea.text }}</p>
+      {{ textlink("/standorte/", "Alle Gebiete") }}
+    </div>
+  </div>
+</section>
+
+{% call closing({ kontakt: "lennart", satz: "Fragen Sie uns direkt", button: "gespraech" }) %}
+  <p>Rufen Sie an oder schreiben Sie uns, wir helfen Ihnen weiter. Das erste Gespräch kostet Sie nichts.</p>
+{% endcall %}

@@ -10,7 +10,6 @@
   "population": "Die Entwicklung sollte getrennt nach Bahnhofsnähe, Innenstadt und äußeren Quartieren betrachtet werden.",
   "view": "Eberswalde kann höhere Anfangsrenditen bieten als der direkte Speckgürtel. Entscheidend sind eine belastbare lokale Mietnachfrage und ein Objekt, das auch ohne Berliner Preisdynamik funktioniert.",
   "source": "https://gutachterausschuss.brandenburg.de/",
-  "yield": "häufig ca. 3,0–5,5 %; höhere Renditen gehen oft mit geringerer Marktliquidität einher",
   "id": "eberswalde",
   "slug": "eberswalde",
   "url": "/standorte/eberswalde/",
@@ -18,5 +17,88 @@
     "berliner speckgürtel · nordost",
     "eberswalde"
   ],
-  "updated": "2026-09-02"
+  "updated": "2026-09-02",
+  "seite": {
+    "_hinweis": "Seite im neuen Design (Schritt 12, 27.10.2026). Nur geprüfte Werte aus research/towns/barnim.md; die Schätzspannen oben (price, rent, yield) nutzt weiter das Investment Lab, die Seite zeigt sie nicht (Schreibregel: keine geschätzten Zahlen).",
+    "kreis": {
+      "name": "Landkreis Barnim",
+      "url": "/standorte/barnim/"
+    },
+    "description": "Immobilien in Eberswalde: Bodenrichtwerte, Kaufpreise und Mieten aus dem Grundstücksmarktbericht Barnim 2025, Fahrzeit nach Berlin, Chancen und Risiken.",
+    "intro": "Eberswalde ist nach Bernau die zweitgrößte Stadt im Landkreis Barnim und hat einen eigenen Immobilienmarkt mit deutlich niedrigeren Preisen als der Berliner Stadtrand. Hier stehen die amtlichen Zahlen und unsere Einordnung.",
+    "stand": "Oktober 2026",
+    "zahlen": [
+      {
+        "wert": "100–190 €/m²",
+        "label": "Bodenrichtwerte für Ein- und Zweifamilienhausgrundstücke in Eberswalde und Finow",
+        "quelle": "Grundstücksmarktbericht 2025 Landkreis Barnim",
+        "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+        "stichtag": "01.01.2026"
+      },
+      {
+        "wert": "Ø 2.570 €/m²",
+        "label": "Freistehende Ein- und Zweifamilienhäuser, alle Baujahre, je m² Wohnfläche",
+        "detail": "35 Kauffälle. Vorjahr Ø 2.480 €/m².",
+        "quelle": "Grundstücksmarktbericht 2025 Landkreis Barnim",
+        "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+        "stichtag": "Kaufverträge 2025"
+      },
+      {
+        "wert": "Ø 1.950 €/m²",
+        "label": "Gebrauchte Eigentumswohnungen, Baujahr nach 1992",
+        "detail": "Nur 3 Kauffälle, Spanne 1.670 bis 2.200 €/m². Vorjahr Ø 1.700 €/m².",
+        "quelle": "Grundstücksmarktbericht 2025 Landkreis Barnim",
+        "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+        "stichtag": "Kaufverträge 2025"
+      },
+      {
+        "wert": "Ø 8 €/m²",
+        "label": "Nettokaltmiete",
+        "detail": "14 Fälle, Spanne 6,3 bis 11,0 €/m².",
+        "quelle": "Grundstücksmarktbericht 2025 Landkreis Barnim",
+        "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+        "stichtag": "Mietdaten 2024–2025"
+      },
+      {
+        "wert": "41.867",
+        "label": "Einwohner",
+        "detail": "386 mehr als ein Jahr zuvor. Das Landesamt für Bauen und Verkehr erwartet bis 2040 ein Plus von 4,3 %.",
+        "quelle": "Amt für Statistik Berlin-Brandenburg; LBV Brandenburg",
+        "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+        "stichtag": "31.12.2025"
+      }
+    ],
+    "absaetze": [
+      "Eberswalde hatte Ende 2025 41.867 Einwohner und ist nach Bernau die zweitgrößte Stadt im Landkreis.[[2]] Anders als die Orte am Berliner Stadtrand zählt die Stadt im Grundstücksmarktbericht zum weiteren Metropolenraum.[[1]] Vom Hauptbahnhof sind es mit RE3 und S1 über Gesundbrunnen 42 Minuten bis Friedrichstraße; der RE3 fährt stündlich.[[5]]",
+      "2025 gab es in Eberswalde 197 Kauffälle, mehr als im Vorjahr. Baureife Wohngrundstücke kosteten im Mittel 141 €/m² bei 21 Kauffällen und anders als in der Hälfte der Ämter und Gemeinden des Landkreises stiegen hier die Baulandpreise. Im neuen Wohngebiet am Christel-Brauns-Weg in Finow wurden 17 Grundstücke für im Mittel 140 €/m² verkauft.[[1]]",
+      "Einen Mietspiegel nennt der Gutachterausschuss im Landkreis nur für Eberswalde.[[1]] Die Mietpreisbremse gilt in Eberswalde nicht; im Barnim gilt sie seit dem 01.01.2026 in Ahrensfelde, Bernau bei Berlin, Biesenthal und Panketal.[[4]]"
+    ],
+    "quellen": [
+      {
+        "name": "Grundstücksmarktbericht Landkreis Barnim 2025, Gutachterausschuss für Grundstückswerte im Landkreis Barnim (veröffentlicht 13.05.2026)",
+        "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+        "stand": "Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+      },
+      {
+        "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 4 – j / 25, Bevölkerung im Land Brandenburg",
+        "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+        "stand": "31.12.2025"
+      },
+      {
+        "name": "Landesamt für Bauen und Verkehr, Bevölkerungsvorausschätzung 2024 bis 2040, Anlage 3",
+        "url": "https://lbv.brandenburg.de/sixcms/media.php/9/31_Bevoelkerungsvorausschaetzung_2024-20.pdf",
+        "stand": "Basis 31.12.2023, mittlere Variante"
+      },
+      {
+        "name": "Mietpreisbegrenzungsverordnung Brandenburg, Ministerium für Infrastruktur und Landesplanung",
+        "url": "https://mil.brandenburg.de/sixcms/media.php/9/Mietpreisbegrenzungsverordnung.pdf",
+        "stand": "Kabinettsbeschluss 25.11.2025, gültig 01.01.2026 bis 31.12.2029"
+      },
+      {
+        "name": "VBB-Fahrplandaten, Verbindungen ab Eberswalde Hauptbahnhof bis S+U Friedrichstraße",
+        "url": "https://v6.vbb.transport.rest/journeys?from=900350127&to=900100001&departure=2026-11-10T09:00%2B01:00",
+        "stand": "Fahrplan Dienstag 10.11.2026 ab 9 Uhr, abgefragt 26.10.2026"
+      }
+    ]
+  }
 }

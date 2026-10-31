@@ -54,7 +54,10 @@
     const title = document.querySelector('.cm__title');
     if (!title || title.querySelector('.fg-consent-logo')) return;
     const img = document.createElement('img');
-    img.src = '/images/fg-logo-gold-transparent.png';
+    // gleiches Logo, 160 px statt 1024 px (5 KB statt 235 KB, angezeigt werden höchstens 72 px)
+    img.src = '/images/logo/fg-logo-gold-160.webp';
+    img.width = 160;
+    img.height = 160;
     img.alt = 'Fischer & Geserich Real Estate';
     img.className = 'fg-consent-logo';
     title.prepend(img);

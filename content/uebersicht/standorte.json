@@ -1,0 +1,227 @@
+{
+  "title": "Immobilienmakler in Berlin, Brandenburg, Leipzig & Dresden | Fischer & Geserich",
+  "description": "Gebiete von Fischer & Geserich: vier Berliner Bezirke, acht Brandenburger Landkreise, Potsdam, Leipzig und Dresden, mit Kaufpreisen, Bodenrichtwerten und Kontakt.",
+  "h1": "Unsere Gebiete: Berlin, Brandenburg, Leipzig und Dresden",
+  "kurzantwort": "Fischer & Geserich verkauft, vermittelt und finanziert Immobilien in vier Berliner Bezirken, in acht Landkreisen rund um Berlin, in Potsdam sowie in Leipzig und Dresden. Für jedes Gebiet gibt es eine eigene Seite mit amtlichen Kaufpreisen, Bodenrichtwerten und Ihrem Ansprechpartner.",
+  "kurzantwortMehr": "Für Berlin und Brandenburg ist Lennart Geserich Ihr Ansprechpartner, für Leipzig und Dresden Timon Fischer. Finanzierungen begleiten wir deutschlandweit.",
+  "stand": "Oktober 2026",
+  "updated": "2026-10-27",
+  "zahlen": [
+    {
+      "wert": "Ø 5.017 €/m²",
+      "label": "Eigentumswohnungen in Berlin, je Quadratmeter Wohnfläche",
+      "detail": "11.110 ausgewertete Kauffälle. In unseren vier Bezirken reicht der Mittelwert von 4.011 €/m² in Tempelhof bis 6.427 €/m² in Dahlem.",
+      "quelle": "Immobilienmarktbericht Berlin 2025/2026",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "1.538.678",
+      "label": "Einwohner in den acht Landkreisen rund um Berlin",
+      "detail": "Von 170.792 im Havelland bis 221.347 in Potsdam-Mittelmark; Summe der amtlichen Kreiswerte.",
+      "quelle": "Amt für Statistik Berlin-Brandenburg",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stichtag": "31.12.2025"
+    },
+    {
+      "wert": "Ø 2.850 €/m²",
+      "label": "Sanierte Altbauwohnungen im Weiterverkauf in Leipzig",
+      "detail": "1.902 Verkäufe ohne Stellplatz. Je Stadtbezirk von 2.542 €/m² in Nordost bis 3.447 €/m² in Mitte.",
+      "quelle": "Grundstücksmarktbericht Leipzig 2026",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 2.705 €/m²",
+      "label": "Weiterverkaufte Eigentumswohnungen in Dresden",
+      "detail": "Rund 4 % über dem Vorjahreswert von 2.610 €/m². Im 1. Halbjahr 2026 lag der Median bei 2.660 €/m².",
+      "quelle": "Grundstücksmarktbericht Dresden 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/2026-Grundstuecksmarktbericht.pdf",
+      "stichtag": "Kaufverträge 2025"
+    }
+  ],
+  "regionen": [
+    {
+      "key": "berlin",
+      "name": "Berlin",
+      "kontakt": "lennart",
+      "uebersicht": "berlin",
+      "foto": "berlin/charlottenburg-wilmersdorf",
+      "fotoCaption": "Der Lietzensee in Charlottenburg.",
+      "text": "In Steglitz-Zehlendorf, Charlottenburg-Wilmersdorf, Tempelhof-Schöneberg und Pankow zählte der Gutachterausschuss 2025 10.030 Kauffälle, 45,8 % aller Berliner Kauffälle ohne Paketverkäufe.[[1]] Für jeden der vier Bezirke gibt es eine eigene Seite, dazu die Übersicht für ganz Berlin.",
+      "gruppen": [
+        {
+          "titel": "Bezirke",
+          "seiten": [
+            "berlin/steglitz-zehlendorf",
+            "berlin/charlottenburg-wilmersdorf",
+            "berlin/tempelhof-schoeneberg",
+            "berlin/pankow"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "brandenburg",
+      "name": "Brandenburg",
+      "kontakt": "lennart",
+      "uebersicht": null,
+      "foto": "potsdam-mittelmark",
+      "fotoCaption": "Der Glindowsee bei Werder (Havel) in Potsdam-Mittelmark.",
+      "text": "Die acht Landkreise reichen von Oberhavel im Norden bis Teltow-Fläming im Süden. Eigentumswohnungen im Berliner Umland von Potsdam-Mittelmark kosteten 2025 im Mittel 4.514 €/m², gebrauchte Wohnungen in Fürstenwalde/Spree 2.349 €/m².[[3,4]] Sieben Städte haben eine eigene Seite.",
+      "gruppen": [
+        {
+          "titel": "Landkreise",
+          "seiten": [
+            "oberhavel",
+            "barnim",
+            "havelland",
+            "potsdam-mittelmark",
+            "dahme-spreewald",
+            "oder-spree",
+            "teltow-flaeming",
+            "maerkisch-oderland"
+          ]
+        },
+        {
+          "titel": "Städte",
+          "zeilen": { "potsdam": "Landeshauptstadt" },
+          "seiten": [
+            "oranienburg",
+            "bernau",
+            "falkensee",
+            "teltow",
+            "erkner",
+            "konigs-wusterhausen",
+            "potsdam"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "leipzig",
+      "name": "Leipzig",
+      "kontakt": "timon",
+      "uebersicht": "leipzig",
+      "foto": "leipzig/zentrum",
+      "fotoCaption": "Villa in der Karl-Tauchnitz-Straße im Musikviertel.",
+      "text": "2025 wurden in Leipzig 5.163 Eigentumswohnungen und Teileigentumseinheiten verkauft, für zusammen 1.293 Mio. €.[[5]] Drei Seiten beschreiben das Zentrum mit Bach- und Musikviertel, den Norden von Gohlis bis Mockau und den Westen mit Lindenau und Leutzsch.",
+      "gruppen": [
+        {
+          "titel": "Marktgebiete",
+          "seiten": [
+            "leipzig/zentrum",
+            "leipzig/nord",
+            "leipzig/west"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "dresden",
+      "name": "Dresden",
+      "kontakt": "timon",
+      "uebersicht": "dresden",
+      "foto": "dresden/zentrum",
+      "fotoCaption": "Wohn- und Geschäftshäuser am Schillerplatz in Blasewitz.",
+      "text": "Bei Wohnungs- und Teileigentum zählte der Gutachterausschuss 2025 3.910 Erwerbsvorgänge, rund 18 % mehr als 2024.[[6]] Vier Seiten beschreiben den Norden von der Neustadt bis Klotzsche, den Süden mit Löbtau, Plauen und Strehlen, das Zentrum mit Blasewitz und Striesen und den Osten mit Laubegast und Kleinzschachwitz.",
+      "gruppen": [
+        {
+          "titel": "Marktgebiete",
+          "seiten": [
+            "dresden/nord",
+            "dresden/sued",
+            "dresden/zentrum",
+            "dresden/ost"
+          ]
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "frage": "In welchen Gebieten ist Fischer & Geserich als Makler tätig?",
+      "antwort": "In ganz Berlin, mit eigenen Seiten für Steglitz-Zehlendorf, Charlottenburg-Wilmersdorf, Tempelhof-Schöneberg und Pankow, im Berliner Umland in acht Brandenburger Landkreisen von Oberhavel bis Märkisch-Oderland und in Potsdam sowie in Sachsen in Leipzig und Dresden. Finanzierungen begleiten wir deutschlandweit.",
+      "herkunft": "Google-Autocomplete „immobilienmakler berlin brandenburg“ und „immobilienmakler sachsen“ (27.10.2026)"
+    },
+    {
+      "frage": "Was kosten Eigentumswohnungen in Berlin, Leipzig und Dresden?",
+      "antwort": "Nach den Kaufverträgen 2025: in Berlin im Mittel 5.017 €/m² Wohnfläche,[[1]] in Leipzig im sanierten Altbau beim Weiterverkauf 2.850 €/m²[[5]] und in Dresden beim Weiterverkauf rund 2.705 €/m².[[6]] Im 1. Halbjahr 2026 lag der Dresdner Median bei 2.660 €/m².[[7]] Die Werte für Ihren Bezirk oder Stadtteil stehen auf der jeweiligen Gebietsseite.",
+      "herkunft": "Google-Autocomplete „immobilienpreise berlin 2026“, „immobilienpreise leipzig 2026“ und „immobilienpreise dresden“ (27.10.2026)"
+    },
+    {
+      "frage": "Was kostet ein Makler in Brandenburg und Sachsen?",
+      "antwort": "Beim Verkauf einer Wohnung oder eines Einfamilienhauses an einen Verbraucher zahlen Verkäufer und Käufer je die Hälfte der Provision (§§ 656a bis 656d BGB), bundesweit, also in Berlin, Brandenburg und Sachsen gleich. Bei Fischer & Geserich sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision. Für Mehrfamilienhäuser und Grundstücke gilt die Teilung nicht. Fällig wird die Provision nur, wenn der Kaufvertrag zustande kommt.",
+      "herkunft": "Google-Autocomplete „makler brandenburg kosten“ und „provision immobilienmakler sachsen“ (27.10.2026)"
+    },
+    {
+      "frage": "Wo sind Immobilien im Berliner Umland am teuersten?",
+      "antwort": "In Kleinmachnow, gemessen an den Zahlen auf unseren Gebietsseiten: Das Ortszentrum hat zum 01.01.2026 mit 1.250 €/m² den höchsten Bodenrichtwert, die Medonstraße 1.150 €/m² (BORIS Brandenburg). Auch die höchsten Hauspreise auf unseren Seiten stehen für Kleinmachnow: Häuser der Baujahre 2001 bis 2010 kosteten 2025 nach dem Grundstücksmarktbericht des Landkreises Potsdam-Mittelmark im Mittel 6.406 €/m² Wohnfläche, allerdings bei nur fünf Kauffällen, Häuser bis Baujahr 1948 mit kleinen Modernisierungen 5.934 €/m².[[3]] Hohe Bodenrichtwerte haben außerdem das urbane Gebiet an der Dallgower Straße in Falkensee mit 1.100 €/m² und Ufergrundstücke in Zeuthen und Eichwalde mit 1.000 €/m² (BORIS Brandenburg). Die Gutachterausschüsse der Landkreise grenzen Baujahre und Teilmärkte unterschiedlich ab, die Landkreise lassen sich deshalb nur bedingt vergleichen. Die Zahlen für jeden Ort stehen auf seiner Seite.",
+      "herkunft": "FG-Gap-Answers 7.2 (SOURCE), selbst geschrieben nur aus Zahlen, die schon auf den Gebietsseiten stehen (Stand 28.10.2026). Recherche P47. Zahlen: Seite Teltow und Kleinmachnow (Bodenrichtwerte Kleinmachnow 1.250 Ortszentrum, 1.150 Medonstraße, BORIS; Häuser 6.406 bei 5 und 5.934 bei 11 Kauffällen, GMB Potsdam-Mittelmark 2025 = Quelle 3 dieser Seite), Seite Falkensee (1.100 urbanes Gebiet Dallgower Straße, BORIS), Seite Dahme-Spreewald (1.000 Ufer Zeuthen/Eichwalde, BORIS). Geprüft: kein höherer Bodenrichtwert und kein höherer Hauspreis je m² auf den 14 Brandenburger Seiten. Aus, bis Jesu die Quellen geprüft hat (freigaben.quelleFaq).",
+      "quelle": "7.2-P47"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Immobilienmarktbericht Berlin 2025/2026, Geschäftsstelle des Gutachterausschusses für Grundstückswerte in Berlin",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stand": "Stand 31.07.2026; Kaufverträge 2025"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 4 – j / 25, Bevölkerung im Land Brandenburg (eigene Summe der acht Landkreise)",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Grundstücksmarktbericht 2025 Landkreis Potsdam-Mittelmark, Gutachterausschuss für Grundstückswerte im Landkreis Potsdam-Mittelmark",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_PM.pdf",
+      "stand": "Version 1.2 vom 07.08.2026; Kaufverträge 2025"
+    },
+    {
+      "name": "Grundstücksmarktbericht 2025 Landkreis Oder-Spree und Stadt Frankfurt (Oder), Gutachterausschuss für Grundstückswerte im Landkreis Oder-Spree und in der Stadt Frankfurt (Oder)",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_LOS_FF.pdf",
+      "stand": "Version 2025–1.0 vom 11.05.2026; Kaufverträge 2025"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Stadt Leipzig, Grundstücksmarktbericht 2026",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stand": "Kaufverträge 2025"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Landeshauptstadt Dresden, Grundstücksmarktbericht 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/2026-Grundstuecksmarktbericht.pdf",
+      "stand": "Kaufverträge 2025, Vorwort vom 16.04.2026"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Landeshauptstadt Dresden, Halbjahresbericht 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/Halbjahresbericht_2026.pdf",
+      "stand": "1. Halbjahr 2026, veröffentlicht 31.08.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "Berlin ETW Ø 5.017, 11.110 Fälle; Tempelhof 4.011, Dahlem 6.427; 10.030 Kauffälle in vier Bezirken = 45,8 % von 21.913 (ohne Paketverkäufe)",
+      "fundstelle": "berlin.json (Kennzahlen 1–2, pruefung)"
+    },
+    {
+      "zahl": "Einwohner 31.12.2025: Oberhavel 217.858, Barnim 194.885, Havelland 170.792, Potsdam-Mittelmark 221.347, Dahme-Spreewald 179.480, Oder-Spree 179.142, Teltow-Fläming 177.982, Märkisch-Oderland 197.192; Summe 1.538.678",
+      "fundstelle": "Kennzahl Einwohner der acht Landkreisseiten; SB A I 4 – j / 25"
+    },
+    {
+      "zahl": "Potsdam-Mittelmark ETW Berliner Umland Ø 4.514 (282 Fälle); Fürstenwalde/Spree gebrauchte ETW nach 1990 mit Stellplatz Ø 2.349 (17)",
+      "fundstelle": "potsdam-mittelmark.json, oder-spree.json (Kennzahlen)"
+    },
+    {
+      "zahl": "Leipzig: 5.163 ETW/TE 2025, 1.293 Mio. €; Altbau WV Ø 2.850, 1.902 Fälle, Nordost 2.542, Mitte 3.447",
+      "fundstelle": "leipzig.json (Kennzahlen 1–2)"
+    },
+    {
+      "zahl": "Dresden: 3.910 Erwerbsvorgänge Wohnungs- und Teileigentum, +18 %; WV Ø rund 2.705 (2.610, +4 %); 1. HJ 2026 Median 2.660",
+      "fundstelle": "dresden.json (Kennzahlen 1–2); gmb2026.txt Z. 752–756, 775; hjb2026.txt Z. 717–718"
+    },
+    {
+      "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % je Seite; Finanzierungen deutschlandweit; Ansprechpartner Lennart (Berlin, Brandenburg), Timon (Leipzig, Dresden)",
+      "fundstelle": "maklerprovision.njk; _data/serviceArea.js; _data/kontakte.js"
+    }
+  ]
+}

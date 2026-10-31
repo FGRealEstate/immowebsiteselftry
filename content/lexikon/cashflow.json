@@ -7,11 +7,84 @@
   "keywords": [
     "cashflow"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Kapitalanlage",
-  "explanation": "Cashflow bildet tatsächliche Ein- und Auszahlungen ab. Bei Immobilien sollte zwischen operativem Cashflow vor Finanzierung und Cashflow nach Kapitaldienst unterschieden werden. Tilgung belastet den Cashflow, ist aber gleichzeitig Vermögensumschichtung in das Objekt.",
-  "practiceExample": "1.500 € Kaltmiete − 180 € nicht umlagefähige Kosten − 1.150 € Rate − 100 € Reserve = +70 € monatlicher Cashflow. Davon ist ein Teil der Rate Tilgung und damit kein wirtschaftlicher „Verbrauch“ im gleichen Sinn wie Zins.",
-  "formula": "Cashflow = Einzahlungen − Auszahlungen",
+  "explanation": "Der Cashflow ist das Geld, das Ihnen aus einer vermieteten Immobilie in einem Zeitraum übrig bleibt oder das Sie zuschießen. Gerechnet wird mit Zahlungen: Die Kaltmiete fließt herein, nicht umlagefähige Kosten, Zinsen und Tilgung fließen hinaus. Miethöhe, nicht umlagefähige Kosten, Leerstand und Modernisierung bestimmen das Ergebnis mit.",
+  "practiceExample": "Angenommen, Sie kaufen eine vermietete Wohnung im Berliner Umland, etwa in Bernau: 65 m², Baujahr 1995, 9 € Kaltmiete je m², also 585 € im Monat und 7.020 € im Jahr, für 160.000 €. Das Darlehen über 160.000 € kostet bei einem Beispielzins von 4 % und 1,5 % Tilgung 8.800 € im Jahr. Für Verwaltung, Instandhaltung und Mietausfall rechnen Sie 1.210 €. Vor Steuern fehlen damit rund 2.990 € im Jahr, etwa 249 € im Monat. Davon sind im Schnitt rund 204 € Tilgung, die Ihre Schuld senkt. Mit einer Steuerersparnis von rund 1.100 € im ersten Jahr (siehe Werbungskosten) liegt der Fehlbetrag bei etwa 158 € im Monat.",
+  "formula": "Cashflow vor Steuern = Kaltmiete − nicht umlagefähige Kosten − Zins − Tilgung",
   "sources": [],
-  "assistantAnswer": "Liquiditätsüberschuss oder -bedarf einer Periode. Cashflow bildet tatsächliche Ein- und Auszahlungen ab. Bei Immobilien sollte zwischen operativem Cashflow vor Finanzierung und Cashflow nach Kapitaldienst unterschieden werden. Tilgung belastet den Cashflow, ist aber gleichzeitig Vermögensumschichtung in das Objekt."
+  "assistantAnswer": "Liquiditätsüberschuss oder -bedarf einer Periode. Cashflow bildet tatsächliche Ein- und Auszahlungen ab. Bei Immobilien sollte zwischen operativem Cashflow vor Finanzierung und Cashflow nach Kapitaldienst unterschieden werden. Tilgung belastet den Cashflow, ist aber gleichzeitig Vermögensumschichtung in das Objekt.",
+  "ausbau": {
+    "einordnung": [
+      "Der Cashflow ist das Geld, das Ihnen aus einer vermieteten Immobilie in einem Zeitraum übrig bleibt oder das Sie zuschießen. Gerechnet wird mit Zahlungen: Die Kaltmiete fließt herein, nicht umlagefähige Kosten, Zinsen und Tilgung fließen hinaus. Miethöhe, nicht umlagefähige Kosten, Leerstand und Modernisierung bestimmen das Ergebnis mit.[[1]]",
+      "Man unterscheidet den Cashflow vor und nach Steuern. Zinsen mindern den steuerlichen Überschuss, die Tilgung nicht.[[2]] Ergibt die Vermietung steuerlich einen Verlust, verbessert die Erstattung den Cashflow.[[3]] Die Tilgung belastet den Cashflow, senkt aber zugleich Ihre Schuld und baut so Vermögen auf.",
+      "Am Anfang kann der Cashflow negativ sein; auch Finanztip rechnet in seinem Beispiel mit einem Fehlbetrag und nennt das eine Betrachtung für den Anfang der Investition.[[3]] F&G unterscheidet drei Strategien: operativen Cashflow außerhalb der Ballungszentren, steueroptimierte Neubauten und einen ganzheitlichen Ansatz, der Cashflow, Steuervorteile, Mieterhöhungen und Verkaufserlös über die ganze Haltedauer betrachtet. F&G empfiehlt den dritten Weg.[[4]]"
+    ],
+    "beispiel": [
+      "Angenommen, Sie kaufen eine vermietete Wohnung im Berliner Umland, etwa in Bernau: 65 m², Baujahr 1995, 9 € Kaltmiete je m², also 585 € im Monat und 7.020 € im Jahr, für 160.000 €. Das Darlehen über 160.000 € kostet bei einem Beispielzins von 4 % und 1,5 % Tilgung 8.800 € im Jahr. Für Verwaltung, Instandhaltung und Mietausfall rechnen Sie 1.210 €.",
+      "Vor Steuern fehlen damit rund 2.990 € im Jahr, etwa 249 € im Monat. Davon sind im Schnitt rund 204 € Tilgung, die Ihre Schuld senkt. Mit einer Steuerersparnis von rund 1.100 € im ersten Jahr (siehe Werbungskosten) liegt der Fehlbetrag bei etwa 158 € im Monat."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Den Cashflow verbessern",
+        "absaetze": [
+          "Bei der Miete nennt F&G im laufenden Mietverhältnis drei Wege: eine einvernehmliche Erhöhung, die gesetzliche Kappungsgrenze oder eine Modernisierungsumlage; beim Mieterwechsel wird es einfacher.[[4]] Bei der Finanzierung senken mehr Eigenkapital, ein günstigerer Zins oder eine niedrigere Tilgung die Rate; eine niedrigere Tilgung lässt allerdings mehr Restschuld übrig. Bei den Kosten lohnt ein genauer Blick auf alles, was nicht umgelegt wird, bei der Steuer eine vollständige Erfassung der Werbungskosten."
+        ]
+      },
+      {
+        "h2": "Was es für Anleger heißt",
+        "absaetze": [
+          "Bewerten Sie den Cashflow zusammen mit Tilgung, Steuer, Mietentwicklung und möglichem Verkaufserlös. Planen Sie einen monatlichen Zuschuss so, dass Sie ihn aus dem laufenden Einkommen tragen können, auch falls der Zins nach der Zinsbindung höher liegt."
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "Fischer & Geserich: Vermieten",
+        "url": "https://fg-realestate.de/vermieten.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Immobilien als Kapitalanlage",
+        "url": "https://www.finanztip.de/baufinanzierung/immobilie-kapitalanlage/",
+        "stand": "Stand 15.06.2026"
+      },
+      {
+        "name": "Finanztip: Mietrendite berechnen",
+        "url": "https://www.finanztip.de/baufinanzierung/mietrendite-berechnen/",
+        "stand": "Stand 01.04.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Kapitalanlage",
+        "url": "https://fg-realestate.de/kapitalanlage.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Miethöhe, nicht umlagefähige Kosten, Leerstand, Modernisierung beeinflussen Cashflow (F&G)",
+        "fundstelle": "runde-3.md, C11"
+      },
+      {
+        "zahl": "Zinsen mindern den Überschuss, Tilgung nicht",
+        "fundstelle": "runde-3.md, C07"
+      },
+      {
+        "zahl": "Erstattung verbessert Cashflow; negativer Cashflow im Finanztip-Beispiel; Betrachtung für den Anfang",
+        "fundstelle": "runde-3.md, C06"
+      },
+      {
+        "zahl": "drei Strategien, F&G empfiehlt die dritte; drei Wege der Mieterhöhung, Mieterwechsel einfacher (F&G)",
+        "fundstelle": "runde-3.md, C08, C09"
+      },
+      {
+        "zahl": "Beispielwohnung 65 m², 9 €/m², 160.000 €",
+        "fundstelle": "runde-3.md, C13, C15, C16"
+      },
+      {
+        "zahl": "160.000 × 5,5 % = 8.800 €; Kosten 420 + 650 + 140,40 = 1.210,40 €; 7.020 − 1.210,40 − 8.800 = −2.990,40 € = −249 €/Monat; Tilgung Jahr 1 2.444,49 € = 204 €/Monat; Steuer −1.096,91 € → −157,79 €/Monat",
+        "fundstelle": "Rechnung, Marktprüfung runde-3.md"
+      }
+    ]
+  }
 }

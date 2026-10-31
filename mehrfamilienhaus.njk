@@ -1,14 +1,269 @@
 ---
-layout: base.njk
-title: Mehrfamilienhaus verkaufen, kaufen & finanzieren | Fischer & Geserich
+layout: fgs-service.njk
+bodyClass: fgs-service
+title: Mehrfamilienhaus verkaufen, kaufen und finanzieren | Fischer & Geserich
 permalink: mehrfamilienhaus.html
-description: "Mehrfamilienhäuser ganzheitlich begleiten: Verkauf, Ankauf, Investorenansprache und Finanzierung mit wirtschaftlicher Prüfung und persönlicher Steuerung."
+description: "Mehrfamilienhaus verkaufen, kaufen oder finanzieren: Käufernetzwerk mit über 100 Interessenten, wirtschaftliche Prüfung vor dem Kauf und Finanzierung über Europace, Baufinex und direkte Bankkontakte. Berlin, Brandenburg, Leipzig und Dresden."
 canonicalPath: /mehrfamilienhaus.html
-bodyClass: fg-mobile-safe
+# Brief Design-Pass §4.2: neue H1, alte H1 als Kicker. Alle bisherigen Texte bleiben (Lead, Seitenkarte, Zahlenleiste,
+# drei Karten Verkauf & Ankauf, drei Karten Für Investoren, drei FAQ). Neu: Verkauf mit dem Netzwerk, Prüfung beim Kauf,
+# Finanzierung, typische Käufergruppen allgemein. Keine Faktoren, Renditen oder Preise: dafür gibt es keine freigegebenen Zahlen.
+# Titelbild ist ein Übergang (Dächer von Berlin-Mitte), bis das Foto A7 aus research/foto-kandidaten.md freigegeben ist.
+service:
+  id: mehrfamilienhaus
+  crumb: "Mehrfamilienhaus"
+  kicker: "Für Eigentümer und Investoren"
+  h1: "Mehrfamilienhaus verkaufen, kaufen und finanzieren"
+  intro: "Bei einem Mehrfamilienhaus hängen Kaufpreis, Mieten, Instandhaltung und Finanzierung eng zusammen. Deshalb begleiten wir Verkauf, Kauf und Finanzierung aus einer Hand, mit vorgemerkten Kaufinteressenten aus ganz Deutschland."
+  button: { label: "MFH-Vorhaben besprechen", href: "#anfrage" }
+  hero: { name: "mfh-hero", alt: "Denkmalgeschütztes Eckhaus mit Klinkerfassade an der Schönhauser Allee in Berlin-Prenzlauer Berg", widths: [960, 1600] }
+  # Design-Pass 2 §4.2: Eckdaten aus dem Seitentext (Auswahl für Jesu gelistet, PLAN.md Schritt 3); „Finanzierung“ seit Update 18 §1 ohne §
+  keyfacts:
+    - { label: "Käufernetzwerk", wert: "über 100 Interessenten deutschlandweit" }
+    - { label: "Prüfung", wert: "Objekt, Lage, Wirtschaftlichkeit und Finanzierung" }
+    - { label: "Finanzierung", wert: "vor dem Notartermin geklärt" }
+  summaryQ: "Wie begleitet Fischer & Geserich Mehrfamilienhäuser?"
+  summary:
+    - "Beim Verkauf bereiten wir das Haus so auf, wie Investoren es prüfen, und sprechen Interessenten aus unserem Netzwerk an, das über 100 Interessenten für Mehrfamilienhäuser deutschlandweit umfasst. Beim Kauf prüfen wir Mietstand, Kosten, Zustand und Finanzierbarkeit, bevor Sie sich festlegen."
+    - "Die Finanzierung vermitteln wir selbst, mit Erlaubnis nach § 34i GewO, über Plattformen wie Europace und Baufinex sowie direkte Bankkontakte. Wir sind in Berlin, im Berliner Umland sowie in Leipzig und Dresden tätig."
+  faqTitle: "Häufige Fragen zu Mehr­familien­häusern"
+  faq:
+    - q: "Wie groß ist das F&G-Käufernetzwerk für Mehrfamilienhäuser?"
+      a: "Aktuell haben wir über 100 vorgemerkte Kaufinteressenten für Mehrfamilienhäuser. Wie viele davon für ein bestimmtes Haus infrage kommen, hängt vor allem von der Lage ab. Das Netzwerk wächst zusätzlich über unsere laufende Kapitalanlage-Akquise."
+    - q: "Begleitet F&G auch die Finanzierung von Mehrfamilienhäusern?"
+      a: "Ja. Unser Finanzierungsspektrum reicht von der ersten Eigentumswohnung bis zu Mehrfamilienhausfinanzierungen. Je nach Fall arbeiten wir über Plattformen und über direkte Bankkontakte."
+    - q: "Welche Zahlen sind für Investoren besonders wichtig?"
+      a: "Neben Kaufpreis und Faktor vor allem Ist- und Soll-Miete, Leerstand, Flächen, Einheiten, Capex, laufende Kosten, Finanzierung und die realistische Entwicklung des Cashflows."
+    - q: "Wer zahlt beim Mehrfamilienhaus die Maklerprovision?"
+      a: "Die gesetzliche Teilung der Provision zwischen Käufer und Verkäufer gilt beim Kauf einer Wohnung oder eines Einfamilienhauses, nicht beim Mehrfamilienhaus. Hier trägt in der Regel der Käufer die Provision allein. Möglich ist auch, die Maklercourtage in den Kaufpreis einzurechnen, dann liegt sie wirtschaftlich gesehen beim Verkäufer. Einzelheiten stehen auf unserer Seite zur <a href=\"/maklerprovision/\">Maklerprovision</a>."
+    - { ref: D7, q: "Finanzieren Sie auch Steuerausländer?" }  # Update 22 §9: Sie-Form statt „Finanziert ihr“
+    - { ref: A9, q: "Prüfen Sie die Finanzierung vor dem Notartermin?" }
+    # FG-Gap-Answers 4.1 (READY)
+    - q: "Ist ein Mehrfamilienhaus mehr wert als ein Einfamilienhaus?"
+      a: "Das lässt sich nicht pauschal sagen, weil beide anders bewertet werden. Ein Einfamilienhaus kaufen meist Menschen, die selbst einziehen; sein Preis richtet sich nach vergleichbaren Verkäufen in der Lage. Ein Mehrfamilienhaus kaufen meist Anleger und sie rechnen mit den Mieteinnahmen. Sein Wert ergibt sich vor allem aus der Jahresnettokaltmiete und einem Faktor, der von Lage, Zustand und Mietniveau abhängt."
+    # FG-Gap-Answers 4.2 (READY)
+    - q: "Was kostet es, ein Mehrfamilienhaus in Eigentumswohnungen aufzuteilen?"
+      a: "Für die Aufteilung brauchen Sie einen Aufteilungsplan, meist vom Architekten, eine Abgeschlossenheitsbescheinigung der Bauaufsicht, eine notariell beurkundete Teilungserklärung und die Eintragung im Grundbuch. Die Kosten hängen von der Zahl der Wohnungen und davon ab, ob aktuelle Pläne vorliegen. In Berlin ist seit dem 01.01.2026 die Umwandlung von Miet- in Eigentumswohnungen in Häusern mit mehr als fünf Wohnungen genehmigungspflichtig und damit grundsätzlich verboten, bis zum 31.12.2030; für neu geschaffenen Wohnraum gilt das nicht. In sozialen Erhaltungsgebieten gelten zusätzliche Regeln. Wir prüfen mit Ihnen, ob eine Aufteilung bei Ihrem Haus möglich ist und ob sie sich rechnet."
+    # FG-Gap-Answers 4.3 (READY)
+    - q: "Mehrfamilienhaus oder mehrere Eigentumswohnungen: was ist besser?"
+      a: "Beides hat Vorteile. Mit einem Mehrfamilienhaus entscheiden Sie allein über Instandhaltung und Vermietung und haben eine Hausverwaltung statt mehrerer Eigentümergemeinschaften. Dafür brauchen Sie mehr Eigenkapital und die Bank prüft das Haus als Ganzes. Mehrere Eigentumswohnungen in verschiedenen Häusern verteilen das Risiko und Sie können einzelne Wohnungen später leichter verkaufen. Welche Variante passt, hängt von Ihrem Eigenkapital und Ihrem Ziel ab; das rechnen wir mit Ihnen durch."
+    # FG-Gap-Answers 4.4 (TIMON), an seit 29.10.2026; zweiter Satz ersetzt nach FG-Timon-Answers-Update §1 (die Zahl wartete auf Timon; Update 13 §1: über 100, dieser Satz bleibt)
+    - q: "Verkaufen Sie auch Mehrfamilienhäuser in Leipzig und Dresden?"
+      a: "Ja. In Leipzig und Dresden ist Timon Fischer Ihr Ansprechpartner. Für Mehrfamilienhäuser haben wir vorgemerkte Kaufinteressenten aus ganz Deutschland."
+      timon: "4.4"
+  related:
+    services:
+      - { label: "Ankaufsberatung", note: "Ein Objekt vor dem Kauf auf vier Ebenen prüfen", href: "/ankaufsberatung.html", bild: "ankauf-hero", alt: "Das Eckhaus Kurfürstendamm 190 in Berlin-Charlottenburg mit grüner Kuppel an einem sonnigen Junitag" }
+      - { label: "Finanzierungsberatung", note: "Banken vergleichen, vor dem Notartermin klären", href: "/finanzierungsberatung.html", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
+      - { label: "Immobilie verkaufen", note: "Ablauf, Unterlagen und Kosten beim Verkauf", href: "/verkaufen.html", bild: "verkaufen-hero", alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser" }
+    lexikon: [kaufpreisfaktor, dscr, capex]
+  contact: lennart
+  closing:
+    title: "Mehrfamilienhaus konkret besprechen"
+    text: "Ob Sie verkaufen, kaufen oder finanzieren möchten: Im ersten Gespräch klären wir, welche Zahlen schon vorliegen und was als Nächstes zu tun ist. Es kostet Sie nichts und verpflichtet Sie zu nichts."
+    button: gespraech
+  schema:
+    name: "Mehrfamilienhaus verkaufen, kaufen und finanzieren"
+    serviceType: "Vermittlung und Finanzierung von Mehrfamilienhäusern"
+    description: "Verkauf von Mehrfamilienhäusern über ein Netzwerk von über 100 Interessenten, wirtschaftliche Prüfung beim Kauf und Vermittlung der Finanzierung nach § 34i GewO, in Berlin, Brandenburg, Leipzig und Dresden."
+    area: regional
 ---
-<div class="fg-premium-page"><section class="fg-premium-hero"><div class="fg-premium-shell"><div class="fg-premium-hero-grid"><div><p class="fg-premium-kicker fg-premium-kicker-light">Mehrfamilienhäuser &amp; Zinshäuser</p><h1>Mehr Einheiten. Mehr Stellschrauben. Eine klare Transaktionslogik.</h1><p class="fg-premium-hero-lead">Bei Mehrfamilienhäusern hängen Kaufpreis, Miete, Capex, Finanzierung und Käuferprofil eng zusammen. Wir begleiten Verkauf, Ankauf und Finanzierung deshalb nicht als voneinander getrennte Themen.</p><div class="fg-premium-actions"><a href="#kontakt-mfh" class="btn-85 px-7 py-4">MFH-Vorhaben besprechen <i class="fas fa-arrow-right"></i></a><a href="#netzwerk" class="fg-premium-outline">Käufernetzwerk</a></div></div><aside class="fg-premium-sidecard"><span>Investorensicht</span><h2>Der Faktor allein reicht nicht.</h2><ul><li><i class="fas fa-chart-line"></i><span>Ist-/Soll-Miete, Leerstand und Entwicklungspotenzial</span></li><li><i class="fas fa-screwdriver-wrench"></i><span>Capex, technischer Zustand und energetische Themen</span></li><li><i class="fas fa-building-columns"></i><span>Finanzierbarkeit, Beleihung und Eigenkapitalbedarf</span></li></ul></aside></div></div></section>
-<section class="fg-premium-statbar"><div class="fg-premium-shell"><div class="fg-premium-statgrid"><div><small>Netzwerk</small><strong>150+ MFH-Interessenten</strong><span>deutschlandweit im wachsenden Käufernetzwerk</span></div><div><small>Verkauf</small><strong>Investorengerecht aufbereiten</strong><span>Rendite, Faktor, Mietstand und Potenziale sichtbar machen</span></div><div><small>Ankauf</small><strong>Wirtschaftlich prüfen</strong><span>nicht nur Kaufpreis, sondern Bestand und Entwicklung</span></div><div><small>Finanzierung</small><strong>Bankfähigkeit mitdenken</strong><span>Objektcashflow und Beleihung früh einordnen</span></div></div></div></section>
-<section id="netzwerk" class="fg-premium-section"><div class="fg-premium-shell"><div class="fg-premium-head"><p class="fg-premium-kicker">Verkauf &amp; Ankauf</p><h2>Institutionelle Logik – persönlich umgesetzt.</h2><p>Ein gutes MFH-Exposé ist keine Bildergalerie. Investoren brauchen belastbare Zahlen, einen klaren Mietstand, nachvollziehbare Potenziale und eine Einschätzung, welche Themen finanziert oder investiert werden müssen.</p></div><div class="fg-premium-grid-3"><article class="fg-premium-card"><div class="fg-premium-card-icon"><i class="fas fa-users"></i></div><h3>Käufernetzwerk</h3><p>Unser Netzwerk umfasst über 150 Interessenten für Mehrfamilienhäuser deutschlandweit und wächst laufend über unsere Kapitalanlage-Akquise.</p></article><article class="fg-premium-card"><div class="fg-premium-card-icon"><i class="fas fa-table-list"></i></div><h3>Investment-Aufbereitung</h3><p>Ist-/Soll-Miete, Flächen, Einheiten, Leerstand, Faktor, Rendite und Capex werden so strukturiert, dass ein Investor schnell entscheiden kann.</p></article><article class="fg-premium-card"><div class="fg-premium-card-icon"><i class="fas fa-building-columns"></i></div><h3>Finanzierungsbrücke</h3><p>Wir können Finanzierungsperspektiven mitdenken und dadurch früh erkennen, welche Käuferstruktur realistisch zum Objekt passt.</p></article></div></div></section>
-<section class="fg-premium-section fg-premium-section-dark"><div class="fg-premium-shell"><div class="fg-premium-head"><p class="fg-premium-kicker fg-premium-kicker-light">Für Investoren</p><h2>Vom ersten Mehrfamilienhaus bis zum Bestandshalter.</h2><p>Je größer das Objekt, desto wichtiger wird die Verbindung aus Objektcashflow, Eigenkapital, Bankpartner und langfristiger Portfoliostrategie.</p></div><div class="fg-premium-grid-3"><article class="fg-premium-card fg-premium-card-dark"><h3>Cashflow &amp; Mietstand</h3><p>Wir unterscheiden zwischen Ist-Ertrag, realistischem Entwicklungspfad und Wunschannahmen.</p></article><article class="fg-premium-card fg-premium-card-dark"><h3>Capex &amp; Technik</h3><p>Sanierung, Energie, Instandhaltung und mögliche Sonderthemen werden in die Investmentlogik einbezogen.</p></article><article class="fg-premium-card fg-premium-card-dark"><h3>Finanzierung &amp; Beleihung</h3><p>Die passende Bankstruktur hängt von Objekt, Bonität, Eigenkapital und Portfolio ab – nicht nur vom Kaufpreis.</p></article></div></div></section></div>
-{% set faqItems=[{q:"Wie groß ist das F&G-Käufernetzwerk für Mehrfamilienhäuser?",a:"Aktuell verfügen wir über mehr als 150 Interessenten für Mehrfamilienhäuser deutschlandweit. Das Netzwerk wächst zusätzlich über unsere laufende Kapitalanlage-Akquise."},{q:"Begleitet F&G auch die Finanzierung von Mehrfamilienhäusern?",a:"Ja. Unser Finanzierungsspektrum reicht von der ersten Eigentumswohnung bis zu Mehrfamilienhausfinanzierungen. Je nach Fall arbeiten wir über Plattformen und über direkte Bankkontakte."},{q:"Welche Zahlen sind für Investoren besonders wichtig?",a:"Neben Kaufpreis und Faktor vor allem Ist- und Soll-Miete, Leerstand, Flächen, Einheiten, Capex, laufende Kosten, Finanzierung und die realistische Entwicklung des Cashflows."}] %}{% set faqAnchor="faq-mfh" %}{% set faqTitle="Häufige Fragen zu Mehrfamilienhäusern" %}{% include "faq-block.njk" %}
-<section id="kontakt-mfh" class="fg-contact-section py-8 md:py-14"><div class="container mx-auto px-4 text-center mb-2"><p class="fg-section-kicker">Direkter Kontakt</p><h2 class="text-3xl md:text-5xl font-bold text-primary mb-3">Mehrfamilienhaus konkret besprechen</h2></div>{% set leadDefaultConcern="Mehrfamilienhaus" %}{% include "landingpage-lead.njk" %}</section>
+{#- Mehrfamilienhaus nach Design-Pass 2 §4 (29.10.2026): Fotokapitel „Der Faktor allein reicht nicht.“ (Bild aus dem alten Kapitel
+    Kaufen, Bildunterschrift in der Fotozeile) mit Prüfliste und vier Punkten darunter, die sechs Kapitel als Zeilen (Überschrift links,
+    Leitsatz rechts, der Rest unter „Mehr erfahren“; das Bild aus „Finanzieren“ unter dessen Überschrift), F&G in Zahlen, Formular.
+    Texte unverändert; das Inhaltsverzeichnis entfällt wie auf Verkaufen. Davor (CP4): Kicker über den H2, Rubriken der vier Punkte,
+    Zählung der Prüffelder, Häkchen-Icons, „Auf dieser Seite“ und die Gebietsliste entfielen; navy nur in S1, S8 und Fuß. -#}
+{% from "fgs-macros.njk" import fotokapitel, mehr, wide, facts, textlink with context %}
+{% from "fgd-icons.njk" import icon %}
+
+{# §4.4 Fotokapitel: H2 und Leitsatz auf dem Foto, darunter Prüfliste und die vier Punkte #}
+{% call fotokapitel({ id: "investorensicht", hoehe: 80, titel: "Worauf es beim Preis ankommt", bild: "leipzig-band" | bild, alt: "Blick vom City-Hochhaus über die Leipziger Innenstadt mit dem Neuen Rathaus",
+  satz: 'Der <a href="/lexikon/kaufpreisfaktor/">Kaufpreisfaktor</a> sagt, wie viele Jahresmieten ein Haus kostet. Ob es sich trägt, entscheidet sich an drei anderen Stellen:' }) %}
+  <ul class="fgs-checklist fgs-themen-list" role="list">
+    <li>die Miete, die heute gezahlt wird, Leerstand und was sich an der Miete realistisch ändern lässt</li>
+    <li>Instandhaltungsbedarf, technischer Zustand und Energieeffizienz</li>
+    <li>was die Bank finanziert und wie viel Eigenkapital Sie brauchen</li>
+  </ul>
+  <ul class="fgs-points fgs-points--row" role="list">
+    <li><h3>100+ MFH-Interessenten</h3><p>deutschlandweit im wachsenden Käufernetzwerk</p></li>
+    <li><h3>Für Investoren aufbereitet</h3><p>Mieten, Faktor, Rendite und Potenzial auf einen Blick</p></li>
+    <li><h3>Vor dem Kauf geprüft</h3><p>Mietstand, Kosten und Zustand, bevor Sie sich festlegen</p></li>
+    <li><h3>Finanzierung von Anfang an</h3><p>Wir klären früh, was die Bank finanziert</p></li>
+  </ul>
+{% endcall %}
+
+{# Kapitel als Zeilen (§2 Regel 1): Überschrift links, Leitsatz rechts, der Rest unter „Mehr erfahren“ #}
+<section class="fgs-section fgs-rows" aria-label="Verkauf, Ankauf und Finanzierung im Einzelnen">
+  <div class="fgs-wrap">
+  <article class="fgs-row fgs-cols fgs-cols--57" id="verkaufen" aria-labelledby="verkaufen-titel">
+    <div class="fgs-cols-head"><h2 id="verkaufen-titel">Ein Mehr&shy;familien&shy;haus verkaufen</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Investoren kaufen ein Mehrfamilienhaus nach Zahlen. Deshalb stehen in unserem Exposé neben den Fotos die Mietliste, die Kosten, das Potenzial und die Investitionen, die als Nächstes anstehen.</p>
+      {% call mehr() %}
+      <h3>Käufernetzwerk</h3>
+      <p>Unser Netzwerk umfasst über 100 Interessenten für Mehrfamilienhäuser deutschlandweit und wächst laufend über unsere Kapitalanlage-Akquise. Jeden Monat kommen über 50 neue Kapitalanlage-Interessenten dazu. Portal, Netzwerk und Direktansprache kombinieren wir je nach Objekt.</p>
+      <h3>Investment-Aufbereitung</h3>
+      <p>Mietliste, Flächen, Einheiten, Leerstand, Faktor, Rendite und anstehende Investitionen stehen so im Exposé, dass ein Investor schnell entscheiden kann. Den Wert eines vermieteten Mehrfamilienhauses bestimmen vor allem die nachhaltig erzielbaren Mieten, nach diesem Prinzip arbeitet auch das <a href="/lexikon/ertragswert/">Ertragswertverfahren</a>. Ein Haus mit niedrigen Bestandsmieten ist deshalb nicht automatisch weniger wert, aber der Käufer muss sehen können, welche Entwicklung realistisch ist und welche nicht.</p>
+      <h3>Unterlagen, die Investoren sehen wollen</h3>
+      <p>Fehlende Unterlagen kosten im Verkauf Zeit, weil Käufer und ihre Banken ohne sie nicht entscheiden. Deshalb klären wir sie möglichst vor dem Vermarktungsstart.</p>
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li>Mieterliste mit Einheiten, Flächen, Ist-Mieten und Vertragsbeginn<span>die Grundlage jeder Kalkulation</span></li>
+        <li>Mietverträge und Nachträge, Staffel- oder Indexvereinbarungen</li>
+        <li>Betriebskostenabrechnungen und nicht umlagefähige Kosten<span>daraus ergeben sich die <a href="/lexikon/bewirtschaftungskosten/">Bewirtschaftungskosten</a></span></li>
+        <li>Grundbuchauszug, Flurkarte und Auskunft aus dem Baulastenverzeichnis</li>
+        <li>Energieausweis und Nachweise über Modernisierungen</li>
+        <li>Grundrisse und Flächenberechnung je Einheit</li>
+      </ul>
+      <h3>Finanzierungsbrücke</h3>
+      <p>Wir können Finanzierungsperspektiven mitdenken und dadurch früh erkennen, welche Käuferstruktur realistisch zum Objekt passt. Interessenten fragen wir früh nach ihrer Finanzierung, damit Sie nicht mit jemandem verhandeln, dessen Bank später absagt.</p>
+      <p>Wie wir den Verkauf allgemein angehen, steht auf der Seite <a href="/verkaufen.html">Immobilie verkaufen</a>.</p>
+      {% endcall %}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="kaufen" aria-labelledby="kaufen-titel">
+    <div class="fgs-cols-head"><h2 id="kaufen-titel">Ein Mehr&shy;familien&shy;haus kaufen</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Manche Exposés rechnen mit der Miete, die erst nach einer Neuvermietung möglich wäre. Wir rechnen mit der Miete, die heute gezahlt wird, und zeigen getrennt, was sich realistisch steigern lässt.</p>
+      {% call mehr() %}
+      <p>Was davon in welchem Zeitraum erreichbar ist, hängt an den Mietverträgen, am <a href="/lexikon/mietspiegel/">Mietspiegel</a>, an der <a href="/lexikon/kappungsgrenze/">Kappungsgrenze</a> und daran, wie oft Mieter wechseln.</p>
+      <p>Sanierung, Energieeffizienz, Instandhaltung und besondere Risiken rechnen wir in die Kaufentscheidung ein. Ein Haus mit <a href="/lexikon/instandhaltungsstau/">Instandhaltungsstau</a> kann ein gutes Geschäft sein, wenn der Preis ihn abbildet.</p>
+      {% endcall %}
+      {{ textlink("/ankaufsberatung.html", "So läuft die Ankaufsberatung") }}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="pruefung" aria-labelledby="pruefung-titel">
+    <div class="fgs-cols-head"><h2 id="pruefung-titel">Was wir vor dem Kauf eines Mehr&shy;familien&shy;hauses ansehen</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Wir prüfen auf denselben vier Ebenen wie bei jeder Ankaufsberatung: Objekt, Lage, Wirtschaftlichkeit und Finanzierung. Beim Mehrfamilienhaus kommen einige Fragen hinzu.</p>
+      {% call mehr() %}
+      <h3>Mietstand und Mietverträge</h3>
+      <p>Stimmen die Mieten in der Mieterliste mit den Verträgen überein? Wie viele Einheiten stehen leer und warum? Gibt es Staffel- oder Indexmieten, Gewerbeeinheiten oder Mieter mit besonderen Vereinbarungen?</p>
+      <h3>Kosten, die beim Eigentümer bleiben</h3>
+      <p>Verwaltung, Instandhaltung und nicht umlagefähige Betriebskosten mindern den Ertrag. Erst danach zeigt sich, was für Zins und Tilgung übrig bleibt.</p>
+      <h3>Zustand und Capex</h3>
+      <p>Dach, Fassade, Heizung, Leitungen und Fenster: Was steht in den nächsten Jahren an und was kostet es ungefähr? Der Energieausweis gibt einen ersten Hinweis, ob die Bank einen Modernisierungsfahrplan verlangen wird.</p>
+      <h3>Rechtliches und Potenzial</h3>
+      <p>Grundbuch, Baulasten, Ausbaureserven und die Frage, ob eine spätere <a href="/lexikon/umwandlung/">Aufteilung in Wohnungseigentum</a> überhaupt möglich ist. In Berlin kann sie genehmigungspflichtig sein, etwa in sozialen Erhaltungsgebieten.</p>
+      <p>Daraus ergibt sich, ob der Kaufpreis zum Haus passt und mit welchem <a href="/lexikon/cashflow/">Cashflow</a> Sie realistisch rechnen können. Die Prüfung ist nicht auf eigene F&amp;G-Angebote beschränkt, wir prüfen auch Häuser, die Sie selbst gefunden haben.</p>
+      {% endcall %}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="finanzieren" aria-labelledby="finanzieren-titel">
+    <div class="fgs-cols-head">
+      <h2 id="finanzieren-titel">Ein Mehr&shy;familien&shy;haus finanzieren</h2>
+      {{ wide("berlin-tiergarten-band" | bild, "Straße des 17. Juni durch den Tiergarten, am Ende Brandenburger Tor und Fernsehturm") }}
+    </div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Welche Bank passt, hängt vom Objekt, Ihrer Bonität, Ihrem Eigenkapital und Ihrem übrigen Bestand ab. Neben Ihrer Bonität prüft die Bank vor allem, ob die Mieten nach Bewirtschaftungskosten den Kapitaldienst tragen, wie hoch der Instandhaltungsbedarf ist und in welchem energetischen Zustand das Haus ist.</p>
+      {% call mehr() %}
+      <p>Bei schlechteren Energieeffizienzklassen verlangen viele Banken inzwischen einen energetischen Modernisierungsfahrplan. Noch nicht alle tun das, in den nächsten Jahren wird es aber bei den meisten Banken Standard sein.</p>
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li>Mieterliste, Mietverträge und Bewirtschaftungskosten</li>
+        <li>Kapitaldienstfähigkeit des Objekts (<a href="/lexikon/dscr/">DSCR</a>)</li>
+        <li>Instandhaltung, Sanierung und Energieausweis</li>
+      </ul>
+      {% endcall %}
+      {{ textlink("/finanzierungsberatung.html", "Zur Finanzierungsberatung") }}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="bankfaehigkeit" aria-labelledby="bank-titel">
+    <div class="fgs-cols-head"><h2 id="bank-titel">Wie wir die Finanzierung eines Mehr&shy;familien&shy;hauses aufbauen</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Zuerst sehen wir uns Ihr Einkommen, Ihr Eigenkapital, das Objekt und Ihr Ziel an. Dann vergleichen wir über Europace und Baufinex rund 500 Banken. Sind Ihre Einnahmen aus Vermietung und Verpachtung höher als Ihr Gehalt, gilt die Finanzierung seit 2026 bei den meisten Banken als gewerblich; dann sprechen wir Banken direkt an.</p>
+      {% call mehr() %}
+      <p>Für die Vermittlung von Immobiliardarlehen haben wir die Erlaubnis nach § 34i GewO. Ansprechpartner für Finanzierungen ist Timon Fischer.</p>
+      <p>Bei Mehrfamilienhäusern gelten eigene Regeln: Sie haben deutlich mehr Verhandlungsspielraum, die Maklercourtage lässt sich in den Kaufpreis einrechnen und Banken bewerten diese Objektklasse anders als eine einzelne Wohnung. Je größer das Objekt, desto wichtiger wird die Verbindung aus Objektcashflow, Eigenkapital, Bankpartner und langfristiger Portfoliostrategie.</p>
+      <p>Bevor der Kaufvertrag beim Notar beauftragt wird, klären wir, ob die Finanzierung realistisch ist. Eine Finanzierungszusage bleibt immer eine Einzelfallentscheidung der Bank.</p>
+      <p class="fgs-note">Nach dem Kauf kommen Fragen wie Mieterstrom, eine PV-Anlage oder die Abschreibung einer energetischen Modernisierung. Wie wir dabei begleiten, steht auf der Seite <a href="/betreuung-nach-dem-kauf/">Betreuung nach dem Kauf</a>.</p>
+      {% endcall %}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="kaeufer" aria-labelledby="kaeufer-titel">
+    <div class="fgs-cols-head"><h2 id="kaeufer-titel">Wer Mehr&shy;familien&shy;häuser kauft, und worauf er achtet</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Wer ein Mehrfamilienhaus verkauft, sollte wissen, wer es kaufen könnte. Die Gruppen unterscheiden sich weniger im Budget als in dem, was sie prüfen.</p>
+      {% call mehr() %}
+      <ul class="fgs-points" role="list">
+        <li><h3>Private Anleger mit erstem Bestand</h3><p>Die meisten Käufer beginnen nicht gleich mit einem Mehrfamilienhaus. Wer schon Wohnungen hält, sucht oft das erste ganze Haus. Entscheidend sind für diese Käufer der Cashflow nach Kapitaldienst und der Eigenkapitalbedarf.</p></li>
+        <li><h3>Langfristige Bestandshalter</h3><p>Vermögende Privatpersonen, Familien und Unternehmen, die über Jahrzehnte halten wollen. Sie achten auf Lage, Substanz und die Mietentwicklung über die Haltedauer, weniger auf die Rendite im ersten Jahr.</p></li>
+        <li><h3>Professionelle Investoren</h3><p>Wohnungsunternehmen und erfahrene Käufer entscheiden schnell, wenn die Daten vollständig sind: Ist-Miete, Faktor, Leerstand, Capex. Fehlen Unterlagen, sinkt oft das Interesse oder der gebotene Preis.</p></li>
+        <li><h3>Käufer mit Entwicklungsabsicht</h3><p>Sie suchen Häuser mit Leerstand, Ausbaureserven im Dach oder Modernisierungsbedarf. Ob ihre Pläne aufgehen, hängt an Baurecht, Genehmigungen und den bestehenden Mietverträgen.</p></li>
+        <li><h3>Käufer aus dem Ausland</h3><p>Für Steuerausländer ist die Finanzierung der Engpass, weil die meisten Banken solche Fälle grundsätzlich ablehnen. Wir arbeiten mit Instituten zusammen, die solche Konstellationen prüfen.</p></li>
+      </ul>
+      {% endcall %}
+    </div>
+  </article>
+  </div>
+</section>
+
+{# §4.7 F&G in Zahlen: Streifen wie auf der Startseite (bisheriger Titel und Werte), ohne „Angabe von F&G“ (Design-Pass 2 §7).
+   Update 13 §1.1: Der Zahlen-Schalter ist entfernt, Timon hat die Zahlen bestätigt; damit entfällt auch die Google-Kachel aus Update 12 §1. #}
+{{ facts({ id: "zahlen", titel: "F&G in Zahlen", hochzaehlen: true, mitte: true, items: [
+  { wert: "100+", text: "Interessenten für Mehrfamilienhäuser deutschlandweit" },
+  { wert: "50+", text: "neue Kapitalanlage-Interessenten pro Monat" },
+  { wert: "über 4 Mio. €", text: "begleitetes Finanzierungsvolumen 2026" }
+] }) }}
+
+{# F Formular (Feldnamen und Versand unverändert) #}
+<section class="fgs-section" id="anfrage-bereich" aria-labelledby="anfrage-titel">
+  <div class="fgs-wrap fgs-formblock fgs-formblock--breit">
+    <div class="fgs-formblock-text">
+      <h2 id="anfrage-titel">Ihr Vorhaben in wenigen Angaben</h2>
+      <p class="fgs-lead">Sagen Sie uns, ob Sie verkaufen, kaufen oder finanzieren möchten. Wir melden uns mit einem Terminvorschlag für das erste Gespräch.</p>
+      <h3>Wer sich meldet</h3>
+      <p>Für Verkauf und Kauf in Berlin und Brandenburg Lennart Geserich, für Finanzierungen sowie Leipzig und Dresden Timon Fischer.</p>
+    </div>
+    <div class="fgs-formblock-form">
+    <div class="fgd-form-card" id="anfrage">
+      <h2>Mehrfamilienhaus besprechen</h2>
+      <p>Pflichtfelder sind mit * markiert.</p>
+      <form method="post" action="/.netlify/functions/propstack-lead?concern=Mehrfamilienhaus%20verkaufen" class="fgd-form" data-fgd-lead-form data-concern="Mehrfamilienhaus verkaufen" novalidate>
+        <input type="hidden" name="object_type" value="Mehrfamilienhaus">
+        <fieldset>
+          <legend>Ihr Vorhaben</legend>
+          <div class="fgd-field-row">
+            <label>Ihr Anliegen *
+              <select name="concern" required>
+                <option value="">Bitte wählen</option>
+                <option value="Mehrfamilienhaus verkaufen">Mehrfamilienhaus verkaufen</option>
+                <option value="Mehrfamilienhaus kaufen">Mehrfamilienhaus kaufen</option>
+                <option value="Mehrfamilienhaus finanzieren">Mehrfamilienhaus finanzieren</option>
+              </select>
+            </label>
+            <label>Ort oder Region<input name="location" placeholder="z.&nbsp;B. Berlin-Neukölln oder Leipzig"></label>
+          </div>
+          <div class="fgd-field-row">
+            <label>Anzahl Einheiten<input name="extra:Einheiten" inputmode="numeric" placeholder="optional"></label>
+            <label>Kaufpreis oder Preisvorstellung<input name="budget" inputmode="decimal" placeholder="in Euro, optional"></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Ihre Kontaktdaten</legend>
+          <div class="fgd-field-row">
+            <label>Vorname *<input name="first_name" required autocomplete="given-name"></label>
+            <label>Nachname *<input name="last_name" required autocomplete="family-name"></label>
+          </div>
+          <div class="fgd-field-row">
+            <label>E-Mail *<input name="email" type="email" required autocomplete="email"></label>
+            <label>Telefon<input name="phone" type="tel" autocomplete="tel" placeholder="für Rückfragen"></label>
+          </div>
+          <label>Nachricht<textarea name="message" rows="3" maxlength="3000" placeholder="optional, zum Beispiel Zeitrahmen oder Exposé-Link"></textarea></label>
+        </fieldset>
+        <label class="fgd-hp" aria-hidden="true">Website<input name="company_website" tabindex="-1" autocomplete="off"></label>
+        <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
+        <div class="fgd-status" data-fgd-lead-status hidden></div>
+        <button type="submit" class="fgd-btn fgd-btn-navy">Anfrage senden{{ icon("arrow") | safe }}</button>
+      </form>
+      <div class="fgd-form-done" data-fgd-lead-done tabindex="-1" hidden>
+        <h3>Vielen Dank, Ihre Anfrage ist da</h3>
+        <p>Wir melden uns bei Ihnen, um einen Termin für das erste Gespräch zu finden. Wenn es eilt, erreichen Sie uns unter <a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a>.</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>

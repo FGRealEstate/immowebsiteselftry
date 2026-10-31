@@ -7,11 +7,144 @@
   "keywords": [
     "instandhaltung"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Immobilienkauf",
-  "formula": null,
+  "formula": "Instandhaltung pro Jahr = Ansatz in €/m² × Wohnfläche",
   "sources": [],
   "assistantAnswer": "Maßnahmen zum Erhalt des bestimmungsgemäßen Zustands. Instandhaltung umfasst Maßnahmen, die den ordnungsgemäßen Zustand erhalten und Verschleiß vorbeugen. Sie ist von Modernisierung und größerer Instandsetzung zu unterscheiden.",
-  "explanation": "Instandhaltung umfasst Maßnahmen, die den ordnungsgemäßen Zustand erhalten und Verschleiß vorbeugen. Sie ist von Modernisierung und größerer Instandsetzung zu unterscheiden.",
-  "practiceExample": "Regelmäßige Wartung der Heizung ist Instandhaltung; der vollständige Austausch gegen ein neues System kann je nach Anlass Instandsetzung und/oder Modernisierungselemente enthalten."
+  "explanation": "Instandhaltung umfasst die Arbeiten und Kosten, mit denen Mängel durch Abnutzung, Alterung und Witterung beseitigt werden und der Gebrauch der Immobilie erhalten bleibt. Als Vermieter müssen Sie die Wohnung während der Mietzeit in vertragsgemäßem Zustand erhalten; der Mieter muss Instandhaltung und Instandsetzung dulden.",
+  "practiceExample": "Angenommen, Sie besitzen eine vermietete Wohnung in Bernau: 65 m², Baujahr 1995. Je nach Zustand setzen wir 5 bis 15 €/m² im Jahr an, also 325 bis 975 €; bei ordentlichem Zustand 10 €/m², das sind 650 € im Jahr. Der amtliche Modellwert für die Wertermittlung liegt ab 2026 bei 14,40 €/m², hier 936 € im Jahr. Finanztip nennt als Faustregel 1,5 % des Zeitwerts des Gebäudeteils.",
+  "ausbau": {
+    "einordnung": [
+      "Instandhaltung umfasst die Arbeiten und Kosten, mit denen Mängel durch Abnutzung, Alterung und Witterung beseitigt werden und der Gebrauch der Immobilie erhalten bleibt.[[1]] Als Vermieter müssen Sie die Wohnung während der Mietzeit in vertragsgemäßem Zustand erhalten; der Mieter muss Instandhaltung und Instandsetzung dulden.[[2,3]]",
+      "Instandhaltungskosten sind keine Betriebskosten und werden nicht über die Nebenkosten abgerechnet.[[1]] In der Wertermittlung zählen sie zu den Bewirtschaftungskosten, gerechnet im langjährigen Mittel über die Restnutzungsdauer.[[4]]"
+    ],
+    "beispiel": [
+      "Angenommen, Sie besitzen eine vermietete Wohnung in Bernau: 65 m², Baujahr 1995. Je nach Zustand setzen wir 5 bis 15 €/m² im Jahr an, also 325 bis 975 €; bei ordentlichem Zustand 10 €/m², das sind 650 € im Jahr.",
+      "Der amtliche Modellwert für die Wertermittlung liegt ab 2026 bei 14,40 €/m², hier 936 € im Jahr.[[5]] Finanztip nennt als Faustregel 1,5 % des Zeitwerts des Gebäudeteils.[[6]]"
+    ],
+    "abschnitte": [
+      {
+        "h2": "Instandhaltung und Modernisierung",
+        "absaetze": [
+          "Instandhaltung erhält den Zustand, eine Modernisierung verbessert ihn. Kosten, die ohnehin für die Erhaltung nötig gewesen wären, dürfen nicht in eine Modernisierungsumlage einfließen.[[7]] Steuerlich sind Erhaltungsaufwendungen im Jahr der Zahlung als Werbungskosten abziehbar; größere Beträge können Sie auf zwei bis fünf Jahre verteilen.[[8,9]] Übersteigen Instandsetzung und Modernisierung in den ersten drei Jahren nach dem Kauf 15 % der Anschaffungskosten des Gebäudes ohne Umsatzsteuer, werden sie als Herstellungskosten abgeschrieben.[[10]]"
+        ]
+      },
+      {
+        "h2": "In der Eigentumswohnung",
+        "absaetze": [
+          "Am gemeinschaftlichen Eigentum beschließt die Gemeinschaft die Erhaltung und bezahlt größere Maßnahmen aus der Erhaltungsrücklage.[[11,12]] Die Rücklage dient dem Gemeinschaftseigentum; Reparaturen in Ihrer eigenen Wohnung kommen dazu.[[12]] F&G prüft beim Kauf neben der WEG auch den absehbaren Investitionsbedarf.[[13]]"
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "§ 1 Betriebskostenverordnung (BetrKV)",
+        "url": "https://www.gesetze-im-internet.de/betrkv/__1.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 535 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__535.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 555a BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__555a.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 32 Immobilienwertermittlungsverordnung (ImmoWertV)",
+        "url": "https://www.gesetze-im-internet.de/immowertv_2022/__32.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Gutachterausschuss Barnim: Grundstücksmarktbericht 2025",
+        "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+        "stand": "Berichtsjahr 2025, abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Mietrendite berechnen",
+        "url": "https://www.finanztip.de/baufinanzierung/mietrendite-berechnen/",
+        "stand": "Stand 01.04.2026"
+      },
+      {
+        "name": "§ 559 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__559.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Steuertipps für Vermieter",
+        "url": "https://www.finanztip.de/steuertipps-vermieter/",
+        "stand": "Stand 08.07.2026"
+      },
+      {
+        "name": "§ 82b Einkommensteuer-Durchführungsverordnung (EStDV)",
+        "url": "https://www.gesetze-im-internet.de/estdv_1955/__82b.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 6 EStG",
+        "url": "https://www.gesetze-im-internet.de/estg/__6.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 19 Wohnungseigentumsgesetz (WEG)",
+        "url": "https://www.gesetze-im-internet.de/woeigg/__19.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Hausgeld",
+        "url": "https://www.finanztip.de/eigentumswohnung/hausgeld/",
+        "stand": "Stand 10.11.2025"
+      },
+      {
+        "name": "Fischer & Geserich: Ankaufsberatung",
+        "url": "https://fg-realestate.de/ankaufsberatung.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Mängel durch Abnutzung, Alterung, Witterung; Verwaltung und Instandhaltung keine Betriebskosten",
+        "fundstelle": "runde-4.md, J26"
+      },
+      {
+        "zahl": "Erhaltungspflicht des Vermieters; Duldung",
+        "fundstelle": "runde-4.md, J25, J24"
+      },
+      {
+        "zahl": "Instandhaltungskosten im langjährigen Mittel, Restnutzungsdauer; Bewirtschaftungskosten",
+        "fundstelle": "runde-4.md, J27; runde-3.md, N02"
+      },
+      {
+        "zahl": "Modellwert ab 2026 14,40 €/m²",
+        "fundstelle": "runde-3.md, N04"
+      },
+      {
+        "zahl": "1,5 % des Zeitwerts des Gebäudeteils (Finanztip)",
+        "fundstelle": "runde-3.md, C03"
+      },
+      {
+        "zahl": "Erhaltungskosten nicht in die Modernisierungsumlage",
+        "fundstelle": "runde-4.md, J22"
+      },
+      {
+        "zahl": "Erhaltungsaufwand im Jahr der Zahlung; Verteilung zwei bis fünf Jahre; 15-%-Grenze drei Jahre",
+        "fundstelle": "runde-3.md, H01, H03, H04"
+      },
+      {
+        "zahl": "ordnungsmäßige Erhaltung; Rücklage für Gemeinschaftseigentum",
+        "fundstelle": "runde-4.md, Q04, Q13"
+      },
+      {
+        "zahl": "F&G prüft WEG und absehbaren Investitionsbedarf",
+        "fundstelle": "runde-1.md, D05"
+      },
+      {
+        "zahl": "5 bis 15 €/m² × 65 = 325 bis 975 €; 10 €/m² = 650 € (C16); 14,40 × 65 = 936 €",
+        "fundstelle": "Rechnung, Marktprüfung runde-4.md"
+      }
+    ]
+  }
 }

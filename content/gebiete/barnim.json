@@ -1,0 +1,413 @@
+{
+  "slug": "barnim",
+  "name": "Barnim",
+  "nameLang": "Landkreis Barnim",
+  "inOrt": "im Landkreis Barnim",
+  "fuerOrt": "den Landkreis Barnim",
+  "typ": "landkreis",
+  "orte": [
+    "Bernau bei Berlin",
+    "Panketal",
+    "Ahrensfelde",
+    "Eberswalde",
+    "Joachimsthal"
+  ],
+  "ersetzt": [
+    "joachimsthal"
+  ],
+  "kontakt": "lennart",
+  "title": "Immobilienmakler Barnim – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler im Landkreis Barnim: verkaufen, kaufen und finanzieren in Bernau, Panketal, Ahrensfelde und Eberswalde, mit Bodenrichtwerten 2026.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren im Landkreis Barnim",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger im Landkreis Barnim beim Verkauf, beim Kauf und bei der Finanzierung, von Bernau bei Berlin über Panketal und Ahrensfelde am Berliner Stadtrand bis Eberswalde und Joachimsthal. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für alle Orte auf dieser Seite ist Lennart Geserich Ihr Ansprechpartner, Head of Sales & Vermietung.",
+  "hero": {
+    "name": "barnim-blumberg-luftbild",
+    "alt": "Blumberg in der Gemeinde Ahrensfelde aus der Luft: Felder, dazwischen die Ortslage und kleinere Siedlungen",
+    "credit": "Olaf Tausch, CC BY 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Blumberg_Luftbild_2020_01.jpg",
+    "position": "50% 60%"
+  },
+  "stand": "Oktober 2026",
+  "updated": "2026-10-26",
+  "zahlen": [
+    {
+      "wert": "460 €/m²",
+      "label": "Höchster Bodenrichtwert für Wohnbauland im Landkreis ohne Wassergrundstücke, Eiche / Süd in Ahrensfelde",
+      "detail": "Ein Jahr zuvor 500 €/m². Am unteren Ende stehen 12 €/m² in Parstein im Nordosten; Wassergrundstücke am Wandlitzsee liegen bei 500 und 650 €/m².",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Barnim; BORIS Brandenburg",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+      "stichtag": "01.01.2026"
+    },
+    {
+      "wert": "Ø 4.410 €/m²",
+      "label": "Freistehende Ein- und Zweifamilienhäuser ab Baujahr 2016 in Ahrensfelde",
+      "detail": "12 Kauffälle, normierter Kaufpreis je m² Wohnfläche. Panketal, Baujahre 1991 bis 2015: Ø 4.000 €/m²; Eberswalde, alle Baujahre: Ø 2.570 €/m².",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Barnim",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 2.640 €/m²",
+      "label": "Gebrauchte Eigentumswohnungen in Zepernick, Baujahr nach 1992",
+      "detail": "9 Kauffälle. Schwanebeck Ø 2.570, Eberswalde Ø 1.950, Joachimsthal Ø 1.620 €/m².",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Barnim",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 9,2 €/m²",
+      "label": "Nettokaltmiete in Panketal",
+      "detail": "10 Fälle. Ahrensfelde Ø 8,2, Eberswalde Ø 8 €/m². Wegen der geringen Datenmenge dient die Übersicht laut Gutachterausschuss nur bedingt als Orientierung.",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Barnim",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+      "stichtag": "Mietdaten 2024–2025"
+    },
+    {
+      "wert": "194.885",
+      "label": "Einwohner im Landkreis Barnim",
+      "detail": "716 mehr als ein Jahr zuvor. Das Landesamt für Bauen und Verkehr erwartet für 2040 205.264 Einwohner, für Bernau ein Plus von 20 %.",
+      "quelle": "Amt für Statistik Berlin-Brandenburg; LBV Brandenburg",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stichtag": "31.12.2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Bernau bei Berlin: größte Stadt im Landkreis",
+      "absaetze": [
+        "Mit 44.706 Einwohnern Ende 2025 ist Bernau die größte Stadt im Barnim, knapp vor Eberswalde.[[3]] Das Landesamt für Bauen und Verkehr erwartet hier bis 2040 ein Plus von 20,0 %, mehr als für jede andere Gemeinde im Landkreis.[[4]] Mit RE3 und S1 über Gesundbrunnen sind es 27 Minuten bis Friedrichstraße, mit der S2 direkt 35 Minuten.[[8]]",
+        "2025 gab es in Bernau 322 Kauffälle. 122 davon betrafen Wohnungs- und Teileigentum, mehr als in jeder anderen Gemeinde des Landkreises. Die Bodenrichtwerte im Stadtgebiet liegen zum 01.01.2026 zwischen 250 und 370 €/m², freistehende Einfamilienhäuser kosteten im Mittel 3.340 €/m² Wohnfläche bei 52 Kauffällen. Fast die Hälfte der Mietdaten aus dem Berliner Umland des Barnim stammt aus Bernau; die mittlere Nettokaltmiete lag bei 10,3 €/m² aus 46 Fällen.[[1]] Seit dem 01.01.2026 gilt die Mietpreisbremse.[[5]] Bodenrichtwerte nach Ortsteilen, Mieten und Neubauprojekte finden Sie auf unserer <a href=\"/standorte/bernau/\">Seite zu Bernau bei Berlin</a>."
+      ],
+      "bild": {
+        "name": "bernau-st-marien",
+        "alt": "Backsteinfassade der Kirche St. Marien mit Bäumen davor",
+        "caption": "Die Stadtpfarrkirche St. Marien in Bernau.",
+        "credit": "Subbass1, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Bernau,_St._Marien_(76).jpg"
+      }
+    },
+    {
+      "h2": "Panketal: Zepernick und Schwanebeck an der S2",
+      "absaetze": [
+        "Panketal besteht aus den Ortsteilen Zepernick und Schwanebeck und ist mit etwa 826 Einwohnern je km² die am dichtesten besiedelte Gemeinde im Barnim.[[1]] Ende 2025 lebten hier 21.343 Menschen, 190 mehr als ein Jahr zuvor; bis 2040 erwartet das Landesamt für Bauen und Verkehr kaum eine Veränderung (−0,4 %).[[3,4]] Die S2 fährt in Zepernick alle 20 Minuten und braucht 30 Minuten bis Friedrichstraße.[[8]] Im Grundstücksmarktbericht bilden Panketal und Ahrensfelde eine eigene Teilregion „berlinangrenzend“.[[1]]",
+        "Zum 01.01.2026 sind alle acht Bodenrichtwerte für Wohn- und gemischte Bauflächen unverändert: 400 €/m² in der Reihenhauszone Schwanebeck / West, 380 in der Ortslage Schwanebeck, 370 in Zepernick / West, 360 in Zepernick / Ost und 350 im Zentrum von Zepernick; in Hobrechtsfelde sind es 125 €/m².[[2]] Baugrundstücke kosteten 2025 im Mittel 360 €/m² bei 36 Kauffällen, 2024 waren es 397 €/m² bei 11. Im neuen Wohngebiet an der Rigistraße in Schwanebeck wurden 2025 acht Grundstücke mit im Mittel 550 m² für 380 €/m² verkauft.[[1]]",
+        "Für freistehende Ein- und Zweifamilienhäuser der Baujahre 1991 bis 2015 zahlten Käufer im Mittel 4.000 €/m² Wohnfläche, für Häuser bis Baujahr 1945 2.910 €/m². Gebrauchte Eigentumswohnungen mit Baujahr nach 1992 kosteten in Zepernick 2.640 €/m², in Schwanebeck 2.570 €/m², in beiden Ortsteilen weniger als im Vorjahr. Verkaufte Altbauwohnungen lagen 2025 nur in vier Gemeinden des Barnim, darunter Panketal.[[1]] Seit dem 01.01.2026 gilt die Mietpreisbremse; in der Bewertung des Landes erreichte Panketal 10 von 10 Punkten.[[5]] Die mittlere Nettokaltmiete lag bei 9,2 €/m² aus 10 Fällen.[[1]]"
+      ],
+      "bild": {
+        "name": "barnim-zepernick-robert-koch-strasse",
+        "alt": "Die Robert-Koch-Straße in Zepernick mit Bäumen am Straßenrand, links Einfamilienhäuser, rechts eine Wiese",
+        "caption": "Die Robert-Koch-Straße in Zepernick, Gemeinde Panketal.",
+        "credit": "Leonhard Lenz, CC0",
+        "url": "https://commons.wikimedia.org/wiki/File:Robert-Koch-Stra%C3%9Fe_Zepernick_2021-08-26_01.jpg"
+      }
+    },
+    {
+      "h2": "Ahrensfelde: Eiche, Lindenberg, Blumberg und Mehrow",
+      "absaetze": [
+        "Zur Gemeinde gehören die Ortsteile Ahrensfelde, Blumberg, Eiche, Lindenberg und Mehrow.[[1]] Eiche liegt direkt am Berliner Stadtrand; hier entstanden in den 1930er-Jahren die Siedlungen Hoheneiche, Eiche Süd-A und Eiche Süd-B.[[9]] Blumberg liegt an der B 158 und am Berliner Ring, mit einem großen Gewerbegebiet an der Autobahn.[[10]] Ende 2025 hatte Ahrensfelde 14.464 Einwohner, bis 2040 erwartet das Landesamt für Bauen und Verkehr 5,6 % mehr.[[3,4]] Vom S-Bahnhof Ahrensfelde fährt die S7 alle 10 Minuten und braucht 32 Minuten bis Friedrichstraße; von Blumberg sind es mit RB25, U5 und S5 43 Minuten.[[8]]",
+        "Abgesehen von Wassergrundstücken am Wandlitzsee hat Eiche / Süd mit 460 €/m² zum 01.01.2026 den höchsten Bodenrichtwert für Wohnbauland im Landkreis (Vorjahr 500 €/m²).[[1,2]] Die Reihenhauszonen an Goethe- und Schillerstraße liegen bei 400 €/m², Lindenberg bei 320 bis 340, die Ortslagen Mehrow und Blumberg bei 290 und 270 €/m²; gestiegen ist keine Zone.[[2]] Baugrundstücke kosteten 2025 im Mittel 347 €/m² bei 12 Kauffällen, nach 399 €/m² im Jahr 2024.[[1]]",
+        "Viele Verkäufe betreffen neuere Reihen- und Doppelhäuser: 37 von 54 stammten 2025 aus Baujahren ab 2016, im Mittel für 4.430 €/m² Wohnfläche. Neue Eigentumswohnungen wurden im Berliner Umland des Barnim nur in Ahrensfelde und Wandlitz verkauft, in Lindenberg für im Mittel 4.980 €/m².[[1]] Seit dem 01.01.2026 gilt die Mietpreisbremse.[[5]]",
+        "Seit dem Schuljahr 2026/27 lernen drei siebte Klassen des neuen Gymnasiums Ahrensfelde im Interimsbau in Lindenberg; der endgültige Standort ist die Ulmenallee.[[11]] Grundschulen gibt es in Lindenberg und Blumberg, dort auch eine Oberschule.[[12]]"
+      ],
+      "bild": {
+        "name": "barnim-dorfteich-lindenberg",
+        "alt": "Dorfteich in Lindenberg im Sommer, im Hintergrund die Dorfkirche",
+        "caption": "Der Dorfteich in Lindenberg, Gemeinde Ahrensfelde.",
+        "credit": "Geoprofi Lars, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Dorfteich_in_Lindenberg_(Ahrensfelde).jpg",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "h2": "Eberswalde: eigener Markt im Norden",
+      "absaetze": [
+        "Eberswalde hatte Ende 2025 41.867 Einwohner, 386 mehr als ein Jahr zuvor, und ist nach Bernau die zweitgrößte Stadt im Landkreis.[[3]] Anders als die Orte am Berliner Stadtrand zählt die Stadt im Grundstücksmarktbericht zum weiteren Metropolenraum.[[1]] Mit RE3 und S1 sind es 42 Minuten bis Friedrichstraße; der RE3 fährt stündlich.[[8]]",
+        "Die Preise liegen deutlich unter denen am Stadtrand: Die Bodenrichtwerte in Eberswalde und Finow reichen von 100 bis 190 €/m², Baugrundstücke kosteten 2025 im Mittel 141 €/m² bei 21 Kauffällen. Anders als in der Hälfte der Gemeinden stiegen hier die Baulandpreise; im neuen Wohngebiet am Christel-Brauns-Weg in Finow wurden 17 Grundstücke für im Mittel 140 €/m² verkauft. Freistehende Einfamilienhäuser kosteten im Mittel 2.570 €/m² Wohnfläche, die mittlere Nettokaltmiete lag bei 8 €/m² aus 14 Fällen.[[1]] Einen Mietspiegel nennt der Gutachterausschuss im Landkreis nur für Eberswalde; die Mietpreisbremse gilt hier nicht.[[1,5]] Mehr zur Stadt finden Sie auf unserer <a href=\"/standorte/eberswalde/\">Seite zu Eberswalde</a>."
+      ],
+      "bild": {
+        "name": "barnim-eberswalde-teufelsbruecke",
+        "alt": "Gemauerte Bogenbrücke über ein von Bäumen gesäumtes Gewässer am Treidelweg in Eberswalde",
+        "caption": "Die Teufelsbrücke am Treidelweg in Eberswalde.",
+        "credit": "OTFW, Berlin, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Denkmal_Treidelweg_(Eberswalde)_Teufelsbrücke.jpg"
+      }
+    },
+    {
+      "h2": "Joachimsthal und der Werbellinsee",
+      "absaetze": [
+        "Joachimsthal hatte Ende 2025 3.303 Einwohner, 99 weniger als ein Jahr zuvor.[[3]] Das Amt Joachimsthal (Schorfheide) ist mit 25 Einwohnern je km² am dünnsten besiedelt im Landkreis; das Landesamt für Bauen und Verkehr erwartet dort bis 2040 7,3 % weniger Einwohner.[[1,4]] Die RB63 fährt stündlich in 22 Minuten nach Eberswalde, bis Friedrichstraße sind es mit zwei Umstiegen etwa anderthalb Stunden.[[8]]",
+        "Im Amt gab es 2025 70 Kauffälle, 28 davon Wohnungs- und Teileigentum. Gebrauchte Eigentumswohnungen kosteten in Joachimsthal im Mittel 1.620 €/m² (8 Kauffälle), freistehende Einfamilienhäuser im Amt 2.110 €/m² Wohnfläche (9 Kauffälle). Die Bodenrichtwerte reichen von 15 bis 150 €/m²; für Wassergrundstücke an der Nordseite des Werbellinsees liegt der Wert bei 200 €/m².[[1]] Häuser bis Baujahr 1945 kosteten im Mittel 1.510 €/m², allerdings bei nur 4 Kauffällen; für Mieten nennt der Gutachterausschuss im Amt 5,9 €/m² aus nur 3 Fällen.[[1]] Wie Eberswalde zählt das Amt zum weiteren Metropolenraum, die Mietpreisbremse gilt nicht.[[1,5]]"
+      ],
+      "bild": {
+        "name": "barnim-joachimsthal-kaiserbahnhof",
+        "alt": "Der Kaiserbahnhof in Joachimsthal: ein Fachwerkbau mit roten Balken und steilem Ziegeldach unter blauem Himmel",
+        "caption": "Der Kaiserbahnhof in Joachimsthal.",
+        "credit": "Doris Antony, Berlin, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Joachimsthal_Kaiserbahnhof.jpg"
+      }
+    }
+  ],
+  "band": {
+    "name": "barnim-liepnitzsee-lanke",
+    "alt": "Der Liepnitzsee bei Lanke unter blauem Himmel, am Ufer dichter Mischwald, der sich im Wasser spiegelt",
+    "caption": "Der Liepnitzsee bei Lanke, Gemeinde Wandlitz.",
+    "credit": "Lukas Beck, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Lanke_Liepnitzsee_lub_2023-08-11.jpg"
+  },
+  "anbindung": [
+    "Zepernick und Bernau liegen an der S2, am S-Bahnhof Ahrensfelde fährt die S7 alle 10 Minuten. Von Blumberg, Eberswalde und Joachimsthal fahren Sie zunächst mit RB25, RE3 oder RB63.[[8]]",
+    "Die S2 fährt in Zepernick alle 20 Minuten und braucht 30 Minuten bis Friedrichstraße.[[8]]"
+  ],
+  "karte": {
+    "alt": "Karte des Landkreises Barnim bis Berlin: Bernau bei Berlin, Panketal, Ahrensfelde, Eberswalde und Joachimsthal, die Orte Zepernick, Schwanebeck, Lindenberg, Blumberg, Eiche, Hobrechtsfelde, Wandlitz, Biesenthal, Finow und Altenhof, dazu Bahnstrecken, Gewässer, die Autobahn und der Bahnhof Berlin Friedrichstraße, auf den sich die Fahrzeiten beziehen"
+  },
+  "verkaufen": {
+    "h2": "Immobilie im Landkreis Barnim verkaufen",
+    "absaetze": [
+      "Von der Berliner Stadtgrenze bis an die nordöstliche Kreisgrenze fallen die Preise stark: Ohne Wassergrundstücke reichen die Bodenrichtwerte für Wohnbauland von 460 €/m² in Eiche bis 12 €/m² in Parstein, Einfamilienhäuser kosteten 2025 in Ahrensfelde im Mittel 3.850 €/m² Wohnfläche, in Eberswalde 2.570 €/m².[[1]] Wir bewerten deshalb nach den Zahlen Ihrer Gemeinde und Ihres Baujahrs, nicht nach einem Mittelwert für den Landkreis.",
+      "2025 wurden rund 40 % mehr Wohnbaugrundstücke verkauft als im Vorjahr; in der Hälfte der Ämter und Gemeinden sanken dabei die mittleren Preise. Die Zahl der Erstverkäufe von Eigentumswohnungen ging um zwei Drittel zurück.[[1]] In Panketal und Ahrensfelde blieben die meisten Bodenrichtwerte zum 01.01.2026 gleich.[[2]]",
+      "Bei vermieteten Wohnungen kommt es auf die Gemeinde an: In Ahrensfelde, Bernau, Biesenthal und Panketal gilt seit dem 01.01.2026 die Mietpreisbremse, in Eberswalde und Joachimsthal nicht.[[5]] Kapitalanleger rechnen damit, deshalb nehmen wir es in Preisfindung und Exposé auf."
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren im Landkreis Barnim",
+    "absaetze": [
+      "Als Eigennutzer klären Sie zuerst den Weg nach Berlin. Zepernick und Bernau liegen an der S2, am S-Bahnhof Ahrensfelde fährt die S7 alle 10 Minuten. Von Blumberg, Eberswalde und Joachimsthal fahren Sie zunächst mit RB25, RE3 oder RB63.[[8]] Wenn Sie neu bauen wollen: Bauanträge reichen Sie beim Landkreis seit dem 01.10.2026 nur noch digital über das Virtuelle Bauamt Brandenburg ein.[[13]]",
+      "Als Kapitalanleger prüfen Sie Miete und Kaufpreis gegen den Grundstücksmarktbericht. Im Berliner Umland des Barnim lag der Liegenschaftszinssatz für Mehrfamilienhäuser in den Jahren 2023 bis 2025 im Mittel bei 4,0 %, für vermietete Eigentumswohnungen 2025 bei 2,8 %. Die Mietübersicht des Gutachterausschusses beruht auf wenigen Daten; einen Mietspiegel nennt er nur für Eberswalde.[[1]]"
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für den Landkreis Barnim",
+    "absaetze": [
+      "In Ahrensfelde kosteten freistehende Einfamilienhäuser ab Baujahr 2016 im Jahr 2025 normiert 636.000 €, Doppel- und Reihenhäuser dieser Baujahre 523.000 €. Normiert heißt, der Gutachterausschuss hat zum Beispiel separat verwertbare Grundstücksteile und Ausstattung wie die Küche herausgerechnet.[[1]] Dazu kommen die Kaufnebenkosten und wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen: Wir rechnen das mit Ihnen durch, vergleichen Ihre Finanzierung über Europace und Baufinex und fragen parallel Banken direkt an."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Welcher Makler verkauft Immobilien in Bernau, Panketal und Ahrensfelde?",
+      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im Landkreis Barnim, also auch in Bernau, Panketal und Ahrensfelde. Ihr Ansprechpartner ist Lennart Geserich. Grundlage unserer Bewertung sind der Bodenrichtwert Ihrer Zone und die Preise, die der Gutachterausschuss für Ihre Gemeinde und Ihr Baujahr ausweist.",
+      "herkunft": "Prompt der KI-Recherche „Welcher Immobilienmakler in Bernau bei Berlin ist gut?“ (q40) (ChatGPT, Gemini; Dashboard/src/data/research/ai_answers.json, Oktober 2026) und Google-Suche „Immobilienmakler Bernau“ (Google_Areas, Oktober 2026)"
+    },
+    {
+      "frage": "Wie hoch sind die Bodenrichtwerte im Landkreis Barnim?",
+      "antwort": "Zum 01.01.2026 reichen sie für Wohnbauland von 12 €/m² in Parstein bis 460 €/m² in Eiche / Süd; Wassergrundstücke am Wandlitzsee liegen mit 500 und 650 €/m² darüber. Für Einfamilienhausgrundstücke nennt der Gutachterausschuss unter anderem diese Spannen: Eiche 370 bis 460, Panketal 240 bis 380, Bernau 250 bis 370, Eberswalde und Finow 100 bis 190, Amt Joachimsthal (Schorfheide) 15 bis 150 €/m². In rund 60 % des Landkreises blieben die Werte gegenüber dem Vorjahr gleich.[[1]] Den Wert Ihrer Zone finden Sie in BORIS Brandenburg.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilie verkaufen Bernau“ und „Immobilienbewertung Bernau“, dort als „Wie hoch ist der Bodenrichtwert in Bernau bei Berlin?“ (Google_Areas, Oktober 2026)"
+    },
+    {
+      "frage": "Gilt die Mietpreisbremse im Landkreis Barnim?",
+      "antwort": "In vier Gemeinden: Ahrensfelde, Bernau bei Berlin, Biesenthal und Panketal gehören seit dem 01.01.2026 zur Gebietskulisse, Eberswalde und Joachimsthal nicht; die Verordnung gilt bis 31.12.2029. Bei Neuvermietung in Gebäuden, die vor dem 1. Oktober 2014 fertiggestellt und bezogen wurden, darf die Miete dort höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[5,7]] Bestandsmieten dürfen dort bis 31.12.2030 in drei Jahren um höchstens 15 % steigen.[[6,7]] Für Ihre Renditerechnung heißt das: Bei älteren Wohnungen in den vier Gemeinden ist die Miete bei einer Neuvermietung nach oben begrenzt.",
+      "herkunft": "Prompt der KI-Recherche „Mietpreisbremse in Berlin und Brandenburg: was heißt das für meine Rendite?“ (q24) (ChatGPT, Gemini; Dashboard/src/data/research/ai_answers.json, Oktober 2026)"
+    },
+    {
+      "frage": "Ich habe ein Haus im Barnim geerbt. Wer kann den Verkauf übernehmen?",
+      "antwort": "Wir verkaufen auch geerbte Immobilien. Zuerst klären wir mit Ihnen, in welchem rechtlichen Status sich das Haus befindet und welche Unterlagen vorliegen; häufig geht es auch um die Liquidität für die Erbschaftsteuer. Je nach Ihrer Situation ist eine Finanzierung dafür manchmal sinnvoller als ein schneller Verkauf unter Zeitdruck; das besprechen wir mit Ihnen in Ruhe. Für den Preis zählt bei älteren Häusern der Vergleich nach Baujahr: Freistehende Einfamilienhäuser bis Baujahr 1945 kosteten 2025 in Panketal im Mittel 2.910 €/m² Wohnfläche, in Eberswalde 2.430, im Amt Joachimsthal 1.510 €/m².[[1]]",
+      "herkunft": "Prompt der KI-Recherche „Ich habe ein Haus in Brandenburg geerbt und wohne nicht vor Ort. Wer kann den Verkauf für mich übernehmen?“ (q52) (ChatGPT, Gemini; Dashboard/src/data/research/ai_answers.json, Oktober 2026). Antwort nach der FAQ der Live-Seite „Verkauft ihr auch geerbte Immobilien?“; zur Abwicklung aus der Ferne gibt es keine Angabe, deshalb ohne diesen Teil der Frage"
+    },
+    {
+      "frage": "Was kostet eine Immobilienbewertung im Barnim?",
+      "antwort": "Bei Fischer & Geserich nichts. Die Wertermittlung liegt meistens nach wenigen Stunden vor, oft noch am selben Tag. Wir gehen vom Bodenrichtwert und den gezahlten Preisen in Ihrer Gemeinde aus; in Eberswalde gab es 2025 197 Kauffälle, in Panketal 186, in Ahrensfelde 185.[[1]] Kostenpflichtig ist dagegen ein Verkehrswertgutachten eines Sachverständigen oder des Gutachterausschusses, wie es etwa für das Finanzamt oder eine Erbauseinandersetzung nötig werden kann.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienbewertung Bernau“, dort als „Was kostet eine seriöse Immobilienbewertung?“ (Google_Areas, Oktober 2026)"
+    },
+    {
+      "frage": "Ist es aktuell sinnvoll, eine Immobilie im Barnim zu verkaufen?",
+      "antwort": "Das hängt von Ihrer Lage und Ihren Plänen ab; eine Prognose geben wir nicht. Die Zahlen für 2025: Im Landkreis gab es 1.924 Kauffälle, rund 3 % mehr als 2024, mit Zuwächsen unter anderem in Ahrensfelde, Panketal und Eberswalde. Freistehende Einfamilienhäuser kosteten in Ahrensfelde im Mittel 3.850 €/m² Wohnfläche (Vorjahr 3.740), in Panketal 3.540 €/m² (Vorjahr 3.620).[[1]]",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilie verkaufen Bernau“, dort als „Ist es aktuell sinnvoll, eine Immobilie zu verkaufen?“ (Google_Areas, Oktober 2026)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Bernau bei Berlin",
+      "url": "/standorte/bernau/"
+    },
+    {
+      "name": "Eberswalde",
+      "url": "/standorte/eberswalde/"
+    },
+    {
+      "name": "Landkreis Oberhavel",
+      "url": "/standorte/oberhavel/"
+    },
+    {
+      "name": "Landkreis Märkisch-Oderland",
+      "url": "/standorte/maerkisch-oderland/"
+    },
+    {
+      "name": "Berlin-Pankow",
+      "url": "/standorte/berlin/pankow/"
+    },
+    {
+      "name": "Berlin",
+      "url": "/standorte/berlin/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Grundstücksmarktbericht Landkreis Barnim 2025, Gutachterausschuss für Grundstückswerte im Landkreis Barnim (veröffentlicht 13.05.2026)",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+      "stand": "Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+    },
+    {
+      "name": "Bodenrichtwerte Ahrensfelde und Panketal, BORIS Brandenburg (GeoBasis-DE/LGB, dl-de/by-2-0)",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?f=json&limit=500&skipGeometry=true&gemeinde_bezeichnung=Ahrensfelde&stichtag=2026-01-01",
+      "stand": "Stichtag 01.01.2026, Vergleich mit 01.01.2025"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 4 – j / 25, Bevölkerung im Land Brandenburg",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Landesamt für Bauen und Verkehr, Bevölkerungsvorausschätzung 2024 bis 2040, Anlage 3",
+      "url": "https://lbv.brandenburg.de/sixcms/media.php/9/31_Bevoelkerungsvorausschaetzung_2024-20.pdf",
+      "stand": "Basis 31.12.2023, mittlere Variante"
+    },
+    {
+      "name": "Mietpreisbegrenzungsverordnung Brandenburg, Ministerium für Infrastruktur und Landesplanung",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/Mietpreisbegrenzungsverordnung.pdf",
+      "stand": "Kabinettsbeschluss 25.11.2025, gültig 01.01.2026 bis 31.12.2029"
+    },
+    {
+      "name": "Kappungsgrenzenverordnung Brandenburg, Ministerium für Infrastruktur und Landesplanung",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/KappGrenzV.pdf",
+      "stand": "gültig 01.01.2026 bis 31.12.2030"
+    },
+    {
+      "name": "MIL, Pressemitteilung zu Mietpreisbremse und Kappungsgrenzenverordnung",
+      "url": "https://mil.brandenburg.de/mil/de/presse/detail/~25-11-2025-kabinett-mietpreisbremse-und-kappungsgrenzenverordnung",
+      "stand": "25.11.2025"
+    },
+    {
+      "name": "VBB-Fahrplandaten, Verbindungen bis S+U Friedrichstraße",
+      "url": "https://v6.vbb.transport.rest/journeys?from=900350163&to=900100001&departure=2026-11-10T09:00%2B01:00",
+      "stand": "Fahrplan Dienstag 10.11.2026 ab 9 Uhr, abgefragt 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Ahrensfelde, Ortsteil Eiche",
+      "url": "https://www.ahrensfelde.de/aktuelles-mehr/ahrensfelde-stellt-sich-vor/eiche/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Ahrensfelde, Ortsteil Blumberg",
+      "url": "https://www.ahrensfelde.de/aktuelles-mehr/ahrensfelde-stellt-sich-vor/blumberg/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Ahrensfelde, Neues Gymnasium Ahrensfelde nimmt Fahrt auf",
+      "url": "https://www.ahrensfelde.de/portal/meldungen/neues-gymnasium-ahrensfelde-nimmt-fahrt-auf-900000584-30601.html",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Ahrensfelde, Schulen",
+      "url": "https://www.ahrensfelde.de/kinder-jugend-bildung/schulen/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Landkreis Barnim, Bauanträge im Barnim werden digital (Meldung auf ahrensfelde.de)",
+      "url": "https://www.ahrensfelde.de/portal/meldungen/bauantraege-im-barnim-werden-digital-900000601-30601.html",
+      "stand": "12.10.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "194.885 Einwohner Landkreis 31.12.2025, +716; LBV 2040 205.264",
+      "fundstelle": "barnim.md, Zeilen 18, 19"
+    },
+    {
+      "zahl": "Einwohner und Veränderung 2025: Bernau 44.706 (+109), Eberswalde 41.867 (+386, zweitgrößte Stadt), Panketal 21.343 (+190), Ahrensfelde 14.464 (+41), Joachimsthal 3.303 (−99); LBV Bernau +20,0 % (größter Zuwachs im Landkreis), Panketal −0,4 %, Ahrensfelde +5,6 %, Amt Joachimsthal −7,3 %",
+      "fundstelle": "barnim.md, Zeilen 54–58, 61"
+    },
+    {
+      "zahl": "Dichte Panketal etwa 826/km², Amt Joachimsthal 25/km²",
+      "fundstelle": "barnim.md, Zeile 20"
+    },
+    {
+      "zahl": "Ortsteile Ahrensfelde und Panketal",
+      "fundstelle": "barnim.md, Zeile 62"
+    },
+    {
+      "zahl": "Kauffälle 2025: Landkreis 1.924 (+3 %); Bernau 322 (ei 122, Höchstwert), Panketal 186, Ahrensfelde 185, Eberswalde 197, Amt Joachimsthal 70 (ei 28); Zuwächse Ahrensfelde, Panketal, Eberswalde",
+      "fundstelle": "barnim.md, Zeilen 21, 46, 68, 69"
+    },
+    {
+      "zahl": "Teilregion berlinangrenzend; Eberswalde und Amt Joachimsthal im weiteren Metropolenraum",
+      "fundstelle": "barnim.md, Zeilen 29, 30"
+    },
+    {
+      "zahl": "Bernau: EFH alle Baujahre Ø 3.340 (52); fast die Hälfte der Mietdaten im Berliner Umland; Miete Ø 10,3 (46)",
+      "fundstelle": "bernau.md, Zeile 30 und Zeile 51 (Miete); barnim.md, Zeile 40"
+    },
+    {
+      "zahl": "Amt Joachimsthal: EFH bis 1945 Ø 1.510 (4); Miete Ø 5,9 (3)",
+      "fundstelle": "barnim.md, Zeilen 73, 78"
+    },
+    {
+      "zahl": "BRW-Gefälle 12 (Parstein) bis 460 (Eiche / Süd), Wassergrundstücke Wandlitzsee 500 und 650; Spannen Eiche 370–460, Bernau 250–370, Eberswalde/Finow 100–190, Amt Joachimsthal 15–150, Panketal 240–380; rund 60 % unverändert; Werbellinsee Nordseite 200",
+      "fundstelle": "barnim.md, Zeilen 31–33, 35"
+    },
+    {
+      "zahl": "BRW Panketal: Schwanebeck / West RH 400, Schwanebeck / OL 380, Zepernick / West 370, Zepernick / Ost 360, Zepernick / Zentrum 350, Hobrechtsfelde 125; alle acht unverändert",
+      "fundstelle": "barnim.md, Zeilen 106–113, 115"
+    },
+    {
+      "zahl": "BRW Ahrensfelde: Eiche / Süd 460 (500), Goethestraße RH und Schillerstraße RH 400, Lindenberg 320–340, Mehrow / OL 290, Blumberg / OL 270; 13 von 19 unverändert, keine gestiegen; RH = Bauweise 2400 rh",
+      "fundstelle": "barnim.md, Zeilen 83, 87–105, 115"
+    },
+    {
+      "zahl": "Bauland 2025/2024: Panketal Ø 360 (36) / 397 (11); Ahrensfelde Ø 347 (12) / 399 (16); Eberswalde Ø 141 (21); Nachfrage +40 %; Preise in der Hälfte der Gemeinden gesunken, Eberswalde gestiegen",
+      "fundstelle": "barnim.md, Zeilen 25, 26, 70, 71"
+    },
+    {
+      "zahl": "Rigistraße 8 Verträge, 550 m², 380 €/m²; Christel-Brauns-Weg 17 Verträge, 140 €/m²",
+      "fundstelle": "barnim.md, Zeile 28; GMB_BAR.txt, Z. 1097–1110 (Spalten: Anzahl Verträge, mittlere Grundstücksfläche, Kaufpreismittel)"
+    },
+    {
+      "zahl": "EFH: Ahrensfelde gesamt Ø 3.850 (VJ 3.740), ab 2016 Ø 4.410 (12), normiert 636.000 €; Panketal gesamt Ø 3.540 (VJ 3.620), 1991–2015 Ø 4.000, bis 1945 Ø 2.910; Eberswalde Ø 2.570; Amt Joachimsthal Ø 2.110 (9); normiert = Küche, Teilflächen herausgerechnet",
+      "fundstelle": "barnim.md, Zeilen 72, 73; GMB_BAR.txt, Z. 3291–3296"
+    },
+    {
+      "zahl": "DHH/RH Ahrensfelde 54 Fälle, davon ab 2016 37, Ø 4.430, normiert 523.000 €",
+      "fundstelle": "barnim.md, Zeile 74"
+    },
+    {
+      "zahl": "ETW-Erstverkauf im Berliner Umland nur Ahrensfelde und Wandlitz, Lindenberg 4.980; Erstverkäufe −2/3; Erstvermietungsdaten nur Ahrensfelde und Wandlitz",
+      "fundstelle": "barnim.md, Zeilen 23, 24, 41, 75"
+    },
+    {
+      "zahl": "ETW-Weiterverkauf nach 1992: Zepernick 2.640 (VJ 2.820, 9), Schwanebeck 2.570 (VJ 2.940), Eberswalde 1.950, Joachimsthal 1.620 (8); Altbau-ETW in vier Gemeinden inkl. Panketal",
+      "fundstelle": "barnim.md, Zeilen 42, 76"
+    },
+    {
+      "zahl": "Mieten: Panketal Ø 9,2 (10), Ahrensfelde Ø 8,2, Eberswalde Ø 8 (14); Übersicht nur bedingt; Mietspiegel nur Eberswalde",
+      "fundstelle": "barnim.md, Zeilen 38, 39, 78"
+    },
+    {
+      "zahl": "Liegenschaftszins MFH 4,0 % (2023–2025), ETW vermietet 2,8 % (2025), Berliner Umland",
+      "fundstelle": "barnim.md, Zeilen 36, 37"
+    },
+    {
+      "zahl": "Mietpreisbremse und Kappungsgrenze: Ahrensfelde, Bernau, Biesenthal, Panketal (Punktwert 10); nicht Eberswalde, Joachimsthal; Inhalt 10 % / 15 %",
+      "fundstelle": "barnim.md, Zeilen 43–45, 79"
+    },
+    {
+      "zahl": "Fahrzeiten bis Friedrichstraße: Zepernick 30 (alle 20 min), S Ahrensfelde 32 (S7 alle 10 min), Blumberg 43, Bernau 27 / 35, Eberswalde 42 (stündlich), Joachimsthal 92–93, RB63 22 min",
+      "fundstelle": "barnim.md, Zeilen 123–129"
+    },
+    {
+      "zahl": "Ahrensfelde: Eiche am Stadtrand, Siedlungen der 1930er; Blumberg B 158, Berliner Ring, Gewerbegebiet; Gymnasium Interim Lindenberg, Ulmenallee; Grundschulen Lindenberg und Blumberg, Oberschule Blumberg",
+      "fundstelle": "barnim.md, Zeilen 138, 140–142"
+    },
+    {
+      "zahl": "Bauanträge ab 01.10.2026 nur digital (Virtuelles Bauamt)",
+      "fundstelle": "barnim.md, Zeile 147"
+    },
+    {
+      "zahl": "Erbfall-Antwort; EFH bis 1945: Panketal Ø 2.910, Eberswalde Ø 2.430, Amt Joachimsthal Ø 1.510",
+      "fundstelle": "site/_data/mangoTexte.js, FAQ „Verkauft ihr auch geerbte Immobilien?“ (Live-Seite); barnim.md, Zeile 73"
+    },
+    {
+      "zahl": "Wertermittlung kostenlos, meistens in wenigen Stunden; Europace und Baufinex; § 34c und § 34i GewO; Lennart Geserich, Head of Sales & Vermietung",
+      "fundstelle": "wie oberhavel.json (Live-Seite und Brief)"
+    }
+  ]
+}

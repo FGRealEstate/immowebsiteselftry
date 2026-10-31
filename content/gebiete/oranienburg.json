@@ -1,0 +1,425 @@
+{
+  "slug": "oranienburg",
+  "name": "Oranienburg",
+  "nameLang": "Oranienburg",
+  "kontakt": "lennart",
+  "kreis": {
+    "name": "Landkreis Oberhavel",
+    "url": "/standorte/oberhavel/"
+  },
+  "title": "Immobilienmakler Oranienburg – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler Oranienburg: Verkauf, Kauf und Finanzierung aus einer Hand, mit amtlichen Preisen 2025. Kostenlose Bewertung, oft noch am selben Tag.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Oranienburg",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Oranienburg und seinen Ortsteilen beim Verkauf, beim Kauf und bei der Finanzierung. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
+  "stand": "Oktober 2026",
+  "updated": "2026-10-26",
+  "zahlen": [
+    {
+      "wert": "70–700 €/m²",
+      "label": "Bodenrichtwerte für Wohn- und Dorfgebiete",
+      "detail": "Ganzes Stadtgebiet mit Ortsteilen, erschließungsbeitragsfrei. Den höchsten Wert hat die Geschäftslage der östlichen Innenstadt.",
+      "quelle": "Gutachterausschuss Oberhavel, Grundstücksmarktbericht 2025, Tabelle 34",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_OHV.pdf",
+      "stichtag": "Stichtag 01.01.2026"
+    },
+    {
+      "wert": "Ø 4.726 €/m²",
+      "label": "Einfamilienhäuser ab Baujahr 2010, gezahlter Preis je m² Wohnfläche",
+      "detail": "Spanne 3.455–5.824 €/m², Region Oranienburg.",
+      "quelle": "Gutachterausschuss Oberhavel, Grundstücksmarktbericht 2025, Tabelle 11",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_OHV.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 2.941 €/m²",
+      "label": "Eigentumswohnungen nach 1990 gebaut, Weiterverkauf",
+      "detail": "Spanne 1.613–3.831 €/m², 14 Kauffälle.",
+      "quelle": "Gutachterausschuss Oberhavel, Grundstücksmarktbericht 2025, Tabelle 29",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_OHV.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 16,62 €/m²",
+      "label": "Miete in Mehrfamilienhäusern ab Baujahr 2020",
+      "detail": "118 Fälle. Nach 1990 modernisierte Altbauten: Ø 12,67 €/m². Die Mietdaten des Gutachterausschusses bestehen zu einem großen Teil aus Angebotsmieten.",
+      "quelle": "Gutachterausschuss Oberhavel, Grundstücksmarktbericht 2025, Tabelle 37",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_OHV.pdf",
+      "stichtag": "Mietbeginn ab 2022, erfasst 2025"
+    },
+    {
+      "wert": "513",
+      "label": "Kauffälle in Oranienburg",
+      "detail": "Darunter 217 bebaute Grundstücke und 173 Wohnungs- und Teileigentume. 2024 waren es 529.",
+      "quelle": "Gutachterausschuss Oberhavel, Grundstücksmarktbericht 2025, Tabelle 1",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_OHV.pdf",
+      "stichtag": "Kalenderjahr 2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Innenstadt und Bahnhofsumfeld",
+      "absaetze": [
+        "Oranienburg ist die Kreisstadt des Landkreises Oberhavel und mehr als eine reine Pendlerstadt. Öffentliche Verwaltung und Gesundheitswesen des Kreises sind schwerpunktmäßig hier angesiedelt.[[1]] Dazu kommen die Klinik Oranienburg der Oberhavel Kliniken mit 203 Betten,[[12]] das Takeda-Werk für Kapseln und Tabletten[[14]] und der Hauptsitz der ORAFOL-Gruppe.[[15]] Am 31.12.2025 hatte die Stadt 49.824 Einwohner. Im Jahr 2025 kamen 702 hinzu, weil mehr Menschen zu- als fortzogen.[[3]]",
+        "Am Bahnhof endet die S1, außerdem halten RE5, RB12, RB20 und RB32. Mit dem RE5 sind es morgens 33 Minuten bis Berlin Hauptbahnhof, die S1 fährt ohne Umstieg in 44 Minuten bis Friedrichstraße.[[11]]",
+        "Rund um Bahnhof und Innenstadt stehen vor allem Mehrfamilienhäuser und Eigentumswohnungen: Von den 25.419 Wohnungen der Stadt liegen 12.436 in Gebäuden mit drei und mehr Wohnungen.[[4]] Der Bodenrichtwert liegt zum 01.01.2026 in der Geschäftslage der östlichen Innenstadt bei 700 €/m², in der östlichen Wohnlage bei 490 €/m², in der Stadtmitte bei 290 €/m² und in der Altstadt bei 280 €/m².[[2]] Weiterverkaufte Eigentumswohnungen, die nach 1990 gebaut wurden, kosteten 2025 durchschnittlich 2.941 €/m² Wohnfläche.[[1]] Hier suchen Pendler nach Berlin ebenso wie Menschen, die in Oranienburg arbeiten. Für kleine Wohnungen und Kapitalanlagen bleibt die Nähe zum Bahnhof aus unserer Sicht ein wichtiger Wertfaktor."
+      ],
+      "bild": {
+        "name": "oranienburg-bahnhof",
+        "alt": "Das Empfangsgebäude des Bahnhofs Oranienburg mit Vorplatz und Laternen an einem sonnigen Tag",
+        "caption": "Der Bahnhof Oranienburg.",
+        "credit": "Jivee Blau, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Oranienburg-_Bahnhof_Oranienburg-_Bahnhofsgeb%C3%A4ude-_Au%C3%9Fenansicht_30.7.2012.jpg"
+      }
+    },
+    {
+      "h2": "Süd, Neustadt, Eden und Weiße Stadt",
+      "absaetze": [
+        "Außerhalb der Innenstadt prägen Einfamilien- und Doppelhäuser das Bild, etwa in Oranienburg Süd mit dem Komponistenviertel, in der Neustadt und in Eden. Anfang des 20. Jahrhunderts hatte sich Oranienburg zu einer Industrie- und Villenstadt entwickelt.[[8]] Die Baujahre sind entsprechend gemischt und das zeigt sich im Preis. Freistehende Ein- und Zweifamilienhäuser in der Region Oranienburg kosteten 2025 durchschnittlich 2.726 €/m² Wohnfläche bei Baujahren bis 1948, 3.309 €/m² bei Baujahren 1991 bis 2009 und 4.726 €/m² ab Baujahr 2010. Reihenhäuser und Doppelhaushälften ab Baujahr 2010 kosteten durchschnittlich 3.599 €/m².[[1]]",
+        "Die Bodenrichtwerte liegen zum 01.01.2026 in Neustadt Süd bei 360 €/m², in Neustadt Nord und Oranienburg Süd bei je 350 €/m², im Komponistenviertel bei 330 €/m², in Eden bei 320 €/m² und in der Weißen Stadt Mitte bei 250 €/m². In mehreren dieser Zonen liegen die Werte leicht unter dem Vorjahr, in Oranienburg Süd zum Beispiel bei 350 statt 370 €/m².[[2]] Bauland in neu beplanten Wohngebieten kostete 2025 durchschnittlich 427 €/m² bei 10 Kauffällen, in gewachsenen Ortslagen 272 €/m² bei 28 Kauffällen.[[1]]",
+        "In der Weißen Stadt entsteht seit 2019 ein Quartier der WOBA mit insgesamt 199 Wohnungen.[[10]] Für Familien zählt auch das Schulangebot: In Oranienburg gibt es drei Gymnasien, die Torhorst-Gesamtschule und das Georg-Mendheim-Oberstufenzentrum.[[13]]"
+      ],
+      "bild": {
+        "name": "oranienburg-eden-mosterei",
+        "alt": "Die frühere Mosterei der Siedlung Eden, ein Fachwerkhaus mit rotem Ziegeldach und wildem Wein",
+        "caption": "Die frühere Mosterei in Eden.",
+        "credit": "Doris Antony, Berlin, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Eden_Mosterei.jpg"
+      }
+    },
+    {
+      "h2": "Lehnitz, Sachsenhausen und die Ortsteile",
+      "absaetze": [
+        "Seit der Gemeindegebietsreform 2003 gehören Friedrichsthal, Germendorf, Lehnitz, Malz, Schmachtenhagen mit Bernöwe, Wensickendorf und Zehlendorf zur Stadt, Sachsenhausen ist ebenfalls Ortsteil. Rund 60 Prozent des Stadtgebiets, etwa 10.500 Hektar, liegen im Naturpark.[[8]] Zwischen Innenstadt, Bahnhofsumfeld und äußeren Ortsteilen unterscheidet sich das Preisniveau deutlich: Der Bodenrichtwert liegt zum 01.01.2026 in der Innenstadt bei bis zu 700 €/m², in Zehlendorf bei 115 €/m² und in Bernöwe bei 85 €/m².[[2]]",
+        "Lehnitz hat einen eigenen S-Bahnhof an der S1.[[11]] Mit 350 €/m² in Lehnitz Nord und 330 €/m² in Lehnitz Süd liegt es auf dem Niveau der Kernstadt.[[2]] Sachsenhausen hat einen Regionalbahnhof mit RE5, RB12 und RB54.[[11]] Sein Bodenrichtwert stieg vom 01.01.2025 zum 01.01.2026 von 190 auf 220 €/m². In Schmachtenhagen Dorf sind es 230 €/m², in Friedrichsthal sank der Wert der Hauptzone von 170 auf 140 €/m².[[2]]",
+        "In Schmachtenhagen, Wensickendorf, Zehlendorf, Malz und Friedrichsthal beziehen sich die Bodenrichtwerte auf Grundstücke mit 950 m², in Lehnitz und Sachsenhausen auf 750 m².[[2]] Käufer bekommen in den Dörfern also in der Regel größere Grundstücke, haben aber längere Wege zur Bahn. Auch die Mieten unterscheiden sich: Nach 1990 modernisierte Altbauten in Lehnitz kosteten durchschnittlich 13,51 €/m², Wohnungen der Baujahre 1990 bis 2019 in Sachsenhausen 13,95 €/m² und Neubauten ab 2020 in den Dorflagen 15,69 €/m².[[1]]"
+      ],
+      "bild": {
+        "name": "oranienburg-lehnitzsee",
+        "alt": "Sandiges Ufer des Lehnitzsees mit Bäumen und Schilf",
+        "caption": "Am Lehnitzsee in Oranienburg.",
+        "credit": "Dirk Ingo Franke, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Oranienburg_Lehnitzsee_14.08.2016_14-47-06.jpg"
+      }
+    }
+  ],
+  "band": {
+    "name": "oranienburg-getreidespeicher",
+    "alt": "Der Getreidespeicher in Oranienburg hinter einem Gewässer, in dem sich Bäume und Häuser spiegeln",
+    "caption": "Der Getreidespeicher in Oranienburg.",
+    "credit": "Hans G. Oberlack, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Getreidespeicher_Oranienburg_2020_SW_Panorama.jpg"
+  },
+  "anbindung": [
+    "Am Bahnhof endet die S1, außerdem halten RE5, RB12, RB20 und RB32. Mit dem RE5 sind es morgens 33 Minuten bis Berlin Hauptbahnhof, die S1 fährt ohne Umstieg in 44 Minuten bis Friedrichstraße.[[11]]",
+    "Lehnitz hat einen eigenen S-Bahnhof an der S1.[[11]] Sachsenhausen hat einen Regionalbahnhof mit RE5, RB12 und RB54.[[11]]"
+  ],
+  "karte": {
+    "alt": "Karte der Stadt Oranienburg: Altstadt, Neustadt, Süd, Eden und Weiße Stadt, die Ortsteile Sachsenhausen, Lehnitz, Germendorf, Friedrichsthal, Malz, Schmachtenhagen mit Bernöwe, Wensickendorf und Zehlendorf, dazu Bahnstrecken, Gewässer, die Autobahn und Hohen Neuendorf an der Grenze zu Berlin"
+  },
+  "verkaufen": {
+    "h2": "Immobilie in Oranienburg verkaufen",
+    "absaetze": [
+      "2025 gab es in Oranienburg 513 Kauffälle, darunter 217 bebaute Grundstücke und 173 Wohnungs- und Teileigentume.[[1]] Ein Durchschnittswert für die ganze Stadt reicht für die Bewertung deshalb nicht. Wir gehen vom Bodenrichtwert Ihrer Zone aus und vergleichen mit den gezahlten Preisen nach Baujahr und mit den Angeboten, die gerade am Markt sind.",
+      "Neues Wohnungseigentum ist im Berliner Umland des Landkreises fast nur in Oranienburg und Hohen Neuendorf entstanden.[[1]] Eine gebrauchte Wohnung konkurriert hier deshalb mit Neubauangeboten und das berücksichtigen wir in der Preisstrategie.",
+      "Die Wertermittlung ist kostenlos und liegt meistens nach wenigen Stunden vor. Vermarktet wird erst, wenn die Unterlagen vollständig sind. Ob Interessenten den Kauf finanzieren können, klären wir früh."
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Oranienburg",
+    "absaetze": [
+      "Wenn Sie selbst einziehen wollen, achten Sie in Oranienburg vor allem auf Baujahr und Bahnanbindung. 2025 kostete ein Haus mit Baujahr bis 1948 durchschnittlich 2.726 €/m² Wohnfläche, eines ab Baujahr 2010 durchschnittlich 4.726 €/m².[[1]] Prüfen Sie auch laufende Bebauungspläne in der Nachbarschaft, etwa den Entwurf Nr. 130 für Wohnbebauung an der Robert-Koch-Straße und Saarlandstraße, bekannt gemacht am 13.06.2026.[[9]]",
+      "Für Kapitalanleger gilt in Oranienburg seit dem 1. Januar 2026 die Mietpreisbremse, befristet bis 31.12.2029. Bei einer neuen Vermietung darf die Miete dann höchstens 10 % über der ortsüblichen Vergleichsmiete liegen. Ausgenommen sind Wohnungen, die nach dem 1. Oktober 2014 erstmals genutzt und vermietet wurden.[[5]] Bis 31.12.2030 gilt außerdem die abgesenkte Kappungsgrenze: Bestandsmieten dürfen in drei Jahren um höchstens 15 % steigen.[[6]]",
+      "Einen qualifizierten Mietspiegel hat Oranienburg nicht: Der Mietspiegel 2017 ist nicht mehr als qualifizierter Mietspiegel anwendbar.[[7]] Die Vergleichsmiete ist deshalb schwerer zu belegen und wir prüfen sie in der Ankaufsberatung für jedes Objekt einzeln."
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Oranienburg",
+    "absaetze": [
+      "Für Käufer in Oranienburg vergleichen wir Finanzierungen über die Plattformen Europace und Baufinex sowie über direkte Bankkontakte. Bei einer vermieteten Wohnung prüft die Bank, welche Miete auf Dauer erzielbar ist; wegen der Mietpreisbremse und ohne qualifizierten Mietspiegel setzen Sie diese Miete besser vorsichtig an. Bei Häusern aus der Zeit bis 1948 gehören die Modernisierungskosten von Anfang an in die Finanzierung."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Wie hoch ist der Quadratmeterpreis in Oranienburg?",
+      "antwort": "Das hängt vor allem von Objektart und Baujahr ab. 2025 kosteten Einfamilienhäuser ab Baujahr 2010 durchschnittlich 4.726 €/m² Wohnfläche und Häuser der Baujahre 1991 bis 2009 3.309 €/m². Weiterverkaufte Eigentumswohnungen, die nach 1990 gebaut wurden, kosteten 2.941 €/m².[[1]] Angebotspreise in Immobilienportalen sind keine gezahlten Preise und können davon abweichen.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienmakler Oranienburg“, „Immobilie verkaufen Oranienburg“ und „Immobilienbewertung Oranienburg“ (Google_Areas, Oktober 2026); erneut bei „Immobilienpreise Oranienburg“, „Makler Oranienburg“ und „Immobilie verkaufen Oranienburg“ am 24.10.2026 (research/serp/serp-oranienburg.json)"
+    },
+    {
+      "frage": "Ist Oranienburg ein guter Standort für eine Kapitalanlage-Wohnung?",
+      "antwort": "Pauschal lässt sich das nicht sagen, es kommt auf Lage, Baujahr und Kaufpreis an. Für Oranienburg sprechen die Rolle als Kreisstadt mit eigenen Arbeitgebern und die Bahn nach Berlin mit S1 und RE5; für kleine Wohnungen ist die Nähe zum Bahnhof ein wichtiger Wertfaktor. Dagegen stehen die Mietpreisbremse seit dem 1. Januar 2026 und der fehlende qualifizierte Mietspiegel, die den Spielraum bei der Miete begrenzen.[[5,7]]",
+      "herkunft": "Prompt der KI-Recherche „Ist Oranienburg ein guter Standort für eine Kapitalanlage-Wohnung?“ (ChatGPT, Gemini, Google AI Overview, Perplexity; Dashboard/src/data/research/ai_answers.json, Oktober 2026). Perplexity zitiert dazu die alte F&G-Seite."
+    },
+    {
+      "frage": "Wie hoch ist der Quadratmeterpreis für ein Grundstück in Oranienburg?",
+      "antwort": "Der Bodenrichtwert liegt zum 01.01.2026 in Oranienburg Süd und in Lehnitz Nord bei je 350 €/m² und in Sachsenhausen bei 220 €/m². Alle Zonen sehen Sie kostenlos in BORIS Brandenburg.[[2]] Bauland in gewachsenen Ortslagen kostete 2025 durchschnittlich 272 €/m², in neu beplanten Wohngebieten 427 €/m².[[1]] Der Bodenrichtwert ist ein Durchschnitt für eine Zone und nicht der Verkaufspreis eines einzelnen Grundstücks.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Bodenrichtwert Oranienburg“ am 24.10.2026: „Wie hoch ist der Quadratmeterpreis für ein Grundstück in Oranienburg?“ und „Ist Bodenrichtwert gleich Verkaufspreis?“ (research/serp/serp-oranienburg.json); Autocomplete „bodenrichtwert oranienburg süd / sachsenhausen / lehnitz“ (research/serp/autocomplete-2026-10-24.json)"
+    },
+    {
+      "frage": "Was kostet ein Haus in Oranienburg Süd, Eden oder Sachsenhausen?",
+      "antwort": "Der Gutachterausschuss weist Hauspreise nicht je Ortsteil aus, sondern für die Region Oranienburg nach Baujahr: 2025 durchschnittlich 2.726 €/m² Wohnfläche bei Baujahren bis 1948 und 4.726 €/m² ab Baujahr 2010.[[1]] Die Unterschiede zwischen den Ortsteilen zeigen die Bodenrichtwerte zum 01.01.2026: 350 €/m² in Oranienburg Süd, 320 €/m² in Eden und 220 €/m² in Sachsenhausen.[[2]] Für ein bestimmtes Haus erstellen wir Ihnen eine kostenlose Wertermittlung.",
+      "herkunft": "Google-Autocomplete zu „Haus kaufen Oranienburg“: „… süd“, „… eden“, „… sachsenhausen“ am 24.10.2026 (research/serp/autocomplete-2026-10-24.json); „Haus kaufen in Oranienburg Süd“ auch unter „Ähnliche Suchanfragen“ (serp-oranienburg.json)"
+    },
+    {
+      "frage": "Ist es aktuell sinnvoll, eine Immobilie in Oranienburg zu verkaufen?",
+      "antwort": "Eine pauschale Antwort gibt es nicht, es kommt auf Ihr Objekt und Ihre Pläne an. 2025 gab es in Oranienburg 513 Kauffälle, 2024 waren es 529. Bei weiterverkauften Eigentumswohnungen stiegen die Durchschnittspreise 2025 an allen im Landkreis ausgewiesenen Standorten außer Oranienburg.[[1]] Die Bodenrichtwerte sanken in mehreren Zonen der Kernstadt leicht und stiegen in Ortsteilen wie Sachsenhausen;[[2]] was das für Ihre Immobilie bedeutet, zeigt eine aktuelle Bewertung.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilie verkaufen Oranienburg“ (Google_Areas, Oktober 2026); ähnlich „Ist es im Moment gut, eine Immobilie zu verkaufen?“ am 24.10.2026 (research/serp/serp-oranienburg.json)"
+    },
+    {
+      "frage": "Wo kann ich meine Immobilie in Oranienburg kostenlos schätzen lassen?",
+      "antwort": "Bei uns: Die Wertermittlung ist kostenlos und liegt meistens nach wenigen Stunden vor, häufig noch am selben Tag. Grundlage sind der Bodenrichtwert Ihrer Zone, die gezahlten Preise aus dem Grundstücksmarktbericht des Gutachterausschusses Oberhavel und die Angebote, die aktuell mit Ihrer Immobilie konkurrieren. Für Gericht, Finanzamt oder Erbauseinandersetzung brauchen Sie dagegen ein kostenpflichtiges Verkehrswertgutachten eines Sachverständigen oder des Gutachterausschusses.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienbewertung Oranienburg“ (Google_Areas, Oktober 2026)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Bernau bei Berlin",
+      "url": "/standorte/bernau/"
+    },
+    {
+      "name": "Falkensee",
+      "url": "/standorte/falkensee/"
+    },
+    {
+      "name": "Berlin",
+      "url": "/standorte/berlin/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Grundstücksmarktbericht 2025, Gutachterausschuss für Grundstückswerte im Landkreis Oberhavel (veröffentlicht 18.05.2026)",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_OHV.pdf",
+      "stand": "Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+    },
+    {
+      "name": "Bodenrichtwerte Oranienburg, BORIS Brandenburg (GeoBasis-DE/LGB, dl-de/by-2-0)",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?f=json&limit=500&skipGeometry=true&gemeinde_bezeichnung=Oranienburg&stichtag=2026-01-01",
+      "stand": "Stichtag 01.01.2026, Vergleich 01.01.2025"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 4 – j / 25 (Bevölkerung)",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht F I 1 – j / 25 (Wohnungsbestand)",
+      "url": "https://download.statistik-berlin-brandenburg.de/bbf10b1d56ae9884/446362e42c8c/SB_F01-01-00_2025j01_BB.xlsx",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Mietpreisbegrenzungsverordnung Brandenburg, MIL",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/Mietpreisbegrenzungsverordnung.pdf",
+      "stand": "Kabinettsbeschluss 25.11.2025, gültig 01.01.2026–31.12.2029"
+    },
+    {
+      "name": "Kappungsgrenzenverordnung Brandenburg, MIL",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/KappGrenzV.pdf",
+      "stand": "gültig 01.01.2026–31.12.2030"
+    },
+    {
+      "name": "Stadt Oranienburg, Mieten in Oranienburg (Mietspiegel)",
+      "url": "https://www.oranienburg.de/St%C3%A4dtebau-Wirtschaft/Bauen-und-Wohnen/Mieten-in-Oranienburg/",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Oranienburg, Stadtportrait",
+      "url": "https://www.oranienburg.de/Stadtleben/Stadtinformationen/Stadtportrait-/",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Oranienburg, Bekanntmachungen (Bebauungsplan Nr. 130)",
+      "url": "https://www.oranienburg.de/Rathaus-Service/Aktuelles/Bekanntmachungen/",
+      "stand": "Bekanntmachung 13.06.2026"
+    },
+    {
+      "name": "Stadt Oranienburg, Meldung zur WOBA (Weiße Stadt)",
+      "url": "https://www.oranienburg.de/index.php?object=tx%2C2967.5&ModID=7&FID=2967.5121.1",
+      "stand": "2025"
+    },
+    {
+      "name": "VBB-Fahrplandaten (Linien an S Oranienburg, S Lehnitz und Sachsenhausen, Fahrzeiten ab S Oranienburg)",
+      "url": "https://v6.vbb.transport.rest/stops/900200005?linesOfStops=true",
+      "stand": "Fahrplan Dienstag 27.10.2026, abgefragt 24.10.2026"
+    },
+    {
+      "name": "Oberhavel Kliniken, Klinikprofil Standort Oranienburg",
+      "url": "https://www.oberhavel-kliniken.de/standort-oranienburg/klinikprofil",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Landkreis Oberhavel, Weiterführende Schulen im Landkreis Oberhavel",
+      "url": "https://oberhavel.de/media/custom/2244_112496_1.PDF?1764346662=",
+      "stand": "November 2025"
+    },
+    {
+      "name": "Takeda, Produktionsstandort Oranienburg",
+      "url": "https://jobs.takeda.com/en/oranienburg-ausbildung",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "ORAFOL, Unternehmensprofil",
+      "url": "https://www.orafol.com/de/uber-orafol/uber-uns/unternehmensprofil",
+      "stand": "abgerufen 24.10.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "70–700 €/m² (BRW Wohn-/Dorfgebiete)",
+      "fundstelle": "oranienburg.md, Zeile 19"
+    },
+    {
+      "zahl": "Ø 4.726 €/m², Spanne 3.455–5.824 (EFH ab 2010)",
+      "fundstelle": "oranienburg.md, Zeile 26"
+    },
+    {
+      "zahl": "Ø 2.941 €/m², Spanne 1.613–3.831, 14 Kauffälle (ETW Weiterverkauf nach 1990)",
+      "fundstelle": "oranienburg.md, Zeile 31"
+    },
+    {
+      "zahl": "Ø 16,62 €/m², 118 Fälle (Miete ab 2020)",
+      "fundstelle": "oranienburg.md, Zeile 45"
+    },
+    {
+      "zahl": "Ø 12,67 €/m² (Miete mod. Altbau)",
+      "fundstelle": "oranienburg.md, Zeile 43"
+    },
+    {
+      "zahl": "Ø 10,64 €/m² (Miete unmod. Altbau)",
+      "fundstelle": "oranienburg.md, Zeile 42"
+    },
+    {
+      "zahl": "Mietdaten zu großem Teil Angebotsmieten",
+      "fundstelle": "oranienburg.md, Zeile 47"
+    },
+    {
+      "zahl": "513 Kauffälle 2025 / 529 im Jahr 2024, 217 bebaut, 173 Wohn-/Teileigentum",
+      "fundstelle": "oranienburg.md, Zeile 35 (Jahre am 26.10.2026 korrigiert, siehe dort)"
+    },
+    {
+      "zahl": "203 Betten Klinik Oranienburg",
+      "fundstelle": "oranienburg.md, Zeile 243"
+    },
+    {
+      "zahl": "Takeda Kapseln und Tabletten; ORAFOL Hauptsitz",
+      "fundstelle": "oranienburg.md, Zeilen 248, 253"
+    },
+    {
+      "zahl": "Kreisstadt; Verwaltung und Gesundheitswesen schwerpunktmäßig",
+      "fundstelle": "oranienburg.md, Zeilen 240–241"
+    },
+    {
+      "zahl": "49.824 Einwohner 31.12.2025, +702",
+      "fundstelle": "oranienburg.md, Zeilen 52, 124"
+    },
+    {
+      "zahl": "S1 Endstation; RE5, RB12, RB20, RB32",
+      "fundstelle": "oranienburg.md, Zeilen 142, 145"
+    },
+    {
+      "zahl": "RE5 33 min bis Hauptbahnhof; S1 44 min bis Friedrichstraße",
+      "fundstelle": "oranienburg.md, Zeilen 164, 166"
+    },
+    {
+      "zahl": "25.419 Wohnungen, 12.436 in Gebäuden mit 3+ Wohnungen",
+      "fundstelle": "oranienburg.md, Zeilen 53, 199–201"
+    },
+    {
+      "zahl": "BRW östl. Innenstadt GL 700, östl. WL 490, Stadtmitte 290, Altstadt 280",
+      "fundstelle": "oranienburg.md, Zeilen 54, 56, 66, 67"
+    },
+    {
+      "zahl": "Industrie- und Villenstadt Anfang 20. Jh.",
+      "fundstelle": "oranienburg.md, Zeile 198"
+    },
+    {
+      "zahl": "EFH Ø 2.726 (bis 1948), Ø 3.058 (1949–1990), Ø 3.309 (1991–2009)",
+      "fundstelle": "oranienburg.md, Zeilen 23–25"
+    },
+    {
+      "zahl": "RH/DHH ab 2010 Ø 3.599",
+      "fundstelle": "oranienburg.md, Zeile 28"
+    },
+    {
+      "zahl": "BRW Neustadt Süd 360, Neustadt Nord 350, Süd 350 (2025: 370), Komponistenviertel 330, Eden 320, Weiße Stadt Mitte 250",
+      "fundstelle": "oranienburg.md, Zeilen 59, 60, 62, 64, 65, 71"
+    },
+    {
+      "zahl": "Bauland neu beplant Ø 427 (10), gewachsen Ø 272 (28)",
+      "fundstelle": "oranienburg.md, Zeilen 21–22"
+    },
+    {
+      "zahl": "WOBA Weiße Stadt seit 2019, 199 Wohnungen",
+      "fundstelle": "oranienburg.md, Zeile 263"
+    },
+    {
+      "zahl": "drei Gymnasien, Torhorst-Gesamtschule, Georg-Mendheim-OSZ",
+      "fundstelle": "oranienburg.md, Zeilen 224–232"
+    },
+    {
+      "zahl": "Gemeindegebietsreform 2003, Ortsteile",
+      "fundstelle": "oranienburg.md, Zeilen 192–193"
+    },
+    {
+      "zahl": "rund 60 % Naturpark, ca. 10.500 ha",
+      "fundstelle": "oranienburg.md, Zeile 197"
+    },
+    {
+      "zahl": "BRW Zehlendorf 115, Bernöwe 85",
+      "fundstelle": "oranienburg.md, Zeilen 99, 101"
+    },
+    {
+      "zahl": "S Lehnitz an der S1; Sachsenhausen RE5, RB12, RB54",
+      "fundstelle": "oranienburg.md, Zeilen 142, 152"
+    },
+    {
+      "zahl": "BRW Lehnitz Nord 350, Lehnitz Süd 330",
+      "fundstelle": "oranienburg.md, Zeilen 61, 63"
+    },
+    {
+      "zahl": "BRW Sachsenhausen 220 (2025: 190), Schmachtenhagen Dorf 230, Friedrichsthal 140 (2025: 170)",
+      "fundstelle": "oranienburg.md, Zeilen 79, 75, 93"
+    },
+    {
+      "zahl": "BRW-Bezugsfläche 950 m² Dörfer, 750 m² Lehnitz/Sachsenhausen",
+      "fundstelle": "oranienburg.md, Zeilen 61, 63, 70, 75, 79, 89, 93, 99, 101"
+    },
+    {
+      "zahl": "Miete Lehnitz mod. Altbau Ø 13,51; Sachsenhausen 1990–2019 Ø 13,95; Dorflagen ab 2020 Ø 15,69",
+      "fundstelle": "oranienburg.md, Zeile 46"
+    },
+    {
+      "zahl": "Neues Wohnungseigentum fast nur in Oranienburg und Hohen Neuendorf",
+      "fundstelle": "oranienburg.md, Zeile 216"
+    },
+    {
+      "zahl": "B-Plan Nr. 130, Bekanntmachung 13.06.2026",
+      "fundstelle": "oranienburg.md, Zeile 268"
+    },
+    {
+      "zahl": "Mietpreisbremse 01.01.2026–31.12.2029",
+      "fundstelle": "oranienburg.md, Zeile 49"
+    },
+    {
+      "zahl": "Kappungsgrenze bis 31.12.2030",
+      "fundstelle": "oranienburg.md, Zeile 50"
+    },
+    {
+      "zahl": "Mietspiegel 2017 nicht mehr qualifiziert",
+      "fundstelle": "oranienburg.md, Zeile 48"
+    },
+    {
+      "zahl": "Weiterverkauf ETW: höhere Preise an allen Standorten außer Oranienburg",
+      "fundstelle": "oranienburg.md, Zeile 31"
+    },
+    {
+      "zahl": "10 % über Vergleichsmiete; Ausnahme Erstnutzung nach 01.10.2014; Kappungsgrenze 15 % in 3 Jahren",
+      "fundstelle": "Gesetz: §§ 556d, 556f, 558 Abs. 3 BGB (nicht in der Recherche-Datei, Rechtslage)"
+    }
+  ],
+  "kurzantwortMehr": "Das Maklerunternehmen hat seinen Sitz in Berlin und arbeitet mit Erlaubnissen nach § 34c und § 34i GewO für Immobilienvermittlung und Immobilienfinanzierung. Ihr Ansprechpartner für Oranienburg ist Lennart Geserich, Head of Sales & Vermietung.",
+  "hero": {
+    "name": "oranienburg-schloss",
+    "alt": "Schloss Oranienburg an einem Sommertag",
+    "credit": "Kds11, CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Oranienburg_Castle.jpg"
+  }
+}

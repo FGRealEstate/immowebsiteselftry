@@ -1,29 +1,395 @@
 ---
-layout: base.njk
-title: Immobilienfinanzierung – Fischer & Geserich Real Estate
+layout: fgs-service.njk
+bodyClass: fgs-service
+title: "Immobilienfinanzierung in Berlin: Banken vergleichen | Fischer & Geserich"
 permalink: finanzierungsberatung.html
-description: "Immobilienfinanzierung für Eigennutzer und Investoren: Finanzierungsrahmen, Bankvergleich und persönliche Begleitung bis zur Auszahlung."
+description: "Immobilienfinanzierung für Eigennutzer, Kapitalanleger und Mehrfamilienhäuser: Bankvergleich über Europace und Baufinex rund 500 Banken, Anschlussfinanzierung, Steuerausländer. Begleitung bis zur Auszahlung."
 canonicalPath: /finanzierungsberatung.html
+service:
+  id: finanzierungsberatung
+  crumb: "Finanzierungsberatung"
+  kicker: "Unabhängige Finanzierungsberatung"
+  h1: "Immobilienfinanzierung in Berlin: unabhängig beraten und Banken vergleichen"
+  intro: "Wir rechnen mit Ihnen durch, welcher Kaufpreis zu Ihrem Einkommen und Eigenkapital passt, und vergleichen über Europace und Baufinex rund 500 Banken. Wir finanzieren Eigentumswohnungen, Häuser und Mehrfamilienhäuser für Eigennutzer, Kapitalanleger und Unternehmer, in Berlin und deutschlandweit."
+  button: { label: "Finanzierung anfragen", href: "#anfrage" }
+  hero: { name: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
+  keyfacts:
+    - { label: "Banken im Vergleich", wert: "rund 500" }
+    - { label: "Erstgespräch", wert: "kostenlos" }
+    - { label: "Finanzierungen", wert: "deutschlandweit" }
+  summaryQ: "Wie läuft eine Immobilienfinanzierung bei Fischer & Geserich ab?"
+  summary:
+    - "Am Anfang steht Ihre Selbstauskunft mit Einkommen, Eigenkapital und Vorhaben. Daran sehen wir, was machbar ist, und vergleichen über die Plattformen Europace und Baufinex, welche Bank Ihr Vorhaben zu welchen Bedingungen finanziert. Unterlagen, Rückfragen und Kreditentscheidung begleiten wir, nach der Zusage auch Kaufpreisfälligkeit, Bankzugang und Fristen bis zur Auszahlung."
+    - "Begleitete Fälle reichen von der ersten Eigentumswohnung bis zur Mehrfamilienhausfinanzierung, 2026 bisher über 4 Millionen Euro. Für die Vermittlung von Immobiliardarlehen haben wir die Erlaubnis nach § 34i GewO. Eine Finanzierungszusage bleibt immer die Entscheidung der Bank."
+  faqTitle: "Häufige Fragen zur Finanzierung"
+  faq:
+    # Update 20 (30.10.2026): Fragen und Antworten wörtlich nach Timons Freigabe, auch im FAQPage-Markup; Links auf denselben Wörtern wie vorher.
+    - q: "Kann ich eine Immobilie ohne Eigenkapital finanzieren?"
+      a: "Möglich ist es, sinnvoll meistens nicht. Fehlendes Eigenkapital lässt sich nur auf zwei Wegen ersetzen. Entweder wandert es in den Immobilienkredit, dann steigen der Beleihungsauslauf und damit Ihr Zins spürbar. Oder es wird über ein separates Blankodarlehen finanziert, für das Verbraucherzinsen ab etwa 6 Prozent gelten. Beides setzen wir nur um, wenn Ihre Bonität es hergibt, in der Regel ab etwa 4.000 Euro netto im Monat."
+    - q: "Ab welchem Eigenkapital lohnt sich der Einstieg?"
+      a: "Ab etwa 10.000 Euro ist ein Einstieg realistisch. Damit lässt sich eine Wohnung um 100.000 Euro finanzieren. Die Kaufnebenkosten liegen bei einer Wohnung meist bei 7,5 bis 12 Prozent des Kaufpreises, je nach Bundesland und ob eine Maklerprovision anfällt. Bringen Sie deutlich weniger mit, raten wir Ihnen, erst einmal anzusparen. Teure Ersatzkonstruktionen kosten Sie am Ende mehr, als sie bringen."
+    - q: "Was ist der Beleihungsauslauf?"
+      a: "Der Beleihungsauslauf ist das Verhältnis zwischen Ihrem Kredit und dem Beleihungswert. Der Beleihungswert ist nicht der Kaufpreis, sondern der Wert, den die Bank auch im schlechten Fall, etwa bei einer Zwangsversteigerung, sicher erzielen würde. Je höher der Beleihungsauslauf, desto höher Ihr Zins, weil das Risiko der Bank steigt. Finanzieren Sie die Kaufnebenkosten mit, liegen Sie schnell bei 110 Prozent. Mehr als 120 Prozent finanziert kaum eine Bank."
+    - q: "Warum raten Sie von einer 110-Prozent-Finanzierung bei der ersten Immobilie ab?"
+      a: "Weil Sie sich damit oft die zweite Immobilie verbauen. Finanzieren Sie Ihre erste Wohnung voll durch, tragen Sie eine hohe Zinslast und ein unausgeglichenes Schuldenportfolio. Für die zweite Immobilie sind Sie dann bei den meisten Banken nicht mehr finanzierbar. Haben Sie dagegen schon drei oder vier Objekte, von denen einige einen positiven Cashflow haben, bewertet die Bank dieselbe Anfrage völlig anders. Deshalb raten wir Ihnen, den Hebel erst dann zu nutzen, wenn er trägt."
+    - q: "Was ist der Unterschied zwischen Bank und Finanzierungsvermittler?"
+      a: "Eine Bank bietet Ihnen ihre eigenen Darlehen an. Ein Finanzierungsvermittler vergleicht die Angebote mehrerer Banken und sucht die Bank, deren Vergaberichtlinien zu Ihrem Einkommen, Ihrem Eigenkapital und Ihrem Objekt passen. Wir vergleichen über die Plattformen Europace und Baufinex rund 500 Banken. Direkte Bankkontakte nutzen wir für Fälle, die dort nicht passen, etwa bei Unternehmern. Für die Vermittlung haben wir die Erlaubnis nach § 34i GewO. Über den Kredit entscheidet am Ende immer die Bank."
+    - q: "Kann ich eine Anschlussfinanzierung schon vor dem Ende der Zinsbindung festlegen?"
+      a: "Ja, mit einem <a href=\"/lexikon/forward-darlehen/\">Forward-Darlehen</a>. Damit vereinbaren Sie heute den Zins für ein Darlehen, das erst mit dem Ende Ihrer Zinsbindung ausgezahlt wird. Für diese Vorlaufzeit verlangen Banken in der Regel einen Aufschlag auf den Zins. Ob sich das lohnt, hängt davon ab, wie lange es bis zum Ende der Zinsbindung noch ist, wie hoch der Aufschlag ausfällt und wie viel Planungssicherheit Ihnen wichtig ist."
+    # FG-Gap-Answers 5.1 (READY)
+    - q: "Wie viel Eigenkapital brauche ich für ein Haus für 500.000 Euro?"
+      a: "Rechnen Sie zuerst die Kaufnebenkosten. In Berlin sind das bei 500.000 Euro mit Makler rund 58.000 Euro: 6 Prozent Grunderwerbsteuer, rund 2 Prozent für Notar und Grundbuch und 3,57 Prozent Provision. Viele Banken erwarten, dass Sie mindestens diese Nebenkosten selbst tragen. Wie viel Eigenkapital darüber hinaus sinnvoll ist, hängt vom Zinsniveau und Ihren Rücklagen ab. Das rechnen wir gern mit Ihnen durch."
+    # FG-Gap-Answers 5.2 (TIMON), an seit 29.10.2026 (FG-Timon-Answers-Update §1, freigaben.timonFaq)
+    - q: "Finanzieren Sie auch Selbstständige und Freiberufler?"
+      a: "Ja. Banken wollen bei Selbstständigen und Freiberuflern meist die Steuerbescheide und Jahresabschlüsse oder Einnahmenüberschussrechnungen der letzten zwei bis drei Jahre sehen, dazu eine aktuelle betriebswirtschaftliche Auswertung. Entscheidend ist, wie stabil das Einkommen über diese Jahre war. Nicht jede Bank finanziert Selbstständige zu denselben Bedingungen, deshalb lohnt der Vergleich hier besonders. Bei Unternehmern sprechen wir oft Banken direkt an, weil sich solche Fälle über die Plattformen kaum abbilden lassen."
+      timon: "5.2"
+    # FG-Gap-Answers 5.3 (TIMON), an seit 29.10.2026 (FG-Timon-Answers-Update §1, freigaben.timonFaq)
+    - q: "Kann ich eine Wohnung in Deutschland kaufen, wenn ich im Ausland lebe?"
+      a: "Ja. Wir begleiten Käufer, die im Ausland leben, von der Auswahl bis zum Notartermin: Besichtigungen auf Wunsch per Video, Unterlagen digital und den Notartermin können Sie mit einer Vollmacht wahrnehmen lassen. Bei der Finanzierung ist der Wohnsitz der Engpass, weil viele Banken solche Fälle grundsätzlich ablehnen. Wir arbeiten mit Banken, die sie prüfen. Liegt Ihr Einkommen nicht in Euro, rechnen die Banken mit zusätzlichen Sicherheitsabschlägen. Auch Grenzgänger, deren Einkommen aus dem Ausland kommt, begleiten wir bei der Finanzierung."
+      timon: "5.3"
+    # FG-Gap-Answers 5.4 (TIMON), an seit 29.10.2026 (FG-Timon-Answers-Update §1, freigaben.timonFaq)
+    - q: "Was passiert mit meiner Finanzierung, wenn ich ins Ausland ziehe?"
+      a: "Ihr Darlehen läuft zu den vereinbarten Bedingungen weiter. Lesen Sie trotzdem Ihren Darlehensvertrag: Viele Verträge verlangen, dass Sie der Bank einen Wohnsitzwechsel mitteilen. Schwieriger wird es bei der Anschlussfinanzierung, weil dann der Wohnsitz im Ausland wie bei einem neuen Kredit geprüft wird. Kümmern Sie sich deshalb frühzeitig darum. Wir sagen Ihnen, welche Banken solche Fälle annehmen."
+      timon: "5.4"
+    # FG-Gap-Answers 5.5 (TIMON), an seit 29.10.2026 (FG-Timon-Answers-Update §1, freigaben.timonFaq)
+    - q: "Lohnt sich eine Nachbeleihung, um eine Sanierung zu finanzieren?"
+      a: "Oft ja, wenn Ihr Darlehen schon zum Teil getilgt ist. Bei einer Nachbeleihung leiht Ihnen die Bank auf die bestehende Grundschuld neues Geld, häufig günstiger als ein Modernisierungskredit ohne Sicherheit. Vergleichen Sie das Angebot Ihrer Bank mit anderen Banken und mit Förderkrediten der KfW, die es für energetische Sanierungen gibt. Wir rechnen beides mit Ihnen durch."
+      timon: "5.5"
+    # FG-Gap-Answers 6.1, Text ersetzt nach FG-Timon-Answers-Update §2.3 (29.10.2026). Letzter Satz am 29.10.2026 geprüft:
+    # § 34i Abs. 1 Satz 1 und Abs. 8 Nr. 1 GewO, § 11a Abs. 1 GewO (gesetze-im-internet.de), Register vermittlerregister.info (DIHK); siehe PLAN.md
+    - q: "Woran erkenne ich, ob ein Finanzierungsvermittler unabhängig ist?"
+      a: "Daran, ob er die Angebote vieler Banken vergleichen kann. Wer nur mit einer Bank zusammenarbeitet, ist an diese Bank gebunden. Wir vergleichen über die Finanzierungsplattformen Europace und Baufinex rund 500 Banken und sprechen zusätzlich Banken direkt an, wenn ein Fall nicht über die Plattformen passt. Das ist zum Beispiel so, wenn Ihre Einnahmen aus Vermietung und Verpachtung höher sind als Ihr Gehalt: Seit 2026 gilt das bei den meisten Banken als gewerbliche Finanzierung, die über die Plattformen meist nicht mehr möglich ist. Wer Immobiliendarlehen vermittelt, braucht außerdem eine Erlaubnis nach § 34i GewO und steht im Vermittlerregister, das Sie online prüfen können."
+      timon: "6.1"
+    # FG-Timon-Answers-Update §3.1 (29.10.2026), neu
+    - q: "Wie verdient Fischer & Geserich an einer Finanzierung und was kostet sie mich?"
+      a: "Bei einem klassischen Annuitätendarlehen zahlt uns die Bank eine Provision, sobald die Finanzierung steht. Sie richtet sich nach der Darlehenssumme und liegt je nach Bank, Zinsbindung und Aufwand meist zwischen 0,5 und 1,5 Prozent. Bei 100.000 Euro und 1 Prozent sind das 1.000 Euro. Diese Provision ist in Ihren Zins eingerechnet: Je niedriger sie ist, desto niedriger ist Ihr Zins. Bei variablen Darlehen, etwa wenn Sie eine Wohnung kaufen, sanieren und wieder verkaufen, zahlen Banken keine Provision. Diese Finanzierungen vermitteln wir gegen eine Provision, die Sie als Darlehensnehmer zahlen."
+  related:
+    services:
+      - { label: "Ankaufsberatung", note: "Objekt, Lage, Wirtschaftlichkeit, Finanzierung", href: "/ankaufsberatung.html", bild: "ankauf-hero", alt: "Das Eckhaus Kurfürstendamm 190 in Berlin-Charlottenburg mit grüner Kuppel an einem sonnigen Junitag" }
+      - { label: "Immobilien als Kapitalanlage", note: "Die erste Wohnung bis zum Portfolio", href: "/kapitalanlage.html", bild: "kapitalanlage-hero", alt: "Gründerzeithaus von 1871 an der Humboldtstraße im Leipziger Waldstraßenviertel" }
+      - { label: "Mehrfamilienhaus", note: "Verkaufen, kaufen, finanzieren", href: "/mehrfamilienhaus.html", bild: "mfh-hero", alt: "Denkmalgeschütztes Eckhaus mit Klinkerfassade an der Schönhauser Allee in Berlin-Prenzlauer Berg" }
+      - { label: "Immobilie verkaufen", note: "Verkauf und nächste Finanzierung in einem Prozess", href: "/verkaufen.html" }
+    lexikon: [anschlussfinanzierung]
+    blog: [beleihungsauslauf-und-kondition, zinsbindung-strategisch-waehlen]
+  contact: timon
+  closing:
+    title: "Welche Finanzierung passt zu Ihrem Vorhaben?"
+    text: "Schicken Sie uns die Eckdaten oder rufen Sie an. Wir prüfen Ihren Fall und sagen Ihnen offen, was realistisch ist. Das Erstgespräch kostet Sie nichts und verpflichtet Sie zu nichts."
+    button: gespraech
+    gebiet: "Finanzierungen deutschlandweit"
+  schema:
+    name: "Immobilienfinanzierung und Finanzierungsberatung"
+    serviceType: "Immobilienfinanzierung"
+    description: "Vermittlung von Immobiliardarlehen nach § 34i GewO für Eigennutzer, Kapitalanleger und Mehrfamilienhäuser: Bankvergleich über Europace, Baufinex und direkte Bankkontakte, Anschlussfinanzierung, Finanzierung für Steuerausländer, Begleitung bis zur Auszahlung."
+    area: deutschland
 ---
-<section class="fg-journey-hero fg-page-hero bg-primary text-white py-16 md:py-24"><div class="container mx-auto px-4 max-w-6xl"><a href="/index.html#ziele" class="fg-back-link"><i class="fas fa-arrow-left"></i> Zurück zur Auswahl</a><div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center mt-8"><div class="lg:col-span-3 fg-reveal"><p class="fg-eyebrow">Immobilienfinanzierung</p><h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">Finanzierung so strukturieren, dass sie <span class="text-gold-gradient">zum Vorhaben passt.</span></h1><p class="text-lg md:text-xl text-page-bg mb-8">Wir prüfen Finanzierungsrahmen, Eigenkapital, Objekt und Bankfähigkeit gemeinsam – für Eigennutzer, Kapitalanleger und ausgewählte komplexere Vorhaben.</p><div class="flex flex-col sm:flex-row gap-3"><a href="#kontakt-finanzierung" class="btn-85 py-3 px-7 text-primary font-bold text-center">Finanzierung anfragen</a><a href="#finanzierungsrahmen" class="fg-pill-outline">Kaufpreisrahmen berechnen</a></div></div><div class="lg:col-span-2 fg-journey-side fg-reveal"><span><i class="fas fa-wallet"></i> Eigenkapital &amp; Monatsrate</span><span><i class="fas fa-building-columns"></i> passende Bankpartner</span><span><i class="fas fa-file-circle-check"></i> Unterlagen &amp; Antrag</span><span><i class="fas fa-money-check-dollar"></i> bis zur Auszahlung</span></div></div></div></section>
-<div id="finanzierungsrahmen"><section class="lab-finance-calc" data-affordability-calculator>
-  <div class="lab-shell"><div class="lab-section-head"><div><span class="lab-kicker">FINANZIELLER SPIELRAUM</span><h2>Wie viel Immobilie kann ich mir leisten?</h2><p>Ermitteln Sie einen ersten Kaufpreisrahmen aus Rate, Eigenkapital, Sollzins, Tilgung und Kaufnebenkosten.</p></div></div>
-  <form class="lab-calc-form"><div class="lab-fields">
-    <label class="lab-field"><span>Verfügbare Monatsrate</span><div><input name="rate" value="1800" inputmode="decimal"><b>€</b></div></label>
-    <label class="lab-field"><span>Eigenkapital</span><div><input name="equity" value="80000" inputmode="decimal"><b>€</b></div></label>
-    <label class="lab-field"><span>Sollzins p.a.</span><div><input name="interest" value="4,2" inputmode="decimal"><b>%</b></div></label>
-    <label class="lab-field"><span>Anfängliche Tilgung p.a.</span><div><input name="repay" value="2,0" inputmode="decimal"><b>%</b></div></label>
-    <label class="lab-field"><span>Kaufnebenkosten</span><div><input name="costs" value="10,0" inputmode="decimal"><b>%</b></div></label>
-  </div><div class="lab-form-actions"><button class="lab-btn lab-btn-gold">Kaufpreisrahmen berechnen</button><a href="/investment-lab.html" class="lab-btn lab-btn-ghost">Alle Rechner</a></div></form><div class="lab-tool-result" data-afford-result></div>
-  <p class="lab-result-note">Unverbindliche Orientierung. Banken rechnen zusätzlich mit Haushaltsüberschuss, Beleihungswert, Nebenkosten, Objektqualität und individuellen Sicherheitsabschlägen.</p></div>
-</section></div>
-<section class="fg-home-v2-section bg-white"><div class="container mx-auto px-4"><div class="fg-home-v2-head fg-reveal"><p class="fg-section-kicker">Finanzierungsprozess</p><h2>Von der ersten Rate bis zur unterschriftsreifen Lösung.</h2><p>Die günstigste Zahl allein entscheidet nicht. Relevant ist, ob Finanzierung, Laufzeit, Tilgung, Flexibilität und Objekt langfristig zusammenpassen.</p></div><div class="fg-workflow-grid max-w-6xl mx-auto"><article class="fg-workflow-card fg-reveal"><span>01</span><i class="fas fa-comments"></i><h3>Ausgangslage</h3><p>Einkommen, Eigenkapital, Wunschrate, Objekt und Ziele einordnen.</p></article><article class="fg-workflow-card fg-reveal"><span>02</span><i class="fas fa-scale-balanced"></i><h3>Bankvergleich</h3><p>Geeignete Bankpartner und Finanzierungsvarianten strukturiert vergleichen.</p></article><article class="fg-workflow-card fg-reveal"><span>03</span><i class="fas fa-file-signature"></i><h3>Umsetzung</h3><p>Unterlagen, Rückfragen, Kreditentscheidung und Auszahlung begleiten.</p></article></div></div></section>
-<section class="fg-dark-compact"><div class="container mx-auto px-4"><div class="fg-dark-compact-grid"><div><p class="fg-section-kicker fg-section-kicker-light">Kooperation</p><h2>Immobilienwissen und Finanzierung zusammengedacht.</h2><p>Bei ausgewählten Investmentvorhaben arbeiten wir eng mit Immovisory zusammen. So können Ankaufsprüfung und Finanzierung aufeinander abgestimmt werden.</p></div><div class="fg-dark-points"><span><i class="fas fa-check"></i> Eigennutzer &amp; Kapitalanleger</span><span><i class="fas fa-check"></i> Anschluss- und Bestandsfinanzierungen</span><span><i class="fas fa-check"></i> komplexere Investorenfälle nach Prüfung</span><span><i class="fas fa-check"></i> deutschlandweite Bankansprache möglich</span></div></div></div></section>
-{% set faqItems = mangoTexte.faq.D %}
-{% set faqAnchor = "faq-finanzierung" %}
-{% set faqTitle = "Häufige Fragen zur Finanzierung" %}
-{% set faqIntro = "Von Eigenkapital bis Beleihungswert: zentrale Fragen vor der Finanzierungsanfrage." %}
-{% set faqKicker = "Finanzierung verständlich" %}
-{% include "faq-block.njk" %}
+{#- Finanzierungsberatung nach Design-Pass 2 §4 (29.10.2026): Fotokapitel „Wie wir Banken vergleichen“, Ablauf als Reihe, die Kapitel
+    Eigennutzer und Kapitalanleger, Mehrfamilienhäuser, Steuerausländer und Anschlussfinanzierung als Zeilen (Überschrift links, Leitsatz
+    rechts, der Rest unter „Mehr erfahren“), Unterlagen als Aufklapper, Rechner, F&G in Zahlen, Anfrage. Texte unverändert; das
+    Inhaltsverzeichnis entfällt wie auf Verkaufen. Rechner und Anfrageformular behalten Felder, Namen und data-Attribute (fg-design.js).
+    Die Anker #mehrfamilienhaus, #steuerauslaender und #anschluss (Links von anderen Seiten) öffnen den Aufklapper ihres Kapitels. -#}
+{% from "fgs-macros.njk" import fotokapitel, nachschlag, mehr, wide, facts, textlink with context %}
+{% from "fgd-icons.njk" import icon %}
 
-<section id="kontakt-finanzierung" class="fg-contact-section py-8 md:py-14"><div class="container mx-auto px-4 text-center mb-2 fg-reveal"><p class="fg-section-kicker">Finanzierung anfragen</p><h2 class="text-3xl md:text-5xl font-bold text-primary mb-3">Welche Finanzierung möchten Sie prüfen?</h2><p class="text-gray-700 max-w-2xl mx-auto">Schicken Sie uns die Eckdaten. Wir prüfen den Fall und melden uns persönlich für die nächsten Schritte.</p></div>{% set leadDefaultConcern = "Finanzierung" %}{% include "landingpage-lead.njk" %}</section>
+{# §4.4 Fotokapitel: H2 und die ersten zwei Sätze auf dem Foto, darunter der Rest mit den Vergleichspunkten #}
+{% call fotokapitel({ id: "vergleich", hoehe: 80, titel: "Wie wir Banken vergleichen", bild: "berlin-tiergarten-band" | bild, alt: "Straße des 17. Juni durch den Tiergarten, am Ende Brandenburger Tor und Fernsehturm",
+  satz: "Die meisten Finanzierungen vergleichen wir über die Plattformen Europace und Baufinex, rund 500 Banken auf einmal. Sobald ein Fall komplexer wird, etwa weil Sie Unternehmer sind oder Ihre Einnahmen aus Vermietung und Verpachtung höher sind als Ihr Gehalt, lässt er sich bei den meisten Banken über die Plattformen kaum abbilden. Dann sprechen wir Banken direkt an." }) %}
+  <p>Der niedrigste Zins ist nicht automatisch das beste Angebot. Wir vergleichen deshalb auch diese Punkte:</p>
+  <ul class="fgs-checklist" role="list">
+    <li>Sollzins und effektiver Jahreszins</li>
+    <li>Zinsbindung und Restschuld an ihrem Ende</li>
+    <li>Tilgung, Sondertilgungen und Tilgungssatzwechsel</li>
+    <li>Bereitstellungszinsen und Auszahlungsbedingungen</li>
+  </ul>
+{% endcall %}
+
+{# §4.5 Ablauf: ab 1.240 px eine Reihe mit Nummer, Titel und erstem Satz; hat ein Schritt mehr als einen Satz, öffnet ein Klick den Rest #}
+<section class="fgs-section" id="ablauf" aria-labelledby="ablauf-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head">
+      <h2 id="ablauf-titel">Vom Erstgespräch bis zur Auszahlung</h2>
+      <p>Die Reihenfolge ist bei jeder Finanzierung gleich, auch wenn Sie das Objekt nicht über uns kaufen.</p>
+    </div>
+    {# Update 19 §6: Schritt 1 Selbstauskunft, neuer Schritt 2 Erstgespräch, Bankvergleich neu; sechs Schritte #}
+    <ol class="fgs-steps fgs-steps--reihe" role="list" data-fgs-steps style="--n: 6">
+      <li style="--i: 1">
+        <span class="fgs-step-num" aria-hidden="true">01</span>
+        <h3>Selbstauskunft</h3>
+        <p class="fgs-step-lead">Sie schicken uns Ihre Selbstauskunft, einen Teil davon schon über das Formular auf dieser Seite.</p>
+        <div class="fgs-step-panel" id="schritt-1"><p>Daran sehen wir, was machbar ist.</p></div>
+      </li>
+      <li style="--i: 2">
+        <span class="fgs-step-num" aria-hidden="true">02</span>
+        <h3>Erstgespräch</h3>
+        <p class="fgs-step-lead">Wir rufen Sie an und besprechen alles Weitere.</p>
+        <div class="fgs-step-panel" id="schritt-2"><p>Sie können das Erstgespräch auch direkt in unserem Kalender buchen.</p></div>
+      </li>
+      <li style="--i: 3">
+        <span class="fgs-step-num" aria-hidden="true">03</span>
+        <h3>Bankvergleich</h3>
+        <p class="fgs-step-lead">Wir vergleichen passende Banken und Varianten über die Plattformen.</p>
+        <div class="fgs-step-panel" id="schritt-3"><p>Direkte Bankkontakte nutzen wir für Fälle, die dort nicht passen.</p></div>
+      </li>
+      <li style="--i: 4">
+        <span class="fgs-step-num" aria-hidden="true">04</span>
+        <h3>Unterlagen und Antrag</h3>
+        <p class="fgs-step-lead">Wir stellen die Unterlagen mit Ihnen zusammen, prüfen sie auf Vollständigkeit und beantworten Rückfragen der Bank gemeinsam mit Ihnen.</p>
+      </li>
+      <li style="--i: 5">
+        <span class="fgs-step-num" aria-hidden="true">05</span>
+        <h3>Kredit&shy;entscheidung</h3>
+        <p class="fgs-step-lead">Die Bank prüft Bonität und Objekt und entscheidet über die Zusage.</p>
+        <div class="fgs-step-panel" id="schritt-5"><p>Bei einem Kauf klären wir, ob die Finanzierung realistisch ist, bevor der Kaufvertrag beim Notar beauftragt wird.</p></div>
+      </li>
+      <li style="--i: 6">
+        <span class="fgs-step-num" aria-hidden="true">06</span>
+        <h3>Nach der Zusage</h3>
+        <p class="fgs-step-lead">Wir begleiten Sie bei der Kaufpreisfälligkeit, beim Einrichten Ihres Bankzugangs und bei den Fristen bis zur Auszahlung.</p>
+      </li>
+    </ol>
+    <p class="fgs-note">Formal endet die Aufgabe eines Finanzierungsvermittlers mit der Auszahlung des Darlehens. Wir bleiben auch danach Ihr Ansprechpartner, zum Beispiel wenn die Anschlussfinanzierung ansteht.</p>
+  </div>
+</section>
+
+{# Kapitel als Zeilen (§2 Regel 1): Überschrift links, Leitsatz rechts, der Rest unter „Mehr erfahren“ #}
+<section class="fgs-section fgs-rows" aria-label="Finanzierung im Einzelnen">
+  <div class="fgs-wrap">
+  <article class="fgs-row fgs-cols fgs-cols--57" id="eigennutzer" aria-labelledby="eigennutzer-titel">
+    <div class="fgs-cols-head"><h2 id="eigennutzer-titel">Eigennutzer und Kapitalanleger</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Eine Bank sieht dieselben Zahlen bei einer selbst genutzten Wohnung anders als bei einer vermieteten. Deshalb fragen wir zuerst, was Sie mit der Immobilie vorhaben.</p>
+      {% call mehr() %}
+      <h3>Finanzierung für Eigennutzer</h3>
+      <p>Wer selbst einzieht, braucht vor allem eine Rate, die auch in ein paar Jahren noch zum Leben passt. Die Kaufnebenkosten liegen meist bei 7,5 bis 15 Prozent des Kaufpreises, je nach Bundesland und je nachdem, ob eine Maklerprovision anfällt. In Bayern können es ohne Makler auch nur rund 5,5 Prozent sein. Fehlt Eigenkapital, steigen <a href="/lexikon/beleihungsauslauf/">Beleihungsauslauf</a> und Zins oder die Lücke wird über ein teureres Blankodarlehen geschlossen. Beides setzen wir nur um, wenn Ihre Bonität es wirklich hergibt.</p>
+      <p>Wie viel Eigenkapital sinnvoll ist, hängt auch vom Zinsniveau ab. Liegen die Zinsen bei 3 bis 5 Prozent, lohnen sich KfW- und andere Förderkredite und so viel Eigenkapital, wie sinnvoll möglich ist. In Niedrigzinsphasen wie 2021 kann es sinnvoll sein, mehr zu finanzieren.</p>
+      <h3 id="kapitalanleger">Finanzierung für Kapitalanleger</h3>
+      <p>Bei einer Kapitalanlage kommen Miete, Rendite, laufende Kosten und die langfristige Finanzierung dazu. Ab etwa 10.000 Euro Eigenkapital ist ein Einstieg realistisch, damit lässt sich eine Wohnung im Bereich um 100.000 Euro darstellen.</p>
+      <p>Von einer 110-Prozent-Finanzierung bei der ersten Wohnung raten wir ab. Sie bringt eine hohe Zinsbelastung und für die zweite Immobilie sind Sie danach bei den meisten Banken nicht mehr finanzierbar. Mit drei oder vier Objekten, von denen einige Cashflow positiv laufen, bewertet die Bank dieselbe Anfrage völlig anders.</p>
+      <p class="fgs-note">Wie wir Mieten, Kosten und Rendite einer Wohnung rechnen, steht auf der Seite <a href="/kapitalanlage.html">Immobilien als Kapitalanlage</a>. Mit dem <a href="/investitionsrechner.html">Investitionsrechner</a> können Sie ein Objekt selbst durchrechnen.</p>
+      {% endcall %}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="mehrfamilienhaus" aria-labelledby="mfh-titel">
+    <div class="fgs-cols-head">
+      <h2 id="mfh-titel">Mehr&shy;familien&shy;häuser finanzieren</h2>
+      {{ wide("leipzig-band" | bild, "Blick vom City-Hochhaus über die Leipziger Innenstadt mit dem Neuen Rathaus") }}
+    </div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Bei einem Mehrfamilienhaus prüft die Bank neben Ihrer Bonität vor allem das Objekt: Tragen die Mieten nach Bewirtschaftungskosten den Kapitaldienst, wie hoch ist der Instandhaltungsbedarf, in welchem energetischen Zustand ist das Haus?</p>
+      {% call mehr() %}
+      <p>Bei schlechteren Energieeffizienzklassen verlangen viele Banken inzwischen einen energetischen Modernisierungsfahrplan. Noch nicht alle tun das, in den nächsten Jahren wird es aber bei den meisten Banken Standard sein.</p>
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li>Mieterliste, Mietverträge und Bewirtschaftungskosten</li>
+        <li>Kapitaldienstfähigkeit des Objekts (<a href="/lexikon/dscr/">DSCR</a>)</li>
+        <li>Instandhaltung, Sanierung und Energieausweis</li>
+      </ul>
+      {% endcall %}
+      {{ textlink("/mehrfamilienhaus.html", "Mehrfamilienhaus verkaufen, kaufen und finanzieren") }}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="steuerauslaender" aria-labelledby="ausland-titel">
+    <div class="fgs-cols-head"><h2 id="ausland-titel">Finanzierung für Steuerausländer</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Die meisten Banken lehnen Kunden ohne Wohnsitz in Deutschland grundsätzlich ab. Wir arbeiten mit Banken, die solche Fälle prüfen.</p>
+      {% call mehr() %}
+      <p>Wir vermitteln Finanzierungen für Steuerausländer, sowohl für Eigentumswohnungen als auch für Mehrfamilienhäuser ab einer Million Euro. Planen Sie dafür mehr Vorlauf ein als bei einer Standardfinanzierung.</p>
+      <blockquote class="fgs-pull fgs-pull--case">
+        <p>{{ mangoTexte.case.title | replace("Aus der Praxis, ", "Aus der Praxis: ") }}</p>
+        {% for para in mangoTexte.case.paras %}<p class="fgs-pull-text">{{ para | fakten6 }}</p>{% endfor %}
+      </blockquote>
+      <h3>Einkommen in einer anderen Währung</h3>
+      <p>Liegen Einkommen oder Vermögen nicht in Euro, können Banken zusätzliche Sicherheitsabschläge verlangen. In schwierigen Fällen finanzieren sie dann nur noch etwa 50 bis 60 Prozent des Beleihungswerts. Das entscheidet jede Bank im Einzelfall und Fälle mit Währungsrisiko brauchen mehr Zeit als andere.</p>
+      {% endcall %}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="anschluss" aria-labelledby="anschluss-titel">
+    <div class="fgs-cols-head"><h2 id="anschluss-titel">Anschluss&shy;finanzierung</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Am Ende der Zinsbindung ist meist noch eine Restschuld offen. Für sie brauchen Sie eine neue Vereinbarung, mit Ihrer bisherigen Bank oder einer anderen.</p>
+      {% call mehr() %}
+      <p>Vor dem Ende der Zinsbindung schickt Ihnen Ihre Bank in der Regel ein Angebot zur Verlängerung, die Prolongation. Das ist bequem, aber nicht unbedingt das günstigste Angebot. Wir vergleichen es mit anderen Banken, einschließlich der Kosten, die ein Wechsel mit sich bringt.</p>
+      <p>Wer früh Planungssicherheit möchte, kann mit einem <a href="/lexikon/forward-darlehen/">Forward-Darlehen</a> den Zins schon heute für später festlegen, meist gegen einen Aufschlag. Nach zehn Jahren ab vollständiger Auszahlung können Sie ein Darlehen mit festem Zins außerdem mit sechs Monaten Frist kündigen, auch wenn die Zinsbindung länger läuft (§ 489 BGB).</p>
+      <p>Der Zins orientiert sich dabei nicht am Leitzins der Europäischen Zentralbank, sondern an der Rendite der deutschen Bundesanleihe mit entsprechender Laufzeit. Steigt sie, ziehen die Bauzinsen mit, bei manchen Banken taggleich, bei anderen nach zwei bis drei Wochen.</p>
+      <p class="fgs-note">Verkaufen Sie Ihre Immobilie, statt sie weiter zu finanzieren, planen wir Verkauf und Ablösung des Darlehens zusammen, siehe <a href="/verkaufen.html#naechste-immobilie">Verkaufen und die nächste Immobilie finanzieren</a>.</p>
+      {% endcall %}
+    </div>
+  </article>
+  </div>
+</section>
+
+{# §4.6 Unterlagen als Aufklapper; Titel ist die bisherige H2. #unterlagen öffnet ihn. #}
+<section class="fgs-section fgs-refs">
+  <div class="fgs-wrap">
+    {% call nachschlag({ id: "unterlagen", titel: "Unterlagen für die Bank" }) %}
+    <p>Welche Unterlagen eine Bank genau verlangt, ist von Institut zu Institut verschieden. Diese Liste zeigt, was fast immer gebraucht wird.</p>
+    <h3>Zu Ihrer Person</h3>
+    <ul class="fgs-checklist" role="list">
+      <li>Personalausweis oder Reisepass</li>
+      <li>Einkommensnachweise<span>bei Angestellten die letzten Gehaltsabrechnungen, bei Selbstständigen Steuerbescheide, Bilanzen oder Einnahmen-Überschuss-Rechnungen und eine aktuelle BWA</span></li>
+      <li>Nachweis des Eigenkapitals<span>zum Beispiel Kontoauszüge oder Depotauszüge</span></li>
+      <li>Übersicht über laufende Kredite und bestehende Immobilien</li>
+    </ul>
+    <h3>Zum Objekt</h3>
+    <ul class="fgs-checklist" role="list">
+      <li>Exposé mit Fotos, Kaufvertragsentwurf, sobald er vorliegt</li>
+      <li>Grundbuchauszug und Flurkarte</li>
+      <li>Wohnflächenberechnung, Grundrisse, Baubeschreibung und Energieausweis</li>
+      <li>Bei Eigentumswohnungen: Teilungserklärung, Protokolle der Eigentümerversammlungen, Wirtschaftsplan</li>
+      <li>Bei vermieteten Objekten: Mietverträge und Mieterliste</li>
+    </ul>
+    <h3>Bei einer Anschlussfinanzierung</h3>
+    <ul class="fgs-checklist fgs-checklist--one" role="list">
+      <li>Aktueller Darlehensvertrag und letzter Kontoauszug zum Darlehen mit der Restschuld</li>
+    </ul>
+    {% endcall %}
+  </div>
+</section>
+
+
+{# Update 11 §2 (29.10.2026): Der Platzhalter für ein zweites Widget („Was kann ich mir leisten?“) ist gelöscht; hier steht nur der eigene Rechner. #}
+{# F Kaufpreisrahmen-Rechner (gleiche Rechnung wie bisher in script.js) #}
+<section class="fgs-section" id="rechner" aria-labelledby="rechner-titel">
+  <div class="fgs-wrap fgs-formblock">
+    <div class="fgs-formblock-text">
+      <h2 id="rechner-titel">Wie viel Immobilie kann ich mir leisten?</h2>
+      <p class="fgs-lead">Ermitteln Sie einen ersten Kaufpreisrahmen aus Rate, Eigenkapital, Sollzins, Tilgung und Kaufnebenkosten.</p>
+      <p class="fgs-note">Unverbindliche Orientierung. Banken rechnen zusätzlich mit Haushaltsüberschuss, Beleihungswert, Nebenkosten, Objektqualität und individuellen Sicherheitsabschlägen.</p>
+      {{ textlink("/investment-lab.html", "Alle Rechner im Investment Lab") }}
+    </div>
+    <div class="fgs-formblock-form">
+    <div class="fgd-form-card fgd-calc" data-fgd-afford>
+      <form class="fgd-form" novalidate>
+        <div class="fgd-field-row">
+          <label>Verfügbare Monatsrate<span class="fgd-unit"><input name="rate" value="1800" inputmode="decimal"><b>€</b></span></label>
+          <label>Eigenkapital<span class="fgd-unit"><input name="equity" value="80000" inputmode="decimal"><b>€</b></span></label>
+        </div>
+        <div class="fgd-field-row fgd-field-row--3">
+          <label>Sollzins p.&nbsp;a.<span class="fgd-unit"><input name="interest" value="4,2" inputmode="decimal"><b>%</b></span></label>
+          <label>Tilgung p.&nbsp;a.<span class="fgd-unit"><input name="repay" value="2,0" inputmode="decimal"><b>%</b></span></label>
+          <label>Kaufnebenkosten<span class="fgd-unit"><input name="costs" value="10,0" inputmode="decimal"><b>%</b></span></label>
+        </div>
+        <button type="submit" class="fgd-btn fgd-btn-navy">Kaufpreisrahmen berechnen{{ icon("arrow") | safe }}</button>
+      </form>
+      <div class="fgd-calc-result" data-fgd-afford-result aria-live="polite"></div>
+    </div>
+    </div>
+  </div>
+</section>
+
+{# §4.7 F&G in Zahlen: Streifen wie auf der Startseite, einmal auf der Seite; zwischen Rechner und Anfrage, damit nicht zwei
+    Formularblöcke aufeinander folgen. Ohne „Angabe von F&G“ (Design-Pass 2 §7). #}
+{{ facts({ id: "zahlen", titel: "F&G in Zahlen", hochzaehlen: true, mitte: true, items: [
+  { wert: "über 4 Mio. €", text: "begleitetes Finanzierungsvolumen 2026" },
+  { wert: "rund 500", text: "Banken im Vergleich über Europace und Baufinex, dazu direkte Bankkontakte" },
+  { wert: google.rating, text: "von 5 Sternen aus " + google.count + " Google-Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>, Stand ' + google.checkedLabel }
+] }) }}
+
+{# F Finanzierung anfragen #}
+<section class="fgs-section" id="anfrage-bereich" aria-labelledby="anfrage-titel">
+  <div class="fgs-wrap fgs-formblock">
+    <div class="fgs-formblock-text">
+      <h2 id="anfrage-titel">Welche Finanzierung möchten Sie prüfen?</h2>
+      <p class="fgs-lead">Schicken Sie uns die Eckdaten. Wir prüfen den Fall und melden uns persönlich für die nächsten Schritte.</p>
+      <ol class="fgs-steps fgs-steps--compact" role="list">
+        <li>
+          <span class="fgs-step-num" aria-hidden="true">01</span>
+          <h3>Selbstauskunft senden</h3>
+          <p>Vorhaben, Kaufpreis oder Darlehenssumme und Eigenkapital reichen für den Anfang.</p>
+        </li>
+        <li>
+          <span class="fgs-step-num" aria-hidden="true">02</span>
+          <h3>Timon Fischer meldet sich</h3>
+          <p>Er verantwortet bei uns die Finanzierungen.</p>
+        </li>
+        <li>
+          <span class="fgs-step-num" aria-hidden="true">03</span>
+          <h3>Erstgespräch</h3>
+          <p>Danach wissen Sie, welcher Rahmen realistisch ist.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="fgs-formblock-form">
+    <div class="fgd-form-card" id="anfrage">
+      <h2>Finanzierung anfragen</h2>
+      <p>Pflichtfelder sind mit * markiert.</p>
+      <form method="post" action="/.netlify/functions/propstack-lead?concern=Finanzierung" class="fgd-form" data-fgd-lead-form data-concern="Finanzierung" novalidate>
+        <fieldset>
+          <legend>Ihr Vorhaben</legend>
+          <label>Worum geht es? *
+            <select name="extra:Vorhaben" required>
+              <option value="">Bitte wählen</option>
+              <option>Kauf einer selbst genutzten Immobilie</option>
+              <option>Kapitalanlage</option>
+              <option>Mehrfamilienhaus</option>
+              <option>Anschlussfinanzierung</option>
+              <option>Finanzierung als Steuerausländer</option>
+              <option>Etwas anderes</option>
+            </select>
+          </label>
+          <div class="fgd-field-row">
+            <label>Kaufpreis oder Darlehenssumme<input name="budget" inputmode="decimal" placeholder="in Euro"></label>
+            <label>Eigenkapital<input name="property_details[visible-financing-equity]" inputmode="decimal" placeholder="in Euro, ungefähr"></label>
+          </div>
+          <div class="fgd-field-row">
+            <label>Objekt schon gefunden?
+              <select name="property_details[visible-financing-object]">
+                <option value="">Bitte wählen</option>
+                <option>Ja</option>
+                <option>Nein, ich suche noch</option>
+                <option>Ich besitze es bereits</option>
+              </select>
+            </label>
+            <label>Ort des Objekts<input name="location" placeholder="z.&nbsp;B. Berlin-Steglitz"></label>
+          </div>
+          <label>Zeitrahmen
+            <select name="timeframe">
+              <option value="">Bitte wählen</option>
+              <option>So bald wie möglich</option>
+              <option>In den nächsten drei Monaten</option>
+              <option>In drei bis zwölf Monaten</option>
+              <option>Später, ich plane noch</option>
+            </select>
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>Ihre Kontaktdaten</legend>
+          <div class="fgd-field-row">
+            <label>Vorname *<input name="first_name" required autocomplete="given-name"></label>
+            <label>Nachname *<input name="last_name" required autocomplete="family-name"></label>
+          </div>
+          <div class="fgd-field-row">
+            <label>E-Mail *<input name="email" type="email" required autocomplete="email"></label>
+            <label>Telefon<input name="phone" type="tel" autocomplete="tel" placeholder="für Rückfragen"></label>
+          </div>
+          <label>Nachricht<textarea name="message" rows="3" maxlength="3000" placeholder="optional, zum Beispiel Einkommen, Zinsbindungsende oder Besonderheiten"></textarea></label>
+        </fieldset>
+        <label class="fgd-hp" aria-hidden="true">Website<input name="company_website" tabindex="-1" autocomplete="off"></label>
+        <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
+        <div class="fgd-status" data-fgd-lead-status hidden></div>
+        <button type="submit" class="fgd-btn fgd-btn-navy">Finanzierung anfragen{{ icon("arrow") | safe }}</button>
+      </form>
+      <div class="fgd-form-done" data-fgd-lead-done tabindex="-1" hidden>
+        <h3>Vielen Dank, Ihre Anfrage ist da</h3>
+        <p>Timon Fischer meldet sich bei Ihnen. Wenn es eilt, erreichen Sie uns unter <a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a>.</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+{# Update 5, Abschnitt 2: Angebotsrechner der Finanzierungsplattform vor den häufigen Fragen (_data/finanzWidgets.js). Seit Update 11 §2 mit Timons Code. #}
+{% if finanzWidgets.anbieter and finanzWidgets.angebot %}
+<section class="fgs-section fgd-widget-section" id="angebot" aria-labelledby="angebot-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head">
+      <h2 id="angebot-titel">Finanzierungsangebot berechnen</h2>
+      <p>Mit dem Angebotsrechner sehen Sie, wie ein Finanzierungsangebot für Ihre Angaben aussehen kann. Verbindlich wird ein Angebot erst nach Prüfung durch die Bank.</p>
+    </div>
+    {% set wKey = "angebot" %}{% set wName = "Angebotsrechner" %}
+    {% include "fgd-widget.njk" %}
+  </div>
+</section>
+{% endif %}

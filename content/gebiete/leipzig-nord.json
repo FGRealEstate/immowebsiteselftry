@@ -1,0 +1,413 @@
+{
+  "slug": "leipzig/nord",
+  "name": "Leipzig-Nord",
+  "nameLang": "Leipzig-Nord",
+  "inOrt": "in Leipzig-Nord",
+  "fuerOrt": "Leipzig-Nord",
+  "typ": "marktgebiet",
+  "kreis": {
+    "name": "Leipzig",
+    "url": "/standorte/leipzig/"
+  },
+  "orte": [
+    "Gohlis-Süd",
+    "Gohlis-Mitte",
+    "Gohlis-Nord",
+    "Zentrum-Nord",
+    "Eutritzsch",
+    "Schönefeld-Abtnaundorf",
+    "Schönefeld-Ost",
+    "Mockau-Süd",
+    "Mockau-Nord"
+  ],
+  "kontakt": "timon",
+  "title": "Immobilienmakler Leipzig-Nord – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler in Leipzig-Nord: verkaufen, kaufen und finanzieren in Gohlis, Eutritzsch, Zentrum-Nord, Schönefeld und Mockau, mit Marktdaten 2026.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Leipzig-Nord",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Leipzig-Nord beim Verkauf, beim Kauf und bei der Finanzierung, von den Gründerzeitstraßen in Gohlis und Eutritzsch bis zu den Siedlungen in Schönefeld und Mockau. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Leipzig ist Timon Fischer Ihr Ansprechpartner, Geschäftsführer und verantwortlich für die Immobilienfinanzierung.",
+  "hero": {
+    "name": "leipzig-nord-gohliser-schloesschen",
+    "alt": "Das Gohliser Schlösschen in Gohlis-Süd",
+    "credit": "Falk2, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:L00_744_Gohliser_Schl%C3%B6sschen.jpg",
+    "position": "50% 50%"
+  },
+  "stand": "Oktober 2026",
+  "updated": "2026-10-27",
+  "zahlen": [
+    {
+      "wert": "Ø 2.676 €/m²",
+      "label": "Eigentumswohnungen im sanierten Altbau, Weiterverkauf im Stadtbezirk Nord",
+      "detail": "306 Verkäufe ohne Stellplatz, Median 2.633 €/m², Spanne 1.013 bis 4.938 €/m². Zum Stadtbezirk gehören Gohlis, Eutritzsch, Wiederitzsch und Seehausen. Im Stadtbezirk Nordost mit Schönefeld und Mockau: 2.542 €/m², in ganz Leipzig 2.850 €/m².",
+      "quelle": "Grundstücksmarktbericht Leipzig 2026",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 6.960 €/m²",
+      "label": "Neue Eigentumswohnungen ohne Stellplatz in Gohlis-Süd",
+      "detail": "60 Verkäufe, Spanne 6.417 bis 7.070 €/m², im Mittel 44 m² groß. Mit Stellplatz 29 Verkäufe zu 7.692 €/m². In ganz Leipzig kosteten neue Wohnungen ohne Stellplatz 5.953 €/m².",
+      "quelle": "Grundstücksmarktbericht Leipzig 2026",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "23,7 und 21,4",
+      "label": "Rohertragsfaktoren sanierter Mehrfamilienhäuser in den Stadtbezirken Nord und Nordost",
+      "detail": "Nord: 19 Verkäufe mit Ertragsdaten, im Mittel 1.840 €/m² Wohn- und Nutzfläche, Miete 6,52 €/m², Nettoanfangsrendite 2,9 %. Nordost: 14 Verkäufe, 1.705 €/m², 6,69 €/m², 3,2 %. In ganz Leipzig: Faktor 23,1.",
+      "quelle": "Grundstücksmarktbericht Leipzig 2026",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "400 bis 1.700 €/m²",
+      "label": "Bodenrichtwerte für Mehrfamilienhaus-Grundstücke in den Wohngebieten",
+      "detail": "Gohlis 400 bis 1.280 €/m², Zentrum-Nord 850 bis 1.700 €/m², Eutritzsch 680 bis 1.000 €/m², Schönefeld 400 bis 690 €/m², Mockau 400 bis 520 €/m². An der Magdalenenstraße in Eutritzsch stieg der Wert von 850 auf 1.000 €/m².",
+      "quelle": "Bodenrichtwerte Leipzig, eigene Auswertung",
+      "url": "https://geodienste.leipzig.de/l3/OpenData/BRW_Zonen_2026/wfs?SERVICE=WFS&REQUEST=GetCapabilities",
+      "stichtag": "01.01.2026"
+    },
+    {
+      "wert": "114.819",
+      "label": "Einwohner in den neun Ortsteilen von Gohlis bis Mockau",
+      "detail": "12 % mehr als 2015, in Zentrum-Nord 22 %. Das Durchschnittsalter reicht von 37,8 Jahren in Schönefeld-Abtnaundorf bis 48,8 Jahre in Schönefeld-Ost, in ganz Leipzig 42,4 Jahre.",
+      "quelle": "Amt für Statistik und Wahlen Leipzig",
+      "url": "https://statistik.leipzig.de/opendata/api/kdvalues?kategorie_nr=2&rubrik_nr=1&periode=y&format=csv",
+      "stichtag": "Ende 2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Gohlis: Gründerzeit, Villen und Krochsiedlung",
+      "absaetze": [
+        "Die Stadt beschreibt Gohlis als Wohngegend mit Gründerzeitstraßen und Jugendstilvillen; dazu gehören das Schillerhaus und das Gohliser Schlösschen, in Gohlis-Nord die Krochsiedlung aus den 1920er Jahren.[[16]] Zu Leipzig gehört Gohlis seit dem 01.01.1890.[[15]] In Gohlis-Süd leben 18.810, in Gohlis-Mitte 17.926 und in Gohlis-Nord 10.237 Menschen. In Gohlis-Süd wurden 48 % der 1.446 Gebäude mit Wohnungen bis 1918 gebaut, in Gohlis-Mitte 40 % zwischen 1919 und 1948; die Wohnungen beider Ortsteile sind im Mittel 75 m² groß, in ganz Leipzig 70,3 m².[[6]] Vom S-Bahnhof Leipzig-Gohlis sind Sie mit der S1 in 4 Minuten am Hauptbahnhof, von der Menckestraße mit der Straßenbahnlinie 4 in 21 Minuten.[[21]]",
+        "In Gohlis-Mitte liegen 89 % der 1.389 Adressen in guter Wohnlage, in Gohlis-Süd 59 % in guter oder sehr guter, etwa in der Stallbaum-, Heinroth- und Fechnerstraße; einfach ist dort vor allem die Georg-Schumann-Straße. Gohlis-Nord liegt zu 87 % in mittlerer Lage.[[5]] Die Bodenrichtwerte für Mehrfamilienhäuser stiegen zum 01.01.2026 an der Corinthstraße von 1.200 auf 1.280 €/m² und an der Prellerstraße von 1.200 auf 1.250 €/m²; am Wangerooger Weg in Gohlis-Nord sind es 400 €/m².[[2]] Das Sanierungsgebiet Leipzig-Gohlis umfasste 71 Hektar in weiten Teilen von Gohlis-Süd; seine Aufhebung wurde am 28.02.2024 beschlossen.[[12]] 2025 wurden in Gohlis-Süd 60 neue Wohnungen ohne Stellplatz verkauft, im Mittel für 6.960 €/m².[[1]]"
+      ],
+      "bild": {
+        "name": "leipzig-nord-gohliser-anger",
+        "alt": "Mehrgeschossige Wohnhäuser am Gohliser Anger, vorn ein Eckhaus mit heller, verzierter Fassade, Erkern und geschwungenem Giebel, davor ein großer Laubbaum, Grünfläche und parkende Autos, blauer Himmel mit Schleierwolken",
+        "caption": "Wohnhäuser am Gohliser Anger.",
+        "credit": "Aagnverglaser, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Gohliser_Anger.jpg"
+      }
+    },
+    {
+      "h2": "Zentrum-Nord und Eutritzsch: vom Zoo bis zum Eutritzscher Markt",
+      "absaetze": [
+        "Vom Stadtzentrum nach Norden verläuft die Gerberstraße, weiter als Eutritzscher Straße; sie ist die Hauptachse von Zentrum-Nord, der Zoo liegt in unmittelbarer Nähe.[[17]] Der Ortsteil wuchs seit 2015 um 22 % auf 10.569 Einwohner, 2024 wurden hier 504 Wohnungen fertiggestellt.[[6]] Alle 566 Adressen liegen im Mietspiegel innerhalb der Innenstadt, 77 % in guter Lage und 14 % in Kerngebietslage, etwa an der Löhrstraße.[[5]] An der Gneisenaustraße stieg der Bodenrichtwert von 1.600 auf 1.700 €/m².[[2]] Vom Zoo fährt die Linie 12 in 13 Minuten zum Hauptbahnhof.[[21]]",
+        "Eutritzsch war ursprünglich ein slawisches Dorf und kam 1890 zu Leipzig; der alte Dorfkern liegt am Eutritzscher Markt und an der Gräfestraße, im Norden das Klinikum St. Georg.[[18]] Von den 1.580 Gebäuden mit Wohnungen stammen 24 % aus der Zeit bis 1918, 31 % aus den Jahren 1919 bis 1948 und 36 % aus der Zeit ab 1991; 657 haben eine oder zwei Wohnungen.[[6]] Seit dem 05.07.2020 gilt die soziale Erhaltungssatzung Eutritzsch für rund 26 Hektar mit etwa 3.100 Wohnungen zwischen Theresien-, Delitzscher und Anhalter Straße.[[9]] An der Magdalenenstraße stieg der Bodenrichtwert von 850 auf 1.000 €/m².[[2]] Vom Eutritzscher Markt sind Sie mit der Linie 16 in 17 Minuten am Hauptbahnhof.[[21]]"
+      ],
+      "bild": {
+        "name": "leipzig-nord-eutritzscher-markt",
+        "alt": "Der Eutritzscher Markt mit dem Rathaus",
+        "caption": "Eutritzscher Markt mit Rathaus.",
+        "credit": "Andreas Wolf 01, CC0",
+        "url": "https://commons.wikimedia.org/wiki/File:Eutritzscher_Markt_mit_Rathaus.jpg",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "h2": "Schönefeld: Mariannenpark, Gorkistraße und Großsiedlung",
+      "absaetze": [
+        "Die Stadt unterscheidet in Schönefeld drei Teile: die alte Ortslage um die Ossietzkystraße mit Schloss, Gedächtniskirche und Rathaus, das Gründerzeitgebiet entlang der Gorkistraße bis zum Mariannenpark und die seit 1962 entstandene Großwohnsiedlung Schönefeld-Ost.[[19]] Zu Leipzig gehört Schönefeld seit dem 15.02.1915.[[15]] Schönefeld-Abtnaundorf hat 13.940 Einwohner, im Mittel 37,8 Jahre alt; 54 % der Gebäude mit Wohnungen entstanden bis 1918. In Schönefeld-Ost leben 10.446 Menschen, im Mittel 48,8 Jahre alt; 54 % der Gebäude stammen aus den Jahren 1949 bis 1990, die Wohnungen sind im Mittel 58,9 m² groß.[[6]] Von der Haltestelle Ossietzky-/Gorkistraße fährt die Linie 1 in 20 Minuten zum Hauptbahnhof.[[21]]",
+        "Seit dem 23.02.2025 gilt die soziale Erhaltungssatzung Schönefeld (westlicher Bereich) für rund 25 Hektar mit 3.900 Wohnungen zwischen Heinkstraße, Gorkistraße, Adenauerallee und Mariannenpark.[[9]] Die Bodenrichtwerte stiegen an der Paul-Heyse-Straße von 630 auf 690 €/m², an der Gorkistraße von 620 auf 680 €/m²; in der Großsiedlung zwischen Max-Lingner- und Julian-Marchlewski-Straße sind es 400 €/m².[[2]] In Schönefeld-Abtnaundorf liegen 68 % der Adressen in mittlerer und 9 % in guter Wohnlage, etwa in der Paul-Heyse-Straße; 23 % sind einfach, darunter fast die ganze Gorkistraße.[[5]] Erstmals verkaufte sanierte Altbauwohnungen kosteten 2025 in Schönefeld-Abtnaundorf im Mittel 7.261 €/m², bei fünf Verkäufen.[[1]]"
+      ],
+      "bild": {
+        "name": "leipzig-nord-mariannenpark",
+        "alt": "Breiter, sonnenfleckiger Weg unter hohen Laubbäumen am Westrand des Mariannenparks, rechts dichtes Gebüsch",
+        "caption": "Weg am Westrand des Mariannenparks.",
+        "credit": "Don-kun, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Mariannenpark_Leipzig_2018_01.jpg"
+      }
+    },
+    {
+      "h2": "Mockau: Parthe, Siedlungshäuser und S-Bahn",
+      "absaetze": [
+        "Mockau wird im Osten und Süden von der Parthe mit ihren Kleingärten begrenzt und wuchs ab den 1850er Jahren mit der Industrie. Der 1913 eröffnete Flughafen Mockau war bis 1972 Verkehrsflughafen und wurde 1991 geschlossen; auf dem Gelände siedelten sich Industrie und Gewerbe an.[[20]] Zu Leipzig gehört Mockau seit dem 15.02.1915.[[15]] In Mockau-Nord leben 12.374 Menschen; von den 1.637 Gebäuden mit Wohnungen haben 1.097 eine oder zwei Wohnungen, die Hälfte entstand zwischen 1919 und 1948. Mockau-Süd hat 5.048 Einwohner, 2024 und 2025 kamen dort 134 neue Wohnungen hinzu.[[6]] Vom S-Bahnhof Mockauer Straße sind Sie mit der S4 in 6 Minuten am Hauptbahnhof.[[21]]",
+        "Keine Adresse in Mockau liegt im Mietspiegel in guter Lage: In Mockau-Nord sind 71 % mittel, in Mockau-Süd 54 % einfach, etwa die ganze Mockauer Straße.[[5]] Zum 01.01.2026 stieg der Bodenrichtwert an der Oelßnerstraße von 400 auf 520 €/m², an der Kieler Straße von 330 auf 400 €/m². Für Ein- und Zweifamilienhäuser gelten an der Gontscharowstraße 300 €/m², am Gontardweg 550 €/m².[[2]] Sanierte Mehrfamilienhäuser wurden 2025 in Mockau-Süd achtmal weiterverkauft, im Mittel für 1.877 €/m².[[1]]"
+      ],
+      "bild": {
+        "name": "leipzig-nord-mockau-post",
+        "alt": "Die Kreuzung an der Post in Mockau mit Straßenbahngleisen, Radfahrern und einem Eckhaus mit Giebeln",
+        "caption": "Die Kreuzung an der Post in Mockau.",
+        "credit": "Don-kun, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Kreuzung_Mockau_Post_juni_2015.JPG"
+      }
+    }
+  ],
+  "band": {
+    "name": "leipzig-nord-rosental",
+    "alt": "Weite Wiese im Rosental mit einem großen Laubbaum links, einem kleinen Teich mit Schilf und einem Waldrand unter Haufenwolken",
+    "caption": "Der Landschaftspark Rosental in Leipzig.",
+    "credit": "H.-P.Haack, CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Das_Rosental_in_Leipzig_(9._Juli_2009).jpg",
+    "position": "50% 60%"
+  },
+  "verkaufen": {
+    "h2": "Immobilie in Leipzig-Nord verkaufen",
+    "absaetze": [
+      "Im Stadtbezirk Nord, zu dem Gohlis, Eutritzsch, Wiederitzsch und Seehausen gehören, wurden 2025 306 Eigentumswohnungen im sanierten Altbau weiterverkauft, im Mittel für 2.676 €/m² Wohnfläche, bei einer Spanne von 1.013 bis 4.938 €/m². Im Stadtbezirk Nordost, zu dem Schönefeld und Mockau gehören, waren es 74 Wohnungen zu 2.542 €/m², in ganz Leipzig 2.850 €/m².[[1]] Wir bewerten Ihre Wohnung deshalb nach Wohnlage, Bodenrichtwertzone, Baujahr, Vermietungsstand und Vergleichsverkäufen im Ortsteil.",
+      "Mehrfamilienhäuser wechselten 2025 im Stadtbezirk Nord 27-mal den Eigentümer, für zusammen 63,8 Mio. €, in Nordost 21-mal für 33,3 Mio. €; in ganz Leipzig waren es 229 Häuser. Sanierte Häuser kosteten in Nord das 23,7-Fache der jährlichen Nettokaltmiete, in Nordost das 21,4-Fache.[[1]] In den Erhaltungsgebieten Eutritzsch und Schönefeld prüft die Stadt beim Verkauf ihr Vorkaufsrecht und strebt vorrangig eine Abwendungsvereinbarung mit dem Käufer an.[[11]] Bei Häusern in den früheren Sanierungsgebieten Gohlis und Eutritzsch-Zentrum klären wir vorab, ob der Ausgleichsbetrag festgesetzt und bezahlt ist.[[14]]"
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Leipzig-Nord",
+    "absaetze": [
+      "Als Eigennutzer finden Sie in Gohlis-Süd und Gohlis-Mitte Wohnungen mit im Mittel rund 75 m², mehr als in den übrigen Ortsteilen und in ganz Leipzig; in Mockau-Nord, Eutritzsch und Gohlis-Mitte auch viele Ein- und Zweifamilienhäuser.[[6]] Neue Wohnungen ohne Stellplatz kosteten 2025 in Gohlis-Süd im Mittel 6.960 €/m², mit Stellplatz 7.692 €/m², erstmals verkaufte sanierte Altbauwohnungen 6.783 €/m².[[1]] In den Erhaltungsgebieten Eutritzsch und Schönefeld brauchen Sie für Modernisierungen und Grundrissänderungen vor Baubeginn eine Genehmigung der Stadt, auch in selbst genutzten Wohnungen.[[10]]",
+      "Als Kapitalanleger rechnen Sie mit dem Leipziger Mietspiegel 2025–2027 und der Mietpreisbremse, die bis zum 30.06.2027 gilt: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[3,7]] Bestandsmieten dürfen in drei Jahren um höchstens 15 % steigen.[[8]] Sanierte Mehrfamilienhäuser brachten 2025 im Stadtbezirk Nord im Mittel 2,9 % Nettoanfangsrendite bei 1,7 % Leerstand, in Nordost 3,2 % bei 0,1 % Leerstand.[[1]] Aus Kaufpreis, Miete, Bewirtschaftungskosten und den Auflagen vor Ort rechnen wir mit Ihnen die Rendite, bevor Sie kaufen."
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Leipzig-Nord",
+    "absaetze": [
+      "Eigentumswohnungen im sanierten Altbau kosteten 2025 im Stadtbezirk Nord im Mittel 2.676 €/m² Wohnfläche, neue Wohnungen in Gohlis-Süd 6.960 €/m².[[1]] Dazu kommen die Kaufnebenkosten, in Sachsen unter anderem 5,5 % Grunderwerbsteuer.[[1]] Wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen: Timon Fischer rechnet das mit Ihnen durch, vergleicht Ihre Finanzierung über Europace und Baufinex und fragt parallel Banken direkt an."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Wie hoch sind die Quadratmeterpreise in Gohlis?",
+      "antwort": "Weiterverkäufe von Eigentumswohnungen weist der Gutachterausschuss nach Stadtbezirken aus. Im Stadtbezirk Nord, zu dem Gohlis gehört, kosteten sanierte Altbauwohnungen 2025 im Mittel 2.676 €/m², bei 306 Verkäufen und einer Spanne von 1.013 bis 4.938 €/m². Für Gohlis-Süd nennt er eigene Werte: neue Wohnungen ohne Stellplatz 6.960 €/m², mit Stellplatz 7.692 €/m², erstmals verkaufte sanierte Altbauwohnungen 6.783 €/m².[[1]] Für Ihre Wohnung zählen Wohnlage, Baujahr, Zustand und ob sie vermietet ist.",
+      "herkunft": "Google-Autocomplete „quadratmeterpreis leipzig gohlis“, „wohnung kaufen leipzig gohlis süd“, „eigentumswohnung leipzig gohlis süd“ und „immobilienpreise leipzig gohlis süd“ (research/serp/autocomplete-2026-10-27-leipzig-nord.json)"
+    },
+    {
+      "frage": "Was kostet eine Wohnung in Schönefeld oder Mockau?",
+      "antwort": "Im Stadtbezirk Nordost, zu dem Schönefeld und Mockau gehören, wurden 2025 74 sanierte Altbauwohnungen weiterverkauft, im Mittel für 2.542 €/m² Wohnfläche, bei einer Spanne von 1.321 bis 4.511 €/m². Erstmals verkaufte sanierte Altbauwohnungen kosteten in Schönefeld-Abtnaundorf 7.261 €/m², bei fünf Verkäufen; für neue Wohnungen nennt der Bericht in Schönefeld und Mockau keine Verkäufe.[[1]] Die Wohnungen sind dort im Mittel 59 bis 65 m² groß.[[6]]",
+      "herkunft": "Google-Autocomplete „wohnung kaufen leipzig mockau süd“, „wohnung kaufen leipzig mockau nord“ und „wohnung kaufen leipzig schönefeld“ (research/serp/autocomplete-2026-10-27-leipzig-nord.json)"
+    },
+    {
+      "frage": "Was kostet ein Haus in Gohlis oder Mockau?",
+      "antwort": "Hauspreise nennt der Gutachterausschuss nur für Stadtbezirke, die über das Marktgebiet hinausreichen, und für Häuser mit 80 bis 200 m² Wohnfläche. Im Stadtbezirk Nord kosteten 2025 zwölf freistehende Einfamilienhäuser der Baujahre 1946 bis 1990 im Mittel 479.042 €, zehn neue Doppelhaushälften 493.340 €. Im Stadtbezirk Nordost wurden 13 Doppelhaushälften der Baujahre 1930 bis 1945 verkauft, im Mittel für 300.415 €.[[1]] Für Grundstücke mit Ein- und Zweifamilienhäusern gelten an der Gontscharowstraße in Mockau-Nord 300 €/m², an der Braunschweiger Straße in Gohlis-Nord 450 €/m².[[2]]",
+      "herkunft": "Google-Autocomplete „haus kaufen leipzig gohlis nord“, „haus kaufen leipzig gohlis süd“ und „haus kaufen leipzig mockau siedlung“ (research/serp/autocomplete-2026-10-27-leipzig-nord.json)"
+    },
+    {
+      "frage": "Wie hoch ist der Bodenrichtwert in Gohlis 2026?",
+      "antwort": "Zum 01.01.2026 liegen die Bodenrichtwerte für Mehrfamilienhaus-Grundstücke in Gohlis-Süd bei 770 bis 1.250 €/m², in Gohlis-Mitte bei 680 bis 1.280 €/m² und in Gohlis-Nord bei 400 bis 800 €/m². Für Ein- und Zweifamilienhäuser gelten an der Braunschweiger Straße 450 und an der Eduard-von-Hartmann-Straße 540 €/m², für die locker bebaute Zone an der Primavesistraße 1.200 €/m².[[2]] Der Gutachterausschuss hat die Werte am 26.02.2026 beschlossen.[[1]] Den Wert für Ihr Grundstück lesen wir bei der Bewertung aus der Bodenrichtwertkarte aus.",
+      "herkunft": "Google-Autocomplete „bodenrichtwert leipzig gohlis“, „bodenrichtwert leipzig gohlis süd“, „bodenrichtwert leipzig gohlis nord“ und „bodenrichtwert leipzig 2026“ (research/serp/autocomplete-2026-10-27-leipzig-nord.json)"
+    },
+    {
+      "frage": "Gilt Zentrum-Nord im Mietspiegel als Innenstadt?",
+      "antwort": "Ja. Alle 566 Adressen in Zentrum-Nord liegen im Mietspiegel 2025–2027 innerhalb der Innenstadt: 77 % in guter Lage, 14 % in Kerngebietslage, etwa an der Löhr- und der Humboldtstraße, die übrigen in einfacher oder mittlerer Lage.[[5]] In der Innenstadt wird der Mittelwert bei einfacher, mittlerer und guter Lage mit dem Faktor 1,100 multipliziert, in Kerngebietslage mit 1,147; außerhalb gilt für gute Lage 1,051.[[3]] Ihre Lage zeigt die Lagekarte der Stadt, die Vergleichsmiete berechnet der Mietspiegelrechner.[[4]]",
+      "herkunft": "Google-Autocomplete „mietspiegel leipzig zentrum nord“ und „leipzig zentrum nord wohnung kaufen“ (research/serp/autocomplete-2026-10-27-leipzig-nord.json)"
+    },
+    {
+      "frage": "Was gilt in den früheren Sanierungsgebieten Gohlis und Eutritzsch?",
+      "antwort": "Das Sanierungsgebiet Leipzig-Gohlis mit 71 Hektar in weiten Teilen von Gohlis-Süd wurde 1993 festgelegt, seine Aufhebung am 28.02.2024 beschlossen.[[12]] Für Eutritzsch-Zentrum, 11,5 Hektar zwischen Delitzscher, Wittenberger und Theresienstraße, folgte der Aufhebungsbeschluss am 08.07.2020.[[13]] Nach der Aufhebung erhebt die Stadt von den Eigentümern einen Ausgleichsbetrag für die sanierungsbedingte Erhöhung des Bodenwerts, bei Wohnungseigentum anteilig.[[14]] Beim Kauf oder Verkauf klären wir, ob der Betrag festgesetzt und bezahlt ist.",
+      "herkunft": "Google-Autocomplete „sanierungsgebiet leipzig gohlis“ (research/serp/autocomplete-2026-10-27-leipzig-nord.json) und „sanierungsgebiet leipzig“ (research/serp/autocomplete-2026-10-26-leipzig-west.json)"
+    },
+    {
+      "frage": "Wo gilt im Leipziger Norden Milieuschutz?",
+      "antwort": "In zwei sozialen Erhaltungsgebieten: in Eutritzsch seit dem 05.07.2020 und im westlichen Schönefeld seit dem 23.02.2025; in Gohlis und Mockau gilt keine soziale Erhaltungssatzung.[[9]] In beiden Gebieten braucht jede Änderung, Nutzungsänderung oder jeder Rückbau vor Baubeginn eine Genehmigung der Stadt, auch ohne Bauantrag.[[10]] Beim Verkauf bebauter Grundstücke prüft die Stadt ihr Vorkaufsrecht. Vorrangig strebt sie eine Abwendungsvereinbarung an: Der Käufer verpflichtet sich, nicht in Wohnungs- oder Teileigentum umzuwandeln und nicht über den Leipziger Wohn- und Ausstattungsstandard hinaus zu modernisieren.[[11]]",
+      "herkunft": "Google-Autocomplete „milieuschutz leipzig gebiete“, „milieuschutz leipzig karte“ und „vorkaufsrecht leipzig“ (research/serp/autocomplete-2026-10-26-leipzig-west.json); zu „milieuschutz eutritzsch“ und „erhaltungssatzung leipzig schönefeld“ keine Vorschläge (research/serp/autocomplete-2026-10-27-leipzig-nord.json)"
+    },
+    {
+      "frage": "Wie hoch ist die Maklerprovision in Leipzig?",
+      "antwort": "Kauft ein Verbraucher eine Wohnung oder ein Einfamilienhaus, teilen sich Käufer und Verkäufer die Provision zu gleichen Teilen (§§ 656a bis 656d BGB); das gilt bundesweit, also auch in Sachsen. Bei Fischer & Geserich sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision. Bei Mehrfamilienhäusern und Grundstücken gilt die Teilung nicht. Die Provision fällt nur an, wenn der Kaufvertrag zustande kommt.",
+      "herkunft": "Google-Autocomplete „maklerprovision leipzig“ und „provision makler sachsen“ (research/serp/autocomplete-2026-10-26-leipzig-west.json). Antwort nach /maklerprovision/ und /kaufen/ (Stand 26.10.2026)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Leipzig-West",
+      "url": "/standorte/leipzig/west/"
+    },
+    {
+      "name": "Leipzig-Zentrum",
+      "url": "/standorte/leipzig/zentrum/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Stadt Leipzig, Grundstücksmarktbericht 2026",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stand": "Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+    },
+    {
+      "name": "Bodenrichtwerte des Gutachterausschusses in der Stadt Leipzig, Open Data (BRW_Zonen_2026 und BRW_Zonen_2025), eigene Zuordnung zu den Ortsteilen",
+      "url": "https://geodienste.leipzig.de/l3/OpenData/BRW_Zonen_2026/wfs?SERVICE=WFS&REQUEST=GetCapabilities",
+      "stand": "Stichtag 01.01.2026, Vergleich mit 01.01.2025"
+    },
+    {
+      "name": "Stadt Leipzig, Leipziger Mietspiegel 2025–2027 (Broschüre)",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.5_Dez5_Jugend_Soziales_Gesundheit_Schule/50_Sozialamt/Mietspiegel/Broschuere_zum_Leipziger_Mietspiegel_2025-2027_01.pdf",
+      "stand": "gültig 01.07.2025 bis 30.06.2027, Erhebungsstichtag 01.10.2024"
+    },
+    {
+      "name": "Stadt Leipzig, Mietspiegel (Lagekarte und Mietspiegelrechner)",
+      "url": "https://www.leipzig.de/bauen-und-wohnen/wohnen/mietspiegel",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Wohnlage zum Leipziger Mietspiegel 2025–2027, eigene Auszählung nach Ortsteilen",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.5_Dez5_Jugend_Soziales_Gesundheit_Schule/50_Sozialamt/Mietspiegel/Wohnlage_zum_Leipziger_Mietspiegel_2025-2027.xlsx",
+      "stand": "Mietspiegel 2025–2027"
+    },
+    {
+      "name": "Stadt Leipzig, Amt für Statistik und Wahlen, Kleinräumiges Datenmaterial (Einwohner, Alter, Gebäude, Wohnungen, Fertigstellungen)",
+      "url": "https://statistik.leipzig.de/opendata/api/kdvalues?kategorie_nr=2&rubrik_nr=1&periode=y&format=csv",
+      "stand": "Jahreswerte 2025"
+    },
+    {
+      "name": "Freistaat Sachsen, Mietpreisbremse gemäß § 556d BGB",
+      "url": "https://www.bauen-wohnen.sachsen.de/mietpreisbremse-gemaess-556d-bgb-4391.html",
+      "stand": "verlängert bis 30.06.2027, abgerufen 26.10.2026"
+    },
+    {
+      "name": "Medienservice Sachsen, Kappungsgrenze für Dresden und Leipzig verlängert",
+      "url": "https://www.medienservice.sachsen.de/medien/news/1087981",
+      "stand": "10.06.2025, gültig bis 30.06.2027"
+    },
+    {
+      "name": "Stadt Leipzig, Soziale Erhaltungssatzungen: die Gebiete",
+      "url": "https://www.leipzig.de/leipzig-strategie/stadtentwicklung/stadterneuerung/soziale-erhaltungssatzungen/die-gebiete",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Soziale Erhaltungssatzungen: Antrags- und Genehmigungsverfahren",
+      "url": "https://www.leipzig.de/leipzig-strategie/stadtentwicklung/stadterneuerung/soziale-erhaltungssatzungen/antrags-und-genehmigungsverfahren",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Soziale Erhaltungssatzungen: Allgemeines Vorkaufsrecht",
+      "url": "https://www.leipzig.de/leipzig-strategie/stadtentwicklung/stadterneuerung/soziale-erhaltungssatzungen/allgemeines-vorkaufsrecht",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Abgeschlossenes Sanierungsgebiet Leipzig-Gohlis",
+      "url": "https://www.leipzig.de/bauen-und-wohnen/foerdergebiete/nord-sued-achse/sanierungsgebiet-leipzig-gohlis",
+      "stand": "abgerufen 27.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Abgeschlossenes Sanierungsgebiet Eutritzsch-Zentrum",
+      "url": "https://www.leipzig.de/bauen-und-wohnen/foerdergebiete/nord-sued-achse/sanierungsgebiet-eutritzsch-zentrum",
+      "stand": "abgerufen 27.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Ausgleichsbeträge in Sanierungsgebieten",
+      "url": "https://www.leipzig.de/leipzig-strategie/stadtentwicklung/stadterneuerung/ausgleichsbeitraege-in-sanierungsgebieten",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadtarchiv Leipzig, Eingemeindungsdaten",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.1_Dez1_Allgemeine_Verwaltung/10.9_Stadtarchiv/Eingemeindungsdaten.pdf",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Mein Stadtteil: Gohlis",
+      "url": "https://www.leipzig.de/mein-stadtteil/stadtbezirk-nord/gohlis",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Mein Stadtteil: Zentrum-Nord",
+      "url": "https://www.leipzig.de/mein-stadtteil/stadtbezirk-mitte/zentrum-nord",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Mein Stadtteil: Eutritzsch",
+      "url": "https://www.leipzig.de/mein-stadtteil/stadtbezirk-nord/eutritzsch",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Mein Stadtteil: Schönefeld",
+      "url": "https://www.leipzig.de/mein-stadtteil/stadtbezirk-nordost/schoenefeld",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Mein Stadtteil: Mockau",
+      "url": "https://www.leipzig.de/mein-stadtteil/stadtbezirk-nordost/mockau",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "INSA-Fahrplanauskunft (Straßenbahn, Bus und S-Bahn), Verbindungen bis Leipzig Hauptbahnhof",
+      "url": "https://reiseauskunft.insa.de/",
+      "stand": "Fahrplan Dienstag 10.11.2026 ab 9 Uhr, abgefragt 26.10.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "Einwohner 2025: Gohlis-Süd 18.810, Gohlis-Mitte 17.926, Gohlis-Nord 10.237, Zentrum-Nord 10.569 (2015: 8.663, +22,0 %), Mockau-Nord 12.374, Mockau-Süd 5.048, Schönefeld-Abtnaundorf 13.940, Schönefeld-Ost 10.446; Summe 114.819, +12,4 % ggü. 102.166 (2015)",
+      "fundstelle": "leipzig-nord.md Nr. 1–10; STAT 2/1"
+    },
+    {
+      "zahl": "Durchschnittsalter Schönefeld-Abtnaundorf 37,8, Schönefeld-Ost 48,8, Stadt 42,4",
+      "fundstelle": "leipzig-nord.md Nr. 6, 7, 10; STAT 2/3"
+    },
+    {
+      "zahl": "Gebäude Gohlis-Süd 1.446, bis 1918 48 %; Gohlis-Mitte 1919–48 40 %; Ø Wohnfläche 74,9 / 74,7 ≈ 75, Stadt 70,3; Eutritzsch 1.580 Gebäude, 24 / 31 / 36 % (bis 1918 / 1919–48 / ab 1991), 657 mit 1–2 Whg; Schönefeld-Abtnaundorf bis 1918 54 %; Schönefeld-Ost 1949–90 54 %, Ø 58,9 m²; Mockau-Nord 1.637 Gebäude, 1.097 mit 1–2 Whg, 1919–48 814 = 50 %; Ø Whg Nordost 58,9–65,0",
+      "fundstelle": "leipzig-nord.md Nr. 1–9; STAT 6/4, 6/5"
+    },
+    {
+      "zahl": "Fertigstellungen Zentrum-Nord 2024: 504; Mockau-Süd 2024 85 + 2025 49 = 134",
+      "fundstelle": "leipzig-nord.md Nr. 4, 8; STAT 6/3"
+    },
+    {
+      "zahl": "ETW Wiederverkauf Nord 306 / Ø 2.676 / Median 2.633 / 1.013–4.938; Nordost 74 / 2.542 / 1.321–4.511; Stadt 2.850; Zusammensetzung Stadtbezirk Nord (Gohlis, Eutritzsch, Seehausen, Wiederitzsch)",
+      "fundstelle": "leipzig-nord.md Nr. 11 und Kopf; L2; GMB Tab. 26 Z. 1500–1508"
+    },
+    {
+      "zahl": "Neubau Gohlis-Süd ohne Stellplatz 60 / Ø 6.960 / 6.417–7.070 / 44 m²; mit Stellplatz 29 / 7.692; Stadt ohne Stellplatz 5.953; Erstverkauf saniert Gohlis-Süd 27 / 6.783; Schönefeld-Abtnaundorf 5 / 7.261; Neubau Schönefeld/Mockau –",
+      "fundstelle": "leipzig-nord.md Nr. 13, 14, 16; GMB Tab. 72, 73, 80"
+    },
+    {
+      "zahl": "MFH Nord 27 / 63,8 Mio. €; Nordost 21 / 33,3; Ertrag Nord 19 / 1.840 / 6,52 / 23,7 / NAR 2,9 / Leerstand 1,7; Nordost 14 / 1.705 / 6,69 / 21,4 / 3,2 / 0,1; Stadt Faktor 23,1; Mockau-Süd 8 / 1.877; GrESt 5,5 %",
+      "fundstelle": "leipzig-nord.md Nr. 17–19; L8, L9"
+    },
+    {
+      "zahl": "Häuser 80–200 m²: Nord EFH 1946–90 12 / 479.042; DHH 2021–25 10 / 493.340; Nordost DHH 1930–45 13 / 300.415",
+      "fundstelle": "leipzig-nord.md Nr. 21; GMB Tab. 36, 49, 53"
+    },
+    {
+      "zahl": "BRW MFH-Spannen: Gohlis-Süd 770–1.250, Gohlis-Mitte 680–1.280, Gohlis-Nord 400–800 → Gohlis 400–1.280; Zentrum-Nord 850–1.700; Eutritzsch 680–1.000; Schönefeld 400–690; Mockau 400–520; gesamt 400–1.700",
+      "fundstelle": "leipzig-nord.md Spanne unter Nr. 51"
+    },
+    {
+      "zahl": "BRW Änderungen: Corinthstraße 1.200→1.280, Prellerstraße 1.200→1.250, Gneisenaustraße 1.600→1.700, Magdalenenstraße 850→1.000, Paul-Heyse 630→690, Gorki 620→680, Oelßner 400→520, Kieler 330→400 (Attribute jeweils unverändert); Wangerooger Weg 400; Max-Lingner/Julian-Marchlewski 400; EFH Gontscharow 300, Gontardweg 550, Braunschweiger 450, Eduard-von-Hartmann 540; Primavesistraße 1.200 (GFZ 0,7, ohne MFH-Merkmal); Beschluss 26.02.2026",
+      "fundstelle": "leipzig-nord.md Nr. 31–51; L10/Grundlagen BRW"
+    },
+    {
+      "zahl": "Wohnlage: Gohlis-Mitte 1.389 Adr., gut 89 %; Gohlis-Süd gut+sehr gut 59 %, sehr gut Stallbaum/Heinroth/Fechner, einfach Georg-Schumann 100/117; Gohlis-Nord mittel 87 %; Zentrum-Nord 566, Innenstadt gut 77 %, Kerngebiet 14 %, Löhr-, Humboldtstraße; Schönefeld-Abtnaundorf mittel 68 / gut 9 / einfach 23 %, Gorkistraße 79/86; Mockau-Nord mittel 71 %, Mockau-Süd einfach 54 %, Mockauer Straße 105/105, keine gute Lage in Mockau",
+      "fundstelle": "leipzig-nord.md Nr. 22–30"
+    },
+    {
+      "zahl": "Lagefaktoren Innenstadt einfach/mittel/gut 1,100, Kerngebiet 1,147, außerhalb gut 1,051",
+      "fundstelle": "L16; MS S. 33"
+    },
+    {
+      "zahl": "Mietpreisbremse bis 30.06.2027, 10 %; Kappung 15 % in drei Jahren",
+      "fundstelle": "L20, L21"
+    },
+    {
+      "zahl": "Erhaltung Eutritzsch 05.07.2020, 26 ha, 3.100 Whg, Theresien-/Delitzscher/Anhalter Straße; Schönefeld westl. Bereich 23.02.2025, 25 ha, 3.900 Whg, Heink-/Gorkistraße/Adenauerallee/Mariannenpark; keine in Gohlis, Mockau",
+      "fundstelle": "leipzig-nord.md Nr. 52–54; L23"
+    },
+    {
+      "zahl": "Genehmigung vor Baubeginn, auch ohne Bauantrag, auch selbst genutzt; Vorkaufsrecht, Abwendungsvereinbarung",
+      "fundstelle": "L33, L34"
+    },
+    {
+      "zahl": "Sanierungsgebiet Gohlis 71 ha, weite Teile Gohlis-Süd, 31.03.1993, Aufhebung 28.02.2024; Eutritzsch-Zentrum 11,5 ha, Delitzscher/Wittenberger/Theresienstraße, Aufhebung 08.07.2020; Ausgleichsbetrag anteilig",
+      "fundstelle": "leipzig-nord.md Nr. 55–57; L27"
+    },
+    {
+      "zahl": "Eingemeindung Gohlis und Eutritzsch 01.01.1890 (Eutritzsch laut Stadtseite 1890), Mockau und Schönefeld 15.02.1915; Charakter nach den Stadtteilseiten",
+      "fundstelle": "leipzig-nord.md Nr. 58–63; L28, L30"
+    },
+    {
+      "zahl": "Fahrzeiten: S-Bf Leipzig-Gohlis S1 4 min; Menckestr. Tram 4 21 min; Zoo Tram 12 13 min; Eutritzscher Markt Tram 16 17 min; Ossietzky-/Gorkistr. Tram 1 20 min; S-Bf Mockauer Straße S4 6 min",
+      "fundstelle": "leipzig-nord.md Nr. 64–73; jr_nz.txt"
+    },
+    {
+      "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, §§ 656a–656d BGB; § 34c und § 34i GewO; Timon Fischer Geschäftsführer, Immobilienfinanzierung; Europace und Baufinex",
+      "fundstelle": "wie leipzig-west.json"
+    }
+  ],
+  "karte": {
+    "alt": "Karte von Leipzig-Nord: Gohlis, Eutritzsch, Zentrum-Nord und Schönefeld-Abtnaundorf, dazu Schönefeld, Schönefeld-Ost, Mockau, Mockau-Nord und Mockau-Süd als Ortspunkte, Wiederitzsch im Norden, die Bahnstrecken und der Leipziger Hauptbahnhof im Süden"
+  },
+  "anbindung": [
+    "Vom S-Bahnhof Leipzig-Gohlis sind Sie mit der S1 in 4 Minuten am Hauptbahnhof, von der Menckestraße mit der Straßenbahnlinie 4 in 21 Minuten.[[21]]",
+    "Vom Eutritzscher Markt sind Sie mit der Linie 16 in 17 Minuten am Hauptbahnhof.[[21]]",
+    "Von der Haltestelle Ossietzky-/Gorkistraße fährt die Linie 1 in 20 Minuten zum Hauptbahnhof.[[21]]",
+    "Vom S-Bahnhof Mockauer Straße sind Sie mit der S4 in 6 Minuten am Hauptbahnhof.[[21]]"
+  ]
+}

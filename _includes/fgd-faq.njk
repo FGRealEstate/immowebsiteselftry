@@ -1,0 +1,35 @@
+{#- FAQ im neuen Design: sichtbarer Text aus `faqItems` (Liste { q, a }), dazu „Eigene Frage stellen“.
+    Das Formular schickt an website-question; das Skript dazu steht in fg-design.js.
+    Das FAQPage-Markup schreibt die Seite selbst, aus derselben Liste. -#}
+{% from "fgd-icons.njk" import icon %}
+<section class="fgd-section fgd-section--white" id="faq" aria-labelledby="faq-title">
+  <div class="fgd-wrap fgd-faq">
+    <div class="fgd-faq-intro">
+      <p class="fgd-kicker">{{ faqKicker or "Kurz beantwortet" }}</p>
+      <h2 id="faq-title">{{ faqTitle or "Häufige Fragen" }}</h2>
+      <p>{{ faqIntro or "Wenn Ihre Frage nicht dabei ist, senden Sie sie uns direkt. Wir antworten persönlich." }}</p>
+      <button type="button" class="fgd-btn fgd-btn-line" data-faq-question-toggle aria-expanded="false" aria-controls="faq-question-panel">Eigene Frage stellen{{ icon("arrow") | safe }}</button>
+      <div class="fgd-question" id="faq-question-panel" hidden>
+        <h3>Welche Frage ist noch offen?</h3>
+        <p>Ihre Nachricht wird direkt an <strong>{{ nav.email }}</strong> gesendet. Wir antworten persönlich.</p>
+        <form method="post" action="/.netlify/functions/website-question" data-faq-question-form novalidate>
+          <div class="fgd-field-row">
+            <label>Name *<input name="name" required autocomplete="name"></label>
+            <label>E-Mail *<input name="email" type="email" required autocomplete="email"></label>
+          </div>
+          <label>Telefon<input name="phone" type="tel" autocomplete="tel" placeholder="optional"></label>
+          <label>Ihre Frage *<textarea name="question" required rows="5" maxlength="5000" placeholder="Schildern Sie uns kurz Ihre Frage."></textarea></label>
+          <label class="fgd-hp" aria-hidden="true">Website<input name="company_website" tabindex="-1" autocomplete="off"></label>
+          <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
+          <div class="fgd-status" data-faq-question-status hidden></div>
+          <button type="submit" class="fgd-btn fgd-btn-navy">Frage senden{{ icon("arrow") | safe }}</button>
+        </form>
+      </div>
+    </div>
+    <div class="fgd-faq-list">
+      {% for item in faqItems %}
+      <details{% if loop.first %} open{% endif %}><summary>{{ item.q }}{{ icon("plus") | safe }}</summary><div><p>{{ item.a | safe }}</p></div></details>
+      {% endfor %}
+    </div>
+  </div>
+</section>

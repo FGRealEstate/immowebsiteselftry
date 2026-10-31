@@ -1,0 +1,422 @@
+{
+  "slug": "dahme-spreewald",
+  "name": "Dahme-Spreewald",
+  "nameLang": "Landkreis Dahme-Spreewald",
+  "inOrt": "im Landkreis Dahme-Spreewald",
+  "fuerOrt": "den Landkreis Dahme-Spreewald",
+  "typ": "landkreis",
+  "orte": [
+    "Königs Wusterhausen",
+    "Zeuthen",
+    "Wildau",
+    "Schönefeld"
+  ],
+  "kontakt": "lennart",
+  "title": "Immobilienmakler Dahme-Spreewald – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler Dahme-Spreewald: verkaufen, kaufen und finanzieren in Königs Wusterhausen, Zeuthen, Wildau und Schönefeld, mit Bodenrichtwerten 2026.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren im Landkreis Dahme-Spreewald",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger im Landkreis Dahme-Spreewald beim Verkauf, beim Kauf und bei der Finanzierung, in Zeuthen, Wildau und Schönefeld am Berliner Stadtrand ebenso wie in Königs Wusterhausen und den Orten bis in den Spreewald. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für alle Orte auf dieser Seite ist Lennart Geserich Ihr Ansprechpartner, Head of Sales & Vermietung.",
+  "hero": {
+    "name": "dahme-spreewald-luebben-spree",
+    "alt": "Wasserlauf mit Bäumen am Ufer in Lübben (Spreewald) im Sommer",
+    "credit": "Maja Dumat, CC BY 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:L%C3%BCbben_(Spreewald).jpg",
+    "position": "50% 50%"
+  },
+  "stand": "Oktober 2026",
+  "updated": "2026-10-26",
+  "zahlen": [
+    {
+      "wert": "1.000 €/m²",
+      "label": "Höchster Bodenrichtwert für Wohnbauland im Landkreis, Ufergrundstücke in Zeuthen und Eichwalde",
+      "detail": "Am unteren Ende stehen 10 €/m² in Schäcksdorf, Behlow und Damsdorf. Von 428 baureifen Wohn- und Mischgebietszonen blieben 356 unverändert, 41 stiegen und 23 sanken.",
+      "quelle": "BORIS Brandenburg; Grundstücksmarktbericht 2025 Landkreis Dahme-Spreewald",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?f=json&limit=2000&skipGeometry=true&gemeinde_gemeindekennzeichen_kreis=61&stichtag=2026-01-01",
+      "stichtag": "01.01.2026"
+    },
+    {
+      "wert": "Ø 463.000 €",
+      "label": "Freistehende Ein- und Zweifamilienhäuser im Berliner Umland des Landkreises",
+      "detail": "239 Kauffälle, 4 % mehr als im Vorjahr. Im weiteren Metropolenraum: Ø 301.000 €. Häuser der Baujahre 1990 bis 2020 ohne Uferlagen kosteten im Berliner Umland Ø 4.279 €/m² Wohnfläche.",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Dahme-Spreewald",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_LDS.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 4.201 €/m²",
+      "label": "Eigentumswohnungen mit Baujahr nach 1990 im Berliner Umland des Landkreises",
+      "detail": "161 Kauffälle, 6 % weniger als im Vorjahr. In Schönefeld kosteten neue Wohnungen Ø 4.869 €/m², in Wildau Ø 4.955 €/m².",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Dahme-Spreewald",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_LDS.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 10,46 €/m²",
+      "label": "Nettokaltmiete in verkauften, vermieteten Eigentumswohnungen im Berliner Umland des Landkreises",
+      "detail": "36 Verkäufe, Spanne 5,53 bis 20,26 €/m², Liegenschaftszinssatz im Mittel 2,7 %. Einen Mietspiegel haben wir für Zeuthen, Wildau und Schönefeld nicht gefunden.",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Dahme-Spreewald",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_LDS.pdf",
+      "stichtag": "Kaufverträge 2023–2025"
+    },
+    {
+      "wert": "179.480",
+      "label": "Einwohner im Landkreis Dahme-Spreewald",
+      "detail": "687 mehr als ein Jahr zuvor. Das Landesamt für Bauen und Verkehr erwartet für 2040 193.329 Einwohner, für Schönefeld ein Plus von 42,7 %, mehr als für jede andere Gemeinde in Brandenburg.",
+      "quelle": "Amt für Statistik Berlin-Brandenburg; LBV Brandenburg",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stichtag": "31.12.2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Königs Wusterhausen: die größte Stadt im Landkreis",
+      "absaetze": [
+        "Königs Wusterhausen hat 39.590 Einwohner, so viele wie keine andere Stadt im Landkreis; Kreisstadt ist Lübben (Spreewald).[[3,1]] Mit dem RE7 oder dem RE20 und einem Umstieg in die S-Bahn sind es 35 bis 41 Minuten bis Friedrichstraße.[[9]] 2025 wurden hier 347 Kaufverträge geschlossen, mehr als in jeder anderen Gemeinde des Landkreises. Die Bodenrichtwerte für Wohn- und Mischbauflächen sanken zum 01.01.2026 im Mittel um 3 %, Ufergrundstücke liegen überwiegend bei 600 €/m².[[1]] Mietpreisbremse und Kappungsgrenze gelten.[[5,6]] Bodenrichtwerte nach Ortsteilen, Wohnungspreise und Projekte finden Sie auf unserer <a href=\"/standorte/konigs-wusterhausen/\">Seite zu Königs Wusterhausen</a>."
+      ],
+      "bild": {
+        "name": "dahme-spreewald-ruderclub-kw",
+        "alt": "Bootshaus des Ruderclubs Königs Wusterhausen mit Holzbalkon und Bootshallen auf einer Wiese unter Bäumen, sonniger Frühlingstag",
+        "caption": "Das Bootshaus des Ruderclubs Königs Wusterhausen.",
+        "credit": "Elgaard, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Ruderclub_Königs_Wusterhausen.jpg"
+      }
+    },
+    {
+      "h2": "Zeuthen und Miersdorf: Wohnen am Zeuthener See",
+      "absaetze": [
+        "Zeuthen grenzt im Nordosten an Berlin und hatte Ende 2025 11.330 Einwohner, 101 weniger als ein Jahr zuvor; bis 2040 erwartet das Landesamt für Bauen und Verkehr ein Minus von 2,0 %.[[3,4]] Die Gemeinde beschreibt sich selbst vornehmlich als Wohngemeinde, geprägt vom Zeuthener See und dem kleineren Miersdorfer See; in Zeuthen forscht das Institut DESY.[[10,11]] S46 und S8 halten im Ort, bis Friedrichstraße sind es mit einem Umstieg 44 bis 49 Minuten.[[9]]",
+        "Im Mittel liegen die Bodenrichtwerte für Wohn- und Mischbauflächen in Zeuthen bei 411 €/m², höher als in jeder anderen Gemeinde des Landkreises.[[1]] Zum 01.01.2026 reichen die Wohngebietszonen ohne Ufer- und Mehrfamilienhauszonen von 310 €/m² in Miersdorf Nord bis 470 €/m² im Zeuthener Winkel, der von 430 gestiegen ist; die übrigen Wohnlagen im Ortsteil Zeuthen sanken von 340 auf 320, Miersdorf Süd von 370 auf 360 €/m². Für Mehrfamilienhausgrundstücke gelten 500 €/m², für Ufergrundstücke in Zeuthen 1.000 €/m², am Miersdorfer Werder 600 €/m².[[2]] Freistehende Häuser der Baujahre 1990 bis 2020 kosteten 2025 im Mittel 547.000 € oder 4.292 €/m² Wohnfläche, bei 14 Kauffällen. Mit 117,3 hat Zeuthen den höchsten Kaufkraftindex im Landkreis.[[1]] Mietpreisbremse und Kappungsgrenze gelten.[[5,6]]"
+      ],
+      "bild": {
+        "name": "dahme-spreewald-zeuthener-wall",
+        "alt": "Bewaldete Insel Zeuthener Wall im Zeuthener See, davor ein Motorboot auf dem Wasser, blauer Himmel mit Wolken",
+        "caption": "Die Insel Zeuthener Wall im Zeuthener See.",
+        "credit": "Anastasia Steiner, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Insel_Zeuthener_Wall.jpg"
+      }
+    },
+    {
+      "h2": "Wildau: Schwartzkopff-Siedlung, Hochschule und S-Bahn",
+      "absaetze": [
+        "Wildau hat auf 9 km² 10.952 Einwohner, 235 mehr als ein Jahr zuvor; bis 2040 erwartet das Landesamt für Bauen und Verkehr ein Plus von 19,5 %.[[3,4]] Am Anfang stand in Wildau eine der größten deutschen Lokomotivfabriken; für Arbeiter und Angestellte des Werkes entstand ab 1899 die Schwartzkopff-Siedlung mit 164 Häusern und 820 Werkswohnungen, die die Stadt bis heute prägt und unter Denkmalschutz steht. Am S-Bahnhof in der Neuen Mitte liegt der Campus der 1991 gegründeten Technischen Hochschule Wildau, im Süden das A10 Center und der Berliner Ring.[[12,13]] Mit S46 und S8 sind es 48 bis 53 Minuten bis Friedrichstraße.[[9]]",
+        "Die Bodenrichtwerte entwickelten sich zum 01.01.2026 gegenläufig: Wildau Süd stieg von 300 auf 340 €/m², der Norden westlich der Bahn sank von 350 auf 330 €/m²; östlich der Bahn und in der Schwartzkopff-Siedlung sind es 240, an der Dorfaue 300 €/m².[[2]] Freistehende Häuser der Baujahre 1990 bis 2020 kosteten 2025 im Mittel 4.851 €/m² Wohnfläche, bei sechs Kauffällen. Neue Eigentumswohnungen wurden 22-mal verkauft, im Mittel für 4.955 €/m², gebrauchte 11-mal für 3.228 €/m².[[1]] Mietpreisbremse und Kappungsgrenze gelten.[[5,6]]"
+      ],
+      "bild": {
+        "name": "dahme-spreewald-wildau-schwartzkopff-siedlung",
+        "alt": "Klinkerhäuser der denkmalgeschützten Schwartzkopff-Siedlung an einer Straße in Wildau",
+        "caption": "Die Schwartzkopff-Siedlung in Wildau, gebaut ab 1899.",
+        "credit": "Clemensfranz, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Schartzkopff-Siedlung_Wildau_07.jpg",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "h2": "Schönefeld: Flughafen BER, Großziethen und Waltersdorf",
+      "absaetze": [
+        "Schönefeld grenzt an den Südosten Berlins und entstand 2003 aus Großziethen, Kiekebusch, Selchow, Waltersdorf, Waßmannsdorf und Schönefeld; international bekannt ist die Gemeinde vor allem durch den Flughafen, seit dem 31. Oktober 2020 der BER.[[14,1]] Ende 2025 hatte Schönefeld 19.351 Einwohner. Bis 2040 erwartet das Landesamt für Bauen und Verkehr ein Plus von 42,7 % auf 27.168, den höchsten Wert aller Gemeinden und Ämter in Brandenburg.[[3,4]] Die S9 fährt ohne Umstieg in 39 Minuten bis Friedrichstraße, vom Flughafen sind es mit FEX oder RE20 und S-Bahn 26 Minuten.[[9]]",
+        "2025 floss in Schönefeld mit 164 Mio. € mehr Geld in Grundstücke und Immobilien als in jeder anderen Gemeinde des Landkreises, bei 194 Kaufverträgen. Freistehende Häuser der Baujahre 1990 bis 2020 kosteten im Mittel 691.000 € oder 5.370 €/m² Wohnfläche, neue Eigentumswohnungen 4.869 €/m² bei 47 Verkäufen, nach 107 im Vorjahr.[[1]] Wohngebiete in Schönefeld selbst liegen bei 450 bis 550 €/m², in Großziethen bei 500 bis 620 und in der Siedlung Waltersdorf bei 190 €/m²; gestiegen ist zum 01.01.2026 nur Rotberg am Karlshofer Weg, von 190 auf 210 €/m².[[2]] Ob die Entwicklung von Schönefeld-Nord auf rund 150 Hektar weitergeführt wird, ist nach Angabe des Gutachterausschusses unsicher.[[1,16]] Seit dem 01.01.2026 gehört Schönefeld wieder zur Gebietskulisse der Mietpreisbremse.[[17,5]]"
+      ],
+      "bild": {
+        "name": "dahme-spreewald-grossziethen-dorfkirche-sommer",
+        "alt": "Die Dorfkirche Großziethen aus Feldsteinen mit Backsteinturm, umgeben von Bäumen und dem Kirchhof",
+        "caption": "Die Dorfkirche in Großziethen, Gemeinde Schönefeld.",
+        "credit": "Axel Mauruszat, CC BY 3.0 DE",
+        "url": "https://commons.wikimedia.org/wiki/File:Gro%C3%9Fziethen_Dorfkirche.jpg"
+      }
+    },
+    {
+      "h2": "Eichwalde, Schulzendorf und der Süden bis Lübben",
+      "absaetze": [
+        "Eichwalde ist mit 2.287 Einwohnern je km² die am dichtesten besiedelte Gemeinde im Landkreis; Ufergrundstücke haben dort wie in Zeuthen einen Bodenrichtwert von 1.000 €/m², die übrigen Wohnlagen 350 €/m².[[3,2]] Für Schulzendorf erwartet das Landesamt für Bauen und Verkehr bis 2040 ein Plus von 23,7 %, für Bestensee 25,4 %.[[4]] In Bestensee und Mittenwalde sanken zum 01.01.2026 einzelne Uferzonen, in Bestensee und Pätz von 450 auf 350, in Motzen und Krummensee von 500 auf 400 €/m²; die übrigen Wohnlagen dort blieben gleich oder stiegen, in Pätz von 200 auf 250 €/m².[[2]] Die Kreisstadt Lübben (Spreewald) hat 13.992 Einwohner, mit Regionalexpress und S-Bahn sind es 65 bis 71 Minuten bis Friedrichstraße.[[3,1,9]] Für das Zentrum um Markt, Hauptstraße und Badergasse hat der Gutachterausschuss zum 01.01.2026 eine neue Zone mit 230 €/m² gebildet; neu abgeschlossene Mieten lagen 2023 bis 2025 im Median bei 6,60 €/m².[[2,1]] Die Mietpreisbremse gilt in Lübben, Luckau und Mittenwalde nicht.[[5]]"
+      ],
+      "bild": {
+        "name": "dahme-spreewald-rathaus-eichwalde",
+        "alt": "Fassade des Rathauses Eichwalde mit gemaltem Baum über drei Geschossen, rotes Ziegeldach, davor ein Laubbaum",
+        "caption": "Das Rathaus von Eichwalde.",
+        "credit": "Kuli, CC0",
+        "url": "https://commons.wikimedia.org/wiki/File:Eichwalde_Rathaus.jpg"
+      }
+    }
+  ],
+  "band": {
+    "name": "dahme-spreewald-dahme-dolgensee",
+    "alt": "Die Dahme zwischen bewaldeten Ufern kurz vor dem Dolgensee, rechts eine Wiese mit Bootsstegen, leicht bewölkter Himmel",
+    "caption": "Die Dahme am Einlauf zum Dolgensee.",
+    "credit": "Z thomas, CC BY 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Dahme_dolgensee_20250420_1.jpg"
+  },
+  "verkaufen": {
+    "h2": "Immobilie im Landkreis Dahme-Spreewald verkaufen",
+    "absaetze": [
+      "Wie viel Ihre Immobilie wert ist, hängt im Landkreis vor allem an der Nähe zu Berlin: Freistehende Ein- und Zweifamilienhäuser kosteten 2025 im Berliner Umland, von Schönefeld bis Königs Wusterhausen, im Mittel 463.000 €, im weiteren Metropolenraum 301.000 €.[[1]] Wir bewerten deshalb nach Ihrer Bodenrichtwertzone, Ihrem Baujahr und den Vergleichszahlen Ihrer Gemeinde.",
+      "2025 wurden 2.287 Kaufverträge geschlossen, 4 % mehr als im Vorjahr, der Geldumsatz sank um 1 % auf 665 Mio. €. Im Berliner Umland stieg der mittlere Hauspreis um 4 %, nach einem Minus von 6 % im Jahr davor; Wohnungen mit Baujahr nach 1990 kosteten im Mittel 6 % weniger.[[1]] Für Wassergrundstücke leitet der Gutachterausschuss eigene Bodenrichtwerte für 50 Uferzonen ab, deshalb bewerten wir diese Lagen gesondert."
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren im Landkreis Dahme-Spreewald",
+    "absaetze": [
+      "Als Eigennutzer klären Sie zuerst den Weg nach Berlin: Schönefeld hat mit der S9 eine direkte S-Bahn ins Zentrum, Zeuthen und Wildau liegen an S46 und S8, in Königs Wusterhausen halten zusätzlich Regionalexpress-Linien.[[9]] Wer in der Nähe des Flughafens BER kauft, prüft die Flugrouten. Einen messbaren Zusammenhang zwischen Flugrouten und sinkenden oder langsamer steigenden Grundstückswerten hat der Gutachterausschuss bisher nicht festgestellt.[[1]]",
+      "Als Kapitalanleger prüfen Sie Miete und Kaufpreis gegen den Grundstücksmarktbericht. Für vermietete Eigentumswohnungen im Berliner Umland ergab sich aus Verkäufen der Jahre 2023 bis 2025 ein Liegenschaftszinssatz von im Mittel 2,7 % bei einer Nettokaltmiete von 10,46 €/m², für Mehrfamilienhäuser 3,0 % bei 8,69 €/m².[[1]] In sieben Gemeinden, darunter Zeuthen, Wildau und Schönefeld, gelten Mietpreisbremse und Kappungsgrenze.[[5,6]]"
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für den Landkreis Dahme-Spreewald",
+    "absaetze": [
+      "Im Berliner Umland des Landkreises kosteten freistehende Ein- und Zweifamilienhäuser 2025 im Mittel 463.000 €, Häuser der Baujahre 1990 bis 2020 ohne Uferlagen 570.000 €.[[1]] Dazu kommen die Kaufnebenkosten und wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen: Wir rechnen das mit Ihnen durch, vergleichen Ihre Finanzierung über Europace und Baufinex und fragen parallel Banken direkt an."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Welcher Makler verkauft Häuser in Zeuthen, Wildau und Schönefeld?",
+      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im ganzen Landkreis Dahme-Spreewald, also auch in Zeuthen, Wildau, Schönefeld und Königs Wusterhausen; Ihr Ansprechpartner ist Lennart Geserich. Grundlage unserer Bewertung sind der Bodenrichtwert Ihrer Zone und die Preise, die der Gutachterausschuss für Ihre Gemeinde und Ihr Baujahr ausweist. Hauspreise nach Baujahr weist er unter anderem für Zeuthen, Wildau und Schönefeld einzeln aus, Wohnungspreise unter anderem für Wildau und Schönefeld.[[1]]",
+      "herkunft": "Google-Autocomplete „immobilienmakler zeuthen“, „immobilienmakler wildau“, „immobilienmakler schönefeld“ und „makler dahme spreewald“ (research/serp/autocomplete-2026-10-26-dahme-spreewald.json)"
+    },
+    {
+      "frage": "Wie hoch sind die Bodenrichtwerte in Dahme-Spreewald 2026?",
+      "antwort": "Zum 01.01.2026 reichen sie für Wohn- und Mischgebiete von 10 €/m² in Schäcksdorf, Behlow und Damsdorf bis 1.000 €/m² für Ufergrundstücke in Zeuthen und Eichwalde. Ohne Ufer- und Mehrfamilienhauszonen liegen die Wohngebiete in Zeuthen zwischen 310 und 470 €/m², in Wildau zwischen 240 und 340, in Schönefeld und Großziethen zwischen 450 und 620 €/m². Von 428 Zonen blieben 356 unverändert; gesunken sind sie etwa in Zeesen und an mehreren Ufern in Bestensee und Mittenwalde.[[2]] Den Wert Ihrer Zone finden Sie in BORIS Brandenburg.",
+      "herkunft": "Google-Autocomplete „bodenrichtwert zeuthen 2026“, „bodenrichtwert wildau 2026“, „bodenrichtwert schönefeld großziethen“ und „bodenrichtwert dahme spreewald“ (research/serp/autocomplete-2026-10-26-dahme-spreewald.json)"
+    },
+    {
+      "frage": "Gibt es einen Mietspiegel in Zeuthen, Wildau oder Schönefeld?",
+      "antwort": "Einen geltenden Mietspiegel haben wir nicht gefunden. Nach Angabe des Mieterschutzbunds Eichwalde/Zeuthen haben Eichwalde, Zeuthen, Schulzendorf und Wildau seit Januar 2012 keinen mehr; Schönefeld hatte 2021 nach eigener Angabe keinen qualifizierten Mietspiegel.[[18,17]] Der Gutachterausschuss veröffentlicht Neuvertragsmieten, ausdrücklich ohne Mietspiegel zu sein: 2023 bis 2025 im Median 11,99 €/m² in Wildau, 12,93 €/m² in Eichwalde, Schulzendorf und Zeuthen zusammen, 8,82 €/m² in Schönefeld, jeweils aus nur sechs bis zehn Verträgen.[[1]]",
+      "herkunft": "Google-Autocomplete „mietspiegel zeuthen 2025“, „mietspiegel gemeinde zeuthen“, „stadt wildau mietspiegel“ und „mietspiegel dahme spreewald“ (research/serp/autocomplete-2026-10-26-dahme-spreewald.json)"
+    },
+    {
+      "frage": "Senkt der Fluglärm vom BER die Immobilienpreise?",
+      "antwort": "Belegen lässt sich das bisher nicht. Der Gutachterausschuss findet keinen signifikanten Zusammenhang zwischen der Lage unter Flugrouten und sinkenden oder langsamer steigenden Grundstückswerten; die Hauspreise in Eichwalde, Schulzendorf, Wildau und Zeuthen entwickeln sich wie im übrigen Berliner Umland.[[1]] Besonders betroffen sind nach Angabe der Gemeinde Schönefeld deren Ortsteile Kiekebusch, Karlshof und Rotberg. Die Flugrouten veröffentlicht die Deutsche Flugsicherung.[[15]]",
+      "herkunft": "Google-Autocomplete „fluglärm zeuthen“, „gemeinde zeuthen fluglärm“, „fluglärm wildau“, „fluglärm schönefeld“ und „fluglärm ber schulzendorf“ (research/serp/autocomplete-2026-10-26-dahme-spreewald.json)"
+    },
+    {
+      "frage": "Was kostet ein Wassergrundstück in Zeuthen und im Landkreis?",
+      "antwort": "Der Gutachterausschuss leitet für 50 Uferzonen eigene Bodenrichtwerte ab. Die höchsten liegen mit 1.000 €/m² in Zeuthen und Eichwalde, in Königs Wusterhausen und seinen Ortsteilen überwiegend bei 600 €/m², im weiteren Metropolenraum am höchsten mit 800 €/m² in Schwerin im Schenkenländchen und am unteren Ende bei 25 €/m² in Dollgen.[[1]] Die Hauspreise des Gutachterausschusses nach Baujahr gelten ohne Uferlagen, deshalb bewerten wir Häuser am Wasser gesondert.",
+      "herkunft": "Google-Autocomplete „haus kaufen zeuthen wassergrundstück“, „wassergrundstück zeuthen kaufen“ und „haus am see zeuthen kaufen“ (research/serp/autocomplete-2026-10-26-dahme-spreewald.json)"
+    },
+    {
+      "frage": "Gilt die Mietpreisbremse in Dahme-Spreewald?",
+      "antwort": "In sieben Gemeinden: Bestensee, Eichwalde, Königs Wusterhausen, Schönefeld, Schulzendorf, Wildau und Zeuthen gehören seit dem 01.01.2026 zur Gebietskulisse, die Verordnung gilt bis 31.12.2029. Mittenwalde, Lübben (Spreewald), Luckau und die übrigen Gemeinden sind nicht erfasst.[[5,8]] Bei Neuvermietung in Gebäuden, die vor dem 1. Oktober 2014 fertiggestellt und bezogen wurden, darf die Miete dort höchstens 10 % über der ortsüblichen Vergleichsmiete liegen, Bestandsmieten dürfen bis 31.12.2030 in drei Jahren um höchstens 15 % steigen.[[7,6]]",
+      "herkunft": "Prompt der KI-Recherche „Mietpreisbremse in Berlin und Brandenburg: was heißt das für meine Rendite?“ (q24) (ChatGPT, Gemini; Dashboard/src/data/research/ai_answers.json, Oktober 2026); Google-Autocomplete zu „mietpreisbremse dahme-spreewald“ ohne Vorschläge"
+    },
+    {
+      "frage": "Ich habe ein Haus in Dahme-Spreewald geerbt. Wer kann den Verkauf übernehmen?",
+      "antwort": "Wir verkaufen auch geerbte Immobilien. Zuerst klären wir mit Ihnen den rechtlichen Status des Hauses und die vorhandenen Unterlagen; häufig geht es auch um die Liquidität für die Erbschaftsteuer und je nach Situation ist eine Finanzierung dafür sinnvoller als ein schneller Verkauf unter Zeitdruck. Für den Preis zählt bei älteren Häusern der Vergleich nach Baujahr und Ort: Freistehende Häuser bis Baujahr 1948 kosteten 2025 in Eichwalde im Mittel 3.501 €/m² Wohnfläche, in Königs Wusterhausen 3.438, in Zeuthen 3.386 und in Lübben (Spreewald), bei nur drei Kauffällen, 2.261 €/m².[[1]]",
+      "herkunft": "Prompt der KI-Recherche „Ich habe ein Haus in Brandenburg geerbt und wohne nicht vor Ort. Wer kann den Verkauf für mich übernehmen?“ (q52) (ChatGPT, Gemini; Dashboard/src/data/research/ai_answers.json, Oktober 2026). Antwort nach der FAQ der Live-Seite „Verkauft ihr auch geerbte Immobilien?“; zur Abwicklung aus der Ferne gibt es keine Angabe, deshalb ohne diesen Teil der Frage"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Königs Wusterhausen",
+      "url": "/standorte/konigs-wusterhausen/"
+    },
+    {
+      "name": "Erkner",
+      "url": "/standorte/erkner/"
+    },
+    {
+      "name": "Landkreis Potsdam-Mittelmark",
+      "url": "/standorte/potsdam-mittelmark/"
+    },
+    {
+      "name": "Berlin",
+      "url": "/standorte/berlin/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Grundstücksmarktbericht 2025 Landkreis Dahme-Spreewald, Gutachterausschuss für Grundstückswerte im Landkreis Dahme-Spreewald",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_LDS.pdf",
+      "stand": "beschlossen 12.05.2026; Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+    },
+    {
+      "name": "Bodenrichtwerte Landkreis Dahme-Spreewald, BORIS Brandenburg (GeoBasis-DE/LGB, dl-de/by-2-0)",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?f=json&limit=2000&skipGeometry=true&gemeinde_gemeindekennzeichen_kreis=61&stichtag=2026-01-01",
+      "stand": "Stichtag 01.01.2026, Vergleich mit 01.01.2025"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 4 – j / 25, Bevölkerung im Land Brandenburg",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Landesamt für Bauen und Verkehr, Bevölkerungsvorausschätzung 2024 bis 2040, Anlage 3",
+      "url": "https://lbv.brandenburg.de/sixcms/media.php/9/31_Bevoelkerungsvorausschaetzung_2024-20.pdf",
+      "stand": "Basis 31.12.2023, mittlere Variante"
+    },
+    {
+      "name": "Mietpreisbegrenzungsverordnung Brandenburg, Ministerium für Infrastruktur und Landesplanung",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/Mietpreisbegrenzungsverordnung.pdf",
+      "stand": "Kabinettsbeschluss 25.11.2025, gültig 01.01.2026 bis 31.12.2029"
+    },
+    {
+      "name": "Kappungsgrenzenverordnung Brandenburg, Ministerium für Infrastruktur und Landesplanung",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/KappGrenzV.pdf",
+      "stand": "gültig 01.01.2026 bis 31.12.2030"
+    },
+    {
+      "name": "MIL, Pressemitteilung zu Mietpreisbremse und Kappungsgrenzenverordnung",
+      "url": "https://mil.brandenburg.de/mil/de/presse/detail/~25-11-2025-kabinett-mietpreisbremse-und-kappungsgrenzenverordnung",
+      "stand": "25.11.2025"
+    },
+    {
+      "name": "RegioKontext GmbH, Gutachten zur Erstellung einer Gebietskulisse für die Mietpreisbegrenzungsverordnungen (Anlage zur Verordnung)",
+      "url": "https://bravors.brandenburg.de/fm/68/Anlage_Gutachten.pdf",
+      "stand": "18.09.2025, veröffentlicht im GVBl. II Nr. 95 vom 04.12.2025"
+    },
+    {
+      "name": "VBB-Fahrplandaten, Verbindungen bis S+U Friedrichstraße",
+      "url": "https://v6.vbb.transport.rest/journeys?from=900260003&to=900100001&departure=2026-11-10T09:00%2B01:00",
+      "stand": "Fahrplan Dienstag 10.11.2026, abgefragt 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Zeuthen, Zeuthen erleben",
+      "url": "https://www.zeuthen.de/Erleben-617946.html",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Zeuthen, Lernen in Zeuthen (Wissenschaft)",
+      "url": "https://www.zeuthen.de/Wissen-674101.html",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Wildau, Stadt Wildau (Ortsbeschreibung, Schwartzkopff-Siedlung, Nahverkehr)",
+      "url": "https://www.wildau.de/stadt/wildau/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Wildau, Wirtschaft & Wissenschaft",
+      "url": "https://www.wildau.de/stadt/wirtschaft-wissenschaft/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Schönefeld, Gemeindeportrait",
+      "url": "https://gemeinde-schoenefeld.de/mein-schoenefeld/gemeinde/gemeindeportrait/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Schönefeld, Fluglärm & Schallschutz",
+      "url": "https://gemeinde-schoenefeld.de/mein-schoenefeld/flughafen/fluglaerm-schallschutz/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Schönefeld, Entwicklungsgebiet Schönefeld-Nord",
+      "url": "https://gemeinde-schoenefeld.de/entwicklungsgebiet-schoenefeld-nord/",
+      "stand": "abgerufen 26.10.2026, letzte Meldung 02.04.2024"
+    },
+    {
+      "name": "Gemeinde Schönefeld, Meldung „Schönefeld will gesicherte Datenlage zu Mietpreisen“",
+      "url": "https://gemeinde-schoenefeld.de/news/aktuelles/schoenefeld-will-gesicherte-datenlage-zu-mietpreisen/",
+      "stand": "15.04.2021"
+    },
+    {
+      "name": "Mieterschutzbund Eichwalde/Zeuthen und Umgebung e. V., Mietspiegel für Eichwalde / Zeuthen",
+      "url": "http://www.msb-ez.de/service/mietspiegel.php",
+      "stand": "abgerufen 26.10.2026, Seite ohne Datum"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "179.480 Einwohner Landkreis 31.12.2025, +687; LBV 2040 193.329 (+8,8 %)",
+      "fundstelle": "dahme-spreewald.md, Landkreis Nr. 1, 2"
+    },
+    {
+      "zahl": "KW 39.590 (größte Stadt); Kreisstadt Lübben; Zeuthen 11.330 (−101), Wildau 10.952 (+235, 9,11 km²), Schönefeld 19.351, Eichwalde 2.287 EW/km² (dichteste im Landkreis), Lübben 13.992",
+      "fundstelle": "dahme-spreewald.md, Orte Nr. 40–47; Landkreis Nr. 4; afs2025.xlsx Blatt 3.2"
+    },
+    {
+      "zahl": "LBV: Zeuthen −2,0 %, Wildau +19,5 %, Schönefeld +42,7 % auf 27.168 (höchster Wert Brandenburgs), Schulzendorf +23,7 %, Bestensee +25,4 %",
+      "fundstelle": "dahme-spreewald.md, Orte; bvs.txt Z. 1512–1527, Z. 919–921"
+    },
+    {
+      "zahl": "Kauffälle 2.287 (+4 %), 665 Mio. € (−1 %); KW 347 (meiste); Schönefeld 194 / 164 Mio. € (höchster Geldumsatz)",
+      "fundstelle": "dahme-spreewald.md, Landkreis Nr. 7, 8; GMB Tab. 4-2 (eigener Vergleich aller Zeilen)"
+    },
+    {
+      "zahl": "BRW 428 Zonen: 356 gleich, 41 hoch, 23 runter, 8 neu; Höchstwert 1.000 Ufer Zeuthen und Eichwalde; Tiefstwert 10 Schäcksdorf, Behlow, Damsdorf",
+      "fundstelle": "dahme-spreewald.md, Landkreis Nr. 10–12"
+    },
+    {
+      "zahl": "BRW-Mittel Zeuthen 411 (höchstes), KW −3 %; Ufer KW überwiegend 600; 50 Uferzonen; Schwerin 800; Dollgen 25",
+      "fundstelle": "dahme-spreewald.md, Landkreis Nr. 13, 14"
+    },
+    {
+      "zahl": "BRW Zeuthen: Miersdorf Nord 310 bis Zeuthener Winkel 470 (430), Zeuthen W 340→320, Miersdorf Süd 370→360, Ufer 1.000, Miersdorfer Werder Ufer 600",
+      "fundstelle": "dahme-spreewald.md, Zeuthen Nr. 53"
+    },
+    {
+      "zahl": "BRW Wildau: Süd 300→340, Nord westl. 350→330, östl. 240, Schwartzkopff-Siedlung 240, Dorfaue 300",
+      "fundstelle": "dahme-spreewald.md, Wildau Nr. 64"
+    },
+    {
+      "zahl": "BRW Schönefeld 450–550, Großziethen 500–620, Waltersdorf Siedlung 190, Rotberg 190→210 einzige Steigerung",
+      "fundstelle": "dahme-spreewald.md, Schönefeld Nr. 76"
+    },
+    {
+      "zahl": "BRW Eichwalde 350 / Ufer 1.000; Bestensee und Pätz Ufer 450→350; Motzen und Krummensee Ufer 500→400; Lübben Markt 230 neu",
+      "fundstelle": "dahme-spreewald.md, Landkreis Nr. 15; Süden Nr. 87, 89"
+    },
+    {
+      "zahl": "EFH BU Ø 463.000 (+4 %, 239; Vorjahr −6 %), WMR Ø 301.000; BU 1990–2020 4.279 €/m², Ø 570.000 (ohne Ufer); ETW BU Ø 4.201 (−6 %, 161)",
+      "fundstelle": "dahme-spreewald.md, Landkreis Nr. 17–19"
+    },
+    {
+      "zahl": "Zeuthen EFH 1990–2020 14 Fälle, Ø 547.000, 4.292; Kaufkraft 117,3 (höchster)",
+      "fundstelle": "dahme-spreewald.md, Zeuthen Nr. 54, 55"
+    },
+    {
+      "zahl": "Wildau EFH 4.851 (6); ETW Erstverkauf 22 / 4.955, Weiterverkauf 11 / 3.228",
+      "fundstelle": "dahme-spreewald.md, Wildau Nr. 65, 66"
+    },
+    {
+      "zahl": "Schönefeld EFH 1990–2020 Ø 691.000, 5.370 (8); ETW Erstverkauf 47 / 4.869 (2024: 107)",
+      "fundstelle": "dahme-spreewald.md, Schönefeld Nr. 77, 78"
+    },
+    {
+      "zahl": "EFH bis 1948: Eichwalde 3.501, KW 3.438, Zeuthen 3.386, Lübben 2.261",
+      "fundstelle": "GMB Tab. 8-7, S. 75–77 (Z. 3559–3698)"
+    },
+    {
+      "zahl": "LIZI ETW BU 2,7 %, Miete Ø 10,46 (36; 5,53–20,26); MFH BU 3,0 %, 8,69",
+      "fundstelle": "dahme-spreewald.md, Landkreis Nr. 20, 21"
+    },
+    {
+      "zahl": "Neuvertragsmieten: Wildau 11,99 (9), ESZ 12,93 (10), Schönefeld 8,82 (6), Lübben 6,60 (372); kein Mietspiegel",
+      "fundstelle": "dahme-spreewald.md, Landkreis Nr. 22; Mietspiegel"
+    },
+    {
+      "zahl": "Fluglärm: kein signifikanter Zusammenhang (S. 62); EFH Eichwalde/Schulzendorf/Wildau/Zeuthen analog (S. 86); Kiekebusch, Karlshof, Rotberg; BER eröffnet 31.10.2020",
+      "fundstelle": "dahme-spreewald.md, Landkreis Nr. 23, 24; Schönefeld Nr. 74"
+    },
+    {
+      "zahl": "Schönefeld 2003 aus sechs Gemeinden; Schönefeld-Nord ca. 150 ha, Weiterführung unsicher; 2021 kein qualifizierter Mietspiegel und außerhalb der Mietpreisbremse",
+      "fundstelle": "dahme-spreewald.md, Schönefeld Nr. 70, 75, 79"
+    },
+    {
+      "zahl": "Wildau: Schwartzkopff-Siedlung ab 1899, 164 Häuser, 820 Werkswohnungen, Denkmalschutz; TH 1991; A10 Center",
+      "fundstelle": "dahme-spreewald.md, Wildau Nr. 60–62"
+    },
+    {
+      "zahl": "Zeuthen: grenzt nordöstlich an Berlin, Wohngemeinde, Zeuthener und Miersdorfer See, DESY",
+      "fundstelle": "dahme-spreewald.md, Zeuthen Nr. 50, 51"
+    },
+    {
+      "zahl": "Fahrzeiten bis Friedrichstraße: KW 35–41 (RE7/RE20 + S), Zeuthen 44–49, Wildau 48–53, Schönefeld S9 39, BER 26, Lübben 65–71",
+      "fundstelle": "dahme-spreewald.md, Nr. 52, 63, 73, 86; Verkehr KW und BER"
+    },
+    {
+      "zahl": "Mietpreisbremse und Kappung: Bestensee, Eichwalde, KW, Schönefeld, Schulzendorf, Wildau, Zeuthen; Inhalt 10 % / 15 %",
+      "fundstelle": "dahme-spreewald.md, Landkreis Nr. 25; havelland.md"
+    },
+    {
+      "zahl": "Erbfall-Antwort; § 34c und § 34i GewO; Lennart Geserich, Head of Sales & Vermietung; Europace und Baufinex",
+      "fundstelle": "wie barnim.json (Live-Seite und Brief)"
+    }
+  ],
+  "karte": {
+    "alt": "Karte des Landkreises Dahme-Spreewald vom Berliner Stadtrand bis Lübben (Spreewald): im Norden Schönefeld, Schulzendorf, Eichwalde, Zeuthen, Wildau und Königs Wusterhausen, weiter südlich Mittenwalde, Bestensee, Motzen und Lübben, dazu die Bahnstrecken, die Autobahnen und der Bahnhof Friedrichstraße im Norden"
+  },
+  "anbindung": [
+    "Schönefeld hat mit der S9 eine direkte S-Bahn ins Zentrum, Zeuthen und Wildau liegen an S46 und S8, in Königs Wusterhausen halten zusätzlich Regionalexpress-Linien.[[9]]",
+    "Die S9 fährt ohne Umstieg in 39 Minuten bis Friedrichstraße, vom Flughafen sind es mit FEX oder RE20 und S-Bahn 26 Minuten.[[9]]",
+    "Die Kreisstadt Lübben (Spreewald) hat 13.992 Einwohner, mit Regionalexpress und S-Bahn sind es 65 bis 71 Minuten bis Friedrichstraße.[[3,1,9]]"
+  ]
+}

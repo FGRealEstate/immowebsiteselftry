@@ -7,11 +7,74 @@
   "keywords": [
     "tilgung"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Finanzierung",
-  "formula": null,
+  "formula": "Tilgung im ersten Jahr ≈ Darlehen × anfänglicher Tilgungssatz",
   "sources": [],
   "assistantAnswer": "Rückzahlung des Darlehenskapitals. Tilgung ist die Rückzahlung des Darlehenskapitals. Im Annuitätendarlehen steigt der Tilgungsanteil innerhalb der konstanten Rate, weil der Zinsanteil mit sinkender Restschuld abnimmt.",
-  "explanation": "Tilgung ist die Rückzahlung des Darlehenskapitals. Im Annuitätendarlehen steigt der Tilgungsanteil innerhalb der konstanten Rate, weil der Zinsanteil mit sinkender Restschuld abnimmt.",
-  "practiceExample": "Bei 300.000 € Darlehen und 2 % Anfangstilgung werden im ersten Jahr näherungsweise 6.000 € Kapital zurückgeführt; die exakte Summe steigt durch den fallenden Zinsanteil leicht."
+  "explanation": "Tilgung ist der Teil Ihrer Rate, mit dem Sie das Darlehen zurückzahlen; der Rest sind Zinsen. Beim Annuitätendarlehen bleibt die Rate gleich, während die Restschuld sinkt. Dadurch wird der Zinsanteil kleiner und der Tilgungsanteil größer.",
+  "practiceExample": "Ein Darlehen über 300.000 € zu einem Beispielzins von 4 %. Mit 1 % Tilgung zahlen Sie 1.250 € im Monat, schulden nach zehn Jahren noch 263.188 € und sind nach rund 40 Jahren schuldenfrei. Mit 1,5 % sind es 1.375 €, 244.781 € und rund 32,5 Jahre. Mit 2 % sind es 1.500 €, 226.375 € und rund 27,5 Jahre.",
+  "ausbau": {
+    "einordnung": [
+      "Tilgung ist der Teil Ihrer Rate, mit dem Sie das Darlehen zurückzahlen; der Rest sind Zinsen. Beim Annuitätendarlehen bleibt die Rate gleich, während die Restschuld sinkt. Dadurch wird der Zinsanteil kleiner und der Tilgungsanteil größer.[[1]]",
+      "Vereinbart wird ein anfänglicher Tilgungssatz, bezogen auf den Darlehensbetrag. Je höher er ist, desto höher die Rate, desto schneller sinkt die Schuld und desto weniger Zinsen zahlen Sie insgesamt.",
+      "Zusätzlich können Sie Sondertilgungen vereinbaren. Üblich sind drei Varianten: keine, bis zu 5 % oder bis zu 10 % des Kreditbetrags pro Jahr. Viele Banken verlangen dafür einen geringen Zinsaufschlag; bis zu 5 % gehören häufig schon zum Standard. Eine Sondertilgung ist ein Recht, keine Pflicht.[[2]]"
+    ],
+    "beispiel": [
+      "Ein Darlehen über 300.000 € zu einem Beispielzins von 4 %. Mit 1 % Tilgung zahlen Sie 1.250 € im Monat, schulden nach zehn Jahren noch 263.188 € und sind nach rund 40 Jahren schuldenfrei. Mit 1,5 % sind es 1.375 €, 244.781 € und rund 32,5 Jahre. Mit 2 % sind es 1.500 €, 226.375 € und rund 27,5 Jahre.[[1]]"
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Eine niedrige Tilgung hält die Rate klein, verlängert aber die Laufzeit und lässt am Ende der Zinsbindung mehr Schuld übrig. Wer bis zum Ruhestand schuldenfrei sein möchte, rechnet vom Zieljahr aus zurück. Am Ende der Zinsbindung können Sie die Tilgung neu wählen und die Restschuld ohne Vorfälligkeitsentschädigung verringern.[[3]]"
+        ]
+      },
+      {
+        "h2": "Was es für Anleger heißt",
+        "absaetze": [
+          "Bei einer vermieteten Wohnung entlastet eine niedrigere Tilgung den monatlichen Cashflow. Dafür bleibt mehr Schuld, die nach der Zinsbindung zu einem neuen Zins weiterläuft. Welche Höhe passt, hängt von Alter, Einkommen, weiteren geplanten Käufen und Ihrer Einschätzung der Zinsen ab."
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "Finanztip: Annuitätendarlehen",
+        "url": "https://www.finanztip.de/baufinanzierung/annuitaetendarlehen/",
+        "stand": "Stand 17.12.2025"
+      },
+      {
+        "name": "Finanztip: Sondertilgung",
+        "url": "https://www.finanztip.de/baufinanzierung/sondertilgung/",
+        "stand": "Stand 19.12.2025"
+      },
+      {
+        "name": "Finanztip: Anschlussfinanzierung",
+        "url": "https://www.finanztip.de/baufinanzierung/anschlussfinanzierung/",
+        "stand": "Stand 25.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Zinsanteil sinkt, Tilgungsanteil steigt",
+        "fundstelle": "runde-2.md, T01"
+      },
+      {
+        "zahl": "Sondertilgung: keine, 5 %, 10 %; bis 5 % häufig Standard, sonst geringer Aufschlag; Recht, keine Pflicht",
+        "fundstelle": "runde-2.md, T04, T05"
+      },
+      {
+        "zahl": "300.000 €, 4 %, 2 % = 1.500 € und 27,5 Jahre wie bei Finanztip",
+        "fundstelle": "runde-2.md, T03"
+      },
+      {
+        "zahl": "1 % / 1,5 % / 2 %: 1.250 / 1.375 / 1.500 €; Restschuld 10 J. 263.188 / 244.781 / 226.375 €; Laufzeit 40,3 / 32,5 / 27,5 J.",
+        "fundstelle": "Rechnung, Marktprüfung runde-2.md; Tilgungssätze nach Timon (T06)"
+      },
+      {
+        "zahl": "Restschuld beim Anschluss ohne Vorfälligkeitsentschädigung verringern",
+        "fundstelle": "runde-2.md, A08"
+      }
+    ]
+  }
 }

@@ -1,0 +1,416 @@
+{
+  "slug": "maerkisch-oderland",
+  "name": "Märkisch-Oderland",
+  "nameLang": "Landkreis Märkisch-Oderland",
+  "inOrt": "im Landkreis Märkisch-Oderland",
+  "fuerOrt": "den Landkreis Märkisch-Oderland",
+  "typ": "landkreis",
+  "ersetzt": [
+    "strausberg"
+  ],
+  "orte": [
+    "Strausberg",
+    "Neuenhagen bei Berlin",
+    "Hoppegarten",
+    "Petershagen/Eggersdorf",
+    "Fredersdorf-Vogelsdorf",
+    "Altlandsberg",
+    "Rüdersdorf bei Berlin"
+  ],
+  "kontakt": "lennart",
+  "title": "Immobilienmakler Märkisch-Oderland – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler Märkisch-Oderland: verkaufen, kaufen und finanzieren in Strausberg, Neuenhagen, Hoppegarten und Rüdersdorf, mit Bodenrichtwerten 2026.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren im Landkreis Märkisch-Oderland",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger im Landkreis Märkisch-Oderland beim Verkauf, beim Kauf und bei der Finanzierung, in Strausberg, Neuenhagen, Hoppegarten, Petershagen/Eggersdorf und Fredersdorf-Vogelsdorf an der S5 ebenso wie in Altlandsberg, Rüdersdorf, der Märkischen Schweiz und im Oderbruch. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für alle Orte auf dieser Seite ist Lennart Geserich Ihr Ansprechpartner, Head of Sales & Vermietung.",
+  "hero": {
+    "name": "maerkisch-oderland-buckow",
+    "alt": "Schilf und Seerosen am Ufer des Schermützelsees in Buckow, dahinter die bewaldeten Hügel der Märkischen Schweiz im Morgendunst",
+    "credit": "A.Savin, CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Buckow_Maerkische_Schweiz_08-2015_img5.jpg",
+    "position": "50% 60%"
+  },
+  "stand": "Oktober 2026",
+  "updated": "2026-10-26",
+  "zahlen": [
+    {
+      "wert": "900 €/m²",
+      "label": "Höchster Bodenrichtwert für Wohnbauland im Landkreis, Ufergrundstücke am Stienitzsee in Hennickendorf",
+      "detail": "Ohne Wasserlage liegt der höchste Wert bei 450 €/m² in Hönow-Süd, Gemeinde Hoppegarten. Von 382 baureifen Wohn- und Mischgebietszonen im Landkreis blieben 334 unverändert, 26 stiegen, 17 sanken, 5 sind neu.",
+      "quelle": "BORIS Brandenburg",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?f=json&limit=2000&skipGeometry=true&gemeinde_gemeindekennzeichen_kreis=64&stichtag=2026-01-01",
+      "stichtag": "01.01.2026"
+    },
+    {
+      "wert": "Ø 484.000 €",
+      "label": "Freistehende Einfamilienhäuser der Baujahre 1991 bis 2012 im Berliner Umland des Landkreises",
+      "detail": "78 Verkäufe, im Mittel 3.830 €/m² Wohnfläche und 695 m² Grundstück. Im weiteren Metropolenraum kosteten Häuser dieser Baujahre im Mittel 310.000 € oder 2.620 €/m². Eine Preisentwicklung leitet der Gutachterausschuss aus diesen Mitteln nicht ab.",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Märkisch-Oderland",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_MOL.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 5.255 €/m²",
+      "label": "Neue Eigentumswohnungen in Strausberg",
+      "detail": "34 Erstverkäufe, Spanne 4.310 bis 5.597 €/m², im Mittel 58 m². Gebrauchte, selbst genutzte Wohnungen kosteten in Strausberg im Mittel 2.438 €/m², in Neuenhagen 3.252 und in Petershagen/Eggersdorf 3.372 €/m².",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Märkisch-Oderland",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_MOL.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "5,51 bis 12,58 €/m²",
+      "label": "Mittelwerte im Mietspiegel 2026 der Stadt Strausberg",
+      "detail": "Gültig vom 01.11.2026 bis 31.10.2028, ohne Unterscheidung nach Wohnlagen. Nach Angabe des Gutachterausschusses hat im Landkreis nur Strausberg einen Mietspiegel.",
+      "quelle": "Stadt Strausberg; Grundstücksmarktbericht 2025 Landkreis Märkisch-Oderland",
+      "url": "https://www.stadt-strausberg.de/wp-content/uploads/2026/10/Angepasster-neunter-Mietspiegel_2026.pdf",
+      "stichtag": "gültig ab 01.11.2026"
+    },
+    {
+      "wert": "197.192",
+      "label": "Einwohner im Landkreis Märkisch-Oderland",
+      "detail": "625 weniger als ein Jahr zuvor. Größte Gemeinde ist Strausberg mit 27.765 Einwohnern, am dichtesten besiedelt Neuenhagen bei Berlin mit 984 je km². Das Landesamt für Bauen und Verkehr erwartet bis 2040 ein Plus von 2,7 %, für Rüdersdorf von 8,4 % und für Strausberg von 8,2 %.",
+      "quelle": "Amt für Statistik Berlin-Brandenburg; LBV Brandenburg",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stichtag": "31.12.2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Strausberg: Altstadt am Straussee und S5",
+      "absaetze": [
+        "Strausberg entstand in der ersten Hälfte des 13. Jahrhunderts am Straussee, das Stadtrecht erhielt der Ort wahrscheinlich vor 1247. 1954 zog der Hauptstab der Kasernierten Volkspolizei in die Kaserne am Flugplatz, aus ihm ging 1956 das Ministerium für Nationale Verteidigung der DDR hervor; nach 1990 blieb Strausberg Garnisonsstadt der Bundeswehr.[[10]] Mit 27.765 Einwohnern ist Strausberg die größte Gemeinde im Landkreis, bis 2040 erwartet das Landesamt für Bauen und Verkehr ein Plus von 8,2 %.[[3,4]] Vom S-Bahnhof Strausberg fährt die S5 alle 20 Minuten und braucht 51 Minuten bis Friedrichstraße, mit RB26 und S-Bahn über Lichtenberg sind es 46, von Strausberg Nord 61 Minuten.[[9]] Seit 1893 verbindet die Strausberger Eisenbahn, heute eine Straßenbahn, den Bahnhof mit dem Stadtzentrum, seit 1894 fährt eine Fähre von der Altstadt über den See in das Waldgebiet Jenseits des Sees.[[12]]",
+        "Die Bodenrichtwerte für Wohnlagen reichen zum 01.01.2026 von 70 €/m² in Ruhlsdorf bis 400 €/m² an der Fontanestraße, die von 380 stieg. Die Gartenstadt liegt bei 280, die Vorstadt bei 300, die Plattenbaugebiete Hegermühle und Vorstadt bei 160 €/m²; keine Zone sank. Für die seit 2013 geltende Erweiterung des Sanierungsgebiets um das Stadtmauerumfeld hat der Gutachterausschuss zum 01.01.2026 erstmals besondere Bodenrichtwerte ermittelt.[[2,1]] Mietpreisbremse und Kappungsgrenze gelten, ab dem 01.11.2026 gilt der Mietspiegel 2026.[[5,6,11]]"
+      ],
+      "bild": {
+        "name": "maerkisch-oderland-strausberg-faehre",
+        "alt": "Die Strausseefähre auf dem blauen Straussee, dahinter die Altstadt von Strausberg mit roten Dächern und herbstlichen Bäumen",
+        "caption": "Die Fähre über den Straussee, vom Anleger Jenseits des Sees aus gesehen.",
+        "credit": "Jörg Fuhrmann (Intermerker), CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Strausberg_und_Strausseef%C3%A4hre.jpg",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "h2": "Neuenhagen und Hoppegarten: innerhalb der A 10",
+      "absaetze": [
+        "Neuenhagen bei Berlin und Hoppegarten liegen innerhalb des Autobahnrings A 10 und bilden zusammen ein Mittelzentrum.[[1]] In Neuenhagen leben 19.295 Menschen, mit 984 Einwohnern je km² ist es die am dichtesten besiedelte Gemeinde im Landkreis. Hoppegarten hat 18.085 Einwohner und besteht aus Dahlwitz-Hoppegarten, Hönow und Münchehofe.[[3,13]] Dahlwitz-Hoppegarten beschreibt die Gemeinde als gartenstädtisch geprägt, nahe der Galopprennbahn, Hönow als den Ortsteil mit der stärksten Entwicklung.[[13]] Mit der S5 sind es von Birkenstein 34, von Hoppegarten 36 und von Neuenhagen 39 Minuten bis Friedrichstraße.[[9]]",
+        "Das Bodenrichtwertniveau für Einfamilienhausbauland liegt hier im Mittel bei 323 €/m², höher als in jedem anderen Teil des Landkreises.[[1]] Zum 01.01.2026 stieg Hönow-Süd von 400 auf 450 €/m²; Waldesruh sank von 450 auf 400, die Ortslage Hoppegarten von 400 auf 350, Birkenstein blieb bei 400, Münchehofe liegt bei 210 €/m². In Neuenhagen sanken die Lagen nördlich der S-Bahn von 390 auf 340 und südlich von 360 auf 300 €/m², die Zonen Gruscheweg und Nikolaus-Kalff-Weg blieben bei 390.[[2]] Gebrauchte selbst genutzte Eigentumswohnungen kosteten 2025 in Neuenhagen im Mittel 3.252 €/m², in Hoppegarten 3.064 €/m².[[1]] Die Mietpreisbremse gilt in beiden Gemeinden nicht.[[5]]"
+      ],
+      "bild": {
+        "name": "maerkisch-oderland-dorfkirche-neuenhagen",
+        "alt": "Die Dorfkirche Neuenhagen aus Feldsteinen mit Backsteingiebeln und Turm, davor eine Backsteinmauer und Bäume",
+        "caption": "Die Dorfkirche in Neuenhagen bei Berlin.",
+        "credit": "Marcus Cyron, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Dorfkirche_Neuenhagen_01.JPG"
+      }
+    },
+    {
+      "h2": "Petershagen/Eggersdorf, Fredersdorf-Vogelsdorf und Altlandsberg",
+      "absaetze": [
+        "Petershagen/Eggersdorf und Fredersdorf-Vogelsdorf liegen an der S5 zwischen Neuenhagen und Strausberg; von Fredersdorf sind es 44, von Petershagen Nord 47 Minuten bis Friedrichstraße.[[9]] Fredersdorf-Vogelsdorf entstand 1993 aus zwei selbstständigen Gemeinden mit zusammen 7.000 Einwohnern, heute sind es 14.688. Mit 894 und 871 Einwohnern je km² sind beide Gemeinden nach Neuenhagen die am dichtesten besiedelten im Landkreis.[[14,3]] Zum 01.01.2026 stieg Petershagen-Nord von 310 auf 340 und Petershagen-Süd von 280 auf 300 €/m², Eggersdorf-Nord sank von 320 auf 270 und Eggersdorf-Süd von 300 auf 260. In Fredersdorf liegt der Norden bei 360, der Süden sank von 350 auf 300 €/m².[[2]]",
+        "Altlandsberg liegt 3 km von der A-10-Abfahrt Marzahn und 24 km östlich des Berliner Zentrums, eine S-Bahn hat die Stadt nicht, der Nahverkehr verbindet sie mit dem S-Bahnhof Hoppegarten.[[15,1]] Bis Friedrichstraße sind es mit Bus und S5 oder U5 59 bis 72 Minuten.[[9]] Das Bild der Stadt bestimmen nach eigener Beschreibung überwiegend neu gebaute Ein- und Zweifamilienhäuser.[[15]] Die Bodenrichtwerte reichen zum 01.01.2026 von 80 €/m² in Buchholz und Wesendahl bis 250 in Bruchmühle, die Stadt außerhalb des Sanierungsgebiets liegt bei 210 €/m²; nur das Sanierungsgebiet Scheunenviertel stieg, von 150 auf 160 €/m².[[2]] In Fredersdorf-Vogelsdorf und Altlandsberg gelten Mietpreisbremse und Kappungsgrenze, in Petershagen/Eggersdorf nicht.[[5,6]]"
+      ],
+      "bild": {
+        "name": "maerkisch-oderland-eggersdorf-park",
+        "alt": "Parkanlage mit geschwungenem Weg, Rasen und jungen Bäumen, hinten Wohnhäuser mit roten Dächern, darüber ein Himmel mit vielen kleinen Wolken",
+        "caption": "Parkanlage im Ortskern von Eggersdorf.",
+        "credit": "Molgreen, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:20230515_xl_041020202_Parkanlage_im_Herzen_von_Eggersdorf.jpg",
+        "position": "45% 50%"
+      }
+    },
+    {
+      "h2": "Rüdersdorf: Kalk, Seen und Ufergrundstücke",
+      "absaetze": [
+        "Rüdersdorf bei Berlin besteht seit 2003 aus Rüdersdorf, Hennickendorf, Herzfelde und Lichtenow. Der Kalkstein liegt hier direkt an der Oberfläche und wird seit dem Mittelalter im Tagebau abgebaut, nach dem Krieg wurde Rüdersdorf der größte Baustoffproduzent in Ostdeutschland.[[16]] Zwischen dem Strausberger Mühlenfließ und dem Tagebau liegt heute der Museumspark.[[17]] Die Gemeinde hat 15.898 Einwohner; für sie erwartet das Landesamt für Bauen und Verkehr bis 2040 ein Plus von 8,4 %, den höchsten Wert im Landkreis.[[3,4]] Eine S-Bahn hat Rüdersdorf nicht, vom Marktplatz fährt die Straßenbahn 88 zur S-Bahn in Friedrichshagen; bis Friedrichstraße sind es 62 bis 64 Minuten.[[1,9]]",
+        "Am Wasser liegen die höchsten Bodenrichtwerte im Landkreis: 900 €/m² für Ufergrundstücke am Stienitzsee in Hennickendorf, 600 in Bergmannsglück und 550 am Kalksee.[[2,1]] Ohne Wasserlage reichen die Ortslagen von 120 €/m² in Tasdorf bis 310 in der Westsiedlung, Hennickendorf liegt bei 260 bis 290, Herzfelde bei 180 €/m²; Lichtenow stieg von 180 auf 190, die übrigen Ortslagen blieben unverändert.[[2]] Die Mietpreisbremse gilt in Rüdersdorf nicht.[[5]]"
+      ],
+      "bild": {
+        "name": "maerkisch-oderland-ruedersdorf-schachtofenbatterie",
+        "alt": "Eine Reihe hoher, nach oben schmaler werdender Kalköfen auf einem langen, flachen Gebäude, dazwischen ein rostiges Stahlgerüst, davor Rasen, darüber blauer Himmel",
+        "caption": "Die Schachtofenbatterie im Museumspark Rüdersdorf.",
+        "credit": "Museumspark Rüdersdorf, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Schachtofenbatterie.jpg",
+        "position": "65% 50%"
+      }
+    },
+    {
+      "h2": "Märkische Schweiz, Oderbruch, Seelow und Bad Freienwalde",
+      "absaetze": [
+        "Weiter östlich, im weiteren Metropolenraum, liegen die Preise deutlich niedriger. Für Bauland in den Städten Bad Freienwalde, Seelow, Müncheberg, Wriezen und Buckow und in Rehfelde nennt der Gutachterausschuss ein Bodenrichtwertniveau von im Mittel 47 €/m², für die Dörfer im Oderbruch von 16 €/m².[[1]] Seelow ist Kreisstadt und hat 5.421 Einwohner, Bad Freienwalde (Oder) 11.750.[[1,3]] Zum 01.01.2026 liegen die Wohnlagen in der Stadt Bad Freienwalde zwischen 40 und 70 €/m², in Seelow zwischen 50 und 65, in Müncheberg zwischen 75 und 110 €/m². Buckow liegt bei 130, Ufergrundstücke am See bei 310 €/m².[[2]]",
+        "Freistehende Einfamilienhäuser kosteten 2025 im weiteren Metropolenraum des Landkreises im Mittel 173.000 € bei Baujahren bis 1945 und 310.000 € bei Baujahren von 1991 bis 2012, also 1.640 und 2.620 €/m² Wohnfläche.[[1]] Bis Friedrichstraße sind es von Seelow-Gusow mit RB26 und S5 stündlich 83 bis 84 Minuten, von Buckow mit Bus und Bahn 90, von Bad Freienwalde je nach Verbindung 77 bis 126 Minuten.[[9]] Mietpreisbremse und Kappungsgrenze gelten in Rehfelde, in Bad Freienwalde, Seelow, Müncheberg, Wriezen und Buckow nicht.[[5,6]]"
+      ],
+      "bild": {
+        "name": "maerkisch-oderland-bad-freienwalde",
+        "alt": "Blick über Baumkronen auf die roten Dächer von Bad Freienwalde, dahinter flaches Land und bewaldete Höhenzüge am Horizont, Himmel mit Wolken",
+        "caption": "Bad Freienwalde vom Aussichtsturm auf dem Galgenberg aus gesehen.",
+        "credit": "MOs810, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Bad_Freienwalde_observation_tower_(view).jpg",
+        "position": "55% 50%"
+      }
+    }
+  ],
+  "band": {
+    "name": "maerkisch-oderland-oderbruch-weide",
+    "alt": "Weite, flache Weide im Oderbruch, am Horizont einzelne Baumgruppen und abgestorbene Bäume, darüber ein hoher Himmel mit Haufenwolken",
+    "caption": "Weideland in Gieshof-Zelliner Loose, Gemeinde Letschin, im Oderbruch.",
+    "credit": "Leonhard Lenz, CC0",
+    "url": "https://commons.wikimedia.org/wiki/File:Pasture_in_Gieshof-Zelliner_Loose_2024-09-27_01.jpg"
+  },
+  "anbindung": [
+    "Neuenhagen, Hoppegarten, Fredersdorf-Vogelsdorf, Petershagen/Eggersdorf und Strausberg liegen an der S5, von Altlandsberg und Rüdersdorf erreichen Sie die S-Bahn mit Bus oder Straßenbahn.[[9,1]]",
+    "Vom S-Bahnhof Strausberg fährt die S5 alle 20 Minuten und braucht 51 Minuten bis Friedrichstraße, mit RB26 und S-Bahn über Lichtenberg sind es 46, von Strausberg Nord 61 Minuten.[[9]]",
+    "Bis Friedrichstraße sind es von Seelow-Gusow mit RB26 und S5 stündlich 83 bis 84 Minuten, von Buckow mit Bus und Bahn 90, von Bad Freienwalde je nach Verbindung 77 bis 126 Minuten.[[9]]"
+  ],
+  "karte": {
+    "alt": "Karte des Landkreises Märkisch-Oderland bis Berlin: Strausberg, Neuenhagen bei Berlin, Hoppegarten, Petershagen/Eggersdorf, Fredersdorf-Vogelsdorf, Altlandsberg, Rüdersdorf bei Berlin, Buckow (Märkische Schweiz), Seelow und Bad Freienwalde (Oder), die Orte Strausberg Nord, Gartenstadt, Wesendahl, Buchholz, Ruhlsdorf, Rehfelde, Müncheberg, Wriezen, Waldesruh und Bergmannsglück, dazu Bahnstrecken, Autobahnen, Gewässer, Friedrichshagen und der Bahnhof Berlin Friedrichstraße"
+  },
+  "verkaufen": {
+    "h2": "Immobilie im Landkreis Märkisch-Oderland verkaufen",
+    "absaetze": [
+      "Wie viel Ihre Immobilie wert ist, hängt im Landkreis vor allem an der Nähe zu Berlin und am Baujahr. Freistehende Einfamilienhäuser der Baujahre 1991 bis 2012 kosteten 2025 im Berliner Umland des Landkreises im Mittel 484.000 €, im weiteren Metropolenraum 310.000 €. In Zonen mit Bodenrichtwerten über 400 €/m² kosteten Häuser dieser Baujahre in den Jahren 2023 bis 2025 im Mittel 4.500 €/m² Wohnfläche, in Zonen bis 50 €/m² 1.970 €/m².[[1]] Wir bewerten deshalb nach Ihrer Bodenrichtwertzone, Ihrem Baujahr und Vergleichsverkäufen.",
+      "2025 wurden im Landkreis 2.185 Kaufverträge geschlossen, nach 1.925 im Vorjahr; für Wohnungseigentum stieg die Zahl der Verträge von 109 auf 270. Der Geldumsatz wuchs um 17 % auf 490,8 Mio. €. Einen signifikanten Preisanstieg erkennt der Gutachterausschuss trotzdem nicht, die Kaufpreise schwanken in allen Teilmärkten stark.[[1]]"
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren im Landkreis Märkisch-Oderland",
+    "absaetze": [
+      "Als Eigennutzer entscheiden Sie im Landkreis zuerst über die Anbindung: Neuenhagen, Hoppegarten, Fredersdorf-Vogelsdorf, Petershagen/Eggersdorf und Strausberg liegen an der S5, von Altlandsberg und Rüdersdorf erreichen Sie die S-Bahn mit Bus oder Straßenbahn.[[9,1]] Das Bodenrichtwertniveau für Einfamilienhausbauland liegt zum 01.01.2026 in Neuenhagen und Hoppegarten im Mittel bei 323 €/m², in Strausberg, Petershagen/Eggersdorf und Fredersdorf-Vogelsdorf bei 264, in Altlandsberg und Rüdersdorf bei 204 €/m².[[1]]",
+      "Als Kapitalanleger prüfen Sie Miete und Kaufpreis gegen den Grundstücksmarktbericht. Für vermietete Eigentumswohnungen im Berliner Umland ergab sich aus elf Verkäufen ein Liegenschaftszinssatz von im Mittel 2,8 % bei einer Nettokaltmiete von 9,97 €/m², im weiteren Metropolenraum aus fünf Verkäufen 3,1 % bei 5,85 €/m². Vermietete Wohnungen wurden 2025 in Neuenhagen im Mittel für 2.660 €/m², in Strausberg für 2.420 €/m² verkauft.[[1]] Mietpreisbremse und Kappungsgrenze gelten in Strausberg, Fredersdorf-Vogelsdorf, Altlandsberg und Rehfelde, nicht in Neuenhagen, Hoppegarten, Petershagen/Eggersdorf und Rüdersdorf.[[5,6]]"
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für den Landkreis Märkisch-Oderland",
+    "absaetze": [
+      "Im Berliner Umland des Landkreises kosteten freistehende Einfamilienhäuser 2025 je nach Baujahr im Mittel 377.000 bis 509.000 €, Doppelhaushälften und Reihenhäuser ab Baujahr 1991 im Mittel 403.000 €.[[1]] Dazu kommen die Kaufnebenkosten und wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen: Wir rechnen das mit Ihnen durch, vergleichen Ihre Finanzierung über Europace und Baufinex und fragen parallel Banken direkt an."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Welcher Makler verkauft Häuser in Strausberg und Neuenhagen?",
+      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im ganzen Landkreis Märkisch-Oderland, also auch in Strausberg, Neuenhagen bei Berlin, Hoppegarten und Petershagen/Eggersdorf; Ihr Ansprechpartner ist Lennart Geserich. Grundlage unserer Bewertung sind der Bodenrichtwert Ihrer Zone und die Vergleichspreise des Gutachterausschusses. Er weist Hauspreise nach Baujahr und Bodenwertniveau aus: In Zonen mit 301 bis 400 €/m² kosteten Einfamilienhäuser der Baujahre 1991 bis 2012 in den Jahren 2023 bis 2025 im Mittel 497.000 € oder 3.900 €/m² Wohnfläche.[[1]]",
+      "herkunft": "Google-Autocomplete „immobilienmakler märkisch oderland“, „immobilienmakler strausberg“, „makler strausberg“, „immobilienmakler neuenhagen bei berlin“, „immobilienmakler hoppegarten“ und „immobilienmakler petershagen eggersdorf“ (research/serp/autocomplete-2026-10-26-maerkisch-oderland.json)"
+    },
+    {
+      "frage": "Wie hoch sind die Bodenrichtwerte in Strausberg, Neuenhagen und Hoppegarten 2026?",
+      "antwort": "Zum 01.01.2026 reichen die Wohnlagen in Strausberg von 70 €/m² in Ruhlsdorf bis 400 €/m² an der Fontanestraße, die Gartenstadt liegt bei 280 €/m². In Neuenhagen liegen sie zwischen 290 €/m² in Bollensdorf an der A 10 und 390 in den Zonen Gruscheweg und Nikolaus-Kalff-Weg, in Hoppegarten zwischen 210 in Münchehofe und 450 €/m² in Hönow-Süd. In Petershagen/Eggersdorf reichen sie von 250 bis 340, in Fredersdorf-Vogelsdorf von 140 bis 360 €/m².[[2]] Den Wert Ihrer Zone finden Sie in BORIS Brandenburg.",
+      "herkunft": "Google-Autocomplete „bodenrichtwert neuenhagen 2026“, „bodenrichtwert strausberg gartenstadt“, „bodenrichtwert hoppegarten hönow“, „bodenrichtwert hoppegarten waldesruh“, „bodenrichtwert petershagen eggersdorf 2026“, „bodenrichtwert fredersdorf süd“ und „bodenrichtwert märkisch oderland“ (research/serp/autocomplete-2026-10-26-maerkisch-oderland.json)"
+    },
+    {
+      "frage": "Gibt es einen Mietspiegel für Strausberg oder Neuenhagen?",
+      "antwort": "Im Landkreis hat nach Angabe des Gutachterausschusses nur Strausberg einen Mietspiegel.[[1]] Der Mietspiegel 2026 gilt vom 01.11.2026 bis 31.10.2028, er schreibt den Mietspiegel 2024 mit dem Verbraucherpreisindex fort und unterscheidet nicht nach Wohnlagen. Seine Mittelwerte reichen von 5,51 €/m² für Wohnungen der Baujahre 1974 bis 1990 bis 12,58 €/m² für die Baujahre 2021 bis 2024.[[11]] Für Neuenhagen, Hoppegarten und die übrigen Gemeinden gibt es keinen Mietspiegel.[[1]]",
+      "herkunft": "Google-Autocomplete „mietspiegel strausberg 2026“, „qualifizierter mietspiegel strausberg“, „mietspiegel neuenhagen bei berlin“, „gemeinde neuenhagen mietspiegel“ und „mietspiegel märkisch oderland“ (research/serp/autocomplete-2026-10-26-maerkisch-oderland.json)"
+    },
+    {
+      "frage": "Was kostet eine Wohnung oder ein Haus in Strausberg?",
+      "antwort": "Neue Eigentumswohnungen kosteten 2025 in Strausberg im Mittel 5.255 €/m², bei 34 Verkäufen. Gebrauchte selbst genutzte Wohnungen kosteten im Mittel 2.438 €/m² bei einer Spanne von 1.356 bis 3.103 €/m², vermietete 2.420 €/m².[[1]] Hauspreise weist der Gutachterausschuss nicht je Stadt aus; im Berliner Umland des Landkreises kosteten freistehende Einfamilienhäuser 2025 je nach Baujahr im Mittel 377.000 bis 509.000 €.[[1]] Bauland in der Gartenstadt liegt zum 01.01.2026 bei 280 €/m², in der Vorstadt bei 300 €/m².[[2]]",
+      "herkunft": "Google-Autocomplete „wohnung kaufen strausberg“, „haus kaufen strausberg gartenstadt“, „haus kaufen strausberg vorstadt“, „haus kaufen strausberg nord“, „grundstück strausberg gartenstadt“ und „immobilien strausberg kaufen“ (research/serp/autocomplete-2026-10-26-maerkisch-oderland.json)"
+    },
+    {
+      "frage": "Gilt die Mietpreisbremse im Landkreis Märkisch-Oderland?",
+      "antwort": "In vier Gemeinden: Altlandsberg, Fredersdorf-Vogelsdorf, Rehfelde und Strausberg gehören seit dem 01.01.2026 zur Gebietskulisse, die Verordnung gilt bis 31.12.2029. Neuenhagen, Hoppegarten, Petershagen/Eggersdorf, Rüdersdorf und die übrigen Gemeinden sind nicht erfasst.[[5,8]] Bei Neuvermietung in Gebäuden, die vor dem 1. Oktober 2014 fertiggestellt und bezogen wurden, darf die Miete dort höchstens 10 % über der ortsüblichen Vergleichsmiete liegen, Bestandsmieten dürfen bis 31.12.2030 in drei Jahren um höchstens 15 % steigen.[[7,6]]",
+      "herkunft": "Prompt der KI-Recherche „Mietpreisbremse in Berlin und Brandenburg: was heißt das für meine Rendite?“ (q24) (ChatGPT, Gemini; Dashboard/src/data/research/ai_answers.json, Oktober 2026); Google-Autocomplete „mietpreisbremse strausberg“ (nur die Eingabe selbst) (research/serp/autocomplete-2026-10-26-maerkisch-oderland.json)"
+    },
+    {
+      "frage": "Was kostet ein Haus in Bad Freienwalde, Seelow oder im Oderbruch?",
+      "antwort": "Im weiteren Metropolenraum des Landkreises, zu dem Bad Freienwalde, Seelow, Müncheberg, Buckow und das Oderbruch gehören, kosteten freistehende Einfamilienhäuser 2025 im Mittel 173.000 € bei Baujahren bis 1945, 192.000 € bei Baujahren von 1946 bis 1990 und 310.000 € bei Baujahren von 1991 bis 2012.[[1]] Bauland liegt zum 01.01.2026 in der Stadt Bad Freienwalde bei 40 bis 70, in Seelow bei 50 bis 65 €/m², in den Dörfern des Oderbruchs im Mittel bei 16 €/m².[[2,1]]",
+      "herkunft": "Google-Autocomplete „haus kaufen bad freienwalde“, „haus kaufen seelow“, „haus kaufen oderbruch“, „altes haus oderbruch kaufen“, „haus kaufen müncheberg“ und „haus kaufen buckow märkische schweiz“ (research/serp/autocomplete-2026-10-26-maerkisch-oderland.json)"
+    },
+    {
+      "frage": "Ich habe ein Haus im Landkreis Märkisch-Oderland geerbt. Wer kann den Verkauf übernehmen?",
+      "antwort": "Wir verkaufen auch geerbte Immobilien. Zuerst klären wir mit Ihnen den rechtlichen Status des Hauses und die vorhandenen Unterlagen; häufig geht es auch um die Liquidität für die Erbschaftsteuer und je nach Situation ist eine Finanzierung dafür sinnvoller als ein schneller Verkauf unter Zeitdruck. Für den Preis zählen Lage, Baujahr und Zustand: Teilsanierte Einfamilienhäuser bis Baujahr 1945 kosteten in den Jahren 2023 bis 2025 in Zonen mit Bodenrichtwerten bis 50 €/m² im Mittel 1.040 €/m² Wohnfläche, in Zonen mit 301 bis 400 €/m² 3.480 €/m².[[1]]",
+      "herkunft": "Prompt der KI-Recherche „Ich habe ein Haus in Brandenburg geerbt und wohne nicht vor Ort. Wer kann den Verkauf für mich übernehmen?“ (q52) (ChatGPT, Gemini; Dashboard/src/data/research/ai_answers.json, Oktober 2026). Antwort nach der FAQ der Live-Seite „Verkauft ihr auch geerbte Immobilien?“; zur Abwicklung aus der Ferne gibt es keine Angabe, deshalb ohne diesen Teil der Frage. Google-Autocomplete zu „haus geerbt märkisch-oderland“ ohne Vorschläge"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Landkreis Oder-Spree",
+      "url": "/standorte/oder-spree/"
+    },
+    {
+      "name": "Landkreis Barnim",
+      "url": "/standorte/barnim/"
+    },
+    {
+      "name": "Erkner",
+      "url": "/standorte/erkner/"
+    },
+    {
+      "name": "Berlin",
+      "url": "/standorte/berlin/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Grundstücksmarktbericht 2025 Landkreis Märkisch-Oderland, Gutachterausschuss für Grundstückswerte im Landkreis Märkisch-Oderland",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_MOL.pdf",
+      "stand": "Version 2025–1.1 vom 20.05.2026; Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+    },
+    {
+      "name": "Bodenrichtwerte Landkreis Märkisch-Oderland, BORIS Brandenburg (GeoBasis-DE/LGB, dl-de/by-2-0)",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?f=json&limit=2000&skipGeometry=true&gemeinde_gemeindekennzeichen_kreis=64&stichtag=2026-01-01",
+      "stand": "Stichtag 01.01.2026, Vergleich mit 01.01.2025"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 4 – j / 25, Bevölkerung im Land Brandenburg",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Landesamt für Bauen und Verkehr, Bevölkerungsvorausschätzung 2024 bis 2040, Anlage 3",
+      "url": "https://lbv.brandenburg.de/sixcms/media.php/9/31_Bevoelkerungsvorausschaetzung_2024-20.pdf",
+      "stand": "Basis 31.12.2023, mittlere Variante"
+    },
+    {
+      "name": "Mietpreisbegrenzungsverordnung Brandenburg, Ministerium für Infrastruktur und Landesplanung",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/Mietpreisbegrenzungsverordnung.pdf",
+      "stand": "Kabinettsbeschluss 25.11.2025, gültig 01.01.2026 bis 31.12.2029"
+    },
+    {
+      "name": "Kappungsgrenzenverordnung Brandenburg, Ministerium für Infrastruktur und Landesplanung",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/KappGrenzV.pdf",
+      "stand": "gültig 01.01.2026 bis 31.12.2030"
+    },
+    {
+      "name": "MIL, Pressemitteilung zu Mietpreisbremse und Kappungsgrenzenverordnung",
+      "url": "https://mil.brandenburg.de/mil/de/presse/detail/~25-11-2025-kabinett-mietpreisbremse-und-kappungsgrenzenverordnung",
+      "stand": "25.11.2025"
+    },
+    {
+      "name": "RegioKontext GmbH, Gutachten zur Erstellung einer Gebietskulisse für die Mietpreisbegrenzungsverordnungen (Anlage zur Verordnung)",
+      "url": "https://bravors.brandenburg.de/fm/68/Anlage_Gutachten.pdf",
+      "stand": "18.09.2025, veröffentlicht im GVBl. II Nr. 95 vom 04.12.2025"
+    },
+    {
+      "name": "VBB-Fahrplandaten, Verbindungen bis S+U Friedrichstraße",
+      "url": "https://v6.vbb.transport.rest/journeys?from=900320004&to=900100001&departure=2026-11-10T09:00%2B01:00",
+      "stand": "Fahrplan Dienstag 10.11.2026, abgefragt 26.10.2026"
+    },
+    {
+      "name": "Stadt Strausberg, Geschichtliches",
+      "url": "https://www.stadt-strausberg.de/geschichtliches/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Strausberg, Qualifizierter Mietspiegel 2026",
+      "url": "https://www.stadt-strausberg.de/wp-content/uploads/2026/10/Angepasster-neunter-Mietspiegel_2026.pdf",
+      "stand": "gültig 01.11.2026 bis 31.10.2028"
+    },
+    {
+      "name": "Strausberger Eisenbahn GmbH, Startseite",
+      "url": "https://www.strausberger-eisenbahn.de/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Hoppegarten, Ortsteile",
+      "url": "https://www.gemeinde-hoppegarten.de/seite/105609/ortsteile.html",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Fredersdorf-Vogelsdorf, Geschichte",
+      "url": "https://www.fredersdorf-vogelsdorf.de/seite/16412/geschichte.html",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Altlandsberg, Ortsportrait",
+      "url": "https://www.altlandsberg.de/leben-wohnen/kultur-freizeit/ortsportrait/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Rüdersdorf bei Berlin, Ortsteile",
+      "url": "https://www.ruedersdorf.de/meine-gemeinde/ortsportrait/ortsteile/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Rüdersdorf bei Berlin, Sehenswertes und Aktivitäten",
+      "url": "https://www.ruedersdorf.de/freizeit-tourismus/ruedersdorf-erleben/sehenswertes-und-aktivitaeten/",
+      "stand": "abgerufen 26.10.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "197.192 Einwohner Landkreis 31.12.2025, −625; LBV 2040 +2,7 %",
+      "fundstelle": "maerkisch-oderland.md, Landkreis Nr. 1, 6"
+    },
+    {
+      "zahl": "Strausberg 27.765 (größte Gemeinde), Neuenhagen 19.295 auf 19,61 km² (984/km², dichteste), Hoppegarten 18.085, Rüdersdorf 15.898, Fredersdorf-Vogelsdorf 14.688 (894/km²), Petershagen/Eggersdorf 15.360 (871/km²), Bad Freienwalde 11.750, Seelow 5.421",
+      "fundstelle": "maerkisch-oderland.md, Orte Nr. 30–38; afs2025.xlsx Blatt 3.5 (eigene Sortierung)"
+    },
+    {
+      "zahl": "LBV: Strausberg +8,2 %, Rüdersdorf +8,4 % (höchster Wert aller amtsfreien Gemeinden und Ämter im Landkreis)",
+      "fundstelle": "maerkisch-oderland.md, Orte; bvs.txt Z. 1566–1585"
+    },
+    {
+      "zahl": "Kauffälle 2.185 (2024: 1.925), WE 270 (109), 490,8 Mio. € (+17 %); kein signifikanter Preisanstieg",
+      "fundstelle": "maerkisch-oderland.md, Landkreis Nr. 8–10"
+    },
+    {
+      "zahl": "BRW 382 Zonen: 334 gleich, 26 hoch, 17 runter, 5 neu; Höchstwert 900 Hennickendorf Stienitzsee (Ufer); ohne Ufer 450 Hönow-Süd",
+      "fundstelle": "maerkisch-oderland.md, Landkreis Nr. 13, 14"
+    },
+    {
+      "zahl": "Bauland-Niveau: innerhalb A 10 Ø 323, außerhalb mit S-Bahn 264, ohne S-Bahn 204, städtische Lagen WMR 47, Oderbruchdörfer 16; Altlandsberg und Rüdersdorf ohne S-Bahn",
+      "fundstelle": "maerkisch-oderland.md, Landkreis Nr. 12"
+    },
+    {
+      "zahl": "Strausberg: 13. Jh., Stadtrecht wohl vor 1247, KVP 1954, MfNV 1956, Bundeswehr-Garnison; Straßenbahn seit 1893, Fähre seit 1894 Altstadt – Jenseits des Sees; S5 51 min alle 20 min, RB26 + S5 46 min, Strausberg Nord 61 min",
+      "fundstelle": "maerkisch-oderland.md, Strausberg Nr. 40–43"
+    },
+    {
+      "zahl": "Strausberg BRW: Ruhlsdorf 70, Hohenstein 90, Fontanestraße 380→400, Gartenstadt/Schillerhöhe/Jenseits des Sees 280, Vorstadt 300, Plattenbau Hegermühle und Vorstadt 160, keine Zone gesunken; Erweiterung Stadtmauerumfeld 2013, besondere BRW erstmals 01.01.2026",
+      "fundstelle": "maerkisch-oderland.md, Strausberg Nr. 44, 45"
+    },
+    {
+      "zahl": "Strausberg ETW neu 34 / 5.255 (4.310–5.597) / 58 m²; gebraucht eigengenutzt 2.438 (1.356–3.103), vermietet 2.420",
+      "fundstelle": "maerkisch-oderland.md, Landkreis Nr. 19–21"
+    },
+    {
+      "zahl": "Mietspiegel Strausberg 2026: 01.11.2026–31.10.2028, VPI-Fortschreibung 2024, keine Wohnlagen, Mittelwerte 5,51 (BJ 1974–1990) bis 12,58 (BJ 2021–2024); einziger Mietspiegel im Landkreis",
+      "fundstelle": "maerkisch-oderland.md, Strausberg Nr. 47, 48; Landkreis Nr. 24"
+    },
+    {
+      "zahl": "Neuenhagen/Hoppegarten: innerhalb A 10, Mittelzentrum in Funktionsteilung; Ortsteile Hoppegarten, „gartenstädtisch“, Galopprennbahn, Hönow „rasanteste Entwicklung“; S5 34/36/39 min",
+      "fundstelle": "maerkisch-oderland.md, Neuenhagen und Hoppegarten Nr. 50, 53, 55"
+    },
+    {
+      "zahl": "Hoppegarten BRW: Hönow-Süd 400→450, Waldesruh 450→400, Ortslage 400→350, Birkenstein 400, Münchehofe 210; Neuenhagen: nördl. S-Bahn 390→340, südl. 360→300, Gruscheweg/Nikolaus-Kalff-Weg 390, Bollensdorf 290; ETW Neuenhagen 3.252 / vermietet 2.660, Hoppegarten 3.064",
+      "fundstelle": "maerkisch-oderland.md, Nr. 51, 52, 56"
+    },
+    {
+      "zahl": "Fredersdorf-Vogelsdorf 1993, 7.000 EW; P/E: Nord 310→340, Süd 280→300, Eggersdorf-Nord 320→270, Eggersdorf-Süd 300→260, Spanne 250–340; F-V Nord 360, Süd 350→300, Spanne 140–360; ETW P/E 3.372; S5 44/47 min",
+      "fundstelle": "maerkisch-oderland.md, Nr. 60–62, 65; Landkreis Nr. 20"
+    },
+    {
+      "zahl": "Altlandsberg: 3 km A 10 Marzahn, 24 km, ÖPNV zum S Hoppegarten, neu gebaute EFH/ZFH, sechs Ortsteile; BRW 80–250, Stadt ohne SG 210, SAN Scheunenviertel 150→160 als einzige Änderung; 59–72 min",
+      "fundstelle": "maerkisch-oderland.md, Nr. 63–65"
+    },
+    {
+      "zahl": "Rüdersdorf: seit 2003 vier Ortsteile, Kalk an der Oberfläche, Tagebau seit dem Mittelalter, größter Baustoffproduzent Ostdeutschlands; Museumspark; BRW Ufer 900/600/550, Ortslagen 120–310, Hennickendorf 260–290, Herzfelde 180, Lichtenow 180→190; ETW 4 / 1.794; Tram 88 + S3 62–64 min",
+      "fundstelle": "maerkisch-oderland.md, Rüdersdorf Nr. 70–75; Landkreis Nr. 20"
+    },
+    {
+      "zahl": "Osten: Seelow Kreisstadt 5.421, Bad Freienwalde 11.750; BRW Stadt Bad Freienwalde 40–70, Seelow 50–65, Müncheberg 75–110, Buckow 130, Ufer 310, Rehfelde 100–250; VBB Seelow-Gusow 83–84, Buckow 90, Bad Freienwalde 77–126",
+      "fundstelle": "maerkisch-oderland.md, Osten Nr. 80, 83; BORIS brwlist.py"
+    },
+    {
+      "zahl": "EFH BU 1991–2012 484.000 / 3.830 (78), 695 m²; EFH BU 377.000–509.000; WMR ≤1945 173.000 / 1.640, 1946–1990 192.000, 1991–2012 310.000 / 2.620; DHH/RH BU >1990 403.000",
+      "fundstelle": "maerkisch-oderland.md, Landkreis Nr. 15–17; GMB S. 69, Z. 3027–3058"
+    },
+    {
+      "zahl": "Wohnflächenpreise 2023–2025: 1991–2012 bei BRW >400 4.500, bis 50 1.970, 301–400 497.000 / 3.900; bis 1945 teilsaniert bis 50: 1.040, 301–400: 3.480",
+      "fundstelle": "maerkisch-oderland.md, Landkreis Nr. 18; GMB S. 78–79, Z. 3469–3628"
+    },
+    {
+      "zahl": "LIZI ETW BU 2,8 % / 9,97 €/m² (11), WMR 3,1 % / 5,85 (5)",
+      "fundstelle": "maerkisch-oderland.md, Landkreis Nr. 23"
+    },
+    {
+      "zahl": "Mietpreisbremse und Kappung: Altlandsberg, Fredersdorf-Vogelsdorf, Rehfelde, Strausberg; nicht Neuenhagen, Hoppegarten, Petershagen/Eggersdorf, Rüdersdorf und Osten; Inhalt 10 % / 15 %",
+      "fundstelle": "maerkisch-oderland.md, Landkreis Nr. 25; havelland.md"
+    },
+    {
+      "zahl": "Erbfall-Antwort; § 34c und § 34i GewO; Lennart Geserich, Head of Sales & Vermietung; Europace und Baufinex",
+      "fundstelle": "wie barnim.json (Live-Seite und Brief)"
+    }
+  ]
+}

@@ -7,11 +7,70 @@
   "keywords": [
     "forward-darlehen"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Finanzierung",
-  "explanation": "Ein Forward-Darlehen ist eine heute vereinbarte Anschlussfinanzierung mit zukünftiger Auszahlung. Der Darlehensnehmer sichert den Zins vor Ende der bestehenden Bindung; dafür kann ein Forward-Aufschlag anfallen. Vorlaufzeiten von mehreren Jahren, häufig bis etwa fünf Jahre, sind marktüblich, aber bankabhängig.",
-  "practiceExample": "Erwartete Restschuld 250.000 €, Zinsbindung endet 2031. Wird 2026 ein Forward-Zins von 4,3 % plus 2 % Tilgung vereinbart, läge die anfängliche Anschlussrate bei rund 1.313 € monatlich. Bei 5,5 % Anschlusszins wären es bei gleicher Tilgung rund 1.563 €.",
-  "formula": "Anschlussrate ≈ Restschuld × (Forward-Zins + Tilgung) / 12",
+  "explanation": "Mit einem Forward-Darlehen vereinbaren Sie heute den Zins für eine Anschlussfinanzierung, die erst in einigen Jahren beginnt. Möglich ist das meist bis zu 60 Monate vor Ende der laufenden Zinsbindung.",
+  "practiceExample": "Ihre Zinsbindung endet in zwei Jahren, die Restschuld wird dann 250.000 € betragen. Angenommen, für eine sofortige Auszahlung lägen die Zinsen bei 4 % und die Bank verlangt 0,3 Prozentpunkte Aufschlag. Mit 4,3 % und 2 % Tilgung zahlen Sie ab Auszahlung 1.312,50 € im Monat. Liegt der Marktzins in zwei Jahren bei 5,5 %, wären es ohne Forward-Darlehen 1.562,50 €. Liegt er bei 3,5 %, wären es 1.145,83 €; das Forward-Darlehen kostet Sie dann rund 167 € im Monat mehr.",
+  "formula": "Forward-Zins = Zins für eine sofortige Auszahlung + Forward-Aufschlag",
   "sources": [],
-  "assistantAnswer": "Heute vereinbarte Anschlussfinanzierung mit späterer Auszahlung. Ein Forward-Darlehen ist eine heute vereinbarte Anschlussfinanzierung mit zukünftiger Auszahlung. Der Darlehensnehmer sichert den Zins vor Ende der bestehenden Bindung; dafür kann ein Forward-Aufschlag anfallen. Vorlaufzeiten von mehreren Jahren, häufig bis etwa fünf Jahre, sind marktüblich, aber bankabhängig."
+  "assistantAnswer": "Heute vereinbarte Anschlussfinanzierung mit späterer Auszahlung. Ein Forward-Darlehen ist eine heute vereinbarte Anschlussfinanzierung mit zukünftiger Auszahlung. Der Darlehensnehmer sichert den Zins vor Ende der bestehenden Bindung; dafür kann ein Forward-Aufschlag anfallen. Vorlaufzeiten von mehreren Jahren, häufig bis etwa fünf Jahre, sind marktüblich, aber bankabhängig.",
+  "ausbau": {
+    "einordnung": [
+      "Mit einem Forward-Darlehen vereinbaren Sie heute den Zins für eine Anschlussfinanzierung, die erst in einigen Jahren beginnt. Möglich ist das meist bis zu 60 Monate vor Ende der laufenden Zinsbindung.[[1,2]]",
+      "Für die Vorlaufzeit verlangt die Bank einen Aufschlag auf den Zins; wie hoch er ist, hängt von Bank und Vorlauf ab. Finanztip nannte im September 2026 null bis 0,017 % pro Monat und für die ersten zwölf Monate häufig keinen Aufschlag.[[1]] Fischer & Geserich nennt häufig etwa 0,01 bis 0,03 Prozentpunkte pro Monat Vorlauf.[[2]]",
+      "Ein Forward-Darlehen lohnt sich, wenn die Zinsen bis zum Beginn steigen. Bleiben sie gleich oder sinken sie, zahlen Sie mehr als bei einer Anschlussfinanzierung ohne Aufschlag. An den Vertrag sind Sie fest gebunden.[[1]]"
+    ],
+    "beispiel": [
+      "Ihre Zinsbindung endet in zwei Jahren, die Restschuld wird dann 250.000 € betragen. Angenommen, für eine sofortige Auszahlung lägen die Zinsen bei 4 % und die Bank verlangt 0,3 Prozentpunkte Aufschlag. Mit 4,3 % und 2 % Tilgung zahlen Sie ab Auszahlung 1.312,50 € im Monat.",
+      "Liegt der Marktzins in zwei Jahren bei 5,5 %, wären es ohne Forward-Darlehen 1.562,50 €. Liegt er bei 3,5 %, wären es 1.145,83 €; das Forward-Darlehen kostet Sie dann rund 167 € im Monat mehr."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Eigentümer heißt",
+        "absaetze": [
+          "Ein Forward-Darlehen ist eine Absicherung, keine sichere Ersparnis. Wägen Sie den Aufschlag gegen das Risiko ab, das Sie tragen können: Wie stark dürfte Ihre Rate steigen, ohne dass es eng wird? Prüfen Sie auch, ob Sie die Immobilie bis zum Beginn behalten wollen, denn der Vertrag bindet Sie.[[1]]"
+        ]
+      },
+      {
+        "h2": "Was es für Anleger heißt",
+        "absaetze": [
+          "Bei einer vermieteten Immobilie schützt der gesicherte Zins den Cashflow nach der Bindung. Bieten Banken kurze Bindungen deutlich günstiger an als lange, kann es sich lohnen, kurz zu binden und den Anschluss per Forward-Darlehen zu sichern. Ob kurze Bindungen gerade günstiger sind, zeigt der Blick in die aktuellen Angebote.[[2]]"
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "Finanztip: Forward-Darlehen",
+        "url": "https://www.finanztip.de/baufinanzierung/forward-darlehen/",
+        "stand": "Stand 16.09.2026"
+      },
+      {
+        "name": "Fischer & Geserich, Blog: Zinsbindung und Forward-Darlehen",
+        "url": "https://fg-realestate.de/blog/zinsbindung-strategisch-waehlen/",
+        "stand": "Stand Oktober 2026, abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "bis 60 Monate vorher (Finanztip und F&G-Blog)",
+        "fundstelle": "runde-2.md, A09, A11"
+      },
+      {
+        "zahl": "Finanztip: 0 bis 0,017 % pro Monat, erste zwölf Monate häufig ohne (Stand 16.09.2026)",
+        "fundstelle": "runde-2.md, A09"
+      },
+      {
+        "zahl": "F&G-Blog: 0,01 bis 0,03 Prozentpunkte pro Monat; kurz binden; aktuelle Angebote prüfen",
+        "fundstelle": "runde-2.md, A11"
+      },
+      {
+        "zahl": "lohnt bei steigenden Zinsen, sonst teurer; fest gebunden",
+        "fundstelle": "runde-2.md, A10"
+      },
+      {
+        "zahl": "250.000 × (4,3 % + 2 %) / 12 = 1.312,50 €; 5,5 % → 1.562,50 €; 3,5 % → 1.145,83 €; Differenz 166,67 €; Aufschlag 0,3 für 24 Monate in beiden Spannen",
+        "fundstelle": "Rechnung, Marktprüfung runde-2.md"
+      }
+    ]
+  }
 }

@@ -1,0 +1,25 @@
+---
+layout: base.njk
+fgDesign: true
+fgSystem: true
+fgsHero: false
+customSchema: true
+permalink: "anfrage-gesendet/index.html"
+eleventyExcludeFromCollections: true
+title: "Anfrage gesendet | Fischer & Geserich"
+description: "Ihre Anfrage an Fischer & Geserich ist angekommen."
+robots: "noindex, nofollow"
+# Update 6, §1 (27.10.2026): Ziel der Formulare ohne JavaScript nach erfolgreichem Versand
+# (netlify/functions/_shared/formpost.js). Mit JavaScript zeigt jedes Formular seinen eigenen Dankesblock.
+# CP4 (28.10.2026): Titelzeile des Design-Systems ohne Foto; Text und Links unverändert.
+---
+<section class="fgs-pagehead" aria-labelledby="seitentitel">
+  <div class="fgs-wrap">
+    <h1 id="seitentitel">Vielen Dank, Ihre Anfrage ist da</h1>
+    <p class="fgs-lead">Wir melden uns persönlich bei Ihnen. Wenn es eilt, erreichen Sie uns unter <a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a>.</p>
+    <div class="fgs-btns">
+      <a class="fgs-btn fgs-btn--primary" href="/">Zur Startseite</a>
+      <a class="fgs-btn fgs-btn--secondary" href="/angebote.html">Aktuelle Angebote</a>
+    </div>
+  </div>
+</section>

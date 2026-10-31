@@ -1,0 +1,3 @@
+lenis 1.3.27 aus der npm-Registry (npm pack, Integrität sha512 von npm geprüft), 30.10.2026.
+Nur lenis.min.js und lenis.css aus dist/. Lizenz: MIT, Text in LICENSE (aus dem Paket).
+Freigabe des Downloads: Peer, 30.10.2026 (Design-Pass 3 §6.1).

@@ -7,11 +7,98 @@
   "keywords": [
     "due diligence"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Immobilienkauf",
   "formula": null,
   "sources": [],
   "assistantAnswer": "Systematische Prüfung eines Investments. Due Diligence ist die strukturierte Prüfung einer Transaktion vor Abschluss. Bei Immobilien umfasst sie je nach Objekt rechtliche, technische, wirtschaftliche, steuerliche und finanzielle Aspekte.",
-  "explanation": "Due Diligence ist die strukturierte Prüfung einer Transaktion vor Abschluss. Bei Immobilien umfasst sie je nach Objekt rechtliche, technische, wirtschaftliche, steuerliche und finanzielle Aspekte.",
-  "practiceExample": "Ein identifizierter Sanierungsbedarf von 100.000 € kann zu Kaufpreisanpassung, zusätzlichem Eigenkapitalbedarf oder Abbruch des Erwerbs führen."
+  "explanation": "Due Diligence heißt wörtlich „gebotene Sorgfalt“. Gemeint ist die Prüfung einer Immobilie vor dem Kauf: rechtlich, technisch, wirtschaftlich und mit Blick auf die Finanzierung. Der Notar prüft das Grundbuch; sich mit dem Objekt selbst eingehend zu befassen, ist Aufgabe des Käufers.",
+  "practiceExample": "Sie prüfen eine Wohnung für 300.000 €. In der Beschluss-Sammlung steht eine Dachsanierung, die über eine Sonderumlage bezahlt werden soll; auf die Wohnung entfallen 15.000 €. Mit diesem Wissen können Sie im Kaufvertrag regeln lassen, wer die Umlage trägt, den Preis neu verhandeln, den Betrag in Ihre Finanzierung einplanen oder vom Kauf absehen.",
+  "ausbau": {
+    "einordnung": [
+      "Due Diligence heißt wörtlich „gebotene Sorgfalt“. Gemeint ist die Prüfung einer Immobilie vor dem Kauf: rechtlich, technisch, wirtschaftlich und mit Blick auf die Finanzierung. Der Notar prüft das Grundbuch; sich mit dem Objekt selbst eingehend zu befassen, ist Aufgabe des Käufers.[[1]]",
+      "Die Bundesnotarkammer nennt dafür unter anderem die Baugenehmigung, mögliche Baulasten, den Zustand der Gebäude, etwa mit einem Bausachverständigen, den Stand der Erschließung und den Abgleich der Grundstücksgrenzen mit dem Liegenschaftskataster.[[1]] Den Energieausweis müssen Verkäufer oder Makler spätestens bei der Besichtigung vorlegen.[[2]] Bei einer Eigentumswohnung gehört die Beschluss-Sammlung der Eigentümergemeinschaft dazu, die der Verwalter führt.[[3]]",
+      "Ein vereinbarter Ausschluss der Mängelrechte schützt den Verkäufer nicht, wenn er einen Mangel arglistig verschwiegen oder eine Beschaffenheit garantiert hat.[[4]]"
+    ],
+    "beispiel": [
+      "Sie prüfen eine Wohnung für 300.000 €. In der Beschluss-Sammlung steht eine Dachsanierung, die über eine Sonderumlage bezahlt werden soll; auf die Wohnung entfallen 15.000 €.",
+      "Mit diesem Wissen können Sie im Kaufvertrag regeln lassen, wer die Umlage trägt, den Preis neu verhandeln, den Betrag in Ihre Finanzierung einplanen oder vom Kauf absehen."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Fordern Sie die Unterlagen früh an: Grundbuchauszug, Energieausweis, Baupläne und Wohnflächenberechnung, bei Wohnungen Teilungserklärung, Wirtschaftsplan und Beschluss-Sammlung. In der Ankaufsberatung betrachtet Fischer & Geserich Objekt, Lage, Wirtschaftlichkeit, Unterlagen und Finanzierung im Zusammenhang, beim Objekt etwa Zustand, WEG, Mietstatus und absehbaren Investitionsbedarf.[[5]] Bei vermieteten Objekten gehören Mietverträge und eine Aufstellung der Mieteingänge dazu."
+        ]
+      },
+      {
+        "h2": "Was es für Verkäufer heißt",
+        "absaetze": [
+          "Je vollständiger Ihre Unterlagen sind, desto schneller kann ein Käufer prüfen. Fischer & Geserich klärt die Unterlagen deshalb vor der Vermarktung, damit Finanzierung und Abschluss nicht stocken.[[6]]"
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "Bundesnotarkammer: Der Kauf einer gebrauchten Immobilie (Infoblatt)",
+        "url": "https://www.bnotk.de/fileadmin/user_upload_bnotk/presse/Informationsmaterialien/Infoblatt_Kauf-einer-gebrauchten-Immobilie.pdf",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 80 Gebäudeenergiegesetz",
+        "url": "https://www.gesetze-im-internet.de/geg/__80.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 24 Wohnungseigentumsgesetz",
+        "url": "https://www.gesetze-im-internet.de/woeigg/__24.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 444 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__444.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Ankaufsberatung",
+        "url": "https://fg-realestate.de/ankaufsberatung.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Verkaufen",
+        "url": "https://fg-realestate.de/verkaufen.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Prüfpunkte Käufer, Notar prüft Grundbuch",
+        "fundstelle": "runde-1.md, D01, G10"
+      },
+      {
+        "zahl": "Energieausweis spätestens bei Besichtigung",
+        "fundstelle": "runde-1.md, D02"
+      },
+      {
+        "zahl": "Beschluss-Sammlung, Verwalter",
+        "fundstelle": "runde-1.md, D03"
+      },
+      {
+        "zahl": "Arglist, Garantie",
+        "fundstelle": "runde-1.md, D04"
+      },
+      {
+        "zahl": "Ankaufsberatung F&G",
+        "fundstelle": "runde-1.md, D05"
+      },
+      {
+        "zahl": "Unterlagen vor Vermarktung (F&G)",
+        "fundstelle": "runde-1.md, D06"
+      },
+      {
+        "zahl": "Beispiel 300.000 €, Sonderumlage 15.000 € (Annahme)",
+        "fundstelle": "Annahme; Marktprüfung runde-1.md (S04)"
+      }
+    ]
+  }
 }

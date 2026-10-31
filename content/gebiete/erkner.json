@@ -1,0 +1,459 @@
+{
+  "slug": "erkner",
+  "name": "Erkner",
+  "nameLang": "Erkner",
+  "kontakt": "lennart",
+  "kreis": {
+    "name": "Landkreis Oder-Spree",
+    "url": "/standorte/oder-spree/"
+  },
+  "title": "Immobilienmakler Erkner – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler in Erkner: Haus, Wohnung oder Grundstück verkaufen, kaufen und finanzieren, mit Bodenrichtwerten 2026. Kostenlose Wertermittlung.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Erkner",
+  "kurzantwort": "Fischer & Geserich vermittelt in Erkner Häuser, Wohnungen und Grundstücke, von der Bahnhofsiedlung bis Hohenbinde. Wir beraten außerdem Käufer, Kapitalanleger und Finanzierungskunden.",
+  "stand": "Oktober 2026",
+  "updated": "2026-10-26",
+  "zahlen": [
+    {
+      "wert": "500 €/m²",
+      "label": "Bodenrichtwert Erkner Zentrum (Kerngebiet)",
+      "detail": "Seit 2022 unverändert. Wohnbauland: Flakenseeweg 430, Schützenwäldchen 400, Karutzhöhe 290 €/m².",
+      "quelle": "Gutachterausschuss Oder-Spree und Frankfurt (Oder), BORIS Brandenburg",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?f=json&limit=500&gemeinde_bezeichnung=Erkner&stichtag=2026-01-01",
+      "stichtag": "Stichtag 01.01.2026"
+    },
+    {
+      "wert": "3.884 €/m²",
+      "label": "Freistehende Häuser, Baujahre 1991–2022, Berliner Umland des Landkreises (Median)",
+      "detail": "25 Kauffälle. Hauspreise nur für Erkner weist der Bericht nicht aus.",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Oder-Spree und Frankfurt (Oder)",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_LOS_FF.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 3.076 €/m²",
+      "label": "Weiterverkaufte Wohnungen in Erkner, Baujahre 1996–2017",
+      "detail": "6 Kauffälle, im Mittel 62 m². Zwei Wohnungen im Erstverkauf: Ø 6.339 €/m².",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Oder-Spree und Frankfurt (Oder)",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_LOS_FF.pdf",
+      "stichtag": "Berichtsjahr 2025"
+    },
+    {
+      "wert": "8,07 €/m²",
+      "label": "Gezahlte Miete in Mehrfamilienhäusern in Erkner (Mittel)",
+      "detail": "26 Fälle, Spanne 4,23 bis 12,84 €/m². Kein Mietspiegel, nur Anhaltspunkt.",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Oder-Spree und Frankfurt (Oder)",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_LOS_FF.pdf",
+      "stichtag": "Mieten 2022–2025"
+    },
+    {
+      "wert": "11.523",
+      "label": "Einwohner am 31.12.2025",
+      "detail": "118 weniger als ein Jahr zuvor; 2024 betrug das Minus 10.",
+      "quelle": "Amt für Statistik Berlin-Brandenburg",
+      "url": "https://download.statistik-berlin-brandenburg.de/722c93f3928e984f/b897b3745f7d/SB_A01-04_00_2025j01_BB.pdf",
+      "stichtag": "Stand 31.12.2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Zentrum, Bahnhofsiedlung und Neuseeland",
+      "absaetze": [
+        "Ortsteile im amtlichen Sinn hat Erkner nicht. Mit der Zeit sind Siedlungsbereiche entstanden, darunter Bahnhofsiedlung, Neuseeland, Karutzhöhe und Hohenbinde; die Bahnhofsiedlung wurde ab 1920 als Gartenstadt angelegt.[[11]] Die Einwohnerzahl ist zuletzt gesunken: Am 31.12.2025 waren es 11.523, ein Jahr zuvor 118 mehr. 2025 starben 249 Menschen, 57 wurden geboren und es zogen 79 mehr Menschen zu als fort.[[3]]",
+        "Erkner ist Endpunkt der S3 und Halt des RE1. Die S3 braucht bis Ostkreuz 28,6 Minuten und bis Alexanderplatz je nach Fahrt 37,9 oder 40,4 Minuten.[[7]] Der RE1 endet wegen der Bauarbeiten auf der Stadtbahn vom 14.06. bis 12.12.2026 am Ostbahnhof;[[8]] im Fahrplan 2025 brauchte er bis Alexanderplatz 24 oder 25 Minuten.[[9]] Die A 10 erreichen Sie über die Anschlussstelle Erkner (6a).[[15]]",
+        "Im Zentrum, einem Kerngebiet, steht der Bodenrichtwert seit 2022 bei 500 €/m², auch zum 01.01.2026. In der Bahnhofsiedlung sind es 350 €/m²; 2022 und 2023 waren es noch 430 €/m². Neuseeland stieg gegenüber dem Vorjahr von 300 auf 330 €/m². Die Zone Stadtgebiet sprang von 240 auf 370 €/m², obwohl sie 2025 und 2026 gleich groß ist, wie unsere Auswertung der Zonenfläche zeigt.[[2]] Eine Begründung nennen weder der Grundstücksmarktbericht noch BORIS."
+      ],
+      "bild": {
+        "name": "erkner-bahnhof",
+        "alt": "Gelbes Empfangsgebäude des Bahnhofs Erkner mit Rundbogenfenstern, davor Fahrradständer, ein Blumenstand und ein Schild Richtung Berlin, blauer Himmel",
+        "caption": "Der Bahnhof Erkner, Endpunkt der S3, im Mai.",
+        "credit": "Z thomas, CC BY 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Bahnhof_Erkner_20260501_1.jpg"
+      }
+    },
+    {
+      "h2": "Karutzhöhe, Schützenwäldchen, Hohenbinde und die Wasserlagen",
+      "absaetze": [
+        "In allen Siedlungsgebieten mischen sich Einfamilienhäuser und Mehrfamilienhäuser; die Karutzhöhe entstand 1931, die Rütgerssiedlung 1937.[[11]] Zum 01.01.2026 liegen die Bodenrichtwerte bei 250 €/m² in Hohenbinde, nach 210 €/m² im Vorjahr, bei 290 €/m² auf der Karutzhöhe, 320 €/m² an der Woltersdorfer Straße, 400 €/m² am Schützenwäldchen und 430 €/m² am Flakenseeweg.[[2]]",
+        "Das Wasser reicht aus fünf Richtungen bis ins Zentrum, allein der Dämeritzsee ist 103 ha groß.[[13]] Für Ufergrundstücke gibt es eigene Bodenrichtwertzonen: Stadtgebiet H2O stieg zum 01.01.2026 von 500 auf 750 €/m², Neuseeland H2O von 500 auf 550 €/m².[[2]]",
+        "Für Bauplätze in Erkner gab es über die Jahre 2022 bis 2025 zusammen 30 Kauffälle mit 330 bis 1.300 m² Fläche.[[1]] Kommunale Baugrundstücke hatte die Stadt am 24.10.2026 nicht im Angebot.[[14]] Im Berliner Umland des Landkreises lag der Median für baureife Grundstücke 2025 bei 265 €/m² aus 36 Verträgen; der Bodenpreisindex für den berlinnahen Raum mit Erkner, Schöneiche, Woltersdorf, Gosen und Grünheide sank auf 81,2, nach 86,2 im Vorjahr (2021 = 100).[[1]]"
+      ],
+      "bild": {
+        "name": "erkner-bretterscher-graben",
+        "alt": "Motorboote an Stegen im Bretterscher Graben, umgeben von Grün",
+        "caption": "Der Bretterscher Graben zwischen Seestraße und Dämeritzsee.",
+        "credit": "Kritzolina, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Bretterscher_Graben_07.jpg"
+      }
+    },
+    {
+      "h2": "Wohnungen, Schulen und Arbeitgeber",
+      "absaetze": [
+        "Die städtische Tochter WGE hat rund 2.600 Wohnungen, zweitgrößter Anbieter ist die GEWOBA-Erkner; die Wohnungsgenossenschaft eG Erkner hat 255 Wohnungen Am Kurpark aus den Jahren 1957 bis 1965.[[12]] Plattenbauten entstanden um 1980 an der Friedrichstraße und der Gerhart-Hauptmann-Straße.[[11]] Die Fallzahlen für Eigentumswohnungen sind klein: Weiterverkaufte Wohnungen der Baujahre 1996 bis 2017 kosteten 2025 im Mittel 3.076 €/m² bei 6 Kauffällen, zwei Wohnungen der Baujahre 1980 und 1989 2.843 und 3.333 €/m², zwei Wohnungen im Erstverkauf im Mittel 6.339 €/m².[[1]]",
+        "Zu den Schulen gehören das Carl-Bechstein-Gymnasium, die MORUS-Oberschule, die Löcknitz-Grundschule und zwei Förderschulen.[[16]] An der Löcknitz-Grundschule entsteht eine Dreifeldsporthalle, Übergabe geplant am 07.05.2027.[[17]] Für einen Neubau der MORUS-Oberschule gibt es den Entwurf des Bebauungsplans Nr. 24 vom 01.11.2024.[[19]]",
+        "Erkner ist Mittelzentrum; 993 Unternehmen sind hier ansässig, darunter das Leibniz-Institut für Raumbezogene Sozialforschung und das Bildungszentrum Erkner. Die Stadt grenzt an Treptow-Köpenick und an den Tesla-Standort Grünheide.[[15]] Am 25.06.2026 begrüßte Ministerpräsident Woidke die von Tesla angekündigten 1.000 neuen Arbeitsplätze;[[20]] eine Wirkung auf die Preise in Erkner weist der Grundstücksmarktbericht 2025 nicht aus.[[1]]"
+      ],
+      "bild": {
+        "name": "erkner-rathaus",
+        "alt": "Dreigeschossiges Rathaus von Erkner mit heller Fassade, Backsteinflächen, Säulen am Eingang und Mansarddach mit Gauben, links ein großer Laubbaum, blauer Himmel",
+        "caption": "Das Rathaus von Erkner.",
+        "credit": "Assenmacher, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Erkner_Rathaus_August_2012.jpg"
+      }
+    }
+  ],
+  "band": {
+    "name": "erkner-flakensee",
+    "alt": "Blick über das Flakenfließ auf den Flakensee mit glattem Wasser, Bäumen am Ufer und Waldrand am Horizont unter klarem Himmel",
+    "caption": "Blick über das Flakenfließ auf den Flakensee.",
+    "credit": "Lukas Beck, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Erkner_Flakenfließ_lub_2023-04-22_Flakensee_img04.jpg"
+  },
+  "anbindung": [
+    "Erkner ist Endpunkt der S3 und Halt des RE1. Die S3 braucht bis Ostkreuz 28,6 Minuten und bis Alexanderplatz je nach Fahrt 37,9 oder 40,4 Minuten.[[7]]",
+    "Die A 10 erreichen Sie über die Anschlussstelle Erkner (6a).[[15]]"
+  ],
+  "karte": {
+    "alt": "Karte der Stadt Erkner: Zentrum, Bahnhofsiedlung, Neuseeland, Karutzhöhe und Hohenbinde, dazu die Bahnstrecke mit dem Bahnhof Erkner, die Seen im Norden und Westen, die Autobahn im Osten und die Grenze zu Berlin"
+  },
+  "verkaufen": {
+    "h2": "Immobilie in Erkner verkaufen",
+    "absaetze": [
+      "Erkner ist ein kleiner Markt: 2025 gab es hier 27 Kauffälle bebauter Grundstücke, im ganzen Landkreis Oder-Spree 905. Hauspreise gibt es nur für das Berliner Umland des Kreises, zu dem neben Erkner unter anderem Woltersdorf, Schöneiche und Grünheide gehören. Dort lag der Median freistehender Häuser bis Baujahr 1948 bei 3.363 €/m² Wohnfläche aus 18 Kauffällen, für Baujahre 1991 bis 2022 bei 3.884 €/m² aus 25.[[1]] Für Ihre Bewertung verbinden wir diese Werte mit dem Bodenrichtwert Ihrer Zone, bei Ufergrundstücken mit der H2O-Zone, und mit den Angeboten, die gerade in Erkner und den Nachbarorten am Markt sind."
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Erkner",
+    "absaetze": [
+      "Als Eigennutzer haben Sie mit der S3 eine Verbindung ohne Umstieg in die Berliner Innenstadt. Richtung Osten fährt der RE1 in 2,5 bis 3,6 Minuten zum neuen Bahnhof Fangschleuse in Grünheide,[[7]] der seit Mitte August 2026 in Betrieb ist.[[10]] Die Friedrichstraße (L 30) wird ausgebaut, die Freigabe ist für das Frühjahr 2027 vorgesehen.[[18]]",
+      "Erkner gehört seit dem 01.01.2026 zur Gebietskulisse der Mietpreisbremse, in der Bewertung des Landes kam die Stadt auf die volle Punktzahl von 10. Bis 31.12.2029 gilt bei Neuvermietung: höchstens 10 % über der ortsüblichen Vergleichsmiete, sofern das Haus vor dem 1. Oktober 2014 fertiggestellt und bezogen wurde.[[4,6]] Für laufende Verträge begrenzt die Kappungsgrenze Erhöhungen bis 31.12.2030 auf 15 % in drei Jahren.[[5]] Ein Mietspiegel fehlt. In Mehrfamilienhäusern wurde im Mittel eine Miete von 8,07 €/m² gezahlt, aus 26 Fällen der Jahre 2022 bis 2025; der Vertragsabschluss kann älter sein.[[1]]"
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Erkner",
+    "absaetze": [
+      "Im Berliner Umland des Landkreises Oder-Spree, zu dem Erkner gehört, kostete ein freistehendes Haus 2025 im Mittel 448.384 €, eine Doppelhaushälfte oder ein Reihenhaus 379.634 €.[[1]] Die passende Finanzierung suchen wir auf den Plattformen Europace und Baufinex; parallel sprechen wir Banken direkt an. Für eine vermietete Wohnung rechnen Sie am besten mit der Miete, die in Erkner tatsächlich gezahlt wird, nicht mit Angebotsmieten aus Portalen."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Wie hoch ist der Bodenrichtwert in Erkner 2026?",
+      "antwort": "Zum 01.01.2026 liegt er für Wohnbauland unter anderem bei 250 €/m² in Hohenbinde, 290 €/m² auf der Karutzhöhe, 350 €/m² in der Bahnhofsiedlung, 370 €/m² im Stadtgebiet und 430 €/m² am Flakenseeweg, für Ufergrundstücke bei 550 und 750 €/m². Das Zentrum hat 500 €/m². Gesunken ist gegenüber 2025 keine Bauland-Zone, gestiegen sind unter anderem Stadtgebiet von 240 €/m² und Hohenbinde von 210 €/m². Wo die Grenzen der Zonen verlaufen, sehen Sie auf der Karte von BORIS Brandenburg.[[2]]",
+      "herkunft": "Google-Autocomplete „bodenrichtwert erkner 2026“ und „bodenrichtwert erkner 2025“ (research/serp/autocomplete-2026-10-24.json)"
+    },
+    {
+      "frage": "Was kostet ein Haus in Erkner, etwa auf der Karutzhöhe oder am Schützenwäldchen?",
+      "antwort": "Hauspreise für einzelne Siedlungsgebiete gibt es nicht; Erkner wird mit dem übrigen Berliner Umland des Landkreises Oder-Spree zusammengefasst. Dort kostete ein freistehendes Haus 2025 im Mittel 448.384 €, bei 131 Kauffällen.[[1]] Den Unterschied der Lagen zeigt der Bodenrichtwert zum 01.01.2026: Karutzhöhe 290 €/m², Schützenwäldchen 400 €/m².[[2]]",
+      "herkunft": "Google-Autocomplete „haus kaufen erkner karutzhöhe“, „haus kaufen erkner am schützenwäldchen“ und „bodenrichtwert erkner karutzhöhe“ (research/serp/autocomplete-2026-10-24.json)"
+    },
+    {
+      "frage": "Was kostet eine Eigentumswohnung in Erkner?",
+      "antwort": "Für Erkner gibt es nur wenige Verkäufe. Weiterverkaufte Wohnungen der Baujahre 1996 bis 2017 kosteten 2025 im Mittel 3.076 €/m² Wohnfläche bei 6 Kauffällen, zwei Wohnungen im Erstverkauf im Mittel 6.339 €/m².[[1]] Angebotspreise aus Portalen sind darin nicht enthalten.",
+      "herkunft": "Google-Autocomplete „wohnung kaufen erkner“ (research/serp/autocomplete-2026-10-24.json); dieselbe Frage an ChatGPT, „Was kostet eine Wohnung in Erkner?“ (research/serp/ki-assistenten-2026-10-24.md, Zeile 17)"
+    },
+    {
+      "frage": "Wie hoch sind die Mieten in Erkner?",
+      "antwort": "In Mehrfamilienhäusern wurden im Mittel 8,07 €/m² gezahlt, bei einer Spanne von 4,23 bis 12,84 €/m² aus 26 Fällen der Jahre 2022 bis 2025. Das sind gezahlte Mieten, keine Angebotsmieten, und der Gutachterausschuss versteht sie nur als Anhaltspunkt.[[1]] Einen Mietspiegel hat Erkner nicht; für neue Verträge gilt seit 2026 die Mietpreisbremse.[[4]]",
+      "herkunft": "ChatGPT nannte auf „Was kostet eine Wohnung in Erkner?“ Mieten aus einem Portal (research/serp/ki-assistenten-2026-10-24.md, Zeile 17)"
+    },
+    {
+      "frage": "Ist es aktuell ratsam, eine Immobilie in Erkner zu verkaufen?",
+      "antwort": "Die Daten zeigen in zwei Richtungen. Zum 01.01.2026 ist in Erkner keine Bauland-Zone gesunken, mehrere sind gestiegen.[[2]] Der Bodenpreisindex für den berlinnahen Raum fiel 2025 dagegen auf 81,2 nach 86,2 im Vorjahr (2021 = 100).[[1]] Bei nur 27 verkauften bebauten Grundstücken im Jahr 2025 entscheidet der Vergleich mit Ihrer Lage.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilie verkaufen Erkner“, dort als „Ist es aktuell ratsam, eine Immobilie zu verkaufen?“ (Google_Areas, Oktober 2026)"
+    },
+    {
+      "frage": "Wo kann ich meine Immobilie in Erkner kostenlos schätzen lassen?",
+      "antwort": "Kostenlos bei Fischer & Geserich: Das Ergebnis haben Sie meistens nach wenigen Stunden, häufig noch am selben Tag. Weil es in Erkner selbst nur wenige Verkäufe gibt, ziehen wir das Berliner Umland des Landkreises und den Bodenrichtwert Ihrer Zone hinzu.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienbewertung Erkner“, dort als „Wo kann ich meine Immobilie kostenlos schätzen lassen?“ (Google_Areas, Oktober 2026)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Berlin",
+      "url": "/standorte/berlin/"
+    },
+    {
+      "name": "Königs Wusterhausen",
+      "url": "/standorte/konigs-wusterhausen/"
+    },
+    {
+      "name": "Bernau bei Berlin",
+      "url": "/standorte/bernau/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Grundstücksmarktbericht 2025 Landkreis Oder-Spree und Stadt Frankfurt (Oder), Gutachterausschuss für Grundstückswerte (Version 2025–1.0 vom 11.05.2026)",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_LOS_FF.pdf",
+      "stand": "Berichtszeitraum 01.01.–31.12.2025"
+    },
+    {
+      "name": "Bodenrichtwerte Erkner, BORIS Brandenburg (GeoBasis-DE/LGB, dl-de/by-2-0)",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?f=json&limit=500&gemeinde_bezeichnung=Erkner&stichtag=2026-01-01",
+      "stand": "Stichtag 01.01.2026, Vergleich 2022–2025"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 4 / A V 2 – j / 25 (Bevölkerung)",
+      "url": "https://download.statistik-berlin-brandenburg.de/722c93f3928e984f/b897b3745f7d/SB_A01-04_00_2025j01_BB.pdf",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Mietpreisbegrenzungsverordnung Brandenburg, MIL",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/Mietpreisbegrenzungsverordnung.pdf",
+      "stand": "gültig 01.01.2026–31.12.2029"
+    },
+    {
+      "name": "Kappungsgrenzenverordnung Brandenburg, MIL",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/KappGrenzV.pdf",
+      "stand": "gültig 01.01.2026–31.12.2030"
+    },
+    {
+      "name": "MIL, Pressemitteilung zu Mietpreisbremse und Kappungsgrenzenverordnung",
+      "url": "https://mil.brandenburg.de/mil/de/presse/detail/~25-11-2025-kabinett-mietpreisbremse-und-kappungsgrenzenverordnung",
+      "stand": "25.11.2025"
+    },
+    {
+      "name": "VBB-Fahrplandaten (GTFS), eigene Auswertung der Fahrzeiten ab Erkner",
+      "url": "https://www.vbb.de/gtfs",
+      "stand": "Fahrplan Dienstag 10.11.2026, Datensatz gültig 22.10.–12.12.2026"
+    },
+    {
+      "name": "VBB, Pressemitteilung „Sperrung der Berliner Stadtbahn für den Regionalverkehr“",
+      "url": "https://unternehmen.vbb.de/presse/sperrung-der-berliner-stadtbahn-fuer-den-regionalverkehr-zwischen-charlottenburg-und-ostbahnhof/",
+      "stand": "18.05.2026"
+    },
+    {
+      "name": "ODEG, Fahrplan RE1 2025",
+      "url": "https://www.odeg.de/fileadmin/user_upload/Unternehmensseite/linien-fahrplaene/liniennetz-fahrplaene/Fahrpl%C3%A4ne_2025/WEB_2025_RE1_592x315.pdf",
+      "stand": "Fahrplan 2025, Stand 14.11.2024"
+    },
+    {
+      "name": "VBB, Pressemitteilung „Bahnhof Fangschleuse eingeweiht“",
+      "url": "https://unternehmen.vbb.de/presse/bahnhof-fangschleuse-eingeweiht/",
+      "stand": "11.09.2026"
+    },
+    {
+      "name": "Stadt Erkner, Siedlungsgebiete",
+      "url": "https://www.erkner.de/leben-und-soziales/wohnen/siedlungsgebiete.html",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Erkner, Wohnungsbau",
+      "url": "https://www.erkner.de/leben-und-soziales/wohnen/wohnungsbau.html",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Erkner, Rund ums Wasser",
+      "url": "https://www.erkner.de/freizeit-und-tourismus/naturerlebnisse/rund-ums-wasser.html",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Erkner, Baugrundstücke",
+      "url": "https://www.erkner.de/umwelt-und-stadtentwicklung/bauen-und-verkehr/baugrundstuecke.html",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Erkner, Gewerbe, Forschung & Industrie",
+      "url": "https://www.erkner.de/umwelt-und-stadtentwicklung/wirtschaft/gewerbe-forschung-and-industrie.html",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Erkner, Schulen",
+      "url": "https://www.erkner.de/leben-und-soziales/bildung/schulen-i-vhs-i-nachhilfe.html",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Erkner, Grundschulerweiterung (Dreifeldsporthalle)",
+      "url": "https://www.erkner.de/umwelt-und-stadtentwicklung/bauen-und-verkehr/grundschulerweiterung.html",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Erkner, Ausbau Friedrichstraße",
+      "url": "https://www.erkner.de/umwelt-und-stadtentwicklung/bauen-und-verkehr/ausbau-friedrichstrasse.html",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Erkner, Bebauungsplan Nr. 24 „Quartier am Eichhörnchenweg“, Entwurf der Planbegründung",
+      "url": "https://www.erkner.de/_Resources/Persistent/1/a/0/e/1a0ed935b30decfd54f3e32bad6eaaded6112201/Planbegr%C3%BCndung.pdf",
+      "stand": "01.11.2024"
+    },
+    {
+      "name": "Land Brandenburg, Meldung zur Produktionssteigerung der Gigafactory",
+      "url": "https://brandenburg.de/sixcms/detail.php?gsid=brandenburg_06.c.905688.de",
+      "stand": "25.06.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "BRW Zentrum 500 €/m², seit 2022 gleich",
+      "fundstelle": "erkner.md, Zeilen 27, 53"
+    },
+    {
+      "zahl": "BRW Stadtgebiet 370 (240), Zonenfläche gleich, keine Begründung",
+      "fundstelle": "erkner.md, Zeilen 28, 48, 54, 55"
+    },
+    {
+      "zahl": "BRW Stadtgebiet H2O 750 (500), Neuseeland H2O 550 (500)",
+      "fundstelle": "erkner.md, Zeilen 29, 30, 49"
+    },
+    {
+      "zahl": "BRW Flakenseeweg 430, Schützenwäldchen 400, Woltersdorfer Straße 320, Karutzhöhe 290",
+      "fundstelle": "erkner.md, Zeilen 31, 32, 35, 36"
+    },
+    {
+      "zahl": "BRW Bahnhofsiedlung 350 (2022/2023: 430), Neuseeland 330 (300)",
+      "fundstelle": "erkner.md, Zeilen 33, 34, 50, 51"
+    },
+    {
+      "zahl": "BRW Hohenbinde 250 (210)",
+      "fundstelle": "erkner.md, Zeile 37"
+    },
+    {
+      "zahl": "keine Bauland-Zone gesunken (eigene Auswertung)",
+      "fundstelle": "erkner.md, Zeilen 27–41"
+    },
+    {
+      "zahl": "27 Kauffälle bebaute Grundstücke Erkner, Landkreis 905",
+      "fundstelle": "erkner.md, Zeilen 65, 66"
+    },
+    {
+      "zahl": "ETW Erstverkauf Ø 6.339 (2 Fälle)",
+      "fundstelle": "erkner.md, Zeile 67"
+    },
+    {
+      "zahl": "ETW Weiterverkauf Ø 3.076 (6 Fälle, 62 m², 1996–2017)",
+      "fundstelle": "erkner.md, Zeile 69"
+    },
+    {
+      "zahl": "ETW 1949–1990: 2.843 und 3.333 (1980, 1989)",
+      "fundstelle": "erkner.md, Zeile 71"
+    },
+    {
+      "zahl": "EFH Berliner Umland Median 3.363 (18) und 3.884 (25)",
+      "fundstelle": "erkner.md, Zeilen 61, 78, 80"
+    },
+    {
+      "zahl": "EFH Berliner Umland Mittel 448.384 € (131), RH/DHH 379.634 €",
+      "fundstelle": "erkner.md, Zeilen 82, 84"
+    },
+    {
+      "zahl": "Bauland Berliner Umland Median 265 (36)",
+      "fundstelle": "erkner.md, Zeile 85"
+    },
+    {
+      "zahl": "Bodenpreisindex 81,2 (Vorjahr 86,2, 2021 = 100), Gemarkungen",
+      "fundstelle": "erkner.md, Zeile 86"
+    },
+    {
+      "zahl": "Bauplätze 30 Kauffälle 2022–2025, 330–1.300 m²",
+      "fundstelle": "erkner.md, Zeile 87"
+    },
+    {
+      "zahl": "gezahlte Miete 8,07 (4,23–12,84, 26 Fälle, 2022–2025), Vertrag kann älter sein",
+      "fundstelle": "erkner.md, Zeile 90"
+    },
+    {
+      "zahl": "Mietdaten nur Anhaltspunkt",
+      "fundstelle": "erkner.md, Zeile 92"
+    },
+    {
+      "zahl": "kein Mietspiegel",
+      "fundstelle": "erkner.md, Zeile 99"
+    },
+    {
+      "zahl": "Mietpreisbremse 01.01.2026–31.12.2029, 10 von 10 Punkten",
+      "fundstelle": "erkner.md, Zeile 101"
+    },
+    {
+      "zahl": "Kappungsgrenze bis 31.12.2030, 15 % in drei Jahren; 10 %, 1. Oktober 2014",
+      "fundstelle": "erkner.md, Zeilen 102, 103"
+    },
+    {
+      "zahl": "11.523 Einwohner, −118, 249 Gestorbene, 57 Geborene, Saldo 79; 2024 −10",
+      "fundstelle": "erkner.md, Zeilen 120, 121, 123"
+    },
+    {
+      "zahl": "S3 und RE1, A 10 Anschlussstelle 6a",
+      "fundstelle": "erkner.md, Zeilen 133, 134, 148"
+    },
+    {
+      "zahl": "S3 Alexanderplatz 37,9 / 40,4 min, Ostkreuz 28,6 min (10.11.2026)",
+      "fundstelle": "erkner.md, Zeilen 140, 141"
+    },
+    {
+      "zahl": "RE1 Fahrplan 2025: 24 bzw. 25 min",
+      "fundstelle": "erkner.md, Zeile 142"
+    },
+    {
+      "zahl": "Stadtbahnsperrung 14.06.–12.12.2026, RE1 endet Ostbahnhof",
+      "fundstelle": "erkner.md, Zeile 143"
+    },
+    {
+      "zahl": "Fangschleuse seit Mitte August 2026, 2,5–3,6 min",
+      "fundstelle": "erkner.md, Zeilen 146, 147"
+    },
+    {
+      "zahl": "grenzt an Treptow-Köpenick und Tesla-Standort",
+      "fundstelle": "erkner.md, Zeile 153"
+    },
+    {
+      "zahl": "1.000 neue Arbeitsplätze (25.06.2026)",
+      "fundstelle": "erkner.md, Zeilen 156, 157"
+    },
+    {
+      "zahl": "Tesla nicht im GMB",
+      "fundstelle": "erkner.md, Zeile 168"
+    },
+    {
+      "zahl": "keine amtlichen Ortsteile, Siedlungsbereiche",
+      "fundstelle": "erkner.md, Zeile 173"
+    },
+    {
+      "zahl": "Bahnhofsiedlung ab 1920, Karutzhöhe 1931, Rütgerssiedlung 1937, Plattenbauten um 1980",
+      "fundstelle": "erkner.md, Zeilen 177–180"
+    },
+    {
+      "zahl": "Mix aus EFH und MFH",
+      "fundstelle": "erkner.md, Zeile 182"
+    },
+    {
+      "zahl": "WGE ca. 2.600, GEWOBA zweitgrößter, WG eG 255 Wohnungen 1957–1965",
+      "fundstelle": "erkner.md, Zeilen 186–188"
+    },
+    {
+      "zahl": "Wasser aus fünf Richtungen, Dämeritzsee 103 ha",
+      "fundstelle": "erkner.md, Zeilen 197, 199"
+    },
+    {
+      "zahl": "keine kommunalen Baugrundstücke",
+      "fundstelle": "erkner.md, Zeile 200"
+    },
+    {
+      "zahl": "Schulen",
+      "fundstelle": "erkner.md, Zeilen 208–212"
+    },
+    {
+      "zahl": "993 Unternehmen, Mittelzentrum, Bildungszentrum, IRS",
+      "fundstelle": "erkner.md, Zeilen 221, 222, 229, 230"
+    },
+    {
+      "zahl": "Dreifeldsporthalle Übergabe geplant 07.05.2027",
+      "fundstelle": "erkner.md, Zeile 241"
+    },
+    {
+      "zahl": "Friedrichstraße L 30, Freigabe Frühjahr 2027",
+      "fundstelle": "erkner.md, Zeile 242"
+    },
+    {
+      "zahl": "B-Plan Nr. 24, Entwurf 01.11.2024, Neubau MORUS-Oberschule",
+      "fundstelle": "erkner.md, Zeile 243"
+    }
+  ],
+  "kurzantwortMehr": "Für Maklertätigkeit und Darlehensvermittlung liegen die Erlaubnisse nach § 34c und § 34i GewO vor; Firmensitz ist Berlin. Lennart Geserich, Head of Sales & Vermietung, ist für Erkner Ihr erster Kontakt.",
+  "hero": {
+    "name": "erkner-genezarethkirche",
+    "alt": "Blick von oben auf die Genezarethkirche in Erkner",
+    "credit": "Kritzolina, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Die_Genezareth_Kirche_in_Erkner_03.jpg"
+  }
+}

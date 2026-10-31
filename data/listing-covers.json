@@ -1,0 +1,88 @@
+{
+  "_info": "Design-Pass 3 §3.8: Titelbild je Angebot, geht vor der Regel in _data/propstack.js. Schlüssel: Propstack-ID des Angebots oder Projekts. bild: Propstack-Bild-ID oder \"gestaltet\" (Navy-Titel mit F&G-Zeichen und Ort). url: dieselbe Datei, damit auch der Mock-Server (ohne Bild-IDs) sie findet. fokus: Bildausschnitt (CSS object-position). zoom: Ausschnitt vergrößern (Faktor). grund: warum dieses Bild. Ausgewählt am 30.10.2026 aus den eigenen Bildern jedes Angebots.",
+  "6013467": {
+    "bild": 52679275,
+    "titel": "Wohnzimmer (3)",
+    "url": "https://images.propstack.de/photos/3n5BCT3eB84jXM8yypXNnerA/photo/sdTwoNb9WQDkwcxCjqU9gGCi/Wohnzimmer%20%283%29.jpeg",
+    "grund": "Wohnzimmer, hell (Angebot Berlin Westend)"
+  },
+  "5584762": {
+    "bild": "gestaltet",
+    "grund": "keine Fotos in Propstack"
+  },
+  "5581021": {
+    "bild": 47329465,
+    "titel": "Bild1",
+    "url": "https://images.propstack.de/photos/3n5BCT3eB84jXM8yypXNnerA/photo/Sp6rXZSEEdcEuRLdLqhrJ2vP/Bild1.png",
+    "grund": "Update 22 §5: einziges Foto des Angebots in Propstack (756 × 479 px): Hauseingang mit Balkon von außen, hell, gerade Linien. Der Rahmen der Karte schneidet es auf 3 : 2; Belichtung unverändert"
+  },
+  "6278819": {
+    "bild": 54898163,
+    "titel": "IMG_6244",
+    "url": "https://images.propstack.de/photos/3n5BCT3eB84jXM8yypXNnerA/photo/GR8YuH7h5qNniRKSr474599F/IMG_6244.png",
+    "fokus": "50% 0%",
+    "grund": "Fassade mit Balkonen an einem klaren Tag; Ausschnitt oben, ohne die Autos am unteren Rand"
+  },
+  "5508728": {
+    "bild": 46357418,
+    "titel": "Wohnzimmer WE05",
+    "url": "https://images.propstack.de/photos/3n5BCT3eB84jXM8yypXNnerA/photo/JxtLaXCSADWKSbFCjQ9KFExM/Wohnzimmer%20WE05.jpg",
+    "grund": "Wohnzimmer, hell"
+  },
+  "5779635": {
+    "bild": 50220887,
+    "titel": "Wohn- / Schlafzimmer",
+    "url": "https://images.propstack.de/photos/3n5BCT3eB84jXM8yypXNnerA/photo/WFCFPgzQDztv5ao7xE1rSUs1/Screenshot%202026-08-06%20115505.png",
+    "grund": "modernisiertes Zimmer, hell"
+  },
+  "5725944": {
+    "bild": 49354194,
+    "titel": "Treppenhaus",
+    "url": "https://images.propstack.de/photos/3n5BCT3eB84jXM8yypXNnerA/photo/53KXws76YtkHrDyYpFDKzrbh/2022-03-17_BN-Berlichingenstrasse-15-47.webp",
+    "grund": "Hauseingang mit Fliesenboden (die Zimmer sind bewohnt und vollgestellt)"
+  },
+  "5725945": {
+    "bild": 49785606,
+    "titel": "2022-03-17_BN-Berlichingenstrasse-15-7",
+    "url": "https://images.propstack.de/photos/3n5BCT3eB84jXM8yypXNnerA/photo/qGxmdASHNuVS521DWEV1thKx/2022-03-17_BN-Berlichingenstrasse-15-7.webp",
+    "fokus": "50% 0%",
+    "zoom": 1.25,
+    "grund": "Vorderhaus Berlichingenstraße (die Zimmer sind bewohnt und vollgestellt); Ausschnitt oben, ohne die Autos"
+  },
+  "5725946": {
+    "bild": 49785606,
+    "titel": "2022-03-17_BN-Berlichingenstrasse-15-7",
+    "url": "https://images.propstack.de/photos/3n5BCT3eB84jXM8yypXNnerA/photo/qGxmdASHNuVS521DWEV1thKx/2022-03-17_BN-Berlichingenstrasse-15-7.webp",
+    "fokus": "50% 0%",
+    "zoom": 1.25,
+    "grund": "Vorderhaus Berlichingenstraße (nur Hausbilder vorhanden); Ausschnitt oben, ohne die Autos"
+  },
+  "5725947": {
+    "bild": 49785622,
+    "titel": "Ansicht Seitenflügel",
+    "url": "https://images.propstack.de/photos/3n5BCT3eB84jXM8yypXNnerA/photo/82CTC2XyHqh91jp2heMSTEZn/Ansicht%20Seitenflugel.webp",
+    "fokus": "100% 0%",
+    "zoom": 1.25,
+    "grund": "Seitenflügel (die Zimmer sind bewohnt und vollgestellt); Ausschnitt oben rechts, ohne Fahrräder und Tonnen"
+  },
+  "5506799": {
+    "bild": 46393528,
+    "titel": "Wohnzimmer",
+    "url": "https://images.propstack.de/photos/3n5BCT3eB84jXM8yypXNnerA/photo/Rod3otQBTLp5pQDEV9gjVRgY/Wohnzimmer.webp",
+    "grund": "Wohnzimmer, hell"
+  },
+  "5508832": {
+    "bild": 46355287,
+    "titel": "Wohnzimmer WE 04 Berlin Moabit",
+    "url": "https://images.propstack.de/photos/3n5BCT3eB84jXM8yypXNnerA/photo/98TDR55yUNScRPsKWJf3kzQX/Wohnzimmer%20WE%2004%20Berlin%20Moabit.jpg",
+    "grund": "Wohnzimmer"
+  },
+  "563901": {
+    "bild": 49785606,
+    "titel": "2022-03-17_BN-Berlichingenstrasse-15-7",
+    "url": "https://images.propstack.de/photos/3n5BCT3eB84jXM8yypXNnerA/photo/qGxmdASHNuVS521DWEV1thKx/2022-03-17_BN-Berlichingenstrasse-15-7.webp",
+    "fokus": "50% 0%",
+    "zoom": 1.25,
+    "grund": "Projekt: Vorderhaus Berlichingenstraße; Ausschnitt oben, ohne die Autos"
+  }
+}

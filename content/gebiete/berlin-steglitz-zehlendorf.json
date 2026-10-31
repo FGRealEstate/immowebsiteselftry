@@ -1,0 +1,411 @@
+{
+  "slug": "berlin/steglitz-zehlendorf",
+  "name": "Steglitz-Zehlendorf",
+  "nameLang": "Steglitz-Zehlendorf",
+  "inOrt": "in Steglitz-Zehlendorf",
+  "fuerOrt": "Steglitz-Zehlendorf",
+  "typ": "bezirk",
+  "kreis": {
+    "name": "Berlin",
+    "url": "/standorte/berlin/"
+  },
+  "orte": [
+    "Steglitz",
+    "Lichterfelde West",
+    "Lichterfelde Ost",
+    "Wannsee",
+    "Schlachtensee",
+    "Nikolassee"
+  ],
+  "kontakt": "lennart",
+  "title": "Immobilienmakler Steglitz-Zehlendorf – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler in Steglitz-Zehlendorf: verkaufen, kaufen und finanzieren in Steglitz, Lichterfelde, Wannsee und Schlachtensee, mit Bodenrichtwerten 2026.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Steglitz-Zehlendorf",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Steglitz-Zehlendorf beim Verkauf, beim Kauf und bei der Finanzierung, von den Altbauwohnungen in Steglitz über die Villenkolonien in Lichterfelde West, Schlachtensee und Nikolassee bis zu den Häusern am Wannsee. Unser Büro liegt in der Schützenstraße 30 in Steglitz. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für den ganzen Bezirk ist Lennart Geserich Ihr Ansprechpartner, Head of Sales & Vermietung.",
+  "hero": {
+    "name": "steglitz-zehlendorf-beerenstrasse",
+    "alt": "Ein Mietshaus mit Ziergiebel und Balkonen in der Beerenstraße in Zehlendorf in der Sonne, davor Bäume",
+    "credit": "Bodo Kubrak, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Beerenstra%C3%9Fe_57_(Berlin-Zehlendorf).jpg",
+    "position": "50% 50%"
+  },
+  "stand": "Oktober 2026",
+  "updated": "2026-10-26",
+  "zahlen": [
+    {
+      "wert": "540",
+      "label": "Verkäufe bebauter Grundstücke 2025, mehr als in jedem anderen Berliner Bezirk",
+      "detail": "Das sind 14,7 % aller Berliner Verkäufe bebauter Grundstücke. Insgesamt zählte der Gutachterausschuss im Bezirk 2.240 Kauffälle, davon 1.660 für Wohnungseigentum.",
+      "quelle": "Immobilienmarktbericht Berlin 2025/2026",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 6.487 €/m²",
+      "label": "Ein- und Zweifamilienhäuser im früheren Bezirk Zehlendorf, je Quadratmeter Wohnfläche",
+      "detail": "54 Verkäufe, Spanne 4.129 bis 9.417 €/m². Im früheren Bezirk Steglitz lag der Mittelwert bei 5.037 €/m² (87 Verkäufe), in Dahlem bei 9.120 €/m² (7 Verkäufe), in ganz Berlin bei 4.366 €/m².",
+      "quelle": "Immobilienmarktbericht Berlin 2025/2026",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 4.390 €/m²",
+      "label": "Eigentumswohnungen im früheren Bezirk Steglitz",
+      "detail": "712 Verkäufe, Spanne 2.435 bis 6.428 €/m², 2024 waren es 4.381 €/m². Im früheren Bezirk Zehlendorf lag der Mittelwert bei 4.768 €/m² (271 Verkäufe), in Dahlem bei 6.427 €/m², in ganz Berlin bei 5.017 €/m².",
+      "quelle": "Immobilienmarktbericht Berlin 2025/2026",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "rund −5 %",
+      "label": "Bodenrichtwerte in Gebieten mit Ein- und Zweifamilienhäusern zum 01.01.2026",
+      "detail": "Im Bezirk reichen sie von 300 bis 2.700 €/m², in den sehr guten Lagen in Dahlem von 2.200 bis 2.700 €/m². Die Werte für die dichter bebauten Straßen in Steglitz, etwa 2.000 und 2.700 €/m², blieben unverändert.",
+      "quelle": "Immobilienmarktbericht Berlin 2025/2026; Geoportal Berlin",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stichtag": "01.01.2026"
+    },
+    {
+      "wert": "8,88 bis 23,67 €/m²",
+      "label": "Spanne der überwiegenden Mietangebote im Bezirk",
+      "detail": "80 % der Angebote 2025, ohne die oberen und unteren 10 %; in ganz Berlin 7,88 bis 25,06 €/m². 74,9 % der Wohnungen im Bezirk sind Mietwohnungen (Berlin 85,1 %), im Mittel sind sie 85,0 m² groß (Berlin 72,5 m²).",
+      "quelle": "IBB Wohnungsmarktbericht 2025",
+      "url": "https://www.ibb.de/media/dokumente/publikationen/berliner-wohnungsmarkt/wohnungsmarktbericht/2025/steglitz-zehlendorf.pdf",
+      "stichtag": "2024 und 2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Steglitz: Schloßstraße, Altbau und unser Büro",
+      "absaetze": [
+        "Steglitz wurde 1375 im Landbuch Kaiser Karls IV. erstmals erwähnt. Nach den beiden Weltkriegen verdrängte eine dichtere Bebauung mit kleineren Villen, später auch Reihenhäusern und Eigentumswohnanlagen die großzügige Bebauung mit parkähnlichen Gärten und nach Kriegsende wurde Steglitz zu einem großstädtischen Ortsteil mit der Schloßstraße als Zentrum und Einkaufsmeile.[[15]] Hier leben 76.247 Menschen.[[8]] Unser Büro liegt in der Schützenstraße 30. Vom S- und U-Bahnhof Rathaus Steglitz fährt die S1 alle 10 Minuten und braucht 19 Minuten bis Friedrichstraße.[[10]]",
+        "Im Mietspiegel 2026 liegen 60 % der Adressen im Ortsteil in mittlerer und 40 % in guter Wohnlage.[[3]] In den dicht bebauten Straßen um Albrechtstraße, Steglitzer Damm und Birkbuschstraße liegt der Bodenrichtwert bei 2.000 €/m², um Markelstraße, Lepsiusstraße und Schildhornstraße bei 2.700 €/m², jeweils bei einer Geschossflächenzahl von 2,0 und zum 01.01.2026 unverändert. Am Oehlertring und an der Attilastraße, mit einer Geschossflächenzahl von 0,6, sank er von 1.000 auf 950 €/m².[[2]] Eigentumswohnungen kosteten 2025 im früheren Bezirk Steglitz, zu dem auch Lichterfelde und Lankwitz gehören, im Mittel 4.390 €/m², bei 712 Verkäufen.[[1,8]] Seit dem 10.02.2024 liegen 1.166 der 5.570 Adressen im Ortsteil in den sozialen Erhaltungsgebieten Feuerbachstraße, Mittelstraße und Gritznerstraße Nord.[[11]]"
+      ],
+      "bild": {
+        "name": "steglitz-zehlendorf-schlossstrasse-88",
+        "alt": "Ein Eckhaus mit grüner Kuppel und heller Fassade an der Schloßstraße in Steglitz, davor Radfahrer und Fußgänger",
+        "caption": "Das Haus Schloßstraße 88 in Steglitz.",
+        "credit": "Dguendel, CC BY 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Berlin-Steglitz,_Haus_Schlossstra%C3%9Fe_88.jpg"
+      }
+    },
+    {
+      "h2": "Lichterfelde West: die Villenkolonie an der S1",
+      "absaetze": [
+        "Um 1865 erwarb der Unternehmer Johann Anton Wilhelm von Carstenn die Güter Giesensdorf und Lichterfelde, um eine Landhaus- und Villenkolonie anzulegen; mit der Hauptkadettenanstalt, errichtet von 1873 bis 1878, wurde Lichterfelde zum gefragten Villenvorort. 1881 fuhr hier die erste elektrische Straßenbahn der Welt. Lichterfelde West ist nach Beschreibung des Bezirksamts bis heute geprägt durch herrschaftliche Villen der Gründerzeit, große Gärten, kleine Alleen und gepflasterte Straßen.[[16]] Der ganze Ortsteil Lichterfelde hat 85.020 Einwohner.[[8]] Vom S-Bahnhof Lichterfelde West fährt die S1 alle 10 Minuten in 23 Minuten bis Friedrichstraße.[[10]]",
+        "Im Planungsraum Lichterfelde West liegen 81 % der Adressen in guter Wohnlage, im östlich anschließenden Planungsraum Augustaplatz 52 %.[[3]] Für 1.839 der 2.771 Adressen in beiden Planungsräumen gilt seit 1991 die städtebauliche Erhaltungsverordnung Lichterfelde-West: Abriss, Umbau, Nutzungsänderung und Neubau brauchen dort eine Genehmigung.[[11,12]] Für die meisten Adressen der Villenkolonie, an Potsdamer Straße, Baseler Straße, Kadettenweg, Ringstraße und Drakestraße, sank der Bodenrichtwert zum 01.01.2026 von 1.200 auf 1.100 €/m², am Weißwasserweg und an der Finckensteinallee von 1.000 auf 950 €/m².[[2]] Hauspreise weist der Gutachterausschuss nur für den früheren Bezirk Steglitz aus: Ein- und Zweifamilienhäuser kosteten dort 2025 im Mittel 5.037 €/m² Wohnfläche, bei einer Spanne von 3.078 bis 7.104 €/m².[[1]]"
+      ],
+      "bild": {
+        "name": "steglitz-zehlendorf-lichterfelde-west",
+        "alt": "Wohnhaus in der Villenkolonie Lichterfelde West",
+        "caption": "Ein Haus in Lichterfelde West.",
+        "credit": "Earlyspatz, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Haus_Lichterfelde-West_3.jpg",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "h2": "Lichterfelde Ost: S-Bahn, Regionalzug und mittlere Wohnlage",
+      "absaetze": [
+        "Lichterfelde Ost wurde nach ähnlichem Muster als Villenkolonie angelegt wie der Westen, hat im Zweiten Weltkrieg aber stärkere Beschädigungen davongetragen. Vom Bahnhof Lichterfelde Ost fuhr 1881 die erste elektrische Straßenbahn zur Hauptkadettenanstalt und der Ostpreußendamm, bis 1960 Berliner Straße, folgt der alten Handelsstraße zwischen Berlin und Leipzig.[[16]] Heute fahren vom Bahnhof die S25 und die S26 in 20 Minuten bis Friedrichstraße; mit dem RE3 und Umstieg am Südkreuz sind es 19 Minuten.[[10]]",
+        "In den Planungsräumen Königsberger Straße und Oberhofer Platz liegen 89 % der Adressen in mittlerer und 11 % in guter Wohnlage.[[3]] Rund um Ostpreußendamm, Bahnhofstraße, Königsberger Straße und Jungfernstieg sank der Bodenrichtwert zum 01.01.2026 von 1.000 auf 950 €/m², um Grabenstraße, Oberhofer Weg und Ferdinandstraße von 900 auf 850 €/m² und an der Mariannenstraße und der Pößnecker Straße von 800 auf 750 €/m².[[2]] Bodenwerte und Wohnlage liegen damit unter denen in Lichterfelde West, die Fahrzeit in die Mitte ist kürzer. Für 1.351 der 2.505 Adressen gilt seit 1996 die städtebauliche Erhaltungsverordnung Lichterfelde-Ost.[[11]]"
+      ],
+      "bild": {
+        "name": "steglitz-zehlendorf-lichterfelde-ost-bahnhof",
+        "alt": "Bahnsteig am Bahnhof Lichterfelde Ost mit Bahnsteigschild, Leuchten und Oberleitung unter blauem Himmel mit Wolken",
+        "caption": "Am Bahnhof Lichterfelde Ost.",
+        "credit": "Sneeuwvlakte, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Bahnhof_Berlin-Lichterfelde_Ost_(2026-10-04)-1.jpg"
+      }
+    },
+    {
+      "h2": "Wannsee: Villen am Großen und am Kleinen Wannsee",
+      "absaetze": [
+        "Wannsee ging aus dem Dorf Stolpe hervor, das 1299 erstmals erwähnt wurde. 1863 erwarb Wilhelm Conrad, Direktor der Berliner Handelsgesellschaft, den Gasthof „Stimmiger Krug“, ab 1874 begann die Besiedlung am Ostufer des Großen Wannsees, gegenüber lag die Kolonie Alsen. 1898 entstand aus Stolpe und den beiden Kolonien die Gemeinde Wannsee.[[17]] Zum Ortsteil gehören die Pfaueninsel sowie Schloss und Park Glienicke, beide UNESCO-Welterbe, außerdem die Liebermann-Villa und das Haus der Wannseekonferenz.[[17]] Hier leben 10.052 Menschen.[[8]] Vom S-Bahnhof Wannsee fährt die S7 alle 10 Minuten in 28 Minuten bis Friedrichstraße, mit RE1 und S-Bahn sind es 26 Minuten.[[10]]",
+        "95 % der Adressen liegen in guter Wohnlage.[[3]] Für die meisten Grundstücke, etwa Am Großen Wannsee, an der Königstraße und der Hohenzollernstraße, sank der Bodenrichtwert zum 01.01.2026 von 1.300 auf 1.200 €/m². Die höchsten Werte im Ortsteil haben Teile der Straße Am Sandwerder mit 1.800 und Am Kleinen Wannsee mit 1.600 €/m², beide bei einer Geschossflächenzahl von 0,2; an der Teltower Straße liegt er bei 510 €/m².[[2]] Wassergrundstücke bewerten wir einzeln, nach Ufer, Grundstück und Bebauung."
+      ],
+      "bild": {
+        "name": "steglitz-zehlendorf-wannsee-hafen",
+        "alt": "Bootshafen am Großen Wannsee mit Segel- und Motorbooten, dahinter Wasser und Waldufer",
+        "caption": "Bootshafen am Großen Wannsee.",
+        "credit": "Palickap, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Berlin-Wannsee,_Hafen_(1).jpg"
+      }
+    },
+    {
+      "h2": "Schlachtensee: Villenkolonien zwischen See und S-Bahn",
+      "absaetze": [
+        "Schlachtensee ist seit dem 11. Dezember 2020 ein eigener Ortsteil, gebildet aus Teilen von Zehlendorf und Nikolassee.[[18,8]] Um 1880 begann die Heimstätten AG mit dem Bau von Landhäusern und Villen in den Kolonien Schlachtensee-West, zwischen Spanischer Allee, Wasgenstraße, Krottnaurerstraße und Altvaterstraße, und Schlachtensee-Ost, zwischen Bergengruenstraße, Ahrenshooper Zeile, Salzachstraße und Potsdamer Chaussee. Rückgrat und örtliches Versorgungszentrum ist die Breisgauer Straße, die direkt zum S-Bahnhof führt.[[18]] Hier leben 10.003 Menschen.[[8]] Die S1 braucht vom S-Bahnhof Schlachtensee 32 Minuten bis Friedrichstraße, in unserer Abfrage fuhr sie alle 20 Minuten.[[10]]",
+        "2.127 der 2.133 Adressen im Ortsteil liegen in guter Wohnlage.[[3]] Um Salzachstraße, Ahrenshooper Zeile und Bergengruenstraße sank der Bodenrichtwert zum 01.01.2026 von 1.600 auf 1.500 €/m², um Spanische Allee, Matterhornstraße und Altvaterstraße von 1.500 auf 1.400 €/m². An der Siedlung Am Heidehof und der Wasgenstraße liegt er bei 1.000 €/m², nach 1.100 im Vorjahr.[[2]] Ein- und Zweifamilienhäuser kosteten 2025 im früheren Bezirk Zehlendorf, zu dem Schlachtensee gehört, im Mittel 6.487 €/m² Wohnfläche.[[1,8]]"
+      ],
+      "bild": {
+        "name": "steglitz-zehlendorf-schlachtensee-bahnhof",
+        "alt": "S-Bahn auf der Brücke am S-Bahnhof Schlachtensee, darunter eine Straße mit parkenden Autos und Kiefern",
+        "caption": "Der S-Bahnhof Schlachtensee.",
+        "credit": "Michael.F.H.Barth, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Berlin_S-Bahn_Bhf_Schlachtensee_(S01_1359).jpg"
+      }
+    },
+    {
+      "h2": "Nikolassee: Villenkolonie, Strandbad und Schwanenwerder",
+      "absaetze": [
+        "Nikolassee wurde 1901 als Villenkolonie gegründet. 1902 wurde der Bahnhof eingeweiht, entworfen von den Architekten Fritz Bräuning und Paul Vogler, 1910 wurde Nikolassee selbstständige Landgemeinde und 1920 Teil von Groß-Berlin; in den 1930er-Jahren kam am Ostrand die Siedlung Wonnegauviertel hinzu.[[19]] Zum Ortsteil gehören das 1907 eröffnete, denkmalgeschützte Strandbad Wannsee, die Rehwiese, das Museumsdorf Düppel und die Insel Schwanenwerder.[[19]] Hier leben 11.364 Menschen.[[8]] Vom S-Bahnhof Nikolassee fährt die S7 alle 10 Minuten in 25 Minuten bis Friedrichstraße.[[10]]",
+        "77 % der Adressen liegen in guter und 23 % in mittlerer Wohnlage.[[3]] Um Beskidenstraße, Spanische Allee, Prinz-Friedrich-Leopold-Straße und Von-Luck-Straße sank der Bodenrichtwert zum 01.01.2026 von 1.500 auf 1.400 €/m², um Barnhelmstraße, Katteweg und Quantzstraße sowie an der Parforceheide von 900 auf 850 €/m², um Tristanstraße, Lohengrinstraße und Nibelungenstraße von 1.100 auf 1.000 €/m². Auf Schwanenwerder, an der einzigen Straße der Insel, liegt er bei 1.700 €/m² und einer Geschossflächenzahl von 0,1, nach 1.800 im Vorjahr.[[2,19]]"
+      ],
+      "bild": {
+        "name": "steglitz-zehlendorf-nikolassee-bahnhof",
+        "alt": "Empfangsgebäude des S-Bahnhofs Nikolassee aus Backstein mit Uhrturm und Spitzdach",
+        "caption": "Das Empfangsgebäude des S-Bahnhofs Nikolassee.",
+        "credit": "KUI, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:S_Bahnhof_Nikolassee_200071021.jpg"
+      }
+    }
+  ],
+  "band": {
+    "name": "steglitz-zehlendorf-pfaueninsel-havel",
+    "alt": "Blick über die blaue Havel auf eine kleine bewaldete Insel im Herbstlaub, davor ein Segelboot, im Vordergrund Schilf",
+    "caption": "Blick von der Pfaueninsel über die Havel.",
+    "credit": "S.Makhin, CC BY 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:A_beautiful_view_of_Lake_Havel_from_Peacock_Island.jpg"
+  },
+  "verkaufen": {
+    "h2": "Immobilie in Steglitz-Zehlendorf verkaufen",
+    "absaetze": [
+      "In keinem Berliner Bezirk wurden 2025 so viele bebaute Grundstücke verkauft wie in Steglitz-Zehlendorf: 540, das sind 14,7 % aller Berliner Verkäufe. Insgesamt zählte der Gutachterausschuss im Bezirk 2.240 Kauffälle, davon 1.660 für Wohnungseigentum. Für Ein- und Zweifamilienhäuser nennt er im früheren Bezirk Zehlendorf einen Mittelwert von 6.487 €/m² Wohnfläche bei einer Spanne von 4.129 bis 9.417 €/m², im früheren Bezirk Steglitz 5.037 €/m² bei 3.078 bis 7.104 €/m².[[1]] Wo Ihr Haus in dieser Spanne liegt, hängt an Lage, Grundstück, Baujahr und Zustand. Wir bewerten deshalb nach Ihrer Bodenrichtwertzone, der Wohnlage und Vergleichsverkäufen.",
+      "Die Bodenrichtwerte für Ein- und Zweifamilienhausgebiete hat der Gutachterausschuss zum 01.01.2026 um rund 5 % gesenkt. Für Eigentumswohnungen lag der Mittelwert 2025 im früheren Bezirk Steglitz bei 4.390 nach 4.381 €/m² im Vorjahr, im früheren Bezirk Zehlendorf bei 4.768 nach 4.638 €/m².[[1]]"
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Steglitz-Zehlendorf",
+    "absaetze": [
+      "Als Eigennutzer wählen Sie im Bezirk vor allem nach der Bahnlinie: Die S1 fährt über Rathaus Steglitz, Lichterfelde West und Schlachtensee, S25 und S26 halten in Lichterfelde Ost, die S7 in Nikolassee und Wannsee. Von diesen Bahnhöfen sind Sie in 19 bis 32 Minuten an der Friedrichstraße.[[10]] Seit dem 01.01.2026 ist in ganz Berlin die Umwandlung von Miet- in Eigentumswohnungen in Häusern mit mehr als fünf Wohnungen genehmigungspflichtig und damit grundsätzlich verboten, bis zum 31.12.2030; für neu geschaffenen Wohnraum gilt das nicht.[[14]] In den sozialen Erhaltungsgebieten in Steglitz gilt das auch für kleinere Häuser und Luxusmodernisierungen oder Wohnungszusammenlegungen können versagt werden.[[13]]",
+      "Als Kapitalanleger rechnen Sie mit dem Mietspiegel 2026 und der Mietpreisbremse, die in ganz Berlin bis 31.12.2029 gilt: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[4,6]] Bestandsmieten dürfen bis zur Vergleichsmiete in drei Jahren um höchstens 15 % steigen.[[7]] 80 % der Mietangebote im Bezirk lagen 2025 zwischen 8,88 und 23,67 €/m².[[9]] Aus Kaufpreis, Miete und Bewirtschaftungskosten rechnen wir mit Ihnen die Rendite, bevor Sie kaufen."
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Steglitz-Zehlendorf",
+    "absaetze": [
+      "Eigentumswohnungen kosteten 2025 im früheren Bezirk Zehlendorf im Mittel 4.768 €/m² Wohnfläche, Ein- und Zweifamilienhäuser 6.487 €/m².[[1]] Dazu kommen die Kaufnebenkosten und wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen: Wir rechnen das mit Ihnen durch, vergleichen Ihre Finanzierung über Europace und Baufinex und fragen parallel Banken direkt an."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Wie hoch sind die Immobilienpreise in Steglitz und Zehlendorf?",
+      "antwort": "Der Gutachterausschuss weist die Preise nach den früheren Bezirken aus. Eigentumswohnungen kosteten 2025 im früheren Bezirk Steglitz, mit Steglitz, Lichterfelde und Lankwitz, im Mittel 4.390 €/m² Wohnfläche, im früheren Bezirk Zehlendorf 4.768 €/m² und in Dahlem 6.427 €/m²; in ganz Berlin waren es 5.017 €/m². Ein- und Zweifamilienhäuser kosteten im früheren Bezirk Steglitz im Mittel 5.037 €/m², in Zehlendorf 6.487 €/m² und in Dahlem 9.120 €/m².[[1,8]] Für Ihre Immobilie zählen Wohnlage, Baujahr und Zustand.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienmakler Berlin-Steglitz“, „Immobilie verkaufen Berlin-Steglitz“, „Immobilienbewertung Berlin-Steglitz“ und „Immobilienmakler Berlin-Zehlendorf“, dort als „Wie hoch sind die Immobilienpreise in Berlin-Steglitz?“, „Wie hoch ist der Quadratmeterpreis in Steglitz?“ und „Wie hoch ist der Quadratmeterpreis in Zehlendorf?“ (Google_Areas, Oktober 2026); Google-Autocomplete „quadratmeterpreis eigentumswohnung berlin steglitz“, „immobilienpreise steglitz“ und „immobilienpreise zehlendorf“ (research/serp/autocomplete-2026-10-26-steglitz-zehlendorf.json)"
+    },
+    {
+      "frage": "Wie hoch ist der Bodenrichtwert in Zehlendorf, Wannsee und Lichterfelde West 2026?",
+      "antwort": "Zum 01.01.2026 liegt er in den meisten Lagen von Lichterfelde West bei 1.100 €/m², in Wannsee bei 1.200 €/m² und bis zu 1.800 €/m² Am Sandwerder, in Schlachtensee bei 1.000 bis 1.500 €/m², in Nikolassee meist bei 850 bis 1.400 €/m² und auf Schwanenwerder bei 1.700 €/m². Alle diese Werte für Ein- und Zweifamilienhausgebiete sanken um 50 bis 100 €/m².[[2]] In den dicht bebauten Straßen von Steglitz blieben 2.000 und 2.700 €/m² unverändert.[[2]]",
+      "herkunft": "Google-Autocomplete „bodenrichtwert zehlendorf 2025“, „bodenrichtwert berlin steglitz zehlendorf“, „bodenrichtwert lichterfelde west“, „bodenrichtwert wannsee“ und „bodenrichtwert steglitz“ (research/serp/autocomplete-2026-10-26-steglitz-zehlendorf.json)"
+    },
+    {
+      "frage": "Gibt es einen Mietspiegel für Steglitz, Zehlendorf oder Lichterfelde?",
+      "antwort": "Es gilt der Berliner Mietspiegel 2026 für die ganze Stadt, mit einfacher, mittlerer und guter Wohnlage je Adresse; für Wohnungen in Ein- und Zweifamilienhäusern gilt er nicht.[[4]] Im Ortsteil Steglitz liegen 40 % der Adressen in guter Wohnlage, im Planungsraum Lichterfelde West 81 %, in Schlachtensee fast alle.[[3]] Für eine Altbauwohnung bis Baujahr 1918 mit 60 bis unter 70 m² in guter Wohnlage nennt die Tabelle 7,09 bis 13,54 €/m², im Mittel 9,46 €/m² nettokalt.[[5]]",
+      "herkunft": "Google-Autocomplete „mietspiegel steglitz 2026“, „mietspiegel zehlendorf 2026“, „mietspiegel steglitz zehlendorf“, „mietspiegel lichterfelde west“ und „mietspiegel lichterfelde ost“ (research/serp/autocomplete-2026-10-26-steglitz-zehlendorf.json)"
+    },
+    {
+      "frage": "Ist Zehlendorf eine gute Wohngegend?",
+      "antwort": "Die amtlichen Zahlen geben Anhaltspunkte. Im Berliner Mietspiegel 2026 liegen in Schlachtensee fast alle Adressen in guter Wohnlage, in Wannsee 95 % und in Nikolassee 77 %.[[3]] Die Wohnungen im Bezirk sind im Mittel 85,0 m² groß, in ganz Berlin 72,5 m², und der Anteil der Mietwohnungen ist mit 74,9 % niedriger als in Berlin mit 85,1 %.[[9]] Mit der S1 und der S7 sind Sie in 25 bis 32 Minuten an der Friedrichstraße.[[10]]",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienbewertung Berlin-Zehlendorf“ (Google_Areas, Oktober 2026); Google-Autocomplete „wohnen in zehlendorf“ und „wohnen in steglitz zehlendorf“ (research/serp/autocomplete-2026-10-26-steglitz-zehlendorf.json)"
+    },
+    {
+      "frage": "Was kostet ein Haus am Wannsee oder in Schlachtensee?",
+      "antwort": "Hauspreise weist der Gutachterausschuss für den früheren Bezirk Zehlendorf aus, zu dem Wannsee, Schlachtensee und Nikolassee gehören: Ein- und Zweifamilienhäuser kosteten dort 2025 im Mittel 6.487 €/m² Wohnfläche, bei 54 Verkäufen und einer Spanne von 4.129 bis 9.417 €/m².[[1,8]] Für das Grundstück nennt der Bodenrichtwert zum 01.01.2026 in Wannsee meist 1.200 €/m², Am Kleinen Wannsee 1.600 €/m², in Schlachtensee 1.000 bis 1.500 €/m².[[2]]",
+      "herkunft": "Google-Autocomplete „haus kaufen wannsee wassergrundstück“, „haus kaufen am großen wannsee“, „villa am kleinen wannsee kaufen“, „haus kaufen schlachtensee berlin“ und „haus kaufen zehlendorf nikolassee“ (research/serp/autocomplete-2026-10-26-steglitz-zehlendorf.json)"
+    },
+    {
+      "frage": "Wie hoch ist die Maklerprovision in Berlin?",
+      "antwort": "Kauft ein Verbraucher eine Wohnung oder ein Einfamilienhaus, teilen sich Käufer und Verkäufer die Provision zu gleichen Teilen (§§ 656a bis 656d BGB). Bei Fischer & Geserich sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision. Bei Mehrfamilienhäusern und Grundstücken gilt die Teilung nicht. Die Provision fällt nur an, wenn der Kaufvertrag zustande kommt.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienmakler Berlin“, „Immobilienmakler Berlin-Pankow“ und „Immobilienmakler Berlin-Charlottenburg“ (Google_Areas, Oktober 2026). Antwort nach /maklerprovision/ und /kaufen/ (Stand 26.10.2026)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Charlottenburg-Wilmersdorf",
+      "url": "/standorte/berlin/charlottenburg-wilmersdorf/"
+    },
+    {
+      "name": "Tempelhof-Schöneberg",
+      "url": "/standorte/berlin/tempelhof-schoeneberg/"
+    },
+    {
+      "name": "Teltow & Kleinmachnow",
+      "url": "/standorte/teltow/"
+    },
+    {
+      "name": "Landkreis Potsdam-Mittelmark",
+      "url": "/standorte/potsdam-mittelmark/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Immobilienmarktbericht Berlin 2025/2026, Geschäftsstelle des Gutachterausschusses für Grundstückswerte in Berlin",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stand": "Stand 31.07.2026; Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+    },
+    {
+      "name": "Bodenrichtwerte des Gutachterausschusses für Grundstückswerte in Berlin, Geoportal Berlin (WFS brw2026 und brw2025), eigene Zuordnung zu den Adressen",
+      "url": "https://gdi.berlin.de/services/wfs/brw2026?REQUEST=GetCapabilities&SERVICE=wfs",
+      "stand": "Stichtag 01.01.2026, Vergleich mit 01.01.2025"
+    },
+    {
+      "name": "Wohnlagenzuordnung der Adressen zum Berliner Mietspiegel 2026, Geoportal Berlin (WFS wohnlagenadr2026), eigene Auswertung nach LOR-Planungsräumen",
+      "url": "https://gdi.berlin.de/services/wfs/wohnlagenadr2026?REQUEST=GetCapabilities&SERVICE=wfs",
+      "stand": "Mietspiegel 2026, Planungsräume Stand 2021"
+    },
+    {
+      "name": "Berliner Mietspiegel 2026, Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen",
+      "url": "https://mietspiegel.berlin.de/wp-content/uploads/2026/05/mietspiegel2026.pdf",
+      "stand": "Stichtag 01.09.2025, Straßenverzeichnis im Amtsblatt vom 28.05.2026"
+    },
+    {
+      "name": "Berliner Mietspiegeltabelle 2026",
+      "url": "https://mietspiegel.berlin.de/wp-content/uploads/2026/05/mietspiegeltabelle2026.pdf",
+      "stand": "Stichtag 01.09.2025"
+    },
+    {
+      "name": "Senatskanzlei Berlin, Pressemitteilung zur Mietenbegrenzungsverordnung",
+      "url": "https://www.berlin.de/rbmskzl/aktuelles/pressemitteilungen/2025/pressemitteilung.1615170.php",
+      "stand": "11.11.2025, gültig 01.01.2026 bis 31.12.2029"
+    },
+    {
+      "name": "Berliner Mietratgeber: Miete, Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen (Kappungsgrenzenverordnung vom 14.03.2023)",
+      "url": "https://www.berlin.de/sen/wohnen/wissen-fuer-mieter/berliner-mietratgeber/miete/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 5 – hj 1/26, Einwohnerinnen und Einwohner im Land Berlin",
+      "url": "https://download.statistik-berlin-brandenburg.de/7cb89e083c1ea02d/4e03c8e1693a/SB_A01-05-00_2026h01_BE.xlsx",
+      "stand": "30.06.2026"
+    },
+    {
+      "name": "IBB Wohnungsmarktbericht 2025, Bezirksprofil Steglitz-Zehlendorf",
+      "url": "https://www.ibb.de/media/dokumente/publikationen/berliner-wohnungsmarkt/wohnungsmarktbericht/2025/steglitz-zehlendorf.pdf",
+      "stand": "Werte 2024, Angebotsmieten 2025"
+    },
+    {
+      "name": "VBB-Fahrplandaten, Verbindungen bis S+U Friedrichstraße",
+      "url": "https://v6.vbb.transport.rest/journeys?from=900062202&to=900100001&departure=2026-11-10T09:00%2B01:00",
+      "stand": "Fahrplan Dienstag 10.11.2026, abgefragt 26.10.2026"
+    },
+    {
+      "name": "Erhaltungsverordnungsgebiete Berlin, Geoportal Berlin (WFS erhaltungsverordnungsgebiete, soziale und städtebauliche Erhaltungsgebiete), eigener Abgleich mit den Adressen",
+      "url": "https://gdi.berlin.de/services/wfs/erhaltungsverordnungsgebiete?REQUEST=GetCapabilities&SERVICE=wfs",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "§ 172 Baugesetzbuch, Erhaltung baulicher Anlagen und der Eigenart von Gebieten",
+      "url": "https://www.gesetze-im-internet.de/bbaug/__172.html",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen, Soziales Erhaltungsrecht",
+      "url": "https://www.berlin.de/sen/stadtentwicklung/quartiersentwicklung/stadterneuerung/soziales-erhaltungsrecht/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen, Umwandlungsverordnung nach § 250 BauGB",
+      "url": "https://www.berlin.de/sen/wohnen/rechtliches/umwandlungsverordnung/",
+      "stand": "Verordnung vom 11.11.2025, gültig 01.01.2026 bis 31.12.2030"
+    },
+    {
+      "name": "Bezirksamt Steglitz-Zehlendorf, Ortsteil Steglitz",
+      "url": "https://www.berlin.de/ba-steglitz-zehlendorf/bezirk-erleben/ortsteile/steglitz/steglitz-1344355.php",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Bezirksamt Steglitz-Zehlendorf, Ortsteil Lichterfelde",
+      "url": "https://www.berlin.de/ba-steglitz-zehlendorf/bezirk-erleben/ortsteile/lichterfelde/lichterfelde-1344319.php",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Bezirksamt Steglitz-Zehlendorf, Ortsteil Wannsee",
+      "url": "https://www.berlin.de/ba-steglitz-zehlendorf/bezirk-erleben/ortsteile/wannsee/wannsee-1344357.php",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Bezirksamt Steglitz-Zehlendorf, Ortsteil Schlachtensee",
+      "url": "https://www.berlin.de/ba-steglitz-zehlendorf/bezirk-erleben/ortsteile/schlachtensee/schlachtensee-1344335.php",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Bezirksamt Steglitz-Zehlendorf, Ortsteil Nikolassee",
+      "url": "https://www.berlin.de/ba-steglitz-zehlendorf/bezirk-erleben/ortsteile/nikolassee/nikolassee-1344323.php",
+      "stand": "abgerufen 26.10.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "Einwohner 30.06.2026: Steglitz 76.247, Lichterfelde 85.020, Wannsee 10.052, Schlachtensee 10.003 (seit BA-Beschluss 2020), Nikolassee 11.364",
+      "fundstelle": "steglitz-zehlendorf.md Nr. 4; berlin-grundlagen.md Nr. 31; AfS T11"
+    },
+    {
+      "zahl": "Kauffälle 2025: 540 bebaut (14,7 %, höchster Wert), 2.240 gesamt, 1.660 WE",
+      "fundstelle": "steglitz-zehlendorf.md Nr. 7; berlin-grundlagen.md Nr. 27 (IMB S. 77)"
+    },
+    {
+      "zahl": "EFH/ZFH: Steglitz 87 / 3.078–7.104 / 5.037; Zehlendorf 54 / 4.129–9.417 / 6.487; Dahlem 7 / 9.120; Berlin 4.366",
+      "fundstelle": "steglitz-zehlendorf.md Nr. 8; IMB S. 50, imb.txt Z. 2855–2884"
+    },
+    {
+      "zahl": "ETW: Steglitz 712 / 2.435–6.428 / 4.390 (2024 4.381); Zehlendorf 271 / 4.768 (4.638); Dahlem 6.427; Berlin 5.017",
+      "fundstelle": "steglitz-zehlendorf.md Nr. 9; IMB S. 61, imb.txt Z. 3520–3553"
+    },
+    {
+      "zahl": "BRW offene Bauweise rd. −5 %, S-Z 300–2.700, Dahlem 2.200–2.700; Begründung verhaltene Nachfrage, Bau- und Finanzierungskosten",
+      "fundstelle": "berlin-grundlagen.md Nr. 21–23 (IMB S. 30–31)"
+    },
+    {
+      "zahl": "IBB: Angebote 8,88–23,67 (80 %), Berlin 7,88–25,06; Mietwohnungen 74,9 / 85,1 %; Ø 85,0 / 72,5 m²",
+      "fundstelle": "berlin-grundlagen.md Nr. 40, 44; ibb_stegli.txt"
+    },
+    {
+      "zahl": "Steglitz: 1375 Landbuch, dichtere Bebauung nach den Weltkriegen, Schloßstraße als Zentrum nach Kriegsende; WL 60/40; BRW 2399 2.000, 2398 2.700 (GFZ 2,0, unverändert), 1784 1.000→950 (GFZ 0,6); S1 19 min alle 10 min",
+      "fundstelle": "steglitz-zehlendorf.md Nr. 20, 30, 40; zstreets.py"
+    },
+    {
+      "zahl": "Lichterfelde: Carstenn um 1865, HKA 1873–1878, Straßenbahn 1881, Lichterfelde West wörtlich nach BA, Ost stärker kriegsbeschädigt, Ostpreußendamm bis 1960 Berliner Straße; WL LiWe 81 % gut (1.126/1.393), Augustaplatz 52 %, Ost 89 % mittel (2.229/2.505); BRW 1778 1.200→1.100 (1.209 Adressen), 1798 1.000→950, 1790 1.000→950, 1804 900→850, 1833 800→750; S1 23, S25/S26 20, RE3 19 min",
+      "fundstelle": "steglitz-zehlendorf.md Nr. 21–23, 31, 41, 42; zstreets.py"
+    },
+    {
+      "zahl": "Wannsee: Stolpe 1299, Conrad 1863, Ostufer ab 1874, Alsen, Gemeinde 1898, Pfaueninsel und Glienicke UNESCO; WL 95 % gut; BRW 1653 1.300→1.200, 1598 Am Sandwerder 1.800, 1602 Am Kleinen Wannsee 1.600 (GFZ 0,2), 1731 Teltower Straße 510; S7 28, RE1+S 26 min",
+      "fundstelle": "steglitz-zehlendorf.md Nr. 24, 32, 43; zstreets.py"
+    },
+    {
+      "zahl": "Schlachtensee: Ortsteil 11.12.2020, HAG-Kolonien um 1880 mit Straßengrenzen, Breisgauer Straße; WL 2.127 von 2.133 gut; BRW 1628 1.600→1.500, 1613 1.500→1.400, 1663 1.100→1.000; S1 32 min, alle 20 min",
+      "fundstelle": "steglitz-zehlendorf.md Nr. 25, 33, 45; zstreets.py"
+    },
+    {
+      "zahl": "Nikolassee: 1901, Bahnhof 1902 Bräuning/Vogler, 1910, 1920, Wonnegauviertel, Strandbad 1907 denkmalgeschützt, Rehwiese, Düppel, Schwanenwerder mit einziger Inselstraße; WL 77/23; BRW 1613 1.500→1.400, 1718/1698 900→850, 1643 1.100→1.000, 1607 1.800→1.700 (GFZ 0,1); S7 25 min",
+      "fundstelle": "steglitz-zehlendorf.md Nr. 26, 34, 44; zstreets.py"
+    },
+    {
+      "zahl": "Soziale Erhaltungsgebiete Steglitz: Feuerbachstraße 528, Mittelstraße 379, Gritznerstraße Nord 259 Adressen, alle in Kraft 10.02.2024; zusammen 1.166 von 5.570 im Ortsteil. Städtebauliche Erhaltungsgebiete: Lichterfelde-West in Kraft 20.11.1991, PLR Lichterfelde West 856/1.393 + Augustaplatz 983/1.378 = 1.839/2.771; Lichterfelde-Ost 21.07.1996, 1.351/2.505",
+      "fundstelle": "steglitz-zehlendorf.md Nr. 11–14; erhalt_check.py gegen WFS erhaltungsverordnungsgebiete"
+    },
+    {
+      "zahl": "§ 172 Abs. 1 Nr. 1 BauGB: Rückbau, Änderung, Nutzungsänderung und Errichtung genehmigungspflichtig. Soziale Erhaltungsgebiete: Luxusmodernisierungen, Wohnungszusammenlegungen können versagt werden, Umwandlung auch unter sechs Wohnungen genehmigungspflichtig (Umwandlungsverordnung 2025). § 250 BauGB: 01.01.2026–31.12.2030, mehr als fünf Wohnungen, Neubau ausgenommen",
+      "fundstelle": "steglitz-zehlendorf.md Nr. 13, 14; baugb172.html; sen_erhalt.txt; pankow.md Nr. 15"
+    },
+    {
+      "zahl": "Mietspiegel 2026 gilt nicht für EFH/ZFH; Zeile 135: 7,09 / 9,46 / 13,54; Mietpreisbremse bis 31.12.2029, 10 %; Kappung 15 % in drei Jahren",
+      "fundstelle": "berlin-grundlagen.md Nr. 1, 2, 11, 13"
+    },
+    {
+      "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, Halbteilung §§ 656a–656d BGB, nicht bei MFH und Grundstücken; § 34c und § 34i GewO; Lennart Geserich; Europace und Baufinex",
+      "fundstelle": "maklerprovision.njk, kaufen.njk; wie maerkisch-oderland.json"
+    }
+  ],
+  "karte": {
+    "alt": "Karte des Bezirks Steglitz-Zehlendorf: Steglitz, Lankwitz, Lichterfelde mit Lichterfelde West und Lichterfelde Ost, Giesensdorf, Dahlem, Zehlendorf, Düppel, Schlachtensee, Nikolassee mit dem Wonnegauviertel und Wannsee, dazu die Bahnstrecken, die Autobahnen, die Havel und die Seen und der Bahnhof Friedrichstraße im Nordosten"
+  },
+  "anbindung": [
+    "Vom S- und U-Bahnhof Rathaus Steglitz fährt die S1 alle 10 Minuten und braucht 19 Minuten bis Friedrichstraße.[[10]]",
+    "Vom S-Bahnhof Lichterfelde West fährt die S1 alle 10 Minuten in 23 Minuten bis Friedrichstraße.[[10]]",
+    "Vom Bahnhof Lichterfelde Ost fuhr 1881 die erste elektrische Straßenbahn zur Hauptkadettenanstalt und der Ostpreußendamm, bis 1960 Berliner Straße, folgt der alten Handelsstraße zwischen Berlin und Leipzig.[[16]] Heute fahren vom Bahnhof die S25 und die S26 in 20 Minuten bis Friedrichstraße; mit dem RE3 und Umstieg am Südkreuz sind es 19 Minuten.[[10]]",
+    "Vom S-Bahnhof Wannsee fährt die S7 alle 10 Minuten in 28 Minuten bis Friedrichstraße, mit RE1 und S-Bahn sind es 26 Minuten.[[10]]",
+    "Die S1 braucht vom S-Bahnhof Schlachtensee 32 Minuten bis Friedrichstraße, in unserer Abfrage fuhr sie alle 20 Minuten.[[10]]",
+    "Vom S-Bahnhof Nikolassee fährt die S7 alle 10 Minuten in 25 Minuten bis Friedrichstraße.[[10]]"
+  ]
+}

@@ -1,0 +1,461 @@
+{
+  "slug": "bernau",
+  "name": "Bernau bei Berlin",
+  "nameLang": "Bernau bei Berlin",
+  "kontakt": "lennart",
+  "kreis": {
+    "name": "Landkreis Barnim",
+    "url": "/standorte/barnim/"
+  },
+  "title": "Immobilienmakler Bernau bei Berlin – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler für Bernau bei Berlin: Verkauf, Kauf und Finanzierung aus einer Hand, mit Preisen je Wohnlage aus 2025. Kostenlose Wertermittlung.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Bernau bei Berlin",
+  "kurzantwort": "Fischer & Geserich ist Ihr Makler für Bernau bei Berlin, von der Kernstadt bis zu den Ortsteilen Schönow, Ladeburg und Lobetal. Wir bewerten und verkaufen Häuser und Wohnungen, beraten Käufer und Kapitalanleger und vergleichen die Finanzierung.",
+  "stand": "Oktober 2026",
+  "updated": "2026-10-26",
+  "zahlen": [
+    {
+      "wert": "250–370 €/m²",
+      "label": "Bodenrichtwerte für Einfamilienhaus-Grundstücke in Bernau (Stadtgebiet)",
+      "detail": "Spanne laut Gutachterausschuss. 30 der 45 baureifen Wohn- und Mischzonen blieben gleich.",
+      "quelle": "Gutachterausschuss Barnim, Grundstücksmarktbericht 2025, und BORIS Brandenburg",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+      "stichtag": "Stichtag 01.01.2026"
+    },
+    {
+      "wert": "Ø 3.340 €/m²",
+      "label": "Freistehende Häuser in Bernau, normierter Preis je m² Wohnfläche",
+      "detail": "52 Kauffälle aller Baujahre, normiert 451.000 € bei 139 m² Wohnfläche. Vorjahr: Ø 3.290 €/m².",
+      "quelle": "Gutachterausschuss Barnim, Grundstücksmarktbericht 2025",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "2.890 €/m²",
+      "label": "Weiterverkaufte Wohnungen in Friedenstal, Baujahre nach 1992",
+      "detail": "Normierter Mittelwert, 10 Kauffälle. Innenstadt 2.700, Süd 2.790, Viehtrift 2.330 €/m².",
+      "quelle": "Gutachterausschuss Barnim, Grundstücksmarktbericht 2025",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "10,3 €/m²",
+      "label": "Mittlere Nettokaltmiete für Wohnungen in Bernau",
+      "detail": "46 Mietfälle 2024 und 2025, Spanne 5,8 bis 16,2 €/m². Kein Mietspiegel.",
+      "quelle": "Gutachterausschuss Barnim, Grundstücksmarktbericht 2025",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+      "stichtag": "Mietdaten 2024–2025"
+    },
+    {
+      "wert": "44.706",
+      "label": "Einwohner am 31.12.2025",
+      "detail": "109 mehr als ein Jahr zuvor; 2024 betrug das Plus 270.",
+      "quelle": "Amt für Statistik Berlin-Brandenburg",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stichtag": "Stand 31.12.2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Stadtkern, Breitscheidstraße und Bahnhof",
+      "absaetze": [
+        "Bernau bei Berlin besteht aus der Kernstadt und acht Ortsteilen.[[6]] Am 31.12.2025 hatte die Stadt 44.706 Einwohner, 109 mehr als ein Jahr zuvor. Gewachsen ist sie nur durch Zuzug: 2025 starben 610 Menschen, geboren wurden 298.[[3]]",
+        "Der Bahnhof Bernau ist Endpunkt der S2 und Halt von RE3 und RB24,[[7]] ein zweiter S-Bahnhof liegt in Friedenstal. Der RE3 fährt in 21 Minuten zum Berliner Hauptbahnhof, die S2 braucht ohne Umstieg 35 Minuten bis Friedrichstraße.[[13]] Den tagsüber dichteren 10-Minuten-Takt der S2 gibt es nur bis Buch, nach Bernau fährt sie alle 20 Minuten.[[12]]",
+        "Im Stadtkern liegen die Bodenrichtwerte zum 01.01.2026 bei 550 €/m² im Zentrum, 500 €/m² in Stadtkern Süd und 420 €/m² in der Wohnzone des Stadtkerns, an der Breitscheidstraße bei 450 €/m² und an der Karl-Marx-Straße bei 440 €/m². Zum neuen Stichtag sind sie unverändert.[[2]] Weiterverkaufte Wohnungen der Baujahre nach 1992 kosteten 2025 in der Innenstadt im normierten Mittel 2.700 €/m², allerdings bei nur 4 Kauffällen.[[1]]",
+        "An der Ladeburger Straße hat die Medizinische Hochschule Brandenburg einen Standort,[[8]] ihr Universitätsklinikum ist das Immanuel Klinikum Bernau Herzzentrum Brandenburg. Dessen Gynäkologie und Geburtshilfe ist seit dem 1. Oktober 2026 geschlossen.[[17]]"
+      ],
+      "bild": {
+        "name": "bernau-st-marien",
+        "alt": "Backsteinfassade der Kirche St. Marien mit Bäumen davor",
+        "caption": "Die Stadtpfarrkirche St. Marien in Bernau.",
+        "credit": "Subbass1, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Bernau,_St._Marien_(76).jpg"
+      }
+    },
+    {
+      "h2": "Friedenstal, Viehtrift, Kirschgarten und Bernau-Süd",
+      "absaetze": [
+        "13.396 der 22.510 Bernauer Wohnungen gehören zu Gebäuden mit mindestens drei Wohnungen, Stand 31.12.2025.[[4]] Bodenrichtwertzonen für mehrgeschossigen Wohnungsbau gibt es in Bernau-Süd, an der Viehtrift, im Puschkinviertel und am Kirschgarten; zum 01.01.2026 liegen die Werte dort bei 370, 350, 320 und 350 €/m².[[2]]",
+        "Bei weiterverkauften Wohnungen der Baujahre nach 1992 unterscheiden sich die Lagen deutlich. Der normierte Mittelwert lag 2025 in Friedenstal bei 2.890 €/m² aus 10 Kauffällen, in Süd mit dem Barnimer Park bei 2.790 €/m² aus 9 und an der Viehtrift bei 2.330 €/m² aus 13. Plattenbauwohnungen der Baujahre 1961 bis 1990 werden für Bernau gesondert ausgewiesen: 2.370 €/m² im Mittel aus 7 Kauffällen.[[1]] Der Bodenrichtwert in Friedenstal Nord sank zum 01.01.2026 von 350 auf 340 €/m².[[2]]",
+        "Neu gebaut wird derzeit wenig: 2025 wurden 42 Wohnungen fertig, 2024 waren es 185 und 2023 noch 525.[[5]] Im Venusbogen in Bernau-Süd entstehen 117 Sozialwohnungen; die ersten 21 sollten im Sommer 2026 fertig sein.[[15]] Die Hilfswerk-Siedlung plant an der Heinersdorfer Straße und An der Viehtrift 104 barrierearme Wohnungen, fertig werden sollen sie im 2. Halbjahr 2028.[[16]]"
+      ],
+      "bild": {
+        "name": "bernau-bahnhof-friedenstal",
+        "alt": "Der S-Bahnhof Bernau-Friedenstal: ein Zugangsgebäude mit Glasaufbau und bunt bemalten Wänden",
+        "caption": "Der S-Bahnhof Bernau-Friedenstal.",
+        "credit": "Dabbelju, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Bernau_bei_Berlin_Bahnhof_Friedenstal.jpg"
+      }
+    },
+    {
+      "h2": "Schönow, Ladeburg, Waldfrieden und die übrigen Ortsteile",
+      "absaetze": [
+        "Ladeburg gehört seit 2002 zu Bernau, Schönow, Börnicke und Lobetal seit 2003, Waldfrieden seit 2010, Birkenhöhe, Birkholz und Birkholzaue seit 2014.[[6]] Bei den Bodenrichtwerten zum 01.01.2026 laufen die Ortsteile auseinander: In Schönow stieg der Wert in der Ortslage von 300 auf 340 €/m² und an der Dorfstraße von 290 auf 320 €/m², in Ladeburg blieb er bei 340 €/m², in Waldfrieden bei 320 €/m². In Birkenhöhe sank er von 290 auf 280 €/m².[[2]]",
+        "Für Baugrundstücke des individuellen Wohnungsbaus blieb das Preisniveau 2025 nahezu gleich: 32 Kauffälle mit einem Median von 333 €/m², nach 353 €/m² im Jahr 2024; die Grundstücke waren im Median 587 m² groß. Weiterverkaufte Wohnungen der Baujahre nach 1992 kosteten in Ladeburg im Mittel 2.500 €/m² aus 7 Kauffällen; für Schönow gibt es keinen Wert.[[1]]",
+        "In der Bernauer Waldsiedlung liegt die Michels Brandenburgklinik mit mehr als 800 Stationsbetten,[[18]] in Lobetal die Hoffnungstaler Stiftung Lobetal.[[19]] Weiterführende Schulen sind das Barnim-Gymnasium, das Paulus-Praetorius-Gymnasium, die Tobias-Seiler-Oberschule und das Oberstufenzentrum I Barnim.[[8]]"
+      ],
+      "bild": {
+        "name": "bernau-ploetzensee",
+        "alt": "Blick zwischen Schilf und Bäumen auf den Plötzensee bei Bernau, am anderen Ufer Wald unter blauem Himmel",
+        "caption": "Der Plötzensee bei Bernau im Mai.",
+        "credit": "Dreizung, CC0",
+        "url": "https://commons.wikimedia.org/wiki/File:Plötzensee_Bernau_2.jpg"
+      }
+    }
+  ],
+  "band": {
+    "name": "bernau-panorama",
+    "alt": "Blick über die Dächer von Bernau bei Berlin mit der Marienkirche links, Straßen mit Altbauten und Wald am Horizont unter blauem Himmel",
+    "caption": "Blick vom Dach des neuen Rathauses über Bernau.",
+    "credit": "Dignus est intrare, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Bernau_Panorama.jpg"
+  },
+  "verkaufen": {
+    "h2": "Immobilie in Bernau verkaufen",
+    "absaetze": [
+      "Von den 322 Kauffällen 2025 in Bernau betrafen 130 bebaute Grundstücke, 122 Wohnungs- und Teileigentum und 50 unbebaute Bauflächen. Bei freistehenden Häusern hängt der Preis stark am Baujahr: Normiert kosteten sie bis Baujahr 1945 im Mittel 2.910 €/m² Wohnfläche aus 10 Kauffällen, mit Baujahr 1946 bis 1990 2.940 €/m² aus 12, 1991 bis 2015 3.480 €/m² aus 24 und ab 2016 4.340 €/m² aus 6.[[1]] Bei so wenigen Fällen je Gruppe ziehen wir für die Preisstrategie zusätzlich den Bodenrichtwert Ihrer Zone und die aktuelle Konkurrenz heran.",
+      "Neubauwohnungen im Erstverkauf werden für Bernau 2025 nicht ausgewiesen.[[1]] Eine gebrauchte Wohnung vergleichen wir deshalb mit Weiterverkäufen in derselben Lage, von Friedenstal bis Ladeburg."
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Bernau",
+    "absaetze": [
+      "Wenn Sie selbst einziehen und täglich nach Berlin pendeln, entscheidet der Bahnhof mit: Am Bahnhof Bernau halten S2, RE3 und RB24, Bernau-Friedenstal ist ein Halt der S2.[[13]] Einen 10-Minuten-Takt der S-Bahn zwischen Buch und Bernau nennt das Programm i2030 als Maßnahme; die Vorplanung hat begonnen, einen Bautermin gibt es nicht.[[14]]",
+      "Wer vermieten will, muss mit der Mietpreisbremse rechnen: Bernau gehört seit dem 01.01.2026 zu ihrer Gebietskulisse, die Landesverordnung läuft bis 31.12.2029. Bei Neuvermietung in Häusern, die vor dem 1. Oktober 2014 fertiggestellt und bezogen wurden, sind höchstens 10 % über der ortsüblichen Vergleichsmiete zulässig;[[9,11]] laufende Mieten dürfen bis 31.12.2030 in drei Jahren um höchstens 15 % steigen.[[10]] Weil Bernau keinen Mietspiegel hat, bleibt als Anhalt die mittlere Nettokaltmiete aus dem Grundstücksmarktbericht: 10,3 €/m² aus 46 Fällen der Jahre 2024 und 2025, nach Aussage des Gutachterausschusses nur eine bedingte Orientierung.[[1]] Ein Ministeriumsvertreter sieht die Leerstandsquote in Bernau unter dem Optimum.[[15]]"
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Bernau",
+    "absaetze": [
+      "Ein freistehendes Haus der Baujahre 1991 bis 2015 kostete in Bernau 2025 normiert 517.000 €, eine Doppelhaushälfte oder ein Reihenhaus ab Baujahr 2016 603.000 €.[[1]] Die Finanzierung stellen wir über Europace, Baufinex und unsere direkten Bankkontakte zusammen. Bei einer Plattenbauwohnung gehören die Erhaltungsrücklage und geplante Sanierungen der Eigentümergemeinschaft vorab in die Kalkulation."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Wie hoch ist der Bodenrichtwert in Bernau bei Berlin?",
+      "antwort": "Für Einfamilienhaus-Grundstücke liegt der Bodenrichtwert im Stadtgebiet zum 01.01.2026 zwischen 250 und 370 €/m².[[1]] Den höchsten Wert hat die gemischte Zone Stadtkern Zentrum mit 550 €/m². Von 45 baureifen Wohn- und Mischzonen blieben 30 gleich, 5 stiegen und 10 sanken. Für eine einzelne Adresse lässt sich der Wert in BORIS Brandenburg nachschlagen.[[2]]",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilie verkaufen Bernau“ und „Immobilienbewertung Bernau“ (Google_Areas, Oktober 2026)"
+    },
+    {
+      "frage": "Wie hoch sind die Immobilienpreise in Bernau bei Berlin?",
+      "antwort": "2025 lag der normierte Preis freistehender Häuser im Mittel bei 3.340 €/m² Wohnfläche, bei Doppelhaushälften und Reihenhäusern bei 3.270 €/m². Weiterverkaufte Wohnungen der Baujahre nach 1992 kosteten je nach Lage zwischen 2.330 €/m² an der Viehtrift und 2.890 €/m² in Friedenstal, Plattenbauwohnungen 2.370 €/m².[[1]]",
+      "herkunft": "Google-Autocomplete „immobilienpreise bernau bei berlin“ (research/serp/autocomplete-2026-10-24.json)"
+    },
+    {
+      "frage": "Was kostet eine Wohnung in Friedenstal oder am Kirschgarten?",
+      "antwort": "Für Friedenstal liegt der normierte Mittelwert weiterverkaufter Wohnungen der Baujahre nach 1992 im Jahr 2025 bei 2.890 €/m², bei einer Spanne von 1.840 bis 4.520 €/m² und 10 Kauffällen. Der Kirschgarten wird nicht als eigene Lage ausgewiesen;[[1]] der Bodenrichtwert für Mehrfamilienhausland dort liegt zum 01.01.2026 bei 350 €/m².[[2]]",
+      "herkunft": "Google-Autocomplete „wohnung kaufen bernau friedenstal“ und „wohnung kaufen bernau kirschgarten“ (research/serp/autocomplete-2026-10-24.json)"
+    },
+    {
+      "frage": "Was kostet ein Haus in Schönow, Ladeburg oder Waldfrieden?",
+      "antwort": "Hauspreise einzelner Ortsteile werden nicht ausgewiesen; für die ganze Stadt lag der normierte Kaufpreis freistehender Häuser 2025 bei 451.000 €.[[1]] Unterschiede zeigen die Bodenrichtwerte zum 01.01.2026: Schönow Ortslage 340 €/m² nach 300 €/m² im Vorjahr, Ladeburg Ortslage 340 €/m², Waldfrieden 320 €/m².[[2]]",
+      "herkunft": "Google-Autocomplete „haus kaufen bernau schönow“, „haus kaufen bernau ladeburg“ und „haus kaufen bernau waldfrieden“ (research/serp/autocomplete-2026-10-24.json)"
+    },
+    {
+      "frage": "Ist es aktuell sinnvoll, eine Immobilie in Bernau zu verkaufen?",
+      "antwort": "Eine allgemeine Antwort gibt es nicht, wohl aber die Marktlage. 2025 blieb das Bodenpreisniveau in Bernau nahezu gleich, freistehende Häuser kosteten im Mittel 3.340 €/m² nach 3.290 €/m² im Vorjahr.[[1]] Was das für Ihren Preis heißt, klärt eine Bewertung mit Vergleichsverkäufen aus Ihrer Lage.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilie verkaufen Bernau“, dort als „Ist es aktuell sinnvoll, eine Immobilie zu verkaufen?“ und „Ist es im Moment günstig, eine Immobilie zu verkaufen?“ (Google_Areas, Oktober 2026)"
+    },
+    {
+      "frage": "Kann ich meine Immobilie in Bernau kostenlos bewerten lassen?",
+      "antwort": "Ja. Wir bewerten Ihr Haus oder Ihre Wohnung in Bernau ohne Kosten für Sie, das Ergebnis haben Sie in der Regel nach wenigen Stunden. In Bernau nutzen wir dafür den Bodenrichtwert Ihrer Zone und die Lagewerte des Gutachterausschusses Barnim, der weiterverkaufte Wohnungen getrennt nach Friedenstal, Innenstadt, Süd, Viehtrift und Ladeburg auswertet.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienbewertung Bernau“, dort als „Gibt es ein kostenloses Programm zur Immobilienbewertung?“ (Google_Areas, Oktober 2026)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Berlin",
+      "url": "/standorte/berlin/"
+    },
+    {
+      "name": "Oranienburg",
+      "url": "/standorte/oranienburg/"
+    },
+    {
+      "name": "Erkner",
+      "url": "/standorte/erkner/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Grundstücksmarktbericht Landkreis Barnim 2025, Gutachterausschuss für Grundstückswerte im Landkreis Barnim (veröffentlicht 13.05.2026)",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+      "stand": "Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+    },
+    {
+      "name": "Bodenrichtwerte Bernau bei Berlin, BORIS Brandenburg (GeoBasis-DE/LGB, dl-de/by-2-0)",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?f=json&limit=500&skipGeometry=true&gemeinde_bezeichnung=Bernau%20bei%20Berlin&stichtag=2026-01-01",
+      "stand": "Stichtag 01.01.2026, Vergleich 01.01.2025"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 4 – j / 25 (Bevölkerung)",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht F I 1 – j / 25 (Wohnungsbestand)",
+      "url": "https://download.statistik-berlin-brandenburg.de/bbf10b1d56ae9884/446362e42c8c/SB_F01-01-00_2025j01_BB.xlsx",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Stadt Bernau, Ausgewählte statistische Angaben für das Jahr 2025",
+      "url": "https://www.bernau.de/visioncontent/mediendatenbank/jahresstatistik_2025_pdf_final.pdf",
+      "stand": "September 2026"
+    },
+    {
+      "name": "Stadt Bernau, Ortsteile",
+      "url": "https://www.bernau.de/de/mein-bernau/stadtinformation/ortsteile.html",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Bernau, Stadtportrait (Verkehrsanbindung)",
+      "url": "https://www.bernau.de/de/mein-bernau/stadtinformation/stadtportrait.html",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Bernau, Schule & Bildung",
+      "url": "https://www.bernau.de/de/mein-bernau/bildung-soziales/schule-bildung.html",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Mietpreisbegrenzungsverordnung Brandenburg, MIL",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/Mietpreisbegrenzungsverordnung.pdf",
+      "stand": "gültig 01.01.2026–31.12.2029"
+    },
+    {
+      "name": "Kappungsgrenzenverordnung Brandenburg, MIL",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/KappGrenzV.pdf",
+      "stand": "gültig 01.01.2026–31.12.2030"
+    },
+    {
+      "name": "MIL, Pressemitteilung zu Mietpreisbremse und Kappungsgrenzenverordnung",
+      "url": "https://mil.brandenburg.de/mil/de/presse/detail/~25-11-2025-kabinett-mietpreisbremse-und-kappungsgrenzenverordnung",
+      "stand": "25.11.2025"
+    },
+    {
+      "name": "S-Bahn Berlin, Linie S2",
+      "url": "https://sbahn.berlin/fahren/s2/",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "VBB-Fahrplandaten (Linien an S Bernau Bhf und S Bernau-Friedenstal, Fahrzeiten ab S Bernau Bhf)",
+      "url": "https://v6.vbb.transport.rest/stops/900350160?linesOfStops=true",
+      "stand": "Fahrplan Dienstag 27.10.2026, abgefragt 24.10.2026"
+    },
+    {
+      "name": "i2030, S-Bahn-Ergebnisstand",
+      "url": "https://www.i2030.de/sbahn/",
+      "stand": "undatiert, abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Bernau, Pressemitteilung 325/2025 „117 Wohnungen entstehen im Venusbogen“",
+      "url": "https://www.bernau.de/de/rathaus-service/aktuelles/stadtnachrichten/artikel-117-wohnungen-entstehen-im-venusbogen.html",
+      "stand": "Pressemitteilung 325/2025, abgerufen 24.10.2026"
+    },
+    {
+      "name": "Hilfswerk-Siedlung GmbH, Neubau Bernau",
+      "url": "https://hws-berlin.de/wohnen/neubau-bernau/",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Immanuel Klinikum Bernau Herzzentrum Brandenburg",
+      "url": "https://bernau.immanuel.de/",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Michels Brandenburgklinik",
+      "url": "https://www.brandenburgklinik.de/",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Hoffnungstaler Stiftung Lobetal, Impressum",
+      "url": "https://karriere.bethel.de/lobetal/content/Impressum/?locale=de_DE",
+      "stand": "abgerufen 24.10.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "250–370 €/m² (BRW EFH Stadtgebiet)",
+      "fundstelle": "bernau.md, Zeile 25"
+    },
+    {
+      "zahl": "30 von 45 Zonen gleich, 5 gestiegen, 10 gesunken",
+      "fundstelle": "bernau.md, Zeilen 111, 119–122"
+    },
+    {
+      "zahl": "Stadtkern unverändert",
+      "fundstelle": "bernau.md, Zeile 122"
+    },
+    {
+      "zahl": "Ø 3.340 €/m², 52 Kauffälle, 451.000 €, 139 m², Vorjahr 3.290",
+      "fundstelle": "bernau.md, Zeile 30"
+    },
+    {
+      "zahl": "2.910 (10), 2.940 (12), 3.480 (24), 4.340 (6), 517.000 €",
+      "fundstelle": "bernau.md, Zeilen 31–34"
+    },
+    {
+      "zahl": "DHH/RH Ø 3.270; ab 2016 603.000 €",
+      "fundstelle": "bernau.md, Zeilen 35, 37"
+    },
+    {
+      "zahl": "ETW Friedenstal 2.890, 1.840–4.520, 10 Kauffälle",
+      "fundstelle": "bernau.md, Zeile 38"
+    },
+    {
+      "zahl": "ETW Innenstadt 2.700 (4), Süd 2.790 (9), Viehtrift 2.330 (13), Ladeburg 2.500 (7), Schönow ohne Wert",
+      "fundstelle": "bernau.md, Zeilen 39–43"
+    },
+    {
+      "zahl": "ETW-Lagen: Baujahr nach 1992, normierter Kaufpreis",
+      "fundstelle": "bernau.md, Zeile 44"
+    },
+    {
+      "zahl": "Plattenbau 1961–1990: 2.370 €/m², 7 Kauffälle",
+      "fundstelle": "bernau.md, Zeilen 45, 254"
+    },
+    {
+      "zahl": "kein Neubau-Erstverkauf Bernau 2025",
+      "fundstelle": "bernau.md, Zeile 46"
+    },
+    {
+      "zahl": "322 Kauffälle, 130 bb, 122 ei, 50 ub",
+      "fundstelle": "bernau.md, Zeile 47"
+    },
+    {
+      "zahl": "Miete 10,3 €/m², 46 Fälle, 5,8–16,2, 2024–2025",
+      "fundstelle": "bernau.md, Zeilen 51, 53"
+    },
+    {
+      "zahl": "kein Mietspiegel; „nur bedingt als Orientierung“",
+      "fundstelle": "bernau.md, Zeilen 52, 53, 55"
+    },
+    {
+      "zahl": "Mietpreisbremse 01.01.2026–31.12.2029",
+      "fundstelle": "bernau.md, Zeile 56"
+    },
+    {
+      "zahl": "Kappungsgrenze bis 31.12.2030",
+      "fundstelle": "bernau.md, Zeile 57"
+    },
+    {
+      "zahl": "10 % / vor 1. Oktober 2014 / 15 % in drei Jahren",
+      "fundstelle": "bernau.md, Zeile 58"
+    },
+    {
+      "zahl": "44.706 Einwohner, +109",
+      "fundstelle": "bernau.md, Zeile 60"
+    },
+    {
+      "zahl": "Gestorbene 610, Geborene 298 (Wachstum durch Zuzug)",
+      "fundstelle": "bernau.md, Zeilen 129, 131"
+    },
+    {
+      "zahl": "2024: +270",
+      "fundstelle": "bernau.md, Zeile 130"
+    },
+    {
+      "zahl": "22.510 Wohnungen, 13.396 in Gebäuden mit 3+ Wohnungen",
+      "fundstelle": "bernau.md, Zeile 61"
+    },
+    {
+      "zahl": "Fertigstellungen 42 (2025), 185 (2024), 525 (2023)",
+      "fundstelle": "bernau.md, Zeilen 62, 259"
+    },
+    {
+      "zahl": "BRW Stadtkern Zentrum 550, Süd 500, Breitscheidstraße 450, Karl-Marx-Straße 440, Stadtkern Wohnen 420",
+      "fundstelle": "bernau.md, Zeilen 63–67"
+    },
+    {
+      "zahl": "BRW Süd MFH 370, Viehtrift 350, Puschkinviertel MFH 320, Kirschgarten MFH 350 (mehrgeschossig laut VG)",
+      "fundstelle": "bernau.md, Zeilen 72, 76, 78, 87, 239–245"
+    },
+    {
+      "zahl": "BRW Friedenstal Nord 340 (350)",
+      "fundstelle": "bernau.md, Zeile 82"
+    },
+    {
+      "zahl": "BRW Ladeburg OL 340, Schönow OL 340 (300), Waldfrieden 320, Schönow Dorfstraße 320 (290)",
+      "fundstelle": "bernau.md, Zeilen 84, 85, 88, 89"
+    },
+    {
+      "zahl": "BRW Birkenhöhe 280 (290)",
+      "fundstelle": "bernau.md, Zeilen 92–94"
+    },
+    {
+      "zahl": "Bauland 32 Kauffälle, Median 333 (2024: 353), Fläche Median 587 m², nahezu gleichbleibend",
+      "fundstelle": "bernau.md, Zeilen 27–29"
+    },
+    {
+      "zahl": "S2 20-Minuten-Takt, 10-Minuten-Takt bis Buch, Endpunkt Bernau",
+      "fundstelle": "bernau.md, Zeilen 159–162"
+    },
+    {
+      "zahl": "S-Bahnhöfe Bernau und Bernau-Friedenstal; Linien S2, RE3, RB24",
+      "fundstelle": "bernau.md, Zeilen 163, 166"
+    },
+    {
+      "zahl": "RE3 21 min Hbf, S2 35 min Friedrichstraße, Di 27.10.2026",
+      "fundstelle": "bernau.md, Zeilen 183, 187, 189"
+    },
+    {
+      "zahl": "i2030 10-Minuten-Takt Buch–Bernau, Vorplanung, kein Bautermin",
+      "fundstelle": "bernau.md, Zeilen 206–210"
+    },
+    {
+      "zahl": "Kernstadt und 8 Ortsteile; Eingemeindung 2002/2003/2010/2014",
+      "fundstelle": "bernau.md, Zeilen 216–223"
+    },
+    {
+      "zahl": "Schulen",
+      "fundstelle": "bernau.md, Zeilen 266–269"
+    },
+    {
+      "zahl": "MHB Ladeburger Straße",
+      "fundstelle": "bernau.md, Zeilen 270, 309"
+    },
+    {
+      "zahl": "Immanuel Klinikum, Universitätsklinikum; Gynäkologie geschlossen 1. Oktober 2026",
+      "fundstelle": "bernau.md, Zeilen 289, 292"
+    },
+    {
+      "zahl": "Brandenburgklinik > 800 Stationsbetten, Waldsiedlung",
+      "fundstelle": "bernau.md, Zeile 298"
+    },
+    {
+      "zahl": "Hoffnungstaler Stiftung Lobetal, Standort Lobetal",
+      "fundstelle": "bernau.md, Zeile 303"
+    },
+    {
+      "zahl": "Venusbogen 117 Wohnungen, sozialer Wohnungsbau, erste 21 Sommer 2026; Leerstandsquote „unter dem Optimum“",
+      "fundstelle": "bernau.md, Zeile 324"
+    },
+    {
+      "zahl": "HWS 104 barrierearme WE, Fertigstellung 2. Halbjahr 2028",
+      "fundstelle": "bernau.md, Zeile 325"
+    },
+    {
+      "zahl": "GMB-Lagen ohne Kirschgarten",
+      "fundstelle": "bernau.md, Zeile 252"
+    },
+    {
+      "zahl": "FAQ-Herkunft",
+      "fundstelle": "Dashboard/src/data/research/google_areas.json Einträge 28 und 29 (paa); research/serp/autocomplete-2026-10-24.json, daten/bernau"
+    }
+  ],
+  "kurzantwortMehr": "Rechtsgrundlage sind die Erlaubnisse nach § 34c und § 34i GewO, das Unternehmen sitzt in der Schützenstraße 30 in Berlin. Für Bernau zuständig ist Lennart Geserich, Head of Sales & Vermietung.",
+  "hero": {
+    "name": "bernau-steintor",
+    "alt": "Hungerturm und Stadthalle am Steintor in Bernau bei Berlin",
+    "credit": "Singlespeedfahrer, CC0",
+    "url": "https://commons.wikimedia.org/wiki/File:Hungerturm_und_Stadthalle_am_Steintor_Bernau_bei_Berlin_Brandenburg_Deutschland_01.jpg"
+  },
+  "karte": {
+    "alt": "Karte der Stadt Bernau bei Berlin mit der Kernstadt und den Ortsteilen Schönow, Ladeburg, Lobetal, Waldfrieden, Börnicke, Birkenhöhe, Birkholz und Birkholzaue, dazu Friedenstal, Viehtrift, Puschkinviertel, Kirschgarten und die Waldsiedlung, im Südwesten Berlin mit Buch, außerdem die Bahnstrecken und die Autobahnen"
+  },
+  "anbindung": [
+    "Der Bahnhof Bernau ist Endpunkt der S2 und Halt von RE3 und RB24,[[7]] ein zweiter S-Bahnhof liegt in Friedenstal.",
+    "Der RE3 fährt in 21 Minuten zum Berliner Hauptbahnhof, die S2 braucht ohne Umstieg 35 Minuten bis Friedrichstraße.[[13]]",
+    "Den tagsüber dichteren 10-Minuten-Takt der S2 gibt es nur bis Buch, nach Bernau fährt sie alle 20 Minuten.[[12]]"
+  ]
+}

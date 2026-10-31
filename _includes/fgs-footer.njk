@@ -1,0 +1,74 @@
+{#- Fuß im Design-System (Design-Sprint-Brief 5.7): navy, vier Spalten (Leistungen, Gebiete, Wissen & Unternehmen, Kontakt).
+    Die vollständige Gebietsliste steht nur hier und im Menü „Gebiete“ (Brief 3.7). -#}
+<footer class="fgs-footer">
+  <div class="fgs-wrap">
+    <div class="fgs-footer-top">
+      <a class="fgs-brand" href="/" aria-label="Fischer &amp; Geserich Real Estate, zur Startseite">
+        <img src="/images/logo/fg-zeichen-gold.svg" alt="" width="34" height="40" loading="lazy">
+        <span class="fgs-brand-name">Fischer &amp; Geserich<small>Real Estate</small></span>
+      </a>
+      <p class="fgs-small" style="color: inherit;">{{ google.rating }} ★ · <a href="{{ google.mapsUrl }}" rel="noopener">{{ google.count }} Google-Bewertungen</a> · Erlaubnis nach § 34c und § 34i GewO</p>
+    </div>
+
+    <div class="fgs-footer-grid">
+      <div>
+        <h2>Leistungen</h2>
+        <ul>{% for item in nav.services %}<li><a href="{{ item | navHref }}">{{ item.label }}</a></li>{% endfor %}</ul>
+      </div>
+
+      <div>
+        <h2>Gebiete</h2>
+        {#- Eine Quelle: _data/serviceArea.js. Noch nicht gebaute Seiten stehen als Text da. -#}
+        <div class="fgs-footer-areas">
+          <div>
+            <h3><a href="/standorte/berlin/">Berlin</a></h3>
+            <ul>{% for bezirk in serviceArea.berlin.bezirke %}<li>{{ bezirk | areaLink | safe }}</li>{% endfor %}</ul>
+            <h3 style="margin-top: 24px;">{{ serviceArea.leipzig | areaLink | safe }}</h3>
+            <ul>{% for teil in serviceArea.leipzig.teile %}<li>{{ teil | areaLink | safe }}</li>{% endfor %}</ul>
+            <h3 style="margin-top: 24px;">{{ serviceArea.dresden | areaLink | safe }}</h3>
+            <ul>{% for teil in serviceArea.dresden.teile %}<li>{{ teil | areaLink | safe }}</li>{% endfor %}</ul>
+          </div>
+          <div>
+            <h3><a href="/standorte/#region-brandenburg">Brandenburg</a></h3>
+            <ul>{% for kreis in serviceArea.landkreise %}<li>{{ kreis | areaLink | safe }}</li>{% endfor %}</ul>
+            <ul style="margin-top: 16px;">{% for town in serviceArea.towns %}<li>{{ town | areaLink | safe }}</li>{% endfor %}</ul>
+            <p style="margin-top: 24px;"><a href="/standorte/">Alle Gebiete</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2>Wissen &amp; Unternehmen</h2>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/lexikon/">Lexikon</a></li>
+          <li><a href="/investment-lab.html">Investment Lab</a></li>
+          <li><a href="/investitionsrechner.html">Investitionsrechner</a></li>
+          <li><a href="/ueber-uns.html">Über uns</a></li>
+          <li><a href="/bewertungen/">Bewertungen</a></li>
+          <li><a href="/angebote.html">Aktuelle Angebote</a></li>
+        </ul>
+      </div>
+
+      <div class="fgs-footer-contact">
+        <h2>Kontakt</h2>
+        <address>Fischer &amp; Geserich Real Estate GmbH<br>Schützenstraße 30<br>12165 Berlin</address>
+        <p><a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a><br><a href="mailto:{{ nav.email }}">{{ nav.email }}</a></p>
+        <p>Persönliche Termine nach vorheriger Vereinbarung.</p>
+        <p><a href="/kontakt.html">Kontakt und Anfahrt</a></p>
+        <p><a href="https://www.linkedin.com/company/fischer-geserich-real-estate-gmbh/" rel="noopener">LinkedIn</a> · <a href="https://www.instagram.com/fg.immobilien/" rel="noopener">Instagram</a></p>
+      </div>
+    </div>
+
+    <div class="fgs-footer-legal">
+      <p>&copy; 2026 Fischer &amp; Geserich Real Estate GmbH</p>
+      <ul>
+        <li><a href="/impressum.html">Impressum</a></li>
+        <li><a href="/datenschutz.html">Datenschutz</a></li>
+        <li><a href="/agb.html">AGB</a></li>
+        <li><a href="/bildnachweise/">Bildnachweise</a></li>
+        <li><a href="#" data-open-consent>Cookie-Einstellungen</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

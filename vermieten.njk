@@ -1,13 +1,234 @@
 ---
-layout: base.njk
-title: Immobilie vermieten – Fischer & Geserich Real Estate
+layout: fgs-service.njk
+bodyClass: fgs-service
+title: Immobilie vermieten in Berlin | Fischer & Geserich
 permalink: vermieten.html
-description: "Wohnung oder Haus professionell vermieten: Mietpreis, Positionierung, Interessentenauswahl, Bonitätsprüfung und Übergabe mit persönlicher Begleitung."
+description: "Wohnung oder Haus in Berlin vermieten: Miethöhe nach Mietspiegel und Mietpreisbremse, Mieterauswahl mit Bonitätsprüfung, Unterlagen, Mietvertrag und Übergabe. Was die Vermietung den Eigentümer kostet."
 canonicalPath: /vermieten.html
-bodyClass: fg-mobile-safe
+# Design-Sprint (Brief 5.2, CP4 am 28.10.2026): Vorlage fgs-service.njk, Texte unverändert (Update 6 §4: nur §1, §2 und §3.0).
+# Brief Design-Pass §4.2: neue H1, alte H1 als Kicker, alle bisherigen Texte bleiben. Neu: Mietersuche und -prüfung,
+# Miethöhe mit Mietspiegel (verlinkt, keine eigenen Mietwerte), Unterlagen und Vertrag, Kosten für den Eigentümer.
+# Rechtsstand geprüft am 26.10.2026: Berliner Mietspiegel 2026 (qualifiziert, mietspiegel.berlin.de),
+# Mietenbegrenzungsverordnung Berlin 01.01.2026 bis 31.12.2029, §§ 556d–556g, 551 BGB, §§ 2, 3 WoVermittG, § 19 BMG, §§ 80, 87 GEG.
+# Den Satz „gesetzlich auf maximal zwei Nettokaltmieten gedeckelt“ aus B9 nicht übernehmen: die Grenze gilt nur für
+# Wohnungssuchende (§ 3 Abs. 2 WoVermittG), siehe QUESTIONS-FOR-TIMON.md 6.3.
+service:
+  id: vermieten
+  crumb: "Immobilie vermieten"
+  kicker: "Vermietung mit Mieterprüfung"
+  h1: "Immobilie vermieten in Berlin"
+  intro: "Wir legen mit Ihnen die Miete fest, die Mietspiegel und Mietpreisbremse erlauben, prüfen die Interessenten und begleiten Mietvertrag und Übergabe. Sie zahlen nur, wenn ein Mietvertrag zustande kommt."
+  button: { label: "Vermietung besprechen", href: "#anfrage" }
+  hero: { name: "vermieten-hero", alt: "Altbau-Wohnhäuser von Riehmers Hofgarten an der Hagelberger Straße in Berlin-Kreuzberg, rechts ein Baum", position: "center 40%" }
+  # Design-Pass 2 §4.2: Eckdaten aus dem Seitentext (Auswahl für Jesu gelistet, PLAN.md Schritt 3)
+  keyfacts:
+    - { label: "Mietpreisbremse", wert: "in ganz Berlin bis Ende 2029" }
+    - { label: "Kaution", wert: "höchstens drei Nettokaltmieten" }
+  summaryQ: "Wie vermietet Fischer & Geserich eine Immobilie?"
+  summary:
+    - "In vier Schritten: Wir legen Miethöhe und Zielgruppe fest, bereiten Unterlagen und Anzeige vor, bündeln die Besichtigungen und prüfen die Interessenten, dann begleiten wir Mietvertrag und Übergabe."
+    - "Beauftragen Sie uns als Eigentümer, zahlen Sie die Provision, und zwar nur, wenn ein Mietvertrag zustande kommt. Umfang und Vergütung vereinbaren wir vorher. Die Mietverträge schließt Lennart Geserich, Head of Sales & Vermietung. Besichtigungen und die Abstimmung mit Ihnen übernehmen je nach Lage Lennart Geserich oder Timon Fischer."
+  faqTitle: "Häufige Fragen zur Vermietung"
+  faq:
+    - q: "Wie wird die richtige Miethöhe bestimmt?"
+      a: "Wir betrachten Mikrolage, Zustand, Ausstattung, aktuellen Mietstatus und das konkrete Vermietungsszenario. Die richtige Miethöhe ergibt sich aus dem Markt und aus dem, was Mietspiegel und Mietpreisbremse erlauben."
+    - q: "Wie werden Interessenten ausgewählt?"
+      a: "Wir sammeln die Anfragen, prüfen die Unterlagen und bündeln die Besichtigungen. Die Auswahl erfolgt anhand objektiver und nachvollziehbarer Kriterien."
+    - q: "Übernimmt F&G auch die Vermietung nach einem Kauf?"
+      a: "Ja. Gerade bei Kapitalanlagen kann die Vermietung Teil der Betreuung nach dem Kauf sein. Umfang und Vergütung werden vorher transparent vereinbart."
+    - q: "Wer zahlt den Makler bei einer Vermietung?"
+      a: "Es gilt das Bestellerprinzip: Zahlen muss, wer den Makler beauftragt hat. Beauftragen Sie uns als Eigentümer mit Ihrer Vermietung, tragen Sie die Provision, auch dann, wenn sich Mietinteressenten anschließend von selbst bei Ihnen melden. Fällig wird sie nur, wenn ein Mietvertrag zustande kommt. Die gesetzliche Obergrenze von zwei Monatsmieten zuzüglich Umsatzsteuer gilt für Provisionen, die Wohnungssuchende zahlen; mit Ihnen als Eigentümer vereinbaren wir die Vergütung vorher."
+    - ref: B2
+  related:
+    services:
+      - { label: "Betreuung nach dem Kauf", note: "Vermietung, Mietanpassung, Handwerker, Steuern", href: "/betreuung-nach-dem-kauf/", bild: "betreuung-hero", alt: "Blick nach oben in ein gewendeltes Altbau-Treppenhaus mit verziertem Geländer in Berlin-Mitte" }
+      - { label: "Immobilien als Kapitalanlage", note: "Miete, Kosten und Finanzierung zusammen gerechnet", href: "/kapitalanlage.html", bild: "kapitalanlage-hero", alt: "Gründerzeithaus von 1871 an der Humboldtstraße im Leipziger Waldstraßenviertel" }
+      - { label: "Immobilie verkaufen", note: "Wenn statt Vermietung ein Verkauf in Frage kommt", href: "/verkaufen.html", bild: "verkaufen-hero", alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser" }
+    lexikon: [mietspiegel, mietpreisbremse, umlagefahige-kosten]
+  contact: lennart
+  closing:
+    title: "Erzählen Sie uns kurz von Ihrer Immobilie"
+    text: "Wir sagen Ihnen, welche Miete realistisch ist, was vorbereitet werden muss und ob sich die Vermietung über uns für Sie lohnt. Das erste Gespräch kostet Sie nichts und verpflichtet Sie zu nichts."
+    button: gespraech
+  schema:
+    name: "Immobilie vermieten mit Fischer & Geserich"
+    serviceType: "Immobilienvermietung"
+    description: "Vermietung von Wohnungen und Häusern für Eigentümer: Miethöhe nach Mietspiegel und Mietpreisbremse, Anzeige, Besichtigungen, Prüfung der Interessenten, Mietvertrag und Übergabe, in Berlin und im Berliner Umland."
+    area: regional
 ---
-<div class="fg-premium-page"><section class="fg-premium-hero"><div class="fg-premium-shell"><div class="fg-premium-hero-grid"><div><p class="fg-premium-kicker fg-premium-kicker-light">Für Vermieter</p><h1>Vermieten heißt nicht nur: Anzeige online.</h1><p class="fg-premium-hero-lead">Die richtige Miethöhe, eine klare Zielgruppe, vollständige Unterlagen und eine saubere Interessentenauswahl entscheiden darüber, ob die Vermietung langfristig funktioniert.</p><div class="fg-premium-actions"><a href="#kontakt-vermietung" class="btn-85 px-7 py-4">Vermietung besprechen <i class="fas fa-arrow-right"></i></a><a href="#ablauf" class="fg-premium-outline">Ablauf ansehen</a></div></div><aside class="fg-premium-sidecard"><span>Vermietung im Fokus</span><h2>Weniger Leerstand. Bessere Auswahl.</h2><ul><li><i class="fas fa-coins"></i><span>Mietpreis und Positionierung realistisch einordnen</span></li><li><i class="fas fa-user-check"></i><span>Interessenten strukturiert vorqualifizieren</span></li><li><i class="fas fa-file-signature"></i><span>Übergabe und Dokumentation sauber abschließen</span></li></ul></aside></div></div></section>
-<section id="ablauf" class="fg-premium-section"><div class="fg-premium-shell"><div class="fg-premium-head"><p class="fg-premium-kicker">Von der Miethöhe bis zur Übergabe</p><h2>Vier Schritte statt ungeordneter Anfragen.</h2></div><div class="fg-premium-process"><article class="fg-premium-step"><span>01 · Einordnung</span><h3>Mietpreis &amp; Zielgruppe</h3><p>Wir prüfen Lage, Zustand, Ausstattung, Mietstatus und das passende Zielgruppenprofil.</p></article><article class="fg-premium-step"><span>02 · Vorbereitung</span><h3>Unterlagen &amp; Darstellung</h3><p>Objektdaten, Bilder und wesentliche Angaben werden konsistent vorbereitet.</p></article><article class="fg-premium-step"><span>03 · Auswahl</span><h3>Anfragen qualifizieren</h3><p>Besichtigungen werden gebündelt und Interessenten nach nachvollziehbaren Kriterien eingeordnet.</p></article><article class="fg-premium-step"><span>04 · Abschluss</span><h3>Mietvertrag &amp; Übergabe</h3><p>Wir koordinieren die Abschlussphase und sorgen für eine dokumentierte Übergabe.</p></article></div></div></section>
-<section class="fg-premium-section fg-premium-section-white"><div class="fg-premium-shell"><div class="fg-premium-split"><div class="fg-premium-feature-copy"><p class="fg-premium-kicker">Für Kapitalanleger</p><h2>Eine Vermietung ist Teil der Investmentrechnung.</h2><p>Miethöhe, nicht umlagefähige Kosten, Leerstand und Modernisierung beeinflussen Cashflow und Rendite. Deshalb verknüpfen wir Vermietung mit der wirtschaftlichen Betrachtung des Objekts.</p><div class="fg-premium-checklist"><div><i class="fas fa-check"></i><span>Mietstrategie statt isolierter Wunschmiete.</span></div><div><i class="fas fa-check"></i><span>Modernisierung vor Neuvermietung wirtschaftlich prüfen.</span></div><div><i class="fas fa-check"></i><span>Kapitalanlage und Finanzierung zusammendenken.</span></div></div></div><aside class="fg-premium-panel"><p class="fg-premium-kicker fg-premium-kicker-light">Nach dem Kauf</p><h3>Wir bleiben auch nach der Beurkundung ansprechbar.</h3><p>Gerade bei neu erworbenen Kapitalanlagen entsteht die Vermietungsstrategie häufig erst nach Übergabe.</p><a href="/betreuung-nach-dem-kauf/" class="fg-invest-link">Betreuung nach dem Kauf <i class="fas fa-arrow-right"></i></a></aside></div></div></section></div>
-{% set faqItems=[{q:"Wie wird die richtige Miethöhe bestimmt?",a:"Wir betrachten Mikrolage, Zustand, Ausstattung, aktuellen Mietstatus und das konkrete Vermietungsszenario. Eine belastbare Miethöhe entsteht aus dem Markt und den rechtlichen Rahmenbedingungen, nicht aus einem pauschalen Wunschwert."},{q:"Wie werden Interessenten ausgewählt?",a:"Anfragen werden strukturiert erfasst, Unterlagen geprüft und Besichtigungen gebündelt. Die Auswahl erfolgt anhand objektiver und nachvollziehbarer Kriterien."},{q:"Übernimmt F&G auch die Vermietung nach einem Kauf?",a:"Ja. Gerade bei Kapitalanlagen kann die Vermietung Teil der Betreuung nach dem Kauf sein. Umfang und Vergütung werden vorher transparent vereinbart."}] %}{% set faqAnchor="faq-vermieten" %}{% set faqTitle="Häufige Fragen zur Vermietung" %}{% include "faq-block.njk" %}
-<section id="kontakt-vermietung" class="fg-contact-section py-8 md:py-14"><div class="container mx-auto px-4 text-center mb-2"><p class="fg-section-kicker">Vermietung starten</p><h2 class="text-3xl md:text-5xl font-bold text-primary mb-3">Erzählen Sie uns kurz von Ihrer Immobilie.</h2></div>{% set leadDefaultConcern="Immobilie vermieten" %}{% include "landingpage-lead.njk" %}</section>
+{#- Vermieten nach Design-Pass 2 §4 (29.10.2026): Fotokapitel „Vier Schritte statt ungeordneter Anfragen.“ mit den vier Schritten als
+    Reihe darunter (Bild aus dem alten Kapitel Miethöhe, Bildunterschrift in der Fotozeile), die Kapitel als Zeilen (Überschrift links,
+    Leitsatz rechts, der Rest unter „Mehr erfahren“), „Unterlagen und Mietvertrag“ als Aufklapper nach den Zeilen, Formular. Texte
+    unverändert; das Inhaltsverzeichnis entfällt wie auf Verkaufen. Davor (CP4): Kicker über den H2, Häkchen-Icons, „Auf dieser Seite“
+    und die Gebietsliste entfielen; navy nur in S1, S8 und Fuß. #kosten (Link von anderen Seiten) öffnet den Aufklapper der Kosten. -#}
+{% from "fgs-macros.njk" import fotokapitel, nachschlag, mehr, textlink with context %}
+{% from "fgd-icons.njk" import icon %}
+
+{# §4.4 Fotokapitel: H2 und Leitsatz auf dem Foto; §4.5 die vier Schritte darunter als Reihe (je ein Satz, daher ohne Feld) #}
+{% call fotokapitel({ id: "ablauf", hoehe: 80, titel: "Die Vermietung in vier Schritten", bild: "berlin-mitte-band" | bild, alt: "Blick vom Alexanderplatz über die Dächer von Berlin bei tief stehender Sonne" }) %}
+  <ol class="fgs-steps fgs-steps--reihe" role="list" data-fgs-steps style="--n: 4">
+    <li style="--i: 1">
+      <span class="fgs-step-num" aria-hidden="true">01</span>
+      <h3>Miete und Zielgruppe</h3>
+      <p class="fgs-step-lead">Wir prüfen Lage, Zustand, Ausstattung und Mietspiegel und legen fest, für wen die Wohnung passt.</p>
+    </li>
+    <li style="--i: 2">
+      <span class="fgs-step-num" aria-hidden="true">02</span>
+      <h3>Unterlagen und Anzeige</h3>
+      <p class="fgs-step-lead">Wir bereiten Grundriss, Fotos, Energieausweis und alle Angaben für die Anzeige vor.</p>
+    </li>
+    <li style="--i: 3">
+      <span class="fgs-step-num" aria-hidden="true">03</span>
+      <h3>Interessenten prüfen</h3>
+      <p class="fgs-step-lead">Wir bündeln die Besichtigungen und prüfen Einkommen und Bonität der Interessenten.</p>
+    </li>
+    <li style="--i: 4">
+      <span class="fgs-step-num" aria-hidden="true">04</span>
+      <h3>Mietvertrag und Übergabe</h3>
+      <p class="fgs-step-lead">Wir stimmen den Mietvertrag mit Ihnen ab und übergeben die Wohnung mit Protokoll.</p>
+    </li>
+  </ol>
+{% endcall %}
+
+{# Kapitel als Zeilen (§2 Regel 1): Überschrift links, Leitsatz rechts, der Rest unter „Mehr erfahren“ #}
+<section class="fgs-section fgs-rows" aria-label="Die Vermietung im Einzelnen">
+  <div class="fgs-wrap">
+  <article class="fgs-row fgs-cols fgs-cols--57" id="mieter" aria-labelledby="mieter-titel">
+    <div class="fgs-cols-head"><h2 id="mieter-titel">Wie wir Mieter finden und prüfen</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Eine gute Anzeige bringt viele Anfragen. Entscheidend ist, aus ihnen den Haushalt zu finden, der zur Wohnung passt und die Miete dauerhaft zahlen kann.</p>
+      {% call mehr() %}
+      <p>Die Anzeige enthält alle wesentlichen Angaben, einschließlich der Kennwerte aus dem Energieausweis, die das Gebäudeenergiegesetz schon für die Anzeige verlangt. Wir sammeln alle Anfragen und bündeln die Besichtigungen, damit Sie nicht jeden Interessenten einzeln empfangen müssen.</p>
+      <p>Welche Angaben ein Vermieter wann verlangen darf, regelt der Datenschutz. Nach den Empfehlungen der Datenschutzbehörden gehört zur Besichtigung nur, wer kommt und wie er erreichbar ist. Angaben zu Beruf und Einkommen folgen, wenn ein Interessent die Wohnung nehmen möchte. Einkommensnachweise und Bonitätsauskunft gehören in die Phase, in der die Entscheidung für einen Interessenten ansteht.</p>
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li>Mieterselbstauskunft<span>Haushalt, Beruf, Einkommen, Einzugstermin</span></li>
+        <li>Einkommensnachweise<span>üblich sind die letzten drei Gehaltsabrechnungen, bei Selbständigen andere Belege</span></li>
+        <li>Bonitätsauskunft</li>
+        <li>Mietschuldenfreiheitsbescheinigung des bisherigen Vermieters, wenn vorhanden</li>
+      </ul>
+      <p>Die Auswahl erfolgt anhand objektiver und nachvollziehbarer Kriterien. Wir legen Ihnen die Interessenten mit ihren Unterlagen vor; den Mietvertrag schließen Sie.</p>
+      {% endcall %}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="miethoehe" aria-labelledby="miethoehe-titel">
+    <div class="fgs-cols-head"><h2 id="miethoehe-titel">Mietspiegel und Mietpreisbremse: was in Berlin gilt</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Maßstab ist die ortsübliche Vergleichsmiete. In Berlin zeigt sie der qualifizierte <a href="/lexikon/mietspiegel/">Mietspiegel</a> 2026, den Sie über die <a href="https://mietspiegel.berlin.de/berliner-mietspiegel/mietspiegelabfrage/" target="_blank" rel="noopener">Mietspiegelabfrage der Senatsverwaltung</a> für Ihre Adresse abrufen können.</p>
+      {% call mehr() %}
+      <p>Für Wohnungen in Ein- und Zweifamilienhäusern gilt er nicht.</p>
+      <p>Die <a href="/lexikon/mietpreisbremse/">Mietpreisbremse</a> gilt in ganz Berlin bis Ende 2029: Bei einer neuen Vermietung darf die Miete höchstens 10 Prozent über der ortsüblichen Vergleichsmiete liegen. Ausnahmen gelten unter anderem für Neubauten, die nach dem 1. Oktober 2014 erstmals genutzt wurden, für die erste Vermietung nach einer umfassenden Modernisierung und für eine höhere Vormiete. Wer sich auf eine Ausnahme beruft, muss das dem Mieter vor Vertragsschluss in Textform mitteilen.</p>
+      <p>Außerhalb Berlins hängt es von der Gemeinde ab, ob die Mietpreisbremse gilt. Das klären wir, bevor die Anzeige online geht.</p>
+      {% endcall %}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="anleger" aria-labelledby="anleger-titel">
+    <div class="fgs-cols-head"><h2 id="anleger-titel">Vermietung und Rendite</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Miethöhe, nicht umlagefähige Kosten, Leerstand und Modernisierung beeinflussen Cashflow und Rendite. Deshalb rechnen wir bei Kapitalanlegern die Vermietung immer zusammen mit Kosten und Finanzierung.</p>
+      {% call mehr() %}
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li>Mietstrategie statt isolierter Wunschmiete.</li>
+        <li>Modernisierung vor Neuvermietung wirtschaftlich prüfen.</li>
+        <li>Kapitalanlage und Finanzierung zusammendenken.</li>
+      </ul>
+      <h3>Wir bleiben auch nach der Beurkundung ansprechbar</h3>
+      <p>Gerade bei neu erworbenen Kapitalanlagen entsteht die Vermietungsstrategie häufig erst nach Übergabe. Haben Sie Ihr Objekt über uns gekauft, übernehmen wir Ihre Vermietung zu einem reduzierten Satz. Ob sich das für Sie bei Ihrem Mietvolumen überhaupt lohnt, sagen wir Ihnen ganz offen, manchmal ist die ehrliche Antwort, dass Sie es besser selbst machen.</p>
+      {% endcall %}
+      {{ textlink("/betreuung-nach-dem-kauf/", "Betreuung nach dem Kauf") }}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="kosten" aria-labelledby="kosten-titel">
+    <div class="fgs-cols-head"><h2 id="kosten-titel">Was die Vermietung Sie als Eigentümer kostet</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Bei der Vermietung gilt das Bestellerprinzip: Zahlen muss, wer den Makler beauftragt hat. Beauftragt ein Eigentümer den Makler mit der Vermietung, zahlt der Eigentümer, auch dann, wenn sich Interessenten anschließend ganz von selbst melden.</p>
+      {% call mehr() %}
+      <p>Mietinteressenten zahlen nur, wenn sie selbst einen Makler mit der Suche beauftragen.</p>
+      <p>Die Provision wird nur fällig, wenn durch unsere Vermittlung ein Mietvertrag zustande kommt. Umfang und Vergütung vereinbaren wir vorher mit Ihnen.</p>
+      <p>Alle Regeln zur Provision bei Kauf, Verkauf und Vermietung stehen auf der Seite <a href="/maklerprovision/">Maklerprovision</a>.</p>
+      {% endcall %}
+    </div>
+  </article>
+  </div>
+</section>
+
+{# §4.6 Unterlagen und Mietvertrag als Aufklapper (bisherige H2 als Titel), nach den Zeilen. #vertrag öffnet ihn. #}
+<section class="fgs-section fgs-refs">
+  <div class="fgs-wrap">
+    {% call nachschlag({ id: "vertrag", titel: "Unterlagen und Mietvertrag" }) %}
+    <h3>Vor der Vermarktung</h3>
+    <ul class="fgs-checklist fgs-checklist--one" role="list">
+      <li>Energieausweis<span>spätestens bei der Besichtigung vorzulegen</span></li>
+      <li>Grundriss und Wohnflächenberechnung</li>
+      <li>Letzte Betriebskostenabrechnung<span>Grundlage für realistische Vorauszahlungen</span></li>
+      <li>Bei Eigentumswohnungen Hausordnung und Beschlüsse der Eigentümerversammlung, die Mieter betreffen</li>
+    </ul>
+    <h3>Im Mietvertrag</h3>
+    <p>Neben Miete und Betriebskostenvorauszahlung legt der Vertrag fest, welche <a href="/lexikon/umlagefahige-kosten/">Betriebskosten umgelegt</a> werden, ob eine <a href="/lexikon/staffelmiete/">Staffelmiete</a> oder <a href="/lexikon/indexmiete/">Indexmiete</a> vereinbart wird und wie hoch die Kaution ist. Sie darf höchstens drei Nettokaltmieten betragen, der Mieter kann sie in drei Monatsraten zahlen.</p>
+    <h3>Bei der Übergabe</h3>
+    <p>Übergabeprotokoll mit Zählerständen, Zustand der Räume und Zahl der Schlüssel. Danach bestätigen Sie als Wohnungsgeber dem Mieter den Einzug, damit er sich anmelden kann, spätestens zwei Wochen nach dem Einzug.</p>
+    {% endcall %}
+  </div>
+</section>
+
+{# F Formular (Feldnamen und Versand unverändert) #}
+<section class="fgs-section" id="anfrage-bereich" aria-labelledby="anfrage-titel">
+  <div class="fgs-wrap fgs-formblock">
+    <div class="fgs-formblock-text">
+      <h2 id="anfrage-titel">Ihre Immobilie in wenigen Angaben</h2>
+      <p class="fgs-lead">Wir melden uns mit einer ersten Einschätzung zur Miethöhe und einem Vorschlag für das weitere Vorgehen.</p>
+      <h3>Wer sich meldet</h3>
+      <p>Lennart Geserich, Head of Sales &amp; Vermietung.</p>
+    </div>
+    <div class="fgs-formblock-form">
+    <div class="fgd-form-card" id="anfrage">
+      <h2>Vermietung besprechen</h2>
+      <p>Pflichtfelder sind mit * markiert.</p>
+      <form method="post" action="/.netlify/functions/propstack-lead?concern=Immobilie%20vermieten" class="fgd-form" data-fgd-lead-form data-concern="Immobilie vermieten" novalidate>
+        <fieldset>
+          <legend>Ihre Immobilie</legend>
+          <div class="fgd-field-row">
+            <label>Objektart *
+              <select name="object_type" required>
+                <option value="">Bitte wählen</option>
+                <option>Wohnung</option>
+                <option>Haus</option>
+                <option>Mehrfamilienhaus</option>
+                <option>Gewerbe</option>
+              </select>
+            </label>
+            <label>Adresse oder Ort<input name="location" placeholder="z.&nbsp;B. Berlin-Steglitz"></label>
+          </div>
+          <div class="fgd-field-row fgd-field-row--3">
+            <label>Wohnfläche m²<input name="property_details[seller-area-value]" inputmode="decimal" placeholder="optional"></label>
+            <label>Bisherige Kaltmiete<input name="property_details[seller-cold-rent]" inputmode="decimal" placeholder="optional, in Euro"></label>
+            <label>Frei ab<input name="timeframe" placeholder="z.&nbsp;B. 1. Januar"></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Ihre Kontaktdaten</legend>
+          <div class="fgd-field-row">
+            <label>Vorname *<input name="first_name" required autocomplete="given-name"></label>
+            <label>Nachname *<input name="last_name" required autocomplete="family-name"></label>
+          </div>
+          <div class="fgd-field-row">
+            <label>E-Mail *<input name="email" type="email" required autocomplete="email"></label>
+            <label>Telefon<input name="phone" type="tel" autocomplete="tel" placeholder="für Rückfragen"></label>
+          </div>
+          <label>Nachricht<textarea name="message" rows="3" maxlength="3000" placeholder="optional, zum Beispiel Zustand oder Ausstattung"></textarea></label>
+        </fieldset>
+        <label class="fgd-hp" aria-hidden="true">Website<input name="company_website" tabindex="-1" autocomplete="off"></label>
+        <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
+        <div class="fgd-status" data-fgd-lead-status hidden></div>
+        <button type="submit" class="fgd-btn fgd-btn-navy">Anfrage senden{{ icon("arrow") | safe }}</button>
+      </form>
+      <div class="fgd-form-done" data-fgd-lead-done tabindex="-1" hidden>
+        <h3>Vielen Dank, Ihre Anfrage ist da</h3>
+        <p>Wir melden uns bei Ihnen, um die Vermietung zu besprechen. Wenn es eilt, erreichen Sie uns unter <a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a>.</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>

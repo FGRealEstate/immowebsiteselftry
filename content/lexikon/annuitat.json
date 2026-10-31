@@ -7,11 +7,83 @@
   "keywords": [
     "annuität"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Finanzierung",
-  "explanation": "Die Annuität ist die regelmäßig gleichbleibende Rate eines klassischen Annuitätendarlehens während der Sollzinsbindung. Sie besteht aus Zins und Tilgung; mit sinkender Restschuld sinkt der Zinsanteil und der Tilgungsanteil steigt.",
-  "practiceExample": "300.000 € Darlehen, 4,2 % Sollzins und 2,0 % Anfangstilgung ergeben eine Anfangsannuität von 18.600 € p.a. beziehungsweise 1.550 € monatlich. Im ersten Monat entfallen rund 1.050 € auf Zinsen und 500 € auf Tilgung.",
-  "formula": "Anfangsannuität = Darlehen × (Sollzins + Anfangstilgung)",
+  "explanation": "Die Annuität ist die gleichbleibende Rate eines Annuitätendarlehens. Sie besteht aus Zins und Tilgung. Weil die Restschuld mit jeder Rate sinkt, wird der Zinsanteil kleiner und der Tilgungsanteil größer.",
+  "practiceExample": "300.000 € zu einem Beispielzins von 4 % mit 1,5 % anfänglicher Tilgung ergeben eine Annuität von 16.500 € im Jahr, also 1.375 € im Monat. Im ersten Monat sind davon 1.000 € Zinsen und 375 € Tilgung. Im 121. Monat, also nach zehn Jahren, sind es 815,94 € Zinsen und 559,06 € Tilgung. Die Restschuld liegt dann bei 244.781 €.",
+  "formula": "Monatsrate = Darlehen × (Sollzins + anfängliche Tilgung) / 12",
   "sources": [],
-  "assistantAnswer": "Regelmäßig gleichbleibende Rate aus Zins und Tilgung. Die Annuität ist die regelmäßig gleichbleibende Rate eines klassischen Annuitätendarlehens während der Sollzinsbindung. Sie besteht aus Zins und Tilgung; mit sinkender Restschuld sinkt der Zinsanteil und der Tilgungsanteil steigt."
+  "assistantAnswer": "Regelmäßig gleichbleibende Rate aus Zins und Tilgung. Die Annuität ist die regelmäßig gleichbleibende Rate eines klassischen Annuitätendarlehens während der Sollzinsbindung. Sie besteht aus Zins und Tilgung; mit sinkender Restschuld sinkt der Zinsanteil und der Tilgungsanteil steigt.",
+  "ausbau": {
+    "einordnung": [
+      "Die Annuität ist die gleichbleibende Rate eines Annuitätendarlehens. Sie besteht aus Zins und Tilgung. Weil die Restschuld mit jeder Rate sinkt, wird der Zinsanteil kleiner und der Tilgungsanteil größer.[[1]]",
+      "Die Rate gilt für die Zeit der Zinsbindung, typischerweise 10 oder 15 Jahre. Danach wird ein neuer Zins vereinbart und die Rate neu festgelegt.[[1]] Den neuen Zins können Sie mit Ihrer bisherigen Bank vereinbaren oder zu einer anderen wechseln.[[2]] Ihre Bank muss sich spätestens drei Monate vor Ende der Zinsbindung melden und sagen, ob sie einen neuen Zins anbietet.[[3]]"
+    ],
+    "beispiel": [
+      "300.000 € zu einem Beispielzins von 4 % mit 1,5 % anfänglicher Tilgung ergeben eine Annuität von 16.500 € im Jahr, also 1.375 € im Monat. Im ersten Monat sind davon 1.000 € Zinsen und 375 € Tilgung.",
+      "Im 121. Monat, also nach zehn Jahren, sind es 815,94 € Zinsen und 559,06 € Tilgung. Die Restschuld liegt dann bei 244.781 €."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Die gleichbleibende Rate macht die Finanzierung planbar. Sie sagt aber wenig darüber, wie viel Schuld nach der Zinsbindung bleibt. Lassen Sie sich deshalb den Tilgungsplan mit der Restschuld am Ende der Bindung geben und rechnen Sie die Anschlussrate auch mit einem höheren Zins durch."
+        ]
+      },
+      {
+        "h2": "Was es für Anleger heißt",
+        "absaetze": [
+          "Für Ihren Cashflow zählt die ganze Rate. Steuerlich sind bei einer vermieteten Immobilie die Schuldzinsen Werbungskosten.[[4]] Weil der Zinsanteil sinkt, wird dieser Abzug von Jahr zu Jahr kleiner, während die Rate gleich bleibt. Planen Sie das in Ihrer Rechnung über mehrere Jahre ein."
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "Finanztip: Annuitätendarlehen",
+        "url": "https://www.finanztip.de/baufinanzierung/annuitaetendarlehen/",
+        "stand": "Stand 17.12.2025"
+      },
+      {
+        "name": "Finanztip: Anschlussfinanzierung",
+        "url": "https://www.finanztip.de/baufinanzierung/anschlussfinanzierung/",
+        "stand": "Stand 25.10.2026"
+      },
+      {
+        "name": "§ 493 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__493.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 9 EStG",
+        "url": "https://www.gesetze-im-internet.de/estg/__9.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "gleichbleibende Rate; Zinsanteil sinkt, Tilgungsanteil steigt",
+        "fundstelle": "runde-2.md, T01"
+      },
+      {
+        "zahl": "Zinsbindung typisch 10 oder 15 Jahre, danach neuer Zins",
+        "fundstelle": "runde-2.md, T02"
+      },
+      {
+        "zahl": "Prolongation oder Umschuldung",
+        "fundstelle": "runde-2.md, A05"
+      },
+      {
+        "zahl": "Bank meldet sich spätestens drei Monate vorher",
+        "fundstelle": "runde-2.md, A02"
+      },
+      {
+        "zahl": "Schuldzinsen als Werbungskosten",
+        "fundstelle": "runde-2.md, Z06"
+      },
+      {
+        "zahl": "300.000 × 5,5 % = 16.500 €/Jahr = 1.375 €/Monat; Monat 1: 1.000 + 375 €; Monat 121: 815,94 + 559,06 €; Restschuld 244.781 €",
+        "fundstelle": "Rechnung, Marktprüfung runde-2.md (Finanztip Monat 1 = 1.000 € Zinsen, T03)"
+      }
+    ]
+  }
 }

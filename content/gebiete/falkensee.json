@@ -1,0 +1,430 @@
+{
+  "slug": "falkensee",
+  "name": "Falkensee",
+  "nameLang": "Falkensee",
+  "kontakt": "lennart",
+  "kreis": {
+    "name": "Landkreis Havelland",
+    "url": "/standorte/havelland/"
+  },
+  "title": "Immobilienmakler Falkensee – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler für Falkensee: Verkauf, Kauf und Finanzierung aus einer Hand, mit Bodenrichtwerten 2026 und gezahlten Preisen. Kostenlose Bewertung.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Falkensee",
+  "kurzantwort": "Fischer & Geserich begleitet Sie in Falkensee beim Verkauf, beim Kauf und bei der Finanzierung von Häusern, Wohnungen und Baugrundstücken, vom Zentrum bis Finkenkrug. Bewertung, Vermarktung, Ankaufsberatung und Finanzierung kommen aus einer Hand.",
+  "stand": "Oktober 2026",
+  "updated": "2026-10-26",
+  "zahlen": [
+    {
+      "wert": "500 €/m²",
+      "label": "Bodenrichtwert Falkensee Zentrum (Wohnbaufläche)",
+      "detail": "2025: 550 €/m². 72 der 79 baureifen Zonen in Falkensee liegen unter dem Vorjahr.",
+      "quelle": "Gutachterausschuss Havelland, BORIS Brandenburg",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?limit=1000&skipGeometry=true&gemeinde_bezeichnung=Falkensee&stichtag=2026-01-01&f=json",
+      "stichtag": "Stichtag 01.01.2026"
+    },
+    {
+      "wert": "408 €/m²",
+      "label": "Bauland für Einfamilienhäuser in Falkensee (Median)",
+      "detail": "49 Kauffälle 2025, Grundstücke im Median 812 m² groß. Vorjahr: 407 €/m².",
+      "quelle": "Gutachterausschuss Havelland, Grundstücksmarktbericht 2025",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_HVL.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "4.680 €/m²",
+      "label": "Freistehende Häuser Baujahr 1991–2022, Falkensee und Dallgow-Döberitz",
+      "detail": "Mittlerer Wohnflächenpreis aus 50 Kauffällen, mittlerer Kaufpreis 638.000 €. Werte nur für Falkensee weist der Bericht nicht aus.",
+      "quelle": "Gutachterausschuss Havelland, Grundstücksmarktbericht 2025",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_HVL.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "3.140 €/m²",
+      "label": "Eigentumswohnungen Baujahr 1991–2022, Falkensee und Dallgow-Döberitz",
+      "detail": "90 Kauffälle, mittlere Wohnfläche 67 m². Baujahr ab 2023: 5.563 €/m² bei 8 Kauffällen.",
+      "quelle": "Gutachterausschuss Havelland, Grundstücksmarktbericht 2025",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_HVL.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "46.213",
+      "label": "Einwohner am 31.12.2025",
+      "detail": "493 mehr als ein Jahr zuvor, allein durch Zuzug; es gab mehr Sterbefälle als Geburten.",
+      "quelle": "Amt für Statistik Berlin-Brandenburg",
+      "url": "https://download.statistik-berlin-brandenburg.de/722c93f3928e984f/b897b3745f7d/SB_A01-04_00_2025j01_BB.pdf",
+      "stichtag": "Stand 31.12.2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Zentrum, Falkenhagen und Seegefeld",
+      "absaetze": [
+        "Die Stadt im Westen von Berlin entstand 1923 aus den Dörfern Falkenhagen und Seegefeld und war bis zur Verleihung des Stadtrechts im Oktober 1961 die größte Landgemeinde Deutschlands.[[10]] Die Einwohnerzahl stieg 2025 um 493 auf 46.213 am 31.12.2025.[[3]] Die Stadt gliedert sich in die Wohngebiete Falkenhain, Falkenhagen, Falkenhöh, Seegefeld, Finkenkrug, Waldheim und Alter Finkenkrug.[[9]]",
+        "Im Zentrum besteht ein Sanierungsgebiet, für das der Gutachterausschuss Havelland eigene Bodenrichtwerte ermittelt.[[1]] Den höchsten Richtwert der Stadt hat zum 01.01.2026 das urbane Gebiet an der Dallgower Straße mit 1.100 €/m², nach 1.200 €/m² im Vorjahr; Bauland für Mehrfamilienhäuser am Akazienhof liegt bei 800 €/m², nach 850 €/m².[[2]]",
+        "Für Wohnbauland liegt der Bodenrichtwert zum selben Stichtag bei 550 €/m² am Falkenhagener See und 750 €/m² für die Ufergrundstücke dort, bei 500 €/m² im Zentrum und an der Spandauer Straße Ost sowie bei 480 €/m² in Seegefeld und in Falkenhagen Ost. Alle diese Werte liegen unter denen des Vorjahres.[[2]]",
+        "An der Dallgower Straße baut die BUWOG das Merlin-Quartier mit Mietwohnungen; auf ihrer Projektseite nennt sie 473 und an anderer Stelle derselben Seite 472 Wohnungen, davon 108 mietpreisgebunden. Die Fertigstellung ist „ab Mitte 2026“ vorgesehen.[[15]]"
+      ],
+      "bild": {
+        "name": "falkensee-rathaus",
+        "alt": "Rathaus Falkensee an der Falkenhagener Straße, dreigeschossiger Bau mit rotem Walmdach, Gauben und Uhrturm, davor Bäume, Fahrräder und die Straße, blauer Himmel mit Wolken",
+        "caption": "Das Rathaus an der Falkenhagener Straße.",
+        "credit": "44penguins (Angela M. Arnold), CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Falkensee_20110705_Rathaus_AMA_fec_(9).JPG"
+      }
+    },
+    {
+      "h2": "Falkenhöh, Finkenkrug, Falkenhain und Waldheim",
+      "absaetze": [
+        "Mit Reihenhäusern, Mietshäusern und Stadtvillen entstanden die „Gartenstadt Falkenhöh“, die „Parkstadt“ im Wohngebiet Finkenkrug und Seegefeld-Ost. Daneben werden Einfamilienhäuser auf bisher unbebauten Grundstücken in gewachsenen Wohnstraßen gebaut.[[10]]",
+        "Für Wohnbauland in Falkenhöh Süd liegt der Bodenrichtwert zum 01.01.2026 bei 460 €/m², in Finkenkrug West bei 400 €/m² und in Waldheim bei 380 €/m². Falkenhain Südwest blieb mit 360 €/m² auf dem Vorjahreswert und ist damit eine von nur drei baureifen Zonen in Falkensee ohne Veränderung.[[2]]",
+        "2025 wurden in Falkensee 49 Baugrundstücke für Einfamilienhäuser verkauft, mehr als in jedem anderen Ort des Landkreises Havelland. Der Median lag bei 408 €/m², die Grundstücke waren im Median 812 m² groß.[[1]]",
+        "Hauspreise gibt es nur für Falkensee und Dallgow-Döberitz zusammen. Freistehende Häuser bis Baujahr 1948 kosteten dort 2025 im Mittel 4.608 €/m² Wohnfläche bei 39 Kauffällen, Reihenhäuser und Doppelhaushälften der Baujahre 1991 bis 2022 3.560 €/m² bei 26 Kauffällen.[[1]]"
+      ],
+      "bild": {
+        "name": "falkensee-lindenweiher-finkenkrug",
+        "alt": "Der Lindenweiher in Finkenkrug mit Schilf im Vordergrund, dichten Laubbäumen am Ufer und einem hellen Haus dahinter",
+        "caption": "Der Lindenweiher in Finkenkrug.",
+        "credit": "Karsten Lankau, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Lindenweiher_Falkensee.jpg"
+      }
+    },
+    {
+      "h2": "Regionalbahn statt S-Bahn: Pendeln, Schulen, Planungen",
+      "absaetze": [
+        "Eine S-Bahn hat Falkensee nicht. An den Bahnhöfen Falkensee, Seegefeld und Finkenkrug halten RE2, RE8, RB10, RB14 und RB21. Der RE8 braucht vom Bahnhof Falkensee ohne Umstieg 24 Minuten bis Berlin Hauptbahnhof, mit Umstieg sind es 32 Minuten bis Friedrichstraße.[[12]] Dieser Fahrplan fällt in eine Bauzeit: Für RE2 und RB21 meldet der VBB größere Bauarbeiten bis 12. Dezember 2026.[[13]]",
+        "Auf der Straße ist Falkensee über die B 5 sowie die L 20 und L 201 angebunden; zur Spandauer Altstadt sind es mit dem Auto etwa 10 Minuten.[[9]] 83,5 Prozent der rund 15.800 sozialversicherungspflichtig Beschäftigten in Falkensee pendeln zur Arbeit in andere Gemeinden und nach Berlin, unter anderem zu Amazon und Zalando im Gewerbegebiet GVZ Brieselang.[[14]]",
+        "Für die geplante S-Bahn von Spandau nach Falkensee hat der Lenkungskreis von i2030 im November 2022 den Bahnhof Falkensee als Endpunkt festgelegt; Finkenkrug soll Halt für den Regionalverkehr bleiben. Das Projekt ist in der Vorplanung, ein Termin für die Inbetriebnahme ist nicht genannt.[[14]]",
+        "Zum Schulangebot gehören das Lise-Meitner-Gymnasium, das Vicco-von-Bülow-Gymnasium, die Gesamtschule Immanuel Kant mit gymnasialer Oberstufe, die Oberschule Falkensee und fünf Grundschulen.[[11]]"
+      ],
+      "bild": {
+        "name": "falkensee-bahnhof",
+        "alt": "Bahnsteig mit Stationsschild Falkensee und Wartehäuschen",
+        "caption": "Bahnsteig im Bahnhof Falkensee.",
+        "credit": "Angela M. Arnold, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Bahnhof_Falkensee_2016-06-28_ama_fec_(3).JPG"
+      }
+    }
+  ],
+  "band": {
+    "name": "falkensee-falkenhagener-see-luftbild",
+    "alt": "Luftbild des Falkenhagener Sees, ringsum Einfamilienhäuser zwischen Bäumen, hinten Felder und Gewerbeflächen",
+    "caption": "Der Falkenhagener See von oben, Blick nach Südosten (2006).",
+    "credit": "FOTO DÜSE, Thomas Düsterhöft, CC BY 3.0 DE",
+    "url": "https://commons.wikimedia.org/wiki/File:Luftbild_Falkenhagener_See.jpg"
+  },
+  "anbindung": [
+    "Eine S-Bahn hat Falkensee nicht. An den Bahnhöfen Falkensee, Seegefeld und Finkenkrug halten RE2, RE8, RB10, RB14 und RB21. Der RE8 braucht vom Bahnhof Falkensee ohne Umstieg 24 Minuten bis Berlin Hauptbahnhof, mit Umstieg sind es 32 Minuten bis Friedrichstraße.[[12]]",
+    "Auf der Straße ist Falkensee über die B 5 sowie die L 20 und L 201 angebunden; zur Spandauer Altstadt sind es mit dem Auto etwa 10 Minuten.[[9]]"
+  ],
+  "karte": {
+    "alt": "Karte der Stadt Falkensee: Falkensee mit Seegefeld, Finkenkrug, Falkenhain, Waldheim, Falkenhagen und Falkenhöh, dazu die Bahnstrecken, der Falkenhagener See und die Grenze zu Berlin im Osten"
+  },
+  "verkaufen": {
+    "h2": "Immobilie in Falkensee verkaufen",
+    "absaetze": [
+      "Zum 01.01.2026 liegen 72 der 79 baureifen Bodenrichtwertzonen in Falkensee unter dem Vorjahr.[[2]] Für Falkensee, Nauen, Brieselang und Schönwalde-Glien zusammen meldet der Gutachterausschuss 2025 etwa 10 % niedrigere Baulandpreise als im Vorjahr; in Falkensee selbst sank der mittlere Preis von 424 auf 397 €/m², der Median blieb mit 408 €/m² fast gleich, nach 407 €/m² im Jahr 2024.[[1]] Für Ihren Preis zählt deshalb die Zone, nicht der Durchschnitt der Stadt.",
+      "Bei Eigentumswohnungen der Baujahre 1991 bis 2022 stieg die Zahl der Kauffälle in Falkensee und Dallgow-Döberitz 2025 auf 90, nach 40 im Vorjahr.[[1]] Wir vergleichen Ihre Wohnung deshalb mit verkauften Wohnungen gleichen Baujahrs und mit der aktuellen Konkurrenz am Markt."
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Falkensee",
+    "absaetze": [
+      "Als Eigennutzer rechnen Sie den Weg zum nächsten Bahnhof mit ein: Ohne S-Bahn hängt die Fahrt nach Berlin an den Regionalzügen ab Falkensee, Seegefeld oder Finkenkrug.",
+      "Für Kapitalanleger zählt die Landesverordnung zur Mietpreisbremse, in der Falkensee seit dem 1. Januar 2026 steht; sie gilt bis 31.12.2029, im Gutachten dazu erreichte die Stadt 8 Punkte.[[4,7]] Bei Neuvermietung ist die Miete dann auf die ortsübliche Vergleichsmiete plus 10 % begrenzt; das betrifft Gebäude, die vor dem 1. Oktober 2014 fertiggestellt und bezogen wurden. Für bestehende Mietverträge gilt bis 31.12.2030 eine Kappungsgrenze von 15 % innerhalb von drei Jahren.[[5]] Im Nachbarort Dallgow-Döberitz gilt keine der beiden Regeln.[[6]]",
+      "Die Vergleichsmiete ist in Falkensee schwer zu belegen: Die Stadt hat keinen Mietspiegel,[[8]] und der Gutachterausschuss erstellt keine Mietübersichten. Einen Anhaltspunkt geben die Mieten in verkauften, vermieteten Eigentumswohnungen im Berliner Umland des Havellands: Die Nettokaltmiete lag dort 2023 bis 2025 im Mittel bei 9,4 €/m², bei einer Spanne von 5,9 bis 15,5 €/m².[[1]]"
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Falkensee",
+    "absaetze": [
+      "Für ein freistehendes Haus der Baujahre 1991 bis 2022 zahlten Käufer in Falkensee und Dallgow-Döberitz 2025 im Mittel 638.000 €, für eine Wohnung dieser Baujahre 209.000 €.[[1]] Angebote holen wir über die Plattformen Europace und Baufinex und bei Banken ein, zu denen wir direkten Kontakt haben. Kaufen Sie ein Baugrundstück und bauen selbst, sollte die Finanzierung Grundstückskauf und Bauzeit von Anfang an gemeinsam abdecken."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Ist Falkensee teuer?",
+      "antwort": "Gemessen am Landkreis Havelland liegen die Preise höher. Freistehende Häuser kosteten 2025 im ganzen Landkreis im Mittel 3.263 €/m² Wohnfläche, in Falkensee und Dallgow-Döberitz 4.608 €/m² bei Baujahren bis 1948 und 4.680 €/m² bei Baujahren 1991 bis 2022.[[1]] Die Bodenrichtwerte sind zum 01.01.2026 allerdings in fast allen Zonen der Stadt gesunken.[[2]]",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienmakler Falkensee“, dort als „Ist der Falkensee teuer?“ (Google_Areas, Oktober 2026)"
+    },
+    {
+      "frage": "Wie viel kostet ein Quadratmeter in Falkensee?",
+      "antwort": "Je nach Immobilienart sehr unterschiedlich. Bauland für Einfamilienhäuser kostete 2025 in Falkensee im Median 408 €/m² Grundstücksfläche. Eigentumswohnungen der Baujahre 1991 bis 2022 kosteten in Falkensee und Dallgow-Döberitz im Mittel 3.140 €/m² Wohnfläche, Wohnungen ab Baujahr 2023 5.563 €/m², allerdings bei nur 8 Kauffällen.[[1]]",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilie verkaufen Falkensee“ und „Immobilienbewertung Falkensee“ (Google_Areas, Oktober 2026)"
+    },
+    {
+      "frage": "Wie hoch ist der Bodenrichtwert in Falkensee 2026?",
+      "antwort": "Zum Stichtag 01.01.2026 hat der Gutachterausschuss Havelland für Falkensee 86 Bodenrichtwertzonen ermittelt. Für Wohnbauland liegen die Werte zum Beispiel bei 550 €/m² am Falkenhagener See, 500 €/m² im Zentrum, 400 €/m² in Finkenkrug West und 380 €/m² in Waldheim. Den Wert für ein bestimmtes Grundstück zeigt BORIS Brandenburg, das Bodenrichtwertportal des Landes.[[2]]",
+      "herkunft": "Google-Autocomplete „bodenrichtwert falkensee 2026“ (research/serp/autocomplete-2026-10-24.json)"
+    },
+    {
+      "frage": "Wie viel ist ein Einfamilienhaus in Falkensee 2026 wert?",
+      "antwort": "Ausgewertete Kaufpreise für 2026 hat der Gutachterausschuss noch nicht veröffentlicht. 2025 kostete ein freistehendes Haus der Baujahre 1991 bis 2022 in Falkensee und Dallgow-Döberitz im Mittel 638.000 € bei 141 m² Wohnfläche, eines bis Baujahr 1948 462.000 € bei 120 m².[[1]] Zustand, Grundstücksgröße und Bodenrichtwert der Zone verschieben den Wert im Einzelfall deutlich, deshalb ersetzt dieser mittlere Preis keine Bewertung.",
+      "herkunft": "KI-Abfrage „Wie viel ist ein Einfamilienhaus in Falkensee 2026 wert?“ (ChatGPT, Gemini, Google AI Overview; Dashboard/src/data/research/ai_answers.json, Oktober 2026)"
+    },
+    {
+      "frage": "Wie entwickeln sich die Immobilienpreise in Falkensee?",
+      "antwort": "Eine Prognose geben wir nicht. Für gebrauchte Einfamilienhäuser in Falkensee, Dallgow-Döberitz, Schönwalde-Glien ohne Dörfer und Elstal lag der Mittelwert im 2. Halbjahr 2025 bei 4.564 €/m², im 1. Halbjahr 2022 waren es 5.213 €/m². Weiterverkaufte Wohnungen im Berliner Umland des Havellands mit Nauen und Ketzin/Havel lagen im 2. Halbjahr 2025 bei 3.112 €/m², nach 2.874 €/m² im ersten Halbjahr.[[1]]",
+      "herkunft": "Google-Autocomplete „entwicklung immobilienpreise falkensee“ und „immobilienpreise falkensee prognose“ (research/serp/autocomplete-2026-10-24.json)"
+    },
+    {
+      "frage": "Wo kann ich meine Immobilie in Falkensee kostenlos bewerten lassen?",
+      "antwort": "Fischer & Geserich ermittelt den Wert Ihrer Immobilie kostenlos, meistens innerhalb weniger Stunden und häufig noch am selben Tag. Weil der Grundstücksmarktbericht Häuser und Wohnungen in Falkensee nur zusammen mit Dallgow-Döberitz ausweist, gehen wir vom Bodenrichtwert Ihrer Zone aus und vergleichen mit verkauften Objekten gleicher Bauart und gleichen Baujahrs.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienbewertung Falkensee“, dort ohne Ortsnamen (Google_Areas, Oktober 2026)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Berlin",
+      "url": "/standorte/berlin/"
+    },
+    {
+      "name": "Oranienburg",
+      "url": "/standorte/oranienburg/"
+    },
+    {
+      "name": "Teltow & Kleinmachnow",
+      "url": "/standorte/teltow/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Grundstücksmarktbericht 2025, Gutachterausschuss für Grundstückswerte im Landkreis Havelland (Version 1.0 vom 05.06.2026)",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_HVL.pdf",
+      "stand": "Kaufverträge 2025"
+    },
+    {
+      "name": "Bodenrichtwerte Falkensee, BORIS Brandenburg (GeoBasis-DE/LGB, dl-de/by-2-0)",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?limit=1000&skipGeometry=true&gemeinde_bezeichnung=Falkensee&stichtag=2026-01-01&f=json",
+      "stand": "Stichtag 01.01.2026, Vergleich 01.01.2025"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 4 – j / 25 (Bevölkerung)",
+      "url": "https://download.statistik-berlin-brandenburg.de/722c93f3928e984f/b897b3745f7d/SB_A01-04_00_2025j01_BB.pdf",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Mietpreisbegrenzungsverordnung Brandenburg, MIL",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/Mietpreisbegrenzungsverordnung.pdf",
+      "stand": "gültig 01.01.2026–31.12.2029"
+    },
+    {
+      "name": "Kappungsgrenzenverordnung Brandenburg, MIL",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/KappGrenzV.pdf",
+      "stand": "gültig 01.01.2026–31.12.2030"
+    },
+    {
+      "name": "MIL, Pressemitteilung zu Mietpreisbremse und Kappungsgrenzenverordnung",
+      "url": "https://mil.brandenburg.de/mil/de/presse/detail/~25-11-2025-kabinett-mietpreisbremse-und-kappungsgrenzenverordnung",
+      "stand": "25.11.2025"
+    },
+    {
+      "name": "RegioKontext, Gutachten zur Gebietskulisse der Mietpreisbegrenzungsverordnungen, Tabellen 3 und 4",
+      "url": "https://bravors.brandenburg.de/fm/68/Anlage_Gutachten.pdf",
+      "stand": "18.09.2025"
+    },
+    {
+      "name": "Stadt Falkensee, FAQ (Mietspiegel)",
+      "url": "https://www.falkensee.de/seite/552977/faq-h%C3%A4ufig-gestellte-fragen.html",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Falkensee, Zahlen – Daten – Fakten",
+      "url": "https://www.falkensee.de/seite/457886/zahlen-daten-fakten.html",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Falkensee, „Falkensee – die Wohn- und Freizeitstadt im Westen von Berlin“",
+      "url": "https://www.falkensee.de/seite/10340/falkensee-die-wohn-und-freizeitstadt-im-westen-von-berlin.html",
+      "stand": "ohne Datum, abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Falkensee, Verzeichnis Schulen (falkensee.de)",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "VBB-Fahrplandaten (Linien an Falkensee, Seegefeld und Finkenkrug, Fahrzeiten ab Falkensee, Bahnhof)",
+      "url": "https://v6.vbb.transport.rest/stops/900210010?linesOfStops=true",
+      "stand": "Fahrplan Dienstag 10.11.2026 (Bauzeit), abgefragt 24.10.2026"
+    },
+    {
+      "name": "VBB, Linienseite RE2 (Bauhinweise)",
+      "url": "https://www.vbb.de/unterwegs-im-vbb/regionalbahnlinien/re2/",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "i2030, Korridor West (S-Bahn Spandau – Falkensee)",
+      "url": "https://www.i2030.de/west/",
+      "stand": "Seite geändert 10.07.2026"
+    },
+    {
+      "name": "BUWOG, Merlin-Quartier Falkensee (Bauträger)",
+      "url": "https://www.buwog.de/wohnbauprojekte/falkensee-merlin-quartier",
+      "stand": "abgerufen 24.10.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "BRW Zentrum W 500 (2025: 550)",
+      "fundstelle": "falkensee.md, Zeile 34"
+    },
+    {
+      "zahl": "86 Zonen, 79 baureif, 72 gesunken, 3 gleich, 3 gestiegen (GE)",
+      "fundstelle": "falkensee.md, Zeile 27"
+    },
+    {
+      "zahl": "BRW Dallgower Straße MU 1.100 (1.200), höchster baureifer Wert (eigene Auswertung aus Zeilen 31–109)",
+      "fundstelle": "falkensee.md, Zeile 78"
+    },
+    {
+      "zahl": "BRW Akazienhof WA MFH 800 (850)",
+      "fundstelle": "falkensee.md, Zeile 51"
+    },
+    {
+      "zahl": "BRW Falkenhagener See W 550 (600), UG 750 (800)",
+      "fundstelle": "falkensee.md, Zeilen 31, 32"
+    },
+    {
+      "zahl": "BRW Spandauer Straße Ost W 500 (550)",
+      "fundstelle": "falkensee.md, Zeile 33"
+    },
+    {
+      "zahl": "BRW Seegefeld W 480 (500), Falkenhagen Ost W 480 (500)",
+      "fundstelle": "falkensee.md, Zeilen 35, 36"
+    },
+    {
+      "zahl": "BRW Falkenhöh Süd 460, Finkenkrug West 400, Waldheim 380",
+      "fundstelle": "falkensee.md, Zeilen 37, 42, 43"
+    },
+    {
+      "zahl": "BRW Falkenhain Südwest 360 (360), eine von drei unveränderten Zonen",
+      "fundstelle": "falkensee.md, Zeilen 27, 44, 45, 93"
+    },
+    {
+      "zahl": "Sanierungsgebiet Zentrum mit besonderen BRW",
+      "fundstelle": "falkensee.md, Zeile 20"
+    },
+    {
+      "zahl": "Bauland 49 Kauffälle, Median 408 (407), Mittel 397 (424)",
+      "fundstelle": "falkensee.md, Zeile 119"
+    },
+    {
+      "zahl": "Grundstücksgröße Median 812 m²",
+      "fundstelle": "falkensee.md, Zeile 120"
+    },
+    {
+      "zahl": "49 = meiste Bauland-Kauffälle im Landkreis (nur 4 Orte über 20); etwa 10 % niedriger in Falkensee, Nauen, Brieselang, Schönwalde-Glien",
+      "fundstelle": "falkensee.md, Zeile 121"
+    },
+    {
+      "zahl": "EFH 1991–2022: 50 Kauffälle, 141 m², 4.680 €/m², 638.000 €",
+      "fundstelle": "falkensee.md, Zeile 132"
+    },
+    {
+      "zahl": "EFH bis 1948: 39 Kauffälle, 120 m², 4.608 €/m², 462.000 €",
+      "fundstelle": "falkensee.md, Zeile 130"
+    },
+    {
+      "zahl": "EFH Landkreis alle Baujahre Mittel 3.263 €/m²",
+      "fundstelle": "falkensee.md, Zeile 134"
+    },
+    {
+      "zahl": "Index gebrauchte EFH 2-2025 4.564, 1-2022 5.213",
+      "fundstelle": "falkensee.md, Zeile 135"
+    },
+    {
+      "zahl": "RH/DHH 1991–2022: 26 Kauffälle, 3.560 €/m²",
+      "fundstelle": "falkensee.md, Zeile 137"
+    },
+    {
+      "zahl": "ETW 1991–2022: 90 (40) Kauffälle, 67 m², 3.140 €/m², 209.000 €",
+      "fundstelle": "falkensee.md, Zeile 140"
+    },
+    {
+      "zahl": "ETW ab 2023: 8 Kauffälle, 5.563 €/m²",
+      "fundstelle": "falkensee.md, Zeile 141"
+    },
+    {
+      "zahl": "ETW-Weiterverkauf 1-2025 2.874, 2-2025 3.112 (Berliner Umland HVL + Nauen + Ketzin/Havel)",
+      "fundstelle": "falkensee.md, Zeile 146"
+    },
+    {
+      "zahl": "Nettokaltmiete ETW 9,4 €/m² (5,9–15,5), 2023–2025",
+      "fundstelle": "falkensee.md, Zeilen 148, 158"
+    },
+    {
+      "zahl": "Kein Mietspiegel; keine Mietübersichten des Gutachterausschusses",
+      "fundstelle": "falkensee.md, Zeilen 156, 157"
+    },
+    {
+      "zahl": "Mietpreisbremse 01.01.2026–31.12.2029; 10 % / 1. Oktober 2014",
+      "fundstelle": "falkensee.md, Zeilen 159, 160"
+    },
+    {
+      "zahl": "Kappungsgrenze 15 % in drei Jahren bis 31.12.2030",
+      "fundstelle": "falkensee.md, Zeilen 160, 161"
+    },
+    {
+      "zahl": "Gutachten 8 Punkte",
+      "fundstelle": "falkensee.md, Zeile 162"
+    },
+    {
+      "zahl": "Dallgow-Döberitz nicht in Mietpreisbremse (6 Punkte) und nicht in KappGrenzV",
+      "fundstelle": "falkensee.md, Zeile 161 und Abschnitt Dallgow-Döberitz, Mietrecht"
+    },
+    {
+      "zahl": "46.213 Einwohner, +493, Wanderung +741, 492 Gestorbene / 274 Geborene",
+      "fundstelle": "falkensee.md, Zeilen 182, 186"
+    },
+    {
+      "zahl": "1923 Zusammenschluss, Oktober 1961 Stadtrecht",
+      "fundstelle": "falkensee.md, Zeilen 258, 259"
+    },
+    {
+      "zahl": "Wohngebiete",
+      "fundstelle": "falkensee.md, Zeile 256"
+    },
+    {
+      "zahl": "Gartenstadt Falkenhöh, Parkstadt, Seegefeld-Ost; Einfamilienhäuser in Baulücken",
+      "fundstelle": "falkensee.md, Zeilen 260, 261"
+    },
+    {
+      "zahl": "Merlin-Quartier 473 bzw. 472, 108 mietpreisgebunden, ab Mitte 2026",
+      "fundstelle": "falkensee.md, Zeile 286"
+    },
+    {
+      "zahl": "Linien RE2, RE8, RB10, RB14, RB21; keine S-Bahn",
+      "fundstelle": "falkensee.md, Zeilen 205–209"
+    },
+    {
+      "zahl": "RE8 24 Min. Hbf; 32 Min. Friedrichstraße (10.11.2026)",
+      "fundstelle": "falkensee.md, Zeilen 215, 218"
+    },
+    {
+      "zahl": "Bauarbeiten RE2 und RB21 bis 12. Dezember 2026",
+      "fundstelle": "falkensee.md, Zeile 232"
+    },
+    {
+      "zahl": "B 5, L 20, L 201; Spandau ca. 10 Minuten",
+      "fundstelle": "falkensee.md, Zeile 225"
+    },
+    {
+      "zahl": "83,5 Prozent von ca. 15.800 Beschäftigten pendeln aus",
+      "fundstelle": "falkensee.md, Zeile 279"
+    },
+    {
+      "zahl": "S-Bahn: Endpunkt Falkensee (Nov. 2022), Vorplanung, kein Datum",
+      "fundstelle": "falkensee.md, Zeilen 248, 249, 252"
+    },
+    {
+      "zahl": "2 Gymnasien, Gesamtschule, Oberschule, 5 Grundschulen (Namen)",
+      "fundstelle": "falkensee.md, Zeilen 267, 270–273"
+    }
+  ],
+  "kurzantwortMehr": "Das Berliner Maklerunternehmen arbeitet mit Erlaubnissen nach § 34c und § 34i GewO. Für Ihre Fragen zu Falkensee erreichen Sie Lennart Geserich, Head of Sales & Vermietung.",
+  "hero": {
+    "name": "falkensee-neuer-see",
+    "alt": "Neuer See in Falkensee im Sommer",
+    "credit": "Dreizung, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Neuer_See_Falkensee.jpg"
+  }
+}

@@ -1,0 +1,38 @@
+{#- Abschlussblock, gleich auf jeder Seite (Brief Design-Pass §4.0):
+    Ansprechpartner mit Foto (Lennart: Berlin und Brandenburg; Timon: Finanzierung, Leipzig, Dresden),
+    ein Button („Kostenlose Bewertung“ oder „Gespräch vereinbaren“), Telefon und E-Mail.
+    Eingaben: kontaktKey ("lennart" | "timon"), closing = { kicker, title, text, button: "bewertung" | "gespraech", gebiet }.
+    Auf dem eigenen Profil der Person entfällt der Link „Profil von …“.
+    Daten aus _data/kontakte.js; ohne Direktdurchwahl gelten Büronummer und info@. -#}
+{% from "fgd-icons.njk" import icon %}
+{% set k = kontakte[kontaktKey or "lennart"] %}
+{% set kPhone = k.phone or nav.phone %}
+{% set kEmail = k.email or nav.email %}
+<section class="fgd-section fgd-section--navy fgd-closing" id="kontakt" aria-labelledby="abschluss-titel">
+  <div class="fgd-wrap fgd-closing-grid">
+    <div class="fgd-closing-photo">
+      <img src="{{ k.photo }}" srcset="{{ k.photoSrcset }}" sizes="(min-width: 900px) 360px, 100vw" width="720" height="900" alt="Porträt von {{ k.name }}" loading="lazy" decoding="async">
+    </div>
+    <div class="fgd-closing-body">
+      <p class="fgd-kicker">{{ closing.kicker or "Ihr nächster Schritt" }}</p>
+      <h2 id="abschluss-titel">{{ closing.title or "Sprechen Sie mit uns" }}</h2>
+      <p class="fgd-lead">{{ closing.text or "Das erste Gespräch kostet Sie nichts und verpflichtet Sie zu nichts." }}</p>
+      <div class="fgd-closing-person">
+        <strong>{{ k.name }}</strong>
+        <span>{{ k.role }} · {{ closing.gebiet or k.gebiet }}</span>
+      </div>
+      <div class="fgd-closing-actions">
+        {% if closing.button == "bewertung" %}
+        <a class="fgd-btn fgd-btn-gold" href="{{ nav.valuation | navHref }}">Kostenlose Bewertung{{ icon("arrow") | safe }}</a>
+        {% else %}
+        <a class="fgd-btn fgd-btn-gold" href="/kontakt.html">Gespräch vereinbaren{{ icon("arrow") | safe }}</a>
+        {% endif %}
+      </div>
+      <div class="fgd-closing-lines">
+        <a href="{{ kPhone.href }}">{{ icon("phone") | safe }}{{ kPhone.display }}</a>
+        <a href="mailto:{{ kEmail }}">{{ icon("mail") | safe }}{{ kEmail }}</a>
+      </div>
+      {% set kProfile = k.profile | navHref %}{% if kProfile != page.url %}<a class="fgd-textlink" href="{{ kProfile }}">Profil von {{ k.name.split(" ")[0] }}{{ icon("arrow") | safe }}</a>{% endif %}
+    </div>
+  </div>
+</section>

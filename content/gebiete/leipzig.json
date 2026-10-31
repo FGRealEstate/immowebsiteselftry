@@ -1,0 +1,321 @@
+{
+  "slug": "leipzig",
+  "name": "Leipzig",
+  "nameLang": "Leipzig",
+  "inOrt": "in Leipzig",
+  "fuerOrt": "Leipzig",
+  "typ": "stadt",
+  "kicker": "Leipzig",
+  "kontakt": "timon",
+  "title": "Immobilienmakler Leipzig – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler in Leipzig: Verkauf, Kauf und Finanzierung im Zentrum, in Gohlis, Eutritzsch und Lindenau, mit Kaufpreisen 2025 und kostenloser Bewertung.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Leipzig",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Leipzig beim Verkauf, beim Kauf und bei der Finanzierung, mit eigenen Seiten für Leipzig-Zentrum, Leipzig-Nord und Leipzig-West. Ihr Ansprechpartner für Leipzig ist Timon Fischer.",
+  "kurzantwortMehr": "Fischer & Geserich hat seinen Sitz in der Schützenstraße 30 in Berlin und Erlaubnisse nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Timon Fischer ist Geschäftsführer und verantwortet die Immobilienfinanzierung.",
+  "stand": "Oktober 2026",
+  "updated": "2026-10-27",
+  "hero": {
+    "name": "leipzig-city-hochhaus-neues-rathaus",
+    "alt": "Blick vom City-Hochhaus über die Leipziger Innenstadt mit dem Neuen Rathaus, 2015",
+    "credit": "LeipzigTravel, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Leipzig_Skyline.jpg",
+    "position": "50% 60%"
+  },
+  "zahlen": [
+    {
+      "wert": "5.163",
+      "label": "Eigentumswohnungen und Teileigentum 2025 in Leipzig verkauft",
+      "detail": "Für zusammen 1.293 Mio. €. 2023 waren es 2.841 Verkäufe, 2024 4.116.",
+      "quelle": "Grundstücksmarktbericht Leipzig 2026",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 2.850 €/m²",
+      "label": "Eigentumswohnungen im sanierten Altbau, Weiterverkauf in Leipzig",
+      "detail": "1.902 Verkäufe ohne Stellplatz, Median 2.770 €/m², Spanne 1.013 bis 6.103 €/m². Je Stadtbezirk von 2.542 €/m² in Nordost bis 3.447 €/m² in Mitte.",
+      "quelle": "Grundstücksmarktbericht Leipzig 2026",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 5.953 €/m²",
+      "label": "Neue Eigentumswohnungen ohne Stellplatz in Leipzig",
+      "detail": "227 Verkäufe, Spanne 4.048 bis 8.107 €/m². Mit Stellplatz 214 Verkäufe zu im Mittel 6.451 €/m².",
+      "quelle": "Grundstücksmarktbericht Leipzig 2026",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "23,1",
+      "label": "Rohertragsfaktor sanierter Mehrfamilienhäuser in Leipzig",
+      "detail": "124 Verkäufe mit Ertragsdaten: im Mittel 1.825 €/m² Wohn- und Nutzfläche, Miete 6,73 €/m², Nettoanfangsrendite 3,1 %, Leerstand 1,7 %.",
+      "quelle": "Grundstücksmarktbericht Leipzig 2026",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "6,56 €/m²",
+      "label": "Durchschnittsmiete im Leipziger Mietspiegel 2025–2027",
+      "detail": "Aus Mieten, die in den sechs Jahren vor dem Stichtag 01.10.2024 neu vereinbart oder geändert wurden. Im Mietspiegel 2022 waren es 6,29 €/m², 2018 5,54 €/m².",
+      "quelle": "Leipziger Mietspiegel 2025–2027",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.5_Dez5_Jugend_Soziales_Gesundheit_Schule/50_Sozialamt/Mietspiegel/Broschuere_zum_Leipziger_Mietspiegel_2025-2027_01.pdf",
+      "stichtag": "Stichtag 01.10.2024"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Leipzig-Zentrum: Bachviertel, Musikviertel und Eisenbahnstraße",
+      "absaetze": [
+        "In Zentrum-West, Zentrum-Süd, Zentrum-Südost und Neustadt-Neuschönefeld leben 55.739 Menschen, 16 % mehr als 2015.[[5]] Weiterverkaufte Altbauwohnungen kosteten 2025 im Stadtbezirk Mitte im Mittel 3.447 €/m², mehr als in jedem anderen Leipziger Stadtbezirk; Neustadt-Neuschönefeld gehört zum Stadtbezirk Ost mit 2.576 €/m².[[1]] In Zentrum-Südost wurden 52 neue Wohnungen mit Stellplatz verkauft, knapp ein Viertel aller solchen Verkäufe in Leipzig.[[1]] Die Bodenrichtwerte reichen von 740 €/m² in Neustadt-Neuschönefeld bis 2.500 €/m² in Zentrum-Süd.[[2]] Die Seite beschreibt Bachviertel, Musikviertel, das Gebiet um den Bayerischen Bahnhof und die Eisenbahnstraße."
+      ],
+      "seite": {
+        "url": "/standorte/leipzig/zentrum/",
+        "text": "Zur Seite Leipzig-Zentrum"
+      },
+      "bild": {
+        "name": "leipzig-zentrum-karl-tauchnitz-strasse-10",
+        "alt": "Die Villa Karl-Tauchnitz-Straße 10 in Leipzig an einem Sommertag, davor die Straße",
+        "credit": "Frank Vincentz, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Leipzig_-_Karl-Tauchnitz-Stra%C3%9Fe_04_ies.jpg",
+        "position": "50% 55%"
+      }
+    },
+    {
+      "h2": "Leipzig-Nord: Gohlis, Eutritzsch, Schönefeld und Mockau",
+      "absaetze": [
+        "Die neun Ortsteile von Gohlis bis Mockau haben 114.819 Einwohner.[[5]] Im Stadtbezirk Nord, mit Gohlis und Eutritzsch, wurden 2025 306 sanierte Altbauwohnungen weiterverkauft, mehr als in jedem anderen Stadtbezirk, im Mittel für 2.676 €/m².[[1]] Neue Wohnungen ohne Stellplatz kosteten in Gohlis-Süd im Mittel 6.960 €/m².[[1]] Die Bodenrichtwerte für Mehrfamilienhaus-Grundstücke reichen von 400 €/m² bis 1.700 €/m² in Zentrum-Nord.[[2]] Gohlis und Eutritzsch gehören seit 1890 zu Leipzig, Schönefeld und Mockau seit 1915.[[12]]"
+      ],
+      "seite": {
+        "url": "/standorte/leipzig/nord/",
+        "text": "Zur Seite Leipzig-Nord"
+      },
+      "bild": {
+        "name": "leipzig-nord-gohliser-schloesschen",
+        "alt": "Das Gohliser Schlösschen in Gohlis-Süd",
+        "caption": "Das Gohliser Schlösschen in Gohlis-Süd.",
+        "credit": "Falk2, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:L00_744_Gohliser_Schl%C3%B6sschen.jpg"
+      }
+    },
+    {
+      "h2": "Leipzig-West: Lindenau, Altlindenau und Leutzsch",
+      "absaetze": [
+        "Lindenau, Altlindenau und Leutzsch haben zusammen 39.475 Einwohner, 16 % mehr als 2015.[[5]] Im Stadtbezirk Altwest wechselten 2025 35 Mehrfamilienhäuser für 77,5 Mio. € den Eigentümer, 18,9 % des Leipziger Umsatzes mit Mehrfamilienhäusern und der höchste Anteil aller Stadtbezirke. Weiterverkaufte Altbauwohnungen kosteten dort im Mittel 2.738 €/m².[[1]] Die Bodenrichtwerte für Mehrfamilienhaus-Grundstücke liegen zwischen 450 €/m² in Leutzsch und 1.150 €/m² in Altlindenau.[[2]] Für große Teile der drei Ortsteile gelten soziale Erhaltungssatzungen.[[8]]"
+      ],
+      "seite": {
+        "url": "/standorte/leipzig/west/",
+        "text": "Zur Seite Leipzig-West"
+      },
+      "bild": {
+        "name": "leipzig-west-lindenauer-markt",
+        "alt": "Der Lindenauer Markt in Altlindenau mit Marktstraße und Westbad",
+        "caption": "Der Lindenauer Markt in Altlindenau.",
+        "credit": "Frank Vincentz, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Leipzig_-_Lindenauer_Markt_%2B_Marktstra%C3%9Fe_%2B_Westbad_01_ies.jpg"
+      }
+    }
+  ],
+  "verkaufen": {
+    "h2": "Immobilie in Leipzig verkaufen",
+    "absaetze": [
+      "Ob Ihre Wohnung vermietet ist, macht in Leipzig einen messbaren Unterschied: Weiterverkaufte Altbauwohnungen erzielten 2025 bezugsfrei im Mittel 3.054 €/m², vermietet 2.707 €/m² und beim Verkauf an den Mieter 2.937 €/m².[[1]] Wir bewerten deshalb nach Vermietungsstand, Wohnlage im Mietspiegel und Bodenrichtwertzone. Liegt Ihr Haus in einem der 15 Sanierungsgebiete, die Leipzig zwischen 1991 und 2004 festgelegt hat, klären wir vor dem Verkauf, ob der Ausgleichsbetrag festgesetzt und bezahlt ist; alle 15 Satzungen sind inzwischen aufgehoben.[[11]] Die Wertermittlung ist kostenlos und meistens innerhalb weniger Stunden fertig."
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Leipzig",
+    "absaetze": [
+      "Für Kapitalanleger gilt in Leipzig die Mietpreisbremse, lückenlos verlängert bis 30.06.2027: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[6]] Bestandsmieten dürfen in drei Jahren um höchstens 15 % steigen.[[7]] Sanierte Mehrfamilienhäuser brachten 2025 im Mittel eine Nettoanfangsrendite von 3,1 %.[[1]]",
+      "Anders als in Berlin gibt es in Sachsen keine Verordnung, nach der die Aufteilung eines Mietshauses in Eigentumswohnungen genehmigt werden muss, obwohl Leipzig sie erstmals 2021 beantragt hat.[[13,14]] In den neun sozialen Erhaltungsgebieten, etwa in Lindenau, Connewitz, Eutritzsch und an der Eisenbahnstraße, brauchen Sie aber für Modernisierungen, Grundrissänderungen und Rückbau vor Baubeginn eine Genehmigung der Stadt, auch ohne Bauantrag. Beim Kauf eines bebauten Grundstücks dort prüft die Stadt ihr Vorkaufsrecht.[[8,9,10]]"
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Leipzig",
+    "absaetze": [
+      "Für seine Renditeberechnung setzt der Gutachterausschuss auf den Kaufpreis 5,5 % Grunderwerbsteuer sowie je 1 % für Notar und Grundbuch an.[[1]] Timon Fischer rechnet Kaufpreis, Nebenkosten und Eigenkapital mit Ihnen durch, vergleicht Ihre Finanzierung über Europace und Baufinex und fragt parallel Banken direkt an. Finanzierungsfähigkeit und Bonität klären wir früh."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Was kostet eine Wohnung in Leipzig 2026?",
+      "antwort": "Die jüngsten amtlichen Zahlen sind die Kaufverträge 2025. Weiterverkaufte Wohnungen im sanierten Altbau kosteten im Mittel 2.850 €/m² Wohnfläche, erstmals verkaufte sanierte Altbauwohnungen 6.548 €/m² und neue Wohnungen ohne Stellplatz 5.953 €/m².[[1]] Je Stadtbezirk reichte der Mittelwert für weiterverkaufte Altbauwohnungen von 2.542 €/m² in Nordost bis 3.447 €/m² in Mitte.[[1]]",
+      "herkunft": "Google-Autocomplete „immobilienpreise leipzig 2026“ (27.10.2026)"
+    },
+    {
+      "frage": "Wie haben sich die Immobilienpreise in Leipzig entwickelt?",
+      "antwort": "Der Gutachterausschuss zählte 2021 5.715 verkaufte Eigentumswohnungen und Teileigentumseinheiten für 1.363 Mio. €, 2023 nur 2.841 für 669 Mio. € und 2025 wieder 5.163 für 1.293 Mio. €. Sein Bodenrichtwertindex für Mehrfamilienhaus-Grundstücke in mittlerer Wohnlage stieg von 100 im Jahr 2020 auf 120 im Jahr 2023 und lag 2026 bei 106.[[1]] Eine Prognose lässt sich daraus nicht ableiten.",
+      "herkunft": "Google-Autocomplete „immobilienpreise leipzig entwicklung“ (27.10.2026)"
+    },
+    {
+      "frage": "Wie hoch ist der Bodenrichtwert in Leipzig 2026?",
+      "antwort": "Der Gutachterausschuss hat die Bodenrichtwerte zum 01.01.2026 am 26.02.2026 beschlossen und veröffentlicht sie als Karte und als offene Daten.[[1,2]] Für Mehrfamilienhaus-Grundstücke liegen sie in Mockau bei 400 bis 520 €/m², in Gohlis bei 400 bis 1.280 €/m², in Zentrum-Süd bei 1.450 bis 2.500 €/m².[[2]]",
+      "herkunft": "Google-Autocomplete „bodenrichtwert leipzig 2026“ (27.10.2026)"
+    },
+    {
+      "frage": "Welcher Mietspiegel gilt 2026 in Leipzig?",
+      "antwort": "Der Leipziger Mietspiegel 2025–2027. Der Stadtrat hat ihn am 25.06.2025 als qualifizierten Mietspiegel anerkannt; er gilt vom 01.07.2025 bis 30.06.2027.[[3]] Die Wohnlage Ihrer Adresse sehen Sie in der Lagekarte der Stadt; innerhalb der Innenstadt erhöht ein eigener Lagefaktor die Vergleichsmiete.[[4,3]]",
+      "herkunft": "Google-Autocomplete „mietspiegel leipzig 2026“ (27.10.2026)"
+    },
+    {
+      "frage": "Was kostet ein Makler in Leipzig?",
+      "antwort": "Beim Verkauf einer Wohnung oder eines Einfamilienhauses an einen Verbraucher zahlen Verkäufer und Käufer je die Hälfte der Provision (§§ 656a bis 656d BGB), bundesweit und damit auch in Sachsen. Bei Fischer & Geserich sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision. Für Mehrfamilienhäuser und Grundstücke gilt die Teilung nicht. Fällig wird die Provision nur, wenn der Kaufvertrag zustande kommt.",
+      "herkunft": "Google-Autocomplete „makler leipzig kosten“ (27.10.2026)"
+    },
+    {
+      "frage": "Welches ist das teuerste Viertel in Leipzig?",
+      "antwort": "Unter den drei Leipziger Gebieten auf unseren Seiten ist es das Zentrum: Nach dem Grundstücksmarktbericht 2026 des Leipziger Gutachterausschusses kosteten weiterverkaufte sanierte Altbauwohnungen 2025 im Stadtbezirk Mitte, zu dem alle sieben Zentrum-Ortsteile gehören, im Mittel 3.447 €/m².[[1]] Im Stadtbezirk Altwest mit Lindenau, Altlindenau und Leutzsch waren es 2.738 €/m², im Stadtbezirk Nord mit Gohlis und Eutritzsch 2.676 €/m², im Stadtbezirk Ost mit Neustadt-Neuschönefeld 2.576 €/m² und im Stadtbezirk Nordost mit Schönefeld und Mockau 2.542 €/m².[[1]] Auch die Bodenrichtwerte des Gutachterausschusses sind im Zentrum am höchsten, in Zentrum-Süd bis 2.500 €/m²; in Leipzig-Nord erreichen sie in Zentrum-Nord bis 1.700 €/m², in Leipzig-West in Altlindenau bis 1.150 €/m².[[2]] Bei neu gebauten Wohnungen ohne Stellplatz nennen unsere Seiten dagegen für Gohlis-Süd den höchsten Mittelwert, 6.960 €/m², für Zentrum-Südost 5.591 €/m².[[1]]",
+      "herkunft": "FG-Gap-Answers 7.2 (SOURCE), selbst geschrieben nur aus Zahlen, die schon auf den Gebietsseiten stehen (Stand 28.10.2026). Recherche P103, laut Brief nur unter Zentrum, Nord und West. Zahlen: Seiten Leipzig-Zentrum (Mitte 3.447, Ost 2.576; Bodenrichtwerte bis 2.500 in Zentrum-Süd; Neubau ohne Stellplatz Zentrum-Südost 5.591), Leipzig-Nord (Nord 2.676, Nordost 2.542; Zentrum-Nord bis 1.700; Gohlis-Süd 6.960), Leipzig-West (Altwest 2.738; Altlindenau bis 1.150). Aus, bis Jesu die Quellen geprüft hat (freigaben.quelleFaq).",
+      "quelle": "7.2-P103"
+    },
+    {
+      "frage": "Wie hoch ist der Kaufpreisfaktor in Leipzig?",
+      "antwort": "Für sanierte Mehrfamilienhäuser nennt der Leipziger Gutachterausschuss in seinem Grundstücksmarktbericht 2026 für 2025 einen Faktor von im Mittel 23,1; er weist ihn als Rohertragsfaktor aus und hat dafür 124 Verkäufe mit Ertragsdaten ausgewertet.[[1]] In den Stadtbezirken unserer Leipziger Seiten lag er in Mitte bei 24,5, allerdings bei nur neun Verkäufen, in Nord bei 23,7, in Ost bei 23,0, in Altwest bei 21,9 und in Nordost bei 21,4.[[1]] Die Nettoanfangsrendite lag in ganz Leipzig im Mittel bei 3,1 %.[[1]] Der einzelne Faktor hängt von Lage, Zustand und Miethöhe ab.",
+      "herkunft": "FG-Gap-Answers 7.2 (SOURCE), selbst geschrieben nur aus Zahlen, die schon auf den Gebietsseiten stehen (Stand 28.10.2026). Recherche P102, laut Brief der Faktor, der schon auf Leipzig-Nord und Leipzig-Zentrum steht. Zahlen: Kennzahlen der Seiten Leipzig (23,1; 124 Verkäufe; Nettoanfangsrendite 3,1 %), Leipzig-Zentrum (Mitte 24,5 bei 9, Ost 23,0), Leipzig-Nord (Nord 23,7, Nordost 21,4), Leipzig-West (Altwest 21,9); Grundstücksmarktbericht Leipzig 2026 = Quelle 1. Aus, bis Jesu die Quellen geprüft hat (freigaben.quelleFaq).",
+      "quelle": "7.2-P102"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Dresden",
+      "url": "/standorte/dresden/"
+    },
+    {
+      "name": "Berlin",
+      "url": "/standorte/berlin/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Stadt Leipzig, Grundstücksmarktbericht 2026",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stand": "Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+    },
+    {
+      "name": "Bodenrichtwerte des Gutachterausschusses in der Stadt Leipzig, Open Data (BRW_Zonen_2026 und BRW_Zonen_2025), eigene Zuordnung zu den Ortsteilen",
+      "url": "https://geodienste.leipzig.de/l3/OpenData/BRW_Zonen_2026/wfs?SERVICE=WFS&REQUEST=GetCapabilities",
+      "stand": "Stichtag 01.01.2026, Vergleich mit 01.01.2025"
+    },
+    {
+      "name": "Stadt Leipzig, Leipziger Mietspiegel 2025–2027 (Broschüre)",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.5_Dez5_Jugend_Soziales_Gesundheit_Schule/50_Sozialamt/Mietspiegel/Broschuere_zum_Leipziger_Mietspiegel_2025-2027_01.pdf",
+      "stand": "gültig 01.07.2025 bis 30.06.2027, Erhebungsstichtag 01.10.2024"
+    },
+    {
+      "name": "Stadt Leipzig, Mietspiegel (Lagekarte und Mietspiegelrechner)",
+      "url": "https://www.leipzig.de/bauen-und-wohnen/wohnen/mietspiegel",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Amt für Statistik und Wahlen, Kleinräumiges Datenmaterial (Einwohner, Alter, Haushalte, Gebäude, Wohnungen, Fertigstellungen)",
+      "url": "https://statistik.leipzig.de/opendata/api/kdvalues?kategorie_nr=2&rubrik_nr=1&periode=y&format=csv",
+      "stand": "Jahreswerte 2025"
+    },
+    {
+      "name": "Freistaat Sachsen, Mietpreisbremse gemäß § 556d BGB",
+      "url": "https://www.bauen-wohnen.sachsen.de/mietpreisbremse-gemaess-556d-bgb-4391.html",
+      "stand": "verlängert bis 30.06.2027, abgerufen 26.10.2026"
+    },
+    {
+      "name": "Medienservice Sachsen, Kappungsgrenze für Dresden und Leipzig verlängert",
+      "url": "https://www.medienservice.sachsen.de/medien/news/1087981",
+      "stand": "10.06.2025, gültig bis 30.06.2027"
+    },
+    {
+      "name": "Stadt Leipzig, Soziale Erhaltungssatzungen: die Gebiete",
+      "url": "https://www.leipzig.de/leipzig-strategie/stadtentwicklung/stadterneuerung/soziale-erhaltungssatzungen/die-gebiete",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Soziale Erhaltungssatzungen: Antrags- und Genehmigungsverfahren",
+      "url": "https://www.leipzig.de/leipzig-strategie/stadtentwicklung/stadterneuerung/soziale-erhaltungssatzungen/antrags-und-genehmigungsverfahren",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Soziale Erhaltungssatzungen: Allgemeines Vorkaufsrecht",
+      "url": "https://www.leipzig.de/leipzig-strategie/stadtentwicklung/stadterneuerung/soziale-erhaltungssatzungen/allgemeines-vorkaufsrecht",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Ausgleichsbeträge in Sanierungsgebieten",
+      "url": "https://www.leipzig.de/leipzig-strategie/stadtentwicklung/stadterneuerung/ausgleichsbeitraege-in-sanierungsgebieten",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadtarchiv Leipzig, Eingemeindungsdaten",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.1_Dez1_Allgemeine_Verwaltung/10.9_Stadtarchiv/Eingemeindungsdaten.pdf",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Deutsches Notarinstitut, Übersicht zu Umwandlungsverordnungen nach § 250 Abs. 1 S. 3 BauGB",
+      "url": "https://www.dnoti.de/fileadmin/user_upload/Arbeitshilfen/Immobilienrecht/Umwandlungsverordnungen.pdf",
+      "stand": "Stand 20.01.2026"
+    },
+    {
+      "name": "Leipziger Internet Zeitung, Umwandlung von Miet- in Eigentumswohnungen (Drucksache 8/5331)",
+      "url": "https://www.l-iz.de/politik/sachsen/2026/02/wenn-aus-miet-eigentumswohnungen-werden-sachsens-regierung-lasst-mieter-regen-stehen-646139",
+      "stand": "02.02.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "Einwohner Ende 2025: Stadt Leipzig 633.592 (2015: 567.846); West 39.475, Nord 114.819, Zentrum 55.739 = 210.033 (33,1 %, eigene Rechnung); +16 % (West, Zentrum) seit 2015",
+      "fundstelle": "lpz/ew.csv Zeile „Stadt Leipzig“; Summen je Ortsteil; Seiten West/Zentrum (Kennzahl Einwohner)"
+    },
+    {
+      "zahl": "Sondereigentum: 2021 5.715 / 1.363 Mio.; 2023 2.841 / 669; 2024 4.116 / 989; 2025 5.163 / 1.293",
+      "fundstelle": "L1; GMB Tab. 68, S. 52, gmb2026.txt Z. 2930"
+    },
+    {
+      "zahl": "ETW sanierter Altbau Wiederverkauf o. St.: Stadt 1.902 / Median 2.770 / 1.013–6.103 / Ø 2.850; Mitte 3.447; Nordost 2.542; Ost 2.576; Nord 306 / 2.676 (meiste Fälle); Altwest 257 / 2.738; West ohne Fälle",
+      "fundstelle": "L2; GMB Tab. 99, S. 71, gmb2026.txt Z. 4150–4224"
+    },
+    {
+      "zahl": "Verfügbarkeit: bezugsfrei 653 / 3.054; vermietet 1.052 / 2.707; Mieterkauf 197 / 2.937",
+      "fundstelle": "L4; GMB Tab. 101, S. 72, Z. 4256–4258"
+    },
+    {
+      "zahl": "Neubau o. St. Stadt 227 / 4.048–8.107 / 5.953; m. St. 214 / 6.451; Gohlis-Süd o. St. 60 / 6.960; Zentrum-Südost m. St. 52 / 6.162; Erstverkauf saniert 103 / 6.548",
+      "fundstelle": "L5–L7; GMB Tab. 72, 73, 80; Z. 3086, 3170, 3265, 3272, 3589"
+    },
+    {
+      "zahl": "MFH mit Ertragsdaten Stadt 124 / 1.825 / 6,73 / 23,1 / 3,1 % / 1,7 %; Altwest 35 MFH / 77,5 Mio. / 18,9 %",
+      "fundstelle": "L8, L9; GMB Tab. 22, 25; Z. 1284–1297, 1395–1405"
+    },
+    {
+      "zahl": "BRW-Index MFH mittlere Wohnlage 2020 100, 2023 120, 2026 106; BRW 2026 beschlossen 26.02.2026; Grunderwerbsteuer 5,5 %, Notar 1 %, Grundbuch 1 % (NAR-Ansatz)",
+      "fundstelle": "L10, L9; GMB Tab. 111, S. 76"
+    },
+    {
+      "zahl": "BRW MFH-Grundstücke: Zentrum-Süd 1.450–2.500, Neustadt-Neuschönefeld 740–1.400, Zentrum-Nord 850–1.700, Gohlis 400–1.280, Mockau 400–520, Leutzsch 450–700, Altlindenau 600–1.150",
+      "fundstelle": "Seiten Leipzig-Zentrum, -Nord, -West (Kennzahl Bodenrichtwerte; WFS BRW_Zonen_2026)"
+    },
+    {
+      "zahl": "Mietspiegel 2025–2027: Stadtrat 25.06.2025, qualifiziert, 01.07.2025–30.06.2027; Stichtag 01.10.2024; Durchschnittsmiete 6,56 (2022 6,29; 2018 5,54); Innenstadt-Lagefaktor 1,100",
+      "fundstelle": "L12, L13, L16, L18; msp2025.txt Z. 1240–1265, 1745–1768"
+    },
+    {
+      "zahl": "Mietpreisbremse bis 30.06.2027, 10 %; Kappung 15 % bis 30.06.2027",
+      "fundstelle": "L20, L21"
+    },
+    {
+      "zahl": "Keine sächsische Umwandlungsverordnung nach § 250 BauGB (DNotI-Liste Stand 20.01.2026 ohne Sachsen); Leipzig beantragt erstmals 2021",
+      "fundstelle": "L22; lpz/dnoti_umw.txt; lpz/st/liz_umw.txt Z. 30–45"
+    },
+    {
+      "zahl": "9 soziale Erhaltungssatzungen (u. a. Lindenau, Alt-Lindenau, Leutzsch, Connewitz, Eutritzsch, Eisenbahnstraße); Genehmigungspflicht auch ohne Bauantrag; Vorkaufsrecht bei bebauten Grundstücken",
+      "fundstelle": "L23, L33, L34"
+    },
+    {
+      "zahl": "15 Sanierungsgebiete 1991–2004, alle aufgehoben; Ausgleichsbeträge",
+      "fundstelle": "L27; ausgleichsbeitraege-in-sanierungsgebieten.txt Z. 6–8"
+    },
+    {
+      "zahl": "Eingemeindung Gohlis, Eutritzsch 01.01.1890; Mockau, Schönefeld 15.02.1915",
+      "fundstelle": "L28, L30"
+    },
+    {
+      "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, §§ 656a–656d BGB; § 34c und § 34i GewO; Timon Fischer Geschäftsführer, Immobilienfinanzierung; Europace und Baufinex; Wertermittlung kostenlos",
+      "fundstelle": "maklerprovision.njk; SCHREIBREGELN.md Regel 4; Seiten Leipzig-Nord/-Zentrum (kurzantwortMehr)"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{#- Artikel einer Person auf ihrem Profil (Update 4, 3.3). Eingabe: autorKey ("timon" | "lennart").
+    Quelle ist der Autor im JSON-LD der Artikel (_data/blogArtikel.js, Feld autor). Solange die Firma Autor ist
+    (bis Timon und Lennart zugestimmt haben), ist die Liste leer und der Abschnitt entfällt. -#}
+{% set autorArtikel = [] %}
+{% for p in blogArtikel %}{% if p.autor and p.autor.key == autorKey %}{% set _ = autorArtikel.push(p) %}{% endif %}{% endfor %}
+{% if autorArtikel.length %}
+<section class="fgd-section fgd-section--white" id="artikel" aria-labelledby="artikel-titel">
+  <div class="fgd-wrap">
+    <div class="fgd-head">
+      <p class="fgd-kicker">Im Blog</p>
+      <h2 id="artikel-titel">Artikel von {{ kontakte[autorKey].name }}</h2>
+    </div>
+    <div class="fgd-blog-cards">
+      {% for p in autorArtikel %}
+      <a class="fgd-blog-card" href="{{ p.url }}">
+        <img src="{{ p.slug | blogThumb }}" alt="{{ p.lead.alt }}" width="720" height="480" loading="lazy" decoding="async">
+        <span class="fgd-blog-card-body">
+          <span class="fgd-blog-card-meta"><b>{{ p.katLabel | safe }}</b>{{ p.minuten }} Min. Lesezeit</span>
+          <strong>{{ p.titel }}</strong>
+          <span class="fgd-blog-card-text">{{ p.kurz }}</span>
+        </span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

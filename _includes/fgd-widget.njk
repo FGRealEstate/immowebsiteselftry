@@ -1,0 +1,14 @@
+{#- Widget der Finanzierungsplattform hinter der Einwilligung (Update 5, Abschnitt 2).
+    Eingaben: wKey ("angebot"; der Platzhalter „leisten“ ist seit Update 11 §2 gelöscht), wName (Name des Rechners für Platzhalter und Messung).
+    Der Einbettungscode steht im <template> und wird erst geladen, wenn „Externe Medien“ erlaubt ist
+    und der Abschnitt in die Nähe des Bildschirms kommt; bis dahin steht der Platzhalter da.
+    Das Skript dazu steht in fg-design.js ([data-fgd-widget]). -#}
+<div class="fgd-widget" data-fgd-widget="{{ wKey }}" data-widget-name="{{ wName }}"{% if finanzWidgets.leadMessage %} data-lead-origin="{{ finanzWidgets.leadMessage.origin }}" data-lead-match="{{ finanzWidgets.leadMessage.match }}"{% endif %}>
+  <div class="fgd-widget-ph" data-fgd-widget-ph>
+    <p class="fgd-widget-ph-k">{{ wName }}</p>
+    <p>Der Rechner kommt vom {{ finanzWidgets.anbieter }}{% if finanzWidgets.anbieterFirma and finanzWidgets.anbieterFirma != finanzWidgets.anbieter %} ({{ finanzWidgets.anbieterFirma }}){% endif %}; mit „Rechner laden“ willigen Sie in „Externe Medien“ ein und Ihre Eingaben gehen an diesen Anbieter (<a href="/datenschutz.html">Datenschutz</a>).</p>
+    <button type="button" class="fgd-btn fgd-btn-navy" data-fgd-widget-load>Rechner laden</button>
+  </div>
+  <div class="fgd-widget-frame" data-fgd-widget-frame hidden></div>
+  <template data-fgd-widget-code>{{ finanzWidgets[wKey] | safe }}</template>
+</div>

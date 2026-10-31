@@ -1,0 +1,345 @@
+{
+  "slug": "dresden",
+  "name": "Dresden",
+  "nameLang": "Dresden",
+  "inOrt": "in Dresden",
+  "fuerOrt": "Dresden",
+  "typ": "stadt",
+  "kicker": "Dresden",
+  "kontakt": "timon",
+  "title": "Immobilienmakler Dresden – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler in Dresden: Verkauf, Kauf und Finanzierung in Neustadt, Striesen, Blasewitz, Löbtau und Laubegast, mit Kaufpreisen 2025 und Bewertung.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Dresden",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Dresden beim Verkauf, beim Kauf und bei der Finanzierung, mit eigenen Seiten für Dresden-Nord, Dresden-Süd, Dresden-Zentrum und Dresden-Ost. Ihr Ansprechpartner für Dresden ist Timon Fischer.",
+  "kurzantwortMehr": "Fischer & Geserich hat seinen Sitz in der Schützenstraße 30 in Berlin und Erlaubnisse nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Timon Fischer ist Geschäftsführer und verantwortet die Immobilienfinanzierung.",
+  "stand": "Oktober 2026",
+  "updated": "2026-10-27",
+  "hero": {
+    "name": "dresden-elbe-altstadt-canalettoblick",
+    "alt": "Elbwiesen in der Neustadt mit Blick auf Augustusbrücke, Frauenkirche, Hofkirche und Semperoper",
+    "credit": "Guido Radig, CC BY 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Dresden_-_Panorama_an_der_Elbe.JPG",
+    "position": "50% 45%"
+  },
+  "zahlen": [
+    {
+      "wert": "3.910",
+      "label": "Erwerbsvorgänge bei Wohnungs- und Teileigentum 2025 in Dresden",
+      "detail": "Rund 18 % mehr als 2024 mit 3.324, Geldumsatz rund 820 Mio. €. Das sind rund 77 % aller 5.080 Erwerbsvorgänge am Dresdner Immobilienmarkt.",
+      "quelle": "Grundstücksmarktbericht Dresden 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/2026-Grundstuecksmarktbericht.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 2.705 €/m²",
+      "label": "Weiterverkaufte Eigentumswohnungen in Dresden",
+      "detail": "Rund 4 % über dem Vorjahreswert von 2.610 €/m². Im 1. Halbjahr 2026 lag der Median bei 2.660 €/m², nach 2.550 €/m² im 1. Halbjahr 2025.",
+      "quelle": "Grundstücksmarktbericht Dresden 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/2026-Grundstuecksmarktbericht.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 6.460 €/m²",
+      "label": "Neu gebaute Eigentumswohnungen im Erstverkauf in Dresden",
+      "detail": "Rund 11 % über dem Vorjahreswert von 5.795 €/m²; 373 auswertbare Verkäufe nach 214 im Jahr 2024. Im 1. Halbjahr 2026 lag der Median bei 6.255 €/m².",
+      "quelle": "Grundstücksmarktbericht Dresden 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/2026-Grundstuecksmarktbericht.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 4.470 €/m²",
+      "label": "Frei stehende Einfamilienhäuser ab Baujahr 1992 in Dresden",
+      "detail": "Mittlerer Kaufpreis rund 585.000 €, 2024 waren es 4.265 €/m². Doppelhaushälften dieser Bauperiode kosteten 4.095 €/m², Reihenmittelhäuser 3.660 €/m².",
+      "quelle": "Grundstücksmarktbericht Dresden 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/2026-Grundstuecksmarktbericht.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "7,07 €/m²",
+      "label": "Basismiete für 60 m² im Dresdner Mietspiegel 2025",
+      "detail": "Nettokalt, vor Zu- und Abschlägen für Baualter, Wohnlage und Ausstattung. Der Mietspiegel beruht auf 4.051 Datensätzen zum Stichtag 01.04.2024 und gilt bis 31.12.2026.",
+      "quelle": "Dresdner Mietspiegel 2025",
+      "url": "https://www.dresden.de/media/pdf/sozialamt/Mietspiegel_Dresden_2025.pdf",
+      "stichtag": "Stichtag 01.04.2024"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Dresden-Nord: Neustadt, Pieschen, Loschwitz und Klotzsche",
+      "absaetze": [
+        "In den acht Stadtteilen von der Äußeren Neustadt bis Klotzsche leben 96.575 Menschen.[[5]] In der Gemarkung Neustadt wurden 2025 175 ältere Eigentumswohnungen weiterverkauft, im Median für 2.770 €/m², und 72 neue für 5.635 €/m².[[1]] Die Bodenrichtwerte reichen von 120 €/m² in Klotzsche bis 2.500 €/m² in der Inneren Neustadt.[[4]] Die Sanierungsgebiete Pieschen und Äußere Neustadt sind seit 2023 und 2024 aufgehoben; für die Äußere und die Innere Neustadt gelten städtebauliche Erhaltungssatzungen.[[13,11]] Die Seite beschreibt auch den Elbhang in Loschwitz und am Weißen Hirsch."
+      ],
+      "seite": {
+        "url": "/standorte/dresden/nord/",
+        "text": "Zur Seite Dresden-Nord"
+      },
+      "bild": {
+        "name": "dresden-nord-rothenburger-strasse",
+        "alt": "Die Rothenburger Straße in der Äußeren Neustadt, Blick von der Bautzner Straße nach Norden",
+        "caption": "Die Rothenburger Straße in der Äußeren Neustadt.",
+        "credit": "Maksym Kozlenko, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:2017-06-02_Rothenburger_Stra%C3%9Fe,_Dresden.jpg"
+      }
+    },
+    {
+      "h2": "Dresden-Süd: Löbtau, Plauen und Strehlen",
+      "absaetze": [
+        "Löbtau-Nord, Löbtau-Süd, Plauen und Strehlen haben zusammen 44.289 Einwohner.[[5]] In der Gemarkung Löbtau kosteten ältere Eigentumswohnungen 2025 im Median 2.445 €/m², bei 76 Verkäufen; in der Gemarkung Strehlen wurden 68 neue Wohnungen verkauft, im Median für 6.225 €/m².[[1]] Die Bodenrichtwerte reichen in Plauen von 160 bis 1.500 €/m².[[4]] Eine soziale Erhaltungssatzung für das Gebiet Löbtau/Weißeritzknick hat der Stadtrat am 13.12.2024 abgelehnt.[[12]]"
+      ],
+      "seite": {
+        "url": "/standorte/dresden/sued/",
+        "text": "Zur Seite Dresden-Süd"
+      },
+      "bild": {
+        "name": "dresden-sued-bienertmuehle",
+        "alt": "Weiße Gebäude der Bienertmühle in Plauen mit Balkonen und hohem Backsteinschornstein, davor Bäume und Parkplätze, tiefblauer Himmel",
+        "caption": "Die Bienertmühle, die Hofmühle in Plauen, mit Wohnungen.",
+        "credit": "Bybbisch94, CC BY-SA 3.0 DE",
+        "url": "https://commons.wikimedia.org/wiki/File:20240922.Bienertmühle.-012.jpg"
+      }
+    },
+    {
+      "h2": "Dresden-Zentrum: Blasewitz, Striesen, Gruna und Pirnaische Vorstadt",
+      "absaetze": [
+        "In den sechs Stadtteilen leben 70.895 Menschen.[[5]] In der Gemarkung Blasewitz wurden 2025 15 neue Eigentumswohnungen verkauft, im Median für 8.575 €/m²; in der Gemarkung Striesen kosteten 104 ältere Wohnungen im Weiterverkauf im Median 2.895 €/m².[[1]] Die Bodenrichtwerte reichen von 310 bis 1.700 €/m².[[4]] Für Striesen Nordost und vier Gebiete in Blasewitz gelten städtebauliche Erhaltungssatzungen: Abriss, Umbau, Nutzungsänderung und Neubau brauchen dort eine Genehmigung nach § 173 BauGB.[[11]]"
+      ],
+      "seite": {
+        "url": "/standorte/dresden/zentrum/",
+        "text": "Zur Seite Dresden-Zentrum"
+      },
+      "bild": {
+        "name": "dresden-zentrum-schillerplatz-blaues-wunder",
+        "alt": "Wohn- und Geschäftshäuser am Schillerplatz in Dresden-Blasewitz in der Sonne, im Hintergrund das Blaue Wunder",
+        "credit": "VSchagow, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:2022113031_Schillerplatz_und_Blaues_Wunder_2022.jpg",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "h2": "Dresden-Ost: Laubegast, Tolkewitz und Kleinzschachwitz",
+      "absaetze": [
+        "Laubegast, Tolkewitz/Seidnitz-Nord und Kleinzschachwitz haben 31.397 Einwohner.[[5]] In Kleinzschachwitz haben 77 % der Wohngebäude eine oder zwei Wohnungen, in ganz Dresden 54 %.[[6]] In der Gemarkung Laubegast kosteten Eigentumswohnungen der Baujahre 1990 bis 2023 im Weiterverkauf 2025 im Median 2.370 €/m², bei 50 Verkäufen.[[1]] Die Bodenrichtwerte reichen von 190 bis 880 €/m².[[4]] Die Seite beschreibt auch den Hochwasserschutz an der Elbe in Laubegast und Zschieren."
+      ],
+      "seite": {
+        "url": "/standorte/dresden/ost/",
+        "text": "Zur Seite Dresden-Ost"
+      },
+      "bild": {
+        "name": "dresden-ost-laubegast-elbe",
+        "alt": "Elbe bei Dresden-Laubegast mit Fähre und Blick auf das Ufer von Niederpoyritz",
+        "caption": "Die Elbe bei Laubegast mit Fähre, gegenüber das Ufer von Niederpoyritz.",
+        "credit": "Christoph Freitag, CC BY 2.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Dresden_an_der_Elbe_in_Laubegast_(25680223844).jpg"
+      }
+    }
+  ],
+  "verkaufen": {
+    "h2": "Immobilie in Dresden verkaufen",
+    "absaetze": [
+      "Weiterverkaufte Eigentumswohnungen kosteten 2025 in Dresden im Mittel rund 2.705 €/m², die Mediane der Gemarkungen unterscheiden sich aber deutlich, etwa 2.445 €/m² in Löbtau und 2.895 €/m² in Striesen.[[1]] Wir bewerten deshalb nach Gemarkung, Bodenrichtwertzone und Wohnlage im Mietspiegel. Liegt Ihr Haus in einem der früheren Sanierungsgebiete, etwa in der Äußeren Neustadt, in Pieschen, Löbtau oder Plauen, klären wir vor dem Verkauf, ob der Ausgleichsbetrag festgesetzt und bezahlt ist; ihn schulden alle Eigentümer, auch Teileigentümer.[[13,14]] Die Wertermittlung ist kostenlos und meistens innerhalb weniger Stunden fertig."
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Dresden",
+    "absaetze": [
+      "Für Kapitalanleger gilt in Dresden die Mietpreisbremse bis 30.06.2027: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[9]] Bestandsmieten dürfen in drei Jahren um höchstens 15 % steigen.[[10]] Für Mehrfamilienhäuser in offener Bauweise ermittelte der Gutachterausschuss als Median das 21,21-Fache der jährlichen Mieteinnahmen, aus 130 Verkäufen; sanierte Mehrfamilienhäuser der Vorkriegszeit kosteten 2025 im Mittel 2.055 €/m² Wohnfläche.[[1]]",
+      "Eine sächsische Verordnung, nach der die Aufteilung eines Mietshauses in Eigentumswohnungen genehmigt werden muss, gibt es nicht.[[15]] Auch eine soziale Erhaltungssatzung hat Dresden nicht.[[12]] In den städtebaulichen Erhaltungsgebieten, etwa in der Neustadt, in Striesen, Blasewitz oder der Gartenstadt Hellerau, brauchen Neubau, Abriss, Umbau und Nutzungsänderung aber eine Genehmigung.[[11]]"
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Dresden",
+    "absaetze": [
+      "Zum Kaufpreis kommen die Kaufnebenkosten, in Sachsen unter anderem 5,5 % Grunderwerbsteuer.[[16]] Timon Fischer rechnet Kaufpreis, Nebenkosten und Eigenkapital mit Ihnen durch, vergleicht Ihre Finanzierung über Europace und Baufinex und fragt parallel Banken direkt an. Finanzierungsfähigkeit und Bonität klären wir früh."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Was kostet eine Wohnung in Dresden?",
+      "antwort": "Weiterverkaufte Eigentumswohnungen kosteten 2025 im Mittel rund 2.705 €/m² Wohnfläche, neu gebaute im Erstverkauf rund 6.460 €/m².[[1]] Im 1. Halbjahr 2026 lag der Median im Weiterverkauf bei 2.660 €/m² und bei neuen Wohnungen bei 6.255 €/m².[[2]] Je Gemarkung unterscheiden sich die Preise deutlich; Werte für Ihren Stadtteil finden Sie auf den Seiten für Nord, Süd, Zentrum und Ost.",
+      "herkunft": "Google-Autocomplete „wohnung kaufen dresden“ und „immobilienpreise dresden“ (27.10.2026)"
+    },
+    {
+      "frage": "Was kostet ein Haus in Dresden?",
+      "antwort": "Frei stehende Einfamilienhäuser ab Baujahr 1992 kosteten 2025 im Mittel rund 4.470 €/m² Wohnfläche, im mittleren Kaufpreis rund 585.000 €; Doppelhaushälften rund 515.000 €, Reihenmittelhäuser rund 426.000 €.[[1]] Im 1. Halbjahr 2026 gaben die Preise für frei stehende Einfamilienhäuser und Reihenmittelhäuser nach, Doppelhaushälften und Reihenendhäuser erzielten höhere Preise.[[2]] In Klotzsche liegen die Bodenrichtwerte zwischen 120 und 620 €/m²; mehr dazu auf der Seite Dresden-Nord.[[4]]",
+      "herkunft": "Google-Autocomplete „haus kaufen dresden“ und „haus kaufen dresden klotzsche“ (27.10.2026)"
+    },
+    {
+      "frage": "Sinken die Immobilienpreise in Dresden?",
+      "antwort": "Nach den amtlichen Zahlen nicht. Der Gutachterausschuss beschreibt 2025 als „von moderaten Preissteigerungen in fast allen Teilmärkten geprägt“.[[1]] Für das 1. Halbjahr 2026 schreibt er, die schwierigen Rahmenbedingungen hätten „nicht zu einem Nachgeben der Preise geführt“; einzelne Teilmärkte, etwa frei stehende Einfamilienhäuser, gaben aber nach.[[2]] Eine Prognose lässt sich daraus nicht ableiten.",
+      "herkunft": "Google-Autocomplete „immobilienpreise dresden entwicklung“ und „immobilienpreise dresden sinken“ (27.10.2026)"
+    },
+    {
+      "frage": "Wie hoch ist der Bodenrichtwert in Dresden 2026?",
+      "antwort": "Der Gutachterausschuss hat die Bodenrichtwerte zum 01.01.2026 ermittelt und im Themenstadtplan der Stadt unter „Planen und Bauen – Bodenrichtwerte“ veröffentlicht; sie werden alle zwei Jahre aktualisiert.[[3]] In den Wohn- und Mischgebieten unserer Marktgebiete reichen sie von 120 €/m² in Klotzsche bis 2.500 €/m² in der Inneren Neustadt.[[4]]",
+      "herkunft": "Google-Autocomplete „bodenrichtwert dresden 2026“ und „bodenrichtwert dresden themenstadtplan“ (27.10.2026)"
+    },
+    {
+      "frage": "Welcher Mietspiegel gilt 2026 in Dresden?",
+      "antwort": "Der Dresdner Mietspiegel 2025, ein qualifizierter Mietspiegel. Er gilt vom 01.01.2025 bis 31.12.2026; ab 2027 erscheint ein neuer.[[8]] Zu- oder Abschläge je Stadtteil gibt es nicht: Die Wohnlage wird adressgenau als einfach, mittel oder gut eingestuft und mit 0,98, 1,00 oder 1,03 gewichtet.[[7]] Ihre Adresse prüfen Sie im Online-Mietspiegel der Stadt.[[8]]",
+      "herkunft": "Google-Autocomplete „mietspiegel dresden 2026“ und „mietspiegel dresden stadtteile“ (27.10.2026)"
+    },
+    {
+      "frage": "Was kostet ein Makler in Dresden?",
+      "antwort": "Beim Verkauf einer Wohnung oder eines Einfamilienhauses an einen Verbraucher zahlen Verkäufer und Käufer je die Hälfte der Provision (§§ 656a bis 656d BGB), bundesweit und damit auch in Sachsen. Bei Fischer & Geserich sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision. Für Mehrfamilienhäuser und Grundstücke gilt die Teilung nicht. Fällig wird die Provision nur, wenn der Kaufvertrag zustande kommt.",
+      "herkunft": "Google-Autocomplete „makler dresden“ (27.10.2026)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Leipzig",
+      "url": "/standorte/leipzig/"
+    },
+    {
+      "name": "Berlin",
+      "url": "/standorte/berlin/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Landeshauptstadt Dresden, Grundstücksmarktbericht 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/2026-Grundstuecksmarktbericht.pdf",
+      "stand": "Kaufverträge 2025, Vorwort vom 16.04.2026"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Landeshauptstadt Dresden, Halbjahresbericht 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/Halbjahresbericht_2026.pdf",
+      "stand": "1. Halbjahr 2026, veröffentlicht 31.08.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Pressemitteilung „Neue Bodenrichtwerte für Dresden liegen vor“",
+      "url": "https://www.dresden.de/de/rathaus/aktuelles/pressemitteilungen/2026/04/pm_036.php",
+      "stand": "16.04.2026"
+    },
+    {
+      "name": "Bodenrichtwerte, BORIS Sachsen (Stichtag 01.01.2026), eigene Zuordnung zu den Stadtteilen",
+      "url": "https://www.boris.sachsen.de/",
+      "stand": "Stichtag 01.01.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Opendata: Einwohner mit Hauptwohnung nach Stadtteilen",
+      "url": "https://opendata.dresden.de/",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Kommunale Statistikstelle, Stadtteilkatalog 2024",
+      "url": "https://www.dresden.de/media/pdf/onlineshop/statistikstelle/120_080_010_Stadtteilkatalog_2024.pdf",
+      "stand": "Werte 2024"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Dresdner Mietspiegel 2025",
+      "url": "https://www.dresden.de/media/pdf/sozialamt/Mietspiegel_Dresden_2025.pdf",
+      "stand": "gültig 01.01.2025 bis 31.12.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Mietspiegel (Online-Mietspiegel und Wohnlagekarte)",
+      "url": "https://www.dresden.de/de/leben/wohnen/wohnungsmarkt/mietspiegel.php",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Freistaat Sachsen, Mietpreisbremse gemäß § 556d BGB",
+      "url": "https://www.bauen-wohnen.sachsen.de/mietpreisbremse-gemaess-556d-bgb-4391.html",
+      "stand": "verlängert bis 30.06.2027, abgerufen 26.10.2026"
+    },
+    {
+      "name": "Medienservice Sachsen, Kappungsgrenze für Dresden und Leipzig verlängert",
+      "url": "https://www.medienservice.sachsen.de/medien/news/1087981",
+      "stand": "10.06.2025, gültig bis 30.06.2027"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Erhaltungssatzung (Gebiete und Genehmigung nach § 173 BauGB)",
+      "url": "https://www.dresden.de/de/rathaus/dienstleistungen/erhaltungssatzung.php",
+      "stand": "letzte Änderung 10.12.2025, abgerufen 26.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Soziale Erhaltungssatzung",
+      "url": "https://www.dresden.de/de/stadtraum/planen/stadtentwicklung/aktuelle-buergerbeteiligungen/soziale-erhaltungssatzung.php",
+      "stand": "letzte Änderung 07.01.2025, abgerufen 26.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Pressemitteilung „Dresdner Sanierungsgebiete nach über 30 Jahren erfolgreich abgeschlossen“",
+      "url": "https://www.dresden.de/de/rathaus/aktuelles/pressemitteilungen/2024/12/pm_061.php",
+      "stand": "27.12.2024"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Ausgleichsbeträge in Sanierungsgebieten",
+      "url": "https://www.dresden.de/de/stadtraum/planen/stadtentwicklung/stadterneuerung/foerderprogramme-staedtebau/foerderprogramme-bund-und-land/sanierungsgebiete/ausgleichsbetraege-sanierungsgebiete.php",
+      "stand": "letzte Änderung 11.12.2023, abgerufen 26.10.2026"
+    },
+    {
+      "name": "Deutsches Notarinstitut, Übersicht zu Umwandlungsverordnungen nach § 250 Abs. 1 S. 3 BauGB",
+      "url": "https://www.dnoti.de/fileadmin/user_upload/Arbeitshilfen/Immobilienrecht/Umwandlungsverordnungen.pdf",
+      "stand": "Stand 20.01.2026"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Stadt Leipzig, Grundstücksmarktbericht 2026, S. 32 (Grunderwerbsteuer in Sachsen)",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stand": "2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "Einwohner 31.12.2025: Nord 96.575 (8 Stadtteile), Süd 44.289, Zentrum 70.895 (6), Ost 31.397; Stadt 571.510",
+      "fundstelle": "dresden-grundlagen.md D1–D5; ew2025.csv"
+    },
+    {
+      "zahl": "Erwerbsvorgänge 2025 5.080; Sondereigentum (Wohnungs- und Teileigentum) 3.910, rund 77 %, +18 % (3.324), rund 820 Mio. € (819,62; Vorjahr rund 658)",
+      "fundstelle": "D28, D29; GMB S. 14–16; gmb2026.txt Z. 752–756, 816"
+    },
+    {
+      "zahl": "ETW Weiterverkauf Ø rund 2.705 (2.610, +4 %); Neubau Erstverkauf rund 6.460 (5.795, +11 %), 214 → 373; EFH ab 1992 Ø 4.470 (4.265), rund 585.000; DHH 4.095, rund 515.000; RMH 3.660, rund 426.000; MFH Vorkrieg saniert Ø 2.055",
+      "fundstelle": "D31–D34; GMB S. 15; gmb2026.txt Z. 736–790"
+    },
+    {
+      "zahl": "Rohertragsfaktor MFH/WGH offene Bauweise Median 21,21, 130 Kauffälle",
+      "fundstelle": "D36; GMB S. 81"
+    },
+    {
+      "zahl": "HJB 1. HJ 2026: WV Median 2.660 (901 Fälle; 1. HJ 2025 2.550); Neubau Median 6.255 (159 Fälle); EFH frei stehend, RMH, ZFH gaben nach, DHH und REH höher; Zitat „nicht zu einem Nachgeben der Preise geführt“",
+      "fundstelle": "D37, D38; hjb2026.txt Z. 100–126, 705–718"
+    },
+    {
+      "zahl": "Zitat GMB-Vorwort „von moderaten Preissteigerungen in fast allen Teilmärkten geprägt“",
+      "fundstelle": "D38; gmb2026.txt Z. 60–62"
+    },
+    {
+      "zahl": "Gemarkung Neustadt WV bis 1989 175 / Median 2.770; Neubau 72 / 5.635; Gemarkung Löbtau 76 / 2.445; Gemarkung Strehlen Neubau 68 / 6.225; Gemarkung Blasewitz Neubau 15 / 8.575; Gemarkung Striesen WV 104 / 2.895; Gemarkung Laubegast Baujahre 1990–2023 50 / 2.370",
+      "fundstelle": "Seiten Dresden-Nord, -Süd, -Zentrum, -Ost (Kennzahlen); GMB S. 50–54"
+    },
+    {
+      "zahl": "BRW 01.01.2026 Wohn- und Mischgebiete: Klotzsche 120–620, Innere Neustadt 600–2.500, Plauen 160–1.500, Zentrum 310–1.700, Ost 190–880",
+      "fundstelle": "Seiten Dresden-Nord, -Süd, -Zentrum, -Ost (Kennzahl Bodenrichtwerte); D44–D47"
+    },
+    {
+      "zahl": "BRW Stichtag 01.01.2026, Themenstadtplan „Planen und Bauen – Bodenrichtwerte“, „turnusmäßig alle zwei Jahre“",
+      "fundstelle": "D39; st/pm_036.txt Z. 15–19"
+    },
+    {
+      "zahl": "Eigenheime (Wohngebäude mit 1–2 Wohnungen) Kleinzschachwitz 77,4 %, Dresden 54,2 %",
+      "fundstelle": "D26, D27; STK 2024"
+    },
+    {
+      "zahl": "Mietspiegel 2025 qualifiziert, 01.01.2025–31.12.2026, ab 2027 neu; 4.051 Datensätze, Stichtag 01.04.2024; Basismiete 60 m² 7,07; Wohnlage 0,98/1,00/1,03; Zu-/Abschläge Baualter, Lage, Ausstattung, energetische Ausstattung",
+      "fundstelle": "D49–D52; st/mietspiegel.txt Z. 11, 18, 65; ms2025.txt Z. 278–281, 343–345"
+    },
+    {
+      "zahl": "Mietpreisbremse 10 % und Kappung 15 % bis 30.06.2027; keine sächsische Umwandlungsverordnung",
+      "fundstelle": "D54, D55; L20–L22; lpz/dnoti_umw.txt"
+    },
+    {
+      "zahl": "Soziale Erhaltungssatzung Löbtau/Weißeritzknick und Friedrichstadt/Altona am 13.12.2024 abgelehnt (27/37/1); keine soziale Erhaltungssatzung",
+      "fundstelle": "D57; st/soziale-erhaltungssatzung.txt Z. 30–31"
+    },
+    {
+      "zahl": "Städtebauliche Erhaltungssatzungen: H-04.1 Äußere Neustadt, H-30 Innere Neustadt, H-05 Preußisches Viertel, H-02 Gartenstadt Hellerau, H-46 A Striesen Nordost, H-46 B–E Blasewitz; Genehmigung § 173 BauGB für Neubau, Abriss, Umbau, Nutzungsänderung",
+      "fundstelle": "D56; st/erhaltungssatzung.txt Z. 11, 54–132"
+    },
+    {
+      "zahl": "Sanierungsgebiete: Aufhebung Pieschen und Löbtau Beschluss 23.03.2023 (rechtskräftig 21.04.2023), Äußere Neustadt und Friedrichstadt Beschluss 28.09.2023 (rechtskräftig 03.01.2024); geförderte Stadtteile u. a. Äußere Neustadt, Löbtau, Pieschen, Plauen; Ausgleichsbetrag von allen Eigentümern, Mit- und Teileigentümern",
+      "fundstelle": "D58, D60; st/pm_061.txt Z. 17–20; st/ausgleichsbetraege-sanierungsgebiete.txt Z. 14–19"
+    },
+    {
+      "zahl": "GrESt Sachsen 5,5 %; Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, §§ 656a–656d BGB; § 34c und § 34i GewO; Timon Fischer Geschäftsführer, Immobilienfinanzierung; Europace und Baufinex; Wertermittlung kostenlos",
+      "fundstelle": "Leipziger GMB 2026 S. 32; maklerprovision.njk; Seiten Dresden-Nord/-Zentrum; leipzig.json (kurzantwortMehr)"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<script>
+/* Rechtsseiten (Impressum, Datenschutz, AGB): aktuellen Abschnitt im Inhaltsverzeichnis markieren, Drucken-Knopf */
+(function () {
+  var nav = document.querySelector('.fgs-legal-toc, .fgd-legal-toc');
+  if (!nav) return;
+  var box = nav.querySelector('details');
+  var btn = nav.querySelector('[data-legal-print]');
+  if (btn) btn.addEventListener('click', function () { window.print(); });
+  var links = [].slice.call(nav.querySelectorAll('a'));
+  var secs = links.map(function (l) { return document.getElementById(decodeURIComponent(l.getAttribute('href').slice(1))); });
+  var last = -2;
+  var tick = function () {
+    var cur = -1;
+    secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top < 200) cur = i; });
+    if (cur === last) return;
+    last = cur;
+    links.forEach(function (l, i) { if (i === cur) l.setAttribute('aria-current', 'true'); else l.removeAttribute('aria-current'); });
+    /* Ab 1100 px scrollt das Verzeichnis in sich: markierten Eintrag sichtbar halten, ohne die Seite zu bewegen */
+    if (cur < 0 || !box || box.scrollHeight <= box.clientHeight) return;
+    var r = links[cur].getBoundingClientRect(), b = box.getBoundingClientRect();
+    if (r.top < b.top + 40) box.scrollTop -= (b.top + 40 - r.top);
+    else if (r.bottom > b.bottom - 40) box.scrollTop += (r.bottom - b.bottom + 40);
+  };
+  addEventListener('scroll', tick, { passive: true });
+  tick();
+})();
+</script>

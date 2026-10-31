@@ -7,11 +7,97 @@
   "keywords": [
     "erhaltungsrücklage"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Vermietung",
   "formula": null,
   "sources": [],
   "assistantAnswer": "Von einer WEG angesparte Mittel für Gemeinschaftseigentum. Die Erhaltungsrücklage ist Gemeinschaftsvermögen der WEG für künftige Maßnahmen am Gemeinschaftseigentum. Der rechnerisch auf eine Wohnung entfallende Anteil ist kein frei auszahlbares Guthaben des einzelnen Eigentümers.",
-  "explanation": "Die Erhaltungsrücklage ist Gemeinschaftsvermögen der WEG für künftige Maßnahmen am Gemeinschaftseigentum. Der rechnerisch auf eine Wohnung entfallende Anteil ist kein frei auszahlbares Guthaben des einzelnen Eigentümers.",
-  "practiceExample": "120.000 € WEG-Rücklage können bei einem kleinen, gut sanierten Haus komfortabel sein; steht zugleich eine Dach- und Fassadensanierung von 400.000 € an, ist die Aussage völlig anders."
+  "explanation": "Die Erhaltungsrücklage ist das Geld, das eine Eigentümergemeinschaft für größere Reparaturen und Sanierungen am gemeinschaftlichen Eigentum anspart, etwa für Dach, Fassade oder Heizung; oft heißt sie noch Instandhaltungsrücklage. Eine angemessene Rücklage gehört zur ordnungsmäßigen Verwaltung. Die Eigentümer beschließen die Zuführung zusammen mit den übrigen Vorschüssen.",
+  "practiceExample": "Angenommen, Sie besitzen eine vermietete Wohnung in Bernau mit 65 m², und die Gemeinschaft legt 10 €/m² im Jahr zurück. Ihr Anteil beträgt dann 54,17 € im Monat oder 650 € im Jahr. Nach zehn Jahren haben Sie 6.500 € eingezahlt, ohne Entnahmen und Zinsen. Steuerlich ziehen Sie die 650 € nicht im Jahr der Zahlung ab, sondern erst, wenn und soweit die Gemeinschaft das Geld für Erhaltung ausgibt.",
+  "ausbau": {
+    "einordnung": [
+      "Die Erhaltungsrücklage ist das Geld, das eine Eigentümergemeinschaft für größere Reparaturen und Sanierungen am gemeinschaftlichen Eigentum anspart, etwa für Dach, Fassade oder Heizung; oft heißt sie noch Instandhaltungsrücklage.[[1]] Eine angemessene Rücklage gehört zur ordnungsmäßigen Verwaltung.[[2]] Die Eigentümer beschließen die Zuführung zusammen mit den übrigen Vorschüssen.[[3]]",
+      "Die Rücklage gehört der Gemeinschaft, nicht dem einzelnen Eigentümer: Eingezahltes Geld können Sie nicht zurückfordern, und beim Verkauf geht Ihr Anteil auf den Käufer über.[[1]] Den Stand weist der Verwalter jedes Jahr im Vermögensbericht aus, den jeder Eigentümer erhält.[[3]]"
+    ],
+    "beispiel": [
+      "Angenommen, Sie besitzen eine vermietete Wohnung in Bernau mit 65 m², und die Gemeinschaft legt 10 €/m² im Jahr zurück. Ihr Anteil beträgt dann 54,17 € im Monat oder 650 € im Jahr. Nach zehn Jahren haben Sie 6.500 € eingezahlt, ohne Entnahmen und Zinsen.",
+      "Steuerlich ziehen Sie die 650 € nicht im Jahr der Zahlung ab, sondern erst, wenn und soweit die Gemeinschaft das Geld für Erhaltung ausgibt.[[4]]"
+    ],
+    "abschnitte": [
+      {
+        "h2": "Steuer und Kauf",
+        "absaetze": [
+          "Die Zuführung zur Rücklage ist laut Bundesfinanzhof auch nach der WEG-Reform vom 1. Dezember 2020 nicht als Werbungskosten abziehbar; abziehbar wird erst die Ausgabe für Erhaltungsmaßnahmen.[[4]] Beim Kauf mindert der Anteil an der Rücklage den Kaufpreis für die Grunderwerbsteuer nicht, weil die Rücklage Vermögen der Gemeinschaft ist.[[5]]"
+        ]
+      },
+      {
+        "h2": "Was die Höhe zeigt",
+        "absaetze": [
+          "Das Gesetz nennt keinen Betrag, sondern verlangt eine angemessene Rücklage.[[2]] Eine niedrige Rücklage hält das Hausgeld klein; reicht sie für eine größere Maßnahme nicht, können die Eigentümer zusätzliche Vorschüsse beschließen.[[3]] Sehen Sie sich vor dem Kauf den Vermögensbericht an, nach Finanztip die wichtigste Unterlage.[[1]] F&G berücksichtigt in der Ankaufsberatung Rücklagen und den absehbaren Investitionsbedarf.[[6]]"
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "Finanztip: Hausgeld",
+        "url": "https://www.finanztip.de/eigentumswohnung/hausgeld/",
+        "stand": "Stand 10.11.2025"
+      },
+      {
+        "name": "§ 19 Wohnungseigentumsgesetz (WEG)",
+        "url": "https://www.gesetze-im-internet.de/woeigg/__19.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 28 Wohnungseigentumsgesetz (WEG)",
+        "url": "https://www.gesetze-im-internet.de/woeigg/__28.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Bundesfinanzhof: Urteil vom 14.01.2025, IX R 19/24",
+        "url": "https://www.bundesfinanzhof.de/en/entscheidungen/entscheidungen-online/decision-detail/STRE202510025/",
+        "stand": "14.01.2025, abgerufen 27.10.2026"
+      },
+      {
+        "name": "Bundesfinanzhof: Urteil vom 16.09.2020, II R 49/17",
+        "url": "https://www.bundesfinanzhof.de/en/entscheidungen/entscheidungen-online/decision-detail/STRE202110004/",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Ankaufsberatung",
+        "url": "https://fg-realestate.de/ankaufsberatung.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Rücklage für Reparaturen und Sanierungen (Dach, Fassade, Heizung), Instandhaltungsrücklage; gehört der Gemeinschaft; nicht zurückfordern; geht auf Käufer über; Vermögensbericht am wichtigsten",
+        "fundstelle": "runde-4.md, Q12, Q13"
+      },
+      {
+        "zahl": "angemessene Erhaltungsrücklage",
+        "fundstelle": "runde-4.md, Q04"
+      },
+      {
+        "zahl": "Vorschüsse und Rücklagen beschließen; Vermögensbericht für jeden Eigentümer",
+        "fundstelle": "runde-4.md, Q11"
+      },
+      {
+        "zahl": "Zuführung keine Werbungskosten, auch nach 01.12.2020; erst bei Verausgabung",
+        "fundstelle": "runde-4.md, Q14"
+      },
+      {
+        "zahl": "Rücklage mindert Grunderwerbsteuer nicht; Vermögen der Gemeinschaft",
+        "fundstelle": "runde-1.md, K10"
+      },
+      {
+        "zahl": "F&G: Rücklagen berücksichtigen; absehbarer Investitionsbedarf",
+        "fundstelle": "runde-3.md, C10; runde-1.md, D05"
+      },
+      {
+        "zahl": "10 €/m² × 65 = 650 € / 12 = 54,17 €; × 10 = 6.500 € (C16)",
+        "fundstelle": "Rechnung, Marktprüfung runde-4.md"
+      }
+    ]
+  }
 }

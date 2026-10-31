@@ -1,59 +1,76 @@
 ---
-layout: base.njk
-title: Investitionsrechner – Immobilien-Kapitalanlage prüfen
+layout: fgs-page.njk
+fgsHero: false
+fgsTools: true
+title: "Investitionsrechner für Ihre Immobilien-Kapitalanlage | Fischer & Geserich"
 permalink: investitionsrechner.html
+description: "Kostenloser Investitionsrechner: Kaufpreis, Miete, Finanzierung, Steuerwirkung und Vermögensaufbau Ihrer Kapitalanlage Schritt für Schritt prüfen, mit Verlaufstabelle und PDF."
+canonicalPath: /investitionsrechner.html
+pg:
+  crumb: Investitionsrechner
+  parent: { label: "Investment Lab", href: "/investment-lab.html" }
+  kicker: "Kostenloses Tool für Immobilieninvestoren"
+  h1: "Investitionsrechner für Ihre Immobilien-Kapitalanlage"
+  intro: "Prüfen Sie Kaufpreis, Miete, Finanzierung, Steuerwirkung und Vermögensaufbau in einem interaktiven Rechner. Der Rechner ersetzt keine Beratung, gibt Ihnen aber eine erste Grundlage, um ein Objekt zu prüfen."
+  buttons:
+    - { label: "Rechner starten", href: "#rechner" }
+    - { label: "Ergebnis gemeinsam besprechen", href: "#terminbuchung", line: true }
+  contact: lennart
+  closing:
+    title: "Annahmen prüfen, bevor Sie kaufen"
+    text: "Kaufpreis, Miete, Kosten und Finanzierung gehen wir mit Ihnen durch, bevor Sie sich festlegen. Das erste Gespräch kostet Sie nichts."
+    button: gespraech
+  schema: { type: "WebPage" }
 ---
+{#- Investitionsrechner im neuen Design (Brief Design-Pass §4.6: nur neu gestaltet). Die Rechenlogik steht wörtlich aus
+    script.js in /investitionsrechner.js; Klassen invest-* und Datenattribute, die das Skript liest, bleiben unverändert.
+    Im Investment Lab läuft die Seite eingebettet (?embedded=1): dann nur Rechner und Ergebnis, ohne Kopf, Fuß und Abschluss.
+    CP4 (28.10.2026, Design-Sprint-Brief): Design-System (fgs-page, css/fgs-tools.css). Entfallen: Inhaltsverzeichnis und
+    Linkliste im Kopf (pg.toc, pg.related), Kicker über den H2 (Update 6 §3.0), Gold-Häkchen (Brief 3.7), Navy der Schrittleiste
+    (Navy nur im Abschlussband). Felder mit Linie unten (Brief, Formulare). Texte, Felder, Werte, Skript und Datenattribute unverändert. -#}
+{% from "fgd-icons.njk" import icon %}
+{% from "fgs-macros.njk" import textlink with context %}
+{% set lt = labTools[0] %}
+{#- Kalender wie _includes/appointment-booking.njk (Erstgespräch Ankauf) -#}
+{% set ankaufBookingUrl = "https://outlook.office.com/bookwithme/user/72d1d477b1c94313b937eaf0288a9454@fg-realestate.de/meetingtype/CHqdXdox7UqN08gNHOu7dw2?anonymous&ismsaljsauthenabled&ep=mlink" %}
 
-<section class="invest-page" data-invest-calculator>
-  <header class="invest-hero">
-    <div class="invest-hero-inner">
-      <p class="invest-eyebrow">Kostenloses Tool für Immobilieninvestoren</p>
-      <h1>Investitionsrechner für Ihre Immobilien-Kapitalanlage.</h1>
-      <p>
-        Prüfen Sie Kaufpreis, Miete, Finanzierung, Steuerwirkung und Vermögensaufbau in einem interaktiven Rechner.
-        Das Tool ersetzt keine individuelle Beratung, gibt Ihnen aber eine strukturierte erste Grundlage für die Deal-Prüfung.
-      </p>
-      <div class="invest-hero-actions">
-        <a href="#rechner" class="invest-button"><i class="fas fa-calculator"></i> Rechner starten</a>
-        <a href="#terminbuchung" class="invest-button-secondary"><i class="fas fa-calendar-check"></i> Ergebnis gemeinsam besprechen</a>
-      </div>
-    </div>
-  </header>
-
-  <section class="invest-section">
+<div class="fgd-invest" data-invest-calculator>
+<section class="fgs-section invest-section" id="warum" aria-labelledby="warum-titel">
+  <div class="fgs-wrap">
     <div class="invest-intro-grid">
       <article class="invest-card">
-        <h2>Warum dieser Rechner?</h2>
+        <h2 id="warum-titel">Warum dieser Rechner?</h2>
         <p>
           Viele Investoren prüfen Immobilien mit Bauchgefühl, Einzelwerten oder unvollständigen Tabellen.
           Unser Rechner soll kostenlos eine klare erste Orientierung geben: Welche Annahmen treiben Cashflow,
           Eigenkapitalrendite, Tilgung, Steuerwirkung und Vermögensentwicklung?
         </p>
         <ul class="invest-mini-list">
-          <li><i class="fas fa-check"></i><span>clientseitig und ohne Backend: Ihre Eingaben werden nicht an uns übertragen.</span></li>
-          <li><i class="fas fa-check"></i><span>Schritt-für-Schritt statt Zahlenflut: Sie werden durch die relevanten Bereiche geführt.</span></li>
-          <li><i class="fas fa-check"></i><span>Ergebnis als PDF druckbar: inklusive Eingaben, Kennzahlen und Verlaufstabelle.</span></li>
+          <li>clientseitig und ohne Backend: Ihre Eingaben werden nicht an uns übertragen.</li>
+          <li>Schritt-für-Schritt statt Zahlenflut: Sie werden durch die relevanten Bereiche geführt.</li>
+          <li>Ergebnis als PDF druckbar: inklusive Eingaben, Kennzahlen und Verlaufstabelle.</li>
         </ul>
       </article>
 
       <article class="invest-card">
-        <h3>Wichtig zur Einordnung</h3>
+        <h3>Wichtig zu wissen</h3>
         <p>
           Der Rechner bewertet nicht, ob ein Investment „gut“ oder „schlecht“ ist. Dafür braucht es Objektzustand,
-          Lage, Mietrecht, Instandhaltungsrisiken, Finanzierungsdetails und persönliche Ziele. Nutzen Sie das Ergebnis
-          als Gesprächsgrundlage für eine strukturierte Ankaufsberatung.
+          Lage, Mietrecht, Instandhaltungsrisiken, Finanzierungsdetails und persönliche Ziele. Nehmen Sie das Ergebnis mit
+          in die Ankaufsberatung; dort gehen wir es mit Ihnen durch.
         </p>
         <p class="invest-muted">
           Fehlende Detaildaten wie Hausgeld oder nicht umlagefähige Kosten können geschätzt werden. Der Rechner weist Sie darauf hin,
           welche Daten die Berechnung noch genauer machen würden.
         </p>
+        <p class="invest-muted"><b>So rechnet der Rechner:</b> {{ lt.was }} <b>Grenze:</b> {{ lt.grenze }}</p>
       </article>
     </div>
 
     <div id="rechner" class="invest-calculator-shell">
       <div class="invest-calculator-top">
         <aside class="invest-step-sidebar">
-          <h2>Schritt für Schritt zur Investitionsrechnung.</h2>
+          <h2>Schritt für Schritt zur Investitionsrechnung</h2>
           <p>Geben Sie nur die Daten ein, die Sie kennen. Pflichtfelder sind bewusst reduziert, damit eine Mindestberechnung möglich bleibt.</p>
           <div class="invest-step-list">
             <div class="invest-step-item is-active"><span>1</span><div><strong>Objekt</strong><small>Kaufpreis, Fläche, Miete</small></div></div>
@@ -104,10 +121,10 @@ permalink: investitionsrechner.html
           <div class="invest-step-panel">
             <div class="invest-financing-summary" data-financing-summary></div>
             <div class="invest-field-grid">
-              <div class="invest-field"><div class="invest-label-row"><label>Finanzierungslogik</label><button type="button" class="invest-info" data-tip="Sie können die Darlehenssumme automatisch aus einer Quote vom Kaufpreis oder von der Gesamtinvestition berechnen lassen. Für individuelle Fälle bleibt die manuelle Darlehenssumme möglich.">i</button></div><div class="invest-input-wrap"><select name="financeMode"><option value="purchase">Quote vom Kaufpreis finanzieren</option><option value="total">Quote von Gesamtinvestition finanzieren</option><option value="custom" selected>Manuelle Darlehenssumme</option></select><span class="suffix"><i class="fas fa-chevron-down"></i></span></div></div>
+              <div class="invest-field"><div class="invest-label-row"><label>Wie Sie finanzieren</label><button type="button" class="invest-info" data-tip="Sie können die Darlehenssumme automatisch aus einer Quote vom Kaufpreis oder von der Gesamtinvestition berechnen lassen. Für individuelle Fälle bleibt die manuelle Darlehenssumme möglich.">i</button></div><div class="invest-input-wrap"><select name="financeMode"><option value="purchase">Quote vom Kaufpreis finanzieren</option><option value="total">Quote von Gesamtinvestition finanzieren</option><option value="custom" selected>Manuelle Darlehenssumme</option></select><span class="suffix">{{ icon("chevron") | safe }}</span></div></div>
               <div class="invest-field"><div class="invest-label-row"><label>Finanzierungsquote</label><button type="button" class="invest-info" data-tip="Beispiel: 95 % Kaufpreisfinanzierung oder 100 % Gesamtinvestition inkl. Kaufnebenkosten. Bei manueller Darlehenssumme dient der Wert nur als Orientierung.">i</button></div><div class="invest-input-wrap"><input name="financePct" data-format="percent" value="90"><span class="suffix">%</span></div><div class="invest-rec-row"><button type="button" data-target="financePct" data-set-value="80">80</button><button type="button" data-target="financePct" data-set-value="90">90</button><button type="button" data-target="financePct" data-set-value="95">95</button><button type="button" data-target="financePct" data-set-value="100">100</button></div></div>
               <div class="invest-field"><div class="invest-label-row"><label>Eigenkapital <span class="invest-required">*</span></label><button type="button" class="invest-info" data-tip="Eigenkapital ist die Bezugsgröße für die Eigenkapitalrendite. Je niedriger der EK-Einsatz, desto stärker wirkt der Hebel – aber auch das Finanzierungsrisiko.">i</button></div><div class="invest-input-wrap"><input name="equity" data-format="eur" data-label="Eigenkapital"><span class="suffix">€</span></div></div>
-              <div class="invest-field"><div class="invest-label-row"><label>Darlehenssumme</label><button type="button" class="invest-info" data-tip="Die Darlehenssumme wird je nach Finanzierungslogik vorgeschlagen und kann überschrieben werden. Auch die Mitfinanzierung von Kaufnebenkosten ist dadurch darstellbar.">i</button></div><div class="invest-input-wrap"><input name="loanAmount" data-format="eur" data-label="Darlehenssumme"><span class="suffix">€</span></div></div>
+              <div class="invest-field"><div class="invest-label-row"><label>Darlehenssumme</label><button type="button" class="invest-info" data-tip="Die Darlehenssumme wird je nach „Wie Sie finanzieren“ vorgeschlagen und kann überschrieben werden. Auch die Mitfinanzierung von Kaufnebenkosten ist dadurch darstellbar.">i</button></div><div class="invest-input-wrap"><input name="loanAmount" data-format="eur" data-label="Darlehenssumme"><span class="suffix">€</span></div></div>
               <div class="invest-field"><div class="invest-label-row"><label>Zinssatz p.a. <span class="invest-required">*</span></label><button type="button" class="invest-info" data-tip="Nominaler Sollzins pro Jahr. Der Zinsanteil sinkt im Verlauf, wenn getilgt wird.">i</button></div><div class="invest-input-wrap"><input name="interestRate" data-format="percent" data-label="Zinssatz" value="4,0"><span class="suffix">%</span></div></div>
               <div class="invest-field"><div class="invest-label-row"><label>Anfängliche Tilgung p.a. <span class="invest-required">*</span></label><button type="button" class="invest-info" data-tip="Anfängliche Tilgung in Prozent der Darlehenssumme. Der Rechner modelliert eine Annuität: gleichbleibende Rate, sinkender Zinsanteil, steigender Tilgungsanteil.">i</button></div><div class="invest-input-wrap"><input name="repaymentRate" data-format="percent" data-label="Tilgung" value="1,5"><span class="suffix">%</span></div></div>
             </div>
@@ -122,7 +139,7 @@ permalink: investitionsrechner.html
               <div class="invest-field"><div class="invest-label-row"><label>AfA-Satz</label><button type="button" class="invest-info" data-tip="Lineare Abschreibung auf den Gebäudeanteil. Hinweis: Durch ein Restnutzungsgutachten kann sich der AfA-Satz im Einzelfall erhöhen. Steuerlich bitte immer prüfen lassen.">i</button></div><div class="invest-input-wrap"><input name="afaRate" data-format="percent" value="2,5"><span class="suffix">%</span></div></div>
               <div class="invest-field"><div class="invest-label-row"><label>Gebäudeanteil</label><button type="button" class="invest-info" data-tip="Nur der Gebäudeanteil ist abschreibbar, nicht der Bodenanteil. Ohne genaue Aufteilung kann zunächst mit einer Annahme gearbeitet werden.">i</button></div><div class="invest-input-wrap"><input name="buildingShare" data-format="percent" value="75"><span class="suffix">%</span></div></div>
               <div class="invest-field"><div class="invest-label-row"><label>Persönlicher Steuersatz</label><button type="button" class="invest-info" data-tip="Grenzsteuersatz für die grobe Steuerwirkung. Der Rechner berechnet keine vollständige Einkommensteuer, sondern eine vereinfachte Objektbetrachtung.">i</button></div><div class="invest-input-wrap"><input name="taxRate" data-format="percent" value="42"><span class="suffix">%</span></div></div>
-              <div class="invest-field-full"><div class="invest-label-row"><label>Betrachtungszeitraum</label><button type="button" class="invest-info" data-tip="Zeitraum für Verlaufstabelle und Diagramme. Üblich sind 10, 20 oder 30 Jahre.">i</button></div><div class="invest-input-wrap"><select name="horizon"><option value="10">10 Jahre</option><option value="20" selected>20 Jahre</option><option value="30">30 Jahre</option><option value="40">40 Jahre</option></select><span class="suffix"><i class="fas fa-chevron-down"></i></span></div></div>
+              <div class="invest-field-full"><div class="invest-label-row"><label>Betrachtungszeitraum</label><button type="button" class="invest-info" data-tip="Zeitraum für Verlaufstabelle und Diagramme. Üblich sind 10, 20 oder 30 Jahre.">i</button></div><div class="invest-input-wrap"><select name="horizon"><option value="10">10 Jahre</option><option value="20" selected>20 Jahre</option><option value="30">30 Jahre</option><option value="40">40 Jahre</option></select><span class="suffix">{{ icon("chevron") | safe }}</span></div></div>
             </div>
             <div class="invest-nav-actions"><button type="button" class="invest-prev" data-prev-step>Zurück</button><button type="button" class="invest-calc" data-calc>Ergebnis berechnen</button></div>
           </div>
@@ -144,10 +161,9 @@ permalink: investitionsrechner.html
         </div>
 
         <div class="invest-results-head">
-          <p class="invest-eyebrow" style="color:#b8932e">Auswertung</p>
           <h2>Ihre Ergebnisübersicht</h2>
           <p class="invest-muted">Die wichtigsten Kennzahlen stehen oben. Darunter sehen Sie Ihre Eingaben, Diagramme und eine Jahr-für-Jahr-Verlaufstabelle.</p>
-          <button type="button" class="invest-button" data-print-result><i class="fas fa-file-pdf"></i> Ergebnis als PDF drucken</button>
+          <button type="button" class="fgs-btn fgs-btn--secondary invest-button" data-print-result>Ergebnis als PDF drucken</button>
         </div>
 
         <div class="invest-kpi-grid" data-kpis></div>
@@ -174,26 +190,27 @@ permalink: investitionsrechner.html
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="invest-cta">
-    <div class="invest-cta-inner">
-      <div>
-        <h2>Sie möchten die Zahlen sauber einordnen?</h2>
-        <p>
-          Bringen Sie Ihre Berechnung mit in die Ankaufsberatung. Wir prüfen gemeinsam die Annahmen,
-          erkennen Stellschrauben und ordnen ein, welche Punkte vor einem Kauf besonders kritisch sind.
-        </p>
-      </div>
-      <a href="#terminbuchung" class="invest-button"><i class="fas fa-calendar-check"></i> Ankaufsberatung anfragen</a>
     </div>
   </section>
 
-  {% include "appointment-booking.njk" %}
-</section>
+  <section class="fgs-section invest-cta" id="terminbuchung" aria-labelledby="termin-titel">
+    <div class="fgs-wrap invest-cta-inner">
+      <div>
+        <h2 id="termin-titel">Sie möchten Ihre Zahlen mit uns durchgehen?</h2>
+        <p>Bringen Sie Ihre Berechnung mit in die Ankaufsberatung. Wir prüfen mit Ihnen die Annahmen, zeigen, welche Werte die Rechnung am stärksten verändern, und sagen Ihnen, worauf Sie vor dem Kauf besonders achten sollten.</p>
+        <p>Wählen Sie einen freien Termin in unserem Kalender. Das Erstgespräch führen wir per Teams oder persönlich.</p>
+      </div>
+      <div class="invest-cta-actions">
+        <a class="fgs-btn fgs-btn--primary" href="{{ ankaufBookingUrl }}" target="_blank" rel="noopener noreferrer">Erstgespräch Ankauf buchen</a>
+        <small>Termin in Microsoft Bookings auswählen</small>
+      </div>
+    </div>
+  </section>
+</div>
 
 <script>
 if (window.self !== window.top || new URLSearchParams(location.search).get('embedded') === '1') {
   document.documentElement.classList.add('fg-embedded-calculator');
 }
 </script>
+<script src="/investitionsrechner.js" defer></script>

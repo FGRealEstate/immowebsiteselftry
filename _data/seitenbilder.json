@@ -1,0 +1,1724 @@
+{
+  "_hinweis": "Bilder auf Leistungsseiten, Startseite und Kontakt. Schlüssel = Dateiname ohne Breite; ohne Schrägstrich liegt die Datei in images/seiten/, sonst in images/<schlüssel>. quelle zeigt auf fotoquellen.json, zuschnitt ist links, oben, rechts, unten als Anteil 0..1, format das Seitenverhältnis. tools/seitenbilder.py erzeugt die Dateien, der Filter fotonachweis in .eleventy.js schreibt daraus die Zeile unter dem Bild, /bildnachweise/ listet alles. Die Kacheln (home/gebiet-*) zeigt das CSS im Format 4:3; home/gebiet-dresden ist noch der ältere 4:5-Zuschnitt aus dem Pexels-Foto.",
+  "verkaufen-hero": {
+    "quelle": "humboldt-forum-fernsehturm",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      0.84
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      2000
+    ],
+    "verwendung": "Titelbild Verkaufen"
+  },
+  "ankauf-hero": {
+    "quelle": "kurfuerstendamm-190",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      0.75
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      2000
+    ],
+    "verwendung": "Titelbild Ankaufsberatung"
+  },
+  "gewerbe-hero": {
+    "quelle": "grossbeeren-gvz-umschlag",
+    "zuschnitt": [
+      0,
+      0.04,
+      1,
+      0.79
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      2000
+    ],
+    "verwendung": "Titelbild Gewerbeimmobilien",
+    "freigabe": "gewerbe"
+  },
+  "bewertung-hero": {
+    "quelle": "teltower-damm-10",
+    "zuschnitt": [
+      0,
+      0.09,
+      1,
+      0.875
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600
+    ],
+    "verwendung": "Titelbild Immobilienbewertung"
+  },
+  "finanzierung-hero": {
+    "quelle": "wilhelmstrasse-65-glas",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      2000
+    ],
+    "verwendung": "Titelbild Finanzierungsberatung"
+  },
+  "kapitalanlage-hero": {
+    "quelle": "leipzig-humboldtstrasse-3",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      2000
+    ],
+    "verwendung": "Titelbild Kapitalanlage"
+  },
+  "mfh-hero": {
+    "quelle": "schoenhauser-allee-173",
+    "zuschnitt": [
+      0,
+      0.05,
+      1,
+      0.9
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600
+    ],
+    "verwendung": "Titelbild Mehrfamilienhaus"
+  },
+  "vermieten-hero": {
+    "quelle": "riehmers-hofgarten-hagelberger",
+    "zuschnitt": [
+      0,
+      0.03,
+      1,
+      0.78
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600
+    ],
+    "verwendung": "Titelbild Vermieten"
+  },
+  "betreuung-hero": {
+    "quelle": "treppenhaus-rosenthaler-36",
+    "zuschnitt": [
+      0,
+      0.03,
+      1,
+      0.87
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      2000
+    ],
+    "verwendung": "Titelbild Betreuung nach dem Kauf"
+  },
+  "mieten-hero": {
+    "quelle": "chamissoplatz-sommer",
+    "zuschnitt": [
+      0,
+      0.2,
+      1,
+      0.95
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      1840
+    ],
+    "verwendung": "Titelbild Mieten"
+  },
+  "kaufen-hero": {
+    "quelle": "dresden-canalettoblick",
+    "zuschnitt": [
+      0.2,
+      0,
+      0.94,
+      1
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      2000
+    ],
+    "verwendung": "Titelbild Kaufen"
+  },
+  "provision-hero": {
+    "quelle": "pexels-vip-foto-9137849",
+    "zuschnitt": [
+      0,
+      0.7,
+      1,
+      1.0
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      1840
+    ],
+    "verwendung": "Titelbild Maklerprovision"
+  },
+  "ueber-uns-hero": {
+    "quelle": "steglitz-schuetzenstrasse",
+    "zuschnitt": [
+      0.14,
+      0.12,
+      1,
+      0.77
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1440
+    ],
+    "verwendung": "Titelbild Über uns"
+  },
+  "ueber-uns/buero-strasse": {
+    "quelle": "steglitz-schuetzenstrasse-19",
+    "zuschnitt": [
+      0,
+      0.03,
+      1,
+      0.97
+    ],
+    "format": [
+      4,
+      5
+    ],
+    "breiten": [
+      600,
+      900,
+      1200
+    ],
+    "verwendung": "Über uns, Abschnitt Büro"
+  },
+  "berlin-mitte-band": {
+    "quelle": "park-inn-blick-2013",
+    "zuschnitt": [
+      0.05,
+      0,
+      0.95,
+      1
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      2400
+    ],
+    "verwendung": "Bild im Text auf Verkaufen, Immobilienbewertung, Kaufen und Vermieten"
+  },
+  "berlin-tiergarten-band": {
+    "quelle": "tiergarten-17-juni",
+    "zuschnitt": [
+      0,
+      0.05,
+      1,
+      1
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      2400
+    ],
+    "verwendung": "Bild im Text auf Finanzierungsberatung und Mehrfamilienhaus"
+  },
+  "potsdam-band": {
+    "quelle": "potsdam-alter-markt",
+    "zuschnitt": [
+      0.02,
+      0,
+      0.72,
+      0.82
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      2400
+    ],
+    "verwendung": "Bild im Text auf Verkaufen und Ankaufsberatung"
+  },
+  "leipzig-band": {
+    "quelle": "leipzig-skyline-2015",
+    "zuschnitt": [
+      0,
+      0.14,
+      1,
+      1
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      2400
+    ],
+    "verwendung": "Bild im Text auf Finanzierungsberatung und Mehrfamilienhaus"
+  },
+  "dresden-band": {
+    "quelle": "pexels-vip-foto-9137849",
+    "zuschnitt": [
+      0,
+      0.42,
+      1,
+      0.8
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      2400
+    ],
+    "verwendung": "Bild im Text auf Kapitalanlage, Betreuung nach dem Kauf und Mieten"
+  },
+  "skyline-band": {
+    "quelle": "skyline-spree-abend",
+    "zuschnitt": [
+      0,
+      0.1,
+      1,
+      0.94
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      2400
+    ],
+    "verwendung": "Bild im Text auf Ankaufsberatung, Kapitalanlage und Maklerprovision"
+  },
+  "home/hero-berlin-mitte": {
+    "quelle": "berlin-mitte-spree-2023",
+    "zuschnitt": [
+      0,
+      0.05,
+      1,
+      0.95
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      1920
+    ],
+    "verwendung": "Titelbild Startseite"
+  },
+  "home/berlin-mitte": {
+    "quelle": "park-inn-blick-2013",
+    "zuschnitt": [
+      0.3,
+      0,
+      0.75,
+      1
+    ],
+    "format": [
+      4,
+      5
+    ],
+    "breiten": [
+      600,
+      900
+    ],
+    "verwendung": "Startseite, Abschnitt über F&G"
+  },
+  "home/gebiet-berlin": {
+    "quelle": "humboldt-forum-fernsehturm",
+    "zuschnitt": [
+      0,
+      0,
+      0.75,
+      0.8
+    ],
+    "format": [
+      4,
+      3
+    ],
+    "breiten": [
+      480,
+      720
+    ],
+    "verwendung": "Kachel Berlin auf Startseite und Kontakt"
+  },
+  "home/gebiet-brandenburg": {
+    "quelle": "potsdam-alter-markt",
+    "zuschnitt": [
+      0.02,
+      0,
+      0.58,
+      0.82
+    ],
+    "format": [
+      4,
+      3
+    ],
+    "breiten": [
+      480,
+      720
+    ],
+    "verwendung": "Kachel Brandenburg auf Startseite und Kontakt"
+  },
+  "home/gebiet-sachsen": {
+    "quelle": "dresden-canalettoblick",
+    "zuschnitt": [
+      0.15,
+      0.1,
+      0.75,
+      0.75
+    ],
+    "format": [
+      4,
+      3
+    ],
+    "breiten": [
+      480,
+      720
+    ],
+    "verwendung": "Kachel Sachsen auf der Startseite"
+  },
+  "home/gebiet-leipzig": {
+    "quelle": "leipzig-skyline-2015",
+    "zuschnitt": [
+      0.4,
+      0.25,
+      1,
+      1
+    ],
+    "format": [
+      4,
+      3
+    ],
+    "breiten": [
+      480,
+      720
+    ],
+    "verwendung": "Kachel Leipzig auf Kontakt"
+  },
+  "home/gebiet-dresden": {
+    "quelle": "pexels-vip-foto-9137849",
+    "zuschnitt": [
+      0.18375,
+      0.45333,
+      0.83975,
+      1.0
+    ],
+    "format": [
+      4,
+      5
+    ],
+    "breiten": [
+      480,
+      720
+    ],
+    "verwendung": "Kachel Dresden auf Kontakt"
+  },
+  "home/gebiet-karte-dresden": {
+    "quelle": "dresden-canalettoblick",
+    "zuschnitt": [
+      0.08,
+      0,
+      0.704,
+      1
+    ],
+    "format": [
+      3,
+      2
+    ],
+    "breiten": [
+      960,
+      1600,
+      2000
+    ],
+    "verwendung": "Karte Dresden in „Unsere Gebiete“ auf der Startseite"
+  },
+  "betreuung-wohnung": {
+    "quelle": "wohnung-iferreiro",
+    "zuschnitt": [
+      0,
+      0.1,
+      1,
+      0.95
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      2400
+    ],
+    "verwendung": "Bild im Text auf Betreuung nach dem Kauf (Update 7, Frage 18)"
+  },
+  "betreuung-wohnhaus": {
+    "quelle": "kastanienallee-16-17",
+    "zuschnitt": [
+      0,
+      0.02,
+      1,
+      0.72
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      2400
+    ],
+    "verwendung": "Bild im Text auf Betreuung nach dem Kauf (Update 7, Frage 18)"
+  },
+  "home/hero-friedenau": {
+    "quelle": "stubenrauchstrasse-66",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      0.86
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1280
+    ],
+    "verwendung": "Titelbild Startseite (Design-Pass 2 §3.1)"
+  },
+  "home/leistung-verkauf": {
+    "quelle": "niedstrasse-35",
+    "zuschnitt": [
+      0.37,
+      0.02,
+      0.64,
+      0.627
+    ],
+    "format": [
+      2,
+      3
+    ],
+    "breiten": [
+      600,
+      1000
+    ],
+    "verwendung": "Startseite, Triptychon Verkauf (Design-Pass 2 §3.4)"
+  },
+  "home/leistung-ankauf": {
+    "quelle": "leere-wohnung-berlin",
+    "zuschnitt": [
+      0.56,
+      0.17,
+      0.92,
+      0.98
+    ],
+    "format": [
+      2,
+      3
+    ],
+    "breiten": [
+      600,
+      1000
+    ],
+    "verwendung": "Startseite, Triptychon Ankauf & Investment (Design-Pass 2 §3.4)"
+  },
+  "home/leistung-finanzierung": {
+    "quelle": "schreibtisch-rechner",
+    "zuschnitt": [
+      0.27,
+      0,
+      0.77,
+      1
+    ],
+    "format": [
+      2,
+      3
+    ],
+    "breiten": [
+      600,
+      1000
+    ],
+    "verwendung": "Startseite, Triptychon Finanzierung (Design-Pass 2 §3.4)"
+  },
+  "home/bewertung-band": {
+    "quelle": "mommsenstrasse-64",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      0.75
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      2400,
+      3200
+    ],
+    "verwendung": "Startseite, Bildband Bewertung (Design-Pass 2 §3.6)"
+  },
+  "abschluss-2x1": {
+    "quelle": "humboldt-forum-fernsehturm",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      0.76
+    ],
+    "format": [
+      2,
+      1
+    ],
+    "breiten": [
+      1600,
+      2400,
+      3200
+    ],
+    "verwendung": "Abschlussband auf jeder Seite außer Verkaufen"
+  },
+  "abschluss-3x2": {
+    "quelle": "humboldt-forum-fernsehturm",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "format": [
+      3,
+      2
+    ],
+    "breiten": [
+      1600,
+      2400,
+      3200
+    ],
+    "verwendung": "Abschlussband auf jeder Seite außer Verkaufen"
+  },
+  "abschluss-1x1": {
+    "quelle": "humboldt-forum-fernsehturm",
+    "zuschnitt": [
+      0,
+      0,
+      0.72,
+      1
+    ],
+    "format": [
+      1,
+      1
+    ],
+    "breiten": [
+      1200,
+      1800,
+      2400
+    ],
+    "verwendung": "Abschlussband auf jeder Seite außer Verkaufen"
+  },
+  "abschluss-2x3": {
+    "quelle": "humboldt-forum-fernsehturm",
+    "zuschnitt": [
+      0.33,
+      0,
+      0.8,
+      1
+    ],
+    "format": [
+      2,
+      3
+    ],
+    "breiten": [
+      800,
+      1200,
+      1600
+    ],
+    "verwendung": "Abschlussband auf jeder Seite außer Verkaufen"
+  },
+  "abschluss-tiergarten-2x1": {
+    "quelle": "tiergarten-17-juni",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "format": [
+      2,
+      1
+    ],
+    "breiten": [
+      1600,
+      2400,
+      3200
+    ],
+    "verwendung": "Abschlussband auf Verkaufen"
+  },
+  "abschluss-tiergarten-3x2": {
+    "quelle": "tiergarten-17-juni",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "format": [
+      3,
+      2
+    ],
+    "breiten": [
+      1600,
+      2400,
+      3200
+    ],
+    "verwendung": "Abschlussband auf Verkaufen"
+  },
+  "abschluss-tiergarten-1x1": {
+    "quelle": "tiergarten-17-juni",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "format": [
+      1,
+      1
+    ],
+    "breiten": [
+      1200,
+      1800,
+      2300
+    ],
+    "verwendung": "Abschlussband auf Verkaufen"
+  },
+  "abschluss-tiergarten-2x3": {
+    "quelle": "tiergarten-17-juni",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "format": [
+      2,
+      3
+    ],
+    "breiten": [
+      800,
+      1200,
+      1560
+    ],
+    "verwendung": "Abschlussband auf Verkaufen"
+  },
+  "abschluss-12x5": {
+    "quelle": "humboldt-forum-fernsehturm",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      0.7
+    ],
+    "format": [
+      12,
+      5
+    ],
+    "breiten": [
+      2400,
+      3200
+    ],
+    "verwendung": "Abschlussband auf jeder Seite außer Verkaufen"
+  },
+  "abschluss-9x16": {
+    "quelle": "humboldt-forum-fernsehturm",
+    "zuschnitt": [
+      0.37,
+      0,
+      0.76,
+      1
+    ],
+    "format": [
+      9,
+      16
+    ],
+    "breiten": [
+      800,
+      1200,
+      1440
+    ],
+    "verwendung": "Abschlussband auf jeder Seite außer Verkaufen"
+  },
+  "abschluss-tiergarten-12x5": {
+    "quelle": "tiergarten-17-juni",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "format": [
+      12,
+      5
+    ],
+    "breiten": [
+      2400,
+      3200
+    ],
+    "verwendung": "Abschlussband auf Verkaufen"
+  },
+  "abschluss-tiergarten-9x16": {
+    "quelle": "tiergarten-17-juni",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "format": [
+      9,
+      16
+    ],
+    "breiten": [
+      800,
+      1200,
+      1310
+    ],
+    "verwendung": "Abschlussband auf Verkaufen"
+  },
+  "abschluss-5x4": {
+    "quelle": "humboldt-forum-fernsehturm",
+    "zuschnitt": [
+      0,
+      0,
+      0.9,
+      1
+    ],
+    "format": [
+      5,
+      4
+    ],
+    "breiten": [
+      1200,
+      1800,
+      2400
+    ],
+    "verwendung": "Abschlussband auf jeder Seite außer Verkaufen"
+  },
+  "abschluss-1x2": {
+    "quelle": "humboldt-forum-fernsehturm",
+    "zuschnitt": [
+      0.37,
+      0,
+      0.76,
+      1
+    ],
+    "format": [
+      1,
+      2
+    ],
+    "breiten": [
+      800,
+      1200
+    ],
+    "verwendung": "Abschlussband auf jeder Seite außer Verkaufen"
+  },
+  "abschluss-tiergarten-5x4": {
+    "quelle": "tiergarten-17-juni",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "format": [
+      5,
+      4
+    ],
+    "breiten": [
+      1200,
+      1800,
+      2400
+    ],
+    "verwendung": "Abschlussband auf Verkaufen"
+  },
+  "home/hero-slide-friedenau": {
+    "quelle": "stubenrauchstrasse-66",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      0.86
+    ],
+    "format": [
+      16,
+      9
+    ],
+    "breiten": [
+      1600
+    ],
+    "verwendung": "Titelbild Startseite, Folie 1 (Design-Pass 3 §3.1)"
+  },
+  "home/hero-slide-berlin": {
+    "quelle": "humboldt-forum-fernsehturm",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "format": [
+      3,
+      2
+    ],
+    "breiten": [
+      1600
+    ],
+    "verwendung": "Titelbild Startseite, Folie 2 (Design-Pass 3 §3.1)"
+  },
+  "home/hero-slide-potsdam": {
+    "quelle": "potsdam-glienicker-bruecke-blaue-stunde",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      0.9
+    ],
+    "format": [
+      5,
+      3
+    ],
+    "breiten": [
+      1600
+    ],
+    "verwendung": "Titelbild Startseite, Folie 3 (Design-Pass 3 §3.1)"
+  },
+  "home/hero-slide-leipzig": {
+    "quelle": "leipzig-skyline-2015",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "format": [
+      3,
+      2
+    ],
+    "breiten": [
+      1600
+    ],
+    "verwendung": "Titelbild Startseite, Folie 4 (Design-Pass 3 §3.1)"
+  },
+  "home/hero-slide-dresden": {
+    "quelle": "dresden-elbe-sonnenuntergang",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "format": [
+      3,
+      2
+    ],
+    "breiten": [
+      1600
+    ],
+    "verwendung": "Titelbild Startseite, Folie 5 (Design-Pass 3 §3.1)"
+  },
+  "home/hero-leistung-verkauf": {
+    "quelle": "chamissoplatz-mietshaus",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      0.74
+    ],
+    "format": [
+      3,
+      2
+    ],
+    "breiten": [
+      1600
+    ],
+    "verwendung": "Startseite, Leistungs-Slider Verkauf (Design-Pass 3 §3.2)"
+  },
+  "home/hero-leistung-ankauf": {
+    "quelle": "leere-wohnung-berlin",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "format": [
+      3,
+      2
+    ],
+    "breiten": [
+      1600
+    ],
+    "verwendung": "Startseite, Leistungs-Slider Ankauf & Investment (Design-Pass 3 §3.2)"
+  },
+  "home/hero-leistung-finanzierung": {
+    "quelle": "schreibtisch-rechner",
+    "zuschnitt": [
+      0,
+      0.08,
+      1,
+      0.92
+    ],
+    "format": [
+      3,
+      2
+    ],
+    "breiten": [
+      1600
+    ],
+    "verwendung": "Startseite, Leistungs-Slider Finanzierung (Design-Pass 3 §3.2)"
+  },
+  "home/gebiet-karte-brandenburg": {
+    "quelle": "potsdam-glienicker-bruecke-abend",
+    "zuschnitt": [
+      0.05,
+      0,
+      0.9,
+      1
+    ],
+    "format": [
+      3,
+      2
+    ],
+    "breiten": [
+      960,
+      1600,
+      2000
+    ],
+    "verwendung": "Karte Brandenburg in „Unsere Gebiete“ auf der Startseite (Design-Pass 3 §3.5)"
+  },
+  "home/gebiet-karte-leipzig": {
+    "quelle": "leipzig-neues-rathaus-nacht",
+    "zuschnitt": [
+      0,
+      0.1,
+      1,
+      0.92
+    ],
+    "format": [
+      3,
+      2
+    ],
+    "breiten": [
+      960,
+      1600,
+      2000
+    ],
+    "verwendung": "Karte Leipzig in „Unsere Gebiete“ auf der Startseite (Design-Pass 3 §3.5)"
+  },
+  "potsdam-band-2x3": {
+    "quelle": "potsdam-alter-markt",
+    "zuschnitt": [
+      0.0675,
+      0,
+      0.3225,
+      0.82
+    ],
+    "format": [
+      2,
+      3
+    ],
+    "breiten": [
+      720,
+      976
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 2:3 von potsdam-band (Bildregel 2.6.2)"
+  },
+  "potsdam-band-1x1": {
+    "quelle": "potsdam-alter-markt",
+    "zuschnitt": [
+      0.02,
+      0,
+      0.4025,
+      0.82
+    ],
+    "format": [
+      1,
+      1
+    ],
+    "breiten": [
+      1080,
+      1464
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 1:1 von potsdam-band (Bildregel 2.6.2)"
+  },
+  "potsdam-band-4x3": {
+    "quelle": "potsdam-alter-markt",
+    "zuschnitt": [
+      0.02,
+      0,
+      0.5299,
+      0.82
+    ],
+    "format": [
+      4,
+      3
+    ],
+    "breiten": [
+      1600,
+      1952
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 4:3 von potsdam-band (Bildregel 2.6.2)"
+  },
+  "potsdam-band-2x1": {
+    "quelle": "potsdam-alter-markt",
+    "zuschnitt": [
+      0.02,
+      0.0348,
+      0.72,
+      0.7852
+    ],
+    "format": [
+      2,
+      1
+    ],
+    "breiten": [
+      1600,
+      2400,
+      2688
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 2:1 von potsdam-band (Bildregel 2.6.2)"
+  },
+  "potsdam-band-21x9": {
+    "quelle": "potsdam-alter-markt",
+    "zuschnitt": [
+      0.02,
+      0.0884,
+      0.72,
+      0.7316
+    ],
+    "format": [
+      21,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      2400
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 21:9 von potsdam-band (Bildregel 2.6.2)"
+  },
+  "dresden-band-2x3": {
+    "quelle": "pexels-vip-foto-9137849",
+    "zuschnitt": [
+      0.31,
+      0.42,
+      0.69,
+      0.8
+    ],
+    "format": [
+      2,
+      3
+    ],
+    "breiten": [
+      720,
+      1080
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 2:3 von dresden-band (Bildregel 2.6.2)"
+  },
+  "dresden-band-1x1": {
+    "quelle": "pexels-vip-foto-9137849",
+    "zuschnitt": [
+      0.215,
+      0.42,
+      0.785,
+      0.8
+    ],
+    "format": [
+      1,
+      1
+    ],
+    "breiten": [
+      1080,
+      1640
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 1:1 von dresden-band (Bildregel 2.6.2)"
+  },
+  "dresden-band-4x3": {
+    "quelle": "pexels-vip-foto-9137849",
+    "zuschnitt": [
+      0.12,
+      0.42,
+      0.88,
+      0.8
+    ],
+    "format": [
+      4,
+      3
+    ],
+    "breiten": [
+      1600,
+      2400
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 4:3 von dresden-band (Bildregel 2.6.2)"
+  },
+  "dresden-band-2x1": {
+    "quelle": "pexels-vip-foto-9137849",
+    "zuschnitt": [
+      0,
+      0.4433,
+      1,
+      0.7767
+    ],
+    "format": [
+      2,
+      1
+    ],
+    "breiten": [
+      1600,
+      2400,
+      3200,
+      3840
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 2:1 von dresden-band (Bildregel 2.6.2)"
+  },
+  "berlin-tiergarten-band-2x3": {
+    "quelle": "tiergarten-17-juni",
+    "zuschnitt": [
+      0.3069,
+      0.05,
+      0.6931,
+      1
+    ],
+    "format": [
+      2,
+      3
+    ],
+    "breiten": [
+      720,
+      1080
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 2:3 von berlin-tiergarten-band (Bildregel 2.6.2)"
+  },
+  "berlin-tiergarten-band-1x1": {
+    "quelle": "tiergarten-17-juni",
+    "zuschnitt": [
+      0.2103,
+      0.05,
+      0.7897,
+      1
+    ],
+    "format": [
+      1,
+      1
+    ],
+    "breiten": [
+      1080,
+      1640
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 1:1 von berlin-tiergarten-band (Bildregel 2.6.2)"
+  },
+  "berlin-tiergarten-band-4x3": {
+    "quelle": "tiergarten-17-juni",
+    "zuschnitt": [
+      0.1137,
+      0.05,
+      0.8863,
+      1
+    ],
+    "format": [
+      4,
+      3
+    ],
+    "breiten": [
+      1600,
+      2400
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 4:3 von berlin-tiergarten-band (Bildregel 2.6.2)"
+  },
+  "berlin-tiergarten-band-2x1": {
+    "quelle": "tiergarten-17-juni",
+    "zuschnitt": [
+      0,
+      0.1151,
+      1,
+      0.9349
+    ],
+    "format": [
+      2,
+      1
+    ],
+    "breiten": [
+      1600,
+      2400,
+      3200,
+      3840
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 2:1 von berlin-tiergarten-band (Bildregel 2.6.2)"
+  },
+  "berlin-tiergarten-band-21x9": {
+    "quelle": "tiergarten-17-juni",
+    "zuschnitt": [
+      0,
+      0.1737,
+      1,
+      0.8763
+    ],
+    "format": [
+      21,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      2400
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 21:9 von berlin-tiergarten-band (Bildregel 2.6.2)"
+  },
+  "leipzig-band-2x3": {
+    "quelle": "leipzig-skyline-2015",
+    "zuschnitt": [
+      0.533,
+      0.14,
+      0.907,
+      1
+    ],
+    "format": [
+      2,
+      3
+    ],
+    "breiten": [
+      720,
+      1080
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 2:3 von leipzig-band (Bildregel 2.6.2)"
+  },
+  "leipzig-band-1x1": {
+    "quelle": "leipzig-skyline-2015",
+    "zuschnitt": [
+      0.439,
+      0.14,
+      1.0,
+      1
+    ],
+    "format": [
+      1,
+      1
+    ],
+    "breiten": [
+      1080,
+      1640
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 1:1 von leipzig-band (Bildregel 2.6.2)"
+  },
+  "leipzig-band-4x3": {
+    "quelle": "leipzig-skyline-2015",
+    "zuschnitt": [
+      0.252,
+      0.14,
+      1.0,
+      1
+    ],
+    "format": [
+      4,
+      3
+    ],
+    "breiten": [
+      1600,
+      2400
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 4:3 von leipzig-band (Bildregel 2.6.2)"
+  },
+  "leipzig-band-2x1": {
+    "quelle": "leipzig-skyline-2015",
+    "zuschnitt": [
+      0,
+      0.1868,
+      1,
+      0.9532
+    ],
+    "format": [
+      2,
+      1
+    ],
+    "breiten": [
+      1600,
+      2400,
+      3200,
+      3840
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 2:1 von leipzig-band (Bildregel 2.6.2)"
+  },
+  "leipzig-band-21x9": {
+    "quelle": "leipzig-skyline-2015",
+    "zuschnitt": [
+      0,
+      0.2415,
+      1,
+      0.8985
+    ],
+    "format": [
+      21,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      2400
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 21:9 von leipzig-band (Bildregel 2.6.2)"
+  },
+  "berlin-mitte-band-2x3": {
+    "quelle": "park-inn-blick-2013",
+    "zuschnitt": [
+      0.3302,
+      0,
+      0.6698,
+      1
+    ],
+    "format": [
+      2,
+      3
+    ],
+    "breiten": [
+      720,
+      1080
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 2:3 von berlin-mitte-band (Bildregel 2.6.2)"
+  },
+  "berlin-mitte-band-1x1": {
+    "quelle": "park-inn-blick-2013",
+    "zuschnitt": [
+      0.2453,
+      0,
+      0.7547,
+      1
+    ],
+    "format": [
+      1,
+      1
+    ],
+    "breiten": [
+      1080,
+      1640
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 1:1 von berlin-mitte-band (Bildregel 2.6.2)"
+  },
+  "berlin-mitte-band-4x3": {
+    "quelle": "park-inn-blick-2013",
+    "zuschnitt": [
+      0.1604,
+      0,
+      0.8396,
+      1
+    ],
+    "format": [
+      4,
+      3
+    ],
+    "breiten": [
+      1600,
+      2400
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 4:3 von berlin-mitte-band (Bildregel 2.6.2)"
+  },
+  "berlin-mitte-band-2x1": {
+    "quelle": "park-inn-blick-2013",
+    "zuschnitt": [
+      0.05,
+      0.0583,
+      0.95,
+      0.9417
+    ],
+    "format": [
+      2,
+      1
+    ],
+    "breiten": [
+      1600,
+      2400,
+      3200,
+      3448
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 2:1 von berlin-mitte-band (Bildregel 2.6.2)"
+  },
+  "home/bewertung-band-2x3": {
+    "quelle": "mommsenstrasse-64",
+    "zuschnitt": [
+      0.3125,
+      0,
+      0.6875,
+      0.75
+    ],
+    "format": [
+      2,
+      3
+    ],
+    "breiten": [
+      720,
+      1080
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 2:3 von home/bewertung-band (Bildregel 2.6.2)"
+  },
+  "home/bewertung-band-1x1": {
+    "quelle": "mommsenstrasse-64",
+    "zuschnitt": [
+      0.2188,
+      0,
+      0.7812,
+      0.75
+    ],
+    "format": [
+      1,
+      1
+    ],
+    "breiten": [
+      1080,
+      1640
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 1:1 von home/bewertung-band (Bildregel 2.6.2)"
+  },
+  "home/bewertung-band-4x3": {
+    "quelle": "mommsenstrasse-64",
+    "zuschnitt": [
+      0.125,
+      0,
+      0.875,
+      0.75
+    ],
+    "format": [
+      4,
+      3
+    ],
+    "breiten": [
+      1600,
+      2400
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 4:3 von home/bewertung-band (Bildregel 2.6.2)"
+  },
+  "home/bewertung-band-2x1": {
+    "quelle": "mommsenstrasse-64",
+    "zuschnitt": [
+      0,
+      0.0417,
+      1,
+      0.7083
+    ],
+    "format": [
+      2,
+      1
+    ],
+    "breiten": [
+      1600,
+      2400,
+      3200
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 2:1 von home/bewertung-band (Bildregel 2.6.2)"
+  },
+  "betreuung-wohnhaus-21x9": {
+    "quelle": "kastanienallee-16-17",
+    "zuschnitt": [
+      0,
+      0.0843,
+      1,
+      0.6557
+    ],
+    "format": [
+      21,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      2400
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 21:9 von betreuung-wohnhaus (Bildregel 2.6.2)"
+  },
+  "betreuung-wohnung-21x9": {
+    "quelle": "wohnung-iferreiro",
+    "zuschnitt": [
+      0,
+      0.2023,
+      1,
+      0.8477
+    ],
+    "format": [
+      21,
+      9
+    ],
+    "breiten": [
+      960,
+      1600,
+      2400
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 21:9 von betreuung-wohnung (Bildregel 2.6.2)"
+  },
+  "skyline-band-4x5": {
+    "quelle": "skyline-spree-abend",
+    "zuschnitt": [
+      0.106,
+      0.1,
+      0.554,
+      0.94
+    ],
+    "format": [
+      4,
+      5
+    ],
+    "breiten": [
+      960,
+      1440,
+      1720
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 4:5 von skyline-band (Bildregel 2.6.2)"
+  },
+  "home/gebiet-karte-brandenburg-4x5": {
+    "quelle": "potsdam-glienicker-bruecke-abend",
+    "zuschnitt": [
+      0.25,
+      0,
+      0.7,
+      1
+    ],
+    "format": [
+      4,
+      5
+    ],
+    "breiten": [
+      960,
+      1440,
+      1728
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 4:5 von home/gebiet-karte-brandenburg (Bildregel 2.6.2)"
+  },
+  "home/gebiet-karte-leipzig-4x5": {
+    "quelle": "leipzig-neues-rathaus-nacht",
+    "zuschnitt": [
+      0.2813,
+      0.1,
+      0.7187,
+      0.92
+    ],
+    "format": [
+      4,
+      5
+    ],
+    "breiten": [
+      960,
+      1440,
+      1672
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 4:5 von home/gebiet-karte-leipzig (Bildregel 2.6.2)"
+  },
+  "home/gebiet-karte-dresden-4x5": {
+    "quelle": "dresden-canalettoblick",
+    "zuschnitt": [
+      0.2255,
+      0,
+      0.5585,
+      1
+    ],
+    "format": [
+      4,
+      5
+    ],
+    "breiten": [
+      960,
+      1272
+    ],
+    "verwendung": "Update 22 §8.6: Zuschnitt 4:5 von home/gebiet-karte-dresden (Bildregel 2.6.2)"
+  }
+}

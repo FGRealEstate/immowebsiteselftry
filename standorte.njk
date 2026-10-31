@@ -1,76 +1,212 @@
 ---
 layout: base.njk
+fgDesign: true
+fgSystem: true
+fgsHero: false
+customSchema: true
 permalink: "standorte/index.html"
-title: "Standorte - Immobilienmärkte Berlin, Brandenburg und Sachsen"
-description: "Standortanalysen mit Kaufpreisorientierung, Mietniveau, Rendite, Chancen und Risiken für Berlin, Brandenburg und Sachsen."
 canonicalPath: /standorte/
+eleventyComputed:
+  title: "{{ gebieteUebersicht.title | safe }}"
+  description: "{{ gebieteUebersicht.description | safe }}"
 ---
-<div class="fg-location-index">
-  <section class="fg-library-hero fg-location-index-hero">
-    <div class="fg-premium-shell">
-      <p class="fg-premium-kicker fg-premium-kicker-light">Investment Lab · Standorte</p>
-      <h1>Standorte nicht pauschal bewerten. Mikrolagen verstehen.</h1>
-      <p>{{ labContent.locations | length }} Standortanalysen mit Kaufpreisorientierung, Mietniveau sowie einer klaren Einordnung von Chancen und Risiken.</p>
+{#- Design-Pass 2 §7 (29.10.2026): „Stand“ steht nicht mehr unter der Titelzeile, sondern als „Zahlen mit Stand …“ in den
+    Quellen (Wortlaut §5.3 wie auf den Gebietsseiten); über den Zahlen nur noch der zweite Satz, klein.
+    Gebiete-Übersicht /standorte/ im Design-System (Design-Sprint-Brief 5.3, CP3 am 28.10.2026): große Fotokacheln
+    im 2-Spalten-Raster, je Kachel Name und eine Zeile, danach kurzer Text und Ansprechpartner (Referenzen
+    huttonsandpartners.com/areas-we-cover/ und omniyat.com/marasi-bay, die Seite „Destinations“, die Timon gefiel).
+    Reihenfolge: Titelzeile ohne Foto, je Region eine Kachelreihe mit allen Seiten der Region, Zahlen, Ansprechpartner,
+    Fragen, Leistungen, Quellen zum Aufklappen, Abschlussband.
+    Text, Zahlen und Quellen stehen unverändert in content/uebersicht/standorte.json, Kacheln und Links baut
+    _data/gebieteUebersicht.js aus den Gebietsseiten (Foto = Kopffoto der Gebietsseite, Zeile = erste drei Orte oder
+    Landkreis). Zwischenüberschriften nur, wo eine Region zwei Gruppen hat (Brandenburg: Landkreise, Städte). Die Anker #regionen, #region-…, #zahlen, #ansprechpartner, #faq und #quelle-… bleiben, weil Menü,
+    Fuß und Bibliothek auf #region-brandenburg zeigen. Entfallen gegenüber der fgd-Fassung: Kicker über den H2 und
+    die 01/02-Zählung (Update 6 §3.0, Brief 3.7), das Inhaltsverzeichnis im Kopf, die Linklisten je Region
+    (Brief 3.7: höchstens 6 Links; jetzt Kacheln), das große Regionsfoto mit Bildunterschrift (dasselbe Foto steht
+    jetzt als Kachel der Gebietsseite) und die Kurzbiografien (stehen auf den Profilen und auf Über uns).
+    JSON-LD (CollectionPage mit ItemList, BreadcrumbList, FAQPage) unverändert. -#}
+{% from "fgs-macros.njk" import pic, textlink, card, faq, closing with context %}
+{% set u = gebieteUebersicht %}
+{% set pageUrl = "https://fg-realestate.de/standorte/" %}
+{% set valuationHref = nav.valuation | navHref %}
+
+{# 1. Titelzeile ohne Foto (wie die Referenz Huttons „Areas“): Brotkrumen, H1, Kurzantwort, zwei Buttons #}
+<section class="fgs-pagehead" aria-labelledby="seitentitel">
+  <div class="fgs-wrap">
+    <nav aria-label="Brotkrümelnavigation">
+      <ol class="fgs-crumbs">
+        <li><a href="/">Start</a></li>
+        <li aria-current="page">Gebiete</li>
+      </ol>
+    </nav>
+    <p class="fgs-label">Gebiete</p>
+    <h1 id="seitentitel">{{ u.h1 }}</h1>
+    <p class="fgs-lead">{{ u.kurzantwort | nbsp | escape | fn | safe }}</p>
+    <div class="fgs-btns">
+      <a class="fgs-btn fgs-btn--primary" href="{{ valuationHref }}">Kostenlose Bewertung</a>
+      <a class="fgs-btn fgs-btn--secondary" href="#regionen">Gebiet wählen</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="fg-location-index-section">
-    <div class="fg-premium-shell">
-      <div class="fg-library-toolbar fg-location-toolbar">
-        <label class="fg-library-search">
-          <i class="fas fa-search" aria-hidden="true"></i>
-          <input type="search" placeholder="Standort oder Region suchen …" aria-label="Standort oder Region suchen" data-library-search>
-        </label>
-        <span class="fg-library-count"><b data-library-count>{{ labContent.locations | length }}</b> Standortanalysen</span>
-      </div>
-
-      <div class="fg-library-grid fg-location-card-grid" data-library-grid>
-        {% for entry in labContent.locations %}
-        <a class="fg-location-card" href="/standorte/{{ entry.slug }}/" data-library-card data-search="{{ entry.name }} {{ entry.region }} {{ entry.chance }} {{ entry.risk }} {{ entry.view }}">
-          <header class="fg-location-card-header">
-            <div>
-              <span class="fg-location-card-region">{{ entry.region }}</span>
-              <h2>{{ entry.name }}</h2>
-            </div>
-            <span class="fg-location-card-icon" aria-hidden="true"><i class="fas fa-arrow-up-right-from-square"></i></span>
-          </header>
-
-          <dl class="fg-location-card-facts">
-            <div><dt>Kaufpreis</dt><dd>{{ entry.priceValue or entry.price }}</dd></div>
-            <div><dt>Mietniveau</dt><dd>{{ entry.rentValue or entry.rent }}</dd></div>
-            <div><dt>Rendite</dt><dd>{{ entry.yieldValue or entry.yield }}</dd></div>
-          </dl>
-
-          <p class="fg-location-card-summary">{{ entry.view }}</p>
-          <span class="fg-location-card-link">Standortanalyse öffnen <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+{# 2. Je Region: H2, Text mit Quelle, Ansprechpartner; darunter jede Seite der Region als große Fotokachel #}
+<div id="regionen">
+{% for r in u.regionen %}
+{% set k = kontakte[r.kontakt] %}
+<section class="fgs-section{% if not loop.first %} fgs-section--rule-in{% endif %} fgs-region" id="region-{{ r.key }}" aria-labelledby="region-{{ r.key }}-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head fgs-region-head">
+      <h2 id="region-{{ r.key }}-titel">{{ r.name }}</h2>
+      <p>{{ r.text | nbsp | escape | fn | safe }}</p>
+      <p class="fgs-small">{{ r.anzahl + (1 if r.uebersicht else 0) }} Seiten · Ansprechpartner: <a href="#ansprechpartner">{{ k.name }}</a></p>
+      {%- if r.uebersicht %}
+      {{ textlink(r.uebersicht.url, "Übersicht " + r.name) }}{% endif %}
+    </div>
+    {%- for gr in r.gruppen %}
+    {%- if r.gruppen.length > 1 %}
+    <h3 class="fgs-tiles-group">{{ gr.titel }}</h3>{% endif %}
+    <ul class="fgs-tiles fgs-tiles--places" role="list">
+      {%- for s in gr.seiten %}
+      {%- set breit = loop.last and (loop.length % 2 == 1) %}
+      <li>
+        <a class="fgs-card" href="{{ s.url }}">
+          {%- if s.foto %}
+          <span class="fgs-media fgs-reveal"{% if s.foto.position %} style="--fgs-pos: {{ s.foto.position }}"{% endif %}>{{ pic(("/images/gebiete/" + s.foto.name) | bild, s.foto.alt, "(min-width: 1328px) 1200px, 100vw" if breit else "(min-width: 768px) 46vw, 100vw") }}</span>
+          {%- endif %}
+          <h4 class="fgs-card-title">{{ s.kurz }}</h4>
+          {%- if s.zeile %}
+          <p class="fgs-card-line">{{ s.zeile }}</p>{% endif %}
         </a>
-        {% endfor %}
-      </div>
-
-      <div class="fg-library-empty" data-library-empty>Kein Standort passt zu dieser Suche.</div>
-
-      <div class="fg-location-area-cta">
-        <div>
-          <p class="fg-premium-kicker fg-premium-kicker-light">Unser Tätigkeitsgebiet</p>
-          <h2>Maklergeschäft regional. Finanzierungen deutschlandweit.</h2>
-          <p>{{ serviceArea.text }}</p>
-        </div>
-        <a href="/kontakt.html" class="btn-85 px-7 py-4">Standort besprechen <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
-    </div>
-  </section>
+      </li>
+      {%- endfor %}
+    </ul>
+    {%- endfor %}
+  </div>
+</section>
+{% endfor %}
 </div>
 
-{% include "library-filter-script.njk" %}
+{# 3. S6 Eine Zahl je Region, mit Quelle und Stand (Zeilen wie auf den Gebietsseiten) #}
+<section class="fgs-section fgs-section--rule-in" id="zahlen" aria-labelledby="zahlen-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head fgs-place-head">
+      <h2 id="zahlen-titel">Die vier Regionen in Zahlen</h2>
+      <p class="fgs-small">Kaufpreise sind tatsächlich gezahlte Preise, keine Angebotspreise aus Portalen.</p>
+    </div>
+    <ul class="fgs-facts-rows" role="list">
+      {%- for z in u.zahlen %}
+      <li>
+        <span class="fgs-fact-figure">{{ z.wert | factValue | safe }}</span>
+        <div class="fgs-facts-rows-text">
+          <p class="fgs-facts-rows-label">{{ z.label | nbsp }}</p>
+          {%- if z.detail %}
+          <p>{{ z.detail | nbsp }}</p>{% endif %}
+          <p class="fgs-small fgs-source">{% if z.url %}<a href="{{ z.url }}" target="_blank" rel="noopener">{{ z.quelle }}</a>{% else %}{{ z.quelle }}{% endif %}{% if z.stichtag %} · {{ z.stichtag }}{% endif %}</p>
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+{# 4. Kurzer Text und die Ansprechpartner als Porträtkarten (wie auf der Kontaktseite) #}
+<section class="fgs-section fgs-section--rule-in" id="ansprechpartner" aria-labelledby="ansprechpartner-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head">
+      <h2 id="ansprechpartner-titel">Wer Sie in Ihrem Gebiet berät</h2>
+      <p>{{ u.kurzantwortMehr | nbsp | escape | fn | safe }}</p>
+    </div>
+    <ul class="fgs-cards2" role="list">
+      {{ card({ href: kontakte.lennart.profile | navHref, bild: "/images/team/lennart-geserich-hell" | bild, alt: "Porträt von Lennart Geserich", label: "Berlin · Brandenburg", titel: kontakte.lennart.name, zeile: kontakte.lennart.role }) }}
+      {{ card({ href: kontakte.timon.profile | navHref, bild: "/images/team/timon-fischer-hell" | bild, alt: "Porträt von Timon Fischer", label: "Leipzig · Dresden", titel: kontakte.timon.name, zeile: kontakte.timon.role }) }}
+    </ul>
+  </div>
+</section>
+
+{# 5. S7 Häufige Fragen #}
+{%- set faqItems = [] %}
+{%- for item in u.faq | faqFrei %}{% set neu = faqItems.push({ q: item.frage, a: item.antwort | nbsp | fn }) %}{% endfor %}
+{{ faq(faqItems, "Fragen zu unseren Gebieten", "Ihre Frage ist nicht dabei? Rufen Sie uns an oder schreiben Sie uns.") }}
+
+{# 6. Leistungen in allen Gebieten (vier Links) #}
+<section class="fgs-section fgs-section--rule-in" id="leistungen" aria-labelledby="mehr-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head">
+      <h2 id="mehr-titel">Leistungen in allen Gebieten</h2>
+    </div>
+    <div class="fgs-links fgs-overview-links">
+      {{ textlink("/verkaufen.html", "Immobilie verkaufen") }}
+      {{ textlink("/ankaufsberatung.html", "Ankaufsberatung") }}
+      {{ textlink("/finanzierungsberatung.html", "Finanzierungsberatung") }}
+      {{ textlink("/investment-lab.html", "Standortanalysen im Investment Lab") }}
+    </div>
+  </div>
+</section>
+
+{# 7. Quellen zum Aufklappen; ein Klick auf eine Fußnote öffnet die Liste (fg-system.js) #}
+<section class="fgs-section fgs-section--tight fgs-place-sources" aria-labelledby="quellen-titel">
+  <div class="fgs-wrap">
+    <details class="fgs-sources" id="quellen">
+      <summary><h2 id="quellen-titel">Quellen</h2></summary>
+      <p>Zahlen mit Stand {{ u.stand }}. Die hochgestellten Zahlen im Text verweisen auf diese Quellen:</p>
+      <ol>
+        {%- for q in u.quellen %}
+        <li id="quelle-{{ loop.index }}">{% if q.url %}<a href="{{ q.url }}" target="_blank" rel="noopener">{{ q.name }}</a>{% else %}{{ q.name }}{% endif %}{% if q.stand %} · {{ q.stand }}{% endif %}</li>
+        {%- endfor %}
+      </ol>
+    </details>
+  </div>
+</section>
+
+{# 8. S8 Abschlussband: kostenlose Bewertung (wie auf den Gebietsseiten) #}
+{% call closing({ kontakt: "lennart", satz: "Was ist Ihre Immobilie wert?", button: "bewertung" }) %}
+  <p>Die Wertermittlung Ihres Objektes erstellen wir kostenlos, meistens innerhalb weniger Stunden und häufig noch am selben Tag.</p>
+{% endcall %}
+
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"CollectionPage",
-  "@id":"https://fg-realestate.de/standorte/",
-  "url":"https://fg-realestate.de/standorte/",
-  "name":"Standortanalysen",
-  "isPartOf":{"@id":"https://fg-realestate.de/#website"},
-  "about":{"@id":"https://fg-realestate.de/#organization"},
-  "mainEntity":{"@type":"ItemList","numberOfItems":{{ labContent.locations | length }},"itemListElement":[{% for entry in labContent.locations %}{"@type":"ListItem","position":{{ loop.index }},"name":{{ entry.name | dump | safe }},"url":"https://fg-realestate.de/standorte/{{ entry.slug }}/"}{% if not loop.last %},{% endif %}{% endfor %}]}
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "{{ pageUrl }}",
+      "url": "{{ pageUrl }}",
+      "name": {{ u.title | dump | safe }},
+      "description": {{ u.description | dump | safe }},
+      "inLanguage": "de-DE",
+      "dateModified": "{{ u.updated }}",
+      "isPartOf": { "@id": "https://fg-realestate.de/#website" },
+      "breadcrumb": { "@id": "{{ pageUrl }}#breadcrumb" },
+      "mainEntity": {
+        "@type": "ItemList",
+        "numberOfItems": {{ u.alle.length }},
+        "itemListElement": [
+          {% for s in u.alle %}{ "@type": "ListItem", "position": {{ loop.index }}, "name": {{ s.name | dump | safe }}, "url": "https://fg-realestate.de{{ s.url }}" }{% if not loop.last %},{% endif %}
+          {% endfor %}
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ pageUrl }}#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
+        { "@type": "ListItem", "position": 2, "name": "Gebiete" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{ pageUrl }}#faq",
+      "isPartOf": { "@id": "{{ pageUrl }}" },
+      "mainEntity": [
+        {% for item in u.faq | faqFrei %}{
+          "@type": "Question",
+          "name": {{ item.frage | dump | safe }},
+          "acceptedAnswer": { "@type": "Answer", "text": {{ item.antwort | nofn | striptags | dump | safe }} }
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+  ]
 }
 </script>

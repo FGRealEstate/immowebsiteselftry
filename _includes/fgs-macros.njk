@@ -1,0 +1,653 @@
+{#- Abschnitts-Bausteine des Design-Systems (Design-Sprint-Brief §4, 28.10.2026). Jede Seite mit `fgSystem: true`
+    baut sich nur aus S1–S8 und F. Einbinden mit: {% from "fgs-macros.njk" import hero, … with context %}
+    („with context“, damit google, nav und kontakte sichtbar sind).
+
+    Bilder kommen als Objekt { src, srcset, w, h } aus dem Filter `bild` (.eleventy.js): Schlüssel aus seitenbilder.json
+    oder Pfad ohne Breite, z. B. ("/images/gebiete/oranienburg-schloss" | bild).
+    Kicker nur über der H1 (Update 6 §3.0, Brief §7 Punkt 7): S3, S4, S6, S7 und S8 beginnen direkt mit der H2. -#}
+
+{#- Ein Bild mit srcset. Über dem Falz (eager) ohne lazy und mit hoher Priorität. picImg ist das nackte img für Stellen,
+    die schon ein eigenes <picture> haben (Titelbild mit Handy-Zuschnitt, Abschlussrahmen). -#}
+{% macro picImg(b, alt, sizes, eager=false) -%}
+<img src="{{ b.src }}" srcset="{{ b.srcset }}" sizes="{{ sizes }}" width="{{ b.w }}" height="{{ b.h }}" alt="{{ alt }}"{% if eager %} fetchpriority="high"{% else %} loading="lazy"{% endif %} decoding="async">
+{%- endmacro %}
+{#- Design-Pass 3 §2.6 Punkt 6: AVIF zuerst, WebP als Rückfall, wenn `bild` eine vollständige AVIF-Reihe liefert (b.avif).
+    <picture class="fgs-pic"> ist display: contents, das Layout bleibt beim img. -#}
+{% macro pic(b, alt, sizes, eager=false) -%}
+{% if b.avif %}<picture class="fgs-pic"><source type="image/avif" srcset="{{ b.avif }}" sizes="{{ sizes }}">{{ picImg(b, alt, sizes, eager) }}</picture>{% else %}{{ picImg(b, alt, sizes, eager) }}{% endif %}
+{%- endmacro %}
+{#- Update 22 §8.6 (Bildregel 2.6.2): Bildband in voller Breite und 80 bis 85 vh hoch. Der Rahmen ist auf dem Handy hoch, am Tablet
+    fast quadratisch und am Desktop doppelt so breit wie hoch; ein Zuschnitt allein liegt überall außer an einer Stelle mehr als 25 %
+    daneben. Gibt es die Zuschnitte (b.bild | zuschnitt, Dateien aus seitenbilder.json), wählt <picture> nach dem Seitenverhältnis des
+    Fensters: 2:3 bis 13:20, 1:1 bis 39:40, 4:3 bis 13:10, darüber 2:1. Sonst das Bild selbst. -#}
+{% macro bandPic(b, sizes) -%}
+{%- set z21 = b.bild | zuschnitt("2x1") -%}
+{%- if z21 -%}
+<picture class="fgs-pic">
+{%- for z in [[b.bild | zuschnitt("2x3"), "(max-aspect-ratio: 13/20)"], [b.bild | zuschnitt("1x1"), "(max-aspect-ratio: 39/40)"], [b.bild | zuschnitt("4x3"), "(max-aspect-ratio: 13/10)"]] %}{% if z[0] %}
+{%- if z[0].avif %}<source type="image/avif" media="{{ z[1] }}" srcset="{{ z[0].avif }}" sizes="100vw" width="{{ z[0].w }}" height="{{ z[0].h }}">{% endif %}<source media="{{ z[1] }}" srcset="{{ z[0].srcset }}" sizes="100vw" width="{{ z[0].w }}" height="{{ z[0].h }}">{% endif %}{% endfor %}
+{%- if z21.avif %}<source type="image/avif" srcset="{{ z21.avif }}" sizes="{{ sizes }}">{% endif %}{{ picImg(z21, b.alt, sizes) }}</picture>
+{%- else %}{{ pic(b.bild, b.alt, sizes) }}{% endif %}
+{%- endmacro %}
+
+{#- Bildnachweise (Update 9, 29.10.2026): Auf und unter den Fotos steht keine Zeile mehr, weder Nachweis noch Bildunterschrift.
+    Die Nachweise stehen im Aufklapper „Bildnachweise dieser Seite“ über der Fußzeile (Transform bildnachweise-seite in .eleventy.js)
+    und auf /bildnachweise/. Die Bausteine hier nehmen deshalb kein credit und keine caption mehr; was ein Foto zeigt, steht im alt. -#}
+
+{#- S1 Titelbild: Foto randlos, Verlauf unten links, Kicker, H1, ein Satz, höchstens zwei Buttons, Zoom.
+    Update 17 §1.1: keine Zeile mehr unter den Buttons (Bewertung und Erlaubnisse stehen im Fuß).
+    h = { bild, alt, kicker, titel, unterzeile, satz, buttons: [{ href, label }], position } — der erste Button ist der goldene.
+    unterzeile (optional, Update 7 §3.2): zweiter Teil derselben H1 in eigener Zeile, Marcellus in Lead-Größe; der Doppelpunkt
+    dazwischen bleibt im Text der H1, ist aber nur für Screenreader da. Hero-H1 ohne Silbentrennung, mobil höchstens 34 px;
+    --fgs-h1-wort (Zeichen des längsten Worts) lässt die Schrift auf schmalen Handys so weit kleiner werden, dass das Wort in die Spalte passt.
+    position (optional): Bildausschnitt wie object-position, z. B. "center 65%" (service.hero.position auf Kaufen, Vermieten, Maklerprovision).
+    voll (optional, Design-Pass 2 §3.1 und §5.1): Titelbild über den ganzen Bildschirm (100 vh) statt 92 %.
+    ort (optional, Design-Pass 2 §5.1, Gebietsseiten): { dienst, praep, ort } aus der H1 „Immobilie verkaufen, kaufen und finanzieren
+    im Landkreis Oberhavel“. Der Ortsname steht groß oben, der Dienst darunter in Lead-Größe. Im Quelltext bleibt die Reihenfolge
+    der H1 (Text unverändert, eine H1); die Präposition ist nur für Screenreader da.
+    kenburns (optional, Design-Pass 3 §4.1/§4.2, Leistungs- und Gebietsseiten): das Foto wächst einmal von 1 auf 1,08 in 7,6 s
+    (Werte aus §3.1) statt des kurzen Zooms von 1,08 auf 1. Hat das Bild einen Handy-Zuschnitt (h.bild.hoch, tools/titelbilder.py),
+    zeigen Fenster bis 11:10 (hochkant, quadratisch) den 4:5-Zuschnitt; die gleiche Grenze und dieselben sizes stehen im
+    Vorladen in base.njk. h.bild.farbe liegt als Grund unter dem Foto, solange es lädt. -#}
+{% macro hero(h) -%}
+{%- set hochSizes = "(max-aspect-ratio: 4/5) 80vh, 100vw" if h.voll else "(max-aspect-ratio: 14/25) 56vh, 100vw" %}
+{#- Update 22 §8.6: Das Titelbild ohne voll ist 92 vh hoch (fgs-hero) und füllt per cover; ist das Fenster flacher als 16:9 × 0,92,
+    wird das Foto breiter als 100 vw gezeichnet, also rund 164 vh. Gleiche Angabe im Vorladen in base.njk. #}
+{%- set querSizes = "100vw" if h.voll else "max(100vw, 164vh)" %}
+<section class="fgs-hero{% if h.voll %} fgs-hero--full{% endif %}{% if h.kenburns %} fgs-hero--kb{% endif %}" aria-labelledby="seitentitel">
+  <div class="fgs-hero-media{% if h.bild.hoch %} fgs-hero-media--hoch{% endif %}"{% if h.position or h.bild.farbe %} style="{% if h.position %}--fgs-hero-pos: {{ h.position }};{% endif %}{% if h.bild.farbe %} --fgs-hero-farbe: {{ h.bild.farbe }}{% endif %}"{% endif %}>
+    {%- if h.bild.hoch %}<picture>{% if h.bild.hoch.avif %}<source type="image/avif" media="(max-aspect-ratio: 11/10)" srcset="{{ h.bild.hoch.avif }}" sizes="{{ hochSizes }}" width="{{ h.bild.hoch.w }}" height="{{ h.bild.hoch.h }}">{% endif %}<source media="(max-aspect-ratio: 11/10)" srcset="{{ h.bild.hoch.srcset }}" sizes="{{ hochSizes }}" width="{{ h.bild.hoch.w }}" height="{{ h.bild.hoch.h }}">{% if h.bild.avif %}<source type="image/avif" srcset="{{ h.bild.avif }}" sizes="{{ querSizes }}">{% endif %}{{ picImg(h.bild, h.alt, querSizes, true) }}</picture>{% else %}{{ pic(h.bild, h.alt, querSizes, true) }}{% endif -%}
+  </div>
+  <div class="fgs-hero-content">
+    <div class="fgs-wrap">
+      <div class="fgs-hero-text">
+        {%- if h.kicker %}
+        <p class="fgs-label">{{ h.kicker }}</p>{% endif %}
+        {%- set wortlaenge = ((h.ort.ort if h.ort else h.titel) | string).split(" ") | sort(true, false, "length") | first | length %}
+        {%- if h.ort %}
+        <h1 id="seitentitel" class="fgs-h1--ort" style="--fgs-h1-wort: {{ wortlaenge }}"><span class="fgs-h1-sub">{{ h.ort.dienst }}</span> <span class="fgs-h1-ort"><span class="fgs-sr">{{ h.ort.praep }} </span>{{ h.ort.ort }}</span></h1>
+        {%- else %}
+        <h1 id="seitentitel" style="--fgs-h1-wort: {{ wortlaenge }}">{{ h.titel }}{% if h.unterzeile %}<span class="fgs-sr">:</span> <span class="fgs-h1-sub">{{ h.unterzeile }}</span>{% endif %}</h1>
+        {%- endif %}
+        {%- if h.satz %}
+        <p class="fgs-hero-sentence">{{ h.satz }}</p>{% endif %}
+        {%- if h.buttons %}
+        <div class="fgs-btns">
+          {%- for b in h.buttons %}
+          <a class="fgs-btn {{ 'fgs-btn--primary' if loop.first else 'fgs-btn--secondary fgs-btn--light' }}" href="{{ b.href }}">{{ b.label }}</a>
+          {%- endfor %}
+        </div>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{%- endmacro %}
+
+{#- Design-Pass 3 §3.1/§3.2 Teil 1: Titelbild der Startseite als Diaschau, angeheftet mit dem Satz darüber.
+    h = { slides: [{ bild, alt, ort }], kicker, titel, buttons, satz: { text, href, label } }.
+    Diaschau (fg-system.js): je Folie 6 s, Überblendung 1,6 s, Ken Burns 1 → 1,08 in 7,6 s mit abwechselndem Ursprung (CSS),
+    unten links fünf Fortschrittssegmente, unten rechts der Ort der Folie (ort, aus dem Alt-Text). Folie 1 lädt sofort und ist
+    vorgeladen (base.njk, heroPreload); die Folien 2–5 tragen ihre Quellen in data-srcset/data-src und laden nach dem load-Ereignis.
+    Angeheftet (fgs-motion.js, ab 768 px und nur mit Bewegung): .fgs-pin ist 230 vh hoch, die Bühne 100 vh sticky; Titel aus,
+    Satz und Navy-Schicht ein, per ScrollTrigger scrub. Ohne Bewegung, ohne JavaScript und auf dem Handy steht der Satz unter
+    dem Titelbild auf Navy. -#}
+{% macro picSlide(b, alt, eager) -%}
+{%- set a = "" if eager else "data-" %}
+<picture>
+  {%- if b.hoch %}{% if b.hoch.avif %}<source type="image/avif" media="(max-aspect-ratio: 11/10)" {{ a }}srcset="{{ b.hoch.avif }}" sizes="(max-aspect-ratio: 4/5) 80vh, 100vw" width="{{ b.hoch.w }}" height="{{ b.hoch.h }}">{% endif %}<source media="(max-aspect-ratio: 11/10)" {{ a }}srcset="{{ b.hoch.srcset }}" sizes="(max-aspect-ratio: 4/5) 80vh, 100vw" width="{{ b.hoch.w }}" height="{{ b.hoch.h }}">{% endif %}
+  {%- if b.avif %}<source type="image/avif" {{ a }}srcset="{{ b.avif }}" sizes="100vw">{% endif %}
+  {%- if eager %}{{ picImg(b, alt, "100vw", true) }}{% else %}<img data-src="{{ b.src }}" data-srcset="{{ b.srcset }}" sizes="100vw" width="{{ b.w }}" height="{{ b.h }}" alt="{{ alt }}" decoding="async">{% endif %}
+</picture>
+{%- endmacro %}
+{% macro heroSlides(h) -%}
+<div class="fgs-pin" data-fgs-pin>
+<div class="fgs-pin-stage">
+<section class="fgs-hero fgs-hero--full fgs-hero--slides" aria-labelledby="seitentitel">
+  <div class="fgs-hero-media fgs-slides" data-fgs-slides{% if h.slides[0].bild.farbe %} style="--fgs-hero-farbe: {{ h.slides[0].bild.farbe }}"{% endif %}>
+    {%- for s in h.slides %}
+    <div class="fgs-slide{% if loop.first %} is-on{% endif %}" data-ort="{{ s.ort }}"{% if not loop.first %} aria-hidden="true"{% endif %}>{{ picSlide(s.bild, s.alt, loop.first) }}</div>
+    {%- endfor %}
+  </div>
+  <div class="fgs-pin-dark" aria-hidden="true"></div>
+  <div class="fgs-hero-content">
+    <div class="fgs-wrap">
+      <div class="fgs-hero-text">
+        <p class="fgs-label">{{ h.kicker }}</p>
+        {%- set wortlaenge = (h.titel | string).split(" ") | sort(true, false, "length") | first | length %}
+        <h1 id="seitentitel" style="--fgs-h1-wort: {{ wortlaenge }}">{{ h.titel }}</h1>
+        <div class="fgs-btns">
+          {%- for b in h.buttons %}
+          <a class="fgs-btn {{ 'fgs-btn--primary' if loop.first else 'fgs-btn--glass' }}" href="{{ b.href }}">{{ b.label }}</a>
+          {%- endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {#- Update 22 §8.5: Pause/Wiedergabe für die Diaschau (läuft länger als 5 s; Hover gibt es auf dem Handy nicht) -#}
+  <div class="fgs-slides-ui">
+    <div class="fgs-wrap fgs-slides-bar">
+      <button type="button" class="fgs-pause fgs-pause--light" data-fgs-pause="Diaschau" aria-label="Diaschau anhalten"><svg class="fgs-pause-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path class="fgs-pause-bars" d="M4.5 3h2.2v10H4.5zM9.3 3h2.2v10H9.3z"/><path class="fgs-pause-play" d="M5 2.8v10.4L13.2 8z"/></svg></button>
+      <ol class="fgs-slides-progress" aria-hidden="true">{% for s in h.slides %}<li{% if loop.first %} class="is-on"{% endif %}><i></i></li>{% endfor %}</ol>
+      <p class="fgs-slides-ort" aria-hidden="true">{{ h.slides[0].ort }}</p>
+    </div>
+  </div>
+</section>
+<div class="fgs-pin-statement">
+  <div class="fgs-wrap">
+    <p class="fgs-pin-sentence">{{ h.satz.text }}</p>
+    <a class="fgs-btn fgs-btn--glass" href="{{ h.satz.href }}">{{ h.satz.label }}</a>
+  </div>
+</div>
+</div>
+</div>
+{%- endmacro %}
+
+{#- Design-Pass 3 §3.2 Teil 2: Leistungs-Slider, 100 vh, drei Folien mit Foto, Navy 38 %, Kicker, Titel, Satz und Glas-Button.
+    s = { id, label, items: [{ bild, alt, kicker, titel, text, href, button }] }. label ist der Name für Screenreader (der Brief
+    entfernt die H2 „Wobei wir Sie begleiten“, ihr Wortlaut bleibt als Name des Karussells). Wechsel alle 7 s mit 1,2 s Überblendung,
+    Pfeile und 320 px Fortschrittslinie unten im Rahmen, Wischen auf Touch (fg-system.js). Pausiert beim Darüberfahren, bei Fokus im
+    Slider und außer Sicht. Ab 768 px mit Bewegung beginnt der Rahmen 6 vw eingerückt und wächst beim Scrollen auf volle Breite
+    (fgs-motion.js). Bilder: 3:2 bis 3200 px, im Hochformat bis 11:12 der Zuschnitt 9:16 (tools/titelbilder.py, hochFormat). -#}
+{% macro leistungsSlider(s) -%}
+<section class="fgs-svc" id="{{ s.id }}" aria-roledescription="Karussell" aria-label="{{ s.label }}" data-fgs-svc>
+  <div class="fgs-svc-frame">
+    {%- for x in s.items %}
+    {%- set b = x.bild %}
+    {#- Update 22 §8.4: x.navy setzt die Navy-Schicht dieser Folie (sonst 38 %), z. B. für Kontrast ≥ 4,5 : 1 -#}
+    <div class="fgs-svc-slide{% if loop.first %} is-on{% endif %}" role="group" aria-roledescription="Folie" aria-label="{{ loop.index }} von {{ s.items | length }}"{% if not loop.first %} aria-hidden="true" inert{% endif %}{% if x.navy %} style="--fgs-svc-navy: {{ x.navy }}"{% endif %}>
+      <div class="fgs-svc-media">
+        <picture>
+          {%- if b.hoch %}{% if b.hoch.avif %}<source type="image/avif" media="(max-aspect-ratio: 11/12)" srcset="{{ b.hoch.avif }}" sizes="(max-aspect-ratio: 9/16) 56.25vh, 100vw" width="{{ b.hoch.w }}" height="{{ b.hoch.h }}">{% endif %}<source media="(max-aspect-ratio: 11/12)" srcset="{{ b.hoch.srcset }}" sizes="(max-aspect-ratio: 9/16) 56.25vh, 100vw" width="{{ b.hoch.w }}" height="{{ b.hoch.h }}">{% endif %}
+          {%- if b.avif %}<source type="image/avif" srcset="{{ b.avif }}" sizes="100vw">{% endif %}
+          {{ picImg(b, x.alt, "100vw") }}
+        </picture>
+      </div>
+      <div class="fgs-svc-text">
+        <p class="fgs-svc-kicker">{{ x.kicker }}</p>
+        {%- set wortlaenge = (x.titel | string).split(" ") | sort(true, false, "length") | first | length %}
+        <h2 class="fgs-svc-title" style="--fgs-wort: {{ wortlaenge }}">{{ x.titel }}</h2>
+        <p class="fgs-svc-satz">{{ x.text }}</p>
+        <a class="fgs-btn fgs-btn--glass" href="{{ x.href }}">{{ x.button }}</a>
+      </div>
+    </div>
+    {%- endfor %}
+    <div class="fgs-svc-nav">
+      <button type="button" class="fgs-svc-btn" data-dir="-1" aria-label="Vorherige Leistung"><svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M29 7H2M8 1 2 7l6 6"/></svg></button>
+      <div class="fgs-svc-progress" aria-hidden="true"><span></span></div>
+      <button type="button" class="fgs-svc-btn" data-dir="1" aria-label="Nächste Leistung"><svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M1 7h27M22 1l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+</section>
+{%- endmacro %}
+
+{#- S2 Aussage: ein Satz in Marcellus, höchstens 30 Wörter, 8 Spalten, einmal pro Seite. -#}
+{% macro statement(text, id="aussage") -%}
+<section class="fgs-section" id="{{ id }}">
+  <div class="fgs-wrap fgs-grid fgs-statement"><p class="fgs-statement-text">{{ text }}</p></div>
+</section>
+{%- endmacro %}
+
+{#- S3 Teilung: Bild über 6 Spalten bis an den Rand (4:5), daneben H2, 2–3 Absätze und ein Textlink (über caller).
+    s = { id, titel, bild, alt, rechts, breit, duo: [{ bild, alt }, { bild, alt }], teil }. Seiten wechseln auf der Seite ab.
+    breit (und immer beim Doppelporträt): Bild über 7 Spalten.
+    Porträts (Bild aus /images/team/ oder duo) stehen nach Update 7 §3.3 immer im Container: 4:5, höchstens 416 × 520 px,
+    das Doppelporträt in den rechten sechs Spalten (Klassen fgs-split--portrait, fgs-split--duo).
+    teil: true = Teilung innerhalb eines Abschnitts mit eigener H2 (Über uns: eine Teilung je Person unter „Das Team“);
+    dann <div> statt <section> und der Titel als H3 in H2-Größe.
+    karte (Design-Pass 3 §4.3, Über uns und Profile): das Porträt in der Behandlung aus §3.3, Freisteller (images/team/<name>-frei)
+    auf der dunklen Karte mit Verlauf und Korn; true = 420 × 560 wie die Karte der Startseite, "gross" = 560 × 700 (Profilseite).
+    Name, Rolle und Link stehen wie bisher im Text daneben, deshalb kein Glasfeld. -#}
+{% macro split(s) -%}
+{%- if s.teil %}
+<div class="fgs-split-part" id="{{ s.id }}">
+{%- else %}
+<section class="fgs-section" id="{{ s.id }}" aria-labelledby="{{ s.id }}-titel">
+{%- endif %}
+  {%- set portraet = s.duo or (s.bild and ("/images/team/" in s.bild.src)) %}
+  <div class="fgs-split{% if s.rechts %} fgs-split--right{% endif %}{% if s.duo or s.breit %} fgs-split--wide{% endif %}{% if portraet %} fgs-split--portrait{% endif %}{% if s.duo %} fgs-split--duo{% endif %}{% if s.kompakt %} fgs-split--compact{% endif %}{% if s.karte == "gross" %} fgs-split--card-lg{% endif %}">
+    {%- if s.duo %}
+    <figure class="fgs-split-media fgs-duo-wrap">
+      <div class="fgs-duo">
+        {%- for d in s.duo %}
+        <div class="fgs-media fgs-reveal">{{ pic(d.bild, d.alt, "(min-width: 900px) 282px, calc(50vw - 30px)") }}</div>
+        {%- endfor %}
+      </div>
+    </figure>
+    {%- else %}
+    <figure class="fgs-split-media">
+      {%- if s.karte %}
+      <div class="fgs-media fgs-reveal fgs-portrait-card{% if s.karte == "gross" %} fgs-portrait-card--lg{% endif %}">{{ pic(s.bild, s.alt, "(min-width: 608px) 560px, calc(100vw - 48px)" if s.karte == "gross" else "(min-width: 468px) 420px, 100vw") }}</div>
+      {#- Update 22 §8.6: Auf dem Handy ist die Karte 3:4, das Porträt 4:5 füllt sie über die Höhe; 100vw lässt den Browser die nächste Breite (960) wählen -#}
+      {%- else %}
+      {#- Update 22 §8.6: Der Rahmen ist 4:5; gibt es den 4:5-Zuschnitt (s.bild | zuschnitt), nimmt er den -#}
+      <div class="fgs-media fgs-reveal">{{ pic((s.bild | zuschnitt("4x5")) or s.bild, s.alt, "(min-width: 464px) 416px, calc(100vw - 48px)" if portraet else ("(min-width: 900px) 512px, 100vw" if s.kompakt else "(min-width: 900px) 58vw, 100vw")) }}</div>
+      {%- endif %}
+    </figure>
+    {%- endif %}
+    <div class="fgs-split-text">
+      {%- if s.teil %}
+      <h3 class="fgs-h2" id="{{ s.id }}-titel">{{ s.titel }}</h3>
+      {%- else %}
+      <h2 id="{{ s.id }}-titel">{{ s.titel }}</h2>
+      {%- endif %}
+      {{ caller() }}
+    </div>
+  </div>
+{%- if s.teil %}
+</div>
+{%- else %}
+</section>
+{%- endif %}
+{%- endmacro %}
+
+{#- Textlink mit dünnem Pfeil -#}
+{% macro textlink(href, label) -%}
+<a class="fgs-link" href="{{ href }}">{{ label }}{% include "fgs-arrow.njk" %}</a>
+{%- endmacro %}
+
+{#- Design-Pass 3 §3.3: Ansprechpartner-Karte nach dem Vorbild Huttons. Das freigestellte Porträt (images/team/<name>-frei) steht auf
+    einer dunklen Karte (Verlauf #23235A → #08082F, Korn 4 %), unten ein Glasfeld mit der Region in Gold (aus der bisherigen
+    Kartenzeile „Ansprechpartner für …“), Name, Rolle, dem ersten Satz der Profilseite (pg.intro, wörtlich, höchstens 160 Zeichen;
+    sonst nur die Rolle) und „Zum Profil“. Die ganze Karte führt zum Profil.
+    Update 22 §3 (31.10.2026): nichts mehr auf dem Gesicht. Oben das Porträt 4 : 5 (Kopf bis Brustmitte, frei), darunter auf Navy
+    Name, Rolle und „Zum Profil“; Region und erster Satz der Profilseite entfallen.
+    key: timon oder lennart; sizes: sizes-Attribut des Porträts. -#}
+{% macro partner(key, sizes) -%}
+{%- set k = kontakte[key] -%}
+{%- set href = k.profile | navHref -%}
+<a class="fgs-partner fgs-on-dark" href="{{ href }}">
+  <span class="fgs-partner-media">{{ pic(("/images/team/" + (k.name | slugify) + "-frei") | bild, "Porträt von " + k.name, sizes) }}</span>
+  <span class="fgs-partner-panel">
+    <h3 class="fgs-partner-name">{{ k.name }}</h3>
+    <span class="fgs-partner-role">{{ k.role }}</span>
+    <span class="fgs-link">Zum Profil{% include "fgs-arrow.njk" %}</span>
+  </span>
+</a>
+{%- endmacro %}
+
+{#- Design-Pass 3 §3.9: eine Bewertung mit Pull-Quote (Startseite). r = Bewertung aus _data/google.js;
+    s = { zitat (wörtlich aus r.text), berater (timon, lennart oder leer), thema (Chip) }.
+    Peer, Sichtprüfung 31.10.2026: Jede Bewertung ist anklickbar und öffnet das Google-Profil (google.mapsUrl, neues Fenster);
+    der Link sitzt auf „Google“ und deckt über ::after die ganze Karte ab, „Weiterlesen“ liegt darüber.
+    Die Pull-Quote wiederholt eine Stelle aus dem Text und ist deshalb für Screenreader ausgeblendet; im Text ist dieselbe
+    Stelle gold markiert. Steht das Zitat nicht wörtlich im Text, bleibt der Text ohne Markierung.
+    data-fgs-lines: zeilenweises Einblenden nach §2.1 (kommt mit GSAP/SplitText). -#}
+{% macro stimme(r, s) -%}
+{%- set teile = r.text.split(s.zitat) -%}
+<li class="fgs-rq">
+  <figure>
+    <p class="fgs-rq-pull" aria-hidden="true" data-fgs-lines><span class="fgs-rq-qm">„</span>{{ s.zitat }}<span class="fgs-rq-qm">“</span></p>
+    <blockquote class="fgs-rq-text"><p>{% if teile.length == 2 %}{{ teile[0] }}<mark>{{ s.zitat }}</mark>{{ teile[1] }}{% else %}{{ r.text }}{% endif %}</p></blockquote>
+    <figcaption class="fgs-rq-foot">
+      {%- if s.berater %}{% set k = kontakte[s.berater] %}
+      <span class="fgs-rq-by"><span class="fgs-rq-face">{{ pic(("/images/team/" + (k.name | slugify) + "-navy") | bild, "", "72px") }}</span>Beraten von {{ k.name }}</span>
+      {%- endif %}
+      <span class="fgs-rq-who">{{ r.author }} · {{ r.dateLabel }} · <a class="fgs-rev-google" href="{{ google.mapsUrl }}" target="_blank" rel="noopener" aria-label="Bewertung von {{ r.author }} auf Google ansehen (öffnet ein neues Fenster)">Google<span aria-hidden="true"> ↗</span></a></span>
+      <span class="fgs-rq-chip">{{ s.thema }}</span>
+    </figcaption>
+  </figure>
+</li>
+{%- endmacro %}
+
+{#- Design-Pass 3 §3.9: Karte im Laufband der kurzen Bewertungen. kopie: zweiter Satz für die nahtlose Schleife
+    (für Screenreader ausgeblendet). -#}
+{% macro kurzstimme(r, kopie=false) -%}
+<li class="fgs-ticker-card"{% if kopie %} aria-hidden="true"{% endif %}>
+  <figure>
+    <blockquote><p>„{{ r.text }}“</p></blockquote>
+    <figcaption>{{ r.author }} · <a class="fgs-rev-google" href="{{ google.mapsUrl }}" target="_blank" rel="noopener"{% if kopie %} tabindex="-1"{% endif %} aria-label="Bewertung von {{ r.author }} auf Google ansehen (öffnet ein neues Fenster)">Google<span aria-hidden="true"> ↗</span></a></figcaption>
+  </figure>
+</li>
+{%- endmacro %}
+
+{#- S4 Karussell: Kopfzeile mit Pfeilen, darunter große Karten mit Einrasten, Ziehen und Fortschrittslinie.
+    r = { id, titel, text, zusatz, grid3, quotes, link: { href, label } }.
+    zusatz: zweiter Absatz im Kopf (HTML erlaubt).
+    Die Karten (<li>) kommen über caller.
+    Design-Pass 2: hoch (Gebiete, schmalere hohe Karten), einzeln (Bewertungen: eine pro Folie, Text groß und zentriert),
+    mitte (Kopf zentriert, H2 als Kapitelüberschrift in Großbuchstaben).
+    Design-Pass 3 §3.5: falten (Gebiete) – eine breite Karte vorn, die übrigen schmal; Pfeil, Ziehen oder Darüberfahren
+    macht die nächste zur breiten (fg-system.js). -#}
+{% macro rail(r) -%}
+<section class="fgs-section fgs-rail{% if r.grid3 %} fgs-rail--grid3{% endif %}{% if r.quotes %} fgs-rail--quotes{% endif %}{% if r.hoch %} fgs-rail--tall{% endif %}{% if r.einzeln %} fgs-rail--single{% endif %}{% if r.mitte %} fgs-rail--centre{% endif %}{% if r.falten %} fgs-rail--fold{% endif %}" id="{{ r.id }}" aria-labelledby="{{ r.id }}-titel" data-fgs-rail>
+  <div class="fgs-wrap fgs-rail-head">
+    <div class="fgs-head">
+      <h2{% if r.mitte %} class="fgs-h2-chapter"{% endif %} id="{{ r.id }}-titel">{{ r.titel }}</h2>
+      {%- if r.text %}
+      <p>{{ r.text }}</p>{% endif %}
+      {%- if r.zusatz %}
+      <p>{{ r.zusatz | safe }}</p>{% endif %}
+    </div>
+    <div class="fgs-rail-nav">
+      <button type="button" class="fgs-rail-btn" data-dir="-1" aria-label="Zurück" disabled><svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M29 7H2M8 1 2 7l6 6"/></svg></button>
+      <button type="button" class="fgs-rail-btn" data-dir="1" aria-label="Weiter"><svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M1 7h27M22 1l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+  <ul class="fgs-rail-track" role="list">
+    {{ caller() }}
+  </ul>
+  <div class="fgs-wrap">
+    <div class="fgs-rail-progress" aria-hidden="true"><span></span></div>
+    {%- if r.link %}
+    <div class="fgs-rail-foot">{{ textlink(r.link.href, r.link.label) }}</div>
+    {%- endif %}
+  </div>
+</section>
+{%- endmacro %}
+
+{#- Bildkarte 3:4: Bild, Label, Titel, eine Zeile. c = { href, bild, alt, label, titel, zeile }. -#}
+{% macro card(c) -%}
+{%- if c.aufbild %}
+{#- Design-Pass 2 §3.5: Name in Marcellus auf dem Foto (unten links, auf dem Verlauf), die Ansprechpartner-Zeile (label) in 15 px unter der Karte -#}
+<li>
+  <a class="fgs-card fgs-card--onphoto" href="{{ c.href }}">
+    {#- Update 22 §8.6: c.schmal = 4:5-Zuschnitt für die schmale Karte im Gebiete-Karussell (432 × 560, Handy 3:4); das Querformat
+        liegt nur auf der breiten Karte (is-lead) darüber und blendet ein. Alt-Text am 4:5-Bild, das immer da ist. -#}
+    <div class="fgs-media fgs-reveal">{% if c.schmal %}{{ pic(c.schmal, c.alt, "(min-width: 768px) 432px, 82vw") }}<span class="fgs-fold-breit">{{ pic(c.bild, "", c.sizes or "(min-width: 768px) 380px, 80vw") }}</span>{% else %}{{ pic(c.bild, c.alt, c.sizes or "(min-width: 768px) 380px, 80vw") }}{% endif %}
+      <h3 class="fgs-card-name">{{ c.titel }}</h3></div>
+    {%- if c.label %}
+    <p class="fgs-card-meta">{{ c.label }}</p>{% endif %}
+  </a>
+</li>
+{%- else %}
+<li>
+  <a class="fgs-card" href="{{ c.href }}">
+    <span class="fgs-media fgs-reveal">{{ pic(c.bild, c.alt, "(min-width: 768px) 30vw, 80vw") }}</span>
+    <h3 class="fgs-card-title">{{ c.titel }}</h3>
+    {%- if c.label %}
+    <p class="fgs-card-meta">{{ c.label }}</p>{% endif %}
+    {%- if c.zeile %}
+    <p class="fgs-card-line">{{ c.zeile }}</p>{% endif %}
+  </a>
+</li>
+{%- endif %}
+{%- endmacro %}
+
+{#- Design-Pass 2 §3.4 Triptychon: drei hohe Fotos Kante an Kante über die ganze Breite (80 vh, ohne Abstand), darüber die H2
+    zentriert. Auf jedem Feld unten: Name der Leistung in Marcellus 36 px und ein Satz; das ganze Feld ist der Link, beim
+    Darüberfahren wächst das Foto auf 1,04.
+    t = { id, titel, items: [{ href, bild, alt, titel, satz }] } -#}
+{% macro triptych(t) -%}
+<section class="fgs-section fgs-section--bleed-end" id="{{ t.id }}" aria-labelledby="{{ t.id }}-titel">
+  <div class="fgs-wrap fgs-head fgs-head--centre"><h2 class="fgs-h2-chapter" id="{{ t.id }}-titel">{{ t.titel }}</h2></div>
+  <ul class="fgs-triptych" role="list">
+    {%- for x in t.items %}
+    <li>
+      <a class="fgs-tri" href="{{ x.href }}">
+        <div class="fgs-media fgs-reveal">{{ pic(x.bild, x.alt, "(min-width: 768px) 34vw, 100vw") }}</div>
+        <div class="fgs-tri-text">
+          <h3 class="fgs-tri-title">{{ x.titel }}</h3>
+          <p>{{ x.satz }}</p>
+        </div>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endmacro %}
+
+{#- Design-Pass 2 §2 Regel 3: Foto über die ganze Breite (80–90 vh), Text weiß darauf, unten ein weicher Verlauf
+    (Navy 70 % bis 0 % über die untere Hälfte). Inhalt (H2, ein bis zwei Sätze, höchstens ein Button) kommt über caller.
+    b = { id, titel, bild, alt, hoehe (vh, Standard 85), position } -#}
+{#- Design-Pass 3 §3.6: Das Foto läuft mit 0,85-facher Scrollgeschwindigkeit (data-fgs-parallax, fg-system.js). -#}
+{% macro band(b) -%}
+<section class="fgs-band fgs-on-dark" id="{{ b.id }}" aria-labelledby="{{ b.id }}-titel" style="--fgs-band-h: {{ b.hoehe or 85 }}" data-fgs-parallax>
+  {#- Bildfläche durch die Parallaxe etwa 2 Fensterhöhen breit, solange das Fenster schmaler als 2:1 ist #}
+  <div class="fgs-band-media fgs-reveal"{% if b.position %} style="--fgs-band-pos: {{ b.position }}"{% endif %}>{{ bandPic(b, "(max-aspect-ratio: 2/1) 200vh, 100vw") }}</div>
+  <div class="fgs-band-content">
+    <div class="fgs-wrap">
+      <div class="fgs-band-text">
+        <h2 id="{{ b.id }}-titel">{{ b.titel }}</h2>
+        {{ caller() }}
+      </div>
+    </div>
+  </div>
+</section>
+{%- endmacro %}
+
+{#- Design-Pass 2 §4.4 Fotokapitel der Leistungsseiten: das erste Inhaltskapitel als Foto über die ganze Breite (wie band), darauf die H2
+    und die ersten zwei Sätze (satz), der Rest des Kapitels direkt darunter in normaler Größe (über caller).
+    b = { id, titel, satz, bild, alt, hoehe (vh, Standard 85), position } -#}
+{% macro fotokapitel(b) -%}
+<section class="fgs-photo-chapter" id="{{ b.id }}" aria-labelledby="{{ b.id }}-titel">
+  <div class="fgs-band fgs-on-dark" style="--fgs-band-h: {{ b.hoehe or 85 }}">
+    <div class="fgs-band-media fgs-reveal"{% if b.position %} style="--fgs-band-pos: {{ b.position }}"{% endif %}>{{ bandPic(b, "100vw") }}</div>
+    <div class="fgs-band-content">
+      <div class="fgs-wrap">
+        <div class="fgs-band-text">
+          <h2 id="{{ b.id }}-titel">{{ b.titel }}</h2>
+          {%- if b.satz %}
+          <p>{{ b.satz | safe }}</p>{% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fgs-wrap">
+    <div class="fgs-photo-chapter-rest">{{ caller() }}</div>
+  </div>
+</section>
+{%- endmacro %}
+
+{#- Design-Pass 2 §2 Regel 1: „Mehr erfahren“-Aufklapper für den Rest eines langen Abschnitts (oben stehen höchstens zwei Sätze).
+    Inhalt über caller; label nur, wenn ein Brief einen anderen Linktext vorgibt. -#}
+{% macro mehr(label="Mehr erfahren") -%}
+<details class="fgs-more fgs-more--text">
+  <summary><span class="fgs-link">{{ label }}{% include "fgs-arrow.njk" %}</span></summary>
+  {{ caller() }}
+</details>
+{%- endmacro %}
+
+{#- Design-Pass 2 §4.6 Nachschlage-Block (Unterlagenliste, Kostentabelle und Ähnliches) als Aufklapper: Titel als H2 in der Zeile
+    mit Plus, beim Laden zu; ein Sprung auf den Anker (id) öffnet ihn (fg-system.js, details.fgs-more). Inhalt über caller,
+    mit den Abständen eines Kapitels (fgs-chapter). r = { id, titel } -#}
+{% macro nachschlag(r) -%}
+<details class="fgs-more fgs-more--ref" id="{{ r.id }}">
+  <summary><h2 class="fgs-more-head" id="{{ r.id }}-titel">{{ r.titel }}</h2></summary>
+  <div class="fgs-more-body fgs-chapter">{{ caller() }}</div>
+</details>
+{%- endmacro %}
+
+{#- Angebotskarte (S4 und Angebotsseite): Foto 3:4, Label (Strategie), Titel, eine Zeile mit Preis, Ort und zwei Eckdaten.
+    Daten unverändert aus _data/propstack.js; nur Angebote mit Foto (Brief 5.1: „listing cards with photos only“). -#}
+{% macro offer(o) -%}
+<li>
+  <a class="fgs-card" href="{{ o.url }}">
+    <span class="fgs-media fgs-reveal"><img src="{{ o.main_image | propstackFoto }}"{% set _set = o.main_image | propstackSrcset %}{% if _set %} srcset="{{ _set }}"{% endif %} alt="{{ o.title }}" sizes="(min-width: 768px) 30vw, 80vw" width="1200" height="900" loading="lazy" decoding="async"></span>
+    <h3 class="fgs-card-title fgs-card-title--offer">{{ o.title }}</h3>
+    <p class="fgs-card-meta">{{ o.strategy }}{% if o.marketing_type %} · {{ o.marketing_type }}{% endif %}</p>
+    <p class="fgs-card-line">{{ (o.price | eur) if o.price else "Preis auf Anfrage" }}{% if o.marketing_type == "Miete" and o.price %} kalt / Monat{% endif %}{% if o.location %} · {{ o.location }}{% endif %}{% if o.living_space %} · {{ o.living_space }}{% endif %}{% if o.rooms %} · {{ o.rooms }} Zimmer{% endif %}</p>
+  </a>
+</li>
+{%- endmacro %}
+
+{#- Design-Pass 3 §3.8: Angebotskarte für alle Angebotsraster. Titelbild 3:2 nach der Titelbild-Regel (o.cover aus
+    _data/propstack.js, Ausschnitt per fokus/zoom aus data/listing-covers.json); ohne brauchbares Foto der gestaltete
+    Titel (Navy, Goldrahmen, F&G-Zeichen, Ort). Ort: Propstack-Stadtteil, solange der leer ist die Stadt.
+    filter=true (§4.5 Angebotsseite): Klasse offer-filter-card und die data-* Felder für den Filter, wie bisher offerCard. -#}
+{% macro angebot(o, sizes="(min-width: 1024px) 380px, (min-width: 768px) 46vw, 92vw", filter=false) -%}
+{%- set ort = (o.location + "-" + o.district) if (o.district and o.location) else (o.district or o.location) -%}
+<li{% if filter %} class="offer-filter-card" data-strategie="{{ o.strategy_key }}" data-vermarktung="{{ o.marketing_type or '' }}" data-objektart="{{ o.property_type or '' }}" data-preis="{{ o.price_raw or '' }}" data-flaeche="{{ o.living_space_raw or '' }}" data-rendite="{{ o.gross_yield_raw or '' }}"{% endif %}>
+  <a class="fgs-obj" href="{{ o.url }}">
+    {%- if o.cover and o.cover.url %}
+    <span class="fgs-obj-media fgs-media fgs-reveal"><span class="fgs-obj-frame"{% if o.cover.fokus or o.cover.zoom %} style="{% if o.cover.fokus %}--fgs-pos: {{ o.cover.fokus }};{% endif %}{% if o.cover.zoom %} --fgs-zoom: {{ o.cover.zoom }};{% endif %}"{% endif %}><img src="{{ o.cover.url | propstackFoto }}"{% set _set = o.cover.url | propstackSrcset %}{% if _set %} srcset="{{ _set }}"{% endif %} alt="{{ o.title }}" sizes="{{ sizes }}" width="1200" height="800" loading="lazy" decoding="async"></span></span>
+    {%- else %}
+    <span class="fgs-obj-media fgs-obj-design" role="img" aria-label="{{ o.title }}"><img src="/images/logo/fg-zeichen-gold.svg" alt="" width="49" height="58"><span class="fgs-obj-design-ort" aria-hidden="true">{{ ort }}</span></span>
+    {%- endif %}
+    <span class="fgs-obj-row"><span class="fgs-obj-ort">{{ ort }}</span><span class="fgs-obj-preis">{{ (o.price | eur) if o.price else "Preis auf Anfrage" }}{% if o.marketing_type == "Miete" and o.price %} kalt / Monat{% endif %}</span></span>
+    <h3 class="fgs-obj-title">{{ o.title }}</h3>
+    {%- if o.living_space or o.rooms %}
+    <p class="fgs-obj-facts">{% if o.living_space %}{{ o.living_space }}{% endif %}{% if o.living_space and o.rooms %} · {% endif %}{% if o.rooms %}{{ o.rooms }} Zimmer{% endif %}</p>
+    {%- endif %}
+  </a>
+</li>
+{%- endmacro %}
+
+{#- Bewertung als Textkarte auf dem Grundton, ohne Bild. Text unverändert aus _data/google.js. -#}
+{% macro quote(r) -%}
+<li>
+  <figure class="fgs-quote">
+    <p class="fgs-quote-stars"><span aria-hidden="true">{% for i in range(0, r.rating) %}★{% endfor %}</span><span class="fgs-sr">{{ r.rating }} von 5 Sternen</span></p>
+    <blockquote><p>{{ r.text }}</p></blockquote>
+    <figcaption>{{ r.author }} · {{ r.dateLabel }} · <a class="fgs-rev-google" href="{{ google.mapsUrl }}" target="_blank" rel="noopener" aria-label="Bewertung von {{ r.author }} auf Google ansehen (öffnet ein neues Fenster)">Google<span aria-hidden="true"> ↗</span></a></figcaption>
+  </figure>
+</li>
+{%- endmacro %}
+
+{#- S5 Kapitel: Inhaltsverzeichnis links (3 Spalten, mitlaufend), Text rechts (7 Spalten). Kapitel kommen über caller
+    als <article class="fgs-chapter" id="…"><h2>…</h2>…</article>. k = { id, label, toc: [{ id, titel }] } -#}
+{% macro chapters(k) -%}
+<section class="fgs-section" id="{{ k.id }}" aria-label="{{ k.label }}">
+  <div class="fgs-wrap fgs-chapters">
+    <nav class="fgs-toc" aria-label="Inhalt dieser Seite" data-fgs-toc>
+      <p class="fgs-small">Inhalt</p>
+      <ol>{% for t in k.toc %}<li><a href="#{{ t.id }}">{{ t.titel }}</a></li>{% endfor %}</ol>
+    </nav>
+    <div class="fgs-chapters-body">
+      <details class="fgs-toc-mobile">
+        <summary>Inhalt</summary>
+        <ol>{% for t in k.toc %}<li><a href="#{{ t.id }}">{{ t.titel }}</a></li>{% endfor %}</ol>
+      </details>
+      {{ caller() }}
+    </div>
+  </div>
+</section>
+{%- endmacro %}
+
+{#- Bild über die ganze Breite (21:9), alle 400–600 Wörter in S5 -#}
+{% macro wide(b, alt) -%}
+<figure class="fgs-wide">
+  {#- Update 22 §8.6: 21:9-Zuschnitt, wenn es ihn gibt -#}
+  <div class="fgs-media fgs-reveal">{{ pic((b | zuschnitt("21x9")) or b, alt, "(min-width: 1328px) 1200px, 100vw") }}</div>
+</figure>
+{%- endmacro %}
+
+{#- S6 Zahlenreihe: 3–5 Werte in Marcellus 56 px mit Label und Quelle, getrennt durch senkrechte Haarlinien.
+    f = { id, titel, items: [{ wert, label, text, quelle }], hinweis }. Großbuchstaben nur bis drei Wörter (Brief 3.2):
+    kurze Bezeichnung als label, längere Beschreibung als text in Fließtextgröße.
+    mitte (Design-Pass 2 §3.7): zentriert, Zahlen in Marcellus 72 px, Text darunter in 15 px, H2 als Kapitelüberschrift.
+    zaehlen (Design-Pass 3 §3.7, Startseite): Zahlen in Marcellus 88 px, goldene Trennlinien, einmaliges Hochzählen (fg-system.js).
+    hochzaehlen (Design-Pass 3 §4.1, Leistungsseiten): nur das Hochzählen, Größe und Linien bleiben.
+    Die Zahl steht zweimal im HTML: für Screenreader (Endzahl) und sichtbar (zählt, für Screenreader ausgeblendet). -#}
+{% macro facts(f) -%}
+{%- set zaehlt = f.zaehlen or f.hochzaehlen %}
+<section class="fgs-section{% if f.mitte %} fgs-facts-sec--big{% endif %}{% if f.zaehlen %} fgs-facts-sec--count{% endif %}" id="{{ f.id }}" aria-labelledby="{{ f.id }}-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head{% if f.mitte %} fgs-head--centre{% endif %}"><h2{% if f.mitte %} class="fgs-h2-chapter"{% endif %} id="{{ f.id }}-titel">{{ f.titel }}</h2></div>
+    <ul class="fgs-facts" role="list" style="--n: {{ f.items | length }}"{% if zaehlt %} data-fgs-count{% endif %}>
+      {%- for x in f.items %}
+      <li class="fgs-fact">{% if zaehlt %}<span class="fgs-fact-figure fgs-count"><span class="fgs-sr">{{ x.wert }}</span><span class="fgs-count-now" aria-hidden="true">{{ x.wert }}</span></span>{% else %}<span class="fgs-fact-figure">{{ x.wert }}</span>{% endif %}{% if x.label %}<span class="fgs-label">{{ x.label }}</span>{% endif %}{% if x.text %}<span class="fgs-fact-text">{{ x.text }}</span>{% endif %}{% if x.quelle %}<span class="fgs-small fgs-source">{{ x.quelle | safe }}</span>{% endif %}</li>
+      {%- endfor %}
+    </ul>
+    {%- if f.hinweis %}
+    <p class="fgs-facts-note">{{ f.hinweis | safe }}</p>{% endif %}
+  </div>
+</section>
+{%- endmacro %}
+
+{#- S7 Fragen: Überschrift links (4 Spalten), Liste rechts (8 Spalten). Antworten stehen im HTML.
+    Sechs sichtbar, der Rest hinter „Weitere Fragen“. Darunter „Eigene Frage stellen“ (data-faq-question-*, fg-design.js,
+    Felder wie bisher). FAQPage-Markup schreibt die Seite selbst aus derselben Liste. -#}
+{#- sichtbar: so viele Fragen stehen offen da, der Rest hinter „Weitere Fragen“ (Standard 6; Startseite 5, Update 7 §2). -#}
+{% macro faq(items, titel="Häufige Fragen", text="Wenn Ihre Frage nicht dabei ist, schicken Sie sie uns direkt. Wir antworten persönlich.", sichtbar=6) -%}
+<section class="fgs-section" id="faq" aria-labelledby="faq-titel">
+  <div class="fgs-wrap fgs-faq" data-fgs-faq>
+    <div class="fgs-faq-head">
+      <h2 id="faq-titel">{{ titel }}</h2>
+      <p>{{ text }}</p>
+      <p><button type="button" class="fgs-link" data-faq-question-toggle aria-expanded="false" aria-controls="faq-question-panel">Eigene Frage stellen{% include "fgs-arrow.njk" %}</button></p>
+    </div>
+    <div class="fgs-faq-list">
+      {%- for item in items %}
+      <details class="fgs-faq-item{% if loop.index > sichtbar %} is-extra{% endif %}" id="frage-{{ loop.index }}">
+        <summary><h3 class="fgs-faq-q">{{ item.q }}</h3></summary>
+        <div class="fgs-faq-a"><p>{{ item.a | safe }}</p></div>
+      </details>
+      {%- endfor %}
+      {%- if items | length > sichtbar %}
+      <p class="fgs-faq-more"><button type="button" class="fgs-link" data-fgs-faq-more aria-expanded="false"><span>Weitere Fragen</span>{% include "fgs-arrow.njk" %}</button></p>
+      {%- endif %}
+      <div class="fgs-faq-ask" id="faq-question-panel" hidden>
+        <h3>Welche Frage ist noch offen?</h3>
+        <p>Ihre Nachricht geht direkt an {{ nav.email }}. Wir antworten persönlich.</p>
+        <form method="post" action="/.netlify/functions/website-question" class="fgd-form" data-faq-question-form novalidate>
+          <div class="fgd-field-row">
+            <label>Name *<input name="name" required autocomplete="name"></label>
+            <label>E-Mail *<input name="email" type="email" required autocomplete="email"></label>
+          </div>
+          <label>Telefon<input name="phone" type="tel" autocomplete="tel" placeholder="optional"></label>
+          <label>Ihre Frage *<textarea name="question" required rows="5" maxlength="5000" placeholder="Schildern Sie uns kurz Ihre Frage."></textarea></label>
+          <label class="fgd-hp" aria-hidden="true">Website<input name="company_website" tabindex="-1" autocomplete="off"></label>
+          <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
+          <div class="fgd-status" data-faq-question-status hidden></div>
+          <button type="submit" class="fgd-btn">Frage senden{% include "fgs-arrow.njk" %}</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{%- endmacro %}
+
+{#- S8 Abschlussband: einzige navy Fläche im Inhalt. Ein Satz (als H2), der goldene Button, darunter die Ansprechperson.
+    c = { kontakt: "lennart" | "timon", satz, button: "bewertung" | "gespraech", knopf: { href, label } (optional, ersetzt button; Objektseite: „Objekt anfragen“),
+    gebiet (optional, statt Zuständigkeit), lang (optional, langer Inhalt: Handy-Zuschnitt 1:2), foto (optional: "tiergarten" auf Verkaufen, dort ist das Humboldt Forum schon das Titelbild) }.
+    Mit {% call closing(…) %} steht der Inhalt (z. B. ein Satz und die Anliegen als Links) zwischen Satz und Button.
+    Design-Pass 3 §3.11 und Nachtrag Punkt 2: Rahmen im navy Band (Desktop 64 px Abstand, mobil 0, 86 vh hoch), darin ein Foto
+    unter navy 50 % mit langsamem Zoom, alles mittig. Statt des freigestellten Porträts eine Zeile mit rundem 56-px-Porträt,
+    Name · Rolle · Profil und Telefonnummer. Fotozuschnitt je Bildschirmform (Regel 2.6.2: höchstens ±25 % vom gezeigten Format):
+    12:5 sehr breit, 2:1 breit, 3:2 Bildschirm, 5:4 Handy quer, 1:1 Tablet hochkant, 2:3 schmales Tablet, 9:16 Handy
+    (1:2 mit lang: true, Gebietsseiten: dort macht der längere Text den Rahmen auf dem Handy höher) (seitenbilder.json,
+    abschluss-*). Die Medienabfragen rechnen mit Rahmen = (Breite − 2 × Rand) / 86 vh; die Grenzen sind in PLAN.md §3.11 gegen
+    gängige Bildschirme gemessen. -#}
+{% macro closing(c) -%}
+{%- set k = kontakte[c.kontakt or "lennart"] -%}
+{%- set datei = k.name | lower | replace(" ", "-") -%}
+{%- set kPhone = k.phone or nav.phone -%}
+{%- set stamm = ("abschluss-" + c.foto + "-") if c.foto else "abschluss-" -%}
+{%- set f125 = (stamm + "12x5") | bild -%}{%- set f21 = (stamm + "2x1") | bild -%}{%- set f32 = (stamm + "3x2") | bild -%}
+{%- set f54 = (stamm + "5x4") | bild -%}{%- set f11 = (stamm + "1x1") | bild -%}{%- set f23 = (stamm + "2x3") | bild -%}
+{%- set fHandy = (stamm + ("1x2" if c.lang else "9x16")) | bild -%}
+<section class="fgs-closing fgs-on-dark" id="kontakt" aria-labelledby="abschluss-titel">
+  <div class="fgs-closing-frame" data-fgs-closing>
+    <div class="fgs-closing-media">
+      <picture>
+        {#- Niedrige Fenster (Handy quer): der Inhalt macht den Rahmen höher als 86 vh, deshalb 5:4 #}
+        {% if f54.avif %}<source type="image/avif" media="(max-height: 520px)" srcset="{{ f54.avif }}" sizes="108vw">{% endif %}
+        <source media="(max-height: 520px)" srcset="{{ f54.srcset }}" sizes="108vw">
+        {% if f125.avif %}<source type="image/avif" media="(min-width: 768px) and (min-aspect-ratio: 21/10)" srcset="{{ f125.avif }}" sizes="(min-aspect-ratio: 12/5) 108vw, 223vh">{% endif %}
+        <source media="(min-width: 768px) and (min-aspect-ratio: 21/10)" srcset="{{ f125.srcset }}" sizes="(min-aspect-ratio: 12/5) 108vw, 223vh">
+        {% if f21.avif %}<source type="image/avif" media="(max-width: 767px) and (min-aspect-ratio: 3/2), (min-width: 768px) and (min-aspect-ratio: 13/8)" srcset="{{ f21.avif }}" sizes="(min-aspect-ratio: 2/1) 108vw, 186vh">{% endif %}
+        <source media="(max-width: 767px) and (min-aspect-ratio: 3/2), (min-width: 768px) and (min-aspect-ratio: 13/8)" srcset="{{ f21.srcset }}" sizes="(min-aspect-ratio: 2/1) 108vw, 186vh">
+        {% if f32.avif %}<source type="image/avif" media="(max-width: 767px) and (min-aspect-ratio: 1/1), (min-width: 768px) and (min-aspect-ratio: 9/8)" srcset="{{ f32.avif }}" sizes="(min-aspect-ratio: 3/2) 108vw, 139vh">{% endif %}
+        <source media="(max-width: 767px) and (min-aspect-ratio: 1/1), (min-width: 768px) and (min-aspect-ratio: 9/8)" srcset="{{ f32.srcset }}" sizes="(min-aspect-ratio: 3/2) 108vw, 139vh">
+        {% if f11.avif %}<source type="image/avif" media="(max-width: 767px) and (min-aspect-ratio: 7/10), (min-width: 768px) and (min-aspect-ratio: 7/10)" srcset="{{ f11.avif }}" sizes="(min-aspect-ratio: 1/1) 108vw, 93vh">{% endif %}
+        <source media="(max-width: 767px) and (min-aspect-ratio: 7/10), (min-width: 768px) and (min-aspect-ratio: 7/10)" srcset="{{ f11.srcset }}" sizes="(min-aspect-ratio: 1/1) 108vw, 93vh">
+        {% if f23.avif %}<source type="image/avif" media="(min-width: 768px)" srcset="{{ f23.avif }}" sizes="(min-aspect-ratio: 2/3) 108vw, 62vh">{% endif %}
+        <source media="(min-width: 768px)" srcset="{{ f23.srcset }}" sizes="(min-aspect-ratio: 2/3) 108vw, 62vh">
+        {% if fHandy.avif %}<source type="image/avif" srcset="{{ fHandy.avif }}" sizes="(min-aspect-ratio: 9/16) 108vw, 52vh">{% endif %}
+        {{ picImg(fHandy, "", "(min-aspect-ratio: 9/16) 108vw, 52vh") }}
+      </picture>
+    </div>
+    {#- Update 22 §8.5: was länger als 5 s läuft, bekommt Pause/Abspielen; der Zoom läuft endlos, solange der Rahmen zu sehen ist #}
+    <button type="button" class="fgs-pause fgs-pause--light fgs-closing-pause" data-fgs-pause="Zoom" aria-label="Zoom anhalten"><svg class="fgs-pause-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path class="fgs-pause-bars" d="M4.5 3h2.2v10H4.5zM9.3 3h2.2v10H9.3z"/><path class="fgs-pause-play" d="M5 2.8v10.4L13.2 8z"/></svg></button>
+    <div class="fgs-closing-inner">
+      <h2 id="abschluss-titel" class="fgs-closing-sentence" data-fgs-lines>{{ c.satz }}</h2>
+      {%- if caller %}
+      <div class="fgs-closing-body">{{ caller() }}</div>{% endif %}
+      <div class="fgs-btns">
+        {%- if c.knopf %}
+        <a class="fgs-btn fgs-btn--primary" href="{{ c.knopf.href }}">{{ c.knopf.label }}</a>
+        {%- elif c.button == "gespraech" %}
+        <a class="fgs-btn fgs-btn--primary" href="/kontakt.html">Gespräch vereinbaren</a>
+        {%- else %}
+        <a class="fgs-btn fgs-btn--primary" href="{{ nav.valuation | navHref }}">Kostenlose Bewertung</a>
+        {%- endif %}
+      </div>
+      <div class="fgs-closing-person">
+        <span class="fgs-closing-face">{{ pic(("/images/team/" + datei + "-navy") | bild, "", "112px") }}</span>
+        <p class="fgs-closing-who">{{ k.name }} · {{ k.role }}{% if c.gebiet %} · {{ c.gebiet }}{% endif %}{% set kProfile = k.profile | navHref %}{% if kProfile != page.url and kProfile != "#" %} · <a href="{{ kProfile }}">Profil</a>{% endif %}</p>
+        <a class="fgs-closing-phone" href="{{ kPhone.href }}">{{ kPhone.display }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+{%- endmacro %}

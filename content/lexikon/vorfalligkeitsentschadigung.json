@@ -7,11 +7,106 @@
   "keywords": [
     "vorfälligkeitsentschädigung"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Immobilienkauf",
   "formula": null,
   "sources": [],
   "assistantAnswer": "Möglicher Ausgleich der Bank bei vorzeitiger Darlehensablösung. Eine Vorfälligkeitsentschädigung kann bei vorzeitiger Rückzahlung eines fest verzinsten Darlehens entstehen, wenn der Bank ein rechtlich ersatzfähiger Zinsschaden entsteht. Ob und in welcher Höhe sie anfällt, hängt vom Vertrag und gesetzlichen Kündigungs-/Berechnungsregeln ab.",
-  "explanation": "Eine Vorfälligkeitsentschädigung kann bei vorzeitiger Rückzahlung eines fest verzinsten Darlehens entstehen, wenn der Bank ein rechtlich ersatzfähiger Zinsschaden entsteht. Ob und in welcher Höhe sie anfällt, hängt vom Vertrag und gesetzlichen Kündigungs-/Berechnungsregeln ab.",
-  "practiceExample": "Beim Verkauf während laufender Zinsbindung darf der erwartete Verkaufserlös nicht ohne Prüfung der Darlehensablösung als frei verfügbares Eigenkapital eingeplant werden."
+  "explanation": "Eine Vorfälligkeitsentschädigung gleicht den Schaden aus, der der Bank entsteht, wenn Sie ein Darlehen mit festem Zins vor Ende der Zinsbindung zurückzahlen. Bei einer Immobilienfinanzierung als Verbraucher dürfen Sie in der Zinsbindung ganz oder teilweise vorzeitig zurückzahlen, wenn Sie ein berechtigtes Interesse haben.",
+  "practiceExample": "Sie verkaufen 2026 eine Wohnung, deren Darlehen 2021 zu 1 % mit zehn Jahren Bindung abgeschlossen wurde. Die Bank kann das Geld heute zu höheren Zinsen wieder anlegen; in vielen solchen Fällen entsteht ihr kein Schaden. Anders 2019, als die Zinsen niedrig waren: Damals verlangten Banken nach einer Untersuchung der Verbraucherzentrale Bremen im Schnitt 10 % der Restschuld, bei 200.000 € also 20.000 €.",
+  "ausbau": {
+    "einordnung": [
+      "Eine Vorfälligkeitsentschädigung gleicht den Schaden aus, der der Bank entsteht, wenn Sie ein Darlehen mit festem Zins vor Ende der Zinsbindung zurückzahlen.[[1]] Bei einer Immobilienfinanzierung als Verbraucher dürfen Sie in der Zinsbindung ganz oder teilweise vorzeitig zurückzahlen, wenn Sie ein berechtigtes Interesse haben.[[2]]",
+      "Ein solches Interesse liegt insbesondere vor, wenn Sie die Immobilie anderweitig verwerten wollen, etwa verkaufen.[[1]] Nach Finanztip zählen auch Scheidung oder Trennung, ein beruflicher Umzug oder die Auflösung einer Erbengemeinschaft dazu, wenn die Immobilie deshalb verkauft wird. Kein berechtigtes Interesse sind gesunkene Zinsen oder Geld aus einer Erbschaft.[[3]]",
+      "Die Bank kann eine angemessene Entschädigung für den Schaden verlangen, der unmittelbar mit der vorzeitigen Rückzahlung zusammenhängt. Sind die Angaben im Vertrag zu Laufzeit, Kündigungsrecht oder Berechnung unzureichend, entfällt der Anspruch.[[4]] Vereinbarte Sondertilgungen und das Kündigungsrecht nach zehn Jahren muss die Bank zu Ihren Gunsten berücksichtigen.[[3]] Zehn Jahre nach der vollständigen Auszahlung können Sie ohnehin mit sechs Monaten Frist kündigen.[[5]]"
+    ],
+    "beispiel": [
+      "Sie verkaufen 2026 eine Wohnung, deren Darlehen 2021 zu 1 % mit zehn Jahren Bindung abgeschlossen wurde. Die Bank kann das Geld heute zu höheren Zinsen wieder anlegen; in vielen solchen Fällen entsteht ihr kein Schaden.[[3]]",
+      "Anders 2019, als die Zinsen niedrig waren: Damals verlangten Banken nach einer Untersuchung der Verbraucherzentrale Bremen im Schnitt 10 % der Restschuld,[[3]] bei 200.000 € also 20.000 €."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Verkäufer heißt",
+        "absaetze": [
+          "Fragen Sie früh bei Ihrer Bank nach der Höhe und planen Sie den Erlös erst nach Ablösung der Restschuld. Prüfen Sie die Berechnung, bevor Sie zahlen. Fischer & Geserich denkt Verkauf und Anschlussfinanzierung auf Wunsch zusammen.[[6]]"
+        ]
+      },
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Wenn Sie schon beim Kauf wissen, dass Sie vielleicht früher verkaufen, achten Sie auf Sondertilgungsrechte und eine passende Länge der Zinsbindung. Beides beeinflusst, ob und in welcher Höhe später eine Entschädigung anfällt."
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "§ 490 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__490.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 500 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__500.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Vorfälligkeitsentschädigung",
+        "url": "https://www.finanztip.de/baufinanzierung/vorfaelligkeitsentschaedigung/",
+        "stand": "Stand 07.11.2025"
+      },
+      {
+        "name": "§ 502 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__502.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 489 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__489.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Verkaufen",
+        "url": "https://fg-realestate.de/verkaufen.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Schadensersatz = Vorfälligkeitsentschädigung; berechtigtes Interesse, anderweitige Verwertung",
+        "fundstelle": "runde-2.md, F01"
+      },
+      {
+        "zahl": "Immobiliar-Verbraucherdarlehen: vorzeitig nur mit berechtigtem Interesse",
+        "fundstelle": "runde-2.md, F03"
+      },
+      {
+        "zahl": "berechtigtes Interesse: Trennung, beruflicher Umzug, Erbengemeinschaft mit Verkauf; kein berechtigtes Interesse: sinkende Zinsen, Erbschaft",
+        "fundstelle": "runde-2.md, F05"
+      },
+      {
+        "zahl": "angemessen, unmittelbarer Schaden; Ausschluss bei unzureichenden Angaben",
+        "fundstelle": "runde-2.md, F04"
+      },
+      {
+        "zahl": "Sondertilgung und Zehn-Jahres-Recht zugunsten des Kunden",
+        "fundstelle": "runde-2.md, F06"
+      },
+      {
+        "zahl": "zehn Jahre, sechs Monate Frist",
+        "fundstelle": "runde-2.md, A01"
+      },
+      {
+        "zahl": "Kredit 2021 zu 1 %, oft kein Schaden; 2019 im Schnitt 10 % der Restschuld",
+        "fundstelle": "runde-2.md, F07"
+      },
+      {
+        "zahl": "10 % × 200.000 € = 20.000 €",
+        "fundstelle": "Rechnung, Marktprüfung runde-2.md"
+      },
+      {
+        "zahl": "Verkauf und Anschlussfinanzierung zusammendenken (F&G)",
+        "fundstelle": "runde-2.md, A12"
+      }
+    ]
+  }
 }

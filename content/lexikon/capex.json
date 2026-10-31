@@ -7,10 +7,98 @@
   "keywords": [
     "capex"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Kapitalanlage",
-  "explanation": "Größere, wert- oder nutzungsdauerrelevante Investitionen. Capex ist eine Investmentkennzahl bzw. Risikogröße. Für Vergleiche müssen Definition, Zeitraum und einbezogene Kosten identisch sein.",
-  "formula": null,
+  "explanation": "Capex steht für Capital Expenditure, also Investitionen in die Immobilie: neue Fenster, eine Heizung, ein Bad, Dach oder Fassade. Anders als laufende Kosten fallen sie unregelmäßig und in größeren Beträgen an. Beim Mehrfamilienhaus bezieht F&G Sanierung, Energie, Instandhaltung und Sonderthemen in die Investmentlogik ein. Beim Ankauf kann Capex eine hohe Bruttorendite schnell relativieren.",
+  "formula": "15-%-Grenze = Anschaffungskosten des Gebäudes × 15 % (ohne Umsatzsteuer, erste drei Jahre)",
   "sources": [],
-  "assistantAnswer": "Größere, wert- oder nutzungsdauerrelevante Investitionen. Größere, wert- oder nutzungsdauerrelevante Investitionen. Capex ist eine Investmentkennzahl bzw. Risikogröße. Für Vergleiche müssen Definition, Zeitraum und einbezogene Kosten identisch sein."
+  "assistantAnswer": "Größere, wert- oder nutzungsdauerrelevante Investitionen. Größere, wert- oder nutzungsdauerrelevante Investitionen. Capex ist eine Investmentkennzahl bzw. Risikogröße. Für Vergleiche müssen Definition, Zeitraum und einbezogene Kosten identisch sein.",
+  "practiceExample": "Die Beispielwohnung im Berliner Umland, etwa in Bernau, kostet 160.000 € plus 18.512 € Nebenkosten. Bei einem angenommenen Gebäudeanteil von 80 % entfallen 142.810 € auf das Gebäude. Die 15-%-Grenze liegt damit bei rund 21.420 € ohne Umsatzsteuer in den ersten drei Jahren. Eine Renovierung für 12.000 € netto beim Mieterwechsel liegt darunter; ist sie Erhaltung, ziehen Sie sie sofort oder verteilt ab. Kostet sie 25.000 €, wird der ganze Betrag zu Herstellungskosten und ergibt bei 2 % AfA 500 € im Jahr.",
+  "ausbau": {
+    "einordnung": [
+      "Capex steht für Capital Expenditure, also Investitionen in die Immobilie: neue Fenster, eine Heizung, ein Bad, Dach oder Fassade. Anders als laufende Kosten fallen sie unregelmäßig und in größeren Beträgen an. Beim Mehrfamilienhaus bezieht F&G Sanierung, Energie, Instandhaltung und Sonderthemen in die Investmentlogik ein.[[1]] Beim Ankauf kann Capex eine hohe Bruttorendite schnell relativieren.[[2]]",
+      "Steuerlich kommt es darauf an, wie eine Maßnahme einzuordnen ist. Erhaltungsaufwand können Sie als Werbungskosten abziehen; größere Beträge bei Wohngebäuden im Privatvermögen dürfen Sie auch auf zwei bis fünf Jahre verteilen.[[3]] Herstellungskosten, etwa wenn der Standard einer Wohnung deutlich steigt, werden über die AfA verteilt.[[4]]",
+      "Für die ersten drei Jahre nach dem Kauf gilt eine Grenze: Übersteigen Instandsetzung und Modernisierung ohne Umsatzsteuer 15 % der Anschaffungskosten des Gebäudes, zählen sie zu den Herstellungskosten. Erweiterungen und jährlich übliche Erhaltungsarbeiten gehören nicht dazu.[[5]]"
+    ],
+    "beispiel": [
+      "Die Beispielwohnung im Berliner Umland, etwa in Bernau, kostet 160.000 € plus 18.512 € Nebenkosten. Bei einem angenommenen Gebäudeanteil von 80 % entfallen 142.810 € auf das Gebäude. Die 15-%-Grenze liegt damit bei rund 21.420 € ohne Umsatzsteuer in den ersten drei Jahren.",
+      "Eine Renovierung für 12.000 € netto beim Mieterwechsel liegt darunter; ist sie Erhaltung, ziehen Sie sie sofort oder verteilt ab. Kostet sie 25.000 €, wird der ganze Betrag zu Herstellungskosten und ergibt bei 2 % AfA 500 € im Jahr."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Fragen Sie vor dem Kauf nach dem Zustand von Dach, Fenstern, Heizung und Leitungen und bei einer Eigentumswohnung nach geplanten Maßnahmen der Gemeinschaft. Planen Sie größere Arbeiten zeitlich mit Blick auf die 15-%-Grenze. Die Finanzämter gehen laut Finanztip von einer Sanierung in Raten aus, wenn mehrere Maßnahmen innerhalb von fünf Jahren den Standard einer Wohnung wesentlich verbessern.[[4]]"
+        ]
+      },
+      {
+        "h2": "Was es für Anleger heißt",
+        "absaetze": [
+          "Capex kann sich rechnen, wenn danach eine höhere Miete möglich ist. F&G nennt für den Mieterwechsel 5.000 bis 15.000 €, mit denen sich eine Wohnung häufig von 8 bis 9 auf 13 bis 16 € netto kalt je m² bringen lässt, und rechnet vorher durch, ob sich die Investition lohnt. Eine Modernisierung rechnet sich laut F&G seltener, als viele glauben.[[6]]"
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "Fischer & Geserich: Mehrfamilienhaus",
+        "url": "https://fg-realestate.de/mehrfamilienhaus.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Ankaufsberatung",
+        "url": "https://fg-realestate.de/ankaufsberatung.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 82b Einkommensteuer-Durchführungsverordnung (EStDV)",
+        "url": "https://www.gesetze-im-internet.de/estdv_1955/__82b.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Anschaffungsnahe Herstellungskosten und Erhaltungsaufwendungen",
+        "url": "https://www.finanztip.de/erhaltungsaufwand/",
+        "stand": "Stand 08.07.2026"
+      },
+      {
+        "name": "§ 6 EStG",
+        "url": "https://www.gesetze-im-internet.de/estg/__6.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Kapitalanlage",
+        "url": "https://fg-realestate.de/kapitalanlage.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Capex & Technik in der Investmentlogik (F&G)",
+        "fundstelle": "runde-3.md, C12"
+      },
+      {
+        "zahl": "hohe Bruttorendite durch Capex relativiert (F&G)",
+        "fundstelle": "runde-3.md, C10"
+      },
+      {
+        "zahl": "größerer Erhaltungsaufwand auf zwei bis fünf Jahre",
+        "fundstelle": "runde-3.md, H03"
+      },
+      {
+        "zahl": "Erhaltung abziehbar, Standardhebung, Sanierung in Raten über fünf Jahre",
+        "fundstelle": "runde-3.md, H05"
+      },
+      {
+        "zahl": "15 % der Gebäude-Anschaffungskosten ohne USt in drei Jahren; Ausnahmen",
+        "fundstelle": "runde-3.md, H04"
+      },
+      {
+        "zahl": "5.000 bis 15.000 €, 8 bis 9 auf 13 bis 16 €/m²; Modernisierung rechnet sich seltener (F&G)",
+        "fundstelle": "runde-3.md, H06, C09"
+      },
+      {
+        "zahl": "(160.000 + 18.512) × 80 % = 142.809,60 €; × 15 % = 21.421,44 €; 25.000 × 2 % = 500 €",
+        "fundstelle": "Rechnung, Marktprüfung runde-3.md"
+      }
+    ]
+  }
 }

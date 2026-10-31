@@ -1,8 +1,20 @@
 {
   "name": "Leipzig",
   "region": "Sachsen",
-  "price": "Bestand häufig ca. 2.200–3.800 €/m²",
-  "rent": "häufig ca. 8–14 €/m²",
+  "preis": {
+    "wert": "Ø 2.850 €/m²",
+    "label": "Eigentumswohnungen im sanierten Altbau, Weiterverkauf in Leipzig",
+    "quelle": "Grundstücksmarktbericht Leipzig 2026",
+    "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+    "stichtag": "Kaufverträge 2025"
+  },
+  "miete": {
+    "wert": "6,56 €/m²",
+    "label": "Durchschnittsmiete im Leipziger Mietspiegel 2025–2027",
+    "quelle": "Leipziger Mietspiegel 2025–2027",
+    "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.5_Dez5_Jugend_Soziales_Gesundheit_Schule/50_Sozialamt/Mietspiegel/Broschuere_zum_Leipziger_Mietspiegel_2025-2027_01.pdf",
+    "stichtag": "Stichtag 01.10.2024"
+  },
   "chance": "Die wachsende Großstadt verbindet Hochschulen, Logistik, Industrie und einen vielfältigen Dienstleistungssektor. Gut angebundene Quartiere profitieren von einer breiten Nachfrage durch Studierende, Berufseinsteiger und Familien.",
   "risk": "Zwischen etablierten Wohnlagen, Entwicklungsgebieten und Randlagen bestehen deutliche Preis- und Vermietungsunterschiede. Sanierungsbedarf und zusätzliches Angebot können die Wirtschaftlichkeit einzelner Objekte spürbar verändern.",
   "infra": "S-Bahn, Straßenbahn, Fernverkehr, Flughafenregion und Universitäten schaffen eine leistungsfähige regionale Anbindung. Für den Wohnungsmarkt ist vor allem die konkrete Verbindung zu Zentrum, Hochschule oder Arbeitsplatz relevant.",
@@ -10,7 +22,6 @@
   "population": "Die dynamische Entwicklung erhöht die Nachfrage, ersetzt jedoch keine Prüfung der jeweiligen Mikrolage.",
   "view": "Leipzig bietet ein gutes Verhältnis aus Einstiegspreis und Nachfrage, wenn Mikrolage und Gebäudesubstanz stimmen. Bei Kapitalanlagen sollten Mietpotenzial und künftiges Angebot im direkten Umfeld konservativ bewertet werden.",
   "source": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Grundstucksmarktbericht-2025-Leipzig.pdf",
-  "yield": "häufig ca. 3,5–6,0 %",
   "id": "leipzig",
   "slug": "leipzig",
   "url": "/standorte/leipzig/",
@@ -18,5 +29,5 @@
     "leipzig",
     "sachsen"
   ],
-  "updated": "2026-09-02"
+  "updated": "2026-10-29"
 }

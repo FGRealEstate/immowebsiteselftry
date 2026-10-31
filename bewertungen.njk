@@ -1,0 +1,128 @@
+---
+layout: fgs-page.njk
+fgsHero: false
+title: "Bewertungen – Was Kunden über Fischer & Geserich sagen"
+permalink: bewertungen/index.html
+canonicalPath: /bewertungen/
+ogTitle: "Bewertungen von Fischer & Geserich Real Estate"
+eleventyComputed:
+  description: "Google-Bewertungen der Fischer & Geserich Real Estate GmbH aus Berlin-Steglitz: {{ google.rating }} von 5 bei {{ google.count }} Bewertungen (Stand {{ google.checkedLabel }}), mit Link zum Google-Profil."
+  ogDescription: "{{ google.rating }} von 5 bei {{ google.count }} Google-Bewertungen. So geben Sie selbst eine Bewertung ab."
+# Brief Design-Pass §4.3: alle Google-Bewertungen wörtlich mit Vorname und Datum, Link zum Profil, kurze Anleitung.
+# Kein Review- oder AggregateRating-Markup: Google schließt Bewertungen, die ein Unternehmen über sich selbst
+# einbindet, von Sternen aus (Doku „Review snippet“, geprüft am 26.10.2026). Das Layout schreibt keins.
+# Die Bewertungstexte kommen aus _data/google.js (Feld reviews); bis sie eingetragen sind, entfällt die Liste (QUESTIONS 3.1).
+# Anleitung geprüft am 26.10.2026 in der Google-Maps-Hilfe (support.google.com/maps/answer/6230175): Anmeldung nötig,
+# Rezensionen sind öffentlich und nicht anonym, eigene Rezensionen lassen sich bearbeiten oder löschen.
+# CP4 (28.10.2026, Design-Sprint-Brief 5.4): Titelzeile ohne Foto mit Gesamtbewertung, Bewertungen als ruhiges Raster im Stil der
+# Zitate auf der Startseite (S4), Anleitung als echte Schrittfolge, Regeln zweispaltig. Entfallen: Kicker über den H2 (Update 6 §3.0),
+# Linkliste unten (pg.related, Brief 3.7). Bewertungstexte unverändert aus _data/google.js.
+# Design-Pass 3 §4.4 (30.10.2026): oben Gesamtnote und die vier Pull-Quotes aus §3.9 wie auf der Startseite (ohne Laufband, die
+# kurzen Bewertungen stehen alle im Raster darunter); die kleine Gesamtbewertung in der Titelzeile entfällt deshalb, der Button
+# „Google-Profil öffnen“ bleibt (rating: knopf; die FAQ verweist auf ihn). Darunter alle Bewertungen als zweispaltiges
+# Mauerwerk aus Textkarten: Beige, 1 px Haarlinie, Text in Marcellus 20 px. Die Reihenfolge bleibt die von Google (neueste zuerst),
+# gelesen wird je Spalte von oben nach unten.
+pg:
+  crumb: "Bewertungen"
+  parent: { label: "Über uns", href: "/ueber-uns.html" }
+  kicker: "Kundenstimmen"
+  h1: "Bewertungen: Was Kunden über Fischer &amp; Geserich sagen"
+  intro: "Die Bewertungen unserer Kunden stehen in unserem Google-Unternehmensprofil. Dort lesen Sie jede Rezension im Original, mit Namen und Datum."
+  rating: knopf
+  faqTitle: "Häufige Fragen zu Bewertungen"
+  faq:
+    - q: "Wo finde ich alle Bewertungen von Fischer & Geserich?"
+      a: "In unserem Google-Unternehmensprofil. Der Button oben auf dieser Seite öffnet es in einem neuen Fenster."
+    - q: "Kann ich anonym bewerten?"
+      a: "Nein. Rezensionen bei Google sind öffentlich und erscheinen mit dem Namen Ihres Google-Kontos. Zum Schreiben melden Sie sich bei Google an."
+    - q: "Kann ich meine Bewertung später ändern?"
+      a: "Ja. Google erlaubt, eigene Rezensionen nachträglich zu bearbeiten oder zu löschen."
+  contact: lennart
+  closing:
+    title: "Lernen Sie uns persönlich kennen"
+    button: gespraech
+  schema:
+    type: WebPage
+    about: "https://fg-realestate.de/#organization"
+---
+{% from "fgs-macros.njk" import stimme, textlink with context %}
+{% if google.reviews.length %}
+{# Design-Pass 3 §4.4: Gesamtnote und Pull-Quotes aus §3.9, Auswahl, Berater und Chips wie auf der Startseite (index.njk) #}
+{%- set stimmen = [
+  { autor: "Marc", zitat: "ohne mir irgendetwas schönzureden", berater: "timon", thema: "Kauf" },
+  { autor: "Jennifer", zitat: "zu keiner Zeit zu etwas gedrängt gefühlt", berater: "lennart", thema: "Ankaufsberatung" },
+  { autor: "Maria", zitat: "Man hatte nie das Gefühl, dass einem einfach irgendeine Finanzierung verkauft werden soll", thema: "Finanzierung" },
+  { autor: "Jan", zitat: "dass unsere Interessen als Eigentümer ernst genommen werden", thema: "Vermietung" }
+] %}
+<section class="fgs-section fgs-reviews fgs-reviews--page" id="gesamtnote">
+  <div class="fgs-wrap">
+    <div class="fgs-reviews-grid">
+      <div class="fgs-reviews-aside">
+        <p class="fgs-reviews-score">{{ google.rating }}<span class="fgs-sr"> von 5 Sternen</span></p>
+        <p class="fgs-reviews-stars" aria-hidden="true">★★★★★</p>
+        <p class="fgs-reviews-count">{{ google.count }} Bewertungen auf Google · Stand {{ google.checkedLabel }}</p>
+        <p class="fgs-reviews-links"><a class="fgs-link" href="{{ google.url }}" target="_blank" rel="noopener">Alle Bewertungen</a>{{ textlink("#bewerten", "So bewerten Sie uns") }}</p>
+      </div>
+      <ul class="fgs-reviews-list" role="list">
+        {%- for s in stimmen %}{% for r in google.reviews | selectattr("text") %}{% if r.author == s.autor %}
+        {{ stimme(r, s) }}
+        {%- endif %}{% endfor %}{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{# Alle Bewertungen wörtlich aus dem Google-Profil, neueste zuerst (Reihenfolge der Daten wie bei Google, Update 4, 3.5) #}
+<section class="fgs-section" id="rezensionen" aria-labelledby="rezensionen-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head">
+      <h2 id="rezensionen-titel">Alle {{ google.reviews.length }} Bewertungen im Wortlaut</h2>
+      <p class="fgs-lead">Ungekürzt und unverändert, die neuesten zuerst. Die Zeitangaben stehen so, wie Google sie am {{ google.checkedLabel }} zeigte.</p>
+    </div>
+    <ul class="fgs-mq-list" role="list">
+      {%- for review in google.reviews %}
+      <li class="fgs-mq">
+        <figure>
+          {%- if review.rating %}
+          <p class="fgs-quote-stars"><span aria-hidden="true">{% for i in range(0, review.rating) %}★{% endfor %}</span><span class="fgs-sr">{{ review.rating }} von 5 Sternen</span></p>{% endif %}
+          {%- if review.text %}
+          <blockquote><p>„{{ review.text }}“</p></blockquote>
+          {%- else %}
+          <p class="fgs-quote-empty">Bewertung nur mit Sternen, ohne Text</p>
+          {%- endif %}
+          <figcaption>{{ review.author }}{% if review.dateLabel %} · {{ review.dateLabel }}{% elif review.date %} · {{ review.date | deDate }}{% endif %} · <a class="fgs-rev-google" href="{{ google.mapsUrl }}" target="_blank" rel="noopener" aria-label="Bewertung von {{ review.author }} auf Google ansehen (öffnet ein neues Fenster)">Google<span aria-hidden="true"> ↗</span></a></figcaption>
+        </figure>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+
+<section class="fgs-section" id="bewerten" aria-labelledby="bewerten-titel">
+  <div class="fgs-wrap fgs-cols">
+    <div class="fgs-cols-head"><h2 id="bewerten-titel">So geben Sie eine Bewertung ab</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Waren Sie Kunde bei uns? Dann freuen wir uns über Ihre Bewertung.</p>
+      <ol class="fgs-steps" role="list">
+        <li><span class="fgs-step-num" aria-hidden="true">01</span><h3>Formular öffnen</h3><p>Der Button unten öffnet das Bewertungsformular unseres Google-Profils in einem neuen Fenster.</p></li>
+        <li><span class="fgs-step-num" aria-hidden="true">02</span><h3>Bei Google anmelden</h3><p>Zum Schreiben brauchen Sie ein Google-Konto. Ihre Bewertung ist öffentlich und erscheint mit Ihrem Namen.</p></li>
+        <li><span class="fgs-step-num" aria-hidden="true">03</span><h3>Sterne vergeben und schreiben</h3><p>Vergeben Sie ein bis fünf Sterne und beschreiben Sie, wie die Zusammenarbeit war.</p></li>
+      </ol>
+      <div class="fgs-btns">
+        <a class="fgs-btn fgs-btn--primary" href="{{ google.reviewUrl }}" target="_blank" rel="noopener">Bewertung schreiben</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{#- Design-Pass 2, Entscheidungen 29.10.2026, Blatt 5: bleibt wegen § 5b Abs. 3 UWG, gekürzt auf die Sätze, die sagen, ob und wie
+    Bewertungen geprüft werden (Herkunft Google-Profil, unverändert übernommen). Entfallen ist der Absatz zur Gesamtbewertung. -#}
+<section class="fgs-section" id="umgang" aria-labelledby="umgang-titel">
+  <div class="fgs-wrap fgs-cols">
+    <div class="fgs-cols-head"><h2 id="umgang-titel">Wie wir mit Bewertungen umgehen</h2></div>
+    <div class="fgs-cols-body fgs-prose">
+      <p>Auf unserer Website zeigen wir nur Bewertungen aus unserem Google-Profil. Wir übernehmen sie wörtlich und ungekürzt, mit Vorname und Datum, und ändern nichts daran.</p>
+    </div>
+  </div>
+</section>

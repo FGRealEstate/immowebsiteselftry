@@ -1,10 +1,19 @@
 ---
 layout: base.njk
+fgDesign: true
+fgSystem: true
+fgsHero: false
 title: Immobilie mieten – Fischer & Geserich Real Estate
 permalink: anmieten.html
 canonicalPath: /mieten.html
 # Leitet per _redirects auf /mieten.html weiter, darum nicht in die Sitemap.
+# CP4 (28.10.2026): Hülle im Design-System; Text und Ziel unverändert, der Satz steht jetzt als H1.
 eleventyExcludeFromCollections: true
 ---
 <meta http-equiv="refresh" content="0; url=/mieten.html">
-<section class="fg-home-v2-section"><div class="container mx-auto px-4 text-center"><p>Die Mietsuche ist umgezogen.</p><a class="btn-85 inline-flex py-3 px-7" href="/mieten.html">Zum Mietgesuch</a></div></section>
+<section class="fgs-pagehead" aria-labelledby="seitentitel">
+  <div class="fgs-wrap">
+    <h1 id="seitentitel">Die Mietsuche ist umgezogen</h1>
+    <div class="fgs-btns"><a class="fgs-btn fgs-btn--primary" href="/mieten.html">Zum Mietgesuch</a></div>
+  </div>
+</section>

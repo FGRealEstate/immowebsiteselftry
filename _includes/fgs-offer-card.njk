@@ -1,0 +1,71 @@
+{#- Angebotskarten im Design-System (CP4, 28.10.2026). Gleiche Daten und Makronamen wie fgd-offer-card.njk:
+    offerCard(o)     Einzelobjekt oder Projekteinheit; ohne Foto „Foto folgt“ hell mit feiner Linie (Update 7, Frage 28).
+    projectCard(p)   Projekt, breit: Foto links (7 Spalten), Eckdaten rechts.
+    referenceCard(r) Verkauftes Objekt für /referenzen/: „Verkauft“ und Jahr, ohne Preis.
+    Ruhig wie die Karten der Startseite (S4): Foto 4:3, eine Zeile Einordnung, Titel in Marcellus, Preis, Eckdaten als Zeilen.
+    Keine Etiketten auf dem Foto und keine Symbole (Brief 3.7). Die ganze Karte ist ein Link.
+    Klasse offer-filter-card und die data-* Felder speisen den Filter auf /angebote.html (unverändert). -#}
+
+{%- macro foto(src, alt, sizes, eager=false) -%}
+{% if src %}<img src="{{ src | propstackFoto }}"{% set _set = src | propstackSrcset %}{% if _set %} srcset="{{ _set }}"{% endif %} alt="{{ alt }}" sizes="{{ sizes }}" width="1200" height="900" {% if eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
+{% else %}<span class="fgs-offer-placeholder" role="img" aria-label="Für dieses Angebot folgen die Fotos noch"><span>Foto folgt</span></span>{% endif %}
+{%- endmacro -%}
+
+{%- macro offerCard(o, showLocation=true) -%}
+<article class="fgs-offer offer-filter-card property-card" data-strategie="{{ o.strategy_key }}" data-vermarktung="{{ o.marketing_type or '' }}" data-objektart="{{ o.property_type or '' }}" data-preis="{{ o.price_raw or '' }}" data-flaeche="{{ o.living_space_raw or '' }}" data-rendite="{{ o.gross_yield_raw or '' }}">
+  <a class="fgs-offer-link" href="{{ o.url }}">
+    <span class="fgs-media fgs-offer-media">{{ foto(o.main_image, o.title, "(min-width: 1100px) 380px, (min-width: 700px) 50vw, 100vw") | safe }}</span>
+    <p class="fgs-offer-meta">{{ o.strategy }}{% if o.marketing_type %} · {{ o.marketing_type }}{% endif %} · {{ o.property_type or "Immobilie" }}{% if showLocation and o.location %} · {{ o.location }}{% endif %}{% if o.unit_number %} · Nr. {{ o.unit_number }}{% endif %}</p>
+    <h3 class="fgs-offer-title">{{ o.title }}</h3>
+    <p class="fgs-offer-price">{{ (o.price | eur) if o.price else "Preis auf Anfrage" }}{% if o.marketing_type == "Miete" and o.price %} <small>kalt / Monat</small>{% endif %}</p>
+    <dl class="fgs-offer-facts">
+      {% if o.living_space %}<div><dt>Wohnfläche</dt><dd>{{ o.living_space }}</dd></div>{% endif %}
+      {% if o.rooms %}<div><dt>Zimmer</dt><dd>{{ o.rooms }}</dd></div>{% endif %}
+      {% if o.is_investment and o.gross_yield %}<div><dt>Bruttorendite</dt><dd>{{ o.gross_yield }}</dd></div>{% elif o.is_investment and o.cold_rent %}<div><dt>Kaltmiete</dt><dd>{{ o.cold_rent | eur }}</dd></div>{% elif o.price_per_sqm and o.marketing_type != "Miete" %}<div><dt>Preis/m²</dt><dd>{{ o.price_per_sqm | eur }}</dd></div>{% endif %}
+    </dl>
+    <span class="fgs-link">{{ "Einheit ansehen" if o.project_name else "Objekt ansehen" }}{% include "fgs-arrow.njk" %}</span>
+  </a>
+</article>
+{%- endmacro -%}
+
+{#- Design-Pass 3 §4.5: Projektkarte bleibt breit, das Foto folgt der Titelbild-Regel aus §3.8 (3:2, Ausschnitt per fokus/zoom,
+    ohne brauchbares Foto der gestaltete Titel mit Ort) und zoomt beim Überfahren wie die Angebotskarte. -#}
+{%- macro projectCard(p, eager=false) -%}
+<article class="fgs-project offer-filter-card" data-strategie="{{ p.strategy_keys | join(',') }}" data-vermarktung="{{ p.marketing_type }}" data-objektart="{{ p.property_types | join(',') }}" data-preis="{{ p.min_price_raw or '' }}" data-flaeche="{{ p.max_area or '' }}" data-rendite="">
+  <a class="fgs-offer-link fgs-project-link" href="{{ p.url }}">
+    {%- if p.cover and p.cover.url %}
+    <span class="fgs-media fgs-obj-media fgs-project-media"><span class="fgs-obj-frame"{% if p.cover.fokus or p.cover.zoom %} style="{% if p.cover.fokus %}--fgs-pos: {{ p.cover.fokus }};{% endif %}{% if p.cover.zoom %} --fgs-zoom: {{ p.cover.zoom }};{% endif %}"{% endif %}><img src="{{ p.cover.url | propstackFoto }}"{% set _set = p.cover.url | propstackSrcset %}{% if _set %} srcset="{{ _set }}"{% endif %} alt="{{ p.name }}" sizes="(min-width: 1000px) 700px, 100vw" width="1200" height="800" {% if eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async"></span></span>
+    {%- else %}
+    <span class="fgs-obj-media fgs-obj-design fgs-project-media" role="img" aria-label="{{ p.name }}"><img src="/images/logo/fg-zeichen-gold.svg" alt="" width="49" height="58"><span class="fgs-obj-design-ort" aria-hidden="true">{{ p.location }}</span></span>
+    {%- endif %}
+    <div class="fgs-project-body">
+      <p class="fgs-offer-meta">Projekt · {{ p.marketing_type }} · {{ p.strategy }}{% if p.location %} · {{ p.location }}{% endif %}</p>
+      <h3 class="fgs-offer-title fgs-project-title">{{ p.name }}</h3>
+      <dl class="fgs-offer-facts">
+        <div><dt>Verfügbare Einheiten</dt><dd>{{ p.available_unit_count }}</dd></div>
+        <div><dt>{% if p.marketing_type == "Miete" %}Kaltmieten{% else %}Kaufpreise{% endif %}</dt><dd>{{ (p.price_range | eur) if p.price_range else "auf Anfrage" }}</dd></div>
+        {% if p.area_range %}<div><dt>Wohnflächen</dt><dd>{{ p.area_range }}</dd></div>{% endif %}
+        {% if p.room_range %}<div><dt>Zimmer</dt><dd>{{ p.room_range }}</dd></div>{% endif %}
+      </dl>
+      <span class="fgs-link">Projekt und Einheiten ansehen{% include "fgs-arrow.njk" %}</span>
+    </div>
+  </a>
+</article>
+{%- endmacro -%}
+
+{%- macro referenceCard(r) -%}
+<article class="fgs-offer fgs-reference">
+  <a class="fgs-offer-link" href="{{ r.url }}">
+    <span class="fgs-media fgs-offer-media">{% if r.main_image %}<img src="{{ r.main_image | propstackFoto }}"{% set _set = r.main_image | propstackSrcset %}{% if _set %} srcset="{{ _set }}"{% endif %} alt="{{ r.title }}" sizes="(min-width: 1100px) 380px, (min-width: 700px) 50vw, 100vw" width="1200" height="900" loading="lazy" decoding="async">
+    {% else %}<span class="fgs-offer-placeholder" aria-hidden="true"></span>{% endif %}</span>
+    <p class="fgs-offer-meta">Verkauft{% if r.sold_year %} {{ r.sold_year }}{% endif %}</p>
+    <h3 class="fgs-offer-title">{{ r.title }}</h3>
+    <dl class="fgs-offer-facts">
+      {% if r.living_space %}<div><dt>Wohnfläche</dt><dd>{{ r.living_space }}</dd></div>{% endif %}
+      {% if r.rooms %}<div><dt>Zimmer</dt><dd>{{ r.rooms }}</dd></div>{% endif %}
+      {% if r.construction_year %}<div><dt>Baujahr</dt><dd>{{ r.construction_year }}</dd></div>{% elif r.plot_area %}<div><dt>Grundstück</dt><dd>{{ r.plot_area }}</dd></div>{% endif %}
+    </dl>
+    <span class="fgs-link">Referenz ansehen{% include "fgs-arrow.njk" %}</span>
+  </a>
+</article>
+{%- endmacro -%}

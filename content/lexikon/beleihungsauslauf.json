@@ -7,11 +7,97 @@
   "keywords": [
     "beleihungsauslauf"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Finanzierung",
-  "explanation": "Der Beleihungsauslauf ist das Verhältnis der relevanten Darlehenssumme zum bankinternen Beleihungswert. Er unterscheidet sich von der einfachen Kaufpreisfinanzierungsquote, weil der Beleihungswert unter dem Kaufpreis liegen kann. Banken nutzen Beleihungsausläufe häufig zur Risikoklassifizierung und Konditionsstaffelung.",
-  "practiceExample": "360.000 € Darlehen bei 450.000 € Beleihungswert ergeben 80 % Beleihungsauslauf. Liegt der Kaufpreis bei 500.000 €, beträgt die Kaufpreisfinanzierungsquote dagegen nur 72 %.",
-  "formula": "Beleihungsauslauf = Darlehen / Beleihungswert",
+  "explanation": "Der Beleihungsauslauf beschreibt das Verhältnis zwischen Ihrem Darlehen und dem Beleihungswert der Immobilie. Der Beleihungswert ist nicht der Kaufpreis, sondern der Wert, der über die gesamte Dauer der Beleihung bei einem Verkauf voraussichtlich erzielt werden kann, ohne vorübergehende Schwankungen und spekulative Anteile. Er darf den Marktwert nicht übersteigen.",
+  "practiceExample": "Eine Wohnung kostet 300.000 €, die Bank setzt den Beleihungswert 10 % niedriger an, also bei 270.000 €. Ein Darlehen von 240.000 € ergibt einen Beleihungsauslauf von 88,9 %, ein Darlehen in Höhe des Kaufpreises 111,1 %. Werden auch die Kaufnebenkosten finanziert, steigt er weiter.",
+  "formula": "Beleihungsauslauf = Darlehen / Beleihungswert × 100 %",
   "sources": [],
-  "assistantAnswer": "Verhältnis von Darlehen zu bankseitigem Beleihungswert. Der Beleihungsauslauf ist das Verhältnis der relevanten Darlehenssumme zum bankinternen Beleihungswert. Er unterscheidet sich von der einfachen Kaufpreisfinanzierungsquote, weil der Beleihungswert unter dem Kaufpreis liegen kann. Banken nutzen Beleihungsausläufe häufig zur Risikoklassifizierung und Konditionsstaffelung."
+  "assistantAnswer": "Verhältnis von Darlehen zu bankseitigem Beleihungswert. Der Beleihungsauslauf ist das Verhältnis der relevanten Darlehenssumme zum bankinternen Beleihungswert. Er unterscheidet sich von der einfachen Kaufpreisfinanzierungsquote, weil der Beleihungswert unter dem Kaufpreis liegen kann. Banken nutzen Beleihungsausläufe häufig zur Risikoklassifizierung und Konditionsstaffelung.",
+  "ausbau": {
+    "einordnung": [
+      "Der Beleihungsauslauf beschreibt das Verhältnis zwischen Ihrem Darlehen und dem Beleihungswert der Immobilie.[[1]] Der Beleihungswert ist nicht der Kaufpreis, sondern der Wert, der über die gesamte Dauer der Beleihung bei einem Verkauf voraussichtlich erzielt werden kann, ohne vorübergehende Schwankungen und spekulative Anteile.[[2]] Er darf den Marktwert nicht übersteigen.[[3]]",
+      "Wie weit er unter dem Kaufpreis liegt, schätzen die Quellen unterschiedlich ein: Fischer & Geserich nennt meist 10 bis 20 % unter dem Kaufpreis,[[4]] Finanztip meist 20 bis 30 % unter dem aktuellen Wert.[[5]]",
+      "Banken staffeln ihre Zinsen nach dem Auslauf, etwa bis 60, 80, 90 und 100 %; Grenzen und Aufschläge unterscheiden sich von Bank zu Bank.[[4]] Unter 60 % gibt es nach Finanztip in der Regel die unterste Zinsstufe.[[5]] Die 60 % finden sich auch im Pfandbriefgesetz: Bis zu dieser Höhe dürfen Pfandbriefbanken Darlehen zur Deckung ihrer Pfandbriefe nutzen.[[6]]"
+    ],
+    "beispiel": [
+      "Eine Wohnung kostet 300.000 €, die Bank setzt den Beleihungswert 10 % niedriger an, also bei 270.000 €. Ein Darlehen von 240.000 € ergibt einen Beleihungsauslauf von 88,9 %, ein Darlehen in Höhe des Kaufpreises 111,1 %. Werden auch die Kaufnebenkosten finanziert, steigt er weiter."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Fehlendes Eigenkapital wandert in den Kredit, und Auslauf und Zins steigen spürbar. Werden die Kaufnebenkosten mitfinanziert, liegt der Auslauf schnell bei 110 %; mehr als 120 % finanziert kaum eine Bank.[[1]] Liegen Sie knapp über einer Stufe, kann wenig zusätzliches Eigenkapital einen günstigeren Zins bringen.[[5]]"
+        ]
+      },
+      {
+        "h2": "Was es für Anleger heißt",
+        "absaetze": [
+          "Ein hoher Auslauf bindet weniger eigenes Geld im Objekt, kostet aber mehr Zins und lässt mehr Restschuld für die Anschlussfinanzierung. Rechnen Sie beide Varianten mit Rate, Cashflow und Restschuld durch, bevor Sie sich für eine Finanzierungsquote entscheiden."
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "Fischer & Geserich: Finanzierung",
+        "url": "https://fg-realestate.de/finanzierungsberatung.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 3 Beleihungswertermittlungsverordnung (BelWertV)",
+        "url": "https://www.gesetze-im-internet.de/belwertv/__3.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 16 Pfandbriefgesetz (PfandBG)",
+        "url": "https://www.gesetze-im-internet.de/pfandbg/__16.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich, Blog: Beleihungsauslauf, 100 % und 110 % Finanzierung",
+        "url": "https://fg-realestate.de/blog/beleihungsauslauf-und-kondition/",
+        "stand": "Stand Oktober 2026, abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Beleihungswert",
+        "url": "https://www.finanztip.de/baufinanzierung/beleihungswert/",
+        "stand": "Stand 23.02.2026"
+      },
+      {
+        "name": "§ 14 Pfandbriefgesetz (PfandBG)",
+        "url": "https://www.gesetze-im-internet.de/pfandbg/__14.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Verhältnis Kredit zu Beleihungswert; mit Nebenkosten schnell 110 %, über 120 % kaum eine Bank; fehlendes Eigenkapital erhöht Auslauf und Zins (F&G)",
+        "fundstelle": "runde-2.md, L06"
+      },
+      {
+        "zahl": "Definition Beleihungswert",
+        "fundstelle": "runde-2.md, L01"
+      },
+      {
+        "zahl": "höchstens Marktwert",
+        "fundstelle": "runde-2.md, L02"
+      },
+      {
+        "zahl": "F&G-Blog: meist 10 bis 20 % unter Kaufpreis; Stufen 60/80/90/100; je Bank verschieden",
+        "fundstelle": "runde-2.md, L07"
+      },
+      {
+        "zahl": "Finanztip: meist 20 bis 30 % unter aktuellem Wert; unter 60 % unterste Stufe; wenig Eigenkapital kann eine Stufe sparen",
+        "fundstelle": "runde-2.md, L04, L05"
+      },
+      {
+        "zahl": "60 % Deckungsgrenze Pfandbrief",
+        "fundstelle": "runde-2.md, L03"
+      },
+      {
+        "zahl": "240.000 / 270.000 = 88,9 %; 300.000 / 270.000 = 111,1 %",
+        "fundstelle": "Rechnung, Marktprüfung runde-2.md"
+      }
+    ]
+  }
 }

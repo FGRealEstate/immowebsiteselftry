@@ -7,11 +7,93 @@
   "keywords": [
     "bonität"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Finanzierung",
   "formula": null,
   "sources": [],
   "assistantAnswer": "Einschätzung der Fähigkeit und Bereitschaft, Verpflichtungen zu erfüllen. Bonität beschreibt die Fähigkeit und Bereitschaft eines Schuldners, finanzielle Verpflichtungen vertragsgemäß zu erfüllen. Banken beurteilen dafür Einkommen, Vermögen, Verpflichtungen, Zahlungsverhalten und weitere Risikomerkmale.",
-  "explanation": "Bonität beschreibt die Fähigkeit und Bereitschaft eines Schuldners, finanzielle Verpflichtungen vertragsgemäß zu erfüllen. Banken beurteilen dafür Einkommen, Vermögen, Verpflichtungen, Zahlungsverhalten und weitere Risikomerkmale.",
-  "practiceExample": "Zwei Käufer mit gleichem Einkommen können unterschiedliche Kreditkonditionen erhalten, wenn einer hohe Konsumentenkredite und der andere hohe liquide Reserven hat."
+  "explanation": "Bonität beschreibt, wie wahrscheinlich es ist, dass Sie ein Darlehen vertragsgemäß bedienen. Vor jedem Verbraucherdarlehen muss die Bank Ihre Kreditwürdigkeit prüfen. Bei einer Immobilienfinanzierung muss die Prüfung ergeben, dass Sie Ihre Pflichten aus dem Vertrag wahrscheinlich erfüllen werden; sonst darf die Bank nicht abschließen.",
+  "practiceExample": "Zwei Käufer verdienen gleich viel. Einer zahlt 400 € im Monat für einen Autokredit. Rechnet die Bank mit einem Beispielzins von 4 % und 1,5 % Tilgung, kann er rund 87.000 € weniger Darlehen bedienen als der andere.",
+  "ausbau": {
+    "einordnung": [
+      "Bonität beschreibt, wie wahrscheinlich es ist, dass Sie ein Darlehen vertragsgemäß bedienen. Vor jedem Verbraucherdarlehen muss die Bank Ihre Kreditwürdigkeit prüfen. Bei einer Immobilienfinanzierung muss die Prüfung ergeben, dass Sie Ihre Pflichten aus dem Vertrag wahrscheinlich erfüllen werden; sonst darf die Bank nicht abschließen.[[1]]",
+      "Grundlage sind Einkommen, Ausgaben und weitere finanzielle Umstände. Die Prüfung darf sich nicht hauptsächlich darauf stützen, dass die Immobilie mehr wert ist als das Darlehen oder im Wert steigen wird. Die Bank prüft Ihre Angaben, wenn nötig anhand von Unterlagen.[[2]] Banken rechnen dabei unter anderem mit dem Haushaltsüberschuss.[[3]]",
+      "Die Schufa ist eine Quelle unter mehreren. Sie speichert zum Beispiel kein Einkommen; das Gehalt teilen Sie der Bank beim Antrag mit. Eine Konditionsanfrage ist Schufa-neutral, und die Schufa muss Ihnen kostenlos eine Kopie Ihrer Daten geben. Im Dezember 2023 entschied der Europäische Gerichtshof, dass Unternehmen den Schufa-Score nicht als alleinige Grundlage für einen Vertragsabschluss nutzen dürfen.[[4]]"
+    ],
+    "beispiel": [
+      "Zwei Käufer verdienen gleich viel. Einer zahlt 400 € im Monat für einen Autokredit. Rechnet die Bank mit einem Beispielzins von 4 % und 1,5 % Tilgung, kann er rund 87.000 € weniger Darlehen bedienen als der andere."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Legen Sie Einkommensnachweise und eine Übersicht über laufende Kredite bereit, bevor Sie anfragen, und prüfen Sie Ihre Schufa-Daten. Eine Finanzierung ist nicht garantiert: Objekt, Bonität, Währung und Beleihung entscheiden im Einzelfall. Fischer & Geserich fragt über Europace und Baufinex sowie direkte Bankkontakte an.[[5]]"
+        ]
+      },
+      {
+        "h2": "Was es für Verkäufer heißt",
+        "absaetze": [
+          "Beim Verkauf zählt die Bonität des Käufers. Fischer & Geserich denkt Finanzierung und Bonität der Interessenten früh mit.[[6]] Fragen Sie Interessenten deshalb früh nach dem Stand ihrer Finanzierung."
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "§ 505a BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__505a.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 505b BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__505b.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Finanzierung",
+        "url": "https://fg-realestate.de/finanzierungsberatung.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Schufa",
+        "url": "https://www.finanztip.de/schufa/",
+        "stand": "Stand 10.12.2025"
+      },
+      {
+        "name": "Fischer & Geserich: Über uns",
+        "url": "https://fg-realestate.de/ueber-uns.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Startseite",
+        "url": "https://fg-realestate.de/",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Pflicht zur Kreditwürdigkeitsprüfung; bei Immobiliar-Verbraucherdarlehen Erfüllung wahrscheinlich",
+        "fundstelle": "runde-2.md, O01"
+      },
+      {
+        "zahl": "Einkommen, Ausgaben; nicht hauptsächlich Immobilienwert; Unterlagen",
+        "fundstelle": "runde-2.md, O02"
+      },
+      {
+        "zahl": "Haushaltsüberschuss (F&G)",
+        "fundstelle": "runde-2.md, O04"
+      },
+      {
+        "zahl": "kein Einkommen bei der Schufa, Gehalt mit Antrag; Konditionsanfrage neutral; Datenkopie kostenlos; EuGH 12/2023",
+        "fundstelle": "runde-2.md, O03"
+      },
+      {
+        "zahl": "keine Garantie, Einzelfall; Europace, Baufinex, direkte Bankkontakte; Bonität der Interessenten früh mitgedacht (F&G)",
+        "fundstelle": "runde-2.md, O04; SCHREIBREGELN.md Regel 4"
+      },
+      {
+        "zahl": "400 × 12 / (4 % + 1,5 %) = 87.273 €",
+        "fundstelle": "Rechnung, Marktprüfung runde-2.md"
+      }
+    ]
+  }
 }

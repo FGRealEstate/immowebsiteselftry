@@ -1,0 +1,68 @@
+---
+layout: fgs-page.njk
+fgsHero: false
+title: "Referenzen: verkaufte Immobilien | Fischer & Geserich"
+permalink: referenzen/index.html
+canonicalPath: /referenzen/
+description: "Immobilien, die Fischer & Geserich verkauft hat: Objektart, Lage und Eckdaten, ohne Kaufpreis. Mit Links zu den Marktseiten der Gebiete."
+# Update 4, 3.2: verkaufte Objekte aus Propstack (propstack.references, Status „Verkauft“), ohne Preis.
+# Ohne freigegebene Referenzen zeigt die Seite einen Hinweis, steht auf noindex und fehlt in der Sitemap (.eleventy.js).
+# CP4 (28.10.2026, Design-Sprint-Brief 5.4): Titelzeile ohne Foto, Karten aus fgs-offer-card.njk. Entfallen: Kicker über der H2
+# (Update 6 §3.0), Linkliste unten (pg.related, Brief 3.7).
+eleventyComputed:
+  robots: "{% if not (propstack.references and propstack.references.length) %}noindex, follow{% endif %}"
+pg:
+  crumb: "Referenzen"
+  kicker: "Verkauft"
+  h1: "Referenzen: Immobilien, die wir verkauft haben"
+  intro: "Hier zeigen wir Objekte, die wir verkauft haben, mit Objektart, Lage und Eckdaten, ohne Kaufpreis. Jede Referenz verweist auf die Marktseite ihres Gebiets."
+  buttons:
+    - { label: "Kostenlose Bewertung", href: "/immobilienbewertung/" }
+    - { label: "Immobilie verkaufen", href: "/verkaufen.html", line: true }
+  contact: lennart
+  closing:
+    title: "Was ist Ihre Immobilie heute wert?"
+    text: "Die Wertermittlung kostet Sie nichts und liegt meist noch am selben Tag vor. Danach entscheiden Sie in Ruhe, ob und wann Sie verkaufen."
+    button: bewertung
+  schema:
+    type: CollectionPage
+    id: referenzen
+---
+{% from "fgs-offer-card.njk" import referenceCard %}
+{% set refs = propstack.references or [] %}
+
+<section class="fgs-section fgs-offers" id="referenzen" aria-labelledby="referenzen-titel">
+  <div class="fgs-wrap">
+    {% if refs.length %}
+    <div class="fgs-offer-group">
+      <div class="fgs-offer-head">
+        <h2 id="referenzen-titel">Verkaufte Wohnungen und Häuser</h2>
+        <p class="fgs-small">{{ refs.length }} {{ "Referenz" if refs.length == 1 else "Referenzen" }}</p>
+      </div>
+      <div class="fgs-offer-grid">
+        {% for r in refs %}{{ referenceCard(r) | safe }}{% endfor %}
+      </div>
+    </div>
+    {% else %}
+    <h2 id="referenzen-titel">Noch keine Referenzen freigegeben</h2>
+    <p class="fgs-lead fgs-offers-empty">Gerade sind hier noch keine verkauften Objekte freigegeben. Was wir aktuell vermarkten, finden Sie unter <a href="/angebote.html">Angebote</a>; was Kundinnen und Kunden über uns schreiben, unter <a href="/bewertungen/">Bewertungen</a>.</p>
+    {% endif %}
+  </div>
+</section>
+
+{% if refs.length %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "https://fg-realestate.de/referenzen/#liste",
+  "name": "Referenzen von Fischer & Geserich: verkaufte Immobilien",
+  "isPartOf": { "@id": "https://fg-realestate.de/referenzen/#referenzen" },
+  "numberOfItems": {{ refs.length }},
+  "itemListElement": [
+    {% for r in refs %}{ "@type": "ListItem", "position": {{ loop.index }}, "url": "https://fg-realestate.de{{ r.url }}", "name": {{ r.title | dump | safe }} }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

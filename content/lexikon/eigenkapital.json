@@ -7,11 +7,75 @@
   "keywords": [
     "eigenkapital"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Immobilienkauf",
-  "explanation": "Eigenkapital umfasst die für den Erwerb eingesetzten eigenen Mittel. Mehr Eigenkapital reduziert Darlehen und kann den Beleihungsauslauf senken; dadurch kann sich die Bankkondition verbessern. Gleichzeitig sinkt die frei verfügbare Liquiditätsreserve.",
-  "practiceExample": "Bei 400.000 € Kaufpreis und 40.000 € Nebenkosten führen 40.000 € Eigenkapital zu 400.000 € Darlehen. Werden 80.000 € eingesetzt, sinkt das Darlehen auf 360.000 €; wenn dadurch zusätzlich eine bessere Zinsstufe erreicht wird, reduziert sich die Rate überproportional.",
+  "explanation": "Eigenkapital sind die eigenen Mittel, die Sie in einen Immobilienkauf einbringen, etwa Erspartes, Wertpapiere, Bausparguthaben oder eine Schenkung. Für den Teil, der nicht aus Eigenkapital kommt, schließen Sie Darlehensverträge ab.",
+  "practiceExample": "Sie kaufen eine Wohnung in Berlin für 300.000 €. Die Kaufnebenkosten betragen mit Makler rund 33.200 €. Bringen Sie 63.200 € ein, bleibt ein Darlehen von 270.000 €, also 90 % des Kaufpreises. Bei einem Beispielzins von 4 % und 1,5 % Tilgung beträgt die Monatsrate 1.237,50 €. Bringen Sie nur die Nebenkosten mit, beträgt das Darlehen 300.000 € und die Rate bei gleichen Konditionen 1.375 €; bei dieser Beleihung kann der Zins allerdings höher liegen.",
   "formula": "Eigenkapitalbedarf = Nebenkosten + nicht finanzierter Kaufpreisanteil + geplante Reserve",
   "sources": [],
-  "assistantAnswer": "Eigene Mittel, die in Kauf und Nebenkosten eingebracht werden. Eigenkapital umfasst die für den Erwerb eingesetzten eigenen Mittel. Mehr Eigenkapital reduziert Darlehen und kann den Beleihungsauslauf senken; dadurch kann sich die Bankkondition verbessern. Gleichzeitig sinkt die frei verfügbare Liquiditätsreserve."
+  "assistantAnswer": "Eigene Mittel, die in Kauf und Nebenkosten eingebracht werden. Eigenkapital umfasst die für den Erwerb eingesetzten eigenen Mittel. Mehr Eigenkapital reduziert Darlehen und kann den Beleihungsauslauf senken; dadurch kann sich die Bankkondition verbessern. Gleichzeitig sinkt die frei verfügbare Liquiditätsreserve.",
+  "ausbau": {
+    "einordnung": [
+      "Eigenkapital sind die eigenen Mittel, die Sie in einen Immobilienkauf einbringen, etwa Erspartes, Wertpapiere, Bausparguthaben oder eine Schenkung. Für den Teil, der nicht aus Eigenkapital kommt, schließen Sie Darlehensverträge ab.[[1]]",
+      "Der Finanzierungsbedarf umfasst Kaufpreis, Grunderwerbsteuer, Notar und Grundbuch, gegebenenfalls die Maklerprovision und Mittel für geplante Renovierungen.[[1]] Für eine Kapitalanlage nennt Fischer & Geserich in der Regel mindestens 10 % des Kaufpreises.[[2]]",
+      "Wie viel Eigenkapital sinnvoll ist, hängt von Zinsniveau, Einkommen und Ziel ab. Mehr Eigenkapital senkt Darlehen und Rate; weniger Eigenkapital lässt Geld für Reserven. Bei höherer Beleihung und schwächerer Bonität kann der Zins deutlich höher liegen.[[3]]"
+    ],
+    "beispiel": [
+      "Sie kaufen eine Wohnung in Berlin für 300.000 €. Die Kaufnebenkosten betragen mit Makler rund 33.200 €. Bringen Sie 63.200 € ein, bleibt ein Darlehen von 270.000 €, also 90 % des Kaufpreises.",
+      "Bei einem Beispielzins von 4 % und 1,5 % Tilgung beträgt die Monatsrate 1.237,50 €. Bringen Sie nur die Nebenkosten mit, beträgt das Darlehen 300.000 € und die Rate bei gleichen Konditionen 1.375 €; bei dieser Beleihung kann der Zins allerdings höher liegen.[[3]]"
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Halten Sie neben dem Eigenkapital eine Reserve zurück, etwa für Reparaturen oder eine Sonderumlage. Welche Aufteilung passt, hängt von Einkommen, Zinsniveau und Ihren Plänen ab."
+        ]
+      },
+      {
+        "h2": "Was es für Anleger heißt",
+        "absaetze": [
+          "Bei einer Kapitalanlage beeinflusst der Eigenkapitaleinsatz Rate, Cashflow und Eigenkapitalrendite zugleich. Eine Finanzierung mit sehr wenig Eigenkapital kann bei der Bank durchgehen und trotzdem nicht zu Ihrer Lage passen; Fischer & Geserich sagt Ihnen das dann auch.[[2]]"
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "Bundesnotarkammer: Der Kauf einer gebrauchten Immobilie (Infoblatt)",
+        "url": "https://www.bnotk.de/fileadmin/user_upload_bnotk/presse/Informationsmaterialien/Infoblatt_Kauf-einer-gebrauchten-Immobilie.pdf",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Kapitalanlage",
+        "url": "https://fg-realestate.de/kapitalanlage.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Aktuelle Bauzinsen",
+        "url": "https://www.finanztip.de/baufinanzierung/hypothekenzinsen/",
+        "stand": "Stand 25.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Finanzierungsbedarf, Rest per Darlehen",
+        "fundstelle": "runde-1.md, K15"
+      },
+      {
+        "zahl": "mindestens 10 % (F&G); zu wenig Eigenkapital (F&G)",
+        "fundstelle": "runde-1.md, E03, E02"
+      },
+      {
+        "zahl": "höherer Zins bei höherer Beleihung und schwächerer Bonität",
+        "fundstelle": "runde-1.md, E01"
+      },
+      {
+        "zahl": "Nebenkosten 33.210 € (6 % + 3,57 % + 1,5 %), gerundet 33.200 €; 63.200 € Eigenkapital → 270.000 € Darlehen (90 %)",
+        "fundstelle": "Rechnung aus K01, M08, K12"
+      },
+      {
+        "zahl": "Rate 270.000 × 5,5 % / 12 = 1.237,50 €; 300.000 × 5,5 % / 12 = 1.375 €",
+        "fundstelle": "Rechnung; Beispielzins 4 % und Tilgung 1,5 % nach Timon (beispiele-marktcheck.md, „Wie Timon rechnet“); Markt 4,4 % (E01)"
+      }
+    ]
+  }
 }

@@ -1,13 +1,210 @@
 ---
-layout: base.njk
+layout: fgs-service.njk
+bodyClass: fgs-service
 permalink: betreuung-nach-dem-kauf/index.html
 canonicalPath: /betreuung-nach-dem-kauf/
 title: "Betreuung nach dem Immobilienkauf | Fischer & Geserich"
-description: "Nach dem Notartermin bleiben wir ansprechbar: Restnutzungsdauer, Mietstrategie, Handwerker, Vermietung, Finanzierung und passende Spezialisten."
+description: "Nach dem Notartermin bleiben wir ansprechbar: Übergabe, Hausverwaltung, Versicherung, Unterlagen für die Steuer, Restnutzungsdauer, Mietstrategie und der richtige Zeitpunkt, die Finanzierung zu prüfen."
+# Brief Design-Pass §4.2: Text bleibt. Neu: die ersten zwölf Monate (Übergabe, Hausverwaltung, Versicherung mit
+# Peter Csaszar, Steuerunterlagen) und wann die Finanzierung geprüft werden sollte.
+# Rechtsstand am 26.10.2026 auf gesetze-im-internet.de geprüft: §§ 556 Abs. 3, 566, 566a BGB, §§ 95–97 VVG, § 9 GrStG,
+# § 489 BGB (wie auf der Finanzierungsseite). Ergänzende Sätze aus dem freigegebenen Betreuungstext (mangoTexte.betreuung)
+# und aus mangoTexte.home (Anruf ein bis zwei Wochen nach der Beurkundung).
+service:
+  id: betreuung
+  crumb: "Betreuung nach dem Kauf"
+  kicker: "Nach dem Notartermin"
+  h1: "Betreuung nach dem Immobilienkauf in Berlin"
+  intro: "Viele Fragen kommen erst nach dem Notartermin: Kaufpreiszahlung, Übergabe, Miete, Modernisierung und Steuern. Wir bleiben Ihr Ansprechpartner und vermitteln bei Bedarf Gutachter, Handwerker und Hausverwaltungen."
+  button: { label: "Nächste Schritte besprechen", href: "#kontakt" }
+  hero: { name: "betreuung-hero", alt: "Blick nach oben in ein gewendeltes Altbau-Treppenhaus mit verziertem Geländer in Berlin-Mitte" }
+  keyfacts:
+    - { label: "Erster Anruf", wert: "ein bis zwei Wochen nach der Beurkundung" }
+    - { label: "Vermittlung", wert: "kostet Sie nichts" }
+  summaryQ: "Was übernimmt Fischer & Geserich nach dem Kauf?"
+  summary:
+    - "Wir begleiten Übergabe, Hausverwaltung, Versicherungen und Steuerunterlagen, rechnen Miete und Modernisierung mit Ihnen durch und sagen Ihnen, wann sich ein Blick auf die Finanzierung lohnt. Die Vermittlung an Gutachter, Handwerker und Hausverwaltungen kostet Sie nichts."
+  faqTitle: "Häufige Fragen zur Betreuung nach dem Kauf"
+  faq:
+    - q: "Was passiert nach dem Notartermin?"
+      a: "Nach der Beurkundung folgen Kaufpreiszahlung, Eigentumsumschreibung und Übergabe. Parallel klären wir mit Ihnen, welche Themen wie Mietstrategie, Modernisierung oder ein Restnutzungsdauergutachten für Ihr Objekt sinnvoll sind."
+    - q: "Kostet die Vermittlung an Spezialisten extra?"
+      a: "Für die reine Herstellung eines Kontakts zu einem passenden Spezialisten berechnen wir Ihnen keine zusätzliche Vermittlungsgebühr. Die konkrete Leistung des Dienstleisters wird mit diesem selbst vereinbart."
+    - q: "Begleitet F&G auch erfahrene Investoren?"
+      a: "Ja. Der Umfang verändert sich: Bei Einsteigern erklären wir mehr Grundlagen, bei erfahrenen Anlegern liegt der Schwerpunkt stärker auf Strategie, Finanzierung und Optimierung."
+    - q: "Was gilt für den Mietvertrag, wenn ich eine vermietete Wohnung kaufe?"
+      a: "Der Mietvertrag bleibt bestehen. Mit der Eintragung im Grundbuch treten Sie an die Stelle des Verkäufers, auch bei der Kaution (§§ 566, 566a BGB). Ab wann Ihnen die Miete zusteht, regelt der Kaufvertrag."
+    # FG-Gap-Answers 7.3 (SOURCE), selbst geschrieben, nur aus berlin.de (Senatsverwaltung für Finanzen), abgerufen 28.10.2026:
+    # berlin.de/grundsteuer/ (Messzahlen 0,31 / 0,45 Promille ab 01.01.2025; Hebesatz 470 % ab 01.01.2025);
+    # FAQ Grundsteuer, berlin.de/sen/finanzen/steuern/informationen-fuer-steuerzahler-/faq-steuern/artikel.9031.php
+    # (Berechnungsschritte; „Wie hoch ist der Hebesatz in Berlin?“: im Haushaltsgesetz festgelegt, seit 2025 470 % für Grundstücke;
+    # Beispiel 150.000 € × 0,31/1000 = 46,50 € × 470 % = 218,55 €); Grundsteuerrechner berlin.de/sen/finanzen/steuern/artikel.1417089.php.
+    # Aus, bis Jesu die Quellen geprüft hat (freigaben.quelleFaq, Brief §9).
+    - q: "Wie berechne ich die Grundsteuer in Berlin?"
+      a: "In drei Schritten: Grundsteuerwert mal Steuermesszahl ergibt den Steuermessbetrag und Steuermessbetrag mal Hebesatz ergibt die Grundsteuer für das Jahr. In Berlin beträgt die Steuermesszahl seit dem 1. Januar 2025 für Wohngrundstücke 0,31 Promille, für Nichtwohngrundstücke und unbebaute Grundstücke 0,45 Promille. Den Hebesatz legt das Abgeordnetenhaus im Haushaltsgesetz fest; er beträgt seit 2025 470 Prozent. Im Beispiel der Senatsverwaltung für Finanzen ergibt ein Wohngrundstück mit einem Grundsteuerwert von 150.000 Euro einen Messbetrag von 46,50 Euro und eine Grundsteuer von 218,55 Euro im Jahr. Grundsteuerwert und Messbetrag stehen in den Bescheiden Ihres Finanzamts. Nachrechnen können Sie mit dem <a href=\"https://www.berlin.de/sen/finanzen/steuern/artikel.1417089.php\" target=\"_blank\" rel=\"noopener\">Grundsteuerrechner der Senatsverwaltung für Finanzen</a>; alle Angaben stehen auf ihrer Seite <a href=\"https://www.berlin.de/grundsteuer/\" target=\"_blank\" rel=\"noopener\">Informationen zur Berliner Grundsteuer</a> (Quelle: Senatsverwaltung für Finanzen Berlin, abgerufen am 28.10.2026)."
+      quelle: "7.3"
+  related:
+    services:
+      - { label: "Immobilie vermieten", note: "Mieterauswahl, Mietspiegel und Vertrag", href: "/vermieten.html", bild: "vermieten-hero", alt: "Altbau-Wohnhäuser von Riehmers Hofgarten an der Hagelberger Straße in Berlin-Kreuzberg, rechts ein Baum" }
+      - { label: "Finanzierungsberatung", note: "Anschlussfinanzierung und Umschuldung", href: "/finanzierungsberatung.html", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
+      - { label: "Kapitalanlage", note: "Das nächste Objekt planen", href: "/kapitalanlage.html", bild: "kapitalanlage-hero", alt: "Gründerzeithaus von 1871 an der Humboldtstraße im Leipziger Waldstraßenviertel" }
+    lexikon: [restnutzungsdauer, hausgeld, anschlussfinanzierung]
+  contact: lennart
+  closing:
+    title: "Nach dem Notartermin geht es weiter"
+    text: "Sagen Sie uns, welches Objekt Sie gekauft haben und was als Nächstes ansteht. Das erste Gespräch kostet nichts."
+    button: gespraech
+  schema:
+    name: "Betreuung nach dem Immobilienkauf"
+    serviceType: "Betreuung nach dem Immobilienkauf"
+    description: "Begleitung nach dem Notartermin: Übergabe, Vermittlung an Hausverwaltungen, Gutachter und Handwerker, Versicherung, Unterlagen für die Steuer, Mietstrategie, Modernisierung und Prüfung der Finanzierung."
+    area: regional
 ---
-<div class="fg-premium-page"><section class="fg-premium-hero"><div class="fg-premium-shell"><div class="fg-premium-hero-grid"><div><p class="fg-premium-kicker fg-premium-kicker-light">Nach dem Notartermin</p><h1>Der Kauf ist abgeschlossen. Die Arbeit am Investment beginnt.</h1><p class="fg-premium-hero-lead">Kaufpreiszahlung, Übergabe, Mietstrategie, Modernisierung und steuerliche Fragen entstehen oft erst nach der Beurkundung. Genau dann bleiben wir ansprechbar und koordinieren bei Bedarf passende Spezialisten.</p><div class="fg-premium-actions"><a href="/kontakt.html" class="btn-85 px-7 py-4">Nächste Schritte besprechen <i class="fas fa-arrow-right"></i></a><a href="#erste-wochen" class="fg-premium-outline">Was zuerst ansteht</a></div></div><aside class="fg-premium-sidecard"><span>Typische Themen</span><h2>Von der Übergabe bis zur nächsten Strategie.</h2><ul><li><i class="fas fa-file-signature"></i><span>Restnutzungsdauer &amp; Abschreibungsfragen mit spezialisierten Partnern</span></li><li><i class="fas fa-chart-line"></i><span>Mietstrategie, Neuvermietung und wirtschaftliche Modernisierung</span></li><li><i class="fas fa-screwdriver-wrench"></i><span>Handwerker, Verwaltung und weitere Dienstleister koordinieren</span></li></ul></aside></div></div></section>
-<section class="fg-premium-statbar"><div class="fg-premium-shell"><div class="fg-premium-statgrid"><div><small>01</small><strong>Übergabe</strong><span>Fristen, Dokumente und praktische Übernahme</span></div><div><small>02</small><strong>Mietstrategie</strong><span>Ist-Miete, Spielräume und Neuvermietung einordnen</span></div><div><small>03</small><strong>Objektstrategie</strong><span>Modernisierung nur, wenn die Rechnung trägt</span></div><div><small>04</small><strong>Netzwerk</strong><span>Spezialisten passend zum konkreten Fall</span></div></div></div></section>
-<section id="erste-wochen" class="fg-premium-section"><div class="fg-premium-shell"><div class="fg-premium-head"><p class="fg-premium-kicker">Die ersten Wochen</p><h2>Drei Fragen tauchen besonders häufig auf.</h2><p>Welche davon relevant ist, hängt vom Objekt, Mietstatus und Ihrer persönlichen Strategie ab.</p></div><div class="fg-premium-grid-3"><article class="fg-premium-card"><div class="fg-premium-card-icon"><i class="fas fa-file-invoice-dollar"></i></div><h3>Restnutzungsdauer</h3><p>Ein qualifiziertes Gutachten kann für die steuerliche Abschreibung relevant sein. Wir ordnen ein, wann eine Prüfung sinnvoll ist, und stellen auf Wunsch den Kontakt zu einem geeigneten Spezialisten her.</p></article><article class="fg-premium-card"><div class="fg-premium-card-icon"><i class="fas fa-coins"></i></div><h3>Mietanpassung</h3><p>Wir betrachten aktuelle Miete, Mietstatus, rechtliche Rahmenbedingungen und die langfristige Strategie. Bei einem Mieterwechsel verändert sich die Ausgangslage häufig deutlich.</p></article><article class="fg-premium-card"><div class="fg-premium-card-icon"><i class="fas fa-hammer"></i></div><h3>Modernisierung</h3><p>Bevor Geld fließt, rechnen wir Nutzen und Kosten gegeneinander. Erst wenn die Maßnahme wirtschaftlich plausibel ist, wird die Umsetzung mit geeigneten Partnern geplant.</p></article></div></div></section>
-<section class="fg-premium-section fg-premium-section-dark"><div class="fg-premium-shell"><div class="fg-premium-head"><p class="fg-premium-kicker fg-premium-kicker-light">Je nach Bestand</p><h2>Eine Eigentumswohnung braucht andere Antworten als ein Mehrfamilienhaus.</h2><p>Unsere Begleitung richtet sich nach Komplexität, Erfahrung und Objektgröße.</p></div><div class="fg-premium-grid-3"><article class="fg-premium-card fg-premium-card-dark"><h3>Erste Kapitalanlage</h3><p>Wir erklären Abläufe und Entscheidungen ausführlicher und helfen, eine belastbare Routine für das erste Objekt aufzubauen.</p></article><article class="fg-premium-card fg-premium-card-dark"><h3>Bestehendes Portfolio</h3><p>Bei erfahrenen Anlegern stehen Struktur, Finanzierung, Optimierung und Priorisierung im Vordergrund – weniger Grundlagen, mehr Strategie.</p></article><article class="fg-premium-card fg-premium-card-dark"><h3>Mehrfamilienhaus</h3><p>Mehr Einheiten bedeuten zusätzliche Themen: Mietmanagement, Capex, Finanzierung, energetische Maßnahmen und mögliche Zusatzkonzepte.</p></article></div></div></section>
-<section class="fg-premium-section"><div class="fg-premium-shell"><div class="fg-premium-split"><div class="fg-premium-feature-copy"><p class="fg-premium-kicker">Unser Prinzip</p><h2>Wir verdienen nicht daran, Ihnen jeden Partner aufzudrängen.</h2><p>Bei Gutachtern, Handwerkern oder Hausverwaltungen vermitteln wir Kontakte, wenn sie sinnvoll sind. Die jeweilige Leistung und Vergütung vereinbaren Sie mit dem Dienstleister. Wo F&amp;G selbst eine vergütungspflichtige Leistung übernimmt – etwa eine Vermietung – wird das vorher transparent vereinbart.</p></div><aside class="fg-premium-panel"><p class="fg-premium-kicker fg-premium-kicker-light">Weiterdenken</p><h3>Das nächste Objekt beginnt mit den Erfahrungen aus dem ersten.</h3><p>Deshalb interessiert uns nicht nur der Notartermin, sondern ob Finanzierung, Vermietung und Bewirtschaftung danach zu Ihrer Strategie passen.</p><a href="/investment-lab.html" class="fg-invest-link">Investment Lab öffnen <i class="fas fa-arrow-right"></i></a></aside></div></div></section></div>
-{% set faqItems=[{q:"Was passiert nach dem Notartermin?",a:"Nach der Beurkundung folgen Kaufpreiszahlung, Eigentumsumschreibung und Übergabe. Parallel klären wir mit Ihnen, welche Themen wie Mietstrategie, Modernisierung oder ein Restnutzungsdauergutachten für Ihr Objekt sinnvoll sind."},{q:"Kostet die Vermittlung an Spezialisten extra?",a:"Für die reine Herstellung eines Kontakts zu einem passenden Spezialisten berechnen wir Ihnen keine zusätzliche Vermittlungsgebühr. Die konkrete Leistung des Dienstleisters wird mit diesem selbst vereinbart."},{q:"Begleitet F&G auch erfahrene Investoren?",a:"Ja. Der Umfang verändert sich: Bei Einsteigern erklären wir mehr Grundlagen, bei erfahrenen Anlegern liegt der Schwerpunkt stärker auf Strategie, Finanzierung und Optimierung."}] %}{% set faqAnchor="faq-betreuung" %}{% set faqTitle="Häufige Fragen zur Betreuung nach dem Kauf" %}{% include "faq-block.njk" %}
+{#- Betreuung nach dem Kauf nach Design-Pass 2 §4 (29.10.2026): Fotokapitel „Von der Übergabe bis zur nächsten Strategie.“ (Bild aus dem
+    alten Kapitel Finanzierung, Bildunterschrift in der Fotozeile; der Abschnitt hat keinen Fließtext, auf dem Foto steht nur die H2) mit
+    Prüfliste und vier Punkten darunter, die ersten zwölf Monate als Schrittreihe (Foto der möblierten Wohnung weiter darüber, Update 7
+    Frage 18), die übrigen Kapitel als Zeilen (Überschrift links, Leitsatz rechts, der Rest unter „Mehr erfahren“; das Wohnhaus aus
+    Update 7 unter der Überschrift „Je nach Bestand“). Texte unverändert; das Inhaltsverzeichnis entfällt wie auf den übrigen
+    Leistungsseiten. Kein „F&G in Zahlen“ (die Seite hat keine eigenen Zahlen). Davor (CP4): Kicker über den H2, die Zählung 01–04
+    der vier Themen, Häkchen-Icons, „Auf dieser Seite“ und die Gebietsliste entfielen. -#}
+{% from "fgs-macros.njk" import fotokapitel, mehr, wide, textlink with context %}
+
+{# §4.4 Fotokapitel: die erste H2 der Seite auf dem Foto, darunter Prüfliste und die vier Themen #}
+{% call fotokapitel({ id: "themen", hoehe: 80, titel: "Ab der Übergabe", bild: "dresden-band" | bild, alt: "Kuppel der Kunstakademie an der Brühlschen Terrasse in Dresden, dahinter die Elbe" }) %}
+  <ul class="fgs-checklist fgs-themen-list" role="list">
+    <li>Restnutzungsdauer und Abschreibung, mit Gutachtern aus unserem Netzwerk</li>
+    <li>Miethöhe, Neuvermietung und Modernisierungen, die sich rechnen</li>
+    <li>Kontakte zu Handwerkern, Hausverwaltungen und weiteren Dienstleistern</li>
+  </ul>
+  <ul class="fgs-points fgs-points--row" role="list">
+    <li><h3>Übergabe</h3><p>Fristen, Unterlagen und Schlüssel</p></li>
+    <li><h3>Mietstrategie</h3><p>Miete heute, Spielraum und Neuvermietung</p></li>
+    <li><h3>Objektstrategie</h3><p>Modernisierung nur, wenn die Rechnung trägt</p></li>
+    <li><h3>Netzwerk</h3><p>Gutachter, Handwerker und Hausverwaltung</p></li>
+  </ul>
+{% endcall %}
+
+{# §4.5 Die ersten zwölf Monate: ab 1.240 px eine Reihe mit Nummer, Titel und erstem Satz; der Rest des Schritts und „Wann“ öffnen
+   sich per Klick im Feld unter der Reihe (fg-system.js). Schmaler und ohne JavaScript die senkrechte Liste mit dem ganzen Text. #}
+<section class="fgs-section" id="zwoelf-monate" aria-labelledby="zwoelf-titel">
+  <div class="fgs-wrap">
+    {{ wide("betreuung-wohnung" | bild, "Möblierte Wohnung mit Küchenzeile, Esstisch und Sitzecke") }}
+    <div class="fgs-head">
+      <h2 id="zwoelf-titel">Die ersten zwölf Monate nach dem Kauf</h2>
+      <p>Ein bis zwei Wochen nach der Beurkundung rufen wir Sie an und gehen diese Punkte mit Ihnen durch.</p>
+    </div>
+    <ol class="fgs-steps fgs-steps--reihe" role="list" style="--n: 5" data-fgs-steps>
+      <li style="--i: 1">
+        <span class="fgs-step-num" aria-hidden="true">01</span>
+        <h3>Übergabe</h3>
+        <p class="fgs-step-lead">Mit Protokoll, Zählerständen und Schlüsseln.</p>
+        <div class="fgs-step-panel" id="schritt-1">
+          <p>Ist die Wohnung vermietet, sagt ein gemeinsames Schreiben von Verkäufer und Ihnen den Mietern, wohin die Miete ab wann geht. In Mietvertrag und Kaution treten Sie mit der Eintragung im Grundbuch ein (§§ 566, 566a BGB).</p>
+          <p class="fgs-step-time"><span class="fgs-label">Wann</span> am Übergabetag</p>
+        </div>
+      </li>
+      <li style="--i: 2">
+        <span class="fgs-step-num" aria-hidden="true">02</span>
+        <h3>Haus&shy;verwaltung</h3>
+        <p class="fgs-step-lead">Bei einer Eigentumswohnung braucht die WEG-Verwaltung Ihre Kontaktdaten und Ihr Konto für das <a href="/lexikon/hausgeld/">Hausgeld</a>.</p>
+        <div class="fgs-step-panel" id="schritt-2">
+          <p>Wir verwalten nicht selbst, vermitteln aber kostenlos an Hausverwaltungen, die wir seit Jahren kennen.</p>
+          <p class="fgs-step-time"><span class="fgs-label">Wann</span> in den ersten Wochen</p>
+        </div>
+      </li>
+      <li style="--i: 3">
+        <span class="fgs-step-num" aria-hidden="true">03</span>
+        <h3>Versicherungen</h3>
+        <p class="fgs-step-lead">Eine bestehende Gebäudeversicherung geht mit dem Eigentum auf Sie über (§ 95 VVG); kündigen können Sie innerhalb eines Monats nach dem Erwerb (§ 96 VVG).</p>
+        <div class="fgs-step-panel" id="schritt-3">
+          <p>Bei einer Eigentumswohnung versichert meist die Eigentümergemeinschaft das Gebäude. Mit Peter Csaszar, bei uns Ansprechpartner für Versicherungen, gehen Sie durch, was besteht und was fehlt.</p>
+          <p class="fgs-step-time"><span class="fgs-label">Wann</span> rund um die Übergabe</p>
+        </div>
+      </li>
+      <li style="--i: 4">
+        <span class="fgs-step-num" aria-hidden="true">04</span>
+        <h3>Unterlagen für die Steuer</h3>
+        <p class="fgs-step-lead">Als Kapitalanleger geben Sie Mieten und Kosten in der Anlage V an.</p>
+        <div class="fgs-step-panel" id="schritt-4">
+          <p>Dafür brauchen Sie Kaufvertrag, Notar-, Grundbuch- und Maklerrechnung, Grunderwerbsteuerbescheid, Zinsbescheinigung, Hausgeldabrechnung und Reparaturbelege. Was sofort abziehbar ist und was über die <a href="/lexikon/afa/">AfA</a> läuft, klärt Ihre Steuerberatung. Die Grundsteuer richtet sich nach dem Stand am 1. Januar (§ 9 GrStG); für das Kaufjahr regelt der Kaufvertrag, wer sie trägt.</p>
+          <p class="fgs-step-time"><span class="fgs-label">Wann</span> bis zur ersten Steuererklärung</p>
+        </div>
+      </li>
+      <li style="--i: 5">
+        <span class="fgs-step-num" aria-hidden="true">05</span>
+        <h3>Erste Abrechnungen</h3>
+        <p class="fgs-step-lead">Die Betriebskostenabrechnung muss spätestens zwölf Monate nach Ende des Abrechnungszeitraums beim Mieter sein (§ 556 Abs. 3 BGB); wer sie für das Kaufjahr erstellt, gehört in die Übergabe.</p>
+        <div class="fgs-step-panel" id="schritt-5">
+          <p class="fgs-step-time"><span class="fgs-label">Wann</span> nach rund einem Jahr</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+{# Kapitel als Zeilen (§2 Regel 1): Überschrift links, Leitsatz rechts, der Rest unter „Mehr erfahren“ #}
+<section class="fgs-section fgs-rows" aria-label="Betreuung im Einzelnen">
+  <div class="fgs-wrap">
+  <article class="fgs-row fgs-cols fgs-cols--57" id="erste-wochen" aria-labelledby="wochen-titel">
+    <div class="fgs-cols-head"><h2 id="wochen-titel">Drei häufige Fragen nach dem Kauf</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Welche davon relevant ist, hängt vom Objekt, Mietstatus und Ihrer persönlichen Strategie ab.</p>
+      {% call mehr() %}
+      <h3>Restnutzungsdauer</h3>
+      <p>Ein qualifiziertes Gutachten kann für die steuerliche Abschreibung relevant sein. Wir ordnen ein, wann eine Prüfung sinnvoll ist, und stellen auf Wunsch den Kontakt zu einem geeigneten Spezialisten her.</p>
+      <h3>Mietanpassung</h3>
+      <p>Wir betrachten aktuelle Miete, Mietstatus, rechtliche Rahmenbedingungen und die langfristige Strategie. Bei einem Mieterwechsel verändert sich die Ausgangslage häufig deutlich.</p>
+      <h3>Modernisierung</h3>
+      <p>Bevor Geld fließt, rechnen wir Nutzen und Kosten gegeneinander. Erst wenn die Maßnahme wirtschaftlich plausibel ist, wird die Umsetzung mit geeigneten Partnern geplant.</p>
+      {% endcall %}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="finanzierung" aria-labelledby="finanzierung-titel">
+    <div class="fgs-cols-head"><h2 id="finanzierung-titel">Wann Sie die Finanzierung prüfen sollten</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Bei diesen Anlässen sieht Timon Fischer Ihre Finanzierung mit Ihnen an:</p>
+      {% call mehr() %}
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li>Einmal im Jahr: <a href="/lexikon/sondertilgung/">Sondertilgung</a> oder anderer Tilgungssatz, soweit Ihr Vertrag das vorsieht.</li>
+        <li>Einige Jahre vor dem Ende der <a href="/lexikon/zinsbindung/">Zinsbindung</a>: Verlängerung, Bankwechsel oder Forward-Darlehen vergleichen.</li>
+        <li>Zehn Jahre nach vollständiger Auszahlung: Ein Darlehen mit festem Zins ist dann mit sechs Monaten Frist kündbar, auch bei längerer Zinsbindung (§ 489 BGB).</li>
+        <li>Vor einer Modernisierung oder dem nächsten Kauf: Bei schlechteren Energieeffizienzklassen verlangen viele Banken inzwischen einen energetischen Modernisierungsfahrplan. Noch nicht alle tun das, in den nächsten Jahren wird es aber bei den meisten Banken Standard sein.</li>
+      </ul>
+      <p>Mehr zur <a href="/finanzierungsberatung.html#anschluss">Anschlussfinanzierung</a>.</p>
+      {% endcall %}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="bestand" aria-labelledby="bestand-titel">
+    <div class="fgs-cols-head">
+      <h2 id="bestand-titel">Eigentums&shy;wohnung und Mehr&shy;familien&shy;haus</h2>
+      {{ wide("betreuung-wohnhaus" | bild, "Wohnhaus an der Ecke Kastanienallee in Berlin-Prenzlauer Berg, an der Fassade wilder Wein") }}
+    </div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Wie eng wir Sie begleiten, hängt vom Objekt und von Ihrer Erfahrung ab.</p>
+      {% call mehr() %}
+      <h3>Erste Kapitalanlage</h3>
+      <p>Wir erklären Abläufe und Entscheidungen ausführlicher und helfen Ihnen, beim ersten Objekt eine feste Routine aufzubauen.</p>
+      <h3>Bestehendes Portfolio</h3>
+      <p>Bei erfahrenen Anlegern stehen Struktur, Finanzierung, Optimierung und Priorisierung im Vordergrund, weniger Grundlagen, mehr Strategie.</p>
+      <h3>Mehrfamilienhaus</h3>
+      <p>Mehr Einheiten bedeuten zusätzliche Themen: Mietmanagement, Capex, Finanzierung, energetische Maßnahmen und mögliche Zusatzkonzepte.</p>
+      {% endcall %}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="prinzip" aria-labelledby="prinzip-titel">
+    <div class="fgs-cols-head"><h2 id="prinzip-titel">Unser Netzwerk nach dem Kauf</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Bei Gutachtern, Handwerkern oder Hausverwaltungen vermitteln wir Kontakte, wenn sie sinnvoll sind. Die jeweilige Leistung und Vergütung vereinbaren Sie mit dem Dienstleister.</p>
+      {% call mehr() %}
+      <p>Wo F&amp;G selbst eine vergütungspflichtige Leistung übernimmt, etwa eine Vermietung, wird das vorher transparent vereinbart. Haben Sie Ihr Objekt über uns gekauft, übernehmen wir die <a href="/vermieten.html">Vermietung</a> zu einem reduzierten Satz.</p>
+      <h3>Das nächste Objekt beginnt mit den Erfahrungen aus dem ersten</h3>
+      <p>Deshalb interessiert uns nicht nur der Notartermin, sondern ob Finanzierung, Vermietung und Bewirtschaftung danach zu Ihrer Strategie passen.</p>
+      {% endcall %}
+      {{ textlink("/investment-lab.html", "Investment Lab öffnen") }}
+    </div>
+  </article>
+  </div>
+</section>

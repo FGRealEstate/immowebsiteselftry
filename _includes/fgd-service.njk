@@ -1,0 +1,174 @@
+---
+layout: base.njk
+fgDesign: true
+customSchema: true
+---
+{#- Leistungsseite im neuen Design (Brief Design-Pass §4.2). Reihenfolge:
+    Hero, „Das Wichtigste in Kürze“, Inhalt der Seite (Halbbild-Abschnitte, Prozess, Zahlenband),
+    FAQ, verwandte Links, Abschlussblock. Alles außer dem Inhalt kommt aus `service` im Frontmatter:
+      service.id         Anker des Service-Knotens, gleich wie in base.njk (z. B. "verkaufen")
+      service.crumb      letzte Stufe der Brotkrümel; service.parent = { label, href } optional
+      service.kicker, service.h1, service.intro, service.button = { label, href }
+      service.hero       = { name, alt, position, widths }  → /images/seiten/<name>-{960,1600,2000}.webp;
+                         widths nur, wenn die Quelle kleiner ist (z. B. [960, 1233] → <name>-960 und <name>-1233);
+                         Bildnachweis aus _data/seitenbilder.json (Filter fotonachweis)
+      service.summaryQ   Hauptfrage der Seite, service.summary = Antwort (3–4 Sätze)
+      service.toc        Liste { href, label } für „Auf dieser Seite“; mit widget: "<feld>" nur, wenn finanzWidgets dieses Widget hat (Update 5)
+      service.faq        Liste { q, a } oder { ref: "C3" } (freigegebene Antworten aus mangoTexte.faq)
+      service.related    = { services: [ {label, href, note} ], lexikon: [slug], blog: [slug] }
+      service.contact    "lennart" | "timon"; service.closing = { title, text, button: "bewertung" | "gespraech", gebiet (optional, ersetzt die Zuständigkeit unter dem Namen) }
+      service.schema     = { name, serviceType, description, area: "regional" | "deutschland" }; statt area auch
+                         places: [ { type, name, url } ] für ein eigenes Gebiet (Gewerbeimmobilien, Update 5)
+-#}
+{% from "fgd-icons.njk" import icon %}
+{% set s = service %}
+{% set pageUrl = "https://fg-realestate.de" + page.url %}
+{% set faqItems = s.faq | serviceFaq(mangoTexte.faq, serviceArea.text) %}
+{% set heroBase = "/images/seiten/" + s.hero.name %}
+{% set heroWidths = s.hero.widths or [960, 1600, 2000] %}
+{% set heroSrc = 1600 if 1600 in heroWidths else heroWidths | last %}
+
+<nav class="fgd-crumbs fgd-crumbs--bar" aria-label="Brotkrümelnavigation">
+  <div class="fgd-wrap">
+    <ol>
+      <li><a href="/">Start</a></li>
+      {% if s.parent %}<li><a href="{{ s.parent.href }}">{{ s.parent.label }}</a></li>{% endif %}
+      <li aria-current="page">{{ s.crumb }}</li>
+    </ol>
+  </div>
+</nav>
+
+{# 1. Hero #}
+<section class="fgd-hero fgd-hero--page" aria-labelledby="seiten-titel">
+  <div class="fgd-hero-media">
+    <img src="{{ heroBase }}-{{ heroSrc }}.webp" srcset="{% for w in heroWidths %}{{ heroBase }}-{{ w }}.webp {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}" sizes="100vw" width="{{ heroWidths | last }}" height="{{ ((heroWidths | last) * 9 / 16) | round }}" alt="{{ s.hero.alt }}" fetchpriority="high" decoding="async"{% if s.hero.position %} style="object-position: {{ s.hero.position }}"{% endif %}>
+  </div>
+  <p class="fgd-hero-credit">{{ s.hero.name | fotonachweis | safe }}</p>
+  <div class="fgd-wrap fgd-hero-inner">
+    <div class="fgd-hero-copy">
+      <p class="fgd-kicker">{{ s.kicker }}</p>
+      <h1 id="seiten-titel">{{ s.h1 | safe }}</h1>
+      <p class="fgd-hero-lead">{{ s.intro | safe }}</p>
+      <div class="fgd-hero-actions">
+        <a class="fgd-btn fgd-btn-gold" href="{{ s.button.href }}">{{ s.button.label }}{{ icon("arrow") | safe }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# 2. Das Wichtigste in Kürze #}
+<section class="fgd-section fgd-section--white fgd-brief" aria-labelledby="kurz-titel">
+  <div class="fgd-wrap fgd-brief-grid">
+    <div class="fgd-brief-main">
+      <p class="fgd-kicker">Das Wichtigste in Kürze</p>
+      <h2 id="kurz-titel">{{ s.summaryQ }}</h2>
+      <div class="fgd-brief-text">{% for p in s.summary %}<p>{{ p | safe }}</p>{% endfor %}</div>
+    </div>
+    {% if s.toc %}
+    <nav class="fgd-brief-toc" aria-label="Auf dieser Seite">
+      <p>Auf dieser Seite</p>
+      <ol>{% for t in s.toc %}{% if not t.widget or (finanzWidgets.anbieter and finanzWidgets[t.widget]) %}<li><a href="{{ t.href }}">{{ t.label }}</a></li>{% endif %}{% endfor %}</ol>
+    </nav>
+    {% endif %}
+  </div>
+</section>
+
+{# 3. Inhalt der Seite #}
+{{ content | safe }}
+
+{# 4. FAQ #}
+{% set faqTitle = s.faqTitle or "Häufige Fragen" %}
+{% include "fgd-faq.njk" %}
+
+{# 5. Verwandte Links #}
+<section class="fgd-section fgd-section--stone fgd-related" aria-labelledby="weiter-titel">
+  <div class="fgd-wrap">
+    <div class="fgd-head">
+      <p class="fgd-kicker">Weiterlesen</p>
+      <h2 id="weiter-titel">Passend zu diesem Thema</h2>
+    </div>
+    <div class="fgd-related-grid">
+      <div class="fgd-related-col">
+        <h3>Verwandte Leistungen</h3>
+        <ul class="fgd-linklist">
+          {% for r in s.related.services %}<li><a href="{{ r.href }}"><span><strong>{{ r.label }}</strong>{% if r.note %}<small>{{ r.note }}</small>{% endif %}</span>{{ icon("arrow") | safe }}</a></li>{% endfor %}
+        </ul>
+      </div>
+      <div class="fgd-related-col">
+        <h3>Unsere Gebiete</h3>
+        {% include "fgd-area-list.njk" %}
+      </div>
+      <div class="fgd-related-col">
+        <h3>{% if s.related.blog and s.related.blog.length %}Lexikon und Blog{% else %}Im Lexikon erklärt{% endif %}</h3>
+        <ul class="fgd-linklist">
+          {% for slug in s.related.lexikon %}{% set e = labContent.lexicon | lexEntry(slug) %}{% if e %}<li><a href="/lexikon/{{ e.slug }}/"><span><strong>{{ e.term }}</strong><small>Lexikon</small></span>{{ icon("arrow") | safe }}</a></li>{% endif %}{% endfor %}
+          {% for slug in s.related.blog %}{% for post in blog %}{% if post.slug == slug %}<li><a href="{{ post.url }}"><span><strong>{{ post.titel }}</strong><small>Blog</small></span>{{ icon("arrow") | safe }}</a></li>{% endif %}{% endfor %}{% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# 6. Abschlussblock #}
+{% set closing = s.closing %}
+{% set kontaktKey = s.contact %}
+{% include "fgd-closing.njk" %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://fg-realestate.de{{ page.url }}#service",
+      "name": {{ s.schema.name | json | safe }},
+      "serviceType": {{ s.schema.serviceType | json | safe }},
+      "description": {{ s.schema.description | json | safe }},
+      "url": "{{ pageUrl }}",
+      "provider": { "@id": "https://fg-realestate.de/#organization" },
+      {% if s.schema.area == "deutschland" %}"areaServed": { "@type": "Country", "name": "Deutschland" }{% elif s.schema.places %}"areaServed": [
+        {% for p in s.schema.places %}{ "@type": "{{ p.type }}", "name": {{ p.name | json | safe }}{% if p.url %}, "url": "https://fg-realestate.de{{ p.url }}"{% endif %} }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]{% else %}"areaServed": [
+        {% for p in serviceArea.schemaPlaces %}{ "@type": "{{ p.type }}", "name": {{ p.name | json | safe }}{% if p.url %}, "url": "https://fg-realestate.de{{ p.url }}"{% endif %} }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]{% endif %}
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{ pageUrl }}",
+      "url": "{{ pageUrl }}",
+      "name": {{ title | json | safe }},
+      "description": {{ description | json | safe }},
+      "inLanguage": "de-DE",
+      "isPartOf": { "@id": "https://fg-realestate.de/#website" },
+      "publisher": { "@id": "https://fg-realestate.de/#organization" },
+      "about": { "@id": "https://fg-realestate.de{{ page.url }}#service" },
+      "breadcrumb": { "@id": "{{ pageUrl }}#breadcrumb" },
+      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://fg-realestate.de{{ heroBase }}-{{ heroSrc }}.webp" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ pageUrl }}#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
+        {% if s.parent %}{ "@type": "ListItem", "position": 2, "name": {{ s.parent.label | json | safe }}, "item": "https://fg-realestate.de{{ s.parent.href }}" },
+        {% endif %}{ "@type": "ListItem", "position": {% if s.parent %}3{% else %}2{% endif %}, "name": {{ s.crumb | json | safe }}, "item": "{{ pageUrl }}" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{ pageUrl }}#faq",
+      "isPartOf": { "@id": "{{ pageUrl }}" },
+      "mainEntity": [
+        {% for item in faqItems %}{
+          "@type": "Question",
+          "name": {{ item.q | json | safe }},
+          "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | striptags | json | safe }} }
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+  ]
+}
+</script>

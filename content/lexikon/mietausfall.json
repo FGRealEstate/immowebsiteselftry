@@ -7,11 +7,102 @@
   "keywords": [
     "mietausfall"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Immobilienkauf",
-  "formula": null,
+  "formula": "Mietausfallwagnis (Modellwert) = 2 % der Jahreskaltmiete",
   "sources": [],
   "assistantAnswer": "Ausbleibender Mietertrag durch Leerstand oder Nichtzahlung. Mietausfall ist tatsächlich nicht vereinnahmte Sollmiete durch Leerstand, Zahlungsstörung oder Forderungsausfall. Er sollte bei Einzelobjekten möglichst aus konkretem Mieterrisiko und Vermietbarkeit statt nur pauschal geschätzt werden.",
-  "explanation": "Mietausfall ist tatsächlich nicht vereinnahmte Sollmiete durch Leerstand, Zahlungsstörung oder Forderungsausfall. Er sollte bei Einzelobjekten möglichst aus konkretem Mieterrisiko und Vermietbarkeit statt nur pauschal geschätzt werden.",
-  "practiceExample": "1.200 € Monatsmiete und zwei Monate Leerstand bedeuten 2.400 € Mietausfall vor Renovierungs- und Vermarktungskosten."
+  "explanation": "Mietausfall heißt, dass Miete ausbleibt, weil die Wohnung leer steht oder ein Mieter nicht zahlt. Die Wertermittlung fasst als Mietausfallwagnis uneinbringliche Rückstände, vorübergehenden Leerstand, die Kosten, die der Eigentümer dann zusätzlich trägt, und uneinbringliche Kosten der Rechtsverfolgung zusammen. Der amtliche Modellwert liegt bei 2 % des Rohertrags. Finanztip rechnet ebenfalls mit 2 % der Jahresmiete, knapp einer Viertel Monatsmiete im Jahr.",
+  "practiceExample": "Angenommen, Sie besitzen eine vermietete Wohnung in Bernau bei Berlin: 65 m², Baujahr 1995, 9 € Kaltmiete je m², also 585 € im Monat und 7.020 € im Jahr. Der Mieter zahlt zwei Monate nicht. Dann fehlen 1.170 € Kaltmiete und 323,70 € Betriebskostenvorauszahlung, die Sie über das Hausgeld weiter an die Gemeinschaft zahlen, zusammen 1.493,70 €. Die Kaution darf höchstens drei Kaltmieten betragen, hier 1.755 €. Zwei volle Monatsmieten im Rückstand erreichen die Schwelle für eine fristlose Kündigung.",
+  "ausbau": {
+    "einordnung": [
+      "Mietausfall heißt, dass Miete ausbleibt, weil die Wohnung leer steht oder ein Mieter nicht zahlt. Die Wertermittlung fasst als Mietausfallwagnis uneinbringliche Rückstände, vorübergehenden Leerstand, die Kosten, die der Eigentümer dann zusätzlich trägt, und uneinbringliche Kosten der Rechtsverfolgung zusammen.[[1]] Der amtliche Modellwert liegt bei 2 % des Rohertrags.[[2]] Finanztip rechnet ebenfalls mit 2 % der Jahresmiete, knapp einer Viertel Monatsmiete im Jahr.[[3]]",
+      "Zahlt ein Mieter nicht, kann der Vermieter fristlos kündigen, wenn der Mieter an zwei aufeinander folgenden Terminen mit einem nicht unerheblichen Teil der Miete in Verzug ist oder über mehr als zwei Termine mit insgesamt zwei Monatsmieten. Wird der Rückstand vor der Kündigung beglichen, ist sie ausgeschlossen.[[4]] Bei Wohnraum ist ein Rückstand nicht unerheblich, wenn er eine Monatsmiete übersteigt.[[5]]"
+    ],
+    "beispiel": [
+      "Angenommen, Sie besitzen eine vermietete Wohnung in Bernau bei Berlin: 65 m², Baujahr 1995, 9 € Kaltmiete je m², also 585 € im Monat und 7.020 € im Jahr. Der Mieter zahlt zwei Monate nicht. Dann fehlen 1.170 € Kaltmiete und 323,70 € Betriebskostenvorauszahlung, die Sie über das Hausgeld weiter an die Gemeinschaft zahlen, zusammen 1.493,70 €.",
+      "Die Kaution darf höchstens drei Kaltmieten betragen, hier 1.755 €.[[6]] Zwei volle Monatsmieten im Rückstand erreichen die Schwelle für eine fristlose Kündigung.[[4]]"
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was nach einer Kündigung gilt",
+        "absaetze": [
+          "Zahlt der Mieter die fällige Miete bis zwei Monate nach Rechtshängigkeit der Räumungsklage nach oder verpflichtet sich eine öffentliche Stelle dazu, wird die fristlose Kündigung unwirksam. Das gilt nicht, wenn es in den letzten zwei Jahren schon einmal so war.[[5]] Bis dahin können Kosten der Rechtsverfolgung anfallen, die zum Mietausfallwagnis zählen, wenn sie uneinbringlich sind.[[1]]"
+        ]
+      },
+      {
+        "h2": "Mietausfall begrenzen",
+        "absaetze": [
+          "Die Kaution beträgt höchstens drei Monatsmieten ohne Betriebskosten; der Mieter darf sie in drei Raten zahlen, und sie wird getrennt vom Vermögen des Vermieters angelegt.[[6]] F&G prüft bei der Vermietung die Unterlagen und wählt Mieter nach objektiven und nachvollziehbaren Kriterien aus; Leerstand und nicht umlagefähige Kosten beeinflussen laut F&G Cashflow und Rendite.[[7]] Rechnen Sie die Pauschale in Rendite und Cashflow ein und halten Sie eine Reserve für einige Monate, denn ein einzelner Ausfall kann die Pauschale vieler Jahre übersteigen."
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "§ 32 Immobilienwertermittlungsverordnung (ImmoWertV)",
+        "url": "https://www.gesetze-im-internet.de/immowertv_2022/__32.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Anlage 3 ImmoWertV (Modellwerte für Bewirtschaftungskosten)",
+        "url": "https://www.gesetze-im-internet.de/immowertv_2022/anlage_3.html",
+        "stand": "Stand 01.01.2021, abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Mietrendite berechnen",
+        "url": "https://www.finanztip.de/baufinanzierung/mietrendite-berechnen/",
+        "stand": "Stand 01.04.2026"
+      },
+      {
+        "name": "§ 543 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__543.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 569 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__569.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 551 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__551.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Vermieten",
+        "url": "https://fg-realestate.de/vermieten.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Mietausfallwagnis: Rückstände, Leerstand, zusätzliche Bewirtschaftungskosten, Kosten der Rechtsverfolgung",
+        "fundstelle": "runde-4.md, Y01"
+      },
+      {
+        "zahl": "2 % des Rohertrags (amtlich); 2 % der Jahresmiete, knapp eine Viertel Monatsmiete (Finanztip)",
+        "fundstelle": "runde-3.md, N03, C03"
+      },
+      {
+        "zahl": "fristlose Kündigung: zwei Termine, nicht unerheblicher Teil; mehr als zwei Termine, zwei Monatsmieten; ausgeschlossen bei vorheriger Befriedigung",
+        "fundstelle": "runde-4.md, Y02"
+      },
+      {
+        "zahl": "nicht unerheblich = mehr als eine Monatsmiete; Schonfrist zwei Monate nach Rechtshängigkeit; nicht erneut innerhalb von zwei Jahren",
+        "fundstelle": "runde-4.md, Y03"
+      },
+      {
+        "zahl": "Kaution höchstens dreifache Miete ohne Betriebskosten, drei Raten, getrennte Anlage",
+        "fundstelle": "runde-4.md, Y04"
+      },
+      {
+        "zahl": "F&G: Unterlagen prüfen, objektive Kriterien; Leerstand, nicht umlagefähige Kosten beeinflussen Cashflow und Rendite",
+        "fundstelle": "runde-4.md, Y09"
+      },
+      {
+        "zahl": "2 × 585 = 1.170 €; 2 × 161,85 = 323,70 €; zusammen 1.493,70 €; Kaution 3 × 585 = 1.755 €",
+        "fundstelle": "Rechnung, Marktprüfung runde-4.md"
+      }
+    ]
+  }
 }

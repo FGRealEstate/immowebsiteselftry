@@ -1,0 +1,376 @@
+---
+layout: base.njk
+fgDesign: true
+fgSystem: true
+fgsHero: true
+fgsIndex: true
+bodyClass: fgs-area
+customSchema: true
+pagination:
+  data: gebiete
+  size: 1
+  alias: gebiet
+permalink: "standorte/{{ gebiet.slug }}/index.html"
+eleventyComputed:
+  title: "{{ gebiet.title | safe }}"
+  description: "{{ gebiet.description | safe }}"
+  canonicalPath: "/standorte/{{ gebiet.slug }}/"
+---
+{#- Gebietsseite nach Design-Pass 2 §5 (28.10.2026, Vorbild omniyat.com/marasi-bay). Text und Zahlen kommen unverändert
+    aus content/gebiete/<slug>.json, der Ansprechpartner aus _data/kontakte.js, Fotos, Karte, Kennzahlen und die Aufteilung
+    in sichtbare Sätze und Aufklapper über _data/gebiete.js. Reihenfolge (Zeilen der Tabelle in §5):
+      1 Titelbild 100 vh, H1 in zwei Teilen · 2 vier Kennzahlen mit Fußnote, alle Zahlen im Aufklapper · 3 erster Satz der
+      Einleitung · 4 Orte als Karussell (nur wenn jedes Kapitel ein Foto hat) · 5 Ortskapitel, erster Absatz sichtbar, Rest im
+      Aufklapper, die Lagekarte im Kapitel zu Lage und Anbindung · 6 breites Bild · 7 Verkaufen, Kaufen, Finanzieren in drei
+      Spalten · 9 Ansprechpartner als Karte · 10 Bewertungen, Fragen, In der Nähe, Quellen (geschlossen), Abschlussband.
+    Zeile 8 (Karte „Lage und Anbindung“) steht wie bisher im Ortskapitel. Ein Link auf #id öffnet den Aufklapper (fg-system.js).
+    typ: "landkreis" (orte = Städte im Kreis), "bezirk" (Berlin; orte = Kieze), "marktgebiet" (Leipzig/Dresden;
+    orte = Ortsteile), "stadt" (Übersicht Berlin, Leipzig, Dresden; abschnitte[].seite = Link auf die Unterseite),
+    ohne typ = Stadt im Umland (Lagen). Fußnoten [[n]] werden mit dem Filter fn zu Links auf #quelle-n.
+    Alle 28 Seiten haben ein Ortsfoto (heroPhoto); ohne Foto stünde der Kopf durchsichtig über dem Grundton.
+    Das JSON-LD am Ende ist unverändert aus der vorigen Vorlage. -#}
+{% from "fgs-macros.njk" import hero, pic, rail, card, quote, chapters, wide, split, textlink, faq, closing with context %}
+{# Bildnachweise (Update 9): keine Zeile auf oder unter den Fotos und der Karte; sie stehen im Aufklapper über der Fußzeile (base.njk) #}
+{% set g = gebiet %}
+{% set pageUrl = "https://fg-realestate.de" + g.url %}
+{% set valuationHref = nav.valuation | navHref %}
+{% set kontakt = kontakte[g.kontakt or "lennart"] %}
+{% set kontaktPhone = kontakt.phone or nav.phone %}
+{% set kontaktEmail = kontakt.email or nav.email %}
+{% set vorname = kontakt.name.split(" ")[0] %}
+{% set orteWort = "Orte" if g.typ == "landkreis" else ("Kieze" if g.typ == "bezirk" else ("Ortsteile" if g.typ == "marktgebiet" else ("Gebiete" if g.typ == "stadt" else "Lagen"))) %}
+
+{# 1. Titelbild über den ganzen Bildschirm (Design-Pass 2 §5.1): Ortsname groß, „Immobilie verkaufen, kaufen und finanzieren“
+     darunter in Lead-Größe; eine H1 mit unverändertem Text #}
+{{ hero({
+  voll: true,
+  bild: ("/images/gebiete/" + g.heroPhoto.name) | bild,
+  alt: g.heroPhoto.alt,
+  kicker: g.kicker or (g.kreis.name if g.kreis else "Brandenburg"),
+  titel: g.h1,
+  ort: g.h1Teile,
+  buttons: [{ href: valuationHref, label: "Kostenlose Bewertung" }, { href: "#ansprechpartner", label: "Ansprechpartner " + vorname }],
+  position: g.heroPhoto.position,
+  kenburns: true
+}) }}
+
+{# 2. Kennzahlen direkt unter dem Titelbild (§5.2): vier Werte in einer Reihe, Wert in Marcellus 36 px, Bezeichnung 15 px, die Nummer
+     der Quelle hochgestellt (Sprung in die Quellen). Alle fünf Zahlen mit Erläuterung, Quelle und Stichtag im Aufklapper; darunter
+     nur der zweite Satz der früheren Einleitung (§7). Welche vier Zahlen: kernzahlen in _data/gebiete.js. #}
+<section class="fgs-section fgs-place-facts" id="zahlen" aria-labelledby="zahlen-titel">
+  <div class="fgs-wrap">
+    <nav aria-label="Brotkrümelnavigation">
+      <ol class="fgs-crumbs">
+        <li><a href="/">Start</a></li>
+        <li><a href="/standorte/">Gebiete</a></li>
+        {%- if g.kreis and g.kreis.exists %}<li><a href="{{ g.kreis.url }}">{{ g.kreis.name }}</a></li>{% endif %}
+        <li aria-current="page">{{ g.nameLang if g.typ == "landkreis" else g.name }}</li>
+      </ol>
+    </nav>
+    <h2 id="zahlen-titel" class="fgs-place-facts-title">Was Immobilien {{ g.inOrt }} kosten</h2>
+    <ul class="fgs-keyfacts" role="list">
+      {%- for z in g.kernzahlen %}
+      <li><span class="fgs-keyfact-value">{{ z.wert | factValue | safe }}</span><span class="fgs-keyfact-label">{{ z.label | nbsp }}{{ ("[[" + z.quelleNr + "]]") | fn | safe }}</span></li>
+      {%- endfor %}
+    </ul>
+    <details class="fgs-more fgs-more--facts" id="alle-zahlen">
+      <summary><span class="fgs-more-title">Alle Zahlen für {{ g.fuerOrt }} mit Quellen</span><span class="fgs-more-line">Kaufpreise sind tatsächlich gezahlte Preise, keine Angebotspreise aus Portalen.</span></summary>
+      <ul class="fgs-facts-rows" role="list">
+        {%- for z in g.zahlen %}
+        <li>
+          <span class="fgs-fact-figure">{{ z.wert | factValue | safe }}</span>
+          <div class="fgs-facts-rows-text">
+            <p class="fgs-facts-rows-label">{{ z.label | nbsp }}</p>
+            {%- if z.detail %}
+            <p>{{ z.detail | nbsp }}</p>{% endif %}
+            <p class="fgs-small fgs-source">{% if z.url %}<a href="{{ z.url }}" target="_blank" rel="noopener">{{ z.quelle }}</a>{% else %}{{ z.quelle }}{% endif %}{% if z.stichtag %} · {{ z.stichtag }}{% endif %}</p>
+          </div>
+        </li>
+        {%- endfor %}
+      </ul>
+    </details>
+  </div>
+</section>
+
+{# 3. Einleitung (§5.3): nur der erste Satz, zentriert, Marcellus 30 px. Der Rest steht im Ansprechpartner-Block, der Stand in den Quellen. #}
+{%- set einl = g.kurzantwort | ersterSatz %}
+<section class="fgs-section fgs-place-opening" aria-label="Kurz gesagt">
+  <div class="fgs-wrap"><p class="fgs-place-opening-text">{{ einl.erster | nbsp | escape | fn | safe }}</p></div>
+</section>
+
+{# 4. Orte, Kieze oder Lagen als Karussell (§5.4): Karten 3:4, 420 px breit, Name in Marcellus 30 px auf dem Foto, eine Zeile
+     in 15 px darunter. Ein Klick springt zum Kapitel und klappt es auf (fg-system.js); auf den Übersichten Berlin, Leipzig und
+     Dresden führt die Karte wie bisher auf die Unterseite. Nur wenn jedes Kapitel ein Foto hat. #}
+{% set mitFoto = g.abschnitte | selectattr("foto") | length %}
+{% if mitFoto and mitFoto == g.abschnitte.length %}
+{% call rail({ id: "orte", titel: orteWort + " " + g.inOrt, hoch: true }) %}
+  {%- for a in g.abschnitte %}
+  {{ card({ aufbild: true, href: (a.seite.url if a.seite else "#lage-" + loop.index), bild: ("/images/gebiete/" + a.foto.name) | bild, alt: a.foto.alt, titel: a.kopf, label: a.zusatz }) }}
+  {%- endfor %}
+{% endcall %}
+{% endif %}
+
+{# 5. Ortskapitel (§5.5): Überschrift links, Text rechts wie bisher. Sichtbar ist nur der erste Absatz, der Rest steht im Aufklapper
+     „Mehr zu {Ort}: …“ (Wortlaut aus _data/gebiete.js, mehrZu), mit seinen Fußnoten. Die Überschrift „Ort: Beschreibung“ steht
+     zweiteilig: der Ort in H2-Größe, die Beschreibung darunter in Lead-Größe; der Doppelpunkt bleibt für Screenreader im Text.
+     Die Lagekarte bleibt das Bild des Kapitels zu Lage und Anbindung (Update 7, Frage 10). #}
+{%- macro kapitelKopf(a) -%}
+{#- nach „/“ (Petershagen/Eggersdorf, Fürstenwalde/Spree) darf die Zeile umbrechen; kopfWort zählt die Teile einzeln -#}
+{%- if a.zusatz %}{{ a.kopf | escape | replace("/", "/<wbr>") | safe }}<span class="fgs-sr">:</span> <span class="fgs-h2-sub">{{ a.zusatz }}</span>{% else %}{{ a.h2 | escape | replace("/", "/<wbr>") | safe }}{% endif -%}
+{%- endmacro %}
+{%- macro kapitelText(a) %}
+      <p>{{ a.absaetze[0] | nbsp | fn | safe }}</p>
+      {%- if a.absaetze.length > 1 %}
+      <details class="fgs-more">
+        <summary><span class="fgs-link">{{ a.mehr }}{% include "fgs-arrow.njk" %}</span></summary>
+        {% for p in a.absaetze.slice(1) %}<p>{{ p | nbsp | fn | safe }}</p>{% endfor %}
+      </details>
+      {%- endif %}
+      {%- if a.seite %}
+      <div class="fgs-links">{{ textlink(a.seite.url, a.seite.text) }}</div>{% endif %}
+{%- endmacro %}
+<section class="fgs-section fgs-place-chapters" id="lagen" aria-label="{{ orteWort }} {{ g.inOrt }}">
+  {%- for a in g.abschnitte %}
+  {%- if g.karte and loop.index0 == g.kartenKapitel %}
+  <article class="fgs-chapter fgs-place-chapter fgs-place-chapter--map" id="lage-{{ loop.index }}">
+    <div class="fgs-split fgs-split--right fgs-split--compact">
+      <figure class="fgs-split-media">
+        <div class="fgs-media fgs-reveal">{{ pic(("/images/gebiete/" + g.karte.name) | bild, g.karte.alt, "(min-width: 900px) 58vw, 100vw") }}</div>
+      </figure>
+      <div class="fgs-split-text">
+        <h2 style="--fgs-h2-wort: {{ a.kopfWort }}">{{ kapitelKopf(a) }}</h2>
+        {{ kapitelText(a) }}
+      </div>
+    </div>
+  </article>
+  {%- else %}
+  <article class="fgs-wrap fgs-cols fgs-chapter fgs-place-chapter" id="lage-{{ loop.index }}">
+    <div class="fgs-cols-head"><h2 style="--fgs-h2-wort: {{ a.kopfWort }}">{{ kapitelKopf(a) }}</h2></div>
+    <div class="fgs-cols-body">
+      {{ kapitelText(a) }}
+    </div>
+  </article>
+  {%- endif %}
+  {%- endfor %}
+</section>
+
+{# 6. Breites Bild (§5.6): über die ganze Breite, 70 vh; seit Update 9 ohne Bildunterschrift und Nachweis auf dem Foto #}
+{%- if g.bandPhoto %}
+<figure class="fgs-band fgs-band--figure" style="--fgs-band-h: 70">
+  <div class="fgs-band-media fgs-reveal"{% if g.bandPhoto.position %} style="--fgs-band-pos: {{ g.bandPhoto.position }}"{% endif %}>{{ pic(("/images/gebiete/" + g.bandPhoto.name) | bild, g.bandPhoto.alt, "100vw") }}</div>
+</figure>
+{%- endif %}
+
+{# 7. Verkaufen, Kaufen, Finanzieren in drei Spalten (§5.7): H2, die ersten zwei Sätze, der bisherige Link; der Rest im Aufklapper
+     „Mehr erfahren“ (§2 Regel 2.1). Satzgrenzen: ersteSaetze in _data/gebiete.js. #}
+{%- macro spalte(id, b, links, zusatz) %}
+    <article class="fgs-trio-col" id="{{ id }}">
+      <h2>{{ b.h2 }}</h2>
+      {% for p in b.sichtbar %}<p>{{ p | nbsp | fn | safe }}</p>{% endfor %}
+      {%- if b.rest.length or zusatz | trim %}
+      <details class="fgs-more">
+        <summary><span class="fgs-link">Mehr erfahren{% include "fgs-arrow.njk" %}</span></summary>
+        {% for p in b.rest %}<p>{{ p | nbsp | fn | safe }}</p>{% endfor %}{{ zusatz | safe }}
+      </details>
+      {%- endif %}
+      <div class="fgs-links">{{ links | safe }}</div>
+    </article>
+{%- endmacro %}
+<section class="fgs-section fgs-place-trio" aria-label="Verkaufen, kaufen und finanzieren {{ g.inOrt }}">
+  <div class="fgs-wrap fgs-trio">
+    {%- set gewerbe %}{% if freigaben.gewerbe and gewerbeAchsen[g.slug] %}<p>Für Hallen, Logistik- und Gewerbeflächen {{ gewerbeAchsen[g.slug] }} gibt es eine eigene Seite: <a href="/gewerbeimmobilien/">Gewerbeimmobilien im Berliner Umland und in Dresden</a>.</p>{% endif %}{% endset %}
+    {{ spalte("verkaufen", g.verkaufen, textlink("/verkaufen.html", "So verkaufen wir Immobilien"), gewerbe) }}
+    {{ spalte("kaufen", g.kaufen, textlink("/ankaufsberatung.html", "Ankaufsberatung") + textlink("/kapitalanlage.html", "Kapitalanlage"), "") }}
+    {{ spalte("finanzieren", g.finanzieren, textlink("/finanzierungsberatung.html", "Finanzierungsberatung"), "") }}
+  </div>
+</section>
+
+{# 9. Ansprechpartner als waagerechte Karte (§5.9): Porträt 4:5 in 360 px, Name, Rolle, Kurzbio (Text aus §7, kontakte.js),
+     die Sätze aus der Einleitung (Zeile 3), Telefon und E-Mail, „Profil von …“. #}
+{% set portraet = kontakt.name | lower | replace(" ", "-") %}
+<section class="fgs-section fgs-place-contact" id="ansprechpartner" aria-labelledby="ansprechpartner-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-contact-card">
+      <div class="fgs-media fgs-reveal">{{ pic(("/images/team/" + portraet + "-hell") | bild, "Porträt von " + kontakt.name, "(min-width: 768px) 360px, 100vw") }}</div>
+      <div class="fgs-contact-card-text">
+        <h2 id="ansprechpartner-titel">{{ kontakt.name }}</h2>
+        <p class="fgs-small">{{ kontakt.role }} · Ihr Ansprechpartner für {{ g.fuerOrt }}</p>
+        <p>{{ kontakt.bio }}</p>
+        {%- if einl.rest %}
+        <p>{{ einl.rest | nbsp | escape | fn | safe }}</p>{% endif %}
+        {%- if g.kurzantwortMehr %}
+        <p>{{ g.kurzantwortMehr | nbsp | escape | fn | safe }}</p>{% endif %}
+        <address class="fgs-address"><a href="{{ kontaktPhone.href }}">{{ kontaktPhone.display }}</a><br><a href="mailto:{{ kontaktEmail }}">{{ kontaktEmail }}</a></address>
+        <div class="fgs-links">{{ textlink(kontakt.profile | navHref, "Profil von " + vorname) }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# 10a. Bewertungen als Textkarten (Texte wörtlich aus dem Google-Profil, die 6 neuesten mit Text). Überschrift wie auf der
+     Startseite (Brief §3.9), weil §2 höchstens 5 Wörter erlaubt; vorher „Was Kunden über Fischer & Geserich sagen“ #}
+{% if google.reviews.length %}
+{% call rail({ id: "bewertungen", titel: "Was Kunden über uns sagen", quotes: true,
+  text: google.rating + " von 5 · " + google.count + " Bewertungen auf Google, Stand " + google.checkedLabel,
+  zusatz: '<a href="' + google.url + '" target="_blank" rel="noopener">Alle Bewertungen</a>',
+  link: { href: nav.menu[5].items[3] | navHref, label: "So bewerten Sie uns" } }) %}
+  {#- Update 8 §3.4 (29.10.2026): Reihenfolge wie auf der Startseite (Fix 3): zuerst Maria, dann Jan, danach die bisherigen Karten in ihrer Reihenfolge. #}
+  {%- set zuerst = ["Maria", "Jan"] %}
+  {%- for name in zuerst %}{% for r in google.reviews | selectattr("text") %}{% if r.author == name %}
+  {{ quote(r) }}
+  {%- endif %}{% endfor %}{% endfor %}
+  {%- for r in google.reviews | selectattr("text") %}{% if loop.index <= 6 and not (r.author in zuerst) %}
+  {{ quote(r) }}
+  {%- endif %}{% endfor %}
+{% endcall %}
+{% else %}
+<section class="fgs-section" id="bewertungen" aria-labelledby="bewertungen-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head">
+      <h2 id="bewertungen-titel">Was Kunden über uns sagen</h2>
+      <p>Die aktuelle Gesamtbewertung unseres Google-Unternehmensprofils. Alle Rezensionen lesen Sie im Original direkt bei Google.</p>
+      <p>{{ google.rating }} von 5 · {{ google.count }} Bewertungen auf Google, Stand {{ google.checkedLabel }}</p>
+      <div class="fgs-btns"><a class="fgs-btn fgs-btn--secondary" href="{{ google.url }}" target="_blank" rel="noopener">Rezensionen bei Google lesen</a></div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# 10b. Häufige Fragen (FAQPage unten aus derselben Liste) #}
+{% set faqItems = [] %}
+{%- for item in g.faq | faqFrei %}{% set neu = faqItems.push({ q: item.frage, a: item.antwort | nbsp | fn }) %}{% endfor %}
+{{ faq(faqItems, "Fragen zu Immobilien " + g.inOrt, "Ihre Frage ist nicht dabei? Rufen Sie " + vorname + " an oder schreiben Sie uns.") }}
+
+{# 10c. In der Nähe: Nachbargebiete und die übergeordnete Seite mit Ortsfoto.
+   Design-Pass 3 §4.2 („the Gebiete carousel at the bottom uses 3.5“): wie „Unsere Gebiete“ auf der Startseite gefaltet,
+   Name auf dem Foto, die Zeile darunter bleibt; sizes wie dort (560 px hoch, also rund 840 px Bildbreite). #}
+{% set naehe = [] %}
+{%- for n in g.nachbarn %}{% if n.heroPhoto %}{% set neu = naehe.push(n) %}{% endif %}{% endfor %}
+{#- for-Schleifen haben in Nunjucks einen eigenen Gültigkeitsbereich: Treffer per push sammeln -#}
+{%- set kreisDabei = [] %}{% for n in g.nachbarn %}{% if g.kreis and n.url == g.kreis.url %}{% set neu = kreisDabei.push(n) %}{% endif %}{% endfor %}
+{%- if g.kreis and g.kreis.exists and g.kreis.heroPhoto and not kreisDabei.length %}{% set neu = naehe.push(g.kreis) %}{% endif %}
+{% if naehe.length %}
+{% call rail({ id: "in-der-naehe", titel: "In der Nähe", falten: true, link: { href: "/standorte/", label: "Alle Gebiete" } }) %}
+  {%- for n in naehe %}
+  {{ card({ aufbild: true, href: n.url, bild: ("/images/gebiete/" + n.heroPhoto.name) | bild, alt: n.heroPhoto.alt, label: n.label, titel: n.name, sizes: "(min-width: 768px) 840px, 164vw" }) }}
+  {%- endfor %}
+{% endcall %}
+{% endif %}
+
+{# 10d. Quellen zum Aufklappen; ein Klick auf eine Fußnote öffnet die Liste (fg-system.js) #}
+<section class="fgs-section fgs-section--tight fgs-place-sources" aria-labelledby="quellen-titel">
+  <div class="fgs-wrap">
+    <details class="fgs-sources" id="quellen">
+      <summary><h2 id="quellen-titel">Quellen</h2></summary>
+      <p>Zahlen mit Stand {{ g.stand }}. Die hochgestellten Zahlen im Text verweisen auf diese Quellen:</p>
+      <ol>
+        {%- for q in g.quellen %}
+        <li id="quelle-{{ loop.index }}">{% if q.url %}<a href="{{ q.url }}" target="_blank" rel="noopener">{{ q.name }}</a>{% else %}{{ q.name }}{% endif %}{% if q.stand %} · {{ q.stand }}{% endif %}</li>
+        {%- endfor %}
+      </ol>
+    </details>
+  </div>
+</section>
+
+{# 10e. Abschlussband: kostenlose Bewertung (Text aus dem bisherigen Bewertungsband) #}
+{% call closing({ kontakt: g.kontakt or "lennart", satz: "Was ist Ihre Immobilie wert?", button: "bewertung", lang: true }) %}
+  <p>Die Wertermittlung Ihres Objektes erstellen wir kostenlos, meistens innerhalb weniger Stunden und häufig noch am selben Tag.</p>
+  <ul class="fgs-closing-points" role="list">
+    <li><h3>Vollständige Unterlagen vor dem Verkaufsstart</h3><p>Fehlt zum Beispiel die Wohnflächenberechnung, kann die Käuferfinanzierung ins Stocken geraten.</p></li>
+    <li><h3>Kosten vor der ersten Besichtigung</h3><p>Provision und Teilungspflicht nennen wir vorher. <a href="/maklerprovision/">Alle Fälle im Detail</a>.</p></li>
+  </ul>
+{% endcall %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "{{ pageUrl }}",
+      "url": "{{ pageUrl }}",
+      "name": {{ g.title | dump | safe }},
+      "description": {{ g.description | dump | safe }},
+      "inLanguage": "de-DE",
+      "dateModified": "{{ g.updated }}",
+      "isPartOf": { "@id": "https://fg-realestate.de/#website" },
+      "about": { "@id": "{{ pageUrl }}#ort" },{% if g.heroPhoto %}
+      {#- Update 9 §1.5: Urheber, Nennung, Lizenz und Lizenzseite aus derselben Zeile wie /bildnachweise/ (Filter bildnachweis); CC0 ohne Angaben #}
+      {%- set heroNachweis = ("/images/gebiete/" + g.heroPhoto.name) | bildnachweis %}
+      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://fg-realestate.de{{ g.heroPhoto.src }}"{% if heroNachweis and heroNachweis.license != "CC0" %}, "creator": { "@type": "Person", "name": {{ heroNachweis.author | dump | safe }} }, "creditText": {{ heroNachweis.author | dump | safe }}, "license": {{ heroNachweis.licenseUrl | dump | safe }}, "acquireLicensePage": {{ heroNachweis.url | dump | safe }}{% endif %} },{% endif %}
+      "breadcrumb": { "@id": "{{ pageUrl }}#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ pageUrl }}#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
+        { "@type": "ListItem", "position": 2, "name": "Gebiete", "item": "https://fg-realestate.de/standorte/" },
+        {% if g.kreis and g.kreis.exists %}{ "@type": "ListItem", "position": 3, "name": {{ g.kreis.name | dump | safe }}, "item": "https://fg-realestate.de{{ g.kreis.url }}" },
+        { "@type": "ListItem", "position": 4, "name": {{ g.name | dump | safe }} }{% else %}{ "@type": "ListItem", "position": 3, "name": {{ (g.nameLang if g.typ == "landkreis" else g.name) | dump | safe }} }{% endif %}
+      ]
+    },
+    {
+      "@type": "RealEstateAgent",
+      "@id": "{{ pageUrl }}#makler",
+      "name": "Fischer & Geserich Real Estate GmbH",
+      "url": "https://fg-realestate.de/",
+      "logo": "https://fg-realestate.de/images/fg-logo-gold-transparent.png",
+      "image": "https://fg-realestate.de/images/fg-logo-gold-transparent.png",
+      "telephone": "+4915203083048",
+      "email": "info@fg-realestate.de",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Schützenstraße 30",
+        "postalCode": "12165",
+        "addressLocality": "Berlin",
+        "addressCountry": "DE"
+      },
+      "areaServed": {% if g.orte %}[{% for o in g.orte %}{ "@type": {{ ("Place" if (g.typ == "bezirk" or g.typ == "marktgebiet") else "City") | dump | safe }}, "name": {{ o | dump | safe }}{% if g.typ == "bezirk" or g.typ == "marktgebiet" %}, "containedInPlace": { "@id": "{{ pageUrl }}#ort" }{% elif g.kreis %}, "containedInPlace": { "@type": "AdministrativeArea", "name": {{ g.kreis.name | dump | safe }} }{% elif g.typ == "landkreis" %}, "containedInPlace": { "@id": "{{ pageUrl }}#ort" }{% endif %} }{% if not loop.last %}, {% endif %}{% endfor %}]{% else %}{ "@id": "{{ pageUrl }}#ort" }{% endif %},
+      "employee": { "@id": "{{ pageUrl }}#ansprechpartner" },
+      "parentOrganization": { "@id": "https://fg-realestate.de/#organization" }
+    },
+    {
+      "@type": {{ ("AdministrativeArea" if (g.typ == "landkreis" or g.typ == "bezirk") else ("Place" if g.orte else "City")) | dump | safe }},
+      "@id": "{{ pageUrl }}#ort",
+      "name": {{ g.nameLang | dump | safe }},
+      {% if g.kreis %}"containedInPlace": { "@type": {{ ("City" if (g.typ == "bezirk" or g.typ == "marktgebiet") else "AdministrativeArea") | dump | safe }}, "name": {{ g.kreis.name | dump | safe }}{% if g.kreis.exists %}, "url": "https://fg-realestate.de{{ g.kreis.url }}"{% endif %} },{% endif %}
+      "additionalProperty": [
+        {% for z in g.zahlen %}{
+          "@type": "PropertyValue",
+          "name": {{ z.label | dump | safe }},
+          "value": {{ z.wert | dump | safe }},
+          "description": {{ (z.quelle + (", " + z.stichtag if z.stichtag else "")) | dump | safe }}{% if z.url %},
+          "url": {{ z.url | dump | safe }}{% endif %}
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ pageUrl }}#ansprechpartner",
+      "name": {{ kontakt.name | dump | safe }},
+      "jobTitle": {{ kontakt.role | dump | safe }},
+      "image": "https://fg-realestate.de{{ kontakt.photo }}",
+      "telephone": {{ kontaktPhone.href | replace("tel:", "") | dump | safe }},
+      "email": {{ kontaktEmail | dump | safe }},
+      "url": "https://fg-realestate.de{{ kontakt.profile | navHref }}",
+      "worksFor": { "@id": "{{ pageUrl }}#makler" },
+      "mainEntityOfPage": { "@id": "{{ pageUrl }}" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{ pageUrl }}#faq",
+      "isPartOf": { "@id": "{{ pageUrl }}" },
+      "mainEntity": [
+        {% for item in g.faq | faqFrei %}{
+          "@type": "Question",
+          "name": {{ item.frage | dump | safe }},
+          "acceptedAnswer": { "@type": "Answer", "text": {{ item.antwort | nofn | striptags | dump | safe }} }
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+  ]
+}
+</script>

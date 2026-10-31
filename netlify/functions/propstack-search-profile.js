@@ -217,56 +217,93 @@ function buildNote(input) {
   ].join("\n");
 }
 
+// Suchkriterien (Update 7, §1, 28.10.2026, Timon: „Suchkriterien mit übernehmen.“): Jedes Kriterium des Formulars geht
+// in das passende Feld des Propstack-Suchprofils (POST /saved_queries, Felder laut docs.propstack.de/reference/suchprofile,
+// gelesen am 28.10.2026). Was Propstack nicht als Feld kennt (Badezimmer, Stellplatz, Barrierefrei, Off-Market, Nachricht),
+// steht weiter in der Notiz des Suchprofils und im Kontakt. Vorher gingen die Objektarten mit Werten an Propstack, die es
+// dort nicht gibt (z. B. SINGLE_FAMILY_HOUSE als rs_types), und bei einem Fehler legten die Ausweichversuche das Profil
+// ohne die Hülle „saved_query“ an, also ohne Kriterien. Jetzt gibt es nur noch den dokumentierten Aufruf.
 async function safeCreateSearchProfile(apiKey, input) {
-  const savedQuery = removeEmpty({
+  const savedQuery = buildSavedQuery(input);
+  try {
+    return await propstackPost(apiKey, "/saved_queries", { saved_query: savedQuery });
+  } catch (error) {
+    console.warn("SEARCH PROFILE CREATE FAILED:", error.message);
+    return {
+      ok: false,
+      skipped: true,
+      reason: `${error.message} Daten stehen im Kontakt.`
+    };
+  }
+}
+
+function buildSavedQuery(input) {
+  const buy = input.marketingType !== "RENT";
+  const types = mapRsTypes(input.propertyType);
+  const features = (input.features || []).map(normalize);
+  const has = (key) => (features.some((f) => f.includes(key)) ? "true" : undefined);
+  const location = splitLocation(input.location);
+  return removeEmpty({
     client_id: input.contactId,
     active: true,
     marketing_type: input.marketingType,
-    cities: input.location ? [extractCity(input.location)] : [],
-    regions: input.location ? [input.location] : [],
-    price_to: input.marketingType === "BUY" ? input.budgetNumber : undefined,
-    base_rent_to: input.marketingType === "RENT" ? input.budgetNumber : undefined,
-    living_space: input.livingSpace,
+    cities: location.cities,
+    regions: location.regions,
+    rs_types: types.rsTypes,
+    rs_categories: types.rsCategories,
+    price_to: buy ? input.budgetNumber : undefined,
+    base_rent_to: buy ? undefined : input.budgetNumber,
     number_of_rooms: input.rooms,
+    living_space: input.livingSpace,
     number_of_bedrooms: input.bedrooms,
-    number_of_bathrooms: input.bathrooms,
     plot_area: input.plotArea,
-    rs_types: input.propertyType ? [mapRsType(input.propertyType)] : undefined,
-    note: input.note,
-    internal_note: input.note,
-    partial_custom_fields: removeEmpty({
-      website_lead: true,
-      newsletter_gewuenscht: true,
-      immobilienmailing_gewuenscht: true,
-      suchgebiet: input.location,
-      budget_zahl: input.budgetNumber,
-      immobilienart: input.propertyType,
-      objektart: input.propertyType,
-      ausstattung: input.features && input.features.length ? input.features.join(", ") : undefined
-    })
+    balcony: has("balkon"),
+    garden: has("garten"),
+    lift: has("aufzug"),
+    cellar: has("keller"),
+    built_in_kitchen: has("einbaukuche"),
+    note: input.note
   });
+}
 
-  const attempts = [
-    { endpoint: "/saved_queries", body: { saved_query: savedQuery } },
-    { endpoint: "/saved_queries", body: savedQuery },
-    { endpoint: "/search_profiles", body: { search_profile: savedQuery } }
-  ];
+// Objektart des Formulars → rs_types (und rs_categories) laut Propstack-Doku „Objekte“.
+// Kapitalanlagen stehen bei F&G in Propstack als Wohnung mit Zusatzfeld, deshalb Wohnung und Anlageobjekt.
+function mapRsTypes(value) {
+  const text = normalize(value);
+  if (!text) return {};
+  if (text.includes("mehrfamilien")) return { rsTypes: ["HOUSE"], rsCategories: ["MULTI_FAMILY_HOUSE"] };
+  if (text.includes("grund")) return { rsTypes: ["TRADE_SITE"] };
+  if (text.includes("gewerbe")) return { rsTypes: ["OFFICE", "STORE", "GASTRONOMY", "INDUSTRY"] };
+  if (text.includes("kapital") || text.includes("anlage")) return { rsTypes: ["APARTMENT", "INVESTMENT"] };
+  if (text.includes("haus")) return { rsTypes: ["HOUSE"] };
+  if (text.includes("wohnung")) return { rsTypes: ["APARTMENT"] };
+  return {};
+}
 
-  let lastError = null;
-  for (const attempt of attempts) {
-    try {
-      return await propstackPost(apiKey, attempt.endpoint, attempt.body);
-    } catch (error) {
-      lastError = error;
-      console.warn("SEARCH PROFILE CREATE ATTEMPT FAILED:", error.message);
+// Suchgebiet als Freitext („Berlin-Steglitz“, „Potsdam, Teltow“) → cities als einfache Ortsnamen wie in der Doku
+// („Berlin oder München“). Ein Bezirk mit Bindestrich bringt seine Stadt mit („Berlin-Steglitz“ → auch „Berlin“);
+// Ortsnamen mit Bindestrich oder Schrägstrich wie „Blankenfelde-Mahlow“ oder „Petershagen/Eggersdorf“ bleiben ganz.
+// regions nimmt nur Bundesländer.
+function splitLocation(value) {
+  const parts = clean(value)
+    .split(/\s*(?:,|;|\bund\b|\boder\b)\s*/i)
+    .map((part) => part.replace(/\b\d{5}\b/g, "").trim())
+    .filter(Boolean);
+  const states = ["Berlin", "Brandenburg", "Sachsen", "Sachsen-Anhalt", "Mecklenburg-Vorpommern", "Thüringen"];
+  const bigCities = ["Berlin", "Leipzig", "Dresden", "Potsdam"];
+  const cities = [];
+  const regions = [];
+  for (const part of parts) {
+    const state = states.find((name) => name.toLowerCase() === part.toLowerCase());
+    if (state && state !== "Berlin") {
+      regions.push(state);
+      continue;
     }
+    cities.push(part);
+    const base = bigCities.find((name) => part.toLowerCase().startsWith(`${name.toLowerCase()}-`) || part.toLowerCase().startsWith(`${name.toLowerCase()} `));
+    if (base) cities.push(base);
   }
-
-  return {
-    ok: false,
-    skipped: true,
-    reason: lastError ? lastError.message : "Suchprofil konnte per API nicht angelegt werden. Daten stehen im Kontakt."
-  };
+  return { cities: [...new Set(cities)], regions: [...new Set(regions)] };
 }
 
 async function safeCreateTask(apiKey, contactId, note, fullName, marketingType) {
@@ -375,16 +412,6 @@ function normalizeObjectType(value) {
   return raw;
 }
 
-function mapRsType(value) {
-  const text = normalize(value);
-  if (text.includes("mehrfamilien")) return "MULTI_FAMILY_HOUSE";
-  if (text.includes("grund")) return "PLOT";
-  if (text.includes("gewerbe")) return "COMMERCIAL_UNIT";
-  if (text.includes("kapital") || text.includes("anlage")) return "INVEST_FREEHOLD_FLAT";
-  if (text.includes("haus")) return "SINGLE_FAMILY_HOUSE";
-  return "APARTMENT";
-}
-
 function getId(response, keys) {
   if (!response) return null;
   if (response.id) return response.id;
@@ -393,10 +420,6 @@ function getId(response, keys) {
   }
   if (response.data && response.data.id) return response.data.id;
   return null;
-}
-
-function extractCity(value) {
-  return clean(value).split(",")[0].replace(/\d{5}/g, "").trim();
 }
 
 function normalize(value) {
@@ -436,3 +459,6 @@ function json(statusCode, body) {
     body: JSON.stringify(body)
   };
 }
+
+// Formulare ohne JavaScript (Update 6, §1): POST als Formular → gleiche Nutzlast, dann Weiterleitung. Siehe _shared/formpost.js.
+exports.handler = require("./_shared/formpost").wrap("propstack-search-profile", exports.handler);

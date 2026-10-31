@@ -1,0 +1,386 @@
+{
+  "slug": "havelland",
+  "name": "Havelland",
+  "nameLang": "Landkreis Havelland",
+  "inOrt": "im Landkreis Havelland",
+  "fuerOrt": "den Landkreis Havelland",
+  "typ": "landkreis",
+  "orte": [
+    "Falkensee",
+    "Dallgow-Döberitz",
+    "Brieselang",
+    "Nauen",
+    "Rathenow"
+  ],
+  "kontakt": "lennart",
+  "title": "Immobilienmakler Havelland – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler im Landkreis Havelland: verkaufen, kaufen und finanzieren in Falkensee, Dallgow-Döberitz, Brieselang und Nauen, mit Bodenrichtwerten 2026.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren im Landkreis Havelland",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger im Landkreis Havelland beim Verkauf, beim Kauf und bei der Finanzierung, von Falkensee, Dallgow-Döberitz und Brieselang im Berliner Umland bis Nauen und Rathenow. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für alle Orte auf dieser Seite ist Lennart Geserich Ihr Ansprechpartner, Head of Sales & Vermietung.",
+  "hero": {
+    "name": "havelland-ketzin-luftbild",
+    "alt": "Ketzin/Havel im Abendlicht aus der Luft, Blick nach Süden über die Stadt und die Havel mit ihren Inseln",
+    "credit": "Andreas Lippold, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Ketzin_im_Abendlicht.jpg",
+    "position": "50% 55%"
+  },
+  "stand": "Oktober 2026",
+  "updated": "2026-10-26",
+  "zahlen": [
+    {
+      "wert": "800 €/m²",
+      "label": "Höchster Bodenrichtwert für Wohnbauland im Landkreis, Mehrfamilienhauszone Akazienhof im Zentrum von Falkensee",
+      "detail": "Ein Jahr zuvor 850 €/m². Am unteren Ende stehen 12 €/m² in Klessener Zootzen bei Friesack. Im Berliner Umland sind die meisten Werte gesunken, in Rathenow 46 von 49 Wohn- und Mischgebietszonen gestiegen.",
+      "quelle": "BORIS Brandenburg",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?f=json&limit=2000&skipGeometry=true&gemeinde_gemeindekennzeichen_kreis=63&stichtag=2026-01-01",
+      "stichtag": "01.01.2026"
+    },
+    {
+      "wert": "Ø 4.680 €/m²",
+      "label": "Freistehende Ein- und Zweifamilienhäuser, Baujahre 1991 bis 2022, in Falkensee und Dallgow-Döberitz",
+      "detail": "50 Kauffälle, mittlerer Kaufpreis 638.000 €. Brieselang, Schönwalde-Glien und Wustermark: Ø 3.826 €/m²; Rathenow und Premnitz: Ø 2.600 €/m².",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Havelland",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_HVL.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 3.140 €/m²",
+      "label": "Eigentumswohnungen, Baujahre 1991 bis 2022, in Falkensee und Dallgow-Döberitz",
+      "detail": "90 Kauffälle, Erst- und Weiterverkauf zusammen; Baujahre ab 2023: Ø 5.563 €/m². Im ganzen Landkreis kosteten weiterverkaufte Wohnungen im Mittel 2.496 €/m², Erstverkäufe 6.496 €/m².",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Havelland",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_HVL.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 9,4 €/m²",
+      "label": "Nettokaltmiete in verkauften, vermieteten Eigentumswohnungen im Berliner Umland des Havellands",
+      "detail": "137 Kauffälle, Spanne 5,9 bis 15,5 €/m². In Rathenow, Premnitz und Nauen: Ø 6,1 €/m². Eigene Mietübersichten erstellt der Gutachterausschuss nicht.",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Havelland",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_HVL.pdf",
+      "stichtag": "Kaufverträge 2023–2025"
+    },
+    {
+      "wert": "170.792",
+      "label": "Einwohner im Landkreis Havelland",
+      "detail": "42 weniger als ein Jahr zuvor. Das Landesamt für Bauen und Verkehr erwartet für 2040 179.049 Einwohner, für Wustermark ein Plus von 29,6 %, für Brieselang 18,3 %.",
+      "quelle": "Amt für Statistik Berlin-Brandenburg; LBV Brandenburg",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stichtag": "31.12.2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Falkensee: größte Stadt im Landkreis",
+      "absaetze": [
+        "Mit 46.213 Einwohnern Ende 2025 ist Falkensee die größte Stadt im Havelland, 493 mehr als ein Jahr zuvor; mit 1.066 Einwohnern je km² ist sie auch die am dichtesten besiedelte.[[3]] Bis 2040 erwartet das Landesamt für Bauen und Verkehr hier kaum eine Veränderung (+0,1 %).[[4]] Mit RE8 und S5 sind es 28 Minuten bis Friedrichstraße. Eine S-Bahn hat Falkensee nicht, die Verlängerung von Spandau ist in der Vorplanung.[[9,12]]",
+        "Etwa ein Drittel des Geldes, das 2025 im Landkreis für baureife Grundstücke bezahlt wurde, entfiel auf Falkensee. Baugrundstücke für Ein- und Zweifamilienhäuser kosteten im Mittel 397 €/m² bei 49 Kauffällen, nach 424 €/m² im Vorjahr.[[1]] Ohne Mehrfamilienhaus- und Uferzonen reichen die Bodenrichtwerte für Wohnbauland von 320 €/m² in Finkenkrug Süd bis 550 €/m² am Falkenhagener See, Ufergrundstücke dort liegen bei 750 €/m². 72 der 79 baureifen Zonen sind zum 01.01.2026 gesunken.[[2]] Seit dem 01.01.2026 gelten Mietpreisbremse und Kappungsgrenze.[[5,6]] Bodenrichtwerte nach Wohngebieten, Mieten und Projekte finden Sie auf unserer <a href=\"/standorte/falkensee/\">Seite zu Falkensee</a>."
+      ],
+      "bild": {
+        "name": "havelland-falkensee-diesterwegschule",
+        "alt": "Rote Backsteinfassade der ehemaligen Diesterwegschule in Falkensee mit Spitzgiebel, hohen Fenstern und rotem Portal, davor Laubbäume und ein Zaun",
+        "caption": "Die ehemalige Diesterwegschule in Falkensee.",
+        "credit": "Pascal Reuer, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Diesterwegschule14612.jpg"
+      }
+    },
+    {
+      "h2": "Dallgow-Döberitz: Neu Döberitz, Seeburg und Rohrbeck",
+      "absaetze": [
+        "Dallgow-Döberitz hatte Ende 2025 10.860 Einwohner, 163 je km²; bis 2040 erwartet das Landesamt für Bauen und Verkehr ein Plus von 11,6 %.[[3,4]] Während der Vollsperrung der Strecke zwischen Berlin-Spandau und Stendal bis zum 12.12.2026 fahren am Bahnhof Dallgow-Döberitz nur Busse; mit Umstieg in Falkensee oder Finkenkrug sind es rund 50 Minuten bis Friedrichstraße.[[10,9]] Von Mitte Oktober bis Mitte Dezember 2027 ist eine weitere Vollsperrung geplant.[[10]]",
+        "Die Bodenrichtwerte für Wohn- und Mischgebiete reichen zum 01.01.2026 von 220 €/m² im Dorfgebiet Rohrbeck bis 500 €/m² am Bahnhof. Neu Döberitz liegt bei 440, die Siedlungen Nord und Süd bei 400 und 380, Seeburg bei 300 bis 340 €/m². Bis auf Neu Döberitz sind alle diese Zonen um 20 bis 50 €/m² gesunken.[[2]] 2025 wurden nur fünf Baugrundstücke für Einfamilienhäuser verkauft, im Mittel für 424 €/m²; Veränderungen bei so wenigen Verträgen hält der Gutachterausschuss für eher zufällig. Häuser und Wohnungen weist er nur zusammen mit Falkensee aus. Von den 426 weiterverkauften Wohnungen, aus denen er seinen Preisindex für 2021 bis 2025 berechnet, lagen 105 in Dallgow-Döberitz.[[1]] Die Mietpreisbremse gilt hier nicht: In der Bewertung des Landes erreichte die Gemeinde 6 Punkte, nötig waren mindestens 6,5.[[5,8]]"
+      ],
+      "bild": {
+        "name": "havelland-dorfkirche-seeburg",
+        "alt": "Die Dorfkirche Seeburg aus Feldsteinen mit rotem Ziegeldach und hölzernem Turm unter blauem Himmel",
+        "caption": "Die Dorfkirche in Seeburg, Gemeinde Dallgow-Döberitz.",
+        "credit": "Hans G. Oberlack, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Dorfkirche_Seeburg_(Dallgow-D%C3%B6beritz)_2018_S.jpg"
+      }
+    },
+    {
+      "h2": "Brieselang: vier Bahnlinien und das Güterverkehrszentrum",
+      "absaetze": [
+        "Brieselang hatte Ende 2025 13.192 Einwohner. Das Landesamt für Bauen und Verkehr erwartet bis 2040 ein Plus von 18,3 %, nach Wustermark der zweithöchste Wert im Landkreis.[[3,4]] Am Bahnhof halten RB10, RB14, RE2 und RE8; mit RB10 und S7 sind es 39 Minuten bis Friedrichstraße.[[9]] Im Gewerbegebiet GVZ Brieselang sind Amazon und Zalando ansässig.[[12]]",
+        "Die Bodenrichtwerte für Wohnbauland reichen zum 01.01.2026 von 190 €/m² in Bredow bis 340 €/m² in Brieselang Mitte-Süd, im Kerngebiet Mitte sind es 360 €/m². 11 von 12 Wohn- und Mischgebietszonen sind gesunken, nur Mitte-Nordost stieg von 300 auf 320 €/m².[[2]] Baugrundstücke für Einfamilienhäuser kosteten 2025 im Mittel 272 €/m² bei 24 Kauffällen, nach 299 €/m² im Vorjahr. Häuser weist der Gutachterausschuss zusammen mit Schönwalde-Glien und Wustermark aus: Freistehende Einfamilienhäuser der Baujahre 1991 bis 2022 kosteten dort im Mittel 3.826 €/m² Wohnfläche, nach 4.025 €/m² im Vorjahr.[[1]] Seit dem 01.01.2026 gilt die Mietpreisbremse; in der Bewertung des Landes erreichte Brieselang 10 von 10 Punkten.[[5,8]]"
+      ],
+      "bild": {
+        "name": "havelland-brieselang-bredow",
+        "alt": "Gepflasterte Wohnstraße in Bredow mit einem weißen Einfamilienhaus mit dunklem Dach und Gauben hinter einem Zaun, weitere Häuser dahinter, blauer Himmel mit Wolken",
+        "caption": "Wohnstraße in Bredow, Ortsteil von Brieselang.",
+        "credit": "Assenmacher, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Brieselang-Bredow_Ortsansicht_(1).jpg"
+      }
+    },
+    {
+      "h2": "Nauen, Ketzin/Havel und Rathenow",
+      "absaetze": [
+        "Westlich des Berliner Umlands liegen die beiden Mittelzentren des Landkreises: die Kreisstadt Rathenow mit 24.761 Einwohnern und Nauen mit 19.854.[[1,3]] Für Nauen erwartet das Landesamt für Bauen und Verkehr bis 2040 ein Plus von 12,1 %, für Rathenow −0,5 %.[[4]] Von Nauen fährt der RE8 in 41 Minuten bis Friedrichstraße.[[9]] Rathenow ist von den Bauarbeiten an der Strecke nach Spandau besonders betroffen: Der RE4 fällt zwischen Stendal und Spandau aus, mit Bus bis Nauen und RE8 dauert die Fahrt bis Friedrichstraße derzeit etwa 1¾ Stunden. Westlich von Wustermark bleibt der RE4 auch nach dem 12.12.2026 betroffen.[[11,9,10]]",
+        "Laut Gutachterausschuss sind die Baulandpreise 2025 im westlichen Havelland wieder gestiegen, in Nauen und Ketzin/Havel um rund 10 % gesunken.[[1]] Die Bodenrichtwerte sind in allen drei Städten zum 01.01.2026 nicht gesunken: In Nauen stiegen 22 von 53 Wohn- und Mischgebietszonen, die Werte reichen bis 400 €/m² in Nauen West. In Rathenow stiegen 46 von 49 Zonen, das Zentrum liegt bei 110 €/m² nach 100 im Vorjahr. In Ketzin/Havel blieben alle 33 Zonen unverändert.[[2]] Freistehende Einfamilienhäuser der Baujahre 1991 bis 2022 kosteten 2025 in Nauen und Ketzin/Havel im Mittel 3.750 €/m² Wohnfläche, in Rathenow und Premnitz 2.600 €/m².[[1]] Die Mietpreisbremse gilt in keiner der drei Städte.[[5]]"
+      ],
+      "bild": {
+        "name": "havelland-nauen-altstadt",
+        "alt": "Denkmalgeschütztes Haus in der Altstadt von Nauen",
+        "caption": "Ein Baudenkmal in der Altstadt von Nauen.",
+        "credit": "Bildarbeiter, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Nauener_Altstadt_Baudenkmal_09150450_2024-06-16_1.jpg",
+        "position": "50% 50%"
+      }
+    }
+  ],
+  "band": {
+    "name": "havelland-havellaendisches-luch",
+    "alt": "Weite Wiese im Havelländischen Luch mit rotem Mohn und Kornblumen, am Horizont ein Waldstreifen unter bedecktem Himmel",
+    "caption": "Wiesen im Havelländischen Luch im Juni.",
+    "credit": "112grammarpolice, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Extensively_managed_grasslands_in_Havelländisches_Luch.JPG"
+  },
+  "verkaufen": {
+    "h2": "Immobilie im Landkreis Havelland verkaufen",
+    "absaetze": [
+      "Zwischen Falkensee und Rathenow liegen große Preisunterschiede: Freistehende Einfamilienhäuser der Baujahre 1991 bis 2022 kosteten 2025 in Falkensee und Dallgow-Döberitz im Mittel 4.680 €/m² Wohnfläche, in Rathenow und Premnitz 2.600 €/m².[[1]] Wir bewerten deshalb nach den Zahlen Ihrer Gemeinde und Ihres Baujahrs, nicht nach einem Mittelwert für den Landkreis.",
+      "2025 wurden im Landkreis 2.016 Kaufverträge geschlossen, 14,4 % mehr als im Vorjahr; der Gutachterausschuss spricht von einer spürbaren Belebung. Im Berliner Umland sanken dabei die Preise für Bauland, im westlichen Havelland stiegen sie.[[1]] Bei vermieteten Wohnungen kommt es auf die Gemeinde an: In Brieselang, Falkensee und Schönwalde-Glien gilt seit dem 01.01.2026 die Mietpreisbremse, in Dallgow-Döberitz, Nauen und Rathenow nicht.[[5]] Kapitalanleger rechnen damit, deshalb nehmen wir es in Preisfindung und Exposé auf."
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren im Landkreis Havelland",
+    "absaetze": [
+      "Als Eigennutzer klären Sie zuerst den Weg nach Berlin. In Falkensee, Brieselang und Nauen halten Regionalzüge der Linien RE2, RE8 und RB10; eine S-Bahn hat Falkensee nicht, die Verlängerung von Spandau ist in der Vorplanung.[[9,12]] Wer in Dallgow-Döberitz, Wustermark oder Rathenow kauft, sollte die Sperrungen der Strecke nach Stendal im Herbst 2026 und im Herbst 2027 einplanen.[[10,11]]",
+      "Als Kapitalanleger prüfen Sie Miete und Kaufpreis gegen den Grundstücksmarktbericht. Für vermietete Eigentumswohnungen im Berliner Umland ermittelte der Gutachterausschuss aus Verkäufen der Jahre 2023 bis 2025 einen Liegenschaftszinssatz von im Mittel 2,2 % bei einer Nettokaltmiete von 9,4 €/m², für Mehrfamilienhäuser 3,3 %, wegen weniger Kauffälle nur als Orientierungswert. Im weiteren Metropolenraum, vor allem in Rathenow, lagen die Mieten mit im Mittel 6,1 €/m² deutlich niedriger.[[1]]"
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für den Landkreis Havelland",
+    "absaetze": [
+      "In Falkensee und Dallgow-Döberitz kosteten freistehende Einfamilienhäuser der Baujahre 1991 bis 2022 im Jahr 2025 im Mittel 638.000 €, Reihen- und Doppelhäuser 405.000 €; in Brieselang, Schönwalde-Glien und Wustermark waren es für freistehende Häuser 525.000 €.[[1]] Dazu kommen die Kaufnebenkosten und wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen: Wir rechnen das mit Ihnen durch, vergleichen Ihre Finanzierung über Europace und Baufinex und fragen parallel Banken direkt an."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Welcher Makler verkauft Häuser in Falkensee, Dallgow-Döberitz und Brieselang?",
+      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im ganzen Landkreis Havelland, also auch in Falkensee, Dallgow-Döberitz und Brieselang; Ihr Ansprechpartner ist Lennart Geserich. Grundlage unserer Bewertung sind der Bodenrichtwert Ihrer Zone und die Preise, die der Gutachterausschuss für Ihre Gemeinde und Ihr Baujahr ausweist. Für Häuser fasst er Falkensee mit Dallgow-Döberitz und Brieselang mit Schönwalde-Glien und Wustermark zusammen.[[1]]",
+      "herkunft": "Prompt der KI-Recherche „Makler für den Hausverkauf in Falkensee, wen empfiehlst du?“ (q38) (ChatGPT, Gemini, Google AI Overview; Dashboard/src/data/research/ai_answers.json, Oktober 2026), Google-Suche „Immobilienmakler Falkensee“ (Google_Areas, Oktober 2026) und Google-Autocomplete „immobilienmakler dallgow döberitz“, „immobilienmakler brieselang“ (research/serp/autocomplete-2026-10-26-havelland.json)"
+    },
+    {
+      "frage": "Wie hoch sind die Bodenrichtwerte im Havelland 2026?",
+      "antwort": "Zum 01.01.2026 reichen sie für Wohnbauland von 12 €/m² in Klessener Zootzen bei Friesack bis 800 €/m² in der Mehrfamilienhauszone Akazienhof in Falkensee. Ohne Mehrfamilienhaus- und Uferzonen liegen die Wohnbauzonen in Falkensee zwischen 320 und 550 €/m², in Brieselang zwischen 190 und 340, in Rathenow zwischen 45 und 140 €/m². Im Berliner Umland sind die meisten Werte gesunken, in Nauen, Ketzin/Havel und Rathenow gestiegen oder gleich geblieben.[[2]] Den Wert Ihrer Zone finden Sie in BORIS Brandenburg.",
+      "herkunft": "Google-Autocomplete „bodenrichtwerte havelland 2026“ und „bodenrichtwert brieselang 2026“ (research/serp/autocomplete-2026-10-26-havelland.json)"
+    },
+    {
+      "frage": "Gibt es einen Mietspiegel im Landkreis Havelland?",
+      "antwort": "Falkensee hat nach Auskunft der Stadt keinen Mietspiegel und der Gutachterausschuss des Landkreises erstellt bisher keine eigenen Mietübersichten.[[13,1]] Anhaltspunkte liefern die Mieten in verkauften, vermieteten Wohnungen: Im Berliner Umland des Havellands lag die Nettokaltmiete 2023 bis 2025 im Mittel bei 9,4 €/m², in Rathenow, Premnitz und Nauen bei 6,1 €/m².[[1]] In Brieselang, Falkensee und Schönwalde-Glien begrenzen zudem Mietpreisbremse und Kappungsgrenze die Miete bei Neuvermietung und im Bestand.[[5,6]]",
+      "herkunft": "Google-Autocomplete „landkreis havelland mietspiegel“ und „mietspiegel havelland“ (research/serp/autocomplete-2026-10-26-havelland.json)"
+    },
+    {
+      "frage": "Gilt die Mietpreisbremse im Havelland?",
+      "antwort": "In drei Gemeinden: Brieselang, Falkensee und Schönwalde-Glien gehören seit dem 01.01.2026 zur Gebietskulisse, die Verordnung gilt bis 31.12.2029. Dallgow-Döberitz wurde mit 6 Punkten nicht aufgenommen, nötig waren 6,5; auch Nauen, Rathenow und die übrigen Gemeinden sind nicht erfasst.[[5,8]] Bei Neuvermietung in Gebäuden, die vor dem 1. Oktober 2014 fertiggestellt und bezogen wurden, darf die Miete in den drei Gemeinden höchstens 10 % über der ortsüblichen Vergleichsmiete liegen, Bestandsmieten dürfen bis 31.12.2030 in drei Jahren um höchstens 15 % steigen.[[7,6]]",
+      "herkunft": "Prompt der KI-Recherche „Mietpreisbremse in Berlin und Brandenburg: was heißt das für meine Rendite?“ (q24) (ChatGPT, Gemini; Dashboard/src/data/research/ai_answers.json, Oktober 2026) und Google-Autocomplete „mietpreisbremse havelland“ (research/serp/autocomplete-2026-10-26-havelland.json)"
+    },
+    {
+      "frage": "Ist es aktuell sinnvoll, eine Immobilie im Havelland zu verkaufen?",
+      "antwort": "Das hängt von Ihrer Lage und Ihren Plänen ab; eine Prognose geben wir nicht. Die Zahlen für 2025: Der Gutachterausschuss spricht von einer spürbaren Belebung des Marktes mit 2.016 Kaufverträgen, 14,4 % mehr als im Vorjahr. Freistehende Einfamilienhäuser der Baujahre 1991 bis 2022 kosteten in Falkensee und Dallgow-Döberitz im Mittel 4.680 €/m² Wohnfläche (Vorjahr 4.553), in Brieselang, Schönwalde-Glien und Wustermark 3.826 €/m² (Vorjahr 4.025).[[1]]",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilie verkaufen Falkensee“, dort als „Ist es aktuell sinnvoll, eine Immobilie zu verkaufen?“ (Google_Areas, Oktober 2026)"
+    },
+    {
+      "frage": "Was kostet eine Immobilienbewertung im Havelland?",
+      "antwort": "Bei Fischer & Geserich nichts. Die Wertermittlung liegt meistens nach wenigen Stunden vor, oft noch am selben Tag; wir gehen vom Bodenrichtwert und den Preisen aus, die der Gutachterausschuss für Ihre Gemeindegruppe ausweist, etwa Falkensee mit Dallgow-Döberitz oder Rathenow mit Premnitz.[[1]] Kostenpflichtig ist dagegen ein Verkehrswertgutachten eines Sachverständigen oder des Gutachterausschusses, wie es etwa für das Finanzamt oder eine Erbauseinandersetzung nötig werden kann.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienbewertung Falkensee“, dort als „Wie viel kostet es, eine Immobilie schätzen zu lassen?“ (Google_Areas, Oktober 2026)"
+    },
+    {
+      "frage": "Ich habe ein Haus im Havelland geerbt. Wer kann den Verkauf übernehmen?",
+      "antwort": "Wir verkaufen auch geerbte Immobilien. Zuerst klären wir mit Ihnen den rechtlichen Status des Hauses und die vorhandenen Unterlagen; häufig geht es auch um die Liquidität für die Erbschaftsteuer und je nach Situation ist eine Finanzierung dafür sinnvoller als ein schneller Verkauf unter Zeitdruck. Für den Preis zählt bei älteren Häusern der Vergleich nach Baujahr: Freistehende Einfamilienhäuser bis Baujahr 1948 kosteten 2025 in Falkensee und Dallgow-Döberitz im Mittel 4.608 €/m² Wohnfläche, in Nauen und Ketzin/Havel 2.234, in Rathenow und Premnitz 1.618 €/m².[[1]]",
+      "herkunft": "Prompt der KI-Recherche „Ich habe ein Haus in Brandenburg geerbt und wohne nicht vor Ort. Wer kann den Verkauf für mich übernehmen?“ (q52) (ChatGPT, Gemini; Dashboard/src/data/research/ai_answers.json, Oktober 2026). Antwort nach der FAQ der Live-Seite „Verkauft ihr auch geerbte Immobilien?“; zur Abwicklung aus der Ferne gibt es keine Angabe, deshalb ohne diesen Teil der Frage"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Falkensee",
+      "url": "/standorte/falkensee/"
+    },
+    {
+      "name": "Landkreis Oberhavel",
+      "url": "/standorte/oberhavel/"
+    },
+    {
+      "name": "Teltow & Kleinmachnow",
+      "url": "/standorte/teltow/"
+    },
+    {
+      "name": "Berlin",
+      "url": "/standorte/berlin/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Grundstücksmarktbericht 2025 Landkreis Havelland, Gutachterausschuss für Grundstückswerte im Landkreis Havelland (Version 1.0 vom 05.06.2026)",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_HVL.pdf",
+      "stand": "Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+    },
+    {
+      "name": "Bodenrichtwerte Landkreis Havelland, BORIS Brandenburg (GeoBasis-DE/LGB, dl-de/by-2-0)",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?f=json&limit=2000&skipGeometry=true&gemeinde_gemeindekennzeichen_kreis=63&stichtag=2026-01-01",
+      "stand": "Stichtag 01.01.2026, Vergleich mit 01.01.2025"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 4 – j / 25, Bevölkerung im Land Brandenburg",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Landesamt für Bauen und Verkehr, Bevölkerungsvorausschätzung 2024 bis 2040, Anlage 3",
+      "url": "https://lbv.brandenburg.de/sixcms/media.php/9/31_Bevoelkerungsvorausschaetzung_2024-20.pdf",
+      "stand": "Basis 31.12.2023, mittlere Variante"
+    },
+    {
+      "name": "Mietpreisbegrenzungsverordnung Brandenburg, Ministerium für Infrastruktur und Landesplanung",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/Mietpreisbegrenzungsverordnung.pdf",
+      "stand": "Kabinettsbeschluss 25.11.2025, gültig 01.01.2026 bis 31.12.2029"
+    },
+    {
+      "name": "Kappungsgrenzenverordnung Brandenburg, Ministerium für Infrastruktur und Landesplanung",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/KappGrenzV.pdf",
+      "stand": "gültig 01.01.2026 bis 31.12.2030"
+    },
+    {
+      "name": "MIL, Pressemitteilung zu Mietpreisbremse und Kappungsgrenzenverordnung",
+      "url": "https://mil.brandenburg.de/mil/de/presse/detail/~25-11-2025-kabinett-mietpreisbremse-und-kappungsgrenzenverordnung",
+      "stand": "25.11.2025"
+    },
+    {
+      "name": "RegioKontext GmbH, Gutachten zur Erstellung einer Gebietskulisse für die Mietpreisbegrenzungsverordnungen (Anlage zur Verordnung)",
+      "url": "https://bravors.brandenburg.de/fm/68/Anlage_Gutachten.pdf",
+      "stand": "18.09.2025, veröffentlicht im GVBl. II Nr. 95 vom 04.12.2025"
+    },
+    {
+      "name": "VBB-Fahrplandaten, Verbindungen bis S+U Friedrichstraße",
+      "url": "https://v6.vbb.transport.rest/journeys?from=900210010&to=900100001&departure=2026-11-10T09:00%2B01:00",
+      "stand": "Fahrplan Dienstag 10.11.2026 ab 9 Uhr, abgefragt 26.10.2026"
+    },
+    {
+      "name": "DB Regio Nordost, Vollsperrung der Bahnstrecke Stendal – Rathenow – Wustermark – Berlin-Spandau",
+      "url": "https://www.dbregio-berlin-brandenburg.de/db-regio-no/Fahren/Baustellen-und-Stoerungen/Vollsperrung-der-Bahnstrecke-Stendal-Rathenow-Wustermark-Berlin-Spandau-14033120",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Landkreis Havelland, Informationsübersicht zur Bahnsperrung",
+      "url": "https://www.havelland.de/bahnsperrung/informationsuebersicht/print-version/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "i2030, Korridor West: S-Bahn Spandau – Falkensee",
+      "url": "https://www.i2030.de/west/",
+      "stand": "geändert 10.07.2026"
+    },
+    {
+      "name": "Stadt Falkensee, FAQ (Mietspiegel)",
+      "url": "https://www.falkensee.de/seite/552977/faq-h%C3%A4ufig-gestellte-fragen.html",
+      "stand": "abgerufen 24.10.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "170.792 Einwohner Landkreis 31.12.2025, −42; LBV 2040 179.049",
+      "fundstelle": "havelland.md, Landkreis Nr. 1, 2"
+    },
+    {
+      "zahl": "Einwohner, Veränderung, Dichte: Falkensee 46.213 (+493, 1.066/km², größte und dichteste Gemeinde), Dallgow-Döberitz 10.860 (163/km²), Brieselang 13.192, Rathenow 24.761, Nauen 19.854",
+      "fundstelle": "havelland.md, Orte Nr. 40–44; Rangfolge aus afs2025.xlsx Tab. 3.4 (eigene Sortierung)"
+    },
+    {
+      "zahl": "LBV 2023→2040: Falkensee +0,1 %, Dallgow-Döberitz +11,6 %, Brieselang +18,3 % (zweithöchster Wert nach Wustermark +29,6 %), Nauen +12,1 %, Rathenow −0,5 %",
+      "fundstelle": "havelland.md, Orte Nr. 40–45; bvs.txt Z. 1552–1565"
+    },
+    {
+      "zahl": "Kreisstadt Rathenow; Mittelzentren Nauen und Rathenow; Berliner Umland = Falkensee, Brieselang, Dallgow-Döberitz, Schönwalde-Glien, Wustermark",
+      "fundstelle": "havelland.md, Landkreis Nr. 3, 4"
+    },
+    {
+      "zahl": "2.016 Verträge (+14,4 %), „spürbare Belebung“; Bauland BU gesunken, westliches Havelland gestiegen, Nauen/Ketzin rd. −10 %",
+      "fundstelle": "havelland.md, Landkreis Nr. 5, 7, 8"
+    },
+    {
+      "zahl": "Falkensee etwa ein Drittel des Geldumsatzes baureifer Flächen",
+      "fundstelle": "havelland.md, Landkreis Nr. 10"
+    },
+    {
+      "zahl": "Bauland iW beitragsfrei 2025 (2024): Falkensee 397 (424), 49; Dallgow-Döberitz 424, 5, „eher zufällig“; Brieselang 272 (299), 24",
+      "fundstelle": "havelland.md, Landkreis Nr. 9, 11"
+    },
+    {
+      "zahl": "BRW Höchstwert Wohnbauland 800 (850) Akazienhof; Tiefstwert 12 Klessener Zootzen (Friesack)",
+      "fundstelle": "havelland.md, Landkreis Nr. 14, 15"
+    },
+    {
+      "zahl": "BRW Falkensee ohne MFH/UG 320 (Finkenkrug Süd) bis 550 (Falkenhagener See), UG 750; 72 von 79 gesunken",
+      "fundstelle": "havelland.md, Landkreis Nr. 17, Bodenrichtwerte Nr. 50; falkensee.md Z. 31, 32, 77"
+    },
+    {
+      "zahl": "BRW Dallgow-Döberitz: Rohrbeck MD 220 bis Bahnhof M 500, Neu Döberitz 440 unverändert, Siedlung Nord 400, Süd 380, Seeburg 300–340; 14 von 15 W/M-Zonen um 20–50 gesunken",
+      "fundstelle": "havelland.md, Bodenrichtwerte Nr. 51, Landkreis Nr. 16"
+    },
+    {
+      "zahl": "BRW Brieselang: Bredow WA 190 bis Mitte-Süd 340, Mitte MK 360; 11 von 12 gesunken, Mitte-Nordost 300→320",
+      "fundstelle": "havelland.md, Bodenrichtwerte Nr. 52, Landkreis Nr. 16"
+    },
+    {
+      "zahl": "BRW Nauen 22 von 53 gestiegen, Rest gleich, bis 400 (Nauen West); Rathenow 46 von 49 gestiegen, Zentrum 110 (100), ohne Ufer 45–140; Ketzin/Havel 33 von 33 gleich",
+      "fundstelle": "havelland.md, Bodenrichtwerte Nr. 53, 54, Landkreis Nr. 16"
+    },
+    {
+      "zahl": "426 ETW-Weiterverkäufe im Index, davon Dallgow-Döberitz 105",
+      "fundstelle": "havelland.md, Landkreis Nr. 23"
+    },
+    {
+      "zahl": "EFH 1991–2022: Falkensee/Dallgow Ø 4.680 (4.553), 50, 638.000 €; Brieselang-Gruppe Ø 3.826 (4.025), 525.000 €; Nauen/Ketzin Ø 3.750; Rathenow/Premnitz Ø 2.600",
+      "fundstelle": "havelland.md, Landkreis Nr. 18"
+    },
+    {
+      "zahl": "EFH bis 1948: Falkensee/Dallgow Ø 4.608, Nauen/Ketzin Ø 2.234, Rathenow/Premnitz Ø 1.618",
+      "fundstelle": "havelland.md, Landkreis Nr. 19"
+    },
+    {
+      "zahl": "RH/DHH 1991–2022 Falkensee/Dallgow 405.000 €",
+      "fundstelle": "havelland.md, Landkreis Nr. 20"
+    },
+    {
+      "zahl": "ETW Falkensee/Dallgow 1991–2022 Ø 3.140 (90), ab 2023 Ø 5.563; Landkreis Weiterverkauf Ø 2.496, Erstverkauf Ø 6.496",
+      "fundstelle": "havelland.md, Landkreis Nr. 21, 22"
+    },
+    {
+      "zahl": "Miete BU ETW Ø 9,4 (137, 5,9–15,5); wMR Ø 6,1 (Rathenow, Premnitz, Nauen; MFH vor allem Rathenow); LIZI ETW BU 2,2 %, MFH BU 3,3 % Orientierungswert",
+      "fundstelle": "havelland.md, Landkreis Nr. 24–27"
+    },
+    {
+      "zahl": "Keine Mietübersichten des Gutachterausschusses; kein Mietspiegel Falkensee",
+      "fundstelle": "havelland.md, Landkreis Nr. 29, 30"
+    },
+    {
+      "zahl": "Mietpreisbremse und Kappung: Brieselang, Falkensee, Schönwalde-Glien; Punkte Brieselang 10 von 10, Dallgow-Döberitz 6 (Schwelle 6,5); Inhalt 10 % / 15 %",
+      "fundstelle": "havelland.md, Landkreis Nr. 31–34"
+    },
+    {
+      "zahl": "Fahrzeiten bis Friedrichstraße: Falkensee 28, Brieselang 39 (RB10+S7), Nauen 41 (RE8), Dallgow-Döberitz 49–51 nur Bus, Rathenow 103–108 über Nauen; Linien Brieselang RB10, RB14, RE2, RE8",
+      "fundstelle": "havelland.md, Verkehr Nr. 60–64; falkensee.md, Brieselang (Bahn)"
+    },
+    {
+      "zahl": "Vollsperrung bis 12.12.2026, erneut Mitte Oktober bis Mitte Dezember 2027; RE4 fällt zwischen Stendal und Spandau aus; RE4 westlich von Wustermark weiter betroffen; Rathenow und Wustermark besonders betroffen",
+      "fundstelle": "havelland.md, Verkehr Nr. 66, 67; falkensee.md, Vollsperrung Spandau – Stendal"
+    },
+    {
+      "zahl": "S-Bahn Spandau – Falkensee in Vorplanung; Amazon und Zalando im GVZ Brieselang",
+      "fundstelle": "havelland.md, Verkehr Nr. 69, 70"
+    },
+    {
+      "zahl": "Erbfall-Antwort; Wertermittlung kostenlos, meistens in wenigen Stunden; Europace und Baufinex; § 34c und § 34i GewO; Lennart Geserich, Head of Sales & Vermietung",
+      "fundstelle": "wie barnim.json (Live-Seite und Brief)"
+    }
+  ],
+  "karte": {
+    "alt": "Karte des östlichen Landkreises Havelland bis Berlin: Falkensee, Dallgow-Döberitz, Brieselang, Nauen und Ketzin/Havel, die Orte Schönwalde-Glien, Finkenkrug, Bredow, Wustermark, Rohrbeck und Seeburg, dazu Bahnstrecken, Autobahnen, Gewässer, Spandau und der Bahnhof Berlin Friedrichstraße"
+  },
+  "anbindung": [
+    "In Falkensee, Brieselang und Nauen halten Regionalzüge der Linien RE2, RE8 und RB10; eine S-Bahn hat Falkensee nicht, die Verlängerung von Spandau ist in der Vorplanung.[[9,12]]",
+    "Von Nauen fährt der RE8 in 41 Minuten bis Friedrichstraße.[[9]]",
+    "Während der Vollsperrung der Strecke zwischen Berlin-Spandau und Stendal bis zum 12.12.2026 fahren am Bahnhof Dallgow-Döberitz nur Busse; mit Umstieg in Falkensee oder Finkenkrug sind es rund 50 Minuten bis Friedrichstraße.[[10,9]]"
+  ]
+}

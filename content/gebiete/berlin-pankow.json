@@ -1,0 +1,383 @@
+{
+  "slug": "berlin/pankow",
+  "name": "Pankow",
+  "nameLang": "Pankow",
+  "inOrt": "in Pankow",
+  "fuerOrt": "Pankow",
+  "typ": "bezirk",
+  "kreis": {
+    "name": "Berlin",
+    "url": "/standorte/berlin/"
+  },
+  "orte": [
+    "Pankow-Süd",
+    "Prenzlauer Berg",
+    "Niederschönhausen"
+  ],
+  "kontakt": "lennart",
+  "title": "Immobilienmakler Pankow – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler in Pankow: verkaufen, kaufen und finanzieren in Prenzlauer Berg, Pankow-Süd und Niederschönhausen, mit Daten und Milieuschutz 2026.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Pankow",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Pankow beim Verkauf, beim Kauf und bei der Finanzierung, von den Gründerzeitkiezen in Prenzlauer Berg über Pankow-Süd bis zu den Villen und Mietshäusern in Niederschönhausen. Unser Büro liegt in der Schützenstraße 30 in Steglitz. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für den ganzen Bezirk ist Lennart Geserich Ihr Ansprechpartner, Head of Sales & Vermietung.",
+  "hero": {
+    "name": "pankow-schloss-schoenhausen",
+    "alt": "Schloss Schönhausen in Pankow an einem sonnigen Junitag, davor der Rasen und der Weg zum Eingang",
+    "credit": "A.Savin, CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Berlin_Schloss_Schoenhausen_06-2014.jpg",
+    "position": "50% 55%"
+  },
+  "stand": "Oktober 2026",
+  "updated": "2026-10-26",
+  "zahlen": [
+    {
+      "wert": "2.731",
+      "label": "Kauffälle 2025 im Bezirk, nahezu jeder achte in Berlin",
+      "detail": "12,5 % aller Berliner Kauffälle. Davon betrafen 2.203 Wohnungseigentum, 378 bebaute und 150 unbebaute Grundstücke.",
+      "quelle": "Immobilienmarktbericht Berlin 2025/2026",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 6.300 €/m²",
+      "label": "Eigentumswohnungen in Prenzlauer Berg",
+      "detail": "663 Verkäufe, Spanne 3.911 bis 8.656 €/m², 2024 waren es 6.161 €/m². Im früheren Bezirk Pankow lag der Mittelwert bei 5.194 €/m² (540 Verkäufe), in Weißensee bei 5.563 €/m², in ganz Berlin bei 5.017 €/m².",
+      "quelle": "Immobilienmarktbericht Berlin 2025/2026",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 4.723 €/m²",
+      "label": "Ein- und Zweifamilienhäuser im früheren Bezirk Pankow, je Quadratmeter Wohnfläche",
+      "detail": "53 Verkäufe, Spanne 2.700 bis 6.520 €/m², 2024 waren es 4.871 €/m² bei 72 Verkäufen. In Weißensee lag der Mittelwert bei 4.497 €/m² (44 Verkäufe), in ganz Berlin bei 4.366 €/m².",
+      "quelle": "Immobilienmarktbericht Berlin 2025/2026",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "5.000 bis 5.500 €/m²",
+      "label": "Bodenrichtwerte im Kollwitzkiez, im Winsviertel und im Bötzowkiez",
+      "detail": "Bei einer Geschossflächenzahl von 2,5, zum 01.01.2026 unverändert. In Pankow-Süd liegen sie bei 700 bis 1.600 €/m², in Einfamilienhausgebieten des Bezirks nach rund 5 % Rückgang bei 260 bis 950 €/m².",
+      "quelle": "Immobilienmarktbericht Berlin 2025/2026; Geoportal Berlin",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stichtag": "01.01.2026"
+    },
+    {
+      "wert": "9,20 bis 25,51 €/m²",
+      "label": "Spanne der überwiegenden Mietangebote im Bezirk",
+      "detail": "80 % der Angebote 2025, ohne die oberen und unteren 10 %; in ganz Berlin 7,88 bis 25,06 €/m². 87,0 % der Wohnungen im Bezirk sind Mietwohnungen (Berlin 85,1 %), im Mittel sind sie 72,9 m² groß (Berlin 72,5 m²).",
+      "quelle": "IBB Wohnungsmarktbericht 2025",
+      "url": "https://www.ibb.de/media/dokumente/publikationen/berliner-wohnungsmarkt/wohnungsmarktbericht/2025/pankow.pdf",
+      "stichtag": "2024 und 2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Pankow-Süd: zwischen Vinetastraße und Pankower Tor",
+      "absaetze": [
+        "Der Ortsteil Pankow wurde 1311 erstmals erwähnt; sein Name geht wahrscheinlich auf das Flüsschen Panke zurück. Entlang der Breiten Straße, zwischen Rathaus und Amalienpark, ist die alte Dorfstruktur mit der Kirche auf dem Anger noch zu erkennen.[[11]] Im Ortsteil leben 68.877 Menschen.[[8]] Südlich des Zentrums liegt die Bezirksregion Pankow Süd mit Kissingenviertel, Tiroler Viertel, Trelleborger Viertel und den Wohnstraßen um Arnold-Zweig- und Spiekermannstraße.[[3]] Auf dem früheren Rangierbahnhof zwischen Mühlenstraße und Prenzlauer Promenade, 1997 stillgelegt, ist das Quartier Pankower Tor mit rund 2.000 Wohnungen, einer Grundschule, zwei Kitas und einem Park geplant; der Entwurf des Bebauungsplans wurde vom 29.06. bis 10.08.2026 veröffentlicht.[[18]] 30 % der Wohnungen sollen mietpreisgebunden sein.[[19]] Vom U-Bahnhof Vinetastraße sind Sie in 18 bis 21 Minuten an der Friedrichstraße, vom S- und U-Bahnhof Pankow mit S2 oder S26 in 13 Minuten.[[10]]",
+        "Alle 2.276 Adressen in Pankow Süd liegen in mittlerer Wohnlage.[[3]] Die Bodenrichtwerte reichen von 700 €/m² um Arnold-Zweig-Straße und Eschengraben, bei einer Geschossflächenzahl von 1,0, über 1.300 €/m² um Berliner, Kissingen- und Vinetastraße (1,5) bis 1.600 €/m² um Thule-, Wisbyer und Trelleborger Straße (2,0); im Tiroler Viertel sind es 850 €/m². Alle Werte blieben zum 01.01.2026 unverändert.[[2]] Für 444 Adressen gelten die sozialen Erhaltungsverordnungen Pankow-Süd und Langhansstraße, beide seit dem 01.12.2017.[[15]] Für eine Altbauwohnung bis Baujahr 1918 mit 65 bis unter 70 m² nennt der Mietspiegel 2026 in mittlerer Wohnlage 6,45 bis 11,70 €/m², im Mittel 9,00 €/m² nettokalt.[[5]]"
+      ],
+      "bild": {
+        "name": "pankow-alte-pfarrkirche",
+        "alt": "Die Alte Pfarrkirche „Zu den Vier Evangelisten“ aus Backstein mit zwei Spitztürmen an der Breiten Straße in Pankow",
+        "caption": "Die Alte Pfarrkirche auf dem Anger an der Breiten Straße.",
+        "credit": "Marek Śliwecki, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Berlin_-_Alte_Pfarrkirche_„Zu_den_Vier_Evangelisten“.jpg"
+      }
+    },
+    {
+      "h2": "Prenzlauer Berg: Kollwitzkiez",
+      "absaetze": [
+        "Prenzlauer Berg war von 1920 bis 2001 ein eigener Bezirk. Bebaut wurde das Gebiet erst ab dem 18. Jahrhundert; ab 1840 siedelten sich Brauereien wie Schultheiss, Bötzow, Pfeffer und Groterjan an, Ende des 19. Jahrhunderts entstanden dicht gedrängte Mietshäuser nach den Plänen von James Hobrecht. Im Zweiten Weltkrieg blieben die Wohnviertel weitgehend verschont, heute sind sie großenteils saniert.[[11]] Im Ortsteil leben 169.405 Menschen.[[8]] Der Kollwitzplatz wurde 1875 als Wörther Platz angelegt und 1947 nach Käthe Kollwitz benannt, die 50 Jahre in der heutigen Kollwitzstraße wohnte und arbeitete; ihr Denkmal von Gustav Seitz steht seit 1959 auf dem Platz. An der Knaackstraße steht der Wasserturm, 1875 bis 1877 gebaut, bis 1952 in Betrieb und heute mit Wohnungen.[[12]] Vom U-Bahnhof Senefelderplatz sind Sie mit U2 und S-Bahn in 13 bis 15 Minuten an der Friedrichstraße.[[10]]",
+        "In den Planungsräumen Kollwitzplatz und Sredzkistraße liegen alle 719 Adressen in guter Wohnlage.[[3]] Sie gehören zur Bodenrichtwertzone um Kollwitz-, Knaack-, Sredzki-, Ryke- und Wörther Straße mit 5.500 €/m² bei einer Geschossflächenzahl von 2,5, zum 01.01.2026 unverändert.[[2]] Der Kollwitzplatz ist ein ehemaliges Sanierungsgebiet; Anfang der 1990er-Jahre prägten marode Häuser mit Kohleöfen die Quartiere.[[13]] Seit dem 02.07.2014 gilt für alle Adressen des Kiezes die soziale Erhaltungsverordnung Kollwitzplatz.[[15]] Bauliche Maßnahmen, Nutzungsänderungen und die Aufteilung in Eigentumswohnungen müssen Sie dort beim Bezirksamt beantragen.[[14]] Für eine Altbauwohnung bis Baujahr 1918 mit 60 bis unter 70 m² in guter Wohnlage nennt der Mietspiegel 2026 7,09 bis 13,54 €/m², im Mittel 9,46 €/m² nettokalt.[[5]]"
+      ],
+      "bild": {
+        "name": "pankow-rykestrasse-knaackstrasse",
+        "alt": "Ein Eckhaus mit rosa und weißer Stuckfassade an der Rykestraße und Knaackstraße, davor Bäume, Cafétische und parkende Autos",
+        "caption": "Das Eckhaus Rykestraße und Knaackstraße in Prenzlauer Berg.",
+        "credit": "Heinzi, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Eckhaus_-_Rykestra%C3%9Fe_%26_Knaackstra%C3%9Fe.jpg"
+      }
+    },
+    {
+      "h2": "Prenzlauer Berg: Winsviertel und Bötzowkiez",
+      "absaetze": [
+        "Das Winsviertel zwischen Prenzlauer Allee und Greifswalder Straße und der Bötzowkiez östlich davon waren wie der Kollwitzplatz Sanierungsgebiete; der Senat beschreibt ihre Gründerzeitbebauung als fast vollständig erhalten. Anfang der 1990er-Jahre waren viele Häuser marode, mit Kohleöfen und geringer Sanitärausstattung, und viele Wohnungen standen leer. Der heutige Zustand ist das Ergebnis einer langjährigen Sanierung aus privaten und öffentlichen Mitteln.[[13]] Zum Winsviertel gehören Wins-, Marienburger, Christburger, Immanuelkirch- und Chodowieckistraße, zum Bötzowkiez Bötzow-, Hufeland- und Pasteurstraße und die Straße Am Friedrichshain.[[2]] Von der Haltestelle Bötzowstraße sind Sie mit Bus 200 oder Tram M4 und S-Bahn in 17 bis 20 Minuten an der Friedrichstraße, von der Haltestelle Winsstraße mit M10, M4 und S-Bahn in 21 bis 23 Minuten.[[10]]",
+        "In beiden Kiezen liegen 97 % der Adressen in guter Wohnlage.[[3]] Fast alle gehören zur selben Bodenrichtwertzone mit 5.000 €/m² bei einer Geschossflächenzahl von 2,5, zum 01.01.2026 unverändert; an Danziger Straße und Hans-Otto-Straße sind es 1.900 €/m².[[2]] Die sozialen Erhaltungsverordnungen Winsstraße und Bötzowstraße gelten seit dem 02.07.2014; sie erfassen alle 550 Adressen im Winsviertel und 549 von 573 im Bötzowkiez.[[15]] Wer dort umbauen oder ein Haus in Eigentumswohnungen aufteilen will, muss das beim Bezirksamt beantragen.[[14]] Für eine Altbauwohnung bis Baujahr 1918 mit 80 bis unter 90 m² in guter Wohnlage nennt der Mietspiegel 2026 6,75 bis 12,17 €/m², im Mittel 8,80 €/m² nettokalt.[[5]]"
+      ],
+      "bild": {
+        "name": "pankow-winsviertel-winsstrasse",
+        "alt": "Die Winsstraße an der Ecke Chodowieckistraße im Winsviertel",
+        "caption": "Winsstraße, Ecke Chodowieckistraße.",
+        "credit": "Fridolin freudenfett, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Prenzlauer_Berg_Winsstra%C3%9Fe_-_Chodowieckistra%C3%9Fe.jpg",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "h2": "Niederschönhausen: Villen und Mietshäuser um Schloss Schönhausen",
+      "absaetze": [
+        "Niederschönhausen wurde 1375 erstmals erwähnt und war bis 1920 ein eigenständiges Dorf im Landkreis Niederbarnim. Geprägt ist es von Villen und Mietshäusern, die vor allem Ende des 19. und Anfang des 20. Jahrhunderts entstanden. Schloss Schönhausen wurde 1664 als Herrenhaus der Gräfin Dohna gebaut und erhielt seine heutige Gestalt durch Königin Elisabeth Christine. Mit Gründung der DDR wurde es bis 1960 Amtssitz des Präsidenten, ab 1965 Gästehaus der Regierung; heute ist es Museum, Schloss und Park sind öffentlich zugänglich. Um den Majakowskiring lag das abgeriegelte „Städtchen“, in dem Mitglieder der DDR-Regierung wohnten.[[11]] Heute haben dort viele diplomatische Vertretungen ihren Sitz.[[12]] Im Ortsteil leben 33.515 Menschen.[[8]] Vom Pastor-Niemöller-Platz sind Sie mit Bus 150 und S-Bahn ab Schönholz in 25 bis 27 Minuten an der Friedrichstraße, von der Tschaikowskistraße mit Tram M1 und S-Bahn in 26 bis 31 Minuten.[[10]]",
+        "Von den 3.382 Adressen im Ortsteil liegen 78 % in mittlerer, 15 % in guter und 7 % in einfacher Wohnlage.[[3]] 62 % gehören zur Bodenrichtwertzone um Dietzgen-, Wald-, Uhland- und Friedrich-Engels-Straße mit 1.000 €/m² bei einer Geschossflächenzahl von 1,0, unverändert. In den Einfamilienhausgebieten sanken die Werte zum 01.01.2026: um Majakowskiring und Tschaikowskistraße von 1.000 auf 950 €/m², um Wilhelm-Wolff- und Blumenthalstraße von 750 auf 710 €/m², jeweils bei 0,4.[[2]] Ein- und Zweifamilienhäuser im früheren Bezirk Pankow, zu dem Niederschönhausen gehört, kosteten 2025 im Mittel 4.723 €/m² Wohnfläche, bei 53 Verkäufen.[[1,8]] Eine soziale Erhaltungsverordnung gilt in Niederschönhausen nicht.[[15]]"
+      ],
+      "bild": {
+        "name": "pankow-niederschoenhausen-schloss-schoenhausen",
+        "alt": "Gartenseite von Schloss Schönhausen mit hellem Putz und rotem Dach, davor Rasen und ein gerader Weg",
+        "caption": "Schloss Schönhausen in Niederschönhausen von der Gartenseite.",
+        "credit": "A.Savin, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Berlin_Schloss_Schoenhausen_06-2014.jpg"
+      }
+    }
+  ],
+  "band": {
+    "name": "pankow-buergerpark",
+    "alt": "Weg im Bürgerpark Pankow unter hohen Laubbäumen, links die Panke zwischen grünen Ufern",
+    "caption": "An der Panke im Bürgerpark Pankow.",
+    "credit": "Leonhard Lenz, CC0",
+    "url": "https://commons.wikimedia.org/wiki/File:Bürgerpark_Pankow_2024-05-24_02.jpg"
+  },
+  "verkaufen": {
+    "h2": "Immobilie in Pankow verkaufen",
+    "absaetze": [
+      "Im Bezirk wurden 2025 2.731 Kauffälle gezählt, nahezu jeder achte in Berlin; 2.203 davon betrafen Wohnungseigentum. Eigentumswohnungen kosteten in Prenzlauer Berg im Mittel 6.300 €/m² Wohnfläche, im früheren Bezirk Pankow 5.194 €/m² nach 4.415 €/m² im Vorjahr und in Weißensee 5.563 €/m²; in ganz Berlin waren es 5.017 €/m².[[1,8]] Wo Ihre Wohnung in der Spanne von 3.911 bis 8.656 €/m² in Prenzlauer Berg liegt, hängt an Lage, Baujahr und Zustand. Wir bewerten deshalb nach Ihrer Bodenrichtwertzone, der Wohnlage und Vergleichsverkäufen.",
+      "Ein- und Zweifamilienhäuser wurden 2025 im früheren Bezirk Pankow 53-mal verkauft, im Mittel für 4.723 €/m² Wohnfläche, in Weißensee 44-mal für 4.497 €/m².[[1,8]] Die Bodenrichtwerte für Einfamilienhausgebiete sanken zum 01.01.2026 um rund 5 % und liegen im Bezirk bei 260 bis 950 €/m².[[1]] Liegt Ihr Haus in einem sozialen Erhaltungsgebiet, klären wir vor dem Verkauf, welche Genehmigungen ein Käufer für Umbau oder Aufteilung bräuchte.[[14]]"
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Pankow",
+    "absaetze": [
+      "Als Eigennutzer wählen Sie zwischen den Gründerzeitkiezen in Prenzlauer Berg mit Bodenrichtwerten von 5.000 bis 5.500 €/m², Pankow-Süd und Niederschönhausen mit überwiegend 700 bis 1.600 €/m²[[2]] und Einfamilienhausgebieten mit 260 bis 950 €/m².[[1]] Seit dem 01.01.2026 ist in ganz Berlin die Umwandlung von Miet- in Eigentumswohnungen in Häusern mit mehr als fünf Wohnungen genehmigungspflichtig und damit grundsätzlich verboten, bis zum 31.12.2030; für neu geschaffenen Wohnraum gilt das nicht.[[17]] In den 14 sozialen Erhaltungsgebieten des Bezirks sind auch bauliche Maßnahmen und Nutzungsänderungen antragspflichtig.[[14]] 2025 wurde in Prenzlauer Berg keine Wohnung umgewandelt; im früheren Bezirk Pankow entstand Wohnungseigentum vor allem im Neubau, mit 383 Wohnungen in neun Anlagen.[[1]]",
+      "Als Kapitalanleger rechnen Sie mit dem Mietspiegel 2026 und der Mietpreisbremse, die in ganz Berlin bis 31.12.2029 gilt: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[4,6]] Bestandsmieten dürfen bis zur Vergleichsmiete in drei Jahren um höchstens 15 % steigen.[[7]] 80 % der Mietangebote im Bezirk lagen 2025 zwischen 9,20 und 25,51 €/m²; 87,0 % der Wohnungen sind Mietwohnungen.[[9]] Aus Kaufpreis, Miete, Bewirtschaftungskosten und den Auflagen im Erhaltungsgebiet rechnen wir mit Ihnen die Rendite, bevor Sie kaufen."
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Pankow",
+    "absaetze": [
+      "Eigentumswohnungen kosteten 2025 in Prenzlauer Berg im Mittel 6.300 €/m² Wohnfläche, im früheren Bezirk Pankow 5.194 €/m².[[1]] Dazu kommen die Kaufnebenkosten und wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen: Wir rechnen das mit Ihnen durch, vergleichen Ihre Finanzierung über Europace und Baufinex und fragen parallel Banken direkt an."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Wie hoch ist der Quadratmeterpreis in Pankow und Prenzlauer Berg?",
+      "antwort": "Der Gutachterausschuss weist die Preise nach den früheren Bezirken aus. Eigentumswohnungen kosteten 2025 in Prenzlauer Berg im Mittel 6.300 €/m² Wohnfläche, bei 663 Verkäufen und einer Spanne von 3.911 bis 8.656 €/m²; 2024 waren es 6.161 €/m². Im früheren Bezirk Pankow, mit Pankow und Niederschönhausen, waren es 5.194 €/m², in Weißensee 5.563 €/m², in ganz Berlin 5.017 €/m².[[1,8]] Zur Miete lagen 80 % der Angebote im Bezirk 2025 zwischen 9,20 und 25,51 €/m².[[9]] Für Ihre Immobilie zählen Wohnlage, Baujahr und Zustand.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienmakler Berlin-Pankow“ („Wie hoch ist der Quadratmeterpreis in Berlin Pankow?“) und zu „Immobilie verkaufen Berlin-Pankow“ und „Immobilienbewertung Berlin-Pankow“ („Wie hoch ist der Quadratmeterpreis in Pankow?“) (Google_Areas, Oktober 2026); Google-Autocomplete „quadratmeterpreis pankow“, „quadratmeterpreis prenzlauer berg“, „quadratmeterpreis eigentumswohnung prenzlauer berg“ und „quadratmeterpreis niederschönhausen“ (research/serp/autocomplete-2026-10-26-pankow.json)"
+    },
+    {
+      "frage": "Wie hoch ist der Bodenrichtwert in Pankow 2026?",
+      "antwort": "Zum 01.01.2026 liegt er im Kollwitzkiez bei 5.500 €/m², im Winsviertel und im Bötzowkiez bei 5.000 €/m², jeweils bei einer Geschossflächenzahl von 2,5 und unverändert. In Pankow-Süd sind es 700 bis 1.600 €/m², in Niederschönhausen überwiegend 1.000 €/m².[[2]] Für Einfamilienhausgebiete nennt der Gutachterausschuss im Bezirk 260 bis 950 €/m², rund 5 % weniger als im Vorjahr.[[1]] Den Wert für Ihr Grundstück finden Sie im Geoportal Berlin; wir lesen ihn bei der Bewertung für Sie aus.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienbewertung Berlin-Pankow“, dort als „Wie hoch ist der Bodenrichtwert in Berlin-Pankow?“ (Google_Areas, Oktober 2026); Google-Autocomplete „bodenrichtwert pankow“, „bodenrichtwert pankow niederschönhausen“ und „bodenrichtwert prenzlauer berg“ (research/serp/autocomplete-2026-10-26-pankow.json)"
+    },
+    {
+      "frage": "Gibt es einen Mietspiegel für Pankow und Prenzlauer Berg?",
+      "antwort": "Es gilt der Berliner Mietspiegel 2026 für die ganze Stadt, mit einfacher, mittlerer und guter Wohnlage je Adresse; für Wohnungen in Ein- und Zweifamilienhäusern gilt er nicht.[[4]] Im Kollwitzkiez liegen alle Adressen in guter Wohnlage, im Winsviertel und im Bötzowkiez 97 %; in Pankow Süd liegen alle in mittlerer Wohnlage, in Niederschönhausen 78 %.[[3]] Für eine Altbauwohnung bis Baujahr 1918 mit 60 bis unter 70 m² in guter Wohnlage nennt die Tabelle 7,09 bis 13,54 €/m², im Mittel 9,46 €/m² nettokalt.[[5]]",
+      "herkunft": "Google-Autocomplete „mietspiegel pankow 2026“, „mietspiegel prenzlauer berg 2026“, „mietspiegel pankow niederschönhausen“ und „aktueller mietspiegel prenzlauer berg“ (research/serp/autocomplete-2026-10-26-pankow.json)"
+    },
+    {
+      "frage": "Was bedeutet Milieuschutz in Prenzlauer Berg und Pankow für Käufer?",
+      "antwort": "Im Bezirk gibt es 14 soziale Erhaltungsgebiete. Dort müssen bauliche Maßnahmen, Nutzungsänderungen und die Aufteilung in Wohnungseigentum beim Bezirksamt beantragt werden.[[14]] Das betrifft unter anderem den Kollwitzplatz, die Winsstraße und die Bötzowstraße seit 2014 und Pankow-Süd seit 2017; die Grenzen zeigt das Geoportal Berlin.[[15]] Ein Vorkaufsrecht des Bezirks ist seit einem Urteil des Bundesverwaltungsgerichts von 2021 nur noch in wenigen Fällen möglich.[[16]] Unabhängig davon ist seit 2026 in ganz Berlin die Umwandlung in Häusern mit mehr als fünf Wohnungen genehmigungspflichtig.[[17]]",
+      "herkunft": "Google-Autocomplete „milieuschutz pankow“, „milieuschutz pankow karte“, „milieuschutz prenzlauer berg“ und „bezirksamt pankow milieuschutz“ (research/serp/autocomplete-2026-10-26-pankow.json)"
+    },
+    {
+      "frage": "Gehört Prenzlauer Berg zu Pankow und liegt Pankow im Osten?",
+      "antwort": "Prenzlauer Berg ist ein Ortsteil des Bezirks Pankow, mit 169.405 Einwohnern.[[8]] Von 1920 bis 2001 war es ein eigener Bezirk; 2001 wurde der heutige Bezirk Pankow aus den früheren Bezirken Pankow, Prenzlauer Berg und Weißensee gebildet, er hat 13 Ortsteile.[[11]] Der Gutachterausschuss zählt diese drei früheren Bezirke zum Ostteil der Stadt und weist die Kaufpreise getrennt nach ihnen aus.[[1]]",
+      "herkunft": "Google-Autocomplete „gehört prenzlauer berg zu pankow“, „ist prenzlauer berg in pankow“, „ist prenzlauer berg ein eigener bezirk“, „ist pankow ost oder west berlin“ und „ist prenzlauer berg ost oder west“ (research/serp/autocomplete-2026-10-26-pankow.json)"
+    },
+    {
+      "frage": "Wie ermittle ich den Wert meiner Immobilie in Pankow?",
+      "antwort": "Einen ersten Anhaltspunkt geben der Bodenrichtwert im Geoportal Berlin und die Kaufpreise im Immobilienmarktbericht des Gutachterausschusses.[[2,1]] Wie Zustand, Grundriss und Lage im Haus den Wert verändern, zeigt erst eine Wertermittlung: Bei uns erstellt sie Lennart Geserich kostenlos, meist noch am selben Tag. Brauchen Sie einen Wert für das Finanzamt, ein Gericht oder eine Erbauseinandersetzung, ist ein Verkehrswertgutachten eines Sachverständigen das Richtige.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienbewertung Berlin-Pankow“, dort als „Wie kann ich den Wert meiner Immobilie in Berlin ermitteln?“ und „Wie kann ich selbst den Wert einer Immobilie ermitteln?“ (Google_Areas, Oktober 2026). Antwort nach /immobilienbewertung/ (Stand 26.10.2026)"
+    },
+    {
+      "frage": "Wie hoch ist die Maklerprovision in Berlin?",
+      "antwort": "Kauft ein Verbraucher eine Wohnung oder ein Einfamilienhaus, teilen sich Käufer und Verkäufer die Provision zu gleichen Teilen (§§ 656a bis 656d BGB). Bei Fischer & Geserich sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision. Bei Mehrfamilienhäusern und Grundstücken gilt die Teilung nicht. Die Provision fällt nur an, wenn der Kaufvertrag zustande kommt.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienmakler Berlin-Pankow“, dort als „Wie hoch ist die Maklerprovision in Berlin?“ (Google_Areas, Oktober 2026). Antwort nach /maklerprovision/ und /kaufen/ (Stand 26.10.2026)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Landkreis Barnim",
+      "url": "/standorte/barnim/"
+    },
+    {
+      "name": "Bernau bei Berlin",
+      "url": "/standorte/bernau/"
+    },
+    {
+      "name": "Landkreis Oberhavel",
+      "url": "/standorte/oberhavel/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Immobilienmarktbericht Berlin 2025/2026, Geschäftsstelle des Gutachterausschusses für Grundstückswerte in Berlin",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stand": "Stand 31.07.2026; Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+    },
+    {
+      "name": "Bodenrichtwerte des Gutachterausschusses für Grundstückswerte in Berlin, Geoportal Berlin (WFS brw2026 und brw2025), eigene Zuordnung zu den Adressen",
+      "url": "https://gdi.berlin.de/services/wfs/brw2026?REQUEST=GetCapabilities&SERVICE=wfs",
+      "stand": "Stichtag 01.01.2026, Vergleich mit 01.01.2025"
+    },
+    {
+      "name": "Wohnlagenzuordnung der Adressen zum Berliner Mietspiegel 2026, Geoportal Berlin (WFS wohnlagenadr2026), eigene Auswertung nach LOR-Planungsräumen",
+      "url": "https://gdi.berlin.de/services/wfs/wohnlagenadr2026?REQUEST=GetCapabilities&SERVICE=wfs",
+      "stand": "Mietspiegel 2026, Planungsräume Stand 2021"
+    },
+    {
+      "name": "Berliner Mietspiegel 2026, Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen",
+      "url": "https://mietspiegel.berlin.de/wp-content/uploads/2026/05/mietspiegel2026.pdf",
+      "stand": "Stichtag 01.09.2025, Straßenverzeichnis im Amtsblatt vom 28.05.2026"
+    },
+    {
+      "name": "Berliner Mietspiegeltabelle 2026",
+      "url": "https://mietspiegel.berlin.de/wp-content/uploads/2026/05/mietspiegeltabelle2026.pdf",
+      "stand": "Stichtag 01.09.2025"
+    },
+    {
+      "name": "Senatskanzlei Berlin, Pressemitteilung zur Mietenbegrenzungsverordnung",
+      "url": "https://www.berlin.de/rbmskzl/aktuelles/pressemitteilungen/2025/pressemitteilung.1615170.php",
+      "stand": "11.11.2025, gültig 01.01.2026 bis 31.12.2029"
+    },
+    {
+      "name": "Berliner Mietratgeber: Miete, Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen (Kappungsgrenzenverordnung vom 14.03.2023)",
+      "url": "https://www.berlin.de/sen/wohnen/wissen-fuer-mieter/berliner-mietratgeber/miete/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 5 – hj 1/26, Einwohnerinnen und Einwohner im Land Berlin",
+      "url": "https://download.statistik-berlin-brandenburg.de/7cb89e083c1ea02d/4e03c8e1693a/SB_A01-05-00_2026h01_BE.xlsx",
+      "stand": "30.06.2026"
+    },
+    {
+      "name": "IBB Wohnungsmarktbericht 2025, Bezirksprofil Pankow",
+      "url": "https://www.ibb.de/media/dokumente/publikationen/berliner-wohnungsmarkt/wohnungsmarktbericht/2025/pankow.pdf",
+      "stand": "Werte 2024, Angebotsmieten 2025"
+    },
+    {
+      "name": "VBB-Fahrplandaten, Verbindungen bis S+U Friedrichstraße",
+      "url": "https://v6.vbb.transport.rest/journeys?from=900130002&to=900100001&departure=2026-11-10T09:00%2B01:00",
+      "stand": "Fahrplan Dienstag 10.11.2026, abgefragt 26.10.2026"
+    },
+    {
+      "name": "Bezirksamt Pankow, Ortsteile (Pankow, Prenzlauer Berg, Niederschönhausen)",
+      "url": "https://www.berlin.de/ba-pankow/ueber-den-bezirk/ortsteile/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Bezirksamt Pankow, Sehenswertes (Kollwitzplatz, Wasserturm, Synagoge Rykestraße, Majakowskiring)",
+      "url": "https://www.berlin.de/ba-pankow/ueber-den-bezirk/sehenswertes/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen, Fördergebiet Prenzlauer Berg",
+      "url": "https://www.berlin.de/sen/stadtentwicklung/quartiersentwicklung/staedtebaufoerderung/nachhaltige-erneuerung/foerdergebiete/prenzlauer-berg/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Bezirksamt Pankow, Stadtentwicklungsamt, Stadterneuerung (soziale Erhaltungsgebiete, Vorkaufsrecht)",
+      "url": "https://www.berlin.de/ba-pankow/politik-und-verwaltung/aemter/stadtentwicklungsamt/stadterneuerung/",
+      "stand": "Stand Januar 2026, abgerufen 26.10.2026"
+    },
+    {
+      "name": "Erhaltungsverordnungsgebiete Berlin, Geoportal Berlin (WFS erhaltungsverordnungsgebiete, Layer soziale Erhaltungsgebiete), eigener Abgleich mit den Adressen",
+      "url": "https://gdi.berlin.de/services/wfs/erhaltungsverordnungsgebiete?REQUEST=GetCapabilities&SERVICE=wfs",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen, Soziales Erhaltungsrecht",
+      "url": "https://www.berlin.de/sen/stadtentwicklung/quartiersentwicklung/stadterneuerung/soziales-erhaltungsrecht/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen, Umwandlungsverordnung nach § 250 BauGB",
+      "url": "https://www.berlin.de/sen/wohnen/rechtliches/umwandlungsverordnung/",
+      "stand": "Verordnung vom 11.11.2025, gültig 01.01.2026 bis 31.12.2030"
+    },
+    {
+      "name": "Bezirksamt Pankow, Stadtentwicklungsamt, Bebauungsplan 3-60a „Pankower Tor“",
+      "url": "https://www.berlin.de/ba-pankow/politik-und-verwaltung/aemter/stadtentwicklungsamt/stadtplanung/artikel.487200.php",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen, Pressemitteilung zu den städtebaulichen Verträgen „Pankower Tor“",
+      "url": "https://www.berlin.de/sen/stadt/presse/pressemeldungen/pressemitteilung.1544656.php",
+      "stand": "26.03.2025"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "Einwohner 30.06.2026: Bezirk 428.973; Prenzlauer Berg 169.405; Pankow 68.877; Niederschönhausen 33.515; Altbezirk Pankow mit Niederschönhausen",
+      "fundstelle": "pankow.md Nr. 1, 3; AfS T11"
+    },
+    {
+      "zahl": "Bezirk 2001 aus Pankow, Prenzlauer Berg, Weißensee; 13 Ortsteile; IMB: drei Altbezirke im Ostteil",
+      "fundstelle": "pankow.md Nr. 2, 4; berlin-grundlagen.md Nr. 26"
+    },
+    {
+      "zahl": "Kauffälle 2025: 2.731 (12,5 %, nahezu jeder achte), WE 2.203, bebaut 378, unbebaut 150",
+      "fundstelle": "pankow.md Nr. 8; IMB S. 77, imb.txt Z. 4579"
+    },
+    {
+      "zahl": "ETW: Prenzlauer Berg 663 / 3.911–8.656 / 6.300 (2024: 6.161); Pankow 540 / 5.194 (2024: 4.415); Weißensee 5.563; Berlin 5.017",
+      "fundstelle": "pankow.md Nr. 9; IMB S. 61, imb.txt Z. 3509–3513"
+    },
+    {
+      "zahl": "EFH/ZFH: Pankow 53 / 2.700–6.520 / 4.723 (2024: 72 / 4.871); Weißensee 44 / 4.497; Berlin 4.366",
+      "fundstelle": "pankow.md Nr. 11; IMB S. 50, imb.txt Z. 2839–2843"
+    },
+    {
+      "zahl": "BRW offene Bauweise Pankow 260–950, rd. −5 %",
+      "fundstelle": "pankow.md Nr. 6; IMB imb.txt Z. 1661"
+    },
+    {
+      "zahl": "WE-Begründung 2025: Prenzlauer Berg 0 umgewandelt; Altbezirk Pankow 383 neu in 9 Anlagen",
+      "fundstelle": "pankow.md Nr. 12; IMB S. 98, imb.txt Z. 6194–6196"
+    },
+    {
+      "zahl": "IBB: Angebote 9,20–25,51 (80 %), Berlin 7,88–25,06; Mietwohnungen 87,0 / 85,1 %; Ø 72,9 / 72,5 m²",
+      "fundstelle": "pankow.md Nr. 5; ibb_pankow.txt Z. 26–56"
+    },
+    {
+      "zahl": "Milieuschutz: 14 Gebiete, Antragspflicht; Kollwitzplatz/Winsstraße/Bötzowstraße 02.07.2014; Pankow-Süd und Langhansstraße 01.12.2017; Adressen 719/719, 550/550, 549/573, 444/2.276; Niederschönhausen keine; Vorkaufsrecht BVerwG 2021",
+      "fundstelle": "pankow.md Nr. 13, 14, 16"
+    },
+    {
+      "zahl": "§ 250 BauGB: ab 01.01.2026 bis 31.12.2030, mehr als fünf Wohnungen, grundsätzlich verboten, nicht für neu geschaffenen Wohnraum",
+      "fundstelle": "pankow.md Nr. 15"
+    },
+    {
+      "zahl": "Pankow Süd: Ortsteil 1311, Panke, Breite Straße, Dorfanger; Planungsräume; Pankower Tor 1997, Mühlenstraße–Prenzlauer Promenade, 2.000 Wohnungen, Grundschule, 2 Kitas, Park, Entwurf 29.06.–10.08.2026, 30 % mietpreisgebunden; WL 2.276 mittel; BRW 1511 700 (1,0), 1695 1.300 (1,5), 1728 1.600 (2,0), 1536 850, unverändert; U Vinetastraße 18–21, S+U Pankow 13 min; Mietspiegel Zeile 71: 6,45 / 9,00 / 11,70",
+      "fundstelle": "pankow.md Nr. 16, 20, 31, 34, 40, 41"
+    },
+    {
+      "zahl": "Kollwitzkiez: Prenzlauer Berg 1920–2001, 18. Jh., Brauereien ab 1840, Hobrecht, verschont, saniert; Kollwitzplatz 1875, 1947, 50 Jahre, Seitz 1959; Wasserturm 1875–1877, bis 1952, Wohnungen; WL 719 gut; BRW 1783 5.500 (2,5, unverändert); Sanierungsgebiet, 1990er Kohleöfen; EM 02.07.2014; U Senefelderplatz 13–15 min; Mietspiegel Zeile 135: 7,09 / 9,46 / 13,54",
+      "fundstelle": "pankow.md Nr. 16, 18, 21, 35–37, 42"
+    },
+    {
+      "zahl": "Winsviertel/Bötzowkiez: Sanierungsgebiete, fast vollständig erhaltene Gründerzeitbebauung, 1990er marode, Kohleöfen, Sanitär, Leerstand; WL 97 % gut; BRW 1787 5.000 (2,5, unverändert), 1688 1.900; EM 02.07.2014, 550/550, 549/573; Bötzowstraße 17–20, Winsstraße 21–23 min; Mietspiegel Zeile 137: 6,75 / 8,80 / 12,17",
+      "fundstelle": "pankow.md Nr. 16, 18, 22–24, 27, 44, 45"
+    },
+    {
+      "zahl": "Niederschönhausen: 1375, Niederbarnim bis 1920, Villen und Mietshäuser, Schloss 1664 Dohna, Elisabeth Christine, bis 1960 Amtssitz, ab 1965 Gästehaus, Museum; Städtchen Majakowskiring, diplomatische Vertretungen; WL 78/15/7 % von 3.382; BRW 1547 1.000 (1,0, 62 %), 1586 1.000 → 950, 1595 750 → 710 (0,4); keine EM; Pastor-Niemöller-Platz 25–27, Tschaikowskistraße 26–31 min",
+      "fundstelle": "pankow.md Nr. 16, 25, 39, 46, 47"
+    },
+    {
+      "zahl": "Mietspiegel 2026 gilt nicht für EFH/ZFH; Mietpreisbremse bis 31.12.2029, 10 %; Kappung 15 % in drei Jahren",
+      "fundstelle": "berlin-grundlagen.md Nr. 1, 2, 11"
+    },
+    {
+      "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, Halbteilung §§ 656a–656d BGB, nicht bei MFH und Grundstücken; § 34c und § 34i GewO; Lennart Geserich; Europace und Baufinex; Wertermittlung kostenlos, meist am selben Tag",
+      "fundstelle": "maklerprovision.njk, kaufen.njk, immobilienbewertung.njk; wie berlin-tempelhof-schoeneberg.json"
+    }
+  ],
+  "karte": {
+    "alt": "Karte des Bezirks Pankow: Pankow mit Tiroler Viertel, Kissingenviertel und Majakowskiring, Niederschönhausen und Schönholz, Prenzlauer Berg mit Kollwitzkiez, Winsviertel und Bötzowkiez, Weißensee, dazu die Bahnstrecken, die Autobahn und der Bahnhof Friedrichstraße im Süden"
+  },
+  "anbindung": [
+    "Vom U-Bahnhof Vinetastraße sind Sie in 18 bis 21 Minuten an der Friedrichstraße, vom S- und U-Bahnhof Pankow mit S2 oder S26 in 13 Minuten.[[10]]",
+    "Vom U-Bahnhof Senefelderplatz sind Sie mit U2 und S-Bahn in 13 bis 15 Minuten an der Friedrichstraße.[[10]]",
+    "Von der Haltestelle Bötzowstraße sind Sie mit Bus 200 oder Tram M4 und S-Bahn in 17 bis 20 Minuten an der Friedrichstraße, von der Haltestelle Winsstraße mit M10, M4 und S-Bahn in 21 bis 23 Minuten.[[10]]",
+    "Vom Pastor-Niemöller-Platz sind Sie mit Bus 150 und S-Bahn ab Schönholz in 25 bis 27 Minuten an der Friedrichstraße, von der Tschaikowskistraße mit Tram M1 und S-Bahn in 26 bis 31 Minuten.[[10]]"
+  ]
+}

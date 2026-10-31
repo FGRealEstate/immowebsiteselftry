@@ -1,20 +1,103 @@
 ---
-layout: base.njk
+layout: fgs-page.njk
+fgsHero: false
 permalink: "lexikon/index.html"
-title: "Immobilienlexikon - Begriffe zu Kauf, Finanzierung und Verwaltung"
-description: "Immobilienbegriffe verständlich erklärt: Kaufvertrag, Finanzierung, Bewertung, Vermietung und Bewirtschaftung mit Praxisbezug."
+title: "Immobilienlexikon: Begriffe zu Kauf, Finanzierung und Vermietung | Fischer & Geserich"
+description: "Immobilienbegriffe verständlich erklärt: Kaufvertrag, Finanzierung, Bewertung, Vermietung und Steuern, mit Einordnung, Beispiel und verwandten Begriffen."
 canonicalPath: /lexikon/
-bodyClass: fg-mobile-safe
+pg:
+  crumb: Lexikon
+  kicker: "Begriffe verstehen, bevor sie Entscheidungen beeinflussen."
+  h1: "Immobilienlexikon: Begriffe zu Kauf, Finanzierung, Vermietung und Kapitalanlage"
+  intro: "Kurz erklärt, was hinter Begriffen aus Kaufvertrag, Darlehensangebot, Exposé und Hausgeldabrechnung steht. Jeder Eintrag ordnet den Begriff ein, zeigt meist ein Beispiel und verweist auf verwandte Begriffe und die passende Leistung."
+  buttons:
+    - { label: "Begriff suchen", href: "#suche" }
+    - { label: "Zum Investment Lab", href: "/investment-lab.html" }
+  contact: lennart
+  closing:
+    title: "Was ein Begriff für Ihr Vorhaben bedeutet, klären wir gemeinsam"
+    text: "Ob Kaufvertrag, Darlehensangebot oder Mietvertrag: Wir sehen uns Unterlagen und Zahlen mit Ihnen an. Das erste Gespräch kostet Sie nichts."
+    button: gespraech
+  schema: { type: "CollectionPage" }
 ---
-<div class="fg-library-page"><section class="fg-library-hero"><div class="fg-premium-shell"><p class="fg-premium-kicker fg-premium-kicker-light">Investment Lab · Lexikon</p><h1>Begriffe verstehen, bevor sie Entscheidungen beeinflussen.</h1><p>{{ labContent.lexicon | length }} Begriffe aus Kaufvertrag, Finanzierung, Bewertung und Bewirtschaftung – mit Kurzdefinition, Einordnung und Praxisbezug.</p></div></section><section class="fg-premium-section"><div class="fg-premium-shell"><div class="fg-library-toolbar"><label class="fg-library-search"><i class="fas fa-search"></i><input type="search" placeholder="Begriff suchen …" data-library-search></label><span class="fg-library-count"><b data-library-count>{{ labContent.lexicon | length }}</b> Begriffe</span></div><div class="fg-library-grid" data-library-grid>{% for entry in labContent.lexicon %}<a class="fg-library-card" href="/lexikon/{{ entry.slug }}/" data-library-card data-search="{{ entry.term }} {{ entry.category }} {{ entry.definition }} {{ entry.keywords | join(' ') }}"><span>{{ entry.category or 'Immobilienlexikon' }}</span><h2>{{ entry.term }}</h2><p>{{ entry.definition }}</p><span class="fg-library-more">Begriff einordnen <i class="fas fa-arrow-right"></i></span></a>{% endfor %}</div><div class="fg-library-empty" data-library-empty>Kein Begriff passt zu dieser Suche.</div></div></section></div>{% include "library-filter-script.njk" %}
+{#- Lexikon-Übersicht im neuen Design (Brief Design-Pass §4.7): Buchstabenleiste A–Z und Suche, Begriffe nach Buchstaben.
+    Einträge aus content/lexikon/*.json über _data/labContent.js; Verweise je Eintrag aus _data/lexikonLinks.js.
+    CP4 (28.10.2026, Design-Sprint-Brief 5.6 „A–Z bar“): Vorlage fgs-page.njk; Suche als Linienfeld, Buchstabenleiste als Textzeile,
+    je Buchstabe die Begriffe als Zeilen (Begriff, Bereich, Kurzdefinition). Suche und data-*-Felder unverändert.
+    Entfallen: Kicker über den H2 (Update 6 §3.0), Inhaltsverzeichnis und Linkliste unten (pg.toc, pg.related). -#}
+{% set buchstaben = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" | list %}
+{% set gruppen = labContent.lexicon | lexGruppen %}
+
+<section class="fgs-section fgs-lex" id="suche" aria-labelledby="suche-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-lex-tools">
+      <h2 id="suche-titel">{{ labContent.lexicon.length }} Begriffe, nach Buchstaben sortiert</h2>
+      <form class="fgs-lex-search" role="search" onsubmit="return false">
+        <label for="lex-suche">Begriff suchen</label>
+        <input id="lex-suche" type="search" placeholder="z. B. Grundschuld, Hausgeld, AfA" autocomplete="off" data-lex-search>
+        <p class="fgs-small" aria-live="polite"><b data-lex-count>{{ labContent.lexicon.length }}</b> Begriffe</p>
+      </form>
+    </div>
+    <nav class="fgs-lex-az" aria-label="Buchstaben">
+      <ol>
+        {% for b in buchstaben %}{% if gruppen[b] %}<li><a href="#buchstabe-{{ b | lower }}" data-lex-letter="{{ b }}">{{ b }}</a></li>{% else %}<li><span aria-hidden="true">{{ b }}</span></li>{% endif %}{% endfor %}
+      </ol>
+    </nav>
+    <div class="fgs-lex-groups" id="begriffe">
+      {% for b in buchstaben %}{% if gruppen[b] %}
+      <section class="fgs-lex-group" id="buchstabe-{{ b | lower }}" aria-labelledby="titel-{{ b | lower }}" data-lex-group>
+        <h2 id="titel-{{ b | lower }}">{{ b }}</h2>
+        <ul role="list">
+          {% for e in gruppen[b] %}
+          <li data-lex-item data-search="{{ e.term }} {{ e.category }} {{ e.definition }} {{ e.keywords | join(' ') }}">
+            <a href="/lexikon/{{ e.slug }}/"><strong>{{ e.term }}</strong><small>{{ e.category }}</small><span>{{ e.definition }}</span></a>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}{% endfor %}
+      <p class="fgs-lead" data-lex-empty hidden>Kein Begriff passt zu dieser Suche. Versuchen Sie einen kürzeren Wortteil oder fragen Sie uns direkt.</p>
+    </div>
+  </div>
+</section>
+
+{# Design-Pass 2 §7 (29.10.2026): Abschnitt „Wie die Einträge aufgebaut sind“ entfernt; der Beratungshinweis steht in jedem Eintrag. #}
+
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"DefinedTermSet",
-  "@id":"https://fg-realestate.de/lexikon/#begriffe",
-  "name":"Immobilienlexikon Fischer & Geserich",
-  "url":"https://fg-realestate.de/lexikon/",
-  "inLanguage":"de-DE",
-  "hasDefinedTerm":[{% for entry in labContent.lexicon %}{"@type":"DefinedTerm","name":{{ entry.term | dump | safe }},"url":"https://fg-realestate.de/lexikon/{{ entry.slug }}/","inDefinedTermSet":"https://fg-realestate.de/lexikon/#begriffe"}{% if not loop.last %},{% endif %}{% endfor %}]
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "@id": "https://fg-realestate.de/lexikon/#begriffe",
+  "name": "Immobilienlexikon Fischer & Geserich",
+  "url": "https://fg-realestate.de/lexikon/",
+  "inLanguage": "de-DE",
+  "hasDefinedTerm": [{% for entry in labContent.lexicon %}{ "@type": "DefinedTerm", "name": {{ entry.term | json | safe }}, "url": "https://fg-realestate.de/lexikon/{{ entry.slug }}/", "inDefinedTermSet": "https://fg-realestate.de/lexikon/#begriffe" }{% if not loop.last %},{% endif %}{% endfor %}]
 }
+</script>
+<script>
+/* Suche: blendet Begriffe und leere Buchstaben aus, graut die Buchstabenleiste entsprechend */
+(function () {
+  var input = document.querySelector('[data-lex-search]');
+  if (!input) return;
+  var items = [].slice.call(document.querySelectorAll('[data-lex-item]'));
+  var groups = [].slice.call(document.querySelectorAll('[data-lex-group]'));
+  var count = document.querySelector('[data-lex-count]');
+  var empty = document.querySelector('[data-lex-empty]');
+  var norm = function (s) { return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); };
+  items.forEach(function (li) { li._s = norm(li.getAttribute('data-search')); });
+  var run = function () {
+    var q = norm(input.value.trim()), n = 0;
+    items.forEach(function (li) { var show = !q || li._s.indexOf(q) > -1; li.hidden = !show; if (show) n++; });
+    groups.forEach(function (g) {
+      var any = g.querySelector('[data-lex-item]:not([hidden])');
+      g.hidden = !any;
+      var a = document.querySelector('[data-lex-letter="' + g.id.slice(-1).toUpperCase() + '"]');
+      if (a) a.classList.toggle('is-off', !any);
+    });
+    if (count) count.textContent = n;
+    if (empty) empty.hidden = n > 0;
+  };
+  input.addEventListener('input', run);
+  run();
+})();
 </script>

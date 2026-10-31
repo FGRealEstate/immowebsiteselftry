@@ -1,0 +1,71 @@
+{#
+  Suchprofil im neuen Design (Kaufen, Mieten, Gesuch anlegen).
+  Gleicher Versand wie das alte search-profile-form.njk: POST an /.netlify/functions/propstack-search-profile,
+  gleiche Feldnamen; das Skript steht in fg-design.js ([data-fgd-search-form]).
+  Vor dem Einbinden setzen:
+    {% set sp = { marketing: "BUY" | "RENT", title, intro, budgetLabel, submitLabel, doneText } %}
+  Pflicht laut Funktion: E-Mail, Suchgebiet, Einwilligung.
+#}
+{% from "fgd-icons.njk" import icon %}
+{% set spRent = sp.marketing == "RENT" %}
+<div class="fgd-form-card" id="{{ sp.id or 'suchprofil' }}">
+  <h2>{{ sp.title }}</h2>
+  <p>{{ sp.intro }} Pflichtfelder sind mit * markiert.</p>
+  <form method="post" action="/.netlify/functions/propstack-search-profile?marketing_type={{ sp.marketing }}" class="fgd-form" data-fgd-search-form data-marketing-type="{{ sp.marketing }}" novalidate>
+    <input type="hidden" name="marketing_type" value="{{ sp.marketing }}">
+    <fieldset>
+      <legend>Ihre Suche</legend>
+      <div class="fgd-field-row">
+        <label>Objektart
+          <select name="property_type">
+            <option>Wohnung</option>
+            <option>Haus</option>
+            {% if not spRent %}<option>Mehrfamilienhaus</option>
+            <option>Grundstück</option>{% endif %}
+            <option>Gewerbe</option>
+            {% if not spRent %}<option>Kapitalanlage</option>{% endif %}
+          </select>
+        </label>
+        <label>Suchgebiet *<input name="location" required placeholder="z.&nbsp;B. Berlin-Steglitz"></label>
+      </div>
+      <div class="fgd-field-row fgd-field-row--3">
+        <label>{{ sp.budgetLabel }}<input name="budget" inputmode="decimal" placeholder="in Euro" data-fgd-num></label>
+        <label>Zimmer ab<input name="rooms" inputmode="decimal" placeholder="z.&nbsp;B. 3" data-fgd-num></label>
+        <label>Wohnfläche ab m²<input name="living_space" inputmode="decimal" placeholder="z.&nbsp;B. 80" data-fgd-num></label>
+      </div>
+      <div class="fgd-field-row fgd-field-row--3">
+        <label>Schlafzimmer ab<input name="bedrooms" inputmode="decimal" placeholder="optional" data-fgd-num></label>
+        <label>Badezimmer ab<input name="bathrooms" inputmode="decimal" placeholder="optional" data-fgd-num></label>
+        {% if not spRent %}<label>Grundstück ab m²<input name="plot_area" inputmode="decimal" placeholder="optional" data-fgd-num></label>{% endif %}
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Was Ihnen wichtig ist</legend>
+      <div class="fgd-checks">
+        {% set spFeatures = ["Balkon/Terrasse", "Garten", "Aufzug", "Keller", "Stellplatz", "Barrierefrei", "Einbauküche"] %}
+        {% for f in spFeatures %}<label><input type="checkbox" name="features" value="{{ f }}"><span>{{ f }}</span></label>{% endfor %}
+        {% if not spRent %}<label><input type="checkbox" name="features" value="Off-Market interessant"><span>Off-Market interessant</span></label>{% endif %}
+      </div>
+      <label>Weitere Wünsche<textarea name="message" rows="3" maxlength="3000" placeholder="z.&nbsp;B. Lage, Zustand oder zeitlicher Rahmen"></textarea></label>
+    </fieldset>
+    <fieldset>
+      <legend>Ihre Kontaktdaten</legend>
+      <div class="fgd-field-row">
+        <label>Vorname<input name="first_name" autocomplete="given-name"></label>
+        <label>Nachname<input name="last_name" autocomplete="family-name"></label>
+      </div>
+      <div class="fgd-field-row">
+        <label>E-Mail *<input name="email" type="email" required autocomplete="email"></label>
+        <label>Telefon<input name="phone" type="tel" autocomplete="tel" placeholder="optional"></label>
+      </div>
+    </fieldset>
+    <label class="fgd-hp" aria-hidden="true">Website<input name="company_website" tabindex="-1" autocomplete="off"></label>
+    <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich möchte zu meinem Suchprofil kontaktiert und über passende Immobilienangebote informiert werden. Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen. *</span></label>
+    <div class="fgd-status" data-fgd-search-status hidden></div>
+    <button type="submit" class="fgd-btn fgd-btn-navy">{{ sp.submitLabel }}{{ icon("arrow") | safe }}</button>
+  </form>
+  <div class="fgd-form-done" data-fgd-search-done tabindex="-1" hidden>
+    <h3>Vielen Dank, Ihr Suchprofil ist da</h3>
+    <p>{{ sp.doneText }}</p>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+---
+layout: base.njk
+fgDesign: true
+fgSystem: true
+fgsHero: false
+customSchema: true
+permalink: "anfrage-nicht-gesendet/index.html"
+eleventyExcludeFromCollections: true
+title: "Anfrage nicht gesendet | Fischer & Geserich"
+description: "Ihre Anfrage konnte nicht gesendet werden."
+robots: "noindex, nofollow"
+# Update 6, §1 (27.10.2026): Ziel der Formulare ohne JavaScript, wenn die Funktion ablehnt (Pflichtfeld oder
+# Einwilligung fehlt) oder nicht senden kann (netlify/functions/_shared/formpost.js).
+# CP4 (28.10.2026): Titelzeile des Design-Systems ohne Foto; Text und Links unverändert.
+---
+<section class="fgs-pagehead" aria-labelledby="seitentitel">
+  <div class="fgs-wrap">
+    <h1 id="seitentitel">Ihre Anfrage konnte nicht gesendet werden</h1>
+    <p class="fgs-lead">Bitte prüfen Sie, ob alle Pflichtfelder ausgefüllt sind und Sie der Datenschutzerklärung zugestimmt haben. Gehen Sie dazu im Browser einen Schritt zurück; Ihre Angaben stehen meist noch im Formular. Sie erreichen uns auch unter <a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a> oder per E-Mail an <a href="mailto:{{ nav.email }}">{{ nav.email }}</a>.</p>
+    <div class="fgs-btns">
+      <a class="fgs-btn fgs-btn--primary" href="/kontakt.html">Zum Kontakt</a>
+      <a class="fgs-btn fgs-btn--secondary" href="/">Zur Startseite</a>
+    </div>
+  </div>
+</section>

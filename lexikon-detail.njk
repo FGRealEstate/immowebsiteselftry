@@ -1,30 +1,156 @@
 ---
 layout: base.njk
+fgDesign: true
+fgSystem: true
+fgsHero: false
+# Design-Pass 3 Nachtrag Punkt 1: Einträge behalten ihre Überschriften, keine Bewegung (fgs-motion.js)
+fgsMotion: false
+customSchema: true
 pagination:
   data: labContent.lexicon
   size: 1
   alias: entry
 permalink: "lexikon/{{ entry.slug }}/index.html"
 eleventyComputed:
-  title: "{{ entry.term }} – Immobilienlexikon"
+  title: "{{ entry.term }} – Immobilienlexikon | Fischer & Geserich"
   description: "{{ entry.definition }}"
+  canonicalPath: "/lexikon/{{ entry.slug }}/"
 ---
-<main class="content-detail shell"><nav class="breadcrumbs"><a href="/investment-lab.html">Investment Lab</a><span>›</span><a href="/investment-lab.html#lexikon">Lexikon</a><span>›</span><span>{{ entry.term }}</span></nav>
-<article class="science-article science-article-v2 lexicon-v2"><header class="science-hero"><span class="lab-kicker">— {{ entry.category or "IMMOBILIENLEXIKON" }} —</span><h1>{{ entry.term }}</h1><p class="lead">{{ entry.definition }}</p></header>
-{% if entry.explanation %}<section class="science-section"><h2>Fachliche Einordnung</h2><p>{{ entry.explanation }}</p></section>{% endif %}
-{% if entry.formula %}<section class="science-section"><h2>Formel / Rechenlogik</h2><div class="lab-formula-card"><div class="lab-formula">{{ entry.formula }}</div></div></section>{% endif %}
-{% if entry.practiceExample %}<section class="lab-example-section science-section"><h2>Konkretes Beispiel</h2><div class="lab-interpretation"><p>{{ entry.practiceExample }}</p></div></section>{% endif %}
-{% if entry.sources and entry.sources.length %}<section class="lab-source-section science-section"><h2>Quellen &amp; Rechtsgrundlagen</h2><ul>{% for source in entry.sources %}<li><a href="{{ source.url }}" target="_blank" rel="noopener noreferrer">{{ source.label }}</a></li>{% endfor %}</ul></section>{% endif %}
-<a class="lab-btn lab-btn-gold" href="/investment-lab.html">Im Investment Lab weiterarbeiten</a></article></main>
+{#- Lexikon-Eintrag im neuen Design (Brief Design-Pass §4.7): Kurzdefinition, Einordnung, Formel, Beispiel, Quellen;
+    rechts verwandte Begriffe und die passende Leistung (_data/lexikonLinks.js), unten Vorgänger und Nachfolger, Abschlussblock.
+    Der Text der Einträge kommt unverändert aus content/lexikon/<slug>.json.
+    Ausgebaute Einträge (Update 4, 2.13) haben ein Feld `ausbau`: Einordnung, Beispiel und Abschnitte als Absätze mit
+    Fußnoten [[n]] auf die nummerierten Quellen (Filter fn wie auf den Gebietsseiten; labContent.js prüft die Nummern).
+    Recherche je Runde in research/lexikon/runde-<n>.md, Prüfung mit tools/lexikon_pruefen.py.
+    CP4 (28.10.2026, Design-Sprint-Brief 5.6 „entries as S5 text with related terms as plain links“): Titelzeile ohne Foto,
+    Text in der S5-Spalte (7 Spalten), links mitlaufend verwandte Begriffe und die passende Leistung als Textlinks, S8 als Abschluss.
+    Entfallen: Navy-Kasten (Navy nur im Abschlussband), Kurzdefinitionen in der Begriffsliste, Pfeilsymbole an den Quellen. -#}
+{% from "fgs-macros.njk" import textlink, closing with context %}
+{% set lk = lexikonLinks[entry.slug] %}
+{% set nb = labContent.lexicon | lexNachbarn(entry.slug) %}
+{% set pageUrl = "https://fg-realestate.de/lexikon/" + entry.slug + "/" %}
+
+<section class="fgs-pagehead fgs-pagehead--lex" aria-labelledby="seiten-titel">
+  <div class="fgs-wrap">
+    <nav aria-label="Brotkrümelnavigation">
+      <ol class="fgs-crumbs">
+        <li><a href="/">Start</a></li>
+        <li><a href="/lexikon/">Lexikon</a></li>
+        <li aria-current="page">{{ entry.term }}</li>
+      </ol>
+    </nav>
+    <p class="fgs-label">Immobilienlexikon · {{ entry.category or "Begriff" }}</p>
+    <h1 id="seiten-titel">{{ entry.term }}</h1>
+    <p class="fgs-lead">{{ entry.definition }}</p>
+  </div>
+</section>
+
+<section class="fgs-section fgs-lex-entry">
+  <div class="fgs-wrap fgs-chapters">
+    <article class="fgs-chapters-body fgs-lex-text">
+      {% set ab = entry.ausbau %}
+      {% if ab %}
+      <section class="fgs-chapter" aria-labelledby="einordnung">
+        <h2 id="einordnung">Einordnung</h2>
+        {% for p in ab.einordnung %}<p>{{ p | nbsp | fn | safe }}</p>{% endfor %}
+      </section>
+      {% if entry.formula %}
+      <section class="fgs-chapter" aria-labelledby="rechenlogik">
+        <h2 id="rechenlogik">Rechenlogik</h2>
+        <p class="fgs-lex-formula">{{ entry.formula }}</p>
+      </section>
+      {% endif %}
+      <section class="fgs-chapter" aria-labelledby="beispiel">
+        <h2 id="beispiel">Beispiel</h2>
+        <div class="fgs-lex-example">{% for p in ab.beispiel %}<p>{{ p | nbsp | fn | safe }}</p>{% endfor %}</div>
+      </section>
+      {% for a in ab.abschnitte %}
+      <section class="fgs-chapter" aria-labelledby="abschnitt-{{ loop.index }}">
+        <h2 id="abschnitt-{{ loop.index }}">{{ a.h2 }}</h2>
+        {% for p in a.absaetze %}<p>{{ p | nbsp | fn | safe }}</p>{% endfor %}
+      </section>
+      {% endfor %}
+      <section class="fgs-chapter" aria-labelledby="quellen">
+        <h2 id="quellen">Quellen und Rechtsgrundlagen</h2>
+        <ol class="fgs-lex-sources">
+          {% for q in ab.quellen %}<li id="quelle-{{ loop.index }}"><a href="{{ q.url }}" target="_blank" rel="noopener noreferrer">{{ q.name }}</a> <span>· {{ q.stand }}</span></li>{% endfor %}
+        </ol>
+      </section>
+      {% else %}
+      {% if entry.explanation %}
+      <section class="fgs-chapter" aria-labelledby="einordnung">
+        <h2 id="einordnung">Einordnung</h2>
+        <p>{{ entry.explanation }}</p>
+      </section>
+      {% endif %}
+      {% if entry.formula %}
+      <section class="fgs-chapter" aria-labelledby="rechenlogik">
+        <h2 id="rechenlogik">Rechenlogik</h2>
+        <p class="fgs-lex-formula">{{ entry.formula }}</p>
+      </section>
+      {% endif %}
+      {% if entry.practiceExample %}
+      <section class="fgs-chapter" aria-labelledby="beispiel">
+        <h2 id="beispiel">Beispiel</h2>
+        <p class="fgs-lex-example">{{ entry.practiceExample }}</p>
+      </section>
+      {% endif %}
+      {% if entry.sources and entry.sources.length %}
+      <section class="fgs-chapter" aria-labelledby="quellen">
+        <h2 id="quellen">Quellen und Rechtsgrundlagen</h2>
+        <ul class="fgs-lex-sources fgs-lex-sources--plain">
+          {% for source in entry.sources %}<li><a href="{{ source.url }}" target="_blank" rel="noopener noreferrer">{{ source.label }}</a></li>{% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+      {% endif %}
+      <p class="fgs-note">{% if entry.updated %}Stand {{ entry.updated | lexDatum }}. {% endif %}Der Eintrag erklärt den Begriff allgemein; er ersetzt keine Steuer-, Rechts- oder Finanzierungsberatung im Einzelfall.</p>
+    </article>
+
+    <aside class="fgs-lex-aside" aria-label="Weiter im Lexikon">
+      <h2 class="fgs-small">Verwandte Begriffe</h2>
+      <ul role="list">
+        {% for r in lk.related %}<li><a href="/lexikon/{{ r.slug }}/">{{ r.term }}</a></li>{% endfor %}
+      </ul>
+      <h2 class="fgs-small">Passende Leistung</h2>
+      {{ textlink(lk.leistung.href, lk.leistung.label) }}
+      <p class="fgs-small">{{ lk.leistung.note }}</p>
+    </aside>
+  </div>
+
+  <div class="fgs-wrap"><nav class="fgs-lex-pager" aria-label="Weitere Begriffe">
+    {% if nb.prev %}<a href="/lexikon/{{ nb.prev.slug }}/"><small>Vorheriger Begriff</small><strong>{{ nb.prev.term }}</strong></a>{% else %}<span></span>{% endif %}
+    <a class="fgs-lex-all" href="/lexikon/">Alle Begriffe von A bis Z</a>
+    {% if nb.next %}<a class="fgs-lex-next" href="/lexikon/{{ nb.next.slug }}/"><small>Nächster Begriff</small><strong>{{ nb.next.term }}</strong></a>{% else %}<span></span>{% endif %}
+  </nav></div>
+</section>
+
+{% call closing({ kontakt: lk.kontakt, satz: "Was das für Ihr Vorhaben bedeutet, klären wir gemeinsam", button: "gespraech" }) %}
+  <p>Wir sehen uns Unterlagen und Zahlen mit Ihnen an. Das erste Gespräch kostet Sie nichts.</p>
+{% endcall %}
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "DefinedTerm",
-  "@id": "https://fg-realestate.de/lexikon/{{ entry.slug }}/#term",
-  "name": {{ entry.term | json | safe }},
-  "description": {{ entry.definition | json | safe }},
-  "url": "https://fg-realestate.de/lexikon/{{ entry.slug }}/",
-  "inDefinedTermSet": { "@id": "https://fg-realestate.de/lexikon/#begriffe" },
-  "mainEntityOfPage": { "@id": "https://fg-realestate.de/lexikon/{{ entry.slug }}/" }
+  "@graph": [
+    {
+      "@type": "DefinedTerm",
+      "@id": "{{ pageUrl }}#term",
+      "name": {{ entry.term | json | safe }},
+      "description": {{ entry.definition | json | safe }},
+      "url": "{{ pageUrl }}",
+      "inDefinedTermSet": { "@id": "https://fg-realestate.de/lexikon/#begriffe" },
+      "mainEntityOfPage": { "@id": "{{ pageUrl }}" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ pageUrl }}#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
+        { "@type": "ListItem", "position": 2, "name": "Lexikon", "item": "https://fg-realestate.de/lexikon/" },
+        { "@type": "ListItem", "position": 3, "name": {{ entry.term | json | safe }}, "item": "{{ pageUrl }}" }
+      ]
+    }
+  ]
 }
 </script>

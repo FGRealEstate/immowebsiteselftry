@@ -7,11 +7,89 @@
   "keywords": [
     "wertsteigerung"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Immobilienkauf",
-  "formula": null,
+  "formula": "Wert nach n Jahren = Kaufpreis × (1 + jährliche Veränderung)ⁿ",
   "sources": [],
   "assistantAnswer": "Zunahme des Marktwerts; keine garantierte Größe. Wertsteigerung ist die Zunahme des Marktwerts über die Zeit. Sie ist kein garantierter Cashflow und sollte in Investmentrechnungen als Szenario statt als sichere Renditekomponente behandelt werden.",
-  "explanation": "Wertsteigerung ist die Zunahme des Marktwerts über die Zeit. Sie ist kein garantierter Cashflow und sollte in Investmentrechnungen als Szenario statt als sichere Renditekomponente behandelt werden.",
-  "practiceExample": "300.000 € Kaufpreis bei angenommenen 2 % Wertzuwachs p.a. ergeben nach zehn Jahren rechnerisch rund 365.700 €; der tatsächliche Marktwert kann deutlich davon abweichen."
+  "explanation": "Wertsteigerung ist die Zunahme des Marktwerts einer Immobilie über die Zeit. Sie hängt unter anderem von Lage, Zustand, Zinsniveau und Nachfrage ab und ist keine feste Größe: Immobilienpreise können auch sinken.",
+  "practiceExample": "Sie kaufen eine Wohnung für 300.000 €. Steigt ihr Wert zehn Jahre lang um 2 % im Jahr, liegt er rechnerisch bei rund 365.700 €. Bleibt er gleich, sind es 300.000 €; fällt er um 1 % im Jahr, rund 271.300 €. Die drei Zahlen sind Szenarien, keine Prognose.",
+  "ausbau": {
+    "einordnung": [
+      "Wertsteigerung ist die Zunahme des Marktwerts einer Immobilie über die Zeit. Sie hängt unter anderem von Lage, Zustand, Zinsniveau und Nachfrage ab und ist keine feste Größe: Immobilienpreise können auch sinken.",
+      "Das zeigt der Häuserpreisindex des Statistischen Bundesamts. Nach 11,7 % im Jahr 2021 und 6,0 % im Jahr 2022 fielen die Preise 2023 um 8,5 % und 2024 um 1,5 %. 2025 stiegen sie um 3,2 %,[[1]] zum ersten Mal seit 2022.[[2]] Der Jahresdurchschnitt 2025 lag damit noch unter dem von 2022.[[1]]",
+      "Regional kann es anders aussehen: In Berlin stieg der mittlere Kaufpreis für Eigentumswohnungen 2025 um 5 % auf 5.511 € je m² Wohnfläche.[[3]]"
+    ],
+    "beispiel": [
+      "Sie kaufen eine Wohnung für 300.000 €. Steigt ihr Wert zehn Jahre lang um 2 % im Jahr, liegt er rechnerisch bei rund 365.700 €. Bleibt er gleich, sind es 300.000 €; fällt er um 1 % im Jahr, rund 271.300 €.",
+      "Die drei Zahlen sind Szenarien, keine Prognose."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Anleger heißt",
+        "absaetze": [
+          "Wertsteigerung gehört in einer Investmentrechnung zu den Annahmen, nicht zu den sicheren Einnahmen. Rechnen Sie mit mehreren Szenarien, auch mit einem ohne Wertsteigerung. Verkaufen Sie eine vermietete Immobilie innerhalb von zehn Jahren nach dem Kauf, ist der Gewinn steuerpflichtig.[[4]]"
+        ]
+      },
+      {
+        "h2": "Was es für Eigentümer heißt",
+        "absaetze": [
+          "Die Zehnjahresfrist gilt nicht, wenn Sie die Immobilie ausschließlich selbst bewohnt haben oder im Jahr des Verkaufs und in den beiden Jahren davor.[[4]] Welchen Wert Ihre Immobilie heute hat, zeigt eine Wertermittlung; Fischer & Geserich erstellt sie kostenlos.[[5]]"
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "Statistisches Bundesamt: Preisindizes für Wohnimmobilien",
+        "url": "https://www.destatis.de/DE/Themen/Wirtschaft/Preise/Baupreise-Immobilienpreisindex/Tabellen/Haeuserpreise-Bauland.html",
+        "stand": "Stand 24.09.2026"
+      },
+      {
+        "name": "Statistisches Bundesamt: Pressemitteilung Nr. 101 vom 25. März 2026",
+        "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/03/PD26_101_61262.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Senatsverwaltung für Stadtentwicklung Berlin: Pressemitteilung vom 31. Juli 2026 zum Immobilienmarktbericht",
+        "url": "https://www.berlin.de/sen/stadt/presse/pressemeldungen/pressemitteilung.1699073.php",
+        "stand": "Kaufverträge 2025, abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 23 EStG",
+        "url": "https://www.gesetze-im-internet.de/estg/__23.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Startseite",
+        "url": "https://fg-realestate.de/",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "+11,7 / +6,0 / −8,5 / −1,5 / +3,2 %; Index 2022 107,5 > 2025 100",
+        "fundstelle": "runde-1.md, S01, S02"
+      },
+      {
+        "zahl": "erster Anstieg seit 2022",
+        "fundstelle": "runde-1.md, S03"
+      },
+      {
+        "zahl": "Berlin ETW 5.511 €/m², +5 %",
+        "fundstelle": "runde-1.md, S04"
+      },
+      {
+        "zahl": "zehn Jahre, Ausnahme Eigennutzung",
+        "fundstelle": "runde-1.md, S05"
+      },
+      {
+        "zahl": "Wertermittlung kostenlos (F&G)",
+        "fundstelle": "runde-1.md, V07"
+      },
+      {
+        "zahl": "300.000 × 1,02¹⁰ = 365.698 € (rund 365.700); × 0,99¹⁰ = 271.315 € (rund 271.300)",
+        "fundstelle": "Rechnung; Szenarien ohne Prognose, Marktprüfung runde-1.md"
+      }
+    ]
+  }
 }

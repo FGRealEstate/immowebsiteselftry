@@ -1,118 +1,104 @@
 ---
-layout: base.njk
+layout: fgs-page.njk
+fgsHero: false
+fgsIndex: true
 pagination:
-  data: labContent.locations
+  data: labContent.legacyLocations
   size: 1
   alias: location
 permalink: "standorte/{{ location.slug }}/index.html"
+# Alte Standortseiten ohne eigene Gebietsseite (zurzeit nur Eberswalde: bleibt ohne Menülink live, Brief Gebietsseiten,
+# 4 Impressionen in der Search Console). Schritt 12: neues Design statt Tailwind/style.css (Brief Design-Pass §5).
+# Zahlen nur aus location.seite (geprüft, mit Quelle). price/rent/yield sind Schätzspannen fürs Investment Lab und stehen hier nicht.
+# CP4 (28.10.2026, Design-Sprint-Brief 5.4): Titelzeile ohne Foto, Marktzahlen als Zeilen und Quellen zum Aufklappen wie auf den
+# Gebietsseiten (gebiet-detail.njk), Lage zweispaltig, Einordnung als Punkte. Entfallen: Kicker über den H2 und die Rubriken der
+# Einordnung als kleine Überschriften im Gold-Stil (Update 6 §3.0); die Rubriken stehen jetzt als H3. Texte und Zahlen unverändert.
+# Design-Pass 2 §7 (29.10.2026): über den Zahlen nur noch der zweite Satz (klein), Quellen mit „Zahlen mit Stand …“ wie die Gebietsseiten.
 eleventyComputed:
   title: "Immobilienstandort {{ location.name }}"
-  description: "Kaufpreise, Mieten, Renditeorientierung, Chancen und Risiken für {{ location.name }}."
+  description: "{{ location.seite.description if location.seite else 'Chancen und Risiken für ' + location.name + '.' }}"
+  pg:
+    crumb: "{{ location.name }}"
+    parent: { label: "Gebiete", href: "/standorte/" }
+    kicker: "{{ location.seite.kreis.name if location.seite else location.region }}"
+    h1: "Standortanalyse {{ location.name }}"
+    intro: "{{ location.seite.intro if location.seite else location.view }}"
+    contact: lennart
+    closing:
+      title: "Sprechen Sie mit uns"
+      text: "Wir bewerten Ihre Immobilie, begleiten den Verkauf oder prüfen ein Objekt vor dem Kauf. Das erste Gespräch kostet Sie nichts."
+      button: bewertung
+    schema: { type: "WebPage" }
 ---
-<div class="fg-location-detail">
-  <section class="fg-location-detail-hero">
-    <div class="fg-location-shell">
-      <nav class="fg-location-breadcrumbs" aria-label="Brotkrümelnavigation">
-        <a href="/investment-lab.html">Investment Lab</a>
-        <i class="fas fa-chevron-right" aria-hidden="true"></i>
-        <a href="/standorte/">Standorte</a>
-        <i class="fas fa-chevron-right" aria-hidden="true"></i>
-        <span aria-current="page">{{ location.name }}</span>
-      </nav>
+{% from "fgs-macros.njk" import textlink with context %}
+{% set s = location.seite %}
 
-      <div class="fg-location-detail-heading">
-        <div>
-          <p class="fg-location-kicker">{{ location.region }}</p>
-          <h1>Standortanalyse <span>{{ location.name }}</span></h1>
-        </div>
-        <a class="fg-location-all-link" href="/standorte/">Alle Standorte <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
+{% if s and s.zahlen %}
+{# S6 Marktzahlen mit Quelle und Stichtag, wie auf den Gebietsseiten #}
+<section class="fgs-section" id="zahlen" aria-labelledby="zahlen-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head fgs-place-head">
+      <h2 id="zahlen-titel">Was Immobilien in {{ location.name }} kosten</h2>
+      <p class="fgs-small">Kaufpreise sind tatsächlich gezahlte Preise, keine Angebotspreise aus Portalen.</p>
     </div>
-  </section>
-
-  <section class="fg-location-detail-content">
-    <div class="fg-location-shell">
-      <div class="fg-location-keyfacts">
-        <article>
-          <span>Kaufpreis</span>
-          <strong>{{ location.priceValue or location.price }}</strong>
-          {% if location.priceNote %}<small>{{ location.priceNote }}</small>{% endif %}
-        </article>
-        <article>
-          <span>Mietniveau</span>
-          <strong>{{ location.rentValue or location.rent }}</strong>
-          {% if location.rentNote %}<small>{{ location.rentNote }}</small>{% endif %}
-        </article>
-        <article>
-          <span>Rendite</span>
-          <strong>{{ location.yieldValue or location.yield }}</strong>
-          {% if location.yieldNote %}<small>{{ location.yieldNote }}</small>{% endif %}
-        </article>
-      </div>
-
-      <div class="fg-location-analysis-grid">
-        <article>
-          <span class="fg-location-analysis-icon"><i class="fas fa-arrow-trend-up" aria-hidden="true"></i></span>
-          <h2>Chancen</h2>
-          <p>{{ location.chance }}</p>
-        </article>
-        <article>
-          <span class="fg-location-analysis-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></span>
-          <h2>Risiken</h2>
-          <p>{{ location.risk }}</p>
-        </article>
-        <article>
-          <span class="fg-location-analysis-icon"><i class="fas fa-train-subway" aria-hidden="true"></i></span>
-          <h2>Infrastruktur</h2>
-          <p>{{ location.infra }}</p>
-        </article>
-        <article>
-          <span class="fg-location-analysis-icon"><i class="fas fa-compass" aria-hidden="true"></i></span>
-          <h2>Perspektive</h2>
-          <p>{{ location.future }}</p>
-          {% if location.population %}<p>{{ location.population }}</p>{% endif %}
-        </article>
-      </div>
-
-      <section class="fg-location-verdict">
-        <p class="fg-location-kicker">F&amp;G-Einordnung</p>
-        <h2>Was für diesen Standort entscheidend ist.</h2>
-        <p>{{ location.view }}</p>
-      </section>
-
-      <section class="fg-location-service-area">
-        <div>
-          <p class="fg-location-kicker">Unser Tätigkeitsgebiet</p>
-          <h2>Regional vor Ort. Deutschlandweit finanzieren.</h2>
+    <ul class="fgs-facts-rows" role="list">
+      {%- for z in s.zahlen %}
+      <li>
+        <span class="fgs-fact-figure">{{ z.wert | factValue | safe }}</span>
+        <div class="fgs-facts-rows-text">
+          <p class="fgs-facts-rows-label">{{ z.label | nbsp }}</p>
+          {%- if z.detail %}
+          <p>{{ z.detail | nbsp }}</p>{% endif %}
+          <p class="fgs-small fgs-source">{% if z.url %}<a href="{{ z.url }}" target="_blank" rel="noopener">{{ z.quelle }}</a>{% else %}{{ z.quelle }}{% endif %}{% if z.stichtag %} · {{ z.stichtag }}{% endif %}</p>
         </div>
-        <p>{{ serviceArea.text }}</p>
-      </section>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
 
-      <div class="fg-location-actions">
-        <a class="btn-85 px-7 py-4" href="/investment-lab.html">Standort im Investment Lab vergleichen <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-        <a class="fg-location-secondary-action" href="/kontakt.html">Standort besprechen</a>
-      </div>
+{% if s and s.absaetze %}
+<section class="fgs-section" id="lage" aria-labelledby="lage-titel">
+  <div class="fgs-wrap fgs-cols">
+    <div class="fgs-cols-head"><h2 id="lage-titel">{{ location.name }} im {{ s.kreis.name }}</h2></div>
+    <div class="fgs-cols-body fgs-prose">
+      {% for p in s.absaetze %}<p>{{ p | nbsp | fn | safe }}</p>{% endfor %}
+      {{ textlink(s.kreis.url, s.kreis.name + " im Überblick") }}
     </div>
-  </section>
-</div>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "City",
-  "@id": "https://fg-realestate.de/standorte/{{ location.slug }}/#place",
-  "name": {{ location.name | json | safe }},
-  "description": {{ location.view | json | safe }},
-  "url": "https://fg-realestate.de/standorte/{{ location.slug }}/",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": {{ location.name | json | safe }},
-    "addressCountry": "DE"
-  },
-  "mainEntityOfPage": { "@id": "https://fg-realestate.de/standorte/{{ location.slug }}/" },
-  "additionalProperty": [
-    { "@type": "PropertyValue", "name": "Kaufpreisorientierung", "value": {{ (location.priceValue or location.price) | json | safe }} },
-    { "@type": "PropertyValue", "name": "Mietniveau", "value": {{ (location.rentValue or location.rent) | json | safe }} },
-    { "@type": "PropertyValue", "name": "Renditeorientierung", "value": {{ (location.yieldValue or location.yield) | json | safe }} }
-  ]
-}
-</script>
+  </div>
+</section>
+{% endif %}
+
+<section class="fgs-section" id="einordnung" aria-labelledby="einordnung-titel">
+  <div class="fgs-wrap fgs-cols">
+    <div class="fgs-cols-head"><h2 id="einordnung-titel">Was für diesen Standort entscheidend ist</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">{{ location.view }}</p>
+      <ul class="fgs-points" role="list">
+        <li><h3>Chancen</h3><p>{{ location.chance }}</p></li>
+        <li><h3>Risiken</h3><p>{{ location.risk }}</p></li>
+        <li><h3>Infrastruktur</h3><p>{{ location.infra }}</p></li>
+        <li><h3>Perspektive</h3><p>{{ location.future }}{% if location.population %} {{ location.population }}{% endif %}</p></li>
+      </ul>
+      {{ textlink("/investment-lab.html", "Standort im Investment Lab vergleichen") }}
+    </div>
+  </div>
+</section>
+
+{% if s and s.quellen %}
+{# Quellen zum Aufklappen; ein Klick auf eine Fußnote öffnet die Liste (fg-system.js) #}
+<section class="fgs-section fgs-section--tight fgs-place-sources" aria-labelledby="quellen-titel">
+  <div class="fgs-wrap">
+    <details class="fgs-sources" id="quellen">
+      <summary><h2 id="quellen-titel">Quellen</h2></summary>
+      <p>Zahlen mit Stand {{ s.stand }}. Die hochgestellten Zahlen im Text verweisen auf diese Quellen:</p>
+      <ol>
+        {%- for q in s.quellen %}
+        <li id="quelle-{{ loop.index }}">{% if q.url %}<a href="{{ q.url }}" target="_blank" rel="noopener">{{ q.name }}</a>{% else %}{{ q.name }}{% endif %}{% if q.stand %} · {{ q.stand }}{% endif %}</li>
+        {%- endfor %}
+      </ol>
+    </details>
+  </div>
+</section>
+{% endif %}

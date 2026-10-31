@@ -7,11 +7,126 @@
   "keywords": [
     "grunderwerbsteuer"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Steuern",
-  "formula": null,
+  "formula": "Grunderwerbsteuer = Kaufpreis × Steuersatz des Bundeslands",
   "sources": [],
   "assistantAnswer": "Landessteuer beim Erwerb inländischer Grundstücke. Grunderwerbsteuer fällt bei steuerbaren Grundstückserwerben an und wird von den Ländern mit unterschiedlichen Steuersätzen erhoben. Sie ist regelmäßig nicht Teil der Gebäude-AfA, sondern wird anteilig den Anschaffungskosten von Grund/Boden und Gebäude zugerechnet.",
-  "explanation": "Grunderwerbsteuer fällt bei steuerbaren Grundstückserwerben an und wird von den Ländern mit unterschiedlichen Steuersätzen erhoben. Sie ist regelmäßig nicht Teil der Gebäude-AfA, sondern wird anteilig den Anschaffungskosten von Grund/Boden und Gebäude zugerechnet.",
-  "practiceExample": "Bei 400.000 € steuerlicher Bemessungsgrundlage und 6 % Steuersatz wären 24.000 € Grunderwerbsteuer zu zahlen. Der konkrete Steuersatz richtet sich nach dem Bundesland."
+  "explanation": "Die Grunderwerbsteuer fällt an, wenn ein Grundstück, ein Haus oder eine Wohnung den Eigentümer wechselt. Das Grunderwerbsteuergesetz sieht 3,5 % vor, die Länder dürfen den Satz aber selbst bestimmen. In Berlin gilt seit 2014 ein Satz von 6 %, in Brandenburg seit Juli 2015 von 6,5 % und in Sachsen seit 2023 von 5,5 %.",
+  "practiceExample": "Sie kaufen eine Wohnung für 300.000 €. Die Grunderwerbsteuer beträgt in Berlin 18.000 €, in Brandenburg 19.500 € und in Sachsen 16.500 €. Gehört zur Wohnung ein Anteil an der Erhaltungsrücklage von 10.000 €, ändert das nichts: Die Steuer bemisst sich weiter nach 300.000 €.",
+  "ausbau": {
+    "einordnung": [
+      "Die Grunderwerbsteuer fällt an, wenn ein Grundstück, ein Haus oder eine Wohnung den Eigentümer wechselt. Das Grunderwerbsteuergesetz sieht 3,5 % vor,[[1]] die Länder dürfen den Satz aber selbst bestimmen.[[2]] In Berlin gilt seit 2014 ein Satz von 6 %,[[3]] in Brandenburg seit Juli 2015 von 6,5 %[[4]] und in Sachsen seit 2023 von 5,5 %.[[5]]",
+      "Bemessen wird die Steuer nach der Gegenleistung, beim Kauf also nach dem Kaufpreis einschließlich der Leistungen, die der Käufer zusätzlich übernimmt.[[6]] Die anteilige Erhaltungsrücklage einer Eigentumswohnung mindert den Kaufpreis dafür nicht; sie gehört nach dem Bundesfinanzhof der Eigentümergemeinschaft, nicht dem einzelnen Eigentümer.[[7]] Schuldner sind Käufer und Verkäufer; in den meisten Verträgen übernimmt der Käufer die Steuer.[[3]]",
+      "Steuerfrei sind unter anderem Erwerbe bis 2.500 €, Erbschaften und Schenkungen sowie Käufe durch den Ehegatten oder Lebenspartner des Verkäufers und durch Verwandte in gerader Linie.[[8]]"
+    ],
+    "beispiel": [
+      "Sie kaufen eine Wohnung für 300.000 €. Die Grunderwerbsteuer beträgt in Berlin 18.000 €, in Brandenburg 19.500 € und in Sachsen 16.500 €.",
+      "Gehört zur Wohnung ein Anteil an der Erhaltungsrücklage von 10.000 €, ändert das nichts: Die Steuer bemisst sich weiter nach 300.000 €."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Nach dem Notartermin meldet der Notar den Vertrag dem Finanzamt, das Ihnen den Steuerbescheid schickt. Erst wenn die Steuer bezahlt, sichergestellt oder gestundet ist, stellt das Finanzamt die Unbedenklichkeitsbescheinigung aus;[[9]] ohne sie werden Sie nicht als Eigentümer ins Grundbuch eingetragen.[[10]] Halten Sie den Betrag deshalb bereit, bevor der Bescheid kommt."
+        ]
+      },
+      {
+        "h2": "Was es für Verkäufer heißt",
+        "absaetze": [
+          "Auch Sie sind Steuerschuldner.[[3]] Im Kaufvertrag wird deshalb festgelegt, wer die Steuer zahlt; in der Regel ist es der Käufer."
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "§ 11 GrEStG",
+        "url": "https://www.gesetze-im-internet.de/grestg_1983/__11.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Art. 105 GG",
+        "url": "https://www.gesetze-im-internet.de/gg/art_105.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Senatsverwaltung für Finanzen Berlin: FAQ Grunderwerbsteuer",
+        "url": "https://www.berlin.de/sen/finanzen/steuern/informationen-fuer-steuerzahler-/faq-steuern/artikel.9062.php",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Brandenburg: Gesetz über die Festsetzung des Steuersatzes für die Grunderwerbsteuer vom 23. Juni 2015",
+        "url": "https://bravors.brandenburg.de/gesetze/mdf_2015",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Sächsisches Grunderwerbsteuersatzgesetz vom 20. Dezember 2022",
+        "url": "https://www.revosax.sachsen.de/vorschrift/19800-Saechsisches-Grunderwerbsteuersatzgesetz",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 9 GrEStG",
+        "url": "https://www.gesetze-im-internet.de/grestg_1983/__9.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Bundesfinanzhof, Urteil vom 16.09.2020, II R 49/17",
+        "url": "https://www.bundesfinanzhof.de/en/entscheidungen/entscheidungen-online/decision-detail/STRE202110004/",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 3 GrEStG",
+        "url": "https://www.gesetze-im-internet.de/grestg_1983/__3.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Bundesnotarkammer: Der Kauf einer gebrauchten Immobilie (Infoblatt)",
+        "url": "https://www.bnotk.de/fileadmin/user_upload_bnotk/presse/Informationsmaterialien/Infoblatt_Kauf-einer-gebrauchten-Immobilie.pdf",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 22 GrEStG",
+        "url": "https://www.gesetze-im-internet.de/grestg_1983/__22.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "3,5 % gesetzlich; Länderbefugnis",
+        "fundstelle": "runde-1.md, K05"
+      },
+      {
+        "zahl": "6 % Berlin seit 2014; Schuldner beide, meist Käufer",
+        "fundstelle": "runde-1.md, K01, K02"
+      },
+      {
+        "zahl": "6,5 % Brandenburg seit 01.07.2015",
+        "fundstelle": "runde-1.md, K03"
+      },
+      {
+        "zahl": "5,5 % Sachsen seit 01.01.2023",
+        "fundstelle": "runde-1.md, K04"
+      },
+      {
+        "zahl": "Bemessung nach Kaufpreis",
+        "fundstelle": "runde-1.md, K06"
+      },
+      {
+        "zahl": "Erhaltungsrücklage mindert nicht; gehört der Gemeinschaft",
+        "fundstelle": "runde-1.md, K10"
+      },
+      {
+        "zahl": "Ausnahmen 2.500 €, Erbe, Schenkung, Ehegatte, gerade Linie",
+        "fundstelle": "runde-1.md, K09"
+      },
+      {
+        "zahl": "Ablauf Bescheid und Unbedenklichkeitsbescheinigung",
+        "fundstelle": "runde-1.md, K16, K08"
+      },
+      {
+        "zahl": "Beispiel 300.000 €: 18.000 / 19.500 / 16.500 €; Rücklage 10.000 € (Annahme)",
+        "fundstelle": "Rechnung; Marktprüfung runde-1.md (S04)"
+      }
+    ]
+  }
 }

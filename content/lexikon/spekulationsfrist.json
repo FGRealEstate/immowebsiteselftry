@@ -7,9 +7,9 @@
   "keywords": [
     "spekulationsfrist"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Steuern",
-  "formula": null,
+  "formula": "Veräußerungsgewinn = Verkaufspreis − (Anschaffungskosten − AfA) − Werbungskosten",
   "sources": [
     {
       "label": "§ 23 EStG",
@@ -17,6 +17,78 @@
     }
   ],
   "assistantAnswer": "Umgangssprachliche Bezeichnung für steuerlich relevante Haltefristen. Die sogenannte Spekulationsfrist bezeichnet im Privatvermögen die Zehnjahresfrist des § 23 EStG für private Grundstücksveräußerungsgeschäfte; für bestimmte Eigennutzungsfälle gelten Ausnahmen. Bei Betriebsvermögen oder gewerblichem Grundstückshandel greifen andere Regeln.",
-  "explanation": "Die sogenannte Spekulationsfrist bezeichnet im Privatvermögen die Zehnjahresfrist des § 23 EStG für private Grundstücksveräußerungsgeschäfte; für bestimmte Eigennutzungsfälle gelten Ausnahmen. Bei Betriebsvermögen oder gewerblichem Grundstückshandel greifen andere Regeln.",
-  "practiceExample": "Kauf 2026 und Verkauf 2032 liegt grundsätzlich innerhalb von zehn Jahren. Ob der Gewinn steuerpflichtig ist, hängt zusätzlich von Nutzung und steuerlicher Einordnung ab."
+  "explanation": "Das Gesetz spricht von privaten Veräußerungsgeschäften. Verkaufen Sie eine Immobilie aus dem Privatvermögen innerhalb von zehn Jahren nach dem Kauf, ist der Gewinn steuerpflichtig. Für die Frist zählt das Datum der notariellen Kauf- und Verkaufsverträge.",
+  "practiceExample": "Sie kaufen die Beispielwohnung im Berliner Umland, etwa in Bernau, für 160.000 € plus 18.512 € Nebenkosten und vermieten sie. Jedes Jahr ziehen Sie 2.856 € AfA ab. Nach acht vollen Jahren verkaufen Sie zum Kaufpreis von 160.000 €. Die Anschaffungskosten von 178.512 € mindern sich um 22.850 € AfA auf 155.662 €. Steuerpflichtig sind damit rund 4.338 €, abzüglich Ihrer Verkaufskosten, obwohl Sie den Kaufpreis bloß zurückbekommen. Verkaufen Sie nach mehr als zehn Jahren, bleibt der Gewinn steuerfrei.",
+  "ausbau": {
+    "einordnung": [
+      "Das Gesetz spricht von privaten Veräußerungsgeschäften. Verkaufen Sie eine Immobilie aus dem Privatvermögen innerhalb von zehn Jahren nach dem Kauf, ist der Gewinn steuerpflichtig.[[1]] Für die Frist zählt das Datum der notariellen Kauf- und Verkaufsverträge.[[2]]",
+      "Ausgenommen sind Immobilien, die Sie die ganze Zeit zwischen Kauf und Verkauf selbst bewohnt haben, oder im Jahr des Verkaufs und in den beiden Jahren davor.[[1]] Weil das keine vollen Kalenderjahre sein müssen, können ein Jahr und zwei Tage reichen. Bei einer geerbten Immobilie läuft die Frist ab dem Kauf durch den Erblasser.[[2]]",
+      "Der Gewinn ist der Verkaufspreis abzüglich Anschaffungskosten und Werbungskosten; die Anschaffungskosten mindern sich um die AfA, die Sie während der Vermietung abgezogen haben. Gewinne bleiben steuerfrei, wenn alle privaten Veräußerungsgewinne eines Jahres zusammen unter 1.000 € liegen. Verluste lassen sich mit solchen Gewinnen verrechnen, auch aus dem Vorjahr oder späteren Jahren, nicht mit anderen Einkünften. Gehört der Verkauf zu einer anderen Einkunftsart, wird er dort erfasst.[[1]] Versteuert wird mit Ihrem persönlichen Steuersatz.[[2]]"
+    ],
+    "beispiel": [
+      "Sie kaufen die Beispielwohnung im Berliner Umland, etwa in Bernau, für 160.000 € plus 18.512 € Nebenkosten und vermieten sie. Jedes Jahr ziehen Sie 2.856 € AfA ab. Nach acht vollen Jahren verkaufen Sie zum Kaufpreis von 160.000 €.",
+      "Die Anschaffungskosten von 178.512 € mindern sich um 22.850 € AfA auf 155.662 €. Steuerpflichtig sind damit rund 4.338 €, abzüglich Ihrer Verkaufskosten, obwohl Sie den Kaufpreis bloß zurückbekommen. Verkaufen Sie nach mehr als zehn Jahren, bleibt der Gewinn steuerfrei."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Verkäufer heißt",
+        "absaetze": [
+          "Prüfen Sie vor einem Verkauf das Datum Ihres Kaufvertrags und ob eine Eigennutzung infrage kommt. Ein Verkauf kurz vor Ablauf der zehn Jahre kann teurer sein als einige Monate Warten. Die Einzelheiten klären Sie am besten mit einer Steuerberatung."
+        ]
+      },
+      {
+        "h2": "Was es für Anleger heißt",
+        "absaetze": [
+          "F&G empfiehlt einen ganzheitlichen Ansatz, der Cashflow, Steuervorteile, Mieterhöhungen und Verkaufserlös über die ganze Haltedauer betrachtet.[[3]] Die zehn Jahre gehören in diese Rechnung, weil sie mitbestimmen, wie viel vom Verkaufserlös nach Steuern bleibt."
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "§ 23 EStG",
+        "url": "https://www.gesetze-im-internet.de/estg/__23.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Spekulationssteuer Immobilien",
+        "url": "https://www.finanztip.de/spekulationssteuer/",
+        "stand": "Stand 09.07.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Kapitalanlage",
+        "url": "https://fg-realestate.de/kapitalanlage.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "zehn Jahre; Ausnahme Eigennutzung",
+        "fundstelle": "runde-1.md, S05"
+      },
+      {
+        "zahl": "notarielle Verträge; ein Jahr und zwei Tage; Erbe; persönlicher Steuersatz",
+        "fundstelle": "runde-3.md, P04"
+      },
+      {
+        "zahl": "Gewinn = Preis − AK − WK; AK minus AfA",
+        "fundstelle": "runde-3.md, P01"
+      },
+      {
+        "zahl": "Freigrenze unter 1.000 €; Verluste nur mit privaten Veräußerungsgewinnen, § 10d",
+        "fundstelle": "runde-3.md, P02"
+      },
+      {
+        "zahl": "andere Einkunftsart geht vor",
+        "fundstelle": "runde-3.md, P03"
+      },
+      {
+        "zahl": "ganzheitlicher Ansatz (F&G)",
+        "fundstelle": "runde-3.md, C08"
+      },
+      {
+        "zahl": "8 × 2.856,19 = 22.849,52 €; 178.512 − 22.849,52 = 155.662,48 €; 160.000 − 155.662,48 = 4.337,52 €",
+        "fundstelle": "Rechnung, Marktprüfung runde-3.md"
+      }
+    ]
+  }
 }

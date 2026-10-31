@@ -1,0 +1,128 @@
+---
+layout: fgs-page.njk
+fgsHero: false
+title: "Lennart Geserich – Geschäftsführer, Verkauf & Vermietung | Fischer & Geserich"
+permalink: team/lennart-geserich/index.html
+description: "Lennart Geserich ist Geschäftsführer der Fischer & Geserich Real Estate GmbH in Berlin-Steglitz. Er verantwortet Verkauf und Vermietung in Berlin und Brandenburg."
+canonicalPath: /team/lennart-geserich/
+ogTitle: "Lennart Geserich, Fischer & Geserich Real Estate"
+ogDescription: "Geschäftsführer, Head of Sales & Vermietung, Ansprechpartner für Berlin und Brandenburg."
+# Brief Design-Pass §4.3: Profil, das „Wer ist Lennart Geserich?“ beantwortet. Angaben nur von der Website und aus dem Brief:
+# Rolle, Kurztext und rund zehn Jahre Erfahrung (Startseite, Über uns), Geschäftsführer (Impressum), § 34c (bisheriges Markup),
+# Zuständigkeit (Brief), LinkedIn (bisherige Über-uns-Seite). Werdegang, Direktnummer und E-Mail fehlen: QUESTIONS 2.1, 2.2.
+# CP4 (28.10.2026, Design-Sprint-Brief 5.4): Vorlage fgs-page.njk. Ruhige Titelzeile ohne Foto wie Kontakt, darunter das Porträt
+# als S3-Teilung mit den Eckdaten (vorher Faktenliste im Titelbild), Aufgaben, Arbeitsweise und Gebiete als zweispaltige Abschnitte.
+# Entfallen: Kicker über den H2 (Update 6 §3.0), Linkliste „Leistungen“ und Lexikon unten (pg.related, Brief 3.7),
+# Gold-Häkchen (Brief 3.7); der LinkedIn-Link steht jetzt neben dem Porträt statt als zweiter Button. Texte unverändert.
+pg:
+  crumb: "Lennart Geserich"
+  parent: { label: "Über uns", href: "/ueber-uns.html" }
+  kicker: "Geschäftsführer · Head of Sales & Vermietung"
+  h1: "Lennart Geserich"
+  intro: "Lennart Geserich ist Geschäftsführer der Fischer & Geserich Real Estate GmbH in Berlin-Steglitz. Er verantwortet Verkauf und Vermietung und ist Ihr Ansprechpartner für Berlin und Brandenburg."
+  buttons:
+    - { label: "Gespräch vereinbaren", href: "/kontakt.html" }
+  person:
+    key: lennart
+    name: "Lennart Geserich"
+    givenName: "Lennart"
+    familyName: "Geserich"
+    jobTitle: "Geschäftsführer"
+    description: "Geschäftsführer der Fischer & Geserich Real Estate GmbH mit Schwerpunkt Vertrieb und Maklergeschäft. Verantwortet Verkauf und Vermietung von Wohn- und Anlageimmobilien nach § 34c Abs. 1 GewO und ist Ansprechpartner für Berlin und Brandenburg."
+    knowsAbout: ["Immobilienvertrieb", "Maklergeschäft", "Immobilienbewertung", "Vermietung", "Berliner Wohnungsmarkt"]
+    areaServed:
+      - { type: City, name: Berlin, url: /standorte/berlin/ }
+      - { type: State, name: Brandenburg, url: /standorte/ }
+    linkedin: "https://www.linkedin.com/in/lennart-geserich-b413bb38a/"
+    facts:
+      - { dt: "Funktion", dd: "Geschäftsführer der Fischer &amp; Geserich Real Estate GmbH" }
+      - { dt: "Ausbildung", dd: "Immobilienkaufmann" }
+      - { dt: "Erfahrung", dd: "rund zehn Jahre in der Immobilienbranche" }
+      - { dt: "Schwerpunkt", dd: "Verkauf und Vermietung" }
+      - { dt: "Zuständig für", dd: "Berlin und Brandenburg" }
+  faqTitle: "Häufige Fragen zu Lennart Geserich"
+  faq:
+    - q: "Wer ist Lennart Geserich?"
+      a: "Lennart Geserich ist Geschäftsführer der Fischer & Geserich Real Estate GmbH mit Sitz in Berlin-Steglitz. Er bringt rund zehn Jahre Erfahrung in der Immobilienbranche mit, verantwortet Verkauf und Vermietung und ist Ansprechpartner für Berlin und Brandenburg."
+    - q: "Wobei hilft mir Lennart Geserich?"
+      a: "Beim Verkauf und bei der Bewertung Ihrer Immobilie, bei der Vermietung und beim Verkauf oder Ankauf eines Mehrfamilienhauses in Berlin und Brandenburg."
+    - q: "Wie erreiche ich Lennart Geserich?"
+      a: "Über unsere Büronummer +49 1520 3083048 oder per E-Mail an info@fg-realestate.de. Persönliche Termine im Büro in der Schützenstraße 30 in Berlin finden nach vorheriger Vereinbarung statt."
+  contact: lennart
+  closing:
+    title: "Sprechen Sie mit Lennart Geserich"
+    button: bewertung
+  schema:
+    type: ProfilePage
+---
+{% from "fgs-macros.njk" import split, textlink with context %}
+
+{# S3 Porträt mit den Eckdaten (pg.person.facts) und LinkedIn; das Porträt ist dasselbe wie auf Über uns.
+   Design-Pass 3 §4.3: Behandlung aus §3.3, hier größer (560 × 700, karte: "gross"). #}
+{% call split({ id: "profil", titel: "Lennart Geserich bei F&G", karte: "gross", bild: "/images/team/lennart-geserich-frei" | bild, alt: "Porträt von Lennart Geserich" }) %}
+  <div class="fgs-table-wrap">
+    <table class="fgs-table fgs-table--rows">
+      <tbody>
+        {%- for f in pg.person.facts %}
+        <tr><th scope="row">{{ f.dt }}</th><td>{{ f.dd | safe }}</td></tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </div>
+  <a class="fgs-link" href="{{ pg.person.linkedin }}" target="_blank" rel="noopener">LinkedIn-Profil{% include "fgs-arrow.njk" %}</a>
+{% endcall %}
+
+<section class="fgs-section" id="aufgaben" aria-labelledby="aufgaben-titel">
+  <div class="fgs-wrap fgs-cols">
+    <div class="fgs-cols-head"><h2 id="aufgaben-titel">Was Lennart Geserich verantwortet</h2></div>
+    <div class="fgs-cols-body">
+      {#- Design-Pass 2 §7 (29.10.2026): Kurzbio wie auf Startseite und Gebietsseiten, aus _data/kontakte.js #}
+      <p class="fgs-lead">{{ kontakte.lennart.bio }}</p>
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li><a href="/verkaufen.html">Immobilie verkaufen</a><span>Bewertung, Käuferansprache und Begleitung bis zum Notartermin.</span></li>
+        <li><a href="/immobilienbewertung/">Kostenlose Bewertung</a><span>Die Wertermittlung erstellen wir kostenlos, meistens innerhalb weniger Stunden und häufig noch am selben Tag.</span></li>
+        <li><a href="/vermieten.html">Vermietung</a><span>Mietpreis und Auswahl geeigneter Interessenten.</span></li>
+        <li><a href="/mehrfamilienhaus.html">Mehrfamilienhäuser</a><span>Verkauf und Ankauf, mit einem Käufernetzwerk von über 100 Interessenten für Mehrfamilienhäuser deutschlandweit.</span></li>
+      </ul>
+      <p class="fgs-note">Fischer &amp; Geserich vermittelt Immobilien mit Erlaubnis nach § 34c Abs. 1 GewO. Wann eine Provision anfällt und wer sie zahlt, steht auf der Seite <a href="/maklerprovision/">Maklerprovision</a>.</p>
+    </div>
+  </div>
+</section>
+
+{# Update 4, 3.4: Werdegang und Arbeitsweise. Quellen: Website (rund zehn Jahre, Geschäftsführer, Über uns; Ablauf, Preisfindung
+   und typische Zeiten von Verkaufen; Vermieten), Call vom 09.10.2026 (Timon: Lennart ist der Verkäufer).
+   Werdegang vor F&G (erster Absatz, nennt ihn als Mitgründer): Update 13 §3, aus Peers Call mit Timon am 29.10.2026, frühere Arbeitgeber ohne Namen. #}
+<section class="fgs-section" id="werdegang" aria-labelledby="werdegang-titel">
+  <div class="fgs-wrap fgs-cols">
+    <div class="fgs-cols-head"><h2 id="werdegang-titel">Wie Lennart Geserich arbeitet</h2></div>
+    <div class="fgs-cols-body fgs-prose">
+      <p>Lennart Geserich hat zwei Berufsausbildungen abgeschlossen, zuletzt zum Immobilienkaufmann. Sechs Jahre lang hat er bei einem landeseigenen Wohnungsunternehmen gearbeitet und dort die Abteilungen der Hausverwaltung durchlaufen, zuletzt den Bereich Steuern mit Grundsteuer und Steuerbescheiden. Danach hat er Immobilienkäufe für Investoren begleitet, bevor er mit Timon Fischer Fischer &amp; Geserich gegründet hat.</p>
+      <p>Lennart Geserich führt Fischer &amp; Geserich gemeinsam mit Timon Fischer als Geschäftsführer. Er bringt rund zehn Jahre Erfahrung in der Immobilienbranche mit und verantwortet bei F&amp;G Verkauf und Vermietung. Neue Kaufinteressenten ruft er selbst an und klärt in einem kurzen Gespräch, ob sie ernsthaft interessiert sind und zum Objekt passen. Weil Timon Fischer die Finanzierung verantwortet, prüft das Team ein Objekt und seine Finanzierung im selben Gespräch.</p>
+      <h3>Verkauf: erst der Preis, dann die Vermarktung</h3>
+      <p>Am Anfang des Verkaufs, den Lennart verantwortet, steht die Wertermittlung. Sie ist kostenlos und liegt meist noch am selben Tag vor. Für den Angebotspreis zählt, zu welchen Preisen vergleichbare Immobilien in der Umgebung angeboten und verkauft werden; dazu kommen Bodenrichtwert, Zustand, Ausstattung, Grundriss und die Nachfrage nach genau dieser Art Immobilie. Das Ziel ist ein Preis, der sich begründen lässt, nicht der höchste denkbare.</p>
+      <p>Das Erstgespräch läuft per Teams oder persönlich, danach am liebsten persönlich. Interessenten werden früh nach ihrer Finanzierung gefragt und bevor der Kaufvertrag beim Notar beauftragt wird, klärt das Team, ob sie realistisch ist. Vom Erstkontakt bis zum Notartermin vergehen in der aktuellen Marktphase meist zwei bis drei Monate, schnelle Verkäufe dauern rund sechs Wochen. Das sind typische Werte, keine Zusage.</p>
+      <h3>Vermietung</h3>
+      <p>Bei einer Vermietung legt Lennart mit Ihnen die Miete fest, die Mietspiegel und Mietpreisbremse erlauben. Er bereitet Unterlagen und Anzeige vor, bündelt die Besichtigungen, prüft die Interessenten und begleitet Mietvertrag und Übergabe.</p>
+    </div>
+  </div>
+</section>
+
+{# Gebiete: statt Pfeilliste mit Berlin und allen Orten (Brief 3.7: keine Linklisten, keine Ortslisten im Seitentext)
+   zwei Textlinks; die Orte stehen auf der Übersicht und im Fuß #}
+<section class="fgs-section" id="gebiete" aria-labelledby="gebiete-titel">
+  <div class="fgs-wrap fgs-cols fgs-cols--stapeln">
+    <div class="fgs-cols-head"><h2 id="gebiete-titel">Ansprechpartner für Berlin und das Umland</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Für Eigentümer, Käufer und Vermieter in Berlin und im Berliner Umland ist Lennart Geserich bei Fischer &amp; Geserich der feste Ansprechpartner. Was wir dort anbieten und wie sich die Märkte entwickeln, steht auf den Gebietsseiten.</p>
+      <div class="fgs-links">
+        {%- if serviceArea.berlin.exists %}
+        {{ textlink(serviceArea.berlin.url, serviceArea.berlin.name) }}{% endif %}
+        {{ textlink("/standorte/", "Alle Gebiete") }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Artikel von Lennart: entfällt, solange die Firma Autor der Artikel ist (fgd-autor-artikel.njk) #}
+{% set autorKey = "lennart" %}
+{% include "fgd-autor-artikel.njk" %}

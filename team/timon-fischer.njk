@@ -1,0 +1,131 @@
+---
+layout: fgs-page.njk
+fgsHero: false
+title: "Timon Fischer – Geschäftsführer, Immobilienfinanzierung | Fischer & Geserich"
+permalink: team/timon-fischer/index.html
+description: "Timon Fischer ist Geschäftsführer der Fischer & Geserich Real Estate GmbH in Berlin-Steglitz. Er verantwortet die Immobilienfinanzierung und ist Ansprechpartner für Leipzig und Dresden."
+canonicalPath: /team/timon-fischer/
+ogTitle: "Timon Fischer, Fischer & Geserich Real Estate"
+ogDescription: "Geschäftsführer, Finanzierung & Prozesse, Ansprechpartner für Leipzig und Dresden."
+# Brief Design-Pass §4.3: Profil, das „Wer ist Timon Fischer?“ beantwortet. Angaben nur von der Website und aus dem Brief:
+# Rolle und Kurztext (Startseite, Über uns), Geschäftsführer (Impressum), § 34i (bisheriges Markup), Zuständigkeit (Brief),
+# LinkedIn (bisherige Über-uns-Seite). Werdegang, Direktnummer und E-Mail fehlen: QUESTIONS-FOR-TIMON.md 2.3, 2.4.
+# CP4 (28.10.2026, Design-Sprint-Brief 5.4): Vorlage fgs-page.njk. Ruhige Titelzeile ohne Foto wie Kontakt, darunter das Porträt
+# als S3-Teilung mit den Eckdaten (vorher Faktenliste im Titelbild), Aufgaben, Arbeitsweise und Gebiete als zweispaltige Abschnitte.
+# Entfallen: Kicker über den H2 (Update 6 §3.0), Linkliste „Leistungen“ und Lexikon unten (pg.related, Brief 3.7),
+# Gold-Häkchen (Brief 3.7); der LinkedIn-Link steht jetzt neben dem Porträt statt als zweiter Button. Texte unverändert.
+pg:
+  crumb: "Timon Fischer"
+  parent: { label: "Über uns", href: "/ueber-uns.html" }
+  kicker: "Geschäftsführer · Finanzierung & Prozesse"
+  h1: "Timon Fischer"
+  intro: "Timon Fischer ist Geschäftsführer der Fischer & Geserich Real Estate GmbH in Berlin-Steglitz. Er verantwortet die Immobilienfinanzierung und meist auch die Vermarktung der Immobilien. Er ist Ihr Ansprechpartner für Leipzig und Dresden."
+  buttons:
+    - { label: "Gespräch vereinbaren", href: "/kontakt.html" }
+  person:
+    key: timon
+    name: "Timon Fischer"
+    givenName: "Timon"
+    familyName: "Fischer"
+    jobTitle: "Geschäftsführer"
+    description: "Geschäftsführer der Fischer & Geserich Real Estate GmbH mit Schwerpunkt Immobilienfinanzierung. Verantwortet die Vermittlung von Immobiliardarlehen nach § 34i Abs. 1 GewO und ist Ansprechpartner für Leipzig und Dresden."
+    knowsAbout: ["Immobilienfinanzierung", "Annuitätendarlehen", "Beleihungswert", "Kapitalanlagefinanzierung", "Anschlussfinanzierung"]
+    areaServed:
+      - { type: City, name: Leipzig, url: /standorte/leipzig/ }
+      - { type: City, name: Dresden, url: /standorte/dresden/ }
+    linkedin: "https://www.linkedin.com/in/timon-fischer/"
+    facts:
+      - { dt: "Funktion", dd: "Geschäftsführer der Fischer &amp; Geserich Real Estate GmbH" }
+      - { dt: "Schwerpunkt", dd: "Immobilienfinanzierung" }
+      - { dt: "Zuständig für", dd: "Leipzig und Dresden" }
+  faqTitle: "Häufige Fragen zu Timon Fischer"
+  faq:
+    - q: "Wer ist Timon Fischer?"
+      a: "Timon Fischer ist Geschäftsführer der Fischer & Geserich Real Estate GmbH mit Sitz in Berlin-Steglitz. Er verantwortet die Immobilienfinanzierung und ist Ansprechpartner für Leipzig und Dresden."
+    - q: "Wobei hilft mir Timon Fischer?"
+      a: "Bei der Finanzierung einer selbstgenutzten Immobilie, einer Kapitalanlage oder eines Mehrfamilienhauses, bei der Anschlussfinanzierung und bei Fragen zu Immobilien in Leipzig und Dresden."
+    - q: "Wie erreiche ich Timon Fischer?"
+      a: "Über unsere Büronummer +49 1520 3083048 oder per E-Mail an info@fg-realestate.de. Persönliche Termine im Büro in der Schützenstraße 30 in Berlin finden nach vorheriger Vereinbarung statt."
+  contact: timon
+  closing:
+    title: "Sprechen Sie mit Timon Fischer"
+    button: gespraech
+  schema:
+    type: ProfilePage
+---
+{% from "fgs-macros.njk" import split, textlink with context %}
+
+{# S3 Porträt mit den Eckdaten (pg.person.facts) und LinkedIn; das Porträt ist dasselbe wie auf Über uns.
+   Design-Pass 3 §4.3: Behandlung aus §3.3, hier größer (560 × 700, karte: "gross"). #}
+{% call split({ id: "profil", titel: "Timon Fischer bei F&G", karte: "gross", bild: "/images/team/timon-fischer-frei" | bild, alt: "Porträt von Timon Fischer" }) %}
+  <div class="fgs-table-wrap">
+    <table class="fgs-table fgs-table--rows">
+      <tbody>
+        {%- for f in pg.person.facts %}
+        <tr><th scope="row">{{ f.dt }}</th><td>{{ f.dd | safe }}</td></tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </div>
+  <a class="fgs-link" href="{{ pg.person.linkedin }}" target="_blank" rel="noopener">LinkedIn-Profil{% include "fgs-arrow.njk" %}</a>
+{% endcall %}
+
+<section class="fgs-section" id="aufgaben" aria-labelledby="aufgaben-titel">
+  <div class="fgs-wrap fgs-cols">
+    <div class="fgs-cols-head"><h2 id="aufgaben-titel">Was Timon Fischer verantwortet</h2></div>
+    <div class="fgs-cols-body">
+      {#- Design-Pass 2 §7 (29.10.2026): Kurzbio wie auf Startseite und Gebietsseiten, aus _data/kontakte.js #}
+      <p class="fgs-lead">{{ kontakte.timon.bio }}</p>
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li><a href="/finanzierungsberatung.html">Finanzierungsberatung</a><span>Für Eigennutzer und Kapitalanleger: Finanzierungsrahmen, Eigenkapital und Monatsrate durchrechnen und die Angebote von rund 500 Banken vergleichen.</span></li>
+        <li><a href="/finanzierungsberatung.html#anschluss">Anschlussfinanzierung</a><span>Am Ende der Zinsbindung: das Verlängerungsangebot der bisherigen Bank mit anderen Banken vergleichen, einschließlich der Kosten eines Wechsels.</span></li>
+        <li><a href="/finanzierungsberatung.html#mehrfamilienhaus">Mehrfamilienhäuser finanzieren</a><span>Hier prüft die Bank vor allem das Objekt: Mieten, Kapitaldienst, Instandhaltung und Energieausweis.</span></li>
+        <li><a href="/finanzierungsberatung.html#steuerauslaender">Finanzierung für Steuerausländer</a><span>Für Käufer ohne Wohnsitz in Deutschland, mit Instituten, die solche Fälle prüfen. Mehr Vorlauf als bei einer Standardfinanzierung.</span></li>
+      </ul>
+      <p class="fgs-note">Die Finanzierung vermittelt Fischer &amp; Geserich als unabhängiger Immobiliardarlehensvermittler mit Erlaubnis nach § 34i Abs. 1 GewO. Eine Garantie auf Finanzierung gibt es nicht: Objekt, Bonität, Währung und Beleihung entscheiden im Einzelfall.</p>
+    </div>
+  </div>
+</section>
+
+{# Update 4, 3.4: Werdegang und Arbeitsweise. Quellen: Blogartikel (Mitgründer, Zitate wörtlich), Call vom 09.10.2026
+   (Transaktionsmanagement, Finanzierungsvermittlung, Vermietung; Blogs/design-muster/_build/texte/timon-profil.md),
+   Website (Europace, Baufinex, Bankkontakte, deutschlandweit, Finanzierungsvolumen 2026 (Update 13: über 4 Mio. €), Über uns, Verkaufen).
+   Werdegang vor F&G (erster Absatz): Update 13 §3, aus Peers Call mit Timon am 29.10.2026, frühere Arbeitgeber ohne Namen. #}
+<section class="fgs-section" id="werdegang" aria-labelledby="werdegang-titel">
+  <div class="fgs-wrap fgs-cols">
+    <div class="fgs-cols-head"><h2 id="werdegang-titel">Wie Timon Fischer arbeitet</h2></div>
+    <div class="fgs-cols-body fgs-prose">
+      <p>Timon Fischer arbeitet seit seinem 18. Lebensjahr. Als Werkstudent war er in der Immobilienverwaltung für das Forderungsmanagement und die Automatisierung von Berichten zuständig, danach im Daten- und Prozessmanagement. Anschließend hat er Immobilienfinanzierungen vermittelt und Immobilienkäufe in der Region Dresden begleitet. In diesem Unternehmen hat er Lennart Geserich kennengelernt, mit dem er Fischer &amp; Geserich gegründet hat.</p>
+      <p>Heute führt er das Unternehmen gemeinsam mit Lennart Geserich als Geschäftsführer, vermittelt die Finanzierungen und begleitet die Abwicklung bis zum Notartermin. Die Vermarktung der Immobilien übernimmt meist er. In seinen Gebieten begleitet er auch Verkäufe und Vermietungen, führt Besichtigungen durch und stimmt sich mit den Eigentümern ab. Die Mietverträge schließt Lennart Geserich.</p>
+      <p>Finanzierungen vergleicht Timon über Europace, Baufinex und direkte Kontakte zu Banken und er vermittelt sie deutschlandweit, auch für Mehrfamilienhäuser und für Käufer ohne Wohnsitz in Deutschland. 2026 hat Fischer &amp; Geserich Finanzierungen mit einem Volumen von über 4 Millionen Euro begleitet.</p>
+      <p>Bei F&amp;G laufen Objekt und Finanzierung zusammen: Lennart Geserich verantwortet Verkauf und Vermietung, Timon die Finanzierung. So prüft das Team ein Objekt und seine Finanzierung im selben Gespräch. Beim Kauf klärt Timon die Finanzierung, bevor der Kaufvertrag beim Notar beauftragt wird.</p>
+      <h3>Zwei Einschätzungen von Timon aus dem Blog</h3>
+      <blockquote class="fgs-pull">
+        <p>„Ich würde niemals jemandem empfehlen, bei der ersten Immobilie eine 110-Prozent-Finanzierung zu machen. Man braucht ein ausgeglichenes Portfolio, auch ein ausgeglichenes Schuldenportfolio.“</p>
+        <footer class="fgs-small fgs-source">Aus dem Artikel <a href="/blog/beleihungsauslauf-und-kondition/">Was ist der Beleihungsauslauf, und was kostet eine 100- oder 110-Prozent-Finanzierung?</a></footer>
+      </blockquote>
+      <blockquote class="fgs-pull">
+        <p>„Wenn man sich langfristig absichern will, wird es teurer, weil die Banken dieses Risiko bepreisen. Das Forward-Darlehen schließt man ab, um sich für die Zeit nach dem Ende der Zinsbindung günstigere Zinsen zu sichern.“</p>
+        <footer class="fgs-small fgs-source">Aus dem Artikel <a href="/blog/zinsbindung-strategisch-waehlen/">Wann sich eine kurze Zinsbindung mit Forward-Darlehen lohnt</a></footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+{# Gebiete: dieselben zwei Links wie bisher, als Textlinks statt Pfeilliste #}
+<section class="fgs-section" id="gebiete" aria-labelledby="gebiete-titel">
+  <div class="fgs-wrap fgs-cols fgs-cols--stapeln">
+    <div class="fgs-cols-head"><h2 id="gebiete-titel">Ansprechpartner für Sachsen</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Für Eigentümer, Käufer und Kapitalanleger in Leipzig und Dresden ist Timon Fischer bei Fischer &amp; Geserich der feste Ansprechpartner. Was wir dort anbieten und wie sich die Märkte entwickeln, steht auf den Gebietsseiten.</p>
+      <div class="fgs-links">
+        {%- for p in [serviceArea.leipzig, serviceArea.dresden] %}{% if p.exists %}
+        {{ textlink(p.url, p.name) }}{% endif %}{% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Artikel von Timon: entfällt, solange die Firma Autor der Artikel ist (fgd-autor-artikel.njk) #}
+{% set autorKey = "timon" %}
+{% include "fgd-autor-artikel.njk" %}

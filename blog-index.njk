@@ -1,0 +1,86 @@
+---
+layout: fgs-page.njk
+fgsHero: false
+fgsBlog: true
+permalink: blog/index.html
+title: "Blog zu Immobilienfinanzierung, Kauf und Kapitalanlage | Fischer & Geserich"
+description: "Der Blog von Fischer & Geserich: Finanzierung und Immobilienmarkt verständlich erklärt, mit Rechenbeispielen, Quellen und Einschätzungen aus der Praxis."
+canonicalPath: /blog/
+ogImage: "https://fg-realestate.de/blog/og.jpg"
+ogImageAlt: "Blog von Fischer & Geserich Real Estate"
+pg:
+  crumb: Blog
+  kicker: "Finanzierung und Immobilienmarkt verständlich erklärt"
+  h1: "Blog zu Immobilienfinanzierung, Kauf und Kapitalanlage"
+  intro: "Hier erklären wir Themen, bei denen sich beim Kauf, bei der Finanzierung und bei der Vermietung einer Immobilie viel Geld sparen oder verlieren lässt. Jeder Artikel nennt seine Quellen und rechnet mit Beispielzahlen."
+  buttons:
+    - { label: "Zu den Artikeln", href: "#artikel" }
+    - { label: "Zum Lexikon", href: "/lexikon/" }
+  contact: timon
+  closing:
+    title: "Eine Frage, die kein Artikel beantwortet?"
+    text: "Schreiben Sie uns oder rufen Sie an. Wie hoch Ihre Rate, Ihr Eigenkapital oder Ihr Beleihungsauslauf tatsächlich wären, rechnen wir im Gespräch mit Ihnen durch."
+    button: gespraech
+  schema: { type: "CollectionPage", id: "blog" }
+---
+{#- Blog-Übersicht im neuen Design (Brief Design-Pass §4.8): 150–250 Wörter Einleitung, Kategorien passend
+    zu den Leistungen, Karten mit Bild und Alternativtext. Artikel aus _data/blogArtikel.js (Live-Liste aus live.py).
+    CP4 (28.10.2026, Design-Sprint-Brief 5.6): „editorial grid: one large lead article, then cards“. Der neueste Artikel steht groß,
+    die übrigen als Karten, neueste zuerst. Entfallen: Themen-Chips und die Gruppen je Thema mit „Passende Leistungen“
+    (Brief 3.7: keine Chips, keine Linklisten), Inhaltsverzeichnis und Linkliste unten (pg.toc, pg.related), Kicker über den H2.
+    Die Sprungmarken /blog/#<thema> aus Artikelkopf und Brotkrumen bleiben: Der erste Artikel je Thema trägt die id. -#}
+{% from "fgs-macros.njk" import textlink %}
+{% set liste = blogArtikel | sort(true, false, "datePublished") %}
+{% set gesehen = [] %}
+{%- macro katId(p) -%}{% if p.katId not in gesehen %}{% set _ = gesehen.push(p.katId) %} id="{{ p.katId }}"{% endif %}{%- endmacro -%}
+
+<section class="fgs-section" id="artikel" aria-labelledby="artikel-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-offer-head">
+      <h2 id="artikel-titel">Alle Artikel</h2>
+      <p class="fgs-small">{{ blogArtikel.length }} Artikel, der neueste zuerst</p>
+    </div>
+    {% set lead = liste[0] %}
+    {% if lead %}
+    <a class="fgs-blog-lead" href="{{ lead.url }}"{{ katId(lead) }}>
+      <span class="fgs-media"><img src="{{ lead.url }}{{ lead.lead.src }}" alt="{{ lead.lead.alt }}" width="{{ lead.lead.width }}" height="{{ lead.lead.height }}" sizes="(min-width: 1100px) 700px, 100vw" decoding="async"></span>
+      <div class="fgs-blog-lead-body">
+        <p class="fgs-small">{{ lead.katLabel | safe }} · {{ lead.minuten }} Min. Lesezeit</p>
+        <h3>{{ lead.titel }}</h3>
+        <p>{{ lead.kurz }}</p>
+        <span class="fgs-link">Artikel lesen{% include "fgs-arrow.njk" %}</span>
+      </div>
+    </a>
+    {% endif %}
+    {% if liste.length > 1 %}
+    <div class="fgd-blog-cards">
+      {% for p in liste %}{% if not loop.first %}
+      <a class="fgd-blog-card" href="{{ p.url }}"{{ katId(p) }}>
+        <img src="{{ p.slug | blogThumb }}" alt="{{ p.lead.alt }}" width="720" height="480" loading="lazy" decoding="async">
+        <span class="fgd-blog-card-body">
+          <span class="fgd-blog-card-meta"><b>{{ p.katLabel | safe }}</b>{{ p.minuten }} Min. Lesezeit</span>
+          <strong>{{ p.titel }}</strong>
+          <span class="fgd-blog-card-text">{{ p.kurz }}</span>
+          <span class="fgs-link">Artikel lesen{% include "fgs-arrow.njk" %}</span>
+        </span>
+      </a>
+      {% endif %}{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{# Design-Pass 2 §7 (29.10.2026): Abschnitt „Wie unsere Artikel aufgebaut sind“ entfernt; der Hinweis zu Beispielzinsen steht in jedem Artikel. #}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "https://fg-realestate.de/blog/#artikel",
+  "numberOfItems": {{ blogArtikel.length }},
+  "itemListElement": [
+    {% for p in blogArtikel %}{ "@type": "ListItem", "position": {{ loop.index }}, "url": "https://fg-realestate.de{{ p.url }}", "name": {{ p.titel | json | safe }} }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>

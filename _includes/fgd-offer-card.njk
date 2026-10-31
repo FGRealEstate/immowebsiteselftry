@@ -1,0 +1,71 @@
+{#- Angebotskarten im neuen Design (Brief Design-Pass §4.5). Daten unverändert aus _data/propstack.js.
+    offerCard(o)   Einzelobjekt oder Projekteinheit; ohne Foto zeigt die Karte „Foto folgt“ in den Markenfarben.
+    projectCard(p) Projekt, breit: Foto links, Eckdaten rechts.
+    referenceCard(r) Verkauftes Objekt für /referenzen/ (Update 4, 3.2): Etikett „Verkauft“, ohne Preis.
+    Die ganze Karte ist über den Link im Titel klickbar (a::after deckt die Karte ab).
+    data-* Felder speisen den Filter auf /angebote.html. -#}
+{% from "fgd-icons.njk" import icon %}
+
+{%- macro photoOrPlaceholder(src, alt, sizes, eager=false) -%}
+{% if src %}<img src="{{ src }}" alt="{{ alt }}" sizes="{{ sizes }}" width="1200" height="900" {% if eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
+{% else %}<span class="fgd-offer-placeholder" role="img" aria-label="Für dieses Angebot folgen die Fotos noch"><img src="/images/logo/fg-zeichen-gold.svg" alt="" width="64" height="64"><span>Foto folgt</span></span>{% endif %}
+{%- endmacro -%}
+
+{%- macro offerCard(o, showLocation=true) -%}
+<article class="fgd-offer offer-filter-card property-card" data-strategie="{{ o.strategy_key }}" data-vermarktung="{{ o.marketing_type or '' }}" data-objektart="{{ o.property_type or '' }}" data-preis="{{ o.price_raw or '' }}" data-flaeche="{{ o.living_space_raw or '' }}" data-rendite="{{ o.gross_yield_raw or '' }}">
+  <div class="fgd-offer-media">
+    {{ photoOrPlaceholder(o.main_image, o.title, "(min-width: 1100px) 380px, (min-width: 700px) 50vw, 100vw") | safe }}
+    <p class="fgd-offer-tags"><span class="fgd-offer-tag fgd-offer-tag--gold">{{ o.strategy }}</span>{% if o.marketing_type %}<span class="fgd-offer-tag">{{ o.marketing_type }}</span>{% endif %}</p>
+  </div>
+  <div class="fgd-offer-body">
+    <p class="fgd-offer-meta">{{ o.property_type or "Immobilie" }}{% if showLocation and o.location %}<span>{{ icon("pin") | safe }}{{ o.location }}</span>{% endif %}{% if o.unit_number %}<span>Nr. {{ o.unit_number }}</span>{% endif %}</p>
+    <h3><a href="{{ o.url }}">{{ o.title }}</a></h3>
+    <p class="fgd-offer-price">{{ (o.price | eur) if o.price else "Preis auf Anfrage" }}{% if o.marketing_type == "Miete" and o.price %} <small>kalt / Monat</small>{% endif %}</p>
+    <dl class="fgd-offer-facts">
+      {% if o.living_space %}<div><dt>Wohnfläche</dt><dd>{{ o.living_space }}</dd></div>{% endif %}
+      {% if o.rooms %}<div><dt>Zimmer</dt><dd>{{ o.rooms }}</dd></div>{% endif %}
+      {% if o.is_investment and o.gross_yield %}<div><dt>Bruttorendite</dt><dd>{{ o.gross_yield }}</dd></div>{% elif o.is_investment and o.cold_rent %}<div><dt>Kaltmiete</dt><dd>{{ o.cold_rent | eur }}</dd></div>{% elif o.price_per_sqm and o.marketing_type != "Miete" %}<div><dt>Preis/m²</dt><dd>{{ o.price_per_sqm | eur }}</dd></div>{% endif %}
+    </dl>
+    <span class="fgd-offer-more">{{ "Einheit ansehen" if o.project_name else "Objekt ansehen" }}{{ icon("arrow") | safe }}</span>
+  </div>
+</article>
+{%- endmacro -%}
+
+{%- macro projectCard(p, eager=false) -%}
+<article class="fgd-project offer-filter-card" data-strategie="{{ p.strategy_keys | join(',') }}" data-vermarktung="{{ p.marketing_type }}" data-objektart="{{ p.property_types | join(',') }}" data-preis="{{ p.min_price_raw or '' }}" data-flaeche="{{ p.max_area or '' }}" data-rendite="">
+  <div class="fgd-offer-media fgd-project-media">
+    {{ photoOrPlaceholder(p.main_image, p.name, "(min-width: 1000px) 640px, 100vw", eager) | safe }}
+    <p class="fgd-offer-tags"><span class="fgd-offer-tag fgd-offer-tag--gold">Projekt</span><span class="fgd-offer-tag">{{ p.marketing_type }}</span></p>
+  </div>
+  <div class="fgd-project-body">
+    <p class="fgd-offer-meta">{{ p.strategy }}{% if p.location %}<span>{{ icon("pin") | safe }}{{ p.location }}</span>{% endif %}</p>
+    <h3><a href="{{ p.url }}">{{ p.name }}</a></h3>
+    <dl class="fgd-project-facts">
+      <div><dt>Verfügbare Einheiten</dt><dd>{{ p.available_unit_count }}</dd></div>
+      <div><dt>{% if p.marketing_type == "Miete" %}Kaltmieten{% else %}Kaufpreise{% endif %}</dt><dd>{{ (p.price_range | eur) if p.price_range else "auf Anfrage" }}</dd></div>
+      {% if p.area_range %}<div><dt>Wohnflächen</dt><dd>{{ p.area_range }}</dd></div>{% endif %}
+      {% if p.room_range %}<div><dt>Zimmer</dt><dd>{{ p.room_range }}</dd></div>{% endif %}
+    </dl>
+    <span class="fgd-offer-more">Projekt und Einheiten ansehen{{ icon("arrow") | safe }}</span>
+  </div>
+</article>
+{%- endmacro -%}
+
+{%- macro referenceCard(r) -%}
+<article class="fgd-offer fgd-reference">
+  <div class="fgd-offer-media">
+    {% if r.main_image %}<img src="{{ r.main_image }}" alt="{{ r.title }}" sizes="(min-width: 1100px) 380px, (min-width: 700px) 50vw, 100vw" width="1200" height="900" loading="lazy" decoding="async">
+    {% else %}<span class="fgd-offer-placeholder" aria-hidden="true"><img src="/images/logo/fg-zeichen-gold.svg" alt="" width="64" height="64"></span>{% endif %}
+    <p class="fgd-offer-tags"><span class="fgd-offer-tag fgd-offer-tag--sold">Verkauft{% if r.sold_year %} {{ r.sold_year }}{% endif %}</span></p>
+  </div>
+  <div class="fgd-offer-body">
+    <h3><a href="{{ r.url }}">{{ r.title }}</a></h3>
+    <dl class="fgd-offer-facts">
+      {% if r.living_space %}<div><dt>Wohnfläche</dt><dd>{{ r.living_space }}</dd></div>{% endif %}
+      {% if r.rooms %}<div><dt>Zimmer</dt><dd>{{ r.rooms }}</dd></div>{% endif %}
+      {% if r.construction_year %}<div><dt>Baujahr</dt><dd>{{ r.construction_year }}</dd></div>{% elif r.plot_area %}<div><dt>Grundstück</dt><dd>{{ r.plot_area }}</dd></div>{% endif %}
+    </dl>
+    <span class="fgd-offer-more">Referenz ansehen{{ icon("arrow") | safe }}</span>
+  </div>
+</article>
+{%- endmacro -%}

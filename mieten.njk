@@ -1,10 +1,95 @@
 ---
-layout: base.njk
+layout: fgs-service.njk
 title: Wohnung oder Haus mieten – Mietgesuch anlegen | Fischer & Geserich
 permalink: mieten.html
 description: "Mietwohnung oder Haus suchen: Mietgesuch für Berlin, Leipzig, Dresden und den Berliner Speckgürtel anlegen und für passende Angebote vormerken lassen."
 canonicalPath: /mieten.html
+# Design-Sprint (Brief 5.2, CP4 am 28.10.2026): Vorlage fgs-service.njk, Texte unverändert (Update 6 §4: nur §1, §2 und §3.0).
+# Brief Design-Pass §4.2: H1 nach Brief. Neu: wie das Mietgesuch funktioniert und was nach dem Absenden passiert.
+# Formular fgd-search-profile.njk mit marketing RENT (gleicher Endpunkt propstack-search-profile wie bisher).
+# Bestellerprinzip geprüft am 26.10.2026: § 2 Abs. 1a WoVermittG (gesetze-im-internet.de).
+service:
+  id: mieten
+  crumb: "Mieten"
+  kicker: "Mietgesuch"
+  h1: "Wohnung oder Haus mieten: Mietgesuch bei Fischer & Geserich"
+  intro: "Sie suchen eine Wohnung oder ein Haus zur Miete? Legen Sie ein Mietgesuch an. Wir melden uns, wenn ein passendes Angebot frei wird."
+  button: { label: "Mietgesuch anlegen", href: "#mietgesuch" }
+  hero: { name: "mieten-hero", alt: "Chamissoplatz in Berlin-Kreuzberg im Sommer von oben, ringsum Altbauten", widths: [960, 1600, 1840] }
+  summaryQ: "Wie funktioniert ein Mietgesuch bei Fischer & Geserich?"
+  summary:
+    - "Sie hinterlegen Suchgebiet, Objektart, Monatsmiete und Ihre Wünsche. Wir prüfen es persönlich und melden uns, wenn ein passendes Mietangebot vorliegt. Pflicht sind nur Suchgebiet, E-Mail-Adresse und Ihre Einwilligung."
+  faqTitle: "Häufige Fragen zum Mietgesuch"
+  faq:
+    - q: "Zahle ich als Mieter eine Provision?"
+      a: "Nicht für Wohnungen, die wir im Auftrag des Eigentümers vermieten. Bei Wohnraum zahlt, wer den Makler beauftragt hat (§ 2 Abs. 1a WoVermittG)."
+    - q: "Bekomme ich auch Kaufangebote, wenn ich ein Mietgesuch anlege?"
+      a: "Nein. Ihr Profil wird ausschließlich als Mietgesuch erfasst. Möchten Sie auch kaufen, legen Sie dafür ein eigenes Suchprofil an."
+    - q: "Kann ich mein Mietgesuch zurückziehen?"
+      a: "Ja. Ihre Einwilligung können Sie jederzeit widerrufen (Art. 7 Abs. 3 DSGVO), zum Beispiel per E-Mail an info@fg-realestate.de. Einzelheiten stehen in der Datenschutzerklärung."
+  related:
+    services:
+      - { label: "Immobilie kaufen", note: "Suchprofil und Kaufnebenkosten", href: "/kaufen.html", bild: "kaufen-hero", alt: "Canaletto-Blick in Dresden: die Augustusbrücke über die Elbe, dahinter Frauenkirche und Hofkirche im warmen Licht, vorn die Elbwiesen" }
+      - { label: "Finanzierungsberatung", note: "Kaufen statt mieten: den Rahmen prüfen", href: "/finanzierungsberatung.html", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
+      - { label: "Immobilie vermieten", note: "Für Eigentümer: Mieter finden und prüfen", href: "/vermieten.html", bild: "vermieten-hero", alt: "Altbau-Wohnhäuser von Riehmers Hofgarten an der Hagelberger Straße in Berlin-Kreuzberg, rechts ein Baum" }
+    lexikon: [mietpreisbremse, mietspiegel, betriebskosten]
+  contact: lennart
+  closing:
+    title: "Fragen zu Ihrer Mietsuche?"
+    text: "Rufen Sie uns an oder schreiben Sie uns. Lennart Geserich betreut bei uns die Vermietung."
+    button: gespraech
+  schema:
+    name: "Mietgesuch für Wohnungen und Häuser"
+    serviceType: "Vermittlung von Mietwohnungen"
+    description: "Mietgesuch für Wohnungen, Häuser und Gewerbe in Berlin, Brandenburg, Leipzig und Dresden; persönliche Prüfung und Nachricht bei passenden Mietangeboten."
+    area: regional
 ---
-<section class="fg-journey-hero fg-page-hero bg-primary text-white py-16 md:py-24"><div class="container mx-auto px-4 max-w-6xl"><a href="/index.html#ziele" class="fg-back-link"><i class="fas fa-arrow-left"></i> Zurück zur Auswahl</a><div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center mt-8"><div class="lg:col-span-3 fg-reveal"><p class="fg-eyebrow">Immobilie mieten</p><h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">Ein Mietgesuch, das wirklich zu <span class="text-gold-gradient">Ihren Kriterien passt.</span></h1><p class="text-lg md:text-xl text-page-bg mb-8">Mietwohnung und Immobilienkauf sind zwei unterschiedliche Vorhaben. Deshalb erhält Ihre Mietsuche bei uns eine eigene Strecke mit eigenem Suchprofil.</p><div class="flex flex-col sm:flex-row gap-3"><a href="#mietgesuch" class="btn-85 py-3 px-7 text-primary font-bold text-center">Mietgesuch anlegen</a><a href="/angebote.html" class="fg-pill-outline">Aktuelle Angebote</a></div></div><div class="lg:col-span-2 fg-journey-side fg-reveal"><span><i class="fas fa-location-dot"></i> Suchgebiet</span><span><i class="fas fa-building"></i> Wohnung, Haus oder Gewerbe</span><span><i class="fas fa-wallet"></i> monatlicher Mietrahmen</span><span><i class="fas fa-user-check"></i> persönliche Vormerkung</span></div></div></div></section>
-<section class="fg-home-v2-section bg-white"><div class="container mx-auto px-4"><div class="fg-home-v2-head fg-reveal"><p class="fg-section-kicker">Gezielter suchen</p><h2>Ihre Mietsuche wird separat erfasst.</h2><p>So vermeiden wir unpassende Kaufangebote und können Suchgebiet, Mietbudget, Größe und Ausstattungswünsche eindeutig als Mietgesuch in unserer Angebotsstruktur hinterlegen.</p></div></div></section>
-{% set searchMarketingType = "RENT" %}{% set searchFormId = "mietgesuch" %}{% set searchEyebrow = "Mietgesuch" %}{% set searchHeadline = "Welche Mietimmobilie suchen Sie?" %}{% set searchIntro = "Hinterlegen Sie Ihre Kriterien. Wir erfassen Ihr Profil ausschließlich als Mietgesuch und informieren Sie, wenn ein passendes Mietangebot vorliegt." %}{% set searchTypeLabel = "Ihr Mietvorhaben" %}{% set searchBudgetLabel = "Monatsmiete bis" %}{% set searchSubmitLabel = "Mietgesuch übermitteln" %}{% set searchSuccessText = "Vielen Dank. Ihr Mietgesuch wurde erfolgreich übermittelt und wird persönlich geprüft." %}{% include "search-profile-form.njk" %}
+{#- Mieten im Design-System (Brief 5.2, CP4): „Ihre Mietsuche wird separat erfasst.“ als H2 mit vier Punkten in einer Reihe,
+    S3 „Was mit Ihrem Mietgesuch passiert“ (Bild links, bisher navy Halbbild), F Mietgesuch. Texte unverändert.
+    Weggefallen: Kicker über den H2 („Gezielter suchen“, „Nach dem Absenden“, „Mietgesuch“), die Zählung 01–04 der vier Punkte
+    (kein Ablauf: es sind die Angaben im Formular, Brief 3.7), Häkchen-Icons, „Auf dieser Seite“, Gebietsliste.
+    Navy nur in S1, S8 und Fuß. -#}
+{% from "fgs-macros.njk" import split, textlink with context %}
+
+{# Was ins Mietgesuch gehört: H2, Lead, vier Punkte in einer Reihe (bisheriger Abschnitt „Gezielter suchen“) #}
+<section class="fgs-section" id="ablauf" aria-labelledby="ablauf-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head">
+      <h2 id="ablauf-titel">So funktioniert Ihr Mietgesuch</h2>
+      <p class="fgs-lead">Das Mietgesuch fragt vier Dinge ab. Kaufangebote schicken wir Ihnen darüber nicht.</p>
+    </div>
+    <ul class="fgs-points fgs-points--row" role="list">
+      <li><h3>Suchgebiet und Objekt</h3><p>Wo Sie suchen, etwa Berlin-Steglitz, Oranienburg oder Leipzig, und ob es eine Wohnung, ein Haus oder eine Gewerbefläche sein soll.</p></li>
+      <li><h3>Monatlicher Mietrahmen und Größe</h3><p>Die höchste Monatsmiete, die Sie zahlen möchten, dazu Zimmer und Wohnfläche ab. Je genauer die Angaben, desto weniger unpassende Vorschläge.</p></li>
+      <li><h3>Was Ihnen wichtig ist</h3><p>Balkon, Garten, Aufzug, Stellplatz, Barrierefreiheit oder Einbauküche zum Ankreuzen, weitere Wünsche als freier Text, zum Beispiel Einzugstermin oder Haustiere.</p></li>
+      <li><h3>Persönliche Vormerkung</h3><p>Ihre Kontaktdaten und Ihre Einwilligung, dass wir Sie zu passenden Angeboten informieren dürfen. Telefon und Name sind freiwillig.</p></li>
+    </ul>
+  </div>
+</section>
+
+{# S3 Nach dem Absenden (bisher navy Halbbild, gleiches Bild) #}
+{% call split({ id: "danach", titel: "Was mit Ihrem Mietgesuch passiert", bild: "dresden-band" | bild, alt: "Kuppel der Kunstakademie an der Brühlschen Terrasse in Dresden, dahinter die Elbe" }) %}
+  <p>Nach dem Absenden sehen Sie eine Bestätigung auf der Seite. Wir prüfen Ihre Angaben persönlich und melden uns, wenn ein passendes Mietangebot vorliegt. Ändern sich Ihre Kriterien, etwa Budget oder Suchgebiet, schreiben Sie uns kurz.</p>
+  <p>Zur Besichtigung genügen Name und Kontaktdaten. Möchten Sie die Wohnung nehmen, folgen Mieterselbstauskunft, Einkommensnachweise und eine Bonitätsauskunft. Wer diese Unterlagen bereithält, ist schneller.</p>
+  <p>Bereits veröffentlichte Wohnungen und Häuser finden Sie unter <a href="/angebote.html">Aktuelle Angebote</a>.</p>
+{% endcall %}
+
+{# F Mietgesuch: Text links, Formular rechts (Feldnamen und Versand unverändert, fgd-search-profile.njk mit marketing RENT) #}
+<section class="fgs-section" id="mietgesuch-bereich" aria-labelledby="mietgesuch-titel">
+  <div class="fgs-wrap fgs-formblock">
+    <div class="fgs-formblock-text">
+      <h2 id="mietgesuch-titel">Welche Mietimmobilie suchen Sie?</h2>
+      <p class="fgs-lead">Nennen Sie uns Ihre Kriterien. Wir melden uns, wenn ein passendes Mietangebot vorliegt.</p>
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li>Suchgebiet</li>
+        <li>Wohnung, Haus oder Gewerbe</li>
+        <li>monatlicher Mietrahmen</li>
+        <li>persönliche Vormerkung</li>
+      </ul>
+    </div>
+    <div class="fgs-formblock-form">
+    {% set sp = { id: "mietgesuch", marketing: "RENT", title: "Mietgesuch anlegen", intro: "Nur das Suchgebiet und Ihre E-Mail-Adresse sind Pflicht.", budgetLabel: "Monatsmiete bis", submitLabel: "Mietgesuch übermitteln", doneText: "Ihr Mietgesuch wurde übermittelt und wird persönlich geprüft. Wir melden uns, wenn ein passendes Mietangebot vorliegt." } %}
+    {% include "fgd-search-profile.njk" %}
+    </div>
+  </div>
+</section>

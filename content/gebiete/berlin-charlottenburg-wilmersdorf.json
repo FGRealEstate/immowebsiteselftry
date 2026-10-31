@@ -1,0 +1,428 @@
+{
+  "slug": "berlin/charlottenburg-wilmersdorf",
+  "name": "Charlottenburg-Wilmersdorf",
+  "nameLang": "Charlottenburg-Wilmersdorf",
+  "inOrt": "in Charlottenburg-Wilmersdorf",
+  "fuerOrt": "Charlottenburg-Wilmersdorf",
+  "typ": "bezirk",
+  "kreis": {
+    "name": "Berlin",
+    "url": "/standorte/berlin/"
+  },
+  "orte": [
+    "Westend",
+    "Witzleben",
+    "Spreestadt",
+    "Schmargendorf",
+    "Grunewald",
+    "Rheingauviertel",
+    "Güntzelkiez"
+  ],
+  "kontakt": "lennart",
+  "title": "Immobilienmakler Charlottenburg-Wilmersdorf – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler in Charlottenburg-Wilmersdorf: verkaufen, kaufen und finanzieren in Westend, Grunewald und am Lietzensee, mit Bodenrichtwerten 2026.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Charlottenburg-Wilmersdorf",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Charlottenburg-Wilmersdorf beim Verkauf, beim Kauf und bei der Finanzierung, von den Wohnungen am Lietzensee, im Rheingauviertel und im Güntzelkiez über die Spreestadt bis zu den Villenkolonien in Westend und Grunewald. Unser Büro liegt in der Schützenstraße 30 in Steglitz. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für den ganzen Bezirk ist Lennart Geserich Ihr Ansprechpartner, Head of Sales & Vermietung.",
+  "hero": {
+    "name": "charlottenburg-wilmersdorf-lietzensee",
+    "alt": "Der Lietzensee in Charlottenburg an einem Morgen im Juni",
+    "credit": "Leonhard Lenz, CC0",
+    "url": "https://commons.wikimedia.org/wiki/File:Lietzensee_Berlin_2024-06-16_01.jpg",
+    "position": "50% 50%"
+  },
+  "stand": "Oktober 2026",
+  "updated": "2026-10-26",
+  "zahlen": [
+    {
+      "wert": "2.637",
+      "label": "Verkäufe von Wohnungseigentum 2025, mehr als in jedem anderen Berliner Bezirk",
+      "detail": "Das sind 15,2 % aller Berliner Verkäufe von Wohnungseigentum. Insgesamt zählte der Gutachterausschuss im Bezirk 2.811 Kauffälle, auch das der höchste Wert aller Bezirke, davon 149 Verkäufe bebauter Grundstücke.",
+      "quelle": "Immobilienmarktbericht Berlin 2025/2026",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 5.547 €/m²",
+      "label": "Eigentumswohnungen im früheren Bezirk Wilmersdorf",
+      "detail": "761 Verkäufe, Spanne 3.251 bis 8.009 €/m², 2024 waren es 5.440 €/m². Im früheren Bezirk Charlottenburg lag der Mittelwert bei 5.201 €/m² (936 Verkäufe), in Grunewald bei 6.111 €/m², in Schmargendorf bei 5.183 €/m², in ganz Berlin bei 5.017 €/m².",
+      "quelle": "Immobilienmarktbericht Berlin 2025/2026",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 8.073 €/m²",
+      "label": "Ein- und Zweifamilienhäuser im früheren Bezirk Wilmersdorf, je Quadratmeter Wohnfläche",
+      "detail": "13 Verkäufe, Spanne 5.983 bis 10.583 €/m². In Grunewald lag der Mittelwert bei 9.650 €/m² (8 Verkäufe), in Schmargendorf bei 7.543 €/m² (6 Verkäufe), im früheren Bezirk Charlottenburg bei 6.273 €/m² (16 Verkäufe), in ganz Berlin bei 4.366 €/m².",
+      "quelle": "Immobilienmarktbericht Berlin 2025/2026",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "rund −5 %",
+      "label": "Bodenrichtwerte in Gebieten mit Ein- und Zweifamilienhäusern zum 01.01.2026",
+      "detail": "Im Bezirk reichen sie von 670 bis 2.700 €/m², in den sehr guten Lagen in Grunewald von 2.000 bis 2.700 €/m². Die Werte für dicht bebaute Straßen, etwa 3.400 €/m² im Rheingauviertel und 6.000 €/m² am Lietzensee, blieben unverändert.",
+      "quelle": "Immobilienmarktbericht Berlin 2025/2026; Geoportal Berlin",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stichtag": "01.01.2026"
+    },
+    {
+      "wert": "10,00 bis 28,20 €/m²",
+      "label": "Spanne der überwiegenden Mietangebote im Bezirk",
+      "detail": "80 % der Angebote 2025, ohne die oberen und unteren 10 %; in ganz Berlin 7,88 bis 25,06 €/m². 84,0 % der Wohnungen im Bezirk sind Mietwohnungen (Berlin 85,1 %), im Mittel sind sie 77,0 m² groß (Berlin 72,5 m²).",
+      "quelle": "IBB Wohnungsmarktbericht 2025",
+      "url": "https://www.ibb.de/media/dokumente/publikationen/berliner-wohnungsmarkt/wohnungsmarktbericht/2025/charlottenburg-wilmersdorf.pdf",
+      "stichtag": "2024 und 2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Westend: Villenkolonie, Neu-Westend und Fürstenplatz",
+      "absaetze": [
+        "Die Villenkolonie Westend wurde ab 1866 an der Spandauer Chaussee angelegt und von Heinrich Quistorp weitergeführt: schachbrettartig zwischen Akazienallee, Platanenallee, Ahornallee und Kirschenallee, mit dem Branitzer Platz als Mitte und Alleen, die nach ihren Bäumen heißen. 1878 kam sie zu Charlottenburg; in der Kolonie stehen 83 Baudenkmale.[[11]] Für ihren Kern um Branitzer Platz, Eichen-, Ebereschen-, Rüstern- und Ulmenallee gilt eine städtebauliche Erhaltungsverordnung.[[11,19]] Südwestlich schließt Neu-Westend an, ab 1913 bebaut, mit Mietshäusern und Großwohnungen um Theodor-Heuss-Platz und Fürstenplatz.[[12]] Im Ortsteil Westend leben 41.274 Menschen.[[8]] Vom U-Bahnhof Theodor-Heuss-Platz sind Sie mit U2 und S-Bahn in 22 bis 24 Minuten an der Friedrichstraße.[[10]]",
+        "Im Planungsraum Fürstenplatz liegen 98 % der Adressen in guter Wohnlage, im Planungsraum Branitzer Platz 44 %, in Neu-Westend 22 %.[[3]] An Eichenallee, Nußbaumallee, Ulmenallee und Ebereschenallee sank der Bodenrichtwert zum 01.01.2026 von 1.900 auf 1.800 €/m², um Wandalenallee, Frankenallee, Badenallee und Württembergallee von 1.500 auf 1.400 €/m². Um Heerstraße, Bayernallee und Kastanienallee blieb er bei 2.100 €/m².[[2]]"
+      ],
+      "bild": {
+        "name": "charlottenburg-wilmersdorf-westend-branitzer-platz",
+        "alt": "Haus am Branitzer Platz in der Villenkolonie Westend",
+        "caption": "Ein Baudenkmal am Branitzer Platz in Westend.",
+        "credit": "Bodo Kubrak, CC0",
+        "url": "https://commons.wikimedia.org/wiki/File:Branitzer_Platz_5_(Berlin-Westend).JPG",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "h2": "Witzleben: Wohnen am Lietzensee",
+      "absaetze": [
+        "In den 1820er-Jahren erwarb General von Witzleben das Gelände um den Lietzensee und ließ einen Park mit Landhaus anlegen. 1899 kaufte die Terrain-Gesellschaft Park Witzleben den Besitz und legte den öffentlichen Lietzenseepark an, 1910 übernahm die Stadt Charlottenburg See und Park. Erwin Barth gestaltete ihn von 1919 bis 1922 um, heute ist er ein Gartendenkmal.[[13]] Am 1905 benannten Witzlebenplatz steht das ehemalige Reichsmilitärgericht.[[14]] Der Kiez gehört zum Ortsteil Charlottenburg mit 130.053 Einwohnern.[[8]] Vom U-Bahnhof Sophie-Charlotte-Platz sind Sie in 19 bis 20 Minuten an der Friedrichstraße, vom S-Bahnhof Messe Nord/ZOB in 20 Minuten.[[10]]",
+        "Im Planungsraum Lietzensee liegen 97 % der Adressen in guter Wohnlage, im östlich anschließenden Planungsraum Amtsgerichtsplatz alle.[[3]] An Dernburgstraße, Wundtstraße, Witzlebenstraße und Neuer Kantstraße liegt der Bodenrichtwert bei 6.000 €/m², um Suarezstraße und Windscheidstraße bei 5.000 €/m², beide bei einer Geschossflächenzahl von 2,5 und unverändert.[[2]] Eigentumswohnungen kosteten 2025 im früheren Bezirk Charlottenburg im Mittel 5.201 €/m², bei 936 Verkäufen.[[1]]"
+      ],
+      "bild": {
+        "name": "charlottenburg-wilmersdorf-witzleben-funkturmblick",
+        "alt": "Blick vom Funkturm über Witzleben: Altbauten mit roten Dächern rund um den Lietzenseepark",
+        "caption": "Witzleben und der Lietzenseepark vom Funkturm aus.",
+        "credit": "A.Savin, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Funkturm_Berlin_View_03.jpg"
+      }
+    },
+    {
+      "h2": "Spreestadt Charlottenburg: zwischen Spree und Landwehrkanal",
+      "absaetze": [
+        "Zwischen Landwehrkanal und Spreebogen entstand von 1995 bis 2005 auf ehemaligem Industrie- und Gewerbegelände die Spreestadt mit dem KPM-Quartier, ein Quartier für Dienstleistung, Gewerbe und Wohnen auf 250.000 m². Seit dem 19. Jahrhundert lagen hier der Salzhafen und die Königliche Porzellan-Manufaktur, im 20. Jahrhundert Siemens und Daimler-Benz. Im KPM-Quartier zwischen Wegelystraße und Englischer Straße sitzen seit 2004 die Ärzteverbände, seit 2010 auch der Gemeinsame Bundesausschuss.[[15]] Vom S-Bahnhof Tiergarten fahren S3, S5, S7 und S9 in 7 Minuten bis Friedrichstraße, vom U-Bahnhof Ernst-Reuter-Platz sind es 15 bis 16 Minuten.[[10]]",
+        "Alle 256 Adressen im Planungsraum Spreestadt liegen in mittlerer Wohnlage.[[3]] Im Wohngebiet um Helmholtzstraße, Dovestraße und Pascalstraße blieb der Bodenrichtwert bei 2.700 €/m² und einer Geschossflächenzahl von 2,5. Die Gewerbezonen um Franklinstraße, Salzufer und Wegelystraße sanken dagegen von 4.500 auf 4.000 €/m², um Carnotstraße und Hallerstraße von 3.500 auf 3.000 €/m².[[2]] Für Kapitalanleger zählt die Wohnlage, weil der Mietspiegel 2026 nach ihr unterscheidet.[[4]]"
+      ],
+      "bild": {
+        "name": "charlottenburg-wilmersdorf-landwehrkanal-salzufer",
+        "alt": "Der Landwehrkanal am Salzufer mit begrüntem Ufer, dahinter ein Bürogebäude mit Glasfassade",
+        "caption": "Der Landwehrkanal am Salzufer in Charlottenburg.",
+        "credit": "Fridolin freudenfett, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Charlottenburg_Landwehrkanal_Salzufer.jpg"
+      }
+    },
+    {
+      "h2": "Schmargendorf: Ortskern an der Breiten Straße",
+      "absaetze": [
+        "Schmargendorf wurde 1354 erstmals urkundlich erwähnt, war seit 1899 selbständiger Amtsbezirk und kam 1920 zum Bezirk Wilmersdorf. Das Bezirksamt beschreibt einen eher kleinstädtischen Charakter mit eigenem Ortszentrum an Breiter Straße und Berkaer Straße.[[16]] Hier leben 23.962 Menschen.[[8]] Am Rathaus Schmargendorf halten Busse; der S-Bahnhof Hohenzollerndamm an der Ringbahn liegt rund 1,5 km Luftlinie entfernt, von dort sind es 20 bis 24 Minuten bis Friedrichstraße.[[10]]",
+        "91 % der Adressen liegen in guter Wohnlage.[[3]] Um Hohenzollerndamm, Breite Straße, Cunostraße und Heiligendammer Straße liegt der Bodenrichtwert bei 1.500 €/m² und einer Geschossflächenzahl von 1,0, unverändert. In den Einfamilienhausgebieten um Schellendorffstraße und Hundekehlestraße sank er zum 01.01.2026 von 2.200 auf 2.100 €/m², um Pücklerstraße und Max-Eyth-Straße von 2.300 auf 2.200 €/m².[[2]] Für die sehr guten Einfamilienhauslagen im Ortsteil nennt der Gutachterausschuss 1.600 bis 2.200 €/m², nach 1.700 bis 2.300 €/m² im Vorjahr. Eigentumswohnungen kosteten 2025 in Schmargendorf im Mittel 5.183 €/m², nach 4.877 €/m² im Vorjahr, bei 106 Verkäufen.[[1]]"
+      ],
+      "bild": {
+        "name": "charlottenburg-wilmersdorf-schmargendorf-berkaer-strasse",
+        "alt": "Das Postgebäude an der Ecke Berkaer Straße und Kissinger Straße in Schmargendorf, davor Straßenbäume",
+        "caption": "Das Postgebäude an der Berkaer Straße in Schmargendorf.",
+        "credit": "Fridolin freudenfett (Peter Kuley), CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:SchmargendorfBerkaerStraßePost.JPG"
+      }
+    },
+    {
+      "h2": "Grunewald: Villenkolonie an den Grunewaldseen",
+      "absaetze": [
+        "Die Villenkolonie Grunewald wurde 1889 auf 234 Hektar gegründet. Der preußische Fiskus hatte das Waldgebiet an ein Bankenkonsortium verkauft, das im Gegenzug den Ausbau des Kurfürstendamms finanzierte; beim Trockenlegen des Geländes entstanden Diana-, Koenigs-, Hertha- und Hubertussee. 1899 wurde Grunewald Amtsgemeinde, 1920 Teil von Berlin. Seit 2009 entstehen auf dem früheren Güterbahnhof um die Hilde-Ephraim-Straße rund 100 Villen auf Grundstücken von rund 1.000 m².[[16]] Hier leben 11.122 Menschen.[[8]] Vom S-Bahnhof Grunewald fährt die S7 alle 10 Minuten in 18 Minuten bis Friedrichstraße.[[10]]",
+        "94 % der Adressen liegen in guter Wohnlage.[[3]] An Koenigsallee, Bismarckallee, Taubertstraße und Griegstraße sank der Bodenrichtwert zum 01.01.2026 von 2.800 auf 2.700 €/m², bei einer Geschossflächenzahl von 0,4; um Wangenheimstraße und Humboldtstraße von 2.100 auf 2.000 €/m², an der Hilde-Ephraim-Straße von 1.700 auf 1.600 €/m².[[2]] Für Ein- und Zweifamilienhäuser nennt der Gutachterausschuss 2025 einen Mittelwert von 9.650 €/m² Wohnfläche, bei nur 8 Verkäufen.[[1]]"
+      ],
+      "bild": {
+        "name": "charlottenburg-wilmersdorf-grunewald-bismarckallee",
+        "alt": "Helle Villa der Europäischen Akademie in der Bismarckallee mit Garten und Vorplatz",
+        "caption": "Villa der Europäischen Akademie in der Bismarckallee, Grunewald.",
+        "credit": "Eab2025, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Europäische_Akademie_Berlin_Grunewald.jpg"
+      }
+    },
+    {
+      "h2": "Rheingauviertel: Gartenterrassen am Rüdesheimer Platz",
+      "absaetze": [
+        "Das Viertel entstand vor dem Ersten Weltkrieg. Die Berlinische Bodengesellschaft unter Haberland legte Planung und Gestaltung des Großteils der Häuser in die Hand des Architekten Paul Jatzow. Vor den vier- bis fünfgeschossigen Häusern liegen statt eingezäunter Vorgärten zehn Meter tiefe, leicht ansteigende Grünflächen, die Gartenterrassen; Fachwerk, Erker und Sprossenfenster greifen den englischen Landhausbau auf. Mittelpunkt ist der Rüdesheimer Platz mit dem Brunnen von Carl Cauer aus dem Jahr 1911.[[17]] Vom U-Bahnhof Rüdesheimer Platz sind Sie mit der U3 und einem Umstieg in 26 bis 29 Minuten an der Friedrichstraße, vom S- und U-Bahnhof Heidelberger Platz in 22 bis 24 Minuten.[[10]]",
+        "98 % der Adressen im Planungsraum Rüdesheimer Platz liegen in guter Wohnlage.[[3]] Um Geisenheimer Straße, Südwestkorso, Ahrweilerstraße und Laubacher Straße liegt der Bodenrichtwert bei 3.400 €/m², bei einer Geschossflächenzahl von 2,0 und unverändert; um Hanauer Straße, Siegburger Straße und Triberger Straße, bei einer Geschossflächenzahl von 0,6, sank er von 950 auf 900 €/m².[[2]] Eigentumswohnungen kosteten 2025 im früheren Bezirk Wilmersdorf im Mittel 5.547 €/m², nach 5.440 €/m² im Vorjahr.[[1]]"
+      ],
+      "bild": {
+        "name": "charlottenburg-wilmersdorf-rheingauviertel-siegfriedbrunnen",
+        "alt": "Der Siegfriedbrunnen auf dem Rüdesheimer Platz vor hohen Bäumen unter blauem Himmel",
+        "caption": "Der Siegfriedbrunnen auf dem Rüdesheimer Platz.",
+        "credit": "OTFW, Berlin, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Brunnen_Rüdesheimer_Platz_(Wilmd)_Siegfriedbrunnen&Emil_Cauer_der_Jüngere&1911.jpg"
+      }
+    },
+    {
+      "h2": "Güntzelkiez: zwischen Bundesallee und Prager Platz",
+      "absaetze": [
+        "Die Güntzelstraße verläuft von der Bamberger Straße bis zum Emser Platz und heißt seit 1893 nach dem Wilmersdorfer Amts- und Gemeindevorsteher Bernhard Güntzel. Das Bezirksamt beschreibt sie als ruhige Wohn- und Einkaufsstraße mit zahlreichen Lebensmittel- und Feinkostgeschäften, viele davon seit Jahrzehnten dort.[[18]] Alle 641 Adressen der Planungsräume Nikolsburger Platz und Prager Platz gehören zum Bezirk Charlottenburg-Wilmersdorf, und zwar zum Ortsteil Wilmersdorf.[[3]] Dort leben 100.806 Menschen.[[8]] Vom U-Bahnhof Güntzelstraße fährt die U9 zwischen Zoologischem Garten und Rathaus Steglitz; mit einem Umstieg sind Sie in 22 bis 24 Minuten an der Friedrichstraße.[[10]]",
+        "Alle Adressen liegen in guter Wohnlage.[[3]] Um Bundesallee, Nassauische Straße, Trautenaustraße und Güntzelstraße liegt der Bodenrichtwert bei 4.000 €/m², um Landhausstraße, Uhlandstraße und Prinzregentenstraße bei 3.800 €/m², jeweils bei einer Geschossflächenzahl von 2,5 und zum 01.01.2026 unverändert.[[2]] Wer hier eine Wohnung verkauft, findet viele Vergleichsfälle: Im Bezirk wurden 2025 2.637 Eigentumswohnungen verkauft, mehr als in jedem anderen Berliner Bezirk.[[1]]"
+      ],
+      "bild": {
+        "name": "charlottenburg-wilmersdorf-guentzelkiez-prager-platz",
+        "alt": "Der Prager Platz mit Springbrunnen, Rasen und Bäumen, dahinter Wohnhäuser der IBA 87",
+        "caption": "Der Prager Platz in Wilmersdorf.",
+        "credit": "Marek Śliwecki, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Berlin_-_Prager_Platz.jpg"
+      }
+    }
+  ],
+  "band": {
+    "name": "charlottenburg-wilmersdorf-schloss-charlottenburg",
+    "alt": "Schloss Charlottenburg vom Schlossgarten aus, im Vordergrund ein Wasserbecken mit Fontäne unter blauem Himmel",
+    "caption": "Schloss Charlottenburg vom Schlossgarten aus.",
+    "credit": "abbilder, CC BY 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Schloss_Charlottenburg_2025.jpg"
+  },
+  "verkaufen": {
+    "h2": "Immobilie in Charlottenburg-Wilmersdorf verkaufen",
+    "absaetze": [
+      "In keinem Berliner Bezirk wurden 2025 so viele Eigentumswohnungen verkauft wie in Charlottenburg-Wilmersdorf: 2.637, das sind 15,2 % aller Berliner Verkäufe von Wohnungseigentum. Insgesamt zählte der Gutachterausschuss im Bezirk 2.811 Kauffälle, auch das der höchste Wert. Im Mittel kosteten Eigentumswohnungen im früheren Bezirk Charlottenburg 5.201 €/m² Wohnfläche, im früheren Bezirk Wilmersdorf 5.547 €/m²; in ganz Berlin waren es 5.017 €/m².[[1]] Wo Ihre Wohnung liegt, hängt an Lage, Baujahr und Zustand. Wir bewerten deshalb nach Ihrer Bodenrichtwertzone, der Wohnlage und Vergleichsverkäufen.",
+      "Bei Häusern ist der Markt klein: 2025 nennt der Gutachterausschuss 16 Verkäufe von Ein- und Zweifamilienhäusern im früheren Bezirk Charlottenburg und 13 im früheren Bezirk Wilmersdorf, mit Mittelwerten von 6.273 und 8.073 €/m² Wohnfläche. Die Bodenrichtwerte für Einfamilienhausgebiete sanken zum 01.01.2026 um rund 5 %, in den sehr guten Lagen von Westend auf 1.400 bis 1.800 €/m².[[1]]"
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Charlottenburg-Wilmersdorf",
+    "absaetze": [
+      "Als Eigennutzer wählen Sie zwischen dicht bebauten Kiezen mit Geschossflächenzahlen von 2,0 bis 2,5, etwa am Lietzensee, im Rheingauviertel und im Güntzelkiez, und den Villenkolonien in Westend und Grunewald.[[2]] Seit dem 01.01.2026 ist in ganz Berlin die Umwandlung von Miet- in Eigentumswohnungen in Häusern mit mehr als fünf Wohnungen genehmigungspflichtig und damit grundsätzlich verboten, bis zum 31.12.2030; für neu geschaffenen Wohnraum gilt das nicht.[[20]] Die neun sozialen Erhaltungsgebiete des Bezirks, etwa am Klausenerplatz, berühren die Kieze auf dieser Seite nicht.[[19]]",
+      "Als Kapitalanleger rechnen Sie mit dem Mietspiegel 2026 und der Mietpreisbremse, die in ganz Berlin bis 31.12.2029 gilt: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[4,6]] Bestandsmieten dürfen bis zur Vergleichsmiete in drei Jahren um höchstens 15 % steigen.[[7]] 80 % der Mietangebote im Bezirk lagen 2025 zwischen 10,00 und 28,20 €/m².[[9]] Aus Kaufpreis, Miete und Bewirtschaftungskosten rechnen wir mit Ihnen die Rendite, bevor Sie kaufen."
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Charlottenburg-Wilmersdorf",
+    "absaetze": [
+      "Eigentumswohnungen kosteten 2025 im früheren Bezirk Charlottenburg im Mittel 5.201 €/m² Wohnfläche, in Grunewald 6.111 €/m².[[1]] Dazu kommen die Kaufnebenkosten und wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen: Wir rechnen das mit Ihnen durch, vergleichen Ihre Finanzierung über Europace und Baufinex und fragen parallel Banken direkt an."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Wie hoch sind die Immobilienpreise in Charlottenburg und Wilmersdorf?",
+      "antwort": "Der Gutachterausschuss weist die Preise nach den früheren Bezirken aus. Eigentumswohnungen kosteten 2025 im früheren Bezirk Charlottenburg, mit Charlottenburg, Westend und Charlottenburg-Nord, im Mittel 5.201 €/m² Wohnfläche, im früheren Bezirk Wilmersdorf 5.547 €/m², in Grunewald 6.111 €/m² und in Schmargendorf 5.183 €/m²; in ganz Berlin waren es 5.017 €/m².[[1,8]] Für Ihre Immobilie zählen Wohnlage, Baujahr und Zustand.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienmakler Berlin-Charlottenburg“ und „Immobilie verkaufen Berlin-Charlottenburg“, dort als „Wie hoch sind die aktuellen Immobilienpreise in Charlottenburg, Berlin?“ (Google_Areas, Oktober 2026); Google-Autocomplete „quadratmeterpreis charlottenburg wilmersdorf“, „quadratmeterpreis eigentumswohnung berlin charlottenburg“, „quadratmeterpreis berlin wilmersdorf“ und „immobilienpreise berlin grunewald“ (research/serp/autocomplete-2026-10-26-charlottenburg-wilmersdorf.json)"
+    },
+    {
+      "frage": "Wie hoch ist der Bodenrichtwert in Grunewald, Westend und Wilmersdorf 2026?",
+      "antwort": "Zum 01.01.2026 liegt er in den meisten Lagen von Grunewald bei 2.700 €/m² und in der Villenkolonie Westend bei 1.800 €/m², jeweils 100 €/m² weniger als im Vorjahr, in Schmargendorf je nach Straße bei 1.500 bis 2.500 €/m².[[2]] In dicht bebauten Straßen blieben die Werte gleich, etwa 3.400 €/m² im Rheingauviertel, 4.000 €/m² im Güntzelkiez und 6.000 €/m² am Lietzensee.[[2]]",
+      "herkunft": "Google-Autocomplete „bodenrichtwert grunewald berlin“, „bodenrichtwert westend berlin“, „bodenrichtwert berlin wilmersdorf“ und „bodenrichtwert charlottenburg“ (research/serp/autocomplete-2026-10-26-charlottenburg-wilmersdorf.json)"
+    },
+    {
+      "frage": "Gibt es einen Mietspiegel für Charlottenburg-Wilmersdorf?",
+      "antwort": "Es gilt der Berliner Mietspiegel 2026 für die ganze Stadt, mit einfacher, mittlerer und guter Wohnlage je Adresse; für Wohnungen in Ein- und Zweifamilienhäusern gilt er nicht.[[4]] Am Lietzensee, im Rheingauviertel und im Güntzelkiez liegen fast alle Adressen in guter Wohnlage, in der Spreestadt alle in mittlerer.[[3]] Für eine Altbauwohnung bis Baujahr 1918 mit 60 bis unter 70 m² in guter Wohnlage nennt die Tabelle 7,09 bis 13,54 €/m², im Mittel 9,46 €/m² nettokalt.[[5]]",
+      "herkunft": "Google-Autocomplete „mietspiegel charlottenburg 2026“, „mietspiegel wilmersdorf 2026“ und „mietspiegel charlottenburg wilmersdorf“ (research/serp/autocomplete-2026-10-26-charlottenburg-wilmersdorf.json)"
+    },
+    {
+      "frage": "Ist Charlottenburg eine teure Wohngegend?",
+      "antwort": "Nach den amtlichen Zahlen liegt der Bezirk etwas über dem Berliner Durchschnitt. 80 % der Mietangebote lagen 2025 zwischen 10,00 und 28,20 €/m², in ganz Berlin zwischen 7,88 und 25,06 €/m²; das mittlere Haushaltsnettoeinkommen lag bei 2.750 € im Monat, in Berlin bei 2.675 €.[[9]] Eigentumswohnungen kosteten im früheren Bezirk Charlottenburg im Mittel 5.201 €/m², in Berlin 5.017 €/m².[[1]] Innerhalb des Bezirks unterscheiden sich die Lagen deutlich, von der mittleren Wohnlage in der Spreestadt bis zu Bodenrichtwerten von 6.000 €/m² am Lietzensee.[[3,2]]",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienbewertung Berlin-Charlottenburg“, dort als „Ist Berlin Charlottenburg eine teure Wohngegend?“, und zu „Immobilienmakler Berlin-Charlottenburg“, dort als „Ist Charlottenburg ein reiches Viertel?“ (Google_Areas, Oktober 2026)"
+    },
+    {
+      "frage": "Was kostet ein Haus in Grunewald?",
+      "antwort": "Für Ein- und Zweifamilienhäuser in Grunewald nennt der Gutachterausschuss für 2025 einen Mittelwert von 9.650 €/m² Wohnfläche, bei nur 8 Verkäufen und einer Spanne von 4.446 bis 20.326 €/m²; 2024 waren es 12.120 €/m² bei 14 Verkäufen.[[1]] Für das Grundstück nennt der Bodenrichtwert zum 01.01.2026 in den meisten Lagen 2.700 €/m².[[2]] Bei so wenigen Verkäufen bewerten wir jedes Haus einzeln, nach Grundstück, Bebauung und Vergleichsfällen.",
+      "herkunft": "Google-Autocomplete „haus kaufen grunewald berlin“, „villa kaufen grunewald berlin“, „villa grunewald kaufen“ und „haus kaufen dahlem grunewald“ (research/serp/autocomplete-2026-10-26-charlottenburg-wilmersdorf.json)"
+    },
+    {
+      "frage": "Wie hoch ist die Maklerprovision in Berlin?",
+      "antwort": "Kauft ein Verbraucher eine Wohnung oder ein Einfamilienhaus, teilen sich Käufer und Verkäufer die Provision zu gleichen Teilen (§§ 656a bis 656d BGB). Bei Fischer & Geserich sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision. Bei Mehrfamilienhäusern und Grundstücken gilt die Teilung nicht. Die Provision fällt nur an, wenn der Kaufvertrag zustande kommt.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienmakler Berlin-Charlottenburg“, „Immobilienmakler Berlin“ und „Immobilienmakler Berlin-Pankow“ (Google_Areas, Oktober 2026). Antwort nach /maklerprovision/ und /kaufen/ (Stand 26.10.2026)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Steglitz-Zehlendorf",
+      "url": "/standorte/berlin/steglitz-zehlendorf/"
+    },
+    {
+      "name": "Tempelhof-Schöneberg",
+      "url": "/standorte/berlin/tempelhof-schoeneberg/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Immobilienmarktbericht Berlin 2025/2026, Geschäftsstelle des Gutachterausschusses für Grundstückswerte in Berlin",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stand": "Stand 31.07.2026; Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+    },
+    {
+      "name": "Bodenrichtwerte des Gutachterausschusses für Grundstückswerte in Berlin, Geoportal Berlin (WFS brw2026 und brw2025), eigene Zuordnung zu den Adressen",
+      "url": "https://gdi.berlin.de/services/wfs/brw2026?REQUEST=GetCapabilities&SERVICE=wfs",
+      "stand": "Stichtag 01.01.2026, Vergleich mit 01.01.2025"
+    },
+    {
+      "name": "Wohnlagenzuordnung der Adressen zum Berliner Mietspiegel 2026, Geoportal Berlin (WFS wohnlagenadr2026), eigene Auswertung nach LOR-Planungsräumen",
+      "url": "https://gdi.berlin.de/services/wfs/wohnlagenadr2026?REQUEST=GetCapabilities&SERVICE=wfs",
+      "stand": "Mietspiegel 2026, Planungsräume Stand 2021"
+    },
+    {
+      "name": "Berliner Mietspiegel 2026, Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen",
+      "url": "https://mietspiegel.berlin.de/wp-content/uploads/2026/05/mietspiegel2026.pdf",
+      "stand": "Stichtag 01.09.2025, Straßenverzeichnis im Amtsblatt vom 28.05.2026"
+    },
+    {
+      "name": "Berliner Mietspiegeltabelle 2026",
+      "url": "https://mietspiegel.berlin.de/wp-content/uploads/2026/05/mietspiegeltabelle2026.pdf",
+      "stand": "Stichtag 01.09.2025"
+    },
+    {
+      "name": "Senatskanzlei Berlin, Pressemitteilung zur Mietenbegrenzungsverordnung",
+      "url": "https://www.berlin.de/rbmskzl/aktuelles/pressemitteilungen/2025/pressemitteilung.1615170.php",
+      "stand": "11.11.2025, gültig 01.01.2026 bis 31.12.2029"
+    },
+    {
+      "name": "Berliner Mietratgeber: Miete, Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen (Kappungsgrenzenverordnung vom 14.03.2023)",
+      "url": "https://www.berlin.de/sen/wohnen/wissen-fuer-mieter/berliner-mietratgeber/miete/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 5 – hj 1/26, Einwohnerinnen und Einwohner im Land Berlin",
+      "url": "https://download.statistik-berlin-brandenburg.de/7cb89e083c1ea02d/4e03c8e1693a/SB_A01-05-00_2026h01_BE.xlsx",
+      "stand": "30.06.2026"
+    },
+    {
+      "name": "IBB Wohnungsmarktbericht 2025, Bezirksprofil Charlottenburg-Wilmersdorf",
+      "url": "https://www.ibb.de/media/dokumente/publikationen/berliner-wohnungsmarkt/wohnungsmarktbericht/2025/charlottenburg-wilmersdorf.pdf",
+      "stand": "Werte 2024, Angebotsmieten 2025"
+    },
+    {
+      "name": "VBB-Fahrplandaten, Verbindungen bis S+U Friedrichstraße",
+      "url": "https://v6.vbb.transport.rest/journeys?from=900048101&to=900100001&departure=2026-11-10T09:00%2B01:00",
+      "stand": "Fahrplan Dienstag 10.11.2026, abgefragt 26.10.2026"
+    },
+    {
+      "name": "Bezirksamt Charlottenburg-Wilmersdorf, Villenkolonie Westend",
+      "url": "https://www.berlin.de/ba-charlottenburg-wilmersdorf/ueber-den-bezirk/ortsteile/artikel.1347827.php",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Bezirksamt Charlottenburg-Wilmersdorf, Neu-Westend",
+      "url": "https://www.berlin.de/ba-charlottenburg-wilmersdorf/ueber-den-bezirk/ortsteile/artikel.1347803.php",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Bezirksamt Charlottenburg-Wilmersdorf, Lietzenseepark",
+      "url": "https://www.berlin.de/ba-charlottenburg-wilmersdorf/ueber-den-bezirk/freiflaechen/parks/artikel.177405.php",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Bezirksamt Charlottenburg-Wilmersdorf, Witzlebenplatz",
+      "url": "https://www.berlin.de/ba-charlottenburg-wilmersdorf/ueber-den-bezirk/freiflaechen/plaetze/artikel.157071.php",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Bezirksamt Charlottenburg-Wilmersdorf, Spreestadt Charlottenburg und KPM-Quartier",
+      "url": "https://www.berlin.de/ba-charlottenburg-wilmersdorf/ueber-den-bezirk/ortsteile/artikel.1347296.php",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Bezirksamt Charlottenburg-Wilmersdorf, Ortsteile (Grunewald, Schmargendorf)",
+      "url": "https://www.berlin.de/ba-charlottenburg-wilmersdorf/ueber-den-bezirk/ortsteile/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Bezirksamt Charlottenburg-Wilmersdorf, Rheingau-Viertel",
+      "url": "https://www.berlin.de/ba-charlottenburg-wilmersdorf/ueber-den-bezirk/ortsteile/artikel.1347846.php",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Bezirksamt Charlottenburg-Wilmersdorf, Güntzelstraße",
+      "url": "https://www.berlin.de/ba-charlottenburg-wilmersdorf/ueber-den-bezirk/freiflaechen/strassen/artikel.177397.php",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Erhaltungsverordnungsgebiete Berlin, Geoportal Berlin (WFS erhaltungsverordnungsgebiete, soziale und städtebauliche Erhaltungsgebiete), eigener Abgleich mit den Adressen",
+      "url": "https://gdi.berlin.de/services/wfs/erhaltungsverordnungsgebiete?REQUEST=GetCapabilities&SERVICE=wfs",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen, Umwandlungsverordnung nach § 250 BauGB",
+      "url": "https://www.berlin.de/sen/wohnen/rechtliches/umwandlungsverordnung/",
+      "stand": "Verordnung vom 11.11.2025, gültig 01.01.2026 bis 31.12.2030"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "Soziale Erhaltungsgebiete C-W: 9 (Mierendorff-Insel, Gierkeplatz, Klausenerplatz, Jungfernheide, Alt-Lietzow, Richard-Wagner-Straße, Karl-August-Platz, Brabanter Platz, Hochmeisterplatz); keine Adresse in Westend, Lietzensee, Amtsgerichtsplatz, Spreestadt, Rheingauviertel, Güntzelkiez, Schmargendorf, Grunewald. § 250 BauGB: 01.01.2026–31.12.2030, mehr als fünf Wohnungen, Neubau ausgenommen",
+      "fundstelle": "charlottenburg-wilmersdorf.md Nr. 13–15; erhalt_check.py gegen WFS erhaltungsverordnungsgebiete; pankow.md Nr. 15"
+    },
+    {
+      "zahl": "Einwohner 30.06.2026: Charlottenburg 130.053, Westend 41.274, Wilmersdorf 100.806, Schmargendorf 23.962, Grunewald 11.122",
+      "fundstelle": "charlottenburg-wilmersdorf.md Nr. 3; AfS T11"
+    },
+    {
+      "zahl": "Kauffälle 2025: 2.637 WE (15,2 %, höchster Wert), 2.811 gesamt (12,8 %, höchster Wert), 149 bebaut",
+      "fundstelle": "charlottenburg-wilmersdorf.md Nr. 6; berlin-grundlagen.md Nr. 27 (IMB S. 77)"
+    },
+    {
+      "zahl": "ETW: Charlottenburg 936 / 5.201; Wilmersdorf 761 / 3.251–8.009 / 5.547 (5.440); Grunewald 6.111; Schmargendorf 106 / 5.183 (4.877); Berlin 5.017",
+      "fundstelle": "charlottenburg-wilmersdorf.md Nr. 8; IMB S. 61, imb.txt Z. 3515–3521"
+    },
+    {
+      "zahl": "EFH/ZFH: Charlottenburg 16 / 6.273; Wilmersdorf 13 / 5.983–10.583 / 8.073; Grunewald 8 / 4.446–20.326 / 9.650 (2024: 14 / 12.120); Schmargendorf 6 / 7.543; Berlin 4.366",
+      "fundstelle": "charlottenburg-wilmersdorf.md Nr. 7; IMB S. 50, imb.txt Z. 2845–2851"
+    },
+    {
+      "zahl": "BRW offene Bauweise rd. −5 %, C-W 670–2.700; sehr gute Lage Grunewald 2.000–2.700, Westend 1.400–1.800 (je −100)",
+      "fundstelle": "charlottenburg-wilmersdorf.md Nr. 5; IMB S. 30–32"
+    },
+    {
+      "zahl": "IBB: Angebote 10,00–28,20 (80 %), Berlin 7,88–25,06; Mietwohnungen 84,0 / 85,1 %; Ø 77,0 / 72,5 m²; Einkommen 2.750 / 2.675 €",
+      "fundstelle": "berlin-grundlagen.md Nr. 41, 44; ibb_charlo.txt"
+    },
+    {
+      "zahl": "Westend: 1866, Quistorp, Allee-Grenzen, Branitzer Platz, 1878, Erhaltungsverordnung laut BA „seit 1985“, laut WFS ES0405 Westend GVBl 23.12.2000, in Kraft 24.12.2000 – Seite ohne Jahr; 377 Adressen (Branitzer Platz 339/830, Fürstenplatz 38/610), Kern Ebereschen-/Eichen-/Rüstern-/Ulmen-/Lindenallee; 83 Baudenkmale; Neu-Westend ab 1913, Großwohnungen; WL Fürstenplatz 98 %, Branitzer Platz 44 %, Neu Westend 22 % gut; BRW 1062 1.900→1.800, 1091/1075 1.500→1.400, 1648 2.100; U2 Theodor-Heuss-Platz 22–24 min",
+      "fundstelle": "charlottenburg-wilmersdorf.md Nr. 20–22, 31, 32, 42; zstreets.py"
+    },
+    {
+      "zahl": "Witzleben: 1820er General von Witzleben, 1899 Terrain-Gesellschaft, 1910 Stadt Charlottenburg, Barth 1919–1922, Gartendenkmal, Witzlebenplatz 1905 und Reichsmilitärgericht; WL Lietzensee 97 %, Amtsgerichtsplatz 100 %; BRW 1892 6.000, 1883 5.000 (GFZ 2,5, unverändert); U Sophie-Charlotte-Platz 19–20, S Messe Nord/ZOB 20 min",
+      "fundstelle": "charlottenburg-wilmersdorf.md Nr. 23, 24, 34, 43, 44"
+    },
+    {
+      "zahl": "Spreestadt: 1995–2005, 250.000 m², Salzhafen/KPM, Siemens/Daimler Benz, KPM-Quartier Wegelystraße–Englische Straße, Ärzteverbände 2004, G-BA 2010; WL 256 mittel; BRW W 1875 2.700, G 2044 4.500→4.000, G 2041 3.500→3.000; S Tiergarten 7, U Ernst-Reuter-Platz 15–16 min",
+      "fundstelle": "charlottenburg-wilmersdorf.md Nr. 25, 35, 46, 47"
+    },
+    {
+      "zahl": "Schmargendorf: 1354, 1899 Amtsbezirk, 1920 Wilmersdorf, Ortszentrum Breite Straße/Berkaer Straße; WL 91 % gut (2.173/2.381); BRW 1588 1.500, 2075 2.200→2.100, 2077 2.300→2.200; S Hohenzollerndamm 20–24 min, rund 1,5 km Luftlinie vom Rathaus Schmargendorf",
+      "fundstelle": "charlottenburg-wilmersdorf.md Nr. 28, 36, 48"
+    },
+    {
+      "zahl": "Grunewald: 1889, 234 ha, Fiskus/Bankenkonsortium/Kurfürstendamm, vier Seen, 1899, 1920, Güterbahnhof seit 2009 rund 100 Villen auf rund 1.000 m²; WL 94 % gut (2.096/2.241); BRW 2072/2073/2371 2.800→2.700, 2074 2.100→2.000, 2314 1.700→1.600; S7 18 min",
+      "fundstelle": "charlottenburg-wilmersdorf.md Nr. 29, 37, 49"
+    },
+    {
+      "zahl": "Rheingauviertel: vor dem Ersten Weltkrieg, Haberland, Jatzow, Gartenterrassen 10 m, Landhaus-Elemente, Cauer-Brunnen 1911; WL 98 % gut; BRW 1813 3.400 (GFZ 2,0), 1221 950→900 (GFZ 0,6); U3 26–29, Heidelberger Platz 22–24 min",
+      "fundstelle": "charlottenburg-wilmersdorf.md Nr. 26, 38, 50, 51"
+    },
+    {
+      "zahl": "Güntzelkiez: Güntzelstraße Bamberger Straße bis Emser Platz, 1893, Bernhard Güntzel, Lebensmittel- und Feinkostgeschäfte; 641 Adressen, alle Bezirk C-W, Ortsteil Wilmersdorf, alle gut; BRW 2501 4.000, 2502/2503 3.800 (GFZ 2,5, unverändert); U9 22–24 min",
+      "fundstelle": "charlottenburg-wilmersdorf.md Nr. 27, 39, 52"
+    },
+    {
+      "zahl": "Mietspiegel 2026 gilt nicht für EFH/ZFH; Zeile 135: 7,09 / 9,46 / 13,54; Mietpreisbremse bis 31.12.2029, 10 %; Kappung 15 % in drei Jahren",
+      "fundstelle": "berlin-grundlagen.md Nr. 1, 2, 11, 13"
+    },
+    {
+      "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, Halbteilung §§ 656a–656d BGB, nicht bei MFH und Grundstücken; § 34c und § 34i GewO; Lennart Geserich; Europace und Baufinex",
+      "fundstelle": "maklerprovision.njk, kaufen.njk; wie berlin-steglitz-zehlendorf.json"
+    }
+  ],
+  "karte": {
+    "alt": "Karte des Bezirks Charlottenburg-Wilmersdorf: Charlottenburg-Nord, Westend und Neu-Westend, Charlottenburg mit der Spreestadt, Witzleben, Wilmersdorf mit dem Güntzelkiez und dem Rheingauviertel, Schmargendorf und Grunewald, dazu die Bahnstrecken, die Autobahnen, Spree und Havel und der Bahnhof Friedrichstraße im Osten"
+  },
+  "anbindung": [
+    "Vom U-Bahnhof Theodor-Heuss-Platz sind Sie mit U2 und S-Bahn in 22 bis 24 Minuten an der Friedrichstraße.[[10]]",
+    "Vom U-Bahnhof Sophie-Charlotte-Platz sind Sie in 19 bis 20 Minuten an der Friedrichstraße, vom S-Bahnhof Messe Nord/ZOB in 20 Minuten.[[10]]",
+    "Vom S-Bahnhof Tiergarten fahren S3, S5, S7 und S9 in 7 Minuten bis Friedrichstraße, vom U-Bahnhof Ernst-Reuter-Platz sind es 15 bis 16 Minuten.[[10]]",
+    "Am Rathaus Schmargendorf halten Busse; der S-Bahnhof Hohenzollerndamm an der Ringbahn liegt rund 1,5 km Luftlinie entfernt, von dort sind es 20 bis 24 Minuten bis Friedrichstraße.[[10]]",
+    "Vom S-Bahnhof Grunewald fährt die S7 alle 10 Minuten in 18 Minuten bis Friedrichstraße.[[10]]",
+    "Vom U-Bahnhof Rüdesheimer Platz sind Sie mit der U3 und einem Umstieg in 26 bis 29 Minuten an der Friedrichstraße, vom S- und U-Bahnhof Heidelberger Platz in 22 bis 24 Minuten.[[10]]",
+    "Vom U-Bahnhof Güntzelstraße fährt die U9 zwischen Zoologischem Garten und Rathaus Steglitz; mit einem Umstieg sind Sie in 22 bis 24 Minuten an der Friedrichstraße.[[10]]"
+  ]
+}

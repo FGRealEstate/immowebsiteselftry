@@ -1,166 +1,164 @@
 ---
-layout: base.njk
-title: "Kontakt | Fischer & Geserich Real Estate"
-description: "Direkter Kontakt zu Fischer & Geserich Real Estate für Immobilienverkauf, Ankauf, Vermietung und Immobilienfinanzierung in Berlin, Leipzig, Dresden und dem Berliner Speckgürtel."
+layout: fgs-page.njk
+fgsHero: false
+title: "Kontakt – Fischer & Geserich Real Estate in Berlin-Steglitz"
+description: "Kontakt zu Fischer & Geserich Real Estate: Kontaktformular, Telefon +49 1520 3083048, E-Mail und Anfahrt zum Büro in der Schützenstraße 30 in Berlin-Steglitz. Ansprechpartner für Berlin, Brandenburg, Leipzig und Dresden."
 permalink: kontakt.html
 canonicalPath: /kontakt.html
 ogTitle: "Kontakt zu Fischer & Geserich Real Estate"
 ogDescription: "Sprechen Sie direkt mit Fischer & Geserich Real Estate über Verkauf, Ankauf, Vermietung oder Finanzierung Ihres Immobilienvorhabens."
+# Brief Design-Pass §4.4: neue Vorlage, echtes Kontaktformular (Name, Telefon, E-Mail, Thema, Nachricht) über den
+# bestehenden Versand, Ansprechpartner je Region, Öffnungszeiten erst wenn Timon sie schickt (QUESTIONS 4.1),
+# Anfahrt mit S- und U-Bahn, geprüft am 26.10.2026 in der VBB-Fahrinfo (fahrinfo.vbb.de): Schützenstraße 30 bis
+# S+U Rathaus Steglitz (S1, U9) 9 Minuten Fußweg, 666 m; Busse ab Carmerplatz (186, 188, 283) und Händelplatz (285).
+# Versand: Verkauf, Kauf, Finanzierung, Vermietung an propstack-lead (wie die übrigen Anfrageformulare),
+# „Sonstiges“ an website-question, weil propstack-lead ohne erkennbares Anliegen ablehnt (fg-design.js).
+# Design-Sprint-Brief 5.5 (CP3, 28.10.2026): ruhige Titelzeile ohne Foto wie die Referenzen Huttons und Omniyat,
+# S3 mit Formular links und Kontakt, Karte und Anfahrt rechts, darunter die zwei Ansprechpartner als Porträtkarten.
+# Entfallen: Kicker über den H2 (Update 6 §3.0), Inhaltsverzeichnis, Linkliste unten, die vier Regionskarten mit
+# Gebietslisten (Brief 3.7: Gebiete stehen im Fuß und im Menü „Gebiete“). Formular, Feldnamen und Versand unverändert.
+pg:
+  crumb: "Kontakt"
+  kicker: "Wir antworten persönlich"
+  h1: "Kontakt zu Fischer & Geserich in Berlin-Steglitz"
+  intro: "Ob Verkauf, Kauf, Vermietung oder Finanzierung: Schreiben Sie uns über das Formular, rufen Sie an oder schicken Sie eine E-Mail. Ihr Ansprechpartner aus der Region meldet sich persönlich."
+  buttons:
+    - { label: "+49 1520 3083048", href: "tel:+4915203083048", icon: phone }
+    - { label: "info@fg-realestate.de", href: "mailto:info@fg-realestate.de", icon: mail, line: true }
+  faqTitle: "Häufige Fragen zum Kontakt"
+  faq:
+    - q: "Wie erreiche ich Fischer & Geserich am schnellsten?"
+      a: "Telefonisch unter +49 1520 3083048 oder per E-Mail an info@fg-realestate.de. Auch über das Kontaktformular auf dieser Seite geht Ihre Nachricht direkt an uns."
+    - q: "Kann ich ohne Termin ins Büro kommen?"
+      a: "Persönliche Termine in unserem Büro in der Schützenstraße 30 in Berlin-Steglitz finden nach vorheriger Vereinbarung statt. Rufen Sie uns an oder schreiben Sie uns, dann stimmen wir einen Termin ab."
+    - q: "Wie komme ich mit Bus und Bahn zum Büro?"
+      a: "Der nächste Bahnhof ist S+U Rathaus Steglitz mit der S1 und der U9. Von dort sind es etwa 9 Minuten zu Fuß. Näher am Büro liegen die Bushaltestellen Carmerplatz und Händelplatz."
+    - q: "Wer ist mein Ansprechpartner?"
+      a: "Für Berlin und Brandenburg Lennart Geserich, für Leipzig und Dresden Timon Fischer. Bei Fragen zur Finanzierung ist Timon Fischer Ihr Ansprechpartner, unabhängig von der Region."
+    - q: "Kostet das erste Gespräch etwas?"
+      a: "Nein. Das erste Gespräch kostet Sie nichts und verpflichtet Sie zu nichts."
+  contact: lennart
+  closing:
+    title: "Lieber zuerst den Wert Ihrer Immobilie kennen?"
+    text: "Die Wertermittlung ist kostenlos und liegt meist noch am selben Tag vor. Das erste Gespräch kostet Sie nichts und verpflichtet Sie zu nichts."
+    button: bewertung
+  schema:
+    type: ContactPage
+    id: contactpage
+    org: true
 ---
+{% from "fgs-macros.njk" import rail, card, textlink with context %}
+{% from "fgd-icons.njk" import icon %}
 
-<section class="fg-page-hero fg-contact-page-hero">
-  <div class="container mx-auto px-4">
-    <div class="fg-contact-page-hero-grid">
-      <div class="fg-reveal">
-        <p class="fg-eyebrow">Direkter Kontakt</p>
-        <h1>Ein Anliegen. Der passende direkte Weg.</h1>
-        <p class="fg-contact-lead">
-          Ob Verkauf, Ankauf, Vermietung oder Finanzierung: Wählen Sie den Bereich, der zu Ihrem Vorhaben passt.
-          Wenn Sie zunächst persönlich sprechen möchten, erreichen Sie uns direkt per Telefon oder E-Mail.
-        </p>
-        <div class="fg-contact-page-actions">
-          <a class="fg-contact-page-primary" href="tel:+4915203083048"><i class="fas fa-phone"></i> 0152 03083048</a>
-          <a class="fg-contact-page-secondary" href="mailto:info@fg-realestate.de"><i class="fas fa-envelope"></i> info@fg-realestate.de</a>
+{# S3 Kontakt: links Formular (Felder, data-Attribute und Versand wie bisher), rechts Anschrift, Karte und Anfahrt #}
+<section class="fgs-section" id="schreiben" aria-labelledby="formular-titel">
+  <div class="fgs-wrap fgs-contact">
+    <div class="fgs-contact-form">
+      <h2 id="formular-titel">Schreiben Sie uns oder rufen Sie an</h2>
+      <p class="fgs-lead">Ihre Nachricht geht direkt an uns. Ihr Ansprechpartner aus der Region meldet sich bei Ihnen.</p>
+      <div class="fgd-form-card" id="kontaktformular">
+        <h3>Kontaktformular</h3>
+        <p>Pflichtfelder sind mit * markiert.</p>
+        <form method="post" action="/.netlify/functions/propstack-lead?frage=Sonstiges" class="fgd-form" data-fgd-lead-form novalidate>
+          <label>Thema *
+            <select name="concern" required>
+              <option value="">Bitte wählen</option>
+              <option value="Verkauf">Verkauf</option>
+              <option value="Kauf">Kauf</option>
+              <option value="Finanzierung">Finanzierung</option>
+              <option value="Vermietung">Vermietung</option>
+              <option value="Sonstiges" data-endpoint="website-question">Sonstiges</option>
+            </select>
+          </label>
+          <div class="fgd-field-row">
+            <label>Vorname *<input name="first_name" required autocomplete="given-name"></label>
+            <label>Nachname *<input name="last_name" required autocomplete="family-name"></label>
+          </div>
+          <div class="fgd-field-row">
+            <label>E-Mail *<input name="email" type="email" required autocomplete="email"></label>
+            <label>Telefon<input name="phone" type="tel" autocomplete="tel" placeholder="für Rückfragen"></label>
+          </div>
+          <label>Nachricht *<textarea name="message" rows="5" maxlength="3000" required placeholder="Worum geht es? Zum Beispiel Objekt, Ort und Zeitrahmen"></textarea></label>
+          <label class="fgd-hp" aria-hidden="true">Website<input name="company_website" tabindex="-1" autocomplete="off"></label>
+          <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
+          <div class="fgd-status" data-fgd-lead-status hidden></div>
+          <button type="submit" class="fgd-btn fgd-btn-navy">Nachricht senden{{ icon("arrow") | safe }}</button>
+        </form>
+        <div class="fgd-form-done" data-fgd-lead-done tabindex="-1" hidden>
+          <h3>Vielen Dank, Ihre Nachricht ist da</h3>
+          <p>Ihr Ansprechpartner meldet sich bei Ihnen. Wenn es eilt, erreichen Sie uns unter <a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a>.</p>
         </div>
       </div>
+      <p class="fgs-note">Ihre Angaben nutzen wir nur, um Ihre Anfrage zu bearbeiten. Wie wir mit Ihren Daten umgehen, steht in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</p>
+    </div>
 
-      <aside class="fg-contact-page-direct fg-reveal" aria-label="Kontaktdaten">
-        <span>Fischer &amp; Geserich Real Estate</span>
-        <h2>Persönlich erreichbar.</h2>
-        <div class="fg-contact-page-direct-list">
-          <a href="tel:+4915203083048">
-            <i class="fas fa-phone"></i>
-            <span><strong>Telefon</strong><small>0152 03083048</small></span>
-          </a>
-          <a href="mailto:info@fg-realestate.de">
-            <i class="fas fa-envelope"></i>
-            <span><strong>E-Mail</strong><small>info@fg-realestate.de</small></span>
-          </a>
-          <div>
-            <i class="fas fa-location-dot"></i>
-            <span><strong>Geschäftsanschrift</strong><small>Schützenstraße 30 · 12165 Berlin</small></span>
-          </div>
-          <div>
-            <i class="fas fa-calendar-check"></i>
-            <span><strong>Persönliche Termine</strong><small>Nach vorheriger Vereinbarung</small></span>
-          </div>
-        </div>
-        <div class="fg-contact-market-strip" aria-label="Unsere Kernmärkte">
-          <figure><img src="/images/webp/region-berlin.webp" alt="Berlin" loading="lazy"><figcaption>Berlin</figcaption></figure>
-          <figure><img src="/images/webp/region-leipzig.webp" alt="Leipzig" loading="lazy"><figcaption>Leipzig</figcaption></figure>
-          <figure><img src="/images/webp/pexels-vip-foto-9137849.jpg" alt="Dresden" loading="lazy"><figcaption>Dresden</figcaption></figure>
-          <figure><img src="/images/webp/region-potsdam.webp" alt="Potsdam und Berliner Umland" loading="lazy" decoding="async"><figcaption>Speckgürtel</figcaption></figure>
-        </div>
-      </aside>
+    <div class="fgs-contact-info">
+      <h3>Fischer &amp; Geserich Real Estate GmbH</h3>
+      <dl class="fgs-contact-list">
+        <div><dt>Telefon</dt><dd><a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a></dd></div>
+        <div><dt>E-Mail</dt><dd><a href="mailto:{{ nav.email }}">{{ nav.email }}</a></dd></div>
+        <div><dt>Geschäftsanschrift</dt><dd>Schützenstraße 30 · 12165 Berlin</dd></div>
+        <div><dt>Persönliche Termine</dt><dd>Nach vorheriger Vereinbarung</dd></div>
+      </dl>
+      {# Statische Karte wie auf Über uns, kein Google-Maps-Embed; der Routenlink öffnet Google Maps erst auf Klick #}
+      <figure class="fgs-map">
+        <img src="/images/ueber-uns/buero-karte-900.webp" srcset="/images/ueber-uns/buero-karte-600.webp 600w, /images/ueber-uns/buero-karte-900.webp 900w, /images/ueber-uns/buero-karte-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 100vw" width="1200" height="800" alt="Kartenausschnitt von Berlin-Steglitz: Das Büro von Fischer &amp; Geserich liegt in der Schützenstraße 30." loading="lazy" decoding="async">
+      </figure>
+      <a class="fgs-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Sch%C3%BCtzenstra%C3%9Fe%2030%2C%2012165%20Berlin" target="_blank" rel="noopener">Route bei Google Maps{% include "fgs-arrow.njk" %}</a>
+
+      {# Anfahrt: Ziel der Links kontakt.html#anfahrt auf anderen Seiten #}
+      <h3 id="anfahrt">So erreichen Sie unser Büro in Berlin-Steglitz</h3>
+      <p>Unser Büro liegt in der Schützenstraße 30 in 12165 Berlin. Persönliche Termine finden nach vorheriger Vereinbarung statt.</p>
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li><strong>S+U Rathaus Steglitz</strong><span>S1 und U9. Von dort sind es etwa 9 Minuten zu Fuß, rund 670 Meter.</span></li>
+        <li><strong>Bus</strong><span>Haltestelle Carmerplatz mit den Linien 186, 188 und 283, Haltestelle Händelplatz mit der Linie 285. Beide liegen wenige Gehminuten vom Büro entfernt.</span></li>
+      </ul>
+      <p class="fgs-note">Geprüft am 26.10.2026 in der <a href="https://www.vbb.de/fahrinfo" target="_blank" rel="noopener">VBB-Fahrinfo</a>. Dort finden Sie auch Ihre aktuelle Verbindung.</p>
     </div>
   </div>
 </section>
 
-<section class="fg-contact-page-section">
-  <div class="container mx-auto px-4">
-    <div class="fg-contact-page-heading fg-reveal">
-      <p class="fg-section-kicker">Ihr Vorhaben</p>
-      <h2>Direkt in die richtige Beratungsstrecke.</h2>
-      <p>So fragen wir nur die Informationen ab, die für Ihr konkretes Anliegen relevant sind.</p>
+{# Ansprechpartner je Region als zwei Porträtkarten (Brief 5.5). Lennart: Berlin und Brandenburg, Timon: Leipzig, Dresden und Finanzierung #}
+<section class="fgs-section" id="ansprechpartner" aria-labelledby="ansprechpartner-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head">
+      <h2 id="ansprechpartner-titel">Ihr Ansprechpartner in der Region</h2>
+      <p>Berlin und Brandenburg betreut Lennart Geserich, Leipzig und Dresden Timon Fischer. Bei Fragen zur Finanzierung ist Timon Fischer Ihr Ansprechpartner, unabhängig von der Region.</p>
     </div>
-
-    <div class="fg-contact-route-grid">
-      <a class="fg-contact-route fg-reveal" href="/verkaufen.html">
-        <i class="fas fa-house-circle-check"></i>
-        <h3>Immobilie verkaufen</h3>
-        <p>Bewertung, Positionierung, Vermarktung und Begleitung bis zum Abschluss.</p>
-        <span>Zur Verkaufsberatung <i class="fas fa-arrow-right"></i></span>
-      </a>
-
-      <a class="fg-contact-route fg-reveal" href="/kaufen.html">
-        <i class="fas fa-key"></i>
-        <h3>Immobilie kaufen</h3>
-        <p>Kaufgesuch anlegen oder ein konkretes Objekt wirtschaftlich und strategisch prüfen.</p>
-        <span>Zur Käuferstrecke <i class="fas fa-arrow-right"></i></span>
-      </a>
-
-      <a class="fg-contact-route fg-reveal" href="/mieten.html">
-        <i class="fas fa-door-open"></i>
-        <h3>Immobilie mieten</h3>
-        <p>Eigenständiges Mietgesuch anlegen und passende Suchkriterien hinterlegen.</p>
-        <span>Zum Mietgesuch <i class="fas fa-arrow-right"></i></span>
-      </a>
-
-      <a class="fg-contact-route fg-reveal" href="/vermieten.html">
-        <i class="fas fa-building-user"></i>
-        <h3>Immobilie vermieten</h3>
-        <p>Mietpreis, Vermarktung und Auswahl geeigneter Interessenten strukturiert angehen.</p>
-        <span>Zur Vermietungsberatung <i class="fas fa-arrow-right"></i></span>
-      </a>
-
-      <a class="fg-contact-route fg-reveal" href="/finanzierungsberatung.html">
-        <i class="fas fa-building-columns"></i>
-        <h3>Finanzierung prüfen</h3>
-        <p>Finanzierungsrahmen, Eigenkapital, Monatsrate und geeignete Bankpartner einordnen.</p>
-        <span>Zur Finanzierung <i class="fas fa-arrow-right"></i></span>
-      </a>
-
-      <a class="fg-contact-route fg-reveal" href="/ankaufsberatung.html">
-        <i class="fas fa-magnifying-glass-chart"></i>
-        <h3>Ankaufsberatung</h3>
-        <p>Objekt, Lage, Rendite, Risiken und Finanzierung vor einer Kaufentscheidung zusammen betrachten.</p>
-        <span>Zur Ankaufsberatung <i class="fas fa-arrow-right"></i></span>
-      </a>
-    </div>
+    <ul class="fgs-cards2" role="list">
+      {{ card({ href: kontakte.lennart.profile | navHref, bild: "/images/team/lennart-geserich-hell" | bild, alt: "Porträt von Lennart Geserich", label: "Berlin · Brandenburg", titel: kontakte.lennart.name, zeile: kontakte.lennart.role }) }}
+      {{ card({ href: kontakte.timon.profile | navHref, bild: "/images/team/timon-fischer-hell" | bild, alt: "Porträt von Timon Fischer", label: "Leipzig · Dresden", titel: kontakte.timon.name, zeile: kontakte.timon.role }) }}
+    </ul>
   </div>
 </section>
 
-<section class="fg-contact-page-section fg-contact-page-section-white">
-  <div class="container mx-auto px-4">
-    <div class="fg-contact-page-heading fg-reveal">
-      <p class="fg-section-kicker">So geht es weiter</p>
-      <h2>Vom ersten Kontakt zur klaren nächsten Entscheidung.</h2>
-    </div>
+{# S4 Ihr Vorhaben: sechs Bildkarten mit den Texten der bisherigen Kontaktseite, Bilder und Alt-Texte wie die Titelbilder der Zielseiten #}
+{% set vorhaben = [
+  { href: "/verkaufen.html", bild: "verkaufen-hero", alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser", titel: "Immobilie verkaufen", zeile: "Bewertung, Vermarktung und Begleitung bis zur Übergabe." },
+  { href: "/kaufen.html", bild: "kaufen-hero", alt: "Canaletto-Blick in Dresden: die Augustusbrücke über die Elbe, dahinter Frauenkirche und Hofkirche im warmen Licht, vorn die Elbwiesen", titel: "Immobilie kaufen", zeile: "Suchprofil anlegen oder ein Objekt vor dem Kauf prüfen lassen." },
+  { href: "/mieten.html", bild: "mieten-hero", alt: "Chamissoplatz in Berlin-Kreuzberg im Sommer von oben, ringsum Altbauten", titel: "Immobilie mieten", zeile: "Mietgesuch mit Ihren Suchkriterien anlegen." },
+  { href: "/vermieten.html", bild: "vermieten-hero", alt: "Altbau-Wohnhäuser von Riehmers Hofgarten an der Hagelberger Straße in Berlin-Kreuzberg, rechts ein Baum", titel: "Immobilie vermieten", zeile: "Miethöhe, Vermarktung und Auswahl der Mieter." },
+  { href: "/finanzierungsberatung.html", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken", titel: "Finanzierung prüfen", zeile: "Finanzierungsrahmen, Eigenkapital, Monatsrate und passende Banken." },
+  { href: "/ankaufsberatung.html", bild: "ankauf-hero", alt: "Das Eckhaus Kurfürstendamm 190 in Berlin-Charlottenburg mit grüner Kuppel an einem sonnigen Junitag", titel: "Ankaufsberatung", zeile: "Objekt, Lage, Rendite, Risiken und Finanzierung vor dem Kauf prüfen." }
+] %}
+{% call rail({ id: "vorhaben", titel: "Ihr Anliegen", text: "Wählen Sie, worum es geht. Das Formular fragt dann nur, was wir dafür brauchen." }) %}
+  {%- for v in vorhaben %}
+  {{ card({ href: v.href, bild: v.bild | bild, alt: v.alt, titel: v.titel, zeile: v.zeile }) }}
+  {%- endfor %}
+{% endcall %}
 
-    <div class="fg-contact-page-process">
-      <article class="fg-contact-process-card fg-reveal">
-        <span>01</span>
-        <h3>Anliegen einordnen</h3>
-        <p>Wir klären, worum es konkret geht und welche Informationen für den nächsten Schritt tatsächlich gebraucht werden.</p>
-      </article>
-      <article class="fg-contact-process-card fg-reveal">
-        <span>02</span>
-        <h3>Unterlagen &amp; Fakten</h3>
-        <p>Je nach Vorhaben prüfen wir Objektunterlagen, Finanzierungsdaten, Suchkriterien oder Vermarktungsparameter.</p>
-      </article>
-      <article class="fg-contact-process-card fg-reveal">
-        <span>03</span>
-        <h3>Persönlich abstimmen</h3>
-        <p>Im nächsten Gespräch besprechen wir Optionen, offene Punkte und einen konkreten weiteren Ablauf.</p>
-      </article>
-    </div>
-
-    <div class="fg-contact-page-note fg-reveal">
-      {{ serviceArea.text }}
-      <br>
-      <a class="fg-contact-page-faq-link" href="/index.html#faq">Häufige Fragen ansehen <i class="fas fa-arrow-right"></i></a>
+{# Ablauf: Überschrift links, drei Schritte rechts. Texte der bisherigen Kontaktseite #}
+<section class="fgs-section" id="ablauf" aria-labelledby="ablauf-titel">
+  <div class="fgs-wrap fgs-cols">
+    <div class="fgs-cols-head"><h2 id="ablauf-titel">So geht es nach Ihrer Nachricht weiter</h2></div>
+    <div class="fgs-cols-body">
+      <ol class="fgs-steps" role="list">
+        <li><span class="fgs-step-num" aria-hidden="true">01</span><h3>Anliegen klären</h3><p>Wir melden uns und klären, worum es geht und was wir für den nächsten Schritt brauchen.</p></li>
+        <li><span class="fgs-step-num" aria-hidden="true">02</span><h3>Unterlagen prüfen</h3><p>Je nach Vorhaben sehen wir uns Objektunterlagen, Finanzierungsdaten oder Ihre Suchkriterien an.</p></li>
+        <li><span class="fgs-step-num" aria-hidden="true">03</span><h3>Persönlich besprechen</h3><p>Im Gespräch gehen wir Ihre Möglichkeiten und die offenen Punkte durch und legen fest, wie es weitergeht.</p></li>
+      </ol>
+      {#- Update 10 §4.3: Potsdam steht jetzt im gemeinsamen Text in _data/serviceArea.js -#}
+      <p class="fgs-note">{{ serviceArea.text }}</p>
     </div>
   </div>
 </section>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  "name": "Kontakt | Fischer & Geserich Real Estate",
-  "url": "https://fg-realestate.de/kontakt.html",
-  "mainEntity": {
-    "@type": "RealEstateAgent",
-    "name": "Fischer & Geserich Real Estate GmbH",
-    "telephone": "+49 152 03083048",
-    "email": "info@fg-realestate.de",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Schützenstraße 30",
-      "postalCode": "12165",
-      "addressLocality": "Berlin",
-      "addressCountry": "DE"
-    }
-  }
-}
-</script>

@@ -1,0 +1,445 @@
+{
+  "_info": "Design-Pass 3 §4.1/§4.2: Handy-Zuschnitt 4:5 je Titelbild, [Mitte x, oben, unten] als Anteil der Quelle. Erzeugt mit tools/titelbilder.py (dort die Regeln). Gesetzt nach Sichtprüfung der Quellen am 30.10.2026.",
+  "verkaufen-hero": {
+    "hoch": [
+      0.5,
+      0,
+      1
+    ],
+    "breit": [
+      2400,
+      2880,
+      3800
+    ],
+    "hochBreit": [
+      1080,
+      1440,
+      1600
+    ]
+  },
+  "kaufen-hero": {
+    "hoch": [
+      0.56,
+      0,
+      1
+    ]
+  },
+  "vermieten-hero": {
+    "hoch": [
+      0.55,
+      0,
+      0.78
+    ],
+    "breit": [
+      2400,
+      2880,
+      3840
+    ],
+    "hochBreit": [
+      1080,
+      1440,
+      1600
+    ]
+  },
+  "finanzierung-hero": {
+    "hoch": [
+      0.5,
+      0,
+      1
+    ],
+    "hochBreit": [
+      1080,
+      1440,
+      1600
+    ]
+  },
+  "ankauf-hero": {
+    "hoch": [
+      0.5,
+      0,
+      0.75
+    ]
+  },
+  "kapitalanlage-hero": {
+    "hoch": [
+      0.45,
+      0,
+      1
+    ],
+    "breit": [
+      2400,
+      2880,
+      3800
+    ],
+    "hochBreit": [
+      1080,
+      1440,
+      1600
+    ]
+  },
+  "mfh-hero": {
+    "hoch": [
+      0.58,
+      0.05,
+      0.9
+    ],
+    "breit": [
+      2400,
+      2880,
+      3840
+    ],
+    "hochBreit": [
+      1080,
+      1440,
+      1600
+    ]
+  },
+  "betreuung-hero": {
+    "hoch": [
+      0.38,
+      0,
+      1
+    ],
+    "breit": [
+      2400,
+      2880,
+      3800
+    ],
+    "hochBreit": [
+      1080,
+      1440,
+      1600
+    ]
+  },
+  "provision-hero": {
+    "hoch": [
+      0.5,
+      0.375,
+      1
+    ]
+  },
+  "gewerbe-hero": {
+    "hoch": [
+      0.6,
+      0,
+      0.79
+    ]
+  },
+  "bewertung-hero": {
+    "hoch": [
+      0.49,
+      0,
+      0.875
+    ]
+  },
+  "mieten-hero": {
+    "hoch": [
+      0.5,
+      0.12,
+      0.95
+    ]
+  },
+  "/images/gebiete/barnim-blumberg-luftbild": {
+    "hoch": [
+      0.42,
+      0.1,
+      1
+    ]
+  },
+  "/images/gebiete/bernau-steintor": {
+    "hoch": [
+      0.284,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/dahme-spreewald-luebben-spree": {
+    "hoch": [
+      0.5,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/dresden-elbe-altstadt-canalettoblick": {
+    "hoch": [
+      0.42,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/erkner-genezarethkirche": {
+    "hoch": [
+      0.4,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/falkensee-neuer-see": {
+    "hoch": [
+      0.5,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/havelland-ketzin-luftbild": {
+    "hoch": [
+      0.5,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/koenigs-wusterhausen-schloss": {
+    "hoch": [
+      0.52,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/leipzig-city-hochhaus-neues-rathaus": {
+    "hoch": [
+      0.65,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/maerkisch-oderland-buckow": {
+    "hoch": [
+      0.5,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/oberhavel-havel-hennigsdorf": {
+    "hoch": [
+      0.55,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/oder-spree-bad-saarow-scharmuetzelsee": {
+    "hoch": [
+      0.53,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/oranienburg-schloss": {
+    "hoch": [
+      0.6,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/potsdam-mittelmark-glindowsee-luftbild": {
+    "hoch": [
+      0.55,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/potsdam-alter-markt-luftbild": {
+    "hoch": [
+      0.38,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/teltow-flaeming-jueterbog": {
+    "hoch": [
+      0.5,
+      0.12,
+      1
+    ]
+  },
+  "/images/gebiete/teltow-altes-rathaus": {
+    "hoch": [
+      0.48,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/pankow-schloss-schoenhausen": {
+    "hoch": [
+      0.5,
+      0.05,
+      1
+    ]
+  },
+  "/images/gebiete/charlottenburg-wilmersdorf-lietzensee": {
+    "hoch": [
+      0.4,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/steglitz-zehlendorf-beerenstrasse": {
+    "hoch": [
+      0.7,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/dresden-zentrum-schillerplatz-blaues-wunder": {
+    "hoch": [
+      0.55,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/dresden-nord-rothenburger-strasse": {
+    "hoch": [
+      0.5,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/dresden-ost-laubegast-elbe": {
+    "hoch": [
+      0.47,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/leipzig-nord-gohliser-schloesschen": {
+    "hoch": [
+      0.33,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/dresden-sued-rathaus-plauen-noethnitzer": {
+    "hoch": [
+      0.52,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/leipzig-west-lindenauer-markt": {
+    "hoch": [
+      0.52,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/leipzig-zentrum-karl-tauchnitz-strasse-10": {
+    "hoch": [
+      0.45,
+      0,
+      1
+    ]
+  },
+  "home/hero-slide-friedenau": {
+    "hoch": [
+      0.47,
+      0,
+      0.94
+    ],
+    "breit": [
+      2400,
+      3200
+    ]
+  },
+  "home/hero-slide-berlin": {
+    "hoch": [
+      0.4,
+      0,
+      1
+    ],
+    "breit": [
+      2400,
+      3200
+    ]
+  },
+  "home/hero-slide-potsdam": {
+    "hoch": [
+      0.5,
+      0.05,
+      1
+    ],
+    "breit": [
+      2400,
+      3200
+    ]
+  },
+  "home/hero-slide-leipzig": {
+    "hoch": [
+      0.75,
+      0,
+      1
+    ],
+    "breit": [
+      2400,
+      3200
+    ]
+  },
+  "home/hero-slide-dresden": {
+    "hoch": [
+      0.3,
+      0,
+      1
+    ],
+    "breit": [
+      2400,
+      3200
+    ]
+  },
+  "home/hero-leistung-verkauf": {
+    "hoch": [
+      0.5,
+      0,
+      0.9
+    ],
+    "hochFormat": [
+      9,
+      16
+    ],
+    "breit": [
+      2400,
+      3200
+    ]
+  },
+  "home/hero-leistung-ankauf": {
+    "hoch": [
+      0.55,
+      0,
+      1
+    ],
+    "hochFormat": [
+      9,
+      16
+    ],
+    "breit": [
+      2400,
+      3200
+    ]
+  },
+  "home/hero-leistung-finanzierung": {
+    "hoch": [
+      0.55,
+      0,
+      1
+    ],
+    "hochFormat": [
+      9,
+      16
+    ],
+    "breit": [
+      2400,
+      3200
+    ]
+  },
+  "/images/gebiete/berlin-deutscher-dom-gendarmenmarkt": {
+    "hoch": [
+      0.5,
+      0,
+      1
+    ]
+  },
+  "/images/gebiete/schoeneberg-viktoria-luise-platz": {
+    "hoch": [
+      0.5,
+      0,
+      1
+    ]
+  }
+}

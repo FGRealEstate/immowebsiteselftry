@@ -1,0 +1,373 @@
+{
+  "slug": "leipzig/west",
+  "name": "Leipzig-West",
+  "nameLang": "Leipzig-West",
+  "inOrt": "in Leipzig-West",
+  "fuerOrt": "Leipzig-West",
+  "typ": "marktgebiet",
+  "kreis": {
+    "name": "Leipzig",
+    "url": "/standorte/leipzig/"
+  },
+  "orte": [
+    "Lindenau",
+    "Altlindenau",
+    "Leutzsch"
+  ],
+  "kontakt": "timon",
+  "title": "Immobilienmakler Leipzig-West – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler in Leipzig-West: verkaufen, kaufen und finanzieren in Lindenau, Altlindenau und Leutzsch, mit Marktdaten 2026 und Milieuschutz.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Leipzig-West",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Leipzig-West beim Verkauf, beim Kauf und bei der Finanzierung, in den Gründerzeitstraßen von Lindenau und Altlindenau ebenso wie in Leutzsch am Auwald. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Leipzig ist Timon Fischer Ihr Ansprechpartner, Geschäftsführer und verantwortlich für die Immobilienfinanzierung.",
+  "hero": {
+    "name": "leipzig-west-lindenauer-markt",
+    "alt": "Der Lindenauer Markt in Altlindenau mit Marktstraße und Westbad",
+    "credit": "Frank Vincentz, CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Leipzig_-_Lindenauer_Markt_%2B_Marktstra%C3%9Fe_%2B_Westbad_01_ies.jpg",
+    "position": "50% 50%"
+  },
+  "stand": "Oktober 2026",
+  "updated": "2026-10-26",
+  "zahlen": [
+    {
+      "wert": "Ø 2.738 €/m²",
+      "label": "Eigentumswohnungen im sanierten Altbau, Weiterverkauf im Stadtbezirk Altwest",
+      "detail": "257 Verkäufe ohne Stellplatz, Median 2.563 €/m², Spanne 1.259 bis 5.184 €/m², im Mittel 64 m² groß. In ganz Leipzig lag der Mittelwert bei 2.850 €/m².",
+      "quelle": "Grundstücksmarktbericht Leipzig 2026",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "35",
+      "label": "Mehrfamilienhäuser 2025 im Stadtbezirk Altwest verkauft, für zusammen 77,5 Mio. €",
+      "detail": "18,9 % des Leipziger Umsatzes mit Mehrfamilienhäusern, der höchste Anteil aller Stadtbezirke. In ganz Leipzig wurden 229 Häuser für 410,1 Mio. € verkauft.",
+      "quelle": "Grundstücksmarktbericht Leipzig 2026",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "21,9",
+      "label": "Rohertragsfaktor sanierter Mehrfamilienhäuser in Altwest",
+      "detail": "16 Verkäufe mit Ertragsdaten: im Mittel 1.773 €/m² Wohn- und Nutzfläche, Miete 6,84 €/m², Nettoanfangsrendite 3,2 %, Leerstand 2,8 %. In ganz Leipzig: Faktor 23,1, 1.825 €/m², Nettoanfangsrendite 3,1 %.",
+      "quelle": "Grundstücksmarktbericht Leipzig 2026",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "450 bis 1.150 €/m²",
+      "label": "Bodenrichtwerte für Mehrfamilienhaus-Grundstücke in den Wohngebieten",
+      "detail": "Lindenau 600 bis 1.100 €/m², Altlindenau 600 bis 1.150 €/m², Leutzsch 450 bis 700 €/m². An der Merseburger Straße stieg der Wert von 880 auf 1.050 €/m², an der Jahnallee von 1.050 auf 1.150 €/m².",
+      "quelle": "Bodenrichtwerte Leipzig, eigene Auswertung",
+      "url": "https://geodienste.leipzig.de/l3/OpenData/BRW_Zonen_2026/wfs?SERVICE=WFS&REQUEST=GetCapabilities",
+      "stichtag": "01.01.2026"
+    },
+    {
+      "wert": "39.475",
+      "label": "Einwohner in Lindenau, Altlindenau und Leutzsch",
+      "detail": "16 % mehr als 2015. Das Durchschnittsalter liegt in Lindenau bei 36,0, in Altlindenau bei 36,8 und in Leutzsch bei 42,9 Jahren, in ganz Leipzig bei 42,4 Jahren.",
+      "quelle": "Amt für Statistik und Wahlen Leipzig",
+      "url": "https://statistik.leipzig.de/opendata/api/kdvalues?kategorie_nr=2&rubrik_nr=1&periode=y&format=csv",
+      "stichtag": "Ende 2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Lindenau: Gründerzeit und frühere Industrie",
+      "absaetze": [
+        "Lindenau war mit dem benachbarten Plagwitz lange das industrielle Herz Leipzigs. Davon zeugen alte Fabrikanlagen und der Karl-Heine-Kanal, der die Leipziger Gewässer mit dem Lindenauer Hafen verbindet; heute prägen Kunst- und Kulturräume den Stadtteil.[[17]] Zu Leipzig gehört Lindenau seit dem 01.01.1891.[[16]] Im Ortsteil leben 8.813 Menschen, 2015 waren es 7.786. Mit 36,0 Jahren liegt das Durchschnittsalter deutlich unter dem städtischen Mittel von 42,4 Jahren, 64 % der Haushalte sind Einpersonenhaushalte. 53 % der 603 Gebäude mit Wohnungen wurden bis 1918 gebaut; 2024 wurden 345 Wohnungen fertiggestellt.[[6]] Von der Haltestelle Felsenkeller sind Sie mit der Straßenbahnlinie 3 in 22 Minuten am Hauptbahnhof, von Lützner/Merseburger Straße mit der Linie 15 in 24 Minuten.[[19]]",
+        "Nach dem Mietspiegel liegen von den 680 Adressen in Lindenau 62 % in mittlerer, 17 % in guter und 7 % in sehr guter Wohnlage, etwa die ganze Lionstraße; 14 % liegen in einfacher Lage.[[5]] In der größten Bodenrichtwertzone um die Merseburger Straße stieg der Wert zum 01.01.2026 von 880 auf 1.050 €/m², an der Jordanstraße von 950 auf 1.100 €/m², jeweils bei einer Geschossflächenzahl von 2,4. Um die Birkenstraße sind es 820 €/m².[[2]] Seit dem 05.07.2020 gilt die soziale Erhaltungssatzung Lindenau; sie umfasst fast den ganzen Ortsteil und Plagwitz nördlich des Kanals.[[9]] Dort gilt seit dem 30.09.2023 außerdem die städtebauliche Erhaltungssatzung „Plagwitz/Lindenau – Nördlich Karl-Heine-Kanal“.[[12]] Große Teile Lindenaus lagen im Sanierungsgebiet Lindenau II, das 2003 festgelegt und 2023 aufgehoben wurde.[[14]]"
+      ],
+      "bild": {
+        "name": "leipzig-west-karl-heine-kanal",
+        "alt": "Der Karl-Heine-Kanal in einem Bogen mit ruhigem Wasser, am Ufer ein hölzerner Pontonanleger, dahinter Wiesen, Bäume und Sträucher, oben rechts ein dunkles Gebäude, klarer Himmel",
+        "caption": "Der Karl-Heine-Kanal im neuen Abschnitt zum Lindenauer Hafen.",
+        "credit": "Falk2, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:L01_077_Karl-Heine-Kanal,_Anleger.jpg"
+      }
+    },
+    {
+      "h2": "Altlindenau: Lindenauer Markt und Jahnallee",
+      "absaetze": [
+        "Altlindenau ist mit 19.172 Einwohnern der größte der drei Ortsteile, 2015 waren es 16.216. 61 % der 1.288 Gebäude mit Wohnungen wurden bis 1918 gebaut; die Wohnungen sind im Mittel 64,5 m² groß, in ganz Leipzig 70,3 m².[[6]] Zum Sanierungsgebiet Leipzig-Lindenau, 20 Hektar westlich des Elsterbeckens, gehörte der Lindenauer Markt. Das Gebiet wurde 1993 festgelegt, seine Aufhebung am 28.04.2021 beschlossen; saniert wurde unter anderem das Westbad, in der Roßmarktstraße entstanden Stadthäuser.[[13]] Vom Lindenauer Markt sind Sie mit den Linien 7 oder 15 in 21 Minuten am Hauptbahnhof, von Georg-Schwarz-/Merseburger Straße mit der Linie 7 in 24 Minuten.[[19]]",
+        "Von den 1.422 Adressen in Altlindenau liegen 52 % in guter und 7 % in sehr guter Wohnlage, etwa in der William-Zipperer-, Erich-Köhn- und Uhlandstraße und in der Luppenstraße; 14 % liegen in einfacher Lage, vor allem an Lützner, Merseburger und Georg-Schwarz-Straße.[[5]] Die Bodenrichtwerte für Mehrfamilienhäuser reichen von 600 €/m² an der Georg-Schwarz-Straße bis 1.150 €/m² an der Jahnallee, ein Jahr zuvor 1.050 €/m²; in der größten Zone um die William-Zipperer-Straße sind es 700 €/m².[[2]] Seit dem 05.07.2020 gilt die soziale Erhaltungssatzung Alt-Lindenau, rund 101 Hektar mit etwa 10.380 Wohnungen in großen Teilen Altlindenaus und im Süden von Leutzsch.[[9]] Neue Eigentumswohnungen ohne Stellplatz wurden 2025 in Altlindenau 17-mal verkauft, im Mittel für 5.531 €/m²; erstmals verkaufte sanierte Altbauwohnungen kosteten hier 5.749 €/m², in Lindenau 6.785 €/m².[[1]]"
+      ],
+      "bild": {
+        "name": "leipzig-west-jahnallee-zschochersche-strasse",
+        "alt": "Die Kreuzung Jahnallee und Zschochersche Straße mit Straßenbahngleisen, Kopfsteinpflaster und Altbauten",
+        "caption": "Die Kreuzung Jahnallee und Zschochersche Straße in Lindenau.",
+        "credit": "Frank Vincentz, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Leipzig_-_Jahnallee_%2B_Zschochersche_Stra%C3%9Fe_01_ies.jpg"
+      }
+    },
+    {
+      "h2": "Leutzsch: zwischen Georg-Schwarz-Straße und Auwald",
+      "absaetze": [
+        "Die Stadt beschreibt Leutzsch als klassisches Arbeiter- und Industriellenviertel; im Norden liegt der Auwald mit dem Leutzscher Holz, bekannt ist der Alfred-Kunze-Sportpark.[[18]] Zu Leipzig gehört Leutzsch seit dem 01.01.1922.[[16]] Im Ortsteil leben 11.490 Menschen, im Mittel 42,9 Jahre alt. Anders als in Lindenau stammen nur 28 % der 1.143 Gebäude mit Wohnungen aus der Zeit bis 1918, 31 % aus den Jahren 1919 bis 1948; 396 Gebäude haben eine oder zwei Wohnungen.[[6]] Vom S-Bahnhof Leutzsch sind Sie mit der S6 in 16 Minuten, mit der S1 in 18 Minuten am Hauptbahnhof, vom Rathaus Leutzsch mit der Straßenbahnlinie 7 in 28 Minuten.[[19]]",
+        "Leutzsch hat die meisten Adressen in sehr guter Wohnlage im Leipziger Westen: 31 % der 1.290 Adressen, darunter die ganze Otto-Schmiedt-, Rathenau- und Grabaustraße. 23 % liegen in einfacher Lage, vor allem an der Georg-Schwarz- und der Franz-Flemming-Straße.[[5]] In der größten Bodenrichtwertzone um die Otto-Schmiedt-Straße gelten 590 €/m² bei einer Geschossflächenzahl von 0,4, in der Mehrfamilienhauszone zwischen Karl-Schurz- und Blüthnerstraße 450 €/m²; fast alle Werte blieben zum 01.01.2026 unverändert.[[2]] Die soziale Erhaltungssatzung Leutzsch gilt seit dem 03.04.2022 für rund 20 Hektar nördlich des Rathauses mit etwa 2.100 Wohnungen.[[9]] Sanierte Mehrfamilienhäuser wurden 2025 in Leutzsch fünfmal weiterverkauft, im Mittel für 1.625 €/m².[[1]]"
+      ],
+      "bild": {
+        "name": "leipzig-west-georg-schwarz-strasse",
+        "alt": "Die Georg-Schwarz-Straße an der Ecke Spittastraße mit Straßenbahngleisen und sanierten Altbauten",
+        "caption": "Die Georg-Schwarz-Straße an der Spittastraße.",
+        "credit": "Frank Vincentz, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Leipzig_-_Georg-Schwarz-Stra%C3%9Fe_%2B_Spittastra%C3%9Fe_01_ies.jpg"
+      }
+    }
+  ],
+  "band": {
+    "name": "leipzig-west-nahle-kleine-luppe",
+    "alt": "Zwei Wasserläufe zwischen grasbewachsenen Deichen fließen zusammen, auf der Landspitze dazwischen eine Trauerweide und ein kleines Bauwerk am Ufer, dahinter noch kahle Auwaldbäume unter blauem Himmel",
+    "caption": "Nahle und Kleine Luppe, von der Nahlebrücke aus gesehen.",
+    "credit": "Falk2, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:J38_243_Nahle,_Kleine_Luppe.jpg",
+    "position": "50% 55%"
+  },
+  "anbindung": [
+    "Von der Haltestelle Felsenkeller sind Sie mit der Straßenbahnlinie 3 in 22 Minuten am Hauptbahnhof, von Lützner/Merseburger Straße mit der Linie 15 in 24 Minuten.[[19]]",
+    "Vom Lindenauer Markt sind Sie mit den Linien 7 oder 15 in 21 Minuten am Hauptbahnhof, von Georg-Schwarz-/Merseburger Straße mit der Linie 7 in 24 Minuten.[[19]]",
+    "Vom S-Bahnhof Leutzsch sind Sie mit der S6 in 16 Minuten, mit der S1 in 18 Minuten am Hauptbahnhof, vom Rathaus Leutzsch mit der Straßenbahnlinie 7 in 28 Minuten.[[19]]"
+  ],
+  "karte": {
+    "alt": "Karte von Leipzig-West: Altlindenau und Lindenau, dazu Leutzsch im Nordwesten und Plagwitz im Süden als Ortspunkte, die Bahnstrecken, die Gewässer und der Leipziger Hauptbahnhof im Osten"
+  },
+  "verkaufen": {
+    "h2": "Immobilie in Leipzig-West verkaufen",
+    "absaetze": [
+      "Im Stadtbezirk Altwest, zu dem Lindenau, Altlindenau und Leutzsch gehören, wurden 2025 257 Eigentumswohnungen im sanierten Altbau weiterverkauft, im Mittel für 2.738 €/m² Wohnfläche; in ganz Leipzig waren es 2.850 €/m². Die Spanne reichte von 1.259 bis 5.184 €/m², zwischen 2010 und 2019 sanierte Wohnungen kosteten im Mittel 2.943 €/m². Bezugsfreie Wohnungen erzielten stadtweit im Mittel 3.054 €/m², vermietete 2.707 €/m².[[1]] Wir bewerten Ihre Wohnung deshalb nach Wohnlage, Bodenrichtwertzone, Vermietungsstand und Vergleichsverkäufen.",
+      "Mehrfamilienhäuser wechselten 2025 in Altwest 35-mal den Eigentümer, für zusammen 77,5 Mio. €, das waren 18,9 % des Leipziger Umsatzes mit Mehrfamilienhäusern. Sanierte Häuser kosteten im Mittel 1.773 €/m² Wohn- und Nutzfläche, das 21,9-Fache der jährlichen Nettokaltmiete.[[1]] Liegt Ihr Haus in einem sozialen Erhaltungsgebiet, prüft die Stadt beim Verkauf ihr Vorkaufsrecht. Vorrangig strebt sie eine Abwendungsvereinbarung an, in der sich der Käufer verpflichtet, nicht in Wohnungs- oder Teileigentum umzuwandeln und nicht über den Leipziger Wohn- und Ausstattungsstandard hinaus zu modernisieren.[[11]] Bei Häusern in früheren Sanierungsgebieten klären wir vorab, ob der Ausgleichsbetrag festgesetzt und bezahlt ist.[[15]]"
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Leipzig-West",
+    "absaetze": [
+      "Als Eigennutzer finden Sie in Lindenau und Altlindenau vor allem Gründerzeitwohnungen mit im Mittel rund 65 m², in Leutzsch auch viele Häuser aus den Jahren 1919 bis 1948 und mehr Ein- und Zweifamilienhäuser.[[6]] Neue Wohnungen ohne Stellplatz kosteten 2025 in Altlindenau im Mittel 5.531 €/m², erstmals verkaufte sanierte Altbauwohnungen in Lindenau 6.785 €/m², weiterverkaufte im Stadtbezirk 2.738 €/m².[[1]] In den sozialen Erhaltungsgebieten brauchen Sie für Modernisierungen wie neue Bäder, Böden, Fenster oder Balkone und für Grundrissänderungen vor Baubeginn eine Genehmigung der Stadt, auch wenn Sie die Wohnung selbst bewohnen.[[10]]",
+      "Als Kapitalanleger rechnen Sie mit dem Leipziger Mietspiegel 2025–2027 und der Mietpreisbremse, die für Leipzig bis zum 30.06.2027 verlängert wurde: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[3,7]] Bestandsmieten dürfen in drei Jahren um höchstens 15 % steigen.[[8]] Sanierte Mehrfamilienhäuser in Altwest brachten 2025 im Mittel eine Nettoanfangsrendite von 3,2 %, bei 2,8 % Leerstand.[[1]] Wer im Erhaltungsgebiet ein bebautes Grundstück kauft, muss mit der Prüfung des Vorkaufsrechts rechnen.[[11]] Aus Kaufpreis, Miete, Bewirtschaftungskosten und diesen Auflagen rechnen wir mit Ihnen die Rendite, bevor Sie kaufen."
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Leipzig-West",
+    "absaetze": [
+      "Eigentumswohnungen im sanierten Altbau kosteten 2025 im Stadtbezirk Altwest im Mittel 2.738 €/m² Wohnfläche, neue Wohnungen in Altlindenau 5.531 €/m².[[1]] Dazu kommen die Kaufnebenkosten, in Sachsen unter anderem 5,5 % Grunderwerbsteuer.[[1]] Wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen: Timon Fischer rechnet das mit Ihnen durch, vergleicht Ihre Finanzierung über Europace und Baufinex und fragt parallel Banken direkt an."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Wie hoch sind die Quadratmeterpreise in Lindenau, Altlindenau und Leutzsch?",
+      "antwort": "Weiterverkäufe von Eigentumswohnungen weist der Gutachterausschuss nach Stadtbezirken aus. Im Stadtbezirk Altwest, zu dem die drei Ortsteile gehören, kosteten sanierte Altbauwohnungen 2025 im Mittel 2.738 €/m² Wohnfläche, bei 257 Verkäufen und einer Spanne von 1.259 bis 5.184 €/m²; in ganz Leipzig waren es 2.850 €/m². Neue Wohnungen ohne Stellplatz kosteten in Altlindenau 5.531 €/m², erstmals verkaufte sanierte Altbauwohnungen in Lindenau 6.785 €/m².[[1]] Für Ihre Wohnung zählen Wohnlage, Baujahr, Zustand und ob sie vermietet ist.",
+      "herkunft": "Google-Autocomplete „quadratmeterpreis leipzig lindenau“, „eigentumswohnung leipzig lindenau kaufen“, „leipzig altlindenau wohnung kaufen“ und „wohnung kaufen leipzig leutzsch“ (research/serp/autocomplete-2026-10-26-leipzig-west.json)"
+    },
+    {
+      "frage": "Sinken die Immobilienpreise in Leipzig?",
+      "antwort": "Eine Prognose geben wir nicht; die Daten des Gutachterausschusses zeigen den Verlauf. Der Bodenrichtwertindex für Mehrfamilienhaus-Grundstücke in mittlerer Wohnlage stieg von 100 im Jahr 2020 auf 120 im Jahr 2023, fiel bis 2025 auf 101 und lag 2026 bei 106. Die Zahl der verkauften Eigentumswohnungen und Teileigentumseinheiten stieg von 2.841 im Jahr 2023 auf 5.163 im Jahr 2025.[[1]] In Lindenau und Altlindenau stiegen mehrere Bodenrichtwerte zum 01.01.2026, etwa an der Merseburger Straße von 880 auf 1.050 €/m²; in Leutzsch blieben sie fast überall gleich.[[2]]",
+      "herkunft": "Google-Autocomplete „immobilienpreise leipzig sinken“, „immobilienpreise leipzig entwicklung“ und „immobilienpreise leipzig 2026“ (research/serp/autocomplete-2026-10-26-leipzig-west.json)"
+    },
+    {
+      "frage": "Wie hoch ist der Bodenrichtwert in Leipzig-West 2026?",
+      "antwort": "Zum 01.01.2026 liegen die Bodenrichtwerte für Mehrfamilienhaus-Grundstücke in den Wohngebieten von Lindenau bei 600 bis 1.100 €/m², in Altlindenau bei 600 bis 1.150 €/m² und in Leutzsch bei 450 bis 700 €/m². Für locker bebaute Lagen wie die Karl-Heine-Straße in Lindenau oder die Otto-Schmiedt-Straße in Leutzsch gelten 490 und 590 €/m², bei einer Geschossflächenzahl von 0,4.[[2]] Der Gutachterausschuss hat die Werte am 26.02.2026 beschlossen.[[1]] Den Wert für Ihr Grundstück zeigt die Bodenrichtwertkarte; wir lesen ihn bei der Bewertung für Sie aus.",
+      "herkunft": "Google-Autocomplete „bodenrichtwert leipzig 2026“ und „bodenrichtwert leipzig karte“ (research/serp/autocomplete-2026-10-26-leipzig-west.json)"
+    },
+    {
+      "frage": "Welche Wohnlage hat meine Adresse im Leipziger Mietspiegel?",
+      "antwort": "Der Mietspiegel 2025–2027 ordnet jede Adresse einer Wohnlage zu: einfach, mittel, gut oder sehr gut, in der Innenstadt außerdem Kerngebietslage.[[3]] Ihre Lage zeigt die Lagekarte der Stadt, die Vergleichsmiete berechnet der Mietspiegelrechner.[[4]] In Lindenau, Altlindenau und Leutzsch liegt keine Adresse in der Innenstadt; dort wird der Mittelwert in guter Lage mit dem Faktor 1,051 multipliziert, in sehr guter mit 1,061 und in einfacher mit 0,976.[[3,5]] Gute oder sehr gute Lage haben in Altlindenau 59 % der Adressen, in Leutzsch 46 % und in Lindenau 24 %.[[5]]",
+      "herkunft": "Google-Autocomplete „wohnlage leipzig mietspiegel“, „mietspiegel leipzig 2025“, „mietspiegel leipzig karte“ und „mietspiegel leipzig rechner“ (research/serp/autocomplete-2026-10-26-leipzig-west.json)"
+    },
+    {
+      "frage": "Gelten in Leipzig Mietpreisbremse und Kappungsgrenze?",
+      "antwort": "Ja. Der Freistaat Sachsen hat die Mietpreisbremse für Leipzig und Dresden lückenlos bis zum 30.06.2027 verlängert: Bei Mietbeginn darf die Miete höchstens 10 % über der ortsüblichen Vergleichsmiete liegen. Ausnahmen gelten unter anderem für die erste Vermietung nach Neubau oder umfassender Modernisierung und für eine höhere Vormiete (§§ 556e, 556f BGB).[[7]] Bestandsmieten dürfen in drei Jahren um höchstens 15 % steigen, ebenfalls bis zum 30.06.2027.[[8]] Die Vergleichsmiete ergibt sich aus dem Mietspiegel 2025–2027.[[3]]",
+      "herkunft": "Google-Autocomplete „mietpreisbremse leipzig 2026“, „mietpreisbremse leipzig verlängerung“, „mietpreisbremse leipzig ausnahmen“, „kappungsgrenze leipzig mieterhöhung“ und „kappungsgrenze leipzig verlängerung“ (research/serp/autocomplete-2026-10-26-leipzig-west.json)"
+    },
+    {
+      "frage": "Was bedeutet Milieuschutz in Lindenau und Leutzsch für Eigentümer und Käufer?",
+      "antwort": "Lindenau, Alt-Lindenau und Leutzsch sind soziale Erhaltungsgebiete, die ersten beiden seit dem 05.07.2020, Leutzsch seit dem 03.04.2022.[[9]] Dort braucht jede Änderung, Nutzungsänderung oder jeder Rückbau vor Baubeginn eine Genehmigung der Stadt, auch ohne Bauantrag und auch in selbst genutzten Wohnungen; bei Vorhaben ohne Baugenehmigung entscheidet die Stadt innerhalb eines Monats.[[10]] Beim Verkauf bebauter Grundstücke prüft die Stadt ihr Vorkaufsrecht. Vorrangig strebt sie eine Abwendungsvereinbarung an: Der Käufer verpflichtet sich, nicht in Wohnungs- oder Teileigentum umzuwandeln und nicht über den Leipziger Wohn- und Ausstattungsstandard hinaus zu modernisieren.[[11]]",
+      "herkunft": "Google-Autocomplete „milieuschutz leipzig gebiete“, „milieuschutz leipzig karte“ und „vorkaufsrecht leipzig“ (research/serp/autocomplete-2026-10-26-leipzig-west.json)"
+    },
+    {
+      "frage": "Was gilt im früheren Sanierungsgebiet Lindenau?",
+      "antwort": "Das Sanierungsgebiet Leipzig-Lindenau mit 20 Hektar und dem Lindenauer Markt wurde 1993 festgelegt, seine Aufhebung am 28.04.2021 beschlossen.[[13]] Das Gebiet Lindenau II mit 50 Hektar in Lindenau und Plagwitz wurde 2003 festgelegt und am 17.05.2023 aufgehoben.[[14]] Nach der Aufhebung erhebt die Stadt von den Eigentümern einen Ausgleichsbetrag für die sanierungsbedingte Erhöhung des Bodenwerts, bei Wohnungseigentum anteilig. Der Bescheid ist in der Regel binnen eines Monats zu zahlen; wem das nicht zuzumuten ist, kann eine Umwandlung in ein Tilgungsdarlehen beantragen.[[15]] Beim Kauf oder Verkauf klären wir, ob der Betrag festgesetzt und bezahlt ist.",
+      "herkunft": "Google-Autocomplete „sanierungsgebiet leipzig lindenau“ und „sanierungsgebiet leipzig“ (research/serp/autocomplete-2026-10-26-leipzig-west.json)"
+    },
+    {
+      "frage": "Wie hoch ist die Maklerprovision in Leipzig?",
+      "antwort": "Kauft ein Verbraucher eine Wohnung oder ein Einfamilienhaus, teilen sich Käufer und Verkäufer die Provision zu gleichen Teilen (§§ 656a bis 656d BGB); das gilt bundesweit, also auch in Sachsen. Bei Fischer & Geserich sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision. Bei Mehrfamilienhäusern und Grundstücken gilt die Teilung nicht. Die Provision fällt nur an, wenn der Kaufvertrag zustande kommt.",
+      "herkunft": "Google-Autocomplete „maklerprovision leipzig“ und „provision makler sachsen“ (research/serp/autocomplete-2026-10-26-leipzig-west.json). Antwort nach /maklerprovision/ und /kaufen/ (Stand 26.10.2026)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Leipzig-Nord",
+      "url": "/standorte/leipzig/nord/"
+    },
+    {
+      "name": "Leipzig-Zentrum",
+      "url": "/standorte/leipzig/zentrum/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Stadt Leipzig, Grundstücksmarktbericht 2026",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stand": "Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+    },
+    {
+      "name": "Bodenrichtwerte des Gutachterausschusses in der Stadt Leipzig, Open Data (BRW_Zonen_2026 und BRW_Zonen_2025), eigene Zuordnung zu den Ortsteilen",
+      "url": "https://geodienste.leipzig.de/l3/OpenData/BRW_Zonen_2026/wfs?SERVICE=WFS&REQUEST=GetCapabilities",
+      "stand": "Stichtag 01.01.2026, Vergleich mit 01.01.2025"
+    },
+    {
+      "name": "Stadt Leipzig, Leipziger Mietspiegel 2025–2027 (Broschüre)",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.5_Dez5_Jugend_Soziales_Gesundheit_Schule/50_Sozialamt/Mietspiegel/Broschuere_zum_Leipziger_Mietspiegel_2025-2027_01.pdf",
+      "stand": "gültig 01.07.2025 bis 30.06.2027, Erhebungsstichtag 01.10.2024"
+    },
+    {
+      "name": "Stadt Leipzig, Mietspiegel (Lagekarte und Mietspiegelrechner)",
+      "url": "https://www.leipzig.de/bauen-und-wohnen/wohnen/mietspiegel",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Wohnlage zum Leipziger Mietspiegel 2025–2027, eigene Auszählung nach Ortsteilen",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.5_Dez5_Jugend_Soziales_Gesundheit_Schule/50_Sozialamt/Mietspiegel/Wohnlage_zum_Leipziger_Mietspiegel_2025-2027.xlsx",
+      "stand": "Mietspiegel 2025–2027"
+    },
+    {
+      "name": "Stadt Leipzig, Amt für Statistik und Wahlen, Kleinräumiges Datenmaterial (Einwohner, Alter, Haushalte, Gebäude, Wohnungen, Fertigstellungen)",
+      "url": "https://statistik.leipzig.de/opendata/api/kdvalues?kategorie_nr=2&rubrik_nr=1&periode=y&format=csv",
+      "stand": "Jahreswerte 2025"
+    },
+    {
+      "name": "Freistaat Sachsen, Mietpreisbremse gemäß § 556d BGB",
+      "url": "https://www.bauen-wohnen.sachsen.de/mietpreisbremse-gemaess-556d-bgb-4391.html",
+      "stand": "verlängert bis 30.06.2027, abgerufen 26.10.2026"
+    },
+    {
+      "name": "Medienservice Sachsen, Kappungsgrenze für Dresden und Leipzig verlängert",
+      "url": "https://www.medienservice.sachsen.de/medien/news/1087981",
+      "stand": "10.06.2025, gültig bis 30.06.2027"
+    },
+    {
+      "name": "Stadt Leipzig, Soziale Erhaltungssatzungen: die Gebiete",
+      "url": "https://www.leipzig.de/leipzig-strategie/stadtentwicklung/stadterneuerung/soziale-erhaltungssatzungen/die-gebiete",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Soziale Erhaltungssatzungen: Antrags- und Genehmigungsverfahren",
+      "url": "https://www.leipzig.de/leipzig-strategie/stadtentwicklung/stadterneuerung/soziale-erhaltungssatzungen/antrags-und-genehmigungsverfahren",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Soziale Erhaltungssatzungen: Allgemeines Vorkaufsrecht",
+      "url": "https://www.leipzig.de/leipzig-strategie/stadtentwicklung/stadterneuerung/soziale-erhaltungssatzungen/allgemeines-vorkaufsrecht",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Städtebauliche Erhaltungssatzungen",
+      "url": "https://www.leipzig.de/bauen-und-wohnen/bauen/staedtebauliche-erhaltungssatzungen",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Abgeschlossenes Sanierungsgebiet Leipzig-Lindenau",
+      "url": "https://www.leipzig.de/bauen-und-wohnen/foerdergebiete/leipziger-westen/sanierungsgebiet-leipzig-lindenau",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Abgeschlossenes Sanierungsgebiet Leipzig-Lindenau II",
+      "url": "https://www.leipzig.de/bauen-und-wohnen/foerdergebiete/leipziger-westen/sanierungsgebiet-leipzig-lindenau-ii",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Ausgleichsbeträge in Sanierungsgebieten",
+      "url": "https://www.leipzig.de/leipzig-strategie/stadtentwicklung/stadterneuerung/ausgleichsbeitraege-in-sanierungsgebieten",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadtarchiv Leipzig, Eingemeindungsdaten",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.1_Dez1_Allgemeine_Verwaltung/10.9_Stadtarchiv/Eingemeindungsdaten.pdf",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Mein Stadtteil: Lindenau",
+      "url": "https://www.leipzig.de/mein-stadtteil/stadtbezirk-alt-west/lindenau",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Mein Stadtteil: Leutzsch",
+      "url": "https://www.leipzig.de/mein-stadtteil/stadtbezirk-alt-west/leutzsch",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "INSA-Fahrplanauskunft (Straßenbahn und S-Bahn), Verbindungen bis Leipzig Hauptbahnhof",
+      "url": "https://reiseauskunft.insa.de/",
+      "stand": "Fahrplan Dienstag 10.11.2026 ab 9 Uhr, abgefragt 26.10.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "Einwohner 2025: Lindenau 8.813 (2015: 7.786), Altlindenau 19.172 (16.216), Leutzsch 11.490; Summe 39.475, +16 % ggü. 34.030 (2015)",
+      "fundstelle": "leipzig-west.md Nr. 1–3; STAT 2/1"
+    },
+    {
+      "zahl": "Durchschnittsalter 36,0 / 36,8 / 42,9, Stadt 42,4; Einpersonenhaushalte Lindenau 64 %",
+      "fundstelle": "leipzig-west.md Nr. 4, 5; STAT 2/3, 2/10"
+    },
+    {
+      "zahl": "Gebäude mit Wohnungen 603 / 1.288 / 1.143; bis 1918 53 / 61 / 28 %; Leutzsch 1919–48 31 %; 1–2 Wohnungen Leutzsch 396; Ø Wohnfläche 65,9 / 64,5, Stadt 70,3; Fertigstellungen Lindenau 2024 345",
+      "fundstelle": "leipzig-west.md Nr. 6–10; STAT 6/3, 6/4, 6/5"
+    },
+    {
+      "zahl": "ETW Wiederverkauf Alt-West: 257 / Ø 2.738 / Median 2.563 / 1.259–5.184 / 64 m²; Sanierung 2010–2019: 71 / 2.943; Stadt 2.850; bezugsfrei 3.054, vermietet 2.707",
+      "fundstelle": "leipzig-west.md Nr. 12; L2, L4; GMB Tab. 99 S. 71, Tab. 101 S. 72"
+    },
+    {
+      "zahl": "Erstverkauf saniert: Lindenau 6.785, Altlindenau 5.749; Neubau ohne Stellplatz Altlindenau 17 / 5.531",
+      "fundstelle": "leipzig-west.md Nr. 14, 15; GMB Tab. 80 S. 61, Tab. 73 S. 57"
+    },
+    {
+      "zahl": "MFH Altwest 35 / 77,5 Mio. € / 18,9 % (höchster Anteil); Stadt 229 / 410,1; saniert mit Ertragsdaten 16 / 1.773 / 6,84 / 21,9 / NAR 3,2 / Leerstand 2,8; Stadt 23,1 / 1.825 / 3,1; Leutzsch 5 / 1.625; GrESt 5,5 %",
+      "fundstelle": "leipzig-west.md Nr. 17–19; L8, L9; GMB Tab. 22, 25, 26"
+    },
+    {
+      "zahl": "BRW-Index MFH mittel: 2020 100, 2023 120, 2025 101, 2026 106; Sondereigentum 2023 2.841, 2025 5.163; BRW-Beschluss 26.02.2026",
+      "fundstelle": "L1, L10; GMB Tab. 68, 111; Grundlagen Quelle BRW"
+    },
+    {
+      "zahl": "BRW 01.01.2026: Merseburger 1.050 (880, GFZ 2,4), Jordan 1.100 (950, 2,4), Birken 820, Karl-Heine 490 (0,4); William-Zipperer 700, Georg-Schwarz 600, Jahnallee 1.150 (1.050); Otto-Schmiedt 590 (0,4), Karl-Schurz/Blüthner 450; MFH-Wohnbauzonen 600–1.100 / 600–1.150 / 450–700; Leutzsch fast alle unverändert",
+      "fundstelle": "leipzig-west.md Nr. 23–34 und Spanne darunter; summ.py grid_west.json"
+    },
+    {
+      "zahl": "Wohnlage: Lindenau 680 Adr., 14/62/17/7 %, Lionstraße 24/24; Altlindenau 1.422, 14/28/52/7 %, gut+sehr gut 834 = 59 %; Leutzsch 1.290, 23/31/16/31 %, gut+sehr gut 597 = 46 %, Otto-Schmiedt 84/84, Rathenau 47/47, Grabau 35/35; Lindenau gut+sehr gut 162 = 24 %",
+      "fundstelle": "leipzig-west.md Nr. 20–22"
+    },
+    {
+      "zahl": "Lagefaktoren außerhalb Innenstadt 0,976 / 1,000 / 1,051 / 1,061; Mietspiegel 01.07.2025–30.06.2027",
+      "fundstelle": "L12, L16; MS S. 33"
+    },
+    {
+      "zahl": "Mietpreisbremse bis 30.06.2027, 10 %, §§ 556e, 556f; Kappung 15 % in drei Jahren bis 30.06.2027",
+      "fundstelle": "L20, L21"
+    },
+    {
+      "zahl": "Erhaltung: Lindenau und Alt-Lindenau 05.07.2020, Leutzsch 03.04.2022; Alt-Lindenau 101 ha / 10.380 Wohnungen; Leutzsch 20 ha / 2.100 Wohnungen; Lindenau fast ganzer OT und Plagwitz nördlich Kanal; städtebauliche Erhaltungssatzung 30.09.2023",
+      "fundstelle": "L23, L25, L26; leipzig-west.md Nr. 35, 36"
+    },
+    {
+      "zahl": "Genehmigung vor Baubeginn, auch ohne Bauantrag, auch selbst genutzt; Monatsfrist; Vorkaufsrecht bebaute Grundstücke, Abwendungsvereinbarung",
+      "fundstelle": "L33, L34"
+    },
+    {
+      "zahl": "Sanierungsgebiet Lindenau 20 ha, 17.02.1993, Aufhebung 28.04.2021, Westbad, Roßmarktstraße, Lindenauer Markt (Zone 71300654); Lindenau II 50 ha, 10.12.2003, 17.05.2023; Ausgleichsbetrag, anteilig, binnen eines Monats, Tilgungsdarlehen",
+      "fundstelle": "leipzig-west.md Nr. 37–39; L27"
+    },
+    {
+      "zahl": "Eingemeindung Lindenau 01.01.1891, Leutzsch 01.01.1922; Charakter Lindenau und Leutzsch nach Stadtteilseiten",
+      "fundstelle": "leipzig-west.md Nr. 40–42; L29, L31"
+    },
+    {
+      "zahl": "Fahrzeiten: Felsenkeller Tram 3 22 min; Lützner/Merseburger Tram 15 24 min; Lindenauer Markt 7/15 21 min; Georg-Schwarz-/Merseburger 7 24 min; S-Bf Leutzsch S6 16, S1 18 min; Rathaus Leutzsch 7 28 min",
+      "fundstelle": "leipzig-west.md Nr. 44–49"
+    },
+    {
+      "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, §§ 656a–656d BGB; § 34c und § 34i GewO; Timon Fischer Geschäftsführer, Immobilienfinanzierung; Europace und Baufinex",
+      "fundstelle": "maklerprovision.njk, kaufen.njk, team/timon-fischer.njk; wie berlin-pankow.json"
+    }
+  ]
+}

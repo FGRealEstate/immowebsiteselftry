@@ -1,15 +1,186 @@
 ---
-layout: base.njk
-title: Immobilienangebote Berlin, Leipzig & Dresden | Fischer & Geserich
+layout: fgs-page.njk
+fgsHero: false
+title: "Immobilienangebote in Berlin, Leipzig und Dresden | Fischer & Geserich"
 permalink: angebote.html
-description: "Aktuelle Immobilienangebote von Fischer & Geserich: Eigennutz, Kapitalanlage und Projekte mit klarer Strategie-Kennzeichnung und direkter Anfrage."
 canonicalPath: /angebote.html
+description: "Aktuelle Immobilienangebote von Fischer & Geserich: Wohnungen und Projekte, gekennzeichnet nach Eigennutz oder Kapitalanlage, mit Kennzahlen und direkter Anfrage."
+# Brief Design-Pass §4.5: neue Angebotskarten, „Foto folgt“ in Markenfarben, Filter auf Desktop in einer Zeile,
+# kurzer Einstieg, 300–400 Wörter rund um die Angebote. Daten und Webhooks unverändert (_data/propstack.js).
+# Die Filter-IDs (filter-strategie … filter-sortierung) und data-* Felder bleiben wie in der alten Vorlage.
+# CP4 (28.10.2026, Design-Sprint-Brief 5.4): Titelzeile ohne Foto, Filter als ruhige Zeile, Karten aus fgs-offer-card.njk
+# (Foto, eine Zeile Einordnung, Titel, Preis, Eckdaten; keine Etiketten auf dem Foto), Erklärtexte zweispaltig.
+# Entfallen: Inhaltsverzeichnis im Kopf (pg.toc), Kicker über den H2 (Update 6 §3.0), Linkliste unten (pg.related, Brief 3.7).
+# Filter-IDs, data-* Felder, Skript und ItemList unverändert.
+pg:
+  crumb: "Angebote"
+  kicker: "Eigennutz und Kapitalanlage"
+  h1: "Aktuelle Immobilienangebote in Berlin, Leipzig und Dresden"
+  intro: "Hier finden Sie alle Wohnungen und Projekte, die wir gerade vermarkten. Jedes Angebot ist als Eigennutz oder Kapitalanlage gekennzeichnet; bei Kapitalanlagen sehen Sie Kaltmiete und Bruttorendite, sobald beide Angaben vorliegen."
+  buttons:
+    - { label: "Angebote ansehen", href: "#angebote" }
+    - { label: "Gesuch anlegen", href: "/gesuch-anlegen/", line: true }
+  faqTitle: "Häufige Fragen zu unseren Angeboten"
+  faq:
+    - q: "Wie frage ich ein Angebot an?"
+      a: "Öffnen Sie das Angebot und wählen Sie „Objekt anfragen“. Ihre Anfrage wird diesem Objekt direkt zugeordnet und wir melden uns persönlich bei Ihnen. Auf Wunsch erhalten Sie weitere Unterlagen und einen Besichtigungstermin."
+    - q: "Was bedeuten „Eigennutz“ und „Kapitalanlage“?"
+      a: "Die Kennzeichnung zeigt, für welchen Zweck wir ein Objekt anbieten: zum Selbstbezug oder als vermietete Anlage. Bei Kapitalanlagen zeigen wir zusätzlich Kaltmiete und Bruttorendite, wenn uns beide Angaben vorliegen."
+    - q: "Wie wird die Bruttorendite berechnet?"
+      a: "Jahreskaltmiete geteilt durch Kaufpreis, mal 100. Kaufnebenkosten, nicht umlagefähiges Hausgeld und die Finanzierung sind darin nicht enthalten. Wie sich ein Objekt mit Ihrer Finanzierung rechnet, zeigt der Investment-Check auf der Objektseite oder das <a href=\"/investment-lab.html\">Investment Lab</a>."
+    - q: "Kann ich den Kauf über Sie finanzieren?"
+      a: "Ja. Wir vergleichen Finanzierungen über Europace, Baufinex und direkte Bankkontakte und prüfen mit Ihnen Eigenkapital und Kaufpreisrahmen, auch bevor Sie ein Objekt anfragen. Mehr dazu auf der Seite <a href=\"/finanzierungsberatung.html\">Finanzierungsberatung</a>."
+    - q: "Was tun, wenn kein passendes Angebot dabei ist?"
+      a: "Legen Sie ein Gesuch an. Kauf und Miete sind zwei getrennte Suchen; Sie geben Budget, Gebiet, Größe und Ausstattungswünsche an. Wir berücksichtigen Ihr Suchprofil, wenn neue Angebote hinzukommen."
+  contact: lennart
+  closing:
+    title: "Fragen zu einem Angebot?"
+    text: "Wir sagen Ihnen offen, was für ein Objekt spricht und was dagegen. Das erste Gespräch kostet Sie nichts."
+    button: gespraech
+  schema:
+    type: CollectionPage
+    id: angebote
 ---
-<div class="fg-offers-v3"><section class="fg-library-hero"><div class="fg-premium-shell"><p class="fg-premium-kicker fg-premium-kicker-light">Aktuelle Immobilien</p><h1>Objekte nach Strategie statt nur nach Zimmerzahl.</h1><p>Eigennutz, Kapitalanlage und Projekte werden gleichwertig dargestellt. Investmentobjekte erhalten zusätzliche Kennzahlen, wenn die dafür nötigen Daten in Propstack gepflegt sind.</p></div></section>
-<section class="fg-premium-shell"><div class="fg-offer-filter"><form id="property-filter-form" class="fg-offer-filter-grid"><select id="filter-strategie" class="fg-offer-filter-control"><option value="">Strategie (Alle)</option><option value="eigennutz">Eigennutz</option><option value="kapitalanlage">Kapitalanlage</option></select><select id="filter-vermarktung" class="fg-offer-filter-control"><option value="">Vermarktung (Alle)</option>{% for type in propstack.filters.marketingTypes %}<option value="{{ type }}">{{ type }}</option>{% endfor %}</select><select id="filter-objektart" class="fg-offer-filter-control"><option value="">Objektart (Alle)</option>{% for type in propstack.filters.propertyTypes %}<option value="{{ type }}">{{ type }}</option>{% endfor %}</select><input id="filter-preis" class="fg-offer-filter-control" inputmode="numeric" placeholder="Max. Preis (€)"><select id="filter-sortierung" class="fg-offer-filter-control"><option value="">Sortierung</option><option value="price-asc">Preis aufsteigend</option><option value="price-desc">Preis absteigend</option><option value="yield-desc">Rendite absteigend</option><option value="area-desc">Fläche absteigend</option></select><button class="btn-85 fg-offer-filter-button" type="submit"><i class="fas fa-search"></i> Angebote filtern</button></form><button id="filter-reset" type="button" class="mt-4 text-sm font-bold text-primary">Filter zurücksetzen</button></div>
-<section><div class="fg-offer-section-head"><div><p class="fg-premium-kicker">Projekte</p><h2>Projektangebote</h2></div><span class="fg-library-count">{{ propstack.projects | length }} Projekte</span></div><div class="fg-offer-grid">{% for project in propstack.projects %}<article class="fg-offer-card fg-project-card offer-filter-card" data-strategie="{{ project.strategy_keys | join(',') }}" data-vermarktung="{{ project.marketing_type }}" data-objektart="projekt" data-preis="{{ project.min_price_raw or '' }}" data-flaeche="{{ project.max_area or '' }}" data-rendite=""><a href="{{ project.url }}" class="fg-offer-card-media">{% if project.main_image %}<img src="{{ project.main_image }}" alt="{{ project.name }}" loading="lazy">{% else %}<div class="h-full grid place-items-center text-primary"><i class="fas fa-building text-5xl"></i></div>{% endif %}<div class="fg-offer-badges"><span class="fg-offer-badge gold">Projekt</span><span class="fg-offer-badge">{{ project.strategy }}</span></div></a><div class="fg-offer-card-body"><div class="fg-offer-card-eyebrow"><span>{{ project.available_unit_count }} Einheiten</span><span>{{ project.marketing_type }}</span></div><h3>{{ project.name }}</h3><p class="fg-offer-location"><i class="fas fa-location-dot"></i> {{ project.location or 'Standort auf Anfrage' }}</p><p class="fg-offer-price">{{ project.price_range or 'Preis auf Anfrage' }}</p><div class="fg-offer-facts"><div class="fg-offer-fact"><small>Wohnflächen</small><strong>{{ project.area_range or 'variabel' }}</strong></div><div class="fg-offer-fact"><small>Zimmer</small><strong>{{ project.room_range or 'variabel' }}</strong></div></div><a href="{{ project.url }}" class="fg-offer-card-link"><span>Projekt ansehen</span><i class="fas fa-arrow-right"></i></a></div></article>{% endfor %}</div></section>
-<section style="padding:22px 0 80px"><div class="fg-offer-section-head"><div><p class="fg-premium-kicker">Einzelobjekte</p><h2>Aktuelle Einheiten</h2></div><span class="fg-library-count"><b id="object-count">{{ propstack.standaloneProperties | length }}</b> Treffer</span></div>{% if propstack.standaloneProperties and propstack.standaloneProperties.length %}<div id="property-grid" class="fg-offer-grid">{% for property in propstack.standaloneProperties %}<article class="fg-offer-card offer-filter-card property-card" data-strategie="{{ property.strategy_key }}" data-vermarktung="{{ property.marketing_type or '' }}" data-objektart="{{ property.property_type or '' }}" data-preis="{{ property.price_raw or '' }}" data-flaeche="{{ property.living_space_raw or '' }}" data-rendite="{{ property.gross_yield_raw or '' }}"><a href="{{ property.url }}" class="fg-offer-card-media">{% if property.main_image %}<img src="{{ property.main_image }}" alt="{{ property.title }}" loading="lazy">{% else %}<div class="h-full grid place-items-center text-primary"><i class="fas fa-home text-5xl"></i></div>{% endif %}<div class="fg-offer-badges"><span class="fg-offer-badge gold">{{ property.strategy }}</span>{% if property.marketing_type %}<span class="fg-offer-badge">{{ property.marketing_type }}</span>{% endif %}</div></a><div class="fg-offer-card-body"><div class="fg-offer-card-eyebrow"><span>{{ property.property_type or 'Immobilie' }}</span>{% if property.unit_number %}<span>{{ property.unit_number }}</span>{% endif %}</div><h3>{{ property.title }}</h3><p class="fg-offer-location"><i class="fas fa-location-dot"></i> {{ property.location or 'Standort auf Anfrage' }}</p><p class="fg-offer-price">{{ property.price or 'Preis auf Anfrage' }}</p><div class="fg-offer-facts">{% if property.living_space %}<div class="fg-offer-fact"><small>Wohnfläche</small><strong>{{ property.living_space }}</strong></div>{% endif %}{% if property.rooms %}<div class="fg-offer-fact"><small>Zimmer</small><strong>{{ property.rooms }}</strong></div>{% endif %}{% if property.is_investment and property.gross_yield %}<div class="fg-offer-fact"><small>Bruttorendite</small><strong>{{ property.gross_yield }}</strong></div>{% endif %}{% if property.is_investment and property.cold_rent %}<div class="fg-offer-fact"><small>Kaltmiete</small><strong>{{ property.cold_rent }}</strong></div>{% endif %}</div><a href="{{ property.url }}" class="fg-offer-card-link"><span>Objekt ansehen</span><i class="fas fa-arrow-right"></i></a></div></article>{% endfor %}</div><div id="no-results" class="fg-library-empty">Keine passenden Immobilien gefunden.</div>{% else %}<div class="fg-premium-card text-center">Aktuell sind keine Einzelobjekte freigegeben.</div>{% endif %}</section></section>
-<section class="fg-premium-section fg-premium-section-dark"><div class="fg-premium-shell"><div class="fg-premium-cta"><div><p class="fg-premium-kicker fg-premium-kicker-light">Nichts Passendes dabei?</p><h2>Gesuch hinterlegen statt täglich Portale prüfen.</h2><p>Ihr Suchprofil läuft über unsere bestehende Propstack-Strecke und kann passend zu neuen Angeboten berücksichtigt werden.</p></div><a href="/gesuch-anlegen/" class="btn-85 px-7 py-4">Gesuch anlegen <i class="fas fa-arrow-right"></i></a></div></div></section></div>
+{% from "fgs-offer-card.njk" import projectCard %}
+{% from "fgs-macros.njk" import angebot %}
+{#- Update 7 §3.4: Angebote mit Foto zuerst, auch bei jeder Sortierung im Filter. Design-Pass 3 §4.5: „mit Foto“ heißt mit
+    Titelbild nach der Regel aus §3.8 (cover); Angebote mit gestaltetem Titel stehen am Ende. -#}
+{% set unitsAlle = propstack.standaloneProperties or [] %}
+{% set projectsAlle = propstack.projects or [] %}
+{#- Update 22 §5: kein Angebot ohne Foto der Immobilie selbst. Angebote ohne Titelbild (cover) stehen nicht mehr im Raster. -#}
+{% set units = unitsAlle | selectattr("cover") %}
+{% set projects = projectsAlle | selectattr("cover") %}
+
+<section class="fgs-section fgs-offers" id="angebote" aria-labelledby="angebote-titel">
+  <div class="fgs-wrap">
+    <h2 class="fgs-sr" id="angebote-titel">Alle Angebote</h2>
+    {% if units.length or projects.length %}
+    <form id="property-filter-form" class="fgd-form fgs-offer-filter" aria-label="Angebote filtern">
+      <label>Strategie<select id="filter-strategie"><option value="">Alle</option><option value="eigennutz">Eigennutz</option><option value="kapitalanlage">Kapitalanlage</option></select></label>
+      <label>Vermarktung<select id="filter-vermarktung"><option value="">Alle</option>{% for type in propstack.filters.marketingTypes %}<option value="{{ type }}">{{ type }}</option>{% endfor %}</select></label>
+      <label>Objektart<select id="filter-objektart"><option value="">Alle</option>{% for type in propstack.filters.propertyTypes %}<option value="{{ type }}">{{ type }}</option>{% endfor %}</select></label>
+      <label>Preis bis (€)<input id="filter-preis" inputmode="numeric" placeholder="beliebig" autocomplete="off"></label>
+      <label>Sortierung<select id="filter-sortierung"><option value="">Titel A–Z</option><option value="price-asc">Preis aufsteigend</option><option value="price-desc">Preis absteigend</option><option value="yield-desc">Rendite absteigend</option><option value="area-desc">Fläche absteigend</option></select></label>
+      <div class="fgs-offer-filter-actions">
+        <button class="fgs-btn fgs-btn--secondary" type="submit">Anzeigen</button>
+        <button id="filter-reset" class="fgs-offer-reset" type="reset">Zurücksetzen</button>
+      </div>
+    </form>
+
+    {% if projects.length %}
+    <div class="fgs-offer-group" id="projekte" data-offer-group>
+      <div class="fgs-offer-head">
+        <h2>Mehrere Einheiten in einem Haus</h2>
+        <p class="fgs-small">{{ projects.length }} {{ "Projekt" if projects.length == 1 else "Projekte" }}</p>
+      </div>
+      <div class="fgs-project-list">
+        {% for p in projects %}{{ projectCard(p, loop.first) | safe }}{% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="fgs-offer-group" id="einzelobjekte">
+      <div class="fgs-offer-head">
+        <h2>Wohnungen und Häuser</h2>
+        <p class="fgs-small" aria-live="polite"><b id="object-count">{{ units.length }}</b> {{ "Angebot" if units.length == 1 else "Angebote" }}</p>
+      </div>
+      {% if units.length %}
+      <ul id="property-grid" class="fgs-obj-grid" role="list">
+        {% for o in units %}{{ angebot(o, filter=true) }}{% endfor %}
+      </ul>
+      <p id="no-results" class="fgs-note" hidden>Zu diesen Filtern passt gerade kein Angebot. Setzen Sie den Filter zurück oder <a href="/gesuch-anlegen/">legen Sie ein Gesuch an</a>.</p>
+      {% else %}
+      <p class="fgs-note">Gerade ist kein Einzelobjekt freigegeben. <a href="/gesuch-anlegen/">Legen Sie ein Gesuch an</a>, dann berücksichtigen wir Ihr Suchprofil bei neuen Angeboten.</p>
+      {% endif %}
+    </div>
+    {% else %}
+    <p class="fgs-note">Gerade ist kein Angebot freigegeben. <a href="/gesuch-anlegen/">Legen Sie ein Gesuch an</a>, dann berücksichtigen wir Ihr Suchprofil bei neuen Angeboten.</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="fgs-section" id="kennzahlen" aria-labelledby="kennzahlen-titel">
+  <div class="fgs-wrap fgs-cols fgs-cols--stapeln">
+    <div class="fgs-cols-head"><h2 id="kennzahlen-titel">Kennzeichnung und Kennzahlen</h2></div>
+    <div class="fgs-cols-body fgs-prose">
+      <h3>Eigennutz oder Kapitalanlage</h3>
+      <p>Jedes Angebot trägt eine von zwei Kennzeichnungen. Sie zeigt, für welchen Zweck wir das Objekt anbieten: zum Selbstbezug oder als vermietete Anlage. So sehen Sie auf einen Blick, welche Angebote zu Ihrem Vorhaben passen.</p>
+      <h3>Projekte</h3>
+      <p>Ein Projekt fasst mehrere Einheiten in einem Haus zusammen. Auf der Projektseite stehen alle freien Einheiten mit Preis, Wohnfläche und Zimmerzahl; Sie fragen jede Einheit einzeln an.</p>
+      <h3>Bruttorendite und Preis pro Quadratmeter</h3>
+      <p>Die Bruttorendite ist die Jahreskaltmiete geteilt durch den Kaufpreis. Sie hilft beim Vergleich, sagt aber noch nichts über Ihren Cashflow, denn Kaufnebenkosten, Hausgeld und Zinsen fehlen. Auf jeder Objektseite einer Kapitalanlage rechnet der Investment-Check diese Posten mit Ihren eigenen Annahmen durch.</p>
+      <p>Bevor Sie kaufen, lohnt der Blick in Mietvertrag, Hausgeldabrechnung und Protokolle. Diese Prüfung übernehmen wir in der <a href="/ankaufsberatung.html">Ankaufsberatung</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="fgs-section" id="gesuch" aria-labelledby="gesuch-titel">
+  <div class="fgs-wrap fgs-cols">
+    <div class="fgs-cols-head"><h2 id="gesuch-titel">Nichts Passendes dabei?</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Legen Sie ein Gesuch an. Kauf und Miete sind zwei getrennte Suchen: Sie nennen Budget, Gebiet, Größe und Ausstattungswünsche und wir berücksichtigen Ihr Suchprofil, wenn neue Angebote hinzukommen.</p>
+      <p>Wenn Sie kaufen möchten, klären Sie am besten vorher Ihren Finanzierungsrahmen. Dann wissen Sie, welcher Kaufpreis zu Ihrem Eigenkapital passt, und können bei einem passenden Angebot schnell entscheiden.</p>
+      <div class="fgs-btns">
+        <a class="fgs-btn fgs-btn--primary" href="/gesuch-anlegen/">Gesuch anlegen</a>
+        <a class="fgs-btn fgs-btn--secondary" href="/finanzierungsberatung.html">Finanzierung prüfen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if units.length or projects.length %}
 <script>
-(function(){const form=document.getElementById('property-filter-form'),cards=[...document.querySelectorAll('.offer-filter-card')],count=document.getElementById('object-count'),no=document.getElementById('no-results');if(!form||!cards.length)return;const parse=v=>{const n=Number(String(v||'').replace(/\./g,'').replace(',','.').replace(/[^0-9.]/g,''));return Number.isFinite(n)?n:0};function run(e){e?.preventDefault();const strategy=document.getElementById('filter-strategie').value.toLowerCase(),marketing=document.getElementById('filter-vermarktung').value.toLowerCase(),type=document.getElementById('filter-objektart').value.toLowerCase(),max=parse(document.getElementById('filter-preis').value),sort=document.getElementById('filter-sortierung').value;let visible=cards.filter(c=>(!strategy||String(c.dataset.strategie||'').split(',').includes(strategy))&&(!marketing||c.dataset.vermarktung.toLowerCase()===marketing)&&(!type||c.dataset.objektart.toLowerCase().includes(type))&&(!max||!parse(c.dataset.preis)||parse(c.dataset.preis)<=max));cards.forEach(c=>c.hidden=!visible.includes(c));const grid=document.getElementById('property-grid');if(grid){const units=visible.filter(c=>c.classList.contains('property-card'));if(sort){units.sort((a,b)=>sort==='price-asc'?parse(a.dataset.preis)-parse(b.dataset.preis):sort==='price-desc'?parse(b.dataset.preis)-parse(a.dataset.preis):sort==='yield-desc'?parse(b.dataset.rendite)-parse(a.dataset.rendite):sort==='area-desc'?parse(b.dataset.flaeche)-parse(a.dataset.flaeche):0);units.forEach(c=>grid.appendChild(c))}if(count)count.textContent=units.length;if(no)no.style.display=units.length?'none':'block'}}form.addEventListener('submit',run);['filter-strategie','filter-vermarktung','filter-objektart','filter-sortierung'].forEach(id=>document.getElementById(id)?.addEventListener('change',run));document.getElementById('filter-reset')?.addEventListener('click',()=>{form.reset();document.getElementById('filter-preis').value='';run()});run()})();
+(function () {
+  var form = document.getElementById('property-filter-form');
+  if (!form) return;
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.offer-filter-card'));
+  var grid = document.getElementById('property-grid');
+  var count = document.getElementById('object-count');
+  var none = document.getElementById('no-results');
+  var projectGroup = document.getElementById('projekte');
+  var val = function (id) { return document.getElementById(id).value.toLowerCase(); };
+  var num = function (v) { var n = Number(String(v || '').replace(/\./g, '').replace(',', '.').replace(/[^0-9.]/g, '')); return isFinite(n) ? n : 0; };
+  var original = grid ? Array.prototype.slice.call(grid.children) : [];
+  function run(event) {
+    if (event) event.preventDefault();
+    var strategy = val('filter-strategie'), marketing = val('filter-vermarktung'), type = val('filter-objektart');
+    var max = num(document.getElementById('filter-preis').value), sort = document.getElementById('filter-sortierung').value;
+    var visible = cards.filter(function (c) {
+      return (!strategy || String(c.dataset.strategie || '').split(',').indexOf(strategy) > -1)
+        && (!marketing || String(c.dataset.vermarktung || '').toLowerCase() === marketing)
+        && (!type || String(c.dataset.objektart || '').toLowerCase().indexOf(type) > -1)
+        && (!max || !num(c.dataset.preis) || num(c.dataset.preis) <= max);
+    });
+    cards.forEach(function (c) { c.hidden = visible.indexOf(c) === -1; });
+    if (projectGroup) projectGroup.hidden = !projectGroup.querySelector('.offer-filter-card:not([hidden])');
+    if (!grid) return;
+    var units = original.slice();
+    var key = { 'price-asc': ['preis', 1], 'price-desc': ['preis', -1], 'yield-desc': ['rendite', -1], 'area-desc': ['flaeche', -1] }[sort];
+    var ohneFoto = function (c) { return c.querySelector('.fgs-offer-placeholder, .fgs-obj-design') ? 1 : 0; };
+    if (key) units.sort(function (a, b) { return (ohneFoto(a) - ohneFoto(b)) || (num(a.dataset[key[0]]) - num(b.dataset[key[0]])) * key[1]; });
+    units.forEach(function (c) { grid.appendChild(c); });
+    var shown = units.filter(function (c) { return !c.hidden; }).length;
+    if (count) count.textContent = shown;
+    if (none) none.hidden = shown > 0;
+  }
+  form.addEventListener('submit', run);
+  form.addEventListener('change', run);
+  form.addEventListener('reset', function () { setTimeout(run, 0); });
+})();
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "https://fg-realestate.de/angebote.html#liste",
+  "name": "Aktuelle Immobilienangebote von Fischer & Geserich",
+  "isPartOf": { "@id": "https://fg-realestate.de/angebote.html#angebote" },
+  "numberOfItems": {{ projects.length + units.length }},
+  "itemListElement": [
+    {% for p in projects %}{ "@type": "ListItem", "position": {{ loop.index }}, "url": "https://fg-realestate.de{{ p.url }}", "name": {{ p.name | dump | safe }} }{% if not loop.last or units.length %},{% endif %}
+    {% endfor %}{% for o in units %}{ "@type": "ListItem", "position": {{ projects.length + loop.index }}, "url": "https://fg-realestate.de{{ o.url }}", "name": {{ o.title | dump | safe }} }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

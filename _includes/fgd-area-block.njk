@@ -1,0 +1,19 @@
+{#- Gebietsblock auf Objekt-, Projekt- und Referenzseiten (Update 4, 3.2): verlinkt die passende Gebietsseite.
+    area kommt aus _data/propstack.js (findArea: Ortsteil → Ort → Landkreis → Stadt, Daten aus _data/gebiete.js)
+    = { name, nameLang, inOrt, url }. Ohne Treffer (Ort außerhalb unserer Gebiete oder ohne Ortsangabe)
+    verweist der Block auf die Übersicht aller Gebiete. -#}
+{% from "fgd-icons.njk" import icon %}
+{%- macro areaBlock(area, id="lage-markt") -%}
+<section class="fgd-listing-block fgd-area-block" aria-labelledby="{{ id }}">
+  <p class="fgd-kicker">Lage und Markt</p>
+  {% if area %}
+  <h2 id="{{ id }}">Immobilienmarkt {{ area.inOrt }}</h2>
+  <p>Auf unserer Seite zu {{ area.nameLang }} stehen Marktzahlen mit Quellen, Hinweise zu Verkauf, Kauf und Finanzierung und Antworten auf häufige Fragen.</p>
+  <a class="fgd-textlink" href="{{ area.url }}">Zur Seite {{ area.nameLang }}{{ icon("arrow") | safe }}</a>
+  {% else %}
+  <h2 id="{{ id }}">Unsere Gebiete</h2>
+  <p>Für Berlin, Brandenburg, Leipzig und Dresden haben wir eigene Seiten mit Marktzahlen, Quellen und Antworten auf häufige Fragen.</p>
+  <a class="fgd-textlink" href="/standorte/">Alle Gebiete ansehen{{ icon("arrow") | safe }}</a>
+  {% endif %}
+</section>
+{%- endmacro -%}

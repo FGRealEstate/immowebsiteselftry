@@ -584,3 +584,6 @@ function json(statusCode, body) {
     body: JSON.stringify(body),
   };
 }
+
+// Formulare ohne JavaScript (Update 6, §1): POST als Formular → gleiche Nutzlast, dann Weiterleitung. Siehe _shared/formpost.js.
+exports.handler = require("./_shared/formpost").wrap("propstack-inquiry", exports.handler);

@@ -216,7 +216,7 @@ async function createMicrosoftTeamsCalendarEvent(accessToken, booking, fullName,
   const bodyHtml = `
     <div style="font-family:Arial,sans-serif;font-size:14px;line-height:1.5;">
       <h2>${escapeHtml(subject)}</h2>
-      <p>Vielen Dank für Ihre Terminbuchung. Der Termin findet online über Microsoft Teams statt.</p>
+      <p>Vielen Dank für Ihre Terminbuchung. Der Termin findet per Teams oder persönlich statt.</p>
 
       <h3>Kontaktdaten</h3>
       <p>

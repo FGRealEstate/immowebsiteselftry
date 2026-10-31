@@ -7,11 +7,116 @@
   "keywords": [
     "kaufnebenkosten"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Immobilienkauf",
-  "formula": null,
+  "formula": "Kaufnebenkosten = Kaufpreis × (Grunderwerbsteuersatz + Notar und Grundbuch + Provisionssatz)",
   "sources": [],
   "assistantAnswer": "Zusätzliche Erwerbskosten neben dem Kaufpreis. Kaufnebenkosten umfassen insbesondere Grunderwerbsteuer, Notar/Grundbuch und gegebenenfalls Maklercourtage. Zusätzlich können Finanzierung, Gutachten, Renovierung oder Möblierung den tatsächlichen Kapitalbedarf erhöhen.",
-  "explanation": "Kaufnebenkosten umfassen insbesondere Grunderwerbsteuer, Notar/Grundbuch und gegebenenfalls Maklercourtage. Zusätzlich können Finanzierung, Gutachten, Renovierung oder Möblierung den tatsächlichen Kapitalbedarf erhöhen.",
-  "practiceExample": "400.000 € Kaufpreis und 10 % klassische Erwerbsnebenkosten ergeben 40.000 € zusätzlichen Kapitalbedarf; die Gesamtinvestition liegt vor Renovierung bereits bei 440.000 €."
+  "explanation": "Kaufnebenkosten sind die Kosten, die beim Kauf einer Immobilie zusätzlich zum Kaufpreis anfallen. Den größten Teil machen drei Posten aus: die Grunderwerbsteuer, die Kosten für Notar und Grundbuch und, wenn ein Makler beteiligt ist, die Maklerprovision.",
+  "practiceExample": "Eine Eigentumswohnung in Berlin kostet 300.000 €, ein Makler ist beteiligt. Die Grunderwerbsteuer beträgt 18.000 €, Ihr Anteil an der Provision 10.710 €, Notar und Grundbuch kosten etwa 4.500 bis 6.000 €. Zusammen sind das 33.210 bis 34.710 €, also gut 11 % des Kaufpreises. Dieselbe Wohnung in Brandenburg kostet 1.500 € mehr Grunderwerbsteuer. Ohne Makler entfällt die Provision; die Nebenkosten liegen in Berlin dann bei 22.500 bis 24.000 €.",
+  "ausbau": {
+    "einordnung": [
+      "Kaufnebenkosten sind die Kosten, die beim Kauf einer Immobilie zusätzlich zum Kaufpreis anfallen. Den größten Teil machen drei Posten aus: die Grunderwerbsteuer, die Kosten für Notar und Grundbuch und, wenn ein Makler beteiligt ist, die Maklerprovision.",
+      "Die Grunderwerbsteuer legt jedes Bundesland selbst fest. In Berlin beträgt sie 6 %,[[1]] in Brandenburg 6,5 %[[2]] und in Sachsen 5,5 % des Kaufpreises.[[3]] Für Notar und Grundbuch sind etwa 1,5 bis 2 % anzusetzen; die Gebühren sind gesetzlich festgelegt.[[4]] Nach § 448 BGB trägt sie der Käufer.[[5]] Bei der Maklerprovision sind in Berlin bei Eigentumswohnungen und Einfamilienhäusern 3,57 % je Seite häufig.[[6]] Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision.",
+      "Dazu können weitere Kosten kommen, etwa für ein Gutachten, eine Renovierung oder den Umzug. Sie gehören nicht zu den Kaufnebenkosten im engen Sinn, wohl aber zu dem Geld, das Sie für den Kauf brauchen."
+    ],
+    "beispiel": [
+      "Eine Eigentumswohnung in Berlin kostet 300.000 €, ein Makler ist beteiligt. Die Grunderwerbsteuer beträgt 18.000 €, Ihr Anteil an der Provision 10.710 €, Notar und Grundbuch kosten etwa 4.500 bis 6.000 €. Zusammen sind das 33.210 bis 34.710 €, also gut 11 % des Kaufpreises.",
+      "Dieselbe Wohnung in Brandenburg kostet 1.500 € mehr Grunderwerbsteuer. Ohne Makler entfällt die Provision; die Nebenkosten liegen in Berlin dann bei 22.500 bis 24.000 €."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Planen Sie die Kaufnebenkosten vor der Suche ein, nicht erst beim Notartermin. Fischer & Geserich rät, in der Regel mindestens 10 % des Kaufpreises als Eigenkapital mitzubringen.[[7]] Bringen Sie weniger ein, wird ein Teil der Nebenkosten über das Darlehen bezahlt; je nach Beleihung und Bonität kann der Zins dann deutlich höher liegen.[[8]]"
+        ]
+      },
+      {
+        "h2": "Was es für Anleger heißt",
+        "absaetze": [
+          "Beziehen Sie die Miete auf Kaufpreis plus Nebenkosten. Wer nur den Kaufpreis ansetzt, rechnet die Rendite höher, als sie auf das tatsächlich eingesetzte Geld ist."
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "Senatsverwaltung für Finanzen Berlin: FAQ Grunderwerbsteuer",
+        "url": "https://www.berlin.de/sen/finanzen/steuern/informationen-fuer-steuerzahler-/faq-steuern/artikel.9062.php",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Brandenburg: Gesetz über die Festsetzung des Steuersatzes für die Grunderwerbsteuer vom 23. Juni 2015",
+        "url": "https://bravors.brandenburg.de/gesetze/mdf_2015",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Sächsisches Grunderwerbsteuersatzgesetz vom 20. Dezember 2022",
+        "url": "https://www.revosax.sachsen.de/vorschrift/19800-Saechsisches-Grunderwerbsteuersatzgesetz",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Notarkosten beim Hauskauf",
+        "url": "https://www.finanztip.de/baufinanzierung/notarkosten-haus/",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 448 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__448.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Maklerprovision",
+        "url": "https://fg-realestate.de/maklerprovision/",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Kapitalanlage",
+        "url": "https://fg-realestate.de/kapitalanlage.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Aktuelle Bauzinsen",
+        "url": "https://www.finanztip.de/baufinanzierung/hypothekenzinsen/",
+        "stand": "Stand 25.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "6 % Berlin",
+        "fundstelle": "runde-1.md, K01"
+      },
+      {
+        "zahl": "6,5 % Brandenburg",
+        "fundstelle": "runde-1.md, K03"
+      },
+      {
+        "zahl": "5,5 % Sachsen",
+        "fundstelle": "runde-1.md, K04"
+      },
+      {
+        "zahl": "1,5 bis 2 % Notar und Grundbuch, gesetzliche Gebühren",
+        "fundstelle": "runde-1.md, K12"
+      },
+      {
+        "zahl": "§ 448 Abs. 2 BGB",
+        "fundstelle": "runde-1.md, K11"
+      },
+      {
+        "zahl": "3,57 % je Seite in Berlin häufig",
+        "fundstelle": "runde-1.md, M08"
+      },
+      {
+        "zahl": "mindestens 10 % Eigenkapital (F&G)",
+        "fundstelle": "runde-1.md, E03"
+      },
+      {
+        "zahl": "höherer Zins bei höherer Beleihung",
+        "fundstelle": "runde-1.md, E01"
+      },
+      {
+        "zahl": "Beispiel 300.000 €: 18.000 + 10.710 + 4.500 bis 6.000 = 33.210 bis 34.710 € (11,07 bis 11,57 %); Brandenburg +1.500 €; ohne Makler 22.500 bis 24.000 €",
+        "fundstelle": "Rechnung; Marktprüfung runde-1.md, Abschnitt „Marktprüfung der Beispiele“ (S04)"
+      }
+    ]
+  }
 }

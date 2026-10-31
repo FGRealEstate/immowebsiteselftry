@@ -7,16 +7,100 @@
   "keywords": [
     "wohnfläche"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Immobilienkauf",
-  "explanation": "Wohnfläche ist die nach dem anwendbaren Regelwerk anrechenbare Fläche einer Wohnung. Nach WoFlV zählen unter anderem Keller/Garagen grundsätzlich nicht; Balkone/Terrassen werden regelmäßig nur anteilig und Dachschrägen abhängig von der lichten Höhe berücksichtigt.",
-  "practiceExample": "Ein Raum mit 20 m² Grundfläche unter Dachschrägen kann deutlich weniger als 20 m² Wohnfläche beitragen. Deshalb sind Grundfläche, Nutzfläche und Wohnfläche nicht austauschbar.",
-  "formula": "Berechnung nach anwendbarer Flächenregelung",
+  "explanation": "Die Wohnfläche ist die Fläche einer Wohnung, die nach einem Regelwerk angerechnet wird. Nach der Wohnflächenverordnung (WoFlV) gehören dazu die Räume, die ausschließlich zur Wohnung gehören, außerdem Wintergärten, Balkone, Loggien, Dachgärten und Terrassen.",
+  "practiceExample": "Eine Dachgeschosswohnung hat 40 m² mit mindestens 2 m Höhe, 10 m² unter der Schräge zwischen 1 und 2 m und einen Balkon mit 8 m². Angerechnet werden 40 + 5 + 2 = 47 m² Wohnfläche. Steht im Exposé eine Fläche von 50 m², fehlen 3 m². Bei 5.000 € je m² entspricht das 15.000 €.",
+  "formula": "Wohnfläche = Flächen ab 2 m Höhe + ½ × Flächen von 1 bis unter 2 m Höhe + ¼ × Balkon, Loggia und Terrasse (Regelfall nach WoFlV)",
   "sources": [
     {
       "label": "Wohnflächenverordnung",
       "url": "https://www.gesetze-im-internet.de/woflv/"
     }
   ],
-  "assistantAnswer": "Nach einem Regelwerk ermittelte anrechenbare Fläche. Wohnfläche ist die nach dem anwendbaren Regelwerk anrechenbare Fläche einer Wohnung. Nach WoFlV zählen unter anderem Keller/Garagen grundsätzlich nicht; Balkone/Terrassen werden regelmäßig nur anteilig und Dachschrägen abhängig von der lichten Höhe berücksichtigt."
+  "assistantAnswer": "Nach einem Regelwerk ermittelte anrechenbare Fläche. Wohnfläche ist die nach dem anwendbaren Regelwerk anrechenbare Fläche einer Wohnung. Nach WoFlV zählen unter anderem Keller/Garagen grundsätzlich nicht; Balkone/Terrassen werden regelmäßig nur anteilig und Dachschrägen abhängig von der lichten Höhe berücksichtigt.",
+  "ausbau": {
+    "einordnung": [
+      "Die Wohnfläche ist die Fläche einer Wohnung, die nach einem Regelwerk angerechnet wird. Nach der Wohnflächenverordnung (WoFlV) gehören dazu die Räume, die ausschließlich zur Wohnung gehören, außerdem Wintergärten, Balkone, Loggien, Dachgärten und Terrassen.[[1]]",
+      "Nicht dazu gehören Zubehörräume wie Keller, Abstellräume außerhalb der Wohnung, Waschküchen, Bodenräume, Trockenräume, Heizungsräume und Garagen.[[1]] Flächen mit mindestens 2 m lichter Höhe zählen voll, Flächen zwischen 1 und 2 m zur Hälfte, ebenso unbeheizbare Wintergärten. Balkone, Loggien, Dachgärten und Terrassen werden in der Regel zu einem Viertel angerechnet, höchstens zur Hälfte.[[2]]",
+      "Gemessen wird in der fertigen Wohnung oder anhand einer Bauzeichnung. Wurde anders gebaut als gezeichnet, ist die Fläche neu zu ermitteln.[[3]]"
+    ],
+    "beispiel": [
+      "Eine Dachgeschosswohnung hat 40 m² mit mindestens 2 m Höhe, 10 m² unter der Schräge zwischen 1 und 2 m und einen Balkon mit 8 m². Angerechnet werden 40 + 5 + 2 = 47 m² Wohnfläche.",
+      "Steht im Exposé eine Fläche von 50 m², fehlen 3 m². Bei 5.000 € je m² entspricht das 15.000 €."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Fragen Sie nach der Wohnflächenberechnung und danach, nach welchem Regelwerk sie erstellt wurde. Preise je Quadratmeter lassen sich nur vergleichen, wenn die Flächen gleich berechnet sind."
+        ]
+      },
+      {
+        "h2": "Was es für Verkäufer heißt",
+        "absaetze": [
+          "Legen Sie eine aktuelle Wohnflächenberechnung bereit. Fehlt sie, kann die Finanzierung des Käufers ins Stocken geraten.[[4]]"
+        ]
+      },
+      {
+        "h2": "Was es für Vermieter heißt",
+        "absaetze": [
+          "Bei einer Mieterhöhung nach § 558 BGB zählt die tatsächliche Wohnfläche, auch wenn im Mietvertrag eine andere Fläche steht.[[5]]"
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "§ 2 Wohnflächenverordnung",
+        "url": "https://www.gesetze-im-internet.de/woflv/__2.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 4 Wohnflächenverordnung",
+        "url": "https://www.gesetze-im-internet.de/woflv/__4.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 3 Wohnflächenverordnung",
+        "url": "https://www.gesetze-im-internet.de/woflv/__3.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Startseite",
+        "url": "https://fg-realestate.de/",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Bundesgerichtshof, Pressemitteilung Nr. 189/2015 zum Urteil vom 18.11.2015, VIII ZR 266/14",
+        "url": "https://www.bundesgerichtshof.de/SharedDocs/Pressemitteilungen/DE/2015/2015189.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "was dazugehört und was nicht",
+        "fundstelle": "runde-1.md, W01, W02"
+      },
+      {
+        "zahl": "voll ab 2 m, Hälfte 1 bis 2 m und unbeheizbare Wintergärten, Balkon ¼ bis ½",
+        "fundstelle": "runde-1.md, W03"
+      },
+      {
+        "zahl": "Ausmessung oder Bauzeichnung, neu ermitteln bei Abweichung",
+        "fundstelle": "runde-1.md, W04"
+      },
+      {
+        "zahl": "fehlende Wohnflächenberechnung (F&G)",
+        "fundstelle": "runde-1.md, W06"
+      },
+      {
+        "zahl": "BGH VIII ZR 266/14",
+        "fundstelle": "runde-1.md, W05"
+      },
+      {
+        "zahl": "Beispiel 40 + 5 + 2 = 47 m²; 3 m² × 5.000 €/m² = 15.000 €",
+        "fundstelle": "Rechnung; 5.000 €/m² gegen S04 (5.511 €/m²), Marktprüfung runde-1.md"
+      }
+    ]
+  }
 }

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Immobilie ohne Eigenkapital: Was technisch dahintersteckt</title>
+<meta name="description" content="Immobilie ohne Eigenkapital kaufen: was hinter „ab 2.500 Euro netto“ steckt, was ein Blankodarlehen kostet und warum der zweite Kauf daran scheitern kann.">
+<link rel="canonical" href="https://fg-realestate.de/blog/immobilie-ohne-eigenkapital/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Fischer &amp; Geserich Real Estate">
+<meta property="og:title" content="Immobilie ohne Eigenkapital: Was technisch dahintersteckt">
+<meta property="og:description" content="Immobilie ohne Eigenkapital kaufen: was hinter „ab 2.500 Euro netto“ steckt, was ein Blankodarlehen kostet und warum der zweite Kauf daran scheitern kann.">
+<meta property="og:url" content="https://fg-realestate.de/blog/immobilie-ohne-eigenkapital/">
+<meta property="og:image" content="https://fg-realestate.de/blog/immobilie-ohne-eigenkapital/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Blogartikel, Live-Fassung aus _build/live.py -->
+<script>
+/* Lesemodus vor dem ersten Zeichnen setzen, sonst blitzt die helle Seite auf */
+try{var t=localStorage.getItem("fg-theme");if(t)document.documentElement.dataset.theme=t;else if(matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.dataset.theme="dark"}catch(e){}
+</script>
+<link rel="stylesheet" href="../muster.css">
+<style>
+/* A6: zwei Wege für die Kaufnebenkosten, Monatsbilanz als Säulenpaar mit Lücke, Ring für gebundene Einnahmen */
+.o6-fork{display:grid;grid-template-columns:1fr 1fr;gap:0 18px;margin:6px 0 26px;position:relative}
+.o6-src{grid-column:1/-1;justify-self:center;padding:10px 18px;background:var(--c-ki);color:var(--on-ki);font-weight:700;font-size:.95rem;text-align:center}
+.o6-src small{display:block;font-weight:400;font-size:.74rem;opacity:.85}
+.o6-lines{grid-column:1/-1;height:34px;position:relative}
+.o6-lines::before{content:"";position:absolute;left:25%;right:25%;top:16px;border-top:2px solid var(--ink)}
+.o6-lines::after{content:"";position:absolute;left:50%;top:0;height:16px;border-left:2px solid var(--ink)}
+.o6-lines i{position:absolute;top:16px;height:18px;border-left:2px solid var(--ink)}
+.o6-way{border:1px solid var(--rule);border-top:4px solid var(--c-mid);padding:12px 14px;font-size:.88rem;line-height:1.45}
+.o6-way b{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.o6-way strong{display:block;font-size:1rem;margin-bottom:8px}
+.o6-way .eff{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-weight:600}
+.o6-way .eff span{padding:2px 8px;background:var(--soft)}
+.o6-way .eff em{font-style:normal;color:var(--warn)}
+.o6-bal{display:grid;grid-template-columns:auto 1fr;gap:20px 28px;align-items:end;padding:18px 18px 14px;background:var(--soft)}
+.o6-cols{display:flex;gap:26px;align-items:flex-end;height:250px;padding-left:4px}
+.o6-col{width:96px;display:flex;flex-direction:column;justify-content:flex-end;height:100%;position:relative}
+.o6-col>span{display:flex;align-items:center;justify-content:center;text-align:center;font-size:.72rem;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.2;padding:0 4px}
+.o6-col .dl{background:var(--c-ki);color:var(--on-ki)}
+.o6-col .bk{background:repeating-linear-gradient(-45deg,var(--c-ki) 0 3px,var(--c-mid) 3px 7px)}
+.o6-col .bk em{font-style:normal;padding:1px 5px;background:var(--c-ki);color:var(--on-ki)}
+.o6-col .mi{background:var(--c-hum);color:var(--on-hum)}
+.o6-col .gap{border:2px dashed var(--warn);border-bottom:0;color:var(--warn);background:color-mix(in srgb,var(--warn) 8%,transparent)}
+.o6-col p{position:absolute;bottom:-26px;left:0;right:0;margin:0!important;text-align:center;font-size:.78rem;font-weight:700}
+.o6-side{font-size:.88rem;line-height:1.45;padding-bottom:26px}
+.o6-side .lu{font-size:1.6rem;font-weight:700;color:var(--warn);font-variant-numeric:tabular-nums;line-height:1.1}
+.o6-ring{display:flex;align-items:center;gap:14px;margin-top:18px}
+.o6-ring i{flex:none;width:74px;height:74px;border-radius:50%;background:conic-gradient(var(--c-ki) 0 30.7%,var(--rule) 30.7% 100%);display:grid;place-items:center;position:relative}
+.o6-ring i::after{content:"";position:absolute;inset:13px;border-radius:50%;background:var(--soft)}
+.o6-ring i b{position:relative;z-index:1;font-style:normal;font-size:.84rem}
+.o6-key{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.76rem;color:var(--muted);margin-top:6px}
+.o6-key i{display:inline-block;width:11px;height:11px;margin-right:5px;vertical-align:-1px}
+@media (max-width:620px){
+  .o6-fork{grid-template-columns:1fr;gap:10px}.o6-lines{display:none}
+  .o6-bal{grid-template-columns:1fr}.o6-cols{justify-content:center;height:220px}.o6-col{width:88px}
+  .o6-side{padding-bottom:0;margin-top:14px}
+}
+</style>
+<script type="application/ld+json">
+[
+ {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Immobilie ohne Eigenkapital kaufen, und was das für den zweiten Kauf bedeutet",
+  "description": "Immobilie ohne Eigenkapital kaufen: was hinter „ab 2.500 Euro netto“ steckt, was ein Blankodarlehen kostet und warum der zweite Kauf daran scheitern kann.",
+  "inLanguage": "de-DE",
+  "url": "https://fg-realestate.de/blog/immobilie-ohne-eigenkapital/",
+  "image": "https://fg-realestate.de/blog/immobilie-ohne-eigenkapital/og.jpg",
+  "datePublished": "2026-10-31",
+  "dateModified": "2026-10-31",
+  "author": {
+   "@type": "Organization",
+   "name": "Fischer & Geserich Real Estate GmbH"
+  },
+  "publisher": {
+   "@type": "Organization",
+   "name": "Fischer & Geserich Real Estate GmbH"
+  }
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Kann ich eine Immobilie ohne Eigenkapital kaufen?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Ja, aber nur, indem die Kaufnebenkosten mitfinanziert werden, entweder im Immobilienkredit mit deutlich höherem Zins oder über ein Blankodarlehen zu Verbraucherzinsen ab etwa 6 Prozent. Sinnvoll ist das in der Regel erst ab einem Nettoeinkommen von etwa 4.000 Euro und nicht bei der ersten Immobilie."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Wie viel Eigenkapital brauche ich für eine Kapitalanlage?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Mindestens die Kaufnebenkosten, je nach Bundesland 7,5 bis 12 Prozent des Kaufpreises, in Bayern rund 5,5 Prozent. Ein Einstieg ist ab etwa 10.000 Euro realistisch, etwa bei einer Wohnung um 100.000 Euro. Das Eigenkapital muss gegenüber der Bank belegbar sein."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Warum bin ich nach dem ersten Kauf nicht mehr finanzierbar?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Weil die Bank vor jeder Finanzierung prüft, was nach allen Raten und Lebenshaltungskosten vom Einkommen übrig bleibt. Wer die erste Immobilie voll finanziert hat, oft zusätzlich mit einem Verbraucherkredit, hat diesen Spielraum bereits aufgebraucht."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Was ist eine Globalfinanzierung?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Bei einer Globalfinanzierung finanziert eine Bank ein ganzes Gebäude, dessen Wohnungen ein Vertrieb einzeln verkauft. Für jeden Käufer steht vorab eine Finanzierung mit festen Parametern bereit. Weil die Bank ein großes Volumen abschließt, bewertet sie das Objekt großzügiger als bei einem Einzelkäufer."
+    }
+   }
+  ]
+ }
+]
+</script>
+<link rel="stylesheet" href="/vendor/cookieconsent/cookieconsent.css">
+<link rel="stylesheet" href="/consent-manager.css">
+<script>window.FG_GTM_ID = "GTM-5DVGRHB2";</script>
+<script defer src="/vendor/cookieconsent/cookieconsent.umd.js"></script>
+<script defer src="/consent-manager.js"></script>
+</head>
+<body>
+
+<header class="top">
+  <nav class="site-nav" aria-label="Hauptnavigation">
+    <div class="nav-row">
+      <a class="brand" href="https://fg-realestate.de/index.html"><img src="/images/fg-logo-gold-transparent.png" alt="Fischer &amp; Geserich Real Estate" width="54" height="54"><span class="gold-text long">Fischer &amp; Geserich Real Estate</span><span class="gold-text short">Fischer &amp; Geserich<br>Real Estate</span></a>
+      <div class="nav-links">
+        <a href="https://fg-realestate.de/index.html">Start</a>
+        <div class="nav-group"><a href="https://fg-realestate.de/angebote.html" aria-haspopup="true">Kaufen<span class="caret"></span></a>
+          <div class="nav-sub">
+            <a href="https://fg-realestate.de/angebote.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M10 21v-3h4v3"/></svg></i><span><strong>Angebote</strong><small>Aktuelle Objekte</small></span></a>
+            <a href="https://fg-realestate.de/ankaufsberatung.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l4-4 4 2 3-3 7 6-3 3"/><path d="M7 8l-4 4 6 6 2-2M11 16l2 2 2-2M13 14l2 2 2-2"/></svg></i><span><strong>Ankaufsberatung</strong><small>Begleitung beim Kauf</small></span></a>
+          </div></div>
+        <a href="https://fg-realestate.de/verkaufen.html">Verkaufen</a>
+        <a href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierung</a>
+        <div class="nav-group"><a href="https://fg-realestate.de/investment-lab.html" aria-haspopup="true">Investment Lab<span class="caret"></span></a>
+          <div class="nav-sub">
+            <a href="https://fg-realestate.de/investment-lab.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M7 15h10"/></svg></i><span><strong>Investment Lab</strong><small>Rechner und Werkzeuge</small></span></a>
+            <a href="https://fg-realestate.de/standorte/"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg></i><span><strong>Standorte</strong><small>16 Standortanalysen</small></span></a>
+            <a href="https://fg-realestate.de/lexikon/"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4zM20 4h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6z"/></svg></i><span><strong>Lexikon</strong><small>Begriffe erklärt</small></span></a>
+          </div></div>
+        <a href="https://fg-realestate.de/ueber-uns.html">Über uns</a>
+        <a href="../" class="on" aria-current="page">Blog</a>
+        <a href="https://fg-realestate.de/kontakt.html" class="nav-contact">Kontakt</a>
+      </div>
+      <button class="burger" type="button" aria-label="Menü" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+    <div class="mobile-menu">
+      <a href="https://fg-realestate.de/index.html">Start</a>
+      <p>Kaufen</p><a href="https://fg-realestate.de/angebote.html">Angebote</a><a href="https://fg-realestate.de/ankaufsberatung.html">Ankaufsberatung</a>
+      <p>Leistungen</p><a href="https://fg-realestate.de/verkaufen.html">Verkaufen</a><a href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierung</a>
+      <p>Investment Lab</p><a href="https://fg-realestate.de/investment-lab.html">Investment Lab</a><a href="https://fg-realestate.de/standorte/">Standorte</a><a href="https://fg-realestate.de/lexikon/">Lexikon</a>
+      <p>Unternehmen</p><a href="https://fg-realestate.de/ueber-uns.html">Über uns</a><a href="../" class="here">Blog</a><a href="https://fg-realestate.de/kontakt.html" class="m-contact">Kontakt</a>
+    </div>
+  </nav>
+  <div class="subbar">
+    <div class="subbar-row">
+      <a class="sb-home" href="../">Blog</a>
+      <div class="where">Immobilie ohne Eigenkapital</div>
+      <div class="sb-right">
+        <details class="cat-menu"><summary>Kategorien<span class="caret"></span></summary><nav>
+          <a href="../">Alle Artikel</a><a href="../#finanzierung" class="on">Finanzierung</a>
+        </nav></details>
+        <button class="icon-btn theme-btn" type="button" aria-label="Dunkler Lesemodus" aria-pressed="false" title="Lesemodus"><svg class="moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      </div>
+    </div>
+    <div class="progress"><span></span></div>
+  </div>
+</header>
+
+<nav class="crumbs" aria-label="Brotkrumen"><a href="../">Blog</a><i>•</i><a href="../#finanzierung">Finanzierung</a><i>•</i><span>Immobilie ohne Eigenkapital</span></nav>
+<div class="lead">
+  <figure class="lead-img" data-wait="Bild folgt">
+    <img src="lead.jpg" alt="Ein kleines Keramikhaus auf einem Stapel weißer Porzellanscheiben, daneben eine leere Tonschale" width="1536" height="1024" onerror="this.parentNode.classList.add('missing')">
+  </figure>
+</div>
+<div class="head">
+  <a class="tag" href="../#finanzierung">Finanzierung</a>
+  <h1>Immobilie ohne Eigen&shy;kapital kaufen, und was das für den zweiten Kauf bedeutet</h1>
+  <p class="dateline"><span>Stand: Oktober 2026</span><span class="by">Von Fischer &amp; Geserich Real Estate</span></p>
+  <span class="pill">8 Min. Lesezeit</span>
+</div>
+
+<div class="cols">
+
+  <nav class="toc" aria-label="Inhalt">
+    <p class="toc-h">Inhalt</p>
+    <a href="#das-versprechen-und-was-dahintersteckt">Das Versprechen und was dahintersteckt</a>
+    <a href="#die-zwei-wege-eigenkapital-zu-ersetzen">Die zwei Wege, Eigenkapital zu ersetzen</a>
+    <a href="#rechenbeispiel-2-500-euro-netto-wohnung-fuer-140">Rechenbeispiel: 2.500&nbsp;Euro netto, Wohnung für 140.000&nbsp;Euro</a>
+    <a href="#warum-der-erste-kauf-den-zweiten-verhindern-kann">Warum der erste Kauf den zweiten verhindern kann</a>
+    <a href="#wann-ergibt-eine-finanzierung-ohne-eigenkapital">Wann ergibt eine Finanzierung ohne Eigenkapital Sinn?</a>
+    <a href="#wie-viel-eigenkapital-realistisch-ist">Wie viel Eigenkapital realistisch ist</a>
+    <a href="#die-einschaetzung-von-fischer-geserich">Die Einschätzung von Fischer &amp; Geserich</a>
+    <a href="#fragen">Häufige Fragen</a>
+  </nav>
+
+  <article class="body">
+    <p class="answer">Eine Immobilie ohne Eigenkapital zu kaufen ist möglich, aber nur auf zwei Wegen: Die Kaufnebenkosten werden in den Immobilienkredit eingerechnet, was den Beleihungsauslauf und damit den Zins deutlich erhöht, oder sie werden über ein separates Blankodarlehen zu Verbraucherzinsen von etwa 6 bis 9&nbsp;Prozent finanziert. Beides ist teuer, und vor allem macht es viele Käufer für eine zweite Immobilie unfinanzierbar.</p>
+    <div class="kurz"><p class="kurz-h">Das Wichtigste in Kürze</p><ul><li>Fehlendes Eigenkapital lässt sich vor allem über einen höheren Beleihungsauslauf oder ein Blankodarlehen zu etwa 6 bis 9&nbsp;% ersetzen.</li><li>Im Beispiel mit 2.500&nbsp;€ netto und einer Wohnung für 140.000&nbsp;€ fehlen nach den Raten jeden Monat 351,99&nbsp;€, vor Hausgeld.</li><li>Sinnvoll ist es meist erst ab etwa 4.000&nbsp;€ netto und wenn bereits Bestand vorhanden ist.</li></ul></div>
+    <figure class="chart" id="g-oek">
+      <h3>Woher das fehlende Eigenkapital kommt</h3>
+      <p class="sub">Die Kaufnebenkosten müssen bezahlt werden. Ohne Eigenkapital bleiben zwei Wege.</p>
+      <div class="o6-fork">
+        <div class="o6-src">Kaufnebenkosten 15.000 €<small>7,5 bis 12 % des Kaufpreises je nach Bundesland, in Bayern rund 5,5 %</small></div>
+        <div class="o6-lines" aria-hidden="true"><i style="left:25%"></i><i style="left:75%"></i></div>
+        <div class="o6-way"><b>Weg 1</b><strong>In den Immobilienkredit</strong><div class="eff"><span>Beleihungsauslauf über 100 %</span>→<span>Zins steigt</span></div></div>
+        <div class="o6-way"><b>Weg 2</b><strong>Separates Blankodarlehen</strong><div class="eff"><span>Verbraucherzins</span>→<em>ca. 6 bis 9 %</em></div></div>
+      </div>
+      <h3>Beispiel: 2.500 € netto, Wohnung 140.000 €, 55 m²</h3>
+      <p class="sub">Was im Monat hereinkommt und was hinausgeht, ohne Gehalt.</p>
+      <div class="o6-bal">
+        <div class="o6-cols" role="img" aria-label="Raten 951,99 Euro im Monat: 770 Euro Immobiliendarlehen und 181,99 Euro Blankodarlehen. Miete 600 Euro. Lücke 351,99 Euro vor Hausgeld.">
+          <div class="o6-col"><span class="gap" style="height:36.97%">Lücke<br>351,99 €</span><span class="mi" style="height:63.03%">Miete<br>600,00 €</span><p>Rein</p></div>
+          <div class="o6-col"><span class="bk" style="height:19.12%"><em>181,99 €</em></span><span class="dl" style="height:80.88%">Immobilien­darlehen<br>770,00 €</span><p>Raus</p></div>
+        </div>
+        <div class="o6-side">
+          <div class="lu">351,99 €</div>
+          <div>Lücke pro Monat, vor Hausgeld und Rücklagen. Die Miete deckt die Raten nicht.</div>
+          <div class="o6-ring"><i><b>31 %</b></i><span>Raten von 951,99 € binden rund 31 % der Einnahmen aus 2.500 € Gehalt und 600 € Miete.</span></div>
+        </div>
+        <div class="o6-key"><span><i style="background:var(--c-hum)"></i>Mieteinnahme</span><span><i style="background:var(--c-ki)"></i>Immobiliendarlehen 4,6 %, 2 % Tilgung</span><span><i style="background:repeating-linear-gradient(-45deg,var(--c-ki) 0 3px,var(--c-mid) 3px 7px)"></i>Blankodarlehen 8,0 %, 10 Jahre</span></div>
+      </div>
+      <p class="credit">Beispielzinsen, keine aktuellen Konditionen · Grafik: Fischer &amp; Geserich</p>
+    </figure>
+    <h2 id="das-versprechen-und-was-dahintersteckt">Das Versprechen und was dahintersteckt</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild1.jpg" alt="Ein strahlendes Werbeplakat mit einem Haus, hinter dem Plakat sieht man Gerüst und Stützbalken" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>„Ab 2.500&nbsp;Euro netto zur ersten Immobilie, ohne Eigenkapital, die Wohnung trägt sich selbst.“ Solche Angebote sind verbreitet und nicht einmal falsch, aber unvollständig. Was dabei technisch passiert, entscheidet darüber, ob Sie in fünf Jahren eine zweite Immobilie kaufen können.</p>
+    <p>Hinter vielen dieser Angebote steht eine <strong>Globalfinanzierung</strong>. Ein Vertrieb teilt zum Beispiel ein Haus mit zehn Wohnungen auf und verkauft jede Einheit an einen anderen Käufer. Eine Bank finanziert das ganze Haus und stellt für jeden Käufer vorab eine Finanzierung mit festen Parametern bereit. Für die Bank ist das attraktiv, weil sie ein großes Kreditvolumen auf einmal abschließt. Deshalb bewertet sie das Objekt großzügiger als bei einem einzelnen Käufer. Der Käufer bekommt so eine Finanzierung, die er allein für diese Wohnung oft nicht bekommen hätte. Das fehlende Eigenkapital steckt damit nur an einer anderen Stelle der Finanzierung.</p>
+    <h2 id="die-zwei-wege-eigenkapital-zu-ersetzen">Die zwei Wege, Eigenkapital zu ersetzen</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild2.jpg" alt="Ein Holzspielzeug-Weg gabelt sich vor einem Haus, auf beiden Wegen steht eine Schranke mit Münzschlitz" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p><strong>Weg 1: Die Kaufnebenkosten wandern in den Immobilienkredit.</strong> Grunderwerbsteuer, Notar, Grundbuch und Maklerprovision machen je nach Bundesland 7,5 bis 12&nbsp;Prozent des Kaufpreises, in Bayern rund 5,5&nbsp;Prozent aus. Werden sie mitfinanziert, steigt das Darlehen über den Kaufpreis hinaus, während der Beleihungswert der Bank unter dem Kaufpreis liegt. Der Beleihungsauslauf landet deutlich über 100&nbsp;Prozent. Bei Eigentumswohnungen führt das im aktuellen Marktumfeld zu Zinsen von über 5&nbsp;Prozent. Mehr als 120&nbsp;Prozent Beleihungsauslauf finanziert kaum eine Bank.</p>
+<p><strong>Weg 2: Ein separates Blankodarlehen.</strong> Die Bank finanziert den Kaufpreis, die Kaufnebenkosten kommen aus einem Ratenkredit ohne Grundschuld. Dafür gelten Verbraucherzinsen statt Immobilienzinsen. Sie beginnen bei etwa 6&nbsp;Prozent und reichen je nach Bonität bis 8 oder 9&nbsp;Prozent, bei kurzer Laufzeit und entsprechend hoher Rate.</p>
+    <h2 id="rechenbeispiel-2-500-euro-netto-wohnung-fuer-140">Rechenbeispiel: 2.500&nbsp;Euro netto, Wohnung für 140.000&nbsp;Euro</h2>
+    <p>Ein Käufer verdient 2.500&nbsp;Euro netto und kauft eine vermietete Wohnung mit 55 Quadratmetern Wohnfläche für 140.000&nbsp;Euro, rund 2.545&nbsp;Euro pro Quadratmeter. Die Kaltmiete beträgt 600&nbsp;Euro im Monat, knapp 11&nbsp;Euro pro Quadratmeter. Die Kaufnebenkosten von rund 15.000&nbsp;Euro finanziert er über ein Blankodarlehen. Die Zinssätze sind <strong>Beispielzinsen zur Veranschaulichung</strong>.</p>
+    <p>Mit 2.500&nbsp;Euro netto kaufen die meisten Käufer unter 150.000&nbsp;Euro. Bei einem teureren Objekt würde die monatliche Lücke so groß, dass kaum eine Bank die Finanzierung mitträgt.</p>
+    <div class="ftab bill"><table>
+<thead><tr><th>Position</th><th class="n">Betrag pro Monat</th></tr></thead>
+<tbody>
+<tr><td>Immobiliendarlehen 140.000&nbsp;€ zu 4,6&nbsp;%, 2&nbsp;% Tilgung</td><td class="n">770,00&nbsp;€</td></tr>
+<tr><td>Blankodarlehen 15.000&nbsp;€ zu 8,0&nbsp;%, 10 Jahre</td><td class="n">181,99&nbsp;€</td></tr>
+<tr class="total"><td><strong>Kapitaldienst gesamt</strong></td><td class="n"><strong>951,99&nbsp;€</strong></td></tr>
+<tr><td>Mieteinnahme</td><td class="n">600,00&nbsp;€</td></tr>
+<tr class="total"><td><strong>Monatliche Lücke vor Hausgeld und Rücklagen</strong></td><td class="n"><strong>351,99&nbsp;€</strong></td></tr>
+</tbody></table></div>
+    <p>Die Wohnung trägt sich also nicht selbst. Der Käufer schießt jeden Monat rund 350&nbsp;Euro aus seinem Gehalt zu, dazu kommt der nicht umlagefähige Teil des Hausgelds. Die Steuerersparnis aus Zinsen und Abschreibung mildert das, fließt aber erst mit der Steuererstattung zurück und gleicht die Lücke in diesem Beispiel nicht aus.</p>
+    <p>Damit sich eine solche Wohnung annähernd selbst trägt, muss die Miete im Verhältnis zum Kaufpreis hoch sein. In A-Lagen wie München oder Berlin gibt es dieses Verhältnis kaum, dort geht die Rechnung höchstens bei sehr kleinen Apartments auf.</p>
+    <h2 id="warum-der-erste-kauf-den-zweiten-verhindern-kann">Warum der erste Kauf den zweiten verhindern kann</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild3.jpg" alt="Eine Holzleiter führt steil an einer hellen Felswand hinauf zu einer Öffnung im Fels" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"><figcaption>Foto: <a href="https://commons.wikimedia.org/wiki/File:Ladder_to_Alcove_House_Bandelier_National_Monument_NM_2023-10-17_17-32-36_1.jpg" target="_blank" rel="noopener">G. Edward Johnson</a>, <a href="https://creativecommons.org/licenses/by/4.0/deed.de" target="_blank" rel="noopener">CC BY 4.0</a>, zugeschnitten</figcaption></figure>
+    <p>Die eigentliche Folge zeigt sich erst beim nächsten Schritt. Jede Bank prüft vor einer Finanzierung, was vom Einkommen nach allen Raten und den Lebenshaltungskosten übrig bleibt. Nach dem ersten Kauf sind in diesem Beispiel 951,99&nbsp;Euro Kapitaldienst gebunden, rund 31&nbsp;Prozent der gesamten Einnahmen aus Gehalt und Miete. Dazu steht ein Verbraucherkredit in der Schufa.</p>
+    <p>Für die zweite Immobilie ist dieser Käufer bei den meisten Banken nicht mehr finanzierbar. Aus dieser Lage führen nur zwei Wege heraus: die Miete deutlich steigern, was bei vielen Vertriebsobjekten kurzfristig kaum möglich ist, oder das Nettoeinkommen erheblich erhöhen. Ein Gehalt von 2.500 auf 3.500&nbsp;Euro netto zu steigern, gelingt aber selten in ein, zwei Jahren.</p>
+    <p>Der Skalierungseffekt, um den es den meisten Anlegern überhaupt geht, ist damit zerstört, bevor er begonnen hat.</p>
+    <h2 id="wann-ergibt-eine-finanzierung-ohne-eigenkapital">Wann ergibt eine Finanzierung ohne Eigenkapital Sinn?</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild4.jpg" alt="Eine Wippe, auf der einen Seite drei kleine Häuser mit Münzstapeln, auf der anderen ein neues Haus" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Es gibt Fälle, in denen sie funktioniert. Sie setzen eine starke Bonität voraus, in der Regel ab etwa 4.000&nbsp;Euro netto im Monat aus einem Angestelltenverhältnis oder einem Geschäftsführergehalt. Auch dann ist sie bei der ersten Immobilie selten die richtige Wahl.</p>
+    <p>Sinnvoll wird der Hebel, wenn bereits drei oder vier Wohnungen im Bestand sind, von denen ein Teil positiven Cashflow liefert, und wenn Erfahrung da ist. Dieselbe Anfrage bewertet eine Bank in dieser Situation völlig anders als beim Erstkauf.</p>
+    <p>Bei Mehrfamilienhäusern gelten eigene Regeln. Bei Kaufpreisen von zwei bis drei Millionen Euro gibt es mehr Verhandlungsspielraum: Die Maklerprovision lässt sich in den Kaufpreis einrechnen, oder der Preis lässt sich um einen sechsstelligen Betrag senken. Banken bewerten diese Objektklasse anders als eine einzelne Eigentumswohnung. Die meisten Käufer beginnen allerdings nicht mit einem Mehrfamilienhaus.</p>
+    <h2 id="wie-viel-eigenkapital-realistisch-ist">Wie viel Eigenkapital realistisch ist</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild5.jpg" alt="Ein Sparschwein auf einem Stapel Kontoauszüge, daneben liegt ein Goldbarren im Schatten" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Der Einstieg ist ab etwa 10.000&nbsp;Euro Eigenkapital realistisch, sofern das Objekt dazu passt. Bei einer Wohnung um 100.000&nbsp;Euro decken 10.000 bis 12.000&nbsp;Euro die Kaufnebenkosten. Wer eine Wohnung für 200.000&nbsp;Euro mit 10.000&nbsp;Euro Eigenkapital und 3.000&nbsp;Euro netto kaufen will, wird unter Umständen finanziert. Für den langfristigen Vermögensaufbau ist das aber selten eine gute Entscheidung. Wer deutlich weniger mitbringt, fährt in der Regel besser damit, zunächst anzusparen.</p>
+    <p>Eigenkapital müssen Sie der Bank belegen, über Kontoauszüge oder Depotnachweise. Vermögen in bar oder in Gold, das sich nicht nachweisen lässt, zählt für die Bank nicht.</p>
+    <figure class="tq"><blockquote><p>„Mit Immobilien kann man schon mit einem Eigenkapital von 10.000&nbsp;Euro starten. Ganz ohne Eigenkapital machen wir es auch, aber nur im Einzelfall, wenn es Sinn ergibt. Damit möchte ich nicht werben.“</p></blockquote><figcaption><strong>Timon Fischer</strong>, Mitgründer von Fischer &amp; Geserich Real Estate</figcaption></figure>
+    <section class="pos">
+    <h2 id="die-einschaetzung-von-fischer-geserich">Die Einschätzung von Fischer &amp; Geserich</h2>
+    <p>Wir setzen Finanzierungen ohne Eigenkapital im Einzelfall um, wenn Bonität und Objekt es tragen. Wir bewerben sie nicht, weil sie für die meisten Käufer die falsche Entscheidung sind. Wenn ein Kunde eine Wohnung möchte, aber höchstens einen Betrag einsetzen will, der dafür nicht reicht, sagen wir ihm das, auch wenn das Geschäft dann nicht zustande kommt. Uns ist ein Kunde wichtiger, der in fünf Jahren seine zweite Wohnung kaufen kann, als ein schneller Abschluss heute.</p>
+    </section>
+
+    <div class="qa" id="fragen"><p class="qa-h">Häufige Fragen</p><details open><summary>Kann ich eine Immobilie ohne Eigenkapital kaufen?</summary><div><p>Ja, aber nur, indem die Kaufnebenkosten mitfinanziert werden, entweder im Immobilienkredit mit deutlich höherem Zins oder über ein Blankodarlehen zu Verbraucherzinsen ab etwa 6&nbsp;Prozent. Sinnvoll ist das in der Regel erst ab einem Nettoeinkommen von etwa 4.000&nbsp;Euro und nicht bei der ersten Immobilie.</p></div></details><details><summary>Wie viel Eigenkapital brauche ich für eine Kapitalanlage?</summary><div><p>Mindestens die Kaufnebenkosten, je nach Bundesland 7,5 bis 12&nbsp;Prozent des Kaufpreises, in Bayern rund 5,5&nbsp;Prozent. Ein Einstieg ist ab etwa 10.000&nbsp;Euro realistisch, etwa bei einer Wohnung um 100.000&nbsp;Euro. Das Eigenkapital muss gegenüber der Bank belegbar sein.</p></div></details><details><summary>Warum bin ich nach dem ersten Kauf nicht mehr finanzierbar?</summary><div><p>Weil die Bank vor jeder Finanzierung prüft, was nach allen Raten und Lebenshaltungskosten vom Einkommen übrig bleibt. Wer die erste Immobilie voll finanziert hat, oft zusätzlich mit einem Verbraucherkredit, hat diesen Spielraum bereits aufgebraucht.</p></div></details><details><summary>Was ist eine Globalfinanzierung?</summary><div><p>Bei einer Globalfinanzierung finanziert eine Bank ein ganzes Gebäude, dessen Wohnungen ein Vertrieb einzeln verkauft. Für jeden Käufer steht vorab eine Finanzierung mit festen Parametern bereit. Weil die Bank ein großes Volumen abschließt, bewertet sie das Objekt großzügiger als bei einem Einzelkäufer.</p></div></details></div>
+
+    <aside class="cta" aria-label="Finanzierungserstgespräch buchen"><h3>Was mit Ihrem Eigenkapital sinnvoll ist</h3><p>Wir prüfen mit Ihnen, welches Volumen zu Ihrem Einkommen und Ihrem Eigenkapital passt, und sagen Ihnen offen, wenn wir zu einem kleineren Objekt raten. Fischer &amp; Geserich vermittelt Finanzierungen deutschlandweit.</p><a class="btn" href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierungserstgespräch buchen</a></aside>
+
+    <div class="end">
+      
+      <p class="note">Das Titelbild und die Bilder ohne Fotonachweis wurden mit KI erstellt.</p>
+      <p class="note">Der Beitrag dient der allgemeinen Information und ersetzt keine Rechts-, Steuer-, Finanzierungs- oder Anlageberatung. Zinssätze in Beispielrechnungen sind Beispielwerte, keine aktuellen Konditionen.</p>
+    </div>
+  </article>
+
+  <aside class="related" aria-label="Mehr zu Finanzierung">
+    <h2>Mehr zu Finanzierung</h2>
+    <a href="../beleihungsauslauf-und-kondition/"><span class="rthumb"><img src="../beleihungsauslauf-und-kondition/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Beleihungs&shy;auslauf, 100&nbsp;% und 110&nbsp;% Finanzierung</strong></a>
+    <a href="../zinsbindung-strategisch-waehlen/"><span class="rthumb"><img src="../zinsbindung-strategisch-waehlen/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Zins&shy;bindung und Forward-Darlehen</strong></a>
+    <a href="../eigenkapital-optimal-einsetzen/"><span class="rthumb"><img src="../eigenkapital-optimal-einsetzen/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Eigen&shy;kapital optimal einsetzen und Finanzierungs&shy;reserve</strong></a>
+  </aside>
+</div>
+
+<section class="more" aria-label="Weiterlesen">
+  <div class="more-in">
+    <h2>Weiterlesen</h2>
+    <p class="more-sub">Artikel, die hier anschließen</p>
+    <div class="cards">
+      <a class="card" href="../beleihungsauslauf-und-kondition/">
+        <div class="thumb"><img src="../beleihungsauslauf-und-kondition/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.parentNode.classList.add('missing')"></div>
+        <span class="kicker">Finanzierung</span>
+        <strong>Beleihungsauslauf, 100&nbsp;% und 110&nbsp;% Finanzierung</strong>
+        <p>Beleihungsauslauf: Formel, Einfluss auf den Zins und was eine 100- oder 110-Prozent-Finanzierung kostet. Mit Rechenbeispiel für eine 200.000-Euro-Wohnung.</p>
+        
+      </a>
+      <a class="card" href="../eigenkapital-optimal-einsetzen/">
+        <div class="thumb"><img src="../eigenkapital-optimal-einsetzen/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.parentNode.classList.add('missing')"></div>
+        <span class="kicker">Finanzierung</span>
+        <strong>Eigenkapital optimal einsetzen und Finanzierungsreserve</strong>
+        <p>Wie viel Eigenkapital in eine Immobilie gehört, hängt vom Ziel ab: warum Eigennutzer anders rechnen als Kapitalanleger und warum eine Reserve dazugehört.</p>
+        
+      </a>
+    </div>
+    <a class="back" href="../">‹ Zurück zum Blog</a>
+  </div>
+</section>
+
+<footer><span>© 2026 Fischer &amp; Geserich Real Estate</span><span><a href="https://fg-realestate.de/impressum.html">Impressum</a> · <a href="https://fg-realestate.de/datenschutz.html">Datenschutz</a> · <a href="#" data-open-consent>Cookie-Einstellungen</a></span></footer>
+
+<script>
+/* Mobilmenü wie auf der Website */
+(function(){
+  var b=document.querySelector(".burger"),m=document.querySelector(".mobile-menu");
+  b.addEventListener("click",function(){var o=m.classList.toggle("open");b.setAttribute("aria-expanded",o)});
+})();
+/* Offene Menüs schließen bei Klick daneben oder mit Esc */
+(function(){
+  var cat=document.querySelector(".cat-menu"),b=document.querySelector(".burger"),m=document.querySelector(".mobile-menu");
+  function closeAll(e){
+    if(cat.open&&(!e||!cat.contains(e.target)))cat.open=false;
+    if(m.classList.contains("open")&&(!e||!(m.contains(e.target)||b.contains(e.target)))){m.classList.remove("open");b.setAttribute("aria-expanded",false)}
+  }
+  document.addEventListener("click",closeAll);
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeAll()});
+})();
+/* Umschalter heller / dunkler Lesemodus */
+(function(){
+  var root=document.documentElement,b=document.querySelector(".theme-btn");
+  function sync(){var d=root.dataset.theme==="dark";b.setAttribute("aria-pressed",d);b.setAttribute("aria-label",d?"Heller Lesemodus":"Dunkler Lesemodus")}
+  b.addEventListener("click",function(){
+    root.dataset.theme=root.dataset.theme==="dark"?"light":"dark";sync();
+    try{localStorage.setItem("fg-theme",root.dataset.theme)}catch(e){}
+  });
+  sync();
+})();
+/* Kopfzeile: Fortschritt, Titel nach dem Scrollen, aktiver Abschnitt links */
+(function(){
+  var top=document.querySelector(".top"),bar=document.querySelector(".progress span"),h1=document.querySelector(".head h1");
+  var links=[].slice.call(document.querySelectorAll(".toc a")),secs=links.map(function(a){return document.querySelector(a.getAttribute("href"))});
+  function tick(){
+    var d=document.documentElement,max=d.scrollHeight-d.clientHeight;
+    bar.style.width=(max>0?d.scrollTop/max*100:0)+"%";
+    top.classList.toggle("scrolled",h1.getBoundingClientRect().bottom<140);
+    var cur=0;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<170)cur=i});
+    links.forEach(function(a,i){a.classList.toggle("on",i===cur)});
+  }
+  var lead=document.querySelector(".lead-img");
+  function shrink(){
+    /* Bild wird beim Scrollen gleichmäßig kleiner, Seitenverhältnis bleibt (n26-Verhalten) */
+    var r=lead.getBoundingClientRect(),p=Math.min(Math.max((140-r.top)/r.height,0),1);
+    lead.style.setProperty("--s",(1-p*.45).toFixed(3));
+  }
+  addEventListener("scroll",function(){tick();shrink()},{passive:true});tick();shrink();
+})();
+
+
+</script>
+</body>
+</html>

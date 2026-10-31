@@ -7,11 +7,89 @@
   "keywords": [
     "zins"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Finanzierung",
-  "formula": null,
+  "formula": "Zinsen im Monat = Restschuld × Sollzins / 12",
   "sources": [],
   "assistantAnswer": "Preis für die zeitweise Überlassung von Kapital. Zins ist der Preis für die zeitweise Überlassung von Kapital. Bei Immobilienfinanzierungen ist zwischen Sollzins, effektivem Jahreszins, Zinsbindung und tatsächlicher Zinsbelastung auf die fallende Restschuld zu unterscheiden.",
-  "explanation": "Zins ist der Preis für die zeitweise Überlassung von Kapital. Bei Immobilienfinanzierungen ist zwischen Sollzins, effektivem Jahreszins, Zinsbindung und tatsächlicher Zinsbelastung auf die fallende Restschuld zu unterscheiden.",
-  "practiceExample": "300.000 € Restschuld zu 4 % verursachen anfänglich rund 12.000 € Zins p.a.; mit jeder Tilgung sinkt die absolute Zinsbelastung."
+  "explanation": "Der Zins ist der Preis, den Sie der Bank für geliehenes Geld zahlen. Bei einer Immobilienfinanzierung wird er als Sollzins pro Jahr angegeben und auf das in Anspruch genommene Darlehen angewendet. Weil die Restschuld mit jeder Rate sinkt, werden die Zinsen in Euro kleiner, auch wenn der Sollzins gleich bleibt.",
+  "practiceExample": "Sie leihen sich 300.000 € zu einem Beispielzins von 4 % und tilgen anfangs 1,5 %. Im ersten Monat zahlen Sie 1.000 € Zinsen, im ersten Jahr zusammen rund 11.900 €. Ohne weitere Kosten entsprechen 4 % Sollzins bei monatlicher Zahlung einem effektiven Jahreszins von etwa 4,07 %. Bei 4,5 % statt 4 % und gleicher Tilgung zahlen Sie im ersten Jahr rund 13.400 € Zinsen, also etwa 1.500 € mehr.",
+  "ausbau": {
+    "einordnung": [
+      "Der Zins ist der Preis, den Sie der Bank für geliehenes Geld zahlen. Bei einer Immobilienfinanzierung wird er als Sollzins pro Jahr angegeben und auf das in Anspruch genommene Darlehen angewendet.[[1]] Weil die Restschuld mit jeder Rate sinkt, werden die Zinsen in Euro kleiner, auch wenn der Sollzins gleich bleibt.",
+      "Der effektive Jahreszins drückt die Gesamtkosten des Darlehens als jährlichen Prozentsatz aus. Er enthält neben den Zinsen weitere Kosten, etwa für eine Immobilienbewertung, wenn die Bank sie verlangt.[[2]] Er berücksichtigt außerdem, dass Sie monatlich zahlen. Schätzgebühren, Notar- und Grundbuchkosten oder Bereitstellungszinsen fließen dagegen nicht alle ein.[[3]]",
+      "Wie hoch der Zins ist, hängt vom Markt und vom einzelnen Fall ab. Bauzinsen orientieren sich an der Rendite der Bundesanleihe mit passender Laufzeit, nicht am Leitzins der EZB; manche Banken geben Änderungen am selben Tag weiter, andere nach zwei bis drei Wochen.[[4]] Ende Oktober 2026 nannte Finanztip 4,4 % für zehn Jahre bei bis zu 80 % Beleihung. Bei höherer Beleihung oder schwächerer Bonität kann der Zins deutlich höher liegen.[[5]]"
+    ],
+    "beispiel": [
+      "Sie leihen sich 300.000 € zu einem Beispielzins von 4 % und tilgen anfangs 1,5 %. Im ersten Monat zahlen Sie 1.000 € Zinsen, im ersten Jahr zusammen rund 11.900 €. Ohne weitere Kosten entsprechen 4 % Sollzins bei monatlicher Zahlung einem effektiven Jahreszins von etwa 4,07 %.",
+      "Bei 4,5 % statt 4 % und gleicher Tilgung zahlen Sie im ersten Jahr rund 13.400 € Zinsen, also etwa 1.500 € mehr."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Vergleichen Sie Angebote über den effektiven Jahreszins und fragen Sie nach Kosten, die er nicht enthält. Achten Sie darauf, dass Zinsbindung, Sondertilgung und Darlehensbetrag gleich sind, sonst lassen sich zwei Zinssätze nicht vergleichen."
+        ]
+      },
+      {
+        "h2": "Was es für Anleger heißt",
+        "absaetze": [
+          "Der Zins bestimmt einen großen Teil der monatlichen Ausgaben und damit den Cashflow. Rechnen Sie für die Zeit nach der Zinsbindung auch mit einem höheren Zins: Ein Prozentpunkt mehr kostet bei 250.000 € Restschuld rund 2.500 € im Jahr."
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "§ 489 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__489.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 16 Preisangabenverordnung (PAngV)",
+        "url": "https://www.gesetze-im-internet.de/pangv_2022/__16.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Effektiver Jahreszins",
+        "url": "https://www.finanztip.de/baufinanzierung/effektiver-jahreszins/",
+        "stand": "Stand 24.11.2025"
+      },
+      {
+        "name": "Fischer & Geserich: Finanzierung",
+        "url": "https://fg-realestate.de/finanzierungsberatung.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Aktuelle Bauzinsen",
+        "url": "https://www.finanztip.de/baufinanzierung/hypothekenzinsen/",
+        "stand": "Stand 25.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Sollzinssatz pro Jahr auf das in Anspruch genommene Darlehen",
+        "fundstelle": "runde-2.md, Z01"
+      },
+      {
+        "zahl": "Effektivzins = Gesamtkosten als Jahresprozentsatz, inkl. Immobilienbewertung, wenn erforderlich",
+        "fundstelle": "runde-2.md, Z03"
+      },
+      {
+        "zahl": "Zahlungsrhythmus; Schätzgebühren, Notar, Grundbuch, Bereitstellungszinsen nicht alle enthalten",
+        "fundstelle": "runde-2.md, Z04"
+      },
+      {
+        "zahl": "Bundesanleihe statt EZB-Leitzins; taggleich bis zwei bis drei Wochen (F&G)",
+        "fundstelle": "runde-2.md, Z05"
+      },
+      {
+        "zahl": "4,4 % zehn Jahre bis 80 % Beleihung; höher bei höherer Beleihung oder schlechterer Bonität",
+        "fundstelle": "runde-1.md, E01"
+      },
+      {
+        "zahl": "300.000 €, 4 % + 1,5 %: Monat 1 = 1.000 € Zinsen; Jahr 1 = 11.917 €; bei 4,5 % 13.406 €; (1+0,04/12)¹² − 1 = 4,07 %; 1 % × 250.000 € = 2.500 €",
+        "fundstelle": "Rechnung, Marktprüfung runde-2.md"
+      }
+    ]
+  }
 }

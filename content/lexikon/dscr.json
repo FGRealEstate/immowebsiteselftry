@@ -7,11 +7,98 @@
   "keywords": [
     "dscr"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Finanzierung",
-  "explanation": "Der Debt Service Coverage Ratio misst, wie oft ein definierter verfügbarer Ertrag den Kapitaldienst aus Zins und Tilgung deckt. Die Aussage hängt stark davon ab, welche Ergebnisgröße im Zähler verwendet wird.",
-  "practiceExample": "NOI 36.000 € und jährlicher Kapitaldienst 30.000 € ergeben DSCR 1,20. Sinkt der NOI auf 28.000 €, fällt der DSCR auf 0,93 und der betrachtete Ertrag deckt den Kapitaldienst rechnerisch nicht mehr vollständig.",
-  "formula": "DSCR = verfügbarer Schuldendienst-Ertrag / Kapitaldienst",
+  "explanation": "Der DSCR (Debt Service Coverage Ratio), auf Deutsch Schuldendienst- oder Kapitaldienstdeckungsgrad, stellt Einnahmen den Zinsen und der Tilgung gegenüber. Bei einer vermieteten Immobilie bietet sich als Einnahme der Reinertrag an: die Jahresmiete abzüglich der Bewirtschaftungskosten, die nicht umgelegt werden. Der Schuldendienst ist die Summe aus Zins und Tilgung eines Jahres.",
+  "practiceExample": "Angenommen, Sie kaufen eine vermietete Wohnung im Berliner Umland, etwa in Bernau: 65 m², Baujahr 1995, 9 € Kaltmiete je m², also 585 € im Monat und 7.020 € im Jahr, für 160.000 €. Nach 1.210 € für Verwaltung, Instandhaltung und Mietausfall bleibt ein Reinertrag von 5.810 €. Das Darlehen über 160.000 € kostet bei einem Beispielzins von 4 % und 1,5 % Tilgung 8.800 € im Jahr. Der DSCR liegt bei 0,66. Mit 2 % Tilgung sinkt er auf 0,61. Leihen Sie sich 100.000 € und bringen mehr Eigenkapital ein, steigt er auf 1,06.",
+  "formula": "DSCR = Reinertrag / Kapitaldienst (Zins + Tilgung)",
   "sources": [],
-  "assistantAnswer": "Verhältnis des zur Verfügung stehenden Überschusses zum Schuldendienst. Der Debt Service Coverage Ratio misst, wie oft ein definierter verfügbarer Ertrag den Kapitaldienst aus Zins und Tilgung deckt. Die Aussage hängt stark davon ab, welche Ergebnisgröße im Zähler verwendet wird."
+  "assistantAnswer": "Verhältnis des zur Verfügung stehenden Überschusses zum Schuldendienst. Der Debt Service Coverage Ratio misst, wie oft ein definierter verfügbarer Ertrag den Kapitaldienst aus Zins und Tilgung deckt. Die Aussage hängt stark davon ab, welche Ergebnisgröße im Zähler verwendet wird.",
+  "ausbau": {
+    "einordnung": [
+      "Der DSCR (Debt Service Coverage Ratio), auf Deutsch Schuldendienst- oder Kapitaldienstdeckungsgrad, stellt Einnahmen den Zinsen und der Tilgung gegenüber.[[1]] Bei einer vermieteten Immobilie bietet sich als Einnahme der Reinertrag an: die Jahresmiete abzüglich der Bewirtschaftungskosten, die nicht umgelegt werden.[[2,3]] Der Schuldendienst ist die Summe aus Zins und Tilgung eines Jahres.[[4]]",
+      "Ein Wert von 1 heißt: Die Immobilie trägt ihren Kapitaldienst gerade selbst. Darunter muss der Fehlbetrag aus anderem Einkommen kommen, darüber bleibt ein Puffer. Bei Projektfinanzierungen gilt 1,2 als Minimum; der DSCR kann auch als Auflage (Covenant) im Kreditvertrag stehen.[[1]]",
+      "Bei Verbrauchern muss die Bank die Kreditwürdigkeit anhand von Einkommen, Ausgaben und weiteren Umständen prüfen und darf sich nicht hauptsächlich auf den Wert der Immobilie stützen.[[5]] Beim Mehrfamilienhaus denkt F&G die Bankfähigkeit mit und ordnet Objektcashflow und Beleihung früh ein.[[6]]"
+    ],
+    "beispiel": [
+      "Angenommen, Sie kaufen eine vermietete Wohnung im Berliner Umland, etwa in Bernau: 65 m², Baujahr 1995, 9 € Kaltmiete je m², also 585 € im Monat und 7.020 € im Jahr, für 160.000 €. Nach 1.210 € für Verwaltung, Instandhaltung und Mietausfall bleibt ein Reinertrag von 5.810 €. Das Darlehen über 160.000 € kostet bei einem Beispielzins von 4 % und 1,5 % Tilgung 8.800 € im Jahr. Der DSCR liegt bei 0,66.",
+      "Mit 2 % Tilgung sinkt er auf 0,61. Leihen Sie sich 100.000 € und bringen mehr Eigenkapital ein, steigt er auf 1,06."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Wie Sie den Wert lesen",
+        "absaetze": [
+          "Liegt der Wert unter 1, planen Sie den monatlichen Zuschuss fest ein und rechnen ihn auch mit einem höheren Anschlusszins durch. Ein Wert über 1 schafft Spielraum für Leerstand oder Reparaturen."
+        ]
+      },
+      {
+        "h2": "Was es für Anleger heißt",
+        "absaetze": [
+          "Wer mehrere Objekte finanziert, kann mit dem DSCR zeigen, wie weit sich ein Bestand selbst trägt. Den Wert verbessern höhere Mieten, niedrigere Kosten, mehr Eigenkapital, ein günstigerer Zins oder eine niedrigere Tilgung; eine niedrigere Tilgung verschiebt allerdings Schuld in die Zukunft."
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "Wikipedia: Schuldendienstdeckungsgrad",
+        "url": "https://de.wikipedia.org/wiki/Schuldendienstdeckungsgrad",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 31 Immobilienwertermittlungsverordnung (ImmoWertV)",
+        "url": "https://www.gesetze-im-internet.de/immowertv_2022/__31.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 32 ImmoWertV",
+        "url": "https://www.gesetze-im-internet.de/immowertv_2022/__32.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 2 Finanzstabilitätsdatenerhebungsverordnung (FinStabDEV)",
+        "url": "https://www.gesetze-im-internet.de/finstabdev/__2.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 505b BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__505b.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Mehrfamilienhaus",
+        "url": "https://fg-realestate.de/mehrfamilienhaus.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "DSCR stellt Einnahmen Zins und Tilgung gegenüber",
+        "fundstelle": "runde-3.md, X01"
+      },
+      {
+        "zahl": "Reinertrag = Rohertrag − Bewirtschaftungskosten; nicht umgelegte Kosten",
+        "fundstelle": "runde-3.md, N01, N02"
+      },
+      {
+        "zahl": "Schuldendienst = Zins und Tilgung eines Kalenderjahres",
+        "fundstelle": "runde-3.md, X03"
+      },
+      {
+        "zahl": "Projektfinanzierung 1,2 Minimum; Covenants",
+        "fundstelle": "runde-3.md, X02"
+      },
+      {
+        "zahl": "Kreditwürdigkeit nach Einkommen und Ausgaben, nicht hauptsächlich Immobilienwert",
+        "fundstelle": "runde-2.md, O02"
+      },
+      {
+        "zahl": "Bankfähigkeit mitdenken, Objektcashflow und Beleihung (F&G)",
+        "fundstelle": "runde-3.md, C12"
+      },
+      {
+        "zahl": "5.809,60 / 8.800 = 0,66; / 9.600 = 0,61; / 5.500 = 1,06",
+        "fundstelle": "Rechnung, Marktprüfung runde-3.md"
+      }
+    ]
+  }
 }

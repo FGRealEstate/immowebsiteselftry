@@ -1,0 +1,463 @@
+{
+  "slug": "oberhavel",
+  "name": "Oberhavel",
+  "nameLang": "Landkreis Oberhavel",
+  "inOrt": "im Landkreis Oberhavel",
+  "fuerOrt": "den Landkreis Oberhavel",
+  "typ": "landkreis",
+  "orte": [
+    "Oranienburg",
+    "Hohen Neuendorf",
+    "Birkenwerder",
+    "Hennigsdorf",
+    "Velten",
+    "Mühlenbecker Land"
+  ],
+  "ersetzt": [
+    "velten"
+  ],
+  "kontakt": "lennart",
+  "title": "Immobilienmakler Oberhavel – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler im Landkreis Oberhavel: verkaufen, kaufen und finanzieren in Hohen Neuendorf, Hennigsdorf, Velten und Umgebung, mit Bodenrichtwerten 2026.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren im Landkreis Oberhavel",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger im Berliner Umland des Landkreises Oberhavel beim Verkauf, beim Kauf und bei der Finanzierung, von Oranienburg und Hohen Neuendorf über Birkenwerder und Hennigsdorf bis Velten und ins Mühlenbecker Land. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für alle sechs Orte auf dieser Seite ist Lennart Geserich Ihr Ansprechpartner, Head of Sales & Vermietung.",
+  "hero": {
+    "name": "oberhavel-havel-hennigsdorf",
+    "alt": "Die Havel in Hennigsdorf, von der Brücke der L 17 aus gesehen, mit Bootsanlegern am rechten Ufer",
+    "credit": "Leonhard Lenz, CC0",
+    "url": "https://commons.wikimedia.org/wiki/File:Havel_from_L_17_in_Hennigsdorf_2024-06-28_01.jpg",
+    "position": "50% 60%"
+  },
+  "stand": "Oktober 2026",
+  "updated": "2026-10-26",
+  "zahlen": [
+    {
+      "wert": "Ø 375 €/m²",
+      "label": "Bauland für Ein- und Zweifamilienhäuser in Hohen Neuendorf",
+      "detail": "38 Kauffälle in gewachsenen Ortslagen. Birkenwerder Ø 343, Mühlenbecker Land Ø 276, Velten Ø 206 €/m².",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Oberhavel",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_OHV.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 4.374 €/m²",
+      "label": "Ein- und Zweifamilienhäuser ab Baujahr 2010, Region Birkenwerder–Hohen Neuendorf",
+      "detail": "Gezahlter Preis je m² Wohnfläche. Glienicke–Mühlenbecker Land Ø 4.685, Velten–Hennigsdorf–Oberkrämer Ø 4.205 €/m².",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Oberhavel",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_OHV.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 3.195 €/m²",
+      "label": "Eigentumswohnungen in Hennigsdorf, nach 1990 gebaut, Weiterverkauf",
+      "detail": "58 Kauffälle. Hohen Neuendorf Ø 3.152, Mühlenbecker Land Ø 3.405, Velten Ø 2.878 €/m².",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Oberhavel",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_OHV.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 12,41 €/m²",
+      "label": "Nettokaltmiete in Velten, Baujahre 1990 bis 2019",
+      "detail": "38 Fälle. Hennigsdorf ab Baujahr 2000 Ø 15,91 €/m², Ortsteil Hohen Neuendorf ab Baujahr 2020 Ø 17,22 €/m².",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Oberhavel",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_OHV.pdf",
+      "stichtag": "Mietbeginn ab 2022, erfasst 2025"
+    },
+    {
+      "wert": "217.858",
+      "label": "Einwohner im Landkreis Oberhavel",
+      "detail": "168 mehr als ein Jahr zuvor. Das Landesamt für Bauen und Verkehr erwartet für 2040 224.199 Einwohner.",
+      "quelle": "Amt für Statistik Berlin-Brandenburg; LBV Brandenburg",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stichtag": "31.12.2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Oranienburg: Kreisstadt an S-Bahn und Regionalbahn",
+      "absaetze": [
+        "Oranienburg ist die Kreisstadt. Öffentliche Verwaltung und Gesundheitswesen des Landkreises sind schwerpunktmäßig hier angesiedelt und mit Hennigsdorf und Velten bildet die Stadt einen von 15 regionalen Wachstumskernen in Brandenburg.[[1]] Mit 49.824 Einwohnern Ende 2025 ist sie die größte Stadt im Landkreis; 2025 kamen 702 Menschen dazu.[[3]] Das Landesamt für Bauen und Verkehr rechnet bis 2040 mit 10,7 % mehr Einwohnern, mehr als für jeden anderen Ort auf dieser Seite.[[4]] Die S-Bahn fährt im 20-Minuten-Takt nach Berlin.[[1]]",
+        "2025 gab es in Oranienburg 513 Kauffälle. Für Ein- und Zweifamilienhäuser ab Baujahr 2010 zahlten Käufer im Mittel 4.726 €/m² Wohnfläche, für Häuser bis Baujahr 1948 2.726 €/m².[[1]] Seit dem 01.01.2026 gilt die Mietpreisbremse.[[5]] Bodenrichtwerte nach Stadtteilen, Mieten und die Ortsteile Lehnitz, Sachsenhausen und Eden finden Sie auf unserer <a href=\"/standorte/oranienburg/\">Seite zu Oranienburg</a>."
+      ],
+      "bild": {
+        "name": "oranienburg-bahnhof",
+        "alt": "Das Empfangsgebäude des Bahnhofs Oranienburg mit Vorplatz und Laternen an einem sonnigen Tag",
+        "caption": "Der Bahnhof Oranienburg.",
+        "credit": "Jivee Blau, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Oranienburg-_Bahnhof_Oranienburg-_Bahnhofsgeb%C3%A4ude-_Au%C3%9Fenansicht_30.7.2012.jpg"
+      }
+    },
+    {
+      "h2": "Hohen Neuendorf mit Bergfelde, Borgsdorf und Stolpe",
+      "absaetze": [
+        "Zur Stadt gehören die Stadtteile Hohen Neuendorf, Bergfelde, Borgsdorf und Stolpe.[[1]] Ende 2025 lebten hier 26.819 Menschen, 38 weniger als ein Jahr zuvor.[[3]] Mit der S1 sind es vom Bahnhof Hohen Neuendorf 32 Minuten bis Friedrichstraße, von Bergfelde mit S8 und S25 33 Minuten.[[7]] Die Stadt hat in jedem Stadtteil Grundschulen gebaut oder ausgebaut; dazu kommt das Marie-Curie-Gymnasium des Landkreises.[[9]]",
+        "Zum 01.01.2026 liegt der Bodenrichtwert im Mädchenviertel bei 420 €/m² (Vorjahr 390), in der Ortslage Hohen Neuendorf bei 370 €/m² (350), in der Borgsdorfer Siedlung bei 350 €/m² und im Dorfgebiet Stolpe bei 180 €/m². Am höchsten ist mit 460 €/m² die gemischte Baufläche in Bergfelde nördlich der S-Bahn.[[2]] Baugrundstücke für Einfamilienhäuser kosteten 2025 im Mittel 375 €/m² bei 38 Kauffällen.[[1]]",
+        "Neue Eigentumswohnungen entstanden im Berliner Umland des Landkreises 2025 fast nur in Oranienburg und Hohen Neuendorf. Hier zahlten Käufer im Erstverkauf im Mittel 4.772 €/m², weniger als im Vorjahr; gebrauchte Wohnungen ab Baujahr 1990 kosteten 3.152 €/m².[[1]] Die Mietpreisbremse gilt in Hohen Neuendorf nicht.[[5]] Für Wohnungen ab Baujahr 2020 nennt der Gutachterausschuss im Ortsteil Hohen Neuendorf eine mittlere Nettokaltmiete von 17,22 €/m², in Bergfelde 14,70 €/m².[[1]] Für die Brachflächen beiderseits der Oranienburger Straße liegt aus einem Werkstattverfahren 2023/2024 ein Masterplan für die südliche Teilfläche vor.[[8]]"
+      ],
+      "bild": {
+        "name": "oberhavel-rathaus-hohen-neuendorf",
+        "alt": "Rathaus Hohen Neuendorf: heller Altbau mit Uhr und Schriftzug, links daneben ein moderner Anbau mit Glasfassade",
+        "caption": "Das Rathaus in Hohen Neuendorf.",
+        "credit": "Hans G. Oberlack, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Rathaus_Hohen_Neuendorf_2020_SSW.jpg",
+        "position": "60% 50%"
+      }
+    },
+    {
+      "h2": "Birkenwerder: Siedlungshäuser am Briesetal",
+      "absaetze": [
+        "Schon zu Beginn des 20. Jahrhunderts bauten Großstädter in Birkenwerder Siedlungshäuser im Grünen. Diese gartenstadtähnliche Entwicklung setzt sich laut Gemeinde bis heute fort; das Briesetal zieht sich mitten durch den Ort. Seit dem Mauerfall hat sich die Einwohnerzahl fast verdoppelt, überwiegend durch Nachverdichtung und die Bebauung früherer Wochenendgrundstücke.[[10]] Ende 2025 lebten 7.958 Menschen in der Gemeinde.[[3]] Die S1 braucht bis Friedrichstraße 35 Minuten.[[7]] Die Regine-Hildebrandt-Schule ist eine Gesamtschule mit gymnasialer Oberstufe.[[11]]",
+        "2025 gab es 81 Kauffälle, 2024 waren es 65.[[1]] Der Bodenrichtwert der Ortslage liegt zum 01.01.2026 bei 340 €/m², ein Jahr zuvor waren es 400 €/m²; am Grenzweg in Birkenwerder-Nord stieg er von 330 auf 340 €/m².[[2]] Baugrundstücke kosteten 2025 im Mittel 343 €/m² bei 11 Kauffällen. Für Einfamilienhäuser weist der Gutachterausschuss Birkenwerder und Hohen Neuendorf gemeinsam aus: ab Baujahr 2010 im Mittel 4.374 €/m² Wohnfläche, bis Baujahr 1948 4.164 €/m².[[1]]",
+        "Anders als in Hohen Neuendorf gilt in Birkenwerder seit dem 01.01.2026 die Mietpreisbremse.[[5]] Wohnungen ab Baujahr 2020 kosteten im Mittel 15,16 €/m² netto kalt, gebrauchte Eigentumswohnungen ab Baujahr 1990 3.239 €/m².[[1]]"
+      ],
+      "bild": {
+        "name": "oberhavel-birkenwerder-viktoriaallee",
+        "alt": "Wohnhaus mit Ziergiebel und Vorgarten in der Viktoriaallee in Birkenwerder",
+        "caption": "Wohnhaus in der Viktoriaallee in Birkenwerder.",
+        "credit": "Matthias Wiegandt, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Birkenwerder-Viktoriaallee_22.jpg"
+      }
+    },
+    {
+      "h2": "Hennigsdorf: Industriestadt an der Havel",
+      "absaetze": [
+        "In Hennigsdorf führt die italienische Riva-Gruppe das frühere Stahl- und Walzwerk als Hennigsdorfer Elektrostahlwerk weiter, Alstom baut Schienenfahrzeuge und seit Ende der 1990er-Jahre ist die Life-Science-Branche dazugekommen.[[13]] Die Stadt zählt rund 30 Unternehmen im Bereich Metall und Schiene und rund 35 in Life Science.[[12]] Der Rathenau-Campus soll zum Innovationsstandort werden.[[1]]",
+        "Die S25 fährt alle 20 Minuten und braucht 35 Minuten bis Friedrichstraße; dazu halten RE6, RB20, RB21 und RB55.[[7]] Ende 2025 hatte Hennigsdorf 26.602 Einwohner.[[3]] An der Havel liegen der 29 Hektar große Havelauenpark und der Uferwanderweg in Nieder Neuendorf.[[12]]",
+        "Von 169 Kauffällen 2025 betrafen 105 Wohnungs- und Teileigentum. Hauptstandorte für den Weiterverkauf von Eigentumswohnungen sind laut Gutachterausschuss Hennigsdorf und Hohen Neuendorf. Wohnungen ab Baujahr 1990 kosteten hier im Mittel 3.195 €/m², modernisierte Altbauwohnungen 2.870 €/m².[[1]] Die Bodenrichtwerte liegen zum 01.01.2026 bei 550 €/m² im Zentrum, 430 €/m² an der Havelpromenade in Nieder Neuendorf (Vorjahr 400) und 370 €/m² in Stolpe-Süd (340).[[2]] Eine Mietpreisbremse gibt es nicht, einen Mietspiegel schon.[[1,5]] Wohnungen ab Baujahr 2000 kosteten im Mittel 15,91 €/m², Baujahre 1990 bis 1999 11,76 €/m².[[1]]"
+      ],
+      "bild": {
+        "name": "oberhavel-hennigsdorf-zentrum",
+        "alt": "Ein Platz mit Bäumen und Beeten in Hennigsdorf, dahinter ein weißes Wohnhochhaus",
+        "caption": "Grünanlage und Wohnhäuser in Hennigsdorf.",
+        "credit": "Dirk Ingo Franke, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Hennigsdorf_11.09.2016_10-46-31.jpg"
+      }
+    },
+    {
+      "h2": "Velten: Ofenstadt an der Regionalbahn",
+      "absaetze": [
+        "Velten liegt zehn Kilometer nördlich von Berlin. Früher prägten Ofenfabriken die Stadt, heute liegt das Gewerbe vor allem im Süden, mit Unternehmen wie Kloeckner Metals, dem Antennenhersteller Antonics und Tulip Cocoa.[[14,16]] Ende 2025 lebten 12.674 Menschen in Velten; das Landesamt für Bauen und Verkehr erwartet bis 2040 ein Plus von 9,1 %.[[3,4]] In der Stadt gibt es die Barbara-Zürner-Oberschule und das Hedwig-Bollhagen-Gymnasium.[[17]]",
+        "Eine S-Bahn hat Velten nicht. Mit RE6 und S25 über Hennigsdorf sind es 44 Minuten bis Friedrichstraße, mit RB55 und S25 53 Minuten.[[7]] Die Verlängerung der S-Bahn von Hennigsdorf nach Velten ist ein i2030-Projekt; laut Grundstücksmarktbericht kann die Umsetzung bis in die 2030er-Jahre dauern.[[1]] Der Bus 824 fährt alle 20 Minuten von Hennigsdorf und Oranienburg nach Velten.[[14]]",
+        "Zum 01.01.2026 sind die Bodenrichtwerte gestiegen: 220 €/m² in der Stadt (Vorjahr 180), 240 €/m² im Sanierungsgebiet (200), 180 €/m² in der Parkstadt (150).[[2]] Baugrundstücke kosteten 2025 im Mittel 206 €/m², weniger als in den anderen Orten auf dieser Seite, allerdings bei nur 5 Kauffällen. Gebrauchte Eigentumswohnungen ab Baujahr 1990 kosteten 2.878 €/m², Mietwohnungen der Baujahre 1990 bis 2019 im Mittel 12,41 €/m².[[1]] Die Mietpreisbremse gilt nicht.[[5]] Nahe dem Bahnhof plant die Stadt an der Nauener Straße ein gemischtes Stadtquartier.[[15]]"
+      ],
+      "bild": {
+        "name": "oberhavel-velten-ofenmuseum",
+        "alt": "Das Ofen- und Keramikmuseum in Velten, ein dreigeschossiger gelber Klinkerbau mit Rasenfläche davor",
+        "caption": "Das Ofen- und Keramikmuseum in Velten.",
+        "credit": "Miriam Guterland, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Museum_Ofen_Keramik_Velten_Bbg.JPG"
+      }
+    },
+    {
+      "h2": "Mühlenbecker Land: Schildow, Mühlenbeck, Schönfließ und Zühlsdorf",
+      "absaetze": [
+        "Die Gemeinde besteht aus den Ortsteilen Mühlenbeck, Schildow, Schönfließ und Zühlsdorf; zu Mühlenbeck gehören unter anderem Mönchmühle, Summt und Feldheim.[[18]] Ende 2025 lebten hier 15.090 Menschen.[[3]] Von Mühlenbeck-Mönchmühle sind es mit S8 und S25 27 Minuten bis Friedrichstraße, von Schönfließ 30 Minuten.[[7]] Zühlsdorf liegt an der Heidekrautbahn RB27. Die alte Stammstrecke von Berlin-Wilhelmsruh über Schildow und Mühlenbeck soll reaktiviert werden; einen Termin nennt die Gemeinde nicht.[[19]] In Mühlenbeck liegt die Käthe-Kollwitz-Gesamtschule.[[17]]",
+        "Der Markt besteht überwiegend aus Häusern und Grundstücken: Von 168 Kauffällen 2025 betrafen 83 bebaute und 41 unbebaute Grundstücke, 23 Wohnungs- und Teileigentum.[[1]] Zum 01.01.2026 liegt der Bodenrichtwert in Schildow bei 340 €/m², in Summt bei 300, in der Ortslage Mühlenbeck bei 290 und in Zühlsdorf bei 240 €/m²; in Feldheim und Mönchmühle sank er auf 270 €/m² (Vorjahr 310 und 290).[[2]] Baugrundstücke kosteten im Mittel 276 €/m² bei 33 Kauffällen. Einfamilienhäuser ab Baujahr 2010 erzielten in der Region Glienicke–Mühlenbecker Land im Mittel 4.685 €/m² Wohnfläche.[[1]] Seit dem 01.01.2026 gilt die Mietpreisbremse.[[5]]"
+      ],
+      "bild": {
+        "name": "oberhavel-schoenfliess-dorfkirche",
+        "alt": "Die Dorfkirche Schönfließ mit spitzem Turm hinter Einfamilienhäusern und Bäumen",
+        "caption": "Die Dorfkirche in Schönfließ im Mühlenbecker Land.",
+        "credit": "Leonhard Lenz, CC0",
+        "url": "https://commons.wikimedia.org/wiki/File:Dorfkirche_Sch%C3%B6nflie%C3%9F_2021-08-26_01.jpg"
+      }
+    }
+  ],
+  "band": {
+    "name": "oberhavel-havel-stolpe",
+    "alt": "Die Havel bei Stolpe in Hohen Neuendorf, gesehen von der Autobahnbrücke Hohenschöpping, mit Schilf und Bäumen an beiden Ufern",
+    "caption": "Die Havel bei Stolpe in Hohen Neuendorf.",
+    "credit": "Lukas Beck, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Havel_Stolpe.jpg"
+  },
+  "anbindung": [
+    "Hennigsdorf, Hohen Neuendorf, Birkenwerder und die S8-Bahnhöfe im Mühlenbecker Land haben die S-Bahn, Velten nur die Regionalbahn; die S-Bahn-Verlängerung dorthin kann bis in die 2030er-Jahre dauern.[[1,7]]",
+    "Die S-Bahn fährt im 20-Minuten-Takt nach Berlin.[[1]] Mit der S1 sind es vom Bahnhof Hohen Neuendorf 32 Minuten bis Friedrichstraße, von Bergfelde mit S8 und S25 33 Minuten.[[7]]"
+  ],
+  "karte": {
+    "alt": "Karte des südlichen Landkreises Oberhavel bis Berlin: Oranienburg, Hohen Neuendorf, Birkenwerder, Hennigsdorf, Velten und Mühlenbecker Land mit Bahnstrecken, Autobahnen, Gewässern und dem Bahnhof Berlin Friedrichstraße"
+  },
+  "verkaufen": {
+    "h2": "Immobilie im Landkreis Oberhavel verkaufen",
+    "absaetze": [
+      "Die Märkte der Orte unterscheiden sich stark. In Hennigsdorf betrafen 2025 von 169 Kauffällen 105 Wohnungen, im Mühlenbecker Land von 168 nur 23.[[1]] Wir bewerten deshalb nach den Zahlen Ihrer Gemeinde und Ihres Baujahrs, nicht nach einem Mittelwert für den Landkreis.",
+      "Auch die Bodenrichtwerte haben sich zum 01.01.2026 unterschiedlich entwickelt: In Velten stiegen sie in allen Wohnzonen, in Hennigsdorf in vier von fünf, in der Ortslage Birkenwerder sank der Wert von 400 auf 340 €/m².[[2]]",
+      "Bei vermieteten Wohnungen kommt es auf die Gemeinde an: In Birkenwerder, im Mühlenbecker Land und in Oranienburg gilt die Mietpreisbremse, in Hohen Neuendorf, Hennigsdorf und Velten nicht.[[5]] Das berücksichtigen wir in Preis und Exposé, weil Kapitalanleger danach rechnen."
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren im Landkreis Oberhavel",
+    "absaetze": [
+      "Als Eigennutzer klären Sie zuerst den Weg nach Berlin. Hennigsdorf, Hohen Neuendorf, Birkenwerder und die S8-Bahnhöfe im Mühlenbecker Land haben die S-Bahn, Velten nur die Regionalbahn; die S-Bahn-Verlängerung dorthin kann bis in die 2030er-Jahre dauern.[[1,7]] Für die Heidekrautbahn durch Schildow und Mühlenbeck nennt die Gemeinde noch keinen Termin.[[19]]",
+      "Als Kapitalanleger prüfen Sie Miete und Kaufpreis gegen den Grundstücksmarktbericht. Für Mehrfamilienhäuser lag der Liegenschaftszinssatz 2025 im Landkreis im Mittel bei 3,26 %.[[1]] In fünf Gemeinden begrenzen Mietpreisbremse und Kappungsgrenze die Miete, darunter Birkenwerder und das Mühlenbecker Land.[[5,6]] Mietspiegel nennt der Gutachterausschuss für Oranienburg, Hennigsdorf und Glienicke.[[1]]"
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für den Landkreis Oberhavel",
+    "absaetze": [
+      "Eine neue Wohnung in Hohen Neuendorf kostete 2025 im Mittel 4.772 €/m², eine gebrauchte ab Baujahr 1990 3.152 €/m².[[1]] Diesen Abstand sollten Sie bei Eigenkapital und Beleihung einplanen. Ihre Finanzierung vergleichen wir über Europace und Baufinex und fragen parallel Banken direkt an."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Welcher Makler verkauft Immobilien in Hohen Neuendorf, Hennigsdorf und Velten?",
+      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im Berliner Umland des Landkreises Oberhavel, also auch in Hohen Neuendorf, Hennigsdorf und Velten. Ihr Ansprechpartner ist Lennart Geserich. Wir bewerten nach dem Bodenrichtwert Ihrer Zone und den Preisen, die der Gutachterausschuss für Ihren Ort ausweist.",
+      "herkunft": "Prompts der KI-Recherche „Welcher Makler verkauft Immobilien in Oranienburg und Hohen Neuendorf?“ (q39) und „Welcher Makler verkauft in Velten und Hennigsdorf?“ (q43) (ChatGPT, Gemini, Google AI Overview; Dashboard/src/data/research/ai_answers.json, Oktober 2026)"
+    },
+    {
+      "frage": "Wie hoch ist der Quadratmeterpreis im Landkreis Oberhavel?",
+      "antwort": "Das hängt vom Ort und vom Baujahr ab. Für Einfamilienhäuser ab Baujahr 2010 zahlten Käufer 2025 in der Region Birkenwerder–Hohen Neuendorf im Mittel 4.374 €/m² Wohnfläche, in Glienicke und im Mühlenbecker Land 4.685 €/m², in Velten, Hennigsdorf und Oberkrämer 4.205 €/m². Gebrauchte Eigentumswohnungen ab Baujahr 1990 lagen in den Orten auf dieser Seite zwischen 2.878 €/m² in Velten und 3.405 €/m² im Mühlenbecker Land.[[1]]",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienmakler Oranienburg“, „Immobilie verkaufen Oranienburg“ und „Immobilienbewertung Oranienburg“, dort als „Wie hoch ist der Quadratmeterpreis in Oranienburg?“ (Google_Areas, Oktober 2026)"
+    },
+    {
+      "frage": "Wie kann ich den Wert meiner Immobilie in Oberhavel selbst einschätzen?",
+      "antwort": "Ein erster Anhaltspunkt ist der Bodenrichtwert Ihrer Zone in BORIS Brandenburg, zum Beispiel 370 €/m² in der Ortslage Hohen Neuendorf oder 410 €/m² in Nieder Neuendorf zum 01.01.2026.[[2]] Für das Gebäude helfen die Vergleichspreise im Grundstücksmarktbericht, getrennt nach Region und Baujahr.[[1]] Zustand, Grundstücksgröße und die aktuelle Konkurrenz am Markt zeigen diese Werte nicht; das prüfen wir in der kostenlosen Bewertung.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienbewertung Velten Hennigsdorf“, dort als „Wie kann ich selbst den Wert einer Immobilie ermitteln?“ und „Wo bekomme ich den Verkehrswert einer Immobilie her?“ (Google_Areas, Oktober 2026)"
+    },
+    {
+      "frage": "Ich möchte ein Mehrfamilienhaus in Oberhavel verkaufen. Wer findet Käufer?",
+      "antwort": "Wir vermitteln auch Mehrfamilienhäuser und klären früh, ob Interessenten den Kauf finanzieren können. Käufer rechnen mit der Rendite: 2025 lag der Liegenschaftszinssatz für Mehrfamilienhäuser im Landkreis im Mittel bei 3,26 %, der Kaufpreis betrug im Median das 17,54-Fache der jährlichen Miete, bei 27 Kauffällen.[[1]] Ob die Mietpreisbremse gilt, beeinflusst die Mietprognose; sie gilt in Birkenwerder, Glienicke/Nordbahn, Leegebruch, im Mühlenbecker Land und in Oranienburg.[[5]]",
+      "herkunft": "Prompt der KI-Recherche „Ich möchte ein Mehrfamilienhaus im Berliner Umland verkaufen. Wer findet Käufer?“ (q62) (ChatGPT, Gemini, Google AI Overview; Dashboard/src/data/research/ai_answers.json, Oktober 2026)"
+    },
+    {
+      "frage": "Wo kann ich meine Immobilie in Oberhavel kostenlos bewerten lassen?",
+      "antwort": "Bei Fischer & Geserich kostet die Wertermittlung nichts und Sie erhalten sie meistens innerhalb weniger Stunden, oft noch am selben Tag. Wir gehen vom Bodenrichtwert und den gezahlten Preisen in Ihrer Gemeinde aus; in Hohen Neuendorf gab es 2025 239 Kauffälle, in Hennigsdorf 169.[[1]]",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienbewertung Velten Hennigsdorf“, dort als „Wo kann ich meine Immobilie kostenlos bewerten lassen?“ (Google_Areas, Oktober 2026)"
+    },
+    {
+      "frage": "Ist es aktuell sinnvoll, eine Immobilie in Oberhavel zu verkaufen?",
+      "antwort": "Das hängt von Ihrer Lage und Ihren Plänen ab; eine Prognose geben wir nicht. Die Zahlen für 2025: In Hohen Neuendorf, Birkenwerder, Hennigsdorf, Velten und im Mühlenbecker Land gab es mehr Kauffälle als 2024. Gebrauchte Eigentumswohnungen erzielten im Landkreis überall außer in Oranienburg höhere Preise als im Vorjahr; bei Bauland sanken die Preise in einzelnen teureren Lagen des Berliner Umlands, in anderen stiegen sie.[[1]]",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilie verkaufen Oranienburg“ (Google_Areas, Oktober 2026)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Oranienburg",
+      "url": "/standorte/oranienburg/"
+    },
+    {
+      "name": "Bernau bei Berlin",
+      "url": "/standorte/bernau/"
+    },
+    {
+      "name": "Falkensee",
+      "url": "/standorte/falkensee/"
+    },
+    {
+      "name": "Berlin-Pankow",
+      "url": "/standorte/berlin/pankow/"
+    },
+    {
+      "name": "Berlin",
+      "url": "/standorte/berlin/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Grundstücksmarktbericht 2025, Gutachterausschuss für Grundstückswerte im Landkreis Oberhavel (veröffentlicht 18.05.2026)",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_OHV.pdf",
+      "stand": "Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+    },
+    {
+      "name": "Bodenrichtwerte Hohen Neuendorf, Birkenwerder, Hennigsdorf, Velten und Mühlenbecker Land, BORIS Brandenburg (GeoBasis-DE/LGB, dl-de/by-2-0)",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?f=json&limit=500&skipGeometry=true&gemeinde_bezeichnung=Hohen%20Neuendorf&stichtag=2026-01-01",
+      "stand": "Stichtag 01.01.2026, Vergleich mit 01.01.2025"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 4 – j / 25, Bevölkerung im Land Brandenburg",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Landesamt für Bauen und Verkehr, Bevölkerungsvorausschätzung 2024 bis 2040, Anlage 3",
+      "url": "https://lbv.brandenburg.de/sixcms/media.php/9/31_Bevoelkerungsvorausschaetzung_2024-20.pdf",
+      "stand": "Basis 31.12.2023, mittlere Variante"
+    },
+    {
+      "name": "Mietpreisbegrenzungsverordnung Brandenburg, Ministerium für Infrastruktur und Landesplanung",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/Mietpreisbegrenzungsverordnung.pdf",
+      "stand": "Kabinettsbeschluss 25.11.2025, gültig 01.01.2026 bis 31.12.2029"
+    },
+    {
+      "name": "Kappungsgrenzenverordnung Brandenburg, Ministerium für Infrastruktur und Landesplanung",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/KappGrenzV.pdf",
+      "stand": "gültig 01.01.2026 bis 31.12.2030"
+    },
+    {
+      "name": "VBB-Fahrplandaten, Verbindungen bis S+U Friedrichstraße",
+      "url": "https://v6.vbb.transport.rest/journeys?from=900200009&to=900100001&departure=2026-11-10T09:00%2B01:00",
+      "stand": "Fahrplan Dienstag 10.11.2026 ab 9 Uhr, abgefragt 26.10.2026"
+    },
+    {
+      "name": "Stadt Hohen Neuendorf, Zentrumsentwicklung",
+      "url": "https://www.hohen-neuendorf.de/de/bauen-wirtschaft/stadtplanung/zentrumsentwicklung",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Hohen Neuendorf, Die Schulen der Stadt",
+      "url": "https://www.hohen-neuendorf.de/de/familie-bildung/die-schulen-der-stadt-hohen-neuendorf",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Birkenwerder, Wohnen im Grünen",
+      "url": "https://www.birkenwerder.de/leben-in-birkenwerder/wohnen/wohnen-im-gruenen",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Birkenwerder, Schulen",
+      "url": "https://www.birkenwerder.de/leben-in-birkenwerder/wohnen/schulen",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Hennigsdorf, Zahlen und Fakten",
+      "url": "https://www.hennigsdorf.de/Stadtleben/Die-Stadt/Zahlen-und-Fakten/",
+      "stand": "Stand Februar 2025"
+    },
+    {
+      "name": "Stadt Hennigsdorf, Standort Hennigsdorf",
+      "url": "https://www.hennigsdorf.de/Wirtschaft/Standort-Hennigsdorf/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Velten, Verkehrsanbindung",
+      "url": "https://velten.de/Stadtleben-Tourismus/Ankommen-Verweilen/Verkehrsanbindung/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Velten, Stadtquartier Nauener Straße",
+      "url": "https://velten.de/Bauen-Wirtschaft/Stadtentwicklung/Stadtquartier-Nauener-Stra%C3%9Fe/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Velten, Wirtschaftsstandort",
+      "url": "https://velten.de/Bauen-Wirtschaft/Wirtschaft/Wirtschaftsstandort/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Landkreis Oberhavel, Weiterführende Schulen im Landkreis Oberhavel",
+      "url": "https://oberhavel.de/media/custom/2244_112496_1.PDF?1764346662=",
+      "stand": "November 2025"
+    },
+    {
+      "name": "Gemeinde Mühlenbecker Land, Vier Ortsteile – Mühlenbeck",
+      "url": "https://www.muehlenbecker-land.de/de/leben-gemeinde/ueber-die-gemeinde/vier-ortsteile/muehlenbeck",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Mühlenbecker Land, Reaktivierung der Heidekrautbahn auf ihrer Stammstrecke",
+      "url": "https://www.muehlenbecker-land.de/de/bauen-wirtschaft/verkehr/reaktivierung-der-heidekrautbahn-auf-ihrer-stammstrecke",
+      "stand": "abgerufen 26.10.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "217.858 Einwohner Landkreis 31.12.2025, +168; LBV 2040 224.199",
+      "fundstelle": "oberhavel.md, Zeilen 25, 26"
+    },
+    {
+      "zahl": "Einwohner und Veränderung 2025 der Gemeinden; LBV 2040 Oranienburg +10,7 %, Velten +9,1 %",
+      "fundstelle": "oberhavel.md, Zeilen 48–53"
+    },
+    {
+      "zahl": "Verwaltung und Gesundheitswesen in Oranienburg; Wachstumskern, einer von 15; Rathenau-Campus",
+      "fundstelle": "oberhavel.md, Zeile 30; oranienburg.md, Zeile 242"
+    },
+    {
+      "zahl": "Oranienburg 513 Kauffälle, EFH ab 2010 Ø 4.726, bis 1948 Ø 2.726",
+      "fundstelle": "oranienburg.md, Zeilen 23, 26; oberhavel.md, Zeilen 13–19 (Tabelle 1 korrigiert)"
+    },
+    {
+      "zahl": "S-Bahn im 20-Minuten-Takt; S-Bahn Hennigsdorf–Velten i2030, bis in die 2030er-Jahre",
+      "fundstelle": "oberhavel.md, Zeilen 28, 29"
+    },
+    {
+      "zahl": "Kauffälle 2024 → 2025 und Aufteilung unbebaut/bebaut/Wohnungseigentum",
+      "fundstelle": "oberhavel.md, Zeilen 61, 62"
+    },
+    {
+      "zahl": "Bauland EFH Ø 343 / 375 / 396 / 206 / 276 €/m² (Kauffälle 11 / 38 / 5 / 5 / 33); Oranienburg Ø 272",
+      "fundstelle": "oberhavel.md, Zeile 63; oranienburg.md, Zeile 21"
+    },
+    {
+      "zahl": "ETW-Weiterverkauf nach 1990 Ø 3.239 / 3.152 / 3.195 / 2.878 / 3.405; modernisierter Altbau Hennigsdorf Ø 2.870",
+      "fundstelle": "oberhavel.md, Zeilen 65, 66"
+    },
+    {
+      "zahl": "ETW-Erstverkauf Hohen Neuendorf Ø 4.772, gegenüber Vorjahr gesunken; neue ETW fast nur Oranienburg und Hohen Neuendorf; Hauptstandorte Weiterverkauf Hennigsdorf und Hohen Neuendorf",
+      "fundstelle": "oberhavel.md, Zeilen 34, 67"
+    },
+    {
+      "zahl": "ETW-Weiterverkauf höhere Preise außer Oranienburg; Bauland in teureren Lagen gesunken, in anderen gestiegen",
+      "fundstelle": "oberhavel.md, Zeilen 33, 35"
+    },
+    {
+      "zahl": "EFH ab 2010: Birkenwerder–Hohen Neuendorf Ø 4.374, Glienicke–Mühlenbecker Land Ø 4.685, Velten–Hennigsdorf–Oberkrämer Ø 4.205; bis 1948 Birkenwerder–Hohen Neuendorf Ø 4.164",
+      "fundstelle": "oberhavel.md, Zeilen 75, 78, 81, 85"
+    },
+    {
+      "zahl": "Mieten: Birkenwerder ab 2020 Ø 15,16; Hennigsdorf 1990–1999 Ø 11,76, ab 2000 Ø 15,91; Bergfelde ab 2020 Ø 14,70; OT Hohen Neuendorf ab 2020 Ø 17,22; Velten 1990–2019 Ø 12,41 (38 Fälle)",
+      "fundstelle": "oberhavel.md, Zeilen 94, 96, 97, 100, 102, 103"
+    },
+    {
+      "zahl": "Mietspiegel Oranienburg, Hennigsdorf, Glienicke",
+      "fundstelle": "oberhavel.md, Zeile 37"
+    },
+    {
+      "zahl": "Liegenschaftszins MFH Ø 3,26 %, Rohertragsfaktor Median 17,54, 27 Kauffälle",
+      "fundstelle": "oberhavel.md, Zeile 38"
+    },
+    {
+      "zahl": "Mietpreisbremse und Kappungsgrenze: Birkenwerder, Glienicke/Nordbahn, Leegebruch, Mühlenbecker Land, Oranienburg; nicht Hennigsdorf, Hohen Neuendorf, Velten",
+      "fundstelle": "oberhavel.md, Zeilen 39, 40"
+    },
+    {
+      "zahl": "Bodenrichtwerte Hohen Neuendorf: Bergfelde nördlich der S-Bahn 460, Mädchenviertel 420 (390), Ortslage 370 (350), Borgsdorf Siedlung 350, Stolpe 180",
+      "fundstelle": "oberhavel.md, Zeilen 118, 120, 122, 124, 130"
+    },
+    {
+      "zahl": "Bodenrichtwerte Birkenwerder: Ortslage 340 (400), Grenzweg Bkw-Nord 340 (330)",
+      "fundstelle": "oberhavel.md, Zeilen 131, 132"
+    },
+    {
+      "zahl": "Bodenrichtwerte Hennigsdorf: Zentrum 550 (550), Havelpromenade 430 (400), Randlage 410 (380), Nieder Neuendorf 410 (380), Stolpe-Süd 370 (340); vier von fünf gestiegen",
+      "fundstelle": "oberhavel.md, Zeilen 134–138"
+    },
+    {
+      "zahl": "Bodenrichtwerte Velten: Sanierungsgebiet 240 (200), Stadt 220 (180), Parkstadt 180 (150)",
+      "fundstelle": "oberhavel.md, Zeilen 139–141"
+    },
+    {
+      "zahl": "Bodenrichtwerte Mühlenbecker Land: Schildow 340, Summt 300, Mühlenbeck Ortslage 290, Mönchmühle 270 (290), Feldheim 270 (310), Zühlsdorf 240",
+      "fundstelle": "oberhavel.md, Zeilen 142, 143, 146, 148, 149, 151"
+    },
+    {
+      "zahl": "Fahrzeiten bis Friedrichstraße: Hennigsdorf 35 (alle 20 min), Hohen Neuendorf 32, Bergfelde 33, Birkenwerder 35, Velten 44 / 53, Schönfließ 30, Mönchmühle 27; Linien an den Bahnhöfen",
+      "fundstelle": "oberhavel.md, Zeilen 160–168"
+    },
+    {
+      "zahl": "Hohen Neuendorf: Zentrumsentwicklung, Masterplan südliche Teilfläche; Grundschulen in jedem Stadtteil, Marie-Curie-Gymnasium; vier Stadtteile",
+      "fundstelle": "oberhavel.md, Zeilen 175–177"
+    },
+    {
+      "zahl": "Birkenwerder: Siedlungshäuser seit Beginn des 20. Jahrhunderts, gartenstadtähnlich, Briesetal, Einwohnerzahl fast verdoppelt; Regine-Hildebrandt-Schule",
+      "fundstelle": "oberhavel.md, Zeilen 178, 179"
+    },
+    {
+      "zahl": "Hennigsdorf: Cluster ca. 30 / ca. 35 Unternehmen; Havelauenpark 29 ha, Uferwanderweg; Riva, Alstom, Life Science seit Ende der 1990er",
+      "fundstelle": "oberhavel.md, Zeilen 180, 182, 183"
+    },
+    {
+      "zahl": "Velten: 10 km nördlich, Bus 824 im 20-Minuten-Takt; Nauener Straße nahe dem Bahnhof; Ofenfabriken, Süden, Kloeckner Metals, Antonics, Tulip Cocoa; Barbara-Zürner-Oberschule, Hedwig-Bollhagen-Gymnasium",
+      "fundstelle": "oberhavel.md, Zeilen 186–189"
+    },
+    {
+      "zahl": "Mühlenbecker Land: vier Ortsteile, Siedlungen im OT Mühlenbeck; Heidekrautbahn ohne Termin, RB27 über Zühlsdorf; Käthe-Kollwitz-Gesamtschule",
+      "fundstelle": "oberhavel.md, Zeilen 190–192"
+    },
+    {
+      "zahl": "Wertermittlung kostenlos, meistens in wenigen Stunden; Europace und Baufinex; § 34c und § 34i GewO; Lennart Geserich, Head of Sales & Vermietung",
+      "fundstelle": "wie konigs-wusterhausen.json (Live-Seite und Brief)"
+    }
+  ]
+}

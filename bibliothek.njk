@@ -1,0 +1,224 @@
+---
+layout: base.njk
+fgDesign: true
+fgSystem: true
+fgsHero: true
+title: "Bausteinbibliothek | F&G Design-System"
+description: "Interne Testseite des Design-Systems: Farben, Schrift, Buttons und die Abschnitte S1 bis S8 und F mit echten Inhalten."
+permalink: /_bibliothek/index.html
+robots: "noindex, nofollow"
+eleventyExcludeFromCollections: true
+preloadImage: /images/home/hero-berlin-mitte-1600.webp
+preloadImageSrcset: "/images/home/hero-berlin-mitte-960.webp 960w, /images/home/hero-berlin-mitte-1600.webp 1600w, /images/home/hero-berlin-mitte-1920.webp 1920w"
+---
+{#- Design-Sprint-Brief §6, CP1: alle Bausteine auf einer Seite (noindex, nicht in der Sitemap). Inhalte sind echte
+    F&G-Texte, Zahlen und Fotos aus den Datenquellen der Website; nichts ist Platzhalter. Die Marken „S1 · Titelbild“ usw.
+    gibt es nur hier, damit Jesu die Abschnitte zuordnen kann. -#}
+{% from "fgs-macros.njk" import hero, statement, split, rail, card, quote, chapters, wide, facts, faq, closing, textlink, pic with context %}
+{%- set ort = gebiete | findBy("slug", "oranienburg") -%}
+{%- set kartenOrte = [] -%}
+{%- for slug in ["berlin", "leipzig", "dresden", "oranienburg", "bernau", "falkensee", "teltow", "erkner", "konigs-wusterhausen"] -%}
+{%- set _ = kartenOrte.push(gebiete | findBy("slug", slug)) -%}
+{%- endfor -%}
+<style>
+  .bib-mark { padding-top: 24px; font: 500 12px/1.4 var(--fgs-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--fgs-ink-2); }
+  .bib-mark span { color: var(--fgs-gold-text); }
+  .bib-swatches { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 32px var(--fgs-gap); }
+  .bib-swatch i { display: block; aspect-ratio: 3 / 2; border: 1px solid var(--fgs-line); border-radius: var(--fgs-r); }
+  .bib-swatch b { display: block; margin-top: 12px; font-weight: 500; font-size: 15px; }
+  .bib-swatch small { display: block; }
+  .bib-type > * + * { margin-top: 32px; }
+  .bib-type small { display: block; margin-bottom: 8px; }
+</style>
+
+<p class="fgs-sr">Interne Testseite des Design-Systems, nicht für Besucher.</p>
+
+{{ hero({
+  bild: "home/hero-berlin-mitte" | bild,
+  alt: "Berlin-Mitte: die Spree, das Nikolaiviertel, das Rote Rathaus und der Fernsehturm, links der Berliner Dom",
+  kicker: "Immobilienberatung aus Berlin-Steglitz",
+  titel: "Immobilienberatung in Berlin, Brandenburg und Sachsen",
+  unterzeile: "verkaufen, kaufen und finanzieren aus einer Hand",
+  satz: "Wir verkaufen Immobilien, beraten beim Kauf und vermitteln die Finanzierung. Weil bei uns alles zusammenläuft, wissen Sie früh, was Ihr Vorhaben kostet und ob es sich rechnet.",
+  buttons: [{ href: nav.valuation | navHref, label: "Kostenlose Bewertung" }, { href: "/kontakt.html", label: "Vorhaben besprechen" }]
+}) }}
+
+<div class="fgs-wrap"><p class="bib-mark"><span>Grundlagen</span> · Farben, Schrift, Buttons (Brief 3.1, 3.2, 3.4)</p></div>
+<section class="fgs-section" aria-labelledby="grundlagen-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head">
+      <h2 id="grundlagen-titel">Farben und Schrift</h2>
+      <p>Ein Grundton auf allen Seiten. Navy nur im Verlauf des Titelbilds, im Abschlussband und im Fuß. Gold für Buttons, dünne Linien und kleine Labels.</p>
+    </div>
+    <ul class="bib-swatches">
+      <li class="bib-swatch"><i style="background:#F7F4EC"></i><b>Grundton</b><small class="fgs-small">#F7F4EC</small></li>
+      <li class="bib-swatch"><i style="background:#08082F"></i><b>Navy, Text</b><small class="fgs-small">#08082F</small></li>
+      <li class="bib-swatch"><i style="background:#4A4A63"></i><b>Zweittext</b><small class="fgs-small">#4A4A63</small></li>
+      <li class="bib-swatch"><i style="background:rgba(8,8,47,.12)"></i><b>Haarlinie</b><small class="fgs-small">Navy 12 %</small></li>
+      <li class="bib-swatch"><i style="background:#D1B464"></i><b>Gold</b><small class="fgs-small">#D1B464</small></li>
+      <li class="bib-swatch"><i style="background:#876200"></i><b>Goldschrift</b><small class="fgs-small">#876200</small></li>
+    </ul>
+    <div class="bib-type" style="margin-top: 96px;">
+      <div><small class="fgs-small">H1 · Marcellus 64/38</small><p class="fgs-h1" style="max-width:none">Verkaufen, kaufen und finanzieren</p></div>
+      <div><small class="fgs-small">H2 · Marcellus 46/31</small><p class="fgs-h2" style="max-width:none">Unsere Gebiete</p></div>
+      <div><small class="fgs-small">H3 · Marcellus 26/22</small><p class="fgs-h3">Auch nach dem Notartermin erreichbar</p></div>
+      <div><small class="fgs-small">Einleitung · Inter 22/19</small><p class="fgs-lead">Wir bewerten Ihre Immobilie, bereiten die Unterlagen vor, vermarkten sie und prüfen die Finanzierung der Käufer, bevor es zum Notar geht.</p></div>
+      <div><small class="fgs-small">Fließtext · Inter 18/17, höchstens 68 Zeichen</small><p>Am Anfang steht Ihre Ausgangslage: was Sie vorhaben, was Sie mitbringen und bis wann es passieren soll. Erst danach sprechen wir über Objekte und Banken.</p></div>
+      <div><small class="fgs-small">Label (nur Kicker über der H1) · Inter 500, 15 px, Großbuchstaben</small><p class="fgs-label">Kaufen &amp; Investieren</p></div>
+      <div><small class="fgs-small">Quellen- und Stand-Zeilen · 13 px; Bildnachweise im Aufklapper über der Fußzeile 13 px; aller andere Text mindestens 15 px</small><p class="fgs-small fgs-source">Gutachterausschuss Oberhavel, Grundstücksmarktbericht 2025</p></div>
+    </div>
+    <div class="fgs-btns" style="margin-top: 96px;">
+      <a class="fgs-btn fgs-btn--primary" href="{{ nav.valuation | navHref }}">Kostenlose Bewertung</a>
+      <a class="fgs-btn fgs-btn--secondary" href="/kontakt.html">Vorhaben besprechen</a>
+      {{ textlink("/verkaufen.html", "Verkauf kennenlernen") }}
+    </div>
+  </div>
+</section>
+
+<div class="fgs-wrap"><p class="bib-mark"><span>S2</span> · Aussage</p></div>
+{{ statement("Ob ein Kauf oder Verkauf aufgeht, entscheidet sich selten am Preis allein. Die Finanzierung, die Lage und Ihr Ziel gehören in dieselbe Rechnung, und genau so arbeiten wir.") }}
+
+<div class="fgs-wrap"><p class="bib-mark"><span>S4</span> · Karussell als Dreierreihe (Leistungen)</p></div>
+{% call rail({ id: "leistungen", titel: "Wobei wir Sie begleiten", text: "Sie können jede Leistung einzeln anfragen. Wenn Sie zum Beispiel verkaufen und gleich die nächste Immobilie finanzieren möchten, planen wir beides zusammen.", grid3: true }) %}
+  {{ card({ href: "/verkaufen.html", bild: "verkaufen-hero" | bild, alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser", label: "Verkaufen", titel: "Verkauf & Vermarktung", zeile: "Wertermittlung, Unterlagen, Vermarktung und die Prüfung der Käuferfinanzierung, bis zur Übergabe der Schlüssel." }) }}
+  {{ card({ href: "/ankaufsberatung.html", bild: "ankauf-hero" | bild, alt: "Das Eckhaus Kurfürstendamm 190 in Berlin-Charlottenburg mit grüner Kuppel an einem sonnigen Junitag", label: "Kaufen & Investieren", titel: "Ankauf & Investment", zeile: "Wir prüfen ein Objekt, bevor Sie kaufen: Lage, Zustand, Zahlen und Finanzierung. Auch dann, wenn wir es nicht selbst anbieten." }) }}
+  {{ card({ href: "/finanzierungsberatung.html", bild: "finanzierung-hero" | bild, alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken", label: "Finanzierung", titel: "Immobilienfinanzierung", zeile: "Wir vergleichen die Angebote vieler Banken und begleiten Ihre Unterlagen bis zur Auszahlung, für Eigennutzer, Kapitalanleger und Mehrfamilienhäuser." }) }}
+{% endcall %}
+
+<div class="fgs-wrap"><p class="bib-mark"><span>S4</span> · Karussell (Gebiete, zehn Karten)</p></div>
+{% call rail({ id: "gebiete", titel: "Unsere Gebiete", link: { href: "/standorte/", label: "Alle Gebiete ansehen" } }) %}
+  {{ card({ href: kartenOrte[0].url, bild: ("/images/gebiete/" + kartenOrte[0].heroPhoto.name) | bild, alt: kartenOrte[0].heroPhoto.alt, label: "Region", titel: "Berlin", zeile: "Vier Bezirke mit eigener Seite" }) }}
+  {{ card({ href: "/standorte/#region-brandenburg", bild: "potsdam-band" | bild, alt: "Alter Markt in Potsdam mit Nikolaikirche, Obelisk und Altem Rathaus", label: "Region", titel: "Brandenburg", zeile: (serviceArea.landkreise | length) + " Landkreise im Berliner Umland" }) }}
+  {{ card({ href: kartenOrte[1].url, bild: ("/images/gebiete/" + kartenOrte[1].heroPhoto.name) | bild, alt: kartenOrte[1].heroPhoto.alt, label: "Region", titel: "Leipzig", zeile: "Zentrum, Nord und West" }) }}
+  {{ card({ href: kartenOrte[2].url, bild: ("/images/gebiete/" + kartenOrte[2].heroPhoto.name) | bild, alt: kartenOrte[2].heroPhoto.alt, label: "Region", titel: "Dresden", zeile: "Nord, Süd, Zentrum und Ost" }) }}
+  {%- for g in kartenOrte.slice(3) %}
+  {{ card({ href: g.url, bild: ("/images/gebiete/" + g.heroPhoto.name) | bild, alt: g.heroPhoto.alt, label: "Brandenburg", titel: g.name, zeile: g.kreis }) }}
+  {%- endfor %}
+{% endcall %}
+
+<div class="fgs-wrap"><p class="bib-mark"><span>S3</span> · Teilung, Bild links</p></div>
+{% call split({ id: "bewertung", titel: "Was ist Ihre Immobilie wert?", bild: "bewertung-hero" | bild, alt: "Villa am Teltower Damm in Berlin-Zehlendorf, ein Baudenkmal" }) %}
+  <p>Die Wertermittlung ist kostenlos und liegt meist noch am selben Tag vor. Wir sehen uns dafür Lage, Zustand und die Preise vergleichbarer Verkäufe an und sagen Ihnen, welcher Preis heute realistisch ist.</p>
+  <p>Fehlt zum Beispiel die Wohnflächenberechnung, kann die Käuferfinanzierung ins Stocken geraten. Deshalb klären wir die Unterlagen, bevor Ihr Objekt in den Verkauf geht.</p>
+  <div class="fgs-btns"><a class="fgs-btn fgs-btn--primary" href="{{ nav.valuation | navHref }}">Kostenlose Bewertung anfragen</a></div>
+{% endcall %}
+
+<div class="fgs-wrap"><p class="bib-mark"><span>S6</span> · Zahlenreihe</p></div>
+{{ facts({ id: "zahlen", titel: "F&G in Zahlen", items: [
+  { wert: "100+", text: "Interessenten für Mehrfamilienhäuser deutschlandweit" },
+  { wert: "50+", text: "neue Kapitalanlage-Interessenten pro Monat" },
+  { wert: "über 4 Mio. €", text: "begleitetes Finanzierungsvolumen 2026, von der Eigentumswohnung bis zum Mehrfamilienhaus" },
+  { wert: "Europace", text: "und Baufinex als Finanzierungsplattformen, dazu direkte Bankkontakte" }
+] }) }}
+
+<div class="fgs-wrap"><p class="bib-mark"><span>S3</span> · Teilung, Bild rechts, Doppelporträt</p></div>
+{% call split({ id: "ansprechpartner", titel: "Ihre Ansprechpartner", rechts: true, duo: [
+  { bild: "/images/team/timon-fischer-hell" | bild, alt: "Porträt von Timon Fischer" },
+  { bild: "/images/team/lennart-geserich-hell" | bild, alt: "Porträt von Lennart Geserich" }
+] }) %}
+  <p>Bei uns sprechen Sie mit den beiden Geschäftsführern selbst, vom ersten Gespräch bis zum Notartermin.</p>
+  <h3>Timon Fischer</h3>
+  <p>{{ kontakte.timon.bio }}</p>
+  <h3>Lennart Geserich</h3>
+  <p>{{ kontakte.lennart.bio }}</p>
+  {{ textlink("/ueber-uns.html", "Mehr über uns") }}
+{% endcall %}
+
+<div class="fgs-wrap"><p class="bib-mark"><span>S4</span> · Bewertungen als Textkarten</p></div>
+{% call rail({ id: "bewertungen", titel: "Was Kunden über uns sagen", quotes: true, link: { href: "/bewertungen/", label: "Alle " + google.count + " Bewertungen" } }) %}
+  {#- Update 8 §3.4 (29.10.2026): Reihenfolge wie auf der Startseite (Fix 3): zuerst Maria, dann Jan, danach die bisherigen Karten in ihrer Reihenfolge. #}
+  {%- set zuerst = ["Maria", "Jan"] %}
+  {%- for name in zuerst %}{% for r in google.reviews | selectattr("text") %}{% if r.author == name %}
+  {{ quote(r) }}
+  {%- endif %}{% endfor %}{% endfor %}
+  {%- for r in google.reviews | selectattr("text") %}{% if loop.index <= 6 and not (r.author in zuerst) %}
+  {{ quote(r) }}
+  {%- endif %}{% endfor %}
+{% endcall %}
+
+<div class="fgs-wrap"><p class="bib-mark"><span>S5</span> · Kapitel mit Inhaltsverzeichnis, Fußnoten und Bild über die ganze Breite (Text: Oranienburg)</p></div>
+{% call chapters({ id: "kapitel", label: "Oranienburg im Überblick", toc: [
+  { id: "kapitel-1", titel: ort.abschnitte[0].h2 },
+  { id: "kapitel-2", titel: ort.abschnitte[1].h2 },
+  { id: "kapitel-3", titel: ort.abschnitte[2].h2 }
+] }) %}
+  {%- for a in ort.abschnitte %}
+  <article class="fgs-chapter" id="kapitel-{{ loop.index }}">
+    <h2>{{ a.h2 }}</h2>
+    {% for p in a.absaetze %}<p>{{ p | nbsp | fn | safe }}</p>{% endfor %}
+    {%- if loop.first %}
+    {{ wide(("/images/gebiete/" + ort.heroPhoto.name) | bild, ort.heroPhoto.alt) }}
+    {%- endif %}
+    {%- if a.foto %}
+    {{ wide(("/images/gebiete/" + a.foto.name) | bild, a.foto.alt) }}
+    {%- endif %}
+  </article>
+  {%- endfor %}
+{% endcall %}
+<section class="fgs-section fgs-section--tight" aria-labelledby="quellen-titel">
+  <div class="fgs-wrap">
+    <details class="fgs-sources">
+      <summary><h2 id="quellen-titel">Quellen</h2></summary>
+      <ol>{% for q in ort.quellen %}<li id="quelle-{{ loop.index }}">{% if q.url %}<a href="{{ q.url }}" target="_blank" rel="noopener">{{ q.name }}</a>{% else %}{{ q.name }}{% endif %}{% if q.stand %} · {{ q.stand }}{% endif %}</li>{% endfor %}</ol>
+    </details>
+  </div>
+</section>
+
+<div class="fgs-wrap"><p class="bib-mark"><span>Liste</span> · zweispaltige Prüfliste mit Haarlinien (Leistungsseiten)</p></div>
+<section class="fgs-section" aria-labelledby="liste-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head"><h2 id="liste-titel">Unterlagen, die Sie für den Verkauf brauchen</h2></div>
+    <ul class="fgs-checklist">
+      <li>Aktueller Grundbuchauszug</li>
+      <li>Energieausweis</li>
+      <li>Wohnflächenberechnung und Grundrisse</li>
+      <li>Nachweise über Modernisierungen</li>
+      <li>Teilungserklärung mit Aufteilungsplan</li>
+      <li>Protokolle der Eigentümerversammlungen</li>
+      <li>Wirtschaftsplan, Hausgeldabrechnung und Stand der Erhaltungsrücklage</li>
+      <li>Flurkarte (Liegenschaftskarte)</li>
+    </ul>
+  </div>
+</section>
+
+<div class="fgs-wrap"><p class="bib-mark"><span>S7</span> · Fragen</p></div>
+{{ faq((mangoTexte.faq.A | areaFaq(serviceArea.text)).slice(3)) }}
+
+<div class="fgs-wrap"><p class="bib-mark"><span>F</span> · Formular in einer Teilung</p></div>
+{% call split({ id: "kontaktformular", titel: "Wie können wir helfen?", bild: "home/berlin-mitte" | bild, alt: "Blick vom Alexanderplatz über die Dächer von Berlin bei tief stehender Sonne" }) %}
+  <p>Wählen Sie Ihr Anliegen, oder rufen Sie uns einfach an.</p>
+  <div class="fgd-form-card">
+    <form method="post" action="/.netlify/functions/propstack-lead?frage=Sonstiges" class="fgd-form" data-fgd-lead-form novalidate>
+      <label>Thema *
+        <select name="concern" required>
+          <option value="">Bitte wählen</option>
+          <option value="Verkauf">Verkauf</option>
+          <option value="Kauf">Kauf</option>
+          <option value="Finanzierung">Finanzierung</option>
+          <option value="Vermietung">Vermietung</option>
+          <option value="Sonstiges" data-endpoint="website-question">Sonstiges</option>
+        </select>
+      </label>
+      <div class="fgd-field-row">
+        <label>Vorname *<input name="first_name" required autocomplete="given-name"></label>
+        <label>Nachname *<input name="last_name" required autocomplete="family-name"></label>
+      </div>
+      <div class="fgd-field-row">
+        <label>E-Mail *<input name="email" type="email" required autocomplete="email"></label>
+        <label>Telefon<input name="phone" type="tel" autocomplete="tel" placeholder="für Rückfragen"></label>
+      </div>
+      <label>Nachricht *<textarea name="message" rows="5" maxlength="3000" required placeholder="Worum geht es? Zum Beispiel Objekt, Ort und Zeitrahmen"></textarea></label>
+      <label class="fgd-hp" aria-hidden="true">Website<input name="company_website" tabindex="-1" autocomplete="off"></label>
+      <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
+      <div class="fgd-status" data-fgd-lead-status hidden></div>
+      <button type="submit" class="fgd-btn">Nachricht senden{% include "fgs-arrow.njk" %}</button>
+    </form>
+    <div class="fgd-form-done" data-fgd-lead-done tabindex="-1" hidden>
+      <h3>Vielen Dank, Ihre Nachricht ist da</h3>
+      <p>Ihr Ansprechpartner meldet sich bei Ihnen. Wenn es eilt, erreichen Sie uns unter <a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a>.</p>
+    </div>
+  </div>
+{% endcall %}
+
+<div class="fgs-wrap"><p class="bib-mark"><span>S8</span> · Abschlussband</p></div>
+{{ closing({ kontakt: "lennart", satz: "Das erste Gespräch kostet Sie nichts und verpflichtet Sie zu nichts", button: "bewertung" }) }}

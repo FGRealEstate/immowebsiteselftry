@@ -1,0 +1,426 @@
+{
+  "slug": "oder-spree",
+  "name": "Oder-Spree",
+  "nameLang": "Landkreis Oder-Spree",
+  "inOrt": "im Landkreis Oder-Spree",
+  "fuerOrt": "den Landkreis Oder-Spree",
+  "typ": "landkreis",
+  "ersetzt": [
+    "furstenwalde"
+  ],
+  "orte": [
+    "Erkner",
+    "Woltersdorf",
+    "Fürstenwalde/Spree"
+  ],
+  "kontakt": "lennart",
+  "title": "Immobilienmakler Oder-Spree – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler Oder-Spree: verkaufen, kaufen und finanzieren in Fürstenwalde/Spree, Woltersdorf, Erkner und Schöneiche, mit Bodenrichtwerten 2026.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren im Landkreis Oder-Spree",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger im Landkreis Oder-Spree beim Verkauf, beim Kauf und bei der Finanzierung, in Erkner, Woltersdorf und Schöneiche am Berliner Stadtrand ebenso wie in Fürstenwalde/Spree und den Orten bis zum Scharmützelsee. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für alle Orte auf dieser Seite ist Lennart Geserich Ihr Ansprechpartner, Head of Sales & Vermietung.",
+  "hero": {
+    "name": "oder-spree-bad-saarow-scharmuetzelsee",
+    "alt": "Blick über den Scharmützelsee auf das Seebad in Bad Saarow an einem Sommertag",
+    "credit": "Don-kun, CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Bad_Saarow_August_2013_018.JPG",
+    "position": "50% 50%"
+  },
+  "stand": "Oktober 2026",
+  "updated": "2026-10-26",
+  "zahlen": [
+    {
+      "wert": "850 €/m²",
+      "label": "Höchster Bodenrichtwert für Wohnbauland im Landkreis, Ufergrundstücke am Karl-Marx-Damm in Bad Saarow",
+      "detail": "In Erkner stiegen Ufergrundstücke im Stadtgebiet von 500 auf 750 €/m². Von 415 baureifen Wohn- und Mischgebietszonen blieben 342 unverändert, 37 stiegen und 33 sanken, 14 davon in Grünheide (Mark).",
+      "quelle": "BORIS Brandenburg",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?f=json&limit=2000&skipGeometry=true&gemeinde_gemeindekennzeichen_kreis=67&stichtag=2026-01-01",
+      "stichtag": "01.01.2026"
+    },
+    {
+      "wert": "Ø 448.384 €",
+      "label": "Freistehende Ein- und Zweifamilienhäuser im Berliner Umland des Landkreises",
+      "detail": "131 auswertbare Kauffälle, von Erkner, Woltersdorf und Schöneiche bis Grünheide. Im weiteren Metropolenraum mit Fürstenwalde, Beeskow und Bad Saarow: Ø 296.496 €. Häuser der Baujahre 1991 bis 2022 kosteten im Berliner Umland im Median 3.884 €/m² Wohnfläche.",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Oder-Spree",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_LOS_FF.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 2.349 €/m²",
+      "label": "Gebrauchte Eigentumswohnungen in Fürstenwalde/Spree, Baujahr nach 1990, mit Stellplatz",
+      "detail": "17 Verkäufe, Spanne 1.079 bis 4.444 €/m². Im ganzen Landkreis kosteten Wohnungen ab Baujahr 2021 im Mittel 4.610 €/m², neue Wohnungen in Schöneiche 4.976 €/m².",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Oder-Spree",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_LOS_FF.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 8,2 €/m²",
+      "label": "Nettokaltmiete in verkauften, vermieteten Eigentumswohnungen im Berliner Umland des Landkreises",
+      "detail": "20 Verkäufe, Spanne 6,8 bis 11,6 €/m², Liegenschaftszinssatz im Mittel 2,1 %. Mietspiegel gibt es im Landkreis nur für Beeskow (2018) und Schöneiche (2019).",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Oder-Spree",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_LOS_FF.pdf",
+      "stichtag": "Kaufverträge 2023–2025"
+    },
+    {
+      "wert": "179.142",
+      "label": "Einwohner im Landkreis Oder-Spree",
+      "detail": "675 weniger als ein Jahr zuvor. Das Landesamt für Bauen und Verkehr erwartet bis 2040 ein Minus von 2,5 %, für Fürstenwalde/Spree ein Plus von 3,5 % und für Schöneiche von 4,1 %.",
+      "quelle": "Amt für Statistik Berlin-Brandenburg; LBV Brandenburg",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stichtag": "31.12.2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Erkner: S-Bahn, RE1 und Wasserlagen",
+      "absaetze": [
+        "Erkner grenzt an Berlin und hat 11.523 Einwohner.[[3]] Zum 01.01.2026 stiegen dort 5 von 12 Bodenrichtwertzonen, keine sank: das Stadtgebiet von 240 auf 370 €/m², Ufergrundstücke im Stadtgebiet von 500 auf 750 €/m².[[2]] Neue Eigentumswohnungen kosteten 2025 im Mittel 6.339 €/m², bei nur zwei Verkäufen.[[1]] Mietpreisbremse und Kappungsgrenze gelten.[[5,6]] Fahrzeiten, Wohnlagen und Projekte finden Sie auf unserer <a href=\"/standorte/erkner/\">Seite zu Erkner</a>."
+      ],
+      "bild": {
+        "name": "erkner-bretterscher-graben",
+        "alt": "Motorboote an Stegen im Bretterscher Graben, umgeben von Grün",
+        "caption": "Der Bretterscher Graben zwischen Seestraße und Dämeritzsee.",
+        "credit": "Kritzolina, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Bretterscher_Graben_07.jpg"
+      }
+    },
+    {
+      "h2": "Woltersdorf: Schleuse, Kalksee und Flakensee",
+      "absaetze": [
+        "Woltersdorf liegt südöstlich von Berlin. Die Abbruchkante der Barnimplatte zum Berliner Urstromtal zieht sich durch den Ort und sorgt für Höhenunterschiede, die für Brandenburg untypisch sind.[[15]] Die Schleuse zwischen Kalksee und Flakensee entstand für die Transporte aus dem Rüdersdorfer Kalksteinabbau, eine erste Kammerschleuse gab es 1640.[[14]] Mit 8.353 Einwohnern auf 9 km² ist Woltersdorf die am dichtesten besiedelte Gemeinde im Landkreis; bis 2040 erwartet das Landesamt für Bauen und Verkehr ein Minus von 1,3 %.[[3,4]] Die Straßenbahn 87 fährt zur S-Bahn nach Rahnsdorf, der Bus 418 nach Erkner; bis Friedrichstraße sind es mit der S3 53 bis 67 Minuten.[[16,9]]",
+        "Für Wohngebiete reichen die Bodenrichtwerte zum 01.01.2026 von 280 €/m² in der Ortsmitte, gestiegen von 260, bis 440 €/m² in Lerchenfeld West; am Kalksee und am Flakensee sanken sie von 340 auf 300 €/m². Ufergrundstücke liegen bei 600 €/m², am Kalksee nach 500 im Vorjahr.[[2]] 2025 wurden 51 bebaute Grundstücke für zusammen 23,2 Mio. € verkauft. In Mehrfamilienhäusern zahlten Mieter 2022 bis 2025 im Mittel 8,29 €/m², nach den 53 Mieten, die dem Gutachterausschuss vorliegen.[[1]] Mietpreisbremse und Kappungsgrenze gelten.[[5,6]]"
+      ],
+      "bild": {
+        "name": "oder-spree-woltersdorf-kranichsberge",
+        "alt": "Blick von einer Anhöhe auf Woltersdorf: Häuser mit roten Dächern zwischen Bäumen an einem See, dahinter die bewaldeten Kranichsberge und weites Waldland im Abendlicht",
+        "caption": "Der Woltersdorfer Werder vor den Kranichsbergen, vom Eichberg aus gesehen.",
+        "credit": "Mehlitz, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Woltersdorfer_Werder_und_Kranichsberge.jpg"
+      }
+    },
+    {
+      "h2": "Fürstenwalde/Spree: Domstadt an der Spree",
+      "absaetze": [
+        "Fürstenwalde/Spree ist mit 31.981 Einwohnern die größte Gemeinde im Landkreis, der Gutachterausschuss führt die Stadt als Mittelzentrum; bis 2040 erwartet das Landesamt für Bauen und Verkehr ein Plus von 3,5 %.[[3,1,4]] Die Stadt wurde 1272 erstmals urkundlich erwähnt und ist neben Brandenburg und Havelberg eine der drei märkischen Domstädte, der Dom St. Marien hat einen 68 Meter hohen Turm. Bis ins Zentrum Berlins sind es 60 Kilometer, zum Scharmützelsee 8.[[13]] Nach dem Fahrplan 2025 fuhr der RE1 ohne Umstieg in 44 Minuten bis Friedrichstraße. Bis zum 12.12.2026 endet er wegen der Sperrung der Stadtbahn am Ostbahnhof, mit Umstieg in die S-Bahn sind es derzeit 53 bis 60 Minuten.[[10,11,9]]",
+        "Für Wohngebiete gelten zum 01.01.2026 zum Beispiel 300 €/m² in der Ketschendorfer Feldmark, 260 an der Dr.-Wilhelm-Külz-Straße, 180 in Fürstenwalde Nord und 160 bis 210 €/m² am Ulanenring, für gemischte Lagen im Zentrum 300 €/m². Von 22 Zonen blieben 19 unverändert; gesunken sind Südwest von 210 auf 170 und die Ufergrundstücke in Südwest von 330 auf 270 €/m².[[2]] Mit 115 verkauften bebauten Grundstücken lag Fürstenwalde 2025 vor allen anderen Städten, Gemeinden und Ämtern des Landkreises. Gebrauchte Eigentumswohnungen mit Baujahr nach 1990 und Stellplatz kosteten im Mittel 2.349 €/m², Altbauwohnungen der Baujahre 1910 bis 1920 1.835 €/m². In Mehrfamilienhäusern zahlten Mieter 2022 bis 2025 im Mittel 6,46 €/m².[[1]] Die Mietpreisbremse gilt in Fürstenwalde nicht.[[5]]"
+      ],
+      "bild": {
+        "name": "oder-spree-fuerstenwalde-spree",
+        "alt": "Blick über eine Grünanlage mit Beeten und Wegen auf Häuserzeilen in Fürstenwalde/Spree",
+        "caption": "Eine Grünanlage in Fürstenwalde/Spree.",
+        "credit": "Klaaschwotzer, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:F%C3%BCrstenwalde-Spree_4.jpg"
+      }
+    },
+    {
+      "h2": "Schöneiche bei Berlin und Grünheide (Mark)",
+      "absaetze": [
+        "Schöneiche bei Berlin hat 12.997 Einwohner; bis 2040 erwartet das Landesamt für Bauen und Verkehr ein Plus von 4,1 %.[[3,4]] Mit der Straßenbahn 88 und ab Friedrichshagen mit der S-Bahn sind es 47 bis 49 Minuten bis Friedrichstraße.[[9]] Für die Wohnlagen gilt eine gemeinsame Bodenrichtwertzone, ihr Wert sank zum 01.01.2026 von 330 auf 320 €/m².[[2]] Neue Eigentumswohnungen kosteten 2025 im Mittel 4.976 €/m² bei zehn Verkäufen, gebrauchte mit Baujahr nach 1990 und Stellplatz 3.130 €/m².[[1]] Die Gemeinde hat einen Mietspiegel von 2019, die Mietpreisbremse gilt dort nicht.[[18,5]]",
+        "Grünheide (Mark) hat 8.997 Einwohner. 2025 floss dort mit 48,4 Mio. € mehr Geld in bebaute Grundstücke als in jeder anderen Gemeinde des Landkreises, bei 65 Verkäufen.[[3,1]] Zugleich sanken zum 01.01.2026 14 von 30 Bodenrichtwertzonen: in Grünheide selbst von 490 auf 300 €/m², an der Fangschleuse am Werlsee von 500 auf 340, am Ufer dort von 700 auf 480 €/m²; in Kagel stiegen die Wohnlagen von 170 auf 210 €/m².[[2]] Seit Mitte August 2026 hält der RE1 im neu gebauten Bahnhof Fangschleuse, bis Friedrichstraße sind es 40 bis 52 Minuten.[[12,9]] Mietpreisbremse und Kappungsgrenze gelten.[[5,6]]"
+      ],
+      "bild": {
+        "name": "oder-spree-schoeneiche-strassenbahndepot",
+        "alt": "Das Straßenbahndepot in Schöneiche mit Gleisen, einer Straßenbahn in der Halle und hohen Bäumen",
+        "caption": "Das Straßenbahndepot in Schöneiche bei Berlin.",
+        "credit": "UMO1, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Stra%C3%9Fenbahndepot_Sch%C3%B6neiche_bei_Berlin.jpg"
+      }
+    },
+    {
+      "h2": "Bad Saarow, Storkow und Beeskow im Süden",
+      "absaetze": [
+        "Den höchsten Bodenrichtwert für Wohnbauland im Landkreis hat Bad Saarow am Scharmützelsee: 850 €/m² für Ufergrundstücke am Karl-Marx-Damm, 650 für Ufergrundstücke an der Platanenstraße und in Pieskow; im Zentrum gelten 550 €/m².[[2]] Gebrauchte Eigentumswohnungen mit Baujahr nach 1990 und Stellplatz kosteten dort 2025 im Mittel 3.578 €/m² bei elf Verkäufen, neue Ferienwohnungen in Wendisch Rietz 8.346 €/m² bei zehn.[[1]] Storkow (Mark) hat 9.202 Einwohner, für 2040 erwartet das Landesamt für Bauen und Verkehr ein Plus von 7,8 %; Storkow Nord stieg von 160 auf 200 €/m².[[3,4,2]] In Beeskow sitzt die Kreisverwaltung. Im Sanierungsgebiet gilt ein Bodenrichtwert von 115 €/m², in den Wohnbaugebieten 90 bis 95 €/m²; bis Friedrichstraße sind es mit zwei Umstiegen 100 bis 107 Minuten.[[17,2,9]] In Bad Saarow, Storkow und Beeskow gilt die Mietpreisbremse nicht.[[5]]"
+      ],
+      "bild": {
+        "name": "oder-spree-beeskow-bodelschwinghstrasse",
+        "alt": "Die Bodelschwinghstraße in Beeskow mit einem Fachwerkhaus, einer Apotheke und Häusern mit roten Ziegeldächern",
+        "caption": "Die Bodelschwinghstraße in Beeskow.",
+        "credit": "Dguendel, CC BY 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Beeskow,_die_Bodelschwinghstrasse.jpg"
+      }
+    }
+  ],
+  "band": {
+    "name": "oder-spree-scharmuetzelsee",
+    "alt": "Blick über einen Rasen mit weißem Geländer auf den Scharmützelsee, kahle Bäume am Ufer, gegenüber ein flaches, bewaldetes Ufer unter bedecktem Himmel",
+    "caption": "Der Scharmützelsee, vom Ufer in Bad Saarow aus gesehen.",
+    "credit": "Derbrauni, CC BY 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Scharmützelsee_2025.jpg"
+  },
+  "anbindung": [
+    "In Erkner halten S-Bahn und RE1, Woltersdorf und Schöneiche sind mit der Straßenbahn an die S-Bahn angebunden, Fürstenwalde und Fangschleuse liegen am RE1.[[9,16]]",
+    "Seit Mitte August 2026 hält der RE1 im neu gebauten Bahnhof Fangschleuse, bis Friedrichstraße sind es 40 bis 52 Minuten.[[12,9]]"
+  ],
+  "karte": {
+    "alt": "Karte des westlichen Landkreises Oder-Spree bis Berlin: Erkner, Woltersdorf, Schöneiche bei Berlin, Grünheide (Mark), Fürstenwalde/Spree, Bad Saarow, Storkow (Mark) und Beeskow, die Orte Lerchenfeld, Kagel, Finkenstein, Fangschleuse, Gosen, Hangelsberg, Fürstenwalde Nord, Ketschendorfer Feldmark, Heinersdorf, Wendisch Rietz, Werder, Wiese und Pieskow, dazu Bahnstrecken, Autobahnen, Gewässer, Friedrichshagen und der Bahnhof Berlin Friedrichstraße"
+  },
+  "verkaufen": {
+    "h2": "Immobilie im Landkreis Oder-Spree verkaufen",
+    "absaetze": [
+      "Wie viel Ihre Immobilie wert ist, hängt im Landkreis vor allem an der Nähe zu Berlin: Freistehende Ein- und Zweifamilienhäuser kosteten 2025 im Berliner Umland, von Schöneiche und Woltersdorf bis Grünheide, im Mittel 448.384 €, im weiteren Metropolenraum mit Fürstenwalde, Beeskow und Bad Saarow 296.496 €.[[1]] Wir bewerten deshalb nach Ihrer Bodenrichtwertzone, Ihrem Baujahr und den Vergleichszahlen Ihrer Region.",
+      "2025 wurden 2.003 Kaufverträge geschlossen, nach 1.819 im Vorjahr, der Geldumsatz stieg auf 408,2 Mio. €. Für Bauland im berlinnahen Raum lag der Preisindex des Gutachterausschusses 2025 rund 28 % unter dem Höchststand von 2022; einzelne Zonen können anders verlaufen.[[1]] Für Wassergrundstücke beschließt der Gutachterausschuss seit 2022 eigene Bodenrichtwerte, deshalb bewerten wir diese Lagen gesondert."
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren im Landkreis Oder-Spree",
+    "absaetze": [
+      "Als Eigennutzer klären Sie zuerst den Weg nach Berlin: In Erkner halten S-Bahn und RE1, Woltersdorf und Schöneiche sind mit der Straßenbahn an die S-Bahn angebunden, Fürstenwalde und Fangschleuse liegen am RE1.[[9,16]] Im Berliner Umland zählt außerdem das Baujahr: Häuser der Baujahre 1991 bis 2022 kosteten 2025 im Median 3.884 €/m² Wohnfläche, Häuser bis Baujahr 1948 3.363 €/m².[[1]]",
+      "Als Kapitalanleger prüfen Sie Miete und Kaufpreis gegen den Grundstücksmarktbericht. Für vermietete Eigentumswohnungen im Berliner Umland ergab sich aus Verkäufen der Jahre 2023 bis 2025 ein Liegenschaftszinssatz von im Mittel 2,1 % bei einer Nettokaltmiete von 8,2 €/m², im weiteren Metropolenraum 3,0 % bei 6,9 €/m².[[1]] In Erkner, Grünheide und Woltersdorf gelten Mietpreisbremse und Kappungsgrenze, in Fürstenwalde und Schöneiche nicht.[[5,6]]"
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für den Landkreis Oder-Spree",
+    "absaetze": [
+      "Im Berliner Umland des Landkreises kosteten freistehende Ein- und Zweifamilienhäuser 2025 im Mittel 448.384 €, Reihenhäuser und Doppelhaushälften 379.634 €.[[1]] Dazu kommen die Kaufnebenkosten und wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen: Wir rechnen das mit Ihnen durch, vergleichen Ihre Finanzierung über Europace und Baufinex und fragen parallel Banken direkt an."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Welcher Makler verkauft Häuser in Fürstenwalde, Woltersdorf und Schöneiche?",
+      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im ganzen Landkreis Oder-Spree, also auch in Fürstenwalde/Spree, Woltersdorf, Schöneiche und Erkner; Ihr Ansprechpartner ist Lennart Geserich. Grundlage unserer Bewertung sind der Bodenrichtwert Ihrer Zone und die Vergleichspreise des Gutachterausschusses. Hauspreise weist er im Landkreis nur getrennt nach Berliner Umland und weiterem Metropolenraum aus, Wohnungspreise dagegen auch für einzelne Orte wie Fürstenwalde, Schöneiche und Bad Saarow.[[1]]",
+      "herkunft": "Google-Autocomplete „immobilienmakler fürstenwalde spree“, „makler fürstenwalde“, „immobilienmakler woltersdorf“, „immobilienmakler schöneiche bei berlin“ und „immobilienmakler landkreis oder spree“ (research/serp/autocomplete-2026-10-26-oder-spree.json)"
+    },
+    {
+      "frage": "Wie hoch sind die Bodenrichtwerte in Fürstenwalde, Woltersdorf und Schöneiche 2026?",
+      "antwort": "Zum 01.01.2026 liegen Wohngebiete in Fürstenwalde/Spree zum Beispiel bei 160 bis 210 €/m² am Ulanenring, 180 in Fürstenwalde Nord und 300 in der Ketschendorfer Feldmark; Fürstenwalde Südwest sank von 210 auf 170 €/m². In Woltersdorf reichen die Wohngebiete von 280 bis 440 €/m², Ufergrundstücke liegen bei 600 €/m²; in Schöneiche gilt 320 €/m². Im ganzen Landkreis reichen die Werte für Wohn- und Mischgebiete von 9 €/m² in Heinersdorf bis 850 €/m² am Ufer in Bad Saarow.[[2]] Den Wert Ihrer Zone finden Sie in BORIS Brandenburg.",
+      "herkunft": "Google-Autocomplete „bodenrichtwert fürstenwalde nord“, „bodenrichtwert fürstenwalde süd“, „bodenrichtwert woltersdorf bei berlin“, „bodenrichtwert schöneiche 2025“ und „bodenrichtwert landkreis oder spree“ (research/serp/autocomplete-2026-10-26-oder-spree.json)"
+    },
+    {
+      "frage": "Gibt es einen Mietspiegel für Fürstenwalde?",
+      "antwort": "Nein. Mietspiegel gibt es im Landkreis nach Angabe des Gutachterausschusses nur für Beeskow (2018) und Schöneiche (2019).[[1,18]] Zur allgemeinen Orientierung veröffentlicht der Gutachterausschuss gezahlte Mieten, die ausdrücklich nicht zur Begründung einer Mieterhöhung reichen: in Mehrfamilienhäusern 2022 bis 2025 im Mittel 6,46 €/m² in Fürstenwalde bei 260 Mieten, 8,29 €/m² in Woltersdorf, 8,25 €/m² in Schöneiche und 8,07 €/m² in Erkner.[[1]]",
+      "herkunft": "Google-Autocomplete „mietspiegel fürstenwalde 2025“, „qualifizierter mietspiegel fürstenwalde“, „mietspiegel stadt fürstenwalde“, „mietspiegel schöneiche bei berlin 2025“ und „mietspiegel landkreis oder spree“ (research/serp/autocomplete-2026-10-26-oder-spree.json)"
+    },
+    {
+      "frage": "Wie haben sich die Grundstückspreise in Grünheide entwickelt?",
+      "antwort": "Zum 01.01.2026 sanken in der Gemeinde Grünheide (Mark) 14 von 30 Bodenrichtwertzonen, in Grünheide selbst von 490 auf 300 €/m², an der Fangschleuse am Werlsee von 500 auf 340 €/m², in Kagel Finkenstein von 430 auf 250 €/m²; Hangelsberg blieb unverändert, Kagel stieg.[[2]] Für Bauland im berlinnahen Raum, zu dem der Gutachterausschuss Grünheide, Erkner, Gosen, Schöneiche und Woltersdorf zählt, lag sein Preisindex 2025 bei 81,2, nach 112,4 im Jahr 2022 (2021 = 100). Gründe für die Entwicklung in Grünheide nennt der Grundstücksmarktbericht nicht.[[1]]",
+      "herkunft": "Google-Autocomplete „grünheide immobilienpreise“, „grundstückspreise grünheide mark“ und „bodenrichtwert grünheide mark“ (research/serp/autocomplete-2026-10-26-oder-spree.json)"
+    },
+    {
+      "frage": "Was kostet ein Wassergrundstück in Woltersdorf, Erkner oder Bad Saarow?",
+      "antwort": "Für direkte Wassergrundstücke beschließt der Gutachterausschuss seit dem Stichtag 01.01.2022 eigene Bodenrichtwerte.[[1]] Zum 01.01.2026 liegen sie in Woltersdorf bei 600 €/m², in Erkner bei 550 und 750 €/m², in Bad Saarow zwischen 350 und 850 €/m², an der Fangschleuse in Grünheide bei 380 und 480 €/m² und in Fürstenwalde Südwest bei 270 €/m².[[2]] Die Hauspreise des Gutachterausschusses unterscheiden Wasserlagen nicht, deshalb bewerten wir Häuser am Wasser einzeln.",
+      "herkunft": "Google-Autocomplete „wassergrundstück woltersdorf kaufen“, „wassergrundstück erkner“ und „wassergrundstück bad saarow kaufen“ (research/serp/autocomplete-2026-10-26-oder-spree.json, Ergänzung 2)"
+    },
+    {
+      "frage": "Gilt die Mietpreisbremse im Landkreis Oder-Spree?",
+      "antwort": "In drei Gemeinden: Erkner, Grünheide (Mark) und Woltersdorf gehören seit dem 01.01.2026 zur Gebietskulisse, die Verordnung gilt bis 31.12.2029. Fürstenwalde/Spree, Schöneiche bei Berlin und die übrigen Gemeinden sind nicht erfasst.[[5,8]] Bei Neuvermietung in Gebäuden, die vor dem 1. Oktober 2014 fertiggestellt und bezogen wurden, darf die Miete dort höchstens 10 % über der ortsüblichen Vergleichsmiete liegen, Bestandsmieten dürfen bis 31.12.2030 in drei Jahren um höchstens 15 % steigen.[[7,6]]",
+      "herkunft": "Prompt der KI-Recherche „Mietpreisbremse in Berlin und Brandenburg: was heißt das für meine Rendite?“ (q24) (ChatGPT, Gemini; Dashboard/src/data/research/ai_answers.json, Oktober 2026); Google-Autocomplete zu „mietpreisbremse oder-spree“ und „mietpreisbremse woltersdorf“ ohne Vorschläge"
+    },
+    {
+      "frage": "Ich habe ein Haus im Landkreis Oder-Spree geerbt. Wer kann den Verkauf übernehmen?",
+      "antwort": "Wir verkaufen auch geerbte Immobilien. Zuerst klären wir mit Ihnen den rechtlichen Status des Hauses und die vorhandenen Unterlagen; häufig geht es auch um die Liquidität für die Erbschaftsteuer und je nach Situation ist eine Finanzierung dafür sinnvoller als ein schneller Verkauf unter Zeitdruck. Für den Preis zählt bei älteren Häusern der Vergleich nach Baujahr und Region: Freistehende Häuser bis Baujahr 1948 kosteten 2025 im Berliner Umland des Landkreises im Median 3.363 €/m² Wohnfläche, im weiteren Metropolenraum 1.735 €/m².[[1]]",
+      "herkunft": "Prompt der KI-Recherche „Ich habe ein Haus in Brandenburg geerbt und wohne nicht vor Ort. Wer kann den Verkauf für mich übernehmen?“ (q52) (ChatGPT, Gemini; Dashboard/src/data/research/ai_answers.json, Oktober 2026). Antwort nach der FAQ der Live-Seite „Verkauft ihr auch geerbte Immobilien?“; zur Abwicklung aus der Ferne gibt es keine Angabe, deshalb ohne diesen Teil der Frage"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Erkner",
+      "url": "/standorte/erkner/"
+    },
+    {
+      "name": "Landkreis Dahme-Spreewald",
+      "url": "/standorte/dahme-spreewald/"
+    },
+    {
+      "name": "Landkreis Märkisch-Oderland",
+      "url": "/standorte/maerkisch-oderland/"
+    },
+    {
+      "name": "Berlin",
+      "url": "/standorte/berlin/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Grundstücksmarktbericht 2025 Landkreis Oder-Spree und Stadt Frankfurt (Oder), Gutachterausschuss für Grundstückswerte im Landkreis Oder-Spree und in der Stadt Frankfurt (Oder)",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_LOS_FF.pdf",
+      "stand": "Version 2025–1.0 vom 11.05.2026; Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+    },
+    {
+      "name": "Bodenrichtwerte Landkreis Oder-Spree, BORIS Brandenburg (GeoBasis-DE/LGB, dl-de/by-2-0)",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?f=json&limit=2000&skipGeometry=true&gemeinde_gemeindekennzeichen_kreis=67&stichtag=2026-01-01",
+      "stand": "Stichtag 01.01.2026, Vergleich mit 01.01.2025"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 4 – j / 25, Bevölkerung im Land Brandenburg",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Landesamt für Bauen und Verkehr, Bevölkerungsvorausschätzung 2024 bis 2040, Anlage 3",
+      "url": "https://lbv.brandenburg.de/sixcms/media.php/9/31_Bevoelkerungsvorausschaetzung_2024-20.pdf",
+      "stand": "Basis 31.12.2023, mittlere Variante"
+    },
+    {
+      "name": "Mietpreisbegrenzungsverordnung Brandenburg, Ministerium für Infrastruktur und Landesplanung",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/Mietpreisbegrenzungsverordnung.pdf",
+      "stand": "Kabinettsbeschluss 25.11.2025, gültig 01.01.2026 bis 31.12.2029"
+    },
+    {
+      "name": "Kappungsgrenzenverordnung Brandenburg, Ministerium für Infrastruktur und Landesplanung",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/KappGrenzV.pdf",
+      "stand": "gültig 01.01.2026 bis 31.12.2030"
+    },
+    {
+      "name": "MIL, Pressemitteilung zu Mietpreisbremse und Kappungsgrenzenverordnung",
+      "url": "https://mil.brandenburg.de/mil/de/presse/detail/~25-11-2025-kabinett-mietpreisbremse-und-kappungsgrenzenverordnung",
+      "stand": "25.11.2025"
+    },
+    {
+      "name": "RegioKontext GmbH, Gutachten zur Erstellung einer Gebietskulisse für die Mietpreisbegrenzungsverordnungen (Anlage zur Verordnung)",
+      "url": "https://bravors.brandenburg.de/fm/68/Anlage_Gutachten.pdf",
+      "stand": "18.09.2025, veröffentlicht im GVBl. II Nr. 95 vom 04.12.2025"
+    },
+    {
+      "name": "VBB-Fahrplandaten, Verbindungen bis S+U Friedrichstraße",
+      "url": "https://v6.vbb.transport.rest/journeys?from=900310001&to=900100001&departure=2026-11-10T09:00%2B01:00",
+      "stand": "Fahrplan Dienstag 10.11.2026, abgefragt 26.10.2026"
+    },
+    {
+      "name": "ODEG, Fahrplan RE1 2025",
+      "url": "https://www.odeg.de/fileadmin/user_upload/Unternehmensseite/linien-fahrplaene/liniennetz-fahrplaene/Fahrpl%C3%A4ne_2025/WEB_2025_RE1_592x315.pdf",
+      "stand": "gültig 15.12.2024 bis 06.06.2025 und 24.09. bis 13.12.2025, Stand 14.11.2024"
+    },
+    {
+      "name": "VBB, Pressemitteilung „Sperrung der Berliner Stadtbahn für den Regionalverkehr zwischen Charlottenburg und Ostbahnhof“",
+      "url": "https://unternehmen.vbb.de/presse/sperrung-der-berliner-stadtbahn-fuer-den-regionalverkehr-zwischen-charlottenburg-und-ostbahnhof/",
+      "stand": "18.05.2026, Sperrung 14.06. bis 12.12.2026"
+    },
+    {
+      "name": "VBB, Pressemitteilung „Bahnhof Fangschleuse eingeweiht“",
+      "url": "https://unternehmen.vbb.de/presse/bahnhof-fangschleuse-eingeweiht/",
+      "stand": "11.09.2026"
+    },
+    {
+      "name": "Stadt Fürstenwalde/Spree, Im Überblick",
+      "url": "https://www.fuerstenwalde-spree.de/seite/159549/im-%C3%BCberblick.html",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Woltersdorf, Woltersdorfer Schleuse",
+      "url": "https://www.woltersdorf-schleuse.de/seite/132093/schleuse.html",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Woltersdorf, Planen und Bauen",
+      "url": "https://www.woltersdorf-schleuse.de/seite/110188/planen-und-bauen.html",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Woltersdorf, Woltersdorfer Straßenbahn",
+      "url": "https://www.woltersdorf-schleuse.de/seite/132096/stra%C3%9Fenbahn.html",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Landkreis Oder-Spree, Landkreis Oder-Spree (Kreisbeschreibung und Anschrift der Kreisverwaltung)",
+      "url": "https://www.landkreis-oder-spree.de/Politik-Landkreis/Landkreis/Landkreis-Oder-Spree/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Schöneiche bei Berlin, Mietspiegel",
+      "url": "https://www.schoeneiche-bei-berlin.de/rathaus/gemeindeverwaltung/wohnen/mietspiegel",
+      "stand": "abgerufen 26.10.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "179.142 Einwohner Landkreis 31.12.2025, −675; LBV 2040 −2,5 %",
+      "fundstelle": "oder-spree.md, Landkreis Nr. 1, 2"
+    },
+    {
+      "zahl": "Fürstenwalde 31.981 (größte Gemeinde), Schöneiche 12.997, Erkner 11.523, Storkow 9.202, Grünheide 8.997, Woltersdorf 8.353 auf 9,12 km² (dichteste im Landkreis)",
+      "fundstelle": "oder-spree.md, Orte Nr. 40–46; afs2025.xlsx Blatt 3.8 (eigene Sortierung)"
+    },
+    {
+      "zahl": "LBV: Fürstenwalde +3,5 %, Schöneiche +4,1 %, Woltersdorf −1,3 %, Storkow +7,8 %",
+      "fundstelle": "oder-spree.md, Orte; bvs.txt Z. 1624–1643"
+    },
+    {
+      "zahl": "Kauffälle 2.003 (2024: 1.819), 408,2 Mio. €",
+      "fundstelle": "oder-spree.md, Landkreis Nr. 9"
+    },
+    {
+      "zahl": "Bebaute Grundstücke: Fürstenwalde 115 (meiste); Grünheide 48,4 Mio. € (höchster Geldumsatz), 65; Woltersdorf 51 / 23,2 Mio. €",
+      "fundstelle": "oder-spree.md, Landkreis Nr. 12 (eigener Vergleich aller Zeilen GMB S. 54)"
+    },
+    {
+      "zahl": "BRW 415 Zonen: 342 gleich, 37 hoch, 33 runter; Grünheide 14 von 30 runter; Höchstwert 850 Bad Saarow Karl-Marx-Damm H2O; Tiefstwert 9 Heinersdorf, Behlendorf",
+      "fundstelle": "oder-spree.md, Landkreis Nr. 29–31"
+    },
+    {
+      "zahl": "Erkner: 5 von 12 Zonen hoch, keine runter; Stadtgebiet 240→370, Stadtgebiet H2O 500→750, Neuseeland H2O 550; ETW Erstverkauf 2 / 6.339",
+      "fundstelle": "oder-spree.md, Erkner; Landkreis Nr. 20"
+    },
+    {
+      "zahl": "Woltersdorf: Mitte 260→280, Lerchenfeld West 440, Kalksee und Flakensee 340→300, H2O 600 (Kalksee 500→600); MFH-Miete 8,29 (53)",
+      "fundstelle": "oder-spree.md, Woltersdorf Nr. 64, 67"
+    },
+    {
+      "zahl": "Woltersdorf: südöstlich von Berlin, Abbruchkante Barnimplatte; Schleuse zwischen Kalk- und Flakensee, Kalksteinabbau, Kammerschleuse 1640; Tram 87 nach Rahnsdorf; 53–67 min",
+      "fundstelle": "oder-spree.md, Woltersdorf Nr. 60–63"
+    },
+    {
+      "zahl": "Fürstenwalde: 1272, drei märkische Domstädte, Turm 68 m, 60 km Berlin, 8 km Scharmützelsee; Mittelzentrum",
+      "fundstelle": "oder-spree.md, Fürstenwalde Nr. 50–52"
+    },
+    {
+      "zahl": "RE1 Fürstenwalde → Friedrichstraße 44 min (ODEG 2025, ab 10:54 an 11:38); Sperrung bis 12.12.2026, derzeit 53–60 min",
+      "fundstelle": "oder-spree.md, Fürstenwalde Nr. 53; erkner.md Verkehr"
+    },
+    {
+      "zahl": "BRW Fürstenwalde: Ketschendorfer Feldmark 300, Dr.-W.-Külz-Str. II 260, Nord 180, Ulanenring I 160, Zentrum 300, Südwest 210→170, Südwest H2O 330→270; 22 Zonen, 19 gleich",
+      "fundstelle": "oder-spree.md, Fürstenwalde Nr. 54"
+    },
+    {
+      "zahl": "ETW Fürstenwalde nach 1990 mit Stellplatz 17 / 2.349 (1.079–4.444); 1910–1920 Ø 1.835; MFH-Miete 6,46 (260)",
+      "fundstelle": "oder-spree.md, Landkreis Nr. 21, 22, 33"
+    },
+    {
+      "zahl": "Schöneiche: BRW 330→320; ETW Erstverkauf 10 / 4.976, Weiterverkauf mit Stellplatz 3.130; Mietspiegel 2019; Tram 88 + S: 47–49 min; MFH-Miete 8,25",
+      "fundstelle": "oder-spree.md, Schöneiche Nr. 70–74"
+    },
+    {
+      "zahl": "Grünheide: Grünheide/Mark 490→300, Fangschleuse Werlsee 500→340, H2O 700→480, Kagel Finkenstein 430→250, Kagel Wohnen 170→210, Hangelsberg unverändert; Fangschleuse seit Mitte August 2026, 40–52 min",
+      "fundstelle": "oder-spree.md, Grünheide Nr. 75–77"
+    },
+    {
+      "zahl": "Bad Saarow: 850 / 650 / 550; ETW 11 / 3.578; Wendisch Rietz Ferienwohnung 10 / 8.346; Storkow Nord 160→200; Beeskow Sanierungsgebiet 115, Wohnbaugebiete 90–95, Kreisverwaltung, 100–107 min",
+      "fundstelle": "oder-spree.md, Süden Nr. 80–84"
+    },
+    {
+      "zahl": "EFH BU Ø 448.384 (131), WMR Ø 296.496 (293); BU 1991–2022 Median 3.884; BU ≤1948 Median 3.363, WMR ≤1948 Median 1.735; RH/DHH BU 379.634",
+      "fundstelle": "oder-spree.md, Landkreis Nr. 13–16"
+    },
+    {
+      "zahl": "ETW Landkreis ab 2021 Ø 4.610",
+      "fundstelle": "oder-spree.md, Landkreis Nr. 19"
+    },
+    {
+      "zahl": "LIZI ETW BU 2,1 %, Miete Ø 8,2 (20; 6,8–11,6); WMR 3,0 %, 6,9",
+      "fundstelle": "oder-spree.md, Landkreis Nr. 23"
+    },
+    {
+      "zahl": "Bodenpreisindex berlinnaher Raum 2022 112,4 → 2025 81,2 (−28 %); Gemarkungen Schöneiche, Woltersdorf, Erkner, Gosen, Grünheide; Hinweis auf abweichende Zonen",
+      "fundstelle": "oder-spree.md, Landkreis Nr. 25"
+    },
+    {
+      "zahl": "Wassergrundstücke eigene BRW seit 01.01.2022; Ufer-BRW Woltersdorf 600, Erkner 550/750, Bad Saarow 350–850, Fangschleuse 380/480, Fürstenwalde Südwest 270",
+      "fundstelle": "oder-spree.md, Landkreis Nr. 27; BORIS (Bad Saarow Strand H2O 350, Fangschleuse Löcknitz H2O 380)"
+    },
+    {
+      "zahl": "Mietspiegel nur Beeskow 2018, Schöneiche 2019; Mieten nur Anhaltspunkt, nicht § 558a; Erkner 8,07",
+      "fundstelle": "oder-spree.md, Landkreis Nr. 32, 33"
+    },
+    {
+      "zahl": "Mietpreisbremse und Kappung: Erkner, Grünheide (Mark), Woltersdorf; nicht Fürstenwalde, Schöneiche; Inhalt 10 % / 15 %",
+      "fundstelle": "oder-spree.md, Landkreis Nr. 35; havelland.md"
+    },
+    {
+      "zahl": "Beeskow Sitz der Kreisverwaltung",
+      "fundstelle": "oder-spree.md, Landkreis Nr. 6"
+    },
+    {
+      "zahl": "Erbfall-Antwort; § 34c und § 34i GewO; Lennart Geserich, Head of Sales & Vermietung; Europace und Baufinex",
+      "fundstelle": "wie barnim.json (Live-Seite und Brief)"
+    }
+  ]
+}

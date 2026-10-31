@@ -1,0 +1,89 @@
+---
+layout: base.njk
+fgDesign: true
+fgSystem: true
+fgsHero: false
+customSchema: true
+pagination:
+  data: propstack.references
+  size: 1
+  alias: ref
+permalink: "referenzen/{{ ref.slug }}/index.html"
+eleventyComputed:
+  title: "{{ ref.title }}: verkauft | Fischer & Geserich Real Estate"
+  description: "Referenz von Fischer & Geserich: {{ ref.title }}, verkauft{% if ref.sold_year %} {{ ref.sold_year }}{% endif %}. Eckdaten ohne Kaufpreis und die Marktseite zum Gebiet."
+  canonicalPath: "{{ ref.url }}"
+  ogImage: "{{ ref.main_image or '' }}"
+  ogImageAlt: "{% if ref.main_image %}{{ ref.title }}{% endif %}"
+---
+{#- Referenzseite (Update 4, 3.2): ein verkauftes Objekt aus Propstack (propstack.references), Etikett „Verkauft“,
+    ohne Preis, Miete, Rendite, Beschreibung und Straße. Gebietsblock verlinkt die passende Gebietsseite.
+    Ansprechpartner wie auf der Objektseite: Leipzig und Dresden → Timon, sonst Lennart.
+    CP4 (28.10.2026, Design-Sprint-Brief 5.4): Design-System über fgs-listing.njk, S8 als Abschluss. „Verkauft“ steht als Kicker
+    und als Status rechts statt als Etikett; Symbole entfallen (Brief 3.7). Texte und JSON-LD unverändert.
+    CP5 (28.10.2026, Brief 5.5): Bild über die volle Breite, S6 mit Verkaufsjahr, Fläche, Zimmer, Baujahr, Grundstück, Gebietsblock
+    mit Überschrift links; die Seitenleiste mit der Ansprechpartner-Karte entfällt, Telefon und Porträt stehen im S8.
+    Nicht gebaut, solange freigaben.referenzen aus ist. -#}
+{% from "fgs-listing.njk" import listingHead, gallery, listingFacts, areaBlock %}
+{% from "fgs-macros.njk" import closing with context %}
+{% set loc = (ref.location or "") | lower %}
+{% set kontaktKey = "timon" if ("leipzig" in loc or "dresden" in loc) else "lennart" %}
+{% set pageUrl = "https://fg-realestate.de" + ref.url %}
+
+{% set fakten = [] %}
+{% if ref.sold_year %}{% set fakten = fakten.concat([{ wert: ref.sold_year, label: "Verkauft" }]) %}{% endif %}
+{% if ref.living_space %}{% set fakten = fakten.concat([{ wert: ref.living_space, label: "Wohnfläche" }]) %}{% endif %}
+{% if ref.rooms %}{% set fakten = fakten.concat([{ wert: ref.rooms, label: "Zimmer" }]) %}{% endif %}
+{% if ref.construction_year %}{% set fakten = fakten.concat([{ wert: ref.construction_year, label: "Baujahr" }]) %}{% endif %}
+{% if ref.plot_area %}{% set fakten = fakten.concat([{ wert: ref.plot_area, label: "Grundstück" }]) %}{% endif %}
+
+{{ listingHead({
+  crumbs: [{ href: "/referenzen/", label: "Referenzen" }],
+  current: ref.title,
+  kicker: "Referenz · Verkauft",
+  titel: ref.title,
+  meta: [ref.place, ref.property_type] | select | join(" · "),
+  buttons: [{ href: "/immobilienbewertung/", label: "Kostenlose Bewertung" }, { href: "/referenzen/", label: "Alle Referenzen" }]
+}) }}
+
+<section class="fgs-section fgs-listing" aria-label="Bild und Lage">
+  <div class="fgs-wrap">
+    {% if ref.main_image %}{{ gallery([ref.main_image], ref.title, "") }}{% endif %}
+    {% if fakten.length %}{{ listingFacts(fakten, ref.title) }}{% endif %}
+
+    {{ areaBlock(ref.area) }}
+  </div>
+</section>
+
+{% call closing({ kontakt: kontaktKey, satz: "Was ist Ihre Immobilie heute wert?", button: "bewertung" }) %}
+  <p>Die Wertermittlung kostet Sie nichts und liegt meist noch am selben Tag vor. Danach entscheiden Sie in Ruhe, ob und wann Sie verkaufen.</p>
+{% endcall %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "{{ pageUrl }}#webpage",
+      "url": "{{ pageUrl }}",
+      "name": {{ title | dump | safe }},
+      "description": {{ description | dump | safe }},
+      "inLanguage": "de-DE",
+      "isPartOf": { "@id": "https://fg-realestate.de/#website" },
+      "publisher": { "@id": "https://fg-realestate.de/#organization" },
+      "breadcrumb": { "@id": "{{ pageUrl }}#breadcrumb" }{% if ref.main_image %},
+      "primaryImageOfPage": {{ ref.main_image | dump | safe }}{% endif %}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ pageUrl }}#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
+        { "@type": "ListItem", "position": 2, "name": "Referenzen", "item": "https://fg-realestate.de/referenzen/" },
+        { "@type": "ListItem", "position": 3, "name": {{ ref.title | dump | safe }}, "item": "{{ pageUrl }}" }
+      ]
+    }
+  ]
+}
+</script>

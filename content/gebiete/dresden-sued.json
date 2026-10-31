@@ -1,0 +1,367 @@
+{
+  "slug": "dresden/sued",
+  "name": "Dresden-Süd",
+  "nameLang": "Dresden-Süd",
+  "inOrt": "in Dresden-Süd",
+  "fuerOrt": "Dresden-Süd",
+  "typ": "marktgebiet",
+  "kreis": {
+    "name": "Dresden",
+    "url": "/standorte/dresden/"
+  },
+  "orte": [
+    "Löbtau-Nord",
+    "Löbtau-Süd",
+    "Plauen",
+    "Strehlen"
+  ],
+  "kontakt": "timon",
+  "title": "Immobilienmakler Dresden-Süd – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler in Dresden-Süd: Wohnung oder Haus verkaufen, kaufen und finanzieren in Löbtau-Nord und Löbtau-Süd, in Plauen und in Strehlen.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Dresden-Süd",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Dresden-Süd beim Verkauf, beim Kauf und bei der Finanzierung, von den Kaffeemühlen-Häusern in Löbtau über die Gründerzeitstraßen Plauens an der Weißeritz bis nach Strehlen. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Dresden ist Timon Fischer Ihr Ansprechpartner, Geschäftsführer und verantwortlich für die Immobilienfinanzierung.",
+  "hero": {
+    "name": "dresden-sued-rathaus-plauen-noethnitzer",
+    "alt": "Das Rathaus im Dresdner Stadtteil Plauen mit Türmen und Ziergiebeln, Eckansicht an der Nöthnitzer Straße, links ein Baum mit Herbstlaub",
+    "credit": "VSchagow, CC BY 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:2021101904_Rathaus_Dresden-Plauen_Eckansicht_Noethnitzer_Strasse.jpg",
+    "position": "50% 45%"
+  },
+  "stand": "Oktober 2026",
+  "updated": "2026-10-27",
+  "zahlen": [
+    {
+      "wert": "2.445 €/m²",
+      "label": "Median für ältere Eigentumswohnungen im Weiterverkauf, Gemarkung Löbtau",
+      "detail": "76 Verkäufe von Wohnungen mit Baujahr bis 1989 oder saniert bis 2023, Spanne 1.515 bis 4.320 €/m², Mittelwert 2.575 €/m². Die Gemarkung liegt fast ganz in Löbtau-Nord und Löbtau-Süd. In der Gemarkung Plauen waren es 20 Verkäufe zu 2.690 €/m², in Strehlen 25 zu 2.630 €/m². Alle weiterverkauften Wohnungen in Dresden: im Mittel rund 2.705 €/m².",
+      "quelle": "Grundstücksmarktbericht Dresden 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/2026-Grundstuecksmarktbericht.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "6.225 €/m²",
+      "label": "Median für neue Eigentumswohnungen, Gemarkung Strehlen",
+      "detail": "68 Erstverkäufe von Wohnungen ab Baujahr 2024, Spanne 5.325 bis 7.050 €/m², Mittelwert 6.290 €/m². Die Gemarkung reicht auch in Teile von Gruna und der Seevorstadt-Ost. In Löbtau waren es vier Erstverkäufe zu 5.675 €/m², in Plauen sechs zu 5.580 €/m²; in ganz Dresden kosteten neue Wohnungen im Mittel rund 6.460 €/m².",
+      "quelle": "Grundstücksmarktbericht Dresden 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/2026-Grundstuecksmarktbericht.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "160 bis 1.500 €/m²",
+      "label": "Bodenrichtwerte in den Wohn- und Mischgebieten",
+      "detail": "Löbtau-Nord 240 bis 1.200 €/m², Löbtau-Süd 340 bis 1.200, Plauen 160 bis 1.500, Strehlen 240 bis 920 €/m². In Plauen gelten in der größten Zone, rund der Hälfte der Wohn- und Mischgebiete, 810 €/m² für Grundstücke von Mehrfamilienhäusern, 2024 waren es 820 €/m².",
+      "quelle": "Bodenrichtwerte BORIS Sachsen, eigene Auswertung",
+      "url": "https://www.boris.sachsen.de/",
+      "stichtag": "01.01.2026"
+    },
+    {
+      "wert": "44.289",
+      "label": "Einwohner in den vier Stadtteilen des Marktgebiets",
+      "detail": "Löbtau-Süd 11.848, Plauen 11.338, Strehlen 11.288, Löbtau-Nord 9.815. Löbtau-Süd wuchs von 1990 bis 2024 um 43 %. Das Durchschnittsalter 2024 liegt in Löbtau-Nord bei 35,3 Jahren, in Löbtau-Süd bei 36,7, in Plauen bei 41,5 und in Strehlen bei 40,6 Jahren, in ganz Dresden bei 43,5 Jahren.",
+      "quelle": "Landeshauptstadt Dresden, Opendata und Stadtteilkatalog 2024",
+      "url": "https://opendata.dresden.de/",
+      "stichtag": "31.12.2025"
+    },
+    {
+      "wert": "8,84 bis 9,43 €/m²",
+      "label": "Durchschnittliche Angebotsmieten nach Stadtteil",
+      "detail": "Plauen 9,43 €/m², Löbtau-Nord 9,21, Löbtau-Süd 9,07, Strehlen 8,84 €/m²; in ganz Dresden 9,37 €/m². Angebotsmieten aus Anzeigen sind keine ortsübliche Vergleichsmiete.",
+      "quelle": "Stadtteilkatalog Dresden 2024",
+      "url": "https://www.dresden.de/media/pdf/onlineshop/statistikstelle/120_080_010_Stadtteilkatalog_2024.pdf",
+      "stichtag": "2024"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Löbtau-Nord und Löbtau-Süd: Kaffeemühlen an der Weißeritz",
+      "absaetze": [
+        "Löbtau wurde 1068 erstmals erwähnt und war lange ein Bauerndorf an der Weißeritz. Mit der Industrialisierung kamen Fabriken; 1875 entwarf der Vermesser Emil Ueberall das rasterförmige Straßennetz, an dem drei- bis viergeschossige Würfelhäuser in offener Bauweise entstanden, im Volksmund „Kaffeemühlen“.[[13]] Diese Bebauung steht laut Stadt unter Denkmalschutz. 1990 standen über 30 % der Wohnungen leer, etwa 15 % der historischen Gebäude waren Ruinen. 2017 war Löbtau der geburtenstärkste Stadtteil Dresdens.[[12]] Die Sanierungsgebiete sind aufgehoben, Löbtau-Nord 2013 und Löbtau 2023.[[12,13]] In beiden Stadtteilen leben zusammen 21.663 Menschen.[[4]] 58 und 61 % der Wohnungen stehen in Häusern, die bis 1918 gebaut wurden, und rund drei Viertel der Wohngebäude haben sieben oder mehr Wohnungen.[[5]] Von der Tharandter Straße fährt die Linie 7 in 7 Minuten zum Hauptbahnhof, von der Clara-Zetkin-Straße sind Sie mit Bus 90 und Linie 7 in 17 Minuten dort.[[17]]",
+        "Für ein Gebiet in Löbtau-Nord und die Friedrichstadt prüfte die Stadt eine soziale Erhaltungssatzung. Sie beschreibt Löbtau/Weißeritzknick mit einer gemischten Sozialstruktur mit gehobenem Einkommens- und Mietenniveau, verstärktem Zuzug jüngerer, einkommensstärkerer Haushalte und einer Mietentwicklung, die dynamischer ist als in der Gesamtstadt. Der Stadtrat lehnte die Satzung am 13.12.2024 ab.[[11]] Die angebotenen Mieten lagen 2024 in Löbtau-Nord bei 9,21 €/m², in Löbtau-Süd bei 9,07 €/m².[[5]] In der größten Bodenrichtwertzone von Löbtau-Nord gelten 720 €/m² für Mehrfamilienhausgrundstücke, in der von Löbtau-Süd 670 €/m².[[3]]"
+      ],
+      "bild": {
+        "name": "dresden-sued-loebtau-ebertplatz",
+        "alt": "Ein langer Wohnblock mit Mansarddach am Ebertplatz in Löbtau, davor eine Grünfläche und eine Bruchsteinmauer",
+        "caption": "Wohnhäuser am Ebertplatz in Löbtau.",
+        "credit": "Jörg Blobelt, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:20090609035DR_Dresden-L%C3%B6btau_Freiberger_Stra%C3%9Fe_-_Ebertplatz.jpg"
+      }
+    },
+    {
+      "h2": "Plauen: Hofmühle, Rathaus und geschlossene Gründerzeit",
+      "absaetze": [
+        "Plauen wurde 1206 erstmals urkundlich erwähnt, war jahrhundertelang landwirtschaftlich geprägt und eine Floßverbindung an der Weißeritz nach Dresden. In der Industrialisierung modernisierte Gottlieb Traugott Bienert die Hofmühle; damals entstand die für Plauen typische geschlossene Gründerzeitbebauung. 1903 kam Plauen zu Dresden, den Krieg überstand der Stadtteil weitgehend unzerstört. Von 1994 bis 2015 war ein Teil Plauens Sanierungsgebiet, 2005 erweitert um den historischen Ortskern; mit den Fördermitteln wurden auch das Rathaus im Stil der Neorenaissance und der ehemalige Plauener Bahnhof saniert.[[14]] In Plauen leben 11.338 Menschen.[[4]] Die Wohnungen sind im Mittel 76,1 m² groß, mehr als in den übrigen drei Stadtteilen, und 30 % der Wohngebäude haben eine oder zwei Wohnungen.[[5]] Vom Rathaus Plauen sind Sie mit Bus 63 und Linie 3 in 16 Minuten am Hauptbahnhof.[[17]]",
+        "Ältere Eigentumswohnungen kosteten 2025 in der Gemarkung Plauen im Median 2.690 €/m², bei 20 Verkäufen; Wohnungen der Baujahre 1990 bis 2023 erzielten 2.885 €/m².[[1]] Die Gemarkung liegt zu 86 % im Stadtteil Plauen.[[6]] Die Bodenrichtwerte reichen von 160 bis 1.500 €/m². In der größten Zone, rund der Hälfte der Wohn- und Mischgebiete, gelten 810 €/m² für Mehrfamilienhausgrundstücke, 2024 waren es 820 €/m²; auch die zweitgrößte Zone sank, von 750 auf 730 €/m².[[3]] Die angebotenen Mieten lagen 2024 bei 9,43 €/m², dem höchsten Wert in Dresden-Süd, in ganz Dresden bei 9,37 €/m².[[5]]"
+      ],
+      "bild": {
+        "name": "dresden-sued-bienertmuehle",
+        "alt": "Weiße Gebäude der Bienertmühle in Plauen mit Balkonen und hohem Backsteinschornstein, davor Bäume und Parkplätze, tiefblauer Himmel",
+        "caption": "Die Bienertmühle, die Hofmühle in Plauen, mit Wohnungen.",
+        "credit": "Bybbisch94, CC BY-SA 3.0 DE",
+        "url": "https://commons.wikimedia.org/wiki/File:20240922.Bienertmühle.-012.jpg"
+      }
+    },
+    {
+      "h2": "Strehlen: Einfamilienhäuser und neue Wohnungen",
+      "absaetze": [
+        "In Strehlen, statistisch mit Reick-Nordwest, leben 11.288 Menschen.[[4]] 1990 waren es 14.341, 2010 noch 9.835. 41 % der Wohngebäude haben eine oder zwei Wohnungen; 41 % der Wohnungen entstanden zwischen 1946 und 1990, 18 % bis 1918. Der geschätzte Leerstand sank von 15,2 % im Jahr 2010 auf 5,6 % im Jahr 2024. 2024 wurden 257 Wohnungen genehmigt, mehr als in den übrigen drei Stadtteilen zusammen; fertiggestellt wurden von 2022 bis 2024 vier. Die angebotenen Mieten lagen 2024 bei 8,84 €/m², dem niedrigsten Wert in Dresden-Süd.[[5]] Vom Wasaplatz sind Sie in 8 bis 13 Minuten am Hauptbahnhof, mit Bus 63 und S-Bahn oder mit den Buslinien 61 und 66.[[17]]",
+        "In der Gemarkung Strehlen wurden 2025 68 neue Eigentumswohnungen verkauft, im Median für 6.225 €/m², bei einer Spanne von 5.325 bis 7.050 €/m². Ältere Wohnungen kosteten im Weiterverkauf 2.630 €/m², bei 25 Verkäufen.[[1]] Die Gemarkung liegt zu 63 % im Stadtteil Strehlen und reicht in Teile von Gruna und der Seevorstadt-Ost.[[6]] Die Bodenrichtwerte reichen von 240 bis 920 €/m². Für Einfamilienhausgrundstücke von 600 m² gelten in einer der größeren Zonen 380 €/m², für 300 m² große 650 €/m². Von 16 Zonen lagen 5 höher als 2024 und eine niedriger.[[3]]"
+      ],
+      "bild": {
+        "name": "dresden-sued-dohnaer-strasse",
+        "alt": "Saniertes viergeschossiges Wohnhaus an der Dohnaer Straße in Strehlen an einer gepflasterten Straße mit parkenden Autos, blauer Himmel mit Wolken",
+        "caption": "Wohnhaus an der Dohnaer Straße in Strehlen.",
+        "credit": "Jörg Blobelt, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:20190908160DR_Dresden-Strehlen_Dohnaer_Straße_21.jpg"
+      }
+    }
+  ],
+  "band": {
+    "name": "dresden-sued-plauenscher-grund",
+    "alt": "Blick von oben in den Plauenschen Grund mit Felswänden, Bahnstrecke, Straße und einem Fabrikgelände mit Schornstein, dahinter Dresden unter blauem Himmel",
+    "caption": "Blick vom Hohen Stein in den Plauenschen Grund.",
+    "credit": "Bybbisch94, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:20260503.Am_Hohen_Stein.-011.jpg"
+  },
+  "verkaufen": {
+    "h2": "Immobilie in Dresden-Süd verkaufen",
+    "absaetze": [
+      "In der Gemarkung Löbtau wurden 2025 76 ältere Eigentumswohnungen weiterverkauft, im Median für 2.445 €/m², bei einer Spanne von 1.515 bis 4.320 €/m²; in Plauen waren es 20 zu 2.690 €/m², in Strehlen 25 zu 2.630 €/m².[[1]] In ganz Dresden lag der Median weiterverkaufter Wohnungen im 1. Halbjahr 2026 bei 2.660 €/m², nach 2.550 €/m² ein Jahr zuvor.[[2]] Wir bewerten Ihre Wohnung deshalb nach Gemarkung, Bodenrichtwertzone, Baujahr, Vermietungsstand und Vergleichsverkäufen.",
+      "Bei Mehrfamilienhäusern zählt auch die Bauweise: Für Häuser in offener Bauweise, wie die Kaffeemühlen in Löbtau, ermittelte der Gutachterausschuss als Median das 21,2-Fache der jährlichen Mieteinnahmen, für geschlossene Bauweise, wie in Plauen, das 21,8-Fache. Sanierte Mehrfamilienhäuser der Vorkriegszeit kosteten 2025 in Dresden im Mittel 2.055 €/m² Wohnfläche.[[1,13,14]] Im 1. Halbjahr 2026 stiegen die Quadratmeterpreise verkaufter Mehrfamilienhäuser im Bestand gegenüber dem 2. Halbjahr 2025 um rund 3 %.[[2]] Bei Häusern in den früheren Sanierungsgebieten Löbtau und Plauen klären wir vorab, ob der Ausgleichsbetrag festgesetzt und bezahlt ist; er richtet sich nach der sanierungsbedingten Erhöhung des Bodenwerts, bei Wohnungseigentum anteilig.[[15]]"
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Dresden-Süd",
+    "absaetze": [
+      "Als Eigennutzer finden Sie neue Wohnungen vor allem in der Gemarkung Strehlen: 68 Erstverkäufe 2025, im Median 6.225 €/m². In Plauen waren es sechs zu 5.580 €/m², in Löbtau vier zu 5.675 €/m².[[1]] Laut Gutachterausschuss blieben die Preise neuer Wohnungen im 1. Halbjahr 2026 „unverändert auf hohem Niveau“, Median 6.255 €/m².[[2]] Häuser mit einer oder zwei Wohnungen machen in Strehlen 41 % und in Plauen 30 % der Wohngebäude aus, in Löbtau-Nord und Löbtau-Süd 9,9 und 5,5 %.[[5]] Eine soziale Erhaltungssatzung gibt es in Dresden nicht; laut Stadt ist deshalb derzeit nichts zu beachten.[[11]]",
+      "Als Kapitalanleger rechnen Sie mit dem Dresdner Mietspiegel 2025, der für die ganze Stadt gilt: Die Basismiete für 60 m² beträgt 7,07 €/m², die Wohnlage wird adressgenau mit 0,98 bis 1,03 gewichtet.[[7,8]] Die Mietpreisbremse gilt bis zum 30.06.2027: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[9]] Bestandsmieten dürfen in drei Jahren um höchstens 15 % steigen.[[10]] Den Leerstand schätzt die Stadt in den vier Stadtteilen auf 5,6 bis 6,8 %.[[5]] Aus Kaufpreis, Miete, Bewirtschaftungskosten und den Auflagen vor Ort rechnen wir mit Ihnen die Rendite, bevor Sie kaufen."
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Dresden-Süd",
+    "absaetze": [
+      "Ältere Eigentumswohnungen kosteten 2025 in den Gemarkungen Löbtau, Plauen und Strehlen im Median 2.445 bis 2.690 €/m² Wohnfläche, neue 5.580 bis 6.225 €/m².[[1]] Dazu kommen die Kaufnebenkosten, in Sachsen unter anderem 5,5 % Grunderwerbsteuer.[[16]] Wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen: Timon Fischer rechnet das mit Ihnen durch, vergleicht Ihre Finanzierung über Europace und Baufinex und fragt parallel Banken direkt an."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Was kostet eine Wohnung in Löbtau?",
+      "antwort": "Der Gutachterausschuss weist Eigentumswohnungen nach Gemarkungen aus. 2025 kosteten in der Gemarkung Löbtau ältere Wohnungen im Weiterverkauf im Median 2.445 €/m², bei 76 Verkäufen, Wohnungen der Baujahre 1990 bis 2023 2.425 €/m² und vier neue Wohnungen 5.675 €/m².[[1]] Die Gemarkung liegt fast ganz in Löbtau-Nord und Löbtau-Süd.[[6]] Die Bodenrichtwerte reichen in Löbtau-Nord von 240 bis 1.200 €/m², in Löbtau-Süd von 340 bis 1.200 €/m².[[3]] Für Ihre Wohnung zählen Baujahr, Zustand, Lage und ob sie vermietet ist.",
+      "herkunft": "Google-Autocomplete „wohnung kaufen dresden löbtau“, „wohnung kaufen dresden löbtau nord“ und „wohnung kaufen dresden löbtau süd“ (research/serp/autocomplete-2026-10-27-dresden.json) sowie „quadratmeterpreis dresden löbtau“ und „immobilienpreise dresden cotta“ (research/serp/autocomplete-2026-10-27-dresden-themen.json)"
+    },
+    {
+      "frage": "Was kostet eine Wohnung in Plauen?",
+      "antwort": "In der Gemarkung Plauen, die zu 86 % im gleichnamigen Stadtteil liegt, kosteten ältere Wohnungen 2025 im Median 2.690 €/m², bei 20 Verkäufen. Wohnungen der Baujahre 1990 bis 2023 erzielten 2.885 €/m², sechs neue Wohnungen 5.580 €/m².[[1,6]] Bei so wenigen Verkäufen hängt der Wert Ihrer Wohnung stark von Lage, Baujahr und Zustand ab; die Bodenrichtwerte reichen in Plauen von 160 bis 1.500 €/m².[[3]]",
+      "herkunft": "Google-Autocomplete „wohnung kaufen dresden plauen“ (research/serp/autocomplete-2026-10-27-dresden.json)"
+    },
+    {
+      "frage": "Was kostet ein Mehrfamilienhaus in Plauen?",
+      "antwort": "Preise für Mehrfamilienhäuser veröffentlicht der Gutachterausschuss nicht je Stadtteil. In ganz Dresden kosteten sanierte Mehrfamilienhäuser der Vorkriegszeit 2025 im Mittel 2.055 €/m² Wohnfläche. Für Häuser in geschlossener Bauweise, wie sie in Plauen typisch ist, lag der Median beim 21,8-Fachen der jährlichen Mieteinnahmen.[[1,14]] Für Mehrfamilienhausgrundstücke gelten in der größten Bodenrichtwertzone Plauens 810 €/m².[[3]] Wir bewerten Ihr Haus nach Mieten, Zustand, Grundstück und Vergleichsverkäufen.",
+      "herkunft": "Google-Autocomplete „mehrfamilienhaus dresden plauen kaufen“ (research/serp/autocomplete-2026-10-27-dresden-themen.json)"
+    },
+    {
+      "frage": "Was kostet eine Wohnung in Strehlen?",
+      "antwort": "In der Gemarkung Strehlen wurden 2025 68 neue Eigentumswohnungen verkauft, im Median für 6.225 €/m². Ältere Wohnungen kosteten im Weiterverkauf 2.630 €/m², Wohnungen der Baujahre 1990 bis 2023 2.515 €/m².[[1]] Die Gemarkung liegt zu 63 % im Stadtteil Strehlen und reicht in Teile von Gruna und der Seevorstadt-Ost.[[6]] Die Bodenrichtwerte im Stadtteil reichen von 240 bis 920 €/m².[[3]]",
+      "herkunft": "Google-Autocomplete „wohnung kaufen dresden strehlen“ (research/serp/autocomplete-2026-10-27-dresden.json)"
+    },
+    {
+      "frage": "Sinken die Immobilienpreise in Dresden?",
+      "antwort": "Laut Gutachterausschuss haben die schwierigen Rahmenbedingungen im 1. Halbjahr 2026 „nicht zu einem Nachgeben der Preise geführt“. Weiterverkaufte Wohnungen kosteten im Median 2.660 €/m², ein Jahr zuvor 2.550 €/m². Bei Häusern ist das Bild gemischt: Doppelhaushälften und Reihenendhäuser wurden teurer, freistehende Einfamilienhäuser, Reihenmittel- und Zweifamilienhäuser günstiger.[[2]]",
+      "herkunft": "Google-Autocomplete „immobilienpreise dresden sinken“ und „immobilienpreise dresden entwicklung“ (research/serp/autocomplete-2026-10-27-dresden-themen.json)"
+    },
+    {
+      "frage": "Gibt es in Löbtau eine soziale Erhaltungssatzung?",
+      "antwort": "Nein. Die Stadt prüfte eine soziale Erhaltungssatzung für Löbtau/Weißeritzknick und Friedrichstadt/Altona; der Stadtrat lehnte sie am 13.12.2024 ab. Laut Stadt ist deshalb derzeit nichts zu beachten, eine neue Vorlage ist nicht in Bearbeitung.[[11]] Die Sanierungsgebiete Löbtau-Nord und Löbtau sind seit dem 31.01.2013 und dem 21.04.2023 aufgehoben.[[12,13]] Danach erhebt die Stadt einen Ausgleichsbetrag für die sanierungsbedingte Erhöhung des Bodenwerts, bei Wohnungseigentum anteilig.[[15]]",
+      "herkunft": "Google-Autocomplete „soziale erhaltungssatzung dresden“, „erhaltungssatzung dresden“ und „sanierungsgebiet dresden“ (research/serp/autocomplete-2026-10-27-dresden-themen.json)"
+    },
+    {
+      "frage": "Welcher Mietspiegel gilt in Löbtau, Plauen und Strehlen?",
+      "antwort": "Dresden hat einen Mietspiegel für die ganze Stadt, ohne Zu- oder Abschläge je Stadtteil. Er gilt vom 01.01.2025 bis zum 31.12.2026; ab 2027 gibt es einen neuen. Die Wohnlage wird adressgenau als einfach, mittel oder gut eingestuft und mit 0,98, 1,00 oder 1,03 gewichtet.[[7]] Ihre Adresse prüfen Sie im Online-Mietspiegel der Stadt.[[8]]",
+      "herkunft": "Google-Autocomplete „mietspiegel dresden stadtteile“, „mietspiegel dresden cotta“ und „mietspiegel dresden 2027“ (research/serp/autocomplete-2026-10-27-dresden-themen.json)"
+    },
+    {
+      "frage": "Wie hoch ist die Maklerprovision in Dresden?",
+      "antwort": "Kauft ein Verbraucher eine Wohnung oder ein Einfamilienhaus, teilen sich Käufer und Verkäufer die Provision zu gleichen Teilen (§§ 656a bis 656d BGB); das gilt bundesweit, also auch in Sachsen. Bei Fischer & Geserich sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision. Bei Mehrfamilienhäusern und Grundstücken gilt die Teilung nicht. Die Provision fällt nur an, wenn der Kaufvertrag zustande kommt.",
+      "herkunft": "Google-Autocomplete „maklerprovision dresden“ (research/serp/autocomplete-2026-10-27-dresden-themen.json). Antwort nach /maklerprovision/ und /kaufen/ (Stand 26.10.2026)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Dresden-Zentrum",
+      "url": "/standorte/dresden/zentrum/"
+    },
+    {
+      "name": "Dresden-Ost",
+      "url": "/standorte/dresden/ost/"
+    },
+    {
+      "name": "Dresden-Nord",
+      "url": "/standorte/dresden/nord/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Landeshauptstadt Dresden, Grundstücksmarktbericht 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/2026-Grundstuecksmarktbericht.pdf",
+      "stand": "Kaufverträge 2025, Vorwort vom 16.04.2026"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Landeshauptstadt Dresden, Halbjahresbericht 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/Halbjahresbericht_2026.pdf",
+      "stand": "1. Halbjahr 2026, veröffentlicht 31.08.2026"
+    },
+    {
+      "name": "Bodenrichtwerte, BORIS Sachsen (Stichtag 01.01.2026) und Themenstadtplan Dresden (Stichtag 01.01.2024), eigene Zuordnung zu den Stadtteilen",
+      "url": "https://www.boris.sachsen.de/",
+      "stand": "Stichtag 01.01.2026, Vergleich mit 01.01.2024"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Opendata: Einwohner mit Hauptwohnung nach Stadtteilen",
+      "url": "https://opendata.dresden.de/",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Kommunale Statistikstelle, Stadtteilkatalog 2024",
+      "url": "https://www.dresden.de/media/pdf/onlineshop/statistikstelle/120_080_010_Stadtteilkatalog_2024.pdf",
+      "stand": "Werte 2024"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Geodaten der Gemarkungen und statistischen Stadtteile (WFS), eigene Verschneidung der Flächen",
+      "url": "https://opendata.dresden.de/",
+      "stand": "abgerufen 27.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Dresdner Mietspiegel 2025",
+      "url": "https://www.dresden.de/media/pdf/sozialamt/Mietspiegel_Dresden_2025.pdf",
+      "stand": "gültig 01.01.2025 bis 31.12.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Mietspiegel (Online-Mietspiegel und Wohnlagekarte)",
+      "url": "https://www.dresden.de/de/leben/wohnen/wohnungsmarkt/mietspiegel.php",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Freistaat Sachsen, Mietpreisbremse gemäß § 556d BGB",
+      "url": "https://www.bauen-wohnen.sachsen.de/mietpreisbremse-gemaess-556d-bgb-4391.html",
+      "stand": "verlängert bis 30.06.2027, abgerufen 26.10.2026"
+    },
+    {
+      "name": "Medienservice Sachsen, Kappungsgrenze für Dresden und Leipzig verlängert",
+      "url": "https://www.medienservice.sachsen.de/medien/news/1087981",
+      "stand": "10.06.2025, gültig bis 30.06.2027"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Soziale Erhaltungssatzung",
+      "url": "https://www.dresden.de/de/stadtraum/planen/stadtentwicklung/aktuelle-buergerbeteiligungen/soziale-erhaltungssatzung.php",
+      "stand": "letzte Änderung 07.01.2025, abgerufen 26.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Stadterneuerung: Löbtau",
+      "url": "https://www.dresden.de/de/stadtraum/planen/stadtentwicklung/stadterneuerung/stadtteile/Sanierungsgebiet-Loebtau.php",
+      "stand": "letzte Änderung 08.01.2025"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Stadterneuerung: Löbtau-Nord",
+      "url": "https://www.dresden.de/de/stadtraum/planen/stadtentwicklung/stadterneuerung/stadtteile/Loebtau-Nord.php",
+      "stand": "letzte Änderung 21.05.2025"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Stadterneuerung: Plauen",
+      "url": "https://www.dresden.de/de/stadtraum/planen/stadtentwicklung/stadterneuerung/stadtteile/plauen.php",
+      "stand": "letzte Änderung 18.11.2024"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Ausgleichsbeträge in Sanierungsgebieten",
+      "url": "https://www.dresden.de/de/stadtraum/planen/stadtentwicklung/stadterneuerung/foerderprogramme-staedtebau/foerderprogramme-bund-und-land/sanierungsgebiete/ausgleichsbetraege-sanierungsgebiete.php",
+      "stand": "letzte Änderung 11.12.2023"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Stadt Leipzig, Grundstücksmarktbericht 2026, S. 32 (Grunderwerbsteuer in Sachsen)",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stand": "2026"
+    },
+    {
+      "name": "Elektronische Fahrplanauskunft (Sollfahrplan Straßenbahn, Bus, S-Bahn und Regionalverkehr), Verbindungen bis Dresden Hauptbahnhof",
+      "url": "https://www.efa-bw.de/bvb3/XSLT_TRIP_REQUEST2?language=de",
+      "stand": "Fahrplan Dienstag 10.11.2026 ab 9 Uhr, abgefragt 26. und 27.10.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "Einwohner 31.12.2025: Löbtau-Nord 9.815, Löbtau-Süd 11.848 (zusammen 21.663), Plauen 11.338, Strehlen 11.288, Summe 44.289",
+      "fundstelle": "dresden-sued.md Nr. 1–2; D2; ew2025.csv"
+    },
+    {
+      "zahl": "STK 2024: EW 1990→2024 Löbtau-Süd 8.219→11.781 (+43,3 %); Strehlen 1990 14.341, 2010 9.835; Ø Alter LN 35,3, LS 36,7, Plauen 41,5, Strehlen 40,6, Stadt 43,5",
+      "fundstelle": "dresden-sued.md Nr. 3–4; stk.json"
+    },
+    {
+      "zahl": "Baualter bis 1918 LN 57,6 %, LS 61,1 %, Strehlen 17,7 %; Strehlen 1946–90 40,6 %; große Wohngebäude (7+ Wohnungen) LN 78,8 %, LS 74,9 %; Eigenheime (1–2 Wohnungen) LN 9,9 %, LS 5,5 %, Plauen 30,4 %, Strehlen 40,5 %; Ø Wohnfläche Plauen 76,1 m² (LN 64,3, LS 63,3, Strehlen 68,3)",
+      "fundstelle": "dresden-sued.md Nr. 7–9; D14–D17; STK Begriffserläuterungen"
+    },
+    {
+      "zahl": "Angebotsmiete 2024: Plauen 9,43, LN 9,21, LS 9,07, Strehlen 8,84, Stadt 9,37; Leerstand 2024 LN 5,8, LS 6,8, Plauen 6,3, Strehlen 5,6 (2010: 15,2)",
+      "fundstelle": "dresden-sued.md Nr. 10–11; D14–D17"
+    },
+    {
+      "zahl": "Bautätigkeit: Genehmigungen 2024 Strehlen 257, übrige drei 58 + 0 + 5 = 63; Fertigstellungen Strehlen 2022–2024 2 + 2 + 0 = 4",
+      "fundstelle": "dresden-sued.md Nr. 12; STK Bautätigkeit"
+    },
+    {
+      "zahl": "GMB Gemarkung Löbtau: Neubau 4 / 5.675; WV 1990–2023 33 / 2.425; WV bis 1989/saniert 76 / 1.515–4.320 / Median 2.445 / Ø 2.575; Plauen: Neubau 6 / 5.580; WV 1990–2023 18 / 2.885; WV bis 1989 20 / 2.690; Strehlen: Neubau 68 / 5.325–7.050 / Median 6.225 / Ø 6.290; WV 1990–2023 34 / 2.515; WV bis 1989 25 / 2.630",
+      "fundstelle": "dresden-sued.md Nr. 14–16; D41; GMB S. 52–54"
+    },
+    {
+      "zahl": "Gemarkung ↔ Stadtteil (Flächenanteile): Löbtau = Löbtau-Süd 58 + Löbtau-Nord 39 (+ Naußlitz 2); Plauen = Plauen 86; Strehlen = Strehlen 63, Gruna 17, Seevorstadt-Ost/Großer Garten 14",
+      "fundstelle": "D48a; dd/gemst_all.txt"
+    },
+    {
+      "zahl": "Stadt: WV Ø rund 2.705; Neubau Ø rund 6.460; MFH Vorkriegszeit saniert Ø 2.055; Rohertragsfaktor offen Median 21,21, geschlossen 21,75",
+      "fundstelle": "D31–D33, D36; GMB S. 15, 81"
+    },
+    {
+      "zahl": "HJB 1. HJ 2026: WV Median 2.660 (1. HJ 2025: 2.550); Neubau Median 6.255, „unverändert auf hohem Niveau“; „nicht zu einem Nachgeben der Preise geführt“; DHH/REH höher, freistehende EFH/RMH/ZFH niedriger; MFH +3 % ggü. 2. HJ 2025",
+      "fundstelle": "D37, D38; HJB S. 4, 5, 10"
+    },
+    {
+      "zahl": "BRW 2026: LN 240–1.200, größte Zone 61230920 720 MFH (710); LS 340–1.200, größte Zone 61231620 670 MFH (670); Plauen 160–1.500, 61241940 810 MFH WGFZ 1 (820), 436 von 877 Zonenpunkten, 61241920 730 (750); Strehlen 240–920, 16 Zonen, 5 höher / 10 gleich / 1 niedriger, 61242170 EFH f600 380, 61241580 EFH f300 650; gesamt 160–1.500",
+      "fundstelle": "dresden-sued.md Nr. 19–22; D45; brwunion.json"
+    },
+    {
+      "zahl": "Mietspiegel 2025 gültig bis 31.12.2026; Basismiete 60 m² 7,07; Wohnlage 0,98 / 1,00 / 1,03 adressgenau; keine Stadtteilzuschläge; Mietpreisbremse 10 % und Kappung 15 % bis 30.06.2027",
+      "fundstelle": "D49–D54"
+    },
+    {
+      "zahl": "Soziale Erhaltungssatzung: geprüft Friedrichstadt und Löbtau-Nord (Löbtau/Weißeritzknick); gemischte Sozialstruktur mit gehobenem Einkommens- und Mietenniveau, Zuzug jüngerer, einkommensstärkerer Gruppen, Mietpreisentwicklung dynamischer als Gesamtstadt; Ablehnung 13.12.2024; keine neue Vorlage; „nichts zu beachten“",
+      "fundstelle": "dresden-sued.md Nr. 24; SOZ Z. 11, 30–31, 45, 50, 56–57"
+    },
+    {
+      "zahl": "Löbtau: 1068, Weißeritz, Rasternetz 1875 Emil Ueberall, drei- bis viergeschossige Würfelhäuser offene Bauweise, „Kaffeemühlen“, denkmalgeschützt, 1990 Leerstand über 30 %, 15 % Ruinen, 2017 geburtenstärkster Stadtteil, Aufhebung Löbtau-Nord 31.01.2013, Löbtau 21.04.2023",
+      "fundstelle": "dresden-sued.md Nr. 26–27; SAN-LÖ, SAN-LN"
+    },
+    {
+      "zahl": "Plauen: 1206, Floßverbindung, Bienert Hofmühle, geschlossene Gründerzeitbebauung, 1903 eingemeindet, Krieg weitgehend unzerstört, Sanierungsgebiet 1994–2015 (Aufhebung 25.06.2015), Erweiterung 2005 historischer Ortskern, Rathaus Neorenaissance und ehemaliger Bahnhof saniert",
+      "fundstelle": "dresden-sued.md Nr. 28; SAN-PL"
+    },
+    {
+      "zahl": "Fahrzeiten: Tharandter Straße Tram 7 7 min; Clara-Zetkin-Straße Bus 90 + Tram 7 17 min; Plauen Rathaus Bus 63 + Tram 3 16 min; Wasaplatz 8–13 min (Bus 63 + S2 bzw. Bus 61 + 66)",
+      "fundstelle": "dresden-sued.md Nr. 31–35; D63; EFA-S"
+    },
+    {
+      "zahl": "GrESt Sachsen 5,5 %",
+      "fundstelle": "Leipziger GMB 2026 S. 32"
+    },
+    {
+      "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, §§ 656a–656d BGB; § 34c und § 34i GewO; Timon Fischer Geschäftsführer, Immobilienfinanzierung; Europace und Baufinex",
+      "fundstelle": "wie dresden-nord.json"
+    }
+  ],
+  "karte": {
+    "alt": "Karte von Dresden-Süd: Löbtau-Nord und Löbtau-Süd, Plauen und Strehlen, die Orte Friedrichstadt und Gruna, dazu die Elbe, die Weißeritz, die Bahnstrecken, die Autobahnen und der Dresdner Hauptbahnhof zwischen Plauen und Strehlen"
+  },
+  "anbindung": [
+    "Von der Tharandter Straße fährt die Linie 7 in 7 Minuten zum Hauptbahnhof, von der Clara-Zetkin-Straße sind Sie mit Bus 90 und Linie 7 in 17 Minuten dort.[[17]]",
+    "Vom Rathaus Plauen sind Sie mit Bus 63 und Linie 3 in 16 Minuten am Hauptbahnhof.[[17]]",
+    "Vom Wasaplatz sind Sie in 8 bis 13 Minuten am Hauptbahnhof, mit Bus 63 und S-Bahn oder mit den Buslinien 61 und 66.[[17]]"
+  ]
+}

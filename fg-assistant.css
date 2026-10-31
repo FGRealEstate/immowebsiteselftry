@@ -91,3 +91,67 @@
   .fg-ai-nav button i{display:block!important;margin:0 auto 3px!important}
   .fg-ai-compose-tools{gap:8px!important}.fg-ai-compose-tools span{max-width:62%}
 }
+
+/* Neues Design (Schritt 12, 27.10.2026; Redesign-Brief §5.1 Nr. 11): Schriften und Farben wie fg-design.css.
+   Inter für Text, Marcellus für Titel, nur Navy #08082F, Gold #D1B464, Off-White #F4F1E8 und ihre Abstufungen
+   (dunkles Gold #876200 für Text auf Hell, Grau rgb(74,74,85)). Lesbare Größen ab 11 px, Eingaben am Handy 16 px
+   (sonst zoomt iOS beim Tippen). Nur Darstellung; Logik, Texte und Links stehen in fg-assistant.js. */
+.fg-ai-assistant{--fga-gold-dark:#876200;--fga-cream:#F4F1E8;--fga-muted:#4A4A55;--fga-blue:#D1B464;font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;color:#15151C}
+.fg-ai-assistant button,.fg-ai-assistant input,.fg-ai-assistant select,.fg-ai-assistant textarea{font-family:inherit}
+.fg-ai-assistant strong,.fg-ai-assistant b,.fg-ai-launcher,.fg-ai-nav button,.fg-ai-chip,.fg-ai-action,.fg-ai-bubble .fg-ai-kicker,.fg-ai-bubble a,.fg-ai-field label,.fg-ai-tool-submit,.fg-ai-compose-tools button{font-weight:600}
+.fg-ai-title strong,.fg-ai-tool h4{font-family:"Marcellus",Georgia,serif;font-weight:400}
+.fg-ai-title strong{font-size:18px;line-height:1.2}
+.fg-ai-title span{font-size:11.5px;color:rgba(255,255,255,.78)}
+.fg-ai-launcher,.fg-ai-header{background:#08082F}
+.fg-ai-launcher-icon{background:#D1B464}
+.fg-ai-launcher-copy small{font-size:11px;color:#D1B464}
+.fg-ai-mark{color:#D1B464}
+.fg-ai-live-dot{background:#D1B464;box-shadow:0 0 0 3px rgba(209,180,100,.18)}
+.fg-ai-panel{border-color:rgba(209,180,100,.6)}
+.fg-ai-nav{background:#F4F1E8}
+.fg-ai-nav button{font-size:12.5px;color:#15151C}
+.fg-ai-nav button i{color:#876200}
+.fg-ai-nav button:hover i,.fg-ai-nav button.is-active i{color:#D1B464}
+.fg-ai-messages{background:#fff}
+.fg-ai-bubble{font-size:14px;line-height:1.55;color:#15151C}
+.fg-ai-bubble .fg-ai-kicker{font-size:11px;color:#876200}
+.fg-ai-bubble a{color:#876200}
+.fg-ai-note{font-size:12.5px;background:#F4F1E8;color:#4A4A55}
+.fg-ai-warn{font-size:12.5px;background:#F4F1E8;border-color:rgba(209,180,100,.7);color:#876200}
+.fg-ai-chip{font-size:12.5px}
+.fg-ai-chip:hover{background:#F4F1E8}
+.fg-ai-action{font-size:12.5px}
+.fg-ai-action.is-gold{background:#D1B464;color:#08082F!important}
+.fg-ai-action.is-light{background:#F4F1E8}
+.fg-ai-action.is-call{background:#F4F1E8!important;color:#08082F!important;border:1px solid rgba(8,8,47,.14)}
+.fg-ai-action.is-call i{color:#876200}
+.fg-ai-category-card i{color:#876200}
+.fg-ai-category-card strong{font-size:13px}
+.fg-ai-category-card span{font-size:12px;color:#4A4A55}
+.fg-ai-tool{background:#F4F1E8}
+.fg-ai-tool h4{font-size:18px}
+.fg-ai-tool>p{font-size:12px;color:#4A4A55}
+.fg-ai-field label{font-size:11px;color:#4A4A55}
+.fg-ai-field input,.fg-ai-field select,.fg-ai-field textarea{font-size:14px}
+.fg-ai-field input:focus,.fg-ai-field select:focus,.fg-ai-field textarea:focus{border-color:#876200}
+.fg-ai-tool-submit{font-size:13px}
+.fg-ai-result-stat{background:#F4F1E8}
+.fg-ai-result-stat small,.fg-ai-summary small{font-size:11px;color:#4A4A55}
+.fg-ai-result-stat strong{font-size:16px}
+.fg-ai-result>p{font-size:12px;color:#4A4A55}
+.fg-ai-summary>div{background:#F4F1E8}
+.fg-ai-summary strong{font-size:13px}
+.fg-ai-source,.fg-ai-source strong{font-size:11px;color:#4A4A55}
+.fg-ai-input{font:14px/1.4 "Inter",system-ui,sans-serif;color:#08082F}
+.fg-ai-send:hover{background:#11113D}
+.fg-ai-compose-tools span{font-size:11px;color:#4A4A55}
+.fg-ai-compose-tools button{font-size:11px;color:#876200}
+.fg-ai-privacy{font-size:11px;color:#4A4A55}
+.fg-ai-privacy i{color:#876200}
+@media (max-width:767px){
+  .fg-ai-assistant .fg-ai-input,.fg-ai-field input,.fg-ai-field select,.fg-ai-field textarea{font-size:16px}
+  .fg-ai-bubble{font-size:14px}
+  .fg-ai-title strong{font-size:16px}
+  .fg-ai-title span{font-size:11px}
+  .fg-ai-nav button{font-size:11.5px!important}
+}

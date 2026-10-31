@@ -1,8 +1,20 @@
 {
   "name": "Dresden",
   "region": "Sachsen",
-  "price": "Bestand häufig ca. 2.300–4.000 €/m²",
-  "rent": "häufig ca. 8–14 €/m²",
+  "preis": {
+    "wert": "Ø 2.705 €/m²",
+    "label": "Weiterverkaufte Eigentumswohnungen in Dresden",
+    "quelle": "Grundstücksmarktbericht Dresden 2026",
+    "url": "https://www.dresden.de/media/pdf/vermessung/2026-Grundstuecksmarktbericht.pdf",
+    "stichtag": "Kaufverträge 2025"
+  },
+  "miete": {
+    "wert": "7,07 €/m²",
+    "label": "Basismiete für 60 m² im Dresdner Mietspiegel 2025",
+    "quelle": "Dresdner Mietspiegel 2025",
+    "url": "https://www.dresden.de/media/pdf/sozialamt/Mietspiegel_Dresden_2025.pdf",
+    "stichtag": "Stichtag 01.04.2024"
+  },
   "chance": "Technologie, Forschung, Verwaltung und eine hohe Wohnqualität sorgen für eine breit aufgestellte Nachfrage. Besonders Lagen mit guter Straßenbahnanbindung und Nähe zu großen Arbeitgebern sind für unterschiedliche Mietergruppen interessant.",
   "risk": "Zwischen den Stadtteilen unterscheiden sich Mietniveau, Vermietbarkeit und Entwicklung deutlich. Hochwasserlagen, Sanierungsqualität und der technische Zustand älterer Gebäude müssen objektbezogen geprüft werden.",
   "infra": "Ein dichtes Straßenbahnnetz, Fernverkehr, Hochschulen und das Halbleitercluster verbinden Wohnen, Forschung und Beschäftigung. Die tatsächliche Erreichbarkeit hängt dennoch stark von der konkreten Mikrolage ab.",
@@ -10,7 +22,6 @@
   "population": "Das Wachstum wirkt nicht in jedem Quartier gleich und sollte nicht pauschal auf die Gesamtstadt übertragen werden.",
   "view": "Dresden ist für langfristige Kapitalanlagen interessant, wenn Kaufpreis, Mietniveau und Gebäudesubstanz realistisch zusammenpassen. Entscheidend ist nicht nur der Stadtteilname, sondern die konkrete Anbindung an Arbeitgeber und Alltagseinrichtungen.",
   "source": "https://www.dresden.de/media/pdf/vermessung/Halbjahresbericht_2025.pdf",
-  "yield": "häufig ca. 3,5–6,0 %",
   "id": "dresden",
   "slug": "dresden",
   "url": "/standorte/dresden/",
@@ -18,5 +29,5 @@
     "dresden",
     "sachsen"
   ],
-  "updated": "2026-09-02"
+  "updated": "2026-10-29"
 }

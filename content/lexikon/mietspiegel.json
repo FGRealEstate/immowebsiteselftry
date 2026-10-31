@@ -7,11 +7,133 @@
   "keywords": [
     "mietspiegel"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Immobilienkauf",
   "formula": null,
   "sources": [],
   "assistantAnswer": "Übersicht ortsüblicher Vergleichsmieten. Mietspiegel geben die ortsübliche Vergleichsmiete nach gesetzlichen Kriterien wieder. Sie dienen insbesondere als Begründungsmittel für Mieterhöhungen und sind von Portal-Angebotsmieten zu unterscheiden.",
-  "explanation": "Mietspiegel geben die ortsübliche Vergleichsmiete nach gesetzlichen Kriterien wieder. Sie dienen insbesondere als Begründungsmittel für Mieterhöhungen und sind von Portal-Angebotsmieten zu unterscheiden.",
-  "practiceExample": "Eine Angebotsmiete von 18 €/m² beweist nicht, dass eine Bestandsmiete von 12 €/m² unmittelbar auf 18 €/m² erhöht werden darf."
+  "explanation": "Ein Mietspiegel ist eine Übersicht über die ortsübliche Vergleichsmiete. Erstellt oder anerkannt wird er von der zuständigen Behörde oder gemeinsam von Vertretern der Vermieter und Mieter; er soll alle zwei Jahre angepasst werden, und Gemeinden mit mehr als 50.000 Einwohnern müssen einen erstellen. Ein qualifizierter Mietspiegel folgt anerkannten wissenschaftlichen Grundsätzen; bei ihm wird vermutet, dass er die Vergleichsmiete wiedergibt.",
+  "practiceExample": "Bernau hat keinen Mietspiegel. Der Gutachterausschuss weist für 2024 und 2025 Mieten von 5,8 bis 16,2 €/m² aus, im Mittel 10,3 €/m², und betont, dass das kein Mietspiegel ist. Für eine Wohnung mit 65 m², Baujahr 1995, heute 9 €/m² oder 585 € im Monat, nehmen wir eine Vergleichsmiete von 10 €/m² an. Erhöhen können Sie dann bis 650 € im Monat; die Kappungsgrenze von 15 % läge mit 10,35 €/m² höher. Zum Vergleich Berlin: Der qualifizierte Mietspiegel 2026 nennt für 65 bis unter 70 m² in mittlerer Wohnlage, bezugsfertig 1991 bis 2001, eine Spanne von 7,79 bis 11,36 €/m² und einen Mittelwert von 9,80 €/m², bei 65 m² also 637 € im Monat.",
+  "ausbau": {
+    "einordnung": [
+      "Ein Mietspiegel ist eine Übersicht über die ortsübliche Vergleichsmiete. Erstellt oder anerkannt wird er von der zuständigen Behörde oder gemeinsam von Vertretern der Vermieter und Mieter; er soll alle zwei Jahre angepasst werden, und Gemeinden mit mehr als 50.000 Einwohnern müssen einen erstellen.[[1]] Ein qualifizierter Mietspiegel folgt anerkannten wissenschaftlichen Grundsätzen; bei ihm wird vermutet, dass er die Vergleichsmiete wiedergibt.[[2]]",
+      "Die ortsübliche Vergleichsmiete bilden die üblichen Mieten für Wohnungen vergleichbarer Art, Größe, Ausstattung, Beschaffenheit und Lage, vereinbart oder geändert in den letzten sechs Jahren.[[3]] Sie ist der Maßstab für Mieterhöhungen im laufenden Vertrag und für die Mietpreisbremse.[[3,4]]"
+    ],
+    "beispiel": [
+      "Bernau hat keinen Mietspiegel. Der Gutachterausschuss weist für 2024 und 2025 Mieten von 5,8 bis 16,2 €/m² aus, im Mittel 10,3 €/m², und betont, dass das kein Mietspiegel ist.[[5]] Für eine Wohnung mit 65 m², Baujahr 1995, heute 9 €/m² oder 585 € im Monat, nehmen wir eine Vergleichsmiete von 10 €/m² an. Erhöhen können Sie dann bis 650 € im Monat; die Kappungsgrenze von 15 % läge mit 10,35 €/m² höher.[[3,6]]",
+      "Zum Vergleich Berlin: Der qualifizierte Mietspiegel 2026 nennt für 65 bis unter 70 m² in mittlerer Wohnlage, bezugsfertig 1991 bis 2001, eine Spanne von 7,79 bis 11,36 €/m² und einen Mittelwert von 9,80 €/m², bei 65 m² also 637 € im Monat.[[7]]"
+    ],
+    "abschnitte": [
+      {
+        "h2": "Mieterhöhung mit dem Mietspiegel",
+        "absaetze": [
+          "Bis zur Vergleichsmiete erhöhen können Sie, wenn die Miete seit 15 Monaten unverändert ist, frühestens ein Jahr nach der letzten Erhöhung und um höchstens 20 % in drei Jahren, in bestimmten Gebieten 15 %.[[3]] Das Verlangen begründen Sie in Textform mit einem Mietspiegel, einer Mietdatenbank, einem Gutachten oder drei vergleichbaren Wohnungen; bei einem Mietspiegel mit Spannen reicht ein Wert in der Spanne. Fehlt ein aktueller Mietspiegel, kann auch ein veralteter oder der einer vergleichbaren Gemeinde dienen.[[8]] Normale Wohnungen liegen um den Mittelwert, schlechter ausgestattete im unteren, besser ausgestattete im oberen Bereich.[[7]]"
+        ]
+      },
+      {
+        "h2": "Andere Wege zur Miete",
+        "absaetze": [
+          "Daneben können Sie eine Erhöhung mit dem Mieter vereinbaren, eine Staffel- oder Indexmiete festlegen oder nach einer Modernisierung umlegen.[[9]] Beim Mieterwechsel gilt für die neue Miete die Mietpreisbremse, wo sie eingeführt ist.[[4]] F&G leitet die Miethöhe aus Markt und rechtlichem Rahmen ab und betrachtet Mikrolage, Zustand, Ausstattung und Mietstatus.[[10]]"
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "§ 558c BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__558c.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 558d BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__558d.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 558 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__558.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 556d BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__556d.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Gutachterausschuss Barnim: Grundstücksmarktbericht 2025",
+        "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+        "stand": "Berichtsjahr 2025, abgerufen 27.10.2026"
+      },
+      {
+        "name": "Brandenburg: Kappungsgrenzenverordnung",
+        "url": "https://mil.brandenburg.de/sixcms/media.php/9/KappGrenzV.pdf",
+        "stand": "Kabinettbeschluss 25.11.2025, abgerufen 27.10.2026"
+      },
+      {
+        "name": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen: Berliner Mietspiegel 2026",
+        "url": "https://mietspiegel.berlin.de/wp-content/uploads/2026/05/mietspiegel2026.pdf",
+        "stand": "Stichtag 01.09.2025, abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 558a BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__558a.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 557 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__557.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Vermieten",
+        "url": "https://fg-realestate.de/vermieten.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Mietspiegel: Übersicht, Behörde oder Verbände, alle zwei Jahre, Pflicht über 50.000 Einwohner",
+        "fundstelle": "runde-4.md, J13"
+      },
+      {
+        "zahl": "qualifizierter Mietspiegel: wissenschaftliche Grundsätze, Vermutung",
+        "fundstelle": "runde-4.md, J14"
+      },
+      {
+        "zahl": "Vergleichsmiete: Art, Größe, Ausstattung, Beschaffenheit, Lage, sechs Jahre; 15 Monate, ein Jahr, 20 %/15 % in drei Jahren",
+        "fundstelle": "runde-4.md, J10, J11"
+      },
+      {
+        "zahl": "Mietpreisbremse knüpft an die Vergleichsmiete an",
+        "fundstelle": "runde-4.md, J01"
+      },
+      {
+        "zahl": "Bernau: kein Mietspiegel; Mietdaten 2024–2025 5,8 bis 16,2, Mittel 10,3 €/m², ausdrücklich kein Mietspiegel",
+        "fundstelle": "runde-4.md, J16"
+      },
+      {
+        "zahl": "Kappungsgrenze Bernau 15 %",
+        "fundstelle": "runde-4.md, J09"
+      },
+      {
+        "zahl": "Berlin 2026, Zeile 110: 7,79 / 9,80 / 11,36 €/m²; qualifiziert; Einordnung in der Spanne nach Ausstattung",
+        "fundstelle": "runde-4.md, J15"
+      },
+      {
+        "zahl": "Textform, vier Begründungsmittel, Spanne reicht, veralteter Mietspiegel oder vergleichbare Gemeinde",
+        "fundstelle": "runde-4.md, J12"
+      },
+      {
+        "zahl": "Vereinbarung, Staffel-/Indexmiete, §§ 558 bis 560",
+        "fundstelle": "runde-4.md, J17"
+      },
+      {
+        "zahl": "F&G: Markt und rechtlicher Rahmen; Mikrolage, Zustand, Ausstattung, Mietstatus",
+        "fundstelle": "runde-4.md, J18"
+      },
+      {
+        "zahl": "Annahme 10 €/m² × 65 = 650 €; 9 × 1,15 = 10,35 €/m²; Berlin 9,80 × 65 = 637 €",
+        "fundstelle": "Rechnung, Marktprüfung runde-4.md"
+      }
+    ]
+  }
 }

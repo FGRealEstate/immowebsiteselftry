@@ -6,6 +6,10 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Update 7 §4: Propstack-Fotos über das Netlify Image CDN (/.netlify/images?url=…), Filter propstackFoto in .eleventy.js.
+[images]
+  remote_images = ["https://images\\.propstack\\.de/.*"]
+
 [[headers]]
   for = "/*"
   [headers.values]

@@ -1,0 +1,457 @@
+{
+  "slug": "konigs-wusterhausen",
+  "name": "Königs Wusterhausen",
+  "nameLang": "Königs Wusterhausen",
+  "kontakt": "lennart",
+  "kreis": {
+    "name": "Landkreis Dahme-Spreewald",
+    "url": "/standorte/dahme-spreewald/"
+  },
+  "title": "Immobilienmakler Königs Wusterhausen – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler in Königs Wusterhausen: Haus, Wohnung oder Ufergrundstück verkaufen, kaufen und finanzieren, mit Bodenrichtwerten 2026 und Kaufpreisen.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Königs Wusterhausen",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Königs Wusterhausen, von der Kernstadt bis Zeesen, Senzig und Zernsdorf, beim Verkauf, beim Kauf und bei der Finanzierung. Wir bewerten Häuser, Wohnungen und Ufergrundstücke und vergleichen Finanzierungen über Plattformen und Banken.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Bei Fragen zu Königs Wusterhausen und den Ortsteilen hilft Ihnen Lennart Geserich, Head of Sales & Vermietung.",
+  "hero": {
+    "name": "koenigs-wusterhausen-schloss",
+    "alt": "Nordfassade von Schloss Königs Wusterhausen im Sonnenlicht",
+    "credit": "V.Boldychev, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Schloss_Koenigs_Wusterhausen_Nordfassade_Sonnenlicht.jpg"
+  },
+  "stand": "Oktober 2026",
+  "updated": "2026-10-26",
+  "zahlen": [
+    {
+      "wert": "410 €/m²",
+      "label": "Bodenrichtwert Königs Wusterhausen Stadtmitte (Wohnbaufläche)",
+      "detail": "Wie im Vorjahr. Funkerberg 350, Neue Mühle 300, Zeesen-Steinbergsiedlung 280 €/m² nach 370 im Vorjahr.",
+      "quelle": "Gutachterausschuss Dahme-Spreewald, BORIS Brandenburg",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?f=json&limit=500&gemeinde_bezeichnung=K%C3%B6nigs%20Wusterhausen&stichtag=2026-01-01",
+      "stichtag": "Stichtag 01.01.2026"
+    },
+    {
+      "wert": "4.249 €/m²",
+      "label": "Ein- und Zweifamilienhäuser in Königs Wusterhausen, Baujahre 1990–2020",
+      "detail": "39 Kauffälle, im Mittel 560.000 € bei 135 m² Wohnfläche. Ohne Uferlagen.",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Dahme-Spreewald",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_LDS.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 3.787 €/m²",
+      "label": "Weiterverkaufte Eigentumswohnungen, Baujahre ab 1990",
+      "detail": "21 Kauffälle, im Mittel 73 m². Neue Wohnungen im Erstverkauf: Ø 4.190 €/m² aus 12 Kauffällen.",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Dahme-Spreewald",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_LDS.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "7,50 €/m²",
+      "label": "Neu vereinbarte Nettokaltmiete in Königs Wusterhausen (Median)",
+      "detail": "1.165 Mietverträge, überwiegend von Genossenschaften und kommunalen Vermietern. Einen Mietspiegel haben wir nicht gefunden.",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Dahme-Spreewald",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_LDS.pdf",
+      "stichtag": "Mieten 2023–2025"
+    },
+    {
+      "wert": "39.590",
+      "label": "Einwohner am 31.12.2025",
+      "detail": "230 mehr als ein Jahr zuvor. Größte Stadt im Landkreis Dahme-Spreewald.",
+      "quelle": "Amt für Statistik Berlin-Brandenburg",
+      "url": "https://download.statistik-berlin-brandenburg.de/722c93f3928e984f/b897b3745f7d/SB_A01-04_00_2025j01_BB.pdf",
+      "stichtag": "Stand 31.12.2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Kernstadt, Deutsch Wusterhausen und der Bahnhof",
+      "absaetze": [
+        "Königs Wusterhausen ist Mittelzentrum[[1]] und die größte Stadt im Landkreis Dahme-Spreewald; Behörden, viele niedergelassene Ärztinnen und Ärzte und das Achenbach-Krankenhaus sind vor Ort.[[5]] Ende 2025 lebten hier 39.590 Menschen, 230 mehr als ein Jahr zuvor. Das Plus kommt aus dem Zuzug: 2.415 Menschen zogen 2025 her und 1.857 fort, gestorben sind 532, geboren wurden 219.[[3]]",
+        "Am Bahnhof halten die S46 sowie RE2, RE7, RE20, RB22 und RB36.[[6]] Seit Dezember 2025 fährt der RE20 stündlich zwischen Lübbenau, dem Flughafen BER und Berlin; damit gibt es zwischen Königs Wusterhausen und Berlin drei Regionalzüge pro Stunde und Richtung.[[8]] Bis Potsdamer Platz braucht er 34 Minuten, bis Berlin Hauptbahnhof 37,[[7]] zum BER 12 bis 13 Minuten.[[6]] Die S46 fährt nicht über Alexanderplatz oder Friedrichstraße.[[6]] Bis 12.12.2026 endet der RE7 wegen der Sperrung der Stadtbahn am Ostbahnhof, der RE2 fährt über Ostkreuz;[[9]] dorthin sind es 18 beziehungsweise 25 Minuten.[[6]]",
+        "Zum 01.01.2026 liegt der Bodenrichtwert in der Stadtmitte bei 410 €/m², an der Bahnhofstraße mit ihren Wohn- und Geschäftshäusern bei 380 €/m². Es folgen Funkerberg mit 350, West mit 310, Neue Mühle mit 300 und Ost mit 290 €/m², an der Luckenwalder Straße sind es 250 €/m². Deutsch Wusterhausen liegt zwischen 230 und 330 €/m². Gegenüber dem Vorjahr hat sich keiner dieser Werte verändert.[[2]] Die Gemarkungen Königs Wusterhausen und Deutsch Wusterhausen zählt der Gutachterausschuss zur S-Bahn-Region des Berliner Umlands, die übrigen Gemarkungen der Stadt nicht.[[1]]"
+      ],
+      "bild": {
+        "name": "koenigs-wusterhausen-bahnhof",
+        "alt": "Empfangsgebäude des Bahnhofs Königs Wusterhausen aus gelbem und rotem Backstein mit Rundbogenfenstern und DB-Schild, davor ein gepflasterter Vorplatz mit Fahrrad, blauer Himmel",
+        "caption": "Das Empfangsgebäude des Bahnhofs Königs Wusterhausen.",
+        "credit": "Bildarbeiter, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Koenigs-Wusterhausen-Bahnhof-Bahnhofsempfangsgebaeude-II.jpg"
+      }
+    },
+    {
+      "h2": "Zeesen, Senzig, Zernsdorf und die Orte am Wasser",
+      "absaetze": [
+        "Zur Stadt gehören neben der Kernstadt die Ortsteile Diepensee, Kablow, Niederlehme, Senzig, Wernsdorf, Zeesen und Zernsdorf; sechs kamen mit der Gemeindegebietsreform 2002 dazu, Diepensee 2004. Größter Ortsteil nach der Kernstadt ist Zeesen, wo 1992 das erste Gewerbegebiet in den neuen Bundesländern eröffnet wurde, kleinster und jüngster ist Diepensee.[[5]]",
+        "Anders als in der Kernstadt sind die Bodenrichtwerte in mehreren Ortsteilen zum 01.01.2026 gesunken. In Zeesen fiel die Steinbergsiedlung von 370 auf 280 €/m², Steinberg von 390 auf 340 €/m²; Kronenhof blieb bei 400 €/m². Senzig liegt jetzt bei 300 bis 320 €/m², Niederlehme bei 250 nach 280 €/m², Zernsdorf unverändert bei 260 €/m². Gestiegen sind die reinen Wohngebiete in Ziegenhals von 330 auf 340 und die Kablow-Ziegelei von 170 auf 200 €/m²;[[2]] Gründe nennt BORIS nicht. Über alle 34 Richtwerte für Wohn- und Mischbauflächen ohne Uferlagen lag Königs Wusterhausen im Mittel bei 294 €/m², 3 % unter dem Vorjahr.[[1]]",
+        "Ufergrundstücke haben eigene Zonen, in der Kernstadt ebenso wie in Kablow, Niederlehme, Senzig, Wernsdorf, Zeesen und Zernsdorf. Ihr Bodenrichtwert liegt überwiegend bei 600 €/m²,[[1]] in Senzig-Mitte bei 700 und am Körbiskrug in Zeesen bei 450 €/m².[[2]] Die Hauspreise, die der Grundstücksmarktbericht für Königs Wusterhausen nennt, gelten ohne Uferlagen.[[1]]"
+      ],
+      "bild": {
+        "name": "koenigs-wusterhausen-krimnicksee",
+        "alt": "Krimnicksee bei Neue Mühle mit bewaldetem Ufer im Sommer",
+        "caption": "Der Krimnicksee bei Neue Mühle.",
+        "credit": "JCIV, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Krimnicksee_in_Neue_M%C3%BChle.jpg"
+      }
+    },
+    {
+      "h2": "Neubau, Wohnungen, Schulen und Arbeitgeber",
+      "absaetze": [
+        "Bei den verkauften Bauplätzen für den individuellen Wohnungsbau liegt Königs Wusterhausen im Landkreis vorn: 56 waren es 2025, nach 47 und 40 in den beiden Jahren davor. Der Gutachterausschuss stellt hier außerdem größere Flächenkäufe für künftiges Wohnbauland fest.[[1]] Größte Vermieterin ist die WoBauGe mit rund 4.300 Wohnungen.[[13]]",
+        "Auf dem Funkerberg, einem rund 130 ha großen Gelände, das 2006 von der Telekom erworben wurde, ist das Wohngebiet Funkerberg 2 am Schulweg bebaut; östlich der B 179 liegt der Technologiepark mit 13,2 ha.[[17]] Für den Königspark, etwa 56 ha, sieht der geltende Bebauungsplan nur Gewerbe vor, das bis heute im Wesentlichen nicht entstanden ist. Am 11.10.2023 beschlossen die Stadtverordneten eine Rahmenplanung mit Arbeiten, Wohnen und Nahversorgung, darunter ein Schulcampus, Kitas und ein Park. Einen neueren Stand des Verfahrens haben wir auf den Seiten der Stadt nicht gefunden.[[16]]",
+        "Die Stadt trägt sechs Grundschulen und die Gesamtschule Otto Lilienthal mit gymnasialer Oberstufe. Dazu kommen unter anderem das Friedrich-Wilhelm- und das Friedrich-Schiller-Gymnasium, eine Gesamtschule in freier Trägerschaft in Niederlehme und ein Oberstufenzentrum.[[14]] Mit Wildau und Schönefeld bildet Königs Wusterhausen den Regionalen Wachstumskern „Schönefelder Kreuz“; Einkaufsstraße der Innenstadt ist die Bahnhofstraße.[[15]]"
+      ],
+      "bild": {
+        "name": "koenigs-wusterhausen-funkerberg-sommer",
+        "alt": "Lange Gebäude mit roten Ziegeldächern auf dem Funkerberg, davor ein neu gepflasterter Platz, im Hintergrund ein Sendemast",
+        "caption": "Gebäude auf dem Funkerberg in Königs Wusterhausen.",
+        "credit": "Demidow, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:K%C3%B6nigs_Wusterhausen_Funkerberg_006.JPG"
+      }
+    }
+  ],
+  "band": {
+    "name": "koenigs-wusterhausen-kruepelsee",
+    "alt": "Weiter Blick über den Krüpelsee unter Haufenwolken, vorn Schilf und ein alter Holzzaun im Wasser, am gegenüberliegenden Ufer ein flacher Waldstreifen",
+    "caption": "Der Krüpelsee bei Königs Wusterhausen.",
+    "credit": "Bergknappe, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Am_Krüpelsee.jpg",
+    "position": "50% 55%"
+  },
+  "anbindung": [
+    "Am Bahnhof halten die S46 sowie RE2, RE7, RE20, RB22 und RB36.[[6]]",
+    "Seit Dezember 2025 fährt der RE20 stündlich zwischen Lübbenau, dem Flughafen BER und Berlin; damit gibt es zwischen Königs Wusterhausen und Berlin drei Regionalzüge pro Stunde und Richtung.[[8]] Bis Potsdamer Platz braucht er 34 Minuten, bis Berlin Hauptbahnhof 37,[[7]] zum BER 12 bis 13 Minuten.[[6]]"
+  ],
+  "karte": {
+    "alt": "Karte der Stadt Königs Wusterhausen: Kernstadt mit Deutsch Wusterhausen und Diepensee, Zeesen, Senzig, Zernsdorf, Kablow, Niederlehme, Ziegenhals und Wernsdorf, dazu die Bahnstrecken, die Dahme mit ihren Seen und die Grenze zu Berlin im Norden"
+  },
+  "verkaufen": {
+    "h2": "Immobilie in Königs Wusterhausen verkaufen",
+    "absaetze": [
+      "2025 zählte der Gutachterausschuss in Königs Wusterhausen 347 Kauffälle über alle Teilmärkte, mit einem Geldumsatz von 155 Mio. €. Bei Ein- und Zweifamilienhäusern ohne Uferlage hängt der Preis stark am Baujahr: bis 1948 lag das Preisniveau bei 3.438 €/m² Wohnfläche aus 15 Kauffällen, für 1949 bis 1989 bei 3.292 €/m² aus 13, für 1990 bis 2020 bei 4.249 €/m² aus 39. In der Gemarkung Deutsch Wusterhausen kosteten vier nach 1990 gebaute Reihen- und Doppelhäuser im Mittel 432.000 €.[[1]] In der Bewertung legen wir diese Werte neben den Bodenrichtwert Ihrer Zone und neben die Angebote, mit denen Ihre Immobilie konkurriert."
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Königs Wusterhausen",
+    "absaetze": [
+      "Als Eigennutzer wählen Sie zwischen der Kernstadt mit Deutsch Wusterhausen, wo S-Bahn und Regionalzüge am Bahnhof halten, und den Ortsteilen am Wasser, die der Gutachterausschuss nicht zur S-Bahn-Region rechnet.[[1]] Prüfen Sie bei einem Haus im Ortsteil, wie Sie den Bahnhof erreichen und wie die Bodenrichtwerte Ihrer Zone sich zuletzt entwickelt haben.",
+      "Seit dem 01.01.2026 gilt in Königs Wusterhausen die Mietpreisbremse; in der Bewertung des Landes erreichte die Stadt 9 von 10 möglichen Punkten. Bis 31.12.2029 darf die Miete bei Neuvermietung höchstens 10 % über der ortsüblichen Vergleichsmiete liegen, wenn das Haus vor dem 1. Oktober 2014 fertiggestellt und bezogen wurde.[[10,12]] Bestandsmieten dürfen bis 31.12.2030 in drei Jahren um höchstens 15 % steigen.[[11,12]] Einen Mietspiegel haben wir nicht gefunden. Neu vereinbarte Mieten lagen 2023 bis 2025 im Median bei 7,50 €/m², laut Gutachterausschuss nicht repräsentativ, weil sie überwiegend von Genossenschaften und kommunalen Vermietern stammen.[[1]]"
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Königs Wusterhausen",
+    "absaetze": [
+      "Ein Ein- oder Zweifamilienhaus der Baujahre 1990 bis 2020 kostete in Königs Wusterhausen 2025 im Mittel 560.000 €.[[1]] Am Wasser steigt der Bodenanteil: Ufergrundstücke liegen meist bei 600 €/m², die Stadtmitte bei 410 €/m².[[1,2]] Ihre Finanzierung vergleichen wir über Europace und Baufinex und fragen parallel Banken direkt an."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Wie hoch ist der Bodenrichtwert in Königs Wusterhausen 2026?",
+      "antwort": "Zum 01.01.2026 liegt Wohnbauland in der Kernstadt zwischen 250 €/m² an der Luckenwalder Straße und 410 €/m² in der Stadtmitte, in Senzig bei 300 bis 320, in Zernsdorf bei 260 und im Gebiet Wohnen am See bei 350 €/m². Ufergrundstücke liegen überwiegend bei 600 €/m². In Zeesen, Senzig und Niederlehme sanken mehrere Zonen, in der Kernstadt keine. Die Zonengrenzen zeigt die Karte von BORIS Brandenburg.[[1,2]]",
+      "herkunft": "Google-Autocomplete „bodenrichtwert königs wusterhausen 2026“, „bodenrichtwert königs wusterhausen senzig“ und „bodenrichtwert königs wusterhausen zernsdorf“ (research/serp/autocomplete-2026-10-24.json)"
+    },
+    {
+      "frage": "Was kostet ein Haus am See in Königs Wusterhausen?",
+      "antwort": "Die Hauspreise, die der Gutachterausschuss für Königs Wusterhausen veröffentlicht, gelten ohne Uferlagen.[[1]] Einen Anhaltspunkt gibt der Boden: Ufergrundstücke haben in der Kernstadt und den Ortsteilen überwiegend einen Bodenrichtwert von 600 €/m², in Senzig-Mitte 700 und am Körbiskrug in Zeesen 450 €/m².[[1,2]] Den Preis eines bestimmten Hauses ermitteln wir in der Bewertung.",
+      "herkunft": "Google-Autocomplete „haus am see kaufen königs wusterhausen“ (research/serp/autocomplete-2026-10-24.json)"
+    },
+    {
+      "frage": "Was kostet eine Eigentumswohnung in Königs Wusterhausen?",
+      "antwort": "2025 wurden 21 gebrauchte Wohnungen der Baujahre ab 1990 verkauft, im Mittel für 3.787 €/m² bei durchschnittlich 73 m²; die Spanne reichte von 2.069 bis 5.545 €/m². Neue Wohnungen der Baujahre ab 2023 kosteten im Erstverkauf im Mittel 4.190 €/m² bei 12 Kauffällen.[[1]] Angebotspreise aus Portalen sind darin nicht enthalten.",
+      "herkunft": "Google-Autocomplete „wohnung kaufen königs wusterhausen“ (research/serp/autocomplete-2026-10-24.json); dieselbe Frage an ChatGPT, „Was kostet eine Wohnung in Königs Wusterhausen?“ (research/serp/ki-assistenten-2026-10-24.md, Zeile 18)"
+    },
+    {
+      "frage": "Wie hoch sind die Mieten in Königs Wusterhausen?",
+      "antwort": "Neu abgeschlossene Mietverträge der Jahre 2023 bis 2025 lagen im Median bei 7,50 €/m² nettokalt, aus 1.165 Fällen. Sie kommen überwiegend von Genossenschaften und kommunalen Vermietern; der Gutachterausschuss erhebt keinen Anspruch auf Repräsentativität.[[1]] Einen Mietspiegel haben wir nicht gefunden; für neue Verträge gilt seit 2026 die Mietpreisbremse.[[10]]",
+      "herkunft": "ChatGPT nannte auf „Was kostet eine Wohnung in Königs Wusterhausen?“ eine Miete aus einem Portal (research/serp/ki-assistenten-2026-10-24.md, Zeile 18)"
+    },
+    {
+      "frage": "Werden die Immobilienpreise in Königs Wusterhausen steigen?",
+      "antwort": "Eine Prognose geben wir nicht. Die Bodenrichtwerte für Wohn- und Mischbauflächen sanken zum 01.01.2026 im Mittel um 3 %, in der Kernstadt blieben sie gleich.[[1,2]] Im Berliner Umland des Landkreises stieg der durchschnittliche Hauspreis 2025 um 4 % auf 463.000 €, nach −6 % im Vorjahr.[[1]] Bis 2040 erwartet das Landesamt für Bauen und Verkehr 8,3 % mehr Einwohner als Ende 2023, in der unteren Variante 0,4 %.[[4]]",
+      "herkunft": "Google „Ähnliche Fragen“ zu den übrigen Orten, dort als „Werden die Immobilienpreise 2026 wieder steigen?“ (Google_Areas, Oktober 2026; Königs Wusterhausen ist dort nicht enthalten)"
+    },
+    {
+      "frage": "Wo kann ich meine Immobilie in Königs Wusterhausen kostenlos bewerten lassen?",
+      "antwort": "Bei Fischer & Geserich kostet die Wertermittlung nichts und Sie erhalten sie meistens innerhalb weniger Stunden, oft noch am selben Tag. Für Königs Wusterhausen legen wir dafür die Kaufpreise aus dem Grundstücksmarktbericht des Landkreises Dahme-Spreewald, den Bodenrichtwert Ihrer Zone und die aktuellen Angebote nebeneinander. Den Bodenrichtwert können Sie vorab selbst und kostenlos in BORIS Brandenburg nachsehen.[[2]]",
+      "herkunft": "Google „Ähnliche Fragen“ zu den übrigen Orten, dort als „Wo kann ich meine Immobilie kostenlos schätzen lassen?“ (Google_Areas, Oktober 2026; Königs Wusterhausen ist dort nicht enthalten)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Berlin",
+      "url": "/standorte/berlin/"
+    },
+    {
+      "name": "Erkner",
+      "url": "/standorte/erkner/"
+    },
+    {
+      "name": "Teltow & Kleinmachnow",
+      "url": "/standorte/teltow/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Grundstücksmarktbericht 2025 Landkreis Dahme-Spreewald, Gutachterausschuss für Grundstückswerte (beschlossen 12.05.2026)",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_LDS.pdf",
+      "stand": "Berichtsjahr 2025, Bodenrichtwerte zum 01.01.2026"
+    },
+    {
+      "name": "Bodenrichtwerte Königs Wusterhausen, BORIS Brandenburg (GeoBasis-DE/LGB, dl-de/by-2-0)",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?f=json&limit=500&gemeinde_bezeichnung=K%C3%B6nigs%20Wusterhausen&stichtag=2026-01-01",
+      "stand": "Stichtag 01.01.2026, Vergleich mit 01.01.2025"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 4 / A V 2 – j / 25 (Bevölkerung)",
+      "url": "https://download.statistik-berlin-brandenburg.de/722c93f3928e984f/b897b3745f7d/SB_A01-04_00_2025j01_BB.pdf",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Landesamt für Bauen und Verkehr, Bevölkerungsvorausschätzung 2024 bis 2040 für die amtsfreien Gemeinden",
+      "url": "https://lbv.brandenburg.de/sixcms/media.php/9/31_Bevoelkerungsvorausschaetzung_2024-20.pdf",
+      "stand": "Basis 31.12.2023"
+    },
+    {
+      "name": "Stadt Königs Wusterhausen, Stadt entdecken",
+      "url": "https://www.koenigs-wusterhausen.de/stadt-entdecken",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "VBB-Fahrplandaten (GTFS), eigene Auswertung der Linien und Fahrzeiten ab Königs Wusterhausen",
+      "url": "https://www.vbb.de/gtfs",
+      "stand": "Fahrplan Dienstag 10.11.2026, Datensatz gültig 22.10.–12.12.2026"
+    },
+    {
+      "name": "DB Regio Nordost, Fahrplan RE2 · RE7 · RE20",
+      "url": "https://www.dbregio-berlin-brandenburg.de/resource/blob/13689290/e8e1968f51b779945c6227749f3d7ba7/NEU_RE-2-data.pdf",
+      "stand": "gültig 02.10.–12.12.2026, Stand 10.09.2026"
+    },
+    {
+      "name": "MIL Brandenburg, Pressemitteilung zum Fahrplanwechsel am 14.12.2025",
+      "url": "https://mil.brandenburg.de/mil/de/presse/detail/~10-12-2025-fahrplanwechsel-zum-14-dezember-2025",
+      "stand": "10.12.2025"
+    },
+    {
+      "name": "VBB, Pressemitteilung „Sperrung der Berliner Stadtbahn für den Regionalverkehr“",
+      "url": "https://unternehmen.vbb.de/presse/sperrung-der-berliner-stadtbahn-fuer-den-regionalverkehr-zwischen-charlottenburg-und-ostbahnhof/",
+      "stand": "18.05.2026"
+    },
+    {
+      "name": "Mietpreisbegrenzungsverordnung Brandenburg, MIL",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/Mietpreisbegrenzungsverordnung.pdf",
+      "stand": "gültig 01.01.2026–31.12.2029"
+    },
+    {
+      "name": "Kappungsgrenzenverordnung Brandenburg, MIL",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/KappGrenzV.pdf",
+      "stand": "gültig 01.01.2026–31.12.2030"
+    },
+    {
+      "name": "MIL, Pressemitteilung zu Mietpreisbremse und Kappungsgrenzenverordnung",
+      "url": "https://mil.brandenburg.de/mil/de/presse/detail/~25-11-2025-kabinett-mietpreisbremse-und-kappungsgrenzenverordnung",
+      "stand": "25.11.2025"
+    },
+    {
+      "name": "Stadt Königs Wusterhausen, Wohnen",
+      "url": "https://www.koenigs-wusterhausen.de/wohnen",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Königs Wusterhausen, Schulen",
+      "url": "https://www.koenigs-wusterhausen.de/schulen-3acdf19d10d209c2",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Königs Wusterhausen, Wirtschaft",
+      "url": "https://www.koenigs-wusterhausen.de/wirtschaft",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Königs Wusterhausen, Informationen zur beschlossenen Rahmenplanung für den Königspark",
+      "url": "https://www.koenigs-wusterhausen.de/informationen-zur-beschlossenen-rahmenplanung-fuer-den-koenigspark-8bca51c0e8e3f270",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Königs Wusterhausen, Entwicklung Funkerberg",
+      "url": "https://www.koenigs-wusterhausen.de/entwicklung-funkerberg-f4af08a304407e77",
+      "stand": "abgerufen 24.10.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "Mittelzentrum",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 238"
+    },
+    {
+      "zahl": "größte Stadt im Landkreis, Behörden, Ärzte, Achenbach-Krankenhaus",
+      "fundstelle": "konigs-wusterhausen.md, Zeilen 160, 235"
+    },
+    {
+      "zahl": "39.590 Einwohner 31.12.2025, +230; Zuzüge 2.415, Fortzüge 1.857, Gestorbene 532, Geborene 219",
+      "fundstelle": "konigs-wusterhausen.md, Zeilen 150, 151"
+    },
+    {
+      "zahl": "Linien S46, RE2, RE7, RE20, RB22, RB36",
+      "fundstelle": "konigs-wusterhausen.md, Zeilen 164, 165"
+    },
+    {
+      "zahl": "RE20 seit 14.12.2025 stündlich, drei Züge pro Stunde und Richtung",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 174"
+    },
+    {
+      "zahl": "RE20 Potsdamer Platz 34 min, Hbf 37 min",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 173"
+    },
+    {
+      "zahl": "BER 12–13 min (RE20, RB22)",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 177"
+    },
+    {
+      "zahl": "S46 nicht über Alexanderplatz/Friedrichstraße",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 168"
+    },
+    {
+      "zahl": "Sperrung bis 12.12.2026, RE7 bis Ostbahnhof, RE2 über Ostkreuz",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 175"
+    },
+    {
+      "zahl": "Ostkreuz RE7 18 min, RE2 25 min",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 176"
+    },
+    {
+      "zahl": "BRW Stadtmitte 410, Bahnhofstr 380 (WGH), Funkerberg 350, West 310, Neue Mühle 300, Ost 290, Luckenwalder Str 250, alle wie 2025",
+      "fundstelle": "konigs-wusterhausen.md, Zeilen 31–40, 79"
+    },
+    {
+      "zahl": "BRW Deutsch Wusterhausen 230–330, unverändert",
+      "fundstelle": "konigs-wusterhausen.md, Zeilen 42–45"
+    },
+    {
+      "zahl": "S-Bahn-Region: Gemarkungen KW und Deutsch Wusterhausen",
+      "fundstelle": "konigs-wusterhausen.md, Zeilen 21, 196"
+    },
+    {
+      "zahl": "Ortsteile, Gebietsreform 2002 (sechs), Diepensee 2004",
+      "fundstelle": "konigs-wusterhausen.md, Zeilen 189, 195"
+    },
+    {
+      "zahl": "Zeesen größter Ortsteil nach Kernstadt, Gewerbegebiet 1992; Diepensee kleinster und jüngster",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 191"
+    },
+    {
+      "zahl": "Zeesen: Steinbergsiedlung 370→280, Steinberg 390→340, Kronenhof 400; Zernsdorf 260 wie 2025",
+      "fundstelle": "konigs-wusterhausen.md, Zeilen 52, 54"
+    },
+    {
+      "zahl": "Senzig 300–320 (Mitte 320, Waldesruh 310, Ost Siedlung 300)",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 53"
+    },
+    {
+      "zahl": "Niederlehme 250 (280)",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 56"
+    },
+    {
+      "zahl": "Zernsdorf 260, Wohnen am See 350",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 54"
+    },
+    {
+      "zahl": "Ziegenhals WR 330→340",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 55"
+    },
+    {
+      "zahl": "Kablow-Ziegelei 170→200",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 57"
+    },
+    {
+      "zahl": "34 BRW Wohn-/Mischbau, Mittel 294, −3 %",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 85"
+    },
+    {
+      "zahl": "Uferzonen in Kernstadt, Kablow, Niederlehme, Senzig, Wernsdorf, Zeesen, Zernsdorf; überwiegend 600",
+      "fundstelle": "konigs-wusterhausen.md, Zeilen 88, 202, 203"
+    },
+    {
+      "zahl": "Ufer Senzig-Mitte 700, Körbiskrug 450",
+      "fundstelle": "konigs-wusterhausen.md, Zeilen 52, 53"
+    },
+    {
+      "zahl": "Hauspreise ohne Uferlagen",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 99"
+    },
+    {
+      "zahl": "kurzantwortMehr: Sitz Berlin, §34c/§34i",
+      "fundstelle": "wie bernau.json/erkner.json (Live-Impressum)"
+    },
+    {
+      "zahl": "Bauplätze 56 / 47 / 40, Rang 1 im Landkreis",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 97"
+    },
+    {
+      "zahl": "größere Flächenkäufe für künftiges Wohnbauland",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 98"
+    },
+    {
+      "zahl": "Funkerberg ca. 130 ha, 2006 von der Telekom, Funkerberg 2 / Schulweg bebaut, Technologiepark 13,2 ha östlich B179",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 253"
+    },
+    {
+      "zahl": "Königspark etwa 56 ha, B-Plan nur Gewerbe, Rahmenplanung 11.10.2023, Schulcampus, Kitas, Park; Verfahrensstand nicht gefunden",
+      "fundstelle": "konigs-wusterhausen.md, Zeilen 252, 286"
+    },
+    {
+      "zahl": "ETW Erstverkauf 2025 Ø 4.190, 12 Fälle, Baujahr ab 2023",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 108"
+    },
+    {
+      "zahl": "ETW Weiterverkauf 2025 Ø 3.787, 21 Fälle, Ø 73 m², Spanne 2.069–5.545, Baujahr ab 1990",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 110"
+    },
+    {
+      "zahl": "WoBauGe rund 4.300 Mietwohnungen",
+      "fundstelle": "konigs-wusterhausen.md, Zeilen 133, 197"
+    },
+    {
+      "zahl": "Schulen: sechs Grundschulen und Gesamtschule städtisch, zwei Gymnasien, freie Gesamtschule Niederlehme, OSZ",
+      "fundstelle": "konigs-wusterhausen.md, Zeilen 210, 214–220"
+    },
+    {
+      "zahl": "Wachstumskern Schönefelder Kreuz, Bahnhofstraße",
+      "fundstelle": "konigs-wusterhausen.md, Zeilen 229, 239"
+    },
+    {
+      "zahl": "347 Kauffälle, 155 Mio. €",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 94"
+    },
+    {
+      "zahl": "EFH/ZFH ohne Uferlagen bis 1948 3.438 (15), 1949–1989 3.292 (13), 1990–2020 4.249 (39); Ø 560.000 €, 135 m²",
+      "fundstelle": "konigs-wusterhausen.md, Zeilen 99–101"
+    },
+    {
+      "zahl": "RH/DHH Gemarkung Deutsch Wusterhausen 2025: 4 Fälle, Ø 432.000 €, Baujahr nach 1990",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 106"
+    },
+    {
+      "zahl": "Mietpreisbremse ab 01.01.2026 bis 31.12.2029, 9 von 10 Punkten, 10 %, vor 1. Oktober 2014",
+      "fundstelle": "konigs-wusterhausen.md, Zeilen 128, 130"
+    },
+    {
+      "zahl": "Kappungsgrenze bis 31.12.2030, 15 % in drei Jahren",
+      "fundstelle": "konigs-wusterhausen.md, Zeilen 129, 130"
+    },
+    {
+      "zahl": "kein Mietspiegel",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 127"
+    },
+    {
+      "zahl": "Neuabschlussmieten Median 7,50, 1.165 Fälle, 2023–2025, überwiegend Genossenschaften/kommunal, nicht repräsentativ",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 117"
+    },
+    {
+      "zahl": "EFH/ZFH Berliner Umland Ø 463.000 € 2025 (+4 %), 2024 −6 %",
+      "fundstelle": "konigs-wusterhausen.md, Zeile 104"
+    },
+    {
+      "zahl": "LBV 2040: mittlere Variante +8,3 %, untere +0,4 %",
+      "fundstelle": "konigs-wusterhausen.md, Zeilen 155, 156"
+    }
+  ]
+}

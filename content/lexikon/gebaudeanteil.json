@@ -7,16 +7,94 @@
   "keywords": [
     "gebäudeanteil"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Immobilienkauf",
-  "explanation": "Gebäudeanteil bezeichnet den Teil des Gesamtwerts beziehungsweise der Anschaffungskosten, der wirtschaftlich auf das Gebäude entfällt. Für die Gebäude-AfA ist die Abgrenzung zum nicht abschreibbaren Grund und Boden zentral.",
-  "practiceExample": "440.000 € Gesamtanschaffungskosten × 70 % Gebäudeanteil = 308.000 € AfA-Basis vor weiteren steuerlichen Besonderheiten.",
-  "formula": "Gebäudeanteil = Gebäude-Wert / Gesamtwert",
+  "explanation": "Beim Kauf einer bebauten Immobilie zahlen Sie für Gebäude und Boden zusammen. Für die Steuer muss der Kaufpreis aufgeteilt werden, denn der Boden nutzt sich nicht ab und wird nicht abgeschrieben. Je höher der Gebäudeanteil, desto höher die AfA.",
+  "practiceExample": "Im Fall des Bundesfinanzhofs kostete eine vermietete Eigentumswohnung in einer Großstadt 110.000 €. Laut Vertrag entfielen 20.000 € auf das Grundstück, also rund 82 % auf das Gebäude. Das Finanzamt kam mit der Arbeitshilfe auf rund 31 %. Für die Beispielwohnung im Berliner Umland, etwa in Bernau (160.000 € plus 18.512 € Nebenkosten, Baujahr 1995), heißt das: Bei 80 % Gebäudeanteil beträgt die AfA 2.856 € im Jahr, bei angenommenen 50 % noch 1.785 €. Bei 42 % Grenzsteuersatz macht der Unterschied rund 450 € Steuer im Jahr aus.",
+  "formula": "Gebäudeanteil = Gebäudewert / (Gebäudewert + Bodenwert)",
   "sources": [
     {
       "label": "§ 7 EStG – Gebäude-AfA",
       "url": "https://www.gesetze-im-internet.de/estg/__7.html"
     }
   ],
-  "assistantAnswer": "Anteil des Kaufpreises, der dem Gebäude statt Grund und Boden zugeordnet wird. Gebäudeanteil bezeichnet den Teil des Gesamtwerts beziehungsweise der Anschaffungskosten, der wirtschaftlich auf das Gebäude entfällt. Für die Gebäude-AfA ist die Abgrenzung zum nicht abschreibbaren Grund und Boden zentral."
+  "assistantAnswer": "Anteil des Kaufpreises, der dem Gebäude statt Grund und Boden zugeordnet wird. Gebäudeanteil bezeichnet den Teil des Gesamtwerts beziehungsweise der Anschaffungskosten, der wirtschaftlich auf das Gebäude entfällt. Für die Gebäude-AfA ist die Abgrenzung zum nicht abschreibbaren Grund und Boden zentral.",
+  "ausbau": {
+    "einordnung": [
+      "Beim Kauf einer bebauten Immobilie zahlen Sie für Gebäude und Boden zusammen. Für die Steuer muss der Kaufpreis aufgeteilt werden, denn der Boden nutzt sich nicht ab und wird nicht abgeschrieben.[[1]] Je höher der Gebäudeanteil, desto höher die AfA.",
+      "Finanztip rät, die Anteile schon im notariellen Kaufvertrag auszuweisen.[[1]] Die Finanzverwaltung stellt eine Arbeitshilfe bereit, mit der Sie selbst aufteilen oder eine Aufteilung auf Plausibilität prüfen können. Sie gilt als anerkannte Schätzung, von der Sie und das Finanzamt abweichen dürfen.[[2]]",
+      "Der Bundesfinanzhof hat 2020 entschieden: Auch eine Aufteilung im Vertrag, die die realen Verhältnisse grundlegend verfehlt und wirtschaftlich nicht haltbar erscheint, darf das Finanzgericht nicht einfach durch das Ergebnis der Arbeitshilfe ersetzen. Die Arbeitshilfe verengt die Bewertung auf das vereinfachte Sachwertverfahren und lässt den Orts- oder Regionalisierungsfaktor weg, der vor allem in Ballungsräumen eine Rolle spielt. Im Streit soll das Gericht in der Regel ein Gutachten eines öffentlich bestellten und vereidigten Sachverständigen einholen.[[3]]"
+    ],
+    "beispiel": [
+      "Im Fall des Bundesfinanzhofs kostete eine vermietete Eigentumswohnung in einer Großstadt 110.000 €. Laut Vertrag entfielen 20.000 € auf das Grundstück, also rund 82 % auf das Gebäude. Das Finanzamt kam mit der Arbeitshilfe auf rund 31 %.[[3]]",
+      "Für die Beispielwohnung im Berliner Umland, etwa in Bernau (160.000 € plus 18.512 € Nebenkosten, Baujahr 1995), heißt das: Bei 80 % Gebäudeanteil beträgt die AfA 2.856 € im Jahr, bei angenommenen 50 % noch 1.785 €. Bei 42 % Grenzsteuersatz macht der Unterschied rund 450 € Steuer im Jahr aus."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Sprechen Sie die Aufteilung vor dem Notartermin an und halten Sie fest, wie sie zustande kommt, etwa über Bodenrichtwert und Grundstücksanteil. In der Beispielwohnung entsprechen 20 % Bodenanteil, also 32.000 €, rund 100 m² Grundstücksanteil zu 320 € je m². So hoch war der mittlere Bodenrichtwert der vermieteten Wohnungen im Barnimer Umland.[[4]]"
+        ]
+      },
+      {
+        "h2": "Was es für Anleger heißt",
+        "absaetze": [
+          "Weicht das Finanzamt deutlich von Ihrer Aufteilung ab, kann ein Gutachten eines öffentlich bestellten und vereidigten Sachverständigen die Werte klären.[[3]] F&G vermittelt auf Wunsch Gutachter; die Vermittlung ist kostenfrei.[[5]]"
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "Finanztip: Steuertipps für Vermieter",
+        "url": "https://www.finanztip.de/steuertipps-vermieter/",
+        "stand": "Stand 08.07.2026"
+      },
+      {
+        "name": "Finanztip: Anschaffungsnahe Herstellungskosten und Erhaltungsaufwendungen",
+        "url": "https://www.finanztip.de/erhaltungsaufwand/",
+        "stand": "Stand 08.07.2026"
+      },
+      {
+        "name": "Bundesfinanzhof: Pressemitteilung Nr. 055/20 zum Urteil IX R 26/19",
+        "url": "https://www.bundesfinanzhof.de/de/presse/pressemeldungen/detail/kaufpreisaufteilung-bei-erwerb-einer-vermieteten-eigentumswohnung/",
+        "stand": "26.11.2020, abgerufen 27.10.2026"
+      },
+      {
+        "name": "Gutachterausschuss Barnim: Grundstücksmarktbericht 2025",
+        "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+        "stand": "Berichtsjahr 2025, abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Startseite",
+        "url": "https://fg-realestate.de/",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Boden nicht abschreibbar; Anteile im notariellen Kaufvertrag ausweisen",
+        "fundstelle": "runde-3.md, U01"
+      },
+      {
+        "zahl": "Arbeitshilfe: selbst aufteilen oder Plausibilität prüfen; anerkannte Schätzung, Abweichung möglich",
+        "fundstelle": "runde-3.md, U02"
+      },
+      {
+        "zahl": "BFH IX R 26/19: Vertrag 82 %, Finanzamt 31 %; 110.000 €, 20.000 € Grundstück; vereinfachtes Sachwertverfahren, Regionalisierungsfaktor, Gutachten",
+        "fundstelle": "runde-3.md, U03, U04"
+      },
+      {
+        "zahl": "Bodenrichtwert Ø 320 €/m²",
+        "fundstelle": "runde-3.md, C13"
+      },
+      {
+        "zahl": "Vermittlung an Gutachter kostenfrei (F&G)",
+        "fundstelle": "runde-3.md, R06"
+      },
+      {
+        "zahl": "178.512 × 80 % × 2 % = 2.856,19 €; × 50 % × 2 % = 1.785,12 €; Differenz 1.071,07 € × 42 % = 449,85 €; 20 % × 160.000 = 32.000 € / 320 = 100 m²",
+        "fundstelle": "Rechnung, Marktprüfung runde-3.md"
+      }
+    ]
+  }
 }

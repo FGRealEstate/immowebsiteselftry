@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eigenkapital optimal einsetzen: Eigennutzer und Kapitalanleger</title>
+<meta name="description" content="Wie viel Eigenkapital in eine Immobilie gehört, hängt vom Ziel ab: warum Eigennutzer anders rechnen als Kapitalanleger und warum eine Reserve dazugehört.">
+<link rel="canonical" href="https://fg-realestate.de/blog/eigenkapital-optimal-einsetzen/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Fischer &amp; Geserich Real Estate">
+<meta property="og:title" content="Eigenkapital optimal einsetzen: Eigennutzer und Kapitalanleger">
+<meta property="og:description" content="Wie viel Eigenkapital in eine Immobilie gehört, hängt vom Ziel ab: warum Eigennutzer anders rechnen als Kapitalanleger und warum eine Reserve dazugehört.">
+<meta property="og:url" content="https://fg-realestate.de/blog/eigenkapital-optimal-einsetzen/">
+<meta property="og:image" content="https://fg-realestate.de/blog/eigenkapital-optimal-einsetzen/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Blogartikel, Live-Fassung aus _build/live.py -->
+<script>
+/* Lesemodus vor dem ersten Zeichnen setzen, sonst blitzt die helle Seite auf */
+try{var t=localStorage.getItem("fg-theme");if(t)document.documentElement.dataset.theme=t;else if(matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.dataset.theme="dark"}catch(e){}
+</script>
+<link rel="stylesheet" href="../muster.css">
+<style>
+/* A7: Ziel wählen (drei Schaltflächen), Häuser mit Eigenkapitalanteil, Vergleich 50.000 € nach Steuern */
+.e7-q{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:4px 0 8px}
+.e7-seg{display:grid;grid-template-columns:repeat(3,1fr);border:2px solid var(--ink)}
+.e7-seg button{font-family:var(--font);font-size:.9rem;line-height:1.3;padding:10px 10px;border:0;background:var(--bg);color:var(--ink);cursor:pointer;text-align:center}
+.e7-seg button+button{border-left:2px solid var(--ink)}
+.e7-seg button[aria-selected="true"]{background:var(--c-ki);color:var(--on-ki);font-weight:700}
+.e7-seg button:focus-visible{outline:2px solid var(--gold);outline-offset:-5px}
+.e7-pan{display:grid;grid-template-columns:230px 1fr;gap:22px;align-items:center;padding:20px 0 18px;border-bottom:1px solid var(--rule);min-height:170px}
+.e7-hs{display:flex;gap:10px;align-items:flex-end;justify-content:center;height:120px}
+.e7-h{position:relative;width:62px;height:72px;transition:transform .3s}
+.e7-h::before{content:"";position:absolute;inset:0;clip-path:polygon(50% 0,100% 38%,100% 100%,0 100%,0 38%);background:var(--c-hum)}
+.e7-h i{position:absolute;left:0;right:0;bottom:0;background:var(--gold);clip-path:polygon(0 0,100% 0,100% 100%,0 100%);transition:height .4s}
+.e7-h.big{width:96px;height:104px}
+.e7-h.ghost::before{background:none;border:0;outline:0;background-image:repeating-linear-gradient(90deg,var(--rule) 0 2px,transparent 2px 6px)}
+.e7-txt h4{margin:0 0 6px;font-size:1.1rem}
+.e7-txt p{margin:0!important;font-size:.95rem;line-height:1.5}
+.e7-txt .q{display:inline-block;margin-top:10px;font-size:.78rem;font-weight:700;padding:3px 9px;background:var(--soft)}
+.e7-key{display:flex;gap:16px;font-size:.76rem;color:var(--muted);margin:8px 0 22px}
+.e7-key i{display:inline-block;width:11px;height:11px;margin-right:5px;vertical-align:-1px}
+.e7-cmp{padding:16px 18px;background:var(--soft)}
+.e7-cmp h4{margin:0 0 12px;font-size:1rem}
+.e7-r{display:grid;grid-template-columns:170px 1fr;gap:6px 14px;align-items:center;margin:8px 0;font-size:.84rem}
+.e7-r .bar{display:flex;height:32px;font-size:.78rem;font-weight:700;font-variant-numeric:tabular-nums}
+.e7-r .bar span{display:flex;align-items:center;padding:0 10px;white-space:nowrap}
+.e7-r .sv{background:var(--c-ki);color:var(--on-ki)}
+.e7-fn{margin:10px 0 0!important;font-size:.78rem;color:var(--muted)}
+.e7-r .tx{border:2px dashed var(--warn);color:var(--warn);justify-content:center}
+@media (max-width:620px){
+  .e7-seg{grid-template-columns:1fr}.e7-seg button+button{border-left:0;border-top:2px solid var(--ink)}
+  .e7-pan{grid-template-columns:1fr;gap:12px}.e7-r{grid-template-columns:1fr}
+}
+</style>
+<script type="application/ld+json">
+[
+ {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Wie viel Eigenkapital in eine Immobilie gehört, hängt vom Ziel ab",
+  "description": "Wie viel Eigenkapital in eine Immobilie gehört, hängt vom Ziel ab: warum Eigennutzer anders rechnen als Kapitalanleger und warum eine Reserve dazugehört.",
+  "inLanguage": "de-DE",
+  "url": "https://fg-realestate.de/blog/eigenkapital-optimal-einsetzen/",
+  "image": "https://fg-realestate.de/blog/eigenkapital-optimal-einsetzen/og.jpg",
+  "datePublished": "2026-10-31",
+  "dateModified": "2026-10-31",
+  "author": {
+   "@type": "Organization",
+   "name": "Fischer & Geserich Real Estate GmbH"
+  },
+  "publisher": {
+   "@type": "Organization",
+   "name": "Fischer & Geserich Real Estate GmbH"
+  }
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Wie viel Eigenkapital sollte ich in eine Immobilie stecken?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Mindestens die Kaufnebenkosten, je nach Bundesland 7,5 bis 12 Prozent des Kaufpreises, in Bayern rund 5,5 Prozent. Darüber hinaus hängt es vom Ziel ab: Eigennutzer sollten bei Zinsen wie derzeit möglichst viel einbringen, weil sie Zinsen nicht absetzen können. Kapitalanleger, die mehrere Objekte kaufen wollen, verteilen ihr Eigenkapital besser und finanzieren 90 bis 95 Prozent des Kaufpreises."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Lohnt sich mehr Eigenkapital bei einer vermieteten Immobilie?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Weniger als bei einer selbst genutzten. Bei Vermietung sind die Zinsen Werbungskosten. Bei 42 Prozent Grenzsteuersatz spart ein Anleger mit 50.000 Euro zusätzlichem Eigenkapital bei 4 Prozent Zins nach Steuern 1.160 Euro im Jahr, ein Eigennutzer 2.000 Euro."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Wie hoch sollte die Finanzierungsreserve sein?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Als Orientierung mindestens drei bis sechs Monatsraten je vermieteter Wohnung als frei verfügbare Rücklage, zusätzlich zur Erhaltungsrücklage der Eigentümergemeinschaft. Bei älteren Gebäuden und Mehrfamilienhäusern mehr."
+    }
+   }
+  ]
+ }
+]
+</script>
+<link rel="stylesheet" href="/vendor/cookieconsent/cookieconsent.css">
+<link rel="stylesheet" href="/consent-manager.css">
+<script>window.FG_GTM_ID = "GTM-5DVGRHB2";</script>
+<script defer src="/vendor/cookieconsent/cookieconsent.umd.js"></script>
+<script defer src="/consent-manager.js"></script>
+</head>
+<body>
+
+<header class="top">
+  <nav class="site-nav" aria-label="Hauptnavigation">
+    <div class="nav-row">
+      <a class="brand" href="https://fg-realestate.de/index.html"><img src="/images/fg-logo-gold-transparent.png" alt="Fischer &amp; Geserich Real Estate" width="54" height="54"><span class="gold-text long">Fischer &amp; Geserich Real Estate</span><span class="gold-text short">Fischer &amp; Geserich<br>Real Estate</span></a>
+      <div class="nav-links">
+        <a href="https://fg-realestate.de/index.html">Start</a>
+        <div class="nav-group"><a href="https://fg-realestate.de/angebote.html" aria-haspopup="true">Kaufen<span class="caret"></span></a>
+          <div class="nav-sub">
+            <a href="https://fg-realestate.de/angebote.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M10 21v-3h4v3"/></svg></i><span><strong>Angebote</strong><small>Aktuelle Objekte</small></span></a>
+            <a href="https://fg-realestate.de/ankaufsberatung.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l4-4 4 2 3-3 7 6-3 3"/><path d="M7 8l-4 4 6 6 2-2M11 16l2 2 2-2M13 14l2 2 2-2"/></svg></i><span><strong>Ankaufsberatung</strong><small>Begleitung beim Kauf</small></span></a>
+          </div></div>
+        <a href="https://fg-realestate.de/verkaufen.html">Verkaufen</a>
+        <a href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierung</a>
+        <div class="nav-group"><a href="https://fg-realestate.de/investment-lab.html" aria-haspopup="true">Investment Lab<span class="caret"></span></a>
+          <div class="nav-sub">
+            <a href="https://fg-realestate.de/investment-lab.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M7 15h10"/></svg></i><span><strong>Investment Lab</strong><small>Rechner und Werkzeuge</small></span></a>
+            <a href="https://fg-realestate.de/standorte/"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg></i><span><strong>Standorte</strong><small>16 Standortanalysen</small></span></a>
+            <a href="https://fg-realestate.de/lexikon/"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4zM20 4h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6z"/></svg></i><span><strong>Lexikon</strong><small>Begriffe erklärt</small></span></a>
+          </div></div>
+        <a href="https://fg-realestate.de/ueber-uns.html">Über uns</a>
+        <a href="../" class="on" aria-current="page">Blog</a>
+        <a href="https://fg-realestate.de/kontakt.html" class="nav-contact">Kontakt</a>
+      </div>
+      <button class="burger" type="button" aria-label="Menü" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+    <div class="mobile-menu">
+      <a href="https://fg-realestate.de/index.html">Start</a>
+      <p>Kaufen</p><a href="https://fg-realestate.de/angebote.html">Angebote</a><a href="https://fg-realestate.de/ankaufsberatung.html">Ankaufsberatung</a>
+      <p>Leistungen</p><a href="https://fg-realestate.de/verkaufen.html">Verkaufen</a><a href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierung</a>
+      <p>Investment Lab</p><a href="https://fg-realestate.de/investment-lab.html">Investment Lab</a><a href="https://fg-realestate.de/standorte/">Standorte</a><a href="https://fg-realestate.de/lexikon/">Lexikon</a>
+      <p>Unternehmen</p><a href="https://fg-realestate.de/ueber-uns.html">Über uns</a><a href="../" class="here">Blog</a><a href="https://fg-realestate.de/kontakt.html" class="m-contact">Kontakt</a>
+    </div>
+  </nav>
+  <div class="subbar">
+    <div class="subbar-row">
+      <a class="sb-home" href="../">Blog</a>
+      <div class="where">Eigenkapital optimal einsetzen und Finanzierungsreserve</div>
+      <div class="sb-right">
+        <details class="cat-menu"><summary>Kategorien<span class="caret"></span></summary><nav>
+          <a href="../">Alle Artikel</a><a href="../#finanzierung" class="on">Finanzierung</a>
+        </nav></details>
+        <button class="icon-btn theme-btn" type="button" aria-label="Dunkler Lesemodus" aria-pressed="false" title="Lesemodus"><svg class="moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      </div>
+    </div>
+    <div class="progress"><span></span></div>
+  </div>
+</header>
+
+<nav class="crumbs" aria-label="Brotkrumen"><a href="../">Blog</a><i>•</i><a href="../#finanzierung">Finanzierung</a><i>•</i><span>Eigenkapital optimal einsetzen und Finanzierungsreserve</span></nav>
+<div class="lead">
+  <figure class="lead-img" data-wait="Bild folgt">
+    <img src="lead.jpg" alt="Gelber Wanderwegweiser mit Schildern in drei Richtungen vor Laubbäumen und blauem Himmel" width="1536" height="1024" onerror="this.parentNode.classList.add('missing')"><figcaption>Foto: <a href="https://commons.wikimedia.org/wiki/File:Swiss_Hiking_Network_-_Guidepost_-_Tannmattegg.jpg" target="_blank" rel="noopener">Gubaer</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank" rel="noopener">CC BY-SA 4.0</a>, zugeschnitten</figcaption>
+  </figure>
+</div>
+<div class="head">
+  <a class="tag" href="../#finanzierung">Finanzierung</a>
+  <h1>Wie viel Eigen&shy;kapital in eine Immobilie gehört, hängt vom Ziel ab</h1>
+  <p class="dateline"><span>Stand: Oktober 2026</span><span class="by">Von Fischer &amp; Geserich Real Estate</span></p>
+  <span class="pill">7 Min. Lesezeit</span>
+</div>
+
+<div class="cols">
+
+  <nav class="toc" aria-label="Inhalt">
+    <p class="toc-h">Inhalt</p>
+    <a href="#die-grundregel-mindestens-die-kaufnebenkosten">Die Grundregel: Mindestens die Kaufnebenkosten</a>
+    <a href="#eigennutzer-so-viel-wie-sinnvoll-moeglich">Eigennutzer: So viel wie sinnvoll möglich</a>
+    <a href="#kapitalanleger-es-kommt-auf-das-ziel-an">Kapitalanleger: Es kommt auf das Ziel an</a>
+    <a href="#rechenbeispiel-100-000-euro-eine-wohnung-oder-dr">Rechenbeispiel: 100.000&nbsp;Euro, eine Wohnung oder drei</a>
+    <a href="#die-finanzierungsreserve">Die Finanzierungsreserve</a>
+    <a href="#die-einschaetzung-von-fischer-geserich">Die Einschätzung von Fischer &amp; Geserich</a>
+    <a href="#fragen">Häufige Fragen</a>
+  </nav>
+
+  <article class="body">
+    <p class="answer">Wie viel Eigenkapital Sie in eine Immobilie stecken sollten, hängt vor allem davon ab, ob Sie selbst einziehen oder vermieten. Eigennutzer sollten möglichst viel Eigenkapital einbringen, weil sie die Kreditzinsen steuerlich nicht absetzen können. Kapitalanleger, die ein Portfolio aufbauen wollen, verteilen ihr Eigenkapital besser auf mehrere Objekte und behalten eine Reserve, statt es vollständig in eine Wohnung zu stecken.</p>
+    <div class="kurz"><p class="kurz-h">Das Wichtigste in Kürze</p><ul><li>Mindestens die Kaufnebenkosten sollten aus Eigenkapital kommen, je nach Bundesland 7,5 bis 12&nbsp;%, in Bayern rund 5,5&nbsp;%.</li><li>Eigennutzer sparen mit jedem Euro Eigenkapital den vollen Zins, Kapitalanleger nur den Zins nach Steuern.</li><li>Wer ein Portfolio aufbaut, verteilt das Eigenkapital und finanziert 90 bis 95&nbsp;% des Kaufpreises.</li><li>Auch eine 100-Prozent-Finanzierung kann sinnvoll sein, wenn das Einkommen sie trägt.</li></ul></div>
+    <figure class="chart" id="g-ek">
+      <h3>Wofür kaufen Sie?</h3>
+      <p class="sub">Wie viel Eigenkapital in eine Immobilie gehört, hängt vom Ziel ab. Ziel anklicken.</p>
+      <p class="e7-q" id="e7-q">Ihr Ziel</p>
+      <div class="e7-seg" role="tablist" aria-labelledby="e7-q">
+        <button type="button" role="tab" aria-selected="true" data-i="0">Selbst nutzen</button>
+        <button type="button" role="tab" aria-selected="false" data-i="1">Zwei, drei Wohnungen für die Rente</button>
+        <button type="button" role="tab" aria-selected="false" data-i="2">Portfolio aufbauen</button>
+      </div>
+      <div class="e7-pan" role="tabpanel" aria-live="polite">
+        <div class="e7-hs" aria-hidden="true"></div>
+        <div class="e7-txt"><h4></h4><p></p><span class="q"></span></div>
+      </div>
+      <div class="e7-key"><span><i style="background:var(--gold)"></i>Eigenkapital</span><span><i style="background:var(--c-hum)"></i>Darlehen</span></div>
+      <div class="e7-cmp">
+        <h4>50.000 € mehr Eigenkapital bei 4 % Zins</h4>
+        <div class="e7-r"><span><b>Eigennutzer</b><br>Zinsen nicht absetzbar</span><div class="bar"><span class="sv" style="width:100%">2.000 € im Jahr gespart</span></div></div>
+        <div class="e7-r"><span><b>Kapitalanleger</b><br>42 % Grenzsteuersatz</span><div class="bar"><span class="sv" style="width:58%">1.160 €</span><span class="tx" style="width:42%">−840 €</span></div></div>
+        <p class="e7-fn">−840 €: Beim Kapitalanleger sinkt die Steuerersparnis aus den Zinsen.</p>
+      </div>
+      <p class="credit">Häuser zeigen das Prinzip, nicht maßstäblich · Grafik: Fischer &amp; Geserich</p>
+    </figure>
+    <h2 id="die-grundregel-mindestens-die-kaufnebenkosten">Die Grundregel: Mindestens die Kaufnebenkosten</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild1.jpg" alt="Ein Haus auf einem Fundament aus geometrischen Blöcken, in die Stempel, Steuerbrief und Grundbuch eingeprägt sind" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Unabhängig vom Ziel sollten die Kaufnebenkosten aus Eigenkapital kommen. Grunderwerbsteuer, Notar, Grundbuch und gegebenenfalls Maklerprovision machen je nach Bundesland 7,5 bis 12&nbsp;Prozent des Kaufpreises, in Bayern rund 5,5&nbsp;Prozent aus, in Berlin bei einer Wohnung mit Makler rund 11,6&nbsp;Prozent. Werden sie mitfinanziert, steigt der Beleihungsauslauf über 100&nbsp;Prozent und der Zins deutlich. Wie viel Eigenkapital Sie darüber hinaus einsetzen, ist eine strategische Entscheidung.</p>
+    <h2 id="eigennutzer-so-viel-wie-sinnvoll-moeglich">Eigennutzer: So viel wie sinnvoll möglich</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild2.jpg" alt="Geöffnete runde Tür eines alten Banktresors, dahinter ein Gitter vor den Schließfächern" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"><figcaption>Foto: <a href="https://commons.wikimedia.org/wiki/File:WinonaSavingsBankVault.JPG" target="_blank" rel="noopener">Jonathunder</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.de" target="_blank" rel="noopener">CC BY-SA 3.0</a>, zugeschnitten</figcaption></figure>
+    <p>Wer selbst einzieht, zahlt die Zinsen vollständig aus dem versteuerten Einkommen. Einen Steuerabzug gibt es dafür nicht. Jeder Euro Eigenkapital, der das Darlehen verringert, spart deshalb sicher Zinsen in voller Höhe. Bei 4&nbsp;Prozent Zins entspricht das einer garantierten Rendite von 4&nbsp;Prozent nach Steuern auf das eingesetzte Geld. Am Kapitalmarkt lässt sie sich ohne Risiko kaum erzielen.</p>
+    <p>Wie viel genau, hängt vom Zinsniveau ab. Liegen die Zinsen wie derzeit zwischen 3 und 5&nbsp;Prozent, sollten Eigennutzer so viel Eigenkapital wie möglich einbringen und prüfen, ob sich ein Teil über Förderkredite wie die der KfW günstiger finanzieren lässt. Sind die Zinsen dagegen so niedrig wie 2021, als Geld leihen kaum etwas kostete, kann es sinnvoll sein, mehr zu finanzieren.</p>
+    <p>Dazu kommt, dass weniger Darlehen einen niedrigeren Beleihungsauslauf und damit oft einen besseren Zins für den gesamten Betrag bedeutet.</p>
+    <p>Eine Grenze setzt trotzdem die Reserve. Wer sein gesamtes Erspartes in die eigene Wohnung steckt und dann eine Heizung ersetzen muss, braucht dafür neues Geld. Ein teurer Verbraucherkredit muss das nicht sein. Je nach persönlicher Situation und Restschuld ist bei der finanzierenden Bank eine Nachbeleihung möglich: Das Darlehen wird aufgestockt, die Rate steigt. Erst wenn das nicht geht, bleibt der Verbraucherkredit. Beim Umstieg auf eine Wärmepumpe oder eine andere erneuerbare Heizung gibt es außerdem einen Zuschuss der KfW und einen ergänzenden Förderkredit. Den Zuschuss gibt es aber nur, wenn er beantragt wurde, bevor die Arbeiten beginnen, und jedes neue Darlehen setzt eine erneute Prüfung durch die Bank voraus. Mit einer Reserve hängt die Reparatur an keiner Kreditzusage.</p>
+    <h2 id="kapitalanleger-es-kommt-auf-das-ziel-an">Kapitalanleger: Es kommt auf das Ziel an</h2>
+    <p>Bei vermieteten Immobilien sind die Darlehenszinsen Werbungskosten und mindern das zu versteuernde Einkommen. Ein Euro Zins kostet einen Anleger mit 42&nbsp;Prozent Grenzsteuersatz nach Steuern also nur 58 Cent. Zusätzliches Eigenkapital spart deshalb weniger, als es auf den ersten Blick scheint.</p>
+    <div class="ftab bill"><table>
+<thead><tr><th>50.000&nbsp;€ zusätzliches Eigenkapital, Zins 4&nbsp;%</th><th class="n">Eigennutzer</th><th class="n">Kapitalanleger, 42&nbsp;% Grenzsteuersatz</th></tr></thead>
+<tbody>
+<tr><td>Ersparte Zinsen pro Jahr</td><td class="n">2.000&nbsp;€</td><td class="n">2.000&nbsp;€</td></tr>
+<tr><td>Steuerwirkung</td><td class="n">keine</td><td class="n">840&nbsp;€ weniger Steuerersparnis</td></tr>
+<tr class="total"><td><strong>Ersparnis nach Steuern</strong></td><td class="n"><strong>2.000&nbsp;€</strong></td><td class="n"><strong>1.160&nbsp;€</strong></td></tr>
+</tbody></table></div>
+    <p>Was daraus folgt, hängt vom Ziel ab.</p>
+    <p><strong>Zwei oder drei Wohnungen für die Altersvorsorge.</strong> Auch hier kann eine 100-Prozent-Finanzierung sinnvoll sein. Die Bank finanziert den gesamten Kaufpreis, aus Eigenkapital kommen nur die Kaufnebenkosten. Die Zinsen mindern als Werbungskosten die Steuer, und das übrige Eigenkapital bleibt verfügbar. Ob das passt, entscheidet die Bonität. Wer 5.000 bis 7.000&nbsp;Euro netto im Monat verdient, kann mit 100-Prozent-Finanzierungen starten. Bei 3.500&nbsp;Euro netto raten wir davon ab. Wichtig bleibt, dass die Raten dauerhaft tragbar sind.</p>
+<p><strong>Ein Portfolio aufbauen.</strong> Wer mehrere Objekte erwerben will, sollte sein Eigenkapital nicht in einer einzigen Wohnung binden. Sinnvoller ist es, mit 90 oder 95&nbsp;Prozent des Kaufpreises zu finanzieren und das Eigenkapital auf mehrere Käufe zu verteilen. Eine 110-Prozent-Finanzierung, also ganz ohne Eigenkapital, ergibt erst dann Sinn, wenn bereits Bestand vorhanden ist.</p>
+    <h2 id="rechenbeispiel-100-000-euro-eine-wohnung-oder-dr">Rechenbeispiel: 100.000&nbsp;Euro, eine Wohnung oder drei</h2>
+    <p>Ein Anleger hat 100.000&nbsp;Euro Eigenkapital. Die Kaufnebenkosten liegen in Berlin bei 11,57&nbsp;Prozent, die Bank setzt den Beleihungswert mit 90&nbsp;Prozent des Kaufpreises an. Gerechnet ist mit rund 5.260&nbsp;Euro pro Quadratmeter, etwa dem Berliner Durchschnitt für Bestandswohnungen.</p>
+    <div class="ftab"><table>
+<thead><tr><th></th><th class="n">Eine Wohnung für 300.000&nbsp;€, 57 m²</th><th class="n">Drei Wohnungen für je 200.000&nbsp;€, je 38 m²</th></tr></thead>
+<tbody>
+<tr><td>Kaufnebenkosten</td><td class="n" data-l="Eine Wohnung für 300.000 €, 57 m²">34.710&nbsp;€</td><td class="n" data-l="Drei Wohnungen für je 200.000 €, je 38 m²">3 × 23.140&nbsp;€ = 69.420&nbsp;€</td></tr>
+<tr><td>Eigenkapital für den Kaufpreis</td><td class="n" data-l="Eine Wohnung für 300.000 €, 57 m²">65.290&nbsp;€</td><td class="n" data-l="Drei Wohnungen für je 200.000 €, je 38 m²">3 × 10.193&nbsp;€ = 30.580&nbsp;€</td></tr>
+<tr><td>Darlehen</td><td class="n" data-l="Eine Wohnung für 300.000 €, 57 m²">234.710&nbsp;€</td><td class="n" data-l="Drei Wohnungen für je 200.000 €, je 38 m²">3 × 189.807&nbsp;€</td></tr>
+<tr><td>Finanzierungsquote am Kaufpreis</td><td class="n" data-l="Eine Wohnung für 300.000 €, 57 m²">78&nbsp;%</td><td class="n" data-l="Drei Wohnungen für je 200.000 €, je 38 m²">rund 95&nbsp;% je Wohnung</td></tr>
+<tr><td>Beleihungsauslauf</td><td class="n" data-l="Eine Wohnung für 300.000 €, 57 m²">86,9&nbsp;%</td><td class="n" data-l="Drei Wohnungen für je 200.000 €, je 38 m²">105,4&nbsp;% je Wohnung</td></tr>
+</tbody></table></div>
+    <p>Die erste Variante bekommt den besseren Zins und hat die ruhigere Finanzierung. Die zweite hat doppelt so viel vermietete Fläche und damit etwa doppelt so hohe Mieteinnahmen, verteilt das Risiko auf drei Mieter und drei Lagen und baut schneller Vermögen auf. Dafür zahlt sie einen höheren Zins und braucht ein Einkommen, das drei Finanzierungen trägt. Welche Variante richtig ist, entscheiden neben der Rendite vor allem das Ziel und die Bonität.</p>
+    <h2 id="die-finanzierungsreserve">Die Finanzierungsreserve</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild3.jpg" alt="Ein zusammengerollter Regenschirm lehnt an einer Haustür neben einer offenen Werkzeugkiste" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Eigenkapital, das in der Immobilie steckt, ist nicht mehr verfügbar. Deshalb gehört zu jeder Planung eine Reserve, die Sie nicht einsetzen.</p>
+    <p>Sie deckt die Kosten, die nicht im Exposé stehen: eine Mieterhöhung, die sich verzögert, ein Mieterwechsel mit Leerstand und Renovierung, eine Sonderumlage der Eigentümergemeinschaft, eine defekte Therme, eine Nachzahlung bei der Steuer. Ohne Reserve finanzieren Sie solche Ereignisse über Dispo oder Ratenkredit. Genau das beschädigt die Bonität für den nächsten Kauf.</p>
+    <p>Als Orientierung hat sich bewährt, pro vermieteter Wohnung mindestens drei bis sechs Monatsraten des Darlehens als frei verfügbare Rücklage zu halten, zusätzlich zur Erhaltungsrücklage der Eigentümergemeinschaft. Bei älteren Objekten oder bei Mehrfamilienhäusern, wo Sie die Instandhaltung allein tragen, sollte sie entsprechend höher sein.</p>
+    <figure class="tq"><blockquote><p>„Wir fragen unsere Kunden: Was können Sie sich als Eigenkapital vorstellen? Wenn jemand die Wohnung möchte, aber höchstens 20.000&nbsp;Euro einsetzen will, sagen wir Stopp. Es funktioniert, aber wir würden es nicht empfehlen.“</p></blockquote><figcaption><strong>Timon Fischer</strong>, Mitgründer von Fischer &amp; Geserich Real Estate</figcaption></figure>
+    <section class="pos">
+    <h2 id="die-einschaetzung-von-fischer-geserich">Die Einschätzung von Fischer &amp; Geserich</h2>
+    <p>Unsere erste Frage an Kunden ist, was sie mit ihrem Eigenkapital erreichen wollen. Wie viel sie haben, kommt danach. Für die eigene Wohnung raten wir zu möglichst viel Eigenkapital. Für einen Anleger mit zwei oder drei Wohnungen als Altersvorsorge kann eine 100-Prozent-Finanzierung die bessere Wahl sein, wenn das Einkommen sie trägt. Wer ein Portfolio aufbauen will, sollte sein Eigenkapital verteilen und eine Reserve behalten. Den vollen Hebel ziehen wir erst, wenn Bestand da ist, der ihn trägt.</p>
+    </section>
+
+    <div class="qa" id="fragen"><p class="qa-h">Häufige Fragen</p><details open><summary>Wie viel Eigenkapital sollte ich in eine Immobilie stecken?</summary><div><p>Mindestens die Kaufnebenkosten, je nach Bundesland 7,5 bis 12&nbsp;Prozent des Kaufpreises, in Bayern rund 5,5&nbsp;Prozent. Darüber hinaus hängt es vom Ziel ab: Eigennutzer sollten bei Zinsen wie derzeit möglichst viel einbringen, weil sie Zinsen nicht absetzen können. Kapitalanleger, die mehrere Objekte kaufen wollen, verteilen ihr Eigenkapital besser und finanzieren 90 bis 95&nbsp;Prozent des Kaufpreises.</p></div></details><details><summary>Lohnt sich mehr Eigenkapital bei einer vermieteten Immobilie?</summary><div><p>Weniger als bei einer selbst genutzten. Bei Vermietung sind die Zinsen Werbungskosten. Bei 42&nbsp;Prozent Grenzsteuersatz spart ein Anleger mit 50.000&nbsp;Euro zusätzlichem Eigenkapital bei 4&nbsp;Prozent Zins nach Steuern 1.160&nbsp;Euro im Jahr, ein Eigennutzer 2.000&nbsp;Euro.</p></div></details><details><summary>Wie hoch sollte die Finanzierungsreserve sein?</summary><div><p>Als Orientierung mindestens drei bis sechs Monatsraten je vermieteter Wohnung als frei verfügbare Rücklage, zusätzlich zur Erhaltungsrücklage der Eigentümergemeinschaft. Bei älteren Gebäuden und Mehrfamilienhäusern mehr.</p></div></details></div>
+
+    <aside class="cta" aria-label="Finanzierungserstgespräch buchen"><h3>Die richtige Struktur für Ihr Eigenkapital</h3><p>Ob eine Wohnung mit viel Eigenkapital oder mehrere mit wenig, rechnen wir mit Ihnen anhand Ihres Ziels und Ihrer Bonität durch. Fischer &amp; Geserich vermittelt Finanzierungen deutschlandweit.</p><a class="btn" href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierungserstgespräch buchen</a></aside>
+
+    <div class="end">
+      <div class="quellen"><h3>Quellen</h3><ul><li><a href="https://www.gesetze-im-internet.de/estg/__9.html" target="_blank" rel="noopener">§&nbsp;9 EStG, Werbungskosten</a></li></ul></div>
+      <p class="note">Die Bilder ohne Fotonachweis wurden mit KI erstellt.</p>
+      <p class="note">Der Beitrag dient der allgemeinen Information und ersetzt keine Rechts-, Steuer-, Finanzierungs- oder Anlageberatung. Zinssätze in Beispielrechnungen sind Beispielwerte, keine aktuellen Konditionen.</p>
+    </div>
+  </article>
+
+  <aside class="related" aria-label="Mehr zu Finanzierung">
+    <h2>Mehr zu Finanzierung</h2>
+    <a href="../beleihungsauslauf-und-kondition/"><span class="rthumb"><img src="../beleihungsauslauf-und-kondition/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Beleihungs&shy;auslauf, 100&nbsp;% und 110&nbsp;% Finanzierung</strong></a>
+    <a href="../zinsbindung-strategisch-waehlen/"><span class="rthumb"><img src="../zinsbindung-strategisch-waehlen/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Zins&shy;bindung und Forward-Darlehen</strong></a>
+    <a href="../immobilie-ohne-eigenkapital/"><span class="rthumb"><img src="../immobilie-ohne-eigenkapital/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Immobilie ohne Eigen&shy;kapital</strong></a>
+  </aside>
+</div>
+
+<section class="more" aria-label="Weiterlesen">
+  <div class="more-in">
+    <h2>Weiterlesen</h2>
+    <p class="more-sub">Artikel, die hier anschließen</p>
+    <div class="cards">
+      <a class="card" href="../beleihungsauslauf-und-kondition/">
+        <div class="thumb"><img src="../beleihungsauslauf-und-kondition/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.parentNode.classList.add('missing')"></div>
+        <span class="kicker">Finanzierung</span>
+        <strong>Beleihungsauslauf, 100&nbsp;% und 110&nbsp;% Finanzierung</strong>
+        <p>Beleihungsauslauf: Formel, Einfluss auf den Zins und was eine 100- oder 110-Prozent-Finanzierung kostet. Mit Rechenbeispiel für eine 200.000-Euro-Wohnung.</p>
+        
+      </a>
+      <a class="card" href="../immobilie-ohne-eigenkapital/">
+        <div class="thumb"><img src="../immobilie-ohne-eigenkapital/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.parentNode.classList.add('missing')"></div>
+        <span class="kicker">Finanzierung</span>
+        <strong>Immobilie ohne Eigenkapital</strong>
+        <p>Immobilie ohne Eigenkapital kaufen: was hinter „ab 2.500&nbsp;Euro netto“ steckt, was ein Blankodarlehen kostet und warum der zweite Kauf daran scheitern kann.</p>
+        
+      </a>
+    </div>
+    <a class="back" href="../">‹ Zurück zum Blog</a>
+  </div>
+</section>
+
+<footer><span>© 2026 Fischer &amp; Geserich Real Estate</span><span><a href="https://fg-realestate.de/impressum.html">Impressum</a> · <a href="https://fg-realestate.de/datenschutz.html">Datenschutz</a> · <a href="#" data-open-consent>Cookie-Einstellungen</a></span></footer>
+
+<script>
+/* Mobilmenü wie auf der Website */
+(function(){
+  var b=document.querySelector(".burger"),m=document.querySelector(".mobile-menu");
+  b.addEventListener("click",function(){var o=m.classList.toggle("open");b.setAttribute("aria-expanded",o)});
+})();
+/* Offene Menüs schließen bei Klick daneben oder mit Esc */
+(function(){
+  var cat=document.querySelector(".cat-menu"),b=document.querySelector(".burger"),m=document.querySelector(".mobile-menu");
+  function closeAll(e){
+    if(cat.open&&(!e||!cat.contains(e.target)))cat.open=false;
+    if(m.classList.contains("open")&&(!e||!(m.contains(e.target)||b.contains(e.target)))){m.classList.remove("open");b.setAttribute("aria-expanded",false)}
+  }
+  document.addEventListener("click",closeAll);
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeAll()});
+})();
+/* Umschalter heller / dunkler Lesemodus */
+(function(){
+  var root=document.documentElement,b=document.querySelector(".theme-btn");
+  function sync(){var d=root.dataset.theme==="dark";b.setAttribute("aria-pressed",d);b.setAttribute("aria-label",d?"Heller Lesemodus":"Dunkler Lesemodus")}
+  b.addEventListener("click",function(){
+    root.dataset.theme=root.dataset.theme==="dark"?"light":"dark";sync();
+    try{localStorage.setItem("fg-theme",root.dataset.theme)}catch(e){}
+  });
+  sync();
+})();
+/* Kopfzeile: Fortschritt, Titel nach dem Scrollen, aktiver Abschnitt links */
+(function(){
+  var top=document.querySelector(".top"),bar=document.querySelector(".progress span"),h1=document.querySelector(".head h1");
+  var links=[].slice.call(document.querySelectorAll(".toc a")),secs=links.map(function(a){return document.querySelector(a.getAttribute("href"))});
+  function tick(){
+    var d=document.documentElement,max=d.scrollHeight-d.clientHeight;
+    bar.style.width=(max>0?d.scrollTop/max*100:0)+"%";
+    top.classList.toggle("scrolled",h1.getBoundingClientRect().bottom<140);
+    var cur=0;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<170)cur=i});
+    links.forEach(function(a,i){a.classList.toggle("on",i===cur)});
+  }
+  var lead=document.querySelector(".lead-img");
+  function shrink(){
+    /* Bild wird beim Scrollen gleichmäßig kleiner, Seitenverhältnis bleibt (n26-Verhalten) */
+    var r=lead.getBoundingClientRect(),p=Math.min(Math.max((140-r.top)/r.height,0),1);
+    lead.style.setProperty("--s",(1-p*.45).toFixed(3));
+  }
+  addEventListener("scroll",function(){tick();shrink()},{passive:true});tick();shrink();
+})();
+
+/* A7: Ziele umschalten */
+(function(){
+  var root=document.getElementById("g-ek");if(!root)return;
+  var z=[
+    {h:"Möglichst viel Eigenkapital",p:"Zinsen sind für Eigennutzer steuerlich nicht absetzbar. Jeder Euro Eigenkapital spart den vollen Zins. Eine Reserve bleibt trotzdem übrig.",q:"Eine Wohnung, viel Eigenkapital",hs:[{c:"big",f:45}]},
+    {h:"Struktur zweitrangig, Hauptsache solide",p:"Die Raten müssen tragbar sein, und die Wohnungen sollen bis zum Rentenbeginn weitgehend entschuldet sein. Mehr Eigenkapital macht das ruhiger.",q:"Zwei oder drei Wohnungen",hs:[{f:28},{f:28},{c:"ghost",f:0}]},
+    {h:"Eigenkapital verteilen",p:"90 bis 95 % des Kaufpreises finanzieren und das Eigenkapital auf mehrere Käufe verteilen. 110 % erst, wenn Bestand da ist.",q:"Finanzierung 90 bis 95 % je Wohnung",hs:[{f:9},{f:9},{f:9}]}
+  ];
+  var bs=root.querySelectorAll(".e7-seg button"),hs=root.querySelector(".e7-hs"),t=root.querySelector(".e7-txt");
+  function show(i){
+    bs.forEach(function(b,k){b.setAttribute("aria-selected",k===i)});
+    var d=z[i];t.querySelector("h4").textContent=d.h;t.querySelector("p").textContent=d.p;t.querySelector(".q").textContent=d.q;
+    hs.innerHTML=d.hs.map(function(h){return '<span class="e7-h '+(h.c||"")+'"><i style="height:'+h.f+'%"></i></span>'}).join("");
+  }
+  bs.forEach(function(b,k){b.addEventListener("click",function(){show(k)});
+    b.addEventListener("keydown",function(e){var n=e.key==="ArrowRight"?1:e.key==="ArrowLeft"?-1:0;if(n){var j=(k+n+bs.length)%bs.length;bs[j].focus();show(j)}})});
+  show(0);
+})();
+</script>
+</body>
+</html>

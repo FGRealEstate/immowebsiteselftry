@@ -7,11 +7,88 @@
   "keywords": [
     "kaufpreisfaktor"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Kapitalanlage",
-  "explanation": "Der Kaufpreisfaktor setzt Kaufpreis und Jahresnettokaltmiete ins Verhältnis. Er ist bei identischer Basis der Kehrwert der Bruttomietrendite und ignoriert Nebenkosten, Bewirtschaftung, Finanzierung und CapEx.",
-  "practiceExample": "360.000 € Kaufpreis / 18.000 € JNKM = Faktor 20. Das entspricht 5,0 % Bruttomietrendite.",
+  "explanation": "Der Kaufpreisfaktor sagt, wie viele Jahreskaltmieten Sie für eine Immobilie zahlen. Er heißt auch Multiplikator oder einfach Faktor. Je höher er ist, desto teurer ist die Immobilie im Verhältnis zur Miete. Sein Kehrwert ist die Bruttomietrendite: Faktor 25 entspricht 4 %, Faktor 30 rund 3,33 %.",
+  "practiceExample": "Angenommen, Sie kaufen eine vermietete Wohnung im Berliner Umland, etwa in Bernau: 65 m², Baujahr 1995, 9 € Kaltmiete je m², also 585 € im Monat und 7.020 € im Jahr, für 160.000 €. Der Faktor liegt bei 22,8 und damit nahe am Mittel der vermieteten Wohnungen im Barnimer Umland. Rechnen Sie die Kaufnebenkosten von 18.512 € dazu, zahlen Sie 25,4 Jahresmieten. Läge die Miete bei 8 € statt 9 € je m², stiege der Faktor auf 25,6.",
   "formula": "Kaufpreisfaktor = Kaufpreis / Jahresnettokaltmiete",
   "sources": [],
-  "assistantAnswer": "Kaufpreis geteilt durch Jahresnettokaltmiete. Der Kaufpreisfaktor setzt Kaufpreis und Jahresnettokaltmiete ins Verhältnis. Er ist bei identischer Basis der Kehrwert der Bruttomietrendite und ignoriert Nebenkosten, Bewirtschaftung, Finanzierung und CapEx."
+  "assistantAnswer": "Kaufpreis geteilt durch Jahresnettokaltmiete. Der Kaufpreisfaktor setzt Kaufpreis und Jahresnettokaltmiete ins Verhältnis. Er ist bei identischer Basis der Kehrwert der Bruttomietrendite und ignoriert Nebenkosten, Bewirtschaftung, Finanzierung und CapEx.",
+  "ausbau": {
+    "einordnung": [
+      "Der Kaufpreisfaktor sagt, wie viele Jahreskaltmieten Sie für eine Immobilie zahlen. Er heißt auch Multiplikator oder einfach Faktor. Je höher er ist, desto teurer ist die Immobilie im Verhältnis zur Miete. Sein Kehrwert ist die Bruttomietrendite: Faktor 25 entspricht 4 %, Faktor 30 rund 3,33 %.[[1]]",
+      "Gutachterausschüsse werten echte Kaufpreise aus; der Gutachterausschuss Barnim weist den Faktor als Rohertragsfaktor aus. Für vermietete Eigentumswohnungen im Berliner Umland des Landkreises lag er im Marktbericht 2025 zwischen 13 und 38, im Mittel bei 23. Bei Mehrfamilienhäusern lag er zwischen 13 und 22, im Mittel bei 17.[[2]] Die Spannen sind groß; der einzelne Faktor hängt von Lage, Zustand und Miethöhe ab.",
+      "Der Faktor ist eine schnelle Vergleichszahl. F&G schreibt zum Mehrfamilienhaus: Der Faktor allein reicht nicht; Ist- und Soll-Miete, Leerstand und Capex gehören in die Aufbereitung.[[3]]"
+    ],
+    "beispiel": [
+      "Angenommen, Sie kaufen eine vermietete Wohnung im Berliner Umland, etwa in Bernau: 65 m², Baujahr 1995, 9 € Kaltmiete je m², also 585 € im Monat und 7.020 € im Jahr, für 160.000 €. Der Faktor liegt bei 22,8 und damit nahe am Mittel der vermieteten Wohnungen im Barnimer Umland.[[2]]",
+      "Rechnen Sie die Kaufnebenkosten von 18.512 € dazu, zahlen Sie 25,4 Jahresmieten. Läge die Miete bei 8 € statt 9 € je m², stiege der Faktor auf 25,6."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Vergleichen Sie Faktoren auf gleicher Grundlage: Kaufpreis mit oder ohne Nebenkosten, heutige Miete oder erzielbare Miete. Ein Exposé, das mit einer erhofften Miete rechnet, zeigt einen niedrigeren Faktor als die tatsächliche Vermietung."
+        ]
+      },
+      {
+        "h2": "Was es für Anleger heißt",
+        "absaetze": [
+          "F&G betrachtet beim Ankauf Ist- und Soll-Miete getrennt und berücksichtigt nicht umlagefähige Kosten und Rücklagen.[[4]] Niedrige Faktoren, also hohe Renditen, sind laut Finanztip eher in kleineren Städten und ländlichen Regionen möglich, bei geringerer Wertsteigerung und höherem Vermietungsrisiko. In Großstädten sind hohe Renditen selten; dafür kann die Wertsteigerung höher ausfallen, und das Leerstandsrisiko ist meist geringer.[[1]] Was das für ein einzelnes Objekt heißt, zeigen Nettomietrendite und Cashflow."
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "Finanztip: Mietrendite berechnen",
+        "url": "https://www.finanztip.de/baufinanzierung/mietrendite-berechnen/",
+        "stand": "Stand 01.04.2026"
+      },
+      {
+        "name": "Gutachterausschuss Barnim: Grundstücksmarktbericht 2025",
+        "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+        "stand": "Berichtsjahr 2025, abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Mehrfamilienhaus",
+        "url": "https://fg-realestate.de/mehrfamilienhaus.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Ankaufsberatung",
+        "url": "https://fg-realestate.de/ankaufsberatung.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Multiplikator = Kaufpreis / Jahreskaltmiete, auch Faktor; 25 ↔ 4 %; unter 30 ↔ über 3,33 %",
+        "fundstelle": "runde-3.md, C05, C01"
+      },
+      {
+        "zahl": "ETW Berliner Umland Barnim 13 bis 38, Ø 23",
+        "fundstelle": "runde-3.md, C13"
+      },
+      {
+        "zahl": "MFH Berliner Umland Barnim 13 bis 22, Ø 17",
+        "fundstelle": "runde-3.md, C14"
+      },
+      {
+        "zahl": "Der Faktor allein reicht nicht; Ist-/Soll-Miete, Leerstand, Capex (F&G)",
+        "fundstelle": "runde-3.md, C12"
+      },
+      {
+        "zahl": "Ist- und Soll-Miete getrennt, nicht umlagefähige Kosten und Rücklagen (F&G)",
+        "fundstelle": "runde-3.md, C10"
+      },
+      {
+        "zahl": "kleinere Städte: höhere Renditen, weniger Wertsteigerung, mehr Vermietungsrisiko; Großstädte: kaum hohe Renditen, Leerstandsrisiko meist geringer",
+        "fundstelle": "runde-3.md, C02"
+      },
+      {
+        "zahl": "160.000 / 7.020 = 22,8; 178.512 / 7.020 = 25,4; 160.000 / 6.240 = 25,6",
+        "fundstelle": "Rechnung, Marktprüfung runde-3.md"
+      }
+    ]
+  }
 }

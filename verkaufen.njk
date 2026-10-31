@@ -1,14 +1,247 @@
 ---
-layout: base.njk
-title: Immobilien verkaufen – Fischer & Geserich Real Estate
+layout: fgs-service.njk
+bodyClass: fgs-service
+title: "Immobilie verkaufen in Berlin, Brandenburg, Leipzig & Dresden | Fischer & Geserich"
+description: "Immobilie verkaufen in Berlin und Brandenburg: kostenlose Wertermittlung meist am selben Tag, realistischer Angebotspreis, geprüfte Käufer und Begleitung bis zur Übergabe."
 permalink: verkaufen.html
-description: "Immobilie professionell verkaufen: realistische Marktanalyse, klare Vermarktungsstrategie und persönliche Begleitung bis Notartermin und Übergabe."
 canonicalPath: /verkaufen.html
+# Texte: Update 6 §3.2 (27.10.2026) wörtlich, sonst unverändert. FAQ: Update 20 (30.10.2026), ausgeschrieben in der Liste unten.
+# Aufbau: Design-Sprint-Brief 5.2 (fgs-service.njk).
+service:
+  id: verkaufen
+  crumb: "Immobilie verkaufen"
+  kicker: "Für Eigentümer"
+  h1: "Immobilie verkaufen in Berlin, Brandenburg, Leipzig und Dresden"
+  intro: "Ein fester Ansprechpartner begleitet Ihren Verkauf von der ersten Bewertung bis zur Schlüsselübergabe. Und bevor es zum Notar geht, prüfen wir, ob Ihr Käufer seine Finanzierung wirklich bekommt."
+  button: { label: "Kostenlose Bewertung", href: "/immobilienbewertung/" }
+  hero: { name: "verkaufen-hero", alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser" }
+  # Design-Pass 2 §4.2: Eckdaten wörtlich aus dem Brief
+  keyfacts:
+    - { label: "Wertermittlung", wert: "kostenlos, meist am selben Tag" }
+    - { label: "Provision", wert: "3,57&nbsp;% pro Seite bei Wohnung und Einfamilienhaus" }
+    - { label: "Bis zum Notartermin", wert: "meist zwei bis drei Monate" }
+  # Update 19 §3: kleiner Text direkt unter den Eckdaten
+  keyfactsNote: "Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision. Für Sie als Verkäufer fallen dann keine Provisionskosten an."
+  summaryQ: "Wie läuft ein Immobilienverkauf mit Fischer & Geserich ab?"
+  summary:
+    - "Am Anfang stehen ein Gespräch und eine kostenlose Wertermittlung, die meist noch am selben Tag vorliegt. Bevor Ihre Immobilie in die Vermarktung geht, klären wir die Unterlagen und einen Angebotspreis, der zur aktuellen Marktlage passt. Interessenten prüfen wir vor dem Notartermin auch auf ihre Finanzierung, damit der Verkauf nicht am Ende scheitert."
+    - "Zwischen Erstkontakt und Notartermin liegen in der aktuellen Marktphase meist zwei bis drei Monate. Bei Eigentumswohnungen und Einfamilienhäusern beträgt die Provision 3,57&nbsp;Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision und für Sie als Verkäufer fallen keine Kosten an."
+  faqTitle: "Häufige Fragen zum Immobilienverkauf"
+  faq:
+    # Update 20 (30.10.2026): Fragen und Antworten wörtlich nach Timons Freigabe, auch im FAQPage-Markup; Links auf denselben Wörtern wie vorher.
+    - q: "Ist es aktuell sinnvoll, eine Immobilie zu verkaufen?"
+      a: "Das hängt weniger vom allgemeinen Markt ab als von Ihrer Situation: ob Sie den Erlös für einen nächsten Kauf brauchen, ob eine Anschlussfinanzierung ansteht, ob die Immobilie vermietet oder frei ist und ob bei einer vermieteten Immobilie die zehnjährige Spekulationsfrist schon abgelaufen ist. Wohin sich die Preise entwickeln, kann niemand verlässlich vorhersagen. Klären lässt sich aber, welchen Preis Ihre Immobilie heute realistisch erzielt und was ein Verkauf jetzt oder später für Sie bedeutet. Dafür ist die kostenlose Wertermittlung da."
+    - q: "Wie lange dauert ein Immobilienverkauf in Berlin?"
+      a: "Zwischen Erstkontakt und Notartermin liegen in der aktuellen Marktphase meist zwei bis drei Monate, schnelle Verkäufe gelingen in rund sechs Wochen. Ein Einfamilienhaus braucht oft sechs Monate bis ein Jahr, weil die hohen Zinsen die Zahl der Käufer verringert haben. Am meisten hängt die Dauer davon ab, wie gut Ihre Preisvorstellung zur Marktlage passt."
+    - q: "Welche Unterlagen brauche ich für den Verkauf?"
+      a: "Für fast jeden Verkauf brauchen Sie einen aktuellen Grundbuchauszug, den Energieausweis, eine Wohnflächenberechnung und Grundrisse. Bei Eigentumswohnungen kommen Teilungserklärung, Protokolle der Eigentümerversammlungen, Wirtschaftsplan und Hausgeldabrechnung dazu, bei vermieteten Objekten die Mietverträge. Die vollständige Liste steht im Abschnitt „<a href=\"#unterlagen\">Unterlagen für den Verkauf</a>“. Was noch fehlt, besorgen wir gemeinsam mit Ihnen vor dem Verkaufsstart."
+    - q: "Wie erkenne ich einen seriösen Makler?"
+      a: "Ein seriöser Makler hat eine Erlaubnis nach § 34c GewO und nennt seine Provision, bevor Sie eine Immobilie besichtigen. Beim Verkauf einer Wohnung oder eines Einfamilienhauses muss der Maklervertrag in Textform geschlossen werden (§ 656a BGB). Achten Sie außerdem darauf, ob der Angebotspreis nachvollziehbar begründet wird oder ob Ihnen nur ein möglichst hoher Wert versprochen wird, ob vor der Vermarktung nach den Unterlagen gefragt wird und ob die Finanzierung der Interessenten vor dem Notartermin geprüft wird. Impressum, Büroadresse und Bewertungen, die Sie selbst nachlesen können, gehören ebenfalls dazu."
+    - q: "Wie läuft ein Immobilienverkauf über Fischer & Geserich ab?"
+      a: "Am Anfang steht ein Gespräch über Ihre Immobilie, Ihre Preisvorstellung und Ihren Zeitplan, gern persönlich. Danach bekommen Sie eine kostenlose Wertermittlung. Bevor Ihre Immobilie in den Verkauf geht, sorgen wir gemeinsam mit Ihnen dafür, dass alle Unterlagen vollständig sind. Bei ernsthaften Interessenten prüfen wir früh die Finanzierung und erst dann geht es zum Notar."
+    - q: "Was kostet eine Wertermittlung?"
+      a: "Nichts. Wir erstellen die Wertermittlung Ihrer Immobilie kostenlos, meistens innerhalb weniger Stunden und häufig noch am selben Tag."
+    - q: "Wie entsteht der Angebotspreis?"
+      a: "Aus den Preisen, zu denen vergleichbare Immobilien in Ihrer Gegend tatsächlich verkauft wurden, dazu aus Lage, Zustand und der Nachfrage nach genau dieser Art Immobilie. Die tatsächlichen Kaufpreise kommen aus der Kaufpreissammlung des Gutachterausschusses. Wir nennen Ihnen einen Preis, den wir begründen können."
+    - q: "Warum bieten Sie meine Immobilie nicht sofort zum Verkauf an?"
+      a: "Weil ein Verkauf ohne vollständige Unterlagen oft erst kurz vor dem Notartermin scheitert. Fehlt zum Beispiel die Wohnflächenberechnung, bekommt Ihr Käufer keine Finanzierung und der Verkauf platzt, obwohl beide Seiten schon Kosten hatten. Deshalb klären wir mit Ihnen, bevor Ihre Immobilie angeboten wird, welche Unterlagen vorliegen, und helfen Ihnen, die fehlenden zu besorgen."
+    - q: "Verkaufen Sie auch geerbte Immobilien?"
+      a: "Ja. Bei einer geerbten Immobilie klären wir zuerst die rechtliche Lage und welche Unterlagen vorliegen. Häufig geht es auch darum, wie die Erbschaftsteuer bezahlt werden soll. Je nach Situation ist dafür eine Finanzierung sinnvoller als ein schneller Verkauf unter Zeitdruck. Das besprechen wir mit Ihnen in Ruhe."
+    - q: "Begleitet F&G auch den Verkauf von Mehrfamilienhäusern?"
+      a: "Ja. Bei Mehrfamilienhäusern sprechen wir vor allem Kapitalanleger an, die Bank prüft das Haus als Ganzes und die Unterlagen sind umfangreicher. Die Provision zahlt hier in der Regel der Käufer. Für Sie als Verkäufer fallen dann keine Provisionskosten an. Für Mehrfamilienhäuser haben wir vorgemerkte Kaufinteressenten aus ganz Deutschland. Mehr dazu steht auf <a href=\"/mehrfamilienhaus.html\">unserer Seite zu Mehrfamilienhäusern</a>."
+    - q: "Übernehmen Sie auch die Hausverwaltung?"
+      a: "Nein. Die Hausverwaltung bieten wir bewusst nicht an, sie ist auch nicht Teil unserer Erlaubnis. Wir vermitteln Sie an Hausverwaltungen, mit denen wir seit Jahren zusammenarbeiten und deren Arbeit wir aus eigener Erfahrung kennen."
+    # FG-Gap-Answers 1.1 (READY)
+    - q: "Was ist der teuerste Fehler beim Hausverkauf?"
+      a: "Ein zu hoch angesetzter Angebotspreis. Steht eine Immobilie zu teuer im Markt, melden sich weniger Interessenten und wer sie wochenlang online sieht, fragt sich, was mit ihr nicht stimmt. Nach einer Preissenkung rechnen Käufer oft mit weiteren Nachlässen. Ebenso teuer wird ein Käufer, dessen Finanzierung erst kurz vor dem Notartermin scheitert, weil Sie dann wieder von vorn beginnen. Deshalb nennen wir Ihnen einen Preis, den wir mit Vergleichsverkäufen begründen, und prüfen die Finanzierung der Interessenten, bevor der Notar beauftragt wird."
+    # FG-Gap-Answers 1.2 (READY)
+    - q: "Lohnt sich ein Makler oder sollte ich privat verkaufen?"
+      a: "Ein Privatverkauf spart Ihnen bei Wohnungen und Einfamilienhäusern die Provision, bei uns 3,57 Prozent inklusive Mehrwertsteuer. Bei Mehrfamilienhäusern und Grundstücken zahlt sie in der Regel ohnehin der Käufer. Dafür übernehmen Sie selbst die Preisfindung, die Unterlagen, die Anzeige, die Besichtigungen, die Prüfung der Käufer und die Vorbereitung des Notartermins. Ein Makler lohnt sich vor allem, wenn der Preis schwer einzuschätzen ist, Unterlagen fehlen, die Immobilie vermietet ist oder Sie nicht vor Ort wohnen. Die Wertermittlung bei uns ist kostenlos und danach können Sie immer noch entscheiden, ob Sie selbst verkaufen."
+    # FG-Gap-Answers 1.3 (TIMON), Text ersetzt nach FG-Timon-Answers-Update §2.1 (29.10.2026), an über freigaben.timonFaq
+    - q: "Warum verkauft sich meine Wohnung nicht?"
+      a: "Fast immer, weil der Angebotspreis zu hoch ist. Viele Eigentümer orientieren sich an einem Wunschpreis oder an Preisen von früher. Entscheidend ist aber, was in den letzten drei bis sechs Monaten in Ihrer Gegend für vergleichbare Wohnungen tatsächlich bezahlt wurde. Diese Zahlen sammelt der Gutachterausschuss. Dazu kommen Punkte, die den Wert mindern und im Preis oft fehlen: eine Lage an der Autobahn, kein Keller, Mängel am Gebäude oder eine schlechte Energieeffizienzklasse. Steht eine Wohnung zu teuer im Markt, wird sie zum Ladenhüter, auch wenn ein Makler den Wunschpreis versprochen hat. Wir versprechen keine Wunschpreise. Wir nennen Ihnen den Preis, zu dem Ihre Wohnung realistisch verkauft wird. Die Wertermittlung dafür ist kostenlos."
+      timon: "1.3"
+    # FG-Gap-Answers 1.4 (READY)
+    - q: "Wie verkaufe ich eine vermietete Wohnung zum besten Preis?"
+      a: "Eine vermietete Wohnung kaufen vor allem Kapitalanleger und sie rechnen mit der Miete. Entscheidend ist das Verhältnis zwischen Quadratmeterpreis und Bruttorendite: Für eine vermietete Wohnung lässt sich nicht derselbe Quadratmeterpreis verlangen wie für eine bezugsfreie. Wichtig sind außerdem die Höhe der Miete im Vergleich zum Mietspiegel, die Art des Mietvertrags und die Kosten, die nicht auf den Mieter umgelegt werden können. Der Mietvertrag geht beim Verkauf mit allen Rechten und Pflichten auf den Käufer über (§ 566 BGB). Die Bank des Käufers will vor allem den Mietvertrag mit allen Nachträgen und Mieterhöhungen sehen. Der Käufer selbst braucht außerdem die letzte Betriebskostenabrechnung und die Unterlagen der Eigentümergemeinschaft, um sein Risiko und seinen Angebotspreis einzuschätzen. Wir sprechen gezielt Anleger an. Weil wir selbst Finanzierungen vermitteln, wissen wir früh, welcher Käufer den Preis auch finanzieren kann."
+    # FG-Gap-Answers 1.5 (TIMON), Text ersetzt nach FG-Timon-Answers-Update §2.2 (29.10.2026), an über freigaben.timonFaq
+    - q: "Kann ich meine Immobilie diskret verkaufen, ohne sie öffentlich anzubieten?"
+      a: "Ja, bei uns ist das häufig der Fall: Gut die Hälfte unserer Immobilien vermarkten wir diskret und die meisten stehen gar nicht auf unserer Website. Wir bieten sie vorgemerkten Käufern und Anlegern direkt an, ohne Anzeige auf den Portalen und ohne Schild am Haus. Das passt zum Beispiel, wenn Ihre Mieter oder Nachbarn nicht vorzeitig davon erfahren sollen. Findet sich so kein passender Käufer, entscheiden Sie, ob wir die Immobilie danach öffentlich anbieten."
+      timon: "1.5"
+    # FG-Timon-Answers-Update §3.2 (29.10.2026), neu
+    - q: "Wie wirkt sich die Energieeffizienzklasse auf den Verkauf aus?"
+      a: "Sie wird für den Preis immer wichtiger. Bei Häusern mit schlechter Energieeffizienzklasse verlangen viele Banken inzwischen einen Sanierungsfahrplan. Noch tun das nicht alle Banken, aber es werden mehr. Kapitalanleger rechnen die Kosten einer Sanierung in den Preis ein und wer selbst einzieht, kalkuliert zum Beispiel die Wärmepumpe für sein Einfamilienhaus. Banken ziehen bei schlechter Energieeffizienz oft etwas vom Beleihungswert ab. Berücksichtigt Ihr Angebotspreis das von Anfang an, bekommen mehr Käufer eine Finanzierung und Ihre Immobilie ist auf dem Markt deutlich attraktiver."
+  related:
+    services:
+      - { label: "Kostenlose Immobilienbewertung", note: "Meist noch am selben Tag", href: "/immobilienbewertung/", bild: "bewertung-hero", alt: "Villa am Teltower Damm in Berlin-Zehlendorf, ein Baudenkmal" }
+      - { label: "Mehrfamilienhaus verkaufen", note: "Käufernetzwerk mit über 100 Interessenten", href: "/mehrfamilienhaus.html", bild: "mfh-hero", alt: "Denkmalgeschütztes Eckhaus mit Klinkerfassade an der Schönhauser Allee in Berlin-Prenzlauer Berg" }
+      - { label: "Finanzierungsberatung", note: "Für Ihre nächste Immobilie", href: "/finanzierungsberatung.html", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
+      - { label: "Maklerprovision", note: "Alle Fälle erklärt", href: "/maklerprovision/" }
+    lexikon: [bodenrichtwert, verkehrswert, spekulationsfrist]
+  contact: lennart
+  closing:
+    title: "Was ist Ihre Immobilie heute wert?"
+    text: "Die Wertermittlung kostet Sie nichts und liegt meist noch am selben Tag vor. Danach entscheiden Sie in Ruhe, ob und wann Sie verkaufen."
+    button: bewertung
+    foto: tiergarten
+  schema:
+    name: "Immobilie verkaufen in Berlin und Brandenburg"
+    serviceType: "Immobilienverkauf"
+    description: "Verkauf von Wohn- und Anlageimmobilien in Berlin, Brandenburg, Leipzig und Dresden: kostenlose Wertermittlung, Angebotspreis, Unterlagen, Käuferprüfung einschließlich Finanzierung, Notartermin und Übergabe."
+    area: regional
 ---
-<div class="fg-premium-page"><section class="fg-premium-hero"><div class="fg-premium-shell"><div class="fg-premium-hero-grid"><div><p class="fg-premium-kicker fg-premium-kicker-light">Für Eigentümer</p><h1>Ein guter Verkauf beginnt mit einer belastbaren Positionierung.</h1><p class="fg-premium-hero-lead">Wir verbinden Marktanalyse, Vermarktung, Käuferprüfung und Finanzierungssicherheit zu einem strukturierten Verkaufsprozess – persönlich geführt und transparent dokumentiert.</p><div class="fg-premium-actions"><a href="#kontakt-verkauf" class="btn-85 px-7 py-4">Verkauf besprechen <i class="fas fa-arrow-right"></i></a><a href="#prozess" class="fg-premium-outline">Ablauf ansehen</a></div></div><aside class="fg-premium-sidecard"><span>Verkaufslogik</span><h2>Marktwert ist mehr als ein Quadratmeterpreis.</h2><ul><li><i class="fas fa-location-dot"></i><span>Mikrolage, Zustand und Zielgruppe differenziert einordnen</span></li><li><i class="fas fa-chart-line"></i><span>Preisstrategie an realer Nachfrage ausrichten</span></li><li><i class="fas fa-building-columns"></i><span>Finanzierbarkeit potenzieller Käufer früh mitdenken</span></li></ul></aside></div></div></section>
-<section class="fg-premium-statbar"><div class="fg-premium-shell"><div class="fg-premium-statgrid"><div><small>Bewertung</small><strong>Realistisch positionieren</strong><span>Markt, Mikrolage, Zustand und Vergleichsangebote</span></div><div><small>Unterlagen</small><strong>Vor Vermarktung klären</strong><span>damit Finanzierung und Abschluss nicht unnötig stocken</span></div><div><small>Käufer</small><strong>Qualität vor Quantität</strong><span>Anfragen strukturieren und Abschlussfähigkeit einordnen</span></div><div><small>Begleitung</small><strong>Bis Übergabe</strong><span>fester Ansprechpartner über den gesamten Prozess</span></div></div></div></section>
-<section id="prozess" class="fg-premium-section"><div class="fg-premium-shell"><div class="fg-premium-head"><p class="fg-premium-kicker">Vom Erstgespräch zum Abschluss</p><h2>Ein Prozess, der Entscheidungen sichtbar macht.</h2><p>Die konkrete Vermarktung variiert je Objekt. Die Grundlogik bleibt bewusst klar.</p></div><div class="fg-premium-process"><article class="fg-premium-step"><span>01 · Einordnung</span><h3>Ausgangslage verstehen</h3><p>Ziel, Zeitrahmen, Objekt, Eigentümerstruktur und Unterlagen werden zuerst geklärt.</p></article><article class="fg-premium-step"><span>02 · Strategie</span><h3>Markt &amp; Preis festlegen</h3><p>Wir leiten aus Markt, Mikrolage, Zustand und Nachfrage eine belastbare Positionierung ab.</p></article><article class="fg-premium-step"><span>03 · Vermarktung</span><h3>Passende Käufer erreichen</h3><p>Portal, Netzwerk, Direktansprache und Besichtigungssteuerung werden objektbezogen kombiniert.</p></article><article class="fg-premium-step"><span>04 · Abschluss</span><h3>Verhandlung &amp; Übergabe</h3><p>Wir begleiten Kaufpreisfindung, Unterlagen, Notarvorbereitung und die strukturierte Übergabe.</p></article></div></div></section>
-<section class="fg-premium-section fg-premium-section-white"><div class="fg-premium-shell"><div class="fg-premium-split"><div class="fg-premium-feature-copy"><p class="fg-premium-kicker">Was wir mitdenken</p><h2>Ein Käufer ist erst dann gut, wenn der Abschluss tragfähig ist.</h2><p>Gerade bei finanzierten Käufen kann eine gute Vermarktung durch fehlende Unterlagen oder unrealistische Finanzierungsannahmen ausgebremst werden. Unsere Finanzierungskompetenz hilft dabei, solche Reibungsverluste früh zu erkennen.</p><div class="fg-premium-checklist"><div><i class="fas fa-check"></i><span>Unterlagen auf Käufer- und Bankfähigkeit prüfen.</span></div><div><i class="fas fa-check"></i><span>Interessenten strukturiert qualifizieren.</span></div><div><i class="fas fa-check"></i><span>Verhandlung nicht isoliert vom Finanzierungsrahmen betrachten.</span></div><div><i class="fas fa-check"></i><span>Auf Wunsch Verkauf und Anschlussfinanzierung zusammendenken.</span></div></div></div><aside class="fg-premium-panel"><p class="fg-premium-kicker fg-premium-kicker-light">Objekttypen</p><h3>Vom Einzelobjekt bis zum Mehrfamilienhaus.</h3><p>Eigentumswohnungen, Ein- und Zweifamilienhäuser, Mehrfamilienhäuser, Pakete, Grundstücke und ausgewählte Projekt- oder Aufteilungskonstellationen.</p><a href="/mehrfamilienhaus.html" class="fg-invest-link">Mehrfamilienhaus ansehen <i class="fas fa-arrow-right"></i></a></aside></div></div></section>
-<section class="fg-premium-section"><div class="fg-premium-shell"><div class="fg-premium-cta"><div><p class="fg-premium-kicker fg-premium-kicker-light">Ihr nächster Schritt</p><h2>Wie sollte Ihr Objekt am Markt positioniert werden?</h2><p>Schildern Sie uns kurz Immobilie, Ziel und Zeitrahmen. Wir melden uns mit einer ersten Einordnung.</p></div><a href="#kontakt-verkauf" class="btn-85 px-7 py-4">Verkauf anfragen <i class="fas fa-arrow-right"></i></a></div></div></section></div>
-{% set faqItems=[{q:"Wie entsteht der Angebotspreis?",a:"Wir kombinieren Mikrolage, Zustand, Vergleichsangebote, Nachfrage und Zielgruppe. Der höchste theoretische Wert ist nicht automatisch die beste Marktposition."},{q:"Warum sind vollständige Unterlagen so wichtig?",a:"Fehlende Unterlagen können Käuferfinanzierungen und die notarielle Abwicklung verzögern. Deshalb klären wir kritische Dokumente möglichst vor dem Vermarktungsstart."},{q:"Begleitet F&G auch den Verkauf von Mehrfamilienhäusern?",a:"Ja. Bei Mehrfamilienhäusern verändern sich Käufergruppe, Unterlagen, Renditebetrachtung und Finanzierungslogik; dafür gibt es eine eigene Strecke."}] %}{% set faqAnchor="faq-verkaufen" %}{% set faqTitle="Häufige Fragen zum Verkauf" %}{% include "faq-block.njk" %}
-<section id="kontakt-verkauf" class="fg-contact-section py-8 md:py-14"><div class="text-center container mx-auto px-4 mb-2"><p class="fg-section-kicker">Verkauf starten</p><h2 class="text-3xl md:text-5xl font-bold text-primary mb-3">Erzählen Sie uns kurz von Ihrer Immobilie.</h2></div>{% set leadDefaultConcern="Immobilie verkaufen" %}{% include "landingpage-lead.njk" %}</section>
+{#- Verkaufen nach Design-Pass 2 §4 (29.10.2026): Eckdaten und Einleitung aus der Vorlage, dann Fotokapitel (Preis), Ablauf als Reihe,
+    Unterlagen und Kosten als Aufklapper, Käuferprüfung, F&G in Zahlen, Personenblock (nächste Immobilie mit Timon).
+    Texte unverändert; neu sind nur die Titel der beiden Aufklapper, wörtlich aus dem Brief §4.6. Das Inhaltsverzeichnis der
+    alten Kapitelansicht entfällt, weil die Reihe der sechs Schritte die ganze Breite braucht. -#}
+{% from "fgs-macros.njk" import split, fotokapitel, nachschlag, wide, facts, textlink with context %}
+
+{# §4.4 Fotokapitel: H2 und die ersten zwei Sätze auf dem Foto, der Rest darunter #}
+{% call fotokapitel({ id: "preis", hoehe: 80, titel: "Wie wir den Angebotspreis finden", bild: "berlin-mitte-band" | bild, alt: "Blick vom Alexanderplatz über die Dächer von Berlin bei tief stehender Sonne",
+  satz: "Für den Angebotspreis sehen wir uns an, zu welchen Preisen vergleichbare Immobilien in der Umgebung angeboten werden und tatsächlich verkauft wurden. Die tatsächlichen Preise kommen aus der Kaufpreissammlung des Gutachterausschusses: Jeder notarielle Kaufvertrag landet dort, mit Wohnfläche, Zimmerzahl, Baujahr und Datum des Verkaufs. Dazu kommen der Bodenrichtwert, der bei Häusern und Grundstücken den Wert des Bodens abbildet, sowie Zustand, Ausstattung, Grundriss und die Nachfrage nach genau dieser Art Immobilie." }) %}
+  <p>Der Angebotspreis entscheidet mit darüber, wie lange ein Verkauf dauert. Liegt er deutlich über dem Markt, melden sich weniger passende Interessenten und wenn Sie ihn später senken müssen, fällt das Käufern auf. Einen Wunschpreis versprechen wir Ihnen deshalb nicht. Wir nennen Ihnen einen Preis, den wir mit Vergleichsverkäufen begründen können.</p>
+  {{ textlink("/immobilienbewertung/", "Wie die kostenlose Bewertung abläuft") }}
+{% endcall %}
+
+{# §4.5 Ablauf: ab 1.240 px eine Reihe mit Nummer, Titel und erstem Satz; der Rest des Schritts öffnet sich per Klick im Feld unter
+   der Reihe (fg-system.js). Schmaler und ohne JavaScript die senkrechte Liste mit dem ganzen Text. #}
+<section class="fgs-section" id="ablauf" aria-labelledby="ablauf-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head"><h2 id="ablauf-titel">Der Ablauf in sechs Schritten</h2></div>
+    <ol class="fgs-steps fgs-steps--reihe" role="list" style="--n: 6" data-fgs-steps>
+      <li style="--i: 1">
+        <span class="fgs-step-num" aria-hidden="true">01</span>
+        <h3>Erstgespräch und Wertermittlung</h3>
+        <p class="fgs-step-lead">Wir sprechen über Ihre Immobilie, Ihre Preisvorstellung und darüber, wie schnell Sie verkaufen möchten.</p>
+        <div class="fgs-step-panel" id="schritt-1">
+          <p>Gern setzen wir uns gleich beim ersten Gespräch persönlich mit Ihnen zusammen, auch bei Ihnen vor Ort. Wenn Ihnen das lieber ist, sprechen wir per Teams.</p>
+          <p class="fgs-step-time"><span class="fgs-label">Typisch</span> Wertermittlung meist am selben Tag</p>
+        </div>
+      </li>
+      <li style="--i: 2">
+        <span class="fgs-step-num" aria-hidden="true">02</span>
+        <h3>Unterlagen zusammenstellen</h3>
+        <p class="fgs-step-lead">Wir sehen uns an, welche Unterlagen schon vorliegen, und helfen Ihnen, die fehlenden zu besorgen, vom Grundbuchauszug bis zum Energieausweis.</p>
+        <div class="fgs-step-panel" id="schritt-2">
+          <p>Erst wenn die Unterlagen vollständig sind, geht Ihre Immobilie in den Verkauf.</p>
+          <p class="fgs-step-time"><span class="fgs-label">Typisch</span> hängt davon ab, was schon vorliegt</p>
+        </div>
+      </li>
+      <li style="--i: 3">
+        <span class="fgs-step-num" aria-hidden="true">03</span>
+        <h3>Markt und Preis festlegen</h3>
+        <p class="fgs-step-lead">Wir sehen uns die Lage, den Zustand und die Nachfrage an und schlagen Ihnen einen Angebotspreis vor, den wir mit Vergleichsverkäufen begründen.</p>
+        <div class="fgs-step-panel" id="schritt-3">
+          <p>Den Preis legen wir gemeinsam mit Ihnen fest.</p>
+        </div>
+      </li>
+      <li style="--i: 4">
+        <span class="fgs-step-num" aria-hidden="true">04</span>
+        <h3>Passende Käufer erreichen</h3>
+        <p class="fgs-step-lead">Wir stellen Ihre Immobilie auf die Portale, sprechen Interessenten aus unserem Netzwerk direkt an und organisieren die Besichtigungen.</p>
+        <div class="fgs-step-panel" id="schritt-4">
+          <p>Bei ernsthaften Interessenten prüfen wir früh, ob ihre Finanzierung so aufgeht, wie sie es sich vorstellen.</p>
+        </div>
+      </li>
+      <li style="--i: 5">
+        <span class="fgs-step-num" aria-hidden="true">05</span>
+        <h3>Verhandlung und Notartermin</h3>
+        <p class="fgs-step-lead">Wir verhandeln den Kaufpreis mit den Interessenten, bereiten die Unterlagen für den Notar vor und stimmen den Termin ab.</p>
+        <div class="fgs-step-panel" id="schritt-5">
+          <p>Den Vertragsentwurf erhalten Sie vom Notar vor dem Termin, damit Sie ihn in Ruhe prüfen können.</p>
+          <p class="fgs-step-time"><span class="fgs-label">Typisch</span> Erstkontakt bis Notartermin zwei bis drei Monate, schnelle Verkäufe in rund sechs Wochen</p>
+        </div>
+      </li>
+      <li style="--i: 6">
+        <span class="fgs-step-num" aria-hidden="true">06</span>
+        <h3>Übergabe</h3>
+        <p class="fgs-step-lead">Nach dem Notartermin begleiten wir die Übergabe an den Käufer, in der Regel nachdem der Kaufpreis gezahlt ist, mit Übergabeprotokoll und Zählerständen.</p>
+        <div class="fgs-step-panel" id="schritt-6">
+          <p class="fgs-step-time"><span class="fgs-label">Typisch</span> Termin so, wie im Kaufvertrag vereinbart</p>
+        </div>
+      </li>
+    </ol>
+    <p class="fgs-note">Die Zeiten sind typische Werte in der aktuellen Marktphase, keine Zusage. Wie lange ein Verkauf dauert, hängt vor allem davon ab, wie gut Preisvorstellung und Marktlage zusammenpassen.</p>
+  </div>
+</section>
+
+{# §4.6 Nachschlage-Blöcke als Aufklapper, Titel wörtlich aus dem Brief. #unterlagen (Link in den Fragen) und #kosten öffnen sie. #}
+<section class="fgs-section fgs-refs">
+  <div class="fgs-wrap">
+    {% call nachschlag({ id: "unterlagen", titel: "Unterlagen für den Verkauf (12 Dokumente)" }) %}
+    <p>Fehlende Unterlagen können Käuferfinanzierungen und die notarielle Abwicklung verzögern. Deshalb klären wir kritische Dokumente möglichst vor dem Vermarktungsstart.</p>
+    <h3>Für jede Immobilie</h3>
+    <ul class="fgs-checklist" role="list">
+      <li>Aktueller Grundbuchauszug<span>vom Grundbuchamt; zeigt Eigentümer, Rechte und Belastungen</span></li>
+      <li>Energieausweis<span>Pflicht nach dem Gebäudeenergiegesetz; seine Kennwerte gehören schon in die Anzeige</span></li>
+      <li>Wohnflächenberechnung und Grundrisse<span>ohne sie bekommen viele Käufer keine Finanzierung</span></li>
+      <li>Nachweise über Modernisierungen<span>Rechnungen oder eine Liste mit Jahr und Umfang</span></li>
+    </ul>
+    <h3>Zusätzlich bei Eigentumswohnungen</h3>
+    <ul class="fgs-checklist" role="list">
+      <li>Teilungserklärung mit Aufteilungsplan</li>
+      <li>Protokolle der Eigentümerversammlungen<span>in der Regel der letzten drei Jahre</span></li>
+      <li>Wirtschaftsplan, Hausgeldabrechnung und Stand der Erhaltungsrücklage</li>
+    </ul>
+    <h3>Zusätzlich bei Häusern und Grundstücken</h3>
+    <ul class="fgs-checklist" role="list">
+      <li>Flurkarte (Liegenschaftskarte)</li>
+      <li>Auskunft aus dem Baulastenverzeichnis</li>
+      <li>Baugenehmigung und Baubeschreibung, soweit vorhanden</li>
+    </ul>
+    <h3>Bei vermieteten Immobilien</h3>
+    <ul class="fgs-checklist" role="list">
+      <li>Mietverträge mit allen Nachträgen und eine aktuelle Mieterliste</li>
+      <li>Letzte Betriebskostenabrechnung</li>
+    </ul>
+    <p class="fgs-note">Wenn noch eine Grundschuld eingetragen ist, brauchen wir außerdem die Angaben zum laufenden Darlehen, damit die Ablösung zum Notartermin vorbereitet werden kann. Was fehlt, beschaffen wir gemeinsam mit Ihnen, zum Beispiel beim Grundbuchamt oder bei der Hausverwaltung.</p>
+    {% endcall %}
+    {% call nachschlag({ id: "kosten", titel: "Was ein Verkauf kostet (Tabelle)" }) %}
+    <p>Provision und Teilungspflicht nennen wir Ihnen vor der ersten Besichtigung, nicht erst danach. Die übrigen Posten hängen von Ihrer Immobilie und Ihrer Finanzierung ab.</p>
+    <div class="fgs-table-wrap">
+      <table class="fgs-table">
+        <thead><tr><th scope="col">Posten</th><th scope="col">Wer zahlt, und was gilt</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Wertermittlung</th><td>Kostenlos, meist noch am selben Tag.</td></tr>
+          <tr><th scope="row">Maklerprovision</th><td>Beim Verkauf einer Wohnung oder eines Einfamilienhauses an einen Verbraucher teilen sich Verkäufer und Käufer die Provision zu gleichen Teilen (§§ 656c, 656d BGB). Bei uns sind das 3,57&nbsp;Prozent inklusive Mehrwertsteuer pro Seite. Für Mehrfamilienhäuser und Grundstücke gelten andere Regeln, siehe <a href="/maklerprovision/">Maklerprovision</a>.</td></tr>
+          <tr><th scope="row">Notar und Grundbuch</th><td>Die Kosten für den Kaufvertrag und die Eintragung ins Grundbuch trägt nach § 448 Abs. 2 BGB im Regelfall der Käufer.</td></tr>
+          <tr><th scope="row">Löschung von Grundschulden</th><td>Soll die Immobilie lastenfrei übergehen, trägt in der Regel der Verkäufer die Kosten für die Löschung eingetragener Grundschulden.</td></tr>
+          <tr><th scope="row">Vorfälligkeitsentschädigung</th><td>Lösen Sie ein Darlehen mit laufender Zinsbindung vorzeitig ab, kann die Bank eine <a href="/lexikon/vorfalligkeitsentschadigung/">Vorfälligkeitsentschädigung</a> verlangen. Die Höhe nennt Ihnen Ihre Bank.</td></tr>
+          <tr><th scope="row">Energieausweis</th><td>Liegt keiner vor, muss er vor der Vermarktung erstellt werden.</td></tr>
+          <tr><th scope="row">Steuern</th><td>Verkaufen Sie eine vermietete Immobilie innerhalb von zehn Jahren nach dem Kauf, kann der Gewinn einkommensteuerpflichtig sein (<a href="/lexikon/spekulationsfrist/">Spekulationsfrist</a>, § 23 EStG). Ausgenommen ist, wer die Immobilie im Verkaufsjahr und in den beiden Jahren davor selbst bewohnt hat.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fgs-note">Steuerliche Fragen beantwortet Ihnen Ihre Steuerberatung verbindlich; wir weisen Sie nur darauf hin, wenn etwas geprüft werden sollte.</p>
+    {% endcall %}
+  </div>
+</section>
+
+{# Käufer und Finanzierung prüfen: Überschrift links (5 Spalten), rechts das breite Bild und der Text #}
+<section class="fgs-section" id="kaeufer" aria-labelledby="kaeufer-titel">
+  <div class="fgs-wrap fgs-cols fgs-cols--57">
+    <div class="fgs-cols-head"><h2 id="kaeufer-titel">Warum wir die Finanzierung der Käufer prüfen</h2></div>
+    <div class="fgs-cols-body">
+      {{ wide("potsdam-band" | bild, "Alter Markt in Potsdam mit Nikolaikirche, Obelisk und Altem Rathaus") }}
+      <p>Viele Käufer finanzieren ihren Kauf. Fehlen ihre Unterlagen oder geht ihre Rechnung nicht auf, scheitert ein Verkauf oft erst kurz vor dem Notartermin. Weil wir selbst Finanzierungen vermitteln, sehen wir solche Fälle früh.</p>
+      <p>Bevor der Kaufvertrag beim Notar beauftragt wird, klären wir, ob die Finanzierung des Käufers realistisch ist. Ein Vertragsentwurf beim Notar kostet je nach Kaufpreis und Notar etwa 600 bis 5.000 Euro. Platzt die Finanzierung erst danach, haben beide Seiten Zeit und Geld verloren und Ihre Immobilie war wochenlang vom Markt.</p>
+    </div>
+  </div>
+</section>
+
+{# §4.7 F&G in Zahlen wie auf der Startseite (zentriert, Marcellus 72 px), einmal auf der Seite, ohne „Angabe von F&G“ (§7) #}
+{{ facts({ id: "zahlen", titel: "F&G in Zahlen", hochzaehlen: true, mitte: true, items: [
+  { wert: "100+", text: "Interessenten für Mehrfamilienhäuser deutschlandweit" },
+  { wert: "50+", text: "neue Kapitalanlage-Interessenten pro Monat" },
+  { wert: "über 4 Mio. €", text: "begleitetes Finanzierungsvolumen 2026" },
+  { wert: google.rating, text: "von 5 Sternen aus " + google.count + " Google-Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>, Stand ' + google.checkedLabel }
+] }) }}
+
+{# §4.8 Personenblock: Porträt im Container, 4:5, höchstens 480 px hoch, Text daneben (Bild rechts) #}
+{% call split({ id: "naechste-immobilie", titel: "Verkaufen und die nächste Immobilie finanzieren", rechts: true, bild: "/images/team/timon-fischer-hell" | bild, alt: "Porträt von Timon Fischer, verantwortlich für Finanzierungen" }) %}
+  <p class="fgs-lead">Viele Eigentümer verkaufen, um eine andere Immobilie zu kaufen. Dann hängen zwei Termine voneinander ab: wann der Kaufpreis eingeht und wann die neue Immobilie bezahlt werden muss.</p>
+  <p>Weil wir Verkauf und Finanzierung zusammen begleiten, planen wir beides in einem Prozess: welcher Erlös realistisch ist, wie viel Eigenkapital daraus für den nächsten Kauf entsteht und welche Finanzierung zur Reihenfolge der Termine passt. Die Finanzierung vergleichen wir über Plattformen wie Europace und Baufinex und über direkte Bankkontakte. Eine Zusage bleibt immer die Entscheidung der Bank.</p>
+  <p>Läuft für Ihre jetzige Immobilie noch ein Darlehen, prüfen wir außerdem, ob es abgelöst oder auf die neue Immobilie übertragen werden kann, und was das jeweils kostet.</p>
+  <blockquote class="fgs-pull"><p>Wir verkaufen Eigentumswohnungen, Ein- und Zweifamilienhäuser, Mehrfamilienhäuser, Grundstücke und Pakete aus mehreren Wohnungen.</p></blockquote>
+  {{ textlink("/finanzierungsberatung.html", "Zur Finanzierungsberatung") }}
+{% endcall %}

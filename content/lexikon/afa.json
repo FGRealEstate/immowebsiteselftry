@@ -7,16 +7,135 @@
   "keywords": [
     "afa"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Steuern",
-  "explanation": "AfA verteilt die steuerlich abschreibungsfähigen Anschaffungs- oder Herstellungskosten eines Gebäudes über die Nutzungsdauer. Grund und Boden ist nicht abschreibbar. Bei Erwerb müssen Kaufpreis und zuordenbare Nebenkosten daher auf Gebäude und Boden aufgeteilt werden.",
-  "practiceExample": "Gesamtanschaffungskosten 440.000 €, davon 75 % Gebäudeanteil: AfA-Basis 330.000 €. Bei 2 % linearer AfA ergeben sich 6.600 € jährliche Abschreibung.",
-  "formula": "AfA p.a. = AfA-Bemessungsgrundlage × AfA-Satz",
+  "explanation": "Die AfA (Absetzung für Abnutzung) verteilt die Anschaffungskosten des Gebäudes über die Nutzungsdauer. Bei einer vermieteten Immobilie gehört sie zu den Werbungskosten. Abschreiben können Sie den Gebäudeanteil, nicht den Boden. Zur Grundlage zählt auch der Teil der Kaufnebenkosten, der auf das Gebäude entfällt.",
+  "practiceExample": "Die Beispielwohnung im Berliner Umland, etwa in Bernau, Baujahr 1995, kostet 160.000 € plus 18.512 € Nebenkosten. Bei einem angenommenen Gebäudeanteil von 80 % beträgt die Grundlage 142.810 €. Mit 2 % sind das 2.856 € AfA im Jahr. Weist ein Gutachten eine Restnutzungsdauer von 40 Jahren nach, sind es 3.570 € im Jahr, also 714 € mehr. Bei einem Grenzsteuersatz von 42 % spart das rund 300 € Steuer im Jahr.",
+  "formula": "AfA pro Jahr = Gebäudeanteil der Anschaffungskosten × AfA-Satz",
   "sources": [
     {
       "label": "§ 7 EStG",
       "url": "https://www.gesetze-im-internet.de/estg/__7.html"
     }
   ],
-  "assistantAnswer": "Absetzung für Abnutzung: steuerliche Verteilung des abschreibungsfähigen Gebäudewerts über die Nutzungsdauer. AfA verteilt die steuerlich abschreibungsfähigen Anschaffungs- oder Herstellungskosten eines Gebäudes über die Nutzungsdauer. Grund und Boden ist nicht abschreibbar. Bei Erwerb müssen Kaufpreis und zuordenbare Nebenkosten daher auf Gebäude und Boden aufgeteilt werden."
+  "assistantAnswer": "Absetzung für Abnutzung: steuerliche Verteilung des abschreibungsfähigen Gebäudewerts über die Nutzungsdauer. AfA verteilt die steuerlich abschreibungsfähigen Anschaffungs- oder Herstellungskosten eines Gebäudes über die Nutzungsdauer. Grund und Boden ist nicht abschreibbar. Bei Erwerb müssen Kaufpreis und zuordenbare Nebenkosten daher auf Gebäude und Boden aufgeteilt werden.",
+  "ausbau": {
+    "einordnung": [
+      "Die AfA (Absetzung für Abnutzung) verteilt die Anschaffungskosten des Gebäudes über die Nutzungsdauer. Bei einer vermieteten Immobilie gehört sie zu den Werbungskosten.[[1]] Abschreiben können Sie den Gebäudeanteil, nicht den Boden.[[2]] Zur Grundlage zählt auch der Teil der Kaufnebenkosten, der auf das Gebäude entfällt.[[3]]",
+      "Für Wohngebäude gelten feste Sätze: fertiggestellt ab 2023 jährlich 3 %, zwischen 1925 und 2022 jährlich 2 %, vor 1925 jährlich 2,5 %. Ist die tatsächliche Nutzungsdauer kürzer, bei Baujahren von 1925 bis 2022 unter 50 Jahren, kann die AfA nach dieser kürzeren Dauer bemessen werden.[[4]] Im Kaufjahr gibt es die AfA monatsweise.[[5]]",
+      "Für neue Wohngebäude gibt es eine degressive AfA von 5 % vom Restwert. Voraussetzung ist ein Baubeginn oder Kaufvertrag zwischen Oktober 2023 und September 2029; gekauft werden muss bis zum Ende des Jahres der Fertigstellung.[[4]]"
+    ],
+    "beispiel": [
+      "Die Beispielwohnung im Berliner Umland, etwa in Bernau, Baujahr 1995, kostet 160.000 € plus 18.512 € Nebenkosten. Bei einem angenommenen Gebäudeanteil von 80 % beträgt die Grundlage 142.810 €. Mit 2 % sind das 2.856 € AfA im Jahr.",
+      "Weist ein Gutachten eine Restnutzungsdauer von 40 Jahren nach, sind es 3.570 € im Jahr, also 714 € mehr. Bei einem Grenzsteuersatz von 42 % spart das rund 300 € Steuer im Jahr."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Restnutzungsdauer prüfen",
+        "absaetze": [
+          "Ein Restnutzungsdauergutachten stellt fest, wie lange die Immobilie wirtschaftlich noch nutzbar ist; liegt der Zeitraum unter der Annahme des Finanzamts, steigt die jährliche AfA. F&G nennt das für Kapitalanleger in der Regel den ersten sinnvollen Schritt nach dem Kauf.[[6]] Ob es sich lohnt, hängt vom Gebäude ab: Für vermietete Wohnungen im Barnimer Umland setzte der Gutachterausschuss Restnutzungsdauern von 29 bis 57 Jahren an, im Mittel 52.[[7]] F&G ordnet ein, wann eine Prüfung sinnvoll ist, und vermittelt auf Wunsch kostenfrei einen Gutachter.[[8,9]]"
+        ]
+      },
+      {
+        "h2": "Was es für Anleger heißt",
+        "absaetze": [
+          "Die AfA senkt die Steuer, ohne dass Geld fließt, und verbessert so den Cashflow nach Steuern. Verkaufen Sie innerhalb von zehn Jahren, mindert die AfA die Anschaffungskosten und erhöht den steuerpflichtigen Gewinn (siehe Spekulationsfrist).[[10]]"
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "§ 9 EStG",
+        "url": "https://www.gesetze-im-internet.de/estg/__9.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Steuertipps für Vermieter",
+        "url": "https://www.finanztip.de/steuertipps-vermieter/",
+        "stand": "Stand 08.07.2026"
+      },
+      {
+        "name": "Finanztip: Immobilien als Kapitalanlage",
+        "url": "https://www.finanztip.de/baufinanzierung/immobilie-kapitalanlage/",
+        "stand": "Stand 15.06.2026"
+      },
+      {
+        "name": "§ 7 EStG",
+        "url": "https://www.gesetze-im-internet.de/estg/__7.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Anschaffungsnahe Herstellungskosten und Erhaltungsaufwendungen",
+        "url": "https://www.finanztip.de/erhaltungsaufwand/",
+        "stand": "Stand 08.07.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Kapitalanlage",
+        "url": "https://fg-realestate.de/kapitalanlage.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Gutachterausschuss Barnim: Grundstücksmarktbericht 2025",
+        "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+        "stand": "Berichtsjahr 2025, abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Betreuung nach dem Kauf",
+        "url": "https://fg-realestate.de/betreuung-nach-dem-kauf/",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Startseite",
+        "url": "https://fg-realestate.de/",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 23 EStG",
+        "url": "https://www.gesetze-im-internet.de/estg/__23.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "AfA sind Werbungskosten",
+        "fundstelle": "runde-3.md, R04"
+      },
+      {
+        "zahl": "Boden nicht abschreibbar",
+        "fundstelle": "runde-3.md, U01"
+      },
+      {
+        "zahl": "Gebäudeanteil der Nebenkosten in der AfA-Grundlage",
+        "fundstelle": "runde-3.md, R08"
+      },
+      {
+        "zahl": "3 % / 2 % / 2,5 %; unter 50 Jahren tatsächliche Nutzungsdauer",
+        "fundstelle": "runde-3.md, R01, R02"
+      },
+      {
+        "zahl": "degressiv 5 % vom Restwert, 01.10.2023 bis 30.09.2029, Kauf bis Ende Fertigstellungsjahr",
+        "fundstelle": "runde-3.md, R03"
+      },
+      {
+        "zahl": "Kaufjahr monatsweise",
+        "fundstelle": "runde-3.md, R07"
+      },
+      {
+        "zahl": "Restnutzungsdauergutachten, erster sinnvoller Schritt (F&G); Einordnung und kostenfreie Vermittlung (F&G)",
+        "fundstelle": "runde-3.md, R05, R06"
+      },
+      {
+        "zahl": "Restnutzungsdauer 29 bis 57, Ø 52 Jahre",
+        "fundstelle": "runde-3.md, C13"
+      },
+      {
+        "zahl": "AfA mindert die Anschaffungskosten beim Verkauf",
+        "fundstelle": "runde-3.md, P01"
+      },
+      {
+        "zahl": "178.512 × 80 % = 142.809,60 €; × 2 % = 2.856,19 €; / 40 = 3.570,24 €; Differenz 714,05 € × 42 % = 299,90 €",
+        "fundstelle": "Rechnung, Marktprüfung runde-3.md"
+      }
+    ]
+  }
 }

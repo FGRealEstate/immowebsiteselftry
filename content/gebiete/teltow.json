@@ -1,0 +1,462 @@
+{
+  "slug": "teltow",
+  "name": "Teltow & Kleinmachnow",
+  "nameLang": "Teltow und Kleinmachnow",
+  "orte": [
+    "Teltow",
+    "Kleinmachnow"
+  ],
+  "kontakt": "lennart",
+  "kreis": {
+    "name": "Landkreis Potsdam-Mittelmark",
+    "url": "/standorte/potsdam-mittelmark/"
+  },
+  "title": "Immobilienmakler Teltow & Kleinmachnow – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler für Teltow und Kleinmachnow: Verkauf, Kauf und Finanzierung aus einer Hand, mit gezahlten Preisen 2025. Kostenlose Wertermittlung.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Teltow und Kleinmachnow",
+  "kurzantwort": "Fischer & Geserich begleitet Sie in Teltow und Kleinmachnow beim Verkauf, beim Kauf und bei der Finanzierung von Häusern und Wohnungen. Bewertung, Vermarktung, Ankaufsberatung und Finanzierung kommen aus einer Hand.",
+  "stand": "Oktober 2026",
+  "updated": "2026-10-26",
+  "zahlen": [
+    {
+      "wert": "450–1.250 €/m²",
+      "label": "Bodenrichtwerte für Wohn- und Mischbauflächen in Kleinmachnow",
+      "detail": "7 Zonen im Innenbereich, den höchsten Wert hat das Ortszentrum. Alle Bauland-Zonen sind gegenüber dem Vorjahr unverändert.",
+      "quelle": "Gutachterausschuss Potsdam-Mittelmark, Grundstücksmarktbericht 2025, Tabelle 7, und BORIS Brandenburg",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_PM.pdf",
+      "stichtag": "Stichtag 01.01.2026"
+    },
+    {
+      "wert": "360–700 €/m²",
+      "label": "Bodenrichtwerte für Wohn- und Mischbauflächen in Teltow",
+      "detail": "8 Zonen im Innenbereich, den höchsten Wert hat Seehof. 11 von 12 Bauland-Zonen sind gegenüber dem Vorjahr unverändert.",
+      "quelle": "Gutachterausschuss Potsdam-Mittelmark, Grundstücksmarktbericht 2025, Tabelle 7, und BORIS Brandenburg",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_PM.pdf",
+      "stichtag": "Stichtag 01.01.2026"
+    },
+    {
+      "wert": "Ø 5.409 €/m²",
+      "label": "Eigentumswohnungen in Teltow, alle Baujahre, gezahlter Preis je m² Wohnfläche",
+      "detail": "100 Kauffälle. 2024: 56 Kauffälle, Ø 4.444 €/m². Neubauwohnungen ab Baujahr 2021 im Erstverkauf: Ø 5.891 €/m² (76 Kauffälle).",
+      "quelle": "Gutachterausschuss Potsdam-Mittelmark, Grundstücksmarktbericht 2025 (Version 1.2), Tabellen 69 und 72",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_PM.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 5.338 €/m²",
+      "label": "Eigentumswohnungen in Kleinmachnow, alle Baujahre, gezahlter Preis je m² Wohnfläche",
+      "detail": "28 Kauffälle. 2024: 20 Kauffälle, Ø 4.789 €/m².",
+      "quelle": "Gutachterausschuss Potsdam-Mittelmark, Grundstücksmarktbericht 2025, Tabelle 69",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_PM.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "277 · 142",
+      "label": "Kauffälle in Teltow und in Kleinmachnow",
+      "detail": "Teltow: 129 Wohnungs- und Teileigentume, 102 bebaute Grundstücke. Kleinmachnow: 89 bebaute Grundstücke, 43 Wohnungs- und Teileigentume.",
+      "quelle": "Gutachterausschuss Potsdam-Mittelmark, Grundstücksmarktbericht 2025, Tabelle 3",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_PM.pdf",
+      "stichtag": "Kalenderjahr 2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Teltow: Bahnhof, Seehof und Sigridshorst",
+      "absaetze": [
+        "Teltow grenzt unmittelbar an den Berliner Bezirk Steglitz-Zehlendorf.[[11]] Am 31.12.2025 hatte die Stadt 27.698 Einwohner, 16 mehr als ein Jahr zuvor.[[4]] Am Bahnhof Teltow Stadt halten die S-Bahn-Linien S25 und S26 sowie 11 Buslinien. Beide S-Bahnen fahren ohne Umstieg in 27 Minuten bis Friedrichstraße; vom Regionalbahnhof Teltow braucht der RE3 19 Minuten bis Berlin Hauptbahnhof. Der abrufbare Fahrplan gilt für eine Bauzeit.[[20]]",
+        "Teltow ist auch Arbeitsort. Die Stadt hat vier Gewerbegebiete, darunter das Techno Terrain Teltow und das Technologiezentrum, und nennt Unternehmen aus der optischen Technologie und der Mikrosystemtechnik.[[12]] Zum Schulangebot gehören das Immanuel-Kant-Gymnasium, die Grace-Hopper-Gesamtschule mit Unterricht bis Klasse 13 und das Oberstufenzentrum Technik mit rund 1.500 Schülern.[[14]]",
+        "Der Bodenrichtwert für Wohnbauland liegt zum 01.01.2026 in Seehof bei 700 €/m², an der Iserstraße und der Mahlower Straße bei je 550 €/m² und in Sigridshorst bei 500 €/m². Östlich vom Bahnhof sind es 380 €/m² für gemischte Bauflächen. Keiner dieser Werte hat sich gegenüber dem Vorjahr verändert.[[2]] Neubauwohnungen ab Baujahr 2021 kosteten 2025 im Erstverkauf durchschnittlich 5.891 €/m² Wohnfläche, weiterverkaufte Wohnungen der Baujahre 1991 bis 2000 durchschnittlich 3.840 €/m².[[1]] Seit 2021 sind in Teltow 720 Wohnungen im Geschosswohnungsbau entstanden.[[17]]"
+      ],
+      "bild": {
+        "name": "teltow-baeckerstrasse",
+        "alt": "Niedriges Altstadthaus mit Bäckerei an der gepflasterten Bäckerstraße",
+        "caption": "Bäckerstraße in der Teltower Altstadt.",
+        "credit": "Clemensfranz, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:B%C3%A4ckerstra%C3%9Fe_Teltow_2018.jpg"
+      }
+    },
+    {
+      "h2": "Kleinmachnow: Ortszentrum, Ost, West und Dreilinden",
+      "absaetze": [
+        "Die Wohnstruktur in Kleinmachnow ist vor allem von Ein- und Mehrfamilienhäusern geprägt. Mietwohnungen gibt es wenige, die meisten gehören der gemeindlichen Wohnungsgesellschaft gewog.[[10]] Am 31.12.2025 lebten in Kleinmachnow 19.174 Menschen, 100 weniger als ein Jahr zuvor.[[4]] Einen eigenen Bahnhof hat der Ort nicht. Vom Rathausmarkt fahren die Busse 620, 622 und 623 zur S-Bahn; mit Bus 623 und der S1 über Zehlendorf dauert die Fahrt bis Friedrichstraße 48 Minuten.[[20]]",
+        "Der Bodenrichtwert liegt zum 01.01.2026 im Ortszentrum bei 1.250 €/m², an der Medonstraße bei 1.150 €/m² und in Kleinmachnow Ost und West bei je 950 €/m². Am Weinberg sind es 650 €/m², im Alten Dorf 600 €/m² und in Dreilinden 450 €/m². Alle Werte sind gegenüber dem Vorjahr unverändert.[[3]]",
+        "Häuser bis Baujahr 1948 mit kleinen Modernisierungen kosteten 2025 durchschnittlich 5.934 €/m² Wohnfläche bei 11 Kauffällen, bei mittlerem Modernisierungsgrad 6.386 €/m² und bei Baujahren 2001 bis 2010 6.406 €/m². Weiterverkaufte Wohnungen der Baujahre 1991 bis 2000 kosteten durchschnittlich 3.950 €/m².[[1]] Im Europarc Dreilinden haben über 125 Unternehmen mit mehr als 3.500 Mitarbeitenden ihren Sitz.[[13]] Neben dem Gymnasium am Weinberg und der Maxim-Gorki-Gesamtschule gibt es mehrere Schulen in freier Trägerschaft, darunter die Berlin Brandenburg International School.[[15]]"
+      ],
+      "bild": {
+        "name": "teltow-kleinmachnow-neue-kammerspiele",
+        "alt": "Die Neuen Kammerspiele in Kleinmachnow: ein Haus mit Gauben und Efeu, davor Sonnenschirme und Tische unter hohen Bäumen",
+        "caption": "Die Neuen Kammerspiele in Kleinmachnow.",
+        "credit": "Carl Ha, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Neue_Kammerspiele_(Kleinmachnow)_12.jpg"
+      }
+    },
+    {
+      "h2": "Ruhlsdorf, neue Quartiere und die S-Bahn nach Stahnsdorf",
+      "absaetze": [
+        "Teltow hat einen Ortsteil, Ruhlsdorf, dazu Wohnplätze wie Seehof, Birkengrund und die Staedtlersiedlung.[[1]] Der Bodenrichtwert liegt zum 01.01.2026 in Ruhlsdorf bei 360 €/m² und in der Staedtlersiedlung bei 400 €/m².[[2]] Die Grundschule „Am Röthepfuhl“ in Ruhlsdorf ist die kleinste Grundschule Teltows.[[14]]",
+        "In Teltow entstehen weitere Wohnungen. Am 1. Juli 2026 hat die Stadtverordnetenversammlung den Bebauungsplan Nr. 77 „Wohnquartier am Hollandweg“ beschlossen, der rund 200 neue Wohnungen ermöglicht.[[16]] Für das ehemalige Speichergelände sind im Vorentwurf 500 Wohnungen geplant, davon 150 preisgebunden.[[17]]",
+        "Die S25 soll von Teltow Stadt bis Stahnsdorf verlängert werden, mit einer neuen Station an der Iserstraße und der Endstation Sputendorfer Straße. Das Projekt ist in der Entwurfsplanung, die Inbetriebnahme ist voraussichtlich für 2032 vorgesehen.[[18]] Das Planfeststellungsverfahren soll Ende 2027 beginnen.[[19]] Für Kleinmachnow werden im Projekt Potsdamer Stammbahn Stationen in Dreilinden und Düppel-Kleinmachnow untersucht. Die Vorplanung soll 2027 abgeschlossen sein, einen Termin für den Betrieb gibt es noch nicht.[[18]]"
+      ],
+      "bild": {
+        "name": "teltow-ruhlsdorf-dorfkirche",
+        "alt": "Kleine verputzte Dorfkirche mit Satteldach, rundem Fenster im Giebel und Glockenturm, zwischen hohen Laubbäumen, ein Weg führt durch hohes Gras zur Tür",
+        "caption": "Die Dorfkirche in Ruhlsdorf, Ortsteil von Teltow.",
+        "credit": "0000ff, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:DE-BB-Ruhlsdorf-Dorfkirche-2025.jpg"
+      }
+    }
+  ],
+  "band": {
+    "name": "teltow-teltowkanal-aue",
+    "alt": "Der Teltowkanal zwischen grünen Ufern, rechts ein Hang mit hellgrünen Laubbäumen im Frühling, vorn Schilf und Gräser am Wasser",
+    "caption": "Der Teltowkanal mit der Kanalaue bei Kleinmachnow.",
+    "credit": "Andreas Lippold, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Teltowkanal-Aue_Kleinmachnow.jpg",
+    "position": "50% 60%"
+  },
+  "anbindung": [
+    "Am Bahnhof Teltow Stadt halten die S-Bahn-Linien S25 und S26 sowie 11 Buslinien. Beide S-Bahnen fahren ohne Umstieg in 27 Minuten bis Friedrichstraße; vom Regionalbahnhof Teltow braucht der RE3 19 Minuten bis Berlin Hauptbahnhof. Der abrufbare Fahrplan gilt für eine Bauzeit.[[20]]",
+    "Wer selbst einziehen will, sollte in Kleinmachnow den Weg zur S-Bahn einplanen; einen Bahnhof hat der Ort nicht. Vom Rathausmarkt fahren die Busse 620, 622 und 623 zur S-Bahn; mit Bus 623 und der S1 über Zehlendorf dauert die Fahrt bis Friedrichstraße 48 Minuten.[[20]]"
+  ],
+  "karte": {
+    "alt": "Karte von Teltow und Kleinmachnow: Teltow mit Seehof, Sigridshorst und Ruhlsdorf, Kleinmachnow mit Dreilinden, dazu Stahnsdorf, die Bahnstrecken, der Teltowkanal und die Grenze zu Berlin im Norden"
+  },
+  "verkaufen": {
+    "h2": "Immobilie in Teltow oder Kleinmachnow verkaufen",
+    "absaetze": [
+      "Die beiden Märkte sind verschieden. In Teltow betrafen 2025 129 der 277 Kauffälle Wohnungs- und Teileigentum, in Kleinmachnow 89 der 142 Kauffälle bebaute Grundstücke. Wer in Teltow eine Wohnung der Baujahre 1991 bis 2000 verkauft, steht neben vielen Neubauten: 76 Neubauwohnungen wurden 2025 erstmals verkauft.[[1]] Für die Bewertung ziehen wir deshalb die Weiterverkäufe derselben Baujahre heran, 14 Kauffälle mit durchschnittlich 3.840 €/m², nicht den Neubaupreis.",
+      "Bei Häusern in Kleinmachnow ist die Spanne groß. Für Baujahre bis 1948 mit kleinen Modernisierungen lagen die gezahlten Preise 2025 zwischen 3.200 und 8.721 €/m² Wohnfläche.[[1]] Grundstück, Zustand und Lage innerhalb der Zone machen den Unterschied, deshalb bewerten wir jedes Haus einzeln, kostenlos und meistens innerhalb weniger Stunden."
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Teltow und Kleinmachnow",
+    "absaetze": [
+      "Wer selbst einziehen will, sollte in Kleinmachnow den Weg zur S-Bahn einplanen; einen Bahnhof hat der Ort nicht. In Teltow lohnt der Blick auf die Bebauungspläne in der Nachbarschaft und auf die geplante S-Bahn-Station an der Iserstraße.",
+      "Teltow und Kleinmachnow gehören seit dem 1. Januar 2026 zur Gebietskulisse der Mietpreisbremse, die bis 31.12.2029 gilt; im Gutachten für die Landesverordnung erreichte Teltow 10 von 10 möglichen Punkten, Kleinmachnow 8.[[5,7]] In Gebäuden, die vor dem 1. Oktober 2014 fertiggestellt und bezogen wurden, darf eine neue Miete die ortsübliche Vergleichsmiete um höchstens 10 % übersteigen. Für die Teltower Neubauten seit 2021 gilt sie damit nicht.[[5]] Bestandsmieten dürfen bis 31.12.2030 in drei Jahren um höchstens 15 % steigen.[[6]]",
+      "Die Vergleichsmiete belegt in Teltow der qualifizierte Mietspiegel 2022 mit Stichtag 31.10.2021. Sein niedrigster qualifizierter Mittelwert liegt bei 5,62 €/m² für Baujahre 1980 bis 1989 ab 65 m², der höchste bei 12,83 €/m² für Baujahre 2020 bis Oktober 2021 mit 45 bis unter 80 m².[[8]] Der für Mitte 2026 angekündigte neue Mietspiegel war am 24.10.2026 noch nicht veröffentlicht.[[9]] Kleinmachnows letzter qualifizierter Mietspiegel stammt von 2014 und wird vorerst nicht aktualisiert.[[10]]"
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Teltow und Kleinmachnow",
+    "absaetze": [
+      "Ob Haus in Kleinmachnow oder Neubauwohnung in Teltow: Wir vergleichen die Finanzierung über die Plattformen Europace und Baufinex und über direkte Bankkontakte. Bei Kleinmachnower Häusern geht es um hohe Summen: 2025 kostete dort ein Haus der Baujahre 2001 bis 2010 durchschnittlich 1.141.800 €, eine Eigentumswohnung 499.510 €.[[1]] Kaufen Sie in Teltow eine Neubauwohnung noch während der Bauzeit, zahlt die Bank in Raten nach Baufortschritt aus und bis dahin können Bereitstellungszinsen anfallen."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Ist Teltow eine gute Wohngegend?",
+      "antwort": "Das hängt davon ab, was Ihnen wichtig ist. Teltow grenzt direkt an Steglitz-Zehlendorf, die S25 und die S26 fahren ohne Umstieg bis Friedrichstraße, der RE3 bis Berlin Hauptbahnhof.[[11,20]] In der Stadt gibt es vier Gewerbegebiete, ein Gymnasium, eine Gesamtschule bis Klasse 13 und ein Oberstufenzentrum.[[12,14]] Weitere Wohnquartiere sind beschlossen oder in Planung.[[16,17]]",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienmakler Teltow Kleinmachnow“ (Google_Areas, Oktober 2026)"
+    },
+    {
+      "frage": "Wie hoch ist der Quadratmeterpreis in Kleinmachnow?",
+      "antwort": "Eigentumswohnungen in Kleinmachnow kosteten 2025 durchschnittlich 5.338 €/m² Wohnfläche, bei 28 Kauffällen. Bei Häusern hängt der Preis stark vom Baujahr ab: durchschnittlich 5.934 €/m² bei Baujahren bis 1948 mit kleinen Modernisierungen und 6.406 €/m² bei Baujahren 2001 bis 2010.[[1]] Die Bodenrichtwerte für Wohn- und Mischbauflächen liegen zum 01.01.2026 zwischen 450 und 1.250 €/m².[[3]]",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilie verkaufen Teltow Kleinmachnow“ (Google_Areas, Oktober 2026); Autocomplete „immobilienpreise kleinmachnow“ und „entwicklung immobilienpreise kleinmachnow“ am 24.10.2026 (research/serp/autocomplete-2026-10-24.json)"
+    },
+    {
+      "frage": "Wie hoch ist der Bodenrichtwert in Teltow 2026?",
+      "antwort": "Zum 01.01.2026 liegt er für Wohn- und Mischbauflächen im Innenbereich zwischen 360 €/m² in Ruhlsdorf und 700 €/m² in Seehof; in Sigridshorst sind es 500 €/m², in der Staedtlersiedlung 400 €/m². Von 12 Bauland-Zonen ist nur eine gestiegen, ein Gewerbegebiet an der Stahnsdorfer Straße.[[2]] Zuständig ist der Gutachterausschuss im Landkreis Potsdam-Mittelmark, nicht der im Landkreis Teltow-Fläming.",
+      "herkunft": "Google-Autocomplete „bodenrichtwert teltow 2026“, „… sigridshorst“, „… ruhlsdorf“ und „bodenrichtwert teltow fläming“ am 24.10.2026 (research/serp/autocomplete-2026-10-24.json)"
+    },
+    {
+      "frage": "Steigen die Immobilienpreise in Teltow und Kleinmachnow wieder?",
+      "antwort": "Eine Prognose geben wir nicht. Eigentumswohnungen kosteten 2025 in Teltow durchschnittlich 5.409 €/m² nach 4.444 €/m² im Jahr 2024, in Kleinmachnow 5.338 €/m² nach 4.789 €/m². Der Durchschnitt hängt auch davon ab, was verkauft wurde; in Teltow wurden 2025 auch 76 Neubauwohnungen erstmals verkauft.[[1]] Die Bodenrichtwerte zum 01.01.2026 sind in Kleinmachnow in allen Zonen und in Teltow in 11 von 12 Bauland-Zonen unverändert.[[2,3]]",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilie verkaufen Teltow Kleinmachnow“: „Werden die Immobilienpreise 2026 wieder steigen?“ (Google_Areas, Oktober 2026); Autocomplete „entwicklung immobilienpreise kleinmachnow“ (research/serp/autocomplete-2026-10-24.json)"
+    },
+    {
+      "frage": "Teltow oder Kleinmachnow: Wo ist Wohneigentum günstiger?",
+      "antwort": "Bei Wohnungen liegen beide Orte nah beieinander: Eigentumswohnungen kosteten 2025 in Teltow durchschnittlich 5.409 €/m², in Kleinmachnow 5.338 €/m².[[1]] Deutlicher ist der Unterschied beim Boden: Zum 01.01.2026 liegen die Bodenrichtwerte für Wohn- und Mischbauflächen im Innenbereich in Teltow bei 360 bis 700 €/m², in Kleinmachnow bei 450 bis 1.250 €/m².[[2,3]] Häuser der Baujahre 2001 bis 2010 kosteten in Teltow durchschnittlich 5.408 €/m² Wohnfläche bei 3 Kauffällen, in Kleinmachnow 6.406 €/m² bei 5 Kauffällen.[[1]]",
+      "herkunft": "KI-Recherche vom 24.10.2026, ChatGPT-Frage „Teltow oder Kleinmachnow“ (research/serp/ki-assistenten-2026-10-24.md); Autocomplete „haus kaufen in kleinmachnow oder stahnsdorf“ (research/serp/autocomplete-2026-10-24.json)"
+    },
+    {
+      "frage": "Wie kann ich den Wert meiner Immobilie in Teltow oder Kleinmachnow kostenlos ermitteln?",
+      "antwort": "Einen ersten Anhaltspunkt geben die Bodenrichtwerte in BORIS Brandenburg und die gezahlten Preise im Grundstücksmarktbericht des Gutachterausschusses Potsdam-Mittelmark, beides ist kostenlos. Für Häuser sind die Fallzahlen dort klein: Für Kleinmachnower Häuser der Baujahre 2001 bis 2010 gab es 2025 fünf Kauffälle. Unsere Wertermittlung ist ebenfalls kostenlos, berücksichtigt Zustand, Grundstück und die aktuelle Konkurrenz und liegt meistens nach wenigen Stunden vor. Ein Verkehrswertgutachten für Gericht oder Finanzamt ersetzt sie nicht.",
+      "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienbewertung Teltow Kleinmachnow“: „Wie kann ich den Verkehrswert einer Immobilie kostenlos ermitteln?“ und „Wie kann ich selbst den Wert einer Immobilie ermitteln?“ (Google_Areas, Oktober 2026)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Berlin",
+      "url": "/standorte/berlin/"
+    },
+    {
+      "name": "Potsdam",
+      "url": "/standorte/potsdam/"
+    },
+    {
+      "name": "Königs Wusterhausen",
+      "url": "/standorte/konigs-wusterhausen/"
+    },
+    {
+      "name": "Falkensee",
+      "url": "/standorte/falkensee/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Grundstücksmarktbericht 2025, Gutachterausschuss für Grundstückswerte im Landkreis Potsdam-Mittelmark (Version 1.2 vom 07.08.2026)",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_PM.pdf",
+      "stand": "Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+    },
+    {
+      "name": "Bodenrichtwerte Teltow, BORIS Brandenburg (GeoBasis-DE/LGB, dl-de/by-2-0)",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?limit=1000&skipGeometry=true&gemeinde_bezeichnung=Teltow&stichtag=2026-01-01&f=json",
+      "stand": "Stichtag 01.01.2026, Vergleich 01.01.2025"
+    },
+    {
+      "name": "Bodenrichtwerte Kleinmachnow, BORIS Brandenburg (GeoBasis-DE/LGB, dl-de/by-2-0)",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?limit=1000&skipGeometry=true&gemeinde_bezeichnung=Kleinmachnow&stichtag=2026-01-01&f=json",
+      "stand": "Stichtag 01.01.2026, Vergleich 01.01.2025"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 4 – j / 25 (Bevölkerung)",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Mietpreisbegrenzungsverordnung Brandenburg, MIL",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/Mietpreisbegrenzungsverordnung.pdf",
+      "stand": "gültig 01.01.2026–31.12.2029"
+    },
+    {
+      "name": "Kappungsgrenzenverordnung Brandenburg, MIL",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/KappGrenzV.pdf",
+      "stand": "gültig 01.01.2026–31.12.2030"
+    },
+    {
+      "name": "RegioKontext, Gutachten zur Gebietskulisse der Mietpreisbegrenzungsverordnungen, Tabelle 3",
+      "url": "https://bravors.brandenburg.de/fm/68/Anlage_Gutachten.pdf",
+      "stand": "18.09.2025"
+    },
+    {
+      "name": "Stadt Teltow, Mietspiegel (Qualifizierter Mietspiegel 2022)",
+      "url": "https://www.teltow.de/seite/714657/mietspiegel.html",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Teltow, Meldung „Neuer Mietspiegel ab Mitte 2026“",
+      "url": "https://www.teltow.de/news/2609/1164676/kategorie/neuer-mietspiegel-ab-mitte-2026.html",
+      "stand": "28.11.2025"
+    },
+    {
+      "name": "Gemeinde Kleinmachnow, Wohnen in Kleinmachnow",
+      "url": "https://www.kleinmachnow.de/Umwelt-Planung/Ortsentwicklung/Wohnen/",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Teltow, Daten, Fakten & Zahlen",
+      "url": "https://www.teltow.de/seite/706491/daten-fakten-zahlen.html",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Teltow, Gewerbegebiete und Technologie- und Gründerzentrum",
+      "url": "https://www.teltow.de/seite/782573/gewerbegebiete.html",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Gemeinde Kleinmachnow, Gewerbegebiete (Europarc Dreilinden)",
+      "url": "https://www.kleinmachnow.de/Kleinmachnow/Wirtschaft/Gewerbegebiete/",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Stadt Teltow, Schulen",
+      "url": "https://www.teltow.de/seite/782574/schulen.html",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Gemeinde Kleinmachnow, Schulen",
+      "url": "https://www.kleinmachnow.de/Familie-Bildung/Bildung/Schulen/",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Planergemeinschaft, Bebauungsplan Nr. 77 „Wohnquartier am Hollandweg“",
+      "url": "https://www.planergemeinschaft.de/aktuelles/b-plan-nr-77-wohnquartier-am-hollandweg-und-23-aenderung-des-flaechennutzungsplanes-der",
+      "stand": "06.07.2026"
+    },
+    {
+      "name": "BÄKE Courier, „Kaum Entlastung im Wohnungsmarkt“ (Presse)",
+      "url": "https://baeke-courier.de/2026/10/15/kaum-entlastung-im-wohnungsmarkt/",
+      "stand": "15.10.2026"
+    },
+    {
+      "name": "i2030, Korridor Südwest (S25 Süd, Potsdamer Stammbahn)",
+      "url": "https://www.i2030.de/suedwest/",
+      "stand": "Seite geändert 10.07.2026"
+    },
+    {
+      "name": "Stadt Teltow, S-Bahn-Verlängerung nach Stahnsdorf",
+      "url": "https://www.teltow.de/seite/739498/s-bahn-verl%C3%A4ngerung-nach-stahnsdorf.html",
+      "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "VBB-Fahrplandaten (Linien und Fahrzeiten ab S Teltow Stadt, Teltow Bahnhof und Kleinmachnow Rathausmarkt)",
+      "url": "https://v6.vbb.transport.rest/stops/900220114?linesOfStops=true",
+      "stand": "Fahrplan Dienstag 10.11.2026 (Bauzeit), abgefragt 24.10.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "BRW-Spanne Kleinmachnow Innenbereich 450–1.250, 7 Zonen; Außenbereich 500",
+      "fundstelle": "teltow-kleinmachnow.md, Zeile 65"
+    },
+    {
+      "zahl": "BRW-Spanne Teltow Innenbereich 360–700, 8 Zonen; Außenbereich 280",
+      "fundstelle": "teltow-kleinmachnow.md, Zeile 45"
+    },
+    {
+      "zahl": "Kleinmachnow alle 12 Bauland-Zonen unverändert; Teltow 11 von 12 unverändert, eine gestiegen (G Stahnsdorfer Straße 80→140)",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 29, 44, 49"
+    },
+    {
+      "zahl": "ETW Teltow alle Baujahre 100 / Ø 5.409; 2024: 56 / Ø 4.444",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 76, 77"
+    },
+    {
+      "zahl": "ETW Kleinmachnow alle Baujahre 28 / Ø 5.338 / Ø 499.510 €; 2024: 20 / Ø 4.789",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 78, 79"
+    },
+    {
+      "zahl": "ETW-Erstverkauf Teltow ab Baujahr 2021: 76 / Ø 5.891",
+      "fundstelle": "teltow-kleinmachnow.md, Zeile 80"
+    },
+    {
+      "zahl": "ETW-Weiterverkauf 1991–2000: Teltow 14 / Ø 3.840; Kleinmachnow Ø 3.950",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 83, 84"
+    },
+    {
+      "zahl": "Kauffälle Teltow 277 (102 bebaut, 129 WE/TE); Kleinmachnow 142 (89 bebaut, 43 WE/TE)",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 73, 74"
+    },
+    {
+      "zahl": "EFH Kleinmachnow bis 1948 kl. Mod. 11 / Ø 5.934, Spanne 3.200–8.721; mittl. Mod. Ø 6.386; 2001–2010 5 / Ø 6.406 / Ø 1.141.800 €",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 93, 94, 96"
+    },
+    {
+      "zahl": "EFH Teltow 2001–2010: 3 / Ø 5.408",
+      "fundstelle": "teltow-kleinmachnow.md, Zeile 91"
+    },
+    {
+      "zahl": "Einwohner Teltow 27.698 (+16), Kleinmachnow 19.174 (−100), 31.12.2025",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 146, 147, 152"
+    },
+    {
+      "zahl": "Steglitz-Zehlendorf grenzt unmittelbar an Teltow",
+      "fundstelle": "teltow-kleinmachnow.md, Zeile 218"
+    },
+    {
+      "zahl": "S Teltow Stadt: S25, S26, 11 Buslinien; Bahnhof Teltow: RE3",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 176, 177, 275"
+    },
+    {
+      "zahl": "S25/S26 27 Min. bis Friedrichstraße; RE3 19 Min. bis Hauptbahnhof; Fahrplan 10.11.2026, Bauzeit",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 23, 182, 186, 187, 189"
+    },
+    {
+      "zahl": "Kleinmachnow kein Bahnhof; Rathausmarkt Busse 620, 622, 623; Bus 623 + S1 48 Min.",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 178, 180, 190–192"
+    },
+    {
+      "zahl": "vier Gewerbegebiete, Techno Terrain Teltow, Technologiezentrum; Optische Technologie und Mikrosystemtechnik",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 247, 248"
+    },
+    {
+      "zahl": "Immanuel-Kant-Gymnasium; Grace-Hopper-Gesamtschule Klassen 7 bis 13; OSZ Technik rund 1500 Schüler",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 234–236"
+    },
+    {
+      "zahl": "BRW Teltow Seehof 700, Iserstr. 550, Mahlower Straße 550, Sigridshorst 500, östlich vom Bahnhof 380 (M), alle unverändert",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 33–37, 39"
+    },
+    {
+      "zahl": "720 Wohneinheiten im Geschosswohnungsbau seit 2021 (Sekundärquelle BÄKE Courier 15.10.2026)",
+      "fundstelle": "teltow-kleinmachnow.md, Zeile 221"
+    },
+    {
+      "zahl": "Wohnstruktur Ein- und Mehrfamilienhäuser; wenige Mietwohnungen, überwiegend gewog",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 225, 226"
+    },
+    {
+      "zahl": "BRW Kleinmachnow Ortszentrum 1.250, Medonstr. 1.150, Ost 950, West 950, Am Weinberg 650, Altes Dorf 600, Dreilinden 450",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 53–58, 60"
+    },
+    {
+      "zahl": "Europarc Dreilinden: über 125 Unternehmen, mehr als 3.500 Mitarbeitende",
+      "fundstelle": "teltow-kleinmachnow.md, Zeile 253"
+    },
+    {
+      "zahl": "Gymnasium am Weinberg, Maxim-Gorki-Gesamtschule, BBIS (freie Trägerschaft)",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 240–242"
+    },
+    {
+      "zahl": "Teltow: Ortsteil Ruhlsdorf; Wohnplätze Seehof, Birkengrund, Staedtlersiedlung",
+      "fundstelle": "teltow-kleinmachnow.md, Zeile 217"
+    },
+    {
+      "zahl": "BRW Ruhlsdorf 360, Staedtlersiedlung 400",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 38, 40"
+    },
+    {
+      "zahl": "Grundschule „Am Röthepfuhl“ in Ruhlsdorf, kleinste Grundschule Teltows",
+      "fundstelle": "teltow-kleinmachnow.md, Zeile 233"
+    },
+    {
+      "zahl": "B-Plan Nr. 77 beschlossen 1. Juli 2026, ca. 200 Wohnungen (Planungsbüro); BÄKE nennt 190, nicht verwendet",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 260, 261"
+    },
+    {
+      "zahl": "Speichergelände B-Plan Nr. 14: Vorentwurf, 500 Wohnungen, 150 preisgebunden (Sekundärquelle)",
+      "fundstelle": "teltow-kleinmachnow.md, Zeile 262"
+    },
+    {
+      "zahl": "S25 Süd: Station Iserstraße, Endstation Sputendorfer Straße; Entwurfsplanung; Inbetriebnahme vsl. 2032; Planfeststellung Ende 2027 (Stadt Teltow)",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 203, 205–207"
+    },
+    {
+      "zahl": "Stammbahn: Stationen Dreilinden, Düppel-Kleinmachnow in Untersuchung; Vorplanung Abschluss vsl. 2027; kein Inbetriebnahmedatum",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 209, 210"
+    },
+    {
+      "zahl": "Mietpreisbremse Teltow und Kleinmachnow 01.01.2026–31.12.2029",
+      "fundstelle": "teltow-kleinmachnow.md, Zeile 122"
+    },
+    {
+      "zahl": "10 % über Vergleichsmiete in Gebäuden vor 01.10.2014; 15 % in drei Jahren",
+      "fundstelle": "teltow-kleinmachnow.md, Zeile 123"
+    },
+    {
+      "zahl": "Kappungsgrenze Teltow und Kleinmachnow bis 31.12.2030",
+      "fundstelle": "teltow-kleinmachnow.md, Zeile 124 (nachgetragen 25.10.2026 aus KappGrenzV)"
+    },
+    {
+      "zahl": "Gutachten Gebietskulisse: Teltow 10 Punkte, Kleinmachnow 8, Maximum 10",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 125, 126"
+    },
+    {
+      "zahl": "Mietspiegel Teltow 2022, Stichtag 31.10.2021; E5 Ø 5,62 (1980–1989, ab 65 m²); I1 Ø 12,83 (2020 bis 31.10.2021, 45 bis unter 80 m²)",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 110, 112, 117"
+    },
+    {
+      "zahl": "neuer Mietspiegel Teltow für Mitte 2026 angekündigt, am 24.10.2026 nicht veröffentlicht",
+      "fundstelle": "teltow-kleinmachnow.md, Zeile 119"
+    },
+    {
+      "zahl": "Mietspiegel Kleinmachnow zuletzt 2014, vorerst nicht aktualisiert",
+      "fundstelle": "teltow-kleinmachnow.md, Zeile 120"
+    },
+    {
+      "zahl": "Zuständig GA Potsdam-Mittelmark (nicht Teltow-Fläming)",
+      "fundstelle": "teltow-kleinmachnow.md, Zeilen 11–12"
+    },
+    {
+      "zahl": "Autocomplete-Fragen (bodenrichtwert teltow …, immobilienpreise kleinmachnow …)",
+      "fundstelle": "research/serp/autocomplete-2026-10-24.json, Schlüssel „teltow“"
+    }
+  ],
+  "kurzantwortMehr": "Grundlage sind die Erlaubnisse nach § 34c und § 34i GewO; der Sitz des Unternehmens ist in Berlin. Für beide Orte ist Lennart Geserich Ihr Ansprechpartner, Head of Sales & Vermietung bei Fischer & Geserich.",
+  "hero": {
+    "name": "teltow-altes-rathaus",
+    "alt": "Das Alte Rathaus in Teltow an einem sonnigen Tag, davor ein gepflasterter Platz und junge Bäume",
+    "credit": "JoachimKohler-HB, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:%22Rath_Haus%22,_Altes_Rathaus_in_Teltow_(2026).jpg"
+  }
+}

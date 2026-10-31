@@ -7,11 +7,142 @@
   "keywords": [
     "weg"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Vermietung",
   "formula": null,
   "sources": [],
   "assistantAnswer": "Wohnungseigentümergemeinschaft. WEG bezeichnet je nach Kontext das Wohnungseigentumsgesetz oder die Gemeinschaft der Wohnungseigentümer. Für ETW-Investoren sind Beschlüsse, Kostenverteilung, Rücklagen und Zustand des Gemeinschaftseigentums zentrale Risikofaktoren.",
-  "explanation": "WEG bezeichnet je nach Kontext das Wohnungseigentumsgesetz oder die Gemeinschaft der Wohnungseigentümer. Für ETW-Investoren sind Beschlüsse, Kostenverteilung, Rücklagen und Zustand des Gemeinschaftseigentums zentrale Risikofaktoren.",
-  "practiceExample": "Eine Wohnung selbst kann frisch saniert sein, während die WEG gleichzeitig eine teure Fassaden- und Dachmaßnahme beschließt."
+  "explanation": "WEG steht für die Wohnungseigentümergemeinschaft und ist zugleich die Abkürzung des Wohnungseigentumsgesetzes. Wer eine Eigentumswohnung kauft, erwirbt Sondereigentum an der Wohnung und einen Miteigentumsanteil am gemeinschaftlichen Eigentum, also am Grundstück und an den Teilen des Gebäudes, die nicht Sondereigentum sind. Die Gemeinschaft entsteht mit Anlegung der Wohnungsgrundbücher; sie kann Rechte erwerben, Verbindlichkeiten eingehen und klagen. Gläubigern haften die Eigentümer nach ihrem Anteil.",
+  "practiceExample": "Angenommen, Ihre Wohnung in Bernau mit 65 m² liegt in einer Anlage mit 15 Wohnungen und zusammen 1.000 m². Ist der Anteil nach der Fläche bemessen, halten Sie 65/1.000, also 6,5 %. Legt die Gemeinschaft 10 €/m² im Jahr zurück, sind das 10.000 €, Ihr Anteil 650 €. Über ein neues Fahrradhaus im Hof stimmen 12 anwesende Eigentümer ab, 9 sind dafür: 75 % der abgegebenen Stimmen. Damit alle die Kosten nach Anteil tragen, verlangt das Gesetz mehr als zwei Drittel der abgegebenen Stimmen und die Hälfte aller Miteigentumsanteile; es kommt also auch darauf an, wie viele Anteile die 9 zusammen halten.",
+  "ausbau": {
+    "einordnung": [
+      "WEG steht für die Wohnungseigentümergemeinschaft und ist zugleich die Abkürzung des Wohnungseigentumsgesetzes. Wer eine Eigentumswohnung kauft, erwirbt Sondereigentum an der Wohnung und einen Miteigentumsanteil am gemeinschaftlichen Eigentum, also am Grundstück und an den Teilen des Gebäudes, die nicht Sondereigentum sind.[[1]] Die Gemeinschaft entsteht mit Anlegung der Wohnungsgrundbücher; sie kann Rechte erwerben, Verbindlichkeiten eingehen und klagen. Gläubigern haften die Eigentümer nach ihrem Anteil.[[2]]",
+      "Entschieden wird in der Eigentümerversammlung. Der Verwalter beruft sie mindestens einmal im Jahr ein; die Frist soll mindestens drei Wochen betragen, außer in besonders dringenden Fällen.[[3]] Es entscheidet die Mehrheit der abgegebenen Stimmen, jeder Eigentümer hat eine Stimme.[[4]] Der Verwalter wird für höchstens fünf Jahre bestellt, beim ersten Mal für höchstens drei, und kann jederzeit abberufen werden.[[5]]"
+    ],
+    "beispiel": [
+      "Angenommen, Ihre Wohnung in Bernau mit 65 m² liegt in einer Anlage mit 15 Wohnungen und zusammen 1.000 m². Ist der Anteil nach der Fläche bemessen, halten Sie 65/1.000, also 6,5 %.[[6]] Legt die Gemeinschaft 10 €/m² im Jahr zurück, sind das 10.000 €, Ihr Anteil 650 €.[[7]]",
+      "Über ein neues Fahrradhaus im Hof stimmen 12 anwesende Eigentümer ab, 9 sind dafür: 75 % der abgegebenen Stimmen. Damit alle die Kosten nach Anteil tragen, verlangt das Gesetz mehr als zwei Drittel der abgegebenen Stimmen und die Hälfte aller Miteigentumsanteile; es kommt also auch darauf an, wie viele Anteile die 9 zusammen halten.[[8]]"
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was die Gemeinschaft beschließt",
+        "absaetze": [
+          "Zur ordnungsmäßigen Verwaltung gehören die Erhaltung des gemeinschaftlichen Eigentums, eine angemessene Erhaltungsrücklage und die Vorschüsse, also das Hausgeld.[[9]] Was darüber hinausgeht, ist eine bauliche Veränderung; jeder Eigentümer kann etwa angemessene Maßnahmen für Barrierefreiheit, das Laden von E-Autos, Einbruchsschutz, Glasfaser oder ein Steckersolargerät verlangen.[[10]]"
+        ]
+      },
+      {
+        "h2": "Vor dem Kauf",
+        "absaetze": [
+          "Beschlüsse stehen in der Beschluss-Sammlung, die der Verwalter führt. Einsicht bekommt jeder Eigentümer und ein Dritter, den ein Eigentümer ermächtigt, etwa ein Kaufinteressent mit Vollmacht des Verkäufers.[[3]] F&G prüft in der Ankaufsberatung beim Objekt unter anderem die WEG.[[11]]"
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "§ 1 Wohnungseigentumsgesetz (WEG)",
+        "url": "https://www.gesetze-im-internet.de/woeigg/__1.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 9a Wohnungseigentumsgesetz (WEG)",
+        "url": "https://www.gesetze-im-internet.de/woeigg/__9a.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 24 Wohnungseigentumsgesetz (WEG)",
+        "url": "https://www.gesetze-im-internet.de/woeigg/__24.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 25 Wohnungseigentumsgesetz (WEG)",
+        "url": "https://www.gesetze-im-internet.de/woeigg/__25.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 26 Wohnungseigentumsgesetz (WEG)",
+        "url": "https://www.gesetze-im-internet.de/woeigg/__26.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Hausgeld",
+        "url": "https://www.finanztip.de/eigentumswohnung/hausgeld/",
+        "stand": "Stand 10.11.2025"
+      },
+      {
+        "name": "§ 16 Wohnungseigentumsgesetz (WEG)",
+        "url": "https://www.gesetze-im-internet.de/woeigg/__16.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 21 Wohnungseigentumsgesetz (WEG)",
+        "url": "https://www.gesetze-im-internet.de/woeigg/__21.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 19 Wohnungseigentumsgesetz (WEG)",
+        "url": "https://www.gesetze-im-internet.de/woeigg/__19.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 20 Wohnungseigentumsgesetz (WEG)",
+        "url": "https://www.gesetze-im-internet.de/woeigg/__20.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Ankaufsberatung",
+        "url": "https://fg-realestate.de/ankaufsberatung.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Wohnungseigentumsgesetz - WEG; Sondereigentum plus Miteigentumsanteil; gemeinschaftliches Eigentum",
+        "fundstelle": "runde-4.md, Q01"
+      },
+      {
+        "zahl": "Gemeinschaft: Rechte, Verbindlichkeiten, klagen; entsteht mit Wohnungsgrundbüchern; Haftung nach Anteil",
+        "fundstelle": "runde-4.md, Q02"
+      },
+      {
+        "zahl": "Versammlung einmal im Jahr, drei Wochen, Dringlichkeit; Beschluss-Sammlung, Einsicht auch für ermächtigten Dritten; Verwalter führt sie",
+        "fundstelle": "runde-4.md, Q08; runde-1.md, D03"
+      },
+      {
+        "zahl": "Mehrheit der abgegebenen Stimmen, eine Stimme je Eigentümer",
+        "fundstelle": "runde-4.md, Q09"
+      },
+      {
+        "zahl": "Verwalter höchstens fünf Jahre, erstmals drei; jederzeit abberufbar",
+        "fundstelle": "runde-4.md, Q10"
+      },
+      {
+        "zahl": "Miteigentumsanteil meist nach Fläche",
+        "fundstelle": "runde-4.md, Q12"
+      },
+      {
+        "zahl": "Kosten nach Anteil",
+        "fundstelle": "runde-4.md, Q03"
+      },
+      {
+        "zahl": "mehr als zwei Drittel der abgegebenen Stimmen und Hälfte aller Miteigentumsanteile",
+        "fundstelle": "runde-4.md, Q06"
+      },
+      {
+        "zahl": "Erhaltung, angemessene Rücklage, Vorschüsse",
+        "fundstelle": "runde-4.md, Q04"
+      },
+      {
+        "zahl": "bauliche Veränderungen; Anspruch: Barrierefreiheit, Laden, Einbruchsschutz, Glasfaser, Steckersolar",
+        "fundstelle": "runde-4.md, Q05"
+      },
+      {
+        "zahl": "F&G prüft beim Objekt die WEG",
+        "fundstelle": "runde-1.md, D05"
+      },
+      {
+        "zahl": "65/1.000 = 6,5 %; 10 €/m² × 1.000 m² = 10.000 €, Anteil 650 €; 9/12 = 75 % > 2/3",
+        "fundstelle": "Rechnung, Marktprüfung runde-4.md"
+      }
+    ]
+  }
 }

@@ -1,0 +1,326 @@
+{
+  "slug": "berlin",
+  "name": "Berlin",
+  "nameLang": "Berlin",
+  "inOrt": "in Berlin",
+  "fuerOrt": "Berlin",
+  "typ": "stadt",
+  "kicker": "Berlin",
+  "kontakt": "lennart",
+  "title": "Immobilienmakler Berlin – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler in Berlin: Verkauf, Kauf und Finanzierung von Steglitz-Zehlendorf bis Pankow, mit Kaufpreisen 2025 und kostenloser Bewertung.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Berlin",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Berlin beim Verkauf, beim Kauf und bei der Finanzierung, mit eigenen Seiten für Steglitz-Zehlendorf, Charlottenburg-Wilmersdorf, Tempelhof-Schöneberg und Pankow. Unser Büro liegt in der Schützenstraße 30 in Steglitz.",
+  "kurzantwortMehr": "Wir haben Erlaubnisse nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Ihr Ansprechpartner in Berlin ist Lennart Geserich, Head of Sales & Vermietung.",
+  "stand": "Oktober 2026",
+  "updated": "2026-10-27",
+  "hero": {
+    "name": "berlin-deutscher-dom-gendarmenmarkt",
+    "alt": "Deutscher Dom am Gendarmenmarkt in Berlin-Mitte zur blauen Stunde",
+    "credit": "Ansgar Koreng, CC BY 3.0 DE",
+    "url": "https://commons.wikimedia.org/wiki/File:Deutscher_Dom,_Gendarmenmarkt,_Berlin-Mitte,_150926,_ako.jpg",
+    "position": "50% 45%"
+  },
+  "zahlen": [
+    {
+      "wert": "10.030",
+      "label": "Kauffälle 2025 in den vier Bezirken dieser Seite",
+      "detail": "45,8 % der 21.913 Berliner Kauffälle ohne Paketverkäufe: Charlottenburg-Wilmersdorf 2.811, Pankow 2.731, Tempelhof-Schöneberg 2.248, Steglitz-Zehlendorf 2.240.",
+      "quelle": "Immobilienmarktbericht Berlin 2025/2026",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 5.017 €/m²",
+      "label": "Eigentumswohnungen in Berlin, je Quadratmeter Wohnfläche",
+      "detail": "11.110 ausgewertete Kauffälle, Spanne 2.347 bis 7.999 €/m², 2024 waren es 4.796 €/m². In den vier Bezirken reicht der Mittelwert von 4.011 €/m² in Tempelhof bis 6.427 €/m² in Dahlem.",
+      "quelle": "Immobilienmarktbericht Berlin 2025/2026",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 4.366 €/m²",
+      "label": "Ein- und Zweifamilienhäuser in Berlin, je Quadratmeter Wohnfläche",
+      "detail": "1.321 ausgewertete Kauffälle, Spanne 2.533 bis 6.307 €/m², 2024 waren es 4.336 €/m². In Zehlendorf lag der Mittelwert bei 6.487 €/m², in Tempelhof bei 4.224 €/m².",
+      "quelle": "Immobilienmarktbericht Berlin 2025/2026",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "rund −5 %",
+      "label": "Bodenrichtwerte für Wohnbauland in offener Bauweise zum 01.01.2026",
+      "detail": "Teilmarkt individueller Wohnungsbau, also Bauland für Ein- und Zweifamilienhäuser. Spannen: Pankow 260 bis 950 €/m², Tempelhof-Schöneberg 340 bis 1.600, Steglitz-Zehlendorf 300 bis 2.700, Charlottenburg-Wilmersdorf 670 bis 2.700 €/m².",
+      "quelle": "Immobilienmarktbericht Berlin 2025/2026",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stichtag": "Stichtag 01.01.2026"
+    },
+    {
+      "wert": "7,88 bis 25,06 €/m²",
+      "label": "Spanne der überwiegenden Mietangebote in Berlin",
+      "detail": "80 % der Angebote 2025, ohne die oberen und unteren 10 %. 85,1 % der Berliner Wohnungen sind Mietwohnungen.",
+      "quelle": "IBB Wohnungsmarktbericht 2025",
+      "url": "https://www.ibb.de/media/dokumente/publikationen/berliner-wohnungsmarkt/wohnungsmarktbericht/2025/tempelhof-scho%CC%88neberg.pdf",
+      "stichtag": "Angebote 2025, Bestand 2024"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Steglitz-Zehlendorf: Villenkolonien, Seen und unser Büro",
+      "absaetze": [
+        "Unser Büro liegt in der Schützenstraße 30 in Steglitz. Der Bezirk hat 309.084 Einwohner.[[3]] Mit 540 verkauften bebauten Grundstücken lag Steglitz-Zehlendorf 2025 vor allen anderen Berliner Bezirken.[[1]] Ein- und Zweifamilienhäuser kosteten im früheren Bezirk Zehlendorf im Mittel 6.487 €/m² Wohnfläche, im früheren Bezirk Steglitz 5.037 €/m²; Eigentumswohnungen 4.768 und 4.390 €/m².[[1]] Die Bezirksseite beschreibt Steglitz, Lichterfelde West und Ost, Wannsee, Schlachtensee und Nikolassee, mit Bodenrichtwert und Wohnlage je Kiez."
+      ],
+      "seite": {
+        "url": "/standorte/berlin/steglitz-zehlendorf/",
+        "text": "Zur Seite Steglitz-Zehlendorf"
+      },
+      "bild": {
+        "name": "steglitz-zehlendorf-beerenstrasse",
+        "alt": "Ein Mietshaus mit Ziergiebel und Balkonen in der Beerenstraße in Zehlendorf in der Sonne, davor Bäume",
+        "credit": "Bodo Kubrak, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Beerenstra%C3%9Fe_57_(Berlin-Zehlendorf).jpg",
+        "position": "50% 50%"
+      }
+    },
+    {
+      "h2": "Charlottenburg-Wilmersdorf: Altbau, Villenkolonien und Spreestadt",
+      "absaetze": [
+        "Charlottenburg-Wilmersdorf hat 342.638 Einwohner.[[3]] 2025 zählte der Gutachterausschuss hier 2.811 Kauffälle, davon 2.637 Eigentumswohnungen, beides mehr als in jedem anderen Bezirk.[[1]] Eigentumswohnungen kosteten im früheren Bezirk Wilmersdorf im Mittel 5.547 €/m², im früheren Bezirk Charlottenburg 5.201 €/m² und im Ortsteil Grunewald 6.111 €/m². In den Einfamilienhausgebieten sehr guter Wohnlage in Grunewald sank der Bodenrichtwert zum 01.01.2026 von 2.100 bis 2.800 auf 2.000 bis 2.700 €/m².[[1]] Die Bezirksseite reicht von Westend und dem Lietzensee über die Spreestadt bis zum Rheingauviertel und zum Güntzelkiez."
+      ],
+      "seite": {
+        "url": "/standorte/berlin/charlottenburg-wilmersdorf/",
+        "text": "Zur Seite Charlottenburg-Wilmersdorf"
+      },
+      "bild": {
+        "name": "charlottenburg-wilmersdorf-lietzensee",
+        "alt": "Der Lietzensee in Charlottenburg an einem Morgen im Juni",
+        "caption": "Der Lietzensee.",
+        "credit": "Leonhard Lenz, CC0",
+        "url": "https://commons.wikimedia.org/wiki/File:Lietzensee_Berlin_2024-06-16_01.jpg"
+      }
+    },
+    {
+      "h2": "Tempelhof-Schöneberg: Altbaukieze im Norden, Häuser im Süden",
+      "absaetze": [
+        "Tempelhof-Schöneberg hat 358.125 Einwohner.[[3]] 2025 gab es hier 2.248 Kauffälle, davon 1.861 Eigentumswohnungen.[[1]] Wohnungen kosteten im früheren Bezirk Schöneberg, zu dem Friedenau gehört, im Mittel 5.421 €/m², im früheren Bezirk Tempelhof 4.011 €/m². Kaufpreise für Ein- und Zweifamilienhäuser weist der Gutachterausschuss nur für den früheren Bezirk Tempelhof aus, mit Mariendorf, Marienfelde und Lichtenrade: im Mittel 4.224 €/m².[[1]] Im Bezirk gelten zehn soziale Erhaltungsverordnungen, auch im Bayerischen Viertel und im Nollendorfkiez.[[8]] Die Bezirksseite beschreibt diese beiden Kieze und Friedenau."
+      ],
+      "seite": {
+        "url": "/standorte/berlin/tempelhof-schoeneberg/",
+        "text": "Zur Seite Tempelhof-Schöneberg"
+      },
+      "bild": {
+        "name": "tempelhof-schoeneberg-friedenau-niedstrasse",
+        "alt": "Die Niedstraße in Friedenau",
+        "caption": "Die Niedstraße in Friedenau.",
+        "credit": "Leonhard Lenz, CC0",
+        "url": "https://commons.wikimedia.org/wiki/File:Niedstra%C3%9Fe_Berlin-Friedenau_2026-04-04_01.jpg"
+      }
+    },
+    {
+      "h2": "Pankow: Prenzlauer Berg und der Norden",
+      "absaetze": [
+        "Pankow hat 428.973 Einwohner.[[3]] 2025 zählte der Gutachterausschuss 2.731 Kauffälle, davon 2.203 Eigentumswohnungen.[[1]] Im früheren Bezirk Prenzlauer Berg kosteten Eigentumswohnungen im Mittel 6.300 €/m², im früheren Bezirk Pankow 5.194 €/m² nach 4.415 €/m² im Jahr davor.[[1]] Der Bodenrichtwert liegt zum 01.01.2026 im Kollwitzkiez bei 5.500 €/m², für die meisten Adressen im Winsviertel und im Bötzowkiez bei 5.000 €/m², jeweils unverändert.[[2]] 14 soziale Erhaltungsverordnungen gelten im Bezirk, so viele wie in Mitte und mehr als in allen anderen Bezirken.[[8]] Die Bezirksseite beschreibt Pankow-Süd, drei Kieze in Prenzlauer Berg und Niederschönhausen."
+      ],
+      "seite": {
+        "url": "/standorte/berlin/pankow/",
+        "text": "Zur Seite Pankow"
+      },
+      "bild": {
+        "name": "pankow-schloss-schoenhausen",
+        "alt": "Schloss Schönhausen in Pankow an einem sonnigen Junitag, davor der Rasen und der Weg zum Eingang",
+        "credit": "A.Savin, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Berlin_Schloss_Schoenhausen_06-2014.jpg",
+        "position": "50% 55%"
+      }
+    }
+  ],
+  "verkaufen": {
+    "h2": "Immobilie in Berlin verkaufen",
+    "absaetze": [
+      "Der Berliner Mittelwert hilft beim Verkauf wenig: Eigentumswohnungen kosteten 2025 allein in den vier Bezirken dieser Seite im Mittel zwischen 4.011 €/m² in Tempelhof und 6.427 €/m² in Dahlem.[[1]] Wir bewerten deshalb nach Altbezirk, Bodenrichtwertzone und Vergleichsverkäufen. Bei einer vermieteten Wohnung prüfen Käufer die Miete gegen den Mietspiegel 2026, der jeder Adresse eine einfache, mittlere oder gute Wohnlage zuordnet.[[5]] Wir gehen erst mit vollständigen Unterlagen an den Markt, denn eine fehlende Wohnflächenberechnung kann die Finanzierung eines Käufers verzögern. Die Wertermittlung ist kostenlos und meistens innerhalb weniger Stunden fertig."
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Berlin",
+    "absaetze": [
+      "Als Kapitalanleger rechnen Sie in ganz Berlin mit der Mietpreisbremse, die vom 01.01.2026 bis 31.12.2029 gilt: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[6]] Bestandsmieten dürfen in drei Jahren um höchstens 15 % steigen, bis zur Vergleichsmiete.[[7]] Die überwiegenden Mietangebote lagen 2025 zwischen 7,88 und 25,06 €/m² und 85,1 % der Berliner Wohnungen sind Mietwohnungen.[[4]]",
+      "Seit dem 01.01.2026 braucht in ganz Berlin eine Genehmigung, wer ein Wohnhaus mit mehr als fünf Wohnungen in Eigentumswohnungen aufteilen will.[[10]] In den 82 sozialen Erhaltungsgebieten, 36 davon in den vier Bezirken dieser Seite, gilt das auch für kleinere Häuser; dort können zudem Luxusmodernisierungen und Zusammenlegungen von Wohnungen versagt werden.[[9,8]]"
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Berlin",
+    "absaetze": [
+      "Eine Wohnung in Prenzlauer Berg kostete 2025 im Mittel 6.300 €/m² Wohnfläche, ein Haus in Tempelhof 4.224 €/m².[[1]] Für beides rechnen wir Kaufpreis, Kaufnebenkosten und Eigenkapital mit Ihnen durch, vergleichen Ihre Finanzierung über Europace und Baufinex und fragen parallel Banken direkt an. Finanzierungsfähigkeit und Bonität klären wir früh."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Was kostet eine Eigentumswohnung in Berlin 2026?",
+      "antwort": "Die jüngsten amtlichen Zahlen sind die Kaufverträge 2025: Eigentumswohnungen kosteten in Berlin im Mittel 5.017 €/m² Wohnfläche, bei 11.110 ausgewerteten Verkäufen und einer Spanne von 2.347 bis 7.999 €/m².[[1]] In den vier Bezirken dieser Seite reicht der Mittelwert von 4.011 €/m² in Tempelhof bis 6.427 €/m² in Dahlem; Prenzlauer Berg liegt bei 6.300 €/m².[[1]]",
+      "herkunft": "Google-Autocomplete „immobilienpreise berlin 2026“ (27.10.2026)"
+    },
+    {
+      "frage": "Sinken die Immobilienpreise in Berlin?",
+      "antwort": "Bei den gezahlten Preisen nicht: Eigentumswohnungen kosteten 2025 im Mittel 5.017 €/m² nach 4.796 €/m² im Jahr 2024, Ein- und Zweifamilienhäuser 4.366 €/m² nach 4.336 €/m².[[1]] Die Bodenrichtwerte für Einfamilienhausgebiete hat der Gutachterausschuss zum 01.01.2026 dagegen um rund 5 % gesenkt.[[1]] Eine Prognose für die kommenden Jahre lässt sich daraus nicht ableiten.",
+      "herkunft": "Google-Autocomplete „immobilienpreise berlin sinken“ (27.10.2026)"
+    },
+    {
+      "frage": "Wie hoch ist der Bodenrichtwert in Berlin 2026?",
+      "antwort": "Der Gutachterausschuss legt ihn je Zone fest, zuletzt zum 01.01.2026. In Einfamilienhausgebieten liegt er in Pankow bei 260 bis 950 €/m², in Steglitz-Zehlendorf und Charlottenburg-Wilmersdorf bei bis zu 2.700 €/m².[[1]] Für Altbaukieze gelten eigene Zonen, etwa 5.500 €/m² im Kollwitzkiez und 3.400 €/m² in Friedenau.[[2]] Den Wert für Ihre Adresse sehen Sie im Geoportal Berlin.",
+      "herkunft": "Google-Autocomplete „bodenrichtwert berlin 2026“ (27.10.2026)"
+    },
+    {
+      "frage": "Welcher Mietspiegel gilt 2026 in Berlin?",
+      "antwort": "Der Berliner Mietspiegel 2026, ein qualifizierter Mietspiegel mit Stichtag 01.09.2025; das Straßenverzeichnis erschien im Amtsblatt vom 28.05.2026.[[5]] Er ordnet jede Adresse einer einfachen, mittleren oder guten Wohnlage zu und gilt nicht für Wohnungen in Ein- und Zweifamilienhäusern.[[5]]",
+      "herkunft": "Google-Autocomplete „mietspiegel berlin 2026“ (27.10.2026)"
+    },
+    {
+      "frage": "Wer zahlt die Maklerprovision beim Verkauf in Berlin?",
+      "antwort": "Beim Verkauf einer Wohnung oder eines Einfamilienhauses an einen Verbraucher zahlen Verkäufer und Käufer je die Hälfte (§§ 656a bis 656d BGB), bei Fischer & Geserich 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision. Für Mehrfamilienhäuser und Grundstücke gilt die Teilung nicht. Die Provision wird nur fällig, wenn der Kaufvertrag zustande kommt.",
+      "herkunft": "Google-Autocomplete „maklerprovision berlin wer zahlt“ (27.10.2026)"
+    },
+    {
+      "frage": "Welche Wohnlagen gelten in Berlin als die teuersten?",
+      "antwort": "Unter den Kiezen auf unseren vier Bezirksseiten haben die Altbaukieze am Lietzensee und in Prenzlauer Berg die höchsten Bodenrichtwerte des Berliner Gutachterausschusses: 6.000 €/m² um Dernburg-, Wundt- und Witzlebenstraße, 5.500 €/m² im Kollwitzkiez und 5.000 €/m² im Winsviertel und im Bötzowkiez, jeweils zum 01.01.2026 bei einer Geschossflächenzahl von 2,5.[[2]] Diese Kieze liegen nach dem Berliner Mietspiegel 2026 zu 97 bis 100 % in guter Wohnlage, der höchsten seiner drei Stufen.[[5]] In den Villengebieten von Grunewald und Dahlem erreichen die Bodenrichtwerte für Einfamilienhausgrundstücke bis zu 2.700 €/m².[[1]] Unter den Ortsteilen der vier Bezirke zahlten Käufer 2025 nach dem Immobilienmarktbericht Berlin für Eigentumswohnungen in Dahlem mit im Mittel 6.427 €/m² und in Prenzlauer Berg mit 6.300 €/m² am meisten, für Ein- und Zweifamilienhäuser in Grunewald mit 9.650 €/m² und in Dahlem mit 9.120 €/m², dort allerdings bei nur acht und sieben Verkäufen.[[1]]",
+      "herkunft": "FG-Gap-Answers 7.2 (SOURCE), selbst geschrieben nur aus Zahlen, die schon auf den Gebietsseiten stehen (Stand 28.10.2026). Recherche P63. Zahlen: Bezirksseiten Charlottenburg-Wilmersdorf (Lietzensee 6.000, GFZ 2,5; 97 % gute Wohnlage; Grunewald 2.000–2.700; ETW Grunewald 6.111; EFH Grunewald 9.650 bei 8), Pankow (Kollwitzkiez 5.500, alle Adressen gut; Wins/Bötzow 5.000, 97 % gut; ETW Prenzlauer Berg 6.300), Steglitz-Zehlendorf (Dahlem 2.200–2.700; ETW Dahlem 6.427; EFH Dahlem 9.120 bei 7). Die Wohnlage der Adressen stammt aus dem Straßenverzeichnis zum Mietspiegel 2026 (Quelle 5 dieser Seite; auf den Bezirksseiten als Wohnlagenzuordnung Geoportal). Aus, bis Jesu die Quellen geprüft hat (freigaben.quelleFaq).",
+      "quelle": "7.2-P63"
+    },
+    {
+      "frage": "Welcher Kaufpreisfaktor ist in Berlin realistisch?",
+      "antwort": "Für reine Mietwohnhäuser nennt der Berliner Gutachterausschuss in seinem Immobilienmarktbericht 2025/2026 als rechnerischen Durchschnitt der ausgewerteten Verkäufe 2025 das 22,6-Fache der Jahresnettokaltmiete, nach 23,5 im Jahr 2024; für Wohn- und Geschäftshäuser das 21,9-Fache.[[1]] Für Eigentumswohnungen weist der Bericht keinen Faktor aus. Welcher Faktor für ein bestimmtes Haus angemessen ist, hängt von Miete, Zustand und Lage ab; der Durchschnitt ist ein Vergleichswert, kein Preis für Ihr Objekt.",
+      "herkunft": "FG-Gap-Answers 7.2 (SOURCE), Recherche A11: laut Brief nur, wenn der Berliner Immobilienmarktbericht einen Faktor nennt. Er nennt ihn: Immobilienmarktbericht Berlin 2025/2026 (Quelle 1 dieser Seite), S. 45, Tabelle „Rechnerische Durchschnittswerte aller verkauften Wohn- und Geschäftshäuser“: reine Mietwohnhäuser „Vielfaches der Jahresnettokaltmiete“ 2024 23,5, 2025 22,6; Wohn- und Geschäftshäuser 21,7 und 21,9. Ein Faktor für Wohnungseigentum steht im Bericht nicht (Volltextsuche „Vielfaches“, 28.10.2026). Die Zahl ist neu auf der Seite, die Quelle nicht. Aus, bis Jesu die Quellen geprüft hat (freigaben.quelleFaq).",
+      "quelle": "7.2-A11"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Teltow & Kleinmachnow",
+      "url": "/standorte/teltow/"
+    },
+    {
+      "name": "Landkreis Potsdam-Mittelmark",
+      "url": "/standorte/potsdam-mittelmark/"
+    },
+    {
+      "name": "Falkensee",
+      "url": "/standorte/falkensee/"
+    },
+    {
+      "name": "Bernau bei Berlin",
+      "url": "/standorte/bernau/"
+    },
+    {
+      "name": "Erkner",
+      "url": "/standorte/erkner/"
+    },
+    {
+      "name": "Leipzig",
+      "url": "/standorte/leipzig/"
+    },
+    {
+      "name": "Dresden",
+      "url": "/standorte/dresden/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Immobilienmarktbericht Berlin 2025/2026, Geschäftsstelle des Gutachterausschusses für Grundstückswerte in Berlin",
+      "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
+      "stand": "Stand 31.07.2026; Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+    },
+    {
+      "name": "Bodenrichtwerte des Gutachterausschusses für Grundstückswerte in Berlin, Geoportal Berlin (WFS brw2026 und brw2025), eigene Zuordnung zu den Adressen",
+      "url": "https://gdi.berlin.de/services/wfs/brw2026?REQUEST=GetCapabilities&SERVICE=wfs",
+      "stand": "Stichtag 01.01.2026, Vergleich mit 01.01.2025"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 5 – hj 1/26, Einwohnerinnen und Einwohner im Land Berlin",
+      "url": "https://download.statistik-berlin-brandenburg.de/7cb89e083c1ea02d/4e03c8e1693a/SB_A01-05-00_2026h01_BE.xlsx",
+      "stand": "30.06.2026"
+    },
+    {
+      "name": "IBB Wohnungsmarktbericht 2025, Bezirksprofil Tempelhof-Schöneberg mit Vergleichswerten für Berlin",
+      "url": "https://www.ibb.de/media/dokumente/publikationen/berliner-wohnungsmarkt/wohnungsmarktbericht/2025/tempelhof-scho%CC%88neberg.pdf",
+      "stand": "Werte 2024, Angebotsmieten 2025"
+    },
+    {
+      "name": "Berliner Mietspiegel 2026, Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen",
+      "url": "https://mietspiegel.berlin.de/wp-content/uploads/2026/05/mietspiegel2026.pdf",
+      "stand": "Stichtag 01.09.2025, Straßenverzeichnis im Amtsblatt vom 28.05.2026"
+    },
+    {
+      "name": "Senatskanzlei Berlin, Pressemitteilung zur Mietenbegrenzungsverordnung",
+      "url": "https://www.berlin.de/rbmskzl/aktuelles/pressemitteilungen/2025/pressemitteilung.1615170.php",
+      "stand": "11.11.2025, gültig 01.01.2026 bis 31.12.2029"
+    },
+    {
+      "name": "Berliner Mietratgeber: Miete, Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen (Kappungsgrenzenverordnung vom 14.03.2023)",
+      "url": "https://www.berlin.de/sen/wohnen/wissen-fuer-mieter/berliner-mietratgeber/miete/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Erhaltungsverordnungsgebiete Berlin, Geoportal Berlin (WFS erhaltungsverordnungsgebiete, soziale Erhaltungsgebiete), eigene Zählung je Bezirk",
+      "url": "https://gdi.berlin.de/services/wfs/erhaltungsverordnungsgebiete?REQUEST=GetCapabilities&SERVICE=wfs",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen, Soziales Erhaltungsrecht",
+      "url": "https://www.berlin.de/sen/stadtentwicklung/quartiersentwicklung/stadterneuerung/soziales-erhaltungsrecht/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen, Umwandlungsverordnung nach § 250 BauGB",
+      "url": "https://www.berlin.de/sen/wohnen/rechtliches/umwandlungsverordnung/",
+      "stand": "Verordnung vom 11.11.2025, gültig 01.01.2026 bis 31.12.2030"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "Einwohner 30.06.2026: Berlin 3.917.196; S-Z 309.084; C-W 342.638; T-S 358.125; Pankow 428.973",
+      "fundstelle": "berlin-grundlagen.md Nr. 30–34; AfS T3"
+    },
+    {
+      "zahl": "Kauffälle 2025 (ohne Paket): C-W 2.811 / WE 2.637 (beide höchster Wert); Pankow 2.731 / 2.203; T-S 2.248 / 1.861; S-Z 2.240, bebaut 540 (14,7 %, höchster Wert); alle Bezirke 21.913; Summe vier Bezirke 10.030 = 45,8 % (eigene Rechnung)",
+      "fundstelle": "IMB S. 77, imb.txt Z. 4579–4589; Z. 4936"
+    },
+    {
+      "zahl": "ETW 2025 Berlin 11.110 / 2.347–7.999 / 5.017 (2024: 10.458 / 4.796); Prenzlauer Berg 6.300 (2024: 6.161); Pankow 5.194 (4.415); Charlottenburg 5.201; Wilmersdorf 5.547; Grunewald 6.111; Steglitz 4.390; Zehlendorf 4.768; Dahlem 6.427; Schöneberg 5.421; Tempelhof 4.011",
+      "fundstelle": "IMB S. 61, imb.txt Z. 3507–3553"
+    },
+    {
+      "zahl": "EFH/ZFH 2025 Berlin 1.321 / 2.533–6.307 / 4.366 (2024: 1.303 / 4.336); Zehlendorf 6.487; Steglitz 5.037; Tempelhof 4.224; Schöneberg 0 Fälle",
+      "fundstelle": "IMB S. 50, imb.txt Z. 2840–2884"
+    },
+    {
+      "zahl": "BRW offene Bauweise 01.01.2026 rd. −5 %; Pankow 260–950, C-W 670–2.700, S-Z 300–2.700, T-S 340–1.600; Grunewald sehr gute Wohnlage 2.100–2.800 → 2.000–2.700",
+      "fundstelle": "berlin-grundlagen.md Nr. 21–23; IMB S. 30–31, imb.txt Z. 1650–1716"
+    },
+    {
+      "zahl": "BRW Friedenau Zone 1825: 3.400, GFZ 2,0, 1.491 von 1.500 Adressen",
+      "fundstelle": "tempelhof-schoeneberg.md Nr. 20 (WFS brw2026)"
+    },
+    {
+      "zahl": "BRW Kollwitzkiez 5.500 (alle 719 Adressen), Winsviertel 523/550 und Bötzowkiez 510/573 in Zone 1787 mit 5.000, GFZ 2,5, unverändert",
+      "fundstelle": "pankow.md Nr. 21–23 (WFS brw2026/brw2025)"
+    },
+    {
+      "zahl": "Soziale Erhaltungsgebiete WFS: 82 gesamt; Mitte 14, Pankow 14, F-K 11, T-S 10, Neukölln 10, C-W 9, S-Z 3; vier Bezirke 36 (eigene Zählung); Senat: 82; Luxusmodernisierungen, Zusammenlegungen versagbar",
+      "fundstelle": "erhalt_erhaltgeb_em.json (27.10.2026 gezählt); sen_erhalt.txt"
+    },
+    {
+      "zahl": "Umwandlungsverordnung § 250 BauGB seit 01.01.2026 bis 31.12.2030, Wohngebäude mit mehr als fünf Wohnungen; in sozialen Erhaltungsgebieten Umwandlungsverordnung 2025 nur noch bis fünf Wohnungen",
+      "fundstelle": "sen_umwandlung.txt; sen_erhalt.txt"
+    },
+    {
+      "zahl": "IBB Berlin: Angebote 7,88–25,06 (80 %); Mietwohnungsanteil 85,1 %",
+      "fundstelle": "ibb_tempel.txt Z. 30–56 (Spalte Berlin)"
+    },
+    {
+      "zahl": "Mietspiegel 2026 qualifiziert, Stichtag 01.09.2025, Amtsblatt 28.05.2026, drei Wohnlagen je Adresse, nicht für EFH/ZFH; Mietpreisbremse 01.01.2026–31.12.2029, 10 %; Kappung 15 % in drei Jahren",
+      "fundstelle": "berlin-grundlagen.md Nr. 1, 2, 10–12"
+    },
+    {
+      "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, Halbteilung §§ 656a–656d BGB, nicht bei MFH und Grundstücken; § 34c und § 34i GewO; Lennart Geserich; Europace und Baufinex; Wertermittlung kostenlos, meist innerhalb weniger Stunden",
+      "fundstelle": "maklerprovision.njk, kaufen.njk; SCHREIBREGELN.md Regel 4"
+    }
+  ]
+}

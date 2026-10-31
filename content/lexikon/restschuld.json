@@ -7,11 +7,98 @@
   "keywords": [
     "restschuld"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Immobilienkauf",
-  "formula": null,
+  "formula": "Restschuld = Darlehen − bisherige Tilgung, einschließlich Sondertilgungen",
   "sources": [],
   "assistantAnswer": "Noch nicht zurückgezahlter Darlehensbetrag. Restschuld ist der nach geleisteten Tilgungen noch offene Darlehensbetrag. Sie bestimmt am Ende der Zinsbindung den Finanzierungsbedarf für die Anschlussfinanzierung.",
-  "explanation": "Restschuld ist der nach geleisteten Tilgungen noch offene Darlehensbetrag. Sie bestimmt am Ende der Zinsbindung den Finanzierungsbedarf für die Anschlussfinanzierung.",
-  "practiceExample": "Zwei Darlehen mit identischer Anfangsrate können wegen unterschiedlichem Zins- oder Tilgungsverlauf nach zehn Jahren eine andere Restschuld haben."
+  "explanation": "Die Restschuld ist der Betrag, den Sie der Bank zu einem bestimmten Zeitpunkt noch schulden. Beim Annuitätendarlehen sinkt sie mit jeder Rate, anfangs langsam, später schneller, weil der Tilgungsanteil wächst.",
+  "practiceExample": "300.000 € zu einem Beispielzins von 4 %: Nach zehn Jahren bleiben bei 1 % Tilgung 263.188 €, bei 1,5 % 244.781 € und bei 2 % 226.375 €. Auch der Zins verändert die Restschuld. Zahlen Sie dieselbe Rate von 1.375 €, aber zu 4,2 % statt 4 %, bleiben nach zehn Jahren 251.636 € statt 244.781 €.",
+  "ausbau": {
+    "einordnung": [
+      "Die Restschuld ist der Betrag, den Sie der Bank zu einem bestimmten Zeitpunkt noch schulden. Beim Annuitätendarlehen sinkt sie mit jeder Rate, anfangs langsam, später schneller, weil der Tilgungsanteil wächst.[[1]]",
+      "Wichtig wird sie am Ende der Zinsbindung: Für die Restschuld brauchen Sie dann einen neuen Zins, bei Ihrer Bank oder einer anderen. Die neue Kreditsumme kann höher oder niedriger sein. Verringern Sie sie zu diesem Zeitpunkt, fällt keine Vorfälligkeitsentschädigung an.[[2]] Zum Ende der Bindung können Sie mit einem Monat Frist kündigen.[[3]]",
+      "Verkaufen Sie während der Bindung, wird die Restschuld aus dem Erlös abgelöst. Ist das Darlehen über eine Grundschuld gesichert, können Sie mit berechtigtem Interesse vorzeitig kündigen, etwa wegen des Verkaufs; die Bank kann dann eine Vorfälligkeitsentschädigung verlangen.[[4]]"
+    ],
+    "beispiel": [
+      "300.000 € zu einem Beispielzins von 4 %: Nach zehn Jahren bleiben bei 1 % Tilgung 263.188 €, bei 1,5 % 244.781 € und bei 2 % 226.375 €.",
+      "Auch der Zins verändert die Restschuld. Zahlen Sie dieselbe Rate von 1.375 €, aber zu 4,2 % statt 4 %, bleiben nach zehn Jahren 251.636 € statt 244.781 €."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Eigentümer heißt",
+        "absaetze": [
+          "Lassen Sie sich den Tilgungsplan mit der Restschuld am Ende der Bindung geben und vergleichen Sie Angebote auch darüber, nicht allein über die Rate. Mit vereinbarten Sondertilgungen, üblich bis zu 5 oder 10 % des Kreditbetrags pro Jahr, senken Sie die Restschuld schneller.[[5]]"
+        ]
+      },
+      {
+        "h2": "Was es für Verkäufer heißt",
+        "absaetze": [
+          "Planen Sie den Erlös erst nach Ablösung der Restschuld und einer möglichen Vorfälligkeitsentschädigung. Fischer & Geserich denkt Verkauf und Anschlussfinanzierung auf Wunsch zusammen.[[6]]"
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "Finanztip: Annuitätendarlehen",
+        "url": "https://www.finanztip.de/baufinanzierung/annuitaetendarlehen/",
+        "stand": "Stand 17.12.2025"
+      },
+      {
+        "name": "Finanztip: Anschlussfinanzierung",
+        "url": "https://www.finanztip.de/baufinanzierung/anschlussfinanzierung/",
+        "stand": "Stand 25.10.2026"
+      },
+      {
+        "name": "§ 489 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__489.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 490 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__490.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Sondertilgung",
+        "url": "https://www.finanztip.de/baufinanzierung/sondertilgung/",
+        "stand": "Stand 19.12.2025"
+      },
+      {
+        "name": "Fischer & Geserich: Verkaufen",
+        "url": "https://fg-realestate.de/verkaufen.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Zinsanteil sinkt, Tilgungsanteil steigt",
+        "fundstelle": "runde-2.md, T01"
+      },
+      {
+        "zahl": "neue Summe höher oder niedriger; Verringern ohne Vorfälligkeitsentschädigung",
+        "fundstelle": "runde-2.md, A08"
+      },
+      {
+        "zahl": "Kündigung zum Ende der Bindung mit einem Monat Frist",
+        "fundstelle": "runde-2.md, A01"
+      },
+      {
+        "zahl": "berechtigtes Interesse, anderweitige Verwertung, Vorfälligkeitsentschädigung",
+        "fundstelle": "runde-2.md, F01"
+      },
+      {
+        "zahl": "Sondertilgung bis 5 oder 10 %",
+        "fundstelle": "runde-2.md, T04"
+      },
+      {
+        "zahl": "Verkauf und Anschlussfinanzierung zusammendenken (F&G)",
+        "fundstelle": "runde-2.md, A12"
+      },
+      {
+        "zahl": "263.188 / 244.781 / 226.375 €; Rate 1.375 € bei 4,2 % → 251.636 €",
+        "fundstelle": "Rechnung, Marktprüfung runde-2.md"
+      }
+    ]
+  }
 }

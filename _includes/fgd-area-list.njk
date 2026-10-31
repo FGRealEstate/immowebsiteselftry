@@ -1,0 +1,11 @@
+{#- Kompakte Gebietsliste für „Passend zu diesem Thema“; gebaute Seiten verlinkt (serviceArea.js). -#}
+{% from "fgd-icons.njk" import icon %}
+<div class="fgd-area-compact">
+  <p class="fgd-area-group"><a href="{{ serviceArea.berlin.url }}">Berlin</a></p>
+  <ul class="fgd-area-links">{% for b in serviceArea.berlin.bezirke %}<li>{{ b | areaLink | safe }}</li>{% endfor %}</ul>
+  <p class="fgd-area-group">Brandenburg</p>
+  <ul class="fgd-area-links">{% for t in serviceArea.towns %}<li>{{ t | areaLink(t.short) | safe }}</li>{% endfor %}{% for kr in serviceArea.landkreise %}<li>{{ kr | areaLink | safe }}</li>{% endfor %}</ul>
+  <p class="fgd-area-group">Sachsen</p>
+  <ul class="fgd-area-links"><li>{{ serviceArea.leipzig | areaLink | safe }}</li><li>{{ serviceArea.dresden | areaLink | safe }}</li></ul>
+  <a class="fgd-textlink" href="/standorte/">Alle Gebiete{{ icon("arrow") | safe }}</a>
+</div>

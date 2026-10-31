@@ -1,0 +1,403 @@
+{
+  "slug": "dresden/zentrum",
+  "name": "Dresden-Zentrum",
+  "nameLang": "Dresden-Zentrum",
+  "inOrt": "in Dresden-Zentrum",
+  "fuerOrt": "Dresden-Zentrum",
+  "typ": "marktgebiet",
+  "kreis": {
+    "name": "Dresden",
+    "url": "/standorte/dresden/"
+  },
+  "orte": [
+    "Blasewitz",
+    "Striesen-Ost",
+    "Striesen-Süd",
+    "Striesen-West",
+    "Gruna",
+    "Pirnaische Vorstadt"
+  ],
+  "kontakt": "timon",
+  "title": "Immobilienmakler Dresden-Zentrum – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler in Dresden-Zentrum: Wohnung oder Haus verkaufen, kaufen und finanzieren in Blasewitz, Striesen, Gruna und der Pirnaischen Vorstadt.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Dresden-Zentrum",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Dresden-Zentrum beim Verkauf, beim Kauf und bei der Finanzierung, von den Villen in Blasewitz über die Würfelhäuser in Striesen bis nach Gruna und in die Pirnaische Vorstadt. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Dresden ist Timon Fischer Ihr Ansprechpartner, Geschäftsführer und verantwortlich für die Immobilienfinanzierung.",
+  "hero": {
+    "name": "dresden-zentrum-schillerplatz-blaues-wunder",
+    "alt": "Wohn- und Geschäftshäuser am Schillerplatz in Dresden-Blasewitz in der Sonne, im Hintergrund das Blaue Wunder",
+    "credit": "VSchagow, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:2022113031_Schillerplatz_und_Blaues_Wunder_2022.jpg",
+    "position": "50% 50%"
+  },
+  "stand": "Oktober 2026",
+  "updated": "2026-10-27",
+  "zahlen": [
+    {
+      "wert": "8.575 €/m²",
+      "label": "Median für neue Eigentumswohnungen, Gemarkung Blasewitz",
+      "detail": "15 Erstverkäufe von Wohnungen ab Baujahr 2024, Spanne 5.805 bis 8.740 €/m², Mittelwert 8.245 €/m². Die Gemarkung deckt sich fast ganz mit dem Stadtteil Blasewitz. In der Gemarkung Striesen waren es sieben Erstverkäufe zu 6.195 €/m², in Gruna fünf zu 6.280 €/m²; in ganz Dresden kosteten neue Wohnungen im Mittel rund 6.460 €/m².",
+      "quelle": "Grundstücksmarktbericht Dresden 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/2026-Grundstuecksmarktbericht.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "2.895 €/m²",
+      "label": "Median für ältere Eigentumswohnungen im Weiterverkauf, Gemarkung Striesen",
+      "detail": "104 Verkäufe von Wohnungen mit Baujahr bis 1989 oder saniert bis 2023, Spanne 1.540 bis 5.500 €/m², Mittelwert 2.965 €/m². Die Gemarkung umfasst Striesen-Ost, Striesen-West und Striesen-Süd. In der Gemarkung Blasewitz waren es 36 Verkäufe zu 2.550 €/m², in Gruna 17 zu 2.410 €/m². Alle weiterverkauften Wohnungen in Dresden: im Mittel rund 2.705 €/m².",
+      "quelle": "Grundstücksmarktbericht Dresden 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/2026-Grundstuecksmarktbericht.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "310 bis 1.700 €/m²",
+      "label": "Bodenrichtwerte in den Wohn- und Mischgebieten",
+      "detail": "Blasewitz 530 bis 1.500 €/m², Striesen-Ost 310 bis 1.200, Striesen-Süd 350 bis 1.400, Striesen-West 500 bis 1.700, Gruna 350 bis 660, Pirnaische Vorstadt 630 bis 1.150 €/m². In rund drei Vierteln von Striesen-Ost gelten 1.200 €/m² für Grundstücke von Mehrfamilienhäusern. Die Werte gelten für unterschiedliche Bebauungsdichten und sind zwischen den Zonen nicht direkt vergleichbar.",
+      "quelle": "Bodenrichtwerte BORIS Sachsen, eigene Auswertung",
+      "url": "https://www.boris.sachsen.de/",
+      "stichtag": "01.01.2026"
+    },
+    {
+      "wert": "70.895",
+      "label": "Einwohner in den sechs Stadtteilen des Marktgebiets",
+      "detail": "Striesen-Ost 15.160, Striesen-West 13.252, Gruna 12.980, Striesen-Süd 12.528, Blasewitz 10.141, Pirnaische Vorstadt 6.834. Das Durchschnittsalter 2024 reicht von 41,1 Jahren in Striesen-Ost bis 48,3 Jahren in Gruna, in ganz Dresden 43,5 Jahre.",
+      "quelle": "Landeshauptstadt Dresden, Opendata und Stadtteilkatalog 2024",
+      "url": "https://opendata.dresden.de/",
+      "stichtag": "31.12.2025"
+    },
+    {
+      "wert": "8,57 bis 10,89 €/m²",
+      "label": "Durchschnittliche Angebotsmieten nach Stadtteil",
+      "detail": "Striesen-Ost 10,89 €/m², Blasewitz 9,81, Pirnaische Vorstadt 9,79, Striesen-West 9,32, Striesen-Süd 9,21, Gruna 8,57 €/m²; in ganz Dresden 9,37 €/m². Angebotsmieten aus Anzeigen sind keine ortsübliche Vergleichsmiete.",
+      "quelle": "Stadtteilkatalog Dresden 2024",
+      "url": "https://www.dresden.de/media/pdf/onlineshop/statistikstelle/120_080_010_Stadtteilkatalog_2024.pdf",
+      "stichtag": "2024"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Blasewitz: Villen am Waldpark und an der Elbe",
+      "absaetze": [
+        "1867 kaufte der sächsische Regierungsrat Arthur Willibald Königsheim rund 100 ha des Blasewitzer Tännichts; der Prospekt zur Waldparkanlage legte ein Jahr später Parzellen, Gebäudebreiten und Geschosse fest.[[13]] Der Blasewitzer Waldparkverein kaufte 128 Bauplätze und baute ab 1872 die Straßen; es entstanden Villen mit parkartigen Gärten bis zur geschlossenen Bebauung des Schillerplatzes.[[14]] Nördlich der Goetheallee blieb die Prinzenaue wegen der Hochwassergefahr lange frei, ab 1895 wurden dort Villen gebaut.[[15]] Bis 1921 war Blasewitz eine eigene Gemeinde.[[13]] Heute leben im Stadtteil, zu dem statistisch auch Neugruna gehört, 10.141 Menschen.[[4]] 38 % der Wohngebäude haben eine oder zwei Wohnungen, die Wohnungen sind im Mittel 85,1 m² groß und 37 % entstanden ab 1991.[[5]] Vom Schillerplatz fährt die Linie 10 in 21 Minuten zum Hauptbahnhof.[[20]]",
+        "In der Gemarkung Blasewitz, die fast genau dem Stadtteil entspricht, wurden 2025 15 neue Eigentumswohnungen verkauft, im Median für 8.575 €/m², ältere im Weiterverkauf für 2.550 €/m².[[1,6]] Die Bodenrichtwerte reichen von 530 bis 1.500 €/m²; in der größten Zone gelten 630 €/m² für Mehrfamilienhausgrundstücke bei einer Geschossflächenzahl von 0,8.[[3]] Den Leerstand schätzt die Stadt auf 8,8 %.[[5]]"
+      ],
+      "bild": {
+        "name": "dresden-zentrum-elbtal-blasewitz",
+        "alt": "Elbufer in Blasewitz mit Schilf und Weiden im Vordergrund, dahinter die Elbe und grüne Hänge mit Villen unter blauem Himmel",
+        "caption": "Das Elbufer bei Blasewitz im Mai.",
+        "credit": "Bybbisch94, CC BY 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:20240509.Elbtal.Blasewitz.-092.jpg"
+      }
+    },
+    {
+      "h2": "Striesen: Würfelhäuser im Straßenraster",
+      "absaetze": [
+        "Striesen kam 1892 zu Dresden. Danach entstanden im Nordosten an einem rasterförmigen Straßennetz frei stehende, villenartige Mietshäuser, im Volksmund „Würfelhäuser“ oder „Kaffeemühlen“: annähernd quadratische Grundflächen mit 13 bis 18 m Seitenlänge, vorgegeben vom Ortsgesetz für die Vorstadt Striesen von 1899 und der Dresdner Bauordnung von 1905. Bis 1918 war das Gebiet weitgehend bebaut.[[12]] Statistisch ist Striesen in drei Stadtteile geteilt, mit zusammen 40.940 Einwohnern.[[4]] In Striesen-Ost stammen 63 % der Wohnungen aus der Zeit bis 1918; in Striesen-Süd und Striesen-West entstanden 52 und 45 % zwischen 1946 und 1990.[[5]] Vom Pohlandplatz sind Sie in 17 Minuten am Hauptbahnhof, von der Mosenstraße und der Spenerstraße in 14 Minuten.[[20]]",
+        "In der Gemarkung Striesen, die alle drei Stadtteile umfasst, wurden 2025 104 ältere Eigentumswohnungen weiterverkauft, im Median für 2.895 €/m²; Wohnungen der Baujahre 1990 bis 2023 erzielten 3.000 €/m².[[1,6]] In rund drei Vierteln von Striesen-Ost gilt ein Bodenrichtwert von 1.200 €/m² für Mehrfamilienhausgrundstücke.[[3]] Die angebotenen Mieten lagen 2024 in Striesen-Ost bei 10,89 €/m², in Striesen-West bei 9,32 und in Striesen-Süd bei 9,21 €/m². Den Leerstand in Striesen-Süd schätzt die Stadt auf 2,6 %.[[5]]"
+      ],
+      "bild": {
+        "name": "dresden-zentrum-striesen-heubnerstrasse",
+        "alt": "Eine gelbe Villa mit rotem Ziegeldach in der Heubnerstraße hinter einem Zaun, davor ein parkendes Auto",
+        "caption": "Eine Villa in der Heubnerstraße in Striesen.",
+        "credit": "Jörg Blobelt, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:20070727200DR_Dresden-Striesen_Heubnerstra%C3%9Fe_7.jpg"
+      }
+    },
+    {
+      "h2": "Gruna: Altgruna und neue Projekte im Quartier",
+      "absaetze": [
+        "Gruna kam 1901 zu Dresden.[[16]] Im Stadtteil, statistisch mit Strehlen-Nordost, leben 12.980 Menschen; 1990 waren es 14.673.[[4,5]] Knapp die Hälfte der Wohnungen entstand zwischen 1946 und 1990, 30 % zwischen 1919 und 1945; 29 % der Wohngebäude haben eine oder zwei Wohnungen. Die angebotenen Mieten lagen 2024 bei 8,57 €/m², dem niedrigsten Wert in Dresden-Zentrum.[[5]] Altgruna ist Fördergebiet im EU-Programm für 2021 bis 2027: Der Rothermundtpark wird um rund 2.000 m² erweitert, die Freiflächen zwischen Zwinglistraße und Findlingsbrunnen werden neu gestaltet und die Villa Akazienhof soll Stadtteilhaus werden.[[17]] Von der Zwinglistraße sind Sie mit den Linien 2 und 10 in 15 Minuten am Hauptbahnhof.[[20]]",
+        "In der Gemarkung Gruna, die zu 85 % im Stadtteil liegt, kosteten ältere Eigentumswohnungen 2025 im Median 2.410 €/m², bei 17 Verkäufen; fünf neue Wohnungen erzielten 6.280 €/m².[[1,6]] Die Bodenrichtwerte reichen von 350 bis 660 €/m²; 11 der 12 Zonen lagen höher als 2024.[[3]]"
+      ],
+      "bild": {
+        "name": "dresden-zentrum-findlingsbrunnen-gruna",
+        "alt": "Findlingsbrunnen in Gruna mit Wasserfontänen in einem gepflasterten Becken, dahinter ein Wohnhochhaus und ein flacher Ladenbau",
+        "caption": "Der Findlingsbrunnen in Gruna.",
+        "credit": "Bybbisch94, Christian Gebhardt, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:20220915.Dresden,_Findlingsbrunnen_012.jpg"
+      }
+    },
+    {
+      "h2": "Pirnaische Vorstadt: Wohnungen am Rand der Altstadt",
+      "absaetze": [
+        "Die Pirnaische Vorstadt gehört zum Stadtbezirk Altstadt; hier leben 6.834 Menschen.[[4]] 88 % der Wohnungen entstanden zwischen 1946 und 1990, fast alle Wohngebäude haben sieben oder mehr Wohnungen und die Wohnungen sind im Mittel 52 m² groß. 70 % der Haushalte sind Einpersonenhaushalte. 2022 und 2024 wurden zusammen 297 Wohnungen neu gebaut. Die angebotenen Mieten lagen 2024 bei 9,79 €/m², den Leerstand schätzt die Stadt auf 10,2 %.[[5]] Mit der Johannstadt ist die Pirnaische Vorstadt Fördergebiet im EU-Programm für 2021 bis 2027; die Stadt nennt die Dürerstraße eine markante Verbindung zwischen Striesen und der Pirnaischen Vorstadt.[[18]] Von der Gerichtsstraße sind Sie in 11 Minuten am Hauptbahnhof.[[20]]",
+        "Eigene Wohnungspreise weist der Marktbericht für die Pirnaische Vorstadt nicht aus: Sie liegt in der Gemarkung Altstadt I, die zu 79 % andere Stadtteile umfasst.[[1,6]] Die Bodenrichtwerte reichen von 630 bis 1.150 €/m²; in der größten Zone gelten 630 €/m² für Mehrfamilienhausgrundstücke, 2024 waren es 610 €/m².[[3]]"
+      ],
+      "bild": {
+        "name": "dresden-zentrum-pirnaische-vorstadt",
+        "alt": "Blick von oben über die Dächer am Neumarkt zum Pirnaischen Platz und in die Pirnaische Vorstadt mit Wohnblöcken, im Hintergrund weitere Stadtteile",
+        "caption": "Blick von der Frauenkirche nach Südosten über den Pirnaischen Platz in die Pirnaische Vorstadt.",
+        "credit": "Hangman'sDeath, CC0",
+        "url": "https://commons.wikimedia.org/wiki/File:01067_Dresden,_Pirnaische_Vorstadt_2023-06-10.jpg"
+      }
+    }
+  ],
+  "band": {
+    "name": "dresden-zentrum-grosser-garten",
+    "alt": "Dahliengarten im Großen Garten mit roten und weißen Blüten auf einer Wiese, dahinter hohe Bäume und blauer Himmel mit Wolken",
+    "caption": "Der Dahliengarten im Großen Garten im September.",
+    "credit": "Bybbisch94, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:20260922.Dahliengarten_(Großer_Garten).-011.jpg"
+  },
+  "verkaufen": {
+    "h2": "Immobilie in Dresden-Zentrum verkaufen",
+    "absaetze": [
+      "In der Gemarkung Striesen wurden 2025 104 ältere Eigentumswohnungen weiterverkauft, im Median für 2.895 €/m², bei einer Spanne von 1.540 bis 5.500 €/m²; in Blasewitz waren es 36 zu 2.550 €/m², in Gruna 17 zu 2.410 €/m².[[1]] In ganz Dresden lag der Median weiterverkaufter Wohnungen im 1. Halbjahr 2026 bei 2.660 €/m², nach 2.550 €/m² ein Jahr zuvor.[[2]] Wir bewerten Ihre Wohnung deshalb nach Gemarkung, Bodenrichtwertzone, Baujahr, Vermietungsstand und Vergleichsverkäufen.",
+      "Für Mehrfamilienhäuser in offener Bauweise, wie die Striesener Würfelhäuser, ermittelte der Gutachterausschuss als Median das 21,2-Fache der jährlichen Mieteinnahmen. Sanierte Mehrfamilienhäuser der Vorkriegszeit kosteten 2025 in Dresden im Mittel 2.055 €/m² Wohnfläche.[[1,12]] Im 1. Halbjahr 2026 stiegen die Quadratmeterpreise verkaufter Mehrfamilienhäuser im Bestand gegenüber dem 2. Halbjahr 2025 um rund 3 %.[[2]] In den Erhaltungsgebieten im Nordosten Striesens und in Blasewitz brauchen Rückbau, Änderung, Nutzungsänderung und Neubau eine Genehmigung der Stadt. Für Käufer zählt, was am Haus und auf dem Grundstück noch möglich ist; das klären wir vor dem Verkauf.[[12,13,14,15,16]]"
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Dresden-Zentrum",
+    "absaetze": [
+      "Als Eigennutzer finden Sie neue Wohnungen vor allem in Blasewitz: 15 Erstverkäufe 2025, im Median 8.575 €/m², bei einer Spanne von 5.805 bis 8.740 €/m². In Striesen waren es sieben zu 6.195 €/m², in Gruna fünf zu 6.280 €/m².[[1]] In ganz Dresden kosteten neue Wohnungen im 1. Halbjahr 2026 im Median 6.255 €/m², laut Gutachterausschuss „unverändert auf hohem Niveau“.[[2]] Häuser mit einer oder zwei Wohnungen machen in Blasewitz 38 % und in Gruna 29 % der Wohngebäude aus.[[5]]",
+      "Als Kapitalanleger rechnen Sie mit dem Dresdner Mietspiegel 2025, der für die ganze Stadt gilt: Die Basismiete für 60 m² beträgt 7,07 €/m², die Wohnlage wird adressgenau mit 0,98 bis 1,03 gewichtet.[[7,8]] Die Mietpreisbremse gilt bis zum 30.06.2027: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[9]] Bestandsmieten dürfen in drei Jahren um höchstens 15 % steigen.[[10]] Den Leerstand schätzt die Stadt in den sechs Stadtteilen auf 2,6 bis 10,2 %.[[5]] Aus Kaufpreis, Miete, Bewirtschaftungskosten und den Auflagen vor Ort rechnen wir mit Ihnen die Rendite, bevor Sie kaufen."
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Dresden-Zentrum",
+    "absaetze": [
+      "Ältere Eigentumswohnungen kosteten 2025 in den Gemarkungen Blasewitz, Striesen und Gruna im Median 2.410 bis 2.895 €/m² Wohnfläche, neue 6.195 bis 8.575 €/m².[[1]] Dazu kommen die Kaufnebenkosten, in Sachsen unter anderem 5,5 % Grunderwerbsteuer.[[19]] Wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen: Timon Fischer rechnet das mit Ihnen durch, vergleicht Ihre Finanzierung über Europace und Baufinex und fragt parallel Banken direkt an."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Was kostet eine Wohnung in Striesen?",
+      "antwort": "Der Gutachterausschuss weist Eigentumswohnungen nach Gemarkungen aus; die Gemarkung Striesen umfasst Striesen-Ost, Striesen-West und Striesen-Süd.[[6]] 2025 kosteten dort ältere Wohnungen im Weiterverkauf im Median 2.895 €/m², bei 104 Verkäufen, Wohnungen der Baujahre 1990 bis 2023 3.000 €/m² und sieben neue Wohnungen 6.195 €/m².[[1]] Für Ihre Wohnung zählen Baujahr, Zustand, Lage und ob sie vermietet ist.",
+      "herkunft": "Google-Autocomplete „wohnung kaufen dresden striesen“, „wohnung kaufen dresden striesen ost“ und „wohnung kaufen dresden striesen west“ (research/serp/autocomplete-2026-10-27-dresden.json) sowie „quadratmeterpreis dresden striesen“ (research/serp/autocomplete-2026-10-27-dresden-themen.json)"
+    },
+    {
+      "frage": "Was kostet eine Wohnung in Blasewitz?",
+      "antwort": "In der Gemarkung Blasewitz, die fast genau dem Stadtteil entspricht, wurden 2025 15 neue Eigentumswohnungen verkauft, im Median für 8.575 €/m². Ältere Wohnungen kosteten im Weiterverkauf 2.550 €/m², bei 36 Verkäufen, Wohnungen der Baujahre 1990 bis 2023 2.820 €/m².[[1,6]] Die Bodenrichtwerte reichen von 530 bis 1.500 €/m².[[3]]",
+      "herkunft": "Google-Autocomplete „wohnung kaufen dresden blasewitz“ (research/serp/autocomplete-2026-10-27-dresden.json) und „immobilienpreise dresden blasewitz“ (research/serp/autocomplete-2026-10-27-dresden-themen.json)"
+    },
+    {
+      "frage": "Was kostet eine Wohnung in Gruna?",
+      "antwort": "In der Gemarkung Gruna, die zu 85 % im gleichnamigen Stadtteil liegt, kosteten ältere Wohnungen 2025 im Median 2.410 €/m², bei 17 Verkäufen. Wohnungen der Baujahre 1990 bis 2023 erzielten 2.710 €/m², fünf neue Wohnungen 6.280 €/m².[[1,6]] Bei so wenigen Verkäufen hängt der Wert Ihrer Wohnung stark von Lage, Baujahr und Zustand ab.",
+      "herkunft": "Google-Autocomplete „wohnung kaufen dresden gruna“ (research/serp/autocomplete-2026-10-27-dresden.json)"
+    },
+    {
+      "frage": "Was kostet eine Wohnung in der Pirnaischen Vorstadt?",
+      "antwort": "Eigene Werte für die Pirnaische Vorstadt gibt es im Marktbericht nicht, weil sie in der Gemarkung Altstadt I liegt, die zu 79 % andere Stadtteile umfasst.[[1,6]] Die Wohnungen im Stadtteil sind im Mittel 52 m² groß und entstanden zu 88 % zwischen 1946 und 1990; zur Miete angeboten wurden sie 2024 für durchschnittlich 9,79 €/m².[[5]] Den Wert Ihrer Wohnung ermitteln wir aus Lage, Zustand und Vergleichsverkäufen.",
+      "herkunft": "Google-Autocomplete „wohnung pirnaische vorstadt dresden“ und „pirnaische vorstadt dresden“ (research/serp/autocomplete-2026-10-27-dresden.json)"
+    },
+    {
+      "frage": "Wie hoch ist der Bodenrichtwert in Striesen?",
+      "antwort": "Zum 01.01.2026 reichen die Bodenrichtwerte in den Wohn- und Mischgebieten in Striesen-Ost von 310 bis 1.200 €/m², in Striesen-Süd von 350 bis 1.400 und in Striesen-West von 500 bis 1.700 €/m². In rund drei Vierteln von Striesen-Ost gelten 1.200 €/m² für Mehrfamilienhausgrundstücke mit einer Geschossflächenzahl von 1,5. Die Werte beziehen sich auf eine bestimmte Bebauungsdichte und sind zwischen Zonen nicht direkt vergleichbar; in Blasewitz gelten sie meist für eine Geschossflächenzahl von 0,8.[[3]]",
+      "herkunft": "Google-Autocomplete „bodenrichtwert dresden striesen“ (research/serp/autocomplete-2026-10-27-dresden-themen.json)"
+    },
+    {
+      "frage": "Was gilt in den Erhaltungsgebieten in Striesen und Blasewitz?",
+      "antwort": "Für fünf Gebiete, Striesen Nordost und vier Gebiete in Blasewitz, gelten seit 2017 städtebauliche Erhaltungssatzungen. Rückbau, Änderung, Nutzungsänderung und die Errichtung baulicher Anlagen brauchen dort eine Genehmigung; innere Umbauten, die das äußere Erscheinungsbild nicht verändern, sind ausgenommen. Wer ohne Genehmigung rückbaut oder ändert, riskiert ein Bußgeld von bis zu 25.000 €.[[12,13,14,15,16]] Eine soziale Erhaltungssatzung gibt es in Dresden nicht.[[11]]",
+      "herkunft": "Google-Autocomplete „erhaltungssatzung dresden“ und „soziale erhaltungssatzung dresden“ (research/serp/autocomplete-2026-10-27-dresden-themen.json)"
+    },
+    {
+      "frage": "Welcher Mietspiegel gilt in Striesen?",
+      "antwort": "Dresden hat einen Mietspiegel für die ganze Stadt, ohne Zu- oder Abschläge je Stadtteil. Er gilt vom 01.01.2025 bis zum 31.12.2026; ab 2027 gibt es einen neuen. Die Wohnlage wird adressgenau als einfach, mittel oder gut eingestuft und mit 0,98, 1,00 oder 1,03 gewichtet.[[7]] Ihre Adresse prüfen Sie im Online-Mietspiegel der Stadt.[[8]]",
+      "herkunft": "Google-Autocomplete „mietspiegel dresden striesen“ (research/serp/autocomplete-2026-10-27-dresden-themen.json)"
+    },
+    {
+      "frage": "Wie hoch ist die Maklerprovision in Dresden?",
+      "antwort": "Kauft ein Verbraucher eine Wohnung oder ein Einfamilienhaus, teilen sich Käufer und Verkäufer die Provision zu gleichen Teilen (§§ 656a bis 656d BGB); das gilt bundesweit, also auch in Sachsen. Bei Fischer & Geserich sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision. Bei Mehrfamilienhäusern und Grundstücken gilt die Teilung nicht. Die Provision fällt nur an, wenn der Kaufvertrag zustande kommt.",
+      "herkunft": "Google-Autocomplete „maklerprovision dresden“ (research/serp/autocomplete-2026-10-27-dresden-themen.json) sowie „immobilienmakler dresden striesen“ und „makler dresden striesen“ (research/serp/autocomplete-2026-10-27-dresden.json). Antwort nach /maklerprovision/ und /kaufen/ (Stand 26.10.2026)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Dresden-Ost",
+      "url": "/standorte/dresden/ost/"
+    },
+    {
+      "name": "Dresden-Süd",
+      "url": "/standorte/dresden/sued/"
+    },
+    {
+      "name": "Dresden-Nord",
+      "url": "/standorte/dresden/nord/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Landeshauptstadt Dresden, Grundstücksmarktbericht 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/2026-Grundstuecksmarktbericht.pdf",
+      "stand": "Kaufverträge 2025, Vorwort vom 16.04.2026"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Landeshauptstadt Dresden, Halbjahresbericht 2026",
+      "url": "https://www.dresden.de/media/pdf/vermessung/Halbjahresbericht_2026.pdf",
+      "stand": "1. Halbjahr 2026, veröffentlicht 31.08.2026"
+    },
+    {
+      "name": "Bodenrichtwerte, BORIS Sachsen (Stichtag 01.01.2026) und Themenstadtplan Dresden (Stichtag 01.01.2024), eigene Zuordnung zu den Stadtteilen",
+      "url": "https://www.boris.sachsen.de/",
+      "stand": "Stichtag 01.01.2026, Vergleich mit 01.01.2024"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Opendata: Einwohner mit Hauptwohnung nach Stadtteilen",
+      "url": "https://opendata.dresden.de/",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Kommunale Statistikstelle, Stadtteilkatalog 2024",
+      "url": "https://www.dresden.de/media/pdf/onlineshop/statistikstelle/120_080_010_Stadtteilkatalog_2024.pdf",
+      "stand": "Werte 2024"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Geodaten der Gemarkungen und statistischen Stadtteile (WFS), eigene Verschneidung der Flächen",
+      "url": "https://opendata.dresden.de/",
+      "stand": "abgerufen 27.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Dresdner Mietspiegel 2025",
+      "url": "https://www.dresden.de/media/pdf/sozialamt/Mietspiegel_Dresden_2025.pdf",
+      "stand": "gültig 01.01.2025 bis 31.12.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Mietspiegel (Online-Mietspiegel und Wohnlagekarte)",
+      "url": "https://www.dresden.de/de/leben/wohnen/wohnungsmarkt/mietspiegel.php",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Freistaat Sachsen, Mietpreisbremse gemäß § 556d BGB",
+      "url": "https://www.bauen-wohnen.sachsen.de/mietpreisbremse-gemaess-556d-bgb-4391.html",
+      "stand": "verlängert bis 30.06.2027, abgerufen 26.10.2026"
+    },
+    {
+      "name": "Medienservice Sachsen, Kappungsgrenze für Dresden und Leipzig verlängert",
+      "url": "https://www.medienservice.sachsen.de/medien/news/1087981",
+      "stand": "10.06.2025, gültig bis 30.06.2027"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Soziale Erhaltungssatzung",
+      "url": "https://www.dresden.de/de/stadtraum/planen/stadtentwicklung/aktuelle-buergerbeteiligungen/soziale-erhaltungssatzung.php",
+      "stand": "letzte Änderung 07.01.2025, abgerufen 26.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Erhaltungssatzung H 46 A Dresden-Striesen Nordost, Satzung vom 22. Juni 2017 mit Begründung",
+      "url": "https://www.dresden.de/media/pdf/stadtplanung/stadtplanung/H_46_A_Satzung_vom_22.Juni_2017-gesamt_zusammengefuehrt_mit_begruendung.pdf",
+      "stand": "Beschluss 22.06.2017, bekannt gemacht 27.07.2017"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Erhaltungssatzung H 46 B Dresden-Blasewitz Süd, Satzung vom 22. Juni 2017 mit Begründung",
+      "url": "https://www.dresden.de/media/pdf/stadtplanung/stadtplanung/H_46_B_Satzung_vom_22.Juni_2017-gesami_zusammengefuehrt_mit_begruendung.pdf",
+      "stand": "Beschluss 22.06.2017, bekannt gemacht 27.07.2017"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Erhaltungssatzung H 46 C Dresden-Blasewitz Waldparkanlage bis Schillerplatz, Satzung vom 22. Juni 2017 mit Begründung",
+      "url": "https://www.dresden.de/media/pdf/stadtplanung/stadtplanung/H_46_C_Satzung_vom_22.Juni_2017-gesamt_zusammengefuert_mit_begruendung.pdf",
+      "stand": "Beschluss 22.06.2017, bekannt gemacht 27.07.2017"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Erhaltungssatzung H 46 D Dresden-Blasewitz Goetheallee/Käthe-Kollwitz-Ufer, Satzung vom 22. Juni 2017 mit Begründung",
+      "url": "https://www.dresden.de/media/pdf/stadtplanung/stadtplanung/H_46_D_Satzung_vom_22.Juni_2017-gesami_zusammengefuehrt_mit_begruendung.pdf",
+      "stand": "Beschluss 22.06.2017, bekannt gemacht 27.07.2017"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Erhaltungssatzung H 46 E Dresden-Blasewitz Ost, Satzung vom 22. Juni 2017 mit Begründung",
+      "url": "https://www.dresden.de/media/pdf/stadtplanung/stadtplanung/H_46_E_Satzung_vom_22.Juni_2017-gesamt_zusammengefuehrt_mit_begruendung.pdf",
+      "stand": "Beschluss 22.06.2017, bekannt gemacht 27.07.2017"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Stadtteilgestaltung Altgruna (EFRE 2021–2027)",
+      "url": "https://www.dresden.de/de/stadtraum/planen/stadtentwicklung/stadterneuerung/foerderprogramme-eu/efre/stadtteilgestaltung-altgruna.php",
+      "stand": "letzte Änderung 30.09.2026, abgerufen 27.10.2026"
+    },
+    {
+      "name": "Landeshauptstadt Dresden, Gestaltung der Stadtteile Johannstadt und Pirnaische Vorstadt (EFRE 2021–2027)",
+      "url": "https://www.dresden.de/de/stadtraum/planen/stadtentwicklung/stadterneuerung/foerderprogramme-eu/efre/stadtteilgestaltung-johannstadt.php",
+      "stand": "letzte Änderung 08.09.2026, abgerufen 27.10.2026"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Stadt Leipzig, Grundstücksmarktbericht 2026, S. 32 (Grunderwerbsteuer in Sachsen)",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stand": "2026"
+    },
+    {
+      "name": "Elektronische Fahrplanauskunft (Sollfahrplan Straßenbahn, Bus, S-Bahn und Regionalverkehr), Verbindungen bis Dresden Hauptbahnhof",
+      "url": "https://www.efa-bw.de/bvb3/XSLT_TRIP_REQUEST2?language=de",
+      "stand": "Fahrplan Dienstag 10.11.2026 ab 9 Uhr, abgefragt 26. und 27.10.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "Einwohner 31.12.2025: Blasewitz 10.141, Striesen-Ost 15.160, Striesen-Süd 12.528, Striesen-West 13.252 (Striesen zusammen 40.940), Gruna 12.980, Pirnaische Vorstadt 6.834 (Stadtbezirk Altstadt), Summe 70.895",
+      "fundstelle": "dresden-zentrum.md Nr. 1–2; D3; ew2025.csv"
+    },
+    {
+      "zahl": "STK 2024: EW Gruna 1990 14.673, 2024 13.000; Ø Alter Striesen-Ost 41,1, Gruna 48,3, Stadt 43,5; Einpersonenhaushalte Pirnaische Vorstadt 69,8 %",
+      "fundstelle": "dresden-zentrum.md Nr. 3–5; stk.json"
+    },
+    {
+      "zahl": "Bestand: Eigenheime (1–2 Wohnungen) Blasewitz 38,1 %, Gruna 29,1 %; große Wohngebäude Pirnaische Vorstadt 99,5 %; Ø Wohnfläche Blasewitz 85,1, Pirnaische Vorstadt 52 m²; Baualter bis 1918 Striesen-Ost 63,1 %; 1946–90 Striesen-Süd 52,0, Striesen-West 44,6, Gruna 49,4, Pirnaische Vorstadt 88,3 %; 1919–45 Gruna 29,5 %; ab 1991 Blasewitz 37,3 %",
+      "fundstelle": "dresden-zentrum.md Nr. 7–9; D18–D23"
+    },
+    {
+      "zahl": "Angebotsmiete 2024: Striesen-Ost 10,89, Blasewitz 9,81, Pirnaische Vorstadt 9,79, Striesen-West 9,32, Striesen-Süd 9,21, Gruna 8,57, Stadt 9,37; Leerstand 2024 Blasewitz 8,8, Striesen-Süd 2,6, Pirnaische Vorstadt 10,2 (Spanne 2,6–10,2)",
+      "fundstelle": "dresden-zentrum.md Nr. 10–11; D18–D23"
+    },
+    {
+      "zahl": "Fertigstellungen Pirnaische Vorstadt 2022 187 + 2024 110 = 297",
+      "fundstelle": "dresden-zentrum.md Nr. 12; stk2024.txt Z. 904–908"
+    },
+    {
+      "zahl": "GMB Gemarkung Blasewitz: Neubau 15 / 5.805–8.740 / Median 8.575 / Ø 8.245; WV 1990–2023 43 / 2.820; WV bis 1989 36 / 2.550; Striesen: Neubau 7 / 6.195; WV 1990–2023 72 / 3.000; WV bis 1989 104 / 1.540–5.500 / Median 2.895 / Ø 2.965; Gruna: Neubau 5 / 6.280; WV 1990–2023 12 / 2.710; WV bis 1989 17 / 2.410",
+      "fundstelle": "dresden-zentrum.md Nr. 14–16; D42; GMB S. 50, 51, 54"
+    },
+    {
+      "zahl": "Gemarkung ↔ Stadtteil: Blasewitz = Blasewitz 99; Striesen = Striesen-Ost 40, -West 30, -Süd 26, Gruna 4; Gruna = Gruna 85; Altstadt I = Pirnaische Vorstadt 21 (also 79 % andere)",
+      "fundstelle": "D48a; dd/gemst_all.txt"
+    },
+    {
+      "zahl": "Stadt: WV Ø rund 2.705; Neubau Ø rund 6.460; MFH Vorkriegszeit saniert Ø 2.055; Rohertragsfaktor offene Bauweise Median 21,21",
+      "fundstelle": "D31–D33, D36; GMB S. 15, 81"
+    },
+    {
+      "zahl": "HJB 1. HJ 2026: WV Median 2.660 (1. HJ 2025: 2.550); Neubau Median 6.255, „unverändert auf hohem Niveau“; MFH +3 % ggü. 2. HJ 2025",
+      "fundstelle": "D37, D38; HJB S. 4, 5, 10"
+    },
+    {
+      "zahl": "BRW 2026: Blasewitz 530–1.500, größte Zone 61240760 630 MFH WGFZ 0,8; Striesen-Ost 310–1.200, 61240810 1.200 WGFZ 1,5 auf 597 von 822 Zonenpunkten; Striesen-Süd 350–1.400; Striesen-West 500–1.700; Gruna 350–660, 12 Zonen, 11 höher / 1 gleich; Pirnaische Vorstadt 630–1.150, 61243400 630 (610); gesamt 310–1.700",
+      "fundstelle": "dresden-zentrum.md Nr. 19–24; D46; brwunion.json"
+    },
+    {
+      "zahl": "Mietspiegel 2025 gültig bis 31.12.2026; Basismiete 60 m² 7,07; Wohnlage 0,98 / 1,00 / 1,03; Mietpreisbremse 10 % und Kappung 15 % bis 30.06.2027; keine soziale Erhaltungssatzung",
+      "fundstelle": "D49–D54, D57"
+    },
+    {
+      "zahl": "Erhaltungssatzungen H 46 A–E: Satzungen vom 22.06.2017, bekannt gemacht 27.07.2017; Genehmigung für Rückbau, Änderung, Nutzungsänderung, Errichtung; innere Umbauten ohne Außenwirkung ausgenommen; Bußgeld bis 25.000 €",
+      "fundstelle": "dresden-zentrum.md Nr. 27; H46A Z. 5501–5520, 6072–6098"
+    },
+    {
+      "zahl": "Striesen: Eingemeindung 1892, Raster, villenartige Mietshäuser, „Würfelhäuser“/„Kaffeemühlen“, Grundfläche 13–18 m, Ortsgesetz 1899, Bauordnung 1905, bis 1918 weitgehend abgeschlossen",
+      "fundstelle": "dresden-zentrum.md Nr. 30; H46A Z. 6209–6220, 6340–6349"
+    },
+    {
+      "zahl": "Blasewitz: 1867 Königsheim, ca. 100 ha Tännicht, 1868 Prospekt (Parzellen, Gebäudebreite, Geschossigkeit), Waldparkverein 128 Bauplätze, Straßen ab 1872, bis Schillerplatz, Prinzenaue Hochwasser, Villen ab 1895, selbständig bis 1921; Gruna eingemeindet 1901",
+      "fundstelle": "dresden-zentrum.md Nr. 31–34; H46B Z. 5647–5676, H46C Z. 4115–4146, H46D Z. 1698–1708, H46E Z. 2154–2166"
+    },
+    {
+      "zahl": "Altgruna EFRE 2021–2027: Rothermundtpark +ca. 2.000 m², Freiflächen Zwinglistraße bis Findlingsbrunnen, Villa Akazienhof Stadtteilhaus; Johannstadt/Pirnaische Vorstadt EFRE 2021–2027, Dürerstraße „markante Verbindung“",
+      "fundstelle": "dresden-zentrum.md Nr. 35–36; EFRE-AG Z. 7, 27–30, 122, 198; EFRE-JP Z. 15, 160"
+    },
+    {
+      "zahl": "Fahrzeiten: Schillerplatz Tram 10 21 min; Pohlandplatz Tram 12 + 10 17 min; Mosenstraße Tram 9 + 8 14 min; Spenerstraße Bus 63 + S2 14 min; Zwinglistraße Tram 2 + 10 15 min; Gerichtsstraße Bus 62 + Tram 8 11 min",
+      "fundstelle": "dresden-zentrum.md Nr. 38–43; D64; EFA-Z"
+    },
+    {
+      "zahl": "GrESt Sachsen 5,5 %",
+      "fundstelle": "Leipziger GMB 2026 S. 32"
+    },
+    {
+      "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, §§ 656a–656d BGB; § 34c und § 34i GewO; Timon Fischer Geschäftsführer, Immobilienfinanzierung; Europace und Baufinex",
+      "fundstelle": "wie dresden-nord.json"
+    }
+  ],
+  "karte": {
+    "alt": "Karte von Dresden-Zentrum: Blasewitz mit Neugruna, Striesen-Ost, Striesen-Süd und Striesen-West, Gruna und die Pirnaische Vorstadt, dazu die Johannstadt als Ortspunkt, die Elbe, die Bahnstrecken und der Dresdner Hauptbahnhof im Westen"
+  },
+  "anbindung": [
+    "Vom Schillerplatz fährt die Linie 10 in 21 Minuten zum Hauptbahnhof.[[20]]",
+    "Vom Pohlandplatz sind Sie in 17 Minuten am Hauptbahnhof, von der Mosenstraße und der Spenerstraße in 14 Minuten.[[20]]",
+    "Von der Zwinglistraße sind Sie mit den Linien 2 und 10 in 15 Minuten am Hauptbahnhof.[[20]]",
+    "Von der Gerichtsstraße sind Sie in 11 Minuten am Hauptbahnhof.[[20]]"
+  ]
+}

@@ -1,0 +1,431 @@
+{
+  "slug": "teltow-flaeming",
+  "name": "Teltow-Fläming",
+  "nameLang": "Landkreis Teltow-Fläming",
+  "inOrt": "im Landkreis Teltow-Fläming",
+  "fuerOrt": "den Landkreis Teltow-Fläming",
+  "typ": "landkreis",
+  "ersetzt": [
+    "luckenwalde"
+  ],
+  "orte": [
+    "Ludwigsfelde",
+    "Blankenfelde-Mahlow",
+    "Zossen",
+    "Luckenwalde"
+  ],
+  "kontakt": "lennart",
+  "title": "Immobilienmakler Teltow-Fläming – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler Teltow-Fläming: verkaufen, kaufen und finanzieren in Ludwigsfelde, Blankenfelde-Mahlow, Rangsdorf und Zossen, mit Bodenrichtwerten 2026.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren im Landkreis Teltow-Fläming",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger im Landkreis Teltow-Fläming beim Verkauf, beim Kauf und bei der Finanzierung, in Ludwigsfelde, Blankenfelde-Mahlow, Rangsdorf und Großbeeren am Berliner Stadtrand ebenso wie in Zossen, Luckenwalde und Jüterbog. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für alle Orte auf dieser Seite ist Lennart Geserich Ihr Ansprechpartner, Head of Sales & Vermietung.",
+  "hero": {
+    "name": "teltow-flaeming-jueterbog",
+    "alt": "Blick von der Aussichtsplattform der Nikolaikirche über die roten Dächer der Altstadt von Jüterbog, im Hintergrund Felder und Wald",
+    "credit": "Edelseider, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:J%C3%BCterbog_April_2019_(7).jpg",
+    "position": "50% 50%"
+  },
+  "stand": "Oktober 2026",
+  "updated": "2026-10-26",
+  "zahlen": [
+    {
+      "wert": "600 €/m²",
+      "label": "Höchster Bodenrichtwert für Wohnbauland im Landkreis, Mehrfamilienhauszone Bücker-Werke in Rangsdorf",
+      "detail": "Vor einem Jahr galten dort 450 €/m². Von 426 baureifen Wohn- und Mischgebietszonen im Landkreis blieben 301 unverändert, 18 stiegen, 76 sanken, 31 sind neu.",
+      "quelle": "BORIS Brandenburg",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?f=json&limit=2000&skipGeometry=true&gemeinde_gemeindekennzeichen_kreis=72&stichtag=2026-01-01",
+      "stichtag": "01.01.2026"
+    },
+    {
+      "wert": "Ø 496.055 €",
+      "label": "Freistehende Einfamilienhäuser in Ludwigsfelde",
+      "detail": "26 Verkäufe, im Mittel 3.890 €/m² Wohnfläche. In Blankenfelde-Mahlow Ø 471.890 € bei 79 Verkäufen, in Zossen 391.780 €, in Luckenwalde 299.190 €, im ganzen Landkreis 371.865 €.",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Teltow-Fläming",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_TF.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 4.625 €/m²",
+      "label": "Neue Eigentumswohnungen in Zossen",
+      "detail": "162 Erstverkäufe in Mehrfamilienhäusern der Baujahre 2024 und 2025, Spanne 3.030 bis 6.135 €/m². Neue Wohnungen in Blankenfelde-Mahlow kosteten im Mittel 4.375 €/m², erstmals verkaufte Wohnungen mit Baujahr 1930 in Rangsdorf 8.115 €/m² bei 69 Verkäufen.",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Teltow-Fläming",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_TF.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 9,06 €/m²",
+      "label": "Nettokaltmiete in verkauften, vermieteten Eigentumswohnungen im Berliner Umland des Landkreises",
+      "detail": "128 Verkäufe, Spanne 4,50 bis 13,48 €/m², Liegenschaftszinssatz im Mittel 2,85 %. Im weiteren Metropolenraum 8,55 €/m² und 3,02 %. Einen qualifizierten Mietspiegel hat im Landkreis Ludwigsfelde.",
+      "quelle": "Grundstücksmarktbericht 2025 Landkreis Teltow-Fläming",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_TF.pdf",
+      "stichtag": "Kaufverträge 2023–2025"
+    },
+    {
+      "wert": "177.982",
+      "label": "Einwohner im Landkreis Teltow-Fläming",
+      "detail": "294 mehr als ein Jahr zuvor. Größte Gemeinde ist Ludwigsfelde mit 29.635 Einwohnern vor Blankenfelde-Mahlow mit 29.280. Das Landesamt für Bauen und Verkehr erwartet bis 2040 ein Plus von 8,4 %, für Zossen von 23,6 % und für Ludwigsfelde von 23,1 %.",
+      "quelle": "Amt für Statistik Berlin-Brandenburg; LBV Brandenburg",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stichtag": "31.12.2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Ludwigsfelde: Industriestadt mit Wohnparks",
+      "absaetze": [
+        "Ludwigsfelde liegt rund 11 km südlich der Berliner Stadtgrenze und erhielt erst am 18. Juli 1965 das Stadtrecht, im Zuge der Produktion des Nutzfahrzeugs W50. Heute fertigt Mercedes-Benz dort den Sprinter; Mercedes-Benz, Siemens, MTU Aero Engines und Volkswagen gehören zu den größten Arbeitgebern der Stadt.[[10]] Mit 29.635 Einwohnern ist Ludwigsfelde die größte Gemeinde im Landkreis, bis 2040 erwartet das Landesamt für Bauen und Verkehr ein Plus von 23,1 %.[[3,4]] Zur Stadt gehören neben der Kernstadt elf Ortsteile, darunter Ahrensdorf, Genshagen und Siethen.[[11]] Bis Friedrichstraße sind es mit RE4 und S-Bahn 28 Minuten, mit RE3 und S26 35 bis 39 Minuten.[[9]]",
+        "Als gefragteste Lage nennt der Gutachterausschuss den Wohnpark Ahrensdorfer Heide.[[1]] Sein Bodenrichtwert stieg zum 01.01.2026 von 400 auf 480 €/m², für Mehrfamilienhäuser dort gilt neu 520 €/m². In der Kernstadt stiegen drei Zonen für Mehrfamilienhäuser von 200 auf 370 und 380 €/m²; das Stadtzentrum liegt bei 480, der Wohnpark Struveshof bei 460, die Gartenstadt sank von 320 auf 310 €/m². Ufergrundstücke in Siethen liegen bei 450 €/m², der Ort Genshagen bei 200 €/m².[[2]] Einfamilienhäuser kosteten 2025 im Mittel 496.055 €, nach 551.265 € im Vorjahr; Bauland für Ein- und Zweifamilienhäuser 430 €/m² bei 53 Verkäufen, nach 306 €/m² bei 16.[[1]] Mietpreisbremse und Kappungsgrenze gelten, die Stadt hat einen qualifizierten Mietspiegel.[[5,6,12]]"
+      ],
+      "bild": {
+        "name": "teltow-flaeming-ludwigsfelde",
+        "alt": "Ein Parkplatz vor hellen Wohn- und Geschäftshäusern mit einem Ärztehaus in Ludwigsfelde unter blauem Himmel",
+        "caption": "Wohn- und Geschäftshäuser in Ludwigsfelde.",
+        "credit": "Roy Zuo, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:(20240829)_Ludwigsfelde_11.jpg"
+      }
+    },
+    {
+      "h2": "Blankenfelde-Mahlow: Siedlungen an der Stadtgrenze",
+      "absaetze": [
+        "Blankenfelde-Mahlow besteht seit 2003 aus fünf Ortsteilen. Das Ortsbild prägen Ein- und Mehrfamilienhäuser auf Gartengrundstücken, Neubausiedlungen gibt es vor allem in Blankenfelde und Mahlow. In Blankenfelde baute die GAGFAH in den 1930er Jahren 739 Heimstätten, in Dahlewitz ging 1993 das Werk von BMW Rolls-Royce in Betrieb.[[13]] Mit 29.280 Einwohnern auf 55 km² ist Blankenfelde-Mahlow die am dichtesten besiedelte Gemeinde im Landkreis.[[3]] Von Mahlow fährt die S2 alle 20 Minuten und braucht 29 Minuten bis Friedrichstraße, von Blankenfelde 33 Minuten, mit RE8 und S-Bahn 22.[[9]]",
+        "Die höchsten Bodenrichtwerte der Gemeinde liegen zum 01.01.2026 in Mahlow: 500 €/m² in Waldblick und 400 €/m² am Roter Dudel, den Siedlungen, an die bis 1989 die Mauer grenzte. Der Ort Mahlow stieg von 320 auf 340 €/m². In Blankenfelde sank die Mitte von 300 auf 280, Dahlewitz von 260 auf 230 €/m²; insgesamt sanken 11 von 28 Zonen.[[2,13]] Mit 79 verkauften Einfamilienhäusern lag Blankenfelde-Mahlow 2025 vor allen anderen Gemeinden im Landkreis, im Mittel kosteten sie 471.890 € oder 3.850 €/m² Wohnfläche. Neue Eigentumswohnungen kosteten 4.375 €/m².[[1]] Mietpreisbremse und Kappungsgrenze gelten.[[5,6]]"
+      ],
+      "bild": {
+        "name": "teltow-flaeming-dorfkirche-juehnsdorf",
+        "alt": "Die Dorfkirche Jühnsdorf aus Feldsteinen mit spitzem Turm und runder Apsis, hinter einer Steinmauer und hohen Laubbäumen",
+        "caption": "Die Dorfkirche in Jühnsdorf, Gemeinde Blankenfelde-Mahlow.",
+        "credit": "Clemensfranz, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Dorfkirche_J%C3%BChnsdorf_2018_03.jpg"
+      }
+    },
+    {
+      "h2": "Rangsdorf und Großbeeren",
+      "absaetze": [
+        "Rangsdorf am Rangsdorfer See entwickelte sich nach dem Ersten Weltkrieg zum Ausflugsort für Berliner.[[14]] Auf dem früheren Gelände der Bücker-Werke entsteht das Wohngebiet BUC-36: Den Bebauungsplan hat die Gemeindevertretung im März 2023 als Satzung beschlossen, gebaut werden soll in Etappen innerhalb von 15 Jahren.[[15]] Für Mehrfamilienhäuser in der Zone Bücker-Werke gilt zum 01.01.2026 ein Bodenrichtwert von 600 €/m², nach 450 im Vorjahr, Ufergrundstücke an der Seepromenade liegen bei 500, die übrigen Wohnlagen im Ort bei 270 bis 310 €/m².[[2]] 2025 wurden in Rangsdorf 69 Wohnungen mit Baujahr 1930 erstmals verkauft, im Mittel für 8.115 €/m²; Einfamilienhäuser kosteten 458.160 €.[[1]] Mit RE8 und S-Bahn sind es stündlich 29 bis 31 Minuten bis Friedrichstraße. Die Mietpreisbremse gilt in Rangsdorf nicht.[[9,5]]",
+        "Großbeeren hat 9.305 Einwohner, seit 1994 entstand dort das Güterverkehrszentrum Großbeeren.[[3,1]] Einfamilienhäuser kosteten 2025 im Mittel 615.360 € oder 4.525 €/m² Wohnfläche, mehr als in jeder anderen Gemeinde des Landkreises, bei 17 Verkäufen.[[1]] Der Ort Großbeeren stieg zum 01.01.2026 von 400 auf 410 €/m², die Wohnparks liegen bei 290 bis 370, Diedersdorf bei 170 bis 220 €/m².[[2]] Die schnellste Verbindung am Vormittag, RE3 und S26, braucht 25 Minuten bis Friedrichstraße, die übrigen 54 bis 68 Minuten. Mietpreisbremse und Kappungsgrenze gelten.[[9,5,6]]"
+      ],
+      "bild": {
+        "name": "teltow-flaeming-grossbeeren-luftbild",
+        "alt": "Großbeeren aus der Luft: Wohnsiedlungen mit Einfamilienhäusern zwischen Feldern und Waldstreifen, im Hintergrund große Gewerbehallen",
+        "caption": "Großbeeren aus der Luft.",
+        "credit": "Brücke-Osteuropa, CC0",
+        "url": "https://commons.wikimedia.org/wiki/File:Großbeeren.JPG"
+      }
+    },
+    {
+      "h2": "Zossen: Wünsdorf, Dabendorf und neue Wohnungen",
+      "absaetze": [
+        "Zossen besteht aus zehn Ortsteilen; 2003 kamen unter anderem Wünsdorf und Kallinchen hinzu, Dabendorf gehört seit 1974 zur Stadt.[[16]] In Wünsdorf hatte ab 1954 das Oberkommando der Gruppe der Sowjetischen Streitkräfte in Deutschland seinen Sitz, seit dem Abzug 1994 wird das Gelände zivil genutzt.[[17]] Zossen hat 21.558 Einwohner, für 2040 erwartet das Landesamt für Bauen und Verkehr ein Plus von 23,6 %, mehr als für jede andere Gemeinde im Landkreis.[[3,4]] Mit RE8 und S-Bahn sind es 38 bis 40 Minuten bis Friedrichstraße. Der Bahnhof Zossen wird umgebaut und ist bis zur geplanten Inbetriebnahme des neuen Stellwerks im September 2027 nicht barrierefrei.[[9,18]]",
+        "2025 wurden in Zossen 162 neue Eigentumswohnungen verkauft, im Mittel für 4.625 €/m², dazu 30 neue Doppelhaushälften für 4.805 €/m² Wohnfläche. Einfamilienhäuser kosteten im Mittel 391.780 €.[[1]] Die Bodenrichtwerte reichen zum 01.01.2026 von 120 €/m² im Ort Wünsdorf und 150 im Wohnpark Johnepark bis 300 in den Wünsdorfer Sonnengärten und 340 €/m² in Schöneiche Süd. Ufergrundstücke in Kallinchen sanken von 450 auf 400, Dabendorf von 230 auf 210 €/m². Für Mehrfamilienhäuser in der Waldstadt Wünsdorf gibt es eine neue Zone mit 240 €/m².[[2]] Mietpreisbremse und Kappungsgrenze gelten.[[5,6]]"
+      ],
+      "bild": {
+        "name": "teltow-flaeming-dabendorf-gesamtschule",
+        "alt": "Der gepflasterte Schulhof der Geschwister-Scholl-Gesamtschule in Dabendorf mit hellen Neubauten und Fahnenmasten",
+        "caption": "Die Geschwister-Scholl-Gesamtschule in Dabendorf, Stadt Zossen.",
+        "credit": "Sebastian Wallroth, CC BY 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Geschwister-Scholl-Gesamtschule_Dabendorf_2022_003.jpg"
+      }
+    },
+    {
+      "h2": "Luckenwalde und Jüterbog im Süden",
+      "absaetze": [
+        "Luckenwalde ist Kreisstadt und hat 21.077 Einwohner; Wahrzeichen ist der 38 Meter hohe Marktturm.[[1,3,19]] Bis Friedrichstraße sind es mit Regionalexpress und S-Bahn 45 bis 55 Minuten.[[9]] Die meisten Wohnlagen liegen zum 01.01.2026 zwischen 100 und 180 €/m². Zwölf Zonen sanken, etwa die Zinnaer Straße von 140 auf 110 und die Stadtrandsiedlung von 130 auf 100 €/m². Für die Sanierungsgebiete Innenstadt und Zentrum gelten besondere Bodenrichtwerte.[[2,1]] Einfamilienhäuser kosteten 2025 im Mittel 299.190 € oder 2.375 €/m² Wohnfläche.[[1]]",
+        "In Jüterbog mit 12.961 Einwohnern waren es 213.130 €. Der Gutachterausschuss sieht Jüterbog und Trebbin wegen der Bahn- und Straßenanbindung als Alternative zum teureren Berliner Speckgürtel.[[3,1]] Der neue Wohnpark Am Holländer hat einen Bodenrichtwert von 160 €/m².[[2]] In Luckenwalde und Jüterbog gilt die Mietpreisbremse nicht.[[5]]"
+      ],
+      "bild": {
+        "name": "teltow-flaeming-luckenwalde-schuetzenstrasse",
+        "alt": "Weiß verputztes Wohnhaus mit Schieferdach, Dachfenstern und verziertem Giebel an einer gepflasterten Straße, dahinter ein Baum in Herbstlaub und ein Backsteinschornstein",
+        "caption": "Denkmalgeschütztes Wohnhaus in der Schützenstraße in Luckenwalde.",
+        "credit": "Global Fish, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:LuckenwaldeSchützen58.jpg"
+      }
+    }
+  ],
+  "band": {
+    "name": "teltow-flaeming-rangsdorfer-see-krumme-lanke",
+    "alt": "Die Krumme Lanke des Rangsdorfer Sees mit ruhigem, blau schimmerndem Wasser, gegenüber ein dicht bewaldetes Ufer mit Schilfsaum, vorn rechts überhängende Zweige, blauer Himmel",
+    "caption": "Die Krumme Lanke des Rangsdorfer Sees.",
+    "credit": "Leonhard Lenz, CC0",
+    "url": "https://commons.wikimedia.org/wiki/File:Krumme_Lanke_Rangsdorfer_See_2021-05-11_01.jpg",
+    "position": "50% 55%"
+  },
+  "anbindung": [
+    "Mahlow und Blankenfelde liegen an der S2, Ludwigsfelde, Großbeeren, Luckenwalde und Jüterbog an RE3 und RE4, Rangsdorf und Zossen am RE8.[[9]]",
+    "Von Mahlow fährt die S2 alle 20 Minuten und braucht 29 Minuten bis Friedrichstraße, von Blankenfelde 33 Minuten, mit RE8 und S-Bahn 22.[[9]]"
+  ],
+  "karte": {
+    "alt": "Karte des nördlichen und mittleren Landkreises Teltow-Fläming bis Berlin: Ludwigsfelde, Großbeeren, Blankenfelde-Mahlow, Rangsdorf, Zossen, Luckenwalde und Jüterbog, die Orte Waldblick, Roter Dudel, Mahlow, Diedersdorf, Ahrensdorf, Struveshof, Genshagen, Dahlewitz, Jühnsdorf, Siethen, Jütchendorf, Schiaß, Mietgendorf, Trebbin, Dabendorf, Schöneiche, Kallinchen, Wünsdorf, Waldstadt, Funkenmühle und Baruth/Mark, dazu Bahnstrecken, Autobahnen, Gewässer und der Bahnhof Berlin Friedrichstraße"
+  },
+  "verkaufen": {
+    "h2": "Immobilie im Landkreis Teltow-Fläming verkaufen",
+    "absaetze": [
+      "Wie viel Ihre Immobilie wert ist, hängt im Landkreis vor allem an der Nähe zu Berlin: Freistehende Einfamilienhäuser kosteten 2025 im Berliner Umland, also in Ludwigsfelde, Blankenfelde-Mahlow, Großbeeren und Rangsdorf, im Mittel 490.205 €, im weiteren Metropolenraum mit Zossen, Luckenwalde und Jüterbog 283.855 €.[[1]] Wir bewerten deshalb nach Ihrer Bodenrichtwertzone, Ihrem Baujahr und den Vergleichszahlen Ihrer Gemeinde.",
+      "2025 wurden im Landkreis 2.218 Kaufverträge geschlossen, 21,5 % mehr als im Vorjahr; der Geldumsatz stieg um 74 % auf 785,8 Mio. €, bei Wohnungs- und Teileigentum um 164 %. Für Bauland im Berliner Umland lag der Preisindex des Gutachterausschusses zum 01.01.2026 rund 14 % unter dem Höchststand vom 01.01.2023.[[1]] Einzelne Zonen verlaufen anders: Die Ahrensdorfer Heide in Ludwigsfelde stieg im selben Jahr um 80 €/m².[[2]]"
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren im Landkreis Teltow-Fläming",
+    "absaetze": [
+      "Als Eigennutzer klären Sie zuerst den Weg nach Berlin: Mahlow und Blankenfelde liegen an der S2, Ludwigsfelde, Großbeeren, Luckenwalde und Jüterbog an RE3 und RE4, Rangsdorf und Zossen am RE8.[[9]] Nach Beobachtung des Gutachterausschusses tritt der Fluglärm des BER bei Käufern zunehmend hinter die Lagevorteile zurück; prüfen Sie für Ihre Adresse trotzdem die An- und Abflugrouten. Für Einfamilienhäuser zahlten Käufer 2025 im Mittel 4.525 €/m² Wohnfläche in Großbeeren, 3.890 in Ludwigsfelde und 2.995 in Zossen.[[1]]",
+      "Als Kapitalanleger prüfen Sie Miete und Kaufpreis gegen den Grundstücksmarktbericht. Für vermietete Eigentumswohnungen im Berliner Umland ergab sich aus 128 Verkäufen der Jahre 2023 bis 2025 ein Liegenschaftszinssatz von im Mittel 2,85 % bei einer Nettokaltmiete von 9,06 €/m², im weiteren Metropolenraum 3,02 % bei 8,55 €/m².[[1]] In Blankenfelde-Mahlow, Großbeeren, Ludwigsfelde und Zossen gelten Mietpreisbremse und Kappungsgrenze, in Rangsdorf, Luckenwalde und Jüterbog nicht.[[5,6]]"
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für den Landkreis Teltow-Fläming",
+    "absaetze": [
+      "Im Berliner Umland des Landkreises kosteten freistehende Einfamilienhäuser 2025 im Mittel 490.205 €, Doppelhaushälften 398.935 € und Reihenhäuser 344.305 €.[[1]] Dazu kommen die Kaufnebenkosten und wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen: Wir rechnen das mit Ihnen durch, vergleichen Ihre Finanzierung über Europace und Baufinex und fragen parallel Banken direkt an."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Welcher Makler verkauft Häuser in Ludwigsfelde und Blankenfelde-Mahlow?",
+      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im ganzen Landkreis Teltow-Fläming, also auch in Ludwigsfelde, Blankenfelde-Mahlow, Rangsdorf und Zossen; Ihr Ansprechpartner ist Lennart Geserich. Grundlage unserer Bewertung sind der Bodenrichtwert Ihrer Zone und die Vergleichspreise des Gutachterausschusses. Er weist Haus- und Wohnflächenpreise für die größeren Gemeinden einzeln aus, für Einfamilienhäuser zum Beispiel 3.890 €/m² in Ludwigsfelde und 3.850 €/m² in Blankenfelde-Mahlow.[[1]]",
+      "herkunft": "Google-Autocomplete „immobilienmakler teltow fläming“, „makler ludwigsfelde“, „immobilienmakler blankenfelde mahlow“, „immobilienmakler mahlow“ und „immobilienmakler zossen“ (research/serp/autocomplete-2026-10-26-teltow-flaeming.json)"
+    },
+    {
+      "frage": "Wie hoch sind die Bodenrichtwerte in Ludwigsfelde, Blankenfelde-Mahlow und Zossen 2026?",
+      "antwort": "Zum 01.01.2026 reichen die Wohnlagen in Ludwigsfelde von 90 €/m² in Jütchendorf, Mietgendorf und Schiaß bis 480 €/m² im Stadtzentrum und im Wohnpark Ahrensdorfer Heide, für Mehrfamilienhäuser dort 520 €/m². In Blankenfelde-Mahlow liegen sie zwischen 110 €/m² in Jühnsdorf und 500 €/m² in Mahlow Waldblick, in Zossen zwischen 70 €/m² in Funkenmühle und 340 €/m² in Schöneiche Süd, Ufergrundstücke in Kallinchen bei 400 €/m². Im ganzen Landkreis reichen die Werte für Wohn- und Mischgebiete in Ortslagen von 10 €/m² in Dörfern um Baruth/Mark und Dahme/Mark bis 600 €/m² in Rangsdorf.[[2]] Den Wert Ihrer Zone finden Sie in BORIS Brandenburg.",
+      "herkunft": "Google-Autocomplete „bodenrichtwert ludwigsfelde 2026“, „bodenrichtwert blankenfelde mahlow 2026“, „bodenrichtwert zossen 2026“, „bodenrichtwert zossen dabendorf“ und „bodenrichtwert teltow fläming“ (research/serp/autocomplete-2026-10-26-teltow-flaeming.json)"
+    },
+    {
+      "frage": "Gibt es einen Mietspiegel für Ludwigsfelde, Blankenfelde-Mahlow oder Zossen?",
+      "antwort": "Ludwigsfelde hat einen qualifizierten Mietspiegel, den neunten der Stadt. Der Mietspiegel 2024 gilt für die Kernstadt und Genshagen bis zum 14.11.2026; seine Mittelwerte für Wohnungen in Mehrfamilienhäusern reichen von 5,43 bis 11,49 €/m².[[12]] Für Blankenfelde-Mahlow, Zossen, Rangsdorf und Luckenwalde haben wir auf den Seiten der Gemeinden keinen Mietspiegel gefunden. Die Mietspannen im Grundstücksmarktbericht sind nach Angabe des Gutachterausschusses weder Mietspiegel noch ortsübliche Vergleichsmiete.[[1]]",
+      "herkunft": "Google-Autocomplete „mietspiegel ludwigsfelde 2026“, „qualifizierter mietspiegel blankenfelde mahlow“, „qualifizierter mietspiegel zossen“, „mietspiegel rangsdorf“, „qualifizierter mietspiegel luckenwalde“ und „mietspiegel teltow fläming“ (research/serp/autocomplete-2026-10-26-teltow-flaeming.json)"
+    },
+    {
+      "frage": "Was kostet ein Baugrundstück in Ludwigsfelde?",
+      "antwort": "2025 wurden in Ludwigsfelde 53 Grundstücke für Ein- und Zweifamilienhäuser verkauft, im Mittel für 430 €/m² oder 256.400 € bei 610 m²; 2024 waren es 16 Verkäufe zu 306 €/m².[[1]] Zum 01.01.2026 liegt der Bodenrichtwert im Wohnpark Ahrensdorfer Heide bei 480 €/m², nach 400 im Vorjahr, im Wohnpark Alte Potsdamer Straße in Ahrensdorf bei 320 und im Ort Ahrensdorf bei 210 €/m².[[2]] Als gefragteste Lage nennt der Gutachterausschuss die Ahrensdorfer Heide.[[1]]",
+      "herkunft": "Google-Autocomplete „grundstück ludwigsfelde kaufen“, „grundstück ludwigsfelde rousseau park“, „haus kaufen ludwigsfelde ahrensdorf“ und „grundstückspreise ludwigsfelde“ (research/serp/autocomplete-2026-10-26-teltow-flaeming.json, auch Ergänzung 1)"
+    },
+    {
+      "frage": "Gilt die Mietpreisbremse im Landkreis Teltow-Fläming?",
+      "antwort": "In vier Gemeinden: Blankenfelde-Mahlow, Großbeeren, Ludwigsfelde und Zossen gehören seit dem 01.01.2026 zur Gebietskulisse, die Verordnung gilt bis 31.12.2029. Rangsdorf, Luckenwalde, Jüterbog und die übrigen Gemeinden sind nicht erfasst.[[5,8]] Bei Neuvermietung in Gebäuden, die vor dem 1. Oktober 2014 fertiggestellt und bezogen wurden, darf die Miete dort höchstens 10 % über der ortsüblichen Vergleichsmiete liegen, Bestandsmieten dürfen bis 31.12.2030 in drei Jahren um höchstens 15 % steigen.[[7,6]]",
+      "herkunft": "Prompt der KI-Recherche „Mietpreisbremse in Berlin und Brandenburg: was heißt das für meine Rendite?“ (q24) (ChatGPT, Gemini; Dashboard/src/data/research/ai_answers.json, Oktober 2026); Google-Autocomplete „mietpreisbremse ludwigsfelde“, „mietpreisbremse blankenfelde mahlow“ und „mietpreisbremse zossen“ (nur die Eingabe selbst), zu „mietpreisbremse teltow-fläming“ ohne Vorschläge (research/serp/autocomplete-2026-10-26-teltow-flaeming.json, Ergänzung 1)"
+    },
+    {
+      "frage": "Was kostet ein Haus in Zossen oder Luckenwalde?",
+      "antwort": "Freistehende Einfamilienhäuser kosteten 2025 in Zossen im Mittel 391.780 € oder 2.995 €/m² Wohnfläche, in Luckenwalde 299.190 € oder 2.375 €/m², in Jüterbog 213.130 € oder 1.635 €/m². Neue Doppelhaushälften in Zossen kosteten 4.805 €/m².[[1]] Für Bauland gelten zum 01.01.2026 zum Beispiel 150 €/m² im Wohnpark Johnepark und 210 €/m² in Dabendorf, in Luckenwalde 170 €/m² in der Bergsiedlung.[[2]]",
+      "herkunft": "Google-Autocomplete „haus kaufen zossen dabendorf“, „haus kaufen zossen johnepark“, „haus kaufen luckenwalde bergsiedlung“, „haus kaufen zossen teltow fläming“ und „haus kaufen landkreis teltow fläming“ (research/serp/autocomplete-2026-10-26-teltow-flaeming.json)"
+    },
+    {
+      "frage": "Ich habe ein Haus im Landkreis Teltow-Fläming geerbt. Wer kann den Verkauf übernehmen?",
+      "antwort": "Wir verkaufen auch geerbte Immobilien. Zuerst klären wir mit Ihnen den rechtlichen Status des Hauses und die vorhandenen Unterlagen; häufig geht es auch um die Liquidität für die Erbschaftsteuer und je nach Situation ist eine Finanzierung dafür sinnvoller als ein schneller Verkauf unter Zeitdruck. Für den Preis zählen Lage, Baujahr und Zustand: Freistehende Häuser kosteten 2025 in Blankenfelde-Mahlow im Mittel 3.850 €/m² Wohnfläche, mit einer Spanne von 1.910 bis 5.930 €/m², in Luckenwalde 2.375 €/m².[[1]]",
+      "herkunft": "Prompt der KI-Recherche „Ich habe ein Haus in Brandenburg geerbt und wohne nicht vor Ort. Wer kann den Verkauf für mich übernehmen?“ (q52) (ChatGPT, Gemini; Dashboard/src/data/research/ai_answers.json, Oktober 2026). Antwort nach der FAQ der Live-Seite „Verkauft ihr auch geerbte Immobilien?“; zur Abwicklung aus der Ferne gibt es keine Angabe, deshalb ohne diesen Teil der Frage. Google-Autocomplete zu „haus geerbt teltow-fläming“ ohne Vorschläge"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Landkreis Dahme-Spreewald",
+      "url": "/standorte/dahme-spreewald/"
+    },
+    {
+      "name": "Landkreis Potsdam-Mittelmark",
+      "url": "/standorte/potsdam-mittelmark/"
+    },
+    {
+      "name": "Teltow",
+      "url": "/standorte/teltow/"
+    },
+    {
+      "name": "Berlin",
+      "url": "/standorte/berlin/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Grundstücksmarktbericht 2025 Landkreis Teltow-Fläming, Gutachterausschuss für Grundstückswerte im Landkreis Teltow-Fläming",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_TF.pdf",
+      "stand": "Version 1.0, beschlossen 11.06.2026; Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+    },
+    {
+      "name": "Bodenrichtwerte Landkreis Teltow-Fläming, BORIS Brandenburg (GeoBasis-DE/LGB, dl-de/by-2-0)",
+      "url": "https://ogc-api.geobasis-bb.de/boris/collections/br_bodenrichtwert/items?f=json&limit=2000&skipGeometry=true&gemeinde_gemeindekennzeichen_kreis=72&stichtag=2026-01-01",
+      "stand": "Stichtag 01.01.2026, Vergleich mit 01.01.2025"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 4 – j / 25, Bevölkerung im Land Brandenburg",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Landesamt für Bauen und Verkehr, Bevölkerungsvorausschätzung 2024 bis 2040, Anlage 3",
+      "url": "https://lbv.brandenburg.de/sixcms/media.php/9/31_Bevoelkerungsvorausschaetzung_2024-20.pdf",
+      "stand": "Basis 31.12.2023, mittlere Variante"
+    },
+    {
+      "name": "Mietpreisbegrenzungsverordnung Brandenburg, Ministerium für Infrastruktur und Landesplanung",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/Mietpreisbegrenzungsverordnung.pdf",
+      "stand": "Kabinettsbeschluss 25.11.2025, gültig 01.01.2026 bis 31.12.2029"
+    },
+    {
+      "name": "Kappungsgrenzenverordnung Brandenburg, Ministerium für Infrastruktur und Landesplanung",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/KappGrenzV.pdf",
+      "stand": "gültig 01.01.2026 bis 31.12.2030"
+    },
+    {
+      "name": "MIL, Pressemitteilung zu Mietpreisbremse und Kappungsgrenzenverordnung",
+      "url": "https://mil.brandenburg.de/mil/de/presse/detail/~25-11-2025-kabinett-mietpreisbremse-und-kappungsgrenzenverordnung",
+      "stand": "25.11.2025"
+    },
+    {
+      "name": "RegioKontext GmbH, Gutachten zur Erstellung einer Gebietskulisse für die Mietpreisbegrenzungsverordnungen (Anlage zur Verordnung)",
+      "url": "https://bravors.brandenburg.de/fm/68/Anlage_Gutachten.pdf",
+      "stand": "18.09.2025, veröffentlicht im GVBl. II Nr. 95 vom 04.12.2025"
+    },
+    {
+      "name": "VBB-Fahrplandaten, Verbindungen bis S+U Friedrichstraße",
+      "url": "https://v6.vbb.transport.rest/journeys?from=900245029&to=900100001&departure=2026-11-10T09:00%2B01:00",
+      "stand": "Fahrplan Dienstag 10.11.2026, abgefragt 26.10.2026"
+    },
+    {
+      "name": "Stadt Ludwigsfelde, Ludwigsfelde vorgestellt",
+      "url": "https://www.ludwigsfelde.de/stadt-und-tourismus/historie/vorgestellt/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Ludwigsfelde, Zahlen & Daten",
+      "url": "https://www.ludwigsfelde.de/stadt-und-tourismus/historie/zahlen-und-daten/",
+      "stand": "Stand 31.12.2023, abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Ludwigsfelde, Qualifizierter Mietspiegel 2024",
+      "url": "https://www.ludwigsfelde.de/wp-content/uploads/2024/11/Mietspiegel-2024.pdf",
+      "stand": "gültig 15.11.2024 bis 14.11.2026"
+    },
+    {
+      "name": "Gemeinde Blankenfelde-Mahlow, Die grüne Gemeinde",
+      "url": "https://www.blankenfelde-mahlow.de/blankenfelde-mahlow/gemeindeportrait/die-gruene-gemeinde/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Rangsdorf, Geschichte",
+      "url": "https://www.rangsdorf.de/seite/96469/geschichte.html",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gemeinde Rangsdorf, BUC-36",
+      "url": "https://www.rangsdorf.de/seite/534427/buc-36.html",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Zossen, Chronik OT Zossen",
+      "url": "https://www.zossen.de/buerger/stadtgeschichte/chronik-ot-zossen/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Zossen, Chronik OT Wünsdorf",
+      "url": "https://www.zossen.de/buerger/stadtgeschichte/chronik-ot-wuensdorf/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Zossen, Zossen und die Deutsche Bahn",
+      "url": "https://www.zossen.de/buerger/zossen-und-die-deutsche-bahn/",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Luckenwalde, Geschichte",
+      "url": "https://www.luckenwalde.de/Stadt/Entdecken-er-leben/Geschichte/",
+      "stand": "abgerufen 26.10.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "177.982 Einwohner Landkreis 31.12.2025, +294; LBV 2040 +8,4 %",
+      "fundstelle": "teltow-flaeming.md, Landkreis Nr. 1, 2"
+    },
+    {
+      "zahl": "Ludwigsfelde 29.635 (größte Gemeinde), Blankenfelde-Mahlow 29.280 auf 55,17 km² (531/km², dichteste im Landkreis), Zossen 21.558, Luckenwalde 21.077, Jüterbog 12.961, Großbeeren 9.305",
+      "fundstelle": "teltow-flaeming.md, Orte Nr. 30–36; afs2025.xlsx Blatt 3.13 (eigene Sortierung)"
+    },
+    {
+      "zahl": "LBV: Ludwigsfelde +23,1 %, Zossen +23,6 % (höchster Wert im Landkreis)",
+      "fundstelle": "teltow-flaeming.md, Orte; bvs.txt Z. 1719–1734"
+    },
+    {
+      "zahl": "Kauffälle 2.218 (+21,5 %), 785,8 Mio. € (+74,0 %), Wohnungs- und Teileigentum +164,4 %",
+      "fundstelle": "teltow-flaeming.md, Landkreis Nr. 9, 10"
+    },
+    {
+      "zahl": "BRW 426 Zonen: 301 gleich, 18 hoch, 76 runter, 31 neu; Höchstwert 600 Rangsdorf Bücker-Werke MFH (450); Tiefstwert in Ortslagen 10 (Baruth/Mark, Dahme/Mark)",
+      "fundstelle": "teltow-flaeming.md, Landkreis Nr. 21"
+    },
+    {
+      "zahl": "Ludwigsfelde: 11 km, Stadtrecht 18.07.1965, W50, Sprinter, Arbeitgeber; 11 Ortsteile; 28 bzw. 35–39 min",
+      "fundstelle": "teltow-flaeming.md, Ludwigsfelde Nr. 40–42, 46"
+    },
+    {
+      "zahl": "Ludwigsfelde BRW: Ahrensdorfer Heide 400→480, MFH 520; MFH-Zonen 200→370/380; Stadtzentrum 480; Struveshof 460; Gartenstadt 320→310; Siethen Ufer 450; Genshagen 200; Spanne 90–480; Ahrensdorf WP 320, Ort 210",
+      "fundstelle": "teltow-flaeming.md, Ludwigsfelde Nr. 44"
+    },
+    {
+      "zahl": "Ludwigsfelde EFH 496.055 (2024: 551.265), 3.890 €/m²; Bauland 53 / 430 / 256.400 / 610 m² (2024: 16 / 306); gefragteste Lage Ahrensdorfer Heide",
+      "fundstelle": "teltow-flaeming.md, Landkreis Nr. 11, 13, 14, 20"
+    },
+    {
+      "zahl": "Mietspiegel Ludwigsfelde: neunter, Kernstadt und Genshagen, gültig bis 14.11.2026, Mittelwerte 5,43–11,49",
+      "fundstelle": "teltow-flaeming.md, Ludwigsfelde Nr. 45"
+    },
+    {
+      "zahl": "Blankenfelde-Mahlow: seit 2003 fünf Ortsteile, Ortsbild, GAGFAH 739, Rolls-Royce 1993, Mauer an Waldblick und Roter Dudel; S2 29/33 min, alle 20 min, RE8 22 min",
+      "fundstelle": "teltow-flaeming.md, Blankenfelde-Mahlow Nr. 50–55"
+    },
+    {
+      "zahl": "Blankenfelde-Mahlow BRW: Waldblick 500, Roter Dudel 400, Mahlow Ort 320→340, Blankenfelde Mitte 300→280, Dahlewitz 260→230, 11 von 28 runter, Jühnsdorf 110; EFH 79 / 471.890 / 3.850 (1.910–5.930); ETW neu 4.375",
+      "fundstelle": "teltow-flaeming.md, Blankenfelde-Mahlow Nr. 54; Landkreis Nr. 13, 14, 17, 22"
+    },
+    {
+      "zahl": "Rangsdorf: Ausflugsort nach dem Ersten Weltkrieg; BUC-36, Satzung März 2023, 15 Jahre; Bücker-Werke MFH 450→600, Seepromenade Ufer 500, Wohnlagen 270–310; 69 ETW Baujahr 1930 Erstverkauf 8.115; EFH 458.160; RE8 29–31 min stündlich",
+      "fundstelle": "teltow-flaeming.md, Rangsdorf Nr. 60–63; Landkreis Nr. 13, 17"
+    },
+    {
+      "zahl": "Großbeeren: 9.305 EW; GVZ seit 1994; EFH 615.360 / 4.525 (höchste im Landkreis), 17; BRW 400→410, WP 290–370, Diedersdorf 170–220; RE3 + S26 25 min, sonst 54–68",
+      "fundstelle": "teltow-flaeming.md, Landkreis Nr. 7, 13, 14; Großbeeren Nr. 64, 65"
+    },
+    {
+      "zahl": "Zossen: zehn Ortsteile, 2003 Wünsdorf, Kallinchen u. a., Dabendorf 1974; GSSD ab 1954, Abzug 1994; Bahnhof nicht barrierefrei bis Stellwerk September 2027; RE8 38–40 min",
+      "fundstelle": "teltow-flaeming.md, Zossen Nr. 70, 71, 73, 75"
+    },
+    {
+      "zahl": "Zossen: ETW neu 162 / 4.625 (3.030–6.135); DHH neu 30 / 4.805; EFH 391.780 / 2.995; BRW Wünsdorf Ort 120, Johnepark 150, Sonnengärten 300, Schöneiche Süd 340, Kallinchen Ufer 450→400, Dabendorf 230→210, Waldstadt MFH 240 neu, Funkenmühle 70",
+      "fundstelle": "teltow-flaeming.md, Zossen Nr. 74; Landkreis Nr. 13, 14, 17"
+    },
+    {
+      "zahl": "Luckenwalde: Kreisstadt, 21.077, Marktturm 38 m; 45–55 min; Wohnlagen meist 100–180, 12 Zonen runter, Zinnaer Straße 140→110, Stadtrandsiedlung 130→100, Bergsiedlung 170; Sanierungsgebiete; EFH 299.190 / 2.375",
+      "fundstelle": "teltow-flaeming.md, Luckenwalde Nr. 80–82; Landkreis Nr. 3, 13, 14, 22, 23"
+    },
+    {
+      "zahl": "Jüterbog: 12.961; EFH 213.130 / 1.635; „Alternative zum teureren Berliner Speckgürtel“; WP Am Holländer 160 neu",
+      "fundstelle": "teltow-flaeming.md, Landkreis Nr. 4, 13, 14; Luckenwalde und Jüterbog Nr. 83"
+    },
+    {
+      "zahl": "EFH BU Ø 490.205, WMR Ø 283.855, Landkreis 371.865; DHH BU 398.935; RH BU 344.305",
+      "fundstelle": "teltow-flaeming.md, Landkreis Nr. 13, 15"
+    },
+    {
+      "zahl": "Bodenpreisindex Bauland Wohnen BU 01.01.2023 132,6 → 01.01.2026 114,5 (−13,7 %)",
+      "fundstelle": "teltow-flaeming.md, Landkreis Nr. 12"
+    },
+    {
+      "zahl": "Fluglärm tritt nach Beobachtung des Gutachterausschusses zurück",
+      "fundstelle": "teltow-flaeming.md, Landkreis Nr. 8"
+    },
+    {
+      "zahl": "LIZI ETW BU 2,85 %, Miete Ø 9,06 (128; 4,50–13,48); WMR 3,02 %, 8,55",
+      "fundstelle": "teltow-flaeming.md, Landkreis Nr. 19"
+    },
+    {
+      "zahl": "Mietspannen GMB weder Mietspiegel noch ortsübliche Vergleichsmiete; Mietspiegel BM, Zossen, Rangsdorf, Luckenwalde nicht gefunden",
+      "fundstelle": "teltow-flaeming.md, Landkreis Nr. 24; Nicht gefunden"
+    },
+    {
+      "zahl": "Mietpreisbremse und Kappung: Blankenfelde-Mahlow, Großbeeren, Ludwigsfelde, Zossen; nicht Rangsdorf, Luckenwalde, Jüterbog; Inhalt 10 % / 15 %",
+      "fundstelle": "teltow-flaeming.md, Landkreis Nr. 25; havelland.md"
+    },
+    {
+      "zahl": "Erbfall-Antwort; § 34c und § 34i GewO; Lennart Geserich, Head of Sales & Vermietung; Europace und Baufinex",
+      "fundstelle": "wie barnim.json (Live-Seite und Brief)"
+    }
+  ]
+}

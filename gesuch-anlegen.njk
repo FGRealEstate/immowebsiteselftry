@@ -1,9 +1,51 @@
 ---
-layout: base.njk
+layout: fgs-page.njk
+fgsHero: false
 title: Immobiliengesuch anlegen | Fischer & Geserich
 permalink: gesuch-anlegen/index.html
-description: "Kaufgesuch oder Mietgesuch getrennt anlegen und passende Immobilienangebote von Fischer & Geserich erhalten."
+description: "Suchprofil für den Kauf oder Mietgesuch anlegen und passende Immobilienangebote von Fischer & Geserich erhalten, auch solche, die nie öffentlich angeboten werden."
 canonicalPath: /gesuch-anlegen/
+# Brief Design-Pass §4.10: neue Vorlage, 1–2 Sätze zum Ablauf nach dem Absenden. Die Seite bleibt eine Weiche wie bisher:
+# Die Formulare stehen auf /kaufen.html#suchprofil und /mieten.html#mietgesuch (fgd-search-profile.njk, Versand
+# propstack-search-profile, Dankeszustand dort im neuen Design).
+# CP4 (28.10.2026, Design-Sprint-Brief 5.4): Titelzeile ohne Foto, die zwei Wege als Punkte neben der H2 (wie „Fälle“ auf Über uns).
+# Entfallen: Kicker über der H2 und die kleinen Rubriken über den Wegen (Update 6 §3.0), Linkliste unten (pg.related, Brief 3.7).
+pg:
+  crumb: "Gesuch anlegen"
+  kicker: "Suchprofil"
+  h1: "Suchprofil anlegen: kaufen oder mieten"
+  intro: "Wählen Sie, ob Sie kaufen oder mieten möchten. Danach nennen Sie uns Ihre Kriterien."
+  buttons:
+    - { label: "Suchprofil für den Kauf", href: "/kaufen.html#suchprofil" }
+    - { label: "Mietgesuch anlegen", href: "/mieten.html#mietgesuch", line: true }
+  contact: lennart
+  closing:
+    title: "Erzählen Sie uns, wonach Sie suchen"
+    text: "Wir besprechen Ihre Suche mit Ihnen, auch Budget und Finanzierung. Das erste Gespräch kostet Sie nichts."
+    button: gespraech
+  schema: { type: "WebPage" }
 ---
-<section class="fg-journey-hero fg-page-hero bg-primary text-white py-16 md:py-24"><div class="container mx-auto px-4 max-w-6xl text-center"><p class="fg-eyebrow">Immobiliengesuch</p><h1 class="text-4xl md:text-6xl font-extrabold mb-6">Kauf und Miete sind <span class="text-gold-gradient">zwei verschiedene Suchen.</span></h1><p class="text-lg md:text-xl text-page-bg max-w-3xl mx-auto">Wählen Sie Ihr Vorhaben. Sie gelangen anschließend in die passende, getrennte Suchstrecke.</p></div></section>
-<section class="fg-home-v2-section"><div class="container mx-auto px-4"><div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto"><a href="/kaufen.html" class="fg-split-path fg-reveal"><i class="fas fa-key"></i><h2>Ich möchte kaufen</h2><p>Kaufgesuch für Eigennutzung, Kapitalanlage, Haus, Wohnung, Grundstück oder Investmentobjekt.</p><span>Zum Kaufgesuch <i class="fas fa-arrow-right"></i></span></a><a href="/mieten.html" class="fg-split-path fg-reveal"><i class="fas fa-door-open"></i><h2>Ich möchte mieten</h2><p>Eigenständiges Mietgesuch mit Mietbudget, Suchgebiet, Größe und Ausstattungswünschen.</p><span>Zum Mietgesuch <i class="fas fa-arrow-right"></i></span></a></div></div></section>
+{% from "fgs-macros.njk" import textlink with context %}
+
+<section class="fgs-section" id="gesuch" aria-labelledby="gesuch-titel">
+  <div class="fgs-wrap fgs-cols">
+    <div class="fgs-cols-head"><h2 id="gesuch-titel">Was möchten Sie tun?</h2></div>
+    <div class="fgs-cols-body">
+      <ul class="fgs-points fgs-points--first" role="list">
+        <li>
+          <h3>Ich möchte kaufen</h3>
+          <p>Suchprofil für Eigennutzung oder Kapitalanlage, für Wohnung, Haus, Grundstück oder Mehrfamilienhaus.</p>
+          <p>Nach dem Absenden prüfen wir Ihr Profil persönlich und melden uns, wenn ein passendes Angebot vorliegt.</p>
+          {{ textlink("/kaufen.html#suchprofil", "Zum Suchprofil") }}
+        </li>
+        <li>
+          <h3>Ich möchte mieten</h3>
+          <p>Mietgesuch mit Mietbudget, Suchgebiet, Größe und Ausstattungswünschen.</p>
+          <p>Nach dem Absenden prüfen wir Ihr Mietgesuch persönlich und melden uns, wenn ein passendes Mietangebot vorliegt.</p>
+          {{ textlink("/mieten.html#mietgesuch", "Zum Mietgesuch") }}
+        </li>
+      </ul>
+      <p class="fgs-note">Pflicht sind in beiden Gesuchen nur das Suchgebiet und Ihre E-Mail-Adresse. Wie wir mit Ihren Angaben umgehen, steht in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</p>
+    </div>
+  </div>
+</section>

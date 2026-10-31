@@ -1,0 +1,413 @@
+{
+  "slug": "leipzig/zentrum",
+  "name": "Leipzig-Zentrum",
+  "nameLang": "Leipzig-Zentrum",
+  "inOrt": "in Leipzig-Zentrum",
+  "fuerOrt": "Leipzig-Zentrum",
+  "typ": "marktgebiet",
+  "kreis": {
+    "name": "Leipzig",
+    "url": "/standorte/leipzig/"
+  },
+  "orte": [
+    "Zentrum-West",
+    "Zentrum-Süd",
+    "Zentrum-Südost",
+    "Neustadt-Neuschönefeld"
+  ],
+  "kontakt": "timon",
+  "title": "Immobilienmakler Leipzig-Zentrum – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
+  "description": "Immobilienmakler in Leipzig-Zentrum: verkaufen, kaufen und finanzieren im Musikviertel, in Zentrum-West, -Süd, -Südost und Neustadt-Neuschönefeld.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Leipzig-Zentrum",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Leipzig-Zentrum beim Verkauf, beim Kauf und bei der Finanzierung, von den Villen im Musikviertel und den Gründerzeithäusern in Zentrum-West bis zur Eisenbahnstraße in Neustadt-Neuschönefeld. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Leipzig ist Timon Fischer Ihr Ansprechpartner, Geschäftsführer und verantwortlich für die Immobilienfinanzierung.",
+  "hero": {
+    "name": "leipzig-zentrum-karl-tauchnitz-strasse-10",
+    "alt": "Die Villa Karl-Tauchnitz-Straße 10 in Leipzig an einem Sommertag, davor die Straße",
+    "credit": "Frank Vincentz, CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Leipzig_-_Karl-Tauchnitz-Stra%C3%9Fe_04_ies.jpg",
+    "position": "50% 55%"
+  },
+  "stand": "Oktober 2026",
+  "updated": "2026-10-27",
+  "zahlen": [
+    {
+      "wert": "Ø 3.447 €/m²",
+      "label": "Eigentumswohnungen im sanierten Altbau, Weiterverkauf im Stadtbezirk Mitte",
+      "detail": "224 Verkäufe ohne Stellplatz, Median 3.422 €/m², Spanne 1.563 bis 6.103 €/m². Zum Stadtbezirk gehören alle sieben Zentrum-Ortsteile. Im Stadtbezirk Ost mit Neustadt-Neuschönefeld: 2.576 €/m², in ganz Leipzig 2.850 €/m².",
+      "quelle": "Grundstücksmarktbericht Leipzig 2026",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 6.162 €/m²",
+      "label": "Neue Eigentumswohnungen mit Stellplatz in Zentrum-Südost",
+      "detail": "52 Verkäufe, knapp ein Viertel aller solchen Verkäufe in Leipzig; Spanne 5.109 bis 8.316 €/m², im Mittel 95 m² groß. Ohne Stellplatz 44 Verkäufe zu 5.591 €/m². In ganz Leipzig mit Stellplatz 6.451 €/m².",
+      "quelle": "Grundstücksmarktbericht Leipzig 2026",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "24,5 und 23,0",
+      "label": "Rohertragsfaktoren sanierter Mehrfamilienhäuser in den Stadtbezirken Mitte und Ost",
+      "detail": "Mitte: 9 Verkäufe mit Ertragsdaten, im Mittel 2.184 €/m² Wohn- und Nutzfläche, Miete 7,64 €/m², Nettoanfangsrendite 3,0 %. Ost: 26 Verkäufe, 1.708 €/m², 6,27 €/m², 3,0 %. In ganz Leipzig: Faktor 23,1.",
+      "quelle": "Grundstücksmarktbericht Leipzig 2026",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "740 bis 2.500 €/m²",
+      "label": "Bodenrichtwerte in den Wohn- und Mischgebieten",
+      "detail": "Zentrum-Süd 1.450 bis 2.500 €/m², Zentrum-West 1.000 bis 2.400 €/m², Zentrum-Südost 900 bis 2.400 €/m², Neustadt-Neuschönefeld 740 bis 1.400 €/m². An der Einertstraße stieg der Wert von 950 auf 1.050 €/m².",
+      "quelle": "Bodenrichtwerte Leipzig, eigene Auswertung",
+      "url": "https://geodienste.leipzig.de/l3/OpenData/BRW_Zonen_2026/wfs?SERVICE=WFS&REQUEST=GetCapabilities",
+      "stichtag": "01.01.2026"
+    },
+    {
+      "wert": "55.739",
+      "label": "Einwohner in Zentrum-West, Zentrum-Süd, Zentrum-Südost und Neustadt-Neuschönefeld",
+      "detail": "16 % mehr als 2015, in Neustadt-Neuschönefeld 22 %. Das Durchschnittsalter reicht von 35,3 Jahren in Neustadt-Neuschönefeld bis 41,4 Jahre in Zentrum-Süd, in ganz Leipzig 42,4 Jahre.",
+      "quelle": "Amt für Statistik und Wahlen Leipzig",
+      "url": "https://statistik.leipzig.de/opendata/api/kdvalues?kategorie_nr=2&rubrik_nr=1&periode=y&format=csv",
+      "stichtag": "Ende 2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Zentrum-West: Bachviertel, Johannapark und Kolonnadenviertel",
+      "absaetze": [
+        "Die Stadt beschreibt Zentrum-West als Stadtteil mit Grünflächen und Gründerzeitbebauung: das in den 1980er Jahren neu gestaltete Kolonnadenviertel, den Johannapark und westlich davon das Bach- oder Musikerviertel, dessen Straßen nach Musikern benannt sind, mit dem Forum Thomanum des Thomanerchors.[[19]] In Zentrum-West leben 11.654 Menschen. 44 % der 629 Gebäude mit Wohnungen wurden bis 1918 gebaut, die Wohnungen sind im Mittel 73,5 m² groß, in ganz Leipzig 70,3 m².[[6]] Von der Gottschedstraße fährt die Straßenbahnlinie 1 in 13 Minuten zum Hauptbahnhof.[[23]]",
+        "Alle 737 Adressen liegen im Mietspiegel innerhalb der Innenstadt: 37 % in sehr guter Lage, etwa an der Sebastian-Bach-, der Gustav-Mahler- und der Davidstraße, 51 % in guter und 9 % in Kerngebietslage.[[5]] Die Bodenrichtwerte für Mehrfamilienhäuser an der Elsterstraße und an der Sebastian-Bach-Straße blieben zum 01.01.2026 bei 2.100 €/m²; an der Käthe-Kollwitz-Straße zwischen Moscheles- und Marschnerstraße gelten bei einer Geschossflächenzahl von 0,6 1.000 €/m².[[2]] Das Bachstraßenviertel steht zusammen mit dem Waldstraßenviertel unter einer städtebaulichen Erhaltungssatzung. Rückbau, Änderung, Nutzungsänderung und Neubau prüft die Stadt einzeln auf ihre Wirkung im Ortsbild; für verfahrensfreie Vorhaben wie Fassadensanierungen ist ein eigener Antrag nötig.[[12]] Von 1991 bis 2017 förderten Bund, Land und Stadt in beiden Vierteln rund 300 Einzelmaßnahmen.[[13]]"
+      ],
+      "bild": {
+        "name": "leipzig-zentrum-elstermuehlgraben",
+        "alt": "Der Elstermühlgraben zwischen hohen, frisch belaubten Bäumen, links ein helles Haus mit Gitterzaun am Ufer, auf dem Wasser in einiger Entfernung ein Paddelboot, hinten eine Brücke",
+        "caption": "Der Elstermühlgraben, von der Marschnerbrücke aus gesehen.",
+        "credit": "Falk2, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:L03_705_Elstermühlgraben.jpg"
+      }
+    },
+    {
+      "h2": "Zentrum-Süd und Musikviertel: Hochschulen, Villen und Clara-Zetkin-Park",
+      "absaetze": [
+        "Bundesverwaltungsgericht, Universitätsbibliothek und die Hochschulen für Grafik und Buchkunst sowie für Musik und Theater prägen laut Stadt Zentrum-Süd. Im westlichen Teil, dem Musikviertel, sind viele Straßen nach Komponisten benannt; der Clara-Zetkin-Park liegt nahe.[[20]] Der Ortsteil wuchs seit 2015 um 16 % auf 14.647 Einwohner. 42 % der 728 Gebäude mit Wohnungen entstanden ab 1991, 37 % bis 1918; 2024 und 2025 wurden 490 Wohnungen fertiggestellt.[[6]] Vom S-Bahnhof Wilhelm-Leuschner-Platz sind Sie in 3 Minuten am Hauptbahnhof, vom Neuen Rathaus mit dem Bus 89 in 13 Minuten.[[23]]",
+        "Im Musikviertel liegen alle Adressen der Beethoven-, der Mozart- und der Robert-Schumann-Straße im Mietspiegel in sehr guter Innenstadtlage, ebenso fast alle der Ferdinand-Rhode- und der Haydnstraße. Im ganzen Ortsteil sind es 21 %, weitere 76 % liegen in guter Lage.[[5]] Zum 01.01.2026 stiegen die Bodenrichtwerte an der Lampestraße und an der Hohen Straße von 2.400 auf 2.500 €/m², an der Paul-Gruner-Straße von 1.900 auf 2.000 €/m²; an der Karl-Tauchnitz-Straße blieben sie bei 2.400 €/m².[[2]] Das Sanierungsgebiet Innerer Süden mit 120 Hektar zwischen Pleiße, Auwald und Bayerischem Bahnhof ist aufgehoben, der Beschluss fiel am 28.02.2024. Aus vorzeitig abgelösten Ausgleichsbeträgen wurden unter anderem die Shakespeare- und die Emilienstraße neu gestaltet.[[14]]"
+      ],
+      "bild": {
+        "name": "leipzig-zentrum-clara-zetkin-park",
+        "alt": "Ein Weg durch den Clara-Zetkin-Park mit Rasenflächen und hohen Laubbäumen im Sommer",
+        "caption": "Der Clara-Zetkin-Park in Leipzig.",
+        "credit": "Frank Vincentz, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Leipzig_-_Clara-Zetkin-Park_ost_16_ies.jpg"
+      }
+    },
+    {
+      "h2": "Zentrum-Südost: Bayerischer Bahnhof, Alte Messe und Kliniken",
+      "absaetze": [
+        "In Zentrum-Südost wechseln sich laut Stadt Wohnviertel mit dem Alten Messegelände, der Automeile, Campus und Forschung wie der Bio-City ab; dazu kommen die Universitätskliniken, die Tierkliniken, die Deutsche Nationalbibliothek und drei große Studentenwohnheimkomplexe.[[21]] Die 15.291 Einwohner sind im Mittel 36,9 Jahre alt, 71 % der Haushalte bestehen aus einer Person. Die Wohnungen sind im Mittel 63 m² groß, 33 % der 396 Gebäude mit Wohnungen entstanden zwischen 1949 und 1990.[[6]] Vom Bayerischen Bahnhof sind Sie mit der S-Bahn einschließlich Fußweg in 11 Minuten am Hauptbahnhof.[[23]]",
+        "57 % der Adressen liegen im Mietspiegel in guter Innenstadtlage, etwa an der Sternwarten-, der Seeburg- und der Talstraße; 28 % sind einfach, etwa An den Tierkliniken und an der Liebigstraße.[[5]] Nur rund ein Drittel der Fläche liegt in Bodenrichtwertzonen für Wohn- oder Mischbebauung. Dort stiegen die Werte zum 01.01.2026 an der Seeburgstraße von 2.300 auf 2.400 €/m², an der Talstraße von 1.800 auf 1.900 €/m² und an der Straße des 18. Oktober von 1.400 auf 1.450 €/m².[[2]] 2025 wurden in Zentrum-Südost 52 neue Wohnungen mit Stellplatz verkauft, im Mittel für 6.162 €/m²; das ist knapp ein Viertel aller solchen Verkäufe in Leipzig.[[1]]"
+      ],
+      "bild": {
+        "name": "leipzig-zentrum-deutscher-platz",
+        "alt": "Rasenfläche am Deutschen Platz vor einer Reihe dicht belaubter Bäume, dahinter ragt der weiße Magazinbau der Deutschen Nationalbibliothek auf, blauer Himmel mit Wolken",
+        "caption": "Der Deutsche Platz mit den Magazintürmen der Deutschen Nationalbibliothek.",
+        "credit": "Dirk Bindmann, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Leipzig_Deutscher_Platz_Deutsche_Nationalbibliothek.jpg"
+      }
+    },
+    {
+      "h2": "Neustadt-Neuschönefeld: Eisenbahnstraße, Neustädter Markt und Rabet",
+      "absaetze": [
+        "Neustadt-Neuschönefeld schließt östlich an das Zentrum an und gehört, anders als die drei übrigen Ortsteile, zum Stadtbezirk Ost. Die Stadt nennt die Eisenbahnstraße eine Hauptverkehrsader und einen kulturellen Schmelztiegel mit Menschen aus vielen Nationen; Treffpunkt und Erholungsort ist der Stadtteilpark Rabet.[[22]] Neustadt und Neuschönefeld gehören seit dem 01.01.1890 zu Leipzig.[[18]] Seit 2015 wuchs der Ortsteil um 22 % auf 14.147 Einwohner, im Mittel 35,3 Jahre alt; 53 % der 772 Gebäude mit Wohnungen entstanden bis 1918.[[6]] Von der Einertstraße fahren die Linien 1 und 8 in 13 Minuten zum Hauptbahnhof.[[23]]",
+        "Im Mietspiegel liegt der Ortsteil außerhalb der Innenstadt: 55 % der Adressen in mittlerer Lage, darunter die ganze Eisenbahnstraße, 45 % in guter, etwa an der Berg- und der Schulze-Delitzsch-Straße.[[5]] Seit dem 05.07.2020 gilt die soziale Erhaltungssatzung Eisenbahnstraße für rund 118 Hektar mit rund 12.400 Wohnungen in Neustadt-Neuschönefeld, Volkmarsdorf und Sellerhausen-Stünz.[[9]] Die Sanierungsgebiete Neustädter Markt und Neuschönefeld sind aufgehoben, die Beschlüsse fielen am 28.04.2021 und am 17.05.2023.[[15,16]] Die Bodenrichtwerte stiegen an der Einertstraße von 950 auf 1.050 €/m² und an der Comeniusstraße von 1.000 auf 1.100 €/m².[[2]] Fünf sanierte Mehrfamilienhäuser wurden 2025 weiterverkauft, im Mittel für 1.531 €/m².[[1]]"
+      ],
+      "bild": {
+        "name": "leipzig-zentrum-hedwigstrasse",
+        "alt": "Die Hedwigstraße mit der Heilig-Kreuz-Kirche",
+        "caption": "Hedwigstraße mit Heilig-Kreuz-Kirche.",
+        "credit": "Falk2, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:J39_349_Hedwigstra%C3%9Fe,_Heilig-Kreuz-Kirche.jpg",
+        "position": "50% 50%"
+      }
+    }
+  ],
+  "band": {
+    "name": "leipzig-zentrum-johannapark-teich",
+    "alt": "Teich im Johannapark mit glatter Wasserfläche, in der sich die Bäume spiegeln, hinten eine geschwungene Holzbrücke vor dichtem Laub, Himmel mit hellen Wolken",
+    "caption": "Teich und Holzbrücke im Johannapark.",
+    "credit": "Falk2, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:L03_779_Johannaparkteich,_Nordbrücke.jpg"
+  },
+  "anbindung": [
+    "Von der Gottschedstraße fährt die Straßenbahnlinie 1 in 13 Minuten zum Hauptbahnhof.[[23]]",
+    "Vom S-Bahnhof Wilhelm-Leuschner-Platz sind Sie in 3 Minuten am Hauptbahnhof, vom Neuen Rathaus mit dem Bus 89 in 13 Minuten.[[23]]",
+    "Vom Bayerischen Bahnhof sind Sie mit der S-Bahn einschließlich Fußweg in 11 Minuten am Hauptbahnhof.[[23]]",
+    "Von der Einertstraße fahren die Linien 1 und 8 in 13 Minuten zum Hauptbahnhof.[[23]]"
+  ],
+  "karte": {
+    "alt": "Karte von Leipzig-Zentrum: Zentrum-West mit dem Bachviertel, Zentrum-Süd mit dem Musikviertel, Zentrum-Südost und Neustadt-Neuschönefeld mit Neustadt und Neuschönefeld, dazu Zentrum, Zentrum-Nord, Zentrum-Nordwest, Waldstraßenviertel und Volkmarsdorf als Ortspunkte, die Bahnstrecken, die Gewässer und der Leipziger Hauptbahnhof"
+  },
+  "verkaufen": {
+    "h2": "Immobilie in Leipzig-Zentrum verkaufen",
+    "absaetze": [
+      "Im Stadtbezirk Mitte, zu dem neben Zentrum-West, -Süd und -Südost auch Zentrum, Zentrum-Ost, Zentrum-Nord und Zentrum-Nordwest gehören, wurden 2025 224 Eigentumswohnungen im sanierten Altbau weiterverkauft, im Mittel für 3.447 €/m² Wohnfläche, bei einer Spanne von 1.563 bis 6.103 €/m². Im Stadtbezirk Ost mit Neustadt-Neuschönefeld waren es 256 Wohnungen zu 2.576 €/m², in ganz Leipzig 2.850 €/m².[[1]] Wir bewerten Ihre Wohnung deshalb nach Wohnlage, Bodenrichtwertzone, Baujahr, Vermietungsstand und Vergleichsverkäufen im Ortsteil.",
+      "Mehrfamilienhäuser wechselten 2025 im Stadtbezirk Mitte 17-mal den Eigentümer, für zusammen 45,1 Mio. €, im Stadtbezirk Ost 55-mal für 64,2 Mio. €. Sanierte Häuser kosteten in Mitte das 24,5-Fache der jährlichen Nettokaltmiete, in Ost das 23,0-Fache.[[1]] Im Erhaltungsgebiet Eisenbahnstraße prüft die Stadt beim Verkauf ihr Vorkaufsrecht und strebt vorrangig eine Abwendungsvereinbarung mit dem Käufer an.[[11]] Bei Häusern in den früheren Sanierungsgebieten Innerer Süden, Neustädter Markt und Neuschönefeld klären wir vorab, ob der Ausgleichsbetrag festgesetzt und bezahlt ist.[[17]]"
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Leipzig-Zentrum",
+    "absaetze": [
+      "Als Eigennutzer finden Sie in Zentrum-West Wohnungen mit im Mittel 73,5 m², in Zentrum-Süd 70,2 m²; in Zentrum-Südost und Neustadt-Neuschönefeld sind sie mit 63,0 und 64,4 m² kleiner.[[6]] Neue Wohnungen mit Stellplatz kosteten 2025 in Zentrum-Südost im Mittel 6.162 €/m², ohne Stellplatz 5.591 €/m²; in Neustadt-Neuschönefeld wurden vier neue Wohnungen ohne Stellplatz zu 4.956 €/m² verkauft.[[1]] Im Bachstraßenviertel brauchen auch verfahrensfreie Fassadensanierungen einen Antrag nach der Erhaltungssatzung.[[12]] Im Erhaltungsgebiet Eisenbahnstraße brauchen Sie für Modernisierungen und Grundrissänderungen vor Baubeginn eine Genehmigung der Stadt, auch in selbst genutzten Wohnungen.[[10]]",
+      "Als Kapitalanleger rechnen Sie mit dem Leipziger Mietspiegel 2025–2027: In Zentrum-West, -Süd und -Südost wird der Mittelwert als Innenstadtlage mit 1,100 bis 1,147 multipliziert, in Neustadt-Neuschönefeld bei guter Lage mit 1,051.[[3]] Die Mietpreisbremse gilt bis zum 30.06.2027: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[7]] Bestandsmieten dürfen in drei Jahren um höchstens 15 % steigen.[[8]] Sanierte Mehrfamilienhäuser brachten 2025 in den Stadtbezirken Mitte und Ost im Mittel 3,0 % Nettoanfangsrendite, bei 3,1 und 2,0 % Leerstand.[[1]] Aus Kaufpreis, Miete, Bewirtschaftungskosten und den Auflagen vor Ort rechnen wir mit Ihnen die Rendite, bevor Sie kaufen."
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Leipzig-Zentrum",
+    "absaetze": [
+      "Eigentumswohnungen im sanierten Altbau kosteten 2025 im Stadtbezirk Mitte im Mittel 3.447 €/m² Wohnfläche, neue Wohnungen mit Stellplatz in Zentrum-Südost 6.162 €/m².[[1]] Dazu kommen die Kaufnebenkosten, in Sachsen unter anderem 5,5 % Grunderwerbsteuer.[[1]] Wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen: Timon Fischer rechnet das mit Ihnen durch, vergleicht Ihre Finanzierung über Europace und Baufinex und fragt parallel Banken direkt an."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Wie hoch sind die Quadratmeterpreise in Leipzig-Zentrum?",
+      "antwort": "Weiterverkäufe von Eigentumswohnungen weist der Gutachterausschuss nach Stadtbezirken aus. Im Stadtbezirk Mitte kosteten sanierte Altbauwohnungen 2025 im Mittel 3.447 €/m², bei 224 Verkäufen und einer Spanne von 1.563 bis 6.103 €/m²; mit Stellplatz waren es 3.893 €/m². In ganz Leipzig lag der Mittelwert bei 2.850 €/m².[[1]] Für Ihre Wohnung zählen Wohnlage, Baujahr, Zustand und ob sie vermietet ist.",
+      "herkunft": "Google-Autocomplete „quadratmeterpreis leipzig zentrum“, „wohnung kaufen leipzig zentrum west“, „wohnung kaufen leipzig zentrum süd“ und „immobilienpreise leipzig zentrum west“ (research/serp/autocomplete-2026-10-27-leipzig-zentrum.json)"
+    },
+    {
+      "frage": "Was kostet eine Wohnung im Musikviertel?",
+      "antwort": "Einen eigenen Wert für das Musikviertel gibt es nicht; es ist laut Stadt der westliche Teil von Zentrum-Süd.[[20]] Für Zentrum-Süd nennt der Gutachterausschuss 2025 nur je einen Verkauf einer neuen Wohnung mit und ohne Stellplatz, Weiterverkäufe nur für den ganzen Stadtbezirk Mitte: im Mittel 3.447 €/m².[[1]] Die Adressen der Komponistenstraßen liegen im Mietspiegel fast alle in sehr guter Innenstadtlage.[[5]] Den Wert Ihrer Wohnung ermitteln wir deshalb aus Vergleichsverkäufen in den umliegenden Straßen, Zustand und Ausstattung.",
+      "herkunft": "Google-Autocomplete „wohnung kaufen musikviertel leipzig“ und „musikviertel leipzig wohnung kaufen“ (research/serp/autocomplete-2026-10-27-leipzig-zentrum.json)"
+    },
+    {
+      "frage": "Was kosten neue Wohnungen im Leipziger Zentrum?",
+      "antwort": "2025 wurden in Zentrum-Südost 52 neue Wohnungen mit Stellplatz verkauft, im Mittel für 6.162 €/m² und mit 95 m² Wohnfläche, bei einer Spanne von 5.109 bis 8.316 €/m². Ohne Stellplatz waren es 44 Wohnungen zu 5.591 €/m², im Mittel 54 m² groß. In Zentrum-Süd gab es je einen Verkauf, in Zentrum-West keinen. In ganz Leipzig kosteten neue Wohnungen mit Stellplatz 6.451 €/m².[[1]]",
+      "herkunft": "Google-Autocomplete „neubau leipzig zentrum“, „neubau musikviertel leipzig“ und „bayerischer bahnhof leipzig wohnungen“ (research/serp/autocomplete-2026-10-27-leipzig-zentrum.json)"
+    },
+    {
+      "frage": "Was kostet eine Wohnung in Neustadt-Neuschönefeld?",
+      "antwort": "Im Stadtbezirk Ost, zu dem Neustadt-Neuschönefeld gehört, wurden 2025 256 sanierte Altbauwohnungen weiterverkauft, im Mittel für 2.576 €/m², Median 2.456 €/m², bei einer Spanne von 1.177 bis 5.778 €/m². Neue Wohnungen ohne Stellplatz kosteten im Ortsteil 4.956 €/m², bei vier Verkäufen.[[1]] Die Wohnungen sind im Mittel 64,4 m² groß, 67 % der Haushalte bestehen aus einer Person.[[6]] An der Eisenbahnstraße liegen alle Adressen im Mietspiegel in mittlerer Lage.[[5]]",
+      "herkunft": "Google-Autocomplete „wohnung kaufen leipzig neustadt neuschönefeld“ und „wohnung kaufen leipzig eisenbahnstraße“ (research/serp/autocomplete-2026-10-27-leipzig-zentrum.json)"
+    },
+    {
+      "frage": "Gelten Zentrum-West, -Süd und -Südost im Mietspiegel als Innenstadt?",
+      "antwort": "Ja. Der Mietspiegel 2025–2027 rechnet den ganzen Stadtbezirk Mitte zur Innenstadt, darunter Zentrum-West, Zentrum-Süd und Zentrum-Südost. Dort wird der Mittelwert bei einfacher, mittlerer und guter Lage mit 1,100 multipliziert, bei sehr guter Lage mit 1,136 und in Kerngebietslage mit 1,147. Neustadt-Neuschönefeld liegt außerhalb; dort gilt für gute Lage 1,051.[[3]] In Zentrum-West liegen 37 % der Adressen in sehr guter Lage, in Zentrum-Süd 21 %, in Zentrum-Südost keine.[[5]] Die Vergleichsmiete berechnet der Mietspiegelrechner der Stadt.[[4]]",
+      "herkunft": "Google-Autocomplete „mietspiegel leipzig zentrum süd“, „mietspiegel leipzig zentrum west“ und „mietspiegel leipzig zentrum südost“ (research/serp/autocomplete-2026-10-27-leipzig-zentrum.json)"
+    },
+    {
+      "frage": "Welche Erhaltungssatzungen gelten in Leipzig-Zentrum?",
+      "antwort": "Das Bachstraßenviertel in Zentrum-West steht zusammen mit dem Waldstraßenviertel unter einer städtebaulichen Erhaltungssatzung, die das Ortsbild schützt; Rückbau, Änderung und Neubau prüft die Stadt einzeln.[[12,13]] Seit dem 05.07.2020 gilt die soziale Erhaltungssatzung Eisenbahnstraße, unter anderem für Teile von Neustadt-Neuschönefeld; in Zentrum-Süd und Zentrum-Südost gilt keine.[[9]] Im Gebiet Eisenbahnstraße braucht jede Änderung vor Baubeginn eine Genehmigung. Beim Verkauf bebauter Grundstücke prüft die Stadt ihr Vorkaufsrecht und strebt vorrangig eine Abwendungsvereinbarung an: Der Käufer verpflichtet sich, nicht in Wohnungs- oder Teileigentum umzuwandeln.[[10,11]]",
+      "herkunft": "Google-Autocomplete „erhaltungssatzung leipzig innenstadt“, „städtebauliche erhaltungssatzung leipzig“ und „soziale erhaltungssatzung leipzig“ (research/serp/autocomplete-2026-10-27-leipzig-zentrum.json) sowie „milieuschutz leipzig gebiete“ (research/serp/autocomplete-2026-10-26-leipzig-west.json)"
+    },
+    {
+      "frage": "Was gilt in den früheren Sanierungsgebieten?",
+      "antwort": "Drei aufgehobene Sanierungsgebiete reichen in das Marktgebiet: Für Neustädter Markt mit 33,5 Hektar wurde die Aufhebung am 28.04.2021 beschlossen, für Neuschönefeld mit 27,7 Hektar am 17.05.2023 und für Innerer Süden mit 120 Hektar am 28.02.2024.[[15,16,14]] Nach der Aufhebung erhebt die Stadt von den Eigentümern einen Ausgleichsbetrag für die sanierungsbedingte Erhöhung des Bodenwerts, bei Wohnungseigentum anteilig.[[17]] Beim Kauf oder Verkauf klären wir, ob der Betrag festgesetzt und bezahlt ist.",
+      "herkunft": "Google-Autocomplete „sanierungsgebiet innerer süden leipzig“ (research/serp/autocomplete-2026-10-27-leipzig-zentrum.json) und „sanierungsgebiet leipzig“ (research/serp/autocomplete-2026-10-26-leipzig-west.json)"
+    },
+    {
+      "frage": "Wie hoch ist die Maklerprovision in Leipzig?",
+      "antwort": "Kauft ein Verbraucher eine Wohnung oder ein Einfamilienhaus, teilen sich Käufer und Verkäufer die Provision zu gleichen Teilen (§§ 656a bis 656d BGB); das gilt bundesweit, also auch in Sachsen. Bei Fischer & Geserich sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision. Bei Mehrfamilienhäusern und Grundstücken gilt die Teilung nicht. Die Provision fällt nur an, wenn der Kaufvertrag zustande kommt.",
+      "herkunft": "Google-Autocomplete „maklerprovision leipzig“ und „provision makler sachsen“ (research/serp/autocomplete-2026-10-26-leipzig-west.json). Antwort nach /maklerprovision/ und /kaufen/ (Stand 26.10.2026)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Leipzig-West",
+      "url": "/standorte/leipzig/west/"
+    },
+    {
+      "name": "Leipzig-Nord",
+      "url": "/standorte/leipzig/nord/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Stadt Leipzig, Grundstücksmarktbericht 2026",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
+      "stand": "Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+    },
+    {
+      "name": "Bodenrichtwerte des Gutachterausschusses in der Stadt Leipzig, Open Data (BRW_Zonen_2026 und BRW_Zonen_2025), eigene Zuordnung zu den Ortsteilen",
+      "url": "https://geodienste.leipzig.de/l3/OpenData/BRW_Zonen_2026/wfs?SERVICE=WFS&REQUEST=GetCapabilities",
+      "stand": "Stichtag 01.01.2026, Vergleich mit 01.01.2025"
+    },
+    {
+      "name": "Stadt Leipzig, Leipziger Mietspiegel 2025–2027 (Broschüre)",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.5_Dez5_Jugend_Soziales_Gesundheit_Schule/50_Sozialamt/Mietspiegel/Broschuere_zum_Leipziger_Mietspiegel_2025-2027_01.pdf",
+      "stand": "gültig 01.07.2025 bis 30.06.2027, Erhebungsstichtag 01.10.2024"
+    },
+    {
+      "name": "Stadt Leipzig, Mietspiegel (Lagekarte und Mietspiegelrechner)",
+      "url": "https://www.leipzig.de/bauen-und-wohnen/wohnen/mietspiegel",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Wohnlage zum Leipziger Mietspiegel 2025–2027, eigene Auszählung nach Ortsteilen",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.5_Dez5_Jugend_Soziales_Gesundheit_Schule/50_Sozialamt/Mietspiegel/Wohnlage_zum_Leipziger_Mietspiegel_2025-2027.xlsx",
+      "stand": "Mietspiegel 2025–2027"
+    },
+    {
+      "name": "Stadt Leipzig, Amt für Statistik und Wahlen, Kleinräumiges Datenmaterial (Einwohner, Alter, Haushalte, Gebäude, Wohnungen, Fertigstellungen)",
+      "url": "https://statistik.leipzig.de/opendata/api/kdvalues?kategorie_nr=2&rubrik_nr=1&periode=y&format=csv",
+      "stand": "Jahreswerte 2025"
+    },
+    {
+      "name": "Freistaat Sachsen, Mietpreisbremse gemäß § 556d BGB",
+      "url": "https://www.bauen-wohnen.sachsen.de/mietpreisbremse-gemaess-556d-bgb-4391.html",
+      "stand": "verlängert bis 30.06.2027, abgerufen 26.10.2026"
+    },
+    {
+      "name": "Medienservice Sachsen, Kappungsgrenze für Dresden und Leipzig verlängert",
+      "url": "https://www.medienservice.sachsen.de/medien/news/1087981",
+      "stand": "10.06.2025, gültig bis 30.06.2027"
+    },
+    {
+      "name": "Stadt Leipzig, Soziale Erhaltungssatzungen: die Gebiete",
+      "url": "https://www.leipzig.de/leipzig-strategie/stadtentwicklung/stadterneuerung/soziale-erhaltungssatzungen/die-gebiete",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Soziale Erhaltungssatzungen: Antrags- und Genehmigungsverfahren",
+      "url": "https://www.leipzig.de/leipzig-strategie/stadtentwicklung/stadterneuerung/soziale-erhaltungssatzungen/antrags-und-genehmigungsverfahren",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Soziale Erhaltungssatzungen: Allgemeines Vorkaufsrecht",
+      "url": "https://www.leipzig.de/leipzig-strategie/stadtentwicklung/stadterneuerung/soziale-erhaltungssatzungen/allgemeines-vorkaufsrecht",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Städtebauliche Erhaltungssatzungen",
+      "url": "https://www.leipzig.de/bauen-und-wohnen/bauen/staedtebauliche-erhaltungssatzungen",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Fördergebiete Städtebaulicher Denkmalschutz: Leipzig-Innenstadt, Waldstraßenviertel/Bachstraßenviertel",
+      "url": "https://www.leipzig.de/bauen-und-wohnen/foerdergebiete/innenstadt-wald-und-bachstrassenviertel",
+      "stand": "abgerufen 27.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Abgeschlossenes Sanierungsgebiet Innerer Süden",
+      "url": "https://www.leipzig.de/bauen-und-wohnen/foerdergebiete/nord-sued-achse/sanierungsgebiet-innerer-sueden",
+      "stand": "abgerufen 27.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Abgeschlossenes Sanierungsgebiet Neustädter Markt",
+      "url": "https://www.leipzig.de/bauen-und-wohnen/foerdergebiete/leipziger-osten/sanierungsgebiet-neustaedter-markt",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Abgeschlossenes Sanierungsgebiet Neuschönefeld",
+      "url": "https://www.leipzig.de/bauen-und-wohnen/foerdergebiete/leipziger-osten/sanierungsgebiet-neuschoenefeld",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Ausgleichsbeträge in Sanierungsgebieten",
+      "url": "https://www.leipzig.de/leipzig-strategie/stadtentwicklung/stadterneuerung/ausgleichsbeitraege-in-sanierungsgebieten",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadtarchiv Leipzig, Eingemeindungsdaten",
+      "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.1_Dez1_Allgemeine_Verwaltung/10.9_Stadtarchiv/Eingemeindungsdaten.pdf",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Mein Stadtteil: Zentrum-West",
+      "url": "https://www.leipzig.de/mein-stadtteil/stadtbezirk-mitte/zentrum-west",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Mein Stadtteil: Zentrum-Süd",
+      "url": "https://www.leipzig.de/mein-stadtteil/stadtbezirk-mitte/zentrum-sued",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Mein Stadtteil: Zentrum-Südost",
+      "url": "https://www.leipzig.de/mein-stadtteil/stadtbezirk-mitte/zentrum-suedost",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Stadt Leipzig, Mein Stadtteil: Neustadt-Neuschönefeld",
+      "url": "https://www.leipzig.de/mein-stadtteil/stadtbezirk-ost/neustadt-neuschoenefeld",
+      "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "INSA-Fahrplanauskunft (Straßenbahn, Bus und S-Bahn), Verbindungen bis Leipzig Hauptbahnhof",
+      "url": "https://reiseauskunft.insa.de/",
+      "stand": "Fahrplan Dienstag 10.11.2026 ab 9 Uhr, abgefragt 26.10.2026"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "Einwohner 2025: Zentrum-West 11.654, Zentrum-Süd 14.647 (2015: 12.617, +16,1 %), Zentrum-Südost 15.291, Neustadt-Neuschönefeld 14.147 (2015: 11.561, +22,4 %); Summe 55.739, +15,6 % ggü. 48.223 (2015)",
+      "fundstelle": "leipzig-zentrum.md Nr. 1–5; STAT 2/1"
+    },
+    {
+      "zahl": "Durchschnittsalter Neustadt-Neuschönefeld 35,3, Zentrum-Süd 41,4, Zentrum-Südost 36,9, Stadt 42,4; 1-Personen-Haushalte Zentrum-Südost 71 %, Neustadt-Neuschönefeld 67 %",
+      "fundstelle": "leipzig-zentrum.md Nr. 1–5; STAT 2/3, 2/10"
+    },
+    {
+      "zahl": "Gebäude: Zentrum-West 629, bis 1918 278 = 44 %; Zentrum-Süd 728, ab 1991 304 = 42 %, bis 1918 272 = 37 %; Zentrum-Südost 396, 1949–90 131 = 33 %; Neustadt-Neuschönefeld 772, bis 1918 413 = 53 %. Ø Whg 73,5 / 70,2 / 63,0 / 64,4, Stadt 70,3",
+      "fundstelle": "leipzig-zentrum.md Nr. 1–4; STAT 6/4, 6/5"
+    },
+    {
+      "zahl": "Fertigstellungen Zentrum-Süd 2024 251 + 2025 239 = 490",
+      "fundstelle": "leipzig-zentrum.md Nr. 2; STAT 6/3"
+    },
+    {
+      "zahl": "ETW Wiederverkauf Mitte 224 / Ø 3.447 / Median 3.422 / 1.563–6.103; mit Stellplatz 3.893; Ost 256 / 2.576 / 2.456 / 1.177–5.778; Stadt 2.850; Zusammensetzung Mitte (sieben Zentrum-Ortsteile) und Ost",
+      "fundstelle": "leipzig-zentrum.md Nr. 6, 7 und Kopf; L2, L3; GMB Tab. 26 Z. 1422–1450"
+    },
+    {
+      "zahl": "Neubau mit Stellplatz Zentrum-Südost 52 / Ø 6.162 / 5.109–8.316 / 95 m²; Anteil 52 von 214 = 24 %; Stadt 6.451; ohne Stellplatz Zentrum-Südost 44 / 5.591 / 54 m²; Zentrum-Süd je 1; Zentrum-West –; Neustadt-Neuschönefeld ohne Stellplatz 4 / 4.956",
+      "fundstelle": "leipzig-zentrum.md Nr. 8–10; GMB Tab. 72, 73"
+    },
+    {
+      "zahl": "MFH Mitte 17 / 45,1 Mio. €; Ost 55 / 64,2; Ertrag Mitte 9 / 2.184 / 7,64 / 24,5 / NAR 3,0 / Leerstand 3,1; Ost 26 / 1.708 / 6,27 / 23,0 / 3,0 / 2,0; Stadt Faktor 23,1; Neustadt-Neuschönefeld 5 / Ø 1.531; GrESt 5,5 %",
+      "fundstelle": "leipzig-zentrum.md Nr. 12–14; GMB Tab. 26; L8, L9"
+    },
+    {
+      "zahl": "BRW: Zentrum-West Elster- und Sebastian-Bach-Straße 2.100 (unverändert), Käthe-Kollwitz-Straße 1.000 (GFZ 0,6, ohne MFH-Merkmal), Spanne 1.000–2.400; Zentrum-Süd Lampestraße und Hohe Straße 2.400→2.500, Paul-Gruner-Straße 1.900→2.000, Karl-Tauchnitz-Straße 2.400 unverändert, Spanne 1.450–2.500; Zentrum-Südost Seeburgstraße 2.300→2.400, Talstraße 1.800→1.900, Straße des 18. Oktober 1.400→1.450, Spanne 900–2.400, Wohn-/Mischzonen 32 % der Zellen; Neustadt-Neuschönefeld Einertstraße 950→1.050, Comeniusstraße 1.000→1.100, Spanne 740–1.400; gesamt 740–2.500; Attribute unverändert",
+      "fundstelle": "leipzig-zentrum.md Nr. 20–35"
+    },
+    {
+      "zahl": "Wohnlage: Zentrum-West 737 Adr., sehr gut 37 / gut 51 / Kerngebiet 9 %, Sebastian-Bach 45/45, Gustav-Mahler 28/28, David 17/17; Zentrum-Süd sehr gut 21 %, gut 76 %, Beethoven 16/16, Mozart 16/16, Robert-Schumann 15/15, Ferdinand-Rhode 25/28, Haydn 17/19; Zentrum-Südost gut 57 %, einfach 28 %, keine sehr gute Lage, Sternwarten/Seeburg/Tal, An den Tierkliniken 38/38, Liebigstraße 22/22; Neustadt-Neuschönefeld mittel 55 %, gut 45 %, Eisenbahnstraße 65/65 mittel, Bergstraße 34/34, Schulze-Delitzsch 29/29",
+      "fundstelle": "leipzig-zentrum.md Nr. 16–19"
+    },
+    {
+      "zahl": "Innenstadt = Stadtbezirk Mitte; Lagefaktoren Innenstadt einfach/mittel/gut 1,100, sehr gut 1,136, Kerngebiet 1,147, außerhalb gut 1,051",
+      "fundstelle": "MS Fußnote 36; L16"
+    },
+    {
+      "zahl": "Mietpreisbremse bis 30.06.2027, 10 %; Kappung 15 % in drei Jahren",
+      "fundstelle": "L20, L21"
+    },
+    {
+      "zahl": "Erhaltung Eisenbahnstraße 05.07.2020, 118 ha, 12.400 Whg, Neustadt-Neuschönefeld/Volkmarsdorf/Sellerhausen-Stünz; keine soziale Erhaltung in Zentrum-West, -Süd, -Südost; Lene-Voigt-Park nur Reudnitz-Thonberg/Anger-Crottendorf",
+      "fundstelle": "leipzig-zentrum.md Nr. 36–38; L23"
+    },
+    {
+      "zahl": "Städtebauliche Erhaltung Wald- und Bachstraßenviertel; Einzelprüfung Rückbau/Änderung/Nutzungsänderung/Neubau; verfahrensfrei z. B. Fassadensanierung isolierter Antrag; Förderung bis 31.12.2017, rund 300 Einzelmaßnahmen",
+      "fundstelle": "leipzig-zentrum.md Nr. 39–40; STB, WBV"
+    },
+    {
+      "zahl": "Genehmigung vor Baubeginn, auch selbst genutzt; Vorkaufsrecht, Abwendungsvereinbarung, keine Umwandlung",
+      "fundstelle": "L33, L34"
+    },
+    {
+      "zahl": "Sanierungsgebiet Innerer Süden 120 ha, Pleiße/Auwald/Bayerischer Bahnhof, Aufhebung 28.02.2024, Shakespeare- und Emilienstraße aus Ausgleichsbeträgen; Neustädter Markt 33,5 ha, Aufhebung 28.04.2021; Neuschönefeld 27,7 ha, Aufhebung 17.05.2023; Ausgleichsbetrag anteilig",
+      "fundstelle": "leipzig-zentrum.md Nr. 42–45; L27"
+    },
+    {
+      "zahl": "Eingemeindung Neustadt und Neuschönefeld 01.01.1890; Charakter nach den Stadtteilseiten; Musikviertel = westlicher Teil von Zentrum-Süd; Neustadt-Neuschönefeld Stadtbezirk Ost",
+      "fundstelle": "leipzig-zentrum.md Nr. 46–50 und Kopf; L28"
+    },
+    {
+      "zahl": "Fahrzeiten: Gottschedstr. Tram 1 13 min; S-Bf Wilhelm-Leuschner-Platz 3 min; Neues Rathaus Bus 89 13 min; Bayerischer Bahnhof Fußweg + S-Bahn 11 min; Einertstr. Tram 1 oder 8 13 min",
+      "fundstelle": "leipzig-zentrum.md Nr. 51–58; jr_nz.txt"
+    },
+    {
+      "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, §§ 656a–656d BGB; § 34c und § 34i GewO; Timon Fischer Geschäftsführer, Immobilienfinanzierung; Europace und Baufinex",
+      "fundstelle": "wie leipzig-west.json"
+    }
+  ]
+}

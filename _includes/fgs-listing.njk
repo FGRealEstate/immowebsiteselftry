@@ -1,0 +1,117 @@
+{#- Bausteine der Objekt-, Projekt- und Referenzseiten im Design-System (CP4, 28.10.2026, Design-Sprint-Brief 5.4).
+    Ersetzt fgd-listing-* aus fg-design.css; Daten unverändert aus _data/propstack.js.
+    CP5 (28.10.2026, Brief 5.5 „full-width swipeable gallery, a facts row (S6), the description, the investment check, the area
+    block linking to the area page, S8 with the contact“): Titelzeile ohne Preisspalte, Preis und Eckdaten als S6 unter der Galerie,
+    Inhalt als Blöcke mit Überschrift links (4 Spalten) und Text rechts (8 Spalten), keine Seitenleiste; der Kontakt steht im S8.
+      listingHead(l)   Titelzeile ohne Foto: Brotkrumen, Kicker (nur über der H1), H1, eine Zeile Einordnung, höchstens zwei Buttons.
+                       l = { crumbs: [{ href, label }], current, kicker, titel, meta (HTML), buttons: [{ href, label }] }.
+      gallery(pics, name, leer)  Bild über die ganze Breite des Rasters im Format 16:10, darunter Zähler und Pfeile; Wischen auf dem
+                       Handy. Ohne Bilder: „Foto folgt“ hell mit feiner Linie wie auf den Karten. Steuerung über galleryScript().
+      listingFacts(items, name)  S6: höchstens fünf Werte als Zahlenreihe, weitere als Zeile darunter; Bezeichnung wie auf den
+                       übrigen S6 als fgs-fact-text (kein Versal-Label, struktur.py: Label nur über der H1).
+                       items = [{ wert, label, lang }]; lang: Spanne, darf in zwei Zeilen umbrechen (nur nach dem Gedankenstrich:
+                       vor €, m² und – steht ein geschütztes Leerzeichen). Die Reihe bricht um, wenn die Werte nicht
+                       nebeneinander passen (fg-system.css, „Preise, Spannen und Renditen“).
+      areaBlock(area)  Lage und Markt: H2, ein Satz, Textlink zur Gebietsseite (vorher fgd-area-block.njk, ohne Kicker).
+    Keine Symbole und keine Gold-Häkchen (Brief 3.7). -#}
+{% from "fgs-macros.njk" import textlink %}
+
+{%- macro listingHead(l) -%}
+<section class="fgs-pagehead fgs-listing-head" aria-labelledby="seitentitel">
+  <div class="fgs-wrap">
+    <nav aria-label="Brotkrümelnavigation">
+      <ol class="fgs-crumbs">
+        <li><a href="/">Start</a></li>
+        {%- for c in l.crumbs %}
+        <li><a href="{{ c.href }}">{{ c.label }}</a></li>{% endfor %}
+        <li aria-current="page">{{ l.current }}</li>
+      </ol>
+    </nav>
+    <div class="fgs-listing-head-text">
+      <p class="fgs-label">{{ l.kicker }}</p>
+      <h1 id="seitentitel">{{ l.titel }}</h1>
+      {%- if l.meta | trim %}
+      <p class="fgs-listing-meta">{{ l.meta | safe }}</p>{% endif %}
+      <div class="fgs-btns">
+        {%- for b in l.buttons %}
+        <a class="fgs-btn {{ 'fgs-btn--primary' if loop.first else 'fgs-btn--secondary' }}" href="{{ b.href }}">{{ b.label }}</a>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{%- endmacro -%}
+
+{%- macro gallery(pics, name, leer) -%}
+{% if pics and pics.length %}
+<div class="fgs-gallery" data-gallery aria-roledescription="Bildergalerie" aria-label="Bilder von {{ name }}">
+  <div class="fgs-media fgs-gallery-stage">
+    {% for image in pics %}<img src="{{ image | propstackFoto(1600) }}"{% set _set = image | propstackSrcset %}{% if _set %} srcset="{{ _set }}"{% endif %} alt="{{ name }}, Bild {{ loop.index }} von {{ pics.length }}" width="1600" height="1000" decoding="async"{% if loop.first %} class="is-active" fetchpriority="high"{% else %} loading="lazy"{% endif %}>{% endfor %}
+  </div>
+  {%- if pics.length > 1 %}
+  <div class="fgs-gallery-bar">
+    <p class="fgs-small" aria-live="polite">Bild <span data-gallery-current>1</span> von {{ pics.length }}</p>
+    <div class="fgs-rail-nav">
+      <button type="button" class="fgs-rail-btn" data-dir="-1" data-gallery-prev aria-label="Vorheriges Bild"><svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M29 7H2M8 1 2 7l6 6"/></svg></button>
+      <button type="button" class="fgs-rail-btn" data-dir="1" data-gallery-next aria-label="Nächstes Bild"><svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M1 7h27M22 1l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+  {%- endif %}
+</div>
+{% else %}
+<div class="fgs-gallery">
+  <div class="fgs-media fgs-gallery-stage"><span class="fgs-offer-placeholder" role="img" aria-label="{{ leer }}"><span>Foto folgt</span></span></div>
+</div>
+{% endif %}
+{%- endmacro -%}
+
+{%- macro galleryScript() -%}
+<script>
+(function () {
+  var g = document.querySelector('[data-gallery]');
+  if (!g) return;
+  var slides = Array.prototype.slice.call(g.querySelectorAll('.fgs-gallery-stage img'));
+  var cur = g.querySelector('[data-gallery-current]');
+  var i = 0;
+  var show = function (n) { slides[i].classList.remove('is-active'); i = (n + slides.length) % slides.length; slides[i].loading = 'eager'; slides[i].classList.add('is-active'); if (cur) cur.textContent = i + 1; };
+  var prev = g.querySelector('[data-gallery-prev]'), next = g.querySelector('[data-gallery-next]');
+  if (prev) prev.addEventListener('click', function () { show(i - 1); });
+  if (next) next.addEventListener('click', function () { show(i + 1); });
+  var x0 = null;
+  g.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  g.addEventListener('touchend', function (e) { if (x0 === null || slides.length < 2) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) show(dx < 0 ? i + 1 : i - 1); x0 = null; });
+  g.addEventListener('keydown', function (e) { if (e.key === 'ArrowLeft') show(i - 1); if (e.key === 'ArrowRight') show(i + 1); });
+})();
+</script>
+{%- endmacro -%}
+
+{%- macro listingFacts(items, name) -%}
+{%- set reihe = items.slice(0, 5) %}{% set rest = items.slice(5) %}
+<div class="fgs-listing-facts" role="group" aria-label="Eckdaten von {{ name }}">
+  <ul class="fgs-facts" role="list" style="--n: {{ reihe | length }}">
+    {%- for x in reihe %}
+    <li class="fgs-fact">{%- set w = x.wert | string | escape | string %}<span class="fgs-fact-figure{% if x.lang %} fgs-fact-figure--lang{% endif %}">{{ w | replace(" €", "&nbsp;€") | replace(" m²", "&nbsp;m²") | replace(" – ", "&nbsp;– ") | safe }}</span><span class="fgs-fact-text">{{ x.label }}</span></li>
+    {%- endfor %}
+  </ul>
+  {%- if rest.length %}
+  <p class="fgs-facts-note">{% for x in rest %}{{ x.label }}: {{ x.wert }}{% if not loop.last %} · {% endif %}{% endfor %}</p>{% endif %}
+</div>
+{%- endmacro -%}
+
+{%- macro areaBlock(area, id="lage-markt") -%}
+<section class="fgs-listing-block fgs-cols" aria-labelledby="{{ id }}">
+  {% if area %}
+  <div class="fgs-cols-head"><h2 id="{{ id }}">Immobilienmarkt {{ area.inOrt }}</h2></div>
+  <div class="fgs-cols-body">
+    <p>Auf unserer Seite zu {{ area.nameLang }} stehen Marktzahlen mit Quellen, Hinweise zu Verkauf, Kauf und Finanzierung und Antworten auf häufige Fragen.</p>
+    {{ textlink(area.url, "Zur Seite " + area.nameLang) }}
+  </div>
+  {% else %}
+  <div class="fgs-cols-head"><h2 id="{{ id }}">Unsere Gebiete</h2></div>
+  <div class="fgs-cols-body">
+    <p>Für Berlin, Brandenburg, Leipzig und Dresden haben wir eigene Seiten mit Marktzahlen, Quellen und Antworten auf häufige Fragen.</p>
+    {{ textlink("/standorte/", "Alle Gebiete ansehen") }}
+  </div>
+  {% endif %}
+</section>
+{%- endmacro -%}

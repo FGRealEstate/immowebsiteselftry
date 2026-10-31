@@ -1,0 +1,250 @@
+---
+layout: fgs-service.njk
+title: "Kostenlose Immobilienbewertung in Berlin, Brandenburg, Leipzig & Dresden | Fischer & Geserich"
+description: "Kostenlose Immobilienbewertung durch Ihren Ansprechpartner vor Ort, meist noch am selben Tag. Für Wohnungen, Häuser, Mehrfamilienhäuser und Grundstücke in Berlin, Brandenburg, Leipzig und Dresden."
+permalink: immobilienbewertung/index.html
+canonicalPath: /immobilienbewertung/
+# Neue Seite nach Brief Design-Pass §4.2. Versprochen wird nur, was stimmt: persönliche Wertermittlung
+# durch den regionalen Ansprechpartner, meist am selben Tag; kein automatischer Online-Preis.
+# Das Formular schickt wie die bestehenden Formulare an propstack-lead (Skript in fg-design.js).
+# Design-Sprint-Brief 5.5 (CP3, 28.10.2026): Assistent in fünf Schritten über die volle Breite mit großer
+# Fortschrittslinie, eine Frage je Ansicht. Feldnamen, data-Attribute und Versand unverändert.
+# Entfallen: Kicker über den H2 (Update 6 §3.0), Inhaltsverzeichnis (fgs-service.njk hat keins), Icons in der Liste.
+service:
+  id: immobilienbewertung
+  parent: { label: "Immobilie verkaufen", href: "/verkaufen.html" }
+  crumb: "Kostenlose Bewertung"
+  kicker: "Kostenlos und unverbindlich"
+  h1: "Kostenlose Immobilienbewertung in Berlin, Brandenburg, Leipzig und Dresden"
+  intro: "Ihr Ansprechpartner aus der Region bewertet Ihre Immobilie persönlich, kostenlos und meist noch am selben Tag. Wir bewerten Wohnungen, Häuser, Mehrfamilienhäuser, Grundstücke und Gewerbeimmobilien."
+  button: { label: "Bewertung anfragen", href: "#anfrage" }
+  hero: { name: "bewertung-hero", alt: "Villa am Teltower Damm in Berlin-Zehlendorf, ein Baudenkmal", widths: [960, 1600] }
+  summaryQ: "Was ist meine Immobilie wert und wie erfahre ich es?"
+  summary:
+    - "Sie senden uns die wichtigsten Angaben zu Ihrer Immobilie und Ihr Ansprechpartner aus der Region erstellt daraus eine Wertermittlung. Grundlage sind Vergleichspreise aus der Umgebung, der Bodenrichtwert, Zustand und Ausstattung sowie die aktuelle Nachfrage. Das kostet Sie nichts, verpflichtet Sie zu nichts und liegt meist noch am selben Tag vor."
+    - "Einen automatischen Online-Preis gibt es bei uns nicht, weil ein Rechner den Zustand Ihrer Immobilie nicht kennt. Brauchen Sie einen Wert für das Finanzamt, ein Gericht oder eine Erbauseinandersetzung, ist ein Verkehrswertgutachten eines Sachverständigen das Richtige."
+  faqTitle: "Häufige Fragen zur Immobilien­bewertung"
+  faq:
+    # Update 20 (30.10.2026): Fragen und Antworten wörtlich nach Timons Freigabe, auch im FAQPage-Markup; Links auf denselben Wörtern wie vorher.
+    - q: "Was kostet eine seriöse Immobilienbewertung?"
+      a: "Bei uns nichts. Die Wertermittlung Ihrer Immobilie erstellen wir kostenlos, meistens innerhalb weniger Stunden und häufig noch am selben Tag. Sie zeigt Ihnen, zu welchem Preis sich Ihre Immobilie heute realistisch verkaufen lässt. Brauchen Sie dagegen ein Verkehrswertgutachten, etwa für das Finanzamt, ein Gericht oder eine Erbauseinandersetzung, erstellt das ein Sachverständiger gegen Honorar."
+    - q: "Wie kann ich selbst den Wert einer Immobilie ermitteln?"
+      a: "Den Bodenrichtwert Ihres Grundstücks finden Sie kostenlos im Bodenrichtwertportal Ihres Bundeslandes (BORIS). Die Grundstücksmarktberichte der Gutachterausschüsse zeigen, zu welchen Preisen in Ihrer Gegend tatsächlich verkauft wurde. Angebote vergleichbarer Immobilien in den Portalen zeigen dagegen Angebotspreise und keine Kaufpreise. Wie Zustand, Grundriss und Lage im Haus den Wert verändern, lässt sich so aber nur schwer einschätzen. Dafür ist eine persönliche Wertermittlung da."
+    - q: "Was ist der Unterschied zwischen Wertermittlung und Gutachten?"
+      a: "Eine Wertermittlung durch einen Makler ist eine Markteinschätzung: Zu welchem Preis lässt sich Ihre Immobilie heute realistisch verkaufen? Sie ist bei uns kostenlos und die Grundlage für den Angebotspreis. Ein Verkehrswertgutachten erstellt ein Sachverständiger nach den Vorgaben der Immobilienwertermittlungsverordnung (ImmoWertV) gegen Honorar. Es wird gebraucht, wenn der Wert gegenüber Dritten nachgewiesen werden muss, zum Beispiel gegenüber dem Finanzamt, einem Gericht oder Miterben."
+    - q: "Verpflichtet mich die Bewertung zu einem Verkauf?"
+      a: "Nein. Die Wertermittlung kostet Sie nichts und verpflichtet Sie zu nichts. Viele Eigentümer möchten zunächst nur wissen, wo sie stehen, etwa vor einer Anschlussfinanzierung oder bei einer Erbschaft. Ob und wann Sie verkaufen, entscheiden Sie danach in Ruhe."
+    - q: "Welche Angaben brauchen Sie für die Bewertung?"
+      a: "Für einen ersten Wert reichen Objektart, Adresse, Wohnfläche, Zimmerzahl, Baujahr und Zustand. Für eine genaue Wertermittlung brauchen wir mehr: zum Beispiel wann zuletzt modernisiert wurde, in welcher Etage eine Wohnung liegt, ob es Balkon, Loggia oder Terrasse gibt und bei Mehrfamilienhäusern die aktuelle Jahresnettokaltmiete. Alle weiteren Fragen schicken wir Ihnen nach Ihrer Anfrage per E-Mail."
+    - q: "Verkaufen Sie auch geerbte Immobilien?"
+      a: "Ja. Bei einer geerbten Immobilie klären wir zuerst die rechtliche Lage und welche Unterlagen vorliegen. Häufig geht es auch darum, wie die Erbschaftsteuer bezahlt werden soll. Je nach Situation ist dafür eine Finanzierung sinnvoller als ein schneller Verkauf unter Zeitdruck. Das besprechen wir mit Ihnen in Ruhe."
+    # FG-Gap-Answers 3.1 (TIMON), an seit 29.10.2026 (FG-Timon-Answers-Update §1, freigaben.timonFaq)
+    - q: "Kann ich meine Immobilie anonym bewerten lassen?"
+      a: "Für eine Wertermittlung brauchen wir die Adresse, die wichtigsten Angaben zur Immobilie und eine Möglichkeit, Ihnen das Ergebnis zu schicken. Ihre Anfrage geht nur an uns und nicht an ein Portal, das sie an mehrere Makler weitergibt. Sie verpflichten sich zu nichts. Wenn Sie keinen Anruf möchten, schreiben Sie es in das Formular: Dann bekommen Sie das Ergebnis per E-Mail."
+      timon: "3.1"
+    # FG-Gap-Answers 3.2 (SOURCE), selbst geschrieben nach der Gliederung im Brief. Quellen (abgerufen 28.10.2026): § 36 GewO
+    # (gesetze-im-internet.de/gewo/__36.html); BVS-Honorarrichtlinie Immobilienbewertung 2024, Vorbemerkungen (unverbindliche
+    # Empfehlung, Honorar zu vereinbaren), Abschnitt 9 Tabelle (400.000 € → 2.750 €, 800.000 € → 3.250 € ohne USt.), Abbildung 1 und
+    # Abschnitt 4 (Zuschläge Wegerecht, Denkmalschutz, Aufmaß): bvs-ev.de/fileupload/files/66964b2c0838f_BVS-Honorarrichtlinie_Fassung_2024.pdf.
+    # Aus, bis Jesu die Quellen geprüft hat (freigaben.quelleFaq, Brief §9).
+    - q: "Was kostet ein Gutachten für eine Immobilie?"
+      a: "Ein Verkehrswertgutachten kostet so viel, wie Sie mit dem Sachverständigen vereinbaren: Eine gesetzliche Gebührenordnung gibt es dafür nicht. Erstellt wird es von einem öffentlich bestellten und vereidigten Sachverständigen (§ 36 Gewerbeordnung) oder einem zertifizierten Sachverständigen für Immobilienbewertung. Zur Orientierung empfiehlt der Bundesverband öffentlich bestellter und vereidigter sowie qualifizierter Sachverständiger (BVS) in seiner Honorarrichtlinie Immobilienbewertung 2024 für ein Haus oder eine Wohnung mit einem Wert von 400.000 bis 800.000 Euro ein Grundhonorar von 2.750 bis 3.250 Euro zuzüglich Umsatzsteuer; für Besonderheiten wie ein Wegerecht, Denkmalschutz oder ein Aufmaß kommen Zuschläge hinzu. Für eine Verkaufsentscheidung reicht meist unsere kostenlose Wertermittlung."
+      quelle: "3.2"
+  related:
+    services:
+      - { label: "Immobilie verkaufen", note: "Ablauf, Unterlagen, Kosten", href: "/verkaufen.html", bild: "verkaufen-hero", alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser" }
+      - { label: "Mehrfamilienhaus verkaufen", note: "Käufernetzwerk mit über 100 Interessenten", href: "/mehrfamilienhaus.html", bild: "mfh-hero", alt: "Denkmalgeschütztes Eckhaus mit Klinkerfassade an der Schönhauser Allee in Berlin-Prenzlauer Berg" }
+      - { label: "Anschlussfinanzierung", note: "Finanzierungsberatung", href: "/finanzierungsberatung.html", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
+    lexikon: [verkehrswert, bodenrichtwert, ertragswert]
+  contact: lennart
+  closing:
+    title: "Lieber erst sprechen?"
+    text: "Haben Sie Fragen, bevor Sie Angaben schicken? Rufen Sie uns an. Für Berlin und Brandenburg ist Lennart Geserich Ihr Ansprechpartner, für Leipzig und Dresden Timon Fischer."
+    button: gespraech
+  schema:
+    name: "Kostenlose Immobilienbewertung"
+    serviceType: "Immobilienbewertung"
+    description: "Kostenlose Wertermittlung für Wohnungen, Häuser, Mehrfamilienhäuser und Grundstücke in Berlin, Brandenburg, Leipzig und Dresden, persönlich durch den regionalen Ansprechpartner, meist am selben Tag."
+    area: regional
+---
+{% from "fgs-macros.njk" import split, facts with context %}
+{% from "fgd-icons.njk" import icon %}
+
+{# F Assistent über die volle Breite (Brief 5.5): oben die drei Schritte des Ablaufs, darunter das Formular mit großer
+   Fortschrittslinie. Ohne Skript stehen alle fünf Abschnitte untereinander (fg-design.js, [data-fgd-wizard]) #}
+<section class="fgs-section fgs-wizard-section" id="formular" aria-labelledby="formular-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head"><h2 id="formular-titel">In drei Schritten zum Wert Ihrer Immobilie</h2></div>
+    <ol class="fgs-steps fgs-steps--row" role="list">
+      <li>
+        <span class="fgs-step-num" aria-hidden="true">01</span>
+        <h3>Angaben senden</h3>
+        <p>Objektart, Adresse, Wohnfläche, Zimmerzahl, Baujahr und Zustand reichen für einen ersten Wert. Für eine genaue Wertermittlung schicken wir Ihnen danach ein paar gezielte Fragen zu Ihrer Immobilie per E-Mail.</p>
+      </li>
+      <li>
+        <span class="fgs-step-num" aria-hidden="true">02</span>
+        <h3>Ihr Ansprechpartner meldet sich</h3>
+        <p>Für Berlin und Brandenburg ist das Lennart Geserich, für Leipzig und Dresden Timon Fischer. Wenn etwas unklar ist, fragt er nach.</p>
+      </li>
+      <li>
+        <span class="fgs-step-num" aria-hidden="true">03</span>
+        <h3>Sie erhalten die Wertermittlung</h3>
+        <p>Mit einer Spanne, die wir begründen, und einer Einschätzung, welcher Angebotspreis am Markt sinnvoll ist.</p>
+        <p class="fgs-step-time"><span class="fgs-label">Typisch</span> meist noch am selben Tag</p>
+      </li>
+    </ol>
+
+    <div class="fgd-form-card fgs-wizard" id="anfrage">
+      <h3>Bewertung anfragen</h3>
+      <p>In fünf kurzen Schritten. Pflichtfelder sind mit * markiert.</p>
+      {# Update 4, 3.1: Bewertung in 5 Schritten. Feldnamen unverändert (propstack-lead). Ohne JavaScript
+         bleiben alle fünf Abschnitte sichtbar und die Seite zeigt ein Formular; Fortschritt und
+         Weiter/Zurück blendet erst das Skript ein ([data-fgd-wizard] in fg-design.js). #}
+      <form method="post" action="/.netlify/functions/propstack-lead?concern=Immobilie%20verkaufen%20%E2%80%93%20kostenlose%20Bewertung" class="fgd-form" data-fgd-lead-form data-fgd-wizard data-concern="Immobilie verkaufen – kostenlose Bewertung" novalidate>
+        <div class="fgd-wizard-progress" data-fgd-wizard-progress hidden>
+          <p class="fgd-wizard-count" aria-live="polite">Schritt <span data-fgd-wizard-nr>1</span> von 5: <span data-fgd-wizard-name>Objektart</span></p>
+          <div class="fgd-wizard-bar" role="progressbar" aria-label="Fortschritt" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1"><span></span></div>
+          <ol class="fgd-wizard-names" aria-hidden="true">
+            <li>Objektart</li><li>Adresse</li><li>Wohnfläche</li><li>Zustand</li><li>Kontakt</li>
+          </ol>
+        </div>
+        <fieldset data-fgd-step="Objektart">
+          <legend>1. Welche Immobilie möchten Sie bewerten lassen?&nbsp;*</legend>
+          <div class="fgd-choices">
+            <label class="fgd-choice"><input type="radio" name="object_type" value="Eigentumswohnung" required>Eigentums&shy;wohnung</label>
+            <label class="fgd-choice"><input type="radio" name="object_type" value="Einfamilienhaus" required>Einfamilien&shy;haus</label>
+            <label class="fgd-choice"><input type="radio" name="object_type" value="Zweifamilienhaus" required>Zweifamilien&shy;haus</label>
+            <label class="fgd-choice"><input type="radio" name="object_type" value="Doppelhaushälfte" required>Doppel&shy;haus&shy;hälfte</label>
+            <label class="fgd-choice"><input type="radio" name="object_type" value="Reihenhaus" required>Reihenhaus</label>
+            <label class="fgd-choice"><input type="radio" name="object_type" value="Mehrfamilienhaus" required>Mehrfamilien&shy;haus</label>
+            <label class="fgd-choice"><input type="radio" name="object_type" value="Grundstück" required>Grundstück</label>
+            <label class="fgd-choice"><input type="radio" name="object_type" value="Gewerbe" required>Gewerbe</label>
+          </div>
+        </fieldset>
+        <fieldset data-fgd-step="Adresse">
+          <legend>2. Adresse und Lage</legend>
+          <label>Adresse *<input name="location" required autocomplete="street-address" placeholder="Straße, Hausnummer, PLZ, Ort"></label>
+          <p class="fgd-form-hint">Wir bewerten in Berlin, Brandenburg, Leipzig und Dresden. Die Adresse brauchen wir für Vergleichspreise und Bodenrichtwert in Ihrer Lage.</p>
+        </fieldset>
+        {# Update 19 §5: „Größe“ wird „Wohnfläche“, dazu Grundstücksgröße für Häuser und Grundstücke und Zimmer für Wohnungen
+           und Häuser. data-fgd-nicht: bei diesen Objektarten blendet fg-design.js das Feld aus (und schickt es nicht mit);
+           ohne Skript bleiben alle Felder sichtbar. Feldnamen unverändert. #}
+        <fieldset data-fgd-step="Wohnfläche" data-fgd-step-grundstueck="Grundstücksgröße" data-fgd-legende-grundstueck="3. Grundstücksgröße und Baujahr">
+          <legend>3. Wohnfläche, Zimmer und Baujahr</legend>
+          <div class="fgd-field-row fgd-field-row--3">
+            <label data-fgd-nicht="Grundstück">Wohnfläche in m²<input name="property_details[seller-area-value]" inputmode="decimal" placeholder="z.&nbsp;B. 85"></label>
+            <label data-fgd-nicht="Grundstück">Zimmer<input name="property_details[seller-rooms]" inputmode="decimal" placeholder="z.&nbsp;B. 3"></label>
+            <label>Baujahr<input name="property_details[seller-year]" inputmode="numeric" maxlength="4" placeholder="z.&nbsp;B. 1928"></label>
+          </div>
+          <label data-fgd-nicht="Eigentumswohnung">Grundstücksgröße in m²<input name="property_details[seller-plot-area]" inputmode="decimal" placeholder="bei Häusern und Grundstücken"></label>
+          <p class="fgd-form-hint">Wenn Sie etwas nicht genau wissen, lassen Sie das Feld leer oder schätzen Sie.</p>
+        </fieldset>
+        <fieldset data-fgd-step="Zustand">
+          <legend>4. Zustand und Ziel</legend>
+          <label>Zustand
+            <select name="property_details[seller-quality]">
+              <option value="">Bitte wählen</option>
+              <option>Neuwertig oder saniert</option>
+              <option>Gepflegt</option>
+              <option>Renovierungsbedürftig</option>
+              <option>Sanierungsbedürftig</option>
+            </select>
+          </label>
+          <label>Ihr Ziel
+            <select name="extra:Ziel">
+              <option value="">Bitte wählen</option>
+              <option>Verkauf in den nächsten Monaten</option>
+              <option>Verkauf später, erst den Wert kennen</option>
+              <option>Erbschaft oder Trennung</option>
+              <option>Anschlussfinanzierung oder Beleihung</option>
+              <option>Etwas anderes</option>
+            </select>
+          </label>
+        </fieldset>
+        <fieldset data-fgd-step="Kontakt">
+          <legend>5. Kontakt und Einwilligung</legend>
+          <div class="fgd-field-row">
+            <label>Vorname *<input name="first_name" required autocomplete="given-name"></label>
+            <label>Nachname *<input name="last_name" required autocomplete="family-name"></label>
+          </div>
+          <div class="fgd-field-row">
+            <label>E-Mail *<input name="email" type="email" required autocomplete="email"></label>
+            <label>Telefon<input name="phone" type="tel" autocomplete="tel" placeholder="für Rückfragen"></label>
+          </div>
+          <label>Nachricht<textarea name="message" rows="3" maxlength="3000" placeholder="optional, zum Beispiel Besonderheiten oder einen Zeitrahmen"></textarea></label>
+          <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
+        </fieldset>
+        <label class="fgd-hp" aria-hidden="true">Website<input name="company_website" tabindex="-1" autocomplete="off"></label>
+        <div class="fgd-status" data-fgd-lead-status hidden></div>
+        <div class="fgd-wizard-nav">
+          <button type="button" class="fgd-btn fgd-btn-line" data-fgd-wizard-back hidden>Zurück</button>
+          <button type="button" class="fgd-btn fgd-btn-navy" data-fgd-wizard-next hidden>Weiter{{ icon("arrow") | safe }}</button>
+          <button type="submit" class="fgd-btn fgd-btn-navy">Kostenlose Bewertung anfragen{{ icon("arrow") | safe }}</button>
+        </div>
+      </form>
+      <div class="fgd-form-done" data-fgd-lead-done tabindex="-1" hidden>
+        <h3>Vielen Dank, Ihre Anfrage ist da</h3>
+        <p>Ihr Ansprechpartner meldet sich bei Ihnen, die Wertermittlung liegt meist noch am selben Tag vor. Wenn es eilt, erreichen Sie uns unter <a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a>.</p>
+      </div>
+    </div>
+    <p class="fgs-note fgs-wizard-note">Ihre Angaben nutzen wir für die Bewertung und die Kontaktaufnahme zu Ihrer Anfrage. Wie wir mit Ihren Daten umgehen, steht in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</p>
+  </div>
+</section>
+
+{# S3 Grundlage: Bild wie bisher (Blick vom Alexanderplatz), daneben die fünf Punkte als ruhige Liste #}
+{% call split({ id: "grundlage", titel: "Worauf die Bewertung beruht", bild: "berlin-mitte-band" | bild, alt: "Blick vom Alexanderplatz über die Dächer von Berlin bei tief stehender Sonne" }) %}
+  <p>Für jede Bewertung sehen wir uns diese fünf Punkte an:</p>
+  <ul class="fgs-checklist fgs-checklist--one" role="list">
+    <li>Vergleichspreise<span>Zu welchen Preisen ähnliche Immobilien in der Umgebung angeboten werden und verkauft wurden</span></li>
+    <li>Bodenrichtwert<span>Der Wert des Bodens laut Gutachterausschuss, wichtig bei Häusern und Grundstücken</span></li>
+    <li>Zustand und Ausstattung<span>Modernisierungen, Grundriss, Etage, Balkon, Energiekennwerte</span></li>
+    <li>Vermietung<span>Bei vermieteten Immobilien Miethöhe, Mietvertrag und mögliche Anpassungen</span></li>
+    <li>Nachfrage<span>Wer diese Immobilie heute sucht und wie viel Konkurrenz am Markt ist</span></li>
+  </ul>
+{% endcall %}
+
+{# Vergleich: Überschrift und Einleitung, darunter die Tabelle über die volle Breite; schmal je Zeile ein Block #}
+<section class="fgs-section" id="vergleich" aria-labelledby="vergleich-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head">
+      <h2 id="vergleich-titel">Online-Rechner, Wertermittlung oder Gutachten?</h2>
+      <p class="fgs-lead">Alle drei nennen einen Wert, aber sie beantworten unterschiedliche Fragen. Welcher Weg der richtige ist, hängt davon ab, wofür Sie den Wert brauchen.</p>
+    </div>
+    <div class="fgs-table-wrap fgs-compare-wrap">
+      <table class="fgs-table fgs-table--compare">
+        <thead><tr><td></td><th scope="col">Online-Rechner</th><th scope="col">Wertermittlung durch uns</th><th scope="col">Verkehrswertgutachten</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Wer bewertet</th><td data-label="Online-Rechner">Ein automatisches Verfahren auf Basis statistischer Daten</td><td data-label="Wertermittlung durch uns">Ihr Ansprechpartner aus der Region, persönlich</td><td data-label="Verkehrswertgutachten">Ein Sachverständiger für Immobilienbewertung</td></tr>
+          <tr><th scope="row">Grundlage</th><td data-label="Online-Rechner">Lage, Fläche, Baujahr; den Zustand kennt der Rechner nicht</td><td data-label="Wertermittlung durch uns">Vergleichspreise, Bodenrichtwert, Zustand, Vermietung und aktuelle Nachfrage</td><td data-label="Verkehrswertgutachten">Verfahren nach der Immobilienwertermittlungsverordnung (ImmoWertV), meist mit Ortsbesichtigung</td></tr>
+          <tr><th scope="row">Kosten</th><td data-label="Online-Rechner">meist kostenlos, oft gegen Ihre Kontaktdaten</td><td data-label="Wertermittlung durch uns">kostenlos</td><td data-label="Verkehrswertgutachten">Honorar des Sachverständigen</td></tr>
+          <tr><th scope="row">Dauer</th><td data-label="Online-Rechner">sofort</td><td data-label="Wertermittlung durch uns">meist noch am selben Tag</td><td data-label="Verkehrswertgutachten">je nach Sachverständigem und Auftrag</td></tr>
+          <tr><th scope="row">Geeignet für</th><td data-label="Online-Rechner">eine grobe erste Orientierung</td><td data-label="Wertermittlung durch uns">die Entscheidung über Verkauf und Angebotspreis</td><td data-label="Verkehrswertgutachten">Nachweise gegenüber Finanzamt, Gericht oder Miterben</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+{# S6 Zahlen: dieselben vier Angaben wie bisher; Quellenzeile nur bei Google und Erlaubnis, ohne „Angabe von F&G“ (Design-Pass 2 §7) #}
+{{ facts({ id: "zahlen", titel: "F&G in Zahlen", hochzaehlen: true, items: [
+  { wert: google.rating, text: "von 5 Sternen aus " + google.count + " Google-Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>, Stand ' + google.checkedLabel },
+  { wert: "100+", text: "Interessenten für Mehrfamilienhäuser deutschlandweit" },
+  { wert: "50+", text: "neue Kapitalanlage-Interessenten pro Monat" }
+] }) }}
+
+{# Selbst einschätzen: Überschrift links, Text rechts (S5-Text ohne Inhaltsverzeichnis, die Seite ist kurz) #}
+<section class="fgs-section" id="selbst" aria-labelledby="selbst-titel">
+  <div class="fgs-wrap fgs-cols">
+    <div class="fgs-cols-head"><h2 id="selbst-titel">Den Wert selbst einschätzen</h2></div>
+    <div class="fgs-cols-body fgs-prose">
+      <p class="fgs-lead">Einen ersten Anhaltspunkt bekommen Sie auch ohne uns. Diese Quellen sind öffentlich und kostenlos.</p>
+      <h3>Bodenrichtwert</h3>
+      <p>Die Gutachterausschüsse veröffentlichen für jede Lage einen Bodenrichtwert in Euro pro Quadratmeter Grundstück. Sie finden ihn im Bodenrichtwertportal Ihres Bundeslandes (BORIS), für Berlin, Brandenburg und Sachsen jeweils online. Bei Häusern und Grundstücken ist er ein wichtiger Teil des Werts, bei Eigentumswohnungen nur ein kleiner.</p>
+      <h3>Grundstücksmarktberichte</h3>
+      <p>Die Gutachterausschüsse werten die tatsächlich gezahlten Kaufpreise aus und veröffentlichen sie in ihren Grundstücksmarktberichten, oft mit Durchschnittswerten je Bezirk oder Gemeinde und Baujahr. Diese Werte zeigen, was gezahlt wurde, nicht was verlangt wird.</p>
+      <h3>Angebote in den Portalen</h3>
+      <p>Vergleichbare Inserate zeigen, mit welchen Preisen andere Eigentümer an den Markt gehen. Das sind Angebotspreise, keine Kaufpreise, und wie lange eine Anzeige schon online ist, sehen Sie nicht immer.</p>
+      <p class="fgs-note">Was diese Quellen nicht leisten: Sie wissen nicht, in welchem Zustand Ihre Immobilie ist, wie der Grundriss funktioniert oder ob die Wohnung vermietet ist. Genau das macht in der Wertermittlung oft den Unterschied.</p>
+    </div>
+  </div>
+</section>

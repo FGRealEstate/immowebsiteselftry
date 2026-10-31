@@ -7,11 +7,93 @@
   "keywords": [
     "zinsbindung"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Finanzierung",
   "formula": null,
   "sources": [],
   "assistantAnswer": "Zeitraum, für den der Sollzins fest vereinbart ist. Die Zinsbindung ist der Zeitraum, in dem der vereinbarte Sollzins unverändert gilt. Eine längere Bindung erhöht Planungssicherheit, kann aber einen höheren Anfangszins bedeuten.",
-  "explanation": "Die Zinsbindung ist der Zeitraum, in dem der vereinbarte Sollzins unverändert gilt. Eine längere Bindung erhöht Planungssicherheit, kann aber einen höheren Anfangszins bedeuten.",
-  "practiceExample": "Bei 300.000 € Darlehen kann eine um 0,2 Prozentpunkte höhere Kondition rund 50 € mehr Zins pro Monat zu Beginn bedeuten, dafür aber ein späteres Anschlussrisiko verschieben."
+  "explanation": "Die Zinsbindung legt fest, wie lange Ihr Sollzins unverändert bleibt. Üblich sind 5, 10 oder 15 Jahre, Zwischenzeiten wie sieben oder 14 Jahre sind ebenfalls möglich. Längere Bindungen sind meist teurer, weil die Bank das Zinsrisiko länger trägt. Zwischen zehn und 15 Jahren liegen meist 0,1 bis 0,2 Prozentpunkte. Das gilt nicht in jeder Marktlage: Anfang Oktober 2026 lagen die Zinsen für fünf Jahre teils über denen für zehn.",
+  "practiceExample": "Sie finanzieren 300.000 € mit 1,5 % Tilgung. Kostet die längere Bindung 0,2 Prozentpunkte mehr, zahlen Sie anfangs rund 50 € mehr Zinsen im Monat. Dafür steht der Zins fünf Jahre länger fest. Bei einem Beispielzins von 4 % schulden Sie nach zehn Jahren noch rund 244.800 €. Liegt der Zins dann einen Prozentpunkt höher, kostet das auf diese Restschuld rund 2.450 € im ersten Jahr.",
+  "ausbau": {
+    "einordnung": [
+      "Die Zinsbindung legt fest, wie lange Ihr Sollzins unverändert bleibt. Üblich sind 5, 10 oder 15 Jahre,[[1]] Zwischenzeiten wie sieben oder 14 Jahre sind ebenfalls möglich.[[2]] Längere Bindungen sind meist teurer, weil die Bank das Zinsrisiko länger trägt.[[1]] Zwischen zehn und 15 Jahren liegen meist 0,1 bis 0,2 Prozentpunkte.[[2]] Das gilt nicht in jeder Marktlage: Anfang Oktober 2026 lagen die Zinsen für fünf Jahre teils über denen für zehn.[[1]]",
+      "Zehn Jahre nach der vollständigen Auszahlung dürfen Sie ein Darlehen mit festem Zins in jedem Fall kündigen, mit sechs Monaten Frist. Dieses Recht kann der Vertrag nicht ausschließen.[[3]] Eine Bindung über 15 oder 20 Jahre sichert den Zins also lange, ohne Sie mehr als zehneinhalb Jahre festzulegen; die Kündigung kostet dann keine Entschädigung.[[2]]",
+      "Gegen Ende der Bindung muss sich Ihre Bank spätestens drei Monate vorher melden und sagen, ob sie einen neuen Zins anbietet.[[4]]"
+    ],
+    "beispiel": [
+      "Sie finanzieren 300.000 € mit 1,5 % Tilgung. Kostet die längere Bindung 0,2 Prozentpunkte mehr, zahlen Sie anfangs rund 50 € mehr Zinsen im Monat. Dafür steht der Zins fünf Jahre länger fest.",
+      "Bei einem Beispielzins von 4 % schulden Sie nach zehn Jahren noch rund 244.800 €. Liegt der Zins dann einen Prozentpunkt höher, kostet das auf diese Restschuld rund 2.450 € im ersten Jahr."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Eine lange Bindung bringt Planungssicherheit. Eine kurze Bindung lässt Sie früher von gesunkenen Zinsen profitieren, trägt aber das Risiko gestiegener. Welche Länge passt, hängt von Restschuld, Einkommen, Rücklagen und davon ab, wie lange Sie die Immobilie halten wollen. Wer früher verkaufen könnte, bedenkt, dass während der Bindung eine Vorfälligkeitsentschädigung anfallen kann.[[5]]"
+        ]
+      },
+      {
+        "h2": "Was es für Anleger heißt",
+        "absaetze": [
+          "Bieten Banken kurze Bindungen deutlich günstiger an als lange, kann es sich lohnen, kurz zu binden und den Anschlusszins später mit einem Forward-Darlehen zu sichern; dafür fällt ein Aufschlag an.[[1]]"
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "Fischer & Geserich, Blog: Zinsbindung und Forward-Darlehen",
+        "url": "https://fg-realestate.de/blog/zinsbindung-strategisch-waehlen/",
+        "stand": "Stand Oktober 2026, abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Zinsbindung",
+        "url": "https://www.finanztip.de/baufinanzierung/zinsbindung/",
+        "stand": "Stand 19.12.2025"
+      },
+      {
+        "name": "§ 489 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__489.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 493 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__493.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 490 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__490.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "5, 10 oder 15 Jahre; länger meist teurer; Anfang Oktober 2026 5 Jahre teils über 10 (F&G-Blog)",
+        "fundstelle": "runde-2.md, A04"
+      },
+      {
+        "zahl": "Zwischenzeiten 7 oder 14 Jahre; 10 gegen 15 Jahre 0,1 bis 0,2 Prozentpunkte; Kündigung nach zehn Jahren ohne zusätzliche Kosten",
+        "fundstelle": "runde-2.md, A03"
+      },
+      {
+        "zahl": "zehn Jahre nach vollständigem Empfang, sechs Monate Frist, nicht abdingbar",
+        "fundstelle": "runde-2.md, A01"
+      },
+      {
+        "zahl": "Bank meldet sich spätestens drei Monate vorher",
+        "fundstelle": "runde-2.md, A02"
+      },
+      {
+        "zahl": "Vorfälligkeitsentschädigung bei vorzeitiger Kündigung",
+        "fundstelle": "runde-2.md, F01"
+      },
+      {
+        "zahl": "Forward-Darlehen mit Aufschlag, kurz binden (F&G-Blog)",
+        "fundstelle": "runde-2.md, A11"
+      },
+      {
+        "zahl": "0,2 % × 300.000 € / 12 = 50 €; Restschuld 244.781 €; 1 % davon = 2.448 €",
+        "fundstelle": "Rechnung, Marktprüfung runde-2.md"
+      }
+    ]
+  }
 }

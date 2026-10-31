@@ -1,0 +1,103 @@
+---
+layout: fgs-page.njk
+fgsHero: false
+title: "Bildnachweise | Fischer & Geserich"
+permalink: bildnachweise/index.html
+description: "Herkunft und Lizenz der Fotos auf fg-realestate.de: Urheber, Lizenz und Quelle je Foto."
+canonicalPath: /bildnachweise/
+# Update 4, 2.2: Pflichtseite für Fotos unter CC BY und CC BY-SA, verlinkt in der Fußzeile.
+# Inhalt aus _data/bildnachweise.js (seitenbilder.json, fotoquellen.json, content/gebiete/*.json, Bildzeilen in blog/<slug>/index.html); keine Zeile von Hand.
+# CP4 (28.10.2026, Design-Sprint-Brief 5.4): Titelzeile ohne Foto, Tabellen im Stil des Design-Systems (fgs-table fgs-credits),
+# Kicker über den H2 entfallen (Update 6 §3.0). Inhalt und Datenquelle unverändert.
+# Update 9 (29.10.2026): jede Zeile mit id (bild-seite-…, bild-gebiet-…, bild-blog-…), damit ein einzelnes Foto verlinkbar ist.
+pg:
+  crumb: "Bildnachweise"
+  kicker: "Fotos und Lizenzen"
+  h1: "Bildnachweise"
+  intro: "Hier steht, woher die Fotos auf dieser Website stammen und unter welcher Lizenz wir sie zeigen. Alle Fotos haben wir zugeschnitten und verkleinert, sonst aber nicht verändert."
+  schema: { type: "WebPage" }
+---
+<section class="fgs-section" id="seiten" aria-labelledby="seiten-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head">
+      <h2 id="seiten-titel">Fotos auf der Startseite und den Leistungsseiten</h2>
+    </div>
+    <div class="fgs-table-wrap">
+      <table class="fgs-table fgs-credits">
+        <thead><tr><th scope="col">Foto</th><th scope="col">Urheber</th><th scope="col">Lizenz</th><th scope="col">Verwendet als</th></tr></thead>
+        <tbody>
+          {% for b in bildnachweise.seiten %}
+          <tr id="{{ b.id }}">
+            <td><a href="{{ b.url }}" target="_blank" rel="noopener">{{ b.title }}</a> <span class="fgs-credits-host">({{ b.host }})</span></td>
+            <td>{{ b.author }}</td>
+            <td><a href="{{ b.licenseUrl }}" target="_blank" rel="noopener">{{ b.license }}</a></td>
+            <td>{{ b.uses | join("; ") }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="fgs-section" id="gebiete" aria-labelledby="gebiete-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head">
+      <h2 id="gebiete-titel">Fotos auf den Gebietsseiten</h2>
+    </div>
+    <div class="fgs-table-wrap">
+      <table class="fgs-table fgs-credits">
+        <thead><tr><th scope="col">Foto</th><th scope="col">Urheber</th><th scope="col">Lizenz</th><th scope="col">Verwendet auf</th></tr></thead>
+        <tbody>
+          {% for b in bildnachweise.gebiete %}
+          <tr id="{{ b.id }}">
+            <td><a href="{{ b.url }}" target="_blank" rel="noopener">{{ b.title }}</a> <span class="fgs-credits-host">({{ b.host }})</span></td>
+            <td>{{ b.author }}</td>
+            <td><a href="{{ b.licenseUrl }}" target="_blank" rel="noopener">{{ b.license }}</a></td>
+            <td>{% for u in b.uses %}<a href="{{ u.href }}">{{ u.label }}</a>{% if not loop.last %}; {% endif %}{% endfor %}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="fgs-section" id="blog" aria-labelledby="blog-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head">
+      <h2 id="blog-titel">Fotos in den Blogartikeln</h2>
+    </div>
+    <div class="fgs-table-wrap">
+      <table class="fgs-table fgs-credits">
+        <thead><tr><th scope="col">Foto</th><th scope="col">Urheber</th><th scope="col">Lizenz</th><th scope="col">Verwendet in</th></tr></thead>
+        <tbody>
+          {% for b in bildnachweise.blog %}
+          <tr id="{{ b.id }}">
+            <td><a href="{{ b.url }}" target="_blank" rel="noopener">{{ b.title }}</a> <span class="fgs-credits-host">({{ b.host }})</span></td>
+            <td>{{ b.author }}</td>
+            <td><a href="{{ b.licenseUrl }}" target="_blank" rel="noopener">{{ b.license }}</a></td>
+            <td>{% for u in b.uses %}<a href="{{ u.href }}">{{ u.label }}</a>{% if not loop.last %}; {% endif %}{% endfor %}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="fgs-section" id="weitere" aria-labelledby="weitere-titel">
+  <div class="fgs-wrap fgs-cols">
+    <div class="fgs-cols-head">
+      <h2 id="weitere-titel">Teamfotos, Logo, Objektfotos und Karten</h2>
+    </div>
+    <div class="fgs-cols-body fgs-prose">
+      <p>Die Fotos von Timon Fischer, Lennart Geserich und Peter Csaszar sowie das Logo gehören Fischer &amp; Geserich. Die Fotos der Angebote kommen aus unserem Objektsystem Propstack.</p>
+      <p>Die übrigen Bilder in den Blogartikeln sind mit KI erstellt; das steht auch am Ende jedes Artikels.</p>
+      {#- Update 7 Frage 10: Die Karte steht im Kapitel zu Lage und Anbindung (#lage-N), der alte Block #anbindung entfällt. -#}
+      {%- set mitKarte = gebiete | selectattr("karte") %}
+      <p>Die Kartenbilder auf den Seiten <a href="/ueber-uns.html#buero">Über uns</a>{% for g in mitKarte %}{{ " und " if loop.last else ", " }}<a href="{{ g.url }}#lage-{{ g.kartenKapitel + 1 }}">{{ g.nameLang }}</a>{% endfor %} haben wir aus Daten von OpenStreetMap gezeichnet. Kartendaten © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap-Mitwirkende</a>, Lizenz <a href="https://opendatacommons.org/licenses/odbl/" target="_blank" rel="noopener">Open Database License (ODbL)</a>.</p>
+      <p>Die Creative-Commons-Lizenzen erlauben, die Fotos zu zeigen und zu bearbeiten, wenn Urheber, Lizenz und Quelle genannt werden. Auf jeder Seite stehen diese Angaben deshalb im Aufklapper „Bildnachweise dieser Seite“ über der Fußzeile, in den Blogartikeln unter dem Foto; hier die vollständige Liste. Fragen zu einem Bild beantworten wir gern über das <a href="/kontakt.html">Kontaktformular</a>.</p>
+    </div>
+  </div>
+</section>

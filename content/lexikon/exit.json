@@ -7,10 +7,111 @@
   "keywords": [
     "exit"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Kapitalanlage",
-  "explanation": "Geplanter Verkauf oder anderweitiger Ausstieg aus dem Investment. Exit ist eine Investmentkennzahl bzw. Risikogröße. Für Vergleiche müssen Definition, Zeitraum und einbezogene Kosten identisch sein.",
-  "formula": null,
+  "explanation": "Der Exit ist der Ausstieg aus einer Immobilienanlage, etwa durch einen Verkauf. Er gehört von Anfang an in die Rechnung: F&G legt zu Beginn Budget, Renditeziel, Risikoprofil und Haltedauer fest und macht in der Ankaufsprüfung Restschuld und Exit-Perspektive sichtbar. Der ganzheitliche Ansatz, den F&G empfiehlt, betrachtet Cashflow, Steuervorteile, Mieterhöhungen und Verkaufserlös über die gesamte Haltedauer.",
+  "formula": "Verbleibender Erlös = Verkaufspreis − Restschuld − Verkaufskosten − gegebenenfalls Steuer",
   "sources": [],
-  "assistantAnswer": "Geplanter Verkauf oder anderweitiger Ausstieg aus dem Investment. Geplanter Verkauf oder anderweitiger Ausstieg aus dem Investment. Exit ist eine Investmentkennzahl bzw. Risikogröße. Für Vergleiche müssen Definition, Zeitraum und einbezogene Kosten identisch sein."
+  "assistantAnswer": "Geplanter Verkauf oder anderweitiger Ausstieg aus dem Investment. Geplanter Verkauf oder anderweitiger Ausstieg aus dem Investment. Exit ist eine Investmentkennzahl bzw. Risikogröße. Für Vergleiche müssen Definition, Zeitraum und einbezogene Kosten identisch sein.",
+  "practiceExample": "Angenommen, Sie kaufen eine Wohnung in Bernau: 65 m², 9 €/m², 7.020 € Jahresmiete, Kaufpreis 160.000 € (Faktor 22,8), Darlehen 160.000 € zu 4 % Zins und 1,5 % Tilgung. Nach zehn Jahren, zum Ende der Zinsbindung, beträgt die Restschuld rund 130.550 €. Bei unveränderter Miete und Faktor 20 bis 25 bringt der Verkauf 140.400 bis 175.500 €, bei Faktor 22,8 160.056 €; nach Ablösung bleiben 9.850 bis 44.950 €, bei 22,8 rund 29.506 €, jeweils vor Verkaufskosten. Steigt die Miete auf 10 €/m², ergibt Faktor 22,8 einen Preis von 177.840 € und nach Ablösung 47.290 €. Liegt der Verkauf nach Ablauf der zehn Jahre, bleibt der Gewinn steuerfrei.",
+  "ausbau": {
+    "einordnung": [
+      "Der Exit ist der Ausstieg aus einer Immobilienanlage, etwa durch einen Verkauf. Er gehört von Anfang an in die Rechnung: F&G legt zu Beginn Budget, Renditeziel, Risikoprofil und Haltedauer fest und macht in der Ankaufsprüfung Restschuld und Exit-Perspektive sichtbar.[[1,2]] Der ganzheitliche Ansatz, den F&G empfiehlt, betrachtet Cashflow, Steuervorteile, Mieterhöhungen und Verkaufserlös über die gesamte Haltedauer.[[1]]",
+      "Was bleibt, hängt vom Verkaufspreis, der Restschuld, den Verkaufskosten und der Steuer ab. Verkaufen Sie eine vermietete Immobilie innerhalb von zehn Jahren nach dem Kauf, ist der Gewinn steuerpflichtig; die genutzte AfA mindert dabei die Anschaffungskosten.[[3]] Lösen Sie das Darlehen für einen Verkauf während der Zinsbindung ab, kann die Bank eine Vorfälligkeitsentschädigung verlangen; zum Ende der Zinsbindung können Sie ohne sie kündigen.[[4,5,8]]"
+    ],
+    "beispiel": [
+      "Angenommen, Sie kaufen eine Wohnung in Bernau: 65 m², 9 €/m², 7.020 € Jahresmiete, Kaufpreis 160.000 € (Faktor 22,8), Darlehen 160.000 € zu 4 % Zins und 1,5 % Tilgung. Nach zehn Jahren, zum Ende der Zinsbindung, beträgt die Restschuld rund 130.550 €.",
+      "Bei unveränderter Miete und Faktor 20 bis 25 bringt der Verkauf 140.400 bis 175.500 €, bei Faktor 22,8 160.056 €; nach Ablösung bleiben 9.850 bis 44.950 €, bei 22,8 rund 29.506 €, jeweils vor Verkaufskosten. Steigt die Miete auf 10 €/m², ergibt Faktor 22,8 einen Preis von 177.840 € und nach Ablösung 47.290 €. Liegt der Verkauf nach Ablauf der zehn Jahre, bleibt der Gewinn steuerfrei.[[3]]"
+    ],
+    "abschnitte": [
+      {
+        "h2": "Szenarien statt Prognose",
+        "absaetze": [
+          "Im Berliner Umland lagen die Faktoren vermieteter Eigentumswohnungen zuletzt zwischen 13 und 38, im Mittel bei 23.[[6]] Welcher Faktor in zehn Jahren gilt, sagt keine Quelle voraus; rechnen Sie deshalb mit mehreren Szenarien. Verkaufen Sie eine Eigentumswohnung, geht Ihr Anteil an der Erhaltungsrücklage auf den Käufer über.[[7]]"
+        ]
+      },
+      {
+        "h2": "Halten statt verkaufen",
+        "absaetze": [
+          "Ein Exit muss kein Verkauf sein. Sie können die Immobilie weiter halten und das Darlehen anschließend neu finanzieren; dabei lässt sich die Restschuld ohne Vorfälligkeitsentschädigung verringern.[[8]] Welche Variante passt, hängt von Zins, Steuer und Ihren Zielen ab."
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "Fischer & Geserich: Kapitalanlage",
+        "url": "https://fg-realestate.de/kapitalanlage.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Ankaufsberatung",
+        "url": "https://fg-realestate.de/ankaufsberatung.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 23 EStG",
+        "url": "https://www.gesetze-im-internet.de/estg/__23.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 490 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__490.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 489 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__489.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Gutachterausschuss Barnim: Grundstücksmarktbericht 2025",
+        "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+        "stand": "Berichtsjahr 2025, abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Hausgeld",
+        "url": "https://www.finanztip.de/eigentumswohnung/hausgeld/",
+        "stand": "Stand 10.11.2025"
+      },
+      {
+        "name": "Finanztip: Anschlussfinanzierung",
+        "url": "https://www.finanztip.de/baufinanzierung/anschlussfinanzierung/",
+        "stand": "Stand 25.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "F&G: Budget, Renditeziel, Risikoprofil, Haltedauer; ganzheitlicher Ansatz mit Verkaufserlös",
+        "fundstelle": "runde-4.md, Y12; runde-3.md, C08"
+      },
+      {
+        "zahl": "F&G: Restschuld und Exit-Perspektive sichtbar machen",
+        "fundstelle": "runde-4.md, Y11"
+      },
+      {
+        "zahl": "zehn Jahre steuerpflichtig; AfA mindert Anschaffungskosten",
+        "fundstelle": "runde-1.md, S05; runde-3.md, P01"
+      },
+      {
+        "zahl": "vorzeitige Kündigung bei Verwertung, Vorfälligkeitsentschädigung; Kündigung zum Ende der Zinsbindung",
+        "fundstelle": "runde-2.md, F01, A01"
+      },
+      {
+        "zahl": "Faktoren Berliner Umland 13 bis 38, Ø 23; Timon knapp 20 bis 25",
+        "fundstelle": "runde-3.md, C13, C16"
+      },
+      {
+        "zahl": "Anteil an der Rücklage geht auf den Käufer über",
+        "fundstelle": "runde-4.md, Q13"
+      },
+      {
+        "zahl": "Anschlussfinanzierung: Restschuld ohne Vorfälligkeitsentschädigung verringern",
+        "fundstelle": "runde-2.md, A08"
+      },
+      {
+        "zahl": "Rate 733,33 €; Restschuld nach 120 Monaten 130.550 €; 7.020 × 20 / 22,8 / 25 = 140.400 / 160.056 / 175.500 €; minus Restschuld 9.850 / 29.506 / 44.950 €; 7.800 × 22,8 = 177.840 €, minus Restschuld 47.290 €",
+        "fundstelle": "Rechnung, Marktprüfung runde-4.md"
+      }
+    ]
+  }
 }

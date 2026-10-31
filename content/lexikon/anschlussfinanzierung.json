@@ -7,11 +7,101 @@
   "keywords": [
     "anschlussfinanzierung"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Finanzierung",
   "formula": null,
   "sources": [],
   "assistantAnswer": "Finanzierung der Restschuld nach Ablauf der Zinsbindung. Anschlussfinanzierung ist die Finanzierung der verbleibenden Restschuld nach Ende einer Zinsbindung. Sie kann als Prolongation bei derselben Bank, Umschuldung oder vorab als Forward-Darlehen gestaltet werden.",
-  "explanation": "Anschlussfinanzierung ist die Finanzierung der verbleibenden Restschuld nach Ende einer Zinsbindung. Sie kann als Prolongation bei derselben Bank, Umschuldung oder vorab als Forward-Darlehen gestaltet werden.",
-  "practiceExample": "250.000 € Restschuld und 5 % Zins plus 2 % Tilgung ergeben ca. 1.458 € monatliche Anfangsrate der Anschlussfinanzierung."
+  "explanation": "Eine Anschlussfinanzierung brauchen Sie, wenn die Zinsbindung endet und noch eine Restschuld offen ist. Es gibt drei Wege: Sie bleiben bei Ihrer Bank und vereinbaren einen neuen Zins (Prolongation), Sie wechseln zu einer anderen Bank (Umschuldung), oder Sie sichern sich den Zins schon Jahre vorher mit einem Forward-Darlehen.",
+  "practiceExample": "Nach zehn Jahren sind von 300.000 € noch 244.781 € offen, bisher zahlen Sie 1.375 € im Monat. Bei gleicher Rate und einem Anschlusszins von 3 % zahlen Sie im ersten Jahr rund 7.200 € Zinsen und sind nach knapp 20 Jahren schuldenfrei. Bei 4 % sind es rund 9.700 € und 22,5 Jahre, bei 5 % rund 12.100 € und gut 27 Jahre.",
+  "ausbau": {
+    "einordnung": [
+      "Eine Anschlussfinanzierung brauchen Sie, wenn die Zinsbindung endet und noch eine Restschuld offen ist. Es gibt drei Wege: Sie bleiben bei Ihrer Bank und vereinbaren einen neuen Zins (Prolongation), Sie wechseln zu einer anderen Bank (Umschuldung),[[1]] oder Sie sichern sich den Zins schon Jahre vorher mit einem Forward-Darlehen.[[2]]",
+      "Ihre Bank muss sich spätestens drei Monate vor Ende der Bindung melden und sagen, ob sie einen neuen Zins anbietet und welchen.[[3]] Finanztip rät, sich spätestens ein Jahr vorher zu informieren; ein Vergleich ergebe meist Unterschiede von mindestens etwa 0,3 Prozentpunkten. Ein Wechsel kostet keine Gebühr, aber die Abtretung der Grundschuld, etwa 0,1 bis 0,2 % des Grundschuldbetrags.[[1]]",
+      "Zum Ende der Bindung können Sie die Restschuld auch verringern, ohne Vorfälligkeitsentschädigung.[[1]]"
+    ],
+    "beispiel": [
+      "Nach zehn Jahren sind von 300.000 € noch 244.781 € offen, bisher zahlen Sie 1.375 € im Monat. Bei gleicher Rate und einem Anschlusszins von 3 % zahlen Sie im ersten Jahr rund 7.200 € Zinsen und sind nach knapp 20 Jahren schuldenfrei. Bei 4 % sind es rund 9.700 € und 22,5 Jahre, bei 5 % rund 12.100 € und gut 27 Jahre."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Eigentümer heißt",
+        "absaetze": [
+          "Vergleichen Sie das Angebot Ihrer Bank mit dem Markt, bevor Sie unterschreiben, und prüfen Sie dabei auch Tilgung und Sondertilgung neu. Fischer & Geserich begleitet Anschluss- und Bestandsfinanzierungen[[4]] und fragt über Europace und Baufinex sowie direkte Bankkontakte an.[[5]]"
+        ]
+      },
+      {
+        "h2": "Was es für Verkäufer heißt",
+        "absaetze": [
+          "Steht in den nächsten Jahren ein Verkauf an, kann eine kurze Anschlussbindung oder eine mit Sondertilgung besser passen als eine lange. Fischer & Geserich denkt Verkauf und Anschlussfinanzierung auf Wunsch zusammen.[[6]]"
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "Finanztip: Anschlussfinanzierung",
+        "url": "https://www.finanztip.de/baufinanzierung/anschlussfinanzierung/",
+        "stand": "Stand 25.10.2026"
+      },
+      {
+        "name": "Finanztip: Forward-Darlehen",
+        "url": "https://www.finanztip.de/baufinanzierung/forward-darlehen/",
+        "stand": "Stand 16.09.2026"
+      },
+      {
+        "name": "§ 493 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__493.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Finanzierung",
+        "url": "https://fg-realestate.de/finanzierungsberatung.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Über uns",
+        "url": "https://fg-realestate.de/ueber-uns.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Verkaufen",
+        "url": "https://fg-realestate.de/verkaufen.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Prolongation, Umschuldung",
+        "fundstelle": "runde-2.md, A05"
+      },
+      {
+        "zahl": "Forward-Darlehen bis 60 Monate vorher",
+        "fundstelle": "runde-2.md, A09"
+      },
+      {
+        "zahl": "drei Monate vorher, mit angebotenem Sollzins",
+        "fundstelle": "runde-2.md, A02"
+      },
+      {
+        "zahl": "ein Jahr vorher; mindestens etwa 0,3 Prozentpunkte; keine Wechselgebühr, Abtretung 0,1 bis 0,2 %",
+        "fundstelle": "runde-2.md, A06, A07"
+      },
+      {
+        "zahl": "Restschuld ohne Vorfälligkeitsentschädigung verringern",
+        "fundstelle": "runde-2.md, A08"
+      },
+      {
+        "zahl": "Anschluss- und Bestandsfinanzierungen; Verkauf und Anschluss zusammendenken (F&G)",
+        "fundstelle": "runde-2.md, A12"
+      },
+      {
+        "zahl": "Europace, Baufinex, direkte Bankkontakte (F&G)",
+        "fundstelle": "runde-2.md, O04; SCHREIBREGELN.md Regel 4"
+      },
+      {
+        "zahl": "244.781 €, Rate 1.375 €: 3 / 4 / 5 % → Zinsen Jahr 1 rund 7.216 / 9.667 / 12.140 €; Laufzeit 19,7 / 22,5 / 27,1 J.",
+        "fundstelle": "Rechnung, Marktprüfung runde-2.md"
+      }
+    ]
+  }
 }

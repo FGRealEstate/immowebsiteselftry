@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
     address2: '12165 Berlin',
     country: 'Deutschland',
     email: 'info@fg-realestate.de',
-    phone: '0152 03083048',
+    phone: '+49 1520 3083048',
     logo: '/images/fg-logo-gold-transparent.png'
   };
 
@@ -106,7 +106,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initialInvestments: 0, financePct: 90, loanAmount: 0, equity: 0
   };
 
-  function parseLocaleNumber(value){
+  // kind = data-format des Feldes. In Euro- und Ganzzahlfeldern ist „1.200“ ein Tausenderpunkt (1200), in Prozentfeldern
+  // bleibt „1.125“ eine Dezimalzahl (Update 4 vom 27.10.2026, Abschnitt 2: Tausenderpunkt beheben).
+  function parseLocaleNumber(value, kind){
     let s = String(value ?? '').trim();
     if(!s) return 0;
     s = s.replace(/\s/g,'').replace(/€/g,'').replace(/%/g,'').replace(/m²/g,'');
@@ -116,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
       s = s.replace(/\./g,'').replace(',', '.');
     } else if(hasDot){
       const parts = s.split('.');
-      if(parts.length > 2 || (parts.length === 2 && parts[1].length === 3 && parts[0].length > 1)) s = s.replace(/\./g,'');
+      if(parts.length > 2 || (parts.length === 2 && parts[1].length === 3 && (parts[0].length > 1 || kind === 'eur' || kind === 'int'))) s = s.replace(/\./g,'');
     }
     const v = parseFloat(s);
     return Number.isFinite(v) ? v : 0;
@@ -125,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function num(name){
     const el = root.querySelector(`[name="${name}"]`);
     if(!el) return defaults[name] || 0;
-    const v = parseLocaleNumber(el.value);
+    const v = parseLocaleNumber(el.value, el.dataset.format);
     return Number.isFinite(v) ? v : (defaults[name] || 0);
   }
 
@@ -145,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function formatInput(el){
     const kind = el.dataset.format;
     if(!kind || el.tagName === 'SELECT') return;
-    const value = parseLocaleNumber(el.value);
+    const value = parseLocaleNumber(el.value, kind);
     if(!Number.isFinite(value) || String(el.value).trim()==='') return;
     if(kind === 'eur') el.value = n(value, 2);
     if(kind === 'int') el.value = n(value, 0);
@@ -155,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
   root.querySelectorAll('input[data-format]').forEach(el=>{
     el.setAttribute('inputmode', 'decimal');
     el.setAttribute('type', 'text');
-    el.addEventListener('focus', ()=>{ el.value = String(parseLocaleNumber(el.value) || '').replace('.', ','); });
+    el.addEventListener('focus', ()=>{ el.value = String(parseLocaleNumber(el.value, el.dataset.format) || '').replace('.', ','); });
     el.addEventListener('blur', ()=>{ formatInput(el); updateFinancingSummary(); });
     el.addEventListener('input', ()=>{ if(el.name === 'loanAmount') el.dataset.userTouched='1'; updateFinancingSummary(false); });
     formatInput(el);
@@ -175,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const missing = [];
     (requiredByStep[index] || []).forEach(name=>{
       const el = root.querySelector(`[name="${name}"]`);
-      if(el && !parseLocaleNumber(el.value)) missing.push(el.dataset.label || name);
+      if(el && !parseLocaleNumber(el.value, el.dataset.format)) missing.push(el.dataset.label || name);
     });
     if(missing.length){ showWarnings(['Bitte füllen Sie zuerst diese Pflichtfelder aus: '+missing.join(', ')+'.']); return false; }
     hideWarnings(); return true;
@@ -424,7 +426,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function renderLineChart(target, rows, series){
     if(!target || !rows.length) return;
-    const w=760,h=300,pad=50, colors=['#D1B464','#91DCFF','#08082F'];
+    // Markenfarben statt Hellblau #91DCFF (Update 4, 27.10.2026): Gold, Navy, dunkles Gold
+    const w=760,h=300,pad=50, colors=['#D1B464','#08082F','#876200'];
     const vals=[]; rows.forEach(r=>series.forEach(s=>vals.push(r[s.key]||0)));
     let min=Math.min(0,...vals), max=Math.max(1,...vals); if(max===min) max=min+1;
     const x=i=>pad+(i/(rows.length-1||1))*(w-pad*2), y=v=>h-pad-((v-min)/(max-min))*(h-pad*2);
@@ -461,7 +464,7 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 
 
-(function(){const r=document.querySelector('[data-affordability-calculator]');if(!r)return;const p=v=>{let s=String(v||'').replace(/\s|€|%/g,'');if(s.includes(','))s=s.replace(/\./g,'').replace(',','.');return parseFloat(s)||0},eur=v=>new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(v);r.querySelector('form').addEventListener('submit',e=>{e.preventDefault();let f=new FormData(e.target),rate=p(f.get('rate')),eq=p(f.get('equity')),i=p(f.get('interest'))/100,t=p(f.get('repay'))/100,c=p(f.get('costs'))/100,loan=rate*12/(i+t),price=(loan+eq)/(1+c);r.querySelector('[data-afford-result]').innerHTML=`<div class="lab-result-kpis"><article><span>Möglicher Kaufpreis</span><strong>${eur(price)}</strong><small>erste Orientierung</small></article><article><span>Darlehensrahmen</span><strong>${eur(loan)}</strong></article><article><span>Gesamtbudget inkl. Nebenkosten</span><strong>${eur(price*(1+c))}</strong></article><article><span>Monatliche Rate</span><strong>${eur(rate)}</strong></article></div>`})})();
+(function(){const r=document.querySelector('[data-affordability-calculator]');if(!r)return;const p=(v,pct)=>{let s=String(v||'').replace(/\s|€|%/g,'');if(s.includes(','))s=s.replace(/\./g,'').replace(',','.');else if(!pct&&/^-?\d{1,3}(\.\d{3})+$/.test(s))s=s.replace(/\./g,'');return parseFloat(s)||0},eur=v=>new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(v);r.querySelector('form').addEventListener('submit',e=>{e.preventDefault();let f=new FormData(e.target),rate=p(f.get('rate')),eq=p(f.get('equity')),i=p(f.get('interest'),1)/100,t=p(f.get('repay'),1)/100,c=p(f.get('costs'),1)/100,loan=rate*12/(i+t),price=(loan+eq)/(1+c);r.querySelector('[data-afford-result]').innerHTML=`<div class="lab-result-kpis"><article><span>Möglicher Kaufpreis</span><strong>${eur(price)}</strong><small>erste Orientierung</small></article><article><span>Darlehensrahmen</span><strong>${eur(loan)}</strong></article><article><span>Gesamtbudget inkl. Nebenkosten</span><strong>${eur(price*(1+c))}</strong></article><article><span>Monatliche Rate</span><strong>${eur(rate)}</strong></article></div>`})})();
 
 
 /* F&G UX Refresh: dezente Scroll-Reveals auf allen Seiten, mit Reduced-Motion-Fallback */

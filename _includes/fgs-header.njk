@@ -1,0 +1,105 @@
+{#- Kopfbereich im Design-System (Design-Sprint-Brief 5.7): transparent über dem Titelbild, nach dem Scrollen Grundton
+    mit Haarlinie; 6 Menüpunkte in Inter 15 px; Menüfelder als ruhige Flächen, „Gebiete“ mit einem großen Bild je Region.
+    Menü und Gebiete lesen weiter aus _data/nav.js und _data/serviceArea.js.
+    Design-Pass 2 §6 (29.10.2026): „Gebiete“ zeigt vier Fotokacheln (Region auf dem Foto, darunter die Zahl ihrer
+    Gebietsseiten) und einen Link „Alle 25 Gebiete auf einen Blick“. Die vollständige Liste steht im Fuß und auf den
+    Übersichtsseiten; die Zahlen kommen aus serviceArea.js. -#}
+{%- set regionBild = { berlin: "gebiet-berlin", brandenburg: "gebiet-brandenburg", leipzig: "gebiet-leipzig", dresden: "gebiet-sachsen" } -%}
+{%- set gebietZahl = { berlin: serviceArea.berlin.bezirke | length, brandenburg: (serviceArea.landkreise | length) + (serviceArea.towns | length), leipzig: serviceArea.leipzig.teile | length, dresden: serviceArea.dresden.teile | length } -%}
+{%- set gebieteGesamt = gebietZahl.berlin + gebietZahl.brandenburg + gebietZahl.leipzig + gebietZahl.dresden -%}
+{#- Update 22 §7.1: links im Menüfeld eine Fotokarte mit dem Titelbild der Hauptseite des Bereichs. Der Blog hat kein Titelbild;
+    dort steht das Bild des neuesten Artikels, das auch auf der Blog-Übersicht als erstes und größtes zu sehen ist. -#}
+{%- set menuBild = { "/verkaufen.html": "verkaufen-hero", "/kaufen.html": "kaufen-hero", "/finanzierungsberatung.html": "finanzierung-hero", "/ueber-uns.html": "ueber-uns-hero" } -%}
+{%- set neuesterArtikel = (blogArtikel | sort(true, false, "datePublished"))[0] -%}
+<a class="fgs-skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="fgs-header" data-fgs-header data-fg-site-header>
+  <div class="fgs-wrap fgs-header-bar">
+    <a class="fgs-brand" href="/" aria-label="Fischer &amp; Geserich Real Estate, zur Startseite">
+      <img src="/images/logo/fg-zeichen-gold.svg" alt="" width="34" height="40">
+      <span class="fgs-brand-name">Fischer &amp; Geserich<small>Real Estate</small></span>
+    </a>
+
+    <nav class="fgs-nav" aria-label="Hauptnavigation">
+      <ul class="fgs-nav-list">
+        {%- for group in nav.menu %}
+        <li class="fgs-nav-item{% if group | navGroupCurrent(currentUrl) %} is-current{% endif %}" data-fgs-nav-item>
+          <button type="button" class="fgs-nav-trigger" data-fgs-nav-trigger aria-expanded="false" aria-controls="fgs-panel-{{ loop.index }}">{{ group.label }}</button>
+          <div class="fgs-panel" id="fgs-panel-{{ loop.index }}">
+            <div class="fgs-wrap fgs-panel-inner">
+              {%- if group.areas %}
+              <ul class="fgs-panel-tiles">
+                {%- for item in group.items %}
+                <li style="--i: {{ loop.index0 }}"><a class="fgs-panel-tile" href="{{ item | navHref }}"{% if item | navHref == currentUrl %} aria-current="page"{% endif %}>
+                  {%- set rAvif = ('/images/home/' + regionBild[item.key] + '-480.webp 480w, /images/home/' + regionBild[item.key] + '-720.webp 720w') | avifSet %}<span class="fgs-media">{% if rAvif %}<picture class="fgs-pic"><source type="image/avif" srcset="{{ rAvif }}" sizes="(min-width: 1240px) 270px, 25vw">{% endif %}<img src="/images/home/{{ regionBild[item.key] }}-480.webp" srcset="/images/home/{{ regionBild[item.key] }}-480.webp 480w, /images/home/{{ regionBild[item.key] }}-720.webp 720w" sizes="(min-width: 1240px) 270px, 25vw" width="480" height="360" alt="" loading="lazy" decoding="async">{% if rAvif %}</picture>{% endif %}</span>
+                  <span class="fgs-panel-tile-text"><span class="fgs-panel-tile-name">{{ item.label }}</span> <span class="fgs-panel-tile-count">{{ gebietZahl[item.key] }} Gebiete</span></span>
+                </a></li>
+                {%- endfor %}
+              </ul>
+              <p class="fgs-panel-foot"><a class="fgs-link" href="{{ group.href }}"{% if group.href == currentUrl %} aria-current="page"{% endif %}>Alle {{ gebieteGesamt }} Gebiete auf einen Blick{% include "fgs-arrow.njk" %}</a><span>Finanzierungen begleiten wir deutschlandweit.</span></p>
+              {%- else %}
+              {#- Bilder erst beim ersten Öffnen (data-srcset, fg-system.js), damit sie die Seite nicht beim Laden bremsen -#}
+              <a class="fgs-panel-card" href="{{ group.href }}"{% if group.href == currentUrl %} aria-current="page"{% endif %}>
+                <span class="fgs-media">
+                {%- if menuBild[group.href] %}{% set mb = menuBild[group.href] | bild %}{% set mbAvif = mb.srcset | avifSet %}{% if mbAvif %}<picture class="fgs-pic"><source type="image/avif" data-srcset="{{ mbAvif }}" sizes="380px">{% endif %}<img data-src="{{ mb.src }}" data-srcset="{{ mb.srcset }}" sizes="380px" width="380" height="260" alt="" decoding="async">{% if mbAvif %}</picture>{% endif %}
+                {%- elif neuesterArtikel %}<img data-src="{{ neuesterArtikel.url }}{{ neuesterArtikel.lead.src }}" width="380" height="260" alt="" decoding="async">{% endif -%}
+                </span>
+                <span class="fgs-panel-card-text"><span class="fgs-panel-card-name">{{ group.label }}</span><span class="fgs-panel-card-more">Zur Übersicht →</span></span>
+              </a>
+              <ul class="fgs-panel-links">
+                {%- for item in group.items %}
+                <li style="--i: {{ loop.index0 }}"><a href="{{ item | navHref }}"{% if item | navHref == currentUrl %} aria-current="page"{% endif %}><span class="fgs-panel-link-title">{{ item.label }}</span><span class="fgs-panel-link-note">{{ item.note }}</span></a></li>
+                {%- endfor %}
+              </ul>
+              {%- endif %}
+            </div>
+          </div>
+        </li>
+        {%- endfor %}
+      </ul>
+    </nav>
+
+    <div class="fgs-header-actions">
+      <a class="fgs-header-phone" href="{{ nav.phone.href }}">{{ nav.phone.display }}</a>
+      <a class="fgs-btn fgs-btn--secondary" href="{{ nav.valuation | navHref }}">{{ nav.valuation.label }}</a>
+      <button type="button" class="fgs-burger" data-fgs-burger aria-expanded="false" aria-controls="fgs-mobile" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="fgs-nav-dim" data-fgs-nav-dim aria-hidden="true"></div>
+  {#- Update 22 §2 und §7.2: Handy-Menü als eigene Vollbild-Ebene außerhalb des Kopfes (über Kopf, Titelbild und Chat), Navy,
+    oben Logo und Schließen, Hauptpunkte als Akkordeon, unten Bewertung, Anrufen und Adresse -#}
+<div class="fgs-mobile" id="fgs-mobile" role="dialog" aria-modal="true" aria-label="Menü" hidden>
+  <div class="fgs-mobile-top">
+    <a class="fgs-brand" href="/" aria-label="Fischer &amp; Geserich Real Estate, zur Startseite">
+      <img src="/images/logo/fg-zeichen-gold.svg" alt="" width="34" height="40">
+      <span class="fgs-brand-name">Fischer &amp; Geserich<small>Real Estate</small></span>
+    </a>
+    <button type="button" class="fgs-mobile-close" data-fgs-mobile-close aria-label="Menü schließen"><span></span><span></span></button>
+  </div>
+  <nav aria-label="Hauptnavigation mobil">
+    {%- for group in nav.menu %}
+    <details style="--i: {{ loop.index0 }}">
+      <summary>{{ group.label }}</summary>
+      {%- if group.areas %}
+      <ul class="fgs-mobile-tiles">
+        {%- for item in group.items %}
+        <li><a class="fgs-panel-tile" href="{{ item | navHref }}"{% if item | navHref == currentUrl %} aria-current="page"{% endif %}>
+          {%- set rAvif = ('/images/home/' + regionBild[item.key] + '-480.webp 480w, /images/home/' + regionBild[item.key] + '-720.webp 720w') | avifSet %}<span class="fgs-media">{% if rAvif %}<picture class="fgs-pic"><source type="image/avif" srcset="{{ rAvif }}" sizes="(min-width: 768px) 360px, 45vw">{% endif %}<img src="/images/home/{{ regionBild[item.key] }}-480.webp" srcset="/images/home/{{ regionBild[item.key] }}-480.webp 480w, /images/home/{{ regionBild[item.key] }}-720.webp 720w" sizes="(min-width: 768px) 360px, 45vw" width="480" height="360" alt="" loading="lazy" decoding="async">{% if rAvif %}</picture>{% endif %}</span>
+          <span class="fgs-panel-tile-text"><span class="fgs-panel-tile-name">{{ item.label }}</span> <span class="fgs-panel-tile-count">{{ gebietZahl[item.key] }} Gebiete</span></span>
+        </a></li>
+        {%- endfor %}
+      </ul>
+      <ul><li><a class="fgs-mobile-all" href="{{ group.href }}"{% if group.href == currentUrl %} aria-current="page"{% endif %}>Alle {{ gebieteGesamt }} Gebiete auf einen Blick</a></li></ul>
+      {%- else %}
+      <ul>{% for item in group.items %}<li><a href="{{ item | navHref }}"{% if item | navHref == currentUrl %} aria-current="page"{% endif %}>{{ item.label }}</a></li>{% endfor %}</ul>
+      {%- endif %}
+    </details>
+    {%- endfor %}
+  </nav>
+  <div class="fgs-mobile-contact">
+    <a class="fgs-btn fgs-btn--primary" href="{{ nav.valuation | navHref }}">{{ nav.valuation.label }}</a>
+    <a class="fgs-btn fgs-btn--secondary fgs-btn--light" href="{{ nav.phone.href }}">Anrufen</a>
+    <p class="fgs-mobile-address">Fischer &amp; Geserich Real Estate GmbH · Schützenstraße 30 · 12165 Berlin</p>
+  </div>
+</div>
+

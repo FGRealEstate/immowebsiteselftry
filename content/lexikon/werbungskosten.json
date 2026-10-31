@@ -7,11 +7,111 @@
   "keywords": [
     "werbungskosten"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Steuern",
-  "formula": null,
+  "formula": "Einkünfte aus Vermietung = Mieteinnahmen − Werbungskosten",
   "sources": [],
   "assistantAnswer": "Aufwendungen zur Erwerbung, Sicherung und Erhaltung steuerpflichtiger Einnahmen. Werbungskosten sind Aufwendungen zur Erwerbung, Sicherung und Erhaltung steuerpflichtiger Einnahmen. Bei Vermietung können dazu je nach Sachverhalt etwa Schuldzinsen, Verwaltung oder bestimmte Erhaltungsaufwendungen gehören; Tilgung zählt nicht dazu.",
-  "explanation": "Werbungskosten sind Aufwendungen zur Erwerbung, Sicherung und Erhaltung steuerpflichtiger Einnahmen. Bei Vermietung können dazu je nach Sachverhalt etwa Schuldzinsen, Verwaltung oder bestimmte Erhaltungsaufwendungen gehören; Tilgung zählt nicht dazu.",
-  "practiceExample": "9.000 € Schuldzinsen können den steuerlichen Vermietungsüberschuss mindern, während 6.000 € Tilgung zwar Liquidität kostet, steuerlich aber nicht als Werbungskosten abziehbar ist."
+  "explanation": "Werbungskosten sind Aufwendungen, um Einnahmen zu erwerben, zu sichern und zu erhalten. Bei einer vermieteten Immobilie mindern sie die Einkünfte aus Vermietung und Verpachtung. Ergibt sich ein Verlust, kann er zu einer Steuererstattung führen.",
+  "practiceExample": "Angenommen, Sie kaufen eine vermietete Wohnung im Berliner Umland, etwa in Bernau: 65 m², Baujahr 1995, 9 € Kaltmiete je m², also 585 € im Monat und 7.020 € im Jahr, für 160.000 €. Im ersten Jahr zahlen Sie für das Darlehen über 160.000 € bei einem Beispielzins von 4 % rund 6.356 € Zinsen. Dazu kommen 2.856 € AfA und 420 € Verwaltung, zusammen 9.632 €. Das ergibt einen Verlust von rund 2.612 €. Bei einem Grenzsteuersatz von 42 % sinkt Ihre Steuer um rund 1.097 €. Die Tilgung von rund 2.444 € im ersten Jahr wirkt sich steuerlich nicht aus.",
+  "ausbau": {
+    "einordnung": [
+      "Werbungskosten sind Aufwendungen, um Einnahmen zu erwerben, zu sichern und zu erhalten.[[1]] Bei einer vermieteten Immobilie mindern sie die Einkünfte aus Vermietung und Verpachtung. Ergibt sich ein Verlust, kann er zu einer Steuererstattung führen.[[2]]",
+      "Typisch sind laufende Grundstückskosten, Fahrtkosten, Schuldzinsen, Erhaltungsaufwendungen und die Gebäudeabschreibung. Abziehen können Sie Kosten in dem Jahr, in dem Sie sie bezahlt haben (Zu- und Abflussprinzip).[[3]] Die AfA nennt das Gesetz ausdrücklich als Werbungskosten.[[1]] Die Tilgung zählt nicht dazu.[[4]]",
+      "Größeren Erhaltungsaufwand bei Wohngebäuden im Privatvermögen dürfen Sie auf zwei bis fünf Jahre verteilen.[[5]] Vermieten Sie günstig, etwa an Angehörige, gilt die Vermietung ab 66 % der ortsüblichen Miete als entgeltlich; unter 50 % wird sie in einen entgeltlichen und einen unentgeltlichen Teil aufgeteilt.[[6]]"
+    ],
+    "beispiel": [
+      "Angenommen, Sie kaufen eine vermietete Wohnung im Berliner Umland, etwa in Bernau: 65 m², Baujahr 1995, 9 € Kaltmiete je m², also 585 € im Monat und 7.020 € im Jahr, für 160.000 €. Im ersten Jahr zahlen Sie für das Darlehen über 160.000 € bei einem Beispielzins von 4 % rund 6.356 € Zinsen. Dazu kommen 2.856 € AfA und 420 € Verwaltung, zusammen 9.632 €.",
+      "Das ergibt einen Verlust von rund 2.612 €. Bei einem Grenzsteuersatz von 42 % sinkt Ihre Steuer um rund 1.097 €. Die Tilgung von rund 2.444 € im ersten Jahr wirkt sich steuerlich nicht aus."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Sammeln Sie Belege von Anfang an. Kaufnebenkosten wirken über die AfA, soweit sie auf das Gebäude entfallen.[[4]] Renovierungen in den ersten drei Jahren nach dem Kauf zählen zu den Herstellungskosten, wenn sie ohne Umsatzsteuer 15 % der Anschaffungskosten des Gebäudes übersteigen.[[7]]"
+        ]
+      },
+      {
+        "h2": "Was es für Anleger heißt",
+        "absaetze": [
+          "Eine Steuererstattung deckt einen Teil der Kosten, nicht alle. Weil der Zinsanteil der Rate sinkt und Mieten steigen können, verschiebt sich das steuerliche Ergebnis über die Jahre. Rechnen Sie deshalb über die ganze Haltedauer und klären Sie Einzelfragen mit einer Steuerberatung."
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "§ 9 EStG",
+        "url": "https://www.gesetze-im-internet.de/estg/__9.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Mietrendite berechnen",
+        "url": "https://www.finanztip.de/baufinanzierung/mietrendite-berechnen/",
+        "stand": "Stand 01.04.2026"
+      },
+      {
+        "name": "Finanztip: Steuertipps für Vermieter",
+        "url": "https://www.finanztip.de/steuertipps-vermieter/",
+        "stand": "Stand 08.07.2026"
+      },
+      {
+        "name": "Finanztip: Immobilien als Kapitalanlage",
+        "url": "https://www.finanztip.de/baufinanzierung/immobilie-kapitalanlage/",
+        "stand": "Stand 15.06.2026"
+      },
+      {
+        "name": "§ 82b Einkommensteuer-Durchführungsverordnung (EStDV)",
+        "url": "https://www.gesetze-im-internet.de/estdv_1955/__82b.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 21 EStG",
+        "url": "https://www.gesetze-im-internet.de/estg/__21.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 6 EStG",
+        "url": "https://www.gesetze-im-internet.de/estg/__6.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Definition Werbungskosten",
+        "fundstelle": "runde-2.md, Z06"
+      },
+      {
+        "zahl": "AfA als Werbungskosten",
+        "fundstelle": "runde-3.md, R04"
+      },
+      {
+        "zahl": "Verlust führt zu Steuererstattung (Finanztip-Beispiel)",
+        "fundstelle": "runde-3.md, C06"
+      },
+      {
+        "zahl": "typische Werbungskosten; Zu- und Abflussprinzip",
+        "fundstelle": "runde-3.md, H01"
+      },
+      {
+        "zahl": "Tilgung nicht abziehbar; Gebäudeanteil der Nebenkosten in der AfA",
+        "fundstelle": "runde-3.md, C07, R08"
+      },
+      {
+        "zahl": "zwei bis fünf Jahre verteilen",
+        "fundstelle": "runde-3.md, H03"
+      },
+      {
+        "zahl": "66 % entgeltlich, unter 50 % Aufteilung",
+        "fundstelle": "runde-3.md, H02"
+      },
+      {
+        "zahl": "15 % in drei Jahren",
+        "fundstelle": "runde-3.md, H04"
+      },
+      {
+        "zahl": "Zinsen Jahr 1 6.355,51 €; + 2.856,19 + 420 = 9.631,70 €; 7.020 − 9.631,70 = −2.611,70 €; × 42 % = 1.096,91 €; Tilgung 2.444,49 €",
+        "fundstelle": "Rechnung, Marktprüfung runde-3.md"
+      }
+    ]
+  }
 }

@@ -7,11 +7,125 @@
   "keywords": [
     "hausgeld"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Vermietung",
-  "formula": null,
+  "formula": "Hausgeld = Anteil an Betriebskosten + Verwaltung + Erhaltungsrücklage + weitere Kosten der Gemeinschaft",
   "sources": [],
   "assistantAnswer": "Monatliche Vorauszahlung des Wohnungseigentümers an die WEG. Hausgeld ist der monatliche Vorschuss eines Wohnungseigentümers an die WEG. Es umfasst typischerweise Betriebskosten, Verwaltung und Zuführung zur Erhaltungsrücklage; deshalb ist es nicht mit „Nebenkosten des Mieters“ gleichzusetzen.",
-  "explanation": "Hausgeld ist der monatliche Vorschuss eines Wohnungseigentümers an die WEG. Es umfasst typischerweise Betriebskosten, Verwaltung und Zuführung zur Erhaltungsrücklage; deshalb ist es nicht mit „Nebenkosten des Mieters“ gleichzusetzen.",
-  "practiceExample": "350 € Hausgeld sind nicht automatisch 350 € Eigentümerkosten und auch nicht automatisch 350 € umlagefähig. Die Jahresabrechnung/Wirtschaftsplan-Aufteilung entscheidet."
+  "explanation": "Das Hausgeld ist der monatliche Vorschuss, den Sie als Wohnungseigentümer an die Gemeinschaft zahlen. Die Eigentümer beschließen Vorschüsse und Rücklagen auf Grundlage des Wirtschaftsplans, den der Verwalter für jedes Kalenderjahr aufstellt; nach Jahresende folgen Nachschüsse oder eine Anpassung. Verteilt wird nach Miteigentumsanteil, für einzelne Kosten kann die Gemeinschaft anders beschließen.",
+  "practiceExample": "Angenommen, Sie besitzen eine vermietete Wohnung in Bernau mit 65 m². Für die Betriebskosten rechnen wir mit 2,49 €/m², dem Durchschnitt des Mieterbunds von 2,67 €/m² ohne die Grundsteuer von 0,18 €/m², die jeder Eigentümer selbst schuldet. Das sind 161,85 € im Monat; dazu kommen 35 € Verwaltung und 54,17 € Rücklage (10 €/m² im Jahr). Das Hausgeld beträgt dann 251,02 € im Monat, rund 3,86 €/m². Verwaltung und Rücklage, zusammen 89,17 € im Monat oder 1.070 € im Jahr, tragen Sie selbst.",
+  "ausbau": {
+    "einordnung": [
+      "Das Hausgeld ist der monatliche Vorschuss, den Sie als Wohnungseigentümer an die Gemeinschaft zahlen. Die Eigentümer beschließen Vorschüsse und Rücklagen auf Grundlage des Wirtschaftsplans, den der Verwalter für jedes Kalenderjahr aufstellt; nach Jahresende folgen Nachschüsse oder eine Anpassung.[[1]] Verteilt wird nach Miteigentumsanteil, für einzelne Kosten kann die Gemeinschaft anders beschließen.[[2]]",
+      "Im Hausgeld stecken typischerweise Betriebskosten wie Wasser, Heizung, Müllabfuhr und Hausmeister, die Verwaltung, Versicherungen, Wartung und die Erhaltungsrücklage. Der Miteigentumsanteil entspricht meist dem Flächenanteil Ihrer Wohnung.[[3]]"
+    ],
+    "beispiel": [
+      "Angenommen, Sie besitzen eine vermietete Wohnung in Bernau mit 65 m². Für die Betriebskosten rechnen wir mit 2,49 €/m², dem Durchschnitt des Mieterbunds von 2,67 €/m² ohne die Grundsteuer von 0,18 €/m², die jeder Eigentümer selbst schuldet.[[4,5,6,7]] Das sind 161,85 € im Monat; dazu kommen 35 € Verwaltung und 54,17 € Rücklage (10 €/m² im Jahr).",
+      "Das Hausgeld beträgt dann 251,02 € im Monat, rund 3,86 €/m². Verwaltung und Rücklage, zusammen 89,17 € im Monat oder 1.070 € im Jahr, tragen Sie selbst.[[8]]"
+    ],
+    "abschnitte": [
+      {
+        "h2": "Umlegbar und nicht umlegbar",
+        "absaetze": [
+          "Betriebskosten trägt der Mieter, wenn das im Mietvertrag vereinbart ist, als angemessene Vorauszahlung mit Abrechnung spätestens zwölf Monate nach Ende des Abrechnungszeitraums.[[9]] Verwaltungskosten sowie Instandhaltung und Instandsetzung sind keine Betriebskosten.[[8]] Gerade die nicht umlegbaren Kosten mindern bei einer Kapitalanlage die Rendite.[[3]]"
+        ]
+      },
+      {
+        "h2": "Vor dem Kauf prüfen",
+        "absaetze": [
+          "Sehen Sie sich Teilungserklärung, Jahresabrechnungen, Wirtschaftsplan und vor allem den jüngsten Vermögensbericht an. Das Hausgeld zahlen Sie auch, wenn Sie mit Beschlüssen nicht einverstanden sind, und es steigt mit den tatsächlichen Kosten, etwa mit dem Gaspreis.[[3]] F&G prüft in der Ankaufsberatung unter anderem die WEG und berücksichtigt nicht umlagefähige Kosten und Rücklagen.[[10]]"
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "§ 28 Wohnungseigentumsgesetz (WEG)",
+        "url": "https://www.gesetze-im-internet.de/woeigg/__28.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 16 Wohnungseigentumsgesetz (WEG)",
+        "url": "https://www.gesetze-im-internet.de/woeigg/__16.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Finanztip: Hausgeld",
+        "url": "https://www.finanztip.de/eigentumswohnung/hausgeld/",
+        "stand": "Stand 10.11.2025"
+      },
+      {
+        "name": "Deutscher Mieterbund: Betriebskostenspiegel für Deutschland (Pressemeldung)",
+        "url": "https://mieterbund.de/aktuelles/meldungen/mieterbund-veroeffentlicht-aktuellen-betriebskostenspiegel-fuer-deutschland/",
+        "stand": "18.12.2025, abgerufen 27.10.2026"
+      },
+      {
+        "name": "Deutscher Mieterbund: Betriebskostenspiegel für Deutschland (PDF)",
+        "url": "https://mieterbund.de/app/uploads/2025/12/20251218-3.pdf",
+        "stand": "18.12.2025, abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 244 Bewertungsgesetz (BewG)",
+        "url": "https://www.gesetze-im-internet.de/bewg/__244.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 10 Grundsteuergesetz (GrStG)",
+        "url": "https://www.gesetze-im-internet.de/grstg_1973/__10.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 1 Betriebskostenverordnung (BetrKV)",
+        "url": "https://www.gesetze-im-internet.de/betrkv/__1.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 556 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__556.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Ankaufsberatung",
+        "url": "https://fg-realestate.de/ankaufsberatung.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Vorschüsse und Rücklagen beschließen; Wirtschaftsplan je Kalenderjahr; Nachschüsse oder Anpassung",
+        "fundstelle": "runde-4.md, Q11"
+      },
+      {
+        "zahl": "Verteilung nach Anteil; abweichend beschließbar",
+        "fundstelle": "runde-4.md, Q03"
+      },
+      {
+        "zahl": "Bestandteile; Miteigentumsanteil meist nach Fläche; Unterlagen vor dem Kauf; nicht umlegbare Kosten mindern Rendite; Zahlungspflicht; steigt mit Kosten, Gaspreis",
+        "fundstelle": "runde-4.md, Q12, Q13"
+      },
+      {
+        "zahl": "Betriebskosten 2,67 €/m²; Grundsteuer 0,18 €/m²",
+        "fundstelle": "runde-4.md, Q15, Q16"
+      },
+      {
+        "zahl": "Wohnungseigentum eigenes Grundstück; Eigentümer schuldet die Grundsteuer",
+        "fundstelle": "runde-4.md, Q18, Q19"
+      },
+      {
+        "zahl": "Verwaltung und Instandhaltung keine Betriebskosten",
+        "fundstelle": "runde-4.md, J26"
+      },
+      {
+        "zahl": "Betriebskosten nach Vereinbarung, angemessene Vorauszahlung, Abrechnung zwölf Monate",
+        "fundstelle": "runde-4.md, Q17"
+      },
+      {
+        "zahl": "F&G Ankaufsberatung: WEG; nicht umlagefähige Kosten und Rücklagen",
+        "fundstelle": "runde-1.md, D05; runde-3.md, C10"
+      },
+      {
+        "zahl": "2,67 − 0,18 = 2,49 × 65 = 161,85 €; Verwaltung 35 € (C03: 30 bis 40 €); Rücklage 650 / 12 = 54,17 €; Summe 251,02 € = 3,86 €/m²; 35 + 54,17 = 89,17 € × 12 = 1.070 €",
+        "fundstelle": "Rechnung, Marktprüfung runde-4.md"
+      }
+    ]
+  }
 }

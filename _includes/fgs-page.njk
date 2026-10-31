@@ -1,0 +1,181 @@
+---
+layout: base.njk
+fgDesign: true
+fgSystem: true
+fgsHero: true
+customSchema: true
+---
+{#- Seite ohne Leistungsbezug im Design-System (Design-Sprint-Brief 5.4, CP3 am 28.10.2026): zuerst Über uns,
+    in CP4 Kontakt, Profile, Bewertungen. Gleiches `pg`-Frontmatter wie fgd-page.njk (Felder dort im Kopfkommentar),
+    dazu:
+      pg.hero      = { name (Schlüssel aus seitenbilder.json), alt, position (optional, wie in fgs-macros.njk) }
+                     Ohne pg.hero: ruhige Titelzeile ohne Foto mit Brotkrumen (Kontakt, wie die Referenzen Huttons und Omniyat);
+                     die Seite setzt dann `fgsHero: false`, damit der Kopf nicht durchsichtig startet.
+      pg.rating    true: Google-Gesamtbewertung und Button zum Google-Profil in der Titelzeile (Bewertungen), wie in fgd-page.njk
+      pg.summaryQ  H2 des ersten Abschnitts unter den Brotkrumen, pg.summary = Liste von Absätzen (HTML erlaubt)
+    Reihenfolge: S1, Brotkrumen mit erstem Abschnitt, Seiteninhalt (S3, S5, S6 aus der Seite), S7, S8.
+    Kicker nur über der H1 (Update 6 §3.0). Kicker, H1 und Einleitung wie in fgd-page.njk ungefiltert (Entitäten wie &amp;amp;). Bewusst weggelassen gegenüber fgd-page.njk:
+      pg.toc (kein Inhaltsverzeichnis im Titelbild) und pg.related (Brief 3.7: keine Linklisten; Gebiete stehen im Fuß).
+    Das JSON-LD ist dasselbe wie in fgd-page.njk, auch die Zweige für Profile (pg.person) und Kontakt (pg.schema.org). -#}
+{% from "fgs-macros.njk" import hero, faq, closing with context %}
+{% set pageUrl = "https://fg-realestate.de" + page.url %}
+{% set faqItems = (pg.faq or []) | faqFrei %}
+{% set pk = kontakte[pg.person.key] if pg.person else null %}
+
+{% set crumbs %}
+    <nav aria-label="Brotkrümelnavigation">
+      <ol class="fgs-crumbs">
+        <li><a href="/">Start</a></li>
+        {%- if pg.parent %}<li><a href="{{ pg.parent.href }}">{{ pg.parent.label }}</a></li>{% endif %}
+        <li aria-current="page">{{ pg.crumb }}</li>
+      </ol>
+    </nav>
+{%- endset %}
+
+{% if pg.hero %}
+{# 1. S1 Titelbild #}
+{{ hero({
+  bild: pg.hero.name | bild,
+  alt: pg.hero.alt,
+  kicker: pg.kicker | safe,
+  titel: pg.h1 | safe,
+  satz: pg.intro | safe,
+  buttons: pg.buttons,
+  position: pg.hero.position
+}) }}
+{% else %}
+{# 1. Titelzeile ohne Foto: Brotkrumen, Kicker, H1, Einleitung, höchstens zwei Buttons #}
+<section class="fgs-pagehead" aria-labelledby="seitentitel">
+  <div class="fgs-wrap">
+    {{ crumbs | safe }}
+    {%- if pg.kicker %}
+    <p class="fgs-label">{{ pg.kicker | safe }}</p>{% endif %}
+    <h1 id="seitentitel">{{ pg.h1 | safe }}</h1>
+    {%- if pg.intro %}
+    <p class="fgs-lead">{{ pg.intro | safe }}</p>{% endif %}
+    {%- if pg.rating %}
+    {#- rating: "knopf" = nur der Button; die Gesamtbewertung steht dann groß im Abschnitt darunter (Bewertungen, Design-Pass 3 §4.4) #}
+    {%- if pg.rating != "knopf" %}
+    <div class="fgs-rating">
+      <p class="fgs-rating-score"><strong>{{ google.rating }}</strong> von 5 <span aria-hidden="true">★</span></p>
+      <p class="fgs-small fgs-source">{{ google.count }} Bewertungen auf Google · Stand {{ google.checkedLabel }}</p>
+    </div>
+    {%- endif %}
+    <div class="fgs-btns">
+      <a class="fgs-btn fgs-btn--primary" href="{{ google.url }}" target="_blank" rel="noopener">Google-Profil öffnen</a>
+    </div>
+    {%- endif %}
+    {%- if pg.buttons %}
+    <div class="fgs-btns">
+      {%- for b in pg.buttons %}
+      <a class="fgs-btn {{ 'fgs-btn--primary' if loop.first else 'fgs-btn--secondary' }}" href="{{ b.href }}">{{ b.label }}</a>
+      {%- endfor %}
+    </div>{% endif %}
+  </div>
+</section>
+{% endif %}
+
+{# 2. Erster Abschnitt (H2 und Absätze über 8 Spalten, wie „Das Wichtigste in Kürze“ in fgs-service.njk); mit Titelbild stehen hier die Brotkrumen #}
+{% if pg.hero or pg.summaryQ %}
+<section class="fgs-section fgs-summary-section"{% if pg.summaryQ %} aria-labelledby="kurz-titel"{% endif %}>
+  <div class="fgs-wrap">
+    {%- if pg.hero %}{{ crumbs | safe }}{% endif %}
+    {%- if pg.summaryQ %}
+    <div class="fgs-summary">
+      <h2 id="kurz-titel">{{ pg.summaryQ }}</h2>
+      <div class="fgs-summary-text">{% for p in pg.summary %}<p{% if loop.first %} class="fgs-lead"{% endif %}>{{ p | safe }}</p>{% endfor %}</div>
+    </div>
+    {%- endif %}
+  </div>
+</section>
+{% endif %}
+
+{# 3. Inhalt der Seite #}
+{{ content | safe }}
+
+{# 4. S7 Häufige Fragen #}
+{% if faqItems.length %}{{ faq(faqItems, pg.faqTitle or "Häufige Fragen") }}{% endif %}
+
+{# 5. S8 Abschlussband #}
+{% call closing({ kontakt: pg.contact, satz: pg.closing.title, button: pg.closing.button, gebiet: pg.closing.gebiet, foto: pg.closing.foto }) %}
+  <p>{{ pg.closing.text | safe }}</p>
+{% endcall %}
+
+{%- set schemaId = pageUrl + "#" + (pg.schema.id or "webpage") %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": {{ (pg.schema.type or "WebPage") | json | safe }},
+      "@id": "{{ schemaId }}",
+      "url": "{{ pageUrl }}",
+      "name": {{ title | json | safe }},
+      "description": {{ description | json | safe }},
+      "inLanguage": "de-DE",
+      "isPartOf": { "@id": "https://fg-realestate.de/#website" },
+      "publisher": { "@id": "https://fg-realestate.de/#organization" },
+      {% if pg.person %}"mainEntity": { "@id": "{{ pageUrl }}#person" },
+      {% elif pg.schema.org %}"mainEntity": { "@id": "https://fg-realestate.de/#organization" },
+      {% elif pg.schema.about %}"about": { "@id": "{{ pg.schema.about }}" },
+      {% endif %}"breadcrumb": { "@id": "{{ pageUrl }}#breadcrumb" }
+    },
+    {% if pg.person %}{% set p = pg.person %}{
+      "@type": "Person",
+      "@id": "{{ pageUrl }}#person",
+      "name": {{ p.name | json | safe }},
+      "givenName": {{ p.givenName | json | safe }},
+      "familyName": {{ p.familyName | json | safe }},
+      "jobTitle": {{ p.jobTitle | json | safe }},
+      "description": {{ (pk.bio or p.description) | json | safe }},
+      "image": "https://fg-realestate.de{{ pk.photo }}",
+      "url": "{{ pageUrl }}",
+      "telephone": {{ (pk.phone or nav.phone).href | replace("tel:", "") | json | safe }},
+      "email": {{ (pk.email or nav.email) | json | safe }},
+      "workLocation": {
+        "@type": "Place",
+        "address": { "@type": "PostalAddress", "streetAddress": "Schützenstraße 30", "postalCode": "12165", "addressLocality": "Berlin", "addressCountry": "DE" }
+      },
+      "worksFor": { "@id": "https://fg-realestate.de/#organization" },
+      "knowsAbout": {{ p.knowsAbout | json | safe }},{% if pk.ausbildung %}
+      "hasCredential": { "@type": "EducationalOccupationalCredential", "name": {{ pk.ausbildung | json | safe }} },{% endif %}
+      "areaServed": [
+        {% for a in p.areaServed %}{ "@type": "{{ a.type }}", "name": {{ a.name | json | safe }}{% if a.url %}, "url": "https://fg-realestate.de{{ a.url }}"{% endif %} }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]{% if p.linkedin %},
+      "sameAs": [{{ p.linkedin | json | safe }}]{% endif %}
+    },
+    {% endif %}{% if pg.schema.org %}{
+      "@type": ["Organization", "RealEstateAgent"],
+      "@id": "https://fg-realestate.de/#organization",
+      "name": "Fischer & Geserich Real Estate GmbH",
+      "url": "https://fg-realestate.de/",
+      "telephone": {{ nav.phone.href | replace("tel:", "") | json | safe }},
+      "email": {{ nav.email | json | safe }},
+      "address": { "@type": "PostalAddress", "streetAddress": "Schützenstraße 30", "postalCode": "12165", "addressLocality": "Berlin", "addressCountry": "DE" }
+    },
+    {% endif %}{
+      "@type": "BreadcrumbList",
+      "@id": "{{ pageUrl }}#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
+        {% if pg.parent %}{ "@type": "ListItem", "position": 2, "name": {{ pg.parent.label | json | safe }}, "item": "https://fg-realestate.de{{ pg.parent.href }}" },
+        {% endif %}{ "@type": "ListItem", "position": {% if pg.parent %}3{% else %}2{% endif %}, "name": {{ pg.crumb | json | safe }}, "item": "{{ pageUrl }}" }
+      ]
+    }{% if faqItems.length %},
+    {
+      "@type": "FAQPage",
+      "@id": "{{ pageUrl }}#faq",
+      "isPartOf": { "@id": "{{ schemaId }}" },
+      "mainEntity": [
+        {% for item in faqItems %}{
+          "@type": "Question",
+          "name": {{ item.q | json | safe }},
+          "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | striptags | json | safe }} }
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }{% endif %}
+  ]
+}
+</script>

@@ -7,11 +7,126 @@
   "keywords": [
     "grundbuch"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Immobilienkauf",
   "formula": null,
   "sources": [],
   "assistantAnswer": "Öffentliches Register der Grundstücksrechte. Das Grundbuch dokumentiert Eigentum und dingliche Rechte an Grundstücken. Abteilung I enthält Eigentümer, Abteilung II unter anderem Lasten/Beschränkungen und Abteilung III Grundpfandrechte.",
-  "explanation": "Das Grundbuch dokumentiert Eigentum und dingliche Rechte an Grundstücken. Abteilung I enthält Eigentümer, Abteilung II unter anderem Lasten/Beschränkungen und Abteilung III Grundpfandrechte.",
-  "practiceExample": "Ein Wohnrecht in Abteilung II oder eine Grundschuld in Abteilung III kann Kaufabwicklung, Wert und Finanzierung beeinflussen."
+  "explanation": "Das Grundbuch zeigt, wem ein Grundstück gehört und welche Rechte und Lasten darauf liegen. Geführt wird es von den Amtsgerichten, den Grundbuchämtern. Jedes Grundbuchblatt besteht aus der Aufschrift, dem Bestandsverzeichnis und drei Abteilungen.",
+  "practiceExample": "Sie kaufen eine Wohnung für 300.000 €. In Abteilung III steht noch eine Grundschuld über 150.000 € für die Bank des Verkäufers. Der Notar berücksichtigt sie bei Gestaltung und Abwicklung des Vertrags, damit Sie die Wohnung lastenfrei erhalten. Nach dem Notartermin wird für Sie eine Vormerkung eingetragen. Verfügungen des Verkäufers danach sind unwirksam, soweit sie Ihren Anspruch beeinträchtigen. Sind Kaufpreis und Grunderwerbsteuer bezahlt, beantragt der Notar die Umschreibung auf Sie.",
+  "ausbau": {
+    "einordnung": [
+      "Das Grundbuch zeigt, wem ein Grundstück gehört und welche Rechte und Lasten darauf liegen. Geführt wird es von den Amtsgerichten, den Grundbuchämtern.[[1]] Jedes Grundbuchblatt besteht aus der Aufschrift, dem Bestandsverzeichnis und drei Abteilungen.[[2]]",
+      "In Abteilung I steht der Eigentümer.[[3]] Abteilung II enthält die Lasten und Beschränkungen außer den Grundpfandrechten, etwa ein Wohnrecht oder eine Vormerkung für einen Käufer.[[4]] In Abteilung III stehen Hypotheken, Grundschulden und Rentenschulden.[[5]]",
+      "Einsehen darf das Grundbuch, wer ein berechtigtes Interesse darlegt.[[6]] Beim Kauf prüft der Notar das Grundbuch, um festzustellen, wem die Immobilie gehört und wie sie belastet ist.[[7]]"
+    ],
+    "beispiel": [
+      "Sie kaufen eine Wohnung für 300.000 €. In Abteilung III steht noch eine Grundschuld über 150.000 € für die Bank des Verkäufers. Der Notar berücksichtigt sie bei Gestaltung und Abwicklung des Vertrags, damit Sie die Wohnung lastenfrei erhalten.[[7]]",
+      "Nach dem Notartermin wird für Sie eine Vormerkung eingetragen. Verfügungen des Verkäufers danach sind unwirksam, soweit sie Ihren Anspruch beeinträchtigen.[[8]] Sind Kaufpreis und Grunderwerbsteuer bezahlt, beantragt der Notar die Umschreibung auf Sie.[[7]]"
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Eigentümer werden Sie erst mit der Eintragung ins Grundbuch; dafür braucht es die Einigung beider Seiten und die Eintragung.[[9]] Die Einigung über den Eigentumswechsel, die Auflassung, erklären Käufer und Verkäufer gleichzeitig vor einem Notar.[[10]] Finanzieren Sie, wird die Grundschuld Ihrer Bank eingetragen; die Bank zahlt das Darlehen in aller Regel erst danach aus.[[7]]"
+        ]
+      },
+      {
+        "h2": "Was es für Verkäufer heißt",
+        "absaetze": [
+          "Eine Grundschuld muss vor dem Verkauf nicht gelöscht sein. Der Notar regelt im Vertrag, wie sie aus dem Kaufpreis abgelöst wird.[[7]] Halten Sie einen aktuellen Grundbuchauszug bereit, damit Käufer und Notar die Lasten früh sehen."
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "§ 1 Grundbuchordnung",
+        "url": "https://www.gesetze-im-internet.de/gbo/__1.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 4 Grundbuchverfügung",
+        "url": "https://www.gesetze-im-internet.de/gbvfg/__4.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 9 Grundbuchverfügung",
+        "url": "https://www.gesetze-im-internet.de/gbvfg/__9.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 10 Grundbuchverfügung",
+        "url": "https://www.gesetze-im-internet.de/gbvfg/__10.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 11 Grundbuchverfügung",
+        "url": "https://www.gesetze-im-internet.de/gbvfg/__11.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 12 Grundbuchordnung",
+        "url": "https://www.gesetze-im-internet.de/gbo/__12.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Bundesnotarkammer: Der Kauf einer gebrauchten Immobilie (Infoblatt)",
+        "url": "https://www.bnotk.de/fileadmin/user_upload_bnotk/presse/Informationsmaterialien/Infoblatt_Kauf-einer-gebrauchten-Immobilie.pdf",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 883 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__883.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 873 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__873.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 925 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__925.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Amtsgerichte",
+        "fundstelle": "runde-1.md, G01"
+      },
+      {
+        "zahl": "Aufbau Blatt",
+        "fundstelle": "runde-1.md, G02"
+      },
+      {
+        "zahl": "Abteilungen I bis III",
+        "fundstelle": "runde-1.md, G03, G04, G05"
+      },
+      {
+        "zahl": "berechtigtes Interesse",
+        "fundstelle": "runde-1.md, G06"
+      },
+      {
+        "zahl": "Notar prüft Grundbuch, Vormerkung, Umschreibung, Grundschuld, alte Grundschulden",
+        "fundstelle": "runde-1.md, G10, G11, G12"
+      },
+      {
+        "zahl": "Vormerkung",
+        "fundstelle": "runde-1.md, G09"
+      },
+      {
+        "zahl": "Einigung und Eintragung",
+        "fundstelle": "runde-1.md, G07"
+      },
+      {
+        "zahl": "Auflassung vor dem Notar",
+        "fundstelle": "runde-1.md, G08"
+      },
+      {
+        "zahl": "Beispiel 300.000 €, Grundschuld 150.000 € (Annahme)",
+        "fundstelle": "Annahme; Marktprüfung runde-1.md (S04)"
+      }
+    ]
+  }
 }

@@ -7,11 +7,66 @@
   "keywords": [
     "bruttomietrendite"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Kapitalanlage",
-  "explanation": "Die Bruttomietrendite ist eine schnelle Screeningkennzahl aus Jahresnettokaltmiete und Kaufpreis. Sie berücksichtigt weder Kaufnebenkosten noch laufende Eigentümerkosten oder Finanzierung.",
-  "practiceExample": "16.800 € Jahresnettokaltmiete / 300.000 € Kaufpreis = 5,6 % Bruttomietrendite.",
-  "formula": "Bruttomietrendite = Jahresnettokaltmiete / Kaufpreis",
+  "explanation": "Die Bruttomietrendite setzt die Jahreskaltmiete ins Verhältnis zum Kaufpreis. Kosten des Eigentümers, Kaufnebenkosten und Finanzierung bleiben außen vor. Sie ist der Kehrwert des Kaufpreisfaktors: 4 % brutto entsprechen Faktor 25.",
+  "practiceExample": "Angenommen, Sie kaufen eine vermietete Wohnung im Berliner Umland, etwa in Bernau: 65 m², Baujahr 1995, 9 € Kaltmiete je m², also 585 € im Monat und 7.020 € im Jahr, für 160.000 €. Die Bruttomietrendite liegt bei 4,39 %. Nach Verwaltung, Instandhaltung und Mietausfall und mit den Kaufnebenkosten bleiben netto 3,25 % (siehe Nettomietrendite). Kostet dieselbe Wohnung 150.000 €, sind es brutto 4,68 %, bei 170.000 € 4,13 %.",
+  "formula": "Bruttomietrendite = Jahresnettokaltmiete / Kaufpreis × 100",
   "sources": [],
-  "assistantAnswer": "Jahresnettokaltmiete geteilt durch Kaufpreis. Die Bruttomietrendite ist eine schnelle Screeningkennzahl aus Jahresnettokaltmiete und Kaufpreis. Sie berücksichtigt weder Kaufnebenkosten noch laufende Eigentümerkosten oder Finanzierung."
+  "assistantAnswer": "Jahresnettokaltmiete geteilt durch Kaufpreis. Die Bruttomietrendite ist eine schnelle Screeningkennzahl aus Jahresnettokaltmiete und Kaufpreis. Sie berücksichtigt weder Kaufnebenkosten noch laufende Eigentümerkosten oder Finanzierung.",
+  "ausbau": {
+    "einordnung": [
+      "Die Bruttomietrendite setzt die Jahreskaltmiete ins Verhältnis zum Kaufpreis. Kosten des Eigentümers, Kaufnebenkosten und Finanzierung bleiben außen vor. Sie ist der Kehrwert des Kaufpreisfaktors: 4 % brutto entsprechen Faktor 25.[[1]]",
+      "Finanztip nutzt die Bruttomietrendite als groben Filter, um uninteressante Objekte auszusortieren. Eine gute Mietrendite beginnt nach Finanztip-Einschätzung bei 4 % brutto; das ist die Schwelle, ab der sich ein näherer Blick lohnt. In kleineren Städten oder ländlichen Regionen sind laut Finanztip 5 bis 7 % möglich, bei geringerer Wertsteigerung und höherem Vermietungsrisiko.[[1]]",
+      "Eine hohe Bruttorendite kann durch nicht umlagefähige Kosten, Capex, ungünstige Finanzierung oder schwache Vermietbarkeit schnell relativiert werden.[[2]] Deshalb gehören Brutto- und Nettomietrendite zusammen: Die eine eignet sich zum schnellen Vergleich, die andere zeigt, was nach Kosten bleibt."
+    ],
+    "beispiel": [
+      "Angenommen, Sie kaufen eine vermietete Wohnung im Berliner Umland, etwa in Bernau: 65 m², Baujahr 1995, 9 € Kaltmiete je m², also 585 € im Monat und 7.020 € im Jahr, für 160.000 €. Die Bruttomietrendite liegt bei 4,39 %.",
+      "Nach Verwaltung, Instandhaltung und Mietausfall und mit den Kaufnebenkosten bleiben netto 3,25 % (siehe Nettomietrendite). Kostet dieselbe Wohnung 150.000 €, sind es brutto 4,68 %, bei 170.000 € 4,13 %."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Prüfen Sie, welche Miete einer angegebenen Rendite zugrunde liegt: die Miete aus dem bestehenden Mietvertrag oder eine erhoffte. F&G betrachtet Ist- und Soll-Miete getrennt.[[2]] Fragen Sie außerdem, ob Leerstand, Mietrückstände oder befristete Nachlässe bestehen."
+        ]
+      },
+      {
+        "h2": "Was es für Anleger heißt",
+        "absaetze": [
+          "Welche Rendite für Sie gut ist, hängt laut Finanztip von Lage, Immobilientyp und Ihren Zielen ab. In Großstädten sind hohe Mietrenditen selten; dafür kann die Wertsteigerung höher ausfallen, und das Leerstandsrisiko ist meist geringer.[[1]] Für Ihre Rechnung kommen Zins, Eigenkapital und Steuer dazu. Rechnen Sie deshalb Rendite, Cashflow und mögliche Wertentwicklung zusammen."
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "Finanztip: Mietrendite berechnen",
+        "url": "https://www.finanztip.de/baufinanzierung/mietrendite-berechnen/",
+        "stand": "Stand 01.04.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Ankaufsberatung",
+        "url": "https://fg-realestate.de/ankaufsberatung.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Jahreskaltmiete / Kaufpreis × 100; Kehrwert des Faktors (25 ↔ 4 %)",
+        "fundstelle": "runde-3.md, C01, C05"
+      },
+      {
+        "zahl": "grober Filter; 4 % als Schwelle (Finanztip); 5 bis 7 % in kleineren Städten; Großstadt: höhere Wertsteigerung möglich, Leerstandsrisiko meist geringer",
+        "fundstelle": "runde-3.md, C01, C02"
+      },
+      {
+        "zahl": "Bruttorendite relativiert; Ist- und Soll-Miete getrennt (F&G)",
+        "fundstelle": "runde-3.md, C10"
+      },
+      {
+        "zahl": "7.020 / 160.000 = 4,39 %; / 150.000 = 4,68 %; / 170.000 = 4,13 %; netto 3,25 %",
+        "fundstelle": "Rechnung, Marktprüfung runde-3.md"
+      }
+    ]
+  }
 }

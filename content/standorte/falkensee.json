@@ -1,8 +1,20 @@
 {
   "name": "Falkensee",
   "region": "Berliner Speckgürtel · West",
-  "price": "ca. 3.500–5.500 €/m²",
-  "rent": "ca. 11–16 €/m²",
+  "preis": {
+    "wert": "3.140 €/m²",
+    "label": "Eigentumswohnungen Baujahr 1991–2022, Falkensee und Dallgow-Döberitz",
+    "quelle": "Gutachterausschuss Havelland, Grundstücksmarktbericht 2025",
+    "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_HVL.pdf",
+    "stichtag": "Kaufverträge 2025"
+  },
+  "miete": {
+    "wert": "9,4 €/m²",
+    "label": "Mittlere Nettokaltmiete in verkauften, vermieteten Eigentumswohnungen im Berliner Umland des Havellands",
+    "quelle": "Gutachterausschuss Havelland, Grundstücksmarktbericht 2025",
+    "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_HVL.pdf",
+    "stichtag": "2023 bis 2025"
+  },
   "chance": "Die direkte Lage westlich von Berlin und die starke Familiennachfrage stützen besonders gut angebundene Wohnlagen.",
   "risk": "Das vergleichsweise hohe Preisniveau drückt die Anfangsrendite; große Grundstücks- und Haussegmente sind zudem stärker eigennutzergetrieben.",
   "infra": "Regionalbahn, Straßenverbindungen nach Spandau sowie eine gewachsene Schul- und Versorgungsstruktur prägen den Wohnstandort.",
@@ -10,7 +22,6 @@
   "population": "Bei Wohnungen ist der lokale Mietmarkt enger als der Markt für Einfamilienhäuser und deshalb separat zu prüfen.",
   "view": "Falkensee ist ein stabiler Eigennutzer- und Familienmarkt, aber nicht automatisch ein Cashflow-Standort. Für Kapitalanlagen sollten Einstiegspreis und realistische Miete besonders konservativ angesetzt werden.",
   "source": "https://gutachterausschuss.brandenburg.de/",
-  "yield": "häufig ca. 3,0–5,5 %; gute Wohnlagen sind eher wertstabil als renditestark",
   "id": "falkensee",
   "slug": "falkensee",
   "url": "/standorte/falkensee/",
@@ -18,5 +29,5 @@
     "berliner speckgürtel · west",
     "falkensee"
   ],
-  "updated": "2026-09-02"
+  "updated": "2026-10-29"
 }

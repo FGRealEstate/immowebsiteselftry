@@ -7,10 +7,10 @@
   "keywords": [
     "maklerprovision"
   ],
-  "updated": "2026-08-26",
+  "updated": "2026-10-27",
   "category": "Immobilienkauf",
-  "explanation": "Maklerprovision ist die vertraglich vereinbarte Vergütung für den erfolgreichen Nachweis oder die Vermittlung. Für Verbraucher beim Kauf einer Wohnung oder eines Einfamilienhauses gelten besondere Regeln zur Verteilung der Maklerkosten; für andere Immobilienarten ist die konkrete Provisionsvereinbarung maßgeblich.",
-  "practiceExample": "Bei 400.000 € Kaufpreis entsprechen 3,57 % einer Provision von 14.280 €. Ob dieser Betrag vom Käufer, Verkäufer oder beiden getragen wird, ergibt sich nicht aus der Prozentzahl, sondern aus Vertrag und anwendbarer gesetzlicher Regel.",
+  "explanation": "Die Maklerprovision, auch Courtage genannt, ist der Lohn des Maklers. Sie wird fällig, wenn der Kaufvertrag durch seinen Nachweis oder seine Vermittlung zustande kommt. Eine gesetzliche Festgebühr gibt es nicht; in Berlin sind bei Eigentumswohnungen und Einfamilienhäusern 3,57 % je Seite häufig, also 3 % zuzüglich Mehrwertsteuer. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision.",
+  "practiceExample": "Eine Wohnung in Berlin wird für 400.000 € verkauft, Käufer und Verkäufer zahlen je 3,57 %. Auf jede Seite entfallen 14.280 €: 12.000 € Provision und 2.280 € Mehrwertsteuer. Zusammen erhält der Makler 28.560 €. Wird zum selben Preis ein Mehrfamilienhaus verkauft, greift die Teilungsregel nicht. Höhe und Verteilung ergeben sich dann aus dem Maklervertrag.",
   "formula": "Provision = Kaufpreis × Provisionssatz",
   "sources": [
     {
@@ -22,5 +22,115 @@
       "url": "https://www.gesetze-im-internet.de/bgb/__656d.html"
     }
   ],
-  "assistantAnswer": "Vergütung für die Vermittlungs- oder Nachweistätigkeit. Maklerprovision ist die vertraglich vereinbarte Vergütung für den erfolgreichen Nachweis oder die Vermittlung. Für Verbraucher beim Kauf einer Wohnung oder eines Einfamilienhauses gelten besondere Regeln zur Verteilung der Maklerkosten; für andere Immobilienarten ist die konkrete Provisionsvereinbarung maßgeblich."
+  "assistantAnswer": "Vergütung für die Vermittlungs- oder Nachweistätigkeit. Maklerprovision ist die vertraglich vereinbarte Vergütung für den erfolgreichen Nachweis oder die Vermittlung. Für Verbraucher beim Kauf einer Wohnung oder eines Einfamilienhauses gelten besondere Regeln zur Verteilung der Maklerkosten; für andere Immobilienarten ist die konkrete Provisionsvereinbarung maßgeblich.",
+  "ausbau": {
+    "einordnung": [
+      "Die Maklerprovision, auch Courtage genannt, ist der Lohn des Maklers. Sie wird fällig, wenn der Kaufvertrag durch seinen Nachweis oder seine Vermittlung zustande kommt.[[1]] Eine gesetzliche Festgebühr gibt es nicht; in Berlin sind bei Eigentumswohnungen und Einfamilienhäusern 3,57 % je Seite häufig, also 3 % zuzüglich Mehrwertsteuer.[[2]] Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision.",
+      "Für den Kauf einer Wohnung oder eines Einfamilienhauses braucht der Maklervertrag Textform.[[3]] Ist der Käufer Verbraucher, gelten seit dem 23. Dezember 2020 weitere Regeln:[[4]][[5]] Arbeitet der Makler für beide Seiten, zahlen Käufer und Verkäufer gleich viel.[[6]] Hat nur eine Seite den Makler beauftragt, kann sie höchstens die Hälfte an die andere weitergeben. Deren Anteil wird erst fällig, wenn die beauftragende Seite gezahlt hat und das nachgewiesen ist.[[7]]",
+      "Für Mehrfamilienhäuser und Grundstücke gelten diese Teilungsregeln nicht. Wer die Provision trägt, steht im Maklervertrag;[[2]] beim Mehrfamilienhaus ist es in der Regel der Käufer.[[8]] Bei der Vermietung von Wohnungen gilt das Bestellerprinzip: Wohnungssuchende zahlen nur, wenn der Makler ausschließlich in ihrem Auftrag eine Wohnung sucht.[[9]]"
+    ],
+    "beispiel": [
+      "Eine Wohnung in Berlin wird für 400.000 € verkauft, Käufer und Verkäufer zahlen je 3,57 %. Auf jede Seite entfallen 14.280 €: 12.000 € Provision und 2.280 € Mehrwertsteuer. Zusammen erhält der Makler 28.560 €.",
+      "Wird zum selben Preis ein Mehrfamilienhaus verkauft, greift die Teilungsregel nicht. Höhe und Verteilung ergeben sich dann aus dem Maklervertrag."
+    ],
+    "abschnitte": [
+      {
+        "h2": "Was es für Käufer heißt",
+        "absaetze": [
+          "Die Provision gehört zu den Kaufnebenkosten und erhöht Ihren Eigenkapitalbedarf. Fragen Sie vor der Besichtigung nach Höhe und Verteilung. Fischer & Geserich nennt die konkrete Courtage vor der ersten Besichtigung.[[2]]"
+        ]
+      },
+      {
+        "h2": "Was es für Verkäufer heißt",
+        "absaetze": [
+          "Haben Sie den Makler beauftragt und verkaufen eine Wohnung oder ein Einfamilienhaus an einen Verbraucher, tragen Sie mindestens die Hälfte der Provision. Den Anteil des Käufers kann der Makler erst verlangen, wenn Ihre Zahlung nachgewiesen ist.[[7]]"
+        ]
+      }
+    ],
+    "quellen": [
+      {
+        "name": "§ 652 BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__652.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Maklerprovision",
+        "url": "https://fg-realestate.de/maklerprovision/",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 656a BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__656a.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 656b BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__656b.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Bundesnotarkammer: Rundschreiben Nr. 05/2020 zur Verteilung der Maklerkosten",
+        "url": "https://www.bnotk.de/aufgaben-und-taetigkeiten/rundschreiben/details/gesetz-ueber-die-verteilung-der-maklerkosten-bei-der-vermittlung-von-kaufvertraegen-ueber-wohnungen-und-einfamilienhaeuser",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 656c BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__656c.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 656d BGB",
+        "url": "https://www.gesetze-im-internet.de/bgb/__656d.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "Fischer & Geserich: Kapitalanlage",
+        "url": "https://fg-realestate.de/kapitalanlage.html",
+        "stand": "abgerufen 27.10.2026"
+      },
+      {
+        "name": "§ 2 Wohnungsvermittlungsgesetz",
+        "url": "https://www.gesetze-im-internet.de/wovermrg/__2.html",
+        "stand": "abgerufen 27.10.2026"
+      }
+    ],
+    "pruefung": [
+      {
+        "zahl": "Lohn bei Zustandekommen",
+        "fundstelle": "runde-1.md, M01"
+      },
+      {
+        "zahl": "3,57 % je Seite in Berlin häufig, keine Festgebühr; Maklervertrag bei MFH; Courtage vor der Besichtigung",
+        "fundstelle": "runde-1.md, M08, M09, M10"
+      },
+      {
+        "zahl": "Textform",
+        "fundstelle": "runde-1.md, M02"
+      },
+      {
+        "zahl": "nur bei Verbraucher-Käufer; seit 23.12.2020",
+        "fundstelle": "runde-1.md, M03, M06"
+      },
+      {
+        "zahl": "gleiche Höhe bei Doppeltätigkeit",
+        "fundstelle": "runde-1.md, M04"
+      },
+      {
+        "zahl": "höchstens Hälfte weitergeben; Fälligkeit nach Zahlung und Nachweis",
+        "fundstelle": "runde-1.md, M05"
+      },
+      {
+        "zahl": "MFH in der Regel Käufer",
+        "fundstelle": "runde-1.md, M09"
+      },
+      {
+        "zahl": "Bestellerprinzip",
+        "fundstelle": "runde-1.md, M07"
+      },
+      {
+        "zahl": "Beispiel 400.000 € × 3,57 % = 14.280 € (12.000 + 2.280), zusammen 28.560 €",
+        "fundstelle": "Rechnung; gleiches Beispiel auf maklerprovision.njk; Marktprüfung runde-1.md"
+      }
+    ]
+  }
 }

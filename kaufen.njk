@@ -1,17 +1,213 @@
 ---
-layout: base.njk
-title: Immobilie kaufen – Kaufgesuch & Ankaufsberatung | Fischer & Geserich
+layout: fgs-service.njk
+bodyClass: fgs-service
+title: Immobilie kaufen in Berlin, Brandenburg, Leipzig und Dresden | Fischer & Geserich
 permalink: kaufen.html
-description: "Immobilie kaufen in Berlin, Leipzig, Dresden und im Berliner Speckgürtel: Kaufgesuch anlegen, Angebote erhalten und Ankaufsberatung nutzen."
+description: "Immobilie kaufen mit Fischer & Geserich: Suchprofil anlegen oder ein gefundenes Objekt prüfen lassen. Ablauf bis zum Notar, Kaufnebenkosten und Finanzierung verständlich erklärt."
 canonicalPath: /kaufen.html
+# Design-Sprint (Brief 5.2, CP3 am 28.10.2026): Vorlage fgs-service.njk, Texte aus Update 6 §3.3 wörtlich.
+# Brief Design-Pass §4.2: bisherige Texte bleiben (Lead, „Zwei Wege zum Ziel“, Texte des Kaufgesuchs).
+# Neu: Ablauf bis zum Notar, Kaufnebenkosten allgemein (keine eigenen Prozentsätze außer den Kaufnebenkosten nach Update 6, §2.1
+# und 3,57 Prozent Provision), Finanzierung, Angebote und Gebiete. Das Kaufgesuch geht weiter an propstack-search-profile.
+service:
+  id: kaufen
+  crumb: "Immobilie kaufen"
+  kicker: "Für Eigennutzer und Kapitalanleger"
+  h1: "Immobilie kaufen in Berlin, Brandenburg, Leipzig und Dresden"
+  intro: "Gut die Hälfte unserer Immobilien bieten wir nie öffentlich an. Mit einem Suchprofil erfahren Sie davon. Haben Sie schon ein Objekt gefunden, prüfen wir es mit Ihnen, bevor Sie unterschreiben."
+  button: { label: "Suchprofil anlegen", href: "#suchprofil" }
+  hero: { name: "kaufen-hero", alt: "Canaletto-Blick in Dresden: die Augustusbrücke über die Elbe, dahinter Frauenkirche und Hofkirche im warmen Licht, vorn die Elbwiesen", position: "center 65%" }
+  # Design-Pass 2 §4.2: Eckdaten aus Text, der schon auf der Seite steht (Liste für Jesu im Bogen zu Schritt 3);
+  # Provision in der Form, die der Brief für Verkaufen vorgibt; „Ablauf · 6 Schritte“ entfällt (Update 17 §5)
+  keyfacts:
+    - { label: "Kaufnebenkosten", wert: "meist 7,5 bis 15&nbsp;% des Kaufpreises" }
+    - { label: "Provision", wert: "3,57&nbsp;% pro Seite bei Wohnung und Einfamilienhaus, bei Mehrfamilienhäusern meist 7,14&nbsp;%" }
+    - { label: "Finanzierung", wert: "vor dem Notartermin geklärt" }
+  summaryQ: "Wie unterstützt Fischer & Geserich beim Kauf einer Immobilie?"
+  summary:
+    - "Auf zwei Wegen. Sie legen ein Suchprofil an und wir berücksichtigen Sie bei passenden Angeboten, auf Wunsch auch bei diskreten. Oder Sie haben schon ein Objekt gefunden und wir prüfen es in der Ankaufsberatung auf Objekt, Lage, Wirtschaftlichkeit und Finanzierung, auch wenn es nicht von uns angeboten wird."
+    - "Die Finanzierung klären wir, bevor der Kaufvertrag beim Notar beauftragt wird. Wir sind in ganz Berlin, im Berliner Umland sowie in Leipzig und Dresden tätig, Finanzierungen begleiten wir deutschlandweit."
+  faqTitle: "Häufige Fragen zum Immobilienkauf"
+  faq:
+    # Update 20 (30.10.2026): Fragen und Antworten wörtlich nach Timons Freigabe, auch im FAQPage-Markup; Links auf denselben Wörtern wie vorher.
+    - q: "Prüfen Sie auch Objekte, die ich selbst gefunden habe?"
+      a: "Ja. Unsere Ankaufsberatung gilt auch für Objekte, die Sie selbst gefunden haben und die nicht von uns angeboten werden. Wir prüfen Objekt, Lage, Zahlen und Finanzierung, bevor Sie unterschreiben."
+    - q: "Prüfen Sie die Finanzierung vor dem Notartermin?"
+      a: "Ja. Bevor der Kaufvertrag beim Notar beauftragt wird, klären wir gemeinsam, ob die Finanzierung realistisch ist. Meist läuft ein Kauf danach ohne Probleme bis zum Ende. Scheitert die Finanzierung aber erst nach dem Vertragsentwurf, sind schon Kosten entstanden: Ein Entwurf kostet je nach Kaufpreis und Notar etwa 600 bis 5.000 Euro. Ist ein niedrigerer Kaufpreis sinnvoller, sagen wir Ihnen das offen und rechtzeitig."
+    - q: "Begleitet F&G sowohl Eigennutzer als auch Kapitalanleger?"
+      a: "Ja. Eigennutzer begleiten wir bei der Suche nach der passenden Immobilie und einer Finanzierung, deren Rate auch in ein paar Jahren noch zum Leben passt. Mit Kapitalanlegern rechnen wir zusätzlich Miete, Rendite, laufende Kosten und die langfristige Finanzierung durch. Außerdem begleiten wir Eigentümer beim Verkauf und bei der Vermietung sowie Unternehmer bei der Finanzierung."
+    - q: "Was passiert, wenn kein Objekt zu mir passt?"
+      a: "Dann verkaufen wir Ihnen auch keines. Wir unterstützen Sie lieber bei der Finanzierung eines anderen Objekts, mit einer Ankaufsberatung oder bei der Abwicklung des Kaufs. Wer das falsche Objekt kauft, wird am Ende nicht zufrieden sein und genau das möchten wir vermeiden."
+    - q: "In welchen Regionen arbeitet Fischer & Geserich?"
+      a: "Wir sind in ganz Berlin tätig, besonders in Steglitz-Zehlendorf, Charlottenburg-Wilmersdorf, Tempelhof-Schöneberg und Pankow. Dazu kommen Potsdam und das Berliner Umland in acht Brandenburger Landkreisen: Oberhavel, Barnim, Havelland, Potsdam-Mittelmark, Dahme-Spreewald, Oder-Spree, Teltow-Fläming und Märkisch-Oderland. In Sachsen sind wir in Leipzig und Dresden für Sie da. Finanzierungen begleiten wir deutschlandweit und Anfragen aus anderen Regionen prüfen wir gern."
+    # FG-Gap-Answers 2.1 (READY)
+    - q: "Was ist der teuerste Fehler beim Hauskauf?"
+      a: "Den Notar zu beauftragen, bevor die Finanzierungsmöglichkeiten geprüft sind. Scheitert die Finanzierung danach, zahlen Sie den Vertragsentwurf trotzdem. Wer dagegen erst nach der Zusage der Bank den Notar beauftragt, gerät unter Zeitdruck: Ab dem unterschriebenen Kreditvertrag läuft die Widerrufsfrist von 14 Tagen und die meisten Notare lassen Ihnen bis zur Beurkundung ebenfalls rund 14 Tage Zeit. Deshalb prüfen wir die Finanzierung gründlich, bevor der Entwurf bestellt wird, und gehen erst danach in den Finanzierungsprozess. Teuer wird es außerdem, wenn Kosten übersehen werden: Kaufnebenkosten von meist 7,5 bis 12 Prozent des Kaufpreises, ein Sanierungsstau am Haus oder bei einer Wohnung eine Sonderumlage, die die Eigentümergemeinschaft schon beschlossen hat. Deshalb sehen wir uns mit Ihnen Objekt, Unterlagen und Finanzierung an, bevor Sie unterschreiben."
+    # FG-Gap-Answers 2.2 (READY)
+    - q: "Lohnt sich ein Gutachter beim Hauskauf?"
+      a: "Bei älteren Häusern oft ja. Ein Bausachverständiger erkennt Feuchtigkeit, Schäden am Dach oder eine alte Heizung, die bei einer Besichtigung nicht auffallen. So wissen Sie vor dem Kauf, was eine Sanierung kosten kann. Bei einer Eigentumswohnung sind die Unterlagen der Eigentümergemeinschaft oft wichtiger: Protokolle, Wirtschaftsplan und Erhaltungsrücklage zeigen, welche Kosten auf Sie zukommen. In der Ankaufsberatung gehen wir die Unterlagen mit Ihnen durch und sagen Ihnen, wann sich ein Bausachverständiger lohnt."
+    # FG-Gap-Answers 2.3 (READY)
+    - q: "Mieten oder kaufen: was lohnt sich?"
+      a: "Das entscheiden drei Fragen: wie lange Sie bleiben wollen, wie viel Eigenkapital Sie haben und ob die Monatsrate auch in ein paar Jahren noch zu Ihrem Leben passt. Kaufen lohnt sich eher, wenn Sie lange bleiben, denn die Kaufnebenkosten von meist 7,5 bis 12 Prozent holen Sie erst über die Jahre wieder herein. Vergleichen Sie die Rate mit Ihrer heutigen Miete und rechnen Sie Instandhaltung und Rücklagen dazu. Für eine konkrete Wohnung rechnen wir das gern mit Ihnen durch."
+    # FG-Timon-Answers-Update §3.3 (29.10.2026), neu; das Wort „Suchprofil“ verlinkt auf /gesuch-anlegen/
+    - q: "Warum sollte ich ein Suchprofil anlegen?"
+      a: "Weil viele unserer Immobilien nie öffentlich angeboten werden. In einem Suchprofil hinterlegen Sie, was Sie suchen: Lage, Größe, Budget und ob Sie selbst einziehen oder vermieten möchten. Gut die Hälfte unserer Immobilien vermarkten wir diskret, nur an vorgemerkte Käufer und Anleger. Mit einem <a href=\"/gesuch-anlegen/\">Suchprofil</a> erfahren Sie von diesen Angeboten zuerst."
+  related:
+    services:
+      - { label: "Ankaufsberatung", note: "Ein gefundenes Objekt vor dem Kauf prüfen", href: "/ankaufsberatung.html", bild: "ankauf-hero", alt: "Das Eckhaus Kurfürstendamm 190 in Berlin-Charlottenburg mit grüner Kuppel an einem sonnigen Junitag" }
+      - { label: "Finanzierungsberatung", note: "Banken vergleichen, vor dem Notartermin klären", href: "/finanzierungsberatung.html", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
+      - { label: "Immobilien als Kapitalanlage", note: "Die erste Wohnung bis zum Portfolio", href: "/kapitalanlage.html", bild: "kapitalanlage-hero", alt: "Gründerzeithaus von 1871 an der Humboldtstraße im Leipziger Waldstraßenviertel" }
+    lexikon: [kaufnebenkosten, grunderwerbsteuer, teilungserklarung]
+  contact: lennart
+  closing:
+    title: "Sie suchen eine Immobilie?"
+    text: "Legen Sie ein Suchprofil an oder rufen Sie uns an. Das erste Gespräch kostet Sie nichts und verpflichtet Sie zu nichts."
+    button: gespraech
+  schema:
+    name: "Immobilie kaufen mit Fischer & Geserich"
+    serviceType: "Immobilienvermittlung für Käufer"
+    description: "Begleitung beim Kauf von Wohnungen, Häusern und Mehrfamilienhäusern: Suchprofil, Prüfung gefundener Objekte, Finanzierung und Ablauf bis zum Notartermin, in Berlin, Brandenburg, Leipzig und Dresden."
+    area: regional
 ---
-<section class="fg-journey-hero fg-page-hero bg-primary text-white py-16 md:py-24">
-  <div class="container mx-auto px-4 max-w-6xl"><a href="/index.html#ziele" class="fg-back-link"><i class="fas fa-arrow-left"></i> Zurück zur Auswahl</a>
-    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center mt-8">
-      <div class="lg:col-span-3 fg-reveal"><p class="fg-eyebrow">Immobilie kaufen</p><h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">Die richtige Immobilie beginnt mit einem <span class="text-gold-gradient">klaren Suchprofil.</span></h1><p class="text-lg md:text-xl text-page-bg mb-8">Ob Eigennutzung oder Kapitalanlage: Hinterlegen Sie Ihre Kriterien oder nutzen Sie unsere Ankaufsberatung für Prüfung, Verhandlung und Finanzierung.</p><div class="flex flex-col sm:flex-row gap-3"><a href="#kaufgesuch" class="btn-85 py-3 px-7 text-primary font-bold text-center">Kaufgesuch anlegen</a><a href="/ankaufsberatung.html" class="fg-pill-outline">Ankaufsberatung ansehen</a></div></div>
-      <div class="lg:col-span-2 fg-journey-side fg-reveal"><span><i class="fas fa-bullseye"></i> Suchprofil statt Zufall</span><span><i class="fas fa-building"></i> passende Angebote vormerken</span><span><i class="fas fa-chart-line"></i> Wirtschaftlichkeit prüfen</span><span><i class="fas fa-building-columns"></i> Finanzierung mitdenken</span></div>
+{#- Kaufen nach Design-Pass 2 §4 (29.10.2026): Fotokapitel „Zwei Wege“, Ablauf als Reihe, Kaufnebenkosten als Aufklapper, Finanzierung
+    (Bild aus dem alten Kapitel Kaufnebenkosten oben rechts), Angebote und Gebiete, Kaufgesuch. Texte unverändert; das
+    Inhaltsverzeichnis entfällt wie auf Verkaufen. -#}
+{% from "fgs-macros.njk" import fotokapitel, nachschlag, mehr, wide, textlink with context %}
+
+{# §4.4 Fotokapitel: H2 und die ersten zwei Sätze auf dem Foto, die zwei Wege darunter nebeneinander #}
+{% call fotokapitel({ id: "zwei-wege", hoehe: 80, titel: "Zwei Wege, wie wir Sie unterstützen", bild: "berlin-mitte-band" | bild, alt: "Blick vom Alexanderplatz über die Dächer von Berlin bei tief stehender Sonne" }) %}
+  <div class="fgs-ways">
+    <div class="fgs-way">
+      <h3>Suchprofil anlegen</h3>
+      <p>Sie nennen uns Suchgebiet, Objektart, Budget und Ausstattung. Wir prüfen Ihr Profil persönlich und melden uns, wenn ein passendes Angebot vorliegt.</p>
+      {{ textlink("#suchprofil", "Suchprofil starten") }}
+    </div>
+    <div class="fgs-way">
+      <h3>Ankaufsberatung nutzen</h3>
+      <p>Wir prüfen das Objekt, verhandeln mit und klären die Finanzierung, auch wenn Sie es selbst gefunden haben und es nicht von uns angeboten wird. Passt es nicht, sagen wir Ihnen das offen.</p>
+      {{ textlink("/ankaufsberatung.html", "Beratung kennenlernen") }}
+    </div>
+  </div>
+{% endcall %}
+
+{# §4.5 Ablauf als Reihe (wie Verkaufen) #}
+<section class="fgs-section" id="ablauf" aria-labelledby="ablauf-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head">
+      <h2 id="ablauf-titel">Vom Suchprofil bis zum Notartermin</h2>
+      <p>Die Reihenfolge ist bei jedem Kauf ähnlich. Entscheidend ist, dass die Finanzierung vor dem Notar geklärt ist und nicht danach.</p>
+    </div>
+    <ol class="fgs-steps fgs-steps--reihe" role="list" style="--n: 6" data-fgs-steps>
+      <li style="--i: 1">
+        <span class="fgs-step-num" aria-hidden="true">01</span>
+        <h3>Suchprofil oder Objekt</h3>
+        <p class="fgs-step-lead">Sie legen Suchgebiet, Objektart, Budget und Ausstattung fest.</p>
+        <div class="fgs-step-panel" id="schritt-1"><p>Oder Sie schicken uns das Exposé eines Objekts, das Sie gefunden haben.</p></div>
+      </li>
+      <li style="--i: 2">
+        <span class="fgs-step-num" aria-hidden="true">02</span>
+        <h3>Finanzierungs&shy;rahmen</h3>
+        <p class="fgs-step-lead">Wir klären früh, welcher Kaufpreis zu Einkommen und Eigenkapital passt.</p>
+        <div class="fgs-step-panel" id="schritt-2"><p>Wer seinen Rahmen kennt, sucht von Anfang an in der richtigen Preisklasse.</p></div>
+      </li>
+      <li style="--i: 3">
+        <span class="fgs-step-num" aria-hidden="true">03</span>
+        <h3>Besichtigung und Unterlagen</h3>
+        <p class="fgs-step-lead">Bei einer Eigentumswohnung gehören <a href="/lexikon/teilungserklarung/">Teilungserklärung</a>, Protokolle der Eigentümer&shy;versammlungen, Wirtschaftsplan und Energieausweis dazu.</p>
+        <div class="fgs-step-panel" id="schritt-3"><p>Bei einem Haus kommt es vor allem auf Grundbuch, Baulasten und den baulichen Zustand an.</p></div>
+      </li>
+      <li style="--i: 4">
+        <span class="fgs-step-num" aria-hidden="true">04</span>
+        <h3>Prüfung und Verhandlung</h3>
+        <p class="fgs-step-lead">Wir prüfen Objekt, Lage, Zahlen und Finanzierung zusammen.</p>
+        <div class="fgs-step-panel" id="schritt-4"><p>Passt das Objekt, begleiten wir die Verhandlung. Passt es nicht, sagen wir Ihnen das.</p></div>
+      </li>
+      <li style="--i: 5">
+        <span class="fgs-step-num" aria-hidden="true">05</span>
+        <h3>Finanzierungs&shy;zusage</h3>
+        <p class="fgs-step-lead">Die Bank prüft Bonität und Objekt und entscheidet über die Zusage.</p>
+        <div class="fgs-step-panel" id="schritt-5"><p>Erst danach sollte der Kaufvertrag beim Notar beauftragt werden.</p></div>
+      </li>
+      <li style="--i: 6">
+        <span class="fgs-step-num" aria-hidden="true">06</span>
+        <h3>Notartermin</h3>
+        <p class="fgs-step-lead">Der Notar entwirft den Kaufvertrag und beurkundet ihn.</p>
+        <div class="fgs-step-panel" id="schritt-6"><p>Danach folgen die Zahlung des Kaufpreises, die Übergabe und die Eintragung im Grundbuch.</p></div>
+      </li>
+    </ol>
+    <p class="fgs-note">Den Entwurf des Kaufvertrags erhalten Sie als Verbraucher in der Regel zwei Wochen vor der Beurkundung (§ 17 Abs. 2a Beurkundungsgesetz). Nutzen Sie die Zeit für Ihre Fragen, an uns oder an den Notar.</p>
+  </div>
+</section>
+
+{# §4.6 Kaufnebenkosten als Aufklapper; Titel ist die bisherige H2. #kaufnebenkosten bleibt als Anker und öffnet ihn. #}
+<section class="fgs-section fgs-refs">
+  <div class="fgs-wrap">
+    {% call nachschlag({ id: "kaufnebenkosten", titel: "Was neben dem Kaufpreis anfällt" }) %}
+    <p>Zum Kaufpreis kommen die <a href="/lexikon/kaufnebenkosten/">Kaufnebenkosten</a>. Die Kaufnebenkosten liegen meist bei 7,5 bis 15 Prozent des Kaufpreises, je nach Bundesland und je nachdem, ob eine Maklerprovision anfällt. In Bayern können es ohne Makler auch nur rund 5,5 Prozent sein. Mindestens diesen Betrag sollten Sie als Eigenkapital einplanen.</p>
+    <ul class="fgs-checklist fgs-checklist--one" role="list">
+      <li><a href="/lexikon/grunderwerbsteuer/">Grunderwerbsteuer</a>: eine Landessteuer, deren Satz jedes Bundesland selbst festlegt</li>
+      <li>Notar und Grundbuch: richten sich nach dem Kaufpreis</li>
+      <li>Maklerprovision: bei einer Eigentumswohnung oder einem Einfamilienhaus zwischen Käufer und Verkäufer geteilt, bei uns 3,57&nbsp;Prozent inklusive Mehrwertsteuer pro Seite</li>
+    </ul>
+    <p class="fgs-note">Bei Mehrfamilienhäusern und Grundstücken gilt die Teilung der Provision nicht. Dazu können Kosten für Finanzierung, Gutachten oder Renovierung kommen.</p>
+    {{ textlink("/maklerprovision/", "Maklerprovision im Detail") }}
+    {% endcall %}
+  </div>
+</section>
+
+{# Finanzierung: Überschrift links, rechts das breite Bild (vorher im Kapitel Kaufnebenkosten), der Leitsatz und der Rest unter „Mehr erfahren“ (§2 Regel 1) #}
+<section class="fgs-section" id="finanzierung" aria-labelledby="finanzierung-titel">
+  <div class="fgs-wrap fgs-cols fgs-cols--57">
+    <div class="fgs-cols-head"><h2 id="finanzierung-titel">Finanzierung als Teil des Kaufs</h2></div>
+    <div class="fgs-cols-body">
+      {{ wide("leipzig-band" | bild, "Blick vom City-Hochhaus über die Leipziger Innenstadt mit dem Neuen Rathaus") }}
+      <p class="fgs-lead">Die Finanzierung gehört an den Anfang der Suche, nicht an ihr Ende.</p>
+      {% call mehr() %}
+      <p>Mit einem festen Finanzierungsrahmen wissen Sie, welche Objekte infrage kommen, und können bei einem passenden Angebot schneller entscheiden. Ein Vertragsentwurf beim Notar kostet je nach Kaufpreis und Notar etwa 600 bis 5.000 Euro. Scheitert die Finanzierung erst danach, sind diese Kosten schon entstanden.</p>
+      <p>Weil wir Immobiliardarlehen selbst vermitteln, mit Erlaubnis nach § 34i GewO, vergleichen wir Angebote über Europace und Baufinex und über direkte Bankkontakte. Das gilt auch für Objekte, die nicht aus unserem eigenen Bestand stammen. Eine Finanzierungszusage bleibt immer eine Einzelfallentscheidung der Bank.</p>
+      <h3>Eigennutzer und Kapitalanleger</h3>
+      <p>Wer selbst einzieht, braucht vor allem eine Rate, die auch dann noch passt, wenn sich das Leben verändert. Bei einer Kapitalanlage kommen Miete, Rendite, laufende Kosten und die langfristige Finanzierung hinzu. Wie wir dabei rechnen, steht auf der Seite <a href="/kapitalanlage.html">Kapitalanlage</a>.</p>
+      <div class="fgs-aside">
+        <p><strong>Kaufpreisrahmen selbst berechnen.</strong> Aus Wunschrate, Eigenkapital, Zins und Tilgung ergibt sich ein erster Orientierungswert für den möglichen Kaufpreis.</p>
+        <p><a href="/finanzierungsberatung.html#rechner">Zum Rechner</a> · <a href="/finanzierungsberatung.html">Zur Finanzierungsberatung</a></p>
+      </div>
+      {% endcall %}
     </div>
   </div>
 </section>
-<section class="fg-home-v2-section bg-white"><div class="container mx-auto px-4"><div class="fg-home-v2-head fg-reveal"><p class="fg-section-kicker">Zwei Wege zum Ziel</p><h2>Selbst auswählen oder beim Ankauf begleiten lassen.</h2><p>Für eine reine Vormerkung genügt Ihr Kaufgesuch. Wenn Sie Objektprüfung, Verhandlung und Finanzierung zusammenführen möchten, begleitet Sie unsere Ankaufsberatung.</p></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto"><a class="fg-split-path fg-reveal" href="#kaufgesuch"><i class="fas fa-magnifying-glass-location"></i><h3>Kaufgesuch hinterlegen</h3><p>Suchgebiet, Objektart, Budget und Ausstattung strukturiert erfassen.</p><span>Suchprofil starten <i class="fas fa-arrow-down"></i></span></a><a class="fg-split-path fg-reveal" href="/ankaufsberatung.html"><i class="fas fa-handshake-angle"></i><h3>Ankaufsberatung nutzen</h3><p>Objekt, Wirtschaftlichkeit, Verhandlung und Finanzierung professionell begleiten lassen.</p><span>Beratung kennenlernen <i class="fas fa-arrow-right"></i></span></a></div></div></section>
-{% set searchMarketingType = "BUY" %}{% set searchFormId = "kaufgesuch" %}{% set searchEyebrow = "Kaufgesuch" %}{% set searchHeadline = "Wonach suchen Sie konkret?" %}{% set searchIntro = "Teilen Sie uns Ihre Kaufkriterien mit. Wir legen Ihr Profil als Kaufgesuch an und können Sie bei passenden Angeboten gezielt berücksichtigen." %}{% set searchTypeLabel = "Ihr Kaufvorhaben" %}{% set searchBudgetLabel = "Kaufpreis bis" %}{% set searchSubmitLabel = "Kaufgesuch übermitteln" %}{% set searchSuccessText = "Vielen Dank. Ihr Kaufgesuch wurde erfolgreich übermittelt und wird persönlich geprüft." %}{% include "search-profile-form.njk" %}
+
+{# Angebote und Gebiete: Leitsatz, der Rest unter „Mehr erfahren“, die Links bleiben sichtbar #}
+<section class="fgs-section" id="angebote" aria-labelledby="angebote-titel">
+  <div class="fgs-wrap fgs-cols fgs-cols--57">
+    <div class="fgs-cols-head"><h2 id="angebote-titel">Wo wir Käufer begleiten</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">In ganz Berlin, im Berliner Umland und in Leipzig und Dresden. Finanzierungen begleiten wir deutschlandweit.</p>
+      {% call mehr() %}
+      <p>Unsere aktuellen Kaufangebote stehen auf der Angebotsseite. Eigennutzung und Kapitalanlage sind dort getrennt gekennzeichnet. Bei Objekten, die als Kapitalanlage gekennzeichnet sind, fließen Kaufpreis und Miete in eine Szenariorechnung ein, die Sie selbst verändern können.</p>
+      <p>Nicht jedes Objekt erscheint öffentlich. Mit einem Suchprofil können wir Sie auf Wunsch auch auf diskrete Angebote hinweisen.</p>
+      <p>Zu Berlin, dem Berliner Umland und Sachsen gibt es eigene Gebietsseiten. Dort stehen Lage, Nachfrage und Besonderheiten der einzelnen Märkte.</p>
+      {% endcall %}
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li><a href="/angebote.html">Aktuelle Angebote</a></li>
+        <li><a href="/standorte/berlin/">Berlin</a>, <a href="/standorte/leipzig/">Leipzig</a> und <a href="/standorte/dresden/">Dresden</a></li>
+        <li><a href="/standorte/">Alle Gebiete in Berlin, Brandenburg und Sachsen</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{# F Kaufgesuch: Text links, Formular rechts (Feldnamen und Versand unverändert, fgd-search-profile.njk) #}
+<section class="fgs-section" id="suchprofil-bereich" aria-labelledby="gesuch-titel">
+  <div class="fgs-wrap fgs-formblock">
+    <div class="fgs-formblock-text">
+      <h2 id="gesuch-titel">Wonach suchen Sie konkret?</h2>
+      <p class="fgs-lead">Nennen Sie uns Ihre Kriterien. Wir melden uns, sobald ein passendes Angebot vorliegt, auch wenn es nie öffentlich angeboten wird.</p>
+      <h3>Was danach passiert</h3>
+      <p>Wir prüfen Ihr Profil persönlich und melden uns, wenn ein passendes Angebot vorliegt. Haben Sie schon ein Objekt im Blick, schicken Sie uns lieber direkt das Exposé über die <a href="/ankaufsberatung.html#anfrage">Ankaufsberatung</a>.</p>
+    </div>
+    <div class="fgs-formblock-form">
+    {% set sp = { id: "suchprofil", marketing: "BUY", title: "Suchprofil anlegen", intro: "Nur das Suchgebiet und Ihre E-Mail-Adresse sind Pflicht.", budgetLabel: "Kaufpreis bis", submitLabel: "Suchprofil übermitteln", doneText: "Wir prüfen Ihr Suchprofil persönlich und melden uns, wenn ein passendes Angebot vorliegt." } %}
+    {% include "fgd-search-profile.njk" %}
+    </div>
+  </div>
+</section>
