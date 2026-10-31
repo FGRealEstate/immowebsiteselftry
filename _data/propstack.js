@@ -651,6 +651,11 @@ function getDistrictName(unit) {
     return textValue(unit.district) || textValue(unit.sublocality) || null;
 }
 
+// PLZ nur für die Zuordnung des Ansprechpartners (Teil B 4); sie wird nicht veröffentlicht, wie Straße und Hausnummer.
+function getZip(unit) {
+    return String(textValue(unit.zip_code) || "").replace(/\D/g, "") || null;
+}
+
 function getPublicTitle(unit, marketingType, propertyType) {
     /*
      * Wichtig:
@@ -768,6 +773,11 @@ const BERLIN_BEZIRKE_OHNE_SEITE = {
 const berlinBezirkKontakt = new Map(Object.entries(BERLIN_BEZIRKE_OHNE_SEITE).flatMap(([bezirk, b]) =>
     [bezirk, ...b.ortsteile].map((name) => [placeKey(name), b.kontakt])));
 
+/* PLZ → Bezirke mit Zahl der Adressen, aus der amtlichen Adressliste „Adressen Regionales Bezugssystem (RBS)“
+   (Geoportal Berlin, Datenlizenz Deutschland – Zero – Version 2.0, abgerufen 30.10.2026, 404.303 Adressen, 193 PLZ).
+   Ihre 97 Ortsteile decken sich mit den Ortsteillisten oben (geprüft 31.10.2026). */
+const BERLIN_PLZ = require("./berlin-plz-bezirk.json").plz;
+
 let areaIndex = null;
 
 function placeKey(input) {
@@ -820,15 +830,38 @@ function findArea(cityName, districtName) {
     return areaIndex.town.get(cityKey) || areaIndex.county.get(cityKey) || areaIndex.city.get(cityKey) || null;
 }
 
-/* Teil B 4 (31.10.2026): Ansprechpartner für Objekt-, Projekt- und Referenzseiten. Zuerst kontakt der Gebietsseite, in Berlin
-   sonst der Bezirk aus district (Bezirk oder Ortsteil) über BERLIN_BEZIRKE_OHNE_SEITE, sonst Lennart. Außerhalb Berlins ohne
-   Gebietsseite die bisherige Regel: Leipzig oder Dresden → Timon, sonst Lennart. Der Titel wird nicht gelesen.
-   Schritt 2 (PLZ über die amtliche RBS-Adressliste) fehlt noch: der Download wartet auf Peers Freigabe. */
-function findKontakt(cityName, districtName, area) {
+/* Teil B 4 (31.10.2026): Ansprechpartner für Objekt-, Projekt- und Referenzseiten. Zuerst kontakt der Gebietsseite. In Berlin
+   sonst 1. der Bezirk aus district (Bezirk oder Ortsteil) über BERLIN_BEZIRKE_OHNE_SEITE, 2. die PLZ über BERLIN_PLZ, 3. Lennart.
+   Liegt die PLZ in Bezirken beider Personen, bleibt Lennart (Update 18 Punkt 5); in Bezirken derselben Person bekommt sie diese.
+   Außerhalb Berlins ohne Gebietsseite die bisherige Regel: Leipzig oder Dresden → Timon, sonst Lennart. Der Titel wird nicht gelesen. */
+function findKontakt(cityName, districtName, area, zip) {
     if (area && area.kontakt) return area.kontakt;
     const cityKey = placeKey(cityName);
-    if (cityKey === "berlin") return berlinBezirkKontakt.get(placeKey(districtName)) || "lennart";
+    if (cityKey === "berlin") return berlinBezirkKontakt.get(placeKey(districtName)) || plzKontakt(zip) || "lennart";
     return cityKey.includes("leipzig") || cityKey.includes("dresden") ? "timon" : "lennart";
+}
+
+// Bezirke mit eigener Seite: deren kontakt; die übrigen aus BERLIN_BEZIRKE_OHNE_SEITE
+function bezirkKontakt(bezirk) {
+    if (BERLIN_BEZIRKE_OHNE_SEITE[bezirk]) return BERLIN_BEZIRKE_OHNE_SEITE[bezirk].kontakt;
+    if (!areaIndex) areaIndex = buildAreaIndex();
+    const page = areaIndex.district.get(`berlin|${placeKey(bezirk)}`);
+    return page ? page.kontakt : null;
+}
+
+function plzKontakt(zip) {
+    const kontakte = [...new Set(Object.keys(BERLIN_PLZ[zip] || {}).map(bezirkKontakt))];
+    return kontakte.length === 1 ? kontakte[0] : null;
+}
+
+// Projekt ohne eigene PLZ und ohne bekannten Bezirk: Die Einheiten haben ihre PLZ schon ausgewertet; sind sie sich einig, gilt das.
+function findProjectKontakt(project, units, cityName, districtName, area) {
+    const zip = getZip(project || {});
+    if (placeKey(cityName) !== "berlin" || (area && area.kontakt) || zip || berlinBezirkKontakt.has(placeKey(districtName)) || !units.length) {
+        return findKontakt(cityName, districtName, area, zip);
+    }
+    const kontakte = [...new Set(units.map((unit) => unit.kontakt))];
+    return kontakte.length === 1 ? kontakte[0] : "lennart";
 }
 
 /* Referenzen (Update 4, 3.2): verkaufte Objekte für /referenzen/. Propstack-Doku („Objekt-Stati lesen“): „Ein Objekt
@@ -1244,7 +1277,7 @@ function buildUnit(unit) {
         location: getPublicLocation(unit),
         district: getDistrictName(unit),
         area: findArea(getPublicLocation(unit), getDistrictName(unit)),
-        kontakt: findKontakt(getPublicLocation(unit), getDistrictName(unit), findArea(getPublicLocation(unit), getDistrictName(unit))),
+        kontakt: findKontakt(getPublicLocation(unit), getDistrictName(unit), findArea(getPublicLocation(unit), getDistrictName(unit)), getZip(unit)),
         marketing_type: marketingType,
         property_type: propertyType,
         status: getStatusName(unit),
@@ -1339,7 +1372,7 @@ function buildProject(project, units) {
         status: getProjectStatusName(project),
         location: getProjectLocation(project, units),
         area: findArea(getProjectLocation(project, units), getDistrictName(project || {}) || units.map((unit) => unit.district).find(Boolean)),
-        kontakt: findKontakt(getProjectLocation(project, units), getDistrictName(project || {}) || units.map((unit) => unit.district).find(Boolean),
+        kontakt: findProjectKontakt(project, units, getProjectLocation(project, units), getDistrictName(project || {}) || units.map((unit) => unit.district).find(Boolean),
             findArea(getProjectLocation(project, units), getDistrictName(project || {}) || units.map((unit) => unit.district).find(Boolean))),
         address: firstText(project || {}, ["address", "full_address", "street", "custom_fields.projektadresse"]),
         description,

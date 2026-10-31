@@ -1,0 +1,751 @@
+{
+ "quelle": "Adressen Regionales Bezugssystem (RBS), Geoportal Berlin, WFS https://gdi.berlin.de/services/wfs/adressen_rbs (Felder postleit, ot_name, bez_name)",
+ "lizenz": "Datenlizenz Deutschland – Zero – Version 2.0",
+ "abgerufen": "30.10.2026",
+ "adressen": 404303,
+ "plz": {
+  "10115": {
+   "Mitte": 1530
+  },
+  "10117": {
+   "Mitte": 1966
+  },
+  "10119": {
+   "Mitte": 882,
+   "Pankow": 293
+  },
+  "10178": {
+   "Mitte": 755,
+   "Friedrichshain-Kreuzberg": 1
+  },
+  "10179": {
+   "Mitte": 1248,
+   "Friedrichshain-Kreuzberg": 10
+  },
+  "10243": {
+   "Friedrichshain-Kreuzberg": 1204
+  },
+  "10245": {
+   "Friedrichshain-Kreuzberg": 1648
+  },
+  "10247": {
+   "Friedrichshain-Kreuzberg": 1480,
+   "Pankow": 362
+  },
+  "10249": {
+   "Friedrichshain-Kreuzberg": 986,
+   "Pankow": 86
+  },
+  "10315": {
+   "Lichtenberg": 1663
+  },
+  "10317": {
+   "Lichtenberg": 2025,
+   "Friedrichshain-Kreuzberg": 6
+  },
+  "10318": {
+   "Lichtenberg": 4872
+  },
+  "10319": {
+   "Lichtenberg": 1006
+  },
+  "10365": {
+   "Lichtenberg": 1969
+  },
+  "10367": {
+   "Lichtenberg": 809,
+   "Friedrichshain-Kreuzberg": 1
+  },
+  "10369": {
+   "Lichtenberg": 628
+  },
+  "10405": {
+   "Pankow": 1197
+  },
+  "10407": {
+   "Pankow": 1476,
+   "Friedrichshain-Kreuzberg": 1
+  },
+  "10409": {
+   "Pankow": 1179
+  },
+  "10435": {
+   "Pankow": 581,
+   "Mitte": 226
+  },
+  "10437": {
+   "Pankow": 1086
+  },
+  "10439": {
+   "Pankow": 1197
+  },
+  "10551": {
+   "Mitte": 721
+  },
+  "10553": {
+   "Mitte": 448,
+   "Charlottenburg-Wilmersdorf": 11
+  },
+  "10555": {
+   "Mitte": 671
+  },
+  "10557": {
+   "Mitte": 1177
+  },
+  "10559": {
+   "Mitte": 676
+  },
+  "10585": {
+   "Charlottenburg-Wilmersdorf": 729
+  },
+  "10587": {
+   "Charlottenburg-Wilmersdorf": 735
+  },
+  "10589": {
+   "Charlottenburg-Wilmersdorf": 826
+  },
+  "10623": {
+   "Charlottenburg-Wilmersdorf": 519,
+   "Mitte": 43
+  },
+  "10625": {
+   "Charlottenburg-Wilmersdorf": 472
+  },
+  "10627": {
+   "Charlottenburg-Wilmersdorf": 540
+  },
+  "10629": {
+   "Charlottenburg-Wilmersdorf": 523
+  },
+  "10707": {
+   "Charlottenburg-Wilmersdorf": 631
+  },
+  "10709": {
+   "Charlottenburg-Wilmersdorf": 687
+  },
+  "10711": {
+   "Charlottenburg-Wilmersdorf": 586
+  },
+  "10713": {
+   "Charlottenburg-Wilmersdorf": 753
+  },
+  "10715": {
+   "Charlottenburg-Wilmersdorf": 775
+  },
+  "10717": {
+   "Charlottenburg-Wilmersdorf": 648
+  },
+  "10719": {
+   "Charlottenburg-Wilmersdorf": 613
+  },
+  "10777": {
+   "Tempelhof-Schöneberg": 437,
+   "Charlottenburg-Wilmersdorf": 141
+  },
+  "10779": {
+   "Tempelhof-Schöneberg": 359,
+   "Charlottenburg-Wilmersdorf": 110
+  },
+  "10781": {
+   "Tempelhof-Schöneberg": 568
+  },
+  "10783": {
+   "Tempelhof-Schöneberg": 532,
+   "Friedrichshain-Kreuzberg": 1
+  },
+  "10785": {
+   "Mitte": 789,
+   "Tempelhof-Schöneberg": 50,
+   "Friedrichshain-Kreuzberg": 49
+  },
+  "10787": {
+   "Mitte": 203,
+   "Tempelhof-Schöneberg": 174,
+   "Charlottenburg-Wilmersdorf": 22
+  },
+  "10789": {
+   "Charlottenburg-Wilmersdorf": 166,
+   "Tempelhof-Schöneberg": 99
+  },
+  "10823": {
+   "Tempelhof-Schöneberg": 394
+  },
+  "10825": {
+   "Tempelhof-Schöneberg": 525,
+   "Charlottenburg-Wilmersdorf": 29
+  },
+  "10827": {
+   "Tempelhof-Schöneberg": 624
+  },
+  "10829": {
+   "Tempelhof-Schöneberg": 887
+  },
+  "10961": {
+   "Friedrichshain-Kreuzberg": 854
+  },
+  "10963": {
+   "Friedrichshain-Kreuzberg": 622,
+   "Mitte": 14
+  },
+  "10965": {
+   "Friedrichshain-Kreuzberg": 870,
+   "Tempelhof-Schöneberg": 188,
+   "Neukölln": 15
+  },
+  "10967": {
+   "Friedrichshain-Kreuzberg": 673,
+   "Neukölln": 94
+  },
+  "10969": {
+   "Friedrichshain-Kreuzberg": 1030
+  },
+  "10997": {
+   "Friedrichshain-Kreuzberg": 1086
+  },
+  "10999": {
+   "Friedrichshain-Kreuzberg": 1035
+  },
+  "12043": {
+   "Neukölln": 666
+  },
+  "12045": {
+   "Neukölln": 570
+  },
+  "12047": {
+   "Neukölln": 574
+  },
+  "12049": {
+   "Neukölln": 695
+  },
+  "12051": {
+   "Neukölln": 1119
+  },
+  "12053": {
+   "Neukölln": 688
+  },
+  "12055": {
+   "Neukölln": 614
+  },
+  "12057": {
+   "Neukölln": 1002
+  },
+  "12059": {
+   "Neukölln": 748,
+   "Treptow-Köpenick": 4
+  },
+  "12099": {
+   "Tempelhof-Schöneberg": 1558,
+   "Neukölln": 26
+  },
+  "12101": {
+   "Tempelhof-Schöneberg": 1914
+  },
+  "12103": {
+   "Tempelhof-Schöneberg": 1521
+  },
+  "12105": {
+   "Tempelhof-Schöneberg": 2180
+  },
+  "12107": {
+   "Tempelhof-Schöneberg": 3645,
+   "Neukölln": 22
+  },
+  "12109": {
+   "Tempelhof-Schöneberg": 1804
+  },
+  "12157": {
+   "Tempelhof-Schöneberg": 629,
+   "Steglitz-Zehlendorf": 444
+  },
+  "12159": {
+   "Tempelhof-Schöneberg": 923
+  },
+  "12161": {
+   "Tempelhof-Schöneberg": 827,
+   "Steglitz-Zehlendorf": 74
+  },
+  "12163": {
+   "Steglitz-Zehlendorf": 1303,
+   "Tempelhof-Schöneberg": 15
+  },
+  "12165": {
+   "Steglitz-Zehlendorf": 542
+  },
+  "12167": {
+   "Steglitz-Zehlendorf": 1355
+  },
+  "12169": {
+   "Steglitz-Zehlendorf": 1413,
+   "Tempelhof-Schöneberg": 4
+  },
+  "12203": {
+   "Steglitz-Zehlendorf": 2292
+  },
+  "12205": {
+   "Steglitz-Zehlendorf": 2886
+  },
+  "12207": {
+   "Steglitz-Zehlendorf": 2867
+  },
+  "12209": {
+   "Steglitz-Zehlendorf": 3346
+  },
+  "12247": {
+   "Steglitz-Zehlendorf": 2846
+  },
+  "12249": {
+   "Steglitz-Zehlendorf": 3466,
+   "Tempelhof-Schöneberg": 77
+  },
+  "12277": {
+   "Tempelhof-Schöneberg": 3190,
+   "Steglitz-Zehlendorf": 6
+  },
+  "12279": {
+   "Tempelhof-Schöneberg": 1036,
+   "Steglitz-Zehlendorf": 13
+  },
+  "12305": {
+   "Tempelhof-Schöneberg": 4580,
+   "Neukölln": 34
+  },
+  "12307": {
+   "Tempelhof-Schöneberg": 3488
+  },
+  "12309": {
+   "Tempelhof-Schöneberg": 3022
+  },
+  "12347": {
+   "Neukölln": 2155,
+   "Tempelhof-Schöneberg": 4
+  },
+  "12349": {
+   "Neukölln": 3887
+  },
+  "12351": {
+   "Neukölln": 2607
+  },
+  "12353": {
+   "Neukölln": 1850
+  },
+  "12355": {
+   "Neukölln": 6802,
+   "Treptow-Köpenick": 1
+  },
+  "12357": {
+   "Neukölln": 4216
+  },
+  "12359": {
+   "Neukölln": 2780
+  },
+  "12435": {
+   "Treptow-Köpenick": 1190,
+   "Friedrichshain-Kreuzberg": 1
+  },
+  "12437": {
+   "Treptow-Köpenick": 2773
+  },
+  "12439": {
+   "Treptow-Köpenick": 1382
+  },
+  "12459": {
+   "Treptow-Köpenick": 2027,
+   "Lichtenberg": 8
+  },
+  "12487": {
+   "Treptow-Köpenick": 3246
+  },
+  "12489": {
+   "Treptow-Köpenick": 2923
+  },
+  "12524": {
+   "Treptow-Köpenick": 6920
+  },
+  "12526": {
+   "Treptow-Köpenick": 4821
+  },
+  "12527": {
+   "Treptow-Köpenick": 3648
+  },
+  "12555": {
+   "Treptow-Köpenick": 4694,
+   "Marzahn-Hellersdorf": 2
+  },
+  "12557": {
+   "Treptow-Köpenick": 4105
+  },
+  "12559": {
+   "Treptow-Köpenick": 4723
+  },
+  "12587": {
+   "Treptow-Köpenick": 2992
+  },
+  "12589": {
+   "Treptow-Köpenick": 4816
+  },
+  "12619": {
+   "Marzahn-Hellersdorf": 1472
+  },
+  "12621": {
+   "Marzahn-Hellersdorf": 7492
+  },
+  "12623": {
+   "Marzahn-Hellersdorf": 13117,
+   "Treptow-Köpenick": 15
+  },
+  "12627": {
+   "Marzahn-Hellersdorf": 2073
+  },
+  "12629": {
+   "Marzahn-Hellersdorf": 841
+  },
+  "12679": {
+   "Marzahn-Hellersdorf": 936
+  },
+  "12681": {
+   "Marzahn-Hellersdorf": 1642,
+   "Lichtenberg": 2
+  },
+  "12683": {
+   "Marzahn-Hellersdorf": 8995
+  },
+  "12685": {
+   "Marzahn-Hellersdorf": 1726
+  },
+  "12687": {
+   "Marzahn-Hellersdorf": 560
+  },
+  "12689": {
+   "Marzahn-Hellersdorf": 1032
+  },
+  "13051": {
+   "Lichtenberg": 1142,
+   "Pankow": 4
+  },
+  "13053": {
+   "Lichtenberg": 3323,
+   "Marzahn-Hellersdorf": 4,
+   "Pankow": 1
+  },
+  "13055": {
+   "Lichtenberg": 2069
+  },
+  "13057": {
+   "Lichtenberg": 1581,
+   "Marzahn-Hellersdorf": 4
+  },
+  "13059": {
+   "Lichtenberg": 2132
+  },
+  "13086": {
+   "Pankow": 2868
+  },
+  "13088": {
+   "Pankow": 3026
+  },
+  "13089": {
+   "Pankow": 2488
+  },
+  "13125": {
+   "Pankow": 6864
+  },
+  "13127": {
+   "Pankow": 6169
+  },
+  "13129": {
+   "Pankow": 4035
+  },
+  "13156": {
+   "Pankow": 4464,
+   "Reinickendorf": 15
+  },
+  "13158": {
+   "Pankow": 5598
+  },
+  "13159": {
+   "Pankow": 1529
+  },
+  "13187": {
+   "Pankow": 2410
+  },
+  "13189": {
+   "Pankow": 1888
+  },
+  "13347": {
+   "Mitte": 1002
+  },
+  "13349": {
+   "Mitte": 767
+  },
+  "13351": {
+   "Mitte": 893
+  },
+  "13353": {
+   "Mitte": 912,
+   "Charlottenburg-Wilmersdorf": 3
+  },
+  "13355": {
+   "Mitte": 858,
+   "Pankow": 2
+  },
+  "13357": {
+   "Mitte": 980
+  },
+  "13359": {
+   "Mitte": 985,
+   "Pankow": 1
+  },
+  "13403": {
+   "Reinickendorf": 2620
+  },
+  "13405": {
+   "Reinickendorf": 652,
+   "Mitte": 54
+  },
+  "13407": {
+   "Reinickendorf": 2137,
+   "Mitte": 197
+  },
+  "13409": {
+   "Reinickendorf": 2081,
+   "Mitte": 146
+  },
+  "13435": {
+   "Reinickendorf": 1162
+  },
+  "13437": {
+   "Reinickendorf": 2879
+  },
+  "13439": {
+   "Reinickendorf": 992
+  },
+  "13465": {
+   "Reinickendorf": 5526
+  },
+  "13467": {
+   "Reinickendorf": 4867
+  },
+  "13469": {
+   "Reinickendorf": 3658
+  },
+  "13503": {
+   "Reinickendorf": 6434
+  },
+  "13505": {
+   "Reinickendorf": 2242
+  },
+  "13507": {
+   "Reinickendorf": 2833
+  },
+  "13509": {
+   "Reinickendorf": 3292
+  },
+  "13581": {
+   "Spandau": 1911
+  },
+  "13583": {
+   "Spandau": 2032
+  },
+  "13585": {
+   "Spandau": 1468
+  },
+  "13587": {
+   "Spandau": 3210
+  },
+  "13589": {
+   "Spandau": 2641
+  },
+  "13591": {
+   "Spandau": 6593
+  },
+  "13593": {
+   "Spandau": 2117
+  },
+  "13595": {
+   "Spandau": 2475
+  },
+  "13597": {
+   "Spandau": 1107,
+   "Charlottenburg-Wilmersdorf": 7
+  },
+  "13599": {
+   "Spandau": 2250,
+   "Reinickendorf": 46
+  },
+  "13627": {
+   "Charlottenburg-Wilmersdorf": 1081,
+   "Spandau": 21,
+   "Mitte": 1
+  },
+  "13629": {
+   "Spandau": 963,
+   "Reinickendorf": 332,
+   "Charlottenburg-Wilmersdorf": 15
+  },
+  "14050": {
+   "Charlottenburg-Wilmersdorf": 1121
+  },
+  "14052": {
+   "Charlottenburg-Wilmersdorf": 1241,
+   "Spandau": 3
+  },
+  "14053": {
+   "Charlottenburg-Wilmersdorf": 71
+  },
+  "14055": {
+   "Charlottenburg-Wilmersdorf": 2194
+  },
+  "14057": {
+   "Charlottenburg-Wilmersdorf": 603
+  },
+  "14059": {
+   "Charlottenburg-Wilmersdorf": 1023
+  },
+  "14089": {
+   "Spandau": 7719
+  },
+  "14109": {
+   "Steglitz-Zehlendorf": 3149
+  },
+  "14129": {
+   "Steglitz-Zehlendorf": 3395
+  },
+  "14163": {
+   "Steglitz-Zehlendorf": 3722
+  },
+  "14165": {
+   "Steglitz-Zehlendorf": 2876
+  },
+  "14167": {
+   "Steglitz-Zehlendorf": 3943
+  },
+  "14169": {
+   "Steglitz-Zehlendorf": 3304
+  },
+  "14193": {
+   "Charlottenburg-Wilmersdorf": 2938,
+   "Steglitz-Zehlendorf": 10
+  },
+  "14195": {
+   "Steglitz-Zehlendorf": 3309,
+   "Charlottenburg-Wilmersdorf": 364
+  },
+  "14197": {
+   "Charlottenburg-Wilmersdorf": 1271,
+   "Tempelhof-Schöneberg": 61,
+   "Steglitz-Zehlendorf": 19
+  },
+  "14199": {
+   "Charlottenburg-Wilmersdorf": 1591,
+   "Steglitz-Zehlendorf": 5
+  },
+  "15537": {
+   "Treptow-Köpenick": 9
+  },
+  "15566": {
+   "Treptow-Köpenick": 1
+  },
+  "15569": {
+   "Treptow-Köpenick": 1
+  }
+ },
+ "ortsteile": {
+  "Adlershof": "Treptow-Köpenick",
+  "Alt-Hohenschönhausen": "Lichtenberg",
+  "Alt-Treptow": "Treptow-Köpenick",
+  "Altglienicke": "Treptow-Köpenick",
+  "Baumschulenweg": "Treptow-Köpenick",
+  "Biesdorf": "Marzahn-Hellersdorf",
+  "Blankenburg": "Pankow",
+  "Blankenfelde": "Pankow",
+  "Bohnsdorf": "Treptow-Köpenick",
+  "Borsigwalde": "Reinickendorf",
+  "Britz": "Neukölln",
+  "Buch": "Pankow",
+  "Buckow": "Neukölln",
+  "Charlottenburg": "Charlottenburg-Wilmersdorf",
+  "Charlottenburg-Nord": "Charlottenburg-Wilmersdorf",
+  "Dahlem": "Steglitz-Zehlendorf",
+  "Falkenberg": "Lichtenberg",
+  "Falkenhagener Feld": "Spandau",
+  "Fennpfuhl": "Lichtenberg",
+  "Französisch Buchholz": "Pankow",
+  "Friedenau": "Tempelhof-Schöneberg",
+  "Friedrichsfelde": "Lichtenberg",
+  "Friedrichshagen": "Treptow-Köpenick",
+  "Friedrichshain": "Friedrichshain-Kreuzberg",
+  "Frohnau": "Reinickendorf",
+  "Gatow": "Spandau",
+  "Gesundbrunnen": "Mitte",
+  "Gropiusstadt": "Neukölln",
+  "Grunewald": "Charlottenburg-Wilmersdorf",
+  "Grünau": "Treptow-Köpenick",
+  "Hakenfelde": "Spandau",
+  "Halensee": "Charlottenburg-Wilmersdorf",
+  "Hansaviertel": "Mitte",
+  "Haselhorst": "Spandau",
+  "Heiligensee": "Reinickendorf",
+  "Heinersdorf": "Pankow",
+  "Hellersdorf": "Marzahn-Hellersdorf",
+  "Hermsdorf": "Reinickendorf",
+  "Johannisthal": "Treptow-Köpenick",
+  "Karlshorst": "Lichtenberg",
+  "Karow": "Pankow",
+  "Kaulsdorf": "Marzahn-Hellersdorf",
+  "Kladow": "Spandau",
+  "Konradshöhe": "Reinickendorf",
+  "Kreuzberg": "Friedrichshain-Kreuzberg",
+  "Köpenick": "Treptow-Köpenick",
+  "Lankwitz": "Steglitz-Zehlendorf",
+  "Lichtenberg": "Lichtenberg",
+  "Lichtenrade": "Tempelhof-Schöneberg",
+  "Lichterfelde": "Steglitz-Zehlendorf",
+  "Lübars": "Reinickendorf",
+  "Mahlsdorf": "Marzahn-Hellersdorf",
+  "Malchow": "Lichtenberg",
+  "Mariendorf": "Tempelhof-Schöneberg",
+  "Marienfelde": "Tempelhof-Schöneberg",
+  "Marzahn": "Marzahn-Hellersdorf",
+  "Mitte": "Mitte",
+  "Moabit": "Mitte",
+  "Märkisches Viertel": "Reinickendorf",
+  "Müggelheim": "Treptow-Köpenick",
+  "Neu-Hohenschönhausen": "Lichtenberg",
+  "Neukölln": "Neukölln",
+  "Niederschöneweide": "Treptow-Köpenick",
+  "Niederschönhausen": "Pankow",
+  "Nikolassee": "Steglitz-Zehlendorf",
+  "Oberschöneweide": "Treptow-Köpenick",
+  "Pankow": "Pankow",
+  "Plänterwald": "Treptow-Köpenick",
+  "Prenzlauer Berg": "Pankow",
+  "Rahnsdorf": "Treptow-Köpenick",
+  "Reinickendorf": "Reinickendorf",
+  "Rosenthal": "Pankow",
+  "Rudow": "Neukölln",
+  "Rummelsburg": "Lichtenberg",
+  "Schlachtensee": "Steglitz-Zehlendorf",
+  "Schmargendorf": "Charlottenburg-Wilmersdorf",
+  "Schmöckwitz": "Treptow-Köpenick",
+  "Schöneberg": "Tempelhof-Schöneberg",
+  "Siemensstadt": "Spandau",
+  "Spandau": "Spandau",
+  "Staaken": "Spandau",
+  "Stadtrandsiedlung Malchow": "Pankow",
+  "Steglitz": "Steglitz-Zehlendorf",
+  "Tegel": "Reinickendorf",
+  "Tempelhof": "Tempelhof-Schöneberg",
+  "Tiergarten": "Mitte",
+  "Waidmannslust": "Reinickendorf",
+  "Wannsee": "Steglitz-Zehlendorf",
+  "Wartenberg": "Lichtenberg",
+  "Wedding": "Mitte",
+  "Weißensee": "Pankow",
+  "Westend": "Charlottenburg-Wilmersdorf",
+  "Wilhelmsruh": "Pankow",
+  "Wilhelmstadt": "Spandau",
+  "Wilmersdorf": "Charlottenburg-Wilmersdorf",
+  "Wittenau": "Reinickendorf",
+  "Zehlendorf": "Steglitz-Zehlendorf"
+ }
+}
