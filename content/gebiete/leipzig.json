@@ -74,11 +74,10 @@
         "text": "Zur Seite Leipzig-Zentrum"
       },
       "bild": {
-        "name": "leipzig-zentrum-karl-tauchnitz-strasse-10",
-        "alt": "Die Villa Karl-Tauchnitz-Straße 10 in Leipzig an einem Sommertag, davor die Straße",
-        "credit": "Frank Vincentz, CC BY-SA 3.0",
-        "url": "https://commons.wikimedia.org/wiki/File:Leipzig_-_Karl-Tauchnitz-Stra%C3%9Fe_04_ies.jpg",
-        "position": "50% 55%"
+        "name": "leipzig-zentrum-johannapark",
+        "alt": "Der Teich im Johannapark mit einer hölzernen Bogenbrücke, Bäume spiegeln sich im Wasser, rechts hinten der Turm der Lutherkirche",
+        "credit": "Ansgar Koreng, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Holzbr%C3%BCcke_im_Johannapark,_Leipzig,_1708141015,_ako.jpg"
       }
     },
     {
@@ -108,11 +107,11 @@
         "text": "Zur Seite Leipzig-West"
       },
       "bild": {
-        "name": "leipzig-west-lindenauer-markt",
-        "alt": "Der Lindenauer Markt in Altlindenau mit Marktstraße und Westbad",
-        "caption": "Der Lindenauer Markt in Altlindenau.",
-        "credit": "Frank Vincentz, CC BY-SA 3.0",
-        "url": "https://commons.wikimedia.org/wiki/File:Leipzig_-_Lindenauer_Markt_%2B_Marktstra%C3%9Fe_%2B_Westbad_01_ies.jpg"
+        "name": "leipzig-west-karl-heine-kanal-philippuskirche",
+        "alt": "Blick über den Karl-Heine-Kanal in Lindenau auf Gründerzeithäuser und Neubauten an der Helmholtzstraße, links der Turm der Philippuskirche, vorn Bäume am Ufer",
+        "caption": "Die Helmholtzstraße am Karl-Heine-Kanal in Lindenau, links die Philippuskirche.",
+        "credit": "Palauenc05, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Leipzig_Helmholtzstra%C3%9Fe_R%C3%BCckansicht.jpg"
       }
     }
   ],

@@ -32,7 +32,7 @@
   --fgs-sec: 80px;
   --fgs-r: 2px;
   --fgs-header-h: 72px;
-  --fgs-ease: cubic-bezier(.2, .7, .2, 1);
+  --fgs-ease: cubic-bezier(.22, 1, .36, 1); /* Update 23 D5: eine Kurve für jede Bewegung (vorher .2, .7, .2, 1) */
 
   /* Schriftgrößen: genau die Werte des Briefs bei 390 px und 1440 px, dazwischen gleitend */
   --fgs-h1: clamp(38px, calc(38px + 26 * (100vw - 390px) / 1050), 64px);
@@ -96,7 +96,7 @@ body.fgs {
 /* ohne Gewicht (:where), damit Menü, Fuß, Karten und Inhaltsverzeichnis ihre eigenen Linkfarben behalten */
 :where(.fgs-prose, .fgs p, .fgs li, .fgs dd, .fgs td) a {
   color: var(--fgs-ink); text-decoration: underline; text-decoration-thickness: 1px;
-  text-underline-offset: 3px; text-decoration-color: rgba(8, 8, 47, .35); transition: text-decoration-color .2s, color .2s;
+  text-underline-offset: 3px; text-decoration-color: rgba(8, 8, 47, .35); transition: text-decoration-color 400ms var(--fgs-ease), color 400ms var(--fgs-ease);
 }
 :where(.fgs-prose, .fgs p, .fgs li, .fgs dd, .fgs td) a:hover { color: var(--fgs-gold-text); text-decoration-color: currentColor; }
 
@@ -139,7 +139,7 @@ body.fgs {
   display: inline-flex; align-items: center; justify-content: center; gap: 12px;
   min-height: 56px; padding: 0 28px; border-radius: var(--fgs-r); border: 1px solid transparent;
   font: 500 16px/1.2 var(--fgs-sans); letter-spacing: .01em; text-decoration: none !important; white-space: nowrap;
-  cursor: pointer; transition: background-color .2s, color .2s, border-color .2s;
+  cursor: pointer; transition: background-color 400ms var(--fgs-ease), color 400ms var(--fgs-ease), border-color 400ms var(--fgs-ease);
 }
 .fgs-btn--primary { background: var(--fgs-gold); color: var(--fgs-navy) !important; }
 .fgs-btn--primary:hover { background: #DCC37D; }
@@ -153,7 +153,7 @@ body.fgs {
   display: inline-flex; align-items: center; gap: 10px; color: var(--fgs-ink) !important;
   font: 500 16px/1.4 var(--fgs-sans); text-decoration: none !important;
   background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; padding-bottom: 2px;
-  transition: background-size .3s var(--fgs-ease);
+  transition: background-size 400ms var(--fgs-ease);
 }
 .fgs-link:hover { background-size: 100% 1px; }
 .fgs-link svg { width: 22px; height: 12px; flex: none; }
@@ -171,14 +171,14 @@ body.fgs {
 .fgs figcaption { margin-top: 12px; font-size: 13px; line-height: 1.5; color: var(--fgs-ink-2); max-width: 68ch; }
 
 /* Einblenden beim Scrollen: nur Bilder, nie Text (3.6) */
-html.fgs-js .fgs-reveal img { opacity: 0; transform: scale(1.04); transition: opacity .6s var(--fgs-ease), transform .6s var(--fgs-ease); }
+html.fgs-js .fgs-reveal img { opacity: 0; transform: scale(1.04); transition: opacity 800ms var(--fgs-ease), transform 800ms var(--fgs-ease); }
 html.fgs-js .fgs-reveal.is-in img { opacity: 1; transform: none; }
 
 /* ---------- Kopfbereich (5.7) ---------- */
 .fgs-header {
   position: fixed; inset: 0 0 auto 0; z-index: 900; height: var(--fgs-header-h);
   background: var(--fgs-bg); color: var(--fgs-ink); border-bottom: 1px solid var(--fgs-line);
-  transition: background-color .3s, border-color .3s, color .3s;
+  transition: background-color 400ms var(--fgs-ease), border-color 400ms var(--fgs-ease), color 400ms var(--fgs-ease);
 }
 body.fgs { padding-top: var(--fgs-header-h); }
 body.fgs-has-hero { padding-top: 0; }
@@ -195,7 +195,7 @@ body.fgs-has-hero .fgs-header:not(.is-scrolled):not(.is-open) { background: tran
   display: inline-flex; align-items: center; height: var(--fgs-header-h); padding: 0 8px; border: 0; background: none; cursor: pointer;
   font: 400 15px/1 var(--fgs-sans); color: inherit; letter-spacing: .01em; position: relative; white-space: nowrap;
 }
-.fgs-nav-trigger::after { content: ""; position: absolute; left: 8px; right: 8px; bottom: calc(50% - 16px); height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .25s var(--fgs-ease); }
+.fgs-nav-trigger::after { content: ""; position: absolute; left: 8px; right: 8px; bottom: calc(50% - 16px); height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 400ms var(--fgs-ease); }
 .fgs-nav-item.is-open .fgs-nav-trigger::after, .fgs-nav-trigger:hover::after, .fgs-nav-item.is-current .fgs-nav-trigger::after { transform: scaleX(1); }
 .fgs-header-actions { display: flex; align-items: center; gap: 16px; flex: none; }
 .fgs-header-phone { font: 400 15px/1 var(--fgs-sans); color: inherit; text-decoration: none; white-space: nowrap; }
@@ -207,7 +207,7 @@ body.fgs-has-hero .fgs-header:not(.is-scrolled):not(.is-open) { background: tran
 .fgs-header .fgs-btn--secondary:hover { background: var(--fgs-navy); border-color: var(--fgs-navy); color: #fff !important; }
 body.fgs-has-hero .fgs-header:not(.is-scrolled):not(.is-open) .fgs-btn--secondary:hover { background: #fff; border-color: #fff; color: var(--fgs-navy) !important; }
 .fgs-burger { display: none; width: 44px; height: 44px; border: 0; background: none; cursor: pointer; padding: 0; position: relative; color: inherit; }
-.fgs-burger span { position: absolute; left: 10px; right: 10px; height: 1px; background: currentColor; transition: transform .25s, opacity .25s; }
+.fgs-burger span { position: absolute; left: 10px; right: 10px; height: 1px; background: currentColor; transition: transform 400ms var(--fgs-ease), opacity 400ms var(--fgs-ease); }
 .fgs-burger span:nth-child(1) { top: 16px; } .fgs-burger span:nth-child(2) { top: 22px; } .fgs-burger span:nth-child(3) { top: 28px; }
 .fgs-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
 .fgs-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
@@ -217,9 +217,9 @@ body.fgs-has-hero .fgs-header:not(.is-scrolled):not(.is-open) .fgs-btn--secondar
 .fgs-panel {
   position: absolute; left: 0; right: 0; top: var(--fgs-header-h); background: var(--fgs-bg); color: var(--fgs-ink);
   border-top: 1px solid var(--fgs-line); border-bottom: 1px solid var(--fgs-line);
-  visibility: hidden; opacity: 0; transform: translateY(-6px); transition: opacity .2s, transform .2s, visibility 0s linear .2s;
+  visibility: hidden; opacity: 0; transform: translateY(-6px); transition: opacity 400ms var(--fgs-ease), transform 400ms var(--fgs-ease), visibility 0s linear 0.4s;
 }
-.fgs-nav-item.is-open .fgs-panel { visibility: visible; opacity: 1; transform: none; transition: opacity .2s, transform .2s; }
+.fgs-nav-item.is-open .fgs-panel { visibility: visible; opacity: 1; transform: none; transition: opacity 400ms var(--fgs-ease), transform 400ms var(--fgs-ease); }
 .fgs-panel-inner { padding-block: 40px 48px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--fgs-gap); }
 .fgs-panel-intro { grid-column: 1 / span 3; }
 .fgs-panel-intro p { margin-top: 12px; font-size: 15px; line-height: 1.6; color: var(--fgs-ink-2); }
@@ -232,7 +232,7 @@ body.fgs-has-hero .fgs-header:not(.is-scrolled):not(.is-open) .fgs-btn--secondar
 .fgs-panel-tile { display: block; position: relative; text-decoration: none; color: #fff; border-radius: var(--fgs-r); }
 .fgs-panel-tile .fgs-media { aspect-ratio: 4 / 3; }
 .fgs-panel-tile .fgs-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(8, 8, 47, .86) 0%, rgba(8, 8, 47, .58) 50%, rgba(8, 8, 47, 0) 88%); }
-.fgs-panel-tile .fgs-media img { transition: transform .5s var(--fgs-ease); }
+.fgs-panel-tile .fgs-media img { transition: transform 400ms var(--fgs-ease); }
 .fgs-panel-tile:hover .fgs-media img { transform: scale(1.04); }
 .fgs-panel-tile-text { position: absolute; left: 20px; right: 20px; bottom: 18px; z-index: 1; display: grid; gap: 4px; }
 .fgs-panel-tile-name { font-family: var(--fgs-serif); font-size: 28px; line-height: 1.15; color: #fff; }
@@ -246,7 +246,7 @@ body.fgs-has-hero .fgs-header:not(.is-scrolled):not(.is-open) .fgs-btn--secondar
    Abstand, Unterpunkte 17 px Weiß 80 %. Blendet in 0,25 s ein, die Hauptpunkte versetzt um 40 ms. Die Seite steht. */
 .fgs-mobile {
   position: fixed; inset: 0; z-index: 9995; display: flex; flex-direction: column; background: var(--fgs-navy); color: #fff;
-  overflow-y: auto; overscroll-behavior: contain; padding: 0 var(--fgs-pad) 32px; opacity: 0; transition: opacity .25s ease-out;
+  overflow-y: auto; overscroll-behavior: contain; padding: 0 var(--fgs-pad) 32px; opacity: 0; transition: opacity 400ms var(--fgs-ease);
 }
 .fgs-mobile[hidden] { display: none; }
 .fgs-mobile.is-in { opacity: 1; }
@@ -256,7 +256,7 @@ body.fgs-has-hero .fgs-header:not(.is-scrolled):not(.is-open) .fgs-btn--secondar
 .fgs-mobile-close span { position: absolute; left: 10px; right: 10px; top: 21px; height: 1.5px; background: currentColor; transform: rotate(45deg); }
 .fgs-mobile-close span + span { transform: rotate(-45deg); }
 .fgs-mobile nav { margin-top: 12px; }
-.fgs-mobile nav > details { opacity: 0; transform: translateY(10px); transition: opacity .25s ease-out, transform .25s ease-out; transition-delay: calc(var(--i, 0) * 40ms + 60ms); }
+.fgs-mobile nav > details { opacity: 0; transform: translateY(10px); transition: opacity 400ms var(--fgs-ease), transform 400ms var(--fgs-ease); transition-delay: calc(var(--i, 0) * 40ms + 60ms); }
 .fgs-mobile.is-in nav > details { opacity: 1; transform: none; }
 .fgs-mobile summary { list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 10px 0; font: 400 30px/1.2 var(--fgs-serif); color: #fff; cursor: pointer; }
 .fgs-mobile summary::-webkit-details-marker { display: none; }
@@ -291,7 +291,7 @@ html.fgs-menu-open, body.fgs-menu-open { overflow: hidden; }
 @media (max-width: 767px) { .fgs-hero { min-height: max(520px, 70vh); min-height: max(520px, 70svh); } }
 .fgs-hero-media { position: absolute; inset: 0; }
 .fgs-hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: var(--fgs-hero-pos, 50% 50%); transform-origin: 50% 50%; }
-html.fgs-js .fgs-hero-media img { animation: fgs-zoom 6s cubic-bezier(.25, .6, .3, 1) both; }
+html.fgs-js .fgs-hero-media img { animation: fgs-zoom 800ms var(--fgs-ease) both; } /* Update 23 D5, vorher 6 s */
 @keyframes fgs-zoom { from { transform: scale(1.08); } to { transform: scale(1); } }
 /* Update 7, 3.1: Navy nur hinter dem Text. Desktop von links 75 % bis 0 % bei 60 % der Breite,
    oben für den Kopf 40 % bis 0 % auf den ersten 160 px; der Rest des Fotos behält seine Farben */
@@ -392,7 +392,7 @@ html.fgs-js .fgs-hero-media img { animation: fgs-zoom 6s cubic-bezier(.25, .6, .
 .fgs-rail-nav { display: flex; gap: 8px; flex: none; }
 .fgs-rail-btn {
   width: 52px; height: 44px; display: inline-flex; align-items: center; justify-content: center;
-  border: 0; background: none; color: var(--fgs-ink); cursor: pointer; padding: 0; transition: opacity .2s, transform .2s;
+  border: 0; background: none; color: var(--fgs-ink); cursor: pointer; padding: 0; transition: opacity 400ms var(--fgs-ease), transform 400ms var(--fgs-ease);
 }
 .fgs-rail-btn svg { width: 30px; height: 14px; }
 .fgs-rail-btn:hover:not(:disabled) { transform: translateX(var(--fgs-nudge, 3px)); }
@@ -411,7 +411,7 @@ html.fgs-js .fgs-hero-media img { animation: fgs-zoom 6s cubic-bezier(.25, .6, .
 .fgs-rail-track > li { flex: 0 0 clamp(280px, 30vw, 460px); scroll-snap-align: start; }
 @media (max-width: 767px) { .fgs-rail-track > li { flex-basis: 80vw; } }
 .fgs-rail-progress { position: relative; height: 1px; background: var(--fgs-line); margin-top: 40px; }
-.fgs-rail-progress span { position: absolute; left: 0; top: -1px; height: 3px; width: 20%; background: var(--fgs-gold); transition: transform .15s linear; transform-origin: left; }
+.fgs-rail-progress span { position: absolute; left: 0; top: -1px; height: 3px; width: 20%; background: var(--fgs-gold); transition: transform 400ms var(--fgs-ease); transform-origin: left; }
 /* Raster-Variante (3 Karten, 2-Spalten-Kacheln) ohne Wischen auf großen Schirmen */
 @media (min-width: 900px) {
   .fgs-rail--grid3 .fgs-rail-track { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); overflow: visible; padding-inline: 0; max-width: calc(var(--fgs-max) + 2 * var(--fgs-pad)); margin-inline: auto; padding-inline: var(--fgs-pad); }
@@ -419,9 +419,9 @@ html.fgs-js .fgs-hero-media img { animation: fgs-zoom 6s cubic-bezier(.25, .6, .
 }
 .fgs-card { display: block; text-decoration: none; color: var(--fgs-ink); height: 100%; }
 .fgs-card .fgs-media { aspect-ratio: 3 / 4; }
-.fgs-card .fgs-media img { transition: transform .6s var(--fgs-ease), opacity .6s var(--fgs-ease); }
+.fgs-card .fgs-media img { transition: transform 800ms var(--fgs-ease), opacity 800ms var(--fgs-ease); }
 .fgs-card:hover .fgs-media img { transform: scale(1.03); }
-html.fgs-js .fgs-card .fgs-reveal.is-in img { transition: transform .6s var(--fgs-ease), opacity .6s var(--fgs-ease); }
+html.fgs-js .fgs-card .fgs-reveal.is-in img { transition: transform 800ms var(--fgs-ease), opacity 800ms var(--fgs-ease); }
 /* Karten: zwei Schriftgrößen, Titel und 15 px (Update 7, Frage 5). Die frühere Label-Angabe steht als schlichte Zeile unter dem Titel. */
 .fgs-card-title { margin-top: 20px !important; font-family: var(--fgs-serif); font-size: var(--fgs-h3); line-height: 1.3; }
 .fgs-card-meta, .fgs-card-line { margin-top: 6px !important; font-size: 15px; line-height: 1.55; color: var(--fgs-ink-2); }
@@ -481,7 +481,7 @@ html.fgs-js .fgs-quote.is-open blockquote p { display: block; -webkit-line-clamp
   .fgs-toc-mobile { display: block; margin-bottom: 56px; border-top: 1px solid var(--fgs-line); border-bottom: 1px solid var(--fgs-line); }
   .fgs-toc-mobile summary { list-style: none; padding: 16px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
   .fgs-toc-mobile summary::-webkit-details-marker { display: none; }
-  .fgs-toc-mobile summary::after { content: ""; width: 12px; height: 12px; background: linear-gradient(currentColor, currentColor) center / 12px 1px no-repeat, linear-gradient(currentColor, currentColor) center / 1px 12px no-repeat; transition: transform .2s; }
+  .fgs-toc-mobile summary::after { content: ""; width: 12px; height: 12px; background: linear-gradient(currentColor, currentColor) center / 12px 1px no-repeat, linear-gradient(currentColor, currentColor) center / 1px 12px no-repeat; transition: transform 400ms var(--fgs-ease); }
   .fgs-toc-mobile[open] summary::after { transform: rotate(45deg); }
   .fgs-toc-mobile ol { list-style: none; padding-bottom: 12px; }
   .fgs-toc-mobile a { display: block; padding: 8px 0; font-size: 16px; text-decoration: none !important; }
@@ -492,7 +492,7 @@ html.fgs-js .fgs-quote.is-open blockquote p { display: block; -webkit-line-clamp
 .fgs-sources summary { list-style: none; cursor: pointer; padding: 24px 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
 .fgs-sources summary::-webkit-details-marker { display: none; }
 .fgs-sources summary h2 { font-size: var(--fgs-h3); line-height: 1.3; }
-.fgs-sources summary::after { content: ""; flex: none; width: 14px; height: 14px; background: linear-gradient(currentColor, currentColor) center / 14px 1px no-repeat, linear-gradient(currentColor, currentColor) center / 1px 14px no-repeat; transition: transform .2s; }
+.fgs-sources summary::after { content: ""; flex: none; width: 14px; height: 14px; background: linear-gradient(currentColor, currentColor) center / 14px 1px no-repeat, linear-gradient(currentColor, currentColor) center / 1px 14px no-repeat; transition: transform 400ms var(--fgs-ease); }
 .fgs-sources[open] summary::after { transform: rotate(45deg); }
 .fgs-sources ol { padding: 0 0 24px 1.6em; font-size: 13px; line-height: 1.6; color: var(--fgs-ink-2); }
 .fgs-sources li { padding-left: 4px; }
@@ -543,7 +543,7 @@ html.fgs-js .fgs-quote.is-open blockquote p { display: block; -webkit-line-clamp
 .fgs-faq-item summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; padding: 26px 0; }
 .fgs-faq-item summary::-webkit-details-marker { display: none; }
 .fgs-faq-item summary h3, .fgs-faq-item summary .fgs-faq-q { font-family: var(--fgs-serif); font-size: 22px; line-height: 1.35; font-weight: 400; margin: 0; }
-.fgs-faq-item summary::after { content: ""; flex: none; width: 16px; height: 16px; margin-top: 7px; background: linear-gradient(currentColor, currentColor) center / 16px 1px no-repeat, linear-gradient(currentColor, currentColor) center / 1px 16px no-repeat; transition: transform .25s var(--fgs-ease); }
+.fgs-faq-item summary::after { content: ""; flex: none; width: 16px; height: 16px; margin-top: 7px; background: linear-gradient(currentColor, currentColor) center / 16px 1px no-repeat, linear-gradient(currentColor, currentColor) center / 1px 16px no-repeat; transition: transform 400ms var(--fgs-ease); }
 .fgs-faq-item[open] summary::after { transform: rotate(45deg); }
 .fgs-faq-a { padding: 0 48px 28px 0; }
 .fgs-faq-a > * + * { margin-top: 14px; }
@@ -573,9 +573,9 @@ html:not(.fgs-js) .fgs-faq-more { display: none; }
 /* navy 50 % laut Brief; dazu eine weiche Abdunklung hinter der Textmitte, damit auch der kleine Text über der hellen Fassade lesbar bleibt (Kontrast gemessen, PLAN.md §3.11) */
 .fgs-closing-media::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 62% 58% at 50% 50%, rgba(8, 8, 47, .5), rgba(8, 8, 47, 0) 100%), rgba(8, 8, 47, .5); }
 .fgs-closing-media img { width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 50%; }
-.fgs-closing-frame.is-zooming .fgs-closing-media img { animation: fgs-closing-zoom 16s ease-in-out infinite alternate; }
+/* Update 23 A3: Zoom nur bei prefers-reduced-motion: no-preference (fg-system.js setzt is-zooming ebenfalls nur dann) */
+@media (prefers-reduced-motion: no-preference) { .fgs-closing-frame.is-zooming .fgs-closing-media img { animation: fgs-closing-zoom 16s ease-in-out infinite alternate; } }
 @keyframes fgs-closing-zoom { from { transform: scale(1); } to { transform: scale(1.08); } }
-@media (prefers-reduced-motion: reduce) { .fgs-closing-frame.is-zooming .fgs-closing-media img { animation: none; } }
 .fgs-closing-inner { width: 100%; max-width: 860px; padding: 88px var(--fgs-pad); }
 .fgs-closing-sentence { margin-inline: auto !important; font-family: var(--fgs-serif); font-size: var(--fgs-h2); line-height: 1.18; color: #fff; max-width: 20ch !important; text-wrap: balance; }
 .fgs-closing .fgs-btns { margin-top: 40px; justify-content: center; }
@@ -609,7 +609,7 @@ html:not(.fgs-js) .fgs-faq-more { display: none; }
 .fgs .fgd-form input:not([type="checkbox"]):not([type="radio"]), .fgs .fgd-form select, .fgs .fgd-form textarea {
   width: 100%; min-height: 48px; padding: 8px 0; border: 0; border-bottom: 1px solid rgba(8, 8, 47, .35); border-radius: 0;
   background: transparent; color: var(--fgs-ink); font: 400 18px/1.45 var(--fgs-sans); appearance: none; -webkit-appearance: none;
-  transition: border-color .2s;
+  transition: border-color 400ms var(--fgs-ease);
 }
 .fgs .fgd-form select { background: linear-gradient(45deg, transparent 50%, currentColor 50%) right 6px center / 6px 6px no-repeat, linear-gradient(-45deg, transparent 50%, currentColor 50%) right 0 center / 6px 6px no-repeat; padding-right: 24px; }
 .fgs .fgd-form textarea { min-height: 96px; resize: vertical; }
@@ -645,14 +645,14 @@ html:not(.fgs-js) .fgs-faq-more { display: none; }
   display: inline-flex; align-items: center; justify-content: center; gap: 12px;
   min-height: 56px; padding: 0 28px; border: 1px solid transparent; border-radius: var(--fgs-r);
   background: var(--fgs-gold); color: var(--fgs-navy) !important; font: 500 16px/1.2 var(--fgs-sans); letter-spacing: .01em;
-  cursor: pointer; transition: background-color .2s;
+  cursor: pointer; transition: background-color 400ms var(--fgs-ease);
 }
 .fgs .fgd-widget-ph .fgd-btn:hover { background: #DCC37D; }
 .fgs .fgd-widget-frame { min-height: 220px; }
 .fgs .fgd-widget-frame iframe { display: block; width: 100%; max-width: 100%; border: 0; }
 /* Fortschrittslinie (Bewertung, mehrstufig) */
 .fgs-progress { height: 2px; background: var(--fgs-line); position: relative; }
-.fgs-progress span { position: absolute; inset: 0 auto 0 0; background: var(--fgs-gold); transition: width .35s var(--fgs-ease); }
+.fgs-progress span { position: absolute; inset: 0 auto 0 0; background: var(--fgs-gold); transition: width 400ms var(--fgs-ease); }
 
 /* ---------- Fuß (5.7): navy, vier Spalten ---------- */
 .fgs-footer { background: var(--fgs-navy); color: var(--fgs-on-navy); padding-block: 96px 40px; font-size: 15px; line-height: 1.6; }
@@ -695,14 +695,14 @@ html:not(.fgs-js) .fgs-faq-more { display: none; }
 @media (max-width: 639px) {
   /* Design-Pass 2, Entscheidungen 29.10.2026, Blatt 6: runder Symbolknopf, 48 px, 16 px vom Rand; blendet beim Runterscrollen aus
      und beim Hochscrollen wieder ein (fg-design.js, updateLauncher) */
-  .fgs .fgd-assistant-launcher { right: 16px; bottom: 16px; width: 48px; height: 48px; padding: 0; border-radius: 50%; justify-content: center; transition: opacity .25s, transform .25s, visibility 0s linear 0s; }
+  .fgs .fgd-assistant-launcher { right: 16px; bottom: 16px; width: 48px; height: 48px; padding: 0; border-radius: 50%; justify-content: center; transition: opacity 400ms var(--fgs-ease), transform 400ms var(--fgs-ease), visibility 0s linear 0s; }
   .fgs .fgd-assistant-launcher span { display: none; }
-  html.fgd-js .fgs .fgd-assistant-launcher:not(.is-shown) { opacity: 0; visibility: hidden; transform: translateY(12px); pointer-events: none; transition: opacity .25s, transform .25s, visibility 0s linear .25s; }
+  html.fgd-js .fgs .fgd-assistant-launcher:not(.is-shown) { opacity: 0; visibility: hidden; transform: translateY(12px); pointer-events: none; transition: opacity 400ms var(--fgs-ease), transform 400ms var(--fgs-ease), visibility 0s linear 0.4s; }
 }
 /* Update 7, Frage 15: unter 768 px Formularabschnitte und /immobilienbewertung/ ohne Startknopf (fg-design.js setzt is-form-hidden);
    auf allen Breiten unten genug Platz (Knopf 48 px + 20 px Abstand), damit er am Seitenende keinen Button und keinen Text verdeckt. */
 @media (max-width: 767px) {
-  html.fgd-js .fgs .fgd-assistant-launcher.is-form-hidden { opacity: 0; visibility: hidden; transform: translateY(12px); pointer-events: none; transition: opacity .25s, transform .25s, visibility 0s linear .25s; }
+  html.fgd-js .fgs .fgd-assistant-launcher.is-form-hidden { opacity: 0; visibility: hidden; transform: translateY(12px); pointer-events: none; transition: opacity 400ms var(--fgs-ease), transform 400ms var(--fgs-ease), visibility 0s linear 0.4s; }
 }
 .fgs-footer { padding-bottom: 88px; }
 
@@ -752,7 +752,7 @@ button.fgs-link { border: 0; padding: 0 0 2px; cursor: pointer; background-color
 .fgs-closing-body { margin-top: 20px; }
 .fgs-closing-body > p { color: rgba(255, 255, 255, .86); max-width: 54ch; margin-inline: auto !important; }
 .fgs-closing-links { list-style: none; margin: 32px auto 0 !important; max-width: 600px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding: 0; }
-.fgs-closing-links a { display: inline-block; padding: 12px 20px; border: 1px solid rgba(255, 255, 255, .3); border-radius: 999px; background: rgba(255, 255, 255, .06); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); color: #fff !important; font: 400 14px/1.3 var(--fgs-sans); text-decoration: none !important; transition: background-color .2s; }
+.fgs-closing-links a { display: inline-block; padding: 12px 20px; border: 1px solid rgba(255, 255, 255, .3); border-radius: 999px; background: rgba(255, 255, 255, .06); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); color: #fff !important; font: 400 14px/1.3 var(--fgs-sans); text-decoration: none !important; transition: background-color 400ms var(--fgs-ease); }
 .fgs-closing-links a:hover, .fgs-closing-links a:focus-visible { background: rgba(255, 255, 255, .18); }
 
 /* ---------- CP2: Leistungsseiten (5.2, fgs-service.njk) ---------- */
@@ -932,7 +932,7 @@ button.fgs-link { border: 0; padding: 0 0 2px; cursor: pointer; background-color
 .fgs-wizard .fgd-wizard-count { font: 400 var(--fgs-h3)/1.3 var(--fgs-serif); color: var(--fgs-ink-2); }
 .fgs-wizard .fgd-wizard-count [data-fgd-wizard-nr], .fgs-wizard .fgd-wizard-count [data-fgd-wizard-name] { color: var(--fgs-ink); }
 .fgs-wizard .fgd-wizard-bar { position: relative; height: 3px; background: var(--fgs-line); overflow: hidden; }
-.fgs-wizard .fgd-wizard-bar span { display: block; width: 20%; height: 100%; background: var(--fgs-gold); transition: width .5s ease; }
+.fgs-wizard .fgd-wizard-bar span { display: block; width: 20%; height: 100%; background: var(--fgs-gold); transition: width 400ms var(--fgs-ease); }
 .fgs-wizard .fgd-wizard-names { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin: 0; padding: 0; list-style: none; font-size: 14px; line-height: 1.4; color: var(--fgs-ink-2); }
 .fgs-wizard .fgd-wizard-names li { margin: 0; }
 .fgs-wizard .fgd-wizard-names li.is-current { color: var(--fgs-ink); font-weight: 500; }
@@ -943,7 +943,7 @@ button.fgs-link { border: 0; padding: 0 0 2px; cursor: pointer; background-color
 .fgs-wizard .fgd-form-hint { font-size: 15px; line-height: 1.55; color: var(--fgs-ink-2); }
 .fgs-wizard .fgd-field-row--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .fgs .fgd-choices { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--fgs-line); border-left: 1px solid var(--fgs-line); }
-.fgs .fgd-form .fgd-choice { display: flex; align-items: center; gap: 10px; min-height: 64px; padding: 14px; border-right: 1px solid var(--fgs-line); border-bottom: 1px solid var(--fgs-line); font: 400 16px/1.35 var(--fgs-sans); cursor: pointer; overflow-wrap: anywhere; -webkit-hyphens: manual; hyphens: manual; transition: background-color .2s; } /* Timon 31.10.2026 „formatierung?“: mit hyphens: none galten die &shy; im Markup nicht, „Eigentumswohnung“ ragte bei 390–430 px in die Nachbarzelle */
+.fgs .fgd-form .fgd-choice { display: flex; align-items: center; gap: 10px; min-height: 64px; padding: 14px; border-right: 1px solid var(--fgs-line); border-bottom: 1px solid var(--fgs-line); font: 400 16px/1.35 var(--fgs-sans); cursor: pointer; overflow-wrap: anywhere; -webkit-hyphens: manual; hyphens: manual; transition: background-color 400ms var(--fgs-ease); } /* Timon 31.10.2026 „formatierung?“: mit hyphens: none galten die &shy; im Markup nicht, „Eigentumswohnung“ ragte bei 390–430 px in die Nachbarzelle */
 .fgs .fgd-form .fgd-choice input { flex: none; width: 18px; height: 18px; margin: 0; accent-color: var(--fgs-ink); }
 .fgs .fgd-form .fgd-choice:hover { background: rgba(8, 8, 47, .03); }
 .fgs .fgd-form .fgd-choice:has(input:checked) { background: rgba(209, 180, 100, .16); }
@@ -1079,7 +1079,7 @@ button.fgs-link { border: 0; padding: 0 0 2px; cursor: pointer; background-color
 .fgs-offer[hidden], .fgs-project[hidden] { display: none; }
 .fgs-offer-link { display: flex; flex-direction: column; height: 100%; color: var(--fgs-ink); text-decoration: none; }
 .fgs-offer-media { aspect-ratio: 4 / 3; }
-.fgs-offer-link .fgs-media img { transition: transform .6s var(--fgs-ease); }
+.fgs-offer-link .fgs-media img { transition: transform 800ms var(--fgs-ease); }
 .fgs-offer-link:hover .fgs-media img { transform: scale(1.03); }
 /* Update 7, Frage 28: Platzhalter ohne Foto hell, feine Linie und Text, kein Navy */
 .fgs-offer-placeholder { position: absolute; inset: 0; display: grid; place-content: center; border: 1px solid var(--fgs-line); border-radius: var(--fgs-r); background: var(--fgs-bg); color: var(--fgs-ink-2); font-size: 15px; letter-spacing: .02em; }
@@ -1100,6 +1100,10 @@ button.fgs-link { border: 0; padding: 0 0 2px; cursor: pointer; background-color
 .fgs-project-body { grid-column: 9 / span 4; }
 .fgs-project-body > .fgs-offer-meta { margin-top: 0; }
 .fgs-project-title { font-size: var(--fgs-h2); line-height: 1.15; }
+/* Update 23 A2: Gekürzte Titel (zwei Zeilen, overflow: hidden) mit 1,15 schnitten unten g, p, y und Q an (Marcellus reicht
+   0,28 em unter die Grundlinie, der Zeilenkasten bei 1,15 nur 0,23 em). Ein Polster ginge hier nicht: Es zeigte die Umlautpunkte
+   der weggekürzten dritten Zeile. Deshalb 1,25, dann fasst der Zeilenkasten die Unterlängen. */
+.fgs-tiles .fgs-card-title--offer, .fgs-project-title { line-height: 1.25; }
 @media (max-width: 899px) { .fgs-project-media, .fgs-project-body { grid-column: 1 / -1; } .fgs-project-body > .fgs-offer-meta { margin-top: 20px; } }
 .fgs-offers-empty { margin-top: 24px; max-width: 62ch; }
 /* CP4 Objekt-, Projekt- und Referenzseiten (fgs-listing.njk): Regeln weiter unten nach dem Lexikon (CP5: nach Brief 5.5 umgebaut) */
@@ -1171,7 +1175,7 @@ button.fgs-link { border: 0; padding: 0 0 2px; cursor: pointer; background-color
 .fgs-listing-meta { margin-top: 20px; font-size: 15px; line-height: 1.6; color: var(--fgs-ink-2); }
 .fgs-listing-meta a { color: var(--fgs-ink); }
 .fgs-gallery-stage { aspect-ratio: 16 / 10; max-height: 78vh; width: 100%; }
-.fgs-gallery-stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .4s var(--fgs-ease); }
+.fgs-gallery-stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 400ms var(--fgs-ease); }
 .fgs-gallery-stage img.is-active { opacity: 1; }
 @media (max-width: 599px) { .fgs-gallery-stage { aspect-ratio: 4 / 3; } }
 .fgs-gallery-bar { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 12px; }
@@ -1223,7 +1227,7 @@ button.fgs-link { border: 0; padding: 0 0 2px; cursor: pointer; background-color
 @media (max-width: 599px) { .fgs-invest-results { grid-template-columns: minmax(0, 1fr); } }
 .fgs-invest-chart { margin-top: 40px; }
 .fgs-invest-bars { display: flex; align-items: flex-end; gap: 12px; height: 160px; margin-top: 16px; border-bottom: 1px solid var(--fgs-ink); }
-.fgs-invest-bars i { flex: 1; background: var(--fgs-ink); opacity: .85; transition: height .3s var(--fgs-ease); }
+.fgs-invest-bars i { flex: 1; background: var(--fgs-ink); opacity: .85; transition: height 400ms var(--fgs-ease); }
 .fgs-invest-bar-labels { display: flex; gap: 12px; margin-top: 8px; font-size: 13px; color: var(--fgs-ink-2); }
 .fgs-invest-bar-labels span { flex: 1; text-align: center; }
 .fgs-invest .fgs-cols-body > .fgs-invest-fields, .fgs-invest .fgs-cols-body > .fgs-invest-results, .fgs-invest .fgs-cols-body > .fgs-invest-chart { margin-top: 40px; }
@@ -1352,7 +1356,7 @@ button.fgs-link { border: 0; padding: 0 0 2px; cursor: pointer; background-color
 .fgs-pick > span { display: block; }
 .fgs-pick .fgs-offer-title { display: -webkit-box; } /* Update 7 §3.4: zwei Zeilen wie auf den Karten */
 .fgs-pick:hover .fgs-offer-title { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; }
-.fgs-pick .fgs-offer-media { outline: 1px solid transparent; outline-offset: 6px; transition: outline-color .2s var(--fgs-ease); }
+.fgs-pick .fgs-offer-media { outline: 1px solid transparent; outline-offset: 6px; transition: outline-color 400ms var(--fgs-ease); }
 .fgs-pick:has(input:checked) .fgs-offer-media { outline-color: var(--fgs-ink); }
 .fgs-pick-facts { display: flex !important; flex-wrap: wrap; gap: 4px 16px; margin-top: 8px; font-size: 15px; color: var(--fgs-ink-2); }
 .fgs-pick-facts:empty { display: none !important; }
@@ -1486,7 +1490,7 @@ button.fgs-link { border: 0; padding: 0 0 2px; cursor: pointer; background-color
 .fgs-triptych { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: 56px; }
 .fgs-tri { position: relative; display: flex; flex-direction: column; justify-content: flex-end; height: 80vh; min-height: 520px; overflow: hidden; color: #fff; text-decoration: none; background: var(--fgs-navy); }
 .fgs-tri .fgs-media { position: absolute; inset: 0; border-radius: 0; }
-.fgs .fgs-tri .fgs-media img, html.fgs-js .fgs-tri .fgs-reveal.is-in img { transition: transform .8s var(--fgs-ease), opacity .6s var(--fgs-ease); }
+.fgs .fgs-tri .fgs-media img, html.fgs-js .fgs-tri .fgs-reveal.is-in img { transition: transform 800ms var(--fgs-ease), opacity 800ms var(--fgs-ease); }
 .fgs .fgs-tri:hover .fgs-media img, html.fgs-js .fgs-tri:hover .fgs-reveal.is-in img { transform: scale(1.04); }
 .fgs-tri-text { position: relative; z-index: 2; padding: 0 clamp(24px, 3vw, 48px) 48px; }
 .fgs-tri-title { font-family: var(--fgs-serif); font-size: clamp(28px, calc(28px + 8 * (100vw - 390px) / 1050), 36px); line-height: 1.15; color: #fff; }
@@ -1551,7 +1555,7 @@ button.fgs-link { border: 0; padding: 0 0 2px; cursor: pointer; background-color
    mit weichem Übergang. Ohne Skript bleibt die Spur so hoch wie die längste Folie. */
 /* Update 8 §3.4 (29.10.2026): dasselbe für die Bewertungskarten der Gebietsseiten (.fgs-rail--quotes). */
 .fgs-rail--single .fgs-rail-track, .fgs-rail--quotes .fgs-rail-track { align-items: flex-start; }
-.fgs-rail--single.is-fitted .fgs-rail-track, .fgs-rail--quotes.is-fitted .fgs-rail-track { overflow-y: hidden; transition: height .45s cubic-bezier(.2, .7, .2, 1); }
+.fgs-rail--single.is-fitted .fgs-rail-track, .fgs-rail--quotes.is-fitted .fgs-rail-track { overflow-y: hidden; transition: height 400ms var(--fgs-ease); }
 @media (prefers-reduced-motion: reduce) { .fgs-rail--single.is-fitted .fgs-rail-track, .fgs-rail--quotes.is-fitted .fgs-rail-track { transition: none; } }
 .fgs-rail--single .fgs-quote { border-top: 0; padding-top: 0; align-items: center; text-align: center; max-width: 900px; margin-inline: auto; }
 .fgs-rail--single .fgs-quote blockquote { margin-top: 16px; font-family: var(--fgs-serif); font-size: clamp(21px, calc(21px + 5 * (100vw - 390px) / 1050), 26px); line-height: 1.45; }
@@ -1628,7 +1632,7 @@ button.fgs-link { border: 0; padding: 0 0 2px; cursor: pointer; background-color
 /* Aufklapper (§2 Regel 2.1, §5.2, §5.5, §5.7): zu beim Laden, ein Sprung auf den Anker öffnet ihn (fg-system.js) */
 .fgs-more > summary { list-style: none; cursor: pointer; }
 .fgs-more > summary::-webkit-details-marker { display: none; }
-.fgs-more > summary .fgs-link svg { transition: transform .25s var(--fgs-ease); }
+.fgs-more > summary .fgs-link svg { transition: transform 400ms var(--fgs-ease); }
 .fgs-more[open] > summary .fgs-link svg { transform: rotate(90deg); }
 .fgs-more:not(.fgs-more--facts) > summary { display: inline-block; }
 .fgs-more > p { margin-top: 18px; }
@@ -1636,7 +1640,7 @@ button.fgs-link { border: 0; padding: 0 0 2px; cursor: pointer; background-color
 /* „Alle Zahlen … mit Quellen“: Titelzeile mit Plus, darunter der Satz zu den Kaufpreisen (§7) */
 .fgs-more--facts { margin-top: 40px; border-top: 1px solid var(--fgs-line); border-bottom: 1px solid var(--fgs-line); }
 .fgs-more--facts > summary { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 24px; align-items: center; padding: 22px 0; }
-.fgs-more--facts > summary::after { content: ""; grid-column: 2; grid-row: 1 / span 2; width: 16px; height: 16px; background: linear-gradient(currentColor, currentColor) center / 16px 1px no-repeat, linear-gradient(currentColor, currentColor) center / 1px 16px no-repeat; transition: transform .25s var(--fgs-ease); }
+.fgs-more--facts > summary::after { content: ""; grid-column: 2; grid-row: 1 / span 2; width: 16px; height: 16px; background: linear-gradient(currentColor, currentColor) center / 16px 1px no-repeat, linear-gradient(currentColor, currentColor) center / 1px 16px no-repeat; transition: transform 400ms var(--fgs-ease); }
 .fgs-more--facts[open] > summary::after { transform: rotate(45deg); }
 .fgs-more-title { font-family: var(--fgs-serif); font-size: var(--fgs-h3); line-height: 1.3; color: var(--fgs-ink); }
 .fgs-more-line { display: block; margin-top: 6px; font-size: 15px; line-height: 1.5; color: var(--fgs-ink-2); }
@@ -1750,7 +1754,7 @@ figure.fgs-band { margin: 0; }
   .fgs-steps--reihe.is-row > li { display: contents; }
   .fgs-steps--reihe.is-row > li > * { grid-column: var(--i); min-width: 0; }
   .fgs-steps--reihe.is-row > li > .fgs-step-num { grid-row: 1; display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid var(--fgs-ink); cursor: pointer; }
-  .fgs-steps--reihe.is-row > li > .fgs-step-num::after { content: ""; width: 14px; height: 14px; background: linear-gradient(currentColor, currentColor) center / 14px 1px no-repeat, linear-gradient(currentColor, currentColor) center / 1px 14px no-repeat; transition: transform .25s var(--fgs-ease); }
+  .fgs-steps--reihe.is-row > li > .fgs-step-num::after { content: ""; width: 14px; height: 14px; background: linear-gradient(currentColor, currentColor) center / 14px 1px no-repeat, linear-gradient(currentColor, currentColor) center / 1px 14px no-repeat; transition: transform 400ms var(--fgs-ease); }
   .fgs-steps--reihe.is-row > li.is-open > .fgs-step-num::after { transform: rotate(45deg); }
   .fgs-steps--reihe.is-row > li.is-open > .fgs-step-num { border-top: 2px solid var(--fgs-gold); padding-top: 23px; }
   /* Titel ohne automatische Trennung (sie trennte „Finanzie-rungsrahmen“); Wörter, die nicht in die Spalte passen, haben im Quelltext
@@ -1762,7 +1766,7 @@ figure.fgs-band { margin: 0; }
     width: calc((100% - (var(--n) - 1) * 24px) / var(--n)); left: calc((var(--i) - 1) * ((100% - (var(--n) - 1) * 24px) / var(--n) + 24px)); }
   .fgs-steps--reihe.is-row > li > .fgs-step-panel > * { max-width: 68ch; }
   .fgs-steps--reihe.is-row > li.is-open > .fgs-step-panel { display: block; }
-  .fgs-steps--reihe.is-row > li > :is(.fgs-step-num, h3, .fgs-step-lead) { transition: color .2s var(--fgs-ease); }
+  .fgs-steps--reihe.is-row > li > :is(.fgs-step-num, h3, .fgs-step-lead) { transition: color 400ms var(--fgs-ease); }
   .fgs-steps--reihe.is-row > li:is(:hover, .is-open) > :is(h3, .fgs-step-num) { color: var(--fgs-gold-text); }
   .fgs-wrap > .fgs-steps--reihe.is-row + .fgs-note { margin-top: 32px; }
   .fgs-head + .fgs-steps--reihe.is-row { margin-top: 40px; }
@@ -1777,11 +1781,11 @@ figure.fgs-band { margin: 0; }
 .fgs-refs .fgs-wrap > .fgs-more--ref { border-top: 1px solid var(--fgs-line); }
 .fgs-refs .fgs-wrap > .fgs-more--ref:last-child { border-bottom: 1px solid var(--fgs-line); }
 .fgs-more.fgs-more--ref > summary { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 24px; align-items: center; padding: 28px 0; }
-.fgs-more.fgs-more--ref > summary::after { content: ""; width: 24px; height: 24px; background: linear-gradient(currentColor, currentColor) center / 24px 1px no-repeat, linear-gradient(currentColor, currentColor) center / 1px 24px no-repeat; transition: transform .25s var(--fgs-ease); }
+.fgs-more.fgs-more--ref > summary::after { content: ""; width: 24px; height: 24px; background: linear-gradient(currentColor, currentColor) center / 24px 1px no-repeat, linear-gradient(currentColor, currentColor) center / 1px 24px no-repeat; transition: transform 400ms var(--fgs-ease); }
 .fgs-more.fgs-more--ref[open] > summary::after { transform: rotate(45deg); }
 .fgs-more.fgs-more--ref > summary:hover .fgs-more-head { color: var(--fgs-gold-text); }
 .fgs-more.fgs-more--ref > summary:focus-visible { outline: 2px solid var(--fgs-gold); outline-offset: 4px; }
-.fgs-more-head { margin: 0; transition: color .2s var(--fgs-ease); }
+.fgs-more-head { margin: 0; transition: color 400ms var(--fgs-ease); }
 .fgs-more-body { padding-bottom: 56px; max-width: 980px; }
 /* „Mehr erfahren“ (§2 Regel 1): Inhalt mit den Abständen eines Fließtexts */
 .fgs-more--text { margin-top: 16px; }
@@ -1857,7 +1861,7 @@ figure.fgs-band { margin: 0; }
 .fgs-pagecredits { border-top: 1px solid var(--fgs-line); font-family: var(--fgs-sans); font-size: 13px; line-height: 1.6; color: var(--fgs-ink-2); }
 .fgs-pagecredits summary { display: inline-flex; align-items: center; gap: 10px; padding: 16px 0; cursor: pointer; list-style: none; }
 .fgs-pagecredits summary::-webkit-details-marker { display: none; }
-.fgs-pagecredits summary::after { content: ""; width: 9px; height: 9px; background: linear-gradient(currentColor, currentColor) center / 9px 1px no-repeat, linear-gradient(currentColor, currentColor) center / 1px 9px no-repeat; transition: transform .2s var(--fgs-ease); }
+.fgs-pagecredits summary::after { content: ""; width: 9px; height: 9px; background: linear-gradient(currentColor, currentColor) center / 9px 1px no-repeat, linear-gradient(currentColor, currentColor) center / 1px 9px no-repeat; transition: transform 400ms var(--fgs-ease); }
 .fgs-pagecredits[open] summary::after { transform: rotate(45deg); }
 .fgs-pagecredits ul { margin: 0; padding: 0 0 24px; list-style: none; }
 .fgs-pagecredits li + li { margin-top: 4px; }
@@ -1877,7 +1881,7 @@ figure.fgs-band { margin: 0; }
   --fgs-h2-chapter: var(--fgs-h2);
   --fgs-h1-hero: clamp(36px, calc(36px + 22 * (100vw - 390px) / 1050), 58px);
   --fgs-sec: clamp(96px, calc(96px + 64 * (100vw - 390px) / 1050), 160px);
-  --fgs-wipe: cubic-bezier(.7, 0, .3, 1);
+  --fgs-wipe: var(--fgs-ease); /* Update 23 D5, vorher cubic-bezier(.7, 0, .3, 1) */
 }
 /* Die kürzeren Abstände aus Design-Pass 2 (Startseite 96, Gebiets- und Leistungsseiten 64 px, zwei helle Abschnitte
    hintereinander oben 56 / 40 px) entfallen: jeder Abschnitt hat 160 px oben und unten. */
@@ -1915,19 +1919,19 @@ body.fgs, body.fgs-home, body.fgs-area, body.fgs-service { --fgs-sec: clamp(96px
   display: inline-flex; align-items: center; justify-content: center; gap: 12px;
   min-height: 52px; padding: 0 34px; border-radius: 0;
   font: 600 13px/1.2 var(--fgs-sans); letter-spacing: .14em; text-transform: uppercase;
-  transition: color .5s var(--fgs-wipe), background-color .3s, border-color .3s;
+  transition: color 400ms var(--fgs-ease), background-color 400ms var(--fgs-ease), border-color 400ms var(--fgs-ease);
 }
 .fgs-btn::before, .fgs .fgd-form .fgd-btn::before, .fgs .fgd-form button[type="submit"]::before, .fgs .fgd-widget-ph .fgd-btn::before {
   content: ""; position: absolute; inset: 0; z-index: -1; background: var(--fgs-navy);
-  transform: scaleX(0); transform-origin: left center; transition: transform .5s var(--fgs-wipe);
+  transform: scaleX(0); transform-origin: left center; transition: transform 400ms var(--fgs-ease);
 }
 .fgs-btn::after {
   content: ""; flex: none; width: 14px; height: 14px; background: currentColor;
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none' stroke='%23000' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 7h11.5M8 2.5 12.5 7 8 11.5'/%3E%3C/svg%3E") center / contain no-repeat;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none' stroke='%23000' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 7h11.5M8 2.5 12.5 7 8 11.5'/%3E%3C/svg%3E") center / contain no-repeat;
-  transition: transform .3s var(--fgs-ease);
+  transition: transform 400ms var(--fgs-ease);
 }
-.fgs .fgd-form .fgd-btn svg, .fgs .fgd-form button[type="submit"] svg, .fgs .fgd-widget-ph .fgd-btn svg { width: 14px; height: 14px; flex: none; transition: transform .3s var(--fgs-ease); }
+.fgs .fgd-form .fgd-btn svg, .fgs .fgd-form button[type="submit"] svg, .fgs .fgd-widget-ph .fgd-btn svg { width: 14px; height: 14px; flex: none; transition: transform 400ms var(--fgs-ease); }
 .fgs-btn:hover::after, .fgs .fgd-btn:hover svg, .fgs .fgd-form button[type="submit"]:hover svg { transform: translateX(4px); }
 
 /* Primär: Gold mit Navy-Schrift; beim Darüberfahren wischt Navy von links herein, die Schrift wird gold */
@@ -1966,7 +1970,7 @@ body.fgs-has-hero .fgs-header:not(.is-scrolled):not(.is-open) :focus-visible { o
 /* §2.4 Kopf. Über dem Titelbild ein Glasstreifen (Navy 18 %, Unschärfe 16 px) mit weißem Logo und Menü; nach 80 px Scrollen
    sofort Grundton mit 1 px Haarlinie Navy 8 % und Navy-Schrift (kein Überblenden). Ab 600 px beim Scrollen nach unten
    ausgeblendet, beim Scrollen nach oben wieder da (translateY, 0,45 s). fg-system.js setzt is-scrolled und is-hidden. */
-.fgs-header { border-bottom-color: rgba(8, 8, 47, .08); transition: transform .45s var(--fgs-ease); }
+.fgs-header { border-bottom-color: rgba(8, 8, 47, .08); transition: transform 400ms var(--fgs-ease); }
 body.fgs-has-hero .fgs-header:not(.is-scrolled):not(.is-open) {
   background: rgba(8, 8, 47, .18); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-color: transparent; color: #fff;
 }
@@ -1989,20 +1993,24 @@ body.fgs-has-hero .fgs-header:not(.is-scrolled):not(.is-open) {
   .fgs .fgd-form button[type="submit"], .fgs .fgd-form button[type="submit"]::before, .fgs-header { transition: none; }
 }
 
-/* §3.3 Ihre Ansprechpartner (Startseite): links fünf Spalten Text, rechts sieben Spalten mit zwei Karten nach Huttons.
-   Der Brief nennt Karten von 420 × 560 px; zwei davon brauchen 856 px, die sieben Spalten des 1200-px-Containers sind 690 px
-   breit. Die Karten behalten deshalb das Seitenverhältnis 3 : 4 und füllen die sieben Spalten (bei 1440 px rund 337 × 449 px),
-   höchstens 420 px breit. Unter 1240 px stehen die Karten unter dem Text, auf dem Handy seitlich zum Wischen (82 vw). */
-.fgs-partners { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--fgs-gap); align-items: start; }
-.fgs-partners-text { grid-column: 1 / span 5; }
-.fgs-partners-lead { margin-top: 24px !important; }
-.fgs-promises { margin: 40px 0 0; }
-.fgs-promises > div { border-top: 1px solid var(--fgs-line); padding: 20px 0; }
-.fgs-promises > div:last-child { border-bottom: 1px solid var(--fgs-line); }
-.fgs-promises dt { font-family: var(--fgs-serif); font-size: 22px; line-height: 1.3; color: var(--fgs-ink); }
-.fgs-promises dd { margin: 6px 0 0; font-size: 15px; line-height: 1.6; color: var(--fgs-ink-2); }
-.fgs-partners-text > .fgs-link { margin-top: 32px; }
-.fgs-partners-cards { grid-column: 6 / span 7; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 420px)); gap: 16px; justify-content: end; align-self: center; }
+/* §3.3 Ihre Ansprechpartner (Startseite). Update 23 A4: drei Zeilen statt fünf Spalten Text neben sieben Spalten Karten.
+   1. Kopf: links Dachzeile und H2, rechts der Satz, höchstens 520 px, unten bündig mit der H2 (rutscht erst unter rund 900 px darunter).
+   2. Die beiden Karten je halbe Inhaltsbreite (Porträt 4 : 5, Text darunter, Update 22 §3); auf dem Handy weiter zum Wischen.
+   3. Die vier Grundsätze in vier gleichen Spalten mit 1 px Gold oben; Nummer Marcellus 20 px, Titel Marcellus 22 px, Text 15 px.
+      Jede Spalte ist ein Subgrid über zwei Zeilen des Elternrasters (Titel, Text): Die Titelzeile ist so hoch wie der längste
+      Titel daneben, die Texte beginnen auf einer Linie. Unter 1240 px 2 × 2, auf dem Handy eine Spalte. */
+.fgs-partners-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px 48px; }
+.fgs-partners-head h2 { margin-top: 16px; }
+.fgs-partners-lead { flex: 1 1 320px; max-width: 520px; } /* Grundbreite 320 px: wird bis 520 px breit und rutscht erst unter die H2, wenn neben ihr keine 320 px frei sind */
+.fgs-partners-cards { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--fgs-gap); margin-top: var(--fgs-head-gap); }
+.fgs-promises { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: var(--fgs-gap); row-gap: 48px; margin: 72px 0 0; }
+.fgs-promises > div { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 0; align-content: start; border-top: 1px solid var(--fgs-gold); padding-top: 24px; }
+.fgs-promise-nr { display: block; margin-bottom: 12px; font: 400 20px/1.2 var(--fgs-serif); color: var(--fgs-gold-text); }
+.fgs-promises dt { font-family: var(--fgs-serif); font-size: 22px; line-height: 1.3; color: var(--fgs-ink); text-wrap: balance; }
+.fgs-promises dd { margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: var(--fgs-ink-2); }
+.fgs-partners-more { display: flex; justify-content: flex-end; margin-top: 48px; }
+@media (max-width: 1239px) { .fgs-promises { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 767px) { .fgs-promises { grid-template-columns: minmax(0, 1fr); row-gap: 32px; margin-top: 56px; } .fgs-partners-more { margin-top: 32px; } }
 
 /* Grund der Porträtkarten (§3.3, auch Über uns und Profile nach §4.3): Korn 4 % als zweite Ebene über dem Verlauf, unter dem Porträt */
 :root { --fgs-portrait-ground: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E"), radial-gradient(120% 90% at 50% 20%, #23235A 0%, #08082F 70%); }
@@ -2014,11 +2022,11 @@ body.fgs-has-hero .fgs-header:not(.is-scrolled):not(.is-open) {
 /* Unter dem Glasfeld ein Navy-Verlauf über dem unteren Teil des Porträts: Hemd und Anzug sind hell, weiße und goldene Schrift
    auf Glas allein käme dort nicht auf 4,5 : 1 */
 .fgs-partner-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(8, 8, 47, .92) 0%, rgba(8, 8, 47, .75) 38%, rgba(8, 8, 47, 0) 62%); }
-.fgs-partner-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; transform-origin: 50% 30%; transition: transform 1.2s var(--fgs-ease); }
+.fgs-partner-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; transform-origin: 50% 30%; transition: transform 800ms var(--fgs-ease); }
 .fgs-partner-panel {
   position: absolute; left: 12px; right: 12px; bottom: 12px; z-index: 1; display: flex; flex-direction: column; align-items: flex-start;
   padding: 16px 18px 16px; background: rgba(255, 255, 255, .08); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, .18); transition: transform .5s var(--fgs-ease);
+  border: 1px solid rgba(255, 255, 255, .18); transition: transform 400ms var(--fgs-ease);
 }
 .fgs-partner-region { font: 500 12px/1.4 var(--fgs-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--fgs-gold); }
 .fgs .fgs-partner-name { margin-top: 6px; font-family: var(--fgs-serif); font-size: 30px; line-height: 1.1; text-transform: none; letter-spacing: 0; color: #fff; }
@@ -2030,10 +2038,6 @@ body.fgs-has-hero .fgs-header:not(.is-scrolled):not(.is-open) {
 .fgs-partner:hover .fgs-link { background-size: 100% 1px; }
 .fgs-partner:focus-visible { outline: 2px solid var(--fgs-gold-text); outline-offset: 3px; }
 
-@media (max-width: 1239px) {
-  .fgs-partners-text { grid-column: 1 / -1; max-width: 720px; }
-  .fgs-partners-cards { grid-column: 1 / -1; margin-top: 56px; justify-content: start; }
-}
 @media (max-width: 767px) {
   .fgs-partners-cards {
     grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 82vw; overflow-x: auto; scroll-snap-type: x mandatory;
@@ -2082,7 +2086,7 @@ html.fgs-js .fgs-rq.is-open .fgs-rq-text p { display: block; -webkit-line-clamp:
    damit -50 % genau einen Satz verschiebt. Mit reduzierter Bewegung steht es und lässt sich seitlich scrollen. */
 .fgs-ticker { margin-top: 96px; overflow: hidden; }
 .fgs-ticker-track { display: flex; width: max-content; list-style: none; animation: fgs-ticker 60s linear infinite; }
-.fgs-ticker:hover .fgs-ticker-track { animation-play-state: paused; }
+@media (hover: hover) { .fgs-ticker:hover .fgs-ticker-track { animation-play-state: paused; } } /* Update 23 A3: nur mit Maus; auf dem Handy bliebe :hover nach dem Tippen kleben, dort hält touchstart an */
 @keyframes fgs-ticker { to { transform: translateX(-50%); } }
 .fgs-ticker-card { flex: 0 0 min(400px, 82vw); margin-right: 16px; padding: 26px 28px; background: rgba(8, 8, 47, .04); border: 1px solid var(--fgs-line); }
 .fgs-ticker-card figure { height: 100%; display: flex; flex-direction: column; }
@@ -2116,8 +2120,8 @@ html.fgs-js .fgs-rq.is-open .fgs-rq-text p { display: block; -webkit-line-clamp:
 .fgs-obj { display: block; color: var(--fgs-ink); text-decoration: none; }
 .fgs-obj-media { aspect-ratio: 3 / 2; }
 .fgs-obj-frame { position: absolute; inset: 0; transform: scale(var(--fgs-zoom, 1)); transform-origin: var(--fgs-pos, 50% 50%); }
-.fgs-obj-media img { transition: transform 1.2s var(--fgs-ease); }
-html.fgs-js .fgs-obj-media.fgs-reveal img { transition: opacity .6s var(--fgs-ease), transform 1.2s var(--fgs-ease); }
+.fgs-obj-media img { transition: transform 800ms var(--fgs-ease); }
+html.fgs-js .fgs-obj-media.fgs-reveal img { transition: opacity 800ms var(--fgs-ease), transform 800ms var(--fgs-ease); }
 .fgs-obj:hover .fgs-obj-frame img, html.fgs-js .fgs-obj:hover .fgs-obj-media.fgs-reveal.is-in img { transform: scale(1.04); }
 .fgs-obj-design { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; position: relative; overflow: hidden; border-radius: var(--fgs-r); background: radial-gradient(120% 100% at 30% 20%, #23235A 0%, #08082F 70%); }
 .fgs-obj-design::before { content: ""; position: absolute; inset: 18px; border: 1px solid rgba(209, 180, 100, .45); pointer-events: none; }
@@ -2141,7 +2145,7 @@ html.fgs-js .fgs-obj-media.fgs-reveal img { transition: opacity .6s var(--fgs-ea
 .fgs-rail--fold { --fgs-fold-schmal: 432px; --fgs-fold-breit: 720px; --fgs-fold-abstand: 16px; }
 @media (min-width: 768px) {
   .fgs-rail--fold .fgs-rail-track { gap: var(--fgs-fold-abstand); scroll-snap-type: none; align-items: flex-start; }
-  .fgs-rail--fold .fgs-rail-track > li { flex: 0 0 var(--fgs-fold-schmal); scroll-snap-align: none; transition: flex-basis .8s cubic-bezier(.65, 0, .35, 1); }
+  .fgs-rail--fold .fgs-rail-track > li { flex: 0 0 var(--fgs-fold-schmal); scroll-snap-align: none; transition: flex-basis 800ms var(--fgs-ease); }
   .fgs-rail--fold .fgs-rail-track > li.is-lead { flex-basis: var(--fgs-fold-breit); }
   .fgs-rail--fold .fgs-card--onphoto .fgs-media { aspect-ratio: auto; height: 560px; }
   .fgs-rail--fold .fgs-card-name { font-size: 32px; }
@@ -2166,6 +2170,32 @@ html.fgs-js .fgs-obj-media.fgs-reveal img { transition: opacity .6s var(--fgs-ea
 @media (min-width: 1240px) {
   .fgs-facts-sec--count .fgs-facts { container-type: inline-size; }
   .fgs-facts-sec--count .fgs-fact-figure { font-size: min(88px, calc((100cqi - 99px) / 12.1)); }
+}
+/* Update 23 A5: vier gleiche Spalten; jede Kachel ist ein Subgrid über vier Zeilen des Elternrasters (Zahl, Sterne, Text, Quelle),
+   so stehen alle Zahlen auf einer Grundlinie und alle Texte beginnen auf einer Linie, auch wenn nur „5,0“ Sterne hat. Die goldenen
+   Trennlinien sind so hoch wie die Kacheln, also überall gleich. Zahlen 88 px (vier Zeichen passen jetzt), unter 1240 px 2 × 2,
+   auf dem Handy 2 × 2 mit 56 px. Texte 15 px, ab 1240 px höchstens zwei Zeilen (Spalte innen 268 px). */
+.fgs-facts-sec--count .fgs-facts { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 48px; }
+.fgs-facts-sec--count .fgs-fact, .fgs-facts-sec--count .fgs-fact:first-child, .fgs-facts-sec--count .fgs-fact:nth-child(odd) { display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0; align-content: start; padding: 4px 16px 0; border-top: 0; }
+.fgs-facts-sec--count .fgs-fact:first-child { border-left: 0; }
+.fgs-facts-sec--count .fgs-fact-figure { grid-row: 1; font-size: 88px; line-height: 1.05; white-space: nowrap; }
+.fgs-facts-sec--count .fgs-fact-stars { grid-row: 2; display: flex; justify-content: center; gap: 4px; margin-top: 10px; color: var(--fgs-gold); }
+.fgs-fact-stars svg { width: 16px; height: 16px; fill: currentColor; }
+.fgs-facts-sec--count .fgs-fact-text { grid-row: 3; max-width: none; margin-top: 16px; }
+.fgs-facts-sec--count .fgs-source { grid-row: 4; }
+.fgs-fact-unit { font-size: .44em; letter-spacing: .02em; margin-left: .14em; }
+@media (min-width: 1240px) { .fgs-facts-sec--count .fgs-fact-figure { font-size: 88px; } }
+@media (max-width: 1239px) {
+  .fgs-facts-sec--count .fgs-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fgs-facts-sec--count .fgs-fact:nth-child(odd) { border-left: 0; }
+  .fgs-facts-sec--count .fgs-fact-figure { font-size: clamp(56px, calc(56px + 32 * (100vw - 390px) / 850), 88px); }
+}
+@media (max-width: 599px) {
+  .fgs-facts-sec--count .fgs-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 40px; }
+  .fgs-facts-sec--count .fgs-fact, .fgs-facts-sec--count .fgs-fact:first-child, .fgs-facts-sec--count .fgs-fact:nth-child(odd) { padding: 0 12px; }
+  .fgs-facts-sec--count .fgs-fact:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .fgs-facts-sec--count .fgs-fact:nth-child(even) { padding-right: 0; border-left: 1px solid rgba(209, 180, 100, .4); } /* die allgemeinen Handy-Regeln nehmen sonst jede senkrechte Linie weg */
+  .fgs-facts-sec--count .fgs-fact-figure { font-size: 56px; }
 }
 @media print { .fgs-count > .fgs-sr { position: static !important; width: auto; height: auto; overflow: visible; clip: auto; clip-path: none; } .fgs-count-now { display: none; } }
 
@@ -2192,7 +2222,7 @@ html.fgs-js .fgs-obj-media.fgs-reveal img { transition: opacity .6s var(--fgs-ea
   .fgs-indexed .fgs-chapters > .fgs-chapters-body { grid-column: 1 / span 8; }
 
   .fgs-indexed .fgs-ix-track { display: block; position: absolute; z-index: 5; left: calc(var(--fgs-ix-l) - var(--fgs-ix-col) - var(--fgs-ix-abstand)); width: var(--fgs-ix-col); pointer-events: none; }
-  .fgs-ix { position: sticky; top: 140px; max-height: calc(100vh - 172px); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: none; pointer-events: auto; transition: opacity .3s, visibility .3s; }
+  .fgs-ix { position: sticky; top: 140px; max-height: calc(100vh - 172px); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: none; pointer-events: auto; transition: opacity 400ms var(--fgs-ease), visibility 400ms var(--fgs-ease); }
   .fgs-ix::-webkit-scrollbar { display: none; }
   .fgs-ix.is-covered { opacity: 0; visibility: hidden; }
   /* Längere Indexe (Gebietsseiten mit bis zu 17 H2) scrollen in sich; unten läuft die Liste dann sichtbar aus */
@@ -2201,9 +2231,9 @@ html.fgs-js .fgs-obj-media.fgs-reveal img { transition: opacity .6s var(--fgs-ea
   .fgs-ix a {
     position: relative; display: block; padding: 6px 0 6px 16px;
     font-family: var(--fgs-sans); font-size: 12.5px; font-weight: 400; line-height: 1.35; letter-spacing: 0;
-    color: rgba(8, 8, 47, .62) !important; text-decoration: none !important; overflow-wrap: break-word; transition: color .2s;
+    color: rgba(8, 8, 47, .62) !important; text-decoration: none !important; overflow-wrap: break-word; transition: color 400ms var(--fgs-ease);
   }
-  .fgs-ix a::before { content: ""; position: absolute; left: -1px; top: 0; bottom: 0; width: 2px; background: var(--fgs-gold); opacity: 0; transition: opacity .2s; }
+  .fgs-ix a::before { content: ""; position: absolute; left: -1px; top: 0; bottom: 0; width: 2px; background: var(--fgs-gold); opacity: 0; transition: opacity 400ms var(--fgs-ease); }
   .fgs-ix a:hover, .fgs-ix a.is-current { color: var(--fgs-ink) !important; }
   .fgs-ix a.is-current::before { opacity: 1; }
   .fgs-indexed main h2[tabindex="-1"]:focus:not(:focus-visible) { outline: none; }
@@ -2261,7 +2291,7 @@ html.fgs-js .fgs-hero--kb .fgs-hero-media img { animation: fgs-kenburns 7.6s cub
 /* Design-Pass 3 §4.5 Angebotsseite: Einzelobjekte im Raster der Angebotskarte aus §3.8 (.fgs-obj-grid, Filter an den li).
    Projektkarte bleibt breit, Foto nach der Titelbild-Regel 3:2 mit Hover wie die Angebotskarte (1,04 über 1,2 s). */
 .fgs-obj-grid > li[hidden] { display: none; }
-.fgs-project-link .fgs-obj-media img { transition: transform 1.2s var(--fgs-ease); }
+.fgs-project-link .fgs-obj-media img { transition: transform 800ms var(--fgs-ease); }
 .fgs-project-link:hover .fgs-obj-media img { transform: scale(1.04); }
 @media (prefers-reduced-motion: reduce) { .fgs-project-link .fgs-obj-media img, .fgs-project-link:hover .fgs-obj-media img { transition: none; transform: none; } }
 
@@ -2274,7 +2304,7 @@ picture.fgs-pic { display: contents; }
    html.fgs-mo setzt base.njk vor dem ersten Bild, wenn die Seite Bewegung hat (nicht Blogartikel und Lexikoneinträge) und keine
    reduzierte Bewegung gewünscht ist; sind die Skripte nach 3 s nicht da, nimmt base.njk die Klasse wieder weg und alles steht.
    ========================================================================= */
-:root { --fgs-expo: cubic-bezier(.16, 1, .3, 1); }
+:root { --fgs-expo: var(--fgs-ease); } /* Update 23 D5, vorher cubic-bezier(.16, 1, .3, 1) */
 
 /* §2.1 Lenis 1.3.27 (Regeln aus vendor/lenis/lenis.css) */
 html.lenis, html.lenis body { height: auto; }
@@ -2287,23 +2317,34 @@ html.lenis, html.lenis body { height: auto; }
    dieser 1,2 s, danach greifen wieder die Zeiten für das Darüberfahren. */
 html.fgs-mo .fgs-reveal.is-gross:not(.is-in) { clip-path: inset(12% 0 0 0); }
 html.fgs-mo .fgs-reveal.is-gross:not(.is-in) img { opacity: 1; transform: scale(1.12); }
-html.fgs-mo .fgs-reveal.is-enthuellt, html.fgs-mo .fgs-reveal.is-enthuellt img { transition: clip-path 1.2s var(--fgs-expo), transform 1.2s var(--fgs-expo) !important; }
+html.fgs-mo .fgs-reveal.is-enthuellt, html.fgs-mo .fgs-reveal.is-enthuellt img { transition: clip-path 800ms var(--fgs-ease), transform 800ms var(--fgs-ease) !important; }
 
 /* §2.1 Überschriften: fgs-motion.js teilt H1 und H2 in Zeilen mit Maske. Die H1 im Titelbild bleibt bis dahin unsichtbar,
    damit sie nicht erst steht und dann verschwindet. */
 html.fgs-mo .fgs-hero h1 { visibility: hidden; }
+/* Update 23 A2: Die Zeilenmaske von SplitText (overflow: clip, Kasten = Zeilenhöhe) schnitt Unterlängen (g in „Brandenburg“,
+   J, Q) und Umlautpunkte (Ä in „Häufige“) ab. Polster oben und unten, ausgeglichen durch negative Ränder, damit der
+   Zeilenabstand bleibt. Zwischen zwei Masken trägt nur die obere den ganzen Ausgleich (Geschwisterränder fallen zusammen,
+   der größere negative gewinnt). Startlage der Zeile in fgs-motion.js deshalb yPercent 125 statt 100, sonst lugten oben die
+   Spitzen der noch versteckten Zeile ins untere Polster. */
+.fgs-zeile-mask { padding-block: var(--fgs-zeile-oben) var(--fgs-zeile-unten); margin-block: 0 calc(-1 * (var(--fgs-zeile-oben) + var(--fgs-zeile-unten))); --fgs-zeile-oben: .14em; --fgs-zeile-unten: .2em; }
+.fgs-zeile-mask:not(.fgs-zeile-mask ~ .fgs-zeile-mask) { margin-top: calc(-1 * var(--fgs-zeile-oben)); }
+.fgs-zeile-mask:not(:has(~ .fgs-zeile-mask)) { margin-bottom: calc(-1 * var(--fgs-zeile-unten)); }
 html.fgs-mo .fgs-hero--slides .fgs-hero-text > .fgs-label, html.fgs-mo .fgs-hero--slides .fgs-btns { opacity: 0; }
 
-/* §3.1 Diaschau: fünf Folien übereinander, die neue blendet in 1,6 s über die alte (is-vor bleibt darunter stehen, bis die neue
+/* §3.1 Diaschau: vier Folien übereinander (bis Update 23 fünf), die neue blendet in 1,6 s über die alte (is-vor bleibt darunter stehen, bis die neue
    deckt). Ken Burns 1 → 1,08 in 7,6 s (6 s Standzeit plus Überblendung), Ursprung abwechselnd links oben und rechts unten.
    Die Zeit gibt die Animation des Fortschrittssegments vor (fg-system.js, animationend); is-pause hält beides an. */
 .fgs-slides { z-index: 0; }
 .fgs-slides .fgs-slide { position: absolute; inset: 0; opacity: 0; }
 .fgs-slides .fgs-slide > picture { display: block; height: 100%; }
-.fgs-slides .fgs-slide.is-on { opacity: 1; z-index: 2; transition: opacity 1.6s var(--fgs-ease); }
+.fgs-slides .fgs-slide.is-on { opacity: 1; z-index: 2; transition: opacity 800ms var(--fgs-ease); }
 .fgs-slides .fgs-slide.is-vor { opacity: 1; z-index: 1; }
-html.fgs-js .fgs-hero--slides .fgs-hero-media img { animation: none; transform-origin: 30% 35%; }
-html.fgs-js .fgs-hero--slides .fgs-slide:nth-child(even) img { transform-origin: 70% 65%; }
+html.fgs-js .fgs-hero--slides .fgs-hero-media img { animation: none; transform-origin: var(--fgs-slide-kb, 30% 35%); }
+html.fgs-js .fgs-hero--slides .fgs-slide:nth-child(even) img { transform-origin: var(--fgs-slide-kb, 70% 65%); }
+/* Update 23 A1: Bildausschnitt je Folie (index.njk: pos, posHoch); das Hochformat gilt wie das <source> bis 11/10 */
+.fgs-slides .fgs-slide img { object-position: var(--fgs-slide-pos, 50% 50%); }
+@media (max-aspect-ratio: 11/10) { .fgs-slides .fgs-slide img { object-position: var(--fgs-slide-pos-hoch, 50% 50%); } }
 html.fgs-js .fgs-hero--slides.is-laeuft .fgs-slide.is-on img, html.fgs-js .fgs-hero--slides.is-laeuft .fgs-slide.is-vor img { animation: fgs-kenburns 7.6s linear both; }
 .fgs-hero--slides.is-pause .fgs-slide img, .fgs-hero--slides.is-pause .fgs-slides-progress i { animation-play-state: paused !important; }
 /* Verlauf §3.1: Navy 55 % von links bis 0 bei 60 % der Breite, nur hinter dem Text; oben bleibt der Streifen für den Kopf.
@@ -2357,8 +2398,8 @@ html.fgs-js .fgs-hero--slides.is-laeuft .fgs-slide.is-on img, html.fgs-js .fgs-h
 .fgs-svc-frame { position: relative; height: 100%; overflow: hidden; background: var(--fgs-navy); }
 @media (min-width: 768px) { html.fgs-mo .fgs-svc-frame { clip-path: inset(0% 6vw 0% 6vw); } }
 /* Update 22 §1: nur die aktive Folie nimmt Klicks an; die anderen sind unsichtbar, sobald sie ausgeblendet sind */
-.fgs-svc-slide { position: absolute; inset: 0; display: grid; place-items: center; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 1.2s var(--fgs-ease), visibility 0s linear 1.2s; }
-.fgs-svc-slide.is-on { opacity: 1; z-index: 1; visibility: visible; pointer-events: auto; transition: opacity 1.2s var(--fgs-ease), visibility 0s; }
+.fgs-svc-slide { position: absolute; inset: 0; display: grid; place-items: center; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 800ms var(--fgs-ease), visibility 0s linear 0.8s; }
+.fgs-svc-slide.is-on { opacity: 1; z-index: 1; visibility: visible; pointer-events: auto; transition: opacity 800ms var(--fgs-ease), visibility 0s; }
 .fgs-svc-media { position: absolute; inset: 0; }
 .fgs-svc-media > picture { display: block; height: 100%; }
 .fgs-svc-media img { width: 100%; height: 100%; object-fit: cover; }
@@ -2394,14 +2435,14 @@ html.fgs-js .fgs-hero--slides.is-laeuft .fgs-slide.is-on img, html.fgs-js .fgs-h
 .fgs-header.is-open .fgs-btn--secondary { border-color: rgba(255, 255, 255, .7); }
 .fgs-header.is-open .fgs-btn--secondary:hover { background: #fff; border-color: #fff; color: var(--fgs-navy) !important; }
 .fgs-header.is-open :focus-visible, .fgs-panel :focus-visible { outline: 2px solid var(--fgs-gold); outline-offset: 4px; }
-.fgs-nav-dim { position: fixed; inset: 0; z-index: 899; background: rgba(8, 8, 47, .45); opacity: 0; visibility: hidden; transition: opacity .2s, visibility 0s linear .2s; }
-body.fgs-nav-open .fgs-nav-dim { opacity: 1; visibility: visible; transition: opacity .2s; }
-.fgs-panel { background: var(--fgs-navy); color: #fff; border: 0; transform: translateY(-8px); transition: opacity .22s ease-out, transform .22s ease-out, visibility 0s linear .22s; }
-.fgs-nav-item.is-open .fgs-panel { transition: opacity .22s ease-out, transform .22s ease-out; }
+.fgs-nav-dim { position: fixed; inset: 0; z-index: 899; background: rgba(8, 8, 47, .45); opacity: 0; visibility: hidden; transition: opacity 400ms var(--fgs-ease), visibility 0s linear 0.4s; }
+body.fgs-nav-open .fgs-nav-dim { opacity: 1; visibility: visible; transition: opacity 400ms var(--fgs-ease); }
+.fgs-panel { background: var(--fgs-navy); color: #fff; border: 0; transform: translateY(-8px); transition: opacity 400ms var(--fgs-ease), transform 400ms var(--fgs-ease), visibility 0s linear 0.4s; }
+.fgs-nav-item.is-open .fgs-panel { transition: opacity 400ms var(--fgs-ease), transform 400ms var(--fgs-ease); }
 .fgs-panel-inner { padding-block: 56px; display: grid; grid-template-columns: 380px minmax(0, 1fr); column-gap: 72px; align-items: start; }
 .fgs-panel-card { position: relative; display: block; width: 380px; height: 260px; overflow: hidden; border-radius: var(--fgs-r); color: #fff; text-decoration: none; background: rgba(255, 255, 255, .06); }
 .fgs-panel-card .fgs-media { position: absolute; inset: 0; aspect-ratio: auto; }
-.fgs-panel-card .fgs-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--fgs-ease); }
+.fgs-panel-card .fgs-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 400ms var(--fgs-ease); }
 .fgs-panel-card:hover .fgs-media img { transform: scale(1.04); }
 .fgs-panel-card .fgs-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(8, 8, 47, .92) 0%, rgba(8, 8, 47, .55) 45%, rgba(8, 8, 47, 0) 85%); }
 .fgs-panel-card-text { position: absolute; left: 24px; right: 24px; bottom: 22px; z-index: 1; display: grid; gap: 8px; }
@@ -2410,10 +2451,10 @@ body.fgs-nav-open .fgs-nav-dim { opacity: 1; visibility: visible; transition: op
 .fgs-panel-links { grid-column: auto; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; row-gap: 32px; align-content: start; }
 .fgs-panel-links a { padding: 0; border: 0; color: #fff; }
 .fgs-panel-links a:hover, .fgs-panel-links a[aria-current="page"] { color: #fff; }
-.fgs-panel-links .fgs-panel-link-title { display: inline; margin: 0; font: 400 22px/1.3 var(--fgs-serif); color: #fff; background: linear-gradient(var(--fgs-gold), var(--fgs-gold)) left bottom / 0 1px no-repeat; padding-bottom: 3px; transition: background-size .25s ease-out; }
+.fgs-panel-links .fgs-panel-link-title { display: inline; margin: 0; font: 400 22px/1.3 var(--fgs-serif); color: #fff; background: linear-gradient(var(--fgs-gold), var(--fgs-gold)) left bottom / 0 1px no-repeat; padding-bottom: 3px; transition: background-size 400ms var(--fgs-ease); }
 .fgs-panel-links a:hover .fgs-panel-link-title, .fgs-panel-links a:focus-visible .fgs-panel-link-title, .fgs-panel-links a[aria-current="page"] .fgs-panel-link-title { background-size: 100% 1px; }
 .fgs-panel-links .fgs-panel-link-note { display: block; margin-top: 6px; font-size: 14px; line-height: 1.45; color: rgba(255, 255, 255, .6); }
-.fgs-panel-links li, .fgs-panel-tiles li { opacity: 0; transform: translateY(6px); transition: opacity .22s ease-out, transform .22s ease-out; transition-delay: calc(var(--i, 0) * 30ms + 60ms); }
+.fgs-panel-links li, .fgs-panel-tiles li { opacity: 0; transform: translateY(6px); transition: opacity 400ms var(--fgs-ease), transform 400ms var(--fgs-ease); transition-delay: calc(var(--i, 0) * 30ms + 60ms); }
 .fgs-nav-item.is-open .fgs-panel-links li, .fgs-nav-item.is-open .fgs-panel-tiles li { opacity: 1; transform: none; }
 .fgs-panel-tiles { grid-column: 1 / -1; }
 .fgs-panel-foot { border-top: 0; margin-top: 28px; padding-top: 0; }
@@ -2432,13 +2473,11 @@ body.fgs-nav-open .fgs-nav-dim { opacity: 1; visibility: visible; transition: op
 @media (max-width: 767px) { .fgs-partner { aspect-ratio: auto; } }
 
 /* ---------- Update 22 §6 (31.10.2026): Abstände. Abschnitte 112 / 88 / 64 px oben und unten (ab 1280 / ab 768 / darunter).
-   Folgt ein Abschnitt auf einen mit demselben Hintergrund (beide auf dem Grundton; dunkel sind nur Titelbilder, Bildbänder und
-   der Abschlussrahmen, alle .fgs-on-dark oder keine .fgs-section), bekommt der zweite den halben Abstand oben: 112 + 56 = 168 px.
-   Überschrift bis Inhalt 48 px, auf dem Handy 32 px. Ausnahmen mit eigener Regel (--rule-in, --tight) bleiben. ---------- */
+   Den halben Abstand oben für den zweiten von zwei Abschnitten auf demselben Grund gibt es seit Update 23 B2 nicht mehr (Block am
+   Ende der Datei). Überschrift bis Inhalt 48 px, auf dem Handy 32 px. ---------- */
 :root, body.fgs, body.fgs-home, body.fgs-area, body.fgs-service { --fgs-sec: 64px; --fgs-head-gap: 32px; }
 @media (min-width: 768px) { :root, body.fgs, body.fgs-home, body.fgs-area, body.fgs-service { --fgs-sec: 88px; --fgs-head-gap: 48px; } }
 @media (min-width: 1280px) { :root, body.fgs, body.fgs-home, body.fgs-area, body.fgs-service { --fgs-sec: 112px; } }
-.fgs-section:not(.fgs-on-dark) + .fgs-section:not(.fgs-on-dark):not(.fgs-section--rule-in):not(.fgs-section--tight) { padding-top: calc(var(--fgs-sec) / 2); }
 .fgs-head + .fgs-media, .fgs-head + .fgs-rail-track, .fgs-head + .fgs-body, .fgs-head + *, .fgs-head + .fgs-compare-wrap, .fgs-head + .fgs-table-wrap, .fgs-rail-track { margin-top: var(--fgs-head-gap); }
 
 /* Update 22 §6: „Was Kunden über uns sagen“ unter 1.400 px. Kopf, darunter Gesamtnote, Sterne, Zahl und die Links in einer
@@ -2467,43 +2506,34 @@ html.fgs-js .fgs-rq-text p { -webkit-line-clamp: 4; line-clamp: 4; }
   .fgs-ticker { margin-top: 48px; }
 }
 
-/* Update 22 §8.5: Pause/Wiedergabe für Diaschau und Laufband. 36 px rund, Linie 1 px; Symbol wechselt mit .is-gestoppt.
-   Ohne laufende Diaschau (reduzierte Bewegung, ohne JavaScript) und beim stehenden Laufband (reduzierte Bewegung) kein Knopf. */
-.fgs-pause { flex: none; display: inline-grid; place-items: center; width: 36px; height: 36px; padding: 0; border: 1px solid currentColor; border-radius: 50%; background: transparent; color: var(--fgs-ink); cursor: pointer; transition: background-color .2s, color .2s; }
-.fgs-pause:hover { background: var(--fgs-ink); color: #fff; }
-.fgs-pause--light { color: #fff; border-color: rgba(255, 255, 255, .7); pointer-events: auto; }
-.fgs-pause--light:hover { background: #fff; color: var(--fgs-ink); }
-.fgs-pause:focus-visible { outline: 2px solid var(--fgs-gold); outline-offset: 3px; }
-.fgs-pause-icon { width: 14px; height: 14px; fill: currentColor; }
-.fgs-pause .fgs-pause-play, .fgs-pause.is-gestoppt .fgs-pause-bars { display: none; }
-.fgs-pause.is-gestoppt .fgs-pause-play { display: inline; }
+/* Update 23 A3 (statt der runden 36-px-Knöpfe aus Update 22 §8.5): Diaschau-Pause als 12-px-Zeichen, weiß 50 %, am rechten Ende
+   der Fortschrittslinien in derselben Zeile. Die Klickfläche ist 24 × 24 px (WCAG 2.5.8), das Zeichen sitzt 12 px hinter der
+   letzten Linie. Symbol wechselt mit .is-gestoppt; ohne laufende Diaschau (reduzierte Bewegung, ohne JavaScript) kein Zeichen. */
+.fgs-slides-toggle { flex: none; display: inline-grid; place-items: center; width: 24px; height: 24px; margin-left: -10px; padding: 0; border: 0; border-radius: 2px; background: none; color: rgba(255, 255, 255, .5); cursor: pointer; pointer-events: auto; transition: color 400ms var(--fgs-ease); }
+.fgs-slides-toggle:hover { color: rgba(255, 255, 255, .9); }
+.fgs-slides-toggle:focus-visible { outline: 2px solid var(--fgs-gold); outline-offset: 0; color: #fff; }
+.fgs-pause-icon { width: 12px; height: 12px; fill: currentColor; }
+.fgs-slides-toggle .fgs-pause-play, .fgs-slides-toggle.is-gestoppt .fgs-pause-bars { display: none; }
+.fgs-slides-toggle.is-gestoppt .fgs-pause-play { display: inline; }
 .fgs-slides-bar { justify-content: flex-start; }
 .fgs-slides-bar .fgs-slides-ort { margin-left: auto; }
-.fgs-hero--slides:not(.is-laeuft) .fgs-pause { display: none; }
-.fgs-ticker-ctl { display: flex; justify-content: flex-end; margin-top: 64px; }
-.fgs-ticker-ctl + .fgs-ticker { margin-top: 16px; }
-.fgs-ticker.is-gestoppt .fgs-ticker-track { animation-play-state: paused; }
-@media (max-width: 767px) { .fgs-ticker-ctl { margin-top: 48px; } }
-@media (prefers-reduced-motion: reduce) { .fgs-ticker-ctl { display: none; } .fgs-ticker-ctl + .fgs-ticker { margin-top: 64px; } }
-
-/* Update 22 §8.5: Pause-Knopf im Abschlussrahmen (langsamer Zoom), unten rechts; ohne Zoom (reduzierte Bewegung) kein Knopf */
-.fgs-closing-pause { position: absolute; right: 16px; bottom: 16px; z-index: 2; }
-@media (min-width: 768px) { .fgs-closing-pause { right: 24px; bottom: 24px; } }
-.fgs-closing-frame.is-gestoppt .fgs-closing-media img { animation-play-state: paused; }
-@media (prefers-reduced-motion: reduce) { .fgs-closing-pause { display: none; } }
+.fgs-hero--slides:not(.is-laeuft) .fgs-slides-toggle { display: none; }
+/* Laufband: hält unter der Maus (:hover, oben), unter dem Finger (.is-gestoppt per touchstart) und solange ein Link darin den
+   Tastaturfokus hat; bei reduzierter Bewegung steht es ohnehin (oben). */
+.fgs-ticker.is-gestoppt .fgs-ticker-track, .fgs-ticker:focus-within .fgs-ticker-track { animation-play-state: paused; }
 
 /* Update 22 §8.6: Gebiete-Karussell. Schmale Karten zeigen den 4:5-Zuschnitt; nur die breite Karte (is-lead) legt das Querformat
    darüber und blendet es in der Zeit ein, in der die Karte breiter wird. Auf dem Handy (82 vw, 3:4) nur der 4:5-Zuschnitt. */
 .fgs-fold-breit { display: none; }
 @media (min-width: 768px) {
-  .fgs-rail--fold li.is-lead .fgs-fold-breit { display: block; position: absolute; inset: 0; animation: fgs-fold-ein .8s cubic-bezier(.65, 0, .35, 1); }
+  .fgs-rail--fold li.is-lead .fgs-fold-breit { display: block; position: absolute; inset: 0; animation: fgs-fold-ein 800ms var(--fgs-ease); }
 }
 .fgs-fold-breit img { width: 100%; height: 100%; object-fit: cover; }
 @keyframes fgs-fold-ein { from { opacity: 0; } to { opacity: 1; } }
 /* Das 4:5-Bild darunter ist nach dem Einblenden verdeckt und wird dann ausgeblendet; wird die Karte wieder schmal, ist es sofort da */
 @media (min-width: 768px) {
   .fgs-rail--fold li .fgs-media > picture { transition: none; }
-  .fgs-rail--fold li.is-lead .fgs-media:has(.fgs-fold-breit) > picture { visibility: hidden; transition: visibility 0s .8s; }
+  .fgs-rail--fold li.is-lead .fgs-media:has(.fgs-fold-breit) > picture { visibility: hidden; transition: visibility 0s 0.8s; }
 }
 @media (prefers-reduced-motion: reduce) { .fgs-rail--fold li.is-lead .fgs-fold-breit { animation: none; } }
 
@@ -2533,10 +2563,10 @@ html { -webkit-hyphens: none; hyphens: none; overflow-wrap: break-word; }
   content: ""; display: inline-block; width: .8em; height: .45em; margin-left: .35em; vertical-align: .12em; background: currentColor;
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 12' fill='none' stroke='%23000' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 6h19M15 1l5 5-5 5'/%3E%3C/svg%3E") center / contain no-repeat;
           mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 12' fill='none' stroke='%23000' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 6h19M15 1l5 5-5 5'/%3E%3C/svg%3E") center / contain no-repeat;
-  opacity: 0; transform: translateX(-10px); transition: opacity .25s ease-out, transform .25s ease-out;
+  opacity: 0; transform: translateX(-10px); transition: opacity 400ms var(--fgs-ease), transform 400ms var(--fgs-ease);
 }
 .fgs-tiles--places .fgs-card:hover .fgs-card-title::after, .fgs-tiles--places .fgs-card:focus-visible .fgs-card-title::after { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .fgs-tiles--places .fgs-card-title::after { transition: opacity .2s; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .fgs-tiles--places .fgs-card-title::after { transition: opacity 400ms var(--fgs-ease); transform: none; } }
 /* Der Bildzoom beim Darüberfahren (Zeile 423, 1,03) kam nie an: html.fgs-js .fgs-reveal.is-in img { transform: none } ist
    spezifischer. Betrifft jede .fgs-card mit Einblendung, darunter die Kacheln der Gebiete-Übersicht. */
 @media (prefers-reduced-motion: no-preference) { html.fgs-js .fgs-card:hover .fgs-reveal.is-in img { transform: scale(1.03); } }
@@ -2569,3 +2599,255 @@ html { -webkit-hyphens: none; hyphens: none; overflow-wrap: break-word; }
 /* Vergleichstabellen ab 1 024 px: Spaltenbreiten bleiben 16 / 28 / 28 / 28 %, aber keine Spalte wird schmaler als ihr längstes
    Wort („Verkehrswertgutachten“, „Immobilienwertermittlungsverordnung“). */
 @media (min-width: 1024px) { .fgs-table--compare { table-layout: auto; } }
+
+/* ---------- Update 23 B2 (31.10.2026): in jedem Abschnitt ist der Abstand über dem ersten und unter dem letzten Inhalt gleich,
+   112 / 88 / 64 px (ab 1280 / ab 768 / darunter, --fgs-sec). Bei Abschnitten mit Hintergrundfoto zählt er vom Fotorand.
+   Damit fallen weg: der halbe Abstand oben nach einem Abschnitt auf demselben Grund (oben gelöscht), die Nullabstände nach
+   Fotokapitel, Kopfzeile des Angebots, Eckdaten und Kapiteln, die halbe Höhe von --tight und die alten Werte der Titelzeile.
+   Fotobänder mit Text und der Abschlussrahmen sind nicht mehr 85 bzw. 86 % der Fensterhöhe hoch, sondern Text plus zweimal
+   --fgs-sec; das reine Fotoband ohne Text (figure.fgs-band--figure) behält seine Höhe. Titelbilder und die Leistungs-Bühne der
+   Startseite sind bildschirmhohe Bühnen und bleiben, wie sie sind (siehe PLAN.md, B2). ---------- */
+.fgs-pagehead { padding-block: var(--fgs-sec); }
+.fgs-section--tight { padding-block: var(--fgs-sec); }
+.fgs-section:has(> .fgs-chapters) + .fgs-section--tight, .fgs-rail + .fgs-place-sources { padding-top: var(--fgs-sec); }
+.fgs-area .fgs-place-facts { padding-bottom: var(--fgs-sec); }
+.fgs-photo-chapter + .fgs-section { padding-top: var(--fgs-sec); }
+.fgs-listing-head + .fgs-listing { padding-top: var(--fgs-sec); }
+/* Die Kurzantwort stand mit 56 / 40 / 32 px unter den Brotkrumen (B1 hat sie entfernt); jetzt ist sie der erste Inhalt. */
+.fgs-summary, .fgs-service .fgs-summary { margin-top: 0; }
+.fgs-band:has(> .fgs-band-content) { min-height: 0; }
+.fgs-band-content { padding-block: var(--fgs-sec); }
+.fgs-closing-frame { min-height: 0; }
+.fgs-closing-inner, .fgs-closing .fgs-closing-inner { padding-block: var(--fgs-sec); }
+/* B2: Innenabstände, die unter dem letzten oder über dem ersten Inhalt als leerer Rand übrig blieben */
+.fgs-pagehead .fgs-wrap > h1:first-child { margin-top: 0; }
+.fgs-listing-head-text { margin-top: 0; }
+.fgs-offers .fgs-sr + .fgs-offer-filter { margin-top: 0; }
+.fgs-reviews--page { padding-top: var(--fgs-sec); }
+.fgs-reviews--page .fgs-reviews-aside { margin-top: 0; }
+.fgs-section.fgs-refs { padding-bottom: var(--fgs-sec); }
+.fgs-sources:not([open]) summary { padding-bottom: 0; }
+.fgs-legal-body > .fgs-legal-box:last-child { padding-bottom: 0; }
+.fgs-faq-more { display: flex; }
+@media (max-width: 599px) { .fgs-facts-sec--big .fgs-fact:last-child { padding-bottom: 0; } }
+@media (max-width: 639px) { .fgs-facts > .fgs-fact:last-child { padding-bottom: 0; } }
+.fgs-wrap > .fgs-wide:first-child { margin-top: 0; }
+.fgs-wrap > .fgs-wide:last-child { margin-bottom: 0; }
+.fgs-mq-list > .fgs-mq:last-child { margin-bottom: 0; }
+.fgs-nachfrage { padding-top: var(--fgs-sec); }
+.fgs-nachfrage .fgs-wizard { padding-top: 0; }
+.fgs .fgd-lab .lab-tool-grid { margin-bottom: -32px; }                 /* die Karten haben 32 px Innenabstand unten */
+body.fgs .fgd-invest .invest-form-area { padding-bottom: 0; }   /* fgs-tools.css lädt nach dieser Datei */
+/* Die Auswahlleiste des Insta-Formulars klebt unten am Fenster und braucht dort ihre 16 px; im Fluss zählen sie zum Abstand */
+.fgs-insta:has(.fgs-pick-bar) { padding-bottom: calc(var(--fgs-sec) - 16px); }
+body.fgs .fgd-blog-hero, body.fgs .fgd-blog-cols { padding-block: var(--fgs-sec); }
+/* Abschlussrahmen ohne Satz (Bildnachweise): leere Überschrift und leerer Absatz nehmen keinen Platz */
+.fgs-closing-sentence:empty, .fgs-closing-body:has(> p:only-child:empty) { display: none; }
+.fgs-closing-inner:has(> .fgs-closing-sentence:empty) > .fgs-btns { margin-top: 0; }
+
+/* ---------- Update 23 B3 (31.10.2026): Adresse in vier Feldern (Bewertung), Hinweis unter einem leeren oder falschen Feld ---------- */
+.fgs .fgd-form .fgd-field-row--adresse { grid-template-columns: minmax(0, 3fr) minmax(0, 1fr); }
+.fgs .fgd-form .fgd-field-row--ort { grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); }
+@media (max-width: 599px) {
+  .fgs .fgd-form .fgd-field-row--adresse { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
+  .fgs .fgd-form .fgd-field-row--ort { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
+}
+.fgs .fgd-form .fgd-feld-hinweis { font: 400 14px/1.45 var(--fgs-sans); color: #A3262A; }
+/* Ein zweizeiliger Hinweis in der schmalen PLZ-Spalte soll das Ort-Feld daneben nicht nach unten schieben */
+.fgs .fgd-form .fgd-field-row--adresse > label, .fgs .fgd-form .fgd-field-row--ort > label { align-content: start; }
+
+/* ---------- Update 23 B4 (31.10.2026): Fuß auf dem Handy mittig (Logo, Spalten, Kontakt, Copyright, Rechtslinks) ---------- */
+@media (max-width: 639px) {
+  .fgs-footer-top { align-items: center; text-align: center; }
+  .fgs-footer-grid { text-align: center; }
+  .fgs-footer-legal { flex-direction: column; align-items: center; text-align: center; }
+  .fgs-footer-legal ul { justify-content: center; }
+}
+
+/* ---------- Update 23 B7 (31.10.2026): Verlauf hinter dem Hero-Text auf dem Handy bis zur Unterkante des Fotos ----------
+   Vorher endete er 40 px unter dem Text, das Foto 76 px darunter: 36 px Foto ohne Verlauf. Der Hero hat overflow: hidden
+   und schneidet den verlängerten Verlauf genau an seiner Unterkante ab. */
+@media (max-width: 767px) { body.fgs .fgs-hero .fgs-hero-text::before { bottom: -100vh !important; } }
+
+/* ---------- Update 23 B9 (31.10.2026): Überschriften trennen nur an gesetzten Trennstellen (&shy;) und brechen kein Wort irgendwo
+   um. Passt ein langes Wort nicht in die Zeile, verkleinert fg-design.js (trennen) die Überschrift, höchstens auf 60 %. Erst ein Wort,
+   das auch dann nicht passt, wird an einer Silbe mit Trennstrich getrennt (.fgs-trenn.is-an). !important, weil gut zwanzig ältere
+   Regeln einzelner Überschriften hyphens: none und overflow-wrap: break-word setzen. Die &shy; in Überschriften sind entfernt. ---------- */
+:is(h1, h2, h3, h4, h5, h6) { -webkit-hyphens: manual !important; hyphens: manual !important; overflow-wrap: normal !important; }
+.fgs-trenn.is-an { overflow-wrap: break-word; }
+
+/* ---------- Update 23 B9: Buttons auf dem Handy so breit wie die Textspalte, wie schon im Hero und im Formular-Assistenten.
+   Vorher waren Formular-Absendeknöpfe, Buttons unter Textspalten und die Buttons der Startseite 177 bis 318 px breit, bei einer
+   Spalte von 342 px. Pfeil-Knöpfe der Schienen und Slider bleiben klein. ---------- */
+@media (max-width: 639px) {
+  .fgs main .fgs-btn, .fgs .fgd-form .fgd-btn, .fgs .fgd-form button[type="submit"], .fgs .fgd-widget-ph .fgd-btn, .fgs .fgd-blog-body .cta .btn { width: 100%; justify-content: center; text-align: center; white-space: normal; }
+  .fgs .fgs-obj-head { align-items: stretch; }
+  .fgs .fgd-widget-ph { justify-items: stretch; }
+  .fgs-offer-filter-actions { flex-wrap: wrap; justify-content: center; }
+}
+/* Bewertung, Objektart: unter 480 px eine Spalte (vorher erst unter 380 px). In zwei Spalten passten „Eigentumswohnung“,
+   „Zweifamilienhaus“, „Doppelhaushälfte“ und „Mehrfamilienhaus“ bei 390 px nur getrennt in die Kachel. */
+@media (max-width: 479px) { .fgs .fgd-choices:not(.fgd-choices--2, .fgd-choices--3) { grid-template-columns: 1fr; } }
+/* Lange Seitentitel (über 70 Zeichen: Angebote aus Propstack, Investment Lab) auf dem Handy 30 statt 38 px. Klasse aus den Vorlagen. */
+@media (max-width: 639px) { body.fgs h1.fgs-h1-lang { font-size: 30px; line-height: 1.18; } }
+/* Investment Lab bei 360 px: Die Spalte des Rechner-Kastens wuchs auf die Breite von „Investitionsrechner“ in der Überschrift (342 px)
+   und schob die Seite 6 px zur Seite. Jetzt ist die Spalte so breit wie die Seite, und fg-design.js verkleinert die Überschrift. */
+@media (max-width: 959px) { .fgs .fgd-lab .lab-featured { grid-template-columns: minmax(0, 1fr); } }
+
+/* Update 23 D2 (31.10.2026): ein 12-Spalten-Raster mit denselben Außenkanten auf jeder Seite (Inhalt bei 1 440 px von 120 bis 1 320 px,
+   Spalte 78 px, Abstand 24 px). Geprüft mit Raster-Overlay bei 1 440 px auf Startseite, Verkaufen, Über uns und /standorte/berlin/.
+   1. Seitenindex (ab 1 280 px): Bisher lag die Index-Spalte bei 64 px, also außerhalb des Rasters, und der Text begann bei 292 px auf keiner
+      Rasterlinie. Jetzt belegt der Index die Spalten 1 und 2 (Linkskante wie Titel und Abschlussrahmen), der Text beginnt in Spalte 3. */
+@media (min-width: 1280px) {
+  .fgs-indexed main {
+    --fgs-ix-rand: max(var(--fgs-pad), calc((100% - var(--fgs-max)) / 2));
+    --fgs-ix-spalte: calc((min(100% - 2 * var(--fgs-pad), var(--fgs-max)) - 11 * var(--fgs-gap)) / 12);
+    --fgs-ix-col: calc(2 * var(--fgs-ix-spalte) + var(--fgs-gap));
+    --fgs-ix-abstand: var(--fgs-gap);
+    --fgs-ix-l: calc(var(--fgs-ix-rand) + var(--fgs-ix-col) + var(--fgs-gap));
+  }
+  /* Hier bezieht sich % auf die Bildspalte, nicht auf die Seite; deshalb dieselbe Rechnung mit vw */
+  .fgs-indexed .fgs-split--compact:not(.fgs-split--right) .fgs-split-media > .fgs-media {
+    margin-left: calc(max(var(--fgs-pad), (100vw - var(--fgs-max)) / 2) + 2 * ((min(100vw - 2 * var(--fgs-pad), var(--fgs-max)) - 11 * var(--fgs-gap)) / 12 + var(--fgs-gap)));
+  }
+}
+/* 2. Abschlussrahmen: seitlich auf den Außenkanten des Rasters statt 64 px vom Fensterrand (oben und unten bleibt der Seitenrand). */
+@media (min-width: 768px) { .fgs-closing { padding-inline: max(var(--fgs-pad), calc((100% - var(--fgs-max)) / 2)); } }
+/* 3. Startseite, Ansprechpartner: Der Satz neben der H2 stand rechtsbündig bei 800 px; jetzt beginnt er in Spalte 7 über Lennarts Karte. */
+@media (min-width: 1024px) {
+  .fgs-partners-head { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--fgs-gap); align-items: end; }
+  .fgs-partners-head > :first-child { grid-column: 1 / span 6; }
+  .fgs-partners-head > .fgs-partners-lead { grid-column: 7 / span 6; max-width: 520px; }
+}
+/* 4. Angebotskarten: Spaltenabstand 24 px wie das Raster (vorher 28 px, die dritte Karte stand 2,7 px neben der Linie). */
+.fgs-obj-grid { column-gap: var(--fgs-gap); }
+/* 5. Leistungsseiten mit Seitenindex: Der Einleitungsblock (H2 und Text, 760 px) stand mittig und damit bei 442 px neben jeder Rasterlinie.
+      Neben dem Index beginnt er in Spalte 3 wie die Kapitel darunter; ohne Index (unter 1 280 px) bleibt er mittig. */
+@media (min-width: 1280px) {
+  .fgs-indexed.fgs-service .fgs-summary, .fgs-indexed.fgs-service .fgs-summary-section .fgs-crumbs { margin-left: 0; margin-right: auto; }
+}
+
+/* ---------- Update 23 D3 (31.10.2026): ein Rhythmus. Gemessen auf 28 Seiten bei 1440 px ($S/u23/d3/rhythmus.py, siehe PLAN.md).
+   1. Eine H1: Seitentitel ohne Foto waren 64 px, im Titelbild 58 px, im Blog 48 px. Jetzt überall die Titelbild-Größe des Briefs
+      (§2.2: 58 / 36 px). Lexikon bleibt bei höchstens 52 px, weil dort einzelne Wörter länger sind als die Zeile. */
+:root { --fgs-h1: var(--fgs-h1-hero); }
+/* 2. Kicker → Überschrift überall 16 px (das Titelbild hatte 18). */
+.fgs-hero h1 { margin-top: 16px; }
+/* Auf dem Handy hat jede H1 die Zeilenhöhe 1,12 (das Titelbild hatte 1,08). */
+@media (max-width: 767px) { .fgs .fgs-hero h1 { line-height: 1.12; } }
+/* 3. Überschrift → Text überall 24 px (Brief 3.3). Abweichend waren: Fotoband 20, Schlussrahmen 20, Spalten der Gebietsseiten 16. */
+.fgs-band-text > h2 + p, .fgs-trio-col > h2 + p { margin-top: 24px; }
+.fgs-closing-body { margin-top: 24px; }
+.fgs .fgs-svc-satz { margin-top: 24px; }
+/* 4. Überschrift → Bauteil (Raster, Liste, Tabelle, Bild, Schritte) überall --fgs-head-gap, 48 / 32 px (Update 22 §6).
+      Abweichend waren: Ablauf-Schritte 40, Eckdaten der Gebietsseiten 40 / 32, Bild in den Leistungszeilen 32, Tabelle im Profil 24. */
+.fgs-head + .fgs-steps--reihe.is-row, .fgs-place-facts-title + .fgs-keyfacts, .fgs-rows .fgs-cols-head > .fgs-wide,
+.fgs-split-text h2 + .fgs-table-wrap { margin-top: var(--fgs-head-gap); }
+/* 5. Gleiche Schriftgröße, gleiche Zeilenhöhe: H3 22 px hatte 1,25 / 1,3 / 1,35, H3 26 px 1,2 / 1,3, Namen 30 px zwei Laufweiten. */
+.fgs-steps--reihe.is-row > li > h3 { line-height: 1.35; }
+.fgs .fgs-partner-name { line-height: 1.12; letter-spacing: -.005em; }
+/* 6. Zwei Abschnitte hintereinander auf demselben hellen Grund bekommen eine Haarlinie am oberen Rand des zweiten, so breit wie
+      der Inhalt, auf Seiten mit Seitenindex nur über der Textspalte (sonst liefe sie durch den Index). Als Verlauf über die volle
+      Breite gezeichnet, weil Prozentwerte in background-position anders rechnen. Skripte zwischen zwei Abschnitten zählen nicht.
+      Ausgenommen: nach der Kennzahlenleiste (hat unten schon eine), dunkle und Foto-Abschnitte, die Aufklapp-Listen (.fgs-refs,
+      sie haben oben und unten eigene Linien) und die Bildergalerie eines Angebots (die Fotokante trennt). */
+main > .fgs-section:not(.fgs-on-dark, .fgs-band, .fgs-closing, .fgs-refs) + .fgs-section:not(.fgs-on-dark, .fgs-band, .fgs-closing, .fgs-refs, .fgs-section--rule-in),
+main > .fgs-section:not(.fgs-on-dark, .fgs-band, .fgs-closing, .fgs-refs) + script + .fgs-section:not(.fgs-on-dark, .fgs-band, .fgs-closing, .fgs-refs, .fgs-section--rule-in),
+main > .fgs-section:not(.fgs-on-dark, .fgs-band, .fgs-closing, .fgs-refs) + script + script + .fgs-section:not(.fgs-on-dark, .fgs-band, .fgs-closing, .fgs-refs, .fgs-section--rule-in),
+.fgd-blog-hero ~ .fgd-blog-cols,
+.fgd-blog-cols + .fgs-section,
+.fgs-pagehead + #regionen {
+  --fgs-trenn-l: max(var(--fgs-pad), calc((100% - var(--fgs-max)) / 2));
+  --fgs-trenn-r: calc(100% - max(var(--fgs-pad), calc((100% - var(--fgs-max)) / 2)));
+  background-image: linear-gradient(to right, transparent var(--fgs-trenn-l), var(--fgs-line) var(--fgs-trenn-l), var(--fgs-line) var(--fgs-trenn-r), transparent var(--fgs-trenn-r));
+  background-repeat: no-repeat; background-size: 100% 1px; background-position: 0 0;
+}
+@media (min-width: 1280px) {
+  .fgs-indexed main > .fgs-section:not(.fgs-on-dark, .fgs-band, .fgs-closing, .fgs-refs) + .fgs-section:not(.fgs-on-dark, .fgs-band, .fgs-closing, .fgs-refs, .fgs-section--rule-in),
+  .fgs-indexed main > .fgs-section:not(.fgs-on-dark, .fgs-band, .fgs-closing, .fgs-refs) + script + .fgs-section:not(.fgs-on-dark, .fgs-band, .fgs-closing, .fgs-refs, .fgs-section--rule-in),
+  .fgs-indexed main > .fgs-section:not(.fgs-on-dark, .fgs-band, .fgs-closing, .fgs-refs) + script + script + .fgs-section:not(.fgs-on-dark, .fgs-band, .fgs-closing, .fgs-refs, .fgs-section--rule-in) {
+    --fgs-trenn-l: var(--fgs-ix-l);
+  }
+}
+
+/* ---------- Update 23 D4 (31.10.2026): ein Verhalten für jede klickbare Karte. Gebietskarten (auch Gebiete-Übersicht und
+   Menükacheln), Angebote, Projekte, Referenzen, Blogkarten und die Ansprechpartner-Karten: Foto 1,04 in 600 ms, ein Pfeil
+   schiebt sich 8 px, der Titel bekommt die goldene Unterstreichung. Vorher 1,03 bis 1,04 in 0,5 bis 1,2 s, Unterstreichung
+   in Navy, Pfeil nur auf der Gebiete-Übersicht (10 px), die Ansprechpartner-Karte hob zusätzlich ihr Textfeld um 6 px. ---------- */
+.fgd-blog-card-bild { display: block; overflow: hidden; border-radius: var(--fgs-r); }
+.fgs .fgd-blog-card-bild img { display: block; border-radius: 0; }
+/* Foto */
+.fgs :is(a.fgs-card, a.fgs-obj, a.fgs-offer-link, a.fgs-partner, a.fgs-blog-lead, a.fgd-blog-card, a.fgs-panel-card, a.fgs-panel-tile) :is(.fgs-media, .fgs-obj-frame, .fgs-partner-media, .fgd-blog-card-bild) img,
+html.fgs-js .fgs :is(a.fgs-card, a.fgs-obj, a.fgs-offer-link, a.fgs-blog-lead) .fgs-reveal.is-in img {
+  transition: transform 600ms var(--fgs-ease), opacity 800ms var(--fgs-ease);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .fgs :is(a.fgs-card, a.fgs-obj, a.fgs-offer-link, a.fgs-partner, a.fgs-blog-lead, a.fgd-blog-card, a.fgs-panel-card, a.fgs-panel-tile):hover :is(.fgs-media, .fgs-obj-frame, .fgs-partner-media, .fgd-blog-card-bild) img,
+  html.fgs-js .fgs :is(a.fgs-card, a.fgs-obj, a.fgs-offer-link, a.fgs-blog-lead):hover .fgs-reveal.is-in img { transform: scale(1.04); }
+}
+.fgs .fgs-partner:hover .fgs-partner-panel { transform: none; }
+/* Titel: goldene Unterstreichung, blendet in 400 ms ein */
+.fgs :is(a.fgs-card, a.fgs-obj, a.fgs-offer-link, a.fgs-partner, a.fgs-blog-lead, a.fgd-blog-card, a.fgs-panel-card, a.fgs-panel-tile) :is(.fgs-card-title, .fgs-card-name, .fgs-obj-title, .fgs-offer-title, .fgs-partner-name, .fgs-blog-lead-body > h3, .fgd-blog-card-body > strong, .fgs-panel-card-name, .fgs-panel-tile-name) {
+  text-decoration: underline 2px transparent; text-underline-offset: .2em; transition: text-decoration-color 400ms var(--fgs-ease);
+}
+.fgs :is(a.fgs-card, a.fgs-obj, a.fgs-offer-link, a.fgs-partner, a.fgs-blog-lead, a.fgd-blog-card, a.fgs-panel-card, a.fgs-panel-tile):is(:hover, :focus-visible) :is(.fgs-card-title, .fgs-card-name, .fgs-obj-title, .fgs-offer-title, .fgs-partner-name, .fgs-blog-lead-body > h3, .fgd-blog-card-body > strong, .fgs-panel-card-name, .fgs-panel-tile-name) {
+  text-decoration-color: var(--fgs-gold);
+}
+/* Die Textfarbe bleibt: Karten in Listen wurden über :where(… .fgs li) a:hover beim Darüberfahren goldbraun. */
+.fgs :is(a.fgs-card, a.fgs-obj, a.fgs-offer-link, a.fgs-blog-lead, a.fgd-blog-card):hover { color: var(--fgs-ink); }
+.fgs :is(a.fgs-partner, a.fgs-card.fgs-card--onphoto, a.fgs-panel-card, a.fgs-panel-tile):hover { color: #fff; }
+.fgs .fgd-blog-card:hover strong { color: var(--fgs-ink); }
+/* Pfeil: Karten mit „Zum Profil →“, „Artikel lesen →“ usw. schieben diesen Pfeil 8 px; der Text darunter wird nicht mehr
+   zusätzlich unterstrichen. Karten ohne solchen Link bekommen hinter dem Titel einen Pfeil, der sich 8 px einschiebt; er nimmt
+   keinen Platz in der Zeile (negativer Rand), damit kein Titel anders umbricht als vorher. */
+.fgs :is(a.fgs-offer-link, a.fgs-partner, a.fgs-blog-lead, a.fgd-blog-card) .fgs-link { background-size: 0 1px !important; }
+.fgs :is(a.fgs-offer-link, a.fgs-partner, a.fgs-blog-lead, a.fgd-blog-card) .fgs-link svg,
+.fgs .fgs-panel-card-pfeil { display: inline-block; transition: transform 400ms var(--fgs-ease); }
+.fgs :is(a.fgs-offer-link, a.fgs-partner, a.fgs-blog-lead, a.fgd-blog-card):is(:hover, :focus-visible) .fgs-link svg,
+.fgs a.fgs-panel-card:is(:hover, :focus-visible) .fgs-panel-card-pfeil { transform: translateX(8px); }
+.fgs :is(a.fgs-card .fgs-card-title, a.fgs-card .fgs-card-name, a.fgs-obj .fgs-obj-title, a.fgd-blog-card:not(:has(.fgs-link)) .fgd-blog-card-body > strong, a.fgs-panel-tile .fgs-panel-tile-name)::after {
+  content: ""; display: inline-block; width: .8em; height: .45em; margin: 0 -1.15em 0 .35em; vertical-align: .12em; background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 12' fill='none' stroke='%23000' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 6h19M15 1l5 5-5 5'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 12' fill='none' stroke='%23000' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 6h19M15 1l5 5-5 5'/%3E%3C/svg%3E") center / contain no-repeat;
+  opacity: 0; transform: translateX(-8px); transition: opacity 400ms var(--fgs-ease), transform 400ms var(--fgs-ease);
+}
+.fgs :is(a.fgs-card, a.fgs-obj, a.fgd-blog-card, a.fgs-panel-tile):is(:hover, :focus-visible) :is(.fgs-card-title, .fgs-card-name, .fgs-obj-title, .fgd-blog-card-body > strong, .fgs-panel-tile-name)::after { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .fgs :is(a.fgs-card, a.fgs-obj, a.fgs-offer-link, a.fgs-partner, a.fgs-blog-lead, a.fgd-blog-card, a.fgs-panel-card, a.fgs-panel-tile) :is(img, svg, .fgs-panel-card-pfeil) { transition: none !important; }
+  .fgs :is(a.fgs-card, a.fgs-obj, a.fgs-offer-link, a.fgs-partner, a.fgs-blog-lead, a.fgd-blog-card, a.fgs-panel-card, a.fgs-panel-tile):hover :is(img, svg, .fgs-panel-card-pfeil) { transform: none !important; }
+  .fgs :is(a.fgs-card .fgs-card-title, a.fgs-card .fgs-card-name, a.fgs-obj .fgs-obj-title, a.fgd-blog-card .fgd-blog-card-body > strong, a.fgs-panel-tile .fgs-panel-tile-name)::after { transition: none; transform: none; }
+}
+/* Fokus für die Tastatur: überall ein goldener Rahmen, 2 px. Dunkelgold (--fgs-gold-text) auf hellem, Gold auf dunklem Grund.
+   Drei Stellen hatten den falschen Ton und waren kaum zu sehen: die Pfeile der Leistungsbühne (Dunkelgold auf dem Foto), die
+   Aufklapp-Listen und der Google-Link der Bewertungen (Hellgold auf Creme). Formularfelder behalten ihren Rahmen (Navy, 3 px). */
+.fgs .fgs-svc-btn:focus-visible { outline-color: var(--fgs-gold); }
+.fgs .fgs-more.fgs-more--ref > summary:focus-visible, .fgs .fgs-step-toggle:focus-visible { outline-color: var(--fgs-gold-text); }
+.fgs .fgs-rev-google:focus-visible::after { outline-color: var(--fgs-gold-text); }
+.fgs .fgs-on-dark :is(.fgs-more.fgs-more--ref > summary, .fgs-step-toggle):focus-visible, .fgs .fgs-on-dark .fgs-rev-google:focus-visible::after { outline-color: var(--fgs-gold); }
+
+/* ---------- Update 23 D6 (31.10.2026): Abgleich der Startseite mit Omniyat und Huttons, je Abschnitt bei 1440 und 390 px (PLAN.md).
+   Lesbarkeit: Band „Was ist Ihre Immobilie wert?“ (nur Startseite, Makro band). Überschrift und Satz lagen rechts auf heller Fassade
+   und am Himmel: schlechteste 10 % des Hintergrunds bei 1440 px 2,5 : 1 (Überschrift) und 3,3 : 1 (Satz). Mit dem dichteren
+   Schleier 3,7 und 5,8 : 1, bei 390 px 4,2 und 7,8 : 1. ---------- */
+section.fgs-band .fgs-band-text::before { background: radial-gradient(closest-side, rgba(8, 8, 47, .62) 55%, rgba(8, 8, 47, 0)); }
+/* Leistungsbühne: Folien ohne eigenen Wert (Verkauf, Ankauf) .48 statt .38 Navy. Satz und Kicker lagen auf hellen Fenstern und Ästen bei
+   3,6 bis 4,4 : 1, jetzt mindestens 4,7 : 1. Finanzierung behält ihre .58 aus index.njk. */
+.fgs-svc-media::after { background: rgba(8, 8, 47, var(--fgs-svc-navy, .48)); }
+/* Pfeile der Karussells: das Zeichen endet an der Inhaltskante (vorher 11 px davor, Knopf-Innenabstand), wie die Knöpfe daneben. */
+.fgs-rail-nav { margin-inline-end: -11px; }
+/* Fuß ab 1100 px: „Wissen & Unternehmen“ braucht 235 px, die Spalte hat 161 bis 202 px und bricht um. Alle Spaltentitel stehen deshalb
+   auf zwei Zeilen Höhe, unten bündig, und alle Listen beginnen auf einer Linie (vorher 21 px tiefer in dieser Spalte). */
+@media (min-width: 1100px) { .fgs-footer-grid > * > h2 { display: flex; align-items: flex-end; min-height: 2lh; } }
+
+/* ---------- Update 23 E (31.10.2026): Prüfung vor dem Push ---------- */
+/* Eckdaten der Angebote: nur waagerecht abschneiden (die Haarlinie am Zeilenanfang), senkrecht nicht. Mit overflow: hidden ragte
+   der Schriftkasten der 56-px-Zahlen 3 px über die obere Kante (Scan bei 1.440 px). Ältere Browser behalten hidden. */
+@media (min-width: 640px) { .fgs-listing-facts { overflow: clip visible; } }
+/* Bildnachweise: Die vier Spalten brauchen gut 1.000 px. Darunter stehen die Angaben untereinander wie auf dem Handy; bei 768 px
+   trennte die Tabelle sonst 24 Wörter und stand 27 px über ihre Spalte. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fgs-credits thead { display: none; }
+  .fgs-credits tr { display: block; padding: 16px 0; border-bottom: 1px solid var(--fgs-line); }
+  .fgs-credits td { display: block; padding: 2px 0; border: 0; }
+  .fgs-credits td:nth-child(3) { white-space: normal; }
+}

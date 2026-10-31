@@ -25,15 +25,7 @@ customSchema: true
 {% set faqItems = pg.faq or [] %}
 {% set pk = kontakte[pg.person.key] if pg.person else null %}
 
-<nav class="fgd-crumbs fgd-crumbs--bar" aria-label="Brotkrümelnavigation">
-  <div class="fgd-wrap">
-    <ol>
-      <li><a href="/">Start</a></li>
-      {% if pg.parent %}<li><a href="{{ pg.parent.href }}">{{ pg.parent.label }}</a></li>{% endif %}
-      <li aria-current="page">{{ pg.crumb }}</li>
-    </ol>
-  </div>
-</nav>
+{#- Update 23 B1: keine sichtbaren Brotkrumen mehr; die BreadcrumbList im JSON-LD unten bleibt. -#}
 
 {# 1. Titelbereich #}
 <section class="fgd-place-hero fgd-page-hero" aria-labelledby="seiten-titel">
@@ -45,7 +37,7 @@ customSchema: true
     {% endif %}
     <div>
       <p class="fgd-kicker">{{ pg.kicker }}</p>
-      <h1 id="seiten-titel">{{ pg.h1 | safe }}</h1>
+      {# Update 23 B9: lange Titel (über 70 Zeichen) auf dem Handy kleiner, sonst stehen sie auf sechs bis sieben Zeilen #}<h1 id="seiten-titel"{% if (pg.h1 | striptags | length) > 70 %} class="fgs-h1-lang"{% endif %}>{{ pg.h1 | safe }}</h1>
       <p class="fgd-place-answer">{{ pg.intro | safe }}</p>
       {% if pg.person and pg.person.facts %}
       <dl class="fgd-profile-facts">
@@ -67,7 +59,6 @@ customSchema: true
       <div class="fgd-rating-score"><strong>{{ google.rating }}</strong><span>von 5</span></div>
       <span class="fgd-stars" role="img" aria-label="{{ google.rating }} von 5 Sternen">{% for i in range(google.ratingValue | round) %}{{ icon("star") | safe }}{% endfor %}</span>
       <p><strong>{{ google.count }} Bewertungen</strong> auf Google</p>
-      <small>Stand {{ google.checkedLabel }}</small>
       <a class="fgd-btn fgd-btn-gold" href="{{ google.url }}" target="_blank" rel="noopener">Google-Profil öffnen{{ icon("arrow-up-right") | safe }}</a>
     </div>
     {% elif pg.toc and not pg.person %}

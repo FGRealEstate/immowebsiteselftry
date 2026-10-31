@@ -11,7 +11,7 @@ canonicalPath: /
 ogTitle: "Fischer & Geserich Real Estate | Immobilienberatung, Ankauf & Finanzierung"
 ogDescription: "Verkauf, Ankaufsberatung und Immobilienfinanzierung aus einer Hand – mit persönlicher Begleitung und wirtschaftlichem Blick auf Ihre Immobilienentscheidung."
 # Design-Pass 3 §3.1: erste Folie der Diaschau vorladen (base.njk, mit Handy-Zuschnitt und AVIF wie die Leistungsseiten)
-heroPreload: home/hero-slide-friedenau
+heroPreload: home/hero-slide-berlin
 # Häufige Fragen: Update 20 (30.10.2026), alle zwölf Fragen und Antworten wörtlich nach Timons Freigabe, in der bisherigen
 # Reihenfolge. Vorher kamen zehn aus mangoTexte.faq.A (Filter areaFaq) und zwei aus faqExtra. Sichtbarer Text und FAQPage-Markup
 # kommen aus dieser Liste.
@@ -64,16 +64,18 @@ faqListe:
 {%- set _ = unterGebiete.push(gebiete | findBy("slug", slug)) -%}
 {%- endfor -%}
 
-{# 1. Design-Pass 3 §3.1: Titelbild als Diaschau mit fünf Fotos (Friedenau, Berlin, Potsdam, Leipzig, Dresden); Kicker, H1 und
-   Buttons wie bisher, der zweite Button aus Glas. Der Ort unten rechts steht im Alt-Text jeder Folie.
+{# 1. Design-Pass 3 §3.1: Titelbild als Diaschau; seit Update 23 A1 vier Fotos in der Reihenfolge des Briefs (Berlin, Potsdam,
+   Leipzig, Dresden), Friedenau entfällt. Kicker, H1 und Buttons wie bisher, der zweite Button aus Glas. Der Ort unten rechts steht im
+   Alt-Text jeder Folie. Je Folie freiwillig: pos (object-position im Querformat), posHoch (im Hochformat, wie <source> bis 11/10)
+   und kb (Ursprung des Ken Burns). Berlin: oben bündig und Zoom von oben, damit Kuppelkreuz und Turmspitze auch bei 1920 × 1080
+   im Bild bleiben; im Hochformat steht der Fernsehturm rechts neben dem Logo über dem Text.
    2. Design-Pass 3 §3.2 Teil 1: Das Titelbild bleibt angeheftet, der bisherige Satz aus dem weißen Aussageblock blendet darüber ein,
    darunter „Mehr über uns“. Der weiße Block (#ansatz) entfällt. #}
 {{ heroSlides({
   slides: [
-    { bild: "home/hero-slide-friedenau" | bild, alt: "Gelbes Gründerzeit-Eckhaus mit Erker und Türmchen in der Stubenrauchstraße in Berlin-Friedenau, umrahmt von Bäumen", ort: "Berlin-Friedenau" },
-    { bild: "home/hero-slide-berlin" | bild, alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser", ort: "Berlin" },
-    { bild: "home/hero-slide-potsdam" | bild, alt: "Die Kolonnaden an der Glienicker Brücke in Potsdam", ort: "Potsdam" },
-    { bild: "home/hero-slide-leipzig" | bild, alt: "Blick vom City-Hochhaus über die Leipziger Innenstadt mit dem Neuen Rathaus, 2015", ort: "Leipzig" },
+    { bild: "home/hero-slide-berlin" | bild, alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser", ort: "Berlin", pos: "50% 0%", posHoch: "0% 50%", kb: "30% 0%" },
+    { bild: "home/hero-slide-potsdam" | bild, alt: "Die Kolonnaden an der Glienicker Brücke in Potsdam", ort: "Potsdam", posHoch: "74% 50%" },
+    { bild: "home/hero-slide-leipzig" | bild, alt: "Das Alte Rathaus am Markt in Leipzig zur blauen Stunde", ort: "Leipzig" },
     { bild: "home/hero-slide-dresden" | bild, alt: "Blick von der Carolabrücke über die Elbe auf Dresden im Sonnenuntergang", ort: "Dresden" }
   ],
   kicker: "Inhabergeführt aus Berlin",
@@ -90,25 +92,30 @@ faqListe:
   { navy: 0.58, bild: "home/hero-leistung-finanzierung" | bild, alt: "Schreibtisch mit Taschenrechner, aufgeschlagenem Notizbuch und Stift", kicker: "Unabhängige Finanzierungsberatung", titel: "Immobilienfinanzierung", text: "Wir vergleichen die Angebote vieler Banken und begleiten Ihre Unterlagen bis zur Auszahlung, für Eigennutzer, Kapitalanleger und Mehrfamilienhäuser.", href: "/finanzierungsberatung.html", button: "Finanzierung" }
 ] }) }}
 
-{# 3. Ihre Ansprechpartner (Design-Pass 3 §3.3): links über fünf Spalten H2, der bisherige Satz, die vier Grundsätze (aus dem
-   bisherigen Aussageblock, Wortlaut unverändert) und „Mehr über uns“; rechts über sieben Spalten die beiden Karten. #}
+{# 3. Ihre Ansprechpartner. Update 23 A4: drei Zeilen statt Text links und Karten rechts (Design-Pass 3 §3.3).
+   Oben links Dachzeile und H2, rechts der Satz (höchstens 520 px, unten bündig mit der H2); darunter die beiden Karten je halbe
+   Inhaltsbreite; darunter die vier Grundsätze in vier Spalten (Wortlaut unverändert), „Mehr über uns“ rechtsbündig darunter.
+   Die Dachzeile „Die Geschäftsführer“ ist neu (der Brief nennt eine, es gab keine) und sagt nur, was der Satz daneben sagt. #}
 <section class="fgs-section" id="team" aria-labelledby="team-titel">
-  <div class="fgs-wrap fgs-partners">
-    <div class="fgs-partners-text">
-      <h2 id="team-titel">Ihre Ansprechpartner</h2>
+  <div class="fgs-wrap">
+    <div class="fgs-partners-head">
+      <div>
+        <p class="fgs-label">Die Geschäftsführer</p>
+        <h2 id="team-titel">Ihre Ansprechpartner</h2>
+      </div>
       <p class="fgs-partners-lead">Bei uns sprechen Sie mit den beiden Geschäftsführern selbst, vom ersten Gespräch bis zum Notartermin.</p>
-      <dl class="fgs-promises">
-        <div><dt>Zuerst Ihr Ziel</dt><dd>Erst klären wir, was Sie vorhaben und bis wann. Danach sprechen wir über Objekte und Banken.</dd></div>
-        <div><dt>Preise, die wir begründen können</dt><dd>Jeder Preis, den wir Ihnen nennen, ist mit Vergleichsverkäufen belegt.</dd></div>
-        <div><dt>Auch nach dem Notartermin erreichbar</dt><dd>Bei der Übergabe, bei Handwerkern oder der nächsten Finanzierung sind wir weiter für Sie da.</dd></div>
-        <div><dt>Wir verkaufen nur, wenn es passt</dt><dd>Passt keines unserer Objekte zu Ihnen, helfen wir Ihnen bei der Finanzierung oder der Prüfung eines anderen.</dd></div>
-      </dl>
-      {{ textlink("/ueber-uns.html", "Mehr über uns") }}
     </div>
     <ul class="fgs-partners-cards" role="list">
-      <li>{{ partner("timon", "(min-width: 1240px) 340px, (min-width: 768px) 46vw, 82vw") }}</li>
-      <li>{{ partner("lennart", "(min-width: 1240px) 340px, (min-width: 768px) 46vw, 82vw") }}</li>
+      <li>{{ partner("timon", "(min-width: 1328px) 588px, (min-width: 768px) 46vw, 82vw") }}</li>
+      <li>{{ partner("lennart", "(min-width: 1328px) 588px, (min-width: 768px) 46vw, 82vw") }}</li>
     </ul>
+    <dl class="fgs-promises">
+      <div><dt><span class="fgs-promise-nr" aria-hidden="true">01</span>Zuerst Ihr Ziel</dt><dd>Erst klären wir, was Sie vorhaben und bis wann. Danach sprechen wir über Objekte und Banken.</dd></div>
+      <div><dt><span class="fgs-promise-nr" aria-hidden="true">02</span>Preise, die wir begründen können</dt><dd>Jeder Preis, den wir Ihnen nennen, ist mit Vergleichsverkäufen belegt.</dd></div>
+      <div><dt><span class="fgs-promise-nr" aria-hidden="true">03</span>Auch nach dem Notartermin erreichbar</dt><dd>Bei der Übergabe, bei Handwerkern oder der nächsten Finanzierung sind wir weiter für Sie da.</dd></div>
+      <div><dt><span class="fgs-promise-nr" aria-hidden="true">04</span>Wir verkaufen nur, wenn es passt</dt><dd>Passt keines unserer Objekte zu Ihnen, helfen wir Ihnen bei der Finanzierung oder der Prüfung eines anderen.</dd></div>
+    </dl>
+    <div class="fgs-partners-more">{{ textlink("/ueber-uns.html", "Mehr über uns") }}</div>
   </div>
 </section>
 
@@ -145,11 +152,16 @@ faqListe:
 {# 7. F&G in Zahlen (Brief §3.7): zentriert, ohne „Angabe von F&G“. Bleibt nur, wenn Timon die Zahlen bestätigt (Jesu fragt).
    Design-Pass 3 §3.7: Zahlen in Marcellus 88 px, Trennlinien Gold 40 %, zählen einmal hoch (zaehlen). #}
 {# Vierte Kachel: Fix 2 (Jesu, 29.10.2026), Google-Bewertung statt „Europace“, wie auf Verkaufen; Anzahl aus _data/google.js. #}
+{# Update 23 A5: jede Zahl höchstens vier Zeichen groß („4“ und „Mio.+“ in 44 %), Einheit und Beschreibung in der Zeile darunter,
+   höchstens zwei Zeilen. Aus „über 4 Mio. €“ + „begleitetes Finanzierungsvolumen 2026, von der Eigentumswohnung bis zum
+   Mehrfamilienhaus“ wird „4 Mio.+“ + „Euro begleitetes Finanzierungsvolumen 2026“: Der Beispielsatz des Briefs braucht in
+   der 268 px breiten Spalte drei Zeilen (gemessen); „Euro“ und „begleitet“ bleiben, weil F&G die Finanzierungen begleitet, nicht gibt.
+   „Google‑Bewertungen“ mit geschütztem Bindestrich (U+2011), sonst bricht die Zeile bei 1440 px nach „Google-“. #}
 {{ facts({ id: "zahlen", titel: "F&G in Zahlen", mitte: true, zaehlen: true, items: [
   { wert: "100+", text: "Interessenten für Mehrfamilienhäuser deutschlandweit" },
   { wert: "50+", text: "neue Kapitalanlage-Interessenten pro Monat" },
-  { wert: "über 4 Mio. €", text: "begleitetes Finanzierungsvolumen 2026, von der Eigentumswohnung bis zum Mehrfamilienhaus" },
-  { wert: google.rating, text: "von 5 Sternen aus " + google.count + " Google-Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>, Stand ' + google.checkedLabel }
+  { wert: "4", einheit: "Mio.+", text: "Euro begleitetes Finanzierungsvolumen 2026" },
+  { wert: google.rating, sterne: true, text: "von 5 Sternen aus " + google.count + " Google‑Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>' }
 ] }) }}
 
 {# 8. Aktuelle Angebote: höchstens sechs, nur mit Foto; Einzelobjekte zuerst, dann Projekteinheiten. Einleitung wörtlich aus Brief §3.
@@ -198,7 +210,7 @@ faqListe:
       <div class="fgs-reviews-aside">
         <p class="fgs-reviews-score">{{ google.rating }}<span class="fgs-sr"> von 5 Sternen</span></p>
         <p class="fgs-reviews-stars" aria-hidden="true">★★★★★</p>
-        <p class="fgs-reviews-count">{{ google.count }} Bewertungen auf Google · Stand {{ google.checkedLabel }}</p>
+        <p class="fgs-reviews-count">{{ google.rating }} von 5 · {{ google.count }} Google-Bewertungen</p>
         <p class="fgs-reviews-links"><a class="fgs-link" href="{{ google.url }}" target="_blank" rel="noopener">Alle Bewertungen</a>{{ textlink(nav.menu[5].items[3] | navHref, "So bewerten Sie uns") }}</p>
       </div>
       <ul class="fgs-reviews-list" role="list">
@@ -210,8 +222,7 @@ faqListe:
     </div>
   </div>
   {%- if laufband.length %}
-  {#- Update 22 §8.5: Pause/Wiedergabe für das Laufband -#}
-  <div class="fgs-wrap fgs-ticker-ctl"><button type="button" class="fgs-pause" data-fgs-pause="Laufband" aria-controls="fgs-laufband" aria-label="Laufband anhalten"><svg class="fgs-pause-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path class="fgs-pause-bars" d="M4.5 3h2.2v10H4.5zM9.3 3h2.2v10H9.3z"/><path class="fgs-pause-play" d="M5 2.8v10.4L13.2 8z"/></svg></button></div>
+  {#- Update 23 A3: kein Pause-Knopf mehr; das Laufband hält unter der Maus, unter dem Finger und bei Tastaturfokus an (fg-system.js, CSS) -#}
   <div class="fgs-ticker" id="fgs-laufband" aria-label="Weitere Bewertungen auf Google" role="region">
     <ul class="fgs-ticker-track" role="list">
       {%- for r in laufband %}

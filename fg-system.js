@@ -101,11 +101,17 @@
     let lead = 0, lockUntil = 0, goal = null, idle = 0;
     const px = (name) => parseFloat(getComputedStyle(rail).getPropertyValue(name)) || 0;
     const pitch = () => px('--fgs-fold-schmal') + px('--fgs-fold-abstand');
-    // Eigenes Scrollen im Takt der Breitenänderung (0,8 s, cubic-bezier(.65,0,.35,1) = easeInOutCubic), damit die
+    // Eigenes Scrollen im Takt der Breitenänderung (0,8 s, Kurve D5 wie in CSS, vorher easeInOutCubic), damit die
     // breite Karte beim Wechsel an ihrem Platz bleibt. goal: Ziel des eigenen Scrollens; endet das Scrollen dort, war
     // es kein Wischen des Besuchers. Wischen, Mausrad oder Klicken bricht das eigene Scrollen ab.
     let anim = 0;
-    const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+    const ease = (t) => {
+      // Update 23 D5: cubic-bezier(.22, 1, .36, 1) wie --fgs-ease
+      const b = (p1, p2, u) => 3 * p1 * u * (1 - u) * (1 - u) + 3 * p2 * u * u * (1 - u) + u * u * u;
+      let lo = 0, hi = 1, u = t;
+      for (let i = 0; i < 20; i++) { u = (lo + hi) / 2; if (b(0.22, 0.36, u) < t) lo = u; else hi = u; }
+      return b(1, 1, u);
+    };
     const glide = (left) => {
       goal = Math.max(0, Math.min(left, track.scrollWidth - track.clientWidth));
       cancelAnimationFrame(anim);
@@ -299,14 +305,20 @@
     }
   }
 
-  /* ---------- Update 22 §8.5: Pause-Knopf (Diaschau, Laufband). aria-label wechselt zwischen „… anhalten“ und „… abspielen“. ---------- */
+  /* ---------- Update 22 §8.5 / Update 23 A3: Pause-Zeichen der Diaschau. aria-label und Tooltip wechseln zwischen
+     „Diaschau anhalten“ und „Diaschau fortsetzen“. ---------- */
   const pauseKnopf = (btn, an) => {
+    const text = `${btn.dataset.fgsPause} ${an ? 'fortsetzen' : 'anhalten'}`;
     btn.classList.toggle('is-gestoppt', an);
-    btn.setAttribute('aria-label', `${btn.dataset.fgsPause} ${an ? 'abspielen' : 'anhalten'}`);
+    btn.setAttribute('aria-label', text);
+    btn.title = text;
   };
-  document.querySelectorAll('.fgs-ticker-ctl [data-fgs-pause]').forEach((btn) => {
-    const band = document.getElementById(btn.getAttribute('aria-controls'));
-    btn.addEventListener('click', () => { const an = !band.classList.contains('is-gestoppt'); band.classList.toggle('is-gestoppt', an); pauseKnopf(btn, an); });
+  /* Update 23 A3: Das Laufband hält an, solange ein Finger darauf liegt (Maus: :hover, Tastatur: :focus-within im CSS). */
+  document.querySelectorAll('.fgs-ticker').forEach((band) => {
+    const halt = (an) => () => band.classList.toggle('is-gestoppt', an);
+    band.addEventListener('touchstart', halt(true), { passive: true });
+    band.addEventListener('touchend', halt(false), { passive: true });
+    band.addEventListener('touchcancel', halt(false), { passive: true });
   });
 
   /* ---------- Design-Pass 3 §3.1: Diaschau im Titelbild der Startseite (Makro heroSlides) ----------
@@ -355,7 +367,7 @@
     let inView = true;
     let gestoppt = false;
     const pause = () => hero.classList.toggle('is-pause', gestoppt || !inView || document.hidden);
-    // Update 22 §8.5: Knopf Pause/Wiedergabe
+    // Update 22 §8.5 / Update 23 A3: Pause-Zeichen am Ende der Fortschrittslinien
     hero.querySelector('[data-fgs-pause]')?.addEventListener('click', (event) => { gestoppt = !gestoppt; pauseKnopf(event.currentTarget, gestoppt); pause(); });
     if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { inView = e.isIntersecting; pause(); }).observe(hero);
     document.addEventListener('visibilitychange', pause);
@@ -446,14 +458,20 @@
     window.addEventListener('resize', measure, { passive: true });
   }
 
-  /* ---------- Design-Pass 3 §3.7: Zahlen zählen einmal hoch, wenn die Reihe ins Bild kommt (1,6 s, power2.out) ----------
+  /* ---------- Design-Pass 3 §3.7: Zahlen zählen einmal hoch, wenn die Reihe ins Bild kommt (Update 23 D5: 0,8 s, Kurve D5; vorher 1,6 s, power2.out) ----------
      Gezählt wird die erste Zahl im Text („100+“, „über 4 Mio. €“, „5,0“ mit einer Nachkommastelle); der Rest bleibt stehen.
      Steht die Endzahl in einer Zeile, bekommt der Text beim Zählen ein Feld so breit wie die Endzahl (in em, wächst mit
      der Schrift), damit die Spalten nicht springen; danach wieder reiner Text. Gemessen wird nach dem Laden der Schriften. Screenreader lesen nur die Endzahl (.fgs-sr), bei reduzierter Bewegung
      steht sie gleich da. */
   const countRows = Array.from(document.querySelectorAll('[data-fgs-count]'));
   if (countRows.length && !reduceMotion && 'IntersectionObserver' in window) {
-    const powerOut = (t) => 1 - (1 - t) * (1 - t);
+    // Update 23 D5: Kurve wie --fgs-ease, cubic-bezier(.22, 1, .36, 1) (vorher power2.out)
+    const powerOut = (t) => {
+      const b = (p1, p2, u) => 3 * p1 * u * (1 - u) * (1 - u) + 3 * p2 * u * u * (1 - u) + u * u * u;
+      let lo = 0, hi = 1, u = t;
+      for (let i = 0; i < 20; i++) { u = (lo + hi) / 2; if (b(0.22, 0.36, u) < t) lo = u; else hi = u; }
+      return b(1, 1, u);
+    };
     const fontsReady = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
     fontsReady.then(() => countRows.forEach((row) => {
       const items = Array.from(row.querySelectorAll('.fgs-count-now')).map((now) => {
@@ -476,7 +494,7 @@
         io.disconnect();
         const start = performance.now();
         const step = (time) => {
-          const t = Math.min(1, (time - start) / 1600);
+          const t = Math.min(1, (time - start) / 800); // Update 23 D5: 0,8 s wie jede Einblendung (vorher 1,6 s)
           if (t < 1) {
             items.forEach((x) => x.show(x.value * powerOut(t)));
             requestAnimationFrame(step);
@@ -500,12 +518,6 @@
     } else {
       closingFrames.forEach((frame) => frame.classList.add('is-zooming'));
     }
-    // Update 22 §8.5: Pause-Knopf; angehalten bleibt das Foto, wo es gerade steht
-    closingFrames.forEach((frame) => frame.querySelector('[data-fgs-pause]')?.addEventListener('click', (event) => {
-      const an = !frame.classList.contains('is-gestoppt');
-      frame.classList.toggle('is-gestoppt', an);
-      pauseKnopf(event.currentTarget, an);
-    }));
   }
 
   /* ---------- Design-Pass 3 §2.5: Seitenindex (ab 1.280 px, Darstellung im CSS) ----------

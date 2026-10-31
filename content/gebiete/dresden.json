@@ -74,11 +74,11 @@
         "text": "Zur Seite Dresden-Nord"
       },
       "bild": {
-        "name": "dresden-nord-rothenburger-strasse",
-        "alt": "Die Rothenburger Straße in der Äußeren Neustadt, Blick von der Bautzner Straße nach Norden",
-        "caption": "Die Rothenburger Straße in der Äußeren Neustadt.",
-        "credit": "Maksym Kozlenko, CC BY-SA 4.0",
-        "url": "https://commons.wikimedia.org/wiki/File:2017-06-02_Rothenburger_Stra%C3%9Fe,_Dresden.jpg"
+        "name": "dresden-nord-kunsthofpassage",
+        "alt": "Der Hof der Elemente in der Kunsthofpassage in der Äußeren Neustadt: türkisblaue Fassade mit Balkonen und einem Geflecht aus Regenrinnen und Trichtern",
+        "caption": "Der Hof der Elemente in der Kunsthofpassage, Äußere Neustadt.",
+        "credit": "Fred Romero, CC BY 2.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Dresden_-_Kunsthofpassage_Hof_der_Elemente.jpg"
       }
     },
     {
@@ -101,18 +101,17 @@
     {
       "h2": "Dresden-Zentrum: Blasewitz, Striesen, Gruna und Pirnaische Vorstadt",
       "absaetze": [
-        "In den sechs Stadtteilen leben 70.895 Menschen.[[5]] In der Gemarkung Blasewitz wurden 2025 15 neue Eigentumswohnungen verkauft, im Median für 8.575 €/m²; in der Gemarkung Striesen kosteten 104 ältere Wohnungen im Weiterverkauf im Median 2.895 €/m².[[1]] Die Bodenrichtwerte reichen von 310 bis 1.700 €/m².[[4]] Für Striesen Nordost und vier Gebiete in Blasewitz gelten städtebauliche Erhaltungssatzungen: Abriss, Umbau, Nutzungsänderung und Neubau brauchen dort eine Genehmigung nach § 173 BauGB.[[11]]"
+        "In Blasewitz, Gruna, der Pirnaischen Vorstadt und den drei Stadtteilen von Striesen leben 70.895 Menschen.[[5]] In der Gemarkung Blasewitz wurden 2025 15 neue Eigentumswohnungen verkauft, im Median für 8.575 €/m²; in der Gemarkung Striesen kosteten 104 ältere Wohnungen im Weiterverkauf im Median 2.895 €/m².[[1]] Die Bodenrichtwerte reichen von 310 bis 1.700 €/m².[[4]] Für Striesen Nordost und vier Gebiete in Blasewitz gelten städtebauliche Erhaltungssatzungen: Abriss, Umbau, Nutzungsänderung und Neubau brauchen dort eine Genehmigung nach § 173 BauGB.[[11]]"
       ],
       "seite": {
         "url": "/standorte/dresden/zentrum/",
         "text": "Zur Seite Dresden-Zentrum"
       },
       "bild": {
-        "name": "dresden-zentrum-pirnaische-vorstadt-grunaer-strasse",
-        "alt": "Blick von oben über die Pirnaische Vorstadt: helle Wohnblöcke mit roten Dächern an einer breiten Straße mit Herbstbäumen, dahinter weitere Stadtteile und Hügel unter blauem Himmel",
-        "credit": "Hgzh, CC BY-SA 4.0",
-        "url": "https://commons.wikimedia.org/wiki/File:Blick_von_Grunaer_Stra%C3%9Fe_6_Dresden_2021-10_9.jpg",
-        "position": "50% 72%"
+        "name": "dresden-zentrum-striesen-villa-sommerlust",
+        "alt": "Die Villa Sommerlust an der Prellerstraße in Striesen: helles Haus mit roter Holzveranda und Bogenfenstern hinter einem Zaun, daneben ein kahler Baum unter blauem Himmel",
+        "credit": "VSchagow, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:2022113036_Prellerstrasse_40_Villa_Sommerlust_Zentralperspektive_2022.jpg"
       }
     },
     {

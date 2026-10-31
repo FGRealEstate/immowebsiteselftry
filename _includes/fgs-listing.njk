@@ -19,17 +19,10 @@
 {%- macro listingHead(l) -%}
 <section class="fgs-pagehead fgs-listing-head" aria-labelledby="seitentitel">
   <div class="fgs-wrap">
-    <nav aria-label="Brotkrümelnavigation">
-      <ol class="fgs-crumbs">
-        <li><a href="/">Start</a></li>
-        {%- for c in l.crumbs %}
-        <li><a href="{{ c.href }}">{{ c.label }}</a></li>{% endfor %}
-        <li aria-current="page">{{ l.current }}</li>
-      </ol>
-    </nav>
+    {#- Update 23 B1: keine sichtbaren Brotkrumen mehr; die BreadcrumbList im JSON-LD unten bleibt. -#}
     <div class="fgs-listing-head-text">
       <p class="fgs-label">{{ l.kicker }}</p>
-      <h1 id="seitentitel">{{ l.titel }}</h1>
+      {# Update 23 B9: lange Titel (über 70 Zeichen) auf dem Handy kleiner, sonst stehen sie auf sechs bis sieben Zeilen #}<h1 id="seitentitel"{% if (l.titel | striptags | length) > 70 %} class="fgs-h1-lang"{% endif %}>{{ l.titel }}</h1>
       {%- if l.meta | trim %}
       <p class="fgs-listing-meta">{{ l.meta | safe }}</p>{% endif %}
       <div class="fgs-btns">

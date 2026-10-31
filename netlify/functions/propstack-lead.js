@@ -166,7 +166,13 @@ function normalizeLeadPayload(data) {
   const concernType = mapConcernType(rawConcern);
 
   const objectType = normalizeObjectType(clean(data.object_type || data.objectType));
-  const location = clean(data.location || data.address || data.ort);
+  // Update 23 B3: Die Bewertung fragt Straße, Hausnummer, PLZ und Ort einzeln ab; ohne Skript kommt kein „location“ mit.
+  const street = clean(data.street);
+  const houseNumber = clean(data.house_number);
+  const zipCode = clean(data.zip_code);
+  const city = clean(data.city);
+  const addressParts = [[street, houseNumber].filter(Boolean).join(" "), [zipCode, city].filter(Boolean).join(" ")].filter(Boolean).join(", ");
+  const location = clean(data.location || data.address || data.ort) || addressParts;
   const budget = clean(data.budget);
   const budgetNumber = numberOrNull(budget);
   const timeframe = clean(data.timeframe || data.zeitrahmen);
@@ -220,6 +226,10 @@ function normalizeLeadPayload(data) {
     concernType,
     objectType,
     location,
+    street,
+    houseNumber,
+    zipCode,
+    city,
     budget,
     budgetNumber,
     timeframe,
@@ -649,7 +659,7 @@ async function buildOwnerPropertyPayload(apiKey, contactId, lead, note) {
   const objectMapping = mapOwnerObjectMapping(lead.objectType, details);
   const title = buildOwnerPropertyTitle(lead);
   const address = lead.location || undefined;
-  const city = extractCity(lead.location) || undefined;
+  const city = lead.city || extractCity(lead.location) || undefined;
   const priceNumber = lead.concernType === "sell" ? lead.budgetNumber : undefined;
   const coldRent = numberOrNull(firstValue(details, ["seller-cold-rent", "seller_cold_rent", "cold_rent", "net_cold_rent"])) || (lead.concernType === "rent" ? lead.budgetNumber : undefined);
   const coldRentTarget = numberOrNull(firstValue(details, ["seller-cold-rent-target", "seller_cold_rent_target", "target_cold_rent"]));
@@ -666,6 +676,9 @@ async function buildOwnerPropertyPayload(apiKey, contactId, lead, note) {
     rs_category: objectMapping.rs_category,
 
     address,
+    street: lead.street || undefined,
+    house_number: lead.houseNumber || undefined,
+    zip_code: lead.zipCode || undefined,
     city,
     country: "DEU",
 

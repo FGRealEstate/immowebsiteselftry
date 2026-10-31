@@ -1131,12 +1131,34 @@
     return null;
   }
 
+  /* Update 23 B8: Bei offenem Chat steht die Seite dahinter (Handy, unter 768 px, wo der Chat den Bildschirm füllt).
+     Vorher gab das Handy jeden Wisch an die Seite weiter, solange die Nachrichtenliste zu kurz zum Scrollen war; erst mit
+     mehr Nachrichten scrollte der Chat selbst. overflow: hidden auf html und body; iOS scrollt trotzdem, deshalb wird body
+     festgesetzt und die Position beim Schließen zurückgegeben. Die Klasse am body hält auch Lenis an (fgs-motion.js). */
+  const handy=window.matchMedia('(max-width: 767px)');
+  let gesperrtBei=null;
+  function seiteSperren(){
+    if(gesperrtBei!==null||!handy.matches)return;
+    gesperrtBei=window.scrollY;
+    document.body.style.top=`-${gesperrtBei}px`;
+    document.documentElement.classList.add('fg-ai-gesperrt'); document.body.classList.add('fg-ai-gesperrt');
+  }
+  function seiteFreigeben(){
+    if(gesperrtBei===null)return;
+    const y=gesperrtBei; gesperrtBei=null;
+    document.documentElement.classList.remove('fg-ai-gesperrt'); document.body.classList.remove('fg-ai-gesperrt');
+    document.body.style.top='';
+    window.scrollTo({top:y,behavior:'instant'});
+    window.fgsBewegung?.lenis?.scrollTo(y,{immediate:true,force:true});
+  }
+  handy.addEventListener('change',()=>{if(!panel.hidden)(handy.matches?seiteSperren:seiteFreigeben)();});
+
   function openPanel(){
-    panel.hidden=false; launcher.setAttribute('aria-expanded','true');
+    panel.hidden=false; launcher.setAttribute('aria-expanded','true'); seiteSperren();
     if(!messages.children.length){addMessage('assistant',initialHtml(),{save:false});const ctx=contextualWelcome();if(ctx)addMessage('assistant',`<p>Passend zu dieser Seite interessieren häufig:</p>${suggestionsHtml(ctx)}`,{save:false});}
     window.setTimeout(()=>input.focus({preventScroll:true}),80); saveSession();
   }
-  function closePanel(){panel.hidden=true;launcher.setAttribute('aria-expanded','false');}
+  function closePanel(){panel.hidden=true;launcher.setAttribute('aria-expanded','false');seiteFreigeben();}
   function resetConversation(){messages.innerHTML='';dialogState={flow:null,stage:null,data:{}};sessionStorage.removeItem(SESSION_KEY);addMessage('assistant',initialHtml(),{save:false});const ctx=contextualWelcome();if(ctx)addMessage('assistant',`<p>Passend zu dieser Seite interessieren häufig:</p>${suggestionsHtml(ctx)}`,{save:false});saveSession();}
 
   function saveSession(){

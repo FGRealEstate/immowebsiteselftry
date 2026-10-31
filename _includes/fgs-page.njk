@@ -22,15 +22,7 @@ customSchema: true
 {% set faqItems = (pg.faq or []) | faqFrei %}
 {% set pk = kontakte[pg.person.key] if pg.person else null %}
 
-{% set crumbs %}
-    <nav aria-label="Brotkrümelnavigation">
-      <ol class="fgs-crumbs">
-        <li><a href="/">Start</a></li>
-        {%- if pg.parent %}<li><a href="{{ pg.parent.href }}">{{ pg.parent.label }}</a></li>{% endif %}
-        <li aria-current="page">{{ pg.crumb }}</li>
-      </ol>
-    </nav>
-{%- endset %}
+{#- Update 23 B1: keine sichtbaren Brotkrumen mehr; die BreadcrumbList im JSON-LD unten bleibt. -#}
 
 {% if pg.hero %}
 {# 1. S1 Titelbild #}
@@ -47,10 +39,9 @@ customSchema: true
 {# 1. Titelzeile ohne Foto: Brotkrumen, Kicker, H1, Einleitung, höchstens zwei Buttons #}
 <section class="fgs-pagehead" aria-labelledby="seitentitel">
   <div class="fgs-wrap">
-    {{ crumbs | safe }}
     {%- if pg.kicker %}
     <p class="fgs-label">{{ pg.kicker | safe }}</p>{% endif %}
-    <h1 id="seitentitel">{{ pg.h1 | safe }}</h1>
+    {# Update 23 B9: lange Titel (über 70 Zeichen) auf dem Handy kleiner, sonst stehen sie auf sechs bis sieben Zeilen #}<h1 id="seitentitel"{% if (pg.h1 | striptags | length) > 70 %} class="fgs-h1-lang"{% endif %}>{{ pg.h1 | safe }}</h1>
     {%- if pg.intro %}
     <p class="fgs-lead">{{ pg.intro | safe }}</p>{% endif %}
     {%- if pg.rating %}
@@ -58,7 +49,7 @@ customSchema: true
     {%- if pg.rating != "knopf" %}
     <div class="fgs-rating">
       <p class="fgs-rating-score"><strong>{{ google.rating }}</strong> von 5 <span aria-hidden="true">★</span></p>
-      <p class="fgs-small fgs-source">{{ google.count }} Bewertungen auf Google · Stand {{ google.checkedLabel }}</p>
+      <p class="fgs-small fgs-source">{{ google.count }} Google-Bewertungen</p>
     </div>
     {%- endif %}
     <div class="fgs-btns">
@@ -75,11 +66,11 @@ customSchema: true
 </section>
 {% endif %}
 
-{# 2. Erster Abschnitt (H2 und Absätze über 8 Spalten, wie „Das Wichtigste in Kürze“ in fgs-service.njk); mit Titelbild stehen hier die Brotkrumen #}
-{% if pg.hero or pg.summaryQ %}
-<section class="fgs-section fgs-summary-section"{% if pg.summaryQ %} aria-labelledby="kurz-titel"{% endif %}>
+{# 2. Erster Abschnitt (H2 und Absätze über 8 Spalten, wie „Das Wichtigste in Kürze“ in fgs-service.njk). Mit Titelbild standen
+   hier bis Update 23 B1 auch die Brotkrumen; seitdem gibt es den Abschnitt nur mit summaryQ, sonst bliebe er leer. #}
+{% if pg.summaryQ %}
+<section class="fgs-section fgs-summary-section" aria-labelledby="kurz-titel">
   <div class="fgs-wrap">
-    {%- if pg.hero %}{{ crumbs | safe }}{% endif %}
     {%- if pg.summaryQ %}
     <div class="fgs-summary">
       <h2 id="kurz-titel">{{ pg.summaryQ }}</h2>
@@ -115,7 +106,8 @@ customSchema: true
       "inLanguage": "de-DE",
       "isPartOf": { "@id": "https://fg-realestate.de/#website" },
       "publisher": { "@id": "https://fg-realestate.de/#organization" },
-      {% if pg.person %}"mainEntity": { "@id": "{{ pageUrl }}#person" },
+      {% if pg.schema.stand == "google" %}"dateModified": "{{ google.checked }}",
+      {% endif %}{% if pg.person %}"mainEntity": { "@id": "{{ pageUrl }}#person" },
       {% elif pg.schema.org %}"mainEntity": { "@id": "https://fg-realestate.de/#organization" },
       {% elif pg.schema.about %}"about": { "@id": "{{ pg.schema.about }}" },
       {% endif %}"breadcrumb": { "@id": "{{ pageUrl }}#breadcrumb" }

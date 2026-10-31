@@ -24,11 +24,11 @@
   "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Dresden-Zentrum beim Verkauf, beim Kauf und bei der Finanzierung, von den Villen in Blasewitz über die Würfelhäuser in Striesen bis nach Gruna und in die Pirnaische Vorstadt. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
   "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Dresden ist Timon Fischer Ihr Ansprechpartner, Geschäftsführer und verantwortlich für die Immobilienfinanzierung.",
   "hero": {
-    "name": "dresden-zentrum-pirnaische-vorstadt-grunaer-strasse",
-    "alt": "Blick von oben über die Pirnaische Vorstadt: helle Wohnblöcke mit roten Dächern an einer breiten Straße mit Herbstbäumen, dahinter weitere Stadtteile und Hügel unter blauem Himmel",
-    "credit": "Hgzh, CC BY-SA 4.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Blick_von_Grunaer_Stra%C3%9Fe_6_Dresden_2021-10_9.jpg",
-    "position": "50% 72%"
+    "name": "dresden-zentrum-striesen-villa-sommerlust",
+    "alt": "Die Villa Sommerlust an der Prellerstraße in Striesen: helles Haus mit roter Holzveranda und Bogenfenstern hinter einem Zaun, daneben ein kahler Baum unter blauem Himmel",
+    "credit": "VSchagow, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:2022113036_Prellerstrasse_40_Villa_Sommerlust_Zentralperspektive_2022.jpg",
+    "position": "50% 55%"
   },
   "stand": "Oktober 2026",
   "updated": "2026-10-27",
@@ -59,7 +59,7 @@
     },
     {
       "wert": "70.895",
-      "label": "Einwohner in den sechs Stadtteilen des Marktgebiets",
+      "label": "Einwohner in Blasewitz, Gruna, der Pirnaischen Vorstadt und den drei Stadtteilen von Striesen",
       "detail": "Striesen-Ost 15.160, Striesen-West 13.252, Gruna 12.980, Striesen-Süd 12.528, Blasewitz 10.141, Pirnaische Vorstadt 6.834. Das Durchschnittsalter 2024 reicht von 41,1 Jahren in Striesen-Ost bis 48,3 Jahren in Gruna, in ganz Dresden 43,5 Jahre.",
       "quelle": "Landeshauptstadt Dresden, Opendata und Stadtteilkatalog 2024",
       "url": "https://opendata.dresden.de/",
@@ -96,11 +96,11 @@
         "In der Gemarkung Striesen, die alle drei Stadtteile umfasst, wurden 2025 104 ältere Eigentumswohnungen weiterverkauft, im Median für 2.895 €/m²; Wohnungen der Baujahre 1990 bis 2023 erzielten 3.000 €/m².[[1,6]] In rund drei Vierteln von Striesen-Ost gilt ein Bodenrichtwert von 1.200 €/m² für Mehrfamilienhausgrundstücke.[[3]] Die angebotenen Mieten lagen 2024 in Striesen-Ost bei 10,89 €/m², in Striesen-West bei 9,32 und in Striesen-Süd bei 9,21 €/m². Den Leerstand in Striesen-Süd schätzt die Stadt auf 2,6 %.[[5]]"
       ],
       "bild": {
-        "name": "dresden-zentrum-striesen-heubnerstrasse",
-        "alt": "Eine gelbe Villa mit rotem Ziegeldach in der Heubnerstraße hinter einem Zaun, davor ein parkendes Auto",
-        "caption": "Eine Villa in der Heubnerstraße in Striesen.",
+        "name": "dresden-zentrum-striesen-villa-monade",
+        "alt": "Die Villa Monade an der Hüblerstraße in Striesen, ein Landhaus mit hölzernen Veranden und Balkonen, davor Sträucher und ein Holzzaun",
+        "caption": "Die Villa Monade an der Hüblerstraße in Striesen.",
         "credit": "Jörg Blobelt, CC BY-SA 4.0",
-        "url": "https://commons.wikimedia.org/wiki/File:20070727200DR_Dresden-Striesen_Heubnerstra%C3%9Fe_7.jpg"
+        "url": "https://commons.wikimedia.org/wiki/File:20060421115DR_Dresden-Striesen_H%C3%BCblerstra%C3%9Fe_43.jpg"
       }
     },
     {
@@ -124,11 +124,11 @@
         "Eigene Wohnungspreise weist der Marktbericht für die Pirnaische Vorstadt nicht aus: Sie liegt in der Gemarkung Altstadt I, die zu 79 % andere Stadtteile umfasst.[[1,6]] Die Bodenrichtwerte reichen von 630 bis 1.150 €/m²; in der größten Zone gelten 630 €/m² für Mehrfamilienhausgrundstücke, 2024 waren es 610 €/m².[[3]]"
       ],
       "bild": {
-        "name": "dresden-zentrum-pirnaische-vorstadt",
-        "alt": "Blick von oben über die Dächer am Neumarkt zum Pirnaischen Platz und in die Pirnaische Vorstadt mit Wohnblöcken, im Hintergrund weitere Stadtteile",
-        "caption": "Blick von der Frauenkirche nach Südosten über den Pirnaischen Platz in die Pirnaische Vorstadt.",
-        "credit": "Hangman'sDeath, CC0",
-        "url": "https://commons.wikimedia.org/wiki/File:01067_Dresden,_Pirnaische_Vorstadt_2023-06-10.jpg"
+        "name": "dresden-zentrum-pirnaische-vorstadt-grunaer-strasse-25",
+        "alt": "Ein langer Wohnblock an der Grunaer Straße in der Pirnaischen Vorstadt, im Erdgeschoss ein Café mit Tischen im Freien, davor Bäume und Rasen",
+        "caption": "Wohnhaus an der Grunaer Straße in der Pirnaischen Vorstadt.",
+        "credit": "Christian Gebhardt (Bybbisch94), CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Dresden-_Grunaer_Stra%C3%9Fe_25.jpg"
       }
     }
   ],
@@ -150,7 +150,7 @@
     "h2": "Kaufen und investieren in Dresden-Zentrum",
     "absaetze": [
       "Als Eigennutzer finden Sie neue Wohnungen vor allem in Blasewitz: 15 Erstverkäufe 2025, im Median 8.575 €/m², bei einer Spanne von 5.805 bis 8.740 €/m². In Striesen waren es sieben zu 6.195 €/m², in Gruna fünf zu 6.280 €/m².[[1]] In ganz Dresden kosteten neue Wohnungen im 1. Halbjahr 2026 im Median 6.255 €/m², laut Gutachterausschuss „unverändert auf hohem Niveau“.[[2]] Häuser mit einer oder zwei Wohnungen machen in Blasewitz 38 % und in Gruna 29 % der Wohngebäude aus.[[5]]",
-      "Als Kapitalanleger rechnen Sie mit dem Dresdner Mietspiegel 2025, der für die ganze Stadt gilt: Die Basismiete für 60 m² beträgt 7,07 €/m², die Wohnlage wird adressgenau mit 0,98 bis 1,03 gewichtet.[[7,8]] Die Mietpreisbremse gilt bis zum 30.06.2027: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[9]] Bestandsmieten dürfen in drei Jahren um höchstens 15 % steigen.[[10]] Den Leerstand schätzt die Stadt in den sechs Stadtteilen auf 2,6 bis 10,2 %.[[5]] Aus Kaufpreis, Miete, Bewirtschaftungskosten und den Auflagen vor Ort rechnen wir mit Ihnen die Rendite, bevor Sie kaufen."
+      "Als Kapitalanleger rechnen Sie mit dem Dresdner Mietspiegel 2025, der für die ganze Stadt gilt: Die Basismiete für 60 m² beträgt 7,07 €/m², die Wohnlage wird adressgenau mit 0,98 bis 1,03 gewichtet.[[7,8]] Die Mietpreisbremse gilt bis zum 30.06.2027: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[9]] Bestandsmieten dürfen in drei Jahren um höchstens 15 % steigen.[[10]] Den Leerstand schätzt die Stadt in Blasewitz, Gruna, der Pirnaischen Vorstadt und den drei Stadtteilen von Striesen auf 2,6 bis 10,2 %.[[5]] Aus Kaufpreis, Miete, Bewirtschaftungskosten und den Auflagen vor Ort rechnen wir mit Ihnen die Rendite, bevor Sie kaufen."
     ]
   },
   "finanzieren": {

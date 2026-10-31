@@ -43,7 +43,7 @@
                 {%- if menuBild[group.href] %}{% set mb = menuBild[group.href] | bild %}{% set mbAvif = mb.srcset | avifSet %}{% if mbAvif %}<picture class="fgs-pic"><source type="image/avif" data-srcset="{{ mbAvif }}" sizes="380px">{% endif %}<img data-src="{{ mb.src }}" data-srcset="{{ mb.srcset }}" sizes="380px" width="380" height="260" alt="" decoding="async">{% if mbAvif %}</picture>{% endif %}
                 {%- elif neuesterArtikel %}<img data-src="{{ neuesterArtikel.url }}{{ neuesterArtikel.lead.src }}" width="380" height="260" alt="" decoding="async">{% endif -%}
                 </span>
-                <span class="fgs-panel-card-text"><span class="fgs-panel-card-name">{{ group.label }}</span><span class="fgs-panel-card-more">Zur Übersicht →</span></span>
+                <span class="fgs-panel-card-text"><span class="fgs-panel-card-name">{{ group.label }}</span><span class="fgs-panel-card-more">Zur Übersicht <span class="fgs-panel-card-pfeil" aria-hidden="true">→</span></span></span>
               </a>
               <ul class="fgs-panel-links">
                 {%- for item in group.items %}

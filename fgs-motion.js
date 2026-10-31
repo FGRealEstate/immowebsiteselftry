@@ -12,6 +12,13 @@
   if (!root.classList.contains('fgs-mo')) return;
   if (!gsap || !ScrollTrigger || !SplitText || !Lenis) { root.classList.remove('fgs-mo'); return; }
   gsap.registerPlugin(ScrollTrigger, SplitText);
+  // Update 23 D5: eine Kurve für jede Bewegung, cubic-bezier(.22, 1, .36, 1) wie --fgs-ease in fg-system.css
+  const kurve = (t) => {
+    const b = (p1, p2, u) => 3 * p1 * u * (1 - u) * (1 - u) + 3 * p2 * u * u * (1 - u) + u * u * u;
+    let lo = 0, hi = 1, u = t;
+    for (let i = 0; i < 20; i++) { u = (lo + hi) / 2; if (b(0.22, 0.36, u) < t) lo = u; else hi = u; }
+    return b(1, 1, u);
+  };
 
   /* ---------- Lenis: weiches Scrollen mit Mausrad und Trackpad, 1,1 s, Kurve aus §2.1; Touch scrollt nativ.
      Innere Scrollbereiche (Menü, Seitenindex, Inhaltsverzeichnis) scrollen selbst (allowNestedScroll). Bei offenem Menü steht
@@ -21,16 +28,17 @@
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add((time) => lenis.raf(time * 1000));
   gsap.ticker.lagSmoothing(0);
-  const menu = () => (document.body.classList.contains('fgs-menu-open') ? lenis.stop() : lenis.start());
+  // Update 23 B8: auch bei offenem Chat auf dem Handy (fg-assistant.js setzt fg-ai-gesperrt)
+  const menu = () => (document.body.classList.contains('fgs-menu-open') || document.body.classList.contains('fg-ai-gesperrt') ? lenis.stop() : lenis.start());
   new MutationObserver(menu).observe(document.body, { attributes: true, attributeFilter: ['class'] });
 
-  /* ---------- Überschriften: H1 und H2 zeilenweise, je Zeile hinter einer Maske von unten (yPercent 100 → 0), 0,9 s,
-     Versatz 0,08 s, expo.out, einmal beim ersten Erscheinen; dazu die Stellen mit data-fgs-lines (Zitat der Stimme, Satz im
+  /* ---------- Überschriften: H1 und H2 zeilenweise, je Zeile hinter einer Maske von unten (yPercent 125 → 0, Update 23 A2), 0,8 s,
+     Versatz 0,08 s, Kurve D5 (vorher 0,9 s expo.out), einmal beim ersten Erscheinen; dazu die Stellen mit data-fgs-lines (Zitat der Stimme, Satz im
      Abschlussrahmen). Ausgenommen sind die Titel im Leistungs-Slider (die blenden mit ihrer Folie über), Überschriften mit
      eigener Gliederung (Kinder, die nicht inline stehen, z. B. Ort und Dienst im Titel der Gebietsseiten) und Unsichtbares.
      autoSplit teilt nach dem Laden der Schriften und bei neuer Breite neu; die zurückgegebene Animation behält ihren Stand. ---------- */
   const LINES = { type: 'lines', mask: 'lines', linesClass: 'fgs-zeile', autoSplit: true };
-  const FROM = { yPercent: 100, duration: 0.9, stagger: 0.08, ease: 'expo.out' };
+  const FROM = { yPercent: 125, duration: 0.8, stagger: 0.08, ease: kurve }; // 125 statt 100: Polster der Maske (Update 23 A2, fg-system.css)
   const plain = (el) => el.getClientRects().length > 0 && Array.from(el.querySelectorAll('*')).every((c) => getComputedStyle(c).display === 'inline');
 
   const heroH1 = document.querySelector('.fgs-hero h1');
@@ -41,11 +49,11 @@
       let first = true;
       SplitText.create(heroH1, { ...LINES, onSplit: (self) => {
         gsap.set(heroH1, { visibility: 'visible' });
-        // §3.1 Startseite: Kicker blendet ein, dann die H1 Zeile für Zeile, 0,5 s danach steigen die Buttons 12 px auf (0,6 s)
+        // §3.1 Startseite: Kicker blendet ein, dann die H1 Zeile für Zeile, 0,5 s danach steigen die Buttons 12 px auf (D5: je 0,4 s, vorher 0,6)
         const delay = slideHero && first ? 0.2 : 0;
         if (slideHero && first) {
-          gsap.fromTo(slideHero.querySelector('.fgs-hero-text > .fgs-label'), { opacity: 0 }, { opacity: 1, duration: 0.6, ease: 'power1.out' });
-          gsap.fromTo(slideHero.querySelector('.fgs-btns'), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6, delay: delay + 0.5, ease: 'expo.out' });
+          gsap.fromTo(slideHero.querySelector('.fgs-hero-text > .fgs-label'), { opacity: 0 }, { opacity: 1, duration: 0.4, ease: kurve });
+          gsap.fromTo(slideHero.querySelector('.fgs-btns'), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4, delay: delay + 0.5, ease: kurve });
         }
         first = false;
         document.dispatchEvent(new Event('fgs:zeilen'));

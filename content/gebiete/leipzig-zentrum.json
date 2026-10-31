@@ -22,11 +22,11 @@
   "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Leipzig-Zentrum beim Verkauf, beim Kauf und bei der Finanzierung, von den Villen im Musikviertel und den Gründerzeithäusern in Zentrum-West bis zur Eisenbahnstraße in Neustadt-Neuschönefeld. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
   "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Leipzig ist Timon Fischer Ihr Ansprechpartner, Geschäftsführer und verantwortlich für die Immobilienfinanzierung.",
   "hero": {
-    "name": "leipzig-zentrum-karl-tauchnitz-strasse-10",
-    "alt": "Die Villa Karl-Tauchnitz-Straße 10 in Leipzig an einem Sommertag, davor die Straße",
-    "credit": "Frank Vincentz, CC BY-SA 3.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Leipzig_-_Karl-Tauchnitz-Stra%C3%9Fe_04_ies.jpg",
-    "position": "50% 55%"
+    "name": "leipzig-zentrum-johannapark",
+    "alt": "Der Teich im Johannapark mit einer hölzernen Bogenbrücke, Bäume spiegeln sich im Wasser, rechts hinten der Turm der Lutherkirche",
+    "credit": "Ansgar Koreng, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Holzbr%C3%BCcke_im_Johannapark,_Leipzig,_1708141015,_ako.jpg",
+    "position": "50% 50%"
   },
   "stand": "Oktober 2026",
   "updated": "2026-10-27",
@@ -122,12 +122,11 @@
         "Im Mietspiegel liegt der Ortsteil außerhalb der Innenstadt: 55 % der Adressen in mittlerer Lage, darunter die ganze Eisenbahnstraße, 45 % in guter, etwa an der Berg- und der Schulze-Delitzsch-Straße.[[5]] Seit dem 05.07.2020 gilt die soziale Erhaltungssatzung Eisenbahnstraße für rund 118 Hektar mit rund 12.400 Wohnungen in Neustadt-Neuschönefeld, Volkmarsdorf und Sellerhausen-Stünz.[[9]] Die Sanierungsgebiete Neustädter Markt und Neuschönefeld sind aufgehoben, die Beschlüsse fielen am 28.04.2021 und am 17.05.2023.[[15,16]] Die Bodenrichtwerte stiegen an der Einertstraße von 950 auf 1.050 €/m² und an der Comeniusstraße von 1.000 auf 1.100 €/m².[[2]] Fünf sanierte Mehrfamilienhäuser wurden 2025 weiterverkauft, im Mittel für 1.531 €/m².[[1]]"
       ],
       "bild": {
-        "name": "leipzig-zentrum-hedwigstrasse",
-        "alt": "Die Hedwigstraße mit der Heilig-Kreuz-Kirche",
-        "caption": "Hedwigstraße mit Heilig-Kreuz-Kirche.",
-        "credit": "Falk2, CC BY-SA 4.0",
-        "url": "https://commons.wikimedia.org/wiki/File:J39_349_Hedwigstra%C3%9Fe,_Heilig-Kreuz-Kirche.jpg",
-        "position": "50% 50%"
+        "name": "leipzig-zentrum-elsapark-rabet",
+        "alt": "Eine Steintreppe im Elsapark führt hinauf zum Rabet, ringsum Bäume und Sträucher",
+        "caption": "Die Treppe vom Elsapark zum Rabet.",
+        "credit": "Martin Geisler, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Elsapark_Treppe.jpg"
       }
     }
   ],

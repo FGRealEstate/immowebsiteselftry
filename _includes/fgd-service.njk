@@ -28,15 +28,7 @@ customSchema: true
 {% set heroWidths = s.hero.widths or [960, 1600, 2000] %}
 {% set heroSrc = 1600 if 1600 in heroWidths else heroWidths | last %}
 
-<nav class="fgd-crumbs fgd-crumbs--bar" aria-label="Brotkrümelnavigation">
-  <div class="fgd-wrap">
-    <ol>
-      <li><a href="/">Start</a></li>
-      {% if s.parent %}<li><a href="{{ s.parent.href }}">{{ s.parent.label }}</a></li>{% endif %}
-      <li aria-current="page">{{ s.crumb }}</li>
-    </ol>
-  </div>
-</nav>
+{#- Update 23 B1: keine sichtbaren Brotkrumen mehr; die BreadcrumbList im JSON-LD unten bleibt. -#}
 
 {# 1. Hero #}
 <section class="fgd-hero fgd-hero--page" aria-labelledby="seiten-titel">

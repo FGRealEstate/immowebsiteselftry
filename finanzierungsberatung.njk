@@ -66,8 +66,8 @@ service:
   related:
     services:
       - { label: "Ankaufsberatung", note: "Objekt, Lage, Wirtschaftlichkeit, Finanzierung", href: "/ankaufsberatung.html", bild: "ankauf-hero", alt: "Das Eckhaus Kurfürstendamm 190 in Berlin-Charlottenburg mit grüner Kuppel an einem sonnigen Junitag" }
-      - { label: "Immobilien als Kapitalanlage", note: "Die erste Wohnung bis zum Portfolio", href: "/kapitalanlage.html", bild: "kapitalanlage-hero", alt: "Gründerzeithaus von 1871 an der Humboldtstraße im Leipziger Waldstraßenviertel" }
-      - { label: "Mehrfamilienhaus", note: "Verkaufen, kaufen, finanzieren", href: "/mehrfamilienhaus.html", bild: "mfh-hero", alt: "Denkmalgeschütztes Eckhaus mit Klinkerfassade an der Schönhauser Allee in Berlin-Prenzlauer Berg" }
+      - { label: "Immobilien als Kapitalanlage", note: "Die erste Wohnung bis zum Portfolio", href: "/kapitalanlage.html", bild: "kapitalanlage-hero", alt: "Gründerzeit-Mietshaus aus den 1890er-Jahren an der Funkenburgstraße im Leipziger Waldstraßenviertel, helle Fassade mit roten Ziegelbändern und Balkonen" }
+      - { label: "Mehrfamilienhaus", note: "Verkaufen, kaufen, finanzieren", href: "/mehrfamilienhaus.html", bild: "mfh-hero", alt: "Denkmalgeschütztes Eckhaus mit zwei Erkertürmen an der Malmöer Straße in Berlin-Prenzlauer Berg, daneben Bäume" }
       - { label: "Immobilie verkaufen", note: "Verkauf und nächste Finanzierung in einem Prozess", href: "/verkaufen.html" }
     lexikon: [anschlussfinanzierung]
     blog: [beleihungsauslauf-und-kondition, zinsbindung-strategisch-waehlen]
@@ -137,7 +137,7 @@ service:
       </li>
       <li style="--i: 5">
         <span class="fgs-step-num" aria-hidden="true">05</span>
-        <h3>Kredit&shy;entscheidung</h3>
+        <h3>Kreditentscheidung</h3>
         <p class="fgs-step-lead">Die Bank prüft Bonität und Objekt und entscheidet über die Zusage.</p>
         <div class="fgs-step-panel" id="schritt-5"><p>Bei einem Kauf klären wir, ob die Finanzierung realistisch ist, bevor der Kaufvertrag beim Notar beauftragt wird.</p></div>
       </li>
@@ -172,7 +172,7 @@ service:
 
   <article class="fgs-row fgs-cols fgs-cols--57" id="mehrfamilienhaus" aria-labelledby="mfh-titel">
     <div class="fgs-cols-head">
-      <h2 id="mfh-titel">Mehr&shy;familien&shy;häuser finanzieren</h2>
+      <h2 id="mfh-titel">Mehrfamilienhäuser finanzieren</h2>
       {{ wide("leipzig-band" | bild, "Blick vom City-Hochhaus über die Leipziger Innenstadt mit dem Neuen Rathaus") }}
     </div>
     <div class="fgs-cols-body">
@@ -206,7 +206,7 @@ service:
   </article>
 
   <article class="fgs-row fgs-cols fgs-cols--57" id="anschluss" aria-labelledby="anschluss-titel">
-    <div class="fgs-cols-head"><h2 id="anschluss-titel">Anschluss&shy;finanzierung</h2></div>
+    <div class="fgs-cols-head"><h2 id="anschluss-titel">Anschlussfinanzierung</h2></div>
     <div class="fgs-cols-body">
       <p class="fgs-lead">Am Ende der Zinsbindung ist meist noch eine Restschuld offen. Für sie brauchen Sie eine neue Vereinbarung, mit Ihrer bisherigen Bank oder einer anderen.</p>
       {% call mehr() %}
@@ -284,7 +284,7 @@ service:
 {{ facts({ id: "zahlen", titel: "F&G in Zahlen", hochzaehlen: true, mitte: true, items: [
   { wert: "über 4 Mio. €", text: "begleitetes Finanzierungsvolumen 2026" },
   { wert: "rund 500", text: "Banken im Vergleich über Europace und Baufinex, dazu direkte Bankkontakte" },
-  { wert: google.rating, text: "von 5 Sternen aus " + google.count + " Google-Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>, Stand ' + google.checkedLabel }
+  { wert: google.rating, text: "von 5 Sternen aus " + google.count + " Google-Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>' }
 ] }) }}
 
 {# F Finanzierung anfragen #}

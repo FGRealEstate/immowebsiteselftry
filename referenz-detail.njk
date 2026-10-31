@@ -13,7 +13,7 @@ eleventyComputed:
   title: "{{ ref.title }}: verkauft | Fischer & Geserich Real Estate"
   description: "Referenz von Fischer & Geserich: {{ ref.title }}, verkauft{% if ref.sold_year %} {{ ref.sold_year }}{% endif %}. Eckdaten ohne Kaufpreis und die Marktseite zum Gebiet."
   canonicalPath: "{{ ref.url }}"
-  ogImage: "{{ ref.main_image or '' }}"
+  ogImage: "{{ (ref.main_image | propstackOg | safe) if ref.main_image else '' }}"
   ogImageAlt: "{% if ref.main_image %}{{ ref.title }}{% endif %}"
 ---
 {#- Referenzseite (Update 4, 3.2): ein verkauftes Objekt aus Propstack (propstack.references), Etikett „Verkauft“,

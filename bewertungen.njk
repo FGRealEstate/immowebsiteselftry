@@ -6,7 +6,7 @@ permalink: bewertungen/index.html
 canonicalPath: /bewertungen/
 ogTitle: "Bewertungen von Fischer & Geserich Real Estate"
 eleventyComputed:
-  description: "Google-Bewertungen der Fischer & Geserich Real Estate GmbH aus Berlin-Steglitz: {{ google.rating }} von 5 bei {{ google.count }} Bewertungen (Stand {{ google.checkedLabel }}), mit Link zum Google-Profil."
+  description: "Google-Bewertungen der Fischer & Geserich Real Estate GmbH aus Berlin-Steglitz: {{ google.rating }} von 5 bei {{ google.count }} Bewertungen, mit Link zum Google-Profil."
   ogDescription: "{{ google.rating }} von 5 bei {{ google.count }} Google-Bewertungen. So geben Sie selbst eine Bewertung ab."
 # Brief Design-Pass §4.3: alle Google-Bewertungen wörtlich mit Vorname und Datum, Link zum Profil, kurze Anleitung.
 # Kein Review- oder AggregateRating-Markup: Google schließt Bewertungen, die ein Unternehmen über sich selbst
@@ -44,6 +44,7 @@ pg:
   schema:
     type: WebPage
     about: "https://fg-realestate.de/#organization"
+    stand: google   # Update 23 B5: der Stichtag steht nur noch hier, als dateModified, nicht mehr im Text
 ---
 {% from "fgs-macros.njk" import stimme, textlink with context %}
 {% if google.reviews.length %}
@@ -60,7 +61,7 @@ pg:
       <div class="fgs-reviews-aside">
         <p class="fgs-reviews-score">{{ google.rating }}<span class="fgs-sr"> von 5 Sternen</span></p>
         <p class="fgs-reviews-stars" aria-hidden="true">★★★★★</p>
-        <p class="fgs-reviews-count">{{ google.count }} Bewertungen auf Google · Stand {{ google.checkedLabel }}</p>
+        <p class="fgs-reviews-count">{{ google.rating }} von 5 · {{ google.count }} Google-Bewertungen</p>
         <p class="fgs-reviews-links"><a class="fgs-link" href="{{ google.url }}" target="_blank" rel="noopener">Alle Bewertungen</a>{{ textlink("#bewerten", "So bewerten Sie uns") }}</p>
       </div>
       <ul class="fgs-reviews-list" role="list">

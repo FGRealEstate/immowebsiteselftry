@@ -33,12 +33,7 @@ eleventyComputed:
 {# 1. Titelzeile ohne Foto (wie die Referenz Huttons „Areas“): Brotkrumen, H1, Kurzantwort, zwei Buttons #}
 <section class="fgs-pagehead" aria-labelledby="seitentitel">
   <div class="fgs-wrap">
-    <nav aria-label="Brotkrümelnavigation">
-      <ol class="fgs-crumbs">
-        <li><a href="/">Start</a></li>
-        <li aria-current="page">Gebiete</li>
-      </ol>
-    </nav>
+    {#- Update 23 B1: keine sichtbaren Brotkrumen mehr; die BreadcrumbList im JSON-LD unten bleibt. -#}
     <p class="fgs-label">Gebiete</p>
     <h1 id="seitentitel">{{ u.h1 }}</h1>
     <p class="fgs-lead">{{ u.kurzantwort | nbsp | escape | fn | safe }}</p>

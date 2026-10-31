@@ -21,11 +21,11 @@
   "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Leipzig-West beim Verkauf, beim Kauf und bei der Finanzierung, in den Gründerzeitstraßen von Lindenau und Altlindenau ebenso wie in Leutzsch am Auwald. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
   "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Leipzig ist Timon Fischer Ihr Ansprechpartner, Geschäftsführer und verantwortlich für die Immobilienfinanzierung.",
   "hero": {
-    "name": "leipzig-west-lindenauer-markt",
-    "alt": "Der Lindenauer Markt in Altlindenau mit Marktstraße und Westbad",
-    "credit": "Frank Vincentz, CC BY-SA 3.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Leipzig_-_Lindenauer_Markt_%2B_Marktstra%C3%9Fe_%2B_Westbad_01_ies.jpg",
-    "position": "50% 50%"
+    "name": "leipzig-west-karl-heine-kanal-philippuskirche",
+    "alt": "Blick über den Karl-Heine-Kanal in Lindenau auf Gründerzeithäuser und Neubauten an der Helmholtzstraße, links der Turm der Philippuskirche, vorn Bäume am Ufer",
+    "credit": "Palauenc05, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Leipzig_Helmholtzstra%C3%9Fe_R%C3%BCckansicht.jpg",
+    "position": "50% 45%"
   },
   "stand": "Oktober 2026",
   "updated": "2026-10-26",
@@ -93,11 +93,11 @@
         "Von den 1.422 Adressen in Altlindenau liegen 52 % in guter und 7 % in sehr guter Wohnlage, etwa in der William-Zipperer-, Erich-Köhn- und Uhlandstraße und in der Luppenstraße; 14 % liegen in einfacher Lage, vor allem an Lützner, Merseburger und Georg-Schwarz-Straße.[[5]] Die Bodenrichtwerte für Mehrfamilienhäuser reichen von 600 €/m² an der Georg-Schwarz-Straße bis 1.150 €/m² an der Jahnallee, ein Jahr zuvor 1.050 €/m²; in der größten Zone um die William-Zipperer-Straße sind es 700 €/m².[[2]] Seit dem 05.07.2020 gilt die soziale Erhaltungssatzung Alt-Lindenau, rund 101 Hektar mit etwa 10.380 Wohnungen in großen Teilen Altlindenaus und im Süden von Leutzsch.[[9]] Neue Eigentumswohnungen ohne Stellplatz wurden 2025 in Altlindenau 17-mal verkauft, im Mittel für 5.531 €/m²; erstmals verkaufte sanierte Altbauwohnungen kosteten hier 5.749 €/m², in Lindenau 6.785 €/m².[[1]]"
       ],
       "bild": {
-        "name": "leipzig-west-jahnallee-zschochersche-strasse",
-        "alt": "Die Kreuzung Jahnallee und Zschochersche Straße mit Straßenbahngleisen, Kopfsteinpflaster und Altbauten",
-        "caption": "Die Kreuzung Jahnallee und Zschochersche Straße in Lindenau.",
-        "credit": "Frank Vincentz, CC BY-SA 3.0",
-        "url": "https://commons.wikimedia.org/wiki/File:Leipzig_-_Jahnallee_%2B_Zschochersche_Stra%C3%9Fe_01_ies.jpg"
+        "name": "leipzig-west-altlindenau-duerrenberger-strasse",
+        "alt": "Ein denkmalgeschütztes Doppelmietshaus an der Dürrenberger Straße in Altlindenau, weiße Fassade mit gelben Klinkerstreifen, Stuck und geschwungenem Mittelgiebel",
+        "caption": "Ein Mietshaus an der Dürrenberger Straße in Altlindenau.",
+        "credit": "Freddo213, CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:D%C3%BCrrenberger_Stra%C3%9Fe_8;_8a.jpg"
       }
     },
     {
@@ -107,11 +107,11 @@
         "Leutzsch hat die meisten Adressen in sehr guter Wohnlage im Leipziger Westen: 31 % der 1.290 Adressen, darunter die ganze Otto-Schmiedt-, Rathenau- und Grabaustraße. 23 % liegen in einfacher Lage, vor allem an der Georg-Schwarz- und der Franz-Flemming-Straße.[[5]] In der größten Bodenrichtwertzone um die Otto-Schmiedt-Straße gelten 590 €/m² bei einer Geschossflächenzahl von 0,4, in der Mehrfamilienhauszone zwischen Karl-Schurz- und Blüthnerstraße 450 €/m²; fast alle Werte blieben zum 01.01.2026 unverändert.[[2]] Die soziale Erhaltungssatzung Leutzsch gilt seit dem 03.04.2022 für rund 20 Hektar nördlich des Rathauses mit etwa 2.100 Wohnungen.[[9]] Sanierte Mehrfamilienhäuser wurden 2025 in Leutzsch fünfmal weiterverkauft, im Mittel für 1.625 €/m².[[1]]"
       ],
       "bild": {
-        "name": "leipzig-west-georg-schwarz-strasse",
-        "alt": "Die Georg-Schwarz-Straße an der Ecke Spittastraße mit Straßenbahngleisen und sanierten Altbauten",
-        "caption": "Die Georg-Schwarz-Straße an der Spittastraße.",
-        "credit": "Frank Vincentz, CC BY-SA 3.0",
-        "url": "https://commons.wikimedia.org/wiki/File:Leipzig_-_Georg-Schwarz-Stra%C3%9Fe_%2B_Spittastra%C3%9Fe_01_ies.jpg"
+        "name": "leipzig-west-leutzsch-villa-thorer",
+        "alt": "Die Villa Thorer an der Rathenaustraße in Leutzsch, gebaut 1897, mit Giebel und Rundbogenfenstern hinter großen Bäumen",
+        "caption": "Die Villa Thorer an der Rathenaustraße in Leutzsch.",
+        "credit": "Catatine, CC0",
+        "url": "https://commons.wikimedia.org/wiki/File:Leipzig,_Rathenaustr._40_Villa_Thorer.jpg"
       }
     }
   ],

@@ -13,7 +13,7 @@ eleventyComputed:
   title: "{{ project.name }} – Immobilienprojekt | Fischer & Geserich Real Estate"
   description: "{{ project.name }} mit {{ project.available_unit_count }} verfügbaren Einheiten{% if project.location %} in {{ project.location }}{% endif %}. Preise, Flächen und einzelne Einheiten ansehen."
   canonicalPath: "{{ project.url }}"
-  ogImage: "{{ project.main_image or '' }}"
+  ogImage: "{{ (project.main_image | propstackOg | safe) if project.main_image else '' }}"
   ogImageAlt: "{% if project.main_image %}{{ project.name }}{% endif %}"
 ---
 {#- Projektseite im neuen Design (Brief Design-Pass §4.5), gleiche Bausteine wie die Objektseite:

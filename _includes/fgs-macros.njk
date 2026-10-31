@@ -105,7 +105,8 @@
 <section class="fgs-hero fgs-hero--full fgs-hero--slides" aria-labelledby="seitentitel">
   <div class="fgs-hero-media fgs-slides" data-fgs-slides{% if h.slides[0].bild.farbe %} style="--fgs-hero-farbe: {{ h.slides[0].bild.farbe }}"{% endif %}>
     {%- for s in h.slides %}
-    <div class="fgs-slide{% if loop.first %} is-on{% endif %}" data-ort="{{ s.ort }}"{% if not loop.first %} aria-hidden="true"{% endif %}>{{ picSlide(s.bild, s.alt, loop.first) }}</div>
+    {%- set slideStil = ("--fgs-slide-pos: " + s.pos + "; " if s.pos else "") + ("--fgs-slide-pos-hoch: " + s.posHoch + "; " if s.posHoch else "") + ("--fgs-slide-kb: " + s.kb + ";" if s.kb else "") %}
+    <div class="fgs-slide{% if loop.first %} is-on{% endif %}" data-ort="{{ s.ort }}"{% if slideStil %} style="{{ slideStil | trim }}"{% endif %}{% if not loop.first %} aria-hidden="true"{% endif %}>{{ picSlide(s.bild, s.alt, loop.first) }}</div>
     {%- endfor %}
   </div>
   <div class="fgs-pin-dark" aria-hidden="true"></div>
@@ -123,11 +124,12 @@
       </div>
     </div>
   </div>
-  {#- Update 22 §8.5: Pause/Wiedergabe für die Diaschau (läuft länger als 5 s; Hover gibt es auf dem Handy nicht) -#}
+  {#- Update 22 §8.5 / Update 23 A3: Pause/Wiedergabe für die Diaschau (läuft länger als 5 s; Hover gibt es auf dem Handy
+      nicht). Seit Update 23 kein runder Knopf mehr, sondern ein 12-px-Zeichen am rechten Ende der Fortschrittslinien -#}
   <div class="fgs-slides-ui">
     <div class="fgs-wrap fgs-slides-bar">
-      <button type="button" class="fgs-pause fgs-pause--light" data-fgs-pause="Diaschau" aria-label="Diaschau anhalten"><svg class="fgs-pause-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path class="fgs-pause-bars" d="M4.5 3h2.2v10H4.5zM9.3 3h2.2v10H9.3z"/><path class="fgs-pause-play" d="M5 2.8v10.4L13.2 8z"/></svg></button>
       <ol class="fgs-slides-progress" aria-hidden="true">{% for s in h.slides %}<li{% if loop.first %} class="is-on"{% endif %}><i></i></li>{% endfor %}</ol>
+      <button type="button" class="fgs-slides-toggle" data-fgs-pause="Diaschau" aria-label="Diaschau anhalten" title="Diaschau anhalten"><svg class="fgs-pause-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path class="fgs-pause-bars" d="M4.5 3h2.2v10H4.5zM9.3 3h2.2v10H9.3z"/><path class="fgs-pause-play" d="M5 2.8v10.4L13.2 8z"/></svg></button>
       <p class="fgs-slides-ort" aria-hidden="true">{{ h.slides[0].ort }}</p>
     </div>
   </div>
@@ -528,6 +530,8 @@
     zaehlen (Design-Pass 3 §3.7, Startseite): Zahlen in Marcellus 88 px, goldene Trennlinien, einmaliges Hochzählen (fg-system.js).
     hochzaehlen (Design-Pass 3 §4.1, Leistungsseiten): nur das Hochzählen, Größe und Linien bleiben.
     Die Zahl steht zweimal im HTML: für Screenreader (Endzahl) und sichtbar (zählt, für Screenreader ausgeblendet). -#}
+{#- Update 23 A5: einheit = Zusatz hinter der Zahl in 44 % der Größe auf derselben Grundlinie („4“ + „Mio.+“), gezählt wird nur
+    die Zahl; sterne = fünf Sterne (16 px) direkt unter der Zahl. Beides nur dekorativ, Screenreader lesen „4 Mio.+“ und die Note. -#}
 {% macro facts(f) -%}
 {%- set zaehlt = f.zaehlen or f.hochzaehlen %}
 <section class="fgs-section{% if f.mitte %} fgs-facts-sec--big{% endif %}{% if f.zaehlen %} fgs-facts-sec--count{% endif %}" id="{{ f.id }}" aria-labelledby="{{ f.id }}-titel">
@@ -535,7 +539,7 @@
     <div class="fgs-head{% if f.mitte %} fgs-head--centre{% endif %}"><h2{% if f.mitte %} class="fgs-h2-chapter"{% endif %} id="{{ f.id }}-titel">{{ f.titel }}</h2></div>
     <ul class="fgs-facts" role="list" style="--n: {{ f.items | length }}"{% if zaehlt %} data-fgs-count{% endif %}>
       {%- for x in f.items %}
-      <li class="fgs-fact">{% if zaehlt %}<span class="fgs-fact-figure fgs-count"><span class="fgs-sr">{{ x.wert }}</span><span class="fgs-count-now" aria-hidden="true">{{ x.wert }}</span></span>{% else %}<span class="fgs-fact-figure">{{ x.wert }}</span>{% endif %}{% if x.label %}<span class="fgs-label">{{ x.label }}</span>{% endif %}{% if x.text %}<span class="fgs-fact-text">{{ x.text }}</span>{% endif %}{% if x.quelle %}<span class="fgs-small fgs-source">{{ x.quelle | safe }}</span>{% endif %}</li>
+      <li class="fgs-fact">{% if zaehlt %}<span class="fgs-fact-figure fgs-count"><span class="fgs-sr">{{ x.wert }}{% if x.einheit %} {{ x.einheit }}{% endif %}</span><span class="fgs-count-now" aria-hidden="true">{{ x.wert }}</span>{% if x.einheit %}<span class="fgs-fact-unit" aria-hidden="true">{{ x.einheit }}</span>{% endif %}</span>{% else %}<span class="fgs-fact-figure">{{ x.wert }}</span>{% endif %}{% if x.sterne %}<span class="fgs-fact-stars" aria-hidden="true">{% for i in range(0, 5) %}<svg viewBox="0 0 24 24" focusable="false"><path d="m12 2.8 2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg>{% endfor %}</span>{% endif %}{% if x.label %}<span class="fgs-label">{{ x.label }}</span>{% endif %}{% if x.text %}<span class="fgs-fact-text">{{ x.text }}</span>{% endif %}{% if x.quelle %}<span class="fgs-small fgs-source">{{ x.quelle | safe }}</span>{% endif %}</li>
       {%- endfor %}
     </ul>
     {%- if f.hinweis %}
@@ -628,8 +632,7 @@
         {{ picImg(fHandy, "", "(min-aspect-ratio: 9/16) 108vw, 52vh") }}
       </picture>
     </div>
-    {#- Update 22 §8.5: was länger als 5 s läuft, bekommt Pause/Abspielen; der Zoom läuft endlos, solange der Rahmen zu sehen ist #}
-    <button type="button" class="fgs-pause fgs-pause--light fgs-closing-pause" data-fgs-pause="Zoom" aria-label="Zoom anhalten"><svg class="fgs-pause-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path class="fgs-pause-bars" d="M4.5 3h2.2v10H4.5zM9.3 3h2.2v10H9.3z"/><path class="fgs-pause-play" d="M5 2.8v10.4L13.2 8z"/></svg></button>
+    {#- Update 23 A3: kein Pause-Knopf mehr (Update 22 §8.5); der Zoom läuft nur ohne Wunsch nach reduzierter Bewegung #}
     <div class="fgs-closing-inner">
       <h2 id="abschluss-titel" class="fgs-closing-sentence" data-fgs-lines>{{ c.satz }}</h2>
       {%- if caller %}

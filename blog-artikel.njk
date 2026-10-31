@@ -38,14 +38,7 @@ eleventyComputed:
 
 <header class="fgd-blog-hero">
   <div class="fgs-wrap">
-    <nav aria-label="Brotkrümelnavigation">
-      <ol class="fgs-crumbs">
-        <li><a href="/">Start</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/blog/#{{ a.katId }}">{{ a.katLabel | safe }}</a></li>
-        <li aria-current="page">{{ a.crumb | safe }}</li>
-      </ol>
-    </nav>
+    {#- Update 23 B1: keine sichtbaren Brotkrumen mehr; die BreadcrumbList im JSON-LD unten bleibt. -#}
     <div class="fgd-blog-hero-text">
       <p class="fgs-label"><a href="/blog/#{{ a.katId }}">{{ a.katLabel | safe }}</a></p>
       <h1>{{ a.h1 | safe }}</h1>
@@ -118,7 +111,7 @@ eleventyComputed:
         <div class="fgd-blog-cards fgd-blog-cards--compact">
           {% for p in andere | sort(false, false, "katId") %}{% if loop.index <= 3 %}
           <a class="fgd-blog-card" href="{{ p.url }}">
-            <img src="{{ p.slug | blogThumb }}" alt="{{ p.lead.alt }}" width="720" height="480" loading="lazy" decoding="async">
+            <span class="fgd-blog-card-bild"><img src="{{ p.slug | blogThumb }}" alt="{{ p.lead.alt }}" width="720" height="480" loading="lazy" decoding="async"></span>
             <span class="fgd-blog-card-body">
               <span class="fgd-blog-card-meta"><b>{{ p.katLabel | safe }}</b>{{ p.minuten }} Min. Lesezeit</span>
               <strong>{{ p.titel }}</strong>

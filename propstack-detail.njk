@@ -13,7 +13,7 @@ eleventyComputed:
   title: "{{ property.title }} | Fischer & Geserich Real Estate"
   description: "{{ property.title }}{% if property.location %} in {{ property.location }}{% endif %}: Eckdaten, Bilder{% if property.is_investment %}, Investmentkennzahlen und interaktive Szenariorechnung{% endif %}."
   canonicalPath: "{{ property.url }}"
-  ogImage: "{{ property.main_image or '' }}"
+  ogImage: "{{ (property.main_image | propstackOg | safe) if property.main_image else '' }}"
   ogImageAlt: "{% if property.main_image %}{{ property.title }}{% endif %}"
 ---
 {#- Objektseite im neuen Design (Brief Design-Pass §4.5): Ansprechpartner je Region, Links „Finanzierung prüfen“

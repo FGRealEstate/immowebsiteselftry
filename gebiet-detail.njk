@@ -63,14 +63,7 @@ eleventyComputed:
      nur der zweite Satz der früheren Einleitung (§7). Welche vier Zahlen: kernzahlen in _data/gebiete.js. #}
 <section class="fgs-section fgs-place-facts" id="zahlen" aria-labelledby="zahlen-titel">
   <div class="fgs-wrap">
-    <nav aria-label="Brotkrümelnavigation">
-      <ol class="fgs-crumbs">
-        <li><a href="/">Start</a></li>
-        <li><a href="/standorte/">Gebiete</a></li>
-        {%- if g.kreis and g.kreis.exists %}<li><a href="{{ g.kreis.url }}">{{ g.kreis.name }}</a></li>{% endif %}
-        <li aria-current="page">{{ g.nameLang if g.typ == "landkreis" else g.name }}</li>
-      </ol>
-    </nav>
+    {#- Update 23 B1: keine sichtbaren Brotkrumen mehr; die BreadcrumbList im JSON-LD unten bleibt. -#}
     <h2 id="zahlen-titel" class="fgs-place-facts-title">Was Immobilien {{ g.inOrt }} kosten</h2>
     <ul class="fgs-keyfacts" role="list">
       {%- for z in g.kernzahlen %}
@@ -237,7 +230,7 @@ eleventyComputed:
      Startseite (Brief §3.9), weil §2 höchstens 5 Wörter erlaubt; vorher „Was Kunden über Fischer & Geserich sagen“ #}
 {% if google.reviews.length %}
 {% call rail({ id: "bewertungen", titel: "Was Kunden über uns sagen", quotes: true,
-  text: google.rating + " von 5 · " + google.count + " Bewertungen auf Google, Stand " + google.checkedLabel,
+  text: google.rating + " von 5 · " + google.count + " Google-Bewertungen",
   zusatz: '<a href="' + google.url + '" target="_blank" rel="noopener">Alle Bewertungen</a>',
   link: { href: nav.menu[5].items[3] | navHref, label: "So bewerten Sie uns" } }) %}
   {#- Update 8 §3.4 (29.10.2026): Reihenfolge wie auf der Startseite (Fix 3): zuerst Maria, dann Jan, danach die bisherigen Karten in ihrer Reihenfolge. #}
@@ -255,7 +248,7 @@ eleventyComputed:
     <div class="fgs-head">
       <h2 id="bewertungen-titel">Was Kunden über uns sagen</h2>
       <p>Die aktuelle Gesamtbewertung unseres Google-Unternehmensprofils. Alle Rezensionen lesen Sie im Original direkt bei Google.</p>
-      <p>{{ google.rating }} von 5 · {{ google.count }} Bewertungen auf Google, Stand {{ google.checkedLabel }}</p>
+      <p>{{ google.rating }} von 5 · {{ google.count }} Google-Bewertungen</p>
       <div class="fgs-btns"><a class="fgs-btn fgs-btn--secondary" href="{{ google.url }}" target="_blank" rel="noopener">Rezensionen bei Google lesen</a></div>
     </div>
   </div>

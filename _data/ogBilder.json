@@ -1,0 +1,732 @@
+{
+ "_hinweis": "Erzeugt von scripts/og-bilder.py (Update 23 B6). Nicht von Hand pflegen.",
+ "standard": {
+  "bild": "/images/og/abschluss-3x2.jpg",
+  "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+ },
+ "seiten": {
+  "/agb.html": "logo",
+  "/datenschutz.html": "logo",
+  "/impressum.html": "logo",
+  "/": {
+   "bild": "/images/og/hero-slide-berlin-x50-y0.jpg",
+   "alt": "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/angebote.html": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/ankaufsberatung.html": {
+   "bild": "/images/og/ankauf-hero.jpg",
+   "alt": "Das Eckhaus Kurfürstendamm 190 in Berlin-Charlottenburg mit grüner Kuppel an einem sonnigen Junitag"
+  },
+  "/betreuung-nach-dem-kauf/": {
+   "bild": "/images/og/betreuung-hero.jpg",
+   "alt": "Blick nach oben in ein gewendeltes Altbau-Treppenhaus mit verziertem Geländer in Berlin-Mitte"
+  },
+  "/bewertungen/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/bildnachweise/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/finanzierungsberatung.html": {
+   "bild": "/images/og/finanzierung-hero.jpg",
+   "alt": "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken"
+  },
+  "/gesuch-anlegen/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/immobilienbewertung/": {
+   "bild": "/images/og/bewertung-hero.jpg",
+   "alt": "Villa am Teltower Damm in Berlin-Zehlendorf, ein Baudenkmal"
+  },
+  "/investitionsrechner.html": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/investment-lab.html": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/kapitalanlage.html": {
+   "bild": "/images/og/kapitalanlage-hero.jpg",
+   "alt": "Gründerzeit-Mietshaus aus den 1890er-Jahren an der Funkenburgstraße im Leipziger Waldstraßenviertel, helle Fassade mit roten Ziegelbändern und Balkonen"
+  },
+  "/kaufen.html": {
+   "bild": "/images/og/kaufen-hero-x50-y65.jpg",
+   "alt": "Canaletto-Blick in Dresden: die Augustusbrücke über die Elbe, dahinter Frauenkirche und Hofkirche im warmen Licht, vorn die Elbwiesen"
+  },
+  "/kontakt.html": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/abgeschlossenheitsbescheinigung/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/afa/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/angebotsmiete/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/ankaufsprufung/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/annuitat/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/anschlussfinanzierung/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/ausfallwagnis/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/baulast/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/baunebenkosten/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/beleihungsauslauf/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/beleihungswert/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/bereitstellungszins/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/betriebskosten/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/bewirtschaftungskosten/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/bodenrichtwert/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/bodenwert/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/bonitat/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/bruttogrundflache/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/bruttomietrendite/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/capex/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/cash-on-cash-rendite/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/cashflow/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/courtage/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/debt-service/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/dscr/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/due-diligence/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/eigenkapital/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/eigenkapitalrendite/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/erbbaurecht/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/erbbauzins/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/erhaltungsrucklage/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/ertragswert/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/exit-faktor/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/exit/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/finanzierungsquote/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/flurstuck/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/forward-darlehen/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/fremdkapitalhebel/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/gebaudeanteil/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/gemeinschaftseigentum/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/gesamtinvestition/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/grundbuch/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/grunderwerbsteuer/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/grundschuld/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/grundsteuer/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/hausgeld/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/hebelwirkung/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/indexmiete/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/instandhaltung/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/instandhaltungsstau/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/instandsetzung/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/irr/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/jahresnettokaltmiete/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/kapitaldienst/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/kapitalisierungszins/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/kapitalwert/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/kappungsgrenze/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/kaufnebenkosten/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/kaufpreisfaktor/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/kreditwurdigkeitsprufung/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/leerstand/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/liegenschaftszins/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/liquiditatsreserve/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/ltv/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/maklerprovision/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/mietausfall/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/mietbindung/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/mietpreisbremse/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/mietrendite/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/mietspiegel/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/mietuberschuss/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/miteigentumsanteil/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/modernisierung/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/nachrangdarlehen/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/nebenkostenabrechnung/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/nettomietrendite/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/nettovermogen/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/niebrauch/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/nominalrendite/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/nominalzins/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/objektrendite/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/operating-expenses/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/opportunitatskosten/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/portfolio/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/preis-miet-verhaltnis/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/prolongation/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/reale-rendite/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/restnutzungsdauer/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/restschuld/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/risikopuffer/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/rucklage/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/sachwert/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/sondereigentum/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/sondertilgung/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/sonderumlage/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/spekulationsfrist/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/staffelmiete/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/steuerlicher-uberschuss/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/stress-test/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/teilungserklarung/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/tilgung/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/tilgungssatz/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/total-return/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/transaktionskosten/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/umlagefahige-kosten/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/umwandlung/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/unterdeckung/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/verkehrswert/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/vervielfaltiger/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/verwaltungskosten/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/vollfinanzierung/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/vorfalligkeitsentschadigung/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/weg/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/werbungskosten/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/wertsteigerung/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/wirtschaftsplan/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/wohnflache/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/wohnrecht/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/zins/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/zinsanderungsrisiko/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/zinsbindung/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/zinsdeckungsgrad/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/zinseszins/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/zwangsversteigerung/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/lexikon/zweckentfremdung/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/maklerprovision/": {
+   "bild": "/images/og/provision-hero-x50-y40.jpg",
+   "alt": "Dächer und Fassade der Kunstakademie an der Brühlschen Terrasse in Dresden von oben"
+  },
+  "/mehrfamilienhaus.html": {
+   "bild": "/images/og/mfh-hero.jpg",
+   "alt": "Denkmalgeschütztes Eckhaus mit zwei Erkertürmen an der Malmöer Straße in Berlin-Prenzlauer Berg, daneben Bäume"
+  },
+  "/mieten.html": {
+   "bild": "/images/og/mieten-hero.jpg",
+   "alt": "Altbauten an der Kloedenstraße am Chamissoplatz in Berlin-Kreuzberg, links Balkone mit schmiedeeisernen Gittern, rechts eine helle Stuckfassade"
+  },
+  "/objekt-anfragen.html": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/standorte/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/standorte/barnim/": {
+   "bild": "/images/og/barnim-blumberg-luftbild-x50-y60.jpg",
+   "alt": "Blumberg in der Gemeinde Ahrensfelde aus der Luft: Felder, dazwischen die Ortslage und kleinere Siedlungen"
+  },
+  "/standorte/berlin/": {
+   "bild": "/images/og/berlin-deutscher-dom-gendarmenmarkt-x50-y45.jpg",
+   "alt": "Deutscher Dom am Gendarmenmarkt in Berlin-Mitte zur blauen Stunde"
+  },
+  "/standorte/berlin/charlottenburg-wilmersdorf/": {
+   "bild": "/images/og/charlottenburg-wilmersdorf-lietzensee.jpg",
+   "alt": "Der Lietzensee in Charlottenburg an einem Morgen im Juni"
+  },
+  "/standorte/berlin/pankow/": {
+   "bild": "/images/og/pankow-schloss-schoenhausen-x50-y55.jpg",
+   "alt": "Schloss Schönhausen in Pankow an einem sonnigen Junitag, davor der Rasen und der Weg zum Eingang"
+  },
+  "/standorte/berlin/steglitz-zehlendorf/": {
+   "bild": "/images/og/steglitz-zehlendorf-beerenstrasse.jpg",
+   "alt": "Ein Mietshaus mit Ziergiebel und Balkonen in der Beerenstraße in Zehlendorf in der Sonne, davor Bäume"
+  },
+  "/standorte/berlin/tempelhof-schoeneberg/": {
+   "bild": "/images/og/schoeneberg-viktoria-luise-platz-x50-y60.jpg",
+   "alt": "Viktoria-Luise-Platz in Berlin-Schöneberg mit Springbrunnen und Grünanlage"
+  },
+  "/standorte/bernau/": {
+   "bild": "/images/og/bernau-steintor.jpg",
+   "alt": "Hungerturm und Stadthalle am Steintor in Bernau bei Berlin"
+  },
+  "/standorte/dahme-spreewald/": {
+   "bild": "/images/og/dahme-spreewald-luebben-spree.jpg",
+   "alt": "Wasserlauf mit Bäumen am Ufer in Lübben (Spreewald) im Sommer"
+  },
+  "/standorte/dresden/": {
+   "bild": "/images/og/dresden-elbe-altstadt-canalettoblick-x50-y45.jpg",
+   "alt": "Elbwiesen in der Neustadt mit Blick auf Augustusbrücke, Frauenkirche, Hofkirche und Semperoper"
+  },
+  "/standorte/dresden/nord/": {
+   "bild": "/images/og/dresden-nord-kunsthofpassage-x50-y40.jpg",
+   "alt": "Der Hof der Elemente in der Kunsthofpassage in der Äußeren Neustadt: türkisblaue Fassade mit Balkonen und einem Geflecht aus Regenrinnen und Trichtern"
+  },
+  "/standorte/dresden/ost/": {
+   "bild": "/images/og/dresden-ost-laubegast-elbe.jpg",
+   "alt": "Elbe bei Dresden-Laubegast mit Fähre und Blick auf das Ufer von Niederpoyritz"
+  },
+  "/standorte/dresden/sued/": {
+   "bild": "/images/og/dresden-sued-rathaus-plauen-noethnitzer-x50-y45.jpg",
+   "alt": "Das Rathaus im Dresdner Stadtteil Plauen mit Türmen und Ziergiebeln, Eckansicht an der Nöthnitzer Straße, links ein Baum mit Herbstlaub"
+  },
+  "/standorte/dresden/zentrum/": {
+   "bild": "/images/og/dresden-zentrum-striesen-villa-sommerlust-x50-y55.jpg",
+   "alt": "Die Villa Sommerlust an der Prellerstraße in Striesen: helles Haus mit roter Holzveranda und Bogenfenstern hinter einem Zaun, daneben ein kahler Baum unter blauem Himmel"
+  },
+  "/standorte/eberswalde/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/standorte/erkner/": {
+   "bild": "/images/og/erkner-genezarethkirche.jpg",
+   "alt": "Blick von oben auf die Genezarethkirche in Erkner"
+  },
+  "/standorte/falkensee/": {
+   "bild": "/images/og/falkensee-neuer-see.jpg",
+   "alt": "Neuer See in Falkensee im Sommer"
+  },
+  "/standorte/havelland/": {
+   "bild": "/images/og/havelland-ketzin-luftbild-x50-y55.jpg",
+   "alt": "Ketzin/Havel im Abendlicht aus der Luft, Blick nach Süden über die Stadt und die Havel mit ihren Inseln"
+  },
+  "/standorte/konigs-wusterhausen/": {
+   "bild": "/images/og/koenigs-wusterhausen-schloss.jpg",
+   "alt": "Nordfassade von Schloss Königs Wusterhausen im Sonnenlicht"
+  },
+  "/standorte/leipzig/": {
+   "bild": "/images/og/leipzig-city-hochhaus-neues-rathaus-x50-y60.jpg",
+   "alt": "Blick vom City-Hochhaus über die Leipziger Innenstadt mit dem Neuen Rathaus, 2015"
+  },
+  "/standorte/leipzig/nord/": {
+   "bild": "/images/og/leipzig-nord-gohliser-schloesschen.jpg",
+   "alt": "Das Gohliser Schlösschen in Gohlis-Süd"
+  },
+  "/standorte/leipzig/west/": {
+   "bild": "/images/og/leipzig-west-karl-heine-kanal-philippuskirche-x50-y45.jpg",
+   "alt": "Blick über den Karl-Heine-Kanal in Lindenau auf Gründerzeithäuser und Neubauten an der Helmholtzstraße, links der Turm der Philippuskirche, vorn Bäume am Ufer"
+  },
+  "/standorte/leipzig/zentrum/": {
+   "bild": "/images/og/leipzig-zentrum-johannapark.jpg",
+   "alt": "Der Teich im Johannapark mit einer hölzernen Bogenbrücke, Bäume spiegeln sich im Wasser, rechts hinten der Turm der Lutherkirche"
+  },
+  "/standorte/maerkisch-oderland/": {
+   "bild": "/images/og/maerkisch-oderland-buckow-x50-y60.jpg",
+   "alt": "Schilf und Seerosen am Ufer des Schermützelsees in Buckow, dahinter die bewaldeten Hügel der Märkischen Schweiz im Morgendunst"
+  },
+  "/standorte/oberhavel/": {
+   "bild": "/images/og/oberhavel-havel-hennigsdorf-x50-y60.jpg",
+   "alt": "Die Havel in Hennigsdorf, von der Brücke der L 17 aus gesehen, mit Bootsanlegern am rechten Ufer"
+  },
+  "/standorte/oder-spree/": {
+   "bild": "/images/og/oder-spree-bad-saarow-scharmuetzelsee.jpg",
+   "alt": "Blick über den Scharmützelsee auf das Seebad in Bad Saarow an einem Sommertag"
+  },
+  "/standorte/oranienburg/": {
+   "bild": "/images/og/oranienburg-schloss.jpg",
+   "alt": "Schloss Oranienburg an einem Sommertag"
+  },
+  "/standorte/potsdam-mittelmark/": {
+   "bild": "/images/og/potsdam-mittelmark-glindowsee-luftbild.jpg",
+   "alt": "Luftbild des Glindowsees bei Werder (Havel), Blick von Süden über den See und die Ortslagen am Ufer"
+  },
+  "/standorte/potsdam/": {
+   "bild": "/images/og/potsdam-alter-markt-luftbild-x35-y50.jpg",
+   "alt": "Luftbild der Potsdamer Mitte mit Stadtschloss, St. Nikolaikirche, Obelisk und Museum Barberini am Alten Markt, rechts die Havel"
+  },
+  "/standorte/teltow-flaeming/": {
+   "bild": "/images/og/teltow-flaeming-jueterbog.jpg",
+   "alt": "Blick von der Aussichtsplattform der Nikolaikirche über die roten Dächer der Altstadt von Jüterbog, im Hintergrund Felder und Wald"
+  },
+  "/standorte/teltow/": {
+   "bild": "/images/og/teltow-st-andreas.jpg",
+   "alt": "Die Stadtkirche St. Andreas in Teltow mit hellem Turm und Feldsteinmauern zwischen großen Bäumen, davor ein gepflasterter Platz"
+  },
+  "/team/lennart-geserich/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/team/timon-fischer/": {
+   "bild": "/images/og/abschluss-3x2.jpg",
+   "alt": "Das Humboldt Forum mit Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/ueber-uns.html": {
+   "bild": "/images/og/ueber-uns-hero.jpg",
+   "alt": "Gründerzeit-Eckhaus an der Schützenstraße in Berlin-Steglitz, in dieser Straße liegt das Büro von Fischer & Geserich"
+  },
+  "/verkaufen.html": {
+   "bild": "/images/og/verkaufen-hero.jpg",
+   "alt": "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser"
+  },
+  "/vermieten.html": {
+   "bild": "/images/og/vermieten-hero-x50-y40.jpg",
+   "alt": "Altbau-Wohnhäuser von Riehmers Hofgarten an der Hagelberger Straße in Berlin-Kreuzberg, rechts ein Baum"
+  }
+ }
+}

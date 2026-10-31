@@ -13,7 +13,7 @@
     <div class="fgd-blog-cards">
       {% for p in autorArtikel %}
       <a class="fgd-blog-card" href="{{ p.url }}">
-        <img src="{{ p.slug | blogThumb }}" alt="{{ p.lead.alt }}" width="720" height="480" loading="lazy" decoding="async">
+        <span class="fgd-blog-card-bild"><img src="{{ p.slug | blogThumb }}" alt="{{ p.lead.alt }}" width="720" height="480" loading="lazy" decoding="async"></span>
         <span class="fgd-blog-card-body">
           <span class="fgd-blog-card-meta"><b>{{ p.katLabel | safe }}</b>{{ p.minuten }} Min. Lesezeit</span>
           <strong>{{ p.titel }}</strong>

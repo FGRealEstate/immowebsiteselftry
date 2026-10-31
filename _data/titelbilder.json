@@ -62,9 +62,9 @@
   },
   "kapitalanlage-hero": {
     "hoch": [
-      0.45,
+      0.5,
       0,
-      1
+      0.85
     ],
     "breit": [
       2400,
@@ -79,9 +79,9 @@
   },
   "mfh-hero": {
     "hoch": [
-      0.58,
-      0.05,
-      0.9
+      0.44,
+      0,
+      0.81
     ],
     "breit": [
       2400,
@@ -134,9 +134,9 @@
   },
   "mieten-hero": {
     "hoch": [
-      0.5,
-      0.12,
-      0.95
+      0.7,
+      0.05,
+      0.9
     ]
   },
   "/images/gebiete/barnim-blumberg-luftbild": {
@@ -251,9 +251,9 @@
       1
     ]
   },
-  "/images/gebiete/teltow-altes-rathaus": {
+  "/images/gebiete/teltow-st-andreas": {
     "hoch": [
-      0.48,
+      0.35,
       0,
       1
     ]
@@ -279,8 +279,12 @@
       1
     ]
   },
-  "/images/gebiete/dresden-zentrum-pirnaische-vorstadt-grunaer-strasse": {
-    "hoch": [0.42, 0.3, 1]
+  "/images/gebiete/dresden-zentrum-striesen-villa-sommerlust": {
+    "hoch": [
+      0.45,
+      0,
+      1
+    ]
   },
   "/images/gebiete/dresden-zentrum-schillerplatz-blaues-wunder": {
     "hoch": [
@@ -289,9 +293,9 @@
       1
     ]
   },
-  "/images/gebiete/dresden-nord-rothenburger-strasse": {
+  "/images/gebiete/dresden-nord-kunsthofpassage": {
     "hoch": [
-      0.5,
+      0.55,
       0,
       1
     ]
@@ -317,16 +321,16 @@
       1
     ]
   },
-  "/images/gebiete/leipzig-west-lindenauer-markt": {
+  "/images/gebiete/leipzig-west-karl-heine-kanal-philippuskirche": {
     "hoch": [
-      0.52,
+      0.3,
       0,
       1
     ]
   },
-  "/images/gebiete/leipzig-zentrum-karl-tauchnitz-strasse-10": {
+  "/images/gebiete/leipzig-zentrum-johannapark": {
     "hoch": [
-      0.45,
+      0.5,
       0,
       1
     ]
@@ -344,7 +348,7 @@
   },
   "home/hero-slide-berlin": {
     "hoch": [
-      0.4,
+      0.2665,
       0,
       1
     ],
@@ -355,9 +359,9 @@
   },
   "home/hero-slide-potsdam": {
     "hoch": [
-      0.5,
-      0.05,
-      1
+      0.82,
+      0.12,
+      0.97
     ],
     "breit": [
       2400,
@@ -366,9 +370,9 @@
   },
   "home/hero-slide-leipzig": {
     "hoch": [
-      0.75,
-      0,
-      1
+      0.51,
+      0.12,
+      0.95
     ],
     "breit": [
       2400,
@@ -377,8 +381,8 @@
   },
   "home/hero-slide-dresden": {
     "hoch": [
-      0.3,
-      0,
+      0.505,
+      0.38,
       1
     ],
     "breit": [

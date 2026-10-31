@@ -235,6 +235,41 @@
     apply();
   });
 
+  /* ---------- Hinweise unter Feldern (Update 23 B3) ----------
+     Feld mit data-fgd-fehlt="…" (leer) und optional data-fgd-falsch="…" (Muster passt nicht): Der Hinweis steht unter dem
+     Feld, ist über aria-describedby verbunden und verschwindet, sobald das Feld stimmt. Der Fokus geht aufs erste
+     ungültige Feld; hat es keinen eigenen Hinweis, meldet der Browser es wie bisher. */
+  const fgdHinweis = (el) => {
+    const id = `${el.name.replace(/[^a-z0-9_-]/gi, '-')}-hinweis`;
+    let box = document.getElementById(id);
+    if (el.checkValidity()) {
+      el.removeAttribute('aria-invalid');
+      if (box) box.remove();
+      return;
+    }
+    const text = el.validity.valueMissing ? el.dataset.fgdFehlt : (el.dataset.fgdFalsch || el.dataset.fgdFehlt);
+    if (!box) {
+      box = document.createElement('span');
+      box.id = id;
+      box.className = 'fgd-feld-hinweis';
+      box.setAttribute('aria-hidden', 'true');   // steht im Label; vorgelesen wird er über aria-describedby, nicht als Teil des Namens
+      el.insertAdjacentElement('afterend', box);
+      el.setAttribute('aria-describedby', [el.getAttribute('aria-describedby'), id].filter(Boolean).join(' '));
+    }
+    box.textContent = text;
+    el.setAttribute('aria-invalid', 'true');
+  };
+  const fgdFeldHinweise = (bad) => {
+    bad.filter((el) => el.dataset.fgdFehlt).forEach(fgdHinweis);
+    const first = bad[0];
+    if (first.dataset.fgdFehlt) first.focus();
+    else first.reportValidity();
+  };
+  document.addEventListener('input', (event) => {
+    const el = event.target;
+    if (el.dataset && el.dataset.fgdFehlt && el.getAttribute('aria-invalid') === 'true') fgdHinweis(el);
+  });
+
   /* ---------- Bewertung in fünf Schritten (immobilienbewertung.njk) ----------
      <form data-fgd-wizard> mit <fieldset data-fgd-step="Name"> je Schritt. Ohne Skript bleibt es ein
      Formular mit allen Feldern. Mit Skript: ein Schritt sichtbar, Fortschritt oben, Weiter prüft nur die
@@ -277,12 +312,12 @@
       const pad = parseFloat(getComputedStyle(doc).scrollPaddingTop) || 0;
       if (form.getBoundingClientRect().top < pad) form.scrollIntoView({ block: 'start', behavior: reduceMotion ? 'auto' : 'smooth' });
     };
-    // Erstes ungültiges Feld eines Schritts melden; true, wenn alles passt
+    // Ungültige Felder eines Schritts melden (Hinweis unter jedem Feld mit data-fgd-fehlt, Fokus aufs erste); true, wenn alles passt
     const check = (index) => {
-      const bad = fields(steps[index]).find((el) => !el.checkValidity());
-      if (!bad) return true;
+      const bad = fields(steps[index]).filter((el) => !el.checkValidity());
+      if (!bad.length) return true;
       show(index, false);
-      bad.reportValidity();
+      fgdFeldHinweise(bad);
       return false;
     };
     const forward = () => { if (check(current)) show(current + 1, true); };
@@ -311,11 +346,15 @@
     const done = form.parentElement.querySelector('[data-fgd-lead-done]');
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
-      if (!form.reportValidity()) return;
+      const bad = [...form.elements].filter((el) => el.willValidate && !el.checkValidity());
+      if (bad.length) { fgdFeldHinweise(bad); return; }
       const fd = new FormData(form);
       const submit = form.querySelector('button[type="submit"]');
       const original = submit.innerHTML;
       const showDone = () => { form.hidden = true; if (done) { done.hidden = false; done.focus?.(); } };
+      // Update 23 B3: Adresse in vier Feldern (Bewertung); „location“ bleibt das Feld, das propstack-lead auswertet
+      const adresse = ['street', 'house_number', 'zip_code', 'city'].map((k) => String(fd.get(k) || '').trim());
+      const adressText = adresse.some(Boolean) ? `${[adresse[0], adresse[1]].filter(Boolean).join(' ')}, ${[adresse[2], adresse[3]].filter(Boolean).join(' ')}`.replace(/^, |, $/g, '') : '';
       if (fd.get('company_website')) { showDone(); return; }
       submit.disabled = true;
       submit.textContent = 'Wird gesendet …';
@@ -342,7 +381,8 @@
       } : {
         first_name: fd.get('first_name'), last_name: fd.get('last_name'), email: fd.get('email'), phone: fd.get('phone') || '',
         concern: fd.get('concern') || form.dataset.concern || '',
-        object_type: fd.get('object_type') || '', location: fd.get('location') || '', budget: fd.get('budget') || '',
+        object_type: fd.get('object_type') || '', location: fd.get('location') || adressText, budget: fd.get('budget') || '',
+        street: adresse[0], house_number: adresse[1], zip_code: adresse[2], city: adresse[3],
         timeframe: fd.get('timeframe') || '', contact_preference: fd.get('contact_preference') || (fd.get('phone') ? 'Telefon' : 'E-Mail'),
         message, privacy_consent: fd.get('privacy_consent') === 'true', property_details: details,
         source_url: location.href,
@@ -667,17 +707,21 @@
      anhängendem Satzzeichen oder Bindestrich („Mietpreisbremse:“, „Charlottenburg-“), sonst rutscht das Zeichen allein in
      die nächste Zeile. Geprüft nach dem Laden der Schriften, bei neuer Breite, wenn ein
      aufklappbarer Bereich aufgeht und wenn fgs-motion.js eine Überschrift neu in Zeilen teilt (fgs:zeilen). ---------- */
-  const SKIP = 'script, style, noscript, template, svg, textarea, code, pre, [contenteditable]';
+  const SKIP = 'script, style, noscript, template, svg, textarea, code, pre, [contenteditable], .fgs-sr';  // .fgs-sr: nur für Screenreader, 1 px breit (Update 23 B9)
   const range = document.createRange();
   const zeilen = (rects) => {
     const tops = [];
     for (const r of rects) if (r.width > 0.5 && !tops.some((t) => Math.abs(t - r.top) < r.height / 2)) tops.push(r.top);
     return tops.length;
   };
-  const KOPF = 'h1, h2, h3, h4, [data-fgs-lines]';
+  const KOPF = 'h1, h2, h3, h4, h5, h6, [data-fgs-lines]';
   const KLEINST = 0.6;
   const breite = (rects) => Array.from(rects).reduce((s, r) => s + r.width, 0);
-  const gebrochen = (n, a, b) => { range.setStart(n, a); range.setEnd(n, b); return zeilen(range.getClientRects()) > 1; };
+  /* Update 23 B9: Überschriften haben overflow-wrap: normal (fg-system.css). Ein zu langes Wort bricht dort nicht mehr um, sondern
+     ragt über den Rand; erkannt wird es dann daran, dass es breiter ist als die Überschrift. */
+  const frei = (k) => { const cs = getComputedStyle(k); return k.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight); };
+  const passtNicht = (rects, kopf) => zeilen(rects) > 1 || (!!kopf && breite(rects) > frei(kopf) + 0.5);
+  const gebrochen = (n, a, b, kopf) => { range.setStart(n, a); range.setEnd(n, b); return passtNicht(range.getClientRects(), kopf); };
   const trennen = () => {
     document.querySelectorAll('[data-fgs-passt]').forEach((k) => { k.style.fontSize = ''; k.removeAttribute('data-fgs-passt'); });
     document.querySelectorAll('.fgs-trenn.is-an').forEach((s) => s.classList.remove('is-an'));
@@ -691,7 +735,8 @@
         range.setStart(n, m.index);
         range.setEnd(n, m.index + m[0].length);
         const rects = range.getClientRects();
-        if (zeilen(rects) > 1) treffer.push({ n, a: m.index, b: m.index + m[0].length, w: breite(rects), kopf: n.parentElement.closest(KOPF) });
+        const kopf = n.parentElement.closest(KOPF);
+        if (passtNicht(rects, kopf)) treffer.push({ n, a: m.index, b: m.index + m[0].length, w: breite(rects), kopf });
       }
     }
     // Überschriften: kleinster nötiger Faktor über alle zu breiten Wörter; reicht 80 %, wird die Schrift so weit verkleinert
@@ -700,12 +745,11 @@
     const geloest = new Set();
     koepfe.forEach((liste, k) => {
       const cs = getComputedStyle(k);
-      const frei = k.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
-      const faktor = Math.min(...liste.map((t) => frei / t.w));
+      const faktor = Math.min(...liste.map((t) => frei(k) / t.w));
       if (!(faktor >= KLEINST && faktor < 1)) return;
       const groesse = parseFloat(cs.fontSize);
       k.style.fontSize = Math.floor(groesse * faktor * 0.985 * 10) / 10 + 'px';
-      if (liste.some((t) => gebrochen(t.n, t.a, t.b))) { k.style.fontSize = ''; return; }
+      if (liste.some((t) => gebrochen(t.n, t.a, t.b, k))) { k.style.fontSize = ''; return; }
       k.setAttribute('data-fgs-passt', '');
       liste.forEach((t) => geloest.add(t));
     });

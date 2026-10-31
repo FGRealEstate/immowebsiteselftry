@@ -26,11 +26,11 @@
   "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Dresden-Nord beim Verkauf, beim Kauf und bei der Finanzierung, von den Gründerzeitvierteln der Neustadt und Pieschens über Loschwitz und den Weißen Hirsch am Elbhang bis nach Klotzsche. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
   "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Dresden ist Timon Fischer Ihr Ansprechpartner, Geschäftsführer und verantwortlich für die Immobilienfinanzierung.",
   "hero": {
-    "name": "dresden-nord-rothenburger-strasse",
-    "alt": "Die Rothenburger Straße in der Äußeren Neustadt, Blick von der Bautzner Straße nach Norden",
-    "credit": "Maksym Kozlenko, CC BY-SA 4.0",
-    "url": "https://commons.wikimedia.org/wiki/File:2017-06-02_Rothenburger_Stra%C3%9Fe,_Dresden.jpg",
-    "position": "50% 50%"
+    "name": "dresden-nord-kunsthofpassage",
+    "alt": "Der Hof der Elemente in der Kunsthofpassage in der Äußeren Neustadt: türkisblaue Fassade mit Balkonen und einem Geflecht aus Regenrinnen und Trichtern",
+    "credit": "Fred Romero, CC BY 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Dresden_-_Kunsthofpassage_Hof_der_Elemente.jpg",
+    "position": "50% 40%"
   },
   "stand": "Oktober 2026",
   "updated": "2026-10-27",
@@ -98,11 +98,11 @@
         "Pieschen wurde ab etwa 1878 Industriegebiet, mit gründerzeitlicher Blockrandbebauung. Anfang der 1990er Jahre war etwa jede fünfte Wohnung unbewohnbar, heute sind laut Stadt 95 % der Gebäude saniert; das Sanierungsgebiet ist seit dem 21.04.2023 aufgehoben.[[14]] Dort leben heute rund 7.000 Menschen, mehr als doppelt so viele wie 1991.[[16]] Pieschen-Süd und Pieschen-Nord/Trachenberge zählen zusammen 24.694 Einwohner.[[4]] In der Gemarkung Pieschen wurden 2025 51 ältere Wohnungen weiterverkauft, im Median für 2.560 €/m².[[1]] Die Bodenrichtwerte reichen in Pieschen-Süd von 220 bis 1.050 €/m²; in Pieschen-Nord/Trachenberge lagen 12 von 21 Zonen höher als 2024.[[3]] Vom Rathaus Pieschen sind Sie in 24 bis 26 Minuten am Hauptbahnhof.[[19]]"
       ],
       "bild": {
-        "name": "dresden-nord-hechtstrasse",
-        "alt": "Hechtstraße im Hechtviertel mit Kopfsteinpflaster, parkenden Autos und vierstöckigen Gründerzeithäusern auf beiden Seiten",
-        "caption": "Die Hechtstraße im Hechtviertel im August.",
-        "credit": "Stefan Kühn, CC BY-SA 3.0",
-        "url": "https://commons.wikimedia.org/wiki/File:Dresden_Hechtviertel_Hechtstraße_a.jpg"
+        "name": "dresden-nord-pieschener-hafen",
+        "alt": "Der Pieschener Hafen an der Elbe in tiefer Sonne, am Ufer eine breite Holztreppe und gelbe Gebäude, die sich im stillen Wasser spiegeln",
+        "caption": "Der Pieschener Hafen an der Elbe.",
+        "credit": "Christian Gebhardt (Bybbisch94), CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:20230406.Elbe_in_Dresden-Pieschen.-018.3.jpg"
       }
     },
     {

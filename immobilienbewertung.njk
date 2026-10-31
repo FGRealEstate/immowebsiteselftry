@@ -23,7 +23,7 @@ service:
   summary:
     - "Sie senden uns die wichtigsten Angaben zu Ihrer Immobilie und Ihr Ansprechpartner aus der Region erstellt daraus eine Wertermittlung. Grundlage sind Vergleichspreise aus der Umgebung, der Bodenrichtwert, Zustand und Ausstattung sowie die aktuelle Nachfrage. Das kostet Sie nichts, verpflichtet Sie zu nichts und liegt meist noch am selben Tag vor."
     - "Einen automatischen Online-Preis gibt es bei uns nicht, weil ein Rechner den Zustand Ihrer Immobilie nicht kennt. Brauchen Sie einen Wert für das Finanzamt, ein Gericht oder eine Erbauseinandersetzung, ist ein Verkehrswertgutachten eines Sachverständigen das Richtige."
-  faqTitle: "Häufige Fragen zur Immobilien­bewertung"
+  faqTitle: "Häufige Fragen zur Immobilienbewertung"
   faq:
     # Update 20 (30.10.2026): Fragen und Antworten wörtlich nach Timons Freigabe, auch im FAQPage-Markup; Links auf denselben Wörtern wie vorher.
     - q: "Was kostet eine seriöse Immobilienbewertung?"
@@ -53,7 +53,7 @@ service:
   related:
     services:
       - { label: "Immobilie verkaufen", note: "Ablauf, Unterlagen, Kosten", href: "/verkaufen.html", bild: "verkaufen-hero", alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser" }
-      - { label: "Mehrfamilienhaus verkaufen", note: "Käufernetzwerk mit über 100 Interessenten", href: "/mehrfamilienhaus.html", bild: "mfh-hero", alt: "Denkmalgeschütztes Eckhaus mit Klinkerfassade an der Schönhauser Allee in Berlin-Prenzlauer Berg" }
+      - { label: "Mehrfamilienhaus verkaufen", note: "Käufernetzwerk mit über 100 Interessenten", href: "/mehrfamilienhaus.html", bild: "mfh-hero", alt: "Denkmalgeschütztes Eckhaus mit zwei Erkertürmen an der Malmöer Straße in Berlin-Prenzlauer Berg, daneben Bäume" }
       - { label: "Anschlussfinanzierung", note: "Finanzierungsberatung", href: "/finanzierungsberatung.html", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
     lexikon: [verkehrswert, bodenrichtwert, ertragswert]
   contact: lennart
@@ -123,7 +123,16 @@ service:
         </fieldset>
         <fieldset data-fgd-step="Adresse">
           <legend>2. Adresse und Lage</legend>
-          <label>Adresse *<input name="location" required autocomplete="street-address" placeholder="Straße, Hausnummer, PLZ, Ort"></label>
+          {#- Update 23 B3: vier Pflichtfelder statt eines Adressfelds. data-fgd-fehlt / data-fgd-falsch: Hinweis unter dem Feld,
+              wenn es leer bzw. falsch ist (fg-design.js). fg-design.js und propstack-lead setzen daraus weiter „location“ zusammen. -#}
+          <div class="fgd-field-row fgd-field-row--adresse">
+            <label>Straße *<input name="street" required autocomplete="address-line1" data-fgd-fehlt="Bitte geben Sie die Straße ein."></label>
+            <label>Hausnummer *<input name="house_number" required data-fgd-fehlt="Bitte geben Sie die Hausnummer ein."></label>
+          </div>
+          <div class="fgd-field-row fgd-field-row--ort">
+            <label>Postleitzahl *<input name="zip_code" required inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" data-fgd-fehlt="Bitte geben Sie die Postleitzahl ein." data-fgd-falsch="Bitte geben Sie eine fünfstellige Postleitzahl ein."></label>
+            <label>Ort *<input name="city" required autocomplete="address-level2" data-fgd-fehlt="Bitte geben Sie den Ort ein."></label>
+          </div>
           <p class="fgd-form-hint">Wir bewerten in Berlin, Brandenburg, Leipzig und Dresden. Die Adresse brauchen wir für Vergleichspreise und Bodenrichtwert in Ihrer Lage.</p>
         </fieldset>
         {# Update 19 §5: „Größe“ wird „Wohnfläche“, dazu Grundstücksgröße für Häuser und Grundstücke und Zimmer für Wohnungen
@@ -227,7 +236,7 @@ service:
 
 {# S6 Zahlen: dieselben vier Angaben wie bisher; Quellenzeile nur bei Google und Erlaubnis, ohne „Angabe von F&G“ (Design-Pass 2 §7) #}
 {{ facts({ id: "zahlen", titel: "F&G in Zahlen", hochzaehlen: true, items: [
-  { wert: google.rating, text: "von 5 Sternen aus " + google.count + " Google-Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>, Stand ' + google.checkedLabel },
+  { wert: google.rating, text: "von 5 Sternen aus " + google.count + " Google-Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>' },
   { wert: "100+", text: "Interessenten für Mehrfamilienhäuser deutschlandweit" },
   { wert: "50+", text: "neue Kapitalanlage-Interessenten pro Monat" }
 ] }) }}

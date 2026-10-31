@@ -32,13 +32,7 @@ eleventyComputed:
 
 <section class="fgs-pagehead fgs-pagehead--lex" aria-labelledby="seiten-titel">
   <div class="fgs-wrap">
-    <nav aria-label="Brotkrümelnavigation">
-      <ol class="fgs-crumbs">
-        <li><a href="/">Start</a></li>
-        <li><a href="/lexikon/">Lexikon</a></li>
-        <li aria-current="page">{{ entry.term }}</li>
-      </ol>
-    </nav>
+    {#- Update 23 B1: keine sichtbaren Brotkrumen mehr; die BreadcrumbList im JSON-LD unten bleibt. -#}
     <p class="fgs-label">Immobilienlexikon · {{ entry.category or "Begriff" }}</p>
     <h1 id="seiten-titel">{{ entry.term }}</h1>
     <p class="fgs-lead">{{ entry.definition }}</p>

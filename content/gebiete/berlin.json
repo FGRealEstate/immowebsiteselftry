@@ -8,8 +8,16 @@
   "kicker": "Berlin",
   "kontakt": "lennart",
   "kontakte": [
-    { "kontakt": "timon", "fuer": "Pankow und den Norden und Osten Berlins", "gebiet": "Nord- und Ost-Berlin" },
-    { "kontakt": "lennart", "fuer": "Steglitz-Zehlendorf, Charlottenburg-Wilmersdorf, Tempelhof-Schöneberg, Mitte, Friedrichshain-Kreuzberg und den Süden und Westen Berlins", "gebiet": "Süd- und West-Berlin" }
+    {
+      "kontakt": "timon",
+      "fuer": "Pankow und den Norden und Osten Berlins",
+      "gebiet": "Nord- und Ost-Berlin"
+    },
+    {
+      "kontakt": "lennart",
+      "fuer": "Steglitz-Zehlendorf, Charlottenburg-Wilmersdorf, Tempelhof-Schöneberg, Mitte, Friedrichshain-Kreuzberg und den Süden und Westen Berlins",
+      "gebiet": "Süd- und West-Berlin"
+    }
   ],
   "title": "Immobilienmakler Berlin – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
   "description": "Immobilienmakler in Berlin: Verkauf, Kauf und Finanzierung von Steglitz-Zehlendorf bis Pankow, mit Kaufpreisen 2025 und kostenloser Bewertung.",
@@ -112,11 +120,11 @@
         "text": "Zur Seite Tempelhof-Schöneberg"
       },
       "bild": {
-        "name": "tempelhof-schoeneberg-friedenau-niedstrasse",
-        "alt": "Die Niedstraße in Friedenau",
-        "caption": "Die Niedstraße in Friedenau.",
+        "name": "tempelhof-schoeneberg-friedenau-landhaeuser",
+        "alt": "Landhäuser aus rotem Backstein mit Giebeln am Friedrich-Wilhelm-Platz in Friedenau, davor ein blühender Baum und die ruhige Straße",
+        "caption": "Landhäuser am Friedrich-Wilhelm-Platz in Friedenau.",
         "credit": "Leonhard Lenz, CC0",
-        "url": "https://commons.wikimedia.org/wiki/File:Niedstra%C3%9Fe_Berlin-Friedenau_2026-04-04_01.jpg"
+        "url": "https://commons.wikimedia.org/wiki/File:Landh%C3%A4user_Friedrich-Wilhelm-Platz_11,_Schmargendorfer_Stra%C3%9Fe_18-19_Berlin-Friedenau_2026-04-11_02.jpg"
       }
     },
     {

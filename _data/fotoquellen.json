@@ -1,150 +1,170 @@
 {
-  "_hinweis": "Quellen der Fotos auf Leistungsseiten und Startseite. url und credit sind Pflicht; zeile ersetzt die Nennung, wenn der Urheber auf Commons eine eigene vorgibt (Feld Attribution). Datum, Originalgröße und Lizenzlink trägt tools/seitenbilder.py aus der Commons-Schnittstelle in quellbilder/seiten/manifest.json ein. Freigabe der Downloads: Update 4 vom 27.10.2026, Abschnitt 2. Design-Pass 3 §6.1: sechs weitere (Deutscher Dom bis Viktoria-Luise-Platz), Freigabe Peer 30.10.2026.",
-  "berlin-mitte-spree-2023": {
-    "url": "https://commons.wikimedia.org/wiki/File:Berlin_Mitte_June_2023_01.jpg",
-    "credit": "ArildV, CC BY-SA 4.0"
-  },
-  "park-inn-blick-2013": {
-    "url": "https://commons.wikimedia.org/wiki/File:View_from_Park_inn_Berlin_November_2013.jpg",
-    "credit": "Arild Vågen, CC BY-SA 3.0"
-  },
-  "skyline-spree-abend": {
-    "url": "https://commons.wikimedia.org/wiki/File:Skyline_Berlin.jpg",
-    "credit": "abbilder, CC BY 2.0"
-  },
-  "tiergarten-17-juni": {
-    "url": "https://commons.wikimedia.org/wiki/File:Berlin_Skyline--_Stra%C3%9Fe_des_17._Juni.jpg",
-    "credit": "Daniel Foster, CC BY-SA 2.0"
-  },
-  "humboldt-forum-fernsehturm": {
-    "url": "https://commons.wikimedia.org/wiki/File:Skyline_Berlin_-_Das_Humboldt-Forum_mit_Fernsehturm.jpg",
-    "credit": "abbilder, CC BY 2.0"
-  },
-  "potsdam-alter-markt": {
-    "url": "https://commons.wikimedia.org/wiki/File:Alter_Markt_Potsdam_mit_Marmorobelisk,_St._Nikolaikirche_und_Altem_Rathaus.jpg",
-    "credit": "GuidePL, CC BY-SA 4.0"
-  },
-  "kudamm-leibnizstrasse": {
-    "url": "https://commons.wikimedia.org/wiki/File:Kudamm_Leibnizstr_listed_residence.jpg",
-    "credit": "A.Savin, CC BY-SA 3.0"
-  },
-  "teltower-damm-10": {
-    "url": "https://commons.wikimedia.org/wiki/File:Zehlendorf_Teltower_Damm_10.jpg",
-    "credit": "Clemensfranz, CC BY-SA 3.0"
-  },
-  "grossbeeren-gvz-umschlag": {
-    "url": "https://commons.wikimedia.org/wiki/File:BfGro%C3%9FbeerenGVZ2.jpg",
-    "credit": "Global Fish, CC BY-SA 3.0"
-  },
-  "wilhelmstrasse-65-glas": {
-    "url": "https://commons.wikimedia.org/wiki/File:Fassade_Wilhelmstrasse_65,_Berlin-Mitte,_160417,_ako.jpg",
-    "credit": "Ansgar Koreng, CC BY 3.0 DE",
-    "zeile": "Ansgar Koreng / CC BY 3.0 (DE)"
-  },
-  "leipzig-humboldtstrasse-3": {
-    "url": "https://commons.wikimedia.org/wiki/File:Leipzig_Waldstra%C3%9Fenviertel_Humboldtstra%C3%9Fe_3.JPG",
-    "credit": "H.-P.Haack, CC BY 3.0"
-  },
-  "schoenhauser-allee-173": {
-    "url": "https://commons.wikimedia.org/wiki/File:150502_Sch%C3%B6nhauser_Allee_173_Berlin.jpg",
-    "credit": "Ansgar Koreng, CC BY-SA 3.0 DE",
-    "zeile": "Ansgar Koreng / CC BY-SA 3.0 (DE)"
-  },
-  "chamissoplatz-mietshaus": {
-    "url": "https://commons.wikimedia.org/wiki/File:Berlin,_Kreuzberg,_Chamissoplatz_3,_Mietshaus.jpg",
-    "credit": "Jörg Zägel, CC BY-SA 3.0"
-  },
-  "treppenhaus-rosenthaler-36": {
-    "url": "https://commons.wikimedia.org/wiki/File:Berlin-Mitte_Rosenthaler_Stra%C3%9Fe_36_Treppenhaus_022.jpg",
-    "credit": "GFreihalter, CC BY-SA 4.0"
-  },
-  "chamissoplatz-sommer": {
-    "url": "https://commons.wikimedia.org/wiki/File:Chamissoplatz_Weitwinkel.jpg",
-    "credit": "HMUHH, CC BY-SA 4.0"
-  },
-  "leipzig-skyline-2015": {
-    "url": "https://commons.wikimedia.org/wiki/File:Leipzig_Skyline.jpg",
-    "credit": "LeipzigTravel, CC BY-SA 4.0",
-    "lokal": "quellbilder/gebiete/leipzig-city-hochhaus-neues-rathaus.jpg"
-  },
-  "dresden-canalettoblick": {
-    "url": "https://commons.wikimedia.org/wiki/File:Dresden-canalettoblick-gp.jpg",
-    "credit": "Kolossos, CC BY-SA 3.0"
-  },
-  "pexels-vip-foto-9137849": {
-    "titel": "View of a River in a City",
-    "url": "https://www.pexels.com/photo/view-of-a-river-in-a-city-9137849/",
-    "credit": "vip-foto, Pexels-Lizenz",
-    "zeile": "vip-foto / Pexels",
-    "lokal": "site/images/webp/pexels-vip-foto-9137849.jpg"
-  },
-  "steglitz-schuetzenstrasse": {
-    "url": "https://commons.wikimedia.org/wiki/File:Berlin-Steglitz_Sch%C3%BCtzenstrasse.JPG",
-    "credit": "Uwca, CC BY-SA 3.0"
-  },
-  "steglitz-schuetzenstrasse-19": {
-    "url": "https://commons.wikimedia.org/wiki/File:120922-Steglitz-Sch%C3%BCtzenstra%C3%9Fe-19.JPG",
-    "credit": "Muns, CC BY-SA 3.0"
-  },
-  "kastanienallee-16-17": {
-    "url": "https://commons.wikimedia.org/wiki/File:Berlin_Prenzlauer_Berg_Kastanienallee_16-17_(09065071).JPG",
-    "credit": "Kvikk, CC BY-SA 3.0"
-  },
-  "wohnung-iferreiro": {
-    "url": "https://commons.wikimedia.org/wiki/File:Flat.jpg",
-    "credit": "IFERREIRO, CC BY-SA 3.0"
-  },
-  "kurfuerstendamm-190": {
-    "url": "https://commons.wikimedia.org/wiki/File:Charlottenburg_Kurf%C3%BCrstendamm_190.JPG",
-    "credit": "Fridolin freudenfett, CC BY-SA 3.0"
-  },
-  "riehmers-hofgarten-hagelberger": {
-    "url": "https://commons.wikimedia.org/wiki/File:Kreuzberg_Riehmers_Hofgarten-012.jpg",
-    "credit": "Fridolin freudenfett, CC BY-SA 4.0"
-  },
-  "stubenrauchstrasse-66": {
-    "url": "https://commons.wikimedia.org/wiki/File:Stubenrauchstra%C3%9Fe_66_Berlin-Friedenau_2024-09-08_02.jpg",
-    "credit": "Leonhard Lenz, CC0"
-  },
-  "niedstrasse-35": {
-    "url": "https://commons.wikimedia.org/wiki/File:Niedstra%C3%9Fe_35_Berlin-Friedenau_2024-09-07_01.jpg",
-    "credit": "Leonhard Lenz, CC0"
-  },
-  "leere-wohnung-berlin": {
-    "url": "https://commons.wikimedia.org/wiki/File:Empty_Berlin_apartment,_just_before_leaving_(6319152854).jpg",
-    "credit": "Matt Biddulph, CC BY-SA 2.0"
-  },
-  "mommsenstrasse-64": {
-    "url": "https://commons.wikimedia.org/wiki/File:Charlottenburg_Mommsenstra%C3%9Fe_64.jpg",
-    "credit": "Fridolin freudenfett, CC BY-SA 3.0"
-  },
-  "schreibtisch-rechner": {
-    "url": "https://commons.wikimedia.org/wiki/File:Desktop_with_laptop_and_calculator_(Unsplash).jpg",
-    "credit": "Unknown author, CC0",
-    "zeile": "Urheber unbekannt / CC0"
-  },
-  "berlin-deutscher-dom-gendarmenmarkt": {
-    "url": "https://commons.wikimedia.org/wiki/File:Deutscher_Dom,_Gendarmenmarkt,_Berlin-Mitte,_150926,_ako.jpg",
-    "credit": "Ansgar Koreng, CC BY 3.0 DE"
-  },
-  "potsdam-glienicker-bruecke-abend": {
-    "url": "https://commons.wikimedia.org/wiki/File:Glienicker_Br%C3%BCcke-msu-2023-0I9A4693-.jpg",
-    "credit": "Matthias Süßen, CC BY-SA 4.0"
-  },
-  "potsdam-glienicker-bruecke-blaue-stunde": {
-    "url": "https://commons.wikimedia.org/wiki/File:Glienicker_Br%C3%BCcke-msu-2023-0I9A4354-.jpg",
-    "credit": "Matthias Süßen, CC BY-SA 4.0"
-  },
-  "leipzig-neues-rathaus-nacht": {
-    "url": "https://commons.wikimedia.org/wiki/File:Neues_Rathaus_Leipzig_bei_Nacht.jpg",
-    "credit": "DerHHO, CC BY-SA 3.0"
-  },
-  "dresden-elbe-sonnenuntergang": {
-    "url": "https://commons.wikimedia.org/wiki/File:Dresden_im_Sonnenuntergang.jpg",
-    "credit": "Henri Krause, CC BY-SA 4.0"
-  },
-  "schoeneberg-viktoria-luise-platz": {
-    "url": "https://commons.wikimedia.org/wiki/File:Berlin,_Schoeneberg,_Viktoria-Luise-Platz.jpg",
-    "credit": "Jörg Zägel, CC BY-SA 3.0"
-  }
+ "_hinweis": "Quellen der Fotos auf Leistungsseiten und Startseite. url und credit sind Pflicht; zeile ersetzt die Nennung, wenn der Urheber auf Commons eine eigene vorgibt (Feld Attribution). Datum, Originalgröße und Lizenzlink trägt tools/seitenbilder.py aus der Commons-Schnittstelle in quellbilder/seiten/manifest.json ein. Freigabe der Downloads: Update 4 vom 27.10.2026, Abschnitt 2. Design-Pass 3 §6.1: sechs weitere (Deutscher Dom bis Viktoria-Luise-Platz), Freigabe Peer 30.10.2026.",
+ "berlin-mitte-spree-2023": {
+  "url": "https://commons.wikimedia.org/wiki/File:Berlin_Mitte_June_2023_01.jpg",
+  "credit": "ArildV, CC BY-SA 4.0"
+ },
+ "park-inn-blick-2013": {
+  "url": "https://commons.wikimedia.org/wiki/File:View_from_Park_inn_Berlin_November_2013.jpg",
+  "credit": "Arild Vågen, CC BY-SA 3.0"
+ },
+ "skyline-spree-abend": {
+  "url": "https://commons.wikimedia.org/wiki/File:Skyline_Berlin.jpg",
+  "credit": "abbilder, CC BY 2.0"
+ },
+ "tiergarten-17-juni": {
+  "url": "https://commons.wikimedia.org/wiki/File:Berlin_Skyline--_Stra%C3%9Fe_des_17._Juni.jpg",
+  "credit": "Daniel Foster, CC BY-SA 2.0"
+ },
+ "humboldt-forum-fernsehturm": {
+  "url": "https://commons.wikimedia.org/wiki/File:Skyline_Berlin_-_Das_Humboldt-Forum_mit_Fernsehturm.jpg",
+  "credit": "abbilder, CC BY 2.0"
+ },
+ "potsdam-alter-markt": {
+  "url": "https://commons.wikimedia.org/wiki/File:Alter_Markt_Potsdam_mit_Marmorobelisk,_St._Nikolaikirche_und_Altem_Rathaus.jpg",
+  "credit": "GuidePL, CC BY-SA 4.0"
+ },
+ "kudamm-leibnizstrasse": {
+  "url": "https://commons.wikimedia.org/wiki/File:Kudamm_Leibnizstr_listed_residence.jpg",
+  "credit": "A.Savin, CC BY-SA 3.0"
+ },
+ "teltower-damm-10": {
+  "url": "https://commons.wikimedia.org/wiki/File:Zehlendorf_Teltower_Damm_10.jpg",
+  "credit": "Clemensfranz, CC BY-SA 3.0"
+ },
+ "grossbeeren-gvz-umschlag": {
+  "url": "https://commons.wikimedia.org/wiki/File:BfGro%C3%9FbeerenGVZ2.jpg",
+  "credit": "Global Fish, CC BY-SA 3.0"
+ },
+ "wilhelmstrasse-65-glas": {
+  "url": "https://commons.wikimedia.org/wiki/File:Fassade_Wilhelmstrasse_65,_Berlin-Mitte,_160417,_ako.jpg",
+  "credit": "Ansgar Koreng, CC BY 3.0 DE",
+  "zeile": "Ansgar Koreng / CC BY 3.0 (DE)"
+ },
+ "leipzig-humboldtstrasse-3": {
+  "url": "https://commons.wikimedia.org/wiki/File:Leipzig_Waldstra%C3%9Fenviertel_Humboldtstra%C3%9Fe_3.JPG",
+  "credit": "H.-P.Haack, CC BY 3.0"
+ },
+ "schoenhauser-allee-173": {
+  "url": "https://commons.wikimedia.org/wiki/File:150502_Sch%C3%B6nhauser_Allee_173_Berlin.jpg",
+  "credit": "Ansgar Koreng, CC BY-SA 3.0 DE",
+  "zeile": "Ansgar Koreng / CC BY-SA 3.0 (DE)"
+ },
+ "chamissoplatz-mietshaus": {
+  "url": "https://commons.wikimedia.org/wiki/File:Berlin,_Kreuzberg,_Chamissoplatz_3,_Mietshaus.jpg",
+  "credit": "Jörg Zägel, CC BY-SA 3.0"
+ },
+ "treppenhaus-rosenthaler-36": {
+  "url": "https://commons.wikimedia.org/wiki/File:Berlin-Mitte_Rosenthaler_Stra%C3%9Fe_36_Treppenhaus_022.jpg",
+  "credit": "GFreihalter, CC BY-SA 4.0"
+ },
+ "chamissoplatz-sommer": {
+  "url": "https://commons.wikimedia.org/wiki/File:Chamissoplatz_Weitwinkel.jpg",
+  "credit": "HMUHH, CC BY-SA 4.0"
+ },
+ "leipzig-skyline-2015": {
+  "url": "https://commons.wikimedia.org/wiki/File:Leipzig_Skyline.jpg",
+  "credit": "LeipzigTravel, CC BY-SA 4.0",
+  "lokal": "quellbilder/gebiete/leipzig-city-hochhaus-neues-rathaus.jpg"
+ },
+ "dresden-canalettoblick": {
+  "url": "https://commons.wikimedia.org/wiki/File:Dresden-canalettoblick-gp.jpg",
+  "credit": "Kolossos, CC BY-SA 3.0"
+ },
+ "pexels-vip-foto-9137849": {
+  "titel": "View of a River in a City",
+  "url": "https://www.pexels.com/photo/view-of-a-river-in-a-city-9137849/",
+  "credit": "vip-foto, Pexels-Lizenz",
+  "zeile": "vip-foto / Pexels",
+  "lokal": "site/images/webp/pexels-vip-foto-9137849.jpg"
+ },
+ "steglitz-schuetzenstrasse": {
+  "url": "https://commons.wikimedia.org/wiki/File:Berlin-Steglitz_Sch%C3%BCtzenstrasse.JPG",
+  "credit": "Uwca, CC BY-SA 3.0"
+ },
+ "steglitz-schuetzenstrasse-19": {
+  "url": "https://commons.wikimedia.org/wiki/File:120922-Steglitz-Sch%C3%BCtzenstra%C3%9Fe-19.JPG",
+  "credit": "Muns, CC BY-SA 3.0"
+ },
+ "kastanienallee-16-17": {
+  "url": "https://commons.wikimedia.org/wiki/File:Berlin_Prenzlauer_Berg_Kastanienallee_16-17_(09065071).JPG",
+  "credit": "Kvikk, CC BY-SA 3.0"
+ },
+ "wohnung-iferreiro": {
+  "url": "https://commons.wikimedia.org/wiki/File:Flat.jpg",
+  "credit": "IFERREIRO, CC BY-SA 3.0"
+ },
+ "kurfuerstendamm-190": {
+  "url": "https://commons.wikimedia.org/wiki/File:Charlottenburg_Kurf%C3%BCrstendamm_190.JPG",
+  "credit": "Fridolin freudenfett, CC BY-SA 3.0"
+ },
+ "riehmers-hofgarten-hagelberger": {
+  "url": "https://commons.wikimedia.org/wiki/File:Kreuzberg_Riehmers_Hofgarten-012.jpg",
+  "credit": "Fridolin freudenfett, CC BY-SA 4.0"
+ },
+ "stubenrauchstrasse-66": {
+  "url": "https://commons.wikimedia.org/wiki/File:Stubenrauchstra%C3%9Fe_66_Berlin-Friedenau_2024-09-08_02.jpg",
+  "credit": "Leonhard Lenz, CC0"
+ },
+ "niedstrasse-35": {
+  "url": "https://commons.wikimedia.org/wiki/File:Niedstra%C3%9Fe_35_Berlin-Friedenau_2024-09-07_01.jpg",
+  "credit": "Leonhard Lenz, CC0"
+ },
+ "leere-wohnung-berlin": {
+  "url": "https://commons.wikimedia.org/wiki/File:Empty_Berlin_apartment,_just_before_leaving_(6319152854).jpg",
+  "credit": "Matt Biddulph, CC BY-SA 2.0"
+ },
+ "mommsenstrasse-64": {
+  "url": "https://commons.wikimedia.org/wiki/File:Charlottenburg_Mommsenstra%C3%9Fe_64.jpg",
+  "credit": "Fridolin freudenfett, CC BY-SA 3.0"
+ },
+ "schreibtisch-rechner": {
+  "url": "https://commons.wikimedia.org/wiki/File:Desktop_with_laptop_and_calculator_(Unsplash).jpg",
+  "credit": "Unknown author, CC0",
+  "zeile": "Urheber unbekannt / CC0"
+ },
+ "berlin-deutscher-dom-gendarmenmarkt": {
+  "url": "https://commons.wikimedia.org/wiki/File:Deutscher_Dom,_Gendarmenmarkt,_Berlin-Mitte,_150926,_ako.jpg",
+  "credit": "Ansgar Koreng, CC BY 3.0 DE"
+ },
+ "potsdam-glienicker-bruecke-abend": {
+  "url": "https://commons.wikimedia.org/wiki/File:Glienicker_Br%C3%BCcke-msu-2023-0I9A4693-.jpg",
+  "credit": "Matthias Süßen, CC BY-SA 4.0"
+ },
+ "potsdam-glienicker-bruecke-blaue-stunde": {
+  "url": "https://commons.wikimedia.org/wiki/File:Glienicker_Br%C3%BCcke-msu-2023-0I9A4354-.jpg",
+  "credit": "Matthias Süßen, CC BY-SA 4.0"
+ },
+ "leipzig-neues-rathaus-nacht": {
+  "url": "https://commons.wikimedia.org/wiki/File:Neues_Rathaus_Leipzig_bei_Nacht.jpg",
+  "credit": "DerHHO, CC BY-SA 3.0"
+ },
+ "dresden-elbe-sonnenuntergang": {
+  "url": "https://commons.wikimedia.org/wiki/File:Dresden_im_Sonnenuntergang.jpg",
+  "credit": "Henri Krause, CC BY-SA 4.0"
+ },
+ "schoeneberg-viktoria-luise-platz": {
+  "url": "https://commons.wikimedia.org/wiki/File:Berlin,_Schoeneberg,_Viktoria-Luise-Platz.jpg",
+  "credit": "Jörg Zägel, CC BY-SA 3.0"
+ },
+ "leipzig-altes-rathaus-blaue-stunde": {
+  "url": "https://commons.wikimedia.org/wiki/File:Leipzig_-_Markt_%2B_Altes_Rathaus_07_ies.jpg",
+  "credit": "Frank Vincentz, CC BY-SA 3.0"
+ },
+ "leipzig-funkenburgstrasse-9": {
+  "url": "https://commons.wikimedia.org/wiki/File:Leipzig_Funkenburgstra%C3%9Fe_9_026.jpg",
+  "credit": "GFreihalter, CC BY-SA 4.0"
+ },
+ "prenzlauer-berg-malmoeer-strasse-6": {
+  "url": "https://commons.wikimedia.org/wiki/File:Eckhaus_-_Malm%C3%B6er_Stra%C3%9Fe_%26_Schivelbeiner_Stra%C3%9Fe.jpg",
+  "credit": "Heinzi, CC BY-SA 3.0"
+ },
+ "kreuzberg-kloedenstrasse": {
+  "url": "https://commons.wikimedia.org/wiki/File:Kloedenstra%C3%9Fe.jpg",
+  "credit": "O.Gaudig, CC BY-SA 4.0"
+ },
+ "steglitz-schuetzenstrasse-44": {
+  "url": "https://commons.wikimedia.org/wiki/File:120922-Steglitz-Sch%C3%BCtzenstra%C3%9Fe-44.JPG",
+  "credit": "Muns, CC BY-SA 3.0"
+ }
 }

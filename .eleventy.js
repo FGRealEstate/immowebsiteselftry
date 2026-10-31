@@ -68,12 +68,15 @@ module.exports = function(eleventyConfig) {
 
   // Update 7 §4: Propstack-Fotos auf Produktion über das Netlify Image CDN (passende Breite, webp/avif statt Originaldatei bis 6,3 MB).
   // Nur in Netlify-Builds (NETLIFY=true, setzt Netlify selbst); lokal und in der Cloudflare-Testumgebung bleiben die Originale.
-  // Freigabe des Bildhosts: [images] remote_images in netlify.toml. og:image und JSON-LD bleiben bei der Originaladresse.
+  // Freigabe des Bildhosts: [images] remote_images in netlify.toml. JSON-LD bleibt bei der Originaladresse, og:image siehe propstackOg.
   // Rückweg ohne Codeänderung: Umgebungsvariable FG_BILD_CDN=aus in Netlify setzen und neu bauen.
   const PROPSTACK_FOTO = /^https:\/\/images\.propstack\.de\//;
   const imageCdn = (url) => process.env.NETLIFY === "true" && process.env.FG_BILD_CDN !== "aus" && PROPSTACK_FOTO.test(String(url || ""));
   const cdnFoto = (url, w) => `/.netlify/images?url=${encodeURIComponent(url)}&w=${w}&q=75`;
   eleventyConfig.addFilter("propstackFoto", (url, w = 1200) => (imageCdn(url) ? cdnFoto(url, w) : url));
+  // Update 23 B6: Vorschaubild fürs Teilen als JPG 1200 × 630 (mittig zugeschnitten) über dasselbe CDN; absolute Adresse, weil
+  // WhatsApp und LinkedIn sie von außen abrufen. Außerhalb von Netlify bleibt die Originaladresse.
+  eleventyConfig.addFilter("propstackOg", (url) => (imageCdn(url) ? `https://fg-realestate.de/.netlify/images?url=${encodeURIComponent(url)}&w=1200&h=630&fit=cover&fm=jpg&q=75` : url));
   eleventyConfig.addFilter("propstackSrcset", (url, breiten = [480, 800, 1200, 1600]) => (imageCdn(url) ? breiten.map((w) => `${cdnFoto(url, w)} ${w}w`).join(", ") : ""));
   // Exposé-Texte aus Propstack kommen meist als reiner Text mit Leerzeilen und „- “-Listen.
   // Für die Objektseiten: Leerzeile = neuer Absatz, „- “/„• “-Zeilen = Liste. Text mit HTML-Absätzen bleibt, wie er ist.

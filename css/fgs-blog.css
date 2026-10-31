@@ -82,7 +82,7 @@
 .fgd-blog-cards { display: grid; gap: 28px; }
 @media (min-width: 700px) { .fgd-blog-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1100px) { .fgd-blog-cards:not(.fgd-blog-cards--compact) { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-.fgd-blog-card { display: flex; flex-direction: column; background: var(--fgd-white); border: 1px solid var(--fgd-line); text-decoration: none !important; color: var(--fgd-ink) !important; transition: transform .25s var(--fgd-ease), box-shadow .25s; }
+.fgd-blog-card { display: flex; flex-direction: column; background: var(--fgd-white); border: 1px solid var(--fgd-line); text-decoration: none !important; color: var(--fgd-ink) !important; transition: transform 400ms var(--fgs-ease), box-shadow 400ms var(--fgs-ease); }
 .fgd-blog-card:hover { transform: translateY(-3px); box-shadow: 0 22px 40px rgba(8, 8, 47, .08); }
 .fgd-blog-card img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; background: var(--fgd-stone); }
 .fgd-blog-card-body { display: flex; flex-direction: column; gap: 10px; flex: 1; padding: 22px 24px 26px; }
@@ -163,7 +163,7 @@
 .fgd-blog-body .hbars { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; align-items: center; font-size: .92rem; }
 .fgd-blog-body .hbars .cell { height: 26px; position: relative; }
 .fgd-blog-body .hbars .cell span { position: absolute; inset: 0 auto 0 0; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; background: var(--navy); color: var(--on-navy); font-size: .82rem; font-weight: 600; white-space: nowrap; }
-.fgd-blog-body .live .hbars .cell span { transition: width .3s ease; }
+.fgd-blog-body .live .hbars .cell span { transition: width 400ms var(--fgs-ease); }
 .fgd-blog-body .hbars .cell.hl span { background: var(--gold); color: var(--brand-navy); }
 .fgd-blog-body .ctl { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: flex-end; margin: 0 0 18px; font-size: .9rem; }
 .fgd-blog-body .ctl label { display: flex; flex-direction: column; gap: 4px; min-width: 220px; flex: 1; }
@@ -281,7 +281,7 @@
 .fgd-blog-body .check h3 { margin: 0; font-size: 22px; }
 .fgd-blog-body .check-count { font-size: .85rem; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .fgd-blog-body .check-bar { height: 4px; background: var(--rule); margin: 12px 0 8px; }
-.fgd-blog-body .check-bar span { display: block; height: 100%; width: 0; background: var(--c-ki); transition: width .25s; }
+.fgd-blog-body .check-bar span { display: block; height: 100%; width: 0; background: var(--c-ki); transition: width 400ms var(--fgs-ease); }
 .fgd-blog-body .check li { border-bottom: 1px solid var(--rule); }
 .fgd-blog-body .check li:last-child { border-bottom: 0; }
 .fgd-blog-body .check label { display: grid; grid-template-columns: 28px 1fr; gap: 10px; padding: 13px 0; cursor: pointer; font-size: .98rem; line-height: 1.5; }
@@ -389,7 +389,7 @@
 .fgd-blog-widgetlink strong { display: block; font-family: var(--fgd-serif); font-weight: 400; font-size: clamp(21px, 2vw, 25px); color: #fff; }
 .fgd-blog-widgetlink small { display: block; margin-top: 4px; font-size: 15px; color: var(--fgd-on-navy); }
 .fgd-blog-body a.fgd-blog-widgetlink { color: #fff; text-decoration: none; }
-.fgd-blog-widgetlink .fgd-icon { width: 26px; height: 26px; color: var(--fgd-gold); transition: transform .2s var(--fgd-ease); }
+.fgd-blog-widgetlink .fgd-icon { width: 26px; height: 26px; color: var(--fgd-gold); transition: transform 400ms var(--fgs-ease); }
 .fgd-blog-widgetlink:hover .fgd-icon { transform: translateX(4px); }
 
 /* ---------- Angleichung an das System ---------- */
@@ -433,7 +433,7 @@
 /* Übersicht: Leitartikel groß (7 Spalten Foto, 4 Spalten Text), darunter Karten */
 .fgs-blog-lead { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--fgs-gap); align-items: center; margin-top: 48px; color: var(--fgs-ink); text-decoration: none; }
 .fgs-blog-lead .fgs-media { grid-column: 1 / span 7; aspect-ratio: 3 / 2; }
-.fgs-blog-lead .fgs-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--fgs-ease); }
+.fgs-blog-lead .fgs-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 800ms var(--fgs-ease); }
 .fgs-blog-lead:hover .fgs-media img { transform: scale(1.03); }
 .fgs-blog-lead-body { grid-column: 9 / span 4; }
 .fgs-blog-lead-body h3 { margin-top: 12px; font-size: var(--fgs-h2); line-height: 1.15; }
@@ -467,3 +467,15 @@
 .fgd-blog-body .ftab table, .fgd-blog-body .ftab.bill th, .fgd-blog-body .note, .fgd-blog-body .tq figcaption,
 .fgs .fgd-blog-card-meta, .fgs .fgd-blog-card-meta b { font-size: 15px; }
 @media (max-width: 640px) { .fgd-blog-body .ftab.bill, .fgd-blog-body .ftab:not(.bill) td[data-l]::before { font-size: 15px; } }
+
+/* Update 23 D3 (31.10.2026): Artikeltitel in der H1-Größe aller Seiten (vorher 48 px), Überschrift → Text 24 px (vorher 0,6 em = 20). */
+.fgs .fgd-blog-hero h1 { font-size: var(--fgs-h1); line-height: 1.08; }
+@media (max-width: 767px) { .fgs .fgd-blog-hero h1 { line-height: 1.12; } }
+/* Überschrift → Bauteil wie überall --fgs-head-gap (48 / 32 px), vorher fest 48. */
+.fgs .fgs-wrap > h2 + .fgd-blog-more { margin-top: var(--fgs-head-gap); }
+.fgs .fgd-blog-body h2 { margin-bottom: 24px; }
+.fgs .fgd-blog-body figure.chart > h3 { line-height: 1.35; }
+.fgs .fgd-blog-body aside.cta > h3 { line-height: 1.3; }
+/* Update 23 D4 (31.10.2026): Chrome macht waagerecht scrollbare Tabellen per Tastatur erreichbar; auch sie bekommen den goldenen
+   Fokusrahmen statt des blauen des Browsers. */
+.fgs .fgd-blog-body .ftab:focus-visible { outline: 2px solid var(--fgs-gold-text); outline-offset: 3px; }

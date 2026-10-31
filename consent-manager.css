@@ -55,3 +55,11 @@
     max-height: 52px !important;
   }
 }
+
+/* Update 23 D5 (31.10.2026): Cookie-Banner und Einstellungen bewegen sich wie die Seite, 400 ms mit cubic-bezier(.22, 1, .36, 1)
+   (--fgs-ease in css/fg-system.css). Die Bibliothek hatte .15 bis .35 s mit ease. Bei reduzierter Bewegung gilt weiter ihr 0 s. */
+@media (prefers-reduced-motion: no-preference) {
+  #cc-main, #cc-main * { --cc-modal-transition-duration: 400ms !important; }
+  #cc-main *, #cc-main *::before, #cc-main *::after { transition-timing-function: cubic-bezier(.22, 1, .36, 1) !important; }
+  #cc-main :is(button, a, .cm__btn, .pm__btn, .cm__close, .pm__close, .section__toggle, .toggle__icon, .toggle__icon-circle, .toggle__icon-on, .toggle__icon-off) { transition-duration: 400ms !important; }
+}

@@ -96,12 +96,12 @@
     "verwendung": "Titelbild Finanzierungsberatung"
   },
   "kapitalanlage-hero": {
-    "quelle": "leipzig-humboldtstrasse-3",
+    "quelle": "leipzig-funkenburgstrasse-9",
     "zuschnitt": [
       0,
       0,
       1,
-      1
+      0.85
     ],
     "format": [
       16,
@@ -115,12 +115,12 @@
     "verwendung": "Titelbild Kapitalanlage"
   },
   "mfh-hero": {
-    "quelle": "schoenhauser-allee-173",
+    "quelle": "prenzlauer-berg-malmoeer-strasse-6",
     "zuschnitt": [
       0,
-      0.05,
+      0,
       1,
-      0.9
+      0.77
     ],
     "format": [
       16,
@@ -170,12 +170,12 @@
     "verwendung": "Titelbild Betreuung nach dem Kauf"
   },
   "mieten-hero": {
-    "quelle": "chamissoplatz-sommer",
+    "quelle": "kreuzberg-kloedenstrasse",
     "zuschnitt": [
       0,
-      0.2,
+      0.05,
       1,
-      0.95
+      0.85
     ],
     "format": [
       16,
@@ -227,12 +227,12 @@
     "verwendung": "Titelbild Maklerprovision"
   },
   "ueber-uns-hero": {
-    "quelle": "steglitz-schuetzenstrasse",
+    "quelle": "steglitz-schuetzenstrasse-44",
     "zuschnitt": [
-      0.14,
-      0.12,
+      0,
+      0,
       1,
-      0.77
+      0.74
     ],
     "format": [
       16,
@@ -247,10 +247,10 @@
   "ueber-uns/buero-strasse": {
     "quelle": "steglitz-schuetzenstrasse-19",
     "zuschnitt": [
-      0,
-      0.03,
+      0.29,
+      0.12,
       1,
-      0.97
+      0.79
     ],
     "format": [
       4,
@@ -950,7 +950,7 @@
     "breiten": [
       1600
     ],
-    "verwendung": "Titelbild Startseite, Folie 1 (Design-Pass 3 §3.1)"
+    "verwendung": "nicht mehr verwendet: Update 23 A1 (31.10.2026) nimmt die Folie aus der Diaschau"
   },
   "home/hero-slide-berlin": {
     "quelle": "humboldt-forum-fernsehturm",
@@ -967,7 +967,7 @@
     "breiten": [
       1600
     ],
-    "verwendung": "Titelbild Startseite, Folie 2 (Design-Pass 3 §3.1)"
+    "verwendung": "Titelbild Startseite, Folie 1 (Update 23 A1)"
   },
   "home/hero-slide-potsdam": {
     "quelle": "potsdam-glienicker-bruecke-blaue-stunde",
@@ -984,12 +984,12 @@
     "breiten": [
       1600
     ],
-    "verwendung": "Titelbild Startseite, Folie 3 (Design-Pass 3 §3.1)"
+    "verwendung": "Titelbild Startseite, Folie 2 (Update 23 A1)"
   },
   "home/hero-slide-leipzig": {
-    "quelle": "leipzig-skyline-2015",
+    "quelle": "leipzig-altes-rathaus-blaue-stunde",
     "zuschnitt": [
-      0,
+      0.035,
       0,
       1,
       1
@@ -1001,7 +1001,7 @@
     "breiten": [
       1600
     ],
-    "verwendung": "Titelbild Startseite, Folie 4 (Design-Pass 3 §3.1)"
+    "verwendung": "Titelbild Startseite, Folie 3 (Update 23 A1: Altes Rathaus statt Blick vom City-Hochhaus mit Parkplatz)"
   },
   "home/hero-slide-dresden": {
     "quelle": "dresden-elbe-sonnenuntergang",
@@ -1018,7 +1018,7 @@
     "breiten": [
       1600
     ],
-    "verwendung": "Titelbild Startseite, Folie 5 (Design-Pass 3 §3.1)"
+    "verwendung": "Titelbild Startseite, Folie 4 (Update 23 A1)"
   },
   "home/hero-leistung-verkauf": {
     "quelle": "chamissoplatz-mietshaus",
