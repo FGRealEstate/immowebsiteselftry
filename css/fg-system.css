@@ -2851,3 +2851,9 @@ section.fgs-band .fgs-band-text::before { background: radial-gradient(closest-si
   .fgs-credits td { display: block; padding: 2px 0; border: 0; }
   .fgs-credits td:nth-child(3) { white-space: normal; }
 }
+
+/* ---------- Update 24 (31.10.2026) ---------- */
+/* §2 Grundsätze: Jeder Titel ist mindestens zwei Zeilen hoch, auch „Zuerst Ihr Ziel“ mit einer Zeile. So beginnen die vier Texte
+   auf einer Linie, auch ohne Subgrid. Gestapelt (unter 768 px) gilt das nicht. 2 × 1,3 em ist dasselbe wie 2lh, für ältere Browser. */
+.fgs-promise-t { display: block; }
+@media (min-width: 768px) { .fgs-promise-t { min-height: calc(2 * 1.3em); min-height: 2lh; } }
