@@ -31,6 +31,9 @@ exports.handler = async function (event) {
     const bedrooms = numberOrNull(data.bedrooms);
     const bathrooms = numberOrNull(data.bathrooms);
     const plotArea = numberOrNull(data.plot_area || data.plotArea);
+    // Mehrfamilienhaus und Kapitalanlage (31.10.2026): Einheiten ab und Bruttorendite ab in Prozent
+    const units = numberOrNull(data.units);
+    const grossYield = decimalOrNull(data.gross_yield || data.grossYield);
     const features = Array.isArray(data.features) ? data.features.map(clean).filter(Boolean) : [];
     const message = clean(data.message || data.nachricht);
     const sourceUrl = clean(data.source_url || data.sourceUrl);
@@ -68,6 +71,8 @@ exports.handler = async function (event) {
       bedrooms,
       bathrooms,
       plotArea,
+      units,
+      grossYield,
       features,
       message,
       sourceUrl,
@@ -110,7 +115,7 @@ exports.handler = async function (event) {
           datenschutz_zugestimmt: true,
           newsletter_gewuenscht: true,
           immobilienmailing_gewuenscht: true,
-          website_rohdaten: compactJson({ marketingType, propertyType, location, budget, rooms, livingSpace, bedrooms, bathrooms, plotArea, features, message, sourceUrl, utmSource, utmMedium, utmCampaign, utmContent, utmTerm }),
+          website_rohdaten: compactJson({ marketingType, propertyType, location, budget, rooms, livingSpace, bedrooms, bathrooms, plotArea, units, grossYield, features, message, sourceUrl, utmSource, utmMedium, utmCampaign, utmContent, utmTerm }),
           utm_source: utmSource,
           utm_medium: utmMedium,
           utm_campaign: utmCampaign,
@@ -196,10 +201,12 @@ function buildNote(input) {
     `Suchgebiet: ${input.location || "-"}`,
     `Budget / Preis bis: ${input.budget || "-"}`,
     `Zimmer ab: ${input.rooms || "-"}`,
-    `Wohnfläche ab: ${input.livingSpace || "-"}`,
+    `${input.propertyType === "Gewerbe" ? "Fläche ab" : "Wohnfläche ab"}: ${input.livingSpace || "-"}`,
     `Schlafzimmer ab: ${input.bedrooms || "-"}`,
     `Badezimmer ab: ${input.bathrooms || "-"}`,
     `Grundstück ab: ${input.plotArea || "-"}`,
+    `Einheiten ab: ${input.units || "-"}`,
+    `Bruttorendite ab: ${input.grossYield ? `${String(input.grossYield).replace(".", ",")} %` : "-"}`,
     `Wünsche / Ausstattung: ${input.features && input.features.length ? input.features.join(", ") : "-"}`,
     "",
     "Nachricht:",
@@ -223,6 +230,8 @@ function buildNote(input) {
 // steht weiter in der Notiz des Suchprofils und im Kontakt. Vorher gingen die Objektarten mit Werten an Propstack, die es
 // dort nicht gibt (z. B. SINGLE_FAMILY_HOUSE als rs_types), und bei einem Fehler legten die Ausweichversuche das Profil
 // ohne die Hülle „saved_query“ an, also ohne Kriterien. Jetzt gibt es nur noch den dokumentierten Aufruf.
+// Einheiten ab und Bruttorendite ab (31.10.2026) haben in der Doku kein Feld (yield_actual steht nur im GET-Beispiel,
+// ohne Beschreibung); sie stehen deshalb in der Notiz des Suchprofils und im Kontakt.
 async function safeCreateSearchProfile(apiKey, input) {
   const savedQuery = buildSavedQuery(input);
   try {
@@ -381,6 +390,14 @@ async function parseResponse(response, endpoint) {
 function clean(value) {
   if (value === null || value === undefined) return "";
   return String(value).trim();
+}
+
+// Prozentwerte wie „4,5“ oder „4.5“: Punkt und Komma sind hier Dezimalzeichen, nicht Tausenderpunkt.
+function decimalOrNull(value) {
+  const text = clean(value).replace(",", ".").replace(/[^\d.]/g, "");
+  if (!text) return null;
+  const n = Number(text);
+  return Number.isNaN(n) ? null : n;
 }
 
 function numberOrNull(value) {

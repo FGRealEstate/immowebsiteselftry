@@ -450,6 +450,33 @@
     form.querySelectorAll('[data-fgd-num]').forEach((input) => {
       input.addEventListener('input', () => { input.value = input.value.replace(/[^\d.,]/g, ''); });
     });
+    /* Felder nach Objektart (Timon, 31.10.2026): Grundstück ohne Wohnfläche und Zimmer, Mehrfamilienhaus mit Einheiten
+       und Bruttorendite statt Zimmern. Was nicht passt, wird ausgeblendet und deaktiviert, geht also nicht mit. */
+    const typeSelect = form.querySelector('select[name="property_type"]');
+    const applyType = () => {
+      const type = typeSelect ? typeSelect.value : '';
+      form.querySelectorAll('[data-fgd-for]').forEach((field) => {
+        const show = field.dataset.fgdFor.split(' ').includes(type);
+        field.hidden = !show;
+        field.querySelectorAll('input').forEach((input) => { input.disabled = !show; });
+      });
+      form.querySelectorAll('[data-fgd-label-gewerbe]').forEach((field) => {
+        const text = field.querySelector('[data-fgd-label]');
+        if (!text) return;
+        if (!text.dataset.default) text.dataset.default = text.textContent;
+        text.textContent = type === 'Gewerbe' ? field.dataset.fgdLabelGewerbe : text.dataset.default;
+      });
+      // Beispielwert („z. B. 80“) nur bei Wohnung, Haus, Kapitalanlage; beim Mehrfamilienhaus und Gewerbe passt er nicht
+      form.querySelectorAll('[data-fgd-ph-for]').forEach((input) => {
+        if (!input.dataset.ph) input.dataset.ph = input.placeholder;
+        input.placeholder = input.dataset.fgdPhFor.split(' ').includes(type) ? input.dataset.ph : 'optional';
+      });
+    };
+    if (typeSelect) {
+      typeSelect.addEventListener('change', applyType);
+      form.addEventListener('reset', () => setTimeout(applyType));
+      applyType();
+    }
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       if (!form.reportValidity()) return;
@@ -468,6 +495,7 @@
         marketing_type: fd.get('marketing_type') || form.dataset.marketingType || 'BUY', property_type: fd.get('property_type'),
         location: fd.get('location'), budget: fd.get('budget'), rooms: fd.get('rooms'), living_space: fd.get('living_space'),
         bedrooms: fd.get('bedrooms'), bathrooms: fd.get('bathrooms'), plot_area: fd.get('plot_area'),
+        units: fd.get('units'), gross_yield: fd.get('gross_yield'),
         features: fd.getAll('features'), message: fd.get('message'),
         privacy_consent: consent, newsletter_consent: consent, source_url: location.href,
         utm_source: params.get('utm_source') || '', utm_medium: params.get('utm_medium') || '', utm_campaign: params.get('utm_campaign') || '',

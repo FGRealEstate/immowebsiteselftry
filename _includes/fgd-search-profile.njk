@@ -28,22 +28,31 @@
         </label>
         <label>Suchgebiet *<input name="location" required placeholder="z.&nbsp;B. Berlin-Steglitz"></label>
       </div>
+      {#- Felder nach Objektart (Timon, 31.10.2026: „Grundstück: Was will ich mit Wohnfläche? Mfh: Was will ich mit Zimmern,
+          wenn dann Einheitenanzahl oder Bruttorendite ab“). data-fgd-for nennt die Objektarten, bei denen das Feld steht;
+          fg-design.js blendet die übrigen aus und deaktiviert sie, damit nichts aus einer vorher gewählten Objektart mitgeht.
+          Ohne Skript stehen alle Felder da. -#}
+      {% set spWohnen = "Wohnung Haus Mehrfamilienhaus Kapitalanlage" %}
       <div class="fgd-field-row fgd-field-row--3">
         <label>{{ sp.budgetLabel }}<input name="budget" inputmode="decimal" placeholder="in Euro" data-fgd-num></label>
-        <label>Zimmer ab<input name="rooms" inputmode="decimal" placeholder="z.&nbsp;B. 3" data-fgd-num></label>
-        <label>Wohnfläche ab m²<input name="living_space" inputmode="decimal" placeholder="z.&nbsp;B. 80" data-fgd-num></label>
-      </div>
-      <div class="fgd-field-row fgd-field-row--3">
-        <label>Schlafzimmer ab<input name="bedrooms" inputmode="decimal" placeholder="optional" data-fgd-num></label>
-        <label>Badezimmer ab<input name="bathrooms" inputmode="decimal" placeholder="optional" data-fgd-num></label>
-        {% if not spRent %}<label>Grundstück ab m²<input name="plot_area" inputmode="decimal" placeholder="optional" data-fgd-num></label>{% endif %}
+        <label data-fgd-for="Wohnung Haus Kapitalanlage">Zimmer ab<input name="rooms" inputmode="decimal" placeholder="z.&nbsp;B. 3" data-fgd-num></label>
+        {% if not spRent %}<label data-fgd-for="Mehrfamilienhaus">Einheiten ab<input name="units" inputmode="numeric" placeholder="z.&nbsp;B. 6" data-fgd-num></label>
+        <label data-fgd-for="Mehrfamilienhaus Kapitalanlage">Bruttorendite ab %<input name="gross_yield" inputmode="decimal" placeholder="z.&nbsp;B. 4,5" data-fgd-num></label>{% endif %}
+        <label data-fgd-for="{{ spWohnen }} Gewerbe" data-fgd-label-gewerbe="Fläche ab m²"><span data-fgd-label>Wohnfläche ab m²</span><input name="living_space" inputmode="decimal" placeholder="z.&nbsp;B. 80" data-fgd-ph-for="Wohnung Haus Kapitalanlage" data-fgd-num></label>
+        <label data-fgd-for="Wohnung Haus">Schlafzimmer ab<input name="bedrooms" inputmode="decimal" placeholder="optional" data-fgd-num></label>
+        <label data-fgd-for="Wohnung Haus">Badezimmer ab<input name="bathrooms" inputmode="decimal" placeholder="optional" data-fgd-num></label>
+        {% if not spRent %}<label data-fgd-for="Haus Mehrfamilienhaus Grundstück">Grundstück ab m²<input name="plot_area" inputmode="decimal" placeholder="optional" data-fgd-num></label>{% endif %}
       </div>
     </fieldset>
     <fieldset>
       <legend>Was Ihnen wichtig ist</legend>
       <div class="fgd-checks">
-        {% set spFeatures = ["Balkon/Terrasse", "Garten", "Aufzug", "Keller", "Stellplatz", "Barrierefrei", "Einbauküche"] %}
-        {% for f in spFeatures %}<label><input type="checkbox" name="features" value="{{ f }}"><span>{{ f }}</span></label>{% endfor %}
+        {#- Beim Grundstück fallen die Ausstattungsmerkmale weg, bei Gewerbe Balkon, Garten und Einbauküche. -#}
+        {% set spFeatures = [
+          ["Balkon/Terrasse", spWohnen], ["Garten", spWohnen], ["Aufzug", spWohnen + " Gewerbe"], ["Keller", spWohnen + " Gewerbe"],
+          ["Stellplatz", spWohnen + " Gewerbe"], ["Barrierefrei", spWohnen + " Gewerbe"], ["Einbauküche", spWohnen]
+        ] %}
+        {% for f in spFeatures %}<label data-fgd-for="{{ f[1] }}"><input type="checkbox" name="features" value="{{ f[0] }}"><span>{{ f[0] }}</span></label>{% endfor %}
         {% if not spRent %}<label><input type="checkbox" name="features" value="Off-Market interessant"><span>Off-Market interessant</span></label>{% endif %}
       </div>
       <label>Weitere Wünsche<textarea name="message" rows="3" maxlength="3000" placeholder="z.&nbsp;B. Lage, Zustand oder zeitlicher Rahmen"></textarea></label>
