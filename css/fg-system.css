@@ -2868,7 +2868,10 @@ section.fgs-band .fgs-band-text::before { background: radial-gradient(closest-si
    (ab 768 px) bzw. 640 px; längerer Inhalt (Gebietsseiten, Handy quer) darf den Rahmen höher machen. */
 .fgs-closing { padding: 16px; }
 @media (min-width: 768px) { .fgs-closing { padding: 24px; } }
-.fgs-closing-frame { min-height: max(640px, min(100vh, 900px)); place-items: end start; text-align: left; border-radius: 0; }
+/* Update 25 §5 (01.11.2026): Spalte und Inhalt nie breiter als der Rahmen. Vorher wuchs die Rasterspalte mit dem längsten Wort der
+   Überschrift („GESAMTKOSTEN“, „MEHRFAMILIENHAUS“, „BEANTWORTET“): bei 390 px ragten Überschrift und Knopf bis 123 px über den Rand und
+   wurden abgeschnitten, und fg-design.js (trennen) sah keinen Überstand, weil die Überschrift selbst mitwuchs. */
+.fgs-closing-frame { min-height: max(640px, min(100vh, 900px)); place-items: end start; text-align: left; border-radius: 0; grid-template-columns: minmax(0, 1fr); }
 @media (min-width: 768px) { .fgs-closing-frame { min-height: max(720px, min(100vh, 900px)); } }
 /* §2 Verlauf statt flachem Navy: unten links navy 85 %, oben rechts navy 15 %. Die zwei Zwischenstufen halten die Schrift über
    hellen Fenstern bei mindestens 4,5 : 1 (gemessen bei 1440, 1024 und 390 px, PLAN.md Update 25); linear fiel sie bis 3 : 1. */
@@ -2890,7 +2893,7 @@ section.fgs-band .fgs-band-text::before { background: radial-gradient(closest-si
 .fgs-closing-media > picture { display: block; height: 100%; }
 /* §2 Inhalt unten links: 96 px von links und unten bei 1440 px, mit der Breite kleiner (mindestens 24 px), höchstens 760 px breit.
    Die Reihe der Anliegen darf breiter sein, damit sie bei 1440 px eine Reihe bleibt. */
-.fgs-closing .fgs-closing-inner { max-width: none; padding: clamp(56px, 6.667vw, 96px) clamp(24px, 6.667vw, 96px); }
+.fgs-closing .fgs-closing-inner { max-width: 100%; padding: clamp(56px, 6.667vw, 96px) clamp(24px, 6.667vw, 96px); }
 .fgs-closing-inner > :not(.fgs-closing-body), .fgs-closing-body > :not(.fgs-closing-links) { max-width: 760px; }
 .fgs-closing-sentence { margin-inline: 0 !important; max-width: 760px !important; font-size: clamp(44px, calc(32.11px + 3.048vw), 76px); line-height: 1.05; }
 .fgs-closing-body > p { margin-inline: 0 !important; font-size: 20px; line-height: 1.5; color: rgba(255, 255, 255, .85); }
