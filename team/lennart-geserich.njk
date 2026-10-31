@@ -3,10 +3,10 @@ layout: fgs-page.njk
 fgsHero: false
 title: "Lennart Geserich – Geschäftsführer, Verkauf & Vermietung | Fischer & Geserich"
 permalink: team/lennart-geserich/index.html
-description: "Lennart Geserich ist Geschäftsführer der Fischer & Geserich Real Estate GmbH in Berlin-Steglitz. Er verantwortet Verkauf und Vermietung in Berlin und Brandenburg."
+description: "Lennart Geserich ist Geschäftsführer der Fischer & Geserich Real Estate GmbH in Berlin-Steglitz. Er verantwortet Verkauf und Vermietung in Süd- und West-Berlin und Südbrandenburg."
 canonicalPath: /team/lennart-geserich/
 ogTitle: "Lennart Geserich, Fischer & Geserich Real Estate"
-ogDescription: "Geschäftsführer, Head of Sales & Vermietung, Ansprechpartner für Berlin und Brandenburg."
+ogDescription: "Geschäftsführer, Head of Sales & Vermietung, Ansprechpartner für Süd- und West-Berlin und Südbrandenburg."
 # Brief Design-Pass §4.3: Profil, das „Wer ist Lennart Geserich?“ beantwortet. Angaben nur von der Website und aus dem Brief:
 # Rolle, Kurztext und rund zehn Jahre Erfahrung (Startseite, Über uns), Geschäftsführer (Impressum), § 34c (bisheriges Markup),
 # Zuständigkeit (Brief), LinkedIn (bisherige Über-uns-Seite). Werdegang, Direktnummer und E-Mail fehlen: QUESTIONS 2.1, 2.2.
@@ -19,7 +19,7 @@ pg:
   parent: { label: "Über uns", href: "/ueber-uns.html" }
   kicker: "Geschäftsführer · Head of Sales & Vermietung"
   h1: "Lennart Geserich"
-  intro: "Lennart Geserich ist Geschäftsführer der Fischer & Geserich Real Estate GmbH in Berlin-Steglitz. Er verantwortet Verkauf und Vermietung und ist Ihr Ansprechpartner für Berlin und Brandenburg."
+  intro: "Lennart Geserich ist Geschäftsführer der Fischer & Geserich Real Estate GmbH in Berlin-Steglitz. Er verantwortet Verkauf und Vermietung und ist Ihr Ansprechpartner für Süd- und West-Berlin und Südbrandenburg."
   buttons:
     - { label: "Gespräch vereinbaren", href: "/kontakt.html" }
   person:
@@ -28,24 +28,39 @@ pg:
     givenName: "Lennart"
     familyName: "Geserich"
     jobTitle: "Geschäftsführer"
-    description: "Geschäftsführer der Fischer & Geserich Real Estate GmbH mit Schwerpunkt Vertrieb und Maklergeschäft. Verantwortet Verkauf und Vermietung von Wohn- und Anlageimmobilien nach § 34c Abs. 1 GewO und ist Ansprechpartner für Berlin und Brandenburg."
+    description: "Geschäftsführer der Fischer & Geserich Real Estate GmbH mit Schwerpunkt Vertrieb und Maklergeschäft. Verantwortet Verkauf und Vermietung von Wohn- und Anlageimmobilien nach § 34c Abs. 1 GewO und ist Ansprechpartner für Süd- und West-Berlin und Südbrandenburg."
     knowsAbout: ["Immobilienvertrieb", "Maklergeschäft", "Immobilienbewertung", "Vermietung", "Berliner Wohnungsmarkt"]
+    # Teil B (31.10.2026): Gebiete nach Update 13 §7 Punkt 8; Mitte und Friedrichshain-Kreuzberg bleiben bei Lennart, bis Timon jemanden nennt
     areaServed:
-      - { type: City, name: Berlin, url: /standorte/berlin/ }
-      - { type: State, name: Brandenburg, url: /standorte/ }
+      - { type: AdministrativeArea, name: Steglitz-Zehlendorf, url: /standorte/berlin/steglitz-zehlendorf/ }
+      - { type: AdministrativeArea, name: Charlottenburg-Wilmersdorf, url: /standorte/berlin/charlottenburg-wilmersdorf/ }
+      - { type: AdministrativeArea, name: Tempelhof-Schöneberg, url: /standorte/berlin/tempelhof-schoeneberg/ }
+      - { type: AdministrativeArea, name: Mitte }
+      - { type: AdministrativeArea, name: Friedrichshain-Kreuzberg }
+      - { type: AdministrativeArea, name: Havelland, url: /standorte/havelland/ }
+      - { type: City, name: Falkensee, url: /standorte/falkensee/ }
+      - { type: City, name: Potsdam, url: /standorte/potsdam/ }
+      - { type: AdministrativeArea, name: Potsdam-Mittelmark, url: /standorte/potsdam-mittelmark/ }
+      - { type: City, name: Teltow, url: /standorte/teltow/ }
+      - { type: City, name: Kleinmachnow, url: /standorte/teltow/ }
+      - { type: AdministrativeArea, name: Teltow-Fläming, url: /standorte/teltow-flaeming/ }
+      - { type: AdministrativeArea, name: Dahme-Spreewald, url: /standorte/dahme-spreewald/ }
+      - { type: City, name: Königs Wusterhausen, url: /standorte/konigs-wusterhausen/ }
+      - { type: AdministrativeArea, name: Oder-Spree, url: /standorte/oder-spree/ }
+      - { type: City, name: Erkner, url: /standorte/erkner/ }
     linkedin: "https://www.linkedin.com/in/lennart-geserich-b413bb38a/"
     facts:
       - { dt: "Funktion", dd: "Geschäftsführer der Fischer &amp; Geserich Real Estate GmbH" }
       - { dt: "Ausbildung", dd: "Immobilienkaufmann" }
       - { dt: "Erfahrung", dd: "rund zehn Jahre in der Immobilienbranche" }
       - { dt: "Schwerpunkt", dd: "Verkauf und Vermietung" }
-      - { dt: "Zuständig für", dd: "Berlin und Brandenburg" }
+      - { dt: "Zuständig für", dd: "Süd- und West-Berlin und Südbrandenburg" }
   faqTitle: "Häufige Fragen zu Lennart Geserich"
   faq:
     - q: "Wer ist Lennart Geserich?"
-      a: "Lennart Geserich ist Geschäftsführer der Fischer & Geserich Real Estate GmbH mit Sitz in Berlin-Steglitz. Er bringt rund zehn Jahre Erfahrung in der Immobilienbranche mit, verantwortet Verkauf und Vermietung und ist Ansprechpartner für Berlin und Brandenburg."
+      a: "Lennart Geserich ist Geschäftsführer der Fischer & Geserich Real Estate GmbH mit Sitz in Berlin-Steglitz. Er bringt rund zehn Jahre Erfahrung in der Immobilienbranche mit, verantwortet Verkauf und Vermietung und ist Ansprechpartner für Süd- und West-Berlin und Südbrandenburg."
     - q: "Wobei hilft mir Lennart Geserich?"
-      a: "Beim Verkauf und bei der Bewertung Ihrer Immobilie, bei der Vermietung und beim Verkauf oder Ankauf eines Mehrfamilienhauses in Berlin und Brandenburg."
+      a: "Beim Verkauf und bei der Bewertung Ihrer Immobilie, bei der Vermietung und beim Verkauf oder Ankauf eines Mehrfamilienhauses in Süd- und West-Berlin und Südbrandenburg."
     - q: "Wie erreiche ich Lennart Geserich?"
       a: "Über unsere Büronummer +49 1520 3083048 oder per E-Mail an info@fg-realestate.de. Persönliche Termine im Büro in der Schützenstraße 30 in Berlin finden nach vorheriger Vereinbarung statt."
   contact: lennart
@@ -111,12 +126,13 @@ pg:
    zwei Textlinks; die Orte stehen auf der Übersicht und im Fuß #}
 <section class="fgs-section" id="gebiete" aria-labelledby="gebiete-titel">
   <div class="fgs-wrap fgs-cols fgs-cols--stapeln">
-    <div class="fgs-cols-head"><h2 id="gebiete-titel">Ansprechpartner für Berlin und das Umland</h2></div>
+    <div class="fgs-cols-head"><h2 id="gebiete-titel">Ansprechpartner für Süd- und West-Berlin und Südbrandenburg</h2></div>
     <div class="fgs-cols-body">
-      <p class="fgs-lead">Für Eigentümer, Käufer und Vermieter in Berlin und im Berliner Umland ist Lennart Geserich bei Fischer &amp; Geserich der feste Ansprechpartner. Was wir dort anbieten und wie sich die Märkte entwickeln, steht auf den Gebietsseiten.</p>
+      <p class="fgs-lead">Für Eigentümer, Käufer und Vermieter in Süd- und West-Berlin und im Süden Brandenburgs ist Lennart Geserich bei Fischer &amp; Geserich der feste Ansprechpartner. Was wir dort anbieten und wie sich die Märkte entwickeln, steht auf den Gebietsseiten.</p>
       <div class="fgs-links">
-        {%- if serviceArea.berlin.exists %}
-        {{ textlink(serviceArea.berlin.url, serviceArea.berlin.name) }}{% endif %}
+        {#- Teil B (31.10.2026, Update 13 §7 Punkt 8): Links auf seine Seiten #}
+        {%- for l in [["Steglitz-Zehlendorf", "/standorte/berlin/steglitz-zehlendorf/"], ["Charlottenburg-Wilmersdorf", "/standorte/berlin/charlottenburg-wilmersdorf/"], ["Tempelhof-Schöneberg", "/standorte/berlin/tempelhof-schoeneberg/"], ["Havelland", "/standorte/havelland/"], ["Falkensee", "/standorte/falkensee/"], ["Potsdam", "/standorte/potsdam/"], ["Potsdam-Mittelmark", "/standorte/potsdam-mittelmark/"], ["Teltow & Kleinmachnow", "/standorte/teltow/"], ["Teltow-Fläming", "/standorte/teltow-flaeming/"], ["Dahme-Spreewald", "/standorte/dahme-spreewald/"], ["Königs Wusterhausen", "/standorte/konigs-wusterhausen/"], ["Oder-Spree", "/standorte/oder-spree/"], ["Erkner", "/standorte/erkner/"]] %}
+        {{ textlink(l[1], l[0]) }}{% endfor %}
         {{ textlink("/standorte/", "Alle Gebiete") }}
       </div>
     </div>

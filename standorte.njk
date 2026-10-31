@@ -58,7 +58,8 @@ eleventyComputed:
     <div class="fgs-head fgs-region-head">
       <h2 id="region-{{ r.key }}-titel">{{ r.name }}</h2>
       <p>{{ r.text | nbsp | escape | fn | safe }}</p>
-      <p class="fgs-small">{{ r.anzahl + (1 if r.uebersicht else 0) }} Seiten · Ansprechpartner: <a href="#ansprechpartner">{{ k.name }}</a></p>
+      {#- Teil B (31.10.2026): Berlin und Brandenburg nennen beide Personen (r.kontakte = [{ kontakt, teil }]), wie Update 13 §7 Punkt 2 #}
+      <p class="fgs-small">{{ r.anzahl + (1 if r.uebersicht else 0) }} Seiten · Ansprechpartner: {% if r.kontakte %}{% for e in r.kontakte %}<a href="#ansprechpartner">{{ kontakte[e.kontakt].name }}</a> ({{ e.teil }}){% if not loop.last %}, {% endif %}{% endfor %}{% else %}<a href="#ansprechpartner">{{ k.name }}</a>{% endif %}</p>
       {%- if r.uebersicht %}
       {{ textlink(r.uebersicht.url, "Übersicht " + r.name) }}{% endif %}
     </div>
@@ -117,8 +118,8 @@ eleventyComputed:
       <p>{{ u.kurzantwortMehr | nbsp | escape | fn | safe }}</p>
     </div>
     <ul class="fgs-cards2" role="list">
-      {{ card({ href: kontakte.lennart.profile | navHref, bild: "/images/team/lennart-geserich-hell" | bild, alt: "Porträt von Lennart Geserich", label: "Berlin · Brandenburg", titel: kontakte.lennart.name, zeile: kontakte.lennart.role }) }}
-      {{ card({ href: kontakte.timon.profile | navHref, bild: "/images/team/timon-fischer-hell" | bild, alt: "Porträt von Timon Fischer", label: "Leipzig · Dresden", titel: kontakte.timon.name, zeile: kontakte.timon.role }) }}
+      {{ card({ href: kontakte.lennart.profile | navHref, bild: "/images/team/lennart-geserich-hell" | bild, alt: "Porträt von Lennart Geserich", label: "Süd- und West-Berlin · Südbrandenburg", titel: kontakte.lennart.name, zeile: kontakte.lennart.role }) }}
+      {{ card({ href: kontakte.timon.profile | navHref, bild: "/images/team/timon-fischer-hell" | bild, alt: "Porträt von Timon Fischer", label: "Nord- und Ost-Berlin · Nordbrandenburg · Leipzig · Dresden", titel: kontakte.timon.name, zeile: kontakte.timon.role }) }}
     </ul>
   </div>
 </section>

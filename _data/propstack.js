@@ -752,6 +752,22 @@ const BERLIN_ORTSTEILE = {
     "berlin/tempelhof-schoeneberg": ["Schöneberg", "Friedenau", "Tempelhof", "Mariendorf", "Marienfelde", "Lichtenrade"]
 };
 
+/* Teil B (31.10.2026, PLAN.md „Alles Offene in einem Brief“, Teil B 4; Update 15 Punkt 3): Berliner Bezirke ohne eigene Seite
+   mit ihrem Ansprechpartner. Mitte und Friedrichshain-Kreuzberg bleiben bei Lennart, bis Timon jemanden nennt (Peer, 31.10.2026).
+   Ortsteile nach „Liste der Bezirke und Ortsteile Berlins“ (de.wikipedia.org, Ortsteilnummern 0101–1211, abgerufen 31.10.2026). */
+const BERLIN_BEZIRKE_OHNE_SEITE = {
+    "Mitte": { kontakt: "lennart", ortsteile: ["Mitte", "Moabit", "Hansaviertel", "Tiergarten", "Wedding", "Gesundbrunnen"] },
+    "Friedrichshain-Kreuzberg": { kontakt: "lennart", ortsteile: ["Friedrichshain", "Kreuzberg"] },
+    "Spandau": { kontakt: "lennart", ortsteile: ["Spandau", "Haselhorst", "Siemensstadt", "Staaken", "Gatow", "Kladow", "Hakenfelde", "Falkenhagener Feld", "Wilhelmstadt"] },
+    "Neukölln": { kontakt: "lennart", ortsteile: ["Neukölln", "Britz", "Buckow", "Rudow", "Gropiusstadt"] },
+    "Treptow-Köpenick": { kontakt: "timon", ortsteile: ["Alt-Treptow", "Plänterwald", "Baumschulenweg", "Johannisthal", "Niederschöneweide", "Altglienicke", "Adlershof", "Bohnsdorf", "Oberschöneweide", "Köpenick", "Friedrichshagen", "Rahnsdorf", "Grünau", "Müggelheim", "Schmöckwitz"] },
+    "Marzahn-Hellersdorf": { kontakt: "timon", ortsteile: ["Marzahn", "Biesdorf", "Kaulsdorf", "Mahlsdorf", "Hellersdorf"] },
+    "Lichtenberg": { kontakt: "timon", ortsteile: ["Friedrichsfelde", "Karlshorst", "Lichtenberg", "Falkenberg", "Malchow", "Wartenberg", "Neu-Hohenschönhausen", "Alt-Hohenschönhausen", "Fennpfuhl", "Rummelsburg"] },
+    "Reinickendorf": { kontakt: "timon", ortsteile: ["Reinickendorf", "Tegel", "Konradshöhe", "Heiligensee", "Frohnau", "Hermsdorf", "Waidmannslust", "Lübars", "Wittenau", "Märkisches Viertel", "Borsigwalde"] }
+};
+const berlinBezirkKontakt = new Map(Object.entries(BERLIN_BEZIRKE_OHNE_SEITE).flatMap(([bezirk, b]) =>
+    [bezirk, ...b.ortsteile].map((name) => [placeKey(name), b.kontakt])));
+
 let areaIndex = null;
 
 function placeKey(input) {
@@ -765,7 +781,8 @@ function buildAreaIndex() {
     } catch (error) {
         console.warn("Gebietsblock: Gebietsseiten nicht geladen:", error.message);
     }
-    const link = (page) => ({ name: page.name, nameLang: page.nameLang || page.name, inOrt: page.inOrt || `in ${page.name}`, url: page.url });
+    // Teil B: kontakt der Gebietsseite; die Berlin-Übersicht nennt zwei Personen (kontakte) und gibt deshalb keinen mit
+    const link = (page) => ({ name: page.name, nameLang: page.nameLang || page.name, inOrt: page.inOrt || `in ${page.name}`, url: page.url, kontakt: page.kontakte ? null : (page.kontakt || null) });
     const index = { district: new Map(), town: new Map(), county: new Map(), city: new Map() };
     const setOnce = (map, key, page) => { if (key && !map.has(key)) map.set(key, link(page)); };
     const bySlug = new Map(pages.map((page) => [page.slug, page]));
@@ -801,6 +818,17 @@ function findArea(cityName, districtName) {
     }
     if (!cityKey) return null;
     return areaIndex.town.get(cityKey) || areaIndex.county.get(cityKey) || areaIndex.city.get(cityKey) || null;
+}
+
+/* Teil B 4 (31.10.2026): Ansprechpartner für Objekt-, Projekt- und Referenzseiten. Zuerst kontakt der Gebietsseite, in Berlin
+   sonst der Bezirk aus district (Bezirk oder Ortsteil) über BERLIN_BEZIRKE_OHNE_SEITE, sonst Lennart. Außerhalb Berlins ohne
+   Gebietsseite die bisherige Regel: Leipzig oder Dresden → Timon, sonst Lennart. Der Titel wird nicht gelesen.
+   Schritt 2 (PLZ über die amtliche RBS-Adressliste) fehlt noch: der Download wartet auf Peers Freigabe. */
+function findKontakt(cityName, districtName, area) {
+    if (area && area.kontakt) return area.kontakt;
+    const cityKey = placeKey(cityName);
+    if (cityKey === "berlin") return berlinBezirkKontakt.get(placeKey(districtName)) || "lennart";
+    return cityKey.includes("leipzig") || cityKey.includes("dresden") ? "timon" : "lennart";
 }
 
 /* Referenzen (Update 4, 3.2): verkaufte Objekte für /referenzen/. Propstack-Doku („Objekt-Stati lesen“): „Ein Objekt
@@ -842,7 +870,8 @@ function buildReference(rawUnit) {
         sold_date: soldDate,
         sold_year: soldDate && /^\d{4}/.test(soldDate) ? soldDate.slice(0, 4) : null,
         main_image: unit.main_image,
-        area: unit.area
+        area: unit.area,
+        kontakt: unit.kontakt
     };
 }
 
@@ -1215,6 +1244,7 @@ function buildUnit(unit) {
         location: getPublicLocation(unit),
         district: getDistrictName(unit),
         area: findArea(getPublicLocation(unit), getDistrictName(unit)),
+        kontakt: findKontakt(getPublicLocation(unit), getDistrictName(unit), findArea(getPublicLocation(unit), getDistrictName(unit))),
         marketing_type: marketingType,
         property_type: propertyType,
         status: getStatusName(unit),
@@ -1309,6 +1339,8 @@ function buildProject(project, units) {
         status: getProjectStatusName(project),
         location: getProjectLocation(project, units),
         area: findArea(getProjectLocation(project, units), getDistrictName(project || {}) || units.map((unit) => unit.district).find(Boolean)),
+        kontakt: findKontakt(getProjectLocation(project, units), getDistrictName(project || {}) || units.map((unit) => unit.district).find(Boolean),
+            findArea(getProjectLocation(project, units), getDistrictName(project || {}) || units.map((unit) => unit.district).find(Boolean))),
         address: firstText(project || {}, ["address", "full_address", "street", "custom_fields.projektadresse"]),
         description,
         completion_date: formatDate(firstText(project || {}, ["completion_date", "planned_completion", "custom_fields.fertigstellung", "custom_fields.geplante_fertigstellung"])),

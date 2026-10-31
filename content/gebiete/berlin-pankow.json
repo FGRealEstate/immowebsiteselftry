@@ -14,12 +14,12 @@
     "Prenzlauer Berg",
     "Niederschönhausen"
   ],
-  "kontakt": "lennart",
+  "kontakt": "timon",
   "title": "Immobilienmakler Pankow – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
   "description": "Immobilienmakler in Pankow: verkaufen, kaufen und finanzieren in Prenzlauer Berg, Pankow-Süd und Niederschönhausen, mit Daten und Milieuschutz 2026.",
   "h1": "Immobilie verkaufen, kaufen und finanzieren in Pankow",
   "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Pankow beim Verkauf, beim Kauf und bei der Finanzierung, von den Gründerzeitkiezen in Prenzlauer Berg über Pankow-Süd bis zu den Villen und Mietshäusern in Niederschönhausen. Unser Büro liegt in der Schützenstraße 30 in Steglitz. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
-  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für den ganzen Bezirk ist Lennart Geserich Ihr Ansprechpartner, Head of Sales & Vermietung.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für den ganzen Bezirk ist Timon Fischer Ihr Ansprechpartner, Geschäftsführer und verantwortlich für die Immobilienfinanzierung.",
   "hero": {
     "name": "pankow-schloss-schoenhausen",
     "alt": "Schloss Schönhausen in Pankow an einem sonnigen Junitag, davor der Rasen und der Weg zum Eingang",
@@ -185,7 +185,7 @@
     },
     {
       "frage": "Wie ermittle ich den Wert meiner Immobilie in Pankow?",
-      "antwort": "Einen ersten Anhaltspunkt geben der Bodenrichtwert im Geoportal Berlin und die Kaufpreise im Immobilienmarktbericht des Gutachterausschusses.[[2,1]] Wie Zustand, Grundriss und Lage im Haus den Wert verändern, zeigt erst eine Wertermittlung: Bei uns erstellt sie Lennart Geserich kostenlos, meist noch am selben Tag. Brauchen Sie einen Wert für das Finanzamt, ein Gericht oder eine Erbauseinandersetzung, ist ein Verkehrswertgutachten eines Sachverständigen das Richtige.",
+      "antwort": "Einen ersten Anhaltspunkt geben der Bodenrichtwert im Geoportal Berlin und die Kaufpreise im Immobilienmarktbericht des Gutachterausschusses.[[2,1]] Wie Zustand, Grundriss und Lage im Haus den Wert verändern, zeigt erst eine Wertermittlung: Bei uns erstellt sie Timon Fischer kostenlos, meist noch am selben Tag. Brauchen Sie einen Wert für das Finanzamt, ein Gericht oder eine Erbauseinandersetzung, ist ein Verkehrswertgutachten eines Sachverständigen das Richtige.",
       "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienbewertung Berlin-Pankow“, dort als „Wie kann ich den Wert meiner Immobilie in Berlin ermitteln?“ und „Wie kann ich selbst den Wert einer Immobilie ermitteln?“ (Google_Areas, Oktober 2026). Antwort nach /immobilienbewertung/ (Stand 26.10.2026)"
     },
     {
@@ -367,7 +367,7 @@
       "fundstelle": "berlin-grundlagen.md Nr. 1, 2, 11"
     },
     {
-      "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, Halbteilung §§ 656a–656d BGB, nicht bei MFH und Grundstücken; § 34c und § 34i GewO; Lennart Geserich; Europace und Baufinex; Wertermittlung kostenlos, meist am selben Tag",
+      "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, Halbteilung §§ 656a–656d BGB, nicht bei MFH und Grundstücken; § 34c und § 34i GewO; Timon Fischer; Europace und Baufinex; Wertermittlung kostenlos, meist am selben Tag",
       "fundstelle": "maklerprovision.njk, kaufen.njk, immobilienbewertung.njk; wie berlin-tempelhof-schoeneberg.json"
     }
   ],

@@ -38,6 +38,10 @@ eleventyComputed:
 {% set kontaktPhone = kontakt.phone or nav.phone %}
 {% set kontaktEmail = kontakt.email or nav.email %}
 {% set vorname = kontakt.name.split(" ")[0] %}
+{# Teil B (31.10.2026, Update 14 §1 Punkt 4): Die Berlin-Übersicht zeigt beide Personen mit ihren Bezirken. g.kontakte =
+   [{ kontakt, fuer }]; ohne das Feld bleibt alles bei der einen Person aus g.kontakt. #}
+{% set personen = g.kontakte or [{ kontakt: g.kontakt or "lennart", fuer: g.fuerOrt }] %}
+{% set zwei = personen.length > 1 %}
 {% set orteWort = "Orte" if g.typ == "landkreis" else ("Kieze" if g.typ == "bezirk" else ("Ortsteile" if g.typ == "marktgebiet" else ("Gebiete" if g.typ == "stadt" else "Lagen"))) %}
 
 {# 1. Titelbild über den ganzen Bildschirm (Design-Pass 2 §5.1): Ortsname groß, „Immobilie verkaufen, kaufen und finanzieren“
@@ -49,7 +53,7 @@ eleventyComputed:
   kicker: g.kicker or (g.kreis.name if g.kreis else "Brandenburg"),
   titel: g.h1,
   ort: g.h1Teile,
-  buttons: [{ href: valuationHref, label: "Kostenlose Bewertung" }, { href: "#ansprechpartner", label: "Ansprechpartner " + vorname }],
+  buttons: [{ href: valuationHref, label: "Kostenlose Bewertung" }, { href: "#ansprechpartner", label: ("Ihre Ansprechpartner" if zwei else "Ansprechpartner " + vorname) }],
   position: g.heroPhoto.position,
   kenburns: true
 }) }}
@@ -187,23 +191,45 @@ eleventyComputed:
 
 {# 9. Ansprechpartner als waagerechte Karte (§5.9): Porträt 4:5 in 360 px, Name, Rolle, Kurzbio (Text aus §7, kontakte.js),
      die Sätze aus der Einleitung (Zeile 3), Telefon und E-Mail, „Profil von …“. #}
-{% set portraet = kontakt.name | lower | replace(" ", "-") %}
+{% macro kontaktKarte(p, hTag, hId) -%}
+{%- set kk = kontakte[p.kontakt] -%}
+{%- set kkPhone = kk.phone or nav.phone -%}
+{%- set kkEmail = kk.email or nav.email -%}
+    <div class="fgs-contact-card">
+      <div class="fgs-media fgs-reveal">{{ pic(("/images/team/" + (kk.name | lower | replace(" ", "-")) + "-hell") | bild, "Porträt von " + kk.name, "(min-width: 768px) 360px, 100vw") }}</div>
+      <div class="fgs-contact-card-text">
+        <{{ hTag }}{% if hId %} id="{{ hId }}"{% endif %}>{{ kk.name }}</{{ hTag }}>
+        <p class="fgs-small">{{ kk.role }} · Ihr Ansprechpartner für {{ p.fuer }}</p>
+        <p>{{ kk.bio }}</p>
+        {{- caller() if caller }}
+        <address class="fgs-address"><a href="{{ kkPhone.href }}">{{ kkPhone.display }}</a><br><a href="mailto:{{ kkEmail }}">{{ kkEmail }}</a></address>
+        <div class="fgs-links">{{ textlink(kk.profile | navHref, "Profil von " + kk.name.split(" ")[0]) }}</div>
+      </div>
+    </div>
+{%- endmacro %}
 <section class="fgs-section fgs-place-contact" id="ansprechpartner" aria-labelledby="ansprechpartner-titel">
   <div class="fgs-wrap">
-    <div class="fgs-contact-card">
-      <div class="fgs-media fgs-reveal">{{ pic(("/images/team/" + portraet + "-hell") | bild, "Porträt von " + kontakt.name, "(min-width: 768px) 360px, 100vw") }}</div>
-      <div class="fgs-contact-card-text">
-        <h2 id="ansprechpartner-titel">{{ kontakt.name }}</h2>
-        <p class="fgs-small">{{ kontakt.role }} · Ihr Ansprechpartner für {{ g.fuerOrt }}</p>
-        <p>{{ kontakt.bio }}</p>
+    {%- if zwei %}
+    <div class="fgs-head">
+      <h2 id="ansprechpartner-titel">Ihre Ansprechpartner</h2>
+      {%- if einl.rest %}
+      <p>{{ einl.rest | nbsp | escape | fn | safe }}</p>{% endif %}
+      {%- if g.kurzantwortMehr %}
+      <p>{{ g.kurzantwortMehr | nbsp | escape | fn | safe }}</p>{% endif %}
+    </div>
+    <div class="fgs-contact-duo">
+      {%- for p in personen %}
+      {{ kontaktKarte(p, "h3", null) }}
+      {%- endfor %}
+    </div>
+    {%- else %}
+    {% call kontaktKarte(personen[0], "h2", "ansprechpartner-titel") %}
         {%- if einl.rest %}
         <p>{{ einl.rest | nbsp | escape | fn | safe }}</p>{% endif %}
         {%- if g.kurzantwortMehr %}
         <p>{{ g.kurzantwortMehr | nbsp | escape | fn | safe }}</p>{% endif %}
-        <address class="fgs-address"><a href="{{ kontaktPhone.href }}">{{ kontaktPhone.display }}</a><br><a href="mailto:{{ kontaktEmail }}">{{ kontaktEmail }}</a></address>
-        <div class="fgs-links">{{ textlink(kontakt.profile | navHref, "Profil von " + vorname) }}</div>
-      </div>
-    </div>
+    {% endcall %}
+    {%- endif %}
   </div>
 </section>
 
@@ -239,7 +265,7 @@ eleventyComputed:
 {# 10b. Häufige Fragen (FAQPage unten aus derselben Liste) #}
 {% set faqItems = [] %}
 {%- for item in g.faq | faqFrei %}{% set neu = faqItems.push({ q: item.frage, a: item.antwort | nbsp | fn }) %}{% endfor %}
-{{ faq(faqItems, "Fragen zu Immobilien " + g.inOrt, "Ihre Frage ist nicht dabei? Rufen Sie " + vorname + " an oder schreiben Sie uns.") }}
+{{ faq(faqItems, "Fragen zu Immobilien " + g.inOrt, "Ihre Frage ist nicht dabei? Rufen Sie " + ("uns" if zwei else vorname) + " an oder schreiben Sie uns.") }}
 
 {# 10c. In der Nähe: Nachbargebiete und die übergeordnete Seite mit Ortsfoto.
    Design-Pass 3 §4.2 („the Gebiete carousel at the bottom uses 3.5“): wie „Unsere Gebiete“ auf der Startseite gefaltet,
@@ -273,7 +299,7 @@ eleventyComputed:
 </section>
 
 {# 10e. Abschlussband: kostenlose Bewertung (Text aus dem bisherigen Bewertungsband) #}
-{% call closing({ kontakt: g.kontakt or "lennart", satz: "Was ist Ihre Immobilie wert?", button: "bewertung", lang: true }) %}
+{% call closing({ kontakt: g.kontakt or "lennart", kontakte: g.kontakte, satz: "Was ist Ihre Immobilie wert?", button: "bewertung", lang: true }) %}
   <p>Die Wertermittlung Ihres Objektes erstellen wir kostenlos, meistens innerhalb weniger Stunden und häufig noch am selben Tag.</p>
   <ul class="fgs-closing-points" role="list">
     <li><h3>Vollständige Unterlagen vor dem Verkaufsstart</h3><p>Fehlt zum Beispiel die Wohnflächenberechnung, kann die Käuferfinanzierung ins Stocken geraten.</p></li>
@@ -327,7 +353,7 @@ eleventyComputed:
         "addressCountry": "DE"
       },
       "areaServed": {% if g.orte %}[{% for o in g.orte %}{ "@type": {{ ("Place" if (g.typ == "bezirk" or g.typ == "marktgebiet") else "City") | dump | safe }}, "name": {{ o | dump | safe }}{% if g.typ == "bezirk" or g.typ == "marktgebiet" %}, "containedInPlace": { "@id": "{{ pageUrl }}#ort" }{% elif g.kreis %}, "containedInPlace": { "@type": "AdministrativeArea", "name": {{ g.kreis.name | dump | safe }} }{% elif g.typ == "landkreis" %}, "containedInPlace": { "@id": "{{ pageUrl }}#ort" }{% endif %} }{% if not loop.last %}, {% endif %}{% endfor %}]{% else %}{ "@id": "{{ pageUrl }}#ort" }{% endif %},
-      "employee": { "@id": "{{ pageUrl }}#ansprechpartner" },
+      "employee": {% if zwei %}[{% for p in personen %}{ "@id": "{{ pageUrl }}#ansprechpartner{{ "-" + loop.index if loop.index > 1 }}" }{% if not loop.last %}, {% endif %}{% endfor %}]{% else %}{ "@id": "{{ pageUrl }}#ansprechpartner" }{% endif %},
       "parentOrganization": { "@id": "https://fg-realestate.de/#organization" }
     },
     {
@@ -346,18 +372,22 @@ eleventyComputed:
         {% endfor %}
       ]
     },
+    {%- for p in personen %}
+    {%- set kk = kontakte[p.kontakt] %}
+    {%- set kkPhone = kk.phone or nav.phone %}
     {
       "@type": "Person",
-      "@id": "{{ pageUrl }}#ansprechpartner",
-      "name": {{ kontakt.name | dump | safe }},
-      "jobTitle": {{ kontakt.role | dump | safe }},
-      "image": "https://fg-realestate.de{{ kontakt.photo }}",
-      "telephone": {{ kontaktPhone.href | replace("tel:", "") | dump | safe }},
-      "email": {{ kontaktEmail | dump | safe }},
-      "url": "https://fg-realestate.de{{ kontakt.profile | navHref }}",
+      "@id": "{{ pageUrl }}#ansprechpartner{{ "-" + loop.index if loop.index > 1 }}",
+      "name": {{ kk.name | dump | safe }},
+      "jobTitle": {{ kk.role | dump | safe }},
+      "image": "https://fg-realestate.de{{ kk.photo }}",
+      "telephone": {{ kkPhone.href | replace("tel:", "") | dump | safe }},
+      "email": {{ (kk.email or nav.email) | dump | safe }},
+      "url": "https://fg-realestate.de{{ kk.profile | navHref }}",
       "worksFor": { "@id": "{{ pageUrl }}#makler" },
       "mainEntityOfPage": { "@id": "{{ pageUrl }}" }
     },
+    {%- endfor %}
     {
       "@type": "FAQPage",
       "@id": "{{ pageUrl }}#faq",

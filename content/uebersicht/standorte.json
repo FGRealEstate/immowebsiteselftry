@@ -3,7 +3,7 @@
   "description": "Gebiete von Fischer & Geserich: vier Berliner Bezirke, acht Brandenburger Landkreise, Potsdam, Leipzig und Dresden, mit Kaufpreisen, Bodenrichtwerten und Kontakt.",
   "h1": "Unsere Gebiete: Berlin, Brandenburg, Leipzig und Dresden",
   "kurzantwort": "Fischer & Geserich verkauft, vermittelt und finanziert Immobilien in vier Berliner Bezirken, in acht Landkreisen rund um Berlin, in Potsdam sowie in Leipzig und Dresden. Für jedes Gebiet gibt es eine eigene Seite mit amtlichen Kaufpreisen, Bodenrichtwerten und Ihrem Ansprechpartner.",
-  "kurzantwortMehr": "Für Berlin und Brandenburg ist Lennart Geserich Ihr Ansprechpartner, für Leipzig und Dresden Timon Fischer. Finanzierungen begleiten wir deutschlandweit.",
+  "kurzantwortMehr": "In Süd- und West-Berlin und im Süden Brandenburgs ist Lennart Geserich Ihr Ansprechpartner, in Nord- und Ost-Berlin, im Norden Brandenburgs sowie in Leipzig und Dresden Timon Fischer. Bei Fragen zur Finanzierung ist Timon Fischer Ihr Ansprechpartner, unabhängig von der Region. Finanzierungen begleiten wir deutschlandweit.",
   "stand": "Oktober 2026",
   "updated": "2026-10-27",
   "zahlen": [
@@ -45,6 +45,10 @@
       "key": "berlin",
       "name": "Berlin",
       "kontakt": "lennart",
+      "kontakte": [
+        { "kontakt": "timon", "teil": "Norden und Osten" },
+        { "kontakt": "lennart", "teil": "Süden und Westen" }
+      ],
       "uebersicht": "berlin",
       "foto": "berlin/charlottenburg-wilmersdorf",
       "fotoCaption": "Der Lietzensee in Charlottenburg.",
@@ -65,6 +69,10 @@
       "key": "brandenburg",
       "name": "Brandenburg",
       "kontakt": "lennart",
+      "kontakte": [
+        { "kontakt": "timon", "teil": "Norden und Osten" },
+        { "kontakt": "lennart", "teil": "Süden und Westen" }
+      ],
       "uebersicht": null,
       "foto": "potsdam-mittelmark",
       "fotoCaption": "Der Glindowsee bei Werder (Havel) in Potsdam-Mittelmark.",
@@ -220,7 +228,7 @@
       "fundstelle": "dresden.json (Kennzahlen 1–2); gmb2026.txt Z. 752–756, 775; hjb2026.txt Z. 717–718"
     },
     {
-      "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % je Seite; Finanzierungen deutschlandweit; Ansprechpartner Lennart (Berlin, Brandenburg), Timon (Leipzig, Dresden)",
+      "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % je Seite; Finanzierungen deutschlandweit; Ansprechpartner Lennart (Süd- und West-Berlin, Südbrandenburg), Timon (Nord- und Ost-Berlin, Nordbrandenburg, Leipzig, Dresden), Teil B 31.10.2026",
       "fundstelle": "maklerprovision.njk; _data/serviceArea.js; _data/kontakte.js"
     }
   ]

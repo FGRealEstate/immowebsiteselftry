@@ -22,7 +22,8 @@ module.exports = {
     // unter seinen Blogartikeln, auf seinem Profil und als description im Person-Markup
     bio: "Lennart ist ausgebildeter Immobilienkaufmann und arbeitet seit rund zehn Jahren in der Immobilienbranche. Er verkauft und vermietet Ihre Immobilie, von der Wertermittlung bis zur Schlüsselübergabe, und führt die ersten Gespräche mit neuen Kaufinteressenten.",
     // Part 3 corrections (31.10.2026), Änderung 2: Halbsatz zu den ersten Gesprächen mit Kaufinteressenten ergänzt
-    gebiet: "Ansprechpartner für Berlin und Brandenburg",
+    // Teil B (31.10.2026): Gebiete nach Update 13 §7; erscheint als Rollenzeile auf der Startseite
+    gebiet: "Ansprechpartner für Süd- und West-Berlin und Südbrandenburg",
     // Final Copy Pass §13 (29.10.2026): Zeile „Ausbildung“ im Profil und hasCredential im Person-Markup
     ausbildung: "Immobilienkaufmann"
   },
@@ -38,6 +39,6 @@ module.exports = {
     // Update 13 §2: Timon hat keinen Abschluss; „Mathematiker aus Dresden“ gestrichen, ebenso ausbildung (Profilzeile, hasCredential).
     bio: "Timon kümmert sich um die Finanzierungen. Er rechnet mit Ihnen durch, was eine Immobilie im Monat kostet und welche Bank dafür infrage kommt. Meist übernimmt er auch die Vermarktung der Immobilien, und in seinen Gebieten begleitet er Verkäufe und Vermietungen.",
     // Part 3 corrections (31.10.2026), Änderung 3: letzter Satz ergänzt (Vermarktung meist bei Timon)
-    gebiet: "Ansprechpartner für Leipzig und Dresden"
+    gebiet: "Ansprechpartner für Nord- und Ost-Berlin, Nordbrandenburg, Leipzig und Dresden"
   }
 };

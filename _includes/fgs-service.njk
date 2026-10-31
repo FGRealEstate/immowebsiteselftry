@@ -92,7 +92,7 @@ customSchema: true
 {% endcall %}
 
 {# 6. S8 Abschlussband #}
-{% call closing({ kontakt: s.contact, satz: s.closing.title, button: s.closing.button, gebiet: s.closing.gebiet, foto: s.closing.foto }) %}
+{% call closing({ kontakt: s.contact, satz: s.closing.title, button: s.closing.button, gebiet: s.closing.gebiet, kontakte: s.closing.kontakte, foto: s.closing.foto }) %}
   <p>{{ s.closing.text | safe }}</p>
 {% endcall %}
 

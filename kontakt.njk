@@ -34,7 +34,7 @@ pg:
     - q: "Wie komme ich mit Bus und Bahn zum Büro?"
       a: "Der nächste Bahnhof ist S+U Rathaus Steglitz mit der S1 und der U9. Von dort sind es etwa 9 Minuten zu Fuß. Näher am Büro liegen die Bushaltestellen Carmerplatz und Händelplatz."
     - q: "Wer ist mein Ansprechpartner?"
-      a: "Für Berlin und Brandenburg Lennart Geserich, für Leipzig und Dresden Timon Fischer. Bei Fragen zur Finanzierung ist Timon Fischer Ihr Ansprechpartner, unabhängig von der Region."
+      a: "In Süd- und West-Berlin und im Süden Brandenburgs ist Lennart Geserich Ihr Ansprechpartner, in Nord- und Ost-Berlin, im Norden Brandenburgs sowie in Leipzig und Dresden Timon Fischer. Bei Fragen zur Finanzierung ist Timon Fischer Ihr Ansprechpartner, unabhängig von der Region."
     - q: "Kostet das erste Gespräch etwas?"
       a: "Nein. Das erste Gespräch kostet Sie nichts und verpflichtet Sie zu nichts."
   contact: lennart
@@ -123,11 +123,11 @@ pg:
   <div class="fgs-wrap">
     <div class="fgs-head">
       <h2 id="ansprechpartner-titel">Ihr Ansprechpartner in der Region</h2>
-      <p>Berlin und Brandenburg betreut Lennart Geserich, Leipzig und Dresden Timon Fischer. Bei Fragen zur Finanzierung ist Timon Fischer Ihr Ansprechpartner, unabhängig von der Region.</p>
+      <p>In Süd- und West-Berlin und im Süden Brandenburgs ist Lennart Geserich Ihr Ansprechpartner, in Nord- und Ost-Berlin, im Norden Brandenburgs sowie in Leipzig und Dresden Timon Fischer. Bei Fragen zur Finanzierung ist Timon Fischer Ihr Ansprechpartner, unabhängig von der Region.</p>
     </div>
     <ul class="fgs-cards2" role="list">
-      {{ card({ href: kontakte.lennart.profile | navHref, bild: "/images/team/lennart-geserich-hell" | bild, alt: "Porträt von Lennart Geserich", label: "Berlin · Brandenburg", titel: kontakte.lennart.name, zeile: kontakte.lennart.role }) }}
-      {{ card({ href: kontakte.timon.profile | navHref, bild: "/images/team/timon-fischer-hell" | bild, alt: "Porträt von Timon Fischer", label: "Leipzig · Dresden", titel: kontakte.timon.name, zeile: kontakte.timon.role }) }}
+      {{ card({ href: kontakte.lennart.profile | navHref, bild: "/images/team/lennart-geserich-hell" | bild, alt: "Porträt von Lennart Geserich", label: "Süd- und West-Berlin · Südbrandenburg", titel: kontakte.lennart.name, zeile: kontakte.lennart.role }) }}
+      {{ card({ href: kontakte.timon.profile | navHref, bild: "/images/team/timon-fischer-hell" | bild, alt: "Porträt von Timon Fischer", label: "Nord- und Ost-Berlin · Nordbrandenburg · Leipzig · Dresden", titel: kontakte.timon.name, zeile: kontakte.timon.role }) }}
     </ul>
   </div>
 </section>

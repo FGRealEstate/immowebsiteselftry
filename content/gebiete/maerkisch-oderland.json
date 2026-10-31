@@ -17,12 +17,12 @@
     "Altlandsberg",
     "Rüdersdorf bei Berlin"
   ],
-  "kontakt": "lennart",
+  "kontakt": "timon",
   "title": "Immobilienmakler Märkisch-Oderland – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
   "description": "Immobilienmakler Märkisch-Oderland: verkaufen, kaufen und finanzieren in Strausberg, Neuenhagen, Hoppegarten und Rüdersdorf, mit Bodenrichtwerten 2026.",
   "h1": "Immobilie verkaufen, kaufen und finanzieren im Landkreis Märkisch-Oderland",
   "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger im Landkreis Märkisch-Oderland beim Verkauf, beim Kauf und bei der Finanzierung, in Strausberg, Neuenhagen, Hoppegarten, Petershagen/Eggersdorf und Fredersdorf-Vogelsdorf an der S5 ebenso wie in Altlandsberg, Rüdersdorf, der Märkischen Schweiz und im Oderbruch. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
-  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für alle Orte auf dieser Seite ist Lennart Geserich Ihr Ansprechpartner, Head of Sales & Vermietung.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für alle Orte auf dieser Seite ist Timon Fischer Ihr Ansprechpartner, Geschäftsführer und verantwortlich für die Immobilienfinanzierung.",
   "hero": {
     "name": "maerkisch-oderland-buckow",
     "alt": "Schilf und Seerosen am Ufer des Schermützelsees in Buckow, dahinter die bewaldeten Hügel der Märkischen Schweiz im Morgendunst",
@@ -188,7 +188,7 @@
   "faq": [
     {
       "frage": "Welcher Makler verkauft Häuser in Strausberg und Neuenhagen?",
-      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im ganzen Landkreis Märkisch-Oderland, also auch in Strausberg, Neuenhagen bei Berlin, Hoppegarten und Petershagen/Eggersdorf; Ihr Ansprechpartner ist Lennart Geserich. Grundlage unserer Bewertung sind der Bodenrichtwert Ihrer Zone und die Vergleichspreise des Gutachterausschusses. Er weist Hauspreise nach Baujahr und Bodenwertniveau aus: In Zonen mit 301 bis 400 €/m² kosteten Einfamilienhäuser der Baujahre 1991 bis 2012 in den Jahren 2023 bis 2025 im Mittel 497.000 € oder 3.900 €/m² Wohnfläche.[[1]]",
+      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im ganzen Landkreis Märkisch-Oderland, also auch in Strausberg, Neuenhagen bei Berlin, Hoppegarten und Petershagen/Eggersdorf; Ihr Ansprechpartner ist Timon Fischer. Grundlage unserer Bewertung sind der Bodenrichtwert Ihrer Zone und die Vergleichspreise des Gutachterausschusses. Er weist Hauspreise nach Baujahr und Bodenwertniveau aus: In Zonen mit 301 bis 400 €/m² kosteten Einfamilienhäuser der Baujahre 1991 bis 2012 in den Jahren 2023 bis 2025 im Mittel 497.000 € oder 3.900 €/m² Wohnfläche.[[1]]",
       "herkunft": "Google-Autocomplete „immobilienmakler märkisch oderland“, „immobilienmakler strausberg“, „makler strausberg“, „immobilienmakler neuenhagen bei berlin“, „immobilienmakler hoppegarten“ und „immobilienmakler petershagen eggersdorf“ (research/serp/autocomplete-2026-10-26-maerkisch-oderland.json)"
     },
     {
@@ -409,7 +409,7 @@
       "fundstelle": "maerkisch-oderland.md, Landkreis Nr. 25; havelland.md"
     },
     {
-      "zahl": "Erbfall-Antwort; § 34c und § 34i GewO; Lennart Geserich, Head of Sales & Vermietung; Europace und Baufinex",
+      "zahl": "Erbfall-Antwort; § 34c und § 34i GewO; Timon Fischer, Geschäftsführer und verantwortlich für die Immobilienfinanzierung; Europace und Baufinex",
       "fundstelle": "wie barnim.json (Live-Seite und Brief)"
     }
   ]

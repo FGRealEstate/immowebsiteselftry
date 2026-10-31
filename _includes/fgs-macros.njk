@@ -259,7 +259,7 @@
   <span class="fgs-partner-media">{{ pic(("/images/team/" + (k.name | slugify) + "-frei") | bild, "Porträt von " + k.name, sizes) }}</span>
   <span class="fgs-partner-panel">
     <h3 class="fgs-partner-name">{{ k.name }}</h3>
-    <span class="fgs-partner-role">{{ k.role }}</span>
+    <span class="fgs-partner-role">{{ k.role }}{% if k.gebiet %} · {{ k.gebiet }}{% endif %}</span>
     <span class="fgs-link">Zum Profil{% include "fgs-arrow.njk" %}</span>
   </span>
 </a>
@@ -589,7 +589,8 @@
 
 {#- S8 Abschlussband: einzige navy Fläche im Inhalt. Ein Satz (als H2), der goldene Button, darunter die Ansprechperson.
     c = { kontakt: "lennart" | "timon", satz, button: "bewertung" | "gespraech", knopf: { href, label } (optional, ersetzt button; Objektseite: „Objekt anfragen“),
-    gebiet (optional, statt Zuständigkeit), lang (optional, langer Inhalt: Handy-Zuschnitt 1:2), foto (optional: "tiergarten" auf Verkaufen, dort ist das Humboldt Forum schon das Titelbild) }.
+    gebiet (optional, statt Zuständigkeit), kontakte (optional, Teil B 31.10.2026: [{ kontakt, gebiet }] zeigt zwei Personen nebeneinander
+    und die Telefonnummer einmal darunter; Berlin-Übersicht und Gewerbe), lang (optional, langer Inhalt: Handy-Zuschnitt 1:2), foto (optional: "tiergarten" auf Verkaufen, dort ist das Humboldt Forum schon das Titelbild) }.
     Mit {% call closing(…) %} steht der Inhalt (z. B. ein Satz und die Anliegen als Links) zwischen Satz und Button.
     Design-Pass 3 §3.11 und Nachtrag Punkt 2: Rahmen im navy Band (Desktop 64 px Abstand, mobil 0, 86 vh hoch), darin ein Foto
     unter navy 50 % mit langsamem Zoom, alles mittig. Statt des freigestellten Porträts eine Zeile mit rundem 56-px-Porträt,
@@ -642,11 +643,26 @@
         <a class="fgs-btn fgs-btn--primary" href="{{ nav.valuation | navHref }}">Kostenlose Bewertung</a>
         {%- endif %}
       </div>
+      {%- if c.kontakte and c.kontakte.length > 1 %}
+      <div class="fgs-closing-person">
+        <div class="fgs-closing-duo">
+          {%- for e in c.kontakte %}
+          {%- set ek = kontakte[e.kontakt] %}{% set eProfile = ek.profile | navHref %}
+          <div class="fgs-closing-one">
+            <span class="fgs-closing-face">{{ pic(("/images/team/" + (ek.name | lower | replace(" ", "-")) + "-navy") | bild, "", "112px") }}</span>
+            <p class="fgs-closing-who">{{ ek.name }} · {{ ek.role }}{% if e.gebiet %} · {{ e.gebiet }}{% endif %}{% if eProfile != page.url and eProfile != "#" %} · <a href="{{ eProfile }}">Profil</a>{% endif %}</p>
+          </div>
+          {%- endfor %}
+        </div>
+        <a class="fgs-closing-phone" href="{{ nav.phone.href }}">{{ nav.phone.display }}</a>
+      </div>
+      {%- else %}
       <div class="fgs-closing-person">
         <span class="fgs-closing-face">{{ pic(("/images/team/" + datei + "-navy") | bild, "", "112px") }}</span>
         <p class="fgs-closing-who">{{ k.name }} · {{ k.role }}{% if c.gebiet %} · {{ c.gebiet }}{% endif %}{% set kProfile = k.profile | navHref %}{% if kProfile != page.url and kProfile != "#" %} · <a href="{{ kProfile }}">Profil</a>{% endif %}</p>
         <a class="fgs-closing-phone" href="{{ kPhone.href }}">{{ kPhone.display }}</a>
       </div>
+      {%- endif %}
     </div>
   </div>
 </section>

@@ -15,12 +15,12 @@
   "ersetzt": [
     "joachimsthal"
   ],
-  "kontakt": "lennart",
+  "kontakt": "timon",
   "title": "Immobilienmakler Barnim – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
   "description": "Immobilienmakler im Landkreis Barnim: verkaufen, kaufen und finanzieren in Bernau, Panketal, Ahrensfelde und Eberswalde, mit Bodenrichtwerten 2026.",
   "h1": "Immobilie verkaufen, kaufen und finanzieren im Landkreis Barnim",
   "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger im Landkreis Barnim beim Verkauf, beim Kauf und bei der Finanzierung, von Bernau bei Berlin über Panketal und Ahrensfelde am Berliner Stadtrand bis Eberswalde und Joachimsthal. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
-  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für alle Orte auf dieser Seite ist Lennart Geserich Ihr Ansprechpartner, Head of Sales & Vermietung.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für alle Orte auf dieser Seite ist Timon Fischer Ihr Ansprechpartner, Geschäftsführer und verantwortlich für die Immobilienfinanzierung.",
   "hero": {
     "name": "barnim-blumberg-luftbild",
     "alt": "Blumberg in der Gemeinde Ahrensfelde aus der Luft: Felder, dazwischen die Ortslage und kleinere Siedlungen",
@@ -186,7 +186,7 @@
   "faq": [
     {
       "frage": "Welcher Makler verkauft Immobilien in Bernau, Panketal und Ahrensfelde?",
-      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im Landkreis Barnim, also auch in Bernau, Panketal und Ahrensfelde. Ihr Ansprechpartner ist Lennart Geserich. Grundlage unserer Bewertung sind der Bodenrichtwert Ihrer Zone und die Preise, die der Gutachterausschuss für Ihre Gemeinde und Ihr Baujahr ausweist.",
+      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im Landkreis Barnim, also auch in Bernau, Panketal und Ahrensfelde. Ihr Ansprechpartner ist Timon Fischer. Grundlage unserer Bewertung sind der Bodenrichtwert Ihrer Zone und die Preise, die der Gutachterausschuss für Ihre Gemeinde und Ihr Baujahr ausweist.",
       "herkunft": "Prompt der KI-Recherche „Welcher Immobilienmakler in Bernau bei Berlin ist gut?“ (q40) (ChatGPT, Gemini; Dashboard/src/data/research/ai_answers.json, Oktober 2026) und Google-Suche „Immobilienmakler Bernau“ (Google_Areas, Oktober 2026)"
     },
     {
@@ -406,7 +406,7 @@
       "fundstelle": "site/_data/mangoTexte.js, FAQ „Verkauft ihr auch geerbte Immobilien?“ (Live-Seite); barnim.md, Zeile 73"
     },
     {
-      "zahl": "Wertermittlung kostenlos, meistens in wenigen Stunden; Europace und Baufinex; § 34c und § 34i GewO; Lennart Geserich, Head of Sales & Vermietung",
+      "zahl": "Wertermittlung kostenlos, meistens in wenigen Stunden; Europace und Baufinex; § 34c und § 34i GewO; Timon Fischer, Geschäftsführer und verantwortlich für die Immobilienfinanzierung",
       "fundstelle": "wie oberhavel.json (Live-Seite und Brief)"
     }
   ]

@@ -33,7 +33,8 @@ eleventyComputed:
 {% from "fgs-listing.njk" import listingHead, gallery, galleryScript, listingFacts, areaBlock %}
 {% from "fgs-macros.njk" import textlink, closing with context %}
 {% set loc = (property.location or "") | lower %}
-{% set kontaktKey = "timon" if ("leipzig" in loc or "dresden" in loc) else "lennart" %}
+{#- Teil B 4 (31.10.2026): Ansprechpartner aus _data/propstack.js (findKontakt), sonst die bisherige Ortsregel #}
+{% set kontaktKey = property.kontakt or ("timon" if ("leipzig" in loc or "dresden" in loc) else "lennart") %}
 {% set pageUrl = "https://fg-realestate.de" + property.url %}
 {% set showCheck = property.is_investment and property.marketing_type == "Kauf" and property.cold_rent_raw and property.purchase_price_raw %}
 {% set meta %}{{ [property.location, property.property_type, ("Nr. " ~ property.unit_number) if property.unit_number else ""] | select | join(" · ") }}{% if property.project_url %}{% if property.location or property.property_type or property.unit_number %} · {% endif %}Teil von <a href="{{ property.project_url }}">{{ property.project_name }}</a>{% endif %}{% endset %}

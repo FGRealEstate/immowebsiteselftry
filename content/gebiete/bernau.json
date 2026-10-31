@@ -2,7 +2,7 @@
   "slug": "bernau",
   "name": "Bernau bei Berlin",
   "nameLang": "Bernau bei Berlin",
-  "kontakt": "lennart",
+  "kontakt": "timon",
   "kreis": {
     "name": "Landkreis Barnim",
     "url": "/standorte/barnim/"
@@ -443,7 +443,7 @@
       "fundstelle": "Dashboard/src/data/research/google_areas.json Einträge 28 und 29 (paa); research/serp/autocomplete-2026-10-24.json, daten/bernau"
     }
   ],
-  "kurzantwortMehr": "Rechtsgrundlage sind die Erlaubnisse nach § 34c und § 34i GewO, das Unternehmen sitzt in der Schützenstraße 30 in Berlin. Für Bernau zuständig ist Lennart Geserich, Head of Sales & Vermietung.",
+  "kurzantwortMehr": "Rechtsgrundlage sind die Erlaubnisse nach § 34c und § 34i GewO, das Unternehmen sitzt in der Schützenstraße 30 in Berlin. Für Bernau zuständig ist Timon Fischer, Geschäftsführer und verantwortlich für die Immobilienfinanzierung.",
   "hero": {
     "name": "bernau-steintor",
     "alt": "Hungerturm und Stadthalle am Steintor in Bernau bei Berlin",

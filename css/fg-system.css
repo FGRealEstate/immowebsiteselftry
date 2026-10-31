@@ -585,6 +585,11 @@ html:not(.fgs-js) .fgs-faq-more { display: none; }
 .fgs-closing-who { margin: 4px 0 0 !important; font-size: 13px; color: rgba(255, 255, 255, .86); }
 .fgs-closing-phone { color: #fff !important; font: 400 18px/1.4 var(--fgs-sans); text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, .35); padding-bottom: 2px; }
 .fgs-closing-phone:hover { border-color: var(--fgs-gold); }
+/* Teil B (31.10.2026): zwei Ansprechpartner im Abschlussband (Berlin-Übersicht, Gewerbe) und auf der Berlin-Übersicht */
+.fgs-closing-duo { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px 40px; }
+.fgs-closing-one { display: flex; flex-direction: column; align-items: center; gap: 10px; max-width: 300px; }
+.fgs-contact-duo { display: grid; }
+.fgs-contact-duo > .fgs-contact-card + .fgs-contact-card { border-top: 0; }
 @media (max-width: 767px) { .fgs-closing-inner { padding-block: 72px; } .fgs-closing .fgs-btn { width: 100%; } }
 
 /* ---------- F Formulare ---------- */

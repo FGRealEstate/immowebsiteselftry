@@ -27,7 +27,8 @@ eleventyComputed:
 {% from "fgs-listing.njk" import listingHead, gallery, listingFacts, areaBlock %}
 {% from "fgs-macros.njk" import closing with context %}
 {% set loc = (ref.location or "") | lower %}
-{% set kontaktKey = "timon" if ("leipzig" in loc or "dresden" in loc) else "lennart" %}
+{#- Teil B 4 (31.10.2026): Ansprechpartner aus _data/propstack.js (findKontakt), sonst die bisherige Ortsregel #}
+{% set kontaktKey = ref.kontakt or ("timon" if ("leipzig" in loc or "dresden" in loc) else "lennart") %}
 {% set pageUrl = "https://fg-realestate.de" + ref.url %}
 
 {% set fakten = [] %}

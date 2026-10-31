@@ -16,12 +16,12 @@
   "ersetzt": [
     "velten"
   ],
-  "kontakt": "lennart",
+  "kontakt": "timon",
   "title": "Immobilienmakler Oberhavel – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
   "description": "Immobilienmakler im Landkreis Oberhavel: verkaufen, kaufen und finanzieren in Hohen Neuendorf, Hennigsdorf, Velten und Umgebung, mit Bodenrichtwerten 2026.",
   "h1": "Immobilie verkaufen, kaufen und finanzieren im Landkreis Oberhavel",
   "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger im Berliner Umland des Landkreises Oberhavel beim Verkauf, beim Kauf und bei der Finanzierung, von Oranienburg und Hohen Neuendorf über Birkenwerder und Hennigsdorf bis Velten und ins Mühlenbecker Land. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
-  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für alle sechs Orte auf dieser Seite ist Lennart Geserich Ihr Ansprechpartner, Head of Sales & Vermietung.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für alle sechs Orte auf dieser Seite ist Timon Fischer Ihr Ansprechpartner, Geschäftsführer und verantwortlich für die Immobilienfinanzierung.",
   "hero": {
     "name": "oberhavel-havel-hennigsdorf",
     "alt": "Die Havel in Hennigsdorf, von der Brücke der L 17 aus gesehen, mit Bootsanlegern am rechten Ufer",
@@ -202,7 +202,7 @@
   "faq": [
     {
       "frage": "Welcher Makler verkauft Immobilien in Hohen Neuendorf, Hennigsdorf und Velten?",
-      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im Berliner Umland des Landkreises Oberhavel, also auch in Hohen Neuendorf, Hennigsdorf und Velten. Ihr Ansprechpartner ist Lennart Geserich. Wir bewerten nach dem Bodenrichtwert Ihrer Zone und den Preisen, die der Gutachterausschuss für Ihren Ort ausweist.",
+      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im Berliner Umland des Landkreises Oberhavel, also auch in Hohen Neuendorf, Hennigsdorf und Velten. Ihr Ansprechpartner ist Timon Fischer. Wir bewerten nach dem Bodenrichtwert Ihrer Zone und den Preisen, die der Gutachterausschuss für Ihren Ort ausweist.",
       "herkunft": "Prompts der KI-Recherche „Welcher Makler verkauft Immobilien in Oranienburg und Hohen Neuendorf?“ (q39) und „Welcher Makler verkauft in Velten und Hennigsdorf?“ (q43) (ChatGPT, Gemini, Google AI Overview; Dashboard/src/data/research/ai_answers.json, Oktober 2026)"
     },
     {
@@ -456,7 +456,7 @@
       "fundstelle": "oberhavel.md, Zeilen 190–192"
     },
     {
-      "zahl": "Wertermittlung kostenlos, meistens in wenigen Stunden; Europace und Baufinex; § 34c und § 34i GewO; Lennart Geserich, Head of Sales & Vermietung",
+      "zahl": "Wertermittlung kostenlos, meistens in wenigen Stunden; Europace und Baufinex; § 34c und § 34i GewO; Timon Fischer, Geschäftsführer und verantwortlich für die Immobilienfinanzierung",
       "fundstelle": "wie konigs-wusterhausen.json (Live-Seite und Brief)"
     }
   ]

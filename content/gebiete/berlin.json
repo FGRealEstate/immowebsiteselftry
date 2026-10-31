@@ -7,11 +7,15 @@
   "typ": "stadt",
   "kicker": "Berlin",
   "kontakt": "lennart",
+  "kontakte": [
+    { "kontakt": "timon", "fuer": "Pankow und den Norden und Osten Berlins", "gebiet": "Nord- und Ost-Berlin" },
+    { "kontakt": "lennart", "fuer": "Steglitz-Zehlendorf, Charlottenburg-Wilmersdorf, Tempelhof-Schöneberg, Mitte, Friedrichshain-Kreuzberg und den Süden und Westen Berlins", "gebiet": "Süd- und West-Berlin" }
+  ],
   "title": "Immobilienmakler Berlin – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
   "description": "Immobilienmakler in Berlin: Verkauf, Kauf und Finanzierung von Steglitz-Zehlendorf bis Pankow, mit Kaufpreisen 2025 und kostenloser Bewertung.",
   "h1": "Immobilie verkaufen, kaufen und finanzieren in Berlin",
   "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Berlin beim Verkauf, beim Kauf und bei der Finanzierung, mit eigenen Seiten für Steglitz-Zehlendorf, Charlottenburg-Wilmersdorf, Tempelhof-Schöneberg und Pankow. Unser Büro liegt in der Schützenstraße 30 in Steglitz.",
-  "kurzantwortMehr": "Wir haben Erlaubnisse nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Ihr Ansprechpartner in Berlin ist Lennart Geserich, Head of Sales & Vermietung.",
+  "kurzantwortMehr": "Wir haben Erlaubnisse nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Pankow und den Norden und Osten Berlins ist Timon Fischer Ihr Ansprechpartner, für Steglitz-Zehlendorf, Charlottenburg-Wilmersdorf, Tempelhof-Schöneberg, Mitte, Friedrichshain-Kreuzberg und den Süden und Westen Berlins Lennart Geserich.",
   "stand": "Oktober 2026",
   "updated": "2026-10-27",
   "hero": {
@@ -319,7 +323,7 @@
       "fundstelle": "berlin-grundlagen.md Nr. 1, 2, 10–12"
     },
     {
-      "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, Halbteilung §§ 656a–656d BGB, nicht bei MFH und Grundstücken; § 34c und § 34i GewO; Lennart Geserich; Europace und Baufinex; Wertermittlung kostenlos, meist innerhalb weniger Stunden",
+      "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, Halbteilung §§ 656a–656d BGB, nicht bei MFH und Grundstücken; § 34c und § 34i GewO; Timon Fischer (Pankow, Norden, Osten) und Lennart Geserich (Süden, Westen, Mitte, Friedrichshain-Kreuzberg), Teil B 31.10.2026; Europace und Baufinex; Wertermittlung kostenlos, meist innerhalb weniger Stunden",
       "fundstelle": "maklerprovision.njk, kaufen.njk; SCHREIBREGELN.md Regel 4"
     }
   ]

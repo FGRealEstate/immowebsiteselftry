@@ -418,7 +418,7 @@
     {
       id:'kontakt',cat:'fg',q:'Wie erreiche ich Fischer & Geserich?',
       keys:['kontakt','telefon','email','erreichen','ansprechpartner'],
-      answer:`Sie erreichen Fischer & Geserich über unsere Kontaktseite, telefonisch unter <strong>+49 1520 3083048</strong> oder per E-Mail an <strong>info@fg-realestate.de</strong>. Für konkrete Vorhaben ist die passende Website-Strecke meist der schnellste Einstieg.`,
+      answer:`Sie erreichen Fischer & Geserich über unsere Kontaktseite, telefonisch unter <strong>+49 1520 3083048</strong> oder per E-Mail an <strong>info@fg-realestate.de</strong>. In Süd- und West-Berlin und im Süden Brandenburgs ist Lennart Geserich Ihr Ansprechpartner, in Nord- und Ost-Berlin, im Norden Brandenburgs sowie in Leipzig und Dresden Timon Fischer. Bei Fragen zur Finanzierung ist Timon Fischer Ihr Ansprechpartner, unabhängig von der Region. Für konkrete Vorhaben ist die passende Website-Strecke meist der schnellste Einstieg.`,
       actions:['kontakt']
     },
     {
