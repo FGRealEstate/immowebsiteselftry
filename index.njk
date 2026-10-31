@@ -89,7 +89,7 @@ faqListe:
 {{ leistungsSlider({ id: "leistungen", label: "Wobei wir Sie begleiten", items: [
   { bild: "home/hero-leistung-verkauf" | bild, alt: "Sonnige Fassade eines Mietshauses von 1892 am Chamissoplatz in Berlin-Kreuzberg", kicker: "Für Eigentümer", titel: "Verkauf & Vermarktung", text: "Wertermittlung, Unterlagen, Vermarktung und die Prüfung der Käuferfinanzierung, bis zur Übergabe der Schlüssel.", href: "/verkaufen.html", button: "Immobilie verkaufen" },
   { bild: "home/hero-leistung-ankauf" | bild, alt: "Heller, leerer Altbauraum mit Holzbalken an der Decke, Dielenboden und einer Treppe", kicker: "Für Eigennutzer und Kapitalanleger", titel: "Ankauf & Investment", text: "Wir prüfen ein Objekt, bevor Sie kaufen: Lage, Zustand, Zahlen und Finanzierung.", href: "/kaufen.html", button: "Immobilie kaufen" },
-  { navy: 0.58, bild: "home/hero-leistung-finanzierung" | bild, alt: "Schreibtisch mit Taschenrechner, aufgeschlagenem Notizbuch und Stift", kicker: "Unabhängige Finanzierungsberatung", titel: "Immobilienfinanzierung", text: "Wir vergleichen die Angebote vieler Banken und begleiten Ihre Unterlagen bis zur Auszahlung, für Eigennutzer, Kapitalanleger und Mehrfamilienhäuser.", href: "/finanzierungsberatung.html", button: "Finanzierung" }
+  { navy: 0.58, bild: "home/hero-leistung-finanzierung" | bild, alt: "Schreibtisch mit Taschenrechner, aufgeschlagenem Notizbuch und Stift", kicker: "Unabhängige Finanzierungsberatung", titel: "Immobilien&shy;finanzierung", text: "Wir vergleichen die Angebote vieler Banken und begleiten Ihre Unterlagen bis zur Auszahlung, für Eigennutzer, Kapitalanleger und Mehrfamilienhäuser.", href: "/finanzierungsberatung.html", button: "Finanzierung" }
 ] }) }}
 
 {# 3. Ihre Ansprechpartner. Update 23 A4: drei Zeilen statt Text links und Karten rechts (Design-Pass 3 §3.3).
@@ -156,11 +156,12 @@ faqListe:
    höchstens zwei Zeilen. Aus „über 4 Mio. €“ + „begleitetes Finanzierungsvolumen 2026, von der Eigentumswohnung bis zum
    Mehrfamilienhaus“ wird „4 Mio.+“ + „Euro begleitetes Finanzierungsvolumen 2026“: Der Beispielsatz des Briefs braucht in
    der 268 px breiten Spalte drei Zeilen (gemessen); „Euro“ und „begleitet“ bleiben, weil F&G die Finanzierungen begleitet, nicht gibt.
-   „Google‑Bewertungen“ mit geschütztem Bindestrich (U+2011), sonst bricht die Zeile bei 1440 px nach „Google-“. #}
+   „Google‑Bewertungen“ mit geschütztem Bindestrich (U+2011), sonst bricht die Zeile bei 1440 px nach „Google-“.
+   Update 25: die „4“ steht in 108 % (gross: true), damit sie so groß wirkt wie die anderen Zahlen; gleiche Grundlinie. #}
 {{ facts({ id: "zahlen", titel: "F&G in Zahlen", mitte: true, zaehlen: true, items: [
   { wert: "100+", text: "Interessenten für Mehrfamilienhäuser deutschlandweit" },
   { wert: "50+", text: "neue Kapitalanlage-Interessenten pro Monat" },
-  { wert: "4", einheit: "Mio.+", text: "begleitetes Finanzierungsvolumen in Euro, 2026" },
+  { wert: "4", einheit: "Mio.+", gross: true, text: "begleitetes Finanzierungsvolumen in Euro, 2026" },
   { wert: google.rating, sterne: true, text: "von 5 Sternen aus " + google.count + " Google‑Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>' }
 ] }) }}
 
@@ -251,15 +252,17 @@ faqListe:
 {# 10. Häufige Fragen (5 sichtbar, Rest hinter „Weitere Fragen“; Update 7 §2). Texte nach Update 20 in faqListe oben. #}
 {{ faq(faqItems, sichtbar=5) }}
 
-{# 11. Abschlussband. Design-Pass 3 §3.11: Rahmen mit Foto (Video nach dem Download-OK), die fünf Anliegen als Glas-Pillen ohne Unterzeilen, ohne die Zeile „Das erste Gespräch …“ (nicht in der Liste des Briefs). #}
-{% call closing({ kontakt: "lennart", satz: "Wie können wir helfen?", button: "bewertung" }) %}
+{# 11. Abschlussband. Design-Pass 3 §3.11: Rahmen mit Foto (Video nach dem Download-OK), ohne die Zeile „Das erste Gespräch …“ (nicht in der Liste des Briefs).
+   Update 25 §2: eigenes Foto (Salon im Heynhaus), die fünf Anliegen als Textlinks mit Pfeil statt Glas-Pillen, daneben der Glasknopf
+   „Termin vereinbaren“ zur Kontaktseite (es gibt keinen Kalenderlink; im Menü steht sie als „Telefon, E-Mail, Termin“, _data/nav.js). #}
+{% call closing({ kontakt: "lennart", satz: "Wie können wir helfen?", button: "bewertung", foto: "heyn-salon", zweit: { href: "/kontakt.html", label: "Termin vereinbaren" } }) %}
   <p>Wählen Sie Ihr Anliegen oder rufen Sie uns einfach an.</p>
   <ul class="fgs-closing-links" role="list">
-    <li><a href="/verkaufen.html">Immobilie verkaufen</a></li>
-    <li><a href="/kaufen.html">Immobilie kaufen</a></li>
-    <li><a href="/finanzierungsberatung.html">Finanzierung</a></li>
-    <li><a href="/vermieten.html">Immobilie vermieten</a></li>
-    <li><a href="/mieten.html">Immobilie mieten</a></li>
+    <li><a class="fgs-link" href="/verkaufen.html">Immobilie verkaufen{% include "fgs-arrow.njk" %}</a></li>
+    <li><a class="fgs-link" href="/kaufen.html">Immobilie kaufen{% include "fgs-arrow.njk" %}</a></li>
+    <li><a class="fgs-link" href="/finanzierungsberatung.html">Finanzierung{% include "fgs-arrow.njk" %}</a></li>
+    <li><a class="fgs-link" href="/vermieten.html">Immobilie vermieten{% include "fgs-arrow.njk" %}</a></li>
+    <li><a class="fgs-link" href="/mieten.html">Immobilie mieten{% include "fgs-arrow.njk" %}</a></li>
   </ul>
 {% endcall %}
 

@@ -511,6 +511,21 @@
   /* ---------- Design-Pass 3 §3.11: langsamer Zoom im Abschlussrahmen, nur solange der Rahmen im Bild ist ----------
      Die Animation selbst steht im CSS (.is-zooming, bei reduzierter Bewegung keine). Außer Sicht steht das Foto wieder bei 1. */
   const closingFrames = document.querySelectorAll('[data-fgs-closing]');
+  /* Update 25 §2: Das Foto lädt, sobald der Rahmen 1500 px vor dem Fenster ist (vorher nur loading="lazy"); bis es da ist, liegt
+     der unscharfe Platzhalter aus dem CSS darunter, dann blendet das Foto ein. Ohne Skript bleibt es beim nativen lazy. */
+  closingFrames.forEach((frame) => {
+    const img = frame.querySelector('.fgs-closing-media img');
+    if (!img) return;
+    if (!img.complete) {
+      frame.classList.add('is-fading');
+      img.addEventListener('load', () => img.classList.add('is-loaded'), { once: true }); // lädt es nicht, bleibt der Platzhalter
+    }
+    if (!('IntersectionObserver' in window)) { img.loading = 'eager'; return; }
+    const pre = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) { img.loading = 'eager'; pre.disconnect(); }
+    }, { rootMargin: '1500px 0px 1500px 0px' });
+    pre.observe(frame);
+  });
   if (closingFrames.length && !reduceMotion) {
     if ('IntersectionObserver' in window) {
       const io = new IntersectionObserver((entries) => entries.forEach((entry) => entry.target.classList.toggle('is-zooming', entry.isIntersecting)));

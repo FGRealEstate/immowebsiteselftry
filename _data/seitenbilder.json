@@ -1720,5 +1720,137 @@
       1272
     ],
     "verwendung": "Update 22 §8.6: Zuschnitt 4:5 von home/gebiet-karte-dresden (Bildregel 2.6.2)"
+  },
+  "abschluss-heyn-salon-12x5": {
+    "quelle": "heyn-salon",
+    "zuschnitt": [
+      0,
+      0.02,
+      1,
+      0.66
+    ],
+    "format": [
+      12,
+      5
+    ],
+    "breiten": [
+      2400,
+      3200
+    ],
+    "verwendung": "Abschlussrahmen der Startseite (Update 25 §2, 01.11.2026)"
+  },
+  "abschluss-heyn-salon-2x1": {
+    "quelle": "heyn-salon",
+    "zuschnitt": [
+      0,
+      0.02,
+      1,
+      0.77
+    ],
+    "format": [
+      2,
+      1
+    ],
+    "breiten": [
+      1600,
+      2400,
+      3200
+    ],
+    "verwendung": "Abschlussrahmen der Startseite (Update 25 §2, 01.11.2026)"
+  },
+  "abschluss-heyn-salon-3x2": {
+    "quelle": "heyn-salon",
+    "zuschnitt": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "format": [
+      3,
+      2
+    ],
+    "breiten": [
+      1600,
+      2400,
+      3200
+    ],
+    "verwendung": "Abschlussrahmen der Startseite (Update 25 §2, 01.11.2026)"
+  },
+  "abschluss-heyn-salon-5x4": {
+    "quelle": "heyn-salon",
+    "zuschnitt": [
+      0.12,
+      0,
+      1,
+      1
+    ],
+    "format": [
+      5,
+      4
+    ],
+    "breiten": [
+      1200,
+      1800,
+      2400
+    ],
+    "verwendung": "Abschlussrahmen der Startseite (Update 25 §2, 01.11.2026)"
+  },
+  "abschluss-heyn-salon-1x1": {
+    "quelle": "heyn-salon",
+    "zuschnitt": [
+      0.2,
+      0,
+      0.867,
+      1
+    ],
+    "format": [
+      1,
+      1
+    ],
+    "breiten": [
+      1200,
+      1800,
+      2400
+    ],
+    "verwendung": "Abschlussrahmen der Startseite (Update 25 §2, 01.11.2026)"
+  },
+  "abschluss-heyn-salon-2x3": {
+    "quelle": "heyn-salon",
+    "zuschnitt": [
+      0.3,
+      0,
+      0.745,
+      1
+    ],
+    "format": [
+      2,
+      3
+    ],
+    "breiten": [
+      800,
+      1200,
+      1600
+    ],
+    "verwendung": "Abschlussrahmen der Startseite (Update 25 §2, 01.11.2026)"
+  },
+  "abschluss-heyn-salon-9x16": {
+    "quelle": "heyn-salon",
+    "zuschnitt": [
+      0.33,
+      0,
+      0.705,
+      1
+    ],
+    "format": [
+      9,
+      16
+    ],
+    "breiten": [
+      800,
+      1200,
+      1440
+    ],
+    "verwendung": "Abschlussrahmen der Startseite (Update 25 §2, 01.11.2026)"
   }
 }

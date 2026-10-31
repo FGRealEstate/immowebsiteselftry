@@ -732,11 +732,19 @@
     for (let n = walker.nextNode(); n; n = walker.nextNode()) {
       const re = /[^\s\-‐–]*[\p{L}­]{8,}[^\s\-‐–]*[\-‐–]?/gu;
       for (let m = re.exec(n.nodeValue); m; m = re.exec(n.nodeValue)) {
-        range.setStart(n, m.index);
-        range.setEnd(n, m.index + m[0].length);
-        const rects = range.getClientRects();
-        const kopf = n.parentElement.closest(KOPF);
-        if (passtNicht(rects, kopf)) treffer.push({ n, a: m.index, b: m.index + m[0].length, w: breite(rects), kopf });
+        // Update 25 §3.5: ein gesetztes &shy; ist eine erlaubte Trennstelle („Immobilien&shy;finanzierung“); geprüft wird dann
+        // jedes Teilwort samt seinem &shy; für sich. Ohne &shy; ist das ein Teil, das ganze Wort, wie bisher.
+        const teile = m[0].split('\u00AD');
+        let a = m.index;
+        teile.forEach((teil, i) => {
+          const b = a + teil.length + (i < teile.length - 1 ? 1 : 0);
+          range.setStart(n, a);
+          range.setEnd(n, b);
+          const rects = range.getClientRects();
+          const kopf = n.parentElement.closest(KOPF);
+          if (teil && passtNicht(rects, kopf)) treffer.push({ n, a, b, w: breite(rects), kopf });
+          a = b;
+        });
       }
     }
     // Überschriften: kleinster nötiger Faktor über alle zu breiten Wörter; reicht 80 %, wird die Schrift so weit verkleinert

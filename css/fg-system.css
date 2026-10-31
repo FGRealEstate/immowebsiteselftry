@@ -2184,6 +2184,10 @@ html.fgs-js .fgs-obj-media.fgs-reveal img { transition: opacity 800ms var(--fgs-
 .fgs-facts-sec--count .fgs-fact-text { grid-row: 3; max-width: none; margin-top: 16px; }
 .fgs-facts-sec--count .fgs-source { grid-row: 4; }
 .fgs-fact-unit { font-size: .44em; letter-spacing: .02em; margin-left: .14em; }
+/* Update 25: die „4“ wirkt als dünne, offene Ziffer kleiner als „100+“, „50+“ und „5,0“; sie steht in 108 %, damit ihre Oberkante
+   optisch mit den anderen abschließt. Zeilenhöhe 0, damit die größere Ziffer die Zeile nicht höher macht: Die Grundlinie bleibt
+   für alle vier Zahlen gleich, „Mio.+“ bleibt bei 44 % der Zahlengröße. */
+.fgs-count-now--gross { font-size: 1.08em; line-height: 0; }
 @media (min-width: 1240px) { .fgs-facts-sec--count .fgs-fact-figure { font-size: 88px; } }
 @media (max-width: 1239px) {
   .fgs-facts-sec--count .fgs-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -2407,8 +2411,9 @@ html.fgs-js .fgs-hero--slides.is-laeuft .fgs-slide.is-on img, html.fgs-js .fgs-h
 .fgs-svc-text { position: relative; z-index: 1; max-width: 1040px; padding: 0 var(--fgs-pad) 72px; text-align: center; }
 .fgs .fgs-svc-kicker { margin: 0; font: 500 12px/1.4 var(--fgs-sans); letter-spacing: .16em; text-transform: uppercase; color: rgba(255, 255, 255, .85); }
 /* 52 px; auf schmalen Fenstern so viel kleiner, dass das längste Wort (--fgs-wort, Zeichen) in Versalien in die Zeile passt,
-   z. B. „Immobilienfinanzierung“ mit 22 Zeichen (gemessen: 0,7 em je Zeichen) */
-.fgs .fgs-svc-title { margin: 20px 0 0; font-family: var(--fgs-serif); font-size: min(52px, calc((100vw - 2 * var(--fgs-pad)) / (var(--fgs-wort, 22) * .71))); line-height: 1.1; text-transform: uppercase; color: #fff; -webkit-hyphens: none; hyphens: none; }
+   z. B. „Vermarktung“ mit 11 Zeichen (gemessen: 0,7 em je Zeichen). Update 25 §3.5: „Immobilien&shy;finanzierung“ trennt auf dem
+   Handy an der einen gesetzten Stelle und bleibt groß; „manual“ trennt nur dort, wo ein &shy; steht, nie automatisch. */
+.fgs .fgs-svc-title { margin: 20px 0 0; font-family: var(--fgs-serif); font-size: min(52px, calc((100vw - 2 * var(--fgs-pad)) / (var(--fgs-wort, 22) * .71))); line-height: 1.1; text-transform: uppercase; color: #fff; -webkit-hyphens: manual; hyphens: manual; }
 .fgs .fgs-svc-satz { margin: 20px auto 0; max-width: 620px; font-size: 17px; line-height: 1.6; color: rgba(255, 255, 255, .92); }
 .fgs-svc-text .fgs-btn { margin-top: 32px; }
 .fgs-svc-nav { position: absolute; left: 50%; bottom: clamp(24px, 5vh, 48px); z-index: 2; display: flex; align-items: center; gap: 16px; transform: translateX(-50%); }
@@ -2857,3 +2862,61 @@ section.fgs-band .fgs-band-text::before { background: radial-gradient(closest-si
    auf einer Linie, auch ohne Subgrid. Gestapelt (unter 768 px) gilt das nicht. 2 × 1,3 em ist dasselbe wie 2lh, für ältere Browser. */
 .fgs-promise-t { display: block; }
 @media (min-width: 768px) { .fgs-promise-t { min-height: calc(2 * 1.3em); min-height: 2lh; } }
+
+/* ---------- Update 25 (01.11.2026): Schlussabschnitt ---------- */
+/* §2 Rahmen: fast bildschirmfüllend (24 px Rand ab 768 px, 16 px darunter), eckig. Höhe min(100vh, 900 px), mindestens 720 px
+   (ab 768 px) bzw. 640 px; längerer Inhalt (Gebietsseiten, Handy quer) darf den Rahmen höher machen. */
+.fgs-closing { padding: 16px; }
+@media (min-width: 768px) { .fgs-closing { padding: 24px; } }
+.fgs-closing-frame { min-height: max(640px, min(100vh, 900px)); place-items: end start; text-align: left; border-radius: 0; }
+@media (min-width: 768px) { .fgs-closing-frame { min-height: max(720px, min(100vh, 900px)); } }
+/* §2 Verlauf statt flachem Navy: unten links navy 85 %, oben rechts navy 15 %. Die zwei Zwischenstufen halten die Schrift über
+   hellen Fenstern bei mindestens 4,5 : 1 (gemessen bei 1440, 1024 und 390 px, PLAN.md Update 25); linear fiel sie bis 3 : 1. */
+.fgs-closing-media::after { background: linear-gradient(to top right, rgba(8, 8, 47, .85) 0%, rgba(8, 8, 47, .8) 45%, rgba(8, 8, 47, .62) 66%, rgba(8, 8, 47, .15) 100%); }
+/* Auf dem Handy ist der Rahmen hoch und schmal, und der Inhalt reicht fast bis oben; dort liegt die Überschrift im hellen Teil
+   des Verlaufs. Darum die Zwischenstufen weiter nach oben rechts (Endpunkte unverändert). */
+@media (max-width: 767px) { .fgs-closing-media::after { background: linear-gradient(to top right, rgba(8, 8, 47, .85) 0%, rgba(8, 8, 47, .8) 50%, rgba(8, 8, 47, .68) 84%, rgba(8, 8, 47, .15) 100%); } }
+/* §2 Platzhalter: dasselbe Foto in 40 px Breite (platzhalter.json, als CSS-Variable aus dem Makro), vergrößert und weichgezeichnet
+   unter dem Foto. fg-system.js blendet das Foto ein, sobald es geladen ist. */
+.fgs-closing-media::before { content: ""; position: absolute; inset: -48px; z-index: -1; background: var(--fgs-ph-h, none) center / cover no-repeat; filter: blur(24px); }
+@media (min-width: 768px) { .fgs-closing-media::before { background-image: var(--fgs-ph-q, none); } }
+.fgs-closing-frame.is-fading .fgs-closing-media img { opacity: 0; transition: opacity 600ms var(--fgs-ease); }
+.fgs-closing-frame.is-fading .fgs-closing-media img.is-loaded { opacity: 1; }
+/* §2 Zoom 1 → 1,06 in 20 s, hin und zurück, nur bei prefers-reduced-motion: no-preference */
+@media (prefers-reduced-motion: no-preference) { .fgs-closing-frame.is-zooming .fgs-closing-media img { animation: fgs-closing-zoom-25 20s ease-in-out infinite alternate; } }
+@keyframes fgs-closing-zoom-25 { from { transform: scale(1); } to { transform: scale(1.06); } }
+/* Das Bild füllt den Rahmen auch, wenn der Inhalt ihn höher macht als das Bildformat (vorher endete das Foto auf dem Handy unter
+   dem goldenen Button, darunter lag nur Navy) */
+.fgs-closing-media > picture { display: block; height: 100%; }
+/* §2 Inhalt unten links: 96 px von links und unten bei 1440 px, mit der Breite kleiner (mindestens 24 px), höchstens 760 px breit.
+   Die Reihe der Anliegen darf breiter sein, damit sie bei 1440 px eine Reihe bleibt. */
+.fgs-closing .fgs-closing-inner { max-width: none; padding: clamp(56px, 6.667vw, 96px) clamp(24px, 6.667vw, 96px); }
+.fgs-closing-inner > :not(.fgs-closing-body), .fgs-closing-body > :not(.fgs-closing-links) { max-width: 760px; }
+.fgs-closing-sentence { margin-inline: 0 !important; max-width: 760px !important; font-size: clamp(44px, calc(32.11px + 3.048vw), 76px); line-height: 1.05; }
+.fgs-closing-body > p { margin-inline: 0 !important; font-size: 20px; line-height: 1.5; color: rgba(255, 255, 255, .85); }
+/* §2 Anliegen als Textlinks: 17 px, weiß, kleiner Pfeil, 28 px Abstand; beim Darüberfahren wächst eine goldene Linie darunter und
+   der Pfeil rückt 4 px nach rechts. Unter 768 px fünf Zeilen mit Haarlinien dazwischen. */
+.fgs-closing-links { margin: 32px 0 0 !important; max-width: none; justify-content: flex-start; gap: 12px 28px; }
+.fgs-closing-links a { display: inline-flex; align-items: center; gap: 10px; padding: 0 0 4px; border: 0; border-radius: 0; background: linear-gradient(var(--fgs-gold), var(--fgs-gold)) 0 100% / 0 1px no-repeat; -webkit-backdrop-filter: none; backdrop-filter: none; font: 400 17px/1.4 var(--fgs-sans); transition: background-size 400ms var(--fgs-ease); }
+.fgs-closing-links a:hover, .fgs-closing-links a:focus-visible { background: linear-gradient(var(--fgs-gold), var(--fgs-gold)) 0 100% / 100% 1px no-repeat; }
+.fgs-closing-links a svg { width: 18px; height: 10px; transition: transform 400ms var(--fgs-ease); }
+.fgs-closing-links a:hover svg, .fgs-closing-links a:focus-visible svg { transform: translateX(4px); }
+@media (max-width: 767px) {
+  .fgs-closing-links { flex-direction: column; gap: 0; }
+  .fgs-closing-links li + li { border-top: 1px solid rgba(255, 255, 255, .22); }
+  .fgs-closing-links a { display: flex; justify-content: space-between; padding: 14px 0; }
+}
+.fgs-closing-points { margin: 32px 0 0 !important; }
+/* §2 Buttons nebeneinander in voller Systemgröße (Startseite: Gold und Glas) */
+.fgs-closing .fgs-btns { margin-top: 40px; justify-content: flex-start; }
+@media (max-width: 767px) { .fgs-closing .fgs-btn { padding-inline: 20px; } }
+/* §2 Kontaktzeile: rundes Porträt 72 px, daneben Name · Rolle in 15 px, darunter die Nummer in Marcellus 24 px */
+.fgs-closing-person { margin-top: 40px; display: grid; grid-template-columns: 72px auto; column-gap: 16px; row-gap: 2px; align-items: center; justify-content: start; }
+.fgs-closing-face { width: 72px; height: 72px; grid-row: span 2; }
+.fgs-closing-face img { top: -9px; width: 118px; }
+.fgs-closing-who { margin: 0 !important; font-size: 15px; align-self: end; }
+.fgs-closing-phone { justify-self: start; align-self: start; font: 400 24px/1.3 var(--fgs-serif); }
+.fgs-closing-person--duo { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.fgs-closing-duo { justify-content: flex-start; gap: 16px 40px; }
+.fgs-closing-one { flex-direction: row; align-items: center; gap: 16px; max-width: 360px; }
+.fgs-closing-one .fgs-closing-face { flex: none; }

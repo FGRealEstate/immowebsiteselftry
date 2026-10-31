@@ -166,8 +166,9 @@
       </div>
       <div class="fgs-svc-text">
         <p class="fgs-svc-kicker">{{ x.kicker }}</p>
-        {%- set wortlaenge = (x.titel | string).split(" ") | sort(true, false, "length") | first | length %}
-        <h2 class="fgs-svc-title" style="--fgs-wort: {{ wortlaenge }}">{{ x.titel }}</h2>
+        {#- Update 25 §3.5: ein &shy; im Titel ist eine erlaubte Trennstelle; dann zählt das längere Teilwort #}
+        {%- set wortlaenge = (x.titel | string).replace("&shy;", " ").split(" ") | sort(true, false, "length") | first | length %}
+        <h2 class="fgs-svc-title" style="--fgs-wort: {{ wortlaenge }}">{{ x.titel | escape | replace("&amp;shy;", "&shy;") | safe }}</h2>
         <p class="fgs-svc-satz">{{ x.text }}</p>
         <a class="fgs-btn fgs-btn--glass" href="{{ x.href }}">{{ x.button }}</a>
       </div>
@@ -539,7 +540,7 @@
     <div class="fgs-head{% if f.mitte %} fgs-head--centre{% endif %}"><h2{% if f.mitte %} class="fgs-h2-chapter"{% endif %} id="{{ f.id }}-titel">{{ f.titel }}</h2></div>
     <ul class="fgs-facts" role="list" style="--n: {{ f.items | length }}"{% if zaehlt %} data-fgs-count{% endif %}>
       {%- for x in f.items %}
-      <li class="fgs-fact">{% if zaehlt %}<span class="fgs-fact-figure fgs-count"><span class="fgs-sr">{{ x.wert }}{% if x.einheit %} {{ x.einheit }}{% endif %}</span><span class="fgs-count-now" aria-hidden="true">{{ x.wert }}</span>{% if x.einheit %}<span class="fgs-fact-unit" aria-hidden="true">{{ x.einheit }}</span>{% endif %}</span>{% else %}<span class="fgs-fact-figure">{{ x.wert }}</span>{% endif %}{% if x.sterne %}<span class="fgs-fact-stars" aria-hidden="true">{% for i in range(0, 5) %}<svg viewBox="0 0 24 24" focusable="false"><path d="m12 2.8 2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg>{% endfor %}</span>{% endif %}{% if x.label %}<span class="fgs-label">{{ x.label }}</span>{% endif %}{% if x.text %}<span class="fgs-fact-text">{{ x.text }}</span>{% endif %}{% if x.quelle %}<span class="fgs-small fgs-source">{{ x.quelle | safe }}</span>{% endif %}</li>
+      <li class="fgs-fact">{% if zaehlt %}<span class="fgs-fact-figure fgs-count"><span class="fgs-sr">{{ x.wert }}{% if x.einheit %} {{ x.einheit }}{% endif %}</span><span class="fgs-count-now{% if x.gross %} fgs-count-now--gross{% endif %}" aria-hidden="true">{{ x.wert }}</span>{% if x.einheit %}<span class="fgs-fact-unit" aria-hidden="true">{{ x.einheit }}</span>{% endif %}</span>{% else %}<span class="fgs-fact-figure">{{ x.wert }}</span>{% endif %}{% if x.sterne %}<span class="fgs-fact-stars" aria-hidden="true">{% for i in range(0, 5) %}<svg viewBox="0 0 24 24" focusable="false"><path d="m12 2.8 2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg>{% endfor %}</span>{% endif %}{% if x.label %}<span class="fgs-label">{{ x.label }}</span>{% endif %}{% if x.text %}<span class="fgs-fact-text">{{ x.text }}</span>{% endif %}{% if x.quelle %}<span class="fgs-small fgs-source">{{ x.quelle | safe }}</span>{% endif %}</li>
       {%- endfor %}
     </ul>
     {%- if f.hinweis %}
@@ -594,7 +595,8 @@
 {#- S8 Abschlussband: einzige navy Fläche im Inhalt. Ein Satz (als H2), der goldene Button, darunter die Ansprechperson.
     c = { kontakt: "lennart" | "timon", satz, button: "bewertung" | "gespraech", knopf: { href, label } (optional, ersetzt button; Objektseite: „Objekt anfragen“),
     gebiet (optional, statt Zuständigkeit), kontakte (optional, Teil B 31.10.2026: [{ kontakt, gebiet }] zeigt zwei Personen nebeneinander
-    und die Telefonnummer einmal darunter; Berlin-Übersicht und Gewerbe), lang (optional, langer Inhalt: Handy-Zuschnitt 1:2), foto (optional: "tiergarten" auf Verkaufen, dort ist das Humboldt Forum schon das Titelbild) }.
+    und die Telefonnummer einmal darunter; Berlin-Übersicht und Gewerbe), lang (optional, langer Inhalt: Handy-Zuschnitt 1:2), foto (optional: "tiergarten" auf Verkaufen, dort ist das Humboldt Forum schon das Titelbild;
+    "heyn-salon" auf der Startseite, Update 25), zweit (optional, Update 25: { href, label } als Glas-Button neben dem goldenen) }.
     Mit {% call closing(…) %} steht der Inhalt (z. B. ein Satz und die Anliegen als Links) zwischen Satz und Button.
     Design-Pass 3 §3.11 und Nachtrag Punkt 2: Rahmen im navy Band (Desktop 64 px Abstand, mobil 0, 86 vh hoch), darin ein Foto
     unter navy 50 % mit langsamem Zoom, alles mittig. Statt des freigestellten Porträts eine Zeile mit rundem 56-px-Porträt,
@@ -602,7 +604,10 @@
     12:5 sehr breit, 2:1 breit, 3:2 Bildschirm, 5:4 Handy quer, 1:1 Tablet hochkant, 2:3 schmales Tablet, 9:16 Handy
     (1:2 mit lang: true, Gebietsseiten: dort macht der längere Text den Rahmen auf dem Handy höher) (seitenbilder.json,
     abschluss-*). Die Medienabfragen rechnen mit Rahmen = (Breite − 2 × Rand) / 86 vh; die Grenzen sind in PLAN.md §3.11 gegen
-    gängige Bildschirme gemessen. -#}
+    gängige Bildschirme gemessen.
+    Update 25 (01.11.2026): Rahmen fast bildschirmfüllend, Verlauf statt flachem Navy, Inhalt unten links (CSS-Block „Update 25“).
+    Unter dem Foto liegt ein unscharfer 40-px-Platzhalter aus _data/platzhalter.json (tools/platzhalter.py), fg-system.js lädt
+    das Foto schon 1500 px vor dem Rahmen. -#}
 {% macro closing(c) -%}
 {%- set k = kontakte[c.kontakt or "lennart"] -%}
 {%- set datei = k.name | lower | replace(" ", "-") -%}
@@ -611,9 +616,10 @@
 {%- set f125 = (stamm + "12x5") | bild -%}{%- set f21 = (stamm + "2x1") | bild -%}{%- set f32 = (stamm + "3x2") | bild -%}
 {%- set f54 = (stamm + "5x4") | bild -%}{%- set f11 = (stamm + "1x1") | bild -%}{%- set f23 = (stamm + "2x3") | bild -%}
 {%- set fHandy = (stamm + ("1x2" if c.lang else "9x16")) | bild -%}
+{%- set ph = platzhalter[stamm] -%}
 <section class="fgs-closing fgs-on-dark" id="kontakt" aria-labelledby="abschluss-titel">
   <div class="fgs-closing-frame" data-fgs-closing>
-    <div class="fgs-closing-media">
+    <div class="fgs-closing-media"{% if ph %} style="--fgs-ph-q: url({{ ph.q }}); --fgs-ph-h: url({{ ph.h }})"{% endif %}>
       <picture>
         {#- Niedrige Fenster (Handy quer): der Inhalt macht den Rahmen höher als 86 vh, deshalb 5:4 #}
         {% if f54.avif %}<source type="image/avif" media="(max-height: 520px)" srcset="{{ f54.avif }}" sizes="108vw">{% endif %}
@@ -645,9 +651,12 @@
         {%- else %}
         <a class="fgs-btn fgs-btn--primary" href="{{ nav.valuation | navHref }}">Kostenlose Bewertung</a>
         {%- endif %}
+        {%- if c.zweit %}
+        <a class="fgs-btn fgs-btn--glass" href="{{ c.zweit.href }}">{{ c.zweit.label }}</a>
+        {%- endif %}
       </div>
       {%- if c.kontakte and c.kontakte.length > 1 %}
-      <div class="fgs-closing-person">
+      <div class="fgs-closing-person fgs-closing-person--duo">
         <div class="fgs-closing-duo">
           {%- for e in c.kontakte %}
           {%- set ek = kontakte[e.kontakt] %}{% set eProfile = ek.profile | navHref %}

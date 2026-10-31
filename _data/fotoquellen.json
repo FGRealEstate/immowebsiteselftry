@@ -1,5 +1,5 @@
 {
- "_hinweis": "Quellen der Fotos auf Leistungsseiten und Startseite. url und credit sind Pflicht; zeile ersetzt die Nennung, wenn der Urheber auf Commons eine eigene vorgibt (Feld Attribution). Datum, Originalgröße und Lizenzlink trägt tools/seitenbilder.py aus der Commons-Schnittstelle in quellbilder/seiten/manifest.json ein. Freigabe der Downloads: Update 4 vom 27.10.2026, Abschnitt 2. Design-Pass 3 §6.1: sechs weitere (Deutscher Dom bis Viktoria-Luise-Platz), Freigabe Peer 30.10.2026.",
+ "_hinweis": "Quellen der Fotos auf Leistungsseiten und Startseite. url und credit sind Pflicht; zeile ersetzt die Nennung, wenn der Urheber auf Commons eine eigene vorgibt (Feld Attribution). Datum, Originalgröße und Lizenzlink trägt tools/seitenbilder.py aus der Commons-Schnittstelle in quellbilder/seiten/manifest.json ein. Freigabe der Downloads: Update 4 vom 27.10.2026, Abschnitt 2. Design-Pass 3 §6.1: sechs weitere (Deutscher Dom bis Viktoria-Luise-Platz), Freigabe Peer 30.10.2026. Update 25 §2: heyn-salon (neues Schlussfoto der Startseite), Freigabe Peer 01.11.2026.",
  "berlin-mitte-spree-2023": {
   "url": "https://commons.wikimedia.org/wiki/File:Berlin_Mitte_June_2023_01.jpg",
   "credit": "ArildV, CC BY-SA 4.0"
@@ -166,5 +166,9 @@
  "steglitz-schuetzenstrasse-44": {
   "url": "https://commons.wikimedia.org/wiki/File:120922-Steglitz-Sch%C3%BCtzenstra%C3%9Fe-44.JPG",
   "credit": "Muns, CC BY-SA 3.0"
+ },
+ "heyn-salon": {
+  "url": "https://commons.wikimedia.org/wiki/File:Heynstra%C3%9Fe_8_Berlin_10.jpg",
+  "credit": "Edelmauswaldgeist, CC0"
  }
 }
