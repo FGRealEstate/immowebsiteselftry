@@ -279,6 +279,9 @@
       1
     ]
   },
+  "/images/gebiete/dresden-zentrum-pirnaische-vorstadt-grunaer-strasse": {
+    "hoch": [0.42, 0.3, 1]
+  },
   "/images/gebiete/dresden-zentrum-schillerplatz-blaues-wunder": {
     "hoch": [
       0.55,
