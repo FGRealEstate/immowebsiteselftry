@@ -157,8 +157,9 @@
   <div class="fgs-svc-frame">
     {%- for x in s.items %}
     {%- set b = x.bild %}
-    {#- Update 22 §8.4: x.navy setzt die Navy-Schicht dieser Folie (sonst 38 %), z. B. für Kontrast ≥ 4,5 : 1 -#}
-    <div class="fgs-svc-slide{% if loop.first %} is-on{% endif %}" role="group" aria-roledescription="Folie" aria-label="{{ loop.index }} von {{ s.items | length }}"{% if not loop.first %} aria-hidden="true" inert{% endif %}{% if x.navy %} style="--fgs-svc-navy: {{ x.navy }}"{% endif %}>
+    {#- Update 22 §8.4 gab jeder Folie eine eigene Navy-Schicht (x.navy). Update 26 §2: alle Folien haben denselben Verlauf hinter dem
+        Text (fg-system.css), x.navy gibt es nicht mehr. -#}
+    <div class="fgs-svc-slide{% if loop.first %} is-on{% endif %}" role="group" aria-roledescription="Folie" aria-label="{{ loop.index }} von {{ s.items | length }}"{% if not loop.first %} aria-hidden="true" inert{% endif %}>
       <div class="fgs-svc-media">
         <picture>
           {%- if b.hoch %}{% if b.hoch.avif %}<source type="image/avif" media="(max-aspect-ratio: 11/12)" srcset="{{ b.hoch.avif }}" sizes="(max-aspect-ratio: 9/16) 56.25vh, 100vw" width="{{ b.hoch.w }}" height="{{ b.hoch.h }}">{% endif %}<source media="(max-aspect-ratio: 11/12)" srcset="{{ b.hoch.srcset }}" sizes="(max-aspect-ratio: 9/16) 56.25vh, 100vw" width="{{ b.hoch.w }}" height="{{ b.hoch.h }}">{% endif %}

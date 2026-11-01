@@ -2971,3 +2971,32 @@ section.fgs-band .fgs-band-text::before { background: radial-gradient(closest-si
   .fgs-obj-head-btn { display: none; }
   .fgs-obj-more { display: flex; margin-top: 40px; }
 }
+
+/* ---------- Update 26 (01.11.2026): Fotos und Bewertungen ---------- */
+/* §2 Leistungs-Slider: Verlauf nur hinter dem Text statt der vollen Navy-Schicht, die Weiß lila färbte (vorher 48 bzw. 58 %, je Folie).
+   Navy 70 % im Band, in dem Kicker, Titel, Satz und Knopf stehen, zu den Kanten oben und unten 0 %. Das Band liegt um die Mitte des
+   Textes (50 % minus die Hälfte der 72 px Innenabstand unten) und reicht --band nach oben und unten: Text plus rund 30 px, auf dem
+   Handy mit Umbruch mehr. Nach außen fällt es erst schnell, dann langsam ab, damit der Himmel und der Boden ihre Farbe behalten. */
+.fgs-svc-media::after {
+  --band: 160px; --o: calc(50% - 36px - var(--band)); --u: calc(50% - 36px + var(--band));
+  background: linear-gradient(to bottom, rgba(8, 8, 47, 0) 0%, rgba(8, 8, 47, .05) calc(var(--o) * .35), rgba(8, 8, 47, .2) calc(var(--o) * .6), rgba(8, 8, 47, .45) calc(var(--o) * .82), rgba(8, 8, 47, .7) var(--o),
+    rgba(8, 8, 47, .7) var(--u), rgba(8, 8, 47, .45) calc(var(--u) + (100% - var(--u)) * .18), rgba(8, 8, 47, .2) calc(var(--u) + (100% - var(--u)) * .4), rgba(8, 8, 47, .05) calc(var(--u) + (100% - var(--u)) * .65), rgba(8, 8, 47, 0) 100%);
+}
+@media (max-width: 767px) { .fgs-svc-media::after { --band: 210px; } }
+/* Pfeile und Fortschrittslinie stehen unten, wo der Verlauf bei 0 % ist; auf hellen Fotos fielen die Pfeile bis 1,8 : 1. Ein schmaler
+   Navy-Schatten um die Linien hält sie lesbar, ohne Schicht über dem Foto. */
+.fgs-svc-btn svg, .fgs-svc-progress { filter: drop-shadow(0 0 2px rgba(8, 8, 47, .95)) drop-shadow(0 0 8px rgba(8, 8, 47, .7)); }
+/* §3 Schlussabschnitt, auf jeder Seite: Verlauf von links nach rechts statt der Schicht über dem ganzen Foto. Navy 82 % hinter der linken
+   Textspalte, bei 60 % der Rahmenbreite 0 %, rechts davon keine Schicht. Damit die Spalte bei 1440 px links von 60 % endet, ist sie
+   höchstens 600 px breit (vorher 760, die Anliegen eine Reihe bis 1074 px; jetzt zwei Reihen, die Knöpfe passen nebeneinander).
+   --sp ist die rechte Kante der Spalte plus 16 px; ist der Rahmen schmal (Tablet), endet der Verlauf 120 px dahinter statt bei 60 %. */
+.fgs-closing-inner > :not(.fgs-closing-body), .fgs-closing .fgs-closing-body > * { max-width: 600px; }
+.fgs-closing-sentence { max-width: 600px !important; }
+.fgs-closing-media::after { --sp: calc(clamp(24px, 6.667vw, 96px) + 616px); background: linear-gradient(to right, rgba(8, 8, 47, .82) 0, rgba(8, 8, 47, .82) var(--sp), rgba(8, 8, 47, 0) max(60%, calc(var(--sp) + 120px))); }
+/* Handy: die Spalte ist so breit wie der Rahmen. Der Verlauf liegt deshalb hinter dem Inhalt selbst, 82 % bis 40 px unter dessen
+   Oberkante, darüber auf 0 %; über dem Inhalt (kurze Abschlüsse) bleibt das Foto frei. */
+@media (max-width: 767px) {
+  .fgs-closing-media::after { background: none; }
+  .fgs-closing .fgs-closing-inner { position: relative; z-index: 1; }
+  .fgs-closing .fgs-closing-inner::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(8, 8, 47, .82) calc(100% - 40px), rgba(8, 8, 47, 0)); pointer-events: none; }
+}

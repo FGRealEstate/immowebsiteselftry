@@ -1035,7 +1035,7 @@
     "breiten": [
       1600
     ],
-    "verwendung": "Startseite, Leistungs-Slider Verkauf (Design-Pass 3 §3.2)"
+    "verwendung": "nicht mehr verwendet: Update 26 §0 (01.11.2026) ersetzt es auf der Startseite"
   },
   "home/hero-leistung-ankauf": {
     "quelle": "leere-wohnung-berlin",
@@ -1737,7 +1737,7 @@
       2400,
       3200
     ],
-    "verwendung": "Abschlussrahmen der Startseite (Update 25 §2, 01.11.2026)"
+    "verwendung": "nicht mehr verwendet: Update 26 §0 (01.11.2026) ersetzt es auf der Startseite"
   },
   "abschluss-heyn-salon-2x1": {
     "quelle": "heyn-salon",
@@ -1756,7 +1756,7 @@
       2400,
       3200
     ],
-    "verwendung": "Abschlussrahmen der Startseite (Update 25 §2, 01.11.2026)"
+    "verwendung": "nicht mehr verwendet: Update 26 §0 (01.11.2026) ersetzt es auf der Startseite"
   },
   "abschluss-heyn-salon-3x2": {
     "quelle": "heyn-salon",
@@ -1775,7 +1775,7 @@
       2400,
       3200
     ],
-    "verwendung": "Abschlussrahmen der Startseite (Update 25 §2, 01.11.2026)"
+    "verwendung": "nicht mehr verwendet: Update 26 §0 (01.11.2026) ersetzt es auf der Startseite"
   },
   "abschluss-heyn-salon-5x4": {
     "quelle": "heyn-salon",
@@ -1794,7 +1794,7 @@
       1800,
       2400
     ],
-    "verwendung": "Abschlussrahmen der Startseite (Update 25 §2, 01.11.2026)"
+    "verwendung": "nicht mehr verwendet: Update 26 §0 (01.11.2026) ersetzt es auf der Startseite"
   },
   "abschluss-heyn-salon-1x1": {
     "quelle": "heyn-salon",
@@ -1813,7 +1813,7 @@
       1800,
       2400
     ],
-    "verwendung": "Abschlussrahmen der Startseite (Update 25 §2, 01.11.2026)"
+    "verwendung": "nicht mehr verwendet: Update 26 §0 (01.11.2026) ersetzt es auf der Startseite"
   },
   "abschluss-heyn-salon-2x3": {
     "quelle": "heyn-salon",
@@ -1832,7 +1832,7 @@
       1200,
       1600
     ],
-    "verwendung": "Abschlussrahmen der Startseite (Update 25 §2, 01.11.2026)"
+    "verwendung": "nicht mehr verwendet: Update 26 §0 (01.11.2026) ersetzt es auf der Startseite"
   },
   "abschluss-heyn-salon-9x16": {
     "quelle": "heyn-salon",
@@ -1851,6 +1851,152 @@
       1200,
       1440
     ],
-    "verwendung": "Abschlussrahmen der Startseite (Update 25 §2, 01.11.2026)"
+    "verwendung": "nicht mehr verwendet: Update 26 §0 (01.11.2026) ersetzt es auf der Startseite"
+  },
+  "home/hero-leistung-teltower": {
+    "quelle": "teltower-damm-10",
+    "zuschnitt": [
+      0.085,
+      0,
+      0.99,
+      0.95
+    ],
+    "format": [
+      3,
+      2
+    ],
+    "breiten": [
+      1600
+    ],
+    "verwendung": "Startseite, Leistungs-Slider Verkauf, Ersatz bis zu Jesus Wahl (Update 26 §0, 01.11.2026)"
+  },
+  "abschluss-kloeden-12x5": {
+    "quelle": "kreuzberg-kloedenstrasse",
+    "zuschnitt": [
+      0,
+      0.18,
+      1,
+      0.74
+    ],
+    "format": [
+      12,
+      5
+    ],
+    "breiten": [
+      2400
+    ],
+    "verwendung": "Abschlussrahmen der Startseite, Ersatz bis zu Jesus Wahl (Update 26 §0, 01.11.2026)"
+  },
+  "abschluss-kloeden-2x1": {
+    "quelle": "kreuzberg-kloedenstrasse",
+    "zuschnitt": [
+      0,
+      0.12,
+      1,
+      0.79
+    ],
+    "format": [
+      2,
+      1
+    ],
+    "breiten": [
+      1600,
+      2400
+    ],
+    "verwendung": "Abschlussrahmen der Startseite, Ersatz bis zu Jesus Wahl (Update 26 §0, 01.11.2026)"
+  },
+  "abschluss-kloeden-3x2": {
+    "quelle": "kreuzberg-kloedenstrasse",
+    "zuschnitt": [
+      0,
+      0.05,
+      1,
+      0.94
+    ],
+    "format": [
+      3,
+      2
+    ],
+    "breiten": [
+      1600,
+      2400
+    ],
+    "verwendung": "Abschlussrahmen der Startseite, Ersatz bis zu Jesus Wahl (Update 26 §0, 01.11.2026)"
+  },
+  "abschluss-kloeden-5x4": {
+    "quelle": "kreuzberg-kloedenstrasse",
+    "zuschnitt": [
+      0.066,
+      0,
+      1,
+      1
+    ],
+    "format": [
+      5,
+      4
+    ],
+    "breiten": [
+      1200,
+      1800,
+      2400
+    ],
+    "verwendung": "Abschlussrahmen der Startseite, Ersatz bis zu Jesus Wahl (Update 26 §0, 01.11.2026)"
+  },
+  "abschluss-kloeden-1x1": {
+    "quelle": "kreuzberg-kloedenstrasse",
+    "zuschnitt": [
+      0.253,
+      0,
+      1,
+      1
+    ],
+    "format": [
+      1,
+      1
+    ],
+    "breiten": [
+      1200,
+      1800,
+      2400
+    ],
+    "verwendung": "Abschlussrahmen der Startseite, Ersatz bis zu Jesus Wahl (Update 26 §0, 01.11.2026)"
+  },
+  "abschluss-kloeden-2x3": {
+    "quelle": "kreuzberg-kloedenstrasse",
+    "zuschnitt": [
+      0.4,
+      0,
+      0.9,
+      1
+    ],
+    "format": [
+      2,
+      3
+    ],
+    "breiten": [
+      800,
+      1200,
+      1600
+    ],
+    "verwendung": "Abschlussrahmen der Startseite, Ersatz bis zu Jesus Wahl (Update 26 §0, 01.11.2026)"
+  },
+  "abschluss-kloeden-9x16": {
+    "quelle": "kreuzberg-kloedenstrasse",
+    "zuschnitt": [
+      0.45,
+      0,
+      0.87,
+      1
+    ],
+    "format": [
+      9,
+      16
+    ],
+    "breiten": [
+      800,
+      1200,
+      1440
+    ],
+    "verwendung": "Abschlussrahmen der Startseite, Ersatz bis zu Jesus Wahl (Update 26 §0, 01.11.2026)"
   }
 }

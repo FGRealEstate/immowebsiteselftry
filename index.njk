@@ -85,11 +85,13 @@ faqListe:
 }) }}
 
 {# Design-Pass 3 §3.2 Teil 2 und §3.4: Leistungs-Slider direkt nach dem angehefteten Titelbild; ersetzt das Triptychon
-   „Wobei wir Sie begleiten“. Kicker, Titel, Text und Buttons wörtlich aus dem Brief. #}
+   „Wobei wir Sie begleiten“. Kicker, Titel, Text und Buttons wörtlich aus dem Brief.
+   Update 26 §0 (01.11.2026): Folie 1 bis zu Jesus Wahl mit der Villa am Teltower Damm (Titelbild der Immobilienbewertung), statt
+   der grauen Fassade hinter kahlen Ästen. Die Navy-Schicht je Folie (navy) gilt nicht mehr, alle Folien haben den Verlauf (CSS). #}
 {{ leistungsSlider({ id: "leistungen", label: "Wobei wir Sie begleiten", items: [
-  { bild: "home/hero-leistung-verkauf" | bild, alt: "Sonnige Fassade eines Mietshauses von 1892 am Chamissoplatz in Berlin-Kreuzberg", kicker: "Für Eigentümer", titel: "Verkauf & Vermarktung", text: "Wertermittlung, Unterlagen, Vermarktung und die Prüfung der Käuferfinanzierung, bis zur Übergabe der Schlüssel.", href: "/verkaufen.html", button: "Immobilie verkaufen" },
+  { bild: "home/hero-leistung-teltower" | bild, alt: "Villa am Teltower Damm in Berlin-Zehlendorf in der Sonne, ein Baudenkmal", kicker: "Für Eigentümer", titel: "Verkauf & Vermarktung", text: "Wertermittlung, Unterlagen, Vermarktung und die Prüfung der Käuferfinanzierung, bis zur Übergabe der Schlüssel.", href: "/verkaufen.html", button: "Immobilie verkaufen" },
   { bild: "home/hero-leistung-ankauf" | bild, alt: "Heller, leerer Altbauraum mit Holzbalken an der Decke, Dielenboden und einer Treppe", kicker: "Für Eigennutzer und Kapitalanleger", titel: "Ankauf & Investment", text: "Wir prüfen ein Objekt, bevor Sie kaufen: Lage, Zustand, Zahlen und Finanzierung.", href: "/kaufen.html", button: "Immobilie kaufen" },
-  { navy: 0.58, bild: "home/hero-leistung-finanzierung" | bild, alt: "Schreibtisch mit Taschenrechner, aufgeschlagenem Notizbuch und Stift", kicker: "Unabhängige Finanzierungsberatung", titel: "Immobilien&shy;finanzierung", text: "Wir vergleichen die Angebote vieler Banken und begleiten Ihre Unterlagen bis zur Auszahlung, für Eigennutzer, Kapitalanleger und Mehrfamilienhäuser.", href: "/finanzierungsberatung.html", button: "Finanzierung" }
+  { bild: "home/hero-leistung-finanzierung" | bild, alt: "Schreibtisch mit Taschenrechner, aufgeschlagenem Notizbuch und Stift", kicker: "Unabhängige Finanzierungsberatung", titel: "Immobilien&shy;finanzierung", text: "Wir vergleichen die Angebote vieler Banken und begleiten Ihre Unterlagen bis zur Auszahlung, für Eigennutzer, Kapitalanleger und Mehrfamilienhäuser.", href: "/finanzierungsberatung.html", button: "Finanzierung" }
 ] }) }}
 
 {# 3. Ihre Ansprechpartner. Update 23 A4: drei Zeilen statt Text links und Karten rechts (Design-Pass 3 §3.3).
@@ -260,7 +262,7 @@ faqListe:
 {# 11. Abschlussband. Design-Pass 3 §3.11: Rahmen mit Foto (Video nach dem Download-OK), ohne die Zeile „Das erste Gespräch …“ (nicht in der Liste des Briefs).
    Update 25 §2: eigenes Foto (Salon im Heynhaus), die fünf Anliegen als Textlinks mit Pfeil statt Glas-Pillen, daneben der Glasknopf
    „Termin vereinbaren“ zur Kontaktseite (es gibt keinen Kalenderlink; im Menü steht sie als „Telefon, E-Mail, Termin“, _data/nav.js). #}
-{% call closing({ kontakt: "lennart", satz: "Wie können wir helfen?", button: "bewertung", foto: "heyn-salon", zweit: { href: "/kontakt.html", label: "Termin vereinbaren" } }) %}
+{% call closing({ kontakt: "lennart", satz: "Wie können wir helfen?", button: "bewertung", foto: "kloeden", zweit: { href: "/kontakt.html", label: "Termin vereinbaren" } }) %}
   <p>Wählen Sie Ihr Anliegen oder rufen Sie uns einfach an.</p>
   <ul class="fgs-closing-links" role="list">
     <li><a class="fgs-link" href="/verkaufen.html">Immobilie verkaufen{% include "fgs-arrow.njk" %}</a></li>
