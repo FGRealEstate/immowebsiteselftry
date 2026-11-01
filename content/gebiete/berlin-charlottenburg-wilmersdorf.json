@@ -186,7 +186,7 @@
   "verkaufen": {
     "h2": "Immobilie in Charlottenburg-Wilmersdorf verkaufen",
     "absaetze": [
-      "In keinem Berliner Bezirk wurden 2025 so viele Eigentumswohnungen verkauft wie in Charlottenburg-Wilmersdorf: 2.637, das sind 15,2 % aller Berliner Verkäufe von Wohnungseigentum. Insgesamt zählte der Gutachterausschuss im Bezirk 2.811 Kauffälle, auch das der höchste Wert. Im Mittel kosteten Eigentumswohnungen im früheren Bezirk Charlottenburg 5.201 €/m² Wohnfläche, im früheren Bezirk Wilmersdorf 5.547 €/m²; in ganz Berlin waren es 5.017 €/m².[[1]] Wo Ihre Wohnung liegt, hängt an Lage, Baujahr und Zustand. Wir bewerten deshalb nach Ihrer Bodenrichtwertzone, der Wohnlage und Vergleichsverkäufen.",
+      "In keinem Berliner Bezirk wurden 2025 so viele Eigentumswohnungen verkauft wie in Charlottenburg-Wilmersdorf: 2.637, das sind 15,2 % aller Berliner Verkäufe von Wohnungseigentum. Insgesamt zählte der Gutachterausschuss im Bezirk 2.811 Kauffälle, auch das der höchste Wert. Im Mittel kosteten Eigentumswohnungen im früheren Bezirk Charlottenburg 5.201 €/m² Wohnfläche, im früheren Bezirk Wilmersdorf 5.547 €/m²; in ganz Berlin waren es 5.017 €/m².[[1]] Wo Ihre Wohnung liegt, hängt an Lage, Baujahr und Zustand. Deshalb bewerten wir nach den Preisen, zu denen vergleichbare Wohnungen in Ihrer Gegend tatsächlich verkauft wurden, und nach der Nachfrage nach genau dieser Art Immobilie.",
       "Bei Häusern ist der Markt klein: 2025 nennt der Gutachterausschuss 16 Verkäufe von Ein- und Zweifamilienhäusern im früheren Bezirk Charlottenburg und 13 im früheren Bezirk Wilmersdorf, mit Mittelwerten von 6.273 und 8.073 €/m² Wohnfläche. Die Bodenrichtwerte für Einfamilienhausgebiete sanken zum 01.01.2026 um rund 5 %, in den sehr guten Lagen von Westend auf 1.400 bis 1.800 €/m².[[1]]"
     ]
   },
@@ -194,13 +194,13 @@
     "h2": "Kaufen und investieren in Charlottenburg-Wilmersdorf",
     "absaetze": [
       "Als Eigennutzer wählen Sie zwischen dicht bebauten Kiezen mit Geschossflächenzahlen von 2,0 bis 2,5, etwa am Lietzensee, im Rheingauviertel und im Güntzelkiez, und den Villenkolonien in Westend und Grunewald.[[2]] Seit dem 01.01.2026 ist in ganz Berlin die Umwandlung von Miet- in Eigentumswohnungen in Häusern mit mehr als fünf Wohnungen genehmigungspflichtig und damit grundsätzlich verboten, bis zum 31.12.2030; für neu geschaffenen Wohnraum gilt das nicht.[[20]] Die neun sozialen Erhaltungsgebiete des Bezirks, etwa am Klausenerplatz, berühren die Kieze auf dieser Seite nicht.[[19]]",
-      "Als Kapitalanleger rechnen Sie mit dem Mietspiegel 2026 und der Mietpreisbremse, die in ganz Berlin bis 31.12.2029 gilt: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[4,6]] Bestandsmieten dürfen bis zur Vergleichsmiete in drei Jahren um höchstens 15 % steigen.[[7]] 80 % der Mietangebote im Bezirk lagen 2025 zwischen 10,00 und 28,20 €/m².[[9]] Aus Kaufpreis, Miete und Bewirtschaftungskosten rechnen wir mit Ihnen die Rendite, bevor Sie kaufen."
+      "Als Kapitalanleger rechnen Sie mit dem Mietspiegel 2026 und der Mietpreisbremse, die in ganz Berlin bis 31.12.2029 gilt: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[4,6]] Bestandsmieten dürfen bis zur Vergleichsmiete in drei Jahren um höchstens 15 % steigen.[[7]] 80 % der Mietangebote im Bezirk lagen 2025 zwischen 10,00 und 28,20 €/m².[[9]] Aus Kaufpreis, Miete und laufenden Kosten rechnen wir mit Ihnen die Rendite, bevor Sie kaufen."
     ]
   },
   "finanzieren": {
     "h2": "Finanzierung für Charlottenburg-Wilmersdorf",
     "absaetze": [
-      "Eigentumswohnungen kosteten 2025 im früheren Bezirk Charlottenburg im Mittel 5.201 €/m² Wohnfläche, in Grunewald 6.111 €/m².[[1]] Dazu kommen die Kaufnebenkosten und wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen: Wir rechnen das mit Ihnen durch, vergleichen Ihre Finanzierung über Europace und Baufinex und fragen parallel Banken direkt an."
+      "Eigentumswohnungen kosteten 2025 im früheren Bezirk Charlottenburg im Mittel 5.201 €/m² Wohnfläche, in Grunewald 6.111 €/m².[[1]] Dazu kommen die Kaufnebenkosten, und wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen. Wir rechnen das mit Ihnen durch und vergleichen Ihre Finanzierung über Europace und Baufinex bei rund 500 Banken. Passt Ihr Fall nicht in deren Raster, etwa weil Sie Unternehmer sind, sprechen wir Banken direkt an."
     ]
   },
   "faq": [
@@ -231,7 +231,7 @@
     },
     {
       "frage": "Wie hoch ist die Maklerprovision in Berlin?",
-      "antwort": "Kauft ein Verbraucher eine Wohnung oder ein Einfamilienhaus, teilen sich Käufer und Verkäufer die Provision zu gleichen Teilen (§§ 656a bis 656d BGB). Bei Fischer & Geserich sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision. Bei Mehrfamilienhäusern und Grundstücken gilt die Teilung nicht. Die Provision fällt nur an, wenn der Kaufvertrag zustande kommt.",
+      "antwort": "Kauft ein Verbraucher eine Wohnung oder ein Einfamilienhaus, teilen sich Käufer und Verkäufer die Provision zu gleichen Teilen (§§ 656a bis 656d BGB). Bei Fischer & Geserich sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken gilt die Teilung nicht: Hier zahlt in der Regel der Käufer die Provision, und für Verkäufer fallen keine Provisionskosten an. Die Provision wird nur fällig, wenn der Kaufvertrag zustande kommt.",
       "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienmakler Berlin-Charlottenburg“, „Immobilienmakler Berlin“ und „Immobilienmakler Berlin-Pankow“ (Google_Areas, Oktober 2026). Antwort nach /maklerprovision/ und /kaufen/ (Stand 26.10.2026)"
     }
   ],

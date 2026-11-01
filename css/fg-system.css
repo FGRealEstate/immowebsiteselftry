@@ -2376,9 +2376,13 @@ html.fgs-js .fgs-hero--slides.is-laeuft .fgs-slide.is-on img, html.fgs-js .fgs-h
 .fgs .fgs-slides-ort { flex: none; margin: 0; white-space: nowrap; font: 400 12px/1.2 var(--fgs-sans); letter-spacing: .14em; text-transform: uppercase; color: rgba(255, 255, 255, .8); }
 
 /* §3.2 Teil 1, ohne Anheften (Handy, reduzierte Bewegung, ohne JavaScript): der Satz steht unter dem Titelbild auf Navy,
-   Marcellus 26 px weiß, darunter „Mehr über uns“ aus Glas */
+   Marcellus 26 px weiß, darunter „Mehr über uns“ aus Glas. Update 27 A4: statt reinem Navy das erste Foto der Diaschau,
+   12 px weich und mit Navy 70 % abgedunkelt (die 96-px-Fassung aus dem Makro, im Hochformat die Hochkant-Fassung) */
 .fgs-pin-dark { display: none; }
-.fgs-pin-statement { background: var(--fgs-navy); color: #fff; padding-block: clamp(64px, 12vw, 120px); text-align: center; }
+.fgs-pin-statement { position: relative; isolation: isolate; overflow: hidden; background: var(--fgs-navy); color: #fff; padding-block: clamp(64px, 12vw, 120px); text-align: center; }
+.fgs-pin-statement::before { content: ""; position: absolute; inset: -36px; z-index: -2; background: var(--fgs-satz-q, none) 50% 50% / cover no-repeat; filter: blur(12px); }
+.fgs-pin-statement::after { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(8, 8, 47, .7); }
+@media (max-aspect-ratio: 11/10) { .fgs-pin-statement::before { background-image: var(--fgs-satz-h, none); } }
 .fgs .fgs-pin-sentence { margin: 0 auto; max-width: 880px; font-family: var(--fgs-serif); font-size: 26px; line-height: 1.3; color: #fff; text-wrap: balance; }
 .fgs-pin-statement .fgs-btn { margin-top: 32px; }
 @media (min-width: 768px) { .fgs .fgs-pin-sentence { font-size: 38px; } }
@@ -2388,8 +2392,13 @@ html.fgs-js .fgs-hero--slides.is-laeuft .fgs-slide.is-on img, html.fgs-js .fgs-h
   html.fgs-mo .fgs-pin { height: 230vh; }
   html.fgs-mo .fgs-pin-stage { position: sticky; top: 0; height: 100vh; overflow: hidden; }
   html.fgs-mo .fgs-pin .fgs-hero { height: 100%; min-height: 0; }
-  html.fgs-mo .fgs-pin-dark { display: block; position: absolute; inset: 0; background: rgba(8, 8, 47, .55); opacity: 0; pointer-events: none; }
+  html.fgs-mo .fgs-pin-dark { display: block; position: absolute; inset: 0; background: rgba(8, 8, 47, .7); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); opacity: 0; pointer-events: none; }
   html.fgs-mo .fgs-pin-statement { position: absolute; inset: 0; z-index: 3; display: grid; place-items: center; padding: 0; background: none; opacity: 0; pointer-events: none; }
+  html.fgs-mo .fgs-pin-statement::before, html.fgs-mo .fgs-pin-statement::after { display: none; }
+  /* Update 27 A4: Fortschrittslinien, Pause-Zeichen und Ort blenden in 300 ms aus, sobald der Satz einblendet (is-satz aus
+     fgs-motion.js); visibility erst nach dem Ausblenden, damit das Pause-Zeichen dann weder Klick noch Fokus annimmt */
+  html.fgs-mo .fgs-pin .fgs-slides-ui { transition: opacity 300ms var(--fgs-ease), visibility 0s linear 0s; }
+  html.fgs-mo .fgs-pin.is-satz .fgs-slides-ui { opacity: 0; visibility: hidden; transition: opacity 300ms var(--fgs-ease), visibility 0s linear 300ms; }
   /* Update 22 §1: die Schicht fängt keine Klicks; ihr Button nur, solange der Satz sichtbar ist (Deckkraft über 0,5), und die
      ausgeblendeten Buttons des Titels nehmen dann keine mehr an (Klassen aus fgs-motion.js) */
   html.fgs-mo .fgs-pin-statement.is-sichtbar .fgs-btn { pointer-events: auto; }
@@ -2923,3 +2932,42 @@ section.fgs-band .fgs-band-text::before { background: radial-gradient(closest-si
 .fgs-closing-duo { justify-content: flex-start; gap: 16px 40px; }
 .fgs-closing-one { flex-direction: row; align-items: center; gap: 16px; max-width: 360px; }
 .fgs-closing-one .fgs-closing-face { flex: none; }
+
+/* Update 27 A3 (01.11.2026): erster Bildschirm der Angebotsseite. Titelbild (= erstes Galeriebild) über die volle Fensterbreite,
+   16 : 9 am Desktop, 4 : 3 auf dem Handy, ohne Höhenbegrenzung; Zähler und Pfeile im Raster darunter. Dann Titel, Ort, die zwei
+   Buttons und die Eckdaten. Das erste Bild bekommt denselben Ausschnitt wie die Karte (fokus, zoom aus data/listing-covers.json). */
+.fgs-listing-top .fgs-gallery-stage { aspect-ratio: 16 / 9; max-height: none; border-radius: 0; }
+@media (max-width: 599px) { .fgs-listing-top .fgs-gallery-stage { aspect-ratio: 4 / 3; } }
+.fgs-listing-top .fgs-gallery-bar { width: 100%; max-width: calc(var(--fgs-max) + 2 * var(--fgs-pad)); margin-inline: auto; padding-inline: var(--fgs-pad); }
+.fgs-listing-top .fgs-listing-head-text { margin-top: clamp(40px, 5vw, 64px); }
+.fgs-listing-top .fgs-btns { margin-top: 32px; }
+.fgs-listing-top .fgs-listing-facts { margin-top: clamp(48px, 5vw, 72px); }
+.fgs-listing-top + .fgs-listing { padding-top: 0; border-top: 0; }
+.fgs-listing-top .fgs-obj-design::before { inset: clamp(18px, 2.5vw, 32px); }
+.fgs-gallery-stage.fgs-obj-design img { position: static; width: auto; height: clamp(58px, 7vw, 96px); opacity: 1; object-fit: contain; }
+.fgs-listing-top .fgs-obj-design-ort { font-size: clamp(24px, 3vw, 40px); }
+.fgs-gallery-stage img.fgs-gallery-cover { object-position: var(--fgs-pos, 50% 50%); }
+/* Der Zoom ist für die 3 : 2-Karte gedacht (Autos am unteren Rand); 16 : 9 schneidet sie schon ab, 4 : 3 auf dem Handy nicht */
+@media (max-width: 599px) { .fgs-gallery-stage img.fgs-gallery-cover { transform: scale(var(--fgs-zoom, 1)); transform-origin: var(--fgs-pos, 50% 50%); } }
+
+/* Update 27 A5 (01.11.2026): „F&G in Zahlen“ auf der Startseite auf Navy (#08082F), damit nicht sechs beige Abschnitte
+   hintereinander stehen. Zahlen weiß, „+“ und Sterne Gold, Text weiß 75 %; die Trennlinien bleiben Gold 40 % (Makro facts, navy). */
+.fgs-facts-sec--navy { background: #08082F; color: #fff; }
+.fgs .fgs-facts-sec--navy h2, .fgs-facts-sec--navy .fgs-fact-figure { color: #fff; }
+.fgs-facts-sec--navy .fgs-fact-plus, .fgs-facts-sec--navy .fgs-fact-stars { color: var(--fgs-gold); }
+.fgs-facts-sec--navy .fgs-fact-text, .fgs-facts-sec--navy .fgs-source, .fgs-facts-sec--navy .fgs-source a { color: rgba(255, 255, 255, .75) !important; }
+
+/* Update 27 A6 (01.11.2026): „Ihre Ansprechpartner“ ab 768 px mit höchstens 440 px breiten Karten, beide mittig; die vier
+   Grundsätze bleiben. Nie hochgerechnet: Die Zuschnitte aus den Quellen sind 1326 px (Timon) und 1849 px (Lennart) breit,
+   440 px brauchen 880 px. A7: auf dem Handy beide Karten untereinander in voller Breite, ohne seitliches Wischen. */
+.fgs-partners-cards { grid-template-columns: repeat(2, minmax(0, 440px)); justify-content: center; }
+@media (max-width: 767px) {
+  .fgs-partners-cards { grid-template-columns: minmax(0, 1fr); grid-auto-flow: row; grid-auto-columns: auto; row-gap: 32px; overflow: visible; scroll-snap-type: none; margin-inline: 0; padding-inline: 0; }
+}
+/* Update 27 A7: Aktuelle Angebote der Startseite auf dem Handy: drei Karten, darunter „Alle Angebote ansehen“ statt des Buttons oben */
+.fgs-obj-more { display: none; }
+@media (max-width: 767px) {
+  .fgs-obj-grid--home > li:nth-child(n + 4) { display: none; }
+  .fgs-obj-head-btn { display: none; }
+  .fgs-obj-more { display: flex; margin-top: 40px; }
+}

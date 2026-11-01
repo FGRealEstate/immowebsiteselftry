@@ -622,7 +622,7 @@ async function waehleTitelbild(id, images) {
     return { url: images[0].url, quelle: "erstes Bild" };
 }
 
-// Setzt cover, cover_design und main_image (= Titelbild) an Angeboten, Projekten und Projekteinheiten.
+// Setzt cover, cover_design und main_image (= Titelbild) an Angeboten, Projekten und Projekteinheiten und stellt es in der Galerie nach vorn.
 async function titelbilder(objekte) {
     const cache = new Map();
     await Promise.all(objekte.map(async (objekt) => {
@@ -633,6 +633,10 @@ async function titelbilder(objekte) {
         objekt.cover_design = Boolean(cover.design);
         objekt.cover_source = cover.quelle;
         if (cover.url) objekt.main_image = cover.url;
+        // Update 27 A3 (01.11.2026): Die Galerie beginnt mit dem Titelbild der Karte, die übrigen Bilder in Propstacks Reihenfolge.
+        if (cover.url && Array.isArray(objekt.gallery) && objekt.gallery.includes(cover.url)) {
+            objekt.gallery = [cover.url, ...objekt.gallery.filter((url) => url !== cover.url)];
+        }
     }));
 }
 
@@ -647,13 +651,40 @@ function getPublicLocation(unit) {
 
 // Ortsteil aus dem Propstack-Feld „district“ (API-Doku, Beispiel „Objekt lesen“: "district", "region", "zip_code", "city").
 // Nur für die Zuordnung zur Gebietsseite und für Referenzen; Straße und Hausnummer bleiben weiter unveröffentlicht.
+// Update 27 A1 (01.11.2026): Propstack liefert das Feld als { label: "Gemarkung", value: null }. textValue nimmt bei leerem
+// Wert die Beschriftung, deshalb stand auf allen Karten „Berlin-Gemarkung“. Jetzt zählt nur der Wert.
+function feldWert(input) {
+    return isPlainObject(input) ? textValue(input.pretty_value) || textValue(input.value) : textValue(input);
+}
+
 function getDistrictName(unit) {
-    return textValue(unit.district) || textValue(unit.sublocality) || null;
+    return feldWert(unit.district) || feldWert(unit.sublocality) || feldWert(unit.sublocality_level_1) || null;
+}
+
+/* Update 27 A1: Ortsteil für Karte und Angebotsseite. 1. das Propstack-Feld (oben), 2. der Ortsteil, den Timon im Feld „Lage“
+   (location_note) selbst nennt: „im Berliner Ortsteil Westend“, „im Dresdner Stadtteil Reick“, „Friedenau, ein … Ortsteil von
+   Schöneberg“. Stand 01.11.2026 ist das Propstack-Feld bei allen 12 Angeboten leer, der Lage-Text nennt den Ortsteil bei 11.
+   Ohne beides bleibt es bei der Stadt (Vorlage). Nur Anzeige: Gebietsseite und Ansprechpartner richten sich weiter nach
+   getDistrictName und der PLZ. */
+function getOrtsteil(unit) {
+    const feld = getDistrictName(unit);
+    if (feld) return feld;
+    const text = String(feldWert(unit.location_note) || "").replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
+    // ein Wort, mit Bindestrich verbunden („Alt-Treptow“) oder zwei Wörter mit „-er“ vorne („Prenzlauer Berg“, „Falkenhagener Feld“)
+    const name = "([A-ZÄÖÜ][a-zäöüß]+er [A-ZÄÖÜ][a-zäöüß]+|[A-ZÄÖÜ][a-zäöüß]+(?:-[A-ZÄÖÜ][a-zäöüß]+)*)";
+    const treffer = text.match(new RegExp(`\\b(?:Ortsteil|Stadtteil)\\s+${name}(?=[\\s,.;:()]|$)`))
+        || text.match(new RegExp(`^${name}, (?:ein|eine|einer)\\b[^.]{0,120}?\\b(?:Ortsteil|Stadtteil)\\b`));
+    return treffer && !["Von", "Der", "Die", "Des"].includes(treffer[1]) ? treffer[1] : null;
 }
 
 // PLZ nur für die Zuordnung des Ansprechpartners (Teil B 4); sie wird nicht veröffentlicht, wie Straße und Hausnummer.
 function getZip(unit) {
     return String(textValue(unit.zip_code) || "").replace(/\D/g, "") || null;
+}
+
+function grossAnfang(text) {
+    const s = String(text || "");
+    return s.replace(/^(\s*)(\p{Ll})/u, (_, leer, b) => leer + b.toLocaleUpperCase("de-DE"));
 }
 
 function getPublicTitle(unit, marketingType, propertyType) {
@@ -1150,7 +1181,10 @@ function buildUnit(unit) {
         unit.object_type || unit.rs_type || unit.rs_category || unit.category
     );
 
-    const title = getPublicTitle(unit, marketingType, propertyType);
+    // Update 27 A2 (01.11.2026): erster Buchstabe groß („bezugsfreie Wohnung …“ → „Bezugsfreie Wohnung …“), überall, wo der Titel
+    // erscheint (Karte, H1, Browser-Tab, Alt-Text, JSON-LD); der Rest bleibt, wie Timon ihn schreibt. Die Adresse ändert sich nicht
+    // (slugify schreibt alles klein).
+    const title = grossAnfang(getPublicTitle(unit, marketingType, propertyType));
     const slug = slugify(`${title}-${unit.id}`);
 
     const priceRaw = firstNumber(unit, [
@@ -1276,6 +1310,7 @@ function buildUnit(unit) {
         unit_number: firstText(unit, ["unit_number", "external_id", "property_number", "custom_fields.einheitennummer"]),
         location: getPublicLocation(unit),
         district: getDistrictName(unit),
+        ortsteil: getOrtsteil(unit),
         area: findArea(getPublicLocation(unit), getDistrictName(unit)),
         kontakt: findKontakt(getPublicLocation(unit), getDistrictName(unit), findArea(getPublicLocation(unit), getDistrictName(unit)), getZip(unit)),
         marketing_type: marketingType,

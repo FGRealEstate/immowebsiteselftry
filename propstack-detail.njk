@@ -30,14 +30,16 @@ eleventyComputed:
     Miete / m² passt nicht mehr in die Zahlenreihe und steht oben in den Eckdaten; Preis / m² steht dort ohnehin („Preis/qm“).
     Die Seitenleiste mit Eckdaten-Karte und Ansprechpartner-Karte entfällt; Telefon und Porträt stehen im S8, die E-Mail im Fuß
     (kontakte.js hat keine eigene Adresse je Person). -#}
-{% from "fgs-listing.njk" import listingHead, gallery, galleryScript, listingFacts, areaBlock %}
+{% from "fgs-listing.njk" import listingTitle, gallery, galleryScript, listingFacts, areaBlock %}
 {% from "fgs-macros.njk" import textlink, closing with context %}
 {% set loc = (property.location or "") | lower %}
 {#- Teil B 4 (31.10.2026): Ansprechpartner aus _data/propstack.js (findKontakt), sonst die bisherige Ortsregel #}
 {% set kontaktKey = property.kontakt or ("timon" if ("leipzig" in loc or "dresden" in loc) else "lennart") %}
 {% set pageUrl = "https://fg-realestate.de" + property.url %}
 {% set showCheck = property.is_investment and property.marketing_type == "Kauf" and property.cold_rent_raw and property.purchase_price_raw %}
-{% set meta %}{{ [property.location, property.property_type, ("Nr. " ~ property.unit_number) if property.unit_number else ""] | select | join(" · ") }}{% if property.project_url %}{% if property.location or property.property_type or property.unit_number %} · {% endif %}Teil von <a href="{{ property.project_url }}">{{ property.project_name }}</a>{% endif %}{% endset %}
+{#- Update 27 A1: Ort unter dem Titel mit Ortsteil („Westend, Berlin“), ohne ihn die Stadt -#}
+{% set ortZeile = (property.ortsteil ~ ", " ~ property.location) if (property.ortsteil and property.location and property.ortsteil != property.location) else (property.ortsteil or property.location) %}
+{% set meta %}{{ [ortZeile, property.property_type, ("Nr. " ~ property.unit_number) if property.unit_number else ""] | select | join(" · ") }}{% if property.project_url %}{% if property.location or property.property_type or property.unit_number %} · {% endif %}Teil von <a href="{{ property.project_url }}">{{ property.project_name }}</a>{% endif %}{% endset %}
 {% set k1 = { href: property.request_url, label: "Objekt anfragen" } %}
 {% if property.marketing_type != "Miete" %}{% set knoepfe = [k1, { href: "/finanzierungsberatung.html", label: "Finanzierung prüfen" }] %}{% else %}{% set knoepfe = [k1] %}{% endif %}
 {% if property.project_url %}{% set crumbs = [{ href: "/angebote.html", label: "Angebote" }, { href: property.project_url, label: property.project_name }] %}{% else %}{% set crumbs = [{ href: "/angebote.html", label: "Angebote" }] %}{% endif %}
@@ -53,19 +55,23 @@ eleventyComputed:
 {% if property.is_investment and property.gross_yield %}{% set fakten = fakten.concat([{ wert: property.gross_yield, label: "Bruttorendite" }]) %}{% endif %}
 {% if property.is_investment and property.rent_per_sqm %}{% set mehr = mehr.concat([{ wert: property.rent_per_sqm | eur, label: "Miete / m²" }]) %}{% endif %}
 
-{{ listingHead({
-  crumbs: crumbs,
-  current: property.title,
-  kicker: property.strategy ~ ((" · " ~ property.marketing_type) if property.marketing_type else ""),
-  titel: property.title,
-  meta: meta,
-  buttons: knoepfe
-}) }}
-
-<section class="fgs-section fgs-listing" aria-label="Bilder und Angaben">
+{#- Update 27 A3 (01.11.2026): erster Bildschirm. Das Titelbild (= erstes Galeriebild) über die volle Breite, 16 : 9 am Desktop,
+    4 : 3 auf dem Handy; darunter Titel, Ort und die zwei Buttons, dann die Eckdaten. Vorher stand oben nur der Titel auf Beige. -#}
+<section class="fgs-listing-top" aria-labelledby="seitentitel">
+  {{ gallery(property.gallery, property.title, "Für dieses Angebot folgen die Fotos noch", property.cover, (property.ortsteil or property.location or " ") if property.cover_design else false) }}
   <div class="fgs-wrap">
-    {{ gallery(property.gallery, property.title, "Für dieses Angebot folgen die Fotos noch") }}
+    {{ listingTitle({
+      kicker: property.strategy ~ ((" · " ~ property.marketing_type) if property.marketing_type else ""),
+      titel: property.title,
+      meta: meta,
+      buttons: knoepfe
+    }) }}
     {{ listingFacts(fakten, property.title) }}
+  </div>
+</section>
+
+<section class="fgs-section fgs-listing" aria-label="Angaben zum Objekt">
+  <div class="fgs-wrap">
 
     {% if property.descriptions and property.descriptions.length %}
     <section class="fgs-listing-block fgs-cols" aria-labelledby="objekt-lage">

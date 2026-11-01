@@ -171,7 +171,7 @@
   "verkaufen": {
     "h2": "Immobilie in Steglitz-Zehlendorf verkaufen",
     "absaetze": [
-      "In keinem Berliner Bezirk wurden 2025 so viele bebaute Grundstücke verkauft wie in Steglitz-Zehlendorf: 540, das sind 14,7 % aller Berliner Verkäufe. Insgesamt zählte der Gutachterausschuss im Bezirk 2.240 Kauffälle, davon 1.660 für Wohnungseigentum. Für Ein- und Zweifamilienhäuser nennt er im früheren Bezirk Zehlendorf einen Mittelwert von 6.487 €/m² Wohnfläche bei einer Spanne von 4.129 bis 9.417 €/m², im früheren Bezirk Steglitz 5.037 €/m² bei 3.078 bis 7.104 €/m².[[1]] Wo Ihr Haus in dieser Spanne liegt, hängt an Lage, Grundstück, Baujahr und Zustand. Wir bewerten deshalb nach Ihrer Bodenrichtwertzone, der Wohnlage und Vergleichsverkäufen.",
+      "In keinem Berliner Bezirk wurden 2025 so viele bebaute Grundstücke verkauft wie in Steglitz-Zehlendorf: 540, das sind 14,7 % aller Berliner Verkäufe. Insgesamt zählte der Gutachterausschuss im Bezirk 2.240 Kauffälle, davon 1.660 für Wohnungseigentum. Für Ein- und Zweifamilienhäuser nennt er im früheren Bezirk Zehlendorf einen Mittelwert von 6.487 €/m² Wohnfläche bei einer Spanne von 4.129 bis 9.417 €/m², im früheren Bezirk Steglitz 5.037 €/m² bei 3.078 bis 7.104 €/m².[[1]] Wo Ihr Haus in dieser Spanne liegt, hängt an Lage, Grundstück, Baujahr und Zustand. Deshalb bewerten wir nach den Preisen, zu denen vergleichbare Wohnungen in Ihrer Gegend tatsächlich verkauft wurden, und nach der Nachfrage nach genau dieser Art Immobilie.",
       "Die Bodenrichtwerte für Ein- und Zweifamilienhausgebiete hat der Gutachterausschuss zum 01.01.2026 um rund 5 % gesenkt. Für Eigentumswohnungen lag der Mittelwert 2025 im früheren Bezirk Steglitz bei 4.390 nach 4.381 €/m² im Vorjahr, im früheren Bezirk Zehlendorf bei 4.768 nach 4.638 €/m².[[1]]"
     ]
   },
@@ -179,13 +179,13 @@
     "h2": "Kaufen und investieren in Steglitz-Zehlendorf",
     "absaetze": [
       "Als Eigennutzer wählen Sie im Bezirk vor allem nach der Bahnlinie: Die S1 fährt über Rathaus Steglitz, Lichterfelde West und Schlachtensee, S25 und S26 halten in Lichterfelde Ost, die S7 in Nikolassee und Wannsee. Von diesen Bahnhöfen sind Sie in 19 bis 32 Minuten an der Friedrichstraße.[[10]] Seit dem 01.01.2026 ist in ganz Berlin die Umwandlung von Miet- in Eigentumswohnungen in Häusern mit mehr als fünf Wohnungen genehmigungspflichtig und damit grundsätzlich verboten, bis zum 31.12.2030; für neu geschaffenen Wohnraum gilt das nicht.[[14]] In den sozialen Erhaltungsgebieten in Steglitz gilt das auch für kleinere Häuser und Luxusmodernisierungen oder Wohnungszusammenlegungen können versagt werden.[[13]]",
-      "Als Kapitalanleger rechnen Sie mit dem Mietspiegel 2026 und der Mietpreisbremse, die in ganz Berlin bis 31.12.2029 gilt: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[4,6]] Bestandsmieten dürfen bis zur Vergleichsmiete in drei Jahren um höchstens 15 % steigen.[[7]] 80 % der Mietangebote im Bezirk lagen 2025 zwischen 8,88 und 23,67 €/m².[[9]] Aus Kaufpreis, Miete und Bewirtschaftungskosten rechnen wir mit Ihnen die Rendite, bevor Sie kaufen."
+      "Als Kapitalanleger rechnen Sie mit dem Mietspiegel 2026 und der Mietpreisbremse, die in ganz Berlin bis 31.12.2029 gilt: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[4,6]] Bestandsmieten dürfen bis zur Vergleichsmiete in drei Jahren um höchstens 15 % steigen.[[7]] 80 % der Mietangebote im Bezirk lagen 2025 zwischen 8,88 und 23,67 €/m².[[9]] Aus Kaufpreis, Miete und laufenden Kosten rechnen wir mit Ihnen die Rendite, bevor Sie kaufen."
     ]
   },
   "finanzieren": {
     "h2": "Finanzierung für Steglitz-Zehlendorf",
     "absaetze": [
-      "Eigentumswohnungen kosteten 2025 im früheren Bezirk Zehlendorf im Mittel 4.768 €/m² Wohnfläche, Ein- und Zweifamilienhäuser 6.487 €/m².[[1]] Dazu kommen die Kaufnebenkosten und wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen: Wir rechnen das mit Ihnen durch, vergleichen Ihre Finanzierung über Europace und Baufinex und fragen parallel Banken direkt an."
+      "Eigentumswohnungen kosteten 2025 im früheren Bezirk Zehlendorf im Mittel 4.768 €/m² Wohnfläche, Ein- und Zweifamilienhäuser 6.487 €/m².[[1]] Dazu kommen die Kaufnebenkosten, und wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen. Wir rechnen das mit Ihnen durch und vergleichen Ihre Finanzierung über Europace und Baufinex bei rund 500 Banken. Passt Ihr Fall nicht in deren Raster, etwa weil Sie Unternehmer sind, sprechen wir Banken direkt an."
     ]
   },
   "faq": [
@@ -216,7 +216,7 @@
     },
     {
       "frage": "Wie hoch ist die Maklerprovision in Berlin?",
-      "antwort": "Kauft ein Verbraucher eine Wohnung oder ein Einfamilienhaus, teilen sich Käufer und Verkäufer die Provision zu gleichen Teilen (§§ 656a bis 656d BGB). Bei Fischer & Geserich sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision. Bei Mehrfamilienhäusern und Grundstücken gilt die Teilung nicht. Die Provision fällt nur an, wenn der Kaufvertrag zustande kommt.",
+      "antwort": "Kauft ein Verbraucher eine Wohnung oder ein Einfamilienhaus, teilen sich Käufer und Verkäufer die Provision zu gleichen Teilen (§§ 656a bis 656d BGB). Bei Fischer & Geserich sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken gilt die Teilung nicht: Hier zahlt in der Regel der Käufer die Provision, und für Verkäufer fallen keine Provisionskosten an. Die Provision wird nur fällig, wenn der Kaufvertrag zustande kommt.",
       "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienmakler Berlin“, „Immobilienmakler Berlin-Pankow“ und „Immobilienmakler Berlin-Charlottenburg“ (Google_Areas, Oktober 2026). Antwort nach /maklerprovision/ und /kaufen/ (Stand 26.10.2026)"
     }
   ],

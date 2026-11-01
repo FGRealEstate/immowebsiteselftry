@@ -30,16 +30,19 @@
     "grund": "Wohnzimmer, hell"
   },
   "5779635": {
-    "bild": 50220887,
-    "titel": "Wohn- / Schlafzimmer",
-    "url": "https://images.propstack.de/photos/3n5BCT3eB84jXM8yypXNnerA/photo/WFCFPgzQDztv5ao7xE1rSUs1/Screenshot%202026-08-06%20115505.png",
-    "grund": "modernisiertes Zimmer, hell"
+    "bild": 50220886,
+    "titel": "Ansicht der Straße",
+    "url": "https://images.propstack.de/photos/3n5BCT3eB84jXM8yypXNnerA/photo/KL4Z4xHMZAucChH6jF6sTBrE/Screenshot%202026-08-06%20115441.png",
+    "fokus": "100% 50%",
+    "grund": "Update 27 A3 (01.11.2026): vorher das leere, schmale Zimmer in Längsrichtung (wirkt wie ein Flur). Jetzt das Haus von außen an einem klaren Tag; nicht die Frontansicht, weil 5725944 sie auf der Startseite direkt daneben zeigt. Ausschnitt rechts, weniger Glasfassade"
   },
   "5725944": {
-    "bild": 49354194,
-    "titel": "Treppenhaus",
-    "url": "https://images.propstack.de/photos/3n5BCT3eB84jXM8yypXNnerA/photo/53KXws76YtkHrDyYpFDKzrbh/2022-03-17_BN-Berlichingenstrasse-15-47.webp",
-    "grund": "Hauseingang mit Fliesenboden (die Zimmer sind bewohnt und vollgestellt)"
+    "bild": 49354193,
+    "titel": "Ansicht Vorderhaus",
+    "url": "https://images.propstack.de/photos/3n5BCT3eB84jXM8yypXNnerA/photo/yXCY1324cDxQ86TANkSGWxGJ/2022-03-17_BN-Berlichingenstrasse-15-7.webp",
+    "fokus": "50% 0%",
+    "zoom": 1.25,
+    "grund": "Update 27 A3 (01.11.2026): vorher Treppenhaus/Hauseingang (Flur, nach der Regel nie). Jetzt Vorderhaus Berlichingenstraße von vorn, hell, gerade Linien; die Zimmer sind bewohnt und vollgestellt. Ausschnitt oben, ohne die Autos"
   },
   "5725945": {
     "bild": 49785606,

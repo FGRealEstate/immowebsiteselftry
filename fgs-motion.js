@@ -77,8 +77,10 @@
 
   /* ---------- §3.2 Teil 1: Titelbild angeheftet (ab 768 px). Weg 230 vh, Fortschritt p per scrub:
      p 0–0,30 Kicker, H1 und Buttons blenden aus und steigen 40 px; p 0,38–0,66 blendet der Satz ein und steigt 30 px auf,
-     gleichzeitig die Navy-Schicht (55 %) von 0 auf 1. Die Diaschau läuft dabei weiter. Mit der Tastatur springt die Seite an
-     die Stelle, an der das fokussierte Element zu sehen ist. ---------- */
+     gleichzeitig die Navy-Schicht von 0 auf 1 (Update 27 A4: Navy 70 %, das Foto darunter 12 px weich). Die Diaschau läuft
+     dabei weiter. Mit der Tastatur springt die Seite an die Stelle, an der das fokussierte Element zu sehen ist.
+     Update 27 A4: Sobald der Satz einblendet, blenden Fortschrittslinien, Pause-Zeichen und Ort in 300 ms aus (Klasse
+     is-satz, Übergang in CSS), beim Zurückscrollen wieder ein. ---------- */
   const mm = gsap.matchMedia();
   const pin = document.querySelector('[data-fgs-pin]');
   if (pin) {
@@ -89,6 +91,7 @@
       const klickbar = () => {
         satz.classList.toggle('is-sichtbar', gsap.getProperty(satz, 'opacity') > 0.5);
         text.classList.toggle('is-aus', gsap.getProperty(text, 'opacity') < 0.5);
+        pin.classList.toggle('is-satz', gsap.getProperty(satz, 'opacity') > 0.001);
       };
       const tl = gsap.timeline({ defaults: { ease: 'none' }, onUpdate: klickbar, scrollTrigger: { trigger: pin, start: 'top top', end: 'bottom bottom', scrub: true } });
       tl.fromTo(text, { opacity: 1, y: 0 }, { opacity: 0, y: -40, duration: 0.30 }, 0)
@@ -101,7 +104,7 @@
       satz.addEventListener('focusin', toSatz);
       text.addEventListener('focusin', toTitel);
       klickbar();
-      return () => { satz.removeEventListener('focusin', toSatz); text.removeEventListener('focusin', toTitel); satz.classList.remove('is-sichtbar'); text.classList.remove('is-aus'); };
+      return () => { satz.removeEventListener('focusin', toSatz); text.removeEventListener('focusin', toTitel); satz.classList.remove('is-sichtbar'); text.classList.remove('is-aus'); pin.classList.remove('is-satz'); };
     });
   }
 

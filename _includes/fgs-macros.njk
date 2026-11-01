@@ -90,7 +90,8 @@
     vorgeladen (base.njk, heroPreload); die Folien 2–5 tragen ihre Quellen in data-srcset/data-src und laden nach dem load-Ereignis.
     Angeheftet (fgs-motion.js, ab 768 px und nur mit Bewegung): .fgs-pin ist 230 vh hoch, die Bühne 100 vh sticky; Titel aus,
     Satz und Navy-Schicht ein, per ScrollTrigger scrub. Ohne Bewegung, ohne JavaScript und auf dem Handy steht der Satz unter
-    dem Titelbild auf Navy. -#}
+    dem Titelbild auf Navy. Update 27 A4: dort liegt das erste Foto der Diaschau unscharf darunter (96 px aus
+    _data/platzhalter.json, Navy 70 %); angeheftet zeichnet die Navy-Schicht das laufende Foto mit 12 px weich. -#}
 {% macro picSlide(b, alt, eager) -%}
 {%- set a = "" if eager else "data-" %}
 <picture>
@@ -134,7 +135,8 @@
     </div>
   </div>
 </section>
-<div class="fgs-pin-statement">
+{%- set satzBild = platzhalter["hero-slide-berlin"] %}
+<div class="fgs-pin-statement"{% if satzBild %} style="--fgs-satz-q: url({{ satzBild.q }}); --fgs-satz-h: url({{ satzBild.h }})"{% endif %}>
   <div class="fgs-wrap">
     <p class="fgs-pin-sentence">{{ h.satz.text }}</p>
     <a class="fgs-btn fgs-btn--glass" href="{{ h.satz.href }}">{{ h.satz.label }}</a>
@@ -468,7 +470,8 @@
     Titel (Navy, Goldrahmen, F&G-Zeichen, Ort). Ort: Propstack-Stadtteil, solange der leer ist die Stadt.
     filter=true (§4.5 Angebotsseite): Klasse offer-filter-card und die data-* Felder für den Filter, wie bisher offerCard. -#}
 {% macro angebot(o, sizes="(min-width: 1024px) 380px, (min-width: 768px) 46vw, 92vw", filter=false) -%}
-{%- set ort = (o.location + "-" + o.district) if (o.district and o.location) else (o.district or o.location) -%}
+{#- Update 27 A1: nur der Ortsteil („Westend“, „Reick“), ohne ihn die Stadt; nie „Gemarkung“ (o.ortsteil, _data/propstack.js) -#}
+{%- set ort = o.ortsteil or o.location -%}
 <li{% if filter %} class="offer-filter-card" data-strategie="{{ o.strategy_key }}" data-vermarktung="{{ o.marketing_type or '' }}" data-objektart="{{ o.property_type or '' }}" data-preis="{{ o.price_raw or '' }}" data-flaeche="{{ o.living_space_raw or '' }}" data-rendite="{{ o.gross_yield_raw or '' }}"{% endif %}>
   <a class="fgs-obj" href="{{ o.url }}">
     {%- if o.cover and o.cover.url %}
@@ -533,14 +536,18 @@
     Die Zahl steht zweimal im HTML: für Screenreader (Endzahl) und sichtbar (zählt, für Screenreader ausgeblendet). -#}
 {#- Update 23 A5: einheit = Zusatz hinter der Zahl in 44 % der Größe auf derselben Grundlinie („4“ + „Mio.+“), gezählt wird nur
     die Zahl; sterne = fünf Sterne (16 px) direkt unter der Zahl. Beides nur dekorativ, Screenreader lesen „4 Mio.+“ und die Note. -#}
+{#- Update 27 A5: navy = true setzt die Reihe auf Navy (#08082F): Zahlen weiß, „+“ und Sterne Gold, Text weiß 75 %. Das „+“ am Ende
+    einer Zahl oder Einheit steht dann in eigener Spanne neben der gezählten Zahl, weil das Hochzählen (fg-system.js) den Text
+    der Zahl neu schreibt und eine Spanne darin verlöre. -#}
 {% macro facts(f) -%}
 {%- set zaehlt = f.zaehlen or f.hochzaehlen %}
-<section class="fgs-section{% if f.mitte %} fgs-facts-sec--big{% endif %}{% if f.zaehlen %} fgs-facts-sec--count{% endif %}" id="{{ f.id }}" aria-labelledby="{{ f.id }}-titel">
+<section class="fgs-section{% if f.mitte %} fgs-facts-sec--big{% endif %}{% if f.zaehlen %} fgs-facts-sec--count{% endif %}{% if f.navy %} fgs-facts-sec--navy{% endif %}" id="{{ f.id }}" aria-labelledby="{{ f.id }}-titel">
   <div class="fgs-wrap">
     <div class="fgs-head{% if f.mitte %} fgs-head--centre{% endif %}"><h2{% if f.mitte %} class="fgs-h2-chapter"{% endif %} id="{{ f.id }}-titel">{{ f.titel }}</h2></div>
     <ul class="fgs-facts" role="list" style="--n: {{ f.items | length }}"{% if zaehlt %} data-fgs-count{% endif %}>
       {%- for x in f.items %}
-      <li class="fgs-fact">{% if zaehlt %}<span class="fgs-fact-figure fgs-count"><span class="fgs-sr">{{ x.wert }}{% if x.einheit %} {{ x.einheit }}{% endif %}</span><span class="fgs-count-now{% if x.gross %} fgs-count-now--gross{% endif %}" aria-hidden="true">{{ x.wert }}</span>{% if x.einheit %}<span class="fgs-fact-unit" aria-hidden="true">{{ x.einheit }}</span>{% endif %}</span>{% else %}<span class="fgs-fact-figure">{{ x.wert }}</span>{% endif %}{% if x.sterne %}<span class="fgs-fact-stars" aria-hidden="true">{% for i in range(0, 5) %}<svg viewBox="0 0 24 24" focusable="false"><path d="m12 2.8 2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg>{% endfor %}</span>{% endif %}{% if x.label %}<span class="fgs-label">{{ x.label }}</span>{% endif %}{% if x.text %}<span class="fgs-fact-text">{{ x.text }}</span>{% endif %}{% if x.quelle %}<span class="fgs-small fgs-source">{{ x.quelle | safe }}</span>{% endif %}</li>
+      {%- set wert = x.wert | string %}{% set plus = f.navy and wert.endsWith("+") %}{% set einheit = (x.einheit or "") | string %}{% set eplus = f.navy and einheit.endsWith("+") %}
+      <li class="fgs-fact">{% if zaehlt %}<span class="fgs-fact-figure fgs-count"><span class="fgs-sr">{{ x.wert }}{% if x.einheit %} {{ x.einheit }}{% endif %}</span><span class="fgs-count-now{% if x.gross %} fgs-count-now--gross{% endif %}" aria-hidden="true">{{ wert.slice(0, -1) if plus else x.wert }}</span>{% if plus %}<span class="fgs-fact-plus" aria-hidden="true">+</span>{% endif %}{% if x.einheit %}<span class="fgs-fact-unit" aria-hidden="true">{{ einheit.slice(0, -1) if eplus else x.einheit }}{% if eplus %}<span class="fgs-fact-plus">+</span>{% endif %}</span>{% endif %}</span>{% else %}<span class="fgs-fact-figure">{{ x.wert }}</span>{% endif %}{% if x.sterne %}<span class="fgs-fact-stars" aria-hidden="true">{% for i in range(0, 5) %}<svg viewBox="0 0 24 24" focusable="false"><path d="m12 2.8 2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg>{% endfor %}</span>{% endif %}{% if x.label %}<span class="fgs-label">{{ x.label }}</span>{% endif %}{% if x.text %}<span class="fgs-fact-text">{{ x.text }}</span>{% endif %}{% if x.quelle %}<span class="fgs-small fgs-source">{{ x.quelle | safe }}</span>{% endif %}</li>
       {%- endfor %}
     </ul>
     {%- if f.hinweis %}

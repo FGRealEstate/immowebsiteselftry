@@ -44,3 +44,10 @@ module.exports = {
     { author: "Constantin", dateLabel: "vor 5 Monaten", rating: 5, text: "Kompetente Beratung für Finanzierungen von Immobilien" }
   ]
 };
+
+// Update 27 A8 (01.11.2026): Bewertungen von Geschäftspartnern statt Kunden zeigt die Website nirgends; auf Google bleiben sie.
+// Veit arbeitet mit F&G bei Finanzierungen zusammen. Die vollständige Liste wie bei Google steht weiter in alleReviews,
+// count und rating bleiben die Werte des Profils (23 Bewertungen, 5,0).
+const PARTNER = [{ author: "Veit", anfang: "Seit einiger Zeit arbeite ich regelmäßig mit Fischer & Geserich" }];
+module.exports.alleReviews = module.exports.reviews;
+module.exports.reviews = module.exports.alleReviews.filter((r) => !PARTNER.some((p) => r.author === p.author && r.text.startsWith(p.anfang)));

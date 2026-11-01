@@ -148,7 +148,7 @@
   "verkaufen": {
     "h2": "Immobilie in Berlin verkaufen",
     "absaetze": [
-      "Der Berliner Mittelwert hilft beim Verkauf wenig: Eigentumswohnungen kosteten 2025 allein in den vier Bezirken dieser Seite im Mittel zwischen 4.011 €/m² in Tempelhof und 6.427 €/m² in Dahlem.[[1]] Wir bewerten deshalb nach Altbezirk, Bodenrichtwertzone und Vergleichsverkäufen. Bei einer vermieteten Wohnung prüfen Käufer die Miete gegen den Mietspiegel 2026, der jeder Adresse eine einfache, mittlere oder gute Wohnlage zuordnet.[[5]] Wir gehen erst mit vollständigen Unterlagen an den Markt, denn eine fehlende Wohnflächenberechnung kann die Finanzierung eines Käufers verzögern. Die Wertermittlung ist kostenlos und meistens innerhalb weniger Stunden fertig."
+      "Der Berliner Mittelwert hilft beim Verkauf wenig: Eigentumswohnungen kosteten 2025 allein in den vier Bezirken dieser Seite im Mittel zwischen 4.011 €/m² in Tempelhof und 6.427 €/m² in Dahlem.[[1]] Deshalb bewerten wir nach den Preisen, zu denen vergleichbare Immobilien in Ihrem Kiez tatsächlich verkauft wurden. Bei einer vermieteten Wohnung prüfen Käufer die Miete gegen den Mietspiegel 2026, der jeder Adresse eine einfache, mittlere oder gute Wohnlage zuordnet.[[5]] Bevor Ihre Immobilie in die Vermarktung geht, klären wir mit Ihnen, welche Unterlagen vorliegen, und helfen, die fehlenden zu besorgen, denn eine fehlende Wohnflächenberechnung kann die Finanzierung eines Käufers verzögern. Die Wertermittlung ist kostenlos und meistens innerhalb weniger Stunden fertig."
     ]
   },
   "kaufen": {
@@ -161,7 +161,7 @@
   "finanzieren": {
     "h2": "Finanzierung für Berlin",
     "absaetze": [
-      "Eine Wohnung in Prenzlauer Berg kostete 2025 im Mittel 6.300 €/m² Wohnfläche, ein Haus in Tempelhof 4.224 €/m².[[1]] Für beides rechnen wir Kaufpreis, Kaufnebenkosten und Eigenkapital mit Ihnen durch, vergleichen Ihre Finanzierung über Europace und Baufinex und fragen parallel Banken direkt an. Finanzierungsfähigkeit und Bonität klären wir früh."
+      "Eine Wohnung in Prenzlauer Berg kostete 2025 im Mittel 6.300 €/m² Wohnfläche, ein Haus in Tempelhof 4.224 €/m².[[1]] Dazu kommen die Kaufnebenkosten, und wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen. Wir rechnen das mit Ihnen durch und vergleichen Ihre Finanzierung über Europace und Baufinex bei rund 500 Banken. Passt Ihr Fall nicht in deren Raster, etwa weil Sie Unternehmer sind, sprechen wir Banken direkt an. Finanzierungsfähigkeit und Bonität klären wir früh."
     ]
   },
   "faq": [
@@ -187,7 +187,7 @@
     },
     {
       "frage": "Wer zahlt die Maklerprovision beim Verkauf in Berlin?",
-      "antwort": "Beim Verkauf einer Wohnung oder eines Einfamilienhauses an einen Verbraucher zahlen Verkäufer und Käufer je die Hälfte (§§ 656a bis 656d BGB), bei Fischer & Geserich 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision. Für Mehrfamilienhäuser und Grundstücke gilt die Teilung nicht. Die Provision wird nur fällig, wenn der Kaufvertrag zustande kommt.",
+      "antwort": "Beim Verkauf einer Wohnung oder eines Einfamilienhauses an einen Verbraucher zahlen Verkäufer und Käufer je die Hälfte (§§ 656a bis 656d BGB), bei Fischer & Geserich 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken gilt die Teilung nicht: Hier zahlt in der Regel der Käufer die Provision, und für Verkäufer fallen keine Provisionskosten an. Die Provision wird nur fällig, wenn der Kaufvertrag zustande kommt.",
       "herkunft": "Google-Autocomplete „maklerprovision berlin wer zahlt“ (27.10.2026)"
     },
     {

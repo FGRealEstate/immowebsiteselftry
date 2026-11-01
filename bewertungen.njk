@@ -73,11 +73,12 @@ pg:
   </div>
 </section>
 
-{# Alle Bewertungen wörtlich aus dem Google-Profil, neueste zuerst (Reihenfolge der Daten wie bei Google, Update 4, 3.5) #}
+{# Alle Bewertungen wörtlich aus dem Google-Profil, neueste zuerst (Reihenfolge der Daten wie bei Google, Update 4, 3.5).
+   Update 27 A8: ohne die Bewertung eines Geschäftspartners (_data/google.js); deshalb „22 Bewertungen“ ohne „Alle“, weil Google 23 zeigt. #}
 <section class="fgs-section" id="rezensionen" aria-labelledby="rezensionen-titel">
   <div class="fgs-wrap">
     <div class="fgs-head">
-      <h2 id="rezensionen-titel">Alle {{ google.reviews.length }} Bewertungen im Wortlaut</h2>
+      <h2 id="rezensionen-titel">{{ google.reviews.length }} Bewertungen im Wortlaut</h2>
       <p class="fgs-lead">Ungekürzt und unverändert, die neuesten zuerst. Die Zeitangaben stehen so, wie Google sie am {{ google.checkedLabel }} zeigte.</p>
     </div>
     <ul class="fgs-mq-list" role="list">

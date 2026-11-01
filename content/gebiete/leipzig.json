@@ -118,7 +118,7 @@
   "verkaufen": {
     "h2": "Immobilie in Leipzig verkaufen",
     "absaetze": [
-      "Ob Ihre Wohnung vermietet ist, macht in Leipzig einen messbaren Unterschied: Weiterverkaufte Altbauwohnungen erzielten 2025 bezugsfrei im Mittel 3.054 €/m², vermietet 2.707 €/m² und beim Verkauf an den Mieter 2.937 €/m².[[1]] Wir bewerten deshalb nach Vermietungsstand, Wohnlage im Mietspiegel und Bodenrichtwertzone. Liegt Ihr Haus in einem der 15 Sanierungsgebiete, die Leipzig zwischen 1991 und 2004 festgelegt hat, klären wir vor dem Verkauf, ob der Ausgleichsbetrag festgesetzt und bezahlt ist; alle 15 Satzungen sind inzwischen aufgehoben.[[11]] Die Wertermittlung ist kostenlos und meistens innerhalb weniger Stunden fertig."
+      "Ob Ihre Wohnung vermietet ist, macht in Leipzig einen messbaren Unterschied: Weiterverkaufte Altbauwohnungen erzielten 2025 bezugsfrei im Mittel 3.054 €/m², vermietet 2.707 €/m² und beim Verkauf an den Mieter 2.937 €/m².[[1]] Deshalb bewerten wir nach den Preisen, zu denen vergleichbare Wohnungen in Ihrer Gegend tatsächlich verkauft wurden, und nach der Nachfrage nach genau dieser Art Immobilie. Liegt Ihr Haus in einem der 15 Sanierungsgebiete, die Leipzig zwischen 1991 und 2004 festgelegt hat, klären wir vor dem Verkauf, ob der Ausgleichsbetrag festgesetzt und bezahlt ist; alle 15 Satzungen sind inzwischen aufgehoben.[[11]] Die Wertermittlung ist kostenlos und meistens innerhalb weniger Stunden fertig."
     ]
   },
   "kaufen": {
@@ -131,7 +131,7 @@
   "finanzieren": {
     "h2": "Finanzierung für Leipzig",
     "absaetze": [
-      "Für seine Renditeberechnung setzt der Gutachterausschuss auf den Kaufpreis 5,5 % Grunderwerbsteuer sowie je 1 % für Notar und Grundbuch an.[[1]] Timon Fischer rechnet Kaufpreis, Nebenkosten und Eigenkapital mit Ihnen durch, vergleicht Ihre Finanzierung über Europace und Baufinex und fragt parallel Banken direkt an. Finanzierungsfähigkeit und Bonität klären wir früh."
+      "Für seine Renditeberechnung setzt der Gutachterausschuss auf den Kaufpreis 5,5 % Grunderwerbsteuer sowie je 1 % für Notar und Grundbuch an.[[1]] Wie viel Eigenkapital Sie einbringen, beeinflusst die Konditionen. Wir rechnen das mit Ihnen durch und vergleichen Ihre Finanzierung über Europace und Baufinex bei rund 500 Banken. Passt Ihr Fall nicht in deren Raster, etwa weil Sie Unternehmer sind, sprechen wir Banken direkt an. Finanzierungsfähigkeit und Bonität klären wir früh."
     ]
   },
   "faq": [
@@ -157,7 +157,7 @@
     },
     {
       "frage": "Was kostet ein Makler in Leipzig?",
-      "antwort": "Beim Verkauf einer Wohnung oder eines Einfamilienhauses an einen Verbraucher zahlen Verkäufer und Käufer je die Hälfte der Provision (§§ 656a bis 656d BGB), bundesweit und damit auch in Sachsen. Bei Fischer & Geserich sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken zahlt in der Regel der Käufer die Provision. Für Mehrfamilienhäuser und Grundstücke gilt die Teilung nicht. Fällig wird die Provision nur, wenn der Kaufvertrag zustande kommt.",
+      "antwort": "Beim Verkauf einer Wohnung oder eines Einfamilienhauses an einen Verbraucher zahlen Verkäufer und Käufer je die Hälfte der Provision (§§ 656a bis 656d BGB), bundesweit und damit auch in Sachsen. Bei Fischer & Geserich sind das 3,57 Prozent inklusive Mehrwertsteuer pro Seite. Bei Mehrfamilienhäusern, Zweifamilienhäusern und Grundstücken gilt die Teilung nicht: Hier zahlt in der Regel der Käufer die Provision, und für Verkäufer fallen keine Provisionskosten an. Die Provision wird nur fällig, wenn der Kaufvertrag zustande kommt.",
       "herkunft": "Google-Autocomplete „makler leipzig kosten“ (27.10.2026)"
     },
     {

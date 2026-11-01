@@ -105,9 +105,10 @@ faqListe:
       </div>
       <p class="fgs-partners-lead">Bei uns sprechen Sie mit den beiden Geschäftsführern selbst, vom ersten Gespräch bis zum Notartermin.</p>
     </div>
+    {#- Update 27 A6/A7: Karten höchstens 440 px breit, beide mittig; unter 768 px untereinander in voller Breite (CSS) -#}
     <ul class="fgs-partners-cards" role="list">
-      <li>{{ partner("timon", "(min-width: 1328px) 588px, (min-width: 768px) 46vw, 82vw") }}</li>
-      <li>{{ partner("lennart", "(min-width: 1328px) 588px, (min-width: 768px) 46vw, 82vw") }}</li>
+      <li>{{ partner("timon", "(min-width: 984px) 440px, (min-width: 768px) calc(50vw - 52px), calc(100vw - 48px)") }}</li>
+      <li>{{ partner("lennart", "(min-width: 984px) 440px, (min-width: 768px) calc(50vw - 52px), calc(100vw - 48px)") }}</li>
     </ul>
     <dl class="fgs-promises">
       <div><dt><span class="fgs-promise-nr" aria-hidden="true">01</span><span class="fgs-promise-t">Zuerst Ihr Ziel</span></dt><dd>Erst klären wir, was Sie vorhaben und bis wann. Danach sprechen wir über Objekte und Banken.</dd></div>
@@ -118,6 +119,24 @@ faqListe:
     <div class="fgs-partners-more">{{ textlink("/ueber-uns.html", "Mehr über uns") }}</div>
   </div>
 </section>
+
+{# 7. F&G in Zahlen (Brief §3.7): zentriert, ohne „Angabe von F&G“. Bleibt nur, wenn Timon die Zahlen bestätigt (Jesu fragt).
+   Update 27 A5 (01.11.2026): auf Navy (navy: true) und direkt nach „Ihre Ansprechpartner“; nach dem Bewertungsband stießen
+   zwei Navy-Flächen aneinander (das Band hat Navy unter dem Foto).
+   Design-Pass 3 §3.7: Zahlen in Marcellus 88 px, Trennlinien Gold 40 %, zählen einmal hoch (zaehlen). #}
+{# Vierte Kachel: Fix 2 (Jesu, 29.10.2026), Google-Bewertung statt „Europace“, wie auf Verkaufen; Anzahl aus _data/google.js. #}
+{# Update 23 A5: jede Zahl höchstens vier Zeichen groß („4“ und „Mio.+“ in 44 %), Einheit und Beschreibung in der Zeile darunter,
+   höchstens zwei Zeilen. Aus „über 4 Mio. €“ + „begleitetes Finanzierungsvolumen 2026, von der Eigentumswohnung bis zum
+   Mehrfamilienhaus“ wird „4 Mio.+“ + „Euro begleitetes Finanzierungsvolumen 2026“: Der Beispielsatz des Briefs braucht in
+   der 268 px breiten Spalte drei Zeilen (gemessen); „Euro“ und „begleitet“ bleiben, weil F&G die Finanzierungen begleitet, nicht gibt.
+   „Google‑Bewertungen“ mit geschütztem Bindestrich (U+2011), sonst bricht die Zeile bei 1440 px nach „Google-“.
+   Update 25: die „4“ steht in 108 % (gross: true), damit sie so groß wirkt wie die anderen Zahlen; gleiche Grundlinie. #}
+{{ facts({ id: "zahlen", titel: "F&G in Zahlen", mitte: true, zaehlen: true, navy: true, items: [
+  { wert: "100+", text: "Interessenten für Mehrfamilienhäuser deutschlandweit" },
+  { wert: "50+", text: "neue Kapitalanlage-Interessenten pro Monat" },
+  { wert: "4", einheit: "Mio.+", gross: true, text: "begleitetes Finanzierungsvolumen in Euro, 2026" },
+  { wert: google.rating, sterne: true, text: "von 5 Sternen aus " + google.count + " Google‑Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>' }
+] }) }}
 
 {# 4. Wobei wir Sie begleiten: entfällt auf der Startseite (Design-Pass 3 §3.4), die drei Leistungen stehen im Slider oben. #}
 
@@ -149,25 +168,10 @@ faqListe:
   <div class="fgs-btns"><a class="fgs-btn fgs-btn--primary" href="{{ valuationHref }}">Kostenlose Bewertung</a></div>
 {% endcall %}
 
-{# 7. F&G in Zahlen (Brief §3.7): zentriert, ohne „Angabe von F&G“. Bleibt nur, wenn Timon die Zahlen bestätigt (Jesu fragt).
-   Design-Pass 3 §3.7: Zahlen in Marcellus 88 px, Trennlinien Gold 40 %, zählen einmal hoch (zaehlen). #}
-{# Vierte Kachel: Fix 2 (Jesu, 29.10.2026), Google-Bewertung statt „Europace“, wie auf Verkaufen; Anzahl aus _data/google.js. #}
-{# Update 23 A5: jede Zahl höchstens vier Zeichen groß („4“ und „Mio.+“ in 44 %), Einheit und Beschreibung in der Zeile darunter,
-   höchstens zwei Zeilen. Aus „über 4 Mio. €“ + „begleitetes Finanzierungsvolumen 2026, von der Eigentumswohnung bis zum
-   Mehrfamilienhaus“ wird „4 Mio.+“ + „Euro begleitetes Finanzierungsvolumen 2026“: Der Beispielsatz des Briefs braucht in
-   der 268 px breiten Spalte drei Zeilen (gemessen); „Euro“ und „begleitet“ bleiben, weil F&G die Finanzierungen begleitet, nicht gibt.
-   „Google‑Bewertungen“ mit geschütztem Bindestrich (U+2011), sonst bricht die Zeile bei 1440 px nach „Google-“.
-   Update 25: die „4“ steht in 108 % (gross: true), damit sie so groß wirkt wie die anderen Zahlen; gleiche Grundlinie. #}
-{{ facts({ id: "zahlen", titel: "F&G in Zahlen", mitte: true, zaehlen: true, items: [
-  { wert: "100+", text: "Interessenten für Mehrfamilienhäuser deutschlandweit" },
-  { wert: "50+", text: "neue Kapitalanlage-Interessenten pro Monat" },
-  { wert: "4", einheit: "Mio.+", gross: true, text: "begleitetes Finanzierungsvolumen in Euro, 2026" },
-  { wert: google.rating, sterne: true, text: "von 5 Sternen aus " + google.count + " Google‑Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>' }
-] }) }}
-
 {# 8. Aktuelle Angebote: höchstens sechs, nur mit Foto; Einzelobjekte zuerst, dann Projekteinheiten. Einleitung wörtlich aus Brief §3.
     Design-Pass 3 §3.8 (Jesus Wahl): Raster 3 × 2 statt Karussell, Karte aus fgs-macros.njk (angebot), oben rechts „Alle Angebote“.
-    Ohne freigegebene Angebote mit Foto entfällt der Block. #}
+    Ohne freigegebene Angebote mit Foto entfällt der Block.
+    Update 27 A7: unter 768 px drei Karten, darunter „Alle Angebote ansehen“; der Button oben entfällt dort (CSS). #}
 {% set homeOffers = [] %}
 {% for o in (propstack.standaloneProperties or []).concat(propstack.projectProperties or []) %}{% if o.main_image and homeOffers.length < 6 %}{% set _ = homeOffers.push(o) %}{% endif %}{% endfor %}
 {% if homeOffers.length %}
@@ -178,20 +182,21 @@ faqListe:
         <h2 id="angebote-titel">Aktuelle Angebote</h2>
         <p>Eine Auswahl unserer aktuellen Angebote. Alle Objekte, auch Projekte mit mehreren Wohnungen, finden Sie auf der Angebotsseite.</p>
       </div>
-      <a class="fgs-btn fgs-btn--primary" href="/angebote.html">Alle Angebote</a>
+      <a class="fgs-btn fgs-btn--primary fgs-obj-head-btn" href="/angebote.html">Alle Angebote</a>
     </div>
-    <ul class="fgs-obj-grid" role="list">
+    <ul class="fgs-obj-grid fgs-obj-grid--home" role="list">
       {%- for o in homeOffers %}
       {{ angebot(o) }}
       {%- endfor %}
     </ul>
+    <div class="fgs-btns fgs-obj-more"><a class="fgs-btn fgs-btn--primary" href="/angebote.html">Alle Angebote ansehen</a></div>
   </div>
 </section>
 {% endif %}
 
 {# 9. Bewertungen (Design-Pass 3 §3.9, Jesus Wahl): links die Gesamtnote (mitlaufend), rechts vier Bewertungen mit
    Pull-Quote, darunter ein Laufband der kurzen Bewertungen. Pull-Quotes, Berater und Chips wörtlich aus dem Brief
-   (geprüft gegen das Google-Profil am 27.10.2026). Veit steht nur auf /bewertungen/ (Geschäftspartner).
+   (geprüft gegen das Google-Profil am 27.10.2026). Veit (Geschäftspartner) steht seit Update 27 A8 nirgends mehr (_data/google.js).
    Laufband: die kurzen Bewertungen in der Reihenfolge des Briefs; von Constantin die kurze (die lange steht auf /bewertungen/).
    „So bewerten Sie uns“ bleibt als zweiter Link unter „Alle Bewertungen“ (bestehender Text). #}
 {% if google.reviews.length %}
