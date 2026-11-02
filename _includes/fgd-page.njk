@@ -168,7 +168,8 @@ customSchema: true
       "url": "https://fg-realestate.de/",
       "telephone": {{ nav.phone.href | replace("tel:", "") | json | safe }},
       "email": {{ nav.email | json | safe }},
-      "address": { "@type": "PostalAddress", "streetAddress": "Schützenstraße 30", "postalCode": "12165", "addressLocality": "Berlin", "addressCountry": "DE" }
+      "address": { "@type": "PostalAddress", "streetAddress": "Schützenstraße 30", "postalCode": "12165", "addressLocality": "Berlin", "addressCountry": "DE" },
+      "sameAs": {{ firmenprofile | dump | safe }}
     },
     {% endif %}{
       "@type": "BreadcrumbList",

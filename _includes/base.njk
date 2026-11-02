@@ -187,12 +187,7 @@
           { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/mieten.html#service" } }
         ]
       },
-      "sameAs": [
-        "https://www.linkedin.com/company/fischer-geserich-real-estate-gmbh/",
-        "https://www.instagram.com/fg.immobilien/",
-        "https://openregister.de/company/DE-HRB-F1103-283559",
-        {{ google.mapsUrl | dump | safe }}
-      ]
+      "sameAs": {{ firmenprofile | dump | safe }}
     },
     {
       "@type": "Person",
