@@ -1,4 +1,5 @@
 const { sendInternalNotification, escapeHtml, clean } = require("./_shared/mailer");
+const logsafe = require("./_shared/logsafe");
 
 exports.handler = async function (event) {
   if (event.httpMethod !== "POST") {
@@ -66,7 +67,7 @@ exports.handler = async function (event) {
 
     return json(200, { success: true, message: "Vielen Dank. Ihre Frage wurde direkt an uns gesendet." });
   } catch (error) {
-    console.error("WEBSITE QUESTION ERROR:", error);
+    console.error("WEBSITE QUESTION ERROR:", logsafe.error(error));
     return json(500, { success: false, error: "Die Frage konnte nicht versendet werden." });
   }
 };

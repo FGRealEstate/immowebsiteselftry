@@ -1,3 +1,4 @@
+const logsafe = require("./_shared/logsafe");
 const PROPSTACK_BASE_URL = process.env.PROPSTACK_API_BASE || "https://api.propstack.de/v1";
 
 const DEFAULT_SLOTS = [
@@ -10,7 +11,7 @@ const DEFAULT_SLOTS = [
 ];
 
 exports.handler = async function (event) {
-  console.log("PROPSTACK APPOINTMENT AVAILABILITY START", event.httpMethod);
+  console.log("PROPSTACK APPOINTMENT AVAILABILITY START", { method: event.httpMethod });
 
   try {
     if (event.httpMethod !== "GET") {
@@ -37,7 +38,7 @@ exports.handler = async function (event) {
       blocked_events_count: availability.blockedEventsCount
     });
   } catch (error) {
-    console.error("PROPSTACK APPOINTMENT AVAILABILITY ERROR:", error);
+    console.error("PROPSTACK APPOINTMENT AVAILABILITY ERROR:", logsafe.error(error));
     return json(500, { success: false, error: error.message });
   }
 };
@@ -66,7 +67,7 @@ async function getAvailableSlots(apiKey, date) {
     const response = await propstackGet(apiKey, `/events?${params.toString()}`);
     events = normalizeArray(response);
   } catch (error) {
-    console.warn("EVENT AVAILABILITY READ FAILED:", error.message);
+    console.warn("EVENT AVAILABILITY READ FAILED:", logsafe.msg(error));
     events = [];
   }
 
@@ -121,7 +122,7 @@ function buildCandidateSlots(date) {
 }
 
 async function propstackGet(apiKey, endpoint) {
-  console.log("PROPSTACK GET:", endpoint);
+  console.log("PROPSTACK GET:", logsafe.endpoint(endpoint));
 
   const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
     method: "GET",
@@ -144,10 +145,10 @@ async function parseResponse(response, endpoint) {
     data = { raw: text };
   }
 
-  console.log("PROPSTACK RESPONSE:", endpoint, response.status, data);
+  console.log("PROPSTACK RESPONSE:", logsafe.endpoint(endpoint), response.status);
 
   if (!response.ok) {
-    throw new Error(`Propstack Fehler ${response.status} bei ${endpoint}: ${JSON.stringify(data)}`);
+    throw logsafe.propstackError(response.status, endpoint, data);
   }
 
   return data;

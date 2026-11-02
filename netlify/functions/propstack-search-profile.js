@@ -1,8 +1,11 @@
 const { sendInternalNotification } = require("./_shared/mailer");
+const logsafe = require("./_shared/logsafe");
 const PROPSTACK_BASE_URL = process.env.PROPSTACK_API_BASE || "https://api.propstack.de/v1";
 
 exports.handler = async function (event) {
-  console.log("PROPSTACK SEARCH PROFILE START", event.httpMethod);
+  // Update 31 §3: keine Personendaten ins Log
+  const requestId = logsafe.requestId(event);
+  console.log("PROPSTACK SEARCH PROFILE START", { requestId, method: event.httpMethod });
 
   try {
     if (event.httpMethod !== "POST") {
@@ -15,7 +18,7 @@ exports.handler = async function (event) {
     }
 
     const data = JSON.parse(event.body || "{}");
-    console.log("SEARCH PROFILE PAYLOAD:", JSON.stringify(data, null, 2));
+    console.log("SEARCH PROFILE EINGANG:", { requestId, form: "suchprofil", marketing: data.marketing_type || data.marketingType || "-", felder: Object.keys(data).length });
 
     const firstName = clean(data.first_name || data.firstName);
     const lastName = clean(data.last_name || data.lastName);
@@ -179,7 +182,7 @@ exports.handler = async function (event) {
       internal_notification: internalNotification
     });
   } catch (error) {
-    console.error("PROPSTACK SEARCH PROFILE ERROR:", error);
+    console.error("PROPSTACK SEARCH PROFILE ERROR:", { requestId, ...logsafe.error(error) });
     return json(500, {
       success: false,
       error: error.message,
@@ -237,7 +240,7 @@ async function safeCreateSearchProfile(apiKey, input) {
   try {
     return await propstackPost(apiKey, "/saved_queries", { saved_query: savedQuery });
   } catch (error) {
-    console.warn("SEARCH PROFILE CREATE FAILED:", error.message);
+    console.warn("SEARCH PROFILE CREATE FAILED:", logsafe.msg(error));
     return {
       ok: false,
       skipped: true,
@@ -342,7 +345,7 @@ async function safePut(apiKey, endpoint, body) {
 }
 
 async function propstackPost(apiKey, endpoint, body) {
-  console.log("PROPSTACK POST:", endpoint, JSON.stringify(body, null, 2));
+  console.log("PROPSTACK POST:", logsafe.endpoint(endpoint));
   const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
     method: "POST",
     headers: {
@@ -356,7 +359,7 @@ async function propstackPost(apiKey, endpoint, body) {
 }
 
 async function propstackPut(apiKey, endpoint, body) {
-  console.log("PROPSTACK PUT:", endpoint, JSON.stringify(body, null, 2));
+  console.log("PROPSTACK PUT:", logsafe.endpoint(endpoint));
   const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
     method: "PUT",
     headers: {
@@ -378,10 +381,10 @@ async function parseResponse(response, endpoint) {
     data = { raw: text };
   }
 
-  console.log("PROPSTACK RESPONSE:", endpoint, response.status, data);
+  console.log("PROPSTACK RESPONSE:", logsafe.endpoint(endpoint), response.status);
 
   if (!response.ok) {
-    throw new Error(`Propstack Fehler ${response.status} bei ${endpoint}: ${JSON.stringify(data)}`);
+    throw logsafe.propstackError(response.status, endpoint, data);
   }
 
   return data;

@@ -1,5 +1,6 @@
 const { sendInternalNotification } = require("./_shared/mailer");
 const nachfrage = require("./_shared/nachfrage");
+const logsafe = require("./_shared/logsafe");
 const PROPSTACK_BASE_URL = process.env.PROPSTACK_API_BASE || "https://api.propstack.de/v1";
 
 /**
@@ -64,9 +65,9 @@ async function createTask(apiKey, { title, body, contactId }) {
       });
       const raw = await response.text();
       if (response.ok) return { ok: true, status: response.status };
-      console.warn("NACHFRAGE TASK FAILED:", response.status, raw.slice(0, 500));
+      console.warn("NACHFRAGE TASK FAILED:", response.status);
     } catch (error) {
-      console.warn("NACHFRAGE TASK ERROR:", error.message);
+      console.warn("NACHFRAGE TASK ERROR:", logsafe.msg(error));
     }
   }
   return { ok: false, reason: "Aufgabe konnte per API nicht angelegt werden; die Antworten stehen in der Mail." };

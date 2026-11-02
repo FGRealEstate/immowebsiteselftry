@@ -1,3 +1,4 @@
+const logsafe = require("./_shared/logsafe");
 const PROPSTACK_BASE_URL =
   process.env.PROPSTACK_API_BASE || "https://api.propstack.de/v1";
 
@@ -6,8 +7,9 @@ const CALENDAR_USER =
   process.env.MICROSOFT_CALENDAR_USER || "info@fg-realestate.de";
 
 exports.handler = async function (event) {
-  console.log("PROPSTACK APPOINTMENT START");
-  console.log("METHOD:", event.httpMethod);
+  // Update 31 §3: keine Personendaten ins Log
+  const requestId = logsafe.requestId(event);
+  console.log("PROPSTACK APPOINTMENT START", { requestId, method: event.httpMethod });
 
   try {
     if (event.httpMethod === "OPTIONS") {
@@ -24,7 +26,7 @@ exports.handler = async function (event) {
     }
 
     const booking = normalizeBookingPayload(JSON.parse(event.body || "{}"));
-    console.log("BOOKING PAYLOAD:", JSON.stringify(booking, null, 2));
+    console.log("BOOKING EINGANG:", { requestId, form: "termin", felder: Object.keys(booking || {}).length });
 
     if (
       !booking.firstName ||
@@ -76,7 +78,6 @@ exports.handler = async function (event) {
       }),
     };
 
-    console.log("CONTACT PAYLOAD:", JSON.stringify(contactPayload, null, 2));
 
     const contactResponse = await propstackPost(apiKey, "/contacts", contactPayload);
     const contactId = getId(contactResponse, ["client", "contact", "data"]);
@@ -89,7 +90,7 @@ exports.handler = async function (event) {
       });
     }
 
-    console.log("CONTACT SAVED:", contactId);
+    console.log("CONTACT SAVED:", { requestId, contactId });
 
     // 2) Kontakt sicher nochmal patchen, falls Propstack beim POST Felder ignoriert
     const contactUpdateResult = await safeUpdateContact(apiKey, contactId, contactPayload.client);
@@ -103,7 +104,7 @@ exports.handler = async function (event) {
       note
     );
 
-    console.log("MICROSOFT EVENT:", JSON.stringify(microsoftEvent, null, 2));
+    console.log("MICROSOFT EVENT:", { requestId, eventId: microsoftEvent && microsoftEvent.id ? "angelegt" : "ohne ID" });
 
     const teamsJoinUrl =
       microsoftEvent?.onlineMeeting?.joinUrl ||
@@ -151,7 +152,7 @@ exports.handler = async function (event) {
       propstack_event: propstackEventResult,
     });
   } catch (error) {
-    console.error("PROPSTACK APPOINTMENT ERROR:", error);
+    console.error("PROPSTACK APPOINTMENT ERROR:", { requestId, ...logsafe.error(error) });
 
     return json(500, {
       success: false,
@@ -274,7 +275,6 @@ async function createMicrosoftTeamsCalendarEvent(accessToken, booking, fullName,
     isReminderOn: true,
   };
 
-  console.log("MICROSOFT EVENT PAYLOAD:", JSON.stringify(payload, null, 2));
 
   const response = await fetch(
     `${MICROSOFT_GRAPH_BASE_URL}/users/${encodeURIComponent(CALENDAR_USER)}/events`,
@@ -313,7 +313,7 @@ async function safeUpdateContact(apiKey, contactId, clientPayload) {
     });
     return { ok: true, result };
   } catch (error) {
-    console.warn("CONTACT UPDATE SKIPPED:", error.message);
+    console.warn("CONTACT UPDATE SKIPPED:", logsafe.msg(error));
     return { ok: false, skipped: true, reason: error.message };
   }
 }
@@ -359,7 +359,7 @@ async function safeCreateTask(apiKey, input) {
       return { ok: true, attempt: attempt.label, result };
     } catch (error) {
       lastError = error;
-      console.warn("TASK CREATE ATTEMPT FAILED:", attempt.label, error.message);
+      console.warn("TASK CREATE ATTEMPT FAILED:", attempt.label, logsafe.msg(error));
     }
   }
 
@@ -427,7 +427,7 @@ async function safeCreatePropstackEvent(apiKey, input) {
       return { ok: true, attempt: attempt.label, result };
     } catch (error) {
       lastError = error;
-      console.warn("PROPSTACK EVENT CREATE ATTEMPT FAILED:", attempt.label, error.message);
+      console.warn("PROPSTACK EVENT CREATE ATTEMPT FAILED:", attempt.label, logsafe.msg(error));
     }
   }
 
@@ -439,7 +439,7 @@ async function safeCreatePropstackEvent(apiKey, input) {
 }
 
 async function propstackPost(apiKey, endpoint, body) {
-  console.log("PROPSTACK POST:", endpoint, JSON.stringify(body, null, 2));
+  console.log("PROPSTACK POST:", logsafe.endpoint(endpoint));
 
   const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
     method: "POST",
@@ -455,7 +455,7 @@ async function propstackPost(apiKey, endpoint, body) {
 }
 
 async function propstackPut(apiKey, endpoint, body) {
-  console.log("PROPSTACK PUT:", endpoint, JSON.stringify(body, null, 2));
+  console.log("PROPSTACK PUT:", logsafe.endpoint(endpoint));
 
   const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
     method: "PUT",
@@ -480,12 +480,10 @@ async function parsePropstackResponse(response, endpoint) {
     data = { raw: text };
   }
 
-  console.log("PROPSTACK RESPONSE:", endpoint, response.status, data);
+  console.log("PROPSTACK RESPONSE:", logsafe.endpoint(endpoint), response.status);
 
   if (!response.ok) {
-    const error = new Error(
-      `Propstack Fehler ${response.status} bei ${endpoint}: ${JSON.stringify(data)}`
-    );
+    const error = logsafe.propstackError(response.status, endpoint, data);
     error.response = data;
     throw error;
   }

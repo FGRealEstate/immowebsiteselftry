@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+const logsafe = require("./logsafe");
 
 function clean(value) {
   if (value === null || value === undefined) return "";
@@ -47,7 +48,8 @@ async function sendInternalNotification({ subject, replyTo, text, html, to }) {
 
     return { sent: true, to: recipient, messageId: result.messageId };
   } catch (error) {
-    console.error("WEBSITE MAIL ERROR:", error);
+    // Update 31 §3: Mailfehler können Empfängeradressen enthalten → nur Art und Code ins Log
+    console.error("WEBSITE MAIL ERROR:", logsafe.error(error));
     return { sent: false, skipped: false, error: error.message };
   }
 }

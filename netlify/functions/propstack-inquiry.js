@@ -1,12 +1,14 @@
 const nodemailer = require("nodemailer");
+const logsafe = require("./_shared/logsafe");
 
 const PROPSTACK_BASE_URL =
   process.env.PROPSTACK_API_BASE || "https://api.propstack.de/v1";
 
 exports.handler = async function (event) {
+  // Update 31 §3: keine Personendaten ins Log
+  const requestId = logsafe.requestId(event);
   try {
-    console.log("PROPSTACK INQUIRY START");
-    console.log("METHOD:", event.httpMethod);
+    console.log("PROPSTACK INQUIRY START", { requestId, method: event.httpMethod });
 
     if (event.httpMethod !== "POST") {
       return json(405, { success: false, error: "Method not allowed" });
@@ -19,7 +21,7 @@ exports.handler = async function (event) {
     }
 
     const data = JSON.parse(event.body || "{}");
-    console.log("PAYLOAD:", JSON.stringify(data, null, 2));
+    console.log("INQUIRY EINGANG:", { requestId, form: "objektanfrage", felder: Object.keys(data).length });
 
     const firstName = clean(data.first_name || data.firstName);
     const lastName = clean(data.last_name || data.lastName);
@@ -71,12 +73,7 @@ exports.handler = async function (event) {
       privacyConsent,
     });
 
-    console.log("Neue Objektanfrage:", {
-      objectId,
-      objectTitle,
-      fullName,
-      email,
-    });
+    console.log("Neue Objektanfrage:", { requestId, objectId });
 
     // 1) Mail senden
     const portalMailResult = await sendPropstackPortalInquiryMail({
@@ -93,7 +90,7 @@ exports.handler = async function (event) {
       privacyConsent,
     });
 
-    console.log("Portal-Mail Ergebnis:", portalMailResult);
+    console.log("Portal-Mail Ergebnis:", { requestId, sent: Boolean(portalMailResult && portalMailResult.sent) });
 
     // 2) Kontakt direkt in Propstack erstellen
     const contactResponse = await createContact(apiKey, {
@@ -117,7 +114,7 @@ exports.handler = async function (event) {
       });
     }
 
-    console.log("Kontakt erstellt:", contactId);
+    console.log("Kontakt erstellt:", { requestId, contactId });
 
     // 3) passende Käufer-Stage suchen
     const stage = await findBestBuyerDealStage(apiKey);
@@ -141,7 +138,7 @@ exports.handler = async function (event) {
       note,
     });
 
-    console.log("Deal erstellt:", dealResponse);
+    console.log("Deal erstellt:", { requestId, dealId: dealResponse && (dealResponse.id || (dealResponse.data && dealResponse.data.id)) });
 
     return json(200, {
       success: true,
@@ -154,7 +151,7 @@ exports.handler = async function (event) {
       portal_mail: portalMailResult,
     });
   } catch (error) {
-    console.error("PROPSTACK INQUIRY ERROR:", error);
+    console.error("PROPSTACK INQUIRY ERROR:", { requestId, ...logsafe.error(error) });
 
     return json(500, {
       success: false,
@@ -471,7 +468,7 @@ async function propstackGet(apiKey, endpoint) {
 }
 
 async function propstackPost(apiKey, endpoint, body) {
-  console.log("PROPSTACK POST:", endpoint, JSON.stringify(body, null, 2));
+  console.log("PROPSTACK POST:", logsafe.endpoint(endpoint));
 
   const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
     method: "POST",
@@ -496,14 +493,10 @@ async function parsePropstackResponse(response, endpoint) {
     data = { raw: text };
   }
 
-  console.log("PROPSTACK RESPONSE:", endpoint, response.status, data);
+  console.log("PROPSTACK RESPONSE:", logsafe.endpoint(endpoint), response.status);
 
   if (!response.ok) {
-    throw new Error(
-      `Propstack Fehler ${response.status} bei ${endpoint}: ${JSON.stringify(
-        data
-      )}`
-    );
+    throw logsafe.propstackError(response.status, endpoint, data);
   }
 
   return data;

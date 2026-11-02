@@ -16,6 +16,8 @@
  * `toPayload` nutzt auch die Testumgebung (test-env/functions/api/test/[name].js).
  */
 
+const logsafe = require("./logsafe");
+
 const OK_PAGE = "/anfrage-gesendet/";
 const ERROR_PAGE = "/anfrage-nicht-gesendet/";
 const UTM = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
@@ -181,7 +183,7 @@ function wrap(name, handler, handlers = {}) {
       const ok = result.statusCode >= 200 && result.statusCode < 300 && body.success !== false;
       return redirect(ok ? OK_PAGE : ERROR_PAGE);
     } catch (error) {
-      console.error("FORMPOST ERROR:", error);
+      console.error("FORMPOST ERROR:", logsafe.error(error));
       return redirect(ERROR_PAGE);
     }
   };

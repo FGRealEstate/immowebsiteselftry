@@ -336,10 +336,11 @@ exports.handler = async function handler(event) {
   const previousPayloadStatus = findPreviousStatus(payload);
 
   if (!entity.id) {
+    // Update 31 §3: nur die Schlüssel der Webhook-Nutzlast, nicht die Inhalte (können Kontakt- und Maklerdaten enthalten)
     console.log("Propstack Event übersprungen: Entität konnte nicht sicher nachgeladen werden.", {
       hint: entity.type,
       id: entity.id,
-      payload
+      payloadKeys: Object.keys(payload || {}).slice(0, 30)
     });
     return jsonResponse(200, {
       ok: true,

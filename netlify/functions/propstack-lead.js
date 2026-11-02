@@ -1,5 +1,6 @@
 const { sendInternalNotification } = require("./_shared/mailer");
 const nachfrage = require("./_shared/nachfrage");
+const logsafe = require("./_shared/logsafe");
 const PROPSTACK_BASE_URL = process.env.PROPSTACK_API_BASE || "https://api.propstack.de/v1";
 
 /**
@@ -20,8 +21,9 @@ const PROPSTACK_BASE_URL = process.env.PROPSTACK_API_BASE || "https://api.propst
  */
 
 exports.handler = async function (event) {
-  console.log("PROPSTACK LEAD START");
-  console.log("METHOD:", event.httpMethod);
+  // Update 31 §3: nur Anfrage-ID, Formulartyp, fehlende Felder, Endpunkte und Status ins Log, keine Personendaten
+  const requestId = logsafe.requestId(event);
+  console.log("PROPSTACK LEAD START", { requestId, method: event.httpMethod });
 
   try {
     if (event.httpMethod !== "POST") {
@@ -34,18 +36,14 @@ exports.handler = async function (event) {
     }
 
     const data = JSON.parse(event.body || "{}");
-    console.log("PAYLOAD:", JSON.stringify(redactLargePayload(data), null, 2));
-
     const lead = normalizeLeadPayload(data);
+    console.log("LEAD EINGANG:", { requestId, form: lead.concernType || "unbekannt", felder: Object.keys(data).length, dokumente: lead.documents.length });
 
     if (!lead.firstName || !lead.lastName || !lead.email || !lead.concernType || !lead.consent) {
       console.log("VALIDATION FAILED:", {
-        firstName: lead.firstName,
-        lastName: lead.lastName,
-        email: lead.email,
-        rawConcern: lead.rawConcern,
-        concernType: lead.concernType,
-        consent: lead.consent,
+        requestId,
+        form: lead.concernType || "unbekannt",
+        missing: logsafe.missing(lead, ["firstName", "lastName", "email", "concernType", "consent"]),
       });
 
       return json(400, {
@@ -56,6 +54,7 @@ exports.handler = async function (event) {
 
     // Update 28 §3.1: Wer „Mit einem Anruf“ wählt, muss eine Telefonnummer angeben (im Browser prüft fg-design.js das schon).
     if (normalize(lead.contactPreference) === "telefon" && !lead.phone) {
+      console.log("VALIDATION FAILED:", { requestId, form: lead.concernType, missing: ["phone"] });
       return json(400, {
         success: false,
         error: "Bitte geben Sie Ihre Telefonnummer an, damit wir Sie anrufen können.",
@@ -64,8 +63,6 @@ exports.handler = async function (event) {
 
     const note = buildNote(lead);
     const contactPayload = buildContactPayload(lead, note);
-
-    console.log("CONTACT PAYLOAD:", JSON.stringify(contactPayload, null, 2));
 
     const contactResponse = await createContactWithFallback(apiKey, contactPayload, lead, note);
     const contactId = getId(contactResponse, ["client", "contact", "data"]);
@@ -78,7 +75,7 @@ exports.handler = async function (event) {
       });
     }
 
-    console.log("CONTACT SAVED:", contactId);
+    console.log("CONTACT SAVED:", { requestId, contactId });
 
     const contactUpdateResult = await safeUpdateContact(apiKey, contactId, contactPayload.client);
     const searchProfileResult = await maybeCreateSearchProfile(apiKey, contactId, lead, note);
@@ -123,7 +120,7 @@ exports.handler = async function (event) {
       confirmation,
     });
   } catch (error) {
-    console.error("PROPSTACK LEAD ERROR:", error);
+    console.error("PROPSTACK LEAD ERROR:", { requestId, ...logsafe.error(error) });
 
     return json(500, {
       success: false,
@@ -160,7 +157,7 @@ async function sendValuationConfirmation(lead, contactId, data) {
     });
     return { sent: Boolean(result.sent), skipped: Boolean(result.skipped), reason: result.reason || result.error || "" };
   } catch (error) {
-    console.error("BEWERTUNG BESTAETIGUNG ERROR:", error);
+    console.error("BEWERTUNG BESTAETIGUNG ERROR:", logsafe.error(error));
     return { sent: false, skipped: false, reason: error.message };
   }
 }
@@ -352,8 +349,8 @@ function buildContactCustomFields(lead) {
     wohnflache: buyer.livingSpaceFrom,
     grundstucksflache: buyer.plotAreaFrom,
     balkon_terrasse: buyer.balcony,
-    objektzustand: buyer.condition,
-    ausstattung: buyer.condition,
+    // Update 31 §2: kein Zustand mehr in objektzustand/ausstattung. Beide Felder gibt es in Propstack nur für Objekte,
+    // und „Ausstattung“ ist kein Zustand. Der gewünschte Zustand steht weiter in Notiz und Suchprofil.
 
     // Falls diese Custom Fields in Propstack existieren, werden sie sauber befüllt.
     // Falls nicht, greift der Fallback und alle Werte bleiben trotzdem in Beschreibung/Aufgabe/Suchprofil erhalten.
@@ -529,7 +526,7 @@ async function createContactWithFallback(apiKey, contactPayload, lead, note) {
   try {
     return await propstackPost(apiKey, "/contacts", contactPayload);
   } catch (error) {
-    console.warn("CONTACT CREATE WITH CUSTOM FIELDS FAILED:", error.message);
+    console.warn("CONTACT CREATE WITH CUSTOM FIELDS FAILED:", logsafe.msg(error));
     console.warn("TRY CONTACT CREATE WITHOUT CUSTOM FIELDS");
     return await propstackPost(apiKey, "/contacts", buildContactPayloadWithoutCustomFields(lead, note));
   }
@@ -554,7 +551,7 @@ async function safeUpdateContact(apiKey, contactId, clientPayload) {
   try {
     return await propstackPut(apiKey, `/contacts/${contactId}`, updatePayload);
   } catch (error) {
-    console.warn("CONTACT UPDATE WITH CUSTOM FIELDS SKIPPED:", error.message);
+    console.warn("CONTACT UPDATE WITH CUSTOM FIELDS SKIPPED:", logsafe.msg(error));
 
     try {
       const fallback = {
@@ -573,7 +570,7 @@ async function safeUpdateContact(apiKey, contactId, clientPayload) {
 
       return await propstackPut(apiKey, `/contacts/${contactId}`, fallback);
     } catch (fallbackError) {
-      console.warn("CONTACT UPDATE FALLBACK SKIPPED:", fallbackError.message);
+      console.warn("CONTACT UPDATE FALLBACK SKIPPED:", logsafe.msg(fallbackError));
       return { ok: false, skipped: true, reason: fallbackError.message };
     }
   }
@@ -603,11 +600,15 @@ async function maybeCreateOwnerProperty(apiKey, contactId, lead, note) {
   // 2. ohne Status
   // 3. ohne Custom Fields
   // 4. Minimalobjekt mit Eigentümer-Verknüpfung
+  // Update 31 §2: lehnt Propstack den Zustandscode ab, folgt derselbe Payload mit Propstacks deutscher Bezeichnung, dann ohne Zustand.
+  const conditionLabel = conditionOf(lead.propertyDetails || {}).label;
   const attempts = [
     { label: "full property", payload: { property } },
+    ...(property.condition && conditionLabel ? [{ label: "condition as label", payload: { property: { ...property, condition: conditionLabel } } }] : []),
     { label: "without status", payload: { property: omitKeys(property, ["status_id", "property_status_id"]) } },
-    { label: "without optional standard fields", payload: { property: omitKeys(property, ["status_id", "property_status_id", "base_rent", "net_cold_rent", "rent", "target_cold_rent", "service_charge", "annual_net_rent", "target_annual_net_rent", "balcony_area", "interior_quality", "last_modernization", "rs_category", "country"]) } },
-    { label: "without custom fields", payload: { property: omitKeys(property, ["partial_custom_fields", "interior_quality", "status_id", "property_status_id", "base_rent", "net_cold_rent", "rent", "target_cold_rent", "service_charge", "annual_net_rent", "target_annual_net_rent", "rs_category", "country"]) } },
+    ...(property.condition ? [{ label: "without status and condition", payload: { property: omitKeys(property, ["status_id", "property_status_id", "condition"]) } }] : []),
+    { label: "without optional standard fields", payload: { property: omitKeys(property, ["status_id", "property_status_id", "base_rent", "net_cold_rent", "rent", "target_cold_rent", "service_charge", "annual_net_rent", "target_annual_net_rent", "balcony_area", "interior_quality", "condition", "last_modernization", "rs_category", "country"]) } },
+    { label: "without custom fields", payload: { property: omitKeys(property, ["partial_custom_fields", "interior_quality", "condition", "status_id", "property_status_id", "base_rent", "net_cold_rent", "rent", "target_cold_rent", "service_charge", "annual_net_rent", "target_annual_net_rent", "rs_category", "country"]) } },
     { label: "without category", payload: { property: omitKeys(property, ["partial_custom_fields", "status_id", "property_status_id", "rs_category", "country"]) } },
     {
       label: "minimal owner property",
@@ -650,7 +651,7 @@ async function maybeCreateOwnerProperty(apiKey, contactId, lead, note) {
       return { ok: true, attempt: attempt.label, result, used_payload: attempt.payload };
     } catch (error) {
       lastError = error;
-      console.warn("PROPERTY CREATE ATTEMPT FAILED:", attempt.label, error.message);
+      console.warn("PROPERTY CREATE ATTEMPT FAILED:", attempt.label, logsafe.msg(error));
     }
   }
 
@@ -708,6 +709,8 @@ async function buildOwnerPropertyPayload(apiKey, contactId, lead, note) {
     // Update 28 §2: Ausstattung ins Propstack-Standardfeld „Qualität der Ausstattung“ (interior_quality), das Sprengnetter liest.
     // Der Zustand (seller-quality) geht hier nicht mehr hinein; nur Ausstattungswerte werden übersetzt.
     interior_quality: interiorQuality(details).api,
+    // Update 31 §2: Zustand ins Propstack-Standardfeld condition, das Sprengnetter liest (Zuordnung siehe CONDITION unten)
+    condition: conditionOf(details).code,
     last_modernization: clean(firstValue(details, ["seller-modernization", "seller_modernization", "modernization", "letzte_modernisierung"])),
     balcony: isAffirmative(firstValue(details, ["seller-balcony", "seller_balcony", "balcony", "balkon"])),
     balcony_area: numberOrNull(firstValue(details, ["seller-balcony-area", "seller_balcony_area", "balcony_area"])),
@@ -748,7 +751,8 @@ function buildOwnerPropertyCustomFields(lead) {
     hausart: clean(firstValue(details, ["seller-house-subtype", "seller_house_subtype"])),
     wohnungsart: clean(firstValue(details, ["seller-apartment-subtype", "seller_apartment_subtype"])),
     etage: clean(firstValue(details, ["seller-floor", "seller_floor"])),
-    objektzustand: clean(firstValue(details, ["seller-quality", "seller_quality", "quality"])),
+    // Update 31 §2: Custom Field „Objektzustand“ (Einfach, Gehoben, Luxus, Sanierungsbedürftig, Standard) nur mit genau passender Option
+    objektzustand: conditionOf(details).objektzustand,
     ausstattung: interiorQuality(details).option,
     wohnflache: numberOrNull(firstValue(details, ["seller-area-value", "seller_area_value"])),
     grundstucksflache: numberOrNull(firstValue(details, ["seller-plot-area", "seller_plot_area"])),
@@ -785,7 +789,7 @@ async function findPropertyStatusId(apiKey, wantedName) {
     const found = statuses.find((status) => normalize(status.name || status.title || status.label).includes(wanted));
     return found ? found.id : null;
   } catch (error) {
-    console.warn("PROPERTY STATUS READ SKIPPED:", error.message);
+    console.warn("PROPERTY STATUS READ SKIPPED:", logsafe.msg(error));
     return null;
   }
 }
@@ -831,7 +835,7 @@ async function maybeCreateDealForOwnerObject(apiKey, contactId, propertyId, lead
       const result = await propstackPost(apiKey, "/client_properties", payload);
       return { ok: true, stage, result };
     } catch (error) {
-      console.warn("OWNER DEAL CREATE ATTEMPT FAILED:", error.message);
+      console.warn("OWNER DEAL CREATE ATTEMPT FAILED:", logsafe.msg(error));
     }
   }
 
@@ -863,7 +867,7 @@ async function findBestDealStage(apiKey, concernType) {
 
     return allStages[0] || null;
   } catch (error) {
-    console.warn("DEAL STAGES READ SKIPPED:", error.message);
+    console.warn("DEAL STAGES READ SKIPPED:", logsafe.msg(error));
     return null;
   }
 }
@@ -1016,7 +1020,7 @@ async function maybeCreateSearchProfile(apiKey, contactId, lead, note) {
         used_payload: attempt.payload,
       };
     } catch (error) {
-      console.warn("SEARCH PROFILE CREATE ATTEMPT FAILED:", attempt.label, error.message);
+      console.warn("SEARCH PROFILE CREATE ATTEMPT FAILED:", attempt.label, logsafe.msg(error));
     }
   }
 
@@ -1058,7 +1062,7 @@ async function safeCreateFollowUpTask(apiKey, contactId, lead, note) {
     try {
       return await propstackPost(apiKey, "/tasks", payload);
     } catch (error) {
-      console.warn("FOLLOWUP TASK ATTEMPT FAILED:", error.message);
+      console.warn("FOLLOWUP TASK ATTEMPT FAILED:", logsafe.msg(error));
     }
   }
 
@@ -1098,7 +1102,7 @@ async function uploadDocuments(apiKey, input) {
 
       results.push({ ok: true, name: file.name, result });
     } catch (error) {
-      console.warn("Dokument konnte nicht hochgeladen werden:", error.message);
+      console.warn("Dokument konnte nicht hochgeladen werden:", logsafe.msg(error));
       results.push({ ok: false, name: file.name, error: error.message });
     }
   }
@@ -1107,7 +1111,7 @@ async function uploadDocuments(apiKey, input) {
 }
 
 async function propstackPost(apiKey, endpoint, body) {
-  console.log("PROPSTACK POST:", endpoint, JSON.stringify(body, null, 2));
+  console.log("PROPSTACK POST:", logsafe.endpoint(endpoint));
 
   const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
     method: "POST",
@@ -1123,7 +1127,7 @@ async function propstackPost(apiKey, endpoint, body) {
 }
 
 async function propstackPut(apiKey, endpoint, body) {
-  console.log("PROPSTACK PUT:", endpoint, JSON.stringify(body, null, 2));
+  console.log("PROPSTACK PUT:", logsafe.endpoint(endpoint));
 
   const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
     method: "PUT",
@@ -1148,10 +1152,10 @@ async function parsePropstackResponse(response, endpoint) {
     data = { raw: text };
   }
 
-  console.log("PROPSTACK RESPONSE:", endpoint, response.status, data);
+  console.log("PROPSTACK RESPONSE:", logsafe.endpoint(endpoint), response.status);
 
   if (!response.ok) {
-    throw new Error(`Propstack Fehler ${response.status} bei ${endpoint}: ${JSON.stringify(data)}`);
+    throw logsafe.propstackError(response.status, endpoint, data);
   }
 
   return data;
@@ -1280,6 +1284,32 @@ const INTERIOR_QUALITY = {
   normal: { api: "NORMAL", option: "normal" },
   einfach: { api: "SIMPLE", option: "Einfach" },
 };
+
+// Update 31 §2: Zustand der Bewertungsanfrage → Propstack-Standardfeld condition (liest die Sprengnetter-Bewertung).
+// Propstack speichert den Zustand als Code: die Doku zeigt im Rohdatenexport „condition": "DERELICT" und
+// „interior_quality": "SIMPLE" (docs.propstack.de, Objekte, GET /v1/datadump/properties). GET /units liefert dieselben
+// Werte übersetzt (saniert, gepflegt, renovierungsbedürftig …). Die API-Spezifikation v2 nennt für condition keine Liste.
+// Versuch 1: code. Lehnt Propstack ihn ab, Versuch 2: label (Propstacks deutsche Bezeichnung), danach ohne Zustand.
+// „Sanierungsbedürftig“ gibt es in Propstack als eigenen Wert, sein Code ist nicht dokumentiert: nächster dokumentierter
+// Code NEED_OF_RENOVATION, dazu die genau passende Option im Custom Field „Objektzustand“.
+const CONDITION = {
+  neuwertigodersaniert: { code: "REFURBISHED", label: "saniert" },
+  gepflegt: { code: "WELL_KEPT", label: "gepflegt" },
+  renovierungsbedurftig: { code: "NEED_OF_RENOVATION", label: "renovierungsbedürftig" },
+  sanierungsbedurftig: { code: "NEED_OF_RENOVATION", label: "sanierungsbedürftig" },
+};
+
+// Optionen des Custom Fields „Objektzustand“ (nur für Objekte, Stand 02.11.2026). Nur ein genau passender Wert wird gesetzt.
+// Die alte Landingpage schickt Luxus, Gehoben, Einfach im selben Feld; sie passen genau und bleiben erhalten.
+const OBJEKTZUSTAND_OPTIONS = ["Einfach", "Gehoben", "Luxus", "Sanierungsbedürftig", "Standard"];
+
+function conditionOf(details) {
+  const raw = firstValue(details || {}, ["seller-quality", "seller_quality", "quality", "condition"]);
+  const value = normalize(raw);
+  const entry = CONDITION[value] || {};
+  const option = OBJEKTZUSTAND_OPTIONS.find((name) => normalize(name) === value);
+  return { code: entry.code, label: entry.label, objektzustand: option };
+}
 
 function interiorQuality(details) {
   const neu = normalize(firstValue(details || {}, ["seller-interior-quality", "seller_interior_quality", "interior_quality"]));

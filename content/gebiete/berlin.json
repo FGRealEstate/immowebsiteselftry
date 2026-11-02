@@ -36,7 +36,7 @@
   "zahlen": [
     {
       "wert": "10.030",
-      "label": "Kauffälle 2025 in den vier Bezirken dieser Seite",
+      "label": "Kauffälle 2025 in unseren vier Berliner Bezirken",
       "detail": "45,8 % der 21.913 Berliner Kauffälle ohne Paketverkäufe: Charlottenburg-Wilmersdorf 2.811, Pankow 2.731, Tempelhof-Schöneberg 2.248, Steglitz-Zehlendorf 2.240.",
       "quelle": "Immobilienmarktbericht Berlin 2025/2026",
       "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
@@ -45,7 +45,7 @@
     {
       "wert": "Ø 5.017 €/m²",
       "label": "Eigentumswohnungen in Berlin, je Quadratmeter Wohnfläche",
-      "detail": "11.110 ausgewertete Kauffälle, Spanne 2.347 bis 7.999 €/m², 2024 waren es 4.796 €/m². In den vier Bezirken reicht der Mittelwert von 4.011 €/m² in Tempelhof bis 6.427 €/m² in Dahlem.",
+      "detail": "11.110 ausgewertete Kauffälle, Spanne 2.347 bis 7.999 €/m², 2024 waren es 4.796 €/m². In unseren vier Berliner Bezirken reicht der Mittelwert von 4.011 €/m² in Tempelhof bis 6.427 €/m² in Dahlem.",
       "quelle": "Immobilienmarktbericht Berlin 2025/2026",
       "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
       "stichtag": "Kaufverträge 2025"
@@ -148,14 +148,14 @@
   "verkaufen": {
     "h2": "Immobilie in Berlin verkaufen",
     "absaetze": [
-      "Der Berliner Mittelwert hilft beim Verkauf wenig: Eigentumswohnungen kosteten 2025 allein in den vier Bezirken dieser Seite im Mittel zwischen 4.011 €/m² in Tempelhof und 6.427 €/m² in Dahlem.[[1]] Deshalb bewerten wir nach den Preisen, zu denen vergleichbare Immobilien in Ihrem Kiez tatsächlich verkauft wurden. Bei vermieteten Immobilien zählt außerdem die Nettokaltmiete, die heute gezahlt wird. Bei einer vermieteten Wohnung prüfen Käufer die Miete gegen den Mietspiegel 2026, der jeder Adresse eine einfache, mittlere oder gute Wohnlage zuordnet.[[5]] Bevor Ihre Immobilie in die Vermarktung geht, klären wir mit Ihnen, welche Unterlagen vorliegen, und helfen, die fehlenden zu besorgen, denn eine fehlende Wohnflächenberechnung kann die Finanzierung eines Käufers verzögern. Die Wertermittlung ist kostenlos und meistens innerhalb weniger Stunden fertig."
+      "Der Berliner Mittelwert hilft beim Verkauf wenig: Eigentumswohnungen kosteten 2025 allein in Steglitz-Zehlendorf, Charlottenburg-Wilmersdorf, Tempelhof-Schöneberg und Pankow im Mittel zwischen 4.011 €/m² in Tempelhof und 6.427 €/m² in Dahlem.[[1]] Deshalb bewerten wir nach den Preisen, zu denen vergleichbare Wohnungen in Ihrem Kiez tatsächlich verkauft wurden. Bei vermieteten Immobilien zählt außerdem die Nettokaltmiete, die heute gezahlt wird. Bei einer vermieteten Wohnung prüfen Käufer die Miete gegen den Mietspiegel 2026, der jeder Adresse eine einfache, mittlere oder gute Wohnlage zuordnet.[[5]] Bevor Ihre Immobilie in die Vermarktung geht, klären wir mit Ihnen, welche Unterlagen vorliegen, und helfen, die fehlenden zu besorgen, denn eine fehlende Wohnflächenberechnung kann die Finanzierung eines Käufers verzögern. Die Wertermittlung ist kostenlos und meistens innerhalb weniger Stunden fertig."
     ]
   },
   "kaufen": {
     "h2": "Kaufen und investieren in Berlin",
     "absaetze": [
       "Als Kapitalanleger sollten Sie den Mietspiegel 2026 und die Mietpreisbremse kennen, die in ganz Berlin vom 01.01.2026 bis 31.12.2029 gilt: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[5,6]] Bestandsmieten dürfen in drei Jahren um höchstens 15 % steigen, bis zur Vergleichsmiete.[[7]] Die überwiegenden Mietangebote lagen 2025 zwischen 7,88 und 25,06 €/m² und 85,1 % der Berliner Wohnungen sind Mietwohnungen.[[4]] Die Miete, die sich am Markt erzielen lässt, weicht fast immer vom Mietspiegel ab. Deshalb rechnen wir die Rendite mit Ihnen aus Kaufpreis, der tatsächlichen Nettokaltmiete und den laufenden Kosten, bevor Sie kaufen.",
-      "Seit dem 01.01.2026 braucht in ganz Berlin eine Genehmigung, wer ein Wohnhaus mit mehr als fünf Wohnungen in Eigentumswohnungen aufteilen will.[[10]] In den 82 sozialen Erhaltungsgebieten, 36 davon in den vier Bezirken dieser Seite, gilt das auch für kleinere Häuser; dort können zudem Luxusmodernisierungen und Zusammenlegungen von Wohnungen versagt werden.[[9,8]]"
+      "Seit dem 01.01.2026 braucht in ganz Berlin eine Genehmigung, wer ein Wohnhaus mit mehr als fünf Wohnungen in Eigentumswohnungen aufteilen will.[[10]] In den 82 sozialen Erhaltungsgebieten, 36 davon in unseren vier Berliner Bezirken, gilt das auch für kleinere Häuser; dort können zudem Luxusmodernisierungen und Zusammenlegungen von Wohnungen versagt werden.[[9,8]]"
     ]
   },
   "finanzieren": {
@@ -167,7 +167,7 @@
   "faq": [
     {
       "frage": "Was kostet eine Eigentumswohnung in Berlin 2026?",
-      "antwort": "Die jüngsten amtlichen Zahlen sind die Kaufverträge 2025: Eigentumswohnungen kosteten in Berlin im Mittel 5.017 €/m² Wohnfläche, bei 11.110 ausgewerteten Verkäufen und einer Spanne von 2.347 bis 7.999 €/m².[[1]] In den vier Bezirken dieser Seite reicht der Mittelwert von 4.011 €/m² in Tempelhof bis 6.427 €/m² in Dahlem; Prenzlauer Berg liegt bei 6.300 €/m².[[1]]",
+      "antwort": "Die jüngsten amtlichen Zahlen sind die Kaufverträge 2025: Eigentumswohnungen kosteten in Berlin im Mittel 5.017 €/m² Wohnfläche, bei 11.110 ausgewerteten Verkäufen und einer Spanne von 2.347 bis 7.999 €/m².[[1]] In Steglitz-Zehlendorf, Charlottenburg-Wilmersdorf, Tempelhof-Schöneberg und Pankow reicht der Mittelwert von 4.011 €/m² in Tempelhof bis 6.427 €/m² in Dahlem; Prenzlauer Berg liegt bei 6.300 €/m².[[1]]",
       "herkunft": "Google-Autocomplete „immobilienpreise berlin 2026“ (27.10.2026)"
     },
     {

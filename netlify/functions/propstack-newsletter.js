@@ -1,7 +1,10 @@
+const logsafe = require("./_shared/logsafe");
 const PROPSTACK_BASE_URL = process.env.PROPSTACK_API_BASE || "https://api.propstack.de/v1";
 
 exports.handler = async function (event) {
-  console.log("PROPSTACK NEWSLETTER START", event.httpMethod);
+  // Update 31 §3: keine Personendaten ins Log
+  const requestId = logsafe.requestId(event);
+  console.log("PROPSTACK NEWSLETTER START", { requestId, method: event.httpMethod });
 
   try {
     if (event.httpMethod !== "POST") {
@@ -14,7 +17,7 @@ exports.handler = async function (event) {
     }
 
     const data = JSON.parse(event.body || "{}");
-    console.log("NEWSLETTER PAYLOAD:", JSON.stringify(data, null, 2));
+    console.log("NEWSLETTER EINGANG:", { requestId, form: "newsletter", felder: Object.keys(data).length });
 
     const firstName = clean(data.first_name || data.firstName);
     const lastName = clean(data.last_name || data.lastName);
@@ -161,7 +164,7 @@ exports.handler = async function (event) {
       task
     });
   } catch (error) {
-    console.error("PROPSTACK NEWSLETTER ERROR:", error);
+    console.error("PROPSTACK NEWSLETTER ERROR:", { requestId, ...logsafe.error(error) });
     return json(500, { success: false, error: error.message });
   }
 };
@@ -198,7 +201,7 @@ async function safeCreateSearchProfile(apiKey, input) {
     try {
       return await propstackPost(apiKey, attempt.endpoint, attempt.body);
     } catch (error) {
-      console.warn("NEWSLETTER SEARCH PROFILE ATTEMPT FAILED:", error.message);
+      console.warn("NEWSLETTER SEARCH PROFILE ATTEMPT FAILED:", logsafe.msg(error));
     }
   }
 
@@ -211,7 +214,7 @@ async function safeCreateNote(apiKey, contactId, body, title) {
     { note: { client_id: contactId, title, text: body } }
   ];
   for (const payload of attempts) {
-    try { return await propstackPost(apiKey, "/notes", payload); } catch (error) { console.warn("NEWSLETTER NOTE ATTEMPT FAILED:", error.message); }
+    try { return await propstackPost(apiKey, "/notes", payload); } catch (error) { console.warn("NEWSLETTER NOTE ATTEMPT FAILED:", logsafe.msg(error)); }
   }
   return { ok: false, skipped: true, reason: "Notiz konnte nicht separat angelegt werden." };
 }
@@ -233,7 +236,7 @@ async function safePut(apiKey, endpoint, body) {
 }
 
 async function propstackPost(apiKey, endpoint, body) {
-  console.log("PROPSTACK POST:", endpoint, JSON.stringify(body, null, 2));
+  console.log("PROPSTACK POST:", logsafe.endpoint(endpoint));
   const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
     method: "POST",
     headers: { "X-API-KEY": apiKey, "Content-Type": "application/json", Accept: "application/json" },
@@ -243,7 +246,7 @@ async function propstackPost(apiKey, endpoint, body) {
 }
 
 async function propstackPut(apiKey, endpoint, body) {
-  console.log("PROPSTACK PUT:", endpoint, JSON.stringify(body, null, 2));
+  console.log("PROPSTACK PUT:", logsafe.endpoint(endpoint));
   const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
     method: "PUT",
     headers: { "X-API-KEY": apiKey, "Content-Type": "application/json", Accept: "application/json" },
@@ -256,8 +259,8 @@ async function parseResponse(response, endpoint) {
   const text = await response.text();
   let data;
   try { data = text ? JSON.parse(text) : {}; } catch { data = { raw: text }; }
-  console.log("PROPSTACK RESPONSE:", endpoint, response.status, data);
-  if (!response.ok) throw new Error(`Propstack Fehler ${response.status} bei ${endpoint}: ${JSON.stringify(data)}`);
+  console.log("PROPSTACK RESPONSE:", logsafe.endpoint(endpoint), response.status);
+  if (!response.ok) throw logsafe.propstackError(response.status, endpoint, data);
   return data;
 }
 
