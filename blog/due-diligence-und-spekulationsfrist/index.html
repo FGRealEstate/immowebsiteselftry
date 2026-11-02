@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Due Diligence beim Immobilienkauf und die Spekulationsfrist</title>
+<meta name="description" content="Welche Unterlagen Sie vor dem Wohnungskauf prüfen, worauf es in Grundbuch und Protokollen ankommt und wie die Spekulationsfrist den Ausstieg bestimmt.">
+<link rel="canonical" href="https://fg-realestate.de/blog/due-diligence-und-spekulationsfrist/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Fischer &amp; Geserich Real Estate">
+<meta property="og:title" content="Due Diligence beim Immobilienkauf und die Spekulationsfrist">
+<meta property="og:description" content="Welche Unterlagen Sie vor dem Wohnungskauf prüfen, worauf es in Grundbuch und Protokollen ankommt und wie die Spekulationsfrist den Ausstieg bestimmt.">
+<meta property="og:url" content="https://fg-realestate.de/blog/due-diligence-und-spekulationsfrist/">
+<meta property="og:image" content="https://fg-realestate.de/blog/due-diligence-und-spekulationsfrist/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Blogartikel, Live-Fassung aus _build/live.py -->
+<script>
+/* Lesemodus vor dem ersten Zeichnen setzen, sonst blitzt die helle Seite auf */
+try{var t=localStorage.getItem("fg-theme");if(t)document.documentElement.dataset.theme=t;else if(matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.dataset.theme="dark"}catch(e){}
+</script>
+<link rel="stylesheet" href="../muster.css">
+<style>
+/* C3: Prüfmappe mit vier Registerreitern zum Umschalten, darunter die Spekulationsfrist als Band aus zehn Jahresfeldern, Verkaufsjahr per Regler, Steuer im Beispiel */
+.dc3-tabs{display:flex;gap:4px;margin:0;padding:0 0 0 10px;list-style:none}
+.dc3-tabs button{font:inherit;font-size:.8rem;padding:7px 12px 6px;border:1px solid var(--rule);border-bottom:0;background:var(--soft);color:var(--muted);cursor:pointer;border-radius:6px 6px 0 0}
+.dc3-tabs button[aria-selected="true"]{background:var(--bg);color:var(--ink);font-weight:700;position:relative;top:1px}
+.dc3-folder{border:1px solid var(--rule);padding:14px 16px;background:var(--bg)}
+.dc3-folder ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 18px}
+.dc3-folder ul[hidden]{display:none}
+.dc3-folder li{position:relative;padding-left:22px;font-size:.88rem;line-height:1.35}
+.dc3-folder li::before{content:"";position:absolute;left:0;top:2px;width:12px;height:12px;border:1.5px solid var(--gold)}
+.dc3-folder li small{display:block;color:var(--muted);font-size:.76rem}
+.dc3-frist{margin:22px 0 0}
+.dc3-frist-h{margin:0 0 8px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.dc3-band{display:grid;grid-template-columns:repeat(10,1fr) 1.4fr;gap:3px}
+.dc3-band span{height:34px;display:flex;align-items:center;justify-content:center;font-size:.74rem;font-variant-numeric:tabular-nums;background:var(--soft);color:var(--muted)}
+.dc3-band span.in{background:repeating-linear-gradient(-45deg,var(--warn) 0 3px,transparent 3px 7px);color:var(--ink);font-weight:700;text-shadow:0 0 3px var(--bg),0 0 3px var(--bg),0 0 3px var(--bg)}
+.dc3-band span.cur{outline:2px solid var(--ink);outline-offset:-2px;font-weight:700;color:var(--ink)}
+.dc3-band span.frei{background:var(--gold);color:var(--btn-ink);font-weight:700}
+.dc3-band span.frei.off{background:var(--soft);color:var(--muted);font-weight:400}
+.dc3-ctl{display:grid;grid-template-columns:auto 1fr auto;gap:6px 14px;align-items:center;margin:12px 0 0;font-size:.86rem}
+.dc3-ctl input{width:100%;accent-color:var(--gold)}
+.dc3-ctl output{font-weight:700;font-variant-numeric:tabular-nums;min-width:5.5em;text-align:right}
+.dc3-calc{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:10px 0 0}
+.dc3-calc div{background:var(--bg);padding:8px 10px;font-size:.76rem;line-height:1.3}
+.dc3-calc b{display:block;font-size:1.1rem;font-variant-numeric:tabular-nums}
+.dc3-calc .tax b{color:var(--warn)}
+.dc3-calc .tax.zero b{color:var(--ink)}
+.dc3-note{margin:10px 0 0;font-size:.84rem}
+@media (max-width:620px){.dc3-folder ul{grid-template-columns:1fr}.dc3-calc{grid-template-columns:1fr 1fr}.dc3-band span{height:28px;font-size:.66rem}.dc3-tabs button{padding:6px 8px 5px;font-size:.74rem}}
+</style>
+<script type="application/ld+json">
+[
+ {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Due Diligence vor dem Wohnungskauf und die Spekulationsfrist beim Verkauf",
+  "description": "Welche Unterlagen Sie vor dem Wohnungskauf prüfen, worauf es in Grundbuch und Protokollen ankommt und wie die Spekulationsfrist den Ausstieg bestimmt.",
+  "inLanguage": "de-DE",
+  "url": "https://fg-realestate.de/blog/due-diligence-und-spekulationsfrist/",
+  "image": "https://fg-realestate.de/blog/due-diligence-und-spekulationsfrist/og.jpg",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "author": {
+   "@type": "Organization",
+   "name": "Fischer & Geserich Real Estate GmbH"
+  },
+  "publisher": {
+   "@type": "Organization",
+   "name": "Fischer & Geserich Real Estate GmbH"
+  }
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Welche Unterlagen sollte ich vor dem Kauf einer Eigentumswohnung prüfen?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Grundbuchauszug, Teilungserklärung, Protokolle der Eigentümerversammlungen der letzten drei Jahre, Wirtschaftsplan und Jahresabrechnung, Stand der Erhaltungsrücklage, Wohnflächenberechnung, Energieausweis und bei vermieteten Wohnungen den Mietvertrag. Dazu das Baulastenverzeichnis bei der Bauaufsicht."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Wie lange ist die Spekulationsfrist bei Immobilien?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Zehn Jahre zwischen dem notariellen Kaufvertrag und dem notariellen Verkaufsvertrag. Danach ist der Gewinn aus dem Verkauf einer privaten Immobilie steuerfrei. Bei Eigennutzung im Verkaufsjahr und den beiden Jahren davor ist der Verkauf auch früher steuerfrei."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Muss ich die AfA beim Verkauf versteuern?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Bei einem Verkauf innerhalb der zehnjährigen Spekulationsfrist ja. Die abgeschriebene AfA mindert die Anschaffungskosten und erhöht damit den steuerpflichtigen Gewinn. Nach Ablauf der Frist wird sie nicht nachversteuert."
+    }
+   }
+  ]
+ }
+]
+</script>
+<link rel="stylesheet" href="/vendor/cookieconsent/cookieconsent.css">
+<link rel="stylesheet" href="/consent-manager.css">
+<script>window.FG_GTM_ID = "GTM-5DVGRHB2";</script>
+<script defer src="/vendor/cookieconsent/cookieconsent.umd.js"></script>
+<script defer src="/consent-manager.js"></script>
+</head>
+<body>
+
+<header class="top">
+  <nav class="site-nav" aria-label="Hauptnavigation">
+    <div class="nav-row">
+      <a class="brand" href="https://fg-realestate.de/index.html"><img src="/images/fg-logo-gold-transparent.png" alt="Fischer &amp; Geserich Real Estate" width="54" height="54"><span class="gold-text long">Fischer &amp; Geserich Real Estate</span><span class="gold-text short">Fischer &amp; Geserich<br>Real Estate</span></a>
+      <div class="nav-links">
+        <a href="https://fg-realestate.de/index.html">Start</a>
+        <div class="nav-group"><a href="https://fg-realestate.de/angebote.html" aria-haspopup="true">Kaufen<span class="caret"></span></a>
+          <div class="nav-sub">
+            <a href="https://fg-realestate.de/angebote.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M10 21v-3h4v3"/></svg></i><span><strong>Angebote</strong><small>Aktuelle Objekte</small></span></a>
+            <a href="https://fg-realestate.de/ankaufsberatung.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l4-4 4 2 3-3 7 6-3 3"/><path d="M7 8l-4 4 6 6 2-2M11 16l2 2 2-2M13 14l2 2 2-2"/></svg></i><span><strong>Ankaufsberatung</strong><small>Begleitung beim Kauf</small></span></a>
+          </div></div>
+        <a href="https://fg-realestate.de/verkaufen.html">Verkaufen</a>
+        <a href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierung</a>
+        <div class="nav-group"><a href="https://fg-realestate.de/investment-lab.html" aria-haspopup="true">Investment Lab<span class="caret"></span></a>
+          <div class="nav-sub">
+            <a href="https://fg-realestate.de/investment-lab.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M7 15h10"/></svg></i><span><strong>Investment Lab</strong><small>Rechner und Werkzeuge</small></span></a>
+            <a href="https://fg-realestate.de/standorte/"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg></i><span><strong>Standorte</strong><small>16 Standortanalysen</small></span></a>
+            <a href="https://fg-realestate.de/lexikon/"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4zM20 4h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6z"/></svg></i><span><strong>Lexikon</strong><small>Begriffe erklärt</small></span></a>
+          </div></div>
+        <a href="https://fg-realestate.de/ueber-uns.html">Über uns</a>
+        <a href="../" class="on" aria-current="page">Blog</a>
+        <a href="https://fg-realestate.de/kontakt.html" class="nav-contact">Kontakt</a>
+      </div>
+      <button class="burger" type="button" aria-label="Menü" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+    <div class="mobile-menu">
+      <a href="https://fg-realestate.de/index.html">Start</a>
+      <p>Kaufen</p><a href="https://fg-realestate.de/angebote.html">Angebote</a><a href="https://fg-realestate.de/ankaufsberatung.html">Ankaufsberatung</a>
+      <p>Leistungen</p><a href="https://fg-realestate.de/verkaufen.html">Verkaufen</a><a href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierung</a>
+      <p>Investment Lab</p><a href="https://fg-realestate.de/investment-lab.html">Investment Lab</a><a href="https://fg-realestate.de/standorte/">Standorte</a><a href="https://fg-realestate.de/lexikon/">Lexikon</a>
+      <p>Unternehmen</p><a href="https://fg-realestate.de/ueber-uns.html">Über uns</a><a href="../" class="here">Blog</a><a href="https://fg-realestate.de/kontakt.html" class="m-contact">Kontakt</a>
+    </div>
+  </nav>
+  <div class="subbar">
+    <div class="subbar-row">
+      <a class="sb-home" href="../">Blog</a>
+      <div class="where">Due Diligence und Spekulationsfrist</div>
+      <div class="sb-right">
+        <details class="cat-menu"><summary>Kategorien<span class="caret"></span></summary><nav>
+          <a href="../">Alle Artikel</a><a href="../#finanzierung">Finanzierung</a><a href="../#kauf-kapitalanlage" class="on">Kauf &amp; Kapitalanlage</a>
+        </nav></details>
+        <button class="icon-btn theme-btn" type="button" aria-label="Dunkler Lesemodus" aria-pressed="false" title="Lesemodus"><svg class="moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      </div>
+    </div>
+    <div class="progress"><span></span></div>
+  </div>
+</header>
+
+<nav class="crumbs" aria-label="Brotkrumen"><a href="../">Blog</a><i>•</i><a href="../#kauf-kapitalanlage">Kauf &amp; Kapitalanlage</a><i>•</i><span>Due Diligence und Spekulationsfrist</span></nav>
+<div class="lead">
+  <figure class="lead-img" data-wait="Bild folgt">
+    <img src="lead.jpg" alt="Ein Wohnhaus im Röntgenbild, Balken, Leitungen und ein feiner Riss werden sichtbar, daneben eine Sanduhr" width="1536" height="1024" onerror="this.parentNode.classList.add('missing')">
+  </figure>
+</div>
+<div class="head">
+  <a class="tag" href="../#kauf-kapitalanlage">Kauf &amp; Kapitalanlage</a>
+  <h1>Due Diligence vor dem Wohnungskauf und die Spekulationsfrist beim Verkauf</h1>
+  <p class="dateline"><span>Stand: Oktober 2026</span><span class="by">Von Fischer &amp; Geserich Real Estate</span></p>
+  <span class="pill">6 Min. Lesezeit</span>
+</div>
+
+<div class="cols">
+
+  <nav class="toc" aria-label="Inhalt">
+    <p class="toc-h">Inhalt</p>
+    <a href="#die-rechtliche-pruefung">Die rechtliche Prüfung</a>
+    <a href="#die-pruefung-der-eigentuemergemeinschaft">Die Prüfung der Eigentümergemeinschaft</a>
+    <a href="#die-pruefung-der-wohnung">Die Prüfung der Wohnung</a>
+    <a href="#die-pruefung-der-lage">Die Prüfung der Lage</a>
+    <a href="#die-spekulationsfrist">Die Spekulationsfrist</a>
+    <a href="#die-einschaetzung-von-fischer-geserich">Die Einschätzung von Fischer &amp; Geserich</a>
+    <a href="#fragen">Häufige Fragen</a>
+  </nav>
+
+  <article class="body">
+    <p class="answer">Due Diligence bedeutet, eine Immobilie vor dem Kauf systematisch zu prüfen: rechtlich über Grundbuch und Teilungserklärung, wirtschaftlich über Mietvertrag, Hausgeld und Rücklage, technisch über Zustand und Energieausweis und bei Eigentumswohnungen über die Protokolle der Eigentümerversammlungen. Zur Prüfung gehört auch der Blick auf den Ausstieg. Wer eine vermietete Immobilie innerhalb von zehn Jahren verkauft, versteuert den Gewinn, danach ist er steuerfrei.</p>
+    <div class="kurz"><p class="kurz-h">Das Wichtigste in Kürze</p><ul><li>Vor dem Kauf prüfen: Grundbuch, Teilungserklärung, Protokolle der letzten drei Jahre, Rücklage, Wohnflächenberechnung, Mietvertrag.</li><li>Verkaufsgewinne sind innerhalb von zehn Jahren steuerpflichtig, einschließlich der abgeschriebenen AfA.</li><li>Im Beispiel kostet ein Verkauf nach acht Jahren rund 13.180&nbsp;€ Steuern. Nach mehr als zehn Jahren wäre er steuerfrei.</li></ul></div>
+    <figure class="chart" id="g-dd">
+      <h3>Vor dem Kauf prüfen, beim Verkauf die Frist kennen</h3>
+      <p class="sub">Die Unterlagen in vier Gruppen und was ein früher Verkauf im Rechenbeispiel kostet.</p>
+      <div class="dc3-tabs" role="tablist" aria-label="Prüfbereich">
+        <button type="button" role="tab" aria-selected="true" data-t="0">Rechtlich</button><button type="button" role="tab" aria-selected="false" data-t="1">Gemeinschaft</button><button type="button" role="tab" aria-selected="false" data-t="2">Wohnung</button><button type="button" role="tab" aria-selected="false" data-t="3">Lage</button>
+      </div>
+      <div class="dc3-folder" role="tabpanel">
+        <ul data-p="0"><li>Grundbuch Abteilung II<small>Wegerechte, Wohnrechte, Nießbrauch, Vorkaufsrechte</small></li><li>Grundbuch Abteilung III<small>Grundschulden, beim Kauf meist gelöscht</small></li><li>Baulastenverzeichnis<small>bei der Bauaufsicht, nicht beim Grundbuchamt</small></li><li>Teilungserklärung<small>Sondereigentum, Sondernutzungsrechte, Kostenverteilung</small></li></ul>
+        <ul data-p="1" hidden><li>Protokolle der letzten drei Jahre<small>anstehende Sanierungen, vertagte Beschlüsse</small></li><li>Beschlusssammlung<small>was die Gemeinschaft entschieden hat</small></li><li>Wirtschaftsplan und Jahresabrechnung<small>Hausgeld, umlagefähiger Anteil</small></li><li>Stand der Erhaltungsrücklage<small>Puffer oder Sonderumlage</small></li></ul>
+        <ul data-p="2" hidden><li>Wohnflächenberechnung<small>ohne sie finanziert kaum eine Bank</small></li><li>Mietvertrag<small>Höhe, letzte Erhöhung, Staffel oder Index, Kaution</small></li><li>Energieausweis<small>Effizienzklasse</small></li><li>Zustand<small>Heizung, Fenster, Leitungen in den nächsten zehn Jahren</small></li></ul>
+        <ul data-p="3" hidden><li>Mikrolage<small>Straße, Umfeld, Anbindung</small></li><li>Soziales Erhaltungsgebiet<small>Modernisierungen genehmigungspflichtig</small></li></ul>
+      </div>
+      <div class="dc3-frist">
+        <p class="dc3-frist-h">Spekulationsfrist: Jahre zwischen den beiden Notarverträgen</p>
+        <div class="dc3-band" aria-hidden="true"></div>
+        <div class="dc3-ctl"><label for="dc3-y">Verkauf nach</label><input id="dc3-y" type="range" min="1" max="11" step="1" value="8"><output for="dc3-y" class="dc3-o">8 Jahren</output></div>
+        <div class="dc3-calc" aria-live="polite">
+          <div>Verkaufspreis<b class="dc3-r1"></b></div>
+          <div>Steuerlicher Buchwert<b class="dc3-r2"></b></div>
+          <div>Gewinn nach Verkaufskosten<b class="dc3-r3"></b></div>
+          <div class="tax">Steuer bei 42 %<b class="dc3-r4"></b></div>
+        </div>
+        <p class="dc3-note">Selbst bewohnt im Verkaufsjahr und in den zwei Jahren davor: steuerfrei, auch vor Ablauf der Frist.</p>
+      </div>
+      <p class="credit">Wohnung aus dem Rechenbeispiel: 223.140 € mit Nebenkosten, AfA 3.570 € im Jahr, Wert +2 % im Jahr, Verkaufskosten 3,57 % · keine Steuerberatung · Grafik: Fischer &amp; Geserich</p>
+    </figure>
+    <h2 id="die-rechtliche-pruefung">Die rechtliche Prüfung</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild1.jpg" alt="Ein aufgeschlagenes Grundbuch als Buchmalerei, in einem Feld sitzt eine fremde Figur im Sessel, der Käufer steht vor der Tür" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p><strong>Grundbuch.</strong> Abteilung I nennt den Eigentümer, Abteilung II Lasten und Beschränkungen wie Wegerechte, Wohnrechte, Nießbrauch oder Vorkaufsrechte, Abteilung III die Grundschulden. Grundschulden des Verkäufers werden beim Kauf in der Regel gelöscht. Rechte in Abteilung II bleiben oft bestehen und können den Wert erheblich mindern. Ein lebenslanges Wohnrecht eines Dritten mindert den Wert einer Wohnung als Kapitalanlage erheblich, weil Sie sie für die Dauer des Rechts weder selbst nutzen noch frei vermieten können.</p>
+<p><strong>Baulastenverzeichnis.</strong> Hier stehen öffentlich-rechtliche Verpflichtungen, etwa Abstandsflächen oder Zufahrten zugunsten des Nachbarn. Das Verzeichnis wird von der Bauaufsicht geführt, nicht vom Grundbuchamt.</p>
+<p><strong>Teilungserklärung.</strong> Sie legt fest, was Sondereigentum ist und was Gemeinschaftseigentum, welche Sondernutzungsrechte bestehen, etwa an Garten oder Stellplatz, und wie Kosten verteilt werden. Ein Risiko ist es, wenn die tatsächliche Nutzung von der Teilungserklärung abweicht, zum Beispiel bei einem ausgebauten Dachboden, der dort als Speicher eingetragen ist.</p>
+    <h2 id="die-pruefung-der-eigentuemergemeinschaft">Die Prüfung der Eigentümergemeinschaft</h2>
+    <p>Bei Eigentumswohnungen kaufen Sie einen Anteil an einem ganzen Haus. Wie es um dieses Haus steht, erfahren Sie aus drei Quellen.</p>
+    <div class="tiles"><div><p><strong>Protokolle der Eigentümerversammlungen der letzten drei Jahre.</strong> Hier stehen anstehende Sanierungen, Streit in der Gemeinschaft, beschlossene oder vertagte Maßnahmen. Wenn seit Jahren über das Dach diskutiert und die Entscheidung vertagt wird, kommt die Rechnung trotzdem.</p></div><div><p><strong>Wirtschaftsplan und Jahresabrechnung.</strong> Sie zeigen das Hausgeld, wie viel davon umlagefähig ist, und wie viel in die Erhaltungsrücklage fließt.</p></div><div><p><strong>Stand der Erhaltungsrücklage.</strong> Eine gut gefüllte Rücklage ist ein Puffer. Eine niedrige Rücklage in einem älteren Haus mit absehbarem Sanierungsbedarf bedeutet, dass die Kosten über Sonderumlagen auf die Eigentümer verteilt werden, auch auf Sie.</p></div></div>
+    <h2 id="die-pruefung-der-wohnung">Die Prüfung der Wohnung</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild2.jpg" alt="Eine Wohnung ohne Dach von oben, in Wachs gemalt, darin Maßband, Lupe und ein gefalteter Grundriss" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p><strong>Wohnflächenberechnung.</strong> Ohne sie lässt sich weder der Preis pro Quadratmeter noch die Miete sauber einordnen, und ohne sie finanziert kaum eine Bank. Fehlt sie, sollte sie vor dem Kauf erstellt werden.</p>
+<p><strong>Mietvertrag.</strong> Höhe der Miete, letzte Erhöhung, Art des Vertrags, Kaution, Zahlungsverhalten des Mieters. Bei Staffel- oder Indexmieten gelten eigene Regeln für künftige Erhöhungen.</p>
+<p><strong>Energieausweis und Zustand.</strong> Effizienzklasse, Alter von Heizung, Fenstern und Leitungen. Was in den nächsten zehn Jahren erneuert werden muss, gehört in die Kalkulation.</p>
+    <h2 id="die-pruefung-der-lage">Die Prüfung der Lage</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild3.jpg" alt="Eine Karte aus Höhenlinien, ein Häuserblock ist von einem schützenden Ring umgeben" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Neben der Mikrolage lohnt in Berlin ein Blick darauf, ob das Objekt in einem sozialen Erhaltungsgebiet liegt. Dort sind bestimmte bauliche Maßnahmen und Modernisierungen genehmigungspflichtig. Das beeinflusst die Planung von Sanierungen.</p>
+    <h2 id="die-spekulationsfrist">Die Spekulationsfrist</h2>
+    <p>Gewinne aus dem Verkauf einer privaten Immobilie sind nach §&nbsp;23 EStG steuerpflichtig, wenn zwischen Anschaffung und Veräußerung nicht mehr als zehn Jahre liegen. Maßgeblich sind die Daten der notariellen Kaufverträge, nicht die Übergabe. Nach zehn Jahren ist der Gewinn steuerfrei, unabhängig von seiner Höhe.</p>
+    <div class="picks"><div><p><strong>Die Ausnahme für Eigennutzer.</strong> Steuerfrei ist der Verkauf auch innerhalb der zehn Jahre, wenn Sie die Immobilie im Jahr des Verkaufs und in den beiden vorangegangenen Jahren selbst bewohnt haben, oder durchgehend seit dem Kauf.</p></div><div><p><strong>Die abgeschriebene AfA zählt mit.</strong> Der steuerpflichtige Gewinn berechnet sich aus dem Verkaufspreis abzüglich Verkaufskosten und abzüglich der Anschaffungskosten, die um die bereits abgeschriebene AfA vermindert sind. Was Sie steuerlich abgeschrieben haben, wird bei einem Verkauf innerhalb der Frist nachträglich wieder versteuert.</p></div><div><p><strong>Rechenbeispiel.</strong> Eine Wohnung in Berlin-Spandau mit 55 Quadratmetern wurde für 200.000&nbsp;Euro gekauft, mit Nebenkosten 223.140&nbsp;Euro. Wir nehmen an, dass ihr Wert um 2&nbsp;Prozent im Jahr steigt und beim Verkauf 3,57&nbsp;Prozent Maklerprovision anfallen. In acht Jahren wurden 28.562&nbsp;Euro AfA geltend gemacht, der steuerliche Buchwert liegt bei 194.578&nbsp;Euro. Die Wohnung wird nach acht Jahren für 234.332&nbsp;Euro verkauft, die Verkaufskosten betragen 8.366&nbsp;Euro. Der steuerpflichtige Gewinn liegt bei 31.388&nbsp;Euro. Bei 42&nbsp;Prozent Grenzsteuersatz sind rund 13.180&nbsp;Euro Steuern fällig. Wenig mehr als zwei Jahre später, nach Ablauf der zehn Jahre, wäre der Verkauf steuerfrei gewesen.</p></div><div><p><strong>Die Drei-Objekt-Grenze.</strong> Wer mehr als drei Objekte innerhalb von fünf Jahren nach dem Kauf wieder verkauft, riskiert, als gewerblicher Grundstückshändler eingestuft zu werden. Dann gelten andere steuerliche Regeln, unabhängig von der Spekulationsfrist.</p></div></div>
+    <section class="pos">
+    <h2 id="die-einschaetzung-von-fischer-geserich">Die Einschätzung von Fischer &amp; Geserich</h2>
+    <p>Wir gehen mit unseren Kunden in keinen Kaufvertrag, bevor die Unterlagen vollständig geprüft sind. Wenn wir selbst verkaufen, gehen wir aus demselben Grund erst in die Vermarktung, wenn alle Dokumente vorliegen. Die Spekulationsfrist besprechen wir schon beim Kauf, weil sie bestimmt, wie lange eine Investition gehalten werden sollte und was ein früher Ausstieg kostet.</p>
+    <p><em>Dieser Artikel erklärt die Grundlagen. Für Ihre konkrete steuerliche Situation sprechen Sie bitte mit Ihrem Steuerberater.</em></p>
+    </section>
+
+    <div class="qa" id="fragen"><p class="qa-h">Häufige Fragen</p><details open><summary>Welche Unterlagen sollte ich vor dem Kauf einer Eigentumswohnung prüfen?</summary><div><p>Grundbuchauszug, Teilungserklärung, Protokolle der Eigentümerversammlungen der letzten drei Jahre, Wirtschaftsplan und Jahresabrechnung, Stand der Erhaltungsrücklage, Wohnflächenberechnung, Energieausweis und bei vermieteten Wohnungen den Mietvertrag. Dazu das Baulastenverzeichnis bei der Bauaufsicht.</p></div></details><details><summary>Wie lange ist die Spekulationsfrist bei Immobilien?</summary><div><p>Zehn Jahre zwischen dem notariellen Kaufvertrag und dem notariellen Verkaufsvertrag. Danach ist der Gewinn aus dem Verkauf einer privaten Immobilie steuerfrei. Bei Eigennutzung im Verkaufsjahr und den beiden Jahren davor ist der Verkauf auch früher steuerfrei.</p></div></details><details><summary>Muss ich die AfA beim Verkauf versteuern?</summary><div><p>Bei einem Verkauf innerhalb der zehnjährigen Spekulationsfrist ja. Die abgeschriebene AfA mindert die Anschaffungskosten und erhöht damit den steuerpflichtigen Gewinn. Nach Ablauf der Frist wird sie nicht nachversteuert.</p></div></details></div>
+
+    <aside class="cta" aria-label="Erstgespräch Ankaufsberatung buchen"><h3>Prüfen, bevor Sie unterschreiben</h3><p>In der Ankaufsberatung gehen wir die Unterlagen eines Objekts mit Ihnen durch und rechnen auch den Ausstieg mit, bevor Sie den Notar mit dem Kaufvertrag beauftragen.</p><a class="btn" href="https://fg-realestate.de/finanzierungsberatung.html">Erstgespräch Ankaufsberatung buchen</a></aside>
+
+    <div class="end">
+      <div class="quellen"><h3>Quellen</h3><ul><li><a href="https://www.gesetze-im-internet.de/estg/__23.html" target="_blank" rel="noopener">§&nbsp;23 EStG, Private Veräußerungsgeschäfte</a></li><li><a href="https://www.gesetze-im-internet.de/baugb/__172.html" target="_blank" rel="noopener">§&nbsp;172 BauGB, Erhaltung baulicher Anlagen</a></li></ul></div>
+      <p class="note">Die Bilder in diesem Beitrag wurden mit KI erstellt.</p>
+      <p class="note">Der Beitrag dient der allgemeinen Information und ersetzt keine Rechts-, Steuer-, Finanzierungs- oder Anlageberatung. Zinssätze in Beispielrechnungen sind Beispielwerte, keine aktuellen Konditionen.</p>
+    </div>
+  </article>
+
+  <aside class="related" aria-label="Mehr zu Kauf &amp; Kapitalanlage">
+    <h2>Mehr zu Kauf &amp; Kapitalanlage</h2>
+    <a href="../wie-berechnet-man-die-eigenkapitalrendite/"><span class="rthumb"><img src="../wie-berechnet-man-die-eigenkapitalrendite/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Wie berechnet man die Eigen&shy;kapitalrendite?</strong></a>
+  </aside>
+</div>
+
+<section class="more" aria-label="Weiterlesen">
+  <div class="more-in">
+    <a class="back" href="../">‹ Zurück zum Blog</a>
+  </div>
+</section>
+
+<footer><span>© 2026 Fischer &amp; Geserich Real Estate</span><span><a href="https://fg-realestate.de/impressum.html">Impressum</a> · <a href="https://fg-realestate.de/datenschutz.html">Datenschutz</a> · <a href="#" data-open-consent>Cookie-Einstellungen</a></span></footer>
+
+<script>
+/* Mobilmenü wie auf der Website */
+(function(){
+  var b=document.querySelector(".burger"),m=document.querySelector(".mobile-menu");
+  b.addEventListener("click",function(){var o=m.classList.toggle("open");b.setAttribute("aria-expanded",o)});
+})();
+/* Offene Menüs schließen bei Klick daneben oder mit Esc */
+(function(){
+  var cat=document.querySelector(".cat-menu"),b=document.querySelector(".burger"),m=document.querySelector(".mobile-menu");
+  function closeAll(e){
+    if(cat.open&&(!e||!cat.contains(e.target)))cat.open=false;
+    if(m.classList.contains("open")&&(!e||!(m.contains(e.target)||b.contains(e.target)))){m.classList.remove("open");b.setAttribute("aria-expanded",false)}
+  }
+  document.addEventListener("click",closeAll);
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeAll()});
+})();
+/* Umschalter heller / dunkler Lesemodus */
+(function(){
+  var root=document.documentElement,b=document.querySelector(".theme-btn");
+  function sync(){var d=root.dataset.theme==="dark";b.setAttribute("aria-pressed",d);b.setAttribute("aria-label",d?"Heller Lesemodus":"Dunkler Lesemodus")}
+  b.addEventListener("click",function(){
+    root.dataset.theme=root.dataset.theme==="dark"?"light":"dark";sync();
+    try{localStorage.setItem("fg-theme",root.dataset.theme)}catch(e){}
+  });
+  sync();
+})();
+/* Kopfzeile: Fortschritt, Titel nach dem Scrollen, aktiver Abschnitt links */
+(function(){
+  var top=document.querySelector(".top"),bar=document.querySelector(".progress span"),h1=document.querySelector(".head h1");
+  var links=[].slice.call(document.querySelectorAll(".toc a")),secs=links.map(function(a){return document.querySelector(a.getAttribute("href"))});
+  function tick(){
+    var d=document.documentElement,max=d.scrollHeight-d.clientHeight;
+    bar.style.width=(max>0?d.scrollTop/max*100:0)+"%";
+    top.classList.toggle("scrolled",h1.getBoundingClientRect().bottom<140);
+    var cur=0;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<170)cur=i});
+    links.forEach(function(a,i){a.classList.toggle("on",i===cur)});
+  }
+  var lead=document.querySelector(".lead-img");
+  function shrink(){
+    /* Bild wird beim Scrollen gleichmäßig kleiner, Seitenverhältnis bleibt (n26-Verhalten) */
+    var r=lead.getBoundingClientRect(),p=Math.min(Math.max((140-r.top)/r.height,0),1);
+    lead.style.setProperty("--s",(1-p*.45).toFixed(3));
+  }
+  addEventListener("scroll",function(){tick();shrink()},{passive:true});tick();shrink();
+})();
+
+/* C3: Reiter umschalten, Verkaufsjahr wählen, Steuer nach § 23 EStG im Beispiel rechnen */
+(function(){
+  var root=document.getElementById("g-dd");if(!root)return;
+  var tabs=root.querySelectorAll("[data-t]"),pans=root.querySelectorAll("[data-p]");
+  tabs.forEach(function(b){b.addEventListener("click",function(){
+    tabs.forEach(function(x){x.setAttribute("aria-selected",x===b)});
+    pans.forEach(function(p){p.hidden=p.dataset.p!==b.dataset.t});
+  })});
+  var band=root.querySelector(".dc3-band"),rng=root.querySelector("#dc3-y"),h="";
+  for(var i=1;i<=10;i++)h+="<span>"+i+"</span>";
+  band.innerHTML=h+'<span class="frei">steuerfrei</span>';
+  var cells=band.querySelectorAll("span");
+  var f=function(v){return(v<0?"−":"")+Math.abs(Math.round(v)).toLocaleString("de-DE")+" €"};
+  function draw(){
+    var n=+rng.value;
+    var vk=200000*Math.pow(1.02,n),bw=223140-3570.24*n,g=vk*(1-0.0357)-bw,frei=n>10;
+    cells.forEach(function(c,j){c.className=j<10?((j<n&&!frei?"in":"")+(j===n-1&&!frei?" cur":"")):("frei"+(frei?" cur":" off"))});
+    root.querySelector(".dc3-o").textContent=frei?"über 10 Jahren":n+(n===1?" Jahr":" Jahren");
+    root.querySelector(".dc3-r1").textContent=f(vk);
+    root.querySelector(".dc3-r2").textContent=f(bw);
+    root.querySelector(".dc3-r3").textContent=f(g);
+    var t=root.querySelector(".dc3-r4"),box=t.parentNode;
+    if(frei){t.textContent="0 €, Frist abgelaufen";box.classList.add("zero")}
+    else if(g<=0){t.textContent="0 €, kein Gewinn";box.classList.add("zero")}
+    else{t.textContent="rund "+f(Math.round(g*0.42/10)*10);box.classList.remove("zero")}
+  }
+  rng.addEventListener("input",draw);draw();
+})();
+</script>
+</body>
+</html>
