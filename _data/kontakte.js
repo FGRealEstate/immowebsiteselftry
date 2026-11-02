@@ -30,7 +30,8 @@ module.exports = {
   timon: {
     name: "Timon Fischer",
     role: "Finanzierung & Prozesse",
-    phone: null,
+    // Peer, 02.11.2026: Timons Nummer auf seinen Seiten statt der Büronummer
+    phone: { display: "+49 1523 9526826", href: "tel:+4915239526826" },
     email: null,
     photo: "/images/home/team-timon-fischer-720.webp",
     photoSrcset: "/images/home/team-timon-fischer-480.webp 480w, /images/home/team-timon-fischer-720.webp 720w",
