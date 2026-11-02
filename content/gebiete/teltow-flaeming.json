@@ -161,7 +161,7 @@
   "verkaufen": {
     "h2": "Immobilie im Landkreis Teltow-Fläming verkaufen",
     "absaetze": [
-      "Wie viel Ihre Immobilie wert ist, hängt im Landkreis vor allem an der Nähe zu Berlin: Freistehende Einfamilienhäuser kosteten 2025 im Berliner Umland, also in Ludwigsfelde, Blankenfelde-Mahlow, Großbeeren und Rangsdorf, im Mittel 490.205 €, im weiteren Metropolenraum mit Zossen, Luckenwalde und Jüterbog 283.855 €.[[1]] Wir bewerten deshalb nach Ihrer Bodenrichtwertzone, Ihrem Baujahr und den Vergleichszahlen Ihrer Gemeinde.",
+      "Wie viel Ihre Immobilie wert ist, hängt im Landkreis vor allem an der Nähe zu Berlin: Freistehende Einfamilienhäuser kosteten 2025 im Berliner Umland, also in Ludwigsfelde, Blankenfelde-Mahlow, Großbeeren und Rangsdorf, im Mittel 490.205 €, im weiteren Metropolenraum mit Zossen, Luckenwalde und Jüterbog 283.855 €.[[1]] Deshalb bewerten wir nach den Preisen, zu denen vergleichbare Häuser und Wohnungen in Ihrer Gegend tatsächlich verkauft wurden; bei Häusern und Grundstücken kommt der Bodenrichtwert dazu. Bei vermieteten Immobilien zählt außerdem die Nettokaltmiete, die heute gezahlt wird.",
       "2025 wurden im Landkreis 2.218 Kaufverträge geschlossen, 21,5 % mehr als im Vorjahr; der Geldumsatz stieg um 74 % auf 785,8 Mio. €, bei Wohnungs- und Teileigentum um 164 %. Für Bauland im Berliner Umland lag der Preisindex des Gutachterausschusses zum 01.01.2026 rund 14 % unter dem Höchststand vom 01.01.2023.[[1]] Einzelne Zonen verlaufen anders: Die Ahrensdorfer Heide in Ludwigsfelde stieg im selben Jahr um 80 €/m².[[2]]"
     ]
   },
@@ -181,7 +181,7 @@
   "faq": [
     {
       "frage": "Welcher Makler verkauft Häuser in Ludwigsfelde und Blankenfelde-Mahlow?",
-      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im ganzen Landkreis Teltow-Fläming, also auch in Ludwigsfelde, Blankenfelde-Mahlow, Rangsdorf und Zossen; Ihr Ansprechpartner ist Lennart Geserich. Grundlage unserer Bewertung sind der Bodenrichtwert Ihrer Zone und die Vergleichspreise des Gutachterausschusses. Er weist Haus- und Wohnflächenpreise für die größeren Gemeinden einzeln aus, für Einfamilienhäuser zum Beispiel 3.890 €/m² in Ludwigsfelde und 3.850 €/m² in Blankenfelde-Mahlow.[[1]]",
+      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im ganzen Landkreis Teltow-Fläming, also auch in Ludwigsfelde, Blankenfelde-Mahlow, Rangsdorf und Zossen; Ihr Ansprechpartner ist Lennart Geserich. Wir bewerten nach den Preisen, zu denen vergleichbare Häuser und Wohnungen in Ihrer Gegend tatsächlich verkauft wurden; bei Häusern und Grundstücken kommt der Bodenrichtwert dazu. Der Gutachterausschuss weist Haus- und Wohnflächenpreise für die größeren Gemeinden einzeln aus, für Einfamilienhäuser zum Beispiel 3.890 €/m² in Ludwigsfelde und 3.850 €/m² in Blankenfelde-Mahlow.[[1]]",
       "herkunft": "Google-Autocomplete „immobilienmakler teltow fläming“, „makler ludwigsfelde“, „immobilienmakler blankenfelde mahlow“, „immobilienmakler mahlow“ und „immobilienmakler zossen“ (research/serp/autocomplete-2026-10-26-teltow-flaeming.json)"
     },
     {

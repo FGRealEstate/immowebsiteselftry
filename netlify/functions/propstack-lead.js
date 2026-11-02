@@ -54,6 +54,14 @@ exports.handler = async function (event) {
       });
     }
 
+    // Update 28 §3.1: Wer „Mit einem Anruf“ wählt, muss eine Telefonnummer angeben (im Browser prüft fg-design.js das schon).
+    if (normalize(lead.contactPreference) === "telefon" && !lead.phone) {
+      return json(400, {
+        success: false,
+        error: "Bitte geben Sie Ihre Telefonnummer an, damit wir Sie anrufen können.",
+      });
+    }
+
     const note = buildNote(lead);
     const contactPayload = buildContactPayload(lead, note);
 
@@ -143,7 +151,8 @@ async function sendValuationConfirmation(lead, contactId, data) {
       plotGiven: Boolean(clean((lead.propertyDetails || {})["seller-plot-area"])),
     });
     if (!url && !nachfrage.ohneFragen(objectType)) return { sent: false, skipped: true, reason: "kein Nachfrage-Link" };
-    const mail = nachfrage.bestaetigung({ firstName: lead.firstName, lastName: lead.lastName, link: url });
+    // Update 28 §3.2: Version A (E-Mail) oder B (Anruf) je nach Kontaktwunsch, mit Adresse der Immobilie
+    const mail = nachfrage.bestaetigung({ firstName: lead.firstName, lastName: lead.lastName, link: url, adresse: nachfrage.adresseText(data), anruf: nachfrage.perAnruf(lead.contactPreference) });
     const result = await sendInternalNotification({
       to: lead.email,
       replyTo: process.env.WEBSITE_LEAD_EMAIL || "info@fg-realestate.de",
@@ -597,8 +606,8 @@ async function maybeCreateOwnerProperty(apiKey, contactId, lead, note) {
   const attempts = [
     { label: "full property", payload: { property } },
     { label: "without status", payload: { property: omitKeys(property, ["status_id", "property_status_id"]) } },
-    { label: "without optional standard fields", payload: { property: omitKeys(property, ["status_id", "property_status_id", "base_rent", "net_cold_rent", "rent", "target_cold_rent", "service_charge", "annual_net_rent", "target_annual_net_rent", "balcony_area", "furnishing_quality", "last_modernization", "rs_category", "country"]) } },
-    { label: "without custom fields", payload: { property: omitKeys(property, ["partial_custom_fields", "status_id", "property_status_id", "base_rent", "net_cold_rent", "rent", "target_cold_rent", "service_charge", "annual_net_rent", "target_annual_net_rent", "rs_category", "country"]) } },
+    { label: "without optional standard fields", payload: { property: omitKeys(property, ["status_id", "property_status_id", "base_rent", "net_cold_rent", "rent", "target_cold_rent", "service_charge", "annual_net_rent", "target_annual_net_rent", "balcony_area", "interior_quality", "last_modernization", "rs_category", "country"]) } },
+    { label: "without custom fields", payload: { property: omitKeys(property, ["partial_custom_fields", "interior_quality", "status_id", "property_status_id", "base_rent", "net_cold_rent", "rent", "target_cold_rent", "service_charge", "annual_net_rent", "target_annual_net_rent", "rs_category", "country"]) } },
     { label: "without category", payload: { property: omitKeys(property, ["partial_custom_fields", "status_id", "property_status_id", "rs_category", "country"]) } },
     {
       label: "minimal owner property",
@@ -696,7 +705,9 @@ async function buildOwnerPropertyPayload(apiKey, contactId, lead, note) {
     number_of_rooms: shouldUseRoomsForObject(lead.objectType) ? numberOrNull(firstValue(details, ["seller-rooms", "seller_rooms", "rooms", "zimmer"] )) : undefined,
     construction_year: numberOrNull(firstValue(details, ["seller-year", "seller_year", "construction_year", "baujahr"])),
     energy_efficiency_class: clean(firstValue(details, ["seller-energy", "seller_energy", "energy", "energieklasse"])),
-    furnishing_quality: clean(firstValue(details, ["seller-quality", "seller_quality", "quality", "ausstattung", "objektzustand"])),
+    // Update 28 §2: Ausstattung ins Propstack-Standardfeld „Qualität der Ausstattung“ (interior_quality), das Sprengnetter liest.
+    // Der Zustand (seller-quality) geht hier nicht mehr hinein; nur Ausstattungswerte werden übersetzt.
+    interior_quality: interiorQuality(details).api,
     last_modernization: clean(firstValue(details, ["seller-modernization", "seller_modernization", "modernization", "letzte_modernisierung"])),
     balcony: isAffirmative(firstValue(details, ["seller-balcony", "seller_balcony", "balcony", "balkon"])),
     balcony_area: numberOrNull(firstValue(details, ["seller-balcony-area", "seller_balcony_area", "balcony_area"])),
@@ -738,7 +749,7 @@ function buildOwnerPropertyCustomFields(lead) {
     wohnungsart: clean(firstValue(details, ["seller-apartment-subtype", "seller_apartment_subtype"])),
     etage: clean(firstValue(details, ["seller-floor", "seller_floor"])),
     objektzustand: clean(firstValue(details, ["seller-quality", "seller_quality", "quality"])),
-    ausstattung: clean(firstValue(details, ["seller-quality", "seller_quality", "quality"])),
+    ausstattung: interiorQuality(details).option,
     wohnflache: numberOrNull(firstValue(details, ["seller-area-value", "seller_area_value"])),
     grundstucksflache: numberOrNull(firstValue(details, ["seller-plot-area", "seller_plot_area"])),
     zimmeranzahl: shouldUseRoomsForObject(lead.objectType) ? numberOrNull(firstValue(details, ["seller-rooms", "seller_rooms"] )) : undefined,
@@ -1259,6 +1270,23 @@ function normalizeArray(response) {
   return [];
 }
 
+// Update 28 §2: Werte der Ausstattung genau wie in Propstack („Qualität der Ausstattung“: einfach, normal, gehoben, luxuriös).
+// api = Wert für das Standardfeld interior_quality, option = Auswahl im Custom Field „Ausstattung“ dieses Kontos.
+// Nimmt das neue Feld seller-interior-quality; aus seller-quality (ältere Landingpage) nur echte Ausstattungswerte, nie einen Zustand.
+const INTERIOR_QUALITY = {
+  luxurios: { api: "LUXURY", option: "luxus" },
+  luxus: { api: "LUXURY", option: "luxus" },
+  gehoben: { api: "SOPHISTICATED", option: "gehoben" },
+  normal: { api: "NORMAL", option: "normal" },
+  einfach: { api: "SIMPLE", option: "Einfach" },
+};
+
+function interiorQuality(details) {
+  const neu = normalize(firstValue(details || {}, ["seller-interior-quality", "seller_interior_quality", "interior_quality"]));
+  const alt = normalize(firstValue(details || {}, ["seller-quality", "seller_quality"]));
+  return INTERIOR_QUALITY[neu] || INTERIOR_QUALITY[alt] || { api: undefined, option: undefined };
+}
+
 function clean(value) {
   if (value === null || value === undefined) return "";
   return String(value).trim();
@@ -1349,7 +1377,8 @@ function humanizeKey(key) {
     "seller-balcony": "Balkon/Terrasse",
     "seller-balcony-area": "Balkon-/Terrassenfläche",
     "seller-plot-area": "Grundstücksgröße",
-    "seller-quality": "Ausstattung / Objektzustand",
+    "seller-quality": "Objektzustand",
+    "seller-interior-quality": "Ausstattung",
     "buyer-rooms-from": "Zimmer ab",
     "buyer-living-space-from": "Wohnfläche ab m²",
     "buyer-plot-area-from": "Grundstück ab m²",

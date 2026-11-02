@@ -12,6 +12,10 @@ module.exports = {
   // Feste Adresse des Profils (CID), für sameAs im Markup (Update 4, 3.6). Geprüft am 27.10.2026: öffnet das Profil.
   mapsUrl: "https://www.google.com/maps?cid=882906388648525084",
   reviewUrl: "https://g.page/r/CRx9UcGutkAMEBM/review",
+  // Update 26 §4.1 (01.11.2026): „Alle Bewertungen →“ öffnet die Liste der Rezensionen des Profils (Place-ID wie in url).
+  // Geprüft am 01.11.2026: leitet auf die Google-Suche mit offenem Rezensionen-Dialog (lrd=…:0xc40b6aec1517d1c,1; hexadezimal
+  // die CID aus mapsUrl), Fischer und Geserich Real Estate GmbH, Schützenstraße.
+  bewertungenUrl: "https://search.google.com/local/reviews?placeid=ChIJ5bO7X_XZbiMRHH1Rwa62QAw",
   // Update 4, 3.5: alle 23 Rezensionen am 27.10.2026 aus dem Profil übernommen (Google-Suche, Dialog „Rezensionen“,
   // hl=de, sortiert nach „Neueste“), Wortlaut unverändert, auch Tippfehler und Zeilenumbrüche. Kein Hinweis auf
   // Übersetzung. Reihenfolge wie bei Google: neueste zuerst. Name: Vorname; wo Google keinen Personennamen zeigt,

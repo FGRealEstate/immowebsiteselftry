@@ -181,7 +181,7 @@
   "verkaufen": {
     "h2": "Immobilie im Landkreis Oberhavel verkaufen",
     "absaetze": [
-      "Die Märkte der Orte unterscheiden sich stark. In Hennigsdorf betrafen 2025 von 169 Kauffällen 105 Wohnungen, im Mühlenbecker Land von 168 nur 23.[[1]] Wir bewerten deshalb nach den Zahlen Ihrer Gemeinde und Ihres Baujahrs, nicht nach einem Mittelwert für den Landkreis.",
+      "Die Märkte der Orte unterscheiden sich stark. In Hennigsdorf betrafen 2025 von 169 Kauffällen 105 Wohnungen, im Mühlenbecker Land von 168 nur 23.[[1]] Wir bewerten deshalb nach den Zahlen Ihrer Gemeinde und Ihres Baujahrs, nicht nach einem Mittelwert für den Landkreis. Bei vermieteten Immobilien zählt außerdem die Nettokaltmiete, die heute gezahlt wird.",
       "Auch die Bodenrichtwerte haben sich zum 01.01.2026 unterschiedlich entwickelt: In Velten stiegen sie in allen Wohnzonen, in Hennigsdorf in vier von fünf, in der Ortslage Birkenwerder sank der Wert von 400 auf 340 €/m².[[2]]",
       "Bei vermieteten Wohnungen kommt es auf die Gemeinde an: In Birkenwerder, im Mühlenbecker Land und in Oranienburg gilt die Mietpreisbremse, in Hohen Neuendorf, Hennigsdorf und Velten nicht.[[5]] Das berücksichtigen wir in Preis und Exposé, weil Kapitalanleger danach rechnen."
     ]
@@ -202,7 +202,7 @@
   "faq": [
     {
       "frage": "Welcher Makler verkauft Immobilien in Hohen Neuendorf, Hennigsdorf und Velten?",
-      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im Berliner Umland des Landkreises Oberhavel, also auch in Hohen Neuendorf, Hennigsdorf und Velten. Ihr Ansprechpartner ist Timon Fischer. Wir bewerten nach dem Bodenrichtwert Ihrer Zone und den Preisen, die der Gutachterausschuss für Ihren Ort ausweist.",
+      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im Berliner Umland des Landkreises Oberhavel, also auch in Hohen Neuendorf, Hennigsdorf und Velten. Ihr Ansprechpartner ist Timon Fischer. Wir bewerten nach den Preisen, zu denen vergleichbare Häuser und Wohnungen in Ihrer Gegend tatsächlich verkauft wurden; bei Häusern und Grundstücken kommt der Bodenrichtwert dazu.",
       "herkunft": "Prompts der KI-Recherche „Welcher Makler verkauft Immobilien in Oranienburg und Hohen Neuendorf?“ (q39) und „Welcher Makler verkauft in Velten und Hennigsdorf?“ (q43) (ChatGPT, Gemini, Google AI Overview; Dashboard/src/data/research/ai_answers.json, Oktober 2026)"
     },
     {

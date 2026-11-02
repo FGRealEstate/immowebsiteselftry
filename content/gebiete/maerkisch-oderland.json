@@ -168,7 +168,7 @@
   "verkaufen": {
     "h2": "Immobilie im Landkreis Märkisch-Oderland verkaufen",
     "absaetze": [
-      "Wie viel Ihre Immobilie wert ist, hängt im Landkreis vor allem an der Nähe zu Berlin und am Baujahr. Freistehende Einfamilienhäuser der Baujahre 1991 bis 2012 kosteten 2025 im Berliner Umland des Landkreises im Mittel 484.000 €, im weiteren Metropolenraum 310.000 €. In Zonen mit Bodenrichtwerten über 400 €/m² kosteten Häuser dieser Baujahre in den Jahren 2023 bis 2025 im Mittel 4.500 €/m² Wohnfläche, in Zonen bis 50 €/m² 1.970 €/m².[[1]] Wir bewerten deshalb nach Ihrer Bodenrichtwertzone, Ihrem Baujahr und Vergleichsverkäufen.",
+      "Wie viel Ihre Immobilie wert ist, hängt im Landkreis vor allem an der Nähe zu Berlin und am Baujahr. Freistehende Einfamilienhäuser der Baujahre 1991 bis 2012 kosteten 2025 im Berliner Umland des Landkreises im Mittel 484.000 €, im weiteren Metropolenraum 310.000 €. In Zonen mit Bodenrichtwerten über 400 €/m² kosteten Häuser dieser Baujahre in den Jahren 2023 bis 2025 im Mittel 4.500 €/m² Wohnfläche, in Zonen bis 50 €/m² 1.970 €/m².[[1]] Deshalb bewerten wir nach den Preisen, zu denen vergleichbare Häuser und Wohnungen in Ihrer Gegend tatsächlich verkauft wurden; bei Häusern und Grundstücken kommt der Bodenrichtwert dazu. Bei vermieteten Immobilien zählt außerdem die Nettokaltmiete, die heute gezahlt wird.",
       "2025 wurden im Landkreis 2.185 Kaufverträge geschlossen, nach 1.925 im Vorjahr; für Wohnungseigentum stieg die Zahl der Verträge von 109 auf 270. Der Geldumsatz wuchs um 17 % auf 490,8 Mio. €. Einen signifikanten Preisanstieg erkennt der Gutachterausschuss trotzdem nicht, die Kaufpreise schwanken in allen Teilmärkten stark.[[1]]"
     ]
   },
@@ -188,7 +188,7 @@
   "faq": [
     {
       "frage": "Welcher Makler verkauft Häuser in Strausberg und Neuenhagen?",
-      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im ganzen Landkreis Märkisch-Oderland, also auch in Strausberg, Neuenhagen bei Berlin, Hoppegarten und Petershagen/Eggersdorf; Ihr Ansprechpartner ist Timon Fischer. Grundlage unserer Bewertung sind der Bodenrichtwert Ihrer Zone und die Vergleichspreise des Gutachterausschusses. Er weist Hauspreise nach Baujahr und Bodenwertniveau aus: In Zonen mit 301 bis 400 €/m² kosteten Einfamilienhäuser der Baujahre 1991 bis 2012 in den Jahren 2023 bis 2025 im Mittel 497.000 € oder 3.900 €/m² Wohnfläche.[[1]]",
+      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im ganzen Landkreis Märkisch-Oderland, also auch in Strausberg, Neuenhagen bei Berlin, Hoppegarten und Petershagen/Eggersdorf; Ihr Ansprechpartner ist Timon Fischer. Wir bewerten nach den Preisen, zu denen vergleichbare Häuser und Wohnungen in Ihrer Gegend tatsächlich verkauft wurden; bei Häusern und Grundstücken kommt der Bodenrichtwert dazu. Der Gutachterausschuss weist Hauspreise nach Baujahr und Bodenwertniveau aus: In Zonen mit 301 bis 400 €/m² kosteten Einfamilienhäuser der Baujahre 1991 bis 2012 in den Jahren 2023 bis 2025 im Mittel 497.000 € oder 3.900 €/m² Wohnfläche.[[1]]",
       "herkunft": "Google-Autocomplete „immobilienmakler märkisch oderland“, „immobilienmakler strausberg“, „makler strausberg“, „immobilienmakler neuenhagen bei berlin“, „immobilienmakler hoppegarten“ und „immobilienmakler petershagen eggersdorf“ (research/serp/autocomplete-2026-10-26-maerkisch-oderland.json)"
     },
     {

@@ -165,7 +165,7 @@
   "verkaufen": {
     "h2": "Immobilie im Landkreis Barnim verkaufen",
     "absaetze": [
-      "Von der Berliner Stadtgrenze bis an die nordöstliche Kreisgrenze fallen die Preise stark: Ohne Wassergrundstücke reichen die Bodenrichtwerte für Wohnbauland von 460 €/m² in Eiche bis 12 €/m² in Parstein, Einfamilienhäuser kosteten 2025 in Ahrensfelde im Mittel 3.850 €/m² Wohnfläche, in Eberswalde 2.570 €/m².[[1]] Wir bewerten deshalb nach den Zahlen Ihrer Gemeinde und Ihres Baujahrs, nicht nach einem Mittelwert für den Landkreis.",
+      "Von der Berliner Stadtgrenze bis an die nordöstliche Kreisgrenze fallen die Preise stark: Ohne Wassergrundstücke reichen die Bodenrichtwerte für Wohnbauland von 460 €/m² in Eiche bis 12 €/m² in Parstein, Einfamilienhäuser kosteten 2025 in Ahrensfelde im Mittel 3.850 €/m² Wohnfläche, in Eberswalde 2.570 €/m².[[1]] Wir bewerten deshalb nach den Zahlen Ihrer Gemeinde und Ihres Baujahrs, nicht nach einem Mittelwert für den Landkreis. Bei vermieteten Immobilien zählt außerdem die Nettokaltmiete, die heute gezahlt wird.",
       "2025 wurden rund 40 % mehr Wohnbaugrundstücke verkauft als im Vorjahr; in der Hälfte der Ämter und Gemeinden sanken dabei die mittleren Preise. Die Zahl der Erstverkäufe von Eigentumswohnungen ging um zwei Drittel zurück.[[1]] In Panketal und Ahrensfelde blieben die meisten Bodenrichtwerte zum 01.01.2026 gleich.[[2]]",
       "Bei vermieteten Wohnungen kommt es auf die Gemeinde an: In Ahrensfelde, Bernau, Biesenthal und Panketal gilt seit dem 01.01.2026 die Mietpreisbremse, in Eberswalde und Joachimsthal nicht.[[5]] Kapitalanleger rechnen damit, deshalb nehmen wir es in Preisfindung und Exposé auf."
     ]
@@ -186,7 +186,7 @@
   "faq": [
     {
       "frage": "Welcher Makler verkauft Immobilien in Bernau, Panketal und Ahrensfelde?",
-      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im Landkreis Barnim, also auch in Bernau, Panketal und Ahrensfelde. Ihr Ansprechpartner ist Timon Fischer. Grundlage unserer Bewertung sind der Bodenrichtwert Ihrer Zone und die Preise, die der Gutachterausschuss für Ihre Gemeinde und Ihr Baujahr ausweist.",
+      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im Landkreis Barnim, also auch in Bernau, Panketal und Ahrensfelde. Ihr Ansprechpartner ist Timon Fischer. Wir bewerten nach den Preisen, zu denen vergleichbare Häuser und Wohnungen in Ihrer Gegend tatsächlich verkauft wurden; bei Häusern und Grundstücken kommt der Bodenrichtwert dazu.",
       "herkunft": "Prompt der KI-Recherche „Welcher Immobilienmakler in Bernau bei Berlin ist gut?“ (q40) (ChatGPT, Gemini; Dashboard/src/data/research/ai_answers.json, Oktober 2026) und Google-Suche „Immobilienmakler Bernau“ (Google_Areas, Oktober 2026)"
     },
     {

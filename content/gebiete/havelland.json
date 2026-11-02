@@ -138,7 +138,7 @@
   "verkaufen": {
     "h2": "Immobilie im Landkreis Havelland verkaufen",
     "absaetze": [
-      "Zwischen Falkensee und Rathenow liegen große Preisunterschiede: Freistehende Einfamilienhäuser der Baujahre 1991 bis 2022 kosteten 2025 in Falkensee und Dallgow-Döberitz im Mittel 4.680 €/m² Wohnfläche, in Rathenow und Premnitz 2.600 €/m².[[1]] Wir bewerten deshalb nach den Zahlen Ihrer Gemeinde und Ihres Baujahrs, nicht nach einem Mittelwert für den Landkreis.",
+      "Zwischen Falkensee und Rathenow liegen große Preisunterschiede: Freistehende Einfamilienhäuser der Baujahre 1991 bis 2022 kosteten 2025 in Falkensee und Dallgow-Döberitz im Mittel 4.680 €/m² Wohnfläche, in Rathenow und Premnitz 2.600 €/m².[[1]] Wir bewerten deshalb nach den Zahlen Ihrer Gemeinde und Ihres Baujahrs, nicht nach einem Mittelwert für den Landkreis. Bei vermieteten Immobilien zählt außerdem die Nettokaltmiete, die heute gezahlt wird.",
       "2025 wurden im Landkreis 2.016 Kaufverträge geschlossen, 14,4 % mehr als im Vorjahr; der Gutachterausschuss spricht von einer spürbaren Belebung. Im Berliner Umland sanken dabei die Preise für Bauland, im westlichen Havelland stiegen sie.[[1]] Bei vermieteten Wohnungen kommt es auf die Gemeinde an: In Brieselang, Falkensee und Schönwalde-Glien gilt seit dem 01.01.2026 die Mietpreisbremse, in Dallgow-Döberitz, Nauen und Rathenow nicht.[[5]] Kapitalanleger rechnen damit, deshalb nehmen wir es in Preisfindung und Exposé auf."
     ]
   },
@@ -158,7 +158,7 @@
   "faq": [
     {
       "frage": "Welcher Makler verkauft Häuser in Falkensee, Dallgow-Döberitz und Brieselang?",
-      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im ganzen Landkreis Havelland, also auch in Falkensee, Dallgow-Döberitz und Brieselang; Ihr Ansprechpartner ist Lennart Geserich. Grundlage unserer Bewertung sind der Bodenrichtwert Ihrer Zone und die Preise, die der Gutachterausschuss für Ihre Gemeinde und Ihr Baujahr ausweist. Für Häuser fasst er Falkensee mit Dallgow-Döberitz und Brieselang mit Schönwalde-Glien und Wustermark zusammen.[[1]]",
+      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im ganzen Landkreis Havelland, also auch in Falkensee, Dallgow-Döberitz und Brieselang; Ihr Ansprechpartner ist Lennart Geserich. Wir bewerten nach den Preisen, zu denen vergleichbare Häuser und Wohnungen in Ihrer Gegend tatsächlich verkauft wurden; bei Häusern und Grundstücken kommt der Bodenrichtwert dazu. Für Häuser fasst der Gutachterausschuss Falkensee mit Dallgow-Döberitz und Brieselang mit Schönwalde-Glien und Wustermark zusammen.[[1]]",
       "herkunft": "Prompt der KI-Recherche „Makler für den Hausverkauf in Falkensee, wen empfiehlst du?“ (q38) (ChatGPT, Gemini, Google AI Overview; Dashboard/src/data/research/ai_answers.json, Oktober 2026), Google-Suche „Immobilienmakler Falkensee“ (Google_Areas, Oktober 2026) und Google-Autocomplete „immobilienmakler dallgow döberitz“, „immobilienmakler brieselang“ (research/serp/autocomplete-2026-10-26-havelland.json)"
     },
     {

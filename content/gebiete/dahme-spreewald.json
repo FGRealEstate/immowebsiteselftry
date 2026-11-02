@@ -148,7 +148,7 @@
   "verkaufen": {
     "h2": "Immobilie im Landkreis Dahme-Spreewald verkaufen",
     "absaetze": [
-      "Wie viel Ihre Immobilie wert ist, hängt im Landkreis vor allem an der Nähe zu Berlin: Freistehende Ein- und Zweifamilienhäuser kosteten 2025 im Berliner Umland, von Schönefeld bis Königs Wusterhausen, im Mittel 463.000 €, im weiteren Metropolenraum 301.000 €.[[1]] Wir bewerten deshalb nach Ihrer Bodenrichtwertzone, Ihrem Baujahr und den Vergleichszahlen Ihrer Gemeinde.",
+      "Wie viel Ihre Immobilie wert ist, hängt im Landkreis vor allem an der Nähe zu Berlin: Freistehende Ein- und Zweifamilienhäuser kosteten 2025 im Berliner Umland, von Schönefeld bis Königs Wusterhausen, im Mittel 463.000 €, im weiteren Metropolenraum 301.000 €.[[1]] Deshalb bewerten wir nach den Preisen, zu denen vergleichbare Häuser und Wohnungen in Ihrer Gegend tatsächlich verkauft wurden; bei Häusern und Grundstücken kommt der Bodenrichtwert dazu. Bei vermieteten Immobilien zählt außerdem die Nettokaltmiete, die heute gezahlt wird.",
       "2025 wurden 2.287 Kaufverträge geschlossen, 4 % mehr als im Vorjahr, der Geldumsatz sank um 1 % auf 665 Mio. €. Im Berliner Umland stieg der mittlere Hauspreis um 4 %, nach einem Minus von 6 % im Jahr davor; Wohnungen mit Baujahr nach 1990 kosteten im Mittel 6 % weniger.[[1]] Für Wassergrundstücke leitet der Gutachterausschuss eigene Bodenrichtwerte für 50 Uferzonen ab, deshalb bewerten wir diese Lagen gesondert."
     ]
   },
@@ -168,7 +168,7 @@
   "faq": [
     {
       "frage": "Welcher Makler verkauft Häuser in Zeuthen, Wildau und Schönefeld?",
-      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im ganzen Landkreis Dahme-Spreewald, also auch in Zeuthen, Wildau, Schönefeld und Königs Wusterhausen; Ihr Ansprechpartner ist Lennart Geserich. Grundlage unserer Bewertung sind der Bodenrichtwert Ihrer Zone und die Preise, die der Gutachterausschuss für Ihre Gemeinde und Ihr Baujahr ausweist. Hauspreise nach Baujahr weist er unter anderem für Zeuthen, Wildau und Schönefeld einzeln aus, Wohnungspreise unter anderem für Wildau und Schönefeld.[[1]]",
+      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im ganzen Landkreis Dahme-Spreewald, also auch in Zeuthen, Wildau, Schönefeld und Königs Wusterhausen; Ihr Ansprechpartner ist Lennart Geserich. Wir bewerten nach den Preisen, zu denen vergleichbare Häuser und Wohnungen in Ihrer Gegend tatsächlich verkauft wurden; bei Häusern und Grundstücken kommt der Bodenrichtwert dazu. Hauspreise nach Baujahr weist der Gutachterausschuss unter anderem für Zeuthen, Wildau und Schönefeld einzeln aus, Wohnungspreise unter anderem für Wildau und Schönefeld.[[1]]",
       "herkunft": "Google-Autocomplete „immobilienmakler zeuthen“, „immobilienmakler wildau“, „immobilienmakler schönefeld“ und „makler dahme spreewald“ (research/serp/autocomplete-2026-10-26-dahme-spreewald.json)"
     },
     {

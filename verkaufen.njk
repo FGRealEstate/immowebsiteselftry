@@ -42,7 +42,7 @@ service:
     - q: "Was kostet eine Wertermittlung?"
       a: "Nichts. Wir erstellen die Wertermittlung Ihrer Immobilie kostenlos, meistens innerhalb weniger Stunden und häufig noch am selben Tag."
     - q: "Wie entsteht der Angebotspreis?"
-      a: "Aus den Preisen, zu denen vergleichbare Immobilien in Ihrer Gegend tatsächlich verkauft wurden, dazu aus Lage, Zustand und der Nachfrage nach genau dieser Art Immobilie. Die tatsächlichen Kaufpreise kommen aus der Kaufpreissammlung des Gutachterausschusses. Wir nennen Ihnen einen Preis, den wir begründen können."
+      a: "Aus den Preisen, zu denen vergleichbare Immobilien in Ihrer Gegend tatsächlich verkauft wurden, dazu aus Lage, Zustand und der Nachfrage nach genau dieser Art Immobilie. Bei vermieteten Immobilien zählt außerdem die Nettokaltmiete, die heute gezahlt wird. Die tatsächlichen Kaufpreise kommen aus der Kaufpreissammlung des Gutachterausschusses. Wir nennen Ihnen einen Preis, den wir begründen können."
     - q: "Warum bieten Sie meine Immobilie nicht sofort zum Verkauf an?"
       a: "Weil ein Verkauf ohne vollständige Unterlagen oft erst kurz vor dem Notartermin scheitert. Fehlt zum Beispiel die Wohnflächenberechnung, bekommt Ihr Käufer keine Finanzierung und der Verkauf platzt, obwohl beide Seiten schon Kosten hatten. Deshalb klären wir mit Ihnen, bevor Ihre Immobilie angeboten wird, welche Unterlagen vorliegen, und helfen Ihnen, die fehlenden zu besorgen."
     - q: "Verkaufen Sie auch geerbte Immobilien?"
@@ -98,7 +98,7 @@ service:
 
 {# §4.4 Fotokapitel: H2 und die ersten zwei Sätze auf dem Foto, der Rest darunter #}
 {% call fotokapitel({ id: "preis", hoehe: 80, titel: "Wie wir den Angebotspreis finden", bild: "berlin-mitte-band" | bild, alt: "Blick vom Alexanderplatz über die Dächer von Berlin bei tief stehender Sonne",
-  satz: "Für den Angebotspreis sehen wir uns an, zu welchen Preisen vergleichbare Immobilien in der Umgebung angeboten werden und tatsächlich verkauft wurden. Die tatsächlichen Preise kommen aus der Kaufpreissammlung des Gutachterausschusses: Jeder notarielle Kaufvertrag landet dort, mit Wohnfläche, Zimmerzahl, Baujahr und Datum des Verkaufs. Dazu kommen der Bodenrichtwert, der bei Häusern und Grundstücken den Wert des Bodens abbildet, sowie Zustand, Ausstattung, Grundriss und die Nachfrage nach genau dieser Art Immobilie." }) %}
+  satz: "Für den Angebotspreis sehen wir uns an, zu welchen Preisen vergleichbare Immobilien in der Umgebung angeboten werden und tatsächlich verkauft wurden. Die tatsächlichen Preise kommen aus der Kaufpreissammlung des Gutachterausschusses: Jeder notarielle Kaufvertrag landet dort, mit Wohnfläche, Zimmerzahl, Baujahr und Datum des Verkaufs. Dazu kommen der Bodenrichtwert, der bei Häusern und Grundstücken den Wert des Bodens abbildet, sowie Zustand, Ausstattung, Grundriss und die Nachfrage nach genau dieser Art Immobilie. Bei vermieteten Immobilien zählt außerdem die Nettokaltmiete, die heute gezahlt wird." }) %}
   <p>Der Angebotspreis entscheidet mit darüber, wie lange ein Verkauf dauert. Liegt er deutlich über dem Markt, melden sich weniger passende Interessenten und wenn Sie ihn später senken müssen, fällt das Käufern auf. Einen Wunschpreis versprechen wir Ihnen deshalb nicht. Wir nennen Ihnen einen Preis, den wir mit Vergleichsverkäufen begründen können.</p>
   {{ textlink("/immobilienbewertung/", "Wie die kostenlose Bewertung abläuft") }}
 {% endcall %}

@@ -21,7 +21,7 @@ service:
   hero: { name: "bewertung-hero", alt: "Villa am Teltower Damm in Berlin-Zehlendorf, ein Baudenkmal", widths: [960, 1600] }
   summaryQ: "Was ist meine Immobilie wert und wie erfahre ich es?"
   summary:
-    - "Sie senden uns die wichtigsten Angaben zu Ihrer Immobilie und Ihr Ansprechpartner aus der Region erstellt daraus eine Wertermittlung. Grundlage sind Vergleichspreise aus der Umgebung, der Bodenrichtwert, Zustand und Ausstattung sowie die aktuelle Nachfrage. Das kostet Sie nichts, verpflichtet Sie zu nichts und liegt meist noch am selben Tag vor."
+    - "Sie senden uns die wichtigsten Angaben zu Ihrer Immobilie und Ihr Ansprechpartner aus der Region erstellt daraus eine Wertermittlung. Grundlage sind Vergleichspreise aus der Umgebung, der Bodenrichtwert, Zustand und Ausstattung sowie die aktuelle Nachfrage. Bei vermieteten Immobilien zählt außerdem die Nettokaltmiete, die heute gezahlt wird. Das kostet Sie nichts, verpflichtet Sie zu nichts und liegt meist noch am selben Tag vor."
     - "Einen automatischen Online-Preis gibt es bei uns nicht, weil ein Rechner den Zustand Ihrer Immobilie nicht kennt. Brauchen Sie einen Wert für das Finanzamt, ein Gericht oder eine Erbauseinandersetzung, ist ein Verkehrswertgutachten eines Sachverständigen das Richtige."
   faqTitle: "Häufige Fragen zur Immobilienbewertung"
   faq:
@@ -40,7 +40,7 @@ service:
       a: "Ja. Bei einer geerbten Immobilie klären wir zuerst die rechtliche Lage und welche Unterlagen vorliegen. Häufig geht es auch darum, wie die Erbschaftsteuer bezahlt werden soll. Je nach Situation ist dafür eine Finanzierung sinnvoller als ein schneller Verkauf unter Zeitdruck. Das besprechen wir mit Ihnen in Ruhe."
     # FG-Gap-Answers 3.1 (TIMON), an seit 29.10.2026 (FG-Timon-Answers-Update §1, freigaben.timonFaq)
     - q: "Kann ich meine Immobilie anonym bewerten lassen?"
-      a: "Für eine Wertermittlung brauchen wir die Adresse, die wichtigsten Angaben zur Immobilie und eine Möglichkeit, Ihnen das Ergebnis zu schicken. Ihre Anfrage geht nur an uns und nicht an ein Portal, das sie an mehrere Makler weitergibt. Sie verpflichten sich zu nichts. Wenn Sie keinen Anruf möchten, schreiben Sie es in das Formular: Dann bekommen Sie das Ergebnis per E-Mail."
+      a: "Für eine Wertermittlung brauchen wir die Adresse, die wichtigsten Angaben zur Immobilie und eine Möglichkeit, Ihnen das Ergebnis zu schicken. Ihre Anfrage geht nur an uns und nicht an ein Portal, das sie an mehrere Makler weitergibt. Sie verpflichten sich zu nichts. Im Formular wählen Sie, ob Sie das Ergebnis per E-Mail oder mit einem Anruf bekommen."
       timon: "3.1"
     # FG-Gap-Answers 3.2 (SOURCE), selbst geschrieben nach der Gliederung im Brief. Quellen (abgerufen 28.10.2026): § 36 GewO
     # (gesetze-im-internet.de/gewo/__36.html); BVS-Honorarrichtlinie Immobilienbewertung 2024, Vorbemerkungen (unverbindliche
@@ -159,6 +159,15 @@ service:
               <option>Sanierungsbedürftig</option>
             </select>
           </label>
+          <label>Ausstattung
+            <select name="property_details[seller-interior-quality]">
+              <option value="">Bitte wählen</option>
+              <option value="luxuriös">Luxuriös</option>
+              <option value="gehoben">Gehoben</option>
+              <option value="normal">Normal</option>
+              <option value="einfach">Einfach</option>
+            </select>
+          </label>
           <label>Ihr Ziel
             <select name="extra:Ziel">
               <option value="">Bitte wählen</option>
@@ -176,9 +185,17 @@ service:
             <label>Vorname *<input name="first_name" required autocomplete="given-name"></label>
             <label>Nachname *<input name="last_name" required autocomplete="family-name"></label>
           </div>
+          {# Update 28 §3.1: E-Mail oder Anruf; Werte wie im Propstack-Feld „Kontaktwunsch“ (E-Mail, Telefon). Bei Anruf ist das Telefon Pflicht (fg-design.js, Server prüft auch). #}
+          <div class="fgd-group" role="radiogroup" aria-labelledby="bw-ergebnis">
+            <p class="fgd-group-label" id="bw-ergebnis">Wie möchten Sie das Ergebnis erhalten? *</p>
+            <div class="fgd-choices fgd-choices--2">
+              <label class="fgd-choice"><input type="radio" name="contact_preference" value="E-Mail" required>Per E-Mail</label>
+              <label class="fgd-choice"><input type="radio" name="contact_preference" value="Telefon" required>Mit einem Anruf</label>
+            </div>
+          </div>
           <div class="fgd-field-row">
             <label>E-Mail *<input name="email" type="email" required autocomplete="email"></label>
-            <label>Telefon<input name="phone" type="tel" autocomplete="tel" placeholder="für Rückfragen"></label>
+            <label>Telefon<span data-fgd-anruf-stern hidden> *</span><input name="phone" type="tel" autocomplete="tel" placeholder="für Rückfragen" data-fgd-anruf-pflicht data-fgd-fehlt="Bitte geben Sie Ihre Telefonnummer an, damit wir Sie anrufen können."></label>
           </div>
           <label>Nachricht<textarea name="message" rows="3" maxlength="3000" placeholder="optional, zum Beispiel Besonderheiten oder einen Zeitrahmen"></textarea></label>
           <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
@@ -210,6 +227,7 @@ service:
     <li>Vermietung<span>Bei vermieteten Immobilien Miethöhe, Mietvertrag und mögliche Anpassungen</span></li>
     <li>Nachfrage<span>Wer diese Immobilie heute sucht und wie viel Konkurrenz am Markt ist</span></li>
   </ul>
+  <p>Bei vermieteten Immobilien zählt außerdem die Nettokaltmiete, die heute gezahlt wird. Als weiteren Vergleich nutzen wir Bewertungsprogramme wie Sprengnetter und PriceHubble.</p>
 {% endcall %}
 
 {# Vergleich: Überschrift und Einleitung, darunter die Tabelle über die volle Breite; schmal je Zeile ein Block #}

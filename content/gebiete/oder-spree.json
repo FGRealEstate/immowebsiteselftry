@@ -157,7 +157,7 @@
   "verkaufen": {
     "h2": "Immobilie im Landkreis Oder-Spree verkaufen",
     "absaetze": [
-      "Wie viel Ihre Immobilie wert ist, hängt im Landkreis vor allem an der Nähe zu Berlin: Freistehende Ein- und Zweifamilienhäuser kosteten 2025 im Berliner Umland, von Schöneiche und Woltersdorf bis Grünheide, im Mittel 448.384 €, im weiteren Metropolenraum mit Fürstenwalde, Beeskow und Bad Saarow 296.496 €.[[1]] Wir bewerten deshalb nach Ihrer Bodenrichtwertzone, Ihrem Baujahr und den Vergleichszahlen Ihrer Region.",
+      "Wie viel Ihre Immobilie wert ist, hängt im Landkreis vor allem an der Nähe zu Berlin: Freistehende Ein- und Zweifamilienhäuser kosteten 2025 im Berliner Umland, von Schöneiche und Woltersdorf bis Grünheide, im Mittel 448.384 €, im weiteren Metropolenraum mit Fürstenwalde, Beeskow und Bad Saarow 296.496 €.[[1]] Deshalb bewerten wir nach den Preisen, zu denen vergleichbare Häuser und Wohnungen in Ihrer Gegend tatsächlich verkauft wurden; bei Häusern und Grundstücken kommt der Bodenrichtwert dazu. Bei vermieteten Immobilien zählt außerdem die Nettokaltmiete, die heute gezahlt wird.",
       "2025 wurden 2.003 Kaufverträge geschlossen, nach 1.819 im Vorjahr, der Geldumsatz stieg auf 408,2 Mio. €. Für Bauland im berlinnahen Raum lag der Preisindex des Gutachterausschusses 2025 rund 28 % unter dem Höchststand von 2022; einzelne Zonen können anders verlaufen.[[1]] Für Wassergrundstücke beschließt der Gutachterausschuss seit 2022 eigene Bodenrichtwerte, deshalb bewerten wir diese Lagen gesondert."
     ]
   },
@@ -177,7 +177,7 @@
   "faq": [
     {
       "frage": "Welcher Makler verkauft Häuser in Fürstenwalde, Woltersdorf und Schöneiche?",
-      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im ganzen Landkreis Oder-Spree, also auch in Fürstenwalde/Spree, Woltersdorf, Schöneiche und Erkner; Ihr Ansprechpartner ist Lennart Geserich. Grundlage unserer Bewertung sind der Bodenrichtwert Ihrer Zone und die Vergleichspreise des Gutachterausschusses. Hauspreise weist er im Landkreis nur getrennt nach Berliner Umland und weiterem Metropolenraum aus, Wohnungspreise dagegen auch für einzelne Orte wie Fürstenwalde, Schöneiche und Bad Saarow.[[1]]",
+      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im ganzen Landkreis Oder-Spree, also auch in Fürstenwalde/Spree, Woltersdorf, Schöneiche und Erkner; Ihr Ansprechpartner ist Lennart Geserich. Wir bewerten nach den Preisen, zu denen vergleichbare Häuser und Wohnungen in Ihrer Gegend tatsächlich verkauft wurden; bei Häusern und Grundstücken kommt der Bodenrichtwert dazu. Hauspreise weist der Gutachterausschuss im Landkreis nur getrennt nach Berliner Umland und weiterem Metropolenraum aus, Wohnungspreise dagegen auch für einzelne Orte wie Fürstenwalde, Schöneiche und Bad Saarow.[[1]]",
       "herkunft": "Google-Autocomplete „immobilienmakler fürstenwalde spree“, „makler fürstenwalde“, „immobilienmakler woltersdorf“, „immobilienmakler schöneiche bei berlin“ und „immobilienmakler landkreis oder spree“ (research/serp/autocomplete-2026-10-26-oder-spree.json)"
     },
     {

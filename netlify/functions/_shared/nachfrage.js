@@ -132,26 +132,50 @@ const SIGNATUR = [
 const esc = (value) =>
   clean(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
-/** Bestätigungsmail an den Absender der Bewertungsanfrage (Text von uns, von Jesu noch freizugeben).
- *  Ohne Link (Grundstück) fehlen der Absatz zu den Fragen, der Knopf und die Zeile mit der Adresse. */
-function bestaetigung({ firstName, lastName, link: url }) {
+/** Adresse für die Bestätigungsmail: „Straße Hausnummer, PLZ Ort“ aus den Formularfeldern (oder location), sonst "". */
+function adresseText(d) {
+  const x = d || {};
+  const strasse = [clean(x.street || x.strasse), clean(x.house_number || x.houseNumber || x.hausnummer)].filter(Boolean).join(" ");
+  const ort = [clean(x.zip_code || x.zipCode || x.plz), clean(x.city || x.ort)].filter(Boolean).join(" ");
+  return [strasse, ort].filter(Boolean).join(", ") || clean(x.location);
+}
+
+/** true, wenn „Mit einem Anruf“ gewählt ist (contact_preference = „Telefon“, wie das Propstack-Feld Kontaktwunsch). */
+function perAnruf(contactPreference) {
+  const v = clean(contactPreference).toLowerCase();
+  return v === "telefon" || v.includes("anruf");
+}
+
+/** Bestätigungsmail an den Absender der Bewertungsanfrage, Update 28 §3.2 (Text von Timon über Jesu, wörtlich):
+ *  Version A „Per E-Mail“, Version B „Mit einem Anruf“ (anruf = true).
+ *  Ohne Link (Grundstück) fehlt in A der Absatz zu den Fragen, in B nur der letzte Satz mit dem Link.
+ *  Ohne Adresse heißt es „zu Ihrer Immobilie.“ statt „zu Ihrer Immobilie in …“. */
+function bestaetigung({ firstName, lastName, link: url, adresse, anruf }) {
   const name = [clean(firstName), clean(lastName)].filter(Boolean).join(" ");
-  const absaetze = [
-    name ? `Guten Tag ${name},` : "Guten Tag,",
-    "vielen Dank für Ihre Anfrage zur kostenlosen Immobilienbewertung. Ihr Ansprechpartner aus der Region erstellt aus Ihren Angaben eine erste Wertermittlung und meldet sich bei Ihnen.",
-    ...(url ? ["Für eine genaue Wertermittlung haben wir ein paar gezielte Fragen zu Ihrer Immobilie. Ihre Antworten gehen direkt an Ihren Ansprechpartner:"] : []),
-  ];
-  const text = [...absaetze, ...(url ? [url] : []), "Mit freundlichen Grüßen\nFischer & Geserich", `--\n${SIGNATUR.join("\n")}`].join("\n\n");
+  const wo = clean(adresse) ? ` in ${clean(adresse)}` : "";
+  const einstieg = anruf
+    ? `vielen Dank für Ihre Anfrage zu Ihrer Immobilie${wo}. Innerhalb weniger Stunden haben wir einen indikativen Marktwert für Sie und rufen Sie dazu an.`
+    : `vielen Dank für Ihre Anfrage zu Ihrer Immobilie${wo}. Innerhalb weniger Stunden schicken wir Ihnen einen indikativen Marktwert per E-Mail.`;
+  // Absatz zu den Folgefragen: [Text vor dem Link, mit Link?]
+  let fragen = null;
+  if (anruf) {
+    const basis = "Für einen festen Angebotspreis brauchen wir noch einige Angaben zu Ihrer Immobilie. Die können wir am Telefon, persönlich bei einem Termin oder per E-Mail klären, ganz wie es Ihnen lieber ist.";
+    fragen = url ? `${basis} Wenn Sie möchten, beantworten Sie die Fragen schon vorab hier: ` : basis;
+  } else if (url) {
+    fragen = "Für einen festen Angebotspreis brauchen wir noch einige Angaben zu Ihrer Immobilie, zum Beispiel zu Modernisierungen, zur Etage und zu Balkon oder Terrasse. Die Fragen beantworten Sie in wenigen Minuten hier: ";
+  }
+  const gruss = ["Mit freundlichen Grüßen", "Timon Fischer und Lennart Geserich", "Fischer & Geserich Real Estate GmbH"];
+  const anrede = name ? `Guten Tag ${name},` : "Guten Tag,";
+  const text = [anrede, einstieg, ...(fragen ? [url ? `${fragen}${url}` : fragen] : []), gruss.join("\n"), `--\n${SIGNATUR.join("\n")}`].join("\n\n");
   const p = 'style="margin:0 0 16px"';
-  const knopf = url ? `
-<p ${p}><a href="${esc(url)}" style="display:inline-block;background:#08082F;color:#ffffff;text-decoration:none;padding:12px 20px;border-radius:4px">Fragen zur Immobilie beantworten</a></p>
-<p ${p}>Falls der Knopf nicht funktioniert: <a href="${esc(url)}">${esc(url)}</a></p>` : "";
   const html = `<div style="font-family:Arial,sans-serif;font-size:15px;line-height:1.5;color:#08082F">
-${absaetze.map((a) => `<p ${p}>${esc(a)}</p>`).join("\n")}${knopf}
-<p ${p}>Mit freundlichen Grüßen<br>Fischer &amp; Geserich</p>
+<p ${p}>${esc(anrede)}</p>
+<p ${p}>${esc(einstieg)}</p>${fragen ? `
+<p ${p}>${esc(fragen)}${url ? `<a href="${esc(url)}">${esc(url)}</a>` : ""}</p>` : ""}
+<p ${p}>${gruss.map(esc).join("<br>")}</p>
 <p style="margin:24px 0 0;font-size:13px;color:#555">${SIGNATUR.map(esc).join("<br>")}</p>
 </div>`;
-  return { subject: "Ihre Anfrage zur Immobilienbewertung", text, html };
+  return { subject: "Ihre Wertermittlung bei Fischer & Geserich", text, html };
 }
 
 /** Antworten prüfen; gibt eine Fehlermeldung zurück oder "". */
@@ -187,5 +211,5 @@ function notiz(d, contactId) {
 
 module.exports = {
   PFAD, GRUPPEN, ETAGEN, WOHNUNG_AUSSEN, HAUS_AUSSEN, FELDER,
-  gruppeFuer, ohneFragen, geheimnis, link, pruefen, istBewertung, bestaetigung, pruefeAntworten, notiz,
+  gruppeFuer, ohneFragen, geheimnis, link, pruefen, istBewertung, adresseText, perAnruf, bestaetigung, pruefeAntworten, notiz,
 };

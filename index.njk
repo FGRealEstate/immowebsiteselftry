@@ -46,7 +46,7 @@ faqListe:
     dem Foto (§3.5), Bildband zur Bewertung, F&G in Zahlen, Aktuelle Angebote, Bewertungen (§3.9), Häufige Fragen,
     Abschlussrahmen (§3.11). Das Triptychon der Leistungen entfällt (§3.4). Neue Texte nur wörtlich aus dem Brief; alles
     andere aus der bisherigen Startseite. Vorher: Design-Pass 2 §3, Design-Sprint-Brief 5.1 (CP2), Update 6 §3.1, Update 7. -#}
-{% from "fgs-macros.njk" import heroSlides, leistungsSlider, rail, card, offer, angebot, quote, facts, faq, closing, textlink, pic, triptych, band, partner, stimme, kurzstimme with context %}
+{% from "fgs-macros.njk" import heroSlides, leistungsSlider, rail, card, offer, angebot, quote, facts, faq, closing, textlink, pic, triptych, band, partner, stimme, stimmeGross, sterne, kurzstimme with context %}
 {% set valuationHref = nav.valuation | navHref %}
 {% set faqItems = faqListe %}
 {%- set kartenOrte = [] -%}
@@ -196,38 +196,58 @@ faqListe:
 </section>
 {% endif %}
 
-{# 9. Bewertungen (Design-Pass 3 §3.9, Jesus Wahl): links die Gesamtnote (mitlaufend), rechts vier Bewertungen mit
-   Pull-Quote, darunter ein Laufband der kurzen Bewertungen. Pull-Quotes, Berater und Chips wörtlich aus dem Brief
-   (geprüft gegen das Google-Profil am 27.10.2026). Veit (Geschäftspartner) steht seit Update 27 A8 nirgends mehr (_data/google.js).
-   Laufband: die kurzen Bewertungen in der Reihenfolge des Briefs; von Constantin die kurze (die lange steht auf /bewertungen/).
-   „So bewerten Sie uns“ bleibt als zweiter Link unter „Alle Bewertungen“ (bestehender Text). #}
+{# 9. Bewertungen. Update 26 §4 (01.11.2026): Kopfzeile mit H2 links und rechts der Note (5,0, Sterne, Anzahl, ein Link zu den
+   Rezensionen bei Google); darunter eine große Bewertung im Wechsel (fünf, Pfeile, kein Selbstlauf) und das Laufband der kurzen.
+   Marc, Jennifer, Maria: Berater und Themen aus Design-Pass 3 §3.9 (geprüft gegen das Google-Profil am 27.10.2026). Dazu nach
+   Update 26 §4.2 Jan und Jens; beide nennen keinen Berater. Pull-Quotes wörtlich aus dem Text und höchstens zwei Zeilen bei 1440,
+   1024 und 390 px (§4.2): Marc und Jennifer wie bisher; bei Maria (bisher „Man hatte nie das Gefühl, dass einem einfach
+   irgendeine Finanzierung verkauft werden soll“, drei bis fünf Zeilen) und Jan (auf /bewertungen/ weiter „dass unsere Interessen
+   als Eigentümer ernst genommen werden“, drei Zeilen am Handy) eine kürzere Stelle aus derselben Bewertung. Veit (Geschäftspartner) steht seit Update 27 A8 nirgends mehr (_data/google.js). „So bewerten Sie uns“ steht
+   seit Update 26 §4.1 nur noch auf /bewertungen/.
+   Laufband: die kurzen Bewertungen in der Reihenfolge des Briefs; von Constantin die kurze (die lange steht auf /bewertungen/). #}
 {% if google.reviews.length %}
 {%- set stimmen = [
   { autor: "Marc", zitat: "ohne mir irgendetwas schönzureden", berater: "timon", thema: "Kauf" },
   { autor: "Jennifer", zitat: "zu keiner Zeit zu etwas gedrängt gefühlt", berater: "lennart", thema: "Ankaufsberatung" },
-  { autor: "Maria", zitat: "Man hatte nie das Gefühl, dass einem einfach irgendeine Finanzierung verkauft werden soll", thema: "Finanzierung" },
-  { autor: "Jan", zitat: "dass unsere Interessen als Eigentümer ernst genommen werden", thema: "Vermietung" }
+  { autor: "Maria", zitat: "welche Lösung am besten passt", thema: "Finanzierung" },
+  { autor: "Jan", zitat: "ein passendes Mietverhältnis gefunden", thema: "Vermietung" },
+  { autor: "Jens", zitat: "der Abschluss ist nachrangig", thema: "Finanzierung" }
 ] %}
+{%- set gross = [] %}
+{%- for s in stimmen %}{% for r in google.reviews | selectattr("text") %}{% if r.author == s.autor and r.text.includes(s.zitat) %}{% set _ = gross.push([r, s]) %}{% endif %}{% endfor %}{% endfor %}
 {%- set kurz = ["Justin", "Philipp", "Wil", "Aurelio", "Theodor", "Anna", "Finn", "VIVESS", "Constantin"] %}
 {%- set laufband = [] %}
 {%- for name in kurz %}{% for r in google.reviews | selectattr("text") %}{% if r.author == name and r.text.length <= 200 %}{% set _ = laufband.push(r) %}{% endif %}{% endfor %}{% endfor %}
-<section class="fgs-section fgs-reviews" id="bewertungen" aria-labelledby="bewertungen-titel">
+<section class="fgs-section fgs-reviews fgs-reviews--26" id="bewertungen" aria-labelledby="bewertungen-titel">
   <div class="fgs-wrap">
-    <div class="fgs-head"><h2 id="bewertungen-titel">Was Kunden über uns sagen</h2></div>
-    <div class="fgs-reviews-grid">
-      <div class="fgs-reviews-aside">
-        <p class="fgs-reviews-score">{{ google.rating }}<span class="fgs-sr"> von 5 Sternen</span></p>
-        <p class="fgs-reviews-stars" aria-hidden="true">★★★★★</p>
-        <p class="fgs-reviews-count">{{ google.rating }} von 5 · {{ google.count }} Google-Bewertungen</p>
-        <p class="fgs-reviews-links"><a class="fgs-link" href="{{ google.url }}" target="_blank" rel="noopener">Alle Bewertungen</a>{{ textlink(nav.menu[5].items[3] | navHref, "So bewerten Sie uns") }}</p>
+    <div class="fgs-rev-kopf">
+      <div class="fgs-head"><h2 id="bewertungen-titel">Was Kunden über uns sagen</h2></div>
+      <div class="fgs-rev-note">
+        <p class="fgs-rev-zahl">{{ google.rating }}<span class="fgs-sr"> von 5 Sternen</span></p>
+        <div class="fgs-rev-mehr">
+          {{ sterne(18) }}
+          <p class="fgs-rev-anzahl">{{ google.count }} Google-Bewertungen</p>
+          <p><a class="fgs-link" href="{{ google.bewertungenUrl }}" target="_blank" rel="noopener">Alle Bewertungen{% include "fgs-arrow.njk" %}<span class="fgs-sr"> (öffnet ein neues Fenster)</span></a></p>
+        </div>
       </div>
-      <ul class="fgs-reviews-list" role="list">
-        {#- Update 22 §6: drei Pull-Quotes in einer Reihe (Marc, Jennifer, Maria); Jan steht weiter auf /bewertungen/ -#}
-        {%- for s in stimmen.slice(0, 3) %}{% for r in google.reviews | selectattr("text") %}{% if r.author == s.autor %}
-        {{ stimme(r, s) }}
-        {%- endif %}{% endfor %}{% endfor %}
-      </ul>
     </div>
+    {%- if gross.length %}
+    <div class="fgs-feat" data-fgs-feat role="region" aria-roledescription="Karussell" aria-label="Ausgewählte Bewertungen">
+      <ul class="fgs-feat-list" role="list">
+        {%- for paar in gross %}
+        {{ stimmeGross(paar[0], paar[1], loop.index, gross.length) }}
+        {%- endfor %}
+      </ul>
+      {%- if gross.length > 1 %}
+      <div class="fgs-feat-nav">
+        <p class="fgs-feat-zahl" aria-hidden="true"><span data-fgs-feat-n>01</span> / {{ "0" if gross.length < 10 }}{{ gross.length }}</p>
+        <button class="fgs-rail-btn" type="button" data-dir="-1" aria-label="Vorherige Bewertung"><svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M29 7H2M8 1 2 7l6 6"/></svg></button>
+        <button class="fgs-rail-btn" type="button" data-dir="1" aria-label="Nächste Bewertung"><svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M1 7h27M22 1l6 6-6 6"/></svg></button>
+        <p class="fgs-sr" aria-live="polite" data-fgs-feat-live></p>
+      </div>
+      {%- endif %}
+    </div>
+    {%- endif %}
   </div>
   {%- if laufband.length %}
   {#- Update 23 A3: kein Pause-Knopf mehr; das Laufband hält unter der Maus, unter dem Finger und bei Tastaturfokus an (fg-system.js, CSS) -#}

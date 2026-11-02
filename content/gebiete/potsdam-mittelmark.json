@@ -144,7 +144,7 @@
   "verkaufen": {
     "h2": "Immobilie im Landkreis Potsdam-Mittelmark verkaufen",
     "absaetze": [
-      "Im Landkreis liegen die Preise weit auseinander: Freistehende Ein- und Zweifamilienhäuser kosteten 2025 im Berliner Umland, von Teltow und Kleinmachnow bis Werder (Havel), im Mittel 4.766 €/m² Wohnfläche, im weiteren Metropolenraum 2.418 €/m².[[1]] Wir bewerten deshalb nach Ihrer Bodenrichtwertzone, Ihrem Baujahr und den Vergleichszahlen Ihrer Gemeinde, nicht nach einem Mittelwert für den Landkreis.",
+      "Im Landkreis liegen die Preise weit auseinander: Freistehende Ein- und Zweifamilienhäuser kosteten 2025 im Berliner Umland, von Teltow und Kleinmachnow bis Werder (Havel), im Mittel 4.766 €/m² Wohnfläche, im weiteren Metropolenraum 2.418 €/m².[[1]] Deshalb bewerten wir nach den Preisen, zu denen vergleichbare Häuser und Wohnungen in Ihrer Gegend tatsächlich verkauft wurden; bei Häusern und Grundstücken kommt der Bodenrichtwert dazu. Bei vermieteten Immobilien zählt außerdem die Nettokaltmiete, die heute gezahlt wird.",
       "2025 wurden 2.652 Kaufverträge geschlossen, 4 % mehr als im Vorjahr, der Geldumsatz stieg um 8,1 % auf 805,9 Mio. €. Im Berliner Umland stiegen die Preise je m² Wohnfläche für freistehende Häuser um 8,6 % und für Wohnungen um 10,7 %, Reihen- und Doppelhäuser wurden um 7,9 % günstiger.[[1]] Bei vermieteten Wohnungen kommt es auf die Gemeinde an: In Kleinmachnow, Nuthetal, Stahnsdorf, Teltow und Werder (Havel) gilt seit dem 01.01.2026 die Mietpreisbremse, in Michendorf, Schwielowsee und Beelitz nicht.[[5]] Kapitalanleger rechnen damit, deshalb nehmen wir es in Preisfindung und Exposé auf."
     ]
   },
@@ -164,7 +164,7 @@
   "faq": [
     {
       "frage": "Welcher Makler verkauft Häuser in Teltow, Kleinmachnow, Stahnsdorf und Werder (Havel)?",
-      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im ganzen Landkreis Potsdam-Mittelmark, also auch in Teltow, Kleinmachnow, Stahnsdorf und Werder (Havel); Ihr Ansprechpartner ist Lennart Geserich. Grundlage unserer Bewertung sind der Bodenrichtwert Ihrer Zone und die Preise, die der Gutachterausschuss für Ihre Gemeinde und Ihr Baujahr ausweist. Wohnungspreise nennt er für Teltow, Kleinmachnow und Werder (Havel) einzeln, Hauspreise für Stahnsdorf nach Baujahren.[[1]]",
+      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im ganzen Landkreis Potsdam-Mittelmark, also auch in Teltow, Kleinmachnow, Stahnsdorf und Werder (Havel); Ihr Ansprechpartner ist Lennart Geserich. Wir bewerten nach den Preisen, zu denen vergleichbare Häuser und Wohnungen in Ihrer Gegend tatsächlich verkauft wurden; bei Häusern und Grundstücken kommt der Bodenrichtwert dazu. Wohnungspreise nennt der Gutachterausschuss für Teltow, Kleinmachnow und Werder (Havel) einzeln, Hauspreise für Stahnsdorf nach Baujahren.[[1]]",
       "herkunft": "Prompt der KI-Recherche „Welcher Immobilienmakler in Teltow, Kleinmachnow oder Stahnsdorf ist zu empfehlen?“ (q37) (ChatGPT, Gemini, Google AI Overview, Google KI-Modus; Dashboard/src/data/research/ai_answers.json, Oktober 2026) und Google-Autocomplete „immobilienmakler werder havel“, „immobilienmakler stahnsdorf“ (research/serp/autocomplete-2026-10-26-potsdam-mittelmark.json)"
     },
     {

@@ -113,7 +113,7 @@
   "verkaufen": {
     "h2": "Immobilie in Bernau verkaufen",
     "absaetze": [
-      "Von den 322 Kauffällen 2025 in Bernau betrafen 130 bebaute Grundstücke, 122 Wohnungs- und Teileigentum und 50 unbebaute Bauflächen. Bei freistehenden Häusern hängt der Preis stark am Baujahr: Normiert kosteten sie bis Baujahr 1945 im Mittel 2.910 €/m² Wohnfläche aus 10 Kauffällen, mit Baujahr 1946 bis 1990 2.940 €/m² aus 12, 1991 bis 2015 3.480 €/m² aus 24 und ab 2016 4.340 €/m² aus 6.[[1]] Bei so wenigen Fällen je Gruppe ziehen wir für die Preisstrategie zusätzlich den Bodenrichtwert Ihrer Zone und die aktuelle Konkurrenz heran.",
+      "Von den 322 Kauffällen 2025 in Bernau betrafen 130 bebaute Grundstücke, 122 Wohnungs- und Teileigentum und 50 unbebaute Bauflächen. Bei freistehenden Häusern hängt der Preis stark am Baujahr: Normiert kosteten sie bis Baujahr 1945 im Mittel 2.910 €/m² Wohnfläche aus 10 Kauffällen, mit Baujahr 1946 bis 1990 2.940 €/m² aus 12, 1991 bis 2015 3.480 €/m² aus 24 und ab 2016 4.340 €/m² aus 6.[[1]] Bei so wenigen Fällen je Gruppe ziehen wir für die Preisstrategie zusätzlich den Bodenrichtwert Ihrer Zone und die aktuelle Konkurrenz heran. Bei vermieteten Immobilien zählt außerdem die Nettokaltmiete, die heute gezahlt wird.",
       "Neubauwohnungen im Erstverkauf werden für Bernau 2025 nicht ausgewiesen.[[1]] Eine gebrauchte Wohnung vergleichen wir deshalb mit Weiterverkäufen in derselben Lage, von Friedenstal bis Ladeburg."
     ]
   },
@@ -158,7 +158,7 @@
     },
     {
       "frage": "Kann ich meine Immobilie in Bernau kostenlos bewerten lassen?",
-      "antwort": "Ja. Wir bewerten Ihr Haus oder Ihre Wohnung in Bernau ohne Kosten für Sie, das Ergebnis haben Sie in der Regel nach wenigen Stunden. In Bernau nutzen wir dafür den Bodenrichtwert Ihrer Zone und die Lagewerte des Gutachterausschusses Barnim, der weiterverkaufte Wohnungen getrennt nach Friedenstal, Innenstadt, Süd, Viehtrift und Ladeburg auswertet.",
+      "antwort": "Ja. Wir bewerten Ihr Haus oder Ihre Wohnung in Bernau ohne Kosten für Sie, das Ergebnis haben Sie in der Regel nach wenigen Stunden. Wir bewerten nach den Preisen, zu denen vergleichbare Häuser und Wohnungen in Ihrer Gegend tatsächlich verkauft wurden; bei Häusern und Grundstücken kommt der Bodenrichtwert dazu.",
       "herkunft": "Google „Ähnliche Fragen“ zu „Immobilienbewertung Bernau“, dort als „Gibt es ein kostenloses Programm zur Immobilienbewertung?“ (Google_Areas, Oktober 2026)"
     }
   ],

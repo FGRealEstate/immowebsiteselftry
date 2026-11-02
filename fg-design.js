@@ -235,6 +235,24 @@
     apply();
   });
 
+  /* ---------- Bewertung: Telefon Pflicht bei Anruf (Update 28 §3.1) ----------
+     Feld mit data-fgd-anruf-pflicht: Pflicht, sobald contact_preference = „Telefon“ („Mit einem Anruf“) gewählt ist;
+     der Stern data-fgd-anruf-stern erscheint dann im Label. Ohne Skript prüft der Server. */
+  document.querySelectorAll('[data-fgd-wizard]').forEach((form) => {
+    const tel = form.querySelector('[data-fgd-anruf-pflicht]');
+    if (!tel) return;
+    const stern = form.querySelector('[data-fgd-anruf-stern]');
+    const apply = () => {
+      const wahl = form.querySelector('input[name="contact_preference"]:checked');
+      const anruf = !!wahl && wahl.value === 'Telefon';
+      tel.required = anruf;
+      if (stern) stern.hidden = !anruf;
+      if (!anruf && tel.getAttribute('aria-invalid') === 'true') { tel.removeAttribute('aria-invalid'); const box = document.getElementById(`${tel.name}-hinweis`); if (box) box.remove(); }
+    };
+    form.addEventListener('change', (event) => { if (event.target.name === 'contact_preference') apply(); });
+    apply();
+  });
+
   /* ---------- Hinweise unter Feldern (Update 23 B3) ----------
      Feld mit data-fgd-fehlt="…" (leer) und optional data-fgd-falsch="…" (Muster passt nicht): Der Hinweis steht unter dem
      Feld, ist über aria-describedby verbunden und verschwindet, sobald das Feld stimmt. Der Fokus geht aufs erste

@@ -321,6 +321,32 @@
     band.addEventListener('touchcancel', halt(false), { passive: true });
   });
 
+  /* ---------- Update 26 §4.2: eine große Bewertung im Wechsel (Startseite). Pfeile blättern im Kreis, kein Selbstlauf;
+     die Bewertungen liegen im CSS übereinander, der Block hat so die Höhe der längsten. Nicht sichtbare sind inert. ---------- */
+  document.querySelectorAll('[data-fgs-feat]').forEach((feat) => {
+    const items = Array.from(feat.querySelectorAll('.fgs-feat-item'));
+    if (items.length < 2) return;
+    const zahl = feat.querySelector('[data-fgs-feat-n]');
+    const live = feat.querySelector('[data-fgs-feat-live]');
+    let jetzt = 0;
+    const zeige = (n, ansagen) => {
+      jetzt = (n + items.length) % items.length;
+      items.forEach((item, i) => {
+        const an = i === jetzt;
+        item.classList.toggle('is-aktiv', an);
+        item.inert = !an;
+        if (an) item.removeAttribute('aria-hidden'); else item.setAttribute('aria-hidden', 'true');
+      });
+      if (zahl) zahl.textContent = String(jetzt + 1).padStart(2, '0');
+      if (live && ansagen) live.textContent = `Bewertung ${jetzt + 1} von ${items.length}`;
+    };
+    feat.querySelectorAll('.fgs-feat-nav [data-dir]').forEach((btn) => {
+      btn.addEventListener('click', () => zeige(jetzt + Number(btn.dataset.dir), true));
+    });
+    feat.classList.add('is-bereit');
+    zeige(0, false);
+  });
+
   /* ---------- Design-Pass 3 §3.1: Diaschau im Titelbild der Startseite (Makro heroSlides) ----------
      Je Folie 6 s, dann blendet die nächste in 1,6 s darüber. Den Takt gibt die Animation des Fortschrittssegments vor
      (animationend), damit Pause und Ken Burns gleich laufen. Die Folien 2–5 laden erst nach dem load-Ereignis, und zwar

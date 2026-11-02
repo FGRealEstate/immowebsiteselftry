@@ -3000,3 +3000,56 @@ section.fgs-band .fgs-band-text::before { background: radial-gradient(closest-si
   .fgs-closing .fgs-closing-inner { position: relative; z-index: 1; }
   .fgs-closing .fgs-closing-inner::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(8, 8, 47, .82) calc(100% - 40px), rgba(8, 8, 47, 0)); pointer-events: none; }
 }
+
+/* ===== Update 26 §4 (01.11.2026): „Was Kunden über uns sagen“ auf der Startseite ===== */
+/* 4.1 Kopfzeile: H2 links; rechts, unten bündig mit der H2, die Note: „5,0“ (56 px), daneben Sterne (18 px), darunter die Anzahl
+   (14 px) und ein Link zu den Rezensionen bei Google. Gold als Schrift ist --fgs-gold-text (Kontrast auf Weiß), die Sterne sind
+   Flächen und bleiben --fgs-gold. */
+.fgs-rev-kopf { display: flex; align-items: flex-end; align-items: last baseline; justify-content: space-between; gap: 24px 48px; } /* letzte Grundlinie der H2 = Grundlinie des Links */
+.fgs-rev-kopf .fgs-head { margin: 0; }
+.fgs-rev-kopf > .fgs-rev-note { flex: none; margin: 0; display: flex; align-items: flex-start; gap: 16px; }
+.fgs-rev-zahl { margin: 0; font: 400 56px/1 var(--fgs-serif); color: var(--fgs-gold-text); max-width: none; }
+.fgs-rev-mehr { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding-top: 2px; }
+.fgs-rev-mehr p { margin: 0; max-width: none; }
+.fgs-rev-anzahl { font: 400 14px/1.4 var(--fgs-sans); color: var(--fgs-ink-2); }
+.fgs-rev-mehr .fgs-link { font-size: 14px; background-size: 100% 1px; }
+.fgs-sterne { display: inline-flex; gap: 3px; color: var(--fgs-gold); line-height: 0; }
+.fgs-sterne svg { flex: none; fill: currentColor; }
+
+/* 4.2 Eine große Bewertung im Wechsel. Mit JavaScript liegen alle im selben Rasterfeld übereinander (Höhe der längsten) und
+   nur die aktive ist zu sehen: Überblenden in 500 ms, die neue gleitet dabei 12 px nach oben; die alte blendet an Ort und Stelle
+   aus. Ohne JavaScript stehen alle untereinander, ohne Pfeile. */
+.fgs-feat { margin-top: var(--fgs-head-gap); }
+.fgs-feat-list { list-style: none; }
+html.fgs-js .fgs-feat-list { display: grid; }
+html.fgs-js .fgs-feat-item { grid-area: 1 / 1; opacity: 0; visibility: hidden; transform: translateY(12px); transition: opacity 500ms var(--fgs-ease), transform 0s linear 500ms, visibility 0s linear 500ms; }
+html.fgs-js .fgs-feat-item.is-aktiv { opacity: 1; visibility: visible; transform: none; transition: opacity 500ms var(--fgs-ease), transform 500ms var(--fgs-ease), visibility 0s; }
+html:not(.fgs-js) .fgs-feat-item + .fgs-feat-item { margin-top: 56px; }
+html:not(.fgs-js) .fgs-feat-nav { display: none; }
+@media (prefers-reduced-motion: reduce) { html.fgs-js .fgs-feat-item, html.fgs-js .fgs-feat-item.is-aktiv { transform: none; transition: none; } }
+.fgs-feat-item { display: flex; }
+.fgs-feat-item figure { flex: 1 1 auto; display: flex; flex-direction: column; } /* Fußzeile unten, bei allen fünf an derselben Stelle */
+.fgs-reviews--26 .fgs-feat-kicker { margin-bottom: 16px; font-size: 12px; }
+.fgs-feat-pull { margin: 0; max-width: 900px; font: 400 clamp(30px, calc(23.3px + 1.714vw), 48px)/1.18 var(--fgs-serif); color: var(--fgs-ink); text-wrap: balance; }
+.fgs-feat-text { margin: 24px 0 0; max-width: 760px; }
+.fgs-feat-text p { max-width: none; font: 400 19px/1.6 var(--fgs-sans); color: var(--fgs-ink-2); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden; }
+.fgs-feat-text mark { color: inherit; background: linear-gradient(transparent 62%, rgba(209, 180, 100, .45) 0); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.fgs-feat-item .fgs-feat-foot { margin-top: auto; padding-top: 32px; min-height: 72px; max-width: none; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; font: 400 15px/1.4 var(--fgs-sans); color: var(--fgs-ink-2); }
+.fgs-feat-who { color: var(--fgs-ink); font-weight: 500; }
+.fgs-feat-google { display: inline-flex; align-items: center; gap: 8px; color: var(--fgs-ink-2); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.fgs-feat-google:hover { color: var(--fgs-ink); }
+.fgs-feat-google svg { flex: none; }
+.fgs-feat-by { margin-left: auto; display: inline-flex; align-items: center; gap: 12px; color: var(--fgs-ink); font-weight: 500; }
+.fgs-feat-by .fgs-rq-face { width: 40px; height: 40px; }
+.fgs-feat-by .fgs-rq-face img { width: 66px; top: -4.5px; }
+.fgs-feat-nav { margin-top: 32px; padding-top: 12px; border-top: 1px solid var(--fgs-line); display: flex; align-items: center; justify-content: flex-end; gap: 4px; }
+.fgs-feat-zahl { margin: 0 12px 0 0; max-width: none; font: 400 14px/1 var(--fgs-sans); color: var(--fgs-ink-2); font-variant-numeric: tabular-nums; letter-spacing: .04em; }
+@media (max-width: 767px) {
+  .fgs-rev-kopf { flex-direction: column; align-items: flex-start; }
+  .fgs-feat-by { margin-left: 0; flex-basis: 100%; }
+}
+
+/* 4.3 Laufband: weiße Karten mit Haarlinie, 32 px Innenabstand, oben fünf Sterne (14 px); alle so hoch wie die höchste
+   (Flex-Reihe streckt die Karten). */
+.fgs-reviews--26 .fgs-ticker-card { padding: 32px; background: #FFFFFF; border: 1px solid rgba(8, 8, 47, .10); }
+.fgs-ticker-card .fgs-sterne { margin-bottom: 18px; }
