@@ -1,7 +1,7 @@
 const { sendInternalNotification } = require("./_shared/mailer");
 const nachfrage = require("./_shared/nachfrage");
 const logsafe = require("./_shared/logsafe");
-const PROPSTACK_BASE_URL = process.env.PROPSTACK_API_BASE || "https://api.propstack.de/v1";
+const PROPSTACK_BASE_URL = require("./_shared/propstack-basis").basis();
 
 /**
  * netlify/functions/bewertung-nachfrage.js (Update 19 §5, 30.10.2026)
@@ -60,6 +60,7 @@ async function createTask(apiKey, { title, body, contactId }) {
     try {
       const response = await fetch(`${PROPSTACK_BASE_URL}/tasks`, {
         method: "POST",
+        redirect: "manual", // Dringend-Fix 02.11.: keiner Umleitung folgen
         headers: { "X-API-KEY": apiKey, "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ task: { title, body, is_reminder: true, due_date: due, client_ids: [clientId] } }),
       });

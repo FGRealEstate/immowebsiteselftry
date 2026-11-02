@@ -1,5 +1,5 @@
 const logsafe = require("./_shared/logsafe");
-const PROPSTACK_BASE_URL = process.env.PROPSTACK_API_BASE || "https://api.propstack.de/v1";
+const PROPSTACK_BASE_URL = require("./_shared/propstack-basis").basis();
 
 const DEFAULT_SLOTS = [
   "09:00",

@@ -1,8 +1,7 @@
 const nodemailer = require("nodemailer");
 const logsafe = require("./_shared/logsafe");
 
-const PROPSTACK_BASE_URL =
-  process.env.PROPSTACK_API_BASE || "https://api.propstack.de/v1";
+const PROPSTACK_BASE_URL = require("./_shared/propstack-basis").basis();
 
 exports.handler = async function (event) {
   // Update 31 §3: keine Personendaten ins Log
@@ -109,7 +108,7 @@ exports.handler = async function (event) {
       return json(500, {
         success: false,
         error: "Kontakt wurde erstellt, aber keine Kontakt-ID erhalten.",
-        propstack_response: contactResponse,
+        // Dringend-Fix 02.11.: keine Propstack-Rohdaten an den Browser (die Umleitung lieferte hier eure Kontaktliste)
         portal_mail: portalMailResult,
       });
     }
@@ -146,7 +145,7 @@ exports.handler = async function (event) {
       message: "Objektanfrage erfolgreich per Mail und Propstack API verarbeitet.",
       contact_id: contactId,
       deal_stage: stage,
-      contact: contactResponse,
+      // Dringend-Fix 02.11.: keine Propstack-Rohdaten an den Browser
       deal: dealResponse,
       portal_mail: portalMailResult,
     });
@@ -472,6 +471,8 @@ async function propstackPost(apiKey, endpoint, body) {
 
   const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
     method: "POST",
+    // Dringend-Fix 02.11.: Schreibanfragen folgen keiner Umleitung (sonst wird aus POST ein GET)
+    redirect: "manual",
     headers: {
       "X-API-KEY": apiKey,
       "Content-Type": "application/json",

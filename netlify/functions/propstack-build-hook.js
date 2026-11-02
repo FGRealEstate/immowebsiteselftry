@@ -184,7 +184,8 @@ async function fetchJson(url, apiKey) {
 }
 
 function baseUrl() {
-  return (process.env.PROPSTACK_API_BASE || DEFAULT_PROPSTACK_BASE_URL).replace(/\/$/, "");
+  // Dringend-Fix 02.11.: alte crm.propstack.de-Adresse umschreiben (_shared/propstack-basis.js)
+  return require("./_shared/propstack-basis").basis() || DEFAULT_PROPSTACK_BASE_URL;
 }
 
 async function fetchUnit(id) {

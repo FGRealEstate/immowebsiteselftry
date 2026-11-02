@@ -1,5 +1,5 @@
 const logsafe = require("./_shared/logsafe");
-const PROPSTACK_BASE_URL = process.env.PROPSTACK_API_BASE || "https://api.propstack.de/v1";
+const PROPSTACK_BASE_URL = require("./_shared/propstack-basis").basis();
 
 exports.handler = async function (event) {
   // Update 31 §3: keine Personendaten ins Log
@@ -157,7 +157,7 @@ exports.handler = async function (event) {
       success: true,
       message: "Newsletter-Anmeldung wurde übermittelt.",
       contact_id: contactId,
-      contact: contactResponse,
+      // Dringend-Fix 02.11.: keine Propstack-Rohdaten an den Browser
       contact_update: contactUpdate,
       note: noteResult,
       search_profile: searchProfile,
@@ -239,6 +239,8 @@ async function propstackPost(apiKey, endpoint, body) {
   console.log("PROPSTACK POST:", logsafe.endpoint(endpoint));
   const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
     method: "POST",
+    // Dringend-Fix 02.11.: Schreibanfragen folgen keiner Umleitung (sonst wird aus POST ein GET)
+    redirect: "manual",
     headers: { "X-API-KEY": apiKey, "Content-Type": "application/json", Accept: "application/json" },
     body: JSON.stringify(body)
   });
@@ -249,6 +251,8 @@ async function propstackPut(apiKey, endpoint, body) {
   console.log("PROPSTACK PUT:", logsafe.endpoint(endpoint));
   const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
     method: "PUT",
+    // Dringend-Fix 02.11.: Schreibanfragen folgen keiner Umleitung (sonst wird aus POST ein GET)
+    redirect: "manual",
     headers: { "X-API-KEY": apiKey, "Content-Type": "application/json", Accept: "application/json" },
     body: JSON.stringify(body)
   });

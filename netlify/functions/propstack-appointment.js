@@ -1,6 +1,5 @@
 const logsafe = require("./_shared/logsafe");
-const PROPSTACK_BASE_URL =
-  process.env.PROPSTACK_API_BASE || "https://api.propstack.de/v1";
+const PROPSTACK_BASE_URL = require("./_shared/propstack-basis").basis();
 
 const MICROSOFT_GRAPH_BASE_URL = "https://graph.microsoft.com/v1.0";
 const CALENDAR_USER =
@@ -86,7 +85,7 @@ exports.handler = async function (event) {
       return json(500, {
         success: false,
         error: "Kontakt wurde erstellt/aktualisiert, aber keine Kontakt-ID erhalten.",
-        propstack_response: contactResponse,
+        // Dringend-Fix 02.11.: keine Propstack-Rohdaten an den Browser (die Umleitung lieferte hier eure Kontaktliste)
       });
     }
 
@@ -141,7 +140,7 @@ exports.handler = async function (event) {
       success: true,
       message: "Ihr Terminwunsch wurde erfolgreich übermittelt.",
       contact_id: contactId,
-      contact: contactResponse,
+      // Dringend-Fix 02.11.: keine Propstack-Rohdaten an den Browser
       contact_update: contactUpdateResult,
       microsoft_event: {
         id: outlookEventId,
@@ -443,6 +442,8 @@ async function propstackPost(apiKey, endpoint, body) {
 
   const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
     method: "POST",
+    // Dringend-Fix 02.11.: Schreibanfragen folgen keiner Umleitung (sonst wird aus POST ein GET)
+    redirect: "manual",
     headers: {
       "X-API-KEY": apiKey,
       "Content-Type": "application/json",
@@ -459,6 +460,8 @@ async function propstackPut(apiKey, endpoint, body) {
 
   const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
     method: "PUT",
+    // Dringend-Fix 02.11.: Schreibanfragen folgen keiner Umleitung (sonst wird aus POST ein GET)
+    redirect: "manual",
     headers: {
       "X-API-KEY": apiKey,
       "Content-Type": "application/json",
