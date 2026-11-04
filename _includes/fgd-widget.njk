@@ -1,14 +1,24 @@
 {#- Widget der Finanzierungsplattform hinter der Einwilligung (Update 5, Abschnitt 2).
     Eingaben: wKey ("angebot"; der Platzhalter „leisten“ ist seit Update 11 §2 gelöscht), wName (Name des Rechners für Platzhalter und Messung).
-    Der Einbettungscode steht im <template> und wird erst geladen, wenn „Externe Medien“ erlaubt ist
+    Der Einbettungscode steht in data-fgd-widget-code und wird erst geladen, wenn „Externe Medien“ erlaubt ist
     und der Abschnitt in die Nähe des Bildschirms kommt; bis dahin steht der Platzhalter da.
-    Das Skript dazu steht in fg-design.js ([data-fgd-widget]). -#}
+    Das Skript dazu steht in fg-design.js ([data-fgd-widget]).
+    Update 32 §4.4 (04.11.2026): Knopf „Rechner laden (externer Inhalt)“ (Brief, wörtlich); beim Laden „Rechner wird geladen …“;
+    ist der Rechner nach etwa 8 Sekunden nicht da oder lädt das Skript des Anbieters nicht, ein kurzer Hinweis mit Direktlink
+    (finanzWidgets.direkt). -#}
+{%- set direkt = finanzWidgets.direkt[wKey] if finanzWidgets.direkt else "" -%}
 <div class="fgd-widget" data-fgd-widget="{{ wKey }}" data-widget-name="{{ wName }}"{% if finanzWidgets.leadMessage %} data-lead-origin="{{ finanzWidgets.leadMessage.origin }}" data-lead-match="{{ finanzWidgets.leadMessage.match }}"{% endif %}>
   <div class="fgd-widget-ph" data-fgd-widget-ph>
     <p class="fgd-widget-ph-k">{{ wName }}</p>
-    <p>Der Rechner kommt vom {{ finanzWidgets.anbieter }}{% if finanzWidgets.anbieterFirma and finanzWidgets.anbieterFirma != finanzWidgets.anbieter %} ({{ finanzWidgets.anbieterFirma }}){% endif %}; mit „Rechner laden“ willigen Sie in „Externe Medien“ ein und Ihre Eingaben gehen an diesen Anbieter (<a href="/datenschutz.html">Datenschutz</a>).</p>
-    <button type="button" class="fgd-btn fgd-btn-navy" data-fgd-widget-load>Rechner laden</button>
+    <p>Der Rechner kommt vom {{ finanzWidgets.anbieter }}{% if finanzWidgets.anbieterFirma and finanzWidgets.anbieterFirma != finanzWidgets.anbieter %} ({{ finanzWidgets.anbieterFirma }}){% endif %}; mit „Rechner laden (externer Inhalt)“ willigen Sie in „Externe Medien“ ein und Ihre Eingaben gehen an diesen Anbieter (<a href="/datenschutz.html">Datenschutz</a>).</p>
+    <button type="button" class="fgd-btn fgd-btn-navy" data-fgd-widget-load>Rechner laden (externer Inhalt)</button>
+  </div>
+  <div class="fgd-widget-status" data-fgd-widget-status role="status" hidden>
+    <p data-fgd-widget-wait><span class="fgd-widget-spin" aria-hidden="true"></span>Rechner wird geladen …</p>
+    <p data-fgd-widget-slow hidden><span data-fgd-widget-slow-text data-text-error="Der Rechner konnte gerade nicht geladen werden.">Der Rechner braucht gerade länger als üblich.</span>{% if direkt %} <a href="{{ direkt }}" target="_blank" rel="noopener" data-fgd-widget-direct>Rechner direkt öffnen</a> <span class="fgd-widget-note">(neuer Tab, {{ finanzWidgets.anbieter }})</span>{% endif %}</p>
   </div>
   <div class="fgd-widget-frame" data-fgd-widget-frame hidden></div>
-  <template data-fgd-widget-code>{{ finanzWidgets[wKey] | safe }}</template>
+  {#- Update 32 §4.3: Code als Attribut statt <template>. Firefox lud das Skript aus dem <template> vorab (Vorab-Scanner),
+      also ohne Einwilligung; aus einem Attribut lädt kein Browser etwas. -#}
+  <div data-fgd-widget-code="{{ finanzWidgets[wKey] | escape }}" hidden></div>
 </div>

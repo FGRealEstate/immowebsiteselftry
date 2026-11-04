@@ -6,8 +6,12 @@
  *    "Vermarktung" steht.
  * 2. Ein Build wird ausgelöst, wenn ein veröffentlichtes Objekt/Projekt
  *    online geht, geändert wird oder den öffentlichen Status verlässt.
- * 3. Doppelte Propstack-Events werden innerhalb eines kurzen Zeitfensters
- *    zu einem einzigen Netlify-Build zusammengefasst.
+ * 3. Ereignisse innerhalb weniger Minuten werden zu einem Netlify-Build
+ *    zusammengefasst (Update 32 §7.3, _shared/build-sammler.js und die geplante
+ *    Funktion propstack-build-sammler; bis dahin fehlte das, Lücke 13).
+ * 4. Update 32 §7.3: Mit PROPSTACK_WEBHOOK_SECRET nimmt der Webhook nur Ereignisse
+ *    mit gültiger Propstack-Signatur (X-Propstack-Signature) oder ?token= an,
+ *    auch für GET mit ?id. GET ohne id bleibt der Health-Check und baut nie.
  *
  * Erforderliche Environment Variables:
  * - NETLIFY_BUILD_HOOK_URL (für Einheiten/Properties)
@@ -18,7 +22,11 @@
  * - PROPSTACK_API_BASE=https://api.propstack.de/v1
  * - PROPSTACK_PUBLIC_STATUS_KEYWORDS=vermarktung
  * - PROPSTACK_PUBLIC_PROJECT_STATUS_KEYWORDS=vermarktung,im angebot
+ * - PROPSTACK_WEBHOOK_SECRET (Update 32 §7.3; ohne: wie bisher offen, mit Warnung im Log)
+ * - PROPSTACK_BUILD_DEBOUNCE_SECONDS=180 (Sammelzeit), PROPSTACK_BUILD_SAMMELN=aus (sofort bauen wie bisher)
  */
+
+const { geheimnisPruefen, bauenOderVormerken, sammlerStand } = require("./_shared/build-sammler");
 
 const DEFAULT_PROPSTACK_BASE_URL = "https://api.propstack.de/v1";
 
@@ -274,32 +282,6 @@ async function resolveEntity(payload) {
   return { type: hint || "unknown", id, raw: null };
 }
 
-function debounceSeconds() {
-  const value = Number(process.env.PROPSTACK_BUILD_DEBOUNCE_SECONDS || 60);
-  return Number.isFinite(value) && value >= 0 ? value : 60;
-}
-
-async function triggerBuild(details) {
-  const url = details?.entityType === "project"
-    ? (process.env.NETLIFY_PROJECT_BUILD_HOOK_URL || process.env.NETLIFY_BUILD_HOOK_URL)
-    : process.env.NETLIFY_BUILD_HOOK_URL;
-
-  if (!url) {
-    throw new Error(
-      details?.entityType === "project"
-        ? "NETLIFY_PROJECT_BUILD_HOOK_URL fehlt."
-        : "NETLIFY_BUILD_HOOK_URL fehlt."
-    );
-  }
-
-  const response = await fetch(url, { method: "POST" });
-  if (!response.ok) {
-    throw new Error(`Netlify Build Hook antwortete mit Status ${response.status}.`);
-  }
-
-  return { triggered: true, netlifyStatus: response.status };
-}
-
 function jsonResponse(statusCode, body) {
   return {
     statusCode,
@@ -319,8 +301,15 @@ exports.handler = async function handler(event) {
       ready: true,
       webhook: "propstack-build-hook",
       unitBuildHookConfigured: Boolean(process.env.NETLIFY_BUILD_HOOK_URL),
-      projectBuildHookConfigured: Boolean(process.env.NETLIFY_PROJECT_BUILD_HOOK_URL || process.env.NETLIFY_BUILD_HOOK_URL)
+      projectBuildHookConfigured: Boolean(process.env.NETLIFY_PROJECT_BUILD_HOOK_URL || process.env.NETLIFY_BUILD_HOOK_URL),
+      secretConfigured: Boolean(process.env.PROPSTACK_WEBHOOK_SECRET),
+      sammler: await sammlerStand(event)
     });
+  }
+
+  // Update 32 §7.3: ohne gültiges Geheimnis kein Build (sobald PROPSTACK_WEBHOOK_SECRET gesetzt ist)
+  if (!geheimnisPruefen(event).ok) {
+    return jsonResponse(401, { ok: false, error: "Unauthorized" });
   }
 
   let payload = {};
@@ -447,13 +436,10 @@ exports.handler = async function handler(event) {
   }
 
   try {
-    const trigger = await triggerBuild({
+    // Update 32 §7.3: vormerken und gesammelt bauen; sofort nur, wenn das Sammeln nicht sicher geht
+    const trigger = await bauenOderVormerken(event, {
       entityType: entity.type,
-      entityId: entity.id,
-      ownStatus,
-      projectId,
-      projectStatus,
-      reason: buildReason
+      entityId: entity.id
     });
 
     console.log("Propstack Build-Entscheidung:", { ...trigger, buildReason });

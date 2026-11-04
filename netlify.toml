@@ -6,6 +6,10 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Update 32 §7.3: Sammel-Build der Propstack-Webhooks, alle 2 Minuten (netlify/functions/_shared/build-sammler.js)
+[functions."propstack-build-sammler"]
+  schedule = "*/2 * * * *"
+
 # Update 7 §4: Propstack-Fotos über das Netlify Image CDN (/.netlify/images?url=…), Filter propstackFoto in .eleventy.js.
 [images]
   remote_images = ["https://images\\.propstack\\.de/.*"]

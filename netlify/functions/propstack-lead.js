@@ -1,6 +1,7 @@
 const { sendInternalNotification } = require("./_shared/mailer");
 const nachfrage = require("./_shared/nachfrage");
 const logsafe = require("./_shared/logsafe");
+const zustellung = require("./_shared/zustellung");
 const PROPSTACK_BASE_URL = require("./_shared/propstack-basis").basis();
 
 /**
@@ -64,92 +65,119 @@ exports.handler = async function (event) {
     const note = buildNote(lead);
     const contactPayload = buildContactPayload(lead, note);
 
-    const contactResponse = await createContactWithFallback(apiKey, contactPayload, lead, note);
-    const contactId = getId(contactResponse, ["client", "contact", "data"]);
+    // Update 32 §1: Jeder Teil wird nach dem Schreiben zurückgelesen (_shared/zustellung.js). Fehlt ein Teil, geht die
+    // ganze Anfrage per Rückfall-Mail an das Postfach. Die Teile hängen am Kontakt; fehlt er, wird nichts weiter geschrieben.
+    const api = zustellung.propstack(apiKey, PROPSTACK_BASE_URL);
+    const formular = `propstack-lead (${mapLandingpageType(lead.concernType)})`;
+    const prot = zustellung.protokoll(api, formular, requestId);
 
-    if (!contactId) {
-      return json(500, {
-        success: false,
-        error: "Kontakt wurde erstellt/aktualisiert, aber keine Kontakt-ID erhalten.",
-        // Dringend-Fix 02.11.: keine Propstack-Rohdaten an den Browser (die Umleitung lieferte hier eure Kontaktliste)
-      });
+    let contactId = null;
+    try {
+      const contactResponse = await createContactWithFallback(apiKey, contactPayload, lead, note);
+      contactId = await prot.pruefen("Kontakt", getId(contactResponse, ["client", "contact", "data"]), { endpoint: "/contacts" });
+    } catch (error) {
+      prot.fehlgeschlagen("Kontakt", "/contacts", error);
     }
 
-    console.log("CONTACT SAVED:", { requestId, contactId });
+    let propertyId = null;
+    if (contactId) {
+      console.log("CONTACT SAVED:", { requestId, contactId });
+      await safeUpdateContact(apiKey, contactId, contactPayload.client);
 
-    const contactUpdateResult = await safeUpdateContact(apiKey, contactId, contactPayload.client);
-    const searchProfileResult = await maybeCreateSearchProfile(apiKey, contactId, lead, note);
+      const searchProfileResult = await maybeCreateSearchProfile(apiKey, contactId, lead, note);
+      await pruefeTeil(prot, "Suchprofil", "/saved_queries", searchProfileResult, { kontaktId: contactId });
 
-    // Verkauf/Vermietung: wenn der Eigentümer Objektdaten angibt, legen wir ein echtes Propstack-Objekt an
-    // und verknüpfen den Kontakt direkt über relationships_attributes als owner.
-    const propertyResult = await maybeCreateOwnerProperty(apiKey, contactId, lead, note);
-    const propertyId = getId(propertyResult && propertyResult.result, ["property", "unit", "data"]);
+      // Verkauf/Vermietung: wenn der Eigentümer Objektdaten angibt, legen wir ein echtes Propstack-Objekt an
+      // und verknüpfen den Kontakt direkt über relationships_attributes als owner.
+      const propertyResult = await maybeCreateOwnerProperty(apiKey, contactId, lead, note);
+      propertyId = await pruefeTeil(prot, "Objekt", "/units", propertyResult);
 
-    const dealResult = await maybeCreateDealForOwnerObject(apiKey, contactId, propertyId, lead, note);
-    const taskResult = await safeCreateFollowUpTask(apiKey, contactId, lead, note);
-    const documentResults = lead.documents.length
-      ? await uploadDocuments(apiKey, { contactId, propertyId, documents: lead.documents })
-      : [];
+      const dealResult = await maybeCreateDealForOwnerObject(apiKey, contactId, propertyId, lead, note);
+      await pruefeTeil(prot, "Deal", "/client_properties", dealResult);
 
-    // Interne Benachrichtigung zusätzlich zum Propstack-Kontakt / der Aufgabe.
-    // Ein Mailfehler blockiert die CRM-Übermittlung nicht.
-    const internalNotification = await sendInternalNotification({
-      subject: `Neue Website-Anfrage: ${mapLandingpageType(lead.concernType)} – ${lead.fullName}`,
-      replyTo: lead.email,
-      text: note,
-    });
+      const taskResult = await safeCreateFollowUpTask(apiKey, contactId, lead, note);
+      await pruefeTeil(prot, "Aufgabe", "/tasks", taskResult.ok === false ? taskResult : { ok: true, result: taskResult });
 
-    // Update 19 §5: Bewertungsanfrage → Bestätigungsmail an den Absender mit Link auf die Nachfrage
-    const confirmation = nachfrage.istBewertung(lead.rawConcern)
-      ? await sendValuationConfirmation(lead, contactId, data)
-      : { sent: false, skipped: true, reason: "keine Bewertungsanfrage" };
+      const documentResults = lead.documents.length
+        ? await uploadDocuments(apiKey, { contactId, propertyId, documents: lead.documents })
+        : [];
+      documentResults.filter((d) => !d.ok).forEach((d) => prot.fehlgeschlagen("Dokument", "/documents", d.errorObject));
+    }
 
-    return json(200, {
-      success: true,
-      message: "Ihre Anfrage wurde erfolgreich übermittelt.",
-      contact_id: contactId,
-      // Dringend-Fix 02.11.: keine Propstack-Rohdaten an den Browser
-      contact_update: contactUpdateResult,
-      search_profile: searchProfileResult,
-      task: taskResult,
-      property_id: propertyId,
-      property: propertyResult,
-      deal: dealResult,
-      documents: documentResults,
-      internal_notification: internalNotification,
-      confirmation,
-    });
+    // Interne Benachrichtigung. Update 32 §1.2: Ist alles in Propstack angekommen, die gewohnte Mail
+    // „Neue Website-Anfrage: …“. Fehlt etwas, stattdessen die Rückfall-Mail „Website-Anfrage NICHT in Propstack angekommen“
+    // mit der vollständigen Anfrage. Ein Mailfehler blockiert die CRM-Übermittlung nicht.
+    const fehlend = prot.fehlend();
+    const internalNotification = fehlend.length
+      ? await zustellung.rueckfallMail({
+          formular,
+          requestId,
+          text: note,
+          replyTo: lead.email,
+          protokoll: prot,
+          hinweis: fehlend.some((t) => t.teil === "Dokument") ? "Hochgeladene PDF-Unterlagen sind nicht in Propstack. Bitte beim Absender anfordern." : "",
+        })
+      : await sendInternalNotification({
+          subject: `Neue Website-Anfrage: ${mapLandingpageType(lead.concernType)} – ${lead.fullName}`,
+          replyTo: lead.email,
+          text: note,
+        });
+
+    // Kein Kontakt in Propstack und keine Mail im Postfach: Die Anfrage ist nirgends angekommen. Das muss der Besucher erfahren.
+    if (!contactId && !internalNotification.sent) {
+      return zustellung.oeffentlich(502, { success: false, error: "Die Anfrage konnte gerade nicht gesendet werden." });
+    }
+
+    // Update 19 §5: Bewertungsanfrage → Bestätigungsmail an den Absender mit Link auf die Nachfrage.
+    // Ohne Kontakt in Propstack (Rückfall-Mail) kommt die Bestätigung ohne Link.
+    if (nachfrage.istBewertung(lead.rawConcern)) {
+      await sendValuationConfirmation(lead, contactId, data, propertyId);
+    }
+
+    // Antwort an den Browser: nur success und message
+    return zustellung.oeffentlich(200, { success: true, message: "Ihre Anfrage wurde erfolgreich übermittelt." });
   } catch (error) {
     console.error("PROPSTACK LEAD ERROR:", { requestId, ...logsafe.error(error) });
-
-    return json(500, {
-      success: false,
-      error: error.message,
-      code: error.code || null,
-      response: error.response || null,
-    });
+    // Fehlermeldung an den Browser: eigener Text
+    return zustellung.oeffentlich(500, { success: false, error: "Die Anfrage konnte gerade nicht gesendet werden." });
   }
 };
+
+/**
+ * Update 32 §1.1: Ergebnis eines Schritts ({ ok, skipped, result, error }) ins Protokoll.
+ * Absichtlich übersprungen (ok + skipped, z. B. kein Suchprofil bei Verkauf) zählt nicht als Teil.
+ * Gibt die ID zurück, wenn der Teil angekommen ist, sonst null.
+ */
+async function pruefeTeil(prot, teil, endpoint, ergebnis, extra = {}) {
+  if (!ergebnis || (ergebnis.ok && ergebnis.skipped)) return null;
+  if (ergebnis.ok === false) return prot.fehlgeschlagen(teil, endpoint, ergebnis.error);
+  return prot.pruefen(teil, zustellung.idAus(ergebnis.result), { ...extra, endpoint });
+}
 
 // Update 19 §5: Link mit Kontakt-ID und Signatur (_shared/nachfrage.js); ohne Geheimnis keine Mail
 // (NACHFRAGE_SECRET oder ersatzweise der Propstack-Schlüssel, siehe nachfrage.geheimnis).
 // Ein Mailfehler blockiert die Anfrage nicht.
-async function sendValuationConfirmation(lead, contactId, data) {
+async function sendValuationConfirmation(lead, contactId, data, propertyId) {
   try {
     const secret = nachfrage.geheimnis(process.env);
     if (!secret) return { sent: false, skipped: true, reason: "kein Geheimnis für den Nachfrage-Link" };
     const objectType = data.object_type || data.objectType;
-    // Design-Pass 3 §0.4: Grundstück → Bestätigungsmail ohne Link auf die Fragen
-    const url = await nachfrage.link({
-      secret,
-      base: process.env.URL || "https://fg-realestate.de",
-      contactId,
-      objectType,
-      plotGiven: Boolean(clean((lead.propertyDetails || {})["seller-plot-area"])),
-    });
-    if (!url && !nachfrage.ohneFragen(objectType)) return { sent: false, skipped: true, reason: "kein Nachfrage-Link" };
+    // Update 32 §2: Der Link trägt Kontakt und Objekt aus Schritt 1 (signiert), die Objektart und was Schritt 1 schon gefragt hat.
+    // Ohne Kontakt in Propstack (Rückfall-Mail, Update 32 §1.2) kommt die Bestätigung ohne Link.
+    const url = contactId
+      ? await nachfrage.link({
+          secret,
+          base: process.env.URL || "https://fg-realestate.de",
+          contactId,
+          propertyId,
+          objectType,
+          schritt1: nachfrage.schritt1Angaben(lead.propertyDetails || {}),
+          anruf: nachfrage.perAnruf(lead.contactPreference),
+        })
+      : "";
+    if (contactId && !url) return { sent: false, skipped: true, reason: "kein Nachfrage-Link" };
     // Update 28 §3.2: Version A (E-Mail) oder B (Anruf) je nach Kontaktwunsch, mit Adresse der Immobilie
-    const mail = nachfrage.bestaetigung({ firstName: lead.firstName, lastName: lead.lastName, link: url, adresse: nachfrage.adresseText(data), anruf: nachfrage.perAnruf(lead.contactPreference) });
+    const mail = nachfrage.bestaetigung({ firstName: lead.firstName, lastName: lead.lastName, link: url, adresse: nachfrage.adresseText(data), anruf: nachfrage.perAnruf(lead.contactPreference), objectType });
     const result = await sendInternalNotification({
       to: lead.email,
       replyTo: process.env.WEBSITE_LEAD_EMAIL || "info@fg-realestate.de",
@@ -483,6 +511,7 @@ function buildNote(lead) {
   const detailLines = Object.entries(lead.propertyDetails || {})
     .filter(([, value]) => clean(value))
     .map(([key, value]) => `${humanizeKey(key)}: ${clean(value)}`);
+  detailLines.push(...berechneteMietzeilen(lead));
 
   return [
     "Neue Website-Landingpage-Anfrage",
@@ -607,7 +636,7 @@ async function maybeCreateOwnerProperty(apiKey, contactId, lead, note) {
     ...(property.condition && conditionLabel ? [{ label: "condition as label", payload: { property: { ...property, condition: conditionLabel } } }] : []),
     { label: "without status", payload: { property: omitKeys(property, ["status_id", "property_status_id"]) } },
     ...(property.condition ? [{ label: "without status and condition", payload: { property: omitKeys(property, ["status_id", "property_status_id", "condition"]) } }] : []),
-    { label: "without optional standard fields", payload: { property: omitKeys(property, ["status_id", "property_status_id", "base_rent", "net_cold_rent", "rent", "target_cold_rent", "service_charge", "annual_net_rent", "target_annual_net_rent", "balcony_area", "interior_quality", "condition", "last_modernization", "rs_category", "country"]) } },
+    { label: "without optional standard fields", payload: { property: omitKeys(property, ["status_id", "property_status_id", "base_rent", "net_cold_rent", "rent", "target_cold_rent", "service_charge", "annual_net_rent", "target_annual_net_rent", "rental_income_actual", "rented", "industrial_area", "balcony_area", "interior_quality", "condition", "last_modernization", "rs_category", "country"]) } },
     { label: "without custom fields", payload: { property: omitKeys(property, ["partial_custom_fields", "interior_quality", "condition", "status_id", "property_status_id", "base_rent", "net_cold_rent", "rent", "target_cold_rent", "service_charge", "annual_net_rent", "target_annual_net_rent", "rs_category", "country"]) } },
     { label: "without category", payload: { property: omitKeys(property, ["partial_custom_fields", "status_id", "property_status_id", "rs_category", "country"]) } },
     {
@@ -658,8 +687,8 @@ async function maybeCreateOwnerProperty(apiKey, contactId, lead, note) {
   return {
     ok: false,
     skipped: true,
-    reason: lastError ? lastError.message : "Objektanlage fehlgeschlagen.",
-    attempted_property: property,
+    reason: "Objektanlage fehlgeschlagen.",
+    error: lastError,
   };
 }
 
@@ -676,6 +705,9 @@ async function buildOwnerPropertyPayload(apiKey, contactId, lead, note) {
   const netRentCurrent = numberOrNull(firstValue(details, ["seller-net-rent-current", "seller_net_rent_current", "net_rent_current"]));
   const netRentTarget = numberOrNull(firstValue(details, ["seller-net-rent-target", "seller_net_rent_target", "net_rent_target"]));
   const serviceCharge = numberOrNull(firstValue(details, ["seller-service-charge", "seller_service_charge", "service_charge"]));
+  // Update 32 §2.2/§2.3: Nettokaltmiete im Monat (gesamt) und Nutzung aus Schritt 1 der Bewertung
+  const rentMonthly = numberOrNull(details["seller-rent-monthly"]);
+  const usage = clean(details["seller-usage"]);
 
   const property = removeEmpty({
     title,
@@ -694,12 +726,17 @@ async function buildOwnerPropertyPayload(apiKey, contactId, lead, note) {
 
     price: priceNumber,
     cold_rent: coldRent,
-    base_rent: coldRent,
+    base_rent: rentMonthly || coldRent,
     net_cold_rent: coldRent,
     rent: coldRent,
     target_cold_rent: coldRentTarget,
     service_charge: serviceCharge,
     annual_net_rent: netRentCurrent,
+    // „Nettomiete Ist p.a.“ (Zahl); „Mtl. Mieteinnahmen“ (rental_income) ist in Propstack ein Textfeld, darum nicht
+    rental_income_actual: rentMonthly ? Math.round(rentMonthly * 12 * 100) / 100 : undefined,
+    rented: /vermietet/i.test(usage) ? true : /selbst genutzt|leer stehend/i.test(usage) ? false : undefined,
+    // Gewerbe: Fläche nie als Wohnfläche (Brief §2.4 D)
+    industrial_area: numberOrNull(details["seller-commercial-area"]),
     target_annual_net_rent: netRentTarget,
     living_space: numberOrNull(firstValue(details, ["seller-area-value", "seller_area_value", "living_space", "wohnflaeche"])),
     plot_area: numberOrNull(firstValue(details, ["seller-plot-area", "seller_plot_area", "plot_area", "grundstuecksflaeche"])),
@@ -765,6 +802,8 @@ function buildOwnerPropertyCustomFields(lead) {
     nettokaltmiete_soll: numberOrNull(firstValue(details, ["seller-cold-rent-target", "seller_cold_rent_target", "seller-net-rent-target", "seller_net_rent_target"])),
     hausgeld_nebenkosten: numberOrNull(firstValue(details, ["seller-service-charge", "seller_service_charge"])),
     leerstand_notiz: clean(firstValue(details, ["seller-vacancy-note", "seller_vacancy_note"])),
+    // Update 32 §2.2: Nutzung aus Schritt 1 in das vorhandene Textfeld „Investment oder Eigennutz“
+    investment_oder_eigennutz: clean(details["seller-usage"]),
     grundstuecksart: clean(firstValue(details, ["seller-plot-type", "seller_plot_type"])),
     erschliessung: clean(firstValue(details, ["seller-development-status", "seller_development_status"])),
     baujahr: numberOrNull(firstValue(details, ["seller-year", "seller_year"])),
@@ -805,7 +844,8 @@ async function maybeCreateDealForOwnerObject(apiKey, contactId, propertyId, lead
 
   const stage = await findBestDealStage(apiKey, lead.concernType);
   if (!stage || !stage.id) {
-    return { ok: true, skipped: true, reason: "Keine passende Deal-Phase gefunden.", stage };
+    // Update 32 §1.1: Ohne Phase fehlt der vorgesehene Deal; das zählt als fehlender Teil (Rückfall-Mail).
+    return { ok: false, skipped: true, reason: "Keine passende Deal-Phase gefunden.", error: new Error("Keine Deal-Phase gefunden") };
   }
 
   const attempts = [
@@ -830,16 +870,18 @@ async function maybeCreateDealForOwnerObject(apiKey, contactId, propertyId, lead
     },
   ];
 
+  let lastError = null;
   for (const payload of attempts) {
     try {
       const result = await propstackPost(apiKey, "/client_properties", payload);
       return { ok: true, stage, result };
     } catch (error) {
+      lastError = error;
       console.warn("OWNER DEAL CREATE ATTEMPT FAILED:", logsafe.msg(error));
     }
   }
 
-  return { ok: false, skipped: true, reason: "Deal konnte nicht erstellt werden.", stage };
+  return { ok: false, skipped: true, reason: "Deal konnte nicht erstellt werden.", stage, error: lastError };
 }
 
 async function findBestDealStage(apiKey, concernType) {
@@ -888,9 +930,11 @@ function mapOwnerObjectMapping(objectType, details) {
   const text = normalize(objectType);
   const sub = normalize(firstValue(details || {}, ["seller-house-subtype", "seller_house_subtype", "seller-subtype", "seller_subtype"]));
 
-  if (text.includes("grund")) return { object_type: "LIVING", rs_type: "PLOT", rs_category: "OTHER", pretty: "Grundstück" };
-  if (text.includes("gewerbe")) return { object_type: "COMMERCIAL", rs_type: "COMMERCIAL_UNIT", rs_category: "COMMERCIAL_UNIT", pretty: "Gewerbe" };
-  if (text.includes("mehrfamilien")) return { object_type: "INVESTMENT", rs_type: "INVESTMENT", rs_category: "INVEST_HOUSING_ESTATE", pretty: "Mehrfamilienhaus" };
+  // Update 32 §2: Nur Werte aus Propstacks API-Spezifikation v2 (rs_type kennt weder PLOT noch COMMERCIAL_UNIT;
+  // INVEST_HOUSING_ESTATE ist „Wohnanlage“). Ein MFH mit Gewerbe wird in Schritt 2 zum Wohn-/Geschäftshaus.
+  if (text.includes("grund")) return { object_type: "LIVING", rs_type: "TRADE_SITE", rs_category: "TRADE_SITE", pretty: "Grundstück" };
+  if (text.includes("gewerbe")) return { object_type: "INVESTMENT", rs_type: "INVESTMENT", rs_category: "INVEST_COMMERCIAL_UNIT", pretty: "Gewerbe" };
+  if (text.includes("mehrfamilien")) return { object_type: "INVESTMENT", rs_type: "INVESTMENT", rs_category: "INVEST_MULTI_FAMILY_HOUSE", pretty: "Mehrfamilienhaus" };
   if (text.includes("doppel") || sub.includes("doppel")) return { object_type: "LIVING", rs_type: "HOUSE", rs_category: "SEMIDETACHED_HOUSE", pretty: "Doppelhaushälfte" };
   if (text.includes("zweifamilien") || sub.includes("zweifamilien") || sub.includes("zfh")) return { object_type: "LIVING", rs_type: "HOUSE", rs_category: "TWO_FAMILY_HOUSE", pretty: "Zweifamilienhaus" };
   if (text.includes("reihenend") || sub.includes("reihenend")) return { object_type: "LIVING", rs_type: "HOUSE", rs_category: "TERRACE_END_HOUSE", pretty: "Reihenendhaus" };
@@ -1009,6 +1053,7 @@ async function maybeCreateSearchProfile(apiKey, contactId, lead, note) {
     { endpoint: "/search_profiles", payload: { search_profile: basicSavedQuery }, label: "basic search_profile" },
   ];
 
+  let lastError = null;
   for (const attempt of attempts) {
     try {
       console.log("SEARCH PROFILE ATTEMPT:", attempt.label);
@@ -1020,6 +1065,7 @@ async function maybeCreateSearchProfile(apiKey, contactId, lead, note) {
         used_payload: attempt.payload,
       };
     } catch (error) {
+      lastError = error;
       console.warn("SEARCH PROFILE CREATE ATTEMPT FAILED:", attempt.label, logsafe.msg(error));
     }
   }
@@ -1028,7 +1074,7 @@ async function maybeCreateSearchProfile(apiKey, contactId, lead, note) {
     ok: false,
     skipped: true,
     reason: "Suchprofil konnte per API nicht angelegt werden. Daten stehen im Kontakt und in der Aufgabe.",
-    payload: richSavedQuery,
+    error: lastError,
   };
 }
 
@@ -1058,10 +1104,12 @@ async function safeCreateFollowUpTask(apiKey, contactId, lead, note) {
     },
   ];
 
+  let lastError = null;
   for (const payload of attempts) {
     try {
       return await propstackPost(apiKey, "/tasks", payload);
     } catch (error) {
+      lastError = error;
       console.warn("FOLLOWUP TASK ATTEMPT FAILED:", logsafe.msg(error));
     }
   }
@@ -1070,6 +1118,7 @@ async function safeCreateFollowUpTask(apiKey, contactId, lead, note) {
     ok: false,
     skipped: true,
     reason: "Aufgabe konnte per API nicht angelegt werden. Daten stehen im Kontakt/Bemerkung.",
+    error: lastError,
   };
 }
 
@@ -1103,11 +1152,28 @@ async function uploadDocuments(apiKey, input) {
       results.push({ ok: true, name: file.name, result });
     } catch (error) {
       console.warn("Dokument konnte nicht hochgeladen werden:", logsafe.msg(error));
-      results.push({ ok: false, name: file.name, error: error.message });
+      results.push({ ok: false, name: file.name, errorObject: error });
     }
   }
 
   return results;
+}
+
+// Update 32 §7.1: propstackGet fehlte. findPropertyStatusId und findBestDealStage riefen es auf, der Fehler wurde
+// abgefangen, und so bekamen Verkaufs-, Vermietungs- und MFH-Anfragen nie den Status „Akquise“ und nie einen Deal.
+async function propstackGet(apiKey, endpoint) {
+  console.log("PROPSTACK GET:", logsafe.endpoint(endpoint));
+
+  const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
+    method: "GET",
+    redirect: "manual",
+    headers: {
+      "X-API-KEY": apiKey,
+      Accept: "application/json",
+    },
+  });
+
+  return parsePropstackResponse(response, endpoint);
 }
 
 async function propstackPost(apiKey, endpoint, body) {
@@ -1343,6 +1409,10 @@ function normalize(value) {
 }
 
 function numberOrNull(value) {
+  // Update 32 §2: „72.5“ war 725 (Punkt als Tausender gelesen). Erst die Zahlformen aus nachfrage.zahl
+  // („1.200“, „1.200,50“, „72,5“, „72.5“), sonst wie bisher alles außer Ziffern entfernen.
+  const genau = nachfrage.zahl(value);
+  if (Number.isFinite(genau)) return genau;
   const text = clean(value)
     .replace(/\./g, "")
     .replace(",", ".")
@@ -1401,8 +1471,31 @@ function compactJson(value) {
   }
 }
 
+/**
+ * Update 32 §2.3: berechnete Zeilen zur Miete aus Schritt 1 der Bewertung (Jahresnettokaltmiete, €/m², Bruttorendite).
+ * Die Miete ist immer die monatliche Nettokaltmiete gesamt; €/m² nur aus der Fläche, die zur Objektart gehört.
+ */
+function berechneteMietzeilen(lead) {
+  const d = lead.propertyDetails || {};
+  const miete = numberOrNull(d["seller-rent-monthly"]);
+  if (!miete) return [];
+  const de = (n, stellen) => n.toLocaleString("de-DE", { minimumFractionDigits: stellen, maximumFractionDigits: stellen });
+  const zeilen = [`Jahresnettokaltmiete (berechnet): ${de(Math.round(miete * 12 * 100) / 100, Number.isInteger(miete * 12) ? 0 : 2)} €`];
+  const gewerbe = numberOrNull(d["seller-commercial-area"]);
+  const wohnen = numberOrNull(d["seller-area-value"]);
+  if (gewerbe) zeilen.push(`Nettokaltmiete je m² Gewerbe- bzw. Nutzfläche (berechnet): ${de(Math.round((miete / gewerbe) * 100) / 100, 2)} €/m²`);
+  else if (wohnen) zeilen.push(`Nettokaltmiete je m² Wohnfläche (berechnet): ${de(Math.round((miete / wohnen) * 100) / 100, 2)} €/m²`);
+  if (lead.concernType === "sell" && lead.budgetNumber) {
+    zeilen.push(`Bruttorendite (berechnet, Jahresnettokaltmiete ÷ Preisvorstellung): ${de(Math.round(((miete * 12) / lead.budgetNumber) * 10000) / 100, 2)} %`);
+  }
+  return zeilen;
+}
+
 function humanizeKey(key) {
   return {
+    "seller-rent-monthly": "Monatliche Nettokaltmiete gesamt in €",
+    "seller-commercial-area": "Gewerbe- bzw. Nutzfläche in m²",
+    "seller-usage": "Nutzung",
     "seller-area-type": "Flächenart",
     "seller-area-value": "Fläche in m²",
     "seller-rooms": "Zimmeranzahl",

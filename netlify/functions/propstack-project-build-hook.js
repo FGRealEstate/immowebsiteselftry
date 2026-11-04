@@ -10,7 +10,13 @@
  *
  * Erforderliche Environment Variable:
  * - NETLIFY_PROJECT_BUILD_HOOK_URL
+ *
+ * Update 32 §7.3 (05.11.2026): wie propstack-build-hook mit Geheimnis (PROPSTACK_WEBHOOK_SECRET: Propstack-Signatur
+ * oder ?token=) und Sammel-Build (_shared/build-sammler.js). Ohne Geheimnis wie bisher offen, mit Warnung im Log;
+ * geht das Sammeln nicht sicher, wird wie bisher sofort gebaut.
  */
+
+const { geheimnisPruefen, bauenOderVormerken, sammlerStand } = require("./_shared/build-sammler");
 
 function jsonResponse(statusCode, body) {
   return {
@@ -31,8 +37,14 @@ exports.handler = async function projectBuildHook(event) {
       ok: true,
       ready: true,
       webhook: "propstack-project-build-hook",
-      buildHookConfigured: Boolean(process.env.NETLIFY_PROJECT_BUILD_HOOK_URL)
+      buildHookConfigured: Boolean(process.env.NETLIFY_PROJECT_BUILD_HOOK_URL),
+      secretConfigured: Boolean(process.env.PROPSTACK_WEBHOOK_SECRET),
+      sammler: await sammlerStand(event)
     });
+  }
+
+  if (!geheimnisPruefen(event).ok) {
+    return jsonResponse(401, { ok: false, error: "Unauthorized" });
   }
 
   let payload = {};
@@ -47,26 +59,17 @@ exports.handler = async function projectBuildHook(event) {
     return jsonResponse(500, { ok: false, error: "NETLIFY_PROJECT_BUILD_HOOK_URL bzw. NETLIFY_BUILD_HOOK_URL fehlt." });
   }
 
+  const projectId = payload.project_id || payload.projectId || payload.id || payload.data?.id || null;
   try {
-    const response = await fetch(buildHookUrl, { method: "POST" });
-    if (!response.ok) {
-      return jsonResponse(502, {
-        ok: false,
-        error: `Netlify Project Build Hook antwortete mit Status ${response.status}.`
-      });
-    }
+    const trigger = await bauenOderVormerken(event, { entityType: "project", entityId: projectId });
 
-    console.log("Propstack Project Build ausgelöst", {
-      netlifyStatus: response.status,
+    console.log("Propstack Project Build", trigger.gesammelt ? "vorgemerkt" : "ausgelöst", {
+      netlifyStatus: trigger.netlifyStatus || null,
       eventType: payload.event || payload.event_type || payload.type || null,
-      projectId: payload.project_id || payload.projectId || payload.id || payload.data?.id || null
+      projectId
     });
 
-    return jsonResponse(200, {
-      ok: true,
-      triggered: true,
-      netlifyStatus: response.status
-    });
+    return jsonResponse(200, { ok: true, ...trigger });
   } catch (error) {
     console.error("Project Build Hook Fehler:", error);
     return jsonResponse(500, { ok: false, error: error.message });

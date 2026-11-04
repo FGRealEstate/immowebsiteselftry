@@ -43,11 +43,19 @@
 </section>
 {%- endmacro -%}
 
-{%- macro gallery(pics, name, leer, cover, designOrt) -%}
+{#- Update 32 §3 (04.11.2026): Galerie mit Großansicht.
+    - Klick auf das Bild oder „Alle Bilder ansehen (n)“ öffnet die Großansicht (<dialog>, wird beim ersten Öffnen gebaut).
+    - Grundrisse (plaene = Adressen mit is_floorplan, in _data/propstack.js ans Ende sortiert) tragen „Grundriss“.
+    - Nur das sichtbare Bild nimmt Klicks an. Vorher lagen alle Bilder unsichtbar übereinander, das letzte (der Grundriss)
+      oben, und „Bild in neuem Tab öffnen“ traf immer dieses.
+    - Die Galerie ist fokussierbar (auch mit nur einem Bild): ← und → wechseln das Bild, Enter öffnet die Großansicht. -#}
+{%- macro gallery(pics, name, leer, cover, designOrt, plaene) -%}
 {% if pics and pics.length %}
-<div class="fgs-gallery" data-gallery aria-roledescription="Bildergalerie" aria-label="Bilder von {{ name }}">
+<div class="fgs-gallery" data-gallery tabindex="0" role="region" aria-roledescription="Bildergalerie" aria-label="Bilder von {{ name }}">
   <div class="fgs-media fgs-gallery-stage">
-    {% for image in pics %}<img src="{{ image | propstackFoto(1600) }}"{% set _set = image | propstackSrcset %}{% if _set %} srcset="{{ _set }}"{% endif %} alt="{{ name }}, Bild {{ loop.index }} von {{ pics.length }}" width="1600" height="1000" decoding="async"{% if loop.first %} class="is-active{% if cover and cover.url == image and (cover.fokus or cover.zoom) %} fgs-gallery-cover" style="{% if cover.fokus %}--fgs-pos: {{ cover.fokus }};{% endif %}{% if cover.zoom %} --fgs-zoom: {{ cover.zoom }};{% endif %}{% endif %}" fetchpriority="high"{% else %} loading="lazy"{% endif %}>{% endfor %}
+    {% for image in pics %}{% set _plan = plaene and (image in plaene) %}<img src="{{ image | propstackFoto(1600) }}"{% set _set = image | propstackSrcset %}{% if _set %} srcset="{{ _set }}"{% endif %}{% set _gross = image | propstackSrcset([800, 1200, 1600, 2400]) %}{% if _gross %} data-gross="{{ _gross }}"{% endif %}{% if _plan %} data-grundriss{% endif %} alt="{{ name }}, {% if _plan %}Grundriss, {% endif %}Bild {{ loop.index }} von {{ pics.length }}" width="1600" height="1000" decoding="async"{% if loop.first %} class="is-active{% if cover and cover.url == image and (cover.fokus or cover.zoom) %} fgs-gallery-cover" style="{% if cover.fokus %}--fgs-pos: {{ cover.fokus }};{% endif %}{% if cover.zoom %} --fgs-zoom: {{ cover.zoom }};{% endif %}{% endif %}" fetchpriority="high"{% else %} loading="lazy"{% endif %}>{% endfor %}
+    {%- if plaene and plaene.length %}<span class="fgs-gallery-tag" data-gallery-tag{% if not (pics[0] in plaene) %} hidden{% endif %}>Grundriss</span>{% endif %}
+    {%- if pics.length > 1 %}<button type="button" class="fgs-gallery-all" data-gallery-open>Alle Bilder ansehen ({{ pics.length }})</button>{% endif %}
   </div>
   {%- if pics.length > 1 %}
   <div class="fgs-gallery-bar">
@@ -76,16 +84,120 @@
   var g = document.querySelector('[data-gallery]');
   if (!g) return;
   var slides = Array.prototype.slice.call(g.querySelectorAll('.fgs-gallery-stage img'));
+  var n = slides.length;
   var cur = g.querySelector('[data-gallery-current]');
+  var tag = g.querySelector('[data-gallery-tag]');
   var i = 0;
-  var show = function (n) { slides[i].classList.remove('is-active'); i = (n + slides.length) % slides.length; slides[i].loading = 'eager'; slides[i].classList.add('is-active'); if (cur) cur.textContent = i + 1; };
+  var istPlan = function (k) { return slides[k].hasAttribute('data-grundriss'); };
+  var show = function (k) {
+    slides[i].classList.remove('is-active');
+    i = (k + n) % n;
+    slides[i].loading = 'eager';
+    slides[i].classList.add('is-active');
+    if (cur) cur.textContent = i + 1;
+    if (tag) tag.hidden = !istPlan(i);
+  };
   var prev = g.querySelector('[data-gallery-prev]'), next = g.querySelector('[data-gallery-next]');
   if (prev) prev.addEventListener('click', function () { show(i - 1); });
   if (next) next.addEventListener('click', function () { show(i + 1); });
   var x0 = null;
-  g.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
-  g.addEventListener('touchend', function (e) { if (x0 === null || slides.length < 2) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) show(dx < 0 ? i + 1 : i - 1); x0 = null; });
-  g.addEventListener('keydown', function (e) { if (e.key === 'ArrowLeft') show(i - 1); if (e.key === 'ArrowRight') show(i + 1); });
+  g.addEventListener('touchstart', function (e) { x0 = e.touches.length === 1 ? e.touches[0].clientX : null; }, { passive: true });
+  g.addEventListener('touchend', function (e) { if (x0 === null || n < 2) return; var dx = e.changedTouches[0].clientX - x0; x0 = null; if (Math.abs(dx) > 40) { e.preventDefault(); show(dx < 0 ? i + 1 : i - 1); } });
+  g.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') { e.preventDefault(); show(i - 1); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); show(i + 1); }
+    else if ((e.key === 'Enter' || e.key === ' ') && e.target === g) { e.preventDefault(); oeffnen(i, g); }
+  });
+
+  // Großansicht
+  var name = (g.getAttribute('aria-label') || 'Bilder').replace(/^Bilder von /, '');
+  var lb, lbImg, lbNr, lbTag, lbZu, lbVor, lbZur, j = 0, opener = null, scrollY = 0, lenis = null;
+  var pfeil = function (d) { return '<svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="' + d + '"/></svg>'; };
+  var bauen = function () {
+    lb = document.createElement('dialog');
+    lb.className = 'fgs-lb';
+    lb.setAttribute('data-lenis-prevent', '');
+    lb.setAttribute('aria-label', 'Großansicht: ' + name);
+    lb.innerHTML =
+      '<div class="fgs-lb-stage"><img class="fgs-lb-img" alt="" decoding="async"></div>' +
+      '<p class="fgs-lb-count" aria-live="polite"><span><span data-lb-nr>1</span> / ' + n + '</span><span class="fgs-lb-tag" data-lb-tag hidden>Grundriss</span></p>' +
+      '<button type="button" class="fgs-lb-btn fgs-lb-close" aria-label="Großansicht schließen"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M3 3l14 14M17 3 3 17"/></svg></button>' +
+      (n > 1 ? '<button type="button" class="fgs-lb-btn fgs-lb-nav fgs-lb-prev" aria-label="Vorheriges Bild">' + pfeil('M29 7H2M8 1 2 7l6 6') + '</button>' +
+               '<button type="button" class="fgs-lb-btn fgs-lb-nav fgs-lb-next" aria-label="Nächstes Bild">' + pfeil('M1 7h27M22 1l6 6-6 6') + '</button>' : '');
+    document.body.appendChild(lb);
+    lbImg = lb.querySelector('.fgs-lb-img'); lbNr = lb.querySelector('[data-lb-nr]'); lbTag = lb.querySelector('[data-lb-tag]');
+    lbZu = lb.querySelector('.fgs-lb-close'); lbVor = lb.querySelector('.fgs-lb-prev'); lbZur = lb.querySelector('.fgs-lb-next');
+    lbZu.addEventListener('click', function () { lb.close(); });
+    if (lbVor) lbVor.addEventListener('click', function () { zeigen(j - 1); });
+    if (lbZur) lbZur.addEventListener('click', function () { zeigen(j + 1); });
+    // Klick neben das Bild (Hintergrund) schließt
+    lb.addEventListener('click', function (e) { if (e.target === lb || e.target.classList.contains('fgs-lb-stage')) lb.close(); });
+    lb.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); zeigen(j - 1); }
+      else if (e.key === 'ArrowRight') { e.preventDefault(); zeigen(j + 1); }
+      else if (e.key === 'Tab') {
+        // Fokus bleibt in der Großansicht
+        var f = Array.prototype.slice.call(lb.querySelectorAll('button'));
+        var k = f.indexOf(document.activeElement);
+        e.preventDefault();
+        f[(k + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus();
+      }
+    });
+    lb.addEventListener('close', function () {
+      var html = document.documentElement;
+      html.classList.remove('fgs-lb-offen');
+      document.body.style.top = '';
+      window.scrollTo({ top: scrollY, left: 0, behavior: 'instant' });
+      if (lenis) lenis.start();
+      show(j);
+      if (opener && opener.focus) opener.focus({ preventScroll: true });
+    });
+    // Wischen; zwei Finger (Zoomen) und vergrößerte Ansicht wechseln nicht das Bild
+    var t0 = null, zwei = false;
+    lb.addEventListener('touchstart', function (e) { zwei = zwei || e.touches.length > 1; if (e.touches.length === 1 && !zwei) t0 = { x: e.touches[0].clientX, y: e.touches[0].clientY }; }, { passive: true });
+    lb.addEventListener('touchend', function (e) {
+      if (e.touches.length === 0) {
+        var gezoomt = window.visualViewport && window.visualViewport.scale > 1.01;
+        if (t0 && !zwei && !gezoomt && n > 1) {
+          var dx = e.changedTouches[0].clientX - t0.x, dy = e.changedTouches[0].clientY - t0.y;
+          if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) zeigen(dx < 0 ? j + 1 : j - 1);
+        }
+        t0 = null; zwei = false;
+      }
+    }, { passive: true });
+  };
+  var setzen = function (img, k) {
+    var s = slides[k];
+    var gross = s.getAttribute('data-gross');
+    if (gross) { img.sizes = '100vw'; img.srcset = gross; } else { img.removeAttribute('srcset'); }
+    img.src = s.getAttribute('src');
+  };
+  var zeigen = function (k) {
+    j = (k + n) % n;
+    setzen(lbImg, j);
+    lbImg.alt = slides[j].alt;
+    lbNr.textContent = j + 1;
+    lbTag.hidden = !istPlan(j);
+    // Nachbarbilder vorladen
+    [j + 1, j - 1].forEach(function (m) { if (n > 1) setzen(new Image(), (m + n) % n); });
+  };
+  var oeffnen = function (k, von) {
+    if (!lb) bauen();
+    opener = von || document.activeElement;
+    zeigen(k);
+    // Seite dahinter festhalten (auch iOS); das weiche Scrollen (Lenis, fgs-motion.js) steht wie bei offenem Menü, sonst
+    // sammelt es das Mausrad und scrollt nach dem Schließen nach
+    scrollY = window.scrollY;
+    lenis = window.fgsBewegung && window.fgsBewegung.lenis;
+    if (lenis) lenis.stop();
+    document.body.style.top = -scrollY + 'px';
+    document.documentElement.classList.add('fgs-lb-offen');
+    lb.showModal();
+    (lbZur || lbZu).focus();
+  };
+  var alle = g.querySelector('[data-gallery-open]');
+  if (alle) alle.addEventListener('click', function () { oeffnen(0, alle); });
+  slides.forEach(function (s, k) { s.addEventListener('click', function () { oeffnen(k, g); }); });
 })();
 </script>
 {%- endmacro -%}

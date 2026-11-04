@@ -58,7 +58,7 @@ eleventyComputed:
 {#- Update 27 A3 (01.11.2026): erster Bildschirm. Das Titelbild (= erstes Galeriebild) über die volle Breite, 16 : 9 am Desktop,
     4 : 3 auf dem Handy; darunter Titel, Ort und die zwei Buttons, dann die Eckdaten. Vorher stand oben nur der Titel auf Beige. -#}
 <section class="fgs-listing-top" aria-labelledby="seitentitel">
-  {{ gallery(property.gallery, property.title, "Für dieses Angebot folgen die Fotos noch", property.cover, (property.ortsteil or property.location or " ") if property.cover_design else false) }}
+  {{ gallery(property.gallery, property.title, "Für dieses Angebot folgen die Fotos noch", property.cover, ((property.ortsteil or property.location or " ") if property.cover_design else false), property.grundrisse) }}
   <div class="fgs-wrap">
     {{ listingTitle({
       kicker: property.strategy ~ ((" · " ~ property.marketing_type) if property.marketing_type else ""),

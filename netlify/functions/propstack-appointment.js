@@ -136,28 +136,17 @@ exports.handler = async function (event) {
       outlookEventId,
     });
 
+    // Antwort an den Browser: nur success und message (die Funktion nutzt derzeit keine Seite)
     return json(200, {
       success: true,
       message: "Ihr Terminwunsch wurde erfolgreich übermittelt.",
-      contact_id: contactId,
-      // Dringend-Fix 02.11.: keine Propstack-Rohdaten an den Browser
-      contact_update: contactUpdateResult,
-      microsoft_event: {
-        id: outlookEventId,
-        webLink: outlookWebLink,
-        teamsJoinUrl,
-      },
-      propstack_task: taskResult,
-      propstack_event: propstackEventResult,
     });
   } catch (error) {
     console.error("PROPSTACK APPOINTMENT ERROR:", { requestId, ...logsafe.error(error) });
 
     return json(500, {
       success: false,
-      error: error.message,
-      code: error.code || null,
-      response: error.response || null,
+      error: "Der Terminwunsch konnte gerade nicht gesendet werden.",
     });
   }
 };

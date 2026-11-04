@@ -6,92 +6,118 @@ fgsHero: false
 customSchema: true
 permalink: "immobilienbewertung/nachfrage/index.html"
 eleventyExcludeFromCollections: true
-title: "Fragen zu Ihrer Immobilie | Fischer & Geserich"
-description: "Ein paar gezielte Fragen zu Ihrer Immobilie für eine genaue Wertermittlung."
+title: "Angaben zu Ihrer Immobilie | Fischer & Geserich"
+description: "Ein paar Angaben zu Ihrer Immobilie für eine genauere Wertermittlung."
 robots: "noindex, nofollow"
-# Update 19 §5 (30.10.2026): Nachfrage zur Bewertung. Erreichbar nur über den Link in der Bestätigungsmail nach einer
-# Bewertungsanfrage (netlify/functions/_shared/nachfrage.js): ?k=<Kontakt-ID.Signatur>&typ=wohnung|haus|mfh|grundstueck|gewerbe
-# und gf=1, wenn die Grundstücksgröße schon angegeben war. Fragen wörtlich von Timon. Mit Skript (fg-design.js,
-# [data-fgd-nachfrage-form]) zeigt die Seite nur die Fragen zur Objektart; ohne Skript stehen alle da und k/typ
-# kommen über den Referer (formpost.js). Antworten gehen an bewertung-nachfrage.
+# Schritt 2 der Bewertung (Update 19 §5, neu gebaut in Update 32 §2, 04.11.2026). Erreichbar nur über den Link in der
+# Bestätigungsmail nach einer Bewertungsanfrage (netlify/functions/_shared/nachfrage.js):
+# ?k=<Kontakt-ID.Objekt-ID.Signatur>&typ=efh|dhh|rh|zfh|etw|mfh|gewerbe|grundstueck, dazu die Angaben aus Schritt 1
+# (wf, gf, bj, mi, fl, n) und a=1, wenn ein Anruf gewählt wurde.
+# Fragen und Optionen nach Sprengnetter, aus dem Katalog in nachfrage.js (_data/bewertungFragen.js). Mit Skript
+# (fg-design.js, [data-fgd-nachfrage-form]) zeigt die Seite nur die Blöcke zur Objektart und keine Frage, die Schritt 1
+# schon beantwortet hat; ohne Skript stehen alle Fragen da und k, typ usw. kommen über den Referer (formpost.js).
+# Alles ist freiwillig, auch ein leeres Formular lässt sich senden. Antworten gehen an bewertung-nachfrage.
 ---
 {% from "fgd-icons.njk" import icon %}
+{#- Optionstext in einem eigenen <span>: Das Label ist ein Flex-Container; ohne Hülle würde jedes Wort, das das Trennskript
+    (fg-design.js, .fgs-trenn) einpackt, zu einem eigenen Flex-Element und lange Optionen zerfielen bei 390 px in Spalten. -#}
+{%- macro frage(f) -%}
+{%- set id = "nf-" + f.key -%}
+{%- set titel = f.frage + (" (" + f.einheit + ")" if f.einheit else "") -%}
+<div class="fgs-nf-frage fgs-nf-frage--{{ f.art }}" data-nf-frage="{{ f.key }}"{% if f.typenAttr %} data-nf-typen="{{ f.typenAttr }}"{% endif %}{% if f.ohne %} data-nf-ohne="{{ f.ohne }}"{% endif %}{% if f.wennAttr %} data-nf-wenn="{{ f.wennAttr }}"{% endif %}>
+{%- if f.art == "wahl" %}
+  <div class="fgd-group" role="radiogroup" aria-labelledby="{{ id }}-l">
+    <p class="fgd-group-label" id="{{ id }}-l"{% if f.frageMfh %} data-nf-mfh="{{ f.frageMfh }}"{% endif %}>{{ f.frage }}</p>
+    <div class="fgd-choices{% if f.spalten != 4 %} fgd-choices--{{ f.spalten }}{% endif %}">
+      {%- for o in f.optionen %}
+      <label class="fgd-choice"{% if o.typenAttr %} data-nf-typen="{{ o.typenAttr }}"{% endif %}><input type="radio" name="{{ f.key }}" value="{{ o.wert }}"><span>{{ o.anzeige }}</span></label>
+      {%- endfor %}
+    </div>
+  </div>
+{%- elif f.art == "auswahl" %}
+  <label>{{ f.frage }}
+    <select name="{{ f.key }}">
+      <option value="">Bitte wählen</option>
+      {%- for o in f.optionen %}
+      <option value="{{ o.wert }}">{{ o.anzeige }}</option>
+      {%- endfor %}
+    </select>
+  </label>
+{%- elif f.art == "haken" %}
+  <div class="fgd-choices fgd-choices--1">
+    <label class="fgd-choice"><input type="checkbox" name="{{ f.key }}" value="ja"><span>{{ f.frage }}</span></label>
+  </div>
+{%- elif f.art == "text" %}
+  <label>{{ f.frage }}<textarea name="{{ f.key }}" rows="4" maxlength="3000"></textarea></label>
+{%- else %}
+  <label><span{% if f.frageMfh %} data-nf-mfh="{{ f.frageMfh }}"{% endif %}>{{ titel }}</span>
+    <input name="{{ f.key }}"{% if f.art == "jahr" %} inputmode="numeric" maxlength="4" pattern="[0-9]{4}" placeholder="z.&nbsp;B. 1995"{% elif f.art == "zahl" %} inputmode="numeric" maxlength="12"{% else %} inputmode="decimal" maxlength="20"{% endif %}{% if f.hilfe %} aria-describedby="{{ id }}-h"{% endif %}>
+    {%- if f.hilfe %}<span class="fgd-form-hint" id="{{ id }}-h">{{ f.hilfe }}</span>{% endif %}
+  </label>
+{%- endif %}
+</div>
+{%- endmacro -%}
+
 <section class="fgs-pagehead" aria-labelledby="seitentitel">
   <div class="fgs-wrap">
-    <h1 id="seitentitel">Ein paar Fragen zu Ihrer Immobilie</h1>
-    <p class="fgs-lead">Für eine genaue Wertermittlung. Beantworten Sie, was Sie wissen. Jede Angabe ist freiwillig.</p>
+    <h1 id="seitentitel">Angaben zu Ihrer Immobilie</h1>
+    {# Update 32 §2.7, wörtlich #}
+    <p class="fgs-lead">Ein paar Angaben zu Ihrer Immobilie, damit unsere Einschätzung genauer wird. Alle Felder sind freiwillig. Was Sie nicht wissen, lassen Sie einfach leer.</p>
   </div>
 </section>
 
-<section class="fgs-section fgs-nachfrage" aria-label="Fragen zur Immobilie">
+<section class="fgs-section fgs-nachfrage" aria-label="Angaben zur Immobilie">
   <div class="fgs-wrap">
     <div class="fgd-form-card fgs-wizard" id="nachfrage">
+      <p class="fgs-nf-weg" data-fgd-nachfrage-mail>Je mehr Sie hier angeben, desto genauer können wir Ihnen den Wert per E-Mail nennen.</p>
+      <p class="fgs-nf-weg" data-fgd-nachfrage-anruf hidden>Sie haben einen Anruf gewählt. Diese Fragen gehen wir gern auch am Telefon mit Ihnen durch. Sie müssen hier also nichts ausfüllen.</p>
       <form method="post" action="/.netlify/functions/bewertung-nachfrage" class="fgd-form" data-fgd-nachfrage-form novalidate>
-        <input type="hidden" name="k" value="">
-        <input type="hidden" name="typ" value="">
-        <fieldset>
-          <legend>Wann wurde zuletzt modernisiert und was?</legend>
-          <div class="fgd-field-row">
-            <label>Jahr<input name="modernisierung_jahr" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" placeholder="z.&nbsp;B. 2015"></label>
-            <label>Was wurde modernisiert?<input name="modernisierung_was" maxlength="500" placeholder="z.&nbsp;B. Bad, Fenster, Heizung"></label>
+        {%- for key in ["k", "typ", "wf", "gf", "bj", "mi", "fl", "n", "a"] %}
+        <input type="hidden" name="{{ key }}" value="">
+        {%- endfor %}
+        {%- for b in bewertungFragen.bereiche %}
+        <fieldset class="fgs-nf-bereich" data-nf-bereich="{{ b.key }}">
+          <legend>{{ b.titel }}</legend>
+          {%- if b.karten.length %}
+          <div class="fgs-nf-karten">
+            {%- for k in b.karten %}
+            <div class="fgs-nf-karte fgs-nf-block" role="group" aria-labelledby="{{ k.id }}">
+              <p class="fgs-nf-karte-titel" id="{{ k.id }}">{{ k.titel }}</p>
+              {%- for f in k.fragen %}{{ frage(f) }}{% endfor %}
+            </div>
+            {%- endfor %}
           </div>
-        </fieldset>
-        <fieldset data-fgd-nachfrage-typ="wohnung">
-          <legend>Zur Wohnung</legend>
-          <label>Etage
-            <select name="etage">
-              <option value="">Bitte wählen</option>
-              <option>Souterrain</option>
-              <option>Erdgeschoss</option>
-              <option>Obergeschoss</option>
-              <option>Dachgeschoss</option>
-              <option>Penthouse</option>
-              <option>Maisonette</option>
-            </select>
-          </label>
-          <div class="fgd-group" role="group" aria-labelledby="nf-wohnung-aussen">
-            <p class="fgd-group-label" id="nf-wohnung-aussen">Gibt es Balkon, Loggia oder Terrasse und wie groß ist sie?</p>
-            <div class="fgd-choices fgd-choices--3">
-              <label class="fgd-choice"><input type="checkbox" name="wohnung_aussen" value="Balkon">Balkon</label>
-              <label class="fgd-choice"><input type="checkbox" name="wohnung_aussen" value="Loggia">Loggia</label>
-              <label class="fgd-choice"><input type="checkbox" name="wohnung_aussen" value="Terrasse">Terrasse</label>
+          {%- endif %}
+          {%- for blk in b.bloecke %}
+          {%- if blk.titel %}
+          <div class="fgs-nf-gruppe fgs-nf-block" role="group" aria-labelledby="{{ blk.id }}">
+            <p class="fgs-nf-gruppe-titel" id="{{ blk.id }}">{{ blk.titel }}</p>
+            <div class="fgs-nf-reihe">
+              {%- for f in blk.fragen %}{{ frage(f) }}{% endfor %}
             </div>
           </div>
-          <label>Größe in m²<input name="wohnung_aussen_m2" inputmode="decimal" maxlength="20" placeholder="z.&nbsp;B. 8"></label>
+          {%- else %}
+          {{ frage(blk.fragen[0]) }}
+          {%- endif %}
+          {%- endfor %}
         </fieldset>
-        <fieldset data-fgd-nachfrage-typ="haus">
-          <legend>Zum Haus</legend>
-          <label data-fgd-nachfrage-ohne-gf>Grundstücksgröße in m²<input name="haus_grundstueck_m2" inputmode="decimal" maxlength="20" placeholder="z.&nbsp;B. 600"></label>
-          <div class="fgd-group" role="group" aria-labelledby="nf-haus-aussen">
-            <p class="fgd-group-label" id="nf-haus-aussen">Balkon oder Terrasse</p>
-            <div class="fgd-choices fgd-choices--2">
-              <label class="fgd-choice"><input type="checkbox" name="haus_aussen" value="Balkon">Balkon</label>
-              <label class="fgd-choice"><input type="checkbox" name="haus_aussen" value="Terrasse">Terrasse</label>
-            </div>
-          </div>
-        </fieldset>
-        <fieldset data-fgd-nachfrage-typ="mfh">
-          <legend>Zum Mehrfamilienhaus</legend>
-          <div class="fgd-field-row">
-            <label>Ist-Jahresnettokaltmiete in €<input name="mfh_ist_miete" inputmode="decimal" maxlength="20" placeholder="z.&nbsp;B. 96.000"></label>
-            <label>Erwartete Soll-Miete in sechs bis zwölf Monaten in € pro Jahr (optional)<input name="mfh_soll_miete" inputmode="decimal" maxlength="20"></label>
-          </div>
-        </fieldset>
+        {%- endfor %}
         <label class="fgd-hp" aria-hidden="true">Website<input name="company_website" tabindex="-1" autocomplete="off"></label>
         <div class="fgd-status" data-fgd-nachfrage-status hidden></div>
         <div class="fgd-wizard-nav">
-          <button type="submit" class="fgd-btn fgd-btn-navy">Antworten senden{{ icon("arrow") | safe }}</button>
+          <button type="submit" class="fgd-btn fgd-btn-navy">Angaben senden{{ icon("arrow") | safe }}</button>
         </div>
       </form>
+      {# Update 32 §2.7, wörtlich; kein PDF, kein Bericht, keine feste Zeit #}
       <div class="fgd-form-done" data-fgd-nachfrage-done tabindex="-1" hidden>
-        <h2>Vielen Dank, Ihre Antworten sind da</h2>
-        <p>Ihr Ansprechpartner nimmt sie in die Wertermittlung auf. Wenn es eilt, erreichen Sie uns unter <a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a>.</p>
+        <h2>Danke, Ihre Angaben sind bei uns angekommen.</h2>
+        <p>Wir melden uns wie besprochen bei Ihnen.</p>
       </div>
       <div class="fgd-form-done" data-fgd-nachfrage-ohne-link tabindex="-1" hidden>
         <h2>Dieser Link ist unvollständig</h2>
         <p>Bitte öffnen Sie den Link aus unserer E-Mail noch einmal oder rufen Sie uns an: <a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a>.</p>
       </div>
     </div>
-    <p class="fgs-note fgs-wizard-note">Ihre Antworten ergänzen Ihre Bewertungsanfrage und gehen an Ihren Ansprechpartner. Wie wir mit Ihren Daten umgehen, steht in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</p>
+    <p class="fgs-note fgs-wizard-note">Ihre Angaben ergänzen Ihre Bewertungsanfrage und gehen an Ihren Ansprechpartner. Wie wir mit Ihren Daten umgehen, steht in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</p>
   </div>
 </section>

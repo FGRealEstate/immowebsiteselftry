@@ -1,5 +1,6 @@
 const { sendInternalNotification } = require("./_shared/mailer");
 const logsafe = require("./_shared/logsafe");
+const zustellung = require("./_shared/zustellung");
 const PROPSTACK_BASE_URL = require("./_shared/propstack-basis").basis();
 
 exports.handler = async function (event) {
@@ -96,16 +97,17 @@ exports.handler = async function (event) {
         source: "Website Gesuch",
         description: note,
         note,
-        warning_notice: "Newsletter / Gesuch prüfen",
+        warning_notice: "Gesuch prüfen",
         buyer: true,
-        newsletter: true,
+        // Update 32 §7.6: Die Suchformulare haben kein Newsletter-Kästchen, also nie newsletter setzen. Die Einwilligung
+        // („über passende Immobilienangebote informiert werden“) deckt das Immobilienmailing.
         property_mailing_wanted: true,
         accept_contact: true,
         gdpr_status: 2,
         partial_custom_fields: removeEmpty({
           website_lead: true,
           landingpage_typ: "Gesuch",
-          anliegen: "Gesuch / Newsletter",
+          anliegen: "Gesuch",
           lead_typ: marketingType === "RENT" ? "Miete" : "Kauf",
           immobilienart: propertyType,
           objektart: propertyType,
@@ -116,7 +118,6 @@ exports.handler = async function (event) {
           nachricht: message,
           quelle_url: sourceUrl,
           datenschutz_zugestimmt: true,
-          newsletter_gewuenscht: true,
           immobilienmailing_gewuenscht: true,
           website_rohdaten: compactJson({ marketingType, propertyType, location, budget, rooms, livingSpace, bedrooms, bathrooms, plotArea, units, grossYield, features, message, sourceUrl, utmSource, utmMedium, utmCampaign, utmContent, utmTerm }),
           utm_source: utmSource,
@@ -128,17 +129,25 @@ exports.handler = async function (event) {
       })
     };
 
-    const contactResponse = await propstackPost(apiKey, "/contacts", contactPayload);
-    const contactId = getId(contactResponse, ["client", "contact", "data"]);
+    // Update 32 §1: Rücklesen nach jedem Schreiben, Rückfall-Mail wenn etwas fehlt (_shared/zustellung.js)
+    const api = zustellung.propstack(apiKey, PROPSTACK_BASE_URL);
+    const formular = `propstack-search-profile (${marketingType === "RENT" ? "Mietgesuch" : "Kaufgesuch"})`;
+    const prot = zustellung.protokoll(api, formular, requestId);
 
-    let contactUpdate = null;
+    let contactId = null;
+    try {
+      const contactResponse = await propstackPost(apiKey, "/contacts", contactPayload);
+      contactId = await prot.pruefen("Kontakt", getId(contactResponse, ["client", "contact", "data"]), { endpoint: "/contacts" });
+    } catch (error) {
+      prot.fehlgeschlagen("Kontakt", "/contacts", error);
+    }
+
     if (contactId) {
-      contactUpdate = await safePut(apiKey, `/contacts/${contactId}`, {
+      await safePut(apiKey, `/contacts/${contactId}`, {
         client: removeEmpty({
           description: note,
           note,
-          warning_notice: "Newsletter / Gesuch prüfen",
-          newsletter: true,
+          warning_notice: "Gesuch prüfen",
           property_mailing_wanted: true,
           accept_contact: true,
           gdpr_status: 2,
@@ -164,31 +173,35 @@ exports.handler = async function (event) {
         })
       : null;
 
-    const task = contactId ? await safeCreateTask(apiKey, contactId, note, fullName, marketingType) : null;
-    const internalNotification = await sendInternalNotification({
-      subject: `Neues ${marketingType === "RENT" ? "Mietgesuch" : "Kaufgesuch"}: ${fullName}`,
-      replyTo: email,
-      text: note,
-    });
+    if (searchProfile) {
+      if (searchProfile.ok === false) prot.fehlgeschlagen("Suchprofil", "/saved_queries", searchProfile.error);
+      else await prot.pruefen("Suchprofil", zustellung.idAus(searchProfile), { kontaktId: contactId, endpoint: "/saved_queries" });
+    }
 
-    return json(200, {
-      success: true,
-      message: "Gesuch wurde übermittelt.",
-      contact_id: contactId,
-      // Dringend-Fix 02.11.: keine Propstack-Rohdaten an den Browser
-      contact_update: contactUpdate,
-      search_profile: searchProfile,
-      task,
-      internal_notification: internalNotification
-    });
+    const task = contactId ? await safeCreateTask(apiKey, contactId, note, fullName, marketingType) : null;
+    if (task) {
+      if (task.ok === false) prot.fehlgeschlagen("Aufgabe", "/tasks", task.error);
+      else await prot.pruefen("Aufgabe", zustellung.idAus(task), { endpoint: "/tasks" });
+    }
+
+    // Update 32 §1.2: alles angekommen → gewohnte Mail „Neues Kaufgesuch/Mietgesuch: …“; sonst die Rückfall-Mail
+    const internalNotification = prot.fehlend().length
+      ? await zustellung.rueckfallMail({ formular, requestId, text: note, replyTo: email, protokoll: prot })
+      : await sendInternalNotification({
+          subject: `Neues ${marketingType === "RENT" ? "Mietgesuch" : "Kaufgesuch"}: ${fullName}`,
+          replyTo: email,
+          text: note,
+        });
+
+    if (!contactId && !internalNotification.sent) {
+      return zustellung.oeffentlich(502, { success: false, error: "Das Gesuch konnte gerade nicht gesendet werden." });
+    }
+
+    // Antwort an den Browser: nur success und message
+    return zustellung.oeffentlich(200, { success: true, message: "Gesuch wurde übermittelt." });
   } catch (error) {
     console.error("PROPSTACK SEARCH PROFILE ERROR:", { requestId, ...logsafe.error(error) });
-    return json(500, {
-      success: false,
-      error: error.message,
-      code: error.code || null,
-      response: error.response || null
-    });
+    return zustellung.oeffentlich(500, { success: false, error: "Das Gesuch konnte gerade nicht gesendet werden." });
   }
 };
 
@@ -216,7 +229,7 @@ function buildNote(input) {
     input.message || "-",
     "",
     "Einwilligung:",
-    "Newsletter, Immobilienmailing und Kontaktaufnahme wurden aktiv bestätigt.",
+    "Kontaktaufnahme zum Suchprofil und Information über passende Immobilienangebote wurden aktiv bestätigt (kein Newsletter).",
     `Zeitpunkt: ${new Date().toISOString()}`,
     `Quelle: ${input.sourceUrl || "-"}`,
     `UTM Source: ${input.utmSource || "-"}`,
@@ -241,11 +254,7 @@ async function safeCreateSearchProfile(apiKey, input) {
     return await propstackPost(apiKey, "/saved_queries", { saved_query: savedQuery });
   } catch (error) {
     console.warn("SEARCH PROFILE CREATE FAILED:", logsafe.msg(error));
-    return {
-      ok: false,
-      skipped: true,
-      reason: `${error.message} Daten stehen im Kontakt.`
-    };
+    return { ok: false, skipped: true, error };
   }
 }
 
@@ -332,7 +341,7 @@ async function safeCreateTask(apiKey, contactId, note, fullName, marketingType) 
   try {
     return await propstackPost(apiKey, "/tasks", task);
   } catch (error) {
-    return { ok: false, skipped: true, reason: error.message };
+    return { ok: false, skipped: true, error };
   }
 }
 

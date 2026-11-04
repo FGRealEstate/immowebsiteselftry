@@ -136,20 +136,38 @@ service:
           <p class="fgd-form-hint">Wir bewerten in Berlin, Brandenburg, Leipzig und Dresden. Die Adresse brauchen wir für Vergleichspreise und Bodenrichtwert in Ihrer Lage.</p>
         </fieldset>
         {# Update 19 §5: „Größe“ wird „Wohnfläche“, dazu Grundstücksgröße für Häuser und Grundstücke und Zimmer für Wohnungen
-           und Häuser. data-fgd-nicht: bei diesen Objektarten blendet fg-design.js das Feld aus (und schickt es nicht mit);
-           ohne Skript bleiben alle Felder sichtbar. Feldnamen unverändert. #}
-        <fieldset data-fgd-step="Wohnfläche" data-fgd-step-grundstueck="Grundstücksgröße" data-fgd-legende-grundstueck="3. Grundstücksgröße und Baujahr">
+           und Häuser. data-fgd-nicht / data-fgd-nur: bei diesen Objektarten blendet fg-design.js das Feld aus bzw. ein (und
+           schickt Ausgeblendetes nicht mit); ohne Skript bleiben alle Felder sichtbar. Feldnamen unverändert.
+           Update 32 §2.2 (Sprengnetter): Grundstücksgröße Pflicht bei Häusern, Wohnfläche Pflicht bei Wohnungen
+           (data-fgd-pflicht), Gewerbe fragt die Gewerbe- bzw. Nutzfläche statt Wohnfläche und Zimmer. #}
+        <fieldset data-fgd-step="Wohnfläche" data-fgd-step-grundstueck="Grundstücksgröße" data-fgd-legende-grundstueck="3. Grundstücksgröße und Baujahr" data-fgd-step-gewerbe="Fläche" data-fgd-legende-gewerbe="3. Fläche und Baujahr">
           <legend>3. Wohnfläche, Zimmer und Baujahr</legend>
           <div class="fgd-field-row fgd-field-row--3">
-            <label data-fgd-nicht="Grundstück">Wohnfläche in m²<input name="property_details[seller-area-value]" inputmode="decimal" placeholder="z.&nbsp;B. 85"></label>
-            <label data-fgd-nicht="Grundstück">Zimmer<input name="property_details[seller-rooms]" inputmode="decimal" placeholder="z.&nbsp;B. 3"></label>
-            <label>Baujahr<input name="property_details[seller-year]" inputmode="numeric" maxlength="4" placeholder="z.&nbsp;B. 1928"></label>
+            <label data-fgd-nicht="Grundstück|Gewerbe">Wohnfläche in m²<span data-fgd-pflicht-stern hidden> *</span><input name="property_details[seller-area-value]" inputmode="decimal" placeholder="z.&nbsp;B. 85" data-fgd-pflicht="Eigentumswohnung" data-fgd-fehlt="Bitte geben Sie die Wohnfläche ein."></label>
+            <label data-fgd-nur="Gewerbe">Gewerbe- bzw. Nutzfläche in m² *<input name="property_details[seller-commercial-area]" inputmode="decimal" placeholder="z.&nbsp;B. 240" required data-fgd-fehlt="Bitte geben Sie die Gewerbe- bzw. Nutzfläche ein."></label>
+            <label data-fgd-nicht="Grundstück|Gewerbe">Zimmer<input name="property_details[seller-rooms]" inputmode="decimal" placeholder="z.&nbsp;B. 3"></label>
+            <label>Baujahr (ungefähr reicht)<input name="property_details[seller-year]" inputmode="numeric" maxlength="4" placeholder="z.&nbsp;B. 1928"></label>
           </div>
-          <label data-fgd-nicht="Eigentumswohnung">Grundstücksgröße in m²<input name="property_details[seller-plot-area]" inputmode="decimal" placeholder="bei Häusern und Grundstücken"></label>
+          <label data-fgd-nicht="Eigentumswohnung">Grundstücksgröße in m²<span data-fgd-pflicht-stern hidden> *</span><input name="property_details[seller-plot-area]" inputmode="decimal" placeholder="bei Häusern und Grundstücken" data-fgd-pflicht="Einfamilienhaus|Zweifamilienhaus|Doppelhaushälfte|Reihenhaus|Mehrfamilienhaus" data-fgd-fehlt="Bitte geben Sie die Grundstücksgröße ein."></label>
           <p class="fgd-form-hint">Wenn Sie etwas nicht genau wissen, lassen Sie das Feld leer oder schätzen Sie.</p>
         </fieldset>
-        <fieldset data-fgd-step="Zustand">
-          <legend>4. Zustand und Ziel</legend>
+        {# Update 32 §2.2: Nutzung (Pflicht außer bei Grundstück) und, wenn vermietet, die Nettokaltmiete im Monat (freiwillig).
+           Optionen in Sprengnetters Reihenfolge: Wohnung und Einfamilienhaus „Selbst genutzt, Vermietet, Leer stehend“,
+           Zweifamilien-, Mehrfamilienhaus und Gewerbe „Vollständig vermietet, Teilweise vermietet, Leer stehend, Selbst genutzt“
+           (data-fgd-ordnung, fg-design.js). #}
+        <fieldset data-fgd-step="Zustand" data-fgd-legende-grundstueck="4. Zustand und Ziel">
+          <legend>4. Nutzung, Zustand und Ziel</legend>
+          <div class="fgd-group" role="radiogroup" aria-labelledby="bw-nutzung" data-fgd-nicht="Grundstück">
+            <p class="fgd-group-label" id="bw-nutzung">Wie wird die Immobilie genutzt? *</p>
+            <div class="fgd-choices fgd-choices--2" data-fgd-ordnung-typen="Zweifamilienhaus|Mehrfamilienhaus|Gewerbe" data-fgd-ordnung="Vollständig vermietet|Teilweise vermietet|Leer stehend|Selbst genutzt">
+              <label class="fgd-choice"><input type="radio" name="property_details[seller-usage]" value="Selbst genutzt" required>Selbst genutzt</label>
+              <label class="fgd-choice" data-fgd-nur="Eigentumswohnung|Einfamilienhaus|Doppelhaushälfte|Reihenhaus"><input type="radio" name="property_details[seller-usage]" value="Vermietet" required>Vermietet</label>
+              <label class="fgd-choice" data-fgd-nur="Zweifamilienhaus|Mehrfamilienhaus|Gewerbe"><input type="radio" name="property_details[seller-usage]" value="Vollständig vermietet" required>Vollständig vermietet</label>
+              <label class="fgd-choice" data-fgd-nur="Zweifamilienhaus|Mehrfamilienhaus|Gewerbe"><input type="radio" name="property_details[seller-usage]" value="Teilweise vermietet" required>Teilweise vermietet</label>
+              <label class="fgd-choice"><input type="radio" name="property_details[seller-usage]" value="Leer stehend" required>Leer stehend</label>
+            </div>
+          </div>
+          <label data-fgd-zeige="property_details[seller-usage]=Vermietet|Vollständig vermietet|Teilweise vermietet">Monatliche Nettokaltmiete, gesamt (€)<input name="property_details[seller-rent-monthly]" inputmode="decimal" placeholder="z.&nbsp;B. 1.450" aria-describedby="bw-miete-hilfe"><span class="fgd-form-hint" id="bw-miete-hilfe">Die Miete ohne Nebenkosten, als Gesamtbetrag pro Monat. Sie müssen nichts pro Quadratmeter umrechnen.</span></label>
           <label>Zustand
             <select name="property_details[seller-quality]">
               <option value="">Bitte wählen</option>

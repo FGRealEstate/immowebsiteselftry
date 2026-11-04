@@ -510,10 +510,17 @@ function getImages(unit) {
                     "Immobilie",
                 // Design-Pass 3 §3.8: Bild-ID für data/listing-covers.json, Dateiname für die Titelbild-Regel
                 id: typeof image === "object" && image.id != null ? String(image.id) : null,
+                // Update 32 §3.3: Grundrisse (in Propstack „is_floorplan“) kommen ans Ende der Galerie und heißen „Grundriss“
+                grundriss: typeof image === "object" && image.is_floorplan === true,
                 file: (() => { try { return decodeURIComponent(url.split("?")[0].split("/").pop() || ""); } catch (e) { return url.split("/").pop() || ""; } })()
             };
         })
         .filter(Boolean);
+}
+
+// Update 32 §3.3: erst die Fotos, dann die Grundrisse, sonst in Propstacks Reihenfolge
+function grundrisseZuletzt(images) {
+    return [...images.filter((image) => !image.grundriss), ...images.filter((image) => image.grundriss)];
 }
 
 /*
@@ -615,7 +622,7 @@ async function waehleTitelbild(id, images) {
     }
     if (!images.length) return { design: true, quelle: "ohne Bilder" };
     for (const image of images) {
-        if (TITELBILD_NICHT.test(image.title || "") || TITELBILD_NICHT.test(image.file || "")) continue;
+        if (image.grundriss || TITELBILD_NICHT.test(image.title || "") || TITELBILD_NICHT.test(image.file || "")) continue;
         const m = await bildMasse(image.url);
         if (m && m.w >= 1600 && m.w > m.h) return { url: image.url, quelle: "Regel" };
     }
@@ -1024,27 +1031,65 @@ function uniqueById(items = []) {
     return result;
 }
 
+// Update 32 §7.4 (04.11.2026): alle Seiten lesen, nicht nur Seite 1 (vorher fehlten ab der 501. Einheit die übrigen ohne
+// Warnung, Lücke 16). Propstack liefert je Seite ein Array ohne Gesamtzahl; die letzte Seite ist kürzer als `per`, danach
+// kommt eine leere (lesend geprüft am 04.11.: per=10 → 10, 10, 4, 0 Einträge).
+const PRO_SEITE = 500;
+const MAX_SEITEN = 40; // 20.000 Einheiten; Schutz, falls die API `page` je ignoriert
+
+function mitSeite(url, seite) {
+    try {
+        const parsed = new URL(url);
+        parsed.searchParams.set("per", String(PRO_SEITE));
+        parsed.searchParams.set("page", String(seite));
+        return parsed.toString();
+    } catch {
+        return withQueryParam(withQueryParam(url, "per", PRO_SEITE), "page", seite);
+    }
+}
+
+async function fetchAllPages(url, apiKey, label) {
+    const alle = [];
+    const ids = new Set();
+    for (let seite = 1; seite <= MAX_SEITEN; seite++) {
+        const payload = await fetchJson(mitSeite(url, seite), apiKey, `${label} (Seite ${seite})`);
+        if (payload === null) {
+            // Seite 1 wie bisher (keine Einheiten); eine spätere Seite: die gelesenen behalten, laut warnen
+            if (seite > 1) console.warn(`${label}: Seite ${seite} nicht lesbar. Es fehlen alle Einheiten nach Nr. ${alle.length}.`);
+            break;
+        }
+        const liste = arrayFromApiPayload(payload, ["units", "properties"]);
+        let neu = 0;
+        for (const item of liste) {
+            const key = textValue(item?.id);
+            if (key && ids.has(key)) continue;
+            if (key) ids.add(key);
+            alle.push(item);
+            neu += 1;
+        }
+        if (liste.length < PRO_SEITE || !neu) break; // letzte Seite, oder dieselben Einträge noch einmal (page wirkt nicht)
+        if (seite === MAX_SEITEN) console.warn(`${label}: nach ${MAX_SEITEN} Seiten abgebrochen; es kann mehr geben.`);
+    }
+    return alle;
+}
+
 async function fetchAllUnits(unitUrl, apiKey) {
-    // Propstack paginiert Listen. Wir fordern bewusst bis zu 500 Einheiten pro Seite an,
-    // damit Projekt-Landingpages nicht nur einen Teil der zugeordneten Einheiten sehen.
-    const url = withQueryParam(withQueryParam(unitUrl, "per", 500), "page", 1);
-    const payload = await fetchJson(url, apiKey, "Propstack Einheiten");
-    return arrayFromApiPayload(payload, ["units", "properties"]);
+    return fetchAllPages(unitUrl, apiKey, "Propstack Einheiten");
 }
 
 async function fetchUnitsForProject(apiBase, project, apiKey) {
     const projectId = textValue(project?.id) || textValue(project?.uuid);
     if (!projectId) return [];
 
-    const base = `${apiBase.replace(/\/$/, "")}/units?expand=1&per=500`;
+    const base = `${apiBase.replace(/\/$/, "")}/units?expand=1`;
     const candidates = [
         withQueryParam(base, "project_id", projectId),
         withQueryParam(base, "project", projectId)
     ];
 
     for (const url of candidates) {
-        const payload = await fetchJson(url, apiKey, `Propstack Projekteinheiten ${projectId}`);
-        const units = arrayFromApiPayload(payload, ["units", "properties"]);
+        // Update 32 §7.4: auch hier alle Seiten
+        const units = await fetchAllPages(url, apiKey, `Propstack Projekteinheiten ${projectId}`);
         if (!units.length) continue;
 
         // Falls ein unbekannter Filter von der API ignoriert wird, filtern wir sicherheitshalber
@@ -1213,7 +1258,7 @@ function buildUnit(unit) {
     const roomsRaw = firstNumber(unit, ["number_of_rooms", "rooms", "custom_fields.zimmer"]);
     const bedroomsRaw = firstNumber(unit, ["number_of_bed_rooms", "bedrooms"]);
     const bathroomsRaw = firstNumber(unit, ["number_of_bath_rooms", "bathrooms"]);
-    const images = getImages(unit);
+    const images = grundrisseZuletzt(getImages(unit));
     const strategy = getInvestmentStrategy(unit, marketingType, coldRentRaw);
     const annualRentRaw = firstNumber(unit, [
         "annual_net_cold_rent", "annual_cold_rent", "yearly_rent", "custom_fields.jahresnettokaltmiete",
@@ -1367,6 +1412,7 @@ function buildUnit(unit) {
         bathrooms_raw: bathroomsRaw,
         bathrooms: formatInteger(bathroomsRaw),
         gallery: images.map((image) => image.url),
+        grundrisse: images.filter((image) => image.grundriss).map((image) => image.url),
         images,
         main_image: images.length ? images[0].url : null,
         details,
@@ -1388,7 +1434,7 @@ function buildProject(project, units) {
     const rents = units.map((unit) => unit.cold_rent_raw || unit.warm_rent_raw).filter(Boolean);
     const areas = units.map((unit) => unit.living_space_raw).filter(Boolean);
     const rooms = units.map((unit) => unit.rooms_raw).filter(Boolean);
-    const images = getProjectImages(project, units);
+    const images = grundrisseZuletzt(getProjectImages(project, units));
     const isRental = units.length > 0 && units.every((unit) => unit.marketing_type === "Miete");
     const prices = isRental ? rents : purchasePrices;
     const minPriceRaw = prices.length ? Math.min(...prices) : null;
@@ -1446,6 +1492,7 @@ function buildProject(project, units) {
         strategy_key: strategyKeys.length === 1 ? strategyKeys[0] : (strategyKeys.length > 1 ? "gemischt" : (isRental ? "miete" : "eigennutz")),
         images,
         gallery: images.map((image) => image.url),
+        grundrisse: images.filter((image) => image.grundriss).map((image) => image.url),
         main_image: images.length ? images[0].url : null,
         raw: project
     };

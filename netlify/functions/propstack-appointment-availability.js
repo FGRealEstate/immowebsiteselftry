@@ -39,7 +39,8 @@ exports.handler = async function (event) {
     });
   } catch (error) {
     console.error("PROPSTACK APPOINTMENT AVAILABILITY ERROR:", logsafe.error(error));
-    return json(500, { success: false, error: error.message });
+    // Fehlermeldung an den Browser: eigener Text
+    return json(500, { success: false, error: "Die freien Termine konnten gerade nicht geladen werden." });
   }
 };
 

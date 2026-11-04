@@ -650,6 +650,15 @@ html:not(.fgs-js) .fgs-faq-more { display: none; }
 .fgs .fgd-widget-ph .fgd-btn:hover { background: #DCC37D; }
 .fgs .fgd-widget-frame { min-height: 220px; }
 .fgs .fgd-widget-frame iframe { display: block; width: 100%; max-width: 100%; border: 0; }
+/* Update 32 §4.4: „Rechner wird geladen …“ über dem Rahmen; nach etwa 8 s Hinweis mit Direktlink (fgd-widget.njk, fg-design.js) */
+.fgs .fgd-widget-status { padding: 14px clamp(20px, 3vw, 32px); border-bottom: 1px solid var(--fgs-line); background: var(--fgs-bg); }
+.fgs .fgd-widget-status[hidden], .fgs .fgd-widget-status p[hidden] { display: none; }
+.fgs .fgd-widget-status p { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; color: var(--fgs-ink-2); font-size: 16px; line-height: 1.5; }
+.fgs .fgd-widget-status a { display: inline-flex; align-items: center; min-height: 44px; color: var(--fgs-navy); font-weight: 500; text-decoration: underline; text-decoration-color: var(--fgs-gold); text-underline-offset: 3px; }
+.fgs .fgd-widget-note { font-size: 14px; }
+.fgs .fgd-widget-spin { flex: none; width: 16px; height: 16px; border: 2px solid var(--fgs-line); border-top-color: var(--fgs-gold); border-radius: 50%; animation: fgd-widget-spin 900ms linear infinite; }
+@keyframes fgd-widget-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .fgs .fgd-widget-spin { animation: none; } }
 /* Fortschrittslinie (Bewertung, mehrstufig) */
 .fgs-progress { height: 2px; background: var(--fgs-line); position: relative; }
 .fgs-progress span { position: absolute; inset: 0 auto 0 0; background: var(--fgs-gold); transition: width 400ms var(--fgs-ease); }
@@ -974,6 +983,28 @@ button.fgs-link { border: 0; padding: 0 0 2px; cursor: pointer; background-color
 .fgs .fgd-group-label { margin: 0; font: 500 15px/1.4 var(--fgs-sans); color: var(--fgs-ink); }
 .fgs-nachfrage { padding-top: 0; }
 .fgs-nachfrage .fgs-wizard { margin-top: 0; }
+/* Update 32 §2: Schritt 2 der Bewertung nach Sprengnetter. Bereiche mit Gruppen, Modernisierung als Karten (auch am
+   Desktop keine breite Tabelle), Zahlenfelder einer Gruppe im Raster. */
+.fgs .fgd-choices--1 { grid-template-columns: 1fr; }
+.fgs-nachfrage .fgs-nf-weg { max-width: 68ch; margin: 0; font-size: 17px; line-height: 1.55; color: var(--fgs-ink); }
+.fgs-nachfrage .fgd-form { margin-top: 40px; gap: 56px; }
+.fgs-nachfrage .fgs-nf-bereich { gap: 32px; }
+.fgs-nf-gruppe { display: grid; gap: 16px; }
+.fgs-nf-gruppe-titel, .fgs-nf-karte-titel { margin: 0; font: 500 16px/1.4 var(--fgs-sans); color: var(--fgs-ink); }
+.fgs-nf-reihe { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 20px 24px; align-items: end; }
+.fgs-nf-reihe > .fgs-nf-frage--wahl { grid-column: 1 / -1; }
+.fgs .fgd-form .fgs-nf-frage .fgd-form-hint { font: 400 14px/1.5 var(--fgs-sans); color: var(--fgs-ink-2); }
+.fgs-nf-karten { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.fgs-nf-karte { display: grid; align-content: start; gap: 16px; padding: 20px; border: 1px solid var(--fgs-line); }
+.fgs-nf-karte .fgd-choices { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.fgs-nf-karte [data-nf-frage$="_wann"] .fgd-choices { grid-template-columns: 1fr; }
+.fgs .fgd-form .fgs-nf-karte .fgd-choice { min-height: 48px; padding: 10px 12px; font-size: 15px; }
+@media (max-width: 899px) { .fgs-nf-karten { grid-template-columns: 1fr; } }
+@media (max-width: 599px) {
+  .fgs-nf-karte { padding: 16px; }
+  .fgs-nf-reihe { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+}
+@media (max-width: 379px) { .fgs-nf-reihe { grid-template-columns: 1fr; } }
 /* Vergleichstabelle mit Spaltenköpfen; unter 900 px je Zeile ein Block, die Spaltennamen kommen aus data-label */
 .fgs-head + .fgs-compare-wrap { margin-top: 56px; }
 .fgs-table--compare { table-layout: fixed; }
@@ -2949,6 +2980,47 @@ section.fgs-band .fgs-band-text::before { background: radial-gradient(closest-si
 .fgs-gallery-stage img.fgs-gallery-cover { object-position: var(--fgs-pos, 50% 50%); }
 /* Der Zoom ist für die 3 : 2-Karte gedacht (Autos am unteren Rand); 16 : 9 schneidet sie schon ab, 4 : 3 auf dem Handy nicht */
 @media (max-width: 599px) { .fgs-gallery-stage img.fgs-gallery-cover { transform: scale(var(--fgs-zoom, 1)); transform-origin: var(--fgs-pos, 50% 50%); } }
+
+/* Update 32 §3 (04.11.2026): Galerie mit Großansicht. Nur das sichtbare Bild nimmt Klicks an (vorher lag das letzte Bild,
+   meist der Grundriss, unsichtbar obenauf, „Bild in neuem Tab öffnen“ traf immer dieses). */
+.fgs-gallery-stage img { pointer-events: none; }
+.fgs-gallery-stage img.is-active { pointer-events: auto; z-index: 1; }
+[data-gallery] .fgs-gallery-stage img.is-active { cursor: zoom-in; }
+.fgs-gallery[data-gallery]:focus-visible { outline: 2px solid var(--fgs-gold); outline-offset: 4px; }
+.fgs-gallery-all, .fgs-gallery-tag { position: absolute; z-index: 2; font: 500 14px/1.2 var(--fgs-sans); letter-spacing: .01em; border-radius: 999px; }
+/* unten links: unten rechts liegt der Knopf „F&G Assistent“ */
+.fgs-gallery-all { left: clamp(12px, 2vw, 28px); bottom: clamp(12px, 2vw, 28px); min-height: 44px; padding: 12px 20px; border: 0; background: rgba(247, 244, 236, .94); color: var(--fgs-ink); cursor: pointer; box-shadow: 0 2px 16px rgba(8, 8, 47, .18); transition: background-color 200ms var(--fgs-ease); }
+.fgs-gallery-all:hover { background: #fff; }
+.fgs-gallery-all:focus-visible { outline: 2px solid var(--fgs-gold); outline-offset: 3px; }
+.fgs-gallery-tag { left: clamp(12px, 2vw, 28px); top: clamp(12px, 2vw, 28px); padding: 8px 14px; background: var(--fgs-ink); color: #fff; }
+.fgs-gallery-tag[hidden] { display: none; }
+@media (max-width: 599px) { .fgs-gallery-all { font-size: 13px; padding: 10px 14px; } }
+
+html.fgs-lb-offen { overflow: hidden; }
+html.fgs-lb-offen body { position: fixed; left: 0; right: 0; overflow: hidden; }
+.fgs-lb { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: rgba(8, 8, 47, .96); color: #fff; overscroll-behavior: contain; }
+.fgs-lb::backdrop { background: rgba(8, 8, 47, .96); }
+.fgs-lb-stage { position: absolute; inset: 64px clamp(8px, 7vw, 104px); display: flex; align-items: center; justify-content: center; }
+.fgs-lb-img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; user-select: none; -webkit-user-select: none; }
+.fgs-lb-count { position: absolute; left: clamp(16px, 3vw, 32px); top: 18px; margin: 0; display: flex; align-items: center; gap: 12px; font: 400 15px/28px var(--fgs-sans); letter-spacing: .04em; font-variant-numeric: tabular-nums; }
+.fgs-lb-tag { padding: 2px 12px; border: 1px solid rgba(255, 255, 255, .4); border-radius: 999px; font-size: 13px; letter-spacing: .02em; }
+.fgs-lb-tag[hidden] { display: none; }
+.fgs-lb-btn { position: absolute; display: grid; place-items: center; width: 56px; height: 56px; padding: 0; border: 1px solid rgba(255, 255, 255, .28); border-radius: 50%; background: rgba(8, 8, 47, .55); color: #fff; cursor: pointer; transition: background-color 200ms var(--fgs-ease), border-color 200ms var(--fgs-ease); }
+.fgs-lb-btn:hover { background: rgba(255, 255, 255, .14); border-color: rgba(255, 255, 255, .6); }
+.fgs-lb-btn:focus-visible { outline: 2px solid var(--fgs-gold); outline-offset: 3px; }
+.fgs-lb-close { right: clamp(8px, 2vw, 24px); top: 4px; width: 56px; height: 56px; border-color: transparent; background: transparent; }
+.fgs-lb-close svg { width: 20px; height: 20px; }
+.fgs-lb-nav { top: 50%; transform: translateY(-50%); }
+.fgs-lb-nav svg { width: 26px; height: 12px; }
+.fgs-lb-prev { left: clamp(8px, 2vw, 24px); }
+.fgs-lb-next { right: clamp(8px, 2vw, 24px); }
+@media (max-width: 599px) {
+  .fgs-lb-stage { inset: 64px 0 88px; }
+  .fgs-lb-nav { top: auto; bottom: 16px; transform: none; }
+  .fgs-lb-prev { left: calc(50% - 68px); }
+  .fgs-lb-next { right: calc(50% - 68px); }
+}
+@media (prefers-reduced-motion: reduce) { .fgs-gallery-all, .fgs-lb-btn { transition: none; } }
 
 /* Update 27 A5 (01.11.2026): „F&G in Zahlen“ auf der Startseite auf Navy (#08082F), damit nicht sechs beige Abschnitte
    hintereinander stehen. Zahlen weiß, „+“ und Sterne Gold, Text weiß 75 %; die Trennlinien bleiben Gold 40 % (Makro facts, navy). */

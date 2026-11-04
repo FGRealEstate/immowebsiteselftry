@@ -54,7 +54,7 @@ eleventyComputed:
 
 <section class="fgs-section fgs-listing" aria-label="Bilder und Beschreibung">
   <div class="fgs-wrap">
-    {{ gallery(pics, project.name, "Für dieses Projekt folgen die Fotos noch") }}
+    {{ gallery(pics, project.name, "Für dieses Projekt folgen die Fotos noch", plaene=project.grundrisse) }}
     {{ listingFacts(fakten, project.name) }}
 
     <section class="fgs-listing-block fgs-cols" aria-labelledby="das-projekt">

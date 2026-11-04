@@ -62,7 +62,8 @@ exports.handler = async function (event) {
     });
 
     if (!mail.sent) {
-      return json(500, { success: false, error: "Die Frage konnte derzeit nicht per E-Mail versendet werden.", mail });
+      // Antwort an den Browser: nur success und message
+      return json(500, { success: false, error: "Die Frage konnte derzeit nicht per E-Mail versendet werden." });
     }
 
     return json(200, { success: true, message: "Vielen Dank. Ihre Frage wurde direkt an uns gesendet." });

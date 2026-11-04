@@ -9,6 +9,7 @@
     "dev": "npm run css && eleventy --serve --port 8091"
   },
   "dependencies": {
+    "@netlify/blobs": "10.7.13",
     "nodemailer": "^6.9.16"
   },
   "devDependencies": {

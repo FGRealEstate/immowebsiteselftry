@@ -125,23 +125,20 @@ function toPayload(name, fd, query, referer) {
         source_url: get("source_url") || ref.href,
         first_name: get("first_name"), last_name: get("last_name"), email: get("email"), phone: get("phone"),
         contact_preference: get("contact_preference"), message: get("message"), privacy: get("privacy"),
+        // Update 32 §7.2: Die Insta-Objektanfrage heißt privacy_consent; ohne Skript ging die Einwilligung sonst verloren.
+        privacy_consent: get("privacy_consent") === "true",
       },
     };
   }
 
   if (name === "bewertung-nachfrage") {
-    // Update 19 §5: Nachfrage zur Bewertung; k und typ setzt sonst das Skript aus ?k=…&typ=… der Seite
-    return {
-      name,
-      payload: {
-        k: get("k") || ref.params.get("k") || "", typ: get("typ") || ref.params.get("typ") || "",
-        modernisierung_jahr: get("modernisierung_jahr"), modernisierung_was: get("modernisierung_was"),
-        etage: get("etage"), wohnung_aussen: fd.getAll("wohnung_aussen"), wohnung_aussen_m2: get("wohnung_aussen_m2"),
-        haus_grundstueck_m2: get("haus_grundstueck_m2"), haus_aussen: fd.getAll("haus_aussen"),
-        mfh_ist_miete: get("mfh_ist_miete"), mfh_soll_miete: get("mfh_soll_miete"),
-        company_website: get("company_website"),
-      },
-    };
+    // Update 32 §2: Schritt 2 der Bewertung. Antworten = alle Fragen aus dem Katalog (_shared/nachfrage.js);
+    // k, typ und die signierten Angaben aus Schritt 1 setzt sonst das Skript aus der Adresse der Seite.
+    const { KATALOG } = require("./nachfrage");
+    const payload = { company_website: get("company_website") };
+    for (const key of ["k", "typ", "wf", "gf", "bj", "mi", "fl", "n", "a"]) payload[key] = get(key) || ref.params.get(key) || "";
+    for (const frage of KATALOG) if (trimmed(get(frage.key))) payload[frage.key] = trimmed(get(frage.key));
+    return { name, payload };
   }
 
   return { name, payload: null };

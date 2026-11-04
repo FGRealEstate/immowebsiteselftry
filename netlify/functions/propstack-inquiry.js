@@ -1,5 +1,6 @@
 const nodemailer = require("nodemailer");
 const logsafe = require("./_shared/logsafe");
+const zustellung = require("./_shared/zustellung");
 
 const PROPSTACK_BASE_URL = require("./_shared/propstack-basis").basis();
 
@@ -43,17 +44,10 @@ exports.handler = async function (event) {
       data.consent === "true" ||
       data.privacy === "zugestimmt";
 
-    if (!firstName || !lastName || !email || !objectId) {
-      return json(400, {
-        success: false,
-        error: "Pflichtfelder fehlen",
-        received: {
-          firstName,
-          lastName,
-          email,
-          objectId,
-        },
-      });
+    // Update 32 §7.2: Einwilligung auch auf dem Server prüfen, nicht nur im Browser
+    if (!firstName || !lastName || !email || !objectId || !privacyConsent) {
+      console.log("VALIDATION FAILED:", { requestId, form: "objektanfrage", missing: logsafe.missing({ firstName, lastName, email, objectId, privacyConsent }, ["firstName", "lastName", "email", "objectId", "privacyConsent"]) });
+      return zustellung.oeffentlich(400, { success: false, error: "Pflichtfelder oder Datenschutz-Einwilligung fehlen." });
     }
 
     const fullName = `${firstName} ${lastName}`.trim();
@@ -74,90 +68,101 @@ exports.handler = async function (event) {
 
     console.log("Neue Objektanfrage:", { requestId, objectId });
 
-    // 1) Mail senden
-    const portalMailResult = await sendPropstackPortalInquiryMail({
-      firstName,
-      lastName,
-      fullName,
-      email,
-      phone,
-      message,
-      contactPreference,
-      objectId,
-      objectTitle,
-      sourceUrl,
-      privacyConsent,
-    });
-
+    // 1) Mail senden. Update 32 §7.2: Ein Mailfehler hält den Kontakt in Propstack nicht mehr auf.
+    let portalMailResult;
+    try {
+      portalMailResult = await sendPropstackPortalInquiryMail({
+        firstName,
+        lastName,
+        fullName,
+        email,
+        phone,
+        message,
+        contactPreference,
+        objectId,
+        objectTitle,
+        sourceUrl,
+        privacyConsent,
+      });
+    } catch (error) {
+      console.error("PORTAL MAIL ERROR:", { requestId, ...logsafe.error(error) });
+      portalMailResult = { sent: false };
+    }
     console.log("Portal-Mail Ergebnis:", { requestId, sent: Boolean(portalMailResult && portalMailResult.sent) });
 
-    // 2) Kontakt direkt in Propstack erstellen
-    const contactResponse = await createContact(apiKey, {
-      firstName,
-      lastName,
-      fullName,
-      email,
-      phone,
-      note,
-      contactPreference,
-    });
+    // Update 32 §1: Rücklesen nach jedem Schreiben, Rückfall-Mail wenn etwas fehlt (_shared/zustellung.js)
+    const api = zustellung.propstack(apiKey, PROPSTACK_BASE_URL);
+    const formular = "propstack-inquiry (Objektanfrage)";
+    const prot = zustellung.protokoll(api, formular, requestId);
 
-    const contactId = extractId(contactResponse);
-
-    if (!contactId) {
-      return json(500, {
-        success: false,
-        error: "Kontakt wurde erstellt, aber keine Kontakt-ID erhalten.",
-        // Dringend-Fix 02.11.: keine Propstack-Rohdaten an den Browser (die Umleitung lieferte hier eure Kontaktliste)
-        portal_mail: portalMailResult,
-      });
+    // 2) Kontakt in Propstack
+    let contactId = null;
+    try {
+      const contactResponse = await createContact(apiKey, { firstName, lastName, fullName, email, phone, note, contactPreference });
+      contactId = await prot.pruefen("Kontakt", extractId(contactResponse), { endpoint: "/contacts" });
+    } catch (error) {
+      prot.fehlgeschlagen("Kontakt", "/contacts", error);
     }
 
-    console.log("Kontakt erstellt:", { requestId, contactId });
+    if (contactId) {
+      console.log("Kontakt erstellt:", { requestId, contactId });
 
-    // 3) passende Käufer-Stage suchen
-    const stage = await findBestBuyerDealStage(apiKey);
+      // 3) Objekt lesen: Kauf oder Miete, Ansprechpartner. Update 32 §7.2: Mietobjekte in die Pipeline „300 Mieter“,
+      //    nicht mehr in „200 Käufer“.
+      let unit = null;
+      try {
+        unit = await propstackGet(apiKey, `/units/${encodeURIComponent(objectId)}`);
+      } catch (error) {
+        console.warn("OBJEKT LESEN FEHLGESCHLAGEN:", { requestId, ...logsafe.error(error) });
+      }
+      const isRent = String((unit && unit.marketing_type) || "").toUpperCase() === "RENT";
+      const brokerId = unit && unit.broker_id ? unit.broker_id : undefined;
 
-    if (!stage || !stage.id) {
-      return json(500, {
-        success: false,
-        error: "Keine passende Käufer-Deal-Stage gefunden.",
-        contact_id: contactId,
-        portal_mail: portalMailResult,
-      });
+      // 4) Deal
+      try {
+        const stage = isRent ? await findStage(apiKey, "mieter", ["neuer mietinteressent", "mietinteressent"]) : await findBestBuyerDealStage(apiKey);
+        if (!stage || !stage.id) throw new Error("Keine Deal-Phase gefunden");
+        console.log("Deal-Stage gefunden:", { requestId, id: stage.id, pipeline: stage.pipeline_name });
+        const dealResponse = await createDeal(apiKey, { contactId, objectId, stageId: stage.id, note });
+        await prot.pruefen("Deal", zustellung.idAus(dealResponse), { endpoint: "/client_properties" });
+      } catch (error) {
+        prot.fehlgeschlagen("Deal", "/client_properties", error);
+      }
+
+      // 5) Update 32 §7.2: Aufgabe für den Ansprechpartner des Objekts (broker_id des Objekts, sonst ohne Zuweisung)
+      try {
+        const taskResponse = await propstackPost(apiKey, "/tasks", {
+          task: removeEmpty({
+            title: `Objektanfrage prüfen: ${objectTitle || objectId} – ${fullName}`,
+            body: note,
+            is_reminder: true,
+            due_date: new Date(Date.now() + 15 * 60 * 1000).toISOString(),
+            client_ids: [contactId],
+            property_ids: /^\d+$/.test(objectId) ? [Number(objectId)] : undefined,
+            broker_id: brokerId,
+          }),
+        });
+        await prot.pruefen("Aufgabe", zustellung.idAus(taskResponse), { endpoint: "/tasks" });
+      } catch (error) {
+        prot.fehlgeschlagen("Aufgabe", "/tasks", error);
+      }
     }
 
-    console.log("Käufer-Deal-Stage gefunden:", stage);
+    // Update 32 §1.2: Fehlt ein Teil, geht die ganze Anfrage zusätzlich als Rückfall-Mail an das Postfach.
+    let fallback = { sent: false, skipped: true };
+    if (prot.fehlend().length) {
+      fallback = await zustellung.rueckfallMail({ formular, requestId, text: note, replyTo: email, protokoll: prot });
+    }
 
-    // 4) Deal erstellen
-    const dealResponse = await createDeal(apiKey, {
-      contactId,
-      objectId,
-      stageId: stage.id,
-      note,
-    });
+    if (!contactId && !portalMailResult.sent && !fallback.sent) {
+      return zustellung.oeffentlich(502, { success: false, error: "Die Anfrage konnte gerade nicht gesendet werden." });
+    }
 
-    console.log("Deal erstellt:", { requestId, dealId: dealResponse && (dealResponse.id || (dealResponse.data && dealResponse.data.id)) });
-
-    return json(200, {
-      success: true,
-      mode: "smtp_plus_api",
-      message: "Objektanfrage erfolgreich per Mail und Propstack API verarbeitet.",
-      contact_id: contactId,
-      deal_stage: stage,
-      // Dringend-Fix 02.11.: keine Propstack-Rohdaten an den Browser
-      deal: dealResponse,
-      portal_mail: portalMailResult,
-    });
+    // Antwort an den Browser: nur success und message
+    return zustellung.oeffentlich(200, { success: true, message: "Objektanfrage erfolgreich übermittelt." });
   } catch (error) {
     console.error("PROPSTACK INQUIRY ERROR:", { requestId, ...logsafe.error(error) });
-
-    return json(500, {
-      success: false,
-      error: error.message,
-      code: error.code || null,
-      response: error.response || null,
-    });
+    return zustellung.oeffentlich(500, { success: false, error: "Die Anfrage konnte gerade nicht gesendet werden." });
   }
 };
 
@@ -362,6 +367,19 @@ async function createDeal(apiKey, payload) {
   });
 }
 
+// Update 32 §7.2: Phase in einer Pipeline, deren Name den Begriff enthält (z. B. „mieter“ → „300 Mieter“)
+async function findStage(apiKey, pipelineTerm, stageNames) {
+  const pipelines = normalizeArray(await propstackGet(apiKey, "/deal_pipelines"));
+  const pipeline = pipelines.find((p) => normalizeText(p.name || p.title || "").includes(pipelineTerm));
+  if (!pipeline) return null;
+  const stages = (pipeline.deal_stages || pipeline.stages || []).map((stage) => ({ id: stage.id, name: stage.name || "", pipeline_id: pipeline.id, pipeline_name: pipeline.name || "" }));
+  for (const name of stageNames) {
+    const found = stages.find((stage) => normalizeText(stage.name) === name);
+    if (found) return found;
+  }
+  return stages[0] || null;
+}
+
 async function findBestBuyerDealStage(apiKey) {
   const pipelinesResponse = await propstackGet(apiKey, "/deal_pipelines");
   const pipelines = normalizeArray(pipelinesResponse);
@@ -457,6 +475,7 @@ async function findBestBuyerDealStage(apiKey) {
 async function propstackGet(apiKey, endpoint) {
   const response = await fetch(`${PROPSTACK_BASE_URL}${endpoint}`, {
     method: "GET",
+    redirect: "manual",
     headers: {
       "X-API-KEY": apiKey,
       Accept: "application/json",

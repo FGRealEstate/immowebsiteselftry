@@ -153,19 +153,14 @@ exports.handler = async function (event) {
 
     const task = contactId ? await safeCreateTask(apiKey, contactId, note, fullName) : null;
 
+    // Antwort an den Browser: nur success und message
     return json(200, {
       success: true,
-      message: "Newsletter-Anmeldung wurde übermittelt.",
-      contact_id: contactId,
-      // Dringend-Fix 02.11.: keine Propstack-Rohdaten an den Browser
-      contact_update: contactUpdate,
-      note: noteResult,
-      search_profile: searchProfile,
-      task
+      message: "Newsletter-Anmeldung wurde übermittelt."
     });
   } catch (error) {
     console.error("PROPSTACK NEWSLETTER ERROR:", { requestId, ...logsafe.error(error) });
-    return json(500, { success: false, error: error.message });
+    return json(500, { success: false, error: "Die Anmeldung konnte gerade nicht gesendet werden." });
   }
 };
 

@@ -206,32 +206,76 @@
     }
   });
 
-  /* ---------- Bewertung: Felder je Objektart (Update 19 §5) ----------
-     data-fgd-nicht="Typ|Typ" an einem Feld: bei diesen Objektarten ausgeblendet und abgeschaltet, damit es
-     nicht mitgeschickt wird. Bei „Grundstück“ heißt Schritt 3 so, wie data-fgd-step-grundstueck und
-     data-fgd-legende-grundstueck es sagen. Ohne Skript bleiben alle Felder sichtbar. */
+  /* ---------- Bewertung: Felder je Objektart (Update 19 §5, erweitert in Update 32 §2.2) ----------
+     data-fgd-nicht="Typ|Typ": bei diesen Objektarten ausgeblendet und abgeschaltet (wird nicht mitgeschickt).
+     data-fgd-nur="Typ|Typ": nur bei diesen Objektarten sichtbar.
+     data-fgd-pflicht="Typ|Typ" an einem Eingabefeld: bei diesen Objektarten Pflicht; ein [data-fgd-pflicht-stern] im
+     selben Label zeigt dann den Stern.
+     data-fgd-zeige="feldname=Wert|Wert": nur sichtbar, wenn das Feld einen dieser Werte hat (z. B. Miete bei „Vermietet“).
+     data-fgd-ordnung-typen / data-fgd-ordnung an einer Optionsgruppe: bei diesen Objektarten die Optionen in dieser
+     Reihenfolge (Werte mit | getrennt), sonst in der Reihenfolge der Seite.
+     Schritt-Namen und Legenden je Objektart: data-fgd-step-grundstueck / data-fgd-legende-grundstueck, ebenso -gewerbe.
+     Abgeschaltete Felder prüft der Browser nicht und schickt sie nicht. Ohne Skript bleiben alle Felder sichtbar. */
   document.querySelectorAll('[data-fgd-wizard]').forEach((form) => {
-    const felder = [...form.querySelectorAll('[data-fgd-nicht]')];
-    if (!felder.length) return;
-    const step = form.querySelector('[data-fgd-step-grundstueck]');
-    const legend = step ? step.querySelector('legend') : null;
-    const nameLi = step ? form.querySelectorAll('.fgd-wizard-names li')[[...form.querySelectorAll('[data-fgd-step]')].indexOf(step)] : null;
-    const normal = step ? { name: step.dataset.fgdStep, legend: legend ? legend.textContent : '' } : null;
+    const sel = '[data-fgd-nicht], [data-fgd-nur], [data-fgd-zeige]';
+    if (!form.querySelector(`${sel}, [data-fgd-pflicht]`)) return;
+    const liste = (wert) => String(wert || '').split('|');
+    const schritte = [...form.querySelectorAll('[data-fgd-step]')].map((step, i) => ({
+      step, i, name: step.dataset.fgdStep, legend: step.querySelector('legend'),
+      text: step.querySelector('legend') ? step.querySelector('legend').textContent : ''
+    }));
+    const namen = form.querySelectorAll('.fgd-wizard-names li');
+    const SLUG = { 'Grundstück': 'Grundstueck', Gewerbe: 'Gewerbe' };
+    const ordnungen = [...form.querySelectorAll('[data-fgd-ordnung]')].map((gruppe) => ({ gruppe, start: [...gruppe.children] }));
+    const wertVon = (name) => {
+      const felder = [...form.elements].filter((el) => el.name === name && !el.disabled);
+      const an = felder.find((el) => (el.type === 'radio' || el.type === 'checkbox') ? el.checked : true);
+      return an ? an.value : '';
+    };
     const apply = () => {
       const checked = form.querySelector('input[name="object_type"]:checked');
       const typ = checked ? checked.value : '';
-      felder.forEach((feld) => {
-        const aus = feld.dataset.fgdNicht.split('|').includes(typ);
-        feld.hidden = aus;
-        feld.querySelectorAll('input, select, textarea').forEach((el) => { el.disabled = aus; });
+      // Reihenfolge der Optionen
+      ordnungen.forEach(({ gruppe, start }) => {
+        const anders = liste(gruppe.dataset.fgdOrdnungTypen).includes(typ);
+        const reihe = anders ? liste(gruppe.dataset.fgdOrdnung) : null;
+        const sortiert = reihe
+          ? [...start].sort((a, b) => reihe.indexOf(a.querySelector('input') ? a.querySelector('input').value : '') - reihe.indexOf(b.querySelector('input') ? b.querySelector('input').value : ''))
+          : start;
+        sortiert.forEach((el) => gruppe.appendChild(el));
       });
-      if (!step) return;
-      const plot = typ === 'Grundstück';
-      step.dataset.fgdStep = plot ? step.dataset.fgdStepGrundstueck : normal.name;
-      if (legend) legend.textContent = plot ? step.dataset.fgdLegendeGrundstueck : normal.legend;
-      if (nameLi) nameLi.textContent = step.dataset.fgdStep;
+      // Sichtbarkeit: zweimal, weil data-fgd-zeige von Feldern abhängt, die selbst gerade erst ein- oder ausgeblendet wurden
+      for (let runde = 0; runde < 2; runde += 1) {
+        form.querySelectorAll(sel).forEach((el) => {
+          let aus = false;
+          if (el.dataset.fgdNicht && liste(el.dataset.fgdNicht).includes(typ)) aus = true;
+          if (el.dataset.fgdNur && !liste(el.dataset.fgdNur).includes(typ)) aus = true;
+          if (el.dataset.fgdZeige) {
+            const [name, werte] = el.dataset.fgdZeige.split('=');
+            if (!liste(werte).includes(wertVon(name))) aus = true;
+          }
+          el.hidden = aus;
+          const felder = el.matches('input, select, textarea') ? [el] : el.querySelectorAll('input, select, textarea');
+          // [hidden] an jede Alternative, sonst gilt es nur für die letzte und jedes Feld in [data-fgd-nicht] wäre aus
+          felder.forEach((feld) => { feld.disabled = aus || !!feld.closest(':is(' + sel + ')[hidden]'); });
+        });
+      }
+      form.querySelectorAll('[data-fgd-pflicht]').forEach((feld) => {
+        const pflicht = liste(feld.dataset.fgdPflicht).includes(typ);
+        feld.required = pflicht;
+        const stern = feld.closest('label') ? feld.closest('label').querySelector('[data-fgd-pflicht-stern]') : null;
+        if (stern) stern.hidden = !pflicht;
+        if (!pflicht && feld.getAttribute('aria-invalid') === 'true') { feld.removeAttribute('aria-invalid'); const box = document.getElementById(`${feld.name.replace(/[^a-z0-9_-]/gi, '-')}-hinweis`); if (box) box.remove(); }
+      });
+      // Schritt-Namen und Legenden je Objektart
+      const slug = SLUG[typ] || '';
+      schritte.forEach(({ step, i, name, legend, text }) => {
+        step.dataset.fgdStep = (slug && step.dataset[`fgdStep${slug}`]) || name;
+        if (legend) legend.textContent = (slug && step.dataset[`fgdLegende${slug}`]) || text;
+        if (namen[i]) namen[i].textContent = step.dataset.fgdStep;
+      });
     };
-    form.addEventListener('change', (event) => { if (event.target.name === 'object_type') apply(); });
+    form.addEventListener('change', apply);
     apply();
   });
 
@@ -428,47 +472,79 @@
     });
   });
 
-  /* ---------- Bewertung: Nachfrage aus der Bestätigungsmail (Update 19 §5) ----------
-     /immobilienbewertung/nachfrage/?k=…&typ=…&gf=1. Zeigt die Fragen für alle und die zur Objektart (typ);
-     gf=1 blendet die Grundstücksgröße aus, weil sie schon in der ersten Anfrage stand. Ohne k gibt es keinen
-     Versand, sondern den Hinweis auf den Link aus der E-Mail. Versand als JSON an bewertung-nachfrage. */
+  /* ---------- Bewertung, Schritt 2: Angaben aus der Bestätigungsmail (Update 19 §5, neu in Update 32 §2) ----------
+     /immobilienbewertung/nachfrage/?k=…&typ=…&wf=…&gf=…&bj=…&mi=…&fl=…&n=…&a=1 (Link aus _shared/nachfrage.js).
+     Jede Frage [data-nf-frage] trägt data-nf-typen (Objektarten, leer = alle), data-nf-ohne (nicht fragen, wenn Schritt 1
+     diese Angabe schon hat) und data-nf-wenn="feld=Wert|Wert" (nur bei dieser Antwort). Ausgeblendete Fragen sind
+     abgeschaltet und gehen nicht mit; Gruppen und Bereiche ohne sichtbare Frage verschwinden. Alles ist freiwillig.
+     Ohne k gibt es keinen Versand, sondern den Hinweis auf den Link aus der E-Mail. Versand als JSON an bewertung-nachfrage. */
   document.querySelectorAll('[data-fgd-nachfrage-form]').forEach((form) => {
     const card = form.parentElement;
     const status = form.querySelector('[data-fgd-nachfrage-status]');
     const done = card.querySelector('[data-fgd-nachfrage-done]');
     const params = new URLSearchParams(location.search);
     const k = params.get('k') || '';
-    const typ = params.get('typ') || '';
-    const abschalten = (el, aus) => {
-      el.hidden = aus;
-      el.querySelectorAll('input, select, textarea').forEach((feld) => { feld.disabled = aus; });
-    };
     if (!k) {
       form.hidden = true;
+      card.querySelectorAll('[data-fgd-nachfrage-mail], [data-fgd-nachfrage-anruf]').forEach((el) => { el.hidden = true; });
       const ohne = card.querySelector('[data-fgd-nachfrage-ohne-link]');
       if (ohne) ohne.hidden = false;
       return;
     }
-    form.elements.k.value = k;
-    form.elements.typ.value = typ;
-    const gruppen = [...form.querySelectorAll('[data-fgd-nachfrage-typ]')];
-    // Unbekannte Objektart: alle Fragen zeigen; Grundstück und Gewerbe: nur die Frage für alle
-    if (gruppen.some((g) => g.dataset.fgdNachfrageTyp === typ) || typ === 'grundstueck' || typ === 'gewerbe') {
-      gruppen.forEach((g) => abschalten(g, g.dataset.fgdNachfrageTyp !== typ));
-    }
-    if (params.get('gf') === '1') form.querySelectorAll('[data-fgd-nachfrage-ohne-gf]').forEach((el) => abschalten(el, true));
+    // Links aus Update 19 nutzen alte Typen
+    const ALT = { wohnung: 'etw', haus: 'efh' };
+    const typ = ALT[params.get('typ')] || params.get('typ') || '';
+    ['k', 'typ', 'wf', 'gf', 'bj', 'mi', 'fl', 'n', 'a'].forEach((key) => { if (form.elements[key]) form.elements[key].value = params.get(key) || ''; });
+    const anruf = params.get('a') === '1';
+    const mailText = card.querySelector('[data-fgd-nachfrage-mail]');
+    const anrufText = card.querySelector('[data-fgd-nachfrage-anruf]');
+    if (mailText) mailText.hidden = anruf;
+    if (anrufText) anrufText.hidden = !anruf;
+    // Mehrfamilienhaus: eigene Bezeichnungen für Stellplätze
+    if (typ === 'mfh') form.querySelectorAll('[data-nf-mfh]').forEach((el) => { el.textContent = el.dataset.nfMfh; });
+    const passt = (el) => !el.dataset.nfTypen || !typ || el.dataset.nfTypen.split(' ').includes(typ);
+    const wert = (name) => {
+      const an = [...form.querySelectorAll(`[name="${name}"]`)].find((el) => !el.disabled && (el.type === 'radio' || el.type === 'checkbox' ? el.checked : true));
+      return an ? an.value : '';
+    };
+    const schalten = (el, aus) => {
+      el.hidden = aus;
+      el.querySelectorAll('input, select, textarea').forEach((feld) => { feld.disabled = aus || !!feld.closest('[data-nf-frage][hidden], .fgd-choice[hidden]'); });
+    };
+    const apply = () => {
+      // zweimal: eine Bedingung kann an einer Frage hängen, die selbst gerade erst ein- oder ausgeblendet wurde
+      for (let runde = 0; runde < 2; runde += 1) {
+        form.querySelectorAll('[data-nf-frage]').forEach((el) => {
+          let aus = !passt(el) || (el.dataset.nfOhne && params.get(el.dataset.nfOhne));
+          if (!aus && el.dataset.nfWenn) {
+            const [name, werte] = el.dataset.nfWenn.split('=');
+            aus = !werte.split('|').includes(wert(name));
+          }
+          schalten(el, !!aus);
+        });
+        form.querySelectorAll('.fgd-choice[data-nf-typen]').forEach((el) => schalten(el, !passt(el)));
+      }
+      form.querySelectorAll('.fgs-nf-block, .fgs-nf-bereich').forEach((el) => {
+        el.hidden = !el.querySelector('[data-nf-frage]:not([hidden])');
+      });
+    };
+    form.addEventListener('change', apply);
+    apply();
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
-      if (!form.reportValidity()) return;
+      const bad = [...form.elements].filter((el) => el.willValidate && !el.checkValidity());
+      if (bad.length) { bad[0].reportValidity(); return; }
       const fd = new FormData(form);
       const submit = form.querySelector('button[type="submit"]');
       const original = submit.innerHTML;
-      const showDone = () => { form.hidden = true; if (done) { done.hidden = false; done.focus?.(); } };
+      const showDone = () => {
+        form.hidden = true;
+        [mailText, anrufText].forEach((el) => { if (el) el.hidden = true; });
+        if (done) { done.hidden = false; done.focus?.(); }
+      };
       if (fd.get('company_website')) { showDone(); return; }
       const payload = {};
-      for (const key of new Set(fd.keys())) {
-        payload[key] = ['wohnung_aussen', 'haus_aussen'].includes(key) ? fd.getAll(key) : String(fd.get(key)).trim();
-      }
+      for (const [key, value] of fd.entries()) if (String(value).trim()) payload[key] = String(value).trim();
       submit.disabled = true;
       submit.textContent = 'Wird gesendet …';
       if (status) status.hidden = true;
@@ -493,9 +569,9 @@
     });
     // Meldungen der Funktion zu Eingaben zeigen wir wörtlich, alles andere als allgemeiner Hinweis
     function meldung(message) {
-      return /^(Bitte|Der Link|Unbekannte|Eine Zahl|Die Angabe)/.test(message || '')
+      return /^(Bitte|Der Link|Unbekannte|Der Hinweis)/.test(message || '')
         ? message
-        : 'Die Antworten konnten gerade nicht gesendet werden. Bitte rufen Sie uns an oder schreiben Sie an info@fg-realestate.de.';
+        : 'Die Angaben konnten gerade nicht gesendet werden. Bitte rufen Sie uns an oder schreiben Sie an info@fg-realestate.de.';
     }
   });
 
@@ -606,20 +682,92 @@
   });
 
   /* ---------- Widgets der Finanzierungsplattform (Update 5, Abschnitt 2) ----------
-     Der Einbettungscode steht in <template data-fgd-widget-code> (_includes/fgd-widget.njk). Er lädt nur
+     Der Einbettungscode steht im Attribut data-fgd-widget-code (_includes/fgd-widget.njk). Er lädt nur
      mit Einwilligung in „Externe Medien“ und erst, wenn der Abschnitt in die Nähe des Bildschirms kommt.
-     „Rechner laden“ im Platzhalter erteilt diese Einwilligung im Consent-Manager (die übrigen Kategorien
-     bleiben, wie sie sind) und schickt `widget_open` an den dataLayer. */
+     „Rechner laden (externer Inhalt)“ im Platzhalter erteilt diese Einwilligung im Consent-Manager (die übrigen
+     Kategorien bleiben, wie sie sind) und schickt `widget_open` an den dataLayer.
+     Update 32 §4.4 (04.11.2026):
+     - Während des Ladens steht „Rechner wird geladen …“ über dem Rahmen. Fertig ist der Rechner, sobald sein iframe
+       geladen ist oder er seine Höhe meldet (postMessage „vh-widget-resize“ vom Anbieter, wie es dessen loader.js nutzt).
+     - Ist er etwa 8 Sekunden, nachdem der Abschnitt sichtbar ist, nicht fertig, oder lädt das Skript des Anbieters nicht:
+       ein kurzer Hinweis mit Direktlink (finanzWidgets.direkt). Lädt er danach doch, verschwindet der Hinweis.
+     - Fehlt der Consent-Manager (Cookie-Blocker wie die „EasyList Cookie“-Liste, in Brave voreingestellt, sperren
+       cookieconsent.umd.js und consent-manager.js), lädt der Knopf den Rechner für diesen Seitenaufruf; der Klick ist
+       dann die Einwilligung. Vorher tat der Knopf in diesem Fall nichts. */
   const widgets = Array.from(document.querySelectorAll('[data-fgd-widget]'));
   if (widgets.length) {
     const consentExternal = () => Boolean(window.CookieConsent && window.CookieConsent.acceptedCategory('external'));
     const near = new Set();
+    const LANGSAM_MS = 8000;
+    const status = (root) => root.querySelector('[data-fgd-widget-status]');
+    const fertig = (root) => {
+      if (root.dataset.widgetState === 'fertig') return;
+      root.dataset.widgetState = 'fertig';
+      window.clearTimeout(root._fgdTimer);
+      const st = status(root);
+      if (st) st.hidden = true;
+    };
+    const langsam = (root, fehler) => {
+      if (root.dataset.widgetState === 'fertig') return;
+      root.dataset.widgetState = fehler ? 'fehler' : 'langsam';
+      window.clearTimeout(root._fgdTimer);
+      const st = status(root);
+      if (!st) return;
+      const text = st.querySelector('[data-fgd-widget-slow-text]');
+      if (fehler && text && text.dataset.textError) text.textContent = text.dataset.textError;
+      const link = st.querySelector('[data-fgd-widget-direct]');
+      if (link && !/[?&]ref=/.test(link.href)) {
+        try { link.href += (link.href.indexOf('?') < 0 ? '?' : '&') + 'ref=' + encodeURIComponent(location.href); } catch (e) { /* Link bleibt ohne ref */ }
+      }
+      st.querySelector('[data-fgd-widget-wait]').hidden = true;
+      st.querySelector('[data-fgd-widget-slow]').hidden = false;
+      st.hidden = false;
+    };
+    // Die 8 Sekunden zählen erst, wenn der Abschnitt zu sehen ist (geladen wird schon 400 px vorher).
+    const uhrStarten = (root) => {
+      if (root._fgdTimer || !root.dataset.loaded || !root._fgdSichtbar || root.dataset.widgetState) return;
+      root._fgdTimer = window.setTimeout(() => langsam(root, false), LANGSAM_MS);
+    };
+    // Fertig-Meldungen: iframe geladen (iframe entsteht durch das Skript des Anbieters) oder Höhe per postMessage
+    window.addEventListener('message', (event) => {
+      const d = event.data;
+      if (!d || d.type !== 'vh-widget-resize') return;
+      widgets.forEach((root) => {
+        const f = root.querySelector('[data-fgd-widget-frame] iframe');
+        if (f && f.contentWindow === event.source) fertig(root);
+      });
+    });
+    const iframeBeobachten = (root, frame) => {
+      const dran = (f) => { if (!f._fgdLoad) { f._fgdLoad = true; f.addEventListener('load', () => fertig(root)); } };
+      frame.querySelectorAll('iframe').forEach(dran);
+      if (!('MutationObserver' in window)) return;
+      const mo = new MutationObserver(() => {
+        frame.querySelectorAll('iframe').forEach(dran);
+        if (root.dataset.widgetState === 'fertig') mo.disconnect();
+      });
+      mo.observe(frame, { childList: true, subtree: true });
+    };
+    if ('IntersectionObserver' in window) {
+      const sicht = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => { if (entry.isIntersecting) { entry.target._fgdSichtbar = true; sicht.unobserve(entry.target); uhrStarten(entry.target); } });
+      });
+      widgets.forEach((w) => sicht.observe(w));
+    } else {
+      widgets.forEach((w) => { w._fgdSichtbar = true; });
+    }
     const loadWidget = (root) => {
       if (root.dataset.loaded) return;
-      const tpl = root.querySelector('template[data-fgd-widget-code]');
+      // Code steht als Attribut (Update 32 §4.3: Firefox lud Skripte aus einem <template> vorab, ohne Einwilligung)
+      const quelle = root.querySelector('[data-fgd-widget-code]');
       const frame = root.querySelector('[data-fgd-widget-frame]');
-      if (!tpl || !frame) return;
+      if (!quelle || !frame) return;
+      const tpl = document.createElement('template');
+      tpl.innerHTML = quelle.getAttribute('data-fgd-widget-code') || '';
       root.dataset.loaded = '1';
+      const st = status(root);
+      if (st) st.hidden = false;
+      iframeBeobachten(root, frame);
+      uhrStarten(root);
       // Erst das Markup einsetzen, dann die Skripte einzeln in ihrer Reihenfolge: ein Inline-Skript nach
       // einem externen läuft erst, wenn das externe geladen ist (wie beim Einbetten direkt im HTML).
       const frag = document.importNode(tpl.content, true);
@@ -638,7 +786,7 @@
         if (s.src) {
           s.async = false;
           s.addEventListener('load', () => next(i + 1));
-          s.addEventListener('error', () => next(i + 1));
+          s.addEventListener('error', () => { langsam(root, true); next(i + 1); });
           mark.replaceWith(s);
         } else {
           mark.replaceWith(s);
@@ -676,7 +824,9 @@
           cc.acceptCategory(Array.from(new Set((prefs.acceptedCategories || []).concat('external'))));
           if (cc.hide) cc.hide();
         }
-        if (consentExternal()) loadWidget(root);
+        // Ohne Consent-Manager (gesperrt) gilt der Klick als Einwilligung für diesen Seitenaufruf (Update 32 §4.4)
+        root._fgdSichtbar = true;
+        if (consentExternal() || !cc) loadWidget(root);
       });
     });
 

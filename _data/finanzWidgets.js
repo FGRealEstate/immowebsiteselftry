@@ -5,7 +5,8 @@
    „Finanzierungsangebot berechnen“.
 
    Einbettungscodes so einfügen, wie Timon sie schickt (zwischen die Backticks). Sie stehen auf der
-   Seite in einem <template> und laden erst nach Einwilligung in „Externe Medien“ (fg-design.js).
+   Seite in einem Attribut (data-fgd-widget-code; bis Update 32 ein <template>, aus dem Firefox das Skript vorab lud)
+   und laden erst nach Einwilligung in „Externe Medien“ (fg-design.js).
    Ein Einbettungscode ist nicht geheim. Zugangsdaten zur Plattform gehören nicht hierher. */
 module.exports = {
   // Name der Plattform, wie er im Platzhalter steht („Der Rechner kommt vom …“).
@@ -20,6 +21,13 @@ module.exports = {
   // Instanz „Website“, Art Angebotsrechner). Lädt von baufi-partnerportal.de (Skript und iframe).
   angebot: `<div id="vh-widget-wk_178778264ad9"></div>
 <script src="https://baufi-partnerportal.de/widgets/v1/loader.js" async></script>`,
+
+  // Update 32 §4.4 (04.11.2026): Direktlink je Rechner, falls er nach etwa 8 Sekunden nicht geladen ist oder das
+  // Skript des Anbieters nicht lädt. Adresse wie im loader.js des Anbieters (EMBED_BASE + "/widgets/" + Schlüssel aus
+  // der id „vh-widget-…“); fg-design.js hängt wie der Loader ?ref=<Seitenadresse> an. Leer = Hinweis ohne Link.
+  direkt: {
+    angebot: "https://baufi-partnerportal.de/widgets/wk_178778264ad9",
+  },
 
   /* Lead-Messung: Schickt das Widget beim Absenden eine Browser-Nachricht (postMessage), hier
      Herkunft und ein Erkennungsmerkmal eintragen, dann geht `generate_lead` mit
