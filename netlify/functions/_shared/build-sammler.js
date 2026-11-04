@@ -83,7 +83,11 @@ function speicherOeffnen(event) {
   try {
     const { connectLambda, getStore } = require("@netlify/blobs");
     if (event && event.blobs) connectLambda(event);
-    return getStore({ name: STORE_NAME, consistency: "strong" });
+    // „eventual“, nicht „strong“: Im Lambda-Format setzt connectLambda nur edgeURL, ohne uncachedEdgeURL;
+    // „strong“ scheiterte deshalb live bei jedem Lesen (05.11.2026). Lesewerte können bis etwa 60 s alt sein.
+    // Folge höchstens ein späterer oder ein zusätzlicher Build, kein verlorenes Ereignis: Jedes Ereignis schreibt
+    // die Gruppe, und der Build liest Propstack erst beim Start. Das Lebenszeichen hat 6 Minuten Spielraum.
+    return getStore({ name: STORE_NAME, consistency: "eventual" });
   } catch (error) {
     console.warn("Build-Sammler: Netlify Blobs nicht verfügbar.", error.message);
     return null;
