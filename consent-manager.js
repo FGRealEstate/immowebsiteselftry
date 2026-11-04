@@ -154,5 +154,30 @@
     window.CookieConsent && window.CookieConsent.showPreferences();
   });
 
+  // Update 33 §2.2: Klicks auf Telefon, E-Mail und Terminbuchung als GA4-Ereignis, nur mit Statistik-Einwilligung.
+  // send_to ist nötig: ohne send_to verwirft der Google-Tag im GTM-Container gtag-Ereignisse (live geprüft 04.11.2026).
+  const GA4_ID = 'G-7GNF8PH36F';
+  document.addEventListener('click', function (event) {
+    const link = event.target.closest && event.target.closest('a[href]');
+    if (!link || !accepted('analytics')) return;
+    const href = link.getAttribute('href') || '';
+    // Keine vollständigen Nummern oder Adressen an GA4: nur ein kurzes Kennzeichen des Ziels.
+    let name = '';
+    let target = '';
+    if (/^tel:/i.test(href)) {
+      name = 'phone_click';
+      target = 'nr_' + href.replace(/\D/g, '').slice(-4);
+    } else if (/^mailto:/i.test(href)) {
+      name = 'email_click';
+      target = href.replace(/^mailto:/i, '').split('@')[0].slice(0, 40);
+    } else if (/bookwithme/i.test(href)) {
+      name = 'booking_click';
+      target = /CHqdXdox7UqN08gNHOu7dw2/.test(href) ? 'erstgespraech'
+        : /E3HmmWlWKECvphgdD7qQqg2/.test(href) ? 'finanzierungsberatung' : 'andere';
+    }
+    if (!name) return;
+    window.gtag('event', name, { send_to: GA4_ID, link_target: target });
+  }, true);
+
   start();
 })();
