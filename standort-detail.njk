@@ -24,6 +24,8 @@ eleventyComputed:
     h1: "Standortanalyse {{ location.name }}"
     intro: "{{ location.seite.intro if location.seite else location.view }}"
     contact: timon  # Teil B (31.10.2026): einzige Seite ist Eberswalde, Landkreis Barnim → Timon Fischer
+    # Update 33 §2.1 (Peer, 04.11.2026: Option A): Nummer des Ansprechpartners als Knopf in der Titelzeile, ohne Scrollen sichtbar.
+    buttons: [{ href: "{{ kontakte.timon.phone.href }}", label: "☎ {{ kontakte.timon.phone.display }}" }]
     closing:
       title: "Sprechen Sie mit uns"
       text: "Wir bewerten Ihre Immobilie, begleiten den Verkauf oder prüfen ein Objekt vor dem Kauf. Das erste Gespräch kostet Sie nichts."

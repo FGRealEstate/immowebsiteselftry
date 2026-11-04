@@ -44,6 +44,9 @@ eleventyComputed:
 {% set zwei = personen.length > 1 %}
 {% set orteWort = "Orte" if g.typ == "landkreis" else ("Kieze" if g.typ == "bezirk" else ("Ortsteile" if g.typ == "marktgebiet" else ("Gebiete" if g.typ == "stadt" else "Lagen"))) %}
 
+{#- Update 33 §2.1 (Peer, 04.11.2026: Option A): dritter Hero-Knopf mit der Nummer des Ansprechpartners, damit sie ohne Scrollen
+    sichtbar und antippbar ist; mit zwei Personen (Berlin-Übersicht) die Büronummer. Nummern selbst unverändert. #}
+{% set heroPhone = nav.phone if zwei else kontaktPhone %}
 {# 1. Titelbild über den ganzen Bildschirm (Design-Pass 2 §5.1): Ortsname groß, „Immobilie verkaufen, kaufen und finanzieren“
      darunter in Lead-Größe; eine H1 mit unverändertem Text #}
 {{ hero({
@@ -53,7 +56,7 @@ eleventyComputed:
   kicker: g.kicker or (g.kreis.name if g.kreis else "Brandenburg"),
   titel: g.h1,
   ort: g.h1Teile,
-  buttons: [{ href: valuationHref, label: "Kostenlose Bewertung" }, { href: "#ansprechpartner", label: ("Ihre Ansprechpartner" if zwei else "Ansprechpartner " + vorname) }],
+  buttons: [{ href: valuationHref, label: "Kostenlose Bewertung" }, { href: "#ansprechpartner", label: ("Ihre Ansprechpartner" if zwei else "Ansprechpartner " + vorname) }, { href: heroPhone.href, label: "☎ " + heroPhone.display, aria: (("Büro" if zwei else kontakt.name) + " anrufen: " + heroPhone.display) }],
   position: g.heroPhoto.position,
   kenburns: true
 }) }}

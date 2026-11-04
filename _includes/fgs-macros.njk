@@ -74,7 +74,7 @@
         {%- if h.buttons %}
         <div class="fgs-btns">
           {%- for b in h.buttons %}
-          <a class="fgs-btn {{ 'fgs-btn--primary' if loop.first else 'fgs-btn--secondary fgs-btn--light' }}" href="{{ b.href }}">{{ b.label }}</a>
+          <a class="fgs-btn {{ 'fgs-btn--primary' if loop.first else 'fgs-btn--secondary fgs-btn--light' }}" href="{{ b.href }}"{% if b.aria %} aria-label="{{ b.aria }}"{% endif %}>{{ b.label }}</a>
           {%- endfor %}
         </div>{% endif %}
       </div>
