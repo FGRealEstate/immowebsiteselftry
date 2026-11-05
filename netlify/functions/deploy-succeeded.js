@@ -2,7 +2,7 @@
  * Update 35 B5 (05.11.2026): IndexNow-Ping nach jedem Produktions-Deploy.
  * Netlify ruft eine Funktion mit dem Namen „deploy-succeeded“ selbst auf, sobald ein Deploy veröffentlicht ist
  * (ereignisgesteuerte Funktion). Sie liest /indexnow.json der Live-Seite, also des eben veröffentlichten Builds,
- * und meldet die Adressen unter „geaendert“ (geänderte und neue Seiten aus den Sitemaps, siehe .eleventy.js)
+ * und meldet die Adressen unter „geaendert“ (geänderte, neue und entfernte Seiten aus den Sitemaps, siehe .eleventy.js)
  * an api.indexnow.org. Die Suchmaschinen holen den Schlüssel unter https://fg-realestate.de/<Schlüssel>.txt ab.
  * Nur Produktion; Branch- und Vorschau-Deploys melden nichts. Im Log stehen nur Anzahl und Statuscode.
  * Ruft jemand die Funktion von außen auf, liest sie trotzdem nur die Live-Liste und meldet nur eigene Adressen,

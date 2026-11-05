@@ -520,7 +520,7 @@ module.exports = function(eleventyConfig) {
   });
 
   // Update 35 B5: /indexnow.json mit einem Hash je Seite aus den Sitemaps. Im Netlify-Produktionsbuild vergleicht der
-  // Build mit der Liste, die gerade live ist, und schreibt die geänderten und neuen Adressen nach „geaendert“.
+  // Build mit der Liste, die gerade live ist, und schreibt geänderte, neue und entfernte Adressen nach „geaendert“.
   // netlify/functions/deploy-succeeded.js meldet genau diese nach dem Deploy an IndexNow. Lokal und für die
   // Testumgebung bleibt „geaendert“ leer (kein Abruf der Live-Seite).
   eleventyConfig.on("eleventy.after", async ({ dir }) => {
@@ -542,7 +542,9 @@ module.exports = function(eleventyConfig) {
       try {
         const r = await fetch(`${indexnow.BASIS}/indexnow.json?v=${Date.now()}`, { signal: AbortSignal.timeout(15000) });
         const alt = r.status === 404 ? {} : (await r.json()).seiten || {};
-        if (r.status === 404 || r.ok) geaendert = Object.keys(seiten).filter((u) => alt[u] !== seiten[u]);
+        // Geändert oder neu, dazu entfernte Seiten (IndexNow will auch gelöschte Adressen; die Maschine sieht dann 404).
+        if (r.status === 404 || r.ok) geaendert = Object.keys(seiten).filter((u) => alt[u] !== seiten[u])
+          .concat(Object.keys(alt).filter((u) => !(u in seiten)));
       } catch (error) {
         console.warn("IndexNow: Liste der Live-Seite nicht lesbar, diesmal kein Ping.", error.message);
       }
