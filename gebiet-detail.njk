@@ -324,7 +324,7 @@ eleventyComputed:
       "about": { "@id": "{{ pageUrl }}#ort" },{% if g.heroPhoto %}
       {#- Update 9 §1.5: Urheber, Nennung, Lizenz und Lizenzseite aus derselben Zeile wie /bildnachweise/ (Filter bildnachweis); CC0 ohne Angaben #}
       {%- set heroNachweis = ("/images/gebiete/" + g.heroPhoto.name) | bildnachweis %}
-      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://fg-realestate.de{{ g.heroPhoto.src }}"{% if heroNachweis and heroNachweis.license != "CC0" %}, "creator": { "@type": "Person", "name": {{ heroNachweis.author | dump | safe }} }, "creditText": {{ heroNachweis.author | dump | safe }}, "license": {{ heroNachweis.licenseUrl | dump | safe }}, "acquireLicensePage": {{ heroNachweis.url | dump | safe }}{% endif %} },{% endif %}
+      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://fg-realestate.de{{ g.heroPhoto.src }}"{% if heroNachweis and heroNachweis.license != "CC0" %}, "creator": { "@type": "Person", "name": {{ heroNachweis.author | dump | safe }} }, "creditText": {{ heroNachweis.author | dump | safe }}, "license": {{ heroNachweis.licenseUrl | dump | safe }}, "acquireLicensePage": {{ heroNachweis.url | dump | safe }}, "copyrightNotice": {{ ("© " + heroNachweis.author + ", " + heroNachweis.license) | dump | safe }}{% endif %} },{% endif %}
       "breadcrumb": { "@id": "{{ pageUrl }}#breadcrumb" }
     },
     {
@@ -347,6 +347,7 @@ eleventyComputed:
       "image": "https://fg-realestate.de/images/fg-logo-gold-transparent.png",
       "telephone": "+4915203083048",
       "email": "info@fg-realestate.de",
+      "priceRange": {{ nav.preisspanne | dump | safe }},
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Schützenstraße 30",
