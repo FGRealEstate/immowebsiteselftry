@@ -6,7 +6,8 @@
   "scripts": {
     "css": "tailwindcss -c tailwind.config.js -i css/tailwind.src.css -o css/tailwind.css --minify",
     "build": "npm run css && eleventy",
-    "dev": "npm run css && eleventy --serve --port 8091"
+    "dev": "npm run css && eleventy --serve --port 8091",
+    "test": "node --test scripts/*.test.js"
   },
   "dependencies": {
     "@netlify/blobs": "10.7.13",

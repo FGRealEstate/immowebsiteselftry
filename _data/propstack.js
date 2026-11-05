@@ -815,6 +815,8 @@ const berlinBezirkKontakt = new Map(Object.entries(BERLIN_BEZIRKE_OHNE_SEITE).fl
    (Geoportal Berlin, Datenlizenz Deutschland – Zero – Version 2.0, abgerufen 30.10.2026, 404.303 Adressen, 193 PLZ).
    Ihre 97 Ortsteile decken sich mit den Ortsteillisten oben (geprüft 31.10.2026). */
 const BERLIN_PLZ = require("./berlin-plz-bezirk.json").plz;
+// Update 36 §2.1: Test- und Fremdobjekte kommen nie auf die Seite (scripts/angebotsschutz.js).
+const { ueberspringen: angebotsschutzGreift } = require("../scripts/angebotsschutz.js");
 
 let areaIndex = null;
 
@@ -1603,6 +1605,7 @@ module.exports = async function () {
         const references = [];
 
         for (const rawUnit of rawUnits) {
+            if (rawUnit && angebotsschutzGreift(rawUnit, "Einheit")) continue;
             if (rawUnit && rawUnit.archived !== true && isSoldObject(rawUnit)) references.push(buildReference(rawUnit));
             if (!rawUnit || rawUnit.archived === true || !isPublicMarketingObject(rawUnit)) continue;
 
@@ -1634,6 +1637,7 @@ module.exports = async function () {
         for (const [key, units] of projectUnitsByKey.entries()) {
             const project = projectLookup.get(key) || units[0]?.project_ref?.raw;
             if (!project || !isPublicMarketingProject(project)) continue;
+            if (angebotsschutzGreift(project, "Projekt")) continue;
             projects.push(buildProject(project, units));
         }
 
