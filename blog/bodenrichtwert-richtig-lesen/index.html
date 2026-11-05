@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bodenrichtwert richtig lesen: Was die Zahl aussagt</title>
+<meta name="description" content="Was der Bodenrichtwert ist, wo Sie ihn finden, wie Sie die Angaben auf der Karte lesen und wofür Sie ihn beim Kauf einer Wohnung oder eines Hauses brauchen.">
+<link rel="canonical" href="https://fg-realestate.de/blog/bodenrichtwert-richtig-lesen/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Fischer &amp; Geserich Real Estate">
+<meta property="og:title" content="Bodenrichtwert richtig lesen: Was die Zahl aussagt">
+<meta property="og:description" content="Was der Bodenrichtwert ist, wo Sie ihn finden, wie Sie die Angaben auf der Karte lesen und wofür Sie ihn beim Kauf einer Wohnung oder eines Hauses brauchen.">
+<meta property="og:url" content="https://fg-realestate.de/blog/bodenrichtwert-richtig-lesen/">
+<meta property="og:image" content="https://fg-realestate.de/blog/bodenrichtwert-richtig-lesen/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Blogartikel, Live-Fassung aus _build/live.py -->
+<script>
+/* Lesemodus vor dem ersten Zeichnen setzen, sonst blitzt die helle Seite auf */
+try{var t=localStorage.getItem("fg-theme");if(t)document.documentElement.dataset.theme=t;else if(matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.dataset.theme="dark"}catch(e){}
+</script>
+<link rel="stylesheet" href="../muster.css">
+<style>
+/* D1: Ausschnitt einer Bodenrichtwertkarte mit Zonen und dem Etikett einer Zone, jede Angabe im Etikett anklickbar; darunter ein Lageplan, auf dem der Miteigentumsanteil als Fläche des Grundstücks markiert ist, mit vier Reglern und der Rechenkette bis zum Bodenanteil am Kaufpreis */
+.dd1-top{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px 22px;align-items:start;margin:0 0 18px}
+.dd1-map{width:100%;height:auto;display:block;background:var(--soft)}
+.dd1-map .zn{stroke:var(--bg);stroke-width:3}
+.dd1-map .zn.sel{stroke:var(--accent);stroke-width:3;stroke-dasharray:7 4}
+.dd1-map text{font:600 11px var(--font);fill:var(--ink)}
+.dd1-tag{display:flex;flex-wrap:wrap;gap:0;border:2px solid var(--ink);background:var(--bg);margin:0 0 10px;width:100%}
+.dd1-tag button{font:inherit;font-size:.86rem;font-weight:700;padding:7px 10px;border:0;border-right:1px solid var(--rule);background:transparent;color:var(--ink);cursor:pointer;font-variant-numeric:tabular-nums;flex:1 1 auto}
+.dd1-tag button:last-child{border-right:0}
+.dd1-tag button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+.dd1-info{margin:0;padding:8px 10px;border-left:3px solid var(--c-mid);font-size:.84rem;line-height:1.45;min-height:5.8em}
+.dd1-low{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:16px 22px;align-items:start}
+.dd1-plan{width:100%;height:auto;display:block}
+.dd1-plan .plot{fill:var(--c-hum);stroke:var(--ink);stroke-width:2}
+.dd1-plan .bld{fill:var(--bg);stroke:var(--ink);stroke-width:1.5}
+.dd1-plan .mine{fill:var(--gold);stroke:var(--gold-ink);stroke-width:1.5}
+.dd1-plan text{font:11px var(--font);fill:var(--ink)}
+.dd1-ctl{display:grid;grid-template-columns:1fr auto;gap:2px 10px;margin:0 0 8px;font-size:.8rem}
+.dd1-ctl input{grid-column:1/-1;width:100%;accent-color:var(--gold)}
+.dd1-ctl output{font-weight:700;font-variant-numeric:tabular-nums}
+.dd1-chain{margin:10px 0 0;padding:0;list-style:none;font-size:.82rem;font-variant-numeric:tabular-nums}
+.dd1-chain li{display:grid;grid-template-columns:1fr auto;gap:8px;padding:4px 0;border-bottom:1px solid var(--rule)}
+.dd1-chain li:last-child{border-bottom:0;border-top:2px solid var(--ink);font-weight:700}
+.dd1-chain b{font-weight:700}
+@media (max-width:620px){.dd1-top,.dd1-low{grid-template-columns:1fr}}
+</style>
+<script type="application/ld+json">
+[
+ {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Den Bodenrichtwert richtig lesen und für die Kaufpreisaufteilung nutzen",
+  "description": "Was der Bodenrichtwert ist, wo Sie ihn finden, wie Sie die Angaben auf der Karte lesen und wofür Sie ihn beim Kauf einer Wohnung oder eines Hauses brauchen.",
+  "inLanguage": "de-DE",
+  "url": "https://fg-realestate.de/blog/bodenrichtwert-richtig-lesen/",
+  "image": "https://fg-realestate.de/blog/bodenrichtwert-richtig-lesen/og.jpg",
+  "datePublished": "2026-11-05",
+  "dateModified": "2026-11-05",
+  "author": {
+   "@type": "Organization",
+   "name": "Fischer & Geserich Real Estate GmbH"
+  },
+  "publisher": {
+   "@type": "Organization",
+   "name": "Fischer & Geserich Real Estate GmbH"
+  }
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Was ist der Bodenrichtwert?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Ein durchschnittlicher Wert pro Quadratmeter für unbebaute Grundstücke mit typischen Merkmalen in einer bestimmten Zone. Er wird von den Gutachterausschüssen aus tatsächlich gezahlten Kaufpreisen ermittelt und mindestens alle zwei Jahre veröffentlicht, in Berlin und Brandenburg jährlich."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Wo finde ich den Bodenrichtwert?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "In den Bodenrichtwertportalen der Länder, für Berlin und Brandenburg über BORIS. Dort lässt sich die Zone über eine Karte oder die Adresse suchen. Die Einsicht ist kostenlos."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Wie berechne ich den Bodenwertanteil einer Eigentumswohnung?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Grundstücksfläche mal Bodenrichtwert ergibt den Bodenwert. Diesen multiplizieren Sie mit Ihrem Miteigentumsanteil. Beispiel: 600 Quadratmeter mal 2.700 Euro ergibt 1.620.000 Euro, bei 45/1.000 Anteilen sind das 72.900 Euro."
+    }
+   }
+  ]
+ }
+]
+</script>
+<link rel="stylesheet" href="/vendor/cookieconsent/cookieconsent.css">
+<link rel="stylesheet" href="/consent-manager.css">
+<script>window.FG_GTM_ID = "GTM-5DVGRHB2";</script>
+<script defer src="/vendor/cookieconsent/cookieconsent.umd.js"></script>
+<script defer src="/consent-manager.js"></script>
+</head>
+<body>
+
+<header class="top">
+  <nav class="site-nav" aria-label="Hauptnavigation">
+    <div class="nav-row">
+      <a class="brand" href="https://fg-realestate.de/index.html"><img src="/images/fg-logo-gold-transparent.png" alt="Fischer &amp; Geserich Real Estate" width="54" height="54"><span class="gold-text long">Fischer &amp; Geserich Real Estate</span><span class="gold-text short">Fischer &amp; Geserich<br>Real Estate</span></a>
+      <div class="nav-links">
+        <a href="https://fg-realestate.de/index.html">Start</a>
+        <div class="nav-group"><a href="https://fg-realestate.de/angebote.html" aria-haspopup="true">Kaufen<span class="caret"></span></a>
+          <div class="nav-sub">
+            <a href="https://fg-realestate.de/angebote.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M10 21v-3h4v3"/></svg></i><span><strong>Angebote</strong><small>Aktuelle Objekte</small></span></a>
+            <a href="https://fg-realestate.de/ankaufsberatung.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l4-4 4 2 3-3 7 6-3 3"/><path d="M7 8l-4 4 6 6 2-2M11 16l2 2 2-2M13 14l2 2 2-2"/></svg></i><span><strong>Ankaufsberatung</strong><small>Begleitung beim Kauf</small></span></a>
+          </div></div>
+        <a href="https://fg-realestate.de/verkaufen.html">Verkaufen</a>
+        <a href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierung</a>
+        <div class="nav-group"><a href="https://fg-realestate.de/investment-lab.html" aria-haspopup="true">Investment Lab<span class="caret"></span></a>
+          <div class="nav-sub">
+            <a href="https://fg-realestate.de/investment-lab.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M7 15h10"/></svg></i><span><strong>Investment Lab</strong><small>Rechner und Werkzeuge</small></span></a>
+            <a href="https://fg-realestate.de/standorte/"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg></i><span><strong>Standorte</strong><small>16 Standortanalysen</small></span></a>
+            <a href="https://fg-realestate.de/lexikon/"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4zM20 4h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6z"/></svg></i><span><strong>Lexikon</strong><small>Begriffe erklärt</small></span></a>
+          </div></div>
+        <a href="https://fg-realestate.de/ueber-uns.html">Über uns</a>
+        <a href="../" class="on" aria-current="page">Blog</a>
+        <a href="https://fg-realestate.de/kontakt.html" class="nav-contact">Kontakt</a>
+      </div>
+      <button class="burger" type="button" aria-label="Menü" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+    <div class="mobile-menu">
+      <a href="https://fg-realestate.de/index.html">Start</a>
+      <p>Kaufen</p><a href="https://fg-realestate.de/angebote.html">Angebote</a><a href="https://fg-realestate.de/ankaufsberatung.html">Ankaufsberatung</a>
+      <p>Leistungen</p><a href="https://fg-realestate.de/verkaufen.html">Verkaufen</a><a href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierung</a>
+      <p>Investment Lab</p><a href="https://fg-realestate.de/investment-lab.html">Investment Lab</a><a href="https://fg-realestate.de/standorte/">Standorte</a><a href="https://fg-realestate.de/lexikon/">Lexikon</a>
+      <p>Unternehmen</p><a href="https://fg-realestate.de/ueber-uns.html">Über uns</a><a href="../" class="here">Blog</a><a href="https://fg-realestate.de/kontakt.html" class="m-contact">Kontakt</a>
+    </div>
+  </nav>
+  <div class="subbar">
+    <div class="subbar-row">
+      <a class="sb-home" href="../">Blog</a>
+      <div class="where">Bodenrichtwert richtig lesen</div>
+      <div class="sb-right">
+        <details class="cat-menu"><summary>Kategorien<span class="caret"></span></summary><nav>
+          <a href="../">Alle Artikel</a><a href="../#finanzierung">Finanzierung</a><a href="../#steuern">Steuern</a><a href="../#kauf-kapitalanlage">Kauf &amp; Kapitalanlage</a><a href="../#bewertung-markt" class="on">Bewertung &amp; Markt</a>
+        </nav></details>
+        <button class="icon-btn theme-btn" type="button" aria-label="Dunkler Lesemodus" aria-pressed="false" title="Lesemodus"><svg class="moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      </div>
+    </div>
+    <div class="progress"><span></span></div>
+  </div>
+</header>
+
+<nav class="crumbs" aria-label="Brotkrumen"><a href="../">Blog</a><i>•</i><a href="../#bewertung-markt">Bewertung &amp; Markt</a><i>•</i><span>Bodenrichtwert richtig lesen</span></nav>
+<div class="lead">
+  <figure class="lead-img" data-wait="Bild folgt">
+    <img src="lead.jpg" alt="Marmoriertes Papier, dessen Farbfelder wie Zonen einer Karte wirken, in einem Feld ruht ein kleines Haus" width="1536" height="1024" onerror="this.parentNode.classList.add('missing')">
+  </figure>
+</div>
+<div class="head">
+  <a class="tag" href="../#bewertung-markt">Bewertung &amp; Markt</a>
+  <h1>Den Boden&shy;richtwert richtig lesen und für die Kaufpreis&shy;aufteilung nutzen</h1>
+  <p class="dateline"><span>Stand: Oktober 2026</span><span class="by">Von Fischer &amp; Geserich Real Estate</span></p>
+  <span class="pill">5 Min. Lesezeit</span>
+</div>
+
+<div class="cols">
+
+  <nav class="toc" aria-label="Inhalt">
+    <p class="toc-h">Inhalt</p>
+    <a href="#woher-der-bodenrichtwert-kommt">Woher der Bodenrichtwert kommt</a>
+    <a href="#wie-sie-die-angaben-lesen">Wie Sie die Angaben lesen</a>
+    <a href="#wofuer-sie-ihn-brauchen">Wofür Sie ihn brauchen</a>
+    <a href="#rechenbeispiel-der-bodenanteil-einer-eigentumswo">Rechenbeispiel: der Bodenanteil einer Eigentumswohnung</a>
+    <a href="#die-einschaetzung-von-fischer-geserich">Die Einschätzung von Fischer &amp; Geserich</a>
+    <a href="#fragen">Häufige Fragen</a>
+  </nav>
+
+  <article class="body">
+    <p class="answer">Der Bodenrichtwert ist ein durchschnittlicher Wert pro Quadratmeter Grundstücksfläche für eine Zone mit ähnlichen Grundstücken. Er wird von den unabhängigen Gutachterausschüssen aus tatsächlich gezahlten Kaufpreisen ermittelt und in Bodenrichtwertkarten veröffentlicht, in Berlin und Brandenburg über das Portal BORIS. Beim Immobilienkauf brauchen Sie ihn vor allem für die Aufteilung des Kaufpreises in Grundstück und Gebäude, die Ihre Abschreibung bestimmt.</p>
+    <div class="kurz"><p class="kurz-h">Das Wichtigste in Kürze</p><ul><li>Der Bodenrichtwert ist ein Durchschnittswert pro m² Grundstück, ermittelt aus echten Kaufpreisen.</li><li>Sie finden ihn kostenlos in den Bodenrichtwertportalen der Länder (BORIS).</li><li>Bodenwertanteil einer Wohnung = Grundstücksfläche × Bodenrichtwert × Miteigentumsanteil.</li></ul></div>
+    <figure class="chart" id="g-bodenrichtwert">
+      <h3>Was im Etikett steht und was davon Ihrer Wohnung gehört</h3>
+      <p class="sub">Oben eine Zone, wie sie auf der Bodenrichtwertkarte erscheint: Tippen Sie auf die Angaben im Etikett. Unten der Weg vom Bodenrichtwert zum Bodenanteil einer Eigentumswohnung.</p>
+      <div class="dd1-top">
+        <svg class="dd1-map" viewBox="0 0 420 250" role="img" aria-label="Ausschnitt einer Bodenrichtwertkarte mit fünf Zonen, eine davon markiert"></svg>
+        <div>
+          <div class="dd1-tag" role="group" aria-label="Angaben im Etikett">
+            <button type="button" data-t="w" aria-pressed="true">2.700</button><button type="button" data-t="n" aria-pressed="false">W</button><button type="button" data-t="g" aria-pressed="false">GFZ 2,5</button><button type="button" data-t="s" aria-pressed="false">01.01.2026</button><button type="button" data-t="e" aria-pressed="false">baureif</button>
+          </div>
+          <p class="dd1-info" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="dd1-low">
+        <svg class="dd1-plan" viewBox="0 0 300 230" role="img" aria-label="Lageplan des Grundstücks mit Haus und der Fläche, die dem Miteigentumsanteil entspricht"></svg>
+        <div>
+          <div class="dd1-ctl"><label for="dd1-f">Grundstücksfläche</label><output class="dd1-fo"></output><input id="dd1-f" type="range" min="400" max="3000" step="50" value="600"></div>
+          <div class="dd1-ctl"><label for="dd1-b">Bodenrichtwert pro m²</label><output class="dd1-bo"></output><input id="dd1-b" type="range" min="200" max="4000" step="50" value="2700"></div>
+          <div class="dd1-ctl"><label for="dd1-m">Miteigentumsanteil in Tausendsteln</label><output class="dd1-mo"></output><input id="dd1-m" type="range" min="10" max="150" step="1" value="45"></div>
+          <div class="dd1-ctl"><label for="dd1-k">Kaufpreis der Wohnung</label><output class="dd1-ko"></output><input id="dd1-k" type="range" min="100000" max="800000" step="5000" value="300000"></div>
+          <ul class="dd1-chain" aria-live="polite"></ul>
+        </div>
+      </div>
+      <p class="credit">Karte schematisch, keine echte Adresse · Rechnung ohne Umrechnung für abweichende Geschossflächenzahl · Grafik: Fischer &amp; Geserich</p>
+    </figure>
+    <h2 id="woher-der-bodenrichtwert-kommt">Woher der Bodenrichtwert kommt</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild1.jpg" alt="Ein alter Setzkasten, in jedem Fach ein kleines Haus oder Grundstück, im mittleren Fach ein Wägestein aus Messing" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Jeder notarielle Kaufvertrag über ein Grundstück, ein Haus oder eine Wohnung wird an den Gutachterausschuss der jeweiligen Region übermittelt. Der Ausschuss sammelt diese Preise in einer Kaufpreissammlung und leitet daraus nach §&nbsp;196 Baugesetzbuch für jede Zone einen durchschnittlichen Bodenwert ab, bezogen auf ein unbebautes Grundstück mit typischen Merkmalen. Die Werte werden mindestens alle zwei Jahre neu ermittelt, in vielen Regionen jährlich, auch in Berlin und Brandenburg.</p>
+    <p>Weil der Wert aus echten Verkäufen stammt, ist er eine der wenigen öffentlich zugänglichen Marktzahlen, die nicht von Anbietern oder Portalen kommt.</p>
+    <h2 id="wie-sie-die-angaben-lesen">Wie Sie die Angaben lesen</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild2.jpg" alt="Lochkamerafoto eines unbebauten Grundstücks, an den Ecken Pflöcke mit gespannter Schnur, dahinter gleich hohe Häuser" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Auf der Karte steht zu jeder Zone ein Block mit mehreren Angaben:</p>
+    <ul class="plain"><li><strong>Wert in Euro pro Quadratmeter.</strong> Der durchschnittliche Bodenwert für ein typisches Grundstück in dieser Zone.</li><li><strong>Stichtag.</strong> Das Datum, auf das sich der Wert bezieht, meist der 1. Januar. Liegt er lange zurück, kann sich der Markt seither verändert haben.</li><li><strong>Entwicklungszustand.</strong> In der Regel „baureif“. Für Bauerwartungsland oder Ackerland gelten ganz andere Werte.</li><li><strong>Art der Nutzung.</strong> Etwa W für Wohnbauflächen, M für gemischte Bauflächen, G für gewerbliche.</li><li><strong>Maß der Nutzung.</strong> Häufig die Geschossflächenzahl (GFZ), die angibt, wie dicht bebaut werden darf. Ein Grundstück, auf dem mehr gebaut werden darf als im Durchschnitt der Zone, ist mehr wert, eines mit weniger entsprechend weniger. Für solche Abweichungen veröffentlichen die Gutachterausschüsse Umrechnungskoeffizienten.</li></ul>
+    <p>Der Bodenrichtwert gilt für das typische Grundstück der Zone. Ein Eckgrundstück, ein ungewöhnlicher Zuschnitt oder eine besondere Lage innerhalb der Zone können den tatsächlichen Wert nach oben oder unten verschieben.</p>
+    <h2 id="wofuer-sie-ihn-brauchen">Wofür Sie ihn brauchen</h2>
+    <div class="ways"><div><b class="w-h">Für die Kaufpreisaufteilung</b><p>Abschreiben können Sie nur den <a class="inline" href="../restnutzungsdauergutachten-erklaert/">Gebäudeanteil</a>. Fehlt eine Aufteilung im Kaufvertrag, rechnet das Finanzamt den Bodenanteil häufig mit dem Bodenrichtwert aus, über die Arbeitshilfe des Bundesfinanzministeriums. Wer den Wert kennt, kann prüfen, ob eine Aufteilung realistisch ist, und sie schon im Kaufvertrag festhalten. Eine Aufteilung im Kaufvertrag muss das Finanzamt grundsätzlich übernehmen, solange sie die realen Wertverhältnisse nicht grundlegend verfehlt.</p></div><div><b class="w-h">Für die Einordnung des Kaufpreises</b><p>Bei Häusern und Grundstücken zeigt der Bodenwert, welcher Teil des Preises auf das Grundstück entfällt und welcher auf das Gebäude. Ein altes Haus auf einem großen Grundstück in guter Lage wird oft vor allem wegen des Bodens gekauft.</p></div><div><b class="w-h">Für die Grundsteuer</b><p>Seit der Grundsteuerreform, die seit 2025 gilt, fließt der Bodenrichtwert in den meisten Bundesländern, auch in Berlin und Brandenburg, in die Berechnung der Grundsteuer ein.</p></div></div>
+    <h2 id="rechenbeispiel-der-bodenanteil-einer-eigentumswo">Rechenbeispiel: der Bodenanteil einer Eigentumswohnung</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild3.jpg" alt="Ein Grundstück mit Haus aus Speckstein, ein schmales Stück des Bodens ist herausgelöst und liegt daneben" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Bei einer Eigentumswohnung gehört Ihnen ein Anteil am Grundstück, der Miteigentumsanteil, angegeben in Tausendsteln.</p>
+    <p>Ein Grundstück in Berlin-Prenzlauer Berg mit 600 Quadratmetern liegt in einer Zone mit einem Bodenrichtwert von 2.700&nbsp;Euro pro Quadratmeter. Der Bodenwert beträgt damit 1.620.000&nbsp;Euro. Zu Ihrer Wohnung mit rund 50 Quadratmetern gehören 45/1.000 Miteigentumsanteile. Ihr Bodenwertanteil beträgt also <strong>72.900&nbsp;Euro</strong>.</p>
+    <p>Kostet die Wohnung 300.000&nbsp;Euro, entfallen rechnerisch gut 24&nbsp;Prozent auf den Boden und knapp 76&nbsp;Prozent auf das Gebäude. Dieser Gebäudeanteil ist, zusammen mit dem entsprechenden Anteil der Kaufnebenkosten, die Grundlage Ihrer Abschreibung.</p>
+    <p>Diese Rechnung ist eine Annäherung: Der Bodenwert wird abgezogen, der Rest gilt als Gebäude. Das Finanzamt rechnet anders. Seine Arbeitshilfe, eine Excel-Datei des Bundesfinanzministeriums, teilt den Kaufpreis im Verhältnis von Bodenwert und Gebäudewert auf. In teuren Lagen wie München oder Berlin kommt sie nach unserer Erfahrung oft nur auf 20 bis 40&nbsp;Prozent Gebäudeanteil. Halten Sie deshalb eine realistische Aufteilung im notariellen Kaufvertrag fest, zum Beispiel nach einer Rechnung wie dieser. Dann muss das Finanzamt aktiv dagegen vorgehen, wenn es davon abweichen will. Fehlt die Aufteilung im Vertrag, bestimmt das Finanzamt den Gebäudeanteil selbst. Mit einem Gutachten lässt sich dessen Ansatz widerlegen.</p>
+    <section class="pos">
+    <h2 id="die-einschaetzung-von-fischer-geserich">Die Einschätzung von Fischer &amp; Geserich</h2>
+    <p>Den Bodenrichtwert schlagen wir bei jedem Objekt nach, das wir bewerten oder mit einem Kunden prüfen. Er ist keine Bewertung des Objekts, aber ein unabhängiger Anker. Bei Kapitalanlagen nutzen wir ihn vor allem, um die Kaufpreisaufteilung schon vor der Beurkundung realistisch festzulegen.</p>
+    </section>
+
+    <div class="qa" id="fragen"><p class="qa-h">Häufige Fragen</p><details open><summary>Was ist der Bodenrichtwert?</summary><div><p>Ein durchschnittlicher Wert pro Quadratmeter für unbebaute Grundstücke mit typischen Merkmalen in einer bestimmten Zone. Er wird von den Gutachterausschüssen aus tatsächlich gezahlten Kaufpreisen ermittelt und mindestens alle zwei Jahre veröffentlicht, in Berlin und Brandenburg jährlich.</p></div></details><details><summary>Wo finde ich den Bodenrichtwert?</summary><div><p>In den Bodenrichtwertportalen der Länder, für Berlin und Brandenburg über BORIS. Dort lässt sich die Zone über eine Karte oder die Adresse suchen. Die Einsicht ist kostenlos.</p></div></details><details><summary>Wie berechne ich den Bodenwertanteil einer Eigentumswohnung?</summary><div><p>Grundstücksfläche mal Bodenrichtwert ergibt den Bodenwert. Diesen multiplizieren Sie mit Ihrem Miteigentumsanteil. Beispiel: 600 Quadratmeter mal 2.700&nbsp;Euro ergibt 1.620.000&nbsp;Euro, bei 45/1.000 Anteilen sind das 72.900&nbsp;Euro.</p></div></details></div>
+
+    <aside class="cta" aria-label="Kostenlose Wertermittlung anfragen"><h3>Was ist Ihre Immobilie wert?</h3><p>Fischer &amp; Geserich ermittelt den Wert Ihrer Immobilie kostenlos, in der Regel noch am selben Tag. Wir bewerten Wohnungen, Häuser und Mehrfamilienhäuser in Berlin, im Berliner Umland und in Sachsen.</p><a class="btn" href="https://fg-realestate.de/finanzierungsberatung.html">Kostenlose Wertermittlung anfragen</a></aside>
+
+    <div class="end">
+      <div class="quellen"><h3>Quellen</h3><ul><li><a href="https://www.gesetze-im-internet.de/baugb/__196.html" target="_blank" rel="noopener">§&nbsp;196 BauGB, Bodenrichtwerte</a></li><li><a href="https://www.bodenrichtwerte-boris.de" target="_blank" rel="noopener">BORIS-D, Bodenrichtwertinformationssystem für Deutschland</a></li><li><a href="https://www.berlin.de/gutachterausschuss/marktinformationen/bodenrichtwerte/" target="_blank" rel="noopener">Gutachterausschuss Berlin, Bodenrichtwerte und BORIS Berlin</a></li><li><a href="https://boris.brandenburg.de" target="_blank" rel="noopener">BORIS Brandenburg</a></li><li><a href="https://www.bundesfinanzministerium.de/Datenportal/Daten/frei-nutzbare-produkte/Anwendungen/Kaufpreisaufteilung-Grundstuecke/Kaufpreisaufteilung-Grundstuecke.html" target="_blank" rel="noopener">Bundesfinanzministerium, Arbeitshilfe zur Aufteilung eines Gesamtkaufpreises für ein bebautes Grundstück</a></li></ul></div>
+      <p class="note">Die Bilder in diesem Beitrag wurden mit KI erstellt.</p>
+      <p class="note">Der Beitrag dient der allgemeinen Information und ersetzt keine Rechts-, Steuer-, Finanzierungs- oder Anlageberatung. Zinssätze in Beispielrechnungen sind Beispielwerte, keine aktuellen Konditionen.</p>
+    </div>
+  </article>
+
+  <aside class="related" aria-label="Mehr zu Bewertung &amp; Markt">
+    <h2>Mehr zu Bewertung &amp; Markt</h2>
+    <a href="../ertragswertverfahren-kompakt/"><span class="rthumb"><img src="../ertragswertverfahren-kompakt/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Ertragswert- und Sachwert&shy;verfahren</strong></a>
+    <a href="../wohnflaechenberechnung-pruefen/"><span class="rthumb"><img src="../wohnflaechenberechnung-pruefen/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Wohnflächen&shy;berechnung prüfen</strong></a>
+  </aside>
+</div>
+
+<section class="more" aria-label="Weiterlesen">
+  <div class="more-in">
+    <h2>Weiterlesen</h2>
+    <p class="more-sub">Artikel, die hier anschließen</p>
+    <div class="cards">
+      <a class="card" href="../restnutzungsdauergutachten-erklaert/">
+        <div class="thumb"><img src="../restnutzungsdauergutachten-erklaert/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.parentNode.classList.add('missing')"></div>
+        <span class="kicker">Steuern</span>
+        <strong>Restnutzungsdauergutachten und Gebäudeanteil</strong>
+        <p>Wie Sie mit Restnutzungsdauergutachten und sauberer Kaufpreisaufteilung die AfA Ihrer Bestandsimmobilie erhöhen. Mit Rechenbeispiel und Rechtslage.</p>
+        
+      </a>
+      <a class="card" href="../ertragswertverfahren-kompakt/">
+        <div class="thumb"><img src="../ertragswertverfahren-kompakt/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.parentNode.classList.add('missing')"></div>
+        <span class="kicker">Bewertung &amp; Markt</span>
+        <strong>Ertragswert- und Sachwertverfahren</strong>
+        <p>Wie Gutachter den Immobilienwert über Ertrag oder Herstellungskosten ermitteln, wann welches Verfahren gilt und wie die Rechnung aussieht.</p>
+        
+      </a>
+      <a class="card" href="../wohnflaechenberechnung-pruefen/">
+        <div class="thumb"><img src="../wohnflaechenberechnung-pruefen/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.parentNode.classList.add('missing')"></div>
+        <span class="kicker">Bewertung &amp; Markt</span>
+        <strong>Wohnflächenberechnung prüfen</strong>
+        <p>Wie Wohnfläche nach der WoFlV berechnet wird, warum Dachgeschosswohnungen oft kleiner sind als angegeben und warum Banken die Berechnung brauchen.</p>
+        
+      </a>
+    </div>
+    <a class="back" href="../">‹ Zurück zum Blog</a>
+  </div>
+</section>
+
+<footer><span>© 2026 Fischer &amp; Geserich Real Estate</span><span><a href="https://fg-realestate.de/impressum.html">Impressum</a> · <a href="https://fg-realestate.de/datenschutz.html">Datenschutz</a> · <a href="#" data-open-consent>Cookie-Einstellungen</a></span></footer>
+
+<script>
+/* Mobilmenü wie auf der Website */
+(function(){
+  var b=document.querySelector(".burger"),m=document.querySelector(".mobile-menu");
+  b.addEventListener("click",function(){var o=m.classList.toggle("open");b.setAttribute("aria-expanded",o)});
+})();
+/* Offene Menüs schließen bei Klick daneben oder mit Esc */
+(function(){
+  var cat=document.querySelector(".cat-menu"),b=document.querySelector(".burger"),m=document.querySelector(".mobile-menu");
+  function closeAll(e){
+    if(cat.open&&(!e||!cat.contains(e.target)))cat.open=false;
+    if(m.classList.contains("open")&&(!e||!(m.contains(e.target)||b.contains(e.target)))){m.classList.remove("open");b.setAttribute("aria-expanded",false)}
+  }
+  document.addEventListener("click",closeAll);
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeAll()});
+})();
+/* Umschalter heller / dunkler Lesemodus */
+(function(){
+  var root=document.documentElement,b=document.querySelector(".theme-btn");
+  function sync(){var d=root.dataset.theme==="dark";b.setAttribute("aria-pressed",d);b.setAttribute("aria-label",d?"Heller Lesemodus":"Dunkler Lesemodus")}
+  b.addEventListener("click",function(){
+    root.dataset.theme=root.dataset.theme==="dark"?"light":"dark";sync();
+    try{localStorage.setItem("fg-theme",root.dataset.theme)}catch(e){}
+  });
+  sync();
+})();
+/* Kopfzeile: Fortschritt, Titel nach dem Scrollen, aktiver Abschnitt links */
+(function(){
+  var top=document.querySelector(".top"),bar=document.querySelector(".progress span"),h1=document.querySelector(".head h1");
+  var links=[].slice.call(document.querySelectorAll(".toc a")),secs=links.map(function(a){return document.querySelector(a.getAttribute("href"))});
+  function tick(){
+    var d=document.documentElement,max=d.scrollHeight-d.clientHeight;
+    bar.style.width=(max>0?d.scrollTop/max*100:0)+"%";
+    top.classList.toggle("scrolled",h1.getBoundingClientRect().bottom<140);
+    var cur=0;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<170)cur=i});
+    links.forEach(function(a,i){a.classList.toggle("on",i===cur)});
+  }
+  var lead=document.querySelector(".lead-img");
+  function shrink(){
+    /* Bild wird beim Scrollen gleichmäßig kleiner, Seitenverhältnis bleibt (n26-Verhalten) */
+    var r=lead.getBoundingClientRect(),p=Math.min(Math.max((140-r.top)/r.height,0),1);
+    lead.style.setProperty("--s",(1-p*.45).toFixed(3));
+  }
+  addEventListener("scroll",function(){tick();shrink()},{passive:true});tick();shrink();
+})();
+
+/* D1: Bodenrichtwert-Etikett und Bodenanteil der Wohnung */
+(function(){
+  var root=document.getElementById("g-bodenrichtwert");if(!root)return;
+  var NS="http://www.w3.org/2000/svg",map=root.querySelector(".dd1-map"),plan=root.querySelector(".dd1-plan");
+  function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e}
+  var T={
+    w:"<b>2.700</b>: der Bodenrichtwert in Euro pro Quadratmeter Grundstücksfläche. Er gilt für ein typisches, unbebautes Grundstück dieser Zone und stammt aus tatsächlich gezahlten Kaufpreisen.",
+    n:"<b>W</b>: die Art der Nutzung, hier Wohnbaufläche. M steht für gemischte Bauflächen, G für gewerbliche.",
+    g:"<b>GFZ 2,5</b>: die Geschossflächenzahl, also wie dicht gebaut werden darf. Darf auf einem Grundstück mehr gebaut werden, ist es mehr wert. Für Abweichungen gibt es Umrechnungskoeffizienten.",
+    s:"<b>01.01.2026</b>: der Stichtag, auf den sich der Wert bezieht. Liegt er lange zurück, kann sich der Markt seither verändert haben.",
+    e:"<b>baureif</b>: der Entwicklungszustand. Für Bauerwartungsland oder Ackerland gelten ganz andere Werte."
+  };
+  // Zonen der Karte
+  [["0,0 170,0 150,110 0,95","var(--c-hum)","3.800"],["170,0 420,0 420,80 260,120 150,110","var(--c-mid)","2.700"],["0,95 150,110 175,250 0,250","color-mix(in srgb,var(--c-hum) 55%,var(--bg))","2.400"],["150,110 260,120 420,80 420,250 175,250","color-mix(in srgb,var(--c-mid) 55%,var(--bg))","2.500"]].forEach(function(z,i){
+    el("polygon",{points:z[0],fill:z[1],"class":"zn"+(i===1?" sel":"")},map);
+  });
+  el("path",{d:"M0,170 C120,160 260,150 420,170",stroke:"var(--bg)","stroke-width":10,fill:"none"},map);
+  el("path",{d:"M215,0 L230,250",stroke:"var(--bg)","stroke-width":8,fill:"none"},map);
+  var lab=el("g",{},map);
+  el("rect",{x:262,y:22,width:136,height:44,fill:"var(--bg)",stroke:"var(--ink)","stroke-width":1.5},lab);
+  el("text",{x:270,y:40},lab).textContent="2.700  W  GFZ 2,5";
+  el("text",{x:270,y:57},lab).textContent="01.01.2026  baureif";
+  el("line",{x1:300,y1:66,x2:290,y2:96,stroke:"var(--ink)","stroke-width":1.2},map);
+  el("circle",{cx:290,cy:96,r:3,fill:"var(--ink)"},map);
+  [["3.800",60,50],["2.400",60,210],["2.500",320,200]].forEach(function(t){var x=el("text",{x:t[1],y:t[2]},map);x.textContent=t[0];x.setAttribute("fill","var(--muted)")});
+  var info=root.querySelector(".dd1-info");
+  function tag(k){root.querySelectorAll("[data-t]").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.t===k))});info.innerHTML=T[k]}
+  root.querySelectorAll("[data-t]").forEach(function(b){b.addEventListener("click",function(){tag(b.dataset.t)})});
+  tag("w");
+  // Lageplan: Grundstück als Rechteck, Haus darauf, Anteil der Wohnung als Streifen
+  var plot=el("rect",{x:20,y:20,width:260,height:160,"class":"plot"},plan);
+  var mine=el("rect",{x:20,y:20,width:0,height:160,"class":"mine"},plan);
+  el("rect",{x:80,y:55,width:140,height:85,"class":"bld"},plan);
+  el("text",{x:150,y:102,"text-anchor":"middle"},plan).textContent="Haus";
+  var cap1=el("text",{x:20,y:200},plan),cap2=el("text",{x:20,y:218},plan);
+  var de=function(v){return Math.round(v).toLocaleString("de-DE")};
+  function calc(){
+    var f=+root.querySelector("#dd1-f").value,b=+root.querySelector("#dd1-b").value,m=+root.querySelector("#dd1-m").value,k=+root.querySelector("#dd1-k").value;
+    var bw=f*b,anteil=bw*m/1000,q=Math.min(anteil/k,1),qm=f*m/1000;
+    root.querySelector(".dd1-fo").textContent=de(f)+" m²";
+    root.querySelector(".dd1-bo").textContent=de(b)+" €";
+    root.querySelector(".dd1-mo").textContent=m+"/1.000";
+    root.querySelector(".dd1-ko").textContent=de(k)+" €";
+    mine.setAttribute("width",(260*m/1000).toFixed(1));
+    cap1.textContent="Grundstück "+de(f)+" m², davon rechnerisch Ihr Anteil:";
+    cap2.textContent=de(qm)+" m² Boden (gold markiert)";
+    root.querySelector(".dd1-chain").innerHTML=
+      "<li><span>Bodenwert: "+de(f)+" m² × "+de(b)+" €</span><b>"+de(bw)+" €</b></li>"+
+      "<li><span>Ihr Bodenwertanteil: × "+m+"/1.000</span><b>"+de(anteil)+" €</b></li>"+
+      "<li><span>Anteil am Kaufpreis von "+de(k)+" €</span><b>"+Math.round(q*100)+" % Boden</b></li>"+
+      "<li><span>Gebäudeanteil, Grundlage der Abschreibung</span><b>"+(100-Math.round(q*100))+" % · "+de(Math.max(k-anteil,0))+" €</b></li>";
+  }
+  root.querySelectorAll("input").forEach(function(i){i.addEventListener("input",calc)});
+  calc();
+})();
+</script>
+</body>
+</html>

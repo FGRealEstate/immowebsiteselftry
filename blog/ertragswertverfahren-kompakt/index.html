@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ertragswertverfahren und Sachwertverfahren einfach erklärt</title>
+<meta name="description" content="Wie Gutachter den Immobilienwert über Ertrag oder Herstellungskosten ermitteln, wann welches Verfahren gilt und wie die Rechnung aussieht.">
+<link rel="canonical" href="https://fg-realestate.de/blog/ertragswertverfahren-kompakt/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Fischer &amp; Geserich Real Estate">
+<meta property="og:title" content="Ertragswertverfahren und Sachwertverfahren einfach erklärt">
+<meta property="og:description" content="Wie Gutachter den Immobilienwert über Ertrag oder Herstellungskosten ermitteln, wann welches Verfahren gilt und wie die Rechnung aussieht.">
+<meta property="og:url" content="https://fg-realestate.de/blog/ertragswertverfahren-kompakt/">
+<meta property="og:image" content="https://fg-realestate.de/blog/ertragswertverfahren-kompakt/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Blogartikel, Live-Fassung aus _build/live.py -->
+<script>
+/* Lesemodus vor dem ersten Zeichnen setzen, sonst blitzt die helle Seite auf */
+try{var t=localStorage.getItem("fg-theme");if(t)document.documentElement.dataset.theme=t;else if(matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.dataset.theme="dark"}catch(e){}
+</script>
+<link rel="stylesheet" href="../muster.css">
+<style>
+/* D2: zwei Rechenflüsse nebeneinander, Ertragswert und Sachwert, jeder Schritt ein Kasten mit Rechenzeichen davor. Je Verfahren zwei Regler (Liegenschaftszins und Restnutzungsdauer, Alter und Sachwertfaktor); unter dem Ertragswert ein Zinsfächer, der zeigt, wie stark der Wert am Zins hängt */
+.sub-h{margin:1.8em 0 .5em;font-size:1.12rem;line-height:1.3;font-weight:700}
+.dd2-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px 26px;align-items:start}
+.dd2-col h4{margin:0 0 2px;font-size:.95rem}
+.dd2-col .use{margin:0 0 10px;font-size:.76rem;color:var(--muted)}
+.dd2-flow{list-style:none;margin:0 0 10px;padding:0;font-size:.8rem;font-variant-numeric:tabular-nums}
+.dd2-flow li{display:grid;grid-template-columns:22px 1fr auto;gap:6px;align-items:center;padding:6px 8px;margin:0 0 3px;background:var(--soft)}
+.dd2-flow li i{font-style:normal;font-weight:700;text-align:center;color:var(--muted)}
+.dd2-flow li b{font-weight:700}
+.dd2-flow li.sum{background:var(--c-hum);color:var(--on-hum)}
+.dd2-flow li.sum i{color:var(--on-hum)}
+.dd2-flow li.end{background:var(--accent);color:var(--on-accent);font-size:.9rem}
+.dd2-flow li.end i{color:var(--on-accent)}
+.dd2-ctl{display:grid;grid-template-columns:1fr auto;gap:2px 10px;margin:0 0 8px;font-size:.8rem}
+.dd2-ctl input{grid-column:1/-1;width:100%;accent-color:var(--gold)}
+.dd2-ctl output{font-weight:700;font-variant-numeric:tabular-nums}
+.dd2-fan{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;align-items:end;height:92px;margin:24px 0 2px}
+.dd2-fan div{background:var(--c-mid);position:relative;min-height:2px}
+.dd2-fan div.on{background:var(--gold)}
+.dd2-fan div span{position:absolute;top:-15px;left:50%;transform:translateX(-50%);font-size:.6rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+.dd2-fax{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;font-size:.66rem;text-align:center;color:var(--muted)}
+.dd2-fh{margin:12px 0 18px;font-size:.76rem;color:var(--muted)}
+.dd2-x{margin:0;font-size:.82rem;line-height:1.45;padding:8px 10px;border-left:3px solid var(--c-mid)}
+@media (max-width:640px){.dd2-wrap{grid-template-columns:1fr}}
+</style>
+<script type="application/ld+json">
+[
+ {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Ertragswertverfahren und Sachwertverfahren Schritt für Schritt erklärt",
+  "description": "Wie Gutachter den Immobilienwert über Ertrag oder Herstellungskosten ermitteln, wann welches Verfahren gilt und wie die Rechnung aussieht.",
+  "inLanguage": "de-DE",
+  "url": "https://fg-realestate.de/blog/ertragswertverfahren-kompakt/",
+  "image": "https://fg-realestate.de/blog/ertragswertverfahren-kompakt/og.jpg",
+  "datePublished": "2026-11-05",
+  "dateModified": "2026-11-05",
+  "author": {
+   "@type": "Organization",
+   "name": "Fischer & Geserich Real Estate GmbH"
+  },
+  "publisher": {
+   "@type": "Organization",
+   "name": "Fischer & Geserich Real Estate GmbH"
+  }
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Was ist das Ertragswertverfahren?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Ein Verfahren der Immobilienbewertung nach der ImmoWertV, das den Wert aus den künftigen Mieteinnahmen ableitet. Vom Rohertrag werden die Bewirtschaftungskosten und die Bodenwertverzinsung abgezogen, der verbleibende Gebäudereinertrag wird über die Restnutzungsdauer kapitalisiert und der Bodenwert hinzugerechnet. Es wird vor allem für vermietete Immobilien genutzt."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Was ist das Sachwertverfahren?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Ein Verfahren, das den Wert aus den Kosten ableitet, das Gebäude heute neu zu errichten, abzüglich der Alterung, zuzüglich Außenanlagen und Bodenwert. Das Ergebnis wird über einen Sachwertfaktor an den Markt angepasst. Es wird vor allem für selbst genutzte Ein- und Zweifamilienhäuser genutzt."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Was ist der Liegenschaftszinssatz?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Der Zinssatz, mit dem Immobilienkäufer im jeweiligen Markt rechnen. Er wird von den Gutachterausschüssen aus tatsächlichen Verkäufen abgeleitet und im Ertragswertverfahren zur Kapitalisierung genutzt. Je niedriger der Zinssatz, desto höher der Wert im Verhältnis zur Miete."
+    }
+   }
+  ]
+ }
+]
+</script>
+<link rel="stylesheet" href="/vendor/cookieconsent/cookieconsent.css">
+<link rel="stylesheet" href="/consent-manager.css">
+<script>window.FG_GTM_ID = "GTM-5DVGRHB2";</script>
+<script defer src="/vendor/cookieconsent/cookieconsent.umd.js"></script>
+<script defer src="/consent-manager.js"></script>
+</head>
+<body>
+
+<header class="top">
+  <nav class="site-nav" aria-label="Hauptnavigation">
+    <div class="nav-row">
+      <a class="brand" href="https://fg-realestate.de/index.html"><img src="/images/fg-logo-gold-transparent.png" alt="Fischer &amp; Geserich Real Estate" width="54" height="54"><span class="gold-text long">Fischer &amp; Geserich Real Estate</span><span class="gold-text short">Fischer &amp; Geserich<br>Real Estate</span></a>
+      <div class="nav-links">
+        <a href="https://fg-realestate.de/index.html">Start</a>
+        <div class="nav-group"><a href="https://fg-realestate.de/angebote.html" aria-haspopup="true">Kaufen<span class="caret"></span></a>
+          <div class="nav-sub">
+            <a href="https://fg-realestate.de/angebote.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M10 21v-3h4v3"/></svg></i><span><strong>Angebote</strong><small>Aktuelle Objekte</small></span></a>
+            <a href="https://fg-realestate.de/ankaufsberatung.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l4-4 4 2 3-3 7 6-3 3"/><path d="M7 8l-4 4 6 6 2-2M11 16l2 2 2-2M13 14l2 2 2-2"/></svg></i><span><strong>Ankaufsberatung</strong><small>Begleitung beim Kauf</small></span></a>
+          </div></div>
+        <a href="https://fg-realestate.de/verkaufen.html">Verkaufen</a>
+        <a href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierung</a>
+        <div class="nav-group"><a href="https://fg-realestate.de/investment-lab.html" aria-haspopup="true">Investment Lab<span class="caret"></span></a>
+          <div class="nav-sub">
+            <a href="https://fg-realestate.de/investment-lab.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M7 15h10"/></svg></i><span><strong>Investment Lab</strong><small>Rechner und Werkzeuge</small></span></a>
+            <a href="https://fg-realestate.de/standorte/"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg></i><span><strong>Standorte</strong><small>16 Standortanalysen</small></span></a>
+            <a href="https://fg-realestate.de/lexikon/"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4zM20 4h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6z"/></svg></i><span><strong>Lexikon</strong><small>Begriffe erklärt</small></span></a>
+          </div></div>
+        <a href="https://fg-realestate.de/ueber-uns.html">Über uns</a>
+        <a href="../" class="on" aria-current="page">Blog</a>
+        <a href="https://fg-realestate.de/kontakt.html" class="nav-contact">Kontakt</a>
+      </div>
+      <button class="burger" type="button" aria-label="Menü" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+    <div class="mobile-menu">
+      <a href="https://fg-realestate.de/index.html">Start</a>
+      <p>Kaufen</p><a href="https://fg-realestate.de/angebote.html">Angebote</a><a href="https://fg-realestate.de/ankaufsberatung.html">Ankaufsberatung</a>
+      <p>Leistungen</p><a href="https://fg-realestate.de/verkaufen.html">Verkaufen</a><a href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierung</a>
+      <p>Investment Lab</p><a href="https://fg-realestate.de/investment-lab.html">Investment Lab</a><a href="https://fg-realestate.de/standorte/">Standorte</a><a href="https://fg-realestate.de/lexikon/">Lexikon</a>
+      <p>Unternehmen</p><a href="https://fg-realestate.de/ueber-uns.html">Über uns</a><a href="../" class="here">Blog</a><a href="https://fg-realestate.de/kontakt.html" class="m-contact">Kontakt</a>
+    </div>
+  </nav>
+  <div class="subbar">
+    <div class="subbar-row">
+      <a class="sb-home" href="../">Blog</a>
+      <div class="where">Ertragswert- und Sachwertverfahren</div>
+      <div class="sb-right">
+        <details class="cat-menu"><summary>Kategorien<span class="caret"></span></summary><nav>
+          <a href="../">Alle Artikel</a><a href="../#finanzierung">Finanzierung</a><a href="../#steuern">Steuern</a><a href="../#kauf-kapitalanlage">Kauf &amp; Kapitalanlage</a><a href="../#bewertung-markt" class="on">Bewertung &amp; Markt</a>
+        </nav></details>
+        <button class="icon-btn theme-btn" type="button" aria-label="Dunkler Lesemodus" aria-pressed="false" title="Lesemodus"><svg class="moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      </div>
+    </div>
+    <div class="progress"><span></span></div>
+  </div>
+</header>
+
+<nav class="crumbs" aria-label="Brotkrumen"><a href="../">Blog</a><i>•</i><a href="../#bewertung-markt">Bewertung &amp; Markt</a><i>•</i><span>Ertragswert- und Sachwertverfahren</span></nav>
+<div class="lead">
+  <figure class="lead-img" data-wait="Bild folgt">
+    <img src="lead.jpg" alt="Zwei Radierungen nebeneinander: links ein Mietshaus, aus dessen Fenstern Münzen in eine Schale fallen, rechts dasselbe Haus im Rohbau mit Gerüst" width="1536" height="1024" onerror="this.parentNode.classList.add('missing')">
+  </figure>
+</div>
+<div class="head">
+  <a class="tag" href="../#bewertung-markt">Bewertung &amp; Markt</a>
+  <h1>Ertragswert&shy;verfahren und Sachwert&shy;verfahren Schritt für Schritt erklärt</h1>
+  <p class="dateline"><span>Stand: Oktober 2026</span><span class="by">Von Fischer &amp; Geserich Real Estate</span></p>
+  <span class="pill">6 Min. Lesezeit</span>
+</div>
+
+<div class="cols">
+
+  <nav class="toc" aria-label="Inhalt">
+    <p class="toc-h">Inhalt</p>
+    <a href="#welches-verfahren-wann-gilt">Welches Verfahren wann gilt</a>
+    <a href="#das-ertragswertverfahren">Das Ertragswertverfahren</a>
+    <a href="#das-sachwertverfahren">Das Sachwertverfahren</a>
+    <a href="#was-sie-daraus-mitnehmen">Was Sie daraus mitnehmen</a>
+    <a href="#die-einschaetzung-von-fischer-geserich">Die Einschätzung von Fischer &amp; Geserich</a>
+    <a href="#fragen">Häufige Fragen</a>
+  </nav>
+
+  <article class="body">
+    <p class="answer">In Deutschland gibt es drei anerkannte Verfahren zur Ermittlung des Verkehrswerts einer Immobilie, geregelt in der Immobilienwertermittlungsverordnung (ImmoWertV). Das Ertragswertverfahren leitet den Wert aus den Mieteinnahmen ab und wird für vermietete Immobilien wie Mehrfamilienhäuser genutzt. Das Sachwertverfahren rechnet mit den Kosten, das Gebäude neu zu errichten, abzüglich Alterung, und wird vor allem für selbst genutzte Ein- und Zweifamilienhäuser angewendet. Das dritte, das Vergleichswertverfahren, nutzt Kaufpreise vergleichbarer Objekte.</p>
+    <div class="kurz"><p class="kurz-h">Das Wichtigste in Kürze</p><ul><li>Ertragswertverfahren für vermietete Objekte, Sachwertverfahren für selbst genutzte Häuser, Vergleichswertverfahren meist für Eigentumswohnungen, bei vermieteten auch das Ertragswertverfahren.</li><li>Die wichtigste Stellschraube im Ertragswert ist der Liegenschaftszinssatz.</li><li>Im Sachwert wird das Ergebnis über den Sachwertfaktor an den Markt angepasst.</li></ul></div>
+    <figure class="chart" id="g-wertverfahren">
+      <h3>Zwei Wege zum Wert</h3>
+      <p class="sub">Die beiden Rechenbeispiele als Rechenfluss. Verschieben Sie die Annahmen und sehen Sie, wie stark das Ergebnis an ihnen hängt.</p>
+      <div class="dd2-wrap">
+        <div class="dd2-col">
+          <h4>Ertragswertverfahren</h4>
+          <p class="use">für vermietete Objekte, hier ein Mehrfamilienhaus in Berlin</p>
+          <ol class="dd2-flow dd2-e" aria-live="polite"></ol>
+          <div class="dd2-ctl"><label for="dd2-z">Liegenschaftszinssatz</label><output class="dd2-zo"></output><input id="dd2-z" type="range" min="2" max="5" step="0.25" value="3"></div>
+          <div class="dd2-ctl"><label for="dd2-n">Restnutzungsdauer</label><output class="dd2-no"></output><input id="dd2-n" type="range" min="20" max="60" step="5" value="40"></div>
+          <div class="dd2-fan" aria-hidden="true"></div>
+          <div class="dd2-fax" aria-hidden="true"></div>
+          <p class="dd2-fh">Vorläufiger Ertragswert je Liegenschaftszinssatz, bei gleicher Miete</p>
+        </div>
+        <div class="dd2-col">
+          <h4>Sachwertverfahren</h4>
+          <p class="use">für selbst genutzte Häuser, hier ein Einfamilienhaus im Berliner Umland</p>
+          <ol class="dd2-flow dd2-s" aria-live="polite"></ol>
+          <div class="dd2-ctl"><label for="dd2-a">Alter des Hauses</label><output class="dd2-ao"></output><input id="dd2-a" type="range" min="0" max="60" step="5" value="30"></div>
+          <div class="dd2-ctl"><label for="dd2-f">Sachwertfaktor</label><output class="dd2-fo"></output><input id="dd2-f" type="range" min="0.8" max="1.4" step="0.05" value="1.05"></div>
+          <p class="dd2-x"></p>
+        </div>
+      </div>
+      <p class="credit">Vereinfachte Beispielrechnungen nach der Immobilienwertermittlungsverordnung · Gesamtnutzungsdauer 80 Jahre, Alterswertminderung linear · Grafik: Fischer &amp; Geserich</p>
+    </figure>
+    <h2 id="welches-verfahren-wann-gilt">Welches Verfahren wann gilt</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild1.jpg" alt="Tangram-Teile aus lackiertem Holz, gelegt zu einem Mehrfamilienhaus, einem Einfamilienhaus und einer einzelnen Wohnung" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Welches Verfahren ein Gutachter wählt, hängt davon ab, wie Käufer im jeweiligen Markt tatsächlich denken.</p>
+    <ul class="plain"><li>Wer ein <strong>Mehrfamilienhaus</strong> kauft, rechnet mit der Miete. Also bewertet der Gutachter über den Ertrag.</li><li>Wer ein <strong>Einfamilienhaus</strong> zum Selbstbewohnen kauft, vergleicht mit den Kosten, ein ähnliches Haus zu bauen. Also bewertet der Gutachter über den Sachwert.</li><li>Für <strong>Eigentumswohnungen</strong> gibt es meist genug Verkäufe in der Umgebung. Hier steht das Vergleichswertverfahren im Vordergrund. Wird eine Wohnung vermietet als Kapitalanlage verkauft, wird sie zusätzlich über den Ertrag bewertet.</li></ul>
+    <p>Oft werden zwei Verfahren parallel gerechnet, um das Ergebnis zu plausibilisieren.</p>
+    <h2 id="das-ertragswertverfahren">Das Ertragswertverfahren</h2>
+    <p>Die Logik: Eine Immobilie ist so viel wert, wie die Erträge, die sie in Zukunft bringt, heute wert sind.</p>
+    <div class="ways"><div><b class="w-h">1. Jahresrohertrag</b><p>Die marktüblich erzielbare Jahresnettokaltmiete.</p></div><div><b class="w-h">2. Bewirtschaftungskosten</b><p>Was der Eigentümer selbst trägt: Verwaltung, Instandhaltung, Mietausfallwagnis. Rohertrag minus Bewirtschaftungskosten ergibt den <strong>Reinertrag</strong>.</p></div><div><b class="w-h">3. Bodenwertverzinsung</b><p>Der Boden nutzt sich nicht ab und bleibt ewig erhalten. Ein Teil des Reinertrags ist deshalb seine Verzinsung, berechnet als Bodenwert mal Liegenschaftszinssatz. Diesen Anteil zieht man ab und erhält den <strong>Gebäudereinertrag</strong>.</p></div><div><b class="w-h">4. Kapitalisierung</b><p>Der Gebäudereinertrag wird über die <a class="inline" href="../restnutzungsdauergutachten-erklaert/">Restnutzungsdauer</a> des Gebäudes mit dem Liegenschaftszinssatz auf heute abgezinst. Dafür gibt es den Barwertfaktor.</p></div><div><b class="w-h">5. Bodenwert addieren</b><p>Gebäudeertragswert plus Bodenwert ergibt den vorläufigen Ertragswert. Besondere Umstände wie Sanierungsbedarf oder Leerstand werden danach als Zu- oder Abschläge berücksichtigt.</p></div></div>
+    <p>Der <strong>Liegenschaftszinssatz</strong> ist die entscheidende Stellschraube. Er drückt aus, mit welcher Verzinsung Käufer im jeweiligen Markt rechnen, und wird von den Gutachterausschüssen aus tatsächlichen Verkäufen abgeleitet. Ein niedriger Liegenschaftszins bedeutet einen hohen Wert im Verhältnis zur Miete, typisch für gefragte Großstadtlagen.</p>
+    <h3 class="sub-h">Rechenbeispiel Ertragswert</h3>
+    <p>Ein Mehrfamilienhaus in Berlin mit 500 Quadratmetern Wohnfläche bringt 60.000&nbsp;Euro Jahresnettokaltmiete, 10&nbsp;Euro pro Quadratmeter im Monat. Die Bewirtschaftungskosten betragen 20&nbsp;Prozent, der Bodenwert 400.000&nbsp;Euro, der Liegenschaftszinssatz 3&nbsp;Prozent, die Restnutzungsdauer 40 Jahre.</p>
+    <div class="ftab bill"><table>
+<thead><tr><th>Schritt</th><th class="n">Betrag</th></tr></thead>
+<tbody>
+<tr><td>Jahresrohertrag</td><td class="n">60.000&nbsp;€</td></tr>
+<tr><td>− Bewirtschaftungskosten (20&nbsp;%)</td><td class="n">12.000&nbsp;€</td></tr>
+<tr><td>= Reinertrag</td><td class="n">48.000&nbsp;€</td></tr>
+<tr><td>− Bodenwertverzinsung (3&nbsp;% × 400.000&nbsp;€)</td><td class="n">12.000&nbsp;€</td></tr>
+<tr><td>= Gebäudereinertrag</td><td class="n">36.000&nbsp;€</td></tr>
+<tr><td>× Barwertfaktor (40 Jahre, 3&nbsp;%)</td><td class="n">23,1148</td></tr>
+<tr><td>= Gebäudeertragswert</td><td class="n">832.132&nbsp;€</td></tr>
+<tr><td>+ Bodenwert</td><td class="n">400.000&nbsp;€</td></tr>
+<tr class="total"><td><strong>= vorläufiger Ertragswert</strong></td><td class="n"><strong>1.232.132&nbsp;€</strong></td></tr>
+</tbody></table></div>
+    <p>Läge der Liegenschaftszinssatz bei 4 statt 3&nbsp;Prozent, fiele der Wert auf rund 1.033.000&nbsp;Euro, bei 4,5&nbsp;Prozent auf rund 952.000&nbsp;Euro. Mit 3&nbsp;Prozent ergibt die Rechnung das 20,5-Fache der Jahresmiete, mit 4,5&nbsp;Prozent etwa das 16-Fache. Um das 16-Fache werden <a class="inline" href="../kaufpreisfaktor-richtig-einordnen/">Berliner Mehrfamilienhäuser</a> aktuell gehandelt, der Markt rechnet also eher mit 4,5 als mit 3&nbsp;Prozent. Deshalb lohnt bei jedem Gutachten der Blick darauf, mit welchem Zinssatz gerechnet wurde und woher er stammt.</p>
+    <h2 id="das-sachwertverfahren">Das Sachwertverfahren</h2>
+    <p>Die Logik: Eine Immobilie ist so viel wert, wie es kosten würde, sie heute neu zu bauen, abzüglich der Alterung, plus Grundstück, angepasst an das, was der Markt tatsächlich zahlt.</p>
+    <div class="tiles"><div><p><strong>1. Herstellungskosten.</strong> Was ein vergleichbares Gebäude heute kosten würde, ermittelt über standardisierte Kostenkennwerte pro Quadratmeter Brutto-Grundfläche, die auf das aktuelle Preisniveau hochgerechnet werden.</p></div><div><p><strong>2. Alterswertminderung.</strong> Weil das Gebäude nicht neu ist, wird eine Alterung abgezogen. Bei einer üblichen Gesamtnutzungsdauer von 80 Jahren für Wohngebäude und einem Alter von 30 Jahren werden 30/80, also 37,5&nbsp;Prozent abgezogen. Modernisierungen verlängern die Restnutzungsdauer und verringern den Abzug.</p></div><div><p><strong>3. Außenanlagen und Boden.</strong> Garage, Wege, Einfriedung werden pauschal oder einzeln hinzugerechnet, dazu der Bodenwert.</p></div><div><p><strong>4. Marktanpassung.</strong> Das Ergebnis, der vorläufige Sachwert, sagt noch nicht, was Käufer zahlen. Dafür gibt es den Sachwertfaktor, den die Gutachterausschüsse aus Verkäufen ableiten. Liegt er über 1, zahlen Käufer mehr, als Gebäude und Boden rechnerisch kosten, liegt er darunter, weniger. Im Berliner Umland lagen die Sachwertfaktoren für Einfamilienhäuser 2025 je nach Landkreis und Preisniveau im Mittel zwischen etwa 0,9 und 1,06.</p></div></div>
+    <h3 class="sub-h">Rechenbeispiel Sachwert</h3>
+    <p>Ein Einfamilienhaus im Berliner Umland, etwa in Potsdam-Mittelmark, mit 200 Quadratmetern Brutto-Grundfläche, 30 Jahre alt, auf einem Grundstück mit 600 Quadratmetern bei einem Bodenrichtwert von 500&nbsp;Euro. Die Herstellungskosten werden im Beispiel mit 2.000&nbsp;Euro pro Quadratmeter angesetzt, ein Wert für ein Haus mit gehobener Ausstattung.</p>
+    <div class="ftab bill"><table>
+<thead><tr><th>Schritt</th><th class="n">Betrag</th></tr></thead>
+<tbody>
+<tr><td>Herstellungskosten (200 m² × 2.000&nbsp;€)</td><td class="n">400.000&nbsp;€</td></tr>
+<tr><td>− Alterswertminderung (30/80 = 37,5&nbsp;%)</td><td class="n">150.000&nbsp;€</td></tr>
+<tr><td>= Zeitwert des Gebäudes</td><td class="n">250.000&nbsp;€</td></tr>
+<tr><td>+ Außenanlagen (4&nbsp;%)</td><td class="n">10.000&nbsp;€</td></tr>
+<tr><td>+ Bodenwert (600 m² × 500&nbsp;€)</td><td class="n">300.000&nbsp;€</td></tr>
+<tr><td>= vorläufiger Sachwert</td><td class="n">560.000&nbsp;€</td></tr>
+<tr><td>× Sachwertfaktor 1,05</td><td class="n"></td></tr>
+<tr class="total"><td><strong>= Sachwert</strong></td><td class="n"><strong>588.000&nbsp;€</strong></td></tr>
+</tbody></table></div>
+    <h2 id="was-sie-daraus-mitnehmen">Was Sie daraus mitnehmen</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild2.jpg" alt="Kugelschreiberzeichnung eines Hauses auf vier Wagenhebern, einer ist höher geschraubt als die anderen" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Beide Verfahren sind keine Formeln, die einen objektiven Wert ausspucken. Sie hängen an Annahmen: Liegenschaftszins, Bewirtschaftungskosten, Restnutzungsdauer, Sachwertfaktor. Wer ein Gutachten liest, sollte diese Annahmen prüfen, und wer einen Kaufpreis beurteilt, sollte wissen, mit welchem Verfahren der Markt in diesem Segment rechnet.</p>
+    <section class="pos">
+    <h2 id="die-einschaetzung-von-fischer-geserich">Die Einschätzung von Fischer &amp; Geserich</h2>
+    <p>Bei Mehrfamilienhäusern rechnen wir den Ertragswert immer selbst nach, mit Ist-Miete und realistischen Kosten. Bei Häusern ziehen wir den Sachwert und die Vergleichspreise der Umgebung heran. Für Eigentümer, die verkaufen wollen, ermitteln wir den Wert kostenlos und in der Regel noch am selben Tag.</p>
+    </section>
+
+    <div class="qa" id="fragen"><p class="qa-h">Häufige Fragen</p><details open><summary>Was ist das Ertragswertverfahren?</summary><div><p>Ein Verfahren der Immobilienbewertung nach der ImmoWertV, das den Wert aus den künftigen Mieteinnahmen ableitet. Vom Rohertrag werden die Bewirtschaftungskosten und die Bodenwertverzinsung abgezogen, der verbleibende Gebäudereinertrag wird über die Restnutzungsdauer kapitalisiert und der Bodenwert hinzugerechnet. Es wird vor allem für vermietete Immobilien genutzt.</p></div></details><details><summary>Was ist das Sachwertverfahren?</summary><div><p>Ein Verfahren, das den Wert aus den Kosten ableitet, das Gebäude heute neu zu errichten, abzüglich der Alterung, zuzüglich Außenanlagen und Bodenwert. Das Ergebnis wird über einen Sachwertfaktor an den Markt angepasst. Es wird vor allem für selbst genutzte Ein- und Zweifamilienhäuser genutzt.</p></div></details><details><summary>Was ist der Liegenschaftszinssatz?</summary><div><p>Der Zinssatz, mit dem Immobilienkäufer im jeweiligen Markt rechnen. Er wird von den Gutachterausschüssen aus tatsächlichen Verkäufen abgeleitet und im Ertragswertverfahren zur Kapitalisierung genutzt. Je niedriger der Zinssatz, desto höher der Wert im Verhältnis zur Miete.</p></div></details></div>
+
+    <aside class="cta" aria-label="Kostenlose Wertermittlung anfragen"><h3>Was ist Ihre Immobilie wert?</h3><p>Fischer &amp; Geserich ermittelt den Wert Ihrer Immobilie kostenlos, in der Regel noch am selben Tag. Wir bewerten Wohnungen, Häuser und Mehrfamilienhäuser in Berlin, im Berliner Umland und in Sachsen.</p><a class="btn" href="https://fg-realestate.de/finanzierungsberatung.html">Kostenlose Wertermittlung anfragen</a></aside>
+
+    <div class="end">
+      <div class="quellen"><h3>Quellen</h3><ul><li><a href="https://www.gesetze-im-internet.de/immowertv_2022/" target="_blank" rel="noopener">Immobilienwertermittlungsverordnung (ImmoWertV)</a></li><li><a href="https://www.gesetze-im-internet.de/immowertv_2022/anlage_1.html" target="_blank" rel="noopener">ImmoWertV, Anlage 1: Modellansätze für die Gesamtnutzungsdauer</a></li><li><a href="https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/adaten-zur-wertermittlung/05-02-010-2500.pdf" target="_blank" rel="noopener">Gutachterausschuss Berlin, Liegenschaftszinssätze für Mietwohnhäuser</a></li><li><a href="https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_PM.pdf" target="_blank" rel="noopener">Gutachterausschuss Potsdam-Mittelmark, Grundstücksmarktbericht 2025</a></li></ul></div>
+      <p class="note">Die Bilder in diesem Beitrag wurden mit KI erstellt.</p>
+      <p class="note">Der Beitrag dient der allgemeinen Information und ersetzt keine Rechts-, Steuer-, Finanzierungs- oder Anlageberatung. Zinssätze in Beispielrechnungen sind Beispielwerte, keine aktuellen Konditionen.</p>
+    </div>
+  </article>
+
+  <aside class="related" aria-label="Mehr zu Bewertung &amp; Markt">
+    <h2>Mehr zu Bewertung &amp; Markt</h2>
+    <a href="../bodenrichtwert-richtig-lesen/"><span class="rthumb"><img src="../bodenrichtwert-richtig-lesen/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Boden&shy;richtwert richtig lesen</strong></a>
+    <a href="../wohnflaechenberechnung-pruefen/"><span class="rthumb"><img src="../wohnflaechenberechnung-pruefen/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Wohnflächen&shy;berechnung prüfen</strong></a>
+  </aside>
+</div>
+
+<section class="more" aria-label="Weiterlesen">
+  <div class="more-in">
+    <h2>Weiterlesen</h2>
+    <p class="more-sub">Artikel, die hier anschließen</p>
+    <div class="cards">
+      <a class="card" href="../bodenrichtwert-richtig-lesen/">
+        <div class="thumb"><img src="../bodenrichtwert-richtig-lesen/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.parentNode.classList.add('missing')"></div>
+        <span class="kicker">Bewertung &amp; Markt</span>
+        <strong>Bodenrichtwert richtig lesen</strong>
+        <p>Was der Bodenrichtwert ist, wo Sie ihn finden, wie Sie die Angaben auf der Karte lesen und wofür Sie ihn beim Kauf einer Wohnung oder eines Hauses brauchen.</p>
+        
+      </a>
+      <a class="card" href="../kaufpreisfaktor-richtig-einordnen/">
+        <div class="thumb"><img src="../kaufpreisfaktor-richtig-einordnen/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.parentNode.classList.add('missing')"></div>
+        <span class="kicker">Kauf &amp; Kapitalanlage</span>
+        <strong>Kaufpreisfaktor und Mietmultiplikator</strong>
+        <p>Kaufpreisfaktor und Mietmultiplikator sind dieselbe Kennzahl. Wie Sie sie berechnen, richtig einordnen und warum die Ist-Miete entscheidet.</p>
+        
+      </a>
+    </div>
+    <a class="back" href="../">‹ Zurück zum Blog</a>
+  </div>
+</section>
+
+<footer><span>© 2026 Fischer &amp; Geserich Real Estate</span><span><a href="https://fg-realestate.de/impressum.html">Impressum</a> · <a href="https://fg-realestate.de/datenschutz.html">Datenschutz</a> · <a href="#" data-open-consent>Cookie-Einstellungen</a></span></footer>
+
+<script>
+/* Mobilmenü wie auf der Website */
+(function(){
+  var b=document.querySelector(".burger"),m=document.querySelector(".mobile-menu");
+  b.addEventListener("click",function(){var o=m.classList.toggle("open");b.setAttribute("aria-expanded",o)});
+})();
+/* Offene Menüs schließen bei Klick daneben oder mit Esc */
+(function(){
+  var cat=document.querySelector(".cat-menu"),b=document.querySelector(".burger"),m=document.querySelector(".mobile-menu");
+  function closeAll(e){
+    if(cat.open&&(!e||!cat.contains(e.target)))cat.open=false;
+    if(m.classList.contains("open")&&(!e||!(m.contains(e.target)||b.contains(e.target)))){m.classList.remove("open");b.setAttribute("aria-expanded",false)}
+  }
+  document.addEventListener("click",closeAll);
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeAll()});
+})();
+/* Umschalter heller / dunkler Lesemodus */
+(function(){
+  var root=document.documentElement,b=document.querySelector(".theme-btn");
+  function sync(){var d=root.dataset.theme==="dark";b.setAttribute("aria-pressed",d);b.setAttribute("aria-label",d?"Heller Lesemodus":"Dunkler Lesemodus")}
+  b.addEventListener("click",function(){
+    root.dataset.theme=root.dataset.theme==="dark"?"light":"dark";sync();
+    try{localStorage.setItem("fg-theme",root.dataset.theme)}catch(e){}
+  });
+  sync();
+})();
+/* Kopfzeile: Fortschritt, Titel nach dem Scrollen, aktiver Abschnitt links */
+(function(){
+  var top=document.querySelector(".top"),bar=document.querySelector(".progress span"),h1=document.querySelector(".head h1");
+  var links=[].slice.call(document.querySelectorAll(".toc a")),secs=links.map(function(a){return document.querySelector(a.getAttribute("href"))});
+  function tick(){
+    var d=document.documentElement,max=d.scrollHeight-d.clientHeight;
+    bar.style.width=(max>0?d.scrollTop/max*100:0)+"%";
+    top.classList.toggle("scrolled",h1.getBoundingClientRect().bottom<140);
+    var cur=0;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<170)cur=i});
+    links.forEach(function(a,i){a.classList.toggle("on",i===cur)});
+  }
+  var lead=document.querySelector(".lead-img");
+  function shrink(){
+    /* Bild wird beim Scrollen gleichmäßig kleiner, Seitenverhältnis bleibt (n26-Verhalten) */
+    var r=lead.getBoundingClientRect(),p=Math.min(Math.max((140-r.top)/r.height,0),1);
+    lead.style.setProperty("--s",(1-p*.45).toFixed(3));
+  }
+  addEventListener("scroll",function(){tick();shrink()},{passive:true});tick();shrink();
+})();
+
+/* D2: Ertragswert und Sachwert als Rechenfluss */
+(function(){
+  var root=document.getElementById("g-wertverfahren");if(!root)return;
+  var RO=60000,BWK=.2,BODEN_E=400000,HK=400000,AUSSEN=.04,BODEN_S=300000,GND=80;
+  var eu=function(v){return Math.round(v).toLocaleString("de-DE")+" €"};
+  var pc=function(v){return v.toLocaleString("de-DE",{minimumFractionDigits:2,maximumFractionDigits:2})};
+  function bwf(p,n){var q=1+p/100;return (Math.pow(q,n)-1)/(Math.pow(q,n)*(q-1))}
+  function ew(p,n){var re=RO*(1-BWK),bv=BODEN_E*p/100;return (re-bv)*bwf(p,n)+BODEN_E}
+  function li(op,t,v,c){return '<li'+(c?' class="'+c+'"':"")+'><i>'+op+'</i><span>'+t+'</span><b>'+v+'</b></li>'}
+  function ertrag(){
+    var p=+root.querySelector("#dd2-z").value,n=+root.querySelector("#dd2-n").value;
+    var re=RO*(1-BWK),bv=BODEN_E*p/100,gr=re-bv,f=bwf(p,n),gw=gr*f,w=gw+BODEN_E;
+    root.querySelector(".dd2-zo").textContent=pc(p)+" %";
+    root.querySelector(".dd2-no").textContent=n+" Jahre";
+    root.querySelector(".dd2-e").innerHTML=li("","Jahresrohertrag",eu(RO))+li("−","Bewirtschaftungskosten 20 %",eu(RO*BWK))+li("=","Reinertrag",eu(re),"sum")
+      +li("−","Bodenwertverzinsung "+pc(p)+" % × 400.000 €",eu(bv))+li("=","Gebäudereinertrag",eu(gr),"sum")
+      +li("×","Barwertfaktor ("+n+" Jahre, "+pc(p)+" %)",f.toLocaleString("de-DE",{minimumFractionDigits:4,maximumFractionDigits:4}))+li("=","Gebäudeertragswert",eu(gw),"sum")
+      +li("+","Bodenwert",eu(BODEN_E))+li("=","Vorläufiger Ertragswert",eu(w),"end")
+      +li("","entspricht dem Vielfachen der Jahresmiete",(w/RO).toLocaleString("de-DE",{maximumFractionDigits:1,minimumFractionDigits:1}));
+    var Z=[2,2.5,3,3.5,4,4.5,5],max=ew(2,n),fan=root.querySelector(".dd2-fan"),ax=root.querySelector(".dd2-fax");
+    fan.innerHTML=Z.map(function(z){var v=ew(z,n);return '<div class="'+(z===p?"on":"")+'" style="height:'+(v/max*100).toFixed(1)+'%"><span>'+(v/1e6).toLocaleString("de-DE",{maximumFractionDigits:2,minimumFractionDigits:2})+' Mio.</span></div>'}).join("");
+    ax.innerHTML=Z.map(function(z){return "<span>"+pc(z).replace(",00","").replace(/0$/,"")+" %</span>"}).join("");
+  }
+  function sach(){
+    var a=+root.querySelector("#dd2-a").value,sf=+root.querySelector("#dd2-f").value;
+    var awm=Math.min(a/GND,1),zw=HK*(1-awm),au=zw*AUSSEN,vs=zw+au+BODEN_S,sw=vs*sf;
+    root.querySelector(".dd2-ao").textContent=a+" Jahre";
+    root.querySelector(".dd2-fo").textContent=sf.toLocaleString("de-DE",{minimumFractionDigits:2,maximumFractionDigits:2});
+    root.querySelector(".dd2-s").innerHTML=li("","Herstellungskosten 200 m² × 2.000 €",eu(HK))+li("−","Alterswertminderung "+a+"/80 = "+(awm*100).toLocaleString("de-DE",{maximumFractionDigits:1})+" %",eu(HK*awm))
+      +li("=","Zeitwert des Gebäudes",eu(zw),"sum")+li("+","Außenanlagen 4 %",eu(au))+li("+","Bodenwert 600 m² × 500 €",eu(BODEN_S))
+      +li("=","Vorläufiger Sachwert",eu(vs),"sum")+li("×","Sachwertfaktor",sf.toLocaleString("de-DE",{minimumFractionDigits:2,maximumFractionDigits:2}))+li("=","Sachwert",eu(sw),"end");
+    root.querySelector(".dd2-x").textContent=sf>1?"Ein Sachwertfaktor über 1: Käufer zahlen in dieser Lage mehr, als Gebäude und Boden rechnerisch kosten.":sf<1?"Ein Sachwertfaktor unter 1: Käufer zahlen in dieser Lage weniger, als Gebäude und Boden rechnerisch kosten.":"Ein Sachwertfaktor von 1: Der Markt zahlt genau, was Gebäude und Boden rechnerisch kosten.";
+  }
+  root.querySelectorAll("#dd2-z,#dd2-n").forEach(function(i){i.addEventListener("input",ertrag)});
+  root.querySelectorAll("#dd2-a,#dd2-f").forEach(function(i){i.addEventListener("input",sach)});
+  ertrag();sach();
+})();
+</script>
+</body>
+</html>

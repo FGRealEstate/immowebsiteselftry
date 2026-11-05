@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brutto- vs. Nettomietrendite: richtig rechnen</title>
+<meta name="description" content="Wie Brutto- und Nettomietrendite berechnet werden, warum zwischen beiden oft mehr als ein Prozentpunkt liegt und welche Zahl Sie für eine Kaufentscheidung brauchen.">
+<link rel="canonical" href="https://fg-realestate.de/blog/brutto-vs-nettomietrendite/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Fischer &amp; Geserich Real Estate">
+<meta property="og:title" content="Brutto- vs. Nettomietrendite: richtig rechnen">
+<meta property="og:description" content="Wie Brutto- und Nettomietrendite berechnet werden, warum zwischen beiden oft mehr als ein Prozentpunkt liegt und welche Zahl Sie für eine Kaufentscheidung brauchen.">
+<meta property="og:url" content="https://fg-realestate.de/blog/brutto-vs-nettomietrendite/">
+<meta property="og:image" content="https://fg-realestate.de/blog/brutto-vs-nettomietrendite/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Blogartikel, Live-Fassung aus _build/live.py -->
+<script>
+/* Lesemodus vor dem ersten Zeichnen setzen, sonst blitzt die helle Seite auf */
+try{var t=localStorage.getItem("fg-theme");if(t)document.documentElement.dataset.theme=t;else if(matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.dataset.theme="dark"}catch(e){}
+</script>
+<link rel="stylesheet" href="../muster.css">
+<style>
+/* C5: zwei Halbkreis-Anzeigen von 0 bis 6 %, brutto und netto, Marke für den Beispielzins, Regler für die nicht umlagefähigen Kosten, darunter die beiden Brüche */
+.dc5-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.dc5-g{text-align:center}
+.dc5-g svg{display:block;width:100%;max-width:280px;height:auto;margin:0 auto}
+.dc5-g svg text{font-family:var(--font);fill:var(--ink)}
+.dc5-g .trk{fill:none;stroke:var(--soft);stroke-width:22}
+.dc5-g .arc{fill:none;stroke-width:22}
+.dc5-g .arc.b{stroke:var(--c-mid)}
+.dc5-g .arc.n{stroke:var(--gold)}
+.dc5-g .tk{stroke:var(--muted);stroke-width:1}
+.dc5-g .tl{font-size:10px;fill:var(--muted)}
+.dc5-g .zm{stroke:var(--warn);stroke-width:2.5}
+.dc5-g .zt{font-size:10px;fill:var(--warn);font-weight:700}
+.dc5-g .big{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums}
+.dc5-g h4{margin:4px 0 0;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:400}
+.dc5-frac{display:inline-grid;margin:8px auto 0;font-size:.82rem;font-variant-numeric:tabular-nums;line-height:1.35}
+.dc5-frac span:first-child{border-bottom:1.5px solid var(--ink);padding:0 4px 2px}
+.dc5-frac span:last-child{padding:2px 4px 0}
+.dc5-gap{margin:12px 0 0;text-align:center;font-size:.9rem}
+.dc5-gap b{font-variant-numeric:tabular-nums}
+.dc5-ctl{display:grid;grid-template-columns:auto 1fr auto;gap:6px 14px;align-items:center;margin:14px 0 0;font-size:.86rem}
+.dc5-ctl input{width:100%;accent-color:var(--gold)}
+.dc5-ctl output{font-weight:700;font-variant-numeric:tabular-nums}
+.dc5-cost{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0;padding:0;list-style:none;font-size:.78rem}
+.dc5-cost li{padding:3px 9px;border:1px solid var(--rule)}
+@media (max-width:620px){.dc5-wrap{grid-template-columns:1fr;gap:10px}.dc5-g svg{max-width:240px}.dc5-ctl{grid-template-columns:1fr auto}.dc5-ctl input{grid-column:1/-1}}
+</style>
+<script type="application/ld+json">
+[
+ {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Bruttomietrendite und Nettomietrendite richtig berechnen",
+  "description": "Wie Brutto- und Nettomietrendite berechnet werden, warum zwischen beiden oft mehr als ein Prozentpunkt liegt und welche Zahl Sie für eine Kaufentscheidung brauchen.",
+  "inLanguage": "de-DE",
+  "url": "https://fg-realestate.de/blog/brutto-vs-nettomietrendite/",
+  "image": "https://fg-realestate.de/blog/brutto-vs-nettomietrendite/og.jpg",
+  "datePublished": "2026-11-05",
+  "dateModified": "2026-11-05",
+  "author": {
+   "@type": "Organization",
+   "name": "Fischer & Geserich Real Estate GmbH"
+  },
+  "publisher": {
+   "@type": "Organization",
+   "name": "Fischer & Geserich Real Estate GmbH"
+  }
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Wie berechnet man die Bruttomietrendite?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Jahresnettokaltmiete geteilt durch Kaufpreis, mal 100. Bei 9.000 Euro Jahresmiete und 200.000 Euro Kaufpreis sind das 4,5 Prozent. Sie eignet sich zum schnellen Vergleich, berücksichtigt aber weder Kaufnebenkosten noch laufende Kosten des Eigentümers."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Wie berechnet man die Nettomietrendite?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Jahresnettokaltmiete minus nicht umlagefähige Kosten, geteilt durch Kaufpreis plus Kaufnebenkosten, mal 100. Im Beispiel: (9.000 − 1.300) ÷ 223.140 = 3,45 Prozent."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Welche Mietrendite ist gut?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Das hängt von der Lage ab. In Berlin sind Bruttorenditen von 3 bis 4,5 Prozent im Bestand üblich, in Kleinstädten im weiteren Berliner Umland deutlich mehr. Für die Kaufentscheidung zählt die Nettorendite im Vergleich zum Finanzierungszins und die Gesamtrechnung über die Haltedauer."
+    }
+   }
+  ]
+ }
+]
+</script>
+<link rel="stylesheet" href="/vendor/cookieconsent/cookieconsent.css">
+<link rel="stylesheet" href="/consent-manager.css">
+<script>window.FG_GTM_ID = "GTM-5DVGRHB2";</script>
+<script defer src="/vendor/cookieconsent/cookieconsent.umd.js"></script>
+<script defer src="/consent-manager.js"></script>
+</head>
+<body>
+
+<header class="top">
+  <nav class="site-nav" aria-label="Hauptnavigation">
+    <div class="nav-row">
+      <a class="brand" href="https://fg-realestate.de/index.html"><img src="/images/fg-logo-gold-transparent.png" alt="Fischer &amp; Geserich Real Estate" width="54" height="54"><span class="gold-text long">Fischer &amp; Geserich Real Estate</span><span class="gold-text short">Fischer &amp; Geserich<br>Real Estate</span></a>
+      <div class="nav-links">
+        <a href="https://fg-realestate.de/index.html">Start</a>
+        <div class="nav-group"><a href="https://fg-realestate.de/angebote.html" aria-haspopup="true">Kaufen<span class="caret"></span></a>
+          <div class="nav-sub">
+            <a href="https://fg-realestate.de/angebote.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M10 21v-3h4v3"/></svg></i><span><strong>Angebote</strong><small>Aktuelle Objekte</small></span></a>
+            <a href="https://fg-realestate.de/ankaufsberatung.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l4-4 4 2 3-3 7 6-3 3"/><path d="M7 8l-4 4 6 6 2-2M11 16l2 2 2-2M13 14l2 2 2-2"/></svg></i><span><strong>Ankaufsberatung</strong><small>Begleitung beim Kauf</small></span></a>
+          </div></div>
+        <a href="https://fg-realestate.de/verkaufen.html">Verkaufen</a>
+        <a href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierung</a>
+        <div class="nav-group"><a href="https://fg-realestate.de/investment-lab.html" aria-haspopup="true">Investment Lab<span class="caret"></span></a>
+          <div class="nav-sub">
+            <a href="https://fg-realestate.de/investment-lab.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M7 15h10"/></svg></i><span><strong>Investment Lab</strong><small>Rechner und Werkzeuge</small></span></a>
+            <a href="https://fg-realestate.de/standorte/"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg></i><span><strong>Standorte</strong><small>16 Standortanalysen</small></span></a>
+            <a href="https://fg-realestate.de/lexikon/"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4zM20 4h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6z"/></svg></i><span><strong>Lexikon</strong><small>Begriffe erklärt</small></span></a>
+          </div></div>
+        <a href="https://fg-realestate.de/ueber-uns.html">Über uns</a>
+        <a href="../" class="on" aria-current="page">Blog</a>
+        <a href="https://fg-realestate.de/kontakt.html" class="nav-contact">Kontakt</a>
+      </div>
+      <button class="burger" type="button" aria-label="Menü" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+    <div class="mobile-menu">
+      <a href="https://fg-realestate.de/index.html">Start</a>
+      <p>Kaufen</p><a href="https://fg-realestate.de/angebote.html">Angebote</a><a href="https://fg-realestate.de/ankaufsberatung.html">Ankaufsberatung</a>
+      <p>Leistungen</p><a href="https://fg-realestate.de/verkaufen.html">Verkaufen</a><a href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierung</a>
+      <p>Investment Lab</p><a href="https://fg-realestate.de/investment-lab.html">Investment Lab</a><a href="https://fg-realestate.de/standorte/">Standorte</a><a href="https://fg-realestate.de/lexikon/">Lexikon</a>
+      <p>Unternehmen</p><a href="https://fg-realestate.de/ueber-uns.html">Über uns</a><a href="../" class="here">Blog</a><a href="https://fg-realestate.de/kontakt.html" class="m-contact">Kontakt</a>
+    </div>
+  </nav>
+  <div class="subbar">
+    <div class="subbar-row">
+      <a class="sb-home" href="../">Blog</a>
+      <div class="where">Brutto- vs. Nettomietrendite</div>
+      <div class="sb-right">
+        <details class="cat-menu"><summary>Kategorien<span class="caret"></span></summary><nav>
+          <a href="../">Alle Artikel</a><a href="../#finanzierung">Finanzierung</a><a href="../#steuern">Steuern</a><a href="../#kauf-kapitalanlage" class="on">Kauf &amp; Kapitalanlage</a><a href="../#bewertung-markt">Bewertung &amp; Markt</a>
+        </nav></details>
+        <button class="icon-btn theme-btn" type="button" aria-label="Dunkler Lesemodus" aria-pressed="false" title="Lesemodus"><svg class="moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      </div>
+    </div>
+    <div class="progress"><span></span></div>
+  </div>
+</header>
+
+<nav class="crumbs" aria-label="Brotkrumen"><a href="../">Blog</a><i>•</i><a href="../#kauf-kapitalanlage">Kauf &amp; Kapitalanlage</a><i>•</i><span>Brutto- vs. Nettomietrendite</span></nav>
+<div class="lead">
+  <figure class="lead-img" data-wait="Bild folgt">
+    <img src="lead.jpg" alt="Zwei Briefmarken mit demselben Haus, die große prächtig verziert, die kleinere schlicht" width="1536" height="1024" onerror="this.parentNode.classList.add('missing')">
+  </figure>
+</div>
+<div class="head">
+  <a class="tag" href="../#kauf-kapitalanlage">Kauf &amp; Kapitalanlage</a>
+  <h1>Bruttomietrendite und Nettomietrendite richtig berechnen</h1>
+  <p class="dateline"><span>Stand: Oktober 2026</span><span class="by">Von Fischer &amp; Geserich Real Estate</span></p>
+  <span class="pill">4 Min. Lesezeit</span>
+</div>
+
+<div class="cols">
+
+  <nav class="toc" aria-label="Inhalt">
+    <p class="toc-h">Inhalt</p>
+    <a href="#die-bruttomietrendite">Die Bruttomietrendite</a>
+    <a href="#die-nettomietrendite">Die Nettomietrendite</a>
+    <a href="#rechenbeispiel">Rechenbeispiel</a>
+    <a href="#warum-sie-beide-werte-brauchen">Warum Sie beide Werte brauchen</a>
+    <a href="#die-einschaetzung-von-fischer-geserich">Die Einschätzung von Fischer &amp; Geserich</a>
+    <a href="#fragen">Häufige Fragen</a>
+  </nav>
+
+  <article class="body">
+    <p class="answer">Die Bruttomietrendite ist die Jahresnettokaltmiete geteilt durch den Kaufpreis. Sie eignet sich für den schnellen Vergleich von Angeboten. Die Nettomietrendite zieht von der Miete die Kosten ab, die der Eigentümer selbst trägt, und rechnet auf den Kaufpreis die Kaufnebenkosten auf. Sie zeigt, was die Immobilie tatsächlich abwirft, und liegt meist ein bis eineinhalb Prozentpunkte unter der Bruttorendite.</p>
+    <div class="kurz"><p class="kurz-h">Das Wichtigste in Kürze</p><ul><li>Bruttomietrendite = Jahresnettokaltmiete ÷ Kaufpreis.</li><li>Nettomietrendite = (Jahresnettokaltmiete − nicht umlagefähige Kosten) ÷ (Kaufpreis + Kaufnebenkosten).</li><li>Im Beispiel liegen 4,50&nbsp;% brutto und 3,45&nbsp;% netto auseinander.</li></ul></div>
+    <figure class="chart" id="g-mr">
+      <h3>Was die Wohnung brutto verspricht und netto abwirft</h3>
+      <p class="sub">Dieselbe Wohnung zweimal gemessen. Die rote Marke zeigt den Beispielzins von 4 %.</p>
+      <div class="dc5-wrap">
+        <div class="dc5-g"><svg viewBox="0 0 240 150" data-g="b"></svg><h4>Bruttomietrendite</h4><div class="dc5-frac"><span>9.000 € Jahresmiete</span><span>200.000 € Kaufpreis</span></div></div>
+        <div class="dc5-g"><svg viewBox="0 0 240 150" data-g="n"></svg><h4>Nettomietrendite</h4><div class="dc5-frac"><span class="dc5-z">9.000 € − 1.300 € Kosten</span><span>223.140 € mit Nebenkosten</span></div></div>
+      </div>
+      <p class="dc5-gap" aria-live="polite">Abstand: <b class="dc5-d"></b></p>
+      <div class="dc5-ctl"><label for="dc5-k">Nicht umlagefähige Kosten im Jahr</label><input id="dc5-k" type="range" min="600" max="2400" step="100" value="1300"><output for="dc5-k" class="dc5-o">1.300 €</output></div>
+      <ul class="dc5-cost" aria-label="Was in die Kosten gehört"><li>Verwaltung</li><li>Erhaltungsrücklage</li><li>Instandhaltung in der Wohnung</li><li>Mietausfall</li></ul>
+      <p class="credit">Wohnung aus dem Rechenbeispiel, Kaufnebenkosten Berlin 11,57 % · vor Finanzierung und Steuern · Grafik: Fischer &amp; Geserich</p>
+    </figure>
+    <h2 id="die-bruttomietrendite">Die Bruttomietrendite</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild1.jpg" alt="Ein glänzendes Haus auf einem Schaupodest, dahinter im Schatten ein Stapel Rechnungen und Werkzeug" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p class="formula"><strong>Bruttomietrendite = Jahresnettokaltmiete ÷ Kaufpreis × 100</strong></p>
+    <p>Sie steht in fast jedem Exposé, weil sie sich mit zwei Zahlen ausrechnen lässt und hoch aussieht. Für das erste Sortieren ist sie gut geeignet. Für eine Kaufentscheidung reicht sie nicht, weil sie zwei Dinge ausblendet: die Kosten beim Kauf und die laufenden Kosten, die nicht der Mieter zahlt.</p>
+    <p>Wichtig ist, ob mit der Ist-Miete oder einer Soll-Miete gerechnet wird. Die Ist-Miete ist das, was heute gezahlt wird. Eine Soll-Miete ist das, was der Verkäufer für erzielbar hält. Rechnen Sie immer mit der Ist-Miete.</p>
+    <h2 id="die-nettomietrendite">Die Nettomietrendite</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild2.jpg" alt="Ein Krug gießt Wasser durch vier kleine Trichter, jeder behält einen Teil, am Ende ein kleineres Glas" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p class="formula"><strong>Nettomietrendite = (Jahresnettokaltmiete − nicht umlagefähige Kosten) ÷ (Kaufpreis + Kaufnebenkosten) × 100</strong></p>
+    <p>Zu den nicht umlagefähigen Kosten gehören:</p>
+    <ul class="plain"><li><strong>Verwaltungskosten</strong> der WEG-Verwaltung und gegebenenfalls einer Sondereigentumsverwaltung</li><li><strong>Zuführung zur Erhaltungsrücklage</strong>, die im Hausgeld steckt</li><li><strong>Instandhaltung in der Wohnung</strong>, etwa ein neues Bad, eine Therme, Böden beim Mieterwechsel</li><li><strong>Mietausfall</strong>, als pauschaler Abschlag für Leerstand und Zahlungsausfälle</li></ul>
+    <p>Die Finanzierung bleibt dabei außen vor, denn die Nettomietrendite beschreibt die Immobilie selbst. Wie sich Fremdkapital auf Ihre Rendite auswirkt, zeigt die <a class="inline" href="../wie-berechnet-man-die-eigenkapitalrendite/">Eigenkapitalrendite</a>.</p>
+    <h2 id="rechenbeispiel">Rechenbeispiel</h2>
+    <p>Eine Wohnung in Berlin-Spandau mit 55 Quadratmetern kostet 200.000&nbsp;Euro. Die Kaltmiete beträgt 750&nbsp;Euro im Monat, rund 13,60&nbsp;Euro pro Quadratmeter.</p>
+    <div class="ftab"><table>
+<thead><tr><th></th><th class="n">Betrag</th></tr></thead>
+<tbody>
+<tr><td>Jahresnettokaltmiete</td><td class="n" data-l="Betrag">9.000&nbsp;€</td></tr>
+<tr><td>Kaufpreis</td><td class="n" data-l="Betrag">200.000&nbsp;€</td></tr>
+<tr class="total"><td><strong>Bruttomietrendite</strong></td><td class="n" data-l="Betrag"><strong>4,50&nbsp;%</strong></td></tr>
+<tr><td>Nicht umlagefähige Kosten pro Jahr</td><td class="n" data-l="Betrag">1.300&nbsp;€</td></tr>
+<tr><td>Kaufnebenkosten Berlin (11,57&nbsp;%)</td><td class="n" data-l="Betrag">23.140&nbsp;€</td></tr>
+<tr class="total"><td><strong>Nettomietrendite</strong></td><td class="n" data-l="Betrag"><strong>(9.000 − 1.300) ÷ 223.140 = 3,45&nbsp;%</strong></td></tr>
+</tbody></table></div>
+    <p>Die 11,57&nbsp;Prozent enthalten 6&nbsp;Prozent Grunderwerbsteuer in Berlin und die Maklerprovision. Je nach Bundesland und je nachdem, ob ein Makler beteiligt ist, liegen die Kaufnebenkosten zwischen 7,5 und 12&nbsp;Prozent, in Bayern ohne Makler bei etwa 5,5&nbsp;Prozent.</p>
+    <p>Zwischen den beiden Werten liegt mehr als ein Prozentpunkt. Bei einer Wohnung, die mit 4,5&nbsp;Prozent beworben wird, arbeitet Ihr Kapital tatsächlich mit 3,45&nbsp;Prozent, vor Finanzierung und Steuern.</p>
+    <h2 id="warum-sie-beide-werte-brauchen">Warum Sie beide Werte brauchen</h2>
+    <p>Die Bruttomietrendite ist ein wichtiger Indikator. Sie lässt sich aus Kaufpreis und Miete in Sekunden ausrechnen und zeigt früh, ob sich ein genauerer Blick lohnt. Gewissheit gibt erst die Nettomietrendite, aus drei Gründen.</p>
+    <div class="ways"><div><b class="w-h">Sie ist mit dem Zins vergleichbar</b><p>Liegt die Nettomietrendite unter dem Zins für die Finanzierung, verdient die Immobilie aus der Miete allein weniger, als das Fremdkapital kostet. Jeder zusätzlich finanzierte Euro verschlechtert dann den laufenden Ertrag. Die Investition kann trotzdem sinnvoll sein, über Tilgung, Steuerwirkung, Mietentwicklung und Wert. Sie sollten es nur vor dem Kauf wissen.</p></div><div><b class="w-h">Sie macht Lagen vergleichbar</b><p>Zwei Wohnungen mit gleicher Bruttorendite können sehr unterschiedliche Nettorenditen haben, wenn das Hausgeld oder der Sanierungsbedarf verschieden ist.</p></div><div><b class="w-h">Sie schützt vor schön gerechneten Angeboten</b><p>Wer mit Soll-Miete und ohne Kosten rechnet, kommt leicht auf Zahlen, die mit der Realität wenig zu tun haben.</p></div></div>
+    <section class="pos">
+    <h2 id="die-einschaetzung-von-fischer-geserich">Die Einschätzung von Fischer &amp; Geserich</h2>
+    <p>Wir rechnen in der Ankaufsberatung grundsätzlich mit der Ist-Miete und mit realistischen Kosten, auch bei unseren eigenen Objekten. Die Bruttorendite nutzen wir zum Vorsortieren, die Entscheidung treffen wir mit unseren Kunden auf Basis der Nettorendite und der vollständigen Rechnung über die Haltedauer.</p>
+    </section>
+
+    <div class="qa" id="fragen"><p class="qa-h">Häufige Fragen</p><details open><summary>Wie berechnet man die Bruttomietrendite?</summary><div><p>Jahresnettokaltmiete geteilt durch Kaufpreis, mal 100. Bei 9.000&nbsp;Euro Jahresmiete und 200.000&nbsp;Euro Kaufpreis sind das 4,5&nbsp;Prozent. Sie eignet sich zum schnellen Vergleich, berücksichtigt aber weder Kaufnebenkosten noch laufende Kosten des Eigentümers.</p></div></details><details><summary>Wie berechnet man die Nettomietrendite?</summary><div><p>Jahresnettokaltmiete minus nicht umlagefähige Kosten, geteilt durch Kaufpreis plus Kaufnebenkosten, mal 100. Im Beispiel: (9.000 − 1.300) ÷ 223.140 = 3,45&nbsp;Prozent.</p></div></details><details><summary>Welche Mietrendite ist gut?</summary><div><p>Das hängt von der Lage ab. In Berlin sind Bruttorenditen von 3 bis 4,5&nbsp;Prozent im Bestand üblich, in Kleinstädten im weiteren Berliner Umland deutlich mehr. Für die Kaufentscheidung zählt die Nettorendite im Vergleich zum Finanzierungszins und die Gesamtrechnung über die Haltedauer.</p></div></details></div>
+
+    <aside class="cta" aria-label="Erstgespräch Ankaufsberatung buchen"><h3>Die echte Rendite Ihres Objekts</h3><p>In der Ankaufsberatung rechnen wir mit Ist-Miete und realistischen Kosten, bevor Sie sich entscheiden.</p><a class="btn" href="https://fg-realestate.de/finanzierungsberatung.html">Erstgespräch Ankaufsberatung buchen</a></aside>
+
+    <div class="end">
+      <div class="quellen"><h3>Quellen</h3><ul><li><a href="https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf" target="_blank" rel="noopener">Gutachterausschuss Berlin, Immobilienmarktbericht 2025/26</a></li><li><a href="https://www.ibb.de/media/dokumente/publikationen/berliner-wohnungsmarkt/wohnungsmarktbericht/2025/ibb-wmb-2025-zusammenfassung_de.pdf" target="_blank" rel="noopener">IBB Wohnungsmarktbericht 2025</a></li><li><a href="https://www.engelvoelkers.com/de-de/immobilienpreise/berlin/spandau/" target="_blank" rel="noopener">Angebotspreise und -mieten Berlin-Spandau, Engel &amp; Völkers</a></li></ul></div>
+      <p class="note">Die Bilder in diesem Beitrag wurden mit KI erstellt.</p>
+      <p class="note">Der Beitrag dient der allgemeinen Information und ersetzt keine Rechts-, Steuer-, Finanzierungs- oder Anlageberatung. Zinssätze in Beispielrechnungen sind Beispielwerte, keine aktuellen Konditionen.</p>
+    </div>
+  </article>
+
+  <aside class="related" aria-label="Mehr zu Kauf &amp; Kapitalanlage">
+    <h2>Mehr zu Kauf &amp; Kapitalanlage</h2>
+    <a href="../drei-wege-immobilien-kapitalanlage/"><span class="rthumb"><img src="../drei-wege-immobilien-kapitalanlage/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Drei Wege in Immobilien zu investieren</strong></a>
+    <a href="../deal-screening-in-fuenf-minuten/"><span class="rthumb"><img src="../deal-screening-in-fuenf-minuten/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Deal-Screening in fünf Minuten</strong></a>
+    <a href="../due-diligence-und-spekulationsfrist/"><span class="rthumb"><img src="../due-diligence-und-spekulationsfrist/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Due Diligence und Spekulationsfrist</strong></a>
+    <a href="../cashflow-verstehen/"><span class="rthumb"><img src="../cashflow-verstehen/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Cashflow verstehen</strong></a>
+    <a href="../wie-berechnet-man-die-eigenkapitalrendite/"><span class="rthumb"><img src="../wie-berechnet-man-die-eigenkapitalrendite/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Wie berechnet man die Eigen&shy;kapitalrendite?</strong></a>
+    <a href="../kaufpreisfaktor-richtig-einordnen/"><span class="rthumb"><img src="../kaufpreisfaktor-richtig-einordnen/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Kaufpreisfaktor und Mietmultiplikator</strong></a>
+  </aside>
+</div>
+
+<section class="more" aria-label="Weiterlesen">
+  <div class="more-in">
+    <h2>Weiterlesen</h2>
+    <p class="more-sub">Artikel, die hier anschließen</p>
+    <div class="cards">
+      <a class="card" href="../kaufpreisfaktor-richtig-einordnen/">
+        <div class="thumb"><img src="../kaufpreisfaktor-richtig-einordnen/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.parentNode.classList.add('missing')"></div>
+        <span class="kicker">Kauf &amp; Kapitalanlage</span>
+        <strong>Kaufpreisfaktor und Mietmultiplikator</strong>
+        <p>Kaufpreisfaktor und Mietmultiplikator sind dieselbe Kennzahl. Wie Sie sie berechnen, richtig einordnen und warum die Ist-Miete entscheidet.</p>
+        
+      </a>
+      <a class="card" href="../wie-berechnet-man-die-eigenkapitalrendite/">
+        <div class="thumb"><img src="../wie-berechnet-man-die-eigenkapitalrendite/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.parentNode.classList.add('missing')"></div>
+        <span class="kicker">Kauf &amp; Kapitalanlage</span>
+        <strong>Wie berechnet man die Eigenkapitalrendite?</strong>
+        <p>Wie die Eigenkapitalrendite einer vermieteten Immobilie berechnet wird, warum der Hebel des Fremdkapitals in beide Richtungen wirkt und was in die Rechnung gehört.</p>
+        
+      </a>
+    </div>
+    <a class="back" href="../">‹ Zurück zum Blog</a>
+  </div>
+</section>
+
+<footer><span>© 2026 Fischer &amp; Geserich Real Estate</span><span><a href="https://fg-realestate.de/impressum.html">Impressum</a> · <a href="https://fg-realestate.de/datenschutz.html">Datenschutz</a> · <a href="#" data-open-consent>Cookie-Einstellungen</a></span></footer>
+
+<script>
+/* Mobilmenü wie auf der Website */
+(function(){
+  var b=document.querySelector(".burger"),m=document.querySelector(".mobile-menu");
+  b.addEventListener("click",function(){var o=m.classList.toggle("open");b.setAttribute("aria-expanded",o)});
+})();
+/* Offene Menüs schließen bei Klick daneben oder mit Esc */
+(function(){
+  var cat=document.querySelector(".cat-menu"),b=document.querySelector(".burger"),m=document.querySelector(".mobile-menu");
+  function closeAll(e){
+    if(cat.open&&(!e||!cat.contains(e.target)))cat.open=false;
+    if(m.classList.contains("open")&&(!e||!(m.contains(e.target)||b.contains(e.target)))){m.classList.remove("open");b.setAttribute("aria-expanded",false)}
+  }
+  document.addEventListener("click",closeAll);
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeAll()});
+})();
+/* Umschalter heller / dunkler Lesemodus */
+(function(){
+  var root=document.documentElement,b=document.querySelector(".theme-btn");
+  function sync(){var d=root.dataset.theme==="dark";b.setAttribute("aria-pressed",d);b.setAttribute("aria-label",d?"Heller Lesemodus":"Dunkler Lesemodus")}
+  b.addEventListener("click",function(){
+    root.dataset.theme=root.dataset.theme==="dark"?"light":"dark";sync();
+    try{localStorage.setItem("fg-theme",root.dataset.theme)}catch(e){}
+  });
+  sync();
+})();
+/* Kopfzeile: Fortschritt, Titel nach dem Scrollen, aktiver Abschnitt links */
+(function(){
+  var top=document.querySelector(".top"),bar=document.querySelector(".progress span"),h1=document.querySelector(".head h1");
+  var links=[].slice.call(document.querySelectorAll(".toc a")),secs=links.map(function(a){return document.querySelector(a.getAttribute("href"))});
+  function tick(){
+    var d=document.documentElement,max=d.scrollHeight-d.clientHeight;
+    bar.style.width=(max>0?d.scrollTop/max*100:0)+"%";
+    top.classList.toggle("scrolled",h1.getBoundingClientRect().bottom<140);
+    var cur=0;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<170)cur=i});
+    links.forEach(function(a,i){a.classList.toggle("on",i===cur)});
+  }
+  var lead=document.querySelector(".lead-img");
+  function shrink(){
+    /* Bild wird beim Scrollen gleichmäßig kleiner, Seitenverhältnis bleibt (n26-Verhalten) */
+    var r=lead.getBoundingClientRect(),p=Math.min(Math.max((140-r.top)/r.height,0),1);
+    lead.style.setProperty("--s",(1-p*.45).toFixed(3));
+  }
+  addEventListener("scroll",function(){tick();shrink()},{passive:true});tick();shrink();
+})();
+
+/* C5: Anzeigen zeichnen, Nettorendite mit den Kosten neu rechnen */
+(function(){
+  var root=document.getElementById("g-mr");if(!root)return;
+  var MAX=6,cx=120,cy=120,r=90,rng=root.querySelector("#dc5-k");
+  var pt=function(p,rr){var a=Math.PI*(1-p/MAX);return[cx+rr*Math.cos(a),cy-rr*Math.sin(a)]};
+  var pc=function(v){return v.toLocaleString("de-DE",{minimumFractionDigits:2,maximumFractionDigits:2})+" %"};
+  function gauge(svg,v,cls){
+    var s=pt(0,r),e=pt(Math.min(v,MAX),r),g='<path class="trk" d="M'+s+' A'+r+','+r+' 0 0 1 '+pt(MAX,r)+'"/>';
+    g+='<path class="arc '+cls+'" d="M'+s+' A'+r+','+r+' 0 0 1 '+e+'"/>';
+    for(var t=0;t<=MAX;t++){var a=pt(t,r+12),b=pt(t,r+16),l=pt(t,r+26);g+='<line class="tk" x1="'+a[0]+'" y1="'+a[1]+'" x2="'+b[0]+'" y2="'+b[1]+'"/><text class="tl" x="'+l[0]+'" y="'+(l[1]+3)+'" text-anchor="middle">'+t+'</text>'}
+    var z1=pt(4,r-16),z2=pt(4,r+16);g+='<line class="zm" x1="'+z1[0]+'" y1="'+z1[1]+'" x2="'+z2[0]+'" y2="'+z2[1]+'"/>';
+    g+='<text class="big" x="'+cx+'" y="'+(cy-6)+'" text-anchor="middle">'+pc(v)+'</text>';
+    svg.innerHTML=g;
+  }
+  function draw(){
+    var k=+rng.value,b=9000/200000*100,n=(9000-k)/223140*100;
+    gauge(root.querySelector('[data-g="b"]'),b,"b");
+    gauge(root.querySelector('[data-g="n"]'),n,"n");
+    root.querySelector(".dc5-o").textContent=k.toLocaleString("de-DE")+" €";
+    root.querySelector(".dc5-z").textContent="9.000 € − "+k.toLocaleString("de-DE")+" € Kosten";
+    root.querySelector(".dc5-d").textContent=(b-n).toLocaleString("de-DE",{minimumFractionDigits:2,maximumFractionDigits:2})+" Prozentpunkte";
+  }
+  rng.addEventListener("input",draw);draw();
+})();
+</script>
+</body>
+</html>
