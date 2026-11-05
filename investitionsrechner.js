@@ -140,6 +140,7 @@
   recButtons.forEach(btn=>btn.addEventListener('click', ()=>{ setVal(btn.dataset.target, btn.dataset.setValue); if(btn.dataset.target==='financePct') syncFinancing('mode'); }));
 
   let financeSyncLock = false;
+  let lastFinanceInput = '';
   const financeModeEl = root.querySelector('[name="financeMode"]');
   const financePctEl = root.querySelector('[name="financePct"]');
   const loanEl = root.querySelector('[name="loanAmount"]');
@@ -190,9 +191,13 @@
     const x=collectInputs();
     let loan=x.loanAmount, equity=x.equity;
     if(x.financeMode==='custom'){
-      if(source==='equity') loan=Math.max(0,x.totalInvestment-equity);
-      else if(source==='loan') equity=Math.max(0,x.totalInvestment-loan);
-      else if(!loan) loan=Math.max(0,x.totalInvestment-equity);
+      // Update 35 A1 (05.11.2026): Vorher wurde das Darlehen nur gesetzt, solange es 0 war. Beim Tippen von „80000“ in den
+      // Kaufpreis blieb es deshalb beim Wert nach der ersten Ziffer stehen (8 € plus Nebenkosten, „8,64“). Jetzt gilt: Was
+      // zuletzt von Hand eingegeben wurde (Eigenkapital oder Darlehen), bleibt stehen, das andere ergibt sich aus der Gesamtinvestition.
+      if(source==='equity'){ loan=Math.max(0,x.totalInvestment-equity); lastFinanceInput='equity'; }
+      else if(source==='loan'){ equity=Math.max(0,x.totalInvestment-loan); lastFinanceInput='loan'; }
+      else if(lastFinanceInput==='loan') equity=Math.max(0,x.totalInvestment-loan);
+      else loan=Math.max(0,x.totalInvestment-equity);
     } else {
       loan=Math.max(0,financeBase(x)*x.financePct/100);
       equity=Math.max(0,x.totalInvestment-loan);
