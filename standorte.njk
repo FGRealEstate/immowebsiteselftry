@@ -102,6 +102,10 @@ eleventyComputed:
       </li>
       {%- endfor %}
     </ul>
+    {#- Update 35 B2 (05.11.2026): „Stand: Monat Jahr“ direkt bei den Marktzahlen. Der Monat ist der Stand, mit dem die Zahlen aus den Quellen
+     übernommen wurden (derselbe Wert wie „Zahlen mit Stand …“ in den Quellen); die Stichtage je Zahl stehen weiter bei jeder Zahl. #}
+    {%- if u.stand %}
+    <p class="fgs-small fgs-facts-stand">Stand: {{ u.stand }}</p>{% endif %}
   </div>
 </section>
 
@@ -155,7 +159,8 @@ eleventyComputed:
 </section>
 
 {# 8. S8 Abschlussband: kostenlose Bewertung (wie auf den Gebietsseiten) #}
-{% call closing({ kontakt: "lennart", satz: "Was ist Ihre Immobilie wert?", button: "bewertung" }) %}
+{#- Update 35 A4: Buchungslink unter der Nummer (wie Eberswalde; die Übersicht hat keine Kontaktkarte) #}
+{% call closing({ kontakt: "lennart", satz: "Was ist Ihre Immobilie wert?", button: "bewertung", buchung: true }) %}
   <p>Die Wertermittlung Ihres Objektes erstellen wir kostenlos, meistens innerhalb weniger Stunden und häufig noch am selben Tag.</p>
 {% endcall %}
 

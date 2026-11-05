@@ -57,6 +57,10 @@ eleventyComputed:
       </li>
       {%- endfor %}
     </ul>
+    {#- Update 35 B2 (05.11.2026): „Stand: Monat Jahr“ direkt bei den Marktzahlen. Der Monat ist der Stand, mit dem die Zahlen aus den Quellen
+     übernommen wurden (derselbe Wert wie „Zahlen mit Stand …“ in den Quellen); die Stichtage je Zahl stehen weiter bei jeder Zahl. #}
+    {%- if s.stand %}
+    <p class="fgs-small fgs-facts-stand">Stand: {{ s.stand }}</p>{% endif %}
   </div>
 </section>
 {% endif %}

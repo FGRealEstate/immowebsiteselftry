@@ -73,6 +73,10 @@ eleventyComputed:
       <li><span class="fgs-keyfact-value">{{ z.wert | factValue | safe }}</span><span class="fgs-keyfact-label">{{ z.label | nbsp }}{{ ("[[" + z.quelleNr + "]]") | fn | safe }}</span></li>
       {%- endfor %}
     </ul>
+    {#- Update 35 B2 (05.11.2026): „Stand: Monat Jahr“ direkt bei den Marktzahlen. Der Monat ist der Stand, mit dem die Zahlen aus den Quellen
+     übernommen wurden (derselbe Wert wie „Zahlen mit Stand …“ in den Quellen); die Stichtage je Zahl stehen weiter bei jeder Zahl. #}
+    {%- if g.stand %}
+    <p class="fgs-small fgs-facts-stand">Stand: {{ g.stand }}</p>{% endif %}
     <details class="fgs-more fgs-more--facts" id="alle-zahlen">
       <summary><span class="fgs-more-title">Alle Zahlen für {{ g.fuerOrt }} mit Quellen</span><span class="fgs-more-line">Kaufpreise sind tatsächlich gezahlte Preise, keine Angebotspreise aus Portalen.</span></summary>
       <ul class="fgs-facts-rows" role="list">

@@ -3129,3 +3129,6 @@ html:not(.fgs-js) .fgs-feat-nav { display: none; }
 /* Update 35 A4 (05.11.2026): „Erstgespräch buchen“ unter der Nummer im Schlussblock (nur Gebietsseiten ohne Kontaktkarte, Eberswalde) */
 .fgs-closing-booking { grid-column: 2; justify-self: start; color: #fff !important; font: 400 16px/1.4 var(--fgs-sans); text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, .35); padding-bottom: 2px; margin-top: 6px; }
 .fgs-closing-booking:hover { border-color: var(--fgs-gold); }
+/* Update 35 B2: „Stand: Monat Jahr“ direkt unter den Marktzahlen (Gebietsseiten, Eberswalde, Gebietsübersicht) */
+.fgs-facts-stand { margin: 20px 0 0 !important; color: var(--fgs-ink-2); }
+.fgs-place-facts .fgs-facts-stand { margin-bottom: 8px !important; }
