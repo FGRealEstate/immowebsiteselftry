@@ -198,7 +198,8 @@ eleventyComputed:
         <p class="fgs-small">{{ kk.role }} · Ihr Ansprechpartner für {{ p.fuer }}</p>
         <p>{{ kk.bio }}</p>
         {{- caller() if caller }}
-        <address class="fgs-address"><a href="{{ kkPhone.href }}">{{ kkPhone.display }}</a><br><a href="mailto:{{ kkEmail }}">{{ kkEmail }}</a></address>
+        {#- Update 35 A4: „Erstgespräch buchen“ direkt unter der Telefonnummer #}
+        <address class="fgs-address"><a href="{{ kkPhone.href }}">{{ kkPhone.display }}</a><br><a href="{{ nav.buchung.href }}" target="_blank" rel="noopener noreferrer">{{ nav.buchung.label }}</a><br><a href="mailto:{{ kkEmail }}">{{ kkEmail }}</a></address>
         <div class="fgs-links">{{ textlink(kk.profile | navHref, "Profil von " + kk.name.split(" ")[0]) }}</div>
       </div>
     </div>

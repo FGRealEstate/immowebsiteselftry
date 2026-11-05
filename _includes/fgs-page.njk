@@ -59,7 +59,7 @@ customSchema: true
     {%- if pg.buttons %}
     <div class="fgs-btns">
       {%- for b in pg.buttons %}
-      <a class="fgs-btn {{ 'fgs-btn--primary' if loop.first else 'fgs-btn--secondary' }}" href="{{ b.href }}">{{ b.label }}</a>
+      <a class="fgs-btn {{ 'fgs-btn--primary' if loop.first else 'fgs-btn--secondary' }}" href="{{ b.href }}"{% if b.extern %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ b.label }}</a>
       {%- endfor %}
     </div>{% endif %}
   </div>
@@ -88,7 +88,7 @@ customSchema: true
 {% if faqItems.length %}{{ faq(faqItems, pg.faqTitle or "Häufige Fragen") }}{% endif %}
 
 {# 5. S8 Abschlussband #}
-{% call closing({ kontakt: pg.contact, satz: pg.closing.title, button: pg.closing.button, gebiet: pg.closing.gebiet, foto: pg.closing.foto }) %}
+{% call closing({ kontakt: pg.contact, satz: pg.closing.title, button: pg.closing.button, gebiet: pg.closing.gebiet, foto: pg.closing.foto, buchung: pg.closing.buchung }) %}
   <p>{{ pg.closing.text | safe }}</p>
 {% endcall %}
 

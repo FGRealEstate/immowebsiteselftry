@@ -710,6 +710,9 @@
         <span class="fgs-closing-face">{{ pic(("/images/team/" + datei + "-navy") | bild, "", "112px") }}</span>
         <p class="fgs-closing-who">{{ k.name }} · {{ k.role }}{% if c.gebiet %} · {{ c.gebiet }}{% endif %}{% set kProfile = k.profile | navHref %}{% if kProfile != page.url and kProfile != "#" %} · <a href="{{ kProfile }}">Profil</a>{% endif %}</p>
         <a class="fgs-closing-phone" href="{{ kPhone.href }}">{{ kPhone.display }}</a>
+        {%- if c.buchung %}
+        {#- Update 35 A4: nur auf Gebietsseiten ohne Kontaktkarte (Eberswalde) #}
+        <a class="fgs-closing-booking" href="{{ nav.buchung.href }}" target="_blank" rel="noopener noreferrer">{{ nav.buchung.label }}</a>{% endif %}
       </div>
       {%- endif %}
     </div>

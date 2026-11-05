@@ -25,6 +25,9 @@ pg:
   buttons:
     - { label: "+49 1520 3083048", href: "tel:+4915203083048", icon: phone }
     - { label: "info@fg-realestate.de", href: "mailto:info@fg-realestate.de", icon: mail, line: true }
+    # Update 35 A4: Buchungslink neben Telefon und E-Mail, öffnet Microsoft Bookings in neuem Fenster. Front Matter rendert
+    # kein Nunjucks, deshalb steht der Link hier ausgeschrieben; derselbe Wert wie nav.buchung in _data/nav.js.
+    - { label: "Erstgespräch buchen", href: "https://outlook.office.com/bookwithme/user/72d1d477b1c94313b937eaf0288a9454@fg-realestate.de/meetingtype/CHqdXdox7UqN08gNHOu7dw2?anonymous&ismsaljsauthenabled&ep=mlink", extern: true }
   faqTitle: "Häufige Fragen zum Kontakt"
   faq:
     - q: "Wie erreiche ich Fischer & Geserich am schnellsten?"
@@ -97,6 +100,7 @@ pg:
       <dl class="fgs-contact-list">
         <div><dt>Telefon</dt><dd><a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a></dd></div>
         <div><dt>E-Mail</dt><dd><a href="mailto:{{ nav.email }}">{{ nav.email }}</a></dd></div>
+        <div><dt>Termin</dt><dd><a href="{{ nav.buchung.href }}" target="_blank" rel="noopener noreferrer">{{ nav.buchung.label }}</a></dd></div>
         <div><dt>Geschäftsanschrift</dt><dd>Schützenstraße 30 · 12165 Berlin</dd></div>
         <div><dt>Persönliche Termine</dt><dd>Nach vorheriger Vereinbarung</dd></div>
       </dl>

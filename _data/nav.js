@@ -10,6 +10,9 @@ const gewerbe = freigaben.gewerbe;
 
 const phone = { display: "+49 1520 3083048", href: "tel:+4915203083048" };
 const email = "info@fg-realestate.de";
+// Update 35 A4 (05.11.2026): „Erstgespräch buchen“ auf /kontakt.html und den Gebietsseiten. Derselbe Microsoft-Bookings-Link
+// wie auf der Ankaufsberatung (ankaufBookingUrl); consent-manager.js zählt den Klick als booking_click („erstgespraech“).
+const buchung = { label: "Erstgespräch buchen", href: "https://outlook.office.com/bookwithme/user/72d1d477b1c94313b937eaf0288a9454@fg-realestate.de/meetingtype/CHqdXdox7UqN08gNHOu7dw2?anonymous&ismsaljsauthenabled&ep=mlink" };
 
 const valuation = {
   label: "Kostenlose Bewertung",
@@ -102,4 +105,4 @@ const services = [
   { label: "Maklerprovision", href: "/maklerprovision/" }
 ];
 
-module.exports = { phone, email, valuation, menu, services };
+module.exports = { phone, email, buchung, valuation, menu, services };

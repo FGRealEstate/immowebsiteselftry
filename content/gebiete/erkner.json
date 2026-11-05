@@ -119,7 +119,7 @@
   "verkaufen": {
     "h2": "Immobilie in Erkner verkaufen",
     "absaetze": [
-      "Erkner ist ein kleiner Markt: 2025 gab es hier 27 Kauffälle bebauter Grundstücke, im ganzen Landkreis Oder-Spree 905. Hauspreise gibt es nur für das Berliner Umland des Kreises, zu dem neben Erkner unter anderem Woltersdorf, Schöneiche und Grünheide gehören. Dort lag der Median freistehender Häuser bis Baujahr 1948 bei 3.363 €/m² Wohnfläche aus 18 Kauffällen, für Baujahre 1991 bis 2022 bei 3.884 €/m² aus 25.[[1]] Für Ihre Bewertung verbinden wir diese Werte mit dem Bodenrichtwert Ihrer Zone, bei Ufergrundstücken mit der H2O-Zone, und mit den Angeboten, die gerade in Erkner und den Nachbarorten am Markt sind. Bei vermieteten Immobilien zählt außerdem die Nettokaltmiete, die heute gezahlt wird."
+      "Erkner ist ein kleiner Markt: 2025 gab es hier 27 Kauffälle bebauter Grundstücke, im ganzen Landkreis Oder-Spree 905. Hauspreise gibt es nur für das Berliner Umland des Kreises, zu dem neben Erkner unter anderem Woltersdorf, Schöneiche und Grünheide gehören. Dort lag der Median freistehender Häuser bis Baujahr 1948 bei 3.363 €/m² Wohnfläche aus 18 Kauffällen, für Baujahre 1991 bis 2022 bei 3.884 €/m² aus 25.[[1]] Für Ihre Bewertung verbinden wir diese Werte mit dem Bodenrichtwert Ihrer Zone, bei Ufergrundstücken mit der Uferzone, und mit den Angeboten, die gerade in Erkner und den Nachbarorten am Markt sind. Bei vermieteten Immobilien zählt außerdem die Nettokaltmiete, die heute gezahlt wird."
     ]
   },
   "kaufen": {
@@ -449,7 +449,7 @@
       "fundstelle": "erkner.md, Zeile 243"
     }
   ],
-  "kurzantwortMehr": "Für Maklertätigkeit und Darlehensvermittlung liegen die Erlaubnisse nach § 34c und § 34i GewO vor; Firmensitz ist Berlin. Lennart Geserich, Head of Sales & Vermietung, ist für Erkner Ihr erster Kontakt.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Erkner ist Lennart Geserich Ihr Ansprechpartner, Head of Sales & Vermietung.",
   "hero": {
     "name": "erkner-genezarethkirche",
     "alt": "Blick von oben auf die Genezarethkirche in Erkner",
