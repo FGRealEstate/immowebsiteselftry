@@ -477,6 +477,9 @@ module.exports = function(eleventyConfig) {
   ].forEach((asset) => eleventyConfig.addPassthroughCopy(asset));
 
   eleventyConfig.addPassthroughCopy({ "BingSiteAuth.xml": "BingSiteAuth.xml" });
+  // Update 35 B5: IndexNow-Schlüsseldatei (Besitznachweis, öffentlich). Schlüssel in netlify/functions/_shared/indexnow.js.
+  const indexnow = require("./netlify/functions/_shared/indexnow");
+  eleventyConfig.addPassthroughCopy(`${indexnow.SCHLUESSEL}.txt`);
   // Blog: nur die Bilder; Artikel und Übersicht baut Eleventy neu (blog-artikel.njk, blog-index.njk),
   // die HTML-Dateien aus live.py sind nur noch die Quelle (_data/blogArtikel.js).
   eleventyConfig.addPassthroughCopy("blog/**/*.jpg");
@@ -514,6 +517,39 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.on("eleventy.after", ({ dir }) => {
     const datei = require("path").join(dir.output, "css", "fg-system.css");
     if (fs.existsSync(datei)) fs.writeFileSync(datei, cssKlein(fs.readFileSync(datei, "utf8")));
+  });
+
+  // Update 35 B5: /indexnow.json mit einem Hash je Seite aus den Sitemaps. Im Netlify-Produktionsbuild vergleicht der
+  // Build mit der Liste, die gerade live ist, und schreibt die geänderten und neuen Adressen nach „geaendert“.
+  // netlify/functions/deploy-succeeded.js meldet genau diese nach dem Deploy an IndexNow. Lokal und für die
+  // Testumgebung bleibt „geaendert“ leer (kein Abruf der Live-Seite).
+  eleventyConfig.on("eleventy.after", async ({ dir }) => {
+    const path = require("path");
+    const crypto = require("crypto");
+    const seiten = {};
+    for (const f of fs.readdirSync(dir.output).filter((n) => /^sitemap-[a-z-]+\.xml$/.test(n)).sort()) {
+      for (const [, loc] of fs.readFileSync(path.join(dir.output, f), "utf8").matchAll(/<loc>([^<]+)<\/loc>/g)) {
+        if (!loc.startsWith(indexnow.BASIS + "/")) continue;
+        let rel = decodeURI(loc.slice(indexnow.BASIS.length));
+        if (rel.endsWith("/")) rel += "index.html";
+        const datei = path.join(dir.output, rel);
+        if (!fs.existsSync(datei)) continue;
+        seiten[loc] = crypto.createHash("sha256").update(fs.readFileSync(datei)).digest("hex").slice(0, 16);
+      }
+    }
+    let geaendert = [];
+    if (process.env.NETLIFY === "true" && process.env.CONTEXT === "production") {
+      try {
+        const r = await fetch(`${indexnow.BASIS}/indexnow.json?v=${Date.now()}`, { signal: AbortSignal.timeout(15000) });
+        const alt = r.status === 404 ? {} : (await r.json()).seiten || {};
+        if (r.status === 404 || r.ok) geaendert = Object.keys(seiten).filter((u) => alt[u] !== seiten[u]);
+      } catch (error) {
+        console.warn("IndexNow: Liste der Live-Seite nicht lesbar, diesmal kein Ping.", error.message);
+      }
+    }
+    fs.writeFileSync(path.join(dir.output, "indexnow.json"),
+      JSON.stringify({ erstellt: new Date().toISOString(), seiten, geaendert }) + "\n");
+    console.log(`IndexNow: ${Object.keys(seiten).length} Seiten, ${geaendert.length} geändert`);
   });
 
   return {

@@ -39,6 +39,13 @@ function eins(html, re, slug, was) {
   return m;
 }
 
+/** "2026-10-22" → "2026-10-22T00:00:00+02:00": Mitternacht in Berlin, Versatz des Tages (MEZ oder MESZ). */
+function mitZeitzone(tag) {
+  const versatz = new Intl.DateTimeFormat("en", { timeZone: "Europe/Berlin", timeZoneName: "longOffset" })
+    .formatToParts(new Date(`${tag}T00:00:00+01:00`)).find((t) => t.type === "timeZoneName").value.replace("GMT", "");
+  return `${tag}T00:00:00${versatz || "+00:00"}`;
+}
+
 function artikel(post) {
   const slug = post.slug;
   const html = fs.readFileSync(path.join("blog", slug, "index.html"), "utf8");
@@ -72,6 +79,14 @@ function artikel(post) {
   const js = fest.slice(fest.indexOf(SKRIPT_ENDE) + SKRIPT_ENDE.length).trim();
 
   const jsonld = JSON.parse(eins(html, /<script type="application\/ld\+json">\n([\s\S]*?)\n<\/script>/, slug, "JSON-LD")[1]);
+  // Update 35 B3: Datum im JSON-LD mit Uhrzeit und Zeitzone (Rich Results Test: „Zeitzone fehlt“). live.py führt
+  // nur den Tag; daraus wird 00:00 Uhr deutscher Zeit, mit Sommer- oder Winterzeit des Tages. Das sichtbare Datum,
+  // die Sortierung und die Sitemap (blog.json) bleiben beim Tag.
+  for (const knoten of [].concat(jsonld)) {
+    for (const feld of ["datePublished", "dateModified"]) {
+      if (knoten && /^\d{4}-\d{2}-\d{2}$/.test(knoten[feld] || "")) knoten[feld] = mitZeitzone(knoten[feld]);
+    }
+  }
   // Autor (Update 4, 3.3): Person aus dem JSON-LD von artikel.py, erst nach Zustimmung von Timon und Lennart
   // (AUTOREN_FREIGEGEBEN). Zugeordnet über die Profiladresse; bis dahin ist der Autor die Firma und autor bleibt null.
   const verfasser = [].concat(jsonld).map((x) => x && x.author).find(Boolean);
