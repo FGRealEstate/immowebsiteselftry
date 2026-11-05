@@ -830,7 +830,8 @@ function buildAreaIndex() {
         console.warn("Gebietsblock: Gebietsseiten nicht geladen:", error.message);
     }
     // Teil B: kontakt der Gebietsseite; die Berlin-Übersicht nennt zwei Personen (kontakte) und gibt deshalb keinen mit
-    const link = (page) => ({ name: page.name, nameLang: page.nameLang || page.name, inOrt: page.inOrt || `in ${page.name}`, url: page.url, kontakt: page.kontakte ? null : (page.kontakt || null) });
+    // Update 35 A3: preise und stand für die Preiszeile im Gebietsblock der Objekt-, Projekt- und Referenzseiten (areaPreise)
+    const link = (page) => ({ name: page.name, nameLang: page.nameLang || page.name, inOrt: page.inOrt || `in ${page.name}`, url: page.url, kontakt: page.kontakte ? null : (page.kontakt || null), preise: areaPreise(page), stand: page.stand || null });
     const index = { district: new Map(), town: new Map(), county: new Map(), city: new Map() };
     const setOnce = (map, key, page) => { if (key && !map.has(key)) map.set(key, link(page)); };
     const bySlug = new Map(pages.map((page) => [page.slug, page]));
@@ -854,6 +855,40 @@ function buildAreaIndex() {
         }
     }
     return index;
+}
+
+/* Update 35 A3: Preiszeile für den Gebietsblock, nur aus den Zahlen der Gebietsseite (content/gebiete, unverändert gelesen).
+   Je Art die erste Zahl der Seite mit „€/m²“: miete (Label mit „miet“), boden (Bodenrichtwert, Bauland; wird nicht gezeigt),
+   wohnung (Label mit „wohnung“), haus (Label mit „haus“ oder „häuser“). Eine Vermarktungsdauer führen die Gebietsseiten nicht. */
+const PREIS_ART = (label) => /miet/i.test(label) ? "miete" : /Bodenrichtwert|Bauland/i.test(label) ? "boden"
+    : /wohnung/i.test(label) ? "wohnung" : /h(a|ä)us/i.test(label) ? "haus" : null;
+const ohneFussnoten = (text) => String(text || "").replace(/\s*\[\[[\d,\s]+\]\]/g, "").trim();
+function areaPreise(page) {
+    const preise = {};
+    for (const z of page.zahlen || []) {
+        if (!/€\/m²/.test(z.wert || "")) continue;
+        const art = PREIS_ART(z.label || "");
+        if (!art || art === "boden" || preise[art]) continue;
+        const quelle = z.quelleNr && page.quellen ? page.quellen[z.quelleNr - 1] : null;
+        preise[art] = {
+            wert: ohneFussnoten(z.wert),
+            label: ohneFussnoten(z.label),
+            stichtag: ohneFussnoten(z.stichtag) || null,
+            quelle: ohneFussnoten(z.quelle || (quelle && quelle.name)) || null,
+            quelleUrl: z.url || (quelle && quelle.url) || null
+        };
+    }
+    return preise;
+}
+
+// Update 35 A3: welche Preiszeile zum Angebot passt. Miete → Mietzahl; Wohnung → Wohnungspreis; Haus → Hauspreis; sonst keine
+const HAUS_TYPEN = /HOUSE|VILLA|BUNGALOW|FARMHOUSE|CASTLE_MANOR/;
+function preisArt(unit, marketingType) {
+    if (marketingType === "Miete") return "miete";
+    const typ = String(unit.rs_type || unit.object_type || "").toUpperCase();
+    if (typ === "APARTMENT" || typ === "FLAT") return "wohnung";
+    if (HAUS_TYPEN.test(typ) && !/MULTI_FAMILY/.test(typ)) return "haus";
+    return null;
 }
 
 function findArea(cityName, districtName) {
@@ -942,6 +977,7 @@ function buildReference(rawUnit) {
         sold_year: soldDate && /^\d{4}/.test(soldDate) ? soldDate.slice(0, 4) : null,
         main_image: unit.main_image,
         area: unit.area,
+        preisart: unit.preisart,
         kontakt: unit.kontakt
     };
 }
@@ -1358,6 +1394,7 @@ function buildUnit(unit) {
         ortsteil: getOrtsteil(unit),
         area: findArea(getPublicLocation(unit), getDistrictName(unit)),
         kontakt: findKontakt(getPublicLocation(unit), getDistrictName(unit), findArea(getPublicLocation(unit), getDistrictName(unit)), getZip(unit)),
+        preisart: preisArt(unit, marketingType),
         marketing_type: marketingType,
         property_type: propertyType,
         status: getStatusName(unit),
@@ -1455,6 +1492,8 @@ function buildProject(project, units) {
         area: findArea(getProjectLocation(project, units), getDistrictName(project || {}) || units.map((unit) => unit.district).find(Boolean)),
         kontakt: findProjectKontakt(project, units, getProjectLocation(project, units), getDistrictName(project || {}) || units.map((unit) => unit.district).find(Boolean),
             findArea(getProjectLocation(project, units), getDistrictName(project || {}) || units.map((unit) => unit.district).find(Boolean))),
+        // Update 35 A3: Preiszeile nur, wenn alle Einheiten dieselbe Art haben (z. B. nur Wohnungen)
+        preisart: (() => { const arten = [...new Set(units.map((unit) => unit.preisart))]; return arten.length === 1 ? arten[0] : null; })(),
         address: firstText(project || {}, ["address", "full_address", "street", "custom_fields.projektadresse"]),
         description,
         completion_date: formatDate(firstText(project || {}, ["completion_date", "planned_completion", "custom_fields.fertigstellung", "custom_fields.geplante_fertigstellung"])),

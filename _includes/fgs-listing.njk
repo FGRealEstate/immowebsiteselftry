@@ -16,7 +16,8 @@
                        items = [{ wert, label, lang }]; lang: Spanne, darf in zwei Zeilen umbrechen (nur nach dem Gedankenstrich:
                        vor €, m² und – steht ein geschütztes Leerzeichen). Die Reihe bricht um, wenn die Werte nicht
                        nebeneinander passen (fg-system.css, „Preise, Spannen und Renditen“).
-      areaBlock(area)  Lage und Markt: H2, ein Satz, Textlink zur Gebietsseite (vorher fgd-area-block.njk, ohne Kicker).
+      areaBlock(area, id, art)  Lage und Markt: H2, Preiszeile der Gebietsseite (Update 35 A3), ein Satz, Textlink zur Gebietsseite
+                       (vorher fgd-area-block.njk, ohne Kicker).
     Keine Symbole und keine Gold-Häkchen (Brief 3.7). -#}
 {% from "fgs-macros.njk" import textlink %}
 
@@ -215,11 +216,18 @@
 </div>
 {%- endmacro -%}
 
-{%- macro areaBlock(area, id="lage-markt") -%}
+{#- Update 35 A3: art = preisart aus _data/propstack.js (wohnung, haus, miete). Dann steht über dem Satz die passende Zahl der
+    Gebietsseite mit Quelle und Stand (area.preise, area.stand). Eine Vermarktungsdauer führen die Gebietsseiten nicht. -#}
+{%- macro areaBlock(area, id="lage-markt", art=null) -%}
 <section class="fgs-listing-block fgs-cols" aria-labelledby="{{ id }}">
   {% if area %}
+  {%- set preis = area.preise[art] if (art and area.preise) else null %}
   <div class="fgs-cols-head"><h2 id="{{ id }}">Immobilienmarkt {{ area.inOrt }}</h2></div>
   <div class="fgs-cols-body">
+    {%- if preis %}
+    <p class="fgs-area-preis"><strong>{{ preis.wert | string | escape | string | replace(" €", "&nbsp;€") | safe }}</strong> {{ preis.label }}{% if preis.stichtag %}, {{ preis.stichtag }}{% endif %}.</p>
+    <p class="fgs-small fgs-area-quelle">Quelle: {% if preis.quelleUrl %}<a href="{{ preis.quelleUrl }}" target="_blank" rel="noopener">{{ preis.quelle }}</a>{% else %}{{ preis.quelle }}{% endif %}{% if area.stand %} · Stand: {{ area.stand }}{% endif %}</p>
+    {%- endif %}
     <p>Auf unserer Seite zu {{ area.nameLang }} stehen Marktzahlen mit Quellen, Hinweise zu Verkauf, Kauf und Finanzierung und Antworten auf häufige Fragen.</p>
     {{ textlink(area.url, "Zur Seite " + area.nameLang) }}
   </div>

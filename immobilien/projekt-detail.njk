@@ -17,7 +17,7 @@ eleventyComputed:
   ogImageAlt: "{% if project.main_image %}{{ project.name }}{% endif %}"
 ---
 {#- Projektseite im neuen Design (Brief Design-Pass §4.5), gleiche Bausteine wie die Objektseite:
-    Galerie (höchstens 6 Projektbilder wie bisher), Beschreibung, Projektdaten, Ansprechpartner,
+    Galerie (seit Update 35 A2 alle Projektbilder), Beschreibung, Projektdaten, Ansprechpartner,
     alle freien Einheiten als Karten, Abschlussblock. Daten unverändert aus _data/propstack.js (project.*).
     CP4 (28.10.2026, Design-Sprint-Brief 5.4): Design-System über fgs-listing.njk und fgs-offer-card.njk, S8 als Abschluss.
     Entfallen: Kicker über den H2 („Projektüberblick“, „Einzeln anfragbar“, „Lage und Markt“; Update 6 §3.0),
@@ -32,7 +32,8 @@ eleventyComputed:
 {#- Teil B 4 (31.10.2026): Ansprechpartner aus _data/propstack.js (findKontakt), sonst die bisherige Ortsregel #}
 {% set kontaktKey = project.kontakt or ("timon" if ("leipzig" in loc or "dresden" in loc) else "lennart") %}
 {% set pageUrl = "https://fg-realestate.de" + project.url %}
-{% set pics = project.gallery.slice(0, 6) if project.gallery else [] %}
+{#- Update 35 A2 (05.11.2026): alle Bilder statt höchstens 6, mit Großansicht und „Alle Bilder ansehen (n)“ wie auf der Objektseite -#}
+{% set pics = project.gallery if project.gallery else [] %}
 {% set meta %}{% if project.location %}{{ project.location }}{% endif %}{% if project.strategy %}{% if project.location %} · {% endif %}{{ project.strategy }}{% endif %}{% if project.property_types.length %}{% if project.location or project.strategy %} · {% endif %}{{ project.property_types | join(", ") }}{% endif %}{% endset %}
 {% set k1 = { href: "#einheiten", label: project.available_unit_count ~ " Einheiten ansehen" } %}
 {% if project.marketing_type != "Miete" %}{% set knoepfe = [k1, { href: "/finanzierungsberatung.html", label: "Finanzierung prüfen" }] %}{% else %}{% set knoepfe = [k1] %}{% endif %}
@@ -69,7 +70,7 @@ eleventyComputed:
       </div>
     </section>
 
-    {{ areaBlock(project.area) }}
+    {{ areaBlock(project.area, "lage-markt", project.preisart) }}
   </div>
 </section>
 

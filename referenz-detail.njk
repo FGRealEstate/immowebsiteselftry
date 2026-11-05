@@ -52,7 +52,7 @@ eleventyComputed:
     {% if ref.main_image %}{{ gallery([ref.main_image], ref.title, "") }}{% endif %}
     {% if fakten.length %}{{ listingFacts(fakten, ref.title) }}{% endif %}
 
-    {{ areaBlock(ref.area) }}
+    {{ areaBlock(ref.area, "lage-markt", ref.preisart) }}
   </div>
 </section>
 
