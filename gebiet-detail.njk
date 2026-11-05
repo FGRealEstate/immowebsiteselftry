@@ -77,6 +77,10 @@ eleventyComputed:
      übernommen wurden (derselbe Wert wie „Zahlen mit Stand …“ in den Quellen); die Stichtage je Zahl stehen weiter bei jeder Zahl. #}
     {%- if g.stand %}
     <p class="fgs-small fgs-facts-stand">Stand: {{ g.stand }}</p>{% endif %}
+    {#- Update 37 §1 (05.11.2026): „Stand der Zahlen“ in der Art der Quellenhinweise, klein und gedämpft, vor dem ersten Satz über F&G.
+     Bisher nur Leipzig (Teil 5 freigegeben); Berlin, Dresden und Brandenburg folgen mit Timons OK zu Teil 6. #}
+    {%- if g.standHinweis %}
+    <p class="fgs-small fgs-facts-stand fgs-facts-stand-hinweis">{{ g.standHinweis | nbsp | escape | safe }}</p>{% endif %}
     <details class="fgs-more fgs-more--facts" id="alle-zahlen">
       <summary><span class="fgs-more-title">Alle Zahlen für {{ g.fuerOrt }} mit Quellen</span><span class="fgs-more-line">Kaufpreise sind tatsächlich gezahlte Preise, keine Angebotspreise aus Portalen.</span></summary>
       <ul class="fgs-facts-rows" role="list">

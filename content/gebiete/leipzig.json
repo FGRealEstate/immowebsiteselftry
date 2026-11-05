@@ -13,6 +13,7 @@
   "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Leipzig beim Verkauf, beim Kauf und bei der Finanzierung, mit eigenen Seiten für Leipzig-Zentrum, Leipzig-Nord und Leipzig-West. Ihr Ansprechpartner für Leipzig ist Timon Fischer.",
   "kurzantwortMehr": "Fischer & Geserich hat seinen Sitz in der Schützenstraße 30 in Berlin und Erlaubnisse nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Timon Fischer ist Geschäftsführer und verantwortet die Immobilienfinanzierung.",
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem Grundstücksmarktbericht des Leipziger Gutachterausschusses zum Stichtag 01.01.2026. Er ist der aktuelle amtliche Bericht und enthält alle Verkäufe aus 2025; den nächsten legt der Gutachterausschuss voraussichtlich im Frühjahr 2027 vor. Erste Werte für 2026 gibt es schon: Die Bodenrichtwerte gelten zum 01.01.2026, und nach dem GREIX, dem Preisindex der Gutachterausschüsse und des Kiel Instituts für Weltwirtschaft, stiegen die Preise für Eigentumswohnungen in Leipzig im ersten Quartal 2026 um 2,5 % und blieben im zweiten Quartal nahezu gleich. Nach unserer Erfahrung hat der Zinsanstieg 2026 die Preise, die tatsächlich vereinbart werden, spürbar gesenkt; in den amtlichen Zahlen zeigt sich das erst mit Verzögerung.",
   "updated": "2026-10-27",
   "hero": {
     "name": "leipzig-city-hochhaus-neues-rathaus",
@@ -253,6 +254,16 @@
       "name": "Leipziger Internet Zeitung, Umwandlung von Miet- in Eigentumswohnungen (Drucksache 8/5331)",
       "url": "https://www.l-iz.de/politik/sachsen/2026/02/wenn-aus-miet-eigentumswohnungen-werden-sachsens-regierung-lasst-mieter-regen-stehen-646139",
       "stand": "02.02.2026"
+    },
+    {
+      "name": "GREIX Kaufpreisindex: Ergebnisse für 2026 Q1, Kiel Institut für Weltwirtschaft und Gutachterausschüsse für Grundstückswerte",
+      "url": "https://cloud-data-greix-website.s3.eu-central-1.amazonaws.com/website/Documentation/kaufpreisindex_2026q1.pdf",
+      "stand": "07.05.2026; Eigentumswohnungen Leipzig +2,5 % gegenüber dem Vorquartal"
+    },
+    {
+      "name": "GREIX Kaufpreisindex: Ergebnisse für 2026 Q2, Kiel Institut für Weltwirtschaft und Gutachterausschüsse für Grundstückswerte",
+      "url": "https://cloud-data-greix-website.s3.eu-central-1.amazonaws.com/website/Documentation/kaufpreisindex_2026q2.pdf",
+      "stand": "06.08.2026; Eigentumswohnungen Leipzig −0,1 % gegenüber dem Vorquartal"
     }
   ],
   "pruefung": [
@@ -315,6 +326,10 @@
     {
       "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, §§ 656a–656d BGB; § 34c und § 34i GewO; Timon Fischer Geschäftsführer, Immobilienfinanzierung; Europace und Baufinex; Wertermittlung kostenlos",
       "fundstelle": "maklerprovision.njk; SCHREIBREGELN.md Regel 4; Seiten Leipzig-Nord/-Zentrum (kurzantwortMehr)"
+    },
+    {
+      "zahl": "GREIX Eigentumswohnungen Leipzig: Q1 2026 +2,5 % zum Vorquartal (Q1 2026 zu Q4 2025), Q2 2026 −0,1 % zum Vorquartal, nominal",
+      "fundstelle": "kaufpreisindex_2026q1.pdf (07.05.2026), Abschnitt „Entwicklung Großstädte“: „Im Vergleich zum Vorquartal (Q1 2026 zu Q4 2025) verzeichnete Leipzig mit 2,5 Prozent den stärksten Zuwachs“ bei Eigentumswohnungen; kaufpreisindex_2026q2.pdf (06.08.2026): „Leipzig blieb mit -0,1 Prozent nahezu unverändert“ bei Eigentumswohnungen gegenüber dem Vorquartal. Geprüft 05.11.2026 (Update 37 §1)."
     }
   ]
 }

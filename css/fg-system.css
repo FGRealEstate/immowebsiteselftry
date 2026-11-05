@@ -3132,3 +3132,4 @@ html:not(.fgs-js) .fgs-feat-nav { display: none; }
 /* Update 35 B2: „Stand: Monat Jahr“ direkt unter den Marktzahlen (Gebietsseiten, Eberswalde, Gebietsübersicht) */
 .fgs-facts-stand { margin: 20px 0 0 !important; color: var(--fgs-ink-2); }
 .fgs-place-facts .fgs-facts-stand { margin-bottom: 8px !important; }
+.fgs-place-facts .fgs-facts-stand-hinweis { margin-top: 0 !important; max-width: 46rem; line-height: 1.55; } /* Update 37 §1 */

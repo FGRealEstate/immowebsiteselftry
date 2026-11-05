@@ -34,6 +34,7 @@
     "position": "50% 50%"
   },
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem Grundstücksmarktbericht des Leipziger Gutachterausschusses zum Stichtag 01.01.2026. Er ist der aktuelle amtliche Bericht und enthält alle Verkäufe aus 2025; den nächsten legt der Gutachterausschuss voraussichtlich im Frühjahr 2027 vor. Erste Werte für 2026 gibt es schon: Die Bodenrichtwerte gelten zum 01.01.2026, und nach dem GREIX, dem Preisindex der Gutachterausschüsse und des Kiel Instituts für Weltwirtschaft, stiegen die Preise für Eigentumswohnungen in Leipzig im ersten Quartal 2026 um 2,5 % und blieben im zweiten Quartal nahezu gleich. Nach unserer Erfahrung hat der Zinsanstieg 2026 die Preise, die tatsächlich vereinbart werden, spürbar gesenkt; in den amtlichen Zahlen zeigt sich das erst mit Verzögerung.",
   "updated": "2026-10-27",
   "zahlen": [
     {
@@ -155,7 +156,7 @@
     "h2": "Kaufen und investieren in Leipzig-Nord",
     "absaetze": [
       "Als Eigennutzer finden Sie in Gohlis-Süd und Gohlis-Mitte Wohnungen mit im Mittel rund 75 m², mehr als in den übrigen Ortsteilen und in ganz Leipzig; in Mockau-Nord, Eutritzsch und Gohlis-Mitte auch viele Ein- und Zweifamilienhäuser.[[6]] Neue Wohnungen ohne Stellplatz kosteten 2025 in Gohlis-Süd im Mittel 6.960 €/m², mit Stellplatz 7.692 €/m², erstmals verkaufte sanierte Altbauwohnungen 6.783 €/m².[[1]] In den Erhaltungsgebieten Eutritzsch und Schönefeld brauchen Sie für Modernisierungen und Grundrissänderungen vor Baubeginn eine Genehmigung der Stadt, auch in selbst genutzten Wohnungen.[[10]]",
-      "Als Kapitalanleger sollten Sie den Leipziger Mietspiegel 2025–2027 und die Mietpreisbremse kennen, die bis zum 30.06.2027 gilt: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[3,7]] Bestandsmieten dürfen in drei Jahren um höchstens 15 % steigen.[[8]] Sanierte Mehrfamilienhäuser brachten 2025 im Stadtbezirk Nord im Mittel 2,9 % Nettoanfangsrendite bei 1,7 % Leerstand, in Nordost 3,2 % bei 0,1 % Leerstand.[[1]] Die Miete, die sich am Markt erzielen lässt, weicht fast immer vom Mietspiegel ab. Deshalb rechnen wir die Rendite mit Ihnen aus Kaufpreis, der tatsächlichen Nettokaltmiete, den laufenden Kosten und den Auflagen vor Ort, bevor Sie kaufen."
+      "Als Kapitalanleger sollten Sie den Leipziger Mietspiegel 2025–2027 und die Mietpreisbremse kennen, die bis zum 30.06.2027 gilt: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[3,7]] Bestandsmieten dürfen in drei Jahren um höchstens 15 % steigen.[[8]] Sanierte Mehrfamilienhäuser brachten 2025 im Stadtbezirk Nord im Mittel 2,9 % Nettoanfangsrendite bei 1,7 % Leerstand, in Nordost 3,2 % bei 0,1 % Leerstand.[[1]] Die Miete, die sich am Markt erzielen lässt, weicht fast immer vom Mietspiegel ab. Deshalb rechnen wir die Rendite mit Ihnen aus Kaufpreis, der tatsächlichen Nettokaltmiete, den laufenden Kosten und den Auflagen vor Ort, bevor Sie kaufen. Achten Sie bei Durchschnittswerten auf den Anteil an Neubauten, denn sie verzerren die Statistik: Die Anfangsrendite liegt bei Bestandsimmobilien in der Regel höher als bei Neubauten."
     ]
   },
   "finanzieren": {
@@ -321,6 +322,16 @@
       "name": "INSA-Fahrplanauskunft (Straßenbahn, Bus und S-Bahn), Verbindungen bis Leipzig Hauptbahnhof",
       "url": "https://reiseauskunft.insa.de/",
       "stand": "Fahrplan Dienstag 10.11.2026 ab 9 Uhr, abgefragt 26.10.2026"
+    },
+    {
+      "name": "GREIX Kaufpreisindex: Ergebnisse für 2026 Q1, Kiel Institut für Weltwirtschaft und Gutachterausschüsse für Grundstückswerte",
+      "url": "https://cloud-data-greix-website.s3.eu-central-1.amazonaws.com/website/Documentation/kaufpreisindex_2026q1.pdf",
+      "stand": "07.05.2026; Eigentumswohnungen Leipzig +2,5 % gegenüber dem Vorquartal"
+    },
+    {
+      "name": "GREIX Kaufpreisindex: Ergebnisse für 2026 Q2, Kiel Institut für Weltwirtschaft und Gutachterausschüsse für Grundstückswerte",
+      "url": "https://cloud-data-greix-website.s3.eu-central-1.amazonaws.com/website/Documentation/kaufpreisindex_2026q2.pdf",
+      "stand": "06.08.2026; Eigentumswohnungen Leipzig −0,1 % gegenüber dem Vorquartal"
     }
   ],
   "pruefung": [
@@ -399,6 +410,10 @@
     {
       "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, §§ 656a–656d BGB; § 34c und § 34i GewO; Timon Fischer Geschäftsführer, Immobilienfinanzierung; Europace und Baufinex",
       "fundstelle": "wie leipzig-west.json"
+    },
+    {
+      "zahl": "GREIX Eigentumswohnungen Leipzig: Q1 2026 +2,5 % zum Vorquartal (Q1 2026 zu Q4 2025), Q2 2026 −0,1 % zum Vorquartal, nominal",
+      "fundstelle": "kaufpreisindex_2026q1.pdf (07.05.2026), Abschnitt „Entwicklung Großstädte“: „Im Vergleich zum Vorquartal (Q1 2026 zu Q4 2025) verzeichnete Leipzig mit 2,5 Prozent den stärksten Zuwachs“ bei Eigentumswohnungen; kaufpreisindex_2026q2.pdf (06.08.2026): „Leipzig blieb mit -0,1 Prozent nahezu unverändert“ bei Eigentumswohnungen gegenüber dem Vorquartal. Geprüft 05.11.2026 (Update 37 §1)."
     }
   ],
   "karte": {
