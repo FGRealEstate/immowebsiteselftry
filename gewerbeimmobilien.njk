@@ -1,5 +1,6 @@
 ---
 layout: fgs-service.njk
+bodyClass: fgs-service
 title: Gewerbeimmobilien, Hallen und Logistikflächen vermieten und verkaufen | Fischer & Geserich
 permalink: gewerbeimmobilien/index.html
 description: "Halle, Logistikfläche oder Gewerbeeinheit im Berliner Umland oder in Dresden vermieten oder verkaufen: Ablauf, Unterlagen, Lage an der Autobahn und Marktzahlen mit Quelle. Ansprechpartner Timon Fischer (Norden, Osten, Dresden) und Lennart Geserich (Süden, Westen)."
@@ -9,6 +10,7 @@ canonicalPath: /gewerbeimmobilien/
 # und Gewerbe. Keine abgeschlossenen Gewerbeverkäufe, keine Volumina, die 20 Mio. aus dem Gespräch erscheinen nicht.
 # Lage und Marktzahlen nur mit Quelle (Fußnoten, Liste „Quellen“ am Ende des Inhalts). Recherche: research/gewerbe.md.
 # Finanzierungsabschnitt allgemein gehalten, Freigabe Timon (QUESTIONS-FOR-TIMON.md 15.1).
+# Update 35 C1 (05.11.2026): Aufbau wie Mehrfamilienhaus; nur auf der Testumgebung (FG_FREIGABE_GEWERBE=1, _data/freigaben.js).
 service:
   id: gewerbeimmobilien
   crumb: "Gewerbeimmobilien"
@@ -17,6 +19,11 @@ service:
   intro: "Wir vermieten Gewerbeflächen und übernehmen Aufträge zur Vermietung und zum Verkauf von Hallen, Logistikflächen und Gewerbeeinheiten. Bei Logistikflächen entscheidet vor allem eines: wie schnell ein Lkw auf der Autobahn ist."
   button: { label: "Fläche besprechen", href: "#anfrage" }
   hero: { name: "gewerbe-hero", alt: "Portalkräne im Umschlagbahnhof des Güterverkehrszentrums Großbeeren südlich von Berlin, darunter Güterzüge mit Containern" }
+  # Update 35 C1: Eckdaten wie auf Mehrfamilienhaus, nur aus Sätzen, die schon auf der Seite stehen (Einleitung und „Kurz gesagt“)
+  keyfacts:
+    - { label: "Flächen", wert: "Hallen, Logistik, Gewerbeeinheiten" }
+    - { label: "Auftrag", wert: "Vermietung und Verkauf" }
+    - { label: "Gebiete", wert: "Berliner Umland und Dresden" }
   summaryQ: "Was macht Fischer & Geserich bei Gewerbeimmobilien?"
   summary:
     - "Wir vermieten Gewerbeflächen und übernehmen Vermietungs- und Verkaufsaufträge für Hallen, Logistikflächen und Gewerbeeinheiten, im Berliner Umland sowie in und um Dresden. Dafür bereiten wir die technischen Daten so auf, wie Mieter und Käufer sie prüfen: Fläche, Hallenhöhe, Bodenlast, Tore, Rampen, Außenflächen und Baurecht."
@@ -89,183 +96,191 @@ gewerbeQuellen:
   - { name: "CBRE, Industrie- und Logistikimmobilienmarkt Mitteldeutschland, erste drei Quartale 2025, wiedergegeben auf LogReal.Direkt", url: "https://www.logrealdirekt.de/2025/10/24/1823/industrie-und-logistikimmobilienmarkt-mitteldeutschland-mit-leerstandsabbau-und-sich-erholendem-flaechenumsatz/", stand: "24.10.2025" }
   - { name: "CBRE, Marktanalyse erstes Halbjahr 2025, wiedergegeben in Immobilien Aktuell", url: "https://www.immobilien-aktuell-magazin.de/topics/dresden-neue-logistikprojekte-und-steigende-mieten-praegen-den-markt/", stand: "16.08.2025" }
 ---
-{#- Gewerbeimmobilien im Design-System (Update 7, Frage 19, 28.10.2026): Leistungsvorlage fgs-service.njk, weiter abgeschaltet
-    (freigaben.gewerbe, .eleventy.js). Ablauf 01–05, S5 Kapitel (Unterlagen, Lage, Marktzahlen, Finanzierung), F Formular,
-    Quellen als aufklappbare Liste wie auf den Gebietsseiten. Texte, Zahlen, Fußnoten und Formular (Felder, Ziel, form_type)
-    unverändert von der bisherigen Seite. Weggefallen: Kicker über den H2 („Für Eigentümer“, „Checkliste für Eigentümer“,
-    „Lage“, „Marktzahlen“, „Finanzierung“, „Direkter Kontakt“), Häkchen-Icons, „Auf dieser Seite“; die Gebietsliste ist eine
-    Zeile Textlinks (Brief 3.7). §1.1-Prüfung: an-jesu/Send-to-Jesu-Update-7.md. -#}
-{% from "fgs-macros.njk" import chapters, textlink with context %}
+{#- Gewerbeimmobilien im Design-System. Update 35 C1 (05.11.2026): Aufbau wie Mehrfamilienhaus (Design-Pass 2 §4): Fotokapitel mit dem
+    Ablauf 01–05 als Reihe wie auf Vermieten, die vier Kapitel als Zeilen (Überschrift links, Leitsatz rechts, der Rest unter
+    „Mehr erfahren“), Formular, Quellen als aufklappbare Liste. Das Inhaltsverzeichnis (S5) entfällt wie auf Mehrfamilienhaus und
+    Verkaufen. Texte, Zahlen, Fußnoten und Formular (Felder, Ziel, form_type) unverändert. Keine Zahlenleiste „F&G in Zahlen“:
+    Für Gewerbe gibt es keine freigegebenen Zahlen (Ehrlichkeitsregel oben). Die Gebietsliste #gebiete bleibt sichtbar unter dem
+    Kapitel Lage, weil die Gebietsseiten auf die Seite verlinken. Bild im Fotokapitel: dresden-band (wie auf Kapitalanlage),
+    bis es ein eigenes Gewerbefoto gibt. Bis Update 7 (28.10.2026): Leistungsvorlage mit Kapiteln, §1.1-Prüfung an-jesu/Send-to-Jesu-Update-7.md. -#}
+{% from "fgs-macros.njk" import fotokapitel, mehr, textlink with context %}
 {% from "fgd-icons.njk" import icon %}
 {% macro q(n) %}<sup class="fgs-fn"><a href="#quelle-{{ n }}" aria-label="Quelle {{ n }}">{{ n }}</a></sup>{% endmacro %}
 
-{# Ablauf: bisherige fünf Schritte, Texte unverändert #}
-<section class="fgs-section" id="leistungen" aria-labelledby="leistungen-titel">
-  <div class="fgs-wrap">
-    <div class="fgs-head">
-      <h2 id="leistungen-titel">Was wir für Eigentümer von Hallen und Gewerbeflächen tun</h2>
-      <p class="fgs-lead">Hallen, Logistikflächen und Gewerbeeinheiten wie Büro-, Lager- oder Werkstattflächen, zur Vermietung oder zum Verkauf. Der Ablauf ist in beiden Fällen ähnlich.</p>
-    </div>
-    <ol class="fgs-steps" role="list">
-      <li>
-        <span class="fgs-step-num" aria-hidden="true">01</span>
-        <h3>Erstgespräch und Besichtigung</h3>
-        <p>Wir klären, ob Sie vermieten oder verkaufen möchten, bis wann und zu welchen Vorstellungen. Danach sehen wir uns die Fläche vor Ort an: Zustand, Zufahrt, Hof und Tore.</p>
-      </li>
-      <li>
-        <span class="fgs-step-num" aria-hidden="true">02</span>
-        <h3>Technische Daten und Unterlagen</h3>
-        <p>Gewerbliche Mieter und Käufer entscheiden nach Kennzahlen. Wir stellen sie mit Ihnen zusammen und prüfen, was fehlt, bevor die Fläche angeboten wird.</p>
-      </li>
-      <li>
-        <span class="fgs-step-num" aria-hidden="true">03</span>
-        <h3>Miete oder Preis einordnen</h3>
-        <p>Wir ordnen die Fläche nach Lage, Autobahnanbindung, Zustand, Ausstattung und Marktlage ein und stimmen Mietvorstellung oder Angebotspreis mit Ihnen ab.</p>
-      </li>
-      <li>
-        <span class="fgs-step-num" aria-hidden="true">04</span>
-        <h3>Vermarktung und Besichtigungen</h3>
-        <p>Ein Exposé mit den Kennzahlen, die Nutzer zuerst prüfen, Anzeigen und die direkte Ansprache passender Unternehmen. Danach folgen die Besichtigungen.</p>
-      </li>
-      <li>
-        <span class="fgs-step-num" aria-hidden="true">05</span>
-        <h3>Verhandlung und Vertrag</h3>
-        <p>Bei der Vermietung begleiten wir die Verhandlung über Miete, Laufzeit und Nebenkosten bis zum unterschriebenen Mietvertrag. Beim Verkauf begleiten wir Preisverhandlung, Unterlagen und Notarvorbereitung bis zur Übergabe.</p>
-      </li>
+{# Fotokapitel: bisherige Überschrift und Einleitung auf dem Foto, darunter die fünf Schritte (Texte unverändert) #}
+{% call fotokapitel({ id: "leistungen", hoehe: 80, titel: "Was wir für Eigentümer von Hallen und Gewerbeflächen tun", bild: "dresden-band" | bild, alt: "Kuppel der Kunstakademie an der Brühlschen Terrasse in Dresden, dahinter die Elbe",
+  satz: "Hallen, Logistikflächen und Gewerbeeinheiten wie Büro-, Lager- oder Werkstattflächen, zur Vermietung oder zum Verkauf. Der Ablauf ist in beiden Fällen ähnlich." }) %}
+  <ol class="fgs-steps fgs-steps--reihe" role="list" data-fgs-steps style="--n: 5">
+    <li style="--i: 1">
+      <span class="fgs-step-num" aria-hidden="true">01</span>
+      <h3>Erstgespräch und Besichtigung</h3>
+      <p class="fgs-step-lead">Wir klären, ob Sie vermieten oder verkaufen möchten, bis wann und zu welchen Vorstellungen. Danach sehen wir uns die Fläche vor Ort an: Zustand, Zufahrt, Hof und Tore.</p>
+    </li>
+    <li style="--i: 2">
+      <span class="fgs-step-num" aria-hidden="true">02</span>
+      <h3>Technische Daten und Unterlagen</h3>
+      <p class="fgs-step-lead">Gewerbliche Mieter und Käufer entscheiden nach Kennzahlen. Wir stellen sie mit Ihnen zusammen und prüfen, was fehlt, bevor die Fläche angeboten wird.</p>
+    </li>
+    <li style="--i: 3">
+      <span class="fgs-step-num" aria-hidden="true">03</span>
+      <h3>Miete oder Preis einordnen</h3>
+      <p class="fgs-step-lead">Wir ordnen die Fläche nach Lage, Autobahnanbindung, Zustand, Ausstattung und Marktlage ein und stimmen Mietvorstellung oder Angebotspreis mit Ihnen ab.</p>
+    </li>
+    <li style="--i: 4">
+      <span class="fgs-step-num" aria-hidden="true">04</span>
+      <h3>Vermarktung und Besichtigungen</h3>
+      <p class="fgs-step-lead">Ein Exposé mit den Kennzahlen, die Nutzer zuerst prüfen, Anzeigen und die direkte Ansprache passender Unternehmen. Danach folgen die Besichtigungen.</p>
+    </li>
+    <li style="--i: 5">
+      <span class="fgs-step-num" aria-hidden="true">05</span>
+      <h3>Verhandlung und Vertrag</h3>
+      <p class="fgs-step-lead">Bei der Vermietung begleiten wir die Verhandlung über Miete, Laufzeit und Nebenkosten bis zum unterschriebenen Mietvertrag. Beim Verkauf begleiten wir Preisverhandlung, Unterlagen und Notarvorbereitung bis zur Übergabe.</p>
+    </li>
   </ol>
-    <p class="fgs-note">Wie lange eine Vermietung oder ein Verkauf dauert, hängt vor allem von Lage, Zustand und Preisvorstellung ab. Eine feste Dauer sagen wir deshalb nicht zu.</p>
+  <p class="fgs-note">Wie lange eine Vermietung oder ein Verkauf dauert, hängt vor allem von Lage, Zustand und Preisvorstellung ab. Eine feste Dauer sagen wir deshalb nicht zu.</p>
+{% endcall %}
+
+{# Kapitel als Zeilen (§2 Regel 1): Überschrift links, Leitsatz rechts, der Rest unter „Mehr erfahren“ #}
+<section class="fgs-section fgs-rows" aria-label="Gewerbeimmobilien im Einzelnen">
+  <div class="fgs-wrap">
+  <article class="fgs-row fgs-cols fgs-cols--57" id="unterlagen" aria-labelledby="unterlagen-titel">
+    <div class="fgs-cols-head"><h2 id="unterlagen-titel">Unterlagen und technische Daten, die Mieter und Käufer sehen wollen</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Ein Logistiker fragt zuerst nach Hallenhöhe, Bodenlast und Toren. Fehlen diese Angaben, fällt die Fläche oft schon bei der ersten Auswahl heraus.</p>
+      {% call mehr() %}
+      <h3>Die Halle und das Grundstück</h3>
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li>Grundriss und Flächenaufstellung<span>Hallen-, Büro-, Sozial- und Nebenflächen getrennt, dazu die Grundstücksgröße</span></li>
+        <li>Hallenhöhe<span>die lichte Höhe unter der Dachkonstruktion; sie bestimmt, wie hoch gelagert werden kann</span></li>
+        <li>Bodenlast<span>die Tragfähigkeit des Hallenbodens in Kilonewton oder Tonnen pro Quadratmeter</span></li>
+        <li>Tore und Rampen<span>Anzahl, Maße und Art: ebenerdige Tore für Stapler und Transporter, Rampentore mit Überladebrücke für Lkw</span></li>
+        <li>Außenflächen<span>Hof, Rangierfläche für Lkw, Stellplätze, mögliche Lagerflächen im Freien</span></li>
+      </ul>
+      <h3>Baurecht und Rechtliches</h3>
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li>Baurecht<span>Bebauungsplan oder Auskunft der Gemeinde, Baugenehmigung mit der genehmigten Nutzung</span></li>
+        <li>Aktueller Grundbuchauszug und Auskunft aus dem <a href="/lexikon/baulast/">Baulastenverzeichnis</a></li>
+        <li>Energieausweis</li>
+      </ul>
+      <h3>Bei vermieteten Flächen</h3>
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li>Mietverträge mit allen Nachträgen<span>Laufzeit, Verlängerungsoptionen und Kündigungsfristen</span></li>
+        <li>Nebenkostenabrechnung und eine Aufstellung der Kosten, die beim Eigentümer bleiben</li>
+      </ul>
+      <p class="fgs-note">Nicht alles muss am ersten Tag vorliegen. Was fehlt, beschaffen wir gemeinsam mit Ihnen.</p>
+      {% endcall %}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="lage" aria-labelledby="lage-titel">
+    <div class="fgs-cols-head"><h2 id="lage-titel">Warum die Lage entscheidet: der Weg zur Autobahn</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Logistiknutzer rechnen in Minuten: bis zur nächsten Anschlussstelle und zum nächsten Güterverkehrszentrum mit Bahn oder Hafen.</p>
+      {% call mehr() %}
+      <h3>Rund um Berlin: der Berliner Ring A10</h3>
+      <p>Der Berliner Ring ist 196&nbsp;km lang{{ q(1) }}. An ihm hängen die Autobahnen in alle Richtungen: am Dreieck Havelland die A24 Richtung Hamburg, am Dreieck Pankow die A114 in die Stadt{{ q(2) }}, am Dreieck Kreuz Oranienburg die A111{{ q(3) }}. Im Südwesten verbindet der Abschnitt zwischen den Dreiecken Potsdam und Nuthetal die A2, die A9 und die A115{{ q(4) }}.</p>
+      <p>An diesem Ring liegen die großen Güterverkehrszentren der Region:</p>
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li>GVZ Berlin Süd Großbeeren<span>an der B&nbsp;101, 5&nbsp;km bis zur A10, 220&nbsp;ha netto, mit Bahnanschluss und Terminal für den kombinierten Verkehr{{ q(5) }}{{ q(6) }}</span></li>
+        <li>GVZ Berlin West Wustermark<span>direkter Anschluss an die A10 in rund 0,5&nbsp;km, 134&nbsp;ha netto; laut Gemeinde ist nahezu das gesamte Gebiet vermarktet (Stand 2023){{ q(7) }}</span></li>
+        <li>GVZ Berlin Ost Freienbrink in Grünheide<span>direkte Ausfahrt am östlichen Ring, Gleisanschluss an die Strecke Richtung Warschau{{ q(5) }}, 96&nbsp;ha netto{{ q(8) }}</span></li>
+        <li>GVZ Schönefelder Kreuz<span>unmittelbar am südlichen Ring; sein Kern ist der Hafen Königs Wusterhausen, auf 65&nbsp;ha mit 15 Unternehmen{{ q(9) }}</span></li>
+      </ul>
+      <p>Dazu kommen große Gewerbegebiete wie der PreußenPark in Ludwigsfelde mit rund 130&nbsp;ha, eigenem Gleisanschluss und Autobahnanschluss; seine Vermarktung ist abgeschlossen{{ q(10) }}.</p>
+
+      <h3>Rund um Dresden: A4, A13 und A17</h3>
+      <p>Westlich von Dresden bündelt die A4 die Autobahnen 4, 13, 14 und 17. Vom Dreieck Dresden-West, wo die A17 abzweigt, bis zum Dreieck Dresden-Nord mit der A13 sind es 14,2&nbsp;km{{ q(11) }}. Das Güterverkehrszentrum Dresden liegt im Stadtteil Friedrichstadt, 2 bis 3&nbsp;km von der Innenstadt{{ q(12) }}; zur A4 und zur A13 sind es jeweils rund 2&nbsp;km, der Alberthafen gehört dazu{{ q(13) }}.</p>
+      <p>Im Umland liegen unter anderem das Gewerbegebiet Kesselsdorf in Wilsdruff an der B&nbsp;173 mit Anschluss an A4 und A17{{ q(14) }}, das Gewerbegebiet Radeburg Süd 0,5&nbsp;km von der Anschlussstelle Radeburg an der A13{{ q(15) }} und der IndustriePark Oberelbe bei Pirna mit rund 270&nbsp;ha, von denen etwa 140&nbsp;ha für Industrie und Gewerbe vorbereitet werden sollen; der Verkehr läuft über die Anschlussstelle Pirna{{ q(16) }}.</p>
+
+      <h3>Was wir bei der Lage Ihrer Fläche prüfen</h3>
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li>Entfernung und Fahrzeit bis zur nächsten Anschlussstelle</li>
+        <li>Den Weg dorthin<span>Ortsdurchfahrten, Engstellen und Beschränkungen für Lkw</span></li>
+        <li>Betriebszeiten<span>ob die Genehmigung Lkw-Verkehr in der Nacht oder am Wochenende zulässt</span></li>
+        <li>Die Nähe zu Güterverkehrszentrum, Bahn oder Hafen</li>
+      </ul>
+      {% endcall %}
+      <h3 id="gebiete">Unsere Gebietsseiten an diesen Achsen</h3>
+      <p>Markt und Ansprechpartner vor Ort stehen auf den Gebietsseiten:</p>
+      <div class="fgs-links">
+        {{ textlink("/standorte/teltow-flaeming/", "Teltow-Fläming") }}
+        {{ textlink("/standorte/havelland/", "Havelland") }}
+        {{ textlink("/standorte/oder-spree/", "Oder-Spree") }}
+        {{ textlink("/standorte/erkner/", "Erkner") }}
+        {{ textlink("/standorte/dahme-spreewald/", "Dahme-Spreewald") }}
+        {{ textlink("/standorte/konigs-wusterhausen/", "Königs Wusterhausen") }}
+        {{ textlink("/standorte/potsdam-mittelmark/", "Potsdam-Mittelmark") }}
+        {{ textlink("/standorte/teltow/", "Teltow & Kleinmachnow") }}
+        {{ textlink("/standorte/oberhavel/", "Oberhavel") }}
+        {{ textlink("/standorte/oranienburg/", "Oranienburg") }}
+        {{ textlink("/standorte/barnim/", "Barnim") }}
+        {{ textlink("/standorte/maerkisch-oderland/", "Märkisch-Oderland") }}
+        {{ textlink("/standorte/dresden/", "Dresden") }}
+        {{ textlink("/standorte/dresden/nord/", "Dresden-Nord") }}
+      </div>
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="markt" aria-labelledby="markt-titel">
+    <div class="fgs-cols-head"><h2 id="markt-titel">Logistikmarkt Berlin und Dresden in Zahlen</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Veröffentlichte Zahlen der großen Maklerhäuser für Lager- und Logistikflächen, jeweils mit Bericht und Datum.</p>
+      {% call mehr() %}
+      <h3>Berlin und Umland</h3>
+      <div class="fgs-table-wrap">
+        <table class="fgs-table">
+          <thead><tr><th scope="col">Bericht</th><th scope="col">Flächenumsatz</th><th scope="col">Spitzenmiete</th><th scope="col">Weitere Angaben</th></tr></thead>
+          <tbody>
+            <tr><td>BNP Paribas Real Estate, Logistikmarkt Berlin Q3&nbsp;2026, Stand 30.09.2026{{ q(17) }}</td><td>298.000&nbsp;m² in den ersten drei Quartalen, rund 7&nbsp;% unter dem Vorjahr</td><td>8,30&nbsp;€/m²</td><td>Durchschnittsmiete 7,30&nbsp;€/m²</td></tr>
+            <tr><td>Realogis, Pressemitteilung vom 07.10.2026{{ q(18) }}</td><td>332.000&nbsp;m² in den ersten drei Quartalen 2026, davon 134.300&nbsp;m² (41&nbsp;%) im Berliner Umland Süd</td><td>10,50&nbsp;€/m²</td><td>Durchschnittsmiete 8,10&nbsp;€/m²</td></tr>
+            <tr><td>JLL, Pressemitteilung vom 28.07.2026{{ q(19) }}</td><td>163.000&nbsp;m² im ersten Halbjahr 2026, 26&nbsp;% weniger als im Vorjahr</td><td>10,50&nbsp;€/m² für Lagerflächen ab 5.000&nbsp;m²</td><td>rund 278.000&nbsp;m² im Bau</td></tr>
+            <tr><td>CBRE, Pressemitteilung vom 24.07.2026{{ q(20) }}</td><td>170.300&nbsp;m² im ersten Halbjahr 2026, knapp 25&nbsp;% weniger als im Vorjahr</td><td>8,25&nbsp;€/m²</td><td>Leerstand 9,4&nbsp;%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Dresden</h3>
+      <div class="fgs-table-wrap">
+        <table class="fgs-table">
+          <thead><tr><th scope="col">Bericht</th><th scope="col">Flächenumsatz</th><th scope="col">Spitzenmiete</th><th scope="col">Weitere Angaben</th></tr></thead>
+          <tbody>
+            <tr><td>JLL, Pressemitteilung vom 15.10.2025{{ q(21) }}</td><td>keine Angabe</td><td>6,50&nbsp;€/m² in der Region Dresden, für Flächen über 5.000&nbsp;m², Stand drittes Quartal 2025</td><td>3&nbsp;% mehr als im Vorquartal</td></tr>
+            <tr><td>JLL, Pressemitteilung vom 06.07.2026{{ q(22) }}</td><td>keine Angabe</td><td>kein Euro-Wert genannt</td><td>Spitzenmiete in Dresden etwa 6&nbsp;% höher als ein Jahr zuvor</td></tr>
+            <tr><td>CBRE, Marktgebiet „A4 Sachsen“, erste drei Quartale 2025{{ q(23) }}</td><td>164.100&nbsp;m²</td><td>6,10&nbsp;€/m²</td><td>Das Marktgebiet reicht über Dresden hinaus.</td></tr>
+            <tr><td>CBRE, Marktgebiet „A4 Sachsen“, erstes Halbjahr 2025{{ q(24) }}</td><td>71.600&nbsp;m², davon 60.000&nbsp;m² Neubau für den Eigennutzer ESMC</td><td>6,10&nbsp;€/m²</td><td>Leerstand 3,4&nbsp;%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>So lesen Sie die Zahlen</h3>
+      <p>Die Spitzenmiete ist die Nettokaltmiete pro Quadratmeter und Monat, die für die besten Flächen im Markt erzielt wird. Der Flächenumsatz zählt die Flächen, die im Zeitraum vermietet oder von Nutzern selbst gekauft oder gebaut wurden. Die Zahlen der Häuser weichen voneinander ab, weil jedes sein Marktgebiet anders abgrenzt und andere Flächengrößen erfasst.</p>
+      <p>Für Dresden hat keines der großen Häuser für 2026 einen frei lesbaren Euro-Wert oder Flächenumsatz veröffentlicht. Deshalb stehen hier die letzten Werte aus 2025 und die Veränderung, die JLL für 2026 meldet.</p>
+      <p class="fgs-note">Für eine einzelne Halle sagen diese Marktwerte wenig. Ihre Fläche ordnen wir im Gespräch ein.</p>
+      {% endcall %}
+    </div>
+  </article>
+
+  <article class="fgs-row fgs-cols fgs-cols--57" id="finanzierung" aria-labelledby="finanzierung-titel">
+    <div class="fgs-cols-head"><h2 id="finanzierung-titel">Gewerbeimmobilien finanzieren: Die Bank prüft vor allem die Miete</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Bei einer Halle schaut die Bank anders hin als bei einer Wohnung. Drei Fragen sind entscheidend.</p>
+      {% call mehr() %}
+      <h3>Wer mietet und wie lange?</h3>
+      <p>Bei einer vermieteten Fläche zählt zuerst der Mietvertrag: wer der Mieter ist, wie lange der Vertrag fest läuft und ob die Miete nach den Kosten, die beim Eigentümer bleiben, Zins und Tilgung trägt. Wie Banken das messen, steht im Lexikon unter <a href="/lexikon/kapitaldienst/">Kapitaldienst</a> und <a href="/lexikon/dscr/">DSCR</a>.</p>
+      <h3>Findet sich ein anderer Nutzer?</h3>
+      <p>Die Bank fragt auch, ob sich die Fläche nach einem Auszug wieder vermieten ließe. Eine Halle mit üblicher Höhe, guter Zufahrt und kurzer Strecke zur Autobahn ist dafür leichter einzuschätzen als ein Bau, der nur zu einem Betrieb passt.</p>
+      <h3>Wer kauft?</h3>
+      <p>Kauft ein Unternehmen eine Halle für den eigenen Betrieb, prüft die Bank statt der Miete vor allem die Zahlen dieses Unternehmens. Wie viel Eigenkapital nötig ist und zu welchen Bedingungen eine Bank finanziert, entscheidet sie im Einzelfall. Feste Quoten nennen wir deshalb nicht.</p>
+      <p class="fgs-note">Fragen zur Finanzierung beantwortet Ihnen Timon Fischer. Wie wir Finanzierungen allgemein angehen, steht auf der Seite <a href="/finanzierungsberatung.html">Finanzierungsberatung</a>.</p>
+      {% endcall %}
+    </div>
+  </article>
   </div>
 </section>
-
-{# S5 Kapitel #}
-{% call chapters({ id: "kapitel", label: "Gewerbeimmobilien im Einzelnen", toc: [
-  { id: "unterlagen", titel: "Unterlagen und technische Daten" },
-  { id: "lage", titel: "Warum die Lage entscheidet" },
-  { id: "markt", titel: "Marktzahlen Berlin und Dresden" },
-  { id: "finanzierung", titel: "Gewerbeimmobilien finanzieren" }
-] }) %}
-  <article class="fgs-chapter" id="unterlagen" aria-labelledby="unterlagen-titel">
-    <h2 id="unterlagen-titel">Unterlagen und technische Daten, die Mieter und Käufer sehen wollen</h2>
-    <p class="fgs-lead">Ein Logistiker fragt zuerst nach Hallenhöhe, Bodenlast und Toren. Fehlen diese Angaben, fällt die Fläche oft schon bei der ersten Auswahl heraus.</p>
-    <h3>Die Halle und das Grundstück</h3>
-    <ul class="fgs-checklist fgs-checklist--one" role="list">
-      <li>Grundriss und Flächenaufstellung<span>Hallen-, Büro-, Sozial- und Nebenflächen getrennt, dazu die Grundstücksgröße</span></li>
-      <li>Hallenhöhe<span>die lichte Höhe unter der Dachkonstruktion; sie bestimmt, wie hoch gelagert werden kann</span></li>
-      <li>Bodenlast<span>die Tragfähigkeit des Hallenbodens in Kilonewton oder Tonnen pro Quadratmeter</span></li>
-      <li>Tore und Rampen<span>Anzahl, Maße und Art: ebenerdige Tore für Stapler und Transporter, Rampentore mit Überladebrücke für Lkw</span></li>
-      <li>Außenflächen<span>Hof, Rangierfläche für Lkw, Stellplätze, mögliche Lagerflächen im Freien</span></li>
-    </ul>
-    <h3>Baurecht und Rechtliches</h3>
-    <ul class="fgs-checklist fgs-checklist--one" role="list">
-      <li>Baurecht<span>Bebauungsplan oder Auskunft der Gemeinde, Baugenehmigung mit der genehmigten Nutzung</span></li>
-      <li>Aktueller Grundbuchauszug und Auskunft aus dem <a href="/lexikon/baulast/">Baulastenverzeichnis</a></li>
-      <li>Energieausweis</li>
-    </ul>
-    <h3>Bei vermieteten Flächen</h3>
-    <ul class="fgs-checklist fgs-checklist--one" role="list">
-      <li>Mietverträge mit allen Nachträgen<span>Laufzeit, Verlängerungsoptionen und Kündigungsfristen</span></li>
-      <li>Nebenkostenabrechnung und eine Aufstellung der Kosten, die beim Eigentümer bleiben</li>
-    </ul>
-    <p class="fgs-note">Nicht alles muss am ersten Tag vorliegen. Was fehlt, beschaffen wir gemeinsam mit Ihnen.</p>
-  </article>
-
-  <article class="fgs-chapter" id="lage" aria-labelledby="lage-titel">
-    <h2 id="lage-titel">Warum die Lage entscheidet: der Weg zur Autobahn</h2>
-    <p class="fgs-lead">Logistiknutzer rechnen in Minuten: bis zur nächsten Anschlussstelle und zum nächsten Güterverkehrszentrum mit Bahn oder Hafen.</p>
-    <h3>Rund um Berlin: der Berliner Ring A10</h3>
-    <p>Der Berliner Ring ist 196&nbsp;km lang{{ q(1) }}. An ihm hängen die Autobahnen in alle Richtungen: am Dreieck Havelland die A24 Richtung Hamburg, am Dreieck Pankow die A114 in die Stadt{{ q(2) }}, am Dreieck Kreuz Oranienburg die A111{{ q(3) }}. Im Südwesten verbindet der Abschnitt zwischen den Dreiecken Potsdam und Nuthetal die A2, die A9 und die A115{{ q(4) }}.</p>
-    <p>An diesem Ring liegen die großen Güterverkehrszentren der Region:</p>
-    <ul class="fgs-checklist fgs-checklist--one" role="list">
-      <li>GVZ Berlin Süd Großbeeren<span>an der B&nbsp;101, 5&nbsp;km bis zur A10, 220&nbsp;ha netto, mit Bahnanschluss und Terminal für den kombinierten Verkehr{{ q(5) }}{{ q(6) }}</span></li>
-      <li>GVZ Berlin West Wustermark<span>direkter Anschluss an die A10 in rund 0,5&nbsp;km, 134&nbsp;ha netto; laut Gemeinde ist nahezu das gesamte Gebiet vermarktet (Stand 2023){{ q(7) }}</span></li>
-      <li>GVZ Berlin Ost Freienbrink in Grünheide<span>direkte Ausfahrt am östlichen Ring, Gleisanschluss an die Strecke Richtung Warschau{{ q(5) }}, 96&nbsp;ha netto{{ q(8) }}</span></li>
-      <li>GVZ Schönefelder Kreuz<span>unmittelbar am südlichen Ring; sein Kern ist der Hafen Königs Wusterhausen, auf 65&nbsp;ha mit 15 Unternehmen{{ q(9) }}</span></li>
-    </ul>
-    <p>Dazu kommen große Gewerbegebiete wie der PreußenPark in Ludwigsfelde mit rund 130&nbsp;ha, eigenem Gleisanschluss und Autobahnanschluss; seine Vermarktung ist abgeschlossen{{ q(10) }}.</p>
-
-    <h3>Rund um Dresden: A4, A13 und A17</h3>
-    <p>Westlich von Dresden bündelt die A4 die Autobahnen 4, 13, 14 und 17. Vom Dreieck Dresden-West, wo die A17 abzweigt, bis zum Dreieck Dresden-Nord mit der A13 sind es 14,2&nbsp;km{{ q(11) }}. Das Güterverkehrszentrum Dresden liegt im Stadtteil Friedrichstadt, 2 bis 3&nbsp;km von der Innenstadt{{ q(12) }}; zur A4 und zur A13 sind es jeweils rund 2&nbsp;km, der Alberthafen gehört dazu{{ q(13) }}.</p>
-    <p>Im Umland liegen unter anderem das Gewerbegebiet Kesselsdorf in Wilsdruff an der B&nbsp;173 mit Anschluss an A4 und A17{{ q(14) }}, das Gewerbegebiet Radeburg Süd 0,5&nbsp;km von der Anschlussstelle Radeburg an der A13{{ q(15) }} und der IndustriePark Oberelbe bei Pirna mit rund 270&nbsp;ha, von denen etwa 140&nbsp;ha für Industrie und Gewerbe vorbereitet werden sollen; der Verkehr läuft über die Anschlussstelle Pirna{{ q(16) }}.</p>
-
-    <h3>Was wir bei der Lage Ihrer Fläche prüfen</h3>
-    <ul class="fgs-checklist fgs-checklist--one" role="list">
-      <li>Entfernung und Fahrzeit bis zur nächsten Anschlussstelle</li>
-      <li>Den Weg dorthin<span>Ortsdurchfahrten, Engstellen und Beschränkungen für Lkw</span></li>
-      <li>Betriebszeiten<span>ob die Genehmigung Lkw-Verkehr in der Nacht oder am Wochenende zulässt</span></li>
-      <li>Die Nähe zu Güterverkehrszentrum, Bahn oder Hafen</li>
-    </ul>
-
-    <h3 id="gebiete">Unsere Gebietsseiten an diesen Achsen</h3>
-    <p>Markt und Ansprechpartner vor Ort stehen auf den Gebietsseiten:</p>
-    <div class="fgs-links">
-      {{ textlink("/standorte/teltow-flaeming/", "Teltow-Fläming") }}
-      {{ textlink("/standorte/havelland/", "Havelland") }}
-      {{ textlink("/standorte/oder-spree/", "Oder-Spree") }}
-      {{ textlink("/standorte/erkner/", "Erkner") }}
-      {{ textlink("/standorte/dahme-spreewald/", "Dahme-Spreewald") }}
-      {{ textlink("/standorte/konigs-wusterhausen/", "Königs Wusterhausen") }}
-      {{ textlink("/standorte/potsdam-mittelmark/", "Potsdam-Mittelmark") }}
-      {{ textlink("/standorte/teltow/", "Teltow & Kleinmachnow") }}
-      {{ textlink("/standorte/oberhavel/", "Oberhavel") }}
-      {{ textlink("/standorte/oranienburg/", "Oranienburg") }}
-      {{ textlink("/standorte/barnim/", "Barnim") }}
-      {{ textlink("/standorte/maerkisch-oderland/", "Märkisch-Oderland") }}
-      {{ textlink("/standorte/dresden/", "Dresden") }}
-      {{ textlink("/standorte/dresden/nord/", "Dresden-Nord") }}
-    </div>
-  </article>
-
-  <article class="fgs-chapter" id="markt" aria-labelledby="markt-titel">
-    <h2 id="markt-titel">Logistikmarkt Berlin und Dresden in Zahlen</h2>
-    <p class="fgs-lead">Veröffentlichte Zahlen der großen Maklerhäuser für Lager- und Logistikflächen, jeweils mit Bericht und Datum.</p>
-    <h3>Berlin und Umland</h3>
-    <div class="fgs-table-wrap">
-      <table class="fgs-table">
-        <thead><tr><th scope="col">Bericht</th><th scope="col">Flächenumsatz</th><th scope="col">Spitzenmiete</th><th scope="col">Weitere Angaben</th></tr></thead>
-        <tbody>
-          <tr><td>BNP Paribas Real Estate, Logistikmarkt Berlin Q3&nbsp;2026, Stand 30.09.2026{{ q(17) }}</td><td>298.000&nbsp;m² in den ersten drei Quartalen, rund 7&nbsp;% unter dem Vorjahr</td><td>8,30&nbsp;€/m²</td><td>Durchschnittsmiete 7,30&nbsp;€/m²</td></tr>
-          <tr><td>Realogis, Pressemitteilung vom 07.10.2026{{ q(18) }}</td><td>332.000&nbsp;m² in den ersten drei Quartalen 2026, davon 134.300&nbsp;m² (41&nbsp;%) im Berliner Umland Süd</td><td>10,50&nbsp;€/m²</td><td>Durchschnittsmiete 8,10&nbsp;€/m²</td></tr>
-          <tr><td>JLL, Pressemitteilung vom 28.07.2026{{ q(19) }}</td><td>163.000&nbsp;m² im ersten Halbjahr 2026, 26&nbsp;% weniger als im Vorjahr</td><td>10,50&nbsp;€/m² für Lagerflächen ab 5.000&nbsp;m²</td><td>rund 278.000&nbsp;m² im Bau</td></tr>
-          <tr><td>CBRE, Pressemitteilung vom 24.07.2026{{ q(20) }}</td><td>170.300&nbsp;m² im ersten Halbjahr 2026, knapp 25&nbsp;% weniger als im Vorjahr</td><td>8,25&nbsp;€/m²</td><td>Leerstand 9,4&nbsp;%</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <h3>Dresden</h3>
-    <div class="fgs-table-wrap">
-      <table class="fgs-table">
-        <thead><tr><th scope="col">Bericht</th><th scope="col">Flächenumsatz</th><th scope="col">Spitzenmiete</th><th scope="col">Weitere Angaben</th></tr></thead>
-        <tbody>
-          <tr><td>JLL, Pressemitteilung vom 15.10.2025{{ q(21) }}</td><td>keine Angabe</td><td>6,50&nbsp;€/m² in der Region Dresden, für Flächen über 5.000&nbsp;m², Stand drittes Quartal 2025</td><td>3&nbsp;% mehr als im Vorquartal</td></tr>
-          <tr><td>JLL, Pressemitteilung vom 06.07.2026{{ q(22) }}</td><td>keine Angabe</td><td>kein Euro-Wert genannt</td><td>Spitzenmiete in Dresden etwa 6&nbsp;% höher als ein Jahr zuvor</td></tr>
-          <tr><td>CBRE, Marktgebiet „A4 Sachsen“, erste drei Quartale 2025{{ q(23) }}</td><td>164.100&nbsp;m²</td><td>6,10&nbsp;€/m²</td><td>Das Marktgebiet reicht über Dresden hinaus.</td></tr>
-          <tr><td>CBRE, Marktgebiet „A4 Sachsen“, erstes Halbjahr 2025{{ q(24) }}</td><td>71.600&nbsp;m², davon 60.000&nbsp;m² Neubau für den Eigennutzer ESMC</td><td>6,10&nbsp;€/m²</td><td>Leerstand 3,4&nbsp;%</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <h3>So lesen Sie die Zahlen</h3>
-    <p>Die Spitzenmiete ist die Nettokaltmiete pro Quadratmeter und Monat, die für die besten Flächen im Markt erzielt wird. Der Flächenumsatz zählt die Flächen, die im Zeitraum vermietet oder von Nutzern selbst gekauft oder gebaut wurden. Die Zahlen der Häuser weichen voneinander ab, weil jedes sein Marktgebiet anders abgrenzt und andere Flächengrößen erfasst.</p>
-    <p>Für Dresden hat keines der großen Häuser für 2026 einen frei lesbaren Euro-Wert oder Flächenumsatz veröffentlicht. Deshalb stehen hier die letzten Werte aus 2025 und die Veränderung, die JLL für 2026 meldet.</p>
-    <p class="fgs-note">Für eine einzelne Halle sagen diese Marktwerte wenig. Ihre Fläche ordnen wir im Gespräch ein.</p>
-  </article>
-
-  <article class="fgs-chapter" id="finanzierung" aria-labelledby="finanzierung-titel">
-    <h2 id="finanzierung-titel">Gewerbeimmobilien finanzieren: Die Bank prüft vor allem die Miete</h2>
-    <p class="fgs-lead">Bei einer Halle schaut die Bank anders hin als bei einer Wohnung. Drei Fragen sind entscheidend.</p>
-    <h3>Wer mietet und wie lange?</h3>
-    <p>Bei einer vermieteten Fläche zählt zuerst der Mietvertrag: wer der Mieter ist, wie lange der Vertrag fest läuft und ob die Miete nach den Kosten, die beim Eigentümer bleiben, Zins und Tilgung trägt. Wie Banken das messen, steht im Lexikon unter <a href="/lexikon/kapitaldienst/">Kapitaldienst</a> und <a href="/lexikon/dscr/">DSCR</a>.</p>
-    <h3>Findet sich ein anderer Nutzer?</h3>
-    <p>Die Bank fragt auch, ob sich die Fläche nach einem Auszug wieder vermieten ließe. Eine Halle mit üblicher Höhe, guter Zufahrt und kurzer Strecke zur Autobahn ist dafür leichter einzuschätzen als ein Bau, der nur zu einem Betrieb passt.</p>
-    <h3>Wer kauft?</h3>
-    <p>Kauft ein Unternehmen eine Halle für den eigenen Betrieb, prüft die Bank statt der Miete vor allem die Zahlen dieses Unternehmens. Wie viel Eigenkapital nötig ist und zu welchen Bedingungen eine Bank finanziert, entscheidet sie im Einzelfall. Feste Quoten nennen wir deshalb nicht.</p>
-    <p class="fgs-note">Fragen zur Finanzierung beantwortet Ihnen Timon Fischer. Wie wir Finanzierungen allgemein angehen, steht auf der Seite <a href="/finanzierungsberatung.html">Finanzierungsberatung</a>.</p>
-  </article>
-{% endcall %}
 
 {# F Formular: gleiche Funktion wie alle Formulare (propstack-lead), Kennung form_type „gewerbe“ (data-form-type).
    object_type „Gewerbe“ legt in Propstack ein Gewerbeobjekt an; Art, Fläche und Autobahn stehen als eigene Angaben
    in property_details, damit sie nicht in Wohnfeldern landen (seller-area-value wäre Wohnfläche). Felder unverändert. #}
 <section class="fgs-section" id="anfrage-bereich" aria-labelledby="anfrage-titel">
-  <div class="fgs-wrap fgs-formblock">
+  <div class="fgs-wrap fgs-formblock fgs-formblock--breit">
     <div class="fgs-formblock-text">
       <h2 id="anfrage-titel">Ihre Halle oder Gewerbefläche in wenigen Angaben</h2>
       <p class="fgs-lead">Sagen Sie uns, um welche Fläche es geht und ob Sie vermieten oder verkaufen möchten. Wir melden uns mit einem Terminvorschlag für das erste Gespräch.</p>

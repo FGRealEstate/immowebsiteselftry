@@ -243,5 +243,9 @@ service:
   <p>Weil wir Verkauf und Finanzierung zusammen begleiten, planen wir beides in einem Prozess: welcher Erlös realistisch ist, wie viel Eigenkapital daraus für den nächsten Kauf entsteht und welche Finanzierung zur Reihenfolge der Termine passt. Die Finanzierung vergleichen wir über Plattformen wie Europace und Baufinex und über direkte Bankkontakte. Eine Zusage bleibt immer die Entscheidung der Bank.</p>
   <p>Läuft für Ihre jetzige Immobilie noch ein Darlehen, prüfen wir außerdem, ob es abgelöst oder auf die neue Immobilie übertragen werden kann, und was das jeweils kostet.</p>
   <blockquote class="fgs-pull"><p>Wir verkaufen Eigentumswohnungen, Ein- und Zweifamilienhäuser, Mehrfamilienhäuser, Grundstücke und Pakete aus mehreren Wohnungen.</p></blockquote>
+  {%- if freigaben.gewerbe %}{# Update 35 C1: Link zur Gewerbeseite, erst mit freigaben.gewerbe #}
+  <div class="fgs-links">{% endif %}
   {{ textlink("/finanzierungsberatung.html", "Zur Finanzierungsberatung") }}
+  {%- if freigaben.gewerbe %}
+  {{ textlink("/gewerbeimmobilien/", "Hallen und Gewerbeflächen verkaufen") }}</div>{% endif %}
 {% endcall %}

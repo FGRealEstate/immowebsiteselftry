@@ -191,6 +191,10 @@ service:
         <li><a href="/angebote.html">Aktuelle Angebote</a></li>
         <li><a href="/standorte/berlin/">Berlin</a>, <a href="/standorte/leipzig/">Leipzig</a> und <a href="/standorte/dresden/">Dresden</a></li>
         <li><a href="/standorte/">Alle Gebiete in Berlin, Brandenburg und Sachsen</a></li>
+        {#- Update 35 C1: Link zur Gewerbeseite, erst mit freigaben.gewerbe -#}
+        {%- if freigaben.gewerbe %}
+        <li><a href="/gewerbeimmobilien/">Hallen, Logistik- und Gewerbeflächen</a></li>
+        {%- endif %}
       </ul>
     </div>
   </div>
