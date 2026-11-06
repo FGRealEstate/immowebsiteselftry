@@ -21,8 +21,9 @@
 # Peer 06.11.2026: die 22 Blogartikel ab 02.11. sind offline. Ihre /wissen/-Adressen gehen wieder
 # wie vorher: wie-berechnet-… aufs Lexikon (Stand Update 25), alle übrigen über /wissen/* auf /blog/ (302).
 # Die auskommentierten Zeilen beim Wiederveröffentlichen zurücknehmen.
-/wissen/wie-berechnet-man-die-eigenkapitalrendite /lexikon/eigenkapitalrendite/ 301
-# /wissen/wie-berechnet-man-die-eigenkapitalrendite /blog/wie-berechnet-man-die-eigenkapitalrendite/ 301
+# /wissen/wie-berechnet-man-die-eigenkapitalrendite /lexikon/eigenkapitalrendite/ 301
+# Update 38 v2 §2 (06.11.2026): Nr. 22 wieder live
+/wissen/wie-berechnet-man-die-eigenkapitalrendite /blog/wie-berechnet-man-die-eigenkapitalrendite/ 301
 # Update 29 §1 (02.11.2026): Due Diligence und Spekulationsfrist ist live
 # /wissen/due-diligence-fur-einsteiger /blog/due-diligence-und-spekulationsfrist/ 301
 # /wissen/spekulationsfrist-im-uberblick /blog/due-diligence-und-spekulationsfrist/ 301
