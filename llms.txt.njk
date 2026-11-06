@@ -1,3 +1,10 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+{#- Update 40 §1.8 (06.11.2026): „/llms.txt lists the main, area and live-article pages and stays in sync on each build.“
+    Gebiete aus _data/gebiete.js (wie sitemap-standorte.xml), dazu die alte Standortseite aus labContent.legacyLocations;
+    Artikel aus _data/blog.json (Ausgabe von live.py, wie sitemap-blog.xml). Der übrige Text ist der bisherige llms.txt. -#}
 # Fischer & Geserich Real Estate
 
 > Immobilienmakler und unabhängige Immobilienfinanzierung aus Berlin-Steglitz: Verkauf, Kauf, Vermietung und Finanzierung von Immobilien in Berlin, Brandenburg, Potsdam, Leipzig und Dresden, Finanzierungen auch deutschlandweit.
@@ -22,11 +29,22 @@ Die Fischer & Geserich Real Estate GmbH ist ein inhabergeführtes Unternehmen mi
 ## Gebiete
 
 - [Alle Gebiete](https://fg-realestate.de/standorte/): Übersicht über Berlin, Brandenburg, Potsdam, Leipzig und Dresden mit Ansprechpartner je Gebiet
-- [Berlin](https://fg-realestate.de/standorte/berlin/): Steglitz-Zehlendorf, Charlottenburg-Wilmersdorf, Tempelhof-Schöneberg und Pankow
-- [Brandenburg](https://fg-realestate.de/standorte/#region-brandenburg): acht Landkreise rund um Berlin und ihre Städte
-- [Potsdam](https://fg-realestate.de/standorte/potsdam/)
-- [Leipzig](https://fg-realestate.de/standorte/leipzig/): Zentrum, Nord und West
-- [Dresden](https://fg-realestate.de/standorte/dresden/): Zentrum, Nord, Ost und Süd
+{%- for gruppe in ["Berlin", "Brandenburg", "Leipzig", "Dresden"] %}
+
+### {{ gruppe }}
+{% for g in gebiete %}
+{%- set teil = g.url.split("/")[2] %}
+{%- set zuordnung = "Berlin" if teil == "berlin" else ("Leipzig" if teil == "leipzig" else ("Dresden" if teil == "dresden" else "Brandenburg")) %}
+{%- if zuordnung == gruppe %}
+- [{{ g.name | safe }}](https://fg-realestate.de{{ g.url }}): {{ g.description | safe }}
+{%- endif %}
+{%- endfor %}
+{%- if gruppe == "Brandenburg" %}
+{%- for ort in labContent.legacyLocations %}
+- [{{ ort.name | safe }}](https://fg-realestate.de/standorte/{{ ort.slug }}/)
+{%- endfor %}
+{%- endif %}
+{%- endfor %}
 
 ## Über uns
 
@@ -40,6 +58,11 @@ Die Fischer & Geserich Real Estate GmbH ist ein inhabergeführtes Unternehmen mi
 
 - [Blog](https://fg-realestate.de/blog/): Finanzierung und Immobilienmarkt erklärt, mit Rechenbeispielen und Quellen
 - [Lexikon](https://fg-realestate.de/lexikon/): Begriffe zu Kauf, Finanzierung, Bewertung, Vermietung und Steuern
+
+### Artikel im Blog
+{% for post in blog %}
+- [{{ post.titel | replace("&nbsp;", " ") | replace("&amp;", "&") | safe }}](https://fg-realestate.de{{ post.url }}): {{ post.kurz | replace("&nbsp;", " ") | replace("&amp;", "&") | safe }}
+{%- endfor %}
 
 ## Häufige Fragen
 

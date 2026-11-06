@@ -1,3 +1,11 @@
+# Update 40 §1.8 (06.11.2026): KI-Crawler und Bing ausdrücklich zugelassen; für alle anderen gilt der Block darunter.
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: PerplexityBot
+User-agent: Google-Extended
+User-agent: Bingbot
+Allow: /
+
 User-agent: *
 Allow: /
 

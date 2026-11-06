@@ -475,7 +475,7 @@ module.exports = function(eleventyConfig) {
   [
     "style.css", "fg-polish.css", "script.js", "fg-assistant.js", "fg-knowledge.js", "fg-assistant.css",
     "investment-lab.js", "investitionsrechner.js", "consent-manager.js", "consent-manager.css", "analytics.js",
-    "vendor", "images", "favicon.ico", "admin", "robots.txt", "llms.txt", "_redirects",
+    "vendor", "images", "favicon.ico", "admin", "robots.txt", "_redirects", // llms.txt: Vorlage llms.txt.njk (Update 40 §1.8)
     "css", "fonts", "fg-design.js", "fg-system.js", "fgs-motion.js"
   ].forEach((asset) => eleventyConfig.addPassthroughCopy(asset));
 
