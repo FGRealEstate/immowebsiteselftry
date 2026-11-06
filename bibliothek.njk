@@ -90,7 +90,7 @@ preloadImageSrcset: "/images/home/hero-berlin-mitte-960.webp 960w, /images/home/
   {{ card({ href: kartenOrte[0].url, bild: ("/images/gebiete/" + kartenOrte[0].heroPhoto.name) | bild, alt: kartenOrte[0].heroPhoto.alt, label: "Region", titel: "Berlin", zeile: "Vier Bezirke mit eigener Seite" }) }}
   {{ card({ href: "/standorte/#region-brandenburg", bild: "potsdam-band" | bild, alt: "Alter Markt in Potsdam mit Nikolaikirche, Obelisk und Altem Rathaus", label: "Region", titel: "Brandenburg", zeile: (serviceArea.landkreise | length) + " Landkreise im Berliner Umland" }) }}
   {{ card({ href: kartenOrte[1].url, bild: ("/images/gebiete/" + kartenOrte[1].heroPhoto.name) | bild, alt: kartenOrte[1].heroPhoto.alt, label: "Region", titel: "Leipzig", zeile: "Zentrum, Nord und West" }) }}
-  {{ card({ href: kartenOrte[2].url, bild: ("/images/gebiete/" + kartenOrte[2].heroPhoto.name) | bild, alt: kartenOrte[2].heroPhoto.alt, label: "Region", titel: "Dresden", zeile: "Nord, Süd, Zentrum und Ost" }) }}
+  {{ card({ href: kartenOrte[2].url, bild: ("/images/gebiete/" + kartenOrte[2].heroPhoto.name) | bild, alt: kartenOrte[2].heroPhoto.alt, label: "Region", titel: "Dresden", zeile: "Norden, Süden, Osten, Blasewitz & Striesen" }) }}
   {%- for g in kartenOrte.slice(3) %}
   {{ card({ href: g.url, bild: ("/images/gebiete/" + g.heroPhoto.name) | bild, alt: g.heroPhoto.alt, label: "Brandenburg", titel: g.name, zeile: g.kreis }) }}
   {%- endfor %}

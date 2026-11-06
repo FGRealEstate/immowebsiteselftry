@@ -61,7 +61,7 @@ const leipzig = place("Leipzig", "leipzig", {
 
 const dresden = place("Dresden", "dresden", {
   schemaType: "City",
-  teile: [place("Nord", "dresden/nord"), place("Süd", "dresden/sued"), place("Zentrum", "dresden/zentrum"), place("Ost", "dresden/ost")]
+  teile: [place("Dresdner Norden", "dresden/nord"), place("Dresdner Süden", "dresden/sued"), place("Blasewitz & Striesen", "dresden/blasewitz-striesen"), place("Dresdner Osten", "dresden/ost")]
 });
 
 // Für das Organization-Markup: jedes Gebiet einmal, Teltow & Kleinmachnow als zwei Orte.
