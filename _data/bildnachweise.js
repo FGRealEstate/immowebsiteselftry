@@ -1,7 +1,8 @@
 // Daten für /bildnachweise/ (Update 4, 2.2): jedes Foto mit Lizenz, je Quelle eine Zeile.
 // Leistungsseiten, Startseite, Kontakt: _data/seitenbilder.json + fotoquellen.json.
 // Gebietsseiten: hero, band und abschnitte[].bild in content/gebiete/*.json, nur wenn das Foto dort schon liegt.
-// Blog (Update 4, 2.8): Bildzeilen „Foto: …“ unter den Abschnittsbildern in blog/<slug>/index.html (Ausgabe von live.py).
+// Blog (Update 4, 2.8): Nachweise der Lizenzfotos in blog/<slug>/index.html (Ausgabe von live.py). Seit Update 40 §1.4 (06.11.2026)
+// steht dort keine sichtbare Bildzeile mehr, sondern ein Kommentar <!-- Bildnachweis | Urheber | Lizenz | Dateiseite | Lizenzseite -->.
 // Alles liegt in site/, damit der Build auf Netlify ohne die Ordner außerhalb auskommt.
 // Update 9 (29.10.2026): Jede Zeile hat eine id (Sprungziel /bildnachweise/#bild-…) und bilder = Pfade der Bilddateien ohne
 // Breite. Aus bilder baut .eleventy.js den Aufklapper „Bildnachweise dieser Seite“, so haben Seite und Aufklapper dieselbe Quelle.
@@ -64,13 +65,15 @@ module.exports = function () {
 
   // Lizenzfotos im Blog: Abschnittsbild mit Bildzeile, seit 31.10.2026 auch das Titelbild (A7); die Lizenzangabe muss in lizenzen.json stehen
   const blog = [];
-  const FOTO = /<figure class="(?:sec-img|lead-img)"[^>]*>\s*<img src="([^"]+)" alt="([^"]*)"[^>]*><figcaption>Foto: <a href="([^"]+)"[^>]*>([^<]+)<\/a>, <a href="([^"]+)"[^>]*>([^<]+)<\/a>, zugeschnitten<\/figcaption>\s*<\/figure>/g;
+  const FOTO = /<figure class="(?:sec-img|lead-img)"[^>]*>\s*<img src="([^"]+)" alt="([^"]*)"[^>]*>\s*<!-- Bildnachweis \| ([^|]+?) \| ([^|]+?) \| ([^|]+?) \| ([^|]+?) -->\s*<\/figure>/g;
   for (const post of blogPosts) {
     const html = fs.readFileSync(path.join(site, "blog", post.slug, "index.html"), "utf8");
+    // Update 40 §1.4: eine sichtbare Bildzeile im alten Format bricht den Build ab
+    if (html.includes("<figcaption>Foto:")) throw new Error(`[bildnachweise] Blog ${post.slug}: sichtbare Bildzeile „Foto: …“, live.py mit aktuellem artikel.py neu laufen lassen`);
     const treffer = [...html.matchAll(FOTO)];
-    if (treffer.length !== html.split("<figcaption>Foto:").length - 1) throw new Error(`[bildnachweise] Blog ${post.slug}: Bildzeile in unerwartetem Format`);
+    if (treffer.length !== html.split("<!-- Bildnachweis |").length - 1) throw new Error(`[bildnachweise] Blog ${post.slug}: Bildnachweis in unerwartetem Format`);
     for (const [i, m] of treffer.entries()) {
-      const [, , alt, url, author, licenseUrl, license] = m;
+      const [, , alt, author, license, url, licenseUrl] = m;
       if (lizenzen[license] !== licenseUrl) throw new Error(`[bildnachweise] Blog ${post.slug}: Lizenz "${license}" passt nicht zu lizenzen.json`);
       blog.push({ id: `bild-blog-${post.slug}-${i + 1}`, url, title: title(url), host: host(url), alt, author: author.replace(/&amp;/g, "&"), license, licenseUrl, uses: [{ label: post.titel, href: post.url }] });
     }

@@ -228,6 +228,9 @@ module.exports = function(eleventyConfig) {
   // Seite und Aufklapper nicht auseinanderlaufen: Titel mit Link auf die Dateiseite, Urheber, Lizenz mit Link, „zugeschnitten“.
   // CC0 fehlt, es verlangt keinen Nachweis. Die Kartenbilder (aus OpenStreetMap gezeichnet) bekommen die Zeile mit der ODbL.
   // Ein Foto aus images/seiten/, images/gebiete/ oder seitenbilder.json ohne Zeile in bildnachweise.js bricht den Build ab.
+  // Update 40 §1.4 (06.11.2026): „Photo credits must not be visible on the pages … make sure it's on /bildnachweise/“. Der
+  // Aufklapper wird nicht mehr ausgegeben; die Prüfung je Seite bleibt, so steht jedes Foto einer Seite auf /bildnachweise/.
+  const AUFKLAPPER_ZEIGEN = false;
   const bildnachweise = require("./_data/bildnachweise.js")();
   const nachweisJeBild = new Map();
   for (const b of [...bildnachweise.seiten, ...bildnachweise.gebiete]) for (const p of b.bilder) nachweisJeBild.set(p, b);
@@ -262,7 +265,7 @@ module.exports = function(eleventyConfig) {
       }
     }
     const liste = [...zeilen.values(), ...(karte ? [KARTENZEILE] : [])];
-    const panel = liste.length
+    const panel = AUFKLAPPER_ZEIGEN && liste.length
       ? `<div class="fgs-wrap"><details class="fgs-pagecredits" id="bildnachweise-dieser-seite"><summary>Bildnachweise dieser Seite</summary><ul>${liste.map((z) => `<li>${z}</li>`).join("")}</ul></details></div>`
       : "";
     return content.replace(platzhalter, panel);
