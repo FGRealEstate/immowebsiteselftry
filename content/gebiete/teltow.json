@@ -16,6 +16,7 @@
   "h1": "Immobilie verkaufen, kaufen und finanzieren in Teltow und Kleinmachnow",
   "kurzantwort": "Fischer & Geserich begleitet Sie in Teltow und Kleinmachnow beim Verkauf, beim Kauf und bei der Finanzierung von Häusern und Wohnungen. Bewertung, Vermarktung, Ankaufsberatung und Finanzierung kommen aus einer Hand.",
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Halbjahr 2026 wurden im Landkreis 1.201 Kaufverträge geschlossen, nach 1.284 im ersten Halbjahr 2025. Im Berliner Umland waren es 577 nach 616, der Geldumsatz stieg dort von 242,0 auf 250,1 Mio. €. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-26",
   "zahlen": [
     {
@@ -125,7 +126,7 @@
     "h2": "Immobilie in Teltow oder Kleinmachnow verkaufen",
     "absaetze": [
       "Die beiden Märkte sind verschieden. In Teltow betrafen 2025 129 der 277 Kauffälle Wohnungs- und Teileigentum, in Kleinmachnow 89 der 142 Kauffälle bebaute Grundstücke. Wer in Teltow eine Wohnung der Baujahre 1991 bis 2000 verkauft, steht neben vielen Neubauten: 76 Neubauwohnungen wurden 2025 erstmals verkauft.[[1]] Für die Bewertung ziehen wir deshalb die Weiterverkäufe derselben Baujahre heran, 14 Kauffälle mit durchschnittlich 3.840 €/m², nicht den Neubaupreis. Bei vermieteten Immobilien zählt außerdem die Nettokaltmiete, die heute gezahlt wird.",
-      "Bei Häusern in Kleinmachnow ist die Spanne groß. Für Baujahre bis 1948 mit kleinen Modernisierungen lagen die gezahlten Preise 2025 zwischen 3.200 und 8.721 €/m² Wohnfläche.[[1]] Grundstück, Zustand und Lage innerhalb der Zone machen den Unterschied, deshalb bewerten wir jedes Haus einzeln, kostenlos und meistens innerhalb weniger Stunden."
+      "Bei Häusern in Kleinmachnow ist die Spanne groß. Für Baujahre bis 1948 mit kleinen Modernisierungen lagen die gezahlten Preise 2025 zwischen 3.200 und 8.721 €/m² Wohnfläche.[[1]] Werte am oberen Ende erzielen nur wenige Häuser; für ein gewöhnliches Bestandshaus liegt der Preis heute nach unserer Erfahrung deutlich darunter. Grundstück, Zustand und Lage innerhalb der Zone machen den Unterschied, deshalb bewerten wir jedes Haus einzeln, kostenlos und meistens innerhalb weniger Stunden."
     ]
   },
   "kaufen": {
@@ -292,6 +293,11 @@
       "name": "VBB-Fahrplandaten (Linien und Fahrzeiten ab S Teltow Stadt, Teltow Bahnhof und Kleinmachnow Rathausmarkt)",
       "url": "https://v6.vbb.transport.rest/stops/900220114?linesOfStops=true",
       "stand": "Fahrplan Dienstag 10.11.2026 (Bauzeit), abgefragt 24.10.2026"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte im Landkreis Potsdam-Mittelmark, Zwischenbericht 1. Halbjahr 2026",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GA_PM_1HJ2026.pdf",
+      "stand": "Teltow, 03.09.2026"
     }
   ],
   "pruefung": [
@@ -450,6 +456,10 @@
     {
       "zahl": "Autocomplete-Fragen (bodenrichtwert teltow …, immobilienpreise kleinmachnow …)",
       "fundstelle": "research/serp/autocomplete-2026-10-24.json, Schlüssel „teltow“"
+    },
+    {
+      "zahl": "Potsdam-Mittelmark 1. Halbjahr 2026: 1.201 Kaufverträge (1. Halbjahr 2025: 1.284); Berliner Umland 577 (616), Geldumsatz 250,1 Mio. € (242,0 Mio. €)",
+      "fundstelle": "GA_PM_1HJ2026.pdf, S. 1 und Tabelle nach Bereichen (Berliner Umland). Geprüft 06.11.2026 gegen den Bericht (Update 39 §2)."
     }
   ],
   "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Teltow und Kleinmachnow ist Lennart Geserich Ihr Ansprechpartner, Head of Sales & Vermietung.",

@@ -31,6 +31,7 @@
     "position": "50% 60%"
   },
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Halbjahr 2026 sank die Zahl der Kauffälle um 4,5 % auf 938. Freistehende Ein- und Zweifamilienhäuser im Berliner Umland kosteten im Mittel 3.670 €/m² Wohnfläche, nach 3.650 €/m² im Jahr 2025. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-26",
   "zahlen": [
     {
@@ -52,7 +53,7 @@
     {
       "wert": "Ø 5.255 €/m²",
       "label": "Neue Eigentumswohnungen in Strausberg",
-      "detail": "34 Erstverkäufe, Spanne 4.310 bis 5.597 €/m², im Mittel 58 m². Gebrauchte, selbst genutzte Wohnungen kosteten in Strausberg im Mittel 2.438 €/m², in Neuenhagen 3.252 und in Petershagen/Eggersdorf 3.372 €/m².",
+      "detail": "34 Erstverkäufe, Spanne 4.310 bis 5.597 €/m², im Mittel 58 m². Werte am oberen Ende erzielen nur wenige Wohnungen; für eine gewöhnliche Bestandswohnung liegt der Preis heute nach unserer Erfahrung deutlich darunter. Gebrauchte, selbst genutzte Wohnungen kosteten in Strausberg im Mittel 2.438 €/m², in Neuenhagen 3.252 und in Petershagen/Eggersdorf 3.372 €/m².",
       "quelle": "Grundstücksmarktbericht 2025 Landkreis Märkisch-Oderland",
       "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_MOL.pdf",
       "stichtag": "Kaufverträge 2025"
@@ -203,7 +204,7 @@
     },
     {
       "frage": "Was kostet eine Wohnung oder ein Haus in Strausberg?",
-      "antwort": "Neue Eigentumswohnungen kosteten 2025 in Strausberg im Mittel 5.255 €/m², bei 34 Verkäufen. Gebrauchte selbst genutzte Wohnungen kosteten im Mittel 2.438 €/m² bei einer Spanne von 1.356 bis 3.103 €/m², vermietete 2.420 €/m².[[1]] Hauspreise weist der Gutachterausschuss nicht je Stadt aus; im Berliner Umland des Landkreises kosteten freistehende Einfamilienhäuser 2025 je nach Baujahr im Mittel 377.000 bis 509.000 €.[[1]] Bauland in der Gartenstadt liegt zum 01.01.2026 bei 280 €/m², in der Vorstadt bei 300 €/m².[[2]]",
+      "antwort": "Neue Eigentumswohnungen kosteten 2025 in Strausberg im Mittel 5.255 €/m², bei 34 Verkäufen. Gebrauchte selbst genutzte Wohnungen kosteten im Mittel 2.438 €/m² bei einer Spanne von 1.356 bis 3.103 €/m², vermietete 2.420 €/m².[[1]] Werte am oberen Ende erzielen nur wenige Wohnungen; für eine gewöhnliche Bestandswohnung liegt der Preis heute nach unserer Erfahrung deutlich darunter. Hauspreise weist der Gutachterausschuss nicht je Stadt aus; im Berliner Umland des Landkreises kosteten freistehende Einfamilienhäuser 2025 je nach Baujahr im Mittel 377.000 bis 509.000 €.[[1]] Bauland in der Gartenstadt liegt zum 01.01.2026 bei 280 €/m², in der Vorstadt bei 300 €/m².[[2]]",
       "herkunft": "Google-Autocomplete „wohnung kaufen strausberg“, „haus kaufen strausberg gartenstadt“, „haus kaufen strausberg vorstadt“, „haus kaufen strausberg nord“, „grundstück strausberg gartenstadt“ und „immobilien strausberg kaufen“ (research/serp/autocomplete-2026-10-26-maerkisch-oderland.json)"
     },
     {
@@ -325,6 +326,11 @@
       "name": "Gemeinde Rüdersdorf bei Berlin, Sehenswertes und Aktivitäten",
       "url": "https://www.ruedersdorf.de/freizeit-tourismus/ruedersdorf-erleben/sehenswertes-und-aktivitaeten/",
       "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte im Landkreis Märkisch-Oderland, Halbjahresbericht 1. Halbjahr 2026",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GA_MOL_1HJ2026.pdf",
+      "stand": "01.01. bis 30.06.2026"
     }
   ],
   "pruefung": [
@@ -411,6 +417,10 @@
     {
       "zahl": "Erbfall-Antwort; § 34c und § 34i GewO; Timon Fischer, Geschäftsführer und verantwortlich für die Immobilienfinanzierung; Europace und Baufinex",
       "fundstelle": "wie barnim.json (Live-Seite und Brief)"
+    },
+    {
+      "zahl": "Märkisch-Oderland 1. Halbjahr 2026: 938 Kauffälle, −4,5 % zum 1. Halbjahr 2025; freistehende Ein-/Zweifamilienhäuser Berliner Umland Ø Wohnflächenpreis 3.670 €/m² (2025: 3.650 €/m²)",
+      "fundstelle": "GA_MOL_1HJ2026.pdf, S. 1 und S. 9 (Preisentwicklung freistehende Einfamilienhäuser/Zweifamilienhäuser, Berliner Umland). Geprüft 06.11.2026 gegen den Bericht (Update 39 §2)."
     }
   ]
 }

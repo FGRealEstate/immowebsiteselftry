@@ -31,6 +31,7 @@
     "position": "50% 50%"
   },
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Quartal 2026 zählte der Berliner Gutachterausschuss 3.434 verkaufte Eigentumswohnungen, 6 % weniger als im ersten Quartal 2025, bei nahezu unveränderten Preisen; bei Ein- und Zweifamilienhäusern waren es 555 Verkäufe, 8 % weniger, ebenfalls bei nahezu unveränderten Preisen. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-26",
   "zahlen": [
     {
@@ -44,7 +45,7 @@
     {
       "wert": "Ø 6.487 €/m²",
       "label": "Ein- und Zweifamilienhäuser im früheren Bezirk Zehlendorf, je Quadratmeter Wohnfläche",
-      "detail": "54 Verkäufe, Spanne 4.129 bis 9.417 €/m². Im früheren Bezirk Steglitz lag der Mittelwert bei 5.037 €/m² (87 Verkäufe), in Dahlem bei 9.120 €/m² (7 Verkäufe), in ganz Berlin bei 4.366 €/m².",
+      "detail": "54 Verkäufe, Spanne 4.129 bis 9.417 €/m². Werte am oberen Ende erzielen nur wenige Häuser; für ein gewöhnliches Bestandshaus liegt der Preis heute nach unserer Erfahrung deutlich darunter. Im früheren Bezirk Steglitz lag der Mittelwert bei 5.037 €/m² (87 Verkäufe), in Dahlem bei 9.120 €/m² (7 Verkäufe), in ganz Berlin bei 4.366 €/m².",
       "quelle": "Immobilienmarktbericht Berlin 2025/2026",
       "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
       "stichtag": "Kaufverträge 2025"
@@ -333,6 +334,11 @@
       "name": "Bezirksamt Steglitz-Zehlendorf, Ortsteil Nikolassee",
       "url": "https://www.berlin.de/ba-steglitz-zehlendorf/bezirk-erleben/ortsteile/nikolassee/nikolassee-1344323.php",
       "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in Berlin, Pressemitteilung „Der Berliner Immobilienmarkt zeigt sich 2025 in den Preisen stabil“ mit den Zahlen für das 1. Quartal 2026",
+      "url": "https://www.berlin.de/sen/stadt/presse/pressemeldungen/pressemitteilung.1699073.php",
+      "stand": "31.07.2026; 1. Quartal 2026 gegenüber dem 1. Quartal 2025"
     }
   ],
   "pruefung": [
@@ -395,6 +401,10 @@
     {
       "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, Halbteilung §§ 656a–656d BGB, nicht bei MFH und Grundstücken; § 34c und § 34i GewO; Lennart Geserich; Europace und Baufinex",
       "fundstelle": "maklerprovision.njk, kaufen.njk; wie maerkisch-oderland.json"
+    },
+    {
+      "zahl": "Berlin 1. Quartal 2026: Eigentumswohnungen 3.434 Kauffälle (−6 %), Preistendenz nahezu unverändert; Ein- und Zweifamilienhäuser 555 Kauffälle (−8 %), Preistendenz nahezu unverändert",
+      "fundstelle": "Pressemitteilung vom 31.07.2026, Abschnitte „Bebaute Grundstücke 1. Quartal 2026“ und „Eigentumswohnungen 1. Quartal 2026“. Geprüft 06.11.2026 gegen den Bericht (Update 39 §2)."
     }
   ],
   "karte": {

@@ -28,6 +28,7 @@
     "position": "50% 55%"
   },
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Quartal 2026 zählte der Berliner Gutachterausschuss 3.434 verkaufte Eigentumswohnungen, 6 % weniger als im ersten Quartal 2025, bei nahezu unveränderten Preisen; bei Ein- und Zweifamilienhäusern waren es 555 Verkäufe, 8 % weniger, ebenfalls bei nahezu unveränderten Preisen. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-26",
   "zahlen": [
     {
@@ -41,7 +42,7 @@
     {
       "wert": "Ø 6.300 €/m²",
       "label": "Eigentumswohnungen in Prenzlauer Berg",
-      "detail": "663 Verkäufe, Spanne 3.911 bis 8.656 €/m², 2024 waren es 6.161 €/m². Im früheren Bezirk Pankow lag der Mittelwert bei 5.194 €/m² (540 Verkäufe), in Weißensee bei 5.563 €/m², in ganz Berlin bei 5.017 €/m².",
+      "detail": "663 Verkäufe, Spanne 3.911 bis 8.656 €/m², 2024 waren es 6.161 €/m². Werte am oberen Ende erzielen nur wenige Wohnungen; für eine gewöhnliche Bestandswohnung liegt der Preis heute nach unserer Erfahrung deutlich darunter. Im früheren Bezirk Pankow lag der Mittelwert bei 5.194 €/m² (540 Verkäufe), in Weißensee bei 5.563 €/m², in ganz Berlin bei 5.017 €/m².",
       "quelle": "Immobilienmarktbericht Berlin 2025/2026",
       "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
       "stichtag": "Kaufverträge 2025"
@@ -302,6 +303,11 @@
       "name": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen, Pressemitteilung zu den städtebaulichen Verträgen „Pankower Tor“",
       "url": "https://www.berlin.de/sen/stadt/presse/pressemeldungen/pressemitteilung.1544656.php",
       "stand": "26.03.2025"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in Berlin, Pressemitteilung „Der Berliner Immobilienmarkt zeigt sich 2025 in den Preisen stabil“ mit den Zahlen für das 1. Quartal 2026",
+      "url": "https://www.berlin.de/sen/stadt/presse/pressemeldungen/pressemitteilung.1699073.php",
+      "stand": "31.07.2026; 1. Quartal 2026 gegenüber dem 1. Quartal 2025"
     }
   ],
   "pruefung": [
@@ -368,6 +374,10 @@
     {
       "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, Halbteilung §§ 656a–656d BGB, nicht bei MFH und Grundstücken; § 34c und § 34i GewO; Timon Fischer; Europace und Baufinex; Wertermittlung kostenlos, meist am selben Tag",
       "fundstelle": "maklerprovision.njk, kaufen.njk, immobilienbewertung.njk; wie berlin-tempelhof-schoeneberg.json"
+    },
+    {
+      "zahl": "Berlin 1. Quartal 2026: Eigentumswohnungen 3.434 Kauffälle (−6 %), Preistendenz nahezu unverändert; Ein- und Zweifamilienhäuser 555 Kauffälle (−8 %), Preistendenz nahezu unverändert",
+      "fundstelle": "Pressemitteilung vom 31.07.2026, Abschnitte „Bebaute Grundstücke 1. Quartal 2026“ und „Eigentumswohnungen 1. Quartal 2026“. Geprüft 06.11.2026 gegen den Bericht (Update 39 §2)."
     }
   ],
   "karte": {

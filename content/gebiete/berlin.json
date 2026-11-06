@@ -25,6 +25,7 @@
   "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Berlin beim Verkauf, beim Kauf und bei der Finanzierung, mit eigenen Seiten für Steglitz-Zehlendorf, Charlottenburg-Wilmersdorf, Tempelhof-Schöneberg und Pankow. Unser Büro liegt in der Schützenstraße 30 in Steglitz.",
   "kurzantwortMehr": "Wir haben Erlaubnisse nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Pankow und den Norden und Osten Berlins ist Timon Fischer Ihr Ansprechpartner, für Steglitz-Zehlendorf, Charlottenburg-Wilmersdorf, Tempelhof-Schöneberg, Mitte, Friedrichshain-Kreuzberg und den Süden und Westen Berlins Lennart Geserich.",
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Quartal 2026 zählte der Berliner Gutachterausschuss 3.434 verkaufte Eigentumswohnungen, 6 % weniger als im ersten Quartal 2025, bei nahezu unveränderten Preisen; bei Ein- und Zweifamilienhäusern waren es 555 Verkäufe, 8 % weniger, ebenfalls bei nahezu unveränderten Preisen. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-27",
   "hero": {
     "name": "berlin-deutscher-dom-gendarmenmarkt",
@@ -45,7 +46,7 @@
     {
       "wert": "Ø 5.017 €/m²",
       "label": "Eigentumswohnungen in Berlin, je Quadratmeter Wohnfläche",
-      "detail": "11.110 ausgewertete Kauffälle, Spanne 2.347 bis 7.999 €/m², 2024 waren es 4.796 €/m². In unseren vier Berliner Bezirken reicht der Mittelwert von 4.011 €/m² in Tempelhof bis 6.427 €/m² in Dahlem.",
+      "detail": "11.110 ausgewertete Kauffälle, Spanne 2.347 bis 7.999 €/m², 2024 waren es 4.796 €/m². Werte am oberen Ende erzielen nur wenige Wohnungen; für eine gewöhnliche Bestandswohnung liegt der Preis heute nach unserer Erfahrung deutlich darunter. In unseren vier Berliner Bezirken reicht der Mittelwert von 4.011 €/m² in Tempelhof bis 6.427 €/m² in Dahlem.",
       "quelle": "Immobilienmarktbericht Berlin 2025/2026",
       "url": "https://www.berlin.de/gutachterausschuss/_assets/amarktinformationen/amarktanalyse/04-03-010-2500.pdf",
       "stichtag": "Kaufverträge 2025"
@@ -198,7 +199,7 @@
     },
     {
       "frage": "Welcher Kaufpreisfaktor ist in Berlin realistisch?",
-      "antwort": "Für reine Mietwohnhäuser nennt der Berliner Gutachterausschuss in seinem Immobilienmarktbericht 2025/2026 als rechnerischen Durchschnitt der ausgewerteten Verkäufe 2025 das 22,6-Fache der Jahresnettokaltmiete, nach 23,5 im Jahr 2024; für Wohn- und Geschäftshäuser das 21,9-Fache.[[1]] Für Eigentumswohnungen weist der Bericht keinen Faktor aus. Welcher Faktor für ein bestimmtes Haus angemessen ist, hängt von Miete, Zustand und Lage ab; der Durchschnitt ist ein Vergleichswert, kein Preis für Ihr Objekt.",
+      "antwort": "Für reine Mietwohnhäuser nennt der Berliner Gutachterausschuss in seinem Immobilienmarktbericht 2025/2026 als rechnerischen Durchschnitt der ausgewerteten Verkäufe 2025 das 22,6-Fache der Jahresnettokaltmiete, nach 23,5 im Jahr 2024; für Wohn- und Geschäftshäuser das 21,9-Fache.[[1]] Das sind Mittelwerte aus den Verkäufen 2025; wer heute verkauft, erzielt nach unserer Erfahrung meist einen niedrigeren Faktor. Für Eigentumswohnungen weist der Bericht keinen Faktor aus. Welcher Faktor für ein bestimmtes Haus angemessen ist, hängt von Miete, Zustand und Lage ab; der Durchschnitt ist ein Vergleichswert, kein Preis für Ihr Objekt.",
       "herkunft": "FG-Gap-Answers 7.2 (SOURCE), Recherche A11: laut Brief nur, wenn der Berliner Immobilienmarktbericht einen Faktor nennt. Er nennt ihn: Immobilienmarktbericht Berlin 2025/2026 (Quelle 1 dieser Seite), S. 45, Tabelle „Rechnerische Durchschnittswerte aller verkauften Wohn- und Geschäftshäuser“: reine Mietwohnhäuser „Vielfaches der Jahresnettokaltmiete“ 2024 23,5, 2025 22,6; Wohn- und Geschäftshäuser 21,7 und 21,9. Ein Faktor für Wohnungseigentum steht im Bericht nicht (Volltextsuche „Vielfaches“, 28.10.2026). Die Zahl ist neu auf der Seite, die Quelle nicht. Aus, bis Jesu die Quellen geprüft hat (freigaben.quelleFaq).",
       "quelle": "7.2-A11"
     }
@@ -283,6 +284,11 @@
       "name": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen, Umwandlungsverordnung nach § 250 BauGB",
       "url": "https://www.berlin.de/sen/wohnen/rechtliches/umwandlungsverordnung/",
       "stand": "Verordnung vom 11.11.2025, gültig 01.01.2026 bis 31.12.2030"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in Berlin, Pressemitteilung „Der Berliner Immobilienmarkt zeigt sich 2025 in den Preisen stabil“ mit den Zahlen für das 1. Quartal 2026",
+      "url": "https://www.berlin.de/sen/stadt/presse/pressemeldungen/pressemitteilung.1699073.php",
+      "stand": "31.07.2026; 1. Quartal 2026 gegenüber dem 1. Quartal 2025"
     }
   ],
   "pruefung": [
@@ -333,6 +339,10 @@
     {
       "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, Halbteilung §§ 656a–656d BGB, nicht bei MFH und Grundstücken; § 34c und § 34i GewO; Timon Fischer (Pankow, Norden, Osten) und Lennart Geserich (Süden, Westen, Mitte, Friedrichshain-Kreuzberg), Teil B 31.10.2026; Europace und Baufinex; Wertermittlung kostenlos, meist innerhalb weniger Stunden",
       "fundstelle": "maklerprovision.njk, kaufen.njk; SCHREIBREGELN.md Regel 4"
+    },
+    {
+      "zahl": "Berlin 1. Quartal 2026: Eigentumswohnungen 3.434 Kauffälle (−6 %), Preistendenz nahezu unverändert; Ein- und Zweifamilienhäuser 555 Kauffälle (−8 %), Preistendenz nahezu unverändert",
+      "fundstelle": "Pressemitteilung vom 31.07.2026, Abschnitte „Bebaute Grundstücke 1. Quartal 2026“ und „Eigentumswohnungen 1. Quartal 2026“. Geprüft 06.11.2026 gegen den Bericht (Update 39 §2)."
     }
   ]
 }

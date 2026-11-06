@@ -78,7 +78,8 @@ eleventyComputed:
     {%- if g.stand %}
     <p class="fgs-small fgs-facts-stand">Stand: {{ g.stand }}</p>{% endif %}
     {#- Update 37 §1 (05.11.2026): „Stand der Zahlen“ in der Art der Quellenhinweise, klein und gedämpft, vor dem ersten Satz über F&G.
-     Bisher nur Leipzig (Teil 5 freigegeben); Berlin, Dresden und Brandenburg folgen mit Timons OK zu Teil 6. #}
+     Bisher nur Leipzig (Teil 5 freigegeben); Berlin, Dresden und Brandenburg folgen mit Timons OK zu Teil 6.
+     Update 39 §2 (06.11.2026): auf allen Gebietsseiten, mit den ersten Werten für 2026 und dem Hinweis auf Mittelwerte. #}
     {%- if g.standHinweis %}
     <p class="fgs-small fgs-facts-stand fgs-facts-stand-hinweis">{{ g.standHinweis | nbsp | escape | safe }}</p>{% endif %}
     <details class="fgs-more fgs-more--facts" id="alle-zahlen">

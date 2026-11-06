@@ -25,6 +25,7 @@
     "position": "50% 50%"
   },
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Halbjahr 2026 wurden im Landkreis 1.201 Kaufverträge geschlossen, nach 1.284 im ersten Halbjahr 2025. Im Berliner Umland waren es 577 nach 616, der Geldumsatz stieg dort von 242,0 auf 250,1 Mio. €. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-26",
   "zahlen": [
     {
@@ -101,7 +102,7 @@
       "h2": "Werder (Havel): Inselstadt, Glindow und Töplitz",
       "absaetze": [
         "Werder (Havel) hatte Ende 2025 27.064 Einwohner.[[3]] Die Altstadt liegt auf einer Havelinsel, zur Stadt gehören acht Ortsteile, darunter Glindow am Glindowsee mit rund 4.000 Einwohnern und Töplitz in Insellage mit rund 2.000; das Baumblütenfest gibt es seit über 140 Jahren.[[13,14,15]] Der RE1 fährt in 26 bis 27 Minuten bis Berlin-Charlottenburg, mit Umstieg in die S-Bahn sind es 46 Minuten bis Friedrichstraße; dazu kommen drei Anschlüsse an die A10.[[9,15]] Am 19. März 2026 hat die Stadt den Flächennutzungsplan 2040 beschlossen, im Süden von Glindow entsteht ein neues Gewerbegebiet.[[16,15]]",
-        "Mit 311 Kauffällen hatte Werder 2025 die meisten Verkäufe im Landkreis.[[1]] Die Bodenrichtwerte für Wohn- und Mischgebiete reichen zum 01.01.2026 von 90 €/m² in Kemnitz bis 600 €/m² an der Hafenresidenz; im Zentrum sind es 450, im Wohnpark Havelauen 400, in Glindow 300 und in Töplitz 230 €/m². Alle bestehenden Zonen blieben unverändert.[[2]] Eigentumswohnungen kosteten 2025 im Mittel 3.362 €/m² bei 61 Kauffällen, nach 3.478 €/m² im Vorjahr. Für vermietete Wohnungen der Baujahre 1991 bis 2000 ergab sich eine Nettokaltmiete von im Mittel 9,89 €/m² bei einem Rohertragsfaktor von 27,0.[[1]] In der Bewertung des Landes erreichte Werder 10 von 10 Punkten, seit dem 01.01.2026 gilt die Mietpreisbremse.[[5,8]]"
+        "Mit 311 Kauffällen hatte Werder 2025 die meisten Verkäufe im Landkreis.[[1]] Die Bodenrichtwerte für Wohn- und Mischgebiete reichen zum 01.01.2026 von 90 €/m² in Kemnitz bis 600 €/m² an der Hafenresidenz; im Zentrum sind es 450, im Wohnpark Havelauen 400, in Glindow 300 und in Töplitz 230 €/m². Alle bestehenden Zonen blieben unverändert.[[2]] Eigentumswohnungen kosteten 2025 im Mittel 3.362 €/m² bei 61 Kauffällen, nach 3.478 €/m² im Vorjahr. Für vermietete Wohnungen der Baujahre 1991 bis 2000 ergab sich eine Nettokaltmiete von im Mittel 9,89 €/m² bei einem Rohertragsfaktor von 27,0.[[1]] Das sind Mittelwerte aus den Verkäufen 2025; wer heute verkauft, erzielt nach unserer Erfahrung meist einen niedrigeren Faktor. In der Bewertung des Landes erreichte Werder 10 von 10 Punkten, seit dem 01.01.2026 gilt die Mietpreisbremse.[[5,8]]"
       ],
       "bild": {
         "name": "potsdam-mittelmark-werder-haeuser",
@@ -320,6 +321,11 @@
       "name": "Gemeinde Kleinmachnow, Wohnen in Kleinmachnow",
       "url": "https://www.kleinmachnow.de/Umwelt-Planung/Ortsentwicklung/Wohnen/",
       "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte im Landkreis Potsdam-Mittelmark, Zwischenbericht 1. Halbjahr 2026",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GA_PM_1HJ2026.pdf",
+      "stand": "Teltow, 03.09.2026"
     }
   ],
   "pruefung": [
@@ -414,6 +420,10 @@
     {
       "zahl": "Erbfall-Antwort; Wertermittlung kostenlos, meistens in wenigen Stunden; Europace und Baufinex; § 34c und § 34i GewO; Lennart Geserich, Head of Sales & Vermietung",
       "fundstelle": "wie barnim.json (Live-Seite und Brief)"
+    },
+    {
+      "zahl": "Potsdam-Mittelmark 1. Halbjahr 2026: 1.201 Kaufverträge (1. Halbjahr 2025: 1.284); Berliner Umland 577 (616), Geldumsatz 250,1 Mio. € (242,0 Mio. €)",
+      "fundstelle": "GA_PM_1HJ2026.pdf, S. 1 und Tabelle nach Bereichen (Berliner Umland). Geprüft 06.11.2026 gegen den Bericht (Update 39 §2)."
     }
   ]
 }

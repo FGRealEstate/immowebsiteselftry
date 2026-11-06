@@ -61,6 +61,9 @@ eleventyComputed:
      übernommen wurden (derselbe Wert wie „Zahlen mit Stand …“ in den Quellen); die Stichtage je Zahl stehen weiter bei jeder Zahl. #}
     {%- if s.stand %}
     <p class="fgs-small fgs-facts-stand">Stand: {{ s.stand }}</p>{% endif %}
+    {#- Update 39 §2 (06.11.2026): „Stand der Zahlen“ wie auf den Gebietsseiten (gebiet-detail.njk). #}
+    {%- if s.standHinweis %}
+    <p class="fgs-small fgs-facts-stand fgs-facts-stand-hinweis">{{ s.standHinweis | nbsp | escape | safe }}</p>{% endif %}
   </div>
 </section>
 {% endif %}

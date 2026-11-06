@@ -27,6 +27,7 @@
     "description": "Immobilien in Eberswalde: Bodenrichtwerte, Kaufpreise und Mieten aus dem Grundstücksmarktbericht Barnim 2025, Fahrzeit nach Berlin, Chancen und Risiken.",
     "intro": "Eberswalde ist nach Bernau die zweitgrößte Stadt im Landkreis Barnim und hat einen eigenen Immobilienmarkt mit deutlich niedrigeren Preisen als der Berliner Stadtrand. Hier stehen die amtlichen Zahlen und unsere Einordnung.",
     "stand": "Oktober 2026",
+    "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Halbjahr 2026 zählte der Gutachterausschuss 840 Kauffälle, rund 18 % weniger als im zweiten Halbjahr 2025. Freistehende Ein- und Zweifamilienhäuser im Berliner Umland kosteten im ersten Quartal 3.360 €/m² und im zweiten Quartal 3.670 €/m² Wohnfläche, nach 3.480 €/m² im Jahr 2025. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
     "zahlen": [
       {
         "wert": "100–190 €/m²",
@@ -46,7 +47,7 @@
       {
         "wert": "Ø 1.950 €/m²",
         "label": "Gebrauchte Eigentumswohnungen, Baujahr nach 1992",
-        "detail": "Nur 3 Kauffälle, Spanne 1.670 bis 2.200 €/m². Vorjahr Ø 1.700 €/m².",
+        "detail": "Nur 3 Kauffälle, Spanne 1.670 bis 2.200 €/m². Werte am oberen Ende erzielen nur wenige Wohnungen; für eine gewöhnliche Bestandswohnung liegt der Preis heute nach unserer Erfahrung deutlich darunter. Vorjahr Ø 1.700 €/m².",
         "quelle": "Grundstücksmarktbericht 2025 Landkreis Barnim",
         "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
         "stichtag": "Kaufverträge 2025"
@@ -98,6 +99,11 @@
         "name": "VBB-Fahrplandaten, Verbindungen ab Eberswalde Hauptbahnhof bis S+U Friedrichstraße",
         "url": "https://v6.vbb.transport.rest/journeys?from=900350127&to=900100001&departure=2026-11-10T09:00%2B01:00",
         "stand": "Fahrplan Dienstag 10.11.2026 ab 9 Uhr, abgefragt 26.10.2026"
+      },
+      {
+        "name": "Gutachterausschuss für Grundstückswerte im Landkreis Barnim, Barnimer Grundstücksmarkt 1. Halbjahr 2026",
+        "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GA_BAR_1HJ_2026.pdf",
+        "stand": "Stand 17.09.2026, vorläufig"
       }
     ]
   }

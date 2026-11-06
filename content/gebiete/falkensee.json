@@ -12,6 +12,7 @@
   "h1": "Immobilie verkaufen, kaufen und finanzieren in Falkensee",
   "kurzantwort": "Fischer & Geserich begleitet Sie in Falkensee beim Verkauf, beim Kauf und bei der Finanzierung von Häusern, Wohnungen und Baugrundstücken, vom Zentrum bis Finkenkrug. Bewertung, Vermarktung, Ankaufsberatung und Finanzierung kommen aus einer Hand.",
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Für das Havelland gibt es noch keine Zahlen für 2026. Im ganzen Land Brandenburg wurden im ersten Halbjahr 2026 11.904 Kaufverträge geschlossen, 7 % weniger als im Vorjahreszeitraum; im Berliner Umland kosteten freistehende Ein- und Zweifamilienhäuser im Mittel 3.898 €/m² Wohnfläche nach 3.966 €/m², weiterverkaufte Eigentumswohnungen 3.423 €/m² nach 3.351 €/m². Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-26",
   "zahlen": [
     {
@@ -260,6 +261,11 @@
       "name": "BUWOG, Merlin-Quartier Falkensee (Bauträger)",
       "url": "https://www.buwog.de/wohnbauprojekte/falkensee-merlin-quartier",
       "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Oberer Gutachterausschuss für Grundstückswerte im Land Brandenburg, Quartalsbericht II. Quartal 2026",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/OGA_2Q2026.pdf",
+      "stand": "Stand 01.09.2026; I. bis II. Quartal 2026 gegenüber I. bis II. Quartal 2025"
     }
   ],
   "pruefung": [
@@ -418,6 +424,10 @@
     {
       "zahl": "2 Gymnasien, Gesamtschule, Oberschule, 5 Grundschulen (Namen)",
       "fundstelle": "falkensee.md, Zeilen 267, 270–273"
+    },
+    {
+      "zahl": "Land Brandenburg I.–II. Quartal 2026: 11.904 Kaufverträge (2025: 12.790, −7 %); Berliner Umland Mittelwerte: freistehende Ein- und Zweifamilienhäuser 3.898 €/m² (3.966 €/m²), Weiterverkauf Eigentumswohnungen 3.423 €/m² (3.351 €/m²). Havelland: kein Bericht für 2026 (neuester GA_HVL_1HJ25.pdf)",
+      "fundstelle": "OGA_2Q2026.pdf, Tabellen „Grundstücksmarkt I. - II. Quartal 2026 im Land Brandenburg“ (Umsätze; durchschnittliche Preise). Havelland: Portalliste 04.11.2026, am 06.11.2026 keine 2026er Datei gefunden. Geprüft 06.11.2026 gegen den Bericht (Update 39 §2)."
     }
   ],
   "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Falkensee ist Lennart Geserich Ihr Ansprechpartner, Head of Sales & Vermietung.",

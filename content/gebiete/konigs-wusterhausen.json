@@ -19,6 +19,7 @@
     "url": "https://commons.wikimedia.org/wiki/File:Schloss_Koenigs_Wusterhausen_Nordfassade_Sonnenlicht.jpg"
   },
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Halbjahr 2026 zählte der Gutachterausschuss 1.078 Kauffälle, rund 4 % mehr als im Vorjahreszeitraum, bei rund 14 % weniger Umsatz. Bauland im Berliner Umland wurde im Median zu 105 % des Bodenrichtwerts verkauft. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-26",
   "zahlen": [
     {
@@ -156,7 +157,7 @@
     },
     {
       "frage": "Was kostet eine Eigentumswohnung in Königs Wusterhausen?",
-      "antwort": "2025 wurden 21 gebrauchte Wohnungen der Baujahre ab 1990 verkauft, im Mittel für 3.787 €/m² bei durchschnittlich 73 m²; die Spanne reichte von 2.069 bis 5.545 €/m². Neue Wohnungen der Baujahre ab 2023 kosteten im Erstverkauf im Mittel 4.190 €/m² bei 12 Kauffällen.[[1]] Angebotspreise aus Portalen sind darin nicht enthalten.",
+      "antwort": "2025 wurden 21 gebrauchte Wohnungen der Baujahre ab 1990 verkauft, im Mittel für 3.787 €/m² bei durchschnittlich 73 m²; die Spanne reichte von 2.069 bis 5.545 €/m². Werte am oberen Ende erzielen nur wenige Wohnungen; für eine gewöhnliche Bestandswohnung liegt der Preis heute nach unserer Erfahrung deutlich darunter. Neue Wohnungen der Baujahre ab 2023 kosteten im Erstverkauf im Mittel 4.190 €/m² bei 12 Kauffällen.[[1]] Angebotspreise aus Portalen sind darin nicht enthalten.",
       "herkunft": "Google-Autocomplete „wohnung kaufen königs wusterhausen“ (research/serp/autocomplete-2026-10-24.json); dieselbe Frage an ChatGPT, „Was kostet eine Wohnung in Königs Wusterhausen?“ (research/serp/ki-assistenten-2026-10-24.md, Zeile 18)"
     },
     {
@@ -274,6 +275,11 @@
       "name": "Stadt Königs Wusterhausen, Entwicklung Funkerberg",
       "url": "https://www.koenigs-wusterhausen.de/entwicklung-funkerberg-f4af08a304407e77",
       "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte im Landkreis Dahme-Spreewald, Halbjahresauswertung 2026",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GA_LDS_1HJ2026.pdf",
+      "stand": "Januar bis Juni 2026"
     }
   ],
   "pruefung": [
@@ -452,6 +458,10 @@
     {
       "zahl": "LBV 2040: mittlere Variante +8,3 %, untere +0,4 %",
       "fundstelle": "konigs-wusterhausen.md, Zeilen 155, 156"
+    },
+    {
+      "zahl": "Dahme-Spreewald 1. Halbjahr 2026: 1.078 Kauffälle, ca. +4 % zum Vorjahr, Umsätze ca. −14 %; Wohn- und gemischte Bauflächen Berliner Umland Median 105 % des Bodenrichtwerts (62 Kauffälle)",
+      "fundstelle": "GA_LDS_1HJ2026.pdf, S. 1 und S. 3 (Diagramm „Bodenpreisentwicklung (%) für Wohn- und gemischte Bauflächen“, Berliner Umland, Median). Geprüft 06.11.2026 gegen den Bericht (Update 39 §2)."
     }
   ]
 }

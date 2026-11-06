@@ -12,6 +12,7 @@
   "h1": "Immobilie verkaufen, kaufen und finanzieren in Bernau bei Berlin",
   "kurzantwort": "Fischer & Geserich ist Ihr Makler für Bernau bei Berlin, von der Kernstadt bis zu den Ortsteilen Schönow, Ladeburg und Lobetal. Wir bewerten und verkaufen Häuser und Wohnungen, beraten Käufer und Kapitalanleger und vergleichen die Finanzierung.",
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Halbjahr 2026 zählte der Gutachterausschuss 840 Kauffälle, rund 18 % weniger als im zweiten Halbjahr 2025. Freistehende Ein- und Zweifamilienhäuser im Berliner Umland kosteten im ersten Quartal 3.360 €/m² und im zweiten Quartal 3.670 €/m² Wohnfläche, nach 3.480 €/m² im Jahr 2025. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-26",
   "zahlen": [
     {
@@ -143,7 +144,7 @@
     },
     {
       "frage": "Was kostet eine Wohnung in Friedenstal oder am Kirschgarten?",
-      "antwort": "Für Friedenstal liegt der normierte Mittelwert weiterverkaufter Wohnungen der Baujahre nach 1992 im Jahr 2025 bei 2.890 €/m², bei einer Spanne von 1.840 bis 4.520 €/m² und 10 Kauffällen. Der Kirschgarten wird nicht als eigene Lage ausgewiesen;[[1]] der Bodenrichtwert für Mehrfamilienhausland dort liegt zum 01.01.2026 bei 350 €/m².[[2]]",
+      "antwort": "Für Friedenstal liegt der normierte Mittelwert weiterverkaufter Wohnungen der Baujahre nach 1992 im Jahr 2025 bei 2.890 €/m², bei einer Spanne von 1.840 bis 4.520 €/m² und 10 Kauffällen. Werte am oberen Ende erzielen nur wenige Wohnungen; für eine gewöhnliche Bestandswohnung liegt der Preis heute nach unserer Erfahrung deutlich darunter. Der Kirschgarten wird nicht als eigene Lage ausgewiesen;[[1]] der Bodenrichtwert für Mehrfamilienhausland dort liegt zum 01.01.2026 bei 350 €/m².[[2]]",
       "herkunft": "Google-Autocomplete „wohnung kaufen bernau friedenstal“ und „wohnung kaufen bernau kirschgarten“ (research/serp/autocomplete-2026-10-24.json)"
     },
     {
@@ -271,6 +272,11 @@
       "name": "Hoffnungstaler Stiftung Lobetal, Impressum",
       "url": "https://karriere.bethel.de/lobetal/content/Impressum/?locale=de_DE",
       "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte im Landkreis Barnim, Barnimer Grundstücksmarkt 1. Halbjahr 2026",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GA_BAR_1HJ_2026.pdf",
+      "stand": "Stand 17.09.2026, vorläufig"
     }
   ],
   "pruefung": [
@@ -441,6 +447,10 @@
     {
       "zahl": "FAQ-Herkunft",
       "fundstelle": "Dashboard/src/data/research/google_areas.json Einträge 28 und 29 (paa); research/serp/autocomplete-2026-10-24.json, daten/bernau"
+    },
+    {
+      "zahl": "Barnim 1. Halbjahr 2026: 840 Kauffälle, rund 18 % weniger als im 2. Halbjahr 2025; freistehende Ein- und Zweifamilienhäuser Berliner Umland, normierter Kaufpreis je m² Wohnfläche: 1. Quartal 2026 3.360 €/m², 2. Quartal 2026 3.670 €/m², 2025 gesamt 3.480 €/m²",
+      "fundstelle": "GA_BAR_1HJ_2026.pdf, S. 1 und S. 6 (quartalsweise Preisentwicklung, Berliner Umland). Geprüft 06.11.2026 gegen den Bericht (Update 39 §2)."
     }
   ],
   "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Bernau ist Timon Fischer Ihr Ansprechpartner, Geschäftsführer und verantwortlich für die Immobilienfinanzierung.",

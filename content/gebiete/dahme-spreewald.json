@@ -25,6 +25,7 @@
     "position": "50% 50%"
   },
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Halbjahr 2026 zählte der Gutachterausschuss 1.078 Kauffälle, rund 4 % mehr als im Vorjahreszeitraum, bei rund 14 % weniger Umsatz. Bauland im Berliner Umland wurde im Median zu 105 % des Bodenrichtwerts verkauft. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-26",
   "zahlen": [
     {
@@ -310,6 +311,11 @@
       "name": "Mieterschutzbund Eichwalde/Zeuthen und Umgebung e. V., Mietspiegel für Eichwalde / Zeuthen",
       "url": "http://www.msb-ez.de/service/mietspiegel.php",
       "stand": "abgerufen 26.10.2026, Seite ohne Datum"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte im Landkreis Dahme-Spreewald, Halbjahresauswertung 2026",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GA_LDS_1HJ2026.pdf",
+      "stand": "Januar bis Juni 2026"
     }
   ],
   "pruefung": [
@@ -408,6 +414,10 @@
     {
       "zahl": "Erbfall-Antwort; § 34c und § 34i GewO; Lennart Geserich, Head of Sales & Vermietung; Europace und Baufinex",
       "fundstelle": "wie barnim.json (Live-Seite und Brief)"
+    },
+    {
+      "zahl": "Dahme-Spreewald 1. Halbjahr 2026: 1.078 Kauffälle, ca. +4 % zum Vorjahr, Umsätze ca. −14 %; Wohn- und gemischte Bauflächen Berliner Umland Median 105 % des Bodenrichtwerts (62 Kauffälle)",
+      "fundstelle": "GA_LDS_1HJ2026.pdf, S. 1 und S. 3 (Diagramm „Bodenpreisentwicklung (%) für Wohn- und gemischte Bauflächen“, Berliner Umland, Median). Geprüft 06.11.2026 gegen den Bericht (Update 39 §2)."
     }
   ],
   "karte": {

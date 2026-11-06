@@ -31,12 +31,13 @@
     "position": "50% 55%"
   },
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Halbjahr 2026 kosteten frei stehende Einfamilienhäuser im Bestand im Median 3.535 €/m² Wohnfläche, nach 3.635 €/m² im zweiten Halbjahr 2025; weiterverkaufte Eigentumswohnungen erzielten 2.660 €/m² nach 2.580 €/m². Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-27",
   "zahlen": [
     {
       "wert": "8.575 €/m²",
       "label": "Median für neue Eigentumswohnungen, Gemarkung Blasewitz",
-      "detail": "15 Erstverkäufe von Wohnungen ab Baujahr 2024, Spanne 5.805 bis 8.740 €/m², Mittelwert 8.245 €/m². Die Gemarkung deckt sich fast ganz mit dem Stadtteil Blasewitz. In der Gemarkung Striesen waren es sieben Erstverkäufe zu 6.195 €/m², in Gruna fünf zu 6.280 €/m²; in ganz Dresden kosteten neue Wohnungen im Mittel rund 6.460 €/m².",
+      "detail": "15 Erstverkäufe von Wohnungen ab Baujahr 2024, Spanne 5.805 bis 8.740 €/m², Mittelwert 8.245 €/m². Werte am oberen Ende erzielen nur wenige Wohnungen; für eine gewöhnliche Bestandswohnung liegt der Preis heute nach unserer Erfahrung deutlich darunter. Die Gemarkung deckt sich fast ganz mit dem Stadtteil Blasewitz. In der Gemarkung Striesen waren es sieben Erstverkäufe zu 6.195 €/m², in Gruna fünf zu 6.280 €/m²; in ganz Dresden kosteten neue Wohnungen im Mittel rund 6.460 €/m².",
       "quelle": "Grundstücksmarktbericht Dresden 2026",
       "url": "https://www.dresden.de/media/pdf/vermessung/2026-Grundstuecksmarktbericht.pdf",
       "stichtag": "Kaufverträge 2025"
@@ -143,7 +144,7 @@
     "h2": "Immobilie in Dresden-Zentrum verkaufen",
     "absaetze": [
       "In der Gemarkung Striesen wurden 2025 104 ältere Eigentumswohnungen weiterverkauft, im Median für 2.895 €/m², bei einer Spanne von 1.540 bis 5.500 €/m²; in Blasewitz waren es 36 zu 2.550 €/m², in Gruna 17 zu 2.410 €/m².[[1]] In ganz Dresden lag der Median weiterverkaufter Wohnungen im 1. Halbjahr 2026 bei 2.660 €/m², nach 2.550 €/m² ein Jahr zuvor.[[2]] Deshalb bewerten wir nach den Preisen, zu denen vergleichbare Wohnungen in Ihrer Gegend tatsächlich verkauft wurden, und nach der Nachfrage nach genau dieser Art Immobilie. Bei vermieteten Immobilien zählt außerdem die Nettokaltmiete, die heute gezahlt wird.",
-      "Für Mehrfamilienhäuser in offener Bauweise, wie die Striesener Würfelhäuser, ermittelte der Gutachterausschuss als Median das 21,2-Fache der jährlichen Mieteinnahmen. Sanierte Mehrfamilienhäuser der Vorkriegszeit kosteten 2025 in Dresden im Mittel 2.055 €/m² Wohnfläche.[[1,12]] Im 1. Halbjahr 2026 stiegen die Quadratmeterpreise verkaufter Mehrfamilienhäuser im Bestand gegenüber dem 2. Halbjahr 2025 um rund 3 %.[[2]] In den Erhaltungsgebieten im Nordosten Striesens und in Blasewitz brauchen Rückbau, Änderung, Nutzungsänderung und Neubau eine Genehmigung der Stadt. Für Käufer zählt, was am Haus und auf dem Grundstück noch möglich ist; das klären wir vor dem Verkauf.[[12,13,14,15,16]]"
+      "Für Mehrfamilienhäuser in offener Bauweise, wie die Striesener Würfelhäuser, ermittelte der Gutachterausschuss als Median das 21,2-Fache der jährlichen Mieteinnahmen. Das sind Mittelwerte aus den Verkäufen 2025; wer heute verkauft, erzielt nach unserer Erfahrung meist einen niedrigeren Faktor. Sanierte Mehrfamilienhäuser der Vorkriegszeit kosteten 2025 in Dresden im Mittel 2.055 €/m² Wohnfläche.[[1,12]] Im 1. Halbjahr 2026 stiegen die Quadratmeterpreise verkaufter Mehrfamilienhäuser im Bestand gegenüber dem 2. Halbjahr 2025 um rund 3 %.[[2]] In den Erhaltungsgebieten im Nordosten Striesens und in Blasewitz brauchen Rückbau, Änderung, Nutzungsänderung und Neubau eine Genehmigung der Stadt. Für Käufer zählt, was am Haus und auf dem Grundstück noch möglich ist; das klären wir vor dem Verkauf.[[12,13,14,15,16]]"
     ]
   },
   "kaufen": {
@@ -389,6 +390,10 @@
     {
       "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, §§ 656a–656d BGB; § 34c und § 34i GewO; Timon Fischer Geschäftsführer, Immobilienfinanzierung; Europace und Baufinex",
       "fundstelle": "wie dresden-nord.json"
+    },
+    {
+      "zahl": "Dresden 1. Halbjahr 2026: Ein-/Zweifamilienhaus freistehend, Bestand, Median 3.535 €/m² (2. Halbjahr 2025: 3.635 €/m²); Eigentumswohnungen Weiterverkauf, Median 2.660 €/m² (2. Halbjahr 2025: 2.580 €/m²)",
+      "fundstelle": "Halbjahresbericht 2026, S. 12 (3.2 Bebaute Grundstücke) und S. 15 (3.3 Wohnungseigentum). Geprüft 06.11.2026 gegen den Bericht (Update 39 §2)."
     }
   ],
   "karte": {

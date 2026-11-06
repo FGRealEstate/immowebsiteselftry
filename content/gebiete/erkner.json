@@ -12,6 +12,7 @@
   "h1": "Immobilie verkaufen, kaufen und finanzieren in Erkner",
   "kurzantwort": "Fischer & Geserich vermittelt in Erkner Häuser, Wohnungen und Grundstücke, von der Bahnhofsiedlung bis Hohenbinde. Wir beraten außerdem Käufer, Kapitalanleger und Finanzierungskunden.",
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Halbjahr 2026 wurden im Landkreis 910 Kaufverträge geschlossen, nach 960 im Vorjahreszeitraum. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-26",
   "zahlen": [
     {
@@ -281,6 +282,11 @@
       "name": "Land Brandenburg, Meldung zur Produktionssteigerung der Gigafactory",
       "url": "https://brandenburg.de/sixcms/detail.php?gsid=brandenburg_06.c.905688.de",
       "stand": "25.06.2026"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte im Landkreis Oder-Spree und in der Stadt Frankfurt (Oder), Halbjahresbericht 1. Halbjahr 2026 für den Landkreis Oder-Spree",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GA_LOSFF_1_HJ_2026_LOS.pdf",
+      "stand": "17.09.2026"
     }
   ],
   "pruefung": [
@@ -447,6 +453,10 @@
     {
       "zahl": "B-Plan Nr. 24, Entwurf 01.11.2024, Neubau MORUS-Oberschule",
       "fundstelle": "erkner.md, Zeile 243"
+    },
+    {
+      "zahl": "Oder-Spree 1. Halbjahr 2026: 910 Verträge (1. Halbjahr 2025: 960)",
+      "fundstelle": "GA_LOSFF_1_HJ_2026_LOS.pdf, S. 1 (Diagramm „Anzahl der Verträge“). Geprüft 06.11.2026 gegen den Bericht (Update 39 §2)."
     }
   ],
   "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Erkner ist Lennart Geserich Ihr Ansprechpartner, Head of Sales & Vermietung.",

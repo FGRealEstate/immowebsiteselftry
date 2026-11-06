@@ -27,6 +27,7 @@
     "position": "50% 50%"
   },
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Halbjahr 2026 wurden im Landkreis 910 Kaufverträge geschlossen, nach 960 im Vorjahreszeitraum. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-26",
   "zahlen": [
     {
@@ -48,7 +49,7 @@
     {
       "wert": "Ø 2.349 €/m²",
       "label": "Gebrauchte Eigentumswohnungen in Fürstenwalde/Spree, Baujahr nach 1990, mit Stellplatz",
-      "detail": "17 Verkäufe, Spanne 1.079 bis 4.444 €/m². Im ganzen Landkreis kosteten Wohnungen ab Baujahr 2021 im Mittel 4.610 €/m², neue Wohnungen in Schöneiche 4.976 €/m².",
+      "detail": "17 Verkäufe, Spanne 1.079 bis 4.444 €/m². Werte am oberen Ende erzielen nur wenige Wohnungen; für eine gewöhnliche Bestandswohnung liegt der Preis heute nach unserer Erfahrung deutlich darunter. Im ganzen Landkreis kosteten Wohnungen ab Baujahr 2021 im Mittel 4.610 €/m², neue Wohnungen in Schöneiche 4.976 €/m².",
       "quelle": "Grundstücksmarktbericht 2025 Landkreis Oder-Spree",
       "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_LOS_FF.pdf",
       "stichtag": "Kaufverträge 2025"
@@ -319,6 +320,11 @@
       "name": "Gemeinde Schöneiche bei Berlin, Mietspiegel",
       "url": "https://www.schoeneiche-bei-berlin.de/rathaus/gemeindeverwaltung/wohnen/mietspiegel",
       "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte im Landkreis Oder-Spree und in der Stadt Frankfurt (Oder), Halbjahresbericht 1. Halbjahr 2026 für den Landkreis Oder-Spree",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GA_LOSFF_1_HJ_2026_LOS.pdf",
+      "stand": "17.09.2026"
     }
   ],
   "pruefung": [
@@ -421,6 +427,10 @@
     {
       "zahl": "Erbfall-Antwort; § 34c und § 34i GewO; Lennart Geserich, Head of Sales & Vermietung; Europace und Baufinex",
       "fundstelle": "wie barnim.json (Live-Seite und Brief)"
+    },
+    {
+      "zahl": "Oder-Spree 1. Halbjahr 2026: 910 Verträge (1. Halbjahr 2025: 960)",
+      "fundstelle": "GA_LOSFF_1_HJ_2026_LOS.pdf, S. 1 (Diagramm „Anzahl der Verträge“). Geprüft 06.11.2026 gegen den Bericht (Update 39 §2)."
     }
   ]
 }

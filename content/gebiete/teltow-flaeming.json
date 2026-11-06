@@ -28,6 +28,7 @@
     "position": "50% 50%"
   },
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Halbjahr 2026 zählte der Gutachterausschuss 813 Kauffälle. Bauland für Einfamilienhäuser im Berliner Umland kostete im Mittel 360 €/m², nach 361 €/m² im Vorjahreszeitraum. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-26",
   "zahlen": [
     {
@@ -49,7 +50,7 @@
     {
       "wert": "Ø 4.625 €/m²",
       "label": "Neue Eigentumswohnungen in Zossen",
-      "detail": "162 Erstverkäufe in Mehrfamilienhäusern der Baujahre 2024 und 2025, Spanne 3.030 bis 6.135 €/m². Neue Wohnungen in Blankenfelde-Mahlow kosteten im Mittel 4.375 €/m², erstmals verkaufte Wohnungen mit Baujahr 1930 in Rangsdorf 8.115 €/m² bei 69 Verkäufen.",
+      "detail": "162 Erstverkäufe in Mehrfamilienhäusern der Baujahre 2024 und 2025, Spanne 3.030 bis 6.135 €/m². Werte am oberen Ende erzielen nur wenige Wohnungen; für eine gewöhnliche Bestandswohnung liegt der Preis heute nach unserer Erfahrung deutlich darunter. Neue Wohnungen in Blankenfelde-Mahlow kosteten im Mittel 4.375 €/m², erstmals verkaufte Wohnungen mit Baujahr 1930 in Rangsdorf 8.115 €/m² bei 69 Verkäufen.",
       "quelle": "Grundstücksmarktbericht 2025 Landkreis Teltow-Fläming",
       "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_TF.pdf",
       "stichtag": "Kaufverträge 2025"
@@ -211,7 +212,7 @@
     },
     {
       "frage": "Ich habe ein Haus im Landkreis Teltow-Fläming geerbt. Wer kann den Verkauf übernehmen?",
-      "antwort": "Wir verkaufen auch geerbte Immobilien. Zuerst klären wir mit Ihnen den rechtlichen Status des Hauses und die vorhandenen Unterlagen; häufig geht es auch um die Liquidität für die Erbschaftsteuer und je nach Situation ist eine Finanzierung dafür sinnvoller als ein schneller Verkauf unter Zeitdruck. Für den Preis zählen Lage, Baujahr und Zustand: Freistehende Häuser kosteten 2025 in Blankenfelde-Mahlow im Mittel 3.850 €/m² Wohnfläche, mit einer Spanne von 1.910 bis 5.930 €/m², in Luckenwalde 2.375 €/m².[[1]]",
+      "antwort": "Wir verkaufen auch geerbte Immobilien. Zuerst klären wir mit Ihnen den rechtlichen Status des Hauses und die vorhandenen Unterlagen; häufig geht es auch um die Liquidität für die Erbschaftsteuer und je nach Situation ist eine Finanzierung dafür sinnvoller als ein schneller Verkauf unter Zeitdruck. Für den Preis zählen Lage, Baujahr und Zustand: Freistehende Häuser kosteten 2025 in Blankenfelde-Mahlow im Mittel 3.850 €/m² Wohnfläche, mit einer Spanne von 1.910 bis 5.930 €/m², in Luckenwalde 2.375 €/m².[[1]] Werte am oberen Ende erzielen nur wenige Häuser; für ein gewöhnliches Bestandshaus liegt der Preis heute nach unserer Erfahrung deutlich darunter.",
       "herkunft": "Prompt der KI-Recherche „Ich habe ein Haus in Brandenburg geerbt und wohne nicht vor Ort. Wer kann den Verkauf für mich übernehmen?“ (q52) (ChatGPT, Gemini; Dashboard/src/data/research/ai_answers.json, Oktober 2026). Antwort nach der FAQ der Live-Seite „Verkauft ihr auch geerbte Immobilien?“; zur Abwicklung aus der Ferne gibt es keine Angabe, deshalb ohne diesen Teil der Frage. Google-Autocomplete zu „haus geerbt teltow-fläming“ ohne Vorschläge"
     }
   ],
@@ -328,6 +329,11 @@
       "name": "Stadt Luckenwalde, Geschichte",
       "url": "https://www.luckenwalde.de/Stadt/Entdecken-er-leben/Geschichte/",
       "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte im Landkreis Teltow-Fläming, Tendenzen des Grundstücksmarktes Teltow-Fläming im ersten Halbjahr 2026",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GA_TF_1HJ2026.pdf",
+      "stand": "01.01. bis 30.06.2026"
     }
   ],
   "pruefung": [
@@ -426,6 +432,10 @@
     {
       "zahl": "Erbfall-Antwort; § 34c und § 34i GewO; Lennart Geserich, Head of Sales & Vermietung; Europace und Baufinex",
       "fundstelle": "wie barnim.json (Live-Seite und Brief)"
+    },
+    {
+      "zahl": "Teltow-Fläming 1. Halbjahr 2026: 813 registrierte Kauffälle; Bauland individueller Wohnungsbau Berliner Umland Mittelwert 360 €/m² (Vorjahreszeitraum 361 €/m²)",
+      "fundstelle": "GA_TF_1HJ2026.pdf, S. 1 (Umsatzzahlen, Tabelle „Bauland für den individuellen Wohnungsbau“). Geprüft 06.11.2026 gegen den Bericht (Update 39 §2)."
     }
   ]
 }

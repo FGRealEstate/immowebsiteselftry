@@ -13,7 +13,7 @@
   "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Leipzig beim Verkauf, beim Kauf und bei der Finanzierung, mit eigenen Seiten für Leipzig-Zentrum, Leipzig-Nord und Leipzig-West. Ihr Ansprechpartner für Leipzig ist Timon Fischer.",
   "kurzantwortMehr": "Fischer & Geserich hat seinen Sitz in der Schützenstraße 30 in Berlin und Erlaubnisse nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Timon Fischer ist Geschäftsführer und verantwortet die Immobilienfinanzierung.",
   "stand": "Oktober 2026",
-  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem Grundstücksmarktbericht des Leipziger Gutachterausschusses zum Stichtag 01.01.2026. Er ist der aktuelle amtliche Bericht und enthält alle Verkäufe aus 2025; den nächsten legt der Gutachterausschuss voraussichtlich im Frühjahr 2027 vor. Erste Werte für 2026 gibt es schon: Die Bodenrichtwerte gelten zum 01.01.2026, und nach dem GREIX, dem Preisindex der Gutachterausschüsse und des Kiel Instituts für Weltwirtschaft, stiegen die Preise für Eigentumswohnungen in Leipzig im ersten Quartal 2026 um 2,5 % und blieben im zweiten Quartal nahezu gleich.",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem Grundstücksmarktbericht des Leipziger Gutachterausschusses zum Stichtag 01.01.2026 mit allen Verkäufen aus 2025; den nächsten Bericht legt der Gutachterausschuss voraussichtlich im Frühjahr 2027 vor. Erste Werte für 2026: Die Bodenrichtwerte gelten zum 01.01.2026, und nach dem GREIX, dem Preisindex der Gutachterausschüsse und des Kiel Instituts für Weltwirtschaft, stiegen die Preise für Eigentumswohnungen in Leipzig im ersten Quartal 2026 um 2,5 % und blieben im zweiten Quartal nahezu gleich. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-27",
   "hero": {
     "name": "leipzig-city-hochhaus-neues-rathaus",
@@ -34,7 +34,7 @@
     {
       "wert": "Ø 2.850 €/m²",
       "label": "Eigentumswohnungen im sanierten Altbau, Weiterverkauf in Leipzig",
-      "detail": "1.902 Verkäufe ohne Stellplatz, Median 2.770 €/m², Spanne 1.013 bis 6.103 €/m². Je Stadtbezirk von 2.542 €/m² in Nordost bis 3.447 €/m² in Mitte.",
+      "detail": "1.902 Verkäufe ohne Stellplatz, Median 2.770 €/m², Spanne 1.013 bis 6.103 €/m². Werte am oberen Ende erzielen nur wenige Wohnungen; für eine gewöhnliche Bestandswohnung liegt der Preis heute nach unserer Erfahrung deutlich darunter. Je Stadtbezirk von 2.542 €/m² in Nordost bis 3.447 €/m² in Mitte.",
       "quelle": "Grundstücksmarktbericht Leipzig 2026",
       "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
       "stichtag": "Kaufverträge 2025"
@@ -42,7 +42,7 @@
     {
       "wert": "Ø 5.953 €/m²",
       "label": "Neue Eigentumswohnungen ohne Stellplatz in Leipzig",
-      "detail": "227 Verkäufe, Spanne 4.048 bis 8.107 €/m². Mit Stellplatz 214 Verkäufe zu im Mittel 6.451 €/m².",
+      "detail": "227 Verkäufe, Spanne 4.048 bis 8.107 €/m². Werte am oberen Ende erzielen nur wenige Wohnungen; für eine gewöhnliche Bestandswohnung liegt der Preis heute nach unserer Erfahrung deutlich darunter. Mit Stellplatz 214 Verkäufe zu im Mittel 6.451 €/m².",
       "quelle": "Grundstücksmarktbericht Leipzig 2026",
       "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
       "stichtag": "Kaufverträge 2025"
@@ -50,7 +50,7 @@
     {
       "wert": "23,1",
       "label": "Rohertragsfaktor sanierter Mehrfamilienhäuser in Leipzig",
-      "detail": "124 Verkäufe mit Ertragsdaten: im Mittel 1.825 €/m² Wohn- und Nutzfläche, Miete 6,73 €/m², Nettoanfangsrendite 3,1 %, Leerstand 1,7 %.",
+      "detail": "124 Verkäufe mit Ertragsdaten: im Mittel 1.825 €/m² Wohn- und Nutzfläche, Miete 6,73 €/m², Nettoanfangsrendite 3,1 %, Leerstand 1,7 %. Das sind Mittelwerte aus den Verkäufen 2025; wer heute verkauft, erzielt nach unserer Erfahrung meist einen niedrigeren Faktor.",
       "quelle": "Grundstücksmarktbericht Leipzig 2026",
       "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
       "stichtag": "Kaufverträge 2025"
@@ -169,7 +169,7 @@
     },
     {
       "frage": "Wie hoch ist der Kaufpreisfaktor in Leipzig?",
-      "antwort": "Für sanierte Mehrfamilienhäuser nennt der Leipziger Gutachterausschuss in seinem Grundstücksmarktbericht 2026 für 2025 einen Faktor von im Mittel 23,1; er weist ihn als Rohertragsfaktor aus und hat dafür 124 Verkäufe mit Ertragsdaten ausgewertet.[[1]] In den Stadtbezirken unserer Leipziger Seiten lag er in Mitte bei 24,5, allerdings bei nur neun Verkäufen, in Nord bei 23,7, in Ost bei 23,0, in Altwest bei 21,9 und in Nordost bei 21,4.[[1]] Die Nettoanfangsrendite lag in ganz Leipzig im Mittel bei 3,1 %.[[1]] Der einzelne Faktor hängt von Lage, Zustand und Miethöhe ab.",
+      "antwort": "Für sanierte Mehrfamilienhäuser nennt der Leipziger Gutachterausschuss in seinem Grundstücksmarktbericht 2026 für 2025 einen Faktor von im Mittel 23,1; er weist ihn als Rohertragsfaktor aus und hat dafür 124 Verkäufe mit Ertragsdaten ausgewertet.[[1]] Das sind Mittelwerte aus den Verkäufen 2025; wer heute verkauft, erzielt nach unserer Erfahrung meist einen niedrigeren Faktor. In den Stadtbezirken unserer Leipziger Seiten lag er in Mitte bei 24,5, allerdings bei nur neun Verkäufen, in Nord bei 23,7, in Ost bei 23,0, in Altwest bei 21,9 und in Nordost bei 21,4.[[1]] Die Nettoanfangsrendite lag in ganz Leipzig im Mittel bei 3,1 %.[[1]] Der einzelne Faktor hängt von Lage, Zustand und Miethöhe ab.",
       "herkunft": "FG-Gap-Answers 7.2 (SOURCE), selbst geschrieben nur aus Zahlen, die schon auf den Gebietsseiten stehen (Stand 28.10.2026). Recherche P102, laut Brief der Faktor, der schon auf Leipzig-Nord und Leipzig-Zentrum steht. Zahlen: Kennzahlen der Seiten Leipzig (23,1; 124 Verkäufe; Nettoanfangsrendite 3,1 %), Leipzig-Zentrum (Mitte 24,5 bei 9, Ost 23,0), Leipzig-Nord (Nord 23,7, Nordost 21,4), Leipzig-West (Altwest 21,9); Grundstücksmarktbericht Leipzig 2026 = Quelle 1. Aus, bis Jesu die Quellen geprüft hat (freigaben.quelleFaq).",
       "quelle": "7.2-P102"
     }

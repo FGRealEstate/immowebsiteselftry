@@ -16,6 +16,7 @@
     "position": "35% 50%"
   },
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Halbjahr 2026 wurden 619 Kaufverträge geschlossen, 11 % mehr als im Vorjahreszeitraum. Freistehende Einfamilienhäuser kosteten im Median 620.000 € nach 720.000 €, Reihenhäuser und Doppelhaushälften 536.000 € nach 570.000 €. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-29",
   "zahlen": [
     {
@@ -29,7 +30,7 @@
     {
       "wert": "5.350 €/m²",
       "label": "Ein- und Zweifamilienhäuser, Baujahr 2002–2020, gezahlter Preis je m² Wohnfläche (Median)",
-      "detail": "Spanne 3.035–7.515 €/m², 29 Kauffälle. Baujahr vor 1960: 4.540 €/m² bei 33 Kauffällen.",
+      "detail": "Spanne 3.035–7.515 €/m², 29 Kauffälle. Werte am oberen Ende erzielen nur wenige Häuser; für ein gewöhnliches Bestandshaus liegt der Preis heute nach unserer Erfahrung deutlich darunter. Baujahr vor 1960: 4.540 €/m² bei 33 Kauffällen.",
       "quelle": "Gutachterausschuss Potsdam, Grundstücksmarktbericht 2025, Abb. 56",
       "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_P.pdf",
       "stichtag": "Kaufverträge 2025"
@@ -37,7 +38,7 @@
     {
       "wert": "4.650 €/m²",
       "label": "Eigentumswohnungen im sanierten Altbau (vor 1960), Weiterverkauf (Median)",
-      "detail": "Spanne 2.535–6.970 €/m², 170 Kauffälle in mittlerer bis sehr guter Wohnlage. Neubau ab 2023 im Erstverkauf, mittlere Wohnlage: 7.580 €/m².",
+      "detail": "Spanne 2.535–6.970 €/m², 170 Kauffälle in mittlerer bis sehr guter Wohnlage. Werte am oberen Ende erzielen nur wenige Wohnungen; für eine gewöhnliche Bestandswohnung liegt der Preis heute nach unserer Erfahrung deutlich darunter. Neubau ab 2023 im Erstverkauf, mittlere Wohnlage: 7.580 €/m².",
       "quelle": "Gutachterausschuss Potsdam, Grundstücksmarktbericht 2025, Abb. 118",
       "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_P.pdf",
       "stichtag": "Kaufverträge 2025"
@@ -132,7 +133,7 @@
   "finanzieren": {
     "h2": "Finanzierung für Potsdam",
     "absaetze": [
-      "Für Käufer in Potsdam vergleichen wir Finanzierungen über die Plattformen Europace und Baufinex bei rund 500 Banken. Passt Ihr Fall nicht in deren Raster, etwa weil Sie Unternehmer sind, sprechen wir Banken direkt an. Vermietete Eigentumswohnungen wurden 2024 und 2025 im Durchschnitt zum 30,9-Fachen des jährlichen Rohertrags verkauft;[[1]] wie viel Eigenkapital eine Bank bei diesem Verhältnis von Kaufpreis und Miete erwartet, klären wir früh."
+      "Für Käufer in Potsdam vergleichen wir Finanzierungen über die Plattformen Europace und Baufinex bei rund 500 Banken. Passt Ihr Fall nicht in deren Raster, etwa weil Sie Unternehmer sind, sprechen wir Banken direkt an. Vermietete Eigentumswohnungen wurden 2024 und 2025 im Durchschnitt zum 30,9-Fachen des jährlichen Rohertrags verkauft;[[1]] wie viel Eigenkapital eine Bank bei diesem Verhältnis von Kaufpreis und Miete erwartet, klären wir früh. Das sind Mittelwerte aus den Verkäufen 2025; wer heute verkauft, erzielt nach unserer Erfahrung meist einen niedrigeren Faktor."
     ]
   },
   "faq": [
@@ -153,7 +154,7 @@
     },
     {
       "frage": "Lohnt sich eine Kapitalanlage in Potsdam?",
-      "antwort": "Pauschal lässt sich das nicht sagen, es kommt auf Lage, Baujahr und Kaufpreis an. Für Potsdam sprechen die Rolle als Landeshauptstadt mit Verwaltung, Hochschulen und Forschung und die Bevölkerungsprognose der Stadt, die für 2040 etwas über 200.000 Einwohner erwartet.[[1,14]] Dagegen stehen hohe Kaufpreise im Verhältnis zur Miete, bei vermieteten Eigentumswohnungen im Durchschnitt das 30,9-Fache des jährlichen Rohertrags, und die Mietpreisbremse bis 31.12.2029.[[1,6]] Eine Mietrendite nennt keine amtliche Quelle; wir rechnen sie in der Ankaufsberatung für jedes Objekt einzeln.",
+      "antwort": "Pauschal lässt sich das nicht sagen, es kommt auf Lage, Baujahr und Kaufpreis an. Für Potsdam sprechen die Rolle als Landeshauptstadt mit Verwaltung, Hochschulen und Forschung und die Bevölkerungsprognose der Stadt, die für 2040 etwas über 200.000 Einwohner erwartet.[[1,14]] Dagegen stehen hohe Kaufpreise im Verhältnis zur Miete, bei vermieteten Eigentumswohnungen im Durchschnitt das 30,9-Fache des jährlichen Rohertrags, und die Mietpreisbremse bis 31.12.2029.[[1,6]] Das sind Mittelwerte aus den Verkäufen 2025; wer heute verkauft, erzielt nach unserer Erfahrung meist einen niedrigeren Faktor. Eine Mietrendite nennt keine amtliche Quelle; wir rechnen sie in der Ankaufsberatung für jedes Objekt einzeln.",
       "herkunft": "Prompt der KI-Recherche q10 „Lohnt sich eine Kapitalanlage in Potsdam bei den aktuellen Preisen?“ (ChatGPT, Gemini, Google AI Overview, Perplexity; Dashboard/src/data/research/ai_answers.json, Oktober 2026); Frage vorgegeben in FG-Timon-Answers-Update §4.5 (29.10.2026)"
     },
     {
@@ -255,6 +256,11 @@
       "name": "Landeshauptstadt Potsdam, Potsdam im Überblick",
       "url": "https://www.potsdam.de/de/content/potsdam-im-ueberblick-0",
       "stand": "undatiert, abgerufen 29.10.2026"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte in der Stadt Potsdam, Halbjahresbericht zum Grundstücksmarkt 2026",
+      "url": "https://gaa-potsdam.github.io/Halbjahresbericht_2026/",
+      "stand": "1. Halbjahr 2026, veröffentlicht 20.08.2026"
     }
   ],
   "pruefung": [
@@ -461,6 +467,10 @@
     {
       "zahl": "Krampnitz: Wohnraum für bis zu 10000 Menschen",
       "fundstelle": "potsdam.md, Zeile 461"
+    },
+    {
+      "zahl": "Potsdam 1. Halbjahr 2026: 619 Kaufverträge (+11 %); Median freistehende Einfamilienhäuser 620.000 € (Vorjahreszeitraum 720.000 €), Reihenhäuser/Doppelhaushälften 536.000 € (570.000 €)",
+      "fundstelle": "Halbjahresbericht 2026 der Stadt Potsdam, Zusammenfassung („619 notariell beurkundete Kaufverträge … Anstieg von 11 %“, „Die angegebenen Werte stellen Medianpreise dar“) und Kennzahlen-Kacheln. Geprüft 06.11.2026 gegen den Bericht (Update 39 §2)."
     }
   ]
 }

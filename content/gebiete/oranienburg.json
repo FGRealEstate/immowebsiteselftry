@@ -12,6 +12,7 @@
   "h1": "Immobilie verkaufen, kaufen und finanzieren in Oranienburg",
   "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Oranienburg und seinen Ortsteilen beim Verkauf, beim Kauf und bei der Finanzierung. Bewertung, Vermarktung und Finanzierung kommen aus einer Hand.",
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Halbjahr 2026 kosteten freistehende Einfamilienhäuser der Baujahre 1991 bis 2011 im Landkreis 3.689 €/m² Wohnfläche, nach 3.794 €/m² im ersten Halbjahr 2025; Eigentumswohnungen dieser Baujahre 3.333 €/m² nach 3.129 €/m², jeweils bei wenigen Verkäufen. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-26",
   "zahlen": [
     {
@@ -25,7 +26,7 @@
     {
       "wert": "Ø 4.726 €/m²",
       "label": "Einfamilienhäuser ab Baujahr 2010, gezahlter Preis je m² Wohnfläche",
-      "detail": "Spanne 3.455–5.824 €/m², Region Oranienburg.",
+      "detail": "Spanne 3.455–5.824 €/m², Region Oranienburg. Werte am oberen Ende erzielen nur wenige Häuser; für ein gewöhnliches Bestandshaus liegt der Preis heute nach unserer Erfahrung deutlich darunter.",
       "quelle": "Gutachterausschuss Oberhavel, Grundstücksmarktbericht 2025, Tabelle 11",
       "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_OHV.pdf",
       "stichtag": "Kaufverträge 2025"
@@ -33,7 +34,7 @@
     {
       "wert": "Ø 2.941 €/m²",
       "label": "Eigentumswohnungen nach 1990 gebaut, Weiterverkauf",
-      "detail": "Spanne 1.613–3.831 €/m², 14 Kauffälle.",
+      "detail": "Spanne 1.613–3.831 €/m², 14 Kauffälle. Werte am oberen Ende erzielen nur wenige Wohnungen; für eine gewöhnliche Bestandswohnung liegt der Preis heute nach unserer Erfahrung deutlich darunter.",
       "quelle": "Gutachterausschuss Oberhavel, Grundstücksmarktbericht 2025, Tabelle 29",
       "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_OHV.pdf",
       "stichtag": "Kaufverträge 2025"
@@ -259,6 +260,11 @@
       "name": "ORAFOL, Unternehmensprofil",
       "url": "https://www.orafol.com/de/uber-orafol/uber-uns/unternehmensprofil",
       "stand": "abgerufen 24.10.2026"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte im Landkreis Oberhavel, Zwischenbericht I. Halbjahr 2026",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GA_OHV_1HJ26.pdf",
+      "stand": "veröffentlicht 02.07.2026"
     }
   ],
   "pruefung": [
@@ -413,6 +419,10 @@
     {
       "zahl": "10 % über Vergleichsmiete; Ausnahme Erstnutzung nach 01.10.2014; Kappungsgrenze 15 % in 3 Jahren",
       "fundstelle": "Gesetz: §§ 556d, 556f, 558 Abs. 3 BGB (nicht in der Recherche-Datei, Rechtslage)"
+    },
+    {
+      "zahl": "Oberhavel 1. Halbjahr 2026: Einfamilienhäuser Baujahr 1991 bis 2011, 59 Verkäufe, 3.689 €/m² (1. Halbjahr 2025: 77 Verkäufe, 3.794 €/m²); Eigentumswohnungen Baujahr 1991 bis 2011, 33 Verkäufe, 3.333 €/m² (37, 3.129 €/m²)",
+      "fundstelle": "GA_OHV_1HJ26.pdf, S. 2 (Einfamilienhäuser; Reihenhäuser und Doppelhaushälften getrennt) und S. 3 (Eigentumswohnungen). Geprüft 06.11.2026 gegen den Bericht (Update 39 §2)."
     }
   ],
   "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Oranienburg ist Timon Fischer Ihr Ansprechpartner, Geschäftsführer und verantwortlich für die Immobilienfinanzierung.",

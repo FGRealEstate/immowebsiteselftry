@@ -30,6 +30,7 @@
     "position": "50% 60%"
   },
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Halbjahr 2026 kosteten freistehende Einfamilienhäuser der Baujahre 1991 bis 2011 im Landkreis 3.689 €/m² Wohnfläche, nach 3.794 €/m² im ersten Halbjahr 2025; Eigentumswohnungen dieser Baujahre 3.333 €/m² nach 3.129 €/m², jeweils bei wenigen Verkäufen. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-26",
   "zahlen": [
     {
@@ -217,7 +218,7 @@
     },
     {
       "frage": "Ich möchte ein Mehrfamilienhaus in Oberhavel verkaufen. Wer findet Käufer?",
-      "antwort": "Wir vermitteln auch Mehrfamilienhäuser und klären früh, ob Interessenten den Kauf finanzieren können. Käufer rechnen mit der Rendite: 2025 lag der Liegenschaftszinssatz für Mehrfamilienhäuser im Landkreis im Mittel bei 3,26 %, der Kaufpreis betrug im Median das 17,54-Fache der jährlichen Miete, bei 27 Kauffällen.[[1]] Ob die Mietpreisbremse gilt, beeinflusst die Mietprognose; sie gilt in Birkenwerder, Glienicke/Nordbahn, Leegebruch, im Mühlenbecker Land und in Oranienburg.[[5]]",
+      "antwort": "Wir vermitteln auch Mehrfamilienhäuser und klären früh, ob Interessenten den Kauf finanzieren können. Käufer rechnen mit der Rendite: 2025 lag der Liegenschaftszinssatz für Mehrfamilienhäuser im Landkreis im Mittel bei 3,26 %, der Kaufpreis betrug im Median das 17,54-Fache der jährlichen Miete, bei 27 Kauffällen.[[1]] Das sind Mittelwerte aus den Verkäufen 2025; wer heute verkauft, erzielt nach unserer Erfahrung meist einen niedrigeren Faktor. Ob die Mietpreisbremse gilt, beeinflusst die Mietprognose; sie gilt in Birkenwerder, Glienicke/Nordbahn, Leegebruch, im Mühlenbecker Land und in Oranienburg.[[5]]",
       "herkunft": "Prompt der KI-Recherche „Ich möchte ein Mehrfamilienhaus im Berliner Umland verkaufen. Wer findet Käufer?“ (q62) (ChatGPT, Gemini, Google AI Overview; Dashboard/src/data/research/ai_answers.json, Oktober 2026)"
     },
     {
@@ -348,6 +349,11 @@
       "name": "Gemeinde Mühlenbecker Land, Reaktivierung der Heidekrautbahn auf ihrer Stammstrecke",
       "url": "https://www.muehlenbecker-land.de/de/bauen-wirtschaft/verkehr/reaktivierung-der-heidekrautbahn-auf-ihrer-stammstrecke",
       "stand": "abgerufen 26.10.2026"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte im Landkreis Oberhavel, Zwischenbericht I. Halbjahr 2026",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GA_OHV_1HJ26.pdf",
+      "stand": "veröffentlicht 02.07.2026"
     }
   ],
   "pruefung": [
@@ -458,6 +464,10 @@
     {
       "zahl": "Wertermittlung kostenlos, meistens in wenigen Stunden; Europace und Baufinex; § 34c und § 34i GewO; Timon Fischer, Geschäftsführer und verantwortlich für die Immobilienfinanzierung",
       "fundstelle": "wie konigs-wusterhausen.json (Live-Seite und Brief)"
+    },
+    {
+      "zahl": "Oberhavel 1. Halbjahr 2026: Einfamilienhäuser Baujahr 1991 bis 2011, 59 Verkäufe, 3.689 €/m² (1. Halbjahr 2025: 77 Verkäufe, 3.794 €/m²); Eigentumswohnungen Baujahr 1991 bis 2011, 33 Verkäufe, 3.333 €/m² (37, 3.129 €/m²)",
+      "fundstelle": "GA_OHV_1HJ26.pdf, S. 2 (Einfamilienhäuser; Reihenhäuser und Doppelhaushälften getrennt) und S. 3 (Eigentumswohnungen). Geprüft 06.11.2026 gegen den Bericht (Update 39 §2)."
     }
   ]
 }

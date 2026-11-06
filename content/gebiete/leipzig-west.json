@@ -28,13 +28,13 @@
     "position": "50% 45%"
   },
   "stand": "Oktober 2026",
-  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem Grundstücksmarktbericht des Leipziger Gutachterausschusses zum Stichtag 01.01.2026. Er ist der aktuelle amtliche Bericht und enthält alle Verkäufe aus 2025; den nächsten legt der Gutachterausschuss voraussichtlich im Frühjahr 2027 vor. Erste Werte für 2026 gibt es schon: Die Bodenrichtwerte gelten zum 01.01.2026, und nach dem GREIX, dem Preisindex der Gutachterausschüsse und des Kiel Instituts für Weltwirtschaft, stiegen die Preise für Eigentumswohnungen in Leipzig im ersten Quartal 2026 um 2,5 % und blieben im zweiten Quartal nahezu gleich.",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem Grundstücksmarktbericht des Leipziger Gutachterausschusses zum Stichtag 01.01.2026 mit allen Verkäufen aus 2025; den nächsten Bericht legt der Gutachterausschuss voraussichtlich im Frühjahr 2027 vor. Erste Werte für 2026: Die Bodenrichtwerte gelten zum 01.01.2026, und nach dem GREIX, dem Preisindex der Gutachterausschüsse und des Kiel Instituts für Weltwirtschaft, stiegen die Preise für Eigentumswohnungen in Leipzig im ersten Quartal 2026 um 2,5 % und blieben im zweiten Quartal nahezu gleich. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-26",
   "zahlen": [
     {
       "wert": "Ø 2.738 €/m²",
       "label": "Eigentumswohnungen im sanierten Altbau, Weiterverkauf im Stadtbezirk Altwest",
-      "detail": "257 Verkäufe ohne Stellplatz, Median 2.563 €/m², Spanne 1.259 bis 5.184 €/m², im Mittel 64 m² groß. In ganz Leipzig lag der Mittelwert bei 2.850 €/m².",
+      "detail": "257 Verkäufe ohne Stellplatz, Median 2.563 €/m², Spanne 1.259 bis 5.184 €/m², im Mittel 64 m² groß. Werte am oberen Ende erzielen nur wenige Wohnungen; für eine gewöhnliche Bestandswohnung liegt der Preis heute nach unserer Erfahrung deutlich darunter. In ganz Leipzig lag der Mittelwert bei 2.850 €/m².",
       "quelle": "Grundstücksmarktbericht Leipzig 2026",
       "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
       "stichtag": "Kaufverträge 2025"
@@ -50,7 +50,7 @@
     {
       "wert": "21,9",
       "label": "Rohertragsfaktor sanierter Mehrfamilienhäuser in Altwest",
-      "detail": "16 Verkäufe mit Ertragsdaten: im Mittel 1.773 €/m² Wohn- und Nutzfläche, Miete 6,84 €/m², Nettoanfangsrendite 3,2 %, Leerstand 2,8 %. In ganz Leipzig: Faktor 23,1, 1.825 €/m², Nettoanfangsrendite 3,1 %.",
+      "detail": "16 Verkäufe mit Ertragsdaten: im Mittel 1.773 €/m² Wohn- und Nutzfläche, Miete 6,84 €/m², Nettoanfangsrendite 3,2 %, Leerstand 2,8 %. In ganz Leipzig: Faktor 23,1, 1.825 €/m², Nettoanfangsrendite 3,1 %. Das sind Mittelwerte aus den Verkäufen 2025; wer heute verkauft, erzielt nach unserer Erfahrung meist einen niedrigeren Faktor.",
       "quelle": "Grundstücksmarktbericht Leipzig 2026",
       "url": "https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.6_Dez6_Stadtentwicklung_Bau/62_Amt_fuer_Geoinformationen_und_Bodenordnung/Gutachterausschuss/Marktbericht_Leipzig_2026.pdf",
       "stichtag": "Kaufverträge 2025"
@@ -136,7 +136,7 @@
     "h2": "Immobilie in Leipzig-West verkaufen",
     "absaetze": [
       "Im Stadtbezirk Altwest, zu dem Lindenau, Altlindenau und Leutzsch gehören, wurden 2025 257 Eigentumswohnungen im sanierten Altbau weiterverkauft, im Mittel für 2.738 €/m² Wohnfläche; in ganz Leipzig waren es 2.850 €/m². Die Spanne reichte von 1.259 bis 5.184 €/m², zwischen 2010 und 2019 sanierte Wohnungen kosteten im Mittel 2.943 €/m². Bezugsfreie Wohnungen erzielten stadtweit im Mittel 3.054 €/m², vermietete 2.707 €/m².[[1]] Deshalb bewerten wir nach den Preisen, zu denen vergleichbare Wohnungen in Ihrer Gegend tatsächlich verkauft wurden, und nach der Nachfrage nach genau dieser Art Immobilie. Bei vermieteten Immobilien zählt außerdem die Nettokaltmiete, die heute gezahlt wird.",
-      "Mehrfamilienhäuser wechselten 2025 in Altwest 35-mal den Eigentümer, für zusammen 77,5 Mio. €, das waren 18,9 % des Leipziger Umsatzes mit Mehrfamilienhäusern. Sanierte Häuser kosteten im Mittel 1.773 €/m² Wohn- und Nutzfläche, das 21,9-Fache der jährlichen Nettokaltmiete.[[1]] Liegt Ihr Haus in einem sozialen Erhaltungsgebiet, prüft die Stadt beim Verkauf ihr Vorkaufsrecht. Vorrangig strebt sie eine Abwendungsvereinbarung an, in der sich der Käufer verpflichtet, nicht in Wohnungs- oder Teileigentum umzuwandeln und nicht über den Leipziger Wohn- und Ausstattungsstandard hinaus zu modernisieren.[[11]] Bei Häusern in früheren Sanierungsgebieten klären wir vorab, ob der Ausgleichsbetrag festgesetzt und bezahlt ist.[[15]]"
+      "Mehrfamilienhäuser wechselten 2025 in Altwest 35-mal den Eigentümer, für zusammen 77,5 Mio. €, das waren 18,9 % des Leipziger Umsatzes mit Mehrfamilienhäusern. Sanierte Häuser kosteten im Mittel 1.773 €/m² Wohn- und Nutzfläche, das 21,9-Fache der jährlichen Nettokaltmiete.[[1]] Das sind Mittelwerte aus den Verkäufen 2025; wer heute verkauft, erzielt nach unserer Erfahrung meist einen niedrigeren Faktor. Liegt Ihr Haus in einem sozialen Erhaltungsgebiet, prüft die Stadt beim Verkauf ihr Vorkaufsrecht. Vorrangig strebt sie eine Abwendungsvereinbarung an, in der sich der Käufer verpflichtet, nicht in Wohnungs- oder Teileigentum umzuwandeln und nicht über den Leipziger Wohn- und Ausstattungsstandard hinaus zu modernisieren.[[11]] Bei Häusern in früheren Sanierungsgebieten klären wir vorab, ob der Ausgleichsbetrag festgesetzt und bezahlt ist.[[15]]"
     ]
   },
   "kaufen": {

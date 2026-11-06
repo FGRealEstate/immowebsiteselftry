@@ -30,12 +30,13 @@
     "position": "50% 50%"
   },
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Halbjahr 2026 kosteten frei stehende Einfamilienhäuser im Bestand im Median 3.535 €/m² Wohnfläche, nach 3.635 €/m² im zweiten Halbjahr 2025; weiterverkaufte Eigentumswohnungen erzielten 2.660 €/m² nach 2.580 €/m². Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-27",
   "zahlen": [
     {
       "wert": "2.370 €/m²",
       "label": "Median für Eigentumswohnungen der Baujahre 1990 bis 2023, Gemarkung Laubegast",
-      "detail": "50 Weiterverkäufe, Spanne 1.170 bis 3.690 €/m², Mittelwert 2.420 €/m². Die Gemarkung liegt ganz im Stadtteil Laubegast. Wohnungen mit Baujahr bis 1989 oder saniert bis 2023 kosteten dort 2.430 €/m² (18 Verkäufe), in der Gemarkung Tolkewitz 2.710 €/m² (23 Verkäufe). Alle weiterverkauften Wohnungen in Dresden: im Mittel rund 2.705 €/m².",
+      "detail": "50 Weiterverkäufe, Spanne 1.170 bis 3.690 €/m², Mittelwert 2.420 €/m². Werte am oberen Ende erzielen nur wenige Wohnungen; für eine gewöhnliche Bestandswohnung liegt der Preis heute nach unserer Erfahrung deutlich darunter. Die Gemarkung liegt ganz im Stadtteil Laubegast. Wohnungen mit Baujahr bis 1989 oder saniert bis 2023 kosteten dort 2.430 €/m² (18 Verkäufe), in der Gemarkung Tolkewitz 2.710 €/m² (23 Verkäufe). Alle weiterverkauften Wohnungen in Dresden: im Mittel rund 2.705 €/m².",
       "quelle": "Grundstücksmarktbericht Dresden 2026",
       "url": "https://www.dresden.de/media/pdf/vermessung/2026-Grundstuecksmarktbericht.pdf",
       "stichtag": "Kaufverträge 2025"
@@ -413,6 +414,10 @@
     {
       "zahl": "Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, §§ 656a–656d BGB; § 34c und § 34i GewO; Timon Fischer Geschäftsführer, Immobilienfinanzierung; Europace und Baufinex",
       "fundstelle": "wie dresden-nord.json"
+    },
+    {
+      "zahl": "Dresden 1. Halbjahr 2026: Ein-/Zweifamilienhaus freistehend, Bestand, Median 3.535 €/m² (2. Halbjahr 2025: 3.635 €/m²); Eigentumswohnungen Weiterverkauf, Median 2.660 €/m² (2. Halbjahr 2025: 2.580 €/m²)",
+      "fundstelle": "Halbjahresbericht 2026, S. 12 (3.2 Bebaute Grundstücke) und S. 15 (3.3 Wohnungseigentum). Geprüft 06.11.2026 gegen den Bericht (Update 39 §2)."
     }
   ],
   "karte": {

@@ -13,6 +13,7 @@
   "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Dresden beim Verkauf, beim Kauf und bei der Finanzierung, mit eigenen Seiten für Dresden-Nord, Dresden-Süd, Dresden-Zentrum und Dresden-Ost.",
   "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Dresden ist Timon Fischer Ihr Ansprechpartner, Geschäftsführer und verantwortlich für die Immobilienfinanzierung.",
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Halbjahr 2026 kosteten frei stehende Einfamilienhäuser im Bestand im Median 3.535 €/m² Wohnfläche, nach 3.635 €/m² im zweiten Halbjahr 2025; weiterverkaufte Eigentumswohnungen erzielten 2.660 €/m² nach 2.580 €/m². Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-27",
   "hero": {
     "name": "dresden-elbe-altstadt-canalettoblick",
@@ -141,7 +142,7 @@
   "kaufen": {
     "h2": "Kaufen und investieren in Dresden",
     "absaetze": [
-      "Für Kapitalanleger gilt in Dresden die Mietpreisbremse bis 30.06.2027: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[9]] Bestandsmieten dürfen in drei Jahren um höchstens 15 % steigen.[[10]] Für Mehrfamilienhäuser in offener Bauweise ermittelte der Gutachterausschuss als Median das 21,21-Fache der jährlichen Mieteinnahmen, aus 130 Verkäufen; sanierte Mehrfamilienhäuser der Vorkriegszeit kosteten 2025 im Mittel 2.055 €/m² Wohnfläche.[[1]]",
+      "Für Kapitalanleger gilt in Dresden die Mietpreisbremse bis 30.06.2027: Bei Mietbeginn darf die Miete grundsätzlich höchstens 10 % über der ortsüblichen Vergleichsmiete liegen.[[9]] Bestandsmieten dürfen in drei Jahren um höchstens 15 % steigen.[[10]] Für Mehrfamilienhäuser in offener Bauweise ermittelte der Gutachterausschuss als Median das 21,21-Fache der jährlichen Mieteinnahmen, aus 130 Verkäufen; sanierte Mehrfamilienhäuser der Vorkriegszeit kosteten 2025 im Mittel 2.055 €/m² Wohnfläche.[[1]] Das sind Mittelwerte aus den Verkäufen 2025; wer heute verkauft, erzielt nach unserer Erfahrung meist einen niedrigeren Faktor.",
       "Eine sächsische Verordnung, nach der die Aufteilung eines Mietshauses in Eigentumswohnungen genehmigt werden muss, gibt es nicht.[[15]] Auch eine soziale Erhaltungssatzung hat Dresden nicht.[[12]] In den städtebaulichen Erhaltungsgebieten, etwa in der Neustadt, in Striesen, Blasewitz oder der Gartenstadt Hellerau, brauchen Neubau, Abriss, Umbau und Nutzungsänderung aber eine Genehmigung.[[11]]"
     ]
   },
@@ -339,6 +340,10 @@
     {
       "zahl": "GrESt Sachsen 5,5 %; Provision 3 % zzgl. MwSt. = 3,57 % pro Seite, §§ 656a–656d BGB; § 34c und § 34i GewO; Timon Fischer Geschäftsführer, Immobilienfinanzierung; Europace und Baufinex; Wertermittlung kostenlos",
       "fundstelle": "Leipziger GMB 2026 S. 32; maklerprovision.njk; Seiten Dresden-Nord/-Zentrum; leipzig.json (kurzantwortMehr)"
+    },
+    {
+      "zahl": "Dresden 1. Halbjahr 2026: Ein-/Zweifamilienhaus freistehend, Bestand, Median 3.535 €/m² (2. Halbjahr 2025: 3.635 €/m²); Eigentumswohnungen Weiterverkauf, Median 2.660 €/m² (2. Halbjahr 2025: 2.580 €/m²)",
+      "fundstelle": "Halbjahresbericht 2026, S. 12 (3.2 Bebaute Grundstücke) und S. 15 (3.3 Wohnungseigentum). Geprüft 06.11.2026 gegen den Bericht (Update 39 §2)."
     }
   ]
 }

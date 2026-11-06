@@ -29,6 +29,7 @@
     "position": "50% 60%"
   },
   "stand": "Oktober 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Halbjahr 2026 zählte der Gutachterausschuss 840 Kauffälle, rund 18 % weniger als im zweiten Halbjahr 2025. Freistehende Ein- und Zweifamilienhäuser im Berliner Umland kosteten im ersten Quartal 3.360 €/m² und im zweiten Quartal 3.670 €/m² Wohnfläche, nach 3.480 €/m² im Jahr 2025. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
   "updated": "2026-10-26",
   "zahlen": [
     {
@@ -306,6 +307,11 @@
       "name": "Landkreis Barnim, Bauanträge im Barnim werden digital (Meldung auf ahrensfelde.de)",
       "url": "https://www.ahrensfelde.de/portal/meldungen/bauantraege-im-barnim-werden-digital-900000601-30601.html",
       "stand": "12.10.2026"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte im Landkreis Barnim, Barnimer Grundstücksmarkt 1. Halbjahr 2026",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GA_BAR_1HJ_2026.pdf",
+      "stand": "Stand 17.09.2026, vorläufig"
     }
   ],
   "pruefung": [
@@ -408,6 +414,10 @@
     {
       "zahl": "Wertermittlung kostenlos, meistens in wenigen Stunden; Europace und Baufinex; § 34c und § 34i GewO; Timon Fischer, Geschäftsführer und verantwortlich für die Immobilienfinanzierung",
       "fundstelle": "wie oberhavel.json (Live-Seite und Brief)"
+    },
+    {
+      "zahl": "Barnim 1. Halbjahr 2026: 840 Kauffälle, rund 18 % weniger als im 2. Halbjahr 2025; freistehende Ein- und Zweifamilienhäuser Berliner Umland, normierter Kaufpreis je m² Wohnfläche: 1. Quartal 2026 3.360 €/m², 2. Quartal 2026 3.670 €/m², 2025 gesamt 3.480 €/m²",
+      "fundstelle": "GA_BAR_1HJ_2026.pdf, S. 1 und S. 6 (quartalsweise Preisentwicklung, Berliner Umland). Geprüft 06.11.2026 gegen den Bericht (Update 39 §2)."
     }
   ]
 }
