@@ -1,14 +1,10 @@
 {
-  "_info": "Design-Pass 3 §3.8: Titelbild je Angebot, geht vor der Regel in _data/propstack.js. Schlüssel: Propstack-ID des Angebots oder Projekts. bild: Propstack-Bild-ID oder \"gestaltet\" (Navy-Titel mit F&G-Zeichen und Ort). url: dieselbe Datei, damit auch der Mock-Server (ohne Bild-IDs) sie findet. fokus: Bildausschnitt (CSS object-position). zoom: Ausschnitt vergrößern (Faktor). grund: warum dieses Bild. Ausgewählt am 30.10.2026 aus den eigenen Bildern jedes Angebots.",
+  "_info": "Design-Pass 3 §3.8: Titelbild je Angebot, geht vor der Regel in _data/propstack.js. Schlüssel: Propstack-ID des Angebots oder Projekts. bild: Propstack-Bild-ID oder \"gestaltet\" (Navy-Titel mit F&G-Zeichen und Ort). url: dieselbe Datei, damit auch der Mock-Server (ohne Bild-IDs) sie findet. fokus: Bildausschnitt (CSS object-position). zoom: Ausschnitt vergrößern (Faktor). grund: warum dieses Bild. Ausgewählt am 30.10.2026 aus den eigenen Bildern jedes Angebots. Update 40 §1.3 (06.11.2026): kein fester Eintrag „gestaltet“ mehr für Angebote ohne Fotos; die Regel nimmt dann das erste Foto, sobald Propstack eins hat, und ohne Foto fehlt das Angebot im Raster.",
   "6013467": {
     "bild": 52679275,
     "titel": "Wohnzimmer (3)",
     "url": "https://images.propstack.de/photos/3n5BCT3eB84jXM8yypXNnerA/photo/sdTwoNb9WQDkwcxCjqU9gGCi/Wohnzimmer%20%283%29.jpeg",
     "grund": "Wohnzimmer, hell (Angebot Berlin Westend)"
-  },
-  "5584762": {
-    "bild": "gestaltet",
-    "grund": "keine Fotos in Propstack"
   },
   "5581021": {
     "bild": 47329465,
