@@ -52,6 +52,7 @@
 
     {% if currentPath == "/" %}
     <!-- Site-Name und Unternehmen: nur auf der kanonischen Startseite -->
+    {# Update 40 §1.9 (06.11.2026): „BreadcrumbList everywhere“, auf der Startseite eine Stufe „Start“ (letzter Knoten im @graph). #}
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -286,6 +287,13 @@
       "description": "Begleitung von Mietinteressenten bei der Suche und Anmietung von Wohnraum in Berlin und im Berliner Umland.",
       "url": "https://fg-realestate.de/mieten.html",
       "provider": { "@id": "https://fg-realestate.de/#organization" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fg-realestate.de/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" }
+      ]
     }
   ]
 }
