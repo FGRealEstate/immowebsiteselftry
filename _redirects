@@ -64,6 +64,9 @@
 /wissen/sensitivitatsanalyse-nutzen /lexikon/stress-test/ 301
 /wissen/staffelmiete-kalkulieren /lexikon/staffelmiete/ 301
 /wissen/vergleichswertverfahren-kompakt /lexikon/verkehrswert/ 301
+# Update 40 §1.6 (06.11.2026): „Immobilien vergleichen“ ist aus der finalen Liste entfallen; kein Lexikoneintrag zum
+# Vergleichswertverfahren, deshalb dauerhaft auf die Immobilienbewertung (vorher 302 über /wissen/* auf /blog/)
+/wissen/immobilien-vergleichen /immobilienbewertung/ 301
 /wissen/ /blog/ 301
 /wissen/* /blog/ 302
 # Alte Standortseiten, die in einer Landkreisseite aufgegangen sind (Brief Gebietsseiten §5).
