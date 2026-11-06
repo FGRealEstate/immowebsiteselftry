@@ -10,6 +10,11 @@
 [functions."propstack-build-sammler"]
   schedule = "*/2 * * * *"
 
+# Update 40 §1.2: täglicher Produktions-Build um 06:00 deutscher Zeit (netlify/functions/taeglicher-build.js).
+# Netlify rechnet in UTC: Lauf um 04:00 und 05:00 UTC, gebaut wird nur, wenn es in Berlin 6 Uhr ist (Sommer- und Winterzeit).
+[functions."taeglicher-build"]
+  schedule = "0 4,5 * * *"
+
 # Update 7 §4: Propstack-Fotos über das Netlify Image CDN (/.netlify/images?url=…), Filter propstackFoto in .eleventy.js.
 [images]
   remote_images = ["https://images\\.propstack\\.de/.*"]
