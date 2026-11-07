@@ -189,7 +189,7 @@
     },
     {
       "frage": "Ich habe ein Haus im Havelland geerbt. Wer kann den Verkauf übernehmen?",
-      "antwort": "Wir verkaufen auch geerbte Immobilien. Zuerst klären wir mit Ihnen den rechtlichen Status des Hauses und die vorhandenen Unterlagen; häufig geht es auch um die Liquidität für die Erbschaftsteuer und je nach Situation ist eine Finanzierung dafür sinnvoller als ein schneller Verkauf unter Zeitdruck. Für den Preis zählt bei älteren Häusern der Vergleich nach Baujahr: Freistehende Einfamilienhäuser bis Baujahr 1948 kosteten 2025 in Falkensee und Dallgow-Döberitz im Mittel 4.608 €/m² Wohnfläche, in Nauen und Ketzin/Havel 2.234, in Rathenow und Premnitz 1.618 €/m².[[1]]",
+      "antwort": "Fischer & Geserich verkauft auch geerbte Immobilien im Havelland; Ihr Ansprechpartner ist Lennart Geserich. Zuerst klären wir mit Ihnen den rechtlichen Status des Hauses und die vorhandenen Unterlagen; häufig geht es auch um die Liquidität für die Erbschaftsteuer und je nach Situation ist eine Finanzierung dafür sinnvoller als ein schneller Verkauf unter Zeitdruck. Für den Preis zählt bei älteren Häusern der Vergleich nach Baujahr: Freistehende Einfamilienhäuser bis Baujahr 1948 kosteten 2025 in Falkensee und Dallgow-Döberitz im Mittel 4.608 €/m² Wohnfläche, in Nauen und Ketzin/Havel 2.234, in Rathenow und Premnitz 1.618 €/m².[[1]]",
       "herkunft": "Prompt der KI-Recherche „Ich habe ein Haus in Brandenburg geerbt und wohne nicht vor Ort. Wer kann den Verkauf für mich übernehmen?“ (q52) (ChatGPT, Gemini; Dashboard/src/data/research/ai_answers.json, Oktober 2026). Antwort nach der FAQ der Live-Seite „Verkauft ihr auch geerbte Immobilien?“; zur Abwicklung aus der Ferne gibt es keine Angabe, deshalb ohne diesen Teil der Frage"
     }
   ],
