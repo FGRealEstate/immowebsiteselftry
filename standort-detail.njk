@@ -96,6 +96,10 @@ eleventyComputed:
   </div>
 </section>
 
+{# Update 44 §2.1: Mehr dazu im Wissen, wie auf den Gebietsseiten (gebiet-detail.njk) #}
+{% set wissenKats = wissen.gebiet %}
+{% include "fgs-wissen.njk" %}
+
 {% if s and s.quellen %}
 {# Quellen zum Aufklappen; ein Klick auf eine Fußnote öffnet die Liste (fg-system.js) #}
 <section class="fgs-section fgs-section--tight fgs-place-sources" aria-labelledby="quellen-titel">
