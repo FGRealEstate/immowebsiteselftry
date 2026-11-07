@@ -466,7 +466,6 @@
             }
 
             ctx.innerHTML = html;
-            initPlaces(ctx);
             initFormatters(ctx);
         }
 
@@ -935,27 +934,6 @@
             }
         };
 
-        function initPlaces(scope) {
-            if (!(window.google && google.maps && google.maps.places)) return;
-
-            scope.querySelectorAll(".google-address").forEach(input => {
-                if (input.dataset.googleReady) return;
-                input.dataset.googleReady = "1";
-
-                const ac = new google.maps.places.Autocomplete(input, {
-                    types: ["address"],
-                    componentRestrictions: { country: "de" }
-                });
-
-                ac.addListener("place_changed", function () {
-                    const place = ac.getPlace();
-                    if (place && place.formatted_address) {
-                        input.value = place.formatted_address;
-                    }
-                });
-            });
-        }
-
         if (defaultConcern) {
             state.concern = defaultConcern;
             set(".lead-concern", state.concern);
@@ -973,30 +951,6 @@
 })();
 </script>
 
-<script>
-/* Google Places wird ausschließlich durch den zentralen Consent-Manager geladen. */
-(function () {
-    window.fgInitLeadPlaces = function () {
-        if (!(window.google && google.maps && google.maps.places)) return;
-        document.querySelectorAll(".lead-widget").forEach(function (widget) {
-            widget.querySelectorAll(".google-address").forEach(function (input) {
-                if (input.dataset.googleReady) return;
-                input.dataset.googleReady = "1";
-                const ac = new google.maps.places.Autocomplete(input, {
-                    types: ["address"],
-                    componentRestrictions: { country: "de" }
-                });
-                ac.addListener("place_changed", function () {
-                    const place = ac.getPlace();
-                    if (place && place.formatted_address) input.value = place.formatted_address;
-                });
-            });
-        });
-    };
-    document.addEventListener("fg:mapsready", window.fgInitLeadPlaces);
-    if (window.google && google.maps && google.maps.places) window.fgInitLeadPlaces();
-})();
-</script>
 
 
 <style>

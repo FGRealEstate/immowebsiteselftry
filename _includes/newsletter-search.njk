@@ -147,17 +147,6 @@
       });
     });
 
-    if(window.google && google.maps && google.maps.places) {
-      document.querySelectorAll(".newsletter-form .google-address").forEach(function(input){
-        if(input.dataset.googleReady) return;
-        input.dataset.googleReady = "1";
-        const ac = new google.maps.places.Autocomplete(input, { types: ["(regions)"], componentRestrictions: { country: "de" } });
-        ac.addListener("place_changed", function(){
-          const place = ac.getPlace();
-          if(place && place.formatted_address) input.value = place.formatted_address;
-        });
-      });
-    }
   });
 })();
 </script>

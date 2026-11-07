@@ -671,8 +671,8 @@ function getDistrictName(unit) {
 /* Update 27 A1: Ortsteil für Karte und Angebotsseite. 1. das Propstack-Feld (oben), 2. der Ortsteil, den Timon im Feld „Lage“
    (location_note) selbst nennt: „im Berliner Ortsteil Westend“, „im Dresdner Stadtteil Reick“, „Friedenau, ein … Ortsteil von
    Schöneberg“. Stand 01.11.2026 ist das Propstack-Feld bei allen 12 Angeboten leer, der Lage-Text nennt den Ortsteil bei 11.
-   Ohne beides bleibt es bei der Stadt (Vorlage). Nur Anzeige: Gebietsseite und Ansprechpartner richten sich weiter nach
-   getDistrictName und der PLZ. */
+   Ohne beides bleibt es bei der Stadt (Vorlage). Der Ansprechpartner richtet sich weiter nach der Gebietsseite, getDistrictName
+   und der PLZ; für den Gebietslink zählt der Ortsteil in Berlin seit Update 48 §10.3 mit (getGebietsteil). */
 function getOrtsteil(unit) {
     const feld = getDistrictName(unit);
     if (feld) return feld;
@@ -682,6 +682,13 @@ function getOrtsteil(unit) {
     const treffer = text.match(new RegExp(`\\b(?:Ortsteil|Stadtteil)\\s+${name}(?=[\\s,.;:()]|$)`))
         || text.match(new RegExp(`^${name}, (?:ein|eine|einer)\\b[^.]{0,120}?\\b(?:Ortsteil|Stadtteil)\\b`));
     return treffer && !["Von", "Der", "Die", "Des"].includes(treffer[1]) ? treffer[1] : null;
+}
+
+/* Update 48 §10.3 (08.11.2026): Gebietslink der Berliner Angebote über den Ortsteil zum Bezirk, z. B. Westend → Charlottenburg-
+   Wilmersdorf, Friedenau → Tempelhof-Schöneberg (Tabelle BERLIN_ORTSTEILE). Ortsteile ohne Bezirksseite, z. B. Moabit (Mitte),
+   bleiben bei der Berlin-Seite. Außerhalb Berlins bleibt es beim Propstack-Feld. */
+function getGebietsteil(unit) {
+    return getDistrictName(unit) || (placeKey(getPublicLocation(unit)) === "berlin" ? getOrtsteil(unit) : null);
 }
 
 // PLZ nur für die Zuordnung des Ansprechpartners (Teil B 4); sie wird nicht veröffentlicht, wie Straße und Hausnummer.
@@ -914,6 +921,9 @@ function plzKontakt(zip) {
     const kontakte = [...new Set(Object.keys(BERLIN_PLZ[zip] || {}).map(bezirkKontakt))];
     return kontakte.length === 1 ? kontakte[0] : null;
 }
+
+// Update 48 §10.3: Gebietsteil einer schon gebauten Einheit (district, sonst in Berlin ortsteil), wie getGebietsteil
+const projektGebietsteil = (unit) => unit.district || (placeKey(unit.location) === "berlin" ? unit.ortsteil : null);
 
 // Projekt ohne eigene PLZ und ohne bekannten Bezirk: Die Einheiten haben ihre PLZ schon ausgewertet; sind sie sich einig, gilt das.
 function findProjectKontakt(project, units, cityName, districtName, area) {
@@ -1380,8 +1390,8 @@ function buildUnit(unit) {
         location: getPublicLocation(unit),
         district: getDistrictName(unit),
         ortsteil: getOrtsteil(unit),
-        area: findArea(getPublicLocation(unit), getDistrictName(unit)),
-        kontakt: findKontakt(getPublicLocation(unit), getDistrictName(unit), findArea(getPublicLocation(unit), getDistrictName(unit)), getZip(unit)),
+        area: findArea(getPublicLocation(unit), getGebietsteil(unit)),
+        kontakt: findKontakt(getPublicLocation(unit), getDistrictName(unit), findArea(getPublicLocation(unit), getGebietsteil(unit)), getZip(unit)),
         preisart: preisArt(unit, marketingType),
         marketing_type: marketingType,
         property_type: propertyType,
@@ -1477,9 +1487,9 @@ function buildProject(project, units) {
         url: `/projekte/${slug}/`,
         status: getProjectStatusName(project),
         location: getProjectLocation(project, units),
-        area: findArea(getProjectLocation(project, units), getDistrictName(project || {}) || units.map((unit) => unit.district).find(Boolean)),
+        area: findArea(getProjectLocation(project, units), getDistrictName(project || {}) || units.map(projektGebietsteil).find(Boolean)),
         kontakt: findProjectKontakt(project, units, getProjectLocation(project, units), getDistrictName(project || {}) || units.map((unit) => unit.district).find(Boolean),
-            findArea(getProjectLocation(project, units), getDistrictName(project || {}) || units.map((unit) => unit.district).find(Boolean))),
+            findArea(getProjectLocation(project, units), getDistrictName(project || {}) || units.map(projektGebietsteil).find(Boolean))),
         // Update 35 A3: Preiszeile nur, wenn alle Einheiten dieselbe Art haben (z. B. nur Wohnungen)
         preisart: (() => { const arten = [...new Set(units.map((unit) => unit.preisart))]; return arten.length === 1 ? arten[0] : null; })(),
         address: firstText(project || {}, ["address", "full_address", "street", "custom_fields.projektadresse"]),

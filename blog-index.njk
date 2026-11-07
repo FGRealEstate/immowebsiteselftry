@@ -47,7 +47,7 @@ pg:
       <div class="fgs-blog-lead-body">
         <p class="fgs-small">{{ lead.katLabel | safe }} · {{ lead.minuten }} Min. Lesezeit</p>
         <h3>{{ lead.titel }}</h3>
-        <p>{{ lead.kurz }}</p>
+        <p>{{ lead.kurz | safe }}</p>
         <span class="fgs-link">Artikel lesen{% include "fgs-arrow.njk" %}</span>
       </div>
     </a>
@@ -60,7 +60,7 @@ pg:
         <span class="fgd-blog-card-body">
           <span class="fgd-blog-card-meta"><b>{{ p.katLabel | safe }}</b>{{ p.minuten }} Min. Lesezeit</span>
           <strong>{{ p.titel }}</strong>
-          <span class="fgd-blog-card-text">{{ p.kurz }}</span>
+          <span class="fgd-blog-card-text">{{ p.kurz | safe }}</span>
           <span class="fgs-link">Artikel lesen{% include "fgs-arrow.njk" %}</span>
         </span>
       </a>

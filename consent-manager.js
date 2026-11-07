@@ -3,9 +3,7 @@
 
   const CONSENT_VERSION = 2;
   const GTM_ID = window.FG_GTM_ID || 'GTM-5DVGRHB2';
-  const MAPS_API_KEY = window.FG_GOOGLE_MAPS_API_KEY || '';
   let gtmLoaded = false;
-  let mapsLoaded = false;
 
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
@@ -32,19 +30,8 @@
     document.head.appendChild(script);
   }
 
-  function loadGoogleMaps() {
-    if (mapsLoaded || !MAPS_API_KEY) return;
-    mapsLoaded = true;
-    const script = document.createElement('script');
-    script.async = true;
-    script.defer = true;
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=' + encodeURIComponent(MAPS_API_KEY) + '&libraries=places';
-    script.addEventListener('load', function () {
-      document.dispatchEvent(new CustomEvent('fg:mapsready'));
-      if (typeof window.fgInitLeadPlaces === 'function') window.fgInitLeadPlaces();
-    });
-    document.head.appendChild(script);
-  }
+  // Update 48 §10.4 (08.11.2026): Der Lader für Google Maps/Places ist entfernt. Die Datenschutzerklärung (Abschnitt 14) sagt,
+  // dass Google Maps nicht eingebunden ist; das bleibt so, auch wenn jemand einen Schlüssel einträgt.
 
   function accepted(category) {
     return Boolean(window.CookieConsent && window.CookieConsent.acceptedCategory(category));
@@ -77,7 +64,6 @@
 
     // GTM itself is not requested before statistics/marketing consent.
     if (analytics || marketing) loadGtm();
-    if (external) loadGoogleMaps();
 
     document.dispatchEvent(new CustomEvent('fg:consentchange', {
       detail: { analytics, marketing, external }
