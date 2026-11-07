@@ -5,7 +5,7 @@
 // Vorlage fallen weg, die liefert base.njk. Passt die Vorlage nicht mehr, bricht der Build ab.
 const fs = require("fs");
 const path = require("path");
-const posts = require("./blog.json");
+const posts = require("./blog"); // Update 42 §2: nur die Artikel, die heute erscheinen
 const nav = require("./nav.js");
 const kontakte = require("./kontakte.js");
 
@@ -70,7 +70,11 @@ function artikel(post) {
   // eigenen Seite (wichtig für die Testumgebung); der Linktext ändert sich nicht.
   const bodyNeu = body
     .replace(/href="\.\.\/(#[a-z-]+)?"/g, (m, anker) => `href="/blog/${anker || ""}"`)
-    .replace(/href="https:\/\/fg-realestate\.de\//g, 'href="/');
+    .replace(/href="https:\/\/fg-realestate\.de\//g, 'href="/')
+    // Update 42 §2: live.py schreibt auch Artikel, die bereit sind, aber erst später erscheinen. Ein Link auf einen
+    // solchen Artikel wird bis zu seinem Datum zu Text, wie live.py es mit Artikeln macht, die nicht bereit sind.
+    .replace(/<a (?:class="[^"]*" )?href="\.\.\/([a-z0-9-]+)\/[^"]*"[^>]*>([\s\S]*?)<\/a>/g,
+      (m, ziel, linktext) => (erscheint.has(ziel) ? m : linktext));
 
   const css = (kopf.match(/<style>\n?([\s\S]*?)<\/style>/) || [, ""])[1].trim();
   const skripte = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map((m) => m[1]);
@@ -81,8 +85,13 @@ function artikel(post) {
   const jsonld = JSON.parse(eins(html, /<script type="application\/ld\+json">\n([\s\S]*?)\n<\/script>/, slug, "JSON-LD")[1]);
   // Update 35 B3: Datum im JSON-LD mit Uhrzeit und Zeitzone (Rich Results Test: „Zeitzone fehlt“). live.py führt
   // nur den Tag; daraus wird 00:00 Uhr deutscher Zeit, mit Sommer- oder Winterzeit des Tages. Das sichtbare Datum,
-  // die Sortierung und die Sitemap (blog.json) bleiben beim Tag.
+  // die Sortierung und die Sitemap (blog.js) bleiben beim Tag.
+  // Update 42 §2: Die Daten des Artikels kommen aus dem Plan (Tag, an dem er erscheint), auch wenn er verschoben wurde.
   for (const knoten of [].concat(jsonld)) {
+    if (knoten && knoten["@type"] === "Article") {
+      knoten.datePublished = post.datePublished;
+      knoten.dateModified = post.dateModified;
+    }
     for (const feld of ["datePublished", "dateModified"]) {
       if (knoten && /^\d{4}-\d{2}-\d{2}$/.test(knoten[feld] || "")) knoten[feld] = mitZeitzone(knoten[feld]);
     }
@@ -123,5 +132,7 @@ function artikel(post) {
     jsonld
   };
 }
+
+const erscheint = new Set(posts.map((p) => p.slug));
 
 module.exports = () => posts.map(artikel);

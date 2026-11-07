@@ -357,8 +357,11 @@ module.exports = function(eleventyConfig) {
 
   const labContent = require("./_data/labContent.js")();
   const gebiete = require("./_data/gebiete.js")();
-  // Blogartikel sind fertige Seiten aus Blogs/design-muster/_build/live.py; die Liste dazu steht in _data/blog.json.
-  const blog = require("./_data/blog.json");
+  // Blogartikel sind fertige Seiten aus Blogs/design-muster/_build/live.py. Update 42 §2: Welche davon an diesem Tag
+  // erscheinen, rechnet _data/blog.js aus _data/blogplan.json (deutsche Zeit; zum Testen FG_JETZT).
+  const blog = require("./_data/blog");
+  const blogplan = require("./scripts/blogplan");
+  const inhaltsstand = require("./scripts/inhaltsstand");
 
   // Thematic sitemap index. Exact exclusions prevent valid URLs such as
   // /lexikon/verwaltungskosten/ from disappearing by an overly broad match.
@@ -434,6 +437,34 @@ module.exports = function(eleventyConfig) {
       })))
     };
 
+    // Update 42 §1.3 (07.11.2026): lastmod jeder Standort-URL ist der Tag, an dem sich ihr Inhalt zuletzt geändert hat,
+    // aus Git (scripts/inhaltsstand.js): die eigene JSON-Datei mit Text und Zahlen und die Vorlage der Seite. Eine Änderung
+    // der Vorlage zählt für alle Seiten, die sie baut. Gemeinsame Teile aller Seiten (Kopf, Fuß, Bewertungen,
+    // Ansprechpartner) und reiner Programmcode (_data/*.js) zählen nicht. Ohne Git-Geschichte wie bisher das Feld `updated`.
+    const gebietDatei = new Map(fs.readdirSync("content/gebiete").filter((f) => f.endsWith(".json"))
+      .map((f) => [`/standorte/${JSON.parse(fs.readFileSync(`content/gebiete/${f}`, "utf8")).slug}/`, `content/gebiete/${f}`]));
+    const standortQuellen = (loc) => {
+      if (loc === "/standorte/") return ["standorte.njk", "content/uebersicht/standorte.json"];
+      if (gebietDatei.has(loc)) return [gebietDatei.get(loc), "gebiet-detail.njk"];
+      const location = (labContent.legacyLocations || []).find((l) => `/standorte/${l.slug}/` === loc);
+      if (location) return [`content/standorte/${location.slug}.json`, "standort-detail.njk"];
+      return null;
+    };
+    // Update 42 §2.4: Ein Artikel kommt am Tag, an dem er erscheint, in die Sitemap. Sein lastmod ist mindestens dieser Tag
+    // (dateModified aus _data/blog.js), die Übersicht /blog/ mindestens der Tag des neuesten Artikels. Ohne das hätte ein
+    // neuer Artikel das ältere Datum der Vorlage blog-artikel.njk.
+    const blogNeuester = blog.reduce((latest, post) => post.dateModified > latest ? post.dateModified : latest, "0000-00-00");
+    const blogStand = (entry) => {
+      const post = blog.find((p) => p.url === entry.loc);
+      const tag = entry.loc === "/blog/" ? blogNeuester : post && post.dateModified;
+      return tag && tag > entry.lastmod ? { ...entry, lastmod: tag } : entry;
+    };
+    const standortStand = (entry) => {
+      const quellen = standortQuellen(entry.loc);
+      const tag = quellen && inhaltsstand.stand(quellen, { cwd: __dirname });
+      return tag ? { ...entry, lastmod: tag } : entry;
+    };
+
     const seen = new Set();
     return SITEMAP_SECTIONS.map((section) => {
       let sourceUrls;
@@ -458,6 +489,7 @@ module.exports = function(eleventyConfig) {
 
       const urls = sourceUrls
         .filter((entry) => (seen.has(entry.loc) ? false : seen.add(entry.loc)))
+        .map((entry) => (section.key === "standorte" ? standortStand(entry) : section.key === "blog" ? blogStand(entry) : entry))
         .sort((a, b) => a.loc.localeCompare(b.loc));
 
       return {
@@ -475,7 +507,7 @@ module.exports = function(eleventyConfig) {
   [
     "style.css", "fg-polish.css", "script.js", "fg-assistant.js", "fg-knowledge.js", "fg-assistant.css",
     "investment-lab.js", "investitionsrechner.js", "consent-manager.js", "consent-manager.css", "analytics.js",
-    "vendor", "images", "favicon.ico", "admin", "robots.txt", "_redirects", // llms.txt: Vorlage llms.txt.njk (Update 40 §1.8)
+    "vendor", "images", "favicon.ico", "admin", "robots.txt", // _redirects: eigener Schritt unten (Update 42); llms.txt: Vorlage llms.txt.njk (Update 40 §1.8)
     "css", "fonts", "fg-design.js", "fg-system.js", "fgs-motion.js"
   ].forEach((asset) => eleventyConfig.addPassthroughCopy(asset));
 
@@ -485,7 +517,18 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy(`${indexnow.SCHLUESSEL}.txt`);
   // Blog: nur die Bilder; Artikel und Übersicht baut Eleventy neu (blog-artikel.njk, blog-index.njk),
   // die HTML-Dateien aus live.py sind nur noch die Quelle (_data/blogArtikel.js).
-  eleventyConfig.addPassthroughCopy("blog/**/*.jpg");
+  // Update 42 §2: nur die Bilder der Artikel, die an diesem Tag erscheinen, dazu og.jpg der Übersicht.
+  eleventyConfig.addPassthroughCopy("blog/*.jpg");
+  blog.forEach((post) => eleventyConfig.addPassthroughCopy(`blog/${post.slug}/*.jpg`));
+
+  // Update 42 §2.3: _redirects geht nicht mehr unverändert in den Build. Die Zeilen „/wissen/… /blog/<artikel>/ 301“
+  // gelten, sobald der Artikel erscheint; vorher stehen sie mit Raute da und die Adresse geht über „/wissen/* /blog/ 302“.
+  eleventyConfig.on("eleventy.after", ({ dir }) => {
+    const path = require("path");
+    const quelle = fs.readFileSync(path.join(__dirname, "_redirects"), "utf8");
+    const plan = JSON.parse(fs.readFileSync(path.join(__dirname, "_data", "blogplan.json"), "utf8"));
+    fs.writeFileSync(path.join(dir.output, "_redirects"), blogplan.weiterleitungen(quelle, plan, blog.map((post) => post.slug)));
+  });
 
   // Design-Pass 2 §9 Schritt 6 (LCP mobil < 2,5 s): fg-system.css ohne Kommentare und überflüssigen Leerraum
   // ausliefern, rund 10 KB weniger auf jeder Seite. Nur die Ausgabe in _site; die Quelle bleibt kommentiert.

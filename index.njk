@@ -204,7 +204,8 @@ faqListe:
    irgendeine Finanzierung verkauft werden soll“, drei bis fünf Zeilen) und Jan (auf /bewertungen/ weiter „dass unsere Interessen
    als Eigentümer ernst genommen werden“, drei Zeilen am Handy) eine kürzere Stelle aus derselben Bewertung. Veit (Geschäftspartner) steht seit Update 27 A8 nirgends mehr (_data/google.js). „So bewerten Sie uns“ steht
    seit Update 26 §4.1 nur noch auf /bewertungen/.
-   Laufband: die kurzen Bewertungen in der Reihenfolge des Briefs; von Constantin die kurze (die lange steht auf /bewertungen/). #}
+   Laufband: die kurzen Bewertungen in der Reihenfolge des Briefs; von Constantin die kurze (die lange steht auf /bewertungen/).
+   Update 42 §1.2 (07.11.2026): Lajosch und Dominik (neu seit Update 41 §2) vorn im Laufband; die große Auswahl bleibt. #}
 {% if google.reviews.length %}
 {%- set stimmen = [
   { autor: "Marc", zitat: "ohne mir irgendetwas schönzureden", berater: "timon", thema: "Kauf" },
@@ -215,7 +216,7 @@ faqListe:
 ] %}
 {%- set gross = [] %}
 {%- for s in stimmen %}{% for r in google.reviews | selectattr("text") %}{% if r.author == s.autor and r.text.includes(s.zitat) %}{% set _ = gross.push([r, s]) %}{% endif %}{% endfor %}{% endfor %}
-{%- set kurz = ["Justin", "Philipp", "Wil", "Aurelio", "Theodor", "Anna", "Finn", "VIVESS", "Constantin"] %}
+{%- set kurz = ["Lajosch", "Dominik", "Justin", "Philipp", "Wil", "Aurelio", "Theodor", "Anna", "Finn", "VIVESS", "Constantin"] %}
 {%- set laufband = [] %}
 {%- for name in kurz %}{% for r in google.reviews | selectattr("text") %}{% if r.author == name and r.text.length <= 200 %}{% set _ = laufband.push(r) %}{% endif %}{% endfor %}{% endfor %}
 <section class="fgs-section fgs-reviews fgs-reviews--26" id="bewertungen" aria-labelledby="bewertungen-titel">

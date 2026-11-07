@@ -12,7 +12,7 @@ const path = require("path");
 const lizenzen = require("./lizenzen.json");
 const fotoquellen = require("./fotoquellen.json");
 const seitenbilder = require("./seitenbilder.json");
-const blogPosts = require("./blog.json");
+const blogPosts = require("./blog"); // Update 42: nur Artikel, die heute erscheinen
 const freigaben = require("./freigaben.js");
 
 const site = path.join(__dirname, "..");
