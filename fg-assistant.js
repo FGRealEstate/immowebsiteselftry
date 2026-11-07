@@ -404,6 +404,13 @@
       actions:['verkaufen','ankauf','finanzierung','lab']
     },
     {
+      // Update 47 §1: Hausverwaltung bietet F&G nicht an (Timon). Keine andere Firma empfehlen.
+      id:'hausverwaltung',cat:'fg',q:'Bietet Fischer & Geserich Hausverwaltung an?',
+      keys:['hausverwaltung','mietverwaltung','weg-verwaltung','weg verwaltung','hausverwalter','verwaltung übernehmen','immobilienverwaltung','objektverwaltung','sondereigentumsverwaltung'],
+      answer:`<strong>Nein.</strong> Fischer & Geserich bietet keine Hausverwaltung an, auch keine Miet- oder WEG-Verwaltung. Wir verkaufen und vermieten Immobilien und vermitteln die passende Finanzierung.`,
+      actions:['verkaufen','vermieten','finanzierung']
+    },
+    {
       id:'investment-lab',cat:'fg',q:'Was ist das F&G Investment Lab?',
       keys:['investment lab','rechner','immobilienwissen','renditerechner','f&g lab'],
       answer:`Das Investment Lab ist unser digitaler Arbeitsbereich für Immobilienentscheidungen. Dort finden Sie Rechner, Grundlagen zu Rendite und Cashflow, Standortwissen, ein wachsendes Immobilienlexikon und weitere Inhalte zur Einordnung von Investments. Die Tools ersetzen keine individuelle Prüfung, helfen aber bei der strukturierten Voranalyse.`,
@@ -1029,6 +1036,13 @@
     addMessage('assistant',`<span class="fg-ai-kicker">${meta[1]}</span><p>Hier sind häufige Themen aus diesem Bereich. Sie können auch eine eigene Frage eintippen.</p>${suggestionsHtml(entries.map(e=>e.q))}${cat==='kosten'?`<div class="fg-ai-actions"><button class="fg-ai-action is-gold" data-fg-ai-tool="purchaseCosts"><i class="fas fa-calculator"></i>Kaufnebenkosten rechnen</button></div>`:''}${cat==='finanzierung'?`<div class="fg-ai-actions"><button class="fg-ai-action is-gold" data-fg-ai-tool="loanRate"><i class="fas fa-calculator"></i>Rate berechnen</button><button class="fg-ai-action is-light" data-fg-ai-tool="budget"><i class="fas fa-wallet"></i>Budget schätzen</button></div>`:''}${cat==='investment'?`<div class="fg-ai-actions"><button class="fg-ai-action is-gold" data-fg-ai-tool="yield"><i class="fas fa-chart-line"></i>Investment-Check</button></div>`:''}`);
   }
 
+  // Update 47 §1: eindeutige Begriffe immer; „Verwaltung“ allein nur, wenn nach einer Leistung gefragt wird (nicht bei Verwaltungskosten).
+  function asksPropertyManagement(text){
+    const n=normalize(text);
+    if(/hausverwalt|mietverwalt|weg-? ?verwalt|wegverwalt|objektverwalt|immobilienverwalt|sondereigentumsverwalt/.test(n)) return true;
+    return /\b(verwaltung|verwalten|verwalter)\b/.test(n) && /\b(wer|ihr|sie|euch|f g|fg|fischer|geserich|bietet|bieten|anbieten|ubernehmen|ubernimmt|macht|machen|auch|suche|brauche)\b/.test(n);
+  }
+
   function answerQuery(query){
     const q=String(query||'').trim(); if(!q)return;
     addUser(q); input.value=''; autoResize();
@@ -1037,6 +1051,9 @@
       typing.remove(); const nq=normalize(q);
       if(/^(hallo|hi|hey|guten tag|moin|servus)\b/.test(nq)){dialogState={flow:null,stage:null,data:{}};addMessage('assistant',`<p>Guten Tag! Wobei darf ich helfen?</p>${categoryGridHtml()}${suggestionsHtml(['Ich möchte verkaufen','Ich möchte kaufen','Ich brauche eine Finanzierung','Ich suche eine Kapitalanlage'])}`);return;}
       if(/^(abbrechen|neu starten|zurucksetzen|reset|von vorne)$/i.test(nq)){dialogState={flow:null,stage:null,data:{}};addMessage('assistant',`<p>Alles klar. Wir starten neu. Worum geht es?</p>${suggestionsHtml(['Ich möchte verkaufen','Ich möchte kaufen','Ich möchte mieten','Ich möchte vermieten','Ich brauche eine Finanzierung','Ich suche eine Kapitalanlage'])}`);return;}
+
+      // Update 47 §1: Fragen nach Hausverwaltung vor allen Abläufen beantworten, damit keine Vermietungs- oder Kontaktstrecke startet.
+      if(asksPropertyManagement(q)){const e=KB.find(x=>x.id==='hausverwaltung');if(e){addMessage('assistant',`<span class="fg-ai-kicker">${CAT_META[e.cat]?.[1]||'Immobilienwissen'}</span><p><strong>${escapeHtml(e.q)}</strong></p><p>${e.answer}</p>${actionHtml(e.actions||[])}`);return;}}
 
       // Ein neues klares Vorhaben darf einen bestehenden Prozess jederzeit überschreiben.
       if(handleDirectIntent(q))return;

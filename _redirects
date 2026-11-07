@@ -1,6 +1,8 @@
-/verwaltung / 301!
-/verwaltung/ / 301!
-/verwaltung.html / 301!
+# Update 47 §1: alte Hausverwaltungs-Seite (laut Git 15.11.2025–10.01.2026 unter /verwaltung.html, danach unter verstecktem Namen bis 28.08.2026) → Vermieten
+/verwaltung /vermieten.html 301!
+/verwaltung/ /vermieten.html 301!
+/verwaltung.html /vermieten.html 301!
+/verwaltungahsaudhuahduahdsu.html /vermieten.html 301!
 /kontakt /kontakt.html 301!
 /datenschutz/ /datenschutz.html 301!
 /gesuch-anlegen.html /gesuch-anlegen/ 301

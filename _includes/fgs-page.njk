@@ -145,6 +145,7 @@ customSchema: true
       "@type": ["Organization", "RealEstateAgent"],
       "@id": "https://fg-realestate.de/#organization",
       "name": "Fischer & Geserich Real Estate GmbH",
+      "alternateName": ["Fischer & Geserich", "Fischer und Geserich", "F&G Real Estate", "FG Immobilien"],
       "url": "https://fg-realestate.de/",
       "telephone": {{ nav.phone.href | replace("tel:", "") | json | safe }},
       "email": {{ nav.email | json | safe }},
