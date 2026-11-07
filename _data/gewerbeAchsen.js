@@ -18,5 +18,5 @@ module.exports = {
   "barnim": "im Landkreis Barnim",
   "maerkisch-oderland": "im Landkreis Märkisch-Oderland",
   "dresden": "in Dresden",
-  "dresden/nord": "in Dresden-Nord"
+  "dresden/nord": "im Dresdner Norden"
 };

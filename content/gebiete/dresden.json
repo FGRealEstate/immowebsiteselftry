@@ -10,11 +10,11 @@
   "title": "Immobilienmakler Dresden – Verkauf, Kauf & Finanzierung | Fischer & Geserich",
   "description": "Immobilienmakler in Dresden: Verkauf, Kauf und Finanzierung in Neustadt, Striesen, Blasewitz, Löbtau und Laubegast, mit Kaufpreisen 2025 und Bewertung.",
   "h1": "Immobilie verkaufen, kaufen und finanzieren in Dresden",
-  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Dresden beim Verkauf, beim Kauf und bei der Finanzierung, mit eigenen Seiten für Dresden-Nord, Dresden-Süd, Dresden-Zentrum und Dresden-Ost.",
+  "kurzantwort": "Fischer & Geserich begleitet Eigentümer, Käufer und Kapitalanleger in Dresden beim Verkauf, beim Kauf und bei der Finanzierung, mit eigenen Seiten für den Dresdner Norden, Süden und Osten und für Blasewitz und Striesen.",
   "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Dresden ist Timon Fischer Ihr Ansprechpartner, Geschäftsführer und verantwortlich für die Immobilienfinanzierung.",
   "stand": "Oktober 2026",
   "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Halbjahr 2026 kosteten frei stehende Einfamilienhäuser im Bestand im Median 3.535 €/m² Wohnfläche, nach 3.635 €/m² im zweiten Halbjahr 2025; weiterverkaufte Eigentumswohnungen erzielten 2.660 €/m² nach 2.580 €/m². Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
-  "updated": "2026-10-27",
+  "updated": "2026-11-06",
   "hero": {
     "name": "dresden-elbe-altstadt-canalettoblick",
     "alt": "Elbwiesen in der Neustadt mit Blick auf Augustusbrücke, Frauenkirche, Hofkirche und Semperoper",
@@ -66,13 +66,13 @@
   ],
   "abschnitte": [
     {
-      "h2": "Dresden-Nord: Neustadt, Pieschen, Loschwitz und Klotzsche",
+      "h2": "Dresdner Norden: Neustadt, Pieschen, Loschwitz und Klotzsche",
       "absaetze": [
         "In den acht Stadtteilen von der Äußeren Neustadt bis Klotzsche leben 96.575 Menschen.[[5]] In der Gemarkung Neustadt wurden 2025 175 ältere Eigentumswohnungen weiterverkauft, im Median für 2.770 €/m², und 72 neue für 5.635 €/m².[[1]] Die Bodenrichtwerte reichen von 120 €/m² in Klotzsche bis 2.500 €/m² in der Inneren Neustadt.[[4]] Die Sanierungsgebiete Pieschen und Äußere Neustadt sind seit 2023 und 2024 aufgehoben; für die Äußere und die Innere Neustadt gelten städtebauliche Erhaltungssatzungen.[[13,11]] Die Seite beschreibt auch den Elbhang in Loschwitz und am Weißen Hirsch."
       ],
       "seite": {
         "url": "/standorte/dresden/nord/",
-        "text": "Zur Seite Dresden-Nord"
+        "text": "Zur Seite Dresdner Norden"
       },
       "bild": {
         "name": "dresden-nord-kunsthofpassage",
@@ -83,13 +83,13 @@
       }
     },
     {
-      "h2": "Dresden-Süd: Löbtau, Plauen und Strehlen",
+      "h2": "Dresdner Süden: Löbtau, Plauen und Strehlen",
       "absaetze": [
         "Löbtau-Nord, Löbtau-Süd, Plauen und Strehlen haben zusammen 44.289 Einwohner.[[5]] In der Gemarkung Löbtau kosteten ältere Eigentumswohnungen 2025 im Median 2.445 €/m², bei 76 Verkäufen; in der Gemarkung Strehlen wurden 68 neue Wohnungen verkauft, im Median für 6.225 €/m².[[1]] Die Bodenrichtwerte reichen in Plauen von 160 bis 1.500 €/m².[[4]] Eine soziale Erhaltungssatzung für das Gebiet Löbtau/Weißeritzknick hat der Stadtrat am 13.12.2024 abgelehnt.[[12]]"
       ],
       "seite": {
         "url": "/standorte/dresden/sued/",
-        "text": "Zur Seite Dresden-Süd"
+        "text": "Zur Seite Dresdner Süden"
       },
       "bild": {
         "name": "dresden-sued-bienertmuehle",
@@ -100,13 +100,13 @@
       }
     },
     {
-      "h2": "Dresden-Zentrum: Blasewitz, Striesen, Gruna und Pirnaische Vorstadt",
+      "h2": "Blasewitz & Striesen: auch Gruna und Pirnaische Vorstadt",
       "absaetze": [
         "In Blasewitz, Gruna, der Pirnaischen Vorstadt und den drei Stadtteilen von Striesen leben 70.895 Menschen.[[5]] In der Gemarkung Blasewitz wurden 2025 15 neue Eigentumswohnungen verkauft, im Median für 8.575 €/m²; in der Gemarkung Striesen kosteten 104 ältere Wohnungen im Weiterverkauf im Median 2.895 €/m².[[1]] Die Bodenrichtwerte reichen von 310 bis 1.700 €/m².[[4]] Für Striesen Nordost und vier Gebiete in Blasewitz gelten städtebauliche Erhaltungssatzungen: Abriss, Umbau, Nutzungsänderung und Neubau brauchen dort eine Genehmigung nach § 173 BauGB.[[11]]"
       ],
       "seite": {
-        "url": "/standorte/dresden/zentrum/",
-        "text": "Zur Seite Dresden-Zentrum"
+        "url": "/standorte/dresden/blasewitz-striesen/",
+        "text": "Zur Seite Blasewitz & Striesen"
       },
       "bild": {
         "name": "dresden-zentrum-striesen-villa-sommerlust",
@@ -116,13 +116,13 @@
       }
     },
     {
-      "h2": "Dresden-Ost: Laubegast, Tolkewitz und Kleinzschachwitz",
+      "h2": "Dresdner Osten: Laubegast, Tolkewitz und Kleinzschachwitz",
       "absaetze": [
         "Laubegast, Tolkewitz/Seidnitz-Nord und Kleinzschachwitz haben 31.397 Einwohner.[[5]] In Kleinzschachwitz haben 77 % der Wohngebäude eine oder zwei Wohnungen, in ganz Dresden 54 %.[[6]] In der Gemarkung Laubegast kosteten Eigentumswohnungen der Baujahre 1990 bis 2023 im Weiterverkauf 2025 im Median 2.370 €/m², bei 50 Verkäufen.[[1]] Die Bodenrichtwerte reichen von 190 bis 880 €/m².[[4]] Die Seite beschreibt auch den Hochwasserschutz an der Elbe in Laubegast und Zschieren."
       ],
       "seite": {
         "url": "/standorte/dresden/ost/",
-        "text": "Zur Seite Dresden-Ost"
+        "text": "Zur Seite Dresdner Osten"
       },
       "bild": {
         "name": "dresden-ost-laubegast-elbe",
@@ -155,12 +155,12 @@
   "faq": [
     {
       "frage": "Was kostet eine Wohnung in Dresden?",
-      "antwort": "Weiterverkaufte Eigentumswohnungen kosteten 2025 im Mittel rund 2.705 €/m² Wohnfläche, neu gebaute im Erstverkauf rund 6.460 €/m².[[1]] Im 1. Halbjahr 2026 lag der Median im Weiterverkauf bei 2.660 €/m² und bei neuen Wohnungen bei 6.255 €/m².[[2]] Je Gemarkung unterscheiden sich die Preise deutlich; Werte für Ihren Stadtteil finden Sie auf den Seiten für Nord, Süd, Zentrum und Ost.",
+      "antwort": "Weiterverkaufte Eigentumswohnungen kosteten 2025 im Mittel rund 2.705 €/m² Wohnfläche, neu gebaute im Erstverkauf rund 6.460 €/m².[[1]] Im 1. Halbjahr 2026 lag der Median im Weiterverkauf bei 2.660 €/m² und bei neuen Wohnungen bei 6.255 €/m².[[2]] Je Gemarkung unterscheiden sich die Preise deutlich; Werte für Ihren Stadtteil finden Sie auf den Seiten für den Dresdner Norden, Süden und Osten und für Blasewitz und Striesen.",
       "herkunft": "Google-Autocomplete „wohnung kaufen dresden“ und „immobilienpreise dresden“ (27.10.2026)"
     },
     {
       "frage": "Was kostet ein Haus in Dresden?",
-      "antwort": "Frei stehende Einfamilienhäuser ab Baujahr 1992 kosteten 2025 im Mittel rund 4.470 €/m² Wohnfläche, im mittleren Kaufpreis rund 585.000 €; Doppelhaushälften rund 515.000 €, Reihenmittelhäuser rund 426.000 €.[[1]] Im 1. Halbjahr 2026 gaben die Preise für frei stehende Einfamilienhäuser und Reihenmittelhäuser nach, Doppelhaushälften und Reihenendhäuser erzielten höhere Preise.[[2]] In Klotzsche liegen die Bodenrichtwerte zwischen 120 und 620 €/m²; mehr dazu auf der Seite Dresden-Nord.[[4]]",
+      "antwort": "Frei stehende Einfamilienhäuser ab Baujahr 1992 kosteten 2025 im Mittel rund 4.470 €/m² Wohnfläche, im mittleren Kaufpreis rund 585.000 €; Doppelhaushälften rund 515.000 €, Reihenmittelhäuser rund 426.000 €.[[1]] Im 1. Halbjahr 2026 gaben die Preise für frei stehende Einfamilienhäuser und Reihenmittelhäuser nach, Doppelhaushälften und Reihenendhäuser erzielten höhere Preise.[[2]] In Klotzsche liegen die Bodenrichtwerte zwischen 120 und 620 €/m²; mehr dazu auf der Seite zum Dresdner Norden.[[4]]",
       "herkunft": "Google-Autocomplete „haus kaufen dresden“ und „haus kaufen dresden klotzsche“ (27.10.2026)"
     },
     {

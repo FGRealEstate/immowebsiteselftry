@@ -88,4 +88,7 @@
 /standorte/luckenwalde/ /standorte/teltow-flaeming/ 301
 /standorte/strausberg /standorte/maerkisch-oderland/ 301
 /standorte/strausberg/ /standorte/maerkisch-oderland/ 301
+# Update 41 §3 (06.11.2026): Dresden-Zentrum heißt jetzt Blasewitz & Striesen
+/standorte/dresden/zentrum /standorte/dresden/blasewitz-striesen/ 301
+/standorte/dresden/zentrum/ /standorte/dresden/blasewitz-striesen/ 301
 https://www.fg-realestate.de/* https://fg-realestate.de/:splat 301!

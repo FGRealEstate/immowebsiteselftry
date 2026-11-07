@@ -130,16 +130,16 @@
       "name": "Dresden",
       "kontakt": "timon",
       "uebersicht": "dresden",
-      "foto": "dresden/zentrum",
+      "foto": "dresden/blasewitz-striesen",
       "fotoCaption": "Blick über die Pirnaische Vorstadt.",
-      "text": "Bei Wohnungs- und Teileigentum zählte der Gutachterausschuss 2025 3.910 Erwerbsvorgänge, rund 18 % mehr als 2024.[[6]] Vier Seiten beschreiben den Norden von der Neustadt bis Klotzsche, den Süden mit Löbtau, Plauen und Strehlen, das Zentrum mit Blasewitz und Striesen und den Osten mit Laubegast und Kleinzschachwitz.",
+      "text": "Bei Wohnungs- und Teileigentum zählte der Gutachterausschuss 2025 3.910 Erwerbsvorgänge, rund 18 % mehr als 2024.[[6]] Vier Seiten beschreiben den Dresdner Norden von der Neustadt bis Klotzsche, den Süden mit Löbtau, Plauen und Strehlen, den Osten mit Laubegast und Kleinzschachwitz sowie Blasewitz und Striesen.",
       "gruppen": [
         {
           "titel": "Marktgebiete",
           "seiten": [
             "dresden/nord",
             "dresden/sued",
-            "dresden/zentrum",
+            "dresden/blasewitz-striesen",
             "dresden/ost"
           ]
         }

@@ -60,7 +60,7 @@ faqListe:
 {%- for slug in ["berlin/charlottenburg-wilmersdorf", "berlin/pankow", "berlin/steglitz-zehlendorf", "berlin/tempelhof-schoeneberg",
   "oranienburg", "bernau", "falkensee", "teltow", "erkner", "konigs-wusterhausen",
   "leipzig/nord", "leipzig/west", "leipzig/zentrum",
-  "dresden/nord", "dresden/ost", "dresden/sued", "dresden/zentrum"] -%}
+  "dresden/nord", "dresden/ost", "dresden/sued", "dresden/blasewitz-striesen"] -%}
 {%- set _ = unterGebiete.push(gebiete | findBy("slug", slug)) -%}
 {%- endfor -%}
 
