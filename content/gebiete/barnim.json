@@ -30,7 +30,7 @@
   },
   "stand": "Oktober 2026",
   "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Halbjahr 2026 zählte der Gutachterausschuss 840 Kauffälle, rund 18 % weniger als im zweiten Halbjahr 2025. Freistehende Ein- und Zweifamilienhäuser im Berliner Umland kosteten im ersten Quartal 3.360 €/m² und im zweiten Quartal 3.670 €/m² Wohnfläche, nach 3.480 €/m² im Jahr 2025. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
-  "updated": "2026-10-26",
+  "updated": "2026-11-07",
   "zahlen": [
     {
       "wert": "460 €/m²",
@@ -187,7 +187,7 @@
   "faq": [
     {
       "frage": "Welcher Makler verkauft Immobilien in Bernau, Panketal und Ahrensfelde?",
-      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im Landkreis Barnim, also auch in Bernau, Panketal und Ahrensfelde. Ihr Ansprechpartner ist Timon Fischer. Wir bewerten nach den Preisen, zu denen vergleichbare Häuser und Wohnungen in Ihrer Gegend tatsächlich verkauft wurden; bei Häusern und Grundstücken kommt der Bodenrichtwert dazu.",
+      "antwort": "Fischer & Geserich vermittelt Häuser, Wohnungen und Grundstücke im Landkreis Barnim, also auch in Bernau, Panketal und Ahrensfelde; Ihr Ansprechpartner ist Timon Fischer. Wir bewerten nach den Preisen, zu denen vergleichbare Häuser und Wohnungen in Ihrer Gegend tatsächlich verkauft wurden; bei Häusern und Grundstücken kommt der Bodenrichtwert dazu.",
       "herkunft": "Prompt der KI-Recherche „Welcher Immobilienmakler in Bernau bei Berlin ist gut?“ (q40) (ChatGPT, Gemini; Dashboard/src/data/research/ai_answers.json, Oktober 2026) und Google-Suche „Immobilienmakler Bernau“ (Google_Areas, Oktober 2026)"
     },
     {

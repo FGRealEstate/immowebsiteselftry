@@ -90,6 +90,8 @@ customSchema: true
 {# 5. S8 Abschlussband #}
 {% call closing({ kontakt: pg.contact, satz: pg.closing.title, button: pg.closing.button, gebiet: pg.closing.gebiet, foto: pg.closing.foto, buchung: pg.closing.buchung }) %}
   <p>{{ pg.closing.text | safe }}</p>
+  {%- if pg.closing.zusatz %}
+  <p>{{ pg.closing.zusatz | nbsp }}</p>{% endif %}
 {% endcall %}
 
 {%- set schemaId = pageUrl + "#" + (pg.schema.id or "webpage") %}

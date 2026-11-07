@@ -13,7 +13,7 @@
   "kurzantwort": "Fischer & Geserich begleitet Sie in Falkensee beim Verkauf, beim Kauf und bei der Finanzierung von Häusern, Wohnungen und Baugrundstücken, vom Zentrum bis Finkenkrug. Bewertung, Vermarktung, Ankaufsberatung und Finanzierung kommen aus einer Hand.",
   "stand": "Oktober 2026",
   "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Für das Havelland gibt es noch keine Zahlen für 2026. Im ganzen Land Brandenburg wurden im ersten Halbjahr 2026 11.904 Kaufverträge geschlossen, 7 % weniger als im Vorjahreszeitraum; im Berliner Umland kosteten freistehende Ein- und Zweifamilienhäuser im Mittel 3.898 €/m² Wohnfläche nach 3.966 €/m², weiterverkaufte Eigentumswohnungen 3.423 €/m² nach 3.351 €/m². Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
-  "updated": "2026-10-26",
+  "updated": "2026-11-07",
   "zahlen": [
     {
       "wert": "500 €/m²",
@@ -138,7 +138,7 @@
   "finanzieren": {
     "h2": "Finanzierung für Falkensee",
     "absaetze": [
-      "Für ein freistehendes Haus der Baujahre 1991 bis 2022 zahlten Käufer in Falkensee und Dallgow-Döberitz 2025 im Mittel 638.000 €, für eine Wohnung dieser Baujahre 209.000 €.[[1]] Angebote holen wir über die Plattformen Europace und Baufinex bei rund 500 Banken ein. Passt Ihr Fall nicht in deren Raster, etwa weil Sie Unternehmer sind, sprechen wir Banken direkt an. Kaufen Sie ein Baugrundstück und bauen selbst, sollte die Finanzierung Grundstückskauf und Bauzeit von Anfang an gemeinsam abdecken."
+      "Für ein freistehendes Haus der Baujahre 1991 bis 2022 zahlten Käufer in Falkensee und Dallgow-Döberitz 2025 im Mittel 638.000 €, für eine Wohnung dieser Baujahre 209.000 €.[[1]] Angebote holen wir über die Plattformen Europace und Baufinex bei rund 500 Banken ein. Passt Ihr Fall nicht in deren Raster, etwa weil Sie Unternehmer sind, sprechen wir Banken direkt an. Kaufen Sie ein Baugrundstück und bauen selbst, sollte die Finanzierung Grundstückskauf und Bauzeit von Anfang an gemeinsam abdecken. Bei einer Plattenbauwohnung gehören die Erhaltungsrücklage und geplante Sanierungen der Eigentümergemeinschaft vorab in die Kalkulation."
     ]
   },
   "faq": [

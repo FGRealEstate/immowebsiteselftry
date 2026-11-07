@@ -20,7 +20,7 @@
   },
   "stand": "Oktober 2026",
   "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Halbjahr 2026 zählte der Gutachterausschuss 1.078 Kauffälle, rund 4 % mehr als im Vorjahreszeitraum, bei rund 14 % weniger Umsatz. Bauland im Berliner Umland wurde im Median zu 105 % des Bodenrichtwerts verkauft. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
-  "updated": "2026-10-26",
+  "updated": "2026-11-07",
   "zahlen": [
     {
       "wert": "410 €/m²",
@@ -152,7 +152,7 @@
     },
     {
       "frage": "Was kostet ein Haus am See in Königs Wusterhausen?",
-      "antwort": "Die Hauspreise, die der Gutachterausschuss für Königs Wusterhausen veröffentlicht, gelten ohne Uferlagen.[[1]] Einen Anhaltspunkt gibt der Boden: Ufergrundstücke haben in der Kernstadt und den Ortsteilen überwiegend einen Bodenrichtwert von 600 €/m², in Senzig-Mitte 700 und am Körbiskrug in Zeesen 450 €/m².[[1,2]] Den Preis eines bestimmten Hauses ermitteln wir in der Bewertung.",
+      "antwort": "Die Hauspreise, die der Gutachterausschuss für Königs Wusterhausen veröffentlicht, gelten ohne Uferlagen.[[1]] Einen Anhaltspunkt gibt der Boden: Ufergrundstücke haben in der Kernstadt und den Ortsteilen überwiegend einen Bodenrichtwert von 600 €/m², in Senzig-Mitte 700 und am Körbiskrug in Zeesen 450 €/m².[[1,2]] Den Preis eines bestimmten Hauses am See ermitteln wir in der Bewertung.",
       "herkunft": "Google-Autocomplete „haus am see kaufen königs wusterhausen“ (research/serp/autocomplete-2026-10-24.json)"
     },
     {
