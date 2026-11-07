@@ -16,5 +16,7 @@ module.exports = {
   // erst live, wenn Jesu sie mit ihren Quellen geprüft hat. Geprüfte Nummern hier eintragen.
   // Update 44 §2.3 (07.11.2026, Jesu über Peer): „Every answer marked ready for Mango (Grundsteuer included) … goes live“.
   // 7.3 (Grundsteuer Berlin) ist frei; Quellen am 07.11.2026 auf berlin.de/grundsteuer/ nachgeprüft (0,31 / 0,45 Promille, Hebesatz 470 %).
-  quelleFaq: ["7.3"]
+  // Update 48 §9 (08.11.2026): 3.2 und 7.2 (P47, P63, P102, P103, A11) ohne Jesus Quellenprüfung an, nach den Regeln aus FG-Gap-Answers
+  // (7.2 nur Zahlen von unseren Seiten mit Quelle; 3.2 Spanne nur vom Fachverband: BVS; A11 nur mit Faktor aus dem Berliner Marktbericht).
+  quelleFaq: ["7.3", "3.2", "7.2-P47", "7.2-P63", "7.2-P102", "7.2-P103", "7.2-A11"]
 };
