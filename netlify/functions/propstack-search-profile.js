@@ -1,6 +1,7 @@
 const { sendInternalNotification } = require("./_shared/mailer");
 const logsafe = require("./_shared/logsafe");
 const zustellung = require("./_shared/zustellung");
+const ansprechpartner = require("./_shared/ansprechpartner");
 const PROPSTACK_BASE_URL = require("./_shared/propstack-basis").basis();
 
 exports.handler = async function (event) {
@@ -61,7 +62,8 @@ exports.handler = async function (event) {
     }
 
     const fullName = `${firstName} ${lastName}`.trim() || email;
-    const note = buildNote({
+    // Update 48 §3: erste Zeile „Ansprechpartner laut Gebiet: …“ nach dem Suchgebiet (_shared/ansprechpartner.js); kein Propstack-Benutzer
+    const note = ansprechpartner.vorNotiz(buildNote({
       fullName,
       email,
       phone,
@@ -85,7 +87,7 @@ exports.handler = async function (event) {
       utmCampaign,
       utmContent,
       utmTerm
-    });
+    }), { sourceUrl, orte: [location] });
 
     const contactPayload = {
       client: removeEmpty({

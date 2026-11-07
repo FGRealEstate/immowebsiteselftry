@@ -1,0 +1,355 @@
+{
+ "quelle": "content/gebiete/*.json, erzeugt von scripts/gebiet-kontakte.js (Update 48 §3)",
+ "gebiete": [
+  {
+   "slug": "barnim",
+   "name": "Barnim",
+   "typ": "landkreis",
+   "orte": [
+    "Bernau bei Berlin",
+    "Panketal",
+    "Ahrensfelde",
+    "Eberswalde",
+    "Joachimsthal"
+   ],
+   "kreis": null,
+   "kontakt": "timon"
+  },
+  {
+   "slug": "berlin/charlottenburg-wilmersdorf",
+   "name": "Charlottenburg-Wilmersdorf",
+   "typ": "bezirk",
+   "orte": [
+    "Westend",
+    "Witzleben",
+    "Spreestadt",
+    "Schmargendorf",
+    "Grunewald",
+    "Rheingauviertel",
+    "Güntzelkiez"
+   ],
+   "kreis": "Berlin",
+   "kontakt": "lennart"
+  },
+  {
+   "slug": "berlin/pankow",
+   "name": "Pankow",
+   "typ": "bezirk",
+   "orte": [
+    "Pankow-Süd",
+    "Prenzlauer Berg",
+    "Niederschönhausen"
+   ],
+   "kreis": "Berlin",
+   "kontakt": "timon"
+  },
+  {
+   "slug": "berlin/steglitz-zehlendorf",
+   "name": "Steglitz-Zehlendorf",
+   "typ": "bezirk",
+   "orte": [
+    "Steglitz",
+    "Lichterfelde West",
+    "Lichterfelde Ost",
+    "Wannsee",
+    "Schlachtensee",
+    "Nikolassee"
+   ],
+   "kreis": "Berlin",
+   "kontakt": "lennart"
+  },
+  {
+   "slug": "berlin/tempelhof-schoeneberg",
+   "name": "Tempelhof-Schöneberg",
+   "typ": "bezirk",
+   "orte": [
+    "Friedenau",
+    "Bayerisches Viertel",
+    "Nollendorfkiez"
+   ],
+   "kreis": "Berlin",
+   "kontakt": "lennart"
+  },
+  {
+   "slug": "berlin",
+   "name": "Berlin",
+   "typ": "stadt",
+   "orte": [],
+   "kreis": null,
+   "kontakt": null
+  },
+  {
+   "slug": "bernau",
+   "name": "Bernau bei Berlin",
+   "typ": "ort",
+   "orte": [],
+   "kreis": "Landkreis Barnim",
+   "kontakt": "timon"
+  },
+  {
+   "slug": "dahme-spreewald",
+   "name": "Dahme-Spreewald",
+   "typ": "landkreis",
+   "orte": [
+    "Königs Wusterhausen",
+    "Zeuthen",
+    "Wildau",
+    "Schönefeld"
+   ],
+   "kreis": null,
+   "kontakt": "lennart"
+  },
+  {
+   "slug": "dresden/nord",
+   "name": "Dresdner Norden",
+   "typ": "marktgebiet",
+   "orte": [
+    "Äußere Neustadt",
+    "Innere Neustadt",
+    "Leipziger Vorstadt",
+    "Pieschen-Süd",
+    "Pieschen-Nord/Trachenberge",
+    "Loschwitz/Wachwitz",
+    "Bühlau/Weißer Hirsch",
+    "Klotzsche"
+   ],
+   "kreis": "Dresden",
+   "kontakt": "timon"
+  },
+  {
+   "slug": "dresden/ost",
+   "name": "Dresdner Osten",
+   "typ": "marktgebiet",
+   "orte": [
+    "Laubegast",
+    "Tolkewitz/Seidnitz-Nord",
+    "Kleinzschachwitz",
+    "Meußlitz",
+    "Zschieren"
+   ],
+   "kreis": "Dresden",
+   "kontakt": "timon"
+  },
+  {
+   "slug": "dresden/sued",
+   "name": "Dresdner Süden",
+   "typ": "marktgebiet",
+   "orte": [
+    "Löbtau-Nord",
+    "Löbtau-Süd",
+    "Plauen",
+    "Strehlen"
+   ],
+   "kreis": "Dresden",
+   "kontakt": "timon"
+  },
+  {
+   "slug": "dresden/blasewitz-striesen",
+   "name": "Blasewitz & Striesen",
+   "typ": "marktgebiet",
+   "orte": [
+    "Blasewitz",
+    "Striesen-Ost",
+    "Striesen-Süd",
+    "Striesen-West",
+    "Gruna",
+    "Pirnaische Vorstadt"
+   ],
+   "kreis": "Dresden",
+   "kontakt": "timon"
+  },
+  {
+   "slug": "dresden",
+   "name": "Dresden",
+   "typ": "stadt",
+   "orte": [],
+   "kreis": null,
+   "kontakt": "timon"
+  },
+  {
+   "slug": "erkner",
+   "name": "Erkner",
+   "typ": "ort",
+   "orte": [],
+   "kreis": "Landkreis Oder-Spree",
+   "kontakt": "lennart"
+  },
+  {
+   "slug": "falkensee",
+   "name": "Falkensee",
+   "typ": "ort",
+   "orte": [],
+   "kreis": "Landkreis Havelland",
+   "kontakt": "lennart"
+  },
+  {
+   "slug": "havelland",
+   "name": "Havelland",
+   "typ": "landkreis",
+   "orte": [
+    "Falkensee",
+    "Dallgow-Döberitz",
+    "Brieselang",
+    "Nauen",
+    "Rathenow"
+   ],
+   "kreis": null,
+   "kontakt": "lennart"
+  },
+  {
+   "slug": "konigs-wusterhausen",
+   "name": "Königs Wusterhausen",
+   "typ": "ort",
+   "orte": [],
+   "kreis": "Landkreis Dahme-Spreewald",
+   "kontakt": "lennart"
+  },
+  {
+   "slug": "leipzig/nord",
+   "name": "Leipzig-Nord",
+   "typ": "marktgebiet",
+   "orte": [
+    "Gohlis-Süd",
+    "Gohlis-Mitte",
+    "Gohlis-Nord",
+    "Zentrum-Nord",
+    "Eutritzsch",
+    "Schönefeld-Abtnaundorf",
+    "Schönefeld-Ost",
+    "Mockau-Süd",
+    "Mockau-Nord"
+   ],
+   "kreis": "Leipzig",
+   "kontakt": "timon"
+  },
+  {
+   "slug": "leipzig/west",
+   "name": "Leipzig-West",
+   "typ": "marktgebiet",
+   "orte": [
+    "Lindenau",
+    "Altlindenau",
+    "Leutzsch"
+   ],
+   "kreis": "Leipzig",
+   "kontakt": "timon"
+  },
+  {
+   "slug": "leipzig/zentrum",
+   "name": "Leipzig-Zentrum",
+   "typ": "marktgebiet",
+   "orte": [
+    "Zentrum-West",
+    "Zentrum-Süd",
+    "Zentrum-Südost",
+    "Neustadt-Neuschönefeld"
+   ],
+   "kreis": "Leipzig",
+   "kontakt": "timon"
+  },
+  {
+   "slug": "leipzig",
+   "name": "Leipzig",
+   "typ": "stadt",
+   "orte": [],
+   "kreis": null,
+   "kontakt": "timon"
+  },
+  {
+   "slug": "maerkisch-oderland",
+   "name": "Märkisch-Oderland",
+   "typ": "landkreis",
+   "orte": [
+    "Strausberg",
+    "Neuenhagen bei Berlin",
+    "Hoppegarten",
+    "Petershagen/Eggersdorf",
+    "Fredersdorf-Vogelsdorf",
+    "Altlandsberg",
+    "Rüdersdorf bei Berlin"
+   ],
+   "kreis": null,
+   "kontakt": "timon"
+  },
+  {
+   "slug": "oberhavel",
+   "name": "Oberhavel",
+   "typ": "landkreis",
+   "orte": [
+    "Oranienburg",
+    "Hohen Neuendorf",
+    "Birkenwerder",
+    "Hennigsdorf",
+    "Velten",
+    "Mühlenbecker Land"
+   ],
+   "kreis": null,
+   "kontakt": "timon"
+  },
+  {
+   "slug": "oder-spree",
+   "name": "Oder-Spree",
+   "typ": "landkreis",
+   "orte": [
+    "Erkner",
+    "Woltersdorf",
+    "Fürstenwalde/Spree"
+   ],
+   "kreis": null,
+   "kontakt": "lennart"
+  },
+  {
+   "slug": "oranienburg",
+   "name": "Oranienburg",
+   "typ": "ort",
+   "orte": [],
+   "kreis": "Landkreis Oberhavel",
+   "kontakt": "timon"
+  },
+  {
+   "slug": "potsdam-mittelmark",
+   "name": "Potsdam-Mittelmark",
+   "typ": "landkreis",
+   "orte": [
+    "Teltow",
+    "Kleinmachnow",
+    "Stahnsdorf",
+    "Werder (Havel)"
+   ],
+   "kreis": null,
+   "kontakt": "lennart"
+  },
+  {
+   "slug": "potsdam",
+   "name": "Potsdam",
+   "typ": "ort",
+   "orte": [],
+   "kreis": null,
+   "kontakt": "lennart"
+  },
+  {
+   "slug": "teltow-flaeming",
+   "name": "Teltow-Fläming",
+   "typ": "landkreis",
+   "orte": [
+    "Ludwigsfelde",
+    "Blankenfelde-Mahlow",
+    "Zossen",
+    "Luckenwalde"
+   ],
+   "kreis": null,
+   "kontakt": "lennart"
+  },
+  {
+   "slug": "teltow",
+   "name": "Teltow & Kleinmachnow",
+   "typ": "ort",
+   "orte": [
+    "Teltow",
+    "Kleinmachnow"
+   ],
+   "kreis": "Landkreis Potsdam-Mittelmark",
+   "kontakt": "lennart"
+  }
+ ]
+}

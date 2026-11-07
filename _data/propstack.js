@@ -788,26 +788,12 @@ function isPublicMarketingObject(unit) {
    Landkreis über seine Orte, zuletzt die Stadtseite). Ohne Treffer area = null; die Vorlage verlinkt dann /standorte/.
    Die Bezirksseiten nennen in „orte“ nur ausgewählte Kieze. Alle Ortsteile der vier Bezirke mit eigener Seite nach
    „Liste der Bezirke und Ortsteile Berlins“ (de.wikipedia.org, abgerufen 27.10.2026). */
-const BERLIN_ORTSTEILE = {
-    "berlin/charlottenburg-wilmersdorf": ["Charlottenburg", "Wilmersdorf", "Schmargendorf", "Grunewald", "Westend", "Charlottenburg-Nord", "Halensee"],
-    "berlin/pankow": ["Prenzlauer Berg", "Weißensee", "Blankenburg", "Heinersdorf", "Karow", "Stadtrandsiedlung Malchow", "Pankow", "Blankenfelde", "Buch", "Französisch Buchholz", "Niederschönhausen", "Rosenthal", "Wilhelmsruh"],
-    "berlin/steglitz-zehlendorf": ["Steglitz", "Lichterfelde", "Lankwitz", "Zehlendorf", "Dahlem", "Nikolassee", "Wannsee", "Schlachtensee"],
-    "berlin/tempelhof-schoeneberg": ["Schöneberg", "Friedenau", "Tempelhof", "Mariendorf", "Marienfelde", "Lichtenrade"]
-};
+const { BERLIN_ORTSTEILE } = require("../netlify/functions/_shared/berlin-bezirke.js");  // Update 48 §3: Tabelle dort
 
 /* Teil B (31.10.2026, PLAN.md „Alles Offene in einem Brief“, Teil B 4; Update 15 Punkt 3): Berliner Bezirke ohne eigene Seite
    mit ihrem Ansprechpartner. Mitte und Friedrichshain-Kreuzberg bleiben bei Lennart, bis Timon jemanden nennt (Peer, 31.10.2026).
    Ortsteile nach „Liste der Bezirke und Ortsteile Berlins“ (de.wikipedia.org, Ortsteilnummern 0101–1211, abgerufen 31.10.2026). */
-const BERLIN_BEZIRKE_OHNE_SEITE = {
-    "Mitte": { kontakt: "lennart", ortsteile: ["Mitte", "Moabit", "Hansaviertel", "Tiergarten", "Wedding", "Gesundbrunnen"] },
-    "Friedrichshain-Kreuzberg": { kontakt: "lennart", ortsteile: ["Friedrichshain", "Kreuzberg"] },
-    "Spandau": { kontakt: "lennart", ortsteile: ["Spandau", "Haselhorst", "Siemensstadt", "Staaken", "Gatow", "Kladow", "Hakenfelde", "Falkenhagener Feld", "Wilhelmstadt"] },
-    "Neukölln": { kontakt: "lennart", ortsteile: ["Neukölln", "Britz", "Buckow", "Rudow", "Gropiusstadt"] },
-    "Treptow-Köpenick": { kontakt: "timon", ortsteile: ["Alt-Treptow", "Plänterwald", "Baumschulenweg", "Johannisthal", "Niederschöneweide", "Altglienicke", "Adlershof", "Bohnsdorf", "Oberschöneweide", "Köpenick", "Friedrichshagen", "Rahnsdorf", "Grünau", "Müggelheim", "Schmöckwitz"] },
-    "Marzahn-Hellersdorf": { kontakt: "timon", ortsteile: ["Marzahn", "Biesdorf", "Kaulsdorf", "Mahlsdorf", "Hellersdorf"] },
-    "Lichtenberg": { kontakt: "timon", ortsteile: ["Friedrichsfelde", "Karlshorst", "Lichtenberg", "Falkenberg", "Malchow", "Wartenberg", "Neu-Hohenschönhausen", "Alt-Hohenschönhausen", "Fennpfuhl", "Rummelsburg"] },
-    "Reinickendorf": { kontakt: "timon", ortsteile: ["Reinickendorf", "Tegel", "Konradshöhe", "Heiligensee", "Frohnau", "Hermsdorf", "Waidmannslust", "Lübars", "Wittenau", "Märkisches Viertel", "Borsigwalde"] }
-};
+const { BERLIN_BEZIRKE_OHNE_SEITE } = require("../netlify/functions/_shared/berlin-bezirke.js");  // Update 48 §3: Tabelle dort
 const berlinBezirkKontakt = new Map(Object.entries(BERLIN_BEZIRKE_OHNE_SEITE).flatMap(([bezirk, b]) =>
     [bezirk, ...b.ortsteile].map((name) => [placeKey(name), b.kontakt])));
 

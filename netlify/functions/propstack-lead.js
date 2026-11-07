@@ -2,6 +2,7 @@ const { sendInternalNotification } = require("./_shared/mailer");
 const nachfrage = require("./_shared/nachfrage");
 const logsafe = require("./_shared/logsafe");
 const zustellung = require("./_shared/zustellung");
+const ansprechpartner = require("./_shared/ansprechpartner");
 const PROPSTACK_BASE_URL = require("./_shared/propstack-basis").basis();
 
 /**
@@ -62,7 +63,8 @@ exports.handler = async function (event) {
       });
     }
 
-    const note = buildNote(lead);
+    // Update 48 §3: erste Zeile „Ansprechpartner laut Gebiet: …“ nach der Kontaktkarte des Gebiets (_shared/ansprechpartner.js); kein Propstack-Benutzer
+    const note = ansprechpartner.vorNotiz(buildNote(lead), { sourceUrl: lead.sourceUrl, zip: lead.zipCode, city: lead.city, orte: [lead.location] });
     const contactPayload = buildContactPayload(lead, note);
 
     // Update 32 §1: Jeder Teil wird nach dem Schreiben zurückgelesen (_shared/zustellung.js). Fehlt ein Teil, geht die
@@ -89,7 +91,11 @@ exports.handler = async function (event) {
 
       // Verkauf/Vermietung: wenn der Eigentümer Objektdaten angibt, legen wir ein echtes Propstack-Objekt an
       // und verknüpfen den Kontakt direkt über relationships_attributes als owner.
-      const propertyResult = await maybeCreateOwnerProperty(apiKey, contactId, lead, note);
+      // Update 48 §3: Finanzierungsanfragen bekommen einen eigenen Deal in „400 Finanzierung“. Ein Deal braucht laut Propstack-Doku
+      // („Deals“: „das Deal-Objekt mit 3 Pflicht-Feldern: client_id, property_id und deal_stage_id“) ein Objekt, deshalb „Finanzierung: …“.
+      const propertyResult = lead.concernType === "finance"
+        ? await maybeCreateFinancingProperty(apiKey, lead, note)
+        : await maybeCreateOwnerProperty(apiKey, contactId, lead, note);
       propertyId = await pruefeTeil(prot, "Objekt", "/units", propertyResult);
 
       const dealResult = await maybeCreateDealForOwnerObject(apiKey, contactId, propertyId, lead, note);
@@ -834,7 +840,7 @@ async function findPropertyStatusId(apiKey, wantedName) {
 }
 
 async function maybeCreateDealForOwnerObject(apiKey, contactId, propertyId, lead, note) {
-  if (!(lead.concernType === "sell" || lead.concernType === "rent")) {
+  if (!(lead.concernType === "sell" || lead.concernType === "rent" || lead.concernType === "finance")) {
     return { ok: true, skipped: true, reason: "Für diesen Lead-Typ kein Eigentümer-Deal erforderlich." };
   }
 
@@ -898,8 +904,10 @@ async function findBestDealStage(apiKey, concernType) {
       }
     }
 
-    const wanted = concernType === "rent"
-      ? ["neuermietinteressent", "mieter", "vermietung"]
+    // Update 48 §3: Eigentümer, die vermieten wollen, sind Eigentümer → „100 Eigentümer“ (bis dahin „300 Mieter“).
+    // Finanzierungsanfragen → „400 Finanzierung / Neuer Finanzierungs-Lead“; ohne diese Phase kein Deal (Rückfall-Mail), keine andere Pipeline.
+    const wanted = concernType === "finance"
+      ? ["neuerfinanzierungslead", "finanzierung"]
       : ["neuereigentumerlead", "neuereigentuemerlead", "eigentumer", "eigentuemer"];
 
     for (const term of wanted) {
@@ -907,11 +915,49 @@ async function findBestDealStage(apiKey, concernType) {
       if (found) return found;
     }
 
-    return allStages[0] || null;
+    return concernType === "finance" ? null : allStages[0] || null;
   } catch (error) {
     console.warn("DEAL STAGES READ SKIPPED:", logsafe.msg(error));
     return null;
   }
+}
+
+/* Update 48 §3: Objekt für den Finanzierungs-Deal. Ohne Eigentümer-Verknüpfung (der Anfragende besitzt es nicht unbedingt),
+   ohne Preis (das Formular fragt „Kaufpreis oder Darlehenssumme“; der Betrag steht in der Notiz) und ohne Status: Die Website
+   zeigt nur Objekte mit Status „Vermarktung“, und die beiden bisher von der Website angelegten Objekte haben auch keinen
+   (gelesen 08.11.2026). Objektart nur, wenn das Formular eine nennt oder das Vorhaben „Mehrfamilienhaus“ ist; lehnt Propstack
+   ein Objekt ohne Art ab, folgt derselbe Satz mit der Standardart der Eigentümer-Objekte (Wohnung). */
+async function maybeCreateFinancingProperty(apiKey, lead, note) {
+  const vorhaben = (String(lead.message || "").match(/^Vorhaben: (.+)$/m) || [])[1] || "";
+  const art = lead.objectType || (/mehrfamilien/i.test(vorhaben) ? "Mehrfamilienhaus" : "");
+  const mapping = mapOwnerObjectMapping(art, {});
+  const stamp = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+  const basis = removeEmpty({
+    title: `Finanzierung: ${vorhaben || lead.objectType || "Anfrage"}${lead.location ? ` in ${lead.location}` : ""}`,
+    unit_id: `WEB-FIN-${stamp}`,
+    marketing_type: "BUY",
+    address: lead.location || undefined,
+    zip_code: lead.zipCode || undefined,
+    city: lead.city || extractCity(lead.location) || undefined,
+    note,
+  });
+  const mitArt = { ...basis, object_type: mapping.object_type, rs_type: mapping.rs_type };
+  const attempts = art
+    ? [{ label: "financing property", payload: { property: mitArt } }]
+    : [{ label: "financing property without type", payload: { property: basis } }, { label: "financing property with default type", payload: { property: mitArt } }];
+
+  let lastError = null;
+  for (const attempt of attempts) {
+    try {
+      console.log("PROPERTY CREATE ATTEMPT:", attempt.label);
+      const result = await propstackPost(apiKey, "/units", attempt.payload);
+      return { ok: true, attempt: attempt.label, result };
+    } catch (error) {
+      lastError = error;
+      console.warn("PROPERTY CREATE ATTEMPT FAILED:", attempt.label, logsafe.msg(error));
+    }
+  }
+  return { ok: false, skipped: true, reason: "Objekt für den Finanzierungs-Deal konnte nicht angelegt werden.", error: lastError };
 }
 
 function buildOwnerPropertyTitle(lead) {
