@@ -139,7 +139,7 @@ eleventyComputed:
     </section>
     {% endif %}
 
-    {{ areaBlock(property.area, "lage-markt", property.preisart) }}
+    {{ areaBlock(property.area, "lage-markt", property.preisart, property.marketing_type == "Kauf") }}
   </div>
 </section>
 

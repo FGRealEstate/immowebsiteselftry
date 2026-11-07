@@ -29,7 +29,7 @@ eleventyComputed:
     ohne typ = Stadt im Umland (Lagen). Fußnoten [[n]] werden mit dem Filter fn zu Links auf #quelle-n.
     Alle 28 Seiten haben ein Ortsfoto (heroPhoto); ohne Foto stünde der Kopf durchsichtig über dem Grundton.
     Das JSON-LD am Ende ist unverändert aus der vorigen Vorlage. -#}
-{% from "fgs-macros.njk" import hero, pic, rail, card, quote, chapters, wide, split, textlink, faq, closing with context %}
+{% from "fgs-macros.njk" import hero, pic, rail, card, quote, chapters, wide, split, textlink, faq, closing, angebot with context %}
 {# Bildnachweise (Update 9): keine Zeile auf oder unter den Fotos und der Karte; sie stehen im Aufklapper über der Fußzeile (base.njk) #}
 {% set g = gebiet %}
 {% set pageUrl = "https://fg-realestate.de" + g.url %}
@@ -194,6 +194,27 @@ eleventyComputed:
   </div>
 </section>
 
+{# 8b. Update 44 §2.1 (07.11.2026): die eigenen Angebote des Gebiets (Gebietsblock des Angebots zeigt auf diese Seite,
+     o.area aus _data/propstack.js), nur wenn es welche gibt. Karte und Raster wie auf der Startseite. #}
+{%- set eigeneAngebote = [] %}
+{%- for o in (propstack.standaloneProperties or []).concat(propstack.projectProperties or []) %}{% if o.area and o.area.url == g.url %}{% set _ = eigeneAngebote.push(o) %}{% endif %}{% endfor %}
+{%- if eigeneAngebote.length %}
+<section class="fgs-section fgs-obj-section" id="angebote" aria-labelledby="angebote-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-obj-head">
+      <div class="fgs-head"><h2 id="angebote-titel">Aktuelle Angebote {{ g.inOrt }}</h2></div>
+      <a class="fgs-btn fgs-btn--primary fgs-obj-head-btn" href="/angebote.html">Alle Angebote</a>
+    </div>
+    <ul class="fgs-obj-grid fgs-obj-grid--home" role="list">
+      {%- for o in eigeneAngebote.slice(0, 6) %}
+      {{ angebot(o) }}
+      {%- endfor %}
+    </ul>
+    <div class="fgs-btns fgs-obj-more"><a class="fgs-btn fgs-btn--primary" href="/angebote.html">Alle Angebote ansehen</a></div>
+  </div>
+</section>
+{%- endif %}
+
 {# 9. Ansprechpartner als waagerechte Karte (§5.9): Porträt 4:5 in 360 px, Name, Rolle, Kurzbio (Text aus §7, kontakte.js),
      die Sätze aus der Einleitung (Zeile 3), Telefon und E-Mail, „Profil von …“. #}
 {% macro kontaktKarte(p, hTag, hId) -%}
@@ -267,6 +288,10 @@ eleventyComputed:
   </div>
 </section>
 {% endif %}
+
+{# 10a2. Update 44 §2.1: Mehr dazu im Wissen (Artikel nach Kategorie, _data/wissen.js) #}
+{% set wissenKats = wissen.gebiet %}
+{% include "fgs-wissen.njk" %}
 
 {# 10b. Häufige Fragen (FAQPage unten aus derselben Liste) #}
 {% set faqItems = [] %}
@@ -360,7 +385,13 @@ eleventyComputed:
         "addressLocality": "Berlin",
         "addressCountry": "DE"
       },
-      "areaServed": {% if g.orte %}[{% for o in g.orte %}{ "@type": {{ ("Place" if (g.typ == "bezirk" or g.typ == "marktgebiet") else "City") | dump | safe }}, "name": {{ o | dump | safe }}{% if g.typ == "bezirk" or g.typ == "marktgebiet" %}, "containedInPlace": { "@id": "{{ pageUrl }}#ort" }{% elif g.kreis %}, "containedInPlace": { "@type": "AdministrativeArea", "name": {{ g.kreis.name | dump | safe }} }{% elif g.typ == "landkreis" %}, "containedInPlace": { "@id": "{{ pageUrl }}#ort" }{% endif %} }{% if not loop.last %}, {% endif %}{% endfor %}]{% else %}{ "@id": "{{ pageUrl }}#ort" }{% endif %},
+      {#- Update 44 §2.2: g.areaServedNamen (Steglitz: Steglitz und Zehlendorf) vor den Orten der Seite, ohne Doppelte -#}
+      {%- set asNamen = [] %}{% for n in (g.areaServedNamen or []) %}{% if n not in (g.orte or []) %}{% set _ = asNamen.push(n) %}{% endif %}{% endfor %}{% for n in (g.orte or []) %}{% set _ = asNamen.push(n) %}{% endfor %}
+      "areaServed": {% if asNamen.length %}[{% for o in asNamen %}{ "@type": {{ ("Place" if (g.typ == "bezirk" or g.typ == "marktgebiet") else "City") | dump | safe }}, "name": {{ o | dump | safe }}{% if g.typ == "bezirk" or g.typ == "marktgebiet" %}, "containedInPlace": { "@id": "{{ pageUrl }}#ort" }{% elif g.kreis %}, "containedInPlace": { "@type": "AdministrativeArea", "name": {{ g.kreis.name | dump | safe }} }{% elif g.typ == "landkreis" %}, "containedInPlace": { "@id": "{{ pageUrl }}#ort" }{% endif %} }{% if not loop.last %}, {% endif %}{% endfor %}]{% else %}{ "@id": "{{ pageUrl }}#ort" }{% endif %},
+      {%- if g.buero %}
+      {#- Update 44 §2.2: das Büro als Place (Adresse wie oben) -#}
+      "location": { "@type": "Place", "name": "Berlin-Steglitz", "address": { "@type": "PostalAddress", "streetAddress": "Schützenstraße 30", "postalCode": "12165", "addressLocality": "Berlin", "addressCountry": "DE" } },
+      {%- endif %}
       "employee": {% if zwei %}[{% for p in personen %}{ "@id": "{{ pageUrl }}#ansprechpartner{{ "-" + loop.index if loop.index > 1 }}" }{% if not loop.last %}, {% endif %}{% endfor %}]{% else %}{ "@id": "{{ pageUrl }}#ansprechpartner" }{% endif %},
       "parentOrganization": { "@id": "https://fg-realestate.de/#organization" }
     },

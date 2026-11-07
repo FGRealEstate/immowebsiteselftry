@@ -136,3 +136,5 @@ function artikel(post) {
 const erscheint = new Set(posts.map((p) => p.slug));
 
 module.exports = () => posts.map(artikel);
+// Update 44 §2.1: dieselbe Zuordnung Kategorie → Leistungsseiten für „Mehr dazu im Wissen“ (_data/wissen.js)
+module.exports.KATEGORIEN = KATEGORIEN;

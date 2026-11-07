@@ -199,7 +199,14 @@
       "familyName": "Fischer",
       "jobTitle": "Geschäftsführer",
       "description": {{ kontakte.timon.bio | json | safe }},
-      "knowsAbout": ["Immobilienfinanzierung", "Annuitätendarlehen", "Beleihungswert", "Kapitalanlagefinanzierung"],
+      {#- Update 44 §1.2 Punkt 8 und Update 46 (07.11.2026): gleich wie auf team/timon-fischer.njk -#}
+      "knowsAbout": ["Baufinanzierung", "Anschlussfinanzierung", "Kapitalanlage", "Mehrfamilienhausfinanzierung", "Wirtschaftsmathematik"],
+      "hasCredential": { "@id": "https://fg-realestate.de/#erlaubnis-34i", "@type": "EducationalOccupationalCredential", "name": "Erlaubnis nach § 34i Abs. 1 GewO", "identifier": { "@type": "PropertyValue", "name": "Registrierungsnummer Vermittlerregister", "value": "D-W-107-K3SJ-23" } },
+      "workLocation": {
+        "@type": "Place",
+        "name": "Berlin-Steglitz",
+        "address": { "@type": "PostalAddress", "streetAddress": "Schützenstraße 30", "postalCode": "12165", "addressLocality": "Berlin", "addressCountry": "DE" }
+      },
       "worksFor": { "@id": "https://fg-realestate.de/#organization" },
       "affiliation": { "@id": "https://fg-realestate.de/#organization" },
       "url": "https://fg-realestate.de/team/timon-fischer/",
@@ -213,8 +220,14 @@
       "familyName": "Geserich",
       "jobTitle": "Geschäftsführer",
       "description": {{ kontakte.lennart.bio | json | safe }},
-      "knowsAbout": ["Immobilienvertrieb", "Maklergeschäft", "Immobilienbewertung", "Berliner Wohnungsmarkt"],
+      {#- Update 44 §1.2 Punkt 9: gleich wie auf team/lennart-geserich.njk -#}
+      "knowsAbout": ["Immobilienvertrieb", "Maklergeschäft", "Immobilienbewertung", "Vermietung", "Berliner Wohnungsmarkt"],
       "hasCredential": { "@type": "EducationalOccupationalCredential", "name": {{ kontakte.lennart.ausbildung | json | safe }} },
+      "workLocation": {
+        "@type": "Place",
+        "name": "Berlin-Steglitz",
+        "address": { "@type": "PostalAddress", "streetAddress": "Schützenstraße 30", "postalCode": "12165", "addressLocality": "Berlin", "addressCountry": "DE" }
+      },
       "worksFor": { "@id": "https://fg-realestate.de/#organization" },
       "affiliation": { "@id": "https://fg-realestate.de/#organization" },
       "url": "https://fg-realestate.de/team/lennart-geserich/",

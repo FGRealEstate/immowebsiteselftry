@@ -14,5 +14,7 @@ module.exports = {
   timonFaq: ["1.3", "1.5", "3.1", "4.4", "5.2", "5.3", "5.4", "5.5", "6.1"],
   // Antworten mit Status SOURCE (selbst geschrieben aus amtlichen Quellen, Feld quelle: "3.2" usw.) gehen laut Brief §9
   // erst live, wenn Jesu sie mit ihren Quellen geprüft hat. Geprüfte Nummern hier eintragen.
-  quelleFaq: []
+  // Update 44 §2.3 (07.11.2026, Jesu über Peer): „Every answer marked ready for Mango (Grundsteuer included) … goes live“.
+  // 7.3 (Grundsteuer Berlin) ist frei; Quellen am 07.11.2026 auf berlin.de/grundsteuer/ nachgeprüft (0,31 / 0,45 Promille, Hebesatz 470 %).
+  quelleFaq: ["7.3"]
 };

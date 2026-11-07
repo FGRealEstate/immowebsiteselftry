@@ -124,13 +124,17 @@ customSchema: true
       "url": "{{ pageUrl }}",
       "telephone": {{ (pk.phone or nav.phone).href | replace("tel:", "") | json | safe }},
       "email": {{ (pk.email or nav.email) | json | safe }},
+      {#- Update 44 §1.2 Punkt 8: Arbeitsort Berlin-Steglitz (Name), Adresse des Büros -#}
       "workLocation": {
         "@type": "Place",
+        "name": "Berlin-Steglitz",
         "address": { "@type": "PostalAddress", "streetAddress": "Schützenstraße 30", "postalCode": "12165", "addressLocality": "Berlin", "addressCountry": "DE" }
       },
       "worksFor": { "@id": "https://fg-realestate.de/#organization" },
       "knowsAbout": {{ p.knowsAbout | json | safe }},{% if pk.ausbildung %}
-      "hasCredential": { "@type": "EducationalOccupationalCredential", "name": {{ pk.ausbildung | json | safe }} },{% endif %}
+      "hasCredential": { "@type": "EducationalOccupationalCredential", "name": {{ pk.ausbildung | json | safe }} },{% endif %}{% if p.erlaubnis34i %}
+      {#- Update 46: § 34i als hasCredential, derselbe Knoten wie bei der Firma (base.njk, Angaben aus dem Impressum) -#}
+      "hasCredential": { "@id": "https://fg-realestate.de/#erlaubnis-34i", "@type": "EducationalOccupationalCredential", "name": "Erlaubnis nach § 34i Abs. 1 GewO", "identifier": { "@type": "PropertyValue", "name": "Registrierungsnummer Vermittlerregister", "value": "D-W-107-K3SJ-23" } },{% endif %}
       "areaServed": [
         {% for a in p.areaServed %}{ "@type": "{{ a.type }}", "name": {{ a.name | json | safe }}{% if a.url %}, "url": "https://fg-realestate.de{{ a.url }}"{% endif %} }{% if not loop.last %},{% endif %}
         {% endfor %}

@@ -15,16 +15,33 @@
 [functions."taeglicher-build"]
   schedule = "0 4,5 * * *"
 
+# Update 44 §2.5: Uptime-Prüfung alle 15 Minuten (netlify/functions/uptime-pruefung.js), GET ohne Absenden,
+# Mail nach zwei Fehlern hintereinander an info@fg-realestate.de und UPTIME_EMPFAENGER.
+[functions."uptime-pruefung"]
+  schedule = "*/15 * * * *"
+
+# Update 44 §2.6: Liste neuer amtlicher Marktberichte, einmal im Monat beim ersten Produktions-Build (scripts/marktberichte.js).
+[[plugins]]
+  package = "./netlify/plugins/marktberichte"
+
 # Update 7 §4: Propstack-Fotos über das Netlify Image CDN (/.netlify/images?url=…), Filter propstackFoto in .eleventy.js.
 [images]
   remote_images = ["https://images\\.propstack\\.de/.*"]
 
+# Update 44 §2.4 (07.11.2026): Sicherheits-Header. HSTS ein Jahr mit Subdomains (bekannte Subdomains: www bei Netlify,
+# autodiscover bei Outlook, beide HTTPS). Kamera, Mikrofon und Standort aus (die Seite nutzt keins davon).
+# CSP erst nur als Report-only: Meldungen gehen an netlify/functions/csp-bericht.js (Netlify Blobs, Store „csp-berichte“,
+# je Tag Richtlinie, blockierte Herkunft und Seitenpfad mit Anzahl). Nach einer Woche auswerten und dann als
+# Content-Security-Policy einschalten. Die Testumgebung übernimmt diese Header (test-env/deploy-test.sh liest diese Datei).
 [[headers]]
   for = "/*"
   [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://maps.googleapis.com https://identity.netlify.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https://images.propstack.de https://*.google-analytics.com https://*.googletagmanager.com https://maps.gstatic.com https://maps.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://maps.googleapis.com; frame-src https://www.googletagmanager.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; report-uri /.netlify/functions/csp-bericht"
 
 [[headers]]
   for = "/images/*"

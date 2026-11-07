@@ -29,7 +29,9 @@ pg:
     familyName: "Fischer"
     jobTitle: "Geschäftsführer"
     description: "Geschäftsführer der Fischer & Geserich Real Estate GmbH mit Schwerpunkt Immobilienfinanzierung. Verantwortet die Vermittlung von Immobiliardarlehen nach § 34i Abs. 1 GewO und ist Ansprechpartner für Nord- und Ost-Berlin, Nordbrandenburg, Leipzig und Dresden."
-    knowsAbout: ["Immobilienfinanzierung", "Annuitätendarlehen", "Beleihungswert", "Kapitalanlagefinanzierung", "Anschlussfinanzierung"]
+    # Update 44 §1.2 Punkt 8 und Update 46 (07.11.2026): knowsAbout wie im Brief, dazu Wirtschaftsmathematik; § 34i als hasCredential
+    knowsAbout: ["Baufinanzierung", "Anschlussfinanzierung", "Kapitalanlage", "Mehrfamilienhausfinanzierung", "Wirtschaftsmathematik"]
+    erlaubnis34i: true
     # Teil B (31.10.2026): Gebiete nach Update 13 §7 Punkt 7
     areaServed:
       - { type: AdministrativeArea, name: Pankow, url: /standorte/berlin/pankow/ }
@@ -83,12 +85,6 @@ pg:
     <div class="fgs-cols-body">
       {#- Design-Pass 2 §7 (29.10.2026): Kurzbio wie auf Startseite und Gebietsseiten, aus _data/kontakte.js #}
       <p class="fgs-lead">{{ kontakte.timon.bio }}</p>
-      <ul class="fgs-checklist fgs-checklist--one" role="list">
-        <li><a href="/finanzierungsberatung.html">Finanzierungsberatung</a><span>Für Eigennutzer und Kapitalanleger: Finanzierungsrahmen, Eigenkapital und Monatsrate durchrechnen und die Angebote von rund 500 Banken vergleichen.</span></li>
-        <li><a href="/finanzierungsberatung.html#anschluss">Anschlussfinanzierung</a><span>Am Ende der Zinsbindung: das Verlängerungsangebot der bisherigen Bank mit anderen Banken vergleichen, einschließlich der Kosten eines Wechsels.</span></li>
-        <li><a href="/finanzierungsberatung.html#mehrfamilienhaus">Mehrfamilienhäuser finanzieren</a><span>Hier prüft die Bank vor allem das Objekt: Mieten, Kapitaldienst, Instandhaltung und Energieausweis.</span></li>
-        <li><a href="/finanzierungsberatung.html#steuerauslaender">Finanzierung für Steuerausländer</a><span>Für Käufer ohne Wohnsitz in Deutschland, mit Instituten, die solche Fälle prüfen. Mehr Vorlauf als bei einer Standardfinanzierung.</span></li>
-      </ul>
       <p class="fgs-note">Die Finanzierung vermittelt Fischer &amp; Geserich als unabhängiger Immobiliardarlehensvermittler mit Erlaubnis nach § 34i Abs. 1 GewO. Eine Garantie auf Finanzierung gibt es nicht: Objekt, Bonität, Währung und Beleihung entscheiden im Einzelfall.</p>
     </div>
   </div>
@@ -98,14 +94,30 @@ pg:
    (Transaktionsmanagement, Finanzierungsvermittlung, Vermietung; Blogs/design-muster/_build/texte/timon-profil.md),
    Website (Europace, Baufinex, Bankkontakte, deutschlandweit, Finanzierungsvolumen 2026 (Update 13: über 4 Mio. €), Über uns, Verkaufen).
    Werdegang vor F&G (erster Absatz): Update 13 §3, aus Peers Call mit Timon am 29.10.2026, frühere Arbeitgeber ohne Namen. #}
+{# Update 44 §1.2 Punkt 3 (07.11.2026): die vier Finanzierungsleistungen, die vorher als Liste unter „Was Timon Fischer
+   verantwortet“ standen, als Raster mit einer Zeile je Leistung. Zeilen aus der bisherigen Liste, wörtlich (bei
+   Steuerausländern der erste Satz). #}
+<section class="fgs-section" id="schwerpunkte" aria-labelledby="schwerpunkte-titel">
+  <div class="fgs-wrap fgs-cols">
+    <div class="fgs-cols-head"><h2 id="schwerpunkte-titel">Schwerpunkte</h2></div>
+    <div class="fgs-cols-body">
+      <ul class="fgs-points fgs-points--first" role="list">
+        <li><h3><a href="/finanzierungsberatung.html">Finanzierungsberatung</a></h3><p>Für Eigennutzer und Kapitalanleger: Finanzierungsrahmen, Eigenkapital und Monatsrate durchrechnen und die Angebote von rund 500 Banken vergleichen.</p></li>
+        <li><h3><a href="/finanzierungsberatung.html#anschluss">Anschlussfinanzierung</a></h3><p>Am Ende der Zinsbindung: das Verlängerungsangebot der bisherigen Bank mit anderen Banken vergleichen, einschließlich der Kosten eines Wechsels.</p></li>
+        <li><h3><a href="/finanzierungsberatung.html#mehrfamilienhaus">Mehrfamilienhäuser</a></h3><p>Hier prüft die Bank vor allem das Objekt: Mieten, Kapitaldienst, Instandhaltung und Energieausweis.</p></li>
+        <li><h3><a href="/finanzierungsberatung.html#steuerauslaender">Steuerausländer</a></h3><p>Für Käufer ohne Wohnsitz in Deutschland, mit Instituten, die solche Fälle prüfen.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <section class="fgs-section" id="werdegang" aria-labelledby="werdegang-titel">
   <div class="fgs-wrap fgs-cols">
     <div class="fgs-cols-head"><h2 id="werdegang-titel">Wie Timon Fischer arbeitet</h2></div>
     <div class="fgs-cols-body fgs-prose">
-      <p>Timon Fischer arbeitet seit seinem 18. Lebensjahr. Als Werkstudent war er in der Immobilienverwaltung für das Forderungsmanagement und die Automatisierung von Berichten zuständig, danach im Daten- und Prozessmanagement. Anschließend hat er Immobilienfinanzierungen vermittelt und Immobilienkäufe in der Region Dresden begleitet. In diesem Unternehmen hat er Lennart Geserich kennengelernt, mit dem er Fischer &amp; Geserich gegründet hat.</p>
+      <p>Timon Fischer hat Wirtschaftsmathematik studiert, und dieses Handwerkszeug steckt in jeder Finanzierung, die er durchrechnet: Zins, Tilgung, Eigenkapital und Restschuld. Timon Fischer arbeitet seit seinem 18. Lebensjahr. Als Werkstudent war er in der Immobilienverwaltung für das Forderungsmanagement und die Automatisierung von Berichten zuständig, danach im Daten- und Prozessmanagement. Anschließend hat er Immobilienfinanzierungen vermittelt und Immobilienkäufe in der Region Dresden begleitet. In diesem Unternehmen hat er Lennart Geserich kennengelernt, mit dem er Fischer &amp; Geserich gegründet hat.</p>
       <p>Heute führt er das Unternehmen gemeinsam mit Lennart Geserich als Geschäftsführer, vermittelt die Finanzierungen und begleitet die Abwicklung bis zum Notartermin. Die Vermarktung der Immobilien übernimmt meist er. In seinen Gebieten begleitet er auch Verkäufe und Vermietungen, führt Besichtigungen durch und stimmt sich mit den Eigentümern ab. Die Mietverträge schließt Lennart Geserich.</p>
-      <p>Finanzierungen vergleicht Timon über Europace, Baufinex und direkte Kontakte zu Banken und er vermittelt sie deutschlandweit, auch für Mehrfamilienhäuser und für Käufer ohne Wohnsitz in Deutschland. 2026 hat Fischer &amp; Geserich Finanzierungen mit einem Volumen von über 4 Millionen Euro begleitet.</p>
-      <p>Bei F&amp;G laufen Objekt und Finanzierung zusammen: Lennart Geserich verantwortet Verkauf und Vermietung, Timon die Finanzierung. So prüft das Team ein Objekt und seine Finanzierung im selben Gespräch. Beim Kauf klärt Timon die Finanzierung, bevor der Kaufvertrag beim Notar beauftragt wird.</p>
+      <p>Finanzierungen vergleicht Timon über Europace, Baufinex und direkte Kontakte zu Banken und er vermittelt sie deutschlandweit, auch für Mehrfamilienhäuser und für Käufer ohne Wohnsitz in Deutschland.</p>
       <h3>Zwei Einschätzungen von Timon aus dem Blog</h3>
       <blockquote class="fgs-pull">
         <p>„Ich würde niemals jemandem empfehlen, bei der ersten Immobilie eine 110-Prozent-Finanzierung zu machen. Man braucht ein ausgeglichenes Portfolio, auch ein ausgeglichenes Schuldenportfolio.“</p>
@@ -115,6 +127,38 @@ pg:
         <p>„Wenn man sich langfristig absichern will, wird es teurer, weil die Banken dieses Risiko bepreisen. Das Forward-Darlehen schließt man ab, um sich für die Zeit nach dem Ende der Zinsbindung günstigere Zinsen zu sichern.“</p>
         <footer class="fgs-small fgs-source">Aus dem Artikel <a href="/blog/zinsbindung-strategisch-waehlen/">Wann sich eine kurze Zinsbindung mit Forward-Darlehen lohnt</a></footer>
       </blockquote>
+    </div>
+  </div>
+</section>
+
+{# Update 44 §1.2 Punkt 4 (07.11.2026): nur Sätze, die schon auf der Website stehen. Die ersten drei und der letzte standen
+   bis heute unter „Wie Timon Fischer arbeitet“ (dort entfernt, damit nichts doppelt steht); der Satz zu Europace und
+   Baufinex steht wörtlich in llms.txt (Einleitung). #}
+<section class="fgs-section" id="finanzierung-im-haus" aria-labelledby="im-haus-titel">
+  <div class="fgs-wrap fgs-cols">
+    <div class="fgs-cols-head"><h2 id="im-haus-titel">Warum die Finanzierung bei F&amp;G im Haus liegt</h2></div>
+    <div class="fgs-cols-body fgs-prose">
+      <p>Bei F&amp;G laufen Objekt und Finanzierung zusammen: Lennart Geserich verantwortet Verkauf und Vermietung, Timon die Finanzierung. So prüft das Team ein Objekt und seine Finanzierung im selben Gespräch. Beim Kauf klärt Timon die Finanzierung, bevor der Kaufvertrag beim Notar beauftragt wird.</p>
+      <p>Für Finanzierungen vergleicht F&amp;G über Europace und Baufinex rund 500 Banken, in Berlin und deutschlandweit. 2026 hat Fischer &amp; Geserich Finanzierungen mit einem Volumen von über 4 Millionen Euro begleitet.</p>
+    </div>
+  </div>
+</section>
+
+{# Update 44 §1.2 Punkt 5 (07.11.2026): Angaben aus impressum.html kopiert, Wortlaut und Bezeichnungen unverändert #}
+<section class="fgs-section" id="erlaubnis" aria-labelledby="erlaubnis-titel">
+  <div class="fgs-wrap fgs-cols">
+    <div class="fgs-cols-head"><h2 id="erlaubnis-titel">Erlaubnis und Register</h2></div>
+    <div class="fgs-cols-body">
+      <p class="fgs-lead">Die Fischer &amp; Geserich Real Estate GmbH verfügt über eine Erlaubnis nach § 34i Abs. 1 GewO als unabhängiger Immobiliardarlehensvermittler.</p>
+      <div class="fgs-table-wrap">
+        <table class="fgs-table fgs-table--rows">
+          <tbody>
+            <tr><th scope="row">Zuständige Erlaubnis- und Aufsichtsbehörde</th><td>Bezirksamt Steglitz-Zehlendorf von Berlin<br>Ordnungsamt<br>Unter den Eichen 1<br>12203 Berlin</td></tr>
+            <tr><th scope="row">Eintragung im Vermittlerregister gemäß § 11a GewO</th><td>Registrierungsnummer als Immobiliardarlehensvermittler:<br><strong>D-W-107-K3SJ-23</strong></td></tr>
+            <tr><th scope="row">Registerstelle</th><td>Deutscher Industrie- und Handelskammertag (DIHK) e. V.<br>Breite Straße 29<br>10178 Berlin<br>Registerabruf: <a href="https://www.vermittlerregister.info" target="_blank" rel="noopener noreferrer">www.vermittlerregister.info</a></td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </section>
@@ -135,6 +179,6 @@ pg:
   </div>
 </section>
 
-{# Artikel von Timon: entfällt, solange die Firma Autor der Artikel ist (fgd-autor-artikel.njk) #}
+{# Update 44 §1.2 Punkt 2: Artikel von Timon, automatisch aus den Artikeln, die heute erscheinen (fgd-autor-artikel.njk) #}
 {% set autorKey = "timon" %}
 {% include "fgd-autor-artikel.njk" %}

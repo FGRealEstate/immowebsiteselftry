@@ -217,8 +217,10 @@
 {%- endmacro -%}
 
 {#- Update 35 A3: art = preisart aus _data/propstack.js (wohnung, haus, miete). Dann steht über dem Satz die passende Zahl der
-    Gebietsseite mit Quelle und Stand (area.preise, area.stand). Eine Vermarktungsdauer führen die Gebietsseiten nicht. -#}
-{%- macro areaBlock(area, id="lage-markt", art=null) -%}
+    Gebietsseite mit Quelle und Stand (area.preise, area.stand). Eine Vermarktungsdauer führen die Gebietsseiten nicht.
+    Update 44 §1.3 (07.11.2026): kauf = Kaufangebot (marketing_type „Kauf“). Dann die Zeile zur Vermarktungsdauer, wörtlich aus
+    dem Brief; die Zahl ist F&Gs Erfahrungswert, freigegeben und live auf Lennarts Seite. Bei Mietangeboten nicht. -#}
+{%- macro areaBlock(area, id="lage-markt", art=null, kauf=false) -%}
 <section class="fgs-listing-block fgs-cols" aria-labelledby="{{ id }}">
   {% if area %}
   {%- set preis = area.preise[art] if (art and area.preise) else null %}
@@ -228,12 +230,18 @@
     <p class="fgs-area-preis"><strong>{{ preis.wert | string | escape | string | replace(" €", "&nbsp;€") | safe }}</strong> {{ preis.label }}{% if preis.stichtag %}, {{ preis.stichtag }}{% endif %}.</p>
     <p class="fgs-small fgs-area-quelle">Quelle: {% if preis.quelleUrl %}<a href="{{ preis.quelleUrl }}" target="_blank" rel="noopener">{{ preis.quelle }}</a>{% else %}{{ preis.quelle }}{% endif %}{% if area.stand %} · Stand: {{ area.stand }}{% endif %}</p>
     {%- endif %}
+    {%- if kauf %}
+    <p class="fgs-area-dauer">Vermarktungsdauer: meist zwei bis drei Monate bis zum Notartermin, schnelle Verkäufe rund sechs Wochen (Erfahrungswert von Fischer &amp; Geserich).</p>
+    {%- endif %}
     <p>Auf unserer Seite zu {{ area.nameLang }} stehen Marktzahlen mit Quellen, Hinweise zu Verkauf, Kauf und Finanzierung und Antworten auf häufige Fragen.</p>
     {{ textlink(area.url, "Zur Seite " + area.nameLang) }}
   </div>
   {% else %}
   <div class="fgs-cols-head"><h2 id="{{ id }}">Unsere Gebiete</h2></div>
   <div class="fgs-cols-body">
+    {%- if kauf %}
+    <p class="fgs-area-dauer">Vermarktungsdauer: meist zwei bis drei Monate bis zum Notartermin, schnelle Verkäufe rund sechs Wochen (Erfahrungswert von Fischer &amp; Geserich).</p>
+    {%- endif %}
     <p>Für Berlin, Brandenburg, Leipzig und Dresden haben wir eigene Seiten mit Marktzahlen, Quellen und Antworten auf häufige Fragen.</p>
     {{ textlink("/standorte/", "Alle Gebiete ansehen") }}
   </div>

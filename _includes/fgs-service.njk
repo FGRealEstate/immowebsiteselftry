@@ -69,6 +69,10 @@ customSchema: true
 {# 3. Inhalt der Seite #}
 {{ content | safe }}
 
+{# 3b. Update 44 §2.1: Mehr dazu im Wissen (Artikel nach Kategorie, _data/wissen.js) #}
+{% set wissenKats = wissen.seiten[page.url] or [] %}
+{% include "fgs-wissen.njk" %}
+
 {# 4. S7 Häufige Fragen #}
 {{ faq(faqItems, s.faqTitle or "Häufige Fragen") }}
 

@@ -1,0 +1,26 @@
+{#- Update 44 §2.1 (07.11.2026): „Mehr dazu im Wissen“ mit den neuesten passenden Artikeln (höchstens drei), automatisch aus den
+    Artikeln, die heute erscheinen (_data/blogArtikel.js); Zuordnung über die Kategorie (_data/wissen.js).
+    Eingabe: wissenKats (Liste der Kategorien). Ohne passenden Artikel entfällt der Block. Gleiche Darstellung wie
+    „Artikel von Timon Fischer“ (fgd-autor-artikel.njk): Rubrik, Titel, die Zeile aus der Blog-Übersicht. -#}
+{%- from "fgs-macros.njk" import textlink with context %}
+{%- set wissenListe = [] %}
+{%- for p in blogArtikel | sort(true, false, "datePublished") %}{% if p.katId in wissenKats and wissenListe.length < wissen.hoechstens %}{% set _ = wissenListe.push(p) %}{% endif %}{% endfor %}
+{%- if wissenListe.length %}
+<section class="fgs-section" id="wissen" aria-labelledby="wissen-titel">
+  <div class="fgs-wrap fgs-cols">
+    <div class="fgs-cols-head"><h2 id="wissen-titel">Mehr dazu im Wissen</h2></div>
+    <div class="fgs-cols-body">
+      <ul class="fgs-points fgs-points--first fgs-wissen-liste" role="list">
+        {%- for p in wissenListe %}
+        <li>
+          <p class="fgs-small">{{ p.katLabel | safe }}</p>
+          <h3><a href="{{ p.url }}">{{ p.titel }}</a></h3>
+          <p>{{ p.kurz | safe }}</p>
+        </li>
+        {%- endfor %}
+      </ul>
+      {{ textlink("/blog/", "Alle Artikel") }}
+    </div>
+  </div>
+</section>
+{%- endif %}

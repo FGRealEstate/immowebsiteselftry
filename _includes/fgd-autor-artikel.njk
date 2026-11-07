@@ -1,26 +1,23 @@
-{#- Artikel einer Person auf ihrem Profil (Update 4, 3.3). Eingabe: autorKey ("timon" | "lennart").
-    Quelle ist der Autor im JSON-LD der Artikel (_data/blogArtikel.js, Feld autor). Solange die Firma Autor ist
-    (bis Timon und Lennart zugestimmt haben), ist die Liste leer und der Abschnitt entfällt. -#}
+{#- Artikel einer Person auf ihrem Profil (Update 4, 3.3; Update 44 §1.2 Punkt 2, 07.11.2026). Eingabe: autorKey ("timon" | "lennart").
+    Quelle ist der Autor im JSON-LD der Artikel (_data/blogArtikel.js, Feld autor), nur Artikel, die heute erscheinen
+    (_data/blog.js aus blogplan.json). Je Artikel Titel, Datum und die Zeile aus der Blog-Übersicht (kurz), der neueste zuerst;
+    die Liste wächst mit jedem Erscheinungstag. Ohne Artikel (Lennart) entfällt der Abschnitt. -#}
 {% set autorArtikel = [] %}
-{% for p in blogArtikel %}{% if p.autor and p.autor.key == autorKey %}{% set _ = autorArtikel.push(p) %}{% endif %}{% endfor %}
+{% for p in blogArtikel | sort(true, false, "datePublished") %}{% if p.autor and p.autor.key == autorKey %}{% set _ = autorArtikel.push(p) %}{% endif %}{% endfor %}
 {% if autorArtikel.length %}
-<section class="fgd-section fgd-section--white" id="artikel" aria-labelledby="artikel-titel">
-  <div class="fgd-wrap">
-    <div class="fgd-head">
-      <p class="fgd-kicker">Im Blog</p>
-      <h2 id="artikel-titel">Artikel von {{ kontakte[autorKey].name }}</h2>
-    </div>
-    <div class="fgd-blog-cards">
-      {% for p in autorArtikel %}
-      <a class="fgd-blog-card" href="{{ p.url }}">
-        <span class="fgd-blog-card-bild"><img src="{{ p.slug | blogThumb }}" alt="{{ p.lead.alt }}" width="720" height="480" loading="lazy" decoding="async"></span>
-        <span class="fgd-blog-card-body">
-          <span class="fgd-blog-card-meta"><b>{{ p.katLabel | safe }}</b>{{ p.minuten }} Min. Lesezeit</span>
-          <strong>{{ p.titel }}</strong>
-          <span class="fgd-blog-card-text">{{ p.kurz }}</span>
-        </span>
-      </a>
-      {% endfor %}
+<section class="fgs-section" id="artikel" aria-labelledby="artikel-titel">
+  <div class="fgs-wrap fgs-cols">
+    <div class="fgs-cols-head"><h2 id="artikel-titel">Artikel von {{ kontakte[autorKey].name }}</h2></div>
+    <div class="fgs-cols-body">
+      <ul class="fgs-points fgs-points--first fgs-autor-artikel" role="list">
+        {%- for p in autorArtikel %}
+        <li>
+          <p class="fgs-small"><time datetime="{{ p.datePublished }}">{{ p.datePublished | deDate }}</time></p>
+          <h3><a href="{{ p.url }}">{{ p.titel }}</a></h3>
+          <p>{{ p.kurz | safe }}</p>
+        </li>
+        {%- endfor %}
+      </ul>
     </div>
   </div>
 </section>
