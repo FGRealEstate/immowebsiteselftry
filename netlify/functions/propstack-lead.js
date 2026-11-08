@@ -73,12 +73,20 @@ exports.handler = async function (event) {
     const formular = `propstack-lead (${mapLandingpageType(lead.concernType)})`;
     const prot = zustellung.protokoll(api, formular, requestId);
 
+    // VORÜBERGEHEND, Update 48 §3 (Live-Formulartest 08.11.2026): Beim Namen „TEST Mango Rückfall“ wird Propstack übersprungen,
+    // damit die Rückfall-Mail einmal live ausgelöst wird (Ablauf wie Update 32). Wird direkt nach dem Test wieder entfernt.
+    const rueckfallTest = `${lead.firstName} ${lead.lastName}`.replace(/\s+/g, " ").trim() === "TEST Mango Rückfall";
+
     let contactId = null;
-    try {
-      const contactResponse = await createContactWithFallback(apiKey, contactPayload, lead, note);
-      contactId = await prot.pruefen("Kontakt", getId(contactResponse, ["client", "contact", "data"]), { endpoint: "/contacts" });
-    } catch (error) {
-      prot.fehlgeschlagen("Kontakt", "/contacts", error);
+    if (rueckfallTest) {
+      prot.fehlgeschlagen("Kontakt", "/contacts", { name: "Testschalter Rückfall (Propstack übersprungen)" });
+    } else {
+      try {
+        const contactResponse = await createContactWithFallback(apiKey, contactPayload, lead, note);
+        contactId = await prot.pruefen("Kontakt", getId(contactResponse, ["client", "contact", "data"]), { endpoint: "/contacts" });
+      } catch (error) {
+        prot.fehlgeschlagen("Kontakt", "/contacts", error);
+      }
     }
 
     let propertyId = null;
