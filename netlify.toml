@@ -32,6 +32,14 @@
 [images]
   remote_images = ["https://images\\.propstack\\.de/.*"]
 
+# Update 52 §1 (09.11.2026): Kurzlink für den QR-Code auf Timons Flyer. Zählt jeden Aufruf (nur Datum und Uhrzeit)
+# und leitet mit 302 auf die Bewertungsseite, Formular #anfrage (netlify/functions/qr-flyer.js). Bleibt live, solange
+# die Flyer im Umlauf sind. Die Testumgebung hat dafür eine eigene Funktion (test-env/functions/qr/flyer.js).
+[[redirects]]
+  from = "/qr/flyer"
+  to = "/.netlify/functions/qr-flyer"
+  status = 200
+
 # Update 44 §2.4 (07.11.2026): Sicherheits-Header. HSTS ein Jahr mit Subdomains (bekannte Subdomains: www bei Netlify,
 # autodiscover bei Outlook, beide HTTPS). Kamera, Mikrofon und Standort aus (die Seite nutzt keins davon).
 # CSP erst nur als Report-only: Meldungen gehen an netlify/functions/csp-bericht.js (Netlify Blobs, Store „csp-berichte“,
