@@ -73,11 +73,31 @@ module.exports = function(eleventyConfig) {
   const PROPSTACK_FOTO = /^https:\/\/images\.propstack\.de\//;
   const imageCdn = (url) => process.env.NETLIFY === "true" && process.env.FG_BILD_CDN !== "aus" && PROPSTACK_FOTO.test(String(url || ""));
   const cdnFoto = (url, w) => `/.netlify/images?url=${encodeURIComponent(url)}&w=${w}&q=75`;
-  eleventyConfig.addFilter("propstackFoto", (url, w = 1200) => (imageCdn(url) ? cdnFoto(url, w) : url));
+  // Update 49 §2 (09.11.2026): Fotos, die der Build schon aufbereitet hat (scripts/propstack-bilder.js), kommen von der eigenen
+  // Seite: src ist das JPEG in 1600 px, srcset die WebP-Reihe; der Transform „propstack-picture“ ergänzt AVIF und WebP als
+  // <source>. Fotos, die (noch) nicht aufbereitet sind, laufen weiter über das Netlify Image CDN bzw. als Original.
+  const bilder = require("./scripts/propstack-bilder.js");
+  eleventyConfig.addFilter("propstackFoto", (url, w = 1200) => { const e = bilder.eintrag(url); return e ? bilder.jpegUrl(e) : imageCdn(url) ? cdnFoto(url, w) : url; });
   // Update 23 B6: Vorschaubild fürs Teilen als JPG 1200 × 630 (mittig zugeschnitten) über dasselbe CDN; absolute Adresse, weil
   // WhatsApp und LinkedIn sie von außen abrufen. Außerhalb von Netlify bleibt die Originaladresse.
   eleventyConfig.addFilter("propstackOg", (url) => (imageCdn(url) ? `https://fg-realestate.de/.netlify/images?url=${encodeURIComponent(url)}&w=1200&h=630&fit=cover&fm=jpg&q=75` : url));
-  eleventyConfig.addFilter("propstackSrcset", (url, breiten = [480, 800, 1200, 1600]) => (imageCdn(url) ? breiten.map((w) => `${cdnFoto(url, w)} ${w}w`).join(", ") : ""));
+  eleventyConfig.addFilter("propstackSrcset", (url, breiten = [480, 800, 1200, 1600]) => { const e = bilder.eintrag(url); return e ? bilder.srcset(e, "webp") : imageCdn(url) ? breiten.map((w) => `${cdnFoto(url, w)} ${w}w`).join(", ") : ""; });
+  // Update 49 §2: <img> mit aufbereitetem Propstack-Foto als <picture>: AVIF zuerst, dann WebP, das <img> behält das JPEG
+  // als Rückfall und alle übrigen Merkmale (Klassen, loading, fetchpriority, data-*). display: contents, damit das Bild im
+  // Layout bleibt, wo es war (Galerie, Kacheln). Ohne sizes gilt wie bisher 100vw.
+  const PS_IMG = new RegExp(`<img\\b[^>]*\\ssrc="${bilder.URL_PFAD}/[^"]+\\.jpg"[^>]*>`, "g");
+  eleventyConfig.addTransform("propstack-picture", function (content) {
+    if (!String(this.page && this.page.outputPath || "").endsWith(".html") || !content.includes(`src="${bilder.URL_PFAD}/`)) return content;
+    return content.replace(PS_IMG, (img) => {
+      const set = (img.match(/\ssrcset="([^"]*)"/) || [])[1];
+      if (!set || !/\.webp\s/.test(set)) return img;
+      const sizes = (img.match(/\ssizes="([^"]*)"/) || [])[1] || "100vw";
+      const ohne = img.replace(/\ssrcset="[^"]*"/, "").replace(/\ssizes="[^"]*"/, "");
+      const avif = set.replace(/\.webp(\s)/g, ".avif$1");
+      return `<picture class="fgs-ps" style="display:contents"><source type="image/avif" srcset="${avif}" sizes="${sizes}"><source type="image/webp" srcset="${set}" sizes="${sizes}">${ohne}</picture>`;
+    });
+  });
+  eleventyConfig.on("eleventy.after", ({ dir }) => bilder.kopieren(dir.output));
   // Exposé-Texte aus Propstack kommen meist als reiner Text mit Leerzeilen und „- “-Listen.
   // Für die Objektseiten: Leerzeile = neuer Absatz, „- “/„• “-Zeilen = Liste. Text mit HTML-Absätzen bleibt, wie er ist.
   eleventyConfig.addFilter("exposeText", (value) => {

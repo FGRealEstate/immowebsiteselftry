@@ -2986,6 +2986,10 @@ section.fgs-band .fgs-band-text::before { background: radial-gradient(closest-si
 .fgs-gallery-stage img { pointer-events: none; }
 .fgs-gallery-stage img.is-active { pointer-events: auto; z-index: 1; }
 [data-gallery] .fgs-gallery-stage img.is-active { cursor: zoom-in; }
+/* Update 49 §2 (09.11.2026): Die Bilder liegen deckungsgleich übereinander; unsichtbar, aber im Bild, lädt der Browser sie
+   trotz loading="lazy" sofort. Bis die Galerie sie braucht (Anfassen, Wechsel: dann setzt das Skript loading="eager" für das
+   gezeigte Bild und seine Nachbarn), stehen sie deshalb nicht im Layout. */
+[data-gallery] .fgs-gallery-stage img[loading="lazy"]:not(.is-active) { display: none; }
 .fgs-gallery[data-gallery]:focus-visible { outline: 2px solid var(--fgs-gold); outline-offset: 4px; }
 .fgs-gallery-all, .fgs-gallery-tag { position: absolute; z-index: 2; font: 500 14px/1.2 var(--fgs-sans); letter-spacing: .01em; border-radius: 999px; }
 /* unten links: unten rechts liegt der Knopf „F&G Assistent“ */

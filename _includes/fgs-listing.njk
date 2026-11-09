@@ -54,7 +54,7 @@
 {% if pics and pics.length %}
 <div class="fgs-gallery" data-gallery tabindex="0" role="region" aria-roledescription="Bildergalerie" aria-label="Bilder von {{ name }}">
   <div class="fgs-media fgs-gallery-stage">
-    {% for image in pics %}{% set _plan = plaene and (image in plaene) %}<img src="{{ image | propstackFoto(1600) }}"{% set _set = image | propstackSrcset %}{% if _set %} srcset="{{ _set }}"{% endif %}{% set _gross = image | propstackSrcset([800, 1200, 1600, 2400]) %}{% if _gross %} data-gross="{{ _gross }}"{% endif %}{% if _plan %} data-grundriss{% endif %} alt="{{ name }}, {% if _plan %}Grundriss, {% endif %}Bild {{ loop.index }} von {{ pics.length }}" width="1600" height="1000" decoding="async"{% if loop.first %} class="is-active{% if cover and cover.url == image and (cover.fokus or cover.zoom) %} fgs-gallery-cover" style="{% if cover.fokus %}--fgs-pos: {{ cover.fokus }};{% endif %}{% if cover.zoom %} --fgs-zoom: {{ cover.zoom }};{% endif %}{% endif %}" fetchpriority="high"{% else %} loading="lazy"{% endif %}>{% endfor %}
+    {% for image in pics %}{% set _plan = plaene and (image in plaene) %}<img src="{{ image | propstackFoto(1600) }}"{% set _set = image | propstackSrcset %}{% if _set %} srcset="{{ _set }}" sizes="100vw"{% endif %} data-original="{{ image }}"{% if _plan %} data-grundriss{% endif %} alt="{{ name }}, {% if _plan %}Grundriss, {% endif %}Bild {{ loop.index }} von {{ pics.length }}" width="1600" height="1000" decoding="async"{% if loop.first %} class="is-active{% if cover and cover.url == image and (cover.fokus or cover.zoom) %} fgs-gallery-cover" style="{% if cover.fokus %}--fgs-pos: {{ cover.fokus }};{% endif %}{% if cover.zoom %} --fgs-zoom: {{ cover.zoom }};{% endif %}{% endif %}" fetchpriority="high"{% else %} loading="lazy"{% endif %}>{% endfor %}
     {%- if plaene and plaene.length %}<span class="fgs-gallery-tag" data-gallery-tag{% if not (pics[0] in plaene) %} hidden{% endif %}>Grundriss</span>{% endif %}
     {%- if pics.length > 1 %}<button type="button" class="fgs-gallery-all" data-gallery-open>Alle Bilder ansehen ({{ pics.length }})</button>{% endif %}
   </div>
@@ -90,11 +90,15 @@
   var tag = g.querySelector('[data-gallery-tag]');
   var i = 0;
   var istPlan = function (k) { return slides[k].hasAttribute('data-grundriss'); };
+  // Update 49 §2: Nachbarbilder erst laden, wenn jemand die Galerie anfasst oder wechselt (siehe fg-system.css).
+  var vorladen = function (k) { if (n > 1) [k + 1, k - 1].forEach(function (m) { slides[(m + n) % n].loading = 'eager'; }); };
+  ['pointerenter', 'pointerdown', 'focusin'].forEach(function (typ) { g.addEventListener(typ, function () { vorladen(i); }, { once: true, passive: true }); });
   var show = function (k) {
     slides[i].classList.remove('is-active');
     i = (k + n) % n;
     slides[i].loading = 'eager';
     slides[i].classList.add('is-active');
+    vorladen(i);
     if (cur) cur.textContent = i + 1;
     if (tag) tag.hidden = !istPlan(i);
   };
@@ -167,11 +171,18 @@
       }
     }, { passive: true });
   };
+  // Update 49 §2: Die Großansicht zeigt sofort das Galeriebild (schon geladen oder 1600 px) und tauscht es gegen das
+  // Propstack-Original, sobald dieses geladen ist. Das Original lädt nur für das Bild, das gerade offen ist.
   var setzen = function (img, k) {
     var s = slides[k];
-    var gross = s.getAttribute('data-gross');
-    if (gross) { img.sizes = '100vw'; img.srcset = gross; } else { img.removeAttribute('srcset'); }
-    img.src = s.getAttribute('src');
+    var original = s.getAttribute('data-original');
+    img.removeAttribute('srcset');
+    img.src = s.currentSrc || s.getAttribute('src');
+    if (original && original !== img.src) {
+      var o = new Image();
+      o.onload = function () { if (slides[j] === s) img.src = original; };
+      o.src = original;
+    }
   };
   var zeigen = function (k) {
     j = (k + n) % n;
@@ -179,8 +190,8 @@
     lbImg.alt = slides[j].alt;
     lbNr.textContent = j + 1;
     lbTag.hidden = !istPlan(j);
-    // Nachbarbilder vorladen
-    [j + 1, j - 1].forEach(function (m) { if (n > 1) setzen(new Image(), (m + n) % n); });
+    // Nachbarbilder vorladen: nur die Galeriefassung (klein), nicht das Original
+    [j + 1, j - 1].forEach(function (m) { if (n > 1) slides[(m + n) % n].loading = 'eager'; });
   };
   var oeffnen = function (k, von) {
     if (!lb) bauen();

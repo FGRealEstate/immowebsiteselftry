@@ -24,6 +24,10 @@
 [[plugins]]
   package = "./netlify/plugins/marktberichte"
 
+# Update 49 §2: Cache der aufbereiteten Propstack-Fotos zwischen den Builds (.cache/propstack-bilder, scripts/propstack-bilder.js).
+[[plugins]]
+  package = "./netlify/plugins/bild-cache"
+
 # Update 7 §4: Propstack-Fotos über das Netlify Image CDN (/.netlify/images?url=…), Filter propstackFoto in .eleventy.js.
 [images]
   remote_images = ["https://images\\.propstack\\.de/.*"]

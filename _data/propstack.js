@@ -1660,6 +1660,10 @@ module.exports = async function () {
         references.sort((a, b) => String(b.sold_date || "").localeCompare(String(a.sold_date || "")) || a.title.localeCompare(b.title, "de"));
         console.log("PROPSTACK REFERENZEN (Status Verkauft):", references.length);
 
+        // Update 49 §2: Fotos einmal laden und als AVIF, WebP und JPEG aufbereiten (Cache .cache/propstack-bilder, wirft nie).
+        const bilder = require("../scripts/propstack-bilder.js");
+        await bilder.aufbereiten(bilder.adressenAus({ properties, projects, references }));
+
         return {
             properties,
             units: properties,
