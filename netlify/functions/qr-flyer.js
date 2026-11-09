@@ -7,7 +7,8 @@
  * Gezählt wird jeder GET-Aufruf, gespeichert nur Datum und Uhrzeit (UTC). Keine IP-Adresse, kein User-Agent,
  * keine Personendaten. Ablage: Netlify Blobs, Store „qr-aufrufe“, ein Schlüssel je Aufruf
  * („flyer/<ISO-Zeit>-<Zufall>“). Der Store ist „eventual“; weil jeder Aufruf einen eigenen Schlüssel bekommt,
- * überschreiben sich gleichzeitige Aufrufe nicht. HEAD (Link-Prüfer) bekommt die Weiterleitung, zählt aber nicht.
+ * überschreiben sich gleichzeitige Aufrufe nicht. HEAD zählt live trotzdem mit: Netlify reicht HEAD als GET an die
+ * Funktion weiter (gemessen 09.11.2026); der HEAD-Zweig unten greift nur, wo HEAD wirklich als HEAD ankommt.
  * Ein Fehler beim Zählen hält die Weiterleitung nie auf; nach 1,5 Sekunden wird ohne Zählung weitergeleitet.
  * Zählen: node ~/.claude/fg-zeiten/werkzeuge/u52/qr-zaehlen.js (liest nur), Zeile im Freitags-Update an Timon.
  *
