@@ -151,13 +151,13 @@ function kopieren(ausgabe) {
   }
 }
 
-/** Alle Adressen, die die Seiten zeigen: Galerien der Angebote, Projekte und Projekteinheiten, Titelbilder (auch gewählte), Referenzen. */
+/** Alle Adressen, die die Seiten zeigen: Galerien der Angebote, Projekte, Projekteinheiten und Referenzen, Titelbilder (auch gewählte). */
 function adressenAus(daten) {
   const out = [];
   const objekt = (o) => { if (!o) return; if (o.main_image) out.push(o.main_image); if (o.cover && o.cover.url) out.push(o.cover.url); (o.gallery || []).forEach((u) => out.push(u)); };
   (daten.properties || []).forEach(objekt);
   (daten.projects || []).forEach((p) => { objekt(p); (p.units || []).forEach(objekt); });
-  (daten.references || []).forEach((r) => { if (r && r.main_image) out.push(r.main_image); });
+  (daten.references || []).forEach(objekt);  // Update 50 §1: Referenzen zeigen alle Fotos der früheren Angebotsseite
   return out;
 }
 

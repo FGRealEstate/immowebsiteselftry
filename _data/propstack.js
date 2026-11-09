@@ -935,13 +935,41 @@ function findProjectKontakt(project, units, cityName, districtName, area) {
     return kontakte.length === 1 ? kontakte[0] : "lennart";
 }
 
-/* Referenzen (Update 4, 3.2): verkaufte Objekte für /referenzen/. Propstack-Doku („Objekt-Stati lesen“): „Ein Objekt
-   hat in der Regel immer einen Status, z.B. "Verfügbar" oder "Verkauft".“ Der Name kommt wie bei „Vermarktung“ aus
-   getStatusName(). Heißt der Status im Konto anders, PROPSTACK_REFERENZ_STATUS setzen (Namen kommagetrennt).
+/* Referenzen (Update 4, 3.2; Update 50 §1, Vertrag Anlage A 1.4): Ein Objekt mit dem Status „Verkauft“ oder „Vermietet“ wird
+   beim täglichen Build zur Referenz. Es behält seine Adresse /angebote/<slug>/ (referenz-detail.njk) und steht auf /referenzen/.
+   Der Name kommt wie bei „Vermarktung“ aus getStatusName(). F&Gs Propstack hat am 09.11.2026 keinen dieser Stati (gelesen:
+   Akquise, Vorbereitung, Vermarktung, Reserviert, Abgeschlossen, Offmarket). Heißt der Status anders, PROPSTACK_REFERENZ_STATUS
+   setzen (Namen kommagetrennt, z. B. „Abgeschlossen“). Das Etikett ergibt sich aus dem Namen, sonst aus der Vermarktungsart.
    Archivierte Objekte liefert der Abruf nicht (API-Standard ohne archived=-1). Bewusst ohne Preis, Miete, Rendite,
    Beschreibung, Straße und Werbetitel: Der Titel wird aus Objektart und Ort gebildet. */
 function referenceStatusNames() {
-    return String(process.env.PROPSTACK_REFERENZ_STATUS || "Verkauft").split(",").map(normalizeText).filter(Boolean);
+    return String(process.env.PROPSTACK_REFERENZ_STATUS || "Verkauft,Vermietet").split(",").map(normalizeText).filter(Boolean);
+}
+
+function referenceLabel(rawUnit, marketingType) {
+    const status = normalizeText(getStatusName(rawUnit));
+    if (status.includes("vermietet")) return "Vermietet";
+    if (status.includes("verkauft")) return "Verkauft";
+    return marketingType === "Miete" ? "Vermietet" : "Verkauft";
+}
+
+/* Update 50 §1.4: Testdaten nur für die Testumgebung. FG_TESTDATEN_REFERENZ zeigt auf eine JSON-Datei
+   [{ "kopie_von": <Einheit-ID>, "status": "Verkauft" }]. Der Build nimmt eine Kopie dieser live vermarkteten Einheit und
+   setzt in der Kopie den Status; in Propstack ändert sich nichts. Auf Netlify (NETLIFY gesetzt) wird die Variable nie gelesen. */
+function testdatenReferenz(rawUnits) {
+    const datei = process.env.FG_TESTDATEN_REFERENZ;
+    if (!datei || process.env.NETLIFY) return rawUnits;
+    let eintraege = [];
+    try { eintraege = JSON.parse(require("fs").readFileSync(datei, "utf8")); } catch (error) { console.log("TESTDATEN REFERENZ: Datei nicht lesbar:", error.message); return rawUnits; }
+    let n = 0;
+    const neu = rawUnits.map((unit) => {
+        const e = (eintraege || []).find((x) => unit && String(x.kopie_von) === String(unit.id));
+        if (!e) return unit;
+        n++;
+        return { ...unit, status: e.status, property_status: { name: e.status }, property_status_id: null };
+    });
+    console.log("TESTDATEN REFERENZ: Kopien mit geändertem Status:", n);
+    return neu;
 }
 
 function isSoldObject(unit) {
@@ -955,12 +983,13 @@ function buildReference(rawUnit) {
         ? `${unit.district}, ${unit.location}`
         : (unit.district || unit.location);
     const title = `${unit.property_type || "Immobilie"}${place ? ` in ${place}` : ""}`;
-    const slug = slugify(`${title}-${unit.id}`);
     const soldDate = textValue(rawUnit.sold_date);
+    // Update 50 §1: Adresse und Slug bleiben die der Angebotsseite (buildUnit), damit Links und Suchtreffer weiter funktionieren.
     return {
         id: unit.id,
-        slug,
-        url: `/referenzen/${slug}/`,
+        slug: unit.slug,
+        url: unit.url,
+        label: referenceLabel(rawUnit, unit.marketing_type),
         title,
         place,
         location: unit.location,
@@ -974,6 +1003,10 @@ function buildReference(rawUnit) {
         sold_date: soldDate,
         sold_year: soldDate && /^\d{4}/.test(soldDate) ? soldDate.slice(0, 4) : null,
         main_image: unit.main_image,
+        gallery: unit.gallery,
+        grundrisse: unit.grundrisse,
+        images: unit.images,
+        ortsteil: unit.ortsteil,
         area: unit.area,
         preisart: unit.preisart,
         kontakt: unit.kontakt
@@ -1596,13 +1629,15 @@ module.exports = async function () {
             rawUnits = uniqueById([...rawUnits, ...nestedUnits, ...fetchedProjectUnits]);
         }
 
+        rawUnits = testdatenReferenz(rawUnits);
+
         const standaloneProperties = [];
         const projectUnitsByKey = new Map();
         const references = [];
 
         for (const rawUnit of rawUnits) {
             if (rawUnit && angebotsschutzGreift(rawUnit, "Einheit")) continue;
-            if (rawUnit && rawUnit.archived !== true && isSoldObject(rawUnit)) references.push(buildReference(rawUnit));
+            if (rawUnit && rawUnit.archived !== true && isSoldObject(rawUnit)) { references.push(buildReference(rawUnit)); continue; }
             if (!rawUnit || rawUnit.archived === true || !isPublicMarketingObject(rawUnit)) continue;
 
             const unit = buildUnit(rawUnit);
@@ -1639,7 +1674,7 @@ module.exports = async function () {
 
         projects.sort((a, b) => a.name.localeCompare(b.name, "de"));
         standaloneProperties.sort((a, b) => String(a.title).localeCompare(String(b.title), "de"));
-        await titelbilder([...standaloneProperties, ...projects, ...projects.flatMap((project) => project.units)]);
+        await titelbilder([...standaloneProperties, ...projects, ...projects.flatMap((project) => project.units), ...references]);
 
         const projectProperties = projects.flatMap((project) => project.units.map((unit) => ({
             ...unit,
@@ -1658,7 +1693,7 @@ module.exports = async function () {
         console.log("PROPSTACK PROJEKTEINHEITEN:", projectProperties.length);
         // Neueste Verkäufe zuerst (sold_date ist ein Sortierfeld der API), ohne Datum nach Titel
         references.sort((a, b) => String(b.sold_date || "").localeCompare(String(a.sold_date || "")) || a.title.localeCompare(b.title, "de"));
-        console.log("PROPSTACK REFERENZEN (Status Verkauft):", references.length);
+        console.log("PROPSTACK REFERENZEN (Status " + referenceStatusNames().join(" / ") + "):", references.length);
 
         // Update 49 §2: Fotos einmal laden und als AVIF, WebP und JPEG aufbereiten (Cache .cache/propstack-bilder, wirft nie).
         const bilder = require("../scripts/propstack-bilder.js");

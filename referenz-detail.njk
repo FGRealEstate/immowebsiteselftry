@@ -8,50 +8,50 @@ pagination:
   data: propstack.references
   size: 1
   alias: ref
-permalink: "referenzen/{{ ref.slug }}/index.html"
+permalink: "angebote/{{ ref.slug }}/index.html"
 eleventyComputed:
-  title: "{{ ref.title }}: verkauft | Fischer & Geserich Real Estate"
-  description: "Referenz von Fischer & Geserich: {{ ref.title }}, verkauft{% if ref.sold_year %} {{ ref.sold_year }}{% endif %}. Eckdaten ohne Kaufpreis und die Marktseite zum Gebiet."
+  title: "{{ ref.title }}: {{ ref.label | lower }} | Fischer & Geserich Real Estate"
+  description: "Referenz von Fischer & Geserich: {{ ref.title }}, {{ ref.label | lower }}{% if ref.sold_year %} {{ ref.sold_year }}{% endif %}. Eckdaten und Fotos ohne Preis, dazu die Marktseite zum Gebiet."
   canonicalPath: "{{ ref.url }}"
   ogImage: "{{ (ref.main_image | propstackOg | safe) if ref.main_image else '' }}"
   ogImageAlt: "{% if ref.main_image %}{{ ref.title }}{% endif %}"
 ---
-{#- Referenzseite (Update 4, 3.2): ein verkauftes Objekt aus Propstack (propstack.references), Etikett „Verkauft“,
-    ohne Preis, Miete, Rendite, Beschreibung und Straße. Gebietsblock verlinkt die passende Gebietsseite.
-    Ansprechpartner wie auf der Objektseite: Leipzig und Dresden → Timon, sonst Lennart.
-    CP4 (28.10.2026, Design-Sprint-Brief 5.4): Design-System über fgs-listing.njk, S8 als Abschluss. „Verkauft“ steht als Kicker
-    und als Status rechts statt als Etikett; Symbole entfallen (Brief 3.7). Texte und JSON-LD unverändert.
-    CP5 (28.10.2026, Brief 5.5): Bild über die volle Breite, S6 mit Verkaufsjahr, Fläche, Zimmer, Baujahr, Grundstück, Gebietsblock
-    mit Überschrift links; die Seitenleiste mit der Ansprechpartner-Karte entfällt, Telefon und Porträt stehen im S8.
-    Nicht gebaut, solange freigaben.referenzen aus ist. -#}
-{% from "fgs-listing.njk" import listingHead, gallery, listingFacts, areaBlock %}
-{% from "fgs-macros.njk" import closing with context %}
+{#- Referenzseite (Update 4, 3.2; Update 50 §1, Vertrag Anlage A 1.4): Ein Objekt mit Status „Verkauft“ oder „Vermietet“
+    (propstack.references) behält die Adresse seiner Angebotsseite /angebote/<slug>/ und wird dort zur Referenz:
+    Etikett „Verkauft“ oder „Vermietet“, Objektart, Lage, Fläche, Zimmer, Gebietsblock und alle Fotos der Angebotsseite.
+    Kein Preis, keine Miete, keine Rendite, keine Beschreibung, keine Straße, kein Anfrageformular; stattdessen der Link
+    „Ähnliche Immobilie verkaufen? Kostenlose Bewertung“. Strukturierte Daten: WebPage statt RealEstateListing.
+    Aufbau wie die Angebotsseite (propstack-detail.njk): Galerie über die volle Breite, darunter Titel und Eckdaten.
+    Ansprechpartner wie auf der Objektseite: aus _data/propstack.js (findKontakt), sonst Leipzig und Dresden → Timon, sonst Lennart. -#}
+{% from "fgs-listing.njk" import listingTitle, gallery, galleryScript, listingFacts, areaBlock %}
+{% from "fgs-macros.njk" import textlink, closing with context %}
 {% set loc = (ref.location or "") | lower %}
-{#- Teil B 4 (31.10.2026): Ansprechpartner aus _data/propstack.js (findKontakt), sonst die bisherige Ortsregel #}
 {% set kontaktKey = ref.kontakt or ("timon" if ("leipzig" in loc or "dresden" in loc) else "lennart") %}
 {% set pageUrl = "https://fg-realestate.de" + ref.url %}
 
-{% set fakten = [] %}
-{% if ref.sold_year %}{% set fakten = fakten.concat([{ wert: ref.sold_year, label: "Verkauft" }]) %}{% endif %}
+{% set fakten = [{ wert: ref.label ~ ((" " ~ ref.sold_year) if ref.sold_year else ""), label: "Status" }] %}
+{% if ref.property_type %}{% set fakten = fakten.concat([{ wert: ref.property_type, label: "Objektart" }]) %}{% endif %}
 {% if ref.living_space %}{% set fakten = fakten.concat([{ wert: ref.living_space, label: "Wohnfläche" }]) %}{% endif %}
 {% if ref.rooms %}{% set fakten = fakten.concat([{ wert: ref.rooms, label: "Zimmer" }]) %}{% endif %}
-{% if ref.construction_year %}{% set fakten = fakten.concat([{ wert: ref.construction_year, label: "Baujahr" }]) %}{% endif %}
 {% if ref.plot_area %}{% set fakten = fakten.concat([{ wert: ref.plot_area, label: "Grundstück" }]) %}{% endif %}
+{% if ref.construction_year %}{% set fakten = fakten.concat([{ wert: ref.construction_year, label: "Baujahr" }]) %}{% endif %}
 
-{{ listingHead({
-  crumbs: [{ href: "/referenzen/", label: "Referenzen" }],
-  current: ref.title,
-  kicker: "Referenz · Verkauft",
-  titel: ref.title,
-  meta: [ref.place, ref.property_type] | select | join(" · "),
-  buttons: [{ href: "/immobilienbewertung/", label: "Kostenlose Bewertung" }, { href: "/referenzen/", label: "Alle Referenzen" }]
-}) }}
-
-<section class="fgs-section fgs-listing" aria-label="Bild und Lage">
+<section class="fgs-listing-top" aria-labelledby="seitentitel">
+  {{ gallery(ref.gallery, ref.title, "Zu dieser Referenz gibt es keine Fotos", ref.cover, ((ref.ortsteil or ref.location or " ") if ref.cover_design else false), ref.grundrisse) }}
   <div class="fgs-wrap">
-    {% if ref.main_image %}{{ gallery([ref.main_image], ref.title, "") }}{% endif %}
-    {% if fakten.length %}{{ listingFacts(fakten, ref.title) }}{% endif %}
+    {{ listingTitle({
+      kicker: "Referenz · " ~ ref.label,
+      titel: ref.title,
+      meta: ref.place or "",
+      buttons: [{ href: "/immobilienbewertung/", label: "Kostenlose Bewertung" }, { href: "/referenzen/", label: "Alle Referenzen" }]
+    }) }}
+    {{ listingFacts(fakten, ref.title) }}
+    <p class="fgs-ref-frage">Ähnliche Immobilie verkaufen? {{ textlink("/immobilienbewertung/", "Kostenlose Bewertung") }}</p>
+  </div>
+</section>
 
+<section class="fgs-section fgs-listing" aria-label="Lage und Markt">
+  <div class="fgs-wrap">
     {{ areaBlock(ref.area, "lage-markt", ref.preisart) }}
   </div>
 </section>
@@ -59,6 +59,8 @@ eleventyComputed:
 {% call closing({ kontakt: kontaktKey, satz: "Was ist Ihre Immobilie heute wert?", button: "bewertung" }) %}
   <p>Die Wertermittlung kostet Sie nichts und liegt meist noch am selben Tag vor. Danach entscheiden Sie in Ruhe, ob und wann Sie verkaufen.</p>
 {% endcall %}
+
+{{ galleryScript() }}
 
 <script type="application/ld+json">
 {

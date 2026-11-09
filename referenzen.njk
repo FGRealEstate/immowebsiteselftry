@@ -1,11 +1,11 @@
 ---
 layout: fgs-page.njk
 fgsHero: false
-title: "Referenzen: verkaufte Immobilien | Fischer & Geserich"
-permalink: referenzen/index.html
+title: "Referenzen: verkaufte und vermietete Immobilien | Fischer & Geserich"
 canonicalPath: /referenzen/
-description: "Immobilien, die Fischer & Geserich verkauft hat: Objektart, Lage und Eckdaten, ohne Kaufpreis. Mit Links zu den Marktseiten der Gebiete."
+description: "Immobilien, die Fischer & Geserich verkauft oder vermietet hat: Objektart, Lage und Eckdaten, ohne Preis. Mit Links zu den Marktseiten der Gebiete."
 # Update 4, 3.2: verkaufte Objekte aus Propstack (propstack.references, Status „Verkauft“), ohne Preis.
+# Update 50 §1: auch „Vermietet“. Die Seite entsteht erst mit der ersten Referenz (permalink in referenzen.11tydata.js), der Menülink mit ihr.
 # Ohne freigegebene Referenzen zeigt die Seite einen Hinweis, steht auf noindex und fehlt in der Sitemap (.eleventy.js).
 # CP4 (28.10.2026, Design-Sprint-Brief 5.4): Titelzeile ohne Foto, Karten aus fgs-offer-card.njk. Entfallen: Kicker über der H2
 # (Update 6 §3.0), Linkliste unten (pg.related, Brief 3.7).
@@ -13,9 +13,9 @@ eleventyComputed:
   robots: "{% if not (propstack.references and propstack.references.length) %}noindex, follow{% endif %}"
 pg:
   crumb: "Referenzen"
-  kicker: "Verkauft"
-  h1: "Referenzen: Immobilien, die wir verkauft haben"
-  intro: "Hier zeigen wir Objekte, die wir verkauft haben, mit Objektart, Lage und Eckdaten, ohne Kaufpreis. Jede Referenz verweist auf die Marktseite ihres Gebiets."
+  kicker: "Verkauft und vermietet"
+  h1: "Referenzen: Immobilien, die wir verkauft und vermietet haben"
+  intro: "Hier zeigen wir Objekte, die wir verkauft oder vermietet haben, mit Objektart, Lage und Eckdaten, ohne Preis. Jede Referenz verweist auf die Marktseite ihres Gebiets."
   buttons:
     - { label: "Kostenlose Bewertung", href: "/immobilienbewertung/" }
     - { label: "Immobilie verkaufen", href: "/verkaufen.html", line: true }
@@ -36,7 +36,7 @@ pg:
     {% if refs.length %}
     <div class="fgs-offer-group">
       <div class="fgs-offer-head">
-        <h2 id="referenzen-titel">Verkaufte Wohnungen und Häuser</h2>
+        <h2 id="referenzen-titel">Verkaufte und vermietete Immobilien</h2>
         <p class="fgs-small">{{ refs.length }} {{ "Referenz" if refs.length == 1 else "Referenzen" }}</p>
       </div>
       <div class="fgs-offer-grid">
@@ -56,7 +56,7 @@ pg:
   "@context": "https://schema.org",
   "@type": "ItemList",
   "@id": "https://fg-realestate.de/referenzen/#liste",
-  "name": "Referenzen von Fischer & Geserich: verkaufte Immobilien",
+  "name": "Referenzen von Fischer & Geserich: verkaufte und vermietete Immobilien",
   "isPartOf": { "@id": "https://fg-realestate.de/referenzen/#referenzen" },
   "numberOfItems": {{ refs.length }},
   "itemListElement": [

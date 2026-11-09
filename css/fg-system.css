@@ -1264,8 +1264,8 @@ button.fgs-link { border: 0; padding: 0 0 2px; cursor: pointer; background-color
 .fgs-invest .fgs-cols-body > .fgs-invest-fields, .fgs-invest .fgs-cols-body > .fgs-invest-results, .fgs-invest .fgs-cols-body > .fgs-invest-chart { margin-top: 40px; }
 .fgs-invest .fgs-note strong { color: var(--fgs-ink); font-weight: 500; }
 /* Update 7, Frage 27: Satz mit Textlink zur Ankaufsberatung am Ende des Investment-Checks */
-.fgs-invest-ankauf { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--fgs-line); }
-.fgs-invest-ankauf .fgs-link { margin-left: 4px; }
+.fgs-invest-ankauf, .fgs-ref-frage { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--fgs-line); }
+.fgs-invest-ankauf .fgs-link, .fgs-ref-frage .fgs-link { margin-left: 4px; }
 @media (max-width: 767px) {
   .fgs-credits thead { display: none; }
   .fgs-credits tr { display: block; padding: 16px 0; border-bottom: 1px solid var(--fgs-line); }

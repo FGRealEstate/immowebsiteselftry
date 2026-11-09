@@ -2,9 +2,8 @@
    false = Eleventy baut die Seiten nicht, sie fehlen in Sitemap, Menü und Fuß. Umschalten erst nach Freigabe.
    .eleventy.js liest diese Datei, die Vorlagen sehen sie als `freigaben`. */
 module.exports = {
-  // /referenzen/ und /referenzen/<objekt>/: nach dem Launch und nach Timons Antwort auf Frage 14.1
-  // (Zustimmung der Verkäufer). Ohne Schalter erschiene jedes Objekt mit Propstack-Status „Verkauft“.
-  referenzen: false,
+  // Referenzen: seit Update 50 §1 (09.11.2026) ohne Schalter. Ein Objekt mit Propstack-Status „Verkauft“ oder „Vermietet“
+  // wird beim Build zur Referenz unter seiner Angebotsadresse; /referenzen/ und der Menülink kommen mit der ersten.
   // /gewerbeimmobilien/ (Update 5, Abschnitt 4). Update 35 C1 (05.11.2026): erst nur Testumgebung (FG_FREIGABE_GEWERBE=1).
   // Update 44 §1.1 (07.11.2026): Jesu gibt frei, die Seite ist live.
   gewerbe: true,

@@ -1,7 +1,7 @@
 {#- Angebotskarten im Design-System (CP4, 28.10.2026). Gleiche Daten und Makronamen wie fgd-offer-card.njk:
     offerCard(o)     Einzelobjekt oder Projekteinheit; ohne Foto „Foto folgt“ hell mit feiner Linie (Update 7, Frage 28).
     projectCard(p)   Projekt, breit: Foto links (7 Spalten), Eckdaten rechts.
-    referenceCard(r) Verkauftes Objekt für /referenzen/: „Verkauft“ und Jahr, ohne Preis.
+    referenceCard(r) Verkauftes oder vermietetes Objekt für /referenzen/: Etikett („Verkauft“/„Vermietet“) und Jahr, ohne Preis.
     Ruhig wie die Karten der Startseite (S4): Foto 4:3, eine Zeile Einordnung, Titel in Marcellus, Preis, Eckdaten als Zeilen.
     Keine Etiketten auf dem Foto und keine Symbole (Brief 3.7). Die ganze Karte ist ein Link.
     Klasse offer-filter-card und die data-* Felder speisen den Filter auf /angebote.html (unverändert). -#}
@@ -58,7 +58,7 @@
   <a class="fgs-offer-link" href="{{ r.url }}">
     <span class="fgs-media fgs-offer-media">{% if r.main_image %}<img src="{{ r.main_image | propstackFoto }}"{% set _set = r.main_image | propstackSrcset %}{% if _set %} srcset="{{ _set }}"{% endif %} alt="{{ r.title }}" sizes="(min-width: 1100px) 380px, (min-width: 700px) 50vw, 100vw" width="1200" height="900" loading="lazy" decoding="async">
     {% else %}<span class="fgs-offer-placeholder" aria-hidden="true"></span>{% endif %}</span>
-    <p class="fgs-offer-meta">Verkauft{% if r.sold_year %} {{ r.sold_year }}{% endif %}</p>
+    <p class="fgs-offer-meta">{{ r.label or "Verkauft" }}{% if r.sold_year %} {{ r.sold_year }}{% endif %}</p>
     <h3 class="fgs-offer-title">{{ r.title }}</h3>
     <dl class="fgs-offer-facts">
       {% if r.living_space %}<div><dt>Wohnfläche</dt><dd>{{ r.living_space }}</dd></div>{% endif %}

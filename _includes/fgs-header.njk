@@ -28,7 +28,7 @@
             <div class="fgs-wrap fgs-panel-inner">
               {%- if group.areas %}
               <ul class="fgs-panel-tiles">
-                {%- for item in group.items %}
+                {%- for item in group.items | navFrei(propstack) %}
                 <li style="--i: {{ loop.index0 }}"><a class="fgs-panel-tile" href="{{ item | navHref }}"{% if item | navHref == currentUrl %} aria-current="page"{% endif %}>
                   {%- set rAvif = ('/images/home/' + regionBild[item.key] + '-480.webp 480w, /images/home/' + regionBild[item.key] + '-720.webp 720w') | avifSet %}<span class="fgs-media">{% if rAvif %}<picture class="fgs-pic"><source type="image/avif" srcset="{{ rAvif }}" sizes="(min-width: 1240px) 270px, 25vw">{% endif %}<img src="/images/home/{{ regionBild[item.key] }}-480.webp" srcset="/images/home/{{ regionBild[item.key] }}-480.webp 480w, /images/home/{{ regionBild[item.key] }}-720.webp 720w" sizes="(min-width: 1240px) 270px, 25vw" width="480" height="360" alt="" loading="lazy" decoding="async">{% if rAvif %}</picture>{% endif %}</span>
                   <span class="fgs-panel-tile-text"><span class="fgs-panel-tile-name">{{ item.label }}</span> <span class="fgs-panel-tile-count">{{ gebietZahl[item.key] }} Gebiete</span></span>
@@ -46,7 +46,7 @@
                 <span class="fgs-panel-card-text"><span class="fgs-panel-card-name">{{ group.label }}</span><span class="fgs-panel-card-more">Zur Übersicht <span class="fgs-panel-card-pfeil" aria-hidden="true">→</span></span></span>
               </a>
               <ul class="fgs-panel-links">
-                {%- for item in group.items %}
+                {%- for item in group.items | navFrei(propstack) %}
                 <li style="--i: {{ loop.index0 }}"><a href="{{ item | navHref }}"{% if item | navHref == currentUrl %} aria-current="page"{% endif %}><span class="fgs-panel-link-title">{{ item.label }}</span><span class="fgs-panel-link-note">{{ item.note }}</span></a></li>
                 {%- endfor %}
               </ul>
@@ -82,7 +82,7 @@
       <summary>{{ group.label }}</summary>
       {%- if group.areas %}
       <ul class="fgs-mobile-tiles">
-        {%- for item in group.items %}
+        {%- for item in group.items | navFrei(propstack) %}
         <li><a class="fgs-panel-tile" href="{{ item | navHref }}"{% if item | navHref == currentUrl %} aria-current="page"{% endif %}>
           {%- set rAvif = ('/images/home/' + regionBild[item.key] + '-480.webp 480w, /images/home/' + regionBild[item.key] + '-720.webp 720w') | avifSet %}<span class="fgs-media">{% if rAvif %}<picture class="fgs-pic"><source type="image/avif" srcset="{{ rAvif }}" sizes="(min-width: 768px) 360px, 45vw">{% endif %}<img src="/images/home/{{ regionBild[item.key] }}-480.webp" srcset="/images/home/{{ regionBild[item.key] }}-480.webp 480w, /images/home/{{ regionBild[item.key] }}-720.webp 720w" sizes="(min-width: 768px) 360px, 45vw" width="480" height="360" alt="" loading="lazy" decoding="async">{% if rAvif %}</picture>{% endif %}</span>
           <span class="fgs-panel-tile-text"><span class="fgs-panel-tile-name">{{ item.label }}</span> <span class="fgs-panel-tile-count">{{ gebietZahl[item.key] }} Gebiete</span></span>
@@ -91,7 +91,7 @@
       </ul>
       <ul><li><a class="fgs-mobile-all" href="{{ group.href }}"{% if group.href == currentUrl %} aria-current="page"{% endif %}>Alle {{ gebieteGesamt }} Gebiete auf einen Blick</a></li></ul>
       {%- else %}
-      <ul>{% for item in group.items %}<li><a href="{{ item | navHref }}"{% if item | navHref == currentUrl %} aria-current="page"{% endif %}>{{ item.label }}</a></li>{% endfor %}</ul>
+      <ul>{% for item in group.items | navFrei(propstack) %}<li><a href="{{ item | navHref }}"{% if item | navHref == currentUrl %} aria-current="page"{% endif %}>{{ item.label }}</a></li>{% endfor %}</ul>
       {%- endif %}
     </details>
     {%- endfor %}

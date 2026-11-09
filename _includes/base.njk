@@ -443,7 +443,7 @@
           {% if group.areas %}
           {#- Gebiete: jede Seite aus _data/serviceArea.js, je Region eine Spalte (Brief Gebietsseiten §7). -#}
           <div class="fgd-nav-panel fgd-nav-panel--areas" id="fgd-panel-{{ loop.index }}">
-            {% for item in group.items %}
+            {% for item in group.items | navFrei(propstack) %}
             <div class="fgd-nav-area fgd-nav-area--{{ item.key }}">
               <a class="fgd-nav-area-head" href="{{ item | navHref }}"{% if item | navHref == currentUrl %} aria-current="page"{% endif %}><strong>{{ item.label }}</strong><span>{{ item.note }}</span></a>
               {% if item.key == "berlin" %}
@@ -461,8 +461,8 @@
             <p class="fgd-nav-area-all"><a href="{{ group.href }}"{% if group.href == currentUrl %} aria-current="page"{% endif %}>Alle Gebiete auf einen Blick{{ icon("arrow") | safe }}</a><span>Finanzierungen begleiten wir deutschlandweit.</span></p>
           </div>
           {% else %}
-          <div class="fgd-nav-panel{% if group.towns or group.items.length > 5 %} fgd-nav-panel--wide{% endif %}" id="fgd-panel-{{ loop.index }}">
-            {% for item in group.items %}
+          <div class="fgd-nav-panel{% if group.towns or (group.items | navFrei(propstack)).length > 5 %} fgd-nav-panel--wide{% endif %}" id="fgd-panel-{{ loop.index }}">
+            {% for item in group.items | navFrei(propstack) %}
             <a href="{{ item | navHref }}"{% if item | navHref == currentUrl %} aria-current="page"{% endif %}><strong>{{ item.label }}</strong><span>{{ item.note }}</span></a>
             {% endfor %}
             {% if group.towns %}
@@ -512,7 +512,7 @@
         {% endfor %}
         {% else %}
         <ul>
-          {% for item in group.items %}<li><a href="{{ item | navHref }}"{% if item | navHref == currentUrl %} aria-current="page"{% endif %}>{{ item.label }}</a></li>{% endfor %}
+          {% for item in group.items | navFrei(propstack) %}<li><a href="{{ item | navHref }}"{% if item | navHref == currentUrl %} aria-current="page"{% endif %}>{{ item.label }}</a></li>{% endfor %}
         </ul>
         {% endif %}
         {% if group.towns %}

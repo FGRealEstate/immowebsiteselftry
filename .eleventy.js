@@ -1,10 +1,11 @@
 module.exports = function(eleventyConfig) {
   // Erst nach dem Launch (Update 5): ohne Freigabe werden diese Vorlagen nicht gebaut (_data/freigaben.js).
   const freigaben = require("./_data/freigaben.js");
-  if (!freigaben.referenzen) {
-    eleventyConfig.ignores.add("referenzen.njk");
-    eleventyConfig.ignores.add("referenz-detail.njk");
-  }
+  // Update 50 §1: Menüeinträge mit nurMitReferenzen (nav.js) nur, wenn es mindestens eine Referenz gibt.
+  eleventyConfig.addFilter("navFrei", (items, propstack) => (items || []).filter((item) =>
+    !item.nurMitReferenzen || (((propstack && propstack.references) || []).length > 0)));
+  // Update 50 §1: Referenzen hängen nicht mehr an einem Schalter. referenz-detail.njk baut je Referenz eine Seite unter der
+  // alten Angebotsadresse, /referenzen/ entsteht mit der ersten Referenz (referenzen.11tydata.js).
   if (!freigaben.gewerbe) eleventyConfig.ignores.add("gewerbeimmobilien.njk");
   // Existing helper used by the current website.
   eleventyConfig.addFilter("pad2", (value) => String(value).padStart(2, "0"));
@@ -436,8 +437,8 @@ module.exports = function(eleventyConfig) {
         loc: project.url,
         lastmod: new Date().toISOString().slice(0, 10)
       })),
-      // Referenzen (Update 4, 3.2): ohne freigegebene verkaufte Objekte steht /referenzen/ auf noindex und fehlt hier.
-      referenzen: freigaben.referenzen && (propstackData.references || []).length
+      // Referenzen (Update 4, 3.2; Update 50 §1): ohne Referenz gibt es /referenzen/ nicht, dann fehlt der Abschnitt.
+      referenzen: (propstackData.references || []).length
         ? [{ loc: "/referenzen/", lastmod: new Date().toISOString().slice(0, 10) }].concat(propstackData.references.map((reference) => ({
           loc: reference.url,
           lastmod: new Date().toISOString().slice(0, 10)

@@ -31,6 +31,8 @@ const menu = [
     href: "/verkaufen.html",
     items: [
       { label: "Immobilie verkaufen", note: "Bewertung, Vermarktung, Abschluss", href: "/verkaufen.html" },
+      // Update 50 §1: erscheint erst mit der ersten Referenz (Filter navFrei in .eleventy.js)
+      { label: "Referenzen", note: "Verkauft und vermietet", href: "/referenzen/", nurMitReferenzen: true },
       { label: "Kostenlose Bewertung", note: "Meist noch am selben Tag", href: valuation.href },
       { label: "Mehrfamilienhaus", note: "Verkauf und Ankauf", href: "/mehrfamilienhaus.html" },
       ...(gewerbe ? [{ label: "Gewerbeimmobilien", note: "Hallen, Logistik, Gewerbeflächen", href: "/gewerbeimmobilien/" }] : []),
