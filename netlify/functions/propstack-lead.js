@@ -3,6 +3,7 @@ const nachfrage = require("./_shared/nachfrage");
 const logsafe = require("./_shared/logsafe");
 const zustellung = require("./_shared/zustellung");
 const ansprechpartner = require("./_shared/ansprechpartner");
+const rueckfall = require("./_shared/rueckfall");
 const PROPSTACK_BASE_URL = require("./_shared/propstack-basis").basis();
 
 /**
@@ -97,6 +98,8 @@ exports.handler = async function (event) {
         ? await maybeCreateFinancingProperty(apiKey, lead, note)
         : await maybeCreateOwnerProperty(apiKey, contactId, lead, note);
       propertyId = await pruefeTeil(prot, "Objekt", "/units", propertyResult);
+      // Update 51 §7: Klappt erst ein Rückfall-Versuch, steht das im Log und im Blobs-Zähler für die wöchentliche Prüfung.
+      await rueckfall.melden(event, { formular, endpoint: "/units", ergebnis: propertyResult });
 
       const dealResult = await maybeCreateDealForOwnerObject(apiKey, contactId, propertyId, lead, note);
       await pruefeTeil(prot, "Deal", "/client_properties", dealResult);
@@ -640,11 +643,11 @@ async function maybeCreateOwnerProperty(apiKey, contactId, lead, note) {
   const attempts = [
     { label: "full property", payload: { property } },
     ...(property.condition && conditionLabel ? [{ label: "condition as label", payload: { property: { ...property, condition: conditionLabel } } }] : []),
-    { label: "without status", payload: { property: omitKeys(property, ["status_id", "property_status_id"]) } },
-    ...(property.condition ? [{ label: "without status and condition", payload: { property: omitKeys(property, ["status_id", "property_status_id", "condition"]) } }] : []),
-    { label: "without optional standard fields", payload: { property: omitKeys(property, ["status_id", "property_status_id", "base_rent", "net_cold_rent", "rent", "target_cold_rent", "service_charge", "annual_net_rent", "target_annual_net_rent", "rental_income_actual", "rented", "industrial_area", "balcony_area", "interior_quality", "condition", "last_modernization", "rs_category", "country"]) } },
-    { label: "without custom fields", payload: { property: omitKeys(property, ["partial_custom_fields", "interior_quality", "condition", "status_id", "property_status_id", "base_rent", "net_cold_rent", "rent", "target_cold_rent", "service_charge", "annual_net_rent", "target_annual_net_rent", "rs_category", "country"]) } },
-    { label: "without category", payload: { property: omitKeys(property, ["partial_custom_fields", "status_id", "property_status_id", "rs_category", "country"]) } },
+    { label: "without status", payload: { property: omitKeys(property, ["property_status_id"]) } },
+    ...(property.condition ? [{ label: "without status and condition", payload: { property: omitKeys(property, ["property_status_id", "condition"]) } }] : []),
+    { label: "without optional standard fields", payload: { property: omitKeys(property, ["property_status_id", "base_rent", "service_charge", "rental_income_actual", "rental_income_target", "rented", "industrial_area", "balcony_space", "interior_quality", "condition", "last_refurbishment", "rs_category", "country"]) } },
+    { label: "without custom fields", payload: { property: omitKeys(property, ["partial_custom_fields", "interior_quality", "condition", "property_status_id", "base_rent", "service_charge", "rental_income_target", "rs_category", "country"]) } },
+    { label: "without category", payload: { property: omitKeys(property, ["partial_custom_fields", "property_status_id", "rs_category", "country"]) } },
     {
       label: "minimal owner property",
       payload: {
@@ -678,14 +681,16 @@ async function maybeCreateOwnerProperty(apiKey, contactId, lead, note) {
   ];
 
   let lastError = null;
+  const fehlversuche = [];
 
-  for (const attempt of attempts) {
+  for (const [i, attempt] of attempts.entries()) {
     try {
       console.log("PROPERTY CREATE ATTEMPT:", attempt.label);
       const result = await propstackPost(apiKey, "/units", attempt.payload);
-      return { ok: true, attempt: attempt.label, result, used_payload: attempt.payload };
+      return { ok: true, attempt: attempt.label, versuch: i + 1, fehlversuche, result, used_payload: attempt.payload };
     } catch (error) {
       lastError = error;
+      fehlversuche.push(`${attempt.label}: ${logsafe.msg(error)}`);
       console.warn("PROPERTY CREATE ATTEMPT FAILED:", attempt.label, logsafe.msg(error));
     }
   }
@@ -707,7 +712,6 @@ async function buildOwnerPropertyPayload(apiKey, contactId, lead, note) {
   const city = lead.city || extractCity(lead.location) || undefined;
   const priceNumber = lead.concernType === "sell" ? lead.budgetNumber : undefined;
   const coldRent = numberOrNull(firstValue(details, ["seller-cold-rent", "seller_cold_rent", "cold_rent", "net_cold_rent"])) || (lead.concernType === "rent" ? lead.budgetNumber : undefined);
-  const coldRentTarget = numberOrNull(firstValue(details, ["seller-cold-rent-target", "seller_cold_rent_target", "target_cold_rent"]));
   const netRentCurrent = numberOrNull(firstValue(details, ["seller-net-rent-current", "seller_net_rent_current", "net_rent_current"]));
   const netRentTarget = numberOrNull(firstValue(details, ["seller-net-rent-target", "seller_net_rent_target", "net_rent_target"]));
   const serviceCharge = numberOrNull(firstValue(details, ["seller-service-charge", "seller_service_charge", "service_charge"]));
@@ -731,19 +735,20 @@ async function buildOwnerPropertyPayload(apiKey, contactId, lead, note) {
     country: "DEU",
 
     price: priceNumber,
-    cold_rent: coldRent,
+    // Update 51 §7: Propstack kennt cold_rent, net_cold_rent, rent, target_cold_rent, annual_net_rent, target_annual_net_rent,
+    // last_modernization, balcony_area und status_id nicht (Feldliste von GET /units/:id?new=1 und API-Spezifikation v2,
+    // gelesen 09.11.2026) und lehnte das ganze Objekt mit 400 ab (Befund 8). Die Werte gehen jetzt in Propstacks eigene Felder:
+    // „Kaltmiete“ base_rent, „Nettomiete Ist p.a.“ rental_income_actual, „Nettomiete Soll p.a.“ rental_income_target,
+    // „Letzte Modernisierung“ last_refurbishment, „Balkon/Terrasse Fläche ca.“ balcony_space. Für die Soll-Kaltmiete im Monat
+    // hat Propstack kein Feld; sie steht wie alle Angaben in der Notiz und im Custom Field nettokaltmiete_soll.
     base_rent: rentMonthly || coldRent,
-    net_cold_rent: coldRent,
-    rent: coldRent,
-    target_cold_rent: coldRentTarget,
     service_charge: serviceCharge,
-    annual_net_rent: netRentCurrent,
-    // „Nettomiete Ist p.a.“ (Zahl); „Mtl. Mieteinnahmen“ (rental_income) ist in Propstack ein Textfeld, darum nicht
-    rental_income_actual: rentMonthly ? Math.round(rentMonthly * 12 * 100) / 100 : undefined,
+    // „Mtl. Mieteinnahmen“ (rental_income) ist in Propstack ein Textfeld, darum nicht
+    rental_income_actual: netRentCurrent || (rentMonthly ? Math.round(rentMonthly * 12 * 100) / 100 : undefined),
+    rental_income_target: netRentTarget,
     rented: /vermietet/i.test(usage) ? true : /selbst genutzt|leer stehend/i.test(usage) ? false : undefined,
     // Gewerbe: Fläche nie als Wohnfläche (Brief §2.4 D)
     industrial_area: numberOrNull(details["seller-commercial-area"]),
-    target_annual_net_rent: netRentTarget,
     living_space: numberOrNull(firstValue(details, ["seller-area-value", "seller_area_value", "living_space", "wohnflaeche"])),
     plot_area: numberOrNull(firstValue(details, ["seller-plot-area", "seller_plot_area", "plot_area", "grundstuecksflaeche"])),
     number_of_rooms: shouldUseRoomsForObject(lead.objectType) ? numberOrNull(firstValue(details, ["seller-rooms", "seller_rooms", "rooms", "zimmer"] )) : undefined,
@@ -754,12 +759,12 @@ async function buildOwnerPropertyPayload(apiKey, contactId, lead, note) {
     interior_quality: interiorQuality(details).api,
     // Update 31 §2: Zustand ins Propstack-Standardfeld condition, das Sprengnetter liest (Zuordnung siehe CONDITION unten)
     condition: conditionOf(details).code,
-    last_modernization: clean(firstValue(details, ["seller-modernization", "seller_modernization", "modernization", "letzte_modernisierung"])),
+    // Nur eine Jahreszahl (das Formular fragt „z. B. 2018“); anderer Text bleibt in Notiz und Custom Field letzte_modernisierung
+    last_refurbishment: (clean(firstValue(details, ["seller-modernization", "seller_modernization", "modernization", "letzte_modernisierung"])).match(/^(19|20)\d{2}$/) || [])[0],
     balcony: isAffirmative(firstValue(details, ["seller-balcony", "seller_balcony", "balcony", "balkon"])),
-    balcony_area: numberOrNull(firstValue(details, ["seller-balcony-area", "seller_balcony_area", "balcony_area"])),
+    balcony_space: numberOrNull(firstValue(details, ["seller-balcony-area", "seller_balcony_area", "balcony_area"])),
 
     note,
-    status_id: statusId || undefined,
     property_status_id: statusId || undefined,
 
     relationships_attributes: [
@@ -931,10 +936,9 @@ async function maybeCreateFinancingProperty(apiKey, lead, note) {
   const vorhaben = (String(lead.message || "").match(/^Vorhaben: (.+)$/m) || [])[1] || "";
   const art = lead.objectType || (/mehrfamilien/i.test(vorhaben) ? "Mehrfamilienhaus" : "");
   const mapping = mapOwnerObjectMapping(art, {});
-  const stamp = new Date().toISOString().slice(0, 10).replace(/-/g, "");
   const basis = removeEmpty({
     title: `Finanzierung: ${vorhaben || lead.objectType || "Anfrage"}${lead.location ? ` in ${lead.location}` : ""}`,
-    unit_id: `WEB-FIN-${stamp}`,
+    unit_id: eindeutigeUnitId("FIN"),
     marketing_type: "BUY",
     address: lead.location || undefined,
     zip_code: lead.zipCode || undefined,
@@ -942,18 +946,22 @@ async function maybeCreateFinancingProperty(apiKey, lead, note) {
     note,
   });
   const mitArt = { ...basis, object_type: mapping.object_type, rs_type: mapping.rs_type };
+  // Update 51 §7: object_type und rs_type sind bei Propstack Pflicht (API-Spezifikation v2, postProperties „required“); ohne Art
+  // kam immer erst 400 (Befund 8). Darum zuerst mit Art (aus dem Formular oder die Standardart Wohnung), ohne Art nur als Rückfall.
   const attempts = art
     ? [{ label: "financing property", payload: { property: mitArt } }]
-    : [{ label: "financing property without type", payload: { property: basis } }, { label: "financing property with default type", payload: { property: mitArt } }];
+    : [{ label: "financing property with default type", payload: { property: mitArt } }, { label: "financing property without type", payload: { property: basis } }];
 
   let lastError = null;
-  for (const attempt of attempts) {
+  const fehlversuche = [];
+  for (const [i, attempt] of attempts.entries()) {
     try {
       console.log("PROPERTY CREATE ATTEMPT:", attempt.label);
       const result = await propstackPost(apiKey, "/units", attempt.payload);
-      return { ok: true, attempt: attempt.label, result };
+      return { ok: true, attempt: attempt.label, versuch: i + 1, fehlversuche, result };
     } catch (error) {
       lastError = error;
+      fehlversuche.push(`${attempt.label}: ${logsafe.msg(error)}`);
       console.warn("PROPERTY CREATE ATTEMPT FAILED:", attempt.label, logsafe.msg(error));
     }
   }
@@ -966,10 +974,19 @@ function buildOwnerPropertyTitle(lead) {
   return `Akquise: ${type}${place}`;
 }
 
+// Update 51 §7: Propstack verlangt eine eindeutige Objektnummer (unit_id). „WEB-<Art>-<Datum>“ war für zwei Anfragen derselben Art
+// am selben Tag gleich (Bewertung WEB-WOHNUN-20261108, danach Vermieten mit derselben Nummer, Befund 8): Die zweite scheiterte an
+// jedem Versuch mit unit_id. Jetzt mit Uhrzeit (UTC) und drei Zufallszeichen, z. B. WEB-WOHNUN-20261109-143205-K7Q.
+function eindeutigeUnitId(kuerzel) {
+  const jetzt = new Date().toISOString();
+  const stamp = `${jetzt.slice(0, 10).replace(/-/g, "")}-${jetzt.slice(11, 19).replace(/:/g, "")}`;
+  const zufall = Math.random().toString(36).slice(2, 5).toUpperCase().padEnd(3, "0");
+  return `WEB-${kuerzel}-${stamp}-${zufall}`;
+}
+
 function buildUnitId(lead) {
-  const stamp = new Date().toISOString().slice(0, 10).replace(/-/g, "");
   const type = normalize(lead.objectType).slice(0, 6).toUpperCase() || "OBJ";
-  return `WEB-${type}-${stamp}`;
+  return eindeutigeUnitId(type);
 }
 
 function mapOwnerObjectMapping(objectType, details) {

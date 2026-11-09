@@ -33,7 +33,8 @@ function error(err) {
     code: err.code,
     status: err.status || err.statusCode,
     responseCode: err.responseCode,
-    message: mask(err.safeMessage || err.message).slice(0, 200),
+    // Update 51 §7: 500 statt 200 Zeichen, damit Propstacks Fehlermeldung (siehe fehlerText) ganz im Log steht
+    message: mask(err.safeMessage || err.message).slice(0, 500),
   };
   Object.keys(out).forEach((key) => out[key] === undefined && delete out[key]);
   return out;
@@ -48,8 +49,25 @@ function msg(err) {
 function propstackError(status, path, data) {
   const err = new Error(`Propstack Fehler ${status} bei ${path}: ${JSON.stringify(data)}`);
   err.status = status;
-  err.safeMessage = `Propstack Fehler ${status} bei ${endpoint(path)}${fieldNames(data)}`;
+  err.safeMessage = `Propstack Fehler ${status} bei ${endpoint(path)}${fieldNames(data)}${fehlerText(data)}`;
   return err;
+}
+
+// Update 51 §7: Propstacks Fehlermeldung für das Log, damit man sieht, welches Feld oder welchen Wert Propstack ablehnt
+// (Befund 8: „Propstack Fehler 400 bei /units“ ohne Grund). Nur Feldnamen und Propstacks Meldungstext, keine Nutzlast;
+// mask() macht E-Mail-Adressen und Ziffernfolgen unkenntlich. Je Meldung höchstens 120 Zeichen, zusammen höchstens 400.
+function fehlerText(data) {
+  if (!data || typeof data !== "object") return "";
+  if (data.raw !== undefined) return ` (Antwort ohne JSON, ${String(data.raw).length} Zeichen)`;
+  const teile = [];
+  const text = (v) => (v && typeof v === "object" ? JSON.stringify(v) : String(v));
+  const add = (feld, meldung) => teile.push(`${feld ? feld + ": " : ""}${mask(meldung).slice(0, 120)}`);
+  const e = data.errors !== undefined ? data.errors : data.error;
+  if (Array.isArray(e)) e.slice(0, 10).forEach((v) => add("", text(v)));
+  else if (e && typeof e === "object") Object.entries(e).slice(0, 10).forEach(([k, v]) => add(k, Array.isArray(v) ? v.map(text).join("; ") : text(v)));
+  else if (e !== undefined && e !== null && e !== "") add("", text(e));
+  if (data.message) add("message", text(data.message));
+  return teile.length ? ` (Propstack: ${teile.join(" | ")})`.slice(0, 420) : "";
 }
 
 // Nur die Namen der beanstandeten Felder, nie die Werte.
