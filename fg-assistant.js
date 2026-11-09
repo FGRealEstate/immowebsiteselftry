@@ -407,7 +407,7 @@
       // Update 47 §1: Hausverwaltung bietet F&G nicht an (Timon). Keine andere Firma empfehlen.
       id:'hausverwaltung',cat:'fg',q:'Bietet Fischer & Geserich Hausverwaltung an?',
       keys:['hausverwaltung','mietverwaltung','weg-verwaltung','weg verwaltung','hausverwalter','verwaltung übernehmen','immobilienverwaltung','objektverwaltung','sondereigentumsverwaltung'],
-      answer:`<strong>Nein.</strong> Fischer & Geserich bietet keine Hausverwaltung an, auch keine Miet- oder WEG-Verwaltung. Wir verkaufen und vermieten Immobilien und vermitteln die passende Finanzierung.`,
+      answer:`<strong>Nein.</strong> Fischer & Geserich bietet keine Hausverwaltung an, auch keine Miet- oder WEG-Verwaltung. Wir verkaufen und vermieten Immobilien und vermitteln die passende Finanzierung. Auf Wunsch vermitteln wir Sie kostenlos an Hausverwaltungen und Sondereigentumsverwaltungen, die wir seit Jahren kennen.`,
       actions:['verkaufen','vermieten','finanzierung']
     },
     {

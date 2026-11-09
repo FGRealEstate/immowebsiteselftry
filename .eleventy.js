@@ -148,8 +148,12 @@ module.exports = function(eleventyConfig) {
     ["im vierstelligen Bereich, der reine Vertragsentwurf davor kostet zum Glück deutlich weniger, meist einige hundert Euro, gelegentlich etwas mehr.",
       "im vierstelligen Bereich. Ein Vertragsentwurf beim Notar kostet je nach Kaufpreis und Notar etwa 600 bis 5.000 Euro."]
   ];
+  // Update 49 §1.1.3 (09.11.2026): F&G vermittelt auch an Sondereigentumsverwaltungen (Timon). FAQ A4 und A10 aus mangoTexte.js.
+  const SEV_U49 = [
+    ["Die Vermittlung an Gutachter, Handwerker und Hausverwaltungen ist", "Die Vermittlung an Gutachter, Handwerker, Hausverwaltungen und Sondereigentumsverwaltungen ist"]
+  ];
   const fakten6 = (text) => (typeof text === "string"
-    ? [...FAKTEN6, ...KOMMA_U19, ...NOTAR_U22].reduce((t, [alt, neu]) => t.split(alt).join(neu), text) : text);
+    ? [...FAKTEN6, ...KOMMA_U19, ...NOTAR_U22, ...SEV_U49].reduce((t, [alt, neu]) => t.split(alt).join(neu), text) : text);
   eleventyConfig.addFilter("fakten6", fakten6);
   // Update 6 §3.1 (27.10.2026): neue Antworten für A1, A2 und A3, Wortlaut von Jesus Team. A2 gilt auf jeder Seite,
   // auf der die Frage steht (Startseite, Kaufen). Gilt für sichtbaren Text und FAQPage-Markup.
