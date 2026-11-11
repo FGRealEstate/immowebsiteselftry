@@ -40,6 +40,19 @@
   to = "/.netlify/functions/qr-flyer"
   status = 200
 
+# Update 53 §1.1 (10.11.2026): Kurzlinks für Flyer-Version A und B (Timon druckt 2 × 1.000 zum Vergleich). Gleiches
+# Ziel wie /qr/flyer, dazu utm_content=a bzw. b; jede Version zählt getrennt (netlify/functions/qr-flyer-a.js, -b.js).
+# /qr/flyer oben bleibt für den ersten Druck. Testumgebung: test-env/functions/qr/flyer-a.js und flyer-b.js.
+[[redirects]]
+  from = "/qr/flyer-a"
+  to = "/.netlify/functions/qr-flyer-a"
+  status = 200
+
+[[redirects]]
+  from = "/qr/flyer-b"
+  to = "/.netlify/functions/qr-flyer-b"
+  status = 200
+
 # Update 44 §2.4 (07.11.2026): Sicherheits-Header. HSTS ein Jahr mit Subdomains (bekannte Subdomains: www bei Netlify,
 # autodiscover bei Outlook, beide HTTPS). Kamera, Mikrofon und Standort aus (die Seite nutzt keins davon).
 # CSP erst nur als Report-only: Meldungen gehen an netlify/functions/csp-bericht.js (Netlify Blobs, Store „csp-berichte“,
