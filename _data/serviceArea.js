@@ -69,6 +69,21 @@ const schemaPlaces = [berlin, ...landkreise, ...towns, leipzig, dresden].flatMap
   (p.schemaNames || [p.schemaName || p.name]).map((name) => ({ type: p.schemaType, name, url: p.exists ? p.url : null }))
 );
 
+// Update 55 §3.2.2 (11.11.2026): areaServed des Unternehmens (RealEstateAgent) mit jedem Gebiet, auch dem Land Brandenburg
+// und den Teilgebieten mit eigener Seite (Berliner Bezirke, Leipzig, Dresden). `within`: übergeordneter Ort für
+// containedInPlace. Die Leistungen (fgs-/fgd-service.njk) nutzen weiter schemaPlaces.
+const teil = (stadt, t, name) => ({ type: "Place", name, url: t.exists ? t.url : null, within: stadt });
+const schemaPlacesFirma = [
+  ...schemaPlaces.filter((p) => p.name === "Berlin"),
+  ...berlin.bezirke.map((b) => ({ type: "AdministrativeArea", name: b.name, url: b.exists ? b.url : null, within: "Berlin" })),
+  { type: "State", name: "Brandenburg", url: null },
+  ...schemaPlaces.filter((p) => p.name !== "Berlin" && p.name !== "Leipzig" && p.name !== "Dresden"),
+  ...schemaPlaces.filter((p) => p.name === "Leipzig"),
+  ...leipzig.teile.map((t) => teil("Leipzig", t, `Leipzig-${t.name}`)),
+  ...schemaPlaces.filter((p) => p.name === "Dresden"),
+  ...dresden.teile.map((t) => teil("Dresden", t, t.name))
+];
+
 // Update 10 §4.3 (29.10.2026): Potsdam wie auf Kontakt ergänzt (FAQ A5/C6, 404, Kontakt).
 const text =
   "Das Maklergeschäft von Fischer & Geserich umfasst ganz Berlin, mit eigenen Seiten für Steglitz-Zehlendorf, Charlottenburg-Wilmersdorf, Tempelhof-Schöneberg und Pankow, und das Berliner Umland in acht Brandenburger Landkreisen und in Potsdam: Oberhavel, Barnim, Havelland, Potsdam-Mittelmark, Dahme-Spreewald, Oder-Spree, Teltow-Fläming und Märkisch-Oderland. In Sachsen sind wir in Leipzig und Dresden tätig. Finanzierungen begleiten wir deutschlandweit.";
@@ -80,6 +95,7 @@ module.exports = {
   leipzig,
   dresden,
   schemaPlaces,
+  schemaPlacesFirma,
   financingArea: "Deutschland",
   text
 };

@@ -15,6 +15,11 @@
 [functions."taeglicher-build"]
   schedule = "0 4,5 * * *"
 
+# Update 55 §1.4: Abendprüfung der Blogartikel Mo und Do 18:00 deutscher Zeit (netlify/functions/blog-abendpruefung.js).
+# Lauf um 16:00 und 17:00 UTC, geprüft wird nur, wenn es in Berlin 18 Uhr ist. Mail an Peer, wenn der nächste Artikel nicht bereit ist.
+[functions."blog-abendpruefung"]
+  schedule = "0 16,17 * * 1,4"
+
 # Update 44 §2.5: Uptime-Prüfung alle 15 Minuten (netlify/functions/uptime-pruefung.js), GET ohne Absenden,
 # Mail nach zwei Fehlern hintereinander an info@fg-realestate.de und UPTIME_EMPFAENGER.
 [functions."uptime-pruefung"]

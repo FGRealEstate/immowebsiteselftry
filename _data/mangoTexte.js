@@ -165,12 +165,12 @@ module.exports = {
       },
       {
         "id": "A2",
-        "q": "Begleitet F&G sowohl Eigennutzer als auch Kapitalanleger?",
+        "q": "Begleitet Fischer & Geserich sowohl Eigennutzer als auch Kapitalanleger?",
         "a": "Ja. Eigennutzer benötigen vor allem eine belastbare Einordnung von Objekt, Finanzierung und persönlichem Budget. Bei Kapitalanlagen kommen zusätzlich Miete, Rendite, laufende Kosten und langfristige Finanzierung hinzu. Unsere Angebotsseiten kennzeichnen beide Strategien deshalb getrennt."
       },
       {
         "id": "A3",
-        "q": "Wie läuft eine Immobilienfinanzierung bei F&G ab?",
+        "q": "Wie läuft eine Immobilienfinanzierung bei Fischer & Geserich ab?",
         "a": "Zuerst strukturieren wir Einkommen, Eigenkapital, Objekt und Zielsetzung. Je nach Fall nutzen wir Plattformen wie Europace oder Baufinex sowie direkte Bankkontakte. Begleitete Fälle reichen von der ersten Eigentumswohnung bis zur Mehrfamilienhausfinanzierung; eine Finanzierungszusage bleibt immer eine Einzelfallentscheidung der Bank."
       },
       {

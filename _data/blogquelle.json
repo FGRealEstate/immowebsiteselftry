@@ -14,6 +14,20 @@
     "kurz": "5, 10 oder 15 Jahre Zinsbindung? Wie Bauzinsen je Laufzeit entstehen und wann eine kurze Zinsbindung plus Forward-Darlehen günstiger ist. Mit Rechnung."
   },
   {
+    "slug": "anschlussfinanzierung-planen",
+    "url": "/blog/anschlussfinanzierung-planen/",
+    "kategorie": "Finanzierung",
+    "titel": "Anschlussfinanzierung planen, solange Sie noch alle Optionen haben",
+    "kurz": "Wann Sie sich um die Anschlussfinanzierung kümmern sollten, warum die Restschuld alles entscheidet und was Prolongation, Umschuldung und Forward-Darlehen kosten."
+  },
+  {
+    "slug": "woran-orientiert-sich-der-bauzins",
+    "url": "/blog/woran-orientiert-sich-der-bauzins/",
+    "kategorie": "Finanzierung",
+    "titel": "Woran sich Bauzinsen orientieren, und warum es nicht der Leitzins ist",
+    "kurz": "Warum nicht der EZB-Leitzins, sondern die Rendite der Bundesanleihe Ihren Bauzins bestimmt, wie sich der Zins zusammensetzt und warum die Weltlage ihn verändert."
+  },
+  {
     "slug": "immobilie-ohne-eigenkapital",
     "url": "/blog/immobilie-ohne-eigenkapital/",
     "kategorie": "Finanzierung",
@@ -26,6 +40,13 @@
     "kategorie": "Finanzierung",
     "titel": "Wie viel Eigenkapital in eine Immobilie gehört, hängt vom Ziel ab",
     "kurz": "Wie viel Eigenkapital in eine Immobilie gehört, hängt vom Ziel ab: warum Eigennutzer anders rechnen als Kapitalanleger und warum eine Reserve dazugehört."
+  },
+  {
+    "slug": "due-diligence-und-spekulationsfrist",
+    "url": "/blog/due-diligence-und-spekulationsfrist/",
+    "kategorie": "Kauf &amp; Kapitalanlage",
+    "titel": "Due Diligence vor dem Wohnungskauf und die Spekulationsfrist beim Verkauf",
+    "kurz": "Welche Unterlagen Sie vor dem Wohnungskauf prüfen, worauf es in Grundbuch und Protokollen ankommt und wie die Spekulationsfrist den Ausstieg bestimmt."
   },
   {
     "slug": "wie-berechnet-man-die-eigenkapitalrendite",

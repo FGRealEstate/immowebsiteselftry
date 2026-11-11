@@ -371,7 +371,8 @@ eleventyComputed:
       "@type": "RealEstateAgent",
       "@id": "{{ pageUrl }}#makler",
       "name": "Fischer & Geserich Real Estate GmbH",
-      "alternateName": ["Fischer & Geserich", "Fischer und Geserich", "F&G Real Estate", "FG Immobilien"],
+      {%- set firmaGebiet = false %}
+{% include "schema-firma-felder.njk" %}
       "url": "https://fg-realestate.de/",
       "sameAs": {{ firmenprofile | dump | safe }},
       "logo": "https://fg-realestate.de/images/fg-logo-gold-transparent.png",

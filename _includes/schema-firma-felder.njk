@@ -1,0 +1,22 @@
+{#- Update 55 §3.2.2 (11.11.2026): Kennzeichen des Unternehmens für jeden RealEstateAgent-Eintrag (Startseite, Kontakt,
+    Gebietsseiten), damit KI-Werkzeuge Fischer & Geserich nicht mit anderen „FG“-Firmen verwechseln.
+    Handelsregister wörtlich wie im Impressum. Wird innerhalb eines JSON-Objekts eingebunden; endet mit Komma.
+    firmaGebiet = true: dazu areaServed mit jedem Gebiet (_data/serviceArea.js, schemaPlacesFirma). -#}
+      "legalName": "Fischer & Geserich Real Estate GmbH",
+      "alternateName": ["Fischer & Geserich", "Fischer und Geserich", "F&G Real Estate"],
+      "identifier": [
+        { "@type": "PropertyValue", "name": "Handelsregisternummer", "value": "HRB 283559 B", "description": "Amtsgericht Charlottenburg" },
+        { "@type": "PropertyValue", "propertyID": "EUID", "name": "European Unique Identifier", "value": "DEF1103R.HRB283559B" }
+      ],
+      "founder": [
+        { "@id": "https://fg-realestate.de/team/timon-fischer/#person" },
+        { "@id": "https://fg-realestate.de/team/lennart-geserich/#person" }
+      ],
+{%- if firmaGebiet %}
+      "areaServed": [
+{%- for place in serviceArea.schemaPlacesFirma %}
+        { "@type": {{ place.type | dump | safe }}, "name": {{ place.name | dump | safe }}{% if place.url %}, "url": "https://fg-realestate.de{{ place.url }}"{% endif %}{% if place.within %}, "containedInPlace": { "@type": "City", "name": {{ place.within | dump | safe }} }{% endif %} },
+{%- endfor %}
+        { "@type": "Country", "name": "Deutschland", "description": "Finanzierungsberatung deutschlandweit" }
+      ],
+{%- endif %}

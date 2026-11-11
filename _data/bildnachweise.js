@@ -24,15 +24,18 @@ function split(credit) {
   return { author: credit.slice(0, cut), license, licenseUrl: lizenzen[license] };
 }
 
-// Titel der Datei aus der Commons-Adresse; bei Pexels steht er in fotoquellen.json (titel)
+// Titel der Datei aus der Commons-Adresse; bei Pexels steht er in fotoquellen.json (titel).
+// Update 55 §1.1: Blogfotos von Pexels und Unsplash haben kein fotoquellen.json, dort steht der Titel in der Adresse der Fotoseite.
 function title(url) {
   const m = url.match(/\/wiki\/File:(.+)$/);
   if (m) return decodeURIComponent(m[1]).replace(/_/g, " ").replace(/\.(jpe?g|png)$/i, "");
+  const s = url.match(/(?:pexels\.com\/photo|unsplash\.com\/photos)\/([a-z0-9-]+?)-[A-Za-z0-9_]+\/?$/);
+  if (s) return s[1].charAt(0).toUpperCase() + s[1].slice(1).replace(/-/g, " ");
   return "";
 }
 
 function host(url) {
-  return url.includes("commons.wikimedia.org") ? "Wikimedia Commons" : url.includes("pexels.com") ? "Pexels" : new URL(url).host;
+  return url.includes("commons.wikimedia.org") ? "Wikimedia Commons" : url.includes("pexels.com") ? "Pexels" : url.includes("unsplash.com") ? "Unsplash" : new URL(url).host;
 }
 
 module.exports = function () {
