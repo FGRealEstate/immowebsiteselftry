@@ -28,6 +28,13 @@
     "kurz": "Warum nicht der EZB-Leitzins, sondern die Rendite der Bundesanleihe Ihren Bauzins bestimmt, wie sich der Zins zusammensetzt und warum die Weltlage ihn verändert."
   },
   {
+    "slug": "zinsaenderungsstress-testen",
+    "url": "/blog/zinsaenderungsstress-testen/",
+    "kategorie": "Finanzierung",
+    "titel": "Wie Sie mit einem Stresstest prüfen, ob Ihre Finanzierung höhere Zinsen aushält",
+    "kurz": "Was passiert mit Ihrer Rate, wenn der Zins nach der Zinsbindung um 1, 2 oder 3 Prozentpunkte höher liegt? Eine Anleitung zum Stresstest mit Rechenbeispiel."
+  },
+  {
     "slug": "immobilie-ohne-eigenkapital",
     "url": "/blog/immobilie-ohne-eigenkapital/",
     "kategorie": "Finanzierung",
@@ -42,11 +49,67 @@
     "kurz": "Wie viel Eigenkapital in eine Immobilie gehört, hängt vom Ziel ab: warum Eigennutzer anders rechnen als Kapitalanleger und warum eine Reserve dazugehört."
   },
   {
+    "slug": "vom-rechner-zum-bankgespraech",
+    "url": "/blog/vom-rechner-zum-bankgespraech/",
+    "kategorie": "Finanzierung",
+    "titel": "Was die Bank prüft, bevor aus Ihrer Rechnung eine Finanzierungszusage wird",
+    "kurz": "Warum Online-Rechner nur eine erste Orientierung sind, was Banken bei einer Baufinanzierung prüfen und welche Unterlagen Sie vor dem Notartermin brauchen."
+  },
+  {
+    "slug": "tilgung-oder-sondertilgung",
+    "url": "/blog/tilgung-oder-sondertilgung/",
+    "kategorie": "Finanzierung",
+    "titel": "Tilgung oder Sondertilgung: Was senkt Ihre Restschuld schneller?",
+    "kurz": "Höhere Tilgung oder Sondertilgung? Wie beide Ihre Restschuld senken, was sie kosten und warum Eigennutzer und Kapitalanleger anders entscheiden."
+  },
+  {
+    "slug": "dscr-verstehen",
+    "url": "/blog/dscr-verstehen/",
+    "kategorie": "Finanzierung",
+    "titel": "DSCR: Trägt das Mehrfamilienhaus seine Finanzierung selbst?",
+    "kurz": "Was die Debt Service Coverage Ratio ist, wie Banken sie bei Mehrfamilienhäusern berechnen, welcher Wert als tragfähig gilt und wie Sie ihn verbessern."
+  },
+  {
+    "slug": "warum-banken-grosszuegig-und-streng-finanzieren",
+    "url": "/blog/warum-banken-grosszuegig-und-streng-finanzieren/",
+    "kategorie": "Finanzierung",
+    "titel": "Warum Banken mal großzügig und mal streng finanzieren",
+    "kurz": "Die Kreditvergabe folgt einem Pendel aus lockeren und strengen Jahren. Was dahintersteckt und was es für Ihre Finanzierung heute bedeutet."
+  },
+  {
+    "slug": "restnutzungsdauergutachten-erklaert",
+    "url": "/blog/restnutzungsdauergutachten-erklaert/",
+    "kategorie": "Steuern",
+    "titel": "Mit Restnutzungsdauergutachten und Gebäudeanteil die AfA einer Bestandsimmobilie erhöhen",
+    "kurz": "Wie Sie mit Restnutzungsdauergutachten und sauberer Kaufpreisaufteilung die AfA Ihrer Bestandsimmobilie erhöhen. Mit Rechenbeispiel und Rechtslage."
+  },
+  {
+    "slug": "steuerlicher-gewinn-und-echter-cashflow",
+    "url": "/blog/steuerlicher-gewinn-und-echter-cashflow/",
+    "kategorie": "Steuern",
+    "titel": "Warum Ihr steuerlicher Gewinn nicht Ihr Cashflow ist",
+    "kurz": "Warum eine Immobilie steuerlich Verlust machen kann, während sie Vermögen aufbaut, und warum Sie später Steuern auf Geld zahlen, das Sie nie sehen."
+  },
+  {
+    "slug": "deal-screening-in-fuenf-minuten",
+    "url": "/blog/deal-screening-in-fuenf-minuten/",
+    "kategorie": "Kauf &amp; Kapitalanlage",
+    "titel": "Deal-Screening: Sechs Kennzahlen, mit denen Sie ein Angebot in fünf Minuten einordnen",
+    "kurz": "Sechs Kennzahlen, mit denen Sie ein Immobilienangebot in fünf Minuten einordnen, bevor Sie Zeit in die Prüfung stecken. Mit zwei Beispielobjekten."
+  },
+  {
     "slug": "due-diligence-und-spekulationsfrist",
     "url": "/blog/due-diligence-und-spekulationsfrist/",
     "kategorie": "Kauf &amp; Kapitalanlage",
     "titel": "Due Diligence vor dem Wohnungskauf und die Spekulationsfrist beim Verkauf",
     "kurz": "Welche Unterlagen Sie vor dem Wohnungskauf prüfen, worauf es in Grundbuch und Protokollen ankommt und wie die Spekulationsfrist den Ausstieg bestimmt."
+  },
+  {
+    "slug": "cashflow-verstehen",
+    "url": "/blog/cashflow-verstehen/",
+    "kategorie": "Kauf &amp; Kapitalanlage",
+    "titel": "Cashflow verstehen: was eine vermietete Wohnung kostet und was sie aufbaut",
+    "kurz": "Was Cashflow bei einer vermieteten Wohnung bedeutet, warum er in Berlin am Anfang meist negativ ist, wie viel davon Vermögensaufbau ist und wie Sie ihn verbessern."
   },
   {
     "slug": "wie-berechnet-man-die-eigenkapitalrendite",

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tilgung oder Sondertilgung: Was bringt mehr?</title>
+<meta name="description" content="Höhere Tilgung oder Sondertilgung? Wie beide Ihre Restschuld senken, was sie kosten und warum Eigennutzer und Kapitalanleger anders entscheiden.">
+<link rel="canonical" href="https://fg-realestate.de/blog/tilgung-oder-sondertilgung/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Fischer &amp; Geserich Real Estate">
+<meta property="og:title" content="Tilgung oder Sondertilgung: Was bringt mehr?">
+<meta property="og:description" content="Höhere Tilgung oder Sondertilgung? Wie beide Ihre Restschuld senken, was sie kosten und warum Eigennutzer und Kapitalanleger anders entscheiden.">
+<meta property="og:url" content="https://fg-realestate.de/blog/tilgung-oder-sondertilgung/">
+<meta property="og:image" content="https://fg-realestate.de/blog/tilgung-oder-sondertilgung/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Blogartikel, Live-Fassung aus _build/live.py -->
+<script>
+/* Lesemodus vor dem ersten Zeichnen setzen, sonst blitzt die helle Seite auf */
+try{var t=localStorage.getItem("fg-theme");if(t)document.documentElement.dataset.theme=t;else if(matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.dataset.theme="dark"}catch(e){}
+</script>
+<link rel="stylesheet" href="../muster.css">
+<style>
+/* A10: Lollipop-Diagramm Restschuld nach 10 Jahren, Strecke von der Ausgangsrestschuld bis zum Punkt */
+.s10{position:relative;margin:8px 0 0}
+.s10-ax{display:grid;grid-template-columns:200px 1fr;font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.s10-ax div{position:relative;height:18px}
+.s10-ax div span{position:absolute;transform:translateX(-50%);white-space:nowrap}
+.s10-ax div span:first-child{transform:none}
+.s10-ax div span:last-child{transform:translateX(-100%)}
+.s10-r{display:grid;grid-template-columns:200px 1fr;align-items:center;min-height:58px;border-top:1px solid var(--rule);font-size:.86rem;line-height:1.3}
+.s10-r>span b{display:block}
+.s10-r>span small{color:var(--muted)}
+.s10-tr{position:relative;height:58px;background:repeating-linear-gradient(90deg,transparent 0 calc(25% - 1px),var(--rule) calc(25% - 1px) 25%)}
+.s10-tr .ln{position:absolute;top:28px;height:3px;background:var(--gold)}
+.s10-tr .dot{position:absolute;top:21px;width:17px;height:17px;margin-left:-8.5px;border-radius:50%;background:var(--c-ki);border:3px solid var(--bg);box-shadow:0 0 0 2px var(--c-ki)}
+.s10-tr .base{position:absolute;top:22px;width:15px;height:15px;margin-left:-7.5px;border-radius:50%;border:2px solid var(--muted);background:var(--bg)}
+.s10-tr .v{position:absolute;top:2px;font-size:.78rem;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;transform:translateX(-50%)}
+.s10-tr .v.r{transform:translateX(calc(-100% + 8px))} /* Wert am rechten Rand endet am Punkt statt über den Rand zu ragen */
+.s10-tr .d{position:absolute;bottom:1px;font-size:.72rem;font-weight:700;color:var(--gold-ink);font-variant-numeric:tabular-nums;white-space:nowrap;transform:translateX(-50%)}
+.s10-ref{position:absolute;top:18px;bottom:0;border-left:2px dashed var(--muted);pointer-events:none}
+.s10-note{margin:14px 0 0;padding:10px 14px;background:var(--soft);font-size:.86rem;display:flex;gap:10px;align-items:center}
+.s10-note i{flex:none;width:12px;height:12px;border-radius:50%;background:var(--gold)}
+@media (max-width:620px){
+  .s10-ax,.s10-r{grid-template-columns:1fr}.s10-ax>span{display:none}
+  .s10-r{padding-top:8px}
+}
+</style>
+<script type="application/ld+json">
+[
+ {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Tilgung oder Sondertilgung: Was senkt Ihre Restschuld schneller?",
+  "description": "Höhere Tilgung oder Sondertilgung? Wie beide Ihre Restschuld senken, was sie kosten und warum Eigennutzer und Kapitalanleger anders entscheiden.",
+  "inLanguage": "de-DE",
+  "url": "https://fg-realestate.de/blog/tilgung-oder-sondertilgung/",
+  "image": "https://fg-realestate.de/blog/tilgung-oder-sondertilgung/og.jpg",
+  "datePublished": "2026-12-04",
+  "dateModified": "2026-12-04",
+  "author": {
+   "@type": "Person",
+   "@id": "https://fg-realestate.de/team/timon-fischer/#person",
+   "name": "Timon Fischer",
+   "url": "https://fg-realestate.de/team/timon-fischer/",
+   "sameAs": [
+    "https://www.linkedin.com/in/timon-fischer/"
+   ]
+  },
+  "publisher": {
+   "@type": "Organization",
+   "name": "Fischer & Geserich Real Estate GmbH"
+  }
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Was ist eine Sondertilgung?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Eine Sondertilgung ist eine zusätzliche, freiwillige Zahlung auf ein Darlehen außerhalb der regulären Monatsrate. Sie senkt die Restschuld sofort und damit alle folgenden Zinsen. Wie viel Sie pro Jahr sondertilgen dürfen, regelt der Vertrag, üblich sind bis zu 5 Prozent der ursprünglichen Darlehenssumme."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Was bringt eine Sondertilgung von 10.000 Euro?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Bei 300.000 Euro Darlehen, 4 Prozent Zins und 2 Prozent Tilgung senkt eine Sondertilgung von 10.000 Euro nach dem ersten Jahr die Restschuld nach 10 Jahren um 14.325 Euro. Davon sind 4.325 Euro eingesparte Zinsen."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Lohnt sich eine Sondertilgung für Kapitalanleger?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Weniger als für Eigennutzer, weil die Zinsen bei vermieteten Immobilien steuerlich absetzbar sind. Bei 42 Prozent Grenzsteuersatz bleiben von jedem eingesparten Zins-Euro nach Steuern nur 58 Cent. Sinnvoll ist sie für Anleger vor allem vor der Anschlussfinanzierung oder wenn kein weiterer Kauf geplant ist."
+    }
+   }
+  ]
+ }
+]
+</script>
+<link rel="stylesheet" href="/vendor/cookieconsent/cookieconsent.css">
+<link rel="stylesheet" href="/consent-manager.css">
+<script>window.FG_GTM_ID = "GTM-5DVGRHB2";</script>
+<script defer src="/vendor/cookieconsent/cookieconsent.umd.js"></script>
+<script defer src="/consent-manager.js"></script>
+</head>
+<body>
+
+<header class="top">
+  <nav class="site-nav" aria-label="Hauptnavigation">
+    <div class="nav-row">
+      <a class="brand" href="https://fg-realestate.de/index.html"><img src="/images/fg-logo-gold-transparent.png" alt="Fischer &amp; Geserich Real Estate" width="54" height="54"><span class="gold-text long">Fischer &amp; Geserich Real Estate</span><span class="gold-text short">Fischer &amp; Geserich<br>Real Estate</span></a>
+      <div class="nav-links">
+        <a href="https://fg-realestate.de/index.html">Start</a>
+        <div class="nav-group"><a href="https://fg-realestate.de/angebote.html" aria-haspopup="true">Kaufen<span class="caret"></span></a>
+          <div class="nav-sub">
+            <a href="https://fg-realestate.de/angebote.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M10 21v-3h4v3"/></svg></i><span><strong>Angebote</strong><small>Aktuelle Objekte</small></span></a>
+            <a href="https://fg-realestate.de/ankaufsberatung.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l4-4 4 2 3-3 7 6-3 3"/><path d="M7 8l-4 4 6 6 2-2M11 16l2 2 2-2M13 14l2 2 2-2"/></svg></i><span><strong>Ankaufsberatung</strong><small>Begleitung beim Kauf</small></span></a>
+          </div></div>
+        <a href="https://fg-realestate.de/verkaufen.html">Verkaufen</a>
+        <a href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierung</a>
+        <div class="nav-group"><a href="https://fg-realestate.de/investment-lab.html" aria-haspopup="true">Investment Lab<span class="caret"></span></a>
+          <div class="nav-sub">
+            <a href="https://fg-realestate.de/investment-lab.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M7 15h10"/></svg></i><span><strong>Investment Lab</strong><small>Rechner und Werkzeuge</small></span></a>
+            <a href="https://fg-realestate.de/standorte/"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg></i><span><strong>Standorte</strong><small>16 Standortanalysen</small></span></a>
+            <a href="https://fg-realestate.de/lexikon/"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4zM20 4h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6z"/></svg></i><span><strong>Lexikon</strong><small>Begriffe erklärt</small></span></a>
+          </div></div>
+        <a href="https://fg-realestate.de/ueber-uns.html">Über uns</a>
+        <a href="../" class="on" aria-current="page">Blog</a>
+        <a href="https://fg-realestate.de/kontakt.html" class="nav-contact">Kontakt</a>
+      </div>
+      <button class="burger" type="button" aria-label="Menü" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+    <div class="mobile-menu">
+      <a href="https://fg-realestate.de/index.html">Start</a>
+      <p>Kaufen</p><a href="https://fg-realestate.de/angebote.html">Angebote</a><a href="https://fg-realestate.de/ankaufsberatung.html">Ankaufsberatung</a>
+      <p>Leistungen</p><a href="https://fg-realestate.de/verkaufen.html">Verkaufen</a><a href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierung</a>
+      <p>Investment Lab</p><a href="https://fg-realestate.de/investment-lab.html">Investment Lab</a><a href="https://fg-realestate.de/standorte/">Standorte</a><a href="https://fg-realestate.de/lexikon/">Lexikon</a>
+      <p>Unternehmen</p><a href="https://fg-realestate.de/ueber-uns.html">Über uns</a><a href="../" class="here">Blog</a><a href="https://fg-realestate.de/kontakt.html" class="m-contact">Kontakt</a>
+    </div>
+  </nav>
+  <div class="subbar">
+    <div class="subbar-row">
+      <a class="sb-home" href="../">Blog</a>
+      <div class="where">Tilgung oder Sondertilgung</div>
+      <div class="sb-right">
+        <details class="cat-menu"><summary>Kategorien<span class="caret"></span></summary><nav>
+          <a href="../">Alle Artikel</a><a href="../#finanzierung" class="on">Finanzierung</a><a href="../#steuern">Steuern</a><a href="../#kauf-kapitalanlage">Kauf &amp; Kapitalanlage</a>
+        </nav></details>
+        <button class="icon-btn theme-btn" type="button" aria-label="Dunkler Lesemodus" aria-pressed="false" title="Lesemodus"><svg class="moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      </div>
+    </div>
+    <div class="progress"><span></span></div>
+  </div>
+</header>
+
+<nav class="crumbs" aria-label="Brotkrumen"><a href="../">Blog</a><i>•</i><a href="../#finanzierung">Finanzierung</a><i>•</i><span>Tilgung oder Sondertilgung</span></nav>
+<div class="lead">
+  <figure class="lead-img" data-wait="Bild folgt">
+    <img src="lead.jpg" alt="Lichtspuren in der Nacht, die in Stufen sinken und einmal tief abfallen, daneben ein Haus" width="1536" height="1024" onerror="this.parentNode.classList.add('missing')">
+  </figure>
+</div>
+<div class="head">
+  <a class="tag" href="../#finanzierung">Finanzierung</a>
+  <h1>Tilgung oder Sonder&shy;tilgung: Was senkt Ihre Restschuld schneller?</h1>
+  <p class="dateline"><span>Stand: Oktober 2026</span><span class="by">Von <a class="by-link" href="https://fg-realestate.de/team/timon-fischer/">Timon Fischer</a>, Geschäftsführer · Finanzierung</span></p>
+  <span class="pill">5 Min. Lesezeit</span>
+</div>
+
+<div class="cols">
+
+  <nav class="toc" aria-label="Inhalt">
+    <p class="toc-h">Inhalt</p>
+    <a href="#was-unterscheidet-tilgung-und-sondertilgung">Was unterscheidet Tilgung und Sondertilgung?</a>
+    <a href="#rechenbeispiel-was-10-000-euro-bewirken">Rechenbeispiel: Was 10.000&nbsp;Euro bewirken</a>
+    <a href="#eigennutzer-jeder-getilgte-euro-spart-den-vollen">Eigennutzer: Jeder getilgte Euro spart den vollen Zins</a>
+    <a href="#kapitalanleger-die-rechnung-nach-steuern">Kapitalanleger: Die Rechnung nach Steuern</a>
+    <a href="#welcher-weg-wofuer-passt">Welcher Weg wofür passt</a>
+    <a href="#die-einschaetzung-von-fischer-geserich">Die Einschätzung von Fischer &amp; Geserich</a>
+    <a href="#fragen">Häufige Fragen</a>
+  </nav>
+
+  <article class="body">
+    <p class="answer">Eine höhere laufende Tilgung senkt Ihre Restschuld planbar über eine dauerhaft höhere Rate. Eine Sondertilgung ist eine zusätzliche, freiwillige Zahlung, die Sie leisten können, wenn Geld übrig ist, meist bis zu 5&nbsp;Prozent der Darlehenssumme pro Jahr. Beide sparen Zinsen. Die höhere Tilgung wirkt gleichmäßiger, die Sondertilgung lässt Ihnen Flexibilität. Für Kapitalanleger ist der Nutzen wegen der steuerlichen Absetzbarkeit der Zinsen geringer als für Eigennutzer.</p>
+    <div class="kurz"><p class="kurz-h">Das Wichtigste in Kürze</p><ul><li>Üblich ist ein Sondertilgungsrecht von bis zu 5&nbsp;% der Darlehenssumme pro Jahr.</li><li>Eine Sondertilgung von 10.000&nbsp;€ nach dem ersten Jahr senkt die Restschuld nach zehn Jahren um 14.325&nbsp;€.</li><li>Für Kapitalanleger ist der Effekt kleiner, weil Zinsen bei Vermietung steuerlich absetzbar sind.</li></ul></div>
+    <figure class="chart" id="g-st">
+      <h3>Restschuld nach 10 Jahren</h3>
+      <p class="sub">300.000 € Darlehen, Beispielzins 4 %, 2 % anfängliche Tilgung. Die goldene Strecke zeigt, wie viel weniger Restschuld bleibt.</p>
+      <div class="s10" role="img" aria-label="Restschuld nach 10 Jahren: 226.375 Euro ohne Sondertilgung, 212.050 Euro mit einmalig 10.000 Euro nach Jahr 1, 189.563 Euro mit 3 Prozent Tilgung, 166.138 Euro mit 5.000 Euro Sondertilgung jedes Jahr.">
+        <div class="s10-ax" aria-hidden="true"><span></span><div><span style="left:0">150.000 €</span><span style="left:25%">170.000 €</span><span style="left:50%">190.000 €</span><span style="left:75%">210.000 €</span><span style="left:100%">230.000 €</span></div></div>
+        <div class="s10-r"><span><b>2 % Tilgung</b><small>ohne Sondertilgung</small></span><div class="s10-tr"><span class="dot" style="left:95.47%"></span><span class="v r" style="left:95.47%">226.375 €</span></div></div>
+        <div class="s10-r"><span><b>+ einmalig 10.000 €</b><small>nach dem ersten Jahr</small></span><div class="s10-tr"><span class="ln" style="left:77.56%;width:17.91%"></span><span class="base" style="left:95.47%"></span><span class="dot" style="left:77.56%"></span><span class="v" style="left:77.56%">212.050 €</span><span class="d" style="left:86.5%">−14.325 €</span></div></div>
+        <div class="s10-r"><span><b>3 % Tilgung</b><small>250 € mehr pro Monat</small></span><div class="s10-tr"><span class="ln" style="left:49.45%;width:46.02%"></span><span class="base" style="left:95.47%"></span><span class="dot" style="left:49.45%"></span><span class="v" style="left:49.45%">189.563 €</span><span class="d" style="left:72.5%">−36.812 €</span></div></div>
+        <div class="s10-r"><span><b>+ 5.000 € jedes Jahr</b><small>Sondertilgung</small></span><div class="s10-tr"><span class="ln" style="left:20.17%;width:75.3%"></span><span class="base" style="left:95.47%"></span><span class="dot" style="left:20.17%"></span><span class="v" style="left:20.17%">166.138 €</span><span class="d" style="left:57.8%">−60.237 €</span></div></div>
+      </div>
+      <p class="s10-note"><i aria-hidden="true"></i>Eigennutzer sparen die Zinsen voll, Kapitalanleger nur nach Steuern.</p>
+      <p class="credit">Beispielzins, keine aktuelle Kondition · Rechnung mit monatlicher Tilgung · Grafik: Fischer &amp; Geserich</p>
+    </figure>
+    <h2 id="was-unterscheidet-tilgung-und-sondertilgung">Was unterscheidet Tilgung und Sondertilgung?</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild1.jpg" alt="Ein alter Wasserhahn an einer hellen Wand, darunter steht ein Metalleimer" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"><!-- Bildnachweis | Juan Moccagatta | Pexels-Lizenz | https://www.pexels.com/photo/minimalist-black-and-white-photo-of-old-faucet-and-metal-bucket-38710620/ | https://www.pexels.com/license/ --></figure>
+    <p>Beide Wege sollen die Restschuld schneller senken, damit Sie weniger Zinsen zahlen und mit einem kleineren Betrag in die Anschlussfinanzierung gehen.</p>
+    <p><strong>Die laufende Tilgung</strong> legen Sie beim Abschluss fest. Sie ist Teil der Monatsrate und wirkt jeden Monat. Wer statt 2&nbsp;Prozent 3&nbsp;Prozent tilgt, zahlt bei 300.000&nbsp;Euro Darlehen 250&nbsp;Euro mehr im Monat, verpflichtend und über die gesamte Zinsbindung. Viele Verträge erlauben zusätzlich, den Tilgungssatz während der Zinsbindung ein- oder zweimal zu ändern.</p>
+<p><strong>Die Sondertilgung</strong> ist eine zusätzliche, freiwillige Zahlung außerhalb der Rate. Wie viel Sie wann zahlen dürfen, steht im Vertrag. Üblich sind bis zu 5&nbsp;Prozent der ursprünglichen Darlehenssumme pro Kalenderjahr. Manche Banken bieten dieses Recht ohne Aufpreis an, andere berechnen dafür einen kleinen Zinsaufschlag. Ohne vertragliches Sondertilgungsrecht ist eine vorzeitige Rückzahlung während der Zinsbindung nur gegen Vorfälligkeitsentschädigung möglich.</p>
+    <h2 id="rechenbeispiel-was-10-000-euro-bewirken">Rechenbeispiel: Was 10.000&nbsp;Euro bewirken</h2>
+    <p>Darlehen 300.000&nbsp;Euro, 4&nbsp;Prozent <strong>Beispielzins</strong>, 2&nbsp;Prozent anfängliche Tilgung, Monatsrate 1.500&nbsp;Euro, 10 Jahre Zinsbindung.</p>
+    <div class="ftab"><table>
+<thead><tr><th>Variante</th><th class="n">Restschuld nach 10 Jahren</th><th>Zinsersparnis in 10 Jahren</th></tr></thead>
+<tbody>
+<tr><td data-l="Variante">2&nbsp;% Tilgung, keine Sondertilgung</td><td class="n" data-l="Restschuld nach 10 Jahren">226.375&nbsp;€</td><td data-l="Zinsersparnis in 10 Jahren"></td></tr>
+<tr><td data-l="Variante">Einmalig 10.000&nbsp;€ Sondertilgung nach dem ersten Jahr</td><td class="n" data-l="Restschuld nach 10 Jahren">212.050&nbsp;€</td><td data-l="Zinsersparnis in 10 Jahren">4.325&nbsp;€</td></tr>
+<tr><td data-l="Variante">3&nbsp;% Tilgung statt 2&nbsp;% (250&nbsp;€ mehr pro Monat)</td><td class="n" data-l="Restschuld nach 10 Jahren">189.563&nbsp;€</td><td data-l="Zinsersparnis in 10 Jahren"></td></tr>
+<tr><td data-l="Variante">Jedes Jahr 5.000&nbsp;€ Sondertilgung</td><td class="n" data-l="Restschuld nach 10 Jahren">166.138&nbsp;€</td><td data-l="Zinsersparnis in 10 Jahren">10.237&nbsp;€</td></tr>
+</tbody></table></div>
+    <p>Eine einmalige Sondertilgung von 10.000&nbsp;Euro nach dem ersten Jahr senkt die Restschuld nach 10 Jahren um 14.325&nbsp;Euro, also um mehr als den eingezahlten Betrag. Die Differenz von 4.325&nbsp;Euro entspricht den Zinsen, die auf diese 10.000&nbsp;Euro in den folgenden neun Jahren nicht mehr anfallen und stattdessen in die Tilgung fließen.</p>
+    <p>Wer jedes Jahr 5.000&nbsp;Euro sondertilgt, geht mit 60.000&nbsp;Euro weniger Restschuld in die Anschlussfinanzierung und ist bei gleichbleibendem Zins nach rund 18,75 statt 27,5 Jahren schuldenfrei.</p>
+    <h2 id="eigennutzer-jeder-getilgte-euro-spart-den-vollen">Eigennutzer: Jeder getilgte Euro spart den vollen Zins</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild2.jpg" alt="Ein kleiner Kran hebt einen schweren Stein vom Dach eines Modellhauses" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Wer selbst in der Immobilie wohnt, zahlt die Zinsen aus versteuertem Einkommen. Eine Sondertilgung spart deshalb den vollen Zinssatz, sicher und ohne Risiko. Bei 4&nbsp;Prozent Zins entspricht jeder sondergetilgte Euro einer Anlage mit 4&nbsp;Prozent Rendite nach Steuern. Für Eigennutzer ist die Sondertilgung deshalb fast immer sinnvoll, solange eine Reserve übrig bleibt.</p>
+    <h2 id="kapitalanleger-die-rechnung-nach-steuern">Kapitalanleger: Die Rechnung nach Steuern</h2>
+    <figure class="sec-img" data-wait="Bild folgt"><img src="bild3.jpg" alt="Eine Münze, halb im Schatten eines Steuerformulars, daneben ein leeres Grundstück" width="1536" height="1024" loading="lazy" onerror="this.parentNode.classList.add('missing')"></figure>
+    <p>Bei vermieteten Immobilien sind die Zinsen Werbungskosten. Sie senken die Steuerlast. Wer sondertilgt, spart Zinsen, verliert aber im selben Umfang Steuerersparnis. Bei einem Grenzsteuersatz von 42&nbsp;Prozent bleiben von den 4.325&nbsp;Euro Zinsersparnis aus dem Beispiel nach Steuern rund 2.508&nbsp;Euro.</p>
+    <p>Dazu kommt die Frage, wofür das Geld sonst gebraucht würde. Wer ein Portfolio aufbauen will, braucht Eigenkapital für den nächsten Kauf. 10.000&nbsp;Euro, die in der Restschuld der ersten Wohnung stecken, fehlen bei den Kaufnebenkosten der zweiten. Für Anleger ist die Sondertilgung deshalb vor allem dann sinnvoll, wenn kein weiterer Kauf geplant ist oder wenn das Ende der Zinsbindung naht und die Restschuld für die Anschlussfinanzierung gesenkt werden soll.</p>
+    <h2 id="welcher-weg-wofuer-passt">Welcher Weg wofür passt</h2>
+    <div class="picks"><div><p><strong>Höhere laufende Tilgung</strong>, wenn Ihr Einkommen stabil ist und Sie Disziplin in die Rate einbauen wollen. Der Effekt ist am größten, weil er ab dem ersten Monat wirkt.</p></div><div><p><strong>Sondertilgungsrecht</strong>, wenn Ihr Einkommen schwankt, Sie Bonuszahlungen erwarten oder sich die Entscheidung offenhalten wollen. Das Recht sollte in fast jedem Vertrag stehen, auch wenn Sie es nie nutzen.</p></div><div><p><strong>Beides kombinieren</strong>, wenn Sie eine solide Grundtilgung wollen und überschüssiges Geld gezielt vor der Anschlussfinanzierung einsetzen möchten.</p></div></div>
+    <section class="pos">
+    <h2 id="die-einschaetzung-von-fischer-geserich">Die Einschätzung von Fischer &amp; Geserich</h2>
+    <p>Ein Sondertilgungsrecht gehört aus unserer Sicht in nahezu jeden Darlehensvertrag, weil es nichts oder wenig kostet und die Flexibilität erhält. Ob und wann es genutzt wird, hängt am Ziel. Eigennutzern raten wir in der Regel, freies Geld gegen das Darlehen einzusetzen, sobald die Reserve steht. Kapitalanlegern, die weiter kaufen wollen, raten wir meist, Liquidität zu halten und die Sondertilgung für die Jahre vor der Anschlussfinanzierung aufzuheben.</p>
+    </section>
+
+    <div class="qa" id="fragen"><p class="qa-h">Häufige Fragen</p><details open><summary>Was ist eine Sondertilgung?</summary><div><p>Eine Sondertilgung ist eine zusätzliche, freiwillige Zahlung auf ein Darlehen außerhalb der regulären Monatsrate. Sie senkt die Restschuld sofort und damit alle folgenden Zinsen. Wie viel Sie pro Jahr sondertilgen dürfen, regelt der Vertrag, üblich sind bis zu 5&nbsp;Prozent der ursprünglichen Darlehenssumme.</p></div></details><details><summary>Was bringt eine Sondertilgung von 10.000&nbsp;Euro?</summary><div><p>Bei 300.000&nbsp;Euro Darlehen, 4&nbsp;Prozent Zins und 2&nbsp;Prozent Tilgung senkt eine Sondertilgung von 10.000&nbsp;Euro nach dem ersten Jahr die Restschuld nach 10 Jahren um 14.325&nbsp;Euro. Davon sind 4.325&nbsp;Euro eingesparte Zinsen.</p></div></details><details><summary>Lohnt sich eine Sondertilgung für Kapitalanleger?</summary><div><p>Weniger als für Eigennutzer, weil die Zinsen bei vermieteten Immobilien steuerlich absetzbar sind. Bei 42&nbsp;Prozent Grenzsteuersatz bleiben von jedem eingesparten Zins-Euro nach Steuern nur 58 Cent. Sinnvoll ist sie für Anleger vor allem vor der Anschlussfinanzierung oder wenn kein weiterer Kauf geplant ist.</p></div></details></div>
+
+    <aside class="cta" aria-label="Finanzierungserstgespräch buchen"><h3>Tilgung und Sondertilgung, passend zu Ihrem Ziel</h3><p>Wir rechnen mit Ihnen durch, ob eine höhere Tilgung, ein Sondertilgungsrecht oder beides zu Ihrer Situation passt, und verhandeln die Konditionen dafür mit der Bank. Fischer &amp; Geserich vermittelt Finanzierungen deutschlandweit.</p><a class="btn" href="https://fg-realestate.de/finanzierungsberatung.html">Finanzierungserstgespräch buchen</a></aside>
+
+    <div class="end">
+      <div class="quellen"><h3>Quellen</h3><ul><li><a href="https://www.gesetze-im-internet.de/bgb/__502.html" target="_blank" rel="noopener">§&nbsp;502 BGB, Vorfälligkeitsentschädigung</a></li></ul></div>
+      <p class="note">Das Titelbild und die Bilder ohne Eintrag unter <a href="/bildnachweise/">Bildnachweise</a> wurden mit KI erstellt.</p>
+      <p class="note">Der Beitrag dient der allgemeinen Information und ersetzt keine Rechts-, Steuer-, Finanzierungs- oder Anlageberatung. Zinssätze in Beispielrechnungen sind Beispielwerte, keine aktuellen Konditionen.</p>
+    </div>
+  </article>
+
+  <aside class="related" aria-label="Mehr zu Finanzierung">
+    <h2>Mehr zu Finanzierung</h2>
+    <a href="../beleihungsauslauf-und-kondition/"><span class="rthumb"><img src="../beleihungsauslauf-und-kondition/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Beleihungs&shy;auslauf, 100&nbsp;% und 110&nbsp;% Finanzierung</strong></a>
+    <a href="../zinsbindung-strategisch-waehlen/"><span class="rthumb"><img src="../zinsbindung-strategisch-waehlen/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Zins&shy;bindung und Forward-Darlehen</strong></a>
+    <a href="../anschlussfinanzierung-planen/"><span class="rthumb"><img src="../anschlussfinanzierung-planen/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Anschluss&shy;finanzierung planen</strong></a>
+    <a href="../woran-orientiert-sich-der-bauzins/"><span class="rthumb"><img src="../woran-orientiert-sich-der-bauzins/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Woran sich Bauzinsen orientieren</strong></a>
+    <a href="../zinsaenderungsstress-testen/"><span class="rthumb"><img src="../zinsaenderungsstress-testen/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Zinsänderungs&shy;stress testen</strong></a>
+    <a href="../immobilie-ohne-eigenkapital/"><span class="rthumb"><img src="../immobilie-ohne-eigenkapital/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Immobilie ohne Eigen&shy;kapital</strong></a>
+    <a href="../eigenkapital-optimal-einsetzen/"><span class="rthumb"><img src="../eigenkapital-optimal-einsetzen/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Eigen&shy;kapital optimal einsetzen und Finanzierungs&shy;reserve</strong></a>
+    <a href="../vom-rechner-zum-bankgespraech/"><span class="rthumb"><img src="../vom-rechner-zum-bankgespraech/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Vom Rechner zum Bank&shy;gespräch</strong></a>
+    <a href="../dscr-verstehen/"><span class="rthumb"><img src="../dscr-verstehen/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>DSCR verstehen</strong></a>
+    <a href="../warum-banken-grosszuegig-und-streng-finanzieren/"><span class="rthumb"><img src="../warum-banken-grosszuegig-und-streng-finanzieren/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.style.visibility='hidden'"></span><strong>Warum Banken mal großzügig und mal streng finanzieren</strong></a>
+  </aside>
+</div>
+
+<section class="more" aria-label="Weiterlesen">
+  <div class="more-in">
+    <h2>Weiterlesen</h2>
+    <p class="more-sub">Artikel, die hier anschließen</p>
+    <div class="cards">
+      <a class="card" href="../anschlussfinanzierung-planen/">
+        <div class="thumb"><img src="../anschlussfinanzierung-planen/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.parentNode.classList.add('missing')"></div>
+        <span class="kicker">Finanzierung</span>
+        <strong>Anschlussfinanzierung planen</strong>
+        <p>Wann Sie die Anschlussfinanzierung planen sollten, warum die Restschuld alles entscheidet und was Prolongation, Umschuldung und Forward-Darlehen kosten.</p>
+        
+      </a>
+      <a class="card" href="../eigenkapital-optimal-einsetzen/">
+        <div class="thumb"><img src="../eigenkapital-optimal-einsetzen/lead.jpg" alt="" width="900" height="600" loading="lazy" onerror="this.parentNode.classList.add('missing')"></div>
+        <span class="kicker">Finanzierung</span>
+        <strong>Eigenkapital optimal einsetzen und Finanzierungsreserve</strong>
+        <p>Wie viel Eigenkapital in eine Immobilie gehört, hängt vom Ziel ab: warum Eigennutzer anders rechnen als Kapitalanleger und warum eine Reserve dazugehört.</p>
+        
+      </a>
+    </div>
+    <a class="back" href="../">‹ Zurück zum Blog</a>
+  </div>
+</section>
+
+<footer><span>© 2026 Fischer &amp; Geserich Real Estate</span><span><a href="https://fg-realestate.de/impressum.html">Impressum</a> · <a href="https://fg-realestate.de/datenschutz.html">Datenschutz</a> · <a href="#" data-open-consent>Cookie-Einstellungen</a></span></footer>
+
+<script>
+/* Mobilmenü wie auf der Website */
+(function(){
+  var b=document.querySelector(".burger"),m=document.querySelector(".mobile-menu");
+  b.addEventListener("click",function(){var o=m.classList.toggle("open");b.setAttribute("aria-expanded",o)});
+})();
+/* Offene Menüs schließen bei Klick daneben oder mit Esc */
+(function(){
+  var cat=document.querySelector(".cat-menu"),b=document.querySelector(".burger"),m=document.querySelector(".mobile-menu");
+  function closeAll(e){
+    if(cat.open&&(!e||!cat.contains(e.target)))cat.open=false;
+    if(m.classList.contains("open")&&(!e||!(m.contains(e.target)||b.contains(e.target)))){m.classList.remove("open");b.setAttribute("aria-expanded",false)}
+  }
+  document.addEventListener("click",closeAll);
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeAll()});
+})();
+/* Umschalter heller / dunkler Lesemodus */
+(function(){
+  var root=document.documentElement,b=document.querySelector(".theme-btn");
+  function sync(){var d=root.dataset.theme==="dark";b.setAttribute("aria-pressed",d);b.setAttribute("aria-label",d?"Heller Lesemodus":"Dunkler Lesemodus")}
+  b.addEventListener("click",function(){
+    root.dataset.theme=root.dataset.theme==="dark"?"light":"dark";sync();
+    try{localStorage.setItem("fg-theme",root.dataset.theme)}catch(e){}
+  });
+  sync();
+})();
+/* Kopfzeile: Fortschritt, Titel nach dem Scrollen, aktiver Abschnitt links */
+(function(){
+  var top=document.querySelector(".top"),bar=document.querySelector(".progress span"),h1=document.querySelector(".head h1");
+  var links=[].slice.call(document.querySelectorAll(".toc a")),secs=links.map(function(a){return document.querySelector(a.getAttribute("href"))});
+  function tick(){
+    var d=document.documentElement,max=d.scrollHeight-d.clientHeight;
+    bar.style.width=(max>0?d.scrollTop/max*100:0)+"%";
+    top.classList.toggle("scrolled",h1.getBoundingClientRect().bottom<140);
+    var cur=0;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<170)cur=i});
+    links.forEach(function(a,i){a.classList.toggle("on",i===cur)});
+  }
+  var lead=document.querySelector(".lead-img");
+  function shrink(){
+    /* Bild wird beim Scrollen gleichmäßig kleiner, Seitenverhältnis bleibt (n26-Verhalten) */
+    var r=lead.getBoundingClientRect(),p=Math.min(Math.max((140-r.top)/r.height,0),1);
+    lead.style.setProperty("--s",(1-p*.45).toFixed(3));
+  }
+  addEventListener("scroll",function(){tick();shrink()},{passive:true});tick();shrink();
+})();
+
+
+</script>
+</body>
+</html>
