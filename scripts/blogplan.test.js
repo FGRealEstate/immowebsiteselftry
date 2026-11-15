@@ -23,13 +23,15 @@ const karten = ["a", "b", "c", "d", "e"].map((slug) => ({ slug, url: `/blog/${sl
 const zeit = (s) => new Date(s);
 const live = (p, jetzt) => bp.veroeffentlicht(p, karten, { jetzt: zeit(jetzt) }).map((a) => a.slug);
 
-test("der echte Plan: Dienstag oder Freitag, nie zwei an einem Termin, Nr. 19 am 13.11., letzter Termin 12.03.2027", () => {
-  const ab = echt.artikel.filter((a) => a.datum >= echt.automatikSeit);
+test("der echte Plan: Dienstag oder Freitag, nie zwei an einem Termin, Nr. 19 am 13.11., letzter Termin 05.03.2027", () => {
+  const ab = echt.artikel.filter((a) => a.datum >= echt.automatikSeit && !a.vonHand);
   for (const a of ab) assert.ok(bp.istTermin(a.datum), `Nr. ${a.nr} am ${a.datum}`);
   assert.equal(new Set(ab.map((a) => a.datum)).size, ab.length);
   assert.equal(new Set(echt.artikel.map((a) => a.slug)).size, echt.artikel.length);
   assert.equal(new Set(echt.artikel.map((a) => a.nr)).size, 40);
-  assert.equal(ab.map((a) => a.datum).sort().at(-1), "2027-03-12");
+  // Peer, 15.11.2026: Nr. 3 und Nr. 4 von Hand am So 15.11., die übrigen zwei Termine früher, also bis Fr 05.03.2027
+  assert.deepEqual(echt.artikel.filter((a) => a.vonHand).map((a) => [a.nr, a.datum, Boolean(a.bereit)]), [[3, "2026-11-15", true], [4, "2026-11-15", true]]);
+  assert.equal(ab.map((a) => a.datum).sort().at(-1), "2027-03-05");
   // Update 55 §1.2: Nr. 19 am Fr 13.11., danach jeder Artikel einen Termin später, ohne Lücke
   const sortiert = [...ab].sort((a, b) => a.datum.localeCompare(b.datum));
   assert.equal(sortiert[0].nr, 19);
@@ -41,6 +43,28 @@ test("der echte Plan: Dienstag oder Freitag, nie zwei an einem Termin, Nr. 19 am
 test("der echte Plan: sind alle bereit, erscheint jeder an seinem Datum", () => {
   const alle = { ...echt, artikel: echt.artikel.map((a) => (a.datum >= echt.automatikSeit ? { ...a, bereit: "2026-11-01T12:00+01:00" } : a)) };
   for (const a of bp.zeitplan(alle, { jetzt: zeit("2027-04-01T12:00+02:00") })) assert.equal(a.termin, a.datum, `Nr. ${a.nr}`);
+});
+
+test("Peer 15.11.2026: ein Artikel „von Hand“ erscheint an seinem Datum außerhalb der Termine und belegt keinen", () => {
+  // f: So 15.11. von Hand; d (Fr 13.11.) und e (Di 17.11.) behalten ihre Termine, e rückt nicht wegen f
+  const p = plan({ c: "2026-11-08T12:00+01:00", d: "2026-11-08T12:00+01:00", e: "2026-11-08T12:00+01:00" });
+  p.artikel.push({ nr: 5, slug: "f", datum: "2026-11-15", vonHand: true, bereit: "2026-11-11T08:40+01:00" });
+  const k = [...karten, { slug: "f", url: "/blog/f/", kategorie: "Finanzierung", titel: "F", kurz: "…" }];
+  const am = (jetzt) => bp.veroeffentlicht(p, k, { jetzt: zeit(jetzt) }).map((a) => a.slug);
+  assert.deepEqual(am("2026-11-14T23:59+01:00"), ["a", "b", "c", "d"]);
+  assert.deepEqual(am("2026-11-15T00:00+01:00"), ["a", "b", "c", "d", "f"]);
+  assert.deepEqual(am("2026-11-17T06:00+01:00"), ["a", "b", "c", "d", "f", "e"]);
+  const f = bp.veroeffentlicht(p, k, { jetzt: zeit("2026-11-15T10:00+01:00") }).find((a) => a.slug === "f");
+  assert.equal(f.datePublished, "2026-11-15");
+  const z = bp.zeitplan(p, { jetzt: zeit("2026-11-15T10:00+01:00") });
+  assert.deepEqual(z.find((a) => a.slug === "f").verschoben, []);
+  assert.equal(z.find((a) => a.slug === "e").termin, "2026-11-17");
+  // ohne bereit oder ohne Seite erscheint er nicht, und kein Termin wartet auf ihn
+  const ohne = { ...p, artikel: p.artikel.map((a) => (a.slug === "f" ? { ...a, bereit: null } : a)) };
+  assert.equal(bp.zeitplan(ohne, { jetzt: zeit("2026-11-15T10:00+01:00") }).find((a) => a.slug === "f").status, "offen");
+  assert.deepEqual(bp.veroeffentlicht(p, k, { jetzt: zeit("2026-11-15T10:00+01:00"), vorhanden: (s) => s !== "f" }).map((a) => a.slug), ["a", "b", "c", "d"]);
+  // die Abendprüfung kennt ihn nicht als Termin
+  assert.ok(!bp.naechsteTermine(p, { jetzt: zeit("2026-11-14T12:00+01:00") }).some((a) => a.slug === "f"));
 });
 
 test("Tag und Frist in deutscher Zeit, auch über die Zeitumstellung", () => {

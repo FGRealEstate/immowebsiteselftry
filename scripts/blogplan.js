@@ -12,6 +12,9 @@
 //   Artikel auf den nächsten Termin, an dem kein Artikel stand, also ans Ende des Plans.
 // - Termine, deren Frist noch läuft, sind eine Vorschau: die übrigen Artikel in der Reihenfolge des Plans.
 // - Artikel mit einem Datum vor `automatikSeit` waren schon vorher von Hand live und bleiben es.
+// - Peer, 15.11.2026 („post two more blogs on the live website“): Ein Artikel mit `vonHand: true` erscheint an seinem
+//   Datum außerhalb der Dienstage und Freitage, sobald er bereit ist und seine Seite im Repo liegt. Er belegt keinen
+//   Termin; die Reihe läuft ohne ihn weiter (Nr. 3 und Nr. 4 am So 15.11.2026).
 // Zum Testen gibt FG_JETZT (ISO-Zeit, z. B. 2026-11-08T06:00+01:00) dem Build eine andere Uhrzeit.
 //
 // Aufruf: node scripts/blogplan.js        Plan mit tatsächlichen Terminen
@@ -70,10 +73,17 @@ function jetztAusUmgebung() {
 function rechne(plan, { jetzt = new Date(), vorhanden = () => true } = {}) {
   const seit = plan.automatikSeit;
   const artikel = [...plan.artikel].sort((a, b) => a.datum.localeCompare(b.datum) || a.nr - b.nr);
+  const vonHand = (a) => a.datum >= seit && a.vonHand === true;
+  const zeitpunkt = (a) => {
+    const b = a.bereit ? new Date(a.bereit) : null;
+    if (b && Number.isNaN(b.getTime())) throw new Error(`blogplan: Nr. ${a.nr}: bereit „${a.bereit}“ ist keine Zeit`);
+    return b;
+  };
   const belegt = new Set();
   for (const a of artikel) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(a.datum)) throw new Error(`blogplan: Nr. ${a.nr} hat kein Datum JJJJ-MM-TT`);
     if (a.datum < seit) continue; // vor der Automatik von Hand live, auch zwei an einem Tag (22.10., 31.10.)
+    if (vonHand(a)) continue; // von Hand an einem eigenen Tag, belegt keinen Termin (auch zwei an einem Tag, 15.11.)
     if (belegt.has(a.datum)) throw new Error(`blogplan: zwei Artikel am ${a.datum} (Nr. ${a.nr}); nie zwei an einem Termin`);
     // Kein Abbruch: Ein falscher Wochentag soll den 6-Uhr-Build nicht anhalten. npm test prüft den Plan (blogplan.test.js).
     if (!istTermin(a.datum)) console.warn(`blogplan: Nr. ${a.nr} am ${a.datum} ist kein Dienstag oder Freitag`);
@@ -86,12 +96,12 @@ function rechne(plan, { jetzt = new Date(), vorhanden = () => true } = {}) {
     if (!vorhanden(a.slug)) throw new Error(`blogplan: Nr. ${a.nr} (${a.slug}) war live, die Seite fehlt`);
     ergebnis.set(a, { termin: a.datum, status: "live" });
   }
-  const reihe = artikel.filter((a) => a.datum >= seit);
-  const bereitAb = new Map(reihe.map((a) => {
-    const b = a.bereit ? new Date(a.bereit) : null;
-    if (b && Number.isNaN(b.getTime())) throw new Error(`blogplan: Nr. ${a.nr}: bereit „${a.bereit}“ ist keine Zeit`);
-    return [a, b];
-  }));
+  for (const a of artikel.filter(vonHand)) {
+    const da = Boolean(zeitpunkt(a)) && zeitpunkt(a) <= jetzt && vorhanden(a.slug);
+    ergebnis.set(a, { termin: a.datum, status: !da ? "offen" : a.datum <= heute ? "live" : "bereit" });
+  }
+  const reihe = artikel.filter((a) => a.datum >= seit && !vonHand(a));
+  const bereitAb = new Map(reihe.map((a) => [a, zeitpunkt(a)]));
   const fertigBis = (a, d) => Boolean(bereitAb.get(a)) && bereitAb.get(a) <= frist(d) && vorhanden(a.slug);
   const termine = [];
   const offen = [...reihe];
@@ -256,7 +266,7 @@ function abendpruefung(plan, { jetzt = new Date(), vorhanden = () => true } = {}
 function naechsteTermine(plan, { jetzt = new Date(), vorhanden, anzahl = 6 } = {}) {
   const heute = tag(jetzt);
   return zeitplan(plan, { jetzt, vorhanden })
-    .filter((a) => a.datum >= plan.automatikSeit && a.termin >= heute)
+    .filter((a) => a.datum >= plan.automatikSeit && !a.vonHand && a.termin >= heute)
     .sort((a, b) => a.termin.localeCompare(b.termin))
     .slice(0, anzahl);
 }
