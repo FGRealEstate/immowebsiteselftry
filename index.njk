@@ -190,6 +190,15 @@ faqListe:
       {%- for o in homeOffers %}
       {{ angebot(o) }}
       {%- endfor %}
+      {#- Update 53 §2.3 (mit Update 57 §11): unter 3 Angeboten keine leeren Plätze, dafür eine Kachel im selben Kartenstil. #}
+      {%- if homeOffers.length < 3 %}
+      <li>
+        <a class="fgs-obj" href="/immobilienbewertung/#anfrage">
+          <span class="fgs-obj-media fgs-obj-design" aria-hidden="true"><img src="/images/logo/fg-zeichen-gold.svg" alt="" width="49" height="58"></span>
+          <h3 class="fgs-obj-title">Ihre Immobilie hier? Kostenlose Bewertung</h3>
+        </a>
+      </li>
+      {%- endif %}
     </ul>
     <div class="fgs-btns fgs-obj-more"><a class="fgs-btn fgs-btn--primary" href="/angebote">Alle Angebote ansehen</a></div>
   </div>

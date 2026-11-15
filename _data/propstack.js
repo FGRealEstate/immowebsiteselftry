@@ -1634,7 +1634,7 @@ function seitenTitelSetzen(properties, projects) {
     projects.forEach((project, i) => { project.seite_titel = projektTitel[i]; });
 }
 
-module.exports = async function () {
+async function propstackLaden() {
     const apiKey = process.env.PROPSTACK_API_KEY;
     const empty = emptyPropstackData();
 
@@ -1696,6 +1696,7 @@ module.exports = async function () {
         }
 
         rawUnits = testdatenReferenz(rawUnits);
+        rawUnits = testdatenAbgang(rawUnits); // Update 53 §2, nur Testumgebung
 
         const standaloneProperties = [];
         const projectUnitsByKey = new Map();
@@ -1791,4 +1792,33 @@ module.exports = async function () {
         console.warn("Propstack Fehler:", error.message);
         return empty;
     }
+}
+
+/* Update 53 §2 (mit Update 57 §11, 15.11.2026): Testdaten nur für die Testumgebung. FG_TESTDATEN_ABGANG zeigt auf eine
+   JSON-Datei [<Einheit-ID>, …]. Der Build lässt diese Einheiten weg, als hätte Propstack sie archiviert; in Propstack
+   ändert sich nichts. Auf Netlify (NETLIFY gesetzt) wird die Variable nie gelesen. */
+function testdatenAbgang(rawUnits) {
+    const datei = process.env.FG_TESTDATEN_ABGANG;
+    if (!datei || process.env.NETLIFY) return rawUnits;
+    let ids = [];
+    try { ids = JSON.parse(require("fs").readFileSync(datei, "utf8")).map(String); } catch (error) { console.log("TESTDATEN ABGANG: Datei nicht lesbar:", error.message); return rawUnits; }
+    const neu = rawUnits.filter((unit) => !(unit && ids.includes(String(unit.id))));
+    console.log("TESTDATEN ABGANG: weggelassene Einheiten:", rawUnits.length - neu.length);
+    return neu;
+}
+
+/* Update 53 §2: Gedächtnis der Angebotsadressen und Weiterleitungen für weggefallene Angebote (scripts/angebote-gedaechtnis.js).
+   Auch wenn der Propstack-Abruf scheitert, bleibt jede gemerkte Adresse in der Liste. */
+module.exports = async function () {
+    const daten = await propstackLaden();
+    const gedaechtnis = require("../scripts/angebote-gedaechtnis.js");
+    daten.gedaechtnis = gedaechtnis.fortschreiben(await gedaechtnis.laden(), daten);
+    // Liefert Propstack gar nichts (kein Angebot, kein Projekt, keine Referenz), ist das ein Ausfall, kein Abgang:
+    // keine 301 (Browser merken sie sich), die Adressen bleiben gemerkt und der nächste Build entscheidet.
+    if (![daten.properties, daten.projects, daten.references].some((liste) => (liste || []).length)) {
+        if (daten.gedaechtnis.abgaenge.length) console.warn(`GEDAECHTNIS: Propstack leer, ${daten.gedaechtnis.abgaenge.length} Weiterleitungen ausgesetzt`);
+        daten.gedaechtnis.abgaenge = [];
+    }
+    console.log(`GEDAECHTNIS: ${daten.gedaechtnis.eintraege.length} Adressen gemerkt, ${daten.gedaechtnis.abgaenge.length} weitergeleitet`);
+    return daten;
 };

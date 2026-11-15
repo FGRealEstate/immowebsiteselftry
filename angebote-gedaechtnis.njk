@@ -1,0 +1,6 @@
+---
+permalink: /angebote-gedaechtnis.json
+eleventyExcludeFromCollections: true
+---
+{#- Update 53 §2 (mit Update 57 §11): gemerkte Angebotsadressen, siehe scripts/angebote-gedaechtnis.js. -#}
+{{ (propstack.gedaechtnis or { eintraege: [], abgaenge: [] }) | dump | safe }}

@@ -572,7 +572,15 @@ module.exports = function(eleventyConfig) {
     const path = require("path");
     const quelle = fs.readFileSync(path.join(__dirname, "_redirects"), "utf8");
     const plan = JSON.parse(fs.readFileSync(path.join(__dirname, "_data", "blogplan.json"), "utf8"));
-    fs.writeFileSync(path.join(dir.output, "_redirects"), blogplan.weiterleitungen(quelle, plan, blog.map((post) => post.slug)));
+    let inhalt = blogplan.weiterleitungen(quelle, plan, blog.map((post) => post.slug));
+    // Update 53 §2 (mit Update 57 §11): Angebote und Projekte, die Propstack nicht mehr liefert, 301 auf ihre Gebietsseite
+    // (sonst /angebote). Liste aus /angebote-gedaechtnis.json dieses Builds, Regeln am Ende (keine Sternregel davor deckt /angebote/ ab).
+    const gedaechtnisDatei = path.join(dir.output, "angebote-gedaechtnis.json");
+    if (fs.existsSync(gedaechtnisDatei)) {
+      const zeilen = require("./scripts/angebote-gedaechtnis").regeln(JSON.parse(fs.readFileSync(gedaechtnisDatei, "utf8")));
+      if (zeilen.length) inhalt = inhalt.replace(/\n*$/, "\n") + "\n# Update 53 §2: Angebote nicht mehr in Propstack (automatisch, scripts/angebote-gedaechtnis.js)\n" + zeilen.join("\n") + "\n";
+    }
+    fs.writeFileSync(path.join(dir.output, "_redirects"), inhalt);
   });
 
   // Design-Pass 2 §9 Schritt 6 (LCP mobil < 2,5 s): fg-system.css ohne Kommentare und überflüssigen Leerraum
