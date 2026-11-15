@@ -108,6 +108,9 @@
 /standorte/luckenwalde/ /standorte/teltow-flaeming/ 301
 /standorte/strausberg /standorte/maerkisch-oderland/ 301
 /standorte/strausberg/ /standorte/maerkisch-oderland/ 301
+# Update 57 §4 (15.11.2026): die alte Eberswalde-Seite ist im Eberswalde-Teil der Barnim-Seite aufgegangen
+/standorte/eberswalde /standorte/barnim/ 301
+/standorte/eberswalde/ /standorte/barnim/ 301
 # Update 41 §3 (06.11.2026): Dresden-Zentrum heißt jetzt Blasewitz & Striesen
 /standorte/dresden/zentrum /standorte/dresden/blasewitz-striesen/ 301
 /standorte/dresden/zentrum/ /standorte/dresden/blasewitz-striesen/ 301
