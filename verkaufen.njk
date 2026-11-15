@@ -168,7 +168,7 @@ service:
 {# §4.6 Nachschlage-Blöcke als Aufklapper, Titel wörtlich aus dem Brief. #unterlagen (Link in den Fragen) und #kosten öffnen sie. #}
 <section class="fgs-section fgs-refs">
   <div class="fgs-wrap">
-    {% call nachschlag({ id: "unterlagen", titel: "Unterlagen für den Verkauf (12 Dokumente)" }) %}
+    {% call nachschlag({ id: "unterlagen", titel: "Unterlagen für den Verkauf" }) %}
     <p>Fehlende Unterlagen können Käuferfinanzierungen und die notarielle Abwicklung verzögern. Deshalb klären wir kritische Dokumente möglichst vor dem Vermarktungsstart.</p>
     <h3>Für jede Immobilie</h3>
     <ul class="fgs-checklist" role="list">
@@ -196,7 +196,7 @@ service:
     </ul>
     <p class="fgs-note">Wenn noch eine Grundschuld eingetragen ist, brauchen wir außerdem die Angaben zum laufenden Darlehen, damit die Ablösung zum Notartermin vorbereitet werden kann. Was fehlt, beschaffen wir gemeinsam mit Ihnen, zum Beispiel beim Grundbuchamt oder bei der Hausverwaltung.</p>
     {% endcall %}
-    {% call nachschlag({ id: "kosten", titel: "Was ein Verkauf kostet (Tabelle)" }) %}
+    {% call nachschlag({ id: "kosten", titel: "Was ein Verkauf kostet" }) %}
     <p>Provision und Teilungspflicht nennen wir Ihnen vor der ersten Besichtigung, nicht erst danach. Die übrigen Posten hängen von Ihrer Immobilie und Ihrer Finanzierung ab.</p>
     <div class="fgs-table-wrap">
       <table class="fgs-table">
