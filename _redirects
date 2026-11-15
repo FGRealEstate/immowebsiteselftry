@@ -1,7 +1,5 @@
-# Update 57 §2 Test (15.11.2026, wird gleich wieder entfernt): erzeugt /x.html -> /x 301! eine Schleife?
-/vendor/u57-test-a.html /vendor/u57-test-a 301!
-/vendor/u57-test-b.html /vendor/u57-test-b 301
-/vendor/u57-test-b /vendor/u57x/b.html 200
+# Update 57 §2 Test 2 (15.11.2026, wird gleich wieder entfernt): erzeugt /x/index.html -> /x/ 301! eine Schleife?
+/vendor/u57x/index.html /vendor/u57x/ 301!
 # Update 47 §1: alte Hausverwaltungs-Seite (laut Git 15.11.2025–10.01.2026 unter /verwaltung.html, danach unter verstecktem Namen bis 28.08.2026) → Vermieten
 /verwaltung /vermieten.html 301!
 /verwaltung/ /vermieten.html 301!
