@@ -1,0 +1,26 @@
+{#- Update 54 §1 (vorbereitet mit Update 57 §11): Abschnitt „Grundriss und Wohnflächenberechnung“ mit dem Partner aus
+    _data/partner.js. Nur sichtbar, wenn partner.aktiv. Link: neuer Tab, rel="sponsored noopener", Kennzeichnung „Partnerlink“
+    neben dem Knopf; Klicks zählt fg-design.js als GA4-Ereignis partner_click mit partner_name (data-partner). -#}
+{%- if partner.aktiv %}
+<section class="fgs-section fgs-pblock" id="grundriss-partner" aria-labelledby="grundriss-partner-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-pblock-box">
+      <h2 id="grundriss-partner-titel">Grundriss und Wohnflächenberechnung</h2>
+      <div class="fgs-pblock-body">
+        <div class="fgs-pblock-marke">
+          {%- if partner.logo %}
+          <img src="{{ partner.logo.src }}" alt="{{ partner.name }}" width="{{ partner.logo.breite }}" height="{{ partner.logo.hoehe }}" loading="lazy" decoding="async">
+          {%- else %}
+          <span class="fgs-pblock-name">{{ partner.name }}</span>
+          {%- endif %}
+        </div>
+        <p>{{ partner.satz }}</p>
+      </div>
+      <div class="fgs-pblock-aktion">
+        <a class="fgs-btn fgs-btn--primary" href="{{ partner.link }}" target="_blank" rel="sponsored noopener" data-partner="{{ partner.name }}">Termin beim Partner buchen</a>
+        <span class="fgs-pblock-kennung">Partnerlink</span>
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif %}

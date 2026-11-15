@@ -7,6 +7,9 @@ module.exports = {
   // /gewerbeimmobilien/ (Update 5, Abschnitt 4). Update 35 C1 (05.11.2026): erst nur Testumgebung (FG_FREIGABE_GEWERBE=1).
   // Update 44 §1.1 (07.11.2026): Jesu gibt frei, die Seite ist live.
   gewerbe: true,
+  // Update 54 §1 (vorbereitet mit Update 57 §11, 15.11.2026): Partnerblock „Grundriss und Wohnflächenberechnung“ (_data/partner.js).
+  // Live aus, bis Timons Angaben und Jesus Satz da sind; die Testumgebung zeigt ihn (FG_FREIGABE_PARTNER=1). Dann hier true.
+  partner: process.env.FG_FREIGABE_PARTNER === "1",
   // FG-Gap-Answers (28.10.2026): FAQ-Antworten mit Status TIMON stehen in den Seiten (Feld timon: "1.3" usw.),
   // werden aber erst gebaut, wenn ihre Nummer hier steht. Eintragen erst, wenn Jesu das OK schickt.
   // 29.10.2026 FG-Timon-Answers-Update §1: Timon hat geantwortet. 6.2 (Strukturvertrieb) ist nach FG-Update-11 §3 aus den Seiten gelöscht.
