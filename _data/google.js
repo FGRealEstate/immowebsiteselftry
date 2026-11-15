@@ -5,9 +5,12 @@ module.exports = {
   name: "Fischer und Geserich Real Estate GmbH",
   rating: "5,0",
   ratingValue: 5,
-  count: 25,
-  checked: "2026-11-06",
-  checkedLabel: "06.11.2026",
+  // Update 57 §10 (15.11.2026): Profil zeigt 5,0 bei 27 Rezensionen (Google-Suche, Rezensionen, öffentlich: 25 vom 06.11.
+  // plus zwei neue). Eine dritte neue ist „nicht veröffentlicht“ und zählt nicht. Texte der zwei neuen noch nicht übernommen.
+  // Places API braucht ein Cloud-Projekt mit Abrechnung, daher kein täglicher Abruf: Zahl kommt mit jedem Freitags-Update.
+  count: 27,
+  checked: "2026-11-15",
+  checkedLabel: "15.11.2026",
   url: "https://www.google.com/maps/search/?api=1&query=Fischer%20und%20Geserich%20Real%20Estate%20GmbH&query_place_id=ChIJ5bO7X_XZbiMRHH1Rwa62QAw",
   // Feste Adresse des Profils (CID), für sameAs im Markup (Update 4, 3.6). Geprüft am 27.10.2026: öffnet das Profil.
   mapsUrl: "https://www.google.com/maps?cid=882906388648525084",
@@ -57,7 +60,7 @@ module.exports = {
 
 // Update 27 A8 (01.11.2026): Bewertungen von Geschäftspartnern statt Kunden zeigt die Website nirgends; auf Google bleiben sie.
 // Veit arbeitet mit F&G bei Finanzierungen zusammen. Die vollständige Liste wie bei Google steht weiter in alleReviews,
-// count und rating bleiben die Werte des Profils (Stand 06.11.2026: 25 Bewertungen, 5,0).
+// count und rating bleiben die Werte des Profils (Stand 15.11.2026: 27 Bewertungen, 5,0).
 const PARTNER = [{ author: "Veit", anfang: "Seit einiger Zeit arbeite ich regelmäßig mit Fischer & Geserich" }];
 module.exports.alleReviews = module.exports.reviews;
 module.exports.reviews = module.exports.alleReviews.filter((r) => !PARTNER.some((p) => r.author === p.author && r.text.startsWith(p.anfang)));
