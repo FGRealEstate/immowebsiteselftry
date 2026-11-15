@@ -2,7 +2,7 @@
   "id": "cashflow",
   "title": "Cashflow-Schnellcheck",
   "description": "Monatlichen Überschuss oder Zuschuss aus Miete, Finanzierung und Kosten abschätzen.",
-  "url": "/investment-lab.html?tool=cashflow",
+  "url": "/investment-lab?tool=cashflow",
   "keywords": [
     "cashflow",
     "überschuss",

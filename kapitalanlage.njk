@@ -4,7 +4,7 @@ bodyClass: fgs-service
 title: Immobilien als Kapitalanlage in Berlin, Leipzig und Dresden | Fischer & Geserich
 permalink: kapitalanlage.html
 description: "Immobilien als Kapitalanlage: Strategie, Eigenkapital, Finanzierung und eine Rechnung über die gesamte Haltedauer, für die erste Wohnung und den weiteren Bestand in Berlin, Leipzig und Dresden."
-canonicalPath: /kapitalanlage.html
+canonicalPath: /kapitalanlage
 # Brief Design-Pass §4.2: bisherige Texte bleiben (Investmentpfad, Hero-Stichpunkte, Lead), die stärksten Antworten
 # der bisherigen FAQ sind jetzt Abschnitte (B10 und B3 → Drei Wege, B7 → Nach dem Kauf, D3/D4 → Erste Kapitalanlage).
 # B5 (Provision) fehlt bewusst, siehe QUESTIONS-FOR-TIMON.md 6.2.
@@ -39,8 +39,8 @@ service:
     # FG-Gap-Answers 6.2 (Strukturvertrieb): gelöscht nach FG-Update-11 §3 (29.10.2026), Timon wird nicht gefragt
   related:
     services:
-      - { label: "Ankaufsberatung", note: "Objekt, Lage, Wirtschaftlichkeit und Finanzierung prüfen", href: "/ankaufsberatung.html", bild: "ankauf-hero", alt: "Das Eckhaus Kurfürstendamm 190 in Berlin-Charlottenburg mit grüner Kuppel an einem sonnigen Junitag" }
-      - { label: "Finanzierungsberatung", note: "Banken vergleichen, vor dem Notartermin klären", href: "/finanzierungsberatung.html", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
+      - { label: "Ankaufsberatung", note: "Objekt, Lage, Wirtschaftlichkeit und Finanzierung prüfen", href: "/ankaufsberatung", bild: "ankauf-hero", alt: "Das Eckhaus Kurfürstendamm 190 in Berlin-Charlottenburg mit grüner Kuppel an einem sonnigen Junitag" }
+      - { label: "Finanzierungsberatung", note: "Banken vergleichen, vor dem Notartermin klären", href: "/finanzierungsberatung", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
       - { label: "Betreuung nach dem Kauf", note: "Gutachten, Mietanpassung, Handwerker", href: "/betreuung-nach-dem-kauf/", bild: "betreuung-hero", alt: "Blick nach oben in ein gewendeltes Altbau-Treppenhaus mit verziertem Geländer in Berlin-Mitte" }
     lexikon: [bruttomietrendite, cashflow, restnutzungsdauer]
   contact: lennart
@@ -169,12 +169,12 @@ service:
         <li>Zins, Tilgung, Eigenkapital und Restschuld am Ende der Zinsbindung</li>
         <li>Steuerwirkung, Mieterhöhungen und Verkaufserlös über die Haltedauer</li>
       </ul>
-      <p>Bei unseren <a href="/angebote.html">Angeboten</a>, die als Kapitalanlage gekennzeichnet sind, fließen Kaufpreis und Miete direkt in eine Szenariorechnung. Zins, Tilgung und Eigenkapital lassen sich dort direkt verändern.</p>
+      <p>Bei unseren <a href="/angebote">Angeboten</a>, die als Kapitalanlage gekennzeichnet sind, fließen Kaufpreis und Miete direkt in eine Szenariorechnung. Zins, Tilgung und Eigenkapital lassen sich dort direkt verändern.</p>
       <div class="fgs-aside">
         <p><strong>Selbst rechnen.</strong> Der Investitionsrechner führt Sie Schritt für Schritt durch Objekt, Kosten und Finanzierung und zeigt Cashflow, Eigenkapitalrendite, Tilgung, Steuerwirkung und Vermögensentwicklung. Ihre Eingaben werden nicht an uns übertragen.</p>
-        <p><a href="/investitionsrechner.html">Zum Investitionsrechner</a> · <a href="/investment-lab.html">Alle Rechner im Investment Lab</a></p>
+        <p><a href="/investitionsrechner">Zum Investitionsrechner</a> · <a href="/investment-lab">Alle Rechner im Investment Lab</a></p>
       </div>
-      <p>Ob ein Investment gut oder schlecht ist, entscheidet kein Rechner. Dafür braucht es Objektzustand, Lage, Mietrecht und Ihre persönlichen Ziele und genau diesen Teil übernehmen wir in der <a href="/ankaufsberatung.html">Ankaufsberatung</a>.</p>
+      <p>Ob ein Investment gut oder schlecht ist, entscheidet kein Rechner. Dafür braucht es Objektzustand, Lage, Mietrecht und Ihre persönlichen Ziele und genau diesen Teil übernehmen wir in der <a href="/ankaufsberatung">Ankaufsberatung</a>.</p>
       {% endcall %}
     </div>
   </article>
@@ -247,7 +247,7 @@ service:
           <label>Nachricht<textarea name="message" rows="3" maxlength="3000" placeholder="optional, zum Beispiel Ihr Ziel oder Ihre Haltedauer"></textarea></label>
         </fieldset>
         <label class="fgd-hp" aria-hidden="true">Website<input name="company_website" tabindex="-1" autocomplete="off"></label>
-        <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
+        <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
         <div class="fgd-status" data-fgd-lead-status hidden></div>
         <button type="submit" class="fgd-btn fgd-btn-navy">Anfrage senden{{ icon("arrow") | safe }}</button>
       </form>

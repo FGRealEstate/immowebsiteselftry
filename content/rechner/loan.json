@@ -2,7 +2,7 @@
   "id": "loan",
   "title": "Darlehens- und Restschuldrechner",
   "description": "Annuität, Zinsanteil, Tilgung und Restschuld dynamisch berechnen.",
-  "url": "/investment-lab.html?tool=loan",
+  "url": "/investment-lab?tool=loan",
   "keywords": [
     "darlehen",
     "annuität",

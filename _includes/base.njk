@@ -10,8 +10,7 @@
     {% set siteName = "Fischer & Geserich Real Estate" %}
     {% set companyName = "Fischer & Geserich Real Estate" %}
     {% set siteUrl = "https://fg-realestate.de" %}
-    {% set currentPath = canonicalPath or page.url or "/" %}
-    {% if currentPath == "/index.html" %}{% set currentPath = "/" %}{% endif %}
+    {% set currentPath = (canonicalPath or page.url or "/") | ohneHtml %}
     {% set canonicalUrl = siteUrl + currentPath %}
     {% set pageTitle = title or siteName %}
     {% set metaDescription = description or "Fischer & Geserich Real Estate begleitet Eigentümer, Käufer und Investoren beim Immobilienverkauf, Immobilienkauf und bei der Immobilienfinanzierung in Berlin und deutschlandweit." %}
@@ -155,13 +154,13 @@
         "@id": "https://fg-realestate.de/#leistungen",
         "name": "Leistungen der Fischer & Geserich Real Estate GmbH",
         "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/verkaufen.html#service" } },
-          { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/ankaufsberatung.html#service" } },
-          { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/finanzierungsberatung.html#service" } },
-          { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/kapitalanlage.html#service" } },
-          { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/mehrfamilienhaus.html#service" } },
-          { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/vermieten.html#service" } },
-          { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/mieten.html#service" } }
+          { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/verkaufen#service" } },
+          { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/ankaufsberatung#service" } },
+          { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/finanzierungsberatung#service" } },
+          { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/kapitalanlage#service" } },
+          { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/mehrfamilienhaus#service" } },
+          { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/vermieten#service" } },
+          { "@type": "Offer", "itemOffered": { "@id": "https://fg-realestate.de/mieten#service" } }
         ]
       },
       "sameAs": {{ firmenprofile | dump | safe }}
@@ -210,70 +209,72 @@
     },
     {
       "@type": "Service",
-      "@id": "https://fg-realestate.de/verkaufen.html#service",
+      "@id": "https://fg-realestate.de/verkaufen#service",
       "name": "Vertrieb & Maklergeschäft",
       "serviceType": "Immobilienverkauf",
-      "description": "Vermarktung von Wohn- und Anlageimmobilien in Berlin und im Berliner Umland: Bewertung, Vermarktungsstrategie, Käuferansprache und Begleitung bis zum Notartermin.",
-      "url": "https://fg-realestate.de/verkaufen.html",
+      "description": "Vermarktung von Wohn- und Anlageimmobilien in Berlin, Brandenburg, Leipzig und Dresden: Bewertung, Vermarktungsstrategie, Käuferansprache und Begleitung bis zum Notartermin.",
+      "url": "https://fg-realestate.de/verkaufen",
       "provider": { "@id": "https://fg-realestate.de/#organization" },
       "areaServed": [
         { "@type": "City", "name": "Berlin" },
-        { "@type": "AdministrativeArea", "name": "Berliner Umland" }
+        { "@type": "State", "name": "Brandenburg" },
+        { "@type": "City", "name": "Leipzig" },
+        { "@type": "City", "name": "Dresden" }
       ]
     },
     {
       "@type": "Service",
-      "@id": "https://fg-realestate.de/ankaufsberatung.html#service",
+      "@id": "https://fg-realestate.de/ankaufsberatung#service",
       "name": "Ankaufsberatung",
       "serviceType": "Ankaufsberatung Kapitalanlage",
       "description": "Ganzheitliche Beratung beim Ankauf von Kapitalanlageimmobilien: Objektauswahl, Ankaufsprüfung, Renditerechnung und Begleitung der Kaufentscheidung.",
-      "url": "https://fg-realestate.de/ankaufsberatung.html",
+      "url": "https://fg-realestate.de/ankaufsberatung",
       "provider": { "@id": "https://fg-realestate.de/#organization" }
     },
     {
       "@type": "Service",
-      "@id": "https://fg-realestate.de/finanzierungsberatung.html#service",
+      "@id": "https://fg-realestate.de/finanzierungsberatung#service",
       "name": "Finanzierungsvermittlung",
       "serviceType": "Immobilienfinanzierung",
       "description": "Unabhängige Vermittlung von Immobiliardarlehen nach § 34i Abs. 1 GewO, deutschlandweit: Konditionsvergleich, Strukturierung und Begleitung bis zur Auszahlung.",
-      "url": "https://fg-realestate.de/finanzierungsberatung.html",
+      "url": "https://fg-realestate.de/finanzierungsberatung",
       "provider": { "@id": "https://fg-realestate.de/#organization" },
       "areaServed": { "@type": "Country", "name": "Deutschland" }
     },
     {
       "@type": "Service",
-      "@id": "https://fg-realestate.de/kapitalanlage.html#service",
+      "@id": "https://fg-realestate.de/kapitalanlage#service",
       "name": "Kapitalanlageimmobilien",
       "serviceType": "Vermittlung von Kapitalanlageimmobilien",
       "description": "Vermittlung vermieteter Eigentumswohnungen und Anlageobjekte an private und institutionelle Käufer.",
-      "url": "https://fg-realestate.de/kapitalanlage.html",
+      "url": "https://fg-realestate.de/kapitalanlage",
       "provider": { "@id": "https://fg-realestate.de/#organization" }
     },
     {
       "@type": "Service",
-      "@id": "https://fg-realestate.de/mehrfamilienhaus.html#service",
+      "@id": "https://fg-realestate.de/mehrfamilienhaus#service",
       "name": "Mehrfamilienhäuser & Zinshäuser",
       "serviceType": "Vermittlung von Mehrfamilienhäusern",
-      "description": "An- und Verkauf von Mehrfamilienhäusern und Zinshäusern in Berlin und im Berliner Umland.",
-      "url": "https://fg-realestate.de/mehrfamilienhaus.html",
+      "description": "An- und Verkauf von Mehrfamilienhäusern und Zinshäusern in Berlin, Brandenburg, Leipzig und Dresden.",
+      "url": "https://fg-realestate.de/mehrfamilienhaus",
       "provider": { "@id": "https://fg-realestate.de/#organization" }
     },
     {
       "@type": "Service",
-      "@id": "https://fg-realestate.de/vermieten.html#service",
+      "@id": "https://fg-realestate.de/vermieten#service",
       "name": "Vermietung",
       "serviceType": "Immobilienvermietung",
       "description": "Vermietung von Wohnimmobilien: Mietpreiseinschätzung, Mieterauswahl und Übergabe.",
-      "url": "https://fg-realestate.de/vermieten.html",
+      "url": "https://fg-realestate.de/vermieten",
       "provider": { "@id": "https://fg-realestate.de/#organization" }
     },
     {
       "@type": "Service",
-      "@id": "https://fg-realestate.de/mieten.html#service",
+      "@id": "https://fg-realestate.de/mieten#service",
       "name": "Mietersuche & Anmietung",
       "serviceType": "Vermittlung von Mietwohnungen",
       "description": "Begleitung von Mietinteressenten bei der Suche und Anmietung von Wohnraum in Berlin und im Berliner Umland.",
-      "url": "https://fg-realestate.de/mieten.html",
+      "url": "https://fg-realestate.de/mieten",
       "provider": { "@id": "https://fg-realestate.de/#organization" }
     },
     {
@@ -386,8 +387,7 @@
 
 <body class="{% if fgSystem %}fgs{% if fgsHero %} fgs-has-hero{% endif %}{% elif fgDesign %}fgd{% else %}site-background{% endif %}{% if fgSystem and fgsIndex %} fgs-indexed{% endif %}{% if bodyClass %} {{ bodyClass }}{% endif %}">
 {% from "fgd-icons.njk" import icon %}
-{% set currentUrl = page.url | url %}
-{% if currentUrl == "/index.html" %}{% set currentUrl = "/" %}{% endif %}
+{% set currentUrl = page.url | url | ohneHtml %}
 
 {% if fgSystem %}{% include "fgs-header.njk" %}{% else %}
 <a class="fgd-skip" href="#inhalt">Zum Inhalt springen</a>
@@ -570,11 +570,11 @@
         <ul>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/lexikon/">Lexikon</a></li>
-          <li><a href="/investment-lab.html">Investment Lab</a></li>
-          <li><a href="/investitionsrechner.html">Investitionsrechner</a></li>
-          <li><a href="/ueber-uns.html">Über uns</a></li>
-          <li><a href="/angebote.html">Aktuelle Angebote</a></li>
-          <li><a href="/kontakt.html">Kontakt</a></li>
+          <li><a href="/investment-lab">Investment Lab</a></li>
+          <li><a href="/investitionsrechner">Investitionsrechner</a></li>
+          <li><a href="/ueber-uns">Über uns</a></li>
+          <li><a href="/angebote">Aktuelle Angebote</a></li>
+          <li><a href="/kontakt">Kontakt</a></li>
         </ul>
       </div>
     </div>
@@ -582,9 +582,9 @@
     <div class="fgd-footer-legal">
       <p>&copy; 2026 Fischer &amp; Geserich Real Estate GmbH</p>
       <ul>
-        <li><a href="/impressum.html">Impressum</a></li>
-        <li><a href="/datenschutz.html">Datenschutz</a></li>
-        <li><a href="/agb.html">AGB</a></li>
+        <li><a href="/impressum">Impressum</a></li>
+        <li><a href="/datenschutz">Datenschutz</a></li>
+        <li><a href="/agb">AGB</a></li>
         <li><a href="/bildnachweise/">Bildnachweise</a></li>
         <li><a href="#" data-open-consent>Cookie-Einstellungen</a></li>
       </ul>

@@ -9,7 +9,7 @@
 {%- set gebieteGesamt = gebietZahl.berlin + gebietZahl.brandenburg + gebietZahl.leipzig + gebietZahl.dresden -%}
 {#- Update 22 §7.1: links im Menüfeld eine Fotokarte mit dem Titelbild der Hauptseite des Bereichs. Der Blog hat kein Titelbild;
     dort steht das Bild des neuesten Artikels, das auch auf der Blog-Übersicht als erstes und größtes zu sehen ist. -#}
-{%- set menuBild = { "/verkaufen.html": "verkaufen-hero", "/kaufen.html": "kaufen-hero", "/finanzierungsberatung.html": "finanzierung-hero", "/ueber-uns.html": "ueber-uns-hero" } -%}
+{%- set menuBild = { "/verkaufen": "verkaufen-hero", "/kaufen": "kaufen-hero", "/finanzierungsberatung": "finanzierung-hero", "/ueber-uns": "ueber-uns-hero" } -%}
 {%- set neuesterArtikel = (blogArtikel | sort(true, false, "datePublished"))[0] -%}
 <a class="fgs-skip" href="#inhalt">Zum Inhalt springen</a>
 <header class="fgs-header" data-fgs-header data-fg-site-header>

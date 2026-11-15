@@ -45,12 +45,12 @@ service:
     - q: "Was ist mit der Umsatzsteuer bei Gewerbeimmobilien?"
       a: "Anders als bei Wohnungen kann der Vermieter einer Gewerbefläche unter bestimmten Voraussetzungen die Miete mit Umsatzsteuer berechnen. Das betrifft Mietvertrag, Vorsteuerabzug und bei einem Verkauf den Kaufvertrag. Klären Sie das mit Ihrem Steuerberater; steuerlich beraten wir nicht."
     - q: "Ich suche selbst eine Halle oder Gewerbefläche zur Miete. Können Sie helfen?"
-      a: "Legen Sie ein <a href=\"/mieten.html#mietgesuch\">Mietgesuch</a> an und wählen Sie dort die Objektart „Gewerbe“. Passt eine Fläche, die wir anbieten, melden wir uns."
+      a: "Legen Sie ein <a href=\"/mieten#mietgesuch\">Mietgesuch</a> an und wählen Sie dort die Objektart „Gewerbe“. Passt eine Fläche, die wir anbieten, melden wir uns."
   related:
     services:
-      - { label: "Immobilie verkaufen", note: "Ablauf, Unterlagen und Kosten beim Verkauf", href: "/verkaufen.html", bild: "verkaufen-hero", alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser" }
-      - { label: "Immobilie vermieten", note: "Miethöhe, Mieterauswahl, Vertrag und Übergabe", href: "/vermieten.html", bild: "vermieten-hero", alt: "Altbau-Wohnhäuser von Riehmers Hofgarten an der Hagelberger Straße in Berlin-Kreuzberg, rechts ein Baum" }
-      - { label: "Finanzierungsberatung", note: "Banken vergleichen, vor dem Notartermin klären", href: "/finanzierungsberatung.html", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
+      - { label: "Immobilie verkaufen", note: "Ablauf, Unterlagen und Kosten beim Verkauf", href: "/verkaufen", bild: "verkaufen-hero", alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser" }
+      - { label: "Immobilie vermieten", note: "Miethöhe, Mieterauswahl, Vertrag und Übergabe", href: "/vermieten", bild: "vermieten-hero", alt: "Altbau-Wohnhäuser von Riehmers Hofgarten an der Hagelberger Straße in Berlin-Kreuzberg, rechts ein Baum" }
+      - { label: "Finanzierungsberatung", note: "Banken vergleichen, vor dem Notartermin klären", href: "/finanzierungsberatung", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
     lexikon: [baulast, ertragswert, leerstand]
   contact: lennart
   closing:
@@ -269,7 +269,7 @@ gewerbeQuellen:
       <p>Auch das prüft die Bank. Eine Halle mit üblicher Höhe, guter Zufahrt und kurzer Strecke zur Autobahn ist dafür leichter einzuschätzen als ein Bau, der nur zu einem Betrieb passt.</p>
       <h3>Kauft ein Unternehmen die Halle für den eigenen Betrieb?</h3>
       <p>Dann prüft die Bank statt der Miete vor allem die Zahlen dieses Unternehmens. Wie viel Eigenkapital nötig ist und zu welchen Bedingungen eine Bank finanziert, entscheidet sie im Einzelfall. Feste Quoten nennen wir deshalb nicht.</p>
-      <p class="fgs-note">Fragen zur Finanzierung beantwortet Ihnen Timon Fischer. Wie wir Finanzierungen allgemein angehen, steht auf der Seite <a href="/finanzierungsberatung.html">Finanzierungsberatung</a>.</p>
+      <p class="fgs-note">Fragen zur Finanzierung beantwortet Ihnen Timon Fischer. Wie wir Finanzierungen allgemein angehen, steht auf der Seite <a href="/finanzierungsberatung">Finanzierungsberatung</a>.</p>
       {% endcall %}
     </div>
   </article>
@@ -342,7 +342,7 @@ gewerbeQuellen:
           <label>Nachricht<textarea name="message" rows="3" maxlength="3000" placeholder="optional, zum Beispiel Hallenhöhe, Tore oder ob die Fläche vermietet ist"></textarea></label>
         </fieldset>
         <label class="fgd-hp" aria-hidden="true">Website<input name="company_website" tabindex="-1" autocomplete="off"></label>
-        <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
+        <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
         <div class="fgd-status" data-fgd-lead-status hidden></div>
         <button type="submit" class="fgd-btn fgd-btn-navy">Anfrage senden{{ icon("arrow") | safe }}</button>
       </form>

@@ -4,7 +4,7 @@
     referenceCard(r) Verkauftes oder vermietetes Objekt für /referenzen/: Etikett („Verkauft“/„Vermietet“) und Jahr, ohne Preis.
     Ruhig wie die Karten der Startseite (S4): Foto 4:3, eine Zeile Einordnung, Titel in Marcellus, Preis, Eckdaten als Zeilen.
     Keine Etiketten auf dem Foto und keine Symbole (Brief 3.7). Die ganze Karte ist ein Link.
-    Klasse offer-filter-card und die data-* Felder speisen den Filter auf /angebote.html (unverändert). -#}
+    Klasse offer-filter-card und die data-* Felder speisen den Filter auf /angebote (unverändert). -#}
 
 {%- macro foto(src, alt, sizes, eager=false) -%}
 {% if src %}<img src="{{ src | propstackFoto }}"{% set _set = src | propstackSrcset %}{% if _set %} srcset="{{ _set }}"{% endif %} alt="{{ alt }}" sizes="{{ sizes }}" width="1200" height="900" {% if eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">

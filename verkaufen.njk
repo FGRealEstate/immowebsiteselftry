@@ -4,7 +4,7 @@ bodyClass: fgs-service
 title: "Immobilie verkaufen in Berlin, Brandenburg, Leipzig & Dresden | Fischer & Geserich"
 description: "Immobilie verkaufen in Berlin und Brandenburg: kostenlose Wertermittlung meist am selben Tag, realistischer Angebotspreis, geprüfte Käufer und Begleitung bis zur Übergabe."
 permalink: verkaufen.html
-canonicalPath: /verkaufen.html
+canonicalPath: /verkaufen
 # Texte: Update 6 §3.2 (27.10.2026) wörtlich, sonst unverändert. FAQ: Update 20 (30.10.2026), ausgeschrieben in der Liste unten.
 # Aufbau: Design-Sprint-Brief 5.2 (fgs-service.njk).
 service:
@@ -48,7 +48,7 @@ service:
     - q: "Verkaufen Sie auch geerbte Immobilien?"
       a: "Ja. Bei einer geerbten Immobilie klären wir zuerst die rechtliche Lage und welche Unterlagen vorliegen. Häufig geht es auch darum, wie die Erbschaftsteuer bezahlt werden soll. Je nach Situation ist dafür eine Finanzierung sinnvoller als ein schneller Verkauf unter Zeitdruck. Das besprechen wir mit Ihnen in Ruhe."
     - q: "Begleitet Fischer & Geserich auch den Verkauf von Mehrfamilienhäusern?"
-      a: "Ja. Bei Mehrfamilienhäusern sprechen wir vor allem Kapitalanleger an, die Bank prüft das Haus als Ganzes und die Unterlagen sind umfangreicher. Die Provision zahlt hier in der Regel der Käufer. Für Sie als Verkäufer fallen dann keine Provisionskosten an. Für Mehrfamilienhäuser haben wir vorgemerkte Kaufinteressenten aus ganz Deutschland. Mehr dazu steht auf <a href=\"/mehrfamilienhaus.html\">unserer Seite zu Mehrfamilienhäusern</a>."
+      a: "Ja. Bei Mehrfamilienhäusern sprechen wir vor allem Kapitalanleger an, die Bank prüft das Haus als Ganzes und die Unterlagen sind umfangreicher. Die Provision zahlt hier in der Regel der Käufer. Für Sie als Verkäufer fallen dann keine Provisionskosten an. Für Mehrfamilienhäuser haben wir vorgemerkte Kaufinteressenten aus ganz Deutschland. Mehr dazu steht auf <a href=\"/mehrfamilienhaus\">unserer Seite zu Mehrfamilienhäusern</a>."
     - q: "Übernehmen Sie auch die Hausverwaltung?"
       a: "Nein. Die Hausverwaltung bieten wir bewusst nicht an, sie ist auch nicht Teil unserer Erlaubnis. Wir vermitteln Sie an Hausverwaltungen und Sondereigentumsverwaltungen, mit denen wir seit Jahren zusammenarbeiten und deren Arbeit wir aus eigener Erfahrung kennen."
     # FG-Gap-Answers 1.1 (READY)
@@ -74,8 +74,8 @@ service:
   related:
     services:
       - { label: "Kostenlose Immobilienbewertung", note: "Meist noch am selben Tag", href: "/immobilienbewertung/", bild: "bewertung-hero", alt: "Villa am Teltower Damm in Berlin-Zehlendorf, ein Baudenkmal" }
-      - { label: "Mehrfamilienhaus verkaufen", note: "Käufernetzwerk mit über 100 Interessenten", href: "/mehrfamilienhaus.html", bild: "mfh-hero", alt: "Denkmalgeschütztes Eckhaus mit zwei Erkertürmen an der Malmöer Straße in Berlin-Prenzlauer Berg, daneben Bäume" }
-      - { label: "Finanzierungsberatung", note: "Für Ihre nächste Immobilie", href: "/finanzierungsberatung.html", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
+      - { label: "Mehrfamilienhaus verkaufen", note: "Käufernetzwerk mit über 100 Interessenten", href: "/mehrfamilienhaus", bild: "mfh-hero", alt: "Denkmalgeschütztes Eckhaus mit zwei Erkertürmen an der Malmöer Straße in Berlin-Prenzlauer Berg, daneben Bäume" }
+      - { label: "Finanzierungsberatung", note: "Für Ihre nächste Immobilie", href: "/finanzierungsberatung", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
       - { label: "Maklerprovision", note: "Alle Fälle erklärt", href: "/maklerprovision/" }
     lexikon: [bodenrichtwert, verkehrswert, spekulationsfrist]
   contact: lennart
@@ -245,7 +245,7 @@ service:
   <blockquote class="fgs-pull"><p>Wir verkaufen Eigentumswohnungen, Ein- und Zweifamilienhäuser, Mehrfamilienhäuser, Grundstücke und Pakete aus mehreren Wohnungen.</p></blockquote>
   {%- if freigaben.gewerbe %}{# Update 35 C1: Link zur Gewerbeseite, erst mit freigaben.gewerbe #}
   <div class="fgs-links">{% endif %}
-  {{ textlink("/finanzierungsberatung.html", "Zur Finanzierungsberatung") }}
+  {{ textlink("/finanzierungsberatung", "Zur Finanzierungsberatung") }}
   {%- if freigaben.gewerbe %}
   {{ textlink("/gewerbeimmobilien/", "Hallen und Gewerbeflächen verkaufen") }}</div>{% endif %}
 {% endcall %}

@@ -41,8 +41,8 @@ eleventyComputed:
 {% set ortZeile = (property.ortsteil ~ ", " ~ property.location) if (property.ortsteil and property.location and property.ortsteil != property.location) else (property.ortsteil or property.location) %}
 {% set meta %}{{ [ortZeile, property.property_type, ("Nr. " ~ property.unit_number) if property.unit_number else ""] | select | join(" · ") }}{% if property.project_url %}{% if property.location or property.property_type or property.unit_number %} · {% endif %}Teil von <a href="{{ property.project_url }}">{{ property.project_name }}</a>{% endif %}{% endset %}
 {% set k1 = { href: property.request_url, label: "Objekt anfragen" } %}
-{% if property.marketing_type != "Miete" %}{% set knoepfe = [k1, { href: "/finanzierungsberatung.html", label: "Finanzierung prüfen" }] %}{% else %}{% set knoepfe = [k1] %}{% endif %}
-{% if property.project_url %}{% set crumbs = [{ href: "/angebote.html", label: "Angebote" }, { href: property.project_url, label: property.project_name }] %}{% else %}{% set crumbs = [{ href: "/angebote.html", label: "Angebote" }] %}{% endif %}
+{% if property.marketing_type != "Miete" %}{% set knoepfe = [k1, { href: "/finanzierungsberatung", label: "Finanzierung prüfen" }] %}{% else %}{% set knoepfe = [k1] %}{% endif %}
+{% if property.project_url %}{% set crumbs = [{ href: "/angebote", label: "Angebote" }, { href: property.project_url, label: property.project_name }] %}{% else %}{% set crumbs = [{ href: "/angebote", label: "Angebote" }] %}{% endif %}
 
 {% set fakten = [{ wert: (property.price | eur) if property.price else "auf Anfrage", label: "Kaltmiete / Monat" if property.marketing_type == "Miete" else "Kaufpreis" }] %}
 {% set mehr = [] %}
@@ -132,9 +132,9 @@ eleventyComputed:
           <div class="fgs-invest-bar-labels" aria-hidden="true"><span>Start</span><span>5</span><span>10</span><span>15</span><span>20</span></div>
         </div>
         <p class="fgs-note"><strong data-cashflow-copy>–</strong> Vor Steuern; vereinfachte Annuitätenrechnung ohne individuelle Steuerwirkung. Die Vorgaben für Zins, Tilgung und Nebenkosten sind Annahmen, keine Finanzierungszusage.</p>
-        {{ textlink("/investment-lab.html", "Mehr Szenarien im Investment Lab") }}
+        {{ textlink("/investment-lab", "Mehr Szenarien im Investment Lab") }}
         {#- Update 7, Frage 27: Textlink zur Ankaufsberatung am Ende des Investment-Checks, Wortlaut aus dem Update #}
-        <p class="fgs-invest-ankauf">Sie möchten das Objekt vor dem Kauf prüfen lassen? {{ textlink("/ankaufsberatung.html", "Zur Ankaufsberatung") }}</p>
+        <p class="fgs-invest-ankauf">Sie möchten das Objekt vor dem Kauf prüfen lassen? {{ textlink("/ankaufsberatung", "Zur Ankaufsberatung") }}</p>
       </div>
     </section>
     {% endif %}
@@ -206,7 +206,7 @@ eleventyComputed:
       "@id": "{{ pageUrl }}#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
-        { "@type": "ListItem", "position": 2, "name": "Angebote", "item": "https://fg-realestate.de/angebote.html" },{% if property.project_url %}
+        { "@type": "ListItem", "position": 2, "name": "Angebote", "item": "https://fg-realestate.de/angebote" },{% if property.project_url %}
         { "@type": "ListItem", "position": 3, "name": {{ property.project_name | dump | safe }}, "item": "https://fg-realestate.de{{ property.project_url }}" },{% endif %}
         { "@type": "ListItem", "position": {% if property.project_url %}4{% else %}3{% endif %}, "name": {{ property.title | dump | safe }}, "item": "{{ pageUrl }}" }
       ]

@@ -124,11 +124,11 @@
 
                         <div class="lead-step" data-step="1">
                             <div class="grid grid-cols-1 gap-4">
-                                <a class="lead-choice" href="/kaufen.html">
+                                <a class="lead-choice" href="/kaufen">
                                     <span><i class="fas fa-key text-secondary mr-3"></i>Ich möchte kaufen</span>
                                     <i class="fas fa-chevron-right"></i>
                                 </a>
-                                <a class="lead-choice" href="/mieten.html">
+                                <a class="lead-choice" href="/mieten">
                                     <span><i class="fas fa-door-open text-secondary mr-3"></i>Ich möchte mieten</span>
                                     <i class="fas fa-chevron-right"></i>
                                 </a>
@@ -222,7 +222,7 @@
                                 <label class="flex items-start text-sm text-gray-700">
                                     <input type="checkbox" name="privacy_consent" value="true" required class="mt-1 mr-3 h-4 w-4 text-accent border-gray-300 rounded focus:ring-accent">
                                     <span>
-                                        Ich habe die <a href="/datenschutz.html" target="_blank" class="text-primary font-semibold hover:underline">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *
+                                        Ich habe die <a href="/datenschutz" target="_blank" class="text-primary font-semibold hover:underline">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *
                                     </span>
                                 </label>
                             </div>
@@ -271,7 +271,7 @@
             if (visible) visible.scrollIntoView({ behavior: "smooth", block: "start" });
         }
 
-        document.querySelectorAll('a[href="#kontakt"],a[href="/index.html#kontakt"],a[href="index.html#kontakt"],a[href="#verkaufsprofil"],a[href="#landingpage"]').forEach(a => {
+        document.querySelectorAll('a[href="#kontakt"],a[href="/#kontakt"],a[href="index.html#kontakt"],a[href="#verkaufsprofil"],a[href="#landingpage"]').forEach(a => {
             a.addEventListener("click", function (e) {
                 if (location.pathname.endsWith("/") || location.pathname.includes("index") || a.getAttribute("href").startsWith("#")) {
                     e.preventDefault();

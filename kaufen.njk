@@ -4,7 +4,7 @@ bodyClass: fgs-service
 title: Immobilie kaufen in Berlin, Brandenburg, Leipzig und Dresden | Fischer & Geserich
 permalink: kaufen.html
 description: "Immobilie kaufen mit Fischer & Geserich: Suchprofil anlegen oder ein gefundenes Objekt prüfen lassen. Ablauf bis zum Notar, Kaufnebenkosten und Finanzierung verständlich erklärt."
-canonicalPath: /kaufen.html
+canonicalPath: /kaufen
 # Design-Sprint (Brief 5.2, CP3 am 28.10.2026): Vorlage fgs-service.njk, Texte aus Update 6 §3.3 wörtlich.
 # Brief Design-Pass §4.2: bisherige Texte bleiben (Lead, „Zwei Wege zum Ziel“, Texte des Kaufgesuchs).
 # Neu: Ablauf bis zum Notar, Kaufnebenkosten allgemein (keine eigenen Prozentsätze außer den Kaufnebenkosten nach Update 6, §2.1
@@ -54,9 +54,9 @@ service:
       a: "Weil viele unserer Immobilien nie öffentlich angeboten werden. In einem Suchprofil hinterlegen Sie, was Sie suchen: Lage, Größe, Budget und ob Sie selbst einziehen oder vermieten möchten. Gut die Hälfte unserer Immobilien vermarkten wir diskret, nur an vorgemerkte Käufer und Anleger. Mit einem <a href=\"/gesuch-anlegen/\">Suchprofil</a> erfahren Sie von diesen Angeboten zuerst."
   related:
     services:
-      - { label: "Ankaufsberatung", note: "Ein gefundenes Objekt vor dem Kauf prüfen", href: "/ankaufsberatung.html", bild: "ankauf-hero", alt: "Das Eckhaus Kurfürstendamm 190 in Berlin-Charlottenburg mit grüner Kuppel an einem sonnigen Junitag" }
-      - { label: "Finanzierungsberatung", note: "Banken vergleichen, vor dem Notartermin klären", href: "/finanzierungsberatung.html", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
-      - { label: "Immobilien als Kapitalanlage", note: "Die erste Wohnung bis zum Portfolio", href: "/kapitalanlage.html", bild: "kapitalanlage-hero", alt: "Gründerzeit-Mietshaus aus den 1890er-Jahren an der Funkenburgstraße im Leipziger Waldstraßenviertel, helle Fassade mit roten Ziegelbändern und Balkonen" }
+      - { label: "Ankaufsberatung", note: "Ein gefundenes Objekt vor dem Kauf prüfen", href: "/ankaufsberatung", bild: "ankauf-hero", alt: "Das Eckhaus Kurfürstendamm 190 in Berlin-Charlottenburg mit grüner Kuppel an einem sonnigen Junitag" }
+      - { label: "Finanzierungsberatung", note: "Banken vergleichen, vor dem Notartermin klären", href: "/finanzierungsberatung", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
+      - { label: "Immobilien als Kapitalanlage", note: "Die erste Wohnung bis zum Portfolio", href: "/kapitalanlage", bild: "kapitalanlage-hero", alt: "Gründerzeit-Mietshaus aus den 1890er-Jahren an der Funkenburgstraße im Leipziger Waldstraßenviertel, helle Fassade mit roten Ziegelbändern und Balkonen" }
     lexikon: [kaufnebenkosten, grunderwerbsteuer, teilungserklarung]
   contact: lennart
   closing:
@@ -85,7 +85,7 @@ service:
     <div class="fgs-way">
       <h3>Ankaufsberatung nutzen</h3>
       <p>Wir prüfen das Objekt, verhandeln mit und klären die Finanzierung, auch wenn Sie es selbst gefunden haben und es nicht von uns angeboten wird. Passt es nicht, sagen wir Ihnen das offen.</p>
-      {{ textlink("/ankaufsberatung.html", "Beratung kennenlernen") }}
+      {{ textlink("/ankaufsberatung", "Beratung kennenlernen") }}
     </div>
   </div>
 {% endcall %}
@@ -166,10 +166,10 @@ service:
       <p>Mit einem festen Finanzierungsrahmen wissen Sie, welche Objekte infrage kommen, und können bei einem passenden Angebot schneller entscheiden. Ein Vertragsentwurf beim Notar kostet je nach Kaufpreis und Notar etwa 600 bis 5.000 Euro. Scheitert die Finanzierung erst danach, sind diese Kosten schon entstanden.</p>
       <p>Weil wir Immobiliardarlehen selbst vermitteln, mit Erlaubnis nach § 34i GewO, vergleichen wir Angebote über Europace und Baufinex und über direkte Bankkontakte. Das gilt auch für Objekte, die nicht aus unserem eigenen Bestand stammen. Eine Finanzierungszusage bleibt immer eine Einzelfallentscheidung der Bank.</p>
       <h3>Eigennutzer und Kapitalanleger</h3>
-      <p>Wer selbst einzieht, braucht vor allem eine Rate, die auch dann noch passt, wenn sich das Leben verändert. Bei einer Kapitalanlage kommen Miete, Rendite, laufende Kosten und die langfristige Finanzierung hinzu. Wie wir dabei rechnen, steht auf der Seite <a href="/kapitalanlage.html">Kapitalanlage</a>.</p>
+      <p>Wer selbst einzieht, braucht vor allem eine Rate, die auch dann noch passt, wenn sich das Leben verändert. Bei einer Kapitalanlage kommen Miete, Rendite, laufende Kosten und die langfristige Finanzierung hinzu. Wie wir dabei rechnen, steht auf der Seite <a href="/kapitalanlage">Kapitalanlage</a>.</p>
       <div class="fgs-aside">
         <p><strong>Kaufpreisrahmen selbst berechnen.</strong> Aus Wunschrate, Eigenkapital, Zins und Tilgung ergibt sich ein erster Orientierungswert für den möglichen Kaufpreis.</p>
-        <p><a href="/finanzierungsberatung.html#rechner">Zum Rechner</a> · <a href="/finanzierungsberatung.html">Zur Finanzierungsberatung</a></p>
+        <p><a href="/finanzierungsberatung#rechner">Zum Rechner</a> · <a href="/finanzierungsberatung">Zur Finanzierungsberatung</a></p>
       </div>
       {% endcall %}
     </div>
@@ -188,7 +188,7 @@ service:
       <p>Zu Berlin, dem Berliner Umland und Sachsen gibt es eigene Gebietsseiten. Dort stehen Lage, Nachfrage und Besonderheiten der einzelnen Märkte.</p>
       {% endcall %}
       <ul class="fgs-checklist fgs-checklist--one" role="list">
-        <li><a href="/angebote.html">Aktuelle Angebote</a></li>
+        <li><a href="/angebote">Aktuelle Angebote</a></li>
         <li><a href="/standorte/berlin/">Berlin</a>, <a href="/standorte/leipzig/">Leipzig</a> und <a href="/standorte/dresden/">Dresden</a></li>
         <li><a href="/standorte/">Alle Gebiete in Berlin, Brandenburg und Sachsen</a></li>
         {#- Update 35 C1: Link zur Gewerbeseite, erst mit freigaben.gewerbe -#}
@@ -207,7 +207,7 @@ service:
       <h2 id="gesuch-titel">Wonach suchen Sie konkret?</h2>
       <p class="fgs-lead">Nennen Sie uns Ihre Kriterien. Wir melden uns, sobald ein passendes Angebot vorliegt, auch wenn es nie öffentlich angeboten wird.</p>
       <h3>Was danach passiert</h3>
-      <p>Wir prüfen Ihr Profil persönlich und melden uns, wenn ein passendes Angebot vorliegt. Haben Sie schon ein Objekt im Blick, schicken Sie uns lieber direkt das Exposé über die <a href="/ankaufsberatung.html#anfrage">Ankaufsberatung</a>.</p>
+      <p>Wir prüfen Ihr Profil persönlich und melden uns, wenn ein passendes Angebot vorliegt. Haben Sie schon ein Objekt im Blick, schicken Sie uns lieber direkt das Exposé über die <a href="/ankaufsberatung#anfrage">Ankaufsberatung</a>.</p>
     </div>
     <div class="fgs-formblock-form">
     {% set sp = { id: "suchprofil", marketing: "BUY", title: "Suchprofil anlegen", intro: "Nur das Suchgebiet und Ihre E-Mail-Adresse sind Pflicht.", budgetLabel: "Kaufpreis bis", submitLabel: "Suchprofil übermitteln", doneText: "Wir prüfen Ihr Suchprofil persönlich und melden uns, wenn ein passendes Angebot vorliegt." } %}

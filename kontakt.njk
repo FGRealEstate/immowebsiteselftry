@@ -4,7 +4,7 @@ fgsHero: false
 title: "Kontakt – Fischer & Geserich Real Estate in Berlin-Steglitz"
 description: "Kontakt zu Fischer & Geserich Real Estate: Kontaktformular, Telefon +49 1520 3083048, E-Mail und Anfahrt zum Büro in der Schützenstraße 30 in Berlin-Steglitz. Ansprechpartner für Berlin, Brandenburg, Leipzig und Dresden."
 permalink: kontakt.html
-canonicalPath: /kontakt.html
+canonicalPath: /kontakt
 ogTitle: "Kontakt zu Fischer & Geserich Real Estate"
 ogDescription: "Sprechen Sie direkt mit Fischer & Geserich Real Estate über Verkauf, Ankauf, Vermietung oder Finanzierung Ihres Immobilienvorhabens."
 # Brief Design-Pass §4.4: neue Vorlage, echtes Kontaktformular (Name, Telefon, E-Mail, Thema, Nachricht) über den
@@ -83,7 +83,7 @@ pg:
           </div>
           <label>Nachricht *<textarea name="message" rows="5" maxlength="3000" required placeholder="Worum geht es? Zum Beispiel Objekt, Ort und Zeitrahmen"></textarea></label>
           <label class="fgd-hp" aria-hidden="true">Website<input name="company_website" tabindex="-1" autocomplete="off"></label>
-          <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
+          <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
           <div class="fgd-status" data-fgd-lead-status hidden></div>
           <button type="submit" class="fgd-btn fgd-btn-navy">Nachricht senden{{ icon("arrow") | safe }}</button>
         </form>
@@ -92,7 +92,7 @@ pg:
           <p>Ihr Ansprechpartner meldet sich bei Ihnen. Wenn es eilt, erreichen Sie uns unter <a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a>.</p>
         </div>
       </div>
-      <p class="fgs-note">Ihre Angaben nutzen wir nur, um Ihre Anfrage zu bearbeiten. Wie wir mit Ihren Daten umgehen, steht in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</p>
+      <p class="fgs-note">Ihre Angaben nutzen wir nur, um Ihre Anfrage zu bearbeiten. Wie wir mit Ihren Daten umgehen, steht in der <a href="/datenschutz">Datenschutzerklärung</a>.</p>
     </div>
 
     <div class="fgs-contact-info">
@@ -137,12 +137,12 @@ pg:
 
 {# S4 Ihr Vorhaben: sechs Bildkarten mit den Texten der bisherigen Kontaktseite, Bilder und Alt-Texte wie die Titelbilder der Zielseiten #}
 {% set vorhaben = [
-  { href: "/verkaufen.html", bild: "verkaufen-hero", alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser", titel: "Immobilie verkaufen", zeile: "Bewertung, Vermarktung und Begleitung bis zur Übergabe." },
-  { href: "/kaufen.html", bild: "kaufen-hero", alt: "Canaletto-Blick in Dresden: die Augustusbrücke über die Elbe, dahinter Frauenkirche und Hofkirche im warmen Licht, vorn die Elbwiesen", titel: "Immobilie kaufen", zeile: "Suchprofil anlegen oder ein Objekt vor dem Kauf prüfen lassen." },
-  { href: "/mieten.html", bild: "mieten-hero", alt: "Altbauten an der Kloedenstraße am Chamissoplatz in Berlin-Kreuzberg, links Balkone mit schmiedeeisernen Gittern, rechts eine helle Stuckfassade", titel: "Immobilie mieten", zeile: "Mietgesuch mit Ihren Suchkriterien anlegen." },
-  { href: "/vermieten.html", bild: "vermieten-hero", alt: "Altbau-Wohnhäuser von Riehmers Hofgarten an der Hagelberger Straße in Berlin-Kreuzberg, rechts ein Baum", titel: "Immobilie vermieten", zeile: "Miethöhe, Vermarktung und Auswahl der Mieter." },
-  { href: "/finanzierungsberatung.html", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken", titel: "Finanzierung prüfen", zeile: "Finanzierungsrahmen, Eigenkapital, Monatsrate und passende Banken." },
-  { href: "/ankaufsberatung.html", bild: "ankauf-hero", alt: "Das Eckhaus Kurfürstendamm 190 in Berlin-Charlottenburg mit grüner Kuppel an einem sonnigen Junitag", titel: "Ankaufsberatung", zeile: "Objekt, Lage, Rendite, Risiken und Finanzierung vor dem Kauf prüfen." }
+  { href: "/verkaufen", bild: "verkaufen-hero", alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser", titel: "Immobilie verkaufen", zeile: "Bewertung, Vermarktung und Begleitung bis zur Übergabe." },
+  { href: "/kaufen", bild: "kaufen-hero", alt: "Canaletto-Blick in Dresden: die Augustusbrücke über die Elbe, dahinter Frauenkirche und Hofkirche im warmen Licht, vorn die Elbwiesen", titel: "Immobilie kaufen", zeile: "Suchprofil anlegen oder ein Objekt vor dem Kauf prüfen lassen." },
+  { href: "/mieten", bild: "mieten-hero", alt: "Altbauten an der Kloedenstraße am Chamissoplatz in Berlin-Kreuzberg, links Balkone mit schmiedeeisernen Gittern, rechts eine helle Stuckfassade", titel: "Immobilie mieten", zeile: "Mietgesuch mit Ihren Suchkriterien anlegen." },
+  { href: "/vermieten", bild: "vermieten-hero", alt: "Altbau-Wohnhäuser von Riehmers Hofgarten an der Hagelberger Straße in Berlin-Kreuzberg, rechts ein Baum", titel: "Immobilie vermieten", zeile: "Miethöhe, Vermarktung und Auswahl der Mieter." },
+  { href: "/finanzierungsberatung", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken", titel: "Finanzierung prüfen", zeile: "Finanzierungsrahmen, Eigenkapital, Monatsrate und passende Banken." },
+  { href: "/ankaufsberatung", bild: "ankauf-hero", alt: "Das Eckhaus Kurfürstendamm 190 in Berlin-Charlottenburg mit grüner Kuppel an einem sonnigen Junitag", titel: "Ankaufsberatung", zeile: "Objekt, Lage, Rendite, Risiken und Finanzierung vor dem Kauf prüfen." }
 ] %}
 {% call rail({ id: "vorhaben", titel: "Ihr Anliegen", text: "Wählen Sie, worum es geht. Das Formular fragt dann nur, was wir dafür brauchen." }) %}
   {%- for v in vorhaben %}

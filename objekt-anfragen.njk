@@ -7,13 +7,13 @@ permalink: objekt-anfragen.html
 # Brief Design-Pass §4.10: neue Vorlage, 1–2 Sätze zum Ablauf nach dem Absenden, Dankeszustand im neuen Design.
 # Versand unverändert: POST an /.netlify/functions/propstack-inquiry mit denselben Feldern wie bisher
 # (object_id, object_title, source_url, first_name, last_name, email, phone, contact_preference, message, privacy = "zugestimmt").
-# Aufruf aus den Exposés (_data/propstack.js, request_url): /objekt-anfragen.html?object_id=…&object=…
+# Aufruf aus den Exposés (_data/propstack.js, request_url): /objekt-anfragen?object_id=…&object=…
 # Neu: Ohne object_id lehnt die Funktion ab (Pflichtfeld); statt eines sicheren Fehlers zeigt die Seite dann den Weg zu Angeboten und Kontakt.
 # CP4 (28.10.2026, Design-Sprint-Brief 5.4): Titelzeile ohne Foto, Text links und Formular rechts (fgs-formblock wie Ankaufsberatung).
 # Formular, Feldnamen, Versand und Skript unverändert. Entfallen: Kicker über der H2 (Update 6 §3.0), Gold-Häkchen (Brief 3.7).
 pg:
   crumb: "Objekt anfragen"
-  parent: { label: "Angebote", href: "/angebote.html" }
+  parent: { label: "Angebote", href: "/angebote" }
   kicker: "Immobilienanfrage"
   h1: "Objekt unverbindlich anfragen"
   intro: "Teilen Sie uns kurz Ihre Kontaktdaten mit. Wir melden uns persönlich bei Ihnen zurück."
@@ -40,7 +40,7 @@ pg:
       <h3>Was nach dem Absenden passiert</h3>
       <p>Ihre Anfrage kommt mit der Objektnummer bei uns an. Wir melden uns persönlich auf dem Weg, den Sie im Formular wählen, und besprechen mit Ihnen weitere Unterlagen und eine Besichtigung.</p>
       <p class="fgs-address">Telefon <a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a><br>E-Mail <a href="mailto:{{ nav.email }}">{{ nav.email }}</a></p>
-      {{ textlink("/angebote.html", "Zurück zu den Angeboten") }}
+      {{ textlink("/angebote", "Zurück zu den Angeboten") }}
     </div>
 
     <div class="fgs-formblock-form">
@@ -52,7 +52,7 @@ pg:
         <strong data-object-preview>Objekt wird geladen …</strong>
         <span>Ihre Anfrage wird diesem Objekt zugeordnet.</span>
       </div>
-      <div class="fgd-status is-error" data-object-missing hidden>Zu dieser Adresse gehört kein Objekt. Bitte öffnen Sie die Anfrage über das Exposé in den <a href="/angebote.html">aktuellen Angeboten</a> oder schreiben Sie uns über das <a href="/kontakt.html#kontaktformular">Kontaktformular</a>.</div>
+      <div class="fgd-status is-error" data-object-missing hidden>Zu dieser Adresse gehört kein Objekt. Bitte öffnen Sie die Anfrage über das Exposé in den <a href="/angebote">aktuellen Angeboten</a> oder schreiben Sie uns über das <a href="/kontakt#kontaktformular">Kontaktformular</a>.</div>
       <form method="post" action="/.netlify/functions/propstack-inquiry" class="fgd-form" id="object-request-form" novalidate>
         <input type="hidden" name="object_id">
         <input type="hidden" name="object_title">
@@ -74,7 +74,7 @@ pg:
           </select>
         </label>
         <label>Ihre Nachricht<textarea name="message" rows="5" placeholder="Guten Tag, ich interessiere mich für dieses Objekt und bitte um weitere Informationen."></textarea></label>
-        <label class="fgd-consent"><input type="checkbox" name="privacy" value="zugestimmt" required><span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Objektanfrage zu. *</span></label>
+        <label class="fgd-consent"><input type="checkbox" name="privacy" value="zugestimmt" required><span>Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Objektanfrage zu. *</span></label>
         <p class="fgd-form-hint">Hinweise zu Widerruf, Verbraucherinformationen und weiteren Unterlagen erhalten Sie im weiteren Anfrageprozess.</p>
         <div class="fgd-status" data-object-status hidden></div>
         <button type="submit" class="fgd-btn fgd-btn-navy">Objekt jetzt anfragen{{ icon("arrow") | safe }}</button>
@@ -82,7 +82,7 @@ pg:
       <div class="fgd-form-done" data-object-done tabindex="-1" hidden>
         <h3>Vielen Dank, Ihre Anfrage ist da</h3>
         <p>Sie ist dem Objekt <strong data-object-done-title></strong> zugeordnet. Wir melden uns persönlich bei Ihnen. Wenn es eilt, erreichen Sie uns unter <a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a>.</p>
-        {{ textlink("/angebote.html", "Weitere Angebote ansehen") }}
+        {{ textlink("/angebote", "Weitere Angebote ansehen") }}
       </div>
     </div>
     </div>

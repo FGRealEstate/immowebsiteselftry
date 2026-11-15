@@ -17,11 +17,11 @@ const leistung = (href) => {
 };
 
 const LEISTUNG_JE_KATEGORIE = {
-  Immobilienkauf: "/ankaufsberatung.html",
-  Finanzierung: "/finanzierungsberatung.html",
-  Kapitalanlage: "/kapitalanlage.html",
-  Steuern: "/kapitalanlage.html",
-  Vermietung: "/vermieten.html"
+  Immobilienkauf: "/ankaufsberatung",
+  Finanzierung: "/finanzierungsberatung",
+  Kapitalanlage: "/kapitalanlage",
+  Steuern: "/kapitalanlage",
+  Vermietung: "/vermieten"
 };
 const LEISTUNG_JE_BEGRIFF = {
   // Wertermittlung
@@ -31,15 +31,15 @@ const LEISTUNG_JE_BEGRIFF = {
   // Provision
   courtage: "/maklerprovision/", maklerprovision: "/maklerprovision/",
   // Kauf und Verkauf
-  kaufnebenkosten: "/kaufen.html", grunderwerbsteuer: "/kaufen.html", zwangsversteigerung: "/kaufen.html",
-  spekulationsfrist: "/verkaufen.html",
-  teilungserklarung: "/mehrfamilienhaus.html", abgeschlossenheitsbescheinigung: "/mehrfamilienhaus.html", umwandlung: "/mehrfamilienhaus.html",
+  kaufnebenkosten: "/kaufen", grunderwerbsteuer: "/kaufen", zwangsversteigerung: "/kaufen",
+  spekulationsfrist: "/verkaufen",
+  teilungserklarung: "/mehrfamilienhaus", abgeschlossenheitsbescheinigung: "/mehrfamilienhaus", umwandlung: "/mehrfamilienhaus",
   // Finanzierung
-  eigenkapital: "/finanzierungsberatung.html", restschuld: "/finanzierungsberatung.html", kreditwurdigkeitsprufung: "/finanzierungsberatung.html",
-  "stress-test": "/finanzierungsberatung.html", vorfalligkeitsentschadigung: "/finanzierungsberatung.html", "debt-service": "/finanzierungsberatung.html",
+  eigenkapital: "/finanzierungsberatung", restschuld: "/finanzierungsberatung", kreditwurdigkeitsprufung: "/finanzierungsberatung",
+  "stress-test": "/finanzierungsberatung", vorfalligkeitsentschadigung: "/finanzierungsberatung", "debt-service": "/finanzierungsberatung",
   // Vermietung
-  mietspiegel: "/vermieten.html", mietpreisbremse: "/vermieten.html", kappungsgrenze: "/vermieten.html",
-  nebenkostenabrechnung: "/vermieten.html", zweckentfremdung: "/vermieten.html", mietbindung: "/vermieten.html",
+  mietspiegel: "/vermieten", mietpreisbremse: "/vermieten", kappungsgrenze: "/vermieten",
+  nebenkostenabrechnung: "/vermieten", zweckentfremdung: "/vermieten", mietbindung: "/vermieten",
   // Verwaltung nach dem Kauf
   hausgeld: "/betreuung-nach-dem-kauf/", weg: "/betreuung-nach-dem-kauf/", wirtschaftsplan: "/betreuung-nach-dem-kauf/",
   sonderumlage: "/betreuung-nach-dem-kauf/", erhaltungsrucklage: "/betreuung-nach-dem-kauf/", rucklage: "/betreuung-nach-dem-kauf/",

@@ -40,7 +40,7 @@ preloadImageSrcset: "/images/home/hero-berlin-mitte-960.webp 960w, /images/home/
   titel: "Immobilienberatung in Berlin, Brandenburg und Sachsen",
   unterzeile: "verkaufen, kaufen und finanzieren aus einer Hand",
   satz: "Wir verkaufen Immobilien, beraten beim Kauf und vermitteln die Finanzierung. Weil bei uns alles zusammenläuft, wissen Sie früh, was Ihr Vorhaben kostet und ob es sich rechnet.",
-  buttons: [{ href: nav.valuation | navHref, label: "Kostenlose Bewertung" }, { href: "/kontakt.html", label: "Vorhaben besprechen" }]
+  buttons: [{ href: nav.valuation | navHref, label: "Kostenlose Bewertung" }, { href: "/kontakt", label: "Vorhaben besprechen" }]
 }) }}
 
 <div class="fgs-wrap"><p class="bib-mark"><span>Grundlagen</span> · Farben, Schrift, Buttons (Brief 3.1, 3.2, 3.4)</p></div>
@@ -69,8 +69,8 @@ preloadImageSrcset: "/images/home/hero-berlin-mitte-960.webp 960w, /images/home/
     </div>
     <div class="fgs-btns" style="margin-top: 96px;">
       <a class="fgs-btn fgs-btn--primary" href="{{ nav.valuation | navHref }}">Kostenlose Bewertung</a>
-      <a class="fgs-btn fgs-btn--secondary" href="/kontakt.html">Vorhaben besprechen</a>
-      {{ textlink("/verkaufen.html", "Verkauf kennenlernen") }}
+      <a class="fgs-btn fgs-btn--secondary" href="/kontakt">Vorhaben besprechen</a>
+      {{ textlink("/verkaufen", "Verkauf kennenlernen") }}
     </div>
   </div>
 </section>
@@ -80,9 +80,9 @@ preloadImageSrcset: "/images/home/hero-berlin-mitte-960.webp 960w, /images/home/
 
 <div class="fgs-wrap"><p class="bib-mark"><span>S4</span> · Karussell als Dreierreihe (Leistungen)</p></div>
 {% call rail({ id: "leistungen", titel: "Wobei wir Sie begleiten", text: "Sie können jede Leistung einzeln anfragen. Wenn Sie zum Beispiel verkaufen und gleich die nächste Immobilie finanzieren möchten, planen wir beides zusammen.", grid3: true }) %}
-  {{ card({ href: "/verkaufen.html", bild: "verkaufen-hero" | bild, alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser", label: "Verkaufen", titel: "Verkauf & Vermarktung", zeile: "Wertermittlung, Unterlagen, Vermarktung und die Prüfung der Käuferfinanzierung, bis zur Übergabe der Schlüssel." }) }}
-  {{ card({ href: "/ankaufsberatung.html", bild: "ankauf-hero" | bild, alt: "Das Eckhaus Kurfürstendamm 190 in Berlin-Charlottenburg mit grüner Kuppel an einem sonnigen Junitag", label: "Kaufen & Investieren", titel: "Ankauf & Investment", zeile: "Wir prüfen ein Objekt, bevor Sie kaufen: Lage, Zustand, Zahlen und Finanzierung. Auch dann, wenn wir es nicht selbst anbieten." }) }}
-  {{ card({ href: "/finanzierungsberatung.html", bild: "finanzierung-hero" | bild, alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken", label: "Finanzierung", titel: "Immobilienfinanzierung", zeile: "Wir vergleichen die Angebote vieler Banken und begleiten Ihre Unterlagen bis zur Auszahlung, für Eigennutzer, Kapitalanleger und Mehrfamilienhäuser." }) }}
+  {{ card({ href: "/verkaufen", bild: "verkaufen-hero" | bild, alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser", label: "Verkaufen", titel: "Verkauf & Vermarktung", zeile: "Wertermittlung, Unterlagen, Vermarktung und die Prüfung der Käuferfinanzierung, bis zur Übergabe der Schlüssel." }) }}
+  {{ card({ href: "/ankaufsberatung", bild: "ankauf-hero" | bild, alt: "Das Eckhaus Kurfürstendamm 190 in Berlin-Charlottenburg mit grüner Kuppel an einem sonnigen Junitag", label: "Kaufen & Investieren", titel: "Ankauf & Investment", zeile: "Wir prüfen ein Objekt, bevor Sie kaufen: Lage, Zustand, Zahlen und Finanzierung. Auch dann, wenn wir es nicht selbst anbieten." }) }}
+  {{ card({ href: "/finanzierungsberatung", bild: "finanzierung-hero" | bild, alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken", label: "Finanzierung", titel: "Immobilienfinanzierung", zeile: "Wir vergleichen die Angebote vieler Banken und begleiten Ihre Unterlagen bis zur Auszahlung, für Eigennutzer, Kapitalanleger und Mehrfamilienhäuser." }) }}
 {% endcall %}
 
 <div class="fgs-wrap"><p class="bib-mark"><span>S4</span> · Karussell (Gebiete, zehn Karten)</p></div>
@@ -121,7 +121,7 @@ preloadImageSrcset: "/images/home/hero-berlin-mitte-960.webp 960w, /images/home/
   <p>{{ kontakte.timon.bio }}</p>
   <h3>Lennart Geserich</h3>
   <p>{{ kontakte.lennart.bio }}</p>
-  {{ textlink("/ueber-uns.html", "Mehr über uns") }}
+  {{ textlink("/ueber-uns", "Mehr über uns") }}
 {% endcall %}
 
 <div class="fgs-wrap"><p class="bib-mark"><span>S4</span> · Bewertungen als Textkarten</p></div>
@@ -209,7 +209,7 @@ preloadImageSrcset: "/images/home/hero-berlin-mitte-960.webp 960w, /images/home/
       </div>
       <label>Nachricht *<textarea name="message" rows="5" maxlength="3000" required placeholder="Worum geht es? Zum Beispiel Objekt, Ort und Zeitrahmen"></textarea></label>
       <label class="fgd-hp" aria-hidden="true">Website<input name="company_website" tabindex="-1" autocomplete="off"></label>
-      <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
+      <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
       <div class="fgd-status" data-fgd-lead-status hidden></div>
       <button type="submit" class="fgd-btn">Nachricht senden{% include "fgs-arrow.njk" %}</button>
     </form>

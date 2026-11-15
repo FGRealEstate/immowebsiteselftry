@@ -4,7 +4,7 @@
  * Geprüft wird mit GET, ohne etwas abzuschicken:
  *   start      die Startseite
  *   gebiet     eine Gebietsseite (/standorte/berlin/)
- *   angebot    ein Angebot: das erste aus /angebote.html; gibt es gerade keins, entfällt die Prüfung (kein Fehler)
+ *   angebot    ein Angebot: das erste aus /angebote; gibt es gerade keins, entfällt die Prüfung (kein Fehler)
  *   bewertung  der Endpunkt des Bewertungsformulars (/.netlify/functions/propstack-lead). Er nimmt nur POST an;
  *              auf GET antwortet er 405. Als Fehler gilt dort nur 5xx oder keine Antwort.
  * Seiten gelten als Fehler, wenn sie nicht mit 200 antworten oder nach 10 s keine Antwort da ist.
@@ -28,7 +28,7 @@ async function holen(url, abruf) {
   const uhr = setTimeout(() => steuerung.abort(), TIMEOUT_MS);
   try {
     const antwort = await abruf(url, { method: "GET", redirect: "follow", signal: steuerung.signal, headers: { "User-Agent": "FG-Uptime/1.0" } });
-    const text = url.endsWith("/angebote.html") ? await antwort.text() : "";
+    const text = url.endsWith("/angebote") ? await antwort.text() : "";
     return { status: antwort.status, text };
   } catch (_) {
     return { status: 0, text: "" };
@@ -42,7 +42,7 @@ async function pruefen({ abruf = fetch } = {}) {
   const [start, gebiet, uebersicht, bewertung] = await Promise.all([
     holen(BASIS + "/", abruf),
     holen(BASIS + "/standorte/berlin/", abruf),
-    holen(BASIS + "/angebote.html", abruf),
+    holen(BASIS + "/angebote", abruf),
     holen(BASIS + "/.netlify/functions/propstack-lead", abruf)
   ]);
   ergebnis.start = { status: start.status, ok: start.status === 200 };

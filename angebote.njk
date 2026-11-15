@@ -3,7 +3,7 @@ layout: fgs-page.njk
 fgsHero: false
 title: "Immobilienangebote in Berlin, Leipzig und Dresden | Fischer & Geserich"
 permalink: angebote.html
-canonicalPath: /angebote.html
+canonicalPath: /angebote
 description: "Aktuelle Immobilienangebote von Fischer & Geserich: Wohnungen und Projekte, gekennzeichnet nach Eigennutz oder Kapitalanlage, mit Kennzahlen und direkter Anfrage."
 # Brief Design-Pass §4.5: neue Angebotskarten, „Foto folgt“ in Markenfarben, Filter auf Desktop in einer Zeile,
 # kurzer Einstieg, 300–400 Wörter rund um die Angebote. Daten und Webhooks unverändert (_data/propstack.js).
@@ -27,9 +27,9 @@ pg:
     - q: "Was bedeuten „Eigennutz“ und „Kapitalanlage“?"
       a: "Die Kennzeichnung zeigt, für welchen Zweck wir ein Objekt anbieten: zum Selbstbezug oder als vermietete Anlage. Bei Kapitalanlagen zeigen wir zusätzlich Kaltmiete und Bruttorendite, wenn uns beide Angaben vorliegen."
     - q: "Wie wird die Bruttorendite berechnet?"
-      a: "Jahreskaltmiete geteilt durch Kaufpreis, mal 100. Kaufnebenkosten, nicht umlagefähiges Hausgeld und die Finanzierung sind darin nicht enthalten. Wie sich ein Objekt mit Ihrer Finanzierung rechnet, zeigt der Investment-Check auf der Objektseite oder das <a href=\"/investment-lab.html\">Investment Lab</a>."
+      a: "Jahreskaltmiete geteilt durch Kaufpreis, mal 100. Kaufnebenkosten, nicht umlagefähiges Hausgeld und die Finanzierung sind darin nicht enthalten. Wie sich ein Objekt mit Ihrer Finanzierung rechnet, zeigt der Investment-Check auf der Objektseite oder das <a href=\"/investment-lab\">Investment Lab</a>."
     - q: "Kann ich den Kauf über Sie finanzieren?"
-      a: "Ja. Wir vergleichen Finanzierungen über Europace, Baufinex und direkte Bankkontakte und prüfen mit Ihnen Eigenkapital und Kaufpreisrahmen, auch bevor Sie ein Objekt anfragen. Mehr dazu auf der Seite <a href=\"/finanzierungsberatung.html\">Finanzierungsberatung</a>."
+      a: "Ja. Wir vergleichen Finanzierungen über Europace, Baufinex und direkte Bankkontakte und prüfen mit Ihnen Eigenkapital und Kaufpreisrahmen, auch bevor Sie ein Objekt anfragen. Mehr dazu auf der Seite <a href=\"/finanzierungsberatung\">Finanzierungsberatung</a>."
     - q: "Was tun, wenn kein passendes Angebot dabei ist?"
       a: "Legen Sie ein Gesuch an. Kauf und Miete sind zwei getrennte Suchen; Sie geben Budget, Gebiet, Größe und Ausstattungswünsche an. Wir berücksichtigen Ihr Suchprofil, wenn neue Angebote hinzukommen."
   contact: lennart
@@ -109,7 +109,7 @@ pg:
       <p>Ein Projekt fasst mehrere Einheiten in einem Haus zusammen. Auf der Projektseite stehen alle freien Einheiten mit Preis, Wohnfläche und Zimmerzahl; Sie fragen jede Einheit einzeln an.</p>
       <h3>Bruttorendite und Preis pro Quadratmeter</h3>
       <p>Die Bruttorendite ist die Jahreskaltmiete geteilt durch den Kaufpreis. Sie hilft beim Vergleich, sagt aber noch nichts über Ihren Cashflow, denn Kaufnebenkosten, Hausgeld und Zinsen fehlen. Auf jeder Objektseite einer Kapitalanlage rechnet der Investment-Check diese Posten mit Ihren eigenen Annahmen durch.</p>
-      <p>Bevor Sie kaufen, lohnt der Blick in Mietvertrag, Hausgeldabrechnung und Protokolle. Diese Prüfung übernehmen wir in der <a href="/ankaufsberatung.html">Ankaufsberatung</a>.</p>
+      <p>Bevor Sie kaufen, lohnt der Blick in Mietvertrag, Hausgeldabrechnung und Protokolle. Diese Prüfung übernehmen wir in der <a href="/ankaufsberatung">Ankaufsberatung</a>.</p>
     </div>
   </div>
 </section>
@@ -122,7 +122,7 @@ pg:
       <p>Wenn Sie kaufen möchten, klären Sie am besten vorher Ihren Finanzierungsrahmen. Dann wissen Sie, welcher Kaufpreis zu Ihrem Eigenkapital passt, und können bei einem passenden Angebot schnell entscheiden.</p>
       <div class="fgs-btns">
         <a class="fgs-btn fgs-btn--primary" href="/gesuch-anlegen/">Gesuch anlegen</a>
-        <a class="fgs-btn fgs-btn--secondary" href="/finanzierungsberatung.html">Finanzierung prüfen</a>
+        <a class="fgs-btn fgs-btn--secondary" href="/finanzierungsberatung">Finanzierung prüfen</a>
       </div>
     </div>
   </div>
@@ -172,9 +172,9 @@ pg:
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "@id": "https://fg-realestate.de/angebote.html#liste",
+  "@id": "https://fg-realestate.de/angebote#liste",
   "name": "Aktuelle Immobilienangebote von Fischer & Geserich",
-  "isPartOf": { "@id": "https://fg-realestate.de/angebote.html#angebote" },
+  "isPartOf": { "@id": "https://fg-realestate.de/angebote#angebote" },
   "numberOfItems": {{ projects.length + units.length }},
   "itemListElement": [
     {% for p in projects %}{ "@type": "ListItem", "position": {{ loop.index }}, "url": "https://fg-realestate.de{{ p.url }}", "name": {{ p.name | dump | safe }} }{% if not loop.last or units.length %},{% endif %}

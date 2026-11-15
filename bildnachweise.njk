@@ -96,8 +96,8 @@ pg:
       <p>Die übrigen Bilder in den Blogartikeln sind mit KI erstellt; das steht auch am Ende jedes Artikels.</p>
       {#- Update 7 Frage 10: Die Karte steht im Kapitel zu Lage und Anbindung (#lage-N), der alte Block #anbindung entfällt. -#}
       {%- set mitKarte = gebiete | selectattr("karte") %}
-      <p>Die Kartenbilder auf den Seiten <a href="/ueber-uns.html#buero">Über uns</a>{% for g in mitKarte %}{{ " und " if loop.last else ", " }}<a href="{{ g.url }}#lage-{{ g.kartenKapitel + 1 }}">{{ g.nameLang }}</a>{% endfor %} haben wir aus Daten von OpenStreetMap gezeichnet. Kartendaten © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap-Mitwirkende</a>, Lizenz <a href="https://opendatacommons.org/licenses/odbl/" target="_blank" rel="noopener">Open Database License (ODbL)</a>.</p>
-      <p>Die Creative-Commons-Lizenzen erlauben, die Fotos zu zeigen und zu bearbeiten, wenn Urheber, Lizenz und Quelle genannt werden. Diese Angaben stehen für alle Seiten und Blogartikel hier in der vollständigen Liste. Fragen zu einem Bild beantworten wir gern über das <a href="/kontakt.html">Kontaktformular</a>.</p>
+      <p>Die Kartenbilder auf den Seiten <a href="/ueber-uns#buero">Über uns</a>{% for g in mitKarte %}{{ " und " if loop.last else ", " }}<a href="{{ g.url }}#lage-{{ g.kartenKapitel + 1 }}">{{ g.nameLang }}</a>{% endfor %} haben wir aus Daten von OpenStreetMap gezeichnet. Kartendaten © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap-Mitwirkende</a>, Lizenz <a href="https://opendatacommons.org/licenses/odbl/" target="_blank" rel="noopener">Open Database License (ODbL)</a>.</p>
+      <p>Die Creative-Commons-Lizenzen erlauben, die Fotos zu zeigen und zu bearbeiten, wenn Urheber, Lizenz und Quelle genannt werden. Diese Angaben stehen für alle Seiten und Blogartikel hier in der vollständigen Liste. Fragen zu einem Bild beantworten wir gern über das <a href="/kontakt">Kontaktformular</a>.</p>
     </div>
   </div>
 </section>

@@ -125,7 +125,7 @@ eleventyExcludeFromCollections: true
             </label>
           </div>
           <label>Ihre Nachricht<textarea name="message" rows="5" placeholder="z. B. Rückrufwunsch, gewünschter Zeitraum oder konkrete Frage"></textarea></label>
-          <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
+          <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
           <div class="fgd-status is-error" data-insta-error hidden>Die Anfrage konnte nicht übermittelt werden. Bitte prüfen Sie Ihre Angaben oder versuchen Sie es erneut.</div>
           <div class="fgs-pick-actions">
             <button type="submit" class="fgd-btn fgd-btn-navy">Objektinformationen anfragen{{ icon("arrow") | safe }}</button>
@@ -135,7 +135,7 @@ eleventyExcludeFromCollections: true
         <div class="fgd-form-done" data-insta-done tabindex="-1" hidden>
           <h3>Vielen Dank, Ihre Anfrage ist da</h3>
           <p>Wir prüfen Ihre Auswahl persönlich und melden uns mit den Informationen zu den ausgewählten Immobilien. Wenn es eilt, erreichen Sie uns unter <a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a>.</p>
-          {{ textlink("/angebote.html", "Alle aktuellen Angebote") }}
+          {{ textlink("/angebote", "Alle aktuellen Angebote") }}
         </div>
       </div>
       </div>

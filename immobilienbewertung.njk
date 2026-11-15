@@ -12,7 +12,7 @@ canonicalPath: /immobilienbewertung/
 # Entfallen: Kicker über den H2 (Update 6 §3.0), Inhaltsverzeichnis (fgs-service.njk hat keins), Icons in der Liste.
 service:
   id: immobilienbewertung
-  parent: { label: "Immobilie verkaufen", href: "/verkaufen.html" }
+  parent: { label: "Immobilie verkaufen", href: "/verkaufen" }
   crumb: "Kostenlose Bewertung"
   kicker: "Kostenlos und unverbindlich"
   h1: "Kostenlose Immobilienbewertung in Berlin, Brandenburg, Leipzig und Dresden"
@@ -52,9 +52,9 @@ service:
       quelle: "3.2"
   related:
     services:
-      - { label: "Immobilie verkaufen", note: "Ablauf, Unterlagen, Kosten", href: "/verkaufen.html", bild: "verkaufen-hero", alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser" }
-      - { label: "Mehrfamilienhaus verkaufen", note: "Käufernetzwerk mit über 100 Interessenten", href: "/mehrfamilienhaus.html", bild: "mfh-hero", alt: "Denkmalgeschütztes Eckhaus mit zwei Erkertürmen an der Malmöer Straße in Berlin-Prenzlauer Berg, daneben Bäume" }
-      - { label: "Anschlussfinanzierung", note: "Finanzierungsberatung", href: "/finanzierungsberatung.html", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
+      - { label: "Immobilie verkaufen", note: "Ablauf, Unterlagen, Kosten", href: "/verkaufen", bild: "verkaufen-hero", alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser" }
+      - { label: "Mehrfamilienhaus verkaufen", note: "Käufernetzwerk mit über 100 Interessenten", href: "/mehrfamilienhaus", bild: "mfh-hero", alt: "Denkmalgeschütztes Eckhaus mit zwei Erkertürmen an der Malmöer Straße in Berlin-Prenzlauer Berg, daneben Bäume" }
+      - { label: "Anschlussfinanzierung", note: "Finanzierungsberatung", href: "/finanzierungsberatung", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
     lexikon: [verkehrswert, bodenrichtwert, ertragswert]
   contact: lennart
   closing:
@@ -216,7 +216,7 @@ service:
             <label>Telefon<span data-fgd-anruf-stern hidden> *</span><input name="phone" type="tel" autocomplete="tel" placeholder="für Rückfragen" data-fgd-anruf-pflicht data-fgd-fehlt="Bitte geben Sie Ihre Telefonnummer an, damit wir Sie anrufen können."></label>
           </div>
           <label>Nachricht<textarea name="message" rows="3" maxlength="3000" placeholder="optional, zum Beispiel Besonderheiten oder einen Zeitrahmen"></textarea></label>
-          <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
+          <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
         </fieldset>
         <label class="fgd-hp" aria-hidden="true">Website<input name="company_website" tabindex="-1" autocomplete="off"></label>
         <div class="fgd-status" data-fgd-lead-status hidden></div>
@@ -231,7 +231,7 @@ service:
         <p>Ihr Ansprechpartner meldet sich bei Ihnen, die Wertermittlung liegt meist noch am selben Tag vor. Wenn es eilt, erreichen Sie uns unter <a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a>.</p>
       </div>
     </div>
-    <p class="fgs-note fgs-wizard-note">Ihre Angaben nutzen wir für die Bewertung und die Kontaktaufnahme zu Ihrer Anfrage. Wie wir mit Ihren Daten umgehen, steht in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</p>
+    <p class="fgs-note fgs-wizard-note">Ihre Angaben nutzen wir für die Bewertung und die Kontaktaufnahme zu Ihrer Anfrage. Wie wir mit Ihren Daten umgehen, steht in der <a href="/datenschutz">Datenschutzerklärung</a>.</p>
   </div>
 </section>
 

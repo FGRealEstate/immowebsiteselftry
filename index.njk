@@ -80,8 +80,8 @@ faqListe:
   ],
   kicker: "Inhabergeführt aus Berlin",
   titel: "Immobilien verkaufen, kaufen und finanzieren in Berlin, Brandenburg und Sachsen",
-  buttons: [{ href: valuationHref, label: "Kostenlose Bewertung" }, { href: "/kontakt.html", label: "Vorhaben besprechen" }],
-  satz: { text: "Ob ein Kauf oder Verkauf aufgeht, entscheidet sich selten am Preis allein. Deshalb rechnen wir Finanzierung, Lage und Ihr Ziel von Anfang an zusammen.", href: "/ueber-uns.html", label: "Mehr über uns" }
+  buttons: [{ href: valuationHref, label: "Kostenlose Bewertung" }, { href: "/kontakt", label: "Vorhaben besprechen" }],
+  satz: { text: "Ob ein Kauf oder Verkauf aufgeht, entscheidet sich selten am Preis allein. Deshalb rechnen wir Finanzierung, Lage und Ihr Ziel von Anfang an zusammen.", href: "/ueber-uns", label: "Mehr über uns" }
 }) }}
 
 {# Design-Pass 3 §3.2 Teil 2 und §3.4: Leistungs-Slider direkt nach dem angehefteten Titelbild; ersetzt das Triptychon
@@ -89,9 +89,9 @@ faqListe:
    Update 26 §0 (01.11.2026): Folie 1 bis zu Jesus Wahl mit der Villa am Teltower Damm (Titelbild der Immobilienbewertung), statt
    der grauen Fassade hinter kahlen Ästen. Die Navy-Schicht je Folie (navy) gilt nicht mehr, alle Folien haben den Verlauf (CSS). #}
 {{ leistungsSlider({ id: "leistungen", label: "Wobei wir Sie begleiten", items: [
-  { bild: "home/hero-leistung-teltower" | bild, alt: "Villa am Teltower Damm in Berlin-Zehlendorf in der Sonne, ein Baudenkmal", kicker: "Für Eigentümer", titel: "Verkauf & Vermarktung", text: "Wertermittlung, Unterlagen, Vermarktung und die Prüfung der Käuferfinanzierung, bis zur Übergabe der Schlüssel.", href: "/verkaufen.html", button: "Immobilie verkaufen" },
-  { bild: "home/hero-leistung-ankauf" | bild, alt: "Heller, leerer Altbauraum mit Holzbalken an der Decke, Dielenboden und einer Treppe", kicker: "Für Eigennutzer und Kapitalanleger", titel: "Ankauf & Investment", text: "Wir prüfen ein Objekt, bevor Sie kaufen: Lage, Zustand, Zahlen und Finanzierung.", href: "/kaufen.html", button: "Immobilie kaufen" },
-  { bild: "home/hero-leistung-finanzierung" | bild, alt: "Schreibtisch mit Taschenrechner, aufgeschlagenem Notizbuch und Stift", kicker: "Unabhängige Finanzierungsberatung", titel: "Immobilien&shy;finanzierung", text: "Wir vergleichen die Angebote vieler Banken und begleiten Ihre Unterlagen bis zur Auszahlung, für Eigennutzer, Kapitalanleger und Mehrfamilienhäuser.", href: "/finanzierungsberatung.html", button: "Finanzierung" }
+  { bild: "home/hero-leistung-teltower" | bild, alt: "Villa am Teltower Damm in Berlin-Zehlendorf in der Sonne, ein Baudenkmal", kicker: "Für Eigentümer", titel: "Verkauf & Vermarktung", text: "Wertermittlung, Unterlagen, Vermarktung und die Prüfung der Käuferfinanzierung, bis zur Übergabe der Schlüssel.", href: "/verkaufen", button: "Immobilie verkaufen" },
+  { bild: "home/hero-leistung-ankauf" | bild, alt: "Heller, leerer Altbauraum mit Holzbalken an der Decke, Dielenboden und einer Treppe", kicker: "Für Eigennutzer und Kapitalanleger", titel: "Ankauf & Investment", text: "Wir prüfen ein Objekt, bevor Sie kaufen: Lage, Zustand, Zahlen und Finanzierung.", href: "/kaufen", button: "Immobilie kaufen" },
+  { bild: "home/hero-leistung-finanzierung" | bild, alt: "Schreibtisch mit Taschenrechner, aufgeschlagenem Notizbuch und Stift", kicker: "Unabhängige Finanzierungsberatung", titel: "Immobilien&shy;finanzierung", text: "Wir vergleichen die Angebote vieler Banken und begleiten Ihre Unterlagen bis zur Auszahlung, für Eigennutzer, Kapitalanleger und Mehrfamilienhäuser.", href: "/finanzierungsberatung", button: "Finanzierung" }
 ] }) }}
 
 {# 3. Ihre Ansprechpartner. Update 23 A4: drei Zeilen statt Text links und Karten rechts (Design-Pass 3 §3.3).
@@ -118,7 +118,7 @@ faqListe:
       <div><dt><span class="fgs-promise-nr" aria-hidden="true">03</span><span class="fgs-promise-t">Auch nach dem Notartermin erreichbar</span></dt><dd>Bei der Übergabe, bei Handwerkern oder der nächsten Finanzierung sind wir weiter für Sie da.</dd></div>
       <div><dt><span class="fgs-promise-nr" aria-hidden="true">04</span><span class="fgs-promise-t">Wir verkaufen nur, wenn es passt</span></dt><dd>Passt keines unserer Objekte zu Ihnen, helfen wir Ihnen bei der Finanzierung oder der Prüfung eines anderen.</dd></div>
     </dl>
-    <div class="fgs-partners-more">{{ textlink("/ueber-uns.html", "Mehr über uns") }}</div>
+    <div class="fgs-partners-more">{{ textlink("/ueber-uns", "Mehr über uns") }}</div>
   </div>
 </section>
 
@@ -184,14 +184,14 @@ faqListe:
         <h2 id="angebote-titel">Aktuelle Angebote</h2>
         <p>Eine Auswahl unserer aktuellen Angebote. Alle Objekte, auch Projekte mit mehreren Wohnungen, finden Sie auf der Angebotsseite.</p>
       </div>
-      <a class="fgs-btn fgs-btn--primary fgs-obj-head-btn" href="/angebote.html">Alle Angebote</a>
+      <a class="fgs-btn fgs-btn--primary fgs-obj-head-btn" href="/angebote">Alle Angebote</a>
     </div>
     <ul class="fgs-obj-grid fgs-obj-grid--home" role="list">
       {%- for o in homeOffers %}
       {{ angebot(o) }}
       {%- endfor %}
     </ul>
-    <div class="fgs-btns fgs-obj-more"><a class="fgs-btn fgs-btn--primary" href="/angebote.html">Alle Angebote ansehen</a></div>
+    <div class="fgs-btns fgs-obj-more"><a class="fgs-btn fgs-btn--primary" href="/angebote">Alle Angebote ansehen</a></div>
   </div>
 </section>
 {% endif %}
@@ -283,14 +283,14 @@ faqListe:
 {# 11. Abschlussband. Design-Pass 3 §3.11: Rahmen mit Foto (Video nach dem Download-OK), ohne die Zeile „Das erste Gespräch …“ (nicht in der Liste des Briefs).
    Update 25 §2: eigenes Foto (Salon im Heynhaus), die fünf Anliegen als Textlinks mit Pfeil statt Glas-Pillen, daneben der Glasknopf
    „Termin vereinbaren“ zur Kontaktseite (es gibt keinen Kalenderlink; im Menü steht sie als „Telefon, E-Mail, Termin“, _data/nav.js). #}
-{% call closing({ kontakt: "lennart", satz: "Wie können wir helfen?", button: "bewertung", foto: "kloeden", zweit: { href: "/kontakt.html", label: "Termin vereinbaren" } }) %}
+{% call closing({ kontakt: "lennart", satz: "Wie können wir helfen?", button: "bewertung", foto: "kloeden", zweit: { href: "/kontakt", label: "Termin vereinbaren" } }) %}
   <p>Wählen Sie Ihr Anliegen oder rufen Sie uns einfach an.</p>
   <ul class="fgs-closing-links" role="list">
-    <li><a class="fgs-link" href="/verkaufen.html">Immobilie verkaufen{% include "fgs-arrow.njk" %}</a></li>
-    <li><a class="fgs-link" href="/kaufen.html">Immobilie kaufen{% include "fgs-arrow.njk" %}</a></li>
-    <li><a class="fgs-link" href="/finanzierungsberatung.html">Finanzierung{% include "fgs-arrow.njk" %}</a></li>
-    <li><a class="fgs-link" href="/vermieten.html">Immobilie vermieten{% include "fgs-arrow.njk" %}</a></li>
-    <li><a class="fgs-link" href="/mieten.html">Immobilie mieten{% include "fgs-arrow.njk" %}</a></li>
+    <li><a class="fgs-link" href="/verkaufen">Immobilie verkaufen{% include "fgs-arrow.njk" %}</a></li>
+    <li><a class="fgs-link" href="/kaufen">Immobilie kaufen{% include "fgs-arrow.njk" %}</a></li>
+    <li><a class="fgs-link" href="/finanzierungsberatung">Finanzierung{% include "fgs-arrow.njk" %}</a></li>
+    <li><a class="fgs-link" href="/vermieten">Immobilie vermieten{% include "fgs-arrow.njk" %}</a></li>
+    <li><a class="fgs-link" href="/mieten">Immobilie mieten{% include "fgs-arrow.njk" %}</a></li>
   </ul>
 {% endcall %}
 

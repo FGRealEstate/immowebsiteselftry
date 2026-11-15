@@ -18,7 +18,7 @@ customSchema: true
       pg.toc (kein Inhaltsverzeichnis im Titelbild) und pg.related (Brief 3.7: keine Linklisten; Gebiete stehen im Fuß).
     Das JSON-LD ist dasselbe wie in fgd-page.njk, auch die Zweige für Profile (pg.person) und Kontakt (pg.schema.org). -#}
 {% from "fgs-macros.njk" import hero, faq, closing with context %}
-{% set pageUrl = "https://fg-realestate.de" + page.url %}
+{% set pageUrl = "https://fg-realestate.de" + (page.url | ohneHtml) %}
 {% set faqItems = (pg.faq or []) | faqFrei %}
 {% set pk = kontakte[pg.person.key] if pg.person else null %}
 

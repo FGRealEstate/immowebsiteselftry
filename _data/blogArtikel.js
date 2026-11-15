@@ -23,11 +23,11 @@ const text = (html) => html.replace(/<[^>]+>/g, "").replace(/&(amp|lt|gt|quot|#3
 
 // Leistungen je Kategorie (Brief §4.8: verwandte Leistungen am Ende) und Ansprechpartner (Brief §4.0)
 const KATEGORIEN = {
-  "finanzierung": { kontakt: "timon", button: "gespraech", leistungen: ["/finanzierungsberatung.html", "/kapitalanlage.html", "/ankaufsberatung.html"] },
-  "kauf-kapitalanlage": { kontakt: "lennart", button: "gespraech", leistungen: ["/kapitalanlage.html", "/ankaufsberatung.html", "/kaufen.html"] },
-  "bewertung-markt": { kontakt: "lennart", button: "bewertung", leistungen: ["/immobilienbewertung/", "/verkaufen.html", "/ankaufsberatung.html"] },
-  "vermietung": { kontakt: "lennart", button: "gespraech", leistungen: ["/vermieten.html", "/betreuung-nach-dem-kauf/", "/kapitalanlage.html"] },
-  "steuern": { kontakt: "timon", button: "gespraech", leistungen: ["/kapitalanlage.html", "/finanzierungsberatung.html", "/betreuung-nach-dem-kauf/"] }
+  "finanzierung": { kontakt: "timon", button: "gespraech", leistungen: ["/finanzierungsberatung", "/kapitalanlage", "/ankaufsberatung"] },
+  "kauf-kapitalanlage": { kontakt: "lennart", button: "gespraech", leistungen: ["/kapitalanlage", "/ankaufsberatung", "/kaufen"] },
+  "bewertung-markt": { kontakt: "lennart", button: "bewertung", leistungen: ["/immobilienbewertung/", "/verkaufen", "/ankaufsberatung"] },
+  "vermietung": { kontakt: "lennart", button: "gespraech", leistungen: ["/vermieten", "/betreuung-nach-dem-kauf/", "/kapitalanlage"] },
+  "steuern": { kontakt: "timon", button: "gespraech", leistungen: ["/kapitalanlage", "/finanzierungsberatung", "/betreuung-nach-dem-kauf/"] }
 };
 
 // Ende des festen Skripts der Vorlage (Menü, Lesemodus, Fortschritt); danach stehen die Skripte der Artikelgrafiken.

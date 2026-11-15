@@ -619,7 +619,7 @@
           <label>Telefon<input name="phone" type="tel" autocomplete="tel" placeholder="optional"></label>
           <label>Ihre Frage *<textarea name="question" required rows="5" maxlength="5000" placeholder="Schildern Sie uns kurz Ihre Frage."></textarea></label>
           <label class="fgd-hp" aria-hidden="true">Website<input name="company_website" tabindex="-1" autocomplete="off"></label>
-          <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
+          <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
           <div class="fgd-status" data-faq-question-status hidden></div>
           <button type="submit" class="fgd-btn">Frage senden{% include "fgs-arrow.njk" %}</button>
         </form>
@@ -684,7 +684,7 @@
         {%- if c.knopf %}
         <a class="fgs-btn fgs-btn--primary" href="{{ c.knopf.href }}">{{ c.knopf.label }}</a>
         {%- elif c.button == "gespraech" %}
-        <a class="fgs-btn fgs-btn--primary" href="/kontakt.html">Gespräch vereinbaren</a>
+        <a class="fgs-btn fgs-btn--primary" href="/kontakt">Gespräch vereinbaren</a>
         {%- else %}
         <a class="fgs-btn fgs-btn--primary" href="{{ nav.valuation | navHref }}">Kostenlose Bewertung</a>
         {%- endif %}

@@ -1,15 +1,33 @@
-# Update 57 §2 Test 2 (15.11.2026, wird gleich wieder entfernt): erzeugt /x/index.html -> /x/ 301! eine Schleife?
-/vendor/u57x/index.html /vendor/u57x/ 301!
+# Update 57 §2 (15.11.2026): eine Adresse je Hauptseite, ohne .html. Die Dateien heißen weiter kaufen.html usw.,
+# Netlify liefert sie unter /kaufen aus. Jede .html-Adresse leitet dauerhaft weiter (301! gilt, obwohl die Datei da ist;
+# am 15.11. live getestet: eine Weiterleitung, dann 200). Keine Regel „/x/ /x“: Netlify vergleicht Regeln ohne
+# Schrägstrich am Ende, die Regel träfe auch /x selbst und liefe im Kreis.
+/index.html / 301!
+/agb.html /agb 301!
+/angebote.html /angebote 301!
+/ankaufsberatung.html /ankaufsberatung 301!
+/datenschutz.html /datenschutz 301!
+/finanzierungsberatung.html /finanzierungsberatung 301!
+/impressum.html /impressum 301!
+/investitionsrechner.html /investitionsrechner 301!
+/investment-lab.html /investment-lab 301!
+/kapitalanlage.html /kapitalanlage 301!
+/kaufen.html /kaufen 301!
+/kontakt.html /kontakt 301!
+/mehrfamilienhaus.html /mehrfamilienhaus 301!
+/mieten.html /mieten 301!
+/objekt-anfragen.html /objekt-anfragen 301!
+/ueber-uns.html /ueber-uns 301!
+/verkaufen.html /verkaufen 301!
+/vermieten.html /vermieten 301!
 # Update 47 §1: alte Hausverwaltungs-Seite (laut Git 15.11.2025–10.01.2026 unter /verwaltung.html, danach unter verstecktem Namen bis 28.08.2026) → Vermieten
-/verwaltung /vermieten.html 301!
-/verwaltung/ /vermieten.html 301!
-/verwaltung.html /vermieten.html 301!
-/verwaltungahsaudhuahduahdsu.html /vermieten.html 301!
-/kontakt /kontakt.html 301!
-/datenschutz/ /datenschutz.html 301!
+/verwaltung /vermieten 301!
+/verwaltung/ /vermieten 301!
+/verwaltung.html /vermieten 301!
+/verwaltungahsaudhuahduahdsu.html /vermieten 301!
 /gesuch-anlegen.html /gesuch-anlegen/ 301
-/anmieten /mieten.html 301!
-/anmieten.html /mieten.html 301!
+/anmieten /mieten 301!
+/anmieten.html /mieten 301!
 # Wissen ist seit 22.10.2026 der Blog. Alte Artikel mit neuem Gegenstück leiten dauerhaft weiter,
 # alle anderen vorerst (302) auf die Blog-Übersicht, bis ihr neuer Artikel live ist.
 # Update 42 §2.3 (07.11.2026): Die Zeilen „/wissen/<alt> /blog/<artikel>/ 301“ schaltet der Build selbst

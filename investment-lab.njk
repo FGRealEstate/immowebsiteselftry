@@ -5,7 +5,7 @@ fgsTools: true
 title: "Investment Lab: Immobilienrechner und Standortanalysen | Fischer & Geserich"
 permalink: investment-lab.html
 description: "16 kostenlose Immobilienrechner für Kaufpreis, Finanzierung, Cashflow, Rendite und Steuerwirkung, dazu Fachwissen, Standortanalysen und Lexikon von Fischer & Geserich."
-canonicalPath: /investment-lab.html
+canonicalPath: /investment-lab
 pg:
   crumb: Investment Lab
   kicker: "Immobilien besser entscheiden."
@@ -13,7 +13,7 @@ pg:
   intro: "16 Rechner für Kaufpreis, Finanzierung, Cashflow, Rendite und Steuerwirkung, dazu Fachartikel, Standortanalysen und ein Lexikon. Die Rechner laufen in Ihrem Browser, Ihre Eingaben werden nicht an uns übertragen."
   buttons:
     - { label: "Zu den Rechnern", href: "#rechner" }
-    - { label: "Investitionsrechner", href: "/investitionsrechner.html", line: true }
+    - { label: "Investitionsrechner", href: "/investitionsrechner", line: true }
   contact: lennart
   closing:
     title: "Ihr Ergebnis besprechen"
@@ -76,7 +76,7 @@ pg:
           <p>Die Gesamtrechnung im Investment Lab: Kaufpreis, Miete, Finanzierung, Steuern, Cashflow, Tilgung, Restschuld und Vermögensentwicklung in fünf geführten Schritten.</p>
           <div class="lab-featured-actions">
             <button type="button" class="fgs-btn fgs-btn--primary" data-toggle-investment>Investitionsrechner öffnen</button>
-            {{ textlink("/ankaufsberatung.html", "Ergebnis besprechen") }}
+            {{ textlink("/ankaufsberatung", "Ergebnis besprechen") }}
           </div>
         </div>
         <ul class="lab-featured-metrics" aria-label="Kennzahlen des Investitionsrechners">
@@ -87,7 +87,7 @@ pg:
       <div class="lab-investment-embed" data-investment-embed hidden>
         <div class="lab-embed-head"><strong>Investitionsrechner</strong><button type="button" data-toggle-investment>Schließen</button></div>
         {#- Ohne src: das Skript setzt data-src erst beim Öffnen, statt den Rechner bei jedem Seitenaufruf mitzuladen -#}
-        <iframe title="F&amp;G Investitionsrechner" data-src="/investitionsrechner.html?embedded=1&amp;v=2"></iframe>
+        <iframe title="F&amp;G Investitionsrechner" data-src="/investitionsrechner?embedded=1&amp;v=2"></iframe>
       </div>
 
       <div class="lab-section-head">

@@ -1,6 +1,6 @@
 /* Widget aus Timons Finanzierungsplattform (Update 5, Abschnitt 2).
    Update 11 §2 (29.10.2026): Die Seite hat ein Widget, den Angebotsrechner. Der zweite Platzhalter
-   („Was kann ich mir leisten?“, Feld `leisten`) ist gelöscht; dafür steht auf /finanzierungsberatung.html
+   („Was kann ich mir leisten?“, Feld `leisten`) ist gelöscht; dafür steht auf /finanzierungsberatung
    weiter der eigene Kaufpreisrahmen-Rechner. Ohne `angebot` oder ohne `anbieter` fehlt der Abschnitt
    „Finanzierungsangebot berechnen“.
 

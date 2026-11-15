@@ -3,7 +3,7 @@ layout: fgs-service.njk
 title: Wohnung oder Haus mieten – Mietgesuch anlegen | Fischer & Geserich
 permalink: mieten.html
 description: "Mietwohnung oder Haus suchen: Mietgesuch für Berlin, Leipzig, Dresden und den Berliner Speckgürtel anlegen und für passende Angebote vormerken lassen."
-canonicalPath: /mieten.html
+canonicalPath: /mieten
 # Design-Sprint (Brief 5.2, CP4 am 28.10.2026): Vorlage fgs-service.njk, Texte unverändert (Update 6 §4: nur §1, §2 und §3.0).
 # Brief Design-Pass §4.2: H1 nach Brief. Neu: wie das Mietgesuch funktioniert und was nach dem Absenden passiert.
 # Formular fgd-search-profile.njk mit marketing RENT (gleicher Endpunkt propstack-search-profile wie bisher).
@@ -29,9 +29,9 @@ service:
       a: "Ja. Ihre Einwilligung können Sie jederzeit widerrufen (Art. 7 Abs. 3 DSGVO), zum Beispiel per E-Mail an info@fg-realestate.de. Einzelheiten stehen in der Datenschutzerklärung."
   related:
     services:
-      - { label: "Immobilie kaufen", note: "Suchprofil und Kaufnebenkosten", href: "/kaufen.html", bild: "kaufen-hero", alt: "Canaletto-Blick in Dresden: die Augustusbrücke über die Elbe, dahinter Frauenkirche und Hofkirche im warmen Licht, vorn die Elbwiesen" }
-      - { label: "Finanzierungsberatung", note: "Kaufen statt mieten: den Rahmen prüfen", href: "/finanzierungsberatung.html", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
-      - { label: "Immobilie vermieten", note: "Für Eigentümer: Mieter finden und prüfen", href: "/vermieten.html", bild: "vermieten-hero", alt: "Altbau-Wohnhäuser von Riehmers Hofgarten an der Hagelberger Straße in Berlin-Kreuzberg, rechts ein Baum" }
+      - { label: "Immobilie kaufen", note: "Suchprofil und Kaufnebenkosten", href: "/kaufen", bild: "kaufen-hero", alt: "Canaletto-Blick in Dresden: die Augustusbrücke über die Elbe, dahinter Frauenkirche und Hofkirche im warmen Licht, vorn die Elbwiesen" }
+      - { label: "Finanzierungsberatung", note: "Kaufen statt mieten: den Rahmen prüfen", href: "/finanzierungsberatung", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
+      - { label: "Immobilie vermieten", note: "Für Eigentümer: Mieter finden und prüfen", href: "/vermieten", bild: "vermieten-hero", alt: "Altbau-Wohnhäuser von Riehmers Hofgarten an der Hagelberger Straße in Berlin-Kreuzberg, rechts ein Baum" }
     lexikon: [mietpreisbremse, mietspiegel, betriebskosten]
   contact: lennart
   closing:
@@ -71,7 +71,7 @@ service:
 {% call split({ id: "danach", titel: "Was mit Ihrem Mietgesuch passiert", bild: "dresden-band" | bild, alt: "Kuppel der Kunstakademie an der Brühlschen Terrasse in Dresden, dahinter die Elbe" }) %}
   <p>Nach dem Absenden sehen Sie eine Bestätigung auf der Seite. Wir prüfen Ihre Angaben persönlich und melden uns, wenn ein passendes Mietangebot vorliegt. Ändern sich Ihre Kriterien, etwa Budget oder Suchgebiet, schreiben Sie uns kurz.</p>
   <p>Zur Besichtigung genügen Name und Kontaktdaten. Möchten Sie die Wohnung nehmen, folgen Mieterselbstauskunft, Einkommensnachweise und eine Bonitätsauskunft. Wer diese Unterlagen bereithält, ist schneller.</p>
-  <p>Bereits veröffentlichte Wohnungen und Häuser finden Sie unter <a href="/angebote.html">Aktuelle Angebote</a>.</p>
+  <p>Bereits veröffentlichte Wohnungen und Häuser finden Sie unter <a href="/angebote">Aktuelle Angebote</a>.</p>
 {% endcall %}
 
 {# F Mietgesuch: Text links, Formular rechts (Feldnamen und Versand unverändert, fgd-search-profile.njk mit marketing RENT) #}

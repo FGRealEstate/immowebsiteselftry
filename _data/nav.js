@@ -10,7 +10,7 @@ const gewerbe = freigaben.gewerbe;
 
 const phone = { display: "+49 1520 3083048", href: "tel:+4915203083048" };
 const email = "info@fg-realestate.de";
-// Update 35 A4 (05.11.2026): „Erstgespräch buchen“ auf /kontakt.html und den Gebietsseiten. Derselbe Microsoft-Bookings-Link
+// Update 35 A4 (05.11.2026): „Erstgespräch buchen“ auf /kontakt und den Gebietsseiten. Derselbe Microsoft-Bookings-Link
 // wie auf der Ankaufsberatung (ankaufBookingUrl); consent-manager.js zählt den Klick als booking_click („erstgespraech“).
 // Update 35 B3: priceRange im JSON-LD (Startseite, Gebietsseiten, Seiten mit Firmenknoten). Unter 100 Zeichen (Google).
 // Nur Aussagen, die auf der Seite stehen: kostenlose Wertermittlung (gebiet-detail.njk, mangoTexte),
@@ -28,38 +28,38 @@ const valuation = {
 const menu = [
   {
     label: "Verkaufen",
-    href: "/verkaufen.html",
+    href: "/verkaufen",
     items: [
-      { label: "Immobilie verkaufen", note: "Bewertung, Vermarktung, Abschluss", href: "/verkaufen.html" },
+      { label: "Immobilie verkaufen", note: "Bewertung, Vermarktung, Abschluss", href: "/verkaufen" },
       // Update 50 §1: erscheint erst mit der ersten Referenz (Filter navFrei in .eleventy.js)
       { label: "Referenzen", note: "Verkauft und vermietet", href: "/referenzen/", nurMitReferenzen: true },
       { label: "Kostenlose Bewertung", note: "Meist noch am selben Tag", href: valuation.href },
-      { label: "Mehrfamilienhaus", note: "Verkauf und Ankauf", href: "/mehrfamilienhaus.html" },
+      { label: "Mehrfamilienhaus", note: "Verkauf und Ankauf", href: "/mehrfamilienhaus" },
       ...(gewerbe ? [{ label: "Gewerbeimmobilien", note: "Hallen, Logistik, Gewerbeflächen", href: "/gewerbeimmobilien/" }] : []),
-      { label: "Vermieten", note: "Mietpreis und Auswahl", href: "/vermieten.html" },
+      { label: "Vermieten", note: "Mietpreis und Auswahl", href: "/vermieten" },
       { label: "Maklerprovision", note: "Alle Fälle erklärt", href: "/maklerprovision/" }
     ]
   },
   {
     label: "Kaufen & Investieren",
-    href: "/kaufen.html",
+    href: "/kaufen",
     items: [
-      { label: "Aktuelle Angebote", note: "Immobilien über F&G", href: "/angebote.html" },
-      { label: "Immobilie kaufen", note: "Der passende Einstieg", href: "/kaufen.html" },
-      { label: "Ankaufsberatung", note: "Objekt und Strategie prüfen", href: "/ankaufsberatung.html" },
-      { label: "Kapitalanlage", note: "Vorher rechnen", href: "/kapitalanlage.html" },
+      { label: "Aktuelle Angebote", note: "Immobilien über F&G", href: "/angebote" },
+      { label: "Immobilie kaufen", note: "Der passende Einstieg", href: "/kaufen" },
+      { label: "Ankaufsberatung", note: "Objekt und Strategie prüfen", href: "/ankaufsberatung" },
+      { label: "Kapitalanlage", note: "Vorher rechnen", href: "/kapitalanlage" },
       { label: "Betreuung nach dem Kauf", note: "Nach dem Notartermin", href: "/betreuung-nach-dem-kauf/" },
-      { label: "Mieten", note: "Mietgesuch anlegen", href: "/mieten.html" },
+      { label: "Mieten", note: "Mietgesuch anlegen", href: "/mieten" },
       { label: "Suchprofil anlegen", note: "Passende Objekte zuerst", href: "/gesuch-anlegen/" }
     ]
   },
   {
     label: "Finanzierung",
-    href: "/finanzierungsberatung.html",
+    href: "/finanzierungsberatung",
     items: [
-      { label: "Finanzierungsberatung", note: "Unabhängig, Banken vergleichen", href: "/finanzierungsberatung.html" },
-      { label: "Investment Lab", note: "Rechner und Werkzeuge", href: "/investment-lab.html" },
-      { label: "Investitionsrechner", note: "Rendite und Cashflow", href: "/investitionsrechner.html" }
+      { label: "Finanzierungsberatung", note: "Unabhängig, Banken vergleichen", href: "/finanzierungsberatung" },
+      { label: "Investment Lab", note: "Rechner und Werkzeuge", href: "/investment-lab" },
+      { label: "Investitionsrechner", note: "Rendite und Cashflow", href: "/investitionsrechner" }
     ]
   },
   {
@@ -81,33 +81,33 @@ const menu = [
     items: [
       { label: "Blog", note: "Artikel mit Rechnung", href: "/blog/" },
       { label: "Lexikon", note: "Begriffe erklärt", href: "/lexikon/" },
-      { label: "Investment Lab", note: "Rechner und Analysen", href: "/investment-lab.html" }
+      { label: "Investment Lab", note: "Rechner und Analysen", href: "/investment-lab" }
     ]
   },
   {
     label: "Über uns",
-    href: "/ueber-uns.html",
+    href: "/ueber-uns",
     items: [
-      { label: "Über uns", note: "Wer wir sind", href: "/ueber-uns.html" },
+      { label: "Über uns", note: "Wer wir sind", href: "/ueber-uns" },
       { label: "Timon Fischer", note: "Finanzierung & Prozesse", href: "/team/timon-fischer/" },
       { label: "Lennart Geserich", note: "Sales & Vermietung", href: "/team/lennart-geserich/" },
       { label: "Bewertungen", note: "Was Kunden sagen", href: "/bewertungen/" },
-      { label: "Kontakt", note: "Telefon, E-Mail, Termin", href: "/kontakt.html" }
+      { label: "Kontakt", note: "Telefon, E-Mail, Termin", href: "/kontakt" }
     ]
   }
 ];
 
 const services = [
-  { label: "Immobilie verkaufen", href: "/verkaufen.html" },
+  { label: "Immobilie verkaufen", href: "/verkaufen" },
   { label: "Kostenlose Bewertung", href: valuation.href },
-  { label: "Immobilie kaufen", href: "/kaufen.html" },
-  { label: "Ankaufsberatung", href: "/ankaufsberatung.html" },
-  { label: "Kapitalanlage", href: "/kapitalanlage.html" },
-  { label: "Mehrfamilienhaus", href: "/mehrfamilienhaus.html" },
+  { label: "Immobilie kaufen", href: "/kaufen" },
+  { label: "Ankaufsberatung", href: "/ankaufsberatung" },
+  { label: "Kapitalanlage", href: "/kapitalanlage" },
+  { label: "Mehrfamilienhaus", href: "/mehrfamilienhaus" },
   ...(gewerbe ? [{ label: "Gewerbeimmobilien", href: "/gewerbeimmobilien/" }] : []),
-  { label: "Finanzierung", href: "/finanzierungsberatung.html" },
-  { label: "Vermieten", href: "/vermieten.html" },
-  { label: "Mieten", href: "/mieten.html" },
+  { label: "Finanzierung", href: "/finanzierungsberatung" },
+  { label: "Vermieten", href: "/vermieten" },
+  { label: "Mieten", href: "/mieten" },
   { label: "Betreuung nach dem Kauf", href: "/betreuung-nach-dem-kauf/" },
   { label: "Maklerprovision", href: "/maklerprovision/" }
 ];

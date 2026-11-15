@@ -2,7 +2,7 @@
   "id": "investment",
   "title": "Investitionsrechner",
   "description": "Objekt, Finanzierung, Steuern, Cashflow und Vermögensverlauf zusammenführen.",
-  "url": "/investment-lab.html?tool=investment",
+  "url": "/investment-lab?tool=investment",
   "keywords": [
     "investitionsrechnung",
     "eigenkapitalrendite",

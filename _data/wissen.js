@@ -12,7 +12,7 @@ for (const [kat, k] of Object.entries(KATEGORIEN)) {
 }
 // Seiten ohne Eintrag in KATEGORIEN.leistungen
 const ZUSATZ = {
-  "/mehrfamilienhaus.html": ["kauf-kapitalanlage", "finanzierung"],
+  "/mehrfamilienhaus": ["kauf-kapitalanlage", "finanzierung"],
   "/maklerprovision/": ["bewertung-markt"]
 };
 for (const [href, kats] of Object.entries(ZUSATZ)) seiten[href] = [...new Set([...(seiten[href] || []), ...kats])];

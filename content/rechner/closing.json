@@ -2,7 +2,7 @@
   "id": "closing",
   "title": "Kaufnebenkostenrechner",
   "description": "Grunderwerbsteuer, Notar, Grundbuch und Makler nach Bundesland berechnen.",
-  "url": "/investment-lab.html?tool=closing",
+  "url": "/investment-lab?tool=closing",
   "keywords": [
     "nebenkosten",
     "grunderwerbsteuer",

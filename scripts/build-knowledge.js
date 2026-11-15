@@ -53,7 +53,7 @@ const TARGET = {
   "bruttogeschossflache-vs-wohnflache": "/lexikon/wohnflache/",
   "capex-statt-schonrechnung": "/lexikon/capex/",
   "cashflow-verstehen": "/lexikon/cashflow/",
-  "deal-screening-in-funf-minuten": "/investitionsrechner.html",
+  "deal-screening-in-funf-minuten": "/investitionsrechner",
   "dscr-verstehen": "/lexikon/dscr/",
   "due-diligence-fur-einsteiger": "/lexikon/due-diligence/",
   "eigenkapital-optimal-einsetzen": "/lexikon/eigenkapital/",
@@ -86,7 +86,7 @@ const TARGET = {
   "tilgung-oder-sondertilgung": "/lexikon/sondertilgung/",
   "umlagefahige-betriebskosten": "/lexikon/umlagefahige-kosten/",
   "vergleichswertverfahren-kompakt": "/lexikon/verkehrswert/",
-  "wann-lohnt-sich-ein-mehrfamilienhaus": "/mehrfamilienhaus.html",
+  "wann-lohnt-sich-ein-mehrfamilienhaus": "/mehrfamilienhaus",
   "weg-rucklage-verstehen": "/lexikon/erhaltungsrucklage/",
   "wertsteigerung-als-szenario": "/lexikon/wertsteigerung/",
   "wie-berechnet-man-die-eigenkapitalrendite": "/lexikon/eigenkapitalrendite/",
@@ -96,19 +96,19 @@ const TARGET = {
 };
 // Sonst die Leistungsseite zum Thema.
 const BY_CATEGORY = {
-  Finanzierung: "/finanzierungsberatung.html",
-  Immobilienkauf: "/ankaufsberatung.html",
-  Kapitalanlage: "/kapitalanlage.html",
+  Finanzierung: "/finanzierungsberatung",
+  Immobilienkauf: "/ankaufsberatung",
+  Kapitalanlage: "/kapitalanlage",
   Marktanalysen: "/standorte/",
-  Steuern: "/kapitalanlage.html",
-  Vermietung: "/vermieten.html",
+  Steuern: "/kapitalanlage",
+  Vermietung: "/vermieten",
 };
 
 const lexSlugs = new Set(list("content/lexikon").map((f) => f.replace(/\.json$/, "")));
 const blog = read("_data/blog.json");
 const blogUrls = new Set(blog.map((p) => p.url));
-const PAGES = new Set(["/finanzierungsberatung.html", "/ankaufsberatung.html", "/kapitalanlage.html", "/standorte/",
-  "/vermieten.html", "/mehrfamilienhaus.html", "/investitionsrechner.html"]);
+const PAGES = new Set(["/finanzierungsberatung", "/ankaufsberatung", "/kapitalanlage", "/standorte/",
+  "/vermieten", "/mehrfamilienhaus", "/investitionsrechner"]);
 function assertLive(url, from) {
   const lex = url.match(/^\/lexikon\/([a-z0-9-]+)\/$/);
   const ok = lex ? lexSlugs.has(lex[1]) : url.startsWith("/blog/") ? blogUrls.has(url) : PAGES.has(url);

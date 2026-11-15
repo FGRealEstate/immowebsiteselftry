@@ -19,7 +19,7 @@ customSchema: true
     dieser Vorlage (Bewertung, Maklerprovision, Gewerbe, Mieten) bleiben wie sie sind. -#}
 {% from "fgs-macros.njk" import hero, rail, card, faq, closing with context %}
 {% set s = service %}
-{% set pageUrl = "https://fg-realestate.de" + page.url %}
+{% set pageUrl = "https://fg-realestate.de" + (page.url | ohneHtml) %}
 {% set faqItems = s.faq | serviceFaq(mangoTexte.faq, serviceArea.text) %}
 {% set heroBild = s.hero.name | bild %}
 {% set heroWidths = s.hero.widths or [960, 1600, 2000] %}{# Schema-Bild wie bisher in fgd-service.njk #}
@@ -100,7 +100,7 @@ customSchema: true
   "@graph": [
     {
       "@type": "Service",
-      "@id": "https://fg-realestate.de{{ page.url }}#service",
+      "@id": "{{ pageUrl }}#service",
       "name": {{ s.schema.name | json | safe }},
       "serviceType": {{ s.schema.serviceType | json | safe }},
       "description": {{ s.schema.description | json | safe }},
@@ -123,7 +123,7 @@ customSchema: true
       "inLanguage": "de-DE",
       "isPartOf": { "@id": "https://fg-realestate.de/#website" },
       "publisher": { "@id": "https://fg-realestate.de/#organization" },
-      "about": { "@id": "https://fg-realestate.de{{ page.url }}#service" },
+      "about": { "@id": "{{ pageUrl }}#service" },
       "breadcrumb": { "@id": "{{ pageUrl }}#breadcrumb" },
       {#- Update 9 §1.5: Urheber, Nennung, Lizenz und Lizenzseite aus derselben Zeile wie /bildnachweise/ (Filter bildnachweis); CC0 ohne Angaben #}
       {%- set heroNachweis = s.hero.name | bildnachweis %}

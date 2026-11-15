@@ -1,4 +1,4 @@
-/* Investitionsrechner (/investitionsrechner.html). Wörtlich aus script.js, Zeilen 60–461 (Stand 27.10.2026),
+/* Investitionsrechner (/investitionsrechner). Wörtlich aus script.js, Zeilen 60–461 (Stand 27.10.2026),
    damit die Seite im neuen Design ohne script.js läuft. Rechenlogik unverändert; Änderungen nur gemeinsam mit script.js. */
 /* =========================================================
    FG Real Estate – Investitionsrechner V3

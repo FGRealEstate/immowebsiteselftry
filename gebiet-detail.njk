@@ -188,9 +188,9 @@ eleventyComputed:
 <section class="fgs-section fgs-place-trio" aria-label="Verkaufen, kaufen und finanzieren {{ g.inOrt }}">
   <div class="fgs-wrap fgs-trio">
     {%- set gewerbe %}{% if freigaben.gewerbe and gewerbeAchsen[g.slug] %}<p>Für Hallen, Logistik- und Gewerbeflächen {{ gewerbeAchsen[g.slug] }} gibt es eine eigene Seite: <a href="/gewerbeimmobilien/">Gewerbeimmobilien im Berliner Umland und in Dresden</a>.</p>{% endif %}{% endset %}
-    {{ spalte("verkaufen", g.verkaufen, textlink("/verkaufen.html", "So verkaufen wir Immobilien"), gewerbe) }}
-    {{ spalte("kaufen", g.kaufen, textlink("/ankaufsberatung.html", "Ankaufsberatung") + textlink("/kapitalanlage.html", "Kapitalanlage"), "") }}
-    {{ spalte("finanzieren", g.finanzieren, textlink("/finanzierungsberatung.html", "Finanzierungsberatung"), "") }}
+    {{ spalte("verkaufen", g.verkaufen, textlink("/verkaufen", "So verkaufen wir Immobilien"), gewerbe) }}
+    {{ spalte("kaufen", g.kaufen, textlink("/ankaufsberatung", "Ankaufsberatung") + textlink("/kapitalanlage", "Kapitalanlage"), "") }}
+    {{ spalte("finanzieren", g.finanzieren, textlink("/finanzierungsberatung", "Finanzierungsberatung"), "") }}
   </div>
 </section>
 
@@ -203,14 +203,14 @@ eleventyComputed:
   <div class="fgs-wrap">
     <div class="fgs-obj-head">
       <div class="fgs-head"><h2 id="angebote-titel">Aktuelle Angebote {{ g.inOrt }}</h2></div>
-      <a class="fgs-btn fgs-btn--primary fgs-obj-head-btn" href="/angebote.html">Alle Angebote</a>
+      <a class="fgs-btn fgs-btn--primary fgs-obj-head-btn" href="/angebote">Alle Angebote</a>
     </div>
     <ul class="fgs-obj-grid fgs-obj-grid--home" role="list">
       {%- for o in eigeneAngebote.slice(0, 6) %}
       {{ angebot(o) }}
       {%- endfor %}
     </ul>
-    <div class="fgs-btns fgs-obj-more"><a class="fgs-btn fgs-btn--primary" href="/angebote.html">Alle Angebote ansehen</a></div>
+    <div class="fgs-btns fgs-obj-more"><a class="fgs-btn fgs-btn--primary" href="/angebote">Alle Angebote ansehen</a></div>
   </div>
 </section>
 {%- endif %}

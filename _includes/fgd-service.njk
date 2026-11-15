@@ -22,7 +22,7 @@ customSchema: true
 -#}
 {% from "fgd-icons.njk" import icon %}
 {% set s = service %}
-{% set pageUrl = "https://fg-realestate.de" + page.url %}
+{% set pageUrl = "https://fg-realestate.de" + (page.url | ohneHtml) %}
 {% set faqItems = s.faq | serviceFaq(mangoTexte.faq, serviceArea.text) %}
 {% set heroBase = "/images/seiten/" + s.hero.name %}
 {% set heroWidths = s.hero.widths or [960, 1600, 2000] %}
@@ -112,7 +112,7 @@ customSchema: true
   "@graph": [
     {
       "@type": "Service",
-      "@id": "https://fg-realestate.de{{ page.url }}#service",
+      "@id": "{{ pageUrl }}#service",
       "name": {{ s.schema.name | json | safe }},
       "serviceType": {{ s.schema.serviceType | json | safe }},
       "description": {{ s.schema.description | json | safe }},
@@ -135,7 +135,7 @@ customSchema: true
       "inLanguage": "de-DE",
       "isPartOf": { "@id": "https://fg-realestate.de/#website" },
       "publisher": { "@id": "https://fg-realestate.de/#organization" },
-      "about": { "@id": "https://fg-realestate.de{{ page.url }}#service" },
+      "about": { "@id": "{{ pageUrl }}#service" },
       "breadcrumb": { "@id": "{{ pageUrl }}#breadcrumb" },
       "primaryImageOfPage": { "@type": "ImageObject", "url": "https://fg-realestate.de{{ heroBase }}-{{ heroSrc }}.webp" }
     },

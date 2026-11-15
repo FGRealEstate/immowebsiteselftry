@@ -2,7 +2,7 @@
   "id": "afa",
   "title": "AfA-Rechner",
   "description": "Abschreibungsbasis, Gebäudeanteil und jährliche AfA als Szenario berechnen.",
-  "url": "/investment-lab.html?tool=afa",
+  "url": "/investment-lab?tool=afa",
   "keywords": [
     "afa",
     "abschreibung",

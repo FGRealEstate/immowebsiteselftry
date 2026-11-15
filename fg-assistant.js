@@ -41,15 +41,15 @@
   };
 
   const PAGE_ACTIONS = {
-    kaufen: { label: 'Kaufgesuch anlegen', href: '/kaufen.html#suchprofil', icon: 'fa-key' },
-    mieten: { label: 'Mietgesuch anlegen', href: '/mieten.html#mietgesuch', icon: 'fa-door-open' },
+    kaufen: { label: 'Kaufgesuch anlegen', href: '/kaufen#suchprofil', icon: 'fa-key' },
+    mieten: { label: 'Mietgesuch anlegen', href: '/mieten#mietgesuch', icon: 'fa-door-open' },
     verkaufen: { label: 'Bewertung anfragen', href: '/immobilienbewertung/', icon: 'fa-house-circle-check' },
-    vermieten: { label: 'Vermietung anfragen', href: '/vermieten.html#anfrage', icon: 'fa-building' },
-    finanzierung: { label: 'Finanzierung prüfen', href: '/finanzierungsberatung.html#anfrage', icon: 'fa-building-columns' },
-    ankauf: { label: 'Ankaufsberatung', href: '/ankaufsberatung.html', icon: 'fa-handshake-angle' },
-    angebote: { label: 'Aktuelle Angebote', href: '/angebote.html', icon: 'fa-magnifying-glass' },
-    lab: { label: 'Investment Lab', href: '/investment-lab.html', icon: 'fa-chart-line' },
-    kontakt: { label: 'Kontakt', href: '/kontakt.html', icon: 'fa-phone' }
+    vermieten: { label: 'Vermietung anfragen', href: '/vermieten#anfrage', icon: 'fa-building' },
+    finanzierung: { label: 'Finanzierung prüfen', href: '/finanzierungsberatung#anfrage', icon: 'fa-building-columns' },
+    ankauf: { label: 'Ankaufsberatung', href: '/ankaufsberatung', icon: 'fa-handshake-angle' },
+    angebote: { label: 'Aktuelle Angebote', href: '/angebote', icon: 'fa-magnifying-glass' },
+    lab: { label: 'Investment Lab', href: '/investment-lab', icon: 'fa-chart-line' },
+    kontakt: { label: 'Kontakt', href: '/kontakt', icon: 'fa-phone' }
   };
 
   const CAT_META = {

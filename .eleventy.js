@@ -63,6 +63,15 @@ module.exports = function(eleventyConfig) {
   });
 
   // Neues Design: ein Fallback-Link, solange die Zielseite noch gebaut wird (siehe _data/nav.js).
+  // Update 57 §2 (15.11.2026): eine Adresse je Hauptseite, ohne .html. Die Dateien bleiben kaufen.html usw. (page.url
+  // "/kaufen.html"), Canonical, og:url, Schema, Sitemap, llms.txt und Menü nehmen die Adresse ohne Endung; _redirects
+  // leitet /kaufen.html mit 301 auf /kaufen. /index.html wird /. Die 404-Seite behält ihren Namen.
+  const ohneHtml = (u) => {
+    const s = String(u == null ? "" : u);
+    if (s === "/index.html") return "/";
+    return /^\/[a-z0-9-]+\.html$/.test(s) && s !== "/404.html" ? s.slice(0, -5) : s;
+  };
+  eleventyConfig.addFilter("ohneHtml", ohneHtml);
   eleventyConfig.addFilter("navHref", (item) => (item && (item.fallback || item.href)) || "#");
   // Propstack liefert Preise mit Cent („225.000,00 €“); auf den Angebotsseiten ohne „,00“ (Daten bleiben unverändert).
   eleventyConfig.addFilter("eur", (value) => (value ? String(value).replace(/,00 €/g, " €") : value));
@@ -502,14 +511,14 @@ module.exports = function(eleventyConfig) {
         // expand every data-driven detail URL explicitly and deduplicate below.
         const renderedSectionPages = pages
           .filter((item) => item.url === section.prefix || item.url.startsWith(section.prefix))
-          .map((item) => ({ loc: item.url, lastmod: sitemapLastmod(item) }));
+          .map((item) => ({ loc: ohneHtml(item.url), lastmod: sitemapLastmod(item) })); // Update 57 §2
         sourceUrls = renderedSectionPages.concat(dynamicBySection[section.key]);
       } else {
         sourceUrls = pages
           .filter((item) => section.prefix
             ? item.url.startsWith(section.prefix)
             : !SITEMAP_SECTIONS.some((candidate) => candidate.prefix && item.url.startsWith(candidate.prefix)))
-          .map((item) => ({ loc: item.url, lastmod: sitemapLastmod(item) }));
+          .map((item) => ({ loc: ohneHtml(item.url), lastmod: sitemapLastmod(item) })); // Update 57 §2
       }
 
       const urls = sourceUrls
@@ -603,8 +612,10 @@ module.exports = function(eleventyConfig) {
         if (!loc.startsWith(indexnow.BASIS + "/")) continue;
         let rel = decodeURI(loc.slice(indexnow.BASIS.length));
         if (rel.endsWith("/")) rel += "index.html";
-        const datei = path.join(dir.output, rel);
-        if (!fs.existsSync(datei)) continue;
+        let datei = path.join(dir.output, rel);
+        // Update 57 §2: /kaufen steht in der Sitemap, die Datei heißt kaufen.html (Netlify liefert sie unter /kaufen aus).
+        if (!(fs.existsSync(datei) && fs.statSync(datei).isFile()) && fs.existsSync(datei + ".html")) datei += ".html";
+        if (!(fs.existsSync(datei) && fs.statSync(datei).isFile())) continue;
         seiten[loc] = crypto.createHash("sha256").update(fs.readFileSync(datei)).digest("hex").slice(0, 16);
       }
     }
@@ -623,6 +634,15 @@ module.exports = function(eleventyConfig) {
     fs.writeFileSync(path.join(dir.output, "indexnow.json"),
       JSON.stringify({ erstellt: new Date().toISOString(), seiten, geaendert }) + "\n");
     console.log(`IndexNow: ${Object.keys(seiten).length} Seiten, ${geaendert.length} geändert`);
+  });
+
+  // Update 57 §2, §3.3, §12 (15.11.2026): Sitemap, Canonicals, llms.txt, Links und Weiterleitungen stimmen überein, und
+  // jeder Blogartikel ist ganz live oder gar nicht (scripts/adressen.js). Sonst bricht der Build ab; live bleibt dann die
+  // letzte gute Version. Als letzter Schritt registriert, nach _redirects (oben).
+  eleventyConfig.on("eleventy.after", ({ dir }) => {
+    const fehler = require("./scripts/adressen").pruefe(dir.output, { plan: JSON.parse(fs.readFileSync("_data/blogplan.json", "utf8")) });
+    if (fehler.length) throw new Error(`Adressenprüfung (scripts/adressen.js): ${fehler.length} Fehler\n` + fehler.join("\n"));
+    console.log("Adressenprüfung: Sitemap, Canonicals, llms.txt, Links und Blog stimmen überein.");
   });
 
   return {

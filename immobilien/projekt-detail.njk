@@ -36,7 +36,7 @@ eleventyComputed:
 {% set pics = project.gallery if project.gallery else [] %}
 {% set meta %}{% if project.location %}{{ project.location }}{% endif %}{% if project.strategy %}{% if project.location %} · {% endif %}{{ project.strategy }}{% endif %}{% if project.property_types.length %}{% if project.location or project.strategy %} · {% endif %}{{ project.property_types | join(", ") }}{% endif %}{% endset %}
 {% set k1 = { href: "#einheiten", label: project.available_unit_count ~ " Einheiten ansehen" } %}
-{% if project.marketing_type != "Miete" %}{% set knoepfe = [k1, { href: "/finanzierungsberatung.html", label: "Finanzierung prüfen" }] %}{% else %}{% set knoepfe = [k1] %}{% endif %}
+{% if project.marketing_type != "Miete" %}{% set knoepfe = [k1, { href: "/finanzierungsberatung", label: "Finanzierung prüfen" }] %}{% else %}{% set knoepfe = [k1] %}{% endif %}
 
 {% set fakten = [{ wert: (project.price_range | eur) if project.price_range else "auf Anfrage", label: "Kaltmieten" if project.marketing_type == "Miete" else "Kaufpreise", lang: true }, { wert: project.available_unit_count, label: "Verfügbare Einheiten" }] %}
 {% if project.room_range %}{% set fakten = fakten.concat([{ wert: project.room_range, label: "Zimmer" }]) %}{% endif %}
@@ -45,7 +45,7 @@ eleventyComputed:
 {% if project.completion_date %}{% set fakten = fakten.concat([{ wert: project.completion_date, label: "Fertigstellung" }]) %}{% endif %}
 
 {{ listingHead({
-  crumbs: [{ href: "/angebote.html", label: "Angebote" }],
+  crumbs: [{ href: "/angebote", label: "Angebote" }],
   current: project.name,
   kicker: "Projekt · " + project.marketing_type,
   titel: project.name,
@@ -131,7 +131,7 @@ eleventyComputed:
       "@id": "{{ pageUrl }}#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://fg-realestate.de/" },
-        { "@type": "ListItem", "position": 2, "name": "Angebote", "item": "https://fg-realestate.de/angebote.html" },
+        { "@type": "ListItem", "position": 2, "name": "Angebote", "item": "https://fg-realestate.de/angebote" },
         { "@type": "ListItem", "position": 3, "name": {{ project.name | dump | safe }}, "item": "{{ pageUrl }}" }
       ]
     }

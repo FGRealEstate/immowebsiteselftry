@@ -3,7 +3,7 @@
 // keine Steuer- oder Finanzierungsberatung. Ändert sich eine Formel, muss der Text hier mit.
 // Reihenfolge und ids wie die Liste `tools` in investment-lab.js.
 module.exports = [
-  { id: "investment", title: "Investitionsrechner", href: "/investitionsrechner.html",
+  { id: "investment", title: "Investitionsrechner", href: "/investitionsrechner",
     was: "Rechnet Jahr für Jahr über 10 bis 40 Jahre: Cashflow vor und nach Steuer, Zins, Tilgung, Restschuld, Immobilienwert und Vermögen.",
     grenze: "Die Steuer ist eine vereinfachte Objektrechnung mit Ihrem Grenzsteuersatz. Zins und Steigerungsraten bleiben über den ganzen Zeitraum gleich." },
   { id: "afford", title: "Wie viel Immobilie kann ich mir leisten?",

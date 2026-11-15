@@ -37,9 +37,9 @@ service:
       a: "Wer den Makler beauftragt hat. Beauftragt der Eigentümer uns mit der Vermietung, zahlt der Eigentümer. Ein Mieter zahlt nur, wenn er den Makler selbst mit der Suche beauftragt hat, und dann höchstens zwei Monatsmieten zuzüglich Umsatzsteuer."
   related:
     services:
-      - { label: "Immobilie verkaufen", note: "Ablauf, Unterlagen und alle Kosten beim Verkauf", href: "/verkaufen.html", bild: "verkaufen-hero", alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser" }
-      - { label: "Immobilie kaufen", note: "Kaufnebenkosten und Ablauf bis zum Notartermin", href: "/kaufen.html", bild: "kaufen-hero", alt: "Canaletto-Blick in Dresden: die Augustusbrücke über die Elbe, dahinter Frauenkirche und Hofkirche im warmen Licht, vorn die Elbwiesen" }
-      - { label: "Immobilie vermieten", note: "Bestellerprinzip, Mietspiegel und Mieterauswahl", href: "/vermieten.html", bild: "vermieten-hero", alt: "Altbau-Wohnhäuser von Riehmers Hofgarten an der Hagelberger Straße in Berlin-Kreuzberg, rechts ein Baum" }
+      - { label: "Immobilie verkaufen", note: "Ablauf, Unterlagen und alle Kosten beim Verkauf", href: "/verkaufen", bild: "verkaufen-hero", alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser" }
+      - { label: "Immobilie kaufen", note: "Kaufnebenkosten und Ablauf bis zum Notartermin", href: "/kaufen", bild: "kaufen-hero", alt: "Canaletto-Blick in Dresden: die Augustusbrücke über die Elbe, dahinter Frauenkirche und Hofkirche im warmen Licht, vorn die Elbwiesen" }
+      - { label: "Immobilie vermieten", note: "Bestellerprinzip, Mietspiegel und Mieterauswahl", href: "/vermieten", bild: "vermieten-hero", alt: "Altbau-Wohnhäuser von Riehmers Hofgarten an der Hagelberger Straße in Berlin-Kreuzberg, rechts ein Baum" }
     lexikon: [maklerprovision, courtage, kaufnebenkosten]
   contact: lennart
   closing:
@@ -146,6 +146,6 @@ service:
 
 {# S3 Provision bei Vermietung (bisher Halbbild) #}
 {% call split({ id: "vermietung", titel: "Provision bei Vermietung: das Bestellerprinzip", bild: "skyline-band" | bild, alt: "Fernsehturm und Hochhäuser an der Spree in Berlin-Friedrichshain nach Sonnenuntergang", rechts: true }) %}
-  <p>Bei Wohnraum zahlt, wer den Makler beauftragt hat, auch wenn sich Interessenten danach von selbst melden. Ein Mieter zahlt nur, wenn der Makler die Wohnung ausschließlich wegen seines Suchauftrags beim Vermieter angefragt hat (§ 2 Abs. 1a WoVermittG), und dann höchstens zwei Monatsmieten zuzüglich Umsatzsteuer (§ 3 Abs. 2 WoVermittG). Der Anspruch entsteht nur, wenn ein Mietvertrag zustande kommt. Mehr dazu auf der Seite <a href="/vermieten.html#kosten">Immobilie vermieten</a>.</p>
+  <p>Bei Wohnraum zahlt, wer den Makler beauftragt hat, auch wenn sich Interessenten danach von selbst melden. Ein Mieter zahlt nur, wenn der Makler die Wohnung ausschließlich wegen seines Suchauftrags beim Vermieter angefragt hat (§ 2 Abs. 1a WoVermittG), und dann höchstens zwei Monatsmieten zuzüglich Umsatzsteuer (§ 3 Abs. 2 WoVermittG). Der Anspruch entsteht nur, wenn ein Mietvertrag zustande kommt. Mehr dazu auf der Seite <a href="/vermieten#kosten">Immobilie vermieten</a>.</p>
   <p class="fgs-small">Der konkrete Vertrag ist entscheidend. Diese Seite erklärt typische Konstellationen und ersetzt keine Rechtsberatung. Maßgeblich sind die tatsächliche Vertragskonstellation und die im Maklervertrag vereinbarte Vergütung. Quellen: <a href="https://www.gesetze-im-internet.de/wovermrg/" target="_blank" rel="noopener">§§ 2, 3 WoVermittG</a>.</p>
 {% endcall %}

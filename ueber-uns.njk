@@ -5,7 +5,7 @@ fgsIndex: true
 title: "Über Fischer & Geserich: Immobilienmakler aus Berlin-Steglitz"
 permalink: ueber-uns.html
 description: "Fischer & Geserich aus Berlin-Steglitz: Immobilienvermittlung nach § 34c und unabhängige Finanzierungsvermittlung nach § 34i GewO. Team, Zahlen, Erlaubnisse, Büro."
-canonicalPath: /ueber-uns.html
+canonicalPath: /ueber-uns
 ogTitle: "Über Fischer & Geserich Real Estate"
 ogDescription: "Lernen Sie Lennart Geserich, Timon Fischer und Peter Csaszar, unsere Erfahrung und unsere Arbeitsweise kennen."
 # Design-Sprint CP3 (28.10.2026), Brief 5.4: S1 (Schützenstraße in Steglitz), erster Abschnitt, eine S3-Teilung je Person,
@@ -22,7 +22,7 @@ pg:
     name: ueber-uns-hero
     alt: "Gründerzeit-Eckhaus an der Schützenstraße in Berlin-Steglitz, in dieser Straße liegt das Büro von Fischer & Geserich"
   buttons:
-    - { label: "Persönlich kennenlernen", href: "/kontakt.html" }
+    - { label: "Persönlich kennenlernen", href: "/kontakt" }
     - { label: "Das Team ansehen", href: "#team" }
   summaryQ: "Objekt und Finanzierung gehören an einen Tisch"
   summary:
@@ -145,7 +145,7 @@ pg:
         <li>Kooperationen, zum Beispiel mit Immovisory, wenn sie Ihrem Fall helfen.</li>
         <li>Keine Garantie auf Finanzierung: Objekt, Bonität, Währung und Beleihung entscheiden immer im Einzelfall.</li>
       </ul>
-      {{ textlink("/finanzierungsberatung.html", "Zur Finanzierungsberatung") }}
+      {{ textlink("/finanzierungsberatung", "Zur Finanzierungsberatung") }}
     {% endcall %}
     {% call nachschlag({ id: "waehrung", titel: "Einkommen in einer anderen Währung" }) %}
       <p>Liegen Einkommen oder Vermögen nicht in Euro, können Banken zusätzliche Sicherheitsabschläge verlangen. In schwierigen Fällen finanzieren sie dann nur noch etwa 50 bis 60 Prozent des Beleihungswerts. Das entscheidet jede Bank im Einzelfall und Fälle mit Währungsrisiko brauchen mehr Zeit als andere.</p>
@@ -164,7 +164,7 @@ pg:
           </tbody>
         </table>
       </div>
-      <p class="fgs-note">Alle Pflichtangaben stehen im <a href="/impressum.html">Impressum</a>.</p>
+      <p class="fgs-note">Alle Pflichtangaben stehen im <a href="/impressum">Impressum</a>.</p>
     {% endcall %}
   </div>
 </section>
@@ -176,7 +176,7 @@ pg:
   <address class="fgs-address">Schützenstraße 30, 12165 Berlin<br><a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a><br><a href="mailto:{{ nav.email }}">{{ nav.email }}</a></address>
   <div class="fgs-links">
     <a class="fgs-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Sch%C3%BCtzenstra%C3%9Fe%2030%2C%2012165%20Berlin" target="_blank" rel="noopener">Route bei Google Maps{% include "fgs-arrow.njk" %}</a>
-    {{ textlink("/kontakt.html#anfahrt", "Zur Anfahrt") }}
+    {{ textlink("/kontakt#anfahrt", "Zur Anfahrt") }}
   </div>
   <figure class="fgs-map">
     <img src="/images/ueber-uns/buero-karte-900.webp" srcset="/images/ueber-uns/buero-karte-600.webp 600w, /images/ueber-uns/buero-karte-900.webp 900w, /images/ueber-uns/buero-karte-1200.webp 1200w" sizes="(min-width: 900px) 34vw, 100vw" width="1200" height="800" alt="Kartenausschnitt von Berlin-Steglitz: Das Büro von Fischer &amp; Geserich liegt in der Schützenstraße 30." loading="lazy" decoding="async">

@@ -1489,7 +1489,7 @@ function buildUnit(unit) {
         project_ref: projectRef,
         project_id: projectRef?.id || null,
         project_name: projectRef?.name || null,
-        request_url: `/objekt-anfragen.html?object_id=${unit.id}&object=${encodeURIComponent(title)}`,
+        request_url: `/objekt-anfragen?object_id=${unit.id}&object=${encodeURIComponent(title)}`,
         raw: unit
     };
 }

@@ -4,7 +4,7 @@ bodyClass: fgs-service
 title: Mehrfamilienhaus verkaufen, kaufen und finanzieren | Fischer & Geserich
 permalink: mehrfamilienhaus.html
 description: "Mehrfamilienhaus verkaufen, kaufen oder finanzieren: Käufernetzwerk mit über 100 Interessenten, wirtschaftliche Prüfung vor dem Kauf und Finanzierung über Europace, Baufinex und direkte Bankkontakte. Berlin, Brandenburg, Leipzig und Dresden."
-canonicalPath: /mehrfamilienhaus.html
+canonicalPath: /mehrfamilienhaus
 # Brief Design-Pass §4.2: neue H1, alte H1 als Kicker. Alle bisherigen Texte bleiben (Lead, Seitenkarte, Zahlenleiste,
 # drei Karten Verkauf & Ankauf, drei Karten Für Investoren, drei FAQ). Neu: Verkauf mit dem Netzwerk, Prüfung beim Kauf,
 # Finanzierung, typische Käufergruppen allgemein. Keine Faktoren, Renditen oder Preise: dafür gibt es keine freigegebenen Zahlen.
@@ -53,9 +53,9 @@ service:
       timon: "4.4"
   related:
     services:
-      - { label: "Ankaufsberatung", note: "Ein Objekt vor dem Kauf auf vier Ebenen prüfen", href: "/ankaufsberatung.html", bild: "ankauf-hero", alt: "Das Eckhaus Kurfürstendamm 190 in Berlin-Charlottenburg mit grüner Kuppel an einem sonnigen Junitag" }
-      - { label: "Finanzierungsberatung", note: "Banken vergleichen, vor dem Notartermin klären", href: "/finanzierungsberatung.html", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
-      - { label: "Immobilie verkaufen", note: "Ablauf, Unterlagen und Kosten beim Verkauf", href: "/verkaufen.html", bild: "verkaufen-hero", alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser" }
+      - { label: "Ankaufsberatung", note: "Ein Objekt vor dem Kauf auf vier Ebenen prüfen", href: "/ankaufsberatung", bild: "ankauf-hero", alt: "Das Eckhaus Kurfürstendamm 190 in Berlin-Charlottenburg mit grüner Kuppel an einem sonnigen Junitag" }
+      - { label: "Finanzierungsberatung", note: "Banken vergleichen, vor dem Notartermin klären", href: "/finanzierungsberatung", bild: "finanzierung-hero", alt: "Glasfassade eines Bürohauses in der Wilhelmstraße in Berlin-Mitte, in den Fenstern spiegeln sich Wolken" }
+      - { label: "Immobilie verkaufen", note: "Ablauf, Unterlagen und Kosten beim Verkauf", href: "/verkaufen", bild: "verkaufen-hero", alt: "Humboldt Forum mit Kuppel und Fernsehturm in Berlin-Mitte, davor gespiegelt im Wasser" }
     lexikon: [kaufpreisfaktor, dscr, capex]
   contact: lennart
   closing:
@@ -116,7 +116,7 @@ service:
       </ul>
       <h3>Finanzierungsbrücke</h3>
       <p>Wir können Finanzierungsperspektiven mitdenken und dadurch früh erkennen, welche Käuferstruktur realistisch zum Objekt passt. Interessenten fragen wir früh nach ihrer Finanzierung, damit Sie nicht mit jemandem verhandeln, dessen Bank später absagt.</p>
-      <p>Wie wir den Verkauf allgemein angehen, steht auf der Seite <a href="/verkaufen.html">Immobilie verkaufen</a>.</p>
+      <p>Wie wir den Verkauf allgemein angehen, steht auf der Seite <a href="/verkaufen">Immobilie verkaufen</a>.</p>
       {% endcall %}
     </div>
   </article>
@@ -129,7 +129,7 @@ service:
       <p>Was davon in welchem Zeitraum erreichbar ist, hängt an den Mietverträgen, am <a href="/lexikon/mietspiegel/">Mietspiegel</a>, an der <a href="/lexikon/kappungsgrenze/">Kappungsgrenze</a> und daran, wie oft Mieter wechseln.</p>
       <p>Sanierung, Energieeffizienz, Instandhaltung und besondere Risiken rechnen wir in die Kaufentscheidung ein. Ein Haus mit <a href="/lexikon/instandhaltungsstau/">Instandhaltungsstau</a> kann ein gutes Geschäft sein, wenn der Preis ihn abbildet.</p>
       {% endcall %}
-      {{ textlink("/ankaufsberatung.html", "So läuft die Ankaufsberatung") }}
+      {{ textlink("/ankaufsberatung", "So läuft die Ankaufsberatung") }}
     </div>
   </article>
 
@@ -166,7 +166,7 @@ service:
         <li>Instandhaltung, Sanierung und Energieeffizienz</li>
       </ul>
       {% endcall %}
-      {{ textlink("/finanzierungsberatung.html", "Zur Finanzierungsberatung") }}
+      {{ textlink("/finanzierungsberatung", "Zur Finanzierungsberatung") }}
     </div>
   </article>
 
@@ -255,7 +255,7 @@ service:
           <label>Nachricht<textarea name="message" rows="3" maxlength="3000" placeholder="optional, zum Beispiel Zeitrahmen oder Exposé-Link"></textarea></label>
         </fieldset>
         <label class="fgd-hp" aria-hidden="true">Website<input name="company_website" tabindex="-1" autocomplete="off"></label>
-        <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
+        <label class="fgd-consent"><input type="checkbox" name="privacy_consent" value="true" required><span>Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
         <div class="fgd-status" data-fgd-lead-status hidden></div>
         <button type="submit" class="fgd-btn fgd-btn-navy">Anfrage senden{{ icon("arrow") | safe }}</button>
       </form>
