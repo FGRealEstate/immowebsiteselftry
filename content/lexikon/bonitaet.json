@@ -1,6 +1,7 @@
 {
   "term": "Bonität",
   "definition": "Einschätzung der Fähigkeit und Bereitschaft, Verpflichtungen zu erfüllen.",
+  "beschreibung": "Bonität beschreibt, wie wahrscheinlich Sie ein Darlehen vertragsgemäß bedienen. Ein Autokredit über 400 € im Monat kann rund 87.000 € Darlehen kosten.",
   "id": "bonitaet",
   "slug": "bonitaet",
   "url": "/lexikon/bonitaet/",

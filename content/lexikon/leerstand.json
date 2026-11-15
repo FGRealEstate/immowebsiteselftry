@@ -1,6 +1,7 @@
 {
   "term": "Leerstand",
   "definition": "Nicht vermietete Fläche oder Einheit.",
+  "beschreibung": "Leerstand heißt, eine Wohnung ist nicht vermietet und bringt keine Miete. Beim Zensus 2022 standen bundesweit rund 1,9 Millionen Wohnungen leer, 4,3 %.",
   "id": "leerstand",
   "slug": "leerstand",
   "url": "/lexikon/leerstand/",

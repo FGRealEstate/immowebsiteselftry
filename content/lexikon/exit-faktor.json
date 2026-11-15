@@ -1,6 +1,7 @@
 {
   "term": "Exit-Faktor",
   "definition": "Beim Verkauf angenommener Kaufpreisfaktor.",
+  "beschreibung": "Der Exit-Faktor ist der beim Verkauf angenommene Kaufpreisfaktor. Für Vergleiche müssen Definition, Zeitraum und einbezogene Kosten identisch sein.",
   "id": "exit-faktor",
   "slug": "exit-faktor",
   "url": "/lexikon/exit-faktor/",

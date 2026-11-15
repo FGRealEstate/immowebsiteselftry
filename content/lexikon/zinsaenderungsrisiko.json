@@ -1,6 +1,7 @@
 {
   "term": "Zinsänderungsrisiko",
   "definition": "Risiko höherer Kosten bei künftiger Zinsanpassung.",
+  "beschreibung": "Das Zinsänderungsrisiko ist das Risiko teurerer Anschlusskonditionen. Beispiel: 250.000 € Restschuld kosten bei 5,5 % statt 3 % rund 521 € mehr im Monat.",
   "id": "zinsaenderungsrisiko",
   "slug": "zinsaenderungsrisiko",
   "url": "/lexikon/zinsaenderungsrisiko/",

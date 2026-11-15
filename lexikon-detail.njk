@@ -13,7 +13,7 @@ pagination:
 permalink: "lexikon/{{ entry.slug }}/index.html"
 eleventyComputed:
   title: "{{ entry.term }} erklärt | Fischer & Geserich"
-  description: "{{ entry.definition }}"
+  description: "{{ entry.beschreibung or entry.definition }}"  # Update 57 §8: eigene Meta-Beschreibung, 120–155 Zeichen
   canonicalPath: "/lexikon/{{ entry.slug }}/"
 ---
 {#- Lexikon-Eintrag im neuen Design (Brief Design-Pass §4.7): Kurzdefinition, Einordnung, Formel, Beispiel, Quellen;

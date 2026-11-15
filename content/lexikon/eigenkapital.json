@@ -1,6 +1,7 @@
 {
   "term": "Eigenkapital",
   "definition": "Eigene Mittel, die in Kauf und Nebenkosten eingebracht werden.",
+  "beschreibung": "Eigenkapital sind eigene Mittel für den Kauf, etwa Erspartes oder eine Schenkung. Beispiel: 63.200 € bei 300.000 € Kaufpreis lassen 270.000 € Darlehen.",
   "id": "eigenkapital",
   "slug": "eigenkapital",
   "url": "/lexikon/eigenkapital/",

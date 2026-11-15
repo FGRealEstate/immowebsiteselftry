@@ -1,6 +1,7 @@
 {
   "term": "Werbungskosten",
   "definition": "Aufwendungen zur Erwerbung, Sicherung und Erhaltung steuerpflichtiger Einnahmen.",
+  "beschreibung": "Werbungskosten sind Aufwendungen, um Einnahmen zu erwerben, zu sichern und zu erhalten. Bei Vermietung mindern sie die Einkünfte aus dem Objekt.",
   "id": "werbungskosten",
   "slug": "werbungskosten",
   "url": "/lexikon/werbungskosten/",

@@ -1,6 +1,7 @@
 {
   "term": "Tilgungssatz",
   "definition": "Anfänglicher oder laufender Anteil der Darlehensrückzahlung.",
+  "beschreibung": "Der Tilgungssatz ist der anfängliche jährliche Rückzahlungsanteil. Beispiel: 300.000 € Darlehen mit 2 % Anfangstilgung tilgen anfangs 6.000 € im Jahr.",
   "id": "tilgungssatz",
   "slug": "tilgungssatz",
   "url": "/lexikon/tilgungssatz/",

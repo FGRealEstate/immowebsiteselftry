@@ -1,6 +1,7 @@
 {
   "term": "Jahresnettokaltmiete",
   "definition": "Summe der Nettokaltmieten eines Jahres.",
+  "beschreibung": "Die Jahresnettokaltmiete ist die Summe der Nettokaltmieten eines Jahres ohne Betriebskosten. Beispiel: 1.400 € im Monat ergeben 16.800 € im Jahr.",
   "id": "jahresnettokaltmiete",
   "slug": "jahresnettokaltmiete",
   "url": "/lexikon/jahresnettokaltmiete/",

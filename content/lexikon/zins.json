@@ -1,6 +1,7 @@
 {
   "term": "Zins",
   "definition": "Preis für die zeitweise Überlassung von Kapital.",
+  "beschreibung": "Der Zins ist der Preis für geliehenes Geld, als Sollzins pro Jahr angegeben. Beispiel: 300.000 € zu 4 % kosten im ersten Monat 1.000 € Zinsen.",
   "id": "zins",
   "slug": "zins",
   "url": "/lexikon/zins/",

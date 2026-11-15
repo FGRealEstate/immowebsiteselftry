@@ -1,6 +1,7 @@
 {
   "term": "Total Return",
   "definition": "Gesamtertrag aus laufenden Zahlungen und Wertveränderung.",
+  "beschreibung": "Der Total Return ist der Gesamtertrag aus laufenden Zahlungen und Wertveränderung. Für Vergleiche müssen Definition, Zeitraum und Kosten identisch sein.",
   "id": "total-return",
   "slug": "total-return",
   "url": "/lexikon/total-return/",

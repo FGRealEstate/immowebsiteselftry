@@ -1,6 +1,7 @@
 {
   "term": "Liquiditätsreserve",
   "definition": "Sofort verfügbare Mittel für Unvorhergesehenes.",
+  "beschreibung": "Die Liquiditätsreserve ist frei verfügbares Geld für Reparaturen, Leerstand oder Lücken. Beispiel: 30.000 € Reserve tragen eine neue Heizung für 18.000 €.",
   "id": "liquiditaetsreserve",
   "slug": "liquiditaetsreserve",
   "url": "/lexikon/liquiditaetsreserve/",

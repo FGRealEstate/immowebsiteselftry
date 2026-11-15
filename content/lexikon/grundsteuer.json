@@ -1,6 +1,7 @@
 {
   "term": "Grundsteuer",
   "definition": "Laufende Steuer auf Grundbesitz.",
+  "beschreibung": "Die Grundsteuer ist eine laufende Steuer auf Grundbesitz. Mit wirksamer Betriebskostenvereinbarung ist sie umlagefähig, bei Leerstand zahlt der Eigentümer.",
   "id": "grundsteuer",
   "slug": "grundsteuer",
   "url": "/lexikon/grundsteuer/",

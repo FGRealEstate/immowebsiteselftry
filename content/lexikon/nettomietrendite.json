@@ -1,6 +1,7 @@
 {
   "term": "Nettomietrendite",
   "definition": "Jahresmiete abzüglich definierter Eigentümerkosten im Verhältnis zum Kaufpreis.",
+  "beschreibung": "Die Nettomietrendite zieht von der Jahreskaltmiete die Eigentümerkosten ab und teilt durch die Investition. Vergleichen Sie Werte mit gleicher Grundlage.",
   "id": "nettomietrendite",
   "slug": "nettomietrendite",
   "url": "/lexikon/nettomietrendite/",

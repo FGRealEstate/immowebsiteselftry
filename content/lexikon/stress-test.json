@@ -1,6 +1,7 @@
 {
   "term": "Stress-Test",
   "definition": "Berechnung unter ungünstigeren Annahmen.",
+  "beschreibung": "Ein Stress-Test prüft die Tragfähigkeit unter verschlechterten Annahmen, etwa 2 Prozentpunkte mehr Anschlusszins plus ein Monat Leerstand zugleich.",
   "id": "stress-test",
   "slug": "stress-test",
   "url": "/lexikon/stress-test/",

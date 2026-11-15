@@ -1,6 +1,7 @@
 {
   "term": "Mietbindung",
   "definition": "Rechtliche Bindung von Miethöhe oder Belegung.",
+  "beschreibung": "Mietbindung schränkt Miethöhe, Belegung oder Nutzung rechtlich ein, etwa im geförderten Wohnungsbau. Die Rechnung muss die Bindungsdauer abbilden.",
   "id": "mietbindung",
   "slug": "mietbindung",
   "url": "/lexikon/mietbindung/",

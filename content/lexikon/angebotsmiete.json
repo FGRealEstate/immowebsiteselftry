@@ -1,6 +1,7 @@
 {
   "term": "Angebotsmiete",
   "definition": "In Inseraten verlangte Miete; nicht identisch mit tatsächlich vereinbarter Bestandsmiete.",
+  "beschreibung": "Die Angebotsmiete ist die in Inseraten verlangte Miete. Zeigen Inserate 18 €/m² und Verträge 16 €/m², überschätzt eine Rechnung mit 18 € den Ertrag.",
   "id": "angebotsmiete",
   "slug": "angebotsmiete",
   "url": "/lexikon/angebotsmiete/",

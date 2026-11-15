@@ -1,6 +1,7 @@
 {
   "term": "Ertragswert",
   "definition": "Aus nachhaltig erzielbaren Erträgen abgeleiteter Wert.",
+  "beschreibung": "Der Ertragswert leitet den Wert aus nachhaltigen Erträgen ab. Eingangsgrößen sind Bewirtschaftungskosten, Liegenschaftszins und Restnutzungsdauer.",
   "id": "ertragswert",
   "slug": "ertragswert",
   "url": "/lexikon/ertragswert/",

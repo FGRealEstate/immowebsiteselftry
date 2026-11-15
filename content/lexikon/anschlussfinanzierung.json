@@ -1,6 +1,7 @@
 {
   "term": "Anschlussfinanzierung",
   "definition": "Finanzierung der Restschuld nach Ablauf der Zinsbindung.",
+  "beschreibung": "Die Anschlussfinanzierung löst die Restschuld nach der Zinsbindung ab: als Prolongation, Umschuldung zu einer anderen Bank oder per Forward-Darlehen.",
   "id": "anschlussfinanzierung",
   "slug": "anschlussfinanzierung",
   "url": "/lexikon/anschlussfinanzierung/",

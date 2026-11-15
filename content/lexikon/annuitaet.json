@@ -1,6 +1,7 @@
 {
   "term": "Annuität",
   "definition": "Regelmäßig gleichbleibende Rate aus Zins und Tilgung.",
+  "beschreibung": "Die Annuität ist die gleichbleibende Rate aus Zins und Tilgung. Beispiel: 300.000 € zu 4 % mit 1,5 % Tilgung ergeben 1.375 € im Monat.",
   "id": "annuitaet",
   "slug": "annuitaet",
   "url": "/lexikon/annuitaet/",

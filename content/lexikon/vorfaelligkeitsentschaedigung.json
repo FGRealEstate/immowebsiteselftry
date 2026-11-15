@@ -1,6 +1,7 @@
 {
   "term": "Vorfälligkeitsentschädigung",
   "definition": "Möglicher Ausgleich der Bank bei vorzeitiger Darlehensablösung.",
+  "beschreibung": "Die Vorfälligkeitsentschädigung gleicht der Bank den Schaden aus, wenn Sie ein Festzinsdarlehen vor Ende der Zinsbindung zurückzahlen, etwa beim Verkauf.",
   "id": "vorfaelligkeitsentschaedigung",
   "slug": "vorfaelligkeitsentschaedigung",
   "url": "/lexikon/vorfaelligkeitsentschaedigung/",

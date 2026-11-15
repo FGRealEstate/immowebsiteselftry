@@ -1,6 +1,7 @@
 {
   "term": "Steuerlicher Überschuss",
   "definition": "Steuerlich ermittelte Einkünfte nach abzugsfähigen Aufwendungen.",
+  "beschreibung": "Der steuerliche Überschuss ist Mieteinnahme minus Werbungskosten. Er weicht vom Cashflow ab, weil AfA und Tilgung unterschiedlich behandelt werden.",
   "id": "steuerlicher-ueberschuss",
   "slug": "steuerlicher-ueberschuss",
   "url": "/lexikon/steuerlicher-ueberschuss/",

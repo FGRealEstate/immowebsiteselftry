@@ -1,6 +1,7 @@
 {
   "term": "Restschuld",
   "definition": "Noch nicht zurückgezahlter Darlehensbetrag.",
+  "beschreibung": "Die Restschuld ist der Betrag, den Sie der Bank noch schulden. Beispiel: 300.000 € zu 4 % mit 2 % Tilgung lassen nach zehn Jahren 226.375 € offen.",
   "id": "restschuld",
   "slug": "restschuld",
   "url": "/lexikon/restschuld/",

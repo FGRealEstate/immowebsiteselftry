@@ -1,6 +1,7 @@
 {
   "term": "Debt Service",
   "definition": "Summe aus Zins und Tilgung.",
+  "beschreibung": "Debt Service ist der Kapitaldienst aus Zins und Tilgung. Beispiel: 1.200 € Monatsrate ergeben 14.400 € im Jahr, die Grundlage der DSCR-Rechnung.",
   "id": "debt-service",
   "slug": "debt-service",
   "url": "/lexikon/debt-service/",

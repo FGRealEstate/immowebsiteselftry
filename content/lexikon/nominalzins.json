@@ -1,6 +1,7 @@
 {
   "term": "Nominalzins",
   "definition": "Vertraglicher Zinssatz ohne weitere Kosten.",
+  "beschreibung": "Der Nominalzins ist der vertragliche Zinssatz ohne weitere Kosten. Für Angebotsvergleiche bei Verbraucherdarlehen zählt zudem der effektive Jahreszins.",
   "id": "nominalzins",
   "slug": "nominalzins",
   "url": "/lexikon/nominalzins/",

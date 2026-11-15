@@ -1,6 +1,7 @@
 {
   "term": "Flurstück",
   "definition": "Amtlich vermessener Teil der Erdoberfläche.",
+  "beschreibung": "Ein Flurstück ist die kleinste im Liegenschaftskataster geführte Einheit. Ein Grundstück im Grundbuch kann aus einem oder mehreren Flurstücken bestehen.",
   "id": "flurstueck",
   "slug": "flurstueck",
   "url": "/lexikon/flurstueck/",

@@ -1,6 +1,7 @@
 {
   "term": "Mietüberschuss",
   "definition": "Miete abzüglich objektspezifischer laufender Kosten.",
+  "beschreibung": "Der Mietüberschuss ist die Miete nach laufenden Objektkosten. Beispiel: 18.000 € Jahresmiete minus 3.000 € Kosten ergeben 15.000 € vor Finanzierung.",
   "id": "mietueberschuss",
   "slug": "mietueberschuss",
   "url": "/lexikon/mietueberschuss/",

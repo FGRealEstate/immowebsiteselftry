@@ -1,6 +1,7 @@
 {
   "term": "Sonderumlage",
   "definition": "Zusätzliche Zahlung der Wohnungseigentümer aufgrund eines WEG-Beschlusses.",
+  "beschreibung": "Eine Sonderumlage ist eine Zusatzzahlung der Eigentümer per WEG-Beschluss, wenn laufende Mittel und Rücklage nicht reichen. Käufer prüfen die Protokolle.",
   "id": "sonderumlage",
   "slug": "sonderumlage",
   "url": "/lexikon/sonderumlage/",

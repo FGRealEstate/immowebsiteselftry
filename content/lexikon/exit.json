@@ -1,6 +1,7 @@
 {
   "term": "Exit",
   "definition": "Geplanter Verkauf oder anderweitiger Ausstieg aus dem Investment.",
+  "beschreibung": "Der Exit ist der geplante Ausstieg aus einer Immobilienanlage, etwa durch Verkauf. Er gehört von Anfang an in die Rechnung, samt Haltedauer und Restschuld.",
   "id": "exit",
   "slug": "exit",
   "url": "/lexikon/exit/",

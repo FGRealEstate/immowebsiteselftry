@@ -1,6 +1,7 @@
 {
   "term": "Transaktionskosten",
   "definition": "Kosten, die durch Erwerb oder Verkauf entstehen.",
+  "beschreibung": "Transaktionskosten entstehen bei Erwerb, Finanzierung oder Verkauf. Beispiel: 10 % Kaufnebenkosten und 4 % Verkaufskosten belasten kurze Haltedauern stark.",
   "id": "transaktionskosten",
   "slug": "transaktionskosten",
   "url": "/lexikon/transaktionskosten/",

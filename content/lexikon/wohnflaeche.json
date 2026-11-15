@@ -1,6 +1,7 @@
 {
   "term": "Wohnfläche",
   "definition": "Nach einem Regelwerk ermittelte anrechenbare Fläche.",
+  "beschreibung": "Die Wohnfläche wird nach einem Regelwerk wie der Wohnflächenverordnung ermittelt. Flächen zwischen 1 und 2 m Raumhöhe zählen dabei nur zur Hälfte.",
   "id": "wohnflaeche",
   "slug": "wohnflaeche",
   "url": "/lexikon/wohnflaeche/",

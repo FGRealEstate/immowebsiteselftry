@@ -1,6 +1,7 @@
 {
   "term": "Erhaltungsrücklage",
   "definition": "Von einer WEG angesparte Mittel für Gemeinschaftseigentum.",
+  "beschreibung": "Die Erhaltungsrücklage spart eine WEG für Dach, Fassade oder Heizung an. Beispiel: Bei 10 €/m² im Jahr zahlen Sie für 65 m² 54,17 € im Monat.",
   "id": "erhaltungsruecklage",
   "slug": "erhaltungsruecklage",
   "url": "/lexikon/erhaltungsruecklage/",

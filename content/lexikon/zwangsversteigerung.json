@@ -1,6 +1,7 @@
 {
   "term": "Zwangsversteigerung",
   "definition": "Gerichtliches Verfahren zur Verwertung einer Immobilie.",
+  "beschreibung": "Die Zwangsversteigerung ist ein gerichtliches Verwertungsverfahren. Bieter prüfen Gutachten, Grundbuch, bleibende Rechte und Sicherheitsleistung genau.",
   "id": "zwangsversteigerung",
   "slug": "zwangsversteigerung",
   "url": "/lexikon/zwangsversteigerung/",

@@ -1,6 +1,7 @@
 {
   "term": "Wertsteigerung",
   "definition": "Zunahme des Marktwerts; keine garantierte Größe.",
+  "beschreibung": "Wertsteigerung ist die Zunahme des Marktwerts, aber keine feste Größe. Beispiel: 300.000 € wachsen mit 2 % im Jahr in zehn Jahren auf rund 365.700 €.",
   "id": "wertsteigerung",
   "slug": "wertsteigerung",
   "url": "/lexikon/wertsteigerung/",

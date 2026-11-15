@@ -1,6 +1,7 @@
 {
   "term": "LTV",
   "definition": "Loan-to-Value: Darlehen im Verhältnis zu einem Objektwert.",
+  "beschreibung": "LTV (Loan-to-Value) ist das Darlehen im Verhältnis zu einem Objektwert. Beispiel: 350.000 € Darlehen auf 500.000 € Marktwert ergeben 70 % LTV.",
   "id": "ltv",
   "slug": "ltv",
   "url": "/lexikon/ltv/",

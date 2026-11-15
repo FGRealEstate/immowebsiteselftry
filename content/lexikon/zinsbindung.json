@@ -1,6 +1,7 @@
 {
   "term": "Zinsbindung",
   "definition": "Zeitraum, für den der Sollzins fest vereinbart ist.",
+  "beschreibung": "Die Zinsbindung legt fest, wie lange Ihr Sollzins gleich bleibt, üblich sind 5, 10 oder 15 Jahre. Längere Bindungen sind meist etwas teurer.",
   "id": "zinsbindung",
   "slug": "zinsbindung",
   "url": "/lexikon/zinsbindung/",

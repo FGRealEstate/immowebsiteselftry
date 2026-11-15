@@ -1,6 +1,7 @@
 {
   "term": "Baulast",
   "definition": "Öffentlich-rechtliche Verpflichtung eines Grundstückseigentümers.",
+  "beschreibung": "Eine Baulast ist eine öffentlich-rechtliche Pflicht des Eigentümers, etwa eine Zufahrtsbaulast für den Nachbarn. Sie kann Nutzung und Wert mindern.",
   "id": "baulast",
   "slug": "baulast",
   "url": "/lexikon/baulast/",

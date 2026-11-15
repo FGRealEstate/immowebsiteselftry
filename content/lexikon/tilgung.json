@@ -1,6 +1,7 @@
 {
   "term": "Tilgung",
   "definition": "Rückzahlung des Darlehenskapitals.",
+  "beschreibung": "Tilgung ist der Teil der Rate, mit dem Sie das Darlehen zurückzahlen. Beispiel: 300.000 € zu 4 % mit 1 % Tilgung kosten 1.250 € im Monat.",
   "id": "tilgung",
   "slug": "tilgung",
   "url": "/lexikon/tilgung/",

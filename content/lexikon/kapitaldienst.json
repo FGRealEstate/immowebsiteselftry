@@ -1,6 +1,7 @@
 {
   "term": "Kapitaldienst",
   "definition": "Zins und Tilgung eines Darlehens.",
+  "beschreibung": "Der Kapitaldienst ist die Summe aus Zins und Tilgung eines Darlehens. Beispiel: 1.500 € monatliche Annuität ergeben 18.000 € Kapitaldienst im Jahr.",
   "id": "kapitaldienst",
   "slug": "kapitaldienst",
   "url": "/lexikon/kapitaldienst/",

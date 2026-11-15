@@ -1,6 +1,7 @@
 {
   "term": "Verkehrswert",
   "definition": "Marktwert nach den gesetzlichen Bewertungsgrundsätzen.",
+  "beschreibung": "Der Verkehrswert ist nach § 194 BauGB der Preis, der zum Stichtag im gewöhnlichen Geschäftsverkehr zu erzielen wäre. Ein Angebotspreis ist er nicht.",
   "id": "verkehrswert",
   "slug": "verkehrswert",
   "url": "/lexikon/verkehrswert/",

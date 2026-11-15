@@ -1,6 +1,7 @@
 {
   "term": "Hebelwirkung",
   "definition": "Wirkung von Fremdkapital auf Eigenkapitalergebnis und Risiko.",
+  "beschreibung": "Die Hebelwirkung beschreibt, wie Fremdkapital Eigenkapitalergebnis und Risiko verändert. Für Vergleiche müssen Definition, Zeitraum und Kosten gleich sein.",
   "id": "hebelwirkung",
   "slug": "hebelwirkung",
   "url": "/lexikon/hebelwirkung/",

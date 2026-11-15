@@ -1,6 +1,7 @@
 {
   "term": "Grundschuld",
   "definition": "Grundpfandrecht zur Kreditsicherung.",
+  "beschreibung": "Die Grundschuld sichert ein Immobiliendarlehen im Grundbuch. Sie ist vom Darlehen getrennt und bleibt ohne Löschung auch nach der Tilgung stehen.",
   "id": "grundschuld",
   "slug": "grundschuld",
   "url": "/lexikon/grundschuld/",

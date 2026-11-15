@@ -1,6 +1,7 @@
 {
   "term": "Indexmiete",
   "definition": "Miete mit vertraglicher Kopplung an den Verbraucherpreisindex.",
+  "beschreibung": "Die Indexmiete koppelt die Miete an den Verbraucherpreisindex. Sie ändert sich nur per Erklärung und muss grundsätzlich mindestens ein Jahr gleich bleiben.",
   "id": "indexmiete",
   "slug": "indexmiete",
   "url": "/lexikon/indexmiete/",

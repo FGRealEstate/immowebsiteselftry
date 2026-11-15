@@ -1,6 +1,7 @@
 {
   "term": "Sondereigentum",
   "definition": "Alleineigentum an bestimmten Räumen einer WEG.",
+  "beschreibung": "Sondereigentum ist das Alleineigentum an bestimmten Räumen einer WEG, etwa dem Innenausbau. Tragende Teile und Fassade bleiben Gemeinschaftseigentum.",
   "id": "sondereigentum",
   "slug": "sondereigentum",
   "url": "/lexikon/sondereigentum/",

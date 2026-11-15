@@ -1,6 +1,7 @@
 {
   "term": "IRR",
   "definition": "Interner Zinsfuß eines Zahlungsstroms.",
+  "beschreibung": "Die IRR (interner Zinsfuß) ist der Zinssatz, bei dem der Kapitalwert aller Ein- und Auszahlungen null wird. Sie hängt stark von Haltedauer und Exit ab.",
   "id": "irr",
   "slug": "irr",
   "url": "/lexikon/irr/",

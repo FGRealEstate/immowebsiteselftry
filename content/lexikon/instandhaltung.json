@@ -1,6 +1,7 @@
 {
   "term": "Instandhaltung",
   "definition": "Maßnahmen zum Erhalt des bestimmungsgemäßen Zustands.",
+  "beschreibung": "Instandhaltung beseitigt Mängel durch Abnutzung, Alterung und Witterung. Für eine 65-m²-Wohnung setzen wir je nach Zustand 5 bis 15 €/m² im Jahr an.",
   "id": "instandhaltung",
   "slug": "instandhaltung",
   "url": "/lexikon/instandhaltung/",

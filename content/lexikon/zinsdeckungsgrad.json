@@ -1,6 +1,7 @@
 {
   "term": "Zinsdeckungsgrad",
   "definition": "Verhältnis von Ergebnisgröße zu Zinsaufwand.",
+  "beschreibung": "Der Zinsdeckungsgrad misst, wie oft eine Ergebnisgröße den reinen Zinsaufwand deckt. Beispiel: 45.000 € NOI bei 30.000 € Zinsen ergeben 1,5.",
   "id": "zinsdeckungsgrad",
   "slug": "zinsdeckungsgrad",
   "url": "/lexikon/zinsdeckungsgrad/",

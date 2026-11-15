@@ -1,6 +1,7 @@
 {
   "term": "Kappungsgrenze",
   "definition": "Grenze für Mieterhöhungen innerhalb eines Zeitraums.",
+  "beschreibung": "Die Kappungsgrenze deckelt Mieterhöhungen nach § 558 BGB für drei Jahre, auch wenn die Vergleichsmiete höher liegt. Gebietsweise ist sie abgesenkt.",
   "id": "kappungsgrenze",
   "slug": "kappungsgrenze",
   "url": "/lexikon/kappungsgrenze/",

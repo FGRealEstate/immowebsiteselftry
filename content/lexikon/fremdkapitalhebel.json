@@ -1,6 +1,7 @@
 {
   "term": "Fremdkapitalhebel",
   "definition": "Veränderung der Eigenkapitalrendite durch Einsatz von Fremdkapital.",
+  "beschreibung": "Der Fremdkapitalhebel beschreibt, wie Fremdkapital die Eigenkapitalrendite verändert. Für Vergleiche müssen Definition, Zeitraum und Kosten identisch sein.",
   "id": "fremdkapitalhebel",
   "slug": "fremdkapitalhebel",
   "url": "/lexikon/fremdkapitalhebel/",

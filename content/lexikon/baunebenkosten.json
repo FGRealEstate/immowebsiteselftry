@@ -1,6 +1,7 @@
 {
   "term": "Baunebenkosten",
   "definition": "Planungs-, Genehmigungs- und sonstige Kosten zusätzlich zu Bauleistungen.",
+  "beschreibung": "Baunebenkosten sind Kosten für Planung, Genehmigung und Finanzierung zusätzlich zum Bau. Beispiel: 15 % auf 500.000 € Baukosten sind 75.000 € mehr.",
   "id": "baunebenkosten",
   "slug": "baunebenkosten",
   "url": "/lexikon/baunebenkosten/",

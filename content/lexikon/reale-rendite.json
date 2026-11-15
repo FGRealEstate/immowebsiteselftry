@@ -1,6 +1,7 @@
 {
   "term": "Reale Rendite",
   "definition": "Rendite nach Berücksichtigung der Inflation.",
+  "beschreibung": "Die reale Rendite ist die Rendite nach Berücksichtigung der Inflation. Für Vergleiche müssen Definition, Zeitraum und einbezogene Kosten identisch sein.",
   "id": "reale-rendite",
   "slug": "reale-rendite",
   "url": "/lexikon/reale-rendite/",

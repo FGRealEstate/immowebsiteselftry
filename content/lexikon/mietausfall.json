@@ -1,6 +1,7 @@
 {
   "term": "Mietausfall",
   "definition": "Ausbleibender Mietertrag durch Leerstand oder Nichtzahlung.",
+  "beschreibung": "Mietausfall heißt, Miete bleibt aus, weil die Wohnung leer steht oder der Mieter nicht zahlt. Der amtliche Modellwert liegt bei 2 % des Rohertrags.",
   "id": "mietausfall",
   "slug": "mietausfall",
   "url": "/lexikon/mietausfall/",

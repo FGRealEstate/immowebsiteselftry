@@ -1,6 +1,7 @@
 {
   "term": "Bereitstellungszins",
   "definition": "Zins auf noch nicht abgerufene Darlehensteile nach einer Freiphase.",
+  "beschreibung": "Der Bereitstellungszins fällt nach einer Freiphase auf noch nicht abgerufene Darlehensteile an. Beispiel: 0,25 % im Monat auf 200.000 € sind 500 €.",
   "id": "bereitstellungszins",
   "slug": "bereitstellungszins",
   "url": "/lexikon/bereitstellungszins/",

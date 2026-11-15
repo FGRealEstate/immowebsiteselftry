@@ -1,6 +1,7 @@
 {
   "term": "Restnutzungsdauer",
   "definition": "Voraussichtliche verbleibende wirtschaftliche Nutzungsdauer.",
+  "beschreibung": "Die Restnutzungsdauer ist die Zeit, in der ein Gebäude voraussichtlich noch wirtschaftlich nutzbar ist. Sie zählt in der Bewertung, mitunter bei der AfA.",
   "id": "restnutzungsdauer",
   "slug": "restnutzungsdauer",
   "url": "/lexikon/restnutzungsdauer/",

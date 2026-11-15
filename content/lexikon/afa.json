@@ -1,6 +1,7 @@
 {
   "term": "AfA",
   "definition": "Absetzung für Abnutzung: steuerliche Verteilung des abschreibungsfähigen Gebäudewerts über die Nutzungsdauer.",
+  "beschreibung": "Die AfA verteilt die Anschaffungskosten des Gebäudes über die Nutzungsdauer. Beispiel: 142.810 € Gebäudeanteil mit 2 % ergeben 2.856 € AfA im Jahr.",
   "id": "afa",
   "slug": "afa",
   "url": "/lexikon/afa/",

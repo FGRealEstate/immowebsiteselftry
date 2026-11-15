@@ -1,6 +1,7 @@
 {
   "term": "Mietpreisbremse",
   "definition": "Gesetzliche Begrenzung der Wiedervermietungsmiete in bestimmten Gebieten.",
+  "beschreibung": "Die Mietpreisbremse begrenzt die Miete bei Neuvermietung in angespannten Gebieten auf höchstens 10 % über der Vergleichsmiete, längstens bis Ende 2029.",
   "id": "mietpreisbremse",
   "slug": "mietpreisbremse",
   "url": "/lexikon/mietpreisbremse/",

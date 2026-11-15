@@ -1,6 +1,7 @@
 {
   "term": "Erbbauzins",
   "definition": "Regelmäßiges Entgelt für ein Erbbaurecht.",
+  "beschreibung": "Der Erbbauzins ist das Entgelt für ein Erbbaurecht an den Grundstückseigentümer. Beispiel: 250 € im Monat mindern den Cashflow um 3.000 € im Jahr.",
   "id": "erbbauzins",
   "slug": "erbbauzins",
   "url": "/lexikon/erbbauzins/",

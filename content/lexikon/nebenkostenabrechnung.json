@@ -1,6 +1,7 @@
 {
   "term": "Nebenkostenabrechnung",
   "definition": "Abrechnung umlagefähiger Betriebskosten gegenüber Mietern.",
+  "beschreibung": "Die Nebenkostenabrechnung verteilt umlagefähige Betriebskosten auf den Mieter. Beispiel: 1.800 € Kosten minus 1.560 € Vorauszahlung sind 240 € Nachzahlung.",
   "id": "nebenkostenabrechnung",
   "slug": "nebenkostenabrechnung",
   "url": "/lexikon/nebenkostenabrechnung/",

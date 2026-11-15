@@ -1,6 +1,7 @@
 {
   "term": "Staffelmiete",
   "definition": "Miete mit im Voraus vereinbarten Erhöhungsbeträgen.",
+  "beschreibung": "Bei der Staffelmiete stehen künftige Erhöhungen als Eurobetrag im Vertrag. Zwischen den Staffeln muss die Miete jeweils mindestens ein Jahr gleich bleiben.",
   "id": "staffelmiete",
   "slug": "staffelmiete",
   "url": "/lexikon/staffelmiete/",

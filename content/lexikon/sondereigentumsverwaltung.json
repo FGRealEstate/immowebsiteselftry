@@ -1,6 +1,7 @@
 {
   "term": "Sondereigentumsverwaltung (SEV)",
   "definition": "Verwaltung einer einzelnen Eigentumswohnung im Auftrag ihres Eigentümers, vor allem des Mietverhältnisses.",
+  "beschreibung": "Die SEV (Sondereigentumsverwaltung) betreut für einen Eigentümer seine Wohnung, vor allem die Vermietung. Die WEG-Verwaltung arbeitet für die Gemeinschaft.",
   "id": "sondereigentumsverwaltung",
   "slug": "sondereigentumsverwaltung",
   "url": "/lexikon/sondereigentumsverwaltung/",

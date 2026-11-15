@@ -1,6 +1,7 @@
 {
   "term": "Grunderwerbsteuer",
   "definition": "Landessteuer beim Erwerb inländischer Grundstücke.",
+  "beschreibung": "Die Grunderwerbsteuer fällt an, wenn ein Grundstück den Eigentümer wechselt. Sie beträgt in Berlin 6 %, in Brandenburg 6,5 % und in Sachsen 5,5 %.",
   "id": "grunderwerbsteuer",
   "slug": "grunderwerbsteuer",
   "url": "/lexikon/grunderwerbsteuer/",

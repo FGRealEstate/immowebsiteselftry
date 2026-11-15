@@ -1,6 +1,7 @@
 {
   "term": "Hausgeld",
   "definition": "Monatliche Vorauszahlung des Wohnungseigentümers an die WEG.",
+  "beschreibung": "Das Hausgeld ist der monatliche Vorschuss des Wohnungseigentümers an die WEG. Grundlage ist der Wirtschaftsplan, verteilt wird nach Miteigentumsanteil.",
   "id": "hausgeld",
   "slug": "hausgeld",
   "url": "/lexikon/hausgeld/",

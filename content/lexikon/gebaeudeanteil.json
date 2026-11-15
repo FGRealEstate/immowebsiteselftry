@@ -1,6 +1,7 @@
 {
   "term": "Gebäudeanteil",
   "definition": "Anteil des Kaufpreises, der dem Gebäude statt Grund und Boden zugeordnet wird.",
+  "beschreibung": "Der Gebäudeanteil ist der Teil des Kaufpreises, der auf das Gebäude entfällt. Nur er wird abgeschrieben: Je höher der Gebäudeanteil, desto höher die AfA.",
   "id": "gebaeudeanteil",
   "slug": "gebaeudeanteil",
   "url": "/lexikon/gebaeudeanteil/",

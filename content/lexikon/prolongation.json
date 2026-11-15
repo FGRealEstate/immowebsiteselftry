@@ -1,6 +1,7 @@
 {
   "term": "Prolongation",
   "definition": "Verlängerung einer Finanzierung beim bisherigen Kreditgeber.",
+  "beschreibung": "Prolongation verlängert ein Darlehen bei derselben Bank nach der Zinsbindung. Beispiel: 250.000 € zu 4,5 % plus 2 % Tilgung, rund 1.354 € im Monat.",
   "id": "prolongation",
   "slug": "prolongation",
   "url": "/lexikon/prolongation/",

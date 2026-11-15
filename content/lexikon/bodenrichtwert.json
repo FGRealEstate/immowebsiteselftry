@@ -1,6 +1,7 @@
 {
   "term": "Bodenrichtwert",
   "definition": "Durchschnittlicher Bodenwert eines räumlich abgegrenzten Richtwertgebiets.",
+  "beschreibung": "Der Bodenrichtwert ist der durchschnittliche Bodenwert einer Richtwertzone. Beispiel: In Oranienburg Süd lag er zum 1. Januar 2026 bei 350 €/m².",
   "id": "bodenrichtwert",
   "slug": "bodenrichtwert",
   "url": "/lexikon/bodenrichtwert/",

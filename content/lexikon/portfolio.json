@@ -1,6 +1,7 @@
 {
   "term": "Portfolio",
   "definition": "Gesamtheit mehrerer Investments.",
+  "beschreibung": "Ein Portfolio ist die Gesamtheit mehrerer Investments. Für Vergleiche zwischen Portfolios müssen Definition, Zeitraum und Kosten identisch sein.",
   "id": "portfolio",
   "slug": "portfolio",
   "url": "/lexikon/portfolio/",

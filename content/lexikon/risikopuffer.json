@@ -1,6 +1,7 @@
 {
   "term": "Risikopuffer",
   "definition": "Konservativer Abschlag oder Zuschlag zur Abdeckung von Unsicherheit.",
+  "beschreibung": "Ein Risikopuffer ist eine bewusst konservative Reserve in Geld oder Annahmen, etwa 5.000 € CapEx-Puffer im Jahr plus ein Monat Leerstand.",
   "id": "risikopuffer",
   "slug": "risikopuffer",
   "url": "/lexikon/risikopuffer/",

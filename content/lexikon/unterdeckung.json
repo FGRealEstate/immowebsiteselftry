@@ -1,6 +1,7 @@
 {
   "term": "Unterdeckung",
   "definition": "Situation, in der Erlös oder Wert die Verbindlichkeiten nicht deckt.",
+  "beschreibung": "Unterdeckung heißt, Mittel oder Erlöse decken eine Schuld nicht. Beispiel: 410.000 € Nettoerlös bei 425.000 € Restschuld lassen 15.000 € Lücke.",
   "id": "unterdeckung",
   "slug": "unterdeckung",
   "url": "/lexikon/unterdeckung/",

@@ -1,6 +1,7 @@
 {
   "term": "Kapitalwert",
   "definition": "Barwert aller Ein- und Auszahlungen abzüglich Anfangsinvestition.",
+  "beschreibung": "Der Kapitalwert ist der Barwert aller Ein- und Auszahlungen abzüglich Anfangsinvestition. Ist er positiv, übertrifft das Investment die Renditeanforderung.",
   "id": "kapitalwert",
   "slug": "kapitalwert",
   "url": "/lexikon/kapitalwert/",

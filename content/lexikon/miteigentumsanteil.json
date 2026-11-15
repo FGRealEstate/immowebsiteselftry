@@ -1,6 +1,7 @@
 {
   "term": "Miteigentumsanteil",
   "definition": "Rechnerischer Anteil am Gemeinschaftseigentum.",
+  "beschreibung": "Der Miteigentumsanteil ist Ihr Bruchteil am Gemeinschaftseigentum. 87/1.000 heißt nicht immer 8,7 % jeder Kosten, die Teilungserklärung kann abweichen.",
   "id": "miteigentumsanteil",
   "slug": "miteigentumsanteil",
   "url": "/lexikon/miteigentumsanteil/",

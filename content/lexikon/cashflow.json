@@ -1,6 +1,7 @@
 {
   "term": "Cashflow",
   "definition": "Liquiditätsüberschuss oder -bedarf einer Periode.",
+  "beschreibung": "Der Cashflow ist das Geld, das eine vermietete Immobilie übrig lässt oder kostet: Kaltmiete minus nicht umlagefähige Kosten, Zins und Tilgung.",
   "id": "cashflow",
   "slug": "cashflow",
   "url": "/lexikon/cashflow/",

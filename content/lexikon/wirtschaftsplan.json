@@ -1,6 +1,7 @@
 {
   "term": "Wirtschaftsplan",
   "definition": "Plan der WEG zu Einnahmen, Ausgaben und Vorschüssen.",
+  "beschreibung": "Der Wirtschaftsplan der WEG enthält Einnahmen, Ausgaben und Vorschüsse. Für Anleger zählt die Trennung in umlagefähige Kosten, übrige Kosten und Rücklage.",
   "id": "wirtschaftsplan",
   "slug": "wirtschaftsplan",
   "url": "/lexikon/wirtschaftsplan/",

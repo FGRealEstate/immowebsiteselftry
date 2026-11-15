@@ -1,6 +1,7 @@
 {
   "term": "Rücklage",
   "definition": "Für künftige Ausgaben reservierte Mittel.",
+  "beschreibung": "Eine Rücklage sind Mittel für künftige Ausgaben oder Risiken. Zu trennen sind die frei verfügbare private Reserve und die Erhaltungsrücklage der WEG.",
   "id": "ruecklage",
   "slug": "ruecklage",
   "url": "/lexikon/ruecklage/",

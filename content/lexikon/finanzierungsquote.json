@@ -1,6 +1,7 @@
 {
   "term": "Finanzierungsquote",
   "definition": "Anteil einer gewählten Bezugsgröße, der durch Darlehen finanziert wird.",
+  "beschreibung": "Die Finanzierungsquote ist der Darlehensanteil an Kaufpreis oder Gesamtinvestition. Beispiel: 360.000 € Darlehen auf 400.000 € Kaufpreis ergeben 90 %.",
   "id": "finanzierungsquote",
   "slug": "finanzierungsquote",
   "url": "/lexikon/finanzierungsquote/",

@@ -1,6 +1,7 @@
 {
   "term": "Umlagefähige Kosten",
   "definition": "Betriebskosten, die bei wirksamer Vereinbarung auf Mieter umgelegt werden können.",
+  "beschreibung": "Umlagefähige Kosten sind Betriebskosten, die laut Gesetz und Mietvertrag auf den Mieter verteilt werden. Bei Leerstand trägt sie der Eigentümer selbst.",
   "id": "umlagefaehige-kosten",
   "slug": "umlagefaehige-kosten",
   "url": "/lexikon/umlagefaehige-kosten/",

@@ -1,6 +1,7 @@
 {
   "term": "Bruttogrundfläche",
   "definition": "Gesamtheit bestimmter Grundflächen eines Bauwerks nach Norm.",
+  "beschreibung": "Die Bruttogrundfläche umfasst mehr als die Wohnfläche, auch konstruktive Flächen. Ein Preis je BGF-m² ist nicht mit einem Preis je Wohn-m² vergleichbar.",
   "id": "bruttogrundflaeche",
   "slug": "bruttogrundflaeche",
   "url": "/lexikon/bruttogrundflaeche/",

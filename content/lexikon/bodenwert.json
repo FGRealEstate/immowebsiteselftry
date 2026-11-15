@@ -1,6 +1,7 @@
 {
   "term": "Bodenwert",
   "definition": "Wert des unbebauten Grundstücks.",
+  "beschreibung": "Der Bodenwert ist der Wert des Grundstücks ohne Gebäude. Beispiel: 600 m² bei 900 €/m² Bodenrichtwert ergeben 540.000 € als Ausgangswert.",
   "id": "bodenwert",
   "slug": "bodenwert",
   "url": "/lexikon/bodenwert/",

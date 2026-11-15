@@ -1,6 +1,7 @@
 {
   "term": "Cash-on-Cash-Rendite",
   "definition": "Laufender Cashflow im Verhältnis zum eingesetzten Eigenkapital.",
+  "beschreibung": "Die Cash-on-Cash-Rendite setzt den laufenden Cashflow ins Verhältnis zum eingesetzten Eigenkapital. Für Vergleiche müssen Zeitraum und Kosten gleich sein.",
   "id": "cash-on-cash-rendite",
   "slug": "cash-on-cash-rendite",
   "url": "/lexikon/cash-on-cash-rendite/",

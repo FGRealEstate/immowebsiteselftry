@@ -1,6 +1,7 @@
 {
   "term": "Instandhaltungsstau",
   "definition": "Aufgeschobener Erhaltungsbedarf.",
+  "beschreibung": "Instandhaltungsstau ist aufgeschobener Erhaltungsbedarf. Beispiel: 30.000 € Preisabschlag helfen wenig, wenn Dach, Heizung und Leitungen 70.000 € kosten.",
   "id": "instandhaltungsstau",
   "slug": "instandhaltungsstau",
   "url": "/lexikon/instandhaltungsstau/",

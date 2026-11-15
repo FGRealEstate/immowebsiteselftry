@@ -1,6 +1,7 @@
 {
   "term": "Eigenkapitalrendite",
   "definition": "Vermögenseffekt oder Ertrag im Verhältnis zum eingesetzten Eigenkapital.",
+  "beschreibung": "Die Eigenkapitalrendite setzt einen Ertrag ins Verhältnis zum Eigenkapital. Beispiel: 1.800 € Cashflow und 6.000 € Tilgung auf 90.000 € sind 8,67 %.",
   "id": "eigenkapitalrendite",
   "slug": "eigenkapitalrendite",
   "url": "/lexikon/eigenkapitalrendite/",

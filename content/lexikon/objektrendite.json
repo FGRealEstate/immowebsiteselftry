@@ -1,6 +1,7 @@
 {
   "term": "Objektrendite",
   "definition": "Rendite des Objekts vor individueller Finanzierung.",
+  "beschreibung": "Die Objektrendite ist die Rendite des Objekts vor individueller Finanzierung. Für Vergleiche müssen Definition, Zeitraum und Kosten identisch sein.",
   "id": "objektrendite",
   "slug": "objektrendite",
   "url": "/lexikon/objektrendite/",

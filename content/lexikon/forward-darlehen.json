@@ -1,6 +1,7 @@
 {
   "term": "Forward-Darlehen",
   "definition": "Heute vereinbarte Anschlussfinanzierung mit späterer Auszahlung.",
+  "beschreibung": "Mit einem Forward-Darlehen sichern Sie heute den Zins für eine spätere Anschlussfinanzierung, meist bis zu 60 Monate vor Ende der Zinsbindung.",
   "id": "forward-darlehen",
   "slug": "forward-darlehen",
   "url": "/lexikon/forward-darlehen/",

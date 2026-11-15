@@ -1,6 +1,7 @@
 {
   "term": "Sondertilgung",
   "definition": "Zusätzliche Tilgung außerhalb der regulären Rate.",
+  "beschreibung": "Eine Sondertilgung ist eine Zahlung außerhalb der regulären Rate. Beispiel: 10.000 € bei 4 % Zins sparen im ersten Folgejahr grob bis zu 400 € Zinsen.",
   "id": "sondertilgung",
   "slug": "sondertilgung",
   "url": "/lexikon/sondertilgung/",

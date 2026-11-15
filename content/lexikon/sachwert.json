@@ -1,6 +1,7 @@
 {
   "term": "Sachwert",
   "definition": "Aus Herstellungskosten und Bodenwert abgeleiteter Wert.",
+  "beschreibung": "Der Sachwert wird aus Bodenwert und Gebäudewert mit Marktanpassung abgeleitet. Er ist vor allem bei Objekten wichtig, die eher selbst genutzt werden.",
   "id": "sachwert",
   "slug": "sachwert",
   "url": "/lexikon/sachwert/",

@@ -1,6 +1,7 @@
 {
   "term": "Beleihungsauslauf",
   "definition": "Verhältnis von Darlehen zu bankseitigem Beleihungswert.",
+  "beschreibung": "Der Beleihungsauslauf ist das Darlehen im Verhältnis zum Beleihungswert der Bank. Beispiel: 240.000 € Darlehen auf 270.000 € Beleihungswert sind 88,9 %.",
   "id": "beleihungsauslauf",
   "slug": "beleihungsauslauf",
   "url": "/lexikon/beleihungsauslauf/",

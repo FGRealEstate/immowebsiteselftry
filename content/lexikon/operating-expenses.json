@@ -1,6 +1,7 @@
 {
   "term": "Operating Expenses",
   "definition": "Laufende Bewirtschaftungskosten.",
+  "beschreibung": "Operating Expenses (OpEx) sind laufende Bewirtschaftungskosten. Beispiel: 60.000 € Jahresmiete minus 15.000 € OpEx ergeben 45.000 € vor Finanzierung.",
   "id": "operating-expenses",
   "slug": "operating-expenses",
   "url": "/lexikon/operating-expenses/",

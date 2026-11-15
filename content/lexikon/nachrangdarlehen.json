@@ -1,6 +1,7 @@
 {
   "term": "Nachrangdarlehen",
   "definition": "Darlehen, dessen Gläubiger im Rang hinter andere Gläubiger tritt.",
+  "beschreibung": "Ein Nachrangdarlehen steht im Rang hinter vorrangigen Gläubigern. Wegen des höheren Verlustrisikos ist es häufig teurer als das erstrangige Darlehen.",
   "id": "nachrangdarlehen",
   "slug": "nachrangdarlehen",
   "url": "/lexikon/nachrangdarlehen/",

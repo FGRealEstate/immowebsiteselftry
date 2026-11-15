@@ -1,6 +1,7 @@
 {
   "term": "Nominalrendite",
   "definition": "Rendite ohne Bereinigung um Inflation.",
+  "beschreibung": "Die Nominalrendite ist die Rendite ohne Bereinigung um Inflation. Für Vergleiche müssen Definition, Zeitraum und einbezogene Kosten identisch sein.",
   "id": "nominalrendite",
   "slug": "nominalrendite",
   "url": "/lexikon/nominalrendite/",

@@ -1,6 +1,7 @@
 {
   "term": "Beleihungswert",
   "definition": "Vorsichtig ermittelter, langfristig erzielbarer Objektwert der Bank.",
+  "beschreibung": "Der Beleihungswert ist der vorsichtige, langfristig erzielbare Wert, den die Bank ansetzt. Er kann vom Kaufpreis abweichen, etwa 450.000 € bei 500.000 €.",
   "id": "beleihungswert",
   "slug": "beleihungswert",
   "url": "/lexikon/beleihungswert/",

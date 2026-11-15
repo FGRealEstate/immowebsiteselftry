@@ -1,6 +1,7 @@
 {
   "term": "Bruttomietrendite",
   "definition": "Jahresnettokaltmiete geteilt durch Kaufpreis.",
+  "beschreibung": "Die Bruttomietrendite ist die Jahresnettokaltmiete geteilt durch den Kaufpreis. Beispiel: 7.020 € Miete bei 160.000 € Kaufpreis ergeben 4,39 %.",
   "id": "bruttomietrendite",
   "slug": "bruttomietrendite",
   "url": "/lexikon/bruttomietrendite/",

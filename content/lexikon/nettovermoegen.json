@@ -1,6 +1,7 @@
 {
   "term": "Nettovermögen",
   "definition": "Vermögenswert abzüglich Verbindlichkeiten; Definition im Modell beachten.",
+  "beschreibung": "Nettovermögen ist Vermögen abzüglich aller Verbindlichkeiten. Bei Immobilien zählt also der Marktwert minus offene Darlehen und sonstige Schulden.",
   "id": "nettovermoegen",
   "slug": "nettovermoegen",
   "url": "/lexikon/nettovermoegen/",

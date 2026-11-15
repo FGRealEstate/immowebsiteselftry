@@ -1,6 +1,7 @@
 {
   "term": "Betriebskosten",
   "definition": "Laufende Kosten des bestimmungsgemäßen Gebrauchs.",
+  "beschreibung": "Betriebskosten sind laufende Kosten eines Gebäudes. Grundsteuer oder Gebäudereinigung sind bei wirksamer Vereinbarung umlagefähig, Verwaltungskosten nicht.",
   "id": "betriebskosten",
   "slug": "betriebskosten",
   "url": "/lexikon/betriebskosten/",

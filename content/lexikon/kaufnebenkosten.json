@@ -1,6 +1,7 @@
 {
   "term": "Kaufnebenkosten",
   "definition": "Zusätzliche Erwerbskosten neben dem Kaufpreis.",
+  "beschreibung": "Kaufnebenkosten kommen zum Kaufpreis hinzu: Grunderwerbsteuer, Notar und Grundbuch, oft Provision. Bei 300.000 € in Berlin sind das 33.210 bis 34.710 €.",
   "id": "kaufnebenkosten",
   "slug": "kaufnebenkosten",
   "url": "/lexikon/kaufnebenkosten/",

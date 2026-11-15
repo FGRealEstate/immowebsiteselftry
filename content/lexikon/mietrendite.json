@@ -1,6 +1,7 @@
 {
   "term": "Mietrendite",
   "definition": "Mietertrag im Verhältnis zu einer Wert- oder Kostenbasis.",
+  "beschreibung": "Die Mietrendite setzt den Mietertrag ins Verhältnis zu einer Wert- oder Kostenbasis. Für Vergleiche müssen Definition, Zeitraum und Kosten gleich sein.",
   "id": "mietrendite",
   "slug": "mietrendite",
   "url": "/lexikon/mietrendite/",

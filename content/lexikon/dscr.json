@@ -1,6 +1,7 @@
 {
   "term": "DSCR",
   "definition": "Verhältnis des zur Verfügung stehenden Überschusses zum Schuldendienst.",
+  "beschreibung": "Der DSCR (Kapitaldienstdeckungsgrad) teilt den Reinertrag durch Zins und Tilgung eines Jahres. Reinertrag: Jahresmiete minus nicht umgelegte Kosten.",
   "id": "dscr",
   "slug": "dscr",
   "url": "/lexikon/dscr/",

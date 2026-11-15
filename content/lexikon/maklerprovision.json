@@ -1,6 +1,7 @@
 {
   "term": "Maklerprovision",
   "definition": "Vergütung für die Vermittlungs- oder Nachweistätigkeit.",
+  "beschreibung": "Die Maklerprovision ist der Lohn des Maklers, fällig, wenn sein Nachweis oder seine Vermittlung zum Kauf führt. In Berlin sind 3,57 % je Seite häufig.",
   "id": "maklerprovision",
   "slug": "maklerprovision",
   "url": "/lexikon/maklerprovision/",

@@ -1,6 +1,7 @@
 {
   "term": "Bewirtschaftungskosten",
   "definition": "Kosten für Verwaltung, Betrieb, Instandhaltung und Mietausfall.",
+  "beschreibung": "Bewirtschaftungskosten sind Verwaltung, Instandhaltung und Mietausfallwagnis. Beispiel: 50.000 € Rohertrag minus 12.000 € ergeben 38.000 € Reinertrag.",
   "id": "bewirtschaftungskosten",
   "slug": "bewirtschaftungskosten",
   "url": "/lexikon/bewirtschaftungskosten/",

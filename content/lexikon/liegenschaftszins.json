@@ -1,6 +1,7 @@
 {
   "term": "Liegenschaftszins",
   "definition": "Marktüblicher Zinssatz im Ertragswertverfahren.",
+  "beschreibung": "Der Liegenschaftszins ist der marktübliche Zinssatz im Ertragswertverfahren. Ist er bei sonst gleichen Annahmen höher, sinkt der ermittelte Wert.",
   "id": "liegenschaftszins",
   "slug": "liegenschaftszins",
   "url": "/lexikon/liegenschaftszins/",

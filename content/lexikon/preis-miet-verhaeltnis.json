@@ -1,6 +1,7 @@
 {
   "term": "Preis-Miet-Verhältnis",
   "definition": "Kaufpreis relativ zum laufenden Mietniveau.",
+  "beschreibung": "Das Preis-Miet-Verhältnis teilt den Kaufpreis durch die Jahresmiete. Beispiel: 300.000 € bei 15.000 € Jahresnettokaltmiete ergeben 20, also 5 % brutto.",
   "id": "preis-miet-verhaeltnis",
   "slug": "preis-miet-verhaeltnis",
   "url": "/lexikon/preis-miet-verhaeltnis/",

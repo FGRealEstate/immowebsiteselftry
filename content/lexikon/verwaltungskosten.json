@@ -1,6 +1,7 @@
 {
   "term": "Verwaltungskosten",
   "definition": "Kosten der kaufmännischen und technischen Verwaltung.",
+  "beschreibung": "Verwaltungskosten entstehen für kaufmännische und technische Verwaltung und sind bei Wohnraum nicht umlagefähig. Beispiel: 30 € im Monat, 360 € im Jahr.",
   "id": "verwaltungskosten",
   "slug": "verwaltungskosten",
   "url": "/lexikon/verwaltungskosten/",

@@ -1,6 +1,7 @@
 {
   "term": "Kapitalisierungszins",
   "definition": "Zinssatz zur Umrechnung künftiger Erträge in einen heutigen Wert.",
+  "beschreibung": "Der Kapitalisierungszins rechnet künftige Erträge in einen heutigen Wert um. Beispiel: 10.000 € Jahresertrag ergeben bei 4 % 250.000 €, bei 5 % 200.000 €.",
   "id": "kapitalisierungszins",
   "slug": "kapitalisierungszins",
   "url": "/lexikon/kapitalisierungszins/",

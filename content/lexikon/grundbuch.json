@@ -1,6 +1,7 @@
 {
   "term": "Grundbuch",
   "definition": "Öffentliches Register der Grundstücksrechte.",
+  "beschreibung": "Das Grundbuch zeigt, wem ein Grundstück gehört und welche Rechte und Lasten darauf liegen. Es wird bei den Amtsgerichten geführt und hat drei Abteilungen.",
   "id": "grundbuch",
   "slug": "grundbuch",
   "url": "/lexikon/grundbuch/",

@@ -1,6 +1,7 @@
 {
   "term": "Courtage",
   "definition": "Maklervergütung.",
+  "beschreibung": "Courtage ist die erfolgsabhängige Maklervergütung. Beispiel: Ein Käuferanteil von 3,57 % auf 500.000 € Kaufpreis ergibt 17.850 € Courtage.",
   "id": "courtage",
   "slug": "courtage",
   "url": "/lexikon/courtage/",

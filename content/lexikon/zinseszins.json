@@ -1,6 +1,7 @@
 {
   "term": "Zinseszins",
   "definition": "Verzinsung bereits gutgeschriebener Zinsen.",
+  "beschreibung": "Zinseszins entsteht, wenn auch gutgeschriebene Zinsen weiter verzinst werden. Beispiel: 100.000 € zu 5 % wachsen in zehn Jahren auf rund 162.900 €.",
   "id": "zinseszins",
   "slug": "zinseszins",
   "url": "/lexikon/zinseszins/",

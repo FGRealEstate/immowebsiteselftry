@@ -1,6 +1,7 @@
 {
   "term": "Mietspiegel",
   "definition": "Übersicht ortsüblicher Vergleichsmieten.",
+  "beschreibung": "Ein Mietspiegel zeigt die ortsübliche Vergleichsmiete. Er soll alle zwei Jahre angepasst werden; Gemeinden über 50.000 Einwohner müssen einen erstellen.",
   "id": "mietspiegel",
   "slug": "mietspiegel",
   "url": "/lexikon/mietspiegel/",

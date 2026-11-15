@@ -1,6 +1,7 @@
 {
   "term": "Ausfallwagnis",
   "definition": "Kalkulatorischer Abschlag für Leerstand und Zahlungsausfälle.",
+  "beschreibung": "Das Ausfallwagnis ist ein Abschlag für Leerstand und Zahlungsausfälle. Beispiel: 2 % auf 100.000 € Sollmiete ergeben 2.000 € Ertragsminderung.",
   "id": "ausfallwagnis",
   "slug": "ausfallwagnis",
   "url": "/lexikon/ausfallwagnis/",

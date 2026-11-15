@@ -1,6 +1,7 @@
 {
   "term": "Teilungserklärung",
   "definition": "Dokument zur Aufteilung eines Grundstücks in Wohnungs- oder Teileigentum.",
+  "beschreibung": "Die Teilungserklärung legt Sonder- und Gemeinschaftseigentum sowie Miteigentumsanteile fest. Sie ist zentrale Grundlage beim Kauf einer Eigentumswohnung.",
   "id": "teilungserklaerung",
   "slug": "teilungserklaerung",
   "url": "/lexikon/teilungserklaerung/",
