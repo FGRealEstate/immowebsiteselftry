@@ -17,7 +17,7 @@ preloadImageSrcset: "/images/home/hero-berlin-mitte-960.webp 960w, /images/home/
 {% from "fgs-macros.njk" import hero, statement, split, rail, card, quote, chapters, wide, facts, faq, closing, textlink, pic with context %}
 {%- set ort = gebiete | findBy("slug", "oranienburg") -%}
 {%- set kartenOrte = [] -%}
-{%- for slug in ["berlin", "leipzig", "dresden", "oranienburg", "bernau", "falkensee", "teltow", "erkner", "konigs-wusterhausen"] -%}
+{%- for slug in ["berlin", "leipzig", "dresden", "oranienburg", "bernau", "falkensee", "teltow", "erkner", "koenigs-wusterhausen"] -%}
 {%- set _ = kartenOrte.push(gebiete | findBy("slug", slug)) -%}
 {%- endfor -%}
 <style>

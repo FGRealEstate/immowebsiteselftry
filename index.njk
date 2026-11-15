@@ -58,7 +58,7 @@ faqListe:
     Die acht Landkreise bleiben über „Brandenburg“ (/standorte/), Menü und Fuß erreichbar (Wortziel ≤ 900). -#}
 {%- set unterGebiete = [] -%}
 {%- for slug in ["berlin/charlottenburg-wilmersdorf", "berlin/pankow", "berlin/steglitz-zehlendorf", "berlin/tempelhof-schoeneberg",
-  "oranienburg", "bernau", "falkensee", "teltow", "erkner", "konigs-wusterhausen",
+  "oranienburg", "bernau", "falkensee", "teltow", "erkner", "koenigs-wusterhausen",
   "leipzig/nord", "leipzig/west", "leipzig/zentrum",
   "dresden/nord", "dresden/ost", "dresden/sued", "dresden/blasewitz-striesen"] -%}
 {%- set _ = unterGebiete.push(gebiete | findBy("slug", slug)) -%}

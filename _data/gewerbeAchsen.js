@@ -10,7 +10,7 @@ module.exports = {
   "oder-spree": "im Landkreis Oder-Spree",
   "erkner": "in Erkner",
   "dahme-spreewald": "im Landkreis Dahme-Spreewald",
-  "konigs-wusterhausen": "in Königs Wusterhausen",
+  "koenigs-wusterhausen": "in Königs Wusterhausen",
   "potsdam-mittelmark": "im Landkreis Potsdam-Mittelmark",
   "teltow": "in Teltow und Kleinmachnow",
   "oberhavel": "im Landkreis Oberhavel",

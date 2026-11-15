@@ -26,23 +26,23 @@ const LEISTUNG_JE_KATEGORIE = {
 const LEISTUNG_JE_BEGRIFF = {
   // Wertermittlung
   bodenrichtwert: "/immobilienbewertung/", bodenwert: "/immobilienbewertung/", ertragswert: "/immobilienbewertung/",
-  sachwert: "/immobilienbewertung/", verkehrswert: "/immobilienbewertung/", vervielfaltiger: "/immobilienbewertung/",
+  sachwert: "/immobilienbewertung/", verkehrswert: "/immobilienbewertung/", vervielfaeltiger: "/immobilienbewertung/",
   restnutzungsdauer: "/immobilienbewertung/", liegenschaftszins: "/immobilienbewertung/", kapitalisierungszins: "/immobilienbewertung/",
   // Provision
   courtage: "/maklerprovision/", maklerprovision: "/maklerprovision/",
   // Kauf und Verkauf
   kaufnebenkosten: "/kaufen", grunderwerbsteuer: "/kaufen", zwangsversteigerung: "/kaufen",
   spekulationsfrist: "/verkaufen",
-  teilungserklarung: "/mehrfamilienhaus", abgeschlossenheitsbescheinigung: "/mehrfamilienhaus", umwandlung: "/mehrfamilienhaus",
+  teilungserklaerung: "/mehrfamilienhaus", abgeschlossenheitsbescheinigung: "/mehrfamilienhaus", umwandlung: "/mehrfamilienhaus",
   // Finanzierung
-  eigenkapital: "/finanzierungsberatung", restschuld: "/finanzierungsberatung", kreditwurdigkeitsprufung: "/finanzierungsberatung",
-  "stress-test": "/finanzierungsberatung", vorfalligkeitsentschadigung: "/finanzierungsberatung", "debt-service": "/finanzierungsberatung",
+  eigenkapital: "/finanzierungsberatung", restschuld: "/finanzierungsberatung", kreditwuerdigkeitspruefung: "/finanzierungsberatung",
+  "stress-test": "/finanzierungsberatung", vorfaelligkeitsentschaedigung: "/finanzierungsberatung", "debt-service": "/finanzierungsberatung",
   // Vermietung
   mietspiegel: "/vermieten", mietpreisbremse: "/vermieten", kappungsgrenze: "/vermieten",
   nebenkostenabrechnung: "/vermieten", zweckentfremdung: "/vermieten", mietbindung: "/vermieten",
   // Verwaltung nach dem Kauf
   hausgeld: "/betreuung-nach-dem-kauf/", weg: "/betreuung-nach-dem-kauf/", wirtschaftsplan: "/betreuung-nach-dem-kauf/",
-  sonderumlage: "/betreuung-nach-dem-kauf/", erhaltungsrucklage: "/betreuung-nach-dem-kauf/", rucklage: "/betreuung-nach-dem-kauf/",
+  sonderumlage: "/betreuung-nach-dem-kauf/", erhaltungsruecklage: "/betreuung-nach-dem-kauf/", ruecklage: "/betreuung-nach-dem-kauf/",
   verwaltungskosten: "/betreuung-nach-dem-kauf/"
 };
 

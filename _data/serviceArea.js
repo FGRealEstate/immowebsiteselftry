@@ -51,7 +51,7 @@ const towns = [
   place("Potsdam", "potsdam"),
   place("Teltow & Kleinmachnow", "teltow", { schemaNames: ["Teltow", "Kleinmachnow"] }),
   place("Erkner", "erkner"),
-  place("Königs Wusterhausen", "konigs-wusterhausen")
+  place("Königs Wusterhausen", "koenigs-wusterhausen")
 ].map((town) => ({ ...town, schemaType: "City" }));
 
 const leipzig = place("Leipzig", "leipzig", {

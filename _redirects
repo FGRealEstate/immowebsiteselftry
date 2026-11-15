@@ -80,7 +80,7 @@
 # /wissen/wohnflachenberechnung-prufen /blog/wohnflaechenberechnung-pruefen/ 301
 # Update 29 §1 (02.11.2026): Artikel, die laut finaler Liste entfallen, dauerhaft auf den nächsten Lexikoneintrag
 /wissen/bereitstellungszinsen /lexikon/bereitstellungszins/ 301
-/wissen/bruttogeschossflache-vs-wohnflache /lexikon/bruttogrundflache/ 301
+/wissen/bruttogeschossflache-vs-wohnflache /lexikon/bruttogrundflaeche/ 301
 /wissen/indexmiete-kalkulieren /lexikon/indexmiete/ 301
 /wissen/irr-bei-immobilien /lexikon/irr/ 301
 /wissen/kapitalwert-verstehen /lexikon/kapitalwert/ 301
@@ -115,3 +115,51 @@
 /standorte/dresden/zentrum /standorte/dresden/blasewitz-striesen/ 301
 /standorte/dresden/zentrum/ /standorte/dresden/blasewitz-striesen/ 301
 https://www.fg-realestate.de/* https://fg-realestate.de/:splat 301!
+
+# Update 57 §7 (15.11.2026): Umlaute in Adressen ausgeschrieben (ä → ae, ö → oe, ü → ue, ß → ss), alte Adressen 301
+/standorte/konigs-wusterhausen /standorte/koenigs-wusterhausen/ 301
+/standorte/konigs-wusterhausen/ /standorte/koenigs-wusterhausen/ 301
+/lexikon/ankaufsprufung /lexikon/ankaufspruefung/ 301
+/lexikon/ankaufsprufung/ /lexikon/ankaufspruefung/ 301
+/lexikon/annuitat /lexikon/annuitaet/ 301
+/lexikon/annuitat/ /lexikon/annuitaet/ 301
+/lexikon/bonitat /lexikon/bonitaet/ 301
+/lexikon/bonitat/ /lexikon/bonitaet/ 301
+/lexikon/bruttogrundflache /lexikon/bruttogrundflaeche/ 301
+/lexikon/bruttogrundflache/ /lexikon/bruttogrundflaeche/ 301
+/lexikon/erhaltungsrucklage /lexikon/erhaltungsruecklage/ 301
+/lexikon/erhaltungsrucklage/ /lexikon/erhaltungsruecklage/ 301
+/lexikon/flurstuck /lexikon/flurstueck/ 301
+/lexikon/flurstuck/ /lexikon/flurstueck/ 301
+/lexikon/gebaudeanteil /lexikon/gebaeudeanteil/ 301
+/lexikon/gebaudeanteil/ /lexikon/gebaeudeanteil/ 301
+/lexikon/kreditwurdigkeitsprufung /lexikon/kreditwuerdigkeitspruefung/ 301
+/lexikon/kreditwurdigkeitsprufung/ /lexikon/kreditwuerdigkeitspruefung/ 301
+/lexikon/liquiditatsreserve /lexikon/liquiditaetsreserve/ 301
+/lexikon/liquiditatsreserve/ /lexikon/liquiditaetsreserve/ 301
+/lexikon/mietuberschuss /lexikon/mietueberschuss/ 301
+/lexikon/mietuberschuss/ /lexikon/mietueberschuss/ 301
+/lexikon/nettovermogen /lexikon/nettovermoegen/ 301
+/lexikon/nettovermogen/ /lexikon/nettovermoegen/ 301
+/lexikon/niebrauch /lexikon/niessbrauch/ 301
+/lexikon/niebrauch/ /lexikon/niessbrauch/ 301
+/lexikon/opportunitatskosten /lexikon/opportunitaetskosten/ 301
+/lexikon/opportunitatskosten/ /lexikon/opportunitaetskosten/ 301
+/lexikon/preis-miet-verhaltnis /lexikon/preis-miet-verhaeltnis/ 301
+/lexikon/preis-miet-verhaltnis/ /lexikon/preis-miet-verhaeltnis/ 301
+/lexikon/rucklage /lexikon/ruecklage/ 301
+/lexikon/rucklage/ /lexikon/ruecklage/ 301
+/lexikon/steuerlicher-uberschuss /lexikon/steuerlicher-ueberschuss/ 301
+/lexikon/steuerlicher-uberschuss/ /lexikon/steuerlicher-ueberschuss/ 301
+/lexikon/teilungserklarung /lexikon/teilungserklaerung/ 301
+/lexikon/teilungserklarung/ /lexikon/teilungserklaerung/ 301
+/lexikon/umlagefahige-kosten /lexikon/umlagefaehige-kosten/ 301
+/lexikon/umlagefahige-kosten/ /lexikon/umlagefaehige-kosten/ 301
+/lexikon/vervielfaltiger /lexikon/vervielfaeltiger/ 301
+/lexikon/vervielfaltiger/ /lexikon/vervielfaeltiger/ 301
+/lexikon/vorfalligkeitsentschadigung /lexikon/vorfaelligkeitsentschaedigung/ 301
+/lexikon/vorfalligkeitsentschadigung/ /lexikon/vorfaelligkeitsentschaedigung/ 301
+/lexikon/wohnflache /lexikon/wohnflaeche/ 301
+/lexikon/wohnflache/ /lexikon/wohnflaeche/ 301
+/lexikon/zinsanderungsrisiko /lexikon/zinsaenderungsrisiko/ 301
+/lexikon/zinsanderungsrisiko/ /lexikon/zinsaenderungsrisiko/ 301
