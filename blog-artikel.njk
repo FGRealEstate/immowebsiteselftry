@@ -14,7 +14,8 @@ pagination:
   alias: a
 permalink: "blog/{{ a.slug }}/index.html"
 eleventyComputed:
-  title: "{{ a.title | safe }}"
+  title: "{{ (a.seitenTitel or a.title) | safe }}"
+  ogTitle: "{{ a.title | safe }}"
   description: "{{ a.description | safe }}"
   canonicalPath: "{{ a.url }}"
   ogType: article

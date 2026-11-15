@@ -1568,6 +1568,72 @@ function buildProject(project, units) {
     };
 }
 
+/* Update 57 §6 (15.11.2026): Browser-Titel der Angebots- und Projektseiten aus den Daten, nicht aus der Propstack-Überschrift
+   (die bleibt H1, Karte, Alt-Text und Beschreibung). Form nach Brief: „2-Zimmer-Wohnung in Berlin-Moabit kaufen“,
+   „Mehrfamilienhaus in …“, „Haus in …“; base.njk hängt „ | Fischer & Geserich“ an. Ohne Ortsteil im Angebot gilt der Ortsteil
+   der anderen Einheiten desselben Projekts, wenn sie sich einig sind. Teilen sich mehrere Angebote einen Titel (gleiches Haus,
+   gleiche Zimmerzahl), steht statt „kaufen“ die Wohnfläche dahinter; reicht das nicht, die Etage, zuletzt beides. */
+function titelArt(item) {
+    const raw = item.raw || {};
+    const k = [raw.rs_type, raw.rs_category, raw.object_type, raw.category].map((x) => String(textValue(x) || "").toUpperCase());
+    if (k.some((x) => x.includes("MULTI_FAMILY"))) return "Mehrfamilienhaus";
+    if (k[0] === "APARTMENT" || k[0] === "FLAT") return "Wohnung";
+    if (k[0] === "HOUSE" || k.some((x) => /(^|_)HOUSE$|VILLA|BUNGALOW/.test(x))) return "Haus";
+    return null;
+}
+function titelOrt(ort, teil) {
+    if (!ort) return teil || null;
+    return teil && placeKey(teil) !== placeKey(ort) ? `${ort}-${teil}` : ort;
+}
+function titelEtage(item) {
+    const wert = feldWert((item.raw || {}).floor);
+    const n = Number(wert);
+    if (wert == null || wert === "" || !Number.isFinite(n)) return null;
+    return n === 0 ? "EG" : n < 0 ? "UG" : `${n}. OG`;
+}
+function eindeutigeTitel(items, stufen) {
+    let titel = items.map((item) => stufen[0](item));
+    for (const stufe of stufen.slice(1)) {
+        const zahl = new Map();
+        for (const t of titel) zahl.set(t, (zahl.get(t) || 0) + 1);
+        titel = titel.map((t, i) => (zahl.get(t) > 1 ? stufe(items[i]) || t : t));
+    }
+    return titel;
+}
+function seitenTitelSetzen(properties, projects) {
+    const projektTeil = new Map();
+    for (const project of projects) {
+        const teile = [...new Set(project.units.map((unit) => unit.ortsteil).filter(Boolean))];
+        if (teile.length === 1) projektTeil.set(String(project.id), teile[0]);
+    }
+    const teil = (item) => item.ortsteil || (item.project_id != null ? projektTeil.get(String(item.project_id)) : null) || null;
+    const verb = (item) => (item.marketing_type === "Miete" ? "mieten" : "kaufen");
+    const kern = (item) => {
+        const art = titelArt(item);
+        const zimmer = Number(item.rooms_raw);
+        const ding = art === "Wohnung" && zimmer > 0 ? `${String(zimmer).replace(".", ",")}-Zimmer-Wohnung` : art || "Immobilie";
+        const ort = titelOrt(item.location, teil(item));
+        return ort ? `${ding} in ${ort}` : ding;
+    };
+    const titel = eindeutigeTitel(properties, [
+        (item) => `${kern(item)} ${verb(item)}`,
+        (item) => (item.living_space ? `${kern(item)}, ${item.living_space}` : null),
+        (item) => (titelEtage(item) ? `${kern(item)}, ${titelEtage(item)}` : null),
+        (item) => (item.living_space && titelEtage(item) ? `${kern(item)}, ${item.living_space}, ${titelEtage(item)}` : null)
+    ]);
+    properties.forEach((item, i) => { item.seite_titel = titel[i]; });
+    const projektTitel = eindeutigeTitel(projects, [
+        (project) => {
+            const arten = [...new Set(project.units.map(titelArt))];
+            const ding = arten.length === 1 && arten[0] ? { Wohnung: "Wohnungen", Haus: "Häuser", Mehrfamilienhaus: "Mehrfamilienhäuser" }[arten[0]] : "Immobilien";
+            const ort = titelOrt(project.location, projektTeil.get(String(project.id)));
+            return `${ding}${ort ? ` in ${ort}` : ""} ${project.marketing_type === "Miete" ? "mieten" : "kaufen"}`;
+        },
+        (project) => project.name
+    ]);
+    projects.forEach((project, i) => { project.seite_titel = projektTitel[i]; });
+}
+
 module.exports = async function () {
     const apiKey = process.env.PROPSTACK_API_KEY;
     const empty = emptyPropstackData();
@@ -1683,6 +1749,7 @@ module.exports = async function () {
             project_url: project.url
         })));
         const properties = [...standaloneProperties, ...projectProperties];
+        seitenTitelSetzen(properties, projects); // Update 57 §6
 
         const marketingTypes = [...new Set(properties.map((property) => property.marketing_type).filter(Boolean))];
         const propertyTypes = [...new Set(properties.map((property) => property.property_type).filter(Boolean))];

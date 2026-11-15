@@ -10,7 +10,7 @@ pagination:
   alias: property
 permalink: "angebote/{{ property.slug }}/index.html"
 eleventyComputed:
-  title: "{{ property.title }} | Fischer & Geserich Real Estate"
+  title: "{{ property.seite_titel or property.title }}"
   description: "{{ property.title }}{% if property.location %} in {{ property.location }}{% endif %}: Eckdaten, Bilder{% if property.is_investment %}, Investmentkennzahlen und interaktive Szenariorechnung{% endif %}."
   canonicalPath: "{{ property.url }}"
   ogImage: "{{ (property.main_image | propstackOg | safe) if property.main_image else '' }}"

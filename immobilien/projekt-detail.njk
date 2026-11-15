@@ -10,7 +10,7 @@ pagination:
   alias: project
 permalink: "projekte/{{ project.slug }}/index.html"
 eleventyComputed:
-  title: "{{ project.name }} – Immobilienprojekt | Fischer & Geserich Real Estate"
+  title: "{{ project.seite_titel or project.name }}"
   description: "{{ project.name }} mit {{ project.available_unit_count }} verfügbaren Einheiten{% if project.location %} in {{ project.location }}{% endif %}. Preise, Flächen und einzelne Einheiten ansehen."
   canonicalPath: "{{ project.url }}"
   ogImage: "{{ (project.main_image | propstackOg | safe) if project.main_image else '' }}"

@@ -24,7 +24,7 @@
     {% set socialImageAlt = ogImageAlt or ((ogAuto.alt or socialTitle) if ogAuto else ('Logo von ' + siteName)) %}
     {% set robotsContent = robots or "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" %}
 
-    <title>{% if pageTitle == siteName or pageTitle == companyName or "Fischer & Geserich" in pageTitle %}{{ pageTitle }}{% else %}{{ pageTitle }} | {{ siteName }}{% endif %}</title>
+    <title>{{ pageTitle | seitenTitel }}</title>{#- Update 57 §6: Endung „| Fischer & Geserich“ über den Filter seitenTitel (.eleventy.js) #}
     <meta name="description" content="{{ metaDescription }}">
     <meta name="application-name" content="{{ siteName }}">
     <meta name="apple-mobile-web-app-title" content="{{ siteName }}">

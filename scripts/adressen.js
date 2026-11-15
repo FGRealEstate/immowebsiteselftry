@@ -79,7 +79,8 @@ function sitemapAdressen(dir) {
   return { adressen, fehler };
 }
 
-function pruefe(dir, { plan } = {}) {
+function pruefe(dir, { plan, hinweise = [] } = {}) {
+  const titelSeiten = new Map(); // Update 57 §6
   const fehler = [];
   const regeln = weiterleitungen(dir);
   const { adressen, fehler: smFehler } = sitemapAdressen(dir);
@@ -102,6 +103,14 @@ function pruefe(dir, { plan } = {}) {
     const og = ogUrl(html);
     if (og && og !== loc) fehler.push(`og:url: ${loc} hat ${og}`);
     if (noindex(html)) fehler.push(`Sitemap: ${loc} ist noindex`);
+    // Update 57 §6: eine Endung „ | Fischer & Geserich“, sonst Fehler; über 60 Zeichen und doppelte Titel nur als Hinweis,
+    // weil Angebotstitel aus Propstack-Daten kommen und den täglichen Build (und damit den Blog) nicht anhalten sollen
+    const titel = ((html.match(/<title>([\s\S]*?)<\/title>/i) || [])[1] || "").trim()
+      .replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+    if (!titel.endsWith(" | Fischer & Geserich") || titel.split("Fischer & Geserich").length !== 2) fehler.push(`Titel: ${loc} „${titel}“ endet nicht genau einmal auf „ | Fischer & Geserich“`);
+    if (titel.length > 60) hinweise.push(`Titel: ${loc} hat ${titel.length} Zeichen`);
+    if (titelSeiten.has(titel)) hinweise.push(`Titel: „${titel}“ doppelt (${titelSeiten.get(titel)} und ${loc})`);
+    titelSeiten.set(titel, loc);
   }
 
   // 2. Links in allen Seiten
@@ -228,7 +237,9 @@ if (require.main === module) {
   } else {
     const dir = process.argv[2] || "_site";
     const plan = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "_data", "blogplan.json"), "utf8"));
-    const fehler = pruefe(dir, { plan });
+    const hinweise = [];
+    const fehler = pruefe(dir, { plan, hinweise });
+    for (const h of hinweise) console.log("Hinweis " + h);
     console.log(fehler.length ? fehler.join("\n") : "ok");
     process.exit(fehler.length ? 1 : 0);
   }

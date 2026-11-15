@@ -72,6 +72,17 @@ module.exports = function(eleventyConfig) {
     return /^\/[a-z0-9-]+\.html$/.test(s) && s !== "/404.html" ? s.slice(0, -5) : s;
   };
   eleventyConfig.addFilter("ohneHtml", ohneHtml);
+
+  // Update 57 §6 (15.11.2026): eine Endung für jeden Browser-Titel, „ | Fischer & Geserich“. Eine alte Endung
+  // („| Fischer & Geserich Real Estate“, „– Fischer & Geserich …“) fällt weg und die neue kommt einmal dahinter.
+  // Länge: der Teil davor hat höchstens 39 Zeichen, sonst sind es über 60 (scripts/adressen.js warnt).
+  const MARKE = "Fischer & Geserich";
+  const seitenTitel = (t) => {
+    const s = String(t == null ? "" : t).trim()
+      .replace(/\s*[|–-]\s*Fischer & Geserich(?: Real Estate)?(?: GmbH)?\s*$/, "").trim();
+    return !s || s === MARKE || s === `${MARKE} Real Estate` ? MARKE : `${s} | ${MARKE}`;
+  };
+  eleventyConfig.addFilter("seitenTitel", seitenTitel);
   eleventyConfig.addFilter("navHref", (item) => (item && (item.fallback || item.href)) || "#");
   // Propstack liefert Preise mit Cent („225.000,00 €“); auf den Angebotsseiten ohne „,00“ (Daten bleiben unverändert).
   eleventyConfig.addFilter("eur", (value) => (value ? String(value).replace(/,00 €/g, " €") : value));
@@ -640,7 +651,9 @@ module.exports = function(eleventyConfig) {
   // jeder Blogartikel ist ganz live oder gar nicht (scripts/adressen.js). Sonst bricht der Build ab; live bleibt dann die
   // letzte gute Version. Als letzter Schritt registriert, nach _redirects (oben).
   eleventyConfig.on("eleventy.after", ({ dir }) => {
-    const fehler = require("./scripts/adressen").pruefe(dir.output, { plan: JSON.parse(fs.readFileSync("_data/blogplan.json", "utf8")) });
+    const hinweise = [];
+    const fehler = require("./scripts/adressen").pruefe(dir.output, { plan: JSON.parse(fs.readFileSync("_data/blogplan.json", "utf8")), hinweise });
+    for (const h of hinweise) console.log("Hinweis " + h);
     if (fehler.length) throw new Error(`Adressenprüfung (scripts/adressen.js): ${fehler.length} Fehler\n` + fehler.join("\n"));
     console.log("Adressenprüfung: Sitemap, Canonicals, llms.txt, Links und Blog stimmen überein.");
   });

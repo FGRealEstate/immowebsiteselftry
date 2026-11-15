@@ -163,6 +163,7 @@ function veroeffentlicht(plan, quelle, { jetzt = new Date(), vorhanden } = {}) {
       const k = karten.get(a.slug);
       return {
         slug: a.slug, url: `/blog/${a.slug}/`, kategorie: k.kategorie, titel: k.titel, kurz: k.kurz,
+        seitenTitel: a.seitenTitel || null, // Update 57 §6: kurzer Browser-Titel aus dem Plan, sonst der Artikeltitel
         datePublished: a.termin, dateModified: a.geaendert && a.geaendert > a.termin ? a.geaendert : a.termin
       };
     });

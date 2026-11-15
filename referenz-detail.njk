@@ -10,7 +10,7 @@ pagination:
   alias: ref
 permalink: "angebote/{{ ref.slug }}/index.html"
 eleventyComputed:
-  title: "{{ ref.title }}: {{ ref.label | lower }} | Fischer & Geserich Real Estate"
+  title: "{{ ref.title }}: {{ ref.label | lower }}"
   description: "Referenz von Fischer & Geserich: {{ ref.title }}, {{ ref.label | lower }}{% if ref.sold_year %} {{ ref.sold_year }}{% endif %}. Eckdaten und Fotos ohne Preis, dazu die Marktseite zum Gebiet."
   canonicalPath: "{{ ref.url }}"
   ogImage: "{{ (ref.main_image | propstackOg | safe) if ref.main_image else '' }}"
