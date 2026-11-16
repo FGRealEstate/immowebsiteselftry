@@ -7,6 +7,8 @@ module.exports = function(eleventyConfig) {
   // Update 50 §1: Referenzen hängen nicht mehr an einem Schalter. referenz-detail.njk baut je Referenz eine Seite unter der
   // alten Angebotsadresse, /referenzen/ entsteht mit der ersten Referenz (referenzen.11tydata.js).
   if (!freigaben.gewerbe) eleventyConfig.ignores.add("gewerbeimmobilien.njk");
+  // Update 62 §4: /partner/ nur mit freigaben.partner
+  if (!freigaben.partner) eleventyConfig.ignores.add("partner.njk");
   // Existing helper used by the current website.
   eleventyConfig.addFilter("pad2", (value) => String(value).padStart(2, "0"));
   // Geschützte Leerzeichen: Zahl und Einheit (4.726 €/m², 10 %, 950 m²) und § mit Nummer bleiben in einer Zeile.

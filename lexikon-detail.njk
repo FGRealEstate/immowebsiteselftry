@@ -99,6 +99,9 @@ eleventyComputed:
       {% endif %}
       {% endif %}
       <p class="fgs-note">{% if entry.updated %}Stand {{ entry.updated | lexDatum }}. {% endif %}Der Eintrag erklärt den Begriff allgemein; er ersetzt keine Steuer-, Rechts- oder Finanzierungsberatung im Einzelfall.</p>
+      {#- Update 62 §3: Partnerzeile Gutachten.org auf /lexikon/restnutzungsdauer/ und /lexikon/verkehrswert/ (nur mit freigaben.partner) #}
+      {%- set partnerProdukt = partner.lexikon[entry.slug] %}
+      {% include "fgs-partner-zeile.njk" %}
     </article>
 
     <aside class="fgs-lex-aside" aria-label="Weiter im Lexikon">

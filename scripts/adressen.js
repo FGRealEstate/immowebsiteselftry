@@ -26,6 +26,14 @@ const istDatei = (f) => { try { return fs.statSync(f).isFile(); } catch { return
 const ohneAnker = (u) => u.replace(/[#?].*$/, "");
 const schluessel = (p) => p.replace(/\/+$/, "") || "/"; // Netlify vergleicht Regeln ohne Schrägstrich am Ende
 
+// Update 57 §6 / Update 62 §4: Titel endet genau einmal auf „ | Fischer & Geserich“; davor kein weiterer Markenteil als Endung.
+const ENDUNG = " | Fischer & Geserich";
+function titelEndungOk(titel) {
+  if (!titel.endsWith(ENDUNG)) return false;
+  const vorn = titel.slice(0, -ENDUNG.length);
+  return !vorn.includes(ENDUNG.trim()) && !/(?:^|[|–-]\s*)Fischer & Geserich(?: Real Estate)?(?: GmbH)?\s*$/.test(vorn);
+}
+
 function weiterleitungen(dir) {
   const regeln = new Map();
   const f = path.join(dir, "_redirects");
@@ -107,7 +115,9 @@ function pruefe(dir, { plan, hinweise = [] } = {}) {
     // weil Angebotstitel aus Propstack-Daten kommen und den täglichen Build (und damit den Blog) nicht anhalten sollen
     const titel = ((html.match(/<title>([\s\S]*?)<\/title>/i) || [])[1] || "").trim()
       .replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
-    if (!titel.endsWith(" | Fischer & Geserich") || titel.split("Fischer & Geserich").length !== 2) fehler.push(`Titel: ${loc} „${titel}“ endet nicht genau einmal auf „ | Fischer & Geserich“`);
+    // Update 62 §4: Der Name darf vorn im Titel stehen („Partner von Fischer & Geserich | Fischer & Geserich“, Brief), aber nicht
+    // als zweite Endung davor (alte Endung „– Fischer & Geserich …“ oder „| Fischer & Geserich“ doppelt).
+    if (!titelEndungOk(titel)) fehler.push(`Titel: ${loc} „${titel}“ endet nicht genau einmal auf „ | Fischer & Geserich“`);
     if (titel.length > 60) hinweise.push(`Titel: ${loc} hat ${titel.length} Zeichen`);
     if (titelSeiten.has(titel)) hinweise.push(`Titel: „${titel}“ doppelt (${titelSeiten.get(titel)} und ${loc})`);
     titelSeiten.set(titel, loc);
@@ -226,7 +236,7 @@ async function live() {
   return { fehler, anzahl: locs.length };
 }
 
-module.exports = { pruefe, weiterleitungen, dateiFuer };
+module.exports = { pruefe, weiterleitungen, dateiFuer, titelEndungOk };
 
 if (require.main === module) {
   if (process.argv.includes("--live")) {

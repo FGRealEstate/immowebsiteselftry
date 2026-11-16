@@ -1,0 +1,34 @@
+---
+layout: fgs-page.njk
+fgsHero: false
+title: "Partner von Fischer & Geserich | Fischer & Geserich"
+permalink: partner/index.html
+description: "Partner von Fischer & Geserich: Für Gutachten arbeiten wir mit Gutachten.org zusammen, einem Angebot der Evalion GmbH aus Berlin. Mit dem Code FG10 erhalten Sie 10 % Rabatt."
+canonicalPath: /partner/
+# Update 62 §4 (17.11.2026): eine Seite für alle Partner, keine Seite je Partner und keine sichtbaren Stufen.
+# Gebaut nur mit freigaben.partner (.eleventy.js); dann auch Fußlink „Partner“ (Spalte „Wissen & Unternehmen“), Sitemap und llms.txt.
+# Ein Abschnitt je Art von Leistung; heute nur „Gutachten“. Neue Partner bekommen ihren eigenen Abschnitt
+# (Versicherung, Grundriss und Wohnfläche, Hausverwaltung), keine leeren Abschnitte und kein „demnächst“.
+# Kein Schema für den Partner, kein sameAs (die Seite hat nur das WebPage- und BreadcrumbList-Markup aller Seiten).
+# Text von Titel, H1, erstem Absatz und Hinweis wörtlich aus dem Brief; die Beschreibung nimmt nur Sätze aus Brief §2.
+pg:
+  crumb: "Partner"
+  h1: "Unsere Partner"
+  intro: "Fischer &amp; Geserich arbeitet mit ausgewählten Partnern zusammen, damit Sie für alles rund um Ihre Immobilie einen verlässlichen Ansprechpartner haben. Unsere Kunden erhalten dort zum Teil Sonderkonditionen."
+  schema: { type: "WebPage" }
+---
+<section class="fgs-section" id="gutachten" aria-labelledby="gutachten-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head">
+      <h2 id="gutachten-titel">Gutachten</h2>
+    </div>
+    {%- set partnerProdukte = partner.gutachten.reihenfolge %}{% set partnerEingebettet = true %}{% set partnerEbene = 3 %}
+    {% include "fgs-partner.njk" %}
+  </div>
+</section>
+
+<section class="fgs-section fgs-section--tight" aria-label="Hinweis zu Partnerlinks">
+  <div class="fgs-wrap">
+    <p class="fgs-note">Für Aufträge über die Links auf dieser Seite erhalten wir von unseren Partnern eine Provision.</p>
+  </div>
+</section>

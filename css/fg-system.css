@@ -3139,19 +3139,33 @@ html:not(.fgs-js) .fgs-feat-nav { display: none; }
 .fgs-place-facts .fgs-facts-stand-hinweis { margin-top: 0 !important; max-width: 46rem; line-height: 1.55; } /* Update 37 §1 */
 .fgs-facts-stand + .fgs-facts-stand-hinweis { margin-top: 8px !important; max-width: 46rem; line-height: 1.55; } /* Update 39 §2: Eberswalde */
 
-/* Update 54 §1 (vorbereitet mit Update 57 §11): Partnerblock „Grundriss und Wohnflächenberechnung“ (_includes/fgs-partner.njk).
-   Ein ruhiger Kasten im Seitenstil, keine Werbefläche; die Kennzeichnung „Partnerlink“ steht klein neben dem Knopf. */
+/* Update 62 §2 (17.11.2026): Partnerblock Gutachten.org (_includes/fgs-partner.njk), ersetzt den Platzhalter aus Update 54.
+   Ein ruhiger Kasten im Seitenstil, keine Werbefläche: Logo klein links, rechts Überschrift, Satz, Produktlinks, Code,
+   Knopf in der Zweitfarbe (der Hauptaufruf der Seite bleibt der eigene) mit dem Code daneben, darunter klein der Provisionshinweis. */
 .fgs-pblock-box { max-width: 760px; padding: 32px; border: 1px solid var(--fgs-line); border-radius: var(--fgs-r); }
-.fgs-pblock-box h2 { margin: 0 0 20px; }
-.fgs-pblock-body { display: flex; gap: 24px; align-items: center; }
-.fgs-pblock-body p { margin: 0; }
-.fgs-pblock-marke { flex: 0 0 auto; max-width: 180px; }
+.fgs-pblock-box :is(h2, h3) { margin: 0 0 12px; }
+/* Überschrift im Block auf allen Seiten gleich ruhig, auch wo sie eine H2 ist (/kaufen, /kapitalanlage): nicht die große H2 in Großbuchstaben */
+.fgs .fgs-pblock-box :is(h2, h3) { font-size: var(--fgs-h3); line-height: 1.3; text-transform: none; letter-spacing: -.005em; max-width: none; }
+.fgs-pblock-body { display: flex; gap: 28px; align-items: flex-start; }
+.fgs-pblock-marke { flex: 0 0 auto; width: 120px; padding-top: 4px; }
 .fgs-pblock-marke img { display: block; max-width: 100%; height: auto; }
-.fgs-pblock-name { font: 400 22px/1.3 var(--fgs-serif); color: var(--fgs-ink); }
-.fgs-pblock-aktion { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; margin-top: 24px; }
-.fgs-pblock-kennung { font-size: 13px; line-height: 1.4; color: var(--fgs-ink-2); }
+.fgs-pblock-name { display: block; font: 400 18px/1.3 var(--fgs-serif); color: var(--fgs-ink); white-space: nowrap; hyphens: none; } /* ohne Logo: Name in einer Zeile, nicht „Gutach-ten.org“ */
+.fgs-pblock-text { flex: 1 1 auto; min-width: 0; }
+.fgs-pblock-text p { margin: 0 0 12px; }
+.fgs-pblock-produkte { margin: 0 0 12px; padding: 0; list-style: none; }
+.fgs-pblock-produkte li { margin: 0 0 6px; }
+.fgs-pblock-aktion { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; margin: 20px 0 16px; }
+.fgs-pblock-code { display: inline-block; padding: 6px 12px; border: 1px dashed var(--fgs-line); border-radius: var(--fgs-r); font-weight: 600; letter-spacing: .08em; color: var(--fgs-ink); }
+.fgs-pblock-kennung { margin: 0 !important; font-size: 13px; line-height: 1.4; color: var(--fgs-ink-2); }
+.fgs-refs .fgs-pblock-box { margin: 32px 0; } /* /verkaufen: zwischen den beiden Nachschlag-Abschnitten */
+.fgs-compare-wrap + .fgs-pblock-box { margin-top: 40px; } /* /immobilienbewertung/: unter der Vergleichstabelle */
+.fgs-partner-zeile { margin-top: 12px; }
+.fgs-partner-zeile + .fgs-partner-zeile { margin-top: 4px; font-size: 13px; }
 @media (max-width: 599px) {
   .fgs-pblock-box { padding: 24px 20px; }
-  .fgs-pblock-body { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .fgs-pblock-aktion .fgs-btn { width: 100%; white-space: normal; text-align: center; }
+  .fgs-pblock-body { flex-direction: column; gap: 16px; }
+  .fgs-pblock-marke { width: 104px; padding-top: 0; }
+  .fgs-pblock-aktion { flex-wrap: nowrap; gap: 12px; } /* FG10 bleibt direkt neben dem Knopf (Brief §2) */
+  .fgs main .fgs-pblock-aktion .fgs-btn { flex: 1 1 auto; width: auto; padding-left: 14px; padding-right: 14px; white-space: nowrap; text-align: center; }
+  .fgs-pblock-code { flex: 0 0 auto; }
 }

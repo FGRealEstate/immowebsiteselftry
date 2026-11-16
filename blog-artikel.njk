@@ -66,6 +66,10 @@ eleventyComputed:
 
   <article class="fgd-blog-body">
     {{ a.body | safe }}
+    {#- Update 62 §3: Partnerzeile Gutachten.org am Ende des Artikels Nr. 14 (restnutzungsdauergutachten-erklaert), sobald er
+        erscheint und freigaben.partner an ist. Der Artikeltext selbst (blog/<slug>/index.html) bleibt unverändert. -#}
+    {%- set partnerProdukt = partner.artikel[a.slug] %}
+    {% include "fgs-partner-zeile.njk" %}
 
     {#- Update 11 §2 (29.10.2026): Der Hinweis auf das Widget „Was kann ich mir leisten?“ ist mit dessen Platzhalter gelöscht. -#}
 

@@ -73,11 +73,11 @@ customSchema: true
 {% set wissenKats = wissen.seiten[page.url] or [] %}
 {% include "fgs-wissen.njk" %}
 
+{# 3c. Update 62 §3: Partner Gutachten.org vor den Fragen, nur auf Seiten mit partnerVorFaq (Liste der Produkte) und mit freigaben.partner #}
+{% if partnerVorFaq %}{% set partnerProdukte = partnerVorFaq %}{% include "fgs-partner.njk" %}{% endif %}
+
 {# 4. S7 Häufige Fragen #}
 {{ faq(faqItems, s.faqTitle or "Häufige Fragen") }}
-
-{# 4b. Update 54 §1: Partnerblock unter den Fragen, nur auf Seiten mit partnerNachFaq (/immobilienbewertung/) und mit freigaben.partner #}
-{% if partnerNachFaq %}{% include "fgs-partner.njk" %}{% endif %}
 
 {# 5. S4 Verwandte Leistungen: drei Bildkarten, Lexikon und Blog als eine Zeile im Kopf #}
 {%- set lexLinks = [] %}{% for slug in s.related.lexikon %}{% set e = labContent.lexicon | lexEntry(slug) %}{% if e %}{% set _ = lexLinks.push('<a href="/lexikon/' + e.slug + '/">' + e.term + '</a>') %}{% endif %}{% endfor %}

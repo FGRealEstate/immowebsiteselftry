@@ -45,6 +45,9 @@
           <li><a href="/investment-lab">Investment Lab</a></li>
           <li><a href="/investitionsrechner">Investitionsrechner</a></li>
           <li><a href="/ueber-uns">Über uns</a></li>
+          {%- if freigaben.partner %}
+          <li><a href="/partner/">Partner</a></li>{# Update 62 §4: nur mit freigaben.partner #}
+          {%- endif %}
           <li><a href="/bewertungen/">Bewertungen</a></li>
           <li><a href="/angebote">Aktuelle Angebote</a></li>
         </ul>

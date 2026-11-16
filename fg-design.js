@@ -851,14 +851,15 @@
     }
   }
 
-  /* ---------- Update 54 §1: Klicks auf Partnerlinks (_includes/fgs-partner.njk) ----------
-     GA4-Ereignis partner_click mit partner_name über den dataLayer (GTM), wie widget_open. Der Link öffnet einen neuen Tab,
+  /* ---------- Update 54 §1 / Update 62 §2: Klicks auf Partnerlinks (fgs-partner.njk, fgs-partner-zeile.njk, /partner/) ----------
+     GA4-Ereignis partner_click mit partner (data-partner, z. B. gutachten.org) und produkt (data-produkt: restnutzungsdauer,
+     kaufpreisaufteilung, verkehrswert oder allgemein) über den dataLayer (GTM), wie widget_open. Der Link öffnet einen neuen Tab,
      die Seite bleibt also stehen und das Ereignis geht nicht verloren. */
   document.addEventListener('click', (event) => {
     const link = event.target && event.target.closest ? event.target.closest('a[data-partner]') : null;
     if (!link) return;
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'partner_click', partner_name: link.dataset.partner || '' });
+    window.dataLayer.push({ event: 'partner_click', partner: link.dataset.partner || '', produkt: link.dataset.produkt || '' });
   });
 
   /* ---------- Einblendungen beim Scrollen ---------- */

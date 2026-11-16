@@ -196,6 +196,9 @@ service:
     </ul>
     <p class="fgs-note">Wenn noch eine Grundschuld eingetragen ist, brauchen wir außerdem die Angaben zum laufenden Darlehen, damit die Ablösung zum Notartermin vorbereitet werden kann. Was fehlt, beschaffen wir gemeinsam mit Ihnen, zum Beispiel beim Grundbuchamt oder bei der Hausverwaltung.</p>
     {% endcall %}
+    {#- Update 62 §3: Partner Gutachten.org mit Verkehrswertgutachten, nach „Unterlagen für den Verkauf“; nur mit freigaben.partner #}
+    {%- set partnerProdukte = ["verkehrswert"] %}{% set partnerEingebettet = true %}
+    {% include "fgs-partner.njk" %}
     {% call nachschlag({ id: "kosten", titel: "Was ein Verkauf kostet" }) %}
     <p>Provision und Teilungspflicht nennen wir Ihnen vor der ersten Besichtigung, nicht erst danach. Die übrigen Posten hängen von Ihrer Immobilie und Ihrer Finanzierung ab.</p>
     <div class="fgs-table-wrap">
@@ -216,9 +219,6 @@ service:
     {% endcall %}
   </div>
 </section>
-
-{# Update 54 §1: Partner für Grundriss und Wohnflächenberechnung, unter den Unterlagen; nur mit freigaben.partner #}
-{% include "fgs-partner.njk" %}
 
 {# Käufer und Finanzierung prüfen: Überschrift links (5 Spalten), rechts das breite Bild und der Text #}
 <section class="fgs-section" id="kaeufer" aria-labelledby="kaeufer-titel">

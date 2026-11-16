@@ -4,7 +4,6 @@ title: "Kostenlose Immobilienbewertung Berlin"
 description: "Kostenlose Immobilienbewertung durch Ihren Ansprechpartner vor Ort, meist noch am selben Tag. Für Wohnungen, Häuser, Mehrfamilienhäuser und Grundstücke in Berlin, Brandenburg, Leipzig und Dresden."
 permalink: immobilienbewertung/index.html
 canonicalPath: /immobilienbewertung/
-partnerNachFaq: true  # Update 54 §1: Partnerblock unter den Häufigen Fragen (nur mit freigaben.partner)
 # Neue Seite nach Brief Design-Pass §4.2. Versprochen wird nur, was stimmt: persönliche Wertermittlung
 # durch den regionalen Ansprechpartner, meist am selben Tag; kein automatischer Online-Preis.
 # Das Formular schickt wie die bestehenden Formulare an propstack-lead (Skript in fg-design.js).
@@ -268,6 +267,10 @@ service:
         </tbody>
       </table>
     </div>
+    {#- Update 62 §3: Partner Gutachten.org mit Verkehrswertgutachten, nach dem Text zum Gutachten; die kostenlose Bewertung bleibt
+        der Hauptaufruf (Knopf hier nur sekundär). Nur mit freigaben.partner. #}
+    {%- set partnerProdukte = ["verkehrswert"] %}{% set partnerEingebettet = true %}{% set partnerEbene = 3 %}
+    {% include "fgs-partner.njk" %}
   </div>
 </section>
 
