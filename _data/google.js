@@ -32,10 +32,10 @@ module.exports = {
   // Alle dateLabel auf die Anzeige vom 06.11.2026 gesetzt. Keine nennt Adresse oder Preis eines Objekts (Timons Regel).
   // Update 59 §1.3 (16.11.2026): zwei neue Rezensionen übernommen (öffentliche Google-Suche, Dialog „Rezensionen“, hl=de,
   // „Neueste“), beide 5 Sterne, Wortlaut unverändert und ohne Zeilenumbruch. Name genau wie Google ihn zeigt (Auftrag Update 59 §1.3),
-  // daher hier Vor- und Nachname statt nur Vorname. Alle dateLabel auf die Anzeige vom 16.11.2026 gesetzt; die 25 älteren Texte
+  // daher zuerst Vor- und Nachname. Update 60 §1 (16.11.2026): Regel der Seite, nur Vorname („Shpresa“). Alle dateLabel auf die Anzeige vom 16.11.2026 gesetzt; die 25 älteren Texte
   // unverändert (Anfang und Reihenfolge verglichen). Keine nennt Adresse oder Preis eines Objekts.
   reviews: [
-    { author: "Shpresa Avdijaj", dateLabel: "vor 3 Tagen", rating: 5, text: "Kompetente Beratung und ein sehr angenehmer Kontakt. Alles lief reibungslos und unkompliziert." },
+    { author: "Shpresa", dateLabel: "vor 3 Tagen", rating: 5, text: "Kompetente Beratung und ein sehr angenehmer Kontakt. Alles lief reibungslos und unkompliziert." },
     { author: "Alex", dateLabel: "vor 6 Tagen", rating: 5, text: "Sehr angenehme und vor allem ehrliche Beratung. Man wird zu nichts gedrängt und bekommt realistische Einschätzungen – sowohl zum Objekt als auch zur Finanzierung. Die Abwicklung lief zügig und absolut zuverlässig. Sehr professionelles Team, gerne wieder!" },
     { author: "Lajosch", dateLabel: "vor einer Woche", rating: 5, text: "In besten Händen, mit guter Laune vorprogrammiert" },
     { author: "Dominik", dateLabel: "vor einer Woche", rating: 5, text: "Sehr gute und Kompetente Beratung" },
