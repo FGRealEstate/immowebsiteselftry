@@ -429,6 +429,14 @@ function addIntegerDetail(list, label, input, suffix = "") {
     list.push({ label, value: clean });
 }
 
+function addNumberDetail(list, label, input, suffix = "") {
+    const clean = formatNumber(input, suffix);
+    if (!clean) return;
+    if (isPlaceholder(label, clean)) return;
+
+    list.push({ label, value: clean });
+}
+
 function addDateDetail(list, label, input) {
     const clean = formatDate(input);
     if (!clean) return;
@@ -1363,7 +1371,8 @@ function buildUnit(unit) {
     addAreaDetail(details, "Grundstücksfläche", unit.plot_area);
     addAreaDetail(details, "Balkon-/Terrassenfläche", unit.balcony_area);
     addAreaDetail(details, "Gartenfläche", unit.garden_area);
-    addIntegerDetail(details, "Zimmer", roomsRaw);
+    // Update 59 §1.2 (16.11.2026): Zimmer genau wie aus Propstack (2,5 bleibt 2,5), nicht auf ganze Zahlen gerundet.
+    addNumberDetail(details, "Zimmer", roomsRaw);
     addIntegerDetail(details, "Schlafzimmer", bedroomsRaw);
     addIntegerDetail(details, "Badezimmer", bathroomsRaw);
     addDetail(details, "Objektart", propertyType);
@@ -1474,7 +1483,7 @@ function buildUnit(unit) {
         usable_area_raw: usableAreaRaw,
         usable_area: formatNumber(usableAreaRaw, " m²"),
         rooms_raw: roomsRaw,
-        rooms: formatInteger(roomsRaw),
+        rooms: formatNumber(roomsRaw),
         bedrooms_raw: bedroomsRaw,
         bedrooms: formatInteger(bedroomsRaw),
         bathrooms_raw: bathroomsRaw,

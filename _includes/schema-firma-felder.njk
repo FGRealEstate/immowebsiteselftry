@@ -1,9 +1,10 @@
 {#- Update 55 §3.2.2 (11.11.2026): Kennzeichen des Unternehmens für jeden RealEstateAgent-Eintrag (Startseite, Kontakt,
     Gebietsseiten), damit KI-Werkzeuge Fischer & Geserich nicht mit anderen „FG“-Firmen verwechseln.
-    Handelsregister wörtlich wie im Impressum. Wird innerhalb eines JSON-Objekts eingebunden; endet mit Komma.
+    Handelsregister wörtlich wie im Impressum.
+    Update 59 §1.1 (16.11.2026): „F&G“ und „F&G Immobilien“ als Marke in alternateName; „FG“ allein nie. Wird innerhalb eines JSON-Objekts eingebunden; endet mit Komma.
     firmaGebiet = true: dazu areaServed mit jedem Gebiet (_data/serviceArea.js, schemaPlacesFirma). -#}
       "legalName": "Fischer & Geserich Real Estate GmbH",
-      "alternateName": ["Fischer & Geserich", "Fischer und Geserich", "F&G Real Estate"],
+      "alternateName": ["Fischer & Geserich", "Fischer und Geserich", "F&G Real Estate", "F&G", "F&G Immobilien"],
       "identifier": [
         { "@type": "PropertyValue", "name": "Handelsregisternummer", "value": "HRB 283559 B", "description": "Amtsgericht Charlottenburg" },
         { "@type": "PropertyValue", "propertyID": "EUID", "name": "European Unique Identifier", "value": "DEF1103R.HRB283559B" }

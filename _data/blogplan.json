@@ -1,7 +1,13 @@
 {
  "_hinweis": "Update 42 §2 (07.11.2026): Artikelplan als Daten. Ein Artikel erscheint mit dem ersten Build an seinem Datum (deutsche Zeit), wenn er bis 18:00 Uhr am Vorabend bereit war; sonst nimmt der nächste bereite Artikel den Termin, und der späte bekommt den nächsten Termin, nachdem er bereit ist (Update 55 §1.3). Regeln und Prüfung: scripts/blogplan.js. offen: bekannte offene Punkte je Artikel für die Abendmail an Peer (Mo und Do 18 Uhr, netlify/functions/blog-abendpruefung.js); nach dem Beheben den Eintrag löschen. bereit setzen: python3 Blogs/design-muster/_build/live.py <Repo> --bereit <slug> (erst wenn Timons Korrekturen eingearbeitet und die Bilder ohne Menschen und Hände sind). Plan: Update 38 v2 §2, 2 pro Woche, Di und Fr; seit Update 55 §1.2 (11.11.2026) ab Nr. 19 am 13.11.2026 alle einen Termin später, bis 12.03.2027. Peer, 15.11.2026 („post two more blogs on the live website“): Nr. 3 und Nr. 4 am So 15.11.2026 von Hand live (vonHand: true, belegen keinen Termin), alle übrigen ab Nr. 5 zwei Termine früher, letzter Termin 05.03.2027 (PLAN.md).",
  "automatikSeit": "2026-11-07",
- "offen": {},
+ "offen": {
+  "energiezustand-und-finanzierung": [
+   "Text, Timons Antwort 1 (Update 59 §1.4): Darf sein leicht geglättetes Zitat so stehen? „Ein Haus mit Energieeffizienzklasse F zu 100 Prozent des Kaufpreises zu finanzieren, das bringt den Banken heute nichts mehr. Sie wollen, dass ein solches Haus energetisch saniert wird.“",
+   "Text, Timons Antwort 2 (Update 59 §1.4): Rechenbeispiel Wohnung in einem Mehrfamilienhaus der Klasse G, 220.000 € plus 40.000 € Modernisierung. In einer Eigentümergemeinschaft entscheidet die Gemeinschaft über die Sanierung, nicht der Käufer: Beispiel so lassen oder ein Haus nehmen?",
+   "Bilder: keine mit Menschen oder Händen (16.11.2026 geprüft). Klassengrenzen der Grafik stimmen mit Anlage 10 GEG (16.11.2026 geprüft)."
+  ]
+ },
  "artikel": [
   { "nr": 1, "slug": "beleihungsauslauf-und-kondition", "datum": "2026-10-22", "seitenTitel": "Beleihungsauslauf bei 100 und 110 %" },
   { "nr": 2, "slug": "zinsbindung-strategisch-waehlen", "datum": "2026-10-22", "seitenTitel": "Zinsbindung und Forward-Darlehen" },
