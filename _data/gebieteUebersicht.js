@@ -8,6 +8,7 @@
 const fs = require("fs");
 const path = require("path");
 const loadGebiete = require("./gebiete.js");
+const { frei } = require("../scripts/gebiet-frei.js");
 
 const file = path.join(__dirname, "..", "content", "uebersicht", "standorte.json");
 
@@ -15,6 +16,11 @@ module.exports = () => {
   if (!fs.existsSync(file)) return null;
   const data = JSON.parse(fs.readFileSync(file, "utf8"));
   const bySlug = new Map(loadGebiete().map((page) => [page.slug, page]));
+  // Update 61: Seiten mit `freigabe` ohne offenen Schalter (scripts/gebiet-frei.js) fehlen still, alle anderen Slugs müssen stimmen.
+  const gesperrt = new Set(fs.readdirSync(path.join(__dirname, "..", "content", "gebiete")).filter((f) => f.endsWith(".json"))
+    .map((f) => JSON.parse(fs.readFileSync(path.join(__dirname, "..", "content", "gebiete", f), "utf8")))
+    .filter((page) => !frei(page)).map((page) => page.slug));
+  const offen = (slug) => !gesperrt.has(slug);
   const find = (slug) => {
     const page = bySlug.get(slug);
     if (!page) throw new Error(`[gebieteUebersicht] Gebietsseite "${slug}" gibt es nicht (content/gebiete/)`);
@@ -38,7 +44,7 @@ module.exports = () => {
   const regionen = data.regionen.map((region) => {
     const fotoPage = region.foto ? find(region.foto) : null;
     // gruppe.zeilen: eigene Zeile unter dem Namen, wenn die Seite keinen Landkreis hat (Final Copy Pass §13: „Potsdam / Landeshauptstadt“).
-    const gruppen = region.gruppen.map((gruppe) => ({ ...gruppe, seiten: gruppe.seiten.map((slug) => {
+    const gruppen = region.gruppen.map((gruppe) => ({ ...gruppe, seiten: gruppe.seiten.filter(offen).map((slug) => {
       const l = link(find(slug));
       return (gruppe.zeilen || {})[slug] ? { ...l, zeile: gruppe.zeilen[slug] } : l;
     }) }));

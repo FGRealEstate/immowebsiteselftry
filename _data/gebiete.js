@@ -12,6 +12,7 @@
 const fs = require("fs");
 const path = require("path");
 
+const { frei, mitFreigaben } = require("../scripts/gebiet-frei.js");
 const dir = path.join(__dirname, "..", "content", "gebiete");
 const imageDir = path.join(__dirname, "..", "images", "gebiete");
 
@@ -133,7 +134,8 @@ module.exports = () => {
     checkFootnotes(page, file);
     page.zahlen = (page.zahlen || []).map((z) => ({ ...z, quelleNr: quelleNr(z, page.quellen || [], file) }));
     [page.hero, page.band, ...(page.abschnitte || []).map((a) => a.bild)].forEach((spec) => attribution(spec, file));
-    return page;
+    // Update 61: geprüft wird jede Datei, gebaut nur mit Freigabe (scripts/gebiet-frei.js)
+    return frei(page) ? mitFreigaben(page) : null;
   }).filter(Boolean);
   // Übergeordnete Seite: neue Gebietsseite oder (für Berlin, bis zur neuen Übersicht) die alte Standortseite.
   const legacyDir = path.join(__dirname, "..", "content", "standorte");

@@ -486,8 +486,11 @@ module.exports = function(eleventyConfig) {
     // aus Git (scripts/inhaltsstand.js): die eigene JSON-Datei mit Text und Zahlen und die Vorlage der Seite. Eine Änderung
     // der Vorlage zählt für alle Seiten, die sie baut. Gemeinsame Teile aller Seiten (Kopf, Fuß, Bewertungen,
     // Ansprechpartner) und reiner Programmcode (_data/*.js) zählen nicht. Ohne Git-Geschichte wie bisher das Feld `updated`.
+    // Update 61: Gebietsseiten ohne offene Freigabe zählen nicht (sonst bekäme die alte Eberswalde-Seite das Datum der neuen)
     const gebietDatei = new Map(fs.readdirSync("content/gebiete").filter((f) => f.endsWith(".json"))
-      .map((f) => [`/standorte/${JSON.parse(fs.readFileSync(`content/gebiete/${f}`, "utf8")).slug}/`, `content/gebiete/${f}`]));
+      .map((f) => [f, JSON.parse(fs.readFileSync(`content/gebiete/${f}`, "utf8"))])
+      .filter(([, page]) => require("./scripts/gebiet-frei.js").frei(page))
+      .map(([f, page]) => [`/standorte/${page.slug}/`, `content/gebiete/${f}`]));
     const standortQuellen = (loc) => {
       if (loc === "/standorte/") return ["standorte.njk", "content/uebersicht/standorte.json"];
       if (gebietDatei.has(loc)) return [gebietDatei.get(loc), "gebiet-detail.njk"];

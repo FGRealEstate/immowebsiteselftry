@@ -6,13 +6,16 @@
 // Finanzierungen werden unabhängig davon deutschlandweit begleitet.
 const fs = require("fs");
 const path = require("path");
+const freigaben = require("./freigaben.js");
+const { frei } = require("../scripts/gebiet-frei.js");
 
 const slugsIn = (name) => {
   const dir = path.join(__dirname, "..", "content", name);
   if (!fs.existsSync(dir)) return [];
   return fs.readdirSync(dir).filter((file) => file.endsWith(".json")).map((file) => {
     try {
-      return JSON.parse(fs.readFileSync(path.join(dir, file), "utf8")).slug;
+      const page = JSON.parse(fs.readFileSync(path.join(dir, file), "utf8"));
+      return frei(page) ? page.slug : null;
     } catch (error) {
       return null;
     }
@@ -46,6 +49,8 @@ const landkreise = [
 const towns = [
   place("Oranienburg", "oranienburg"),
   place("Bernau bei Berlin", "bernau", { short: "Bernau" }),
+  // Update 61 §2.8: Eberswalde als 27. Gebiet, erst mit freigaben.eberswalde (Menü, Fuß, Kontakt, areaServed)
+  ...(freigaben.eberswalde ? [place("Eberswalde", "eberswalde")] : []),
   place("Falkensee", "falkensee"),
   // FG-Timon-Answers-Update §4 (29.10.2026): Potsdam als eigene Stadtseite, Menü „15 Gebiete“
   place("Potsdam", "potsdam"),

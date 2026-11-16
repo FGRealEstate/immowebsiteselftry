@@ -7,13 +7,15 @@
  */
 const fs = require("fs");
 const path = require("path");
+const { frei } = require("./gebiet-frei.js");
 
 const dir = path.join(__dirname, "..", "content", "gebiete");
 const ziel = path.join(__dirname, "..", "netlify", "functions", "_shared", "gebiet-kontakte.json");
 
 function auszug() {
-  return fs.readdirSync(dir).filter((f) => f.endsWith(".json")).sort().map((f) => {
-    const d = JSON.parse(fs.readFileSync(path.join(dir, f), "utf8"));
+  return fs.readdirSync(dir).filter((f) => f.endsWith(".json")).sort().map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")))
+    .filter(frei) // Update 61: Seiten mit `freigabe` erst mit offenem Schalter
+    .map((d) => {
     return {
       slug: d.slug,
       name: d.name,

@@ -1,0 +1,357 @@
+{
+  "slug": "eberswalde",
+  "freigabe": "eberswalde",
+  "name": "Eberswalde",
+  "nameLang": "Eberswalde",
+  "kontakt": "timon",
+  "kreis": {
+    "name": "Landkreis Barnim",
+    "url": "/standorte/barnim/"
+  },
+  "title": "Immobilienmakler Eberswalde | Fischer & Geserich",
+  "description": "Immobilienmakler für Eberswalde und Finow: Verkauf, Kauf und Finanzierung aus einer Hand, mit amtlichen Preisen aus 2025. Kostenlose Wertermittlung.",
+  "h1": "Immobilie verkaufen, kaufen und finanzieren in Eberswalde",
+  "kurzantwort": "Fischer & Geserich ist Ihr Makler für Eberswalde, von der Innenstadt über Westend, Nordend und das Brandenburgische Viertel bis Finow, Sommerfelde, Tornow und Spechthausen. Wir bewerten und verkaufen Häuser und Wohnungen, beraten Käufer und Kapitalanleger und vergleichen die Finanzierung.",
+  "kurzantwortMehr": "Fischer & Geserich ist ein Berliner Unternehmen mit Erlaubnissen nach § 34c und § 34i GewO für die Vermittlung von Immobilien und Darlehen. Für Eberswalde ist Timon Fischer Ihr Ansprechpartner, Geschäftsführer und verantwortlich für die Immobilienfinanzierung.",
+  "stand": "November 2026",
+  "standHinweis": "Stand der Zahlen: Die Preise auf dieser Seite stammen aus dem aktuellen Jahresbericht des Gutachterausschusses mit allen Verkäufen aus 2025. Erste Werte für 2026: Im ersten Halbjahr 2026 zählte der Gutachterausschuss im Landkreis Barnim 840 Kauffälle, rund 18 % weniger als im zweiten Halbjahr 2025. Freistehende Ein- und Zweifamilienhäuser im weiteren Metropolenraum des Barnim, zu dem Eberswalde gehört, kosteten im ersten Quartal 2.600 €/m² und im zweiten Quartal 2.070 €/m² Wohnfläche, nach 2.500 €/m² im Jahr 2025; die Werte sind vorläufig. Alle diese Zahlen sind Mittelwerte und keine Preise für einzelne Objekte; teurere Objekte wie Neubauten oder Toplagen ziehen sie nach oben. Für eine gewöhnliche Bestandsimmobilie liegen die Preise, die 2026 tatsächlich vereinbart werden, nach unserer Erfahrung spürbar darunter. Was Ihre Immobilie heute wert ist, zeigt deshalb erst die Bewertung genau dieses Objekts.",
+  "updated": "2026-11-16",
+  "zahlen": [
+    {
+      "wert": "100–190 €/m²",
+      "label": "Bodenrichtwerte für Ein- und Zweifamilienhaus-Grundstücke in Eberswalde und Finow",
+      "detail": "Spanne laut Gutachterausschuss. Baureife Wohngrundstücke kosteten 2025 im Mittel 141 €/m² aus 21 Kauffällen.",
+      "quelle": "Gutachterausschuss Barnim, Grundstücksmarktbericht 2025",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+      "stichtag": "Stichtag 01.01.2026"
+    },
+    {
+      "wert": "Ø 2.570 €/m²",
+      "label": "Freistehende Ein- und Zweifamilienhäuser in Eberswalde, normierter Preis je m² Wohnfläche",
+      "detail": "35 Kauffälle aller Baujahre, normiert 332.000 € bei 128 m² Wohnfläche. Vorjahr: Ø 2.480 €/m².",
+      "quelle": "Gutachterausschuss Barnim, Grundstücksmarktbericht 2025",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "Ø 1.950 €/m²",
+      "label": "Weiterverkaufte Wohnungen in Eberswalde, Baujahre nach 1992",
+      "detail": "Nur 3 Kauffälle, Spanne 1.670 bis 2.200 €/m², Vorjahr Ø 1.700 €/m². Plattenbauwohnungen: Ø 1.550 €/m² aus 6 Kauffällen.",
+      "quelle": "Gutachterausschuss Barnim, Grundstücksmarktbericht 2025",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+      "stichtag": "Kaufverträge 2025"
+    },
+    {
+      "wert": "8 €/m²",
+      "label": "Mittlere Nettokaltmiete für Wohnungen in Eberswalde",
+      "detail": "14 Mietfälle 2024 und 2025, Spanne 6,3 bis 11,0 €/m². Eberswalde hat einen Mietspiegel, die Mietpreisbremse gilt nicht.",
+      "quelle": "Gutachterausschuss Barnim, Grundstücksmarktbericht 2025",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+      "stichtag": "Mietdaten 2024–2025"
+    },
+    {
+      "wert": "41.867",
+      "label": "Einwohner am 31.12.2025",
+      "detail": "386 mehr als ein Jahr zuvor; 2025 zogen 787 Menschen mehr zu als fort.",
+      "quelle": "Amt für Statistik Berlin-Brandenburg",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stichtag": "Stand 31.12.2025"
+    }
+  ],
+  "abschnitte": [
+    {
+      "h2": "Stadtmitte, Leibnizviertel, Ostend und Südend",
+      "absaetze": [
+        "Die Stadt Eberswalde umfasst die Ortsteile Eberswalde, Finow, Sommerfelde, Spechthausen und Tornow.[[1]] Am 31.12.2025 hatte sie 41.867 Einwohner, 386 mehr als ein Jahr zuvor. Gewachsen ist sie nur durch Zuzug: 2025 starben 661 Menschen, geboren wurden 268.[[2]] Das Landesamt für Bauen und Verkehr erwartet bis 2040 ein Plus von 4,3 %.[[9]]",
+        "Die Stadt selbst führt eine Ortsteilstatistik aus ihrem Melderegister, deren Zahlen über denen der amtlichen Statistik liegen. Im größten Bezirk mit Stadtmitte, Leibnizviertel, Ostend und Südend lebten am 31.05.2024 17.131 Menschen mit Hauptwohnsitz.[[4]] Anders als die Orte am Berliner Stadtrand zählt Eberswalde im Grundstücksmarktbericht zum weiteren Metropolenraum; die Bodenrichtwerte für Ein- und Zweifamilienhaus-Grundstücke liegen in Eberswalde und Finow zum 01.01.2026 zwischen 100 und 190 €/m².[[1]]",
+        "In ihrer 2023 beschlossenen Entwicklungsstrategie Wohnbauflächen nennt die Stadt die Innenstadt mit Leibnizviertel, Schleusenstraße und Ackerstraße sowie Ostend als Schwerpunkte für neue Wohnungen. In der Altstadt sollen Baulücken geschlossen und Brachen wie Schwärzeblick, Alte Möbelfabrik und Michaelisstraße neu genutzt werden, in der dichten Innenstadt vorzugsweise mit Geschosswohnungsbau; in Ostend sind am Siedlungsrand vor allem Ein- und Zweifamilienhäuser denkbar. Die Stadt betont, dass solche Potenzialflächen aktiviert werden können, aber nicht müssen.[[5]]"
+      ],
+      "bild": {
+        "name": "eberswalde-maria-magdalenen-kirche",
+        "alt": "Die Maria-Magdalenen-Kirche in Eberswalde: ein Backsteinbau mit spitzem Turm und Chor, davor Bäume und eine gepflasterte Straße",
+        "caption": "Die Maria-Magdalenen-Kirche in der Eberswalder Innenstadt.",
+        "credit": "Hans G. Oberlack, CC BY 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Maria-Magdalenen-Kirche_Eberswalde_2026_ESE.jpg"
+      }
+    },
+    {
+      "h2": "Westend, Nordend, Bahnhof und Brandenburgisches Viertel",
+      "absaetze": [
+        "Im Bezirk Nordend und Westend lebten am 31.05.2024 7.779 Menschen mit Hauptwohnsitz, im Brandenburgischen Viertel 6.928.[[4]] 18.445 der 24.337 Eberswalder Wohnungen gehören zu Gebäuden mit drei und mehr Wohnungen, Stand 31.12.2025.[[3]]",
+        "Am Hauptbahnhof halten RE3, RB24, RB60 und RB63 sowie einzelne ICE.[[7]] Westlich davon will die Stadt Brachen neu nutzen, darunter das Gelände der früheren Hufnagelfabrik für kleinteiligen Geschosswohnungsbau.[[5]] Für das Hufnagelquartier wird der Bebauungsplan Nr. 442 entwickelt. Als Ausgleich für neu versiegelte Flächen wurden dafür im Brandenburgischen Viertel ab dem 4. Mai 2026 Park- und Gehwegflächen entsiegelt und begrünt; fertig sein sollten die Arbeiten bis zum 19. Juni 2026.[[6]]",
+        "Im Brandenburgischen Viertel will die Stadt frühere Rückbauflächen wieder für Wohnungen nutzen, mit Geschosswohnungsbau und mit Ein- und Zweifamilienhäusern.[[5]] Plattenbauwohnungen der Baujahre 1961 bis 1990 kosteten in Eberswalde 2025 im Mittel 1.550 €/m² aus 6 Kauffällen, nach 1.630 €/m² im Jahr 2024 und 1.860 €/m² im Jahr 2023.[[1]]"
+      ],
+      "bild": {
+        "name": "eberswalde-hauptbahnhof-re3",
+        "alt": "Ein roter Regionalzug des RE3 am Bahnsteig des Eberswalder Hauptbahnhofs, dahinter das gelbe Bahnhofsgebäude",
+        "caption": "Ein Zug des RE3 am Hauptbahnhof Eberswalde.",
+        "credit": "NutzerAusBerlin, CC0",
+        "url": "https://commons.wikimedia.org/wiki/File:Eberswalde_Central_Station_RE3_to_Angermünde_20230619.jpg"
+      }
+    },
+    {
+      "h2": "Finow, Clara-Zetkin-Siedlung, Sommerfelde, Tornow und Spechthausen",
+      "absaetze": [
+        "In Finow lebten am 31.05.2024 8.906 Menschen mit Hauptwohnsitz, in der Clara-Zetkin-Siedlung 1.135, in Sommerfelde 448, in Tornow 329 und in Spechthausen 294.[[4]] Finow und Messingwerk-Ost gehören zu den Schwerpunkten, an denen die Stadt neue Wohnungen vorrangig entwickeln will.[[5]]",
+        "Baureife Grundstücke für den individuellen Wohnungsbau kosteten in Eberswalde 2025 im Mittel 141 €/m² nach 130 €/m² im Vorjahr, bei 21 Kauffällen und im Mittel 725 m² Fläche. Während die Preise in der Hälfte der Ämter und Gemeinden des Landkreises sanken, stiegen sie in Eberswalde. Im neuen Wohngebiet am Christel-Brauns-Weg in Finow wurden 17 Grundstücke mit im Mittel 690 m² für 140 €/m² verkauft.[[1]]"
+      ],
+      "bild": {
+        "name": "eberswalde-messingwerksiedlung-wasserturm",
+        "alt": "Eine gepflasterte Straße führt über eine Brücke auf Häuser mit roten Ziegeldächern zu, dahinter ragt der steinerne Finower Wasserturm mit seinem Bogen auf, ringsum Bäume im Herbstlaub",
+        "caption": "Die Messingwerksiedlung in Finow mit dem Finower Wasserturm.",
+        "credit": "Sinuhe20, CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Eberswalde,_Messingwerksiedlung_und_Wasserturm.JPG"
+      }
+    }
+  ],
+  "band": {
+    "name": "eberswalde-finowkanal-wolfswinkel",
+    "alt": "Backsteinhallen einer Fabrik mit hohem Wasserturm am Ufer des Finowkanals, davor die Wasserfläche, links und rechts Bäume",
+    "caption": "Die Papierfabrik Wolfswinkel mit ihrem Wasserturm am Finowkanal.",
+    "credit": "Sinuhe20, CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Eberswalde,_Papierfabrik_Wolfswinkel_mit_Wasserturm,_Finowkanal.JPG"
+  },
+  "verkaufen": {
+    "h2": "Immobilie in Eberswalde verkaufen",
+    "absaetze": [
+      "Von den 197 Kauffällen 2025 in Eberswalde betrafen 129 bebaute Grundstücke, 40 unbebaute Bauflächen und 16 Wohnungs- und Teileigentum; bebaute Grundstücke wurden rund 34 % häufiger verkauft als im Vorjahr. Bei freistehenden Häusern hängt der Preis stark am Baujahr: Normiert kosteten sie bis Baujahr 1945 im Mittel 2.430 €/m² Wohnfläche aus 14 Kauffällen, mit Baujahr 1946 bis 1990 2.310 €/m² aus 13 und 1991 bis 2015 3.170 €/m² aus 7.[[1]] Bei so wenigen Fällen je Gruppe ziehen wir für die Preisstrategie zusätzlich den Bodenrichtwert Ihrer Zone und die aktuelle Konkurrenz heran. Bei vermieteten Immobilien zählt außerdem die Nettokaltmiete, die heute gezahlt wird.",
+      "Doppelhaushälften und Reihenhäuser kosteten 2025 im Mittel 2.350 €/m² aus 20 Kauffällen, nach 2.470 €/m² im Vorjahr.[[1]] Durch den Generationswechsel kommen nach Annahme der Stadt bis 2035 zwischen 50 und 100 Wohnungen in bestehenden Ein- und Zweifamilienhäusern auf den Markt.[[5]] Eine gebrauchte Wohnung vergleichen wir mit Weiterverkäufen in Eberswalde; bei Baujahren nach 1992 gab es 2025 nur 3 davon.[[1]]"
+    ]
+  },
+  "kaufen": {
+    "h2": "Kaufen und investieren in Eberswalde",
+    "absaetze": [
+      "Wenn Sie selbst einziehen und nach Berlin pendeln, entscheidet der Bahnhof mit: Der RE3 fährt ohne Umstieg in 36 Minuten zum Berliner Hauptbahnhof, bis Friedrichstraße sind es mit Umstieg in Gesundbrunnen 42 Minuten.[[7]] Die Preise liegen deutlich unter denen am Berliner Stadtrand: Freistehende Häuser kosteten 2025 in Eberswalde im Mittel 2.570 €/m² Wohnfläche, in Bernau 3.340 €/m².[[1]]",
+      "Wer vermieten will: Die Mietpreisbremse gilt in Eberswalde nicht; im Barnim gilt sie seit dem 01.01.2026 nur in Ahrensfelde, Bernau bei Berlin, Biesenthal und Panketal.[[8]] Einen Mietspiegel nennt der Gutachterausschuss im Landkreis nur für Eberswalde. Seine eigene Mietübersicht ergibt für Eberswalde eine mittlere Nettokaltmiete von 8 €/m² aus 14 Fällen der Jahre 2024 und 2025, nach seiner Aussage nur eine bedingte Orientierung.[[1]]",
+      "Mehrfamilienhäuser wechselten in Eberswalde 2025 22-mal den Eigentümer, zu Preisen zwischen rund 52.000 € und 1,4 Mio. €. Aus 15 Verkäufen der Jahre 2023 bis 2025 hat der Gutachterausschuss einen mittleren Liegenschaftszins von 3,0 % abgeleitet, bei einer Spanne von 1,0 bis 5,2 %. Die Häuser waren im Mittel 1916 gebaut, die Nettokaltmiete lag im Mittel bei 6,30 €/m², der Rohertragsfaktor bei 16.[[1]]"
+    ]
+  },
+  "finanzieren": {
+    "h2": "Finanzierung für Eberswalde",
+    "absaetze": [
+      "Ein freistehendes Haus bis Baujahr 1945 kostete in Eberswalde 2025 normiert 314.000 €, eines der Baujahre 1991 bis 2015 452.000 €, eine Doppelhaushälfte oder ein Reihenhaus im Mittel aller Baujahre 266.000 €.[[1]] Die Finanzierung vergleichen wir über Europace und Baufinex bei rund 500 Banken. Passt Ihr Fall nicht in deren Raster, etwa weil Sie Unternehmer sind, sprechen wir Banken direkt an. Bei einem Haus bis Baujahr 1945 gehört der Sanierungsbedarf vorab in die Kalkulation, bei einer Plattenbauwohnung die Erhaltungsrücklage und geplante Sanierungen der Eigentümergemeinschaft."
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Wie hoch ist der Bodenrichtwert in Eberswalde und Finow?",
+      "antwort": "Für Ein- und Zweifamilienhaus-Grundstücke liegen die Bodenrichtwerte in Eberswalde und Finow zum 01.01.2026 zwischen 100 und 190 €/m². Baureife Wohngrundstücke wurden 2025 im Mittel für 141 €/m² verkauft, im Median für 136 €/m², bei 21 Kauffällen.[[1]] Den Wert für Ihre Adresse prüfen wir bei der Bewertung.",
+      "herkunft": "Google-Autocomplete „bodenrichtwert eberswalde finow“ und „bodenrichtwert eberswalde 2025“ (research/serp/autocomplete-2026-11-16-eberswalde.json)"
+    },
+    {
+      "frage": "Was kostet ein Haus in Eberswalde?",
+      "antwort": "Freistehende Ein- und Zweifamilienhäuser kosteten 2025 normiert im Mittel 2.570 €/m² Wohnfläche, das sind 332.000 € bei 128 m² Wohnfläche und 870 m² Grundstück, aus 35 Kauffällen mit einer Spanne von 950 bis 3.790 €/m². Doppelhaushälften und Reihenhäuser kosteten im Mittel 2.350 €/m² oder 266.000 €.[[1]] Der Grundstücksmarktbericht nennt diese Werte für die ganze Stadt, nicht für einzelne Stadtteile wie Finow, Nordend oder Westend.",
+      "herkunft": "Google-Autocomplete „immobilienpreise eberswalde“, „quadratmeterpreis eberswalde“, „haus kaufen eberswalde finow“, „haus kaufen eberswalde nordend“ und „haus kaufen eberswalde westend“ (research/serp/autocomplete-2026-11-16-eberswalde.json)"
+    },
+    {
+      "frage": "Was kostet eine Wohnung in Eberswalde?",
+      "antwort": "Weiterverkaufte Wohnungen der Baujahre nach 1992 kosteten 2025 im Mittel 1.950 €/m², allerdings bei nur 3 Kauffällen und einer Spanne von 1.670 bis 2.200 €/m². Plattenbauwohnungen der Baujahre 1961 bis 1990 kosteten im Mittel 1.550 €/m² aus 6 Kauffällen, bei im Mittel 65 m² Wohnfläche.[[1]] Werte am oberen Ende erzielen nur wenige Wohnungen; für eine gewöhnliche Bestandswohnung liegt der Preis heute nach unserer Erfahrung deutlich darunter.",
+      "herkunft": "Google-Autocomplete „wohnung kaufen eberswalde“ und „2 raum wohnung eberswalde kaufen“ (research/serp/autocomplete-2026-11-16-eberswalde.json)"
+    },
+    {
+      "frage": "Gibt es einen Mietspiegel für Eberswalde?",
+      "antwort": "Ja, die Stadt Eberswalde hat einen Mietspiegel; der Gutachterausschuss nennt im Landkreis Barnim nur für Eberswalde einen. Seine eigene Mietübersicht ergibt für Eberswalde 8 €/m² Nettokaltmiete im Mittel aus 14 Fällen der Jahre 2024 und 2025, bei einer Spanne von 6,3 bis 11,0 €/m². Diese Übersicht ist ausdrücklich kein Mietspiegel und taugt nach Aussage des Gutachterausschusses nur bedingt als Orientierung.[[1]]",
+      "herkunft": "Google-Autocomplete „mietspiegel eberswalde 2026“ und „qualifizierter mietspiegel eberswalde“ (research/serp/autocomplete-2026-11-16-eberswalde.json)"
+    },
+    {
+      "frage": "Gilt in Eberswalde die Mietpreisbremse?",
+      "antwort": "Nein. Im Landkreis Barnim gilt die Mietpreisbremse seit dem 01.01.2026 nur in Ahrensfelde, Bernau bei Berlin, Biesenthal und Panketal; die Verordnung läuft bis 31.12.2029.[[8]]",
+      "herkunft": "Google-Autocomplete „eberswalde mietpreisbremse“ (research/serp/autocomplete-2026-11-16-eberswalde.json)"
+    },
+    {
+      "frage": "Was ist mein Haus in Eberswalde wert?",
+      "antwort": "Das zeigt erst eine Bewertung genau dieses Hauses. Wir bewerten Ihr Haus oder Ihre Wohnung in Eberswalde ohne Kosten für Sie, das Ergebnis haben Sie in der Regel nach wenigen Stunden. Wir bewerten nach den Preisen, zu denen vergleichbare Häuser und Wohnungen in Ihrer Gegend tatsächlich verkauft wurden; bei Häusern und Grundstücken kommt der Bodenrichtwert dazu.",
+      "herkunft": "Google-Autocomplete „haus verkaufen eberswalde“ (research/serp/autocomplete-2026-11-16-eberswalde.json)"
+    }
+  ],
+  "nachbarn": [
+    {
+      "name": "Bernau bei Berlin",
+      "url": "/standorte/bernau/"
+    },
+    {
+      "name": "Oranienburg",
+      "url": "/standorte/oranienburg/"
+    },
+    {
+      "name": "Märkisch-Oderland",
+      "url": "/standorte/maerkisch-oderland/"
+    }
+  ],
+  "quellen": [
+    {
+      "name": "Grundstücksmarktbericht Landkreis Barnim 2025, Gutachterausschuss für Grundstückswerte im Landkreis Barnim (veröffentlicht 13.05.2026)",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GMB_BAR.pdf",
+      "stand": "Kaufverträge 2025, Bodenrichtwerte 01.01.2026"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht A I 4 – j / 25 (Bevölkerung)",
+      "url": "https://download.statistik-berlin-brandenburg.de/c2fab0c9bf655ce5/a46a1a83181e/SB_A01-04_00_2025j01_BB.xlsx",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Amt für Statistik Berlin-Brandenburg, Statistischer Bericht F I 1 – j / 25 (Wohnungsbestand)",
+      "url": "https://download.statistik-berlin-brandenburg.de/bbf10b1d56ae9884/446362e42c8c/SB_F01-01-00_2025j01_BB.xlsx",
+      "stand": "31.12.2025"
+    },
+    {
+      "name": "Stadt Eberswalde, Bürgeramt, Ortsteilstatistik (Melderegister der Stadt Eberswalde)",
+      "url": "https://www.eberswalde.de/publications/Ortsteilstatistik/Ortsteilstatistik_Mai_2024.pdf",
+      "stand": "31.05.2024, neueste veröffentlichte Ausgabe, abgerufen 16.11.2026"
+    },
+    {
+      "name": "Stadt Eberswalde, Entwicklungsstrategie Wohnbauflächen",
+      "url": "https://www.eberswalde.de/publications/Stadtentwicklung/Gesamtst%C3%A4dtische-Konzepte/2024-04-03_Entwicklungsstrategie_Wohnbauflaechen_gemaess_Beschluss_StVV_1.pdf",
+      "stand": "Beschluss der Stadtverordnetenversammlung vom 21.11.2023, abgerufen 16.11.2026"
+    },
+    {
+      "name": "Stadt Eberswalde, Pressemitteilung 71/2026 „Klimaanpassung und Entsiegelung im Brandenburgischen Viertel“",
+      "url": "https://www.eberswalde.de/publications/Pressemitteilungen/ARCHIV/2026/71-22.04.2026-Klimaanpassung-und-Entsiegelung-im-Barndenburgischen-Viertel_Mehr-Gr%C3%BCn-f%C3%BCr-bessere-Wohnqualit%C3%A4t71.pdf",
+      "stand": "22.04.2026"
+    },
+    {
+      "name": "VBB-Fahrplandaten (Linien und Abfahrten an Eberswalde Hauptbahnhof, Verbindungen bis Berlin Hauptbahnhof und S+U Friedrichstraße)",
+      "url": "https://v6.vbb.transport.rest/journeys?from=900350127&to=900100001&departure=2026-11-24T07:20%2B01:00",
+      "stand": "Fahrplan Dienstag 24.11.2026, abgefragt 16.11.2026"
+    },
+    {
+      "name": "Mietpreisbegrenzungsverordnung Brandenburg, Ministerium für Infrastruktur und Landesplanung",
+      "url": "https://mil.brandenburg.de/sixcms/media.php/9/Mietpreisbegrenzungsverordnung.pdf",
+      "stand": "gültig 01.01.2026–31.12.2029"
+    },
+    {
+      "name": "Landesamt für Bauen und Verkehr, Bevölkerungsvorausschätzung 2024 bis 2040, Anlage 3",
+      "url": "https://lbv.brandenburg.de/sixcms/media.php/9/31_Bevoelkerungsvorausschaetzung_2024-20.pdf",
+      "stand": "Basis 31.12.2023, mittlere Variante"
+    },
+    {
+      "name": "Gutachterausschuss für Grundstückswerte im Landkreis Barnim, Barnimer Grundstücksmarkt 1. Halbjahr 2026",
+      "url": "https://gutachterausschuss.brandenburg.de/sixcms/media.php/9/GA_BAR_1HJ_2026.pdf",
+      "stand": "Stand 17.09.2026, vorläufig"
+    }
+  ],
+  "pruefung": [
+    {
+      "zahl": "Ortsteile Eberswalde, Finow, Sommerfelde, Spechthausen, Tornow",
+      "fundstelle": "GMB_BAR.txt Zeilen 6651–6653 (Anlage Gemeinden)"
+    },
+    {
+      "zahl": "41.867 Einwohner, +386, Gestorbene 661, Geborene 268, Wanderungssaldo +787",
+      "fundstelle": "afs2025.xlsx, Blatt 3.1, Zeile Eberswalde"
+    },
+    {
+      "zahl": "LBV +4,3 % bis 2040",
+      "fundstelle": "LBV-PDF (lbv.txt) Zeile 1502, Anlage 3, mittlere Variante, Blatt 1: Eberswalde (amtsfrei) 41.180 (2023) → 42.950 (2040), +1.770, 4,3 %; am 16.11.2026 gegen die Quelle geprüft"
+    },
+    {
+      "zahl": "Ortsteilstatistik 31.05.2024: Eberswalde 1 17.131, Eberswalde 2 7.779, Brandenburgisches Viertel 6.928, Finow 8.906, Clara-Zetkin-Siedlung 1.135, Sommerfelde 448, Tornow 329, Spechthausen 294, alle 42.950 (Hauptwohnsitz)",
+      "fundstelle": "Ortsteilstatistik_Mai_2024.pdf, Spalte „mit Hauptwohnsitz“"
+    },
+    {
+      "zahl": "weiterer Metropolenraum",
+      "fundstelle": "GMB_BAR.txt Zeile 6729"
+    },
+    {
+      "zahl": "BRW EFH Eberswalde / Finow 100–190 €/m²",
+      "fundstelle": "GMB_BAR.txt Zeile 5436"
+    },
+    {
+      "zahl": "Entwicklungsschwerpunkte Innenstadt/Leibnizviertel/Schleusenstraße/Ackerstraße, Ostend, westliches Bahnhofsumfeld, Finow und Messingwerk-Ost, Brandenburgisches Viertel; Brachen Schwärzeblick, Alte Möbelfabrik, Michaelisstraße; Hufnagelfabrik; Rückbauflächen BV; Potenzialflächen „können aktiviert werden“; Generationswechsel 50–100 WE bis 2035",
+      "fundstelle": "Entwicklungsstrategie Wohnbauflächen, S. 2, 6–8, 11 (Beschluss StVV 21.11.2023)"
+    },
+    {
+      "zahl": "24.337 Wohnungen, 18.445 in Gebäuden mit 3+ Wohnungen",
+      "fundstelle": "fi1_2025.xlsx, Blatt 060, Zeile Eberswalde"
+    },
+    {
+      "zahl": "Linien RE3, RB24, RB60, RB63, ICE; RE3 36 min Hbf (07:53→08:29), 42 min Friedrichstraße (07:53→08:35, Umstieg Gesundbrunnen); 27 RE3 Richtung Berlin, 18 RB24",
+      "fundstelle": "VBB-Abfrage 16.11.2026 für Di 24.11.2026 (scratchpad u61/dep.json, vbb-*.json)"
+    },
+    {
+      "zahl": "B-Plan Nr. 442 Hufnagelquartier; Entsiegelung 04.05.–19.06.2026",
+      "fundstelle": "Pressemitteilung 71/2026, S. 1"
+    },
+    {
+      "zahl": "Plattenbau 1961–1990: 2025 1.550 (6 KF, 65 m²), 2024 1.630, 2023 1.860",
+      "fundstelle": "GMB_BAR.txt Zeilen 5026, 5043–5046 (Abb. 133)"
+    },
+    {
+      "zahl": "Bauland 21 KF, Mittel 141 (Vorjahr 130), Median 136, Fläche Mittel 725 m²",
+      "fundstelle": "GMB_BAR.txt Zeilen 1021–1029 (Abb. 26)"
+    },
+    {
+      "zahl": "Hälfte der Gemeinden rückläufig, Eberswalde steigend",
+      "fundstelle": "GMB_BAR.txt Zeilen 1080–1085"
+    },
+    {
+      "zahl": "Christel-Brauns-Weg 17 Verträge, 690 m², 140 €/m²",
+      "fundstelle": "GMB_BAR.txt Zeile 1106 (Abb. 27)"
+    },
+    {
+      "zahl": "197 KF: 129 bb, 40 ub, 16 ei",
+      "fundstelle": "GMB_BAR.txt Zeile 756"
+    },
+    {
+      "zahl": "bebaute Grundstücke +34 % Kauffälle",
+      "fundstelle": "GMB_BAR.txt Zeilen 2706–2708"
+    },
+    {
+      "zahl": "EFH: bis 1945 2.430 (14), 314.000 €; 1946–1990 2.310 (13); 1991–2015 3.170 (7), 452.000 €; gesamt 2.570 (35), VJ 2.480, 332.000 €, 128 m², 870 m², Spanne 950–3.790",
+      "fundstelle": "GMB_BAR.txt Zeilen 3392–3406"
+    },
+    {
+      "zahl": "DHH/RH 2.350 (20), VJ 2.470, 266.000 €",
+      "fundstelle": "GMB_BAR.txt Zeilen 4092–4103"
+    },
+    {
+      "zahl": "ETW nach 1992: 1.950, 1.670–2.200, 3 KF, VJ 1.700",
+      "fundstelle": "GMB_BAR.txt Zeile 4957 (Abb. 129)"
+    },
+    {
+      "zahl": "Miete 8 €/m², 6,3–11,0, 14 Fälle, 2024–2025; „nur bedingt als Orientierung“",
+      "fundstelle": "GMB_BAR.txt Zeilen 6072–6074, 6107"
+    },
+    {
+      "zahl": "Mietspiegel Eberswalde",
+      "fundstelle": "GMB_BAR.txt Zeile 5967"
+    },
+    {
+      "zahl": "Mietpreisbremse Barnim nur Ahrensfelde, Bernau, Biesenthal, Panketal; bis 31.12.2029; Eberswalde nicht genannt",
+      "fundstelle": "mpbv.txt Zeilen 28–31"
+    },
+    {
+      "zahl": "Bernau EFH Ø 3.340 €/m²",
+      "fundstelle": "bernau.json (GMB Barnim 2025), bernau.md Zeile 30"
+    },
+    {
+      "zahl": "MFH 22 KF, 52.000 bis 1,4 Mio. €",
+      "fundstelle": "GMB_BAR.txt Zeilen 4312–4313"
+    },
+    {
+      "zahl": "MFH Liegenschaftszins Eberswalde 15 KF 2023–2025: 3,0 % (1,0–5,2), Baujahr 1916, NKM 6,30, RoF 16",
+      "fundstelle": "GMB_BAR.txt Zeilen 4334–4336, 4362–4373 (Abb. 116)"
+    },
+    {
+      "zahl": "1. Hj. 2026: 840 KF, −18 %; wMR EFH 2.500 (2025), 2.600 (Q1), 2.070 (Q2)",
+      "fundstelle": "GA_BAR_1HJ_2026.pdf S. 1 und S. 6/7 (freistehende EZFH, weiterer Metropolenraum)"
+    },
+    {
+      "zahl": "FAQ-Herkunft",
+      "fundstelle": "research/serp/autocomplete-2026-11-16-eberswalde.json"
+    }
+  ],
+  "hero": {
+    "name": "eberswalde-blumenwerderstrasse",
+    "alt": "Eine Straße mit vier- und fünfgeschossigen Gründerzeithäusern in Eberswalde, links mit rotem Backstein und Balkonen, rechts gelb verputzt, davor parkende Autos unter blauem Himmel",
+    "credit": "Michael Richmann, CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:EW_BlumenwerderStr.jpg"
+  },
+  "karte": {
+    "alt": "Karte der Stadt Eberswalde mit der Stadtgrenze und dem Hauptbahnhof, den Stadtteilen Westend, Nordend, Ostend, Südend und Brandenburgisches Viertel, Finow mit der Messingwerksiedlung und den Ortsteilen Sommerfelde, Tornow und Spechthausen, dazu Kanäle, Bahnstrecken und Autobahn"
+  },
+  "anbindung": [
+    "Am Hauptbahnhof Eberswalde halten RE3, RB24, RB60 und RB63 sowie einzelne ICE.[[7]]",
+    "Der RE3 fährt ohne Umstieg in 36 Minuten zum Berliner Hauptbahnhof, bis Friedrichstraße sind es mit Umstieg in Gesundbrunnen 42 Minuten.[[7]]",
+    "An einem Dienstag fahren 27 Züge des RE3 von Eberswalde Richtung Berlin, dazu 18 der RB24 Richtung Blankenfelde.[[7]]"
+  ]
+}

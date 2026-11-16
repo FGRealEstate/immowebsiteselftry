@@ -7,6 +7,7 @@
 // Update 9 (29.10.2026): Jede Zeile hat eine id (Sprungziel /bildnachweise/#bild-…) und bilder = Pfade der Bilddateien ohne
 // Breite. Aus bilder baut .eleventy.js den Aufklapper „Bildnachweise dieser Seite“, so haben Seite und Aufklapper dieselbe Quelle.
 const fs = require("fs");
+const { frei } = require("../scripts/gebiet-frei.js");
 const path = require("path");
 
 const lizenzen = require("./lizenzen.json");
@@ -56,6 +57,7 @@ module.exports = function () {
   const dir = path.join(site, "content", "gebiete");
   for (const file of fs.readdirSync(dir).filter((f) => f.endsWith(".json")).sort()) {
     const page = JSON.parse(fs.readFileSync(path.join(dir, file), "utf8"));
+    if (!frei(page)) continue; // Update 61: Seite ohne Freigabe, ihre Fotos stehen erst mit ihr hier
     const specs = [["Titelbild", page.hero], ["Bild zwischen den Kapiteln", page.band], ...(page.abschnitte || []).map((a) => ["Abschnitt", a.bild])];
     for (const [role, spec] of specs) {
       if (!spec || !spec.name || !spec.url) continue;

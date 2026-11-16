@@ -9,8 +9,10 @@ function normaliseLocation(location){
 // Orte mit neuer Gebietsseite (content/gebiete/) bekommen keine alte Standortseite mehr; die Vorlage standort-detail.njk baut nur legacyLocations.
 // `ersetzt` in einer Gebietsseite nennt alte Standortseiten, die per 301 auf sie zeigen (Eintrag in _redirects), z. B. velten → oberhavel.
 // Diese Orte fallen ganz aus locations heraus, damit Übersicht und Investment Lab nicht auf die Weiterleitung verlinken.
-function gebieteSlugs(){return new Set(readDir('gebiete').map(g=>g.slug))}
-function ersetzteSlugs(){return new Set(readDir('gebiete').flatMap(g=>g.ersetzt||[]))}
+// Update 61: Gebietsseiten mit `freigabe` zählen erst mit offenem Schalter; bis dahin bleibt die alte Standortseite (Eberswalde).
+const {frei}=require('../scripts/gebiet-frei.js');
+function gebieteSlugs(){return new Set(readDir('gebiete').filter(frei).map(g=>g.slug))}
+function ersetzteSlugs(){return new Set(readDir('gebiete').filter(frei).flatMap(g=>g.ersetzt||[]))}
 // Ausgebaute Lexikon-Einträge (Update 4, 2.13): Jede Fußnote [[n]] braucht die Quelle n, jede Quelle wird zitiert; sonst bricht der Build ab.
 function pruefeAusbau(e){const a=e.ausbau;if(!a)return e;const n=(a.quellen||[]).length,genutzt=new Set();for(const t of [...a.einordnung,...a.beispiel,...a.abschnitte.flatMap(x=>x.absaetze)])for(const m of t.matchAll(/\[\[(\d+(?:\s*,\s*\d+)*)\]\]/g))for(const z of m[1].split(','))genutzt.add(+z);for(const z of genutzt)if(z<1||z>n)throw new Error(`[labContent] Lexikon ${e.slug}: Fußnote [[${z}]] ohne Quelle (${n} Quellen)`);for(let z=1;z<=n;z++)if(!genutzt.has(z))throw new Error(`[labContent] Lexikon ${e.slug}: Quelle ${z} wird nicht zitiert`);return e}
 module.exports=()=>{const weg=ersetzteSlugs();const locations=readDir('standorte').filter(l=>!weg.has(l.slug)).map(normaliseLocation);const neu=gebieteSlugs();return{articles:readDir('wissen'),lexicon:readDir('lexikon').map(pruefeAusbau),locations,legacyLocations:locations.filter(l=>!neu.has(l.slug)),calculators:readDir('rechner')}};
