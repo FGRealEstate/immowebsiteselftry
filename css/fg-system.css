@@ -3211,10 +3211,16 @@ html:not(.fgs-js) .fgs-feat-nav { display: none; }
 }
 @media (min-width: 1280px) and (max-width: 1439px) {
   .fgs-header .fgs-header-bar { padding-inline: 40px; }
-  .fgs-header .fgs-nav-trigger { padding-inline: 6px; }
+}
+/* Nachgemessen 18.11. (kopf.py): mit Nummer war der Kopf ab 1440 px 97 px und bei 1280 px 43 px breiter als die 1200 px
+   Inhaltsbreite, der Knopf stand rechts über den Rand. Darum ab 1280 px durchgehend: Menüpunkte 13 px, 6 px Innenabstand,
+   Abstände 16 und 12 px, Knopf 18 px. Danach endet der Knopf genau am Inhaltsrand, 13 px Reserve bei 1280 px. */
+@media (min-width: 1280px) {
+  .fgs-header .fgs-header-bar { gap: 16px; }
+  .fgs-header .fgs-nav-trigger { font-size: 13px; letter-spacing: .01em; padding-inline: 6px; }
   .fgs-header .fgs-nav-trigger::after { left: 6px; right: 6px; }
-  .fgs-header .fgs-btn { padding: 0 20px; }
-  .fgs-header .fgs-header-actions { gap: 14px; }
+  .fgs-header .fgs-btn { padding: 0 18px; }
+  .fgs-header .fgs-header-actions { gap: 12px; }
 }
 /* A8: Leiste unten am Handy. Navy, zwei Knöpfe („Anrufen“ als Rahmenknopf, „Kostenlose Bewertung“ in Gold), unten um den
    Sicherheitsabstand des iPhones erweitert. fg-design.js setzt html.fgs-sticky-an und --fgs-sticky-h; der Assistent-Knopf
