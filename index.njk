@@ -181,8 +181,10 @@ faqListe:
     sie umfassen, gezählt aus _data/gebiete.js: Berlin die Bezirke (berlin/…), Brandenburg Landkreise und Städte (alles ohne
     „/“ außer den drei Städten Berlin, Leipzig, Dresden), Leipzig und Dresden ihre Marktgebiete. Die Einzelkarten danach sind selbst
     ein Gebiet und bekommen keine Zahl. -#}
-{%- set zahlBerlin = (gebiete | selectattr("typ", "equalto", "bezirk") | length) %}
-{%- set zahlLeipzig = [] %}{% set zahlDresden = [] %}{% set zahlBrandenburg = [] %}
+{#- selectattr mit „equalto“ wertet Nunjucks nicht aus (zählte jedes Gebiet mit typ: 22), darum auch Berlin in der Schleife -#}
+{%- set zahlLeipzig = [] %}{% set zahlDresden = [] %}{% set zahlBrandenburg = [] %}{% set zahlBerlinListe = [] %}
+{%- for g in gebiete %}{% if g.typ == "bezirk" %}{% set _ = zahlBerlinListe.push(g) %}{% endif %}{% endfor %}
+{%- set zahlBerlin = zahlBerlinListe.length %}
 {%- for g in gebiete %}{% if g.slug.startsWith("leipzig/") %}{% set _ = zahlLeipzig.push(g) %}{% elif g.slug.startsWith("dresden/") %}{% set _ = zahlDresden.push(g) %}{% elif g.slug.indexOf("/") == -1 and g.typ != "stadt" %}{% set _ = zahlBrandenburg.push(g) %}{% endif %}{% endfor %}
 {% call rail({ id: "gebiete", titel: "Unsere Gebiete", falten: true, text: "Wir sind in Berlin, Brandenburg, Leipzig und Dresden für Sie da. Finanzierungen begleiten wir in ganz Deutschland.", link: { href: "/standorte/", label: "Alle Gebiete ansehen" } }) %}
   {%- set gb = ("/images/gebiete/" + kartenOrte[0].heroPhoto.name) | bild %}
