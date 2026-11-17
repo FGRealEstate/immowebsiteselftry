@@ -21,17 +21,18 @@ const gutachten = {
   id: "gutachten.org", // Wert für `partner` im GA4-Ereignis
   name: "Gutachten.org",
   bereich: "Gutachten", // Abschnitt auf /partner/
-  // Evalions Logo (PNG aus der E-Mail). Solange es fehlt, steht der Name in Schrift.
-  // Form: { src: "/images/partner/gutachten-org.png", breite: <px>, hoehe: <px> }
-  logo: null,
+  // Evalions Logo, PNG mit transparentem Hintergrund aus Korbinians E-Mail vom 16.11.2026 (1322 × 144 px, fürs Web auf 480 px verkleinert).
+  // Ohne Logo (logo: null) stünde der Name in Schrift.
+  logo: { src: "/images/partner/gutachten-org.png", breite: 480, hoehe: 52 },
   // Allgemeiner Affiliate-Link für den Knopf (Brief §2), daneben der Code
   link: "https://www.gutachten.org/r/fgr-fischer-geserich-real-estate-gmbh",
   code: "FG10",
-  // Produktlinks genau wie in Evalions E-Mail, mit attr- und UTM-Parametern. Fehlen noch: PLATZHALTER.
+  // Produktlinks genau wie in Evalions E-Mail vom 16.11.2026, mit attr- und UTM-Parametern (aus den Link-Zielen der E-Mail, nicht
+  // aus dem umbrochenen Text). Der Restnutzungsdauer-Link trägt laut E-Mail attr=visitenkarte… und utm_content=visitenkarte.
   produkte: {
-    restnutzungsdauer: { text: "Restnutzungsdauergutachten: kostenlose Ersteinschätzung", url: PLATZHALTER + "-restnutzungsdauer" },
-    kaufpreisaufteilung: { text: "Kaufpreisaufteilung: kostenlose Ersteinschätzung", url: PLATZHALTER + "-kaufpreisaufteilung" },
-    verkehrswert: { text: "Verkehrswertgutachten", url: PLATZHALTER + "-verkehrswert" }
+    restnutzungsdauer: { text: "Restnutzungsdauergutachten: kostenlose Ersteinschätzung", url: "https://www.gutachten.org/restnutzungsdauergutachten-ersteinschaetzung/?attr=visitenkarte--pfgr6qc142959&utm_source=fg-real-estate&utm_medium=referral&utm_campaign=partner-fg-real-estate&utm_content=visitenkarte" },
+    kaufpreisaufteilung: { text: "Kaufpreisaufteilung: kostenlose Ersteinschätzung", url: "https://www.gutachten.org/anfrage/kaufpreisaufteilung/?attr=fg-real-estate--pfgr2xs04e440&utm_source=fg-real-estate&utm_medium=referral&utm_campaign=partner-fg-real-estate&utm_content=fg-real-estate" },
+    verkehrswert: { text: "Verkehrswertgutachten", url: "https://www.gutachten.org/anfrage/verkehrswertgutachten/?attr=fg-real-estate--pfgrj822643da&utm_source=fg-real-estate&utm_medium=referral&utm_campaign=partner-fg-real-estate&utm_content=fg-real-estate" }
   },
   reihenfolge: ["restnutzungsdauer", "kaufpreisaufteilung", "verkehrswert"]
 };
