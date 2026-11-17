@@ -30,7 +30,8 @@ const gutachten = {
   // Produktlinks genau wie in Evalions E-Mail vom 16.11.2026, mit attr- und UTM-Parametern (aus den Link-Zielen der E-Mail, nicht
   // aus dem umbrochenen Text). Der Restnutzungsdauer-Link trägt laut E-Mail attr=visitenkarte… und utm_content=visitenkarte.
   produkte: {
-    restnutzungsdauer: { text: "Restnutzungsdauergutachten: kostenlose Ersteinschätzung", url: "https://www.gutachten.org/restnutzungsdauergutachten-ersteinschaetzung/?attr=visitenkarte--pfgr6qc142959&utm_source=fg-real-estate&utm_medium=referral&utm_campaign=partner-fg-real-estate&utm_content=visitenkarte" },
+    restnutzungsdauer: { text: "Restnutzungsdauer\u00ADgutachten: kostenlose Ersteinschätzung", // \u00AD: unsichtbare Trennstelle, am Handy „Restnutzungsdauer-“ / „gutachten“ (U63 §2)
+      url: "https://www.gutachten.org/restnutzungsdauergutachten-ersteinschaetzung/?attr=visitenkarte--pfgr6qc142959&utm_source=fg-real-estate&utm_medium=referral&utm_campaign=partner-fg-real-estate&utm_content=visitenkarte" },
     kaufpreisaufteilung: { text: "Kaufpreisaufteilung: kostenlose Ersteinschätzung", url: "https://www.gutachten.org/anfrage/kaufpreisaufteilung/?attr=fg-real-estate--pfgr2xs04e440&utm_source=fg-real-estate&utm_medium=referral&utm_campaign=partner-fg-real-estate&utm_content=fg-real-estate" },
     verkehrswert: { text: "Verkehrswertgutachten", url: "https://www.gutachten.org/anfrage/verkehrswertgutachten/?attr=fg-real-estate--pfgrj822643da&utm_source=fg-real-estate&utm_medium=referral&utm_campaign=partner-fg-real-estate&utm_content=fg-real-estate" }
   },

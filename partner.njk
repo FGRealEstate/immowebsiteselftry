@@ -3,7 +3,7 @@ layout: fgs-page.njk
 fgsHero: false
 title: "Partner von Fischer & Geserich | Fischer & Geserich"
 permalink: partner/index.html
-description: "Partner von Fischer & Geserich: Für Gutachten arbeiten wir mit Gutachten.org zusammen, einem Angebot der Evalion GmbH aus Berlin. Mit dem Code FG10 erhalten Sie 10 % Rabatt."
+description: "Partner von Fischer & Geserich: Wir arbeiten mit Gutachten.org zusammen, einem Angebot der Evalion GmbH aus Berlin. Mit dem Code FG10 erhalten Sie 10 % Rabatt."
 canonicalPath: /partner/
 # Update 62 §4 (17.11.2026): eine Seite für alle Partner, keine Seite je Partner und keine sichtbaren Stufen.
 # Gebaut nur mit freigaben.partner (.eleventy.js); dann auch Fußlink „Partner“ (Spalte „Wissen & Unternehmen“), Sitemap und llms.txt.
@@ -11,6 +11,7 @@ canonicalPath: /partner/
 # (Versicherung, Grundriss und Wohnfläche, Hausverwaltung), keine leeren Abschnitte und kein „demnächst“.
 # Kein Schema für den Partner, kein sameAs (die Seite hat nur das WebPage- und BreadcrumbList-Markup aller Seiten).
 # Text von Titel, H1, erstem Absatz und Hinweis wörtlich aus dem Brief; die Beschreibung nimmt nur Sätze aus Brief §2.
+# Update 63 §3: Der Block hier ohne seine Zeile „Partnerlink: …“, weil der Hinweis am Seitenende dasselbe sagt.
 pg:
   crumb: "Partner"
   h1: "Unsere Partner"
@@ -22,7 +23,7 @@ pg:
     <div class="fgs-head">
       <h2 id="gutachten-titel">Gutachten</h2>
     </div>
-    {%- set partnerProdukte = partner.gutachten.reihenfolge %}{% set partnerEingebettet = true %}{% set partnerEbene = 3 %}
+    {%- set partnerProdukte = partner.gutachten.reihenfolge %}{% set partnerEingebettet = true %}{% set partnerOhneKennung = true %}
     {% include "fgs-partner.njk" %}
   </div>
 </section>

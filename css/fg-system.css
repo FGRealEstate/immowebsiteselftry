@@ -3144,7 +3144,7 @@ html:not(.fgs-js) .fgs-feat-nav { display: none; }
    Knopf in der Zweitfarbe (der Hauptaufruf der Seite bleibt der eigene) mit dem Code daneben, darunter klein der Provisionshinweis. */
 .fgs-pblock-box { max-width: 760px; padding: 32px; border: 1px solid var(--fgs-line); border-radius: var(--fgs-r); }
 .fgs-pblock-box :is(h2, h3) { margin: 0 0 12px; }
-/* Überschrift im Block auf allen Seiten gleich ruhig, auch wo sie eine H2 ist (/kaufen, /kapitalanlage): nicht die große H2 in Großbuchstaben */
+/* Überschrift im Block auf allen Seiten gleich ruhig: seit Update 63 §1 immer eine H3, nie die große H2 in Großbuchstaben */
 .fgs .fgs-pblock-box :is(h2, h3) { font-size: var(--fgs-h3); line-height: 1.3; text-transform: none; letter-spacing: -.005em; max-width: none; }
 .fgs-pblock-body { display: flex; gap: 28px; align-items: flex-start; }
 .fgs-pblock-marke { flex: 0 0 auto; width: 160px; padding-top: 6px; } /* Logo 160 px breit: Schrift im Logo etwa so hoch wie der Text daneben */
@@ -3163,9 +3163,11 @@ html:not(.fgs-js) .fgs-feat-nav { display: none; }
 .fgs-partner-zeile + .fgs-partner-zeile { margin-top: 4px; font-size: 13px; }
 @media (max-width: 599px) {
   .fgs-pblock-box { padding: 24px 20px; }
-  .fgs-pblock-body { flex-direction: column; gap: 16px; }
+  .fgs-pblock-body { flex-direction: column; align-items: stretch; gap: 16px; } /* U63 §2: Textspalte nie breiter als der Kasten */
   .fgs-pblock-marke { width: 180px; padding-top: 0; }
-  .fgs-pblock-aktion { flex-wrap: nowrap; gap: 12px; } /* FG10 bleibt direkt neben dem Knopf (Brief §2) */
-  .fgs main .fgs-pblock-aktion .fgs-btn { flex: 1 1 auto; width: auto; padding-left: 14px; padding-right: 14px; white-space: nowrap; text-align: center; }
+  /* Update 63 §2: FG10 steht neben dem Knopf, solange beide in die Zeile passen, und bleibt dabei innerhalb des Innenabstands
+     (rechts so weit vom Rand wie der Text links). Passt es nicht, rückt es in eine eigene Zeile direkt unter den Knopf, linksbündig. */
+  .fgs-pblock-aktion { flex-wrap: wrap; justify-content: flex-start; gap: 12px; }
+  .fgs main .fgs-pblock-aktion .fgs-btn { flex: 1 1 auto; width: auto; min-width: 0; max-width: 100%; padding-left: 14px; padding-right: 14px; text-align: center; } /* Knopftext darf wie alle Knöpfe am Handy umbrechen, sonst ragt er bei 320 px über den Innenabstand */
   .fgs-pblock-code { flex: 0 0 auto; }
 }

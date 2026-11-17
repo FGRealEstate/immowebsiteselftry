@@ -1,13 +1,13 @@
-{#- Update 62 §2 (17.11.2026): Block „Gutachten über unseren Partner Gutachten.org“, Text wörtlich aus dem Brief, Angaben aus
-    _data/partner.js. Nur sichtbar mit partner.aktiv (Schalter freigaben.partner).
+{#- Update 62 §2 (17.11.2026), Update 63 §1/§3 (17.11.2026): Block „Unser Partner für Gutachten“, Text wörtlich aus den Briefs,
+    Angaben aus _data/partner.js. Nur sichtbar mit partner.aktiv (Schalter freigaben.partner).
+    Überschrift immer H3 (U63 §1): Der Seitenindex links nimmt nur H2 auf, so erscheint der Partner nicht als Kapitel der Seite.
     Vor dem Einbinden setzen:
       partnerProdukte     Liste der Produkte (restnutzungsdauer, kaufpreisaufteilung, verkehrswert), je ein Link
-      partnerEbene        Überschriftenebene, 2 (Standard) oder 3, wenn der Block unter einer H2 steht
       partnerEingebettet  true: ohne eigenen Abschnitt (der Block steht in einem bestehenden Abschnitt)
+      partnerOhneKennung  true: ohne die Zeile „Partnerlink: …“ (nur /partner/, dort steht der Hinweis am Seitenende, U63 §3)
     Alle Links: neuer Tab, rel="sponsored noopener"; data-partner und data-produkt für partner_click (fg-design.js). -#}
 {%- if partner.aktiv %}
 {%- set pg = partner.gutachten %}
-{%- set ph = "h" + (partnerEbene or 2) %}
 {%- set pid = "partner-gutachten-" + (partnerProdukte | join("-")) %}
 {%- if not partnerEingebettet %}
 <section class="fgs-section fgs-pblock" aria-labelledby="{{ pid }}">
@@ -23,8 +23,8 @@
           {%- endif %}
         </div>
         <div class="fgs-pblock-text">
-          <{{ ph }} id="{{ pid }}">Gutachten über unseren Partner Gutachten.org</{{ ph }}>
-          <p>Für Gutachten arbeiten wir mit Gutachten.org zusammen, einem Angebot der Evalion GmbH aus Berlin.</p>
+          <h3 id="{{ pid }}">Unser Partner für Gutachten</h3>
+          <p>Wir arbeiten mit Gutachten.org zusammen, einem Angebot der Evalion GmbH aus Berlin.</p>
           <ul class="fgs-pblock-produkte">
             {%- for key in partnerProdukte %}{% set pr = pg.produkte[key] %}
             <li><a href="{{ pr.url }}" target="_blank" rel="sponsored noopener" data-partner="{{ pg.id }}" data-produkt="{{ key }}">{{ pr.text }}</a></li>
@@ -35,7 +35,9 @@
             <a class="fgs-btn fgs-btn--secondary" href="{{ pg.link }}" target="_blank" rel="sponsored noopener" data-partner="{{ pg.id }}" data-produkt="allgemein">Zu Gutachten.org</a>
             <span class="fgs-pblock-code" aria-label="Rabattcode {{ pg.code }}">{{ pg.code }}</span>
           </div>
+          {%- if not partnerOhneKennung %}
           <p class="fgs-pblock-kennung"><em>Partnerlink: Für Aufträge über diese Links erhalten wir eine Provision.</em></p>
+          {%- endif %}
         </div>
       </div>
     </div>
