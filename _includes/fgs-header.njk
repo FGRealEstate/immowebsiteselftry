@@ -59,7 +59,8 @@
     </nav>
 
     <div class="fgs-header-actions">
-      <a class="fgs-header-phone" href="{{ nav.phone.href }}">{{ nav.phone.display }}</a>
+      {#- Update 64 A7: ab 1280 px Telefonsymbol und Nummer links vom Knopf (fg-system.css), darunter nicht im Kopf -#}
+      <a class="fgs-header-phone" href="{{ nav.phone.href }}"><svg class="fgs-btn-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.2l1.6 4.2-2 1.4a11 11 0 0 0 7.1 7.1l1.4-2 4.2 1.6V19a1.5 1.5 0 0 1-1.6 1.5C10.8 20 4 13.2 3.5 5.1A1.5 1.5 0 0 1 5 3.5Z"/></svg>{{ nav.phone.display }}</a>
       <a class="fgs-btn fgs-btn--secondary" href="{{ nav.valuation | navHref }}">{{ nav.valuation.label }}</a>
       <button type="button" class="fgs-burger" data-fgs-burger aria-expanded="false" aria-controls="fgs-mobile" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
     </div>

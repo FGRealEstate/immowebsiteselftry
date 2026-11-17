@@ -86,7 +86,7 @@ eleventyComputed:
           („other listing grids use the same card“): Angebotskarte aus §3.8; „mit Foto“ heißt mit Titelbild nach der Regel (cover). -#}
       {% set mitPreis = project.units | selectattr("price_raw") | sort(false, false, "price_raw") %}
       {% set ohnePreis = project.units | rejectattr("price_raw") %}
-      {% for unit in (mitPreis | selectattr("cover")).concat(ohnePreis | selectattr("cover"), mitPreis | rejectattr("cover"), ohnePreis | rejectattr("cover")) %}{{ angebot(unit) }}{% endfor %}
+      {% for unit in (mitPreis | selectattr("cover")).concat(ohnePreis | selectattr("cover"), mitPreis | rejectattr("cover"), ohnePreis | rejectattr("cover")) %}{{ angebot(unit, stil="titel") }}{% endfor %}
     </ul>
     {% else %}
     <p class="fgs-lead fgs-offers-empty">In diesem Projekt ist gerade keine Einheit frei. <a href="/gesuch-anlegen/">Legen Sie ein Gesuch an</a>, dann berücksichtigen wir Ihr Suchprofil bei neuen Angeboten.</p>

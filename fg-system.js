@@ -371,6 +371,7 @@
       img.removeAttribute('data-src');
     };
     const go = (n) => {
+      hero.classList.add('is-gewechselt'); // Update 64 A5: ab jetzt mit Überblendung (fg-system.css)
       slides.forEach((s) => { if (s !== slides[cur]) s.classList.remove('is-vor'); });
       slides[cur].classList.replace('is-on', 'is-vor');
       slides[cur].setAttribute('aria-hidden', 'true');
@@ -404,31 +405,47 @@
      Alle 7 s die nächste Leistung (Takt aus der Animation der Fortschrittslinie), Überblendung 1,2 s in CSS. Pfeile, Wischen auf
      Touch. Pause beim Darüberfahren, bei Fokus im Slider, außer Sicht und im Hintergrund-Tab. Bei reduzierter Bewegung kein
      Automatismus, die Linie zeigt dann die Stelle (1/3, 2/3, 3/3). */
+  /* Update 64 B2: drei Reiter mit Namen statt der Pfeile (Muster „Karussell mit Reitern“). Unter dem aktiven Reiter füllt sich
+     die Linie in 7 s, danach kommt die nächste Leistung. Pfeiltasten, Pos1 und Ende wechseln zwischen den Reitern. */
   document.querySelectorAll('[data-fgs-svc]').forEach((svc) => {
     const slides = Array.from(svc.querySelectorAll('.fgs-svc-slide'));
-    const bar = svc.querySelector('.fgs-svc-progress span');
+    const tabs = Array.from(svc.querySelectorAll('.fgs-svc-tab'));
+    const bars = tabs.map((t) => t.querySelector('.fgs-svc-tab-bar i'));
     let cur = 0;
     const restart = () => {
-      if (reduceMotion) { bar.style.transform = `scaleX(${(cur + 1) / slides.length})`; return; }
+      if (reduceMotion) return;
       svc.classList.remove('is-laeuft');
-      void bar.offsetWidth;
+      void bars[cur].offsetWidth;
       svc.classList.add('is-laeuft');
     };
-    const go = (n) => {
+    const go = (n, fokus = false) => {
       n = (n + slides.length) % slides.length;
-      if (n === cur) return;
+      if (n === cur) { if (fokus) tabs[n].focus(); return; }
       const from = slides[cur];
       from.classList.remove('is-on');
       from.setAttribute('aria-hidden', 'true');
       from.inert = true;
+      tabs[cur].setAttribute('aria-selected', 'false');
+      tabs[cur].tabIndex = -1;
       slides[n].classList.add('is-on');
       slides[n].removeAttribute('aria-hidden');
       slides[n].inert = false;
+      tabs[n].setAttribute('aria-selected', 'true');
+      tabs[n].tabIndex = 0;
+      if (fokus) tabs[n].focus();
       cur = n;
       restart();
     };
-    bar.addEventListener('animationend', () => go(cur + 1));
-    svc.querySelectorAll('.fgs-svc-btn').forEach((b) => b.addEventListener('click', () => go(cur + Number(b.dataset.dir))));
+    bars.forEach((b, i) => b.addEventListener('animationend', () => { if (i === cur) go(cur + 1); }));
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => go(i));
+      t.addEventListener('keydown', (e) => {
+        const ziel = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+        if (ziel === undefined) return;
+        e.preventDefault();
+        go(ziel, true);
+      });
+    });
     let x0 = null;
     let y0 = 0;
     svc.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });

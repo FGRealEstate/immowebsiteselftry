@@ -1,0 +1,17 @@
+{#- Update 64 B6 und C3 (17.11.2026): einfache Linien-Icons je Objektart, 24 × 24, Strich 1,5 in currentColor (auf der Seite Gold).
+    Schlüssel = Objektart im Bewertungsformular (object_type) bzw. die Kachel der Startseite. Nur Pfade, kein Text, aria-hidden. -#}
+{% macro objektIcon(art) -%}
+{%- set pfade = {
+  "Eigentumswohnung": '<path d="M5 21V4.5h14V21M3 21h18"/><path d="M8.5 8h2M13.5 8h2M8.5 11.5h2M13.5 11.5h2M8.5 15h2M13.5 15h2"/><path d="M11 21v-3h2v3"/>',
+  "Wohnung": '<path d="M5 21V4.5h14V21M3 21h18"/><path d="M8.5 8h2M13.5 8h2M8.5 11.5h2M13.5 11.5h2M8.5 15h2M13.5 15h2"/><path d="M11 21v-3h2v3"/>',
+  "Einfamilienhaus": '<path d="M3.5 11 12 4l8.5 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5h4v5"/>',
+  "Haus": '<path d="M3.5 11 12 4l8.5 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5h4v5"/>',
+  "Zweifamilienhaus": '<path d="M3.5 10.5 12 4l8.5 6.5"/><path d="M5.5 9V20h13V9"/><path d="M5.5 14.5h13"/><path d="M8 11.5h2.5M13.5 11.5H16"/><path d="M10.75 20v-3h2.5v3"/>',
+  "Doppelhaushälfte": '<path d="M2.5 11.5 7.5 6l4.5 5M12 11.5 16.5 6l5 5.5"/><path d="M4 10v10h16V10"/><path d="M12 11.5V20"/><path d="M6.5 20v-4h2.5v4M15 20v-4h2.5v4"/>',
+  "Reihenhaus": '<path d="M2 11l3.5-4 3.5 4 3-4 3 4 3.5-4 3.5 4"/><path d="M3 10v10h18V10"/><path d="M9 11v9M15 11v9"/><path d="M5 20v-3h2v3M11 20v-3h2v3M17 20v-3h2v3"/>',
+  "Mehrfamilienhaus": '<path d="M4 21V3.5h11V21M15 9h5v12M2.5 21h19"/><path d="M7 7h1.5M10.5 7H12M7 10.5h1.5M10.5 10.5H12M7 14h1.5M10.5 14H12M17.5 12.5h0M17.5 16h0"/><path d="M8.5 21v-3h2v3"/>',
+  "Grundstück": '<path d="M3 17.5 9 20l12-4.5L15 13 3 17.5Z"/><path d="M12 13.5V4.5l5 2.25-5 2.25"/>',
+  "Gewerbe": '<path d="M3 21V10.5l5-3v3l5-3v3l5-3V21"/><path d="M18 21V4h3v17M2 21h20"/><path d="M6.5 17h2M11 17h2"/>'
+} -%}
+<svg class="fgs-objekt-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">{{ pfade[art] | safe }}</svg>
+{%- endmacro %}

@@ -26,12 +26,18 @@
             <h3 style="margin-top: 24px;">{{ serviceArea.leipzig | areaLink | safe }}</h3>
             <ul>{% for teil in serviceArea.leipzig.teile %}<li>{{ teil | areaLink | safe }}</li>{% endfor %}</ul>
             <h3 style="margin-top: 24px;">{{ serviceArea.dresden | areaLink | safe }}</h3>
-            <ul>{% for teil in serviceArea.dresden.teile %}<li>{{ teil | areaLink | safe }}</li>{% endfor %}</ul>
+            {#- Update 64 B10: Dresdens Teile kurz wie bei Leipzig („Nord“, „Süd“, „Ost“, „Blasewitz & Striesen“); nur hier im Fuß,
+                Seitennamen und Schema bleiben. -#}
+            {%- set dresdenKurz = { "dresden/nord": "Nord", "dresden/sued": "Süd", "dresden/ost": "Ost", "dresden/blasewitz-striesen": "Blasewitz & Striesen" } %}
+            <ul>{% for teil in serviceArea.dresden.teile %}<li>{{ teil | areaLink(dresdenKurz[teil.slug] or teil.name) | safe }}</li>{% endfor %}</ul>
           </div>
           <div>
             <h3><a href="/standorte/#region-brandenburg">Brandenburg</a></h3>
+            {#- Update 64 B10: kleine Bezeichnungen über den beiden Gruppen -#}
+            <p class="fgs-footer-gruppe">Landkreise</p>
             <ul>{% for kreis in serviceArea.landkreise %}<li>{{ kreis | areaLink | safe }}</li>{% endfor %}</ul>
-            <ul style="margin-top: 16px;">{% for town in serviceArea.towns %}<li>{{ town | areaLink | safe }}</li>{% endfor %}</ul>
+            <p class="fgs-footer-gruppe">Städte</p>
+            <ul>{% for town in serviceArea.towns %}<li>{{ town | areaLink | safe }}</li>{% endfor %}</ul>
             <p style="margin-top: 24px;"><a href="/standorte/">Alle Gebiete</a></p>
           </div>
         </div>

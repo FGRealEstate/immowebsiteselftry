@@ -5,6 +5,11 @@
    ========================================================================= */
 
 @font-face { font-family: "Marcellus"; font-style: normal; font-weight: 400; font-display: swap; src: url("/fonts/marcellus-latin-400-normal.woff2") format("woff2"); }
+/* Update 64 A1: Marcellus zeichnet „1“ wie ein I und „0“ wie ein O. Ziffern in jedem Text, der in Marcellus steht, kommen
+   deshalb aus Inter, in gleicher Größe und Farbe. Über unicode-range statt eines Build-Filters, damit es auch für Zahlen gilt,
+   die JavaScript schreibt (Hochzählen, Foliennummern, Formularschritte), und für jede neue Seite. Muss nach der Marcellus-Regel
+   stehen: bei gleicher Familie gewinnt die zuletzt definierte Regel für die Zeichen in ihrem Bereich. */
+@font-face { font-family: "Marcellus"; font-style: normal; font-weight: 400; font-display: swap; src: url("/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0030-0039; }
 @font-face { font-family: "Inter"; font-style: normal; font-weight: 400; font-display: swap; src: url("/fonts/inter-latin-400-normal.woff2") format("woff2"); }
 @font-face { font-family: "Inter"; font-style: normal; font-weight: 500; font-display: swap; src: url("/fonts/inter-latin-500-normal.woff2") format("woff2"); }
 @font-face { font-family: "Inter"; font-style: normal; font-weight: 600; font-display: swap; src: url("/fonts/inter-latin-600-normal.woff2") format("woff2"); }
@@ -303,6 +308,21 @@ html.fg-embedded-calculator .fgd-topbar, html.fg-embedded-calculator .fgd-header
   html.fgd-js .fgd-assistant-launcher:not(.is-shown) { opacity: 0; visibility: hidden; transform: translateY(12px); pointer-events: none; transition: opacity .25s ease, transform .25s ease, visibility 0s linear .25s; }
 }
 @media (max-width: 639px) and (prefers-reduced-motion: reduce) { .fgd-assistant-launcher, html.fgd-js .fgd-assistant-launcher:not(.is-shown) { transition: none; } }
+/* Update 64 A4: wie in fg-system.css. Ab 1024 px runder 48-px-Symbolknopf mit Tooltip, ausgeblendet, solange Schrift oder ein
+   Bedienelement näher als 24 px liegt; am Handy weg, solange ein Formularfeld den Fokus hat. */
+@media (min-width: 1024px) {
+  .fgd-assistant-launcher { right: 24px; bottom: 24px; width: 48px; height: 48px; padding: 0; border-radius: 50%; justify-content: center; transition: opacity .2s ease, visibility 0s linear 0s; }
+  .fgd-assistant-launcher span {
+    position: absolute; right: calc(100% + 10px); top: 50%; transform: translateY(-50%); white-space: nowrap;
+    padding: 8px 12px; border-radius: 8px; background: var(--fgd-navy); color: #fff; font: 600 14px/1 var(--fgd-sans);
+    opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .15s ease, visibility 0s linear .15s;
+  }
+  .fgd-assistant-launcher:hover span, .fgd-assistant-launcher:focus-visible span { opacity: 1; visibility: visible; transition: opacity .15s ease, visibility 0s linear 0s; }
+  html.fgd-js .fgd-assistant-launcher.is-near-content { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .2s ease, visibility 0s linear .2s; }
+}
+@media (max-width: 767px) {
+  html.fgd-js .fgd-assistant-launcher.is-focus-hidden { opacity: 0; visibility: hidden; pointer-events: none; transition: none; }
+}
 
 /* =========================================================================
    Seiten im neuen Design (body.fgd)

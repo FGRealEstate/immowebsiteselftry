@@ -74,9 +74,13 @@
         {%- if h.buttons %}
         <div class="fgs-btns">
           {%- for b in h.buttons %}
-          <a class="fgs-btn {{ 'fgs-btn--primary' if loop.first else 'fgs-btn--secondary fgs-btn--light' }}" href="{{ b.href }}"{% if b.aria %} aria-label="{{ b.aria }}"{% endif %}>{{ b.label }}</a>
+          {#- Update 64 A10/E1: b.tel setzt das Telefonsymbol (Linie wie fgd-icons.njk, Farbe des Knopfs) vor die Beschriftung -#}
+          <a class="fgs-btn {{ 'fgs-btn--primary' if loop.first else 'fgs-btn--secondary fgs-btn--light' }}" href="{{ b.href }}"{% if b.aria %} aria-label="{{ b.aria }}"{% endif %}>{% if b.tel %}<svg class="fgs-btn-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.2l1.6 4.2-2 1.4a11 11 0 0 0 7.1 7.1l1.4-2 4.2 1.6V19a1.5 1.5 0 0 1-1.6 1.5C10.8 20 4 13.2 3.5 5.1A1.5 1.5 0 0 1 5 3.5Z"/></svg>{% endif %}{{ b.label }}</a>
           {%- endfor %}
         </div>{% endif %}
+        {%- if h.vertrauen %}
+        {#- Update 64 A6: Vertrauenszeile unter den Knöpfen (Bewertung und Zahl aus _data/google.js, h.vertrauen = google) #}
+        <p class="fgs-hero-trust"><a href="/bewertungen/"><span aria-hidden="true">★</span> {{ h.vertrauen.rating }} bei Google · {{ h.vertrauen.count }} Bewertungen · Büro in Berlin-Steglitz</a></p>{% endif %}
       </div>
     </div>
   </div>
@@ -122,6 +126,9 @@
           <a class="fgs-btn {{ 'fgs-btn--primary' if loop.first else 'fgs-btn--glass' }}" href="{{ b.href }}">{{ b.label }}</a>
           {%- endfor %}
         </div>
+        {%- if h.vertrauen %}
+        {#- Update 64 A6: Vertrauenszeile unter den Knöpfen (Bewertung und Zahl aus _data/google.js, h.vertrauen = google) #}
+        <p class="fgs-hero-trust"><a href="/bewertungen/"><span aria-hidden="true">★</span> {{ h.vertrauen.rating }} bei Google · {{ h.vertrauen.count }} Bewertungen · Büro in Berlin-Steglitz</a></p>{% endif %}
       </div>
     </div>
   </div>
@@ -159,7 +166,9 @@
     {%- set b = x.bild %}
     {#- Update 22 §8.4 gab jeder Folie eine eigene Navy-Schicht (x.navy). Update 26 §2: alle Folien haben denselben Verlauf hinter dem
         Text (fg-system.css), x.navy gibt es nicht mehr. -#}
-    <div class="fgs-svc-slide{% if loop.first %} is-on{% endif %}" role="group" aria-roledescription="Folie" aria-label="{{ loop.index }} von {{ s.items | length }}"{% if not loop.first %} aria-hidden="true" inert{% endif %}>
+    {#- Update 64 B2: Reiter statt Pfeilen (x.tab), jede Folie ist das Feld ihres Reiters; x.schatten legt einen weichen dunklen
+        Verlauf hinter den Textblock (Villa: Titel und Satz standen auf der unruhigen Fassade). -#}
+    <div class="fgs-svc-slide{% if loop.first %} is-on{% endif %}{% if x.schatten %} fgs-svc-slide--schatten{% endif %}" id="{{ s.id }}-folie-{{ loop.index }}" role="tabpanel" aria-labelledby="{{ s.id }}-reiter-{{ loop.index }}"{% if not loop.first %} aria-hidden="true" inert{% endif %}>
       <div class="fgs-svc-media">
         <picture>
           {%- if b.hoch %}{% if b.hoch.avif %}<source type="image/avif" media="(max-aspect-ratio: 11/12)" srcset="{{ b.hoch.avif }}" sizes="(max-aspect-ratio: 9/16) 56.25vh, 100vw" width="{{ b.hoch.w }}" height="{{ b.hoch.h }}">{% endif %}<source media="(max-aspect-ratio: 11/12)" srcset="{{ b.hoch.srcset }}" sizes="(max-aspect-ratio: 9/16) 56.25vh, 100vw" width="{{ b.hoch.w }}" height="{{ b.hoch.h }}">{% endif %}
@@ -177,10 +186,10 @@
       </div>
     </div>
     {%- endfor %}
-    <div class="fgs-svc-nav">
-      <button type="button" class="fgs-svc-btn" data-dir="-1" aria-label="Vorherige Leistung"><svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M29 7H2M8 1 2 7l6 6"/></svg></button>
-      <div class="fgs-svc-progress" aria-hidden="true"><span></span></div>
-      <button type="button" class="fgs-svc-btn" data-dir="1" aria-label="Nächste Leistung"><svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M1 7h27M22 1l6 6-6 6"/></svg></button>
+    <div class="fgs-svc-nav fgs-svc-tabs" role="tablist" aria-label="{{ s.label }}">
+      {%- for x in s.items %}
+      <button type="button" class="fgs-svc-tab" id="{{ s.id }}-reiter-{{ loop.index }}" role="tab" aria-controls="{{ s.id }}-folie-{{ loop.index }}" aria-selected="{{ 'true' if loop.first else 'false' }}"{% if not loop.first %} tabindex="-1"{% endif %}><span class="fgs-svc-tab-name">{{ x.tab }}</span><span class="fgs-svc-tab-bar" aria-hidden="true"><i></i></span></button>
+      {%- endfor %}
     </div>
   </div>
 </section>
@@ -379,7 +388,8 @@
     {#- Update 22 §8.6: c.schmal = 4:5-Zuschnitt für die schmale Karte im Gebiete-Karussell (432 × 560, Handy 3:4); das Querformat
         liegt nur auf der breiten Karte (is-lead) darüber und blendet ein. Alt-Text am 4:5-Bild, das immer da ist. -#}
     <div class="fgs-media fgs-reveal">{% if c.schmal %}{{ pic(c.schmal, c.alt, "(min-width: 768px) 432px, 82vw") }}<span class="fgs-fold-breit">{{ pic(c.bild, "", c.sizes or "(min-width: 768px) 380px, 80vw") }}</span>{% else %}{{ pic(c.bild, c.alt, c.sizes or "(min-width: 768px) 380px, 80vw") }}{% endif %}
-      <h3 class="fgs-card-name">{{ c.titel }}</h3></div>
+      <h3 class="fgs-card-name">{{ c.titel }}</h3>{% if c.anzahl %}
+      <p class="fgs-card-anzahl">{{ c.anzahl }}</p>{% endif %}</div>
     {%- if c.label %}
     <p class="fgs-card-meta">{{ c.label }}</p>{% endif %}
   </a>
@@ -499,7 +509,7 @@
     _data/propstack.js, Ausschnitt per fokus/zoom aus data/listing-covers.json); ohne brauchbares Foto der gestaltete
     Titel (Navy, Goldrahmen, F&G-Zeichen, Ort). Ort: Propstack-Stadtteil, solange der leer ist die Stadt.
     filter=true (§4.5 Angebotsseite): Klasse offer-filter-card und die data-* Felder für den Filter, wie bisher offerCard. -#}
-{% macro angebot(o, sizes="(min-width: 1024px) 380px, (min-width: 768px) 46vw, 92vw", filter=false) -%}
+{% macro angebot(o, sizes="(min-width: 1024px) 380px, (min-width: 768px) 46vw, 92vw", filter=false, stil="daten") -%}
 {#- Update 27 A1: nur der Ortsteil („Westend“, „Reick“), ohne ihn die Stadt; nie „Gemarkung“ (o.ortsteil, _data/propstack.js) -#}
 {%- set ort = o.ortsteil or o.location -%}
 <li{% if filter %} class="offer-filter-card" data-strategie="{{ o.strategy_key }}" data-vermarktung="{{ o.marketing_type or '' }}" data-objektart="{{ o.property_type or '' }}" data-preis="{{ o.price_raw or '' }}" data-flaeche="{{ o.living_space_raw or '' }}" data-rendite="{{ o.gross_yield_raw or '' }}"{% endif %}>
@@ -509,10 +519,22 @@
     {%- else %}
     <span class="fgs-obj-media fgs-obj-design" role="img" aria-label="{{ o.title }}"><img src="/images/logo/fg-zeichen-gold.svg" alt="" width="49" height="58"><span class="fgs-obj-design-ort" aria-hidden="true">{{ ort }}</span></span>
     {%- endif %}
-    <span class="fgs-obj-row"><span class="fgs-obj-ort">{{ ort }}</span><span class="fgs-obj-preis">{{ (o.price | eur) if o.price else "Preis auf Anfrage" }}{% if o.marketing_type == "Miete" and o.price %} kalt / Monat{% endif %}</span></span>
+    {%- set preis %}{{ (o.price | eur) if o.price else "Preis auf Anfrage" }}{% if o.marketing_type == "Miete" and o.price %} kalt / Monat{% endif %}{% endset %}
+    {%- if stil == "daten" %}
+    {#- Update 64 B7: Titel = Ortsteil mit Stadt, zweite Zeile aus den Daten („Eigentumswohnung · 68,84 m² · 2 Zimmer“, dazu
+        „· provisionsfrei“, wo Propstack es setzt); ersetzt die abgeschnittene Propstack-Überschrift. Felder aus _data/propstack.js.
+        Die Projektseite (stil="titel") behält die Überschrift, dort liegen alle Einheiten im selben Ortsteil. -#}
+    {%- set zeile = [] %}{% if o.karte_art %}{% set _ = zeile.push(o.karte_art) %}{% endif %}{% if o.living_space %}{% set _ = zeile.push(o.living_space) %}{% endif %}{% if o.rooms %}{% set _ = zeile.push(o.rooms + " Zimmer") %}{% endif %}{% if o.provisionsfrei %}{% set _ = zeile.push("provisionsfrei") %}{% endif %}
+    <div class="fgs-obj-row"><h3 class="fgs-obj-title fgs-obj-title--ort">{{ o.karte_ort or ort }}</h3><span class="fgs-obj-preis">{{ preis | trim }}</span></div>
+    {%- if zeile.length %}
+    <p class="fgs-obj-facts">{{ zeile | join(" · ") }}</p>
+    {%- endif %}
+    {%- else %}
+    <span class="fgs-obj-row"><span class="fgs-obj-ort">{{ ort }}</span><span class="fgs-obj-preis">{{ preis | trim }}</span></span>
     <h3 class="fgs-obj-title">{{ o.title }}</h3>
     {%- if o.living_space or o.rooms %}
     <p class="fgs-obj-facts">{% if o.living_space %}{{ o.living_space }}{% endif %}{% if o.living_space and o.rooms %} · {% endif %}{% if o.rooms %}{{ o.rooms }} Zimmer{% endif %}</p>
+    {%- endif %}
     {%- endif %}
   </a>
 </li>
@@ -571,13 +593,13 @@
     der Zahl neu schreibt und eine Spanne darin verlöre. -#}
 {% macro facts(f) -%}
 {%- set zaehlt = f.zaehlen or f.hochzaehlen %}
-<section class="fgs-section{% if f.mitte %} fgs-facts-sec--big{% endif %}{% if f.zaehlen %} fgs-facts-sec--count{% endif %}{% if f.navy %} fgs-facts-sec--navy{% endif %}" id="{{ f.id }}" aria-labelledby="{{ f.id }}-titel">
+<section class="fgs-section{% if f.mitte %} fgs-facts-sec--big{% endif %}{% if f.zaehlen %} fgs-facts-sec--count{% endif %}{% if f.navy %} fgs-facts-sec--navy{% endif %}{% if f.einheitGross %} fgs-facts-sec--einheit{% endif %}" id="{{ f.id }}" aria-labelledby="{{ f.id }}-titel">
   <div class="fgs-wrap">
     <div class="fgs-head{% if f.mitte %} fgs-head--centre{% endif %}"><h2{% if f.mitte %} class="fgs-h2-chapter"{% endif %} id="{{ f.id }}-titel">{{ f.titel }}</h2></div>
     <ul class="fgs-facts" role="list" style="--n: {{ f.items | length }}"{% if zaehlt %} data-fgs-count{% endif %}>
       {%- for x in f.items %}
       {%- set wert = x.wert | string %}{% set plus = f.navy and wert.endsWith("+") %}{% set einheit = (x.einheit or "") | string %}{% set eplus = f.navy and einheit.endsWith("+") %}
-      <li class="fgs-fact">{% if zaehlt %}<span class="fgs-fact-figure fgs-count"><span class="fgs-sr">{{ x.wert }}{% if x.einheit %} {{ x.einheit }}{% endif %}</span><span class="fgs-count-now{% if x.gross %} fgs-count-now--gross{% endif %}" aria-hidden="true">{{ wert.slice(0, -1) if plus else x.wert }}</span>{% if plus %}<span class="fgs-fact-plus" aria-hidden="true">+</span>{% endif %}{% if x.einheit %}<span class="fgs-fact-unit" aria-hidden="true">{{ einheit.slice(0, -1) if eplus else x.einheit }}{% if eplus %}<span class="fgs-fact-plus">+</span>{% endif %}</span>{% endif %}</span>{% else %}<span class="fgs-fact-figure">{{ x.wert }}</span>{% endif %}{% if x.sterne %}<span class="fgs-fact-stars" aria-hidden="true">{% for i in range(0, 5) %}<svg viewBox="0 0 24 24" focusable="false"><path d="m12 2.8 2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg>{% endfor %}</span>{% endif %}{% if x.label %}<span class="fgs-label">{{ x.label }}</span>{% endif %}{% if x.text %}<span class="fgs-fact-text">{{ x.text }}</span>{% endif %}{% if x.quelle %}<span class="fgs-small fgs-source">{{ x.quelle | safe }}</span>{% endif %}</li>
+      <li class="fgs-fact">{% if zaehlt %}<span class="fgs-fact-figure fgs-count"><span class="fgs-sr">{{ x.wert }}{% if x.einheit %} {{ x.einheit }}{% endif %}</span><span class="fgs-count-now{% if x.gross %} fgs-count-now--gross{% endif %}" aria-hidden="true">{{ wert.slice(0, -1) if plus else x.wert }}</span>{% if plus %}<span class="fgs-fact-plus" aria-hidden="true">+</span>{% endif %}{% if x.einheit %}<span class="fgs-fact-unit" aria-hidden="true">{{ einheit.slice(0, -1) if eplus else x.einheit }}{% if eplus %}<span class="fgs-fact-plus">+</span>{% endif %}</span>{% endif %}</span>{% else %}<span class="fgs-fact-figure">{{ x.wert }}</span>{% endif %}{% if x.sterne %}<span class="fgs-fact-stars" aria-hidden="true">{% for i in range(0, 5) %}<svg viewBox="0 0 24 24" focusable="false"><path d="m12 2.8 2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg>{% endfor %}</span>{% endif %}{% if x.label %}<span class="fgs-label">{{ x.label }}</span>{% endif %}{% if x.text %}<span class="fgs-fact-text">{% if x.href %}<a class="fgs-fact-link" href="{{ x.href }}">{{ x.text }}</a>{% else %}{{ x.text }}{% endif %}</span>{% endif %}{% if x.quelle %}<span class="fgs-small fgs-source">{{ x.quelle | safe }}</span>{% endif %}</li>
       {%- endfor %}
     </ul>
     {%- if f.hinweis %}

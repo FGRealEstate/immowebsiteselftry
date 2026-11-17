@@ -150,6 +150,113 @@
     formScreen.addEventListener('change', updateFormHide);
   }
 
+  /* Update 64 A4: Ab 1024 px ist der Startknopf ein runder 48-px-Symbolknopf, der Name steht als Tooltip daneben (CSS).
+     Er hält mindestens 24 px Abstand zu Inhalten: Liegt Schrift oder ein Bedienelement (Link, Knopf, Feld) näher, blendet er
+     sich aus, bis wieder Platz ist, z. B. bei „Zurücksetzen“ in den Filtern auf /angebote. Bilder und Flächen zählen nicht.
+     Ist der Assistent offen, bleibt er sichtbar. Am Handy verschwindet er, solange ein Formularfeld den Fokus hat. */
+  const wideScreen = window.matchMedia('(min-width: 1024px)');
+  const LAUNCHER_ABSTAND = 24;
+  const BEDIENELEMENT = 'a[href],button,input,select,textarea,label,summary,[role="button"],[role="tab"]';
+  const AUSSER = '.fg-ai-assistant,#cc-main,[data-fgs-sticky],[data-fgd-assistant]';
+  function launcherNearContent() {
+    const r = assistantButton.getBoundingClientRect();
+    if (!r.width) return false;
+    const box = { l: r.left - LAUNCHER_ABSTAND, t: r.top - LAUNCHER_ABSTAND, r: r.right + LAUNCHER_ABSTAND, b: r.bottom + LAUNCHER_ABSTAND };
+    const trifft = (q) => q.width > 0 && q.height > 0 && q.right > box.l && q.left < box.r && q.bottom > box.t && q.top < box.b;
+    const sichtbar = (el) => !el.checkVisibility || el.checkVisibility({ opacityProperty: true, visibilityProperty: true });
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        if (node.nodeType === 3) return node.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+        if (node.matches(AUSSER) || /^(SCRIPT|STYLE|TEMPLATE|NOSCRIPT)$/.test(node.tagName)) return NodeFilter.FILTER_REJECT;
+        if (getComputedStyle(node).display === 'contents') return NodeFilter.FILTER_SKIP;
+        if (!trifft(node.getBoundingClientRect())) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    const range = document.createRange();
+    for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+      if (node.nodeType === 1) {
+        if (node.matches(BEDIENELEMENT) && sichtbar(node)) return true;
+        continue;
+      }
+      if (!sichtbar(node.parentElement)) continue;
+      range.selectNodeContents(node);
+      if ([...range.getClientRects()].some(trifft)) return true;
+    }
+    return false;
+  }
+  let launcherFrame = 0;
+  function updateLauncherRoom() {
+    launcherFrame = 0;
+    if (!assistantButton) return;
+    const offen = assistantRoot?.querySelector('[data-fg-ai-launcher]')?.getAttribute('aria-expanded') === 'true';
+    assistantButton.classList.toggle('is-near-content', wideScreen.matches && !offen && launcherNearContent());
+  }
+  const scheduleLauncherRoom = () => { if (!launcherFrame) launcherFrame = requestAnimationFrame(updateLauncherRoom); };
+  if (assistantButton) {
+    window.addEventListener('scroll', scheduleLauncherRoom, { passive: true });
+    window.addEventListener('resize', scheduleLauncherRoom, { passive: true });
+    window.addEventListener('load', scheduleLauncherRoom, { once: true });
+    document.addEventListener('click', () => setTimeout(scheduleLauncherRoom, 450));
+    if ('ResizeObserver' in window) new ResizeObserver(scheduleLauncherRoom).observe(document.body);
+    scheduleLauncherRoom();
+
+    const FELD = 'input:not([type="hidden"]),select,textarea';
+    const istFeld = (el) => el && el.matches && el.matches(FELD) && !el.closest('.fg-ai-assistant');
+    document.addEventListener('focusin', (event) => { if (istFeld(event.target)) assistantButton.classList.add('is-focus-hidden'); });
+    document.addEventListener('focusout', () => setTimeout(() => {
+      if (!istFeld(document.activeElement)) assistantButton.classList.remove('is-focus-hidden');
+    }, 0));
+  }
+
+  /* Update 64 A8: Leiste unten am Handy (base.njk, data-fgs-sticky). Sichtbar unter 768 px, sobald das Titelbild (oder die
+     Titelzeile) ganz durchgescrollt ist. Aus, solange der Cookie-Banner oder das Menü offen ist, das Bewertungsformular
+     (/immobilienbewertung/, data-fgd-wizard) im Bild ist oder ein Formularfeld den Fokus hat (Tastatur). Der Assistent-Knopf
+     sitzt dann über der Leiste (CSS, --fgs-sticky-h). Jeder Tipp schickt sticky_click mit ziel (anruf oder bewertung). */
+  const sticky = document.querySelector('[data-fgs-sticky]');
+  if (sticky) {
+    const html = document.documentElement;
+    const phoneScreen = window.matchMedia('(max-width: 767px)');
+    const kopf = document.querySelector('.fgs-hero, .fgs-pagehead');
+    const wizard = document.querySelector('form[data-fgd-wizard]');
+    let wizardInView = false;
+    let feldFokus = false;
+    let stickyFrame = 0;
+    const updateSticky = () => {
+      stickyFrame = 0;
+      const unten = kopf ? kopf.getBoundingClientRect().bottom <= 0 : window.scrollY > window.innerHeight * 0.6;
+      const menu = document.body.classList.contains('fgs-menu-open') || document.body.classList.contains('fg-ai-gesperrt');
+      const cookie = html.classList.contains('show--consent') || html.classList.contains('show--preferences');
+      const an = phoneScreen.matches && unten && !menu && !cookie && !wizardInView && !feldFokus;
+      if (an !== html.classList.contains('fgs-sticky-an')) html.classList.toggle('fgs-sticky-an', an);
+      if (an) html.style.setProperty('--fgs-sticky-h', `${sticky.offsetHeight}px`);
+    };
+    const planSticky = () => { if (!stickyFrame) stickyFrame = requestAnimationFrame(updateSticky); };
+    window.addEventListener('scroll', planSticky, { passive: true });
+    window.addEventListener('resize', planSticky, { passive: true });
+    phoneScreen.addEventListener('change', planSticky);
+    const klassen = new MutationObserver(planSticky);
+    klassen.observe(html, { attributes: true, attributeFilter: ['class'] });
+    klassen.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    if (wizard && 'IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => { wizardInView = entry.isIntersecting; planSticky(); }).observe(wizard.closest('section') || wizard);
+    }
+    const FELD = 'input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]),select,textarea';
+    document.addEventListener('focusin', (event) => { if (event.target.matches && event.target.matches(FELD)) { feldFokus = true; planSticky(); } });
+    document.addEventListener('focusout', () => setTimeout(() => {
+      const a = document.activeElement;
+      feldFokus = !!(a && a.matches && a.matches(FELD));
+      planSticky();
+    }, 0));
+    sticky.addEventListener('click', (event) => {
+      const link = event.target.closest('[data-sticky-ziel]');
+      if (!link) return;
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'sticky_click', ziel: link.dataset.stickyZiel });
+    });
+    planSticky();
+  }
+
   /* ---------- Hero-Video: erst nach dem Posterbild laden ---------- */
   const video = document.querySelector('[data-fgd-hero-video]');
   const saveData = navigator.connection && navigator.connection.saveData;
@@ -395,6 +502,33 @@
       if (!last) forward();
     }, true);
     show(0, false);
+
+    /* Update 64 C3: Schritt 1 als Kacheln. Ein Tipp oder Klick auf eine Kachel geht direkt zu Schritt 2 (kurz verzögert, damit die
+       Auswahl zu sehen ist). Mit der Tastatur wählen Pfeiltasten nur aus; weiter geht es mit Enter oder „Weiter“, sonst spränge
+       jede Pfeiltaste einen Schritt vor. „Zurück“ bleibt. */
+    let zeiger = false;
+    steps[0].addEventListener('pointerdown', () => { zeiger = true; });
+    steps[0].addEventListener('keydown', () => { zeiger = false; });
+    steps[0].addEventListener('change', (event) => {
+      if (!zeiger || event.target.name !== 'object_type' || current !== 0) return;
+      zeiger = false;
+      setTimeout(forward, 180);
+    });
+
+    /* Update 64 B6: ?objektart=wohnung|haus|mehrfamilienhaus|grundstueck (Kacheln im Bildband der Startseite) oder ein genauer Wert
+       wie „Reihenhaus“ wählt die Objektart vor und öffnet Schritt 2. „Haus“ heißt Einfamilienhaus, mit „Zurück“ änderbar. Das
+       change-Ereignis blendet wie bei einer Auswahl von Hand die passenden Felder der nächsten Schritte ein. */
+    const OBJEKTART = { wohnung: 'Eigentumswohnung', haus: 'Einfamilienhaus', mehrfamilienhaus: 'Mehrfamilienhaus', grundstueck: 'Grundstück', grundstuck: 'Grundstück' };
+    const gewuenscht = (new URLSearchParams(location.search).get('objektart') || '').trim().toLowerCase();
+    if (gewuenscht) {
+      const wert = (OBJEKTART[gewuenscht] || gewuenscht).toLowerCase();
+      const radio = [...form.querySelectorAll('input[name="object_type"]')].find((r) => r.value.toLowerCase() === wert);
+      if (radio) {
+        radio.checked = true;
+        radio.dispatchEvent(new Event('change', { bubbles: true }));
+        show(1, false);
+      }
+    }
   });
 
   /* ---------- Anfrageformulare im neuen Design (an propstack-lead) ----------
@@ -910,7 +1044,9 @@
     });
     const treffer = [];
     for (let n = walker.nextNode(); n; n = walker.nextNode()) {
-      const re = /[^\s\-‐–]*[\p{L}­]{8,}[^\s\-‐–]*[\-‐–]?/gu;
+      // Update 64 A2: „Fischer&nbsp;&amp;&nbsp;Geserich“ bricht nicht um und zählt darum als ein Wort (geschützte Leerzeichen
+      // U+00A0 und U+202F trennen hier nicht). Sonst ragte der Name in großen Überschriften auf 320 px über den Rand.
+      const re = /[^ \t\n\r\f\v\u2000-\u200A\u2028\u2029\u3000\-‐–]*[\p{L}­]{8,}[^ \t\n\r\f\v\u2000-\u200A\u2028\u2029\u3000\-‐–]*[\-‐–]?/gu;
       for (let m = re.exec(n.nodeValue); m; m = re.exec(n.nodeValue)) {
         // Update 25 §3.5: ein gesetztes &shy; ist eine erlaubte Trennstelle („Immobilien&shy;finanzierung“); geprüft wird dann
         // jedes Teilwort samt seinem &shy; für sich. Ohne &shy; ist das ein Teil, das ganze Wort, wie bisher.

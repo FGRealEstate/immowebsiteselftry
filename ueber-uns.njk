@@ -1,5 +1,6 @@
 ---
 layout: fgs-page.njk
+fgsHero: false # Update 64 G: Titelzeile auf hellem Grund, der Kopf startet nicht durchsichtig
 fgsIndex: true
 # Update 55 §3.2.5 (11.11.2026): Titel wörtlich aus dem Brief
 title: "Über uns: Immobilienmakler aus Steglitz"
@@ -18,9 +19,12 @@ pg:
   h1: "Fischer & Geserich: Immobilienberatung aus Berlin-Steglitz"
   # Update 8 §1.1 (29.10.2026): wörtlich aus Timons Dokument „Mission, Vision & Values“
   intro: "Timon Fischer und Lennart Geserich haben Fischer & Geserich gegründet, nachdem sie mehrere Jahre in Unternehmen der Immobilien- und Finanzbranche gearbeitet hatten. Timon vermittelt die Finanzierungen. Lennart ist ausgebildeter Immobilienkaufmann aus Berlin und verkauft und vermietet Immobilien."
-  hero:
-    name: ueber-uns-hero
-    alt: "Gründerzeit-Eckhaus an der Schützenstraße in Berlin-Steglitz, in dieser Straße liegt das Büro von Fischer & Geserich"
+  # Update 64 G (17.11.2026): das Hausfoto (Schützenstraße, nicht das Büro, rechts überbelichtet) ist ersetzt durch die beiden
+  # Gründer im Navy-Studio nebeneinander, Name und Rolle darunter (fgs-page.njk, pg.gruender); Text links wie bisher.
+  # Vorher: hero: { name: ueber-uns-hero, alt: "Gründerzeit-Eckhaus an der Schützenstraße in Berlin-Steglitz, in dieser Straße liegt das Büro von Fischer & Geserich" }
+  gruender:
+    - { key: timon, rolle: "Geschäftsführer · Finanzierung & Prozesse" }
+    - { key: lennart, rolle: "Geschäftsführer · Head of Sales & Vermietung" }
   buttons:
     - { label: "Persönlich kennenlernen", href: "/kontakt" }
     - { label: "Das Team ansehen", href: "#team" }

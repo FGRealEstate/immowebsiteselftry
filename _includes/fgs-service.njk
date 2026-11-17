@@ -34,7 +34,8 @@ customSchema: true
   satz: s.intro,
   buttons: [s.button],
   position: s.hero.position,
-  kenburns: true
+  kenburns: true,
+  vertrauen: google if s.vertrauen else false
 }) }}
 
 {# 1a. Design-Pass 2 §4.2: Eckdaten direkt unter dem Titelbild, eine Reihe mit 3 bis 4 Angaben, die schon auf der Seite stehen
@@ -55,6 +56,13 @@ customSchema: true
 </div>
 {%- endif %}
 
+{# Update 64 C2: mit service.kurzNachFormular steht „Das Wichtigste in Kürze“ erst an der Marke <!-- fgs-kurz --> im Seiteninhalt
+   (Bewertung: Formular direkt unter dem Titelbild). Ohne Marke oder Schalter bleibt alles wie bisher. #}
+{%- set kurzTeile = content.split("<!-- fgs-kurz -->") if s.kurzNachFormular else [] %}
+{%- if kurzTeile.length == 2 %}
+{{ kurzTeile[0] | safe }}
+{%- endif %}
+
 {# 2. Das Wichtigste in Kürze: Brotkrumen, Hauptfrage als H2, Antwort als Einleitung (Design-Pass 2 §4.3: höchstens 760 px breit) #}
 <section class="fgs-section fgs-summary-section" aria-labelledby="kurz-titel">
   <div class="fgs-wrap">
@@ -67,7 +75,7 @@ customSchema: true
 </section>
 
 {# 3. Inhalt der Seite #}
-{{ content | safe }}
+{{ (kurzTeile[1] if kurzTeile.length == 2 else content) | safe }}
 
 {# 3b. Update 44 §2.1: Mehr dazu im Wissen (Artikel nach Kategorie, _data/wissen.js) #}
 {% set wissenKats = wissen.seiten[page.url] or [] %}

@@ -127,7 +127,11 @@
         }
       },
       guiOptions: {
-        consentModal: { layout: 'box wide', position: 'bottom center', equalWeightButtons: true, flipButtons: false },
+        // Update 64 A3: ab 1024 px eine kompakte Karte unten links (Knöpfe untereinander, Breite und Abstand in consent-manager.css);
+        // darunter bleibt alles wie bisher (Handy: schmaler Balken, Update 57 §5).
+        consentModal: window.matchMedia && window.matchMedia('(min-width: 1024px)').matches
+          ? { layout: 'box', position: 'bottom left', equalWeightButtons: true, flipButtons: false }
+          : { layout: 'box wide', position: 'bottom center', equalWeightButtons: true, flipButtons: false },
         preferencesModal: { layout: 'box', position: 'right', equalWeightButtons: true, flipButtons: false }
       }
     });

@@ -8,6 +8,11 @@
    ========================================================================= */
 
 @font-face { font-family: "Marcellus"; font-style: normal; font-weight: 400; font-display: swap; src: url("/fonts/marcellus-latin-400-normal.woff2") format("woff2"); }
+/* Update 64 A1: Marcellus zeichnet „1“ wie ein I und „0“ wie ein O. Ziffern in jedem Text, der in Marcellus steht, kommen
+   deshalb aus Inter, in gleicher Größe und Farbe. Über unicode-range statt eines Build-Filters, damit es auch für Zahlen gilt,
+   die JavaScript schreibt (Hochzählen, Foliennummern, Formularschritte), und für jede neue Seite. Muss nach der Marcellus-Regel
+   stehen: bei gleicher Familie gewinnt die zuletzt definierte Regel für die Zeichen in ihrem Bereich. */
+@font-face { font-family: "Marcellus"; font-style: normal; font-weight: 400; font-display: swap; src: url("/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0030-0039; }
 @font-face { font-family: "Inter"; font-style: normal; font-weight: 400; font-display: swap; src: url("/fonts/inter-latin-400-normal.woff2") format("woff2"); }
 @font-face { font-family: "Inter"; font-style: normal; font-weight: 500; font-display: swap; src: url("/fonts/inter-latin-500-normal.woff2") format("woff2"); }
 
@@ -714,6 +719,22 @@ html:not(.fgs-js) .fgs-faq-more { display: none; }
   html.fgd-js .fgs .fgd-assistant-launcher.is-form-hidden { opacity: 0; visibility: hidden; transform: translateY(12px); pointer-events: none; transition: opacity 400ms var(--fgs-ease), transform 400ms var(--fgs-ease), visibility 0s linear 0.4s; }
 }
 .fgs-footer { padding-bottom: 88px; }
+/* Update 64 A4: ab 1024 px runder 48-px-Symbolknopf, 24 px vom Rand; der Name erscheint als Tooltip links daneben (Maus und Tastatur).
+   is-near-content (fg-design.js) blendet ihn aus, solange Schrift oder ein Bedienelement näher als 24 px liegt.
+   Am Handy (unter 768 px) ist er weg, solange ein Formularfeld den Fokus hat (is-focus-hidden). */
+@media (min-width: 1024px) {
+  .fgs .fgd-assistant-launcher { right: 24px; bottom: 24px; width: 48px; height: 48px; padding: 0; border-radius: 50%; justify-content: center; transition: opacity 200ms var(--fgs-ease), visibility 0s linear 0s; }
+  .fgs .fgd-assistant-launcher span {
+    position: absolute; right: calc(100% + 10px); top: 50%; transform: translateY(-50%); white-space: nowrap;
+    padding: 8px 12px; border-radius: var(--fgs-r); background: var(--fgs-navy); color: #fff; font: 500 14px/1 var(--fgs-sans);
+    opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 150ms var(--fgs-ease), visibility 0s linear 150ms;
+  }
+  .fgs .fgd-assistant-launcher:hover span, .fgs .fgd-assistant-launcher:focus-visible span { opacity: 1; visibility: visible; transition: opacity 150ms var(--fgs-ease), visibility 0s linear 0s; }
+  html.fgd-js .fgs .fgd-assistant-launcher.is-near-content { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 200ms var(--fgs-ease), visibility 0s linear 200ms; }
+}
+@media (max-width: 767px) {
+  html.fgd-js .fgs .fgd-assistant-launcher.is-focus-hidden { opacity: 0; visibility: hidden; pointer-events: none; transition: none; }
+}
 
 /* ---------- Ergänzungen für die Bausteine in _includes/fgs-macros.njk ---------- */
 .fgs-rail-head .fgs-rail-nav { margin-top: 0; }
@@ -2374,6 +2395,8 @@ html.fgs-mo .fgs-hero--slides .fgs-hero-text > .fgs-label, html.fgs-mo .fgs-hero
 .fgs-slides .fgs-slide { position: absolute; inset: 0; opacity: 0; }
 .fgs-slides .fgs-slide > picture { display: block; height: 100%; }
 .fgs-slides .fgs-slide.is-on { opacity: 1; z-index: 2; transition: opacity 800ms var(--fgs-ease); }
+/* Update 64 A5: Die erste Folie steht sofort, ohne Einblenden; überblendet wird erst ab dem ersten Wechsel (fg-system.js setzt is-gewechselt). */
+.fgs-hero--slides:not(.is-gewechselt) .fgs-slides .fgs-slide.is-on { transition: none; }
 .fgs-slides .fgs-slide.is-vor { opacity: 1; z-index: 1; }
 html.fgs-js .fgs-hero--slides .fgs-hero-media img { animation: none; transform-origin: var(--fgs-slide-kb, 30% 35%); }
 html.fgs-js .fgs-hero--slides .fgs-slide:nth-child(even) img { transform-origin: var(--fgs-slide-kb, 70% 65%); }
@@ -2385,7 +2408,8 @@ html.fgs-js .fgs-hero--slides.is-laeuft .fgs-slide.is-on img, html.fgs-js .fgs-h
 /* Verlauf §3.1: Navy 55 % von links bis 0 bei 60 % der Breite, nur hinter dem Text; oben bleibt der Streifen für den Kopf.
    Auf dem Handy steht der Text über die ganze Breite unten, dort bleibt der Verlauf von unten wie auf allen Titelbildern. */
 @media (min-width: 768px) {
-  .fgs-hero--slides::after { background: linear-gradient(to bottom, rgba(8, 8, 47, .4) 0, rgba(8, 8, 47, 0) 160px), linear-gradient(90deg, rgba(8, 8, 47, .55) 0%, rgba(8, 8, 47, 0) 60%); }
+  /* Update 64 B1: Navy links 75 % statt 55 % (Potsdam: Laternen hinter der H1), bis 0 bei 60 % der Breite, für alle vier Folien */
+  .fgs-hero--slides::after { background: linear-gradient(to bottom, rgba(8, 8, 47, .4) 0, rgba(8, 8, 47, 0) 160px), linear-gradient(90deg, rgba(8, 8, 47, .75) 0%, rgba(8, 8, 47, 0) 60%); }
   .fgs-hero--slides .fgs-hero-text::before { content: none; }
 }
 /* Fortschritt unten links: fünf Segmente 40 × 2 px, 8 px Abstand, das aktuelle füllt sich in 6 s weiß. Ort unten rechts.
@@ -3168,3 +3192,210 @@ html:not(.fgs-js) .fgs-feat-nav { display: none; }
   .fgs-pblock-aktion { flex-wrap: wrap; justify-content: flex-start; gap: 12px; }
   .fgs main .fgs-pblock-aktion .fgs-btn { flex: 1 1 auto; width: auto; min-width: 0; max-width: 100%; padding-left: 14px; padding-right: 14px; text-align: center; } /* Knopftext darf wie alle Knöpfe am Handy umbrechen, sonst ragt er bei 320 px über den Innenabstand */
 }
+
+/* =========================================================================
+   Update 64 (17.11.2026): Feinschliff. Nur Darstellung; Texte wörtlich aus dem Brief.
+   ========================================================================= */
+/* A10/E1: Telefonsymbol als Linie in Knöpfen und im Kopf, Farbe des Knopfs (currentColor) */
+.fgs-btn-icon { flex: none; width: 18px; height: 18px; }
+/* A6: Vertrauenszeile unter den Knöpfen im Titelbild, Inter 14 px, Weiß 85 % */
+.fgs-hero-trust { margin: 20px 0 0; font: 400 14px/1.45 var(--fgs-sans); letter-spacing: 0; color: rgba(255, 255, 255, .85); }
+.fgs-hero-trust a { color: inherit !important; text-decoration: none; }
+.fgs-hero-trust a:hover, .fgs-hero-trust a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+/* A7: ab 1280 px Telefonsymbol und Nummer (Inter) links vom Knopf. Damit Logo, sechs Menüpunkte, Nummer und Knopf zwischen
+   1280 und 1439 px in eine Zeile passen, dort etwas weniger Luft: Rand 40 statt 64 px, Menüpunkte 6 statt 8 px Innenabstand,
+   Knopf 20 statt 34 px. Ab 1440 px wie bisher. Darunter bleibt die Nummer aus dem Kopf (Handy-Menü, Abschluss, Fuß). */
+@media (min-width: 1280px) {
+  .fgs-header .fgs-header-phone { display: inline-flex !important; align-items: center; gap: 6px; font: 500 14px/1 var(--fgs-sans); letter-spacing: .01em; }
+  .fgs-header .fgs-header-phone .fgs-btn-icon { width: 16px; height: 16px; }
+}
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .fgs-header .fgs-header-bar { padding-inline: 40px; }
+  .fgs-header .fgs-nav-trigger { padding-inline: 6px; }
+  .fgs-header .fgs-nav-trigger::after { left: 6px; right: 6px; }
+  .fgs-header .fgs-btn { padding: 0 20px; }
+  .fgs-header .fgs-header-actions { gap: 14px; }
+}
+/* A8: Leiste unten am Handy. Navy, zwei Knöpfe („Anrufen“ als Rahmenknopf, „Kostenlose Bewertung“ in Gold), unten um den
+   Sicherheitsabstand des iPhones erweitert. fg-design.js setzt html.fgs-sticky-an und --fgs-sticky-h; der Assistent-Knopf
+   rückt dann darüber. */
+.fgs-sticky { display: none; }
+@media (max-width: 767px) {
+  .fgs-sticky {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 845; display: flex; gap: 8px;
+    padding: 8px 12px calc(8px + env(safe-area-inset-bottom, 0px)); background: var(--fgs-navy); border-top: 1px solid rgba(209, 180, 100, .35);
+    transform: translateY(100%); visibility: hidden; transition: transform 300ms var(--fgs-ease), visibility 0s linear 300ms;
+  }
+  .fgs-sticky .fgs-btn { min-height: 48px; padding: 0 12px; gap: 8px; font-size: 15px; line-height: 1.15; white-space: normal; text-align: center; }
+  .fgs-sticky .fgs-btn--secondary { flex: 0 0 auto; }
+  .fgs-sticky .fgs-btn--primary { flex: 1 1 0; min-width: 0; }
+  html.fgs-sticky-an .fgs-sticky { transform: none; visibility: visible; transition: transform 300ms var(--fgs-ease), visibility 0s linear 0s; }
+  html.fgs-sticky-an .fgs .fgd-assistant-launcher { bottom: calc(var(--fgs-sticky-h, 64px) + 12px); }
+}
+@media (prefers-reduced-motion: reduce) { .fgs-sticky { transition: none !important; } }
+@media print { .fgs-sticky { display: none !important; } }
+html.fg-embedded-calculator .fgs-sticky { display: none !important; }
+/* B7: Angebotskarte, Titel = Ortsteil mit Stadt in der Zeile mit dem Preis (Schrift wie vorher der Ort) */
+.fgs .fgs-obj-title.fgs-obj-title--ort { margin: 0; min-width: 0; font: inherit; color: var(--fgs-ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* B2: Leistungs-Slider mit drei Reitern statt Pfeilen. Name in Inter 14 px, darunter eine 2-px-Linie, die sich beim aktiven
+   Reiter in 7 s füllt (vorher die eine Fortschrittslinie zwischen den Pfeilen). Navy-Schatten wie bisher bei den Pfeilen. */
+.fgs-svc-tabs { gap: 8px; width: min(720px, calc(100% - 2 * var(--fgs-pad))); align-items: stretch; }
+.fgs-svc-tab { flex: 1 1 0; min-width: 0; min-height: 48px; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; padding: 8px 4px 0; border: 0; background: none; color: rgba(255, 255, 255, .78); font: 500 14px/1.25 var(--fgs-sans); letter-spacing: .02em; text-align: center; cursor: pointer; transition: color 300ms var(--fgs-ease); }
+.fgs-svc-tab-name { filter: drop-shadow(0 0 2px rgba(8, 8, 47, .95)) drop-shadow(0 0 8px rgba(8, 8, 47, .7)); }
+.fgs-svc-tab:hover, .fgs-svc-tab[aria-selected="true"] { color: #fff; }
+.fgs-svc-tab-bar { display: block; height: 2px; background: rgba(255, 255, 255, .3); overflow: hidden; filter: drop-shadow(0 0 2px rgba(8, 8, 47, .95)); }
+.fgs-svc-tab-bar i { display: block; height: 100%; background: #fff; transform: scaleX(0); transform-origin: 0 50%; }
+.fgs-svc.is-laeuft .fgs-svc-tab[aria-selected="true"] .fgs-svc-tab-bar i { animation: fgs-segment 7s linear both; }
+.fgs-svc.is-pause .fgs-svc-tab-bar i { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .fgs-svc-tab[aria-selected="true"] .fgs-svc-tab-bar i { transform: none; } }
+.fgs .fgs-svc-tab:focus-visible { outline: 2px solid var(--fgs-gold); outline-offset: 4px; }
+@media (max-width: 479px) { .fgs-svc-tabs { gap: 6px; } .fgs-svc-tab { font-size: 13px; letter-spacing: 0; } }
+/* B2: weicher dunkler Verlauf hinter dem Textblock (Villa), zusätzlich zum Band über die ganze Breite */
+.fgs-svc-slide--schatten .fgs-svc-text::before { content: ""; position: absolute; z-index: -1; inset: -12% -8% 0; background: radial-gradient(ellipse closest-side at 50% 46%, rgba(8, 8, 47, .55), rgba(8, 8, 47, .38) 55%, rgba(8, 8, 47, 0)); pointer-events: none; }
+/* B3: „Ihre Ansprechpartner“ ab 768 px auf dem Raster der H2 und der Grundsätze: zwei Karten je halbe Inhaltsbreite, die erste
+   links bündig mit der H2, die zweite mit dem Satz rechts und dem dritten Grundsatz (vorher höchstens 440 px, mittig). Damit die
+   Karten bei 588 px nicht höher als der Bildschirm werden, ist das Porträt dort quadratisch (Kopf oben im Bild). Die Zeile unter dem
+   Namen 15 px, Weiß 90 % auf Navy (Kontrast rund 14 : 1, vorher 14 px in 75 %). Zuschnitte: Timon 1326 px, Lennart 1849 px breit,
+   588 px brauchen 1176 px. */
+.fgs .fgs-partner-role { font-size: 15px; line-height: 1.45; color: rgba(255, 255, 255, .9); }
+@media (min-width: 768px) {
+  #team .fgs-partners-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); justify-content: normal; }
+  #team .fgs-partner-media { aspect-ratio: 1 / 1; }
+  #team .fgs-partner-media img { object-position: 50% 22%; }
+}
+/* B4: „F&G in Zahlen“ (Startseite): „Mio.“ und „+“ in Zahlengröße (vorher 44 %), die „4“ ohne die 108 % aus Update 25. Die Größe
+   ist für alle vier gleich und so gewählt, dass „4 Mio.+“ in eine Spalte passt (fgs-fact-figure, unten gemessen). Die Spalte
+   mit Link (href): der Text ist der Link, seine Fläche deckt die ganze Kachel ab; der Google-Link darunter bleibt eigenständig. */
+.fgs-facts-sec--einheit .fgs-fact-unit { font-size: 1em; letter-spacing: 0; margin-left: .22em; }
+.fgs-facts-sec--einheit .fgs-fact { position: relative; }
+.fgs-fact-link { color: inherit !important; text-decoration: underline 1px transparent; text-underline-offset: .2em; transition: text-decoration-color 300ms var(--fgs-ease); }
+.fgs-fact-link::after { content: ""; position: absolute; inset: 0; }
+.fgs-fact:hover .fgs-fact-link, .fgs-fact-link:focus-visible { text-decoration-color: currentColor; }
+.fgs-fact .fgs-source { position: relative; z-index: 1; }
+/* B5: Zahl der Gebiete unter dem Namen der Regionskarte, Inter 14 px, Weiß 85 % auf dem Verlauf */
+.fgs-card-anzahl { position: relative; z-index: 2; margin: -4px 0 0; padding: 0 24px 16px; font: 400 14px/1.4 var(--fgs-sans); letter-spacing: .02em; color: rgba(255, 255, 255, .85); }
+/* B6: vier kleine Kacheln unter „Kostenlose Bewertung“ im Bildband (Startseite): Gold-Icon und Name, Navy-Glas auf dem Foto;
+   ab 600 px vier nebeneinander, darunter 2 × 2 */
+.fgs-band-kacheln { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; max-width: 640px; margin: 24px 0 0; padding: 0; text-shadow: none; }
+.fgs-band-kachel { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-height: 92px; padding: 14px 8px 12px; border: 1px solid rgba(255, 255, 255, .28); border-radius: 4px; background: rgba(8, 8, 47, .5); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: #fff !important; font: 500 14px/1.25 var(--fgs-sans); text-align: center; text-decoration: none; transition: border-color 300ms var(--fgs-ease), background-color 300ms var(--fgs-ease); }
+.fgs-band-kachel .fgs-objekt-icon { color: var(--fgs-gold); }
+.fgs-band-kachel:hover, .fgs-band-kachel:focus-visible { border-color: var(--fgs-gold); background: rgba(8, 8, 47, .7); }
+.fgs-band-kachel span { overflow-wrap: anywhere; }
+@media (max-width: 599px) { .fgs-band-kacheln { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } .fgs-band-kachel { min-height: 80px; } }
+@media (prefers-reduced-motion: reduce) { .fgs-band-kachel { transition: none; } }
+/* C3: Schritt 1 der Bewertung als Kacheln: Gold-Icon über dem Namen, der Radioknopf ist unsichtbar (bleibt bedienbar, Fokus und
+   Auswahl zeigt die Kachel). 2 Spalten unter 768 px, 4 ab 768 px, auch auf 320 px nie eine Spalte. */
+.fgs .fgd-choices.fgd-choices--kacheln { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 768px) { .fgs .fgd-choices.fgd-choices--kacheln { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.fgs .fgd-form .fgd-choices--kacheln .fgd-choice { position: relative; flex-direction: column; justify-content: center; gap: 10px; min-height: 112px; padding: 16px 8px 14px; text-align: center; -webkit-hyphens: manual; hyphens: manual; }
+.fgs .fgd-form .fgd-choices--kacheln .fgd-choice input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.fgs .fgd-choices--kacheln .fgs-objekt-icon { width: 32px; height: 32px; color: var(--fgs-gold-text, #8a6d1f); }
+@media (max-width: 479px) { .fgs .fgd-form .fgd-choices--kacheln .fgd-choice { min-height: 96px; padding: 12px 6px; font-size: 15px; } .fgs .fgd-choices--kacheln .fgs-objekt-icon { width: 28px; height: 28px; } }
+/* C2/C4: Bewertung, Formular direkt unter dem Titelbild; darüber die persönliche Zeile mit zwei runden Porträts (56 px, leicht
+   überlappend), dem Satz und der Vertrauenszeile aus A6 in Dunkel (Grund hell) */
+.fgs-anfrage-oben .fgs-wizard { margin-top: 0 !important; }
+.fgs-persoenlich { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 16px; row-gap: 4px; align-items: center; max-width: 760px; margin: 0 0 32px; }
+.fgs-persoenlich-bilder { grid-row: span 2; display: flex; margin: 0; }
+.fgs-avatar { display: block; width: 56px; height: 56px; border-radius: 50%; overflow: hidden; background: var(--fgs-portrait-ground, #e9e6df); box-shadow: 0 0 0 2px var(--fgs-bg); }
+.fgs-avatar + .fgs-avatar { margin-left: -10px; }
+.fgs-avatar picture, .fgs-avatar img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.fgs .fgs-persoenlich-satz { margin: 0; font: 400 17px/1.45 var(--fgs-sans); color: var(--fgs-ink); max-width: none; }
+.fgs .fgs-trust-hell { margin: 0; font: 400 14px/1.45 var(--fgs-sans); color: var(--fgs-ink-2); }
+.fgs-trust-hell a { color: inherit !important; text-decoration: none; }
+.fgs-trust-hell a:hover, .fgs-trust-hell a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.fgs-trust-hell span { color: var(--fgs-gold-text); }
+@media (max-width: 479px) { .fgs-persoenlich { grid-template-columns: 1fr; } .fgs-persoenlich-bilder { grid-row: auto; margin-bottom: 8px; } }
+/* B9: Abschlussband ab 768 px mit einem durchgehenden Verlauf statt Navy-Fläche bis hinter die Textspalte und kurzer Blende (die
+   Kante war sichtbar): Navy links, gleichmäßig abnehmend bis 0 bei 70 % der Breite. Die Zwischenstufen halten hinter der Textspalte
+   genug Deckung für die Schrift. Gilt für den Abschluss jeder Seite (dasselbe Bauteil). Handy unverändert. */
+@media (min-width: 768px) {
+  .fgs-closing-media::after { background: linear-gradient(to right, rgba(8, 8, 47, .86) 0%, rgba(8, 8, 47, .8) 25%, rgba(8, 8, 47, .66) 42%, rgba(8, 8, 47, .42) 54%, rgba(8, 8, 47, .18) 63%, rgba(8, 8, 47, 0) 70%); }
+}
+/* B10: Fuß, Brandenburg: kleine Bezeichnungen „Landkreise“ und „Städte“ über den beiden Listen */
+.fgs .fgs-footer-gruppe { margin: 12px 0 6px; font: 500 12px/1.4 var(--fgs-sans); letter-spacing: .12em; text-transform: uppercase; color: rgba(255, 255, 255, .7); }
+.fgs .fgs-footer-gruppe + ul + .fgs-footer-gruppe, .fgs ul + .fgs-footer-gruppe { margin-top: 18px; }
+/* D1: Angebotsseite, erster Bildschirm mit Titel, Preis und Eckdaten. Galerie höchstens 60 % der Bildschirmhöhe (ab 1024 px),
+   auf dem Handy höchstens 45 %. Ab 1024 px und fünf Bildern: ein großes Bild links, vier kleine rechts (2 × 2), 8 px Fuge; Zähler
+   und Pfeile entfallen dort (Großansicht über Klick und „Alle Bilder ansehen“; ← → bleiben auf der Galerie). Abstände darunter
+   enger, damit H1, Leitzeile, Knöpfe und Eckdaten bei 1440 × 900 ohne Scrollen sichtbar sind. */
+.fgs-gallery-mosaik { display: none; }
+@media (max-width: 1023px) { .fgs-listing-top .fgs-gallery-stage { max-height: 45vh; max-height: 45svh; } }
+@media (min-width: 1024px) {
+  .fgs-listing-top .fgs-gallery-stage { aspect-ratio: auto; height: min(var(--fgs-galerie-h, 52vh), 56.25vw); }
+  .fgs-listing-top .fgs-gallery--mosaik { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px; }
+  .fgs-listing-top .fgs-gallery--mosaik .fgs-gallery-stage { height: var(--fgs-galerie-h, 52vh); }
+  .fgs-gallery--mosaik .fgs-gallery-mosaik { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; height: var(--fgs-galerie-h, 52vh); }
+  .fgs-gallery--mosaik .fgs-gallery-bar { display: none; }
+  .fgs-gallery-klein { position: relative; display: block; padding: 0; border: 0; overflow: hidden; background: var(--fgs-line); cursor: zoom-in; }
+  .fgs-gallery-klein img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 600ms var(--fgs-ease), opacity 200ms; }
+  .fgs-gallery-klein:hover img { transform: scale(1.03); }
+  .fgs-gallery-klein:focus-visible { outline: 2px solid var(--fgs-gold); outline-offset: -4px; }
+  .fgs-listing-top .fgs-listing-head-text { margin-top: 32px; max-width: none; }
+  .fgs-listing-top .fgs-listing-head-text h1 { max-width: 28ch; }
+  .fgs-listing-top .fgs-btns { margin-top: 24px; }
+  .fgs-listing-top .fgs-listing-facts { margin-top: 32px; }
+}
+:root { --fgs-galerie-h: 52vh; }
+@media (prefers-reduced-motion: reduce) { .fgs-gallery-klein img { transition: none; } }
+/* D2: Leitzeile unter der H1 (Propstack-Überschrift) */
+.fgs .fgs-listing-lead { margin: 12px 0 0; max-width: 62ch; font: 400 18px/1.5 var(--fgs-sans); color: var(--fgs-ink); }
+@media (max-width: 599px) { .fgs .fgs-listing-lead { font-size: 16px; } }
+.fgs-listing-lead + .fgs-listing-meta { margin-top: 8px; }
+/* E2: der ganze „Stand der Zahlen“-Absatz als Erstes im Akkordeon, klein und gedämpft wie vorher */
+.fgs .fgs-facts-stand-voll { margin: 0 0 24px; max-width: 46rem; line-height: 1.55; color: var(--fgs-ink-2); }
+/* G: Über uns, Titelzeile mit den beiden Gründern im Navy-Studio rechts (je 4 : 5, Name und Rolle darunter), Text links.
+   Ab 900 px zwei Spalten (7 : 5), darunter Text oben und die Porträts nebeneinander. */
+.fgs-gruender-raster { display: grid; gap: 40px var(--fgs-gap); align-items: center; }
+@media (min-width: 900px) { .fgs-gruender-raster { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); } }
+.fgs-gruender-text h1 { max-width: 18ch; }
+.fgs-gruender-text .fgs-lead { max-width: 60ch; }
+.fgs-gruender-bilder { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.fgs-gruender { margin: 0; }
+.fgs-gruender-bild { aspect-ratio: 4 / 5; overflow: hidden; border-radius: 4px; background: #08082f; }
+.fgs-gruender-bild picture, .fgs-gruender-bild img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.fgs-gruender figcaption { margin-top: 12px; }
+.fgs-gruender-name { display: block; font: 400 20px/1.25 var(--fgs-serif); color: var(--fgs-ink); }
+.fgs-gruender-rolle { display: block; margin-top: 4px; font: 400 14px/1.45 var(--fgs-sans); color: var(--fgs-ink-2); }
+@media (max-width: 479px) { .fgs-gruender-name { font-size: 17px; } .fgs-gruender-rolle { font-size: 13px; } }
+/* D1 (Fortsetzung): Ab 1024 px Knöpfe rechts neben dem Titel (untereinander), Eckdaten über die volle Breite darunter; H1 eine
+   Zeile, wo sie passt; Galerie 44 % der Höhe. Unter 640 px Eckdaten kompakt in zwei Spalten vor den Knöpfen, H1 kleiner.
+   Damit liegen bei 1440 × 900 und 375 × 812 Titel, Preis und Eckdaten im ersten Bildschirm. */
+:root { --fgs-galerie-h: 44vh; }
+@media (min-width: 1024px) {
+  .fgs-listing-top .fgs-listing-head-text { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 48px; align-items: end; }
+  .fgs-listing-top .fgs-listing-titel { grid-column: 1; grid-row: 1; min-width: 0; }
+  .fgs-listing-top .fgs-listing-head-text .fgs-btns { grid-column: 2; grid-row: 1; margin-top: 0; flex-direction: column; align-items: stretch; }
+  .fgs-listing-top .fgs-listing-head-text .fgs-listing-facts { grid-column: 1 / -1; grid-row: 2; }
+  .fgs .fgs-listing-top .fgs-listing-head-text h1 { max-width: none; font-size: clamp(36px, 3.1vw, 46px); }
+  .fgs .fgs-listing-top .fgs-listing-lead { max-width: 80ch; }
+}
+@media (max-width: 1023px) { .fgs-listing-top .fgs-listing-head-text .fgs-btns { margin-top: 28px; } }
+@media (max-width: 639px) {
+  .fgs .fgs-listing-top .fgs-listing-head-text h1 { font-size: 30px; line-height: 1.15; }
+  .fgs-listing-top .fgs-listing-head-text { margin-top: 28px; }
+  .fgs-listing-top .fgs-listing-facts { margin-top: 24px !important; }
+  .fgs-listing-top .fgs-listing-facts .fgs-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px; }
+  .fgs-listing-top .fgs-listing-facts .fgs-fact { margin: 0; padding: 0; border: 0; min-height: 0; }
+  .fgs-listing-top .fgs-listing-facts .fgs-fact-figure { font-size: 26px; line-height: 1.15; }
+  .fgs-listing-top .fgs-listing-facts .fgs-fact-text { margin-top: 2px; font-size: 14px; }
+  .fgs-listing-top .fgs-listing-head-text .fgs-btns { margin-top: 24px; }
+}
+/* B4 (Fortsetzung): eine Größe für alle vier Zahlen, so groß, dass „4 Mio.+“ (3,6 em breit, gemessen) in seine Spalte passt.
+   Jede Kachel misst ihre Innenbreite (Container), alle Spalten sind gleich breit, also bleibt die Größe überall gleich. */
+/* Gemessen wird die ganze Zahlenreihe (Container), nicht die einzelne Kachel: die erste Kachel hat links keinen Innenabstand und
+   wäre sonst 16 px breiter, ihre Zahl 4 px größer. Spalte innen = Reihe / Spalten − 32 px (Innenabstand 2 × 16 px). */
+.fgs-facts-sec--einheit .fgs-facts { container-type: inline-size; }
+.fgs-facts-sec--einheit .fgs-facts .fgs-fact-figure { font-size: min(88px, calc((25cqi - 32px) / 3.7)); }
+@media (max-width: 1239px) { .fgs-facts-sec--einheit .fgs-facts .fgs-fact-figure { font-size: min(clamp(56px, calc(56px + 32 * (100vw - 390px) / 850), 88px), calc((50cqi - 32px) / 3.7)); } }
+/* Prüfung 320 px (Update 64, Abschluss): lange zusammengesetzte Wörter („Restnutzungsdauergutachten“, „Finanzierungsvolumen,“,
+   „Google‑Bewertungen“) liefen auf schmalen Handys 5 px über den Rand (/kapitalanlage, Startseite). Dort jetzt Silbentrennung. */
+@media (max-width: 359px) {
+  .fgs-facts-sec--einheit .fgs-fact-text { -webkit-hyphens: auto; hyphens: auto; hyphenate-limit-chars: 8 4 4; }
+}
+/* FAQ-Fragen sind Überschriften (h3): dort keine automatische Trennung (Update 23 B9). „Restnutzungsdauergutachten“ passt bei 17 px
+   neben dem Plus nicht in 320 px, darum unter 360 px 15 px. */
+@media (max-width: 359px) { .fgs .fgs-faq-item summary { gap: 12px; } .fgs .fgs-faq-item summary .fgs-faq-q, .fgs .fgs-faq-item summary h3 { font-size: 15px; } }
+/* G: auf dem Handy eine Spalte ohne Mindestbreite; „Fischer & Geserich:“ bleibt zusammen (A2) und passt mit 9,3 em auf 320 px */
+.fgs-gruender-raster { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px) { .fgs-gruender-raster { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); } }
+@media (max-width: 479px) { .fgs .fgs-gruender-text h1 { font-size: min(36px, calc((100vw - 48px) / 9.3)); } }

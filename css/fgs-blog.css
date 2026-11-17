@@ -479,3 +479,21 @@
 /* Update 23 D4 (31.10.2026): Chrome macht waagerecht scrollbare Tabellen per Tastatur erreichbar; auch sie bekommen den goldenen
    Fokusrahmen statt des blauen des Browsers. */
 .fgs .fgd-blog-body .ftab:focus-visible { outline: 2px solid var(--fgs-gold-text); outline-offset: 3px; }
+/* Update 64 F: rundes Porträt vor „Von …“ (36 px, Navy-Studio) und Datum in der zweiten Zeile vor der Lesezeit */
+.fgd-blog-by-bild { display: inline-block; vertical-align: middle; margin: -3px 10px 0 0; line-height: 0; text-decoration: none !important; }
+.fgd-blog-by-bild img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; background: #08082f; }
+/* Update 64, Prüfung 320 px: zwei Grafiken liefen 10 px über den Rand (Reiter der Prüfgrafik, Due Diligence; Stationen der
+   Beispielzahl „+262 € pro Monat“ und die Frage mit „Vorfälligkeitsentschädigung“, Anschlussfinanzierung). html davor, weil der Stil der Grafik danach im Artikel steht. */
+@media (max-width: 359px) {
+  html .dc3-tabs { padding-left: 0; gap: 2px; }
+  html .dc3-tabs button { padding: 6px 5px 5px; }
+  html .ex-h { flex-wrap: wrap; gap: 4px 12px; }
+  .fgd-blog-body .qa summary { grid-template-columns: 36px minmax(0, 1fr) 24px; -webkit-hyphens: auto; hyphens: auto; }
+}
+.fgd-blog-dateline .fgd-blog-datum { white-space: normal; }
+.fgd-blog-datum time { white-space: nowrap; }
+/* Handy: Datum eine eigene Zeile, die Lesezeit darunter ohne „·“ am Zeilenanfang */
+@media (max-width: 599px) {
+  .fgd-blog-dateline .fgd-blog-datum { flex-basis: 100%; }
+  .fgd-blog-dateline .fgd-blog-datum + span:last-child::before { content: none; }
+}

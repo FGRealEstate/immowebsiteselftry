@@ -374,7 +374,10 @@
     {#- §2.6 Punkt 6: mit vollständiger AVIF-Reihe wird das AVIF vorgeladen (dieselbe Datei, die das <picture> wählt) #}
     <link rel="preload" as="image"{% if hb.avif %} type="image/avif" href="{{ hb.src | replace('.webp', '.avif') }}" imagesrcset="{{ hb.avif }}"{% else %} href="{{ hb.src }}" imagesrcset="{{ hb.srcset }}"{% endif %} imagesizes="{{ 'max(100vw, 164vh)' if (not heroPreload and service and service.hero) else '100vw' }}"{% if hb.hoch %} media="not all and (max-aspect-ratio: 11/10)"{% endif %} fetchpriority="high">
       {%- if hb.hoch %}
-    <link rel="preload" as="image"{% if hb.hoch.avif %} type="image/avif" href="{{ hb.hoch.src | replace('.webp', '.avif') }}" imagesrcset="{{ hb.hoch.avif }}"{% else %} href="{{ hb.hoch.src }}" imagesrcset="{{ hb.hoch.srcset }}"{% endif %} imagesizes="{{ '(max-aspect-ratio: 4/5) 80vh, 100vw' if (gebiet or heroPreload) else '(max-aspect-ratio: 14/25) 56vh, 100vw' }}" media="(max-aspect-ratio: 11/10)" fetchpriority="high">
+    {#- Update 64 A5: href ist die größte Datei der Reihe. Die wählt das <picture> am Handy (80 vh bei 2- oder 3-facher Pixeldichte);
+        ein Browser, der imagesrcset beim Vorladen nicht kennt, lädt so dieselbe Datei statt der kleinsten und dann ein zweites Mal. #}
+    {%- set hochReihe = hb.hoch.avif if hb.hoch.avif else hb.hoch.srcset %}
+    <link rel="preload" as="image"{% if hb.hoch.avif %} type="image/avif"{% endif %} href="{{ (hochReihe.split(', ') | last).split(' ') | first }}" imagesrcset="{{ hochReihe }}" imagesizes="{{ '(max-aspect-ratio: 4/5) 80vh, 100vw' if (gebiet or heroPreload) else '(max-aspect-ratio: 14/25) 56vh, 100vw' }}" media="(max-aspect-ratio: 11/10)" fetchpriority="high">
       {%- endif %}{% endif %}
     {% endif %}
     {# Leistungsseiten (fgd-service.njk): Titelbild aus service.hero vorladen. #}
@@ -597,6 +600,15 @@
 {% endif %}
 
 <button type="button" class="fgd-assistant-launcher" data-fgd-assistant aria-controls="fg-ai-panel" aria-label="F&amp;G Assistent">{{ icon("chat") | safe }}<span>F&amp;G Assistent</span></button>
+{#- Update 64 A8: Leiste unten am Handy (unter 768 px), sobald das Titelbild durchgescrollt ist; ausgeblendet bei offenem Cookie-Banner,
+    offenem Menü und solange das Bewertungsformular im Bild ist (fg-design.js). Jeder Tipp: GA4-Ereignis sticky_click mit ziel.
+    Nicht auf Seiten mit eigener Leiste unten (fgsSticky: false, z. B. die Instagram-Anfrage). #}
+{%- if fgSystem and fgsSticky !== false %}
+<div class="fgs-sticky" data-fgs-sticky>
+  <a class="fgs-btn fgs-btn--secondary fgs-btn--light" href="{{ nav.phone.href }}" data-sticky-ziel="anruf" aria-label="Anrufen: {{ nav.phone.display }}"><svg class="fgs-btn-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.2l1.6 4.2-2 1.4a11 11 0 0 0 7.1 7.1l1.4-2 4.2 1.6V19a1.5 1.5 0 0 1-1.6 1.5C10.8 20 4 13.2 3.5 5.1A1.5 1.5 0 0 1 5 3.5Z"/></svg>Anrufen</a>
+  <a class="fgs-btn fgs-btn--primary" href="{{ nav.valuation | navHref }}" data-sticky-ziel="bewertung">Kostenlose Bewertung</a>
+</div>
+{%- endif %}
 
 <!-- F&G digitaler Immobilien-Assistent: komplett regelbasiert, ohne externes KI-Modell -->
 <div class="fg-ai-assistant" data-fg-ai-assistant hidden>

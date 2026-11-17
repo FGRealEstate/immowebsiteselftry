@@ -88,6 +88,27 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("navHref", (item) => (item && (item.fallback || item.href)) || "#");
   // Propstack liefert Preise mit Cent („225.000,00 €“); auf den Angebotsseiten ohne „,00“ (Daten bleiben unverändert).
   eleventyConfig.addFilter("eur", (value) => (value ? String(value).replace(/,00 €/g, " €") : value));
+  /* Update 64 B7: höchstens eine Karte je Haus oder Projekt (o.gebaeude aus _data/propstack.js), verschiedene Ortsteile zuerst.
+     Reihenfolge sonst wie übergeben; aus jedem Haus die erste Einheit. */
+  eleventyConfig.addFilter("eineJeHaus", (liste, max = 6) => {
+    const erste = [];
+    const haeuser = new Set();
+    for (const o of liste || []) {
+      const haus = o.gebaeude || `angebot-${o.id}`;
+      if (haeuser.has(haus)) continue;
+      haeuser.add(haus);
+      erste.push(o);
+    }
+    const orte = new Set();
+    const vorn = [];
+    const hinten = [];
+    for (const o of erste) {
+      const ort = o.karte_ort || o.location || "";
+      (orte.has(ort) ? hinten : vorn).push(o);
+      orte.add(ort);
+    }
+    return vorn.concat(hinten).slice(0, max);
+  });
 
   // Update 7 §4: Propstack-Fotos auf Produktion über das Netlify Image CDN (passende Breite, webp/avif statt Originaldatei bis 6,3 MB).
   // Nur in Netlify-Builds (NETLIFY=true, setzt Netlify selbst); lokal und in der Cloudflare-Testumgebung bleiben die Originale.
@@ -119,6 +140,18 @@ module.exports = function(eleventyConfig) {
       const avif = set.replace(/\.webp(\s)/g, ".avif$1");
       return `<picture class="fgs-ps" style="display:contents"><source type="image/avif" srcset="${avif}" sizes="${sizes}"><source type="image/webp" srcset="${set}" sizes="${sizes}">${ohne}</picture>`;
     });
+  });
+  // Update 64 A2: „Fischer & Geserich“ und „F&G Real Estate“ brechen nie um (/kontakt: „Kontakt zu Fischer & / Geserich …“).
+  // Nur sichtbarer Text: Tags samt Attributen, <script>, <style>, <textarea>, <title> und Kommentare bleiben, wie sie sind.
+  const NAME_STUECKE = /(<script\b[\s\S]*?<\/script>|<style\b[\s\S]*?<\/style>|<textarea\b[\s\S]*?<\/textarea>|<title\b[\s\S]*?<\/title>|<!--[\s\S]*?-->|<[^>]+>)/i;
+  const LEER = "(?:\\s|&nbsp;|&#160;| )+";
+  const NAME_FG = new RegExp(`Fischer${LEER}(?:&amp;|&)${LEER}Geserich`, "g");
+  const NAME_RE = new RegExp(`F(?:&amp;|&)G${LEER}Real${LEER}Estate`, "g");
+  eleventyConfig.addTransform("name-ohne-umbruch", function (content) {
+    if (!String(this.page && this.page.outputPath || "").endsWith(".html") || !/Geserich|Real\s+Estate/.test(content)) return content;
+    return content.split(NAME_STUECKE).map((teil, i) => (i % 2 ? teil : teil
+      .replace(NAME_FG, "Fischer&nbsp;&amp;&nbsp;Geserich")
+      .replace(NAME_RE, "F&amp;G&nbsp;Real&nbsp;Estate"))).join("");
   });
   eleventyConfig.on("eleventy.after", ({ dir }) => bilder.kopieren(dir.output));
   // Exposé-Texte aus Propstack kommen meist als reiner Text mit Leerzeilen und „- “-Listen.
@@ -154,6 +187,11 @@ module.exports = function(eleventyConfig) {
   // Gebiete (_data/serviceArea.js): gebaute Seiten als Link, noch nicht gebaute als Text.
   const escHtml = (v) => String(v ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   // current (optional): URL der aktuellen Seite, damit das Menü die eigene Seite markiert.
+  // Update 64 E2: die letzten n Sätze eines Absatzes (Satzende . ! ? vor Leerzeichen und Großbuchstaben oder „).
+  eleventyConfig.addFilter("letzteSaetze", (text, n = 2) => {
+    const saetze = String(text || "").split(/(?<=[.!?])\s+(?=[A-ZÄÖÜ„])/);
+    return saetze.slice(-n).join(" ");
+  });
   eleventyConfig.addFilter("areaLink", (place, label, current) => {
     const text = escHtml(label || place.name);
     const mark = current && current === place.url ? ' aria-current="page"' : "";
@@ -396,6 +434,12 @@ module.exports = function(eleventyConfig) {
     } catch (error) {
       return "";
     }
+  });
+  // Update 64 F1: „13. November 2026“ aus „2026-11-13“ (Blogartikel: Veröffentlicht am / Aktualisiert am)
+  const MONATE = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+  eleventyConfig.addFilter("deDatumLang", (iso) => {
+    const [y, m, d] = String(iso || "").slice(0, 10).split("-").map(Number);
+    return y && m && d ? `${d}. ${MONATE[m - 1]} ${y}` : "";
   });
   eleventyConfig.addFilter("deDate", (iso) => {
     const [y, m, d] = String(iso || "").split("-");

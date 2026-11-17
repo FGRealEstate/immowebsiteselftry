@@ -46,6 +46,9 @@ eleventyComputed:
 
 {#- Update 33 §2.1 (Peer, 04.11.2026: Option A): dritter Hero-Knopf mit der Nummer des Ansprechpartners, damit sie ohne Scrollen
     sichtbar und antippbar ist; mit zwei Personen (Berlin-Übersicht) die Büronummer. Nummern selbst unverändert. #}
+{#- Update 64 E1: zwei Knöpfe statt drei. Gold „Kostenlose Bewertung“, daneben als Rahmenknopf „[Vorname] anrufen“ mit Telefonsymbol
+    (A10, statt „☎“); „Ansprechpartner [Name]“ entfällt, der Kontaktabschnitt weiter unten deckt das ab. Mit zwei Personen
+    (Berlin-Übersicht) ist es die Büronummer, daher „Büro anrufen“. Die Nummer steht im Namen für Screenreader. #}
 {% set heroPhone = nav.phone if zwei else kontaktPhone %}
 {# 1. Titelbild über den ganzen Bildschirm (Design-Pass 2 §5.1): Ortsname groß, „Immobilie verkaufen, kaufen und finanzieren“
      darunter in Lead-Größe; eine H1 mit unverändertem Text #}
@@ -56,9 +59,10 @@ eleventyComputed:
   kicker: g.kicker or (g.kreis.name if g.kreis else "Brandenburg"),
   titel: g.h1,
   ort: g.h1Teile,
-  buttons: [{ href: valuationHref, label: "Kostenlose Bewertung" }, { href: "#ansprechpartner", label: ("Ihre Ansprechpartner" if zwei else "Ansprechpartner " + vorname) }, { href: heroPhone.href, label: "☎ " + heroPhone.display, aria: (("Büro" if zwei else kontakt.name) + " anrufen: " + heroPhone.display) }],
+  buttons: [{ href: valuationHref, label: "Kostenlose Bewertung" }, { href: heroPhone.href, label: (("Büro" if zwei else vorname) + " anrufen"), tel: true, aria: (("Büro" if zwei else kontakt.name) + " anrufen: " + heroPhone.display) }],
   position: g.heroPhoto.position,
-  kenburns: true
+  kenburns: true,
+  vertrauen: google
 }) }}
 
 {# 2. Kennzahlen direkt unter dem Titelbild (§5.2): vier Werte in einer Reihe, Wert in Marcellus 36 px, Bezeichnung 15 px, die Nummer
@@ -80,10 +84,14 @@ eleventyComputed:
     {#- Update 37 §1 (05.11.2026): „Stand der Zahlen“ in der Art der Quellenhinweise, klein und gedämpft, vor dem ersten Satz über F&G.
      Bisher nur Leipzig (Teil 5 freigegeben); Berlin, Dresden und Brandenburg folgen mit Timons OK zu Teil 6.
      Update 39 §2 (06.11.2026): auf allen Gebietsseiten, mit den ersten Werten für 2026 und dem Hinweis auf Mittelwerte. #}
+    {#- Update 64 E2 (17.11.2026): sichtbar bleiben nur „Stand: …“ und die letzten zwei Sätze des Absatzes (zur Bewertung des
+        einzelnen Objekts); der ganze Absatz steht unverändert als Erstes im Akkordeon „Alle Zahlen für … mit Quellen“. -#}
     {%- if g.standHinweis %}
-    <p class="fgs-small fgs-facts-stand fgs-facts-stand-hinweis">{{ g.standHinweis | nbsp | escape | safe }}</p>{% endif %}
+    <p class="fgs-small fgs-facts-stand fgs-facts-stand-hinweis">{{ g.standHinweis | letzteSaetze(2) | nbsp | escape | safe }}</p>{% endif %}
     <details class="fgs-more fgs-more--facts" id="alle-zahlen">
       <summary><span class="fgs-more-title">Alle Zahlen für {{ g.fuerOrt }} mit Quellen</span><span class="fgs-more-line">Kaufpreise sind tatsächlich gezahlte Preise, keine Angebotspreise aus Portalen.</span></summary>
+      {%- if g.standHinweis %}
+      <p class="fgs-small fgs-facts-stand-voll">{{ g.standHinweis | nbsp | escape | safe }}</p>{% endif %}
       <ul class="fgs-facts-rows" role="list">
         {%- for z in g.zahlen %}
         <li>
@@ -203,14 +211,14 @@ eleventyComputed:
   <div class="fgs-wrap">
     <div class="fgs-obj-head">
       <div class="fgs-head"><h2 id="angebote-titel">Aktuelle Angebote {{ g.inOrt }}</h2></div>
-      <a class="fgs-btn fgs-btn--primary fgs-obj-head-btn" href="/angebote">Alle Angebote</a>
+      <a class="fgs-btn fgs-btn--secondary fgs-obj-head-btn" href="/angebote">Alle Angebote</a>{# Update 64 A9: Rahmenknopf, Gold nur für die Hauptaktion #}
     </div>
     <ul class="fgs-obj-grid fgs-obj-grid--home" role="list">
       {%- for o in eigeneAngebote.slice(0, 6) %}
       {{ angebot(o) }}
       {%- endfor %}
     </ul>
-    <div class="fgs-btns fgs-obj-more"><a class="fgs-btn fgs-btn--primary" href="/angebote">Alle Angebote ansehen</a></div>
+    <div class="fgs-btns fgs-obj-more"><a class="fgs-btn fgs-btn--secondary" href="/angebote">Alle Angebote ansehen</a></div>
   </div>
 </section>
 {%- endif %}

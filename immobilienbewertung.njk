@@ -14,9 +14,12 @@ service:
   id: immobilienbewertung
   parent: { label: "Immobilie verkaufen", href: "/verkaufen" }
   crumb: "Kostenlose Bewertung"
-  kicker: "Kostenlos und unverbindlich"
+  # Update 64 C1: Dachzeile und Text wörtlich aus dem Brief („Kostenlos“ stand dreimal im ersten Bildschirm); die H1 bleibt.
+  kicker: "Antwort meist am selben Tag"
   h1: "Kostenlose Immobilienbewertung in Berlin, Brandenburg, Leipzig und Dresden"
-  intro: "Ihr Ansprechpartner aus der Region bewertet Ihre Immobilie persönlich, kostenlos und meist noch am selben Tag. Wir bewerten Wohnungen, Häuser, Mehrfamilienhäuser, Grundstücke und Gewerbeimmobilien."
+  intro: "Ihr Ansprechpartner aus der Region bewertet Ihre Immobilie persönlich und meist noch am selben Tag. Wir bewerten Wohnungen, Häuser, Mehrfamilienhäuser, Grundstücke und Gewerbeimmobilien."
+  vertrauen: true # Update 64 A6: Vertrauenszeile unter dem Knopf
+  kurzNachFormular: true # Update 64 C2: „Das Wichtigste in Kürze“ erst nach dem Formular (Marke <!-- fgs-kurz --> im Inhalt)
   button: { label: "Bewertung anfragen", href: "#anfrage" }
   hero: { name: "bewertung-hero", alt: "Villa am Teltower Damm in Berlin-Zehlendorf, ein Baudenkmal", widths: [960, 1600] }
   summaryQ: "Was ist meine Immobilie wert und wie erfahre ich es?"
@@ -67,35 +70,30 @@ service:
     description: "Kostenlose Wertermittlung für Wohnungen, Häuser, Mehrfamilienhäuser und Grundstücke in Berlin, Brandenburg, Leipzig und Dresden, persönlich durch den regionalen Ansprechpartner, meist am selben Tag."
     area: regional
 ---
-{% from "fgs-macros.njk" import split, facts with context %}
+{% from "fgs-macros.njk" import split, facts, pic with context %}
 {% from "fgd-icons.njk" import icon %}
+{% from "fgs-objekt-icons.njk" import objektIcon %}
 
-{# F Assistent über die volle Breite (Brief 5.5): oben die drei Schritte des Ablaufs, darunter das Formular mit großer
-   Fortschrittslinie. Ohne Skript stehen alle fünf Abschnitte untereinander (fg-design.js, [data-fgd-wizard]) #}
-<section class="fgs-section fgs-wizard-section" id="formular" aria-labelledby="formular-titel">
+{# Update 64 C2 (17.11.2026): Das Formular „Bewertung anfragen“ steht direkt unter dem Titelbild (vorher rund 2.400 px tief, nach
+   „Das Wichtigste in Kürze“ und den drei Schritten). Die erklärenden Abschnitte folgen unverändert und in ihrer Reihenfolge:
+   „Das Wichtigste in Kürze“ (fgs-service.njk setzt es an die Marke fgs-kurz, service.kurzNachFormular), die drei Schritte,
+   danach alles wie bisher. Die Überschrift des Formulars ist jetzt eine H2 (eigener Abschnitt), Wortlaut unverändert.
+   C4: darüber eine persönliche Zeile mit den runden Porträts von Timon und Lennart (Satz wörtlich aus dem Brief), darunter die
+   Vertrauenszeile aus A6 (Bewertung und Anzahl aus _data/google.js, Link zu /bewertungen/).
+   F Assistent über die volle Breite (Brief 5.5): Formular mit großer Fortschrittslinie. Ohne Skript stehen alle fünf Abschnitte
+   untereinander (fg-design.js, [data-fgd-wizard]) #}
+<section class="fgs-section fgs-wizard-section fgs-anfrage-oben" id="formular" aria-labelledby="anfrage-titel">
   <div class="fgs-wrap">
-    <div class="fgs-head"><h2 id="formular-titel">In drei Schritten zum Wert Ihrer Immobilie</h2></div>
-    <ol class="fgs-steps fgs-steps--row" role="list">
-      <li>
-        <span class="fgs-step-num" aria-hidden="true">01</span>
-        <h3>Angaben senden</h3>
-        <p>Objektart, Adresse, Wohnfläche, Zimmerzahl, Baujahr und Zustand reichen für einen ersten Wert. Für eine genaue Wertermittlung schicken wir Ihnen danach ein paar gezielte Fragen zu Ihrer Immobilie per E-Mail.</p>
-      </li>
-      <li>
-        <span class="fgs-step-num" aria-hidden="true">02</span>
-        <h3>Ihr Ansprechpartner meldet sich</h3>
-        <p>Für Süd- und West-Berlin und den Süden Brandenburgs ist das Lennart Geserich, für Nord- und Ost-Berlin, den Norden Brandenburgs, Leipzig und Dresden Timon Fischer. Wenn etwas unklar ist, fragt er nach.</p>
-      </li>
-      <li>
-        <span class="fgs-step-num" aria-hidden="true">03</span>
-        <h3>Sie erhalten die Wertermittlung</h3>
-        <p>Mit einer Spanne, die wir begründen, und einer Einschätzung, welcher Angebotspreis am Markt sinnvoll ist.</p>
-        <p class="fgs-step-time"><span class="fgs-label">Typisch</span> meist noch am selben Tag</p>
-      </li>
-    </ol>
-
+    <div class="fgs-persoenlich">
+      <p class="fgs-persoenlich-bilder" aria-hidden="true">
+        <span class="fgs-avatar">{{ pic(("/images/team/" + (kontakte.timon.name | slugify) + "-rund") | bild, "", "56px") }}</span>
+        <span class="fgs-avatar">{{ pic(("/images/team/" + (kontakte.lennart.name | slugify) + "-rund") | bild, "", "56px") }}</span>
+      </p>
+      <p class="fgs-persoenlich-satz">Timon Fischer oder Lennart Geserich melden sich persönlich bei Ihnen, meist noch am selben Tag.</p>
+      <p class="fgs-trust-hell"><a href="/bewertungen/"><span aria-hidden="true">★</span> {{ google.rating }} bei Google · {{ google.count }} Bewertungen · Büro in Berlin-Steglitz</a></p>
+    </div>
     <div class="fgd-form-card fgs-wizard" id="anfrage">
-      <h3>Bewertung anfragen</h3>
+      <h2 id="anfrage-titel">Bewertung anfragen</h2>
       <p>In fünf kurzen Schritten. Pflichtfelder sind mit * markiert.</p>
       {# Update 4, 3.1: Bewertung in 5 Schritten. Feldnamen unverändert (propstack-lead). Ohne JavaScript
          bleiben alle fünf Abschnitte sichtbar und die Seite zeigt ein Formular; Fortschritt und
@@ -110,15 +108,17 @@ service:
         </div>
         <fieldset data-fgd-step="Objektart">
           <legend>1. Welche Immobilie möchten Sie bewerten lassen?&nbsp;*</legend>
-          <div class="fgd-choices">
-            <label class="fgd-choice"><input type="radio" name="object_type" value="Eigentumswohnung" required>Eigentums&shy;wohnung</label>
-            <label class="fgd-choice"><input type="radio" name="object_type" value="Einfamilienhaus" required>Einfamilien&shy;haus</label>
-            <label class="fgd-choice"><input type="radio" name="object_type" value="Zweifamilienhaus" required>Zweifamilien&shy;haus</label>
-            <label class="fgd-choice"><input type="radio" name="object_type" value="Doppelhaushälfte" required>Doppel&shy;haus&shy;hälfte</label>
-            <label class="fgd-choice"><input type="radio" name="object_type" value="Reihenhaus" required>Reihenhaus</label>
-            <label class="fgd-choice"><input type="radio" name="object_type" value="Mehrfamilienhaus" required>Mehrfamilien&shy;haus</label>
-            <label class="fgd-choice"><input type="radio" name="object_type" value="Grundstück" required>Grundstück</label>
-            <label class="fgd-choice"><input type="radio" name="object_type" value="Gewerbe" required>Gewerbe</label>
+          {#- Update 64 C3: Kacheln mit Gold-Icon (fgs-objekt-icons.njk), 2 Spalten am Handy, 4 ab 768 px; ein Tipp führt zu Schritt 2
+              (fg-design.js). Werte und Feldname unverändert. -#}
+          <div class="fgd-choices fgd-choices--kacheln">
+            <label class="fgd-choice"><input type="radio" name="object_type" value="Eigentumswohnung" required>{{ objektIcon("Eigentumswohnung") }}<span>Eigentums&shy;wohnung</span></label>
+            <label class="fgd-choice"><input type="radio" name="object_type" value="Einfamilienhaus" required>{{ objektIcon("Einfamilienhaus") }}<span>Einfamilien&shy;haus</span></label>
+            <label class="fgd-choice"><input type="radio" name="object_type" value="Zweifamilienhaus" required>{{ objektIcon("Zweifamilienhaus") }}<span>Zweifamilien&shy;haus</span></label>
+            <label class="fgd-choice"><input type="radio" name="object_type" value="Doppelhaushälfte" required>{{ objektIcon("Doppelhaushälfte") }}<span>Doppel&shy;haus&shy;hälfte</span></label>
+            <label class="fgd-choice"><input type="radio" name="object_type" value="Reihenhaus" required>{{ objektIcon("Reihenhaus") }}<span>Reihenhaus</span></label>
+            <label class="fgd-choice"><input type="radio" name="object_type" value="Mehrfamilienhaus" required>{{ objektIcon("Mehrfamilienhaus") }}<span>Mehrfamilien&shy;haus</span></label>
+            <label class="fgd-choice"><input type="radio" name="object_type" value="Grundstück" required>{{ objektIcon("Grundstück") }}<span>Grundstück</span></label>
+            <label class="fgd-choice"><input type="radio" name="object_type" value="Gewerbe" required>{{ objektIcon("Gewerbe") }}<span>Gewerbe</span></label>
           </div>
         </fieldset>
         <fieldset data-fgd-step="Adresse">
@@ -232,6 +232,33 @@ service:
       </div>
     </div>
     <p class="fgs-note fgs-wizard-note">Ihre Angaben nutzen wir für die Bewertung und die Kontaktaufnahme zu Ihrer Anfrage. Wie wir mit Ihren Daten umgehen, steht in der <a href="/datenschutz">Datenschutzerklärung</a>.</p>
+  </div>
+</section>
+
+<!-- fgs-kurz -->
+
+{# Die drei Schritte des Ablaufs, unverändert; vorher im selben Abschnitt über dem Formular #}
+<section class="fgs-section fgs-wizard-section" id="ablauf" aria-labelledby="formular-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head"><h2 id="formular-titel">In drei Schritten zum Wert Ihrer Immobilie</h2></div>
+    <ol class="fgs-steps fgs-steps--row" role="list">
+      <li>
+        <span class="fgs-step-num" aria-hidden="true">01</span>
+        <h3>Angaben senden</h3>
+        <p>Objektart, Adresse, Wohnfläche, Zimmerzahl, Baujahr und Zustand reichen für einen ersten Wert. Für eine genaue Wertermittlung schicken wir Ihnen danach ein paar gezielte Fragen zu Ihrer Immobilie per E-Mail.</p>
+      </li>
+      <li>
+        <span class="fgs-step-num" aria-hidden="true">02</span>
+        <h3>Ihr Ansprechpartner meldet sich</h3>
+        <p>Für Süd- und West-Berlin und den Süden Brandenburgs ist das Lennart Geserich, für Nord- und Ost-Berlin, den Norden Brandenburgs, Leipzig und Dresden Timon Fischer. Wenn etwas unklar ist, fragt er nach.</p>
+      </li>
+      <li>
+        <span class="fgs-step-num" aria-hidden="true">03</span>
+        <h3>Sie erhalten die Wertermittlung</h3>
+        <p>Mit einer Spanne, die wir begründen, und einer Einschätzung, welcher Angebotspreis am Markt sinnvoll ist.</p>
+        <p class="fgs-step-time"><span class="fgs-label">Typisch</span> meist noch am selben Tag</p>
+      </li>
+    </ol>
   </div>
 </section>
 

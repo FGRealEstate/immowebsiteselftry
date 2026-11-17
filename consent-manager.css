@@ -104,3 +104,10 @@
   }
   #cc-main .cm__footer { display: none; }
 }
+
+/* Update 64 A3: Am Desktop (ab 1024 px) verdeckte der Banner in der Mitte der Unterkante das Ende der H1 und „Vorhaben besprechen“.
+   Jetzt eine kompakte Karte unten links, höchstens 420 px breit, 24 px vom Rand (Layout „box“, Position in consent-manager.js). */
+@media (min-width: 1024px) {
+  #cc-main { --cc-modal-margin: 24px; }
+  #cc-main .cm.cm--box { max-width: 420px; left: 24px; bottom: 24px; }
+}

@@ -43,7 +43,11 @@ eleventyComputed:
     <div class="fgd-blog-hero-text">
       <p class="fgs-label"><a href="/blog/#{{ a.katId }}">{{ a.katLabel | safe }}</a></p>
       <h1>{{ a.h1 | safe }}</h1>
-      <p class="fgd-blog-dateline"><span class="fgd-blog-by">{{ a.by | safe }}</span><span>{{ a.minuten }} Min. Lesezeit</span></p>
+      {#- Update 64 F (17.11.2026): F2 kleines rundes Porträt vor „Von …“, verlinkt auf dieselbe Profilseite wie der Name (für
+          Tastatur und Screenreader nur einmal, darum tabindex -1 und aria-hidden). F1 unter der Autorenzeile „Veröffentlicht am …“
+          in <time>, „Aktualisiert am …“ nur wenn dateModified abweicht; beide Tage wie im JSON-LD (a.datePublished, a.dateModified). -#}
+      {%- set rund = ("/images/team/" + (a.autor.name | slugify) + "-rund") if a.autor else "" %}
+      <p class="fgd-blog-dateline"><span class="fgd-blog-by">{% if a.autor %}<a class="fgd-blog-by-bild" href="{{ a.autor.url }}" tabindex="-1" aria-hidden="true"><img src="{{ rund }}-112.webp" width="36" height="36" alt="" decoding="async"></a>{% endif %}{{ a.by | safe }}</span><span class="fgd-blog-datum">Veröffentlicht am <time datetime="{{ a.datePublished | truncate(10, true, '') }}">{{ a.datePublished | deDatumLang }}</time>{% if a.dateModified and (a.dateModified | truncate(10, true, '')) != (a.datePublished | truncate(10, true, '')) %} · Aktualisiert am <time datetime="{{ a.dateModified | truncate(10, true, '') }}">{{ a.dateModified | deDatumLang }}</time>{% endif %}</span><span>{{ a.minuten }} Min. Lesezeit</span></p>
     </div>
     <figure class="fgd-blog-lead">
       <img src="{{ a.url }}{{ a.lead.src }}" alt="{{ a.lead.alt }}" width="{{ a.lead.width }}" height="{{ a.lead.height }}" fetchpriority="high" decoding="async">

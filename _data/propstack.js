@@ -1631,6 +1631,36 @@ function seitenTitelSetzen(properties, projects) {
         (item) => (item.living_space && titelEtage(item) ? `${kern(item)}, ${item.living_space}, ${titelEtage(item)}` : null)
     ]);
     properties.forEach((item, i) => { item.seite_titel = titel[i]; });
+    /* Update 64 D2 (17.11.2026, ersetzt den Teil von Update 57 §6, nach dem die Propstack-Überschrift H1 blieb): H1 der
+       Angebotsseite ist der Datentitel wie im Brief („2,5-Zimmer-Wohnung in Berlin-Friedenau“), also der Seitentitel ohne das
+       angehängte „kaufen“/„mieten“; Wohnfläche oder Etage bei gleichen Titeln bleiben. Die Propstack-Überschrift steht als
+       Leitzeile darunter, ohne Schlusspunkt. */
+    properties.forEach((item) => {
+        item.h1_titel = String(item.seite_titel || "").replace(/ (kaufen|mieten)$/, "") || null;
+        item.leitzeile = String(item.title || "").trim().replace(/\s*\.+$/, "") || null;
+    });
+    /* Update 64 B7 (17.11.2026): Angebotskarte aus den Daten statt der abgeschnittenen Propstack-Überschrift.
+       karte_ort: Ortsteil mit Stadt („Dresden-Reick“, „Berlin-Moabit“), wie im Seitentitel. karte_art: „Eigentumswohnung“,
+       „Mietwohnung“, „Haus“, „Mehrfamilienhaus“ …; provisionsfrei: Propstack-Feld Courtage (ohne Eintrag dort der
+       Courtage-Hinweis) enthält „provisionsfrei“. gebaeude: Projekt oder Straße mit Hausnummer, nur zum Gruppieren (eine Karte
+       je Haus), wird nirgends ausgegeben. angelegt: Anlagedatum in Propstack (created_at), für „Neueste zuerst“ (H2). */
+    properties.forEach((item) => {
+        const raw = item.raw || {};
+        const art = titelArt(item);
+        let karteArt = art === "Wohnung" ? (item.marketing_type === "Miete" ? "Mietwohnung" : "Eigentumswohnung") : art;
+        if (!karteArt && item.property_type) {
+            const typ = normalizeText(item.property_type);
+            karteArt = typ.includes("wohnung") || typ.includes("wohnen") ? (item.marketing_type === "Miete" ? "Mietwohnung" : "Eigentumswohnung")
+                : typ.includes("grundstuck") ? "Grundstück" : typ.includes("gewerbe") ? "Gewerbeimmobilie" : typ.includes("haus") ? "Haus" : null;
+        }
+        const courtage = feldWert(raw.courtage) || feldWert(raw.courtage_note) || "";
+        const strasse = [feldWert(raw.street), feldWert(raw.house_number), feldWert(raw.zip_code) || item.location].map((x) => normalizeText(x || "")).join("|");
+        item.karte_ort = titelOrt(item.location, teil(item)) || item.location || null;
+        item.karte_art = karteArt || null;
+        item.provisionsfrei = /provisionsfrei/i.test(String(courtage));
+        item.gebaeude = item.project_id != null ? `projekt-${item.project_id}` : strasse.replace(/\|/g, "") ? `haus-${strasse}` : `angebot-${item.id}`;
+        item.angelegt = String(feldWert(raw.created_at) || "").slice(0, 19) || null;
+    });
     const projektTitel = eindeutigeTitel(projects, [
         (project) => {
             const arten = [...new Set(project.units.map(titelArt))];

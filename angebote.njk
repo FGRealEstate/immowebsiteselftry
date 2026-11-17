@@ -16,9 +16,12 @@ pg:
   crumb: "Angebote"
   kicker: "Eigennutz und Kapitalanlage"
   h1: "Aktuelle Immobilienangebote in Berlin, Leipzig und Dresden"
-  intro: "Hier finden Sie alle Wohnungen und Projekte, die wir gerade vermarkten. Jedes Angebot ist als Eigennutz oder Kapitalanlage gekennzeichnet; bei Kapitalanlagen sehen Sie Kaltmiete und Bruttorendite, sobald beide Angaben vorliegen."
+  # Update 64 H1: Titelzeile nur H1 und eine Zeile (der erste Satz der Einleitung, unverändert; die Kennzeichnung erklärt der
+  # Abschnitt „Kennzeichnung und Kennzahlen“), „Angebote ansehen“ entfällt, damit Filter und erste Kartenreihe bei 1440 × 900
+  # ohne Scrollen sichtbar sind. Vorher: „… vermarkten. Jedes Angebot ist als Eigennutz oder Kapitalanlage gekennzeichnet;
+  # bei Kapitalanlagen sehen Sie Kaltmiete und Bruttorendite, sobald beide Angaben vorliegen.“
+  intro: "Hier finden Sie alle Wohnungen und Projekte, die wir gerade vermarkten."
   buttons:
-    - { label: "Angebote ansehen", href: "#angebote" }
     - { label: "Gesuch anlegen", href: "/gesuch-anlegen/", line: true }
   faqTitle: "Häufige Fragen zu unseren Angeboten"
   faq:
@@ -48,7 +51,9 @@ pg:
 {% set unitsAlle = propstack.standaloneProperties or [] %}
 {% set projectsAlle = propstack.projects or [] %}
 {#- Update 22 §5: kein Angebot ohne Foto der Immobilie selbst. Angebote ohne Titelbild (cover) stehen nicht mehr im Raster. -#}
-{% set units = unitsAlle | selectattr("cover") %}
+{#- Update 64 H2: Standard „Neueste zuerst“ (vorher „Titel A–Z“): nach dem Anlagedatum in Propstack (angelegt), neueste oben.
+    Das Skript unten behält diese Reihenfolge, solange keine andere Sortierung gewählt ist. -#}
+{% set units = unitsAlle | selectattr("cover") | sort(true, false, "angelegt") %}
 {% set projects = projectsAlle | selectattr("cover") %}
 
 <section class="fgs-section fgs-offers" id="angebote" aria-labelledby="angebote-titel">
@@ -60,7 +65,7 @@ pg:
       <label>Vermarktung<select id="filter-vermarktung"><option value="">Alle</option>{% for type in propstack.filters.marketingTypes %}<option value="{{ type }}">{{ type }}</option>{% endfor %}</select></label>
       <label>Objektart<select id="filter-objektart"><option value="">Alle</option>{% for type in propstack.filters.propertyTypes %}<option value="{{ type }}">{{ type }}</option>{% endfor %}</select></label>
       <label>Preis bis (€)<input id="filter-preis" inputmode="numeric" placeholder="beliebig" autocomplete="off"></label>
-      <label>Sortierung<select id="filter-sortierung"><option value="">Titel A–Z</option><option value="price-asc">Preis aufsteigend</option><option value="price-desc">Preis absteigend</option><option value="yield-desc">Rendite absteigend</option><option value="area-desc">Fläche absteigend</option></select></label>
+      <label>Sortierung<select id="filter-sortierung"><option value="">Neueste zuerst</option><option value="price-asc">Preis aufsteigend</option><option value="price-desc">Preis absteigend</option><option value="yield-desc">Rendite absteigend</option><option value="area-desc">Fläche absteigend</option></select></label>
       <div class="fgs-offer-filter-actions">
         <button class="fgs-btn fgs-btn--secondary" type="submit">Anzeigen</button>
         <button id="filter-reset" class="fgs-offer-reset" type="reset">Zurücksetzen</button>
