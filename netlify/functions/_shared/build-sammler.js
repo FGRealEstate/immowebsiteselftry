@@ -94,6 +94,11 @@ function speicherOeffnen(event) {
   }
 }
 
+/** Update 69 §1: der Zweig, den Netlify als Produktion veröffentlicht (Release = main in live mergen). */
+function liveZweig() {
+  return process.env.FG_LIVE_BRANCH || "live";
+}
+
 function buildHookUrl(entityType) {
   return entityType === "project"
     ? (process.env.NETLIFY_PROJECT_BUILD_HOOK_URL || process.env.NETLIFY_BUILD_HOOK_URL)
@@ -107,14 +112,14 @@ async function sofortBauen(entityType, titel) {
     throw new Error(entityType === "project" ? "NETLIFY_PROJECT_BUILD_HOOK_URL fehlt." : "NETLIFY_BUILD_HOOK_URL fehlt.");
   }
   let ziel = url;
-  if (titel) {
-    try {
-      const parsed = new URL(url);
-      parsed.searchParams.set("trigger_title", String(titel).slice(0, 120));
-      ziel = parsed.toString();
-    } catch {
-      ziel = url;
-    }
+  try {
+    const parsed = new URL(url);
+    // Update 69 §1: Produktionszweig ist „live“; der Hook baut sonst seinen Standardzweig main.
+    parsed.searchParams.set("trigger_branch", liveZweig());
+    if (titel) parsed.searchParams.set("trigger_title", String(titel).slice(0, 120));
+    ziel = parsed.toString();
+  } catch {
+    ziel = url;
   }
   const response = await fetch(ziel, { method: "POST" });
   if (!response.ok) {
@@ -234,6 +239,7 @@ module.exports = {
   sammlerLauf,
   sammlerStand,
   sofortBauen,
+  liveZweig,
   sammelSekunden,
   _testSpeicher(s) { testSpeicher = s; }
 };
