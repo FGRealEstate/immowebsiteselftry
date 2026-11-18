@@ -5,8 +5,11 @@
    - § 8 Abs. 2: nichts über Leistungen, Preise, Fristen oder Wirkungen von Gutachten.org, außer was Evalion liefert.
      Deshalb nur Produktnamen, „kostenlose Ersteinschätzung“ und der Code FG10; die Texte stehen wörtlich im Brief §2.
    - § 8 Abs. 3: Evalion als Partner nennen ist erlaubt, das Logo hat Evalion per E-Mail freigegeben.
-   - § 8 Abs. 5: jeder Block trägt den Hinweis auf die Provision.
+   - § 8 Abs. 5: Update 62 setzte darum unter jeden Block den Hinweis auf die Provision. Update 65 §3 (18.11.2026) nimmt alle
+     sichtbaren Hinweise heraus; rel="sponsored noopener" bleibt an jedem Partnerlink.
    Kein Schema für den Partner, kein sameAs (Brief §4).
+
+   Update 65 (18.11.2026): zweiter Partner MS-Immobilienservice Schmidt e.K. (Hausverwaltung), siehe `hausverwaltung` unten.
 
    Wo der Partner erscheint (Brief §3): _includes/fgs-partner.njk (Block), _includes/fgs-partner-zeile.njk (eine Zeile im
    Lexikon und im Artikel Nr. 14), partner.njk (/partner/). Alles nur mit dem Schalter `partner` in _data/freigaben.js;
@@ -38,9 +41,26 @@ const gutachten = {
   reihenfolge: ["restnutzungsdauer", "kaufpreisaufteilung", "verkehrswert"]
 };
 
+/* Update 65 (18.11.2026): Hausverwaltung für Mietshäuser und Eigentümergemeinschaften in Berlin und Brandenburg.
+   Block nach Brief §2 in _includes/fgs-partner.njk (partnerArt = "hausverwaltung"): H3, ein Satz, ein Knopf, kein Code.
+   Logo: Timons Datei trägt das Wasserzeichen „AILogoMaker“ und wird nicht verwendet (Brief §1). Kommt eine saubere Datei
+   (PNG mit transparentem Hintergrund oder SVG), hier wie bei Gutachten.org eintragen: { src, breite, hoehe }.
+   Link: Timons E-Mail lag beim Bau nicht vor. Die Adresse stammt aus der Websuche und ist die eigene Seite der Firma
+   (Titel „MS-Immobilienservice - Schmidt e.K.“, Bötzowstr. 26, 10407 Berlin). Nur http: Das Zertifikat unter https gilt
+   nicht für die Domain (*.kasserver.com). Gegen Timons E-Mail prüfen, sobald sie da ist. */
+const hausverwaltung = {
+  id: "ms-immobilienservice-schmidt", // Wert für `partner` im GA4-Ereignis (Brief §2)
+  name: "MS-Immobilienservice Schmidt e.K.",
+  bereich: "Hausverwaltung", // Abschnitt auf /partner/
+  logo: null,
+  link: "http://www.ms-immobilienservice.de/",
+  produkt: "hausverwaltung" // Wert für `produkt` im GA4-Ereignis (Brief §2)
+};
+
 const partner = {
   aktiv: Boolean(require("./freigaben.js").partner),
   gutachten,
+  hausverwaltung,
   // Lexikonbegriffe und Artikel mit der Partnerzeile (Brief §3): Slug → Produkt
   lexikon: { restnutzungsdauer: "restnutzungsdauer", verkehrswert: "verkehrswert" },
   artikel: { "restnutzungsdauergutachten-erklaert": "restnutzungsdauer" }

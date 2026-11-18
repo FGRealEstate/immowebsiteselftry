@@ -3156,7 +3156,7 @@ html:not(.fgs-js) .fgs-feat-nav { display: none; }
 .fgs-pblock-produkte li { margin: 0 0 6px; }
 .fgs-pblock-aktion { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; margin: 20px 0 16px; }
 .fgs-pblock-code { display: inline-block; padding: 6px 12px; border: 1px dashed var(--fgs-line); border-radius: var(--fgs-r); font-weight: 600; letter-spacing: .08em; color: var(--fgs-ink); }
-.fgs-pblock-kennung { margin: 0 !important; font-size: 13px; line-height: 1.4; color: var(--fgs-ink-2); }
+.fgs-pblock-text > :last-child { margin-bottom: 0; } /* U65 §3: ohne Zeile zur Provision endet der Kasten mit den Knöpfen */
 .fgs-refs .fgs-pblock-box { margin: 32px 0; } /* /verkaufen: zwischen den beiden Nachschlag-Abschnitten */
 .fgs-compare-wrap + .fgs-pblock-box { margin-top: 40px; } /* /immobilienbewertung/: unter der Vergleichstabelle */
 .fgs-partner-zeile { margin-top: 12px; }

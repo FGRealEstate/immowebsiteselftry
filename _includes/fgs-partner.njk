@@ -1,28 +1,37 @@
 {#- Update 62 §2 (17.11.2026), Update 63 §1/§3 (17.11.2026): Block „Unser Partner für Gutachten“, Text wörtlich aus den Briefs,
     Angaben aus _data/partner.js. Nur sichtbar mit partner.aktiv (Schalter freigaben.partner).
+    Update 65 §2 (18.11.2026): derselbe Block für die Hausverwaltung (MS-Immobilienservice Schmidt e.K.), Text wörtlich aus dem
+    Brief, ohne Logo und ohne Code. Update 65 §3: keine sichtbare Zeile zur Provision mehr, rel="sponsored noopener" bleibt.
     Überschrift immer H3 (U63 §1): Der Seitenindex links nimmt nur H2 auf, so erscheint der Partner nicht als Kapitel der Seite.
     Vor dem Einbinden setzen:
-      partnerProdukte     Liste der Produkte (restnutzungsdauer, kaufpreisaufteilung, verkehrswert), je ein Link
+      partnerArt          "hausverwaltung" für den Hausverwaltungs-Block, sonst (leer oder "gutachten") Gutachten.org
+      partnerProdukte     nur Gutachten: Liste der Produkte (restnutzungsdauer, kaufpreisaufteilung, verkehrswert), je ein Link
       partnerEingebettet  true: ohne eigenen Abschnitt (der Block steht in einem bestehenden Abschnitt)
-      partnerOhneKennung  true: ohne die Zeile „Partnerlink: …“ (nur /partner/, dort steht der Hinweis am Seitenende, U63 §3)
-    Alle Links: neuer Tab, rel="sponsored noopener"; data-partner und data-produkt für partner_click (fg-design.js). -#}
+    Alle Links: neuer Tab, rel="sponsored noopener"; data-partner und data-produkt für partner_click (fg-design.js).
+    Ohne Logo (logo: null) entfällt die Spalte mit der Marke; der Name steht im Satz. -#}
 {%- if partner.aktiv %}
-{%- set pg = partner.gutachten %}
-{%- set pid = "partner-gutachten-" + (partnerProdukte | join("-")) %}
+{%- set hv = (partnerArt == "hausverwaltung") %}
+{%- if hv %}{% set pg = partner.hausverwaltung %}{% set pid = "partner-hausverwaltung" %}
+{%- else %}{% set pg = partner.gutachten %}{% set pid = "partner-gutachten-" + (partnerProdukte | join("-")) %}{% endif %}
 {%- if not partnerEingebettet %}
 <section class="fgs-section fgs-pblock" aria-labelledby="{{ pid }}">
   <div class="fgs-wrap">
 {%- endif %}
     <div class="fgs-pblock-box">
       <div class="fgs-pblock-body">
+        {%- if pg.logo %}
         <div class="fgs-pblock-marke">
-          {%- if pg.logo %}
           <img src="{{ pg.logo.src }}" alt="{{ pg.name }}" width="{{ pg.logo.breite }}" height="{{ pg.logo.hoehe }}" loading="lazy" decoding="async">
-          {%- else %}
-          <span class="fgs-pblock-name">{{ pg.name }}</span>
-          {%- endif %}
         </div>
+        {%- endif %}
         <div class="fgs-pblock-text">
+          {%- if hv %}
+          <h3 id="{{ pid }}">Unser Partner für die Hausverwaltung</h3>
+          <p>Für die Verwaltung von Mietshäusern und Eigentümergemeinschaften in Berlin und Brandenburg arbeiten wir mit MS-Immobilienservice Schmidt&nbsp;e.K. zusammen.</p>{# &nbsp;: „e.K.“ nie allein in einer Zeile #}
+          <div class="fgs-pblock-aktion">
+            <a class="fgs-btn fgs-btn--secondary" href="{{ pg.link }}" target="_blank" rel="sponsored noopener" data-partner="{{ pg.id }}" data-produkt="{{ pg.produkt }}">Zur Hausverwaltung Schmidt</a>
+          </div>
+          {%- else %}
           <h3 id="{{ pid }}">Unser Partner für Gutachten</h3>
           <p>Wir arbeiten mit Gutachten.org zusammen, einem Angebot der Evalion GmbH aus Berlin.</p>
           <ul class="fgs-pblock-produkte">
@@ -35,8 +44,6 @@
             <a class="fgs-btn fgs-btn--secondary" href="{{ pg.link }}" target="_blank" rel="sponsored noopener" data-partner="{{ pg.id }}" data-produkt="allgemein">Zu Gutachten.org</a>
             <span class="fgs-pblock-code" aria-label="Rabattcode {{ pg.code }}">{{ pg.code }}</span>
           </div>
-          {%- if not partnerOhneKennung %}
-          <p class="fgs-pblock-kennung"><em>Partnerlink: Für Aufträge über diese Links erhalten wir eine Provision.</em></p>
           {%- endif %}
         </div>
       </div>

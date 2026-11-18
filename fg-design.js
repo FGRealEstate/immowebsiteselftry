@@ -853,7 +853,8 @@
 
   /* ---------- Update 54 §1 / Update 62 §2: Klicks auf Partnerlinks (fgs-partner.njk, fgs-partner-zeile.njk, /partner/) ----------
      GA4-Ereignis partner_click mit partner (data-partner, z. B. gutachten.org) und produkt (data-produkt: restnutzungsdauer,
-     kaufpreisaufteilung, verkehrswert oder allgemein) über den dataLayer (GTM), wie widget_open. Der Link öffnet einen neuen Tab,
+     kaufpreisaufteilung, verkehrswert oder allgemein; Update 65: partner ms-immobilienservice-schmidt mit produkt hausverwaltung)
+     über den dataLayer (GTM), wie widget_open. Der Link öffnet einen neuen Tab,
      die Seite bleibt also stehen und das Ereignis geht nicht verloren. */
   document.addEventListener('click', (event) => {
     const link = event.target && event.target.closest ? event.target.closest('a[data-partner]') : null;

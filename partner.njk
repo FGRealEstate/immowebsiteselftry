@@ -12,6 +12,8 @@ canonicalPath: /partner/
 # Kein Schema für den Partner, kein sameAs (die Seite hat nur das WebPage- und BreadcrumbList-Markup aller Seiten).
 # Text von Titel, H1, erstem Absatz und Hinweis wörtlich aus dem Brief; die Beschreibung nimmt nur Sätze aus Brief §2.
 # Update 63 §3: Der Block hier ohne seine Zeile „Partnerlink: …“, weil der Hinweis am Seitenende dasselbe sagt.
+# Update 65 §3 (18.11.2026): neuer Abschnitt „Hausverwaltung“ nach „Gutachten“; der Hinweis am Seitenende entfällt
+# (keine sichtbare Zeile zur Provision mehr, rel="sponsored noopener" bleibt an jedem Partnerlink).
 pg:
   crumb: "Partner"
   h1: "Unsere Partner"
@@ -23,13 +25,17 @@ pg:
     <div class="fgs-head">
       <h2 id="gutachten-titel">Gutachten</h2>
     </div>
-    {%- set partnerProdukte = partner.gutachten.reihenfolge %}{% set partnerEingebettet = true %}{% set partnerOhneKennung = true %}
+    {%- set partnerArt = "gutachten" %}{% set partnerProdukte = partner.gutachten.reihenfolge %}{% set partnerEingebettet = true %}
     {% include "fgs-partner.njk" %}
   </div>
 </section>
 
-<section class="fgs-section fgs-section--tight" aria-label="Hinweis zu Partnerlinks">
+<section class="fgs-section" id="hausverwaltung" aria-labelledby="hausverwaltung-titel">
   <div class="fgs-wrap">
-    <p class="fgs-note">Für Aufträge über die Links auf dieser Seite erhalten wir von unseren Partnern eine Provision.</p>
+    <div class="fgs-head">
+      <h2 id="hausverwaltung-titel">Hausverwaltung</h2>
+    </div>
+    {%- set partnerArt = "hausverwaltung" %}{% set partnerEingebettet = true %}
+    {% include "fgs-partner.njk" %}
   </div>
 </section>

@@ -74,7 +74,9 @@ customSchema: true
 {% include "fgs-wissen.njk" %}
 
 {# 3c. Update 62 §3: Partner Gutachten.org vor den Fragen, nur auf Seiten mit partnerVorFaq (Liste der Produkte) und mit freigaben.partner #}
-{% if partnerVorFaq %}{% set partnerProdukte = partnerVorFaq %}{% include "fgs-partner.njk" %}{% endif %}
+{% if partnerVorFaq %}{% set partnerArt = "gutachten" %}{% set partnerProdukte = partnerVorFaq %}{% include "fgs-partner.njk" %}{% endif %}
+{#- Update 65 §3 (18.11.2026): Partner Hausverwaltung vor den Fragen, auf Seiten mit partnerHausverwaltung: true (nur mit freigaben.partner) #}
+{% if partnerHausverwaltung %}{% set partnerArt = "hausverwaltung" %}{% include "fgs-partner.njk" %}{% endif %}
 
 {# 4. S7 Häufige Fragen #}
 {{ faq(faqItems, s.faqTitle or "Häufige Fragen") }}
