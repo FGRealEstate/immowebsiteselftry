@@ -28,6 +28,7 @@ test("baut genau im 06-Uhr-Lauf und loggt nur Auslösung und Status", async () =
   assert.strictEqual(aufrufe.length, 1);
   assert.strictEqual(aufrufe[0].opt.method, "POST");
   assert.ok(aufrufe[0].url.startsWith(hookUrl));
+  assert.strictEqual(new URL(aufrufe[0].url).searchParams.get("trigger_branch"), "live");
   assert.deepStrictEqual(logs, [["build triggered", 200]]);
 });
 

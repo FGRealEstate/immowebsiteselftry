@@ -28,6 +28,8 @@ async function taeglicherBuild({ jetzt = new Date(), hookUrl = process.env.NETLI
   let ziel = hookUrl;
   try {
     const url = new URL(hookUrl);
+    // Update 69 §1: Produktionszweig ist „live“; der Hook baut sonst seinen Standardzweig main.
+    url.searchParams.set("trigger_branch", process.env.FG_LIVE_BRANCH || "live");
     url.searchParams.set("trigger_title", "Täglicher Build 06:00 (Update 40 §1.2)");
     ziel = url.toString();
   } catch {
