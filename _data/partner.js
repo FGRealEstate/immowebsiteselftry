@@ -3,7 +3,9 @@
 
    Regeln aus der Vereinbarung (Brief §1), an die sich jeder Text hier hält:
    - § 8 Abs. 2: nichts über Leistungen, Preise, Fristen oder Wirkungen von Gutachten.org, außer was Evalion liefert.
-     Deshalb nur Produktnamen, „kostenlose Ersteinschätzung“ und der Code FG10; die Texte stehen wörtlich im Brief §2.
+     Deshalb nur Produktnamen und „kostenlose Ersteinschätzung“; die Texte stehen wörtlich im Brief §2.
+     Update 67 §1 (18.11.2026): Der Code für Kunden bleibt intern (F&G gibt ihn Kunden persönlich) und steht darum nicht mehr hier
+     und nirgends auf der Website. Die Affiliate-Links zählen die Vermittlungen ohne Code.
    - § 8 Abs. 3: Evalion als Partner nennen ist erlaubt, das Logo hat Evalion per E-Mail freigegeben.
    - § 8 Abs. 5: Update 62 setzte darum unter jeden Block den Hinweis auf die Provision. Update 65 §3 (18.11.2026) nimmt alle
      sichtbaren Hinweise heraus; rel="sponsored noopener" bleibt an jedem Partnerlink.
@@ -27,9 +29,8 @@ const gutachten = {
   // Evalions Logo, PNG mit transparentem Hintergrund aus Korbinians E-Mail vom 16.11.2026 (1322 × 144 px, fürs Web auf 480 px verkleinert).
   // Ohne Logo (logo: null) stünde der Name in Schrift.
   logo: { src: "/images/partner/gutachten-org.png", breite: 480, hoehe: 52 },
-  // Allgemeiner Affiliate-Link für den Knopf (Brief §2), daneben der Code
+  // Allgemeiner Affiliate-Link für den Knopf (Brief §2)
   link: "https://www.gutachten.org/r/fgr-fischer-geserich-real-estate-gmbh",
-  code: "FG10",
   // Produktlinks genau wie in Evalions E-Mail vom 16.11.2026, mit attr- und UTM-Parametern (aus den Link-Zielen der E-Mail, nicht
   // aus dem umbrochenen Text). Der Restnutzungsdauer-Link trägt laut E-Mail attr=visitenkarte… und utm_content=visitenkarte.
   produkte: {

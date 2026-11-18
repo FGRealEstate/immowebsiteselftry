@@ -2,6 +2,7 @@
     Angaben aus _data/partner.js. Nur sichtbar mit partner.aktiv (Schalter freigaben.partner).
     Update 65 §2 (18.11.2026): derselbe Block für die Hausverwaltung (MS-Immobilienservice Schmidt e.K.), Text wörtlich aus dem
     Brief, ohne Logo und ohne Code. Update 65 §3: keine sichtbare Zeile zur Provision mehr, rel="sponsored noopener" bleibt.
+    Update 67 §1 (18.11.2026): der Code für Kunden steht nirgends mehr auf der Website (F&G gibt ihn Kunden persönlich), weder Satz noch Kasten.
     Überschrift immer H3 (U63 §1): Der Seitenindex links nimmt nur H2 auf, so erscheint der Partner nicht als Kapitel der Seite.
     Vor dem Einbinden setzen:
       partnerArt          "hausverwaltung" für den Hausverwaltungs-Block, sonst (leer oder "gutachten") Gutachten.org
@@ -39,10 +40,8 @@
             <li><a href="{{ pr.url }}" target="_blank" rel="sponsored noopener" data-partner="{{ pg.id }}" data-produkt="{{ key }}">{{ pr.text }}</a></li>
             {%- endfor %}
           </ul>
-          <p>Mit dem Code <strong>{{ pg.code }}</strong> erhalten Sie im Checkout 10&nbsp;% Rabatt.</p>
           <div class="fgs-pblock-aktion">
             <a class="fgs-btn fgs-btn--secondary" href="{{ pg.link }}" target="_blank" rel="sponsored noopener" data-partner="{{ pg.id }}" data-produkt="allgemein">Zu Gutachten.org</a>
-            <span class="fgs-pblock-code" aria-label="Rabattcode {{ pg.code }}">{{ pg.code }}</span>
           </div>
           {%- endif %}
         </div>

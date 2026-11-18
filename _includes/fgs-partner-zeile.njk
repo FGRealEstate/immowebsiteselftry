@@ -1,7 +1,7 @@
 {#- Update 62 §3 (17.11.2026): eine Zeile am Ende von /lexikon/restnutzungsdauer/ und /lexikon/verkehrswert/, Text wörtlich aus
-    dem Brief. Update 65 §3 (18.11.2026): ohne die Zeile zur Provision, rel="sponsored noopener" bleibt. Der Link auf „Gutachten.org“ führt zum passenden Produkt (partnerProdukt).
+    dem Brief. Update 65 §3 (18.11.2026): ohne die Zeile zur Provision, rel="sponsored noopener" bleibt. Update 67 §1.2 (18.11.2026): nur noch der eine Satz, ohne Code. Der Link auf „Gutachten.org“ führt zum passenden Produkt (partnerProdukt).
     Nur mit partner.aktiv. Der Artikel Nr. 14 bekommt dieselbe Zeile über Blogs/design-muster/_build/live.py. -#}
 {%- if partner.aktiv and partnerProdukt %}
 {%- set pg = partner.gutachten %}
-<p class="fgs-note fgs-partner-zeile">Ein Gutachten erstellt unser Partner <a href="{{ pg.produkte[partnerProdukt].url }}" target="_blank" rel="sponsored noopener" data-partner="{{ pg.id }}" data-produkt="{{ partnerProdukt }}">Gutachten.org</a>. Mit dem Code {{ pg.code }} erhalten Sie 10&nbsp;% Rabatt.</p>
+<p class="fgs-note fgs-partner-zeile">Ein Gutachten erstellt unser Partner <a href="{{ pg.produkte[partnerProdukt].url }}" target="_blank" rel="sponsored noopener" data-partner="{{ pg.id }}" data-produkt="{{ partnerProdukt }}">Gutachten.org</a>.</p>
 {%- endif %}
