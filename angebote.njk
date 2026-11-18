@@ -119,7 +119,7 @@ pg:
       </div>
       {% if units.length %}
       <ul id="property-grid" class="fgs-obj-grid" role="list">
-        {% for o in units %}{{ angebot(o, filter=true) }}{% endfor %}
+        {% for o in units %}{{ angebot(o, filter=true, eager=("hoch" if (loop.first and not projects.length) else false)) }}{% endfor %}
       </ul>
       <p id="no-results" class="fgs-note" hidden>Zu diesen Filtern passt gerade kein Angebot. Setzen Sie den Filter zurück oder <a href="/gesuch-anlegen/">legen Sie ein Gesuch an</a>.</p>
       {% else %}

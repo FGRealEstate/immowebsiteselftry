@@ -526,7 +526,9 @@
     Provisionsfrei; höchstens zwei sichtbar. -#}
 {% macro karteMedia(fotos, alt, sizes, url, o, eager=false, extraKlasse="") -%}
 {%- set n = fotos.length %}
-<div class="fgs-obj-media fgs-media fgs-reveal{{ (' ' + extraKlasse) if extraKlasse }}"{% if n > 1 %} data-karussell{% endif %}>
+{#- §7 Lighthouse: Seit dem kompakten Kopf ist das erste Kartenfoto das LCP-Element. Die Einblendung (fgs-reveal, Deckkraft 0 → 1)
+    verzögerte es um gut eine Sekunde; die Karte mit eager == "hoch" (die erste) steht deshalb sofort da. -#}
+<div class="fgs-obj-media fgs-media{{ ' fgs-reveal' if eager != 'hoch' }}{{ (' ' + extraKlasse) if extraKlasse }}"{% if n > 1 %} data-karussell{% endif %}>
   <a class="fgs-obj-track" href="{{ url }}" tabindex="-1" aria-hidden="true" draggable="false">
     {%- for f in fotos %}{% set _set = f.url | propstackSrcset %}
     <span class="fgs-obj-slide"><span class="fgs-obj-frame"{% if f.fokus or f.zoom %} style="{% if f.fokus %}--fgs-pos: {{ f.fokus }};{% endif %}{% if f.zoom %} --fgs-zoom: {{ f.zoom }};{% endif %}"{% endif %}><img src="{{ f.url | propstackFoto }}"{% if _set %} srcset="{{ _set }}"{% endif %} alt="{{ alt if loop.first else '' }}" sizes="{{ sizes }}" width="1200" height="800"{% if loop.first and eager == "hoch" %} fetchpriority="high"{% elif not (loop.first and eager) %} loading="lazy"{% endif %} decoding="async" draggable="false"></span></span>

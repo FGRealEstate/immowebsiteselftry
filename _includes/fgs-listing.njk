@@ -79,7 +79,7 @@
   {%- if mosaik %}
   <div class="fgs-gallery-mosaik">
     {%- for k in [1, 2, 3, 4] %}{% set _set = pics[k] | propstackSrcset %}
-    <button type="button" class="fgs-gallery-klein" data-gallery-thumb="{{ k }}" aria-label="Bild {{ k + 1 }} von {{ pics.length }} groß ansehen"><img src="{{ pics[k] | propstackFoto(800) }}"{% if _set %} srcset="{{ _set }}" sizes="25vw"{% endif %} alt="" width="800" height="500" decoding="async"></button>
+    <button type="button" class="fgs-gallery-klein" data-gallery-thumb="{{ k }}" aria-label="Bild {{ k + 1 }} von {{ pics.length }} groß ansehen"><img src="{{ pics[k] | propstackFoto(800) }}"{% if _set %} srcset="{{ _set }}" sizes="25vw"{% endif %} alt="" width="800" height="500" decoding="async" fetchpriority="low"></button>
     {%- endfor %}
   </div>
   {%- endif %}
