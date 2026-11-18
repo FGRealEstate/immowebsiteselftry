@@ -65,7 +65,7 @@ customSchema: true
 </section>
 {% else %}
 {# 1. Titelzeile ohne Foto: Brotkrumen, Kicker, H1, Einleitung, höchstens zwei Buttons #}
-<section class="fgs-pagehead" aria-labelledby="seitentitel">
+<section class="fgs-pagehead{% if pg.kompakt %} fgs-pagehead--kompakt{% endif %}" aria-labelledby="seitentitel">{# Update 68 §1.1: pg.kompakt #}
   <div class="fgs-wrap">
     {%- if pg.kicker %}
     <p class="fgs-label">{{ pg.kicker | safe }}</p>{% endif %}

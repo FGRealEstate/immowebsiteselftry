@@ -1101,4 +1101,69 @@
   window.addEventListener('resize', () => { if (window.innerWidth !== trennBreite) { trennBreite = window.innerWidth; trennSpaeter(); } });
   document.addEventListener('toggle', trennSpaeter, true);
   document.addEventListener('fgs:zeilen', trennSpaeter);
+  /* ---------- Update 68 §2.1: Fotos auf den Angebotskarten (data-karussell, Makro karteMedia). Wischen macht CSS scroll-snap;
+     hier nur Pfeile (wechseln das Bild, öffnen das Angebot nicht), Punkte und das Nachladen: Foto 2 bis 5 stehen erst beim ersten
+     Darüberfahren, Antippen oder Fokussieren im Fluss (is-bereit) und werden dann geholt. Ohne Skript bleibt das erste Foto stehen. */
+  document.querySelectorAll('[data-karussell]').forEach((m) => {
+    const track = m.querySelector('.fgs-obj-track');
+    const dots = Array.from(m.querySelectorAll('.fgs-obj-dots i'));
+    const n = track ? track.children.length : 0;
+    if (!track || n < 2) return;
+    let geladen = false;
+    const laden = () => {
+      if (geladen) return;
+      geladen = true;
+      m.classList.add('is-bereit');
+      track.querySelectorAll('img[loading="lazy"]').forEach((img) => { img.loading = 'eager'; });
+    };
+    const stelle = () => Math.round(track.scrollLeft / Math.max(1, track.clientWidth));
+    m.addEventListener('pointerenter', laden);
+    m.addEventListener('focusin', laden);
+    track.addEventListener('touchstart', laden, { passive: true });
+    m.addEventListener('pointerdown', laden);
+    m.querySelectorAll('[data-karussell-dir]').forEach((b) => {
+      b.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        laden();
+        const k = (stelle() + Number(b.dataset.karussellDir) + n) % n;
+        track.scrollTo({ left: k * track.clientWidth, behavior: reduceMotion ? 'auto' : 'smooth' });
+      });
+    });
+    let rahmen = 0;
+    track.addEventListener('scroll', () => {
+      laden();
+      cancelAnimationFrame(rahmen);
+      rahmen = requestAnimationFrame(() => { const k = stelle(); dots.forEach((d, j) => d.classList.toggle('is-active', j === k)); });
+    }, { passive: true });
+    /* Ein Ziehen mit der Maus am Desktop soll kein Link-Klick werden */
+    track.addEventListener('dragstart', (event) => event.preventDefault());
+  });
+
+  /* ---------- Update 68 §2.2: Badge „Neu“, solange die Veröffentlichung in Propstack keine 14 Tage her ist. Das Datum steht im
+     HTML (data-veroeffentlicht, JJJJ-MM-TT), damit das Badge ohne neuen Build verschwindet. Höchstens zwei Badges: Kommt „Neu“
+     dazu, weicht das letzte (Provisionsfrei). */
+  const heute = Date.now();
+  document.querySelectorAll('[data-veroeffentlicht]').forEach((karte) => {
+    const neu = karte.querySelector('[data-badge-neu]');
+    const tag = Date.parse(karte.dataset.veroeffentlicht + 'T00:00:00');
+    if (!neu || !tag || heute - tag >= 14 * 864e5 || heute < tag) return;
+    neu.hidden = false;
+    const sichtbar = Array.from(neu.parentNode.children).filter((b) => !b.hidden);
+    if (sichtbar.length > 2) sichtbar[sichtbar.length - 1].hidden = true;
+  });
+  /* ---------- Update 68 §3.4: 3D-Rundgang erst nach Klick laden (Drittanbieter, §5) ---------- */
+  document.querySelectorAll('[data-tour]').forEach((box) => {
+    const start = box.querySelector('[data-tour-start]');
+    if (!start) return;
+    start.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = box.dataset.tour;
+      f.title = '3D-Rundgang';
+      f.allow = 'fullscreen; xr-spatial-tracking';
+      f.setAttribute('allowfullscreen', '');
+      box.replaceChildren(f);
+      f.focus();
+    });
+  });
 })();

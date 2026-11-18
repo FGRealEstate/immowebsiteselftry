@@ -87,6 +87,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("seitenTitel", seitenTitel);
   eleventyConfig.addFilter("navHref", (item) => (item && (item.fallback || item.href)) || "#");
   // Propstack liefert Preise mit Cent („225.000,00 €“); auf den Angebotsseiten ohne „,00“ (Daten bleiben unverändert).
+  // Update 68 §4: Zahl im deutschen Format ohne Währung (Finanzierungsrechner); leer bleibt leer
+  eleventyConfig.addFilter("deZahl", (value, stellen = 0) => (value === null || value === undefined || value === "" ? "" : new Intl.NumberFormat("de-DE", { minimumFractionDigits: stellen, maximumFractionDigits: stellen }).format(Number(value))));
+  // Update 68 §3.4: Anbieter des 3D-Rundgangs für den Hinweis unter dem Vorschaubild
+  eleventyConfig.addFilter("tourAnbieter", (url) => { try { return new URL(url).hostname.replace(/^www\./, ""); } catch (e) { return ""; } });
   eleventyConfig.addFilter("eur", (value) => (value ? String(value).replace(/,00 €/g, " €") : value));
   /* Update 64 B7: höchstens eine Karte je Haus oder Projekt (o.gebaeude aus _data/propstack.js), verschiedene Ortsteile zuerst.
      Reihenfolge sonst wie übergeben; aus jedem Haus die erste Einheit. */

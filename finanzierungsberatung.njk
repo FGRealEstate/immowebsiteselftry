@@ -371,6 +371,16 @@ service:
         <div class="fgd-status" data-fgd-lead-status hidden></div>
         <button type="submit" class="fgd-btn fgd-btn-navy">Finanzierung anfragen{{ icon("arrow") | safe }}</button>
       </form>
+      {#- Update 68 §4.5: kommt jemand vom Finanzierungsrechner einer Objektseite („Finanzierung mit Timon Fischer prüfen“), hängt
+          dieses Skript Objekt-ID und gerechnete Werte als versteckte Felder extra:… an; sie stehen dann in der Anfrage an Timon. -#}
+      <script>
+      (function () {
+        var f = document.querySelector('form[data-concern="Finanzierung"]'), d;
+        try { d = JSON.parse(sessionStorage.getItem('fgFinanzrechner') || 'null'); } catch (e) { d = null; }
+        if (!f || !d) return;
+        Object.keys(d).forEach(function (k) { if (!d[k]) return; var i = document.createElement('input'); i.type = 'hidden'; i.name = 'extra:' + k; i.value = d[k]; f.appendChild(i); });
+      })();
+      </script>
       <div class="fgd-form-done" data-fgd-lead-done tabindex="-1" hidden>
         <h3>Vielen Dank, Ihre Anfrage ist da</h3>
         <p>Timon Fischer meldet sich bei Ihnen. Wenn es eilt, erreichen Sie uns unter <a href="{{ nav.phone.href }}">{{ nav.phone.display }}</a>.</p>

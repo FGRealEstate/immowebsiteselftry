@@ -19,7 +19,7 @@
       areaBlock(area, id, art)  Lage und Markt: H2, Preiszeile der Gebietsseite (Update 35 A3), ein Satz, Textlink zur Gebietsseite
                        (vorher fgd-area-block.njk, ohne Kicker).
     Keine Symbole und keine Gold-Häkchen (Brief 3.7). -#}
-{% from "fgs-macros.njk" import textlink %}
+{% from "fgs-macros.njk" import textlink, faktSymbol %}
 
 {%- macro listingTitle(l) -%}
     <div class="fgs-listing-head-text">
@@ -64,23 +64,27 @@
 {#- Update 64 D1 (17.11.2026): ab 1024 px ein großes Bild und vier kleine daneben (ab fünf Bildern), Höhe höchstens 60 % des
     Bildschirms, auf dem Handy höchstens 45 % (fg-system.css). Die kleinen Bilder öffnen die Großansicht an ihrer Stelle; unter
     1024 px sind sie ausgeblendet und werden nicht geladen (loading="lazy"). -#}
+{#- Update 68 §0 (18.11.2026): Die vier kleinen Bilder blieben leer (loading="lazy" und 0 px breit, naturalWidth 0). Jetzt haben die
+    Kacheln feste Maße (Raster mit fester Höhe ab 1024 px, 3 : 2 darunter), laden mit der Seite (ohne loading="lazy") und stehen auch
+    auf dem Handy: eine Reihe mit vier Kacheln unter dem großen Bild. §3.1: Zähler „1 / 16“ auf dem großen Bild (unten rechts);
+    die Zeile unter der Galerie behält nur die Pfeile. -#}
 {%- set mosaik = pics.length >= 5 %}
 <div class="fgs-gallery{% if mosaik %} fgs-gallery--mosaik{% endif %}" data-gallery tabindex="0" role="region" aria-roledescription="Bildergalerie" aria-label="Bilder von {{ name }}">
   <div class="fgs-media fgs-gallery-stage">
     {% for image in pics %}{% set _plan = plaene and (image in plaene) %}<img src="{{ image | propstackFoto(1600) }}"{% set _set = image | propstackSrcset %}{% if _set %} srcset="{{ _set }}" sizes="{{ '(min-width: 1024px) 50vw, 100vw' if mosaik else '100vw' }}"{% endif %} data-original="{{ image }}"{% if _plan %} data-grundriss{% endif %} alt="{{ name }}, {% if _plan %}Grundriss, {% endif %}Bild {{ loop.index }} von {{ pics.length }}" width="1600" height="1000" decoding="async"{% if loop.first %} class="is-active{% if cover and cover.url == image and (cover.fokus or cover.zoom) %} fgs-gallery-cover" style="{% if cover.fokus %}--fgs-pos: {{ cover.fokus }};{% endif %}{% if cover.zoom %} --fgs-zoom: {{ cover.zoom }};{% endif %}{% endif %}" fetchpriority="high"{% else %} loading="lazy"{% endif %}>{% endfor %}
     {%- if plaene and plaene.length %}<span class="fgs-gallery-tag" data-gallery-tag{% if not (pics[0] in plaene) %} hidden{% endif %}>Grundriss</span>{% endif %}
     {%- if pics.length > 1 %}<button type="button" class="fgs-gallery-all" data-gallery-open>Alle Bilder ansehen ({{ pics.length }})</button>{% endif %}
+    {%- if pics.length > 1 %}<p class="fgs-gallery-zahl" aria-live="polite"><span data-gallery-current>1</span> / {{ pics.length }}</p>{% endif %}
   </div>
   {%- if mosaik %}
   <div class="fgs-gallery-mosaik">
     {%- for k in [1, 2, 3, 4] %}{% set _set = pics[k] | propstackSrcset %}
-    <button type="button" class="fgs-gallery-klein" data-gallery-thumb="{{ k }}" aria-label="Bild {{ k + 1 }} von {{ pics.length }} groß ansehen"><img src="{{ pics[k] | propstackFoto(800) }}"{% if _set %} srcset="{{ _set }}" sizes="25vw"{% endif %} alt="" width="800" height="500" loading="lazy" decoding="async"></button>
+    <button type="button" class="fgs-gallery-klein" data-gallery-thumb="{{ k }}" aria-label="Bild {{ k + 1 }} von {{ pics.length }} groß ansehen"><img src="{{ pics[k] | propstackFoto(800) }}"{% if _set %} srcset="{{ _set }}" sizes="25vw"{% endif %} alt="" width="800" height="500" decoding="async"></button>
     {%- endfor %}
   </div>
   {%- endif %}
   {%- if pics.length > 1 %}
   <div class="fgs-gallery-bar">
-    <p class="fgs-small" aria-live="polite">Bild <span data-gallery-current>1</span> von {{ pics.length }}</p>
     <div class="fgs-rail-nav">
       <button type="button" class="fgs-rail-btn" data-dir="-1" data-gallery-prev aria-label="Vorheriges Bild"><svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M29 7H2M8 1 2 7l6 6"/></svg></button>
       <button type="button" class="fgs-rail-btn" data-dir="1" data-gallery-next aria-label="Nächstes Bild"><svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M1 7h27M22 1l6 6-6 6"/></svg></button>
@@ -231,16 +235,20 @@
   if (alle) alle.addEventListener('click', function () { oeffnen(0, alle); });
   slides.forEach(function (s, k) { s.addEventListener('click', function () { oeffnen(k, g); }); });
   Array.prototype.forEach.call(g.querySelectorAll('[data-gallery-thumb]'), function (b) { b.addEventListener('click', function () { oeffnen(Number(b.getAttribute('data-gallery-thumb')), b); }); }); // Update 64 D1
+  /* Update 68 §3.4: Links außerhalb der Galerie (Abschnitt „Unterlagen“: Grundriss) öffnen das Großbild an ihrer Stelle */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-gallery-zeige]'), function (b) { b.addEventListener('click', function (e) { e.preventDefault(); oeffnen(Number(b.getAttribute('data-gallery-zeige')), b); }); });
 })();
 </script>
 {%- endmacro -%}
 
-{%- macro listingFacts(items, name) -%}
+{#- Update 68 §3.3: symbole=true (Objektseite) setzt vor jede Bezeichnung das Liniensymbol aus §2.3 (faktSymbol) -#}
+{%- macro listingFacts(items, name, symbole=false) -%}
+{%- set symbolFuer = { "Kaufpreis": "preis", "Kaltmiete / Monat": "preis", "Wohnfläche": "flaeche", "Zimmer": "zimmer", "Preis / m²": "preisqm", "Bruttorendite": "rendite" } %}
 {%- set reihe = items.slice(0, 5) %}{% set rest = items.slice(5) %}
 <div class="fgs-listing-facts" role="group" aria-label="Eckdaten von {{ name }}">
   <ul class="fgs-facts" role="list" style="--n: {{ reihe | length }}">
     {%- for x in reihe %}
-    <li class="fgs-fact">{%- set w = x.wert | string | escape | string %}<span class="fgs-fact-figure{% if x.lang %} fgs-fact-figure--lang{% endif %}">{{ w | replace(" €", "&nbsp;€") | replace(" m²", "&nbsp;m²") | replace(" – ", "&nbsp;– ") | safe }}</span><span class="fgs-fact-text">{{ x.label }}</span></li>
+    <li class="fgs-fact">{%- set w = x.wert | string | escape | string %}<span class="fgs-fact-figure{% if x.lang %} fgs-fact-figure--lang{% endif %}">{{ w | replace(" €", "&nbsp;€") | replace(" m²", "&nbsp;m²") | replace(" – ", "&nbsp;– ") | safe }}</span><span class="fgs-fact-text">{% if symbole and symbolFuer[x.label] %}{{ faktSymbol(symbolFuer[x.label]) }}{% endif %}{{ x.label }}</span></li>
     {%- endfor %}
   </ul>
   {%- if rest.length %}

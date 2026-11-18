@@ -6,6 +6,7 @@
     Keine Etiketten auf dem Foto und keine Symbole (Brief 3.7). Die ganze Karte ist ein Link.
     Klasse offer-filter-card und die data-* Felder speisen den Filter auf /angebote (unverändert). -#}
 
+{% from "fgs-macros.njk" import karteMedia %}
 {%- macro foto(src, alt, sizes, eager=false) -%}
 {% if src %}<img src="{{ src | propstackFoto }}"{% set _set = src | propstackSrcset %}{% if _set %} srcset="{{ _set }}"{% endif %} alt="{{ alt }}" sizes="{{ sizes }}" width="1200" height="900" {% if eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
 {% else %}<span class="fgs-offer-placeholder" role="img" aria-label="Für dieses Angebot folgen die Fotos noch"><span>Foto folgt</span></span>{% endif %}
@@ -31,14 +32,17 @@
 {#- Design-Pass 3 §4.5: Projektkarte bleibt breit, das Foto folgt der Titelbild-Regel aus §3.8 (3:2, Ausschnitt per fokus/zoom,
     ohne brauchbares Foto der gestaltete Titel mit Ort) und zoomt beim Überfahren wie die Angebotskarte. -#}
 {%- macro projectCard(p, eager=false) -%}
-<article class="fgs-project offer-filter-card" data-strategie="{{ p.strategy_keys | join(',') }}" data-vermarktung="{{ p.marketing_type }}" data-objektart="{{ p.property_types | join(',') }}" data-preis="{{ p.min_price_raw or '' }}" data-flaeche="{{ p.max_area or '' }}" data-rendite="">
-  <a class="fgs-offer-link fgs-project-link" href="{{ p.url }}">
+{#- Update 68 §2.4: Aufbau und Eckdatentabelle bleiben; das Foto wird zum Karussell mit Badges (karteMedia aus fgs-macros.njk).
+    Wie bei der Angebotskarte ist die Karte kein einzelner Link mehr: Foto und Textspalte verlinken je auf das Projekt, die
+    Pfeile wechseln nur das Bild. eager: erstes Foto mit fetchpriority="high" (erste Karte auf /angebote). -#}
+<article class="fgs-project offer-filter-card" data-strategie="{{ p.strategy_keys | join(',') }}" data-vermarktung="{{ p.marketing_type }}" data-objektart="{{ p.property_types | join(',') }}" data-preis="{{ p.min_price_raw or '' }}" data-flaeche="{{ p.max_area or '' }}" data-rendite=""{% if p.veroeffentlicht %} data-veroeffentlicht="{{ p.veroeffentlicht }}"{% endif %}>
+  <div class="fgs-project-link">
     {%- if p.cover and p.cover.url %}
-    <span class="fgs-media fgs-obj-media fgs-project-media"><span class="fgs-obj-frame"{% if p.cover.fokus or p.cover.zoom %} style="{% if p.cover.fokus %}--fgs-pos: {{ p.cover.fokus }};{% endif %}{% if p.cover.zoom %} --fgs-zoom: {{ p.cover.zoom }};{% endif %}"{% endif %}><img src="{{ p.cover.url | propstackFoto }}"{% set _set = p.cover.url | propstackSrcset %}{% if _set %} srcset="{{ _set }}"{% endif %} alt="{{ p.name }}" sizes="(min-width: 1000px) 700px, 100vw" width="1200" height="800" {% if eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async"></span></span>
+    {{ karteMedia(p.karte_fotos if (p.karte_fotos and p.karte_fotos.length) else [p.cover], p.name, "(min-width: 1000px) 700px, 100vw", p.url, p, "hoch" if eager else false, "fgs-project-media") }}
     {%- else %}
-    <span class="fgs-obj-media fgs-obj-design fgs-project-media" role="img" aria-label="{{ p.name }}"><img src="/images/logo/fg-zeichen-gold.svg" alt="" width="49" height="58"><span class="fgs-obj-design-ort" aria-hidden="true">{{ p.location }}</span></span>
+    <a class="fgs-project-media" href="{{ p.url }}" tabindex="-1" aria-hidden="true"><span class="fgs-obj-media fgs-obj-design" role="img" aria-label="{{ p.name }}"><img src="/images/logo/fg-zeichen-gold.svg" alt="" width="49" height="58"><span class="fgs-obj-design-ort" aria-hidden="true">{{ p.location }}</span></span></a>
     {%- endif %}
-    <div class="fgs-project-body">
+    <a class="fgs-project-body" href="{{ p.url }}">
       <p class="fgs-offer-meta">Projekt · {{ p.marketing_type }} · {{ p.strategy }}{% if p.location %} · {{ p.location }}{% endif %}</p>
       <h3 class="fgs-offer-title fgs-project-title">{{ p.name }}</h3>
       <dl class="fgs-offer-facts">
@@ -48,8 +52,8 @@
         {% if p.room_range %}<div><dt>Zimmer</dt><dd>{{ p.room_range }}</dd></div>{% endif %}
       </dl>
       <span class="fgs-link">Projekt und Einheiten ansehen{% include "fgs-arrow.njk" %}</span>
-    </div>
-  </a>
+    </a>
+  </div>
 </article>
 {%- endmacro -%}
 

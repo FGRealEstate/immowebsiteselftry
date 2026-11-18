@@ -16,6 +16,8 @@ module.exports = {
   // und das gekürzte Eberswalde-Kapitel der Barnim-Seite. Dann hier true und `node scripts/gebiet-kontakte.js` laufen lassen
   // (Formular-Auszug mit Eberswalde; scripts/gebiet-kontakte.test.js prüft das).
   eberswalde: process.env.FG_FREIGABE_EBERSWALDE === "1",
+  // Update 68 §4: Finanzierungsrechner auf den Objektseiten, bis Timons Vorgaben in _data/finanzierung.json stehen nur Testumgebung
+  finanzrechner: process.env.FG_FREIGABE_FINANZRECHNER === "1",
   // FG-Gap-Answers (28.10.2026): FAQ-Antworten mit Status TIMON stehen in den Seiten (Feld timon: "1.3" usw.),
   // werden aber erst gebaut, wenn ihre Nummer hier steht. Eintragen erst, wenn Jesu das OK schickt.
   // 29.10.2026 FG-Timon-Answers-Update §1: Timon hat geantwortet. 6.2 (Strukturvertrieb) ist nach FG-Update-11 §3 aus den Seiten gelöscht.

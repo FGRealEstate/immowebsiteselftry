@@ -31,6 +31,7 @@ eleventyComputed:
     Die Seitenleiste mit Eckdaten-Karte und Ansprechpartner-Karte entfällt; Telefon und Porträt stehen im S8, die E-Mail im Fuß
     (kontakte.js hat keine eigene Adresse je Person). -#}
 {% from "fgs-listing.njk" import listingTitle, gallery, galleryScript, listingFacts, areaBlock %}
+{% from "fgs-macros.njk" import faktSymbol, pic %}
 {% from "fgs-macros.njk" import textlink, closing with context %}
 {% set loc = (property.location or "") | lower %}
 {#- Teil B 4 (31.10.2026): Ansprechpartner aus _data/propstack.js (findKontakt), sonst die bisherige Ortsregel #}
@@ -55,9 +56,18 @@ eleventyComputed:
 {% if property.is_investment and property.gross_yield %}{% set fakten = fakten.concat([{ wert: property.gross_yield, label: "Bruttorendite" }]) %}{% endif %}
 {% if property.is_investment and property.rent_per_sqm %}{% set mehr = mehr.concat([{ wert: property.rent_per_sqm | eur, label: "Miete / m²" }]) %}{% endif %}
 
+{#- Update 68 §3/§4 (18.11.2026): Kontaktkarte, neue Abschnitte und Finanzierungsrechner -#}
+{%- set kontakt = kontakte[kontaktKey] %}
+{%- set kontaktTel = kontakt.phone or nav.phone %}
+{%- set rf = finanzierung.vorgaben %}
+{%- set rechnerVoll = (rf.eigenkapital_euro !== null) and (rf.sollzins_prozent !== null) and (rf.tilgung_prozent !== null) and (rf.notar_grundbuch_prozent !== null) %}
+{%- set grest = finanzierung.grunderwerbsteuer[property.bundesland] if property.bundesland else null %}
+{%- set zeigeRechner = property.marketing_type == "Kauf" and property.purchase_price_raw and grest and (rechnerVoll or freigaben.finanzrechner) %}
+{%- set energieLabels = [] %}{% for e in (property.energie or []) %}{% set _ = energieLabels.push(e.label) %}{% endfor %}
+{%- set planIndex = property.gallery.indexOf(property.grundrisse[0]) if (property.grundrisse and property.grundrisse.length and property.gallery) else -1 %}
 {#- Update 27 A3 (01.11.2026): erster Bildschirm. Das Titelbild (= erstes Galeriebild) über die volle Breite, 16 : 9 am Desktop,
     4 : 3 auf dem Handy; darunter Titel, Ort und die zwei Buttons, dann die Eckdaten. Vorher stand oben nur der Titel auf Beige. -#}
-{%- set faktenHtml %}{{ listingFacts(fakten, property.title) }}{% endset %}
+{%- set faktenHtml %}{{ listingFacts(fakten, property.title, true) }}{% endset %}
 <section class="fgs-listing-top" aria-labelledby="seitentitel">
   {{ gallery(property.gallery, property.title, "Für dieses Angebot folgen die Fotos noch", property.cover, ((property.ortsteil or property.location or " ") if property.cover_design else false), property.grundrisse) }}
   <div class="fgs-wrap">
@@ -74,7 +84,40 @@ eleventyComputed:
 
 <section class="fgs-section fgs-listing" aria-label="Angaben zum Objekt">
   <div class="fgs-wrap">
-
+  {#- Update 68 §3.2: ab 1024 px rechts die Kontaktkarte (position: sticky unter dem Kopf), links die Abschnitte; darunter über
+      die volle Breite der Gebietsblock. Unter 1024 px keine Karte, dort zeigt die Leiste unten „Anfragen“ und „Anrufen“. -#}
+  <div class="fgs-listing-raster">
+    <div class="fgs-listing-haupt">
+    {%- if zeigeRechner %}
+    {#- Update 68 §4: Finanzierungsrechner, eigenes JavaScript ohne Drittanbieter. Sätze aus _data/finanzierung.json (Grunderwerbsteuer
+        je Land mit Quelle); Vorgaben von Timon. Fehlen sie, bleiben die Felder leer (kein erfundener Sollzins), Notar und Grundbuch
+        zählen nicht mit und der rote Hinweis steht da; dann baut nur die Testumgebung den Block (freigaben.finanzrechner). -#}
+    <section class="fgs-listing-block fgs-cols fgs-rechner" id="finanzierung" aria-labelledby="rechner-titel" data-finanzrechner data-objekt-id="{{ property.id }}" data-objekt="{{ property.title }}" data-grest="{{ grest.satz }}" data-provision="{{ property.provision_prozent or 0 }}"{% if rf.notar_grundbuch_prozent !== null %} data-notar="{{ rf.notar_grundbuch_prozent }}"{% endif %}>
+      <div class="fgs-cols-head"><h2 id="rechner-titel">Finanzierung durchrechnen</h2></div>
+      <div class="fgs-cols-body">
+        {%- if not rechnerVoll %}
+        <p class="fgs-rechner-platzhalter" role="note">Platzhalter, Zahlen von Timon fehlen</p>
+        {%- endif %}
+        <div class="fgd-form fgs-rechner-felder">
+          <label>Kaufpreis<span class="fgd-unit"><input data-r="kaufpreis" inputmode="decimal" autocomplete="off" value="{{ property.purchase_price_raw | deZahl }}"><b>€</b></span></label>
+          <label>Eigenkapital<span class="fgd-unit"><input data-r="eigenkapital" inputmode="decimal" autocomplete="off" value="{{ (rf.eigenkapital_euro | deZahl) if rf.eigenkapital_euro !== null }}"><b>€</b></span></label>
+          <label>Sollzins p.&nbsp;a.<span class="fgd-unit"><input data-r="sollzins" inputmode="decimal" autocomplete="off" value="{{ (rf.sollzins_prozent | deZahl(2)) if rf.sollzins_prozent !== null }}"><b>%</b></span></label>
+          <label>Anfängliche Tilgung<span class="fgd-unit"><input data-r="tilgung" inputmode="decimal" autocomplete="off" value="{{ (rf.tilgung_prozent | deZahl(2)) if rf.tilgung_prozent !== null }}"><b>%</b></span></label>
+        </div>
+        <div class="fgs-rechner-rate" aria-live="polite"><span class="fgs-rechner-rate-label">Monatliche Rate</span><strong data-r-aus="rate">–</strong></div>
+        <dl class="fgs-rechner-posten">
+          <div><dt>Grunderwerbsteuer ({{ grest.land }}, {{ grest.satz | deZahl(1) }}&nbsp;%)</dt><dd data-r-aus="grest">–</dd></div>
+          <div><dt>Notar und Grundbuch{% if rf.notar_grundbuch_prozent !== null %} ({{ rf.notar_grundbuch_prozent | deZahl(1) }}&nbsp;%){% endif %}</dt><dd data-r-aus="notar">{% if rf.notar_grundbuch_prozent === null %}<span class="fgs-rechner-fehlt">Zahl von Timon fehlt</span>{% else %}–{% endif %}</dd></div>
+          <div><dt>Maklerprovision{% if property.provision_prozent %} ({{ property.provision_prozent | deZahl(2) }}&nbsp;%){% endif %}</dt><dd data-r-aus="makler">{{ "provisionsfrei" if not property.provision_prozent else "–" }}</dd></div>
+          <div class="fgs-rechner-summe"><dt>Kaufnebenkosten</dt><dd data-r-aus="nebenkosten">–</dd></div>
+          <div class="fgs-rechner-summe"><dt>Gesamtkosten</dt><dd data-r-aus="gesamt">–</dd></div>
+          <div class="fgs-rechner-summe"><dt>Darlehen</dt><dd data-r-aus="darlehen">–</dd></div>
+        </dl>
+        <p class="fgs-note">Unverbindliche Beispielrechnung. Ihre persönlichen Konditionen rechnet Timon Fischer mit Ihnen durch.</p>
+        <div class="fgs-btns"><a class="fgs-btn fgs-btn--primary" href="/finanzierungsberatung#anfrage" data-r-anfrage>Finanzierung mit Timon Fischer prüfen</a></div>
+      </div>
+    </section>
+    {%- endif %}
     {% if property.descriptions and property.descriptions.length %}
     <section class="fgs-listing-block fgs-cols" aria-labelledby="objekt-lage">
       <div class="fgs-cols-head"><h2 id="objekt-lage">Objekt und Lage</h2></div>
@@ -84,19 +127,63 @@ eleventyComputed:
       </div>
     </section>
     {% endif %}
-
+    {#- Update 68 §3.4: Angaben, die jetzt im Abschnitt „Energieausweis“ stehen (z. B. Effizienzklasse), nicht doppelt -#}
     {% if mehr.length or (property.details and property.details.length) %}
     <section class="fgs-listing-block fgs-cols" aria-labelledby="eckdaten-titel">
       <div class="fgs-cols-head"><h2 id="eckdaten-titel">Eckdaten</h2></div>
       <div class="fgs-cols-body">
         <dl class="fgs-listing-details">
           {% for d in mehr %}<div><dt>{{ d.label }}</dt><dd>{{ d.wert }}</dd></div>{% endfor %}
-          {% for d in property.details %}{% if d.value %}<div><dt>{{ d.label }}</dt><dd>{{ d.value | eur }}</dd></div>{% endif %}{% endfor %}
+          {% for d in property.details %}{% if d.value and not (d.label in energieLabels) %}<div><dt>{{ d.label }}</dt><dd>{{ d.value | eur }}</dd></div>{% endif %}{% endfor %}
         </dl>
       </div>
     </section>
     {% endif %}
-
+    {%- if property.energie and property.energie.length %}
+    {#- Update 68 §3.4: Pflichtangaben nach § 87 GEG, nur mit Daten aus Propstack -#}
+    <section class="fgs-listing-block fgs-cols" aria-labelledby="energie-titel">
+      <div class="fgs-cols-head"><h2 id="energie-titel">Energieausweis</h2></div>
+      <div class="fgs-cols-body">
+        <dl class="fgs-listing-details">
+          {% for e in property.energie %}<div><dt>{{ e.label }}</dt><dd>{{ e.wert }}</dd></div>{% endfor %}
+        </dl>
+      </div>
+    </section>
+    {%- endif %}
+    {%- if property.kosten and property.kosten.length %}
+    <section class="fgs-listing-block fgs-cols" aria-labelledby="kosten-titel">
+      <div class="fgs-cols-head"><h2 id="kosten-titel">Kosten</h2></div>
+      <div class="fgs-cols-body">
+        <dl class="fgs-listing-details">
+          {% for k in property.kosten %}<div><dt>{{ k.label }}</dt><dd>{{ k.wert }}</dd></div>{% endfor %}
+        </dl>
+      </div>
+    </section>
+    {%- endif %}
+    {%- if planIndex > -1 %}
+    {#- Grundriss: In Propstack als Bild der Galerie mit Kennzeichen Grundriss, nicht als Dokument. Der Link öffnet ihn im Großbild. -#}
+    <section class="fgs-listing-block fgs-cols" aria-labelledby="unterlagen-titel">
+      <div class="fgs-cols-head"><h2 id="unterlagen-titel">Unterlagen</h2></div>
+      <div class="fgs-cols-body">
+        <ul class="fgs-unterlagen" role="list">
+          <li><a href="{{ property.grundrisse[0] | propstackFoto(1600) }}" data-gallery-zeige="{{ planIndex }}"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 4.5h15v15h-15zM4.5 11h6M13.5 11h6M11 4.5v4M11 13v6.5"/></svg>Grundriss ansehen</a></li>
+        </ul>
+      </div>
+    </section>
+    {%- endif %}
+    {%- if property.tour %}
+    {#- 3D-Rundgang: Vorschaubild mit Abspielknopf, das iframe des Anbieters lädt erst nach dem Klick (§5: kein Drittinhalt ohne Klick) -#}
+    <section class="fgs-listing-block fgs-cols" aria-labelledby="tour-titel">
+      <div class="fgs-cols-head"><h2 id="tour-titel">3D-Rundgang</h2></div>
+      <div class="fgs-cols-body">
+        <div class="fgs-tour fgs-media" data-tour="{{ property.tour }}">
+          {%- if property.cover and property.cover.url %}<img src="{{ property.cover.url | propstackFoto }}" alt="" width="1200" height="800" loading="lazy" decoding="async">{% endif %}
+          <button type="button" class="fgs-tour-start" data-tour-start><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" fill="currentColor"><path d="M8 5.5v13l10.5-6.5z"/></svg><span>3D-Rundgang starten</span></button>
+        </div>
+        <p class="fgs-note">Beim Start lädt der Rundgang vom Anbieter ({{ property.tour | tourAnbieter }}).</p>
+      </div>
+    </section>
+    {%- endif %}
     {% if property.features and property.features.length %}
     <section class="fgs-listing-block fgs-cols" aria-labelledby="ausstattung">
       <div class="fgs-cols-head"><h2 id="ausstattung">Was das Objekt mitbringt</h2></div>
@@ -107,7 +194,6 @@ eleventyComputed:
       </div>
     </section>
     {% endif %}
-
     {% if showCheck %}
     <section class="fgs-listing-block fgs-cols fgs-invest" aria-labelledby="investment-check" data-investment-cockpit data-price="{{ property.purchase_price_raw or 0 }}" data-rent="{{ property.cold_rent_raw or 0 }}" data-costs="{{ property.investment_defaults.monthly_non_recoverable or 0 }}" data-equity="{{ property.investment_defaults.equity_percent or 20 }}" data-interest="{{ property.investment_defaults.interest_percent or 3.5 }}" data-repayment="{{ property.investment_defaults.repayment_percent or 2 }}" data-acquisition="{{ property.investment_defaults.acquisition_cost_percent or 10 }}">
       <div class="fgs-cols-head"><h2 id="investment-check">Was passiert, wenn Sie die Finanzierung verändern?</h2></div>
@@ -140,6 +226,19 @@ eleventyComputed:
       </div>
     </section>
     {% endif %}
+    </div>
+    <aside class="fgs-listing-kontakt" aria-label="Ansprechpartner für dieses Objekt">
+      <div class="fgs-kontaktkarte">
+        <div class="fgs-kontaktkarte-kopf">
+          {{ pic(("/images/team/" + (kontakt.name | slugify) + "-navy") | bild, "", "72px") }}
+          <div><p class="fgs-kontaktkarte-name">{{ kontakt.name }}</p><p class="fgs-small">{{ kontakt.role }}</p></div>
+        </div>
+        <a class="fgs-btn fgs-btn--primary" href="{{ property.request_url }}">Objekt anfragen</a>
+        <a class="fgs-btn fgs-btn--secondary" href="{{ kontaktTel.href }}" aria-label="Anrufen: {{ kontaktTel.display }}">{{ faktSymbol("telefon") }}Anrufen</a>
+        <p class="fgs-small fgs-kontaktkarte-tel">{{ kontaktTel.display }}</p>
+      </div>
+    </aside>
+  </div>
 
     {{ areaBlock(property.area, "lage-markt", property.preisart, property.marketing_type == "Kauf") }}
   </div>
@@ -150,6 +249,65 @@ eleventyComputed:
 {% endcall %}
 
 {{ galleryScript() }}
+
+{%- if zeigeRechner %}
+<script>
+/* Update 68 §4: Finanzierungsrechner. Monatliche Rate = Darlehen × (Sollzins + Tilgung) ÷ 12; Darlehen = Gesamtkosten − Eigenkapital.
+   GA4 (über GTM): finanzierung_rechner einmal je Seitenaufruf bei der ersten Eingabe, finanzierung_anfrage beim Knopf, beide mit
+   objekt_id. Die Werte gehen über sessionStorage (nicht über die Adresse, damit sie nicht in page_location landen) an das
+   Anfrageformular der Finanzierungsberatung, das sie als versteckte Felder mitschickt. */
+(function () {
+  var root = document.querySelector('[data-finanzrechner]');
+  if (!root) return;
+  var feld = function (n) { return root.querySelector('[data-r="' + n + '"]'); };
+  var aus = function (n) { return root.querySelector('[data-r-aus="' + n + '"]'); };
+  var zahl = function (el) { var t = String(el.value || '').replace(/\s|€|%/g, '').replace(/\./g, '').replace(',', '.'); var n = parseFloat(t); return isFinite(n) && n >= 0 ? n : null; };
+  var eur = function (n) { return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(n); };
+  var grest = Number(root.dataset.grest) || 0, prov = Number(root.dataset.provision) || 0;
+  var notar = root.dataset.notar !== undefined ? Number(root.dataset.notar) : null;
+  var werte = {};
+  function rechnen() {
+    var kp = zahl(feld('kaufpreis')), ek = zahl(feld('eigenkapital')) || 0, zins = zahl(feld('sollzins')), tilg = zahl(feld('tilgung'));
+    werte = { kaufpreis: kp, eigenkapital: ek, sollzins: zins, tilgung: tilg, rate: null };
+    if (kp === null) { ['grest', 'nebenkosten', 'gesamt', 'darlehen', 'rate'].forEach(function (n) { aus(n).textContent = '–'; }); return; }
+    var g = kp * grest / 100, nt = notar !== null ? kp * notar / 100 : 0, mk = kp * prov / 100, nk = g + nt + mk, ges = kp + nk, dl = Math.max(0, ges - ek);
+    aus('grest').textContent = eur(g);
+    if (notar !== null) aus('notar').textContent = eur(nt);
+    if (prov) aus('makler').textContent = eur(mk);
+    aus('nebenkosten').textContent = eur(nk);
+    aus('gesamt').textContent = eur(ges);
+    aus('darlehen').textContent = eur(dl);
+    if (zins !== null && tilg !== null) { werte.rate = dl * (zins + tilg) / 100 / 12; aus('rate').textContent = eur(werte.rate); }
+    else aus('rate').textContent = '–';
+  }
+  var gemeldet = false;
+  root.addEventListener('input', function () {
+    rechnen();
+    if (gemeldet) return;
+    gemeldet = true;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'finanzierung_rechner', objekt_id: root.dataset.objektId });
+  });
+  var knopf = root.querySelector('[data-r-anfrage]');
+  if (knopf) knopf.addEventListener('click', function () {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'finanzierung_anfrage', objekt_id: root.dataset.objektId });
+    var de = function (n, s) { return n === null || n === undefined ? '' : new Intl.NumberFormat('de-DE', { minimumFractionDigits: s, maximumFractionDigits: s }).format(n); };
+    try {
+      sessionStorage.setItem('fgFinanzrechner', JSON.stringify({
+        'Objekt-ID': root.dataset.objektId, 'Objekt': root.dataset.objekt, 'Objektseite': location.pathname,
+        'Rechner Kaufpreis': werte.kaufpreis !== null ? de(werte.kaufpreis, 0) + ' €' : '',
+        'Rechner Eigenkapital': de(werte.eigenkapital, 0) + ' €',
+        'Rechner Sollzins': werte.sollzins !== null ? de(werte.sollzins, 2) + ' %' : '',
+        'Rechner Tilgung': werte.tilgung !== null ? de(werte.tilgung, 2) + ' %' : '',
+        'Rechner Monatsrate': werte.rate !== null ? de(werte.rate, 0) + ' €' : ''
+      }));
+    } catch (e) {}
+  });
+  rechnen();
+})();
+</script>
+{%- endif %}
 
 <script>
 (function () {

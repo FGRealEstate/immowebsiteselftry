@@ -604,9 +604,18 @@
     offenem Menü und solange das Bewertungsformular im Bild ist (fg-design.js). Jeder Tipp: GA4-Ereignis sticky_click mit ziel.
     Nicht auf Seiten mit eigener Leiste unten (fgsSticky: false, z. B. die Instagram-Anfrage). #}
 {%- if fgSystem and fgsSticky !== false %}
+{#- Update 68 §3.2: auf Objektseiten „Anfragen“ (Anfrage zu diesem Objekt, ziel anfrage) statt „Kostenlose Bewertung“, und
+    „Anrufen“ wählt den Ansprechpartner des Objekts (Timon mit eigener Nummer, sonst die Büronummer). -#}
+{%- set stickyObjekt = property.request_url if (property and property.request_url and property.url and (page.url == property.url)) else null %}
+{%- set stickyTel = nav.phone %}
+{%- if stickyObjekt %}{% set _loc = (property.location or "") | lower %}{% set _k = kontakte[property.kontakt or ("timon" if ("leipzig" in _loc or "dresden" in _loc) else "lennart")] %}{% if _k and _k.phone %}{% set stickyTel = _k.phone %}{% endif %}{% endif %}
 <div class="fgs-sticky" data-fgs-sticky>
-  <a class="fgs-btn fgs-btn--secondary fgs-btn--light" href="{{ nav.phone.href }}" data-sticky-ziel="anruf" aria-label="Anrufen: {{ nav.phone.display }}"><svg class="fgs-btn-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.2l1.6 4.2-2 1.4a11 11 0 0 0 7.1 7.1l1.4-2 4.2 1.6V19a1.5 1.5 0 0 1-1.6 1.5C10.8 20 4 13.2 3.5 5.1A1.5 1.5 0 0 1 5 3.5Z"/></svg>Anrufen</a>
+  <a class="fgs-btn fgs-btn--secondary fgs-btn--light" href="{{ stickyTel.href }}" data-sticky-ziel="anruf" aria-label="Anrufen: {{ stickyTel.display }}"><svg class="fgs-btn-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.2l1.6 4.2-2 1.4a11 11 0 0 0 7.1 7.1l1.4-2 4.2 1.6V19a1.5 1.5 0 0 1-1.6 1.5C10.8 20 4 13.2 3.5 5.1A1.5 1.5 0 0 1 5 3.5Z"/></svg>Anrufen</a>
+  {%- if stickyObjekt %}
+  <a class="fgs-btn fgs-btn--primary" href="{{ stickyObjekt }}" data-sticky-ziel="anfrage">Anfragen</a>
+  {%- else %}
   <a class="fgs-btn fgs-btn--primary" href="{{ nav.valuation | navHref }}" data-sticky-ziel="bewertung">Kostenlose Bewertung</a>
+  {%- endif %}
 </div>
 {%- endif %}
 

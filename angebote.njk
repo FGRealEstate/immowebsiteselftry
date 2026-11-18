@@ -21,6 +21,10 @@ pg:
   # ohne Scrollen sichtbar sind. Vorher: „… vermarkten. Jedes Angebot ist als Eigennutz oder Kapitalanlage gekennzeichnet;
   # bei Kapitalanlagen sehen Sie Kaltmiete und Bruttorendite, sobald beide Angaben vorliegen.“
   intro: "Hier finden Sie alle Wohnungen und Projekte, die wir gerade vermarkten."
+  # Update 68 §1.1: kompakter Kopf (fgs-pagehead--kompakt): H1 kleiner, „Gesuch anlegen“ am Desktop rechts daneben, wenig
+  # Abstand, damit bei 1440 × 900 die Chips und die Oberkante der ersten Karte, bei 390 × 844 die Chips und die Oberkante des
+  # ersten Fotos ohne Scrollen sichtbar sind. Texte unverändert.
+  kompakt: true
   buttons:
     - { label: "Gesuch anlegen", href: "/gesuch-anlegen/", line: true }
   faqTitle: "Häufige Fragen zu unseren Angeboten"
@@ -60,9 +64,32 @@ pg:
   <div class="fgs-wrap">
     <h2 class="fgs-sr" id="angebote-titel">Alle Angebote</h2>
     {% if units.length or projects.length %}
+    {#- Update 68 §1.2–§1.4: bis acht Angebote Chips statt Filterzeile, Zahlen aus den Daten; das Projekt zählt einmal und steht
+        unter beiden Chips, wenn es Einheiten beider Arten hat (strategy_keys). Mehr als acht Angebote: die Filterzeile von vorher
+        kommt beim Bauen von selbst zurück. Reihenfolge fest „Neueste zuerst“; ein Sortiermenü gibt es nur in der Filterzeile.
+        Kaufen/Mieten erscheint erst, wenn Propstack mindestens ein Mietangebot hat. -#}
+    {%- set zKa = [] %}{% set zEn = [] %}{% set zKauf = [] %}{% set zMiete = [] %}
+    {%- for p in projects %}{% if "kapitalanlage" in p.strategy_keys %}{% set _ = zKa.push(1) %}{% endif %}{% if "eigennutz" in p.strategy_keys %}{% set _ = zEn.push(1) %}{% endif %}{% if p.marketing_type == "Miete" %}{% set _ = zMiete.push(1) %}{% else %}{% set _ = zKauf.push(1) %}{% endif %}{% endfor %}
+    {%- for o in units %}{% if o.strategy_key == "kapitalanlage" %}{% set _ = zKa.push(1) %}{% elif o.strategy_key == "eigennutz" %}{% set _ = zEn.push(1) %}{% endif %}{% if o.marketing_type == "Miete" %}{% set _ = zMiete.push(1) %}{% else %}{% set _ = zKauf.push(1) %}{% endif %}{% endfor %}
+    {%- set zAlle = projects.length + units.length %}
+    {%- if zAlle <= 8 %}
+    <div class="fgs-chipzeile" id="angebote-chips" data-chips>
+      <div class="fgs-chips" role="group" aria-label="Nach Strategie filtern">
+        <button type="button" class="fgs-chip" data-chip="strategie" data-wert="" aria-pressed="true">Alle ({{ zAlle }})</button>
+        {%- if zKa.length %}<button type="button" class="fgs-chip" data-chip="strategie" data-wert="kapitalanlage" aria-pressed="false">Kapitalanlage ({{ zKa.length }})</button>{% endif %}
+        {%- if zEn.length %}<button type="button" class="fgs-chip" data-chip="strategie" data-wert="eigennutz" aria-pressed="false">Eigennutz ({{ zEn.length }})</button>{% endif %}
+      </div>
+      {%- if zMiete.length %}
+      <div class="fgs-chips" role="group" aria-label="Kaufen oder Mieten">
+        <button type="button" class="fgs-chip" data-chip="vermarktung" data-wert="kauf" aria-pressed="false">Kaufen ({{ zKauf.length }})</button>
+        <button type="button" class="fgs-chip" data-chip="vermarktung" data-wert="miete" aria-pressed="false">Mieten ({{ zMiete.length }})</button>
+      </div>
+      {%- endif %}
+    </div>
+    {%- else %}
     <form id="property-filter-form" class="fgd-form fgs-offer-filter" aria-label="Angebote filtern">
       <label>Strategie<select id="filter-strategie"><option value="">Alle</option><option value="eigennutz">Eigennutz</option><option value="kapitalanlage">Kapitalanlage</option></select></label>
-      <label>Vermarktung<select id="filter-vermarktung"><option value="">Alle</option>{% for type in propstack.filters.marketingTypes %}<option value="{{ type }}">{{ type }}</option>{% endfor %}</select></label>
+      {% if zMiete.length %}<label>Vermarktung<select id="filter-vermarktung"><option value="">Alle</option>{% for type in propstack.filters.marketingTypes %}<option value="{{ type }}">{{ type }}</option>{% endfor %}</select></label>{% endif %}
       <label>Objektart<select id="filter-objektart"><option value="">Alle</option>{% for type in propstack.filters.propertyTypes %}<option value="{{ type }}">{{ type }}</option>{% endfor %}</select></label>
       <label>Preis bis (€)<input id="filter-preis" inputmode="numeric" placeholder="beliebig" autocomplete="off"></label>
       <label>Sortierung<select id="filter-sortierung"><option value="">Neueste zuerst</option><option value="price-asc">Preis aufsteigend</option><option value="price-desc">Preis absteigend</option><option value="yield-desc">Rendite absteigend</option><option value="area-desc">Fläche absteigend</option></select></label>
@@ -71,6 +98,7 @@ pg:
         <button id="filter-reset" class="fgs-offer-reset" type="reset">Zurücksetzen</button>
       </div>
     </form>
+    {%- endif %}
 
     {% if projects.length %}
     <div class="fgs-offer-group" id="projekte" data-offer-group>
@@ -136,20 +164,25 @@ pg:
 {% if units.length or projects.length %}
 <script>
 (function () {
+  /* Update 68 §1: dieselbe Filterlogik für Chips (bis acht Angebote) und Filterzeile (mehr als acht) */
   var form = document.getElementById('property-filter-form');
-  if (!form) return;
+  var chips = document.querySelector('[data-chips]');
+  if (!form && !chips) return;
   var cards = Array.prototype.slice.call(document.querySelectorAll('.offer-filter-card'));
   var grid = document.getElementById('property-grid');
   var count = document.getElementById('object-count');
   var none = document.getElementById('no-results');
   var projectGroup = document.getElementById('projekte');
-  var val = function (id) { return document.getElementById(id).value.toLowerCase(); };
+  var val = function (id) { var el = document.getElementById(id); return el ? el.value.toLowerCase() : ''; };
   var num = function (v) { var n = Number(String(v || '').replace(/\./g, '').replace(',', '.').replace(/[^0-9.]/g, '')); return isFinite(n) ? n : 0; };
   var original = grid ? Array.prototype.slice.call(grid.children) : [];
+  var gewaehlt = function (art) { var b = chips && chips.querySelector('[data-chip="' + art + '"][aria-pressed="true"]'); return b ? b.getAttribute('data-wert') : ''; };
   function run(event) {
-    if (event) event.preventDefault();
-    var strategy = val('filter-strategie'), marketing = val('filter-vermarktung'), type = val('filter-objektart');
-    var max = num(document.getElementById('filter-preis').value), sort = document.getElementById('filter-sortierung').value;
+    if (event && event.type === 'submit') event.preventDefault();
+    var strategy = form ? val('filter-strategie') : gewaehlt('strategie');
+    var marketing = form ? val('filter-vermarktung') : gewaehlt('vermarktung');
+    var type = val('filter-objektart');
+    var max = form ? num(document.getElementById('filter-preis').value) : 0, sort = form ? document.getElementById('filter-sortierung').value : '';
     var visible = cards.filter(function (c) {
       return (!strategy || String(c.dataset.strategie || '').split(',').indexOf(strategy) > -1)
         && (!marketing || String(c.dataset.vermarktung || '').toLowerCase() === marketing)
@@ -168,9 +201,21 @@ pg:
     if (count) count.textContent = shown;
     if (none) none.hidden = shown > 0;
   }
-  form.addEventListener('submit', run);
-  form.addEventListener('change', run);
-  form.addEventListener('reset', function () { setTimeout(run, 0); });
+  if (form) {
+    form.addEventListener('submit', run);
+    form.addEventListener('change', run);
+    form.addEventListener('reset', function () { setTimeout(run, 0); });
+  }
+  if (chips) chips.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-chip]');
+    if (!b) return;
+    var art = b.getAttribute('data-chip'), an = b.getAttribute('aria-pressed') !== 'true';
+    /* Strategie: genau ein Chip gewählt (Alle, Kapitalanlage, Eigennutz). Kaufen/Mieten: ein zweiter Klick hebt die Wahl auf. */
+    if (art === 'strategie' && !an) return;
+    chips.querySelectorAll('[data-chip="' + art + '"]').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+    if (an) b.setAttribute('aria-pressed', 'true');
+    run();
+  });
 })();
 </script>
 <script type="application/ld+json">

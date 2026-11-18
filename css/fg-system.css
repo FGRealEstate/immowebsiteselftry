@@ -3405,3 +3405,146 @@ html.fg-embedded-calculator .fgs-sticky { display: none !important; }
 .fgs-gruender-raster { grid-template-columns: minmax(0, 1fr); }
 @media (min-width: 900px) { .fgs-gruender-raster { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); } }
 @media (max-width: 479px) { .fgs .fgs-gruender-text h1 { font-size: min(36px, calc((100vw - 48px) / 9.3)); } }
+
+/* ===== Update 68 (18.11.2026): Angebote wie NESGO, nur besser ===== */
+/* §0 Galerie: Die vier kleinen Bilder hatten 0 px Breite und loading="lazy", sie luden nie. Jetzt feste Maße: ab 1024 px füllt
+   jede Kachel ihre Rasterzelle (das Bild liegt absolut darin), darunter stehen die vier als Reihe im Format 3 : 2 unter dem großen
+   Bild. Gilt auch für die Projektseite, dort im Inhaltsraster. */
+.fgs-gallery-klein { position: relative; display: block; width: 100%; min-width: 0; padding: 0; border: 0; overflow: hidden; background: var(--fgs-line); cursor: zoom-in; }
+.fgs-gallery-klein img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
+.fgs-gallery-klein:focus-visible { outline: 2px solid var(--fgs-gold); outline-offset: -4px; }
+@media (max-width: 1023px) {
+  .fgs-gallery--mosaik .fgs-gallery-mosaik { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin-top: 6px; }
+  .fgs-gallery--mosaik .fgs-gallery-klein { aspect-ratio: 3 / 2; }
+}
+@media (min-width: 1024px) {
+  .fgs-gallery--mosaik { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px; }
+  .fgs-gallery--mosaik .fgs-gallery-stage { aspect-ratio: auto; height: var(--fgs-galerie-h, 52vh); }
+  .fgs-gallery--mosaik .fgs-gallery-klein { height: 100%; }
+}
+.fgs-gallery-bar { justify-content: flex-end; }
+/* Mit Kacheln auch auf dem Handy ohne Pfeilzeile: Wischen, Kacheln und ← → reichen, Preis und Eckdaten bleiben im ersten Bildschirm */
+.fgs-gallery--mosaik .fgs-gallery-bar { display: none; }
+/* §3.1 Zähler „1 / 16“ auf dem großen Bild, unten rechts; links unten steht „Alle Bilder ansehen (16)“ */
+.fgs-gallery-zahl { position: absolute; z-index: 2; right: clamp(12px, 2vw, 28px); bottom: clamp(12px, 2vw, 28px); margin: 0; padding: 8px 14px; border-radius: 999px; background: rgba(8, 8, 47, .72); color: #fff; font: 500 14px/1.2 var(--fgs-sans); font-variant-numeric: tabular-nums; pointer-events: none; }
+@media (max-width: 599px) { .fgs-gallery-zahl { font-size: 13px; padding: 7px 12px; } }
+
+/* §1.1 Kompakter Kopf (pg.kompakt, /angebote): H1 kleiner, Knopf am Desktop rechts, wenig Abstand bis zu den Chips */
+.fgs-pagehead.fgs-pagehead--kompakt { padding-block: clamp(28px, 4vw, 56px) clamp(24px, 3vw, 40px); }
+.fgs-pagehead--kompakt h1 { margin-top: 10px; max-width: 26ch; font-size: clamp(30px, 3.3vw, 48px); line-height: 1.12; }
+.fgs-pagehead--kompakt .fgs-lead { margin-top: 12px; }
+.fgs-pagehead--kompakt .fgs-btns { margin-top: 20px; }
+@media (min-width: 1024px) {
+  .fgs-pagehead--kompakt .fgs-wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 48px; align-items: end; }
+  .fgs-pagehead--kompakt .fgs-wrap > * { grid-column: 1; }
+  .fgs-pagehead--kompakt .fgs-wrap > .fgs-btns { grid-column: 2; grid-row: 1 / span 3; margin: 0; }
+}
+@media (max-width: 639px) { body.fgs .fgs-pagehead--kompakt h1 { font-size: 28px; line-height: 1.18; } .fgs-pagehead--kompakt .fgs-lead { font-size: 16px; } }
+.fgs-pagehead--kompakt + .fgs-section.fgs-offers { padding-top: clamp(24px, 3vw, 40px); }
+.fgs-pagehead--kompakt + .fgs-offers .fgs-offer-group:first-of-type { margin-top: 40px; }
+/* §1.2 Chips (bis acht Angebote) */
+.fgs-chipzeile { display: flex; flex-wrap: wrap; gap: 10px 32px; padding-bottom: 24px; border-bottom: 1px solid var(--fgs-line); }
+.fgs-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.fgs-chip { min-height: 44px; padding: 0 18px; border: 1px solid rgba(8, 8, 47, .22); border-radius: 999px; background: transparent; color: var(--fgs-ink); font: 500 15px/1 var(--fgs-sans); font-variant-numeric: tabular-nums; cursor: pointer; transition: background-color 200ms var(--fgs-ease), border-color 200ms var(--fgs-ease), color 200ms var(--fgs-ease); }
+.fgs-chip:hover { border-color: var(--fgs-ink); }
+.fgs-chip[aria-pressed="true"] { background: var(--fgs-ink); border-color: var(--fgs-ink); color: #fff; }
+.fgs-chip:focus-visible { outline: 2px solid var(--fgs-gold-text); outline-offset: 2px; }
+@media (max-width: 599px) { .fgs-chip { padding: 0 14px; font-size: 14px; } .fgs-chipzeile { padding-bottom: 20px; } }
+.fgs-chipzeile + .fgs-offer-group { margin-top: 40px; }
+
+/* §2 Karte: Foto und Text sind je ein Link, die Pfeile liegen dazwischen (kein Knopf in einem Link) */
+.fgs-obj > .fgs-obj-text, .fgs-project-body { display: block; color: var(--fgs-ink); text-decoration: none; }
+.fgs-obj-medialink { display: block; }
+.fgs .fgs-obj-text:hover, .fgs a.fgs-project-body:hover { color: var(--fgs-ink); }
+.fgs :is(div.fgs-obj, .fgs-project-link) :is(.fgs-obj-title, .fgs-offer-title) { text-decoration: underline 2px transparent; text-underline-offset: .2em; transition: text-decoration-color 400ms var(--fgs-ease); }
+.fgs :is(div.fgs-obj, .fgs-project-link):is(:hover, :focus-within) :is(.fgs-obj-title, .fgs-offer-title) { text-decoration-color: var(--fgs-gold); }
+.fgs div.fgs-obj .fgs-obj-title::after {
+  content: ""; display: inline-block; width: .8em; height: .45em; margin: 0 -1.15em 0 .35em; vertical-align: .12em; background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 12' fill='none' stroke='%23000' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 6h19M15 1l5 5-5 5'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 12' fill='none' stroke='%23000' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 6h19M15 1l5 5-5 5'/%3E%3C/svg%3E") center / contain no-repeat;
+  opacity: 0; transform: translateX(-8px); transition: opacity 400ms var(--fgs-ease), transform 400ms var(--fgs-ease);
+}
+.fgs div.fgs-obj:is(:hover, :focus-within) .fgs-obj-title::after { opacity: 1; transform: none; }
+.fgs .fgs-project-body .fgs-link { background-size: 0 1px !important; }
+.fgs .fgs-project-body .fgs-link svg { display: inline-block; transition: transform 400ms var(--fgs-ease); }
+.fgs .fgs-project-link:is(:hover, :focus-within) .fgs-project-body .fgs-link svg { transform: translateX(8px); }
+.fgs-obj-text:focus-visible, .fgs-project-body:focus-visible { outline: 2px solid var(--fgs-gold-text); outline-offset: 4px; border-radius: 2px; }
+/* §2.1 Fotos: Spur mit scroll-snap im Rahmen 3 : 2 (der Rahmen hat seine Höhe vor dem ersten Bild, also keine Verschiebung) */
+.fgs-obj-track { position: absolute; inset: 0; display: flex; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; -webkit-user-drag: none; }
+.fgs-obj-track::-webkit-scrollbar { display: none; }
+.fgs-obj-slide { position: relative; flex: 0 0 100%; overflow: hidden; scroll-snap-align: start; scroll-snap-stop: always; }
+/* Chrome holt lazy-Bilder in einer waagrechten Spur schon vor dem Wischen (gemessen: Foto 2 und 3 jeder Karte beim Laden).
+   Deshalb stehen Foto 2 bis 5 erst nach dem ersten Darüberfahren, Antippen oder Fokussieren im Fluss (is-bereit, fg-design.js);
+   vorher lädt nur das erste. Ohne Skript bleibt es beim ersten Foto, Punkte und Pfeile entfallen dann. */
+.fgs-obj-media:not(.is-bereit) .fgs-obj-slide + .fgs-obj-slide { display: none; }
+html:not(.fgs-js) :is(.fgs-obj-dots, .fgs-obj-pfeil) { display: none; }
+.fgs-obj-slide img { display: block; width: 100%; height: 100%; object-fit: cover; -webkit-user-drag: none; user-select: none; }
+.fgs-obj-dots { position: absolute; z-index: 2; left: 50%; bottom: 12px; display: flex; gap: 6px; transform: translateX(-50%); pointer-events: none; }
+.fgs-obj-dots i { width: 6px; height: 6px; border-radius: 50%; background: rgba(255, 255, 255, .55); box-shadow: 0 0 3px rgba(8, 8, 47, .35); transition: background-color 200ms var(--fgs-ease), transform 200ms var(--fgs-ease); }
+.fgs-obj-dots i.is-active { background: #fff; transform: scale(1.25); }
+.fgs-obj-pfeil { position: absolute; z-index: 3; top: 50%; display: grid; place-items: center; width: 38px; height: 38px; margin-top: -19px; padding: 0; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .94); color: var(--fgs-ink); box-shadow: 0 2px 10px rgba(8, 8, 47, .18); cursor: pointer; opacity: 0; transition: opacity 200ms var(--fgs-ease); }
+.fgs-obj-pfeil--zurueck { left: 12px; }
+.fgs-obj-pfeil--vor { right: 12px; }
+.fgs-obj-pfeil:focus-visible { opacity: 1; outline: 2px solid var(--fgs-gold); outline-offset: 2px; }
+@media (hover: hover) and (pointer: fine) { .fgs-obj-media:hover .fgs-obj-pfeil { opacity: 1; } }
+@media (hover: none) { .fgs-obj-pfeil { display: none; } }
+/* §2.2 Badges: klein, Navy auf Weiß, Schrift der Labels; kein Gold */
+.fgs-obj-badges { position: absolute; z-index: 2; top: 12px; left: 12px; display: flex; flex-wrap: wrap; gap: 6px; pointer-events: none; }
+.fgs-obj-badge { padding: 6px 9px; border-radius: 3px; background: #fff; color: var(--fgs-ink); font: 500 11px/1 var(--fgs-sans); letter-spacing: .12em; text-transform: uppercase; box-shadow: 0 1px 4px rgba(8, 8, 47, .12); }
+.fgs-obj-badge[hidden] { display: none; }
+/* §2.3 Eckdaten mit Symbolen */
+/* Ohne „·“ zwischen den Angaben: Beim Umbruch stand der Punkt sonst am Zeilenanfang; die Symbole trennen die Angaben. */
+.fgs .fgs-obj-facts--symbole { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; margin-top: 6px; font-variant-numeric: tabular-nums; }
+.fgs-obj-fakt { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.fgs-obj-symbol { flex: none; color: var(--fgs-ink); }
+
+/* §3.2 Objektseite: Abschnitte links, Kontaktkarte rechts (ab 1024 px, bleibt beim Scrollen unter dem Kopf stehen) */
+.fgs-listing-kontakt { display: none; }
+@media (min-width: 1024px) {
+  .fgs-listing-raster { display: grid; grid-template-columns: minmax(0, 1fr) 300px; column-gap: clamp(48px, 5vw, 80px); align-items: start; }
+  .fgs-listing-haupt { min-width: 0; }
+  .fgs-listing-kontakt { display: block; position: sticky; top: calc(var(--fgs-header-h) + 32px); margin-top: 96px; }
+}
+.fgs-kontaktkarte { display: grid; gap: 12px; padding: 28px; border: 1px solid var(--fgs-line); border-radius: var(--fgs-r); background: #fff; }
+.fgs-kontaktkarte-kopf { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
+.fgs .fgs-kontaktkarte-kopf img { flex: none; width: 72px; height: 72px; border-radius: 50%; object-fit: cover; object-position: 50% 20%; }
+.fgs .fgs-kontaktkarte-name { margin: 0; font: 400 22px/1.25 var(--fgs-serif); color: var(--fgs-ink); }
+.fgs-kontaktkarte-kopf .fgs-small { margin: 4px 0 0; }
+.fgs-kontaktkarte .fgs-btn { width: 100%; justify-content: center; margin: 0; }
+.fgs-kontaktkarte .fgs-btn .fgs-obj-symbol { color: currentColor; width: 18px; height: 18px; }
+.fgs .fgs-kontaktkarte-tel { margin: 0; text-align: center; font-variant-numeric: tabular-nums; }
+/* §3.3 Eckdatenleiste mit Symbolen */
+.fgs-fact-text .fgs-obj-symbol { display: inline-block; width: 18px; height: 18px; margin-right: 8px; vertical-align: -3px; }
+/* §3.4 Unterlagen und 3D-Rundgang */
+.fgs-unterlagen { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--fgs-line); }
+.fgs-unterlagen li { border-bottom: 1px solid var(--fgs-line); }
+.fgs-unterlagen a { display: flex; align-items: center; gap: 12px; padding: 14px 0; color: var(--fgs-ink); font-weight: 500; text-decoration: none; }
+.fgs-unterlagen a:hover { text-decoration: underline; text-decoration-color: var(--fgs-gold); text-underline-offset: .2em; }
+.fgs-tour { aspect-ratio: 16 / 9; }
+.fgs-tour img, .fgs-tour iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
+.fgs-tour-start { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; border: 0; background: rgba(8, 8, 47, .35); color: #fff; font: 500 16px/1.2 var(--fgs-sans); cursor: pointer; }
+.fgs-tour-start svg { width: 64px; height: 64px; padding: 18px; border-radius: 50%; background: #fff; color: var(--fgs-ink); }
+/* §4 Finanzierungsrechner: Felder zwei Spalten, auf dem Handy untereinander; die Rate groß direkt unter den Feldern */
+.fgs .fgs-rechner-platzhalter { margin: 0 0 24px; color: #B42318; font-weight: 500; }
+.fgs-rechner-felder.fgd-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px var(--fgs-gap); }
+.fgs .fgs-rechner-felder input { font-size: 17px; font-variant-numeric: tabular-nums; }
+.fgs-rechner-rate { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; margin-top: 32px; padding: 20px 0; border-top: 1px solid var(--fgs-ink); border-bottom: 1px solid var(--fgs-line); }
+.fgs-rechner-rate-label { font-size: 16px; font-weight: 500; }
+.fgs-rechner-rate strong { font: 400 clamp(34px, 4vw, 48px)/1.05 var(--fgs-serif); color: var(--fgs-ink); font-variant-numeric: tabular-nums; }
+.fgs-rechner-posten { margin: 0; }
+.fgs-rechner-posten > div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; padding: 12px 0; border-bottom: 1px solid var(--fgs-line); font-size: 16px; line-height: 1.5; }
+.fgs-rechner-posten dt { color: var(--fgs-ink-2); }
+.fgs-rechner-posten dd { margin: 0; font-variant-numeric: tabular-nums; }
+.fgs-rechner-posten .fgs-rechner-summe dt { color: var(--fgs-ink); font-weight: 500; }
+.fgs-rechner-fehlt { color: #B42318; }
+.fgs-rechner .fgs-note { margin-top: 24px; }
+.fgs-rechner .fgs-btns { margin-top: 24px; }
+@media (max-width: 599px) {
+  .fgs-rechner-felder.fgd-form { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .fgs .fgs-rechner-felder input { font-size: 16px; }
+  .fgs-rechner-rate { margin-top: 24px; }
+  .fgs-rechner .fgs-btn { width: 100%; }
+}
+/* §7 Prüfung bei 320 px: In der Leiste unten (Update 64 A8) lief „Kostenlose Bewertung“ über den Knopfrand. Unter 360 px etwas
+   kleinere Schrift und weniger Sperrung, dann passen beide Zeilen. */
+@media (max-width: 359px) { .fgs-sticky .fgs-btn { padding: 0 10px; gap: 6px; font-size: 13px; letter-spacing: .06em; } }

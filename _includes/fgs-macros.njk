@@ -505,38 +505,80 @@
 </li>
 {%- endmacro %}
 
+{#- Update 68 §2.3: dünne Liniensymbole in Navy wie das Telefon aus Update 64 A10 (24 × 24, Strich 1,6, runde Enden) -#}
+{% macro faktSymbol(name) -%}
+<svg class="fgs-obj-symbol" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+{%- if name == "art" %}<path d="M5 20.5V6l7-2.5L19 6v14.5M3.5 20.5h17M9 9h.01M15 9h.01M9 13h.01M15 13h.01M10.5 20.5V17h3v3.5"/>
+{%- elif name == "flaeche" %}<path d="M4.5 4.5h15v15h-15zM9 15l6-6M11 9h4v4"/>
+{%- elif name == "zimmer" %}<path d="M6 20.5V4.5h12v16M3.5 20.5h17M14.5 12.5h.01"/>
+{%- elif name == "baujahr" %}<path d="M4.5 6h15v14h-15zM4.5 10.5h15M8.5 3.5v5M15.5 3.5v5"/>
+{%- elif name == "preis" %}<path d="M3.5 12.6V4.5a1 1 0 0 1 1-1h8.1l8 8a1 1 0 0 1 0 1.4l-7.7 7.7a1 1 0 0 1-1.4 0l-8-8ZM8 8h.01"/>
+{%- elif name == "preisqm" %}<path d="m3.5 16 12.5-12.5 4.5 4.5L8 20.5zM7 13l2 2M10 10l2 2M13 7l2 2"/>
+{%- elif name == "rendite" %}<path d="m3.5 17 6-6 4 4 7-7.5M15 7.5h5.5V13"/>
+{%- elif name == "telefon" %}<path d="M5 3.5h3.2l1.6 4.2-2 1.4a11 11 0 0 0 7.1 7.1l1.4-2 4.2 1.6V19a1.5 1.5 0 0 1-1.6 1.5C10.8 20 4 13.2 3.5 5.1A1.5 1.5 0 0 1 5 3.5Z"/>
+{%- endif %}</svg>
+{%- endmacro %}
+
+{#- Update 68 §2.1/§2.2: Fotos der Karte. fotos = o.karte_fotos (erstes = Titelbild mit Ausschnitt), höchstens fünf; Rahmen 3 : 2.
+    Das Fotofeld ist ein Link (ohne Tabstopp; der Textlink darunter ist der zugängliche), die Pfeile liegen daneben im selben
+    Rahmen und wechseln nur das Bild (fg-design.js, data-karussell). Nur das erste Foto lädt mit der Seite (eager), die übrigen
+    lazy und erst, wenn jemand die Karte anfasst. Badges: Reserviert, Neu (Skript nach data-veroeffentlicht, 14 Tage),
+    Provisionsfrei; höchstens zwei sichtbar. -#}
+{% macro karteMedia(fotos, alt, sizes, url, o, eager=false, extraKlasse="") -%}
+{%- set n = fotos.length %}
+<div class="fgs-obj-media fgs-media fgs-reveal{{ (' ' + extraKlasse) if extraKlasse }}"{% if n > 1 %} data-karussell{% endif %}>
+  <a class="fgs-obj-track" href="{{ url }}" tabindex="-1" aria-hidden="true" draggable="false">
+    {%- for f in fotos %}{% set _set = f.url | propstackSrcset %}
+    <span class="fgs-obj-slide"><span class="fgs-obj-frame"{% if f.fokus or f.zoom %} style="{% if f.fokus %}--fgs-pos: {{ f.fokus }};{% endif %}{% if f.zoom %} --fgs-zoom: {{ f.zoom }};{% endif %}"{% endif %}><img src="{{ f.url | propstackFoto }}"{% if _set %} srcset="{{ _set }}"{% endif %} alt="{{ alt if loop.first else '' }}" sizes="{{ sizes }}" width="1200" height="800"{% if loop.first and eager == "hoch" %} fetchpriority="high"{% elif not (loop.first and eager) %} loading="lazy"{% endif %} decoding="async" draggable="false"></span></span>
+    {%- endfor %}
+  </a>
+  {%- set badges = [] %}{% if o.reserviert %}{% set _ = badges.push("Reserviert") %}{% endif %}
+  {%- if badges.length or o.veroeffentlicht or o.provisionsfrei %}
+  <span class="fgs-obj-badges">{% for b in badges %}<span class="fgs-obj-badge">{{ b }}</span>{% endfor %}{% if o.veroeffentlicht %}<span class="fgs-obj-badge" data-badge-neu hidden>Neu</span>{% endif %}{% if o.provisionsfrei and badges.length < 2 %}<span class="fgs-obj-badge">Provisionsfrei</span>{% endif %}</span>
+  {%- endif %}
+  {%- if n > 1 %}
+  <span class="fgs-obj-dots" aria-hidden="true">{% for f in fotos %}<i{% if loop.first %} class="is-active"{% endif %}></i>{% endfor %}</span>
+  <button type="button" class="fgs-obj-pfeil fgs-obj-pfeil--zurueck" data-karussell-dir="-1" aria-label="Vorheriges Bild"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 5.5 8 12l6.5 6.5"/></svg></button>
+  <button type="button" class="fgs-obj-pfeil fgs-obj-pfeil--vor" data-karussell-dir="1" aria-label="Nächstes Bild"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 5.5 16 12l-6.5 6.5"/></svg></button>
+  {%- endif %}
+</div>
+{%- endmacro %}
+
 {#- Design-Pass 3 §3.8: Angebotskarte für alle Angebotsraster. Titelbild 3:2 nach der Titelbild-Regel (o.cover aus
     _data/propstack.js, Ausschnitt per fokus/zoom aus data/listing-covers.json); ohne brauchbares Foto der gestaltete
     Titel (Navy, Goldrahmen, F&G-Zeichen, Ort). Ort: Propstack-Stadtteil, solange der leer ist die Stadt.
     filter=true (§4.5 Angebotsseite): Klasse offer-filter-card und die data-* Felder für den Filter, wie bisher offerCard. -#}
-{% macro angebot(o, sizes="(min-width: 1024px) 380px, (min-width: 768px) 46vw, 92vw", filter=false, stil="daten") -%}
+{% macro angebot(o, sizes="(min-width: 1024px) 380px, (min-width: 768px) 46vw, 92vw", filter=false, stil="daten", eager=false) -%}
 {#- Update 27 A1: nur der Ortsteil („Westend“, „Reick“), ohne ihn die Stadt; nie „Gemarkung“ (o.ortsteil, _data/propstack.js) -#}
 {%- set ort = o.ortsteil or o.location -%}
-<li{% if filter %} class="offer-filter-card" data-strategie="{{ o.strategy_key }}" data-vermarktung="{{ o.marketing_type or '' }}" data-objektart="{{ o.property_type or '' }}" data-preis="{{ o.price_raw or '' }}" data-flaeche="{{ o.living_space_raw or '' }}" data-rendite="{{ o.gross_yield_raw or '' }}"{% endif %}>
-  <a class="fgs-obj" href="{{ o.url }}">
+{#- Update 68 §2 (18.11.2026): Karte mit bis zu fünf Fotos (karteMedia: Wischen mit CSS scroll-snap, Punkte, Pfeile am Desktop
+    beim Darüberfahren), Badges oben links und Eckdaten mit Symbolen (Wohnungsart, Fläche, Zimmer, Baujahr; fehlende Werte
+    entfallen). Die Karte ist kein einzelner Link mehr, weil Knöpfe nicht in einem Link stehen dürfen: Foto und Text sind je ein
+    Link auf das Angebot, die Pfeile wechseln nur das Bild. „provisionsfrei“ steht jetzt als Badge statt in der Zeile.
+    eager: erstes Foto ohne loading="lazy" (Angebotsseite); auf der Startseite bleibt es lazy. -#}
+{%- set zeile = [] %}{% if o.karte_art %}{% set _ = zeile.push({ i: "art", t: o.karte_art }) %}{% endif %}{% if o.living_space %}{% set _ = zeile.push({ i: "flaeche", t: o.living_space }) %}{% endif %}{% if o.rooms %}{% set _ = zeile.push({ i: "zimmer", t: o.rooms + " Zimmer" }) %}{% endif %}{% if o.baujahr %}{% set _ = zeile.push({ i: "baujahr", t: "Baujahr " + o.baujahr }) %}{% endif %}
+<li{% if filter %} class="offer-filter-card" data-strategie="{{ o.strategy_key }}" data-vermarktung="{{ o.marketing_type or '' }}" data-objektart="{{ o.property_type or '' }}" data-preis="{{ o.price_raw or '' }}" data-flaeche="{{ o.living_space_raw or '' }}" data-rendite="{{ o.gross_yield_raw or '' }}"{% endif %}{% if o.veroeffentlicht %} data-veroeffentlicht="{{ o.veroeffentlicht }}"{% endif %}>
+  <div class="fgs-obj">
     {%- if o.cover and o.cover.url %}
-    <span class="fgs-obj-media fgs-media fgs-reveal"><span class="fgs-obj-frame"{% if o.cover.fokus or o.cover.zoom %} style="{% if o.cover.fokus %}--fgs-pos: {{ o.cover.fokus }};{% endif %}{% if o.cover.zoom %} --fgs-zoom: {{ o.cover.zoom }};{% endif %}"{% endif %}><img src="{{ o.cover.url | propstackFoto }}"{% set _set = o.cover.url | propstackSrcset %}{% if _set %} srcset="{{ _set }}"{% endif %} alt="{{ o.title }}" sizes="{{ sizes }}" width="1200" height="800" loading="lazy" decoding="async"></span></span>
+    {{ karteMedia(o.karte_fotos if (o.karte_fotos and o.karte_fotos.length) else [o.cover], o.title, sizes, o.url, o, eager) }}
     {%- else %}
-    <span class="fgs-obj-media fgs-obj-design" role="img" aria-label="{{ o.title }}"><img src="/images/logo/fg-zeichen-gold.svg" alt="" width="49" height="58"><span class="fgs-obj-design-ort" aria-hidden="true">{{ ort }}</span></span>
+    <a class="fgs-obj-medialink" href="{{ o.url }}" tabindex="-1" aria-hidden="true"><span class="fgs-obj-media fgs-obj-design" role="img" aria-label="{{ o.title }}"><img src="/images/logo/fg-zeichen-gold.svg" alt="" width="49" height="58"><span class="fgs-obj-design-ort" aria-hidden="true">{{ ort }}</span></span></a>
     {%- endif %}
     {%- set preis %}{{ (o.price | eur) if o.price else "Preis auf Anfrage" }}{% if o.marketing_type == "Miete" and o.price %} kalt / Monat{% endif %}{% endset %}
+    <a class="fgs-obj-text" href="{{ o.url }}">
     {%- if stil == "daten" %}
-    {#- Update 64 B7: Titel = Ortsteil mit Stadt, zweite Zeile aus den Daten („Eigentumswohnung · 68,84 m² · 2 Zimmer“, dazu
-        „· provisionsfrei“, wo Propstack es setzt); ersetzt die abgeschnittene Propstack-Überschrift. Felder aus _data/propstack.js.
+    {#- Update 64 B7: Titel = Ortsteil mit Stadt, darunter die Eckdaten aus den Daten (Felder aus _data/propstack.js).
         Die Projektseite (stil="titel") behält die Überschrift, dort liegen alle Einheiten im selben Ortsteil. -#}
-    {%- set zeile = [] %}{% if o.karte_art %}{% set _ = zeile.push(o.karte_art) %}{% endif %}{% if o.living_space %}{% set _ = zeile.push(o.living_space) %}{% endif %}{% if o.rooms %}{% set _ = zeile.push(o.rooms + " Zimmer") %}{% endif %}{% if o.provisionsfrei %}{% set _ = zeile.push("provisionsfrei") %}{% endif %}
     <div class="fgs-obj-row"><h3 class="fgs-obj-title fgs-obj-title--ort">{{ o.karte_ort or ort }}</h3><span class="fgs-obj-preis">{{ preis | trim }}</span></div>
-    {%- if zeile.length %}
-    <p class="fgs-obj-facts">{{ zeile | join(" · ") }}</p>
-    {%- endif %}
     {%- else %}
     <span class="fgs-obj-row"><span class="fgs-obj-ort">{{ ort }}</span><span class="fgs-obj-preis">{{ preis | trim }}</span></span>
     <h3 class="fgs-obj-title">{{ o.title }}</h3>
-    {%- if o.living_space or o.rooms %}
-    <p class="fgs-obj-facts">{% if o.living_space %}{{ o.living_space }}{% endif %}{% if o.living_space and o.rooms %} · {% endif %}{% if o.rooms %}{{ o.rooms }} Zimmer{% endif %}</p>
     {%- endif %}
+    {%- if zeile.length %}
+    <p class="fgs-obj-facts fgs-obj-facts--symbole">{% for z in zeile %}<span class="fgs-obj-fakt">{{ faktSymbol(z.i) }}{{ z.t | replace(" m²", "&nbsp;m²") | safe }}</span>{% endfor %}</p>
     {%- endif %}
-  </a>
+    </a>
+  </div>
 </li>
 {%- endmacro %}
 

@@ -771,6 +771,78 @@ function getPublicTitle(unit, marketingType, propertyType) {
     return location ? `${base} in ${location}` : base;
 }
 
+/* Update 68 (18.11.2026): Angaben für Karte und Angebotsseite.
+   karte_fotos: Titelbild (mit Ausschnitt) und die nächsten Fotos der Galerie ohne Grundrisse, höchstens fünf (§2.1).
+   veroeffentlicht: Datum, seit dem das Angebot in der Vermarktung steht. Propstack liefert kein eigenes Veröffentlichungsdatum;
+   am nächsten kommt status_updated_at, solange der Status „Vermarktung“ ist, sonst das Anlagedatum. Das Skript der Karte zeigt
+   damit „Neu“ bis 14 Tage danach (§2.2). reserviert: Status enthält „reserv“. Öffentlich sind bisher nur Angebote im Status
+   „Vermarktung“ (isPublicMarketingObject), „Reserviert“ greift also erst, wenn reservierte Angebote gezeigt werden.
+   baujahr: „Baujahr ca.“ aus Propstack, ohne Tausenderpunkt. energie (§3.4): die fünf Angaben nach § 87 GEG, nur gefüllte;
+   energie_fehlt nennt die leeren (für den Bericht an Timon). kosten: Hausgeld und Käuferprovision (Propstack-Text,
+   „provisionsfrei“ bei provisionsfreien Angeboten). provision_prozent: Käuferprovision in Prozent für den Finanzierungsrechner.
+   bundesland: Berlin, Brandenburg oder Sachsen (für die Grunderwerbsteuer), aus der Postleitzahl. tour: Link auf einen
+   3D-Rundgang aus den Propstack-Links (Matterport, Ogulo, „Rundgang“, „3D“), sonst null. */
+function bundeslandAusPlz(zip, ort) {
+    const plz = String(zip || "").trim();
+    const n = Number(plz.slice(0, 5));
+    if (/berlin/i.test(String(ort || "")) || (n >= 10115 && n <= 14199)) return "berlin";
+    if (/^(01|02|04|08|09)/.test(plz)) return "sachsen";
+    if (/^(03|14|15|16|17|19)/.test(plz)) return "brandenburg";
+    return null;
+}
+function prozentText(text) {
+    // Propstack-Text wie eingetragen, nur ohne vorangestelltes „Käuferprovision:“, mit geschütztem Leerzeichen vor % und mit %
+    // nach der ersten Zahl, wo es fehlt („3,57 inkl. gesetzliche MwSt.“)
+    let t = String(text || "").replace(/^\s*K(ä|ae)uferprovision\s*:\s*/i, "").trim();
+    if (!/%/.test(t)) t = t.replace(/^(\d+(?:,\d+)?)(?!\s*€)/, "$1 %");
+    return t.replace(/(\d)\s*%/g, "$1\u00a0%");
+}
+function angebotsAngaben(items) {
+    const zahl = (x) => new Intl.NumberFormat("de-DE", { maximumFractionDigits: 2 }).format(x);
+    items.forEach((item) => {
+        const raw = item.raw || {};
+        const courtage = feldWert(raw.courtage) || feldWert(raw.courtage_note) || "";
+        if (item.provisionsfrei === undefined) item.provisionsfrei = /provisionsfrei/i.test(String(courtage)); // Projekte
+        const plaene = new Set(item.grundrisse || []);
+        const cover = item.cover && item.cover.url ? item.cover : null;
+        const rest = (item.gallery || []).filter((url) => url && (!cover || url !== cover.url) && !plaene.has(url));
+        item.karte_fotos = cover ? [{ url: cover.url, fokus: cover.fokus || null, zoom: cover.zoom || null }, ...rest.slice(0, 4).map((url) => ({ url }))] : [];
+        const status = String(item.status || "");
+        const seit = /vermarkt/i.test(status) ? feldWert(raw.status_updated_at) : null;
+        item.veroeffentlicht = String(seit || feldWert(raw.created_at) || "").slice(0, 10) || null;
+        item.reserviert = /reserv/i.test(status);
+        const bj = Number(feldWert(raw.construction_year));
+        item.baujahr = bj > 1000 && raw.construction_year_unknown?.value !== true ? String(bj) : null;
+        const ewert = raw.energy_efficiency_value || raw.thermal_characteristic;
+        const ewertZahl = Number(feldWert(ewert));
+        const ausweisBj = Number(feldWert(raw.energy_certificate_construction_year)) || bj || null;
+        const felder = [
+            ["Energieausweis", feldWert(raw.building_energy_rating_type)],
+            [(isPlainObject(ewert) && textValue(ewert.label)) || "Energiekennwert", ewertZahl > 0 ? `${zahl(ewertZahl)} kWh/(m²·a)` : null],
+            ["Wesentlicher Energieträger", feldWert(raw.firing_types)],
+            ["Baujahr", ausweisBj > 1000 ? String(ausweisBj) : null],
+            ["Energieeffizienzklasse", feldWert(raw.energy_efficiency_class)]
+        ];
+        // Ohne Ausweistyp, Kennwert und Klasse kein Abschnitt: Energieträger und Baujahr allein sind keine Ausweisdaten
+        const ausweis = felder[0][1] || felder[1][1] || felder[4][1];
+        item.energie = ausweis ? felder.filter(([, wert]) => wert).map(([label, wert]) => ({ label, wert })) : [];
+        item.energie_fehlt = felder.filter(([, wert]) => !wert).map(([label]) => label);
+        const kosten = [];
+        if (item.house_money) kosten.push({ label: "Hausgeld", wert: `${item.house_money} / Monat` });
+        if (item.marketing_type !== "Miete") {
+            if (item.provisionsfrei) kosten.push({ label: "Käuferprovision", wert: "provisionsfrei" });
+            else if (courtage) kosten.push({ label: "Käuferprovision", wert: prozentText(courtage) });
+        }
+        item.kosten = kosten;
+        const pz = String(courtage).match(/(\d+(?:[.,]\d+)?)\s*%/);
+        item.provision_prozent = item.provisionsfrei ? 0 : pz ? Number(pz[1].replace(",", ".")) : (Number(raw.external_commission_percentage) || null);
+        item.bundesland = bundeslandAusPlz(feldWert(raw.zip_code), item.location);
+        const links = Array.isArray(raw.links) ? raw.links : [];
+        const tour = links.find((l) => /matterport|ogulo|rundgang|360|3d|tour/i.test(`${l && (l.url || "")} ${l && (l.title || l.name || "")}`));
+        item.tour = tour && /^https:\/\//.test(String(tour.url || "")) ? String(tour.url) : null;
+    });
+}
+
 function getStatusName(unit) {
     return (
         textValue(unit.status) ||
@@ -1790,6 +1862,8 @@ async function propstackLaden() {
         })));
         const properties = [...standaloneProperties, ...projectProperties];
         seitenTitelSetzen(properties, projects); // Update 57 §6
+        // Update 68: auch project.units (eigene Objekte, die Projektseite zeigt sie als Karten), sonst fehlen dort Fotos und Angaben
+        angebotsAngaben([...properties, ...projects, ...projects.flatMap((project) => project.units)]);
 
         const marketingTypes = [...new Set(properties.map((property) => property.marketing_type).filter(Boolean))];
         const propertyTypes = [...new Set(properties.map((property) => property.property_type).filter(Boolean))];
