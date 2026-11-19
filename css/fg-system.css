@@ -3548,3 +3548,50 @@ html:not(.fgs-js) :is(.fgs-obj-dots, .fgs-obj-pfeil) { display: none; }
 /* §7 Prüfung bei 320 px: In der Leiste unten (Update 64 A8) lief „Kostenlose Bewertung“ über den Knopfrand. Unter 360 px etwas
    kleinere Schrift und weniger Sperrung, dann passen beide Zeilen. */
 @media (max-width: 359px) { .fgs-sticky .fgs-btn { padding: 0 10px; gap: 6px; font-size: 13px; letter-spacing: .06em; } }
+
+/* ===== Update 70 (19.11.2026): letzte Korrekturen vor dem ersten Release ===== */
+/* §1.1 /angebote: zwei Karten füllen zwei Spalten über die ganze Breite, ab drei Karten drei Spalten (data-anzahl setzt der
+   Build, der Filter auf der Seite zählt neu). */
+@media (min-width: 1024px) { .fgs-obj-grid[data-anzahl="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* §1.2 Chips am Handy in einer Reihe; passt sie nicht (320 px), läuft sie seitwärts, ohne sichtbaren Balken. */
+@media (max-width: 767px) {
+  .fgs-chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; max-width: 100%; }
+  .fgs-chips::-webkit-scrollbar { display: none; }
+  .fgs-chip { flex: none; white-space: nowrap; }
+}
+@media (max-width: 599px) { .fgs-chips { gap: 6px; } .fgs-chip { padding: 0 11px; } }
+/* §1.4 Galerie mit einem Foto: Originalbreite (--fgs-bild-w aus dem Bild-Cache), mittig, höchstens so hoch wie die Bühne bisher
+   (--fgs-cap je Breite); das Format folgt dem Foto, nichts wird beschnitten oder hochskaliert. */
+.fgs-listing-top .fgs-gallery--einzeln .fgs-gallery-stage {
+  --fgs-cap: min(75vw, 45svh);
+  aspect-ratio: var(--fgs-bild-ar, 4 / 3); height: auto; max-height: none; margin-inline: auto;
+  width: min(100%, var(--fgs-bild-w, 100%), calc(var(--fgs-cap) * var(--fgs-bild-ar, 1.3333)));
+}
+@media (min-width: 600px) { .fgs-listing-top .fgs-gallery--einzeln .fgs-gallery-stage { --fgs-cap: min(56.25vw, 45svh); } }
+@media (min-width: 1024px) { .fgs-listing-top .fgs-gallery--einzeln .fgs-gallery-stage { --fgs-cap: min(var(--fgs-galerie-h, 52vh), 56.25vw); } }
+/* 2 bis 4 Fotos: Kachelraster nach Zahl, ohne leere Felder. Ab 1024 px rechts neben dem großen Bild: 1 Kachel ganz, 2 übereinander,
+   3 = eine oben über die volle Breite, zwei darunter. Darunter eine Reihe mit so vielen Spalten wie Kacheln. */
+@media (min-width: 1024px) {
+  .fgs-gallery--k1 .fgs-gallery-mosaik { grid-template-columns: 1fr; grid-template-rows: 1fr; }
+  .fgs-gallery--k2 .fgs-gallery-mosaik { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
+  .fgs-gallery--k3 .fgs-gallery-mosaik { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+  .fgs-gallery--k3 .fgs-gallery-klein:first-child { grid-column: 1 / -1; }
+}
+@media (max-width: 1023px) {
+  .fgs-gallery--k1 .fgs-gallery-mosaik { grid-template-columns: minmax(0, 1fr); }
+  .fgs-gallery--k1 .fgs-gallery-klein { aspect-ratio: 3 / 1; }
+  .fgs-gallery--k2 .fgs-gallery-mosaik { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fgs-gallery--k3 .fgs-gallery-mosaik { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+/* §1.3 Fläche: Quadrat mit Eckmarken statt Pfeil (Symbol in fgs-macros.njk). §1.6 Telefonknöpfe führen auf keine andere Seite:
+   kein Pfeil (Kontaktkarte, Leiste unten, Kopf). */
+.fgs-btn[href^="tel:"]::after { content: none; }
+
+/* §1.5 Leiste unten am Handy: „Kostenlose Bewertung“ ab 360 px in einer Zeile, senkrecht mittig (14 px, ab 389 px abwärts 13 px,
+   engere Ränder); unter 360 px zwei Zeilen mit gleichem Abstand oben und unten. Text bleibt. */
+@media (max-width: 767px) {
+  .fgs-sticky { gap: 6px; padding-left: 8px; padding-right: 8px; }
+  .fgs-sticky .fgs-btn { white-space: nowrap; padding: 0 8px; gap: 6px; font-size: 14px; letter-spacing: .08em; line-height: 1.2; }
+}
+@media (max-width: 389px) { .fgs-sticky .fgs-btn { padding: 0 8px; font-size: 13px; letter-spacing: .05em; } }
+@media (max-width: 359px) { .fgs-sticky .fgs-btn { white-space: normal; padding-top: 6px; padding-bottom: 6px; } }

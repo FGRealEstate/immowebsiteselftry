@@ -118,8 +118,10 @@ pg:
         <p class="fgs-small" aria-live="polite"><b id="object-count">{{ units.length }}</b> {{ "Angebot" if units.length == 1 else "Angebote" }}</p>
       </div>
       {% if units.length %}
-      <ul id="property-grid" class="fgs-obj-grid" role="list">
-        {% for o in units %}{{ angebot(o, filter=true, eager=("hoch" if (loop.first and not projects.length) else false)) }}{% endfor %}
+      <ul id="property-grid" class="fgs-obj-grid" role="list" data-anzahl="{{ units.length }}">
+        {#- Update 70 §1.1: bei zwei Karten (zwei Spalten, je knapp 600 px) die Fotos in passender Größe anfordern -#}
+        {%- set kartenSizes = "(min-width: 1024px) 600px, (min-width: 768px) 46vw, 92vw" if units.length == 2 else "(min-width: 1024px) 380px, (min-width: 768px) 46vw, 92vw" %}
+        {% for o in units %}{{ angebot(o, sizes=kartenSizes, filter=true, eager=("hoch" if (loop.first and not projects.length) else false)) }}{% endfor %}
       </ul>
       <p id="no-results" class="fgs-note" hidden>Zu diesen Filtern passt gerade kein Angebot. Setzen Sie den Filter zurück oder <a href="/gesuch-anlegen/">legen Sie ein Gesuch an</a>.</p>
       {% else %}
@@ -198,6 +200,7 @@ pg:
     if (key) units.sort(function (a, b) { return (ohneFoto(a) - ohneFoto(b)) || (num(a.dataset[key[0]]) - num(b.dataset[key[0]])) * key[1]; });
     units.forEach(function (c) { grid.appendChild(c); });
     var shown = units.filter(function (c) { return !c.hidden; }).length;
+    grid.setAttribute('data-anzahl', shown);
     if (count) count.textContent = shown;
     if (none) none.hidden = shown > 0;
   }

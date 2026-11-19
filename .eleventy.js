@@ -125,6 +125,8 @@ module.exports = function(eleventyConfig) {
   // Seite: src ist das JPEG in 1600 px, srcset die WebP-Reihe; der Transform „propstack-picture“ ergänzt AVIF und WebP als
   // <source>. Fotos, die (noch) nicht aufbereitet sind, laufen weiter über das Netlify Image CDN bzw. als Original.
   const bilder = require("./scripts/propstack-bilder.js");
+  // Update 70 §1.4: Originalmaße eines aufbereiteten Fotos ({ w, h }) oder null; die Galerie zeigt ein Einzelfoto nie breiter.
+  eleventyConfig.addFilter("propstackMasse", (url) => { const e = bilder.eintrag(url); return e && e.w && e.h ? { w: e.w, h: e.h } : null; });
   eleventyConfig.addFilter("propstackFoto", (url, w = 1200) => { const e = bilder.eintrag(url); return e ? bilder.jpegUrl(e) : imageCdn(url) ? cdnFoto(url, w) : url; });
   // Update 23 B6: Vorschaubild fürs Teilen als JPG 1200 × 630 (mittig zugeschnitten) über dasselbe CDN; absolute Adresse, weil
   // WhatsApp und LinkedIn sie von außen abrufen. Außerhalb von Netlify bleibt die Originaladresse.

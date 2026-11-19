@@ -68,18 +68,24 @@
     Kacheln feste Maße (Raster mit fester Höhe ab 1024 px, 3 : 2 darunter), laden mit der Seite (ohne loading="lazy") und stehen auch
     auf dem Handy: eine Reihe mit vier Kacheln unter dem großen Bild. §3.1: Zähler „1 / 16“ auf dem großen Bild (unten rechts);
     die Zeile unter der Galerie behält nur die Pfeile. -#}
-{%- set mosaik = pics.length >= 5 %}
-<div class="fgs-gallery{% if mosaik %} fgs-gallery--mosaik{% endif %}" data-gallery tabindex="0" role="region" aria-roledescription="Bildergalerie" aria-label="Bilder von {{ name }}">
+{#- Update 70 §1.4 (19.11.2026): Galerie nach Fotozahl. Ein Foto steht in Originalbreite (aus dem Bild-Cache, nie hochskaliert)
+    mittig und höchstens so hoch wie bisher; 2 bis 4 Fotos: großes Bild plus 1 bis 3 Kacheln ohne leere Felder; ab 5 wie Update 64. -#}
+{%- set mosaik = pics.length >= 2 %}
+{%- set kacheln = (pics.length if pics.length < 5 else 5) - 1 %}
+{%- set einzelMasse = (pics[0] | propstackMasse) if pics.length == 1 else null %}
+{#- Bildgröße der Kacheln je Raster: [erste Kachel, übrige]; ab 1024 px rechts neben dem großen Bild, darunter eine Reihe -#}
+{%- set kachelSizes = [["(min-width: 1024px) 50vw, 100vw", ""], ["(min-width: 1024px) 50vw, 50vw", "(min-width: 1024px) 50vw, 50vw"], ["(min-width: 1024px) 50vw, 33vw", "(min-width: 1024px) 25vw, 33vw"], ["25vw", "25vw"]] %}
+<div class="fgs-gallery{% if mosaik %} fgs-gallery--mosaik fgs-gallery--k{{ kacheln }}{% else %} fgs-gallery--einzeln{% endif %}"{% if einzelMasse %} style="--fgs-bild-w: {{ einzelMasse.w }}px; --fgs-bild-ar: {{ (einzelMasse.w / einzelMasse.h) | round(4) }};"{% endif %} data-gallery tabindex="0" role="region" aria-roledescription="Bildergalerie" aria-label="Bilder von {{ name }}">
   <div class="fgs-media fgs-gallery-stage">
-    {% for image in pics %}{% set _plan = plaene and (image in plaene) %}<img src="{{ image | propstackFoto(1600) }}"{% set _set = image | propstackSrcset %}{% if _set %} srcset="{{ _set }}" sizes="{{ '(min-width: 1024px) 50vw, 100vw' if mosaik else '100vw' }}"{% endif %} data-original="{{ image }}"{% if _plan %} data-grundriss{% endif %} alt="{{ name }}, {% if _plan %}Grundriss, {% endif %}Bild {{ loop.index }} von {{ pics.length }}" width="1600" height="1000" decoding="async"{% if loop.first %} class="is-active{% if cover and cover.url == image and (cover.fokus or cover.zoom) %} fgs-gallery-cover" style="{% if cover.fokus %}--fgs-pos: {{ cover.fokus }};{% endif %}{% if cover.zoom %} --fgs-zoom: {{ cover.zoom }};{% endif %}{% endif %}" fetchpriority="high"{% else %} loading="lazy"{% endif %}>{% endfor %}
+    {% for image in pics %}{% set _plan = plaene and (image in plaene) %}<img src="{{ image | propstackFoto(1600) }}"{% set _set = image | propstackSrcset %}{% if _set %} srcset="{{ _set }}" sizes="{{ '(min-width: 1024px) 50vw, 100vw' if mosaik else (('min(100vw, ' + einzelMasse.w + 'px)') if einzelMasse else '100vw') }}"{% endif %} data-original="{{ image }}"{% if _plan %} data-grundriss{% endif %} alt="{{ name }}, {% if _plan %}Grundriss, {% endif %}Bild {{ loop.index }} von {{ pics.length }}" width="1600" height="1000" decoding="async"{% if loop.first %} class="is-active{% if cover and cover.url == image and (cover.fokus or cover.zoom) %} fgs-gallery-cover" style="{% if cover.fokus %}--fgs-pos: {{ cover.fokus }};{% endif %}{% if cover.zoom %} --fgs-zoom: {{ cover.zoom }};{% endif %}{% endif %}" fetchpriority="high"{% else %} loading="lazy"{% endif %}>{% endfor %}
     {%- if plaene and plaene.length %}<span class="fgs-gallery-tag" data-gallery-tag{% if not (pics[0] in plaene) %} hidden{% endif %}>Grundriss</span>{% endif %}
     {%- if pics.length > 1 %}<button type="button" class="fgs-gallery-all" data-gallery-open>Alle Bilder ansehen ({{ pics.length }})</button>{% endif %}
     {%- if pics.length > 1 %}<p class="fgs-gallery-zahl" aria-live="polite"><span data-gallery-current>1</span> / {{ pics.length }}</p>{% endif %}
   </div>
   {%- if mosaik %}
   <div class="fgs-gallery-mosaik">
-    {%- for k in [1, 2, 3, 4] %}{% set _set = pics[k] | propstackSrcset %}
-    <button type="button" class="fgs-gallery-klein" data-gallery-thumb="{{ k }}" aria-label="Bild {{ k + 1 }} von {{ pics.length }} groß ansehen"><img src="{{ pics[k] | propstackFoto(800) }}"{% if _set %} srcset="{{ _set }}" sizes="25vw"{% endif %} alt="" width="800" height="500" decoding="async" fetchpriority="low"></button>
+    {%- for k in range(1, kacheln + 1) %}{% set _set = pics[k] | propstackSrcset %}
+    <button type="button" class="fgs-gallery-klein" data-gallery-thumb="{{ k }}" aria-label="Bild {{ k + 1 }} von {{ pics.length }} groß ansehen"><img src="{{ pics[k] | propstackFoto(800) }}"{% if _set %} srcset="{{ _set }}" sizes="{{ kachelSizes[kacheln - 1][0 if k == 1 else 1] }}"{% endif %} alt="" width="800" height="500" decoding="async" fetchpriority="low"></button>
     {%- endfor %}
   </div>
   {%- endif %}
