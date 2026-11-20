@@ -1,6 +1,6 @@
 {
-  "_hinweis": "Update 68 §4 (18.11.2026): Grundlagen des Finanzierungsrechners auf den Objektseiten. Grunderwerbsteuer je Land, jeweils gegen die amtliche Quelle geprüft. Die Vorgaben (Eigenkapital, Sollzins, Tilgung, Anteil Notar und Grundbuch) kommen von Timon Fischer; solange sie null sind, erscheint der Rechner nur auf der Testumgebung (Schalter FG_FREIGABE_FINANZRECHNER) mit dem roten Hinweis „Platzhalter, Zahlen von Timon fehlen“. Keinen Sollzins erfinden.",
-  "stand": "2026-11-18",
+  "_hinweis": "Update 68 §4 (18.11.2026), Update 71 §1.1 (21.11.2026): Grundlagen des Finanzierungsrechners auf den Objektseiten. Grunderwerbsteuer je Land, jeweils gegen die amtliche Quelle geprüft. Die Vorgaben kommen von Timon Fischer: Eigenkapital als Prozent vom Kaufpreis (das Feld zeigt den Eurobetrag, der sich daraus ergibt), Sollzins, Tilgung, Anteil Notar und Grundbuch. Solange eine Vorgabe null ist, erscheint der Rechner nur auf der Testumgebung (Schalter FG_FREIGABE_FINANZRECHNER) mit rotem Hinweis, der die fehlenden Werte nennt. Keinen Sollzins erfinden.",
+  "stand": "2026-11-21",
   "grunderwerbsteuer": {
     "berlin": {
       "land": "Berlin",
@@ -28,10 +28,15 @@
     }
   },
   "vorgaben": {
-    "eigenkapital_euro": null,
+    "eigenkapital_prozent_vom_kaufpreis": null,
     "sollzins_prozent": null,
     "tilgung_prozent": null,
-    "notar_grundbuch_prozent": null,
-    "quelle": "Timon Fischer (ausstehend, Frage von Peer)"
+    "notar_grundbuch_prozent": 2.0,
+    "quellen": {
+      "notar_grundbuch_prozent": "Timon, Telefonat 20.11.2026",
+      "eigenkapital_prozent_vom_kaufpreis": "Timon Fischer (ausstehend, Frage von Peer)",
+      "sollzins_prozent": "Timon Fischer (ausstehend, Frage von Peer)",
+      "tilgung_prozent": "Timon Fischer (ausstehend, Frage von Peer)"
+    }
   }
 }

@@ -60,7 +60,12 @@ eleventyComputed:
 {%- set kontakt = kontakte[kontaktKey] %}
 {%- set kontaktTel = kontakt.phone or nav.phone %}
 {%- set rf = finanzierung.vorgaben %}
-{%- set rechnerVoll = (rf.eigenkapital_euro !== null) and (rf.sollzins_prozent !== null) and (rf.tilgung_prozent !== null) and (rf.notar_grundbuch_prozent !== null) %}
+{%- set rfFehlt = [] %}
+{%- if rf.eigenkapital_prozent_vom_kaufpreis === null %}{% set _ = rfFehlt.push("Eigenkapital in Prozent vom Kaufpreis") %}{% endif %}
+{%- if rf.sollzins_prozent === null %}{% set _ = rfFehlt.push("Sollzins") %}{% endif %}
+{%- if rf.tilgung_prozent === null %}{% set _ = rfFehlt.push("Tilgung") %}{% endif %}
+{%- if rf.notar_grundbuch_prozent === null %}{% set _ = rfFehlt.push("Notar und Grundbuch") %}{% endif %}
+{%- set rechnerVoll = rfFehlt.length == 0 %}
 {%- set grest = finanzierung.grunderwerbsteuer[property.bundesland] if property.bundesland else null %}
 {%- set zeigeRechner = property.marketing_type == "Kauf" and property.purchase_price_raw and grest and (rechnerVoll or freigaben.finanzrechner) %}
 {%- set energieLabels = [] %}{% for e in (property.energie or []) %}{% set _ = energieLabels.push(e.label) %}{% endfor %}
@@ -92,15 +97,15 @@ eleventyComputed:
     {#- Update 68 §4: Finanzierungsrechner, eigenes JavaScript ohne Drittanbieter. Sätze aus _data/finanzierung.json (Grunderwerbsteuer
         je Land mit Quelle); Vorgaben von Timon. Fehlen sie, bleiben die Felder leer (kein erfundener Sollzins), Notar und Grundbuch
         zählen nicht mit und der rote Hinweis steht da; dann baut nur die Testumgebung den Block (freigaben.finanzrechner). -#}
-    <section class="fgs-listing-block fgs-cols fgs-rechner" id="finanzierung" aria-labelledby="rechner-titel" data-finanzrechner data-objekt-id="{{ property.id }}" data-objekt="{{ property.title }}" data-grest="{{ grest.satz }}" data-provision="{{ property.provision_prozent or 0 }}"{% if rf.notar_grundbuch_prozent !== null %} data-notar="{{ rf.notar_grundbuch_prozent }}"{% endif %}>
+    <section class="fgs-listing-block fgs-cols fgs-rechner" id="finanzierung" aria-labelledby="rechner-titel" data-finanzrechner data-objekt-id="{{ property.id }}" data-objekt="{{ property.title }}" data-grest="{{ grest.satz }}" data-provision="{{ property.provision_prozent or 0 }}"{% if rf.eigenkapital_prozent_vom_kaufpreis !== null %} data-ek-prozent="{{ rf.eigenkapital_prozent_vom_kaufpreis }}"{% endif %}{% if rf.notar_grundbuch_prozent !== null %} data-notar="{{ rf.notar_grundbuch_prozent }}"{% endif %}>
       <div class="fgs-cols-head"><h2 id="rechner-titel">Finanzierung durchrechnen</h2></div>
       <div class="fgs-cols-body">
         {%- if not rechnerVoll %}
-        <p class="fgs-rechner-platzhalter" role="note">Platzhalter, Zahlen von Timon fehlen</p>
+        <p class="fgs-rechner-platzhalter" role="note">Platzhalter, von Timon fehlen noch: {{ rfFehlt | join(", ") }}</p>
         {%- endif %}
         <div class="fgd-form fgs-rechner-felder">
           <label>Kaufpreis<span class="fgd-unit"><input data-r="kaufpreis" inputmode="decimal" autocomplete="off" value="{{ property.purchase_price_raw | deZahl }}"><b>€</b></span></label>
-          <label>Eigenkapital<span class="fgd-unit"><input data-r="eigenkapital" inputmode="decimal" autocomplete="off" value="{{ (rf.eigenkapital_euro | deZahl) if rf.eigenkapital_euro !== null }}"><b>€</b></span></label>
+          <label>Eigenkapital<span class="fgd-unit"><input data-r="eigenkapital" inputmode="decimal" autocomplete="off" value="{{ ((property.purchase_price_raw * rf.eigenkapital_prozent_vom_kaufpreis / 100) | round | deZahl) if rf.eigenkapital_prozent_vom_kaufpreis !== null }}"><b>€</b></span></label>
           <label>Sollzins p.&nbsp;a.<span class="fgd-unit"><input data-r="sollzins" inputmode="decimal" autocomplete="off" value="{{ (rf.sollzins_prozent | deZahl(2)) if rf.sollzins_prozent !== null }}"><b>%</b></span></label>
           <label>Anfängliche Tilgung<span class="fgd-unit"><input data-r="tilgung" inputmode="decimal" autocomplete="off" value="{{ (rf.tilgung_prozent | deZahl(2)) if rf.tilgung_prozent !== null }}"><b>%</b></span></label>
         </div>
@@ -265,6 +270,9 @@ eleventyComputed:
   var eur = function (n) { return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(n); };
   var grest = Number(root.dataset.grest) || 0, prov = Number(root.dataset.provision) || 0;
   var notar = root.dataset.notar !== undefined ? Number(root.dataset.notar) : null;
+  /* Update 71 §1.1: Eigenkapital ist eine Vorgabe in Prozent vom Kaufpreis; das Feld zeigt den Eurobetrag. Ändert man den Kaufpreis,
+     zieht der Betrag mit, bis man selbst ein Eigenkapital eintippt. */
+  var ekProzent = root.dataset.ekProzent !== undefined ? Number(root.dataset.ekProzent) : null, ekEigen = false;
   var werte = {};
   function rechnen() {
     var kp = zahl(feld('kaufpreis')), ek = zahl(feld('eigenkapital')) || 0, zins = zahl(feld('sollzins')), tilg = zahl(feld('tilgung'));
@@ -281,7 +289,12 @@ eleventyComputed:
     else aus('rate').textContent = '–';
   }
   var gemeldet = false;
-  root.addEventListener('input', function () {
+  root.addEventListener('input', function (ev) {
+    if (ev.target === feld('eigenkapital')) ekEigen = true;
+    else if (ev.target === feld('kaufpreis') && ekProzent !== null && !ekEigen) {
+      var kpNeu = zahl(feld('kaufpreis'));
+      feld('eigenkapital').value = kpNeu === null ? '' : new Intl.NumberFormat('de-DE', { maximumFractionDigits: 0 }).format(Math.round(kpNeu * ekProzent / 100));
+    }
     rechnen();
     if (gemeldet) return;
     gemeldet = true;

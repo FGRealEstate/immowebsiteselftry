@@ -70,6 +70,10 @@
     die Zeile unter der Galerie behält nur die Pfeile. -#}
 {#- Update 70 §1.4 (19.11.2026): Galerie nach Fotozahl. Ein Foto steht in Originalbreite (aus dem Bild-Cache, nie hochskaliert)
     mittig und höchstens so hoch wie bisher; 2 bis 4 Fotos: großes Bild plus 1 bis 3 Kacheln ohne leere Felder; ab 5 wie Update 64. -#}
+{#- Update 71 §4 (21.11.2026): Die Kacheln stehen im ersten Bildschirm. Sie laden ohne loading="lazy" und jetzt auch ohne
+    fetchpriority="low", das sie hinter alle anderen Anfragen stellte (graue Kacheln). Die Datei wählt der Browser über sizes nach
+    der Kachelbreite (kachelSizes); das JPEG in src ist nur der Rückfall für Browser ohne srcset. Die versteckten großen Kopien in
+    der Bühne (Bild 2 bis n) bleiben lazy: Sie stehen nicht im ersten Bildschirm und laden erst beim Wechsel. -#}
 {%- set mosaik = pics.length >= 2 %}
 {%- set kacheln = (pics.length if pics.length < 5 else 5) - 1 %}
 {%- set einzelMasse = (pics[0] | propstackMasse) if pics.length == 1 else null %}
@@ -85,7 +89,7 @@
   {%- if mosaik %}
   <div class="fgs-gallery-mosaik">
     {%- for k in range(1, kacheln + 1) %}{% set _set = pics[k] | propstackSrcset %}
-    <button type="button" class="fgs-gallery-klein" data-gallery-thumb="{{ k }}" aria-label="Bild {{ k + 1 }} von {{ pics.length }} groß ansehen"><img src="{{ pics[k] | propstackFoto(800) }}"{% if _set %} srcset="{{ _set }}" sizes="{{ kachelSizes[kacheln - 1][0 if k == 1 else 1] }}"{% endif %} alt="" width="800" height="500" decoding="async" fetchpriority="low"></button>
+    <button type="button" class="fgs-gallery-klein" data-gallery-thumb="{{ k }}" aria-label="Bild {{ k + 1 }} von {{ pics.length }} groß ansehen"><img src="{{ pics[k] | propstackFoto(800) }}"{% if _set %} srcset="{{ _set }}" sizes="{{ kachelSizes[kacheln - 1][0 if k == 1 else 1] }}"{% endif %} alt="" width="800" height="500" decoding="async"></button>
     {%- endfor %}
   </div>
   {%- endif %}

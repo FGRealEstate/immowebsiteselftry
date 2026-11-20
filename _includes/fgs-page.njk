@@ -168,8 +168,9 @@ customSchema: true
       "areaServed": [
         {% for a in p.areaServed %}{ "@type": "{{ a.type }}", "name": {{ a.name | json | safe }}{% if a.url %}, "url": "https://fg-realestate.de{{ a.url }}"{% endif %} }{% if not loop.last %},{% endif %}
         {% endfor %}
-      ]{% if p.linkedin %},
-      "sameAs": [{{ p.linkedin | json | safe }}]{% endif %}
+      ]{% if p.sameAs or p.linkedin %},
+      {#- Update 71 §3.3: Liste aus pg.person.sameAs, sonst nur LinkedIn wie bisher -#}
+      "sameAs": {{ (p.sameAs or [p.linkedin]) | dump | safe }}{% endif %}
     },
     {% endif %}{% if pg.schema.org %}{
       "@type": ["Organization", "RealEstateAgent"],

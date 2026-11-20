@@ -384,13 +384,17 @@ function getInvestmentStrategy(unit, marketingType, coldRentRaw) {
         return { key: "kapitalanlage", label: "Kapitalanlage", isInvestment: true };
     }
 
+    // Update 71 §1.3: Propstack liefert Titel und Beschreibungen als {label, value}. Ohne textValue() wurde daraus
+    // „[object Object]“, kein Signal griff und alles fiel auf Eigennutz (so stand Dresden-Reick, vermietet, als Eigennutz da).
     const text = normalizeText([
         unit.title, unit.name, unit.description, unit.description_long, unit.description_note,
         customField(unit, "website_titel"), customField(unit, "headline")
-    ].filter(Boolean).join(" "));
+    ].map(textValue).filter(Boolean).join(" "));
     const explicitInvestment = firstBoolean(unit, ["custom_fields.kapitalanlage", "custom_fields.investment", "custom_fields.anlageobjekt"]);
+    // „Vermietet“ ist in Propstack ein Ja/Nein-Feld ({label, value}); nur ein echtes Ja zählt als Kapitalanlage.
+    const vermietet = (isPlainObject(unit.rented) ? unit.rented.value : unit.rented) === true;
     const owner = ownerSignals.some((signal) => text.includes(signal));
-    const investment = explicitInvestment || investmentSignals.some((signal) => text.includes(signal)) || Boolean(coldRentRaw);
+    const investment = explicitInvestment || vermietet || investmentSignals.some((signal) => text.includes(signal)) || Boolean(coldRentRaw);
 
     if (owner && !investment) return { key: "eigennutz", label: "Eigennutz", isInvestment: false };
     if (investment) return { key: "kapitalanlage", label: "Kapitalanlage", isInvestment: true };
@@ -1935,3 +1939,5 @@ module.exports = async function () {
     console.log(`GEDAECHTNIS: ${daten.gedaechtnis.eintraege.length} Adressen gemerkt, ${daten.gedaechtnis.abgaenge.length} weitergeleitet`);
     return daten;
 };
+// Für Tests (Update 71 §1.3)
+module.exports.getInvestmentStrategy = getInvestmentStrategy;
