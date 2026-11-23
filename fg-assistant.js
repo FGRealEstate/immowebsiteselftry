@@ -41,7 +41,7 @@
   };
 
   const PAGE_ACTIONS = {
-    kaufen: { label: 'Kaufgesuch anlegen', href: '/kaufen#suchprofil', icon: 'fa-key' },
+    kaufen: { label: 'Suchprofil anlegen', href: '/kaufen#suchprofil', icon: 'fa-key' },
     mieten: { label: 'Mietgesuch anlegen', href: '/mieten#mietgesuch', icon: 'fa-door-open' },
     verkaufen: { label: 'Bewertung anfragen', href: '/immobilienbewertung/', icon: 'fa-house-circle-check' },
     vermieten: { label: 'Vermietung anfragen', href: '/vermieten#anfrage', icon: 'fa-building' },
@@ -365,13 +365,13 @@
     {
       id:'mietgesuch',cat:'miete',q:'Wie kann ich ein Mietgesuch bei F&G anlegen?',
       keys:['mietgesuch','wohnung mieten suche','mietwohnung suchen','mietprofil'],
-      answer:`Auf unserer eigenen Mietstrecke erfassen Sie Suchgebiet, Objektart, monatlichen Mietrahmen, Größe und Ausstattungswünsche. Das Profil wird getrennt von Kaufgesuchen geführt, damit Sie keine unpassenden Kaufangebote erhalten.`,
+      answer:`Auf unserer eigenen Mietstrecke erfassen Sie Suchgebiet, Objektart, monatlichen Mietrahmen, Größe und Ausstattungswünsche. Das Profil wird getrennt von Suchprofilen für den Kauf geführt, damit Sie keine unpassenden Kaufangebote erhalten.`,
       actions:['mieten']
     },
     {
-      id:'kaufgesuch',cat:'kaufen',q:'Wie kann ich ein Kaufgesuch anlegen?',
-      keys:['kaufgesuch','suchprofil kauf','wohnung kaufen suche','immobilie suchen lassen'],
-      answer:`Über die Kaufstrecke können Sie Suchgebiet, Objektart, Budget und weitere Kriterien hinterlegen. Das Kaufgesuch wird separat von Mietgesuchen geführt. Wenn Sie zusätzlich Objektprüfung, Verhandlung und Finanzierung wünschen, kann die Ankaufsberatung ergänzt werden.`,
+      id:'kaufgesuch',cat:'kaufen',q:'Wie kann ich ein Suchprofil anlegen?',
+      keys:['kaufgesuch','suchprofil','suchprofil kauf','wohnung kaufen suche','immobilie suchen lassen'],
+      answer:`Über die Kaufstrecke können Sie Suchgebiet, Objektart, Budget und weitere Kriterien hinterlegen. Das Suchprofil wird separat von Mietgesuchen geführt. Wenn Sie zusätzlich Objektprüfung, Verhandlung und Finanzierung wünschen, kann die Ankaufsberatung ergänzt werden.`,
       actions:['kaufen','ankauf']
     },
     {
@@ -653,7 +653,7 @@
     ['Hamburg','hamburg'],['München','münchen'],['München','munchen'],['Köln','köln'],['Köln','koln'],['Frankfurt am Main','frankfurt am main'],['Frankfurt am Main','frankfurt'],['Düsseldorf','düsseldorf'],['Düsseldorf','dusseldorf'],['Stuttgart','stuttgart'],['Hannover','hannover'],['Bremen','bremen'],['Dortmund','dortmund'],['Essen','essen'],['Nürnberg','nürnberg'],['Nürnberg','nurnberg'],['Augsburg','augsburg'],['Freiburg','freiburg'],['Kiel','kiel'],['Rostock','rostock'],['Magdeburg','magdeburg'],['Erfurt','erfurt'],['Jena','jena'],['Chemnitz','chemnitz'],['Halle','halle'],['Mainz','mainz'],['Wiesbaden','wiesbaden'],['Mannheim','mannheim'],['Karlsruhe','karlsruhe'],['Bonn','bonn'],['Münster','münster'],['Münster','munster']
   ];
   const RELATED_BY_CAT = {
-    kaufen:['Wie läuft ein Immobilienkauf typischerweise ab?','Welche Unterlagen sollte ich vor dem Kauf prüfen?','Wie kann ich ein Kaufgesuch anlegen?'],
+    kaufen:['Wie läuft ein Immobilienkauf typischerweise ab?','Welche Unterlagen sollte ich vor dem Kauf prüfen?','Wie kann ich ein Suchprofil anlegen?'],
     verkaufen:['Wie wird ein realistischer Verkaufspreis ermittelt?','Welche Unterlagen brauche ich als Verkäufer?','Wie läuft ein professioneller Immobilienverkauf ab?','Wie wird ein Makler vergütet?'],
     finanzierung:['Wie viel Eigenkapital sollte ich einbringen?','Welche Unterlagen braucht die Bank?','Wie berechnet sich die Monatsrate?'],
     investment:['Wie prüfe ich eine Kapitalanlage sinnvoll?','Was ist die Bruttomietrendite?','Was bedeutet Cashflow bei einer Kapitalanlage?'],
@@ -838,7 +838,7 @@
   function buyFlowStart(raw=''){
     const location=extractLocation(raw), type=propertyTypeFrom(raw);
     dialogState={flow:'buy',stage:'purpose',data:{location:location||'',propertyType:type||''}};
-    flowMessage('Kaufvorhaben','<p>Ich ordne kurz ein, ob eher Kaufgesuch, Ankaufsberatung oder Finanzierung der richtige nächste Schritt ist.</p><p>Geht es um <strong>Eigennutzung</strong> oder eine <strong>Kapitalanlage</strong>?</p>',['Eigennutzung','Kapitalanlage']);
+    flowMessage('Kaufvorhaben','<p>Ich ordne kurz ein, ob eher Suchprofil, Ankaufsberatung oder Finanzierung der richtige nächste Schritt ist.</p><p>Geht es um <strong>Eigennutzung</strong> oder eine <strong>Kapitalanlage</strong>?</p>',['Eigennutzung','Kapitalanlage']);
   }
   function advanceBuy(){
     const d=dialogState.data;
@@ -1144,7 +1144,7 @@
     if(p.includes('ankaufsberatung')||p.includes('kaufen')) return ['Welche Unterlagen sollte ich vor dem Kauf prüfen?','Wie prüfe ich eine Kapitalanlage sinnvoll?','Wie läuft ein Immobilienkauf typischerweise ab?'];
     if(p.includes('mieten')||p.includes('vermieten')) return ['Wie kann ich ein Mietgesuch bei F&G anlegen?','Wie hoch darf eine Mietkaution bei Wohnraum sein?','Wie läuft eine Vermietung über F&G ab?'];
     if(p.includes('investment-lab')) return ['Was ist die Bruttomietrendite?','Was bedeutet Cashflow bei einer Kapitalanlage?','Was ist die Eigenkapitalrendite?'];
-    if(p.includes('angebote')) return ['Welche Unterlagen sollte ich vor dem Kauf prüfen?','Eigennutzung oder Kapitalanlage – was ist bei der Prüfung anders?','Wie kann ich ein Kaufgesuch anlegen?'];
+    if(p.includes('angebote')) return ['Welche Unterlagen sollte ich vor dem Kauf prüfen?','Eigennutzung oder Kapitalanlage – was ist bei der Prüfung anders?','Wie kann ich ein Suchprofil anlegen?'];
     return null;
   }
 
