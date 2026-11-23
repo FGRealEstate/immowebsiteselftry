@@ -147,6 +147,30 @@ module.exports = function(eleventyConfig) {
       return `<picture class="fgs-ps" style="display:contents"><source type="image/avif" srcset="${avif}" sizes="${sizes}"><source type="image/webp" srcset="${set}" sizes="${sizes}">${ohne}</picture>`;
     });
   });
+  // Peers Review T6/T16 (24.11.2026): Blogfotos (lead.jpg, bild1.jpg …) als WebP in drei Breiten statt JPEG bis 1,1 MB, überall
+  // wo sie stehen: Artikel (relativ „bild1.jpg“), Blogübersicht, Karten der Startseite und die Menükarte „Wissen“ (data-src, lädt
+  // erst beim Öffnen). Nur wenn scripts/blog-bilder.js die WebP-Dateien angelegt hat; sonst bleibt das JPEG.
+  const BLOG_IMG = /<img\b[^>]*\s(?:data-)?src="(?:\/blog\/([a-z0-9-]+)\/)?(lead|bild\d+)\.jpg"[^>]*>/g;
+  eleventyConfig.addTransform("blog-bilder", function (content) {
+    const url = String(this.page && this.page.url || "");
+    if (!String(this.page && this.page.outputPath || "").endsWith(".html") || !/(lead|bild\d+)\.jpg"/.test(content)) return content;
+    const seiteSlug = (url.match(/^\/blog\/([a-z0-9-]+)\/$/) || [])[1];
+    // Vorladen des Titelbilds im Kopf: dieselbe WebP-Auswahl wie das Bild, sonst lädt der Browser das JPEG zusätzlich
+    content = content.replace(/<link rel="preload" as="image" href="\/blog\/([a-z0-9-]+)\/(lead|bild\d+)\.jpg"([^>]*)>/g, (tag, s, name, rest) => {
+      if (!fs.existsSync(`blog/${s}/${name}-960.webp`) || /imagesrcset=/.test(rest)) return tag;
+      const pre = `/blog/${s}/${name}`;
+      return `<link rel="preload" as="image" href="${pre}-960.webp" imagesrcset="${pre}-480.webp 480w, ${pre}-960.webp 960w, ${pre}-1536.webp 1536w" imagesizes="(min-width: 1240px) 1100px, 100vw"${rest}>`;
+    });
+    return content.replace(BLOG_IMG, (img, slug, name) => {
+      const s = slug || seiteSlug;
+      if (!s || !fs.existsSync(`blog/${s}/${name}-960.webp`) || /\ssrcset=/.test(img)) return img;
+      const pre = slug ? `/blog/${s}/` : "";
+      if (/\sdata-src="/.test(img)) return img.replace(/\sdata-src="[^"]*"/, ` data-src="${pre}${name}-960.webp"`);
+      const set = `${pre}${name}-480.webp 480w, ${pre}${name}-960.webp 960w, ${pre}${name}-1536.webp 1536w`;
+      const mitSizes = /\ssizes="/.test(img) ? "" : ' sizes="(min-width: 1240px) 1100px, 100vw"';
+      return img.replace(/\ssrc="[^"]*"/, ` src="${pre}${name}-960.webp" srcset="${set}"${mitSizes}`);
+    });
+  });
   // Update 64 A2: „Fischer & Geserich“ und „F&G Real Estate“ brechen nie um (/kontakt: „Kontakt zu Fischer & / Geserich …“).
   // Nur sichtbarer Text: Tags samt Attributen, <script>, <style>, <textarea>, <title> und Kommentare bleiben, wie sie sind.
   const NAME_STUECKE = /(<script\b[\s\S]*?<\/script>|<style\b[\s\S]*?<\/style>|<textarea\b[\s\S]*?<\/textarea>|<title\b[\s\S]*?<\/title>|<!--[\s\S]*?-->|<[^>]+>)/i;
@@ -620,6 +644,8 @@ module.exports = function(eleventyConfig) {
   // Update 42 §2: nur die Bilder der Artikel, die an diesem Tag erscheinen, dazu og.jpg der Übersicht.
   eleventyConfig.addPassthroughCopy("blog/*.jpg");
   blog.forEach((post) => eleventyConfig.addPassthroughCopy(`blog/${post.slug}/*.jpg`));
+  // Peers Review T6/T16 (24.11.2026): dazu die WebP-Größen aus scripts/blog-bilder.js
+  blog.forEach((post) => eleventyConfig.addPassthroughCopy(`blog/${post.slug}/*.webp`));
 
   // Update 42 §2.3: _redirects geht nicht mehr unverändert in den Build. Die Zeilen „/wissen/… /blog/<artikel>/ 301“
   // gelten, sobald der Artikel erscheint; vorher stehen sie mit Raute da und die Adresse geht über „/wissen/* /blog/ 302“.
