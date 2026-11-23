@@ -14,6 +14,8 @@
     <button type="button" class="fgd-btn fgd-btn-navy" data-fgd-widget-load>Rechner laden (externer Inhalt)</button>
   </div>
   <div class="fgd-widget-status" data-fgd-widget-status role="status" hidden>
+    {#- Peers Review T14 (24.11.2026): Laden beginnt sofort mit dem F&G-Zeichen auf Navy (fg-system.css), nicht mit der hellen Zeile -#}
+    <img class="fgd-widget-logo" src="/images/logo/fg-zeichen-gold.svg" alt="" width="44" height="52">
     <p data-fgd-widget-wait><span class="fgd-widget-spin" aria-hidden="true"></span>Rechner wird geladen …</p>
     <p data-fgd-widget-slow hidden><span data-fgd-widget-slow-text data-text-error="Der Rechner konnte gerade nicht geladen werden.">Der Rechner braucht gerade länger als üblich.</span>{% if direkt %} <a href="{{ direkt }}" target="_blank" rel="noopener" data-fgd-widget-direct>Rechner direkt öffnen</a> <span class="fgd-widget-note">(neuer Tab, {{ finanzWidgets.anbieter }})</span>{% endif %}</p>
   </div>

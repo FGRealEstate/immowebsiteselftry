@@ -3202,26 +3202,7 @@ html:not(.fgs-js) .fgs-feat-nav { display: none; }
 .fgs-hero-trust { margin: 20px 0 0; font: 400 14px/1.45 var(--fgs-sans); letter-spacing: 0; color: rgba(255, 255, 255, .85); }
 .fgs-hero-trust a { color: inherit !important; text-decoration: none; }
 .fgs-hero-trust a:hover, .fgs-hero-trust a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
-/* A7: ab 1280 px Telefonsymbol und Nummer (Inter) links vom Knopf. Damit Logo, sechs Menüpunkte, Nummer und Knopf zwischen
-   1280 und 1439 px in eine Zeile passen, dort etwas weniger Luft: Rand 40 statt 64 px, Menüpunkte 6 statt 8 px Innenabstand,
-   Knopf 20 statt 34 px. Ab 1440 px wie bisher. Darunter bleibt die Nummer aus dem Kopf (Handy-Menü, Abschluss, Fuß). */
-@media (min-width: 1280px) {
-  .fgs-header .fgs-header-phone { display: inline-flex !important; align-items: center; gap: 6px; font: 500 14px/1 var(--fgs-sans); letter-spacing: .01em; }
-  .fgs-header .fgs-header-phone .fgs-btn-icon { width: 16px; height: 16px; }
-}
-@media (min-width: 1280px) and (max-width: 1439px) {
-  .fgs-header .fgs-header-bar { padding-inline: 40px; }
-}
-/* Nachgemessen 18.11. (kopf.py): mit Nummer war der Kopf ab 1440 px 97 px und bei 1280 px 43 px breiter als die 1200 px
-   Inhaltsbreite, der Knopf stand rechts über den Rand. Darum ab 1280 px durchgehend: Menüpunkte 13 px, 6 px Innenabstand,
-   Abstände 16 und 12 px, Knopf 18 px. Danach endet der Knopf genau am Inhaltsrand, 13 px Reserve bei 1280 px. */
-@media (min-width: 1280px) {
-  .fgs-header .fgs-header-bar { gap: 16px; }
-  .fgs-header .fgs-nav-trigger { font-size: 13px; letter-spacing: .01em; padding-inline: 6px; }
-  .fgs-header .fgs-nav-trigger::after { left: 6px; right: 6px; }
-  .fgs-header .fgs-btn { padding: 0 18px; }
-  .fgs-header .fgs-header-actions { gap: 12px; }
-}
+/* A7 (Telefonnummer im Kopf ab 1280 px) und die engeren Menüabstände dafür am 24.11. entfernt: Peers Review T1, nur der Bewertungsknopf im Kopf. */
 /* A8: Leiste unten am Handy. Navy, zwei Knöpfe („Anrufen“ als Rahmenknopf, „Kostenlose Bewertung“ in Gold), unten um den
    Sicherheitsabstand des iPhones erweitert. fg-design.js setzt html.fgs-sticky-an und --fgs-sticky-h; der Assistent-Knopf
    rückt dann darüber. */
@@ -3266,8 +3247,7 @@ html.fg-embedded-calculator .fgs-sticky { display: none !important; }
 .fgs .fgs-partner-role { font-size: 15px; line-height: 1.45; color: rgba(255, 255, 255, .9); }
 @media (min-width: 768px) {
   #team .fgs-partners-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); justify-content: normal; }
-  #team .fgs-partner-media { aspect-ratio: 1 / 1; }
-  #team .fgs-partner-media img { object-position: 50% 22%; }
+  /* Porträt-Format quadratisch (1 : 1) am 24.11. zurückgenommen: B3 verlangt nur Raster, Schriftgröße und Kontrast. */
 }
 /* B4: „F&G in Zahlen“ (Startseite): „Mio.“ und „+“ in Zahlengröße (vorher 44 %), die „4“ ohne die 108 % aus Update 25. Die Größe
    ist für alle vier gleich und so gewählt, dass „4 Mio.+“ in eine Spalte passt (fgs-fact-figure, unten gemessen). Die Spalte
@@ -3315,7 +3295,8 @@ html.fg-embedded-calculator .fgs-sticky { display: none !important; }
    Kante war sichtbar): Navy links, gleichmäßig abnehmend bis 0 bei 70 % der Breite. Die Zwischenstufen halten hinter der Textspalte
    genug Deckung für die Schrift. Gilt für den Abschluss jeder Seite (dasselbe Bauteil). Handy unverändert. */
 @media (min-width: 768px) {
-  .fgs-closing-media::after { background: linear-gradient(to right, rgba(8, 8, 47, .86) 0%, rgba(8, 8, 47, .8) 25%, rgba(8, 8, 47, .66) 42%, rgba(8, 8, 47, .42) 54%, rgba(8, 8, 47, .18) 63%, rgba(8, 8, 47, 0) 70%); }
+  /* 24.11.: nur Startseite, wie B9 verlangt (vorher jedes Abschlussband) */
+  .fgs-home .fgs-closing-media::after { background: linear-gradient(to right, rgba(8, 8, 47, .86) 0%, rgba(8, 8, 47, .8) 25%, rgba(8, 8, 47, .66) 42%, rgba(8, 8, 47, .42) 54%, rgba(8, 8, 47, .18) 63%, rgba(8, 8, 47, 0) 70%); }
 }
 /* B10: Fuß, Brandenburg: kleine Bezeichnungen „Landkreise“ und „Städte“ über den beiden Listen */
 .fgs .fgs-footer-gruppe { margin: 12px 0 6px; font: 500 12px/1.4 var(--fgs-sans); letter-spacing: .12em; text-transform: uppercase; color: rgba(255, 255, 255, .7); }
@@ -3431,7 +3412,8 @@ html.fg-embedded-calculator .fgs-sticky { display: none !important; }
 
 /* §1.1 Kompakter Kopf (pg.kompakt, /angebote): H1 kleiner, Knopf am Desktop rechts, wenig Abstand bis zu den Chips */
 .fgs-pagehead.fgs-pagehead--kompakt { padding-block: clamp(28px, 4vw, 56px) clamp(24px, 3vw, 40px); }
-.fgs-pagehead--kompakt h1 { margin-top: 10px; max-width: 26ch; font-size: clamp(30px, 3.3vw, 48px); line-height: 1.12; }
+/* 24.11.: H1 am Desktop in der normalen Größe, U68 §1.1 „just smaller on phones“ (unten, unter 640 px) */
+.fgs-pagehead--kompakt h1 { margin-top: 10px; }
 .fgs-pagehead--kompakt .fgs-lead { margin-top: 12px; }
 .fgs-pagehead--kompakt .fgs-btns { margin-top: 20px; }
 @media (min-width: 1024px) {
@@ -3595,3 +3577,77 @@ html:not(.fgs-js) :is(.fgs-obj-dots, .fgs-obj-pfeil) { display: none; }
 }
 @media (max-width: 389px) { .fgs-sticky .fgs-btn { padding: 0 8px; font-size: 13px; letter-spacing: .05em; } }
 @media (max-width: 359px) { .fgs-sticky .fgs-btn { white-space: normal; padding-top: 6px; padding-bottom: 6px; } }
+
+/* ===== Peers Review 23.11.2026, umgesetzt 24.11. (nur Testumgebung) ===== */
+/* T3: In den Zahlenreihen („F&G in Zahlen“, /verkaufen, Gebiete) stand die Ziffer in Inter (U64 A1), „Mio.“, „+“ und das Komma in
+   Marcellus. Die ganze Zahl steht jetzt in einer Schrift: Inter 400, Ziffern gleich breit. U64 A1 gilt weiter für Ziffern in
+   Überschriften und Preisen. */
+.fgs .fgs-fact-figure { font-family: var(--fgs-sans); font-weight: 400; letter-spacing: -.02em; font-variant-numeric: tabular-nums lining-nums; }
+.fgs .fgs-fact-figure .fgs-fact-unit { font-family: inherit; font-weight: inherit; }
+/* T18/T19 Über uns: Das Titelbild stand hell auf Creme, um die Spalte des Seitenindex eingerückt, die beiden Porträts als dunkle
+   Kästen daneben, links und in der Mitte viel leerer Raum. Jetzt ein Titelbild wie auf den anderen Seiten: Navy über die volle
+   Breite (der Grund der Studiofotos ist dasselbe Navy, die Kästen verschwinden), Kopf darüber durchsichtig, Text links, die Porträts
+   rechts größer und unten bündig. Nicht eingerückt; der Seitenindex beginnt erst beim ersten Abschnitt darunter. */
+.fgs-pagehead.fgs-gruender-hero { background: var(--fgs-navy); color: #fff; padding-block: calc(var(--fgs-header-h) + clamp(40px, 6vw, 88px)) clamp(40px, 5vw, 72px); overflow: hidden; }
+@media (min-width: 1024px) { .fgs-indexed main > .fgs-pagehead.fgs-gruender-hero .fgs-wrap { padding-left: var(--fgs-pad); } }
+/* T8 (24.11.): der Navy-Zahlenstreifen auf Seiten mit Index (/verkaufen) steht wie auf der Startseite mittig über die volle Breite;
+   der Index blendet sich darüber aus (fg-system.js, wie über Fotos). */
+@media (min-width: 1024px) { .fgs-indexed main > .fgs-facts-sec--navy .fgs-wrap { padding-left: var(--fgs-pad); } }
+.fgs-gruender-hero .fgs-gruender-raster { align-items: end; }
+@media (min-width: 900px) { .fgs-gruender-hero .fgs-gruender-raster { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: clamp(40px, 5vw, 80px); } }
+.fgs-gruender-hero .fgs-gruender-text { align-self: center; }
+.fgs-gruender-hero .fgs-gruender-text h1 { color: #fff; max-width: 16ch; }
+.fgs-gruender-hero .fgs-gruender-text .fgs-lead { color: rgba(255, 255, 255, .86); }
+.fgs-gruender-hero .fgs-label { color: var(--fgs-gold); }
+.fgs-gruender-hero .fgs-gruender-bilder { gap: clamp(12px, 2vw, 24px); }
+.fgs-gruender-hero .fgs-gruender-bild { border-radius: 0; background: var(--fgs-navy); }
+.fgs-gruender-hero .fgs-gruender-name { color: #fff; }
+.fgs-gruender-hero .fgs-gruender-rolle { color: rgba(255, 255, 255, .78); }
+/* T5 Gebiets- und Unterseiten: Zwischen dem Akkordeon „Alle Zahlen für … mit Quellen“ und dem Satz „Fischer & Geserich begleitet …“
+   lagen 224 px (zweimal Abschnittsabstand) mit einer Haarlinie in der Mitte, das sah aus wie ein leerer Kasten. Jetzt 48 + 48 px
+   ohne Linie, der Satz gehört sichtbar zu den Zahlen. */
+.fgs .fgs-place-facts:has(+ .fgs-place-opening) { padding-bottom: 48px; }
+.fgs main > .fgs-section.fgs-place-facts + .fgs-section.fgs-place-opening { padding-top: 48px; background-image: none; }
+/* T7 /verkaufen „Warum wir die Finanzierung der Käufer prüfen“: Überschrift und Text links, Bild 4 : 3 rechts, oben bündig */
+.fgs-cols--kaeufer > .fgs-cols-head > p { margin-top: 24px; max-width: 60ch; }
+.fgs-kaeufer-bild { margin: 0; }
+.fgs-kaeufer-bild .fgs-media { aspect-ratio: 4 / 3; }
+.fgs-kaeufer-bild img { width: 100%; height: 100%; object-fit: cover; }
+@media (min-width: 900px) {
+  .fgs-cols--kaeufer { align-items: center; }
+  .fgs-cols--kaeufer > .fgs-cols-head { grid-column: 1 / span 6; padding-right: 0; }
+  .fgs-cols--kaeufer > .fgs-cols-body { grid-column: 7 / span 6; margin-top: 0; }
+}
+@media (max-width: 899px) { .fgs-cols--kaeufer > .fgs-cols-head, .fgs-cols--kaeufer > .fgs-cols-body { grid-column: 1 / -1; } .fgs-cols--kaeufer > .fgs-cols-body { margin-top: 32px; } }
+/* T10–T12 Ablauf-Schritte (alle Seiten mit .fgs-steps--reihe): kein Aufklappen mehr. Ab 900 px drei Spalten, je Schritt Nummer,
+   Titel, erster Satz und der übrige Text sichtbar; Linie in Navy über jedem Schritt wie bei .fgs-steps--row. Darunter die Liste. */
+@media (min-width: 900px) {
+  .fgs-steps--reihe { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--fgs-gap); row-gap: 48px; border-top: 0; }
+  .fgs-steps--reihe > li { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto; align-content: start; padding: 24px 0 0; border-top: 1px solid var(--fgs-ink); border-bottom: 0; }
+  .fgs-steps--reihe > li > *, .fgs-steps--reihe > li > .fgs-step-num { grid-column: 1; grid-row: auto; }
+  .fgs-steps--reihe > li > .fgs-step-num { font-size: 22px; }
+  .fgs-steps--reihe > li > .fgs-step-num + h3 { margin-top: 12px; font-size: 22px; line-height: 1.3; -webkit-hyphens: none; hyphens: none; }
+  .fgs-steps--reihe > li > .fgs-step-lead { font-size: 16px; line-height: 1.6; }
+  .fgs-steps--reihe > li > .fgs-step-panel { font-size: 16px; line-height: 1.6; color: var(--fgs-ink-2); }
+  .fgs-head + .fgs-steps--reihe { margin-top: 40px; }
+}
+@media (min-width: 900px) and (max-width: 1099px) { .fgs-steps--reihe { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* T13 /finanzierungsberatung „Unterlagen für die Bank“: drei Gruppen nebeneinander ab 900 px */
+.fgs-unterlagen-raster { display: grid; gap: 40px var(--fgs-gap); margin-top: 40px; }
+@media (min-width: 900px) { .fgs-unterlagen-raster { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.fgs-unterlagen-gruppe { padding-top: 24px; border-top: 1px solid var(--fgs-ink); }
+.fgs-unterlagen-gruppe > h3 { font-size: 22px; line-height: 1.3; }
+.fgs-unterlagen-gruppe > .fgs-checklist { margin-top: 20px; grid-template-columns: minmax(0, 1fr); } /* eine Spalte je Gruppe, sonst 2 × 150 px */
+/* T14 Rechner der Finanzierungsplattform: Während er lädt, liegt über seinem Rahmen eine Navy-Fläche mit dem goldenen F&G-Zeichen
+   (leicht pulsierend) und „Rechner wird geladen …“ in Weiß; vorher stand oben eine helle Zeile mit Kreisel, darunter die eigene
+   Ladeanimation des Anbieters. Der Hinweis „braucht länger“ mit Direktlink steht auf derselben Fläche. */
+.fgd-widget-logo { display: none; }
+.fgs .fgd-widget { position: relative; }
+.fgs .fgd-widget[data-loaded]:not([data-widget-state="fertig"]) .fgd-widget-frame { min-height: 420px; }
+.fgs .fgd-widget-status:not([hidden]) { position: absolute; inset: 0; z-index: 3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; min-height: 420px; padding: 32px 24px; border: 0; background: var(--fgs-navy); text-align: center; }
+.fgs .fgd-widget-status p { justify-content: center; color: rgba(255, 255, 255, .86); }
+.fgs .fgd-widget-status a { color: #fff; }
+.fgs .fgd-widget-spin { display: none; }
+.fgs .fgd-widget-logo { display: block; width: 44px; height: auto; animation: fgs-zeichen-puls 1.4s ease-in-out infinite alternate; }
+@keyframes fgs-zeichen-puls { from { opacity: .45; transform: scale(.96); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .fgs .fgd-widget-logo { animation: none; } }

@@ -220,31 +220,41 @@ service:
   </div>
 </section>
 
-{# §4.6 Unterlagen als Aufklapper; Titel ist die bisherige H2. #unterlagen öffnet ihn. #}
-<section class="fgs-section fgs-refs">
+{# Peers Review T13 (24.11.2026): „Unterlagen für die Bank“ als normaler Abschnitt statt Aufklapper (Design-Pass 2 §4.6). H2 und
+   Einleitung oben, darunter die drei Gruppen ab 900 px nebeneinander. #unterlagen springt weiter hierher. #}
+<section class="fgs-section" id="unterlagen" aria-labelledby="unterlagen-titel">
   <div class="fgs-wrap">
-    {% call nachschlag({ id: "unterlagen", titel: "Unterlagen für die Bank" }) %}
-    <p>Welche Unterlagen eine Bank genau verlangt, ist von Institut zu Institut verschieden. Diese Liste zeigt, was fast immer gebraucht wird.</p>
-    <h3>Zu Ihrer Person</h3>
-    <ul class="fgs-checklist" role="list">
-      <li>Personalausweis oder Reisepass</li>
-      <li>Einkommensnachweise<span>bei Angestellten die letzten Gehaltsabrechnungen, bei Selbstständigen Steuerbescheide, Bilanzen oder Einnahmen-Überschuss-Rechnungen und eine aktuelle BWA</span></li>
-      <li>Nachweis des Eigenkapitals<span>zum Beispiel Kontoauszüge oder Depotauszüge</span></li>
-      <li>Übersicht über laufende Kredite und bestehende Immobilien</li>
-    </ul>
-    <h3>Zum Objekt</h3>
-    <ul class="fgs-checklist" role="list">
-      <li>Exposé mit Fotos, Kaufvertragsentwurf, sobald er vorliegt</li>
-      <li>Grundbuchauszug und Flurkarte</li>
-      <li>Wohnflächenberechnung, Grundrisse, Baubeschreibung und Energieausweis</li>
-      <li>Bei Eigentumswohnungen: Teilungserklärung, Protokolle der Eigentümerversammlungen, Wirtschaftsplan</li>
-      <li>Bei vermieteten Objekten: Mietverträge und Mieterliste</li>
-    </ul>
-    <h3>Bei einer Anschlussfinanzierung</h3>
-    <ul class="fgs-checklist fgs-checklist--one" role="list">
-      <li>Aktueller Darlehensvertrag und letzter Kontoauszug zum Darlehen mit der Restschuld</li>
-    </ul>
-    {% endcall %}
+    <div class="fgs-head">
+      <h2 id="unterlagen-titel">Unterlagen für die Bank</h2>
+      <p>Welche Unterlagen eine Bank genau verlangt, ist von Institut zu Institut verschieden. Diese Liste zeigt, was fast immer gebraucht wird.</p>
+    </div>
+    <div class="fgs-unterlagen-raster">
+      <div class="fgs-unterlagen-gruppe">
+        <h3>Zu Ihrer Person</h3>
+      <ul class="fgs-checklist" role="list">
+        <li>Personalausweis oder Reisepass</li>
+        <li>Einkommensnachweise<span>bei Angestellten die letzten Gehaltsabrechnungen, bei Selbstständigen Steuerbescheide, Bilanzen oder Einnahmen-Überschuss-Rechnungen und eine aktuelle BWA</span></li>
+        <li>Nachweis des Eigenkapitals<span>zum Beispiel Kontoauszüge oder Depotauszüge</span></li>
+        <li>Übersicht über laufende Kredite und bestehende Immobilien</li>
+      </ul>
+      </div>
+      <div class="fgs-unterlagen-gruppe">
+        <h3>Zum Objekt</h3>
+      <ul class="fgs-checklist" role="list">
+        <li>Exposé mit Fotos, Kaufvertragsentwurf, sobald er vorliegt</li>
+        <li>Grundbuchauszug und Flurkarte</li>
+        <li>Wohnflächenberechnung, Grundrisse, Baubeschreibung und Energieausweis</li>
+        <li>Bei Eigentumswohnungen: Teilungserklärung, Protokolle der Eigentümerversammlungen, Wirtschaftsplan</li>
+        <li>Bei vermieteten Objekten: Mietverträge und Mieterliste</li>
+      </ul>
+      </div>
+      <div class="fgs-unterlagen-gruppe">
+        <h3>Bei einer Anschlussfinanzierung</h3>
+      <ul class="fgs-checklist fgs-checklist--one" role="list">
+        <li>Aktueller Darlehensvertrag und letzter Kontoauszug zum Darlehen mit der Restschuld</li>
+      </ul>
+      </div>
+    </div>
   </div>
 </section>
 

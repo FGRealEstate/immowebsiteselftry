@@ -94,7 +94,7 @@ service:
     Unterlagen und Kosten als Aufklapper, Käuferprüfung, F&G in Zahlen, Personenblock (nächste Immobilie mit Timon).
     Texte unverändert; neu sind nur die Titel der beiden Aufklapper, wörtlich aus dem Brief §4.6. Das Inhaltsverzeichnis der
     alten Kapitelansicht entfällt, weil die Reihe der sechs Schritte die ganze Breite braucht. -#}
-{% from "fgs-macros.njk" import split, fotokapitel, nachschlag, wide, facts, textlink with context %}
+{% from "fgs-macros.njk" import split, fotokapitel, nachschlag, wide, facts, textlink, pic with context %}
 
 {# §4.4 Fotokapitel: H2 und die ersten zwei Sätze auf dem Foto, der Rest darunter #}
 {% call fotokapitel({ id: "preis", hoehe: 80, titel: "Wie wir den Angebotspreis finden", bild: "berlin-mitte-band" | bild, alt: "Blick vom Alexanderplatz über die Dächer von Berlin bei tief stehender Sonne",
@@ -221,23 +221,30 @@ service:
 </section>
 
 {# Käufer und Finanzierung prüfen: Überschrift links (5 Spalten), rechts das breite Bild und der Text #}
+{#- Peers Review T7 (24.11.): links stand nur die Überschrift über einer leeren Spalte. Jetzt Überschrift und Text links, das Bild
+    rechts daneben (ab 900 px), oben bündig; darunter Text, dann Bild. -#}
 <section class="fgs-section" id="kaeufer" aria-labelledby="kaeufer-titel">
-  <div class="fgs-wrap fgs-cols fgs-cols--57">
-    <div class="fgs-cols-head"><h2 id="kaeufer-titel">Warum wir die Finanzierung der Käufer prüfen</h2></div>
-    <div class="fgs-cols-body">
-      {{ wide("potsdam-band" | bild, "Alter Markt in Potsdam mit Nikolaikirche, Obelisk und Altem Rathaus") }}
+  <div class="fgs-wrap fgs-cols fgs-cols--kaeufer">
+    <div class="fgs-cols-head">
+      <h2 id="kaeufer-titel">Warum wir die Finanzierung der Käufer prüfen</h2>
       <p>Viele Käufer finanzieren ihren Kauf. Fehlen ihre Unterlagen oder geht ihre Rechnung nicht auf, scheitert ein Verkauf oft erst kurz vor dem Notartermin. Weil wir selbst Finanzierungen vermitteln, sehen wir solche Fälle früh.</p>
       <p>Bevor der Kaufvertrag beim Notar beauftragt wird, klären wir, ob die Finanzierung des Käufers realistisch ist. Ein Vertragsentwurf beim Notar kostet je nach Kaufpreis und Notar etwa 600 bis 5.000 Euro. Platzt die Finanzierung erst danach, haben beide Seiten Zeit und Geld verloren und Ihre Immobilie war wochenlang vom Markt.</p>
+    </div>
+    <div class="fgs-cols-body">
+      {%- set pb = "potsdam-band" | bild %}
+      <figure class="fgs-kaeufer-bild"><div class="fgs-media fgs-reveal">{{ pic((pb | zuschnitt("4x3")) or pb, "Alter Markt in Potsdam mit Nikolaikirche, Obelisk und Altem Rathaus", "(min-width: 1328px) 600px, (min-width: 900px) 46vw, 100vw") }}</div></figure>
     </div>
   </div>
 </section>
 
 {# §4.7 F&G in Zahlen wie auf der Startseite (zentriert, Marcellus 72 px), einmal auf der Seite, ohne „Angabe von F&G“ (§7) #}
-{{ facts({ id: "zahlen", titel: "F&G in Zahlen", hochzaehlen: true, mitte: true, items: [
+{#- Peers Review T8 (24.11.): „über 4 Mio. €“ drückte die anderen Spalten zusammen. Jetzt dasselbe Bauteil wie auf der Startseite
+    (Navy, eine Größe für alle vier Zahlen, „Mio.+“ als Einheit); Texte dieser Seite bleiben, „in Euro“ wandert in den Text. -#}
+{{ facts({ id: "zahlen", titel: "F&G in Zahlen", mitte: true, zaehlen: true, navy: true, einheitGross: true, items: [
   { wert: "100+", text: "Interessenten für Mehrfamilienhäuser deutschlandweit" },
   { wert: "50+", text: "neue Kapitalanlage-Interessenten pro Monat" },
-  { wert: "über 4 Mio. €", text: "begleitetes Finanzierungsvolumen 2026" },
-  { wert: google.rating, text: "von 5 Sternen aus " + google.count + " Google-Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>' }
+  { wert: "4", einheit: "Mio.+", text: "begleitetes Finanzierungsvolumen in Euro, 2026" },
+  { wert: google.rating, sterne: true, text: "von 5 Sternen aus " + google.count + " Google-Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>' }
 ] }) }}
 
 {# §4.8 Personenblock: Porträt im Container, 4:5, höchstens 480 px hoch, Text daneben (Bild rechts) #}

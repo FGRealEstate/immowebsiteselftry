@@ -236,11 +236,11 @@ eleventyComputed:
       <div class="fgs-kontaktkarte">
         <div class="fgs-kontaktkarte-kopf">
           {{ pic(("/images/team/" + (kontakt.name | slugify) + "-navy") | bild, "", "72px") }}
-          <div><p class="fgs-kontaktkarte-name">{{ kontakt.name }}</p><p class="fgs-small">{{ kontakt.role }}</p></div>
+          <div><p class="fgs-kontaktkarte-name">{{ kontakt.name }}</p></div>
         </div>
         <a class="fgs-btn fgs-btn--primary" href="{{ property.request_url }}">Objekt anfragen</a>
         <a class="fgs-btn fgs-btn--secondary" href="{{ kontaktTel.href }}" aria-label="Anrufen: {{ kontaktTel.display }}">{{ faktSymbol("telefon") }}Anrufen</a>
-        <p class="fgs-small fgs-kontaktkarte-tel">{{ kontaktTel.display }}</p>
+        {#- 24.11.: Rolle und Nummer unter dem Namen entfernt, U68 §3.2 verlangt Foto und Name -#}
       </div>
     </aside>
   </div>

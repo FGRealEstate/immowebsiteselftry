@@ -1,6 +1,6 @@
 ---
 layout: fgs-page.njk
-fgsHero: false # Update 64 G: Titelzeile auf hellem Grund, der Kopf startet nicht durchsichtig
+fgsHero: true # Peers Review T18/T19 (24.11.): Titelbild in Navy über die volle Breite, Kopf darüber durchsichtig wie auf den anderen Seiten
 fgsIndex: true
 # Update 55 §3.2.5 (11.11.2026): Titel wörtlich aus dem Brief
 title: "Über uns: Immobilienmakler aus Steglitz"
@@ -8,7 +8,7 @@ permalink: ueber-uns.html
 description: "Fischer & Geserich aus Berlin-Steglitz: Immobilienvermittlung nach § 34c und unabhängige Finanzierungsvermittlung nach § 34i GewO. Team, Zahlen, Erlaubnisse, Büro."
 canonicalPath: /ueber-uns
 ogTitle: "Über Fischer & Geserich Real Estate"
-ogDescription: "Lernen Sie Lennart Geserich, Timon Fischer und Peter Csaszar, unsere Erfahrung und unsere Arbeitsweise kennen."
+ogDescription: "Lernen Sie Lennart Geserich und Timon Fischer, unsere Erfahrung und unsere Arbeitsweise kennen."
 # Design-Sprint CP3 (28.10.2026), Brief 5.4: S1 (Schützenstraße in Steglitz), erster Abschnitt, eine S3-Teilung je Person,
 # S6, Fälle und Bankvergleich, Erlaubnisse als ruhige Tabelle, S3 Büro mit Foto und Karte, S7, S8.
 # Texte nach Update 6 §3.5; Lennart und Timon wie auf der Startseite (§3.1), Bankvergleich und Währung wie auf Finanzierung (§3.4).
@@ -84,13 +84,13 @@ pg:
   </div>
 </section>
 
-{# S3 je Person: große Porträts, Seiten im Wechsel. Lennart und Timon verlinken auf ihre Profile, Peter wie bisher auf seine Allianz-Vertretung.
+{# S3 je Person: große Porträts, Seiten im Wechsel. Lennart und Timon verlinken auf ihre Profile. Peter Csaszar am 24.11. entfernt (Peers Review T20: nicht im Team).
    Design-Pass 3 §4.3: Porträts in der Behandlung aus §3.3 (karte), Freisteller auf der dunklen Karte, 420 × 560. #}
 <section class="fgs-section" id="team" aria-labelledby="team-titel">
   <div class="fgs-wrap">
     <div class="fgs-head">
       <h2 id="team-titel">Das Team</h2>
-      <p class="fgs-lead">Timon Fischer und Lennart Geserich führen das Unternehmen als Geschäftsführer. Peter Csaszar ergänzt das Team bei Versicherungen und in der Kundengewinnung.</p>
+      <p class="fgs-lead">Timon Fischer und Lennart Geserich führen das Unternehmen als Geschäftsführer.</p>
     </div>
   </div>
   {% call split({ teil: true, id: "lennart-geserich", titel: "Lennart Geserich", karte: true, bild: "/images/team/lennart-geserich-frei" | bild, alt: "Porträt von Lennart Geserich" }) %}
@@ -102,11 +102,6 @@ pg:
     <p class="fgs-small">Finanzierung &amp; Prozesse · Ansprechpartner für Nord- und Ost-Berlin, Nordbrandenburg, Leipzig und Dresden</p>
     <p>{{ kontakte.timon.bio }}</p>
     {{ textlink(nav.menu[5].items[1] | navHref, "Profil ansehen") }}
-  {% endcall %}
-  {% call split({ teil: true, id: "peter-csaszar", titel: "Peter Csaszar", karte: true, bild: "/images/team/peter-csaszar-frei" | bild, alt: "Porträt von Peter Csaszar" }) %}
-    <p class="fgs-small">Versicherung &amp; Akquise</p>
-    <p>Peter arbeitet seit rund zehn Jahren in der Versicherungsbranche, vor allem mit Gewerbekunden. Bei F&amp;G gewinnt er neue Kunden und berät zu Absicherung und Vorsorge rund um die Immobilie.</p>
-    <a class="fgs-link" href="https://vertretung.allianz.de/peter.csaszar/" target="_blank" rel="noopener">Berufliches Profil öffnen{% include "fgs-arrow.njk" %}</a>
   {% endcall %}
 </section>
 

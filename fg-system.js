@@ -653,7 +653,7 @@
       };
 
       // Fotos, Videos und dunkle Flächen, die in die Spalte reichen (Bildbänder, Fotos am linken Rand, verschobene Karussellkarten)
-      const covers = Array.from(ixMain.querySelectorAll('img, video, .fgs-band, .fgs-on-dark')).filter((el) => !el.closest('.fgs-hero, .fgs-closing, .fgs-ix-track'));
+      const covers = Array.from(ixMain.querySelectorAll('img, video, .fgs-band, .fgs-on-dark, .fgs-facts-sec--navy')).filter((el) => !el.closest('.fgs-hero, .fgs-closing, .fgs-ix-track'));
       let coverQueued = false;
       const checkCover = () => {
         coverQueued = false;
@@ -756,7 +756,9 @@
       });
     };
     const layoutSteps = () => stepLists.forEach((list) => {
-      let row = rowMq.matches;
+      // Peers Review T10–T12 (24.11.2026): keine Klick-Reihe mehr (das Feld öffnete außerhalb des Bildschirms, Schritte ohne Feld
+      // ließen sich nicht öffnen, sechs Spalten waren zu eng). Alle Schritte zeigen ihren ganzen Text, ab 900 px im Raster (CSS).
+      let row = false;
       list.classList.toggle('is-row', row);
       // Peer, Sichtprüfung 31.10.2026: Die Spalten sind mindestens so breit wie ihr längstes Wort. Passt die Reihe so nicht in
       // die Seite, bleibt die senkrechte Liste.

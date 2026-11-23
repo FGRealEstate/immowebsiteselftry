@@ -253,7 +253,8 @@
 
 {#- Update 68 §3.3: symbole=true (Objektseite) setzt vor jede Bezeichnung das Liniensymbol aus §2.3 (faktSymbol) -#}
 {%- macro listingFacts(items, name, symbole=false) -%}
-{%- set symbolFuer = { "Kaufpreis": "preis", "Kaltmiete / Monat": "preis", "Wohnfläche": "flaeche", "Zimmer": "zimmer", "Preis / m²": "preisqm", "Bruttorendite": "rendite" } %}
+{#- 24.11.: nur die Symbole aus §2.3 (Fläche, Zimmer); Preis, €/m² und Rendite ohne eigenes Symbol (U68 §3.3) -#}
+{%- set symbolFuer = { "Wohnfläche": "flaeche", "Zimmer": "zimmer" } %}
 {%- set reihe = items.slice(0, 5) %}{% set rest = items.slice(5) %}
 <div class="fgs-listing-facts" role="group" aria-label="Eckdaten von {{ name }}">
   <ul class="fgs-facts" role="list" style="--n: {{ reihe | length }}">
