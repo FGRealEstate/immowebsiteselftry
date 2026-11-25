@@ -3180,6 +3180,15 @@ html:not(.fgs-js) .fgs-feat-nav { display: none; }
 .fgs-pblock-produkte li { margin: 0 0 6px; }
 .fgs-pblock-aktion { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; margin: 20px 0 16px; }
 .fgs-pblock-text > :last-child { margin-bottom: 0; } /* U65 §3: ohne Zeile zur Provision endet der Kasten mit den Knöpfen */
+/* Peers Auftrag 25.11.2026: Partnerkasten mit Bild rechts (Versicherung, Kapitalanlage, Vermittlung) */
+.fgs-pblock-box--bild { max-width: 960px; }
+.fgs-pblock-box--bild .fgs-pblock-body { align-items: stretch; }
+.fgs-pblock-bild { position: relative; flex: 0 0 280px; margin: 0; overflow: hidden; border-radius: var(--fgs-r); min-height: 210px; } /* Höhe folgt dem Text, alle Kästen gleich aufgebaut */
+.fgs-pblock-bild img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 759px) {
+  .fgs-pblock-box--bild .fgs-pblock-body { flex-direction: column; gap: 20px; }
+  .fgs-pblock-bild { flex: 0 0 auto; order: -1; aspect-ratio: 3 / 2; min-height: 0; } /* am Handy über dem Text */
+}
 .fgs-refs .fgs-pblock-box { margin: 32px 0; } /* /verkaufen: zwischen den beiden Nachschlag-Abschnitten */
 .fgs-compare-wrap + .fgs-pblock-box { margin-top: 40px; } /* /immobilienbewertung/: unter der Vergleichstabelle */
 .fgs-partner-zeile { margin-top: 12px; }

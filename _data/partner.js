@@ -70,6 +70,8 @@ const einfach = {
     titel: "Unser Partner für Versicherungen",
     text: "Für die Absicherung rund um Ihre Immobilie arbeiten wir mit Peter Csaszar zusammen, Vertreter der Allianz.",
     knopf: "Zur Allianz-Vertretung",
+    // Peers Auftrag 25.11.: Bild rechts im Kasten. Peters Porträt gehört F&G (bis 23.11. auf /ueber-uns).
+    bild: { basis: "/images/team/peter-csaszar-frei", breiten: [480, 720], alt: "Porträt von Peter Csaszar", fokus: "50% 15%" },
     link: "https://vertretung.allianz.de/peter.csaszar/"
   },
   kapitalanlage: {
@@ -77,6 +79,8 @@ const einfach = {
     titel: "Unser Partner für Kapitalanleger",
     text: "Für Ankauf und Finanzierung von Kapitalanlagen arbeiten wir mit der Immovisory GmbH aus Berlin zusammen.",
     knopf: "Zu Immovisory",
+    // Teamfoto von immovisory.de (wp-content/uploads/2026/10/Bild-1.jpeg), Messestand. Bildrecht bei Immovisory, Freigabe bestätigen lassen.
+    bild: { basis: "/images/partner/immovisory-team", breiten: [480, 800], alt: "Das Team von Immovisory an seinem Messestand", fokus: "50% 30%" },
     link: "https://immovisory.de/"
   },
   vermittlung: {
@@ -84,6 +88,8 @@ const einfach = {
     titel: "Unser Partner für die Vermittlung",
     text: "Bei der Vermittlung von Immobilien in Berlin arbeiten wir mit der Geserich Immobilien GmbH zusammen, Haus- und Grundstücksmakler seit 1988.",
     knopf: "Zu Geserich Immobilien",
+    // Hausfoto von geserich-immobilien.de (Dateiname „Schuetzenstr. 30 Aussen“). Bildrecht bei Geserich Immobilien, Freigabe bestätigen lassen.
+    bild: { basis: "/images/partner/geserich-schuetzenstrasse", breiten: [480, 800], alt: "Wohnhaus in der Schützenstraße in Berlin-Steglitz, Sitz von Geserich Immobilien", fokus: "50% 40%" },
     link: "https://geserich-immobilien.de/"
   }
 };

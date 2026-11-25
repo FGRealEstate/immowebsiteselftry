@@ -20,7 +20,7 @@
 <section class="fgs-section fgs-pblock" aria-labelledby="{{ pid }}">
   <div class="fgs-wrap">
 {%- endif %}
-    <div class="fgs-pblock-box">
+    <div class="fgs-pblock-box{% if pg.bild %} fgs-pblock-box--bild{% endif %}">
       <div class="fgs-pblock-body">
         {%- if pg.logo %}
         <div class="fgs-pblock-marke">
@@ -53,6 +53,14 @@
           </div>
           {%- endif %}
         </div>
+        {%- if pg.bild %}{% set b = pg.bild %}
+        <figure class="fgs-pblock-bild">{# Peers Auftrag 25.11.: Bild rechts im Kasten #}
+          <picture>
+            <source type="image/avif" srcset="{% for w in b.breiten %}{{ b.basis }}-{{ w }}.avif {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}" sizes="(min-width: 760px) 280px, 100vw">
+            <img src="{{ b.basis }}-{{ b.breiten[0] }}.webp" srcset="{% for w in b.breiten %}{{ b.basis }}-{{ w }}.webp {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}" sizes="(min-width: 760px) 280px, 100vw" alt="{{ b.alt }}" loading="lazy" decoding="async"{% if b.fokus %} style="object-position: {{ b.fokus }}"{% endif %}>
+          </picture>
+        </figure>
+        {%- endif %}
       </div>
     </div>
 {%- if not partnerEingebettet %}
