@@ -3183,7 +3183,7 @@ html:not(.fgs-js) .fgs-feat-nav { display: none; }
 /* Peers Auftrag 25.11.2026: Partnerkasten mit Bild rechts (Versicherung, Kapitalanlage, Vermittlung) */
 .fgs-pblock-box--bild { max-width: 960px; }
 .fgs-pblock-box--bild .fgs-pblock-body { align-items: stretch; }
-.fgs-pblock-bild { position: relative; flex: 0 0 280px; margin: 0; overflow: hidden; border-radius: var(--fgs-r); min-height: 210px; } /* Höhe folgt dem Text, alle Kästen gleich aufgebaut */
+.fgs-pblock-bild { position: relative; flex: 0 0 200px; margin: 0; overflow: hidden; border-radius: var(--fgs-r); min-height: 260px; } /* Peer 25.11.: schmaler und höher; wächst mit dem Text */
 .fgs-pblock-bild img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
 @media (max-width: 759px) {
   .fgs-pblock-box--bild .fgs-pblock-body { flex-direction: column; gap: 20px; }

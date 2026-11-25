@@ -63,10 +63,12 @@ const hausverwaltung = {
    - Peter Csaszar: Allianz-Vertretung, bis 23.11. im Team auf /ueber-uns (dort stand „Versicherung & Akquise“).
    - Immovisory GmbH, Berlin: laut immovisory.de Ankaufs- und Finanzierungsberatung für Kapitalanleger.
    - Geserich Immobilien GmbH, Berlin-Steglitz: laut geserich-immobilien.de Haus- und Grundstücksmakler seit 1988.
-   Ohne Logo (logo: null). rel="sponsored noopener" wie bei allen Partnerlinks. */
+   Logos links wie bei Gutachten.org, Bild rechts. rel="sponsored noopener" wie bei allen Partnerlinks. */
 const einfach = {
   versicherung: {
-    id: "allianz-peter-csaszar", name: "Peter Csaszar (Allianz)", bereich: "Versicherung", produkt: "versicherung", logo: null,
+    id: "allianz-peter-csaszar", name: "Peter Csaszar (Allianz)", bereich: "Versicherung", produkt: "versicherung",
+    // Allianz-Logo als SVG (Wikimedia Commons, File:Allianz.svg), links wie bei Gutachten.org
+    logo: { src: "/images/partner/allianz.svg", breite: 160, hoehe: 40 },
     titel: "Unser Partner für Versicherungen",
     text: "Für die Absicherung rund um Ihre Immobilie arbeiten wir mit Peter Csaszar zusammen, Vertreter der Allianz.",
     knopf: "Zur Allianz-Vertretung",
@@ -75,7 +77,9 @@ const einfach = {
     link: "https://vertretung.allianz.de/peter.csaszar/"
   },
   kapitalanlage: {
-    id: "immovisory", name: "Immovisory GmbH", bereich: "Kapitalanlage", produkt: "kapitalanlage", logo: null,
+    id: "immovisory", name: "Immovisory GmbH", bereich: "Kapitalanlage", produkt: "kapitalanlage",
+    // Logo als SVG von immovisory.de (wp-content/uploads/2018/04/IMV_Logo-1.svg)
+    logo: { src: "/images/partner/immovisory.svg", breite: 160, hoehe: 41 },
     titel: "Unser Partner für Kapitalanleger",
     text: "Für Ankauf und Finanzierung von Kapitalanlagen arbeiten wir mit der Immovisory GmbH aus Berlin zusammen.",
     knopf: "Zu Immovisory",
@@ -84,7 +88,9 @@ const einfach = {
     link: "https://immovisory.de/"
   },
   vermittlung: {
-    id: "geserich-immobilien", name: "Geserich Immobilien GmbH", bereich: "Immobilienvermittlung", produkt: "vermittlung", logo: null,
+    id: "geserich-immobilien", name: "Geserich Immobilien GmbH", bereich: "Immobilienvermittlung", produkt: "vermittlung",
+    // Kein SVG auf geserich-immobilien.de, nur dieses PNG (130 × 156 px). Kommt ein SVG, hier tauschen.
+    logo: { src: "/images/partner/geserich-immobilien.png", breite: 80, hoehe: 96 },
     titel: "Unser Partner für die Vermittlung",
     text: "Bei der Vermittlung von Immobilien in Berlin arbeiten wir mit der Geserich Immobilien GmbH zusammen, Haus- und Grundstücksmakler seit 1988.",
     knopf: "Zu Geserich Immobilien",

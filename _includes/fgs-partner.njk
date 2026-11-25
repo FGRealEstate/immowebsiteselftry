@@ -56,8 +56,8 @@
         {%- if pg.bild %}{% set b = pg.bild %}
         <figure class="fgs-pblock-bild">{# Peers Auftrag 25.11.: Bild rechts im Kasten #}
           <picture>
-            <source type="image/avif" srcset="{% for w in b.breiten %}{{ b.basis }}-{{ w }}.avif {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}" sizes="(min-width: 760px) 280px, 100vw">
-            <img src="{{ b.basis }}-{{ b.breiten[0] }}.webp" srcset="{% for w in b.breiten %}{{ b.basis }}-{{ w }}.webp {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}" sizes="(min-width: 760px) 280px, 100vw" alt="{{ b.alt }}" loading="lazy" decoding="async"{% if b.fokus %} style="object-position: {{ b.fokus }}"{% endif %}>
+            <source type="image/avif" srcset="{% for w in b.breiten %}{{ b.basis }}-{{ w }}.avif {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}" sizes="(min-width: 760px) 200px, 100vw">
+            <img src="{{ b.basis }}-{{ b.breiten[0] }}.webp" srcset="{% for w in b.breiten %}{{ b.basis }}-{{ w }}.webp {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}" sizes="(min-width: 760px) 200px, 100vw" alt="{{ b.alt }}" loading="lazy" decoding="async"{% if b.fokus %} style="object-position: {{ b.fokus }}"{% endif %}>
           </picture>
         </figure>
         {%- endif %}
