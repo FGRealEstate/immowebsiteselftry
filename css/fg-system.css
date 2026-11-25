@@ -3641,6 +3641,36 @@ html:not(.fgs-js) :is(.fgs-obj-dots, .fgs-obj-pfeil) { display: none; }
   .fgs-head + .fgs-steps--reihe { margin-top: 40px; }
 }
 @media (min-width: 900px) and (max-width: 1099px) { .fgs-steps--reihe { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* R1 (Peers Review 25.11.2026, ersetzt T10 ab 1.240 px): Ablauf als Reihe, die zur Seite aufgeht. Oben stehen alle Schritte mit Nummer
+   und Titel; ein Klick schiebt neben dem Schritt eine Box mit seinem Text auf und die übrigen Schritte zur Seite. Schritte in der ersten
+   Hälfte öffnen nach rechts, die übrigen nach links, so bleibt die Box zur Mitte hin. Immer ist ein Schritt offen, beim Laden der erste.
+   Das Raster hat 2n+1 Spalten (Box-Spalte, Schritt, Box-Spalte, …); fg-system.js setzt die Box-Spalte des offenen Schritts auf
+   --fgs-step-box, die übrigen auf 0, und die Spaltenbreiten gleiten wie beim Gebiete-Karussell der Startseite. Alle Boxen stehen in
+   derselben Zeile, die Reihe ist also so hoch wie der längste Text und springt beim Wechsel nicht. Ohne JavaScript und unter
+   1.240 px bleibt das Raster bzw. die Liste aus T10 mit dem ganzen Text. */
+@media (min-width: 1240px) {
+  .fgs-steps--reihe.is-seite { display: grid; grid-template-columns: var(--fgs-step-spalten); grid-template-rows: auto; column-gap: 0; row-gap: 0; border-top: 0; transition: grid-template-columns 700ms var(--fgs-ease); }
+  .fgs-steps--reihe.is-seite > li { display: contents; }
+  .fgs-steps--reihe.is-seite > li > .fgs-step-kopf { grid-row: 1; min-width: 0; padding: 24px 16px 0 0; border-top: 1px solid var(--fgs-ink); cursor: pointer; }
+  .fgs-steps--reihe.is-seite > li > .fgs-step-kopf > .fgs-step-num { display: flex; justify-content: space-between; align-items: center; font-family: var(--fgs-serif); font-size: 22px; line-height: 1.3; color: var(--fgs-gold-text); }
+  .fgs-steps--reihe.is-seite > li > .fgs-step-kopf > .fgs-step-num::after { content: ""; width: 14px; height: 14px; flex: none; background: linear-gradient(currentColor, currentColor) center / 14px 1px no-repeat, linear-gradient(currentColor, currentColor) center / 1px 14px no-repeat; transition: transform 400ms var(--fgs-ease), opacity 400ms var(--fgs-ease); }
+  .fgs-steps--reihe.is-seite > li > .fgs-step-kopf > h3 { margin-top: 12px; font-size: 18px; line-height: 1.35; -webkit-hyphens: auto; hyphens: auto; overflow-wrap: break-word; transition: color 400ms var(--fgs-ease); }
+  .fgs-steps--reihe.is-seite > li > .fgs-step-kopf:hover > h3 { color: var(--fgs-gold-text); }
+  .fgs-steps--reihe.is-seite > li.is-open > .fgs-step-kopf { border-top: 2px solid var(--fgs-gold); padding-top: 23px; cursor: default; }
+  .fgs-steps--reihe.is-seite > li.is-open > .fgs-step-kopf > h3 { color: var(--fgs-gold-text); }
+  .fgs-steps--reihe.is-seite > li.is-open > .fgs-step-kopf > .fgs-step-num::after { opacity: 0; }
+  .fgs-steps--reihe.is-seite > li > .fgs-step-box { grid-row: 1; min-width: 0; display: flex; overflow: hidden; opacity: 0; visibility: hidden; transition: opacity 150ms var(--fgs-ease), visibility 0s linear 150ms; }
+  .fgs-steps--reihe.is-seite > li > .fgs-step-box.is-links { justify-content: flex-end; }
+  .fgs-steps--reihe.is-seite > li.is-open > .fgs-step-box { opacity: 1; visibility: visible; transition: opacity 500ms var(--fgs-ease) 200ms, visibility 0s; }
+  .fgs-steps--reihe.is-seite > li .fgs-step-box-inner { flex: none; box-sizing: border-box; width: calc(var(--fgs-step-box) - 20px); margin-right: 20px; padding: 24px 28px 28px; background: #fff; border: 1px solid var(--fgs-line); border-top: 2px solid var(--fgs-gold); border-radius: var(--fgs-r); font-size: 16px; line-height: 1.6; }
+  .fgs-steps--reihe.is-seite > li .fgs-step-box-inner > .fgs-step-lead { margin: 0; color: var(--fgs-ink); }
+  .fgs-steps--reihe.is-seite > li .fgs-step-box-inner > .fgs-step-panel { margin-top: 14px; color: var(--fgs-ink-2); }
+  .fgs-steps--reihe.is-seite > li .fgs-step-box-inner > .fgs-step-panel > * + * { margin-top: 14px; }
+  .fgs-head + .fgs-steps--reihe.is-seite { margin-top: 40px; }
+  /* Auf Seiten mit Index steht die Reihe über die volle Breite, der Index blendet sich darüber aus (wie beim Zahlenstreifen, T8) */
+  .fgs-indexed main > * > .fgs-wrap:is(:has(> .fgs-steps--reihe.is-seite), :has(> .fgs-photo-chapter-rest > .fgs-steps--reihe.is-seite)) { padding-left: var(--fgs-pad); }
+}
+@media (min-width: 1240px) and (prefers-reduced-motion: reduce) { .fgs-steps--reihe.is-seite, .fgs-steps--reihe.is-seite > li > .fgs-step-box { transition: none; } }
 /* T13 /finanzierungsberatung „Unterlagen für die Bank“: drei Gruppen nebeneinander ab 900 px */
 .fgs-unterlagen-raster { display: grid; gap: 40px var(--fgs-gap); margin-top: 40px; }
 @media (min-width: 900px) { .fgs-unterlagen-raster { grid-template-columns: repeat(3, minmax(0, 1fr)); } }

@@ -653,7 +653,8 @@
       };
 
       // Fotos, Videos und dunkle Flächen, die in die Spalte reichen (Bildbänder, Fotos am linken Rand, verschobene Karussellkarten)
-      const covers = Array.from(ixMain.querySelectorAll('img, video, .fgs-band, .fgs-on-dark, .fgs-facts-sec--navy')).filter((el) => !el.closest('.fgs-hero, .fgs-closing, .fgs-ix-track'));
+      // R1 (25.11.): auch die Ablauf-Reihe, die ab 1.240 px über die volle Breite steht, mit ihrer Überschrift
+      const covers = Array.from(ixMain.querySelectorAll('img, video, .fgs-band, .fgs-on-dark, .fgs-facts-sec--navy, [data-fgs-steps], .fgs-wrap:has(> [data-fgs-steps]) > .fgs-head')).filter((el) => !el.closest('.fgs-hero, .fgs-closing, .fgs-ix-track'));
       let coverQueued = false;
       const checkCover = () => {
         coverQueued = false;
@@ -741,66 +742,124 @@
   window.addEventListener('hashchange', () => openPanel(location.hash));
   openPanel(location.hash);
 
-  /* ---------- Design-Pass 2 §4.5: Ablauf als Reihe (ab 1.240 px). Jede Spalte zeigt Nummer, Titel und ersten Satz; ein Klick öffnet
-     den Rest des Schritts im Feld unter der Reihe, ein zweiter Klick schließt ihn. Der Titel wird dafür zum Button. Schmaler bleibt die
-     senkrechte Liste mit dem ganzen Text. Ein Sprung auf #schritt-… öffnet den Schritt. ---------- */
+  /* ---------- R1 (Peers Review 25.11.2026, ersetzt T10 ab 1.240 px): Ablauf als Reihe, die zur Seite aufgeht. JavaScript baut je Schritt
+     einen Kopf (Nummer und Titel als Button) und eine Box (erster Satz und übriger Text); das Raster hat 2n+1 Spalten, die Box-Spalte des
+     offenen Schritts bekommt die Boxbreite. Schritte in der ersten Hälfte öffnen nach rechts, die übrigen nach links. Immer ist ein
+     Schritt offen, beim Laden der erste. Schmaler (oder wenn die Titel nicht passen) wird alles zurückgebaut: Raster/Liste aus T10.
+     Ein Sprung auf #schritt-… öffnet den Schritt. CSS: .fgs-steps--reihe.is-seite in fg-system.css. ---------- */
   const stepLists = Array.from(document.querySelectorAll('[data-fgs-steps]'));
   if (stepLists.length) {
-    const rowMq = window.matchMedia('(min-width: 1240px)');
+    const seiteMq = window.matchMedia('(min-width: 1240px)');
+    let boxNr = 0;
+    const items = (list) => Array.from(list.children).filter((li) => li.tagName === 'LI');
+    const boxBreite = (list) => {
+      const n = items(list).length;
+      return Math.round(Math.min(460, Math.max(320, list.clientWidth - n * 150)));
+    };
     const setStep = (list, item) => {
-      Array.from(list.children).forEach((li) => {
+      const lis = items(list);
+      const n = lis.length;
+      const b = boxBreite(list);
+      const spalten = ['0px'];
+      lis.forEach(() => spalten.push('minmax(0, 1fr)', '0px'));
+      lis.forEach((li, idx) => {
         const on = li === item;
         li.classList.toggle('is-open', on);
         const btn = li.querySelector('.fgs-step-toggle');
         if (btn) btn.setAttribute('aria-expanded', String(on));
+        const box = li.querySelector(':scope > .fgs-step-box');
+        if (!box) return;
+        box.inert = !on;
+        const links = idx + 1 > Math.ceil(n / 2);
+        const spalte = links ? 2 * idx : 2 * idx + 2; // 0-basiert: Box links vom Schritt oder rechts davon
+        if (on) spalten[spalte] = b + 'px';
       });
+      list.style.setProperty('--fgs-step-box', b + 'px');
+      list.style.setProperty('--fgs-step-spalten', spalten.join(' '));
+    };
+    const aufbauen = (list) => {
+      if (list.classList.contains('is-seite')) return;
+      const lis = items(list);
+      const n = lis.length;
+      lis.forEach((li, idx) => {
+        const num = li.querySelector(':scope > .fgs-step-num');
+        const h = li.querySelector(':scope > h3');
+        if (!num || !h) return;
+        const links = idx + 1 > Math.ceil(n / 2);
+        const kopf = document.createElement('div');
+        kopf.className = 'fgs-step-kopf';
+        kopf.style.gridColumn = String(2 * idx + 2);
+        li.insertBefore(kopf, li.firstChild);
+        kopf.appendChild(num);
+        kopf.appendChild(h);
+        const box = document.createElement('div');
+        box.className = 'fgs-step-box' + (links ? ' is-links' : '');
+        box.id = 'fgs-step-box-' + (++boxNr);
+        box.style.gridColumn = String(links ? 2 * idx + 1 : 2 * idx + 3);
+        const inner = document.createElement('div');
+        inner.className = 'fgs-step-box-inner';
+        Array.from(li.children).filter((c) => c !== kopf).forEach((c) => inner.appendChild(c));
+        box.appendChild(inner);
+        li.appendChild(box);
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'fgs-step-toggle';
+        btn.setAttribute('aria-controls', box.id);
+        while (h.firstChild) btn.appendChild(h.firstChild);
+        h.appendChild(btn);
+      });
+      list.classList.add('is-seite');
+      setStep(list, list.querySelector(':scope > li.is-open') || lis[0]);
+    };
+    const abbauen = (list) => {
+      if (!list.classList.contains('is-seite')) return;
+      items(list).forEach((li) => {
+        const kopf = li.querySelector(':scope > .fgs-step-kopf');
+        const box = li.querySelector(':scope > .fgs-step-box');
+        if (!kopf || !box) return;
+        const btn = kopf.querySelector('.fgs-step-toggle');
+        if (btn) { while (btn.firstChild) btn.parentNode.insertBefore(btn.firstChild, btn); btn.remove(); }
+        while (kopf.firstChild) li.insertBefore(kopf.firstChild, kopf);
+        const inner = box.firstElementChild;
+        while (inner && inner.firstChild) li.insertBefore(inner.firstChild, box);
+        kopf.remove();
+        box.remove();
+      });
+      list.classList.remove('is-seite');
+      list.style.removeProperty('--fgs-step-box');
+      list.style.removeProperty('--fgs-step-spalten');
     };
     const layoutSteps = () => stepLists.forEach((list) => {
-      // Peers Review T10–T12 (24.11.2026): keine Klick-Reihe mehr (das Feld öffnete außerhalb des Bildschirms, Schritte ohne Feld
-      // ließen sich nicht öffnen, sechs Spalten waren zu eng). Alle Schritte zeigen ihren ganzen Text, ab 900 px im Raster (CSS).
-      let row = false;
-      list.classList.toggle('is-row', row);
-      // Peer, Sichtprüfung 31.10.2026: Die Spalten sind mindestens so breit wie ihr längstes Wort. Passt die Reihe so nicht in
-      // die Seite, bleibt die senkrechte Liste.
-      if (row && list.scrollWidth > list.clientWidth + 1) { row = false; list.classList.remove('is-row'); }
-      Array.from(list.children).forEach((li) => {
-        const h = li.querySelector('h3');
-        const panel = li.querySelector('.fgs-step-panel');
-        if (!h || !panel) return;
-        let btn = h.querySelector('.fgs-step-toggle');
-        if (row && !btn) {
-          btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'fgs-step-toggle';
-          btn.setAttribute('aria-controls', panel.id);
-          btn.setAttribute('aria-expanded', String(li.classList.contains('is-open')));
-          while (h.firstChild) btn.appendChild(h.firstChild);
-          h.appendChild(btn);
-        } else if (!row && btn) {
-          while (btn.firstChild) h.insertBefore(btn.firstChild, btn);
-          btn.remove();
-        }
-      });
-      if (!row) Array.from(list.children).forEach((li) => li.classList.remove('is-open'));
+      if (!seiteMq.matches) { abbauen(list); return; }
+      aufbauen(list);
+      setStep(list, list.querySelector(':scope > li.is-open'));
+      // Passt ein Titel trotz Silbentrennung nicht in seine Spalte, bleibt das Raster aus T10.
+      const zuEng = Array.from(list.querySelectorAll('.fgs-step-kopf > h3')).some((h) => h.scrollWidth > h.clientWidth + 1);
+      if (zuEng) abbauen(list);
     });
     stepLists.forEach((list) => list.addEventListener('click', (event) => {
-      if (!list.classList.contains('is-row')) return;
-      const li = event.target.closest('li');
-      if (!li || li.parentElement !== list || !li.querySelector('.fgs-step-panel') || event.target.closest('.fgs-step-panel')) return;
-      setStep(list, li.classList.contains('is-open') ? null : li);
+      if (!list.classList.contains('is-seite')) return;
+      const kopf = event.target.closest('.fgs-step-kopf');
+      if (!kopf || !list.contains(kopf)) return;
+      const li = kopf.parentElement;
+      if (!li.classList.contains('is-open')) setStep(list, li);
     }));
     const openStep = (hash) => {
       if (!hash || !hash.startsWith('#schritt-')) return;
       const panel = document.getElementById(decodeURIComponent(hash.slice(1)));
       const list = panel && panel.closest('[data-fgs-steps]');
-      if (list && list.classList.contains('is-row')) setStep(list, panel.closest('li'));
+      if (list && list.classList.contains('is-seite')) setStep(list, panel.closest('li'));
     };
     layoutSteps();
-    if (rowMq.addEventListener) rowMq.addEventListener('change', layoutSteps); else rowMq.addListener(layoutSteps);
+    if (seiteMq.addEventListener) seiteMq.addEventListener('change', layoutSteps); else seiteMq.addListener(layoutSteps);
     let stepsBreite = window.innerWidth;
     let stepsTimer = 0;
-    const stepsNeu = () => { clearTimeout(stepsTimer); stepsTimer = setTimeout(layoutSteps, 150); };
-    window.addEventListener('resize', () => { if (window.innerWidth !== stepsBreite && rowMq.matches) { stepsBreite = window.innerWidth; stepsNeu(); } });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth === stepsBreite) return;
+      stepsBreite = window.innerWidth;
+      clearTimeout(stepsTimer);
+      stepsTimer = setTimeout(layoutSteps, 150);
+    });
     if (document.fonts) document.fonts.ready.then(layoutSteps);
     window.addEventListener('hashchange', () => openStep(location.hash));
     openStep(location.hash);
