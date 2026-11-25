@@ -3709,3 +3709,11 @@ html:not(.fgs-js) :is(.fgs-obj-dots, .fgs-obj-pfeil) { display: none; }
 .fgs-wissen-alle { display: flex; justify-content: center; max-width: none; margin-top: 48px; }
 .fgs-wissen-alle > .fgs-link { margin: 0; }
 @media (prefers-reduced-motion: reduce) { .fgs-wissen-bild img { transition: none; } .fgs-wissen-karte:hover .fgs-wissen-bild img { transform: none; } }
+
+/* R6 (25.11.2026): Angebotsseite, Galerie kleiner und eingefasst. Sie steht nicht mehr randlos, sondern im Seitenrahmen
+   (höchstens 1 200 px plus Rand), ab 1024 px höchstens 400 px hoch (42 % der Fensterhöhe). Großbild und Kacheln mit runden Ecken (6 px) und feiner Linie. */
+.fgs-listing-top > .fgs-gallery { box-sizing: border-box; max-width: calc(var(--fgs-max) + 2 * var(--fgs-pad)); margin-inline: auto; padding: 16px var(--fgs-pad) 0; }
+.fgs-listing-top { --fgs-galerie-h: min(42vh, 400px); }
+.fgs-listing-top .fgs-gallery-stage,
+.fgs-listing-top .fgs-gallery-klein { border: 1px solid var(--fgs-line); border-radius: 6px; overflow: hidden; }
+.fgs-listing-top .fgs-gallery-klein:focus-visible { outline-offset: 2px; }
