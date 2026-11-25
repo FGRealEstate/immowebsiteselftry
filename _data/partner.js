@@ -58,10 +58,41 @@ const hausverwaltung = {
   produkt: "hausverwaltung" // Wert für `produkt` im GA4-Ereignis (Brief §2)
 };
 
+/* Peers Auftrag 25.11.2026: drei weitere Partner auf /partner/, je ein Abschnitt mit H3, einem Satz und einem Knopf
+   (wie die Hausverwaltung). Texte nur aus den eigenen Seiten der Partner, nichts über Preise oder Wirkungen.
+   - Peter Csaszar: Allianz-Vertretung, bis 23.11. im Team auf /ueber-uns (dort stand „Versicherung & Akquise“).
+   - Immovisory GmbH, Berlin: laut immovisory.de Ankaufs- und Finanzierungsberatung für Kapitalanleger.
+   - Geserich Immobilien GmbH, Berlin-Steglitz: laut geserich-immobilien.de Haus- und Grundstücksmakler seit 1988.
+   Ohne Logo (logo: null). rel="sponsored noopener" wie bei allen Partnerlinks. */
+const einfach = {
+  versicherung: {
+    id: "allianz-peter-csaszar", name: "Peter Csaszar (Allianz)", bereich: "Versicherung", produkt: "versicherung", logo: null,
+    titel: "Unser Partner für Versicherungen",
+    text: "Für die Absicherung rund um Ihre Immobilie arbeiten wir mit Peter Csaszar zusammen, Vertreter der Allianz.",
+    knopf: "Zur Allianz-Vertretung",
+    link: "https://vertretung.allianz.de/peter.csaszar/"
+  },
+  kapitalanlage: {
+    id: "immovisory", name: "Immovisory GmbH", bereich: "Kapitalanlage", produkt: "kapitalanlage", logo: null,
+    titel: "Unser Partner für Kapitalanleger",
+    text: "Für Ankauf und Finanzierung von Kapitalanlagen arbeiten wir mit der Immovisory GmbH aus Berlin zusammen.",
+    knopf: "Zu Immovisory",
+    link: "https://immovisory.de/"
+  },
+  vermittlung: {
+    id: "geserich-immobilien", name: "Geserich Immobilien GmbH", bereich: "Immobilienvermittlung", produkt: "vermittlung", logo: null,
+    titel: "Unser Partner für die Vermittlung",
+    text: "Bei der Vermittlung von Immobilien in Berlin arbeiten wir mit der Geserich Immobilien GmbH zusammen, Haus- und Grundstücksmakler seit 1988.",
+    knopf: "Zu Geserich Immobilien",
+    link: "https://geserich-immobilien.de/"
+  }
+};
+
 const partner = {
   aktiv: Boolean(require("./freigaben.js").partner),
   gutachten,
   hausverwaltung,
+  einfach,
   // Lexikonbegriffe und Artikel mit der Partnerzeile (Brief §3): Slug → Produkt
   lexikon: { restnutzungsdauer: "restnutzungsdauer", verkehrswert: "verkehrswert" },
   artikel: { "restnutzungsdauergutachten-erklaert": "restnutzungsdauer" }

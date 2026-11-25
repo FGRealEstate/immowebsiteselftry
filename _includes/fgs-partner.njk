@@ -12,7 +12,9 @@
     Ohne Logo (logo: null) entfällt die Spalte mit der Marke; der Name steht im Satz. -#}
 {%- if partner.aktiv %}
 {%- set hv = (partnerArt == "hausverwaltung") %}
-{%- if hv %}{% set pg = partner.hausverwaltung %}{% set pid = "partner-hausverwaltung" %}
+{%- set ef = partner.einfach[partnerArt] if partnerArt else null %}{# Peers Auftrag 25.11.: Versicherung, Kapitalanlage, Vermittlung #}
+{%- if ef %}{% set pg = ef %}{% set pid = "partner-" + partnerArt %}
+{%- elif hv %}{% set pg = partner.hausverwaltung %}{% set pid = "partner-hausverwaltung" %}
 {%- else %}{% set pg = partner.gutachten %}{% set pid = "partner-gutachten-" + (partnerProdukte | join("-")) %}{% endif %}
 {%- if not partnerEingebettet %}
 <section class="fgs-section fgs-pblock" aria-labelledby="{{ pid }}">
@@ -26,7 +28,13 @@
         </div>
         {%- endif %}
         <div class="fgs-pblock-text">
-          {%- if hv %}
+          {%- if ef %}
+          <h3 id="{{ pid }}">{{ pg.titel }}</h3>
+          <p>{{ pg.text }}</p>
+          <div class="fgs-pblock-aktion">
+            <a class="fgs-btn fgs-btn--secondary" href="{{ pg.link }}" target="_blank" rel="sponsored noopener" data-partner="{{ pg.id }}" data-produkt="{{ pg.produkt }}">{{ pg.knopf }}</a>
+          </div>
+          {%- elif hv %}
           <h3 id="{{ pid }}">Unser Partner für die Hausverwaltung</h3>
           <p>Für die Verwaltung von Mietshäusern und Eigentümergemeinschaften in Berlin und Brandenburg arbeiten wir mit MS-Immobilienservice Schmidt&nbsp;e.K. zusammen.</p>{# &nbsp;: „e.K.“ nie allein in einer Zeile #}
           <div class="fgs-pblock-aktion">

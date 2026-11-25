@@ -3,7 +3,8 @@ layout: fgs-page.njk
 fgsHero: false
 title: "Partner von Fischer & Geserich | Fischer & Geserich"
 permalink: partner/index.html
-description: "Unsere Partner: Gutachten.org für Gutachten und MS-Immobilienservice Schmidt für die Hausverwaltung in Berlin und Brandenburg."
+description: "Unsere Partner: Gutachten.org für Gutachten, MS-Immobilienservice Schmidt für die Hausverwaltung, Peter Csaszar (Allianz) für Versicherungen, Immovisory für Kapitalanleger und Geserich Immobilien für die Vermittlung."
+# Peers Auftrag 25.11.2026: Beschreibung nennt alle fünf Partner.
 # Update 67 §1.3 (18.11.2026): Beschreibung wörtlich aus dem Brief, nennt beide Partner, ohne Rabattcode (ersetzt Update 66 §1.4).
 canonicalPath: /partner/
 # Update 62 §4 (17.11.2026): eine Seite für alle Partner, keine Seite je Partner und keine sichtbaren Stufen.
@@ -37,6 +38,36 @@ pg:
       <h2 id="hausverwaltung-titel">Hausverwaltung</h2>
     </div>
     {%- set partnerArt = "hausverwaltung" %}{% set partnerEingebettet = true %}
+    {% include "fgs-partner.njk" %}
+  </div>
+</section>
+
+<section class="fgs-section" id="versicherung" aria-labelledby="versicherung-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head">
+      <h2 id="versicherung-titel">Versicherung</h2>
+    </div>
+    {%- set partnerArt = "versicherung" %}{% set partnerEingebettet = true %}
+    {% include "fgs-partner.njk" %}
+  </div>
+</section>
+
+<section class="fgs-section" id="kapitalanlage" aria-labelledby="kapitalanlage-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head">
+      <h2 id="kapitalanlage-titel">Kapitalanlage</h2>
+    </div>
+    {%- set partnerArt = "kapitalanlage" %}{% set partnerEingebettet = true %}
+    {% include "fgs-partner.njk" %}
+  </div>
+</section>
+
+<section class="fgs-section" id="vermittlung" aria-labelledby="vermittlung-titel">
+  <div class="fgs-wrap">
+    <div class="fgs-head">
+      <h2 id="vermittlung-titel">Immobilienvermittlung</h2>
+    </div>
+    {%- set partnerArt = "vermittlung" %}{% set partnerEingebettet = true %}
     {% include "fgs-partner.njk" %}
   </div>
 </section>
