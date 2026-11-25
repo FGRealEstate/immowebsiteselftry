@@ -3717,3 +3717,33 @@ html:not(.fgs-js) :is(.fgs-obj-dots, .fgs-obj-pfeil) { display: none; }
 .fgs-listing-top .fgs-gallery-stage,
 .fgs-listing-top .fgs-gallery-klein { border: 1px solid var(--fgs-line); border-radius: 6px; overflow: hidden; }
 .fgs-listing-top .fgs-gallery-klein:focus-visible { outline-offset: 2px; }
+
+/* R7 (25.11.2026): „Exposé drucken“ und Druckansicht der Angebotsseite: Titelbild und Kacheln, Titel, Eckdaten, alle Angaben
+   zum Objekt, Lage; ohne Menü, Knöpfe, Rechner, Kontaktkarte, Abschlussband und Fuß. Unten Kontakt und Adresse der Seite. */
+.fgs-btns > .fgs-listing-druck { align-self: center; margin: 4px 0 0; }
+.fgs-nur-druck { display: none; }
+@media print {
+  @page { margin: 14mm 12mm; }
+  html, body.fgs { background: #fff !important; }
+  .fgs-listing-druck, .fgs-listing-top .fgs-btns, .fgs-gallery-all, .fgs-gallery-zahl, .fgs-gallery-bar,
+  .fgs-listing-kontakt, .fgs-listing .fgs-rechner, .fgs-invest-ankauf, .fgs-closing, .fg-ai-panel, .fgs-sticky, .fgs-ix-track { display: none !important; }
+  .fgs-nur-druck { display: block !important; }
+  html.fgs-js .fgs-reveal img, .fgs-reveal img { opacity: 1 !important; transform: none !important; }
+  .fgs-listing-top > .fgs-gallery { max-width: none; padding: 0; }
+  .fgs-listing-top .fgs-gallery-stage { height: 95mm !important; max-height: none !important; aspect-ratio: auto !important; }
+  .fgs-listing-top .fgs-gallery--mosaik { display: block !important; }
+  .fgs-listing-top .fgs-gallery--mosaik .fgs-gallery-mosaik { display: grid !important; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: none; gap: 3mm; height: auto !important; margin-top: 3mm; }
+  .fgs-listing-top .fgs-gallery--mosaik .fgs-gallery-klein { aspect-ratio: 3 / 2; height: auto !important; }
+  .fgs-listing-top .fgs-listing-head-text { margin-top: 8mm; }
+  .fgs-listing-raster { display: block !important; }
+  .fgs-section.fgs-listing { padding-top: 6mm !important; }
+  .fgs-listing-block { margin: 0 !important; padding: 5mm 0 0 !important; border-top: 0 !important; }
+  .fgs-listing-block :is(h2, h3) { margin-bottom: 2mm; }
+  .fgs-listing-block > .fgs-cols-head, .fgs-listing-block :is(h2, h3) { break-after: avoid; }
+  .fgs-listing-block h2 { font-size: 15pt !important; }
+  .fgs-listing-block :is(table, dl, ul, .fgs-listing-tabelle) { break-inside: avoid; }
+  .fgs-listing-block p, .fgs-listing-block li { font-size: 10pt; line-height: 1.45; }
+  .fgs-listing-block p + p { margin-top: 2mm; }
+  .fgs-listing-top .fgs-listing-facts { margin-top: 5mm !important; }
+  .fgs-druck-kontakt { margin-top: 6mm; padding-top: 4mm; border-top: 1px solid #000; font-size: 10pt; line-height: 1.5; break-inside: avoid; }
+}

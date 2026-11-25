@@ -40,6 +40,11 @@
         {%- for b in l.buttons %}
         <a class="fgs-btn {{ 'fgs-btn--primary' if loop.first else 'fgs-btn--secondary' }}" href="{{ b.href }}">{{ b.label }}</a>
         {%- endfor %}
+      {%- if l.drucken %}
+      {#- R7 (25.11.2026): Exposé zum Ausdrucken. Druckt diese Seite mit eigener Druckansicht (fg-system.css @media print, R7);
+          das öffentliche Propstack-Exposé zeigt die Hausnummer und ist deshalb nicht verlinkt. -#}
+        <button type="button" class="fgs-link fgs-listing-druck" data-fgs-drucken>Exposé drucken{% include "fgs-arrow.njk" %}</button>
+      {%- endif %}
       </div>
     </div>
 {%- endmacro -%}

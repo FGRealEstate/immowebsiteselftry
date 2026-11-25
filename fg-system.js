@@ -881,3 +881,17 @@
   const sourceOnLoad = openSource(location.hash);
   if (sourceOnLoad) requestAnimationFrame(() => sourceOnLoad.scrollIntoView());
 })();
+
+/* R7 (25.11.2026): „Exposé drucken“ auf der Angebotsseite. Vorher laden die noch nicht geladenen Bilder der Seite (lazy),
+   höchstens 2 s, dann öffnet der Druckdialog. Die Druckansicht selbst steht in fg-system.css (@media print, R7). */
+(() => {
+  const knopf = document.querySelector('[data-fgs-drucken]');
+  if (!knopf) return;
+  knopf.addEventListener('click', async () => {
+    const offen = Array.from(document.querySelectorAll('main img[loading="lazy"]')).filter((img) => !img.complete);
+    offen.forEach((img) => { img.loading = 'eager'; });
+    const geladen = Promise.all(offen.map((img) => img.decode().catch(() => {})));
+    await Promise.race([geladen, new Promise((ok) => setTimeout(ok, 2000))]);
+    window.print();
+  });
+})();

@@ -82,7 +82,8 @@ eleventyComputed:
       leitzeile: property.leitzeile if property.h1_titel else null,
       meta: meta,
       buttons: knoepfe,
-      fakten: faktenHtml
+      fakten: faktenHtml,
+      drucken: true
     }) }}
   </div>
 </section>
@@ -246,6 +247,11 @@ eleventyComputed:
   </div>
 
     {{ areaBlock(property.area, "lage-markt", property.preisart, property.marketing_type == "Kauf") }}
+    {#- R7: nur im Ausdruck, Kontakt und Adresse dieser Seite -#}
+    <div class="fgs-nur-druck fgs-druck-kontakt">
+      <p><strong>Fischer &amp; Geserich Real Estate</strong> · Ihr Ansprechpartner: {{ kontakt.name }} · {{ kontaktTel.display }} · {{ nav.email }}</p>
+      <p>{{ pageUrl }}</p>
+    </div>
   </div>
 </section>
 
