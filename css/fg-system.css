@@ -3747,3 +3747,14 @@ html:not(.fgs-js) :is(.fgs-obj-dots, .fgs-obj-pfeil) { display: none; }
   .fgs-listing-top .fgs-listing-facts { margin-top: 5mm !important; }
   .fgs-druck-kontakt { margin-top: 6mm; padding-top: 4mm; border-top: 1px solid #000; font-size: 10pt; line-height: 1.5; break-inside: avoid; }
 }
+
+/* Review 25.11.2026 R10: Farbvorschlag Bewertungskarten (nur mit FG_FREIGABE_BEWERTUNGSFARBE=1, Peer entscheidet).
+   Weiße Karten mit Goldkante, jede zweite in hellem Navy, Initiale im Navy-Kreis, Sterne größer in Gold. */
+.fgs-mq-list--farbe > .fgs-mq { background: #fff; border-color: transparent; border-top: 3px solid var(--fgs-gold); border-radius: 6px; box-shadow: 0 1px 2px rgba(8, 8, 47, .06), 0 8px 24px rgba(8, 8, 47, .05); }
+.fgs-mq-list--farbe > .fgs-mq:nth-child(even) { background: #ECECF3; border-top-color: var(--fgs-navy); }
+.fgs-mq-kopf { display: flex; align-items: center; gap: 14px; }
+.fgs-mq-initial { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--fgs-navy); color: var(--fgs-gold); font: 400 20px/1 var(--fgs-serif); }
+.fgs-mq-list--farbe .fgs-quote-stars { font-size: 17px; letter-spacing: .18em; color: var(--fgs-gold); line-height: 1; }
+.fgs-mq-list--farbe > .fgs-mq:nth-child(even) .fgs-quote-stars { color: var(--fgs-gold-text); }
+.fgs-mq-list--farbe > .fgs-mq:hover { box-shadow: 0 1px 2px rgba(8, 8, 47, .08), 0 12px 32px rgba(8, 8, 47, .09); }
+@media (prefers-reduced-motion: no-preference) { .fgs-mq-list--farbe > .fgs-mq { transition: box-shadow 300ms var(--fgs-ease); } }

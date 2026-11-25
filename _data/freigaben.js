@@ -18,6 +18,9 @@ module.exports = {
   eberswalde: process.env.FG_FREIGABE_EBERSWALDE === "1",
   // Update 68 §4: Finanzierungsrechner auf den Objektseiten, bis Timons Vorgaben in _data/finanzierung.json stehen nur Testumgebung
   finanzrechner: process.env.FG_FREIGABE_FINANZRECHNER === "1",
+  // Review 25.11.2026 R10 (Peer: Bewertungskarten „a bit more color … just an idea“): Farbvorschlag für /bewertungen,
+  // nur Testumgebung (FG_FREIGABE_BEWERTUNGSFARBE=1), bis Peer entscheidet. Live zeigt die Karten unverändert.
+  bewertungFarbe: process.env.FG_FREIGABE_BEWERTUNGSFARBE === "1",
   // FG-Gap-Answers (28.10.2026): FAQ-Antworten mit Status TIMON stehen in den Seiten (Feld timon: "1.3" usw.),
   // werden aber erst gebaut, wenn ihre Nummer hier steht. Eintragen erst, wenn Jesu das OK schickt.
   // 29.10.2026 FG-Timon-Answers-Update §1: Timon hat geantwortet. 6.2 (Strukturvertrieb) ist nach FG-Update-11 §3 aus den Seiten gelöscht.

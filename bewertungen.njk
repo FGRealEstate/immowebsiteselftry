@@ -82,12 +82,15 @@ pg:
       <h2 id="rezensionen-titel">Bewertungen im Wortlaut</h2>
       <p class="fgs-lead">Ungekürzt und unverändert, die neuesten zuerst. Die Zeitangaben stehen so, wie Google sie am {{ google.checkedLabel }} zeigte.</p>
     </div>
-    <ul class="fgs-mq-list" role="list">
+    <ul class="fgs-mq-list{% if freigaben.bewertungFarbe %} fgs-mq-list--farbe{% endif %}" role="list">
       {%- for review in google.reviews %}
       <li class="fgs-mq">
         <figure>
+          {%- if freigaben.bewertungFarbe %}
+          <div class="fgs-mq-kopf"><span class="fgs-mq-initial" aria-hidden="true">{{ review.author | first | upper }}</span>{% endif %}
           {%- if review.rating %}
           <p class="fgs-quote-stars"><span aria-hidden="true">{% for i in range(0, review.rating) %}★{% endfor %}</span><span class="fgs-sr">{{ review.rating }} von 5 Sternen</span></p>{% endif %}
+          {%- if freigaben.bewertungFarbe %}</div>{% endif %}
           {%- if review.text %}
           <blockquote><p>„{{ review.text }}“</p></blockquote>
           {%- else %}
