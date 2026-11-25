@@ -53,7 +53,11 @@ const hausverwaltung = {
   id: "ms-immobilienservice-schmidt", // Wert für `partner` im GA4-Ereignis (Brief §2)
   name: "MS-Immobilienservice Schmidt e.K.",
   bereich: "Hausverwaltung", // Abschnitt auf /partner/
-  logo: null,
+  // Peers Auftrag 25.11.2026 („include schmidt“): Logo links und Bild rechts wie bei den drei neuen Partnern.
+  // Logo: Schriftzug von ms-immobilienservice.de (dort nur als PNG, weiß auf schwarz), mit potrace als SVG nachgezeichnet, Farbe F&G-Navy.
+  logo: { src: "/images/partner/ms-immobilienservice.svg", breite: 160, hoehe: 24 },
+  // Bild: Altbaufassade von der Startseite von ms-immobilienservice.de (dort nur 400 px breit)
+  bild: { basis: "/images/partner/ms-immobilienservice-haus", breiten: [400], alt: "Altbaufassade in Berlin, Bild von der Website von MS-Immobilienservice Schmidt", fokus: "50% 50%" },
   link: "http://www.ms-immobilienservice.de/",
   produkt: "hausverwaltung" // Wert für `produkt` im GA4-Ereignis (Brief §2)
 };
