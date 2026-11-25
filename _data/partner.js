@@ -53,15 +53,62 @@ const hausverwaltung = {
   id: "ms-immobilienservice-schmidt", // Wert für `partner` im GA4-Ereignis (Brief §2)
   name: "MS-Immobilienservice Schmidt e.K.",
   bereich: "Hausverwaltung", // Abschnitt auf /partner/
-  logo: null,
+  // Peers Auftrag 25.11.2026 („include schmidt“): Logo links und Bild rechts wie bei den drei neuen Partnern.
+  // Logo: Schriftzug von ms-immobilienservice.de (dort nur als PNG, weiß auf schwarz), mit potrace als SVG nachgezeichnet, Farbe F&G-Navy.
+  logo: { src: "/images/partner/ms-immobilienservice.svg", breite: 160, hoehe: 24 },
+  // Bild: Altbaufassade von der Startseite von ms-immobilienservice.de (dort nur 400 px breit)
+  bild: { basis: "/images/partner/ms-immobilienservice-haus", breiten: [400], alt: "Altbaufassade in Berlin, Bild von der Website von MS-Immobilienservice Schmidt", fokus: "50% 50%" },
   link: "http://www.ms-immobilienservice.de/",
   produkt: "hausverwaltung" // Wert für `produkt` im GA4-Ereignis (Brief §2)
+};
+
+/* Peers Auftrag 25.11.2026: drei weitere Partner auf /partner/, je ein Abschnitt mit H3, einem Satz und einem Knopf
+   (wie die Hausverwaltung). Texte nur aus den eigenen Seiten der Partner, nichts über Preise oder Wirkungen.
+   - Peter Csaszar: Allianz-Vertretung, bis 23.11. im Team auf /ueber-uns (dort stand „Versicherung & Akquise“).
+   - Immovisory GmbH, Berlin: laut immovisory.de Ankaufs- und Finanzierungsberatung für Kapitalanleger.
+   - Geserich Immobilien GmbH, Berlin-Steglitz: laut geserich-immobilien.de Haus- und Grundstücksmakler seit 1988.
+   Logos links wie bei Gutachten.org, Bild rechts. rel="sponsored noopener" wie bei allen Partnerlinks. */
+const einfach = {
+  versicherung: {
+    id: "allianz-peter-csaszar", name: "Peter Csaszar (Allianz)", bereich: "Versicherung", produkt: "versicherung",
+    // Allianz-Logo als SVG (Wikimedia Commons, File:Allianz.svg), links wie bei Gutachten.org
+    logo: { src: "/images/partner/allianz.svg", breite: 160, hoehe: 40 },
+    titel: "Unser Partner für Versicherungen",
+    text: "Für die Absicherung rund um Ihre Immobilie arbeiten wir mit Peter Csaszar zusammen, Vertreter der Allianz.",
+    knopf: "Zur Allianz-Vertretung",
+    // Peers Auftrag 25.11.: Bild rechts im Kasten. Peters Porträt gehört F&G (bis 23.11. auf /ueber-uns).
+    bild: { basis: "/images/team/peter-csaszar-frei", breiten: [480, 720], alt: "Porträt von Peter Csaszar", fokus: "50% 15%" },
+    link: "https://vertretung.allianz.de/peter.csaszar/"
+  },
+  kapitalanlage: {
+    id: "immovisory", name: "Immovisory GmbH", bereich: "Kapitalanlage", produkt: "kapitalanlage",
+    // Logo als SVG von immovisory.de (wp-content/uploads/2018/04/IMV_Logo-1.svg)
+    logo: { src: "/images/partner/immovisory.svg", breite: 160, hoehe: 41 },
+    titel: "Unser Partner für Kapitalanleger",
+    text: "Für Ankauf und Finanzierung von Kapitalanlagen arbeiten wir mit der Immovisory GmbH aus Berlin zusammen.",
+    knopf: "Zu Immovisory",
+    // Teamfoto von immovisory.de (wp-content/uploads/2026/10/Bild-1.jpeg), Messestand. Bildrecht bei Immovisory, Freigabe bestätigen lassen.
+    bild: { basis: "/images/partner/immovisory-team", breiten: [480, 800], alt: "Das Team von Immovisory an seinem Messestand", fokus: "50% 30%" },
+    link: "https://immovisory.de/"
+  },
+  vermittlung: {
+    id: "geserich-immobilien", name: "Geserich Immobilien GmbH", bereich: "Immobilienvermittlung", produkt: "vermittlung",
+    // Kein SVG auf geserich-immobilien.de, nur dieses PNG (130 × 156 px). Kommt ein SVG, hier tauschen.
+    logo: { src: "/images/partner/geserich-immobilien.png", breite: 80, hoehe: 96 },
+    titel: "Unser Partner für die Vermittlung",
+    text: "Bei der Vermittlung von Immobilien in Berlin arbeiten wir mit der Geserich Immobilien GmbH zusammen, Haus- und Grundstücksmakler seit 1988.",
+    knopf: "Zu Geserich Immobilien",
+    // Hausfoto von geserich-immobilien.de (Dateiname „Schuetzenstr. 30 Aussen“). Bildrecht bei Geserich Immobilien, Freigabe bestätigen lassen.
+    bild: { basis: "/images/partner/geserich-schuetzenstrasse", breiten: [480, 800], alt: "Wohnhaus in der Schützenstraße in Berlin-Steglitz, Sitz von Geserich Immobilien", fokus: "50% 40%" },
+    link: "https://geserich-immobilien.de/"
+  }
 };
 
 const partner = {
   aktiv: Boolean(require("./freigaben.js").partner),
   gutachten,
   hausverwaltung,
+  einfach,
   // Lexikonbegriffe und Artikel mit der Partnerzeile (Brief §3): Slug → Produkt
   lexikon: { restnutzungsdauer: "restnutzungsdauer", verkehrswert: "verkehrswert" },
   artikel: { "restnutzungsdauergutachten-erklaert": "restnutzungsdauer" }
