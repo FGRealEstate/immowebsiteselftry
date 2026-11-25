@@ -3758,3 +3758,8 @@ html:not(.fgs-js) :is(.fgs-obj-dots, .fgs-obj-pfeil) { display: none; }
 .fgs-mq-list--farbe > .fgs-mq:nth-child(even) .fgs-quote-stars { color: var(--fgs-gold-text); }
 .fgs-mq-list--farbe > .fgs-mq:hover { box-shadow: 0 1px 2px rgba(8, 8, 47, .08), 0 12px 32px rgba(8, 8, 47, .09); }
 @media (prefers-reduced-motion: no-preference) { .fgs-mq-list--farbe > .fgs-mq { transition: box-shadow 300ms var(--fgs-ease); } }
+
+/* Review 25.11.2026 R11 (Peer: „above the sources, two empty lines … look like bugs“): nach „In der Nähe“ stand über den Quellen
+   die Abschnittslinie, darunter 112 / 88 / 64 px und dann die eigene Oberkante des Aufklappers „Quellen“. Jetzt bleibt nur dessen
+   Linie, mit einem Abstand (--fgs-sec) unter „Alle Gebiete“, wie bei den Aufklapp-Listen .fgs-refs. */
+main > .fgs-section.fgs-rail + .fgs-section.fgs-place-sources { background-image: none; padding-top: 0; }
