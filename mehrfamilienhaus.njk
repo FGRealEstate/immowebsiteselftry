@@ -204,10 +204,12 @@ service:
 
 {# §4.7 F&G in Zahlen: Streifen wie auf der Startseite (bisheriger Titel und Werte), ohne „Angabe von F&G“ (Design-Pass 2 §7).
    Update 13 §1.1: Der Zahlen-Schalter ist entfernt, Timon hat die Zahlen bestätigt; damit entfällt auch die Google-Kachel aus Update 12 §1. #}
-{{ facts({ id: "zahlen", titel: "F&G in Zahlen", hochzaehlen: true, mitte: true, items: [
+{#- Peers Review R3 (25.11.): derselbe Zahlenstreifen wie auf der Startseite und /verkaufen (Navy, volle Breite, Seitenindex
+    ausgeblendet, eine Größe für alle Zahlen). „über 4 Mio. €“ wird „4 Mio.+“ wie bei T8, „Google‑Bewertungen“ mit geschütztem Bindestrich. -#}
+{{ facts({ id: "zahlen", titel: "F&G in Zahlen", mitte: true, zaehlen: true, navy: true, einheitGross: true, items: [
   { wert: "100+", text: "Interessenten für Mehrfamilienhäuser deutschlandweit" },
   { wert: "50+", text: "neue Kapitalanlage-Interessenten pro Monat" },
-  { wert: "über 4 Mio. €", text: "begleitetes Finanzierungsvolumen 2026" }
+  { wert: "4", einheit: "Mio.+", text: "begleitetes Finanzierungsvolumen in Euro, 2026" }
 ] }) }}
 
 {# F Formular (Feldnamen und Versand unverändert) #}

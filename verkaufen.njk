@@ -237,16 +237,6 @@ service:
   </div>
 </section>
 
-{# §4.7 F&G in Zahlen wie auf der Startseite (zentriert, Marcellus 72 px), einmal auf der Seite, ohne „Angabe von F&G“ (§7) #}
-{#- Peers Review T8 (24.11.): „über 4 Mio. €“ drückte die anderen Spalten zusammen. Jetzt dasselbe Bauteil wie auf der Startseite
-    (Navy, eine Größe für alle vier Zahlen, „Mio.+“ als Einheit); Texte dieser Seite bleiben, „in Euro“ wandert in den Text. -#}
-{{ facts({ id: "zahlen", titel: "F&G in Zahlen", mitte: true, zaehlen: true, navy: true, einheitGross: true, items: [
-  { wert: "100+", text: "Interessenten für Mehrfamilienhäuser deutschlandweit" },
-  { wert: "50+", text: "neue Kapitalanlage-Interessenten pro Monat" },
-  { wert: "4", einheit: "Mio.+", text: "begleitetes Finanzierungsvolumen in Euro, 2026" },
-  { wert: google.rating, sterne: true, text: "von 5 Sternen aus " + google.count + " Google-Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>' }
-] }) }}
-
 {# §4.8 Personenblock: Porträt im Container, 4:5, höchstens 480 px hoch, Text daneben (Bild rechts) #}
 {% call split({ id: "naechste-immobilie", titel: "Verkaufen und die nächste Immobilie finanzieren", rechts: true, bild: "/images/team/timon-fischer-hell" | bild, alt: "Porträt von Timon Fischer, verantwortlich für Finanzierungen" }) %}
   <p class="fgs-lead">Viele Eigentümer verkaufen, um eine andere Immobilie zu kaufen. Dann hängen zwei Termine voneinander ab: wann der Kaufpreis eingeht und wann die neue Immobilie bezahlt werden muss.</p>
@@ -259,3 +249,17 @@ service:
   {%- if freigaben.gewerbe %}
   {{ textlink("/gewerbeimmobilien/", "Hallen und Gewerbeflächen verkaufen") }}</div>{% endif %}
 {% endcall %}
+
+{#- Peers Review R3 (25.11.): Zahlenstreifen ans Seitenende, darunter die Bewertungen (R2). -#}
+{# §4.7 F&G in Zahlen wie auf der Startseite (zentriert, Marcellus 72 px), einmal auf der Seite, ohne „Angabe von F&G“ (§7) #}
+{#- Peers Review T8 (24.11.): „über 4 Mio. €“ drückte die anderen Spalten zusammen. Jetzt dasselbe Bauteil wie auf der Startseite
+    (Navy, eine Größe für alle vier Zahlen, „Mio.+“ als Einheit); Texte dieser Seite bleiben, „in Euro“ wandert in den Text. -#}
+{{ facts({ id: "zahlen", titel: "F&G in Zahlen", mitte: true, zaehlen: true, navy: true, einheitGross: true, items: [
+  { wert: "100+", text: "Interessenten für Mehrfamilienhäuser deutschlandweit" },
+  { wert: "50+", text: "neue Kapitalanlage-Interessenten pro Monat" },
+  { wert: "4", einheit: "Mio.+", text: "begleitetes Finanzierungsvolumen in Euro, 2026" },
+  { wert: google.rating, sterne: true, text: "von 5 Sternen aus " + google.count + " Google‑Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>' }
+] }) }}
+
+{# Peers Review R2 (25.11.2026): Bewertungsabschnitt wie auf der Startseite (_includes/fgs-bewertungen.njk) #}
+{% include "fgs-bewertungen.njk" %}

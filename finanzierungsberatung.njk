@@ -291,10 +291,12 @@ service:
 
 {# §4.7 F&G in Zahlen: Streifen wie auf der Startseite, einmal auf der Seite; zwischen Rechner und Anfrage, damit nicht zwei
     Formularblöcke aufeinander folgen. Ohne „Angabe von F&G“ (Design-Pass 2 §7). #}
-{{ facts({ id: "zahlen", titel: "F&G in Zahlen", hochzaehlen: true, mitte: true, items: [
-  { wert: "über 4 Mio. €", text: "begleitetes Finanzierungsvolumen 2026" },
-  { wert: "rund 500", text: "Banken im Vergleich über Europace und Baufinex, dazu direkte Bankkontakte" },
-  { wert: google.rating, text: "von 5 Sternen aus " + google.count + " Google-Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>' }
+{#- Peers Review R3 (25.11.): derselbe Zahlenstreifen wie auf der Startseite und /verkaufen (Navy, volle Breite, Seitenindex
+    ausgeblendet, eine Größe für alle Zahlen). „über 4 Mio. €“ wird „4 Mio.+“ wie bei T8, „Google‑Bewertungen“ mit geschütztem Bindestrich. -#}
+{{ facts({ id: "zahlen", titel: "F&G in Zahlen", mitte: true, zaehlen: true, navy: true, einheitGross: true, items: [
+  { wert: "4", einheit: "Mio.+", text: "begleitetes Finanzierungsvolumen in Euro, 2026" },
+  { wert: "500", text: "Banken (gerundet) im Vergleich über Europace und Baufinex, dazu direkte Bankkontakte" },
+  { wert: google.rating, sterne: true, text: "von 5 Sternen aus " + google.count + " Google‑Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>' }
 ] }) }}
 
 {# F Finanzierung anfragen #}

@@ -183,10 +183,12 @@ service:
 </section>
 
 {# §4.7 F&G in Zahlen: Streifen wie auf der Startseite (bisheriger Titel und Werte), ohne „Angabe von F&G“ (Design-Pass 2 §7) #}
-{{ facts({ id: "zahlen", titel: "F&G in Zahlen", hochzaehlen: true, mitte: true, items: [
+{#- Peers Review R3 (25.11.): derselbe Zahlenstreifen wie auf der Startseite und /verkaufen (Navy, volle Breite, Seitenindex
+    ausgeblendet, eine Größe für alle Zahlen). „über 4 Mio. €“ wird „4 Mio.+“ wie bei T8, „Google‑Bewertungen“ mit geschütztem Bindestrich. -#}
+{{ facts({ id: "zahlen", titel: "F&G in Zahlen", mitte: true, zaehlen: true, navy: true, einheitGross: true, items: [
   { wert: "50+", text: "neue Interessenten für Kapitalanlagen im Monat" },
-  { wert: "über 4 Mio. €", text: "begleitetes Finanzierungsvolumen 2026" },
-  { wert: google.rating, text: "von 5 Sternen aus " + google.count + " Google-Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>' }
+  { wert: "4", einheit: "Mio.+", text: "begleitetes Finanzierungsvolumen in Euro, 2026" },
+  { wert: google.rating, sterne: true, text: "von 5 Sternen aus " + google.count + " Google‑Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>' }
 ] }) }}
 
 {# S3 Nach dem Kauf (bisher navy Halbbild; navy nur in S1, S8 und Fuß); Bild im Container, 4:5 und höchstens 640 px hoch wie auf der Startseite #}

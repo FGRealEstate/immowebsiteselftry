@@ -653,8 +653,8 @@
       };
 
       // Fotos, Videos und dunkle Flächen, die in die Spalte reichen (Bildbänder, Fotos am linken Rand, verschobene Karussellkarten)
-      // R1 (25.11.): auch die Ablauf-Reihe, die ab 1.240 px über die volle Breite steht, mit ihrer Überschrift
-      const covers = Array.from(ixMain.querySelectorAll('img, video, .fgs-band, .fgs-on-dark, .fgs-facts-sec--navy, [data-fgs-steps], .fgs-wrap:has(> [data-fgs-steps]) > .fgs-head')).filter((el) => !el.closest('.fgs-hero, .fgs-closing, .fgs-ix-track'));
+      // R1/R2 (25.11.): auch Bewertungen und die Ablauf-Reihe, die ab 1.240 px über die volle Breite steht, mit ihrer Überschrift
+      const covers = Array.from(ixMain.querySelectorAll('img, video, .fgs-band, .fgs-on-dark, .fgs-facts-sec--navy, .fgs-reviews, [data-fgs-steps], .fgs-wrap:has(> [data-fgs-steps]) > .fgs-head')).filter((el) => !el.closest('.fgs-hero, .fgs-closing, .fgs-ix-track'));
       let coverQueued = false;
       const checkCover = () => {
         coverQueued = false;

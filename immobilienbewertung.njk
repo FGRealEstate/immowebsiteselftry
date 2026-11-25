@@ -235,6 +235,9 @@ service:
   </div>
 </section>
 
+{# Peers Review R2 (25.11.2026): Bewertungsabschnitt wie auf der Startseite (_includes/fgs-bewertungen.njk) #}
+{% include "fgs-bewertungen.njk" %}
+
 <!-- fgs-kurz -->
 
 {# Die drei Schritte des Ablaufs, unverändert; vorher im selben Abschnitt über dem Formular #}
@@ -302,8 +305,10 @@ service:
 </section>
 
 {# S6 Zahlen: dieselben vier Angaben wie bisher; Quellenzeile nur bei Google und Erlaubnis, ohne „Angabe von F&G“ (Design-Pass 2 §7) #}
-{{ facts({ id: "zahlen", titel: "F&G in Zahlen", hochzaehlen: true, items: [
-  { wert: google.rating, text: "von 5 Sternen aus " + google.count + " Google-Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>' },
+{#- Peers Review R3 (25.11.): derselbe Zahlenstreifen wie auf der Startseite und /verkaufen (Navy, volle Breite, Seitenindex
+    ausgeblendet, eine Größe für alle Zahlen). „über 4 Mio. €“ wird „4 Mio.+“ wie bei T8, „Google‑Bewertungen“ mit geschütztem Bindestrich. -#}
+{{ facts({ id: "zahlen", titel: "F&G in Zahlen", mitte: true, zaehlen: true, navy: true, einheitGross: true, items: [
+  { wert: google.rating, sterne: true, text: "von 5 Sternen aus " + google.count + " Google‑Bewertungen", quelle: '<a href="' + google.url + '" target="_blank" rel="noopener">Google</a>' },
   { wert: "100+", text: "Interessenten für Mehrfamilienhäuser deutschlandweit" },
   { wert: "50+", text: "neue Kapitalanlage-Interessenten pro Monat" }
 ] }) }}

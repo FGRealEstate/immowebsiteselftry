@@ -3602,6 +3602,8 @@ html:not(.fgs-js) :is(.fgs-obj-dots, .fgs-obj-pfeil) { display: none; }
 /* T8 (24.11.): der Navy-Zahlenstreifen auf Seiten mit Index (/verkaufen) steht wie auf der Startseite mittig über die volle Breite;
    der Index blendet sich darüber aus (fg-system.js, wie über Fotos). */
 @media (min-width: 1024px) { .fgs-indexed main > .fgs-facts-sec--navy .fgs-wrap { padding-left: var(--fgs-pad); } }
+/* R2 (25.11.): der Bewertungsabschnitt der Startseite steht auf Leistungsseiten ebenso über die volle Breite, der Index blendet sich aus */
+@media (min-width: 1024px) { .fgs-indexed main > .fgs-reviews .fgs-wrap { padding-left: var(--fgs-pad); } }
 .fgs-gruender-hero .fgs-gruender-raster { align-items: end; }
 @media (min-width: 900px) { .fgs-gruender-hero .fgs-gruender-raster { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: clamp(40px, 5vw, 80px); } }
 .fgs-gruender-hero .fgs-gruender-text { align-self: center; }
